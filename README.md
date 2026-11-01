@@ -31,7 +31,7 @@ If Naver starts refusing your IP (HTTP 418/429), restart with a proxy:
 Offline tests (no network, no Chrome):
 
 ```bash
-.venv/bin/python -m pytest -q             # 106 passed
+.venv/bin/python -m pytest -q             # 121 passed
 .venv/bin/python -m pytest scripts -q     # scripts/ client tests, separate suite
 ```
 
@@ -65,6 +65,7 @@ server/             the API; import root (bare imports, no __init__.py)
   docs/             rules, architecture, endpoint contract, known issues
 scripts/            HTTP-only consumers of the running API (never import server code)
 pyproject.toml      pytest config only (testpaths/pythonpath = server)
+extension/          Chrome adapter for your own browser (beta: search.shopping listing)
 archive/docker/     retired Docker/Linux setup (not maintained)
 ```
 
@@ -80,6 +81,7 @@ archive/docker/     retired Docker/Linux setup (not maintained)
 | [server/docs/KNOWN_ISSUES.md](server/docs/KNOWN_ISSUES.md) | Known defects and stale references |
 | [scripts/README.md](scripts/README.md) | Writing scripts against the API, Shopify roadmap |
 | [SECURITY.md](SECURITY.md) | Usage disclaimer and vulnerability reporting |
+| [server/docs/EXTENSION.md](server/docs/EXTENSION.md) | Beta: the search.shopping listing through your own Chrome, and why |
 | [archive/docker/README.md](archive/docker/README.md) | Retired Docker setup and how to restore it |
 
 ## Credits and license

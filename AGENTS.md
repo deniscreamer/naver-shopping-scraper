@@ -12,6 +12,7 @@ server/            the API and its import root (bare imports, NO server/__init__
   naver_shopping/  endpoint logic, fetch, parsers, schemas, offline tests, fixtures/
   docs/            DEVELOPMENT_RULES.md, ARCHITECTURE.md, ENDPOINTS.md, KNOWN_ISSUES.md
 scripts/           HTTP-only consumers of the running API
+extension/         Chrome adapter for the owner's browser (beta, search.shopping listing)
 archive/docker/    retired Docker/Linux setup, not maintained
 pyproject.toml     pytest config only (testpaths = pythonpath = ["server"])
 ```
@@ -49,7 +50,7 @@ Run from the repo root.
 python -m venv .venv
 .venv/bin/pip install -r server/requirements.txt -r scripts/requirements.txt
 .venv/bin/python server/run.py              # http://localhost:8000, PORT=... to change
-.venv/bin/python -m pytest -q               # offline suite, 106 tests
+.venv/bin/python -m pytest -q               # offline suite, 121 tests
 .venv/bin/python -m pytest scripts -q       # scripts/ client tests, offline, separate suite
 ```
 
@@ -70,6 +71,7 @@ Live check (server running, uses the network): `curl http://localhost:8000/healt
 | Operations | [server/README.md](server/README.md) | Running on macOS, env vars, tests |
 | Consumer scripts, Shopify roadmap | [scripts/README.md](scripts/README.md) | Writing scripts against the API, starting Shopify work |
 | Security | [SECURITY.md](SECURITY.md) | Reporting vulnerabilities |
+| Extension transport (beta) | [server/docs/EXTENSION.md](server/docs/EXTENSION.md), [extension/README.md](extension/README.md) | search.shopping listing, anything touching extension/ or ext_*.py |
 | Archived Docker setup | [archive/docker/README.md](archive/docker/README.md) | Only if Linux deployment comes back |
 
 `CLAUDE.md` and `server/CLAUDE.md` contain only `@AGENTS.md`: they load the AGENTS.md next to them and add nothing.

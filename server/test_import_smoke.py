@@ -14,7 +14,8 @@ import pytest
 MODULES = ["browser_client", "cache", "config", "egress", "hostenv", "patchright_driver", "routes",
            "schema_fields", "scraper_errors", "url_blocking",
            "naver_shopping.api", "naver_shopping.cache_config", "naver_shopping.fetch",
-           "naver_shopping.parsers", "naver_shopping.refs", "naver_shopping.schemas"]
+           "naver_shopping.parsers", "naver_shopping.refs", "naver_shopping.schemas",
+           "naver_shopping.composite", "ext_bridge", "notify"]
 
 
 @pytest.mark.parametrize("name", MODULES)

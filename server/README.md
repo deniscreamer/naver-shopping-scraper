@@ -90,7 +90,7 @@ Offline (no network, no Chrome), from the repo root; config in `/pyproject.toml`
 `server`):
 
 ```
-.venv/bin/python -m pytest -q                      # 106 tests
+.venv/bin/python -m pytest -q                      # 121 tests
 .venv/bin/python -m pytest server/test_import_smoke.py -q
 cd server && ../.venv/bin/python -m pytest -q      # also works
 ```
@@ -110,3 +110,14 @@ Live smoke (server running, networked, may launch Chrome); required after any tr
 `.venv/bin/python server/main.py` calls `naver_shopping.api` in-process (no server): a search, one product's
 details and one keyword rank, validated through the same schemas. It hits Naver and may launch Chrome. Results go
 to `output/*.json` relative to the current working directory.
+
+## Listing through your own Chrome (beta)
+
+`search.shopping.naver.com` is read only in your everyday Chrome through the adapter in `extension/`
+(install once: [../extension/README.md](../extension/README.md); why: [docs/EXTENSION.md](docs/EXTENSION.md)).
+
+```
+.venv/bin/python server/ext_listing.py "남성 골프채 풀세트" --max-batches 3
+```
+
+`NAVER_NOTIFY_WEBHOOK=<url>`: where captcha / stop notices are POSTed (JSON); unset = a macOS notification.

@@ -81,7 +81,7 @@ Every surface that is not the store backend uses this path (R-NAVER-2).
 
 ## R-NAVER: upstream surfaces
 
-- **R-NAVER-1 (MUST NOT)** Never request Naver's walled pages: `search.shopping.naver.com/ns/*`, catalog pages, `smartstore.naver.com/<store>/products/<id>` (smartstore PDP), `shopping.naver.com`. They serve a captcha (405/490), a login redirect or 429 to every client tried (`naver_shopping/fetch.py` module docstring, research 2026-10-23/24). The same holds for store home, category and search pages (they redirect to login).
+- **R-NAVER-1 (MUST NOT)** Never request Naver's walled pages: `search.shopping.naver.com/ns/*`, catalog pages, `smartstore.naver.com/<store>/products/<id>` (smartstore PDP), `shopping.naver.com`. They serve a captcha (405/490), a login redirect or 429 to every client tried (`naver_shopping/fetch.py` module docstring, research 2026-10-23/24). The same holds for store home, category and search pages (they redirect to login). Exception (2026-11-01): the search.shopping listing, read only in the owner's Chrome through the adapter under R-EXT-* (decision log).
 - **R-NAVER-2 (MUST)** Source each datum from the surface that serves it, on the transport listed:
 
   | Data | Surface | Transport | Symbol |
@@ -163,7 +163,7 @@ Every surface that is not the store backend uses this path (R-NAVER-2).
 - **R-TEST-2 (MUST)** Every parser change or new upstream quirk gets a captured fixture and a test. A regression test carries a docstring with the dated observation.
 - **R-TEST-3 (MUST)** Tests monkeypatch module attributes (`F.config`, `A._record`, `A.box_post`), so keep `import config` as a module import and call fetch helpers through module names that tests can patch.
 - **R-TEST-4 (MUST)** Before merge:
-  - `.venv/bin/python -m pytest -q` passes. Baseline: 106 tests (82 parser/schema tests + 7 in `test_search_filters.py` + 17 in `test_import_smoke.py`, which also asserts 24 routes). The count only goes up;
+  - `.venv/bin/python -m pytest -q` passes. Baseline: 121 tests (82 parser/schema tests + 7 in `test_search_filters.py` + 7 in `test_composite.py` + 5 in `test_ext_bridge.py` + 20 in `test_import_smoke.py`, which also asserts 24 routes). The count only goes up;
   - any change to transport or browser code (`fetch.py`, `browser_client.py`, `patchright_driver.py`, `url_blocking.py`, `egress.py`, `hostenv.py`, `config.py`, requirements) also passes a live smoke with the server running: `.venv/bin/python scripts/smoke_endpoints.py`, which covers at least one curl call and one box call. Record the result in the commit message.
 
 ## Checklist: adding a new endpoint
@@ -189,6 +189,22 @@ Scope: the files listed in R-TEST-4 (including `hostenv.py`, which picks the Chr
 5. Run `.venv/bin/python -m pytest -q`, then start the server and run `.venv/bin/python scripts/smoke_endpoints.py`. A box change needs at least one `/products/details` on a smartstore product link; a curl change needs `/products/search` and one DataLab endpoint.
 6. Update [ARCHITECTURE.md](ARCHITECTURE.md) if the flow changed, and [KNOWN_ISSUES.md](KNOWN_ISSUES.md) if an issue was fixed or found.
 
+## R-EXT: the extension transport (beta)
+
+- **R-EXT-1 (MUST NOT)** Never mint, copy, replay or forge a bot-defence token (`x-wtm-ncaptcha-token`,
+  `cipherText`, `tokenId`) or call the defence SDK for our own requests. Listing calls are made by the page itself;
+  we only trigger its own loading (real input) and read its answers.
+- **R-EXT-2 (MUST)** The extension stays a dumb executor: generic ops, no site logic (no selectors, page paths or
+  stop rules). Its only Naver-specific parts are the `*.naver.com` host scope in `manifest.json` and the `/ns/v1/`
+  capture filter in `capture_main.js`. Paths, walls, stop rules and parsing live in Python (`ext_listing.py`,
+  `naver_shopping/composite.py`).
+- **R-EXT-3 (MUST)** A captcha / login gate: notify (`notify.py`) and wait for the human (60 s), never solve it.
+  A ban page or a refused batch: stop, no retry. One listing at a time, sequential, at page speed.
+- **R-EXT-4 (MUST)** Parsers are pure and tested on trimmed real captures with tracking / session fields removed
+  (`fixtures/composite_*`). Captured raw answers and HARs never enter git.
+- **R-EXT-5 (SHOULD)** Bump the adapter version in `manifest.json` and `background.js` together on any change, and
+  keep its op table in `extension/README.md` current.
+
 ## Decision log
 
 One entry per MUST exception or rule change, newest first. Format:
@@ -198,4 +214,10 @@ One entry per MUST exception or rule change, newest first. Format:
 What changes. Why. Evidence (A/B numbers, probe, test). Author.
 ```
 
-(no entries yet)
+### 2026-11-01: R-NAVER-1: search.shopping listing through the owner's Chrome (beta)
+`search.shopping.naver.com/ns/search` and its `/ns/v1/search/paged-composite-cards` are read, but ONLY in the
+owner's own Chrome through the adapter (`extension/`, `ext_bridge.py`, `ext_listing.py`), never by curl, the
+patchright box or a direct fetch. Why: the listing needs a one-time WtmCaptcha token per call that only the page
+mints (HAR 2026-11-01); our fetch without it got 418, a fresh patchright Chrome got captchas and then a network ban,
+the owner's Chrome with page-driven loading got 4/4 batches with HTTP 200 and the first batch from the HTML.
+Details: [EXTENSION.md](EXTENSION.md). Owner: Denis.

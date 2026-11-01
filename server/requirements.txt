@@ -9,3 +9,5 @@ patchright
 psutil
 pyvirtualdisplay
 pytest
+# the Chrome-extension bridge (ext_bridge.py, beta): the sync server API needs >= 13
+websockets>=13

@@ -33,7 +33,7 @@ All paths are relative to `server/`, which is the import root (section 10).
 | `naver_shopping/fetch.py` | The only module that talks to Naver: curl surfaces, box calls, error classification. |
 | `naver_shopping/parsers.py` | Pure functions: raw JSON / HTML to output dicts. |
 | `naver_shopping/cache_config.py` | One TTL per cached namespace, each with its reason. |
-| `test_import_smoke.py`, `naver_shopping/test_*.py` | Offline tests (106 at the time of writing). Fixtures in `naver_shopping/fixtures/`. |
+| `test_import_smoke.py`, `naver_shopping/test_*.py` | Offline tests (121 at the time of writing). Fixtures in `naver_shopping/fixtures/`. |
 
 ## 2. Layers
 
@@ -329,7 +329,15 @@ requests in `config.exit_geo`, egress / config / url_blocking inside
 bare name (`MODULES`; not the `run.py` / `main.py` entry points, `main.py`
 creates `output/` at import) and checks the 24 routes. R-LAYOUT-1, R-LAYOUT-2, R-STYLE-5.
 
-## 12. Naver specifics
+## 12. Extension transport (beta)
+
+A third transport for what neither curl nor the box can read: the search.shopping listing, which needs a
+one-time bot-defence token per call that only the page mints. The owner's own Chrome runs a thin adapter
+(`extension/`), `ext_bridge.py` drives it over a local WebSocket, `ext_listing.py` walks naver.com -> 쇼핑 -> search
+like a person, takes the first batch from the HTML and lets the page load the rest on wheel scrolls. Not wired into
+the HTTP API yet. Everything about it: [EXTENSION.md](EXTENSION.md); rules R-EXT-*.
+
+## 13. Naver specifics
 
 Each line is one upstream fact. The code comment or docstring named is the
 primary record, with dates; read it before changing the behaviour.

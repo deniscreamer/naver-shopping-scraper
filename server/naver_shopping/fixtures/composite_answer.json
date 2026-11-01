@@ -1,0 +1,423 @@
+{
+ "data": {
+  "cursor": 73,
+  "hasMore": true,
+  "total": 4385,
+  "isVectorSearch": false,
+  "data": [
+   {
+    "card": {
+     "product": {
+      "source": "NEW_SHOPPING_SAS",
+      "nvMid": 90519768933,
+      "channelProductId": "12975257923",
+      "productName": "[정식대리점] 젝시오14 남성용 풀세트 (드라이버 10.5도 R 카본 아이언 MP1400K R)",
+      "productUrl": {
+       "mobileUrl": "https://m.smartstore.naver.com/main/products/12975257923",
+       "pcUrl": "https://smartstore.naver.com/main/products/12975257923"
+      },
+      "images": [
+       {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_9051976/90519768933.7.jpg"
+       }
+      ],
+      "originalMallProductId": "12917549820",
+      "mallSeq": "1085230",
+      "mallName": "더골프샵",
+      "mallUrl": {
+       "mobileUrl": "https://m.smartstore.naver.com/inflow/outlink/url?url=https%3A%2F%2Fm.smartstore.naver.com%2Fthegolf9015",
+       "pcUrl": "https://smartstore.naver.com/inflow/outlink/url?url=https%3A%2F%2Fsmartstore.naver.com%2Fthegolf9015"
+      },
+      "mallId": "ncp_1nugvc_01",
+      "officialCertifiedMallType": "DEFAULT",
+      "salePrice": 3110000,
+      "salePricePer1": 3110000,
+      "discountedSalePrice": 3030000,
+      "discountedRatio": 2,
+      "averageReviewScore": 5,
+      "totalReviewCount": 1,
+      "averageReviewScore6Month": 5,
+      "totalReviewCount6Month": 1,
+      "goodsType": "DEFAULT",
+      "productType": "NORMAL",
+      "saleType": "DEFAULT",
+      "windowType": "DEFAULT",
+      "deliveryFilters": [
+       "EXCLUDING_CASH",
+       "RECEIVED_VISIT",
+       "DEPART_TODAY",
+       "FREE_DLIVY"
+      ],
+      "productDeliveryInfo": {
+       "baseFee": 0,
+       "shipFromAddress": "서울특별시 강서구 방화대로 94 (메이필드호텔) C동 지하1층 (우 : 07506) ",
+       "deliveryMethodTypes": [
+        "DELIVERY",
+        "VISIT_RECEIPT"
+       ]
+      },
+      "fastDeliveryType": "TODAY_DELIVERY",
+      "isNewProduct": false,
+      "isGroupProduct": false,
+      "isFreshProduct": false,
+      "isLoungeProduct": false,
+      "standardPurchaseOptionCount": 0,
+      "standardProductName": "[정식대리점] 젝시오14 남성용 풀세트 (드라이버 10.5도 R 카본 아이언 MP1400K R)",
+      "standardGroupEpId": "90519768933",
+      "isOverseaProduct": false,
+      "promotionTypes": [
+       "NAVER_SHOPPING_FESTA"
+      ],
+      "hasGift": false,
+      "isBrandStore": false,
+      "deliveryAdditionalInfo": {
+       "orderClosedTime": "15:00",
+       "notDeliveryDayOfWeek": [
+        "SATURDAY",
+        "SUNDAY",
+        "HOLIDAY"
+       ]
+      },
+      "isSuperPointProduct": false,
+      "purchaseQuantityInfo": {
+       "minPurchaseQuantity": 1
+      },
+      "lCatId": "50000007",
+      "mCatId": "50000029",
+      "sCatId": "50001102",
+      "ssCatId": "50002788",
+      "categoryName": "풀세트",
+      "isMembershipFreeDelivery": false,
+      "isCustomsDutySeparate": false,
+      "isCustomsServiceFeeSeparate": false,
+      "isIndividualSeller": false,
+      "matchType": "DEFAULT",
+      "catalogProductCount": 0,
+      "catalogChildId": 0,
+      "catalogMatchType": "NOT_MATCH",
+      "isBranchProduct": false,
+      "isKurlyProduct": false,
+      "isHighEndProduct": false,
+      "isKnockitProduct": false,
+      "exceptBenefitTypes": [],
+      "mallGradeType": "PREMIUM",
+      "cardType": "AD",
+      "hiddenReviewScoreCount": false,
+      "stockQuantity": 2999,
+      "authenticationType": "NORMAL",
+      "channelNo": 100568453,
+      "page": 2
+     }
+    }
+   },
+   {
+    "card": {
+     "product": {
+      "source": "NEW_SHOPPING_SAS",
+      "nvMid": 85050889080,
+      "channelProductId": "7506388758",
+      "productName": "삼양인터내셔날 핑 PING G430 남성골프채풀세트 11개 조합풀세트 택1 드라이버 10.5 유틸4번R 6아이언 웨지2개퍼터",
+      "productUrl": {
+       "mobileUrl": "https://m.smartstore.naver.com/main/products/7506388758",
+       "pcUrl": "https://smartstore.naver.com/main/products/7506388758"
+      },
+      "images": [
+       {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8505088/85050889080.2.jpg"
+       }
+      ],
+      "originalMallProductId": "7471054824",
+      "mallSeq": "934198",
+      "mallName": "케이티케이스포츠",
+      "mallUrl": {
+       "mobileUrl": "https://m.smartstore.naver.com/inflow/outlink/url?url=https%3A%2F%2Fm.smartstore.naver.com%2Fktksports",
+       "pcUrl": "https://smartstore.naver.com/inflow/outlink/url?url=https%3A%2F%2Fsmartstore.naver.com%2Fktksports"
+      },
+      "mallId": "ncp_1nrf23_01",
+      "officialCertifiedMallType": "DEFAULT",
+      "salePrice": 2440000,
+      "salePricePer1": 2440000,
+      "discountedSalePrice": 2215000,
+      "discountedRatio": 9,
+      "averageReviewScore": 4.96,
+      "totalReviewCount": 55,
+      "averageReviewScore6Month": 4.96,
+      "totalReviewCount6Month": 55,
+      "goodsType": "DEFAULT",
+      "productType": "NORMAL",
+      "saleType": "DEFAULT",
+      "windowType": "DEFAULT",
+      "deliveryFilters": [
+       "EXCLUDING_CASH",
+       "DEPART_TODAY",
+       "FREE_DLIVY"
+      ],
+      "productDeliveryInfo": {
+       "baseFee": 0,
+       "shipFromAddress": "경기도 부천시 소향로 149 (필레오트윈파크2동) 102,103호 (우 : 14547) ",
+       "deliveryMethodTypes": [
+        "DELIVERY"
+       ]
+      },
+      "fastDeliveryType": "TODAY_DELIVERY",
+      "isNewProduct": false,
+      "isGroupProduct": false,
+      "isFreshProduct": false,
+      "isLoungeProduct": false,
+      "standardPurchaseOptionCount": 0,
+      "standardProductName": "삼양인터내셔날 핑 PING G430 남성골프채풀세트 11개 조합풀세트 택1 드라이버 10.5 유틸4번R 6아이언 웨지2개퍼터",
+      "standardGroupEpId": "85050889080",
+      "isOverseaProduct": false,
+      "promotionTypes": [],
+      "hasGift": false,
+      "isBrandStore": false,
+      "deliveryAdditionalInfo": {
+       "orderClosedTime": "16:30",
+       "notDeliveryDayOfWeek": [
+        "SATURDAY",
+        "SUNDAY",
+        "HOLIDAY"
+       ]
+      },
+      "isSuperPointProduct": false,
+      "purchaseQuantityInfo": {
+       "minPurchaseQuantity": 1
+      },
+      "lCatId": "50000007",
+      "mCatId": "50000029",
+      "sCatId": "50001102",
+      "ssCatId": "50002788",
+      "categoryName": "풀세트",
+      "itemLoggingCode": 0,
+      "isMembershipFreeDelivery": false,
+      "isCustomsDutySeparate": false,
+      "isCustomsServiceFeeSeparate": false,
+      "isIndividualSeller": false,
+      "matchType": "DEFAULT",
+      "catalogName": "",
+      "catalogProductCount": 0,
+      "catalogChildId": 0,
+      "catalogMatchType": "NOT_MATCH",
+      "isBranchProduct": false,
+      "isKurlyProduct": false,
+      "isHighEndProduct": false,
+      "isKnockitProduct": false,
+      "exceptBenefitTypes": [],
+      "mallGradeType": "SEED",
+      "page": 2,
+      "loggingCode": 313,
+      "isPS": false,
+      "stockQuantity": 294,
+      "authenticationType": "NORMAL",
+      "channelNo": 100416178
+     }
+    }
+   },
+   {
+    "card": {
+     "product": {
+      "source": "NEW_SHOPPING_SAS",
+      "nvMid": 88193716818,
+      "channelProductId": "10649210920",
+      "productName": "마제스티 21년 로얄 12pcs 남성 풀세트 마제스티골프코리아100%",
+      "productUrl": {
+       "mobileUrl": "https://m.smartstore.naver.com/main/products/10649210920",
+       "pcUrl": "https://smartstore.naver.com/main/products/10649210920"
+      },
+      "images": [
+       {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8819371/88193716818.1.jpg"
+       }
+      ],
+      "originalMallProductId": "10598299705",
+      "mallSeq": "855016",
+      "mallName": "삼성골프",
+      "mallUrl": {
+       "mobileUrl": "https://m.smartstore.naver.com/inflow/outlink/url?url=https%3A%2F%2Fm.smartstore.naver.com%2Fsamsung-golf",
+       "pcUrl": "https://smartstore.naver.com/inflow/outlink/url?url=https%3A%2F%2Fsmartstore.naver.com%2Fsamsung-golf"
+      },
+      "mallId": "ncp_1nptnw_01",
+      "officialCertifiedMallType": "DEFAULT",
+      "salePrice": 3800000,
+      "salePricePer1": 3800000,
+      "discountedSalePrice": 2500000,
+      "discountedRatio": 34,
+      "averageReviewScore": 5,
+      "totalReviewCount": 2,
+      "averageReviewScore6Month": 5,
+      "totalReviewCount6Month": 2,
+      "goodsType": "DEFAULT",
+      "productType": "NORMAL",
+      "saleType": "DEFAULT",
+      "windowType": "DEFAULT",
+      "deliveryFilters": [
+       "EXCLUDING_CASH",
+       "RECEIVED_VISIT",
+       "DEPART_TODAY",
+       "FREE_DLIVY"
+      ],
+      "productDeliveryInfo": {
+       "baseFee": 0,
+       "shipFromAddress": "부산광역시 사상구 학감대로 158 삼성골프 (우 : 47021) ",
+       "deliveryMethodTypes": [
+        "DELIVERY",
+        "VISIT_RECEIPT",
+        "QUICK_SERVICE"
+       ]
+      },
+      "fastDeliveryType": "TODAY_DELIVERY",
+      "isNewProduct": false,
+      "isGroupProduct": false,
+      "isFreshProduct": false,
+      "isLoungeProduct": false,
+      "standardPurchaseOptionCount": 0,
+      "standardProductName": "마제스티 21년 로얄 12pcs 남성 풀세트 마제스티골프코리아100%",
+      "standardGroupEpId": "88193716818",
+      "isOverseaProduct": false,
+      "promotionTypes": [],
+      "hasGift": false,
+      "isBrandStore": false,
+      "deliveryAdditionalInfo": {
+       "orderClosedTime": "16:00",
+       "notDeliveryDayOfWeek": [
+        "SATURDAY",
+        "SUNDAY",
+        "HOLIDAY"
+       ]
+      },
+      "isSuperPointProduct": false,
+      "purchaseQuantityInfo": {
+       "minPurchaseQuantity": 1
+      },
+      "lCatId": "50000007",
+      "mCatId": "50000029",
+      "sCatId": "50001102",
+      "ssCatId": "50002788",
+      "categoryName": "풀세트",
+      "itemLoggingCode": 0,
+      "isMembershipFreeDelivery": false,
+      "isCustomsDutySeparate": false,
+      "isCustomsServiceFeeSeparate": false,
+      "isIndividualSeller": false,
+      "matchType": "DEFAULT",
+      "catalogName": "",
+      "catalogProductCount": 0,
+      "catalogChildId": 0,
+      "catalogMatchType": "NOT_MATCH",
+      "isBranchProduct": false,
+      "isKurlyProduct": false,
+      "isHighEndProduct": false,
+      "isKnockitProduct": false,
+      "exceptBenefitTypes": [],
+      "mallGradeType": "SPROUT",
+      "page": 2,
+      "loggingCode": 313,
+      "isPS": false,
+      "stockQuantity": 1,
+      "authenticationType": "NORMAL",
+      "channelNo": 100335426
+     }
+    }
+   },
+   {
+    "card": {
+     "product": {
+      "source": "NEW_SHOPPING_SAS",
+      "nvMid": 90224147997,
+      "channelProductId": "12679637072",
+      "productName": "XR26 남성용 패키지 세트",
+      "productUrl": {
+       "mobileUrl": "https://m.smartstore.naver.com/main/products/12679637072",
+       "pcUrl": "https://smartstore.naver.com/main/products/12679637072"
+      },
+      "images": [
+       {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_9022414/90224147997.2.jpg"
+       }
+      ],
+      "originalMallProductId": "12622621960",
+      "mallSeq": "8865895",
+      "mallName": "캘러웨이 코리아",
+      "mallUrl": {
+       "mobileUrl": "https://m.smartstore.naver.com/inflow/outlink/url?url=https%3A%2F%2Fm.smartstore.naver.com%2Fcallawaygolf_korea",
+       "pcUrl": "https://smartstore.naver.com/inflow/outlink/url?url=https%3A%2F%2Fsmartstore.naver.com%2Fcallawaygolf_korea"
+      },
+      "mallId": "ncp_1oodvs_01",
+      "officialCertifiedMallType": "OFFICIAL_BRAND_MALL",
+      "salePrice": 1620000,
+      "salePricePer1": 1620000,
+      "discountedSalePrice": 1620000,
+      "discountedRatio": 0,
+      "averageReviewScore": 4.67,
+      "totalReviewCount": 3,
+      "averageReviewScore6Month": 4.67,
+      "totalReviewCount6Month": 3,
+      "goodsType": "DEFAULT",
+      "productType": "NORMAL",
+      "saleType": "DEFAULT",
+      "windowType": "DEFAULT",
+      "deliveryFilters": [
+       "EXCLUDING_CASH",
+       "FREE_DLIVY"
+      ],
+      "productDeliveryInfo": {
+       "baseFee": 0,
+       "shipFromAddress": "경기도 용인시 처인구 원삼면 원양로 129-12 (지산물류) 지산물류 캘러웨이 (우 : 17168) ",
+       "deliveryMethodTypes": [
+        "DELIVERY"
+       ]
+      },
+      "fastDeliveryType": "NONE",
+      "isNewProduct": false,
+      "isGroupProduct": false,
+      "isFreshProduct": false,
+      "isLoungeProduct": false,
+      "standardPurchaseOptionCount": 0,
+      "standardProductName": "XR26 남성용 패키지 세트",
+      "standardGroupEpId": "90224147997",
+      "isOverseaProduct": false,
+      "promotionTypes": [
+       "NAVER_SHOPPING_FESTA"
+      ],
+      "hasGift": false,
+      "isBrandStore": true,
+      "deliveryAdditionalInfo": {
+       "orderClosedTime": ""
+      },
+      "isSuperPointProduct": false,
+      "purchaseQuantityInfo": {
+       "minPurchaseQuantity": 1
+      },
+      "lCatId": "50000007",
+      "mCatId": "50000029",
+      "sCatId": "50001102",
+      "ssCatId": "50002788",
+      "categoryName": "풀세트",
+      "itemLoggingCode": 0,
+      "isMembershipFreeDelivery": false,
+      "isCustomsDutySeparate": false,
+      "isCustomsServiceFeeSeparate": false,
+      "isIndividualSeller": false,
+      "matchType": "DEFAULT",
+      "catalogName": "",
+      "catalogProductCount": 0,
+      "catalogChildId": 0,
+      "catalogMatchType": "NOT_MATCH",
+      "isBranchProduct": false,
+      "isKurlyProduct": false,
+      "isHighEndProduct": false,
+      "isKnockitProduct": false,
+      "exceptBenefitTypes": [],
+      "mallGradeType": "BIG_POWER",
+      "page": 2,
+      "loggingCode": 313,
+      "isPS": false,
+      "stockQuantity": 30,
+      "authenticationType": "NORMAL",
+      "channelNo": 102018893
+     }
+    }
+   }
+  ]
+ }
+}
