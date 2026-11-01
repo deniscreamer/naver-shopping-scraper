@@ -16,7 +16,7 @@ served elsewhere:
                x-ns-* headers; any page / session id is accepted (verified
                2026-10-24, no page fetch needed). TREND view on a mobile
                device type answers 4 pages x 24 = 96 cards; filters are
-               query params (price "min|max", categoryIds "03"+id, booleans).
+               query params (price "min|max", categoryIds depth+id, booleans).
   * STORE      GET smartstore.naver.com/<slug>/best (or brand.naver.com/
                <slug>/best) — server-rendered, carries the store record
                (channelUid, payReferenceKey = checkoutMerchantNo, grade,

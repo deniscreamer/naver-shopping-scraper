@@ -138,7 +138,7 @@ Up to 96 search cards for a keyword (the widget's 4 pages x 24; there is no deep
 |---|---|---|---|
 | `query` | string, required | | 1-200 chars |
 | `min_price`, `max_price` | number >= 0 (KRW) | none | `min_price <= max_price`; an open bound is filled server-side |
-| `category` | category ref | none | restrict to a category id |
+| `category` | category ref | none | restrict to a category id at any depth (the depth prefix comes from DataLab, cached 7 d; unknown id -> 404; `0` = no filter) |
 | `min_rating` | choice | none | only `4.8` |
 | `free_delivery`, `fast_delivery`, `arrival_guarantee`, `brand_store`, `official_mall`, `membership_benefit` | bool | none | `true` filters; `false` = no filter |
 

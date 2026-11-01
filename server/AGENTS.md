@@ -20,7 +20,7 @@ Do not add `server/__init__.py` and do not write `from server import ...`.
 Verify:
 
 ```
-.venv/bin/python -m pytest -q                     # from the repo root, offline: 99 passed
+.venv/bin/python -m pytest -q                     # from the repo root, offline: 106 passed
 .venv/bin/python server/run.py                    # then, in another shell:
 .venv/bin/python scripts/smoke_endpoints.py       # live smoke; required for any transport or browser change
 ```

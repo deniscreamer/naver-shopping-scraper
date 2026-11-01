@@ -33,7 +33,7 @@ All paths are relative to `server/`, which is the import root (section 10).
 | `naver_shopping/fetch.py` | The only module that talks to Naver: curl surfaces, box calls, error classification. |
 | `naver_shopping/parsers.py` | Pure functions: raw JSON / HTML to output dicts. |
 | `naver_shopping/cache_config.py` | One TTL per cached namespace, each with its reason. |
-| `test_import_smoke.py`, `naver_shopping/test_*.py` | Offline tests (99 at the time of writing). Fixtures in `naver_shopping/fixtures/`. |
+| `test_import_smoke.py`, `naver_shopping/test_*.py` | Offline tests (106 at the time of writing). Fixtures in `naver_shopping/fixtures/`. |
 
 ## 2. Layers
 
@@ -83,7 +83,7 @@ R-NAVER-1, R-NAVER-2.
 3. `api.products_search(**data)` -> `cache.cached_call("naver_shopping.search", data, api._search, SEARCH_CACHE)`.
    A hit returns a deep copy.
 4. On a miss, `api._search` builds filters (`api._filters`: price bounds,
-   `"03"` category prefix, boolean flags) and calls `fetch.fetch_search`.
+   category prefix = two-digit tree depth from DataLab via `api._category_filter`, boolean flags) and calls `fetch.fetch_search`.
 5. `fetch._portal_json` runs `once()` under `fetch._retrying`:
    - `fetch._session()` returns this thread's curl_cffi session, creating it
      on first use (proxy, Accept-Language, widget ids, synthetic NNB cookie);
@@ -353,7 +353,7 @@ primary record, with dates; read it before changing the behaviour.
   -> `fetch._session` comment, `fetch.nnb_cookie`.
 - ns-portal ignores an open-ended price range. -> `api.OPEN_MAX_PRICE`
   comment (probed 2026-10-29).
-- Category filters take an `"03"` prefix. -> `naver_shopping.fetch` module
+- Category filters take a two-digit depth prefix (`04` + id for a level-4 category). -> `api._category_filter`
   docstring (SEARCH); `api._filters`.
 - `/<slug>/best` is the server-rendered store page that carries the store
   record without a login redirect. -> `naver_shopping.fetch` module docstring

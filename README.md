@@ -31,7 +31,7 @@ If Naver starts refusing your IP (HTTP 418/429), restart with a proxy:
 Offline tests (no network, no Chrome):
 
 ```bash
-.venv/bin/python -m pytest -q             # 99 passed
+.venv/bin/python -m pytest -q             # 106 passed
 .venv/bin/python -m pytest scripts -q     # scripts/ client tests, separate suite
 ```
 

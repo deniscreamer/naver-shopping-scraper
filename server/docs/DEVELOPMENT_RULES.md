@@ -163,7 +163,7 @@ Every surface that is not the store backend uses this path (R-NAVER-2).
 - **R-TEST-2 (MUST)** Every parser change or new upstream quirk gets a captured fixture and a test. A regression test carries a docstring with the dated observation.
 - **R-TEST-3 (MUST)** Tests monkeypatch module attributes (`F.config`, `A._record`, `A.box_post`), so keep `import config` as a module import and call fetch helpers through module names that tests can patch.
 - **R-TEST-4 (MUST)** Before merge:
-  - `.venv/bin/python -m pytest -q` passes. Baseline: 99 tests (82 parser/schema tests + 17 in `test_import_smoke.py`, which also asserts 24 routes). The count only goes up;
+  - `.venv/bin/python -m pytest -q` passes. Baseline: 106 tests (82 parser/schema tests + 7 in `test_search_filters.py` + 17 in `test_import_smoke.py`, which also asserts 24 routes). The count only goes up;
   - any change to transport or browser code (`fetch.py`, `browser_client.py`, `patchright_driver.py`, `url_blocking.py`, `egress.py`, `hostenv.py`, `config.py`, requirements) also passes a live smoke with the server running: `.venv/bin/python scripts/smoke_endpoints.py`, which covers at least one curl call and one box call. Record the result in the commit message.
 
 ## Checklist: adding a new endpoint

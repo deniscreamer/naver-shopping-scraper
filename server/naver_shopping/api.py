@@ -44,8 +44,8 @@ def _filters(data):
     out = {}
     if lo is not None or hi is not None:
         out["price"] = f"{int(lo) if lo is not None else 0}|{int(hi) if hi is not None else OPEN_MAX_PRICE}"
-    if data.get("category"):
-        out["categoryIds"] = "03" + data["category"]
+    if data.get("category") and data["category"] != "0":      # 0 = the whole tree, no filter
+        out["categoryIds"] = _category_filter(data["category"])
     if data.get("min_rating"):
         out["reviewScoreLowLimit"] = data["min_rating"]
     for param, key in (("free_delivery", "isFreeDelivery"), ("fast_delivery", "isFastDelivery"),
@@ -54,6 +54,18 @@ def _filters(data):
         if data.get(param):
             out[key] = True
     return out
+
+
+def _category_filter(category):
+    """ns-portal's categoryIds is the category's tree depth as two digits +
+    its id, NOT a fixed "03" (probed 2026-11-01 on "남성 골프채 풀세트":
+    0450002788 -> 28936, 0350002788 -> 0; 0350001102 -> 29695, 0250000029 ->
+    30556, 0150000007 -> 30561; a bare id is refused). The depth is DataLab's
+    `level`, cached with the category list; an unknown id is a 404."""
+    level = categories_list(category)["level"]
+    if not level:
+        raise NaverNotFound(f"category {category} has no level")
+    return f"{level:02d}{category}"
 
 
 def _applied(data):

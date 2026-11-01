@@ -90,7 +90,7 @@ Offline (no network, no Chrome), from the repo root; config in `/pyproject.toml`
 `server`):
 
 ```
-.venv/bin/python -m pytest -q                      # 99 tests
+.venv/bin/python -m pytest -q                      # 106 tests
 .venv/bin/python -m pytest server/test_import_smoke.py -q
 cd server && ../.venv/bin/python -m pytest -q      # also works
 ```
