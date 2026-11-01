@@ -1,6 +1,6 @@
 """Offline tests for the Naver Shopping parsers and reference resolvers.
 
-    python -m pytest naver_shopping/test_parsers.py -q
+    python -m pytest server/naver_shopping/test_parsers.py -q
 
 Fixtures (naver_shopping/fixtures/, captured 2026-10-24): ns-portal search
 slots (plain, filtered, a nonsense query), two smartstore /best pages and a

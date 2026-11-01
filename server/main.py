@@ -1,6 +1,6 @@
 """Use the scraper straight from Python — no server needed.
 
-    python main.py
+    python server/main.py
 
 Every function returns the same JSON the API does; results are written to
 output/*.json. Inputs go through the same schemas the API uses, so links,

@@ -12,3 +12,8 @@ venv/
 /output/
 /debug/
 **/.DS_Store
+
+.omc/
+/server/output/
+/scripts/output/*
+!/scripts/output/.gitkeep

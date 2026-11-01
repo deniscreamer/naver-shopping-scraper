@@ -1,6 +1,6 @@
 """Offline tests for the /naver-shopping/* request schemas.
 
-    python -m pytest naver_shopping/test_schemas.py -q
+    python -m pytest server/naver_shopping/test_schemas.py -q
 """
 import os
 import sys

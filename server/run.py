@@ -1,7 +1,7 @@
 """Start the Naver Shopping Scraper API.
 
-    python run.py            # http://localhost:8000
-    PORT=9000 python run.py  # another port
+    python server/run.py            # http://localhost:8000
+    PORT=9000 python server/run.py  # another port
 
 Then:  curl "http://localhost:8000/products/search?query=raspberry%20pi"
 """

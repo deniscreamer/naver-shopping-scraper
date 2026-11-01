@@ -1,0 +1,6 @@
+# Tool config only: no package is built from this repo.
+# server/ is the import root of the API (bare imports, no server/__init__.py),
+# so pytest gets it on sys.path the same way `python server/run.py` does.
+[tool.pytest.ini_options]
+testpaths = ["server"]
+pythonpath = ["server"]
