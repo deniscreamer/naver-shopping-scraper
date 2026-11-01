@@ -306,3 +306,13 @@ def test_listing_busy_raises():
     with pytest.raises(ApiError) as e:
         api.listing("q")
     assert e.value.status == 409
+
+
+def test_examples_compile():
+    import glob
+    import py_compile
+    here = os.path.dirname(os.path.abspath(__file__))
+    examples = sorted(glob.glob(os.path.join(here, "example_0*.py")))
+    assert len(examples) == 7
+    for path in examples:
+        py_compile.compile(path, doraise=True)

@@ -27,8 +27,32 @@ running server over HTTP only.
 | `smoke_endpoints.py` | Live smoke: `/health` plus the 11 endpoints, one at a time. Networked. |
 | `example_search_harvest.py` | Template: search, classify the cards, fetch details, write resumable JSONL |
 | `test_naver_api_client.py` | Offline tests for the client and the classifier |
+| `example_0N_*.py` | Runnable examples, one API topic each (see Examples) |
 | `harvest_listing.py` | Full listing of store product links for a keyword + category, price-sliced, resumable |
 | `output/` | Run output (`output/<run>/products.jsonl`, `listing.jsonl`), gitignored |
+
+## Examples: start here
+
+Small, runnable scripts, one topic each, in the order to read them. Start `server/run.py` first; example 7 also
+needs Chrome open with the adapter (`example_01` shows `extension: connected`).
+
+| Script | Shows |
+|---|---|
+| `example_01_health.py` | `api.health()`: the server is up, the extension status, the endpoint list |
+| `example_02_search.py` | `api.get()` with filters: `/products/count` + `/products/search` (up to 96 cards) |
+| `example_03_product_details.py` | `/products/details`: prices, options, stock, review stats of one product |
+| `example_04_reviews.py` | `api.pages()`: `/products/reviews` page by page |
+| `example_05_store.py` | `/stores/details` + `/stores/products` (best-sellers) |
+| `example_06_datalab.py` | `/keywords/rank` + `/keywords/trend` (Naver DataLab) |
+| `example_07_listing_then_details.py` | `api.listing()`: the full search listing (server: your Chrome via the adapter), then `/products/details` for its rows (server: its own Chrome). Two transports, one API |
+
+```sh
+.venv/bin/python scripts/example_01_health.py
+.venv/bin/python scripts/example_07_listing_then_details.py
+```
+
+All calls go through `naver_api_client.NaverApiClient`: `get(path, **params)`, `pages(path, **params)`,
+`listing(query, max_batches)`, `health()`; any non-200 raises `ApiError(status, error, errors)`.
 
 ## Running
 
