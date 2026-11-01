@@ -140,6 +140,20 @@ pricing, category, reviews, purchase count, first image, raw card) plus a `state
   is roughly 2,400 calls, about 2-2.5 hours at 3 s. `--min-price` cuts the cheap tail, where external malls and
   accessories dominate.
 
+## Full search listing through the API (`api.listing`)
+
+The whole search.shopping listing for a query (all batches, not capped at 96, no price slicing), as rows with the
+canonical store link. The server reads it in the owner's Chrome; a script only sees HTTP:
+
+```python
+from naver_api_client import NaverApiClient
+out = NaverApiClient().listing("남성 골프채 풀세트", max_batches=3)   # 0 = all
+out["job"]["status"], out["job"]["stop"], len(out["results"])
+```
+
+`ApiError` 409: another listing runs (one at a time); 503: the browser extension is not connected. A stopped job
+still returns its rows. Contract: server/docs/ENDPOINTS.md "Listing jobs".
+
 ## Shopify roadmap
 
 This is a design note only. There is no code yet.

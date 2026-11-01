@@ -19,7 +19,7 @@ this file in the same commit.
 - Default base URL: `http://localhost:8000` (`config.PORT`).
 
 ```
-GET /health  ->  {"status": "ok", "endpoints": ["/products/details", "/products/search", ...]}
+GET /health  ->  {"status": "ok", "endpoints": ["/products/details", ..., "/listings", ...], "extension": "connected"}
 ```
 
 ### Param rules (all endpoints)
@@ -307,6 +307,35 @@ Output: `{id, name, parent_id, level, path, is_leaf, order, count, children: [sa
 ```
 curl "http://localhost:8000/categories/list?category=50000003"
 ```
+
+## Listing jobs (beta): the full search listing
+
+The whole search.shopping.naver.com listing for a query (~50 products per batch, all batches), read on the server
+through the owner's Chrome (extension transport, [EXTENSION.md](EXTENSION.md)); callers see only these routes.
+Both prefixes. One job at a time.
+
+| Route | Params | Answer |
+|---|---|---|
+| `POST /listings` | `query` (1-100 chars, required), `max_batches` (0-200, 0 = all) as query params | `202` job; `409 {error, job_id}` another job runs; `503` the browser extension is not connected; `400` bad params |
+| `GET /listings/<job_id>` | - | job: `{id, query, status, max_batches, batches, kept, ads, total, cursor, has_more, stop, started_at, finished_at}`; `404` unknown |
+| `GET /listings/<job_id>/products` | `page` (1-1000) | rows, 50 a page, the usual pagination shape (works while the job runs: rows so far) |
+
+`status`: `running`; `captcha` (the owner is asked to solve one in Chrome; waits 60 s); `done` (`hasMore=false` or
+`max_batches` reached); `stopped` (`stop` says why: a wall, a refused batch, a stall, an adapter error).
+`/health` adds `extension: connected | disconnected | off`.
+
+A row: `{product_id, nv_mid, link, name, store {name, slug, link, grade, is_brand_store}, pricing {sale_price,
+discounted_price, discount_ratio, currency}, category_id, reviews {count, average_score}, stock_quantity, image,
+is_ad, query, batch, seen_at}`. `link` is the canonical store product link `/products/details` takes. Unique by
+`product_id`; ads are kept and flagged.
+
+```
+curl -X POST "http://localhost:8000/listings?query=%EB%82%A8%EC%84%B1%20%EA%B3%A8%ED%94%84%EC%B1%84%20%ED%92%80%EC%84%B8%ED%8A%B8&max_batches=3"
+curl "http://localhost:8000/listings/<job_id>"
+curl "http://localhost:8000/listings/<job_id>/products?page=1"
+```
+
+Client: `scripts/naver_api_client.py` `NaverApiClient.listing(query)` starts, polls and returns every row.
 
 ## Search card links
 

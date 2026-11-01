@@ -1,7 +1,8 @@
 # Extension transport (beta): the search.shopping listing through the owner's Chrome
 
-Status: **beta** (2026-11-01). One job today: the full search.shopping.naver.com listing for a query
-(`server/ext_listing.py`). Rules: [DEVELOPMENT_RULES.md](DEVELOPMENT_RULES.md) R-EXT-*, decision log 2026-11-01.
+Status: **beta** (2026-11-01). One job today: the full search.shopping.naver.com listing for a query, served by
+the HTTP API as listing jobs (`POST /listings`, [ENDPOINTS.md](ENDPOINTS.md#listing-jobs-beta-the-full-search-listing))
+and runnable by hand (`server/ext_listing.py`). Rules: [DEVELOPMENT_RULES.md](DEVELOPMENT_RULES.md) R-EXT-*, decision log 2026-11-01.
 
 ## Why an adapter at all
 
@@ -27,9 +28,12 @@ out of scope (R-EXT-1).
 ## How it works
 
 ```
-server/ext_listing.py ──► server/ext_bridge.py ──ws://127.0.0.1:8765──► extension/ (owner's Chrome)
-   (all decisions)          (call(op, args))                            (dumb executor, no site logic)
+scripts/ ──HTTP──► run.py: /listings ──► listing_jobs.py ──► ext_listing.walk ──► ext_bridge.py ──ws://127.0.0.1:8765──► extension/
+                                          (one job, thread)   (all decisions)     (call(op, args))                       (owner's Chrome)
 ```
+
+`run.py` starts the bridge at startup; the adapter connects to it and stays connected. `ext_listing.py` run by hand
+starts its own bridge on the same port, so stop the API server first (or the port is taken).
 
 1. **Way in, like a person.** `www.naver.com` -> mouse click on 쇼핑 (opens a new tab) -> click the shopping search
    box, type the query key by key, Enter -> the site routes to `search.shopping.naver.com/ns/search`. Clicks and
@@ -65,6 +69,11 @@ Tried and dropped (2026-11-01): our own in-page `fetch` per cursor (418: no toke
 
 ## Run
 
+Through the API (what scripts use): start `server/run.py`, check `/health` says `"extension": "connected"`, then
+`POST /listings` (or `NaverApiClient.listing(query)`); output under `server/output/listings/<job_id>/`.
+
+By hand (API server stopped):
+
 ```
 .venv/bin/python server/ext_listing.py "남성 골프채 풀세트" --max-batches 3    # a short check
 .venv/bin/python server/ext_listing.py "남성 골프채 풀세트" --out golf-mens   # the whole listing
@@ -81,7 +90,8 @@ batch). Install / reload the adapter: [extension/README.md](../../extension/READ
 |---|---|
 | `extension/` | MV3 adapter: `background.js` (ops), `capture_main.js` + `relay.js` (answer copy) |
 | `server/ext_bridge.py` | WebSocket bridge, 127.0.0.1, extension origins only |
-| `server/ext_listing.py` | the listing job (path, walls, scroll loop, output) |
+| `server/ext_listing.py` | the listing walk (path, walls, scroll loop, output); also a CLI |
+| `server/listing_jobs.py` | HTTP jobs: one at a time, a thread per job, status + rows for `/listings` |
 | `server/naver_shopping/composite.py` | pure parsers (first batch, answers, rows) |
 | `server/notify.py` | captcha / stop notifications (webhook or macOS) |
-| tests | `test_ext_bridge.py`, `naver_shopping/test_composite.py` (offline) |
+| tests | `test_ext_bridge.py`, `test_listing_jobs.py`, `naver_shopping/test_composite.py` (offline) |

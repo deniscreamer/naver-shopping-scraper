@@ -61,6 +61,15 @@ class ExtBridge:
         return self
 
     def stop(self):
+        """Close the extension's connection too: its handler thread is not a
+        daemon, so an open connection would keep the process alive on Ctrl+C."""
+        with self._lock:
+            conn = self._conn
+        if conn is not None:
+            try:
+                conn.close()
+            except Exception:
+                pass
         if self._server is not None:
             self._server.shutdown()
 

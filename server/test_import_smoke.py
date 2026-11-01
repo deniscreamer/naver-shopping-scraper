@@ -15,7 +15,7 @@ MODULES = ["browser_client", "cache", "config", "egress", "hostenv", "patchright
            "schema_fields", "scraper_errors", "url_blocking",
            "naver_shopping.api", "naver_shopping.cache_config", "naver_shopping.fetch",
            "naver_shopping.parsers", "naver_shopping.refs", "naver_shopping.schemas",
-           "naver_shopping.composite", "ext_bridge", "notify"]
+           "naver_shopping.composite", "ext_bridge", "notify", "ext_listing", "listing_jobs"]
 
 
 @pytest.mark.parametrize("name", MODULES)
@@ -31,5 +31,7 @@ def test_routes_mounted():
     for path, *_ in routes.ENDPOINTS:
         assert path in rules and "/" + routes.SITE + path in rules
     assert {"/", "/health"} <= rules
-    # 11 endpoints at both prefixes, plus / and /health
-    assert len(rules) == 2 * len(routes.ENDPOINTS) + 2 == 24
+    for path in routes.LISTING_PATHS:
+        assert path in rules and "/" + routes.SITE + path in rules
+    # 11 endpoints + 3 listing paths at both prefixes, plus / and /health
+    assert len(rules) == 2 * (len(routes.ENDPOINTS) + len(routes.LISTING_PATHS)) + 2 == 30

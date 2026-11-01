@@ -17,7 +17,7 @@ site publishes nothing for today).
 """
 from datetime import date, timedelta
 
-from marshmallow import ValidationError, validates_schema
+from marshmallow import ValidationError, fields, validate, validates_schema
 
 from schema_fields import (BaseSchema, ChoiceField, CommaListField, DateField, Flag, PageField, Price,
                            QueryField, RefField)
@@ -180,3 +180,19 @@ class CategoriesTrendSchema(_DatalabWindow):
 class CategoriesListSchema(BaseSchema):
     category = CategoryRefField(required=False, load_default="0", metadata={
         "description": "parent category id; 0 or omitted lists the top-level categories"})
+
+
+# ---- listing jobs (extension transport, beta) ---------------------------------------
+
+MAX_LISTING_BATCHES = 200            # ~50 products a batch; 4385 results = ~88 batches
+MAX_LISTING_PAGE = 1000              # 50 rows a page
+
+
+class ListingStartSchema(BaseSchema):
+    query = QueryField(max_length=100, metadata={"description": "search keywords, as on search.shopping.naver.com"})
+    max_batches = fields.Integer(load_default=0, validate=validate.Range(min=0, max=MAX_LISTING_BATCHES), metadata={
+        "description": "stop after N batches of ~50 products (0 = the whole listing)"})
+
+
+class ListingProductsSchema(BaseSchema):
+    page = PageField(max_page=MAX_LISTING_PAGE, metadata={"description": "1-based page of 50 listing rows"})

@@ -40,7 +40,10 @@ class FakeSession:
         self.calls = []
 
     def get(self, url, params=None, timeout=None):
-        self.calls.append({"url": url, "params": dict(params or {}), "timeout": timeout})
+        return self.request("GET", url, params=params, timeout=timeout)
+
+    def request(self, method, url, params=None, timeout=None):
+        self.calls.append({"method": method, "url": url, "params": dict(params or {}), "timeout": timeout})
         answer = self.answers.pop(0)
         if isinstance(answer, Exception):
             raise answer
@@ -278,3 +281,28 @@ def test_harvest_logs_a_400_and_continues(tmp_path):
     api, _ = client(ok({"results": cards}), FakeResponse(400, {"error": "bad product"}), ok({"id": "8087042746"}))
     assert H.harvest(api, "q", 0, str(tmp_path)) == 1
     assert len(api.session.calls) == 3
+
+
+
+def test_listing_starts_polls_and_reads_every_row():
+    job = {"id": "20261101-120000-abcd", "status": "running", "kept": 0}
+    api, sleeps = client(
+        FakeResponse(202, job),
+        ok({**job, "status": "captcha"}),
+        ok({**job, "status": "done", "kept": 3, "stop": "hasMore=false"}),
+        ok({"results": [{"product_id": "1"}, {"product_id": "2"}], "next": "http://x/next"}),
+        ok({"results": [{"product_id": "3"}], "next": None}),
+    )
+    out = api.listing("남성 골프채 풀세트")
+    assert out["job"]["status"] == "done" and [r["product_id"] for r in out["results"]] == ["1", "2", "3"]
+    calls = api.session.calls
+    assert calls[0]["method"] == "POST" and calls[0]["params"] == {"query": "남성 골프채 풀세트"}
+    assert calls[1]["url"].endswith("/listings/20261101-120000-abcd") and len(sleeps) == 2
+    assert calls[3]["url"].endswith("/listings/20261101-120000-abcd/products")
+
+
+def test_listing_busy_raises():
+    api, _ = client(FakeResponse(409, {"error": "a listing job is running: x", "job_id": "x"}))
+    with pytest.raises(ApiError) as e:
+        api.listing("q")
+    assert e.value.status == 409

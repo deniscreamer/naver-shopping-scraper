@@ -37,6 +37,7 @@ RETRY_STATUSES = (502,)
 SITE_PREFIX = "/naver-shopping"     # routes.mount also serves every path under it
 # the schema page limits (server/naver_shopping/schemas.py MAX_REVIEW_PAGE / MAX_RANK_PAGE)
 PAGE_CAPS = {"/products/reviews": 500, "/keywords/rank": 25}
+LISTING_POLL = 5                    # seconds between job status checks
 
 
 class ApiError(Exception):
@@ -65,12 +66,19 @@ class NaverApiClient:
     def get(self, path, **params):
         """GET an unprefixed path (/products/search); None params are dropped.
         Returns the decoded JSON body of a 200, raises ApiError otherwise."""
+        return self._request("GET", path, params)
+
+    def post(self, path, **params):
+        """POST with query params (POST /listings); answers 200 / 202 are returned."""
+        return self._request("POST", path, params)
+
+    def _request(self, method, path, params):
         url = self.base_url + "/" + path.lstrip("/")
         params = {k: v for k, v in params.items() if v is not None}
         attempt = 0
         while True:
             try:
-                resp = self.session.get(url, params=params, timeout=self.timeout)
+                resp = self.session.request(method, url, params=params, timeout=self.timeout)
             except requests.exceptions.ReadTimeout:
                 raise                    # the server is still working on it: never retry
             except requests.exceptions.ConnectionError as e:
@@ -79,7 +87,7 @@ class NaverApiClient:
                 print(f"naver_api_client: {path} connection failed ({type(e).__name__}), "
                       f"retry in {RETRY_BACKOFF[attempt]} s")
             else:
-                if resp.status_code == 200:
+                if resp.status_code in (200, 202):
                     return resp.json()
                 body = _json_or_none(resp)
                 error = ApiError(resp.status_code, body.get("error") if body else resp.text[:200],
@@ -121,6 +129,27 @@ class NaverApiClient:
 
     def health(self):
         return self.get("/health")
+
+    def listing(self, query, max_batches=0, poll=LISTING_POLL):
+        """The full search listing for a query (server-side: the owner's Chrome
+        through the adapter; this client does not care). Starts a job, waits
+        while it runs (a captcha only shows as status "captcha"), then reads
+        every row. -> {"job": <final job>, "results": [rows]}; a stopped job
+        returns what it got, job["stop"] says why. ApiError 409 = another
+        listing runs, 503 = the browser extension is not connected."""
+        job = self.post("/listings", query=query, max_batches=max_batches or None)
+        last = None
+        while job["status"] in ("running", "captcha"):
+            if job["status"] != last:
+                print(f"naver_api_client: listing {job['id']} {job['status']} ({job.get('kept') or 0} rows)")
+                last = job["status"]
+            self.sleep(poll)
+            job = self.get(f"/listings/{job['id']}")
+        print(f"naver_api_client: listing {job['id']} {job['status']}: {job.get('kept')} rows, stop: {job.get('stop')}")
+        rows = []
+        for page in self.pages(f"/listings/{job['id']}/products"):
+            rows.extend(page.get("results") or [])
+        return {"job": job, "results": rows}
 
 
 def _never_connected(exc):

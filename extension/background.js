@@ -9,7 +9,7 @@
 // Only tabs this extension opened (or that they opened) can be driven.
 
 const BRIDGE_URL = "ws://127.0.0.1:8765";
-const VERSION = "0.4.1";
+const VERSION = "0.4.2";
 const KEEPALIVE_MS = 20000;          // an active WebSocket keeps the MV3 worker alive
 const MAX_CAPTURES = 300;            // per tab
 
@@ -25,7 +25,7 @@ function connect() {
   try { ws = new WebSocket(BRIDGE_URL); } catch (e) { setTimeout(connect, 3000); return; }
   ws.onopen = () => send({ hello: { version: VERSION } });
   ws.onmessage = (e) => handle(e.data);
-  ws.onclose = () => { ws = null; setTimeout(connect, 3000); };
+  ws.onclose = () => { ws = null; setTimeout(() => { if (!ws) connect(); }, 3000); };
   ws.onerror = () => {};
 }
 
@@ -35,6 +35,11 @@ function send(obj) {
 
 setInterval(() => send({ ping: Date.now() }), KEEPALIVE_MS);
 connect();
+// Chrome stops an idle MV3 worker (~30 s with no bridge to talk to) and its
+// reconnect timer dies with it; an alarm wakes the worker every 30 s and
+// reconnects, so a bridge started later (run.py) is always found.
+chrome.alarms.create("reconnect", { periodInMinutes: 0.5 });
+chrome.alarms.onAlarm.addListener(() => { if (!ws) connect(); });
 
 async function handle(raw) {
   let msg;

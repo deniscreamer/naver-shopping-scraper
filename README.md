@@ -31,7 +31,7 @@ If Naver starts refusing your IP (HTTP 418/429), restart with a proxy:
 Offline tests (no network, no Chrome):
 
 ```bash
-.venv/bin/python -m pytest -q             # 121 passed
+.venv/bin/python -m pytest -q             # 129 passed
 .venv/bin/python -m pytest scripts -q     # scripts/ client tests, separate suite
 ```
 
@@ -54,6 +54,7 @@ Every endpoint is served at `/path` and at `/naver-shopping/path`. `/` and
 | `/keywords/trend` | no | A keyword's click trend (DataLab) |
 | `/categories/trend` | no | A category's click trend with device, gender and age split |
 | `/categories/list` | no | Child categories of a parent category (0 or omitted = top level), with their IDs |
+| `/listings` (POST, beta) | your Chrome | The whole search listing for a query as a job; poll `/listings/<id>`, rows at `/listings/<id>/products` |
 
 ## Repository layout
 

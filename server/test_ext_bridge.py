@@ -77,3 +77,15 @@ def test_not_connected_raises(bridge):
 def test_web_origin_is_refused(bridge):
     with pytest.raises(InvalidStatus):
         connect(f"ws://127.0.0.1:{bridge.port}", origin="https://evil.example")
+
+
+def test_stop_closes_the_extension_connection():
+    b = ExtBridge(port=free_port()).start()
+    fake_extension(b, {})
+    assert b.wait_connected(5)
+    b.stop()
+    for _ in range(50):                       # the handler thread sees the close and lets go
+        if not b.wait_connected(0):
+            break
+        threading.Event().wait(0.05)
+    assert not b.wait_connected(0)

@@ -11,6 +11,7 @@ from urllib.parse import urlencode
 
 from bottle import request, response, route
 
+import listing_jobs
 from naver_shopping import api, schemas
 from schema_fields import load_query
 from scraper_errors import BadRequest, Blocked, NotFound, UpstreamError
@@ -131,7 +132,49 @@ for _path, _schema, _impl, _paginated in ENDPOINTS:
     mount(_path, _schema, _impl, _paginated)
 
 
+# ---- listing jobs (extension transport, beta: server/docs/EXTENSION.md) --------------
+
+LISTING_PATHS = ("/listings", "/listings/<job_id>", "/listings/<job_id>/products")
+
+
+def listings_start():
+    data, error = load_query(schemas.ListingStartSchema, query_dict())
+    if error:
+        return json_response(error, 400)
+    try:
+        job = listing_jobs.start(data["query"], data["max_batches"])
+    except listing_jobs.Busy as e:
+        return json_response({"error": f"a listing job is running: {e}", "job_id": str(e)}, 409)
+    except listing_jobs.NoExtension:
+        return json_response({"error": "the browser extension is not connected: open Chrome with the "
+                                       "naver-scrap adapter loaded (extension/README.md)"}, 503)
+    return json_response(job, 202)
+
+
+def listings_get(job_id):
+    job = listing_jobs.get(job_id)
+    return json_response(job) if job else json_response({"error": f"listing job {job_id} not found"}, 404)
+
+
+def listings_products(job_id):
+    raw = query_dict()
+    data, error = load_query(schemas.ListingProductsSchema, raw)
+    if error:
+        return json_response(error, 400)
+    result = listing_jobs.products(job_id, data["page"])
+    if result is None:
+        return json_response({"error": f"listing job {job_id} not found"}, 404)
+    return json_response(paginate(result, request.path, raw))
+
+
+for _prefix in ("", "/" + SITE):
+    route(_prefix + "/listings", method="POST")(listings_start)
+    route(_prefix + "/listings/<job_id>", method="GET")(listings_get)
+    route(_prefix + "/listings/<job_id>/products", method="GET")(listings_products)
+
+
 @route("/", method="GET")
 @route("/health", method="GET")
 def health():
-    return json_response({"status": "ok", "endpoints": [p for p, *_ in ENDPOINTS]})
+    return json_response({"status": "ok", "endpoints": [p for p, *_ in ENDPOINTS] + list(LISTING_PATHS),
+                          "extension": listing_jobs.extension_status()})

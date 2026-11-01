@@ -83,8 +83,10 @@ def walls(bridge, tab):
     return page, hard, human
 
 
-def check(bridge, tab, step, out_dir):
-    """True to go on. Waits HUMAN_WAIT_S for a human on a captcha / login; False on a ban."""
+def check(bridge, tab, step, out_dir, summary=None):
+    """True to go on. Waits HUMAN_WAIT_S for a human on a captcha / login; False on a ban.
+    summary["status"] reads "captcha" while it waits (the HTTP job shows it)."""
+    summary = summary if summary is not None else {}
     page, hard, human = walls(bridge, tab)
     log(f"[{step}] {page.get('url')} title={page.get('title')!r}")
     if hard:
@@ -96,6 +98,7 @@ def check(bridge, tab, step, out_dir):
         return True
     shot = screenshot(bridge, tab, out_dir, f"{step}-captcha")
     log(f"CAPTCHA at {step}: {human}; waiting {HUMAN_WAIT_S} s for a human; {shot}")
+    summary["status"] = "captcha"
     notify("captcha", f"Captcha at {step}: solve it in Chrome within {HUMAN_WAIT_S} s",
            url=page.get("url"), markers=human, screenshot=shot)
     t0 = time.monotonic()
@@ -107,6 +110,7 @@ def check(bridge, tab, step, out_dir):
             return False
         if not human:
             log(f"[{step}] captcha solved after {int(time.monotonic() - t0)} s")
+            summary["status"] = "running"
             pause(2, 3)
             return True
     log(f"STOP: captcha at {step} not solved in {HUMAN_WAIT_S} s")
@@ -116,19 +120,19 @@ def check(bridge, tab, step, out_dir):
 
 # ---- path ---------------------------------------------------------------------------
 
-def open_search(bridge, query, out_dir):
+def open_search(bridge, query, out_dir, summary=None):
     """naver.com -> 쇼핑 -> typed search -> (results tab id, None) or (None, why it stopped)."""
     tab = bridge.call("tab_open", url=HOME)["tabId"]
     opened = [tab]
     pause(2.5, 4)
-    if not check(bridge, tab, "naver", out_dir):
+    if not check(bridge, tab, "naver", out_dir, summary):
         return None, "wall at naver.com"
     clicked = bridge.call("click", tabId=tab, selector=SHOPPING_LINK)
     tab = clicked.get("newTabId") or tab
     opened.append(tab)
     bridge.call("wait_load", tabId=tab, timeoutMs=45000)
     pause(2.5, 4)
-    if not check(bridge, tab, "shopping-home", out_dir):
+    if not check(bridge, tab, "shopping-home", out_dir, summary):
         return None, "wall at the shopping home"
     box = next((s for s in SEARCH_BOXES if (bridge.call("query", tabId=tab, selector=s) or {}).get("visible")), None)
     if not box:
@@ -148,7 +152,7 @@ def open_search(bridge, query, out_dir):
             break
     bridge.call("wait_load", tabId=tab, timeoutMs=45000)
     pause(3, 5)
-    if not check(bridge, tab, "search", out_dir):
+    if not check(bridge, tab, "search", out_dir, summary):
         return None, "wall at the search page"
     for other in set(opened) - {tab}:             # the naver.com / shopping-home tabs are done
         try:
@@ -206,7 +210,11 @@ def run(query, out_dir, max_batches, keep_tab):
     os.makedirs(out_dir, exist_ok=True)
     summary = {"query": query, "started_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                "batches": 0, "stop": None}
-    bridge = ExtBridge().start()
+    try:
+        bridge = ExtBridge().start()
+    except OSError as e:
+        summary["stop"] = f"bridge port taken ({e}): stop the API server or use POST /listings"
+        return finish(summary, out_dir, 2)
     log(f"waiting up to {CONNECT_WAIT_S // 60} min for the extension (Chrome open, adapter loaded) ...")
     if not bridge.wait_connected(CONNECT_WAIT_S):
         summary["stop"] = "the extension did not connect"
@@ -219,7 +227,7 @@ def run(query, out_dir, max_batches, keep_tab):
 
 
 def walk(bridge, query, out_dir, max_batches, keep_tab, summary):
-    tab, why = open_search(bridge, query, out_dir)
+    tab, why = open_search(bridge, query, out_dir, summary)
     if tab is None:
         summary["stop"] = why
         return finish(summary, out_dir, 1 if why.startswith("no search box") else 3)
@@ -229,46 +237,51 @@ def walk(bridge, query, out_dir, max_batches, keep_tab, summary):
         summary["stop"] = "no first batch in the search page HTML (layout changed?)"
         return finish(summary, out_dir, 1)
     pending, code = [batch], 0                    # answers the page fetched while loading are kept
-    while pending:
-        batch = pending.pop(0)
-        summary["batches"] += 1
-        new = listing.add(batch, summary["batches"])
-        summary.update(total=batch.get("total"), cursor=batch.get("cursor"), has_more=batch.get("hasMore"),
-                       kept=listing.kept, ads=listing.ads, skipped=listing.skipped)
-        log(f"batch {summary['batches']}: cursor {batch.get('cursor')} of total {batch.get('total')}, "
-            f"+{new} new (kept {listing.kept}, ads {listing.ads})")
-        if not batch.get("hasMore"):
-            summary["stop"] = "hasMore=false"
-            break
-        if max_batches and summary["batches"] >= max_batches:
-            summary["stop"] = f"--max-batches {max_batches}"
-            break
-        if pending:
-            continue
-        captures = next_batches(bridge, tab)
-        if not captures:
-            if not check(bridge, tab, f"batch-{summary['batches'] + 1}", out_dir):
-                summary["stop"], code = "wall while scrolling", 3
+    try:
+        while pending:
+            batch = pending.pop(0)
+            summary["batches"] += 1
+            new = listing.add(batch, summary["batches"])
+            summary.update(total=batch.get("total"), cursor=batch.get("cursor"), has_more=batch.get("hasMore"),
+                           kept=listing.kept, ads=listing.ads, skipped=listing.skipped)
+            log(f"batch {summary['batches']}: cursor {batch.get('cursor')} of total {batch.get('total')}, "
+                f"+{new} new (kept {listing.kept}, ads {listing.ads})")
+            if not batch.get("hasMore"):
+                summary["stop"] = "hasMore=false"
                 break
+            if max_batches and summary["batches"] >= max_batches:
+                summary["stop"] = f"--max-batches {max_batches}"
+                break
+            if pending:
+                continue
             captures = next_batches(bridge, tab)
-        if not captures:
-            summary["stop"], code = "stalled: the page loaded no next batch", 1
-            notify("stalled", f"Listing for {query!r} stalled after {summary['batches']} batches")
-            break
-        for capture in captures:
-            parsed = composite.batch_from_answer(capture.get("body"))
-            if capture.get("status") != 200 or parsed is None:
-                shot = screenshot(bridge, tab, out_dir, "batch-refused")
-                summary["stop"], code = f"batch refused: HTTP {capture.get('status')}", 3
-                log(f"STOP: {summary['stop']}; {shot}")
-                notify("blocked", f"Listing for {query!r} refused (HTTP {capture.get('status')})", screenshot=shot)
-                pending = []
+            if not captures:
+                if not check(bridge, tab, f"batch-{summary['batches'] + 1}", out_dir, summary):
+                    summary["stop"], code = "wall while scrolling", 3
+                    break
+                captures = next_batches(bridge, tab)
+            if not captures:
+                summary["stop"], code = "stalled: the page loaded no next batch", 1
+                notify("stalled", f"Listing for {query!r} stalled after {summary['batches']} batches")
                 break
-            pending.append(parsed)
-        if code:
-            break
-    if not keep_tab:
-        bridge.call("tab_close", tabId=tab)
+            for capture in captures:
+                parsed = composite.batch_from_answer(capture.get("body"))
+                if capture.get("status") != 200 or parsed is None:
+                    shot = screenshot(bridge, tab, out_dir, "batch-refused")
+                    summary["stop"], code = f"batch refused: HTTP {capture.get('status')}", 3
+                    log(f"STOP: {summary['stop']}; {shot}")
+                    notify("blocked", f"Listing for {query!r} refused (HTTP {capture.get('status')})", screenshot=shot)
+                    pending = []
+                    break
+                pending.append(parsed)
+            if code:
+                break
+    finally:
+        if not keep_tab:
+            try:
+                bridge.call("tab_close", tabId=tab)
+            except ExtError:
+                pass                              # the adapter may be gone: keep the real stop reason
     return finish(summary, out_dir, code)
 
 

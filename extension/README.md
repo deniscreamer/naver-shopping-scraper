@@ -8,8 +8,9 @@ Why it exists and how the listing uses it: [server/docs/EXTENSION.md](../server/
 
 1. Chrome -> `chrome://extensions` -> turn on **Developer mode** (top right).
 2. **Load unpacked** -> choose this `extension/` folder.
-3. The card "naver-scrap adapter" appears. It connects by itself whenever a bridge runs; with no bridge running,
-   Chrome logs `ERR_CONNECTION_REFUSED` every 3 s: harmless.
+3. The card "naver-scrap adapter" appears. It connects by itself whenever a bridge runs (an alarm wakes it every
+   30 s, so a server started later is found within ~30 s); with no bridge running, Chrome logs
+   `ERR_CONNECTION_REFUSED`: harmless.
 
 After any change in this folder: **reload** the card (circular arrow) and check the version.
 

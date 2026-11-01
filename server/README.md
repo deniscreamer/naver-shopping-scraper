@@ -90,13 +90,13 @@ Offline (no network, no Chrome), from the repo root; config in `/pyproject.toml`
 `server`):
 
 ```
-.venv/bin/python -m pytest -q                      # 121 tests
+.venv/bin/python -m pytest -q                      # 129 tests
 .venv/bin/python -m pytest server/test_import_smoke.py -q
 cd server && ../.venv/bin/python -m pytest -q      # also works
 ```
 
-`test_import_smoke.py` imports every library module (not `run.py` / `main.py`) by its bare name and checks the 24 mounted routes (11 endpoints x 2
-prefixes, plus `/` and `/health`).
+`test_import_smoke.py` imports every library module (not `run.py` / `main.py`) by its bare name and checks the 30 mounted routes (11 endpoints and 3 `/listings`
+routes x 2 prefixes, plus `/` and `/health`).
 
 Live smoke (server running, networked, may launch Chrome); required after any transport or browser change:
 
@@ -117,7 +117,10 @@ to `output/*.json` relative to the current working directory.
 (install once: [../extension/README.md](../extension/README.md); why: [docs/EXTENSION.md](docs/EXTENSION.md)).
 
 ```
-.venv/bin/python server/ext_listing.py "남성 골프채 풀세트" --max-batches 3
+curl -X POST "http://localhost:8000/listings?query=...&max_batches=3"   # with run.py running: a listing job
+.venv/bin/python server/ext_listing.py "남성 골프채 풀세트" --max-batches 3   # by hand, run.py stopped
 ```
+
+`/health` shows `"extension": "connected"` once the adapter is connected to the running server.
 
 `NAVER_NOTIFY_WEBHOOK=<url>`: where captcha / stop notices are POSTed (JSON); unset = a macOS notification.
