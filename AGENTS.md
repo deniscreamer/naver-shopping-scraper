@@ -20,7 +20,6 @@ pyproject.toml     pytest config only (testpaths = pythonpath = ["server"])
 ## Branches
 
 - `develop` is the development branch (cut from `master`, includes the server/ + scripts/ restructure).
-- `origin/dev` is an older, separate line (persistent profiles, CAPTCHA handoff). Do not touch it.
 - Never push, force-push or rewrite remote branches unless the user asks.
 
 ## Platform
