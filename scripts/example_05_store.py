@@ -7,9 +7,9 @@
 from naver_api_client import NaverApiClient
 
 api = NaverApiClient()
-store = api.get("/stores/details", store="dailyromantic")
+store = api.store_details("dailyromantic")                         # -> naver_types.StoreDetails
 print(store["name"], "-", store["link"], "- grade", store.get("grade"))
 
-best = api.get("/stores/products", store="dailyromantic", list="best", period="weekly")
+best = api.store_products("dailyromantic", list="best", period="weekly")   # -> StoreProducts
 for product in best["results"][:5]:
-    print(f"- {product['name'][:50]}  {product['link']}")
+    print(f"- {(product['name'] or '')[:50]}  {product['link']}")

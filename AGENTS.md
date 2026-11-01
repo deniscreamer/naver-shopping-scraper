@@ -11,7 +11,7 @@ server/            the API and its import root (bare imports, NO server/__init__
   run.py routes.py config.py cache.py browser_client.py patchright_driver.py ...
   naver_shopping/  endpoint logic, fetch, parsers, schemas, offline tests, fixtures/
   docs/            DEVELOPMENT_RULES.md, ARCHITECTURE.md, ENDPOINTS.md, KNOWN_ISSUES.md
-scripts/           HTTP-only consumers of the running API (example_01..07: how to call it)
+scripts/           HTTP-only consumers of the running API (example_01..07: how to call it; naver_types.py: answer types)
 extension/         Chrome adapter for the owner's browser (beta, search.shopping listing)
 archive/docker/    retired Docker/Linux setup, not maintained
 pyproject.toml     pytest config only (testpaths = pythonpath = ["server"])

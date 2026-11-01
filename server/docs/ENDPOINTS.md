@@ -8,6 +8,9 @@ Source of truth in code: `routes.ENDPOINTS` (paths), `naver_shopping/schemas.py`
 `routes.call` / `routes.paginate` (errors, pagination). A change to any of these that is visible over HTTP updates
 this file in the same commit.
 
+Typed shapes of every answer below: `scripts/naver_types.py` (TypedDicts, checked against real captured answers by
+`scripts/test_naver_types.py`). A change to an answer's shape updates that type and its fixture in the same commit.
+
 ## Basics
 
 - All endpoints are `GET` with query-string params and answer JSON encoded as UTF-8 with Korean text unescaped. The

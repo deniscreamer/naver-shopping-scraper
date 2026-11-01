@@ -1,0 +1,84 @@
+{
+ "category_id": "50001102",
+ "start_date": "2026-10-01",
+ "end_date": "2026-10-31",
+ "period": "weekly",
+ "device": null,
+ "gender": null,
+ "age": null,
+ "category_name": "골프클럽",
+ "category_path": "스포츠/레저 > 골프 > 골프클럽",
+ "series": [
+  {
+   "date": "2026-09-28",
+   "value": 100.0
+  },
+  {
+   "date": "2026-10-05",
+   "value": 98.13342
+  },
+  {
+   "date": "2026-10-12",
+   "value": 92.69671
+  },
+  {
+   "date": "2026-10-19",
+   "value": 93.17799
+  },
+  {
+   "date": "2026-10-26",
+   "value": 76.26172
+  }
+ ],
+ "device_share": [
+  {
+   "code": "mo",
+   "label": "모바일",
+   "ratio": 100.0
+  },
+  {
+   "code": "pc",
+   "label": "PC",
+   "ratio": 21.52054
+  }
+ ],
+ "gender_share": [
+  {
+   "code": "f",
+   "label": "여성",
+   "ratio": 18.74218
+  },
+  {
+   "code": "m",
+   "label": "남성",
+   "ratio": 100.0
+  }
+ ],
+ "age_share": [
+  {
+   "code": "10",
+   "label": "10대",
+   "ratio": 0.13063
+  },
+  {
+   "code": "20",
+   "label": "20대",
+   "ratio": 2.56069
+  },
+  {
+   "code": "30",
+   "label": "30대",
+   "ratio": 18.97753
+  },
+  {
+   "code": "40",
+   "label": "40대",
+   "ratio": 77.05531
+  },
+  {
+   "code": "50",
+   "label": "50대",
+   "ratio": 100.0
+  }
+ ]
+}

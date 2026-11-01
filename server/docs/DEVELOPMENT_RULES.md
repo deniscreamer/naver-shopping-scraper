@@ -176,7 +176,10 @@ Every surface that is not the store backend uses this path (R-NAVER-2).
 6. In `naver_shopping/api.py`: a private impl plus a public function wrapped in `cached_call` with a new namespace and a new TTL in `cache_config.py`, or a slice of an existing bundle (R-CACHE-1, R-ARCH-7).
 7. One row in `routes.ENDPOINTS` (serves both prefixes). Update the route count asserted in `test_import_smoke.test_routes_mounted`.
 8. A row in [ENDPOINTS.md](ENDPOINTS.md); a line in ARCHITECTURE "Naver specifics" for new upstream facts (R-NAVER-4).
-9. Run pytest, then the live smoke for the new endpoint (R-TEST-4).
+9. Consumer side: the answer's TypedDict in `scripts/naver_types.py`, a typed method in `scripts/naver_api_client.py`,
+   a captured answer in `scripts/fixtures/` (+ its line in `scripts/test_naver_types.py` FIXTURES). Changing an
+   existing answer's shape updates the same three, in the same commit.
+10. Run pytest (server and `pytest scripts`), then the live smoke for the new endpoint (R-TEST-4).
 
 ## Checklist: changing transport or browser code
 

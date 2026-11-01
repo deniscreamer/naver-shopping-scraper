@@ -1,0 +1,317 @@
+{
+ "query": "남성 골프채 풀세트",
+ "filters": {
+  "max_price": 1000000.0,
+  "category": "50002788"
+ },
+ "total_count": 12830,
+ "count": 96,
+ "results": [
+  {
+   "id": "86519282816",
+   "product_id": "8974782493",
+   "origin_product_id": "8932508576",
+   "catalog_id": null,
+   "name": "캘러웨이 워버드 남성용 골프채 풀세트 10개 캐디백 포함 일본 직구",
+   "link": "https://smartstore.naver.com/main/products/8974782493",
+   "type": "product",
+   "is_ad": false,
+   "rank": 1,
+   "pricing": {
+    "sale_price": 950000,
+    "discounted_price": 697000,
+    "discount_ratio": 26,
+    "currency": "KRW",
+    "membership_point": 6970
+   },
+   "images": [
+    "https://shopping-phinf.pstatic.net/main_8651928/86519282816.3.jpg"
+   ],
+   "store": {
+    "name": "일본 구매대행 해피마로",
+    "id": "ncp_1omdnm_01",
+    "channel_id": "101921971",
+    "merchant_id": "511830986",
+    "link": "https://smartstore.naver.com/happymarojp",
+    "is_smart_store": true,
+    "is_brand_store": false,
+    "is_official": false,
+    "is_individual_seller": false
+   },
+   "mall_count": null,
+   "purchase_options": null,
+   "reviews": {
+    "count": 95,
+    "average_score": 4.82
+   },
+   "purchase_count": 42,
+   "keep_count": 233,
+   "category": {
+    "id": "50002788",
+    "path_ids": [
+     "50000007",
+     "50000029",
+     "50001102",
+     "50002788"
+    ]
+   },
+   "delivery": {
+    "fee": 99900,
+    "fee_types": [
+     "PAID"
+    ],
+    "fast_delivery_type": null,
+    "is_membership_free": false
+   },
+   "promotion_types": null,
+   "is_hot_deal": false,
+   "is_new": false,
+   "is_overseas": true,
+   "is_adult_restricted": false,
+   "has_membership_benefit": false
+  },
+  {
+   "id": "86502561003",
+   "product_id": "8958060680",
+   "origin_product_id": "8915848558",
+   "catalog_id": null,
+   "name": "브리지스톤 BG-100 BG100 남성용 골프채 풀세트 11개 캐디백 포함 화이트",
+   "link": "https://smartstore.naver.com/main/products/8958060680",
+   "type": "product",
+   "is_ad": false,
+   "rank": 2,
+   "pricing": {
+    "sale_price": 865000,
+    "discounted_price": 674700,
+    "discount_ratio": 22,
+    "currency": "KRW",
+    "membership_point": 6747
+   },
+   "images": [
+    "https://shopping-phinf.pstatic.net/main_8650256/86502561003.4.jpg"
+   ],
+   "store": {
+    "name": "일본 구매대행 해피마로",
+    "id": "ncp_1omdnm_01",
+    "channel_id": "101921971",
+    "merchant_id": "511830986",
+    "link": "https://smartstore.naver.com/happymarojp",
+    "is_smart_store": true,
+    "is_brand_store": false,
+    "is_official": false,
+    "is_individual_seller": false
+   },
+   "mall_count": null,
+   "purchase_options": null,
+   "reviews": {
+    "count": 98,
+    "average_score": 4.83
+   },
+   "purchase_count": 16,
+   "keep_count": 155,
+   "category": {
+    "id": "50002788",
+    "path_ids": [
+     "50000007",
+     "50000029",
+     "50001102",
+     "50002788"
+    ]
+   },
+   "delivery": {
+    "fee": 99900,
+    "fee_types": [
+     "PAID"
+    ],
+    "fast_delivery_type": "TODAY_DELIVERY",
+    "is_membership_free": false
+   },
+   "promotion_types": null,
+   "is_hot_deal": false,
+   "is_new": false,
+   "is_overseas": true,
+   "is_adult_restricted": false,
+   "has_membership_benefit": false
+  },
+  {
+   "id": "59387796362",
+   "product_id": null,
+   "origin_product_id": null,
+   "catalog_id": "59387796362",
+   "name": "테일러메이드 RBZ 스피드라이트 풀세트 10개 2021년 병행",
+   "link": "https://search.shopping.naver.com/catalog/59387796362",
+   "type": "catalog",
+   "is_ad": false,
+   "rank": 3,
+   "pricing": {
+    "sale_price": null,
+    "discounted_price": 882000,
+    "discount_ratio": 0,
+    "currency": "KRW",
+    "membership_point": null
+   },
+   "images": [
+    "https://shopping-phinf.pstatic.net/main_5938779/59387796362.20260325162428.jpg"
+   ],
+   "store": null,
+   "mall_count": 3,
+   "purchase_options": null,
+   "reviews": {
+    "count": 48,
+    "average_score": 4.75
+   },
+   "purchase_count": 0,
+   "keep_count": 6,
+   "category": {
+    "id": "50002788",
+    "path_ids": [
+     "50000007",
+     "50000029",
+     "50001102",
+     "50002788"
+    ]
+   },
+   "delivery": {
+    "fee": 0,
+    "fee_types": [
+     "CATALOG_INCLUDED_FREE",
+     "CATALOG_NOT_INCLUDED_FREE"
+    ],
+    "fast_delivery_type": null,
+    "is_membership_free": false
+   },
+   "promotion_types": null,
+   "is_hot_deal": false,
+   "is_new": false,
+   "is_overseas": false,
+   "is_adult_restricted": false,
+   "has_membership_benefit": false
+  },
+  {
+   "id": "86519146327",
+   "product_id": "8974646004",
+   "origin_product_id": "8932372991",
+   "catalog_id": null,
+   "name": "캘러웨이 엑스핫 X HOT 남성용 골프채 풀세트 11개 캐디백 포함 일본 직구",
+   "link": "https://smartstore.naver.com/main/products/8974646004",
+   "type": "product",
+   "is_ad": false,
+   "rank": 4,
+   "pricing": {
+    "sale_price": 1150000,
+    "discounted_price": 948000,
+    "discount_ratio": 17,
+    "currency": "KRW",
+    "membership_point": 9480
+   },
+   "images": [
+    "https://shopping-phinf.pstatic.net/main_8651914/86519146327.5.jpg"
+   ],
+   "store": {
+    "name": "일본 구매대행 해피마로",
+    "id": "ncp_1omdnm_01",
+    "channel_id": "101921971",
+    "merchant_id": "511830986",
+    "link": "https://smartstore.naver.com/happymarojp",
+    "is_smart_store": true,
+    "is_brand_store": false,
+    "is_official": false,
+    "is_individual_seller": false
+   },
+   "mall_count": null,
+   "purchase_options": null,
+   "reviews": {
+    "count": 51,
+    "average_score": 4.73
+   },
+   "purchase_count": 18,
+   "keep_count": 117,
+   "category": {
+    "id": "50002788",
+    "path_ids": [
+     "50000007",
+     "50000029",
+     "50001102",
+     "50002788"
+    ]
+   },
+   "delivery": {
+    "fee": 99900,
+    "fee_types": [
+     "PAID"
+    ],
+    "fast_delivery_type": null,
+    "is_membership_free": false
+   },
+   "promotion_types": null,
+   "is_hot_deal": false,
+   "is_new": false,
+   "is_overseas": true,
+   "is_adult_restricted": false,
+   "has_membership_benefit": false
+  },
+  {
+   "id": "85995165510",
+   "product_id": "8450665186",
+   "origin_product_id": "8410369016",
+   "catalog_id": null,
+   "name": "골프채 풀세트 골프클럽 초,중급용 PGM 스틸 남성9P세트",
+   "link": "https://smartstore.naver.com/main/products/8450665186",
+   "type": "product",
+   "is_ad": false,
+   "rank": 5,
+   "pricing": {
+    "sale_price": 385000,
+    "discounted_price": 359900,
+    "discount_ratio": 6,
+    "currency": "KRW",
+    "membership_point": 3599
+   },
+   "images": [
+    "https://shopping-phinf.pstatic.net/main_8599516/85995165510.1.jpg"
+   ],
+   "store": {
+    "name": "조은상점",
+    "id": "dyddhwh",
+    "channel_id": "500042529",
+    "merchant_id": "500042529",
+    "link": "https://smartstore.naver.com/eiteli",
+    "is_smart_store": true,
+    "is_brand_store": false,
+    "is_official": false,
+    "is_individual_seller": false
+   },
+   "mall_count": null,
+   "purchase_options": null,
+   "reviews": {
+    "count": 66,
+    "average_score": 4.86
+   },
+   "purchase_count": 8,
+   "keep_count": 66,
+   "category": {
+    "id": "50002788",
+    "path_ids": [
+     "50000007",
+     "50000029",
+     "50001102",
+     "50002788"
+    ]
+   },
+   "delivery": {
+    "fee": 0,
+    "fee_types": [
+     "FREE"
+    ],
+    "fast_delivery_type": "TODAY_DELIVERY",
+    "is_membership_free": false
+   },
+   "promotion_types": null,
+   "is_hot_deal": false,
+   "is_new": false,
+   "is_overseas": false,
+   "is_adult_restricted": false,
+   "has_membership_benefit": false
+  }
+ ]
+}

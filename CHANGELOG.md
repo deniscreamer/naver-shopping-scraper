@@ -3,6 +3,12 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
+## Unreleased
+
+- **Types**: `scripts/naver_types.py` names every API answer (TypedDicts, written from real captured answers and the
+  parser code); `test_naver_types.py` checks the captures strictly; typed client methods (`search`,
+  `product_details`, `reviews`, `listing`, ...); examples use them and pass `mypy`.
+
 ## 0.1.0 (2026-11-01)
 
 First release of this fork (based on [omkarcloud/naver-shopping-scraper](https://github.com/omkarcloud/naver-shopping-scraper)).

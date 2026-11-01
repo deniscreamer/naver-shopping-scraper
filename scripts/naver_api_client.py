@@ -25,9 +25,12 @@ for a read timeout hit mid-body (requests.models), after the request was sent.
 """
 import os
 import time
+from collections.abc import Iterator
 
 import requests
 from urllib3.exceptions import NewConnectionError
+
+import naver_types as T
 
 DEFAULT_URL = "http://localhost:8000"
 CONNECT_TIMEOUT = 5
@@ -127,10 +130,53 @@ class NaverApiClient:
                 return
             page += 1
 
-    def health(self):
+    # ---- typed endpoint methods: the same get(), named and typed (naver_types) ----------
+    # Filters / window params are passed through as keyword args, exactly as the
+    # endpoint takes them (server/docs/ENDPOINTS.md); None values are dropped.
+
+    def health(self) -> T.Health:
         return self.get("/health")
 
-    def listing(self, query, max_batches=0, poll=LISTING_POLL):
+    def search(self, query: str, **filters) -> T.SearchResult:
+        """Up to 96 cards; filters: min_price, max_price, category, min_rating, free_delivery, ..."""
+        return self.get("/products/search", query=query, **filters)
+
+    def count(self, query: str, **filters) -> T.CountResult:
+        return self.get("/products/count", query=query, **filters)
+
+    def product_details(self, product: str) -> T.ProductDetails:
+        """`product`: a store product link or the bare product id."""
+        return self.get("/products/details", product=product)
+
+    def reviews(self, product: str, sort: str | None = None, max_page: int | None = None) -> Iterator[T.ReviewsPage]:
+        """Review pages (20 each), page 1 first; sort: ranking, recent, score_high, score_low."""
+        return self.pages("/products/reviews", max_page=max_page, product=product, sort=sort)
+
+    def store_details(self, store: str) -> T.StoreDetails:
+        return self.get("/stores/details", store=store)
+
+    def store_products(self, store: str, list: str = "popular", period: str | None = None) -> T.StoreProducts:
+        """list: popular (20) or best (30, period: realtime / daily / weekly / monthly)."""
+        return self.get("/stores/products", store=store, list=list, period=period)
+
+    def catalog_reviews(self, catalog: str) -> T.CatalogReviews:
+        return self.get("/catalogs/reviews", catalog=catalog)
+
+    def categories(self, category: str | None = None) -> T.CategoryList:
+        """A category and its children; none / 0 = the top level."""
+        return self.get("/categories/list", category=category)
+
+    def keywords_rank(self, category: str, max_page: int | None = None, **window) -> Iterator[T.KeywordRankPage]:
+        """Top keyword pages (20 each, up to 25 pages); window: start_date, end_date, period, device, ..."""
+        return self.pages("/keywords/rank", max_page=max_page, category=category, **window)
+
+    def keyword_trend(self, keyword: str, category: str, **window) -> T.KeywordTrend:
+        return self.get("/keywords/trend", keyword=keyword, category=category, **window)
+
+    def category_trend(self, category: str, **window) -> T.CategoryTrend:
+        return self.get("/categories/trend", category=category, **window)
+
+    def listing(self, query: str, max_batches: int = 0, poll: float = LISTING_POLL) -> T.ListingResult:
         """The full search listing for a query (server-side: the owner's Chrome
         through the adapter; this client does not care). Starts a job, waits
         while it runs (a captcha only shows as status "captcha"), then reads
@@ -146,7 +192,7 @@ class NaverApiClient:
             self.sleep(poll)
             job = self.get(f"/listings/{job['id']}")
         print(f"naver_api_client: listing {job['id']} {job['status']}: {job.get('kept')} rows, stop: {job.get('stop')}")
-        rows = []
+        rows: list[T.ListingRow] = []
         for page in self.pages(f"/listings/{job['id']}/products"):
             rows.extend(page.get("results") or [])
         return {"job": job, "results": rows}

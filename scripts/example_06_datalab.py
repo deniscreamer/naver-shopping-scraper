@@ -9,9 +9,9 @@ from naver_api_client import NaverApiClient
 
 api = NaverApiClient()
 
-rank = api.get("/keywords/rank", category="50001102")
-print("top keywords in", rank["category_name"], ":", ", ".join(k["keyword"] for k in rank["results"][:10]))
+rank = next(api.keywords_rank("50001102", max_page=1))             # first page of KeywordRankPage
+print("top keywords in", rank["category_name"], ":", ", ".join(k["keyword"] or "" for k in rank["results"][:10]))
 
-trend = api.get("/keywords/trend", keyword="골프채", category="50001102", period="weekly")
+trend = api.keyword_trend("골프채", "50001102", period="weekly")      # -> naver_types.KeywordTrend
 for point in trend["series"][-4:]:
     print(f"  {point['date']}  {point['value']}")

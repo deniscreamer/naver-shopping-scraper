@@ -1,0 +1,38 @@
+{
+ "count": null,
+ "per_page": 20,
+ "current_page": 1,
+ "total_pages": null,
+ "next": "http://localhost:8000/keywords/rank?category=50001102&page=2",
+ "previous": null,
+ "category_id": "50001102",
+ "start_date": "2026-10-01",
+ "end_date": "2026-10-31",
+ "period": "daily",
+ "device": null,
+ "gender": null,
+ "age": null,
+ "category_name": "골프클럽",
+ "results": [
+  {
+   "rank": 1,
+   "keyword": "스카티카메론퍼터"
+  },
+  {
+   "rank": 2,
+   "keyword": "퍼터"
+  },
+  {
+   "rank": 3,
+   "keyword": "qi4d드라이버"
+  },
+  {
+   "rank": 4,
+   "keyword": "미니드라이버"
+  },
+  {
+   "rank": 5,
+   "keyword": "웨지"
+  }
+ ]
+}

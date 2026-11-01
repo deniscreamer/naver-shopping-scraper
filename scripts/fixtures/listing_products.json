@@ -1,0 +1,162 @@
+{
+ "count": 43,
+ "per_page": 50,
+ "current_page": 1,
+ "total_pages": 1,
+ "next": null,
+ "previous": null,
+ "job_id": "20261101-211037-6e48",
+ "status": "done",
+ "results": [
+  {
+   "product_id": "8450665186",
+   "nv_mid": "85995165510",
+   "link": "https://smartstore.naver.com/eiteli/products/8450665186",
+   "name": "골프채 풀세트 골프클럽 초,중급용 PGM 스틸 남성9P세트",
+   "store": {
+    "name": "조은상점",
+    "slug": "eiteli",
+    "link": "https://smartstore.naver.com/eiteli",
+    "grade": "PREMIUM",
+    "is_brand_store": false
+   },
+   "pricing": {
+    "sale_price": 385000,
+    "discounted_price": 359900,
+    "discount_ratio": 6,
+    "currency": "KRW"
+   },
+   "category_id": "50002788",
+   "reviews": {
+    "count": 66,
+    "average_score": 4.86
+   },
+   "stock_quantity": 139979,
+   "image": "https://shopping-phinf.pstatic.net/main_8599516/85995165510.1.jpg",
+   "is_ad": true,
+   "query": "남성 골프채 풀세트",
+   "batch": 1,
+   "seen_at": "2026-11-01T14:11:13+00:00"
+  },
+  {
+   "product_id": "8958060680",
+   "nv_mid": "86502561003",
+   "link": "https://smartstore.naver.com/happymarojp/products/8958060680",
+   "name": "브리지스톤 BG-100 BG100 남성용 골프채 풀세트 11개 캐디백 포함 화이트",
+   "store": {
+    "name": "일본 구매대행 해피마로",
+    "slug": "happymarojp",
+    "link": "https://smartstore.naver.com/happymarojp",
+    "grade": "PREMIUM",
+    "is_brand_store": false
+   },
+   "pricing": {
+    "sale_price": 865000,
+    "discounted_price": 674700,
+    "discount_ratio": 22,
+    "currency": "KRW"
+   },
+   "category_id": "50002788",
+   "reviews": {
+    "count": 98,
+    "average_score": 4.83
+   },
+   "stock_quantity": 1795,
+   "image": "https://shopping-phinf.pstatic.net/main_8650256/86502561003.4.jpg",
+   "is_ad": true,
+   "query": "남성 골프채 풀세트",
+   "batch": 1,
+   "seen_at": "2026-11-01T14:11:13+00:00"
+  },
+  {
+   "product_id": "13825089403",
+   "nv_mid": "91369600781",
+   "link": "https://smartstore.naver.com/thegolf/products/13825089403",
+   "name": "마제스티 22 컨퀘스트 남성 11개 클럽 풀세트 HV340 10.5+W5+H5+8i (병행)",
+   "store": {
+    "name": "더골프",
+    "slug": "thegolf",
+    "link": "https://smartstore.naver.com/thegolf",
+    "grade": "BIG_POWER",
+    "is_brand_store": false
+   },
+   "pricing": {
+    "sale_price": 1100000,
+    "discounted_price": 1100000,
+    "discount_ratio": 0,
+    "currency": "KRW"
+   },
+   "category_id": "50002788",
+   "reviews": {
+    "count": 0,
+    "average_score": 0
+   },
+   "stock_quantity": 100,
+   "image": "https://shopping-phinf.pstatic.net/main_9136960/91369600781.1.jpg",
+   "is_ad": true,
+   "query": "남성 골프채 풀세트",
+   "batch": 1,
+   "seen_at": "2026-11-01T14:11:13+00:00"
+  },
+  {
+   "product_id": "8974782493",
+   "nv_mid": "86519282816",
+   "link": "https://smartstore.naver.com/happymarojp/products/8974782493",
+   "name": "캘러웨이 워버드 남성용 골프채 풀세트 10개 캐디백 포함 일본 직구",
+   "store": {
+    "name": "일본 구매대행 해피마로",
+    "slug": "happymarojp",
+    "link": "https://smartstore.naver.com/happymarojp",
+    "grade": "PREMIUM",
+    "is_brand_store": false
+   },
+   "pricing": {
+    "sale_price": 950000,
+    "discounted_price": 697000,
+    "discount_ratio": 26,
+    "currency": "KRW"
+   },
+   "category_id": "50002788",
+   "reviews": {
+    "count": 95,
+    "average_score": 4.82
+   },
+   "stock_quantity": 1806,
+   "image": "https://shopping-phinf.pstatic.net/main_8651928/86519282816.3.jpg",
+   "is_ad": true,
+   "query": "남성 골프채 풀세트",
+   "batch": 1,
+   "seen_at": "2026-11-01T14:11:13+00:00"
+  },
+  {
+   "product_id": "7583123963",
+   "nv_mid": "85127624285",
+   "link": "https://smartstore.naver.com/majorgolf/products/7583123963",
+   "name": "지브이투어 벨로시티 BM 13 PCS 남성 여성 풀세트 (백세트포함)",
+   "store": {
+    "name": "메이저골프",
+    "slug": "majorgolf",
+    "link": "https://smartstore.naver.com/majorgolf",
+    "grade": "PREMIUM",
+    "is_brand_store": false
+   },
+   "pricing": {
+    "sale_price": 2400000,
+    "discounted_price": 1200000,
+    "discount_ratio": 50,
+    "currency": "KRW"
+   },
+   "category_id": "50002788",
+   "reviews": {
+    "count": 0,
+    "average_score": 0
+   },
+   "stock_quantity": 51,
+   "image": "https://shopping-phinf.pstatic.net/main_8512762/85127624285.3.jpg",
+   "is_ad": false,
+   "query": "남성 골프채 풀세트",
+   "batch": 1,
+   "seen_at": "2026-11-01T14:11:13+00:00"
+  }
+ ]
+}

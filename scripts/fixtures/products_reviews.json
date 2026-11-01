@@ -1,0 +1,322 @@
+{
+ "count": 2510,
+ "per_page": 20,
+ "current_page": 1,
+ "total_pages": 126,
+ "next": "http://localhost:8000/products/reviews?product=https%3A%2F%2Fsmartstore.naver.com%2Fdailyromantic%2Fproducts%2F8087042745&page=2",
+ "previous": null,
+ "product": {
+  "id": "8087042745",
+  "name": "14k 여자목걸이 금 여성 하트 선물",
+  "link": "https://smartstore.naver.com/dailyromantic/products/8087042745"
+ },
+ "sort": "ranking",
+ "summary": {
+  "count": 2510,
+  "average_score": 4.86,
+  "score_counts": {
+   "1": 5,
+   "2": 9,
+   "3": 53,
+   "4": 200,
+   "5": 2243
+  },
+  "text_count": 1210,
+  "photo_count": 1292,
+  "video_count": 8,
+  "after_use_count": 705,
+  "best_count": 4,
+  "recent": {
+   "count": 209,
+   "average_score": 4.79
+  },
+  "evaluations": [
+   {
+    "question": "착용감은 어떤가요?",
+    "answers": [
+     {
+      "name": "불편해요",
+      "count": 13,
+      "percent": 1
+     },
+     {
+      "name": "편해요",
+      "count": 891,
+      "percent": 35
+     },
+     {
+      "name": "아주 편해요",
+      "count": 1606,
+      "percent": 64
+     }
+    ]
+   },
+   {
+    "question": "마감처리는 어떤가요?",
+    "answers": [
+     {
+      "name": "엉성해요",
+      "count": 32,
+      "percent": 1
+     },
+     {
+      "name": "깔끔해요",
+      "count": 863,
+      "percent": 35
+     },
+     {
+      "name": "아주 깔끔해요",
+      "count": 1615,
+      "percent": 64
+     }
+    ]
+   },
+   {
+    "question": "무게감은 어떤가요?",
+    "answers": [
+     {
+      "name": "무거워요",
+      "count": 3,
+      "percent": 0
+     },
+     {
+      "name": "적당해요",
+      "count": 1005,
+      "percent": 40
+     },
+     {
+      "name": "가벼워요",
+      "count": 1502,
+      "percent": 60
+     }
+    ]
+   }
+  ],
+  "representative_reviews": [
+   {
+    "id": "5089034336",
+    "score": 5,
+    "text": "와이프 선물로 구매했습니다.\n클로버를 좋아해서 클로버 디자인으로 선물했는데\n너무 좋아하네요.\n\n전체 구성도 목걸이만 주는것보다 인형도 있어서\n행복두배 , 케이스에서는 조명에는 조명이 있어\n목걸이가 더 화사해 보입니다.\n감사합니다 . 강추 ^^",
+    "image": "https://phinf.pstatic.net/checkout.phinf/20261022_207/1792640736993UjJt4_JPEG/KakaoTalk_20261022_124031336_04.jpg"
+   },
+   {
+    "id": "5077493440",
+    "score": 5,
+    "text": "실물이 사진보다 더 예뻐요. 디자인이 깔끔하면서도 은근히 포인트가 돼서 데일리로 착용하기 좋습니다. 너무 화려하지 않아서 어떤 옷에도 잘 어울리고, 착용했을 때 목선도 예뻐 보이는 것 같아요. 마감도 깔끔하고 전체적으로 만족스럽습니다. 선물용으로도 괜찮을 것 같아요. 잘 착용하겠습니다 :)",
+    "image": "https://phinf.pstatic.net/checkout.phinf/20261005_106/1791175570831hTLhB_JPEG/tmp_5788046808493371763.jpg"
+   },
+   {
+    "id": "5084380721",
+    "score": 5,
+    "text": "얇은 줄 목걸이를 찾다가 맘에 드는 디자인을 발견해서 구매했어요. 인형에 간식ᆢ라이트케이스까지 저한턴 셀프선물이네요. 실물 넘 이쁘네요. 자주 들러볼께요.",
+    "image": "https://phinf.pstatic.net/checkout.phinf/20261015_154/1792050169363IWfOj_JPEG/1000038970.jpg"
+   },
+   {
+    "id": "5093842974",
+    "score": 5,
+    "text": "여자친구 생일선물로 구매했는데 좋아해줬으면 좋겠네요 과자도 주시고~^^\n여자친구의 반응보고 다른것도 구매예정입니다.",
+    "image": "https://phinf.pstatic.net/checkout.phinf/20261029_213/1793250361701V1fUg_JPEG/1000069524.jpg"
+   },
+   {
+    "id": "5089554263",
+    "score": 5,
+    "text": "아이 생일선물로 구매했어요ㆍ 앞 하트가 굉장히 반짝거리면서 포인트가 되네요ㆍ 줄이 앏아 조심조심입니다",
+    "image": "https://phinf.pstatic.net/checkout.phinf/20261023_27/1792712249289JYkhs_JPEG/1792712229710.jpg"
+   }
+  ]
+ },
+ "results": [
+  {
+   "id": "5089034336",
+   "score": 5,
+   "text": "와이프 선물로 구매했습니다.\n클로버를 좋아해서 클로버 디자인으로 선물했는데\n너무 좋아하네요.\n\n전체 구성도 목걸이만 주는것보다 인형도 있어서\n행복두배 , 케이스에서는 조명에는 조명이 있어\n목걸이가 더 화사해 보입니다.\n감사합니다 . 강추 ^^",
+   "created_at": "2026-10-22T03:47:12Z",
+   "type": "NORMAL",
+   "content_type": "PHOTO",
+   "option": "목걸이 종류(품질 보증서 有): 네잎클로버 목걸이  + 곰인형 + 쇼핑백 / 색상: 기본 네잎클로버 (골드) / 함량: 18k 목걸이",
+   "is_repurchase": false,
+   "is_free_trial": false,
+   "event_title": null,
+   "writer": {
+    "masked_id": "ninj***",
+    "profile_image": "https://profile-phinf.pstatic.net/404/default.png"
+   },
+   "attachments": [
+    {
+     "type": "image",
+     "link": "https://phinf.pstatic.net/checkout.phinf/20261022_207/1792640736993UjJt4_JPEG/KakaoTalk_20261022_124031336_04.jpg",
+     "width": 2252,
+     "height": 4000
+    },
+    {
+     "type": "image",
+     "link": "https://phinf.pstatic.net/checkout.phinf/20261022_50/179264080172309uHG_JPEG/KakaoTalk_20261022_124031336.jpg",
+     "width": 2252,
+     "height": 4000
+    },
+    {
+     "type": "image",
+     "link": "https://phinf.pstatic.net/checkout.phinf/20261022_223/1792640801676Tq3Dw_JPEG/KakaoTalk_20261022_124031336_02.jpg",
+     "width": 2252,
+     "height": 4000
+    }
+   ],
+   "product": {
+    "id": "8087042745",
+    "origin_product_id": "8048440943",
+    "name": "14k 여자목걸이 금 여성 하트 선물"
+   },
+   "likes": null
+  },
+  {
+   "id": "5077493440",
+   "score": 5,
+   "text": "실물이 사진보다 더 예뻐요. 디자인이 깔끔하면서도 은근히 포인트가 돼서 데일리로 착용하기 좋습니다. 너무 화려하지 않아서 어떤 옷에도 잘 어울리고, 착용했을 때 목선도 예뻐 보이는 것 같아요. 마감도 깔끔하고 전체적으로 만족스럽습니다. 선물용으로도 괜찮을 것 같아요. 잘 착용하겠습니다 :)",
+   "created_at": "2026-10-05T04:46:21Z",
+   "type": "AFTER_USE",
+   "content_type": "PHOTO",
+   "option": "목걸이 종류(품질 보증서 有): 하트 목걸이+ 곰인형 + 쇼핑백 / 색상: 골드 / 함량: 18k 목걸이",
+   "is_repurchase": false,
+   "is_free_trial": false,
+   "event_title": null,
+   "writer": {
+    "masked_id": "hail****",
+    "profile_image": "https://phinf.pstatic.net/contact/20181015_199/1539600588145YwmPr_PNG/avatar_profile.png"
+   },
+   "attachments": [
+    {
+     "type": "image",
+     "link": "https://phinf.pstatic.net/checkout.phinf/20261005_106/1791175570831hTLhB_JPEG/tmp_5788046808493371763.jpg",
+     "width": 3000,
+     "height": 4000
+    }
+   ],
+   "product": {
+    "id": "8087042745",
+    "origin_product_id": "8048440943",
+    "name": "14k 18k 여자목걸이 금 여성 하트 선물"
+   },
+   "likes": 1
+  },
+  {
+   "id": "5084380721",
+   "score": 5,
+   "text": "얇은 줄 목걸이를 찾다가 맘에 드는 디자인을 발견해서 구매했어요. 인형에 간식ᆢ라이트케이스까지 저한턴 셀프선물이네요. 실물 넘 이쁘네요. 자주 들러볼께요.",
+   "created_at": "2026-10-15T07:44:57Z",
+   "type": "NORMAL",
+   "content_type": "PHOTO",
+   "option": "목걸이 종류(품질 보증서 有): 하트 목걸이+ 곰인형 + 쇼핑백 / 색상: 한정판 골드 / 함량: 14k 목걸이",
+   "is_repurchase": false,
+   "is_free_trial": false,
+   "event_title": null,
+   "writer": {
+    "masked_id": "yoye******",
+    "profile_image": "https://profile-phinf.pstatic.net/404/default.png"
+   },
+   "attachments": [
+    {
+     "type": "image",
+     "link": "https://phinf.pstatic.net/checkout.phinf/20261015_154/1792050169363IWfOj_JPEG/1000038970.jpg",
+     "width": 2011,
+     "height": 2339
+    },
+    {
+     "type": "image",
+     "link": "https://phinf.pstatic.net/checkout.phinf/20261015_105/1792050169261O7rRO_JPEG/1000038967.jpg",
+     "width": 2229,
+     "height": 3365
+    },
+    {
+     "type": "image",
+     "link": "https://phinf.pstatic.net/checkout.phinf/20261015_71/17920501692750jdYg_JPEG/1000038968.jpg",
+     "width": 2252,
+     "height": 4000
+    },
+    {
+     "type": "image",
+     "link": "https://phinf.pstatic.net/checkout.phinf/20261015_233/1792050169317Bchnh_JPEG/1000038969.jpg",
+     "width": 2093,
+     "height": 3300
+    }
+   ],
+   "product": {
+    "id": "8087042745",
+    "origin_product_id": "8048440943",
+    "name": "14k 18k 여자목걸이 금 여성 하트 선물"
+   },
+   "likes": null
+  },
+  {
+   "id": "5093842974",
+   "score": 5,
+   "text": "여자친구 생일선물로 구매했는데 좋아해줬으면 좋겠네요 과자도 주시고~^^\n여자친구의 반응보고 다른것도 구매예정입니다.",
+   "created_at": "2026-10-29T05:06:26Z",
+   "type": "NORMAL",
+   "content_type": "PHOTO",
+   "option": "목걸이 종류(품질 보증서 有): 하트 목걸이+ 곰인형 + 쇼핑백 / 색상: 골드 / 함량: 18k 목걸이",
+   "is_repurchase": false,
+   "is_free_trial": false,
+   "event_title": null,
+   "writer": {
+    "masked_id": "gold********",
+    "profile_image": "https://profile-phinf.pstatic.net/404/default.png"
+   },
+   "attachments": [
+    {
+     "type": "image",
+     "link": "https://phinf.pstatic.net/checkout.phinf/20261029_213/1793250361701V1fUg_JPEG/1000069524.jpg",
+     "width": 3000,
+     "height": 4000
+    },
+    {
+     "type": "image",
+     "link": "https://phinf.pstatic.net/checkout.phinf/20261029_295/1793250362399LOWdR_JPEG/1000069525.jpg",
+     "width": 3000,
+     "height": 4000
+    }
+   ],
+   "product": {
+    "id": "8087042745",
+    "origin_product_id": "8048440943",
+    "name": "14k 여자목걸이 금 여성 하트 선물"
+   },
+   "likes": null
+  },
+  {
+   "id": "5089554263",
+   "score": 5,
+   "text": "아이 생일선물로 구매했어요ㆍ 앞 하트가 굉장히 반짝거리면서 포인트가 되네요ㆍ 줄이 앏아 조심조심입니다",
+   "created_at": "2026-10-22T23:37:48Z",
+   "type": "AFTER_USE",
+   "content_type": "PHOTO",
+   "option": "목걸이 종류(품질 보증서 有): 하트 목걸이+ 곰인형 + 쇼핑백 / 색상: 한정판 골드 / 함량: 18k 목걸이",
+   "is_repurchase": false,
+   "is_free_trial": false,
+   "event_title": null,
+   "writer": {
+    "masked_id": "no****",
+    "profile_image": "https://profile-phinf.pstatic.net/404/default.png"
+   },
+   "attachments": [
+    {
+     "type": "image",
+     "link": "https://phinf.pstatic.net/checkout.phinf/20261023_27/1792712249289JYkhs_JPEG/1792712229710.jpg",
+     "width": 3000,
+     "height": 4000
+    },
+    {
+     "type": "image",
+     "link": "https://phinf.pstatic.net/checkout.phinf/20261023_218/1792712262005Ada3Y_JPEG/1792712254521.jpg",
+     "width": 3000,
+     "height": 4000
+    }
+   ],
+   "product": {
+    "id": "8087042745",
+    "origin_product_id": "8048440943",
+    "name": "14k 18k 여자목걸이 금 여성 하트 선물"
+   },
+   "likes": null
+  }
+ ]
+}

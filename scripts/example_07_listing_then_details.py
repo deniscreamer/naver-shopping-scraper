@@ -21,17 +21,19 @@ DETAILS = 3                                   # how many products to open in ste
 
 api = NaverApiClient()
 
-listing = api.listing(QUERY, max_batches=BATCHES)
+listing = api.listing(QUERY, max_batches=BATCHES)        # -> naver_types.ListingResult
 rows = [r for r in listing["results"] if not r["is_ad"]]
 print(f"listing: {listing['job']['status']}, {len(listing['results'])} products ({len(rows)} not ads)\n")
 
 for row in rows[:DETAILS]:
     try:
-        product = api.get("/products/details", product=row["link"])
+        product = api.product_details(row["link"])         # -> naver_types.ProductDetails
     except ApiError as e:
         print(f"- {row['link']}: {e.status} {e.error}")
         continue
-    print(f"- {product['name'][:50]}")
+    print(f"- {(product['name'] or '')[:50]}")
+    summary = product["reviews"]                            # the types say it may be None: guard it
+    reviews = summary["count"] if summary else None
     print(f"  {product['pricing']['discounted_price']:,} KRW, stock {product['stock_quantity']}, "
-          f"{product['reviews']['count']} reviews, {len(product['variants'])} options")
+          f"{reviews} reviews, {len(product['variants'] or [])} options")
     time.sleep(2)                             # one at a time: the server's Chrome serves them in turn

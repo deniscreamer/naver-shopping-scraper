@@ -51,8 +51,29 @@ needs Chrome open with the adapter (`example_01` shows `extension: connected`).
 .venv/bin/python scripts/example_07_listing_then_details.py
 ```
 
-All calls go through `naver_api_client.NaverApiClient`: `get(path, **params)`, `pages(path, **params)`,
-`listing(query, max_batches)`, `health()`; any non-200 raises `ApiError(status, error, errors)`.
+All calls go through `naver_api_client.NaverApiClient`. Typed methods, one per endpoint, return the shapes in
+`naver_types.py`: `health()`, `search(query, **filters)`, `count(...)`, `product_details(product)`,
+`reviews(product, sort, max_page)` (pages), `store_details(store)`, `store_products(store, list, period)`,
+`catalog_reviews(catalog)`, `categories(category)`, `keywords_rank(category, **window)` (pages),
+`keyword_trend(keyword, category, **window)`, `category_trend(category, **window)`, `listing(query, max_batches)`.
+The generic `get(path, **params)` / `pages(path, **params)` reach any route. Any non-200 raises
+`ApiError(status, error, errors)`.
+
+## Response types (`naver_types.py`)
+
+TypedDicts for every answer (83 names: `SearchCard`, `ProductDetails`, `ReviewsPage`, `ListingRow`, ...). `X | None`
+means the server may send null: guard it (`product["reviews"]` can be None). They were written from real answers
+(`fixtures/*.json`, captured live 2026-11-01) and the server's parser code; `test_naver_types.py` checks each
+fixture against its type strictly (missing or unknown keys fail).
+
+```sh
+.venv/bin/python -m pytest scripts -q                      # includes the type conformance test
+.venv/bin/pip install mypy && .venv/bin/python -m mypy --ignore-missing-imports --check-untyped-defs \
+    scripts/naver_types.py scripts/naver_api_client.py scripts/example_0*.py   # static check (optional)
+```
+
+When a server answer changes shape: re-capture its fixture (one call with the client, json.dump, lists trimmed to
+5 items, long strings to 300 chars), update the type, and commit both with the server change.
 
 ## Running
 
