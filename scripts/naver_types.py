@@ -390,7 +390,7 @@ class ProductSpecs(TypedDict):
 class ReviewWriter(TypedDict):
     """products/reviews results[].writer."""
     masked_id: str | None
-    profile_image: str | None
+    profile_image: str | None         # null also for Naver's no-avatar placeholder
 
 
 class ReviewAttachment(TypedDict):

@@ -16,6 +16,8 @@ version in `extension/manifest.json`.
   `NaverApiClient.product_specs()`; fixtures re-captured.
 - **Examples**: `example_08_product_full.py` (one product, every field), `example_09_listing_then_specs.py` (a
   listing, then details the new way), `example_10_known_products_specs.py` (known links, matched by full name + id).
+- **Reviews**: `writer.profile_image` is null for Naver's no-avatar placeholder (`profile-phinf.pstatic.net/404/`);
+  `example_11_reviews_full.py` reads a product's reviews completely (all fields, order, media links) to JSONL.
 - **Docs**: "Product details: two ways" (`/products/details` vs `/products/specs`, the full-flow catch, the two ways
   in) in ENDPOINTS.md and scripts/README.md.
 

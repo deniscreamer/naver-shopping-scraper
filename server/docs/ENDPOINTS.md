@@ -237,7 +237,9 @@ curl "http://localhost:8000/products/details?product=https://smartstore.naver.co
 Transport: box (plus the product record, as in `/products/details`). Cache: 6 h per page (`REVIEWS_CACHE`).
 Output: pagination keys + `{product: {id, name, link}, sort, summary, results: [review]}`. Review keys: `id`,
 `score`, `text`, `created_at`, `type`, `content_type`, `option`, `is_repurchase`, `is_free_trial`, `event_title`,
-`writer`, `attachments`, `product`, `likes`.
+`writer`, `attachments`, `product`, `likes`. `writer.profile_image` is null when the writer has no avatar (Naver's
+placeholder `profile-phinf.pstatic.net/404/default.png` is dropped); `likes` is null when nobody marked it helpful.
+`attachments`: `{type: image | video, link, width, height}` (links only; nothing is downloaded).
 
 ```
 curl "http://localhost:8000/products/reviews?product=8087042745&page=2&sort=recent"

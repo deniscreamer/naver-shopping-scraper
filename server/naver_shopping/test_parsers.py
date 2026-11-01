@@ -253,6 +253,15 @@ def test_review_summary():
     assert P.parse_review_summary(None)["count"] is None
 
 
+def test_review_placeholder_avatar_is_null():
+    """2026-11-01: a writer without an avatar comes as profile-phinf.pstatic.net/404/default.png."""
+    reviews, _ = P.parse_reviews_page(fixture("box_reviews_page1.json"))
+    avatars = [r["writer"]["profile_image"] for r in reviews]
+    assert avatars.count(None) == 13 + sum(1 for r in fixture("box_reviews_page1.json")["contents"]
+                                           if not r.get("writerProfileImageUrl"))
+    assert all(a is None or "/404/" not in a for a in avatars)
+
+
 def test_reviews_page():
     reviews, pagination = P.parse_reviews_page(fixture("box_reviews_page1.json"))
     assert len(reviews) == 20 and pagination["total_count"] > 6000 and pagination["total_pages"] > 300

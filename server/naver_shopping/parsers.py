@@ -542,8 +542,14 @@ def parse_review_summary(s):
     }
 
 
+# A writer with no avatar gets Naver's placeholder, not an empty field
+# (2026-11-01: 35 of 40 Honma D1 set reviews, 13 of 20 in box_reviews_page1).
+_DEFAULT_AVATAR_RE = re.compile(r"^https?://profile-phinf\.pstatic\.net/404/")
+
+
 def parse_review(r):
     r = _dict(r)
+    avatar = _clean(r.get("writerProfileImageUrl"))
     attaches = [{"type": "video" if _clean(a.get("reviewAttachmentType")) == "V" else "image",
                  "link": _clean(a.get("attachUrl")) or _clean(a.get("attachPath")),
                  "width": _int(a.get("attachWidth")), "height": _int(a.get("attachHeight"))}
@@ -560,7 +566,7 @@ def parse_review(r):
         "is_free_trial": _bool(r.get("freeTrial")),
         "event_title": _clean(r.get("eventTitle")),
         "writer": {"masked_id": _clean(r.get("maskedWriterId")) or _clean(r.get("writerId")),
-                   "profile_image": _clean(r.get("writerProfileImageUrl"))},
+                   "profile_image": None if avatar and _DEFAULT_AVATAR_RE.match(avatar) else avatar},
         "attachments": attaches,
         "product": {"id": _clean(str(r.get("productNo") or "")) or None,
                     "origin_product_id": _clean(str(r.get("originProductNo") or "")) or None,

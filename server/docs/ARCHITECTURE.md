@@ -33,7 +33,7 @@ All paths are relative to `server/`, which is the import root (section 10).
 | `naver_shopping/fetch.py` | The only module that talks to Naver: curl surfaces, box calls, error classification. |
 | `naver_shopping/parsers.py` | Pure functions: raw JSON / HTML to output dicts. |
 | `naver_shopping/cache_config.py` | One TTL per cached namespace, each with its reason. |
-| `test_import_smoke.py`, `naver_shopping/test_*.py` | Offline tests (144 at the time of writing). Fixtures in `naver_shopping/fixtures/`. |
+| `test_import_smoke.py`, `naver_shopping/test_*.py` | Offline tests (145 at the time of writing). Fixtures in `naver_shopping/fixtures/`. |
 
 ## 2. Layers
 
@@ -410,6 +410,9 @@ primary record, with dates; read it before changing the behaviour.
   `parsers._SEE_DESCRIPTION_RE` comment.
 - naverShoppingSearchInfo may carry only `manufacturerName` (no `brandName`) while the name carries the brand. ->
   `parsers.product_facts` docstring.
+
+- A review writer without an avatar comes with the placeholder `profile-phinf.pstatic.net/404/default.png`. ->
+  `parsers._DEFAULT_AVATAR_RE` comment.
 
 A new upstream fact gets a dated comment at the code that handles it and one
 line here (R-NAVER-4).
