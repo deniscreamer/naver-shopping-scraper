@@ -35,6 +35,7 @@ Google Chrome (a real window opens). Docker/Linux is archived in
    MANDATORY for any change under `server/`.
 3. `scripts/` talks to the server over HTTP only and never imports server modules.
 4. Tests never hit the network.
+   API answer types live in `scripts/naver_types.py`; a shape change updates type + fixture + client method (R-TYPE).
 5. Move or rename tracked files with `git mv` so history follows them.
 6. A behaviour change updates its doc in the same commit. A contract change goes in
    server/docs/ENDPOINTS.md. A new upstream fact is a dated comment at the code

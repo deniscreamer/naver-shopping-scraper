@@ -146,10 +146,31 @@ Every surface that is not the store backend uses this path (R-NAVER-2).
   - UPPER_SNAKE constants; `_MS` suffix for milliseconds, plain names are seconds (`CALL_TIMEOUT`, `GOTO_TIMEOUT_MS`);
   - `_private` helpers and module state; compiled regexes named `_X_RE`;
   - public endpoint functions named after the resource (`products_search`, `product_details`, `store_products`), private impls as short `_name` (`_search`, `_reviews`, `_store_record`).
-- **R-STYLE-3 (MUST NOT)** No type hints in untyped modules. `egress.py` is the only typed module and keeps its hints.
+- **R-STYLE-3 (MUST NOT)** No type hints in untyped server modules. `egress.py` is the only typed server module and keeps its hints. Types of API answers live on the consumer side (R-TYPE).
 - **R-STYLE-4 (MUST)** No logging framework. Diagnostic output is `print()`, and only in the browser driver and the entry points. Driver lines carry a subsystem prefix (`patchright: ...`); the entry points (`run.main`, `main.save`) print plain status lines. `api`, `parsers`, `refs`, `fetch`, `cache` and `browser_client` stay silent; exceptions are the signal.
 - **R-STYLE-5 (MUST)** Heavy or optional dependencies are imported lazily inside the function that needs them: `patchright_driver` in `browser_client._launch`, `curl_cffi` in `fetch._session`, `requests` in `config.exit_geo`, `egress` / `config` / `url_blocking` in `PatchrightDriver.__init__`, browserforge in `PatchrightDriver._main`, pyvirtualdisplay in `_ensure_display`. Keep them lazy; parser tests must not load the browser stack.
 - **R-STYLE-6 (SHOULD)** Double quotes, f-strings, parenthesized multi-line imports. New lines stay at or under 120 characters. 34 existing lines exceed that; do not reformat them in unrelated commits.
+
+## R-TYPE: data types
+
+Requests are typed on the server, answers on the consumer side.
+
+- **R-TYPE-1 (MUST)** Request params are typed and validated only by the marshmallow schemas in
+  `naver_shopping/schemas.py` (fields from `schema_fields.py`). No hand-parsed query params in routes.
+- **R-TYPE-2 (MUST)** Every API answer has a TypedDict in `scripts/naver_types.py`, and a captured real answer in
+  `scripts/fixtures/` that `scripts/test_naver_types.py` checks against it strictly (missing / unknown keys and wrong
+  types fail). A new endpoint or any change to an answer's shape updates the parser, the TypedDict, the fixture and
+  the typed client method in the same commit.
+- **R-TYPE-3 (MUST)** Types say what the server can really send, read from the parser code, not from one sample:
+  `X | None` where a parser helper can return None, `NotRequired` only where the key can be omitted, `Literal` only
+  for value sets the code closes. Open upstream enums stay `str`.
+- **R-TYPE-4 (MUST)** Scripts call known endpoints through the typed client methods (`search`, `product_details`,
+  `listing`, ...), not raw `get(path)`, and guard every `X | None` field before using it. `get` / `pages` stay for
+  routes without a method yet, and for `smoke_endpoints.py`, which checks routes as routes.
+- **R-TYPE-5 (SHOULD)** New or changed scripts pass `mypy --ignore-missing-imports --check-untyped-defs` (command in
+  `scripts/README.md`). Type hints are welcome in `scripts/` (unlike the server, R-STYLE-3).
+- **R-TYPE-6 (MUST)** Fixtures hold real answers, trimmed (lists to 5 items, strings to 300 chars), with no cookies,
+  tokens, session ids or personal data. Re-capture them from a running server, never hand-edit their shape.
 
 ## R-DEP: dependencies
 

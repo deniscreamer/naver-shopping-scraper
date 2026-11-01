@@ -69,7 +69,7 @@ fixture against its type strictly (missing or unknown keys fail).
 ```sh
 .venv/bin/python -m pytest scripts -q                      # includes the type conformance test
 .venv/bin/pip install mypy && .venv/bin/python -m mypy --ignore-missing-imports --check-untyped-defs \
-    scripts/naver_types.py scripts/naver_api_client.py scripts/example_0*.py   # static check (optional)
+    $(ls scripts/*.py | grep -v /test_)   # static check of every script (tests excluded)
 ```
 
 When a server answer changes shape: re-capture its fixture (one call with the client, json.dump, lists trimmed to
@@ -95,6 +95,9 @@ Then run the scripts:
 
 ## Conventions
 
+- **Typed calls.** Use the typed client methods (`api.search()`, `api.product_details()`, `api.listing()`, ...) and
+  the shapes in `naver_types.py`; guard every `X | None` field (`product["reviews"]`, `product["variants"]`, names).
+  Run mypy on what you write (see Response types). Rules: server/docs/DEVELOPMENT_RULES.md R-TYPE.
 - **Sequential by default.** The server keeps one Chrome per proxy
   (`config.NAVER_SHOPPING_BROWSER_SLOTS = 1`), and box calls serialize on that
   Chrome's lock. Parallel calls just queue up inside the server (cheroot has

@@ -147,15 +147,14 @@ def harvest_listing(api, query, out_dir, category=None, lo=0, hi=MAX_PRICE, dela
         raise SystemExit(f"listing: {out_dir} holds {state['query']!r} / {state['category']}; use another --out")
     seen = load_seen(listing_path)
     skipped_ids = set(state["skipped_ids"])
-    params = {"query": query, "category": category}
     budget = [0]
 
-    def call(path, **extra):
+    def search(lo, hi):
         if budget[0]:
             sleep(delay)
         budget[0] += 1
         state["requests"] += 1
-        return api.get(path, **params, **extra)
+        return api.search(query, category=category, min_price=lo, max_price=hi)
 
     print(f"listing: {query!r} category={category} -> {listing_path} ({len(seen)} already kept, "
           f"{len(state['pending'])} ranges pending)")
@@ -165,7 +164,7 @@ def harvest_listing(api, query, out_dir, category=None, lo=0, hi=MAX_PRICE, dela
                   f"rerun with --out to resume")
             break
         a, b = state["pending"].pop()
-        answer = call("/products/search", min_price=a, max_price=b)
+        answer = search(a, b)
         total, cards = answer.get("total_count") or 0, answer.get("results") or []
         kept = 0
         with open(listing_path, "a", encoding="utf-8") as f:

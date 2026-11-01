@@ -87,7 +87,7 @@ def _record_key(endpoint, params):
 
 def load_done(path):
     """Keys of the records already in a products.jsonl (for resuming)."""
-    done = set()
+    done: set[str] = set()
     if not os.path.exists(path):
         return done
     with open(path, encoding="utf-8") as f:
@@ -113,7 +113,7 @@ def harvest(api, query, limit, out_dir, catalogs=False, delay=0):
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "products.jsonl")
     done = load_done(path)
-    search = api.get("/products/search", query=query)
+    search = api.search(query)
     cards = search.get("results") or []
     print(f"harvest: {query!r} -> {len(cards)} cards, writing {path}")
     fetched = skipped = failed = 0
@@ -131,7 +131,7 @@ def harvest(api, query, limit, out_dir, catalogs=False, delay=0):
         if key in done:
             continue
         try:
-            data = api.get(endpoint, **params)
+            data = api.product_details(target) if kind == "product" else api.catalog_reviews(target)
         except ApiError as e:
             failed += 1                  # a 400 means classify_card let a bad input through: report it
             print(f"harvest: {endpoint} {target} -> {e.status}: {(e.error or '')[:120]}")

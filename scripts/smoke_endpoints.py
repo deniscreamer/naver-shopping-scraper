@@ -25,7 +25,7 @@ from naver_api_client import ApiError, NaverApiClient
 
 PRODUCT = "https://smartstore.naver.com/dailyromantic/products/8087042745"
 
-CALLS = [
+CALLS: list[tuple[str, dict]] = [
     ("/categories/list", {}),
     ("/products/search", {"query": "raspberry pi", "max_price": 100000}),
     ("/products/count", {"query": "목걸이"}),
@@ -79,7 +79,7 @@ def main(argv=None):
 
     api = NaverApiClient(base_url=args.base_url)
     print(f"smoke: {api.base_url}")
-    calls = [("/health", {})] + CALLS
+    calls: list[tuple[str, dict]] = [("/health", {})] + CALLS
     failed = []
     for i, (path, params) in enumerate(calls):
         if i and args.delay > 0:

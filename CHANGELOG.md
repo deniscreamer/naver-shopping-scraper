@@ -3,8 +3,12 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
-## Unreleased
+## 0.2.0 (2026-11-01)
 
+- **Rules**: R-TYPE in `server/docs/DEVELOPMENT_RULES.md` (requests typed by marshmallow schemas, answers by
+  TypedDicts + strict fixtures, nullable fields guarded, typed client methods, mypy for scripts); scripts conventions.
+- **Scripts on typed methods**: `harvest_listing.py` and `example_search_harvest.py` use `api.search()` /
+  `product_details()` / `catalog_reviews()`; every script passes `mypy`.
 - **Types**: `scripts/naver_types.py` names every API answer (TypedDicts, written from real captured answers and the
   parser code); `test_naver_types.py` checks the captures strictly; typed client methods (`search`,
   `product_details`, `reviews`, `listing`, ...); examples use them and pass `mypy`.

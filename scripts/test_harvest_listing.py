@@ -40,11 +40,9 @@ class FakeApi:
     def _in(self, lo, hi):
         return [c for c in self.cards if lo <= c["pricing"]["discounted_price"] <= hi]
 
-    def get(self, path, query=None, category=None, min_price=None, max_price=None):
-        self.calls.append(path)
+    def search(self, query, category=None, min_price=None, max_price=None):
+        self.calls.append("/products/search")
         hits = self._in(min_price, max_price)
-        if path == "/products/count":
-            return {"total_count": len(hits)}
         shown = len(hits) if len(hits) < 24 else min(len(hits) // 24 * 24, L.SEARCH_MAX_CARDS)
         return {"total_count": len(hits), "results": hits[:shown]}
 
