@@ -22,7 +22,7 @@ Typed shapes of every answer below: `scripts/naver_types.py` (TypedDicts, checke
 - Default base URL: `http://localhost:8000` (`config.PORT`).
 
 ```
-GET /health  ->  {"status": "ok", "version": "0.2.0", "endpoints": ["/products/details", ..., "/listings", ...], "extension": "connected"}
+GET /health  ->  {"status": "ok", "version": "0.3.0", "endpoints": ["/products/details", ..., "/listings", ...], "extension": "connected"}
 ```
 
 ### Param rules (all endpoints)

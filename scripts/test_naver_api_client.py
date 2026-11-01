@@ -316,3 +316,22 @@ def test_examples_compile():
     assert len(examples) == 7
     for path in examples:
         py_compile.compile(path, doraise=True)
+
+
+def test_check_setup_local_runs(capsys):
+    import check_setup
+    code = check_setup.main(["--no-server"])
+    out = capsys.readouterr().out
+    assert code in (0, 1) and "python >= 3.11" in out and ("READY" in out)
+
+
+def test_env_file_loader(tmp_path, monkeypatch):
+    from naver_api_client import load_env_file
+    env = tmp_path / ".env"
+    env.write_text("# comment\nNS_TEST_A=1\nexport NS_TEST_B='two'\nNS_TEST_C=\nNS_TEST_D=keep\n", encoding="utf-8")
+    monkeypatch.setenv("NS_TEST_D", "shell")
+    for k in ("NS_TEST_A", "NS_TEST_B", "NS_TEST_C"):
+        monkeypatch.delenv(k, raising=False)
+    load_env_file(str(env))
+    assert os.environ["NS_TEST_A"] == "1" and os.environ["NS_TEST_B"] == "two"
+    assert "NS_TEST_C" not in os.environ and os.environ["NS_TEST_D"] == "shell"

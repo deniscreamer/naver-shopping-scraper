@@ -12,10 +12,35 @@ environment variable; the defaults work out of the box.
                           starts refusing your IP (HTTP 418 / 429 errors);
                           a STICKY proxy keeps one exit for Chrome's life.
 
-Everything else below is a plain constant with a working default — edit it
-here if you need to.
+Values can also sit in a `.env` file at the repo root (KEY=value lines, see
+/.env.example); it is read once here at import and never overrides a variable
+already set in the environment. Everything else below is a plain constant
+with a working default — edit it here if you need to.
 """
 import os
+
+ENV_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env")
+
+
+def load_env_file(path=ENV_FILE):
+    """KEY=value lines of `path` into os.environ (no override, # comments,
+    optional quotes). No dependency: python-dotenv is not needed for this."""
+    if not os.path.exists(path):
+        return
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, value = line.split("=", 1)
+            key, value = key.strip().removeprefix("export ").strip(), value.strip()
+            if len(value) >= 2 and value[0] == value[-1] and value[0] in "'\"":
+                value = value[1:-1]
+            if key and value and key not in os.environ:
+                os.environ[key] = value
+
+
+load_env_file()
 
 PORT = int(os.environ.get("PORT", "8000"))
 

@@ -66,6 +66,9 @@ Docker/Linux deployment is archived in [../archive/docker/](../archive/docker/RE
 
 ## Environment variables
 
+Set them in the shell or in the repo-root `.env` (copy [../.env.example](../.env.example); read by
+`config.load_env_file`, the shell wins).
+
 | Variable | Read in | Effect |
 |---|---|---|
 | `PORT` | `config.PORT` (import time) | Listen port, default 8000. |

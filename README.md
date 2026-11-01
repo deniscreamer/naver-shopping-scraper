@@ -11,6 +11,8 @@ Naver refuses it. The supported platform is macOS.
 
 ## Quick start
 
+Full setup (for agents and humans, incl. the browser adapter and `.env`): [SETUP.md](SETUP.md).
+
 Requires macOS, Python 3 and Google Chrome installed in /Applications. macOS
 details (the Chrome window, timings, profiles): [server/README.md](server/README.md#macos).
 

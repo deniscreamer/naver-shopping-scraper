@@ -3,6 +3,16 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
+## 0.3.0 (2026-11-01)
+
+- **Setup for a new machine / agent**: `SETUP.md` (step by step, the agent does it itself and asks the operator only
+  for what needs them: loading the adapter into their Chrome, secrets); `.env.example` (every per-machine value:
+  what, where to get it, an example) and a dependency-free `.env` loader in the server and the scripts client
+  (the shell wins).
+- **Checklist**: `scripts/check_setup.py` (Python, packages, Chrome, `.env`, server, version, adapter, bridge port;
+  `--live` one Naver call per transport, `--notify` a webhook test) -> READY / NOT READY.
+- **Rules**: R-SETUP (a new requirement adds its check, `.env.example` line and SETUP step; secrets only in `.env`).
+
 ## 0.2.0 (2026-11-01)
 
 - **Rules**: R-TYPE in `server/docs/DEVELOPMENT_RULES.md` (requests typed by marshmallow schemas, answers by

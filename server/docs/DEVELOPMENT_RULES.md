@@ -172,6 +172,15 @@ Requests are typed on the server, answers on the consumer side.
 - **R-TYPE-6 (MUST)** Fixtures hold real answers, trimmed (lists to 5 items, strings to 300 chars), with no cookies,
   tokens, session ids or personal data. Re-capture them from a running server, never hand-edit their shape.
 
+## R-SETUP: environment and setup
+
+- **R-SETUP-1 (MUST)** A change that adds a requirement (an env var, a package, a service, a port, a file the code
+  needs, a Chrome / extension condition) adds its check to `scripts/check_setup.py`, its line to `.env.example`
+  (what it is, where to get it, an example) and its step to `SETUP.md`, in the same commit.
+- **R-SETUP-2 (MUST)** Per-machine values come from the environment / the repo-root `.env` (read by
+  `config.load_env_file` and `naver_api_client.load_env_file`, never overriding the shell). Secrets live only in
+  `.env` (gitignored): never in code, fixtures, docs or commits.
+
 ## R-DEP: dependencies
 
 - **R-DEP-1 (MUST)** Keep `curl_cffi>=0.16,<0.17` in `server/requirements.txt`: 0.17.0 (Oct 2026) has its TLS handshake reset by some home ISPs (comment in requirements.txt).

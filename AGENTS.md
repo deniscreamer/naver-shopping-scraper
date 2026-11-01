@@ -3,6 +3,7 @@
 Local HTTP API over Naver Shopping (fork of omkarcloud/naver-shopping-scraper).
 Plain-HTTP endpoints use curl_cffi; store-backend endpoints run inside a real
 headed Chrome driven by patchright. Human overview: [README.md](README.md).
+**New machine? Follow [SETUP.md](SETUP.md) first** (ends with `scripts/check_setup.py --live` = READY).
 
 ## Repo map
 
@@ -62,6 +63,7 @@ Live check (server running, uses the network): `curl http://localhost:8000/healt
 
 | Topic | Doc | When to read |
 |---|---|---|
+| Setup | [SETUP.md](SETUP.md), [.env.example](.env.example) | A new machine; a new requirement (R-SETUP) |
 | Overview | [README.md](README.md) | First visit |
 | Server pointer | [server/AGENTS.md](server/AGENTS.md) | Before editing under server/ |
 | Rules (MANDATORY) | [server/docs/DEVELOPMENT_RULES.md](server/docs/DEVELOPMENT_RULES.md) | Before ANY change under server/ |

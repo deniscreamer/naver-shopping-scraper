@@ -32,6 +32,30 @@ from urllib3.exceptions import NewConnectionError
 
 import naver_types as T
 
+ENV_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env")
+
+
+def load_env_file(path=ENV_FILE):
+    """The repo-root .env (KEY=value lines) into os.environ, never overriding
+    a variable already set. Same rules as server/config.load_env_file (scripts
+    do not import server code)."""
+    if not os.path.exists(path):
+        return
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, value = line.split("=", 1)
+            key, value = key.strip().removeprefix("export ").strip(), value.strip()
+            if len(value) >= 2 and value[0] == value[-1] and value[0] in "'\"":
+                value = value[1:-1]
+            if key and value and key not in os.environ:
+                os.environ[key] = value
+
+
+load_env_file()
+
 DEFAULT_URL = "http://localhost:8000"
 CONNECT_TIMEOUT = 5
 READ_TIMEOUT = 900
