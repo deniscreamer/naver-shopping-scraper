@@ -19,7 +19,7 @@ this file in the same commit.
 - Default base URL: `http://localhost:8000` (`config.PORT`).
 
 ```
-GET /health  ->  {"status": "ok", "endpoints": ["/products/details", ..., "/listings", ...], "extension": "connected"}
+GET /health  ->  {"status": "ok", "version": "0.1.0", "endpoints": ["/products/details", ..., "/listings", ...], "extension": "connected"}
 ```
 
 ### Param rules (all endpoints)

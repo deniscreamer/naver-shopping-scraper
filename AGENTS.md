@@ -71,6 +71,7 @@ Live check (server running, uses the network): `curl http://localhost:8000/healt
 | Operations | [server/README.md](server/README.md) | Running on macOS, env vars, tests |
 | Consumer scripts, Shopify roadmap | [scripts/README.md](scripts/README.md) | Writing scripts against the API, starting Shopify work |
 | Security | [SECURITY.md](SECURITY.md) | Reporting vulnerabilities |
+| Releases | [CHANGELOG.md](CHANGELOG.md), `VERSION` | Cutting a release, what changed |
 | Extension transport (beta) | [server/docs/EXTENSION.md](server/docs/EXTENSION.md), [extension/README.md](extension/README.md) | search.shopping listing, anything touching extension/ or ext_*.py |
 | Archived Docker setup | [archive/docker/README.md](archive/docker/README.md) | Only if Linux deployment comes back |
 

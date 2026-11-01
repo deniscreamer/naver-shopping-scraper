@@ -109,3 +109,4 @@ def test_bad_params_and_unknown_job(jobs):
 def test_health_reports_the_extension(jobs):
     status, body = call("GET", "/health")
     assert status == 200 and body["extension"] == "connected" and "/listings" in body["endpoints"]
+    assert body["version"] == open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "VERSION")).read().strip()

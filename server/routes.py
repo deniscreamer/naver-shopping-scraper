@@ -11,6 +11,7 @@ from urllib.parse import urlencode
 
 from bottle import request, response, route
 
+import config
 import listing_jobs
 from naver_shopping import api, schemas
 from schema_fields import load_query
@@ -176,5 +177,6 @@ for _prefix in ("", "/" + SITE):
 @route("/", method="GET")
 @route("/health", method="GET")
 def health():
-    return json_response({"status": "ok", "endpoints": [p for p, *_ in ENDPOINTS] + list(LISTING_PATHS),
+    return json_response({"status": "ok", "version": config.VERSION,
+                          "endpoints": [p for p, *_ in ENDPOINTS] + list(LISTING_PATHS),
                           "extension": listing_jobs.extension_status()})

@@ -19,6 +19,10 @@ import os
 
 PORT = int(os.environ.get("PORT", "8000"))
 
+# The release version, from /VERSION at the repo root (shown by /health).
+_VERSION_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "VERSION")
+VERSION = open(_VERSION_FILE).read().strip() if os.path.exists(_VERSION_FILE) else "dev"
+
 # Retry policy for transport errors and blocks (every request).
 MAX_RETRIES = 3
 RETRY_BACKOFF = 2          # seconds, multiplied by the attempt number
