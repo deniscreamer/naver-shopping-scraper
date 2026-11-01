@@ -16,13 +16,14 @@ from urllib.parse import quote
 
 from cache import cached_call
 from naver_shopping import cache_config as ttl
-from naver_shopping import parsers
+from naver_shopping import parsers, review_select
 from naver_shopping.fetch import (NaverBadRequest, NaverNotFound, box_get, box_get_many, box_post, fetch_brand_product_page,
                                   fetch_datalab, fetch_search, fetch_search_count, fetch_store_page)
 from naver_shopping.refs import catalog_link, split_product_link, split_store_link, store_link
-from naver_shopping.schemas import DATALAB_DEVICES, DATALAB_GENDERS, DATALAB_PERIODS, REVIEW_SORTS
+from naver_shopping.schemas import DATALAB_DEVICES, DATALAB_GENDERS, DATALAB_PERIODS, REVIEW_MEDIA, REVIEW_SORTS
 
-REVIEW_PAGE_SIZE = 20
+REVIEW_PAGE_SIZE = 20       # the backend's maximum: 50 / 100 answer 204, no pageSize gives 10 (probed 2026-11-01)
+SELECT_MAX_PAGES = 25       # per filter pass of reviews/selected: 500 reviews
 SEARCH_MAX_CARDS = 96        # the widget's TREND view: 4 pages x 24, no deeper paging exists
 # ... and WHOLE pages only: 45 matches answer 24 cards, 67 answer 48, under 24
 # answer all (probed 2026-11-01, 남성 골프채 풀세트 / 50002788, 0-19073 KRW:
@@ -245,13 +246,18 @@ def product_details(product):
 def _reviews(**data):
     record = _record(data["product"])
     base, store = record["base"], record["store"]
-    payload = box_post("/n/v1/contents/reviews/query-pages", {
+    body = {
         "checkoutMerchantNo": int(store["merchant_id"]), "originProductNo": int(base["origin_product_id"]),
         "page": data["page"], "pageSize": REVIEW_PAGE_SIZE,
-        # the backend reads only reviewSearchSortType; any other key is ignored
-        # and the page comes back newest-first
         "reviewSearchSortType": data["sort"],
-    }, f"product {base['id']} reviews page {data['page']}")
+    }
+    # reviewContentClassTypes filters by media (the page's 포토/동영상 filter
+    # sends it; probed 2026-11-01: PHOTO,VIDEO 91 of 202, TEXT 111); other
+    # keys tried (reviewContentClassType, reviewSearchType) are ignored
+    media = data.get("media") or "ALL"
+    if media != "ALL":
+        body["reviewContentClassTypes"] = media.split(",")
+    payload = box_post("/n/v1/contents/reviews/query-pages", body, f"product {base['id']} reviews page {data['page']}")
     reviews, pagination = parsers.parse_reviews_page(payload or {}, REVIEW_PAGE_SIZE)
     pagination["page"] = data["page"]
     pagination["items_per_page"] = REVIEW_PAGE_SIZE
@@ -260,6 +266,7 @@ def _reviews(**data):
     return {
         "product": {"id": base["id"], "name": base["name"], "link": base["link"]},
         "sort": _public(REVIEW_SORTS, data["sort"]),
+        "media": _public(REVIEW_MEDIA, media),
         "summary": record["review_summary"],
         "results": reviews,
         "pagination": pagination,
@@ -268,6 +275,65 @@ def _reviews(**data):
 
 def product_reviews(**data):
     return cached_call("naver_shopping.reviews", data, _reviews, ttl.REVIEWS_CACHE)
+
+
+# ---- products/reviews/selected ----------------------------------------------------------
+
+def _review_pass(product, media, enough):
+    """Newest-first pages of one media filter until enough(reviews), the last page or SELECT_MAX_PAGES."""
+    reviews, pages, total, exhausted = [], 0, None, False
+    for page in range(1, SELECT_MAX_PAGES + 1):
+        answer = product_reviews(product=product, page=page, sort=REVIEW_SORTS["recent"], media=REVIEW_MEDIA[media])
+        pagination = answer["pagination"]
+        pages, total = page, pagination.get("total_count")
+        reviews.extend(answer["results"])
+        total_pages = pagination.get("total_pages")       # None when the backend leaves out totalElements
+        if len(answer["results"]) < REVIEW_PAGE_SIZE or (total_pages is not None and page >= total_pages):
+            exhausted = True
+            break
+        if enough(reviews):
+            break
+    return {"media": media, "pages": pages, "total_count": total, "is_exhausted": exhausted}, reviews
+
+
+def product_reviews_selected(product, count):
+    """Up to `count` reviews worth showing (review_select): photo + long text +
+    a real avatar first, then photo + text, then long text; every review with
+    text when the product has 20 or fewer. Reads the photo/video filter first,
+    then text-only reviews, newest first, only as far as needed (cached pages)."""
+    record = _record(product)
+    base = record["base"]
+    # no review summary for a product without reviews (2026-11-01, GV Tour set 7583123963): the base count says 0
+    total = (record["review_summary"] or base.get("reviews") or {}).get("count")
+    origin = base["origin_product_id"]
+    passes, seen = [], []
+
+    def chosen(extra=()):
+        return review_select.select(seen + list(extra), origin, total, count)[0]
+
+    if total is not None and total <= review_select.SMALL_SOURCE:
+        plan = [("all", lambda rs: False)]
+    else:
+        plan = [("photo_video", lambda rs: review_select.primary_count(rs, origin) >= count),
+                ("text", lambda rs: len(chosen(rs)) >= count)]
+    for media, enough in plan:
+        if passes and len(chosen()) >= count:
+            break
+        if total != 0:
+            info, reviews = _review_pass(product, media, enough)
+            passes.append(info)
+            seen.extend(reviews)
+    results, mode = review_select.select(seen, origin, total, count)
+    return {
+        "product": {"id": base["id"], "name": base["name"], "link": base["link"]},
+        "summary": record["review_summary"],
+        "mode": mode,
+        "count": len(results),
+        "scanned": len({r["id"] for r in seen}),
+        "passes": passes,
+        "is_complete": len(results) >= count or all(p["is_exhausted"] for p in passes),
+        "results": results,
+    }
 
 
 # ---- catalogs/reviews -------------------------------------------------------------------

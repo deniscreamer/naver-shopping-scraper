@@ -25,6 +25,7 @@ FIXTURES = {
     "products_details.json": T.ProductDetails,
     "products_specs.json": T.ProductSpecs,
     "products_reviews.json": T.ReviewsPage,
+    "products_reviews_selected.json": T.SelectedReviews,
     "stores_details.json": T.StoreDetails,
     "stores_products.json": T.StoreProducts,
     "catalogs_reviews.json": T.CatalogReviews,

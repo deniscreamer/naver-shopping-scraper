@@ -55,9 +55,26 @@ login page), so every read walks the whole flow like a person: naver.com -> the 
 Use both together: way 1 for prices / options / reviews, way 2 for the attribute rows.
 Contract: [server/docs/ENDPOINTS.md](../server/docs/ENDPOINTS.md#product-details-two-ways).
 
+## Reviews: two ways
+
+Reviews come from the store backend in both ways (no adapter): the same JSON a product page loads in its review
+window (`query-pages`), so photo links are originals, product ids are checked and avatars are known.
+
+| | 1. `/products/reviews` (every review) | 2. `/products/reviews/selected` (the ones worth showing) |
+|---|---|---|
+| Gives | one page of 20, any sort (`ranking`, `recent`, `score_high`, `score_low`), `media` filter (`all`, `photo_video`, `text`) | up to `count` (20) chosen reviews: 50+ letters + photo + real avatar first, then photo + text, then text; all with text when the product has 20 or fewer; at most 8 photos a review, 100 a product |
+| Cost | ~0.4 s a page after the record | reads only the pages it needs, newest first: photo/video pages, then text-only pages (Honma D1, 202 reviews: 11 pages, ~5 s) |
+
+Why not through the product page (researched 2026-11-01 on the Honma D1 set): the review window opens from the
+"N건 리뷰" link, takes the 최신순 / 포토/동영상 radios, and loads 20 more reviews only on wheel input (~5 wheels and
+~4 s a page) after the whole search -> card -> page walk in the owner's Chrome; its answers are this same
+`query-pages` JSON, and copying them would need an adapter change. The rendered rows carry only thumbnails and no
+product ids. The backend answers the same filter directly (`reviewContentClassTypes`), so the page adds nothing for
+reviews.
+
 ## Examples: start here
 
-Small, runnable scripts, one topic each, in the order to read them. Start `server/run.py` first; examples 7-10 also
+Small, runnable scripts, one topic each, in the order to read them. Start `server/run.py` first; examples 7-10 and 99 also
 needs Chrome open with the adapter (`example_01` shows `extension: connected`).
 
 | Script | Shows |
@@ -73,6 +90,8 @@ needs Chrome open with the adapter (`example_01` shows `extension: connected`).
 | `example_09_listing_then_specs.py` | Like example 7, details the new way: a listing, then `product_details()` + `product_specs(link, query=<the listing's search>)` per product (name fallback). Collecting products not known yet |
 | `example_10_known_products_specs.py` | Known product links -> `product_specs(link, query=<full Korean name>)`: the card is matched by its id on that search page |
 | `example_11_reviews_full.py` | `api.reviews()` read completely: every review field in the store's order (id, score, date, full text, option, likes, writer, photo / video links and sizes), the product summary, JSONL to `output/reviews-<id>/` |
+| `example_12_reviews_selected.py` | Reviews, way 2: `selected_reviews()` -> up to 20 reviews worth showing (photo + text + avatar first), with the tier of each, JSONL |
+| `example_99_full_details.py` | **FULL**, the one to grow: a category's products (listing + category id), each in turn -> details + 상품정보 specs (adapter) + selected reviews, one JSON line per product |
 
 ```sh
 .venv/bin/python scripts/example_01_health.py
@@ -81,7 +100,7 @@ needs Chrome open with the adapter (`example_01` shows `extension: connected`).
 
 All calls go through `naver_api_client.NaverApiClient`. Typed methods, one per endpoint, return the shapes in
 `naver_types.py`: `health()`, `search(query, **filters)`, `count(...)`, `product_details(product)`,
-`product_specs(product, query)`, `reviews(product, sort, max_page)` (pages), `store_details(store)`, `store_products(store, list, period)`,
+`product_specs(product, query)`, `reviews(product, sort, max_page, media)` (pages), `selected_reviews(product, count)`, `store_details(store)`, `store_products(store, list, period)`,
 `catalog_reviews(catalog)`, `categories(category)`, `keywords_rank(category, **window)` (pages),
 `keyword_trend(keyword, category, **window)`, `category_trend(category, **window)`, `listing(query, max_batches)`.
 The generic `get(path, **params)` / `pages(path, **params)` reach any route. Any non-200 raises

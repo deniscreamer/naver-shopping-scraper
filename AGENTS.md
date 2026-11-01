@@ -12,7 +12,7 @@ server/            the API and its import root (bare imports, NO server/__init__
   run.py routes.py config.py cache.py browser_client.py patchright_driver.py ...
   naver_shopping/  endpoint logic, fetch, parsers, schemas, offline tests, fixtures/
   docs/            DEVELOPMENT_RULES.md, ARCHITECTURE.md, ENDPOINTS.md, KNOWN_ISSUES.md
-scripts/           HTTP-only consumers of the running API (example_01..11: how to call it; naver_types.py: answer types)
+scripts/           HTTP-only consumers of the running API (example_01..12, 99: how to call it; naver_types.py: answer types)
 extension/         Chrome adapter for the owner's browser (beta, search.shopping listing)
 archive/docker/    retired Docker/Linux setup, not maintained
 pyproject.toml     pytest config only (testpaths = pythonpath = ["server"])
@@ -51,7 +51,7 @@ Run from the repo root.
 python -m venv .venv
 .venv/bin/pip install -r server/requirements.txt -r scripts/requirements.txt
 .venv/bin/python server/run.py              # http://localhost:8000, PORT=... to change
-.venv/bin/python -m pytest -q               # offline suite, 145 tests
+.venv/bin/python -m pytest -q               # offline suite, 158 tests
 .venv/bin/python -m pytest scripts -q       # scripts/ client tests, offline, separate suite
 ```
 

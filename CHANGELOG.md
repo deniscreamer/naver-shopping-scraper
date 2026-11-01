@@ -18,6 +18,14 @@ version in `extension/manifest.json`.
   listing, then details the new way), `example_10_known_products_specs.py` (known links, matched by full name + id).
 - **Reviews**: `writer.profile_image` is null for Naver's no-avatar placeholder (`profile-phinf.pstatic.net/404/`);
   `example_11_reviews_full.py` reads a product's reviews completely (all fields, order, media links) to JSONL.
+- **Reviews, way 2**: `/products/reviews/selected` chooses up to `count` reviews worth showing (photo + 50+ letters +
+  avatar first, then photo + text, then text; all with text for 20 or fewer), reading only the pages it needs;
+  `/products/reviews` takes `media` (`all`, `photo_video`, `text`: the backend's `reviewContentClassTypes`).
+  Researched against the product page's review window: same JSON, ~10x slower, so no adapter for reviews.
+- **Review videos**: attachments with `reviewAttachmentType` "M" are `video` now (they came as `image`); the link
+  is the poster frame. Paging checked on 6782 reviews (340 pages, all unique, newest first).
+- **FULL example**: `example_99_full_details.py` (a category's products -> details + specs + selected reviews),
+  `example_12_reviews_selected.py`; `/products/specs` treats a card click that opened the store as not found.
 - **Docs**: "Product details: two ways" (`/products/details` vs `/products/specs`, the full-flow catch, the two ways
   in) in ENDPOINTS.md and scripts/README.md.
 

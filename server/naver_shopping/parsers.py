@@ -547,10 +547,19 @@ def parse_review_summary(s):
 _DEFAULT_AVATAR_RE = re.compile(r"^https?://profile-phinf\.pstatic\.net/404/")
 
 
+def _attachment_type(a):
+    """A review attachment's kind. Videos come as reviewAttachmentType "M"
+    with a video/* mimeTypeName, photos as "I" (2026-11-01, bauato power bank:
+    51 video reviews); attachUrl of a video is its poster frame, the answer
+    holds no video file link."""
+    kind = _clean(a.get("reviewAttachmentType"))
+    return "video" if kind in ("M", "V") or (_clean(a.get("mimeTypeName")) or "").startswith("video/") else "image"
+
+
 def parse_review(r):
     r = _dict(r)
     avatar = _clean(r.get("writerProfileImageUrl"))
-    attaches = [{"type": "video" if _clean(a.get("reviewAttachmentType")) == "V" else "image",
+    attaches = [{"type": _attachment_type(a),
                  "link": _clean(a.get("attachUrl")) or _clean(a.get("attachPath")),
                  "width": _int(a.get("attachWidth")), "height": _int(a.get("attachHeight"))}
                 for a in _list(r.get("reviewAttaches")) if isinstance(a, dict)]
@@ -605,7 +614,7 @@ def parse_catalog_reviews(payload, catalog_id):
     for r in rows:
         if not isinstance(r, dict):
             continue
-        attaches = [{"type": "video" if _clean(a.get("reviewAttachmentType")) == "V" else "image",
+        attaches = [{"type": _attachment_type(a),
                      "link": _clean(a.get("attachUrl")) or _clean(a.get("attachPath"))}
                     for a in _list(r.get("reviewAttaches")) if isinstance(a, dict)]
         out.append({

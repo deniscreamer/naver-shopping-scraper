@@ -179,9 +179,16 @@ class NaverApiClient:
         503 = the extension is not connected, a wall, or the page did not render. Neither is retried here."""
         return self.get("/products/specs", product=product, query=query)
 
-    def reviews(self, product: str, sort: str | None = None, max_page: int | None = None) -> Iterator[T.ReviewsPage]:
-        """Review pages (20 each), page 1 first; sort: ranking, recent, score_high, score_low."""
-        return self.pages("/products/reviews", max_page=max_page, product=product, sort=sort)
+    def reviews(self, product: str, sort: str | None = None, max_page: int | None = None,
+                media: str | None = None) -> Iterator[T.ReviewsPage]:
+        """Review pages (20 each), page 1 first; sort: ranking, recent, score_high, score_low;
+        media: all, photo_video, text."""
+        return self.pages("/products/reviews", max_page=max_page, product=product, sort=sort, media=media)
+
+    def selected_reviews(self, product: str, count: int = 20) -> T.SelectedReviews:
+        """Up to `count` reviews worth showing: photo + 50+ letters + a real avatar first, then photo + text,
+        then text; all with text when the product has 20 or fewer. Store backend, no adapter, seconds."""
+        return self.get("/products/reviews/selected", product=product, count=count)
 
     def store_details(self, store: str) -> T.StoreDetails:
         return self.get("/stores/details", store=store)

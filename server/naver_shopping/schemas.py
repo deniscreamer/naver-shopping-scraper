@@ -31,6 +31,9 @@ REVIEW_SORTS = {
     "ranking": "REVIEW_RANKING", "recent": "REVIEW_CREATE_DATE_DESC",
     "score_high": "REVIEW_SCORE_DESC", "score_low": "REVIEW_SCORE_ASC",
 }
+# reviewContentClassTypes: the review window's 포토/동영상 filter; TEXT = reviews
+# without media (probed 2026-11-01, Honma D1 set: all 202 = PHOTO 91 + TEXT 111).
+REVIEW_MEDIA = {"all": "ALL", "photo_video": "PHOTO,VIDEO", "text": "TEXT"}
 BEST_PERIODS = {"realtime": "REALTIME", "daily": "DAILY", "weekly": "WEEKLY", "monthly": "MONTHLY"}
 DATALAB_PERIODS = {"daily": "date", "weekly": "week", "monthly": "month"}
 DATALAB_DEVICES = {"pc": "pc", "mobile": "mo"}
@@ -98,6 +101,15 @@ class ProductReviewsSchema(BaseSchema):
     page = PageField(max_page=MAX_REVIEW_PAGE, metadata={"description": "1-based page of 20 reviews"})
     sort = ChoiceField(REVIEW_SORTS, load_default="REVIEW_RANKING", metadata={
         "description": "ranking (the store's default), recent, score_high, score_low"})
+    media = ChoiceField(REVIEW_MEDIA, load_default="ALL", metadata={
+        "description": "all, photo_video (reviews with photos or videos), text (reviews without media)"})
+
+
+class ProductReviewsSelectedSchema(BaseSchema):
+    product = ProductRefField(metadata={
+        "description": "channel product number, or a smartstore.naver.com / brand.naver.com product link"})
+    count = fields.Integer(load_default=20, validate=validate.Range(min=1, max=100), metadata={
+        "description": "how many reviews to choose (photo + long text + avatar first)"})
 
 
 # ---- stores ------------------------------------------------------------------------

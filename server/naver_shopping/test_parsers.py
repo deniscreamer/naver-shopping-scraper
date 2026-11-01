@@ -253,6 +253,15 @@ def test_review_summary():
     assert P.parse_review_summary(None)["count"] is None
 
 
+def test_review_video_attachment():
+    """2026-11-01, bauato power bank: a video is reviewAttachmentType "M" + video/mp4 (was read as an image)."""
+    video = {"reviewAttachmentType": "M", "mimeTypeName": "video/mp4", "attachWidth": 1920, "attachHeight": 1080,
+             "attachUrl": "https://phinf.pstatic.net/image.nmv/shopnbuyer_2026_10_19_2747/WmRzkCe9dg_03.jpg"}
+    photo = {"reviewAttachmentType": "I", "attachUrl": "https://phinf.pstatic.net/checkout.phinf/x.jpeg"}
+    r = P.parse_review({"id": 1, "reviewAttaches": [photo, video]})
+    assert [a["type"] for a in r["attachments"]] == ["image", "video"] and r["attachments"][1]["width"] == 1920
+
+
 def test_review_placeholder_avatar_is_null():
     """2026-11-01: a writer without an avatar comes as profile-phinf.pstatic.net/404/default.png."""
     reviews, _ = P.parse_reviews_page(fixture("box_reviews_page1.json"))

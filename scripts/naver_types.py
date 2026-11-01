@@ -21,6 +21,9 @@ ReviewSort = Literal["ranking", "recent", "score_high", "score_low"]   # schemas
 StoreType = Literal["smart_store", "brand_store"]                      # parsers.parse_channel "type"
 CardType = Literal["catalog", "product", "ad"]                          # parsers.parse_search_card "type"
 AttachmentType = Literal["image", "video"]                              # parsers.parse_review attachments[].type
+ReviewMedia = Literal["all", "photo_video", "text"]                     # schemas.REVIEW_MEDIA public names
+ReviewTier = Literal["primary", "photo", "text", "small"]               # review_select.tier
+ReviewMode = Literal["quality", "small_source"]                         # review_select.select
 
 
 class ReviewStats(TypedDict):
@@ -443,8 +446,36 @@ class ReviewsPage(TypedDict):
     previous: str | None
     product: ProductRef
     sort: ReviewSort
+    media: ReviewMedia
     summary: ReviewSummary | None
     results: list[Review]
+
+
+# ---- /products/reviews/selected --------------------------------------------------------
+
+class SelectedReview(Review):
+    """products/reviews/selected results[]: a chosen review and the tier that let it in."""
+    tier: ReviewTier
+
+
+class ReviewPass(TypedDict):
+    """products/reviews/selected passes[]: one media filter read newest first."""
+    media: ReviewMedia
+    pages: int
+    total_count: int | None
+    is_exhausted: bool
+
+
+class SelectedReviews(TypedDict):
+    """products/reviews/selected response (api.product_reviews_selected)."""
+    product: ProductRef
+    summary: ReviewSummary | None
+    mode: ReviewMode
+    count: int
+    scanned: int
+    passes: list[ReviewPass]
+    is_complete: bool                 # `count` reached, or every pass read to its end
+    results: list[SelectedReview]
 
 
 # ==== stores and catalogs =================================================================

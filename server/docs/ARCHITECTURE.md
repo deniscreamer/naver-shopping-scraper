@@ -17,7 +17,7 @@ All paths are relative to `server/`, which is the import root (section 10).
 |---|---|
 | `run.py` | Entry point. cheroot WSGI server on `0.0.0.0:config.PORT`, 16 threads, serving bottle's default app. |
 | `main.py` | In-process demo: calls `naver_shopping.api` directly and writes `output/*.json` relative to the CWD. |
-| `routes.py` | Mounts the 12 endpoints (`routes.ENDPOINTS`) at `/path` and `/naver-shopping/path`, plus the listing job routes (`routes.LISTING_PATHS`, both prefixes) and unprefixed `/` and `/health` (with the extension status). `routes.call` validates, runs, maps errors to HTTP. `routes.paginate` flattens pagination. |
+| `routes.py` | Mounts the 13 endpoints (`routes.ENDPOINTS`) at `/path` and `/naver-shopping/path`, plus the listing job routes (`routes.LISTING_PATHS`, both prefixes) and unprefixed `/` and `/health` (with the extension status). `routes.call` validates, runs, maps errors to HTTP. `routes.paginate` flattens pagination. |
 | `schema_fields.py` | marshmallow base schema (`unknown=RAISE`), `load_query`, field types (`RefField`, `Flag`, page fields). |
 | `scraper_errors.py` | Base taxonomy: `UpstreamError`, `Blocked(UpstreamError)`, `BadRequest`, `NotFound`. |
 | `cache.py` | In-process TTL cache, `cached_call`. |
@@ -32,8 +32,9 @@ All paths are relative to `server/`, which is the import root (section 10).
 | `naver_shopping/api.py` | Endpoint functions: cache wrappers, shared bundles, request orchestration. |
 | `naver_shopping/fetch.py` | The only module that talks to Naver: curl surfaces, box calls, error classification. |
 | `naver_shopping/parsers.py` | Pure functions: raw JSON / HTML to output dicts. |
+| `naver_shopping/review_select.py` | Pure: which reviews `/products/reviews/selected` keeps (tiers, caps). |
 | `naver_shopping/cache_config.py` | One TTL per cached namespace, each with its reason. |
-| `test_import_smoke.py`, `naver_shopping/test_*.py` | Offline tests (145 at the time of writing). Fixtures in `naver_shopping/fixtures/`. |
+| `test_import_smoke.py`, `naver_shopping/test_*.py` | Offline tests (158 at the time of writing). Fixtures in `naver_shopping/fixtures/`. |
 
 ## 2. Layers
 
@@ -327,7 +328,7 @@ the above and is harmless. Heavy dependencies are imported lazily
 requests in `config.exit_geo`, egress / config / url_blocking inside
 `PatchrightDriver`). `test_import_smoke.py` imports every library module by
 bare name (`MODULES`; not the `run.py` / `main.py` entry points, `main.py`
-creates `output/` at import) and checks the 32 routes. R-LAYOUT-1, R-LAYOUT-2, R-STYLE-5.
+creates `output/` at import) and checks the 34 routes. R-LAYOUT-1, R-LAYOUT-2, R-STYLE-5.
 
 ## 12. Extension transport (beta)
 
@@ -411,6 +412,16 @@ primary record, with dates; read it before changing the behaviour.
 - naverShoppingSearchInfo may carry only `manufacturerName` (no `brandName`) while the name carries the brand. ->
   `parsers.product_facts` docstring.
 
+- The review backend (`query-pages`) serves at most 20 a page (50 / 100 answer 204; no `pageSize` gives 10) and
+  filters by media with `reviewContentClassTypes` (PHOTO, VIDEO, TEXT; other keys ignored). -> `api.REVIEW_PAGE_SIZE`
+  and `api._reviews` comments.
+- A product page's review window loads reviews only on wheel input, 20 at a time, from the same `query-pages`; the
+  backend answers the same filters directly. -> ENDPOINTS.md "Reviews: two ways".
+- A product with no reviews has no review summary; the base record's count is 0. -> `api.product_reviews_selected`
+  comment.
+- A search card clicked at its centre can open the store instead of the product. -> `ext_product.read_page` comment.
+- A review video attachment is `reviewAttachmentType` "M" with a `video/*` `mimeTypeName`; its URL is a poster
+  frame. -> `parsers._attachment_type` docstring.
 - A review writer without an avatar comes with the placeholder `profile-phinf.pstatic.net/404/default.png`. ->
   `parsers._DEFAULT_AVATAR_RE` comment.
 

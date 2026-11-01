@@ -101,6 +101,12 @@ def read_page(bridge, product_id, query, out_dir):
         ext_listing.pause(3, 5)
         if not ext_listing.check(bridge, page_tab, "product", out_dir):
             raise PageBlocked(f"product {product_id}: a wall on the product page")
+        # A click on the card's centre can land on its store link (2026-11-01: the Honma D1 card in the
+        # 남성 골프채 풀세트 search opened smartstore.naver.com/thegolf); then the card counts as not found.
+        landed = (bridge.call("page", tabId=page_tab, headChars=0) or {}).get("url") or ""
+        if f"/products/{product_id}" not in landed:
+            raise NotListed(f"product {product_id}: its card on the search page for {query!r} opened {landed[:80]}; "
+                            "pass a query that finds it (its name)")
         # The list can render seconds after the load event (2026-11-01: a Honma
         # page read 3-5 s after load had none, 4 s later it had its 3 rows).
         page = {}

@@ -15,7 +15,7 @@ Typed shapes of every answer below: `scripts/naver_types.py` (TypedDicts, checke
 
 - All endpoints are `GET` with query-string params and answer JSON encoded as UTF-8 with Korean text unescaped. The
   `Content-Type` header is `application/json` with no `charset` parameter (`routes.json_response`).
-- Each of the 12 endpoints is served at `/<path>` and at `/naver-shopping/<path>` (`routes.mount`). Both forms are
+- Each of the 13 endpoints is served at `/<path>` and at `/naver-shopping/<path>` (`routes.mount`). Both forms are
   equivalent; the unprefixed form (`/products/details`) matches the hosted RapidAPI paths, and `/naver-shopping/...`
   is an alias.
 - `/` and `/health` exist only unprefixed (`routes.health`). `/naver-shopping/health` is a 404.
@@ -233,16 +233,54 @@ curl "http://localhost:8000/products/details?product=https://smartstore.naver.co
 | `product` | product ref, required | | |
 | `page` | int | 1 | 1..500 (`MAX_REVIEW_PAGE`), 20 reviews a page |
 | `sort` | choice | `ranking` | `ranking`, `recent`, `score_high`, `score_low` |
+| `media` | choice | `all` | `all`, `photo_video` (reviews with photos or videos), `text` (reviews without media) |
 
 Transport: box (plus the product record, as in `/products/details`). Cache: 6 h per page (`REVIEWS_CACHE`).
-Output: pagination keys + `{product: {id, name, link}, sort, summary, results: [review]}`. Review keys: `id`,
+Output: pagination keys + `{product: {id, name, link}, sort, media, summary, results: [review]}`. Review keys: `id`,
 `score`, `text`, `created_at`, `type`, `content_type`, `option`, `is_repurchase`, `is_free_trial`, `event_title`,
 `writer`, `attachments`, `product`, `likes`. `writer.profile_image` is null when the writer has no avatar (Naver's
 placeholder `profile-phinf.pstatic.net/404/default.png` is dropped); `likes` is null when nobody marked it helpful.
-`attachments`: `{type: image | video, link, width, height}` (links only; nothing is downloaded).
+`attachments`: `{type: image | video, link, width, height}` (links only; nothing is downloaded). A photo's `link` is
+the original; a video's `link` is its poster frame (the answer holds no video file link).
 
 ```
 curl "http://localhost:8000/products/reviews?product=8087042745&page=2&sort=recent"
+```
+
+### Reviews: two ways
+
+Reviews come from the store backend in both ways (no adapter): the same JSON a product page loads in its review
+window (`query-pages`), so photo links are originals, product ids are checked and avatars are known.
+
+| | 1. `/products/reviews` (every review) | 2. `/products/reviews/selected` (the ones worth showing) |
+|---|---|---|
+| Gives | one page of 20, any sort (`ranking`, `recent`, `score_high`, `score_low`), `media` filter (`all`, `photo_video`, `text`) | up to `count` (20) chosen reviews: 50+ letters + photo + real avatar first, then photo + text, then text; all with text when the product has 20 or fewer; at most 8 photos a review, 100 a product |
+| Cost | ~0.4 s a page after the record | reads only the pages it needs, newest first: photo/video pages, then text-only pages (Honma D1, 202 reviews: 11 pages, ~5 s) |
+
+Why not through the product page (researched 2026-11-01 on the Honma D1 set): the review window opens from the
+"N건 리뷰" link, takes the 최신순 / 포토/동영상 radios, and loads 20 more reviews only on wheel input (~5 wheels and
+~4 s a page) after the whole search -> card -> page walk in the owner's Chrome; its answers are this same
+`query-pages` JSON, and copying them would need an adapter change. The rendered rows carry only thumbnails and no
+product ids. The backend answers the same filter directly (`reviewContentClassTypes`), so the page adds nothing for
+reviews.
+
+### `/products/reviews/selected`
+
+| Param | Type | Default | Notes |
+|---|---|---|---|
+| `product` | product ref, required | | |
+| `count` | int | 20 | 1..100 reviews to choose |
+
+Transport: box, through `/products/reviews` pages (`recent`; `photo_video` first, then `text`, up to 25 pages each;
+cached as those pages). The tiers (`naver_shopping/review_select.py`): `primary` (50+ letters / digits, a photo, a
+real avatar), `photo` (the same without an avatar), `text` (50+ letters, no photo), `small` (a product with 20 reviews
+or fewer: every review with text). Score plays no part.
+Output: `{product, summary, mode (quality | small_source), count, scanned, passes: [{media, pages, total_count,
+is_exhausted}], is_complete, results: [review + tier]}`. `is_complete` is true when `count` was reached or every pass
+was read to its end; `summary` is null for a product with no reviews.
+
+```
+curl "http://localhost:8000/products/reviews/selected?product=https://smartstore.naver.com/thegolf/products/5543663553&count=20"
 ```
 
 ### `/stores/details`

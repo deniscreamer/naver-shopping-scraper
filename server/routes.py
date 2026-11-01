@@ -1,4 +1,4 @@
-"""The 12 Naver Shopping endpoints. Every path is served with and without the
+"""The 13 Naver Shopping endpoints. Every path is served with and without the
 `/naver-shopping` prefix, so code generated against the hosted API on RapidAPI
 (paths like /products/details) runs unchanged against this server.
 
@@ -112,6 +112,7 @@ ENDPOINTS = [
     ("/products/search", schemas.ProductsSearchSchema, api.products_search, False),
     ("/products/count", schemas.ProductsSearchSchema, api.products_count, False),
     ("/products/reviews", schemas.ProductReviewsSchema, api.product_reviews, True),
+    ("/products/reviews/selected", schemas.ProductReviewsSelectedSchema, api.product_reviews_selected, False),
     ("/stores/details", schemas.StoreSchema, api.store_details, False),
     ("/stores/products", schemas.StoreProductsSchema, api.store_products, False),
     ("/catalogs/reviews", schemas.CatalogSchema, api.catalog_reviews, False),
