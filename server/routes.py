@@ -1,4 +1,4 @@
-"""The 11 Naver Shopping endpoints. Every path is served with and without the
+"""The 12 Naver Shopping endpoints. Every path is served with and without the
 `/naver-shopping` prefix, so code generated against the hosted API on RapidAPI
 (paths like /products/details) runs unchanged against this server.
 
@@ -12,6 +12,7 @@ from urllib.parse import urlencode
 from bottle import request, response, route
 
 import config
+import ext_product
 import listing_jobs
 from naver_shopping import api, schemas
 from schema_fields import load_query
@@ -78,7 +79,8 @@ def paginate(result, path, params):
 
 def call(label, schema_cls, impl, paginated=False):
     """Validate, run, map errors: bad params -> 400, missing entity -> 404,
-    blocks and transport failures -> 502 (retry, or set a proxy)."""
+    blocks and transport failures -> 502 (retry, or set a proxy), the
+    adapter (products/specs) busy -> 409 or unavailable / walled -> 503."""
     raw = query_dict()
     data, error = load_query(schema_cls, raw)
     if error:
@@ -91,6 +93,8 @@ def call(label, schema_cls, impl, paginated=False):
         return json_response({"error": f"{SITE} rejected the request: {e}"}, 400)
     except NotFound as e:
         return json_response({"error": str(e) or "not found"}, 404)
+    except ext_product.AdapterError as e:  # the owner's Chrome: 409 busy / 503, never a retryable 502
+        return json_response({"error": str(e)}, e.status)
     except Blocked as e:
         return json_response({"error": f"{SITE} blocked the request, retry later: {e}"}, 502)
     except UpstreamError as e:
@@ -104,6 +108,7 @@ def call(label, schema_cls, impl, paginated=False):
 
 ENDPOINTS = [
     ("/products/details", schemas.ProductSchema, api.product_details, False),
+    ("/products/specs", schemas.ProductSpecsSchema, ext_product.product_specs, False),
     ("/products/search", schemas.ProductsSearchSchema, api.products_search, False),
     ("/products/count", schemas.ProductsSearchSchema, api.products_count, False),
     ("/products/reviews", schemas.ProductReviewsSchema, api.product_reviews, True),
@@ -145,6 +150,9 @@ def listings_start():
     try:
         job = listing_jobs.start(data["query"], data["max_batches"])
     except listing_jobs.Busy as e:
+        if e.args[0] is None:
+            return json_response({"error": "the adapter is reading a product page (/products/specs), retry shortly",
+                                  "job_id": None}, 409)
         return json_response({"error": f"a listing job is running: {e}", "job_id": str(e)}, 409)
     except listing_jobs.NoExtension:
         return json_response({"error": "the browser extension is not connected: open Chrome with the "

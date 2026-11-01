@@ -1,0 +1,61 @@
+{
+ "id": "13021362937",
+ "name": "26년 핑 G440K 브리지스톤 V300 조합 남성 골프채풀세트 클럽11개",
+ "link": "https://smartstore.naver.com/scarabee/products/13021362937",
+ "query": "26년 핑 G440K 브리지스톤 V300 조합 남성 골프채풀세트 클럽11개",
+ "category": {
+  "id": "50002788",
+  "name": "풀세트",
+  "path": [
+   "스포츠/레저",
+   "골프",
+   "골프클럽",
+   "풀세트"
+  ],
+  "path_ids": [
+   "50000007",
+   "50000029",
+   "50001102",
+   "50002788"
+  ]
+ },
+ "specs": [
+  {
+   "label": "상품번호",
+   "value": "13021362937"
+  },
+  {
+   "label": "제조사",
+   "value": "삼양인터내셔날"
+  },
+  {
+   "label": "브랜드",
+   "value": "핑"
+  },
+  {
+   "label": "원산지",
+   "value": "미국산(삼양인터내셔날)"
+  },
+  {
+   "label": "드라이버 로프트각",
+   "value": "10.5도"
+  }
+ ],
+ "is_complete": true,
+ "facts": {
+  "brand": {
+   "value": "핑",
+   "source": "specs:브랜드"
+  },
+  "manufacturer": {
+   "value": "삼양인터내셔날",
+   "source": "specs:제조사"
+  },
+  "model_name": null,
+  "origin": {
+   "value": "미국산(삼양인터내셔날)",
+   "source": "specs:원산지"
+  }
+ },
+ "read_at": "2026-11-01T15:47:53Z"
+}

@@ -85,6 +85,13 @@ class ProductSchema(BaseSchema):
         "description": "channel product number, or a smartstore.naver.com / brand.naver.com product link"})
 
 
+class ProductSpecsSchema(BaseSchema):
+    product = ProductRefField(metadata={
+        "description": "channel product number, or a smartstore.naver.com / brand.naver.com product link"})
+    query = QueryField(max_length=100, required=False, load_default=None, metadata={
+        "description": "the search that lists the product (its card is clicked from there); default: its name"})
+
+
 class ProductReviewsSchema(BaseSchema):
     product = ProductRefField(metadata={
         "description": "channel product number, or a smartstore.naver.com / brand.naver.com product link"})

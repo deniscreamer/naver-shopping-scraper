@@ -1,12 +1,12 @@
 {
  "status": "ok",
- "version": "0.1.0",
+ "version": "0.3.0",
  "endpoints": [
   "/products/details",
+  "/products/specs",
   "/products/search",
   "/products/count",
-  "/products/reviews",
-  "/stores/details"
+  "/products/reviews"
  ],
  "extension": "connected"
 }

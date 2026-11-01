@@ -33,7 +33,7 @@ If Naver starts refusing your IP (HTTP 418/429), restart with a proxy:
 Offline tests (no network, no Chrome):
 
 ```bash
-.venv/bin/python -m pytest -q             # 129 passed
+.venv/bin/python -m pytest -q             # 144 passed
 .venv/bin/python -m pytest scripts -q     # scripts/ client tests, separate suite
 ```
 
@@ -45,7 +45,8 @@ Every endpoint is served at `/path` and at `/naver-shopping/path`. `/` and
 
 | Path | Needs Chrome | Returns |
 |---|---|---|
-| `/products/details` | yes | Price, options with stock, description, specs, review stats |
+| `/products/details` | yes | Price, options with stock, description, legal notice, brand / manufacturer / origin facts, review stats (way 1) |
+| `/products/specs` (beta) | your Chrome | The product page's 상품정보 rows: every seller attribute (way 2: richer, ~30-60 s, walks naver.com -> 쇼핑 -> search -> card) |
 | `/products/search` | no | Up to 96 products per keyword, with filters |
 | `/products/count` | no | Number of products matching a keyword and filters |
 | `/products/reviews` | yes | One page of a product's reviews (paginated) |
@@ -58,6 +59,9 @@ Every endpoint is served at `/path` and at `/naver-shopping/path`. `/` and
 | `/categories/list` | no | Child categories of a parent category (0 or omitted = top level), with their IDs |
 | `/listings` (POST, beta) | your Chrome | The whole search listing for a query as a job; poll `/listings/<id>`, rows at `/listings/<id>/products` |
 
+Product details come two ways (way 1 the store backend, way 2 the product page through the adapter):
+[ENDPOINTS.md, "Product details: two ways"](server/docs/ENDPOINTS.md#product-details-two-ways).
+
 ## Repository layout
 
 ```
@@ -68,7 +72,7 @@ server/             the API; import root (bare imports, no __init__.py)
   docs/             rules, architecture, endpoint contract, known issues
 scripts/            HTTP-only consumers of the running API (never import server code)
 pyproject.toml      pytest config only (testpaths/pythonpath = server)
-extension/          Chrome adapter for your own browser (beta: search.shopping listing)
+extension/          Chrome adapter for your own browser (beta: search.shopping listing, product page specs)
 archive/docker/     retired Docker/Linux setup (not maintained)
 ```
 
@@ -82,9 +86,9 @@ archive/docker/     retired Docker/Linux setup (not maintained)
 | [server/docs/ARCHITECTURE.md](server/docs/ARCHITECTURE.md) | How requests flow, transports, browser, cache |
 | [server/docs/DEVELOPMENT_RULES.md](server/docs/DEVELOPMENT_RULES.md) | Mandatory rules for changes under server/ |
 | [server/docs/KNOWN_ISSUES.md](server/docs/KNOWN_ISSUES.md) | Known defects and stale references |
-| [scripts/README.md](scripts/README.md) | Examples (`scripts/example_01..07`), writing scripts against the API, Shopify roadmap |
+| [scripts/README.md](scripts/README.md) | Examples (`scripts/example_01..10`), writing scripts against the API, Shopify roadmap |
 | [SECURITY.md](SECURITY.md) | Usage disclaimer and vulnerability reporting |
-| [server/docs/EXTENSION.md](server/docs/EXTENSION.md) | Beta: the search.shopping listing through your own Chrome, and why |
+| [server/docs/EXTENSION.md](server/docs/EXTENSION.md) | Beta: the search.shopping listing and product page specs through your own Chrome, and why |
 | [archive/docker/README.md](archive/docker/README.md) | Retired Docker setup and how to restore it |
 
 ## Credits and license

@@ -220,6 +220,7 @@ class NoticeRow(TypedDict):
     """products/details notice.items[] / notice.terms[]."""
     label: str
     value: str | None
+    is_see_description: bool          # the value is a "상품상세참조"-style pointer, not data
 
 
 class Notice(TypedDict):
@@ -227,6 +228,23 @@ class Notice(TypedDict):
     type: str | None
     items: list[NoticeRow]
     terms: list[NoticeRow]
+
+
+FactSource = str   # "specs:<label>", "search_info.<brandName|manufacturerName|modelName>", "notice:<label>"
+
+
+class Fact(TypedDict):
+    """One product fact and where it was read."""
+    value: str
+    source: FactSource
+
+
+class ProductFacts(TypedDict):
+    """products/details and products/specs `facts` (parsers.product_facts); a fact nobody states is null."""
+    brand: Fact | None
+    manufacturer: Fact | None
+    model_name: Fact | None
+    origin: Fact | None
 
 
 # score_counts keys are "1".."5", so the functional form is required.
@@ -342,7 +360,29 @@ class ProductDetails(TypedDict):
     supplements: list[Supplement] | None
     description: Description | None
     notice: Notice | None
+    facts: ProductFacts
     store: StoreDetailsInProduct
+
+
+# ---- /products/specs -------------------------------------------------------------------
+
+class SpecRow(TypedDict):
+    """products/specs specs[]: one row of the product page's 상품정보 list (pdp.spec_rows)."""
+    label: str
+    value: str
+
+
+class ProductSpecs(TypedDict):
+    """products/specs response (ext_product._specs): the product page's rows, read in the owner's Chrome."""
+    id: str | None
+    name: str | None
+    link: str | None
+    query: str
+    category: ProductCategory
+    specs: list[SpecRow]
+    is_complete: bool                 # rows found and the list was not left folded
+    facts: ProductFacts
+    read_at: str
 
 
 # ---- /products/reviews -----------------------------------------------------------------

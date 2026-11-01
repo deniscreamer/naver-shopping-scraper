@@ -22,6 +22,12 @@ def _key(namespace, data):
     return namespace + ":" + json.dumps(data, sort_keys=True, default=str)
 
 
+def forget(namespace, data):
+    """Drop one cached result (a caller that got an answer it does not want kept)."""
+    with _lock:
+        _store.pop(_key(namespace, data), None)
+
+
 def cached_call(namespace, data, fn, ttl, cache=True, refresh=False):
     """Serve fn(**data) from memory for `ttl`, else run it and keep the result.
     Exceptions from fn propagate uncached."""

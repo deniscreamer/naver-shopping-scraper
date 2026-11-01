@@ -29,12 +29,13 @@ PUBLIC = ("id", "query", "status", "max_batches", "batches", "kept", "ads", "tot
           "stop", "started_at", "finished_at")
 
 _lock = threading.Lock()
+_adapter = threading.Lock()  # one user of the owner's Chrome at a time: a listing job or a product page read
 _jobs = {}                  # id -> summary dict
 _bridge = None
 
 
 class Busy(Exception):
-    """Another listing job is running."""
+    """Another listing job (or a product page read) is using the adapter."""
 
 
 class NoExtension(Exception):
@@ -88,6 +89,7 @@ def _run(job_id, summary):
             pass
     finally:                                     # a job never stays "running"
         summary["status"] = "done" if code == 0 else "stopped"
+        _adapter.release()
 
 
 def start(query, max_batches=0):
@@ -98,12 +100,33 @@ def start(query, max_batches=0):
             raise Busy(running[0]["id"])
         if start_bridge() is None or not _bridge.wait_connected(0):     # a port freed later is picked up
             raise NoExtension()
-        job_id = datetime.now().strftime("%Y%m%d-%H%M%S") + "-" + secrets.token_hex(2)
-        os.makedirs(_out_dir(job_id), exist_ok=True)
-        summary = _jobs[job_id] = {"id": job_id, "query": query, "status": "running", "max_batches": max_batches,
-                                   "batches": 0, "kept": 0, "ads": 0, "stop": None, "started_at": _now()}
-    threading.Thread(target=_run, args=(job_id, summary), daemon=True, name=f"listing-{job_id}").start()
+        if not _adapter.acquire(blocking=False):
+            raise Busy(None)                     # a product page read (ext_product), not a job
+        try:                                     # from here _run releases the adapter
+            job_id = datetime.now().strftime("%Y%m%d-%H%M%S") + "-" + secrets.token_hex(2)
+            os.makedirs(_out_dir(job_id), exist_ok=True)
+            summary = _jobs[job_id] = {"id": job_id, "query": query, "status": "running", "max_batches": max_batches,
+                                       "batches": 0, "kept": 0, "ads": 0, "stop": None, "started_at": _now()}
+            threading.Thread(target=_run, args=(job_id, summary), daemon=True, name=f"listing-{job_id}").start()
+        except Exception:
+            _adapter.release()
+            raise
     return view(summary)
+
+
+def with_adapter(read):
+    """Run read(bridge) as the adapter's only user (ext_product). Busy while a
+    listing job or another read holds it; NoExtension when not connected."""
+    if start_bridge() is None or not _bridge.wait_connected(0):
+        raise NoExtension()
+    if not _adapter.acquire(blocking=False):
+        with _lock:
+            running = [j["id"] for j in _jobs.values() if j["status"] in ("running", "captcha")]
+        raise Busy(running[0] if running else "another product page read")
+    try:
+        return read(_bridge)
+    finally:
+        _adapter.release()
 
 
 def view(summary):

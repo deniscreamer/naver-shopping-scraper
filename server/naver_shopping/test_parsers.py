@@ -235,8 +235,10 @@ def test_validation():
 
 
 def test_contents_and_notice():
+    """2026-11-01: an image-only description (SmartEditor ONE, textContent blank)
+    has no text; it used to come out as "\u200b \u200b ..." from a tag strip."""
     c = P.parse_contents(fixture("box_contents.json"))
-    assert c["html"] and c["text"] and c["editor_type"]
+    assert c["html"] and c["text"] is None and c["editor_type"]
     n = P.parse_notice(fixture("box_notice.json"))
     assert n["type"] and n["items"] and n["items"][0]["label"] and n["terms"]
     assert P.parse_contents({})["html"] is None

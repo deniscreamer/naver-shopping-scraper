@@ -3,6 +3,22 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
+## Unreleased
+
+- **`/products/specs` (beta)**: a product page's 상품정보 rows (label -> value: 제조사, 브랜드, 원산지 and the seller's
+  attributes such as 종류, 성별, 총클럽개수), read in the owner's Chrome through the adapter (search -> card click ->
+  unfold), parsed in Python (`naver_shopping/pdp.py`). The adapter itself is unchanged. 409 while a listing job runs,
+  503 for a wall / no extension (scripts do not retry them). Decision log R-NAVER-1.
+- **`/products/details`**: `facts` (brand, manufacturer, model, origin, each with its source); notice rows carry
+  `is_see_description` ("상품상세참조"-style pointers); `description.text` is a text-node walk (lines per block,
+  null for image-only descriptions instead of `"\u200b ..."`).
+- **Types / scripts**: `ProductSpecs`, `ProductFacts`, `Fact`, `SpecRow`; `NoticeRow.is_see_description`;
+  `NaverApiClient.product_specs()`; fixtures re-captured.
+- **Examples**: `example_08_product_full.py` (one product, every field), `example_09_listing_then_specs.py` (a
+  listing, then details the new way), `example_10_known_products_specs.py` (known links, matched by full name + id).
+- **Docs**: "Product details: two ways" (`/products/details` vs `/products/specs`, the full-flow catch, the two ways
+  in) in ENDPOINTS.md and scripts/README.md.
+
 ## 0.3.0 (2026-11-01)
 
 - **Setup for a new machine / agent**: `SETUP.md` (step by step, the agent does it itself and asks the operator only

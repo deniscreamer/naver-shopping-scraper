@@ -15,7 +15,7 @@ Typed shapes of every answer below: `scripts/naver_types.py` (TypedDicts, checke
 
 - All endpoints are `GET` with query-string params and answer JSON encoded as UTF-8 with Korean text unescaped. The
   `Content-Type` header is `application/json` with no `charset` parameter (`routes.json_response`).
-- Each of the 11 endpoints is served at `/<path>` and at `/naver-shopping/<path>` (`routes.mount`). Both forms are
+- Each of the 12 endpoints is served at `/<path>` and at `/naver-shopping/<path>` (`routes.mount`). Both forms are
   equivalent; the unprefixed form (`/products/details`) matches the hosted RapidAPI paths, and `/naver-shopping/...`
   is an alias.
 - `/` and `/health` exist only unprefixed (`routes.health`). `/naver-shopping/health` is a 404.
@@ -64,6 +64,8 @@ Every error body is JSON with an `error` string. `<label>` is the path without t
 | 404 | product / store / catalog / category does not exist (`NotFound`) | `{"error": "<message>"}` (or `"not found"`) |
 | 502 | blocked by Naver: captcha, login gate, 403/405/418/429/490 (`Blocked`) | `{"error": "naver-shopping blocked the request, retry later: <detail>"}` |
 | 502 | transport failure, upstream 5xx, empty answer, Chrome could not start (`UpstreamError`) | `{"error": "naver-shopping <label> failed: <detail>"}` |
+| 409 | `/products/specs` only: the adapter is busy (a listing job runs) (`ext_product.AdapterBusy`) | `{"error": "the adapter is busy (<job id>), retry when it is done"}` |
+| 503 | `/products/specs` only: extension not connected, a wall on the way (captcha not solved, login gate, ban page), the page not rendered, an adapter error (`ext_product.AdapterError`) | `{"error": "<detail>"}` |
 | 500 | anything else (parser surprise) | `{"error": "naver-shopping <label> failed: <ExceptionType>: <detail>"}` |
 
 Validation examples (verified against the schemas):
@@ -75,7 +77,9 @@ Validation examples (verified against the schemas):
 /keywords/rank?category=0      -> 400 errors.category = ["DataLab needs a category: ..."]
 ```
 
-Client policy: 400 and 404 are final, do not retry. 502 is retryable after a pause. If a 502 that says
+Client policy: 400 and 404 are final, do not retry. 502 is retryable after a pause. 409 / 503 from
+`/products/specs` are not retried automatically: they come from the owner's Chrome, where a retry after a wall
+risks a ban (R-EXT-3); retry a 409 once the listing is done. If a 502 that says
 `blocked the request` persists, Naver is refusing this machine's IP (set `NAVER_SHOPPING_PROXY`, see
 `server/README.md`). If a 502 that says `failed: ... browser box unavailable` persists, Chrome cannot start on the
 host; a proxy does not help. 500 is a server bug.
@@ -168,6 +172,29 @@ Output: `{query, filters, total_count}` (`total_count` may be null).
 curl "http://localhost:8000/products/count?query=raspberry%20pi"
 ```
 
+### Product details: two ways
+
+Two ways to get a product's details:
+
+| | 1. `/products/details` (the original way) | 2. `/products/specs` (the new way, beta: the adapter) |
+|---|---|---|
+| Source | the store backend (`brand.naver.com/n/*`) in the server's own Chrome | the product page itself, in the owner's Chrome through the adapter |
+| Gives | prices, options, stock, category path, legal notice, description, reviews, `facts` from the backend's search info and the notice | the page's 상품정보 rows: 제조사, 브랜드, 모델명, 원산지 and every seller attribute (종류, 성별, 총클럽개수, ...), `facts` with those rows first |
+| Cost | ~1-10 s, any product, no setup | ~30-60 s a product, one at a time, Chrome open with the adapter, not during a listing job |
+| Flexible | fixed set of backend answers; no attribute rows exist there | anything rendered on the page can be read later the same way (Python parses the page HTML) |
+
+The catch of way 2 is the path. The adapter cannot open a product page directly (Naver redirects that to the
+login page), so every read walks the whole flow like a person: naver.com -> the shopping home (쇼핑) -> a search
+-> click the product's card -> the product opens in a new tab -> unfold the list. Two ways in:
+
+- **A known product**: search its full Korean name (the default `query`) and click the card whose link carries
+  its id (`scripts/example_10_known_products_specs.py`, `example_08_product_full.py`).
+- **Products not known yet**: take them from a search (a listing job), then read each with that search as `query`;
+  a card not on the search's first page falls back to its name (`scripts/example_09_listing_then_specs.py`).
+  Entering through a category page is not built yet (the listing has no category filter either).
+
+Use both together: way 1 for prices / options / reviews, way 2 for the attribute rows.
+
 ### `/products/details`
 
 | Param | Type | Default | Notes |
@@ -179,10 +206,21 @@ slug-less link or bare number costs extra calls (see "Search card links"). Cache
 record shared with `/products/reviews`; store record 24 h).
 Output: the product record (`id`, `origin_product_id`, `name`, `link`, `catalog_id`, `catalog_link`, `status`,
 `pricing`, `stock_quantity`, `images`, `category`, `brand`, `delivery`, flags, ...) plus `option_groups`, `variants`,
-`supplements`, `description` (`{html, text, editor_type, images}`), `notice` (`{type, items, terms}`), `reviews`
-(the review summary: counts, `average_score`, `score_counts`, `evaluations`, `representative_reviews`) and `store`
-(`id, uid, name, slug, link, type, grade, sale_count, merchant_id, business`). Any section Naver did not answer is
-null.
+`supplements`, `description` (`{html, text, editor_type, images}`), `notice` (`{type, items, terms}`), `facts`,
+`reviews` (the review summary: counts, `average_score`, `score_counts`, `evaluations`, `representative_reviews`) and
+`store` (`id, uid, name, slug, link, type, grade, sale_count, merchant_id, business`). Any section Naver did not
+answer is null.
+
+- `description.text`: the description HTML's text nodes, one line per block element (`pdp.description_text`);
+  images, video controls, embedded product cards, buttons and the labels 공지사항 / Notice, 관련 태그 and
+  상품정보 펼쳐보기 are left out. null for an image-only description (common: many sellers post only images).
+- `notice.items[]` / `notice.terms[]`: `{label, value, is_see_description}`; `is_see_description` is true when the
+  value only points elsewhere ("상품상세참조", "[상세설명참조]", "크기 항목 참조"). This is the legal 상품정보제공고시
+  notice; a store's own announcement (공지사항) is not product data and is not returned.
+- `facts`: `{brand, manufacturer, model_name, origin}`, each `{value, source}` or null (`parsers.product_facts`).
+  Here the sources are `search_info.brandName` / `search_info.manufacturerName` / `search_info.modelName` (the
+  backend's search info) and `notice:<label>` (manufacturer from 제조자(사), origin from 제조국 / 원산지). The brand
+  falls back to the manufacturer only when the product name carries it. `/products/specs` adds the page's rows.
 
 ```
 curl "http://localhost:8000/products/details?product=https://smartstore.naver.com/dailyromantic/products/8087042745"
@@ -311,6 +349,30 @@ Output: `{id, name, parent_id, level, path, is_leaf, order, count, children: [sa
 curl "http://localhost:8000/categories/list?category=50000003"
 ```
 
+### `/products/specs` (beta: the owner's Chrome)
+
+The product page's 상품정보 list, label -> value: 상품번호, 제조사, 브랜드, 모델명, 원산지 and the seller's category
+attributes (for a golf set: 종류, 성별, 사용방향, 총클럽개수, 풀세트구성, 골프백포함여부, ...). None of these
+attribute rows are in the store-backend answers `/products/details` reads. Read on the server in the owner's Chrome
+through the adapter, like a listing job: naver.com -> 쇼핑 -> search `query` -> click the product's card -> unfold the
+list ([EXTENSION.md](EXTENSION.md)). Smartstore products (brand-store pages not verified yet).
+
+| Param | Type | Default | Notes |
+|---|---|---|---|
+| `product` | product ref, required | | see "Reference params" |
+| `query` | string, 1-100 chars | the product's name | a search whose first page lists the product's card |
+
+Transport: box for the product record (as `/products/details`), then the extension (one page read, ~30-60 s, one
+at a time; a running listing job answers 409). Cache: 24 h per `product` + `query` (`PRODUCT_SPECS_CACHE`).
+Output: `{id, name, link, query, category, specs: [{label, value}], is_complete, facts, read_at}`.
+`is_complete` is false when the list stayed folded. `facts` as in `/products/details`, with the page rows first:
+source `specs:<label>` (브랜드, 제조사 / 제조자, 모델명, 원산지 / 제조국). 404 when the card is not on that search page;
+409 / 503 see Errors.
+
+```
+curl "http://localhost:8000/products/specs?product=https://smartstore.naver.com/scarabee/products/13021362937"
+```
+
 ## Listing jobs (beta): the full search listing
 
 The whole search.shopping.naver.com listing for a query (~50 products per batch, all batches), read on the server
@@ -319,7 +381,7 @@ Both prefixes. One job at a time.
 
 | Route | Params | Answer |
 |---|---|---|
-| `POST /listings` | `query` (1-100 chars, required), `max_batches` (0-200, 0 = all) as query params | `202` job; `409 {error, job_id}` another job runs; `503` the browser extension is not connected; `400` bad params |
+| `POST /listings` | `query` (1-100 chars, required), `max_batches` (0-200, 0 = all) as query params | `202` job; `409 {error, job_id}` another job runs (`job_id` null: a `/products/specs` read holds the adapter, retry shortly); `503` the browser extension is not connected; `400` bad params |
 | `GET /listings/<job_id>` | - | job: `{id, query, status, max_batches, batches, kept, ads, total, cursor, has_more, stop, started_at, finished_at}`; `404` unknown |
 | `GET /listings/<job_id>/products` | `page` (1-1000) | rows, 50 a page, the usual pagination shape (works while the job runs: rows so far) |
 

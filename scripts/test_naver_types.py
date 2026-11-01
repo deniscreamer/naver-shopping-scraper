@@ -23,6 +23,7 @@ FIXTURES = {
     "products_search.json": T.SearchResult,
     "products_count.json": T.CountResult,
     "products_details.json": T.ProductDetails,
+    "products_specs.json": T.ProductSpecs,
     "products_reviews.json": T.ReviewsPage,
     "stores_details.json": T.StoreDetails,
     "stores_products.json": T.StoreProducts,

@@ -24,16 +24,40 @@ running server over HTTP only.
 | File | Purpose |
 |---|---|
 | `naver_api_client.py` | `NaverApiClient` (`get`, `pages`, `health`) and `ApiError` |
-| `smoke_endpoints.py` | Live smoke: `/health` plus the 11 endpoints, one at a time. Networked. |
+| `smoke_endpoints.py` | Live smoke: `/health` plus 11 endpoints (all but `/products/specs`), one at a time. Networked. |
 | `example_search_harvest.py` | Template: search, classify the cards, fetch details, write resumable JSONL |
 | `test_naver_api_client.py` | Offline tests for the client and the classifier |
 | `example_0N_*.py` | Runnable examples, one API topic each (see Examples) |
 | `harvest_listing.py` | Full listing of store product links for a keyword + category, price-sliced, resumable |
 | `output/` | Run output (`output/<run>/products.jsonl`, `listing.jsonl`), gitignored |
 
+## Product details: two ways
+
+Two ways to get a product's details:
+
+| | 1. `/products/details` (the original way) | 2. `/products/specs` (the new way, beta: the adapter) |
+|---|---|---|
+| Source | the store backend (`brand.naver.com/n/*`) in the server's own Chrome | the product page itself, in the owner's Chrome through the adapter |
+| Gives | prices, options, stock, category path, legal notice, description, reviews, `facts` from the backend's search info and the notice | the page's 상품정보 rows: 제조사, 브랜드, 모델명, 원산지 and every seller attribute (종류, 성별, 총클럽개수, ...), `facts` with those rows first |
+| Cost | ~1-10 s, any product, no setup | ~30-60 s a product, one at a time, Chrome open with the adapter, not during a listing job |
+| Flexible | fixed set of backend answers; no attribute rows exist there | anything rendered on the page can be read later the same way (Python parses the page HTML) |
+
+The catch of way 2 is the path. The adapter cannot open a product page directly (Naver redirects that to the
+login page), so every read walks the whole flow like a person: naver.com -> the shopping home (쇼핑) -> a search
+-> click the product's card -> the product opens in a new tab -> unfold the list. Two ways in:
+
+- **A known product**: search its full Korean name (the default `query`) and click the card whose link carries
+  its id (`example_10_known_products_specs.py`, `example_08_product_full.py`).
+- **Products not known yet**: take them from a search (a listing job), then read each with that search as `query`;
+  a card not on the search's first page falls back to its name (`example_09_listing_then_specs.py`).
+  Entering through a category page is not built yet (the listing has no category filter either).
+
+Use both together: way 1 for prices / options / reviews, way 2 for the attribute rows.
+Contract: [server/docs/ENDPOINTS.md](../server/docs/ENDPOINTS.md#product-details-two-ways).
+
 ## Examples: start here
 
-Small, runnable scripts, one topic each, in the order to read them. Start `server/run.py` first; example 7 also
+Small, runnable scripts, one topic each, in the order to read them. Start `server/run.py` first; examples 7-10 also
 needs Chrome open with the adapter (`example_01` shows `extension: connected`).
 
 | Script | Shows |
@@ -45,6 +69,9 @@ needs Chrome open with the adapter (`example_01` shows `extension: connected`).
 | `example_05_store.py` | `/stores/details` + `/stores/products` (best-sellers) |
 | `example_06_datalab.py` | `/keywords/rank` + `/keywords/trend` (Naver DataLab) |
 | `example_07_listing_then_details.py` | `api.listing()`: the full search listing (server: your Chrome via the adapter), then `/products/details` for its rows (server: its own Chrome). Two transports, one API |
+| `example_08_product_full.py` | One product as complete as it gets (a golf club set): `product_details()` + `product_specs()` -> the 상품정보 rows, brand / manufacturer / model / origin with their sources, category, the legal notice (pointer rows marked), the description text |
+| `example_09_listing_then_specs.py` | Like example 7, details the new way: a listing, then `product_details()` + `product_specs(link, query=<the listing's search>)` per product (name fallback). Collecting products not known yet |
+| `example_10_known_products_specs.py` | Known product links -> `product_specs(link, query=<full Korean name>)`: the card is matched by its id on that search page |
 
 ```sh
 .venv/bin/python scripts/example_01_health.py
@@ -53,7 +80,7 @@ needs Chrome open with the adapter (`example_01` shows `extension: connected`).
 
 All calls go through `naver_api_client.NaverApiClient`. Typed methods, one per endpoint, return the shapes in
 `naver_types.py`: `health()`, `search(query, **filters)`, `count(...)`, `product_details(product)`,
-`reviews(product, sort, max_page)` (pages), `store_details(store)`, `store_products(store, list, period)`,
+`product_specs(product, query)`, `reviews(product, sort, max_page)` (pages), `store_details(store)`, `store_products(store, list, period)`,
 `catalog_reviews(catalog)`, `categories(category)`, `keywords_rank(category, **window)` (pages),
 `keyword_trend(keyword, category, **window)`, `category_trend(category, **window)`, `listing(query, max_batches)`.
 The generic `get(path, **params)` / `pages(path, **params)` reach any route. Any non-200 raises

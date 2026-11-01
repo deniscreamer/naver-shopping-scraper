@@ -12,6 +12,7 @@ import re
 from datetime import datetime
 from urllib.parse import parse_qs, unquote, urlparse
 
+from naver_shopping.pdp import description_text
 from naver_shopping.refs import BRAND, SMARTSTORE, catalog_link, product_link, store_link
 
 MASK = "********"
@@ -395,10 +396,9 @@ def parse_contents(c):
     """The product description (contents/<origin>/PC)."""
     c = _dict(c)
     html_body = c.get("renderContent") or None
-    text = _clean(c.get("textContent"))
-    if not text and html_body:
-        text = _clean(_TAG_RE.sub(" ", html_body))
-        text = re.sub(r"\s+", " ", text) if text else None
+    # textContent is blank for SmartEditor ONE pages (seen 2026-11-01: "" or
+    # "\u200b" runs); the rendered HTML's text nodes are the description text.
+    text = description_text(html_body) if html_body else _clean(c.get("textContent"))
     return {
         "html": html_body,
         "text": text,
@@ -413,11 +413,94 @@ def parse_notice(n):
     view = _dict(n.get("productInfoProvidedNoticeView"))
 
     def rows(section):
-        return [{"label": _clean(k), "value": _clean(v)} for k, v in _dict(view.get(section)).items() if _clean(k)]
+        return [{"label": _clean(k), "value": _clean(v), "is_see_description": is_see_description(v)}
+                for k, v in _dict(view.get(section)).items() if _clean(k)]
     return {
         "type": _clean(n.get("productInfoProvidedNoticeType")),
         "items": rows("basic"),
         "terms": rows("additional"),
+    }
+
+
+# A notice row filled with "see the description" (or "see another row")
+# instead of a value. 2026-11-01: PING G440K set, 8 of 13 basic rows
+# "상품상세참조"; Callaway XR26 set, "[상세설명참조]" and "크기 항목 참조"; the
+# usual seller boilerplate also reads "상세페이지에 별도 표기", "제품상세참조".
+# Every "/"-separated part must be a pointer: "상세정보 참조, 중국" is a value.
+_SEE_DESCRIPTION_RE = re.compile(
+    r"^[\[(]?\s*(?:상품|제품)?\s*상세\s*(?:페이지|설명|정보|이미지)?\s*(?:에|란)?\s*(?:별도\s*)?"
+    r"(?:참조|참고|표기|표시|확인)\s*[\])]?$|^\S+\s*항목\s*(?:참조|참고)$")
+# Values that state nothing (2026-11-01 review: "-", "해당없음" would else become a manufacturer or brand).
+_NO_VALUE_RE = re.compile(r"^(?:[-–—./x]+|없음|해당\s*(?:사항)?\s*없음|n/?a|none|null)$", re.I)
+
+
+def is_see_description(value):
+    parts = [p.strip() for p in (_clean(value) or "").split("/")] if isinstance(value, str) else []
+    return bool(parts) and all(_SEE_DESCRIPTION_RE.match(p) for p in parts)
+
+
+def _stated(value):
+    """A cleaned value that states something: not a pointer, not a "-" / "해당없음" placeholder."""
+    value = _clean(value)
+    return value if value and not is_see_description(value) and not _NO_VALUE_RE.match(value) else None
+
+
+# ---- product facts -----------------------------------------------------------------------
+
+_FACT_LABELS = {      # spec row labels (product page 상품정보) per fact, in order
+    "brand": ("브랜드",),
+    "manufacturer": ("제조사", "제조자"),
+    "model_name": ("모델명",),
+    "origin": ("원산지", "제조국"),
+}
+_NOTICE_FACTS = {     # notice row labels holding the same fact (substring match)
+    "manufacturer": ("제조자", "제조사"),
+    "origin": ("제조국", "원산지"),
+}
+
+
+def _fact(value, source):
+    return {"value": value, "source": source} if value else None
+
+
+def product_facts(base, notice=None, spec_rows=None):
+    """brand / manufacturer / model_name / origin, each {value, source} or
+    None. source names where it was read: "specs:<label>" (product page
+    상품정보), "search_info.<key>" (the backend's naverShoppingSearchInfo:
+    brandName, manufacturerName, modelName), "notice:<label>". The brand
+    falls back to the manufacturer (its row, else manufacturerName, keeping
+    that source) only when the product name carries that value, the way a
+    seller writes 혼마 for a Honma set (2026-11-01: no 브랜드 row and only
+    manufacturerName on smartstore.naver.com/thegolf/products/5543663553)."""
+    base, notice = _dict(base), _dict(notice)
+    rows = {}
+    for r in _list(spec_rows):
+        label, value = _clean(_dict(r).get("label")), _stated(_dict(r).get("value"))
+        if label and value:
+            rows.setdefault(label, value)
+
+    def from_rows(fact):
+        return next((_fact(rows[k], f"specs:{k}") for k in _FACT_LABELS[fact] if k in rows), None)
+
+    def from_notice(fact):
+        for item in _list(notice.get("items")):
+            item = _dict(item)
+            label, value = _clean(item.get("label")) or "", _stated(item.get("value"))
+            if value and any(k in label for k in _NOTICE_FACTS[fact]):
+                return _fact(value, f"notice:{label}")
+        return None
+
+    name = (_clean(base.get("name")) or "").casefold()
+    manufacturer = (from_rows("manufacturer") or _fact(_stated(base.get("manufacturer")), "search_info.manufacturerName")
+                    or from_notice("manufacturer"))
+    brand = from_rows("brand") or _fact(_stated(base.get("brand")), "search_info.brandName")
+    if not brand and manufacturer and len(manufacturer["value"]) > 1 and manufacturer["value"].casefold() in name:
+        brand = dict(manufacturer)
+    return {
+        "brand": brand,
+        "manufacturer": manufacturer,
+        "model_name": from_rows("model_name") or _fact(_stated(base.get("model_name")), "search_info.modelName"),
+        "origin": from_rows("origin") or from_notice("origin"),
     }
 
 

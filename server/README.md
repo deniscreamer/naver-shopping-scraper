@@ -93,7 +93,7 @@ Offline (no network, no Chrome), from the repo root; config in `/pyproject.toml`
 `server`):
 
 ```
-.venv/bin/python -m pytest -q                      # 129 tests
+.venv/bin/python -m pytest -q                      # 144 tests
 .venv/bin/python -m pytest server/test_import_smoke.py -q
 cd server && ../.venv/bin/python -m pytest -q      # also works
 ```
@@ -104,7 +104,7 @@ routes x 2 prefixes, plus `/` and `/health`).
 Live smoke (server running, networked, may launch Chrome); required after any transport or browser change:
 
 ```
-.venv/bin/python scripts/smoke_endpoints.py        # /health + all 11 endpoints, sequential
+.venv/bin/python scripts/smoke_endpoints.py        # /health + the 11 Chrome-free endpoints (not /products/specs), sequential
 .venv/bin/python scripts/smoke_endpoints.py --base-url http://localhost:9000 --delay 10
 ```
 

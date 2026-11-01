@@ -17,7 +17,7 @@ All paths are relative to `server/`, which is the import root (section 10).
 |---|---|
 | `run.py` | Entry point. cheroot WSGI server on `0.0.0.0:config.PORT`, 16 threads, serving bottle's default app. |
 | `main.py` | In-process demo: calls `naver_shopping.api` directly and writes `output/*.json` relative to the CWD. |
-| `routes.py` | Mounts the 11 endpoints (`routes.ENDPOINTS`) at `/path` and `/naver-shopping/path`, plus the listing job routes (`routes.LISTING_PATHS`, both prefixes) and unprefixed `/` and `/health` (with the extension status). `routes.call` validates, runs, maps errors to HTTP. `routes.paginate` flattens pagination. |
+| `routes.py` | Mounts the 12 endpoints (`routes.ENDPOINTS`) at `/path` and `/naver-shopping/path`, plus the listing job routes (`routes.LISTING_PATHS`, both prefixes) and unprefixed `/` and `/health` (with the extension status). `routes.call` validates, runs, maps errors to HTTP. `routes.paginate` flattens pagination. |
 | `schema_fields.py` | marshmallow base schema (`unknown=RAISE`), `load_query`, field types (`RefField`, `Flag`, page fields). |
 | `scraper_errors.py` | Base taxonomy: `UpstreamError`, `Blocked(UpstreamError)`, `BadRequest`, `NotFound`. |
 | `cache.py` | In-process TTL cache, `cached_call`. |
@@ -33,7 +33,7 @@ All paths are relative to `server/`, which is the import root (section 10).
 | `naver_shopping/fetch.py` | The only module that talks to Naver: curl surfaces, box calls, error classification. |
 | `naver_shopping/parsers.py` | Pure functions: raw JSON / HTML to output dicts. |
 | `naver_shopping/cache_config.py` | One TTL per cached namespace, each with its reason. |
-| `test_import_smoke.py`, `naver_shopping/test_*.py` | Offline tests (129 at the time of writing). Fixtures in `naver_shopping/fixtures/`. |
+| `test_import_smoke.py`, `naver_shopping/test_*.py` | Offline tests (144 at the time of writing). Fixtures in `naver_shopping/fixtures/`. |
 
 ## 2. Layers
 
@@ -327,7 +327,7 @@ the above and is harmless. Heavy dependencies are imported lazily
 requests in `config.exit_geo`, egress / config / url_blocking inside
 `PatchrightDriver`). `test_import_smoke.py` imports every library module by
 bare name (`MODULES`; not the `run.py` / `main.py` entry points, `main.py`
-creates `output/` at import) and checks the 30 routes. R-LAYOUT-1, R-LAYOUT-2, R-STYLE-5.
+creates `output/` at import) and checks the 32 routes. R-LAYOUT-1, R-LAYOUT-2, R-STYLE-5.
 
 ## 12. Extension transport (beta)
 
@@ -335,7 +335,10 @@ A third transport for what neither curl nor the box can read: the search.shoppin
 one-time bot-defence token per call that only the page mints. The owner's own Chrome runs a thin adapter
 (`extension/`), `ext_bridge.py` drives it over a local WebSocket, `ext_listing.py` walks naver.com -> 쇼핑 -> search
 like a person, takes the first batch from the HTML and lets the page load the rest on wheel scrolls. The API
-serves it as listing jobs (`listing_jobs.py`, `POST /listings`); `run.py` starts the bridge. Everything about it: [EXTENSION.md](EXTENSION.md); rules R-EXT-*.
+serves it as listing jobs (`listing_jobs.py`, `POST /listings`); `run.py` starts the bridge. A second use: a
+product page's 상품정보 rows (`ext_product.py`, `GET /products/specs`), reached by a click from the search and parsed
+in Python (`naver_shopping/pdp.py`); it shares one adapter lock with the listing jobs (`listing_jobs.with_adapter`).
+Everything about it: [EXTENSION.md](EXTENSION.md); rules R-EXT-*.
 
 ## 13. Naver specifics
 
@@ -394,6 +397,19 @@ primary record, with dates; read it before changing the behaviour.
 - CDP locale/timezone emulation is detectable; process-level settings are not
   (a dated Coupang A/B, not a Naver test). -> `PatchrightDriver.__init__`
   comment. R-BOX-6.
+
+- A product page's seller attribute rows are in no box answer; `/n/v2/channels/{uid}/products/{id}` is 204 for a
+  smartstore channel. -> `ext_product` module docstring. Decision log 2026-11-01.
+- A smartstore product page opened directly redirects to the login page even in the owner's Chrome; a click from
+  the search renders it. Its `__PRELOADED_STATE__` holds no product data when read; the rendered 상품정보 list does,
+  folded after 9 rows behind "상품정보 펼쳐보기", and can render seconds after load. -> `ext_product` docstring and
+  `read_page` comment, `pdp` module docstring.
+- SmartEditor ONE descriptions have a blank `textContent` (`""` or `\u200b` runs); many are images only. ->
+  `parsers.parse_contents` comment.
+- Notice rows often hold a pointer instead of a value ("상품상세참조", "[상세설명참조]", "크기 항목 참조"). ->
+  `parsers._SEE_DESCRIPTION_RE` comment.
+- naverShoppingSearchInfo may carry only `manufacturerName` (no `brandName`) while the name carries the brand. ->
+  `parsers.product_facts` docstring.
 
 A new upstream fact gets a dated comment at the code that handles it and one
 line here (R-NAVER-4).

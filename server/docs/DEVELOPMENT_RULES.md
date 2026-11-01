@@ -81,7 +81,7 @@ Every surface that is not the store backend uses this path (R-NAVER-2).
 
 ## R-NAVER: upstream surfaces
 
-- **R-NAVER-1 (MUST NOT)** Never request Naver's walled pages: `search.shopping.naver.com/ns/*`, catalog pages, `smartstore.naver.com/<store>/products/<id>` (smartstore PDP), `shopping.naver.com`. They serve a captcha (405/490), a login redirect or 429 to every client tried (`naver_shopping/fetch.py` module docstring, research 2026-10-23/24). The same holds for store home, category and search pages (they redirect to login). Exception (2026-11-01): the search.shopping listing, read only in the owner's Chrome through the adapter under R-EXT-* (decision log).
+- **R-NAVER-1 (MUST NOT)** Never request Naver's walled pages: `search.shopping.naver.com/ns/*`, catalog pages, `smartstore.naver.com/<store>/products/<id>` (smartstore PDP), `shopping.naver.com`. They serve a captcha (405/490), a login redirect or 429 to every client tried (`naver_shopping/fetch.py` module docstring, research 2026-10-23/24). The same holds for store home, category and search pages (they redirect to login). Exceptions (2026-11-01, decision log): the search.shopping listing, and a smartstore product page reached by a click from that search (`/products/specs`), read only in the owner's Chrome through the adapter under R-EXT-*.
 - **R-NAVER-2 (MUST)** Source each datum from the surface that serves it, on the transport listed:
 
   | Data | Surface | Transport | Symbol |
@@ -193,7 +193,7 @@ Requests are typed on the server, answers on the consumer side.
 - **R-TEST-2 (MUST)** Every parser change or new upstream quirk gets a captured fixture and a test. A regression test carries a docstring with the dated observation.
 - **R-TEST-3 (MUST)** Tests monkeypatch module attributes (`F.config`, `A._record`, `A.box_post`), so keep `import config` as a module import and call fetch helpers through module names that tests can patch.
 - **R-TEST-4 (MUST)** Before merge:
-  - `.venv/bin/python -m pytest -q` passes. Baseline: 129 tests (82 parser/schema tests + 7 in `test_search_filters.py` + 7 in `test_composite.py` + 6 in `test_ext_bridge.py` + 5 in `test_listing_jobs.py` + 22 in `test_import_smoke.py`, which also asserts 30 routes). The count only goes up;
+  - `.venv/bin/python -m pytest -q` passes. Baseline: 144 tests (82 parser/schema tests + 8 in `test_pdp.py` + 7 in `test_search_filters.py` + 7 in `test_composite.py` + 6 in `test_ext_bridge.py` + 5 in `test_listing_jobs.py` + 5 in `test_ext_product.py` + 24 in `test_import_smoke.py`, which also asserts 32 routes). The count only goes up;
   - any change to transport or browser code (`fetch.py`, `browser_client.py`, `patchright_driver.py`, `url_blocking.py`, `egress.py`, `hostenv.py`, `config.py`, requirements) also passes a live smoke with the server running: `.venv/bin/python scripts/smoke_endpoints.py`, which covers at least one curl call and one box call. Record the result in the commit message.
 
 ## Checklist: adding a new endpoint
@@ -235,7 +235,8 @@ Scope: the files listed in R-TEST-4 (including `hostenv.py`, which picks the Chr
   A ban page or a refused batch: stop, no retry. One listing at a time, sequential, at page speed.
 - **R-EXT-4 (MUST)** Parsers are pure and tested on trimmed real captures with tracking / session fields removed
   (`fixtures/composite_*`). Captured raw answers and HARs never enter git.
-- **R-EXT-6 (MUST)** Consumers reach the extension transport only through the HTTP routes (`/listings`), like every
+- **R-EXT-6 (MUST)** Consumers reach the extension transport only through the HTTP routes (`/listings`,
+  `/products/specs`), like every
   other endpoint: `scripts/` never import `ext_*` / `listing_jobs` and never talk to the bridge. A new kind of data
   read through the adapter becomes a server route (or job) first.
 - **R-EXT-5 (SHOULD)** Bump the adapter version in `manifest.json` and `background.js` together on any change, and
@@ -249,6 +250,18 @@ One entry per MUST exception or rule change, newest first. Format:
 ### YYYY-MM-DD: <rule ID>: <short title>
 What changes. Why. Evidence (A/B numbers, probe, test). Author.
 ```
+
+### 2026-11-01: R-NAVER-1: smartstore product page through the owner's Chrome (beta)
+`smartstore.naver.com/<store>/products/<id>` is read for its 상품정보 rows (`/products/specs`, `ext_product.py`), ONLY in
+the owner's Chrome through the adapter, reached as a person does (naver.com -> 쇼핑 -> search -> click the card),
+one page at a time and never while a listing job runs; never by curl, the box or a direct navigation. Why: the
+seller's attribute rows (종류, 성별, 총클럽개수, 원산지 ...) are in none of the box answers (simple-products,
+validation-products, contents, provided-notice); the backend's full product path
+`/n/v2/channels/{uid}/products/{id}` answers 204 for a smartstore channel, `/i/v2/...` and `/n/v1/...` 404 (box probe
+2026-11-01); a direct open in the owner's Chrome redirects to the login page, a click from the search renders the
+page with the list (PING G440K, Honma D1, Callaway XR26 sets: 15 / 3 / 4 rows, as an independent capture had).
+The adapter is unchanged (existing `click` / `query` / `page` ops); parsing is Python (`naver_shopping/pdp.py`).
+Owner: Denis.
 
 ### 2026-11-01: R-NAVER-1: search.shopping listing through the owner's Chrome (beta)
 `search.shopping.naver.com/ns/search` and its `/ns/v1/search/paged-composite-cards` are read, but ONLY in the

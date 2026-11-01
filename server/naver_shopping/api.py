@@ -233,6 +233,7 @@ def product_details(product):
         "supplements": validation.get("supplements"),
         "description": record["contents"],
         "notice": record["notice"],
+        "facts": parsers.product_facts(base, record["notice"]),
         "reviews": reviews,
         "store": {k: store.get(k) for k in ("id", "uid", "name", "slug", "link", "type", "grade", "sale_count",
                                              "merchant_id", "business")},

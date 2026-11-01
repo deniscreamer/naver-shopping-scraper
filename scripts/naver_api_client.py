@@ -172,6 +172,13 @@ class NaverApiClient:
         """`product`: a store product link or the bare product id."""
         return self.get("/products/details", product=product)
 
+    def product_specs(self, product: str, query: str | None = None) -> T.ProductSpecs:
+        """The product page's 상품정보 rows (server-side: the owner's Chrome through the adapter,
+        ~30 s cold, cached a day). `query`: a search that lists the product (default: its name).
+        ApiError 404 = its card was not on that search page, 409 = the adapter is busy (a listing job),
+        503 = the extension is not connected, a wall, or the page did not render. Neither is retried here."""
+        return self.get("/products/specs", product=product, query=query)
+
     def reviews(self, product: str, sort: str | None = None, max_page: int | None = None) -> Iterator[T.ReviewsPage]:
         """Review pages (20 each), page 1 first; sort: ranking, recent, score_high, score_low."""
         return self.pages("/products/reviews", max_page=max_page, product=product, sort=sort)
@@ -206,7 +213,7 @@ class NaverApiClient:
         while it runs (a captcha only shows as status "captcha"), then reads
         every row. -> {"job": <final job>, "results": [rows]}; a stopped job
         returns what it got, job["stop"] says why. ApiError 409 = another
-        listing runs, 503 = the browser extension is not connected."""
+        listing runs (or a /products/specs read: job_id null), 503 = the browser extension is not connected."""
         job = self.post("/listings", query=query, max_batches=max_batches or None)
         last = None
         while job["status"] in ("running", "captcha"):

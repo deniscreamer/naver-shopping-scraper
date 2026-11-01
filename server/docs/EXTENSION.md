@@ -1,8 +1,9 @@
 # Extension transport (beta): the search.shopping listing through the owner's Chrome
 
-Status: **beta** (2026-11-01). One job today: the full search.shopping.naver.com listing for a query, served by
+Status: **beta** (2026-11-01). Two jobs: the full search.shopping.naver.com listing for a query, served by
 the HTTP API as listing jobs (`POST /listings`, [ENDPOINTS.md](ENDPOINTS.md#listing-jobs-beta-the-full-search-listing))
-and runnable by hand (`server/ext_listing.py`). Rules: [DEVELOPMENT_RULES.md](DEVELOPMENT_RULES.md) R-EXT-*, decision log 2026-11-01.
+and runnable by hand (`server/ext_listing.py`); and a product page's 상품정보 rows (`GET /products/specs`,
+`server/ext_product.py`, [below](#product-page-specs-products-specs)). Rules: [DEVELOPMENT_RULES.md](DEVELOPMENT_RULES.md) R-EXT-*, decision log 2026-11-01.
 
 ## Why an adapter at all
 
@@ -52,6 +53,33 @@ starts its own bridge on the same port, so stop the API server first (or the por
 Tried and dropped (2026-11-01): our own in-page `fetch` per cursor (418: no token); a JS `scrollTo` to the end
 (the page rendered its cards but fetched nothing: it wants real scroll input).
 
+## Product page specs (`/products/specs`)
+
+The second way to get product details ([ENDPOINTS.md](ENDPOINTS.md#product-details-two-ways)): richer than the
+store backend and open to more fields later, since the whole rendered page is in hand, but each read walks the
+full flow in the owner's Chrome.
+
+The seller's attribute rows of a smartstore product (종류, 성별, 총클럽개수, 원산지 ...) are only on its product page
+(decision log 2026-11-01). `ext_product.read_page`, all in Python over the existing ops:
+
+1. `open_search(query)` as for a listing: naver.com -> 쇼핑 -> the search. Two ways in: a known product searches its
+   full Korean name (the default `query`); a product from a listing uses that listing's search as `query` (its card
+   is on the first search page only for the first rows; deeper ones fall back to the name). A category entry is not
+   built yet.
+2. The card: `a[href*="/products/<id>?"]` on the search page (cards link to
+   `smartstore.naver.com/main/products/<id>?nl-query=...`); none -> 404. A click opens the product in a new tab;
+   walls are checked as on the listing (`ext_listing.check`). A direct open of the product URL goes to the login
+   page instead (2026-11-01), so it is never used.
+3. Up to 8 reads, 2 s apart, until the 상품정보 list is rendered; then `button[data-shp-area="pdinfo.more"]`
+   ("상품정보 펼쳐보기") is clicked when present (9 rows -> 15 on the PING set) and the page is read again.
+4. The HTML (saved to `server/output/ext-product/<run>/product.html`, gitignored) goes to `naver_shopping/pdp.py`:
+   rows found by the heading text 상품정보 and the `<li><div>label</div><div>value</div>` shape, not by the hashed
+   class names. `parsers.product_facts` merges them with the box record (brand, manufacturer, model, origin, each with
+   its source). All tabs it opened are closed.
+
+One adapter user at a time: `listing_jobs.with_adapter` holds the same lock a listing job holds, so a read during a
+listing answers 409 and a listing during a read 409. ~30-60 s a read; cached 24 h.
+
 ## Effects and limits
 
 - **Everything runs as the owner**: their IP, cookies and account. Bursts get the network banned for Shopping,
@@ -91,7 +119,9 @@ batch). Install / reload the adapter: [extension/README.md](../../extension/READ
 | `extension/` | MV3 adapter: `background.js` (ops), `capture_main.js` + `relay.js` (answer copy) |
 | `server/ext_bridge.py` | WebSocket bridge, 127.0.0.1, extension origins only |
 | `server/ext_listing.py` | the listing walk (path, walls, scroll loop, output); also a CLI |
-| `server/listing_jobs.py` | HTTP jobs: one at a time, a thread per job, status + rows for `/listings` |
+| `server/listing_jobs.py` | HTTP jobs: one at a time, a thread per job, status + rows for `/listings`; the adapter lock |
+| `server/ext_product.py` | `/products/specs`: the product page read (search, card click, unfold) and its answer |
+| `server/naver_shopping/pdp.py` | pure parsers: the 상품정보 rows, the description text walk |
 | `server/naver_shopping/composite.py` | pure parsers (first batch, answers, rows) |
 | `server/notify.py` | captcha / stop notifications (webhook or macOS) |
-| tests | `test_ext_bridge.py`, `test_listing_jobs.py`, `naver_shopping/test_composite.py` (offline) |
+| tests | `test_ext_bridge.py`, `test_listing_jobs.py`, `test_ext_product.py`, `naver_shopping/test_composite.py`, `naver_shopping/test_pdp.py` (offline) |

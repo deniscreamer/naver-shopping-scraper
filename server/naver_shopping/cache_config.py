@@ -13,6 +13,9 @@ SEARCH_COUNT_CACHE = timedelta(hours=6)
 # Product record: price / stock / options move daily; the description and
 # notice rarely.
 PRODUCT_CACHE = timedelta(hours=6)
+# Product page specs (products/specs): seller attributes rarely change, and
+# each read drives the owner's Chrome through a search and a product page.
+PRODUCT_SPECS_CACHE = timedelta(hours=24)
 # Review pages: a page re-sorts as reviews arrive; busiest products get a
 # few an hour.
 REVIEWS_CACHE = timedelta(hours=6)
