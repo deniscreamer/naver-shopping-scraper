@@ -1,6 +1,6 @@
 services:
   naver-shopping-scraper:
-    build: .
+    build: ./server
     restart: unless-stopped
     shm_size: "1gb"
     ports:
