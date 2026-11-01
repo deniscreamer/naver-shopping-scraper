@@ -133,6 +133,9 @@ cheaper. Errors are never cached.
 ### `/products/search`
 
 Up to 96 search cards for a keyword (the widget's 4 pages x 24; there is no deeper paging and no `page` param).
+Only whole pages of 24 come back: when `total_count` is 45 you get 24 cards, 67 gives 48; under 24 you get all.
+To list everything, narrow `min_price`/`max_price` until the card count equals `total_count`
+(`scripts/harvest_listing.py` does this).
 
 | Param | Type | Default | Notes |
 |---|---|---|---|

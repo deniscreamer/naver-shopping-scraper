@@ -27,7 +27,8 @@ running server over HTTP only.
 | `smoke_endpoints.py` | Live smoke: `/health` plus the 11 endpoints, one at a time. Networked. |
 | `example_search_harvest.py` | Template: search, classify the cards, fetch details, write resumable JSONL |
 | `test_naver_api_client.py` | Offline tests for the client and the classifier |
-| `output/` | Run output (`output/<run>/products.jsonl`), gitignored |
+| `harvest_listing.py` | Full listing of store product links for a keyword + category, price-sliced, resumable |
+| `output/` | Run output (`output/<run>/products.jsonl`, `listing.jsonl`), gitignored |
 
 ## Running
 
@@ -43,6 +44,7 @@ Then run the scripts:
 .venv/bin/pip install -r scripts/requirements.txt    # requests; already present in the server venv
 .venv/bin/python scripts/smoke_endpoints.py          # --delay 5 --base-url http://localhost:8000
 .venv/bin/python scripts/example_search_harvest.py "raspberry pi" --limit 10 --out pi
+.venv/bin/python scripts/harvest_listing.py "남성 골프채 풀세트" --category 50002788 --out golf-mens
 .venv/bin/python -m pytest scripts -q                # offline; not part of the default `pytest` run
 ```
 
@@ -118,6 +120,25 @@ the 96 cards break down as:
 - 55 smartstore `/main/` products;
 - 40 catalogs;
 - 1 `link.coupang.com` card.
+
+## Listing harvest (`harvest_listing.py`)
+
+Collects every Naver store product link for a keyword (+ optional category at any depth), past the search's
+96-card ceiling, as `output/<run>/listing.jsonl` (one line per unique product: canonical link, name, store,
+pricing, category, reviews, purchase count, first image, raw card) plus a `state.json` checkpoint.
+
+- **Slicing.** One `/products/search` call per price slice. The widget answers whole pages of 24 only, so a slice
+  is done when its cards reach its `total_count`; otherwise it is split into up to 8 equal parts and searched again.
+  Cards from every call are kept. A one-price slice that still falls short is listed as `saturated` (partial).
+- **Filter.** Only smartstore.naver.com / brand.naver.com products are kept, with the link
+  `<store.link>/products/<product_id>` that `/products/details` takes (`example_search_harvest.classify_card`).
+  Catalog cards and external malls (Coupang, Gmarket, 11st, Auction, SSG, ...) are dropped and counted once.
+- **Pace.** Sequential, `--delay 3` s by default; `--max-requests N` bounds a run and the same `--out` resumes it.
+  Exit code 0 = done, 3 = paused with ranges pending.
+- **Cost.** About one call per 12 matches: verified live 2026-11-01 on 남성 골프채 풀세트 / 50002788 / 0-57,220 KRW,
+  433 matches in 35 calls, 192 store products + 241 external = 433 (complete). The whole category (~29k men's sets)
+  is roughly 2,400 calls, about 2-2.5 hours at 3 s. `--min-price` cuts the cheap tail, where external malls and
+  accessories dominate.
 
 ## Shopify roadmap
 

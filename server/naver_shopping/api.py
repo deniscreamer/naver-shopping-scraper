@@ -24,6 +24,10 @@ from naver_shopping.schemas import DATALAB_DEVICES, DATALAB_GENDERS, DATALAB_PER
 
 REVIEW_PAGE_SIZE = 20
 SEARCH_MAX_CARDS = 96        # the widget's TREND view: 4 pages x 24, no deeper paging exists
+# ... and WHOLE pages only: 45 matches answer 24 cards, 67 answer 48, under 24
+# answer all (probed 2026-11-01, 남성 골프채 풀세트 / 50002788, 0-19073 KRW:
+# 24 of 45; its sub-slices 24 + 3 + 18 = 45). total_count is the real match
+# count; scripts/harvest_listing.py slices by price until cards == total.
 
 
 def _public(mapping, upstream):

@@ -334,6 +334,10 @@ creates `output/` at import) and checks the 24 routes. R-LAYOUT-1, R-LAYOUT-2, R
 Each line is one upstream fact. The code comment or docstring named is the
 primary record, with dates; read it before changing the behaviour.
 
+- The ns-portal search widget answers whole pages of 24 only, at most 4: a
+  slice matching 45 answers 24 cards, under 24 it answers all. Full listings
+  need price slices until cards == `total_count`. -> `api.SEARCH_MAX_CARDS`
+  comment; `scripts/harvest_listing.py` docstring.
 - Store backend `brand.naver.com/n/*` answers 429 to any plain HTTP client,
   even with replayed cookies; it answers inside a real brand page, for any
   store. -> `browser_client` module docstring; `naver_shopping.fetch` module
