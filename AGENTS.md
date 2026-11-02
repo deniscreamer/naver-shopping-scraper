@@ -12,7 +12,7 @@ server/            the API and its import root (bare imports, NO server/__init__
   run.py routes.py config.py cache.py browser_client.py patchright_driver.py ...
   naver_shopping/  endpoint logic, fetch, parsers, schemas, offline tests, fixtures/
   docs/            DEVELOPMENT_RULES.md, ARCHITECTURE.md, ENDPOINTS.md, KNOWN_ISSUES.md
-scripts/           HTTP-only consumers of the running API (example_01..12, 99: how to call it; naver_types.py: answer types)
+scripts/           HTTP-only consumers of the running API (example_01..13, 99: how to call it; naver_types.py: answer types)
 extension/         Chrome adapter for the owner's browser (beta, search.shopping listing)
 archive/docker/    retired Docker/Linux setup, not maintained
 pyproject.toml     pytest config only (testpaths = pythonpath = ["server"])
@@ -34,7 +34,8 @@ Google Chrome (a real window opens). Docker/Linux is archived in
 1. Read the nearest AGENTS.md before editing files in a directory.
 2. [server/docs/DEVELOPMENT_RULES.md](server/docs/DEVELOPMENT_RULES.md) is
    MANDATORY for any change under `server/`.
-3. `scripts/` talks to the server over HTTP only and never imports server modules.
+3. `scripts/` talks to the server over HTTP only and never imports server modules. The one other fetch:
+   photo files the API linked, from Naver's image CDN (`scripts/naver_images.py`).
 4. Tests never hit the network.
    API answer types live in `scripts/naver_types.py`; a shape change updates type + fixture + client method (R-TYPE).
 5. Move or rename tracked files with `git mv` so history follows them.

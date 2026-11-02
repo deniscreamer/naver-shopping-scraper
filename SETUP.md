@@ -35,6 +35,7 @@ python3 -m venv .venv
 ```
 
 The server drives the installed Google Chrome through patchright; `patchright install` is **not** needed.
+`scripts/requirements.txt` brings Pillow, which the photo scripts use to write WebP (its macOS wheels include WebP).
 
 ## 3. Per-machine settings (.env)
 
@@ -44,7 +45,8 @@ cp .env.example .env
 
 Every value is optional; each line of [.env.example](.env.example) says what it is, where to get it and gives an
 example. Usually all stay empty. Fill only what this machine needs (another port; a proxy if Naver refuses this
-IP; a webhook to get captcha notices). Secrets go only into `.env` (gitignored), never into a commit or the chat.
+IP; a webhook to get captcha notices; `SHOP_STORE` when the saved photos are for a store other than
+fairwardgolf). Secrets go only into `.env` (gitignored), never into a commit or the chat.
 If a value must come from the operator (proxy credentials, a webhook URL), ask them to paste it into `.env`
 themselves.
 

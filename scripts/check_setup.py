@@ -59,8 +59,26 @@ def check_local():
     report("OK", "settings", f"PORT={os.environ.get('PORT') or 8000} "
            f"proxy={masked(os.environ.get('NAVER_SHOPPING_PROXY'))} "
            f"webhook={masked(os.environ.get('NAVER_NOTIFY_WEBHOOK'))}")
+    check_photos()
     report("OK" if os.path.exists(os.path.join(ROOT, "extension", "manifest.json")) else "FAIL",
            "extension/ folder", os.path.join(ROOT, "extension"))
+
+
+def check_photos():
+    """scripts/requirements.txt: Pillow with WebP (image_prep.py) and a known SHOP_STORE (shop_stores.py)."""
+    try:
+        from PIL import features
+        webp = features.check("webp")
+        detail = importlib.metadata.version("Pillow") if webp else "no WebP in Pillow: reinstall scripts/requirements.txt"
+        report("OK" if webp else "FAIL", "Pillow with WebP (photo scripts)", detail)
+    except ImportError:
+        report("FAIL", "Pillow with WebP (photo scripts)", "missing: pip install -r scripts/requirements.txt")
+    from shop_stores import get_store
+    try:
+        store = get_store()
+        report("OK", "SHOP_STORE", f"{store.id.value} ({store.publisher}, {store.site})")
+    except ValueError as e:
+        report("FAIL", "SHOP_STORE", str(e))
 
 
 # ---- server -------------------------------------------------------------------------------

@@ -22,6 +22,17 @@ version in `extension/manifest.json`.
   avatar first, then photo + text, then text; all with text for 20 or fewer), reading only the pages it needs;
   `/products/reviews` takes `media` (`all`, `photo_video`, `text`: the backend's `reviewContentClassTypes`).
   Researched against the product page's review window: same JSON, ~10x slower, so no adapter for reviews.
+- **Product photos**: `scripts/naver_images.py` downloads the gallery `/products/details` links (the original files:
+  the largest real size of every rendition, measured on 25 photos; fallback to `m10000_10000_no_rotate`, then
+  `o1000`, recorded per file) and the chosen reviews' photos + avatars, with a plain HTTP GET (no page, no adapter:
+  the gallery matched the page's 1:1). Only a store's WebP is written, the source stays in memory:
+  `scripts/image_prep.py` (Pillow, one algorithm for every store: gallery short side down to 1500, Merchant Center's
+  recommendation, long side <= 5000; reviews long side 1024; never enlarged; <= 1 MB by quality 85-80-75, then
+  smaller sizes; sRGB, EXIF orientation, animation -> first frame, old EXIF/GPS/IPTC/ICC/XMP dropped, a new XMP with the store as publisher, read back and checked).
+  `scripts/shop_stores.py`: our Shopify stores as a `StoreId` enum + profiles (fairwardgolf, skinsli, kyobooks,
+  banafish), picked by `SHOP_STORE` in `.env`. Names `<slug|store-id>-001-<sha16>.webp`,
+  `<store>-review-image|avatar-<sha16>.webp`; optional reviewed English `ImageSeo` (slug, title, alt <= 125, brand).
+  `example_13_product_images.py`; `example_12` and `example_99` save review photos / avatars too.
 - **Review videos**: attachments with `reviewAttachmentType` "M" are `video` now (they came as `image`); the link
   is the poster frame. Paging checked on 6782 reviews (340 pages, all unique, newest first).
 - **FULL example**: `example_99_full_details.py` (a category's products -> details + specs + selected reviews),

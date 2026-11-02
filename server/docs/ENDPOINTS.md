@@ -211,6 +211,9 @@ Output: the product record (`id`, `origin_product_id`, `name`, `link`, `catalog_
 `store` (`id, uid, name, slug, link, type, grade, sale_count, merchant_id, business`). Any section Naver did not
 answer is null.
 
+- `images`: the product's gallery in the page's order, main photo first, as links to the original files (no
+  `?type=` rendition; the largest real size of every rendition, measured 2026-11-01). Downloading them:
+  `scripts/naver_images.py`, scripts/README.md "Product photos".
 - `description.text`: the description HTML's text nodes, one line per block element (`pdp.description_text`);
   images, video controls, embedded product cards, buttons and the labels 공지사항 / Notice, 관련 태그 and
   상품정보 펼쳐보기 are left out. null for an image-only description (common: many sellers post only images).

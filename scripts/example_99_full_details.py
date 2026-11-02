@@ -10,7 +10,12 @@ category, one product at a time. When the API learns more, add it here.
      - details   /products/details           prices, options, stock, category path, notice, description, facts
      - specs     /products/specs             the page's 상품정보 rows (your Chrome: search -> card -> page)
      - reviews   /products/reviews/selected  up to 20 reviews worth showing, with photos
-  3. One JSON line per product in scripts/output/full-<category>/products.jsonl.
+     - photos    the gallery and the chosen reviews' photos + avatars, plain HTTP from the
+                 image CDN, saved as the store's WebP (naver_images + image_prep; SHOP_STORE
+                 in .env) into full-<category>/images/<product id>/: gallery <store>-<id>-001-<sha16>.webp
+                 (short side down to 1500), reviews <store>-review-image|avatar-<sha16>.webp (1024 px)
+  3. One JSON line per product in scripts/output/full-<category>/products.jsonl
+     (`photos`: the gallery result, `review_media`: the review photos / avatars result).
 
 Needs Chrome open with the adapter (example_01 says extension: connected).
 Specs are read from the listing's own search first, then by the product's
@@ -22,9 +27,12 @@ import json
 import os
 import sys
 import time
+from collections import Counter
 
 import naver_types as T
 from naver_api_client import ApiError, NaverApiClient
+from naver_images import download_gallery, download_review_media
+from shop_stores import get_store
 
 QUERY = "남성 골프채 풀세트"
 CATEGORY_ID = "50002788"                      # 스포츠/레저 > 골프 > 골프클럽 > 풀세트
@@ -32,6 +40,7 @@ PRODUCTS = int(sys.argv[1]) if len(sys.argv) > 1 else 3
 REVIEWS = 20
 
 api = NaverApiClient()
+store = get_store()
 
 
 def specs_for(link: str) -> T.ProductSpecs | None:
@@ -60,8 +69,12 @@ with open(os.path.join(out_dir, "products.jsonl"), "w", encoding="utf-8") as out
             print(f"- {row['link']}: {e.status} {e.error}")
             continue
         specs = specs_for(row["link"])
-        out.write(json.dumps({"listing": row, "details": details, "specs": specs, "reviews": reviews},
-                             ensure_ascii=False) + "\n")
+        media_dir = os.path.join(out_dir, "images", details["id"] or "product")
+        photos = download_gallery(details["images"], media_dir, store, details["id"])
+        review_media = (download_review_media(reviews["results"], media_dir, store) if not photos["stopped"]
+                        else None)
+        out.write(json.dumps({"listing": row, "details": details, "specs": specs, "reviews": reviews,
+                              "photos": photos, "review_media": review_media}, ensure_ascii=False) + "\n")
         facts = specs["facts"] if specs else details["facts"]
         brand = facts["brand"]
         print(f"- {(details['name'] or '')[:60]}")
@@ -72,5 +85,15 @@ with open(os.path.join(out_dir, "products.jsonl"), "w", encoding="utf-8") as out
         tiers = ", ".join(r["tier"] for r in reviews["results"][:5])
         rows_read = len(specs["specs"]) if specs else 0
         print(f"  specs: {rows_read} rows; reviews: {reviews['count']} chosen of {total} ({tiers})")
+        sizes = ", ".join(f"{f['width']}x{f['height']}" for f in photos["files"])
+        saved = f"{len(photos['files'])}/{photos['total']} WebP, {photos['originals']} from originals"
+        print(f"  photos: {saved} ({sizes})"
+              + ("" if photos["is_complete"] else f"  INCOMPLETE: {photos['stopped'] or photos['failed']}"))
+        if review_media:
+            kinds = Counter(f["kind"] for f in review_media["files"])
+            print(f"  review media: {kinds['review-image']} photos, {kinds['review-avatar']} avatars, "
+                  f"{len(review_media['failed'])} failed")
+        if photos["stopped"] or (review_media and review_media["stopped"]):   # the CDN refused: stop the run
+            break
         time.sleep(2)
 print(f"\n-> {out_dir}/products.jsonl")

@@ -1,7 +1,8 @@
 # scripts/
 
 Client-side consumers of the Naver Shopping API. Everything here talks to a
-running server over HTTP only.
+running server over HTTP only, plus one other fetch: the photo files the API
+linked, from Naver's image CDN (`naver_images.py`, see Product photos).
 
 ## Boundary
 
@@ -15,18 +16,25 @@ running server over HTTP only.
   `naver_shopping.schemas` to check the client's page caps against the server's
   limits, and `naver_shopping.parsers` to check the harvest classifier against
   the server's committed search fixture (both via `pytest.importorskip`).
-- `naver_api_client.py` is the single gateway. Every script goes through
-  `NaverApiClient`.
-- `requirements.txt` holds only `requests`, so scripts run on a machine
-  without Chrome or patchright. The offline tests also need `pytest`, which
-  the server venv has.
+- `naver_api_client.py` is the single gateway to the API. Every script goes
+  through `NaverApiClient`; `naver_images.py` only downloads files whose links
+  the API returned.
+- `requirements.txt` holds `requests` and `Pillow` (WebP for the photos), so
+  scripts run on a machine without Chrome or patchright. The offline tests
+  also need `pytest`, which the server venv has.
 
 | File | Purpose |
 |---|---|
 | `naver_api_client.py` | `NaverApiClient` (`get`, `pages`, `health`) and `ApiError` |
+| `naver_images.py` | Downloads the photos the API linked (gallery, review photos, avatars) from Naver's image CDN with plain HTTP and saves them as the store's WebP (see Product photos) |
+| `image_prep.py` | The WebP preparation, one algorithm for every store: size, bytes, metadata, checks (no network) |
+| `shop_stores.py` | Our Shopify stores (`StoreId` enum + publisher / site), picked by `SHOP_STORE` |
 | `smoke_endpoints.py` | Live smoke: `/health` plus 11 endpoints (all but `/products/specs`), one at a time. Networked. |
 | `example_search_harvest.py` | Template: search, classify the cards, fetch details, write resumable JSONL |
 | `test_naver_api_client.py` | Offline tests for the client and the classifier |
+| `test_naver_images.py` | Offline tests for the photo downloader (a fake CDN, Pillow-made photos) |
+| `test_image_prep.py` | Offline tests for the WebP preparation (Pillow-made photos) |
+| `test_shop_stores.py` | Offline tests for the store registry (every `StoreId` has a profile, `SHOP_STORE`) |
 | `example_0N_*.py` | Runnable examples, one API topic each (see Examples) |
 | `harvest_listing.py` | Full listing of store product links for a keyword + category, price-sliced, resumable |
 | `output/` | Run output (`output/<run>/products.jsonl`, `listing.jsonl`), gitignored |
@@ -54,6 +62,53 @@ login page), so every read walks the whole flow like a person: naver.com -> the 
 
 Use both together: way 1 for prices / options / reviews, way 2 for the attribute rows.
 Contract: [server/docs/ENDPOINTS.md](../server/docs/ENDPOINTS.md#product-details-two-ways).
+
+## Product photos
+
+`/products/details` `images` is the product's gallery: the seller's photos in order, main photo first, as links to
+the original files (no `?type=` rendition). Checked 2026-11-01: the same files and count as the gallery on the
+product page, so no page, adapter or zoom viewer is needed. Review photo links (`attachments`) are originals too;
+`writer.profile_image` is the avatar (null for Naver's placeholder). Videos are not downloaded.
+
+Measured on 25 gallery photos of 6 products (smartstore and brand store), every rendition of the same photo:
+
+| Rendition | Resolution | Bytes |
+|---|---|---|
+| the link as given (no `type`) | the file's own: always the largest real size (600 to 2000 px here) | the seller's file |
+| `?type=m10000_10000_no_rotate` | the same | a re-encode (another sha; often fewer bytes) |
+| `?type=o1000` | always 1000 px: 17 of 25 upscaled from 600-960, a 2000x1501 photo downscaled | |
+| `?type=w860` | at most 860 px | |
+
+**Download** (`naver_images.py`): a plain HTTP GET from Naver's image CDN (`*.pstatic.net`: no browser, no
+adapter, no cookies, no redirects), 30 s timeout, 20 MiB cap, image type + file signature, one request every 2 s
+(fallbacks, retries, gallery and review photos alike), 3 attempts on 5xx / network errors; a 403 / 429 stops the
+run. A gallery link that fails (or whose file cannot be
+prepared) is taken as `m10000_10000_no_rotate`, then `o1000`; each file records its `rendition`. A failed review
+photo or avatar is skipped, the review stays.
+
+**Prepare** (`image_prep.py`, one algorithm for every store; adapted from the catalog project's
+`product-image-webp/v2`): the source stays in memory, only this WebP is written.
+
+| | Gallery | Review photo | Avatar |
+|---|---|---|---|
+| Size | the short side down to 1500, proportions kept (3000x4000 -> 1500x2000; 900x900 stays), long side at most 5000 | long side at most 1024 | long side at most 1024 |
+| File | `<slug>-001-<sha16>.webp` (slug: `ImageSeo.slug`, else `<store>-<product id>`) | `<store>-review-image-<sha16>.webp` | `<store>-review-avatar-<sha16>.webp` |
+| XMP | publisher + site; with an `ImageSeo`: title, description (= alt), subject (brand, title) | publisher + site | publisher + site |
+
+Gallery 1500: Google Merchant Center recommends 1500x1500 or more (minimum 500x500 from 31 January 2027, checked
+2026-11-01) and asks not to submit scaled-up images, so a smaller photo is kept as it is. For all: a static WebP,
+never enlarged or cropped, at most 1,000,000 bytes (quality 85, 80, 75 at that size, then each smaller long side;
+the first that fits), EXIF orientation applied, sRGB, transparency kept, an animation becomes
+its first frame (its last frame must decode), every old EXIF / GPS / IPTC / ICC / XMP dropped, then read back
+(chunks, size, one frame, exactly our XMP). No author or copyright is written; the store is the publisher, not the
+brand. `ImageSeo` takes reviewed English text only (slug `a-z0-9-` up to 200, alt up to 125); with only the Korean
+name there is none and the file is named after the store and product id.
+
+**Stores** (`shop_stores.py`): `StoreId` enum + `STORES` (publisher, site): fairwardgolf (default), skinsli,
+kyobooks, banafish. Pick one per run with `SHOP_STORE` in `.env` or `get_store("...")`. A new store is one enum
+member and one `STORES` entry; the algorithm does not change.
+
+Not done here: description images, recommendation images, video frames.
 
 ## Reviews: two ways
 
@@ -90,8 +145,9 @@ needs Chrome open with the adapter (`example_01` shows `extension: connected`).
 | `example_09_listing_then_specs.py` | Like example 7, details the new way: a listing, then `product_details()` + `product_specs(link, query=<the listing's search>)` per product (name fallback). Collecting products not known yet |
 | `example_10_known_products_specs.py` | Known product links -> `product_specs(link, query=<full Korean name>)`: the card is matched by its id on that search page |
 | `example_11_reviews_full.py` | `api.reviews()` read completely: every review field in the store's order (id, score, date, full text, option, likes, writer, photo / video links and sizes), the product summary, JSONL to `output/reviews-<id>/` |
-| `example_12_reviews_selected.py` | Reviews, way 2: `selected_reviews()` -> up to 20 reviews worth showing (photo + text + avatar first), with the tier of each, JSONL |
-| `example_99_full_details.py` | **FULL**, the one to grow: a category's products (listing + category id), each in turn -> details + 상품정보 specs (adapter) + selected reviews, one JSON line per product |
+| `example_12_reviews_selected.py` | Reviews, way 2: `selected_reviews()` -> up to 20 reviews worth showing (photo + text + avatar first), with the tier of each, JSONL; their photos and avatars as the store's WebP (`download_review_media()`) |
+| `example_13_product_images.py` | A product's gallery: `product_details()["images"]` -> `naver_images.download_gallery()` -> the store's WebP files, manifest.json with source and result of each |
+| `example_99_full_details.py` | **FULL**, the one to grow: a category's products (listing + category id), each in turn -> details + 상품정보 specs (adapter) + selected reviews + gallery and review photos as the store's WebP, one JSON line per product |
 
 ```sh
 .venv/bin/python scripts/example_01_health.py
@@ -133,7 +189,7 @@ Start the server first, in another terminal:
 Then run the scripts:
 
 ```sh
-.venv/bin/pip install -r scripts/requirements.txt    # requests; already present in the server venv
+.venv/bin/pip install -r scripts/requirements.txt    # requests, Pillow
 .venv/bin/python scripts/smoke_endpoints.py          # --delay 5 --base-url http://localhost:8000
 .venv/bin/python scripts/example_search_harvest.py "raspberry pi" --limit 10 --out pi
 .venv/bin/python scripts/harvest_listing.py "남성 골프채 풀세트" --category 50002788 --out golf-mens

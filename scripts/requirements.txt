@@ -1,1 +1,2 @@
 requests
+Pillow                          # image_prep.py: WebP with XMP (needs Pillow built with WebP, the wheels are)

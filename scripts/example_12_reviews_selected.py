@@ -13,7 +13,13 @@ review, 100 a product. Photo links are originals; avatars are null when the
 writer has none. Way 1 (example 11) reads every review instead. Both come from
 the store backend in the server's own Chrome: no adapter, a few seconds.
 
-    .venv/bin/python scripts/example_12_reviews_selected.py [product link] [count]
+Then naver_images.download_review_media() saves the chosen reviews' photos and
+avatars into media/ as the store's WebP files (SHOP_STORE in .env): plain HTTP
+from the image CDN, long side <= 1024, <= 1 MB, old metadata dropped, the store
+as publisher; a failed photo is skipped, the review stays. Pass `links` as the
+third argument to keep links only.
+
+    .venv/bin/python scripts/example_12_reviews_selected.py [product link] [count] [media|links]
 """
 import json
 import os
@@ -21,9 +27,12 @@ import sys
 from collections import Counter
 
 from naver_api_client import NaverApiClient
+from naver_images import download_review_media
+from shop_stores import get_store
 
 PRODUCT = sys.argv[1] if len(sys.argv) > 1 else "https://smartstore.naver.com/thegolf/products/5543663553"
 COUNT = int(sys.argv[2]) if len(sys.argv) > 2 else 20
+DOWNLOAD = (sys.argv[3] if len(sys.argv) > 3 else "media") == "media"     # "links" = keep them as links only
 
 api = NaverApiClient()
 picked = api.selected_reviews(PRODUCT, count=COUNT)            # -> naver_types.SelectedReviews
@@ -51,3 +60,12 @@ for review in picked["results"][:5]:
     print(f"[{review['tier']}] {review['score']}*  {review['created_at']}  {review['writer']['masked_id']}  "
           f"{len(photos)} photo(s), avatar {'yes' if review['writer']['profile_image'] else 'no'}")
     print(f"   {' '.join((review['text'] or '').split())[:160]}")
+
+if DOWNLOAD:                     # the photos and avatars as the store's WebP (1024 px), a request every 2 s
+    media = download_review_media(picked["results"], os.path.join(out_dir, "media"), get_store())
+    kinds = Counter(f["kind"] for f in media["files"])
+    print(f"\nmedia: {dict(kinds)} saved, {len(media['failed'])} failed"
+          + (f", stopped: {media['stopped']}" if media["stopped"] else ""))
+    with open(os.path.join(out_dir, "media.json"), "w", encoding="utf-8") as f:
+        json.dump(media, f, ensure_ascii=False, indent=1)
+    print(f"-> {out_dir}/media.json")

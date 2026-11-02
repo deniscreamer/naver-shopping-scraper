@@ -301,6 +301,8 @@ def parse_simple_product(sp, slug=None, is_brand=False):
     seo = _dict(sp.get("seoInfo"))
     search_info = _dict(sp.get("naverShoppingSearchInfo"))
     ep = _dict(sp.get("epInfo"))
+    # the product page's gallery, in order, as original-file links (no ?type= rendition): same files and
+    # count as the page's gallery, largest real size of every rendition (2026-11-01, scripts/naver_images.py)
     images = [u for u in [_clean(sp.get("representativeImageUrl"))] + [_clean(u) for u in _list(sp.get("optionalImageUrls"))] if u]
     reviews = _dict(sp.get("reviewAmount"))
     catalog_id = _clean(str(ep.get("syncNvMid") or "")) or None

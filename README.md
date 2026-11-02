@@ -87,7 +87,7 @@ archive/docker/     retired Docker/Linux setup (not maintained)
 | [server/docs/ARCHITECTURE.md](server/docs/ARCHITECTURE.md) | How requests flow, transports, browser, cache |
 | [server/docs/DEVELOPMENT_RULES.md](server/docs/DEVELOPMENT_RULES.md) | Mandatory rules for changes under server/ |
 | [server/docs/KNOWN_ISSUES.md](server/docs/KNOWN_ISSUES.md) | Known defects and stale references |
-| [scripts/README.md](scripts/README.md) | Examples (`scripts/example_01..12, 99`), writing scripts against the API, Shopify roadmap |
+| [scripts/README.md](scripts/README.md) | Examples (`scripts/example_01..13, 99`), writing scripts against the API, Shopify roadmap |
 | [SECURITY.md](SECURITY.md) | Usage disclaimer and vulnerability reporting |
 | [server/docs/EXTENSION.md](server/docs/EXTENSION.md) | Beta: the search.shopping listing and product page specs through your own Chrome, and why |
 | [archive/docker/README.md](archive/docker/README.md) | Retired Docker setup and how to restore it |

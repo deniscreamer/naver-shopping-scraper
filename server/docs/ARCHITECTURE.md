@@ -420,6 +420,9 @@ primary record, with dates; read it before changing the behaviour.
 - A product with no reviews has no review summary; the base record's count is 0. -> `api.product_reviews_selected`
   comment.
 - A search card clicked at its centre can open the store instead of the product. -> `ext_product.read_page` comment.
+- `images` from simple-products are the page's gallery (same files, same count) as original-file links; `?type=`
+  renditions are re-encodes (`m10000_10000_no_rotate`) or 1000 px resizes (`o1000`, upscaling small photos). ->
+  `parsers.parse_simple_product` comment, `scripts/naver_images.py` docstring.
 - A review video attachment is `reviewAttachmentType` "M" with a `video/*` `mimeTypeName`; its URL is a poster
   frame. -> `parsers._attachment_type` docstring.
 - A review writer without an avatar comes with the placeholder `profile-phinf.pstatic.net/404/default.png`. ->
