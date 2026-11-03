@@ -3,7 +3,7 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
-## Unreleased
+## 0.5.0 (2026-11-02)
 
 - **Options from the product page** (Naver change, 2026-11-02): the store backend's `validation-products` answers
   419 to the box (the page now sends a one-time token with its product call), so `/products/details` has null
