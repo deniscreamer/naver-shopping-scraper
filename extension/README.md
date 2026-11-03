@@ -26,7 +26,7 @@ After any change in this folder: **reload** the card (circular arrow) and check 
 | `click {tabId, selector}` | mouse move + click (debugger input); returns `newTabId` if a tab opened |
 | `type {tabId, text}` / `key {tabId, key}` | key-by-key text; Enter / Escape / Tab |
 | `scroll {tabId, dy}` | mouse wheel (debugger input) |
-| `captures {tabId, pattern}` | the page's own `/ns/v1/` answers copied since the last call |
+| `captures {tabId, pattern}` | the page's own answers copied since the last call: `/ns/v1/` (listing) and `/channels/` + `/products/` (a product page's product answer) |
 | `screenshot {tabId}` | PNG data URL (debugger) |
 
 ## Safety

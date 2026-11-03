@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "naver-scrap adapter",
-  "version": "0.4.2",
+  "version": "0.4.4",
   "description": "Thin command adapter between server/ext_bridge.py (ws://127.0.0.1:8765) and this Chrome. No site logic.",
   "permissions": ["tabs", "scripting", "debugger", "alarms"],
   "host_permissions": ["*://*.naver.com/*"],

@@ -1,0 +1,61 @@
+{
+ "id": "5543745139",
+ "name": "신품 혼마 D1 남성용 골프채 풀세트 2021년 S세트 D1 500 S+950 S (병행)",
+ "productStatusType": "SALE",
+ "soldout": false,
+ "stockQuantity": 94,
+ "optionUsable": true,
+ "options": [
+  {
+   "id": 5028592627,
+   "optionType": "COMBINATION",
+   "groupName": "세트선택"
+  }
+ ],
+ "optionCombinations": [
+  {
+   "id": 44685560815,
+   "optionName1": "S 세트 (D1 500 S+950 S)",
+   "stockQuantity": 94,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2024-10-11T04:00:06.254+00:00",
+   "todayDispatch": true
+  },
+  {
+   "id": 44685560816,
+   "optionName1": "R 세트 (D1 500 R)",
+   "stockQuantity": 0,
+   "price": 60000,
+   "regOrder": 1,
+   "registerDate": "2024-10-11T04:00:06.255+00:00",
+   "todayDispatch": true
+  }
+ ],
+ "standardCombinations": [
+  {
+   "id": 44685560815,
+   "optionName1": "S 세트 (D1 500 S+950 S)",
+   "stockQuantity": 94,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2024-10-11T04:00:06.254+00:00",
+   "todayDispatch": true,
+   "title": "_S 세트 (D1 500 S+950 S)____"
+  },
+  {
+   "id": 44685560816,
+   "optionName1": "R 세트 (D1 500 R)",
+   "stockQuantity": 0,
+   "price": 60000,
+   "regOrder": 1,
+   "registerDate": "2024-10-11T04:00:06.255+00:00",
+   "todayDispatch": true,
+   "title": "_R 세트 (D1 500 R)____"
+  }
+ ],
+ "standardOptions": [],
+ "textOptions": [],
+ "simpleOptions": [],
+ "supplementProducts": []
+}

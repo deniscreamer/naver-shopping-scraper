@@ -90,7 +90,8 @@ Every surface that is not the store backend uses this path (R-NAVER-2).
   | Store record | `smartstore.naver.com/<slug>/best` or `brand.naver.com/<slug>/best` | curl | `fetch.fetch_store_page` |
   | Brand product page | `brand.naver.com/<slug>/products/<id>` | curl | `fetch.fetch_brand_product_page` |
   | DataLab | `POST datalab.naver.com/shoppingInsight/<action>.naver` | curl | `fetch.fetch_datalab` |
-  | Store backend (products, options, contents, notice, reviews, best/popular, catalog reviews) | `brand.naver.com/n/v1|v2/*`, for ANY store including smartstore | box only | `fetch.box_get`, `fetch.box_get_many`, `fetch.box_post` |
+  | Store backend (products, contents, notice, reviews, best/popular, catalog reviews) | `brand.naver.com/n/v1|v2/*`, for ANY store including smartstore | box only | `fetch.box_get`, `fetch.box_get_many`, `fetch.box_post` |
+  | Options, variants, stock (since 2026-11-02) | the product page's own `/channels/<uid>/products/<id>` answer | the owner's Chrome, adapter capture | `ext_product._product_answer`, `parsers.parse_page_options` |
 
   Do not move an open curl surface into the browser, and do not try the store backend over curl.
 - **R-NAVER-3 (MUST)** Batch the independent backend GETs of one record into one `fetch.box_get_many` call (one lock acquisition, one exit), like the `box_get_many` call in `api._product_record`. The `box_get` calls before it are dependent (the summary supplies `origin` and the leaf category). Known debt: on the slug-less path `_product_record` fetches `/n/v1/validation-products/{id}` twice (alone, then again in the batch); do not copy that.
@@ -225,11 +226,12 @@ Scope: the files listed in R-TEST-4 (including `hostenv.py`, which picks the Chr
 ## R-EXT: the extension transport (beta)
 
 - **R-EXT-1 (MUST NOT)** Never mint, copy, replay or forge a bot-defence token (`x-wtm-ncaptcha-token`,
-  `cipherText`, `tokenId`) or call the defence SDK for our own requests. Listing calls are made by the page itself;
-  we only trigger its own loading (real input) and read its answers.
+  `cipherText`, `tokenId`, the product pages' `x-client-rtk` / `x-client-rts`) or call the defence SDK for our own
+  requests. Listing and product calls are made by the page itself; we only trigger its own loading (real input) and
+  read its answers.
 - **R-EXT-2 (MUST)** The extension stays a dumb executor: generic ops, no site logic (no selectors, page paths or
-  stop rules). Its only Naver-specific parts are the `*.naver.com` host scope in `manifest.json` and the `/ns/v1/`
-  capture filter in `capture_main.js`. Paths, walls, stop rules and parsing live in Python (`ext_listing.py`,
+  stop rules). Its only Naver-specific parts are the `*.naver.com` host scope in `manifest.json` and the capture filter
+  in `capture_main.js` (`/ns/v1/`, and `/channels/` + `/products/` for the product page's own product answer). Paths, walls, stop rules and parsing live in Python (`ext_listing.py`,
   `naver_shopping/composite.py`).
 - **R-EXT-3 (MUST)** A captcha / login gate: notify (`notify.py`) and wait for the human (60 s), never solve it.
   A ban page or a refused batch: stop, no retry. One listing at a time, sequential, at page speed.
@@ -250,6 +252,19 @@ One entry per MUST exception or rule change, newest first. Format:
 ### YYYY-MM-DD: <rule ID>: <short title>
 What changes. Why. Evidence (A/B numbers, probe, test). Author.
 ```
+
+### 2026-11-02: R-EXT-2, R-NAVER-2: options from the product page's own answer (beta)
+The adapter's capture filter (`capture_main.js`) also copies the answers whose URL holds `/channels/` and
+`/products/`; `ext_product.read_page` takes the product page's own product answer from them, and `/products/specs`
+returns its options (`parsers.parse_page_options`). Why: since 2026-11-02 the store backend answers
+`/n/v1/validation-products/<id>` with 419 (`SDW-E90419`) to the box for every product tried (242 golf-set cards,
+the fixtures' products that worked on 2026-11-01), so `/products/details` has no options; the product page now sends
+a one-time page token (`x-client-rtk`, `x-client-rts`, `x-client-lct`) with its product call, gets 419 without it
+and reloads itself to get 200 (box capture of brand.naver.com/idmakers/products/11696178500). We do not copy or
+forge that token (R-EXT-1): the page makes the call, the adapter reads the answer, as for the listing. Smartstore
+pages ask `/i/v2/channels/<uid>/products/<id>` (no query), brand pages `/n/v2/.../products/<id>?withWindow=false`;
+the smartstore page's server-rendered state has no options (`optionUsable` false, stock 0). Verified on
+scarabee/13021362937 and idmakers/11696178500. Owner: Denis.
 
 ### 2026-11-01: R-NAVER-1: smartstore product page through the owner's Chrome (beta)
 `smartstore.naver.com/<store>/products/<id>` is read for its 상품정보 rows (`/products/specs`, `ext_product.py`), ONLY in

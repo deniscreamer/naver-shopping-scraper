@@ -3,6 +3,24 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
+## Unreleased
+
+- **Options from the product page** (Naver change, 2026-11-02): the store backend's `validation-products` answers
+  419 to the box (the page now sends a one-time token with its product call), so `/products/details` has null
+  `option_groups` / `variants` / `supplements`, and a slug-less link answers 404. `/products/specs` now returns
+  `options` from the product answer the page itself fetched, copied by the adapter (filter `/channels/` +
+  `/products/`; the token is never copied, R-EXT-1): every variant with `extra_price`, `stock_quantity` and the new
+  `is_available` (false = sold out, (품절); kept), text options (CUSTOM), simple options, add-ons. Decision log
+  R-EXT-2 / R-NAVER-2. Adapter 0.4.4: reload it in `chrome://extensions`.
+- **Variant choice** (`scripts/naver_variants.py`): free variants only by default; paid ones (more or less than
+  the product's price) when the operator passes `paid`; a name stating another amount "(+N원)" counts as paid and
+  is reported; a bare "+" joining a set's parts is not money. `example_14_product_options.py` on real golf sets;
+  `example_99` writes `variants` (argument `paid`).
+- **Text fields** (a name on a tag, an engraving): `options.text_options[]` adds what the product page shows of
+  each field: `label` ("네임스티커 성함 (필수)"), `required`, `placeholder`, `hint`, `min_length`, `max_length`,
+  `pattern` (`pdp.text_fields`, the attributes the naver-harvester reads). Null when the page has no such field.
+- **Types**: `Variant.is_available`, `PageOptions`, `SimpleOption`, `TextOption`, `ProductSpecs.options`.
+
 ## 0.4.0 (2026-11-01)
 
 - **`/products/specs` (beta)**: a product page's 상품정보 rows (label -> value: 제조사, 브랜드, 원산지 and the seller's

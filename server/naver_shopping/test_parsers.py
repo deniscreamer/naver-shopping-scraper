@@ -229,6 +229,7 @@ def test_validation():
     assert v["option_groups"][0]["name"] and v["variants"]
     first = v["variants"][0]
     assert first["id"] and first["name"] and first["stock_quantity"] is not None and first["extra_price"] == 0
+    assert first["is_available"] is (first["stock_quantity"] > 0)
     assert v["delivery"]["company"]
     empty = P.parse_validation(None)
     assert empty["variants"] == [] and empty["option_groups"] == []

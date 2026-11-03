@@ -8,20 +8,23 @@ category, one product at a time. When the API learns more, add it here.
      built; the search + category id filter stands in for it.)
   2. Per product, in turn:
      - details   /products/details           prices, options, stock, category path, notice, description, facts
-     - specs     /products/specs             the page's 상품정보 rows (your Chrome: search -> card -> page)
+     - specs     /products/specs             the page's 상품정보 rows and options (your Chrome: search -> card -> page)
+     - variants  naver_variants.choose_variants: free variants only, or paid too with `paid` (the operator's
+                 choice); sold-out ones kept and marked
      - reviews   /products/reviews/selected  up to 20 reviews worth showing, with photos
      - photos    the gallery and the chosen reviews' photos + avatars, plain HTTP from the
                  image CDN, saved as the store's WebP (naver_images + image_prep; SHOP_STORE
                  in .env) into full-<category>/images/<product id>/: gallery <store>-<id>-001-<sha16>.webp
                  (short side down to 1500), reviews <store>-review-image|avatar-<sha16>.webp (1024 px)
   3. One JSON line per product in scripts/output/full-<category>/products.jsonl
-     (`photos`: the gallery result, `review_media`: the review photos / avatars result).
+     (`variants`: the variant choice, null when the page gave no options; `photos`: the gallery result,
+     `review_media`: the review photos / avatars result).
 
 Needs Chrome open with the adapter (example_01 says extension: connected).
 Specs are read from the listing's own search first, then by the product's
 name (a card deeper than the first page is not clickable from the search).
 
-    .venv/bin/python scripts/example_99_full_details.py [products]
+    .venv/bin/python scripts/example_99_full_details.py [products] [paid]
 """
 import json
 import os
@@ -32,11 +35,13 @@ from collections import Counter
 import naver_types as T
 from naver_api_client import ApiError, NaverApiClient
 from naver_images import download_gallery, download_review_media
+from naver_variants import choose_variants
 from shop_stores import get_store
 
 QUERY = "남성 골프채 풀세트"
 CATEGORY_ID = "50002788"                      # 스포츠/레저 > 골프 > 골프클럽 > 풀세트
 PRODUCTS = int(sys.argv[1]) if len(sys.argv) > 1 else 3
+PAID = len(sys.argv) > 2 and sys.argv[2] == "paid"        # the operator's choice: take paid variants too
 REVIEWS = 20
 
 api = NaverApiClient()
@@ -69,16 +74,21 @@ with open(os.path.join(out_dir, "products.jsonl"), "w", encoding="utf-8") as out
             print(f"- {row['link']}: {e.status} {e.error}")
             continue
         specs = specs_for(row["link"])
+        options = specs["options"] if specs else None
+        variants = choose_variants(options, details["pricing"]["discounted_price"], paid=PAID) if options else None
         media_dir = os.path.join(out_dir, "images", details["id"] or "product")
         photos = download_gallery(details["images"], media_dir, store, details["id"])
         review_media = (download_review_media(reviews["results"], media_dir, store) if not photos["stopped"]
                         else None)
-        out.write(json.dumps({"listing": row, "details": details, "specs": specs, "reviews": reviews,
-                              "photos": photos, "review_media": review_media}, ensure_ascii=False) + "\n")
+        out.write(json.dumps({"listing": row, "details": details, "specs": specs, "variants": variants,
+                              "reviews": reviews, "photos": photos, "review_media": review_media},
+                             ensure_ascii=False) + "\n")
         facts = specs["facts"] if specs else details["facts"]
         brand = facts["brand"]
         print(f"- {(details['name'] or '')[:60]}")
-        print(f"  {details['pricing']['discounted_price']} KRW, {len(details['variants'] or [])} options, "
+        taken = (f"{len(variants['variants'])} variants ({variants['sold_out']} sold out, "
+                 f"{variants['skipped_paid']} paid left out)" if variants else "options unknown")
+        print(f"  {details['pricing']['discounted_price']} KRW, {taken}, "
               f"{len(details['images'])} images, brand {brand['value'] if brand else '-'}")
         stats = reviews["summary"] or details["reviews"]          # no summary: a product with 0 reviews
         total = stats["count"] if stats else None

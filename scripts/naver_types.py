@@ -195,8 +195,9 @@ class Variant(TypedDict):
     id: str | None
     name: str | None
     options: list[str] | None
-    extra_price: int
+    extra_price: int                  # KRW added to the product's price (negative: cheaper); 0 = no change
     stock_quantity: int | None
+    is_available: bool | None         # stock > 0; False = sold out ((품절), not selectable); null: stock unknown
     is_today_dispatch: bool | None
     registered_at: str | None
 
@@ -375,6 +376,41 @@ class SpecRow(TypedDict):
     value: str
 
 
+class SimpleOption(TypedDict):
+    """products/specs options.simple_options[]: a SIMPLE choice outside the combinations (no stock of its own)."""
+    id: str | None
+    group: str | None
+    name: str | None
+    extra_price: int
+
+
+class TextOption(TypedDict):
+    """products/specs options.text_options[]: a text the buyer types (a CUSTOM group, e.g. an engraving). id and
+    name from the product answer; the rest from the field on the rendered page, all null when the page has none."""
+    id: str | None
+    name: str | None
+    label: str | None             # the field's label as shown, "네임스티커 성함 (필수)"
+    required: bool | None         # "(필수)" in the label, or the input's required / aria-required
+    placeholder: str | None
+    hint: str | None
+    min_length: int | None
+    max_length: int | None        # the input's maxlength (20 on the golf sets seen)
+    pattern: str | None
+
+
+class PageOptions(TypedDict):
+    """products/specs options (parsers.parse_page_options): what can be bought, from the page's own answer."""
+    has_options: bool | None
+    status: str | None
+    is_sold_out: bool | None
+    stock_quantity: int | None
+    option_groups: list[OptionGroup]
+    variants: list[Variant]
+    simple_options: list[SimpleOption]
+    text_options: list[TextOption]
+    supplements: list[Supplement]
+
+
 class ProductSpecs(TypedDict):
     """products/specs response (ext_product._specs): the product page's rows, read in the owner's Chrome."""
     id: str | None
@@ -385,6 +421,7 @@ class ProductSpecs(TypedDict):
     specs: list[SpecRow]
     is_complete: bool                 # rows found and the list was not left folded
     facts: ProductFacts
+    options: PageOptions | None       # null: the page gave no product answer
     read_at: str
 
 

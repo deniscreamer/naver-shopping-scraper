@@ -2,10 +2,11 @@
 // answers whose URL contains one of PATTERNS, and hand them to relay.js.
 // The page still builds and sends every request itself (headers, tokens,
 // cursors); this only reads what comes back. No site logic here.
+// A pattern is a list of parts the URL must all contain.
 (() => {
-  const PATTERNS = ["/ns/v1/"];
+  const PATTERNS = [["/ns/v1/"], ["/channels/", "/products/"]];
   const TAG = "__naverScrapCapture";
-  const wanted = (url) => PATTERNS.some((p) => String(url || "").includes(p));
+  const wanted = (url) => PATTERNS.some((parts) => parts.every((p) => String(url || "").includes(p)));
   const post = (url, status, body) => {
     try { window.postMessage({ [TAG]: true, url: String(url), status, body, at: Date.now() }, location.origin); } catch (e) {}
   };

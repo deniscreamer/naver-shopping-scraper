@@ -8,6 +8,10 @@ block, tracking attributes removed): pdp_specs_ping_folded.html (9 rows and
 the closed "상품정보 펼쳐보기" button), pdp_specs_ping_expanded.html (15 rows,
 after the click), pdp_specs_honma.html (3 rows, no button); and
 box_notice_ping.json, the store-backend notice of the same PING set.
+page_product_*.json (2026-11-02): the product page's own product answer as the adapter copied it, trimmed to
+the option fields, lists to 5 rows (idmakers ball marker on brand.naver.com; Honma D1, Majesty Royal, Callaway REVA, PRGR Sweep and
+the PING G440K golf sets, an XXIO13 iron set with a SIMPLE choice, on smartstore). pdp_text_fields.html
+(2026-11-02): the text fields of the PRGR Sweep and XXIO14 set pages, trimmed, tracking attributes removed.
 """
 import json
 import os
@@ -24,6 +28,7 @@ def fixture(name):
 
 PING = {"name": "26년 핑 G440K 브리지스톤 V300 조합 남성 골프채풀세트 클럽11개", "brand": "핑",
         "manufacturer": "삼양인터내셔날", "model_name": None}
+NO_FIELD = dict.fromkeys(("label", "required", "placeholder", "hint", "min_length", "max_length", "pattern"))
 HONMA = {"name": "신품 혼마 D1 남성용 골프채 풀세트 S세트 2021 D1 500 S+950 S(병행)", "brand": None,
          "manufacturer": None, "model_name": None}
 
@@ -106,3 +111,94 @@ def test_brand_from_manufacturer_only_when_named():
     assert dash == {"brand": None, "manufacturer": None, "model_name": None, "origin": None}
     no_page = P.product_facts(dict(HONMA, manufacturer="혼마"))       # details only: manufacturerName
     assert no_page["brand"] == {"value": "혼마", "source": "search_info.manufacturerName"}
+
+
+def test_page_options_brand():
+    """2026-11-02, brand.naver.com/idmakers/products/11696178500 (ball marker): the page's own product answer.
+    Three COMBINATION groups plus a CUSTOM text the buyer types; paid rows (+1000, +2000) and a sold-out row."""
+    o = P.parse_page_options(fixture("page_product_idmakers.json"))
+    assert o["has_options"] is True and o["status"] == "SALE" and o["is_sold_out"] is False
+    assert [g["type"] for g in o["option_groups"]] == ["CUSTOM", "COMBINATION", "COMBINATION", "COMBINATION"]
+    assert o["text_options"] == [{"id": "11800253335", "name": "필수작성(미각인or각인:내용)후 옵션선택", **NO_FIELD}]
+    assert o["simple_options"] == []
+    v = {x["id"]: x for x in o["variants"]}
+    assert len(v) == 5 and v["56035243441"]["name"] == "선물세트(1p) / 실버블루 / 각인없음"
+    assert v["56035243441"]["extra_price"] == 0 and v["56035243441"]["is_available"] is True
+    assert sorted(x["extra_price"] for x in o["variants"]) == [0, 0, 1000, 1000, 2000]
+    sold = [x for x in o["variants"] if x["stock_quantity"] == 0]
+    assert len(sold) == 1 and sold[0]["is_available"] is False
+    assert o["supplements"][0] == {"id": "3678604239", "group": "선물포장", "name": "쇼핑백", "price": 1500,
+                                   "stock_quantity": 5000, "status": "SALE"}
+
+
+def test_page_options_golf_sets():
+    """2026-11-02, golf full sets from the 남성 골프채 풀세트 search, the page's own answers (trimmed)."""
+    honma = P.parse_page_options(fixture("page_product_honma.json"))      # thegolf/5543745139
+    s_set, r_set = honma["variants"]
+    assert s_set["name"] == "S 세트 (D1 500 S+950 S)" and s_set["extra_price"] == 0 and s_set["is_available"]
+    assert r_set["extra_price"] == 60000 and r_set["stock_quantity"] == 0 and r_set["is_available"] is False
+    majesty = P.parse_page_options(fixture("page_product_majesty.json"))  # samsung-golf/12434254421
+    assert [g["type"] for g in majesty["option_groups"]] == ["CUSTOM", "COMBINATION", "COMBINATION", "COMBINATION"]
+    assert majesty["text_options"] == [{"id": "11832983056", "name": "네임택용 성함", **NO_FIELD}]
+    assert majesty["variants"][0]["is_available"] is False and all(v["is_available"] for v in majesty["variants"][1:])
+    assert len(majesty["variants"][0]["options"]) == 3 and majesty["supplements"][0]["price"] == 0
+    ping = P.parse_page_options(fixture("page_product_ping.json"))        # scarabee/13021362937: no options
+    assert ping["has_options"] is False and ping["variants"] == [] and ping["option_groups"] == []
+    assert ping["stock_quantity"] == 17 and len(ping["supplements"]) == 1
+    reva = P.parse_page_options(fixture("page_product_reva.json"))        # thegolf/13413924099: cheaper without bag
+    assert [(v["extra_price"], v["is_available"]) for v in reva["variants"]] == [
+        (0, True), (-100000, False), (0, True), (-100000, False)]
+    assert reva["variants"][1]["name"] == "피치/서프 클럽 10PCS (캐디백 미포함)"
+    prgr = P.parse_page_options(fixture("page_product_prgr.json"))        # adpargolf/13751285162: a text only
+    assert prgr["has_options"] is True and prgr["variants"] == []
+    assert prgr["option_groups"] == [{"id": "11888379649", "name": "네임스티커 성함", "type": "CUSTOM"}]
+    assert prgr["text_options"] == [{"id": "11888379649", "name": "네임스티커 성함", **NO_FIELD}]
+    xxio = P.parse_page_options(fixture("page_product_xxio_simple.json"))  # gatagolf/13553833826: a SIMPLE choice
+    assert xxio["variants"] == [] and xxio["option_groups"][0]["type"] == "SIMPLE"
+    assert xxio["simple_options"] == [{"id": "11721898461", "group": "강도", "name": "L", "extra_price": 0}]
+
+
+def test_page_options_empty():
+    o = P.parse_page_options(None)
+    assert o["variants"] == [] and o["option_groups"] == [] and o["has_options"] is None
+    assert P.parse_page_options({"simpleOptions": [{"groupName": "g", "options": None}, "x"]})["simple_options"] == []
+    rows = P.parse_page_options({"standardCombinations": [{"id": 1, "optionName1": "M", "stockQuantity": None}]})
+    assert rows["variants"][0]["name"] == "M" and rows["variants"][0]["is_available"] is None
+
+
+def test_text_fields():
+    """2026-11-02, the PRGR Sweep (adpargolf/13751285162) and XXIO14 (koogolfsotre/12931417088) set pages: a text
+    field per CUSTOM option, its label marked (필수), 20 characters at most; the purchase box is rendered twice."""
+    fields = pdp.text_fields(fixture("pdp_text_fields.html"))
+    assert [f["id"] for f in fields] == ["11888379649", "11205247591"]            # one per id, the search box left out
+    assert fields[0] == {"id": "11888379649", "label": "네임스티커 성함 (필수)", "required": True,
+                         "placeholder": "입력해주세요", "hint": None, "min_length": None, "max_length": 20,
+                         "pattern": None}
+    assert fields[1]["label"] == "네임스티커 성함과 장갑사이즈(18호~21호) (필수)"
+    assert pdp.text_fields("") == [] and pdp.text_fields(fixture("pdp_specs_honma.html")) == []
+
+
+def test_text_fields_other_attributes():
+    """Synthetic markup: the attributes the naver-harvester also reads (required, aria-required, minlength,
+    pattern, an aria-describedby hint), not seen on a page yet; a field without (필수) is optional."""
+    html = ('<label for="1">각인 문구</label><input data-tag="textOption" id="1" minlength="2" maxlength="x" '
+            'pattern="[A-Z]+" aria-describedby="h1 h9"><p id="h1">영문 대문자만</p>'
+            '<label for="2">메모</label><input data-tag="textOption" id="2" aria-required="true">'
+            '<input data-tag="textOption" id="3" required><label for="4">이름</label><input data-tag="textOption" id="4">'
+            '<input data-tag="textOption">')
+    one, two, three, four = pdp.text_fields(html)
+    assert one["required"] is False and one["min_length"] == 2 and one["max_length"] is None
+    assert one["pattern"] == "[A-Z]+" and one["hint"] == "영문 대문자만" and one["placeholder"] is None
+    assert two["required"] is True and three["required"] is True and three["label"] is None
+    assert four["required"] is False
+
+
+def test_page_options_with_the_page_fields():
+    """The answer's textOptions joined with the page's fields by id (PRGR Sweep, 2026-11-02)."""
+    fields = pdp.text_fields(fixture("pdp_text_fields.html"))
+    prgr = P.parse_page_options(fixture("page_product_prgr.json"), fields)
+    assert prgr["text_options"] == [{"id": "11888379649", "name": "네임스티커 성함", "label": "네임스티커 성함 (필수)",
+                                     "required": True, "placeholder": "입력해주세요", "hint": None,
+                                     "min_length": None, "max_length": 20, "pattern": None}]
+    majesty = P.parse_page_options(fixture("page_product_majesty.json"), fields)   # its field is not in the HTML
+    assert majesty["text_options"][0]["required"] is None

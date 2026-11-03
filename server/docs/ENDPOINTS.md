@@ -49,7 +49,7 @@ GET /health  ->  {"status": "ok", "version": "0.4.0", "endpoints": ["/products/d
 | `category` (`refs.resolve_category`) | `0` (root) or 8 digits starting with `5` (`50000003`) | anything else |
 
 A bare product number resolves to the slug-less link `https://smartstore.naver.com/main/products/<id>`. See
-"Search card links" for what that costs.
+"Search card links" for what that costs (since 2026-11-02 it answers 404: pass the store's product link).
 
 ## Errors (`routes.call`)
 
@@ -179,7 +179,7 @@ Two ways to get a product's details:
 | | 1. `/products/details` (the original way) | 2. `/products/specs` (the new way, beta: the adapter) |
 |---|---|---|
 | Source | the store backend (`brand.naver.com/n/*`) in the server's own Chrome | the product page itself, in the owner's Chrome through the adapter |
-| Gives | prices, options, stock, category path, legal notice, description, reviews, `facts` from the backend's search info and the notice | the page's 상품정보 rows: 제조사, 브랜드, 모델명, 원산지 and every seller attribute (종류, 성별, 총클럽개수, ...), `facts` with those rows first |
+| Gives | prices, stock, category path, legal notice, description, reviews, `facts` from the backend's search info and the notice; options only while `validation-products` answers (419 since 2026-11-02, see below) | the page's 상품정보 rows: 제조사, 브랜드, 모델명, 원산지 and every seller attribute (종류, 성별, 총클럽개수, ...), `facts` with those rows first; `options`: every variant with its extra price and stock, text and simple options, add-ons, from the page's own product answer |
 | Cost | ~1-10 s, any product, no setup | ~30-60 s a product, one at a time, Chrome open with the adapter, not during a listing job |
 | Flexible | fixed set of backend answers; no attribute rows exist there | anything rendered on the page can be read later the same way (Python parses the page HTML) |
 
@@ -193,7 +193,7 @@ login page), so every read walks the whole flow like a person: naver.com -> the 
   a card not on the search's first page falls back to its name (`scripts/example_09_listing_then_specs.py`).
   Entering through a category page is not built yet (the listing has no category filter either).
 
-Use both together: way 1 for prices / options / reviews, way 2 for the attribute rows.
+Use both together: way 1 for prices / reviews / description, way 2 for the attribute rows and the options.
 
 ### `/products/details`
 
@@ -210,6 +210,12 @@ Output: the product record (`id`, `origin_product_id`, `name`, `link`, `catalog_
 `reviews` (the review summary: counts, `average_score`, `score_counts`, `evaluations`, `representative_reviews`) and
 `store` (`id, uid, name, slug, link, type, grade, sale_count, merchant_id, business`). Any section Naver did not
 answer is null.
+
+- `option_groups`, `variants`, `supplements` come from `/n/v1/validation-products/<id>`, which answers 419 to the
+  box since 2026-11-02 (it now wants the page's one-time token): they are null today (`stock_quantity` and `status`
+  fall back to the store's product summary); read the options with `/products/specs` (`options`). `variants[]` has the same
+  shape there, `is_available` included. A slug-less link (`smartstore.naver.com/main/products/<id>`, a bare
+  number) needs that answer to find the store, so it answers 404 for now; pass the store's product link.
 
 - `images`: the product's gallery in the page's order, main photo first, as links to the original files (no
   `?type=` rendition; the largest real size of every rendition, measured 2026-11-01). Downloading them:
@@ -398,7 +404,8 @@ The product page's 상품정보 list, label -> value: 상품번호, 제조사, �
 attributes (for a golf set: 종류, 성별, 사용방향, 총클럽개수, 풀세트구성, 골프백포함여부, ...). None of these
 attribute rows are in the store-backend answers `/products/details` reads. Read on the server in the owner's Chrome
 through the adapter, like a listing job: naver.com -> 쇼핑 -> search `query` -> click the product's card -> unfold the
-list ([EXTENSION.md](EXTENSION.md)). Smartstore products (brand-store pages not verified yet).
+list ([EXTENSION.md](EXTENSION.md)). Smartstore products (brand-store 상품정보 rows not verified yet; brand options
+verified 2026-11-02).
 
 | Param | Type | Default | Notes |
 |---|---|---|---|
@@ -407,8 +414,28 @@ list ([EXTENSION.md](EXTENSION.md)). Smartstore products (brand-store pages not 
 
 Transport: box for the product record (as `/products/details`), then the extension (one page read, ~30-60 s, one
 at a time; a running listing job answers 409). Cache: 24 h per `product` + `query` (`PRODUCT_SPECS_CACHE`).
-Output: `{id, name, link, query, category, specs: [{label, value}], is_complete, facts, read_at}`.
-`is_complete` is false when the list stayed folded. `facts` as in `/products/details`, with the page rows first:
+Output: `{id, name, link, query, category, specs: [{label, value}], is_complete, facts, options, read_at}`.
+`is_complete` is false when the list stayed folded.
+
+`options` (`parsers.parse_page_options`): what can be bought, from the product answer the page itself fetched
+(`/channels/<uid>/products/<id>`, copied by the adapter; `ext_product._product_answer`); null when the page gave
+none. `{has_options, status, is_sold_out, stock_quantity, option_groups, variants, simple_options, text_options,
+supplements}`:
+
+- `option_groups[]`: `{id, name, type}`; `type` COMBINATION (its values form the variants), CUSTOM (a text the
+  buyer types, e.g. an engraving) or SIMPLE.
+- `variants[]`: every combination the store declared, in its order: `{id, name, options, extra_price,
+  stock_quantity, is_available, is_today_dispatch, registered_at}`. `extra_price` is added to the product's price
+  (negative: cheaper; 0: the price does not change). `is_available` is false for a sold-out row (stock 0: the page
+  shows it as (품절) and it cannot be chosen); sold-out rows are kept. Which rows to collect (free only, or paid
+  too) is the consumer's choice: `scripts/naver_variants.py`.
+- `text_options[]`: a text the buyer types (a CUSTOM group: a name on a tag, an engraving): `{id, name, label,
+  required, placeholder, hint, min_length, max_length, pattern}`. `id` and `name` come from the product answer; the
+  rest from the field on the rendered page (`pdp.text_fields`, matched by id): `label` as shown ("네임스티커 성함
+  (필수)"), `required` true when the label says (필수) or the input is required, `max_length` the input's maxlength
+  (20 on the golf sets seen). Those page keys are null when the page HTML has no such field.
+- `simple_options[]`: `{id, group, name, extra_price}`; `supplements[]` as in
+  `/products/details` (add-on products, not variants). `facts` as in `/products/details`, with the page rows first:
 source `specs:<label>` (브랜드, 제조사 / 제조자, 모델명, 원산지 / 제조국). 404 when the card is not on that search page;
 409 / 503 see Errors.
 
@@ -459,6 +486,7 @@ A card's `link` (`parsers.parse_search_card`) is one of three shapes:
   link sent as `product` is a 400.
 - A slug-less link carries no store. The server then reads the product name, searches it, and takes the store of the
   card with the same `product_id`. This costs extra calls and fails with 404 when the product is not in the search
-  index. When the card's `store.link` is a smartstore / brand store link, building
+  index. Since 2026-11-02 the name comes from `validation-products`, which answers 419, so this path always answers
+  404 for now. When the card's `store.link` is a smartstore / brand store link, building
   `<store.link>/products/<product_id>` and sending that skips the lookup.
 - `store.link` may also be an external mall URL; only smartstore / brand store links are valid for `/stores/*`.

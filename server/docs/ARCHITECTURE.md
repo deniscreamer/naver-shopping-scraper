@@ -428,5 +428,11 @@ primary record, with dates; read it before changing the behaviour.
 - A review writer without an avatar comes with the placeholder `profile-phinf.pstatic.net/404/default.png`. ->
   `parsers._DEFAULT_AVATAR_RE` comment.
 
+- Since 2026-11-02 `/n/v1/validation-products/<id>` answers 419 (`SDW-E90419`) to the box; the product page's own
+  product call carries a one-time page token (`x-client-rtk`) and the options come from that answer, read through
+  the adapter. -> `ext_product._product_answer` docstring, `parsers.parse_page_options` docstring.
+- A text the buyer types (CUSTOM option) is an `<input data-tag="textOption" id=<textOptions id> maxlength=...>`
+  with `<label for=id>... (필수)</label>`; the purchase box renders twice (seen 2026-11-02). -> `pdp.text_fields`.
+
 A new upstream fact gets a dated comment at the code that handles it and one
 line here (R-NAVER-4).

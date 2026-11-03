@@ -52,7 +52,7 @@ Run from the repo root.
 python -m venv .venv
 .venv/bin/pip install -r server/requirements.txt -r scripts/requirements.txt
 .venv/bin/python server/run.py              # http://localhost:8000, PORT=... to change
-.venv/bin/python -m pytest -q               # offline suite, 158 tests
+.venv/bin/python -m pytest -q               # offline suite, 166 tests
 .venv/bin/python -m pytest scripts -q       # scripts/ client tests, offline, separate suite
 ```
 

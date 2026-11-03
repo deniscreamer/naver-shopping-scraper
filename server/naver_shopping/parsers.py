@@ -359,38 +359,102 @@ def parse_brand_product_page(page_html, slug):
     return {"store": parse_channel(channel, brand_slug=slug), "product": parse_simple_product(sp, slug, is_brand=True)}
 
 
+def _id(value):
+    return _clean(str(value or "")) or None
+
+
+def _option_groups(v):
+    return [{"id": _id(g.get("id")), "name": _clean(g.get("groupName")), "type": _clean(g.get("optionType"))}
+            for g in _list(v.get("options")) if isinstance(g, dict)]
+
+
+def _variant(c):
+    """One option combination. `is_available`: the store's stock for it (0 = sold out, shown as (품절) and not
+    selectable on the page); null when the stock is not given."""
+    names = [_clean(c.get(k)) for k in ("optionName1", "optionName2", "optionName3", "optionName4") if _clean(c.get(k))]
+    stock = _int(c.get("stockQuantity"))
+    return {
+        "id": _id(c.get("id")),
+        "name": " / ".join(names) if names else None,
+        "options": names or None,
+        "extra_price": _int(c.get("price")) or 0,
+        "stock_quantity": stock,
+        "is_available": None if stock is None else stock > 0,
+        "is_today_dispatch": _bool(c.get("todayDispatch")),
+        "registered_at": _date(c.get("registerDate")),
+    }
+
+
+def _simple_options(p):
+    """SIMPLE choices: not part of a combination, no stock of their own. Observed 2026-11-02 (gatagolf/13553833826,
+    a 강도 L choice): simpleOptions is a list of groups, each with its values in `options` ({id, groupName, name});
+    no price was given, so extra_price reads `price` when present, else 0."""
+    rows = []
+    for g in _list(p.get("simpleOptions")):
+        for o in _list(_dict(g).get("options")):
+            if isinstance(o, dict):
+                rows.append({"id": _id(o.get("id")), "group": _clean(o.get("groupName")) or _clean(g.get("groupName")),
+                             "name": _clean(o.get("name")), "extra_price": _int(o.get("price")) or 0})
+    return rows
+
+
+def _supplements(v):
+    return [{
+        "id": _id(s.get("id")), "group": _clean(s.get("groupName")), "name": _clean(s.get("name")),
+        "price": _int(s.get("price")), "stock_quantity": _int(s.get("stockQuantity")), "status": _clean(s.get("productStatusType")),
+    } for s in _list(v.get("supplementProducts")) if isinstance(s, dict)]
+
+
 def parse_validation(v):
     """validation-products -> options / variants / supplements / stock."""
     v = _dict(v)
-    groups = [{"id": _clean(str(g.get("id") or "")) or None, "name": _clean(g.get("groupName")),
-               "type": _clean(g.get("optionType"))} for g in _list(v.get("options")) if isinstance(g, dict)]
-    variants = []
-    for c in _list(v.get("optionCombinations")):
-        if not isinstance(c, dict):
-            continue
-        names = [_clean(c.get(k)) for k in ("optionName1", "optionName2", "optionName3", "optionName4") if _clean(c.get(k))]
-        variants.append({
-            "id": _clean(str(c.get("id") or "")) or None,
-            "name": " / ".join(names) if names else None,
-            "options": names or None,
-            "extra_price": _int(c.get("price")) or 0,
-            "stock_quantity": _int(c.get("stockQuantity")),
-            "is_today_dispatch": _bool(c.get("todayDispatch")),
-            "registered_at": _date(c.get("registerDate")),
-        })
-    supplements = [{
-        "id": _clean(str(s.get("id") or "")) or None, "group": _clean(s.get("groupName")), "name": _clean(s.get("name")),
-        "price": _int(s.get("price")), "stock_quantity": _int(s.get("stockQuantity")), "status": _clean(s.get("productStatusType")),
-    } for s in _list(v.get("supplementProducts")) if isinstance(s, dict)]
     return {
         "status": _clean(v.get("productStatusType")),
         "stock_quantity": _int(v.get("stockQuantity")),
         "uses_external_stock": _bool(v.get("useExternalStock")),
-        "option_groups": groups,
-        "variants": variants,
-        "supplements": supplements,
+        "option_groups": _option_groups(v),
+        "variants": [_variant(c) for c in _list(v.get("optionCombinations")) if isinstance(c, dict)],
+        "supplements": _supplements(v),
         "delivery": _delivery(v.get("productDeliveryInfo")),
         "authentication_type": _clean(v.get("authenticationType")),
+    }
+
+
+_FIELD_KEYS = ("label", "required", "placeholder", "hint", "min_length", "max_length", "pattern")
+
+
+def _text_option(t, fields):
+    """A textOptions entry, with what the rendered page shows of its field (pdp.text_fields, matched by id);
+    those keys are null when the page HTML has no such field."""
+    option = {"id": _id(t.get("id")), "name": _clean(t.get("groupName"))}
+    field = next((f for f in fields if f["id"] == option["id"]), None)
+    option.update({k: field[k] if field else None for k in _FIELD_KEYS})
+    return option
+
+
+def parse_page_options(p, fields=()):
+    """The product page's own product answer (ext_product._product_answer) -> what can be bought. `fields`: the
+    page's text fields (pdp.text_fields of its HTML), merged into text_options.
+
+    Since 2026-11-02 validation-products answers 419 to the box (it wants the page's one-time token), so this
+    answer, made by the page itself in the owner's Chrome, is the source of options. Observed 2026-11-02:
+    `options` lists every group with its optionType (COMBINATION, CUSTOM = a text the buyer types, SIMPLE);
+    `optionCombinations` the declared combinations with stock and extra price (`standardCombinations` the same
+    rows for a standard-option product); `textOptions` the CUSTOM groups; `simpleOptions` the SIMPLE groups with their values;
+    `soldout` the whole product.
+    """
+    p = _dict(p)
+    combos = _list(p.get("optionCombinations")) or _list(p.get("standardCombinations"))
+    return {
+        "has_options": _bool(p.get("optionUsable")),
+        "status": _clean(p.get("productStatusType")),
+        "is_sold_out": _bool(p.get("soldout")),
+        "stock_quantity": _int(p.get("stockQuantity")),
+        "option_groups": _option_groups(p),
+        "variants": [_variant(c) for c in combos if isinstance(c, dict)],
+        "simple_options": _simple_options(p),
+        "text_options": [_text_option(t, fields) for t in _list(p.get("textOptions")) if isinstance(t, dict)],
+        "supplements": _supplements(p),
     }
 
 

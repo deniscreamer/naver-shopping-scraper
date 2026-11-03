@@ -1,8 +1,8 @@
 {
- "id": "13021362937",
- "name": "26년 핑 G440K 브리지스톤 V300 조합 남성 골프채풀세트 클럽11개",
- "link": "https://smartstore.naver.com/scarabee/products/13021362937",
- "query": "26년 핑 G440K 브리지스톤 V300 조합 남성 골프채풀세트 클럽11개",
+ "id": "12434254421",
+ "name": "마제스티 23년 로얄 남성 풀세트 R 마제스티골프코리아100%",
+ "link": "https://smartstore.naver.com/samsung-golf/products/12434254421",
+ "query": "남성 골프채 풀세트",
  "category": {
   "id": "50002788",
   "name": "풀세트",
@@ -22,40 +22,183 @@
  "specs": [
   {
    "label": "상품번호",
-   "value": "13021362937"
+   "value": "12434254421"
   },
   {
    "label": "제조사",
-   "value": "삼양인터내셔날"
+   "value": "마제스티"
   },
   {
    "label": "브랜드",
-   "value": "핑"
+   "value": "마제스티"
+  },
+  {
+   "label": "모델명",
+   "value": "마제스티 조합 남성 풀세트"
   },
   {
    "label": "원산지",
-   "value": "미국산(삼양인터내셔날)"
-  },
-  {
-   "label": "드라이버 로프트각",
-   "value": "10.5도"
+   "value": "일본산(마제스티골프코리아)"
   }
  ],
  "is_complete": true,
  "facts": {
   "brand": {
-   "value": "핑",
+   "value": "마제스티",
    "source": "specs:브랜드"
   },
   "manufacturer": {
-   "value": "삼양인터내셔날",
+   "value": "마제스티",
    "source": "specs:제조사"
   },
-  "model_name": null,
+  "model_name": {
+   "value": "마제스티 조합 남성 풀세트",
+   "source": "specs:모델명"
+  },
   "origin": {
-   "value": "미국산(삼양인터내셔날)",
+   "value": "일본산(마제스티골프코리아)",
    "source": "specs:원산지"
   }
  },
- "read_at": "2026-11-01T15:47:53Z"
+ "options": {
+  "has_options": true,
+  "status": "SALE",
+  "is_sold_out": false,
+  "stock_quantity": 77,
+  "option_groups": [
+   {
+    "id": "11832983056",
+    "name": "네임택용 성함",
+    "type": "CUSTOM"
+   },
+   {
+    "id": "11832983053",
+    "name": "드라이버",
+    "type": "COMBINATION"
+   },
+   {
+    "id": "11832983054",
+    "name": "아이언",
+    "type": "COMBINATION"
+   },
+   {
+    "id": "11832983055",
+    "name": "페어웨이 우드",
+    "type": "COMBINATION"
+   }
+  ],
+  "variants": [
+   {
+    "id": "59353178855",
+    "name": "10.5도 R / 8아이언세트 카본 SR / 3번 SR",
+    "options": [
+     "10.5도 R",
+     "8아이언세트 카본 SR",
+     "3번 SR"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 0,
+    "is_available": false,
+    "is_today_dispatch": true,
+    "registered_at": "2026-07-23"
+   },
+   {
+    "id": "59353178830",
+    "name": "9.5도 R / 8아이언세트 카본 R / 3번 R",
+    "options": [
+     "9.5도 R",
+     "8아이언세트 카본 R",
+     "3번 R"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 1,
+    "is_available": true,
+    "is_today_dispatch": true,
+    "registered_at": "2026-07-23"
+   },
+   {
+    "id": "59353178833",
+    "name": "9.5도 R / 8아이언세트 카본 R / 3번 SR",
+    "options": [
+     "9.5도 R",
+     "8아이언세트 카본 R",
+     "3번 SR"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 1,
+    "is_available": true,
+    "is_today_dispatch": true,
+    "registered_at": "2026-07-23"
+   },
+   {
+    "id": "59353178835",
+    "name": "9.5도 R / 8아이언세트 카본 R / 5번 R",
+    "options": [
+     "9.5도 R",
+     "8아이언세트 카본 R",
+     "5번 R"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 10,
+    "is_available": true,
+    "is_today_dispatch": true,
+    "registered_at": "2026-07-23"
+   },
+   {
+    "id": "59353178838",
+    "name": "9.5도 R / 8아이언세트 카본 R / 5번 SR",
+    "options": [
+     "9.5도 R",
+     "8아이언세트 카본 R",
+     "5번 SR"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 1,
+    "is_available": true,
+    "is_today_dispatch": true,
+    "registered_at": "2026-07-23"
+   }
+  ],
+  "simple_options": [],
+  "text_options": [
+   {
+    "id": "11832983056",
+    "name": "네임택용 성함",
+    "label": "네임택용 성함 (필수)",
+    "required": true,
+    "placeholder": "입력해주세요",
+    "hint": null,
+    "min_length": null,
+    "max_length": 20,
+    "pattern": null
+   }
+  ],
+  "supplements": [
+   {
+    "id": "3749788358",
+    "group": "유틸리티(필수선택)",
+    "name": "4번 R",
+    "price": 0,
+    "stock_quantity": 4,
+    "status": "SALE"
+   },
+   {
+    "id": "3749788359",
+    "group": "유틸리티(필수선택)",
+    "name": "5번 R",
+    "price": 0,
+    "stock_quantity": 5,
+    "status": "SALE"
+   },
+   {
+    "id": "3749788360",
+    "group": "유틸리티(필수선택)",
+    "name": "5번 SR",
+    "price": 0,
+    "stock_quantity": 1,
+    "status": "SALE"
+   }
+  ]
+ },
+ "read_at": "2026-11-02T16:10:35Z"
 }

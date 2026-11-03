@@ -76,6 +76,15 @@ The seller's attribute rows of a smartstore product (종류, 성별, 총클럽�
    rows found by the heading text 상품정보 and the `<li><div>label</div><div>value</div>` shape, not by the hashed
    class names. `parsers.product_facts` merges them with the box record (brand, manufacturer, model, origin, each with
    its source). All tabs it opened are closed.
+5. **Options from the page's own answer** (2026-11-02). While the page loads, it fetches its product
+   (`/i/v2/channels/<uid>/products/<id>` on smartstore, `/n/v2/.../products/<id>?withWindow=false` on brand) with a
+   one-time page token (`x-client-rtk`); `capture_main.js` copies the answer (filter `/channels/` + `/products/`),
+   `ext_product._product_answer` takes the 200 one for this id (up to 5 reads, 2 s apart: a page that got 419 reloads
+   itself first) and `parsers.parse_page_options` turns it into `options` (variants with extra price, stock and
+   `is_available`, text / simple options, add-ons). The answer is saved as `product.json` next to `product.html`.
+   We never send that call or its token ourselves (R-EXT-1): the box's own `validation-products` call answers 419
+   since that day. The page's server-rendered state has no options (`optionUsable` false, stock 0), so the answer
+   is the only source.
 
 One adapter user at a time: `listing_jobs.with_adapter` holds the same lock a listing job holds, so a read during a
 listing answers 409 and a listing during a read 409. ~30-60 s a read; cached 24 h.

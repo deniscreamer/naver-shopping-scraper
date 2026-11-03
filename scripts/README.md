@@ -28,12 +28,14 @@ linked, from Naver's image CDN (`naver_images.py`, see Product photos).
 | `naver_api_client.py` | `NaverApiClient` (`get`, `pages`, `health`) and `ApiError` |
 | `naver_images.py` | Downloads the photos the API linked (gallery, review photos, avatars) from Naver's image CDN with plain HTTP and saves them as the store's WebP (see Product photos) |
 | `image_prep.py` | The WebP preparation, one algorithm for every store: size, bytes, metadata, checks (no network) |
+| `naver_variants.py` | Which variants to collect: free ones by default, paid ones when the operator turns `paid` on; sold-out rows kept and marked (see Product options) |
 | `shop_stores.py` | Our Shopify stores (`StoreId` enum + publisher / site), picked by `SHOP_STORE` |
 | `smoke_endpoints.py` | Live smoke: `/health` plus 11 endpoints (all but `/products/specs`), one at a time. Networked. |
 | `example_search_harvest.py` | Template: search, classify the cards, fetch details, write resumable JSONL |
 | `test_naver_api_client.py` | Offline tests for the client and the classifier |
 | `test_naver_images.py` | Offline tests for the photo downloader (a fake CDN, Pillow-made photos) |
 | `test_image_prep.py` | Offline tests for the WebP preparation (Pillow-made photos) |
+| `test_naver_variants.py` | Offline tests for the variant choice (real rows of a product with paid and sold-out variants) |
 | `test_shop_stores.py` | Offline tests for the store registry (every `StoreId` has a profile, `SHOP_STORE`) |
 | `example_0N_*.py` | Runnable examples, one API topic each (see Examples) |
 | `harvest_listing.py` | Full listing of store product links for a keyword + category, price-sliced, resumable |
@@ -46,7 +48,7 @@ Two ways to get a product's details:
 | | 1. `/products/details` (the original way) | 2. `/products/specs` (the new way, beta: the adapter) |
 |---|---|---|
 | Source | the store backend (`brand.naver.com/n/*`) in the server's own Chrome | the product page itself, in the owner's Chrome through the adapter |
-| Gives | prices, options, stock, category path, legal notice, description, reviews, `facts` from the backend's search info and the notice | the page's 상품정보 rows: 제조사, 브랜드, 모델명, 원산지 and every seller attribute (종류, 성별, 총클럽개수, ...), `facts` with those rows first |
+| Gives | prices, stock, category path, legal notice, description, reviews, `facts` from the backend's search info and the notice (options: null since 2026-11-02) | the page's 상품정보 rows: 제조사, 브랜드, 모델명, 원산지 and every seller attribute (종류, 성별, 총클럽개수, ...), `facts` with those rows first; `options` (variants, stock, add-ons) |
 | Cost | ~1-10 s, any product, no setup | ~30-60 s a product, one at a time, Chrome open with the adapter, not during a listing job |
 | Flexible | fixed set of backend answers; no attribute rows exist there | anything rendered on the page can be read later the same way (Python parses the page HTML) |
 
@@ -60,8 +62,30 @@ login page), so every read walks the whole flow like a person: naver.com -> the 
   a card not on the search's first page falls back to its name (`example_09_listing_then_specs.py`).
   Entering through a category page is not built yet (the listing has no category filter either).
 
-Use both together: way 1 for prices / options / reviews, way 2 for the attribute rows.
+Use both together: way 1 for prices / reviews / description, way 2 for the attribute rows and the options.
 Contract: [server/docs/ENDPOINTS.md](../server/docs/ENDPOINTS.md#product-details-two-ways).
+
+## Product options
+
+Since 2026-11-02 the options come only from way 2: `api.product_specs(link)["options"]` (null when the page gave no
+product answer). Every variant the store declared is there with `extra_price` (added to the product's price;
+negative = cheaper) and `stock_quantity` / `is_available` (false = sold out, shown as (품절), cannot be bought).
+Besides the variants: `text_options` (a text the buyer types, e.g. a name on the bag tag: its `label`, `required`
+and `max_length` from the page's field), `simple_options`, and
+`supplements` (add-on products, not variants).
+
+Which variants we collect is one rule for every store and category, `naver_variants.choose_variants(options,
+base_price, paid=False)`:
+
+| | default (`paid=False`) | `paid=True` (the operator's choice, e.g. for a category where it is wanted) |
+|---|---|---|
+| extra price 0 | taken | taken |
+| extra price != 0 (more or less) | left out, counted in `skipped_paid` | taken, `price` = product price + extra price |
+| name states another amount, "(+N원)" | left out, its id in `name_mismatches` | taken, `price_in_name` shows it |
+| sold out | kept, `is_available` false, counted in `sold_out` | the same |
+
+An amount in a name counts only as "(+N원)" / "(-N원)": a bare "+" joins the parts of a set ("드라이버+우드",
+"실버블루 + 실버블루"). Example: `example_14_product_options.py` (real golf sets, one per case).
 
 ## Product photos
 
@@ -147,6 +171,7 @@ needs Chrome open with the adapter (`example_01` shows `extension: connected`).
 | `example_11_reviews_full.py` | `api.reviews()` read completely: every review field in the store's order (id, score, date, full text, option, likes, writer, photo / video links and sizes), the product summary, JSONL to `output/reviews-<id>/` |
 | `example_12_reviews_selected.py` | Reviews, way 2: `selected_reviews()` -> up to 20 reviews worth showing (photo + text + avatar first), with the tier of each, JSONL; their photos and avatars as the store's WebP (`download_review_media()`) |
 | `example_13_product_images.py` | A product's gallery: `product_details()["images"]` -> `naver_images.download_gallery()` -> the store's WebP files, manifest.json with source and result of each |
+| `example_14_product_options.py` | A product's options from the page (`product_specs()["options"]`) and the variants we take (`choose_variants`, `paid` as argument), on real golf sets: no options, free combinations, a text option with a sold-out row, a paid sold-out row |
 | `example_99_full_details.py` | **FULL**, the one to grow: a category's products (listing + category id), each in turn -> details + 상품정보 specs (adapter) + selected reviews + gallery and review photos as the store's WebP, one JSON line per product |
 
 ```sh
@@ -255,7 +280,8 @@ of three kinds:
 
 Do not pass the slug-less `/main/products/<id>` link to `/products/details`. It
 forces the server through validation, then a name search, then the matching
-card's store (`api._find_store_for_product`). That path is slow and can 404.
+card's store (`api._find_store_for_product`). That path is slow and can 404 (and
+always does since 2026-11-02, when validation-products started answering 419).
 For Naver store cards, `store.link` is `https://smartstore.naver.com/<slug>`
 or `https://brand.naver.com/<slug>`. For external-mall cards it is the
 external URL, or null when `mallUrl.pcUrl` is missing (`parsers._store_link_from_mall_url`).
@@ -320,7 +346,7 @@ Draft mapping from a `/products/details` record:
 | body_html | `description` |
 | vendor | `store.name` (or `brand`) |
 | images | `images` |
-| options / variants | `option_groups` / `variants` |
+| options / variants | `/products/specs` `options`: `option_groups` / `variants` (since 2026-11-02; `choose_variants`) |
 | price | `pricing` (KRW; conversion TBD) |
 | tags | `category`, `tags` |
 

@@ -169,7 +169,8 @@ class NaverApiClient:
         return self.get("/products/count", query=query, **filters)
 
     def product_details(self, product: str) -> T.ProductDetails:
-        """`product`: a store product link or the bare product id."""
+        """`product`: a store product link (a bare id or slug-less link answers 404 since 2026-11-02).
+        Its options are null since then: read them with product_specs()["options"]."""
         return self.get("/products/details", product=product)
 
     def product_specs(self, product: str, query: str | None = None) -> T.ProductSpecs:

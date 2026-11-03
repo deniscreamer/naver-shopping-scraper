@@ -4,6 +4,7 @@ fake details record stand in for Chrome and the box; the shared adapter lock
 
     python -m pytest server/test_ext_product.py -q
 """
+import json
 import os
 
 import pytest
@@ -47,8 +48,9 @@ def test_specs_answer(specs):
     assert [r["label"] for r in body["specs"]] == ["상품번호", "제조사", "원산지"] and body["is_complete"]
     assert body["facts"]["brand"] == {"value": "혼마", "source": "specs:제조사"}
     assert body["category"]["id"] == "50002788" and body["read_at"].endswith("Z")
+    assert body["options"] is None                                            # the page gave no product answer
     status, again = call("GET", "/naver-shopping/products/specs", product=LINK)
-    assert status == 200 and len(specs) == 1                                  # cached
+    assert status == 200 and len(specs) == 2                                  # options unknown: read again
     status, _ = call("GET", "/products/specs", product=LINK, query="남성 골프채 풀세트")
     assert status == 200 and specs[-1][1] == "남성 골프채 풀세트"
 
@@ -100,3 +102,49 @@ def test_specs_errors(specs, monkeypatch):
     assert call("GET", "/products/specs", product=LINK, query="yy")[0] == 503
     assert call("GET", "/products/specs")[0] == 400
     assert parsers.product_facts(details(LINK))["brand"] is None
+
+
+def test_specs_options_from_the_page_answer(specs, monkeypatch):
+    def with_answer(bridge, product_id, query, out_dir):
+        specs.append((product_id, query))
+        with open(os.path.join(FX, "pdp_specs_honma.html"), encoding="utf-8") as f:
+            html = f.read()
+        with open(os.path.join(FX, "page_product_idmakers.json"), encoding="utf-8") as f:
+            return {"url": LINK, "title": "t", "html": html, "search_url": "s", "product": json.load(f)}
+    monkeypatch.setattr(ext_product, "read_page", with_answer)
+    status, body = call("GET", "/products/specs", product=LINK)
+    assert status == 200 and len(body["options"]["variants"]) == 5
+    text = body["options"]["text_options"][0]
+    assert text["id"] == "11800253335" and text["required"] is None   # the HTML has no text field: page keys null
+    status, _ = call("GET", "/products/specs", product=LINK)
+    assert status == 200 and len(specs) == 1                                  # options read: cached
+
+
+class Answers:
+    """A bridge whose `captures` hands out the page's answers in arrival order."""
+    def __init__(self, answers):
+        self.answers, self.patterns = list(answers), []
+
+    def call(self, op, **args):
+        assert op == "captures"
+        self.patterns.append(args["pattern"])
+        hit, self.answers = self.answers, []
+        return hit
+
+
+def test_product_answer_picks_the_product(monkeypatch):
+    monkeypatch.setattr(ext_product.time, "sleep", lambda s: None)
+    base = "https://smartstore.naver.com/i/v2/channels/u1/products/42"
+    bridge = Answers([
+        {"url": base, "status": 419, "body": '{"code":"SDW-E90419"}'},             # before the page's reload
+        {"url": base + "/category-navigations?x=1", "status": 200, "body": '{"a": 1}'},
+        {"url": base, "status": 200, "body": '{"id": 42, "optionUsable": true}'},
+        {"url": base + "/verticals", "status": 200, "body": "[]"},
+    ])
+    assert ext_product._product_answer(bridge, 7, "42") == {"id": 42, "optionUsable": True}
+    assert bridge.patterns == ["/products/42"]
+    brand = Answers([{"url": "https://brand.naver.com/n/v2/channels/u/products/42?withWindow=false",
+                      "status": 200, "body": '{"id": 42}'}])
+    assert ext_product._product_answer(brand, 7, "42") == {"id": 42}
+    none = Answers([])
+    assert ext_product._product_answer(none, 7, "42") is None and len(none.patterns) == ext_product.ANSWER_TRIES

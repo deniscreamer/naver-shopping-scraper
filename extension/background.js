@@ -9,7 +9,7 @@
 // Only tabs this extension opened (or that they opened) can be driven.
 
 const BRIDGE_URL = "ws://127.0.0.1:8765";
-const VERSION = "0.4.2";
+const VERSION = "0.4.4";
 const KEEPALIVE_MS = 20000;          // an active WebSocket keeps the MV3 worker alive
 const MAX_CAPTURES = 300;            // per tab
 

@@ -3,7 +3,7 @@
 owner's Chrome through the adapter), the description HTML comes from the
 store backend (contents/<origin>/PC renderContent).
 
-Two jobs:
+Three jobs:
 
   * spec_rows: the "상품정보" list of a smartstore product page, label -> value
     (상품번호, 제조사, 브랜드, 모델명, 원산지 and the seller's category attributes
@@ -15,6 +15,8 @@ Two jobs:
     "상품정보 펼쳐보기" button (aria-expanded="false"); 15 rows after the click.
     The page's own __PRELOADED_STATE__ carries no product data at that point
     (product.* all null: the page loads it later), so the rendered list is the source.
+  * text_fields: the purchase box's text fields (a text the buyer types), with
+    what only the page shows: the label, required, the length limit.
   * description_text: the readable text of a description by walking its text
     nodes; block elements end a line, inline ones do not split words. Images,
     video controls (.pzp), embedded product cards (.se-material), buttons and
@@ -155,6 +157,57 @@ def specs_collapsed(page_html):
             if _MORE_RE.search(text):
                 return True
     return False
+
+
+# ---- text fields (a text the buyer types) -----------------------------------------------
+
+_REQUIRED_RE = re.compile(r"\(\s*필수\s*\)")
+_DIGITS_RE = re.compile(r"^\d+$")
+
+
+def _length(value):
+    return int(value) if value is not None and _DIGITS_RE.match(value) else None
+
+
+def text_fields(page_html):
+    """The product page's text fields (CUSTOM options: a name on a tag, an engraving) -> [{id, label, required,
+    placeholder, hint, min_length, max_length, pattern}], one per field id in page order. [] when there is none.
+
+    Observed 2026-11-02 (PRGR Sweep, Majesty Royal, XXIO14 golf sets on smartstore): each field is
+    <label for=ID>네임스티커 성함 (필수)</label> + <input type="text" id=ID maxlength="20" data-tag="textOption"
+    placeholder="입력해주세요">, ID the textOptions id of the product answer. The purchase box is rendered twice (the
+    page and the floating bar), so a field repeats. "(필수)" in the label marks a required field; `required`,
+    `aria-required`, `minlength`, `pattern` and an `aria-describedby` hint are read too (the naver-harvester
+    reads them), not seen on a page yet."""
+    root = parse_html(page_html)
+    nodes = list(root.descendants())
+    labels, by_id = {}, {}
+    for n in nodes:
+        if n.tag == "label" and n.attrs.get("for"):
+            labels.setdefault(n.attrs["for"], _flat(n))
+        if n.attrs.get("id"):
+            by_id.setdefault(n.attrs["id"], n)
+    fields, seen = [], set()
+    for n in nodes:
+        a = n.attrs
+        field_id = a.get("id")
+        if n.tag != "input" or a.get("data-tag") != "textOption" or not field_id or field_id in seen:
+            continue
+        seen.add(field_id)
+        label = labels.get(field_id) or None
+        hint = " ".join(t for t in (_flat(by_id[h]) for h in a.get("aria-describedby", "").split() if h in by_id)
+                        if t) or None
+        fields.append({
+            "id": field_id,
+            "label": label,
+            "required": "required" in a or a.get("aria-required") == "true" or bool(_REQUIRED_RE.search(label or "")),
+            "placeholder": _WS_RE.sub(" ", a.get("placeholder", "")).strip() or None,
+            "hint": hint,
+            "min_length": _length(a.get("minlength")),
+            "max_length": _length(a.get("maxlength")),
+            "pattern": a.get("pattern") or None,
+        })
+    return fields
 
 
 # ---- description text -------------------------------------------------------------------

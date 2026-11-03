@@ -25,9 +25,11 @@ job makes a read busy (409). Walls are handled like the listing's
 (ext_listing.check: a captcha is reported and waited for, a ban page stops)
 and answer 503, which scripts do not retry.
 """
+import json
 import os
 import time
 from datetime import datetime, timezone
+from urllib.parse import urlsplit
 
 import ext_listing
 import listing_jobs
@@ -42,6 +44,7 @@ MORE_BUTTON = 'button[data-shp-area="pdinfo.more"]'     # "상품정보 펼쳐�
 FULL_HTML = 8_000_000      # chars: a smartstore product page is ~0.6 MB
 RENDER_TRIES = 8           # page reads, RENDER_WAIT_S apart, until the 상품정보 list is rendered
 RENDER_WAIT_S = 2
+ANSWER_TRIES = 5        # captures reads, RENDER_WAIT_S apart, until the page's product answer is in
 
 
 # Not UpstreamError / Blocked (502): scripts retry a 502, and a wall in the
@@ -70,6 +73,28 @@ def _card(bridge, tab, product_id):
     for sel in (f'a[href*="/products/{product_id}?"]', f'a[href$="/products/{product_id}"]'):
         if (bridge.call("query", tabId=tab, selector=sel) or {}).get("count"):
             return sel
+    return None
+
+
+def _product_answer(bridge, tab, product_id):
+    """The page's own product answer (/channels/<uid>/products/<id>, with options and stock), copied by the
+    adapter; None when the page got none. Probed 2026-11-02: the smartstore page asks /i/v2/channels/<uid>/
+    products/<id> (its server-rendered state has optionUsable false and stock 0: options come only from this
+    call), the brand page /n/v2/channels/<uid>/products/<id>?withWindow=false; both carry a one-time page token
+    (x-client-rtk) since that day. A first try can get 419, then the page reloads itself and gets 200, so a few
+    reads are allowed."""
+    for _ in range(ANSWER_TRIES):
+        for answer in reversed(bridge.call("captures", tabId=tab, pattern=f"/products/{product_id}") or []):
+            path = urlsplit(answer.get("url") or "").path
+            if answer.get("status") != 200 or not path.endswith(f"/products/{product_id}"):
+                continue                                   # a sub-answer (category-navigations, verticals ...)
+            try:
+                product = json.loads(answer.get("body") or "")
+            except ValueError:
+                continue
+            if isinstance(product, dict):
+                return product
+        time.sleep(RENDER_WAIT_S)
     return None
 
 
@@ -122,7 +147,12 @@ def read_page(bridge, product_id, query, out_dir):
         html = page.get("html") or ""
         with open(os.path.join(out_dir, "product.html"), "w", encoding="utf-8") as f:   # local evidence, gitignored
             f.write(html)
-        return {"url": page.get("url"), "title": page.get("title"), "html": html, "search_url": search_url}
+        product = _product_answer(bridge, page_tab, product_id)
+        if product is not None:
+            with open(os.path.join(out_dir, "product.json"), "w", encoding="utf-8") as f:   # local evidence, gitignored
+                json.dump(product, f, ensure_ascii=False)
+        return {"url": page.get("url"), "title": page.get("title"), "html": html, "search_url": search_url,
+                "product": product}
     except ExtError as e:
         raise AdapterError(f"product {product_id}: adapter error: {e}")
     finally:
@@ -153,6 +183,7 @@ def _specs(product, query):
         "specs": rows,
         "is_complete": not pdp.specs_collapsed(page["html"]),
         "facts": parsers.product_facts(details, details["notice"], rows),
+        "options": parsers.parse_page_options(page["product"], pdp.text_fields(page["html"])) if page.get("product") else None,
         "read_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
 
@@ -165,6 +196,8 @@ def product_specs(product, query=None):
         raise NotListed(f"product {product}: no name to search for; pass query")
     key = {"product": product, "query": query}
     result = cached_call("naver_shopping.product_specs", key, _specs, ttl.PRODUCT_SPECS_CACHE)
-    if not result["is_complete"]:          # a list left folded: answer it, but the next call reads the page again
+    # A list left folded, or no product answer from the page (options unknown): answer it, but the next call
+    # reads the page again.
+    if not result["is_complete"] or result["options"] is None:
         forget("naver_shopping.product_specs", key)
     return result
