@@ -1,0 +1,1436 @@
+{
+ "key": "fairwardgolf:naver:100416178:9496523995",
+ "listing": {
+  "product_id": "9496523995",
+  "nv_mid": "87041024318",
+  "link": "https://smartstore.naver.com/ktksports/products/9496523995",
+  "name": "테일러메이드 코리아 스텔스2 V300 남성골프채풀세트 11개 드라이버10.5R 4번유틸 8아이언R퍼터",
+  "store": {
+   "name": "케이티케이스포츠",
+   "slug": "ktksports",
+   "link": "https://smartstore.naver.com/ktksports",
+   "channel_no": "100416178",
+   "grade": "SEED",
+   "is_brand_store": false
+  },
+  "pricing": {
+   "sale_price": 2600000,
+   "discounted_price": 2090000,
+   "discount_ratio": 19,
+   "currency": "KRW"
+  },
+  "category_id": "50002788",
+  "reviews": {
+   "count": 3,
+   "average_score": 5
+  },
+  "stock_quantity": 590,
+  "image": "https://shopping-phinf.pstatic.net/main_8704102/87041024318.3.jpg",
+  "is_ad": false,
+  "query": "남성 골프채 풀세트",
+  "batch": 2,
+  "seen_at": "2026-11-06T04:57:14+00:00"
+ },
+ "details": {
+  "id": "9496523995",
+  "origin_product_id": "9451816282",
+  "name": "테일러메이드 코리아 스텔스2 V300 남성골프채풀세트 11개 드라이버10.5R 4번유틸 8아이언R퍼터",
+  "link": "https://smartstore.naver.com/ktksports/products/9496523995",
+  "catalog_id": "87041024318",
+  "catalog_link": "https://search.shopping.naver.com/catalog/87041024318",
+  "status": "SALE",
+  "sale_type": "NEW",
+  "is_displayed": true,
+  "pricing": {
+   "sale_price": 2600000,
+   "discounted_price": 2090000,
+   "discount_ratio": 19,
+   "seller_discount": 510000,
+   "manager_discount": 0,
+   "currency": "KRW",
+   "points": {
+    "purchase": 20900,
+    "text_review": 0,
+    "photo_video_review": 0,
+    "after_use_text_review": 0,
+    "after_use_photo_video_review": 0,
+    "store_member_review": 0
+   }
+  },
+  "stock_quantity": 590,
+  "has_options": true,
+  "has_supplements": true,
+  "images": [
+   "https://shop-phinf.pstatic.net/20250212_48/1739350929770N7VDu_JPEG/73483729922884300_1743177608.jpg"
+  ],
+  "category": {
+   "id": "50002788",
+   "name": "풀세트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "풀세트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002788"
+   ]
+  },
+  "brand": "테일러메이드",
+  "brand_id": "223",
+  "manufacturer": "테일러메이드",
+  "model_name": null,
+  "tags": null,
+  "page_title": null,
+  "reviews": {
+   "count": 3,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 3
+   },
+   "text_count": 1,
+   "photo_count": 2,
+   "video_count": 0,
+   "after_use_count": 0,
+   "best_count": 0,
+   "recent": null,
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 2,
+       "percent": 67
+      },
+      {
+       "name": "최고예요",
+       "count": 1,
+       "percent": 33
+      }
+     ]
+    },
+    {
+     "question": "디자인은 어떤가요?",
+     "answers": [
+      {
+       "name": "별로예요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "화면과 같아요",
+       "count": 1,
+       "percent": 33
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 2,
+       "percent": 67
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 1,
+       "percent": 33
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 2,
+       "percent": 67
+      }
+     ]
+    }
+   ],
+   "representative_reviews": [
+    {
+     "id": "4508430574",
+     "score": 5,
+     "text": "구성이  좋습니다.",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20240628_59/1719581550257GkqA8_JPEG/1719581541096.jpg"
+    },
+    {
+     "id": "4458658738",
+     "score": 5,
+     "text": "ㅡ요구사항에 친절한 설명도 해주시고 너무나 감사합니다",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20240409_231/1712633189072vsI1j_JPEG/IMG_2097.jpeg"
+    },
+    {
+     "id": "4461549822",
+     "score": 5,
+     "text": "빠른 배송 좋아요\n감사합니다",
+     "image": null
+    }
+   ]
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": null,
+   "company": "일양로지스",
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": null,
+   "extra_fee_text": null
+  },
+  "is_free_delivery": true,
+  "is_today_delivery": false,
+  "has_arrival_guarantee": false,
+  "has_regular_subscription": false,
+  "has_free_return_insurance": false,
+  "is_minor_purchasable": true,
+  "is_adult_restricted": false,
+  "is_in_naver_shopping": true,
+  "option_groups": null,
+  "variants": null,
+  "supplements": null,
+  "description": {
+   "html": null,
+   "text": null,
+   "editor_type": "NONE",
+   "images": [
+    "https://shop-phinf.pstatic.net/20251102_145/17620695258624qdSe_JPEG/p-9451816282-s-2-A-0.jpg",
+    "https://shop-phinf.pstatic.net/20251102_39/17620695259486Fons_JPEG/p-9451816282-s-2-A-1.jpg",
+    "https://shop-phinf.pstatic.net/20251102_271/1762069525862OrWrD_JPEG/p-9451816282-s-2-A-2.jpg",
+    "https://shop-phinf.pstatic.net/20251102_142/17620695258599U4ul_JPEG/p-9451816282-s-2-A-3.jpg",
+    "https://shop-phinf.pstatic.net/20251102_211/1762069525866GqgDU_JPEG/p-9451816282-s-2-A-4.jpg",
+    "https://shop-phinf.pstatic.net/20251102_55/1762069525859wrAVK_JPEG/p-9451816282-s-2-A-5.jpg",
+    "https://shop-phinf.pstatic.net/20251102_296/1762069525860BULfb_JPEG/p-9451816282-s-2-A-6.jpg",
+    "https://shop-phinf.pstatic.net/20251102_242/17620695258576D7G9_JPEG/p-9451816282-s-2-A-7.jpg",
+    "https://shop-phinf.pstatic.net/20251102_27/17620695259398q0pe_JPEG/p-9451816282-s-2-A-8.jpg",
+    "https://shop-phinf.pstatic.net/20251102_17/1762069525952TMJlB_JPEG/p-9451816282-s-2-A-9.jpg",
+    "https://shop-phinf.pstatic.net/20251102_158/1762069525857Q6R67_JPEG/p-9451816282-s-2-A-10.jpg",
+    "https://shop-phinf.pstatic.net/20251102_52/1762069525856DmQDY_JPEG/p-9451816282-s-2-A-11.jpg",
+    "https://shop-phinf.pstatic.net/20251102_129/1762069525858GrAt9_JPEG/p-9451816282-s-2-A-12.jpg"
+   ]
+  },
+  "notice": {
+   "type": "ETC",
+   "items": [
+    {
+     "label": "품명 / 모델명",
+     "value": "상품상세참조 / 상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "법에 의한 인증, 허가 등을 받았음을 확인할 수 있는 경우 그에 대한 사항",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조자(사)",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조국",
+     "value": "베트남산(테일러메이드코리아)",
+     "is_see_description": false
+    },
+    {
+     "label": "A/S 책임자",
+     "value": "032-328-3901",
+     "is_see_description": false
+    },
+    {
+     "label": "A/S 전화번호",
+     "value": null,
+     "is_see_description": false
+    }
+   ],
+   "terms": [
+    {
+     "label": "재화등의 배송방법에 관한 정보",
+     "value": "택배",
+     "is_see_description": false
+    },
+    {
+     "label": "주문 이후 예상되는 배송기간",
+     "value": "대금 지급일로부터 3일 이내에 발송",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+     "value": "편도 4000원 (최초 배송비 무료인 경우 8000원 부과)",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 A/S 관련 전화번호",
+     "value": null,
+     "is_see_description": false
+    },
+    {
+     "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+     "value": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+     "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+     "is_see_description": false
+    }
+   ]
+  },
+  "facts": {
+   "brand": {
+    "value": "테일러메이드",
+    "source": "search_info.brandName"
+   },
+   "manufacturer": {
+    "value": "테일러메이드",
+    "source": "search_info.manufacturerName"
+   },
+   "model_name": null,
+   "origin": {
+    "value": "베트남산(테일러메이드코리아)",
+    "source": "notice:제조국"
+   }
+  },
+  "store": {
+   "id": "100416178",
+   "uid": "2sWDxubzXy3LOqQaqm851",
+   "name": "케이티케이스포츠",
+   "slug": "ktksports",
+   "link": "https://smartstore.naver.com/ktksports",
+   "type": "smart_store",
+   "grade": "FIFTH",
+   "sale_count": 13,
+   "merchant_id": "510386467",
+   "business": {
+    "legal_name": "케이티케이 스포츠",
+    "representative": "안미견",
+    "type": "PRIVATE",
+    "is_business": true,
+    "is_overseas": false,
+    "phone": null,
+    "email": null,
+    "address": null
+   }
+  }
+ },
+ "specs": {
+  "id": "9496523995",
+  "name": "테일러메이드 코리아 스텔스2 V300 남성골프채풀세트 11개 드라이버10.5R 4번유틸 8아이언R퍼터",
+  "link": "https://smartstore.naver.com/ktksports/products/9496523995",
+  "query": "테일러메이드 코리아 스텔스2 V300 남성골프채풀세트 11개 드라이버10.5R 4번유틸 8아이언R퍼터",
+  "category": {
+   "id": "50002788",
+   "name": "풀세트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "풀세트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002788"
+   ]
+  },
+  "specs": [
+   {
+    "label": "상품번호",
+    "value": "9496523995"
+   },
+   {
+    "label": "제조사",
+    "value": "테일러메이드"
+   },
+   {
+    "label": "브랜드",
+    "value": "테일러메이드"
+   },
+   {
+    "label": "원산지",
+    "value": "베트남산(테일러메이드코리아)"
+   },
+   {
+    "label": "종류",
+    "value": "조합풀세트"
+   },
+   {
+    "label": "성별",
+    "value": "남성용"
+   },
+   {
+    "label": "사용방향",
+    "value": "오른손용"
+   },
+   {
+    "label": "총클럽개수",
+    "value": "11개"
+   },
+   {
+    "label": "출시",
+    "value": "2023년형"
+   },
+   {
+    "label": "퍼터형태",
+    "value": "특수형"
+   }
+  ],
+  "is_complete": true,
+  "facts": {
+   "brand": {
+    "value": "테일러메이드",
+    "source": "specs:브랜드"
+   },
+   "manufacturer": {
+    "value": "테일러메이드",
+    "source": "specs:제조사"
+   },
+   "model_name": null,
+   "origin": {
+    "value": "베트남산(테일러메이드코리아)",
+    "source": "specs:원산지"
+   }
+  },
+  "options": {
+   "has_options": true,
+   "status": "SALE",
+   "is_sold_out": false,
+   "stock_quantity": 590,
+   "option_groups": [
+    {
+     "id": "8558524934",
+     "name": "선택",
+     "type": "COMBINATION"
+    }
+   ],
+   "variants": [
+    {
+     "id": "44454519225",
+     "name": "선택1 10.5 도 R4번유틸 8아이언R퍼터",
+     "options": [
+      "선택1 10.5 도 R4번유틸 8아이언R퍼터"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 99,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-09-28"
+    },
+    {
+     "id": "44454519226",
+     "name": "선택2 10.5 도 SR4번유틸 8아이언R퍼터",
+     "options": [
+      "선택2 10.5 도 SR4번유틸 8아이언R퍼터"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 96,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-09-28"
+    },
+    {
+     "id": "44454519227",
+     "name": "선택3 10.5 도 S4번유틸 8아이언R퍼터",
+     "options": [
+      "선택3 10.5 도 S4번유틸 8아이언R퍼터"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 99,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-09-28"
+    },
+    {
+     "id": "44454519228",
+     "name": "선택4 9 도 R 4번유틸 8아이언R퍼터",
+     "options": [
+      "선택4 9 도 R 4번유틸 8아이언R퍼터"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 99,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-09-28"
+    },
+    {
+     "id": "44454519229",
+     "name": "선택5 9 도 SR4번유틸 8아이언R퍼터",
+     "options": [
+      "선택5 9 도 SR4번유틸 8아이언R퍼터"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 98,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-09-28"
+    },
+    {
+     "id": "44454519230",
+     "name": "선택6 10.5 도 S4번유틸 8아이언R퍼터",
+     "options": [
+      "선택6 10.5 도 S4번유틸 8아이언R퍼터"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 99,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-09-28"
+    }
+   ],
+   "simple_options": [],
+   "text_options": [],
+   "supplements": [
+    {
+     "id": "2470364660",
+     "group": "우드선택",
+     "name": "3번 R",
+     "price": 379000,
+     "stock_quantity": 99,
+     "status": "SALE"
+    },
+    {
+     "id": "2470364661",
+     "group": "우드선택",
+     "name": "3번 SR",
+     "price": 379000,
+     "stock_quantity": 98,
+     "status": "SALE"
+    },
+    {
+     "id": "2470364662",
+     "group": "우드선택",
+     "name": "3번 S",
+     "price": 379000,
+     "stock_quantity": 99,
+     "status": "SALE"
+    },
+    {
+     "id": "2470364663",
+     "group": "우드선택",
+     "name": "5번 R",
+     "price": 379000,
+     "stock_quantity": 100,
+     "status": "SALE"
+    },
+    {
+     "id": "2470364664",
+     "group": "우드선택",
+     "name": "5번 SR",
+     "price": 379000,
+     "stock_quantity": 96,
+     "status": "SALE"
+    },
+    {
+     "id": "2470364665",
+     "group": "우드선택",
+     "name": "5번 S",
+     "price": 379000,
+     "stock_quantity": 100,
+     "status": "SALE"
+    }
+   ]
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": "제주,도서지역 추가 3,000원",
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": false,
+   "company": "일양로지스",
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": null,
+   "extra_fee_text": null,
+   "is_overseas": false,
+   "scope": "domestic",
+   "customs_tax_type": null,
+   "lead_time": {
+    "seller_average_days": 4.0,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   }
+  },
+  "measures": {
+   "is_set": true,
+   "weights": [],
+   "dimensions": [],
+   "references": [],
+   "review": []
+  },
+  "read_at": "2026-11-06T10:42:42Z"
+ },
+ "variants": {
+  "paid": true,
+  "base_price": 2090000,
+  "variants": [
+   {
+    "id": "44454519225",
+    "name": "선택1 10.5 도 R4번유틸 8아이언R퍼터",
+    "options": [
+     "선택1 10.5 도 R4번유틸 8아이언R퍼터"
+    ],
+    "extra_price": 0,
+    "price": 2090000,
+    "price_in_name": null,
+    "stock_quantity": 99,
+    "is_available": true
+   },
+   {
+    "id": "44454519226",
+    "name": "선택2 10.5 도 SR4번유틸 8아이언R퍼터",
+    "options": [
+     "선택2 10.5 도 SR4번유틸 8아이언R퍼터"
+    ],
+    "extra_price": 0,
+    "price": 2090000,
+    "price_in_name": null,
+    "stock_quantity": 96,
+    "is_available": true
+   },
+   {
+    "id": "44454519227",
+    "name": "선택3 10.5 도 S4번유틸 8아이언R퍼터",
+    "options": [
+     "선택3 10.5 도 S4번유틸 8아이언R퍼터"
+    ],
+    "extra_price": 0,
+    "price": 2090000,
+    "price_in_name": null,
+    "stock_quantity": 99,
+    "is_available": true
+   },
+   {
+    "id": "44454519228",
+    "name": "선택4 9 도 R 4번유틸 8아이언R퍼터",
+    "options": [
+     "선택4 9 도 R 4번유틸 8아이언R퍼터"
+    ],
+    "extra_price": 0,
+    "price": 2090000,
+    "price_in_name": null,
+    "stock_quantity": 99,
+    "is_available": true
+   },
+   {
+    "id": "44454519229",
+    "name": "선택5 9 도 SR4번유틸 8아이언R퍼터",
+    "options": [
+     "선택5 9 도 SR4번유틸 8아이언R퍼터"
+    ],
+    "extra_price": 0,
+    "price": 2090000,
+    "price_in_name": null,
+    "stock_quantity": 98,
+    "is_available": true
+   },
+   {
+    "id": "44454519230",
+    "name": "선택6 10.5 도 S4번유틸 8아이언R퍼터",
+    "options": [
+     "선택6 10.5 도 S4번유틸 8아이언R퍼터"
+    ],
+    "extra_price": 0,
+    "price": 2090000,
+    "price_in_name": null,
+    "stock_quantity": 99,
+    "is_available": true
+   }
+  ],
+  "available": 6,
+  "sold_out": 0,
+  "skipped_paid": 0,
+  "name_mismatches": [],
+  "simple_options": [],
+  "text_options": [],
+  "supplements": [
+   {
+    "id": "2470364660",
+    "group": "우드선택",
+    "name": "3번 R",
+    "price": 379000,
+    "stock_quantity": 99,
+    "status": "SALE"
+   },
+   {
+    "id": "2470364661",
+    "group": "우드선택",
+    "name": "3번 SR",
+    "price": 379000,
+    "stock_quantity": 98,
+    "status": "SALE"
+   },
+   {
+    "id": "2470364662",
+    "group": "우드선택",
+    "name": "3번 S",
+    "price": 379000,
+    "stock_quantity": 99,
+    "status": "SALE"
+   },
+   {
+    "id": "2470364663",
+    "group": "우드선택",
+    "name": "5번 R",
+    "price": 379000,
+    "stock_quantity": 100,
+    "status": "SALE"
+   },
+   {
+    "id": "2470364664",
+    "group": "우드선택",
+    "name": "5번 SR",
+    "price": 379000,
+    "stock_quantity": 96,
+    "status": "SALE"
+   },
+   {
+    "id": "2470364665",
+    "group": "우드선택",
+    "name": "5번 S",
+    "price": 379000,
+    "stock_quantity": 100,
+    "status": "SALE"
+   }
+  ]
+ },
+ "package": [
+  {
+   "variant_id": "44454519225",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "44454519226",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "44454519227",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "44454519228",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "44454519229",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "44454519230",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  }
+ ],
+ "reviews": {
+  "product": {
+   "id": "9496523995",
+   "name": "테일러메이드 코리아 스텔스2 V300 남성골프채풀세트 11개 드라이버10.5R 4번유틸 8아이언R퍼터",
+   "link": "https://smartstore.naver.com/ktksports/products/9496523995"
+  },
+  "summary": {
+   "count": 3,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 3
+   },
+   "text_count": 1,
+   "photo_count": 2,
+   "video_count": 0,
+   "after_use_count": 0,
+   "best_count": 0,
+   "recent": null,
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 2,
+       "percent": 67
+      },
+      {
+       "name": "최고예요",
+       "count": 1,
+       "percent": 33
+      }
+     ]
+    },
+    {
+     "question": "디자인은 어떤가요?",
+     "answers": [
+      {
+       "name": "별로예요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "화면과 같아요",
+       "count": 1,
+       "percent": 33
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 2,
+       "percent": 67
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 1,
+       "percent": 33
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 2,
+       "percent": 67
+      }
+     ]
+    }
+   ],
+   "representative_reviews": [
+    {
+     "id": "4508430574",
+     "score": 5,
+     "text": "구성이  좋습니다.",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20240628_59/1719581550257GkqA8_JPEG/1719581541096.jpg"
+    },
+    {
+     "id": "4458658738",
+     "score": 5,
+     "text": "ㅡ요구사항에 친절한 설명도 해주시고 너무나 감사합니다",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20240409_231/1712633189072vsI1j_JPEG/IMG_2097.jpeg"
+    },
+    {
+     "id": "4461549822",
+     "score": 5,
+     "text": "빠른 배송 좋아요\n감사합니다",
+     "image": null
+    }
+   ]
+  },
+  "mode": "small_source",
+  "count": 3,
+  "scanned": 3,
+  "passes": [
+   {
+    "media": "all",
+    "pages": 1,
+    "total_count": 3,
+    "is_exhausted": true
+   }
+  ],
+  "is_complete": true,
+  "results": [
+   {
+    "id": "4508430574",
+    "score": 5,
+    "text": "구성이  좋습니다.",
+    "created_at": "2024-06-28T13:32:47Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "선택: 선택2 10.5 도 SR 조합",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "phsy****",
+     "profile_image": "https://phinf.pstatic.net/contact/20250804_86/1754282614477I4CPN_PNG/%C6%DB%C7%C3%B8%C5%BD%BA_%BB%A1%B0%A3%BB%F6_%C7%C1%B7%CE%C7%CA_%C0%CC%B9%CC%C1%F6.png"
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20240628_59/1719581550257GkqA8_JPEG/1719581541096.jpg",
+      "width": 3000,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "9496523995",
+     "origin_product_id": "9451816282",
+     "name": "테일러메이드 코리아 스텔스2 V300 남성골프채풀세트 11개"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "4461549822",
+    "score": 5,
+    "text": "빠른 배송 좋아요\n감사합니다",
+    "created_at": "2024-04-14T07:18:15Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "선택: 선택2 10.5 도 SR 조합",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "wssj*****",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "9496523995",
+     "origin_product_id": "9451816282",
+     "name": "테일러메이드 코리아 스텔스2 V300 남성골프채풀세트 11개"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "4458658738",
+    "score": 5,
+    "text": "ㅡ요구사항에 친절한 설명도 해주시고 너무나 감사합니다",
+    "created_at": "2024-04-09T03:26:37Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "선택: 선택6 10.5 도 S 조합",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "ptlo*******",
+     "profile_image": "https://phinf.pstatic.net/contact/20200522_170/15901334831119NreC_PNG/image.png"
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20240409_231/1712633189072vsI1j_JPEG/IMG_2097.jpeg",
+      "width": 3024,
+      "height": 4032
+     }
+    ],
+    "product": {
+     "id": "9496523995",
+     "origin_product_id": "9451816282",
+     "name": "테일러메이드 코리아 스텔스2 V300 남성골프채풀세트 11개"
+    },
+    "likes": null,
+    "tier": "small"
+   }
+  ]
+ },
+ "photos": {
+  "store": "fairwardgolf",
+  "total": 1,
+  "files": [
+   {
+    "position": 0,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20250212_48/1739350929770N7VDu_JPEG/73483729922884300_1743177608.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20250212_48/1739350929770N7VDu_JPEG/73483729922884300_1743177608.jpg",
+    "source_sha256": "a543b948ac6fbf156577c694dc345d0faef989805fb57f81efc6c4af7e44e72d",
+    "source_bytes": 36834,
+    "source_format": "JPEG",
+    "source_width": 720,
+    "source_height": 720,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/9496523995/fairwardgolf-9496523995-001-792eebd0178dad62.webp",
+    "sha256": "792eebd0178dad6266e46504a5ca298f761f3bcba8cb96635371ee6e1beb25c9",
+    "bytes": 58132,
+    "width": 720,
+    "height": 720,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true,
+  "originals": 1
+ },
+ "review_media": {
+  "store": "fairwardgolf",
+  "files": [
+   {
+    "review_id": "4508430574",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20240628_59/1719581550257GkqA8_JPEG/1719581541096.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20240628_59/1719581550257GkqA8_JPEG/1719581541096.jpg",
+    "source_sha256": "edd9a5997186c57570a7f66540c719a8e23c322d3605601523850c748c1c0777",
+    "source_bytes": 5924710,
+    "source_format": "JPEG",
+    "source_width": 3000,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/9496523995/fairwardgolf-review-image-8385932c70eccbf2.webp",
+    "sha256": "8385932c70eccbf2a7afa419f025021b7e5b1afc7fda6028193ebf68f0f898c8",
+    "bytes": 238046,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "4508430574",
+    "kind": "review-avatar",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/contact/20250804_86/1754282614477I4CPN_PNG/%C6%DB%C7%C3%B8%C5%BD%BA_%BB%A1%B0%A3%BB%F6_%C7%C1%B7%CE%C7%CA_%C0%CC%B9%CC%C1%F6.png",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20250804_86/1754282614477I4CPN_PNG/%C6%DB%C7%C3%B8%C5%BD%BA_%BB%A1%B0%A3%BB%F6_%C7%C1%B7%CE%C7%CA_%C0%CC%B9%CC%C1%F6.png",
+    "source_sha256": "8ed4fc6aee6de98089a73b7df65947f203d6f7eeab3998a574b45b63e49898fd",
+    "source_bytes": 1049,
+    "source_format": "PNG",
+    "source_width": 480,
+    "source_height": 270,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/9496523995/fairwardgolf-review-avatar-5c0be2ba97b1f37c.webp",
+    "sha256": "5c0be2ba97b1f37cc84415566997c13ed50faca62181b4e9acbf65ce97bd9931",
+    "bytes": 684,
+    "width": 480,
+    "height": 270,
+    "quality": 85
+   },
+   {
+    "review_id": "4458658738",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20240409_231/1712633189072vsI1j_JPEG/IMG_2097.jpeg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20240409_231/1712633189072vsI1j_JPEG/IMG_2097.jpeg",
+    "source_sha256": "114f9cb207500f84acea1964dc4a8d58335432ba38cb59bf44a54a1905a1491a",
+    "source_bytes": 3018507,
+    "source_format": "JPEG",
+    "source_width": 3024,
+    "source_height": 4032,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/9496523995/fairwardgolf-review-image-fc42778527cb5f6a.webp",
+    "sha256": "fc42778527cb5f6a506aac7a9b9f964d9c365c8e66c69deef5f9dd91c2cde257",
+    "bytes": 133366,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "4458658738",
+    "kind": "review-avatar",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/contact/20200522_170/15901334831119NreC_PNG/image.png",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20200522_170/15901334831119NreC_PNG/image.png",
+    "source_sha256": "1a93e192bff04a2b5e535fce82383dce4b9bad3cf2e37e163e74becb1d8d78b8",
+    "source_bytes": 85428,
+    "source_format": "PNG",
+    "source_width": 800,
+    "source_height": 600,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/9496523995/fairwardgolf-review-avatar-0374aa7f8c8a9737.webp",
+    "sha256": "0374aa7f8c8a97377fe11aef8b5ca0e97efbd0c980cda818face9a634888154e",
+    "bytes": 19828,
+    "width": 800,
+    "height": 600,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true
+ }
+}

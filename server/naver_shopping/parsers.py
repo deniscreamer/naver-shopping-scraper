@@ -12,6 +12,7 @@ import re
 from datetime import datetime
 from urllib.parse import parse_qs, unquote, urlparse
 
+from naver_shopping import pdp
 from naver_shopping.pdp import description_text
 from naver_shopping.refs import BRAND, SMARTSTORE, catalog_link, product_link, store_link
 
@@ -265,7 +266,48 @@ def _delivery(info):
         "company": _clean(company.get("name")),
         "extra_fee_area2": _int(d.get("area2ExtraFee") or bundle.get("area2ExtraFee")),
         "extra_fee_area3": _int(d.get("area3ExtraFee") or bundle.get("area3ExtraFee")),
+        # the seller's own regional fee text when the amounts are not given as numbers (2026-11-06: "제주 도서산간
+        # 10,000", "8000", "제주도 20,000원 / 도서산간 60,000원"): kept as written
+        "extra_fee_text": _clean(d.get("differentialFeeByArea") or bundle.get("differentialFeeByArea")),
     } if d else None
+
+
+def parse_page_delivery(p, promise=None):
+    """Delivery as the product page states it: the fee as charged (its own answer, ext_product._product_answer),
+    international or domestic, and how fast. Seen 2026-11-05: 99,000 KRW per unit from Japan on a set whose
+    backend record said free; claimDeliveryInfo.overseasShipping true; averageDeliveryLeadTime
+    {productAverageDeliveryLeadTime 0 = none yet, sellerAverageDeliveryLeadTime 5 (Japan) / 1.2-2.3 (domestic)}.
+    `promise`: what the purchase box shows (pdp.delivery_promise of the page HTML)."""
+    p = _dict(p)
+    delivery_raw = _dict(p.get("productDeliveryInfo"))
+    delivery = _delivery(p.get("productDeliveryInfo"))
+    if delivery is None:
+        return None
+    claim, lead = _dict(p.get("claimDeliveryInfo")), _dict(p.get("averageDeliveryLeadTime"))
+    promise = promise or {}
+    overseas = _bool(claim.get("overseasShipping"))
+    if overseas is None and promise.get("overseas_text"):
+        overseas = True
+    return {**delivery, "is_overseas": overseas,
+            "scope": "international" if overseas else "domestic",
+            # customsTaxType sits at the answer's top level (2026-11-05: EXCLUDED on a set shipped from Japan)
+            "customs_tax_type": _clean(p.get("customsTaxType")) or _clean(claim.get("customsTaxType")),
+            "lead_time": {"seller_average_days": _float(lead.get("sellerAverageDeliveryLeadTime")) or None,
+                          "product_average_days": _float(lead.get("productAverageDeliveryLeadTime")) or None,
+                          "today_cutoff": promise.get("today_cutoff") or _dispatch_kst(delivery_raw),
+                          "arrival_days": promise.get("arrival_days"),
+                          "arrival_date_text": promise.get("arrival_date_text"),
+                          "arrival_probability": promise.get("arrival_probability"),
+                          "ship_date_text": promise.get("ship_date_text")}}
+
+
+def _dispatch_kst(d):
+    """"14:00" from productDeliveryInfo.thisDayDispatchBasisTime "05:00:00.000+0000" (UTC; Korea is UTC+9) when
+    todayDelivery is true (2026-11-06: 13 of 40 sets, the same time the purchase box prints)."""
+    m = re.match(r"(\d{2}):(\d{2})", str(d.get("thisDayDispatchBasisTime") or ""))
+    if not (m and d.get("todayDelivery") is True):
+        return None
+    return f"{(int(m.group(1)) + 9) % 24:02d}:{m.group(2)}"
 
 
 def _pricing(sp):
@@ -465,12 +507,46 @@ def parse_contents(c):
     # textContent is blank for SmartEditor ONE pages (seen 2026-11-01: "" or
     # "\u200b" runs); the rendered HTML's text nodes are the description text.
     text = description_text(html_body) if html_body else _clean(c.get("textContent"))
+    snaps = [u for u in (_clean(s.get("url") if isinstance(s, dict) else s) for s in _list(c.get("snapImages"))) if u]
     return {
         "html": html_body,
         "text": text,
         "editor_type": _clean(c.get("editorType")),
-        "images": [u for u in (_clean(s.get("url") if isinstance(s, dict) else s) for s in _list(c.get("snapImages"))) if u] or None,
+        "images": snaps or _body_images(html_body) or None,
     }
+
+
+# Descriptions without snapImages (SmartEditor ONE, or no editor at all) carry their photos as <img> tags whose src is
+# a 1x1 data: placeholder and data-src the real link: class se-image-resource, se-inline-image-resource (inside a
+# table cell), or no class (editor NONE). Seen 2026-11-05/06 on 40 golf sets. The images follow the components the
+# text skips (pdp._SKIP_CLASSES, 2026-11-06): an se-oglink thumbnail (dthumb-phinf: another product of the store, the
+# TalkTalk logo), an se-material poster (shopping-phinf main_*: other products), the se-placesMap store map. Their
+# image classes are skipped wherever they stand, and so is a static.map link.
+_CARD_CLASSES = {"se-oglink", "se-material", "se-placesMap"}
+_CARD_IMAGE_CLASSES = {"se-oglink-thumbnail-resource", "se-material-poster-resource", "se-map-image"}
+
+
+def _body_images(html_body):
+    out = []
+    for node in _body_img_nodes(pdp.parse_html(html_body or "")):
+        if _CARD_IMAGE_CLASSES & set(node.attrs.get("class", "").split()):
+            continue
+        link = next((v for v in (node.attrs.get("data-src"), node.attrs.get("src"))
+                     if v and v.strip().lower().startswith(("http://", "https://"))), None)
+        if link and "static.map" not in link:
+            out.append(link.strip())
+    return list(dict.fromkeys(out))
+
+
+def _body_img_nodes(root):
+    stack = list(reversed(root.elements()))
+    while stack:
+        node = stack.pop()
+        if _CARD_CLASSES & set(node.attrs.get("class", "").split()):
+            continue                        # the whole card, whatever its images are called
+        if node.tag == "img":
+            yield node
+        stack.extend(reversed(node.elements()))
 
 
 def parse_notice(n):

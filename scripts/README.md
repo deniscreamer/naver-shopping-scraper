@@ -37,6 +37,12 @@ The listing screen and the shop check).
 | `deferred_log.py` | The shop's journal of deferred products (append-only); CLI `list` / `allow <key> --by` |
 | `collect_guard.py` | The run rules around one product: one retry, then deferred; stop on a wall; stop on a repeated defect |
 | `package_measures.py`, `category_measures.json` | Five shipping fields per variant: the seller's values, else the operator's category averages |
+| `product_page.py` | Saves a product page as the owner's Chrome renders it (`/products/page`): page.html, the page's own answer, meta; for developing parsers and checking collected data |
+| `captcha_watch.py` | Reports a Naver captcha the adapter waits on (reads `/captcha`): one line per new captcha / solved / timed out; independent of any collection |
+| `keep_run.py` | Keeps a collection run (example_99 output) per shop, byte for byte, read-only (see Transform) |
+| `transform.py`, `transform_shops.py`, `run_transform.py` | The transform: kept runs -> prepared products per shop (shared rules, per-shop rules as data, the CLI) |
+| `test_transform.py` | Offline tests for the transform on real collected lines (`fixtures/collected_fairwardgolf.jsonl`) |
+| `test_prepared_golden.py`, `collected_fixtures.py` | Regression: collected lines of real products (`fixtures/collected/`, from the server's saved-page fixtures) through the transform must equal `fixtures/prepared/`; `UPDATE_GOLDEN=1` rewrites them after a deliberate change, read the diff. Added only when the owner asks (server DEVELOPMENT_RULES R-TEST-5) |
 | `smoke_endpoints.py` | Live smoke: `/health` plus 11 endpoints (all but `/products/specs`), one at a time. Networked. |
 | `example_search_harvest.py` | Template: search, classify the cards, fetch details, write resumable JSONL |
 | `test_naver_api_client.py` | Offline tests for the client and the classifier |
@@ -116,7 +122,7 @@ Measured on 25 gallery photos of 6 products (smartstore and brand store), every 
 | `?type=w860` | at most 860 px | |
 
 **Download** (`naver_images.py`): a plain HTTP GET from Naver's image CDN (`*.pstatic.net`: no browser, no
-adapter, no cookies, no redirects), 30 s timeout, 20 MiB cap, image type + file signature, one request every 2 s
+adapter, no cookies, no redirects), 30 s timeout, 20 MiB cap, image type + file signature, one request every 1 s
 (fallbacks, retries, gallery and review photos alike), 3 attempts on 5xx / network errors; a 403 / 429 stops the
 run. A gallery link that fails (or whose file cannot be
 prepared) is taken as `m10000_10000_no_rotate`, then `o1000`; each file records its `rendition`. A failed review
@@ -169,7 +175,8 @@ older than 5 minutes (before the run and before each product). The store's value
 credentials file (`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`; `PRODUCTS_API_CLIENT_ID` / `PRODUCTS_API_CLIENT_SECRET`, the
 harvester's `.env.fairwardgolf`; must be 0600 and ignored by git, else `ShopNotConfigured`). Each run mints a 24 h
 token (`client_credentials`), checks it at once (`shop`, `currentAppInstallation.accessScopes` has `read_products`, a
-probe `products(first: 1)`; a token that fails is dropped), replaces it 10 minutes before it ends, and after a 401 mid-run mints once more and repeats
+probe `products(first: 1)`; a token that fails is dropped), replaces it 10 minutes before it ends, and after a 401
+mid-run mints once more and repeats
 the request once. Queries only: the token could write, so a mutation is refused. Token and secret go only to the
 store's own host (no cookies, no redirects), never into `os.environ`, an error or a print. Pages of 100 products;
 a throttled answer waits what Shopify says (`extensions.cost`, `Retry-After`). The 5-minute age is wall-clock time
@@ -190,7 +197,13 @@ contract in ENDPOINTS.md). `package_measures.variant_measures(specs, load_table(
 variant: `product_weight_g` (net or unspecified, never a part's; in a set only the whole set's), `package_weight_g`
 (only a weight with the package), `package_length_mm` / `package_width_mm` / `package_height_mm` (only a triple marked
 as the package, longest side first). A value belongs to a variant when its binding is the product or names that
-variant; values that disagree are a contradiction and are not taken. A missing field comes from
+variant; values that disagree are a contradiction and are not taken. Values within 2% agree (6.35 kg and 14 lb are one
+weight). A set weight stated per composition is each variant's own (6630856593: 11.5 kg on the 12-club variants, 4.7
+kg on the 4-club ones). Parts' weights (club spec tables) are never added up into the set's: their sums leave out the
+bag and covers. A default package weight below the seller's product weight is kept but flagged `flags:
+["below_stated_product"]`. A table row may carry `plausible: {field: {min, max}}`, the operator's band: a stated value
+outside it is not taken (`contradiction`, `reason: implausible_for_category`) and the default fills the field; no row
+has a band yet, and none is made up. A missing field comes from
 `category_measures.json`, the operator's table (per leaf category: low / central / high of the five fields, who
 approved it and when, the table's version), as `source: category_default`; a seller's value is never overwritten.
 No row for the category: `CategoryDefaultsMissing`, the run stops and asks the operator (values are never made
@@ -199,7 +212,123 @@ not measured), and delivery will apply its own coefficient per level. 50002788 �
 the median (central) and about the 10th / 90th percentile (low / high) of the naver-harvester's AI estimates on the
 55 fairwardgolf sets in Shopify, sets with and without a bag together (none of their values was seller-stated).
 Product sizes (not the package: kind product or unknown) are kept apart, optional.
-Confidence levels are not computed here.
+Every field carries `confidence` (the owner, 2026-11-06): 3 = stated with its kind (a net weight, a weight with
+the package, the box's sides); 2 = stated but its kind left open (a plain 중량 11.5kg: with the box or not), or bound
+by club count, or a per-piece weight times the count; 1 = the category default. Of candidates that agree, the most
+certain is taken.
+
+## Transform (collected -> prepared, per shop)
+
+The step after collection and before translation and Shopify: offline, deterministic, no AI, no English, no
+network. Korean stays Korean; each prepared product lists the Korean texts the translation stage must translate.
+
+```sh
+.venv/bin/python scripts/keep_run.py scripts/output/full-50002788    # keep the run before the next collection
+.venv/bin/python scripts/run_transform.py fairwardgolf               # every kept run -> prepared/
+```
+
+```
+scripts/output/shops/<shop>/collected/<category>-<UTC time>/   products.jsonl, images/, manifest.json (read-only)
+scripts/output/shops/<shop>/prepared/products.jsonl            one prepared product per line, rebuilt each run
+scripts/output/shops/<shop>/prepared/report.txt                ready / held counts, held products and why
+```
+
+example_99 overwrites its `products.jsonl`: a run not kept before the next collection is lost. The shop is the
+namespace of the source keys, one shop and one category per run; a product in several runs comes from the newest.
+A run is copied into `<run>.partial` and renamed when complete; only folders with a `manifest.json` are runs.
+
+**Prepared product** (`transform.Prepared`, `format: prepared/1`): `key`, `shop`, `status` (`ready` / `held`),
+`held` and `notes` (`{code, detail}`), `source` (run, line, link, channel_no, product_id, category_id), `product`
+(`title_ko`, `brand_ko`, `leaves` with tags and product type, `options` `[{name_ko, values_ko}]`, `facts`,
+`variants` `[{source_id, naver_variant_id, options_ko, price_krw, price_usd, sku, available, package}]`, `pricing`,
+`specs`, `personalization`, `addons`, `rating`, `reviews`, `images`), and `texts` `[{id, kind, ko}]`: the translation
+worklist, `id = <kind>:<sha256(ko)[:16]>`, so the same Korean text has one id (one translation) in every product.
+
+Rules (`transform.py`, each from a real case, research 2026-11-05 on 23 collected sets: on 10 the naver-harvester
+published, SKUs and prices equal on 201 of 201 variants):
+
+- **Prices**: KRW = the product's price + the variant's `extra_price` (the page's own answer; option names are not
+  parsed for money); USD = rounded up to the cent at the shop's rate; cost = price, no compare-at, not taxable.
+- **Variants**: the category's choice (`transform_shops` `paid_variants`, off by default; on for fairwardgolf
+  50002788, owner 2026-11-06), made again from the page's options (`choose_variants`): the line's own choice may
+  differ. Left-out paid variants: note `paid_variants_left_out`.
+- **Options**: the option groups but CUSTOM / SIMPLE, the observed rows only, sold-out rows kept (`available: false`);
+  an axis
+  with one value becomes a fact; one row -> one default variant; an axis about writing a review / a coupon
+  (리뷰, 후기, 쿠폰, 적립) is dropped with its discounted rows. Over 3 axes: held; over the shop's variant cap:
+  the first ones are offered (`variants_capped`, below).
+- **SKU**: the shop's prefix + 24 hex of sha256({schemaVersion, sourceId, tenantOfferKey}) (the harvester's recipe).
+- **Specs shown**: all 상품정보 rows but 상품번호, 제조일자, 이벤트, 사은품, 인증정보 (purchase-agency / KC legal text)
+  and pointers ("상세페이지 참조"); "(구매대행)" / "해외구매대행" and a bracketed importer ("일본(IRUGI SHOJI)") are
+  taken out of 원산지 (brackets inside brackets too: "중국산((주)위스트OEM)" -> "중국산"). Option names and values are
+  shown with single spaces, and without the seller's numbering ("선택1 9도SR" -> "9도SR") when every value of the
+  axis has it and the values stay different (else kept, note `option_values_duplicate`); add-on groups and names
+  without theirs ("1-1.남성 장갑"). The SKU keeps the raw tuple.
+- **Rows that are not versions**: a row asking for a delivery message (배송메세지) is dropped; a one-value axis named
+  like a hidden row (상품번호) is not a fact.
+- **Delivery**: `delivery` from the page (fee as charged, scope international / domestic, customs, lead time);
+  notes `shipping_paid` and `overseas_shipping` (the price stays the cost: the operator decides). An
+  `extra_fee_text` that is only the return fee the notice states ("18000" = 반품비용 편도 18000원) is dropped;
+  another bare number ("7000" beside a 4,000 area fee) is kept.
+- **Notes for later stages**: `option_name_placeholder` (an axis named 선택 / 선택2 / 옵션 / "옵션+...": name it from
+  its values in translation; a fact with such a label gets an empty label), `paid_addons_left_out` (how many paid
+  add-ons were not offered), `title_names_one_variant` (a word of one option value is in the title, "12종", while
+  others are sold too: the translation keeps the title to what every variant is; words that together point at part
+  of the values count, "12종" with 12종 / 9종 x 스틸 / 카본, "10.5R"; 여성 / 남성 do not when the title names both),
+  `few_pieces` ("[3PCS]" in the title or 모델명: a few clubs, not a full set), `purchase_agency`
+  (구매대행 in the specs / notice / delivery policy), `description_mentions_gifts` (이벤트 / 사은품 rows are hidden,
+  the description still promises 사은품 / 증정), `variants_capped` ("486 -> 100": more combinations than the
+  shop's cap; the first ones are offered, in stock and cheaper first, one row per option value first so every
+  value stays on sale; not held). `description_ko` and `description_images` (the seller's boilerplate out, see
+  Description; what was cut in `description_dropped`) are carried for the later stages (not in `texts` yet).
+- **Spec rows vs variants** (`spec_variants.check_specs`): a row is compared with the sold combinations on one fact
+  read the same way from both. Material is STEEL / CARBON ("남성용 SR스틸" is steel), and bare R / S values take a class
+  only when the description writes it on the whole value, "스틸(S) / 카본(R)". Club count is a stated total (12종 / 9P /
+  13PCS / 10개세트 / "4스틸") or the clubs of a full part list ("드라이버 우드 유틸 7아이언 퍼터" = 11). The composition rows 아이언개수 /
+  아이언 구성 / 풀세트구성 are one set: they follow 총클럽개수, else the fewest clubs they imply. A 풀세트구성 naming several N아이언세트 is a
+  checklist and stays product-wide. Model year is 출시 2026년형 vs XR26 / "XR 24". A row that fits no variant is dropped
+  (note `specs_fit_no_variant`). A row every variant's own value already states (스틸9P / 카본12P) is dropped (note
+  `specs_stated_by_variants`). Otherwise the row is kept with `for_ko`, the option values it fits as written (`아이언 구성`
+  -> `["12종"]`; note `specs_bound_to_variants`). Composition rows with no decidable set are dropped (note
+  `specs_composition_undecided`). Other rows whose words fit part of the values (모델명 ... 9종) get
+  `specs_name_one_variant`, printing the row as written and its own span ("모델명 26캘러웨이 풀세트 XR26 FULL SET 12PC: XR26").
+- `title_names_one_variant` (`spec_variants.title_one_variant`): the words are reported as the title writes them, in
+  title order, and words that touch are one span ("XR26", "9도SR"). A gender word counts only when every value without
+  it names the other gender. 백포함 / 백세트포함 / 캐디백포함 are the same thing. A part-list value counts as its club count, so
+  "(클럽10개)" names "드라이버 유틸 7아이언 퍼터".
+- **Description** (`description_clean.py`, research 2026-11-06 on the 40 golf sets): `clean(text, store_name,
+  promo_hidden, brand)` drops the seller's boilerplate from `description_ko` by line and sentence. A SmartEditor line
+  ending on a connective (로, 와, 의, "," ...) goes on in the next line, and the whole sentence is dropped. The rules:
+  return / exchange / delivery / customs notice blocks up to the end of their component (the empty line; 12 lines at
+  most when the text has none, note `description_policy_block_unbounded`), phone numbers with separators, TalkTalk /
+  유선 전화 / 고객센터 / 카카오톡 상담, 네이버페이 자동수거, a greeting-only line, "감사합니다", signatures ("-제이디스포츠-", "듀벨로 올림"), duties, lead
+  times ("배송은 9~14일"), 최저가 / 득템 / 안심하고 구매, store claims ("저희 ...는", "공식 온라인 대리점", "정식 수입업체") and the store's name in a
+  short sentence (off for a brand's own store), the monitor disclaimer, jump lines ("▲ 이동(상단)", "▲TOP"), and a 사은품
+  block only when the 이벤트 / 사은품 rows are hidden. Product lines that look like these stay: 그립 1회 무상 교환, 랜덤 발송, 정식통관
+  품질AS보증라벨, UPC/GTIN numbers, #5-#9, - 세트 설명 -, [안내사항], ☆ 캐디백 증정 ☆, 무상 A/S 3년 보장, - 추가선택 -. `clean_images` drops
+  description images whose decoded file name marks a seller banner (배송, 통관, 공지, 이벤트, 하단배너, foot_info, as.jpg ...;
+  proxy-smartstore links decoded); snap tiles are never cut. Notes: `description_all_boilerplate`,
+  `description_covers_several_products` (2+ in-page sections, a 모음전 page), `description_tiles_include_banners`
+  (banners baked into Naver's tiles).
+- **Text fields** -> `personalization` (label without ★ and "(필수)": `required` says it); **add-ons**: free ones
+  on sale and in stock: free ones, paid ones too with the category's `paid_addons` (`price_krw`, `price_usd`);
+  a group named (필수) / (필수선택) is `required`. Why per category: a set's photos often show the extras (bag,
+  covers, utility clubs); sold without them, a buyer takes them as part of the set (owner 2026-11-06).
+- **Reviews**: the selected reviews (video posters already photos), rating and count from Naver's summary.
+- **Held**: `collect_incomplete`, `price_unknown`, `brand_missing`, `leaf_undecided`, `no_variants`,
+  `options_unaligned` (rows that do not fit the groups), `specs_folded` (the 상품정보 list stayed folded), `axes_over_3`,
+`no_images`,
+  `images_over_50`.
+
+**Per-shop rules** (`transform_shops.py`, data): SKU prefix, KRW per USD, variant cap, and per Naver leaf category
+the shop's leaves: fairwardgolf 50002788 풀세트 by the 성별 row (여성용 -> women's sets, 남성용 -> men's, 남녀공용 ->
+both), by words in the name when the row is missing (the sold option values then add theirs: 남성 in the name,
+여성 sets among the values -> both); `paid_variants` / `paid_addons` per category,
+off by default, both on for fairwardgolf 50002788. A shop or a category without rules: `ShopRulesMissing`, the
+run stops and asks the operator.
+
+Not here (later stages): English (titles, options, specs, reviews), vendor spelling, handle, alt texts, the
+seller's description prose (images only on the sets checked), publication.
 
 ## Reviews: two ways
 
@@ -220,7 +349,8 @@ reviews.
 
 ## Examples: start here
 
-Small, runnable scripts, one topic each, in the order to read them. Start `server/run.py` first; examples 7-10 and 99 also
+Small, runnable scripts, one topic each, in the order to read them. Start `server/run.py` first; examples 7-10 and 99
+also
 needs Chrome open with the adapter (`example_01` shows `extension: connected`).
 
 | Script | Shows |
@@ -248,7 +378,8 @@ needs Chrome open with the adapter (`example_01` shows `extension: connected`).
 
 All calls go through `naver_api_client.NaverApiClient`. Typed methods, one per endpoint, return the shapes in
 `naver_types.py`: `health()`, `search(query, **filters)`, `count(...)`, `product_details(product)`,
-`product_specs(product, query)`, `reviews(product, sort, max_page, media)` (pages), `selected_reviews(product, count)`, `store_details(store)`, `store_products(store, list, period)`,
+`product_specs(product, query)`, `reviews(product, sort, max_page, media)` (pages), `selected_reviews(product,
+count)`, `store_details(store)`, `store_products(store, list, period)`,
 `catalog_reviews(catalog)`, `categories(category)`, `keywords_rank(category, **window)` (pages),
 `keyword_trend(keyword, category, **window)`, `category_trend(category, **window)`, `listing(query, max_batches)`.
 The generic `get(path, **params)` / `pages(path, **params)` reach any route. Any non-200 raises
@@ -400,30 +531,15 @@ still returns its rows. Contract: server/docs/ENDPOINTS.md "Listing jobs".
 
 ## Shopify roadmap
 
-This is a design note. The only code so far is the read-only check of what a store already has
-(`shopify_catalog.py`, see The listing screen and the shop check).
+This is a design note. The code so far: the read-only check of what a store already has (`shopify_catalog.py`)
+and the transform to prepared products (see Transform). Translation reads `prepared/products.jsonl` (`texts`) and
+keeps `shops/<shop>/translations.jsonl` by text id; publication joins the two.
 
-The pipeline: harvest JSONL (`output/<run>/products.jsonl`), then map each
-record to a Shopify product, then export.
-
-Draft mapping from a `/products/details` record:
-
-| Shopify | Naver (`/products/details`) |
-|---|---|
-| title | `name` |
-| body_html | `description` |
-| vendor | `store.name` (or `brand`) |
-| images | `images` |
-| options / variants | `/products/specs` `options`: `option_groups` / `variants` (since 2026-11-02; `choose_variants`) |
-| price | `pricing` (KRW; conversion TBD) |
-| tags | `category`, `tags` |
-
-Open decisions:
-
-- Export through a CSV import or through the Admin GraphQL `productSet`.
-- Image hosting: hotlink Naver's CDN or re-upload.
-- Currency and price conversion.
-- Whether options beyond Shopify's variant limits are split or dropped.
+The pipeline: collection (example_99) -> kept runs (`keep_run.py`) -> prepared products (`run_transform.py`:
+prices in USD, options, SKUs, leaves and tags, spec rows, text fields, free add-ons, reviews, photo files) ->
+translations by text id -> publication. Settled in the transform: the currency rule, the variant cap (over it:
+held), the photos (re-uploaded WebP files, not Naver's CDN). Open: publication through the Admin GraphQL `productSet`
+(the harvester's way) or a CSV import; folding products over the variant cap (2 of 23 sets checked).
 
 Credentials: a store app's client id + secret file per store, its path in env as `shop_stores.py` names it
 (`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`), next to the store's domain, shop id, API version and namespace there; tokens are
@@ -432,6 +548,5 @@ check as it is. They are never committed. When publishing,
 write the same source key (`<namespace>.source_offer_id` = `<namespace>:naver:<channel_no>:<product_id>`) and check
 for it once more right before (a product published after the 5-minute snapshot).
 
-When the work starts, add `scripts/shopify/` as a package (mapper + exporter)
-that reads the harvest JSONL. Until then it stays this section, with no stub
-code.
+When publication starts, add it as a flat module (`publish_shopify.py`) reading the prepared products and the
+translations, reusing `shopify_catalog.Credentials` and the source-key check.

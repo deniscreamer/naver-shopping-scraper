@@ -1,0 +1,359 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:101231454:10302181901",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "shipping_paid",
+   "detail": "PAID 8000 KRW"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/teeup/products/10302181901",
+  "channel_no": "101231454",
+  "product_id": "10302181901",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "그라파이트/왼손/ AS가능/ 테일러메이드/ 풀세트 골프채 좌타 남성 남자 R강도 레프티 골프",
+  "brand_ko": "테일러메이드",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "10302181901",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 1849000,
+    "price_usd": "1849.00",
+    "sku": "FW-d56aa3855bc0816baec86b78",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   }
+  ],
+  "pricing": {
+   "base_krw": 1849000,
+   "original_krw": 1849000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "테일러메이드"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "테일러메이드"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "테일러메이드"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "미국산"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "왼손용"
+   }
+  ],
+  "personalization": [],
+  "addons": [
+   {
+    "group_ko": "테러메이드골프백",
+    "name_ko": "블랙",
+    "required": false,
+    "price_krw": 190000,
+    "price_usd": "190.00"
+   },
+   {
+    "group_ko": "테러메이드골프백",
+    "name_ko": "화이트블랙",
+    "required": false,
+    "price_krw": 190000,
+    "price_usd": "190.00"
+   },
+   {
+    "group_ko": "테러메이드골프백",
+    "name_ko": "화이트네이비레드",
+    "required": false,
+    "price_krw": 190000,
+    "price_usd": "190.00"
+   }
+  ],
+  "rating": {
+   "value": 5.0,
+   "count": 3
+  },
+  "reviews": [
+   {
+    "id": "4973131447",
+    "score": 5,
+    "text_ko": "가격적으로도 기능적으로도  만족합니다",
+    "created_at": "2026-05-10T11:45:56Z",
+    "writer": "ktop****",
+    "photos": [
+     "collected/50002788-fixtures/images/10302181901/fairwardgolf-review-image-3b5c58c9a113b221.webp",
+     "collected/50002788-fixtures/images/10302181901/fairwardgolf-review-image-27f0372b9bd461e3.webp",
+     "collected/50002788-fixtures/images/10302181901/fairwardgolf-review-image-6fb15eea9583d21e.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4679811297",
+    "score": 5,
+    "text_ko": "잘 사용하고 있습니다.",
+    "created_at": "2025-03-12T06:11:56Z",
+    "writer": "sunh******",
+    "photos": [
+     "collected/50002788-fixtures/images/10302181901/fairwardgolf-review-image-c0223ed40a02027d.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4660244662",
+    "score": 5,
+    "text_ko": "왼손채 풀세트로 잘 구했습니다",
+    "created_at": "2025-02-12T01:45:00Z",
+    "writer": "sunh******",
+    "photos": [
+     "collected/50002788-fixtures/images/10302181901/fairwardgolf-review-image-d58d5f0b027748ae.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/10302181901/fairwardgolf-10302181901-001-a324e87218004bc0.webp",
+    "sha256": "a324e87218004bc03678dd2bb2ecf51e73258b50eb4b7487806814ec4f4b98e0",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "PAID",
+   "base_fee": 8000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "policy_text": null,
+   "lead_time": {
+    "seller_average_days": 0.5,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": "8000"
+  },
+  "description_ko": "NEW 왼손 테일러메이드 풀세트\n(그라파이트 )\n(정식통관및 품질AS보증라벨 부착)\n제품구성\n1> 드라이버: 테일러메이드 RBZ 스피드 LITE 10.5도-R강도\n2> 우드: 테일러메이드 RBZ 스피드 LITE 15도 (3번) 우드-R강도\n3> 유틸리티: 테일러메이드 RBZ 스피드 LITE 22도(4번) 유틸-R강도\n(4번/5번 아이언 대용으로 사용하기 좋은 제품)\n4> 아이언: 테일러메이드 RBZ 스피드 LITE 그라파이트 아이언 -R강도(=i50)\n6,7,8,9,P,S\n5> 퍼터: 테일러메이드 MO-32 퍼터\n본 제품은 왼손용 풀세트입니다.\n치기 편한 제품은 많은 골퍼분들이 사용하는 테일러메이드 제품입니다.\n캐디백구조의 아이언은 관용성이 좋아 방향성 잘 잡아줍니다.\n(실 제 제 품 사 진)",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260421_163/1776737300104Qcz0e_JPEG/4fdaaf9144718ff34cb08dae979c9918e17a82676c8a08e6e91dbcdb23f6.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "phone",
+    "text": "제품 상담 문의 010 4667 2057"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:ec19d55cc47cd05b",
+   "kind": "title",
+   "ko": "그라파이트/왼손/ AS가능/ 테일러메이드/ 풀세트 골프채 좌타 남성 남자 R강도 레프티 골프"
+  },
+  {
+   "id": "brand:18d4028e5665dc1d",
+   "kind": "brand",
+   "ko": "테일러메이드"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:18d4028e5665dc1d",
+   "kind": "spec_value",
+   "ko": "테일러메이드"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:57b26fd6c0138455",
+   "kind": "spec_value",
+   "ko": "미국산"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:9c68b4648cbe18e2",
+   "kind": "spec_value",
+   "ko": "왼손용"
+  },
+  {
+   "id": "addon_group:d07d3fa2f5fa6dba",
+   "kind": "addon_group",
+   "ko": "테러메이드골프백"
+  },
+  {
+   "id": "addon_name:91f171f68356ec23",
+   "kind": "addon_name",
+   "ko": "블랙"
+  },
+  {
+   "id": "addon_name:e008b7a8bfa43c3a",
+   "kind": "addon_name",
+   "ko": "화이트블랙"
+  },
+  {
+   "id": "addon_name:222c3ef329d8d1d3",
+   "kind": "addon_name",
+   "ko": "화이트네이비레드"
+  },
+  {
+   "id": "review:c2d1cbf18a67067b",
+   "kind": "review",
+   "ko": "가격적으로도 기능적으로도  만족합니다"
+  },
+  {
+   "id": "review:284861dbd5ead421",
+   "kind": "review",
+   "ko": "잘 사용하고 있습니다."
+  },
+  {
+   "id": "review:667adfa813d9ce20",
+   "kind": "review",
+   "ko": "왼손채 풀세트로 잘 구했습니다"
+  }
+ ]
+}

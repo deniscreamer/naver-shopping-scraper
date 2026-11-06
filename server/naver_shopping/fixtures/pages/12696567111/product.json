@@ -1,0 +1,458 @@
+{
+ "id": "12696567111",
+ "channelServiceType": "STOREFARM",
+ "channelProductType": "SINGLE",
+ "channelProductSupplyType": "OWNER",
+ "channelProductStatusType": "NORMAL",
+ "channelProductDisplayStatusType": "ON",
+ "category": {
+  "categoryId": "50002788",
+  "categoryName": "풀세트",
+  "category1Id": "50000007",
+  "category2Id": "50000029",
+  "category3Id": "50001102",
+  "category4Id": "50002788",
+  "category1Name": "스포츠/레저",
+  "category2Name": "골프",
+  "category3Name": "골프클럽",
+  "category4Name": "풀세트",
+  "wholeCategoryId": "50000007>50000029>50001102>50002788",
+  "wholeCategoryName": "스포츠/레저>골프>골프클럽>풀세트",
+  "categoryLevel": 4,
+  "lastLevel": true,
+  "sortOrder": 10,
+  "validCategory": true,
+  "receiptIssue": true,
+  "exceptionalCategoryTypes": [
+   "FREE_RETURN_INSURANCE",
+   "REGULAR_SUBSCRIPTION",
+   "MANUFACTURE_DEFINE_NO",
+   "RENTAL_SUBSCRIPTION"
+  ],
+  "pointAccumulationYn": false
+ },
+ "name": "(당일퀵) 캘러웨이 XR26 남성 풀세트 백포함 캘러웨이코리아 2026",
+ "productUrl": "https://smartstore.naver.com/main/products/12696567111",
+ "mobileProductUrl": "https://m.smartstore.naver.com/main/products/12696567111",
+ "storeKeepExclusiveProduct": false,
+ "best": false,
+ "orderRequestUsable": false,
+ "channelProductAttributes": [],
+ "productNo": "12639506238",
+ "salePrice": 1590000,
+ "dispSalePrice": 1590000,
+ "stockQuantity": 1004,
+ "saleType": "NEW",
+ "excludeAdminDiscount": false,
+ "payExposure": true,
+ "productStatusType": "SALE",
+ "statusType": "SALE",
+ "authenticationType": "NORMAL",
+ "itselfProductionProductYn": false,
+ "afterServiceInfo": {
+  "afterServiceTelephoneNumber": "********",
+  "afterServiceGuideContent": "********"
+ },
+ "originAreaInfo": {
+  "originAreaType": "IMPORT",
+  "content": "중국산(중국(캘러웨이코리아정품))",
+  "originAreaCode": "0200037",
+  "wholeOriginAreaName": "수입산:아시아>중국",
+  "importer": "중국(캘러웨이코리아정품)",
+  "plural": false
+ },
+ "sellerCodeInfo": {
+  "sellerManagementCode": "9570"
+ },
+ "optionUsable": true,
+ "options": [
+  {
+   "id": 11532080666,
+   "optionType": "COMBINATION",
+   "groupName": "옵션+아이언커버.하프백"
+  }
+ ],
+ "optionCombinations": [
+  {
+   "id": 53645098363,
+   "optionName1": "XR26 남성 풀세트 백포함",
+   "stockQuantity": 988,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2025-11-17T06:13:15.375+00:00"
+  },
+  {
+   "id": 60133059207,
+   "optionName1": "(추가할인) XR 24 백세트포함",
+   "stockQuantity": 3,
+   "price": -200000,
+   "regOrder": 1,
+   "registerDate": "2026-09-21T08:25:12.763+00:00"
+  },
+  {
+   "id": 60133059208,
+   "optionName1": "(추가할인) X HOT 23 백세트포함",
+   "stockQuantity": 3,
+   "price": -100000,
+   "regOrder": 2,
+   "registerDate": "2026-09-21T08:25:12.764+00:00"
+  },
+  {
+   "id": 60208104775,
+   "optionName1": "(추가할인) X HOT 21 캐디백포함",
+   "stockQuantity": 10,
+   "price": -400000,
+   "regOrder": 3,
+   "registerDate": "2026-09-29T05:16:14.819+00:00"
+  }
+ ],
+ "optionStandards": [],
+ "supplementProductUsable": false,
+ "supplementProducts": [],
+ "customMadeInfo": {
+  "customMade": false
+ },
+ "manufactureDate": "2025-11-16T15:00:00.000+00:00",
+ "taxType": "TAX",
+ "certification": false,
+ "certificationTargetExcludeContent": {
+  "kcCertifiedProductExclusionYn": true,
+  "kcCertifiedProductExclusionType": "TRUE"
+ },
+ "minorPurchasable": true,
+ "productInfoProvidedNoticeView": {
+  "basic": {
+   "품명 / 모델명": "26캘러웨이 풀세트 XR26 FULL SET 12PC / 26캘러웨이 풀세트 XR26 FULL SET 12PC",
+   "KC 인증정보": "제품 상세설명 참조",
+   "크기": "제품 상세설명 참조",
+   "중량": "제품 상세설명 참조",
+   "색상": "블랙",
+   "재질": "제품 상세설명 참조",
+   "제품구성": "제품 상세설명 참조",
+   "동일 모델의 출시연월": "제품상세설명참조",
+   "제조자(사)": "캘러웨이",
+   "제조국": "중국산(중국(캘러웨이코리아정품))",
+   "상품별 세부사양": "제품 상세설명 참조",
+   "품질보증기준": "관련법 및 소비자분쟁해결 규정에 따름 / 브랜드에 따라 상이하며 3년~1년",
+   "A/S 책임자와 전화번호": "********"
+  },
+  "additional": {
+   "재화등의 배송방법에 관한 정보": "택배등",
+   "주문 이후 예상되는 배송기간": "대금 지급일로부터 3일 이내에 발송",
+   "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보": "편도 4000원 (최초 배송비 무료인 경우 8000원 부과)",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+   "재화등의 교환·반품·보증 조건 및 품질보증기준": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "재화등의 A/S 관련 전화번호": "********",
+   "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+   "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "거래에 관한 약관의 내용 또는 확인할 수 있는 방법": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다."
+  }
+ },
+ "productDeliveryInfo": {
+  "deliveryFeeType": "FREE",
+  "deliveryMethodTypes": [
+   "DELIVERY",
+   "VISIT_RECEIPT",
+   "QUICK_SERVICE"
+  ],
+  "baseFee": 0,
+  "visitAddressId": 101106279,
+  "quickServiceArea": "서울(전지역)",
+  "installationFee": false,
+  "deliveryBundleGroup": {
+   "id": 7687077,
+   "deliveryFeeChargeMethodType": "MIN",
+   "deliveryAreaType": "AREA_2",
+   "area2ExtraFee": 5000
+  },
+  "deliveryFeePolicyText": "제주,도서지역 추가 5,000원",
+  "deliveryAttributeType": "NORMAL",
+  "isCustomProductAfterOrder": false,
+  "todayDelivery": false,
+  "deliveryCompany": {
+   "id": "KGB",
+   "name": "로젠택배"
+  }
+ },
+ "claimDeliveryInfo": {
+  "returnDeliveryCompanyPriority": "PRIMARY",
+  "deliveryCompanyName": "로젠택배",
+  "deliveryCompanyCode": "KGB",
+  "naverPayAppointment": false,
+  "returnDeliveryFee": 4000,
+  "exchangeDeliveryFee": 8000,
+  "shippingAddressId": 101106279,
+  "returnAddressId": 101106279,
+  "shippingAddress": "경기도 하남시 감일남로 33 1층 바이셀골프 (우 : 12993) ",
+  "returnAddress": "경기도 하남시 감일남로 33 1층 바이셀골프 (우 : 12993) ",
+  "overseasShipping": false,
+  "freeReturnInsurance": false,
+  "contractId": 2025102810074700
+ },
+ "isCultureCostIncomeDeduction": false,
+ "isRestrictCart": false,
+ "naverGuaranteed": false,
+ "newShoppingExposureYn": true,
+ "benefitsView": {
+  "discountedSalePrice": 1449900,
+  "dispDiscountedSalePrice": 1449900,
+  "sellerImmediateDiscountAmount": 140100,
+  "managerImmediateDiscountAmount": 0,
+  "specialDiscountAmount": {},
+  "discountedRatio": 8,
+  "dispDiscountedRatio": 8,
+  "sellerPurchasePoint": 0,
+  "sellerCustomerManagementPoint": 0,
+  "managerPurchasePoint": 14499,
+  "managerPurchaseExtraPoint": 0,
+  "managerPaymoneyAccumulatePoint": 21748,
+  "managerBankbookAccumulatePoint": 7249,
+  "managerArrivalGuaranteePoint": 0,
+  "managerMembershipArrivalGuaranteePoint": 0,
+  "generalPurchaseReviewPoint": 0,
+  "premiumPurchaseReviewPoint": 0,
+  "managerGeneralPurchaseReviewPoint": 50,
+  "managerPremiumPurchaseReviewPoint": 150,
+  "textReviewPoint": 0,
+  "photoVideoReviewPoint": 0,
+  "afterUseTextReviewPoint": 0,
+  "afterUsePhotoVideoReviewPoint": 0,
+  "storeMemberReviewPoint": 0,
+  "managerTextReviewPoint": 50,
+  "managerPhotoVideoReviewPoint": 150,
+  "managerAfterUseTextReviewPoint": 50,
+  "managerAfterUsePhotoVideoReviewPoint": 150,
+  "givePresent": true
+ },
+ "sellerDeliveryLeadTimes": [
+  {
+   "rangeNumberText": "1",
+   "rangeText": "일 이내",
+   "leadTimeCount": 156,
+   "leadTimePercent": 55
+  },
+  {
+   "rangeNumberText": "2",
+   "rangeText": "일 이내",
+   "leadTimeCount": 104,
+   "leadTimePercent": 37
+  },
+  {
+   "rangeNumberText": "3",
+   "rangeText": "일 이내",
+   "leadTimeCount": 16,
+   "leadTimePercent": 6
+  },
+  {
+   "rangeNumberText": "4",
+   "rangeText": "일 이상",
+   "leadTimeCount": 8,
+   "leadTimePercent": 3
+  }
+ ],
+ "averageDeliveryLeadTime": {
+  "productAverageDeliveryLeadTime": 4,
+  "sellerAverageDeliveryLeadTime": 1.5140845
+ },
+ "sellerDailyDeliveryLeadTimes": {
+  "leadTimeCount": [
+   14,
+   142,
+   104,
+   16,
+   8,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "leadTimeViewType": "NORMAL_DELIVERY"
+ },
+ "detailContents": {
+  "detailContentText": "캘러웨이 XR 26 풀세트 남성용 ▲ 이동(상단) 캘러웨이 XR 24 풀세트 남성용 ▲ 이동(상단) 캘러웨이 엑스 핫 23 남성용 ▲ 이동(상단) 캘러웨이 엑스 핫 21 남성용 ▲ 이동(상단)",
+  "excessDetailContentText": false,
+  "editorType": "NONE"
+ },
+ "useExternalStock": false,
+ "dispName": "(당일퀵) 캘러웨이 XR26 남성 풀세트 백포함 캘러웨이코리아 2026",
+ "adultAuthorizationType": "NOT_LOGIN",
+ "authorizationDisplay": "NORMAL",
+ "galleryImages": [
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20251117_197/1763359987895qvPds_JPEG/97492913027056834_68038959.jpg",
+   "width": 700,
+   "height": 700,
+   "imageType": "REPRESENTATIVE"
+  },
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20251117_194/1763359989270HYFC2_JPEG/32475871381946936_1101068234.jpg",
+   "width": 700,
+   "height": 700,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 2,
+   "url": "https://shop-phinf.pstatic.net/20251117_297/1763359990637l1wmn_JPEG/576773467554000_2068693344.jpg",
+   "width": 700,
+   "height": 700,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 3,
+   "url": "https://shop-phinf.pstatic.net/20251117_154/1763359992007vtkiE_JPEG/16286053544394891_2068739219.jpg",
+   "width": 700,
+   "height": 700,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 4,
+   "url": "https://shop-phinf.pstatic.net/20251117_205/1763359993395626RW_JPEG/576776225621105_151440103.jpg",
+   "width": 700,
+   "height": 700,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 5,
+   "url": "https://shop-phinf.pstatic.net/20251117_292/1763359994738T90bt_JPEG/90000086266126404_1127412275.jpg",
+   "width": 700,
+   "height": 700,
+   "imageType": "OPTIONAL"
+  }
+ ],
+ "soldout": false,
+ "viewAttributes": {
+  "상품상태": "신상품",
+  "상품번호": "12696567111",
+  "제조사": "캘러웨이",
+  "브랜드": "캘러웨이",
+  "모델명": "26캘러웨이 풀세트 XR26 FULL SET 12PC",
+  "원산지": "중국산(중국(캘러웨이코리아정품))",
+  "제조일자": "2025.11.17."
+ },
+ "additionalAttributes": {
+  "영수증발급": "신용카드전표, 현금영수증발급",
+  "A/S 안내": [
+   "********",
+   "********"
+  ]
+ },
+ "detailAttributes": {
+  "종류": "풀세트",
+  "성별": "남성용",
+  "사용방향": "오른손용",
+  "출시": "2026년형"
+ },
+ "eCouponCategory": false,
+ "cultureCategory": false,
+ "textOptions": [],
+ "simpleOptions": [],
+ "combinationOptions": [
+  {
+   "groupName": "옵션+아이언커버.하프백",
+   "options": [
+    {
+     "id": 53645098363,
+     "optionName1": "XR26 남성 풀세트 백포함",
+     "stockQuantity": 988,
+     "price": 0,
+     "regOrder": 0,
+     "registerDate": "2025-11-17T06:13:15.375+00:00"
+    },
+    {
+     "id": 60133059207,
+     "optionName1": "(추가할인) XR 24 백세트포함",
+     "stockQuantity": 3,
+     "price": -200000,
+     "regOrder": 1,
+     "registerDate": "2026-09-21T08:25:12.763+00:00"
+    },
+    {
+     "id": 60133059208,
+     "optionName1": "(추가할인) X HOT 23 백세트포함",
+     "stockQuantity": 3,
+     "price": -100000,
+     "regOrder": 2,
+     "registerDate": "2026-09-21T08:25:12.764+00:00"
+    },
+    {
+     "id": 60208104775,
+     "optionName1": "(추가할인) X HOT 21 캐디백포함",
+     "stockQuantity": 10,
+     "price": -400000,
+     "regOrder": 3,
+     "registerDate": "2026-09-29T05:16:14.819+00:00"
+    }
+   ],
+   "checkedName": null,
+   "checkedIds": null,
+   "price": 0,
+   "isLastDepth": true
+  }
+ ],
+ "standardOptions": [],
+ "standardCombinations": [
+  {
+   "id": 53645098363,
+   "optionName1": "XR26 남성 풀세트 백포함",
+   "stockQuantity": 988,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2025-11-17T06:13:15.375+00:00",
+   "title": "_XR26 남성 풀세트 백포함____"
+  },
+  {
+   "id": 60133059207,
+   "optionName1": "(추가할인) XR 24 백세트포함",
+   "stockQuantity": 3,
+   "price": -200000,
+   "regOrder": 1,
+   "registerDate": "2026-09-21T08:25:12.763+00:00",
+   "title": "_(추가할인) XR 24 백세트포함____"
+  },
+  {
+   "id": 60133059208,
+   "optionName1": "(추가할인) X HOT 23 백세트포함",
+   "stockQuantity": 3,
+   "price": -100000,
+   "regOrder": 2,
+   "registerDate": "2026-09-21T08:25:12.764+00:00",
+   "title": "_(추가할인) X HOT 23 백세트포함____"
+  },
+  {
+   "id": 60208104775,
+   "optionName1": "(추가할인) X HOT 21 캐디백포함",
+   "stockQuantity": 10,
+   "price": -400000,
+   "regOrder": 3,
+   "registerDate": "2026-09-29T05:16:14.819+00:00",
+   "title": "_(추가할인) X HOT 21 캐디백포함____"
+  }
+ ],
+ "supplements": [],
+ "deliveryText": "제주,도서지역 추가 5,000원",
+ "deliveryMethodType": {
+  "code": 1,
+  "name": "택배",
+  "description": "택배",
+  "etc": null,
+  "naverPayCode": "DELIVERY"
+ },
+ "discountedSalePrice": 1449900,
+ "mobileDiscountRatio": 8,
+ "derived": {
+  "productType": "DEFAULT"
+ },
+ "hopeDelivery": null,
+ "commentCount": 5,
+ "isPayMember": false,
+ "arrivalGuarantee": false,
+ "groupId": null,
+ "groupEpId": null,
+ "simpleProductAffiliateYn": false,
+ "disableAdditionalApi": false
+}

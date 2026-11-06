@@ -53,8 +53,10 @@ Run from the repo root.
 python -m venv .venv
 .venv/bin/pip install -r server/requirements.txt -r scripts/requirements.txt
 .venv/bin/python server/run.py              # http://localhost:8000, PORT=... to change
-.venv/bin/python -m pytest -q               # offline suite, 232 tests
+.venv/bin/python -m pytest -q               # offline suite, 401 tests
 .venv/bin/python -m pytest scripts -q       # scripts/ client tests, offline, separate suite
+UPDATE_GOLDEN=1 .venv/bin/python -m pytest server/naver_shopping/test_pages.py scripts/test_prepared_golden.py
+                                            # after a deliberate parser / transform change: read the diff (R-TEST-5)
 ```
 
 Live check (server running, uses the network): `curl http://localhost:8000/health`

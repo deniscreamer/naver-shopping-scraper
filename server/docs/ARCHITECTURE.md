@@ -17,7 +17,7 @@ All paths are relative to `server/`, which is the import root (section 10).
 |---|---|
 | `run.py` | Entry point. cheroot WSGI server on `0.0.0.0:config.PORT`, 16 threads, serving bottle's default app. |
 | `main.py` | In-process demo: calls `naver_shopping.api` directly and writes `output/*.json` relative to the CWD. |
-| `routes.py` | Mounts the 13 endpoints (`routes.ENDPOINTS`) at `/path` and `/naver-shopping/path`, plus the listing job routes (`routes.LISTING_PATHS`, both prefixes) and unprefixed `/` and `/health` (with the extension status). `routes.call` validates, runs, maps errors to HTTP. `routes.paginate` flattens pagination. |
+| `routes.py` | Mounts the 14 endpoints (`routes.ENDPOINTS`) at `/path` and `/naver-shopping/path`, plus the listing job routes (`routes.LISTING_PATHS`, both prefixes) and unprefixed `/` and `/health` (with the extension status). `routes.call` validates, runs, maps errors to HTTP. `routes.paginate` flattens pagination. |
 | `schema_fields.py` | marshmallow base schema (`unknown=RAISE`), `load_query`, field types (`RefField`, `Flag`, page fields). |
 | `scraper_errors.py` | Base taxonomy: `UpstreamError`, `Blocked(UpstreamError)`, `BadRequest`, `NotFound`. |
 | `cache.py` | In-process TTL cache, `cached_call`. |
@@ -84,7 +84,8 @@ R-NAVER-1, R-NAVER-2.
 3. `api.products_search(**data)` -> `cache.cached_call("naver_shopping.search", data, api._search, SEARCH_CACHE)`.
    A hit returns a deep copy.
 4. On a miss, `api._search` builds filters (`api._filters`: price bounds,
-   category prefix = two-digit tree depth from DataLab via `api._category_filter`, boolean flags) and calls `fetch.fetch_search`.
+   category prefix = two-digit tree depth from DataLab via `api._category_filter`, boolean flags) and calls
+`fetch.fetch_search`.
 5. `fetch._portal_json` runs `once()` under `fetch._retrying`:
    - `fetch._session()` returns this thread's curl_cffi session, creating it
      on first use (proxy, Accept-Language, widget ids, synthetic NNB cookie);
@@ -419,7 +420,9 @@ primary record, with dates; read it before changing the behaviour.
   backend answers the same filters directly. -> ENDPOINTS.md "Reviews: two ways".
 - A product with no reviews has no review summary; the base record's count is 0. -> `api.product_reviews_selected`
   comment.
-- A search card clicked at its centre can open the store instead of the product. -> `ext_product.read_page` comment.
+- A search card clicked at its centre can open the store instead of the product: the product link is a layer over
+  the whole card and the store's name link (`inflow/outlink`, then Naver's login page) lies above it under the photo
+  (seen 2026-11-05), so the card's photo is clicked. -> `ext_product._card` docstring.
 - `images` from simple-products are the page's gallery (same files, same count) as original-file links; `?type=`
   renditions are re-encodes (`m10000_10000_no_rotate`) or 1000 px resizes (`o1000`, upscaling small photos). ->
   `parsers.parse_simple_product` comment, `scripts/naver_images.py` docstring.
@@ -435,6 +438,36 @@ primary record, with dates; read it before changing the behaviour.
   with `<label for=id>... (필수)</label>`; the purchase box renders twice (seen 2026-11-02). -> `pdp.text_fields`.
 - A search.shopping listing card carries its store's `channelNo` (seen 2026-11-05); listing rows give it as
   `store.channel_no`, the store half of our shops' source key. -> `composite.listing_row` comment.
+
+- A SmartEditor ONE description has no snapImages; its photos are `img.se-image-resource` with the real link in
+  `data-src` (seen 2026-11-05; inline ones `se-inline-image-resource`, editor NONE bodies plain `<img>`). ->
+`parsers._body_images` comment.
+- A seller's regional fee can be text only, `deliveryInfo.differentialFeeByArea` ("제주 도서산간 10,000", "8000"),
+  with `area2ExtraFee` / `area3ExtraFee` empty (seen 2026-11-06, 3 of 40 sets). -> `parsers._delivery` comment.
+- The product page's own answer can state a different delivery fee than the store backend (2026-11-05: 99,000 KRW
+  per unit, overseas, where the backend said free); `claimDeliveryInfo.overseasShipping` marks overseas shipping.
+  -> `parsers.parse_page_delivery` docstring. Its `averageDeliveryLeadTime` gives the store's average days; the
+  purchase box shows "오늘출발 16:00 마감", "평균 2일 이내 도착 확률 96%", "… 발송 예정", "해외직배송" as text nodes;
+  "관부가세 별도" shows on domestic sets too (not read). -> `pdp.delivery_promise` comment.
+- Since 2026-11-06 sets sent the same day show "오늘출발" alone, then "14:00 까지 결제 시 오늘 바로 발송" and a dated
+  "11.11.(수) 도착 확률 98%"; the answer's `thisDayDispatchBasisTime` ("05:00:00.000+0000", UTC) is the same cutoff.
+  -> `pdp.delivery_promise` comment, `parsers._dispatch_kst`.
+- Description cards (2026-11-06, 86 saved products): Naver's own detailContentText leaves out exactly the SmartEditor
+  ONE components se-oglink, se-placesMap and se-material (12 of 12 with text); we skip them in text and images too
+  (`pdp._SKIP_CLASSES`, `parsers._CARD_CLASSES`).
+- Sellers' weight / size text (seen 2026-11-06 on 40 golf sets and 86 saved pages, `naver_shopping/measures.py`
+  comments): golfzonmarket-style iron-set notices give one reference club's figures ("7번 기준 36인치 , 332g", sometimes in
+  the 크기 row), club spec tables are td-only with a column header row (6774818843, 13049116377), "총중량" in a club spec
+  is one club's total (13777887875), and a notice 중량 may list one weight per club count (6630856593 "약11.5kg / 4.7kg"
+  for the 12- and 4-club variants).
+- Spec rows vs options (seen 2026-11-06, 40 golf sets of 50002788): 상품정보 rows are product-wide, but on a set sold in
+  several versions they often describe one version (아이언샤프트소재 그라파이트/카본 with "남성용 SR스틸", 총클럽개수 12개 with 9종 / 12종, 아이언 구성
+  of the 4-club set, 출시 2026년형 with XR26 / XR 24), and sometimes none (총클럽개수 12개 where every part list counts 11); the
+  transform (scripts/spec_variants.py) reads one fact from row and values and drops or binds the row.
+
+- A product page Naver cannot serve opens `shopv.pstatic.net/web/maintenance/internal-error.html` (seen 2026-11-06,
+  twice on one product); the adapter may not read that host. It is answered as 404 (unavailable), not a wall. ->
+  `ext_product.read_page` comment.
 
 A new upstream fact gets a dated comment at the code that handles it and one
 line here (R-NAVER-4).

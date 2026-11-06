@@ -1,0 +1,2261 @@
+{
+ "key": "fairwardgolf:naver:101343636:6774818843",
+ "listing": {
+  "product_id": "6774818843",
+  "nv_mid": "84319319165",
+  "link": "https://smartstore.naver.com/du-valeur/products/6774818843",
+  "name": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트",
+  "store": {
+   "name": "듀벨로",
+   "slug": "du-valeur",
+   "link": "https://smartstore.naver.com/du-valeur",
+   "channel_no": "101343636",
+   "grade": "SEED",
+   "is_brand_store": false
+  },
+  "pricing": {
+   "sale_price": 700000,
+   "discounted_price": 699000,
+   "discount_ratio": 0,
+   "currency": "KRW"
+  },
+  "category_id": "50002788",
+  "reviews": {
+   "count": 151,
+   "average_score": 4.78
+  },
+  "stock_quantity": 19985,
+  "image": "https://shopping-phinf.pstatic.net/main_8431931/84319319165.jpg",
+  "is_ad": false,
+  "query": "남성 골프채 풀세트",
+  "batch": 1,
+  "seen_at": "2026-11-06T04:57:14+00:00"
+ },
+ "details": {
+  "id": "6774818843",
+  "origin_product_id": "6742569098",
+  "name": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트",
+  "link": "https://smartstore.naver.com/du-valeur/products/6774818843",
+  "catalog_id": "84319319165",
+  "catalog_link": "https://search.shopping.naver.com/catalog/84319319165",
+  "status": "SALE",
+  "sale_type": "NEW",
+  "is_displayed": true,
+  "pricing": {
+   "sale_price": 700000,
+   "discounted_price": 699000,
+   "discount_ratio": 0,
+   "seller_discount": 1000,
+   "manager_discount": 0,
+   "currency": "KRW",
+   "points": {
+    "purchase": 6990,
+    "text_review": 100,
+    "photo_video_review": 200,
+    "after_use_text_review": 200,
+    "after_use_photo_video_review": 300,
+    "store_member_review": 200
+   }
+  },
+  "stock_quantity": 19985,
+  "has_options": true,
+  "has_supplements": false,
+  "images": [
+   "https://shop-phinf.pstatic.net/20220609_49/1654749590651XNKNV_JPEG/55885418467305137_1495947105.jpg",
+   "https://shop-phinf.pstatic.net/20220609_94/1654749595418czrxD_JPEG/55885422458421226_1905936642.jpg",
+   "https://shop-phinf.pstatic.net/20220609_186/16547495998361eOPb_JPEG/55885427661259782_1983046580.jpg",
+   "https://shop-phinf.pstatic.net/20220609_93/1654749604801TH96w_JPEG/55885432244291308_1591461255.jpg",
+   "https://shop-phinf.pstatic.net/20220609_84/16547496811050csEr_JPEG/55885508934780266_1102489280.jpg",
+   "https://shop-phinf.pstatic.net/20220609_23/16547496752134UKkg_JPEG/55885503042001618_216508058.jpg"
+  ],
+  "category": {
+   "id": "50002788",
+   "name": "풀세트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "풀세트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002788"
+   ]
+  },
+  "brand": "캘러웨이",
+  "brand_id": null,
+  "manufacturer": "캘러웨이",
+  "model_name": "캘러웨이 WARBIRD",
+  "tags": [
+   "골프채풀세트",
+   "골프풀세트",
+   "남성골프채",
+   "골프입문",
+   "골프초보",
+   "골프연습채",
+   "골프연습용",
+   "묵직한느낌",
+   "부드러운타구감",
+   "골프세트"
+  ],
+  "page_title": null,
+  "reviews": {
+   "count": 151,
+   "average_score": 4.78,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 5,
+    "4": 23,
+    "5": 123
+   },
+   "text_count": 66,
+   "photo_count": 84,
+   "video_count": 1,
+   "after_use_count": 37,
+   "best_count": 1,
+   "recent": null,
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 53,
+       "percent": 35
+      },
+      {
+       "name": "최고예요",
+       "count": 98,
+       "percent": 65
+      }
+     ]
+    },
+    {
+     "question": "디자인은 어떤가요?",
+     "answers": [
+      {
+       "name": "별로예요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "화면과 같아요",
+       "count": 53,
+       "percent": 35
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 98,
+       "percent": 65
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 1,
+       "percent": 1
+      },
+      {
+       "name": "보통이에요",
+       "count": 30,
+       "percent": 20
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 120,
+       "percent": 79
+      }
+     ]
+    }
+   ],
+   "representative_reviews": [
+    {
+     "id": "4647764881",
+     "score": 5,
+     "text": "잘쓰고 있습니당 ~~ 굿굿굿",
+     "image": "https://phinf.pstatic.net/image.nmv/shopnbuyer_2025_01_22_267/ohnNlFVL0u_03.jpg"
+    },
+    {
+     "id": "4877362837",
+     "score": 5,
+     "text": "듀벨로 캘러웨이 최고에요!",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260105_196/1767548211287UsklT_JPEG/1000075273.jpg"
+    },
+    {
+     "id": "4586033239",
+     "score": 5,
+     "text": "배송은 딱 2주뒤에 왔고, 추가 관세는 약 11-12정도 나오는거같아요!!!! 선물용으로 산거라 잘 썼으면 좋겠네요 ㅎㅎㅎ 포장은 하나하나 다 싸져서 와요! 그리고 옆주머니에 덮개? 가 들어있어서 거기서 꺼내서 똑딱 채우면 됩니다-!",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20241027_189/1729993212385hdjTA_JPEG/1000006931.jpg"
+    },
+    {
+     "id": "4600391364",
+     "score": 5,
+     "text": "빨리왔어요 ㅎㅎ가성비좋아요",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20241116_27/17317170461921MmWF_JPEG/IMG_0733.jpeg"
+    },
+    {
+     "id": "4595061611",
+     "score": 5,
+     "text": "너무 좋은구성입니다~~",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20241108_67/1731068730266TarVa_JPEG/image.jpg"
+    },
+    {
+     "id": "4582799004",
+     "score": 5,
+     "text": "최고의 가성비 마음에 듭니다",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20241022_92/1729590153369RRcNh_JPEG/1729590141159.jpg"
+    },
+    {
+     "id": "4585284563",
+     "score": 5,
+     "text": "해외배송이지만 배송도 빠르고 \n구성풍도 맘에 들어요!",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20241025_215/172986175363266BId_JPEG/1000011004.jpg"
+    },
+    {
+     "id": "4633389593",
+     "score": 5,
+     "text": "아직 초보라 연습하려 샀는데\n구성도 좋고 좋습니다",
+     "image": null
+    },
+    {
+     "id": "4603453259",
+     "score": 5,
+     "text": "배송은 해외라 늦는 게 당연하지만, 여자친구가 사줬는데 너무 이쁘고 채가 그냥 좋아서 만족합니다!",
+     "image": null
+    },
+    {
+     "id": "4624774797",
+     "score": 5,
+     "text": "빠른배송입니다!!!!",
+     "image": null
+    },
+    {
+     "id": "4617355512",
+     "score": 5,
+     "text": "좋음 초보용으로 굿",
+     "image": null
+    },
+    {
+     "id": "4584689838",
+     "score": 5,
+     "text": "다 좋음 근데 택배가 진짜 미친듯이 느린데 견디세요 어차피 한국에서 이거 사려면 1,20만원은 더줘야하니까 인생에서 골프채 시킨적ㅇ ㅓㅄ다 생각하고 기다리다보면 좋은 제품 와요",
+     "image": null
+    }
+   ]
+  },
+  "delivery": {
+   "fee_type": "UNIT_QUANTITY_PAID",
+   "base_fee": 99000,
+   "is_free": false,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": null,
+   "company": "우체국택배",
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": null,
+   "extra_fee_text": "제주 도서"
+  },
+  "is_free_delivery": false,
+  "is_today_delivery": false,
+  "has_arrival_guarantee": false,
+  "has_regular_subscription": false,
+  "has_free_return_insurance": false,
+  "is_minor_purchasable": true,
+  "is_adult_restricted": false,
+  "is_in_naver_shopping": true,
+  "option_groups": null,
+  "variants": null,
+  "supplements": null,
+  "description": {
+   "html": null,
+   "text": "◆ 해당 상품 관부가세 및 배송 공지◆\n해당 제품 통관시 관부가세 별도 납부하셔야하며, 배송은 9~14일가량 소요됩니다.\n<환율변동 및 배송상황에 따라 금액 및 배송일에 차이가 있을 수 있습니다>\n관부가세는 세금톡이라고 카카오톡으로 안내됩니다.(이체, 카드 등 결제가능)\n감사합니다.\n듀벨로 올림\n\n호평의 캘러웨이 클럽 세트가 리뉴얼된, 고품질 패키지\n\nX2 HOT를 기반으로 한 클럽 헤드 설계\n퍼터를 제외한 9개의 클럽의 헤드 디자인은 2014년의 X2 HOT 시리즈가 베이스로 되어 있습니다. 또, 마무리에 PVD 가공이 더해져, 세트의 클럽으로서는 더 이상 없을 정도의 성능과 질감을 갖추고 있습니다. 드라이버의 길이는 44.5 인치로 설정. 일반 드라이버보다 약간 짧기 때문에 컨택트가 쉽고 초보자도 부드럽게 시작할 수있습니다.\n\n퍼터에는 오딧세이 전통의 화이트・핫 프로 2.0!\n퍼터에도 오딧세이 전통의 화이트 핫 인서트에서 높은 인기를 자랑했던, 사양의 화이트 핫 프로 2.0입니다. 헤드 타입은 컨벤셔널한 블레이드 타입입니다.\n\n캐디 백도 PU를 충분히 사용해, 고급감이 업그레이드 되었습니다.\nWARBIRD 세트라고 하면, 캐디백도 세트로 되어 있는 것이 특징인 입문 전용 골프 클럽 세트입니다.\n캐디백도 보다 훌륭한 구조로 업그레이드 되어, 풍부한 포켓은 물론 소재에는 PU(인공 피혁)를 다량 사용을 통해,\n기능과 퀄리티가 뛰어난 캐디 백입니다.\n\n워버드 클럽 세트 (10 개 세트) 스틸(S) / 카본(R)\n캘러웨이 골프 / WARBIRD\n\n세트 내용 + 캐디백\n10개 세트(1W, 5W, #5-#9, PW, SW, PT) + 캐디백\n\n상품 특징\n\n번호\n드라이버\n#5 우드\n5i\n6i\n7i\n8i\n9i\nPW\nSW\nPutter\n헤드 소재\n티타늄\n스테인리스\n샤프트\n플렉스\n우드 : WARBIRD (S / R)\n아이언 : WARBIRD (R), 오리지널 스틸 (UNI : SR 상당)\n클럽길이\n(S세트)\n44.5\n42.25\n38.0\n37.5\n37.0\n36.5\n36.0\n35.5\n35.25\n34.0\n로프트각(°)\n10.5\n19.0\n23.0\n26.0\n30.0\n34.5\n39.0\n44.0\n54.0\n3.0\n라이각(°)\n58.5\n58.0\n61.3\n62.0\n62.5\n63.0\n63.5\n64.0\n64.0\n70.0\n밸런스\n(S세트)\nD1\nD3\nD4\n밸런스\n(R세트)\nD0\nD1\nD3\n클럽무게\n(S세트)\n약 318g\n약 330g\n약 416g\n약 420g\n약 424g\n약 430g\n약 436g\n약 446g\n약 455g\n약 521g\n클럽무게(R세트)\n약 313g\n약 328g\n약 370g\n약 375g\n약 380g\n약 386g\n약 392g\n약 401g\n약 414g\n약 521g\n※드라이버, 페어웨이 우드, 퍼터, 전용 헤드 커버 부속.",
+   "editor_type": "SEONE",
+   "images": [
+    "https://shop-phinf.pstatic.net/20220609_241/1654755718416eYCBj_PNG/no_0.84206439562524341653601045805.png?type=w848",
+    "https://shop-phinf.pstatic.net/20220609_158/1654749420924G8u2s_JPEG/1904-bluu00.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20220609_81/16547494399570IwhS_JPEG/1904-bluu02.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20220609_30/1654749446458sEng0_JPEG/1904-bluu07.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20220609_200/1654749500877ErYyw_JPEG/1904-bluu03.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20220609_53/16547495045798J9za_JPEG/1904-bluu04.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20220609_195/16547495175400d9Hu_JPEG/1904-bluu05.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20220609_275/1654749521527Fl6uS_JPEG/1904-bluu09.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20220609_296/1654749536607V0CXy_JPEG/1904-bluu01.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20230718_85/1689673765854Qml5b_PNG/image.png?type=w848",
+    "https://shop-phinf.pstatic.net/20220609_207/1654749643981vsm7e_JPEG/71O7Y8ubq0L._AC_SL1447_.jpg?type=w848",
+    "https://static.mercdn.net/item/detail/orig/photos/m87911073122_8.jpg?1676454254",
+    "https://static.mercdn.net/item/detail/orig/photos/m87911073122_10.jpg?1676454325"
+   ]
+  },
+  "notice": {
+   "type": "ETC",
+   "items": [
+    {
+     "label": "품명 / 모델명",
+     "value": "상품상세참조 / 상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "법에 의한 인증, 허가 등을 받았음을 확인할 수 있는 경우 그에 대한 사항",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조자(사)",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조국",
+     "value": "일본산(구매대행)",
+     "is_see_description": false
+    },
+    {
+     "label": "A/S 책임자",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "A/S 전화번호",
+     "value": null,
+     "is_see_description": false
+    }
+   ],
+   "terms": [
+    {
+     "label": "재화등의 배송방법에 관한 정보",
+     "value": "택배",
+     "is_see_description": false
+    },
+    {
+     "label": "주문 이후 예상되는 배송기간",
+     "value": "대금 지급일로부터 3일 이내에 발송",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+     "value": "편도 80000원 (최초 배송비 무료인 경우 160000원 부과)",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 A/S 관련 전화번호",
+     "value": null,
+     "is_see_description": false
+    },
+    {
+     "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+     "value": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+     "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+     "is_see_description": false
+    }
+   ]
+  },
+  "facts": {
+   "brand": {
+    "value": "캘러웨이",
+    "source": "search_info.brandName"
+   },
+   "manufacturer": {
+    "value": "캘러웨이",
+    "source": "search_info.manufacturerName"
+   },
+   "model_name": {
+    "value": "캘러웨이 WARBIRD",
+    "source": "search_info.modelName"
+   },
+   "origin": {
+    "value": "일본산(구매대행)",
+    "source": "notice:제조국"
+   }
+  },
+  "store": {
+   "id": "101343636",
+   "uid": "2sWE0kpAsZFTPHo5QtrQb",
+   "name": "듀벨로",
+   "slug": "du-valeur",
+   "link": "https://smartstore.naver.com/du-valeur",
+   "type": "smart_store",
+   "grade": "FIFTH",
+   "sale_count": 1,
+   "merchant_id": "511272240",
+   "business": {
+    "legal_name": "듀벨로",
+    "representative": "서현승",
+    "type": "PRIVATE",
+    "is_business": true,
+    "is_overseas": false,
+    "phone": null,
+    "email": null,
+    "address": null
+   }
+  }
+ },
+ "specs": {
+  "id": "6774818843",
+  "name": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트",
+  "link": "https://smartstore.naver.com/du-valeur/products/6774818843",
+  "query": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트",
+  "category": {
+   "id": "50002788",
+   "name": "풀세트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "풀세트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002788"
+   ]
+  },
+  "specs": [
+   {
+    "label": "상품번호",
+    "value": "6774818843"
+   },
+   {
+    "label": "제조사",
+    "value": "캘러웨이"
+   },
+   {
+    "label": "브랜드",
+    "value": "캘러웨이"
+   },
+   {
+    "label": "모델명",
+    "value": "캘러웨이 WARBIRD"
+   },
+   {
+    "label": "원산지",
+    "value": "일본산(구매대행)"
+   },
+   {
+    "label": "드라이버 로프트각",
+    "value": "10.5도"
+   },
+   {
+    "label": "아이언 구성",
+    "value": "#5, #6, #7, #8, #9, 샌드웨지(SW), 피칭웨지(PW)"
+   },
+   {
+    "label": "종류",
+    "value": "풀세트"
+   },
+   {
+    "label": "성별",
+    "value": "남성용"
+   },
+   {
+    "label": "사용방향",
+    "value": "오른손용"
+   },
+   {
+    "label": "총클럽개수",
+    "value": "10개"
+   },
+   {
+    "label": "출시",
+    "value": "2019년형"
+   },
+   {
+    "label": "풀세트구성",
+    "value": "드라이버, 페어웨이, 퍼터, 웨지, 7아이언세트"
+   },
+   {
+    "label": "아이언샤프트소재",
+    "value": "스틸"
+   },
+   {
+    "label": "아이언개수",
+    "value": "7개"
+   },
+   {
+    "label": "퍼터형태",
+    "value": "블레이드(일자형)"
+   },
+   {
+    "label": "골프백포함여부",
+    "value": "캐디백"
+   }
+  ],
+  "is_complete": true,
+  "facts": {
+   "brand": {
+    "value": "캘러웨이",
+    "source": "specs:브랜드"
+   },
+   "manufacturer": {
+    "value": "캘러웨이",
+    "source": "specs:제조사"
+   },
+   "model_name": {
+    "value": "캘러웨이 WARBIRD",
+    "source": "specs:모델명"
+   },
+   "origin": {
+    "value": "일본산(구매대행)",
+    "source": "specs:원산지"
+   }
+  },
+  "options": {
+   "has_options": true,
+   "status": "SALE",
+   "is_sold_out": false,
+   "stock_quantity": 19985,
+   "option_groups": [
+    {
+     "id": "6567981969",
+     "name": "선택",
+     "type": "COMBINATION"
+    }
+   ],
+   "variants": [
+    {
+     "id": "46088597323",
+     "name": "R",
+     "options": [
+      "R"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 9992,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-12-26"
+    },
+    {
+     "id": "46088597324",
+     "name": "S",
+     "options": [
+      "S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 9993,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-12-26"
+    }
+   ],
+   "simple_options": [],
+   "text_options": [],
+   "supplements": []
+  },
+  "delivery": {
+   "fee_type": "UNIT_QUANTITY_PAID",
+   "base_fee": 99000,
+   "is_free": false,
+   "policy_text": "1개마다 부과 / 제주,도서지역 추가 3,000원",
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": false,
+   "company": "우체국택배",
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": null,
+   "extra_fee_text": "제주 도서",
+   "is_overseas": true,
+   "scope": "international",
+   "customs_tax_type": "EXCLUDED",
+   "lead_time": {
+    "seller_average_days": 5.0,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   }
+  },
+  "measures": {
+   "is_set": true,
+   "weights": [
+    {
+     "value": {
+      "min": 318.0,
+      "max": 318.0
+     },
+     "unit": "g",
+     "matched": "318g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(S세트) 드라이버: 약 318g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 11,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 330.0,
+      "max": 330.0
+     },
+     "unit": "g",
+     "matched": "330g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(S세트) #5 우드: 약 330g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 12,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 416.0,
+      "max": 416.0
+     },
+     "unit": "g",
+     "matched": "416g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(S세트) 5i: 약 416g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 13,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 420.0,
+      "max": 420.0
+     },
+     "unit": "g",
+     "matched": "420g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(S세트) 6i: 약 420g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 14,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 424.0,
+      "max": 424.0
+     },
+     "unit": "g",
+     "matched": "424g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(S세트) 7i: 약 424g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 15,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 430.0,
+      "max": 430.0
+     },
+     "unit": "g",
+     "matched": "430g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(S세트) 8i: 약 430g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 16,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 436.0,
+      "max": 436.0
+     },
+     "unit": "g",
+     "matched": "436g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(S세트) 9i: 약 436g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 17,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 446.0,
+      "max": 446.0
+     },
+     "unit": "g",
+     "matched": "446g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(S세트) PW: 약 446g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 18,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 455.0,
+      "max": 455.0
+     },
+     "unit": "g",
+     "matched": "455g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(S세트) SW: 약 455g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 19,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 521.0,
+      "max": 521.0
+     },
+     "unit": "g",
+     "matched": "521g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(S세트) Putter: 약 521g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 20,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 313.0,
+      "max": 313.0
+     },
+     "unit": "g",
+     "matched": "313g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(R세트) 드라이버: 약 313g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 21,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 328.0,
+      "max": 328.0
+     },
+     "unit": "g",
+     "matched": "328g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(R세트) #5 우드: 약 328g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 22,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 370.0,
+      "max": 370.0
+     },
+     "unit": "g",
+     "matched": "370g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(R세트) 5i: 약 370g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 23,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 375.0,
+      "max": 375.0
+     },
+     "unit": "g",
+     "matched": "375g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(R세트) 6i: 약 375g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 24,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 380.0,
+      "max": 380.0
+     },
+     "unit": "g",
+     "matched": "380g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(R세트) 7i: 약 380g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 25,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 386.0,
+      "max": 386.0
+     },
+     "unit": "g",
+     "matched": "386g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(R세트) 8i: 약 386g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 26,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 392.0,
+      "max": 392.0
+     },
+     "unit": "g",
+     "matched": "392g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(R세트) 9i: 약 392g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 27,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 401.0,
+      "max": 401.0
+     },
+     "unit": "g",
+     "matched": "401g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(R세트) PW: 약 401g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 28,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 414.0,
+      "max": 414.0
+     },
+     "unit": "g",
+     "matched": "414g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(R세트) SW: 약 414g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 29,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 521.0,
+      "max": 521.0
+     },
+     "unit": "g",
+     "matched": "521g",
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": true,
+     "count": null,
+     "flags": [],
+     "quote": "클럽무게(R세트) Putter: 약 521g",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 30,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "context",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    }
+   ],
+   "dimensions": [],
+   "references": [],
+   "review": []
+  },
+  "read_at": "2026-11-06T10:06:46Z"
+ },
+ "variants": {
+  "paid": true,
+  "base_price": 699000,
+  "variants": [
+   {
+    "id": "46088597323",
+    "name": "R",
+    "options": [
+     "R"
+    ],
+    "extra_price": 0,
+    "price": 699000,
+    "price_in_name": null,
+    "stock_quantity": 9992,
+    "is_available": true
+   },
+   {
+    "id": "46088597324",
+    "name": "S",
+    "options": [
+     "S"
+    ],
+    "extra_price": 0,
+    "price": 699000,
+    "price_in_name": null,
+    "stock_quantity": 9993,
+    "is_available": true
+   }
+  ],
+  "available": 2,
+  "sold_out": 0,
+  "skipped_paid": 0,
+  "name_mismatches": [],
+  "simple_options": [],
+  "text_options": [],
+  "supplements": []
+ },
+ "package": [
+  {
+   "variant_id": "46088597323",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "46088597324",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  }
+ ],
+ "reviews": {
+  "product": {
+   "id": "6774818843",
+   "name": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트",
+   "link": "https://smartstore.naver.com/du-valeur/products/6774818843"
+  },
+  "summary": {
+   "count": 151,
+   "average_score": 4.78,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 5,
+    "4": 23,
+    "5": 123
+   },
+   "text_count": 66,
+   "photo_count": 84,
+   "video_count": 1,
+   "after_use_count": 37,
+   "best_count": 1,
+   "recent": null,
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 53,
+       "percent": 35
+      },
+      {
+       "name": "최고예요",
+       "count": 98,
+       "percent": 65
+      }
+     ]
+    },
+    {
+     "question": "디자인은 어떤가요?",
+     "answers": [
+      {
+       "name": "별로예요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "화면과 같아요",
+       "count": 53,
+       "percent": 35
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 98,
+       "percent": 65
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 1,
+       "percent": 1
+      },
+      {
+       "name": "보통이에요",
+       "count": 30,
+       "percent": 20
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 120,
+       "percent": 79
+      }
+     ]
+    }
+   ],
+   "representative_reviews": [
+    {
+     "id": "4647764881",
+     "score": 5,
+     "text": "잘쓰고 있습니당 ~~ 굿굿굿",
+     "image": "https://phinf.pstatic.net/image.nmv/shopnbuyer_2025_01_22_267/ohnNlFVL0u_03.jpg"
+    },
+    {
+     "id": "4877362837",
+     "score": 5,
+     "text": "듀벨로 캘러웨이 최고에요!",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260105_196/1767548211287UsklT_JPEG/1000075273.jpg"
+    },
+    {
+     "id": "4586033239",
+     "score": 5,
+     "text": "배송은 딱 2주뒤에 왔고, 추가 관세는 약 11-12정도 나오는거같아요!!!! 선물용으로 산거라 잘 썼으면 좋겠네요 ㅎㅎㅎ 포장은 하나하나 다 싸져서 와요! 그리고 옆주머니에 덮개? 가 들어있어서 거기서 꺼내서 똑딱 채우면 됩니다-!",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20241027_189/1729993212385hdjTA_JPEG/1000006931.jpg"
+    },
+    {
+     "id": "4600391364",
+     "score": 5,
+     "text": "빨리왔어요 ㅎㅎ가성비좋아요",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20241116_27/17317170461921MmWF_JPEG/IMG_0733.jpeg"
+    },
+    {
+     "id": "4595061611",
+     "score": 5,
+     "text": "너무 좋은구성입니다~~",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20241108_67/1731068730266TarVa_JPEG/image.jpg"
+    },
+    {
+     "id": "4582799004",
+     "score": 5,
+     "text": "최고의 가성비 마음에 듭니다",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20241022_92/1729590153369RRcNh_JPEG/1729590141159.jpg"
+    },
+    {
+     "id": "4585284563",
+     "score": 5,
+     "text": "해외배송이지만 배송도 빠르고 \n구성풍도 맘에 들어요!",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20241025_215/172986175363266BId_JPEG/1000011004.jpg"
+    },
+    {
+     "id": "4633389593",
+     "score": 5,
+     "text": "아직 초보라 연습하려 샀는데\n구성도 좋고 좋습니다",
+     "image": null
+    },
+    {
+     "id": "4603453259",
+     "score": 5,
+     "text": "배송은 해외라 늦는 게 당연하지만, 여자친구가 사줬는데 너무 이쁘고 채가 그냥 좋아서 만족합니다!",
+     "image": null
+    },
+    {
+     "id": "4624774797",
+     "score": 5,
+     "text": "빠른배송입니다!!!!",
+     "image": null
+    },
+    {
+     "id": "4617355512",
+     "score": 5,
+     "text": "좋음 초보용으로 굿",
+     "image": null
+    },
+    {
+     "id": "4584689838",
+     "score": 5,
+     "text": "다 좋음 근데 택배가 진짜 미친듯이 느린데 견디세요 어차피 한국에서 이거 사려면 1,20만원은 더줘야하니까 인생에서 골프채 시킨적ㅇ ㅓㅄ다 생각하고 기다리다보면 좋은 제품 와요",
+     "image": null
+    }
+   ]
+  },
+  "mode": "quality",
+  "count": 12,
+  "scanned": 151,
+  "passes": [
+   {
+    "media": "photo_video",
+    "pages": 5,
+    "total_count": 85,
+    "is_exhausted": true
+   },
+   {
+    "media": "text",
+    "pages": 4,
+    "total_count": 66,
+    "is_exhausted": true
+   }
+  ],
+  "is_complete": true,
+  "results": [
+   {
+    "id": "4586033239",
+    "score": 5,
+    "text": "배송은 딱 2주뒤에 왔고, 추가 관세는 약 11-12정도 나오는거같아요!!!! 선물용으로 산거라 잘 썼으면 좋겠네요 ㅎㅎㅎ 포장은 하나하나 다 싸져서 와요! 그리고 옆주머니에 덮개? 가 들어있어서 거기서 꺼내서 똑딱 채우면 됩니다-!",
+    "created_at": "2024-10-27T01:41:42Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "선택: S (아이언 - 스틸 샤프트) 캐디백 포함",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "0olu****",
+     "profile_image": "https://phinf.pstatic.net/contact/20260703_285/1783080560751XkGan_JPEG/profileImage.jpg"
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20241027_189/1729993212385hdjTA_JPEG/1000006931.jpg",
+      "width": 1656,
+      "height": 4280
+     }
+    ],
+    "product": {
+     "id": "6774818843",
+     "origin_product_id": "6742569098",
+     "name": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트"
+    },
+    "likes": null,
+    "tier": "primary"
+   },
+   {
+    "id": "4424422373",
+    "score": 5,
+    "text": "정말 가성비 끝판왕이고, 배송도 해외배송 치고는 빠릅니다. 단, 관세가 별도로 개인납부인데, 해당건 제목에도 써주세요. 헷갈려요.",
+    "created_at": "2024-02-13T04:08:49Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "선택: S (아이언 - 스틸 샤프트) 캐디백 포함",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "yuri****",
+     "profile_image": "https://phinf.pstatic.net/contact/20240423_143/1713833594962hqi7b_PNG/image.png"
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20240213_214/1707797323953sPmIn_JPEG/KakaoTalk_20240213_130559800_03.jpg",
+      "width": 1050,
+      "height": 1400
+     }
+    ],
+    "product": {
+     "id": "6774818843",
+     "origin_product_id": "6742569098",
+     "name": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트"
+    },
+    "likes": null,
+    "tier": "primary"
+   },
+   {
+    "id": "4398435863",
+    "score": 4,
+    "text": "골프 입문 비기너입니다. 일단 클럽도 가방도 맘에 쏙 이쁘구요, 가볍고 가성비 좋은것 같습니다만, 성능은 한판 쳐봐야 알겠네요 ^^",
+    "created_at": "2023-12-30T12:18:21Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "선택: R (아이언 - 카본 샤프트) 캐디백 포함",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "bi****",
+     "profile_image": "https://phinf.pstatic.net/contact/20221206_134/1670318870021oSpDB_JPEG/1670318668887.jpg"
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20231230_23/1703938622639bVPQE_JPEG/1000036230.jpg",
+      "width": 2246,
+      "height": 1848
+     },
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20231230_165/1703938622888c2nAr_JPEG/1000036233.jpg",
+      "width": 1848,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "6774818843",
+     "origin_product_id": "6742569098",
+     "name": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트"
+    },
+    "likes": null,
+    "tier": "primary"
+   },
+   {
+    "id": "4264367459",
+    "score": 4,
+    "text": "아직 사용전이나 좋아 보입니다. 골프 처음 시작한 아들래미용으로 구입 했습니다. 관부가세 따로 더 냈는데... 그런 안내도 있었더라면 더 좋을번 했습니다. 이번 주말에 쳐보고 리뷰 또 남길께요... ^^",
+    "created_at": "2023-06-02T01:15:52Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "선택: R (아이언 - 카본 샤프트) 캐디백 포함",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "viol********",
+     "profile_image": "https://phinf.pstatic.net/contact/20250806_230/17544391664654LEMS_JPEG/KakaoTalk_20221129_225438081.jpg"
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20230602_19/1685668462127LIKt4_JPEG/20230531_171424.jpg",
+      "width": 2252,
+      "height": 4000
+     },
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20230602_27/1685668462140sdQHy_JPEG/20230531_171733.jpg",
+      "width": 2252,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "6774818843",
+     "origin_product_id": "6742569098",
+     "name": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트"
+    },
+    "likes": null,
+    "tier": "primary"
+   },
+   {
+    "id": "4468098681",
+    "score": 5,
+    "text": "입문자용으로 좋은거 같아요 구성도 좋고\n좋습니다 ^^ 주문 후 수령까지 휴일 제외 10일 \n정도 걸렸네요 관세는 6만원 후반대였습니다",
+    "created_at": "2024-04-24T12:34:25Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "선택: S (아이언 - 스틸 샤프트) 캐디백 포함",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "swat****",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20240424_10/1713962059284IPGnD_JPEG/IMG_6598.jpeg",
+      "width": 3024,
+      "height": 4032
+     }
+    ],
+    "product": {
+     "id": "6774818843",
+     "origin_product_id": "6742569098",
+     "name": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트"
+    },
+    "likes": 1,
+    "tier": "photo"
+   },
+   {
+    "id": "4463770769",
+    "score": 5,
+    "text": "비닐벗기는데 힘들긴하지만 그래도 괜찮아요 \n신발도 잘들어가고 아이언커버는 없지만 미리사놓은거있어서 이쁘고 잘맞네요\n고구마도 미리사놨어요 \n\n요 사이트에서 골프채만\n대략72만원정도 든거같아요\n열심히배워볼라구요 ㅋㅋ\n배달은 대략10일정도 걸리는거같습니다\n\n이거근데 일본에서 온거맞아요?알리에서 배달시킨거랑 똑같아요",
+    "created_at": "2024-04-17T13:37:25Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "선택: S (아이언 - 스틸 샤프트) 캐디백 포함",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "chbj***",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20240417_236/1713360630329gCEws_JPEG/1000004353.jpg",
+      "width": 3000,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "6774818843",
+     "origin_product_id": "6742569098",
+     "name": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트"
+    },
+    "likes": null,
+    "tier": "photo"
+   },
+   {
+    "id": "4442779092",
+    "score": 4,
+    "text": "5일날 주문하고 13일 오늘 배송받았어요~화면과 같고 가격대비 만족입니다~다만 메이드인차이나 스티커를 보고 첨엔 뭐지~했어요ㅎ문의게시판 글을 확인하다보니 판매자님 답글을 보고 이가격에 재팬을 기대하다니 하며 피식웃었네요;; \n어찌됐건 상품 이상없이 잘받았구요..이제막 입문하는 남편에겐 2년정도는 무난히 잘쓰일듯 합니다~",
+    "created_at": "2024-03-13T12:38:19Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "선택: S (아이언 - 스틸 샤프트) 캐디백 포함",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "ga****",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20240313_132/1710333490187W3YU1_JPEG/1000011791.jpg",
+      "width": 3000,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "6774818843",
+     "origin_product_id": "6742569098",
+     "name": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트"
+    },
+    "likes": 1,
+    "tier": "photo"
+   },
+   {
+    "id": "4584689838",
+    "score": 5,
+    "text": "다 좋음 근데 택배가 진짜 미친듯이 느린데 견디세요 어차피 한국에서 이거 사려면 1,20만원은 더줘야하니까 인생에서 골프채 시킨적ㅇ ㅓㅄ다 생각하고 기다리다보면 좋은 제품 와요",
+    "created_at": "2024-10-25T00:19:38Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "선택: S (아이언 - 스틸 샤프트) 캐디백 포함",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "skst********",
+     "profile_image": "https://phinf.pstatic.net/contact/20260810_191/17863478764944eSWl_JPEG/%C1%A6%B8%F1%C0%BB_%C0%D4%B7%C2%C7%D8%C1%D6%BC%BC%BF%E4._%283%29.jpg"
+    },
+    "attachments": [],
+    "product": {
+     "id": "6774818843",
+     "origin_product_id": "6742569098",
+     "name": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트"
+    },
+    "likes": 1,
+    "tier": "text"
+   },
+   {
+    "id": "4397644241",
+    "score": 5,
+    "text": "요즘 골프에 빠진 남편 입문용 선물로 사줬는데 엄청 좋아하네요 ㅎㅎ 배송은 예상해주신대로 와서 넘 다행 ㅎㅎ 풀세트에 캐디백포함인데도 이가격이면 최고입니다 ~ 남편도 하나씩 다 들어보더니 너무 맘에들어하네오",
+    "created_at": "2023-12-29T05:09:46Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "선택: S (아이언 - 스틸 샤프트) 캐디백 포함",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "adls****",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "6774818843",
+     "origin_product_id": "6742569098",
+     "name": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트"
+    },
+    "likes": null,
+    "tier": "text"
+   },
+   {
+    "id": "4361558744",
+    "score": 4,
+    "text": "남동생 입문용으로 백과 함께 구매했습니다.\n안전하게 잘 도착했는데 관세부분을 보이도록 명시해두면 좋을것같은 아쉬움이 드네요.",
+    "created_at": "2023-11-02T00:15:41Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "선택: R (아이언 - 카본 샤프트) 캐디백 포함",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "leed*****",
+     "profile_image": "https://phinf.pstatic.net/contact/20250804_134/1754307243519yTvq6_JPEG/asd.jpg"
+    },
+    "attachments": [],
+    "product": {
+     "id": "6774818843",
+     "origin_product_id": "6742569098",
+     "name": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트"
+    },
+    "likes": null,
+    "tier": "text"
+   },
+   {
+    "id": "4309597464",
+    "score": 5,
+    "text": "골프 입문하면서 처음 구입했습니다. 태풍을 뚫고 안전히 배송되었습니다. 결제하고 받기까지 10일 정도 걸린거 같구요. 저렴하게 풀세트 갖게되서 부담없이 열심히 쳐보려고 합니다.",
+    "created_at": "2023-08-10T14:30:43Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "선택: R (아이언 - 카본 샤프트) 캐디백 포함",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "ijin***",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "6774818843",
+     "origin_product_id": "6742569098",
+     "name": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트"
+    },
+    "likes": null,
+    "tier": "text"
+   },
+   {
+    "id": "4258544978",
+    "score": 5,
+    "text": "아직 시타전이네요\n시타후 후기 다시 작성할께요\n\n시타후기/아직 초보이다보니 드라이버S는 무리네요\n아이언S는 매우 만족합니다",
+    "created_at": "2023-05-23T16:19:04Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "선택: S (아이언 - 스틸 샤프트) 캐디백 포함",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "jaeh******",
+     "profile_image": "https://phinf.pstatic.net/contact/20200419_112/1587261204200QnDwn_JPEG/image.jpg"
+    },
+    "attachments": [],
+    "product": {
+     "id": "6774818843",
+     "origin_product_id": "6742569098",
+     "name": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트"
+    },
+    "likes": null,
+    "tier": "text"
+   }
+  ]
+ },
+ "photos": {
+  "store": "fairwardgolf",
+  "total": 6,
+  "files": [
+   {
+    "position": 0,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20220609_49/1654749590651XNKNV_JPEG/55885418467305137_1495947105.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20220609_49/1654749590651XNKNV_JPEG/55885418467305137_1495947105.jpg",
+    "source_sha256": "9d58a1a72203e14e6ba25279ab49acf4d6811b79a1796523fb31d56eb481991c",
+    "source_bytes": 120558,
+    "source_format": "JPEG",
+    "source_width": 780,
+    "source_height": 700,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-6774818843-001-46bc472df318402d.webp",
+    "sha256": "46bc472df318402d747e2708f63396ddd915238b641f3c38f0b2dbb5adc9e5da",
+    "bytes": 52520,
+    "width": 780,
+    "height": 700,
+    "quality": 85
+   },
+   {
+    "position": 1,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20220609_94/1654749595418czrxD_JPEG/55885422458421226_1905936642.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20220609_94/1654749595418czrxD_JPEG/55885422458421226_1905936642.jpg",
+    "source_sha256": "8eb7f48a8841aed98c3be66638867fc2a6f16a9843715dc9b2c9f80f146609ef",
+    "source_bytes": 35810,
+    "source_format": "JPEG",
+    "source_width": 500,
+    "source_height": 500,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-6774818843-002-9012e10dbc53e3e2.webp",
+    "sha256": "9012e10dbc53e3e2876734e85e46bebe3c18f2ad6c7855ffd60a5668ad9f9ae2",
+    "bytes": 15982,
+    "width": 500,
+    "height": 500,
+    "quality": 85
+   },
+   {
+    "position": 2,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20220609_186/16547495998361eOPb_JPEG/55885427661259782_1983046580.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20220609_186/16547495998361eOPb_JPEG/55885427661259782_1983046580.jpg",
+    "source_sha256": "497b34c39cfecf09893d9aa8ee722661f58ffe8cb856222367c10e39390f55bf",
+    "source_bytes": 30707,
+    "source_format": "JPEG",
+    "source_width": 500,
+    "source_height": 500,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-6774818843-003-93afc882ebb0f7ee.webp",
+    "sha256": "93afc882ebb0f7ee36ee080cb25e79b50135bf020043f0ed86dc9607a4e92104",
+    "bytes": 13060,
+    "width": 500,
+    "height": 500,
+    "quality": 85
+   },
+   {
+    "position": 3,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20220609_93/1654749604801TH96w_JPEG/55885432244291308_1591461255.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20220609_93/1654749604801TH96w_JPEG/55885432244291308_1591461255.jpg",
+    "source_sha256": "7eb4fdc642f6f64587778a73bfd301c17044a632858ddfcd55b1c88548b16fa3",
+    "source_bytes": 27799,
+    "source_format": "JPEG",
+    "source_width": 500,
+    "source_height": 500,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-6774818843-004-1deee1b7199c68d6.webp",
+    "sha256": "1deee1b7199c68d611c0d02ace88983fdae25e856470dcbb620cdb4639ddccff",
+    "bytes": 11470,
+    "width": 500,
+    "height": 500,
+    "quality": 85
+   },
+   {
+    "position": 4,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20220609_84/16547496811050csEr_JPEG/55885508934780266_1102489280.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20220609_84/16547496811050csEr_JPEG/55885508934780266_1102489280.jpg",
+    "source_sha256": "415218967b8f31cfc29eb9f0cd1dc8f8d1c23c01ab9c8e6d58eea45cef7442b6",
+    "source_bytes": 45650,
+    "source_format": "JPEG",
+    "source_width": 500,
+    "source_height": 500,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-6774818843-005-0d14b7d3b8352766.webp",
+    "sha256": "0d14b7d3b8352766ed9173ca3fdb3d759c6fe7ce84dba4ca7295ec7f461b36f2",
+    "bytes": 20588,
+    "width": 500,
+    "height": 500,
+    "quality": 85
+   },
+   {
+    "position": 5,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20220609_23/16547496752134UKkg_JPEG/55885503042001618_216508058.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20220609_23/16547496752134UKkg_JPEG/55885503042001618_216508058.jpg",
+    "source_sha256": "7d418de500c3ca790707e1344129a2d580951ff19110701f91e49df316df1547",
+    "source_bytes": 24323,
+    "source_format": "JPEG",
+    "source_width": 500,
+    "source_height": 500,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-6774818843-006-078344e1bbe9dc3c.webp",
+    "sha256": "078344e1bbe9dc3c2b3202aebf67594650bfa32edec6d5b3ed3be16e8b1ec37e",
+    "bytes": 10058,
+    "width": 500,
+    "height": 500,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true,
+  "originals": 6
+ },
+ "review_media": {
+  "store": "fairwardgolf",
+  "files": [
+   {
+    "review_id": "4586033239",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20241027_189/1729993212385hdjTA_JPEG/1000006931.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20241027_189/1729993212385hdjTA_JPEG/1000006931.jpg",
+    "source_sha256": "f5d49859c9b61abaa1465d8fc1e5d4725ba85b62127611436c83b2a1b5efbb6b",
+    "source_bytes": 1023529,
+    "source_format": "MPO",
+    "source_width": 1656,
+    "source_height": 4280,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-review-image-07c5fdb8359a2948.webp",
+    "sha256": "07c5fdb8359a2948bf40eee5128ef5dc6910cdab533b4d66c652743c55727143",
+    "bytes": 26880,
+    "width": 396,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "4586033239",
+    "kind": "review-avatar",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/contact/20260703_285/1783080560751XkGan_JPEG/profileImage.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20260703_285/1783080560751XkGan_JPEG/profileImage.jpg",
+    "source_sha256": "09e02f476636d091f8c28c49f322d899687aaef28b804303e0904ed9b2d0a9fd",
+    "source_bytes": 4664787,
+    "source_format": "JPEG",
+    "source_width": 3024,
+    "source_height": 3024,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-review-avatar-53a0edf58bc1e1b4.webp",
+    "sha256": "53a0edf58bc1e1b41c64b2c3ed519b1308b7e3d3c09d775d054b9ecbcab85a6b",
+    "bytes": 112528,
+    "width": 1024,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "4424422373",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20240213_214/1707797323953sPmIn_JPEG/KakaoTalk_20240213_130559800_03.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20240213_214/1707797323953sPmIn_JPEG/KakaoTalk_20240213_130559800_03.jpg",
+    "source_sha256": "bb55be1846c25e49d298fcce48886b681ddb71bbecda1a009794cd0a9db6841b",
+    "source_bytes": 615543,
+    "source_format": "JPEG",
+    "source_width": 1050,
+    "source_height": 1400,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-review-image-fb580095fc23f1d7.webp",
+    "sha256": "fb580095fc23f1d7196537b31ed3504632620593d7332acf9755116e0bf7c601",
+    "bytes": 145764,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "4424422373",
+    "kind": "review-avatar",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/contact/20240423_143/1713833594962hqi7b_PNG/image.png",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20240423_143/1713833594962hqi7b_PNG/image.png",
+    "source_sha256": "0eabd7545f43c24cb04d6debbe102faeae11162fe15ec532b2e9fbe0e6d6a21f",
+    "source_bytes": 305070,
+    "source_format": "PNG",
+    "source_width": 540,
+    "source_height": 400,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-review-avatar-81fc870d1b951842.webp",
+    "sha256": "81fc870d1b951842d16ef43e9f9af8c5fbbc53608e2ab74102f090ea778fde78",
+    "bytes": 18084,
+    "width": 540,
+    "height": 400,
+    "quality": 85
+   },
+   {
+    "review_id": "4398435863",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20231230_23/1703938622639bVPQE_JPEG/1000036230.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20231230_23/1703938622639bVPQE_JPEG/1000036230.jpg",
+    "source_sha256": "853e92460d2bfcd21afdcb7e6f1704455a540a275d8a24427372a5f5fcd2b477",
+    "source_bytes": 1468816,
+    "source_format": "JPEG",
+    "source_width": 2246,
+    "source_height": 1848,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-review-image-a771f2fba8b3ef1b.webp",
+    "sha256": "a771f2fba8b3ef1b5f2bd09771edf3de37e08de84c21d135e55d80294e893bcf",
+    "bytes": 179068,
+    "width": 1024,
+    "height": 843,
+    "quality": 85
+   },
+   {
+    "review_id": "4398435863",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20231230_165/1703938622888c2nAr_JPEG/1000036233.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20231230_165/1703938622888c2nAr_JPEG/1000036233.jpg",
+    "source_sha256": "43feec26df4b0c8a5973234912c862d8c3074facad851c0726c71f4b3708ef71",
+    "source_bytes": 3686950,
+    "source_format": "JPEG",
+    "source_width": 1848,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-review-image-d544d812b8f648ae.webp",
+    "sha256": "d544d812b8f648aef5a66f726400131bfdfce4cc7647d135700b6789a36ad85d",
+    "bytes": 83926,
+    "width": 473,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "4398435863",
+    "kind": "review-avatar",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/contact/20221206_134/1670318870021oSpDB_JPEG/1670318668887.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20221206_134/1670318870021oSpDB_JPEG/1670318668887.jpg",
+    "source_sha256": "abbe4821505b9af233284def30f2a7190bdd96a76e3b432b006d062255e1fcf3",
+    "source_bytes": 156601,
+    "source_format": "JPEG",
+    "source_width": 702,
+    "source_height": 884,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-review-avatar-15d42389aeacd42c.webp",
+    "sha256": "15d42389aeacd42c616ac4aeba921fba500d4811fd161eed8fe6057be35c158e",
+    "bytes": 86742,
+    "width": 702,
+    "height": 884,
+    "quality": 85
+   },
+   {
+    "review_id": "4264367459",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20230602_19/1685668462127LIKt4_JPEG/20230531_171424.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20230602_19/1685668462127LIKt4_JPEG/20230531_171424.jpg",
+    "source_sha256": "a9210fc3221f8504869260b81c22d1677d950252902a57e6085a4d377e7ce1d7",
+    "source_bytes": 3303624,
+    "source_format": "JPEG",
+    "source_width": 2252,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-review-image-32e5d7b40279df4c.webp",
+    "sha256": "32e5d7b40279df4c41544b5bea14238340b506f137daeeb51ad1c0a0f27827a3",
+    "bytes": 43470,
+    "width": 577,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "4264367459",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20230602_27/1685668462140sdQHy_JPEG/20230531_171733.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20230602_27/1685668462140sdQHy_JPEG/20230531_171733.jpg",
+    "source_sha256": "cf45e3c7ede4222a78a199e2d5f1c8201cfff19a76b7e240ad180ec6bb9fe14f",
+    "source_bytes": 2981657,
+    "source_format": "JPEG",
+    "source_width": 2252,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-review-image-a7efe947daba1c8a.webp",
+    "sha256": "a7efe947daba1c8af7c665b1e37032107cc268faed13797b533b9bcb905e4830",
+    "bytes": 70942,
+    "width": 577,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "4264367459",
+    "kind": "review-avatar",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/contact/20250806_230/17544391664654LEMS_JPEG/KakaoTalk_20221129_225438081.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20250806_230/17544391664654LEMS_JPEG/KakaoTalk_20221129_225438081.jpg",
+    "source_sha256": "d468997c57ab6a23fc8e0baabbc09c26b9f4453822f10bf2f70bd704c8a0c422",
+    "source_bytes": 93075,
+    "source_format": "JPEG",
+    "source_width": 1018,
+    "source_height": 1440,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-review-avatar-3ae1f3d20fe96c8b.webp",
+    "sha256": "3ae1f3d20fe96c8bca114bb8bb1196f9ba8f86efdf9be1956b69bee618b93bdb",
+    "bytes": 14750,
+    "width": 724,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "4468098681",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20240424_10/1713962059284IPGnD_JPEG/IMG_6598.jpeg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20240424_10/1713962059284IPGnD_JPEG/IMG_6598.jpeg",
+    "source_sha256": "496bb7a581fc08ef0b537cdaa58fa093778eab6906371e6f3ded63f963335567",
+    "source_bytes": 2323027,
+    "source_format": "JPEG",
+    "source_width": 3024,
+    "source_height": 4032,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-review-image-89e35b46c36daf6f.webp",
+    "sha256": "89e35b46c36daf6ff37f121b73a9d0f7b7877714bf726e42a63583424700172c",
+    "bytes": 94812,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "4463770769",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20240417_236/1713360630329gCEws_JPEG/1000004353.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20240417_236/1713360630329gCEws_JPEG/1000004353.jpg",
+    "source_sha256": "35643706d116013f754cdb6e33eb48f285507d6cee8cff46d0a7fe75483b16f1",
+    "source_bytes": 3686647,
+    "source_format": "JPEG",
+    "source_width": 3000,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-review-image-209c9968ac7db3ea.webp",
+    "sha256": "209c9968ac7db3eadecb7bf8575d947b6cae0a99f5441d0592ff1b58d368b188",
+    "bytes": 59410,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "4442779092",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20240313_132/1710333490187W3YU1_JPEG/1000011791.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20240313_132/1710333490187W3YU1_JPEG/1000011791.jpg",
+    "source_sha256": "5abc22a3952f0448e98f590a5c594dbf1e2a3f7115b27d9108a5a4bf7a377f0f",
+    "source_bytes": 5992009,
+    "source_format": "JPEG",
+    "source_width": 3000,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-review-image-d828b3182253214a.webp",
+    "sha256": "d828b3182253214a52fb03860edd4af9efa09a16bf1c4e7d429fb8f0651bdd8f",
+    "bytes": 145056,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "4584689838",
+    "kind": "review-avatar",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/contact/20260810_191/17863478764944eSWl_JPEG/%C1%A6%B8%F1%C0%BB_%C0%D4%B7%C2%C7%D8%C1%D6%BC%BC%BF%E4._%283%29.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20260810_191/17863478764944eSWl_JPEG/%C1%A6%B8%F1%C0%BB_%C0%D4%B7%C2%C7%D8%C1%D6%BC%BC%BF%E4._%283%29.jpg",
+    "source_sha256": "1c4094d035d048dd05f7b0190eb1192f2e86662f7e48bba5cda3ee41b4d7d1e2",
+    "source_bytes": 124460,
+    "source_format": "JPEG",
+    "source_width": 1300,
+    "source_height": 1300,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-review-avatar-b2f8f2619decb4cb.webp",
+    "sha256": "b2f8f2619decb4cb8d1dbcf326523531af38bdd0929f0f834bb9c729532ddd62",
+    "bytes": 62422,
+    "width": 1024,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "4361558744",
+    "kind": "review-avatar",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/contact/20250804_134/1754307243519yTvq6_JPEG/asd.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20250804_134/1754307243519yTvq6_JPEG/asd.jpg",
+    "source_sha256": "8f2180ffb54d616af6321a2ac6e31e37b4083e1e3bb1855b506a6c6c4fcb85a0",
+    "source_bytes": 30492,
+    "source_format": "JPEG",
+    "source_width": 281,
+    "source_height": 417,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-review-avatar-706112b025013939.webp",
+    "sha256": "706112b02501393955215a7d72fd948211830a270e9fc46c243b8b78332b58d1",
+    "bytes": 7380,
+    "width": 281,
+    "height": 417,
+    "quality": 85
+   },
+   {
+    "review_id": "4258544978",
+    "kind": "review-avatar",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/contact/20200419_112/1587261204200QnDwn_JPEG/image.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20200419_112/1587261204200QnDwn_JPEG/image.jpg",
+    "source_sha256": "0a80501eb53a7982581dd3d2cab4c1d5217d1c7ffb4e6a4107bea0ce72d87ad4",
+    "source_bytes": 833933,
+    "source_format": "JPEG",
+    "source_width": 1080,
+    "source_height": 2220,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/6774818843/fairwardgolf-review-avatar-89db21c24812edd4.webp",
+    "sha256": "89db21c24812edd406f531ee33bc1f20bdf3b919becc0b1f26a190ceb09058d2",
+    "bytes": 70566,
+    "width": 498,
+    "height": 1024,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true
+ }
+}

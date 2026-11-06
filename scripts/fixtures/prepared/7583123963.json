@@ -1,0 +1,1244 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:500000592:7583123963",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "leaf_from_name",
+   "detail": "name: 여성, 남성"
+  },
+  {
+   "code": "title_names_one_variant",
+   "detail": "13PCS"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "선택2"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/majorgolf/products/7583123963",
+  "channel_no": "500000592",
+  "product_id": "7583123963",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "지브이투어 벨로시티 BM 13 PCS 남성 여성 풀세트 (백세트포함)",
+  "brand_ko": "지브이투어",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "womens-complete-sets",
+    "product_type": "Women’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:womens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   },
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "골프클럽구분",
+    "values_ko": [
+     "BM 풀세트 스틸 블랙 13PCS",
+     "BM 풀세트 여성 실버 12PCS",
+     "BM 풀세트 카본 골드 13PCS"
+    ]
+   },
+   {
+    "name_ko": "선택2",
+    "values_ko": [
+     "BM 캐디백세트 네이비",
+     "BM 캐디백세트 블랙",
+     "BM 캐디백세트 화이트"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"BM 풀세트 스틸 블랙 13PCS\",\"BM 캐디백세트 네이비\"]",
+    "naver_variant_id": "59194515734",
+    "options_ko": [
+     "BM 풀세트 스틸 블랙 13PCS",
+     "BM 캐디백세트 네이비"
+    ],
+    "price_krw": 1200000,
+    "price_usd": "1200.00",
+    "sku": "FW-354a33cd0b261d60bee72e5d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"BM 풀세트 스틸 블랙 13PCS\",\"BM 캐디백세트 블랙\"]",
+    "naver_variant_id": "59194515730",
+    "options_ko": [
+     "BM 풀세트 스틸 블랙 13PCS",
+     "BM 캐디백세트 블랙"
+    ],
+    "price_krw": 1200000,
+    "price_usd": "1200.00",
+    "sku": "FW-fb27717ac4dbbc330c02d534",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"BM 풀세트 스틸 블랙 13PCS\",\"BM 캐디백세트 화이트\"]",
+    "naver_variant_id": "59194515733",
+    "options_ko": [
+     "BM 풀세트 스틸 블랙 13PCS",
+     "BM 캐디백세트 화이트"
+    ],
+    "price_krw": 1200000,
+    "price_usd": "1200.00",
+    "sku": "FW-4a789d2d3cb33fab16a93f41",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"BM 풀세트 여성 실버 12PCS\",\"BM 캐디백세트 네이비\"]",
+    "naver_variant_id": "59194515738",
+    "options_ko": [
+     "BM 풀세트 여성 실버 12PCS",
+     "BM 캐디백세트 네이비"
+    ],
+    "price_krw": 1200000,
+    "price_usd": "1200.00",
+    "sku": "FW-8e40bf55b623e19c20c06523",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"BM 풀세트 여성 실버 12PCS\",\"BM 캐디백세트 블랙\"]",
+    "naver_variant_id": "59194515732",
+    "options_ko": [
+     "BM 풀세트 여성 실버 12PCS",
+     "BM 캐디백세트 블랙"
+    ],
+    "price_krw": 1200000,
+    "price_usd": "1200.00",
+    "sku": "FW-f1685f38e9c7832203a87158",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"BM 풀세트 여성 실버 12PCS\",\"BM 캐디백세트 화이트\"]",
+    "naver_variant_id": "59194515737",
+    "options_ko": [
+     "BM 풀세트 여성 실버 12PCS",
+     "BM 캐디백세트 화이트"
+    ],
+    "price_krw": 1200000,
+    "price_usd": "1200.00",
+    "sku": "FW-8a7900fa172b9968510114bd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"BM 풀세트 카본 골드 13PCS\",\"BM 캐디백세트 네이비\"]",
+    "naver_variant_id": "59194515736",
+    "options_ko": [
+     "BM 풀세트 카본 골드 13PCS",
+     "BM 캐디백세트 네이비"
+    ],
+    "price_krw": 1200000,
+    "price_usd": "1200.00",
+    "sku": "FW-555a72ccb220d1f56c27170b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"BM 풀세트 카본 골드 13PCS\",\"BM 캐디백세트 블랙\"]",
+    "naver_variant_id": "59194515731",
+    "options_ko": [
+     "BM 풀세트 카본 골드 13PCS",
+     "BM 캐디백세트 블랙"
+    ],
+    "price_krw": 1200000,
+    "price_usd": "1200.00",
+    "sku": "FW-2d73a14f36b1ce2ae01c0757",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"BM 풀세트 카본 골드 13PCS\",\"BM 캐디백세트 화이트\"]",
+    "naver_variant_id": "59194515735",
+    "options_ko": [
+     "BM 풀세트 카본 골드 13PCS",
+     "BM 캐디백세트 화이트"
+    ],
+    "price_krw": 1200000,
+    "price_usd": "1200.00",
+    "sku": "FW-c4d78b41978c2b91c27440cf",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   }
+  ],
+  "pricing": {
+   "base_krw": 1200000,
+   "original_krw": 2400000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "지브이투어"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "지브이투어"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "BM 풀세트"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   }
+  ],
+  "personalization": [],
+  "addons": [
+   {
+    "group_ko": "남여 합피 골프장갑",
+    "name_ko": "남성 합피 E46301 23호 왼손 4장",
+    "required": false,
+    "price_krw": 14900,
+    "price_usd": "14.90"
+   },
+   {
+    "group_ko": "남여 합피 골프장갑",
+    "name_ko": "남성 합피 E46301 26호 왼손 4장",
+    "required": false,
+    "price_krw": 14900,
+    "price_usd": "14.90"
+   },
+   {
+    "group_ko": "남여 합피 골프장갑",
+    "name_ko": "여성 합피 E46301 18호 양손 2세트",
+    "required": false,
+    "price_krw": 14900,
+    "price_usd": "14.90"
+   },
+   {
+    "group_ko": "남여 양피 골프장갑",
+    "name_ko": "남성 올양피 C36301 화이트 22호 3장",
+    "required": false,
+    "price_krw": 19900,
+    "price_usd": "19.90"
+   },
+   {
+    "group_ko": "남여 양피 골프장갑",
+    "name_ko": "남성 올양피 C36301 화이트 23호 3장",
+    "required": false,
+    "price_krw": 19900,
+    "price_usd": "19.90"
+   },
+   {
+    "group_ko": "남여 양피 골프장갑",
+    "name_ko": "남성 올양피 C36301 화이트 24호 3장",
+    "required": false,
+    "price_krw": 19900,
+    "price_usd": "19.90"
+   },
+   {
+    "group_ko": "남여 양피 골프장갑",
+    "name_ko": "남성 올양피 C36301 화이트 25호 3장",
+    "required": false,
+    "price_krw": 19900,
+    "price_usd": "19.90"
+   },
+   {
+    "group_ko": "남여 양피 골프장갑",
+    "name_ko": "여성 올양피 C36301 화이트 18호 3장",
+    "required": false,
+    "price_krw": 19900,
+    "price_usd": "19.90"
+   },
+   {
+    "group_ko": "남여 양피 골프장갑",
+    "name_ko": "여성 올양피 C36301 화이트 19호 3장",
+    "required": false,
+    "price_krw": 19900,
+    "price_usd": "19.90"
+   },
+   {
+    "group_ko": "남여 양피 골프장갑",
+    "name_ko": "여성 올양피 C36301 화이트 20호 3장",
+    "required": false,
+    "price_krw": 19900,
+    "price_usd": "19.90"
+   },
+   {
+    "group_ko": "남여 양피 골프장갑",
+    "name_ko": "여성 올양피 C36301 화이트 21호 3장",
+    "required": false,
+    "price_krw": 19900,
+    "price_usd": "19.90"
+   },
+   {
+    "group_ko": "골프백",
+    "name_ko": "럭셔리 신발가방 C24307 블랙 2.0",
+    "required": false,
+    "price_krw": 9900,
+    "price_usd": "9.90"
+   },
+   {
+    "group_ko": "골프백",
+    "name_ko": "에나멜 골프 파우치 D34305 블랙",
+    "required": false,
+    "price_krw": 12900,
+    "price_usd": "12.90"
+   },
+   {
+    "group_ko": "골프백",
+    "name_ko": "에나멜 골프 파우치 D34305 화이트",
+    "required": false,
+    "price_krw": 12900,
+    "price_usd": "12.90"
+   },
+   {
+    "group_ko": "필드용품",
+    "name_ko": "아디다스 로고 볼캡 IA9602 블랙",
+    "required": false,
+    "price_krw": 17900,
+    "price_usd": "17.90"
+   },
+   {
+    "group_ko": "필드용품",
+    "name_ko": "아디다스 로고 볼캡 IA9603 화이트",
+    "required": false,
+    "price_krw": 17900,
+    "price_usd": "17.90"
+   },
+   {
+    "group_ko": "필드용품",
+    "name_ko": "아디다스 로고 볼캡 IA9604 네이비",
+    "required": false,
+    "price_krw": 17900,
+    "price_usd": "17.90"
+   },
+   {
+    "group_ko": "필드용품",
+    "name_ko": "브리지스톤 2피스 골프공 12구",
+    "required": false,
+    "price_krw": 17900,
+    "price_usd": "17.90"
+   },
+   {
+    "group_ko": "필드용품",
+    "name_ko": "단목 압박 골프양말 C20304 블랙 3켤레",
+    "required": false,
+    "price_krw": 6900,
+    "price_usd": "6.90"
+   },
+   {
+    "group_ko": "필드용품",
+    "name_ko": "단목 압박 골프양말 C20304 화이트 3켤레",
+    "required": false,
+    "price_krw": 6900,
+    "price_usd": "6.90"
+   },
+   {
+    "group_ko": "쇼핑백",
+    "name_ko": "대형",
+    "required": false,
+    "price_krw": 1000,
+    "price_usd": "1.00"
+   }
+  ],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/7583123963/fairwardgolf-7583123963-001-9b10bef5e160dcc8.webp",
+    "sha256": "9b10bef5e160dcc8b496a40732c088781b757aac4ecda709a319f315d263c536",
+    "width": 600,
+    "height": 600
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/7583123963/fairwardgolf-7583123963-002-bd0165c63f0c3a84.webp",
+    "sha256": "bd0165c63f0c3a8438ad895573b6bfc44e90f322936e650139735248abbf882d",
+    "width": 600,
+    "height": 600
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.2381322,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 96,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260709_173/1783580008163UOvVq_JPEG/p-7546387872-s-6-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20260709_199/1783580008160niAWP_JPEG/p-7546387872-s-6-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20260709_218/1783580008156n75z7_JPEG/p-7546387872-s-6-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20260709_201/1783580008157XlBEB_JPEG/p-7546387872-s-6-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20260709_257/1783580008165It3OB_JPEG/p-7546387872-s-6-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20260709_260/1783580008161u8Nfd_JPEG/p-7546387872-s-6-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20260709_211/1783580008161T2CIE_JPEG/p-7546387872-s-6-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20260709_45/1783580008158rD321_JPEG/p-7546387872-s-6-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20260709_93/17835800081565owMk_JPEG/p-7546387872-s-6-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20260709_299/1783580008156swpE2_JPEG/p-7546387872-s-6-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20260709_178/1783580008242DOsfr_JPEG/p-7546387872-s-6-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20260709_52/1783580008249v4Hgq_JPEG/p-7546387872-s-6-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20260709_85/1783580008258oR9px_JPEG/p-7546387872-s-6-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20260709_156/17835800082539xonM_JPEG/p-7546387872-s-6-A-13.jpg",
+   "https://shop-phinf.pstatic.net/20260709_227/1783580008254IOKSA_JPEG/p-7546387872-s-6-A-14.jpg",
+   "https://shop-phinf.pstatic.net/20260709_269/1783580008258V5lwH_JPEG/p-7546387872-s-6-A-15.jpg",
+   "https://shop-phinf.pstatic.net/20260709_274/17835800082725sA6G_JPEG/p-7546387872-s-6-A-16.jpg",
+   "https://shop-phinf.pstatic.net/20260709_121/1783580008265oqyFa_JPEG/p-7546387872-s-6-A-17.jpg",
+   "https://shop-phinf.pstatic.net/20260709_235/1783580008276te3kl_JPEG/p-7546387872-s-6-A-18.jpg",
+   "https://shop-phinf.pstatic.net/20260709_194/1783580008342Jvgow_JPEG/p-7546387872-s-6-A-19.jpg",
+   "https://shop-phinf.pstatic.net/20260709_156/1783580008283WO46O_JPEG/p-7546387872-s-6-A-20.jpg",
+   "https://shop-phinf.pstatic.net/20260709_297/1783580008343hao0m_JPEG/p-7546387872-s-6-A-21.jpg",
+   "https://shop-phinf.pstatic.net/20260709_163/1783580008347mkaIn_JPEG/p-7546387872-s-6-A-22.jpg",
+   "https://shop-phinf.pstatic.net/20260709_127/1783580008343t17In_JPEG/p-7546387872-s-6-A-23.jpg",
+   "https://shop-phinf.pstatic.net/20260709_111/1783580008367XerD3_JPEG/p-7546387872-s-6-A-24.jpg",
+   "https://shop-phinf.pstatic.net/20260709_43/1783580008368pMxIU_JPEG/p-7546387872-s-6-A-25.jpg",
+   "https://shop-phinf.pstatic.net/20260709_239/1783580008371eHpQ6_JPEG/p-7546387872-s-6-A-26.jpg",
+   "https://shop-phinf.pstatic.net/20260709_254/1783580008384z7tdp_JPEG/p-7546387872-s-6-A-27.jpg",
+   "https://shop-phinf.pstatic.net/20260709_280/1783580008385wqSxO_JPEG/p-7546387872-s-6-A-28.jpg",
+   "https://shop-phinf.pstatic.net/20260709_7/17835800084217AGlA_JPEG/p-7546387872-s-6-A-29.jpg",
+   "https://shop-phinf.pstatic.net/20260709_143/1783580008432uhrso_JPEG/p-7546387872-s-6-A-30.jpg",
+   "https://shop-phinf.pstatic.net/20260709_211/1783580008438tlJe3_JPEG/p-7546387872-s-6-A-31.jpg",
+   "https://shop-phinf.pstatic.net/20260709_28/1783580008447Vojb7_JPEG/p-7546387872-s-6-A-32.jpg",
+   "https://shop-phinf.pstatic.net/20260709_192/1783580008457zwNeA_JPEG/p-7546387872-s-6-A-33.jpg",
+   "https://shop-phinf.pstatic.net/20260709_280/1783580008460dq6xB_JPEG/p-7546387872-s-6-A-34.jpg",
+   "https://shop-phinf.pstatic.net/20260709_192/1783580008460CsIag_JPEG/p-7546387872-s-6-A-35.jpg",
+   "https://shop-phinf.pstatic.net/20260709_22/1783580008481TYCFi_JPEG/p-7546387872-s-6-A-36.jpg",
+   "https://shop-phinf.pstatic.net/20260709_62/1783580008479sb4db_JPEG/p-7546387872-s-6-A-37.jpg",
+   "https://shop-phinf.pstatic.net/20260709_298/17835800085044RLez_JPEG/p-7546387872-s-6-A-38.jpg",
+   "https://shop-phinf.pstatic.net/20260709_129/1783580008531tb0rR_JPEG/p-7546387872-s-6-A-39.jpg",
+   "https://shop-phinf.pstatic.net/20260709_34/1783580008529c9Hpp_JPEG/p-7546387872-s-6-A-40.jpg",
+   "https://shop-phinf.pstatic.net/20260709_283/1783580008530MrR1I_JPEG/p-7546387872-s-6-A-41.jpg",
+   "https://shop-phinf.pstatic.net/20260709_226/1783580008554ylJqS_JPEG/p-7546387872-s-6-A-42.jpg",
+   "https://shop-phinf.pstatic.net/20260709_123/1783580008558dm339_JPEG/p-7546387872-s-6-A-43.jpg",
+   "https://shop-phinf.pstatic.net/20260709_244/1783580008560VOxFd_JPEG/p-7546387872-s-6-A-44.jpg",
+   "https://shop-phinf.pstatic.net/20260709_289/1783580008564G6PnA_JPEG/p-7546387872-s-6-A-45.jpg",
+   "https://shop-phinf.pstatic.net/20260709_244/1783580008576wDQRY_JPEG/p-7546387872-s-6-A-46.jpg",
+   "https://shop-phinf.pstatic.net/20260709_198/1783580008585cvDml_JPEG/p-7546387872-s-6-A-47.jpg",
+   "https://shop-phinf.pstatic.net/20260709_85/1783580008603NP21h_JPEG/p-7546387872-s-6-A-48.jpg",
+   "https://shop-phinf.pstatic.net/20260709_98/1783580008618BlDPB_JPEG/p-7546387872-s-6-A-49.jpg",
+   "https://shop-phinf.pstatic.net/20260709_236/1783580008618Wjo50_JPEG/p-7546387872-s-6-A-50.jpg",
+   "https://shop-phinf.pstatic.net/20260709_86/178358000863527WRt_JPEG/p-7546387872-s-6-A-51.jpg",
+   "https://shop-phinf.pstatic.net/20260709_48/17835800086391rlSf_JPEG/p-7546387872-s-6-A-52.jpg",
+   "https://shop-phinf.pstatic.net/20260709_269/1783580008642Cm3OE_JPEG/p-7546387872-s-6-A-53.jpg",
+   "https://shop-phinf.pstatic.net/20260709_76/1783580008656PP6eL_JPEG/p-7546387872-s-6-A-54.jpg",
+   "https://shop-phinf.pstatic.net/20260709_46/1783580008655JyEDa_JPEG/p-7546387872-s-6-A-55.jpg",
+   "https://shop-phinf.pstatic.net/20260709_172/1783580008672eE1Y9_JPEG/p-7546387872-s-6-A-56.jpg",
+   "https://shop-phinf.pstatic.net/20260709_80/1783580008683Dq3R6_JPEG/p-7546387872-s-6-A-57.jpg",
+   "https://shop-phinf.pstatic.net/20260709_149/1783580008705r5KoS_JPEG/p-7546387872-s-6-A-58.jpg",
+   "https://shop-phinf.pstatic.net/20260709_12/1783580008708BzO52_JPEG/p-7546387872-s-6-A-59.jpg",
+   "https://shop-phinf.pstatic.net/20260709_218/1783580008728Bge2u_JPEG/p-7546387872-s-6-A-60.jpg",
+   "https://shop-phinf.pstatic.net/20260709_175/1783580008743JRtKN_JPEG/p-7546387872-s-6-A-61.jpg",
+   "https://shop-phinf.pstatic.net/20260709_86/17835800087459gKP9_JPEG/p-7546387872-s-6-A-62.jpg",
+   "https://shop-phinf.pstatic.net/20260709_41/1783580008755WAavg_JPEG/p-7546387872-s-6-A-63.jpg",
+   "https://shop-phinf.pstatic.net/20260709_34/17835800087553nmPB_JPEG/p-7546387872-s-6-A-64.jpg",
+   "https://shop-phinf.pstatic.net/20260709_193/17835800087568G9Hn_JPEG/p-7546387872-s-6-A-65.jpg",
+   "https://shop-phinf.pstatic.net/20260709_51/1783580008760updKW_JPEG/p-7546387872-s-6-A-66.jpg",
+   "https://shop-phinf.pstatic.net/20260709_53/1783580008774mzXKm_JPEG/p-7546387872-s-6-A-67.jpg",
+   "https://shop-phinf.pstatic.net/20260709_125/17835800087835XSYL_JPEG/p-7546387872-s-6-A-68.jpg",
+   "https://shop-phinf.pstatic.net/20260709_215/17835800088068SYVz_JPEG/p-7546387872-s-6-A-69.jpg",
+   "https://shop-phinf.pstatic.net/20260709_267/1783580008835S7RfY_JPEG/p-7546387872-s-6-A-70.jpg",
+   "https://shop-phinf.pstatic.net/20260709_213/1783580008838nETz7_JPEG/p-7546387872-s-6-A-71.jpg",
+   "https://shop-phinf.pstatic.net/20260709_54/1783580008848FesnC_JPEG/p-7546387872-s-6-A-72.jpg",
+   "https://shop-phinf.pstatic.net/20260709_224/1783580008848wUTF5_JPEG/p-7546387872-s-6-A-73.jpg",
+   "https://shop-phinf.pstatic.net/20260709_23/1783580008851x9MYs_JPEG/p-7546387872-s-6-A-74.jpg",
+   "https://shop-phinf.pstatic.net/20260709_81/1783580008864FyKn5_JPEG/p-7546387872-s-6-A-75.jpg",
+   "https://shop-phinf.pstatic.net/20260709_48/1783580008857r3jJ3_JPEG/p-7546387872-s-6-A-76.jpg",
+   "https://shop-phinf.pstatic.net/20260709_272/1783580008865nz53g_JPEG/p-7546387872-s-6-A-77.jpg",
+   "https://shop-phinf.pstatic.net/20260709_74/1783580008886XVAxk_JPEG/p-7546387872-s-6-A-78.jpg",
+   "https://shop-phinf.pstatic.net/20260709_145/17835800088924cii2_JPEG/p-7546387872-s-6-A-79.jpg",
+   "https://shop-phinf.pstatic.net/20260709_33/178358000893931G0g_JPEG/p-7546387872-s-6-A-80.jpg",
+   "https://shop-phinf.pstatic.net/20260709_172/17835800089314OeY5_JPEG/p-7546387872-s-6-A-81.jpg",
+   "https://shop-phinf.pstatic.net/20260709_267/1783580008937E7sol_JPEG/p-7546387872-s-6-A-82.jpg",
+   "https://shop-phinf.pstatic.net/20260709_286/1783580008937LSND0_JPEG/p-7546387872-s-6-A-83.jpg",
+   "https://shop-phinf.pstatic.net/20260709_88/1783580008943zMgmW_JPEG/p-7546387872-s-6-A-84.jpg",
+   "https://shop-phinf.pstatic.net/20260709_81/1783580008945xMKKX_JPEG/p-7546387872-s-6-A-85.jpg",
+   "https://shop-phinf.pstatic.net/20260709_153/17835800089514f4fR_JPEG/p-7546387872-s-6-A-86.jpg",
+   "https://shop-phinf.pstatic.net/20260709_243/1783580008980oepFT_JPEG/p-7546387872-s-6-A-87.jpg",
+   "https://shop-phinf.pstatic.net/20260709_161/1783580008979BdG8J_JPEG/p-7546387872-s-6-A-88.jpg",
+   "https://shop-phinf.pstatic.net/20260709_10/1783580009009DwEV2_JPEG/p-7546387872-s-6-A-89.jpg",
+   "https://shop-phinf.pstatic.net/20260709_37/1783580009014pIEkW_JPEG/p-7546387872-s-6-A-90.jpg",
+   "https://shop-phinf.pstatic.net/20260709_53/17835800090275Vtlw_JPEG/p-7546387872-s-6-A-91.jpg",
+   "https://shop-phinf.pstatic.net/20260709_253/1783580009025O4f8g_JPEG/p-7546387872-s-6-A-92.jpg",
+   "https://shop-phinf.pstatic.net/20260709_220/1783580009046Cn50n_JPEG/p-7546387872-s-6-A-93.jpg",
+   "https://shop-phinf.pstatic.net/20260709_214/1783580009043Abrms_JPEG/p-7546387872-s-6-A-94.jpg",
+   "https://shop-phinf.pstatic.net/20260709_186/1783580009060XTnrH_JPEG/p-7546387872-s-6-A-95.jpg",
+   "https://shop-phinf.pstatic.net/20260709_266/1783580009069klyiU_JPEG/p-7546387872-s-6-A-96.jpg",
+   "https://shop-phinf.pstatic.net/20260709_277/1783580009079P17rV_JPEG/p-7546387872-s-6-A-97.jpg",
+   "https://shop-phinf.pstatic.net/20260709_221/1783580009075JQFEf_JPEG/p-7546387872-s-6-A-98.jpg",
+   "https://shop-phinf.pstatic.net/20260709_200/17835800091033VWMh_JPEG/p-7546387872-s-6-A-99.jpg",
+   "https://shop-phinf.pstatic.net/20260709_203/17835800091191VFOI_JPEG/p-7546387872-s-6-A-100.jpg",
+   "https://shop-phinf.pstatic.net/20260709_207/1783580009119J3lvA_JPEG/p-7546387872-s-6-A-101.jpg",
+   "https://shop-phinf.pstatic.net/20260709_58/1783580009136dISsY_JPEG/p-7546387872-s-6-A-102.jpg",
+   "https://shop-phinf.pstatic.net/20260709_56/1783580009144fAtnc_JPEG/p-7546387872-s-6-A-103.jpg",
+   "https://shop-phinf.pstatic.net/20260709_191/1783580009154cz102_JPEG/p-7546387872-s-6-A-104.jpg",
+   "https://shop-phinf.pstatic.net/20260709_1/17835800091496pYFa_JPEG/p-7546387872-s-6-A-105.jpg",
+   "https://shop-phinf.pstatic.net/20260709_93/17835800091780i6ab_JPEG/p-7546387872-s-6-A-106.jpg",
+   "https://shop-phinf.pstatic.net/20260709_99/1783580009182737Mx_JPEG/p-7546387872-s-6-A-107.jpg",
+   "https://shop-phinf.pstatic.net/20260709_67/1783580009190Smmgw_JPEG/p-7546387872-s-6-A-108.jpg",
+   "https://shop-phinf.pstatic.net/20260709_23/1783580009202f3OMB_JPEG/p-7546387872-s-6-A-109.jpg",
+   "https://shop-phinf.pstatic.net/20260709_199/1783580009226SqUWH_JPEG/p-7546387872-s-6-A-110.jpg",
+   "https://shop-phinf.pstatic.net/20260709_105/1783580009239gOBeF_JPEG/p-7546387872-s-6-A-111.jpg",
+   "https://shop-phinf.pstatic.net/20260709_246/1783580009225UQu8E_JPEG/p-7546387872-s-6-A-112.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:e6a8738623f9f306",
+   "kind": "title",
+   "ko": "지브이투어 벨로시티 BM 13 PCS 남성 여성 풀세트 (백세트포함)"
+  },
+  {
+   "id": "brand:3137143c80ec900a",
+   "kind": "brand",
+   "ko": "지브이투어"
+  },
+  {
+   "id": "option_name:f27658caefca2a8a",
+   "kind": "option_name",
+   "ko": "골프클럽구분"
+  },
+  {
+   "id": "option_value:78ada43b91d81e47",
+   "kind": "option_value",
+   "ko": "BM 풀세트 스틸 블랙 13PCS"
+  },
+  {
+   "id": "option_value:24c3194b747a3e0d",
+   "kind": "option_value",
+   "ko": "BM 풀세트 여성 실버 12PCS"
+  },
+  {
+   "id": "option_value:535e246bc0d7de08",
+   "kind": "option_value",
+   "ko": "BM 풀세트 카본 골드 13PCS"
+  },
+  {
+   "id": "option_name:e5d161b785bc817b",
+   "kind": "option_name",
+   "ko": "선택2"
+  },
+  {
+   "id": "option_value:515e50422647a97b",
+   "kind": "option_value",
+   "ko": "BM 캐디백세트 네이비"
+  },
+  {
+   "id": "option_value:58eb192b3c32916e",
+   "kind": "option_value",
+   "ko": "BM 캐디백세트 블랙"
+  },
+  {
+   "id": "option_value:f5e3e4534c8c45f5",
+   "kind": "option_value",
+   "ko": "BM 캐디백세트 화이트"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:3137143c80ec900a",
+   "kind": "spec_value",
+   "ko": "지브이투어"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:28ba215b353f25d9",
+   "kind": "spec_value",
+   "ko": "BM 풀세트"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "addon_group:a27363abd4e493c3",
+   "kind": "addon_group",
+   "ko": "남여 합피 골프장갑"
+  },
+  {
+   "id": "addon_name:7ec0854ff3bbd0f8",
+   "kind": "addon_name",
+   "ko": "남성 합피 E46301 23호 왼손 4장"
+  },
+  {
+   "id": "addon_name:4b9f95b896bc5797",
+   "kind": "addon_name",
+   "ko": "남성 합피 E46301 26호 왼손 4장"
+  },
+  {
+   "id": "addon_name:00a9b0bc06fd96f2",
+   "kind": "addon_name",
+   "ko": "여성 합피 E46301 18호 양손 2세트"
+  },
+  {
+   "id": "addon_group:0d768a31b258ae4c",
+   "kind": "addon_group",
+   "ko": "남여 양피 골프장갑"
+  },
+  {
+   "id": "addon_name:5b13eba5c963e374",
+   "kind": "addon_name",
+   "ko": "남성 올양피 C36301 화이트 22호 3장"
+  },
+  {
+   "id": "addon_name:dbbf73fc17710b1c",
+   "kind": "addon_name",
+   "ko": "남성 올양피 C36301 화이트 23호 3장"
+  },
+  {
+   "id": "addon_name:3e956e813a68c3d5",
+   "kind": "addon_name",
+   "ko": "남성 올양피 C36301 화이트 24호 3장"
+  },
+  {
+   "id": "addon_name:2dd7bba75923ced8",
+   "kind": "addon_name",
+   "ko": "남성 올양피 C36301 화이트 25호 3장"
+  },
+  {
+   "id": "addon_name:8d99111526ba7735",
+   "kind": "addon_name",
+   "ko": "여성 올양피 C36301 화이트 18호 3장"
+  },
+  {
+   "id": "addon_name:66b2f04a47a505e1",
+   "kind": "addon_name",
+   "ko": "여성 올양피 C36301 화이트 19호 3장"
+  },
+  {
+   "id": "addon_name:ecf53799b71e670f",
+   "kind": "addon_name",
+   "ko": "여성 올양피 C36301 화이트 20호 3장"
+  },
+  {
+   "id": "addon_name:ce8d61a41925dbf2",
+   "kind": "addon_name",
+   "ko": "여성 올양피 C36301 화이트 21호 3장"
+  },
+  {
+   "id": "addon_group:0da9ae3032060c3c",
+   "kind": "addon_group",
+   "ko": "골프백"
+  },
+  {
+   "id": "addon_name:f9d2a21872e83b28",
+   "kind": "addon_name",
+   "ko": "럭셔리 신발가방 C24307 블랙 2.0"
+  },
+  {
+   "id": "addon_name:4bb4244e0764beb7",
+   "kind": "addon_name",
+   "ko": "에나멜 골프 파우치 D34305 블랙"
+  },
+  {
+   "id": "addon_name:945f81748c26b23c",
+   "kind": "addon_name",
+   "ko": "에나멜 골프 파우치 D34305 화이트"
+  },
+  {
+   "id": "addon_group:d2302d7cd1a11685",
+   "kind": "addon_group",
+   "ko": "필드용품"
+  },
+  {
+   "id": "addon_name:baa624d77b0579c9",
+   "kind": "addon_name",
+   "ko": "아디다스 로고 볼캡 IA9602 블랙"
+  },
+  {
+   "id": "addon_name:877b375877547a39",
+   "kind": "addon_name",
+   "ko": "아디다스 로고 볼캡 IA9603 화이트"
+  },
+  {
+   "id": "addon_name:2b48a67f57734fd6",
+   "kind": "addon_name",
+   "ko": "아디다스 로고 볼캡 IA9604 네이비"
+  },
+  {
+   "id": "addon_name:ea94efb44c63a758",
+   "kind": "addon_name",
+   "ko": "브리지스톤 2피스 골프공 12구"
+  },
+  {
+   "id": "addon_name:a86cb621d8c98fa9",
+   "kind": "addon_name",
+   "ko": "단목 압박 골프양말 C20304 블랙 3켤레"
+  },
+  {
+   "id": "addon_name:6e1e44dc0e79ff0e",
+   "kind": "addon_name",
+   "ko": "단목 압박 골프양말 C20304 화이트 3켤레"
+  },
+  {
+   "id": "addon_group:d9b1677d8cf93b9a",
+   "kind": "addon_group",
+   "ko": "쇼핑백"
+  },
+  {
+   "id": "addon_name:e17d6d9a9050995e",
+   "kind": "addon_name",
+   "ko": "대형"
+  }
+ ]
+}

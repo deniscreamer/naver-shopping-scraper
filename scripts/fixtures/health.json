@@ -6,7 +6,19 @@
   "/products/specs",
   "/products/search",
   "/products/count",
-  "/products/reviews"
+  "/products/reviews",
+  "/products/reviews/selected",
+  "/stores/details",
+  "/stores/products",
+  "/catalogs/reviews",
+  "/keywords/rank",
+  "/keywords/trend",
+  "/categories/trend",
+  "/categories/list",
+  "/listings",
+  "/listings/<job_id>",
+  "/listings/<job_id>/products",
+  "/captcha"
  ],
  "extension": "connected"
 }

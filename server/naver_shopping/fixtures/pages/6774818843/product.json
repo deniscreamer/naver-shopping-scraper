@@ -1,0 +1,363 @@
+{
+ "id": "6774818843",
+ "channelServiceType": "STOREFARM",
+ "channelProductType": "SINGLE",
+ "channelProductSupplyType": "OWNER",
+ "channelProductStatusType": "NORMAL",
+ "channelProductDisplayStatusType": "ON",
+ "category": {
+  "categoryId": "50002788",
+  "categoryName": "풀세트",
+  "category1Id": "50000007",
+  "category2Id": "50000029",
+  "category3Id": "50001102",
+  "category4Id": "50002788",
+  "category1Name": "스포츠/레저",
+  "category2Name": "골프",
+  "category3Name": "골프클럽",
+  "category4Name": "풀세트",
+  "wholeCategoryId": "50000007>50000029>50001102>50002788",
+  "wholeCategoryName": "스포츠/레저>골프>골프클럽>풀세트",
+  "categoryLevel": 4,
+  "lastLevel": true,
+  "sortOrder": 10,
+  "validCategory": true,
+  "receiptIssue": true,
+  "exceptionalCategoryTypes": [
+   "FREE_RETURN_INSURANCE",
+   "RENTAL_SUBSCRIPTION",
+   "MANUFACTURE_DEFINE_NO",
+   "REGULAR_SUBSCRIPTION"
+  ],
+  "pointAccumulationYn": false
+ },
+ "name": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트",
+ "productUrl": "https://smartstore.naver.com/main/products/6774818843",
+ "mobileProductUrl": "https://m.smartstore.naver.com/main/products/6774818843",
+ "storeKeepExclusiveProduct": false,
+ "best": false,
+ "orderRequestUsable": false,
+ "channelProductAttributes": [],
+ "productNo": "6742569098",
+ "salePrice": 700000,
+ "dispSalePrice": 700000,
+ "stockQuantity": 19985,
+ "saleType": "NEW",
+ "excludeAdminDiscount": false,
+ "payExposure": true,
+ "productStatusType": "SALE",
+ "statusType": "SALE",
+ "authenticationType": "NORMAL",
+ "itselfProductionProductYn": false,
+ "afterServiceInfo": {
+  "afterServiceTelephoneNumber": "********",
+  "afterServiceGuideContent": "********"
+ },
+ "originAreaInfo": {
+  "originAreaType": "IMPORT",
+  "content": "일본산(구매대행)",
+  "originAreaCode": "0200036",
+  "wholeOriginAreaName": "수입산:아시아>일본",
+  "importer": "구매대행",
+  "plural": false
+ },
+ "optionUsable": true,
+ "options": [
+  {
+   "id": 6567981969,
+   "optionType": "COMBINATION",
+   "groupName": "선택"
+  }
+ ],
+ "optionCombinations": [
+  {
+   "id": 46088597323,
+   "optionName1": "R",
+   "stockQuantity": 9992,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2024-12-26T11:10:45.124+00:00"
+  },
+  {
+   "id": 46088597324,
+   "optionName1": "S",
+   "stockQuantity": 9993,
+   "price": 0,
+   "regOrder": 1,
+   "registerDate": "2024-12-26T11:10:45.125+00:00"
+  }
+ ],
+ "optionStandards": [],
+ "supplementProductUsable": false,
+ "supplementProducts": [],
+ "customMadeInfo": {
+  "customMade": false
+ },
+ "taxType": "TAX",
+ "customsTaxType": "EXCLUDED",
+ "certification": false,
+ "certificationTargetExcludeContent": {
+  "kcCertifiedProductExclusionYn": true,
+  "kcCertifiedProductExclusionType": "TRUE"
+ },
+ "minorPurchasable": true,
+ "productInfoProvidedNoticeView": {
+  "basic": {
+   "품명 / 모델명": "상품상세참조 / 상품상세참조",
+   "법에 의한 인증, 허가 등을 받았음을 확인할 수 있는 경우 그에 대한 사항": "상품상세참조",
+   "제조자(사)": "상품상세참조",
+   "제조국": "일본산(구매대행)",
+   "A/S 책임자": "상품상세참조",
+   "A/S 전화번호": "********"
+  },
+  "additional": {
+   "재화등의 배송방법에 관한 정보": "택배",
+   "주문 이후 예상되는 배송기간": "대금 지급일로부터 3일 이내에 발송",
+   "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보": "편도 80000원 (최초 배송비 무료인 경우 160000원 부과)",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+   "재화등의 교환·반품·보증 조건 및 품질보증기준": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "재화등의 A/S 관련 전화번호": "********",
+   "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+   "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "거래에 관한 약관의 내용 또는 확인할 수 있는 방법": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다."
+  }
+ },
+ "productDeliveryInfo": {
+  "deliveryFeeType": "UNIT_QUANTITY_PAID",
+  "deliveryMethodTypes": [
+   "DELIVERY"
+  ],
+  "baseFee": 99000,
+  "deliveryFeePayType": "PREPAID",
+  "repeatQuantity": 1,
+  "deliveryAreaType": "AREA_2",
+  "area2ExtraFee": 3000,
+  "differentialFeeByArea": "제주 도서",
+  "installationFee": false,
+  "deliveryFeePolicyText": "1개마다 부과 / 제주,도서지역 추가 3,000원",
+  "deliveryAttributeType": "NORMAL",
+  "todayDelivery": false,
+  "deliveryCompany": {
+   "id": "EPOST",
+   "name": "우체국택배"
+  }
+ },
+ "claimDeliveryInfo": {
+  "returnDeliveryCompanyPriority": "PRIMARY",
+  "deliveryCompanyName": "한진택배",
+  "deliveryCompanyCode": "HANJIN",
+  "naverPayAppointment": true,
+  "returnDeliveryFee": 80000,
+  "exchangeDeliveryFee": 160000,
+  "shippingAddressId": 104574558,
+  "returnAddressId": 103897656,
+  "shippingAddress": "272 0011 ELDEX KT126090, DPL ichikawa4F, 6-4, Koyashimmachi, Ichikawa, Chiba Ken, Japan",
+  "returnAddress": "서울특별시 관악구 남부순환로 1685 603호 (우 : 08756) ",
+  "overseasShipping": true,
+  "individualCustomUniqueCodeUsable": true,
+  "freeReturnInsurance": false
+ },
+ "isCultureCostIncomeDeduction": false,
+ "isRestrictCart": false,
+ "naverGuaranteed": false,
+ "newShoppingExposureYn": true,
+ "benefitsView": {
+  "discountedSalePrice": 699000,
+  "dispDiscountedSalePrice": 699000,
+  "sellerImmediateDiscountAmount": 1000,
+  "managerImmediateDiscountAmount": 0,
+  "specialDiscountAmount": {},
+  "discountedRatio": 0,
+  "dispDiscountedRatio": 0,
+  "sellerPurchasePoint": 0,
+  "sellerCustomerManagementPoint": 0,
+  "managerPurchasePoint": 6990,
+  "managerPurchaseExtraPoint": 0,
+  "managerPaymoneyAccumulatePoint": 10485,
+  "managerBankbookAccumulatePoint": 3495,
+  "managerArrivalGuaranteePoint": 0,
+  "managerMembershipArrivalGuaranteePoint": 0,
+  "generalPurchaseReviewPoint": 100,
+  "premiumPurchaseReviewPoint": 200,
+  "managerGeneralPurchaseReviewPoint": 50,
+  "managerPremiumPurchaseReviewPoint": 150,
+  "textReviewPoint": 100,
+  "photoVideoReviewPoint": 200,
+  "afterUseTextReviewPoint": 200,
+  "afterUsePhotoVideoReviewPoint": 300,
+  "storeMemberReviewPoint": 200,
+  "managerTextReviewPoint": 50,
+  "managerPhotoVideoReviewPoint": 150,
+  "managerAfterUseTextReviewPoint": 50,
+  "managerAfterUsePhotoVideoReviewPoint": 150,
+  "givePresent": false
+ },
+ "averageDeliveryLeadTime": {
+  "productAverageDeliveryLeadTime": 0,
+  "sellerAverageDeliveryLeadTime": 5
+ },
+ "detailContents": {
+  "detailContentText": "◆ 해당 상품 관부가세 및 배송 공지◆ 해당 제품 통관시 관부가세 별도 납부하셔야하며, 배송은 9~14일가량 소요됩니다. <환율변동 및 배송상황에 따라 금액 및 배송일에 차이가 있을 수 있습니다> 관부가세는 세금톡이라고 카카오톡으로 안내됩니다.(이체, 카드 등 결제가능) 감사합니다. 듀벨로 올림 호평의 캘러웨이 클럽 세트가 리뉴얼된, 고품질 패키지 X2 HOT를 기반으로 한 클럽 헤드 설계 퍼터를 제외한 9개의 클럽의 헤드 디자인은 2014년의 X2 HOT 시리즈가 베이스로 되어 있습니다. 또, 마무리에 PVD 가공이 더해져, 세트의 클럽으로서는 더 이상 없을 정도의 성능과 질감을 갖추고 있습니다. 드라이버의 길이는 44.5 인치로 설정. 일반 드라이버보다 약간 짧기 때문에 컨택트가 쉽고 초보자도 부드럽게 시작할 수있습니다. 퍼터에는 오딧세이 전통의 화이트・핫 프로 2.0! 퍼터에도 오딧세이 전통의 화이트 핫 인서트에서 높은 인기를 자랑했던, 사양의 화이트 핫 프로 2.0입니다. 헤드 타입은 컨벤셔널한 블레이드 타입입니다. 캐디 백도 PU를 충분히 사용해, 고급감이 업그레이드 되었습니다. WARBIRD 세트라고 하면, 캐디백도 세트로 되어 있는 것이 특징인 입문 전용 골프 클럽 세트입니다. 캐디백도 보다 훌륭한 구조로 업그레이드 되어, 풍부한 포켓은 물론 소재에는 PU(인공 피혁)를 다량 사용을 통해, 기능과 퀄리티가 뛰어난 캐디 백입니다. 워버드 클럽 세트 (10 개 세트) 스틸(S) / 카본(R) 캘러웨이 골프 / WARBIRD 세트 내용 + 캐디백 10개 세트(1W, 5W, #5-#9, PW, SW, PT) + 캐디백 상품 특징 번호 드라이버 #5 우드 5i 6i 7i 8i 9i PW SW Putter 헤드 소재 티타늄 스테인리스 샤프트 플렉스 우드 : WARBIRD (S / R) 아이언 : WARBIRD (R), 오리지널 스틸 (UNI : SR 상당) 클럽길이 (S세트) 44.5 42.25 38.0 37.5 37.0 36.5 36.0 35.5 35.25 34.0 로프트각(°) 10.5 19.0 23.0 26.0 30.0 34.5 39.0 44.0 54.0 3.0 라이각(°) 58.5 58.0 61.3 62.0 62.5 63.0 63.5 64.0 64.0 70.0 밸런스 (S세트) D1 D3 D4 밸런스 (R세트) D0 D1 D3 클럽무게 (S세트) 약 318g 약 330g 약 416g 약 420g 약 424g 약 430g 약 436g 약 446g 약 455g 약 521g 클럽무게(R세트) 약 313g 약 328g 약 370g 약 375g 약 380g 약 386g 약 392g 약 401g 약 414g 약 521g ※드라이버, 페어웨이 우드, 퍼터, 전용 헤드 커버 부속.",
+  "excessDetailContentText": false,
+  "editorType": "SEONE"
+ },
+ "useExternalStock": false,
+ "dispName": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트",
+ "adultAuthorizationType": "NOT_LOGIN",
+ "authorizationDisplay": "NORMAL",
+ "galleryImages": [
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20220609_49/1654749590651XNKNV_JPEG/55885418467305137_1495947105.jpg",
+   "width": 780,
+   "height": 700,
+   "imageType": "REPRESENTATIVE"
+  },
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20220609_94/1654749595418czrxD_JPEG/55885422458421226_1905936642.jpg",
+   "width": 500,
+   "height": 500,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 2,
+   "url": "https://shop-phinf.pstatic.net/20220609_186/16547495998361eOPb_JPEG/55885427661259782_1983046580.jpg",
+   "width": 500,
+   "height": 500,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 3,
+   "url": "https://shop-phinf.pstatic.net/20220609_93/1654749604801TH96w_JPEG/55885432244291308_1591461255.jpg",
+   "width": 500,
+   "height": 500,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 4,
+   "url": "https://shop-phinf.pstatic.net/20220609_84/16547496811050csEr_JPEG/55885508934780266_1102489280.jpg",
+   "width": 500,
+   "height": 500,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 5,
+   "url": "https://shop-phinf.pstatic.net/20220609_23/16547496752134UKkg_JPEG/55885503042001618_216508058.jpg",
+   "width": 500,
+   "height": 500,
+   "imageType": "OPTIONAL"
+  }
+ ],
+ "soldout": false,
+ "viewAttributes": {
+  "상품상태": "신상품",
+  "상품번호": "6774818843",
+  "제조사": "캘러웨이",
+  "브랜드": "캘러웨이",
+  "모델명": "캘러웨이 WARBIRD",
+  "원산지": "일본산(구매대행)"
+ },
+ "additionalAttributes": {
+  "영수증발급": "신용카드전표, 현금영수증발급",
+  "A/S 안내": [
+   "********",
+   "********"
+  ]
+ },
+ "detailAttributes": {
+  "드라이버 로프트각": "10.5도",
+  "아이언 구성": "#5, #6, #7, #8, #9, 샌드웨지(SW), 피칭웨지(PW)",
+  "종류": "풀세트",
+  "성별": "남성용",
+  "사용방향": "오른손용",
+  "총클럽개수": "10개",
+  "출시": "2019년형",
+  "풀세트구성": "드라이버, 페어웨이, 퍼터, 웨지, 7아이언세트",
+  "아이언샤프트소재": "스틸",
+  "아이언개수": "7개",
+  "퍼터형태": "블레이드(일자형)",
+  "골프백포함여부": "캐디백"
+ },
+ "eCouponCategory": false,
+ "cultureCategory": false,
+ "textOptions": [],
+ "simpleOptions": [],
+ "combinationOptions": [
+  {
+   "groupName": "선택",
+   "options": [
+    {
+     "id": 46088597323,
+     "optionName1": "R",
+     "stockQuantity": 9992,
+     "price": 0,
+     "regOrder": 0,
+     "registerDate": "2024-12-26T11:10:45.124+00:00"
+    },
+    {
+     "id": 46088597324,
+     "optionName1": "S",
+     "stockQuantity": 9993,
+     "price": 0,
+     "regOrder": 1,
+     "registerDate": "2024-12-26T11:10:45.125+00:00"
+    }
+   ],
+   "checkedName": null,
+   "checkedIds": null,
+   "price": 0,
+   "isLastDepth": true
+  }
+ ],
+ "standardOptions": [],
+ "standardCombinations": [
+  {
+   "id": 46088597323,
+   "optionName1": "R",
+   "stockQuantity": 9992,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2024-12-26T11:10:45.124+00:00",
+   "title": "_R____"
+  },
+  {
+   "id": 46088597324,
+   "optionName1": "S",
+   "stockQuantity": 9993,
+   "price": 0,
+   "regOrder": 1,
+   "registerDate": "2024-12-26T11:10:45.125+00:00",
+   "title": "_S____"
+  }
+ ],
+ "supplements": [],
+ "deliveryText": "1개마다 부과 / 제주,도서지역 추가 3,000원 / 제주 도서",
+ "deliveryMethodType": {
+  "code": 1,
+  "name": "택배",
+  "description": "택배",
+  "etc": null,
+  "naverPayCode": "DELIVERY"
+ },
+ "deliveryPayType": "PREPAID",
+ "discountedSalePrice": 699000,
+ "mobileDiscountRatio": 0,
+ "derived": {
+  "productType": "DEFAULT"
+ },
+ "hopeDelivery": null,
+ "productVideoAuth": {
+  "inKey": "V12738881c32b2dff4451928155487839090e32882b0f4f9d7a7f53bdd134eb9d6afa928155487839090e",
+  "serviceId": 2010,
+  "inkey": "V12738881c32b2dff4451928155487839090e32882b0f4f9d7a7f53bdd134eb9d6afa928155487839090e"
+ },
+ "commentCount": 126,
+ "isPayMember": false,
+ "arrivalGuarantee": false,
+ "groupId": null,
+ "groupEpId": null,
+ "simpleProductAffiliateYn": false,
+ "disableAdditionalApi": false
+}

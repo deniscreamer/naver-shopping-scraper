@@ -1,0 +1,464 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:102349440:10639350746",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/drallright/products/10639350746",
+  "channel_no": "102349440",
+  "product_id": "10639350746",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "왼손골프 좌타 골프채풀세트 초보용 남성용 캘러웨이 골프백포함",
+  "brand_ko": "캘러웨이",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "10639350746",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 1414550,
+    "price_usd": "1414.55",
+    "sku": "FW-0e9dac5422023a9972db062e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "value": {
+       "min": 6350.293,
+       "max": 6350.293
+      },
+      "source": "source_stated",
+      "confidence": 2,
+      "quote": "무게: 14 파운드",
+      "from": "description_table",
+      "locator": {
+       "block": "html",
+       "row": 7,
+       "cell": "tr"
+      },
+      "kind": "unknown",
+      "scope": "set",
+      "approximate": false,
+      "flags": [],
+      "binding": {
+       "scope": "product",
+       "variant_ids": []
+      },
+      "also": 1
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 7710.0,
+       "max": 7710.0
+      },
+      "source": "source_stated",
+      "confidence": 3,
+      "quote": "Package Weight: 7.71 Kilograms",
+      "from": "description_table",
+      "locator": {
+       "block": "html",
+       "row": 25,
+       "cell": "tr"
+      },
+      "kind": "packed",
+      "scope": "unknown",
+      "approximate": false,
+      "flags": [],
+      "binding": {
+       "scope": "product",
+       "variant_ids": []
+      },
+      "also": 0
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 1224.28,
+       "max": 1224.28
+      },
+      "source": "source_stated",
+      "confidence": 3,
+      "quote": "Item Package Dimensions L x W x H: 48.2 x 12.7 x 8.5 inches",
+      "from": "description_table",
+      "locator": {
+       "block": "html",
+       "row": 24,
+       "cell": "tr"
+      },
+      "kind": "packed",
+      "scope": null,
+      "approximate": false,
+      "flags": [],
+      "binding": {
+       "scope": "product",
+       "variant_ids": []
+      },
+      "also": 0
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 322.58,
+       "max": 322.58
+      },
+      "source": "source_stated",
+      "confidence": 3,
+      "quote": "Item Package Dimensions L x W x H: 48.2 x 12.7 x 8.5 inches",
+      "from": "description_table",
+      "locator": {
+       "block": "html",
+       "row": 24,
+       "cell": "tr"
+      },
+      "kind": "packed",
+      "scope": null,
+      "approximate": false,
+      "flags": [],
+      "binding": {
+       "scope": "product",
+       "variant_ids": []
+      },
+      "also": 0
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 215.9,
+       "max": 215.9
+      },
+      "source": "source_stated",
+      "confidence": 3,
+      "quote": "Item Package Dimensions L x W x H: 48.2 x 12.7 x 8.5 inches",
+      "from": "description_table",
+      "locator": {
+       "block": "html",
+       "row": 24,
+       "cell": "tr"
+      },
+      "kind": "packed",
+      "scope": null,
+      "approximate": false,
+      "flags": [],
+      "binding": {
+       "scope": "product",
+       "variant_ids": []
+      },
+      "also": 0
+     }
+    }
+   }
+  ],
+  "pricing": {
+   "base_krw": 1414550,
+   "original_krw": 1489000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "12도"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#6, #7, #8, #9, 샌드웨지(SW), 피칭웨지(PW), W"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "왼손용"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2024년형"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "드라이버, 6아이언세트, 7아이언세트, 8아이언세트, 9아이언세트, 퍼터, 5아이언세트, 웨지, 페어웨이"
+   },
+   {
+    "label_ko": "아이언샤프트소재",
+    "value_ko": "스틸"
+   },
+   {
+    "label_ko": "아이언개수",
+    "value_ko": "7개"
+   },
+   {
+    "label_ko": "퍼터형태",
+    "value_ko": "말렛(반달형)"
+   },
+   {
+    "label_ko": "골프백포함여부",
+    "value_ko": "스탠드백"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 1
+  },
+  "reviews": [
+   {
+    "id": "4723892113",
+    "score": 5,
+    "text_ko": "넘 좋아요 감사해요",
+    "created_at": "2025-05-15T21:38:29Z",
+    "writer": "myjs****",
+    "photos": [
+     "collected/50002788-fixtures/images/10639350746/fairwardgolf-review-image-56c977a8d1575551.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/10639350746/fairwardgolf-10639350746-001-24cc46eca16b5536.webp",
+    "sha256": "24cc46eca16b5536ccfe50ccdbfc96938ae43574c4cde6cbbf77692a500108b6",
+    "width": 611,
+    "height": 1496
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/10639350746/fairwardgolf-10639350746-002-4b2062f52bbb63cd.webp",
+    "sha256": "4b2062f52bbb63cd356ca85e8a66c8191451303c71ba48700dee80de74a3755e",
+    "width": 1095,
+    "height": 913
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/10639350746/fairwardgolf-10639350746-003-271a695a0ef79be0.webp",
+    "sha256": "271a695a0ef79be0aaa4dc7b268a39579f7e0942c66f1952592ae4221a4dddce",
+    "width": 1336,
+    "height": 428
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 4,000원",
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": "18:00",
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": "7000"
+  },
+  "description_ko": "남성용 왼손 초보용 골프채 풀세트\n미국내 1위 제품\n\nCallaway Golf Men’s Strata Complete Set\n\n[구성] 총 14piece\nDriver\n3 Wood\n5 Hybrid\n6 - 9 Iron\nPW and SW\nPutter\nStand Bag\n3 Headcovers\n\n크기\n14 종(Strata Plus)\n색상\n빨강\n골프채 강도\nR\n사용\n왼손잡이\n재질\n알루미늄\n브랜드\n캘러웨이(Callaway)\n샤프트재질\n스틸\n무게\n14 파운드\n골프퍼터라이앵글\n62.5\n그립타입\n퍼터\n\n우즈: 드라이버는 460cc의 클럽 헤드와 더 큰 스위트 스팟과 그래파이트 샤프트가 있어 티와의 거리가 더 멀어집니다. 3 Wood는 더 빠른 스윙 속도와 긴 샷을 촉진합니다.\n하이브리드: 5 하이브리드는 보통 어려운 롱아이언에 부딪힐 때 다재다능함과 용서를 위해 설계되었습니다.\n아이언/웨지: 6~9개의 아이언, 피칭 웨지 및 샌드 웨지에는 둘레 가중 및 점진적인 밑창 폭 기술이 적용되어 제어력이 향상되었습니다.\n퍼터: 놀라운 정확도를 제공하는 정렬 기능을 갖춘 말렛 퍼터\n\nSize\n‎14 Piece (Strata Plus)\nColor\n‎Red\nGolf Club Flex\n‎Regular\nHand Orientation\n‎Left\nMaterial\n‎Aluminum\nBrand\n‎Callaway\nShaft Material\n‎Steel\nItem Weight\n‎14 Pounds\nGolf Putter Lie Angle\n‎62.5\nGrip Type\n‎Putter\nProduct Dimensions\n‎48\"L x 11\"W x 11\"H\nUPC\n‎190228623812\nGlobal Trade Identification Number\n‎00190228623812\nManufacturer\n‎Callaway Golf\nItem Package Dimensions L x W x H\n‎48.2 x 12.7 x 8.5 inches\nPackage Weight\n‎7.71 Kilograms\nItem Dimensions LxWxH\n‎48 x 11 x 11 inches\nBrand Name\n‎Callaway\nWarranty Description\n‎2 year warranty\nModel Name\n‎STRATA PLUS 19 PACKAGE SET\nSuggested Users\n‎mens\nNumber of Items\n‎14\nPart Number\n‎4PKL190714067\nStyle\n‎Left Hand\nIncluded Components\n‎Golf Package Set",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20240724_40/1721796603670Y1U32_JPEG/%ED%95%98%EB%8B%A8%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240724_255/1721794378977HEk6p_JPEG/61V8CYTzhOL._AC_SL1500_.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240724_289/17217943790011MgBL_JPEG/2024-07-24_12_44_05.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240724_8/1721794378982Ux6mN_JPEG/2024-07-24_12_44_33.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "duties",
+    "text": "현지배송비+관세&부가세+국내배송비 모두 포함 금액고객님께서 추가적으로 지불하시는 금액은 없습니다!!!!!"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20240724_107/1721795188295KDP0s_JPEG/%ED%95%B4%EC%99%B8%EB%B0%B0%EC%86%A1.jpg?type=w848"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20240724_188/1721795433494yG5Jr_JPEG/%ED%86%B5%EA%B4%80%EB%B2%88%ED%98%B8_%EC%95%88%EB%82%B4.jpg?type=w848"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20240726_45/1721960206004Ekl8d_JPEG/%ED%95%B4%EA%B5%AC%EB%8C%80%EC%95%88%EB%82%B4.jpg?type=w848"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:f9a0fb32106637ec",
+   "kind": "title",
+   "ko": "왼손골프 좌타 골프채풀세트 초보용 남성용 캘러웨이 골프백포함"
+  },
+  {
+   "id": "brand:752b9a8b36b892c4",
+   "kind": "brand",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:752b9a8b36b892c4",
+   "kind": "spec_value",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:910f6915c3b7750c",
+   "kind": "spec_value",
+   "ko": "12도"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:732dd4f34b224121",
+   "kind": "spec_value",
+   "ko": "#6, #7, #8, #9, 샌드웨지(SW), 피칭웨지(PW), W"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:9c68b4648cbe18e2",
+   "kind": "spec_value",
+   "ko": "왼손용"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:8040f01b1433a292",
+   "kind": "spec_value",
+   "ko": "2024년형"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:8928179705b92a65",
+   "kind": "spec_value",
+   "ko": "드라이버, 6아이언세트, 7아이언세트, 8아이언세트, 9아이언세트, 퍼터, 5아이언세트, 웨지, 페어웨이"
+  },
+  {
+   "id": "spec_label:5a12089f44ae3f65",
+   "kind": "spec_label",
+   "ko": "아이언샤프트소재"
+  },
+  {
+   "id": "spec_value:76d45c1471b5954b",
+   "kind": "spec_value",
+   "ko": "스틸"
+  },
+  {
+   "id": "spec_label:cf77915a2f3ab5d8",
+   "kind": "spec_label",
+   "ko": "아이언개수"
+  },
+  {
+   "id": "spec_value:0c5a3886c288bcd6",
+   "kind": "spec_value",
+   "ko": "7개"
+  },
+  {
+   "id": "spec_label:04c52e5b47f70047",
+   "kind": "spec_label",
+   "ko": "퍼터형태"
+  },
+  {
+   "id": "spec_value:92917baf006633bb",
+   "kind": "spec_value",
+   "ko": "말렛(반달형)"
+  },
+  {
+   "id": "spec_label:e4aabb2e41b870bd",
+   "kind": "spec_label",
+   "ko": "골프백포함여부"
+  },
+  {
+   "id": "spec_value:68d1701a10addde1",
+   "kind": "spec_value",
+   "ko": "스탠드백"
+  },
+  {
+   "id": "review:f84362d4d2299734",
+   "kind": "review",
+   "ko": "넘 좋아요 감사해요"
+  }
+ ]
+}

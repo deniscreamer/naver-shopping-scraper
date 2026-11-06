@@ -1,0 +1,31 @@
+{
+ "id": "6774818843",
+ "productDeliveryInfo": {
+  "deliveryFeeType": "UNIT_QUANTITY_PAID",
+  "deliveryMethodTypes": [
+   "DELIVERY"
+  ],
+  "baseFee": 99000,
+  "deliveryFeePayType": "PREPAID",
+  "repeatQuantity": 1,
+  "deliveryAreaType": "AREA_2",
+  "area2ExtraFee": 3000,
+  "differentialFeeByArea": "제주 도서",
+  "installationFee": false,
+  "deliveryFeePolicyText": "1개마다 부과 / 제주,도서지역 추가 3,000원",
+  "deliveryAttributeType": "NORMAL",
+  "todayDelivery": false,
+  "deliveryCompany": {
+   "id": "EPOST",
+   "name": "우체국택배"
+  }
+ },
+ "claimDeliveryInfo": {
+  "overseasShipping": true,
+  "customsTaxType": null
+ },
+ "averageDeliveryLeadTime": {
+  "productAverageDeliveryLeadTime": 0,
+  "sellerAverageDeliveryLeadTime": 5
+ }
+}

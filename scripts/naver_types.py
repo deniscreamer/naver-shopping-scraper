@@ -10,7 +10,7 @@ every fixture against them, strictly (missing / unknown keys fail).
 key. Contract in words: server/docs/ENDPOINTS.md. When a response changes,
 refresh its fixture (scripts/README.md) and the type in the same commit.
 """
-from typing import Literal, NotRequired, TypedDict
+from typing import Any, Literal, NotRequired, TypedDict
 
 
 # ==== products: search, count, details, reviews ======================================
@@ -181,6 +181,26 @@ class Delivery(TypedDict):
     company: str | None
     extra_fee_area2: int | None
     extra_fee_area3: int | None
+    extra_fee_text: str | None        # the seller's regional fee text when no amounts are given
+
+
+class DeliveryLeadTime(TypedDict):
+    """products/specs delivery.lead_time: how fast, as the page states it."""
+    seller_average_days: float | None     # the store's average days to deliver
+    product_average_days: float | None    # this product's (null until Naver has one)
+    today_cutoff: str | None              # "16:00": ordered before it, sent today (오늘출발)
+    arrival_days: int | None              # "평균 2일 이내 도착 확률 96%" -> 2, 96
+    arrival_date_text: str | None         # "11.11.(수) 도착 확률 98%" -> "11.11.(수)", 98
+    arrival_probability: int | None
+    ship_date_text: str | None            # "11.6.(금)": sent on that day if paid now
+
+
+class PageDelivery(Delivery):
+    """products/specs delivery (parsers.parse_page_delivery): as the product page charges it."""
+    is_overseas: bool | None          # shipped from abroad (claimDeliveryInfo.overseasShipping)
+    scope: Literal["international", "domestic"]
+    customs_tax_type: str | None
+    lead_time: DeliveryLeadTime
 
 
 class OptionGroup(TypedDict):
@@ -441,6 +461,8 @@ class WeightCandidate(TypedDict):
     kind: Literal["net", "packed", "component", "unknown"]
     scope: Literal["unit", "set", "unknown"]
     approximate: bool
+    count: int | None                     # pieces of a multiplier ("45g x 12개" -> 12)
+    flags: list[str]                      # alternate_unit, lb_oz, multiplied, part_scale, bag_excluded, ...
     quote: str
     source: MeasureSource
     locator: MeasureLocator
@@ -493,6 +515,7 @@ class ProductSpecs(TypedDict):
     is_complete: bool                 # rows found and the list was not left folded
     facts: ProductFacts
     options: PageOptions | None       # null: the page gave no product answer
+    delivery: PageDelivery | None     # null: the page gave no product answer
     measures: Measures
     read_at: str
 
@@ -700,6 +723,7 @@ class StoreDelivery(TypedDict):
     company: str | None
     extra_fee_area2: int | None
     extra_fee_area3: int | None
+    extra_fee_text: str | None        # the seller's regional fee text when no amounts are given
 
 
 class StoreProductReviews(TypedDict):
@@ -954,6 +978,35 @@ class ListingRow(TypedDict):
     query: str
     batch: int
     seen_at: str
+
+
+class ProductPage(TypedDict):
+    """/products/page (ext_product.product_page): the product page itself, for development and analysis."""
+    id: str | None
+    link: str | None
+    query: str
+    url: str | None
+    title: str | None
+    search_url: str | None
+    html: str
+    product_answer: dict[str, Any] | None   # the page's own product answer, as Naver sent it
+    saved_to: str
+    read_at: str
+
+
+class CaptchaState(TypedDict):
+    """/captcha (ext_listing.captcha_state): the captcha the adapter waits on. Keys after `status` and `at` are
+    present by status: waiting has step, attempt, question, screenshot, url, wait_s; solved / timed_out / blocked
+    have step, attempt, after_s; none has no more."""
+    status: Literal["none", "waiting", "solved", "timed_out", "blocked"]
+    at: NotRequired[str]
+    step: NotRequired[str]
+    attempt: NotRequired[int]
+    question: NotRequired[str | None]
+    screenshot: NotRequired[str]
+    url: NotRequired[str | None]
+    wait_s: NotRequired[int]
+    after_s: NotRequired[int]
 
 
 class ListingProductsPage(Paging):

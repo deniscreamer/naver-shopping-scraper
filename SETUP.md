@@ -50,6 +50,11 @@ fairwardgolf). Secrets go only into `.env` (gitignored), never into a commit or 
 If a value must come from the operator (proxy credentials, a webhook URL, where the Shopify app's credentials file is), ask them to paste it
 into `.env` themselves.
 
+A captcha during a run: the adapter waits `NAVER_CAPTCHA_WAIT_S` (600 s) with the captcha tab in front and the
+cursor in the answer field; answer it in Chrome, at the Mac or from a phone through a remote-desktop app (DeskIn,
+Chrome Remote Desktop). The run goes on by itself once the captcha is gone. To be told at once, keep
+`.venv/bin/python scripts/captcha_watch.py` running in another terminal (or let an agent run it and relay each line).
+
 For the full collection (`scripts/example_99_full_details.py`) two things come from the operator:
 
 - where the store app's credentials file is (client id + secret of the products app, mode 0600, ignored by git;

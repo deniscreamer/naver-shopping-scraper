@@ -1,0 +1,307 @@
+{
+ "id": "10302181901",
+ "channelServiceType": "STOREFARM",
+ "channelProductType": "SINGLE",
+ "channelProductSupplyType": "OWNER",
+ "channelProductStatusType": "NORMAL",
+ "channelProductDisplayStatusType": "ON",
+ "category": {
+  "categoryId": "50002788",
+  "categoryName": "풀세트",
+  "category1Id": "50000007",
+  "category2Id": "50000029",
+  "category3Id": "50001102",
+  "category4Id": "50002788",
+  "category1Name": "스포츠/레저",
+  "category2Name": "골프",
+  "category3Name": "골프클럽",
+  "category4Name": "풀세트",
+  "wholeCategoryId": "50000007>50000029>50001102>50002788",
+  "wholeCategoryName": "스포츠/레저>골프>골프클럽>풀세트",
+  "categoryLevel": 4,
+  "lastLevel": true,
+  "sortOrder": 10,
+  "validCategory": true,
+  "receiptIssue": true,
+  "exceptionalCategoryTypes": [
+   "RENTAL_SUBSCRIPTION",
+   "REGULAR_SUBSCRIPTION",
+   "FREE_RETURN_INSURANCE",
+   "MANUFACTURE_DEFINE_NO"
+  ],
+  "pointAccumulationYn": false
+ },
+ "name": "그라파이트/왼손/ AS가능/ 테일러메이드/ 풀세트 골프채 좌타 남성 남자 R강도 레프티 골프",
+ "productUrl": "https://smartstore.naver.com/main/products/10302181901",
+ "mobileProductUrl": "https://m.smartstore.naver.com/main/products/10302181901",
+ "storeKeepExclusiveProduct": false,
+ "best": false,
+ "orderRequestUsable": false,
+ "channelProductAttributes": [],
+ "productNo": "10252509319",
+ "salePrice": 1849000,
+ "dispSalePrice": 1849000,
+ "stockQuantity": 193,
+ "saleType": "NEW",
+ "excludeAdminDiscount": false,
+ "payExposure": true,
+ "productStatusType": "SALE",
+ "statusType": "SALE",
+ "authenticationType": "NORMAL",
+ "itselfProductionProductYn": false,
+ "afterServiceInfo": {
+  "afterServiceTelephoneNumber": "********",
+  "afterServiceGuideContent": "********"
+ },
+ "originAreaInfo": {
+  "originAreaType": "IMPORT",
+  "content": "미국산(테일러메이드골프)",
+  "originAreaCode": "0204000",
+  "wholeOriginAreaName": "수입산:북아메리카(북미)>미국",
+  "importer": "테일러메이드골프",
+  "plural": false
+ },
+ "optionUsable": false,
+ "supplementProductUsable": true,
+ "supplementProducts": [
+  {
+   "id": 2875384669,
+   "groupName": "테러메이드골프백",
+   "name": "블랙",
+   "stockQuantity": 99,
+   "price": 190000,
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 2875384670,
+   "groupName": "테러메이드골프백",
+   "name": "화이트블랙",
+   "stockQuantity": 100,
+   "price": 190000,
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 2875384671,
+   "groupName": "테러메이드골프백",
+   "name": "화이트네이비레드",
+   "stockQuantity": 99,
+   "price": 190000,
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  }
+ ],
+ "customMadeInfo": {
+  "customMade": false
+ },
+ "taxType": "TAX",
+ "certification": false,
+ "certificationTargetExcludeContent": {
+  "kcCertifiedProductExclusionYn": true,
+  "kcCertifiedProductExclusionType": "TRUE"
+ },
+ "minorPurchasable": true,
+ "productInfoProvidedNoticeView": {
+  "basic": {
+   "품명 / 모델명": "상품상세참조 / 상품상세참조",
+   "KC 인증정보": "상품상세참조",
+   "크기": "상품상세참조",
+   "중량": "상품상세참조",
+   "색상": "상품상세참조",
+   "재질": "상품상세참조",
+   "제품구성": "상품상세참조",
+   "동일 모델의 출시연월": "상품상세참조",
+   "제조자(사)": "상품상세참조",
+   "제조국": "미국산(테일러메이드골프)",
+   "상품별 세부사양": "상품상세참조",
+   "품질보증기준": "상품상세참조",
+   "A/S 책임자와 전화번호": "********"
+  },
+  "additional": {
+   "재화등의 배송방법에 관한 정보": "택배",
+   "주문 이후 예상되는 배송기간": "대금 지급일로부터 3일 이내에 발송",
+   "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보": "편도 18000원 (최초 배송비 무료인 경우 36000원 부과)",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+   "재화등의 교환·반품·보증 조건 및 품질보증기준": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "재화등의 A/S 관련 전화번호": "********",
+   "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+   "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "거래에 관한 약관의 내용 또는 확인할 수 있는 방법": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다."
+  }
+ },
+ "productDeliveryInfo": {
+  "deliveryFeeType": "PAID",
+  "deliveryMethodTypes": [
+   "DELIVERY"
+  ],
+  "baseFee": 8000,
+  "deliveryFeePayType": "PREPAID",
+  "differentialFeeByArea": "8000",
+  "installationFee": false,
+  "deliveryBundleGroup": {
+   "id": 52781865,
+   "deliveryFeeChargeMethodType": "MIN"
+  },
+  "deliveryAttributeType": "NORMAL",
+  "todayDelivery": false,
+  "deliveryCompany": {
+   "id": "HYUNDAI",
+   "name": "롯데택배"
+  }
+ },
+ "claimDeliveryInfo": {
+  "returnDeliveryCompanyPriority": "PRIMARY",
+  "deliveryCompanyName": "한진택배",
+  "deliveryCompanyCode": "HANJIN",
+  "naverPayAppointment": true,
+  "returnDeliveryFee": 18000,
+  "exchangeDeliveryFee": 18000,
+  "shippingAddressId": 103504645,
+  "returnAddressId": 103504646,
+  "shippingAddress": "광주광역시 서구 상무대로1240번길 22 상가동 지하1층101호 , 1층 101호 (우 : 61922) ",
+  "returnAddress": "광주광역시 서구 상무대로1240번길 22 상가동 지하1층 101호, 1층101호 (우 : 61922) ",
+  "overseasShipping": false,
+  "freeReturnInsurance": false
+ },
+ "isCultureCostIncomeDeduction": false,
+ "isRestrictCart": false,
+ "naverGuaranteed": false,
+ "newShoppingExposureYn": true,
+ "benefitsView": {
+  "discountedSalePrice": 1849000,
+  "dispDiscountedSalePrice": 1849000,
+  "sellerImmediateDiscountAmount": 0,
+  "managerImmediateDiscountAmount": 0,
+  "specialDiscountAmount": {},
+  "discountedRatio": 0,
+  "dispDiscountedRatio": 0,
+  "sellerPurchasePoint": 0,
+  "sellerCustomerManagementPoint": 0,
+  "managerPurchasePoint": 18490,
+  "managerPurchaseExtraPoint": 0,
+  "managerPaymoneyAccumulatePoint": 27735,
+  "managerBankbookAccumulatePoint": 9245,
+  "managerArrivalGuaranteePoint": 0,
+  "managerMembershipArrivalGuaranteePoint": 0,
+  "generalPurchaseReviewPoint": 0,
+  "premiumPurchaseReviewPoint": 0,
+  "managerGeneralPurchaseReviewPoint": 50,
+  "managerPremiumPurchaseReviewPoint": 150,
+  "textReviewPoint": 0,
+  "photoVideoReviewPoint": 0,
+  "afterUseTextReviewPoint": 0,
+  "afterUsePhotoVideoReviewPoint": 0,
+  "storeMemberReviewPoint": 0,
+  "managerTextReviewPoint": 50,
+  "managerPhotoVideoReviewPoint": 150,
+  "managerAfterUseTextReviewPoint": 50,
+  "managerAfterUsePhotoVideoReviewPoint": 150,
+  "givePresent": false
+ },
+ "averageDeliveryLeadTime": {
+  "productAverageDeliveryLeadTime": 0,
+  "sellerAverageDeliveryLeadTime": 0.5
+ },
+ "detailContents": {
+  "detailContentText": "NEW 왼손 테일러메이드 풀세트 (그라파이트 ) (정식통관및 품질AS보증라벨 부착) 제품구성 1> 드라이버: 테일러메이드 RBZ 스피드 LITE 10.5도-R강도 2> 우드: 테일러메이드 RBZ 스피드 LITE 15도 (3번) 우드-R강도 3> 유틸리티: 테일러메이드 RBZ 스피드 LITE 22도(4번) 유틸-R강도 (4번/5번 아이언 대용으로 사용하기 좋은 제품) 4> 아이언: 테일러메이드 RBZ 스피드 LITE 그라파이트 아이언 -R강도(=i50) 6,7,8,9,P,S 5> 퍼터: 테일러메이드 MO-32 퍼터 본 제품은 왼손용 풀세트입니다. 치기 편한 제품은 많은 골퍼분들이 사용하는 테일러메이드 제품입니다. 캐디백구조의 아이언은 관용성이 좋아 방향성 잘 잡아줍니다. 제품 상담 문의 010 4667 2057 (실 제 제 품 사 진)",
+  "excessDetailContentText": false,
+  "editorType": "SEONE"
+ },
+ "useExternalStock": false,
+ "dispName": "그라파이트/왼손/ AS가능/ 테일러메이드/ 풀세트 골프채 좌타 남성 남자 R강도 레프티 골프",
+ "adultAuthorizationType": "NOT_LOGIN",
+ "authorizationDisplay": "NORMAL",
+ "galleryImages": [
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20240508_222/1715147580569OebIt_JPEG/116283423276579130_1614639416.jpg",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "REPRESENTATIVE"
+  }
+ ],
+ "soldout": false,
+ "viewAttributes": {
+  "상품상태": "신상품",
+  "상품번호": "10302181901",
+  "제조사": "테일러메이드",
+  "브랜드": "테일러메이드",
+  "모델명": "테일러메이드",
+  "원산지": "미국산(테일러메이드골프)"
+ },
+ "additionalAttributes": {
+  "영수증발급": "신용카드전표, 현금영수증발급",
+  "A/S 안내": [
+   "********",
+   "********"
+  ]
+ },
+ "detailAttributes": {
+  "종류": "풀세트",
+  "성별": "남성용",
+  "사용방향": "왼손용"
+ },
+ "eCouponCategory": false,
+ "cultureCategory": false,
+ "supplements": [
+  {
+   "groupName": "테러메이드골프백",
+   "options": [
+    {
+     "id": 2875384669,
+     "groupName": "테러메이드골프백",
+     "name": "블랙",
+     "stockQuantity": 99,
+     "price": 190000,
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 2875384670,
+     "groupName": "테러메이드골프백",
+     "name": "화이트블랙",
+     "stockQuantity": 100,
+     "price": 190000,
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 2875384671,
+     "groupName": "테러메이드골프백",
+     "name": "화이트네이비레드",
+     "stockQuantity": 99,
+     "price": 190000,
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    }
+   ],
+   "checkedName": null,
+   "checkedId": null,
+   "price": 0
+  }
+ ],
+ "deliveryText": "8000",
+ "deliveryMethodType": {
+  "code": 1,
+  "name": "택배",
+  "description": "택배",
+  "etc": null,
+  "naverPayCode": "DELIVERY"
+ },
+ "deliveryPayType": "PREPAID",
+ "discountedSalePrice": 1849000,
+ "mobileDiscountRatio": 0,
+ "derived": {
+  "productType": "DEFAULT"
+ },
+ "hopeDelivery": null,
+ "commentCount": 0,
+ "isPayMember": false,
+ "arrivalGuarantee": false,
+ "groupId": null,
+ "groupEpId": null,
+ "simpleProductAffiliateYn": false,
+ "disableAdditionalApi": false
+}

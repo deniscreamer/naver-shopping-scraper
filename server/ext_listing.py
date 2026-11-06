@@ -27,13 +27,17 @@ summary.json is written on every exit. Exit code: 0 done or --max-batches reache
 """
 import argparse
 import base64
+import html as html_lib
 import json
 import os
 import random
+import re
 import sys
+import threading
 import time
 from datetime import datetime, timezone
 
+import config
 from ext_bridge import ExtBridge, ExtError
 from naver_shopping import composite
 from notify import notify
@@ -44,7 +48,8 @@ SHOPPING_LINK = 'a.link_service[href="https://shopping.naver.com/ns/home"]'
 SEARCH_BOXES = ('input[class*="_searchInput_search_text"]', 'input[placeholder]', 'input[type="search"]')
 LISTING = "paged-composite-cards"
 CONNECT_WAIT_S = 600       # for the extension to (re)connect
-HUMAN_WAIT_S = 60          # a captcha is reported and waited for this long
+HUMAN_WAIT_S = config.NAVER_CAPTCHA_WAIT_S     # a captcha is reported and waited for this long (default 600 s)
+CAPTCHA_INPUT = 'input[type="text"]'           # the answer field on Naver's captcha page (2026-11-05)
 SCROLLS_PER_BATCH = 25     # wheel scrolls before a batch counts as stalled
 FULL_HTML = 5_000_000      # chars: the whole ns/search document (~0.7 MB)
 # a human clears these in the window; NOT "ncpt.naver.com" alone (real pages load it too);
@@ -75,6 +80,35 @@ def screenshot(bridge, tab, out_dir, name):
         return f"(no screenshot: {e})"
 
 
+# The captcha the adapter is waiting on, for GET /captcha (a separate watcher relays it to the owner; the collection
+# only waits). {"status": "none"} until the first captcha; then waiting / solved / timed_out with its details.
+_captcha_lock = threading.Lock()
+_captcha = {"status": "none"}
+
+
+def captcha_state():
+    with _captcha_lock:
+        return dict(_captcha)
+
+
+def _set_captcha(**state):
+    with _captcha_lock:
+        _captcha.clear()
+        _captcha.update(state, at=datetime.now(timezone.utc).isoformat(timespec="seconds"))
+
+
+_TAG_RE = re.compile(r"<(script|style)\b.*?</\1>|<[^>]+>", re.S | re.I)
+_QUESTION_RE = re.compile(r"[^\n.!]{8,200}\?")
+
+
+def captcha_question(page_html):
+    """The question a captcha page asks (seen 2026-11-05: "What is the first number of the store's phone number?"
+    under a receipt picture), or None."""
+    text = html_lib.unescape(_TAG_RE.sub("\n", page_html or ""))
+    found = [q.strip() for q in _QUESTION_RE.findall(text) if q.strip()]
+    return found[-1] if found else None
+
+
 def walls(bridge, tab):
     page = bridge.call("page", tabId=tab) or {}
     html, url = page.get("html") or "", page.get("url") or ""
@@ -96,26 +130,56 @@ def check(bridge, tab, step, out_dir, summary=None):
         return False
     if not human:
         return True
-    shot = screenshot(bridge, tab, out_dir, f"{step}-captcha")
-    log(f"CAPTCHA at {step}: {human}; waiting {HUMAN_WAIT_S} s for a human; {shot}")
+    shot, question = _show_captcha(bridge, tab, out_dir, step, page, human, 1)
+    log(f"CAPTCHA at {step}: {human}; waiting {HUMAN_WAIT_S} s for a human; question: {question!r}; {shot}")
     summary["status"] = "captcha"
-    notify("captcha", f"Captcha at {step}: solve it in Chrome within {HUMAN_WAIT_S} s",
-           url=page.get("url"), markers=human, screenshot=shot)
     t0 = time.monotonic()
+    seen = 1
+    _set_captcha(status="waiting", step=step, attempt=1, question=question, screenshot=shot, url=page.get("url"),
+                 wait_s=HUMAN_WAIT_S)
     while time.monotonic() - t0 < HUMAN_WAIT_S:
         time.sleep(3)
         page, hard, human = walls(bridge, tab)
         if hard:
             log(f"STOP at {step} after the captcha: {hard}")
+            _set_captcha(status="blocked", step=step, attempt=seen, after_s=int(time.monotonic() - t0))
             return False
         if not human:
             log(f"[{step}] captcha solved after {int(time.monotonic() - t0)} s")
+            _set_captcha(status="solved", step=step, attempt=seen, after_s=int(time.monotonic() - t0))
             summary["status"] = "running"
             pause(2, 3)
             return True
+        if captcha_question(page.get("html")) != question:          # a wrong answer: a new captcha
+            seen += 1
+            shot, question = _show_captcha(bridge, tab, out_dir, step, page, human, seen)
+            log(f"CAPTCHA again at {step} (#{seen}): question: {question!r}; {shot}")
+            _set_captcha(status="waiting", step=step, attempt=seen, question=question, screenshot=shot,
+                         url=page.get("url"), wait_s=HUMAN_WAIT_S - int(time.monotonic() - t0))
     log(f"STOP: captcha at {step} not solved in {HUMAN_WAIT_S} s")
+    _set_captcha(status="timed_out", step=step, attempt=seen, after_s=HUMAN_WAIT_S)
     notify("captcha-timeout", f"Captcha at {step} not solved in {HUMAN_WAIT_S} s; listing stopped")
     return False
+
+
+def _show_captcha(bridge, tab, out_dir, step, page, human, n):
+    """Screenshot + question + the page itself (local evidence), the cursor put in the answer field so a human can
+    type at once (at the Mac or through a remote-desktop app on a phone), and a notice. -> (screenshot, question).
+    Nothing is typed here: the human answers (R-EXT-3)."""
+    suffix = "" if n == 1 else f"-{n}"
+    shot = screenshot(bridge, tab, out_dir, f"{step}-captcha{suffix}")
+    question = captcha_question(page.get("html"))
+    try:
+        with open(os.path.join(out_dir, f"{step}-captcha{suffix}.html"), "w", encoding="utf-8") as f:
+            f.write(page.get("html") or "")
+        if (bridge.call("query", tabId=tab, selector=CAPTCHA_INPUT) or {}).get("count"):
+            bridge.call("click", tabId=tab, selector=CAPTCHA_INPUT)
+    except (OSError, ExtError):
+        pass                                       # the notice still goes out
+    notify("captcha", f"Captcha at {step}: answer it in Chrome within {HUMAN_WAIT_S // 60} min"
+           + (f" (attempt {n})" if n > 1 else ""), url=page.get("url"), markers=human, question=question,
+           screenshot=shot)
+    return shot, question
 
 
 # ---- path ---------------------------------------------------------------------------
@@ -127,6 +191,10 @@ def open_search(bridge, query, out_dir, summary=None):
     pause(2.5, 4)
     if not check(bridge, tab, "naver", out_dir, summary):
         return None, "wall at naver.com"
+    for _ in range(5):              # 2026-11-05: once in ~50 reads the 쇼핑 link was not drawn yet 3-4 s after load
+        if (bridge.call("query", tabId=tab, selector=SHOPPING_LINK) or {}).get("visible"):
+            break
+        pause(1.5, 2.5)
     clicked = bridge.call("click", tabId=tab, selector=SHOPPING_LINK)
     tab = clicked.get("newTabId") or tab
     opened.append(tab)

@@ -3,6 +3,80 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
+## Unreleased
+
+- **Transform** (`scripts/transform.py`, `transform_shops.py`, `run_transform.py`, `keep_run.py`): kept collection
+  runs per shop -> prepared products (Korean, ready / held with codes, a translation worklist with content-hash text
+  ids). Prices, options, SKU, leaves, spec rows, text fields, free add-ons, reviews. Checked on 23 collected sets:
+  on 10 the naver-harvester published, SKUs and prices equal on 201 of 201 variants; a review-discount axis it
+  published is dropped; 2 sets over 100 combinations held.
+- **40-product run** (2026-11-05, research): fixes from checking every product against its saved page:
+  `/products/specs` `delivery` (the fee as the page charges it, overseas, customs; a backend said free for a set
+  shipped from Japan at 99,000 KRW per unit); `description.images` for SmartEditor ONE bodies (27 of 40 had none);
+  "package weight" read as packed; page reads by the product's name first (the listing's search missed the card
+  on 27 of 40, reading each page twice); image CDN pace 1 s; a folded 상품정보 list is a partial collection and
+  held (`specs_folded`); delivery-message rows, 인증정보 rows and "(구매대행)" in 원산지 left out; log lines
+  `api:` per failed answer and `ext-product:` per page read (R-STYLE-4).
+- **Delivery, how fast and from where**: `/products/specs` `delivery.scope` (international / domestic) and
+  `delivery.lead_time` (the store's average days from the page answer; today cutoff, average arrival days and
+  probability, ship date from the purchase box); carried into the prepared product.
+- **`/products/page`** (development and analysis): the product page as the owner's Chrome rendered it and its own
+  answer, read like `/products/specs`, never cached; `scripts/product_page.py` saves it.
+- **Captcha wait and watch**: `NAVER_CAPTCHA_WAIT_S` (default 600 s, was 60); the question text is read and logged,
+  the page saved, the cursor put in the answer field (for an answer from a phone through remote desktop); a new
+  captcha after a wrong answer is reported again. `GET /captcha` shows the state; `scripts/captcha_watch.py`, a
+  separate process, reports each captcha / solved / timed out, so collection only waits. Still answered by the
+  human only.
+- **40 fresh pages checked** (2026-11-06, `/products/page`): `delivery.extra_fee_text` (the seller's regional fee
+  text, "제주 도서산간 10,000"); `description.images` from every image of the body (SmartEditor ONE inline images,
+  editor-NONE bodies; map images left out). Transform: paid variants and paid add-ons per category (`paid_variants`,
+  `paid_addons`, off by default, both on for 50002788 sets: their photos show the extras), the variant choice made
+  from the page's options; notes `paid_variants_left_out`,
+  `title_names_one_variant`, `purchase_agency`; placeholder labels on facts and "옵션+..." names; gender words of
+  option values add leaves; required add-on groups; 원산지 without a bracketed importer; single spaces in options.
+- **Re-run on the same 40** (2026-11-06): the purchase box's new wording ("14:00 까지 결제 시 오늘 바로 발송",
+  "11.11.(수) 도착 확률 98%") -> `lead_time.today_cutoff`, new `lead_time.arrival_date_text`; the cutoff also from
+  the answer's `thisDayDispatchBasisTime`. Transform: title words that fit part of the values, new notes
+  `specs_name_one_variant`, `option_values_duplicate`, `few_pieces`, `description_mentions_gifts`; the seller's
+  numbering out of option values and add-ons; 원산지 with brackets inside brackets; the return fee typed as the
+  regional fee text dropped (only when the notice states that same return fee); jump-link lines out of the description.
+- Weight and size from the seller's text read more of what is written (`naver_shopping/measures.py`): more units (파운드,
+  온스, 키로, kgs, 센치, 피트), decimal comma, packed / net words (포장 무게, 택배 무게, 박스 포함, 본품 무게) also after the number,
+  tolerances and the same weight in two units, lb + oz, per piece and multipliers, every size triple with its own
+  kind, two-side sizes, axes after the unit or in the label, "(단위: cm)", a weight inside a size row, td club tables.
+  Sets are recognised from counts (6아이언, 12pcs, 3종); in a set the parts (club codes, bag, reference club "7번 기준", club
+  headings) are components and a plain 중량 row is the set's weight. Weight candidates gain `count` and `flags`; new
+  review reasons `value_list`, `other_part`, `decimal_comma`, `ambiguous_unit`; loads and capacities and unit-less
+  ranges are no longer read. `package_measures`: stated set weights per variant (6630856593), 2% agreement,
+  `below_stated_product` flag on a default package weight, optional operator `plausible` band. On the 40 golf sets:
+  product weight now stated for 6630856593 (11.5 / 4.7 kg by club count) and 10639350746 (14 lb); 3 more products gain
+  correctly tagged club-part candidates; the other 35 are unchanged.
+- Description text and images no longer carry SmartEditor cards that are not the product: link cards (other products
+  of the store, TalkTalk), the store map and address, and shopping cards' posters. In-page jump links ("▲ 이동(상단)") and
+  bare hashtag lines are dropped. **Shape change:** `description.text` now has one empty line between SmartEditor
+  components.
+- Transform: new `description_clean.py` strips the seller's boilerplate from `description_ko` and `description_images`
+  (return / delivery / customs notices, contact and phone lines, greetings and signatures, duties, lead time, promo
+  and store claims, the monitor disclaimer, gift blocks when promotions are hidden, banner images by name), with notes
+  for a 모음전 page and for banners inside snap tiles.
+- Transform: spec rows are checked against the sold variants by fact (shaft material class, club count of stated
+  totals and part lists, the composition rows as one set, model year). A row true of no variant, or one every variant
+  already states, is dropped with a note. A row true of some variants only is kept with `for_ko`, the option values it
+  fits. New notes: `specs_fit_no_variant`, `specs_stated_by_variants`, `specs_bound_to_variants`,
+  `specs_composition_undecided`. The `title_names_one_variant` note is less noisy: the title's own span ("XR26"), no
+  gender word without a rival, no 백포함 vs 백세트포함, and title counts that name a part list ("(클럽10개)").
+- Package fields carry `confidence` 1-3 (3 stated with its kind, 2 stated with the kind open or the binding
+  worked out, 1 the category default): 6630856593's 11.5 / 4.7 kg is used at 2.
+- Transform: more variants than the shop's cap are no longer held: the first ones are offered (in stock and cheaper
+  first, one per option value first so every value stays on sale), note `variants_capped` (an XXIO 14 set: 486 ->
+  100).
+- Regression fixtures from saved pages (DEVELOPMENT_RULES R-TEST-5): `server/naver_shopping/fixtures/pages/` (cut by
+  `page_fixtures.py`, replayed by `test_pages.py` through the new pure `ext_product.specs_from_page`),
+  `scripts/fixtures/collected/` and `scripts/fixtures/prepared/` (`collected_fixtures.py`, `test_prepared_golden.py`);
+  `UPDATE_GOLDEN=1` rewrites them after a deliberate change.
+- **Product page click** (`ext_product._card`): the card's photo is clicked, not the card's middle band, where the
+  store name link lies (it opened the store, then Naver's login page; seen twice on thegolf cards, 2026-11-05).
+
 ## 0.6.0 (2026-11-05)
 
 - **Listing screen** (`scripts/listing_filter.py`): every listing row left out gets a reason: `sponsored`,
@@ -75,7 +149,8 @@ version in `extension/manifest.json`.
   the gallery matched the page's 1:1). Only a store's WebP is written, the source stays in memory:
   `scripts/image_prep.py` (Pillow, one algorithm for every store: gallery short side down to 1500, Merchant Center's
   recommendation, long side <= 5000; reviews long side 1024; never enlarged; <= 1 MB by quality 85-80-75, then
-  smaller sizes; sRGB, EXIF orientation, animation -> first frame, old EXIF/GPS/IPTC/ICC/XMP dropped, a new XMP with the store as publisher, read back and checked).
+  smaller sizes; sRGB, EXIF orientation, animation -> first frame, old EXIF/GPS/IPTC/ICC/XMP dropped, a new XMP with
+the store as publisher, read back and checked).
   `scripts/shop_stores.py`: our Shopify stores as a `StoreId` enum + profiles (fairwardgolf, skinsli, kyobooks,
   banafish), picked by `SHOP_STORE` in `.env`. Names `<slug|store-id>-001-<sha16>.webp`,
   `<store>-review-image|avatar-<sha16>.webp`; optional reviewed English `ImageSeo` (slug, title, alt <= 125, brand).
@@ -109,7 +184,8 @@ version in `extension/manifest.json`.
 
 ## 0.1.0 (2026-11-01)
 
-First release of this fork (based on [omkarcloud/naver-shopping-scraper](https://github.com/omkarcloud/naver-shopping-scraper)).
+First release of this fork (based on
+[omkarcloud/naver-shopping-scraper](https://github.com/omkarcloud/naver-shopping-scraper)).
 
 - **Structure**: the API server lives in `server/` (import root), HTTP-only consumers in `scripts/`, docs in
   `server/docs/` with a binding rulebook (`DEVELOPMENT_RULES.md`); root `README.md` / `AGENTS.md` index everything.

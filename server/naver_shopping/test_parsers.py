@@ -377,3 +377,79 @@ def test_search_price_range_always_has_both_bounds():
     assert A._filters({"min_price": 50000.0})["price"] == f"50000|{A.OPEN_MAX_PRICE}"
     assert A._filters({"min_price": 50000, "max_price": 100000})["price"] == "50000|100000"
     assert "price" not in A._filters({"free_delivery": True})
+
+
+def test_seone_description_images():
+    # a SmartEditor ONE body (taylormade set 13229257286, 2026-11-05): no snapImages, photos in data-src
+    with open(os.path.join(FX, "contents_seone_images.html"), encoding="utf-8") as f:
+        c = P.parse_contents({"renderContent": f.read(), "editorType": "SEONE", "snapImages": []})
+    assert len(c["images"]) == 2 and all(u.startswith("https://shop-phinf.pstatic.net/") for u in c["images"])
+    assert P.parse_contents({"renderContent": "<p>x</p>", "snapImages": [{"url": "https://a/b.jpg"}]})["images"] \
+        == ["https://a/b.jpg"]
+
+
+def test_page_delivery_overseas():
+    d = P.parse_page_delivery(fixture("page_delivery_overseas.json"))   # callaway set 6774818843, 2026-11-05
+    assert (d["fee_type"], d["base_fee"], d["is_free"], d["is_overseas"]) == ("UNIT_QUANTITY_PAID", 99000, False, True)
+    assert d["scope"] == "international" and d["lead_time"]["seller_average_days"] == 5.0
+    assert d["lead_time"]["product_average_days"] is None                # 0 = no average yet
+    assert P.parse_page_delivery({**fixture("page_delivery_overseas.json"), "customsTaxType": "EXCLUDED"})[
+        "customs_tax_type"] == "EXCLUDED"                                   # at the answer's top level
+    assert d["extra_fee_area2"] == 3000 and "1개마다" in d["policy_text"]
+    assert P.parse_page_delivery({}) is None
+    assert d["lead_time"]["today_cutoff"] is None and d["lead_time"]["arrival_date_text"] is None
+    today = fixture("page_delivery_overseas.json")
+    today["productDeliveryInfo"] = {**today["productDeliveryInfo"], "todayDelivery": True,
+                                    "thisDayDispatchBasisTime": "05:30:00.000+0000"}   # UTC: 14:30 in Korea
+    assert P.parse_page_delivery(today)["lead_time"]["today_cutoff"] == "14:30"
+    assert P.parse_page_delivery(today, {"today_cutoff": "16:00"})["lead_time"]["today_cutoff"] == "16:00"
+
+
+def test_description_images_inline_plain_and_map():
+    body = ('<div><img class="se-image-resource" src="data:image/png;base64,x" data-src="https://a.pstatic.net/1.jpg">'
+            '<table><tr><td><img class="se-inline-image-resource" src="data:image/png;base64,x" '
+            'data-src="https://ai.esmplus.com/2.jpg"></td></tr></table>'
+            '<img class="se-map-image" src="https://simg.pstatic.net/static.map/v2/map/staticmap.bin?x=1">'
+            '<img src="https://shop-phinf.pstatic.net/3.jpg"><img src="https://shop-phinf.pstatic.net/3.jpg"></div>')
+    assert P.parse_contents({"renderContent": body, "snapImages": []})["images"] == [   # 2026-11-06 shapes
+        "https://a.pstatic.net/1.jpg", "https://ai.esmplus.com/2.jpg", "https://shop-phinf.pstatic.net/3.jpg"]
+
+
+def test_description_images_skip_cards():
+    """2026-11-06: images follow the same components as the text. An se-oglink thumbnail (dthumb-phinf, another
+    product or the TalkTalk logo), an se-material poster (shopping-phinf main_*: other products of 12274419597) and the
+    se-placesMap map are not the product's photos."""
+    oglink = ('<div class="se-component se-oglink"><img data-src="https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2F'
+              'shop-phinf.pstatic.net%2Fa.jpg%22" class="se-oglink-thumbnail-resource"></div><div class="se-component '
+              'se-image"><img data-src="https://shop-phinf.pstatic.net/b.jpg" class="se-image-resource"></div>')
+    assert P._body_images(oglink) == ["https://shop-phinf.pstatic.net/b.jpg"]
+    material = ('<div class="se-component se-material"><a href="https://smartstore.naver.com/main/products/12270862728">'
+                '<img class="se-material-poster-resource" data-src="https://shopping-phinf.pstatic.net/main_8981537/'
+                '89815373444.2.jpg"></a></div><div class="se-component se-image"><img class="se-image-resource" '
+                'data-src="https://shop-phinf.pstatic.net/c.jpg"></div>')
+    assert P._body_images(material) == ["https://shop-phinf.pstatic.net/c.jpg"]
+    # the card's own image class, even outside its component
+    stray = ('<img class="se-oglink-thumbnail-resource" data-src="https://dthumb-phinf.pstatic.net/x.jpg">'
+             '<img class="se-material-poster-resource" data-src="https://shopping-phinf.pstatic.net/y.jpg">'
+             '<img src="https://simg.pstatic.net/static.map/v2/map/staticmap.bin?x=1">'
+             '<img class="se-map-image" data-src="https://simg.pstatic.net/z.png">')
+    assert P._body_images(stray) == []
+
+
+def test_description_images_keep_inline_and_plain():
+    body = ('<table><td><img class="se-inline-image-resource" data-src="https://shop-phinf.pstatic.net/d.jpg"></td>'
+            '</table><img src="data:image/png;base64,x" data-src="https://smartfic.co.kr/upload/product/imgdetail/3170.jpg">'
+            "<div class='se-component se-imageStrip'><img class='se-image-resource' data-src='https://shop-phinf.pstatic.net/e.jpg?type=w860'></div>"
+            '<IMG SRC="https://shop-phinf.pstatic.net/f.jpg">')
+    assert P._body_images(body) == ["https://shop-phinf.pstatic.net/d.jpg",
+                                    "https://smartfic.co.kr/upload/product/imgdetail/3170.jpg",
+                                    "https://shop-phinf.pstatic.net/e.jpg?type=w860", "https://shop-phinf.pstatic.net/f.jpg"]
+    assert P._body_images('<img src="data:image/png;base64,x">') == [] and P._body_images(None) == []
+
+
+def test_description_cards_fixture_images():
+    with open(os.path.join(FX, "contents_seone_cards.html"), encoding="utf-8") as f:
+        c = P.parse_contents({"renderContent": f.read(), "editorType": "SEONE", "snapImages": []})
+    assert c["images"] == ["https://shop-phinf.pstatic.net/20260201_192/17699187726654ipjH_PNG/"
+                           "20019506300428036_252033136.png?type=w848"]
+    assert "굿바이골프" not in c["text"] and "따봉몰" not in c["text"]

@@ -200,6 +200,35 @@
    }
   ]
  },
+ "delivery": {
+  "fee_type": "FREE",
+  "base_fee": 0,
+  "is_free": true,
+  "policy_text": null,
+  "method_types": [
+   "DELIVERY",
+   "VISIT_RECEIPT",
+   "QUICK_SERVICE"
+  ],
+  "attribute": "TODAY",
+  "is_today_delivery": true,
+  "company": "로젠택배",
+  "extra_fee_area2": 5000,
+  "extra_fee_area3": null,
+  "extra_fee_text": null,
+  "is_overseas": false,
+  "scope": "domestic",
+  "customs_tax_type": null,
+  "lead_time": {
+   "seller_average_days": 2.3,
+   "product_average_days": null,
+   "today_cutoff": "16:00",
+   "arrival_days": 3,
+   "arrival_date_text": null,
+   "arrival_probability": 90,
+   "ship_date_text": "11.9.(월)"
+  }
+ },
  "measures": {
   "is_set": true,
   "weights": [],
@@ -228,5 +257,5 @@
   ],
   "review": []
  },
- "read_at": "2026-11-06T03:47:05Z"
+ "read_at": "2026-11-06T07:31:09Z"
 }

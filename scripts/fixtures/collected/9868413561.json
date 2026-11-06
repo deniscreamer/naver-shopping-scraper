@@ -1,0 +1,903 @@
+{
+ "key": "fairwardgolf:naver:102229173:9868413561",
+ "listing": {
+  "product_id": "9868413561",
+  "nv_mid": "87412915834",
+  "link": "https://smartstore.naver.com/gucci294/products/9868413561",
+  "name": "일본 Wistella 위스텔라 여성용 남성용 골프채풀세트",
+  "store": {
+   "name": "화성상사레이",
+   "slug": "gucci294",
+   "link": "https://smartstore.naver.com/gucci294",
+   "channel_no": "102229173",
+   "grade": "SEED",
+   "is_brand_store": false
+  },
+  "pricing": {
+   "sale_price": 600000,
+   "discounted_price": 360000,
+   "discount_ratio": 40,
+   "currency": "KRW"
+  },
+  "category_id": "50002788",
+  "reviews": {
+   "count": 1,
+   "average_score": 4
+  },
+  "stock_quantity": 196,
+  "image": "https://shopping-phinf.pstatic.net/main_8741291/87412915834.jpg",
+  "is_ad": false,
+  "query": "남성 골프채 풀세트",
+  "batch": 2,
+  "seen_at": "2026-11-06T04:57:14+00:00"
+ },
+ "details": {
+  "id": "9868413561",
+  "origin_product_id": "9821376946",
+  "name": "일본 Wistella 위스텔라 여성용 남성용 골프채풀세트",
+  "link": "https://smartstore.naver.com/gucci294/products/9868413561",
+  "catalog_id": "87412915834",
+  "catalog_link": "https://search.shopping.naver.com/catalog/87412915834",
+  "status": "SALE",
+  "sale_type": "NEW",
+  "is_displayed": true,
+  "pricing": {
+   "sale_price": 600000,
+   "discounted_price": 360000,
+   "discount_ratio": 40,
+   "seller_discount": 240000,
+   "manager_discount": 0,
+   "currency": "KRW",
+   "points": {
+    "purchase": 3600,
+    "text_review": 0,
+    "photo_video_review": 0,
+    "after_use_text_review": 0,
+    "after_use_photo_video_review": 0,
+    "store_member_review": 0
+   }
+  },
+  "stock_quantity": 196,
+  "has_options": true,
+  "has_supplements": false,
+  "images": [
+   "https://shop-phinf.pstatic.net/20240122_30/1705933726108Qg2pz_JPEG/107069509827484001_1981795984.jpeg",
+   "https://shop-phinf.pstatic.net/20240308_21/1709890861896t8Gvt_JPEG/111026704607766305_580003706.jpeg"
+  ],
+  "category": {
+   "id": "50002788",
+   "name": "풀세트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "풀세트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002788"
+   ]
+  },
+  "brand": "Wistella",
+  "brand_id": null,
+  "manufacturer": "Wistella",
+  "model_name": "Wistella 풀세트",
+  "tags": null,
+  "page_title": null,
+  "reviews": {
+   "count": 1,
+   "average_score": 4.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 1,
+    "5": 0
+   },
+   "text_count": 1,
+   "photo_count": 0,
+   "video_count": 0,
+   "after_use_count": 0,
+   "best_count": 0,
+   "recent": {
+    "count": 1,
+    "average_score": 4.0
+   },
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "최고예요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "디자인은 어떤가요?",
+     "answers": [
+      {
+       "name": "별로예요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "화면과 같아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    }
+   ],
+   "representative_reviews": null
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": null,
+   "company": "로젠택배",
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "extra_fee_text": null
+  },
+  "is_free_delivery": true,
+  "is_today_delivery": false,
+  "has_arrival_guarantee": false,
+  "has_regular_subscription": false,
+  "has_free_return_insurance": false,
+  "is_minor_purchasable": true,
+  "is_adult_restricted": false,
+  "is_in_naver_shopping": true,
+  "option_groups": null,
+  "variants": null,
+  "supplements": null,
+  "description": {
+   "html": null,
+   "text": null,
+   "editor_type": "SEONE",
+   "images": [
+    "https://shop-phinf.pstatic.net/20240611_210/1718076985014sGV7J_PNG/%EB%B3%B8_%EC%A0%9C%ED%92%88%EC%9D%80_%EA%B5%AD%EB%82%B4_%EC%A0%95%EC%88%98%EC%9E%85_%EC%A0%9C%ED%92%88%EC%9C%BC%EB%A1%9C_%EA%B5%AD%EB%82%B4_%EC%9D%B5%EC%9D%BC%EB%B0%9C%EC%86%A1%EC%9D%B4%EB%A9%B0_1%EB%85%84_%EB%AC%B4%EC%83%81_AS_%EA%B0%80%EB%8A%A5%ED%95%A9%EB%8B%88%EB%8B%A4..png?type=w848",
+    "https://shop-phinf.pstatic.net/20240308_125/1709890935286115KY_JPEG/wistella-w.jpeg?type=w848",
+    "https://shop-phinf.pstatic.net/20240308_195/17098909413327MjMw_JPEG/wistella-m.jpeg?type=w848"
+   ]
+  },
+  "notice": {
+   "type": "SPORTS_EQUIPMENT",
+   "items": [
+    {
+     "label": "품명 / 모델명",
+     "value": "상품상세참조 / 상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "KC 인증정보",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "크기",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "중량",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "색상",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "재질",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제품구성",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "동일 모델의 출시연월",
+     "value": "2024.01",
+     "is_see_description": false
+    },
+    {
+     "label": "제조자(사)",
+     "value": "요시노",
+     "is_see_description": false
+    },
+    {
+     "label": "제조국",
+     "value": "중국산(프라임스포츠)",
+     "is_see_description": false
+    },
+    {
+     "label": "상품별 세부사양",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "품질보증기준",
+     "value": "31일 무상후 유상으로 전환됩니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "A/S 책임자와 전화번호",
+     "value": null,
+     "is_see_description": false
+    }
+   ],
+   "terms": [
+    {
+     "label": "재화등의 배송방법에 관한 정보",
+     "value": "택배",
+     "is_see_description": false
+    },
+    {
+     "label": "주문 이후 예상되는 배송기간",
+     "value": "대금 지급일로부터 3일 이내에 발송",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+     "value": "편도 30000원 (최초 배송비 무료인 경우 60000원 부과)",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 A/S 관련 전화번호",
+     "value": null,
+     "is_see_description": false
+    },
+    {
+     "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+     "value": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+     "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+     "is_see_description": false
+    }
+   ]
+  },
+  "facts": {
+   "brand": {
+    "value": "Wistella",
+    "source": "search_info.brandName"
+   },
+   "manufacturer": {
+    "value": "Wistella",
+    "source": "search_info.manufacturerName"
+   },
+   "model_name": {
+    "value": "Wistella 풀세트",
+    "source": "search_info.modelName"
+   },
+   "origin": {
+    "value": "중국산(프라임스포츠)",
+    "source": "notice:제조국"
+   }
+  },
+  "store": {
+   "id": "102229173",
+   "uid": "2vOTMV9KaaN5qGJBtOOi9",
+   "name": "화성상사레이",
+   "slug": "gucci294",
+   "link": "https://smartstore.naver.com/gucci294",
+   "type": "smart_store",
+   "grade": "FIFTH",
+   "sale_count": 2,
+   "merchant_id": "512128569",
+   "business": {
+    "legal_name": "화성상사",
+    "representative": "이규상",
+    "type": "SIMPLE",
+    "is_business": true,
+    "is_overseas": false,
+    "phone": null,
+    "email": null,
+    "address": null
+   }
+  }
+ },
+ "specs": {
+  "id": "9868413561",
+  "name": "일본 Wistella 위스텔라 여성용 남성용 골프채풀세트",
+  "link": "https://smartstore.naver.com/gucci294/products/9868413561",
+  "query": "일본 Wistella 위스텔라 여성용 남성용 골프채풀세트",
+  "category": {
+   "id": "50002788",
+   "name": "풀세트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "풀세트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002788"
+   ]
+  },
+  "specs": [
+   {
+    "label": "상품번호",
+    "value": "9868413561"
+   },
+   {
+    "label": "제조사",
+    "value": "Wistella"
+   },
+   {
+    "label": "브랜드",
+    "value": "Wistella"
+   },
+   {
+    "label": "모델명",
+    "value": "Wistella 풀세트"
+   },
+   {
+    "label": "원산지",
+    "value": "중국산(프라임스포츠)"
+   },
+   {
+    "label": "드라이버 로프트각",
+    "value": "13.5도"
+   },
+   {
+    "label": "종류",
+    "value": "풀세트"
+   },
+   {
+    "label": "성별",
+    "value": "남녀공용"
+   },
+   {
+    "label": "사용방향",
+    "value": "오른손용"
+   },
+   {
+    "label": "총클럽개수",
+    "value": "11개"
+   },
+   {
+    "label": "출시",
+    "value": "2026년형"
+   },
+   {
+    "label": "아이언샤프트소재",
+    "value": "그라파이트/카본"
+   }
+  ],
+  "is_complete": true,
+  "facts": {
+   "brand": {
+    "value": "Wistella",
+    "source": "specs:브랜드"
+   },
+   "manufacturer": {
+    "value": "Wistella",
+    "source": "specs:제조사"
+   },
+   "model_name": {
+    "value": "Wistella 풀세트",
+    "source": "specs:모델명"
+   },
+   "origin": {
+    "value": "중국산(프라임스포츠)",
+    "source": "specs:원산지"
+   }
+  },
+  "options": {
+   "has_options": true,
+   "status": "SALE",
+   "is_sold_out": false,
+   "stock_quantity": 196,
+   "option_groups": [
+    {
+     "id": "8987941360",
+     "name": "옵션",
+     "type": "COMBINATION"
+    }
+   ],
+   "variants": [
+    {
+     "id": "39478087898",
+     "name": "여성용",
+     "options": [
+      "여성용"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 97,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-03-08"
+    },
+    {
+     "id": "39478087899",
+     "name": "남성용 SR스틸",
+     "options": [
+      "남성용 SR스틸"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 99,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2024-03-08"
+    }
+   ],
+   "simple_options": [],
+   "text_options": [],
+   "supplements": []
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": false,
+   "company": "로젠택배",
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "extra_fee_text": null,
+   "is_overseas": false,
+   "scope": "domestic",
+   "customs_tax_type": null,
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   }
+  },
+  "measures": {
+   "is_set": true,
+   "weights": [],
+   "dimensions": [],
+   "references": [
+    {
+     "quote": "크기: 상품상세참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 2
+     },
+     "measure": "size",
+     "reason": "description_reference"
+    },
+    {
+     "quote": "중량: 상품상세참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 3
+     },
+     "measure": "weight",
+     "reason": "description_reference"
+    }
+   ],
+   "review": []
+  },
+  "read_at": "2026-11-06T10:39:24Z"
+ },
+ "variants": {
+  "paid": true,
+  "base_price": 360000,
+  "variants": [
+   {
+    "id": "39478087898",
+    "name": "여성용",
+    "options": [
+     "여성용"
+    ],
+    "extra_price": 0,
+    "price": 360000,
+    "price_in_name": null,
+    "stock_quantity": 97,
+    "is_available": true
+   },
+   {
+    "id": "39478087899",
+    "name": "남성용 SR스틸",
+    "options": [
+     "남성용 SR스틸"
+    ],
+    "extra_price": 0,
+    "price": 360000,
+    "price_in_name": null,
+    "stock_quantity": 99,
+    "is_available": true
+   }
+  ],
+  "available": 2,
+  "sold_out": 0,
+  "skipped_paid": 0,
+  "name_mismatches": [],
+  "simple_options": [],
+  "text_options": [],
+  "supplements": []
+ },
+ "package": [
+  {
+   "variant_id": "39478087898",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "39478087899",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  }
+ ],
+ "reviews": {
+  "product": {
+   "id": "9868413561",
+   "name": "일본 Wistella 위스텔라 여성용 남성용 골프채풀세트",
+   "link": "https://smartstore.naver.com/gucci294/products/9868413561"
+  },
+  "summary": {
+   "count": 1,
+   "average_score": 4.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 1,
+    "5": 0
+   },
+   "text_count": 1,
+   "photo_count": 0,
+   "video_count": 0,
+   "after_use_count": 0,
+   "best_count": 0,
+   "recent": {
+    "count": 1,
+    "average_score": 4.0
+   },
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "최고예요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "디자인은 어떤가요?",
+     "answers": [
+      {
+       "name": "별로예요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "화면과 같아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    }
+   ],
+   "representative_reviews": null
+  },
+  "mode": "small_source",
+  "count": 1,
+  "scanned": 1,
+  "passes": [
+   {
+    "media": "all",
+    "pages": 1,
+    "total_count": 1,
+    "is_exhausted": true
+   }
+  ],
+  "is_complete": true,
+  "results": [
+   {
+    "id": "5079631482",
+    "score": 4,
+    "text": "골프에 입문했어요. 열심히 연습 할게요",
+    "created_at": "2026-10-08T06:40:29Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "옵션: 여성용",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "guem****",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "9868413561",
+     "origin_product_id": "9821376946",
+     "name": "일본 Wistella 위스텔라 여성용 남성용 골프채풀세트"
+    },
+    "likes": null,
+    "tier": "small"
+   }
+  ]
+ },
+ "photos": {
+  "store": "fairwardgolf",
+  "total": 2,
+  "files": [
+   {
+    "position": 0,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20240122_30/1705933726108Qg2pz_JPEG/107069509827484001_1981795984.jpeg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20240122_30/1705933726108Qg2pz_JPEG/107069509827484001_1981795984.jpeg",
+    "source_sha256": "9327bc3532143a53880551ebfd015b843e7e3c3435c1104ef21383380764aa56",
+    "source_bytes": 47976,
+    "source_format": "JPEG",
+    "source_width": 600,
+    "source_height": 600,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/9868413561/fairwardgolf-9868413561-001-6959f5c33f12eb77.webp",
+    "sha256": "6959f5c33f12eb778f40abf632f6974cd8e64128e6e42ac3029f3da062c94a71",
+    "bytes": 36036,
+    "width": 600,
+    "height": 600,
+    "quality": 85
+   },
+   {
+    "position": 1,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20240308_21/1709890861896t8Gvt_JPEG/111026704607766305_580003706.jpeg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20240308_21/1709890861896t8Gvt_JPEG/111026704607766305_580003706.jpeg",
+    "source_sha256": "e38c1963a5442a55526ea9cc7dcdf023d096eb75a5af52d854bdd0c005261cc3",
+    "source_bytes": 44882,
+    "source_format": "JPEG",
+    "source_width": 344,
+    "source_height": 344,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/9868413561/fairwardgolf-9868413561-002-ca188c05bfe81a44.webp",
+    "sha256": "ca188c05bfe81a449fb880a7eefd1eb7853da21fdef270a1ad650eecdf352dbf",
+    "bytes": 25252,
+    "width": 344,
+    "height": 344,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true,
+  "originals": 2
+ },
+ "review_media": {
+  "store": "fairwardgolf",
+  "files": [],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true
+ }
+}

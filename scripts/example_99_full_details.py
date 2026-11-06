@@ -30,8 +30,8 @@ category, one product at a time. When the API learns more, add it here.
      photos / avatars result).
 
 Needs Chrome open with the adapter (example_01 says extension: connected).
-Specs are read from the listing's own search first, then by the product's
-name (a card deeper than the first page is not clickable from the search).
+Specs are read by the product's name first, then from the listing's own search
+(the name finds the card on the first page; the listing's search often does not).
 
     .venv/bin/python scripts/example_99_full_details.py [products] [paid]
 """
@@ -77,7 +77,9 @@ guard = CollectGuard(journal)
 
 def specs_for(link: str) -> T.ProductSpecs | None:
     """The specs, or None when the card is on neither search; a wall / busy adapter raises ApiError."""
-    for query in (QUERY, None):                           # the listing's search, then the product's name
+    # the product's name first: in a 40-product run (2026-11-05) the listing's search did not show the card on its
+    # first page for 27 of 40, so the page was read twice (median 74 s instead of ~35 s)
+    for query in (None, QUERY):
         try:
             return api.product_specs(link, query=query)
         except ApiError as e:
@@ -118,6 +120,8 @@ def collect(row: T.ListingRow, media_dir: str) -> Outcome:
             "reviews": reviews, "photos": photos, "review_media": review_media}
     if options is None:
         return Outcome.partial("options_missing", "the page gave no product answer", data)
+    if not specs["is_complete"]:                     # the 상품정보 list stayed folded: seller rows missing
+        return Outcome.partial("specs_folded", f"{len(specs['specs'])} rows", data)
     if not photos["is_complete"]:
         return Outcome.partial("photos_incomplete", photos["failed"][:3], data)
     return Outcome("complete", data=data)

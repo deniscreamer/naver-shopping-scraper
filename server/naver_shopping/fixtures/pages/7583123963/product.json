@@ -1,0 +1,1016 @@
+{
+ "id": "7583123963",
+ "channelServiceType": "STOREFARM",
+ "channelProductType": "SINGLE",
+ "channelProductSupplyType": "OWNER",
+ "channelProductStatusType": "NORMAL",
+ "channelProductDisplayStatusType": "ON",
+ "category": {
+  "categoryId": "50002788",
+  "categoryName": "풀세트",
+  "category1Id": "50000007",
+  "category2Id": "50000029",
+  "category3Id": "50001102",
+  "category4Id": "50002788",
+  "category1Name": "스포츠/레저",
+  "category2Name": "골프",
+  "category3Name": "골프클럽",
+  "category4Name": "풀세트",
+  "wholeCategoryId": "50000007>50000029>50001102>50002788",
+  "wholeCategoryName": "스포츠/레저>골프>골프클럽>풀세트",
+  "categoryLevel": 4,
+  "lastLevel": true,
+  "sortOrder": 10,
+  "validCategory": true,
+  "receiptIssue": true,
+  "exceptionalCategoryTypes": [
+   "FREE_RETURN_INSURANCE",
+   "MANUFACTURE_DEFINE_NO",
+   "RENTAL_SUBSCRIPTION",
+   "REGULAR_SUBSCRIPTION"
+  ],
+  "pointAccumulationYn": false
+ },
+ "name": "지브이투어 벨로시티 BM 13 PCS 남성 여성 풀세트 (백세트포함)",
+ "productUrl": "https://smartstore.naver.com/main/products/7583123963",
+ "mobileProductUrl": "https://m.smartstore.naver.com/main/products/7583123963",
+ "storeKeepExclusiveProduct": false,
+ "best": false,
+ "orderRequestUsable": false,
+ "channelProductAttributes": [],
+ "productNo": "7546387872",
+ "salePrice": 2400000,
+ "dispSalePrice": 2400000,
+ "stockQuantity": 51,
+ "saleType": "NEW",
+ "excludeAdminDiscount": false,
+ "payExposure": true,
+ "productStatusType": "SALE",
+ "statusType": "SALE",
+ "authenticationType": "NORMAL",
+ "itselfProductionProductYn": false,
+ "afterServiceInfo": {
+  "afterServiceTelephoneNumber": "********",
+  "afterServiceGuideContent": "********"
+ },
+ "originAreaInfo": {
+  "originAreaType": "IMPORT",
+  "content": "중국산(중국)",
+  "originAreaCode": "0200037",
+  "wholeOriginAreaName": "수입산:아시아>중국",
+  "importer": "중국",
+  "plural": false
+ },
+ "sellerCodeInfo": {
+  "sellerManagementCode": "MJ134085"
+ },
+ "optionUsable": true,
+ "options": [
+  {
+   "id": 7161278873,
+   "optionType": "COMBINATION",
+   "groupName": "골프클럽구분"
+  },
+  {
+   "id": 11665062215,
+   "optionType": "COMBINATION",
+   "groupName": "선택2"
+  }
+ ],
+ "optionCombinations": [
+  {
+   "id": 59194515734,
+   "optionName1": "BM 풀세트 스틸 블랙 13PCS",
+   "optionName2": "BM 캐디백세트 네이비",
+   "stockQuantity": 3,
+   "price": 0,
+   "regOrder": 4,
+   "registerDate": "2026-07-09T04:00:20.129+00:00",
+   "sellerManagerCode": "2113408500053"
+  },
+  {
+   "id": 59194515730,
+   "optionName1": "BM 풀세트 스틸 블랙 13PCS",
+   "optionName2": "BM 캐디백세트 블랙",
+   "stockQuantity": 3,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2026-07-09T04:00:20.126+00:00",
+   "sellerManagerCode": "134085-0001"
+  },
+  {
+   "id": 59194515733,
+   "optionName1": "BM 풀세트 스틸 블랙 13PCS",
+   "optionName2": "BM 캐디백세트 화이트",
+   "stockQuantity": 3,
+   "price": 0,
+   "regOrder": 3,
+   "registerDate": "2026-07-09T04:00:20.128+00:00",
+   "sellerManagerCode": "2113408500046"
+  },
+  {
+   "id": 59194515738,
+   "optionName1": "BM 풀세트 여성 실버 12PCS",
+   "optionName2": "BM 캐디백세트 네이비",
+   "stockQuantity": 6,
+   "price": 0,
+   "regOrder": 8,
+   "registerDate": "2026-07-09T04:00:20.132+00:00",
+   "sellerManagerCode": "2113408500091"
+  },
+  {
+   "id": 59194515732,
+   "optionName1": "BM 풀세트 여성 실버 12PCS",
+   "optionName2": "BM 캐디백세트 블랙",
+   "stockQuantity": 6,
+   "price": 0,
+   "regOrder": 2,
+   "registerDate": "2026-07-09T04:00:20.127+00:00",
+   "sellerManagerCode": "134085-0003"
+  },
+  {
+   "id": 59194515737,
+   "optionName1": "BM 풀세트 여성 실버 12PCS",
+   "optionName2": "BM 캐디백세트 화이트",
+   "stockQuantity": 8,
+   "price": 0,
+   "regOrder": 7,
+   "registerDate": "2026-07-09T04:00:20.131+00:00",
+   "sellerManagerCode": "2113408500084"
+  },
+  {
+   "id": 59194515736,
+   "optionName1": "BM 풀세트 카본 골드 13PCS",
+   "optionName2": "BM 캐디백세트 네이비",
+   "stockQuantity": 6,
+   "price": 0,
+   "regOrder": 6,
+   "registerDate": "2026-07-09T04:00:20.130+00:00",
+   "sellerManagerCode": "2113408500077"
+  },
+  {
+   "id": 59194515731,
+   "optionName1": "BM 풀세트 카본 골드 13PCS",
+   "optionName2": "BM 캐디백세트 블랙",
+   "stockQuantity": 6,
+   "price": 0,
+   "regOrder": 1,
+   "registerDate": "2026-07-09T04:00:20.127+00:00",
+   "sellerManagerCode": "134085-0002"
+  },
+  {
+   "id": 59194515735,
+   "optionName1": "BM 풀세트 카본 골드 13PCS",
+   "optionName2": "BM 캐디백세트 화이트",
+   "stockQuantity": 10,
+   "price": 0,
+   "regOrder": 5,
+   "registerDate": "2026-07-09T04:00:20.130+00:00",
+   "sellerManagerCode": "2113408500060"
+  }
+ ],
+ "optionStandards": [],
+ "supplementProductUsable": true,
+ "supplementProducts": [
+  {
+   "id": 3766548145,
+   "groupName": "1. 남여 합피 골프장갑",
+   "name": "1-1.남성 합피 E46301 23호 왼손 4장",
+   "stockQuantity": 13,
+   "price": 14900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548147,
+   "groupName": "1. 남여 합피 골프장갑",
+   "name": "1-1.남성 합피 E46301 26호 왼손 4장",
+   "stockQuantity": 54,
+   "price": 14900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548148,
+   "groupName": "1. 남여 합피 골프장갑",
+   "name": "1-2.여성 합피 E46301 18호 양손 2세트",
+   "stockQuantity": 37,
+   "price": 14900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548152,
+   "groupName": "2. 남여 양피 골프장갑",
+   "name": "2-1.남성 올양피 C36301 화이트 22호 3장",
+   "stockQuantity": 224,
+   "price": 19900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548153,
+   "groupName": "2. 남여 양피 골프장갑",
+   "name": "2-1.남성 올양피 C36301 화이트 23호 3장",
+   "stockQuantity": 437,
+   "price": 19900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548154,
+   "groupName": "2. 남여 양피 골프장갑",
+   "name": "2-1.남성 올양피 C36301 화이트 24호 3장",
+   "stockQuantity": 145,
+   "price": 19900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548155,
+   "groupName": "2. 남여 양피 골프장갑",
+   "name": "2-1.남성 올양피 C36301 화이트 25호 3장",
+   "stockQuantity": 123,
+   "price": 19900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548156,
+   "groupName": "2. 남여 양피 골프장갑",
+   "name": "2-2.여성 올양피 C36301 화이트 18호 3장",
+   "stockQuantity": 63,
+   "price": 19900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548157,
+   "groupName": "2. 남여 양피 골프장갑",
+   "name": "2-2.여성 올양피 C36301 화이트 19호 3장",
+   "stockQuantity": 26,
+   "price": 19900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548158,
+   "groupName": "2. 남여 양피 골프장갑",
+   "name": "2-2.여성 올양피 C36301 화이트 20호 3장",
+   "stockQuantity": 37,
+   "price": 19900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548159,
+   "groupName": "2. 남여 양피 골프장갑",
+   "name": "2-2.여성 올양피 C36301 화이트 21호 3장",
+   "stockQuantity": 72,
+   "price": 19900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548166,
+   "groupName": "4. 골프백",
+   "name": "4-2.럭셔리 신발가방 C24307 블랙 2.0",
+   "stockQuantity": 260,
+   "price": 9900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548167,
+   "groupName": "4. 골프백",
+   "name": "4-3.에나멜 골프 파우치 D34305 블랙",
+   "stockQuantity": 464,
+   "price": 12900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548168,
+   "groupName": "4. 골프백",
+   "name": "4-3.에나멜 골프 파우치 D34305 화이트",
+   "stockQuantity": 474,
+   "price": 12900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548169,
+   "groupName": "5. 필드용품",
+   "name": "5-1.아디다스 로고 볼캡 IA9602 블랙",
+   "stockQuantity": 823,
+   "price": 17900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548170,
+   "groupName": "5. 필드용품",
+   "name": "5-1.아디다스 로고 볼캡 IA9603 화이트",
+   "stockQuantity": 900,
+   "price": 17900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548171,
+   "groupName": "5. 필드용품",
+   "name": "5-1.아디다스 로고 볼캡 IA9604 네이비",
+   "stockQuantity": 900,
+   "price": 17900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548172,
+   "groupName": "5. 필드용품",
+   "name": "5-2.브리지스톤 2피스 골프공 12구",
+   "stockQuantity": 900,
+   "price": 17900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548173,
+   "groupName": "5. 필드용품",
+   "name": "5-3.단목 압박 골프양말 C20304 블랙 3켤레",
+   "stockQuantity": 22,
+   "price": 6900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548174,
+   "groupName": "5. 필드용품",
+   "name": "5-3.단목 압박 골프양말 C20304 화이트 3켤레",
+   "stockQuantity": 65,
+   "price": 6900,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 3766548176,
+   "groupName": "6.쇼핑백",
+   "name": "대형",
+   "stockQuantity": 900,
+   "price": 1000,
+   "sellerManagementCode": "MJ134085",
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  }
+ ],
+ "customMadeInfo": {
+  "customMade": false
+ },
+ "manufactureDate": "2019-09-30T15:00:00.000+00:00",
+ "taxType": "TAX",
+ "certification": false,
+ "certificationTargetExcludeContent": {
+  "childCertifiedProductExclusionYn": true,
+  "kcCertifiedProductExclusionYn": true,
+  "kcCertifiedProductExclusionType": "TRUE"
+ },
+ "minorPurchasable": true,
+ "productInfoProvidedNoticeView": {
+  "basic": {
+   "품명 / 모델명": "지브이투어 벨로시티 BM 13 PCS 남여 풀세트 (백세트포함) / 지브이투어 벨로시티 BM 13 PCS 남여 풀세트 (백세트포함)",
+   "KC 인증정보": "해당없음",
+   "크기": "상세페이지참조",
+   "중량": "상세페이지참조",
+   "색상": "상세페이지참조",
+   "재질": "상세페이지참조",
+   "제품구성": "골프클럽",
+   "동일 모델의 출시연월": "2019-01",
+   "제조자(사)": "GV골프코리아/GV골프코리아",
+   "제조국": "중국산(중국)",
+   "상품별 세부사양": "상세페이지 참조",
+   "품질보증기준": "공정거래위원회고시(소비자분쟁해결기준)에 의거하여 보상",
+   "A/S 책임자와 전화번호": "********"
+  },
+  "additional": {
+   "재화등의 배송방법에 관한 정보": "택배",
+   "주문 이후 예상되는 배송기간": "대금 지급일로부터 3일 이내에 발송",
+   "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보": "편도 3500원 (최초 배송비 무료인 경우 7000원 부과)",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+   "재화등의 교환·반품·보증 조건 및 품질보증기준": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "재화등의 A/S 관련 전화번호": "********",
+   "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+   "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "거래에 관한 약관의 내용 또는 확인할 수 있는 방법": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다."
+  }
+ },
+ "productDeliveryInfo": {
+  "deliveryFeeType": "FREE",
+  "deliveryMethodTypes": [
+   "DELIVERY"
+  ],
+  "baseFee": 0,
+  "installationFee": false,
+  "deliveryBundleGroup": {
+   "id": 54405338,
+   "deliveryFeeChargeMethodType": "MAX",
+   "deliveryAreaType": "AREA_3",
+   "area2ExtraFee": 3000,
+   "area3ExtraFee": 5000
+  },
+  "deliveryFeePolicyText": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+  "deliveryAttributeType": "NORMAL",
+  "isCustomProductAfterOrder": false,
+  "todayDelivery": false,
+  "deliveryCompany": {
+   "id": "CJGLS",
+   "name": "CJ 대한통운(오네)"
+  }
+ },
+ "claimDeliveryInfo": {
+  "returnDeliveryCompanyPriority": "PRIMARY",
+  "deliveryCompanyName": "CJ대한통운",
+  "deliveryCompanyCode": "CJGLS",
+  "naverPayAppointment": false,
+  "returnDeliveryFee": 3500,
+  "exchangeDeliveryFee": 7000,
+  "shippingAddressId": 104263329,
+  "returnAddressId": 104263329,
+  "shippingAddress": "경기도 용인시 처인구 이동읍 덕성산단2로 5-24 (메이저월드 물류센터) 메이저월드 (우 : 17130) ",
+  "returnAddress": "경기도 용인시 처인구 이동읍 덕성산단2로 5-24 (메이저월드 물류센터) 메이저월드 (우 : 17130) ",
+  "overseasShipping": false,
+  "freeReturnInsurance": true
+ },
+ "isCultureCostIncomeDeduction": false,
+ "isRestrictCart": false,
+ "naverGuaranteed": false,
+ "newShoppingExposureYn": true,
+ "benefitsView": {
+  "discountedSalePrice": 1200000,
+  "dispDiscountedSalePrice": 1200000,
+  "sellerImmediateDiscountAmount": 0,
+  "managerImmediateDiscountAmount": 0,
+  "specialDiscountAmount": {
+   "PROMOTION": 1200000
+  },
+  "discountedRatio": 50,
+  "dispDiscountedRatio": 50,
+  "sellerPurchasePoint": 0,
+  "sellerCustomerManagementPoint": 0,
+  "managerPurchasePoint": 12000,
+  "managerPurchaseExtraPoint": 0,
+  "managerPaymoneyAccumulatePoint": 18000,
+  "managerBankbookAccumulatePoint": 6000,
+  "managerArrivalGuaranteePoint": 0,
+  "managerMembershipArrivalGuaranteePoint": 0,
+  "generalPurchaseReviewPoint": 300,
+  "premiumPurchaseReviewPoint": 2000,
+  "managerGeneralPurchaseReviewPoint": 50,
+  "managerPremiumPurchaseReviewPoint": 150,
+  "textReviewPoint": 300,
+  "photoVideoReviewPoint": 2000,
+  "afterUseTextReviewPoint": 600,
+  "afterUsePhotoVideoReviewPoint": 1000,
+  "storeMemberReviewPoint": 0,
+  "managerTextReviewPoint": 50,
+  "managerPhotoVideoReviewPoint": 150,
+  "managerAfterUseTextReviewPoint": 50,
+  "managerAfterUsePhotoVideoReviewPoint": 150,
+  "givePresent": false
+ },
+ "sellerDeliveryLeadTimes": [
+  {
+   "rangeNumberText": "1",
+   "rangeText": "일 이내",
+   "leadTimeCount": 835,
+   "leadTimePercent": 65
+  },
+  {
+   "rangeNumberText": "2",
+   "rangeText": "일 이내",
+   "leadTimeCount": 403,
+   "leadTimePercent": 31
+  },
+  {
+   "rangeNumberText": "3",
+   "rangeText": "일 이내",
+   "leadTimeCount": 43,
+   "leadTimePercent": 3
+  },
+  {
+   "rangeNumberText": "4",
+   "rangeText": "일 이상",
+   "leadTimeCount": 4,
+   "leadTimePercent": 0
+  }
+ ],
+ "averageDeliveryLeadTime": {
+  "productAverageDeliveryLeadTime": 0,
+  "sellerAverageDeliveryLeadTime": 1.2381322
+ },
+ "sellerDailyDeliveryLeadTimes": {
+  "leadTimeCount": [
+   195,
+   640,
+   403,
+   43,
+   4,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "leadTimeViewType": "NORMAL_DELIVERY"
+ },
+ "detailContents": {
+  "excessDetailContentText": false,
+  "editorType": "NONE"
+ },
+ "useExternalStock": false,
+ "dispName": "지브이투어 벨로시티 BM 13 PCS 남성 여성 풀세트 (백세트포함)",
+ "adultAuthorizationType": "NOT_LOGIN",
+ "authorizationDisplay": "NORMAL",
+ "galleryImages": [
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20260805_4/1785884910718ahHoD_JPEG/7583123963.jpg",
+   "width": 600,
+   "height": 600,
+   "imageType": "REPRESENTATIVE"
+  },
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20260504_86/1777874146563nxnyq_JPEG/7073225698688436_1398100506.jpg",
+   "width": 600,
+   "height": 600,
+   "imageType": "OPTIONAL"
+  }
+ ],
+ "soldout": false,
+ "viewAttributes": {
+  "상품상태": "신상품",
+  "상품번호": "7583123963",
+  "제조사": "지브이투어",
+  "브랜드": "지브이투어",
+  "모델명": "BM 풀세트",
+  "원산지": "중국산(중국)",
+  "제조일자": "2019.10.01."
+ },
+ "additionalAttributes": {
+  "영수증발급": "신용카드전표, 현금영수증발급",
+  "A/S 안내": [
+   "********",
+   "********"
+  ]
+ },
+ "eCouponCategory": false,
+ "cultureCategory": false,
+ "textOptions": [],
+ "simpleOptions": [],
+ "combinationOptions": [
+  {
+   "groupName": "골프클럽구분",
+   "options": [
+    {
+     "id": 59194515734,
+     "optionName1": "BM 풀세트 스틸 블랙 13PCS",
+     "optionName2": "BM 캐디백세트 네이비",
+     "stockQuantity": 3,
+     "price": 0,
+     "regOrder": 4,
+     "registerDate": "2026-07-09T04:00:20.129+00:00",
+     "sellerManagerCode": "2113408500053"
+    },
+    {
+     "id": 59194515738,
+     "optionName1": "BM 풀세트 여성 실버 12PCS",
+     "optionName2": "BM 캐디백세트 네이비",
+     "stockQuantity": 6,
+     "price": 0,
+     "regOrder": 8,
+     "registerDate": "2026-07-09T04:00:20.132+00:00",
+     "sellerManagerCode": "2113408500091"
+    },
+    {
+     "id": 59194515736,
+     "optionName1": "BM 풀세트 카본 골드 13PCS",
+     "optionName2": "BM 캐디백세트 네이비",
+     "stockQuantity": 6,
+     "price": 0,
+     "regOrder": 6,
+     "registerDate": "2026-07-09T04:00:20.130+00:00",
+     "sellerManagerCode": "2113408500077"
+    }
+   ],
+   "checkedName": null,
+   "checkedIds": null,
+   "price": 0,
+   "isLastDepth": false
+  },
+  {
+   "groupName": "선택2",
+   "options": null,
+   "checkedName": null,
+   "checkedIds": null,
+   "price": 0,
+   "isLastDepth": true
+  }
+ ],
+ "standardOptions": [],
+ "standardCombinations": [
+  {
+   "id": 59194515734,
+   "optionName1": "BM 풀세트 스틸 블랙 13PCS",
+   "optionName2": "BM 캐디백세트 네이비",
+   "stockQuantity": 3,
+   "price": 0,
+   "regOrder": 4,
+   "registerDate": "2026-07-09T04:00:20.129+00:00",
+   "sellerManagerCode": "2113408500053",
+   "title": "_BM 풀세트 스틸 블랙 13PCS_BM 캐디백세트 네이비___"
+  },
+  {
+   "id": 59194515730,
+   "optionName1": "BM 풀세트 스틸 블랙 13PCS",
+   "optionName2": "BM 캐디백세트 블랙",
+   "stockQuantity": 3,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2026-07-09T04:00:20.126+00:00",
+   "sellerManagerCode": "134085-0001",
+   "title": "_BM 풀세트 스틸 블랙 13PCS_BM 캐디백세트 블랙___"
+  },
+  {
+   "id": 59194515733,
+   "optionName1": "BM 풀세트 스틸 블랙 13PCS",
+   "optionName2": "BM 캐디백세트 화이트",
+   "stockQuantity": 3,
+   "price": 0,
+   "regOrder": 3,
+   "registerDate": "2026-07-09T04:00:20.128+00:00",
+   "sellerManagerCode": "2113408500046",
+   "title": "_BM 풀세트 스틸 블랙 13PCS_BM 캐디백세트 화이트___"
+  },
+  {
+   "id": 59194515738,
+   "optionName1": "BM 풀세트 여성 실버 12PCS",
+   "optionName2": "BM 캐디백세트 네이비",
+   "stockQuantity": 6,
+   "price": 0,
+   "regOrder": 8,
+   "registerDate": "2026-07-09T04:00:20.132+00:00",
+   "sellerManagerCode": "2113408500091",
+   "title": "_BM 풀세트 여성 실버 12PCS_BM 캐디백세트 네이비___"
+  },
+  {
+   "id": 59194515732,
+   "optionName1": "BM 풀세트 여성 실버 12PCS",
+   "optionName2": "BM 캐디백세트 블랙",
+   "stockQuantity": 6,
+   "price": 0,
+   "regOrder": 2,
+   "registerDate": "2026-07-09T04:00:20.127+00:00",
+   "sellerManagerCode": "134085-0003",
+   "title": "_BM 풀세트 여성 실버 12PCS_BM 캐디백세트 블랙___"
+  },
+  {
+   "id": 59194515737,
+   "optionName1": "BM 풀세트 여성 실버 12PCS",
+   "optionName2": "BM 캐디백세트 화이트",
+   "stockQuantity": 8,
+   "price": 0,
+   "regOrder": 7,
+   "registerDate": "2026-07-09T04:00:20.131+00:00",
+   "sellerManagerCode": "2113408500084",
+   "title": "_BM 풀세트 여성 실버 12PCS_BM 캐디백세트 화이트___"
+  },
+  {
+   "id": 59194515736,
+   "optionName1": "BM 풀세트 카본 골드 13PCS",
+   "optionName2": "BM 캐디백세트 네이비",
+   "stockQuantity": 6,
+   "price": 0,
+   "regOrder": 6,
+   "registerDate": "2026-07-09T04:00:20.130+00:00",
+   "sellerManagerCode": "2113408500077",
+   "title": "_BM 풀세트 카본 골드 13PCS_BM 캐디백세트 네이비___"
+  },
+  {
+   "id": 59194515731,
+   "optionName1": "BM 풀세트 카본 골드 13PCS",
+   "optionName2": "BM 캐디백세트 블랙",
+   "stockQuantity": 6,
+   "price": 0,
+   "regOrder": 1,
+   "registerDate": "2026-07-09T04:00:20.127+00:00",
+   "sellerManagerCode": "134085-0002",
+   "title": "_BM 풀세트 카본 골드 13PCS_BM 캐디백세트 블랙___"
+  },
+  {
+   "id": 59194515735,
+   "optionName1": "BM 풀세트 카본 골드 13PCS",
+   "optionName2": "BM 캐디백세트 화이트",
+   "stockQuantity": 10,
+   "price": 0,
+   "regOrder": 5,
+   "registerDate": "2026-07-09T04:00:20.130+00:00",
+   "sellerManagerCode": "2113408500060",
+   "title": "_BM 풀세트 카본 골드 13PCS_BM 캐디백세트 화이트___"
+  }
+ ],
+ "supplements": [
+  {
+   "groupName": "1. 남여 합피 골프장갑",
+   "options": [
+    {
+     "id": 3766548145,
+     "groupName": "1. 남여 합피 골프장갑",
+     "name": "1-1.남성 합피 E46301 23호 왼손 4장",
+     "stockQuantity": 13,
+     "price": 14900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 3766548147,
+     "groupName": "1. 남여 합피 골프장갑",
+     "name": "1-1.남성 합피 E46301 26호 왼손 4장",
+     "stockQuantity": 54,
+     "price": 14900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 3766548148,
+     "groupName": "1. 남여 합피 골프장갑",
+     "name": "1-2.여성 합피 E46301 18호 양손 2세트",
+     "stockQuantity": 37,
+     "price": 14900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    }
+   ],
+   "checkedName": null,
+   "checkedId": null,
+   "price": 0
+  },
+  {
+   "groupName": "2. 남여 양피 골프장갑",
+   "options": [
+    {
+     "id": 3766548152,
+     "groupName": "2. 남여 양피 골프장갑",
+     "name": "2-1.남성 올양피 C36301 화이트 22호 3장",
+     "stockQuantity": 224,
+     "price": 19900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 3766548153,
+     "groupName": "2. 남여 양피 골프장갑",
+     "name": "2-1.남성 올양피 C36301 화이트 23호 3장",
+     "stockQuantity": 437,
+     "price": 19900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 3766548154,
+     "groupName": "2. 남여 양피 골프장갑",
+     "name": "2-1.남성 올양피 C36301 화이트 24호 3장",
+     "stockQuantity": 145,
+     "price": 19900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 3766548155,
+     "groupName": "2. 남여 양피 골프장갑",
+     "name": "2-1.남성 올양피 C36301 화이트 25호 3장",
+     "stockQuantity": 123,
+     "price": 19900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 3766548156,
+     "groupName": "2. 남여 양피 골프장갑",
+     "name": "2-2.여성 올양피 C36301 화이트 18호 3장",
+     "stockQuantity": 63,
+     "price": 19900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 3766548157,
+     "groupName": "2. 남여 양피 골프장갑",
+     "name": "2-2.여성 올양피 C36301 화이트 19호 3장",
+     "stockQuantity": 26,
+     "price": 19900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 3766548158,
+     "groupName": "2. 남여 양피 골프장갑",
+     "name": "2-2.여성 올양피 C36301 화이트 20호 3장",
+     "stockQuantity": 37,
+     "price": 19900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 3766548159,
+     "groupName": "2. 남여 양피 골프장갑",
+     "name": "2-2.여성 올양피 C36301 화이트 21호 3장",
+     "stockQuantity": 72,
+     "price": 19900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    }
+   ],
+   "checkedName": null,
+   "checkedId": null,
+   "price": 0
+  },
+  {
+   "groupName": "4. 골프백",
+   "options": [
+    {
+     "id": 3766548166,
+     "groupName": "4. 골프백",
+     "name": "4-2.럭셔리 신발가방 C24307 블랙 2.0",
+     "stockQuantity": 260,
+     "price": 9900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 3766548167,
+     "groupName": "4. 골프백",
+     "name": "4-3.에나멜 골프 파우치 D34305 블랙",
+     "stockQuantity": 464,
+     "price": 12900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 3766548168,
+     "groupName": "4. 골프백",
+     "name": "4-3.에나멜 골프 파우치 D34305 화이트",
+     "stockQuantity": 474,
+     "price": 12900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    }
+   ],
+   "checkedName": null,
+   "checkedId": null,
+   "price": 0
+  },
+  {
+   "groupName": "5. 필드용품",
+   "options": [
+    {
+     "id": 3766548169,
+     "groupName": "5. 필드용품",
+     "name": "5-1.아디다스 로고 볼캡 IA9602 블랙",
+     "stockQuantity": 823,
+     "price": 17900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 3766548170,
+     "groupName": "5. 필드용품",
+     "name": "5-1.아디다스 로고 볼캡 IA9603 화이트",
+     "stockQuantity": 900,
+     "price": 17900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 3766548171,
+     "groupName": "5. 필드용품",
+     "name": "5-1.아디다스 로고 볼캡 IA9604 네이비",
+     "stockQuantity": 900,
+     "price": 17900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 3766548172,
+     "groupName": "5. 필드용품",
+     "name": "5-2.브리지스톤 2피스 골프공 12구",
+     "stockQuantity": 900,
+     "price": 17900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 3766548173,
+     "groupName": "5. 필드용품",
+     "name": "5-3.단목 압박 골프양말 C20304 블랙 3켤레",
+     "stockQuantity": 22,
+     "price": 6900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 3766548174,
+     "groupName": "5. 필드용품",
+     "name": "5-3.단목 압박 골프양말 C20304 화이트 3켤레",
+     "stockQuantity": 65,
+     "price": 6900,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    }
+   ],
+   "checkedName": null,
+   "checkedId": null,
+   "price": 0
+  },
+  {
+   "groupName": "6.쇼핑백",
+   "options": [
+    {
+     "id": 3766548176,
+     "groupName": "6.쇼핑백",
+     "name": "대형",
+     "stockQuantity": 900,
+     "price": 1000,
+     "sellerManagementCode": "MJ134085",
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    }
+   ],
+   "checkedName": null,
+   "checkedId": null,
+   "price": 0
+  }
+ ],
+ "deliveryText": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+ "deliveryMethodType": {
+  "code": 1,
+  "name": "택배",
+  "description": "택배",
+  "etc": null,
+  "naverPayCode": "DELIVERY"
+ },
+ "discountedSalePrice": 1200000,
+ "mobileDiscountRatio": 50,
+ "derived": {
+  "productType": "DEFAULT"
+ },
+ "hopeDelivery": null,
+ "commentCount": 0,
+ "isPayMember": false,
+ "arrivalGuarantee": false,
+ "groupId": null,
+ "groupEpId": null,
+ "simpleProductAffiliateYn": true,
+ "disableAdditionalApi": false
+}

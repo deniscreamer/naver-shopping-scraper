@@ -12,6 +12,7 @@ from urllib.parse import urlencode
 from bottle import request, response, route
 
 import config
+import ext_listing
 import ext_product
 import listing_jobs
 from naver_shopping import api, schemas
@@ -77,6 +78,12 @@ def paginate(result, path, params):
     return out
 
 
+def _failed(label, status, error):
+    """A failed answer, with one log line (R-STYLE-4, decision 2026-11-05): the scripts see only their side."""
+    print(f"api: {status} {request.path} ({label}): {error[:200]}", flush=True)
+    return json_response({"error": error}, status)
+
+
 def call(label, schema_cls, impl, paginated=False):
     """Validate, run, map errors: bad params -> 400, missing entity -> 404,
     blocks and transport failures -> 502 (retry, or set a proxy), the
@@ -90,17 +97,17 @@ def call(label, schema_cls, impl, paginated=False):
     except ValueError as e:
         return json_response({"error": str(e)}, 400)
     except BadRequest as e:
-        return json_response({"error": f"{SITE} rejected the request: {e}"}, 400)
+        return _failed(label, 400, f"{SITE} rejected the request: {e}")
     except NotFound as e:
-        return json_response({"error": str(e) or "not found"}, 404)
+        return _failed(label, 404, str(e) or "not found")
     except ext_product.AdapterError as e:  # the owner's Chrome: 409 busy / 503, never a retryable 502
-        return json_response({"error": str(e)}, e.status)
+        return _failed(label, e.status, str(e))
     except Blocked as e:
-        return json_response({"error": f"{SITE} blocked the request, retry later: {e}"}, 502)
+        return _failed(label, 502, f"{SITE} blocked the request, retry later: {e}")
     except UpstreamError as e:
-        return json_response({"error": f"{SITE} {label} failed: {e}"}, 502)
+        return _failed(label, 502, f"{SITE} {label} failed: {e}")
     except Exception as e:                 # parser surprises
-        return json_response({"error": f"{SITE} {label} failed: {type(e).__name__}: {e}"}, 500)
+        return _failed(label, 500, f"{SITE} {label} failed: {type(e).__name__}: {e}")
     if paginated:
         result = paginate(result, request.path, raw)
     return json_response(result)
@@ -109,6 +116,7 @@ def call(label, schema_cls, impl, paginated=False):
 ENDPOINTS = [
     ("/products/details", schemas.ProductSchema, api.product_details, False),
     ("/products/specs", schemas.ProductSpecsSchema, ext_product.product_specs, False),
+    ("/products/page", schemas.ProductSpecsSchema, ext_product.product_page, False),
     ("/products/search", schemas.ProductsSearchSchema, api.products_search, False),
     ("/products/count", schemas.ProductsSearchSchema, api.products_count, False),
     ("/products/reviews", schemas.ProductReviewsSchema, api.product_reviews, True),
@@ -183,9 +191,22 @@ for _prefix in ("", "/" + SITE):
     route(_prefix + "/listings/<job_id>/products", method="GET")(listings_products)
 
 
+# ---- the captcha the adapter waits on (read by scripts/captcha_watch.py) ----------------------
+
+CAPTCHA_PATH = "/captcha"
+
+
+def captcha():
+    return json_response(ext_listing.captcha_state())
+
+
+for _prefix in ("", "/" + SITE):
+    route(_prefix + CAPTCHA_PATH, method="GET")(captcha)
+
+
 @route("/", method="GET")
 @route("/health", method="GET")
 def health():
     return json_response({"status": "ok", "version": config.VERSION,
-                          "endpoints": [p for p, *_ in ENDPOINTS] + list(LISTING_PATHS),
+                          "endpoints": [p for p, *_ in ENDPOINTS] + list(LISTING_PATHS) + [CAPTCHA_PATH],
                           "extension": listing_jobs.extension_status()})

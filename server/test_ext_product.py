@@ -86,6 +86,14 @@ def test_listing_busy_while_a_read_runs(specs):
         listing_jobs._adapter.release()
 
 
+def test_failed_answers_are_logged(specs, monkeypatch, capsys):
+    monkeypatch.setattr(listing_jobs, "_bridge", FakeBridge(connected=False))
+    assert call("GET", "/products/specs", product=LINK)[0] == 503
+    assert "api: 503 /products/specs (products/specs): the browser extension is not connected" in capsys.readouterr().out
+    assert call("GET", "/products/specs")[0] == 400                     # a bad param: no line
+    assert "api:" not in capsys.readouterr().out
+
+
 def test_specs_errors(specs, monkeypatch):
     monkeypatch.setattr(listing_jobs, "_bridge", FakeBridge(connected=False))
     status, body = call("GET", "/products/specs", product=LINK)
@@ -149,3 +157,54 @@ def test_product_answer_picks_the_product(monkeypatch):
     assert ext_product._product_answer(brand, 7, "42") == {"id": 42}
     none = Answers([])
     assert ext_product._product_answer(none, 7, "42") is None and len(none.patterns) == ext_product.ANSWER_TRIES
+
+
+class Cards:
+    """A bridge whose search page has the given selectors."""
+    def __init__(self, present):
+        self.present, self.asked = present, []
+
+    def call(self, op, **args):
+        assert op == "query"
+        self.asked.append(args["selector"])
+        return {"count": 1 if args["selector"] in self.present else 0}
+
+
+def test_card_clicks_the_photo_not_the_card_centre():
+    link = 'a[href*="/products/42?"]'
+    photo = f'[class*="product_card"]:has(> {link}) img[class*="productCardThumbnail_image"]'
+    assert ext_product._card(Cards({photo, link}), 7, "42") == photo     # 2026-11-05: the store link lies mid-card
+    assert ext_product._card(Cards({link}), 7, "42") == link             # a card without that photo
+    assert ext_product._card(Cards(set()), 7, "42") is None
+
+
+def test_product_page_is_the_raw_page_never_cached(specs):
+    for _ in range(2):
+        status, body = call("GET", "/products/page", product=LINK)
+        assert status == 200 and body["html"].startswith("<") and body["id"] == "5543663553"
+        assert body["product_answer"] is None and body["query"] == "신품 혼마 D1 남성용 골프채 풀세트"
+    assert len(specs) == 2                                                     # every call reads the page
+
+
+class ErrorPage(Cards):
+    """A search page with the card; the click opens Naver's maintenance page in a new tab."""
+    def call(self, op, **args):
+        if op == "click":
+            return {"newTabId": 9}
+        if op == "wait_load":
+            return True
+        if op == "tabs":
+            return [{"tabId": 9, "url": "https://shopv.pstatic.net/web/maintenance/internal-error.html?timestamp=1"}]
+        if op == "page":
+            return {"url": "https://search.shopping.naver.com/ns/search?query=q"}
+        return super().call(op, **args)
+
+
+def test_naver_error_page_is_not_a_wall(monkeypatch, tmp_path):
+    monkeypatch.setattr(ext_product.ext_listing, "open_search", lambda bridge, query, out_dir: (7, None))
+    monkeypatch.setattr(ext_product.ext_listing, "pause", lambda a, b: None)
+    monkeypatch.setattr(ext_product, "_close_tabs", lambda bridge: None)
+    link = 'a[href*="/products/42?"]'
+    bridge = ErrorPage({f'[class*="product_card"]:has(> {link}) img[class*="productCardThumbnail_image"]'})
+    with pytest.raises(ext_product.NotListed, match="Naver shows its error page"):
+        ext_product.read_page(bridge, "42", "q", str(tmp_path))

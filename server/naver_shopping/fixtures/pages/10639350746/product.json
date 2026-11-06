@@ -1,0 +1,268 @@
+{
+ "id": "10639350746",
+ "channelServiceType": "STOREFARM",
+ "channelProductType": "SINGLE",
+ "channelProductSupplyType": "OWNER",
+ "channelProductStatusType": "NORMAL",
+ "channelProductDisplayStatusType": "ON",
+ "category": {
+  "categoryId": "50002788",
+  "categoryName": "풀세트",
+  "category1Id": "50000007",
+  "category2Id": "50000029",
+  "category3Id": "50001102",
+  "category4Id": "50002788",
+  "category1Name": "스포츠/레저",
+  "category2Name": "골프",
+  "category3Name": "골프클럽",
+  "category4Name": "풀세트",
+  "wholeCategoryId": "50000007>50000029>50001102>50002788",
+  "wholeCategoryName": "스포츠/레저>골프>골프클럽>풀세트",
+  "categoryLevel": 4,
+  "lastLevel": true,
+  "sortOrder": 10,
+  "validCategory": true,
+  "receiptIssue": true,
+  "exceptionalCategoryTypes": [
+   "REGULAR_SUBSCRIPTION",
+   "FREE_RETURN_INSURANCE",
+   "MANUFACTURE_DEFINE_NO",
+   "RENTAL_SUBSCRIPTION"
+  ],
+  "pointAccumulationYn": false
+ },
+ "name": "왼손골프 좌타 골프채풀세트 초보용 남성용 캘러웨이 골프백포함",
+ "productUrl": "https://smartstore.naver.com/main/products/10639350746",
+ "mobileProductUrl": "https://m.smartstore.naver.com/main/products/10639350746",
+ "storeKeepExclusiveProduct": false,
+ "best": false,
+ "orderRequestUsable": false,
+ "channelProductAttributes": [],
+ "productNo": "10588466300",
+ "salePrice": 1489000,
+ "dispSalePrice": 1489000,
+ "stockQuantity": 97,
+ "saleType": "NEW",
+ "excludeAdminDiscount": false,
+ "payExposure": true,
+ "productStatusType": "SALE",
+ "statusType": "SALE",
+ "authenticationType": "NORMAL",
+ "itselfProductionProductYn": false,
+ "afterServiceInfo": {
+  "afterServiceTelephoneNumber": "********",
+  "afterServiceGuideContent": "********"
+ },
+ "originAreaInfo": {
+  "originAreaType": "DIRECT_INPUT",
+  "content": "해외구매대행",
+  "originAreaCode": "04",
+  "wholeOriginAreaName": "직접입력",
+  "plural": false
+ },
+ "optionUsable": false,
+ "supplementProductUsable": false,
+ "supplementProducts": [],
+ "customMadeInfo": {
+  "customMade": false
+ },
+ "taxType": "TAX",
+ "certification": false,
+ "certificationTargetExcludeContent": {
+  "kcCertifiedProductExclusionYn": true,
+  "kcCertifiedProductExclusionType": "TRUE"
+ },
+ "sellerCommentContent": "해외배송상품이므로 물품의 배송이 시작된 경우에는 상품의 취소나 변경이 어려운 점 양해 부탁 드립니다.",
+ "minorPurchasable": true,
+ "productInfoProvidedNoticeView": {
+  "basic": {
+   "품명 / 모델명": "상품상세참조 / 상품상세참조",
+   "KC 인증정보": "상품상세참조",
+   "크기": "상품상세참조",
+   "중량": "상품상세참조",
+   "색상": "상품상세참조",
+   "재질": "상품상세참조",
+   "제품구성": "상품상세참조",
+   "동일 모델의 출시연월": "상품상세참조",
+   "제조자(사)": "캘러웨이",
+   "제조국": "해외구매대행",
+   "상품별 세부사양": "상품상세참조",
+   "품질보증기준": "상품상세참조",
+   "A/S 책임자와 전화번호": "********"
+  },
+  "additional": {
+   "재화등의 배송방법에 관한 정보": "택배",
+   "주문 이후 예상되는 배송기간": "대금 지급일로부터 3일 이내에 발송",
+   "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보": "상품상세 참조",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보": "편도 8000원 (최초 배송비 무료인 경우 16000원 부과)",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+   "재화등의 교환·반품·보증 조건 및 품질보증기준": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "재화등의 A/S 관련 전화번호": "********",
+   "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+   "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "거래에 관한 약관의 내용 또는 확인할 수 있는 방법": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다."
+  }
+ },
+ "productDeliveryInfo": {
+  "deliveryFeeType": "FREE",
+  "deliveryMethodTypes": [
+   "DELIVERY"
+  ],
+  "baseFee": 0,
+  "deliveryAreaType": "AREA_2",
+  "area2ExtraFee": 4000,
+  "differentialFeeByArea": "7000",
+  "installationFee": false,
+  "deliveryFeePolicyText": "제주,도서지역 추가 4,000원",
+  "deliveryAttributeType": "TODAY",
+  "todayDelivery": true,
+  "thisDayDispatchBasisTime": "09:00:00.000+0000",
+  "deliveryCompany": {
+   "id": "CJGLS",
+   "name": "CJ 대한통운(오네)"
+  }
+ },
+ "claimDeliveryInfo": {
+  "returnDeliveryCompanyPriority": "PRIMARY",
+  "deliveryCompanyName": "한진택배",
+  "deliveryCompanyCode": "HANJIN",
+  "naverPayAppointment": true,
+  "returnDeliveryFee": 8000,
+  "exchangeDeliveryFee": 16000,
+  "shippingAddressId": 107853538,
+  "returnAddressId": 106849961,
+  "shippingAddress": "서울특별시 강서구 방화대로48길 40 (도시개발공사아파트) 217동 504호 (우 : 07519) ",
+  "returnAddress": "서울특별시 강서구 방화대로48길 40 (도시개발공사아파트) 217동 504호 (우 : 07519) ",
+  "overseasShipping": false,
+  "freeReturnInsurance": false
+ },
+ "isCultureCostIncomeDeduction": false,
+ "isRestrictCart": false,
+ "naverGuaranteed": false,
+ "newShoppingExposureYn": true,
+ "benefitsView": {
+  "discountedSalePrice": 1414550,
+  "dispDiscountedSalePrice": 1414550,
+  "sellerImmediateDiscountAmount": 74450,
+  "managerImmediateDiscountAmount": 0,
+  "specialDiscountAmount": {},
+  "discountedRatio": 5,
+  "dispDiscountedRatio": 5,
+  "sellerPurchasePoint": 0,
+  "sellerCustomerManagementPoint": 0,
+  "managerPurchasePoint": 14145,
+  "managerPurchaseExtraPoint": 0,
+  "managerPaymoneyAccumulatePoint": 21218,
+  "managerBankbookAccumulatePoint": 7072,
+  "managerArrivalGuaranteePoint": 0,
+  "managerMembershipArrivalGuaranteePoint": 0,
+  "generalPurchaseReviewPoint": 0,
+  "premiumPurchaseReviewPoint": 0,
+  "managerGeneralPurchaseReviewPoint": 50,
+  "managerPremiumPurchaseReviewPoint": 150,
+  "textReviewPoint": 0,
+  "photoVideoReviewPoint": 0,
+  "afterUseTextReviewPoint": 0,
+  "afterUsePhotoVideoReviewPoint": 0,
+  "storeMemberReviewPoint": 0,
+  "managerTextReviewPoint": 50,
+  "managerPhotoVideoReviewPoint": 150,
+  "managerAfterUseTextReviewPoint": 50,
+  "managerAfterUsePhotoVideoReviewPoint": 150,
+  "givePresent": false
+ },
+ "averageDeliveryLeadTime": {
+  "productAverageDeliveryLeadTime": 0,
+  "sellerAverageDeliveryLeadTime": 0
+ },
+ "detailContents": {
+  "detailContentText": "남성용 왼손 초보용 골프채 풀세트 미국내 1위 제품 현지배송비+관세&부가세+국내배송비 모두 포함 금액고객님께서 추가적으로 지불하시는 금액은 없습니다!!!!! #골린이#남성좌타골프채#풀세트#스탠드백#헤드커버 Callaway Golf Men’s Strata Complete Set [구성] 총 14piece Driver 3 Wood 5 Hybrid 6 - 9 Iron PW and SW Putter Stand Bag 3 Headcovers 크기 14 종(Strata Plus) 색상 빨강 골프채 강도 R 사용 왼손잡이 재질 알루미늄 브랜드 캘러웨이(Callaway) 샤프트재질 스틸 무게 14 파운드 골프퍼터라이앵글 62.5 그립타입 퍼터 우즈: 드라이버는 460cc의 클럽 헤드와 더 큰 스위트 스팟과 그래파이트 샤프트가 있어 티와의 거리가 더 멀어집니다. 3 Wood는 더 빠른 스윙 속도와 긴 샷을 촉진합니다. 하이브리드: 5 하이브리드는 보통 어려운 롱아이언에 부딪힐 때 다재다능함과 용서를 위해 설계되었습니다. 아이언/웨지: 6~9개의 아이언, 피칭 웨지 및 샌드 웨지에는 둘레 가중 및 점진적인 밑창 폭 기술이 적용되어 제어력이 향상되었습니다. 퍼터: 놀라운 정확도를 제공하는 정렬 기능을 갖춘 말렛 퍼터 Size ‎14 Piece (Strata Plus) Color ‎Red Golf Club Flex ‎Regular Hand Orientation ‎Left Material ‎Aluminum Brand ‎Callaway Shaft Material ‎Steel Item Weight ‎14 Pounds Golf Putter Lie Angle ‎62.5 Grip Type ‎Putter Product Dimensions ‎48\"L x 11\"W x 11\"H UPC ‎190228623812 Global Trade Identification Number ‎00190228623812 Manufacturer ‎Callaway Golf Item Package Dimensions L x W x H ‎48.2 x 12.7 x 8.5 inches Package Weight ‎7.71 Kilograms Item Dimensions LxWxH ‎48 x 11 x 11 inches Brand Name ‎Callaway Warranty Description ‎2 year warranty Model Name ‎STRATA PLUS 19 PACKAGE SET Suggested Users ‎mens Number of Items ‎14 Part Number ‎4PKL190714067 Style ‎Left Hand Included Components ‎Golf Package Set",
+  "excessDetailContentText": false,
+  "editorType": "SEONE"
+ },
+ "useExternalStock": false,
+ "dispName": "왼손골프 좌타 골프채풀세트 초보용 남성용 캘러웨이 골프백포함",
+ "adultAuthorizationType": "NOT_LOGIN",
+ "authorizationDisplay": "NORMAL",
+ "galleryImages": [
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20240724_225/1721792702935QbBy4_JPEG/2829906821721910_884620392.jpg",
+   "width": 611,
+   "height": 1496,
+   "imageType": "REPRESENTATIVE"
+  },
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20240724_132/17217927116844Uy13_JPEG/4486997081380306_478217058.jpg",
+   "width": 1095,
+   "height": 913,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 2,
+   "url": "https://shop-phinf.pstatic.net/20240724_262/1721792721233zGE2f_JPEG/1376483118786175_373949882.jpg",
+   "width": 1336,
+   "height": 428,
+   "imageType": "OPTIONAL"
+  }
+ ],
+ "soldout": false,
+ "viewAttributes": {
+  "상품상태": "신상품",
+  "상품번호": "10639350746",
+  "제조사": "캘러웨이",
+  "브랜드": "캘러웨이",
+  "원산지": "해외구매대행"
+ },
+ "additionalAttributes": {
+  "영수증발급": "신용카드전표, 현금영수증발급",
+  "A/S 안내": [
+   "********",
+   "********"
+  ],
+  "판매자 특이사항": "해외배송상품이므로 물품의 배송이 시작된 경우에는 상품의 취소나 변경이 어려운 점 양해 부탁 드립니다."
+ },
+ "detailAttributes": {
+  "드라이버 로프트각": "12도",
+  "아이언 구성": "#6, #7, #8, #9, 샌드웨지(SW), 피칭웨지(PW), W",
+  "종류": "풀세트",
+  "성별": "남성용",
+  "사용방향": "왼손용",
+  "출시": "2024년형",
+  "풀세트구성": "드라이버, 6아이언세트, 7아이언세트, 8아이언세트, 9아이언세트, 퍼터, 5아이언세트, 웨지, 페어웨이",
+  "아이언샤프트소재": "스틸",
+  "아이언개수": "7개",
+  "퍼터형태": "말렛(반달형)",
+  "골프백포함여부": "스탠드백"
+ },
+ "eCouponCategory": false,
+ "cultureCategory": false,
+ "supplements": [],
+ "deliveryText": "제주,도서지역 추가 4,000원 / 7000",
+ "deliveryMethodType": {
+  "code": 1,
+  "name": "택배",
+  "description": "택배",
+  "etc": null,
+  "naverPayCode": "DELIVERY"
+ },
+ "discountedSalePrice": 1414550,
+ "mobileDiscountRatio": 5,
+ "derived": {
+  "productType": "DEFAULT"
+ },
+ "hopeDelivery": null,
+ "productVideoAuth": {
+  "inKey": "V1228929e81570b74ad787e48f7778b839e76c9bfa68d836b232c62076916c0fea8fc7e48f7778b839e76",
+  "serviceId": 2010,
+  "inkey": "V1228929e81570b74ad787e48f7778b839e76c9bfa68d836b232c62076916c0fea8fc7e48f7778b839e76"
+ },
+ "commentCount": 3,
+ "isPayMember": false,
+ "arrivalGuarantee": false,
+ "groupId": null,
+ "groupEpId": null,
+ "simpleProductAffiliateYn": false,
+ "disableAdditionalApi": false
+}

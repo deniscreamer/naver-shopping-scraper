@@ -54,6 +54,10 @@ RETRY_BACKOFF = 2          # seconds, multiplied by the attempt number
 
 NAVER_SHOPPING_PROXY = os.environ.get("NAVER_SHOPPING_PROXY") or None
 
+# Seconds the adapter waits for a human to answer a captcha in the owner's Chrome (at the Mac, or from a phone
+# through a remote-desktop app) before it stops the job.
+NAVER_CAPTCHA_WAIT_S = int(os.environ.get("NAVER_CAPTCHA_WAIT_S") or 600)
+
 # Chromes kept open for the product / review / store-list calls (one per
 # proxy; one is plenty).
 NAVER_SHOPPING_BROWSER_SLOTS = 1

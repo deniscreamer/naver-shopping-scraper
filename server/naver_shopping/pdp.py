@@ -18,10 +18,18 @@ Three jobs:
   * text_fields: the purchase box's text fields (a text the buyer types), with
     what only the page shows: the label, required, the length limit.
   * description_text: the readable text of a description by walking its text
-    nodes; block elements end a line, inline ones do not split words. Images,
-    video controls (.pzp), embedded product cards (.se-material), buttons and
-    hidden nodes are skipped; structural labels (공지사항 / Notice, 관련 태그,
-    상품정보 펼쳐보기) are dropped.
+    nodes; block elements end a line, inline ones do not split words, and one
+    empty line separates two top-level SmartEditor ONE components (.se-component),
+    so a later stage can end a seller's notice block where its component ends.
+    Images, video controls (.pzp), buttons, hidden nodes and the SmartEditor
+    cards that are not the product's own text are skipped: .se-material (a
+    shopping card), .se-oglink (a link card: another product of the store, a
+    TalkTalk chat), .se-placesMap (the store's map and address), .se-blind
+    (screen-reader text). Checked 2026-11-06 on 86 saved products: Naver's own
+    detailContentText leaves out exactly these three cards (12 of 12 with text).
+    In-page jump links (<a href="#top">, "▲ 이동(상단)") are skipped too: they do
+    nothing off Naver. Structural labels (공지사항 / Notice, 관련 태그,
+    상품정보 펼쳐보기) and lines made only of hashtags are dropped.
 """
 import re
 from html.parser import HTMLParser
@@ -34,11 +42,19 @@ _BLOCK = {"address", "article", "aside", "blockquote", "br", "dd", "div", "dl", 
           "h1", "h2", "h3", "h4", "h5", "h6", "header", "hr", "li", "main", "nav", "ol", "p", "pre", "section", "table",
           "td", "th", "tr", "ul"}
 _SKIP_TAGS = {"img", "picture", "svg", "script", "style", "iframe", "video", "button", "noscript", "template"}
-_SKIP_CLASSES = {"pzp", "se-material"}
+# SmartEditor ONE component classes seen 2026-11-06 (40 golf sets, 86 saved products): se-material (shopping card,
+# se-l-material_basic), se-oglink (link card, se-l-large_image: another product of the store, talk.naver.com),
+# se-placesMap (map image + store name + address), se-blind (hidden "네이버페이" inside se-material-npay).
+_SKIP_CLASSES = {"pzp", "se-material", "se-oglink", "se-placesMap", "se-blind"}
+_COMPONENT_CLASS = "se-component"
 _WS_RE = re.compile(r"\s+")
 _ZERO_WIDTH_RE = re.compile("[​﻿]")
 _RELATED_TAGS_RE = re.compile(r"^(?:관련\s*태그|Related tags)(?:\s*#[^#\s]+)*$", re.I)
 _HASHTAGS_RE = re.compile(r"^(?:\s*#[^#\s]+)+$")
+# a seller's tag line with no "관련 태그" label (10639350746, 2026-11-06: "#골린이#남성좌타골프채#풀세트#스탠드백"):
+# 2+ tags, each starting with a letter, one of them Hangul. Club numbers (#PW, #5-#9, "#7 (34인치)") stay.
+_TAG_LINE_RE = re.compile(r"^(?:#[가-힣A-Za-z][^#\s]*\s*){2,}$")
+_HANGUL_RE = re.compile(r"[가-힣]")
 _LABEL_LINE_RE = re.compile(r"^(?:공지사항|Notice|(?:상품정보|상세정보)\s*(?:펼쳐보기|접기))$", re.I)
 _MORE_RE = re.compile(r"(?:상품정보|상세정보)\s*펼쳐보기")
 
@@ -210,28 +226,91 @@ def text_fields(page_html):
     return fields
 
 
+# ---- delivery promise (the purchase box) --------------------------------------------------
+
+# Seen 2026-11-05 on 40 golf sets, each as its own text node of the rendered page: "오늘출발 16:00 마감" (14),
+# "평균 2일 이내 도착 확률 92%" (15), "지금 결제 시 11.6.(금) 발송 예정" (14), "해외직배송" (9: exactly the sets whose
+# page answer says overseasShipping). "관부가세 별도" also shows on domestic sets, so it is not read.
+# Seen 2026-11-06 on 13 of 40 (todayDelivery true): "오늘출발" alone, then "14:00 까지 결제 시 오늘 바로 발송" and
+# either "11.11.(수) 도착 확률 98%" (a dated arrival) or the "평균 N일" line.
+_TODAY_RE = re.compile(r"오늘출발\s*(\d{1,2}:\d{2})\s*마감|(\d{1,2}:\d{2})\s*까지\s*결제\s*시\s*오늘")
+_ARRIVE_RE = re.compile(r"평균\s*(\d+)\s*일\s*이내\s*도착\s*확률\s*(\d+)\s*%")
+_ARRIVE_ON_RE = re.compile(r"(\d{1,2}\.\d{1,2}\.\([^)]{1,2}\))\s*도착\s*확률\s*(\d+)\s*%")
+_SHIP_RE = re.compile(r"(\d{1,2}\.\d{1,2}\.\([^)]{1,2}\))\s*발송\s*예정")
+
+
+def delivery_promise(page_html):
+    """-> {today_cutoff, arrival_days, arrival_date_text, arrival_probability, ship_date_text, overseas_text},
+    None where not shown."""
+    lines = [_WS_RE.sub(" ", t).strip() for t in _text_nodes(parse_html(page_html))]
+    def first(rx):
+        return next((m for m in (rx.search(t) for t in lines) if m), None)
+    today, arrive, arrive_on, ship = first(_TODAY_RE), first(_ARRIVE_RE), first(_ARRIVE_ON_RE), first(_SHIP_RE)
+    return {"today_cutoff": (today.group(1) or today.group(2)) if today else None,
+            "arrival_days": int(arrive.group(1)) if arrive else None,
+            "arrival_date_text": arrive_on.group(1) if arrive_on else None,
+            "arrival_probability": int(arrive.group(2)) if arrive else int(arrive_on.group(2)) if arrive_on else None,
+            "ship_date_text": ship.group(1) if ship else None,
+            "overseas_text": any(t == "해외직배송" for t in lines)}
+
+
+def _text_nodes(node):
+    out = []
+
+    def walk(n):
+        for c in n.children:
+            if isinstance(c, str):
+                if c.strip():
+                    out.append(c)
+            elif c.tag not in ("script", "style", "noscript", "template"):
+                walk(c)
+    walk(node)
+    return out
+
+
 # ---- description text -------------------------------------------------------------------
 
+_BOUNDARY = "\x00"          # a component boundary in the joined parts; becomes one empty line
+
+
+def _jump_link(node):
+    """<a href="#top"> / "#product1": an in-page jump (12696567111, 2026-11-06). A bare "#" is SmartEditor's image
+    link, which wraps an image or its caption, and stays."""
+    return node.tag == "a" and node.attrs.get("href", "").startswith("#") and len(node.attrs.get("href", "")) > 1
+
+
+def _tag_line(line):
+    return bool(_TAG_LINE_RE.match(line)) and bool(_HANGUL_RE.search(line))
+
+
 def description_text(html_text):
-    """Description HTML -> its text, one line per block, or None when empty."""
+    """Description HTML -> its text, one line per block, an empty line between SmartEditor components, or None
+    when empty."""
     if not html_text:
         return None
     parts = []
 
-    def walk(node):
+    def walk(node, in_component):
         for c in node.children:
             if isinstance(c, str):
                 parts.append(_WS_RE.sub(" ", c))
-            elif not _skipped(c):
+            elif not _skipped(c) and not _jump_link(c):
+                component = not in_component and _COMPONENT_CLASS in c.attrs.get("class", "").split()
                 block = c.tag in _BLOCK
+                if component:
+                    parts.append(f"\n{_BOUNDARY}\n")
+                elif block:
+                    parts.append("\n")
+                walk(c, in_component or component)
                 if block:
                     parts.append("\n")
-                walk(c)
-                if block:
-                    parts.append("\n")
-    walk(parse_html(html_text))
+    walk(parse_html(html_text), False)
     lines, related = [], False
     for line in "".join(parts).split("\n"):
+        if line == _BOUNDARY:
+            if lines and lines[-1]:
+                lines.append("")
+            continue
         line = _WS_RE.sub(" ", _ZERO_WIDTH_RE.sub("", line)).strip()
         if not line:
             continue
@@ -241,6 +320,6 @@ def description_text(html_text):
         if related and _HASHTAGS_RE.match(line):
             continue
         related = False
-        if not _LABEL_LINE_RE.match(line):
+        if not _LABEL_LINE_RE.match(line) and not _tag_line(line):
             lines.append(line)
-    return "\n".join(lines) or None
+    return "\n".join(lines).strip("\n") or None

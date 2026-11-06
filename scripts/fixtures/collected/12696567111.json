@@ -1,0 +1,1516 @@
+{
+ "key": "fairwardgolf:naver:100113347:12696567111",
+ "listing": {
+  "product_id": "12696567111",
+  "nv_mid": "90241078035",
+  "link": "https://smartstore.naver.com/buysellgolf/products/12696567111",
+  "name": "(당일퀵) 캘러웨이 XR26 남성 풀세트 백포함 캘러웨이코리아 2026",
+  "store": {
+   "name": "바이셀골프",
+   "slug": "buysellgolf",
+   "link": "https://smartstore.naver.com/buysellgolf",
+   "channel_no": "100113347",
+   "grade": "BIG_POWER",
+   "is_brand_store": false
+  },
+  "pricing": {
+   "sale_price": 1590000,
+   "discounted_price": 1449900,
+   "discount_ratio": 8,
+   "currency": "KRW"
+  },
+  "category_id": "50002788",
+  "reviews": {
+   "count": 5,
+   "average_score": 5
+  },
+  "stock_quantity": 1004,
+  "image": "https://shopping-phinf.pstatic.net/main_9024107/90241078035.jpg",
+  "is_ad": false,
+  "query": "남성 골프채 풀세트",
+  "batch": 2,
+  "seen_at": "2026-11-06T04:57:14+00:00"
+ },
+ "details": {
+  "id": "12696567111",
+  "origin_product_id": "12639506238",
+  "name": "(당일퀵) 캘러웨이 XR26 남성 풀세트 백포함 캘러웨이코리아 2026",
+  "link": "https://smartstore.naver.com/buysellgolf/products/12696567111",
+  "catalog_id": "90241078035",
+  "catalog_link": "https://search.shopping.naver.com/catalog/90241078035",
+  "status": "SALE",
+  "sale_type": "NEW",
+  "is_displayed": true,
+  "pricing": {
+   "sale_price": 1590000,
+   "discounted_price": 1449900,
+   "discount_ratio": 8,
+   "seller_discount": 140100,
+   "manager_discount": 0,
+   "currency": "KRW",
+   "points": {
+    "purchase": 14499,
+    "text_review": 0,
+    "photo_video_review": 0,
+    "after_use_text_review": 0,
+    "after_use_photo_video_review": 0,
+    "store_member_review": 0
+   }
+  },
+  "stock_quantity": 1004,
+  "has_options": true,
+  "has_supplements": false,
+  "images": [
+   "https://shop-phinf.pstatic.net/20251117_197/1763359987895qvPds_JPEG/97492913027056834_68038959.jpg",
+   "https://shop-phinf.pstatic.net/20251117_194/1763359989270HYFC2_JPEG/32475871381946936_1101068234.jpg",
+   "https://shop-phinf.pstatic.net/20251117_297/1763359990637l1wmn_JPEG/576773467554000_2068693344.jpg",
+   "https://shop-phinf.pstatic.net/20251117_154/1763359992007vtkiE_JPEG/16286053544394891_2068739219.jpg",
+   "https://shop-phinf.pstatic.net/20251117_205/1763359993395626RW_JPEG/576776225621105_151440103.jpg",
+   "https://shop-phinf.pstatic.net/20251117_292/1763359994738T90bt_JPEG/90000086266126404_1127412275.jpg"
+  ],
+  "category": {
+   "id": "50002788",
+   "name": "풀세트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "풀세트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002788"
+   ]
+  },
+  "brand": "캘러웨이",
+  "brand_id": "316",
+  "manufacturer": "캘러웨이",
+  "model_name": "26캘러웨이 풀세트 XR26 FULL SET 12PC",
+  "tags": [
+   "골프풀세트"
+  ],
+  "page_title": null,
+  "reviews": {
+   "count": 5,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 5
+   },
+   "text_count": 0,
+   "photo_count": 5,
+   "video_count": 0,
+   "after_use_count": 1,
+   "best_count": 0,
+   "recent": {
+    "count": 5,
+    "average_score": 5.0
+   },
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 1,
+       "percent": 20
+      },
+      {
+       "name": "최고예요",
+       "count": 4,
+       "percent": 80
+      }
+     ]
+    },
+    {
+     "question": "디자인은 어떤가요?",
+     "answers": [
+      {
+       "name": "별로예요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "화면과 같아요",
+       "count": 1,
+       "percent": 20
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 4,
+       "percent": 80
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 1,
+       "percent": 20
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 4,
+       "percent": 80
+      }
+     ]
+    }
+   ],
+   "representative_reviews": [
+    {
+     "id": "5089429407",
+     "score": 5,
+     "text": "배송 빠릅니다\n포장도 잘 되어 배송됩니다",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20261022_68/179267497812895nSq_JPEG/image.jpg"
+    },
+    {
+     "id": "5085191416",
+     "score": 5,
+     "text": "아직사용전이지만 기대되요",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20261016_34/1792138224476cNPkM_JPEG/image.jpg"
+    },
+    {
+     "id": "5070807803",
+     "score": 5,
+     "text": "추석임에도 배송도 빠르고, 신경을 많이 써주시네요. 감사합니다.",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260923_84/1790139298721oyblz_JPEG/1000019178.jpg"
+    },
+    {
+     "id": "5049472217",
+     "score": 5,
+     "text": "깔끔하니 좋습니다!ㅎㅎ",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260824_273/1787547717208qx9oQ_JPEG/IMG_9595.jpeg"
+    },
+    {
+     "id": "4995220309",
+     "score": 5,
+     "text": "아침에 택배가 도착했네요\n빠른배송 감사합니다",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260610_148/1781059131478U2yuB_JPEG/4880.jpg"
+    }
+   ]
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY",
+    "VISIT_RECEIPT",
+    "QUICK_SERVICE"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": null,
+   "company": "로젠택배",
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "extra_fee_text": null
+  },
+  "is_free_delivery": true,
+  "is_today_delivery": false,
+  "has_arrival_guarantee": false,
+  "has_regular_subscription": false,
+  "has_free_return_insurance": false,
+  "is_minor_purchasable": true,
+  "is_adult_restricted": false,
+  "is_in_naver_shopping": true,
+  "option_groups": null,
+  "variants": null,
+  "supplements": null,
+  "description": {
+   "html": null,
+   "text": "캘러웨이 XR 26 풀세트 남성용\n캘러웨이 XR 24 풀세트 남성용\n캘러웨이 엑스 핫 23 남성용\n캘러웨이 엑스 핫 21 남성용",
+   "editor_type": "NONE",
+   "images": [
+    "https://shop-phinf.pstatic.net/20261014_271/1791942777944TpmTT_JPEG/p-12639506238-s-6-A-0.jpg",
+    "https://shop-phinf.pstatic.net/20261014_39/17919427779434ryIt_JPEG/p-12639506238-s-6-A-1.jpg",
+    "https://shop-phinf.pstatic.net/20261014_26/1791942777946gzacY_JPEG/p-12639506238-s-6-A-2.jpg",
+    "https://shop-phinf.pstatic.net/20261014_20/17919427779477Arem_JPEG/p-12639506238-s-6-A-3.jpg",
+    "https://shop-phinf.pstatic.net/20261014_24/1791942777939gvg3R_JPEG/p-12639506238-s-6-A-4.jpg",
+    "https://shop-phinf.pstatic.net/20261014_11/1791942777942E1WrU_JPEG/p-12639506238-s-6-A-5.jpg",
+    "https://shop-phinf.pstatic.net/20261014_285/1791942777944G1RDQ_JPEG/p-12639506238-s-6-A-6.jpg",
+    "https://shop-phinf.pstatic.net/20261014_134/1791942777939qEu48_JPEG/p-12639506238-s-6-A-7.jpg",
+    "https://shop-phinf.pstatic.net/20261014_74/17919427779418YJRk_JPEG/p-12639506238-s-6-A-8.jpg",
+    "https://shop-phinf.pstatic.net/20261014_159/1791942777937fjGO5_JPEG/p-12639506238-s-6-A-9.jpg",
+    "https://shop-phinf.pstatic.net/20261014_70/1791942778030POb8A_JPEG/p-12639506238-s-6-A-10.jpg",
+    "https://shop-phinf.pstatic.net/20261014_194/1791942778006WaDIQ_JPEG/p-12639506238-s-6-A-11.jpg",
+    "https://shop-phinf.pstatic.net/20261014_14/1791942778033JIbcA_JPEG/p-12639506238-s-6-A-12.jpg",
+    "https://shop-phinf.pstatic.net/20261014_240/1791942778053Awfn0_JPEG/p-12639506238-s-6-A-13.jpg",
+    "https://shop-phinf.pstatic.net/20261014_72/1791942778035qTFfk_JPEG/p-12639506238-s-6-A-14.jpg",
+    "https://shop-phinf.pstatic.net/20261014_121/1791942778047xohCT_JPEG/p-12639506238-s-6-A-15.jpg",
+    "https://shop-phinf.pstatic.net/20261014_48/1791942778035WmIg7_JPEG/p-12639506238-s-6-A-16.jpg",
+    "https://shop-phinf.pstatic.net/20261014_94/1791942778051goAUo_JPEG/p-12639506238-s-6-A-17.jpg",
+    "https://shop-phinf.pstatic.net/20261014_171/1791942778058g0dwu_JPEG/p-12639506238-s-6-A-18.jpg",
+    "https://shop-phinf.pstatic.net/20261014_56/1791942778069vyB4s_JPEG/p-12639506238-s-6-A-19.jpg",
+    "https://shop-phinf.pstatic.net/20261014_149/1791942778127kQHn8_JPEG/p-12639506238-s-6-A-20.jpg",
+    "https://shop-phinf.pstatic.net/20261014_76/1791942778080zGS2H_JPEG/p-12639506238-s-6-A-21.jpg",
+    "https://shop-phinf.pstatic.net/20261014_222/1791942778140Mrfwv_JPEG/p-12639506238-s-6-A-22.jpg",
+    "https://shop-phinf.pstatic.net/20261014_16/1791942778139aUqni_JPEG/p-12639506238-s-6-A-23.jpg",
+    "https://shop-phinf.pstatic.net/20261014_300/1791942778136I9Lyo_JPEG/p-12639506238-s-6-A-24.jpg",
+    "https://shop-phinf.pstatic.net/20261014_177/1791942778152OnS3a_JPEG/p-12639506238-s-6-A-25.jpg",
+    "https://shop-phinf.pstatic.net/20261014_275/1791942778160x4R5D_JPEG/p-12639506238-s-6-A-26.jpg",
+    "https://shop-phinf.pstatic.net/20261014_148/1791942778160KLRYT_JPEG/p-12639506238-s-6-A-27.jpg",
+    "https://shop-phinf.pstatic.net/20261014_81/1791942778177nUGnF_JPEG/p-12639506238-s-6-A-28.jpg",
+    "https://shop-phinf.pstatic.net/20261014_134/1791942778178l5Xm3_JPEG/p-12639506238-s-6-A-29.jpg",
+    "https://shop-phinf.pstatic.net/20261014_76/1791942778217KqBt5_JPEG/p-12639506238-s-6-A-30.jpg",
+    "https://shop-phinf.pstatic.net/20261014_141/1791942778219meUJY_JPEG/p-12639506238-s-6-A-31.jpg",
+    "https://shop-phinf.pstatic.net/20261014_40/1791942778238i8lOj_JPEG/p-12639506238-s-6-A-32.jpg",
+    "https://shop-phinf.pstatic.net/20261014_54/17919427782362AJJf_JPEG/p-12639506238-s-6-A-33.jpg",
+    "https://shop-phinf.pstatic.net/20261014_103/1791942778240768tV_JPEG/p-12639506238-s-6-A-34.jpg",
+    "https://shop-phinf.pstatic.net/20261014_58/1791942778245Xlr2x_JPEG/p-12639506238-s-6-A-35.jpg",
+    "https://shop-phinf.pstatic.net/20261014_261/17919427782659GL8w_JPEG/p-12639506238-s-6-A-36.jpg",
+    "https://shop-phinf.pstatic.net/20261014_237/17919427782736ovV7_JPEG/p-12639506238-s-6-A-37.jpg",
+    "https://shop-phinf.pstatic.net/20261014_1/1791942778272bNHld_JPEG/p-12639506238-s-6-A-38.jpg",
+    "https://shop-phinf.pstatic.net/20261014_9/1791942778278C5Kcz_JPEG/p-12639506238-s-6-A-39.jpg",
+    "https://shop-phinf.pstatic.net/20261014_95/1791942778300AEVgD_JPEG/p-12639506238-s-6-A-40.jpg",
+    "https://shop-phinf.pstatic.net/20261014_152/1791942778320agXvc_JPEG/p-12639506238-s-6-A-41.jpg",
+    "https://shop-phinf.pstatic.net/20261014_218/1791942778325NizkW_JPEG/p-12639506238-s-6-A-42.jpg",
+    "https://shop-phinf.pstatic.net/20261014_112/17919427783388glio_JPEG/p-12639506238-s-6-A-43.jpg",
+    "https://shop-phinf.pstatic.net/20261014_201/1791942778323eKkqs_JPEG/p-12639506238-s-6-A-44.jpg",
+    "https://shop-phinf.pstatic.net/20261014_222/1791942778342WKCo4_JPEG/p-12639506238-s-6-A-45.jpg",
+    "https://shop-phinf.pstatic.net/20261014_264/1791942778359Cbgzf_JPEG/p-12639506238-s-6-A-46.jpg",
+    "https://shop-phinf.pstatic.net/20261014_131/1791942778350NS9LQ_JPEG/p-12639506238-s-6-A-47.jpg",
+    "https://shop-phinf.pstatic.net/20261014_42/1791942778358BOwvP_JPEG/p-12639506238-s-6-A-48.jpg",
+    "https://shop-phinf.pstatic.net/20261014_296/17919427783686E0ME_JPEG/p-12639506238-s-6-A-49.jpg",
+    "https://shop-phinf.pstatic.net/20261014_132/1791942778394qlD6p_JPEG/p-12639506238-s-6-A-50.jpg",
+    "https://shop-phinf.pstatic.net/20261014_299/17919427784155hDic_JPEG/p-12639506238-s-6-A-51.jpg",
+    "https://shop-phinf.pstatic.net/20261014_192/1791942778415qBBKW_JPEG/p-12639506238-s-6-A-52.jpg",
+    "https://shop-phinf.pstatic.net/20261014_197/1791942778421PYWzn_JPEG/p-12639506238-s-6-A-53.jpg",
+    "https://shop-phinf.pstatic.net/20261014_52/1791942778422W0vNA_JPEG/p-12639506238-s-6-A-54.jpg",
+    "https://shop-phinf.pstatic.net/20261014_127/1791942778434D9MI9_JPEG/p-12639506238-s-6-A-55.jpg",
+    "https://shop-phinf.pstatic.net/20261014_252/1791942778444dpl28_JPEG/p-12639506238-s-6-A-56.jpg",
+    "https://shop-phinf.pstatic.net/20261014_211/1791942778445paIg3_JPEG/p-12639506238-s-6-A-57.jpg",
+    "https://shop-phinf.pstatic.net/20261014_71/1791942778450sr2yh_JPEG/p-12639506238-s-6-A-58.jpg",
+    "https://shop-phinf.pstatic.net/20261014_128/1791942778458sp3FJ_JPEG/p-12639506238-s-6-A-59.jpg",
+    "https://shop-phinf.pstatic.net/20261014_123/1791942778489jp0AE_JPEG/p-12639506238-s-6-A-60.jpg",
+    "https://shop-phinf.pstatic.net/20261014_296/1791942778493WcSpM_JPEG/p-12639506238-s-6-A-61.jpg",
+    "https://shop-phinf.pstatic.net/20261014_160/1791942778499tlSDT_JPEG/p-12639506238-s-6-A-62.jpg",
+    "https://shop-phinf.pstatic.net/20261014_84/17919427785113x7Va_JPEG/p-12639506238-s-6-A-63.jpg",
+    "https://shop-phinf.pstatic.net/20261014_272/1791942778501lyxI6_JPEG/p-12639506238-s-6-A-64.jpg",
+    "https://shop-phinf.pstatic.net/20261014_212/1791942778523ISMfx_JPEG/p-12639506238-s-6-A-65.jpg",
+    "https://shop-phinf.pstatic.net/20261014_149/1791942778521x1kJH_JPEG/p-12639506238-s-6-A-66.jpg",
+    "https://shop-phinf.pstatic.net/20261014_181/1791942778549ftC8J_JPEG/p-12639506238-s-6-A-67.jpg",
+    "https://shop-phinf.pstatic.net/20261014_119/1791942778573BfBEr_JPEG/p-12639506238-s-6-A-68.jpg",
+    "https://shop-phinf.pstatic.net/20261014_66/1791942778575FH5Yy_JPEG/p-12639506238-s-6-A-69.jpg",
+    "https://shop-phinf.pstatic.net/20261014_74/1791942778574ERXG4_JPEG/p-12639506238-s-6-A-70.jpg",
+    "https://shop-phinf.pstatic.net/20261014_21/1791942778587HAjAl_JPEG/p-12639506238-s-6-A-71.jpg",
+    "https://shop-phinf.pstatic.net/20261014_59/1791942778588aj4nq_JPEG/p-12639506238-s-6-A-72.jpg",
+    "https://shop-phinf.pstatic.net/20261014_272/1791942778610N4p2G_JPEG/p-12639506238-s-6-A-73.jpg"
+   ]
+  },
+  "notice": {
+   "type": "SPORTS_EQUIPMENT",
+   "items": [
+    {
+     "label": "품명 / 모델명",
+     "value": "26캘러웨이 풀세트 XR26 FULL SET 12PC / 26캘러웨이 풀세트 XR26 FULL SET 12PC",
+     "is_see_description": false
+    },
+    {
+     "label": "KC 인증정보",
+     "value": "제품 상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "크기",
+     "value": "제품 상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "중량",
+     "value": "제품 상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "색상",
+     "value": "블랙",
+     "is_see_description": false
+    },
+    {
+     "label": "재질",
+     "value": "제품 상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제품구성",
+     "value": "제품 상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "동일 모델의 출시연월",
+     "value": "제품상세설명참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조자(사)",
+     "value": "캘러웨이",
+     "is_see_description": false
+    },
+    {
+     "label": "제조국",
+     "value": "중국산(중국(캘러웨이코리아정품))",
+     "is_see_description": false
+    },
+    {
+     "label": "상품별 세부사양",
+     "value": "제품 상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "품질보증기준",
+     "value": "관련법 및 소비자분쟁해결 규정에 따름 / 브랜드에 따라 상이하며 3년~1년",
+     "is_see_description": false
+    },
+    {
+     "label": "A/S 책임자와 전화번호",
+     "value": null,
+     "is_see_description": false
+    }
+   ],
+   "terms": [
+    {
+     "label": "재화등의 배송방법에 관한 정보",
+     "value": "택배등",
+     "is_see_description": false
+    },
+    {
+     "label": "주문 이후 예상되는 배송기간",
+     "value": "대금 지급일로부터 3일 이내에 발송",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+     "value": "편도 4000원 (최초 배송비 무료인 경우 8000원 부과)",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 A/S 관련 전화번호",
+     "value": null,
+     "is_see_description": false
+    },
+    {
+     "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+     "value": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+     "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+     "is_see_description": false
+    }
+   ]
+  },
+  "facts": {
+   "brand": {
+    "value": "캘러웨이",
+    "source": "search_info.brandName"
+   },
+   "manufacturer": {
+    "value": "캘러웨이",
+    "source": "search_info.manufacturerName"
+   },
+   "model_name": {
+    "value": "26캘러웨이 풀세트 XR26 FULL SET 12PC",
+    "source": "search_info.modelName"
+   },
+   "origin": {
+    "value": "중국산(중국(캘러웨이코리아정품))",
+    "source": "notice:제조국"
+   }
+  },
+  "store": {
+   "id": "100113347",
+   "uid": "2sWDwgmot4vRrUo1Uss3s",
+   "name": "바이셀골프",
+   "slug": "buysellgolf",
+   "link": "https://smartstore.naver.com/buysellgolf",
+   "type": "smart_store",
+   "grade": "SECOND",
+   "sale_count": 749,
+   "merchant_id": "510112114",
+   "business": {
+    "legal_name": "(주)바른스포츠",
+    "representative": "정필권",
+    "type": "CORPORATION",
+    "is_business": true,
+    "is_overseas": false,
+    "phone": null,
+    "email": null,
+    "address": null
+   }
+  }
+ },
+ "specs": {
+  "id": "12696567111",
+  "name": "(당일퀵) 캘러웨이 XR26 남성 풀세트 백포함 캘러웨이코리아 2026",
+  "link": "https://smartstore.naver.com/buysellgolf/products/12696567111",
+  "query": "(당일퀵) 캘러웨이 XR26 남성 풀세트 백포함 캘러웨이코리아 2026",
+  "category": {
+   "id": "50002788",
+   "name": "풀세트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "풀세트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002788"
+   ]
+  },
+  "specs": [
+   {
+    "label": "상품번호",
+    "value": "12696567111"
+   },
+   {
+    "label": "제조사",
+    "value": "캘러웨이"
+   },
+   {
+    "label": "브랜드",
+    "value": "캘러웨이"
+   },
+   {
+    "label": "모델명",
+    "value": "26캘러웨이 풀세트 XR26 FULL SET 12PC"
+   },
+   {
+    "label": "원산지",
+    "value": "중국산(중국(캘러웨이코리아정품))"
+   },
+   {
+    "label": "제조일자",
+    "value": "2025.11.17."
+   },
+   {
+    "label": "종류",
+    "value": "풀세트"
+   },
+   {
+    "label": "성별",
+    "value": "남성용"
+   },
+   {
+    "label": "사용방향",
+    "value": "오른손용"
+   },
+   {
+    "label": "출시",
+    "value": "2026년형"
+   }
+  ],
+  "is_complete": true,
+  "facts": {
+   "brand": {
+    "value": "캘러웨이",
+    "source": "specs:브랜드"
+   },
+   "manufacturer": {
+    "value": "캘러웨이",
+    "source": "specs:제조사"
+   },
+   "model_name": {
+    "value": "26캘러웨이 풀세트 XR26 FULL SET 12PC",
+    "source": "specs:모델명"
+   },
+   "origin": {
+    "value": "중국산(중국(캘러웨이코리아정품))",
+    "source": "specs:원산지"
+   }
+  },
+  "options": {
+   "has_options": true,
+   "status": "SALE",
+   "is_sold_out": false,
+   "stock_quantity": 1004,
+   "option_groups": [
+    {
+     "id": "11532080666",
+     "name": "옵션+아이언커버.하프백",
+     "type": "COMBINATION"
+    }
+   ],
+   "variants": [
+    {
+     "id": "53645098363",
+     "name": "XR26 남성 풀세트 백포함",
+     "options": [
+      "XR26 남성 풀세트 백포함"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 988,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2025-11-17"
+    },
+    {
+     "id": "60133059207",
+     "name": "(추가할인) XR 24 백세트포함",
+     "options": [
+      "(추가할인) XR 24 백세트포함"
+     ],
+     "extra_price": -200000,
+     "stock_quantity": 3,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-09-21"
+    },
+    {
+     "id": "60133059208",
+     "name": "(추가할인) X HOT 23 백세트포함",
+     "options": [
+      "(추가할인) X HOT 23 백세트포함"
+     ],
+     "extra_price": -100000,
+     "stock_quantity": 3,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-09-21"
+    },
+    {
+     "id": "60208104775",
+     "name": "(추가할인) X HOT 21 캐디백포함",
+     "options": [
+      "(추가할인) X HOT 21 캐디백포함"
+     ],
+     "extra_price": -400000,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-09-29"
+    }
+   ],
+   "simple_options": [],
+   "text_options": [],
+   "supplements": []
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": "제주,도서지역 추가 5,000원",
+   "method_types": [
+    "DELIVERY",
+    "VISIT_RECEIPT",
+    "QUICK_SERVICE"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": false,
+   "company": "로젠택배",
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "extra_fee_text": null,
+   "is_overseas": false,
+   "scope": "domestic",
+   "customs_tax_type": null,
+   "lead_time": {
+    "seller_average_days": 1.5140845,
+    "product_average_days": 4.0,
+    "today_cutoff": null,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 92,
+    "ship_date_text": null
+   }
+  },
+  "measures": {
+   "is_set": true,
+   "weights": [],
+   "dimensions": [],
+   "references": [
+    {
+     "quote": "크기: 제품 상세설명 참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 2
+     },
+     "measure": "size",
+     "reason": "description_reference"
+    },
+    {
+     "quote": "중량: 제품 상세설명 참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 3
+     },
+     "measure": "weight",
+     "reason": "description_reference"
+    }
+   ],
+   "review": []
+  },
+  "read_at": "2026-11-06T10:40:22Z"
+ },
+ "variants": {
+  "paid": true,
+  "base_price": 1449900,
+  "variants": [
+   {
+    "id": "53645098363",
+    "name": "XR26 남성 풀세트 백포함",
+    "options": [
+     "XR26 남성 풀세트 백포함"
+    ],
+    "extra_price": 0,
+    "price": 1449900,
+    "price_in_name": null,
+    "stock_quantity": 988,
+    "is_available": true
+   },
+   {
+    "id": "60133059207",
+    "name": "(추가할인) XR 24 백세트포함",
+    "options": [
+     "(추가할인) XR 24 백세트포함"
+    ],
+    "extra_price": -200000,
+    "price": 1249900,
+    "price_in_name": null,
+    "stock_quantity": 3,
+    "is_available": true
+   },
+   {
+    "id": "60133059208",
+    "name": "(추가할인) X HOT 23 백세트포함",
+    "options": [
+     "(추가할인) X HOT 23 백세트포함"
+    ],
+    "extra_price": -100000,
+    "price": 1349900,
+    "price_in_name": null,
+    "stock_quantity": 3,
+    "is_available": true
+   },
+   {
+    "id": "60208104775",
+    "name": "(추가할인) X HOT 21 캐디백포함",
+    "options": [
+     "(추가할인) X HOT 21 캐디백포함"
+    ],
+    "extra_price": -400000,
+    "price": 1049900,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   }
+  ],
+  "available": 4,
+  "sold_out": 0,
+  "skipped_paid": 0,
+  "name_mismatches": [],
+  "simple_options": [],
+  "text_options": [],
+  "supplements": []
+ },
+ "package": [
+  {
+   "variant_id": "53645098363",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "60133059207",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "60133059208",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "60208104775",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  }
+ ],
+ "reviews": {
+  "product": {
+   "id": "12696567111",
+   "name": "(당일퀵) 캘러웨이 XR26 남성 풀세트 백포함 캘러웨이코리아 2026",
+   "link": "https://smartstore.naver.com/buysellgolf/products/12696567111"
+  },
+  "summary": {
+   "count": 5,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 5
+   },
+   "text_count": 0,
+   "photo_count": 5,
+   "video_count": 0,
+   "after_use_count": 1,
+   "best_count": 0,
+   "recent": {
+    "count": 5,
+    "average_score": 5.0
+   },
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 1,
+       "percent": 20
+      },
+      {
+       "name": "최고예요",
+       "count": 4,
+       "percent": 80
+      }
+     ]
+    },
+    {
+     "question": "디자인은 어떤가요?",
+     "answers": [
+      {
+       "name": "별로예요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "화면과 같아요",
+       "count": 1,
+       "percent": 20
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 4,
+       "percent": 80
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 1,
+       "percent": 20
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 4,
+       "percent": 80
+      }
+     ]
+    }
+   ],
+   "representative_reviews": [
+    {
+     "id": "5089429407",
+     "score": 5,
+     "text": "배송 빠릅니다\n포장도 잘 되어 배송됩니다",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20261022_68/179267497812895nSq_JPEG/image.jpg"
+    },
+    {
+     "id": "5085191416",
+     "score": 5,
+     "text": "아직사용전이지만 기대되요",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20261016_34/1792138224476cNPkM_JPEG/image.jpg"
+    },
+    {
+     "id": "5070807803",
+     "score": 5,
+     "text": "추석임에도 배송도 빠르고, 신경을 많이 써주시네요. 감사합니다.",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260923_84/1790139298721oyblz_JPEG/1000019178.jpg"
+    },
+    {
+     "id": "5049472217",
+     "score": 5,
+     "text": "깔끔하니 좋습니다!ㅎㅎ",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260824_273/1787547717208qx9oQ_JPEG/IMG_9595.jpeg"
+    },
+    {
+     "id": "4995220309",
+     "score": 5,
+     "text": "아침에 택배가 도착했네요\n빠른배송 감사합니다",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260610_148/1781059131478U2yuB_JPEG/4880.jpg"
+    }
+   ]
+  },
+  "mode": "small_source",
+  "count": 5,
+  "scanned": 5,
+  "passes": [
+   {
+    "media": "all",
+    "pages": 1,
+    "total_count": 5,
+    "is_exhausted": true
+   }
+  ],
+  "is_complete": true,
+  "results": [
+   {
+    "id": "5089429407",
+    "score": 5,
+    "text": "배송 빠릅니다\n포장도 잘 되어 배송됩니다",
+    "created_at": "2026-10-22T13:16:58Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "옵션+아이언커버.하프백: XR26 남성 풀세트 백포함",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "donk*****",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20261022_68/179267497812895nSq_JPEG/image.jpg",
+      "width": 3024,
+      "height": 4032
+     }
+    ],
+    "product": {
+     "id": "12696567111",
+     "origin_product_id": "12639506238",
+     "name": "(당일퀵) 캘러웨이 XR26 남성 풀세트 백포함 캘러웨이코리아 2026"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "5085191416",
+    "score": 5,
+    "text": "아직사용전이지만 기대되요",
+    "created_at": "2026-10-16T08:10:34Z",
+    "type": "AFTER_USE",
+    "content_type": "PHOTO",
+    "option": "옵션+아이언커버.하프백: 블랙",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "wmov****",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20261016_34/1792138224476cNPkM_JPEG/image.jpg",
+      "width": 3024,
+      "height": 4032
+     }
+    ],
+    "product": {
+     "id": "12696567111",
+     "origin_product_id": "12639506238",
+     "name": "(당일퀵) 캘러웨이 XR26 남성 풀세트 백포함 캘러웨이코리아 2026"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "5070807803",
+    "score": 5,
+    "text": "추석임에도 배송도 빠르고, 신경을 많이 써주시네요. 감사합니다.",
+    "created_at": "2026-09-23T04:55:05Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "옵션+아이언커버.하프백: 블랙",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "kks1******",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260923_84/1790139298721oyblz_JPEG/1000019178.jpg",
+      "width": 4000,
+      "height": 3000
+     }
+    ],
+    "product": {
+     "id": "12696567111",
+     "origin_product_id": "12639506238",
+     "name": "(당일퀵) 캘러웨이 XR26 남성 풀세트 백포함 캘러웨이코리아 2026"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "5049472217",
+    "score": 5,
+    "text": "깔끔하니 좋습니다!ㅎㅎ",
+    "created_at": "2026-08-24T05:02:30Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "옵션+아이언커버.하프백: 블랙",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "wmov****",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260824_273/1787547717208qx9oQ_JPEG/IMG_9595.jpeg",
+      "width": 3024,
+      "height": 4032
+     }
+    ],
+    "product": {
+     "id": "12696567111",
+     "origin_product_id": "12639506238",
+     "name": "(당일퀵) 캘러웨이 XR26 남성 풀세트 백포함 캘러웨이코리아 2026"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "4995220309",
+    "score": 5,
+    "text": "아침에 택배가 도착했네요\n빠른배송 감사합니다",
+    "created_at": "2026-06-10T02:39:06Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "옵션+아이언커버.하프백: 블랙",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "bass****",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260610_148/1781059131478U2yuB_JPEG/4880.jpg",
+      "width": 1848,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "12696567111",
+     "origin_product_id": "12639506238",
+     "name": "캘러웨이 XR26 남성 풀세트 백포함 캘러웨이코리아 2026"
+    },
+    "likes": null,
+    "tier": "small"
+   }
+  ]
+ },
+ "photos": {
+  "store": "fairwardgolf",
+  "total": 6,
+  "files": [
+   {
+    "position": 0,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20251117_197/1763359987895qvPds_JPEG/97492913027056834_68038959.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20251117_197/1763359987895qvPds_JPEG/97492913027056834_68038959.jpg",
+    "source_sha256": "886de25afaadf59d2129107d5265ad3be3dba4dbbbc024d12c1afe769b6ff0cb",
+    "source_bytes": 199885,
+    "source_format": "JPEG",
+    "source_width": 700,
+    "source_height": 700,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/12696567111/fairwardgolf-12696567111-001-1b072af646354c20.webp",
+    "sha256": "1b072af646354c204ed4b90cebee1626a441410a86001ea5ae7456c5eb8ce26e",
+    "bytes": 46284,
+    "width": 700,
+    "height": 700,
+    "quality": 85
+   },
+   {
+    "position": 1,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20251117_194/1763359989270HYFC2_JPEG/32475871381946936_1101068234.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20251117_194/1763359989270HYFC2_JPEG/32475871381946936_1101068234.jpg",
+    "source_sha256": "7b4fe15df495773b6c3f922d8c7de8457e2742254e1df7f0ff4254c90440858d",
+    "source_bytes": 97441,
+    "source_format": "JPEG",
+    "source_width": 700,
+    "source_height": 700,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/12696567111/fairwardgolf-12696567111-002-a0f038229291e81f.webp",
+    "sha256": "a0f038229291e81fdea4958ccf0bf1cb4f59e46f8554faa47f35d316bcb10adc",
+    "bytes": 19230,
+    "width": 700,
+    "height": 700,
+    "quality": 85
+   },
+   {
+    "position": 2,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20251117_297/1763359990637l1wmn_JPEG/576773467554000_2068693344.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20251117_297/1763359990637l1wmn_JPEG/576773467554000_2068693344.jpg",
+    "source_sha256": "afe4eaac5188faf179b5ca744bc2cd89d552f243026a4443eed7c6bf8fae8670",
+    "source_bytes": 106172,
+    "source_format": "JPEG",
+    "source_width": 700,
+    "source_height": 700,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/12696567111/fairwardgolf-12696567111-003-3fc927a0c18d3342.webp",
+    "sha256": "3fc927a0c18d3342c987c8b9a752f1879aab70d3c74336eb4f89a5f683a151eb",
+    "bytes": 23990,
+    "width": 700,
+    "height": 700,
+    "quality": 85
+   },
+   {
+    "position": 3,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20251117_154/1763359992007vtkiE_JPEG/16286053544394891_2068739219.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20251117_154/1763359992007vtkiE_JPEG/16286053544394891_2068739219.jpg",
+    "source_sha256": "1646990f9ba3eb389a8d0c8550722754827d22113cb38b530301f35df8f4ddc2",
+    "source_bytes": 89046,
+    "source_format": "JPEG",
+    "source_width": 700,
+    "source_height": 700,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/12696567111/fairwardgolf-12696567111-004-2cb0883d356168be.webp",
+    "sha256": "2cb0883d356168bec6f4b5feda0d38aa77943348843bd461833ed1f8c7188e5e",
+    "bytes": 21332,
+    "width": 700,
+    "height": 700,
+    "quality": 85
+   },
+   {
+    "position": 4,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20251117_205/1763359993395626RW_JPEG/576776225621105_151440103.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20251117_205/1763359993395626RW_JPEG/576776225621105_151440103.jpg",
+    "source_sha256": "fa18e57f0709f9eee773048d9619917dc4efd228db2f514fe9bcf9d4d3af5b74",
+    "source_bytes": 44363,
+    "source_format": "JPEG",
+    "source_width": 700,
+    "source_height": 700,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/12696567111/fairwardgolf-12696567111-005-e64840678978f44c.webp",
+    "sha256": "e64840678978f44c5e6ab12f1415d4161dec088957358ebd19cccb4a630d4c82",
+    "bytes": 9320,
+    "width": 700,
+    "height": 700,
+    "quality": 85
+   },
+   {
+    "position": 5,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20251117_292/1763359994738T90bt_JPEG/90000086266126404_1127412275.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20251117_292/1763359994738T90bt_JPEG/90000086266126404_1127412275.jpg",
+    "source_sha256": "e1b1bcb32b5a671d28b9bb6d16061dc72950753e9cf968829e54ce335ba2a0eb",
+    "source_bytes": 169724,
+    "source_format": "JPEG",
+    "source_width": 700,
+    "source_height": 700,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/12696567111/fairwardgolf-12696567111-006-651add2914160633.webp",
+    "sha256": "651add29141606332d420b7bbdfa6cbbdfa665197a23b3ff079fa34397856815",
+    "bytes": 46218,
+    "width": 700,
+    "height": 700,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true,
+  "originals": 6
+ },
+ "review_media": {
+  "store": "fairwardgolf",
+  "files": [
+   {
+    "review_id": "5089429407",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20261022_68/179267497812895nSq_JPEG/image.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20261022_68/179267497812895nSq_JPEG/image.jpg",
+    "source_sha256": "606d3facfa0ffe8be4395eb8d6ce1b738e42711b7d41e4ee9179d4c28e85838f",
+    "source_bytes": 4280741,
+    "source_format": "JPEG",
+    "source_width": 3024,
+    "source_height": 4032,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/12696567111/fairwardgolf-review-image-e10c77521b583d17.webp",
+    "sha256": "e10c77521b583d17bd5fd21060242d91172e202b2ee0ac49c48ed1035cf5df83",
+    "bytes": 197242,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "5085191416",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20261016_34/1792138224476cNPkM_JPEG/image.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20261016_34/1792138224476cNPkM_JPEG/image.jpg",
+    "source_sha256": "304204821116432f5526d45d80a6b37cd08bbe5dfd75aaf27d262bcf9f4274e7",
+    "source_bytes": 2173768,
+    "source_format": "JPEG",
+    "source_width": 3024,
+    "source_height": 4032,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/12696567111/fairwardgolf-review-image-e58a4e62e8e82f23.webp",
+    "sha256": "e58a4e62e8e82f231e6f2e5de8b58140b89665ffa057035677a55786430f010a",
+    "bytes": 49334,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "5070807803",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260923_84/1790139298721oyblz_JPEG/1000019178.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260923_84/1790139298721oyblz_JPEG/1000019178.jpg",
+    "source_sha256": "afca38dbdac25f9a79ba1459f80a254e375884f7fc17ffbb613cebde877cd45c",
+    "source_bytes": 3446385,
+    "source_format": "MPO",
+    "source_width": 4000,
+    "source_height": 3000,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/12696567111/fairwardgolf-review-image-3af50b0457dfb2fb.webp",
+    "sha256": "3af50b0457dfb2fbe115a9cb3aace1bb69ae8a7c168f2694113d4af5fd00d833",
+    "bytes": 73026,
+    "width": 1024,
+    "height": 768,
+    "quality": 85
+   },
+   {
+    "review_id": "5049472217",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260824_273/1787547717208qx9oQ_JPEG/IMG_9595.jpeg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260824_273/1787547717208qx9oQ_JPEG/IMG_9595.jpeg",
+    "source_sha256": "3e3ecac69efaa86a891318bfcb05e4060f9f6ca8d7544f2ff275d5d36e00e413",
+    "source_bytes": 2556460,
+    "source_format": "JPEG",
+    "source_width": 3024,
+    "source_height": 4032,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/12696567111/fairwardgolf-review-image-9a9233ecf769704b.webp",
+    "sha256": "9a9233ecf769704b83e12daaef5981d103249e2b48904510df23c84ec389622c",
+    "bytes": 79942,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "4995220309",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260610_148/1781059131478U2yuB_JPEG/4880.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260610_148/1781059131478U2yuB_JPEG/4880.jpg",
+    "source_sha256": "915af4979ccd18e386e4de86c52c2c33d43eac23d35564e48ba72c8afcb4d278",
+    "source_bytes": 3385136,
+    "source_format": "JPEG",
+    "source_width": 1848,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/12696567111/fairwardgolf-review-image-91d2017231387db5.webp",
+    "sha256": "91d2017231387db5f5cf70892bcddeb365899da7a0790013698bd7cf01c677c0",
+    "bytes": 83358,
+    "width": 473,
+    "height": 1024,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true
+ }
+}

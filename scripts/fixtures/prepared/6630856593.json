@@ -1,0 +1,1211 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:100249211:6630856593",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "specs_stated_by_variants",
+   "detail": "총클럽개수 12개: every variant states it; 아이언샤프트소재 그라파이트/카본: every variant states it"
+  },
+  {
+   "code": "specs_bound_to_variants",
+   "detail": "아이언 구성 #5, #6, #7, #8, #9, 샌드웨지(SW), 피칭웨지(PW) -> 12스틸 + 골프백, 12카본 + 골프백, 12스틸 + 골프백 (신축성), 12카본 + 골프백 (신축성); 풀세트구성 드라이버, 7아이언세트, 퍼터, 페어웨이 -> 12스틸 + 골프백, 12카본 + 골프백, 12스틸 + 골프백 (신축성), 12카본 + 골프백 (신축성); 아이언개수 7개 -> 12스틸 + 골프백, 12카본 + 골프백, 12스틸 + 골프백 (신축성), 12카본 + 골프백 (신축성)"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "NOT_APPLICABLE"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/viviga_world/products/6630856593",
+  "channel_no": "100249211",
+  "product_id": "6630856593",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "PGM 좌타 골프채풀세트 남성 왼손 골프채세트",
+  "brand_ko": "피지엠",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "타입",
+    "values_ko": [
+     "4스틸 + 골프백",
+     "4카본 + 골프백",
+     "12스틸 + 골프백",
+     "12카본 + 골프백",
+     "12스틸 + 골프백 (신축성)",
+     "12카본 + 골프백 (신축성)"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"4스틸 + 골프백\"]",
+    "naver_variant_id": "39671831483",
+    "options_ko": [
+     "4스틸 + 골프백"
+    ],
+    "price_krw": 198000,
+    "price_usd": "198.00",
+    "sku": "FW-703ea315e9d7d1913a4bdae8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "value": {
+       "min": 4700.0,
+       "max": 4700.0
+      },
+      "source": "source_stated",
+      "confidence": 2,
+      "quote": "중량: 약11.5kg / 4.7kg",
+      "from": "notice",
+      "locator": {
+       "block": "items",
+       "row": 3
+      },
+      "kind": "unknown",
+      "scope": "set",
+      "approximate": false,
+      "flags": [
+       "bound_by_count_rank"
+      ],
+      "binding": {
+       "scope": "variants",
+       "variant_ids": [
+        "39671831483",
+        "39671831485"
+       ]
+      },
+      "also": 0
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"4카본 + 골프백\"]",
+    "naver_variant_id": "39671831485",
+    "options_ko": [
+     "4카본 + 골프백"
+    ],
+    "price_krw": 209000,
+    "price_usd": "209.00",
+    "sku": "FW-016830889658ab602ea3b901",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "value": {
+       "min": 4700.0,
+       "max": 4700.0
+      },
+      "source": "source_stated",
+      "confidence": 2,
+      "quote": "중량: 약11.5kg / 4.7kg",
+      "from": "notice",
+      "locator": {
+       "block": "items",
+       "row": 3
+      },
+      "kind": "unknown",
+      "scope": "set",
+      "approximate": false,
+      "flags": [
+       "bound_by_count_rank"
+      ],
+      "binding": {
+       "scope": "variants",
+       "variant_ids": [
+        "39671831483",
+        "39671831485"
+       ]
+      },
+      "also": 0
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"12스틸 + 골프백\"]",
+    "naver_variant_id": "39671831486",
+    "options_ko": [
+     "12스틸 + 골프백"
+    ],
+    "price_krw": 534000,
+    "price_usd": "534.00",
+    "sku": "FW-6f3680db86ba9e76e4db61b1",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "value": {
+       "min": 11500.0,
+       "max": 11500.0
+      },
+      "source": "source_stated",
+      "confidence": 2,
+      "quote": "중량: 약11.5kg / 4.7kg",
+      "from": "notice",
+      "locator": {
+       "block": "items",
+       "row": 3
+      },
+      "kind": "unknown",
+      "scope": "set",
+      "approximate": true,
+      "flags": [
+       "bound_by_count_rank"
+      ],
+      "binding": {
+       "scope": "variants",
+       "variant_ids": [
+        "39671831486",
+        "39671831488",
+        "39671831489",
+        "39671831490"
+       ]
+      },
+      "also": 0
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05",
+      "flags": [
+       "below_stated_product"
+      ]
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"12카본 + 골프백\"]",
+    "naver_variant_id": "39671831488",
+    "options_ko": [
+     "12카본 + 골프백"
+    ],
+    "price_krw": 575400,
+    "price_usd": "575.40",
+    "sku": "FW-2b8fec648456a1a02b6fb39a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "value": {
+       "min": 11500.0,
+       "max": 11500.0
+      },
+      "source": "source_stated",
+      "confidence": 2,
+      "quote": "중량: 약11.5kg / 4.7kg",
+      "from": "notice",
+      "locator": {
+       "block": "items",
+       "row": 3
+      },
+      "kind": "unknown",
+      "scope": "set",
+      "approximate": true,
+      "flags": [
+       "bound_by_count_rank"
+      ],
+      "binding": {
+       "scope": "variants",
+       "variant_ids": [
+        "39671831486",
+        "39671831488",
+        "39671831489",
+        "39671831490"
+       ]
+      },
+      "also": 0
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05",
+      "flags": [
+       "below_stated_product"
+      ]
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"12스틸 + 골프백 (신축성)\"]",
+    "naver_variant_id": "39671831489",
+    "options_ko": [
+     "12스틸 + 골프백 (신축성)"
+    ],
+    "price_krw": 618800,
+    "price_usd": "618.80",
+    "sku": "FW-0a680dab483f68eda644c3b1",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "value": {
+       "min": 11500.0,
+       "max": 11500.0
+      },
+      "source": "source_stated",
+      "confidence": 2,
+      "quote": "중량: 약11.5kg / 4.7kg",
+      "from": "notice",
+      "locator": {
+       "block": "items",
+       "row": 3
+      },
+      "kind": "unknown",
+      "scope": "set",
+      "approximate": true,
+      "flags": [
+       "bound_by_count_rank"
+      ],
+      "binding": {
+       "scope": "variants",
+       "variant_ids": [
+        "39671831486",
+        "39671831488",
+        "39671831489",
+        "39671831490"
+       ]
+      },
+      "also": 0
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05",
+      "flags": [
+       "below_stated_product"
+      ]
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"12카본 + 골프백 (신축성)\"]",
+    "naver_variant_id": "39671831490",
+    "options_ko": [
+     "12카본 + 골프백 (신축성)"
+    ],
+    "price_krw": 662200,
+    "price_usd": "662.20",
+    "sku": "FW-0ed9111641471f4dcdde36dc",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "value": {
+       "min": 11500.0,
+       "max": 11500.0
+      },
+      "source": "source_stated",
+      "confidence": 2,
+      "quote": "중량: 약11.5kg / 4.7kg",
+      "from": "notice",
+      "locator": {
+       "block": "items",
+       "row": 3
+      },
+      "kind": "unknown",
+      "scope": "set",
+      "approximate": true,
+      "flags": [
+       "bound_by_count_rank"
+      ],
+      "binding": {
+       "scope": "variants",
+       "variant_ids": [
+        "39671831486",
+        "39671831488",
+        "39671831489",
+        "39671831490"
+       ]
+      },
+      "also": 0
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05",
+      "flags": [
+       "below_stated_product"
+      ]
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   }
+  ],
+  "pricing": {
+   "base_krw": 198000,
+   "original_krw": 1458000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "협력사"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "피지엠"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "10.5도"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#5, #6, #7, #8, #9, 샌드웨지(SW), 피칭웨지(PW)",
+    "for_ko": [
+     "12스틸 + 골프백",
+     "12카본 + 골프백",
+     "12스틸 + 골프백 (신축성)",
+     "12카본 + 골프백 (신축성)"
+    ]
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "왼손용"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2022년형"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "드라이버, 7아이언세트, 퍼터, 페어웨이",
+    "for_ko": [
+     "12스틸 + 골프백",
+     "12카본 + 골프백",
+     "12스틸 + 골프백 (신축성)",
+     "12카본 + 골프백 (신축성)"
+    ]
+   },
+   {
+    "label_ko": "아이언개수",
+    "value_ko": "7개",
+    "for_ko": [
+     "12스틸 + 골프백",
+     "12카본 + 골프백",
+     "12스틸 + 골프백 (신축성)",
+     "12카본 + 골프백 (신축성)"
+    ]
+   },
+   {
+    "label_ko": "퍼터형태",
+    "value_ko": "블레이드(일자형)"
+   },
+   {
+    "label_ko": "골프백포함여부",
+    "value_ko": "캐디백"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.58,
+   "count": 12
+  },
+  "reviews": [
+   {
+    "id": "5097567152",
+    "score": 5,
+    "text_ko": "만족합니다 카본이라 가볍네요",
+    "created_at": "2026-11-03T08:55:12Z",
+    "writer": "choi******",
+    "photos": [],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4851863789",
+    "score": 4,
+    "text_ko": "딱히 장소가 없어서 베란다에서 연습하고 있어요 나름만족하며 사용합니다 연습용 좋아요",
+    "created_at": "2025-11-29T10:20:14Z",
+    "writer": "jinu***",
+    "photos": [
+     "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-image-6ac64ef5c8518a1c.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4831589171",
+    "score": 5,
+    "text_ko": "연습용으로 좋습니다~^^",
+    "created_at": "2025-10-30T12:32:31Z",
+    "writer": "ac****",
+    "photos": [
+     "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-image-0eaa986ef6d2b5eb.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4829297366",
+    "score": 3,
+    "text_ko": "배송이 생각보다 많이 늦고 문의시 답변 잘해주신거 같아요",
+    "created_at": "2025-10-27T06:15:52Z",
+    "writer": "jinu***",
+    "photos": [
+     "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-image-a6635f90c972ac2f.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4810555653",
+    "score": 5,
+    "text_ko": "연습용으로 구매했습니다",
+    "created_at": "2025-09-25T03:09:56Z",
+    "writer": "ac****",
+    "photos": [
+     "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-image-419c2676cce076bc.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4716568504",
+    "score": 5,
+    "text_ko": "잘 사용하고있답니다\n좋아요",
+    "created_at": "2025-05-05T03:39:20Z",
+    "writer": "gold*****",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-avatar-322a15e2757d2d0e.webp",
+    "tier": "small"
+   },
+   {
+    "id": "4692982177",
+    "score": 5,
+    "text_ko": "배송 안전하게 잘받았습니다\n감사합니다 디자인도 좋아요",
+    "created_at": "2025-03-31T05:20:53Z",
+    "writer": "gold*****",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-avatar-322a15e2757d2d0e.webp",
+    "tier": "small"
+   },
+   {
+    "id": "4648000841",
+    "score": 5,
+    "text_ko": "너무좋네요 찾고있던 제품이예요",
+    "created_at": "2025-01-22T11:57:51Z",
+    "writer": "qkrw********",
+    "photos": [
+     "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-image-5df85e91a7a86bea.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-avatar-2c2157a470cfce4a.webp",
+    "tier": "small"
+   },
+   {
+    "id": "4598084112",
+    "score": 4,
+    "text_ko": "가격대비 좋아요,.",
+    "created_at": "2024-11-13T01:30:57Z",
+    "writer": "neve*******",
+    "photos": [],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4542860018",
+    "score": 4,
+    "text_ko": "해외배송치고 빠르고 물건도 가성비 매우 좋아요!!",
+    "created_at": "2024-08-24T00:17:52Z",
+    "writer": "toma******",
+    "photos": [],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4423079515",
+    "score": 5,
+    "text_ko": "비용대비 너무 마음에 듭니다",
+    "created_at": "2024-02-09T00:19:13Z",
+    "writer": "jung*****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4065916440",
+    "score": 5,
+    "text_ko": "해외배송이라 오래걸릴까봐 걱정되었는데 배송도 생각보다 빨리왔고 상품상태도 만족스럽습니다^^",
+    "created_at": "2022-08-18T06:20:09Z",
+    "writer": "wnst****",
+    "photos": [
+     "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-image-637d9bbf31172d08.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-avatar-154f3e86463778a5.webp",
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/6630856593/fairwardgolf-6630856593-001-3a03097aa8a8ab36.webp",
+    "sha256": "3a03097aa8a8ab360702ea2cbde9ce4a6cc92452885d6310372ca1b2fd61d747",
+    "width": 500,
+    "height": 500
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/6630856593/fairwardgolf-6630856593-002-45bba27511d7f5b1.webp",
+    "sha256": "45bba27511d7f5b1f073f69bf17bae4788cc1fc438a7493f9e77b05ca53f8bf0",
+    "width": 510,
+    "height": 510
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/6630856593/fairwardgolf-6630856593-003-b7f038aaafbc2e02.webp",
+    "sha256": "b7f038aaafbc2e029d13815ab68fb58ba694955ff82ce190b197bbb73ef9fde5",
+    "width": 510,
+    "height": 510
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/6630856593/fairwardgolf-6630856593-004-a4e664587f13871e.webp",
+    "sha256": "a4e664587f13871e39afce2878b02deb6231a61dc3768c66930d0149b6d611f7",
+    "width": 510,
+    "height": 510
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/6630856593/fairwardgolf-6630856593-005-f1d284c63e478709.webp",
+    "sha256": "f1d284c63e4787096284b27c7edbe67e73de402451747665f0a2a03c0dc54ff9",
+    "width": 510,
+    "height": 510
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/6630856593/fairwardgolf-6630856593-006-be13936096fbf953.webp",
+    "sha256": "be13936096fbf953e832ef69810a1b7a07f517c5bdd73a6660938ac60f9a7513",
+    "width": 510,
+    "height": 510
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/6630856593/fairwardgolf-6630856593-007-d2a64b4df4b2e15f.webp",
+    "sha256": "d2a64b4df4b2e15f6b22b9f8b1df4c8035dcc025d679a5de78c0c7de973189cd",
+    "width": 510,
+    "height": 510
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/6630856593/fairwardgolf-6630856593-008-fde7114c19c58ff2.webp",
+    "sha256": "fde7114c19c58ff28e1057decb85f103cbf064f39fca709e3df5dc4bdc2bc8b2",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/6630856593/fairwardgolf-6630856593-009-5df01e68ae3052f8.webp",
+    "sha256": "5df01e68ae3052f8ae039d83a5603909436f7c13f1c2e71ad67685115e81fdad",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/6630856593/fairwardgolf-6630856593-010-b29eef3f3f86591a.webp",
+    "sha256": "b29eef3f3f86591ac09aaa6646919bfb47e49a48892985e6dee4bc4aeafee1d2",
+    "width": 800,
+    "height": 800
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": true,
+   "customs_tax_type": "NOT_APPLICABLE",
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": 10000,
+   "policy_text": "제주 추가 5,000원, 제주 외 도서지역 추가 10,000원",
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "PGM 남성용 좌타 1번 우드 연습용\n골프 드라이브\n\nPGM은 중국 Tmall 골프 부문\n판매량 1위 브랜드입니다.\n\n- 세트 설명 -\n4스틸+골프백 / 4카본+골프백\n▼\n\n12스틸+골프백 / 12카본+골프백\n▼\n\n12스틸+골프백(신축성) / 12카본+골프백(신축성)\n▼",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20220719_296/1658194314604QXP7o_JPEG/PGM-%EB%B0%B0%EB%84%88.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220418_37/1650245101191bWbBC_JPEG/PGM%EC%9D%B8%EC%A6%9D%EC%84%9C%EC%B5%9C%EC%A2%85(%E6%B7%BB%E5%8A%A0%E6%B0%B4%E5%8D%B0).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_85/17104690611982wcnO_JPEG/1.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_165/1710469080785ud4LG_GIF/02.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20240315_287/1710469098573gLqoE_JPEG/03.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_199/1710469115732wX1aW_GIF/04.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20240315_185/1710469115094GfH8b_GIF/05.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20240315_180/17104691914534q5rl_JPEG/06.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_283/1710469463312FBR8G_JPEG/07.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_296/1710469486454yB34S_GIF/08.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20240315_114/1710469485826BgGGn_GIF/09.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20240315_81/1710469485844Enu91_GIF/10.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20240315_41/1710469517168yPXQ8_JPEG/11.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_266/1710469531700725Nd_GIF/12.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20240315_178/1710469533580FLJfN_GIF/13.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20240315_138/1710469554697Ii9ad_JPEG/14.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_246/17104695784062daHh_GIF/15.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20240315_71/1710469584091eDHfc_GIF/16.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20240315_58/1710469578750xuG21_GIF/17.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20240315_26/1710469618749LYBSW_JPEG/18.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_159/1710469618894MprJG_JPEG/19.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_110/1710469618507umn0d_JPEG/20.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_101/1710469618332py4ul_JPEG/21.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_115/1710469618142DsNjD_JPEG/22.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_130/1710469618143V5ubE_JPEG/23.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_253/1710469619897lMzp9_JPEG/24.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_279/1710469619815INIvG_JPEG/25.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_65/1710469620225dBSEr_JPEG/26.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_169/1710469620298w6scj_JPEG/27.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_203/1710469620806XrOOh_JPEG/28.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_121/1710469621077jBH2X_JPEG/29.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_18/1710469621654hwkKF_JPEG/30.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_32/1710469622359SgqrJ_JPEG/31.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_172/1710469622485DkLns_JPEG/32.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_147/17104696222928jpMl_JPEG/33.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240315_244/1710469623175HVgji_JPEG/34.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_217/1714443922007bpBcS_JPEG/SKU-06-%E3%80%90%E5%B7%A6%E6%89%8B%E3%80%91%E9%92%A2%E6%9D%864%E6%94%AF%E7%90%83%E6%9D%86_%E7%AB%99%E7%AB%8B%E7%90%83%E5%8C%85.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_7/17144439220598K99W_JPEG/SKU-05-%E3%80%90%E5%B7%A6%E6%89%8B%E3%80%91%E7%A2%B3%E7%B4%A04%E6%94%AF%E7%90%83%E6%9D%86_%E7%AB%99%E7%AB%8B%E7%90%83%E5%8C%85.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_210/1714444015734mFG5G_JPEG/SKU-03-%E3%80%90%E5%B7%A6%E6%89%8B%E3%80%91%E9%92%A2%E6%9D%8612%E6%94%AF%E7%90%83%E6%9D%86_%E6%A0%87%E5%87%86%E7%90%83%E5%8C%85.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_281/1714444015705m7coA_JPEG/SKU-01-%E3%80%90%E5%B7%A6%E6%89%8B%E3%80%91%E7%A2%B3%E7%B4%A012%E6%94%AF%E7%90%83%E6%9D%86_%E6%A0%87%E5%87%86%E7%90%83%E5%8C%85.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_3/1714444047605Ksg8Q_JPEG/SKU-04-%E3%80%90%E5%B7%A6%E6%89%8B%E3%80%91%E9%92%A2%E6%9D%8612%E6%94%AF%E7%90%83%E6%9D%86_%E4%BC%B8%E7%BC%A9%E7%90%83%E5%8C%85.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240430_254/1714444048012IK8de_JPEG/SKU-02-%E3%80%90%E5%B7%A6%E6%89%8B%E3%80%91%E7%A2%B3%E7%B4%A012%E6%94%AF%E7%90%83%E6%9D%86_%E4%BC%B8%E7%BC%A9%E7%90%83%E5%8C%85.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "promo",
+    "text": "현지 공장 직구로 온라인 최저가와\n초고속 배송으로 득템해 보세요:D"
+   },
+   {
+    "rule": "store_claim",
+    "text": "저희 비비가월드는 국내 온라인"
+   },
+   {
+    "rule": "store_claim",
+    "text": "최초 PGM 정식 판매권을 받은 업체입니다."
+   },
+   {
+    "rule": "promo",
+    "text": "정품 인증을 받은 PGM 제품을\n온라인 최저가로 만나보세요:)"
+   },
+   {
+    "rule": "monitor",
+    "text": "*측정 방법과 모니터 사양에 따라 사이즈와\n컬러는 다소 차이가 있을 수 있습니다"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:41c79a0e166768f2",
+   "kind": "title",
+   "ko": "PGM 좌타 골프채풀세트 남성 왼손 골프채세트"
+  },
+  {
+   "id": "brand:e9c7de49d877ecb0",
+   "kind": "brand",
+   "ko": "피지엠"
+  },
+  {
+   "id": "option_name:2083b6c7cd874f09",
+   "kind": "option_name",
+   "ko": "타입"
+  },
+  {
+   "id": "option_value:8196d7848ade7f0c",
+   "kind": "option_value",
+   "ko": "4스틸 + 골프백"
+  },
+  {
+   "id": "option_value:73b58fc6c90ee6c8",
+   "kind": "option_value",
+   "ko": "4카본 + 골프백"
+  },
+  {
+   "id": "option_value:1c0c0405142f9398",
+   "kind": "option_value",
+   "ko": "12스틸 + 골프백"
+  },
+  {
+   "id": "option_value:252061bf9a330ab4",
+   "kind": "option_value",
+   "ko": "12카본 + 골프백"
+  },
+  {
+   "id": "option_value:43268c3d38e62c76",
+   "kind": "option_value",
+   "ko": "12스틸 + 골프백 (신축성)"
+  },
+  {
+   "id": "option_value:ccaad9d5b8a630f6",
+   "kind": "option_value",
+   "ko": "12카본 + 골프백 (신축성)"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:2b13ecd02074309a",
+   "kind": "spec_value",
+   "ko": "협력사"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:e9c7de49d877ecb0",
+   "kind": "spec_value",
+   "ko": "피지엠"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:de2b6da830b81034",
+   "kind": "spec_value",
+   "ko": "10.5도"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:92f065775edcaa4b",
+   "kind": "spec_value",
+   "ko": "#5, #6, #7, #8, #9, 샌드웨지(SW), 피칭웨지(PW)"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:9c68b4648cbe18e2",
+   "kind": "spec_value",
+   "ko": "왼손용"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:1bb71fabcfb2e7d7",
+   "kind": "spec_value",
+   "ko": "2022년형"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:78154c96f8a0b6f8",
+   "kind": "spec_value",
+   "ko": "드라이버, 7아이언세트, 퍼터, 페어웨이"
+  },
+  {
+   "id": "spec_label:cf77915a2f3ab5d8",
+   "kind": "spec_label",
+   "ko": "아이언개수"
+  },
+  {
+   "id": "spec_value:0c5a3886c288bcd6",
+   "kind": "spec_value",
+   "ko": "7개"
+  },
+  {
+   "id": "spec_label:04c52e5b47f70047",
+   "kind": "spec_label",
+   "ko": "퍼터형태"
+  },
+  {
+   "id": "spec_value:db08874d4cf56690",
+   "kind": "spec_value",
+   "ko": "블레이드(일자형)"
+  },
+  {
+   "id": "spec_label:e4aabb2e41b870bd",
+   "kind": "spec_label",
+   "ko": "골프백포함여부"
+  },
+  {
+   "id": "spec_value:00e36a3d18b6bbee",
+   "kind": "spec_value",
+   "ko": "캐디백"
+  },
+  {
+   "id": "review:4518d7cb52f0c32b",
+   "kind": "review",
+   "ko": "만족합니다 카본이라 가볍네요"
+  },
+  {
+   "id": "review:30b7219478a9754c",
+   "kind": "review",
+   "ko": "딱히 장소가 없어서 베란다에서 연습하고 있어요 나름만족하며 사용합니다 연습용 좋아요"
+  },
+  {
+   "id": "review:aac8eb97376d2969",
+   "kind": "review",
+   "ko": "연습용으로 좋습니다~^^"
+  },
+  {
+   "id": "review:f25a0ffa2ad28a1b",
+   "kind": "review",
+   "ko": "배송이 생각보다 많이 늦고 문의시 답변 잘해주신거 같아요"
+  },
+  {
+   "id": "review:ccc67a7c8e6081af",
+   "kind": "review",
+   "ko": "연습용으로 구매했습니다"
+  },
+  {
+   "id": "review:0593a294984af9df",
+   "kind": "review",
+   "ko": "잘 사용하고있답니다\n좋아요"
+  },
+  {
+   "id": "review:3528d2a317d5b371",
+   "kind": "review",
+   "ko": "배송 안전하게 잘받았습니다\n감사합니다 디자인도 좋아요"
+  },
+  {
+   "id": "review:56e83b81490670c7",
+   "kind": "review",
+   "ko": "너무좋네요 찾고있던 제품이예요"
+  },
+  {
+   "id": "review:1ffb39e45d9ba707",
+   "kind": "review",
+   "ko": "가격대비 좋아요,."
+  },
+  {
+   "id": "review:654a60268dc372ef",
+   "kind": "review",
+   "ko": "해외배송치고 빠르고 물건도 가성비 매우 좋아요!!"
+  },
+  {
+   "id": "review:878bfd508b607294",
+   "kind": "review",
+   "ko": "비용대비 너무 마음에 듭니다"
+  },
+  {
+   "id": "review:5611d6db99f592f2",
+   "kind": "review",
+   "ko": "해외배송이라 오래걸릴까봐 걱정되었는데 배송도 생각보다 빨리왔고 상품상태도 만족스럽습니다^^"
+  }
+ ]
+}

@@ -1,0 +1,828 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:100416178:9496523995",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "title_names_one_variant",
+   "detail": "10.5"
+  },
+  {
+   "code": "option_values_duplicate",
+   "detail": "선택"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "선택"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/ktksports/products/9496523995",
+  "channel_no": "100416178",
+  "product_id": "9496523995",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "테일러메이드 코리아 스텔스2 V300 남성골프채풀세트 11개 드라이버10.5R 4번유틸 8아이언R퍼터",
+  "brand_ko": "테일러메이드",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "선택",
+    "values_ko": [
+     "선택1 10.5 도 R4번유틸 8아이언R퍼터",
+     "선택2 10.5 도 SR4번유틸 8아이언R퍼터",
+     "선택3 10.5 도 S4번유틸 8아이언R퍼터",
+     "선택4 9 도 R 4번유틸 8아이언R퍼터",
+     "선택5 9 도 SR4번유틸 8아이언R퍼터",
+     "선택6 10.5 도 S4번유틸 8아이언R퍼터"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"선택1 10.5 도 R4번유틸 8아이언R퍼터\"]",
+    "naver_variant_id": "44454519225",
+    "options_ko": [
+     "선택1 10.5 도 R4번유틸 8아이언R퍼터"
+    ],
+    "price_krw": 2090000,
+    "price_usd": "2090.00",
+    "sku": "FW-d3b3d977dfe7494b2df9c9f9",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"선택2 10.5 도 SR4번유틸 8아이언R퍼터\"]",
+    "naver_variant_id": "44454519226",
+    "options_ko": [
+     "선택2 10.5 도 SR4번유틸 8아이언R퍼터"
+    ],
+    "price_krw": 2090000,
+    "price_usd": "2090.00",
+    "sku": "FW-2bcc61ebccb5e462f5b2600a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"선택3 10.5 도 S4번유틸 8아이언R퍼터\"]",
+    "naver_variant_id": "44454519227",
+    "options_ko": [
+     "선택3 10.5 도 S4번유틸 8아이언R퍼터"
+    ],
+    "price_krw": 2090000,
+    "price_usd": "2090.00",
+    "sku": "FW-3a5477bc76b9eb152ae22b69",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"선택4 9 도 R 4번유틸 8아이언R퍼터\"]",
+    "naver_variant_id": "44454519228",
+    "options_ko": [
+     "선택4 9 도 R 4번유틸 8아이언R퍼터"
+    ],
+    "price_krw": 2090000,
+    "price_usd": "2090.00",
+    "sku": "FW-3a67f1dc67b5aad3b4f154b9",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"선택5 9 도 SR4번유틸 8아이언R퍼터\"]",
+    "naver_variant_id": "44454519229",
+    "options_ko": [
+     "선택5 9 도 SR4번유틸 8아이언R퍼터"
+    ],
+    "price_krw": 2090000,
+    "price_usd": "2090.00",
+    "sku": "FW-d350c3af31cee1135fba2343",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"선택6 10.5 도 S4번유틸 8아이언R퍼터\"]",
+    "naver_variant_id": "44454519230",
+    "options_ko": [
+     "선택6 10.5 도 S4번유틸 8아이언R퍼터"
+    ],
+    "price_krw": 2090000,
+    "price_usd": "2090.00",
+    "sku": "FW-14fb20c1d067d6d18476544c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   }
+  ],
+  "pricing": {
+   "base_krw": 2090000,
+   "original_krw": 2600000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "테일러메이드"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "테일러메이드"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "베트남산"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "조합풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "11개"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2023년형"
+   },
+   {
+    "label_ko": "퍼터형태",
+    "value_ko": "특수형"
+   }
+  ],
+  "personalization": [],
+  "addons": [
+   {
+    "group_ko": "우드선택",
+    "name_ko": "3번 R",
+    "required": false,
+    "price_krw": 379000,
+    "price_usd": "379.00"
+   },
+   {
+    "group_ko": "우드선택",
+    "name_ko": "3번 SR",
+    "required": false,
+    "price_krw": 379000,
+    "price_usd": "379.00"
+   },
+   {
+    "group_ko": "우드선택",
+    "name_ko": "3번 S",
+    "required": false,
+    "price_krw": 379000,
+    "price_usd": "379.00"
+   },
+   {
+    "group_ko": "우드선택",
+    "name_ko": "5번 R",
+    "required": false,
+    "price_krw": 379000,
+    "price_usd": "379.00"
+   },
+   {
+    "group_ko": "우드선택",
+    "name_ko": "5번 SR",
+    "required": false,
+    "price_krw": 379000,
+    "price_usd": "379.00"
+   },
+   {
+    "group_ko": "우드선택",
+    "name_ko": "5번 S",
+    "required": false,
+    "price_krw": 379000,
+    "price_usd": "379.00"
+   }
+  ],
+  "rating": {
+   "value": 5.0,
+   "count": 3
+  },
+  "reviews": [
+   {
+    "id": "4508430574",
+    "score": 5,
+    "text_ko": "구성이  좋습니다.",
+    "created_at": "2024-06-28T13:32:47Z",
+    "writer": "phsy****",
+    "photos": [
+     "collected/50002788-fixtures/images/9496523995/fairwardgolf-review-image-8385932c70eccbf2.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/9496523995/fairwardgolf-review-avatar-5c0be2ba97b1f37c.webp",
+    "tier": "small"
+   },
+   {
+    "id": "4461549822",
+    "score": 5,
+    "text_ko": "빠른 배송 좋아요\n감사합니다",
+    "created_at": "2024-04-14T07:18:15Z",
+    "writer": "wssj*****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4458658738",
+    "score": 5,
+    "text_ko": "ㅡ요구사항에 친절한 설명도 해주시고 너무나 감사합니다",
+    "created_at": "2024-04-09T03:26:37Z",
+    "writer": "ptlo*******",
+    "photos": [
+     "collected/50002788-fixtures/images/9496523995/fairwardgolf-review-image-fc42778527cb5f6a.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/9496523995/fairwardgolf-review-avatar-0374aa7f8c8a9737.webp",
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/9496523995/fairwardgolf-9496523995-001-792eebd0178dad62.webp",
+    "sha256": "792eebd0178dad6266e46504a5ca298f761f3bcba8cb96635371ee6e1beb25c9",
+    "width": 720,
+    "height": 720
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 3,000원",
+   "lead_time": {
+    "seller_average_days": 4.0,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20251102_145/17620695258624qdSe_JPEG/p-9451816282-s-2-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20251102_39/17620695259486Fons_JPEG/p-9451816282-s-2-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20251102_271/1762069525862OrWrD_JPEG/p-9451816282-s-2-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20251102_142/17620695258599U4ul_JPEG/p-9451816282-s-2-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20251102_211/1762069525866GqgDU_JPEG/p-9451816282-s-2-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20251102_55/1762069525859wrAVK_JPEG/p-9451816282-s-2-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20251102_296/1762069525860BULfb_JPEG/p-9451816282-s-2-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20251102_242/17620695258576D7G9_JPEG/p-9451816282-s-2-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20251102_27/17620695259398q0pe_JPEG/p-9451816282-s-2-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20251102_17/1762069525952TMJlB_JPEG/p-9451816282-s-2-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20251102_158/1762069525857Q6R67_JPEG/p-9451816282-s-2-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20251102_52/1762069525856DmQDY_JPEG/p-9451816282-s-2-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20251102_129/1762069525858GrAt9_JPEG/p-9451816282-s-2-A-12.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:c42abf9a729beef6",
+   "kind": "title",
+   "ko": "테일러메이드 코리아 스텔스2 V300 남성골프채풀세트 11개 드라이버10.5R 4번유틸 8아이언R퍼터"
+  },
+  {
+   "id": "brand:18d4028e5665dc1d",
+   "kind": "brand",
+   "ko": "테일러메이드"
+  },
+  {
+   "id": "option_name:8d1a750c9351d1b8",
+   "kind": "option_name",
+   "ko": "선택"
+  },
+  {
+   "id": "option_value:65b8ba134295da07",
+   "kind": "option_value",
+   "ko": "선택1 10.5 도 R4번유틸 8아이언R퍼터"
+  },
+  {
+   "id": "option_value:581636c04369f5f5",
+   "kind": "option_value",
+   "ko": "선택2 10.5 도 SR4번유틸 8아이언R퍼터"
+  },
+  {
+   "id": "option_value:e82d4a4c5a4ca515",
+   "kind": "option_value",
+   "ko": "선택3 10.5 도 S4번유틸 8아이언R퍼터"
+  },
+  {
+   "id": "option_value:7aa5d0da31d74c24",
+   "kind": "option_value",
+   "ko": "선택4 9 도 R 4번유틸 8아이언R퍼터"
+  },
+  {
+   "id": "option_value:dae9732fe6bc18b6",
+   "kind": "option_value",
+   "ko": "선택5 9 도 SR4번유틸 8아이언R퍼터"
+  },
+  {
+   "id": "option_value:f408bfc7404dff0e",
+   "kind": "option_value",
+   "ko": "선택6 10.5 도 S4번유틸 8아이언R퍼터"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:18d4028e5665dc1d",
+   "kind": "spec_value",
+   "ko": "테일러메이드"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:7cd6ad9c85830004",
+   "kind": "spec_value",
+   "ko": "베트남산"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:94abee9ad24a637a",
+   "kind": "spec_value",
+   "ko": "조합풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:5b1bc698007c9da7",
+   "kind": "spec_value",
+   "ko": "11개"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:bed47e98ee4bbea0",
+   "kind": "spec_value",
+   "ko": "2023년형"
+  },
+  {
+   "id": "spec_label:04c52e5b47f70047",
+   "kind": "spec_label",
+   "ko": "퍼터형태"
+  },
+  {
+   "id": "spec_value:4448a8d8e289b154",
+   "kind": "spec_value",
+   "ko": "특수형"
+  },
+  {
+   "id": "addon_group:860b6c0a2ea7fa87",
+   "kind": "addon_group",
+   "ko": "우드선택"
+  },
+  {
+   "id": "addon_name:801d05af7315856f",
+   "kind": "addon_name",
+   "ko": "3번 R"
+  },
+  {
+   "id": "addon_name:182966f9f2aa2b06",
+   "kind": "addon_name",
+   "ko": "3번 SR"
+  },
+  {
+   "id": "addon_name:eb4518e0a1fa5bb1",
+   "kind": "addon_name",
+   "ko": "3번 S"
+  },
+  {
+   "id": "addon_name:572e0d25c20592b7",
+   "kind": "addon_name",
+   "ko": "5번 R"
+  },
+  {
+   "id": "addon_name:f624c2b0859d8f58",
+   "kind": "addon_name",
+   "ko": "5번 SR"
+  },
+  {
+   "id": "addon_name:bc2f035dbe367c16",
+   "kind": "addon_name",
+   "ko": "5번 S"
+  },
+  {
+   "id": "review:c9d9eaa698ff9ed4",
+   "kind": "review",
+   "ko": "구성이  좋습니다."
+  },
+  {
+   "id": "review:99baf2a83559c91a",
+   "kind": "review",
+   "ko": "빠른 배송 좋아요\n감사합니다"
+  },
+  {
+   "id": "review:41ae5c34401bac74",
+   "kind": "review",
+   "ko": "ㅡ요구사항에 친절한 설명도 해주시고 너무나 감사합니다"
+  }
+ ]
+}

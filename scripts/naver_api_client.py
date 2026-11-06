@@ -161,6 +161,14 @@ class NaverApiClient:
     def health(self) -> T.Health:
         return self.get("/health")
 
+    def product_page(self, product: str, query: str | None = None) -> T.ProductPage:
+        """The product page as the owner's Chrome rendered it (development and analysis; ~30-60 s, never cached)."""
+        return self.get("/products/page", product=product, query=query)
+
+    def captcha(self) -> T.CaptchaState:
+        """The captcha the adapter waits on, if any (scripts/captcha_watch.py)."""
+        return self.get("/captcha")
+
     def search(self, query: str, **filters) -> T.SearchResult:
         """Up to 96 cards; filters: min_price, max_price, category, min_rating, free_delivery, ..."""
         return self.get("/products/search", query=query, **filters)

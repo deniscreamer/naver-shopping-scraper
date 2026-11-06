@@ -1,0 +1,478 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:102643705:13777887875",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "shipping_paid",
+   "detail": "PAID 99000 KRW"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "EXCLUDED"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/japan_it/products/13777887875",
+  "channel_no": "102643705",
+  "product_id": "13777887875",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "캘러웨이 엑스핫 X HOT 남성용 골프채 풀세트 11개 캐디백 포함 일본 직구",
+  "brand_ko": "캘러웨이",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "경도/아이언 샤프트",
+    "values_ko": [
+     "R 카본",
+     "S 스틸"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"2109 cmix\",\"R 카본\"]",
+    "naver_variant_id": "60191818726",
+    "options_ko": [
+     "R 카본"
+    ],
+    "price_krw": 897000,
+    "price_usd": "897.00",
+    "sku": "FW-351c1759fbfb4ce3d29f61e8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"2109 cmix\",\"S 스틸\"]",
+    "naver_variant_id": "60191818727",
+    "options_ko": [
+     "S 스틸"
+    ],
+    "price_krw": 897000,
+    "price_usd": "897.00",
+    "sku": "FW-98cea52774f64d699e4f54cd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   }
+  ],
+  "pricing": {
+   "base_krw": 897000,
+   "original_krw": 1281400,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "11개"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "10.5도"
+   },
+   {
+    "label_ko": "아이언개수",
+    "value_ko": "7개"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#6, #7, #8, #9, 피칭웨지(PW)"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 1
+  },
+  "reviews": [
+   {
+    "id": "5093873005",
+    "score": 5,
+    "text_ko": "잘쓸께요 배송빠르고 너무 좋아요 ^^",
+    "created_at": "2026-10-29T05:44:55Z",
+    "writer": "dkrl*******",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/13777887875/fairwardgolf-review-avatar-c657cae5d25b67b6.webp",
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13777887875/fairwardgolf-13777887875-001-2dc10540b993a74e.webp",
+    "sha256": "2dc10540b993a74ea6c7a57ea06280dd0d949c6e8f81fec716ef233de27a5086",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13777887875/fairwardgolf-13777887875-002-2f54e7cb0605a376.webp",
+    "sha256": "2f54e7cb0605a376acac2689d59edc0e516f94ea5cc4698b32866f2c7bde1eee",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13777887875/fairwardgolf-13777887875-003-31cdd706672289ae.webp",
+    "sha256": "31cdd706672289ae4773ed25b21126a0acf1d9d7e0bd0843f386b9206c867c54",
+    "width": 1000,
+    "height": 749
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/13777887875/fairwardgolf-13777887875-004-f79f5d7d85e5d95f.webp",
+    "sha256": "f79f5d7d85e5d95ffe8e8f66e438ae1d083338611e6d0a0c96f786b51762e6d4",
+    "width": 1000,
+    "height": 704
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/13777887875/fairwardgolf-13777887875-005-4dd954ad4eb0e263.webp",
+    "sha256": "4dd954ad4eb0e263d0d2d0fee6b6592f1d4fdd26394e3354d12fb18208e1df25",
+    "width": 1000,
+    "height": 704
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/13777887875/fairwardgolf-13777887875-006-a60e28fdc379ce5b.webp",
+    "sha256": "a60e28fdc379ce5bec90e0bfdd3cddc77f857dc9eb400b8f4f316f712fc358c6",
+    "width": 1000,
+    "height": 704
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/13777887875/fairwardgolf-13777887875-007-995e140b2d677bd1.webp",
+    "sha256": "995e140b2d677bd18f2ff8cf686a87f422d7938e856fc68e2267e83aab9f4f8a",
+    "width": 1000,
+    "height": 704
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/13777887875/fairwardgolf-13777887875-008-634543c605a7e5da.webp",
+    "sha256": "634543c605a7e5da01999a1a2bd398840678e77fde86060288deeec0ed8ff95a",
+    "width": 1000,
+    "height": 704
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/13777887875/fairwardgolf-13777887875-009-88f9cfaada1451e3.webp",
+    "sha256": "88f9cfaada1451e3c5c64b110764c1c67d55a477f773a68d22de7604824fcc6d",
+    "width": 1000,
+    "height": 618
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "PAID",
+   "base_fee": 99000,
+   "is_overseas": true,
+   "customs_tax_type": "EXCLUDED",
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": 5000,
+   "policy_text": "제주 추가 5,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 6.2,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "캘러웨이 엑스핫 X HOT 남성용 골프채 풀세트 11개 캐디백 포함 일본 직구\n⛳ 캘러웨이 엑스핫 X HOT 남성용 골프채 풀세트 11개 (캐디백 포함) 🏌️‍♂️\n2013년 폭발적인 비거리와 성능으로 큰 사랑을 받았던 명기 캘러웨이 X HOT의 정식 복각 패키지 세트!\n초보자부터 중급자까지, 비거리와 관용성을 한 번에 잡은 11개 풀세트 구성과 프리미엄 캐디백을 한 번에 만나보세요. 🏆✨\n✨ 핵심 하이라이트\n🔥 명기 X HOT의 오리지널 복각판\n저가형 풀세트가 아닌, 당대 입증된 기술력을 그대로 담아낸 정통 복각 사양으로 뛰어난 타구감과 비거리를 선사합니다.\n🎯 5번 아이언 대신 5H 유틸리티 세팅\n다루기 힘든 긴 아이언 대신 25도 유틸리티(5H)를 구성하여 롱게임 접근성을 더욱 높였습니다.\n🎯 오디세이 EYE TRAX #7 퍼터 탑재\n굵은 얼라인먼트 선과 WHITE HOT RX 인서트가 적용되어 정확한 셋업과 부드러운 타구감을 연출합니다.\n🎒 고급스러운 9형 프리미엄 캐디백\n세련된 디자인과 오래 사용할 수 있는 내구성을 겸비한 높은 등급의 9형 캐디백이 세트로 포함됩니다.\n🏌️ 클럽 구성 (총 11개 세트)\n드라이버 (1W): 10.5° (어저스터블 호젤 탑재)\n페어웨이 우드 (5W): 19.0°\n유틸리티 (5H): 25.0°\n아이언 세트 (7클럽): #6, #7, #8, #9, PW, AW, SW (라지 헤드 캐비티 백)\n퍼터 (PT): 오디세이 EYE TRAX #7 (34인치)\n부속품: 클럽 전용 헤드커버 & 9형 캐디백\n📐 클럽 상세 스펙 가이드 (Club Specifications)\n각 클럽별 로프트각, 라이각, 길이 및 중량 상세 스펙입니다.\n1. 드라이버 (1W)\n로프트각: 10.5° / 라이각: 58.5° / 클럽 길이: 45.25인치\n총중량: Flex S 약 312g / Flex R 약 311g\n2. 페어웨이 우드 (5W)\n로프트각: 19.0° / 라이각: 58.0° / 클럽 길이: 42.5인치\n총중량: Flex S 약 328g / Flex R 약 327g\n3. 유틸리티 (5H)\n로프트각: 25.0° / 라이각: 59.5° / 클럽 길이: 39.5인치\n총중량: Flex S 약 372g / Flex R 약 371g\n4. 아이언 세트 (#6 ~ SW)\n#6 아이언: 로프트각 28.0° / 라이각 62.0° / 길이 S 37.25인치, R 37.5인치 (중량: S 약 418g / R 약 382g)\n#7 아이언: 로프트각 32.0° / 라이각 62.5° / 길이 S 36.75인치, R 37.0인치 (중량: S 약 426g / R 약 388g)\n#8 아이언: 로프트각 36.0° / 라이각 63.0° / 길이 S 36.25인치, R 36.5인치 (중량: S 약 432g / R 약 395g)\n#9 아이언: 로프트각 40.0° / 라이각 63.5° / 길이 S 35.75인치, R 36.0인치 (중량: S 약 442g / R 약 405g)\nPW (피칭웨지): 로프트각 44.0° / 라이각 64.0° / 길이 S 35.5인치, R 35.75인치 (중량: S 약 441g / R 약 408g)\nAW (어프로치웨지): 로프트각 49.0° / 라이각 64.0° / 길이 S 35.25인치, R 35.5인치 (중량: S 약 449g / R 약 411g)\nSW (샌드웨지): 로프트각 54.0° / 라이각 64.0° / 길이 S 35.0인치, R 35.25인치 (중량: S 약 452g / R 약 415g)\n5. 퍼터 (PT)\n로프트각: 3.0° / 라이각: 70.0° / 클럽 길이: 34.0인치\n💡 샤프트 강도 선택 팁\nFlex S (Stiff): 평소 헤드스피드가 빠르고 체력이 좋아 스틸 아이언 강도를 선호하시는 골퍼에게 추천합니다.\nFlex R (Regular): 골프 입문자나 부담 없이 편안하고 경쾌한 스윙을 원하시는 골퍼에게 추천합니다.",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260319_78/1773851154524bpJuJ_JPEG/16362889514472500_642028390.jpeg",
+   "https://shop-phinf.pstatic.net/20260319_209/1773851154130ubH5s_JPEG/16362889124176691_571656877.jpeg",
+   "https://shop-phinf.pstatic.net/20260726_86/1785001488212NmVY7_JPEG/6532949310212206_1318445245.jpeg",
+   "https://shop-phinf.pstatic.net/20260928_232/1790521727352rLc8U_JPEG/22931317831049291_394677909.jpeg",
+   "https://shop-phinf.pstatic.net/20260928_158/1790521726841xYShI_JPEG/22931317344184805_2074204102.jpeg",
+   "https://shop-phinf.pstatic.net/20260928_236/1790521726169LRWNh_JPEG/22931316679963047_734778222.jpeg",
+   "https://shop-phinf.pstatic.net/20260928_286/1790521725339kNONK_JPEG/22931315856677646_1083932218.jpeg",
+   "https://shop-phinf.pstatic.net/20260928_42/17905217281692mHWC_JPEG/22931318689349362_1320306020.jpeg",
+   "https://shop-phinf.pstatic.net/20260928_89/1790521727860XDlbX_JPEG/22931318385081361_1396439516.jpeg",
+   "https://shop-phinf.pstatic.net/20260928_243/1790521725864aW71v_JPEG/22931316380490874_749898667.jpeg",
+   "https://shop-phinf.pstatic.net/20260928_4/179052172558425u3C_JPEG/22931316105347431_786902523.jpeg",
+   "https://shop-phinf.pstatic.net/20260928_105/1790521726500BII4o_JPEG/22931317010318603_411610058.jpeg",
+   "https://shop-phinf.pstatic.net/20260319_121/1773851155545WTSvm_JPEG/3113607869358971_945629902.jpeg",
+   "https://shop-phinf.pstatic.net/20260319_19/1773851155081dmuyr_JPEG/16362890070988989_42147460.jpeg",
+   "https://shop-phinf.pstatic.net/20260319_121/1773851153823E0YtC_JPEG/16362888816643286_301066227.jpeg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:897f49ff6e3bb96b",
+   "kind": "title",
+   "ko": "캘러웨이 엑스핫 X HOT 남성용 골프채 풀세트 11개 캐디백 포함 일본 직구"
+  },
+  {
+   "id": "brand:752b9a8b36b892c4",
+   "kind": "brand",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "option_name:9d18c75b7228c08f",
+   "kind": "option_name",
+   "ko": "경도/아이언 샤프트"
+  },
+  {
+   "id": "option_value:1b99d739ab69a99e",
+   "kind": "option_value",
+   "ko": "R 카본"
+  },
+  {
+   "id": "option_value:5d814fb428860340",
+   "kind": "option_value",
+   "ko": "S 스틸"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:752b9a8b36b892c4",
+   "kind": "spec_value",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:5b1bc698007c9da7",
+   "kind": "spec_value",
+   "ko": "11개"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:de2b6da830b81034",
+   "kind": "spec_value",
+   "ko": "10.5도"
+  },
+  {
+   "id": "spec_label:cf77915a2f3ab5d8",
+   "kind": "spec_label",
+   "ko": "아이언개수"
+  },
+  {
+   "id": "spec_value:0c5a3886c288bcd6",
+   "kind": "spec_value",
+   "ko": "7개"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:d84c2a58770fb86e",
+   "kind": "spec_value",
+   "ko": "#6, #7, #8, #9, 피칭웨지(PW)"
+  },
+  {
+   "id": "review:200fad47d56ad835",
+   "kind": "review",
+   "ko": "잘쓸께요 배송빠르고 너무 좋아요 ^^"
+  }
+ ]
+}

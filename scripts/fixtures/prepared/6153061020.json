@@ -1,0 +1,605 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:100130532:6153061020",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/jingolfshop/products/6153061020",
+  "channel_no": "100130532",
+  "product_id": "6153061020",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "야마모토 시그니처 골드 남성 골프 풀세트",
+  "brand_ko": "야마모토",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [],
+  "facts": [
+   {
+    "label_ko": "",
+    "value_ko": "남성풀세트"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "observed:[\"남성풀세트\"]",
+    "naver_variant_id": "31294244406",
+    "options_ko": [],
+    "price_krw": 599000,
+    "price_usd": "599.00",
+    "sku": "FW-f59c1a64dc4f9c618f59e902",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   }
+  ],
+  "pricing": {
+   "base_krw": 599000,
+   "original_krw": 599000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "펜타곤 골프"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "야마모토"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "시그니처 골드"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   },
+   {
+    "label_ko": "유틸리티/하이브리드 로프트각",
+    "value_ko": "21도"
+   },
+   {
+    "label_ko": "페어웨이 로프트각",
+    "value_ko": "15도"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "10.5도"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#5, #6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "12개"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2022년형"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "드라이버, 8아이언세트, 유틸리티, 페어웨이, 퍼터"
+   },
+   {
+    "label_ko": "아이언샤프트소재",
+    "value_ko": "스틸"
+   },
+   {
+    "label_ko": "아이언개수",
+    "value_ko": "8개"
+   },
+   {
+    "label_ko": "퍼터형태",
+    "value_ko": "블레이드(일자형)"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.75,
+   "count": 65
+  },
+  "reviews": [
+   {
+    "id": "3421243640",
+    "score": 5,
+    "text_ko": "몇 번 해보고 자신에 몸에 맞는 채를 사라고 하는데 그냥 채 먼저 사고 채에 몸을 맞추려고 합니다. 완전 입문자라면 이 세트 하나면 고민할 게 없네요!!",
+    "created_at": "2022-04-29T09:36:17Z",
+    "writer": "icec******",
+    "photos": [
+     "collected/50002788-fixtures/images/6153061020/fairwardgolf-review-image-478c15db9984c2e0.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/6153061020/fairwardgolf-review-avatar-8f72ba0d1fbb066b.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "4680470590",
+    "score": 1,
+    "text_ko": "우선 제품을 잘못보내주셔서 다시 제품 받았습니다.\n제품검수를 제대로 하지 않는것같습니다. 아이언채 중간에 뜯어져서 오는 경우도있네요 다시구매하고싶지는 않습니다..ㅎ",
+    "created_at": "2025-03-13T04:02:09Z",
+    "writer": "rurv****",
+    "photos": [
+     "collected/50002788-fixtures/images/6153061020/fairwardgolf-review-image-f6a6abf833e36a4a.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "4215008154",
+    "score": 5,
+    "text_ko": "이야...정말 인생 최고의 골프채 입니다.\n가성비 및 구성자체가 말이 안됩니다...\n코로나로 인해 골프할 시간이 없었는데...\n앞으로 정말 열심히 골프연습 해야겠네요...^^\n감사합니다...",
+    "created_at": "2023-03-21T11:10:23Z",
+    "writer": "skyk****",
+    "photos": [
+     "collected/50002788-fixtures/images/6153061020/fairwardgolf-review-image-64b6a456e64e4d60.webp",
+     "collected/50002788-fixtures/images/6153061020/fairwardgolf-review-image-fa4518fc9c45fd69.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "4132493157",
+    "score": 5,
+    "text_ko": "입문인데 짱좋아요 주변지인도 한번쳐보고 금액대에서 괜찮다고 이야기를 해주셨늠데 홀인원까지 열심히 해보겠습니다",
+    "created_at": "2022-11-24T06:37:37Z",
+    "writer": "rlsk*****",
+    "photos": [
+     "collected/50002788-fixtures/images/6153061020/fairwardgolf-review-image-3db4723a986cbdb5.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "3412485858",
+    "score": 5,
+    "text_ko": "빠른배송 감사합니다 덕분에 주말에 재밌게 쳤어요 \n캐디백 포함 상품 구성도 좋습니다 \n이제 실력만 늘 일 만 남았네요\n번창하세요",
+    "created_at": "2022-04-17T09:51:53Z",
+    "writer": "55dh***",
+    "photos": [
+     "collected/50002788-fixtures/images/6153061020/fairwardgolf-review-image-56adda145aab11ef.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "3406579553",
+    "score": 5,
+    "text_ko": "정말 어이가 없네요..이가격에 이런디자인..많은 매장을 다녔지만 이렇게 좋은채, 이렇게 마음에 드는채가 없었는데 가격성능디자인 뭐하나 떨어지는게 없습니다. 부드럽고 타구감 좋습니다. 번창하세요👍",
+    "created_at": "2022-04-08T23:48:58Z",
+    "writer": "ye****",
+    "photos": [
+     "collected/50002788-fixtures/images/6153061020/fairwardgolf-review-image-1929cd60e5f58619.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "4143870921",
+    "score": 1,
+    "text_ko": "싼가격에 너무 큰기대를 했나봅니다. 갈비뼈와 엘보가 또 올까봐서 겁도 많이 나서 연습은 못할듯~ㅠㅠ; \n비닐포장까지 다 뜯었으니 반품도 안되고~ㅠㅠ; (허접?)",
+    "created_at": "2022-12-10T07:38:41Z",
+    "writer": "ko****",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/6153061020/fairwardgolf-review-avatar-58eb348ecd7021ed.webp",
+    "tier": "text"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/6153061020/fairwardgolf-6153061020-001-dc5be93a391482f2.webp",
+    "sha256": "dc5be93a391482f23bde96850adb59238f7b7dac2d603caa319dceadae432d16",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/6153061020/fairwardgolf-6153061020-002-d7f7809edf650faa.webp",
+    "sha256": "d7f7809edf650faac2d3c2a8ef913bfaa48e82783bcdf60e2e8177ca05c0f5a8",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/6153061020/fairwardgolf-6153061020-003-dcecc2920247e4fb.webp",
+    "sha256": "dcecc2920247e4fb5b6916091edcc18a4b746c83457dd5ada13589e0dfa4c6af",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/6153061020/fairwardgolf-6153061020-004-39945498c1210937.webp",
+    "sha256": "39945498c1210937d2c9da5bf814d6958a1eca894c6e2f86020bcb91cfd96e93",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/6153061020/fairwardgolf-6153061020-005-a30225c7811af128.webp",
+    "sha256": "a30225c7811af1280b2dba5bb03e2bf8cc6d4c99c2b973fefc9dd3fd88c68533",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/6153061020/fairwardgolf-6153061020-006-107a5df9bcc41940.webp",
+    "sha256": "107a5df9bcc419406fce234e3337a686e4442400b3498c07e83198b36b555cad",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/6153061020/fairwardgolf-6153061020-007-226b76b58c8ac29f.webp",
+    "sha256": "226b76b58c8ac29f5648380fd9042d1816951d0dc3b05c1152a485bbaf6a9cd9",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/6153061020/fairwardgolf-6153061020-008-8b6196e499ece9b5.webp",
+    "sha256": "8b6196e499ece9b5f59792bcda822252af6d5627fb4a890fdd24071223825e16",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/6153061020/fairwardgolf-6153061020-009-5fb51922c2f31749.webp",
+    "sha256": "5fb51922c2f3174967029f9beb31b76bd28055ee6aab3266ec09937d5e3227e4",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 3000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 3,000원",
+   "lead_time": {
+    "seller_average_days": 1.6519175,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 85,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20230501_125/1682942430755wjzUR_JPEG/p-6123951643-s-5-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20230501_254/16829424309407pDVw_JPEG/p-6123951643-s-5-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20230501_225/1682942430876DiBWt_JPEG/p-6123951643-s-5-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20230501_213/1682942430904NCRmR_JPEG/p-6123951643-s-5-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20230501_48/1682942430905p6Ozf_JPEG/p-6123951643-s-5-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20230501_181/16829424308699hGRf_JPEG/p-6123951643-s-5-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20230501_89/16829424311216njXk_JPEG/p-6123951643-s-5-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20230501_51/1682942430813bSlGT_JPEG/p-6123951643-s-5-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20230501_221/1682942430868rlz8x_JPEG/p-6123951643-s-5-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20230501_38/1682942430947dH9Re_JPEG/p-6123951643-s-5-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20230501_225/1682942430840ra1gU_JPEG/p-6123951643-s-5-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20230501_60/1682942430803wcnlW_JPEG/p-6123951643-s-5-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20230501_206/16829424308853WTBd_JPEG/p-6123951643-s-5-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20230501_214/1682942430762ob0Yf_JPEG/p-6123951643-s-5-A-13.jpg",
+   "https://shop-phinf.pstatic.net/20230501_256/16829424310381hu8T_JPEG/p-6123951643-s-5-A-14.jpg",
+   "https://shop-phinf.pstatic.net/20230501_223/1682942430760nLLYU_JPEG/p-6123951643-s-5-A-15.jpg",
+   "https://shop-phinf.pstatic.net/20230501_8/1682942430780IVVIe_JPEG/p-6123951643-s-5-A-16.jpg",
+   "https://shop-phinf.pstatic.net/20230501_11/16829424307375FpTV_JPEG/p-6123951643-s-5-A-17.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:e5e392b3ed01e70e",
+   "kind": "title",
+   "ko": "야마모토 시그니처 골드 남성 골프 풀세트"
+  },
+  {
+   "id": "brand:e41b4d987101f2f1",
+   "kind": "brand",
+   "ko": "야마모토"
+  },
+  {
+   "id": "fact_value:bc6abc80d2e78d9b",
+   "kind": "fact_value",
+   "ko": "남성풀세트"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:f678b9dca3c4741a",
+   "kind": "spec_value",
+   "ko": "펜타곤 골프"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:e41b4d987101f2f1",
+   "kind": "spec_value",
+   "ko": "야마모토"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:55529931579817ba",
+   "kind": "spec_value",
+   "ko": "시그니처 골드"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "spec_label:1c0460d0d6673223",
+   "kind": "spec_label",
+   "ko": "유틸리티/하이브리드 로프트각"
+  },
+  {
+   "id": "spec_value:12a73b9098bf50da",
+   "kind": "spec_value",
+   "ko": "21도"
+  },
+  {
+   "id": "spec_label:ecef087ddd17d2b5",
+   "kind": "spec_label",
+   "ko": "페어웨이 로프트각"
+  },
+  {
+   "id": "spec_value:13a3c342a2c78df1",
+   "kind": "spec_value",
+   "ko": "15도"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:de2b6da830b81034",
+   "kind": "spec_value",
+   "ko": "10.5도"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:5ace0004401aa84b",
+   "kind": "spec_value",
+   "ko": "#5, #6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:409b80822db00dec",
+   "kind": "spec_value",
+   "ko": "12개"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:1bb71fabcfb2e7d7",
+   "kind": "spec_value",
+   "ko": "2022년형"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:061db89f00d41328",
+   "kind": "spec_value",
+   "ko": "드라이버, 8아이언세트, 유틸리티, 페어웨이, 퍼터"
+  },
+  {
+   "id": "spec_label:5a12089f44ae3f65",
+   "kind": "spec_label",
+   "ko": "아이언샤프트소재"
+  },
+  {
+   "id": "spec_value:76d45c1471b5954b",
+   "kind": "spec_value",
+   "ko": "스틸"
+  },
+  {
+   "id": "spec_label:cf77915a2f3ab5d8",
+   "kind": "spec_label",
+   "ko": "아이언개수"
+  },
+  {
+   "id": "spec_value:77e34e31f3da3e43",
+   "kind": "spec_value",
+   "ko": "8개"
+  },
+  {
+   "id": "spec_label:04c52e5b47f70047",
+   "kind": "spec_label",
+   "ko": "퍼터형태"
+  },
+  {
+   "id": "spec_value:db08874d4cf56690",
+   "kind": "spec_value",
+   "ko": "블레이드(일자형)"
+  },
+  {
+   "id": "review:9857b28055ae179f",
+   "kind": "review",
+   "ko": "몇 번 해보고 자신에 몸에 맞는 채를 사라고 하는데 그냥 채 먼저 사고 채에 몸을 맞추려고 합니다. 완전 입문자라면 이 세트 하나면 고민할 게 없네요!!"
+  },
+  {
+   "id": "review:3c5662f45762773d",
+   "kind": "review",
+   "ko": "우선 제품을 잘못보내주셔서 다시 제품 받았습니다.\n제품검수를 제대로 하지 않는것같습니다. 아이언채 중간에 뜯어져서 오는 경우도있네요 다시구매하고싶지는 않습니다..ㅎ"
+  },
+  {
+   "id": "review:986e750152e2944f",
+   "kind": "review",
+   "ko": "이야...정말 인생 최고의 골프채 입니다.\n가성비 및 구성자체가 말이 안됩니다...\n코로나로 인해 골프할 시간이 없었는데...\n앞으로 정말 열심히 골프연습 해야겠네요...^^\n감사합니다..."
+  },
+  {
+   "id": "review:288473a404fb442a",
+   "kind": "review",
+   "ko": "입문인데 짱좋아요 주변지인도 한번쳐보고 금액대에서 괜찮다고 이야기를 해주셨늠데 홀인원까지 열심히 해보겠습니다"
+  },
+  {
+   "id": "review:95ad2334d2157f5d",
+   "kind": "review",
+   "ko": "빠른배송 감사합니다 덕분에 주말에 재밌게 쳤어요 \n캐디백 포함 상품 구성도 좋습니다 \n이제 실력만 늘 일 만 남았네요\n번창하세요"
+  },
+  {
+   "id": "review:6077efb646399843",
+   "kind": "review",
+   "ko": "정말 어이가 없네요..이가격에 이런디자인..많은 매장을 다녔지만 이렇게 좋은채, 이렇게 마음에 드는채가 없었는데 가격성능디자인 뭐하나 떨어지는게 없습니다. 부드럽고 타구감 좋습니다. 번창하세요👍"
+  },
+  {
+   "id": "review:193e2f980d88f857",
+   "kind": "review",
+   "ko": "싼가격에 너무 큰기대를 했나봅니다. 갈비뼈와 엘보가 또 올까봐서 겁도 많이 나서 연습은 못할듯~ㅠㅠ; \n비닐포장까지 다 뜯었으니 반품도 안되고~ㅠㅠ; (허접?)"
+  }
+ ]
+}

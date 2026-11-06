@@ -59,7 +59,8 @@ def check_local():
            else "missing: defaults in use (cp .env.example .env)")
     report("OK", "settings", f"PORT={os.environ.get('PORT') or 8000} "
            f"proxy={masked(os.environ.get('NAVER_SHOPPING_PROXY'))} "
-           f"webhook={masked(os.environ.get('NAVER_NOTIFY_WEBHOOK'))}")
+           f"webhook={masked(os.environ.get('NAVER_NOTIFY_WEBHOOK'))} "
+           f"captcha_wait={os.environ.get('NAVER_CAPTCHA_WAIT_S') or 600}s")
     check_photos()
     report("OK" if os.path.exists(os.path.join(ROOT, "extension", "manifest.json")) else "FAIL",
            "extension/ folder", os.path.join(ROOT, "extension"))

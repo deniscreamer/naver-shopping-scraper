@@ -1,0 +1,805 @@
+{
+ "key": "fairwardgolf:naver:100112239:8978750961",
+ "listing": {
+  "product_id": "8978750961",
+  "nv_mid": "86523251284",
+  "link": "https://smartstore.naver.com/primegolf/products/8978750961",
+  "name": "캘러웨이 엑스 핫 X HOT 스틸 풀세트 남성용 2023 한국캘러웨이골프",
+  "store": {
+   "name": "프라임골프",
+   "slug": "primegolf",
+   "link": "https://smartstore.naver.com/primegolf",
+   "channel_no": "100112239",
+   "grade": "POWER",
+   "is_brand_store": false
+  },
+  "pricing": {
+   "sale_price": 1610000,
+   "discounted_price": 1610000,
+   "discount_ratio": 0,
+   "currency": "KRW"
+  },
+  "category_id": "50002788",
+  "reviews": {
+   "count": 2,
+   "average_score": 5
+  },
+  "stock_quantity": 98,
+  "image": "https://shopping-phinf.pstatic.net/main_8652325/86523251284.jpg",
+  "is_ad": false,
+  "query": "남성 골프채 풀세트",
+  "batch": 2,
+  "seen_at": "2026-11-06T04:57:14+00:00"
+ },
+ "details": {
+  "id": "8978750961",
+  "origin_product_id": "8936463458",
+  "name": "캘러웨이 엑스 핫 X HOT 스틸 풀세트 남성용 2023 한국캘러웨이골프",
+  "link": "https://smartstore.naver.com/primegolf/products/8978750961",
+  "catalog_id": "86523251284",
+  "catalog_link": "https://search.shopping.naver.com/catalog/86523251284",
+  "status": "SALE",
+  "sale_type": "NEW",
+  "is_displayed": true,
+  "pricing": {
+   "sale_price": 1610000,
+   "discounted_price": 1610000,
+   "discount_ratio": 0,
+   "seller_discount": 0,
+   "manager_discount": 0,
+   "currency": "KRW",
+   "points": {
+    "purchase": 16100,
+    "text_review": 0,
+    "photo_video_review": 0,
+    "after_use_text_review": 0,
+    "after_use_photo_video_review": 0,
+    "store_member_review": 0
+   }
+  },
+  "stock_quantity": 98,
+  "has_options": false,
+  "has_supplements": false,
+  "images": [
+   "https://shop-phinf.pstatic.net/20230802_17/1690951589834JcKKr_JPEG/36968173670403300_763449384.jpg",
+   "https://shop-phinf.pstatic.net/20230802_17/1690951589834JcKKr_JPEG/36968173670403300_763449384.jpg",
+   "https://shop-phinf.pstatic.net/20230802_53/1690951599095JhJzL_JPEG/17458424203837206_1936556783.jpg"
+  ],
+  "category": {
+   "id": "50002788",
+   "name": "풀세트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "풀세트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002788"
+   ]
+  },
+  "brand": "캘러웨이",
+  "brand_id": null,
+  "manufacturer": "캘러웨이",
+  "model_name": "캘러웨이 2023 X Hot 풀세트 남성용",
+  "tags": null,
+  "page_title": null,
+  "reviews": {
+   "count": 2,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 2
+   },
+   "text_count": 2,
+   "photo_count": 0,
+   "video_count": 0,
+   "after_use_count": 1,
+   "best_count": 0,
+   "recent": null,
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "최고예요",
+       "count": 2,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "디자인은 어떤가요?",
+     "answers": [
+      {
+       "name": "별로예요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "화면과 같아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 2,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 2,
+       "percent": 100
+      }
+     ]
+    }
+   ],
+   "representative_reviews": null
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY",
+    "VISIT_RECEIPT"
+   ],
+   "attribute": "TODAY",
+   "is_today_delivery": null,
+   "company": "로젠택배",
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "extra_fee_text": null
+  },
+  "is_free_delivery": true,
+  "is_today_delivery": true,
+  "has_arrival_guarantee": false,
+  "has_regular_subscription": false,
+  "has_free_return_insurance": false,
+  "is_minor_purchasable": true,
+  "is_adult_restricted": false,
+  "is_in_naver_shopping": true,
+  "option_groups": null,
+  "variants": null,
+  "supplements": null,
+  "description": {
+   "html": null,
+   "text": "사은품 최다 증정(소진시 대체품)\n볼빅마블모자 랜덤1,파우치 랜덤1,볼빅 비비드우드티,캘러웨이 아이스백,캘러웨이 디봇툴 겸용 퍼터커버 홀더,테일러메이드 골프공 1박스",
+   "editor_type": "SEONE",
+   "images": [
+    "https://shop-phinf.pstatic.net/20230802_268/1690952278466GCLaC_JPEG/766DED9E-1E78-47B4-819A-1088D914E39A.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20230802_254/1690952278605Jxlrr_JPEG/FEF42630-AFAC-4E8E-ABE1-2650806B0E10.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20230802_231/16909522895914FKrF_JPEG/E0044AAF-F0F5-4278-8A8F-61C0EAB3664B.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20230802_101/16909523531037oOBL_JPEG/CE62649C-4B79-46CB-AE49-8618E5BE24B0.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20230802_214/1690952353145wWtb5_JPEG/2C1F2EF2-2CBB-43F9-96FD-0265D3B06A2D.jpg?type=w848"
+   ]
+  },
+  "notice": {
+   "type": "SPORTS_EQUIPMENT",
+   "items": [
+    {
+     "label": "품명 / 모델명",
+     "value": "상품상세참조 / 상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "KC 인증정보",
+     "value": "해당없음",
+     "is_see_description": false
+    },
+    {
+     "label": "크기",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "중량",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "색상",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "재질",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제품구성",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "동일 모델의 출시연월",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조자(사)",
+     "value": "캘러웨이",
+     "is_see_description": false
+    },
+    {
+     "label": "제조국",
+     "value": "중국산(한국캘러웨이골프)",
+     "is_see_description": false
+    },
+    {
+     "label": "상품별 세부사양",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "품질보증기준",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "A/S 책임자와 전화번호",
+     "value": null,
+     "is_see_description": false
+    }
+   ],
+   "terms": [
+    {
+     "label": "재화등의 배송방법에 관한 정보",
+     "value": "택배등",
+     "is_see_description": false
+    },
+    {
+     "label": "주문 이후 예상되는 배송기간",
+     "value": "대금 지급일로부터 3일 이내에 발송",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+     "value": "편도 15000원 (최초 배송비 무료인 경우 30000원 부과)",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 A/S 관련 전화번호",
+     "value": null,
+     "is_see_description": false
+    },
+    {
+     "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+     "value": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+     "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+     "is_see_description": false
+    }
+   ]
+  },
+  "facts": {
+   "brand": {
+    "value": "캘러웨이",
+    "source": "search_info.brandName"
+   },
+   "manufacturer": {
+    "value": "캘러웨이",
+    "source": "search_info.manufacturerName"
+   },
+   "model_name": {
+    "value": "캘러웨이 2023 X Hot 풀세트 남성용",
+    "source": "search_info.modelName"
+   },
+   "origin": {
+    "value": "중국산(한국캘러웨이골프)",
+    "source": "notice:제조국"
+   }
+  },
+  "store": {
+   "id": "100112239",
+   "uid": "2sWDwgYaRqJQrDlaIFTyB",
+   "name": "프라임골프",
+   "slug": "primegolf",
+   "link": "https://smartstore.naver.com/primegolf",
+   "type": "smart_store",
+   "grade": "THIRD",
+   "sale_count": 56,
+   "merchant_id": "510111103",
+   "business": {
+    "legal_name": "(주)프라임스포츠",
+    "representative": "심예련",
+    "type": "CORPORATION",
+    "is_business": true,
+    "is_overseas": false,
+    "phone": null,
+    "email": null,
+    "address": null
+   }
+  }
+ },
+ "specs": {
+  "id": "8978750961",
+  "name": "캘러웨이 엑스 핫 X HOT 스틸 풀세트 남성용 2023 한국캘러웨이골프",
+  "link": "https://smartstore.naver.com/primegolf/products/8978750961",
+  "query": "캘러웨이 엑스 핫 X HOT 스틸 풀세트 남성용 2023 한국캘러웨이골프",
+  "category": {
+   "id": "50002788",
+   "name": "풀세트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "풀세트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002788"
+   ]
+  },
+  "specs": [
+   {
+    "label": "상품번호",
+    "value": "8978750961"
+   },
+   {
+    "label": "제조사",
+    "value": "캘러웨이"
+   },
+   {
+    "label": "브랜드",
+    "value": "캘러웨이"
+   },
+   {
+    "label": "모델명",
+    "value": "캘러웨이 2023 X Hot 풀세트 남성용"
+   },
+   {
+    "label": "이벤트",
+    "value": "상품구매시 존바이론 블랙 웨지 증정"
+   },
+   {
+    "label": "사은품",
+    "value": "캘러웨이아이스백,볼빅비비드우드티,파우치,테일러메이드볼,오디세이디봇툴,볼빅마블모자(소진시대체품)"
+   },
+   {
+    "label": "원산지",
+    "value": "중국산(한국캘러웨이골프)"
+   },
+   {
+    "label": "종류",
+    "value": "풀세트"
+   },
+   {
+    "label": "성별",
+    "value": "남성용"
+   },
+   {
+    "label": "사용방향",
+    "value": "오른손용"
+   },
+   {
+    "label": "출시",
+    "value": "2023년형"
+   }
+  ],
+  "is_complete": true,
+  "facts": {
+   "brand": {
+    "value": "캘러웨이",
+    "source": "specs:브랜드"
+   },
+   "manufacturer": {
+    "value": "캘러웨이",
+    "source": "specs:제조사"
+   },
+   "model_name": {
+    "value": "캘러웨이 2023 X Hot 풀세트 남성용",
+    "source": "specs:모델명"
+   },
+   "origin": {
+    "value": "중국산(한국캘러웨이골프)",
+    "source": "specs:원산지"
+   }
+  },
+  "options": {
+   "has_options": false,
+   "status": "SALE",
+   "is_sold_out": false,
+   "stock_quantity": 98,
+   "option_groups": [],
+   "variants": [],
+   "simple_options": [],
+   "text_options": [],
+   "supplements": []
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": "제주,도서지역 추가 5,000원",
+   "method_types": [
+    "DELIVERY",
+    "VISIT_RECEIPT"
+   ],
+   "attribute": "TODAY",
+   "is_today_delivery": true,
+   "company": "로젠택배",
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "extra_fee_text": null,
+   "is_overseas": false,
+   "scope": "domestic",
+   "customs_tax_type": null,
+   "lead_time": {
+    "seller_average_days": 1.3333334,
+    "product_average_days": null,
+    "today_cutoff": "15:00",
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 100,
+    "ship_date_text": null
+   }
+  },
+  "measures": {
+   "is_set": true,
+   "weights": [],
+   "dimensions": [],
+   "references": [
+    {
+     "quote": "크기: 상품상세참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 2
+     },
+     "measure": "size",
+     "reason": "description_reference"
+    },
+    {
+     "quote": "중량: 상품상세참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 3
+     },
+     "measure": "weight",
+     "reason": "description_reference"
+    }
+   ],
+   "review": []
+  },
+  "read_at": "2026-11-06T12:32:08Z"
+ },
+ "variants": {
+  "paid": true,
+  "base_price": 1610000,
+  "variants": [],
+  "available": 0,
+  "sold_out": 0,
+  "skipped_paid": 0,
+  "name_mismatches": [],
+  "simple_options": [],
+  "text_options": [],
+  "supplements": []
+ },
+ "package": [
+  {
+   "variant_id": null,
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  }
+ ],
+ "reviews": {
+  "product": {
+   "id": "8978750961",
+   "name": "캘러웨이 엑스 핫 X HOT 스틸 풀세트 남성용 2023 한국캘러웨이골프",
+   "link": "https://smartstore.naver.com/primegolf/products/8978750961"
+  },
+  "summary": {
+   "count": 2,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 2
+   },
+   "text_count": 2,
+   "photo_count": 0,
+   "video_count": 0,
+   "after_use_count": 1,
+   "best_count": 0,
+   "recent": null,
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "최고예요",
+       "count": 2,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "디자인은 어떤가요?",
+     "answers": [
+      {
+       "name": "별로예요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "화면과 같아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 2,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 2,
+       "percent": 100
+      }
+     ]
+    }
+   ],
+   "representative_reviews": null
+  },
+  "mode": "small_source",
+  "count": 2,
+  "scanned": 2,
+  "passes": [
+   {
+    "media": "all",
+    "pages": 1,
+    "total_count": 2,
+    "is_exhausted": true
+   }
+  ],
+  "is_complete": true,
+  "results": [
+   {
+    "id": "4642700862",
+    "score": 5,
+    "text": "배송 빨라서 좋아요. 잘 쓰겠습니다.",
+    "created_at": "2025-01-15T04:20:49Z",
+    "type": "AFTER_USE",
+    "content_type": "TEXT",
+    "option": null,
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "bbo7*****",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "8978750961",
+     "origin_product_id": "8936463458",
+     "name": "캘러웨이 엑스 핫 X HOT 스틸 풀세트 남성용 2023 한국캘러웨이골프"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "4604760386",
+    "score": 5,
+    "text": "빠른 배송 감사합니다",
+    "created_at": "2024-11-22T00:22:45Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": null,
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "bbo7*****",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "8978750961",
+     "origin_product_id": "8936463458",
+     "name": "캘러웨이 엑스 핫 X HOT 스틸 풀세트 남성용 2023 한국캘러웨이골프"
+    },
+    "likes": null,
+    "tier": "small"
+   }
+  ]
+ },
+ "photos": {
+  "store": "fairwardgolf",
+  "total": 2,
+  "files": [
+   {
+    "position": 0,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20230802_17/1690951589834JcKKr_JPEG/36968173670403300_763449384.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20230802_17/1690951589834JcKKr_JPEG/36968173670403300_763449384.jpg",
+    "source_sha256": "83a2aa1bef807ec0dfc61711cd55fba2bc28c9991c104e9088de2ce76c1ffe6e",
+    "source_bytes": 252766,
+    "source_format": "JPEG",
+    "source_width": 1179,
+    "source_height": 1090,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/8978750961/fairwardgolf-8978750961-001-75a5712cf10952c4.webp",
+    "sha256": "75a5712cf10952c4bda628429baf7015a9b6925f035df77820b301da6e0c6e05",
+    "bytes": 77882,
+    "width": 1179,
+    "height": 1090,
+    "quality": 85
+   },
+   {
+    "position": 2,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20230802_53/1690951599095JhJzL_JPEG/17458424203837206_1936556783.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20230802_53/1690951599095JhJzL_JPEG/17458424203837206_1936556783.jpg",
+    "source_sha256": "8cae309ef2f3939894eb5e5a29bc3833b8e770b4ee3d66f99ca870d0acf502e2",
+    "source_bytes": 120877,
+    "source_format": "JPEG",
+    "source_width": 1179,
+    "source_height": 1252,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/8978750961/fairwardgolf-8978750961-003-3db866cfaca9efb6.webp",
+    "sha256": "3db866cfaca9efb67dc75c6b1abd21c0e0acd205002e2d05d32c19c3b9da6738",
+    "bytes": 32638,
+    "width": 1179,
+    "height": 1252,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true,
+  "originals": 2
+ },
+ "review_media": {
+  "store": "fairwardgolf",
+  "files": [],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true
+ }
+}

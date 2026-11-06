@@ -59,7 +59,8 @@ TIMEOUT = 30                    # seconds, connect and each read
 MAX_BYTES = 20 * 1024 * 1024
 RETRIES = 3                     # attempts in all
 RETRY_WAITS = (3, 6)            # seconds before the 2nd and 3rd attempt
-PACE = 2.0                      # seconds between downloads, at least
+PACE = 1.0                      # seconds between downloads, at least (2.0 until 2026-11-05: review photos took up
+                                # to 96 s a product in a 40-product run; still one request at a time)
 CHUNK = 64 * 1024
 
 

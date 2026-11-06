@@ -1,0 +1,966 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:100249211:6999516176",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "title_names_one_variant",
+   "detail": "4종, 스틸"
+  },
+  {
+   "code": "specs_stated_by_variants",
+   "detail": "아이언샤프트소재 스틸: every variant states it"
+  },
+  {
+   "code": "specs_bound_to_variants",
+   "detail": "아이언 구성 #7, 샌드웨지(SW) -> 4종-스틸 샤프트, 4종-카본(S) 샤프트, 4종-카본(R) 샤프트; 풀세트구성 드라이버, 퍼터, 웨지 -> 4종-스틸 샤프트, 4종-카본(S) 샤프트, 4종-카본(R) 샤프트"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "UNIT_QUANTITY_PAID 50000 KRW"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "NOT_APPLICABLE"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/viviga_world/products/6999516176",
+  "channel_no": "100249211",
+  "product_id": "6999516176",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "PGM RIO3 남성용 초보자 골프채 풀세트 4종 스틸 샤프트",
+  "brand_ko": "pgm",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "타입",
+    "values_ko": [
+     "4종-스틸 샤프트",
+     "4종-카본(S) 샤프트",
+     "4종-카본(R) 샤프트",
+     "12종-스틸 샤프트",
+     "12종-카본(S) 샤프트",
+     "12종-카본(R) 샤프트"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"4종-스틸 샤프트\"]",
+    "naver_variant_id": "24611186357",
+    "options_ko": [
+     "4종-스틸 샤프트"
+    ],
+    "price_krw": 125000,
+    "price_usd": "125.00",
+    "sku": "FW-bbc551c82146283741b5cfc9",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"4종-카본(S) 샤프트\"]",
+    "naver_variant_id": "24611186358",
+    "options_ko": [
+     "4종-카본(S) 샤프트"
+    ],
+    "price_krw": 132000,
+    "price_usd": "132.00",
+    "sku": "FW-f880d6836933f922da10966c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"4종-카본(R) 샤프트\"]",
+    "naver_variant_id": "24611186359",
+    "options_ko": [
+     "4종-카본(R) 샤프트"
+    ],
+    "price_krw": 132000,
+    "price_usd": "132.00",
+    "sku": "FW-d1ea6c977f4958bd3c75ad00",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"12종-스틸 샤프트\"]",
+    "naver_variant_id": "24611186360",
+    "options_ko": [
+     "12종-스틸 샤프트"
+    ],
+    "price_krw": 405000,
+    "price_usd": "405.00",
+    "sku": "FW-7ecaa2b49eb279f8ff28dd4d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"12종-카본(S) 샤프트\"]",
+    "naver_variant_id": "24611186361",
+    "options_ko": [
+     "12종-카본(S) 샤프트"
+    ],
+    "price_krw": 429000,
+    "price_usd": "429.00",
+    "sku": "FW-be9187a7d431d042264f90ee",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"12종-카본(R) 샤프트\"]",
+    "naver_variant_id": "24611186362",
+    "options_ko": [
+     "12종-카본(R) 샤프트"
+    ],
+    "price_krw": 429000,
+    "price_usd": "429.00",
+    "sku": "FW-5f3998b8006fff0fe68503d1",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   }
+  ],
+  "pricing": {
+   "base_krw": 125000,
+   "original_krw": 740000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "pgm"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "pgm"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "MTG040"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "10.5도"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#7, 샌드웨지(SW)",
+    "for_ko": [
+     "4종-스틸 샤프트",
+     "4종-카본(S) 샤프트",
+     "4종-카본(R) 샤프트"
+    ]
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2022년형"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "드라이버, 퍼터, 웨지",
+    "for_ko": [
+     "4종-스틸 샤프트",
+     "4종-카본(S) 샤프트",
+     "4종-카본(R) 샤프트"
+    ]
+   },
+   {
+    "label_ko": "퍼터형태",
+    "value_ko": "말렛(반달형)"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 6
+  },
+  "reviews": [
+   {
+    "id": "4701197618",
+    "score": 5,
+    "text_ko": "가격 대비 퀄리티가 괜찮습니다.",
+    "created_at": "2025-04-12T01:40:17Z",
+    "writer": "sn****",
+    "photos": [
+     "collected/50002788-fixtures/images/6999516176/fairwardgolf-review-image-9c0bb09676028590.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4678260935",
+    "score": 5,
+    "text_ko": "해외 배송이지만 빠르고 제품 퀄리티도 좋습니다.",
+    "created_at": "2025-03-10T03:22:12Z",
+    "writer": "sn****",
+    "photos": [
+     "collected/50002788-fixtures/images/6999516176/fairwardgolf-review-image-9c0bb09676028590.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4323364560",
+    "score": 5,
+    "text_ko": "선물로 줬는데 맘에 들어해요",
+    "created_at": "2023-08-31T15:06:04Z",
+    "writer": "love****",
+    "photos": [
+     "collected/50002788-fixtures/images/6999516176/fairwardgolf-review-image-d5e8ab0bd7244e14.webp",
+     "collected/50002788-fixtures/images/6999516176/fairwardgolf-review-image-7ee2a6d13cc7f394.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/6999516176/fairwardgolf-review-avatar-88df82d436932fea.webp",
+    "tier": "small"
+   },
+   {
+    "id": "4302483544",
+    "score": 5,
+    "text_ko": "남친 생일선물로 사줬네요. 잘쳐서 백돌이 탈출해야죠^^",
+    "created_at": "2023-07-30T14:03:06Z",
+    "writer": "love****",
+    "photos": [
+     "collected/50002788-fixtures/images/6999516176/fairwardgolf-review-image-7ee2a6d13cc7f394.webp",
+     "collected/50002788-fixtures/images/6999516176/fairwardgolf-review-image-d5e8ab0bd7244e14.webp",
+     "collected/50002788-fixtures/images/6999516176/fairwardgolf-review-image-2ced497169668e5f.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/6999516176/fairwardgolf-review-avatar-88df82d436932fea.webp",
+    "tier": "small"
+   },
+   {
+    "id": "4156653284",
+    "score": 5,
+    "text_ko": "최고에요 정말좋네요",
+    "created_at": "2022-12-27T22:21:47Z",
+    "writer": "eldr*******",
+    "photos": [],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4122264100",
+    "score": 5,
+    "text_ko": "정말좋네요감사합니다^^~~",
+    "created_at": "2022-11-09T22:24:36Z",
+    "writer": "eldr*******",
+    "photos": [],
+    "avatar": null,
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/6999516176/fairwardgolf-6999516176-001-60a01ec7ca96d9c8.webp",
+    "sha256": "60a01ec7ca96d9c865ff4968e43dddfaa565e832159fb9b6791794f316cdab7a",
+    "width": 510,
+    "height": 510
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/6999516176/fairwardgolf-6999516176-002-de42f42553aa232c.webp",
+    "sha256": "de42f42553aa232cbc6094050f4a000119c2e5e5b79948bbedbd842c8e97da85",
+    "width": 510,
+    "height": 510
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/6999516176/fairwardgolf-6999516176-003-c898afcacfe874bb.webp",
+    "sha256": "c898afcacfe874bb5c8c3465cd0ec26dbb2d6ae4c2a014440ebaac05d373b329",
+    "width": 510,
+    "height": 510
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/6999516176/fairwardgolf-6999516176-004-cda5e541e14bec94.webp",
+    "sha256": "cda5e541e14bec94af91ce930081ec20546db2f021d6da4693cbb5c1f013438c",
+    "width": 510,
+    "height": 510
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/6999516176/fairwardgolf-6999516176-005-cf5e28be4ee1e9b6.webp",
+    "sha256": "cf5e28be4ee1e9b66a5932e2223d884ecc8ef5bc0a5f967f297479daa28d099e",
+    "width": 510,
+    "height": 510
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/6999516176/fairwardgolf-6999516176-006-7766a4d8981e8606.webp",
+    "sha256": "7766a4d8981e8606563f85e941949321666d346dc712169d18f0c22c69fda8c9",
+    "width": 510,
+    "height": 510
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/6999516176/fairwardgolf-6999516176-007-04aac44b9bcd6b8e.webp",
+    "sha256": "04aac44b9bcd6b8eed7df6b28b267ee81aef0c3b308244d48121210f9e7d722f",
+    "width": 510,
+    "height": 510
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/6999516176/fairwardgolf-6999516176-008-5b450e26a36b05cb.webp",
+    "sha256": "5b450e26a36b05cb7ade7940eee326eef5b86015f216993ea8b2197c48d21c72",
+    "width": 510,
+    "height": 510
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/6999516176/fairwardgolf-6999516176-009-d051c0fd1be47eb0.webp",
+    "sha256": "d051c0fd1be47eb0f789502fe429e62dcc6712ddde23afe026aa69bc4e450653",
+    "width": 510,
+    "height": 510
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/6999516176/fairwardgolf-6999516176-010-3f46ae8a153b39e0.webp",
+    "sha256": "3f46ae8a153b39e0ef1a606c8b3d09a2f5a96ab21be4e132ff44c8a5bbba3d27",
+    "width": 510,
+    "height": 510
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "UNIT_QUANTITY_PAID",
+   "base_fee": 50000,
+   "is_overseas": true,
+   "customs_tax_type": "NOT_APPLICABLE",
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "policy_text": "1개마다 부과 / 제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "PGM RIO3 남성용 4종 초보자\n스틸 샤프트 골프채 풀세트\n\nPGM은 중국 Tmall 골프부문\n판매량 1위 브랜드입니다.\n\n2021 중국 티몰 골프 부문\n매출 1위 - PGM\n고퀄리티 가성비 골프 브랜드\n\n☆ 캐디백 증정 ☆\n☆ 헤드 커버 증정 ☆\n\n460cc 대용량 클럽 헤드\n460cc 대용량 클럽 헤드는\n긴 타격 거리와 높은 반동률을 지녀\n초보자 / 프로 모두 쉽게 적응하기 좋습니다\n\n아이언 헤드는 고강도의 높은 반발력을 가진\n스테인리스로 제작되었습니다\n타제품과 달리 경도가 크고\n샷 효과가 좋으며 수명이 깁니다\n\n낮은 무게 중심 배치로 디자인되어\n부드럽고 견고한 타격감을 안정적으로 선사합니다\n\n카본 / 스틸 샤프트\n카본 샤프트는 가볍고 유연하며\n타격 거리가 깁니다\n스틸 샤프트는 정확하고 안정적인\n타격에 적합합니다\n\n우수한 그립감의 손잡이는\n더욱 편안한 골프를 즐기실 수 있도록 해줍니다\n\n실제 샷\n▼\n\n옵션 설명\n\n- 사이즈 설명 -\n우드\n▼\n\n클럽\n번호\nLIE\nLOFT\n헤드무게\n그립무게\n샤프트무게\n길이\n밸런스\nWOOD\n#1\n60\n10.5\n197\n50\n62\n45″\nD1\n#3\n58\n15\n212\n50\n62\n43″\nD1\n#5\n59\n18\n221\n50\n62\n42″\nD1\nHYBRID\n#4H\n59.5\n21\n237\n50\n66\n40″\nD1\n\n아이언\n▼\n\n클럽\n번호\nLIE\nLOFT\n헤드무게\n그립무게\n샤프트무게\n길이\n밸런스\nIRON\n#5\n61\n22\n259\n50\n66\n38″\nD1\n#6\n61.5\n25\n266\n50\n66\n37.5″\nD1\n#7\n62\n28\n272\n50\n66\n37″\nD1\n#8\n62.5\n33\n279\n50\n66\n36.5″\nD1\n#9\n63\n39\n287\n50\n66\n36″\nD1\n#PW\n63.5\n45\n294\n50\n66\n35.5″\nD1\n#52\n64\n52\n302\n50\n100\n35.25″\nD1\n\n퍼터\n▼\n\n클럽\n번호\nLIE\nLOFT\n헤드무게\n그립무게\n샤프트무게\n길이\n밸런스\nPUTTER\n#PT\n72\n3.5\n360\n105\n120\n34″\n/\n\n- 샤프트 설명 -\n4종 스틸 샤프트 / 4종 카본(R) 샤프트\n▼\n\n4종 카본(S) 샤프트 / 12종 스틸 샤프트\n▼\n\n12종 카본(R) 샤프트 / 12종 카본(S) 샤프트\n▼",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20220719_296/1658194314604QXP7o_JPEG/PGM-%EB%B0%B0%EB%84%88.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220418_37/1650245101191bWbBC_JPEG/PGM%EC%9D%B8%EC%A6%9D%EC%84%9C%EC%B5%9C%EC%A2%85(%E6%B7%BB%E5%8A%A0%E6%B0%B4%E5%8D%B0).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_146/1658994105370UyBYD_JPEG/%E8%AF%A6%E6%83%85-16.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_190/1658994104444is7O9_JPEG/%E8%AF%A6%E6%83%85-02.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_32/1658994106286XSxg0_JPEG/%E8%AF%A6%E6%83%85-21.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_247/1658994105158PVJU3_JPEG/%E8%AF%A6%E6%83%85-15.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_190/1658994104393pxwHW_JPEG/%E8%AF%A6%E6%83%85-03.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_236/1658994104379JJGWq_JPEG/%E8%AF%A6%E6%83%85-04.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_246/1658994104393bYM5A_JPEG/%E8%AF%A6%E6%83%85-05.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_177/1658994104435p5Sy3_JPEG/%E8%AF%A6%E6%83%85-07.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_63/1658994104414UxK2F_JPEG/%E8%AF%A6%E6%83%85-08.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_298/1658994104996PX4dE_JPEG/%E8%AF%A6%E6%83%85-09.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_189/1658994105032vImnV_JPEG/%E8%AF%A6%E6%83%85-11.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_123/1658994105090ecCmT_JPEG/%E8%AF%A6%E6%83%85-13.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_288/16589941051103ELLg_JPEG/%E8%AF%A6%E6%83%85-14.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_35/16589941057489sw24_JPEG/%E8%AF%A6%E6%83%85-17.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_258/1658994105889XVsYQ_JPEG/%E8%AF%A6%E6%83%85-18.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_194/1658994105981aQeVk_JPEG/%E8%AF%A6%E6%83%85-19.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_19/1658994105953cflOO_JPEG/%E8%AF%A6%E6%83%85-20.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_167/1658994236791XeNm5_JPEG/SKU-06-MTG040---%E9%92%A2%E6%9D%864%E6%94%AF_%E6%9E%AA%E5%8C%85.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_274/1658994236781oev47_JPEG/SKU-07-%E6%A1%94%E8%89%B2.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_257/1658994299965Xo8TW_JPEG/SKU-05-MTG040%EF%BC%88S%E7%BA%A7%EF%BC%89%E7%A2%B3%E6%9D%864%E6%94%AF_%E6%9E%AA%E5%8C%85.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_218/1658994300014pxnyj_JPEG/SKU-03-MTG040---%E9%92%A2%E6%9D%8612%E6%94%AF_%E7%90%83%E5%8C%85.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_135/1658994332916OFd9T_JPEG/SKU-01-MTG040%EF%BC%88R%E7%BA%A7%EF%BC%89%E7%A2%B3%E6%9D%8612%E6%94%AF_%E7%90%83%E5%8C%85.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220728_240/16589943329229lzm1_JPEG/SKU-02-MTG040%EF%BC%88S%E7%BA%A7%EF%BC%89%E7%A2%B3%E6%9D%8612%E6%94%AF_%E7%90%83%E5%8C%85.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "promo",
+    "text": "현지 공장 직구로 온라인 최저가와\n초고속 배송으로 득템해 보세요:D"
+   },
+   {
+    "rule": "store_claim",
+    "text": "저희 비비가월드는 국내 온라인"
+   },
+   {
+    "rule": "store_claim",
+    "text": "최초 PGM 정식 판매권을 받은 업체입니다."
+   },
+   {
+    "rule": "promo",
+    "text": "정품 인증을 받은 PGM 제품을\n온라인 최저가로 만나보세요:)"
+   },
+   {
+    "rule": "promo",
+    "text": "저렴한 가격에 얼른 득템하세요 :)"
+   },
+   {
+    "rule": "monitor",
+    "text": "*측정 방법과 모니터 사양에 따라 사이즈와\n컬러는 다소 차이가 있을 수 있습니다"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:f38b4dcd55782225",
+   "kind": "title",
+   "ko": "PGM RIO3 남성용 초보자 골프채 풀세트 4종 스틸 샤프트"
+  },
+  {
+   "id": "brand:8a34ad604caff563",
+   "kind": "brand",
+   "ko": "pgm"
+  },
+  {
+   "id": "option_name:2083b6c7cd874f09",
+   "kind": "option_name",
+   "ko": "타입"
+  },
+  {
+   "id": "option_value:5dd539633d7d8d6d",
+   "kind": "option_value",
+   "ko": "4종-스틸 샤프트"
+  },
+  {
+   "id": "option_value:1bdb8f184df7bf1c",
+   "kind": "option_value",
+   "ko": "4종-카본(S) 샤프트"
+  },
+  {
+   "id": "option_value:a85a9cde4e613faa",
+   "kind": "option_value",
+   "ko": "4종-카본(R) 샤프트"
+  },
+  {
+   "id": "option_value:001605ba81e79d4c",
+   "kind": "option_value",
+   "ko": "12종-스틸 샤프트"
+  },
+  {
+   "id": "option_value:f18eac39a579852c",
+   "kind": "option_value",
+   "ko": "12종-카본(S) 샤프트"
+  },
+  {
+   "id": "option_value:1d8b47c6d2a38337",
+   "kind": "option_value",
+   "ko": "12종-카본(R) 샤프트"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:8a34ad604caff563",
+   "kind": "spec_value",
+   "ko": "pgm"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:02ff12cb1d969f73",
+   "kind": "spec_value",
+   "ko": "MTG040"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:de2b6da830b81034",
+   "kind": "spec_value",
+   "ko": "10.5도"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:9be1b4e9163c898e",
+   "kind": "spec_value",
+   "ko": "#7, 샌드웨지(SW)"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:1bb71fabcfb2e7d7",
+   "kind": "spec_value",
+   "ko": "2022년형"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:e369fa5dbc934acd",
+   "kind": "spec_value",
+   "ko": "드라이버, 퍼터, 웨지"
+  },
+  {
+   "id": "spec_label:04c52e5b47f70047",
+   "kind": "spec_label",
+   "ko": "퍼터형태"
+  },
+  {
+   "id": "spec_value:92917baf006633bb",
+   "kind": "spec_value",
+   "ko": "말렛(반달형)"
+  },
+  {
+   "id": "review:e83b2b58a434bb44",
+   "kind": "review",
+   "ko": "가격 대비 퀄리티가 괜찮습니다."
+  },
+  {
+   "id": "review:010478099bfbfee4",
+   "kind": "review",
+   "ko": "해외 배송이지만 빠르고 제품 퀄리티도 좋습니다."
+  },
+  {
+   "id": "review:8eb234db2f765cd7",
+   "kind": "review",
+   "ko": "선물로 줬는데 맘에 들어해요"
+  },
+  {
+   "id": "review:f391daac218febb2",
+   "kind": "review",
+   "ko": "남친 생일선물로 사줬네요. 잘쳐서 백돌이 탈출해야죠^^"
+  },
+  {
+   "id": "review:8b004c5d4382ae65",
+   "kind": "review",
+   "ko": "최고에요 정말좋네요"
+  },
+  {
+   "id": "review:65b6ee8dca0d3fbb",
+   "kind": "review",
+   "ko": "정말좋네요감사합니다^^~~"
+  }
+ ]
+}

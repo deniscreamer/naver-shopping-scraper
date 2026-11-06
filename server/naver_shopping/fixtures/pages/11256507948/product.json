@@ -1,0 +1,371 @@
+{
+ "id": "11256507948",
+ "channelServiceType": "STOREFARM",
+ "channelProductType": "SINGLE",
+ "channelProductSupplyType": "OWNER",
+ "channelProductStatusType": "NORMAL",
+ "channelProductDisplayStatusType": "ON",
+ "category": {
+  "categoryId": "50002788",
+  "categoryName": "풀세트",
+  "category1Id": "50000007",
+  "category2Id": "50000029",
+  "category3Id": "50001102",
+  "category4Id": "50002788",
+  "category1Name": "스포츠/레저",
+  "category2Name": "골프",
+  "category3Name": "골프클럽",
+  "category4Name": "풀세트",
+  "wholeCategoryId": "50000007>50000029>50001102>50002788",
+  "wholeCategoryName": "스포츠/레저>골프>골프클럽>풀세트",
+  "categoryLevel": 4,
+  "lastLevel": true,
+  "sortOrder": 10,
+  "validCategory": true,
+  "receiptIssue": true,
+  "exceptionalCategoryTypes": [
+   "MANUFACTURE_DEFINE_NO",
+   "REGULAR_SUBSCRIPTION",
+   "FREE_RETURN_INSURANCE",
+   "RENTAL_SUBSCRIPTION"
+  ],
+  "pointAccumulationYn": false
+ },
+ "name": "야마모토 쇼군 남성 골프 풀세트 골프채세트(스탠드백 포함) [스틸아이언/12pc]",
+ "productUrl": "https://smartstore.naver.com/main/products/11256507948",
+ "mobileProductUrl": "https://m.smartstore.naver.com/main/products/11256507948",
+ "storeKeepExclusiveProduct": false,
+ "best": false,
+ "orderRequestUsable": false,
+ "channelProductAttributes": [],
+ "productNo": "11203642664",
+ "salePrice": 504000,
+ "dispSalePrice": 504000,
+ "stockQuantity": 181,
+ "saleType": "NEW",
+ "excludeAdminDiscount": false,
+ "payExposure": true,
+ "productStatusType": "SALE",
+ "statusType": "SALE",
+ "authenticationType": "NORMAL",
+ "itselfProductionProductYn": false,
+ "afterServiceInfo": {
+  "afterServiceTelephoneNumber": "********",
+  "afterServiceGuideContent": "********"
+ },
+ "originAreaInfo": {
+  "originAreaType": "IMPORT",
+  "content": "중국산(OEM)",
+  "originAreaCode": "0200037",
+  "wholeOriginAreaName": "수입산:아시아>중국",
+  "importer": "OEM",
+  "plural": false
+ },
+ "optionUsable": true,
+ "options": [
+  {
+   "id": 10411898552,
+   "optionType": "COMBINATION",
+   "groupName": "선택"
+  }
+ ],
+ "optionCombinations": [
+  {
+   "id": 45940242969,
+   "optionName1": "드라이버(S)+우드+하이브리드/SR",
+   "stockQuantity": 90,
+   "price": 0,
+   "regOrder": 1,
+   "registerDate": "2024-12-17T06:32:45.823+00:00"
+  },
+  {
+   "id": 45940242968,
+   "optionName1": "드라이버+우드+하이브리드/SR",
+   "stockQuantity": 91,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2024-12-17T06:32:45.822+00:00"
+  }
+ ],
+ "optionStandards": [],
+ "supplementProductUsable": false,
+ "supplementProducts": [],
+ "customMadeInfo": {
+  "customMade": false
+ },
+ "manufactureDate": "2024-10-20T15:00:00.000+00:00",
+ "taxType": "TAX",
+ "certification": false,
+ "certificationTargetExcludeContent": {
+  "kcCertifiedProductExclusionYn": true,
+  "kcCertifiedProductExclusionType": "TRUE"
+ },
+ "minorPurchasable": true,
+ "productInfoProvidedNoticeView": {
+  "basic": {
+   "품명 / 모델명": "야마모토 쇼군(SHOGUN) 남성 풀세트 / 쇼군(SHOGUN)",
+   "KC 인증정보": "상품상세참조",
+   "크기": "상품상세참조",
+   "중량": "상품상세참조",
+   "색상": "상품상세참조",
+   "재질": "상품상세참조",
+   "제품구성": "상품상세참조",
+   "동일 모델의 출시연월": "2021.12",
+   "제조자(사)": "펜타곤 골프 코리아",
+   "제조국": "중국산(OEM)",
+   "상품별 세부사양": "상품상세참조",
+   "품질보증기준": "관련법 및 소비자 분쟁 해결 규정에 따름",
+   "A/S 책임자와 전화번호": "********"
+  },
+  "additional": {
+   "재화등의 배송방법에 관한 정보": "택배",
+   "주문 이후 예상되는 배송기간": "대금 지급일로부터 3일 이내에 발송",
+   "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보": "상품상세 참조",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보": "편도 7000원 (최초 배송비 무료인 경우 14000원 부과)",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거": "상품상세 참조",
+   "재화등의 교환·반품·보증 조건 및 품질보증기준": "상품상세 참조",
+   "재화등의 A/S 관련 전화번호": "********",
+   "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차": "상품상세 참조",
+   "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항": "상품상세 참조",
+   "거래에 관한 약관의 내용 또는 확인할 수 있는 방법": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다."
+  }
+ },
+ "productDeliveryInfo": {
+  "deliveryFeeType": "FREE",
+  "deliveryMethodTypes": [
+   "DELIVERY"
+  ],
+  "baseFee": 0,
+  "deliveryAreaType": "AREA_3",
+  "area2ExtraFee": 5000,
+  "area3ExtraFee": 3000,
+  "installationFee": false,
+  "deliveryFeePolicyText": "제주 추가 5,000원, 제주 외 도서지역 추가 3,000원",
+  "deliveryAttributeType": "NORMAL",
+  "todayDelivery": false,
+  "deliveryCompany": {
+   "id": "KGB",
+   "name": "로젠택배"
+  }
+ },
+ "claimDeliveryInfo": {
+  "returnDeliveryCompanyPriority": "PRIMARY",
+  "deliveryCompanyName": "로젠택배",
+  "deliveryCompanyCode": "KGB",
+  "naverPayAppointment": false,
+  "returnDeliveryFee": 7000,
+  "exchangeDeliveryFee": 14000,
+  "shippingAddressId": 106167683,
+  "returnAddressId": 106167682,
+  "shippingAddress": "경기도 수원시 팔달구 팔달로 141 2층 202호 (우 : 16439) ",
+  "returnAddress": "경기도 수원시 팔달구 팔달로 141 2층 202호 (우 : 16439) ",
+  "overseasShipping": false,
+  "freeReturnInsurance": false
+ },
+ "isCultureCostIncomeDeduction": false,
+ "isRestrictCart": false,
+ "naverGuaranteed": false,
+ "newShoppingExposureYn": true,
+ "benefitsView": {
+  "discountedSalePrice": 504000,
+  "dispDiscountedSalePrice": 504000,
+  "sellerImmediateDiscountAmount": 0,
+  "managerImmediateDiscountAmount": 0,
+  "specialDiscountAmount": {},
+  "discountedRatio": 0,
+  "dispDiscountedRatio": 0,
+  "sellerPurchasePoint": 0,
+  "sellerCustomerManagementPoint": 0,
+  "managerPurchasePoint": 5040,
+  "managerPurchaseExtraPoint": 0,
+  "managerPaymoneyAccumulatePoint": 7560,
+  "managerBankbookAccumulatePoint": 2520,
+  "managerArrivalGuaranteePoint": 0,
+  "managerMembershipArrivalGuaranteePoint": 0,
+  "generalPurchaseReviewPoint": 0,
+  "premiumPurchaseReviewPoint": 0,
+  "managerGeneralPurchaseReviewPoint": 50,
+  "managerPremiumPurchaseReviewPoint": 150,
+  "textReviewPoint": 0,
+  "photoVideoReviewPoint": 0,
+  "afterUseTextReviewPoint": 0,
+  "afterUsePhotoVideoReviewPoint": 0,
+  "storeMemberReviewPoint": 0,
+  "managerTextReviewPoint": 50,
+  "managerPhotoVideoReviewPoint": 150,
+  "managerAfterUseTextReviewPoint": 50,
+  "managerAfterUsePhotoVideoReviewPoint": 150,
+  "givePresent": true
+ },
+ "sellerDeliveryLeadTimes": [
+  {
+   "rangeNumberText": "1",
+   "rangeText": "일 이내",
+   "leadTimeCount": 3,
+   "leadTimePercent": 12
+  },
+  {
+   "rangeNumberText": "2",
+   "rangeText": "일 이내",
+   "leadTimeCount": 21,
+   "leadTimePercent": 84
+  },
+  {
+   "rangeNumberText": "3",
+   "rangeText": "일 이내",
+   "leadTimeCount": 1,
+   "leadTimePercent": 4
+  },
+  {
+   "rangeNumberText": "4",
+   "rangeText": "일 이상",
+   "leadTimeCount": 0,
+   "leadTimePercent": 0
+  }
+ ],
+ "averageDeliveryLeadTime": {
+  "productAverageDeliveryLeadTime": 0,
+  "sellerAverageDeliveryLeadTime": 1.92
+ },
+ "sellerDailyDeliveryLeadTimes": {
+  "leadTimeCount": [
+   0,
+   3,
+   21,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "leadTimeViewType": "NORMAL_DELIVERY"
+ },
+ "detailContents": {
+  "detailContentText": "야마모토 쇼군 풀세트 12PCS 구성 스탠드 백 포함 안녕하세요. 제이디스포츠:)입니다. 야마모토 쇼군 풀세트는 드라이버를 시작으로 우드 하이브리드, 스틸 8아이언, 블레이드 퍼터 그리고 스탠드 백으로 구성된 극가성비 풀세트입니다. 쇼군 드라이버는 460CC 체적으로 부드러운 타구감과 경쾌한 타구음을 경험해 보실 수 있으며 비거리 향상의 많은 도움을 받을 수 있습니다. * 추가적으로 궁금하신 내용은 네이버 톡톡 또는 유선 전화로 안내해 드리겠습니다:) ●반품 및 교환 관련 안내 당사 특성상 네이버페이 자동수거 요청이 불가합니다. 반품 및 교환을 원하신다면 네이버 톡톡 또는 유선 전화로 문의하시기 바라며 상담원 안내 및 당사와 계약된 택배사가 방문하여 회수하도록 처리하겠습니다:) ●반품 시 주의사항 해당 상품에 관련하여 클럽 헤드 비닐을 벗기시거나 시타 후에는 반품이 불가합니다. 반품 시 기존에 포장되어 있는 에어캡을 반드시 재포장해 주시기 바랍니다:) -제이디스포츠-",
+  "excessDetailContentText": false,
+  "editorType": "SEONE"
+ },
+ "useExternalStock": false,
+ "dispName": "야마모토 쇼군 남성 골프 풀세트 골프채세트(스탠드백 포함) [스틸아이언/12pc]",
+ "adultAuthorizationType": "NOT_LOGIN",
+ "authorizationDisplay": "NORMAL",
+ "galleryImages": [
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20250522_181/1747887628514YznBP_JPEG/82020401631508992_696156235.jpg",
+   "width": 800,
+   "height": 800,
+   "imageType": "REPRESENTATIVE"
+  }
+ ],
+ "soldout": false,
+ "viewAttributes": {
+  "상품상태": "신상품",
+  "상품번호": "11256507948",
+  "제조사": "펜타곤 골프 코리아",
+  "브랜드": "야마모토",
+  "모델명": "야마모토 쇼군(SHOGUN) 남성 풀세트(스탠드백 포함) [스틸아이언/12pc]",
+  "원산지": "중국산(OEM)",
+  "제조일자": "2024.10.21."
+ },
+ "additionalAttributes": {
+  "영수증발급": "신용카드전표, 현금영수증발급",
+  "A/S 안내": [
+   "********",
+   "********"
+  ]
+ },
+ "detailAttributes": {
+  "유틸리티/하이브리드 로프트각": "21도",
+  "페어웨이 로프트각": "15도",
+  "드라이버 로프트각": "10.5도",
+  "아이언 구성": "#5, #6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)",
+  "종류": "풀세트",
+  "성별": "남성용",
+  "사용방향": "오른손용",
+  "총클럽개수": "12개",
+  "출시": "2021년형",
+  "풀세트구성": "드라이버, 유틸리티, 퍼터, 8아이언세트, 페어웨이",
+  "아이언샤프트소재": "스틸",
+  "아이언개수": "8개",
+  "퍼터형태": "블레이드(일자형)",
+  "골프백포함여부": "스탠드백"
+ },
+ "eCouponCategory": false,
+ "cultureCategory": false,
+ "textOptions": [],
+ "simpleOptions": [],
+ "combinationOptions": [
+  {
+   "groupName": "선택",
+   "options": [
+    {
+     "id": 45940242969,
+     "optionName1": "드라이버(S)+우드+하이브리드/SR",
+     "stockQuantity": 90,
+     "price": 0,
+     "regOrder": 1,
+     "registerDate": "2024-12-17T06:32:45.823+00:00"
+    },
+    {
+     "id": 45940242968,
+     "optionName1": "드라이버+우드+하이브리드/SR",
+     "stockQuantity": 91,
+     "price": 0,
+     "regOrder": 0,
+     "registerDate": "2024-12-17T06:32:45.822+00:00"
+    }
+   ],
+   "checkedName": null,
+   "checkedIds": null,
+   "price": 0,
+   "isLastDepth": true
+  }
+ ],
+ "standardOptions": [],
+ "standardCombinations": [
+  {
+   "id": 45940242969,
+   "optionName1": "드라이버(S)+우드+하이브리드/SR",
+   "stockQuantity": 90,
+   "price": 0,
+   "regOrder": 1,
+   "registerDate": "2024-12-17T06:32:45.823+00:00",
+   "title": "_드라이버(S)+우드+하이브리드/SR____"
+  },
+  {
+   "id": 45940242968,
+   "optionName1": "드라이버+우드+하이브리드/SR",
+   "stockQuantity": 91,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2024-12-17T06:32:45.822+00:00",
+   "title": "_드라이버+우드+하이브리드/SR____"
+  }
+ ],
+ "supplements": [],
+ "deliveryText": "제주 추가 5,000원, 제주 외 도서지역 추가 3,000원",
+ "deliveryMethodType": {
+  "code": 1,
+  "name": "택배",
+  "description": "택배",
+  "etc": null,
+  "naverPayCode": "DELIVERY"
+ },
+ "discountedSalePrice": 504000,
+ "mobileDiscountRatio": 0,
+ "derived": {
+  "productType": "DEFAULT"
+ },
+ "hopeDelivery": null,
+ "commentCount": 4,
+ "isPayMember": false,
+ "arrivalGuarantee": false,
+ "groupId": null,
+ "groupEpId": null,
+ "simpleProductAffiliateYn": false,
+ "disableAdditionalApi": false
+}

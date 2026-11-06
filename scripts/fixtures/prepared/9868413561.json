@@ -1,0 +1,457 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:102229173:9868413561",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "specs_bound_to_variants",
+   "detail": "아이언샤프트소재 그라파이트/카본 -> 여성용"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "옵션"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/gucci294/products/9868413561",
+  "channel_no": "102229173",
+  "product_id": "9868413561",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "일본 Wistella 위스텔라 여성용 남성용 골프채풀세트",
+  "brand_ko": "Wistella",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   },
+   {
+    "leaf": "womens-complete-sets",
+    "product_type": "Women’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:womens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "옵션",
+    "values_ko": [
+     "여성용",
+     "남성용 SR스틸"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"여성용\"]",
+    "naver_variant_id": "39478087898",
+    "options_ko": [
+     "여성용"
+    ],
+    "price_krw": 360000,
+    "price_usd": "360.00",
+    "sku": "FW-fe440c4b9d4cd0e1144d7b4b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"남성용 SR스틸\"]",
+    "naver_variant_id": "39478087899",
+    "options_ko": [
+     "남성용 SR스틸"
+    ],
+    "price_krw": 360000,
+    "price_usd": "360.00",
+    "sku": "FW-b31e1f22b0d577c7079def68",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   }
+  ],
+  "pricing": {
+   "base_krw": 360000,
+   "original_krw": 600000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "Wistella"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "Wistella"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "Wistella 풀세트"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "13.5도"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남녀공용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "11개"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2026년형"
+   },
+   {
+    "label_ko": "아이언샤프트소재",
+    "value_ko": "그라파이트/카본",
+    "for_ko": [
+     "여성용"
+    ]
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.0,
+   "count": 1
+  },
+  "reviews": [
+   {
+    "id": "5079631482",
+    "score": 4,
+    "text_ko": "골프에 입문했어요. 열심히 연습 할게요",
+    "created_at": "2026-10-08T06:40:29Z",
+    "writer": "guem****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/9868413561/fairwardgolf-9868413561-001-6959f5c33f12eb77.webp",
+    "sha256": "6959f5c33f12eb778f40abf632f6974cd8e64128e6e42ac3029f3da062c94a71",
+    "width": 600,
+    "height": 600
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/9868413561/fairwardgolf-9868413561-002-ca188c05bfe81a44.webp",
+    "sha256": "ca188c05bfe81a449fb880a7eefd1eb7853da21fdef270a1ad650eecdf352dbf",
+    "width": 344,
+    "height": 344
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "policy_text": null,
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20240308_125/1709890935286115KY_JPEG/wistella-w.jpeg?type=w848",
+   "https://shop-phinf.pstatic.net/20240308_195/17098909413327MjMw_JPEG/wistella-m.jpeg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20240611_210/1718076985014sGV7J_PNG/%EB%B3%B8_%EC%A0%9C%ED%92%88%EC%9D%80_%EA%B5%AD%EB%82%B4_%EC%A0%95%EC%88%98%EC%9E%85_%EC%A0%9C%ED%92%88%EC%9C%BC%EB%A1%9C_%EA%B5%AD%EB%82%B4_%EC%9D%B5%EC%9D%BC%EB%B0%9C%EC%86%A1%EC%9D%B4%EB%A9%B0_1%EB%85%84_%EB%AC%B4%EC%83%81_AS_%EA%B0%80%EB%8A%A5%ED%95%A9%EB%8B%88%EB%8B%A4..png?type=w848"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:1aaa9d256cf4f840",
+   "kind": "title",
+   "ko": "일본 Wistella 위스텔라 여성용 남성용 골프채풀세트"
+  },
+  {
+   "id": "brand:65f3946b7d675baf",
+   "kind": "brand",
+   "ko": "Wistella"
+  },
+  {
+   "id": "option_name:cb076d9796f531e2",
+   "kind": "option_name",
+   "ko": "옵션"
+  },
+  {
+   "id": "option_value:ff90d7cd3c519c1f",
+   "kind": "option_value",
+   "ko": "여성용"
+  },
+  {
+   "id": "option_value:0509ac60ede6696b",
+   "kind": "option_value",
+   "ko": "남성용 SR스틸"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:65f3946b7d675baf",
+   "kind": "spec_value",
+   "ko": "Wistella"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:2d75bebda07cd136",
+   "kind": "spec_value",
+   "ko": "Wistella 풀세트"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:eb4d67c2a62c96ab",
+   "kind": "spec_value",
+   "ko": "13.5도"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:e012efbcc2aa417e",
+   "kind": "spec_value",
+   "ko": "남녀공용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:5b1bc698007c9da7",
+   "kind": "spec_value",
+   "ko": "11개"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:f36c488b8e796503",
+   "kind": "spec_value",
+   "ko": "2026년형"
+  },
+  {
+   "id": "spec_label:5a12089f44ae3f65",
+   "kind": "spec_label",
+   "ko": "아이언샤프트소재"
+  },
+  {
+   "id": "spec_value:ef00cceb8d6a2241",
+   "kind": "spec_value",
+   "ko": "그라파이트/카본"
+  },
+  {
+   "id": "review:1d39acfff9bc10a9",
+   "kind": "review",
+   "ko": "골프에 입문했어요. 열심히 연습 할게요"
+  }
+ ]
+}

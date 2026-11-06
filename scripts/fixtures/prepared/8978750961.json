@@ -1,0 +1,328 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:100112239:8978750961",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "description_mentions_gifts",
+   "detail": "사은품, 증정"
+  },
+  {
+   "code": "description_all_boilerplate",
+   "detail": "1 dropped"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/primegolf/products/8978750961",
+  "channel_no": "100112239",
+  "product_id": "8978750961",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "캘러웨이 엑스 핫 X HOT 스틸 풀세트 남성용 2023 한국캘러웨이골프",
+  "brand_ko": "캘러웨이",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "8978750961",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 1610000,
+    "price_usd": "1610.00",
+    "sku": "FW-b2066beb9cf859bc99711f93",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   }
+  ],
+  "pricing": {
+   "base_krw": 1610000,
+   "original_krw": 1610000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "캘러웨이 2023 X Hot 풀세트 남성용"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2023년형"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 2
+  },
+  "reviews": [
+   {
+    "id": "4642700862",
+    "score": 5,
+    "text_ko": "배송 빨라서 좋아요. 잘 쓰겠습니다.",
+    "created_at": "2025-01-15T04:20:49Z",
+    "writer": "bbo7*****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4604760386",
+    "score": 5,
+    "text_ko": "빠른 배송 감사합니다",
+    "created_at": "2024-11-22T00:22:45Z",
+    "writer": "bbo7*****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/8978750961/fairwardgolf-8978750961-001-75a5712cf10952c4.webp",
+    "sha256": "75a5712cf10952c4bda628429baf7015a9b6925f035df77820b301da6e0c6e05",
+    "width": 1179,
+    "height": 1090
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/8978750961/fairwardgolf-8978750961-003-3db866cfaca9efb6.webp",
+    "sha256": "3db866cfaca9efb67dc75c6b1abd21c0e0acd205002e2d05d32c19c3b9da6738",
+    "width": 1179,
+    "height": 1252
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.3333334,
+    "product_average_days": null,
+    "today_cutoff": "15:00",
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 100,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20230802_268/1690952278466GCLaC_JPEG/766DED9E-1E78-47B4-819A-1088D914E39A.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230802_254/1690952278605Jxlrr_JPEG/FEF42630-AFAC-4E8E-ABE1-2650806B0E10.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230802_231/16909522895914FKrF_JPEG/E0044AAF-F0F5-4278-8A8F-61C0EAB3664B.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230802_101/16909523531037oOBL_JPEG/CE62649C-4B79-46CB-AE49-8618E5BE24B0.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230802_214/1690952353145wWtb5_JPEG/2C1F2EF2-2CBB-43F9-96FD-0265D3B06A2D.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "gift",
+    "text": "사은품 최다 증정(소진시 대체품)\n볼빅마블모자 랜덤1,파우치 랜덤1,볼빅 비비드우드티,캘러웨이 아이스백,캘러웨이 디봇툴 겸용 퍼터커버 홀더,테일러메이드 골프공 1박스"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:054f3bf065cdaec4",
+   "kind": "title",
+   "ko": "캘러웨이 엑스 핫 X HOT 스틸 풀세트 남성용 2023 한국캘러웨이골프"
+  },
+  {
+   "id": "brand:752b9a8b36b892c4",
+   "kind": "brand",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:752b9a8b36b892c4",
+   "kind": "spec_value",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:6a14ded24e546a64",
+   "kind": "spec_value",
+   "ko": "캘러웨이 2023 X Hot 풀세트 남성용"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:bed47e98ee4bbea0",
+   "kind": "spec_value",
+   "ko": "2023년형"
+  },
+  {
+   "id": "review:faace47703c166e3",
+   "kind": "review",
+   "ko": "배송 빨라서 좋아요. 잘 쓰겠습니다."
+  },
+  {
+   "id": "review:3e08913779791f34",
+   "kind": "review",
+   "ko": "빠른 배송 감사합니다"
+  }
+ ]
+}

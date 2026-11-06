@@ -1,0 +1,498 @@
+{
+ "id": "6630856593",
+ "channelServiceType": "STOREFARM",
+ "channelProductType": "SINGLE",
+ "channelProductSupplyType": "OWNER",
+ "channelProductStatusType": "NORMAL",
+ "channelProductDisplayStatusType": "ON",
+ "category": {
+  "categoryId": "50002788",
+  "categoryName": "풀세트",
+  "category1Id": "50000007",
+  "category2Id": "50000029",
+  "category3Id": "50001102",
+  "category4Id": "50002788",
+  "category1Name": "스포츠/레저",
+  "category2Name": "골프",
+  "category3Name": "골프클럽",
+  "category4Name": "풀세트",
+  "wholeCategoryId": "50000007>50000029>50001102>50002788",
+  "wholeCategoryName": "스포츠/레저>골프>골프클럽>풀세트",
+  "categoryLevel": 4,
+  "lastLevel": true,
+  "sortOrder": 10,
+  "validCategory": true,
+  "receiptIssue": true,
+  "exceptionalCategoryTypes": [
+   "RENTAL_SUBSCRIPTION",
+   "MANUFACTURE_DEFINE_NO",
+   "FREE_RETURN_INSURANCE",
+   "REGULAR_SUBSCRIPTION"
+  ],
+  "pointAccumulationYn": false
+ },
+ "name": "PGM 좌타 골프채풀세트 남성 왼손 골프채세트",
+ "productUrl": "https://smartstore.naver.com/main/products/6630856593",
+ "mobileProductUrl": "https://m.smartstore.naver.com/main/products/6630856593",
+ "storeKeepExclusiveProduct": false,
+ "best": false,
+ "orderRequestUsable": false,
+ "channelProductAttributes": [],
+ "productNo": "6599248265",
+ "salePrice": 1458000,
+ "dispSalePrice": 1458000,
+ "stockQuantity": 5980,
+ "saleType": "NEW",
+ "excludeAdminDiscount": false,
+ "payExposure": true,
+ "productStatusType": "SALE",
+ "statusType": "SALE",
+ "authenticationType": "NORMAL",
+ "itselfProductionProductYn": false,
+ "afterServiceInfo": {
+  "afterServiceTelephoneNumber": "********",
+  "afterServiceGuideContent": "********"
+ },
+ "originAreaInfo": {
+  "originAreaType": "IMPORT",
+  "content": "중국산(비비가월드)",
+  "originAreaCode": "0200037",
+  "wholeOriginAreaName": "수입산:아시아>중국",
+  "importer": "비비가월드",
+  "plural": false
+ },
+ "sellerCodeInfo": {
+  "sellerManagementCode": "20210706PGM245"
+ },
+ "optionUsable": true,
+ "options": [
+  {
+   "id": 9012754711,
+   "optionType": "COMBINATION",
+   "groupName": "타입"
+  }
+ ],
+ "optionCombinations": [
+  {
+   "id": 39671831483,
+   "optionName1": "4스틸 + 골프백",
+   "stockQuantity": 990,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2024-03-15T02:36:34.134+00:00"
+  },
+  {
+   "id": 39671831485,
+   "optionName1": "4카본 + 골프백",
+   "stockQuantity": 992,
+   "price": 11000,
+   "regOrder": 1,
+   "registerDate": "2024-03-15T02:36:34.135+00:00"
+  },
+  {
+   "id": 39671831486,
+   "optionName1": "12스틸 + 골프백",
+   "stockQuantity": 998,
+   "price": 336000,
+   "regOrder": 2,
+   "registerDate": "2024-03-15T02:36:34.136+00:00"
+  },
+  {
+   "id": 39671831488,
+   "optionName1": "12카본 + 골프백",
+   "stockQuantity": 1000,
+   "price": 377400,
+   "regOrder": 3,
+   "registerDate": "2024-03-15T02:36:34.137+00:00"
+  },
+  {
+   "id": 39671831489,
+   "optionName1": "12스틸 + 골프백 (신축성)",
+   "stockQuantity": 1000,
+   "price": 420800,
+   "regOrder": 4,
+   "registerDate": "2024-03-15T02:36:34.138+00:00"
+  },
+  {
+   "id": 39671831490,
+   "optionName1": "12카본 + 골프백 (신축성)",
+   "stockQuantity": 1000,
+   "price": 464200,
+   "regOrder": 5,
+   "registerDate": "2024-03-15T02:36:34.139+00:00"
+  }
+ ],
+ "optionStandards": [],
+ "supplementProductUsable": false,
+ "supplementProducts": [],
+ "customMadeInfo": {
+  "customMade": false
+ },
+ "taxType": "TAX",
+ "customsTaxType": "NOT_APPLICABLE",
+ "certification": false,
+ "certificationTargetExcludeContent": {
+  "kcCertifiedProductExclusionYn": true,
+  "kcCertifiedProductExclusionType": "KC_EXEMPTION_OBJECT",
+  "kcExemptionType": "OVERSEAS"
+ },
+ "minorPurchasable": true,
+ "productInfoProvidedNoticeView": {
+  "basic": {
+   "품명 / 모델명": "PGM 좌타 골프채풀세트 남성 왼손 골프채세트 / 상품상세참조",
+   "KC 인증정보": "상품상세참조",
+   "크기": "상품상세참조",
+   "중량": "약11.5kg / 4.7kg",
+   "색상": "실버+블루",
+   "재질": "카본 + 스틸 + 티타늄 합금",
+   "제품구성": "상품상세참조",
+   "동일 모델의 출시연월": "상품상세참조",
+   "제조자(사)": "비비가월드 협력사",
+   "제조국": "중국산(비비가월드)",
+   "상품별 세부사양": "상품상세참조",
+   "품질보증기준": "상품상세참조",
+   "A/S 책임자와 전화번호": "********"
+  },
+  "additional": {
+   "재화등의 배송방법에 관한 정보": "택배",
+   "주문 이후 예상되는 배송기간": "대금 지급일로부터 3일 이내에 발송",
+   "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보": "상품상세 참조",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보": "편도 80000원 (최초 배송비 무료인 경우 160000원 부과)",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거": "상품상세 참조",
+   "재화등의 교환·반품·보증 조건 및 품질보증기준": "상품상세 참조",
+   "재화등의 A/S 관련 전화번호": "********",
+   "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차": "상품상세 참조",
+   "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항": "상품상세 참조",
+   "거래에 관한 약관의 내용 또는 확인할 수 있는 방법": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다."
+  }
+ },
+ "productDeliveryInfo": {
+  "deliveryFeeType": "FREE",
+  "deliveryMethodTypes": [
+   "DELIVERY"
+  ],
+  "baseFee": 0,
+  "deliveryAreaType": "AREA_3",
+  "area2ExtraFee": 5000,
+  "area3ExtraFee": 10000,
+  "installationFee": false,
+  "deliveryFeePolicyText": "제주 추가 5,000원, 제주 외 도서지역 추가 10,000원",
+  "deliveryAttributeType": "NORMAL",
+  "todayDelivery": false,
+  "deliveryCompany": {
+   "id": "HANJIN",
+   "name": "한진택배"
+  }
+ },
+ "claimDeliveryInfo": {
+  "returnDeliveryCompanyPriority": "PRIMARY",
+  "deliveryCompanyName": "한진택배",
+  "deliveryCompanyCode": "HANJIN",
+  "naverPayAppointment": true,
+  "returnDeliveryFee": 80000,
+  "exchangeDeliveryFee": 160000,
+  "shippingAddressId": 100644139,
+  "returnAddressId": 101005066,
+  "shippingAddress": "264200 jinlinglu 138-8, huancuiqu, weihai, shandong, China",
+  "returnAddress": "264200 jinlinglu, huancuiqu, weihai, shandong, China",
+  "overseasShipping": true,
+  "individualCustomUniqueCodeUsable": true,
+  "freeReturnInsurance": false
+ },
+ "isCultureCostIncomeDeduction": false,
+ "isRestrictCart": false,
+ "naverGuaranteed": false,
+ "newShoppingExposureYn": true,
+ "benefitsView": {
+  "discountedSalePrice": 198000,
+  "dispDiscountedSalePrice": 198000,
+  "sellerImmediateDiscountAmount": 1260000,
+  "managerImmediateDiscountAmount": 0,
+  "specialDiscountAmount": {},
+  "discountedRatio": 86,
+  "dispDiscountedRatio": 86,
+  "sellerPurchasePoint": 0,
+  "sellerCustomerManagementPoint": 0,
+  "managerPurchasePoint": 1980,
+  "managerPurchaseExtraPoint": 0,
+  "managerPaymoneyAccumulatePoint": 2970,
+  "managerBankbookAccumulatePoint": 990,
+  "managerArrivalGuaranteePoint": 0,
+  "managerMembershipArrivalGuaranteePoint": 0,
+  "generalPurchaseReviewPoint": 300,
+  "premiumPurchaseReviewPoint": 500,
+  "managerGeneralPurchaseReviewPoint": 50,
+  "managerPremiumPurchaseReviewPoint": 150,
+  "textReviewPoint": 300,
+  "photoVideoReviewPoint": 500,
+  "afterUseTextReviewPoint": 300,
+  "afterUsePhotoVideoReviewPoint": 500,
+  "storeMemberReviewPoint": 500,
+  "managerTextReviewPoint": 50,
+  "managerPhotoVideoReviewPoint": 150,
+  "managerAfterUseTextReviewPoint": 50,
+  "managerAfterUsePhotoVideoReviewPoint": 150,
+  "givePresent": false
+ },
+ "averageDeliveryLeadTime": {
+  "productAverageDeliveryLeadTime": 0,
+  "sellerAverageDeliveryLeadTime": 0
+ },
+ "detailContents": {
+  "detailContentText": "PGM 남성용 좌타 1번 우드 연습용 골프 드라이브 현지 공장 직구로 온라인 최저가와 초고속 배송으로 득템해 보세요:D PGM은 중국 Tmall 골프 부문 판매량 1위 브랜드입니다. 저희 비비가월드는 국내 온라인 최초 PGM 정식 판매권을 받은 업체입니다. 정품 인증을 받은 PGM 제품을 온라인 최저가로 만나보세요:) *측정 방법과 모니터 사양에 따라 사이즈와 컬러는 다소 차이가 있을 수 있습니다 - 세트 설명 - 4스틸+골프백 / 4카본+골프백 ▼ 12스틸+골프백 / 12카본+골프백 ▼ 12스틸+골프백(신축성) / 12카본+골프백(신축성) ▼",
+  "excessDetailContentText": false,
+  "editorType": "SEONE"
+ },
+ "useExternalStock": false,
+ "dispName": "PGM 좌타 골프채풀세트 남성 왼손 골프채세트",
+ "adultAuthorizationType": "NOT_LOGIN",
+ "authorizationDisplay": "NORMAL",
+ "galleryImages": [
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20240315_229/1710468900309L6e8q_JPEG/37771584194521204_1160548847.jpeg",
+   "width": 500,
+   "height": 500,
+   "imageType": "REPRESENTATIVE"
+  },
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20230421_132/1682048246065foR2E_JPEG/7136253938568800_1244164067.jpg",
+   "width": 510,
+   "height": 510,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 2,
+   "url": "https://shop-phinf.pstatic.net/20220420_238/1650424166731SKYvK_JPEG/51560001566576476_1967553152.jpg",
+   "width": 510,
+   "height": 510,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 3,
+   "url": "https://shop-phinf.pstatic.net/20220420_22/16504241669006AIHw_JPEG/51560001734847831_1522280656.jpg",
+   "width": 510,
+   "height": 510,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 4,
+   "url": "https://shop-phinf.pstatic.net/20220420_98/1650424167035RMFTP_JPEG/51560001868752455_576055972.jpg",
+   "width": 510,
+   "height": 510,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 5,
+   "url": "https://shop-phinf.pstatic.net/20220420_19/1650424167214fPMVe_JPEG/51560002046677999_70372732.jpg",
+   "width": 510,
+   "height": 510,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 6,
+   "url": "https://shop-phinf.pstatic.net/20220420_100/16504241683820owlr_JPEG/51560002429417397_842390646.jpg",
+   "width": 510,
+   "height": 510,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 7,
+   "url": "https://shop-phinf.pstatic.net/20240315_231/171046892566358rhz_JPEG/37771609536112297_712788409.jpg",
+   "width": 800,
+   "height": 800,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 8,
+   "url": "https://shop-phinf.pstatic.net/20240315_86/1710468926026MTRex_JPEG/37771609903569333_94511599.jpg",
+   "width": 800,
+   "height": 800,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 9,
+   "url": "https://shop-phinf.pstatic.net/20240315_215/1710468926322RJTi4_JPEG/37771610200370248_886522616.jpg",
+   "width": 800,
+   "height": 800,
+   "imageType": "OPTIONAL"
+  }
+ ],
+ "soldout": false,
+ "viewAttributes": {
+  "상품상태": "신상품",
+  "상품번호": "6630856593",
+  "제조사": "협력사",
+  "브랜드": "피지엠",
+  "원산지": "중국산(비비가월드)"
+ },
+ "additionalAttributes": {
+  "영수증발급": "신용카드전표, 현금영수증발급",
+  "A/S 안내": [
+   "********",
+   "********"
+  ]
+ },
+ "detailAttributes": {
+  "드라이버 로프트각": "10.5도",
+  "아이언 구성": "#5, #6, #7, #8, #9, 샌드웨지(SW), 피칭웨지(PW)",
+  "종류": "풀세트",
+  "성별": "남성용",
+  "사용방향": "왼손용",
+  "총클럽개수": "12개",
+  "출시": "2022년형",
+  "풀세트구성": "드라이버, 7아이언세트, 퍼터, 페어웨이",
+  "아이언샤프트소재": "그라파이트/카본",
+  "아이언개수": "7개",
+  "퍼터형태": "블레이드(일자형)",
+  "골프백포함여부": "캐디백"
+ },
+ "eCouponCategory": false,
+ "cultureCategory": false,
+ "textOptions": [],
+ "simpleOptions": [],
+ "combinationOptions": [
+  {
+   "groupName": "타입",
+   "options": [
+    {
+     "id": 39671831483,
+     "optionName1": "4스틸 + 골프백",
+     "stockQuantity": 990,
+     "price": 0,
+     "regOrder": 0,
+     "registerDate": "2024-03-15T02:36:34.134+00:00"
+    },
+    {
+     "id": 39671831485,
+     "optionName1": "4카본 + 골프백",
+     "stockQuantity": 992,
+     "price": 11000,
+     "regOrder": 1,
+     "registerDate": "2024-03-15T02:36:34.135+00:00"
+    },
+    {
+     "id": 39671831486,
+     "optionName1": "12스틸 + 골프백",
+     "stockQuantity": 998,
+     "price": 336000,
+     "regOrder": 2,
+     "registerDate": "2024-03-15T02:36:34.136+00:00"
+    },
+    {
+     "id": 39671831488,
+     "optionName1": "12카본 + 골프백",
+     "stockQuantity": 1000,
+     "price": 377400,
+     "regOrder": 3,
+     "registerDate": "2024-03-15T02:36:34.137+00:00"
+    },
+    {
+     "id": 39671831489,
+     "optionName1": "12스틸 + 골프백 (신축성)",
+     "stockQuantity": 1000,
+     "price": 420800,
+     "regOrder": 4,
+     "registerDate": "2024-03-15T02:36:34.138+00:00"
+    },
+    {
+     "id": 39671831490,
+     "optionName1": "12카본 + 골프백 (신축성)",
+     "stockQuantity": 1000,
+     "price": 464200,
+     "regOrder": 5,
+     "registerDate": "2024-03-15T02:36:34.139+00:00"
+    }
+   ],
+   "checkedName": null,
+   "checkedIds": null,
+   "price": 0,
+   "isLastDepth": true
+  }
+ ],
+ "standardOptions": [],
+ "standardCombinations": [
+  {
+   "id": 39671831483,
+   "optionName1": "4스틸 + 골프백",
+   "stockQuantity": 990,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2024-03-15T02:36:34.134+00:00",
+   "title": "_4스틸 + 골프백____"
+  },
+  {
+   "id": 39671831485,
+   "optionName1": "4카본 + 골프백",
+   "stockQuantity": 992,
+   "price": 11000,
+   "regOrder": 1,
+   "registerDate": "2024-03-15T02:36:34.135+00:00",
+   "title": "_4카본 + 골프백____"
+  },
+  {
+   "id": 39671831486,
+   "optionName1": "12스틸 + 골프백",
+   "stockQuantity": 998,
+   "price": 336000,
+   "regOrder": 2,
+   "registerDate": "2024-03-15T02:36:34.136+00:00",
+   "title": "_12스틸 + 골프백____"
+  },
+  {
+   "id": 39671831488,
+   "optionName1": "12카본 + 골프백",
+   "stockQuantity": 1000,
+   "price": 377400,
+   "regOrder": 3,
+   "registerDate": "2024-03-15T02:36:34.137+00:00",
+   "title": "_12카본 + 골프백____"
+  },
+  {
+   "id": 39671831489,
+   "optionName1": "12스틸 + 골프백 (신축성)",
+   "stockQuantity": 1000,
+   "price": 420800,
+   "regOrder": 4,
+   "registerDate": "2024-03-15T02:36:34.138+00:00",
+   "title": "_12스틸 + 골프백 (신축성)____"
+  },
+  {
+   "id": 39671831490,
+   "optionName1": "12카본 + 골프백 (신축성)",
+   "stockQuantity": 1000,
+   "price": 464200,
+   "regOrder": 5,
+   "registerDate": "2024-03-15T02:36:34.139+00:00",
+   "title": "_12카본 + 골프백 (신축성)____"
+  }
+ ],
+ "supplements": [],
+ "deliveryText": "제주 추가 5,000원, 제주 외 도서지역 추가 10,000원",
+ "deliveryMethodType": {
+  "code": 1,
+  "name": "택배",
+  "description": "택배",
+  "etc": null,
+  "naverPayCode": "DELIVERY"
+ },
+ "discountedSalePrice": 198000,
+ "mobileDiscountRatio": 86,
+ "derived": {
+  "productType": "DEFAULT"
+ },
+ "hopeDelivery": null,
+ "productVideoAuth": {
+  "inKey": "V12999e1b754127b030ee1d496879eb567a695ab8d459c920c8425d7fe831266c53511d496879eb567a69",
+  "serviceId": 2010,
+  "inkey": "V12999e1b754127b030ee1d496879eb567a695ab8d459c920c8425d7fe831266c53511d496879eb567a69"
+ },
+ "commentCount": 6,
+ "isPayMember": false,
+ "arrivalGuarantee": false,
+ "groupId": null,
+ "groupEpId": null,
+ "simpleProductAffiliateYn": false,
+ "disableAdditionalApi": false
+}

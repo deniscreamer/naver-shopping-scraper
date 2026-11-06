@@ -202,3 +202,85 @@ def test_page_options_with_the_page_fields():
                                      "min_length": None, "max_length": 20, "pattern": None}]
     majesty = P.parse_page_options(fixture("page_product_majesty.json"), fields)   # its field is not in the HTML
     assert majesty["text_options"][0]["required"] is None
+
+
+def test_delivery_promise():
+    with open(os.path.join(FX, "pdp_delivery_promise.html"), encoding="utf-8") as f:   # honma 5543745139, 2026-11-05
+        promise = pdp.delivery_promise(f.read())
+    assert promise == {"today_cutoff": "16:00", "arrival_days": 2, "arrival_date_text": None, "arrival_probability": 96,
+                       "ship_date_text": "11.6.(금)", "overseas_text": False}
+    assert pdp.delivery_promise("<div><span>해외직배송</span></div>")["overseas_text"] is True
+    with open(os.path.join(FX, "pdp_delivery_promise_today.html"), encoding="utf-8") as f:   # the same set, 2026-11-06
+        promise = pdp.delivery_promise(f.read())
+    assert promise == {"today_cutoff": "16:00", "arrival_days": None, "arrival_date_text": "11.11.(수)",
+                       "arrival_probability": 98, "ship_date_text": None, "overseas_text": False}
+
+
+# ---- description junk (research 2026-11-06, 40 golf sets + 86 saved products) ----------------------------------
+
+def test_description_skips_card_components():
+    """Naver's own detailContentText leaves out exactly se-oglink, se-placesMap and se-material: a link card to
+    another product or TalkTalk, the store's map card, a shopping card. Quotes from 6630856593, 13049116377,
+    12434254421."""
+    oglink = ('<div class="se-component se-oglink"><a class="se-oglink-info" href="https://smartstore.naver.com/'
+              'viviga_world/products/6611413859"><strong class="se-oglink-title">PGM 남성용 드라이버 : 비비가월드</strong>'
+              '<p class="se-oglink-url">smartstore.naver.com</p></a></div><div class="se-component se-text"><p>460cc 헤드</p></div>')
+    assert pdp.description_text(oglink) == "460cc 헤드"
+    places = ('<div class="se-component se-placesMap"><img src="https://simg.pstatic.net/static.map/v2/map/staticmap.bin?x=1" '
+              'class="se-map-image"><a class="se-map-info"><strong class="se-map-title">굿바이골프</strong>'
+              '<p class="se-map-address">경기도 군포시 삼성로87번길 4-24 1층</p></a></div>'
+              '<div class="se-component se-text"><p>캘러웨이 XR26</p></div>')
+    assert pdp.description_text(places) == "캘러웨이 XR26"
+    talk = ('<div class="se-component se-oglink"><a href="https://talk.naver.com/ct/wc1l7o"><strong class="se-oglink-title">'
+            '삼성골프 - 네이버톡톡</strong><p class="se-oglink-summary">부산 학장동에 위치한 골프용품 전문 할인매장</p></a></div>'
+            '<div class="se-component se-text"><p>마제스티 골프 100% 정품</p></div>')
+    assert pdp.description_text(talk) == "마제스티 골프 100% 정품"
+    assert pdp.description_text('<p>스틸 <span class="se-blind">네이버페이</span>세트</p>') == "스틸 세트"
+
+
+def test_description_keeps_text_quotation_table_and_links():
+    body = ('<div class="se-component se-quotation"><blockquote><p>PGM은 중국 Tmall 골프 부문</p></blockquote></div>'
+            '<div class="se-component se-table"><table><tr><td>로프트</td><td>10.5</td></tr></table></div>'
+            '<div class="se-component se-text"><p><a class="se-link" href="https://www.callawaygolf.com">캘러웨이</a> 정품</p></div>')
+    assert pdp.description_text(body) == "PGM은 중국 Tmall 골프 부문\n\n로프트\n10.5\n\n캘러웨이 정품"
+
+
+def test_description_cards_fixture():
+    """Real components cut from 12274419597 (se-material), 13049116377 (se-placesMap) and 6630856593 (se-oglink)."""
+    text = pdp.description_text(fixture("contents_seone_cards.html"))
+    for junk in ("굿바이골프", "경기도 군포시", "따봉몰", "네이버페이", "smartstore.naver.com", "1호 우드 초보자용"):
+        assert junk not in text, junk
+    assert text.startswith("캘러웨이 XR26\n남성 골프채 12개 풀세트 구성") and text.endswith("온라인 최저가로 만나보세요:)")
+    assert "골프백: 스탠드백\n\nPGM 남성용 좌타 1번 우드 연습용\n골프 드라이브\n\nPGM은 중국 Tmall 골프 부문" in text
+
+
+def test_description_skips_jump_anchors():
+    """12696567111 (editor NONE): "▲ 이동(상단)" is an <a href="#top"> link, in-page navigation."""
+    html = ('<div id="product1"><div>캘러웨이 XR 26 풀세트 남성용</div><p><a href="#top"><b><font color="red" size="4">'
+            '▲ 이동(상단)</font></b></a></p></div>')
+    assert pdp.description_text(html) == "캘러웨이 XR 26 풀세트 남성용"
+    assert pdp.description_text('<p><a href="#" class="se-module-image-link">사진 설명</a></p>') == "사진 설명"
+    assert pdp.description_text('<p><a href="https://brand.naver.com/x">링크</a> 글</p>') == "링크 글"
+
+
+def test_description_drops_bare_hashtag_lines():
+    """10639350746: a hashtag line with no "관련 태그" label in front. Club numbers (#PW, #5-#9, #7) stay."""
+    html = "<p>#골린이#남성좌타골프채#풀세트#스탠드백#헤드커버</p><p>Callaway Golf Men’s Strata Complete Set</p>"
+    assert pdp.description_text(html) == "Callaway Golf Men’s Strata Complete Set"
+    html = "<p>#PW</p><p>10개 세트(1W, 5W, #5-#9, PW, SW, PT) + 캐디백</p><p>#4H</p>"
+    assert pdp.description_text(html) == "#PW\n10개 세트(1W, 5W, #5-#9, PW, SW, PT) + 캐디백\n#4H"
+    for kept in ("#PW #PT", "#52 #4H", "오디세이 EYE TRAX #7 (34인치)", "#6 아이언: 로프트각 28.0°", "#골프"):
+        assert pdp.description_text(f"<p>{kept}</p>") == kept, kept
+
+
+def test_description_blank_line_between_components():
+    """One empty line between top-level SmartEditor components (6774818843): the transform ends a notice block at
+    its component. Empty spacer components collapse; a body without components is unchanged."""
+    html = ('<div class="se-component se-quotation"><p>◆ 해당 상품 관부가세 및 배송 공지◆</p><p>감사합니다.</p></div>'
+            '<div class="se-component se-text"><p>​</p></div><div class="se-component se-image"><img data-src="x"></div>'
+            '<div class="se-component se-text"><p>호평의 캘러웨이 클럽 세트</p></div><div class="se-component se-text"><p></p></div>')
+    assert pdp.description_text(html) == "◆ 해당 상품 관부가세 및 배송 공지◆\n감사합니다.\n\n호평의 캘러웨이 클럽 세트"
+    assert pdp.description_text("<p>첫 줄입니다</p><p>둘째</p>") == "첫 줄입니다\n둘째"
+    nested = ('<div class="se-component se-table"><table><tr><td><div class="se-component se-text"><p>a</p></div>'
+              '</td><td><p>b</p></td></tr></table></div><div class="se-component se-text"><p>c</p></div>')
+    assert pdp.description_text(nested) == "a\nb\n\nc"

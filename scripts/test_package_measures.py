@@ -65,8 +65,9 @@ def test_defaults_fill_only_missing_fields():
     [v] = variant_measures(specs([weight(9000)]), TABLE)
     f = v["fields"]
     assert f["product_weight_g"]["source"] == "source_stated"
-    assert f["package_weight_g"] == {"low": 1, "central": 2, "high": 3, "source": "category_default",
-                                     "reliability": "estimated_average", "table_version": 7, "approved_by": "test", "approved_at": "2026-11-05"}
+    assert f["package_weight_g"] == {"low": 1, "central": 2, "high": 3, "source": "category_default", "confidence": 1,
+                                     "reliability": "estimated_average", "table_version": 7, "approved_by": "test", "approved_at": "2026-11-05",
+                                     "flags": ["below_stated_product"]}       # the test row's 2 g is under 9 kg
 
 
 def test_what_is_not_a_product_or_package_value():
@@ -113,3 +114,74 @@ def test_a_single_product_size_is_kept():
     club = {**box([1155.7], kind="product"), "axes": ["length"]}
     [v] = variant_measures(specs(dimensions=[club, box([1, 2, 3], kind="component")]), TABLE)
     assert [c["values"] for c in v["product_size"]] == [[1155.7]]
+
+
+# ---- 2026-11-06: stated set weights per variant, the default's floor, an operator band ----------------------------
+
+def test_the_same_weight_within_two_percent_agrees():
+    f = variant_measures(specs([weight(6350), weight(6450)]), TABLE)[0]["fields"]["product_weight_g"]
+    assert f["source"] == "source_stated" and f["also"] == 1
+    f = variant_measures(specs([weight(6350), weight(6600)]), TABLE)[0]["fields"]["product_weight_g"]
+    assert f["source"] == "category_default" and len(f["contradiction"]) == 2
+
+
+def test_set_weight_per_variant_and_the_default_below_it():
+    twelve = {"scope": "variants", "variant_ids": ["12s", "12c"]}
+    four = {"scope": "variants", "variant_ids": ["4s"]}
+    out = variant_measures(specs([weight(11500, scope="set", binding=twelve), weight(4700, scope="set", binding=four)],
+                                 variants=["4s", "12s", "12c"], is_set=True), load_table())      # 6630856593
+    by_id = {v["variant_id"]: v["fields"] for v in out}
+    assert [by_id[i]["product_weight_g"]["value"]["min"] for i in ("4s", "12s", "12c")] == [4700, 11500, 11500]
+    assert by_id["12s"]["package_weight_g"]["source"] == "category_default"
+    assert by_id["12s"]["package_weight_g"]["flags"] == ["below_stated_product"]       # 7000 < 11500
+    assert "flags" not in by_id["4s"]["package_weight_g"]
+
+
+def test_flags_travel_with_the_evidence():
+    w = {**weight(1000, scope="set"), "flags": ["multiplied"], "count": 2}
+    f = variant_measures(specs([w]), TABLE)[0]["fields"]["product_weight_g"]
+    assert f["source"] == "source_stated" and f["flags"] == ["multiplied"]
+
+
+def test_parts_are_never_summed():
+    parts = [weight(g, "component") for g in (318, 330, 416, 420, 424, 430, 436, 446, 455, 521)]   # 6774818843
+    f = variant_measures(specs(parts, is_set=True), TABLE)[0]["fields"]
+    assert f["product_weight_g"]["source"] == f["package_weight_g"]["source"] == "category_default"
+    assert "flags" not in f["package_weight_g"]
+
+
+BAND = {**ROW, "fields": {name: {"low": 1000, "central": 2000, "high": 3000} for name in FIELDS},
+        "plausible": {"product_weight_g": {"min": 1750, "max": 19000}}}
+
+
+def test_an_operator_band_rejects_an_implausible_stated_value():
+    table = {"version": 8, "rows": [BAND]}
+    f = variant_measures(specs([weight(332, scope="set")], is_set=True), table)[0]["fields"]["product_weight_g"]
+    assert f["source"] == "category_default" and f["reason"] == "implausible_for_category"
+    assert [c["value"]["min"] for c in f["contradiction"]] == [332]
+    f = variant_measures(specs([weight(6350, scope="set")], is_set=True), table)[0]["fields"]["product_weight_g"]
+    assert f["source"] == "source_stated"
+    assert "plausible" not in load_table()["rows"][0]        # no band until the operator gives one
+
+
+@pytest.mark.parametrize("band", [{"product_weight_g": {"min": 5, "max": 1}}, {"weight": {"min": 1, "max": 2}},
+                                  {"product_weight_g": {"min": 1}}])
+def test_bad_bands(band):
+    with pytest.raises(CategoryDefaultsInvalid):
+        check_row({**ROW, "plausible": band})
+
+
+def test_confidence():
+    # the owner, 2026-11-06: a stated weight whose kind is open is used, at confidence 2
+    twelve = {"scope": "variants", "variant_ids": ["12s"]}
+    f = variant_measures(specs([{**weight(11500, scope="set", binding=twelve), "flags": ["bound_by_count_rank"]}],
+                               variants=["12s"], is_set=True), TABLE)[0]["fields"]          # 6630856593
+    assert (f["product_weight_g"]["source"], f["product_weight_g"]["confidence"]) == ("source_stated", 2)
+    assert f["package_weight_g"]["confidence"] == 1                                       # the category default
+    f = variant_measures(specs([weight(9000)]), TABLE)[0]["fields"]
+    assert f["product_weight_g"]["confidence"] == 2                       # "무게 9kg": with the box or not?
+    f = variant_measures(specs([weight(9000, kind="net"), weight(9500, kind="packed")], [box([30, 120, 25])]),
+                         TABLE)[0]["fields"]
+    assert [f[n]["confidence"] for n in FIELDS] == [3, 3, 3, 3, 3]
+    f = variant_measures(specs([weight(9000), weight(9000, kind="net")]), TABLE)[0]["fields"]["product_weight_g"]
+    assert (f["kind"], f["confidence"], f["also"]) == ("net", 3, 1)        # the more certain of two that agree

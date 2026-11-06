@@ -190,7 +190,8 @@
   "is_today_delivery": null,
   "company": "CJ대한통운",
   "extra_fee_area2": null,
-  "extra_fee_area3": null
+  "extra_fee_area3": null,
+  "extra_fee_text": null
  },
  "is_free_delivery": true,
  "is_today_delivery": true,

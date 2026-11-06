@@ -1,0 +1,727 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:100113347:12696567111",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "title_names_one_variant",
+   "detail": "XR26"
+  },
+  {
+   "code": "specs_bound_to_variants",
+   "detail": "출시 2026년형 -> XR26 남성 풀세트 백포함"
+  },
+  {
+   "code": "specs_name_one_variant",
+   "detail": "모델명 26캘러웨이 풀세트 XR26 FULL SET 12PC: XR26"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "옵션+아이언커버.하프백"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/buysellgolf/products/12696567111",
+  "channel_no": "100113347",
+  "product_id": "12696567111",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "(당일퀵) 캘러웨이 XR26 남성 풀세트 백포함 캘러웨이코리아 2026",
+  "brand_ko": "캘러웨이",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "옵션+아이언커버.하프백",
+    "values_ko": [
+     "XR26 남성 풀세트 백포함",
+     "(추가할인) XR 24 백세트포함",
+     "(추가할인) X HOT 23 백세트포함",
+     "(추가할인) X HOT 21 캐디백포함"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"XR26 남성 풀세트 백포함\"]",
+    "naver_variant_id": "53645098363",
+    "options_ko": [
+     "XR26 남성 풀세트 백포함"
+    ],
+    "price_krw": 1449900,
+    "price_usd": "1449.90",
+    "sku": "FW-67a054e3920f9a8c24668332",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"(추가할인) XR 24 백세트포함\"]",
+    "naver_variant_id": "60133059207",
+    "options_ko": [
+     "(추가할인) XR 24 백세트포함"
+    ],
+    "price_krw": 1249900,
+    "price_usd": "1249.90",
+    "sku": "FW-e72b08e9523db0bb2c2e5c29",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"(추가할인) X HOT 23 백세트포함\"]",
+    "naver_variant_id": "60133059208",
+    "options_ko": [
+     "(추가할인) X HOT 23 백세트포함"
+    ],
+    "price_krw": 1349900,
+    "price_usd": "1349.90",
+    "sku": "FW-b317db3bbfc61a82a9158fb2",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"(추가할인) X HOT 21 캐디백포함\"]",
+    "naver_variant_id": "60208104775",
+    "options_ko": [
+     "(추가할인) X HOT 21 캐디백포함"
+    ],
+    "price_krw": 1049900,
+    "price_usd": "1049.90",
+    "sku": "FW-e2dcc552c15973b9cff22bc3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   }
+  ],
+  "pricing": {
+   "base_krw": 1449900,
+   "original_krw": 1590000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "26캘러웨이 풀세트 XR26 FULL SET 12PC"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2026년형",
+    "for_ko": [
+     "XR26 남성 풀세트 백포함"
+    ]
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 5
+  },
+  "reviews": [
+   {
+    "id": "5089429407",
+    "score": 5,
+    "text_ko": "배송 빠릅니다\n포장도 잘 되어 배송됩니다",
+    "created_at": "2026-10-22T13:16:58Z",
+    "writer": "donk*****",
+    "photos": [
+     "collected/50002788-fixtures/images/12696567111/fairwardgolf-review-image-e10c77521b583d17.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "5085191416",
+    "score": 5,
+    "text_ko": "아직사용전이지만 기대되요",
+    "created_at": "2026-10-16T08:10:34Z",
+    "writer": "wmov****",
+    "photos": [
+     "collected/50002788-fixtures/images/12696567111/fairwardgolf-review-image-e58a4e62e8e82f23.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "5070807803",
+    "score": 5,
+    "text_ko": "추석임에도 배송도 빠르고, 신경을 많이 써주시네요. 감사합니다.",
+    "created_at": "2026-09-23T04:55:05Z",
+    "writer": "kks1******",
+    "photos": [
+     "collected/50002788-fixtures/images/12696567111/fairwardgolf-review-image-3af50b0457dfb2fb.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "5049472217",
+    "score": 5,
+    "text_ko": "깔끔하니 좋습니다!ㅎㅎ",
+    "created_at": "2026-08-24T05:02:30Z",
+    "writer": "wmov****",
+    "photos": [
+     "collected/50002788-fixtures/images/12696567111/fairwardgolf-review-image-9a9233ecf769704b.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4995220309",
+    "score": 5,
+    "text_ko": "아침에 택배가 도착했네요\n빠른배송 감사합니다",
+    "created_at": "2026-06-10T02:39:06Z",
+    "writer": "bass****",
+    "photos": [
+     "collected/50002788-fixtures/images/12696567111/fairwardgolf-review-image-91d2017231387db5.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/12696567111/fairwardgolf-12696567111-001-1b072af646354c20.webp",
+    "sha256": "1b072af646354c204ed4b90cebee1626a441410a86001ea5ae7456c5eb8ce26e",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/12696567111/fairwardgolf-12696567111-002-a0f038229291e81f.webp",
+    "sha256": "a0f038229291e81fdea4958ccf0bf1cb4f59e46f8554faa47f35d316bcb10adc",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/12696567111/fairwardgolf-12696567111-003-3fc927a0c18d3342.webp",
+    "sha256": "3fc927a0c18d3342c987c8b9a752f1879aab70d3c74336eb4f89a5f683a151eb",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/12696567111/fairwardgolf-12696567111-004-2cb0883d356168be.webp",
+    "sha256": "2cb0883d356168bec6f4b5feda0d38aa77943348843bd461833ed1f8c7188e5e",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/12696567111/fairwardgolf-12696567111-005-e64840678978f44c.webp",
+    "sha256": "e64840678978f44c5e6ab12f1415d4161dec088957358ebd19cccb4a630d4c82",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/12696567111/fairwardgolf-12696567111-006-651add2914160633.webp",
+    "sha256": "651add29141606332d420b7bbdfa6cbbdfa665197a23b3ff079fa34397856815",
+    "width": 700,
+    "height": 700
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.5140845,
+    "product_average_days": 4.0,
+    "today_cutoff": null,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 92,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "캘러웨이 XR 26 풀세트 남성용\n캘러웨이 XR 24 풀세트 남성용\n캘러웨이 엑스 핫 23 남성용\n캘러웨이 엑스 핫 21 남성용",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20261014_271/1791942777944TpmTT_JPEG/p-12639506238-s-6-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20261014_39/17919427779434ryIt_JPEG/p-12639506238-s-6-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20261014_26/1791942777946gzacY_JPEG/p-12639506238-s-6-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20261014_20/17919427779477Arem_JPEG/p-12639506238-s-6-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20261014_24/1791942777939gvg3R_JPEG/p-12639506238-s-6-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20261014_11/1791942777942E1WrU_JPEG/p-12639506238-s-6-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20261014_285/1791942777944G1RDQ_JPEG/p-12639506238-s-6-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20261014_134/1791942777939qEu48_JPEG/p-12639506238-s-6-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20261014_74/17919427779418YJRk_JPEG/p-12639506238-s-6-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20261014_159/1791942777937fjGO5_JPEG/p-12639506238-s-6-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20261014_70/1791942778030POb8A_JPEG/p-12639506238-s-6-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20261014_194/1791942778006WaDIQ_JPEG/p-12639506238-s-6-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20261014_14/1791942778033JIbcA_JPEG/p-12639506238-s-6-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20261014_240/1791942778053Awfn0_JPEG/p-12639506238-s-6-A-13.jpg",
+   "https://shop-phinf.pstatic.net/20261014_72/1791942778035qTFfk_JPEG/p-12639506238-s-6-A-14.jpg",
+   "https://shop-phinf.pstatic.net/20261014_121/1791942778047xohCT_JPEG/p-12639506238-s-6-A-15.jpg",
+   "https://shop-phinf.pstatic.net/20261014_48/1791942778035WmIg7_JPEG/p-12639506238-s-6-A-16.jpg",
+   "https://shop-phinf.pstatic.net/20261014_94/1791942778051goAUo_JPEG/p-12639506238-s-6-A-17.jpg",
+   "https://shop-phinf.pstatic.net/20261014_171/1791942778058g0dwu_JPEG/p-12639506238-s-6-A-18.jpg",
+   "https://shop-phinf.pstatic.net/20261014_56/1791942778069vyB4s_JPEG/p-12639506238-s-6-A-19.jpg",
+   "https://shop-phinf.pstatic.net/20261014_149/1791942778127kQHn8_JPEG/p-12639506238-s-6-A-20.jpg",
+   "https://shop-phinf.pstatic.net/20261014_76/1791942778080zGS2H_JPEG/p-12639506238-s-6-A-21.jpg",
+   "https://shop-phinf.pstatic.net/20261014_222/1791942778140Mrfwv_JPEG/p-12639506238-s-6-A-22.jpg",
+   "https://shop-phinf.pstatic.net/20261014_16/1791942778139aUqni_JPEG/p-12639506238-s-6-A-23.jpg",
+   "https://shop-phinf.pstatic.net/20261014_300/1791942778136I9Lyo_JPEG/p-12639506238-s-6-A-24.jpg",
+   "https://shop-phinf.pstatic.net/20261014_177/1791942778152OnS3a_JPEG/p-12639506238-s-6-A-25.jpg",
+   "https://shop-phinf.pstatic.net/20261014_275/1791942778160x4R5D_JPEG/p-12639506238-s-6-A-26.jpg",
+   "https://shop-phinf.pstatic.net/20261014_148/1791942778160KLRYT_JPEG/p-12639506238-s-6-A-27.jpg",
+   "https://shop-phinf.pstatic.net/20261014_81/1791942778177nUGnF_JPEG/p-12639506238-s-6-A-28.jpg",
+   "https://shop-phinf.pstatic.net/20261014_134/1791942778178l5Xm3_JPEG/p-12639506238-s-6-A-29.jpg",
+   "https://shop-phinf.pstatic.net/20261014_76/1791942778217KqBt5_JPEG/p-12639506238-s-6-A-30.jpg",
+   "https://shop-phinf.pstatic.net/20261014_141/1791942778219meUJY_JPEG/p-12639506238-s-6-A-31.jpg",
+   "https://shop-phinf.pstatic.net/20261014_40/1791942778238i8lOj_JPEG/p-12639506238-s-6-A-32.jpg",
+   "https://shop-phinf.pstatic.net/20261014_54/17919427782362AJJf_JPEG/p-12639506238-s-6-A-33.jpg",
+   "https://shop-phinf.pstatic.net/20261014_103/1791942778240768tV_JPEG/p-12639506238-s-6-A-34.jpg",
+   "https://shop-phinf.pstatic.net/20261014_58/1791942778245Xlr2x_JPEG/p-12639506238-s-6-A-35.jpg",
+   "https://shop-phinf.pstatic.net/20261014_261/17919427782659GL8w_JPEG/p-12639506238-s-6-A-36.jpg",
+   "https://shop-phinf.pstatic.net/20261014_237/17919427782736ovV7_JPEG/p-12639506238-s-6-A-37.jpg",
+   "https://shop-phinf.pstatic.net/20261014_1/1791942778272bNHld_JPEG/p-12639506238-s-6-A-38.jpg",
+   "https://shop-phinf.pstatic.net/20261014_9/1791942778278C5Kcz_JPEG/p-12639506238-s-6-A-39.jpg",
+   "https://shop-phinf.pstatic.net/20261014_95/1791942778300AEVgD_JPEG/p-12639506238-s-6-A-40.jpg",
+   "https://shop-phinf.pstatic.net/20261014_152/1791942778320agXvc_JPEG/p-12639506238-s-6-A-41.jpg",
+   "https://shop-phinf.pstatic.net/20261014_218/1791942778325NizkW_JPEG/p-12639506238-s-6-A-42.jpg",
+   "https://shop-phinf.pstatic.net/20261014_112/17919427783388glio_JPEG/p-12639506238-s-6-A-43.jpg",
+   "https://shop-phinf.pstatic.net/20261014_201/1791942778323eKkqs_JPEG/p-12639506238-s-6-A-44.jpg",
+   "https://shop-phinf.pstatic.net/20261014_222/1791942778342WKCo4_JPEG/p-12639506238-s-6-A-45.jpg",
+   "https://shop-phinf.pstatic.net/20261014_264/1791942778359Cbgzf_JPEG/p-12639506238-s-6-A-46.jpg",
+   "https://shop-phinf.pstatic.net/20261014_131/1791942778350NS9LQ_JPEG/p-12639506238-s-6-A-47.jpg",
+   "https://shop-phinf.pstatic.net/20261014_42/1791942778358BOwvP_JPEG/p-12639506238-s-6-A-48.jpg",
+   "https://shop-phinf.pstatic.net/20261014_296/17919427783686E0ME_JPEG/p-12639506238-s-6-A-49.jpg",
+   "https://shop-phinf.pstatic.net/20261014_132/1791942778394qlD6p_JPEG/p-12639506238-s-6-A-50.jpg",
+   "https://shop-phinf.pstatic.net/20261014_299/17919427784155hDic_JPEG/p-12639506238-s-6-A-51.jpg",
+   "https://shop-phinf.pstatic.net/20261014_192/1791942778415qBBKW_JPEG/p-12639506238-s-6-A-52.jpg",
+   "https://shop-phinf.pstatic.net/20261014_197/1791942778421PYWzn_JPEG/p-12639506238-s-6-A-53.jpg",
+   "https://shop-phinf.pstatic.net/20261014_52/1791942778422W0vNA_JPEG/p-12639506238-s-6-A-54.jpg",
+   "https://shop-phinf.pstatic.net/20261014_127/1791942778434D9MI9_JPEG/p-12639506238-s-6-A-55.jpg",
+   "https://shop-phinf.pstatic.net/20261014_252/1791942778444dpl28_JPEG/p-12639506238-s-6-A-56.jpg",
+   "https://shop-phinf.pstatic.net/20261014_211/1791942778445paIg3_JPEG/p-12639506238-s-6-A-57.jpg",
+   "https://shop-phinf.pstatic.net/20261014_71/1791942778450sr2yh_JPEG/p-12639506238-s-6-A-58.jpg",
+   "https://shop-phinf.pstatic.net/20261014_128/1791942778458sp3FJ_JPEG/p-12639506238-s-6-A-59.jpg",
+   "https://shop-phinf.pstatic.net/20261014_123/1791942778489jp0AE_JPEG/p-12639506238-s-6-A-60.jpg",
+   "https://shop-phinf.pstatic.net/20261014_296/1791942778493WcSpM_JPEG/p-12639506238-s-6-A-61.jpg",
+   "https://shop-phinf.pstatic.net/20261014_160/1791942778499tlSDT_JPEG/p-12639506238-s-6-A-62.jpg",
+   "https://shop-phinf.pstatic.net/20261014_84/17919427785113x7Va_JPEG/p-12639506238-s-6-A-63.jpg",
+   "https://shop-phinf.pstatic.net/20261014_272/1791942778501lyxI6_JPEG/p-12639506238-s-6-A-64.jpg",
+   "https://shop-phinf.pstatic.net/20261014_212/1791942778523ISMfx_JPEG/p-12639506238-s-6-A-65.jpg",
+   "https://shop-phinf.pstatic.net/20261014_149/1791942778521x1kJH_JPEG/p-12639506238-s-6-A-66.jpg",
+   "https://shop-phinf.pstatic.net/20261014_181/1791942778549ftC8J_JPEG/p-12639506238-s-6-A-67.jpg",
+   "https://shop-phinf.pstatic.net/20261014_119/1791942778573BfBEr_JPEG/p-12639506238-s-6-A-68.jpg",
+   "https://shop-phinf.pstatic.net/20261014_66/1791942778575FH5Yy_JPEG/p-12639506238-s-6-A-69.jpg",
+   "https://shop-phinf.pstatic.net/20261014_74/1791942778574ERXG4_JPEG/p-12639506238-s-6-A-70.jpg",
+   "https://shop-phinf.pstatic.net/20261014_21/1791942778587HAjAl_JPEG/p-12639506238-s-6-A-71.jpg",
+   "https://shop-phinf.pstatic.net/20261014_59/1791942778588aj4nq_JPEG/p-12639506238-s-6-A-72.jpg",
+   "https://shop-phinf.pstatic.net/20261014_272/1791942778610N4p2G_JPEG/p-12639506238-s-6-A-73.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:c4e6121235dda377",
+   "kind": "title",
+   "ko": "(당일퀵) 캘러웨이 XR26 남성 풀세트 백포함 캘러웨이코리아 2026"
+  },
+  {
+   "id": "brand:752b9a8b36b892c4",
+   "kind": "brand",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "option_name:806bc88810e69567",
+   "kind": "option_name",
+   "ko": "옵션+아이언커버.하프백"
+  },
+  {
+   "id": "option_value:4dc4e2c010fd3c93",
+   "kind": "option_value",
+   "ko": "XR26 남성 풀세트 백포함"
+  },
+  {
+   "id": "option_value:732f707b7b8ffc07",
+   "kind": "option_value",
+   "ko": "(추가할인) XR 24 백세트포함"
+  },
+  {
+   "id": "option_value:ad5606828a6b3613",
+   "kind": "option_value",
+   "ko": "(추가할인) X HOT 23 백세트포함"
+  },
+  {
+   "id": "option_value:a92d9a911cefb32f",
+   "kind": "option_value",
+   "ko": "(추가할인) X HOT 21 캐디백포함"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:752b9a8b36b892c4",
+   "kind": "spec_value",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:007df5bd825d52e2",
+   "kind": "spec_value",
+   "ko": "26캘러웨이 풀세트 XR26 FULL SET 12PC"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:f36c488b8e796503",
+   "kind": "spec_value",
+   "ko": "2026년형"
+  },
+  {
+   "id": "review:dda94db077c4282d",
+   "kind": "review",
+   "ko": "배송 빠릅니다\n포장도 잘 되어 배송됩니다"
+  },
+  {
+   "id": "review:5c562e0cd73e818f",
+   "kind": "review",
+   "ko": "아직사용전이지만 기대되요"
+  },
+  {
+   "id": "review:e0c1598c4b01d840",
+   "kind": "review",
+   "ko": "추석임에도 배송도 빠르고, 신경을 많이 써주시네요. 감사합니다."
+  },
+  {
+   "id": "review:e775abda52c99414",
+   "kind": "review",
+   "ko": "깔끔하니 좋습니다!ㅎㅎ"
+  },
+  {
+   "id": "review:9ba00fe6bbc2a9e6",
+   "kind": "review",
+   "ko": "아침에 택배가 도착했네요\n빠른배송 감사합니다"
+  }
+ ]
+}

@@ -1,0 +1,477 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:100371182:13049116377",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/goodbuygolf/products/13049116377",
+  "channel_no": "100371182",
+  "product_id": "13049116377",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "2026년 캘러웨이 XR26 남성 골프채 12개 풀세트 한국캘러웨이골프",
+  "brand_ko": "캘러웨이",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "13049116377",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 1590000,
+    "price_usd": "1590.00",
+    "sku": "FW-4f4623a2731c29c36ea3b562",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   }
+  ],
+  "pricing": {
+   "base_krw": 1590000,
+   "original_krw": 1590000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "2026년 캘러웨이 XR26 남성 골프채 12개 풀세트 한국캘러웨이골프"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "베트남산"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "10.5도"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#5, #6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "12개"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2026년형"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "드라이버, 페어웨이, 유틸리티, 8아이언세트, 퍼터"
+   },
+   {
+    "label_ko": "아이언샤프트소재",
+    "value_ko": "경량스틸"
+   },
+   {
+    "label_ko": "아이언개수",
+    "value_ko": "8개"
+   },
+   {
+    "label_ko": "퍼터형태",
+    "value_ko": "말렛(반달형)"
+   },
+   {
+    "label_ko": "골프백포함여부",
+    "value_ko": "스탠드백"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 1
+  },
+  "reviews": [
+   {
+    "id": "4977679500",
+    "score": 5,
+    "text_ko": "아직 실력은 부족하지만 연습 더 하고 싶은 마음 들 정도로 만족하면서 사용 중입니다!",
+    "created_at": "2026-05-16T06:22:57Z",
+    "writer": "tjgk*****",
+    "photos": [
+     "collected/50002788-fixtures/images/13049116377/fairwardgolf-review-image-7f5404e0159c3aa4.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13049116377/fairwardgolf-13049116377-001-3b30cab8f441bd2f.webp",
+    "sha256": "3b30cab8f441bd2f1ed41bf7e3302ceaf8b94771b1d69b5ede83d98ed15590e3",
+    "width": 750,
+    "height": 850
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13049116377/fairwardgolf-13049116377-002-346d6ddbdbac528a.webp",
+    "sha256": "346d6ddbdbac528ada6e9c20769b5df7c214219579b5140e590de86a7d2a5a94",
+    "width": 531,
+    "height": 725
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13049116377/fairwardgolf-13049116377-003-da9e8e14313a02f5.webp",
+    "sha256": "da9e8e14313a02f5b2ee7f1784108490587cd21f2c83b86f426c0dbda4bf629c",
+    "width": 580,
+    "height": 697
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/13049116377/fairwardgolf-13049116377-004-82ff6284c97dbb9e.webp",
+    "sha256": "82ff6284c97dbb9ea77bc3f159d8d2d3f8d7878bc74475d64b1570a629cf1356",
+    "width": 559,
+    "height": 707
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/13049116377/fairwardgolf-13049116377-005-be2cca1e237c2c0d.webp",
+    "sha256": "be2cca1e237c2c0da43738feaab945e4dfa484957bb083d99b462896dc9a75eb",
+    "width": 524,
+    "height": 698
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/13049116377/fairwardgolf-13049116377-006-39a54cc1caafab55.webp",
+    "sha256": "39a54cc1caafab55ca2b9704512cc4578bd9b84897897713f945f898704afd8a",
+    "width": 558,
+    "height": 519
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/13049116377/fairwardgolf-13049116377-007-437635300dffe91e.webp",
+    "sha256": "437635300dffe91eed4cb8a71fa00c91c9699d8343fb2ade9728b74bd9b1f571",
+    "width": 588,
+    "height": 610
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/13049116377/fairwardgolf-13049116377-008-13074d8316e928d3.webp",
+    "sha256": "13074d8316e928d368331535607e5980c8d0a07689c7563b57a79cbc26ee09c7",
+    "width": 596,
+    "height": 558
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 3,000원",
+   "lead_time": {
+    "seller_average_days": 1.6923077,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 100,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "2026년 캘러웨이 XR26\n남성 골프채 12개 풀세트\n[ 한국캘러웨이골프 정품 ]\n\n캘러웨이 XR26\n남성 골프채 12개 풀세트 구성\n드라이버: 10.5도 SR\n페어웨이우드: 3번 16.5도 SR\n유틸리티: 4번 21도 SR\n8아이언세트: 5번~9번,PW,AW,SW\n스틸 아이언 R\n말렛 퍼터: 34인치\n골프백: 스탠드백\n\nFeatures & Benefits\n\n드라이버: 티타늄 소재로 긴 비거리와 높은 관용성\n460cc 티타늄 헤드와 빠른 스피드를 위한 페이스 디자인으로\n티샷 시 긴 비거리와 안정적인 타구감을 제공합니다.\n\n페어웨이우드: 빠른 볼 스피드와 높은 관용성을 갖춘 클럽\n중심에서 벗어난 샷에서도 향상된 비거리를 제공합니다.\n\n유틸리티: 다양한 상황을 커버하는 클럽\n페이스 전체에서 안정적인 볼 스피드를 구현하며,\n롱 아이언에 부담을 느끼는 골퍼에게 좋은 선택지를 제공합니다.\n\n5번~9번 아이언: 쉽고 편안하게 플레이할 수 있는 디자인\n높은 탄도와 긴 비거리, 정교한 샷 컨트롤 제공합니다.\n\nPW,AW,SW: 웨지 디자인을 적용한 샌드웨지\n높은 스핀과 그린 사이드 스핀 컨트롤을 위해 웨지 디자인이 적용되었습니다.\n\n오디세이 대표 모델 #7 퍼터\n오디세이의 아이코닉한 #7 퍼터 구성으로\n탁월한 정렬성과 퍼팅 퍼포먼스를 제공합니다.\n\nXR 세트 골프백: 스타일리시 블랙/실버 스탠드 백\n클럽 디자인과 조화를 이루는 블랙/실버 컬러의\n퀄리티 높은 스탠드백 구성과 헤드커버 및 네임택을 제공합니다.\n\n드라이버, 페어웨이우드, 유틸리티, 퍼터커버는 포함\n오보로 아이언커버 증정해드립니다\n\nSPEC\n\n클럽\n드라이버\n페어웨이우드\n유틸리티\n퍼터\n클럽 길이(inch)\n45.5\n43\n40\n34\n헤드 무게(g)\n195.5\n209\n235\n350\n클럽 총 무게(g)\n약 314\n약 326\n약 367\n약 526\n로프트각(˚)\n10.5\n16.5\n21\n3\n라이각(˚)\n60\n57\n60.5\n70\n스윙웨이트\nD1\nD1\nD0\n-\n샤프트\nWD XR 26 BLK/SLV GR SR\nHY XR 26 BLK/SLV GR SR\nFormosa Stepped Right Hand (36\")\n그립\nUNIVERSAL MENS 2021 BLK/DRKGRY CP (51g)\nOdyssey DFX Pistol Grip (75.5g)\n\n아이언세트\n5번\n6번\n7번\n8번\n9번\nPW\nAW\nSW\n클럽 길이(inch)\n38.375\n37.75\n37.125\n36.5\n36\n35.5\n35.25\n35\n헤드 무게(g)\n252\n260\n269\n278\n285\n294\n298\n308\n클럽 총 무게(g)\n약406\n약413\n약420\n약428\n약434\n약441\n약447\n약451\n로프트각(˚)\n23\n26\n30\n34.5\n39\n44\n50\n55\n라이각(˚)\n62\n62\n62.5\n63\n63.5\n64\n64\n64\n스윙웨이트\nD0\nD1\nD2\n샤프트\nIR XR 26 BLK/SLV REG\n그립\nUNIVERSAL MENS 2021 BLK/DRKGRY CP (51g)",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260201_192/17699187726654ipjH_PNG/20019506300428036_252033136.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_4/1769918772651Ieylb_PNG/104889883233102166_544035634.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_121/1769918772301MKTRV_PNG/17717411188635225_1605380616.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_198/1769918772466l8YLY_PNG/104889883166199258_519579427.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_65/17699187954955wYjz_PNG/%EC%A0%9C%ED%92%88%EB%84%A4%EC%9E%84%ED%85%8D.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_151/1769918828235PFpnp_PNG/%EC%BA%98%EB%9F%AC%EC%9B%A8%EC%9D%B4%EC%A0%95%ED%92%88.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_27/1769918878539wa0MR_PNG/%EC%BA%98%EB%9F%AC%EC%9B%A8%EC%9D%B4_(11).png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_110/1769918983900eopj6_PNG/image.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_48/1769919044575ixkAz_PNG/image.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_132/1769919028332Ee8SA_PNG/image.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_234/1769919079310xtFOJ_PNG/image.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_198/17699195230290HUjE_PNG/111.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_202/1769919563812wk9fb_PNG/112.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_212/1769919607737cUt9W_PNG/113.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_252/1769919630746HVaR7_PNG/114.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_7/1769919643168bSPQ9_PNG/115.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_155/1769919690060LJ3rj_PNG/116.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_11/1769919713991DW4Bw_PNG/110.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_268/17699206432538QgyB_PNG/image.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_266/1769920583861YzKI7_PNG/%EC%BA%98%EB%9F%AC%EC%9B%A8%EC%9D%B4%EC%A0%95%ED%92%88.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_286/1769920750654RXJyN_PNG/13393542364924606_144196644.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260201_62/17699207506926hKqU_PNG/104953268917553527_1802181954.png?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20260201_76/1769918795518A96M8_PNG/%EB%A6%AC%EB%B7%B0%EC%9D%B4%EB%B2%A4%ED%8A%B8.png?type=w848"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:8d8fb786f39b7822",
+   "kind": "title",
+   "ko": "2026년 캘러웨이 XR26 남성 골프채 12개 풀세트 한국캘러웨이골프"
+  },
+  {
+   "id": "brand:752b9a8b36b892c4",
+   "kind": "brand",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:752b9a8b36b892c4",
+   "kind": "spec_value",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:8d8fb786f39b7822",
+   "kind": "spec_value",
+   "ko": "2026년 캘러웨이 XR26 남성 골프채 12개 풀세트 한국캘러웨이골프"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:7cd6ad9c85830004",
+   "kind": "spec_value",
+   "ko": "베트남산"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:de2b6da830b81034",
+   "kind": "spec_value",
+   "ko": "10.5도"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:5ace0004401aa84b",
+   "kind": "spec_value",
+   "ko": "#5, #6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:409b80822db00dec",
+   "kind": "spec_value",
+   "ko": "12개"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:f36c488b8e796503",
+   "kind": "spec_value",
+   "ko": "2026년형"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:f5984a9139269ff9",
+   "kind": "spec_value",
+   "ko": "드라이버, 페어웨이, 유틸리티, 8아이언세트, 퍼터"
+  },
+  {
+   "id": "spec_label:5a12089f44ae3f65",
+   "kind": "spec_label",
+   "ko": "아이언샤프트소재"
+  },
+  {
+   "id": "spec_value:6ed197f5a449c360",
+   "kind": "spec_value",
+   "ko": "경량스틸"
+  },
+  {
+   "id": "spec_label:cf77915a2f3ab5d8",
+   "kind": "spec_label",
+   "ko": "아이언개수"
+  },
+  {
+   "id": "spec_value:77e34e31f3da3e43",
+   "kind": "spec_value",
+   "ko": "8개"
+  },
+  {
+   "id": "spec_label:04c52e5b47f70047",
+   "kind": "spec_label",
+   "ko": "퍼터형태"
+  },
+  {
+   "id": "spec_value:92917baf006633bb",
+   "kind": "spec_value",
+   "ko": "말렛(반달형)"
+  },
+  {
+   "id": "spec_label:e4aabb2e41b870bd",
+   "kind": "spec_label",
+   "ko": "골프백포함여부"
+  },
+  {
+   "id": "spec_value:68d1701a10addde1",
+   "kind": "spec_value",
+   "ko": "스탠드백"
+  },
+  {
+   "id": "review:9f28abaf5fdfe614",
+   "kind": "review",
+   "ko": "아직 실력은 부족하지만 연습 더 하고 싶은 마음 들 정도로 만족하면서 사용 중입니다!"
+  }
+ ]
+}

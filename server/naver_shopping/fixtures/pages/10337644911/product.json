@@ -1,0 +1,546 @@
+{
+ "id": "10337644911",
+ "channelServiceType": "STOREFARM",
+ "channelProductType": "SINGLE",
+ "channelProductSupplyType": "OWNER",
+ "channelProductStatusType": "NORMAL",
+ "channelProductDisplayStatusType": "ON",
+ "category": {
+  "categoryId": "50002788",
+  "categoryName": "풀세트",
+  "category1Id": "50000007",
+  "category2Id": "50000029",
+  "category3Id": "50001102",
+  "category4Id": "50002788",
+  "category1Name": "스포츠/레저",
+  "category2Name": "골프",
+  "category3Name": "골프클럽",
+  "category4Name": "풀세트",
+  "wholeCategoryId": "50000007>50000029>50001102>50002788",
+  "wholeCategoryName": "스포츠/레저>골프>골프클럽>풀세트",
+  "categoryLevel": 4,
+  "lastLevel": true,
+  "sortOrder": 10,
+  "validCategory": true,
+  "receiptIssue": true,
+  "exceptionalCategoryTypes": [
+   "MANUFACTURE_DEFINE_NO",
+   "RENTAL_SUBSCRIPTION",
+   "FREE_RETURN_INSURANCE",
+   "REGULAR_SUBSCRIPTION"
+  ],
+  "pointAccumulationYn": false
+ },
+ "name": "테일러메이드 Qi10 V300 남성골프풀세트클럽11개선택1 9도SR 유틸 8아이언 퍼터",
+ "productUrl": "https://smartstore.naver.com/main/products/10337644911",
+ "mobileProductUrl": "https://m.smartstore.naver.com/main/products/10337644911",
+ "storeKeepExclusiveProduct": false,
+ "best": false,
+ "orderRequestUsable": false,
+ "channelProductAttributes": [],
+ "productNo": "10287784502",
+ "salePrice": 2600000,
+ "dispSalePrice": 2600000,
+ "stockQuantity": 40,
+ "saleType": "NEW",
+ "excludeAdminDiscount": false,
+ "payExposure": true,
+ "productStatusType": "SALE",
+ "statusType": "SALE",
+ "authenticationType": "NORMAL",
+ "itselfProductionProductYn": false,
+ "afterServiceInfo": {
+  "afterServiceTelephoneNumber": "********",
+  "afterServiceGuideContent": "********"
+ },
+ "originAreaInfo": {
+  "originAreaType": "IMPORT",
+  "content": "대만산(테일러메이드)",
+  "originAreaCode": "0200002",
+  "wholeOriginAreaName": "수입산:아시아>대만",
+  "importer": "테일러메이드",
+  "plural": false
+ },
+ "optionUsable": true,
+ "options": [
+  {
+   "id": 9219016183,
+   "optionType": "COMBINATION",
+   "groupName": "선택"
+  }
+ ],
+ "optionCombinations": [
+  {
+   "id": 48207873409,
+   "optionName1": "선택1 9도SR 유틸 8아이언 퍼터",
+   "stockQuantity": 10,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2025-04-08T12:12:18.658+00:00",
+   "todayDispatch": true
+  },
+  {
+   "id": 48207873410,
+   "optionName1": "선택2 9도S 유틸 8아이언 퍼터",
+   "stockQuantity": 10,
+   "price": 0,
+   "regOrder": 1,
+   "registerDate": "2025-04-08T12:12:18.659+00:00",
+   "todayDispatch": true
+  },
+  {
+   "id": 48207873411,
+   "optionName1": "선택3 10.5도R 유틸 8아이언 퍼터",
+   "stockQuantity": 10,
+   "price": 0,
+   "regOrder": 2,
+   "registerDate": "2025-04-08T12:12:18.660+00:00",
+   "todayDispatch": true
+  },
+  {
+   "id": 48207873412,
+   "optionName1": "선택4 10.5도SR 유틸 8아이언 퍼터",
+   "stockQuantity": 10,
+   "price": 0,
+   "regOrder": 3,
+   "registerDate": "2025-04-08T12:12:18.661+00:00",
+   "todayDispatch": true
+  }
+ ],
+ "optionStandards": [],
+ "supplementProductUsable": true,
+ "supplementProducts": [
+  {
+   "id": 2739773937,
+   "groupName": "우드추가",
+   "name": "3번R",
+   "stockQuantity": 15,
+   "price": 460000,
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 2739773938,
+   "groupName": "우드추가",
+   "name": "3번SR",
+   "stockQuantity": 15,
+   "price": 460000,
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 2739773939,
+   "groupName": "우드추가",
+   "name": "3번S",
+   "stockQuantity": 15,
+   "price": 460000,
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 2739773940,
+   "groupName": "우드추가",
+   "name": "5번R",
+   "stockQuantity": 15,
+   "price": 460000,
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 2739773941,
+   "groupName": "우드추가",
+   "name": "5번SR",
+   "stockQuantity": 15,
+   "price": 460000,
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  },
+  {
+   "id": 2739773942,
+   "groupName": "우드추가",
+   "name": "5번S",
+   "stockQuantity": 15,
+   "price": 460000,
+   "externalStockDisabled": false,
+   "productStatusType": "SALE"
+  }
+ ],
+ "customMadeInfo": {
+  "customMade": false
+ },
+ "taxType": "TAX",
+ "certification": false,
+ "certificationTargetExcludeContent": {
+  "kcCertifiedProductExclusionYn": true,
+  "kcCertifiedProductExclusionType": "TRUE"
+ },
+ "minorPurchasable": true,
+ "productInfoProvidedNoticeView": {
+  "basic": {
+   "품명 / 모델명": "테일러메이드 Qi10 브리지스톤 V300 남성 골프채풀세트 클럽11개 선택1 9도SR드라이 / 테일러메이드 Qi10 브리지스톤 V300 남성 골프채풀세트 클럽11개 선택1 9도SR드라이",
+   "KC 인증정보": "해당없음",
+   "크기": "상세 이미지참조",
+   "중량": "상세 이미지참조",
+   "색상": "상세 이미지참조",
+   "재질": "상세이미지참조",
+   "제품구성": "드라이버,유틸리티,8아이언세트,퍼터",
+   "동일 모델의 출시연월": "2024년",
+   "제조자(사)": "테일러메이드",
+   "제조국": "대만산(테일러메이드)",
+   "상품별 세부사양": "상품상세참조",
+   "품질보증기준": "상품상세참조",
+   "A/S 책임자와 전화번호": "********"
+  },
+  "additional": {
+   "재화등의 배송방법에 관한 정보": "택배",
+   "주문 이후 예상되는 배송기간": "대금 지급일로부터 3일 이내에 발송",
+   "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보": "편도 20000원 (최초 배송비 무료인 경우 40000원 부과)",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+   "재화등의 교환·반품·보증 조건 및 품질보증기준": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "재화등의 A/S 관련 전화번호": "********",
+   "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+   "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "거래에 관한 약관의 내용 또는 확인할 수 있는 방법": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다."
+  }
+ },
+ "productDeliveryInfo": {
+  "deliveryFeeType": "FREE",
+  "deliveryMethodTypes": [
+   "DELIVERY"
+  ],
+  "baseFee": 0,
+  "deliveryAreaType": "AREA_2",
+  "area2ExtraFee": 5000,
+  "installationFee": false,
+  "deliveryFeePolicyText": "제주,도서지역 추가 5,000원",
+  "deliveryAttributeType": "TODAY",
+  "todayStockQuantity": 2,
+  "todayDelivery": true,
+  "thisDayDispatchBasisTime": "05:00:00.000+0000",
+  "deliveryCompany": {
+   "id": "CJGLS",
+   "name": "CJ 대한통운(오네)"
+  }
+ },
+ "claimDeliveryInfo": {
+  "returnDeliveryCompanyPriority": "PRIMARY",
+  "deliveryCompanyName": "CJ대한통운",
+  "deliveryCompanyCode": "CJGLS",
+  "naverPayAppointment": false,
+  "returnDeliveryFee": 20000,
+  "exchangeDeliveryFee": 40000,
+  "shippingAddressId": 126089,
+  "returnAddressId": 126090,
+  "shippingAddress": "서울특별시 서초구  양재1동 241-4번지 (우 : 137-131) ",
+  "returnAddress": "서울특별시 서초구  양재1동 241-4번지 (우 : 137-131) ",
+  "overseasShipping": false,
+  "freeReturnInsurance": false
+ },
+ "isCultureCostIncomeDeduction": false,
+ "isRestrictCart": false,
+ "naverGuaranteed": false,
+ "newShoppingExposureYn": true,
+ "benefitsView": {
+  "discountedSalePrice": 2200000,
+  "dispDiscountedSalePrice": 2200000,
+  "sellerImmediateDiscountAmount": 400000,
+  "managerImmediateDiscountAmount": 0,
+  "specialDiscountAmount": {},
+  "discountedRatio": 15,
+  "dispDiscountedRatio": 15,
+  "sellerPurchasePoint": 0,
+  "sellerCustomerManagementPoint": 0,
+  "managerPurchasePoint": 22000,
+  "managerPurchaseExtraPoint": 0,
+  "managerPaymoneyAccumulatePoint": 30000,
+  "managerBankbookAccumulatePoint": 10000,
+  "managerArrivalGuaranteePoint": 0,
+  "managerMembershipArrivalGuaranteePoint": 0,
+  "generalPurchaseReviewPoint": 1000,
+  "premiumPurchaseReviewPoint": 2000,
+  "managerGeneralPurchaseReviewPoint": 50,
+  "managerPremiumPurchaseReviewPoint": 150,
+  "textReviewPoint": 1000,
+  "photoVideoReviewPoint": 2000,
+  "afterUseTextReviewPoint": 1000,
+  "afterUsePhotoVideoReviewPoint": 2000,
+  "storeMemberReviewPoint": 0,
+  "managerTextReviewPoint": 50,
+  "managerPhotoVideoReviewPoint": 150,
+  "managerAfterUseTextReviewPoint": 50,
+  "managerAfterUsePhotoVideoReviewPoint": 150,
+  "givePresent": false
+ },
+ "sellerDeliveryLeadTimes": [
+  {
+   "rangeNumberText": "1",
+   "rangeText": "일 이내",
+   "leadTimeCount": 2,
+   "leadTimePercent": 17
+  },
+  {
+   "rangeNumberText": "2",
+   "rangeText": "일 이내",
+   "leadTimeCount": 9,
+   "leadTimePercent": 75
+  },
+  {
+   "rangeNumberText": "3",
+   "rangeText": "일 이내",
+   "leadTimeCount": 1,
+   "leadTimePercent": 8
+  },
+  {
+   "rangeNumberText": "4",
+   "rangeText": "일 이상",
+   "leadTimeCount": 0,
+   "leadTimePercent": 0
+  }
+ ],
+ "averageDeliveryLeadTime": {
+  "productAverageDeliveryLeadTime": 0,
+  "sellerAverageDeliveryLeadTime": 1.9166666
+ },
+ "sellerDailyDeliveryLeadTimes": {
+  "leadTimeCount": [
+   0,
+   2,
+   9,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "leadTimeViewType": "NORMAL_DELIVERY"
+ },
+ "detailContents": {
+  "excessDetailContentText": false,
+  "editorType": "SEONE"
+ },
+ "useExternalStock": false,
+ "dispName": "테일러메이드 Qi10 V300 남성골프풀세트클럽11개선택1 9도SR 유틸 8아이언 퍼터",
+ "adultAuthorizationType": "NOT_LOGIN",
+ "authorizationDisplay": "NORMAL",
+ "galleryImages": [
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20250312_281/1741755920378RoC1d_GIF/588911305646341_2074222427.gif",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "REPRESENTATIVE"
+  }
+ ],
+ "soldout": false,
+ "viewAttributes": {
+  "상품상태": "신상품",
+  "상품번호": "10337644911",
+  "제조사": "테일러메이드",
+  "브랜드": "테일러메이드",
+  "원산지": "대만산(테일러메이드)"
+ },
+ "additionalAttributes": {
+  "영수증발급": "신용카드전표, 현금영수증발급",
+  "A/S 안내": [
+   "********",
+   "********"
+  ]
+ },
+ "detailAttributes": {
+  "드라이버 로프트각": "9도, 10.5도",
+  "아이언 구성": "#5, #6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)",
+  "종류": "조합풀세트",
+  "성별": "남성용",
+  "사용방향": "오른손용",
+  "총클럽개수": "11개",
+  "출시": "2024년형",
+  "풀세트구성": "드라이버, 유틸리티, 8아이언세트, 퍼터",
+  "아이언샤프트소재": "스틸",
+  "아이언개수": "8개",
+  "퍼터형태": "블레이드(일자형)",
+  "골프백포함여부": "미포함"
+ },
+ "eCouponCategory": false,
+ "cultureCategory": false,
+ "textOptions": [],
+ "simpleOptions": [],
+ "combinationOptions": [
+  {
+   "groupName": "선택",
+   "options": [
+    {
+     "id": 48207873409,
+     "optionName1": "선택1 9도SR 유틸 8아이언 퍼터",
+     "stockQuantity": 10,
+     "price": 0,
+     "regOrder": 0,
+     "registerDate": "2025-04-08T12:12:18.658+00:00",
+     "todayDispatch": true
+    },
+    {
+     "id": 48207873410,
+     "optionName1": "선택2 9도S 유틸 8아이언 퍼터",
+     "stockQuantity": 10,
+     "price": 0,
+     "regOrder": 1,
+     "registerDate": "2025-04-08T12:12:18.659+00:00",
+     "todayDispatch": true
+    },
+    {
+     "id": 48207873411,
+     "optionName1": "선택3 10.5도R 유틸 8아이언 퍼터",
+     "stockQuantity": 10,
+     "price": 0,
+     "regOrder": 2,
+     "registerDate": "2025-04-08T12:12:18.660+00:00",
+     "todayDispatch": true
+    },
+    {
+     "id": 48207873412,
+     "optionName1": "선택4 10.5도SR 유틸 8아이언 퍼터",
+     "stockQuantity": 10,
+     "price": 0,
+     "regOrder": 3,
+     "registerDate": "2025-04-08T12:12:18.661+00:00",
+     "todayDispatch": true
+    }
+   ],
+   "checkedName": null,
+   "checkedIds": null,
+   "price": 0,
+   "isLastDepth": true
+  }
+ ],
+ "standardOptions": [],
+ "standardCombinations": [
+  {
+   "id": 48207873409,
+   "optionName1": "선택1 9도SR 유틸 8아이언 퍼터",
+   "stockQuantity": 10,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2025-04-08T12:12:18.658+00:00",
+   "todayDispatch": true,
+   "title": "_선택1 9도SR 유틸 8아이언 퍼터____"
+  },
+  {
+   "id": 48207873410,
+   "optionName1": "선택2 9도S 유틸 8아이언 퍼터",
+   "stockQuantity": 10,
+   "price": 0,
+   "regOrder": 1,
+   "registerDate": "2025-04-08T12:12:18.659+00:00",
+   "todayDispatch": true,
+   "title": "_선택2 9도S 유틸 8아이언 퍼터____"
+  },
+  {
+   "id": 48207873411,
+   "optionName1": "선택3 10.5도R 유틸 8아이언 퍼터",
+   "stockQuantity": 10,
+   "price": 0,
+   "regOrder": 2,
+   "registerDate": "2025-04-08T12:12:18.660+00:00",
+   "todayDispatch": true,
+   "title": "_선택3 10.5도R 유틸 8아이언 퍼터____"
+  },
+  {
+   "id": 48207873412,
+   "optionName1": "선택4 10.5도SR 유틸 8아이언 퍼터",
+   "stockQuantity": 10,
+   "price": 0,
+   "regOrder": 3,
+   "registerDate": "2025-04-08T12:12:18.661+00:00",
+   "todayDispatch": true,
+   "title": "_선택4 10.5도SR 유틸 8아이언 퍼터____"
+  }
+ ],
+ "supplements": [
+  {
+   "groupName": "우드추가",
+   "options": [
+    {
+     "id": 2739773937,
+     "groupName": "우드추가",
+     "name": "3번R",
+     "stockQuantity": 15,
+     "price": 460000,
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 2739773938,
+     "groupName": "우드추가",
+     "name": "3번SR",
+     "stockQuantity": 15,
+     "price": 460000,
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 2739773939,
+     "groupName": "우드추가",
+     "name": "3번S",
+     "stockQuantity": 15,
+     "price": 460000,
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 2739773940,
+     "groupName": "우드추가",
+     "name": "5번R",
+     "stockQuantity": 15,
+     "price": 460000,
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 2739773941,
+     "groupName": "우드추가",
+     "name": "5번SR",
+     "stockQuantity": 15,
+     "price": 460000,
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    },
+    {
+     "id": 2739773942,
+     "groupName": "우드추가",
+     "name": "5번S",
+     "stockQuantity": 15,
+     "price": 460000,
+     "externalStockDisabled": false,
+     "productStatusType": "SALE"
+    }
+   ],
+   "checkedName": null,
+   "checkedId": null,
+   "price": 0
+  }
+ ],
+ "deliveryText": "제주,도서지역 추가 5,000원",
+ "deliveryMethodType": {
+  "code": 1,
+  "name": "택배",
+  "description": "택배",
+  "etc": null,
+  "naverPayCode": "DELIVERY"
+ },
+ "discountedSalePrice": 2200000,
+ "mobileDiscountRatio": 15,
+ "derived": {
+  "productType": "DEFAULT"
+ },
+ "hopeDelivery": null,
+ "commentCount": 3,
+ "isPayMember": false,
+ "arrivalGuarantee": false,
+ "groupId": null,
+ "groupEpId": null,
+ "simpleProductAffiliateYn": false,
+ "disableAdditionalApi": false
+}

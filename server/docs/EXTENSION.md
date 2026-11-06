@@ -67,7 +67,10 @@ The seller's attribute rows of a smartstore product (종류, 성별, 총클럽�
    is on the first search page only for the first rows; deeper ones fall back to the name). A category entry is not
    built yet.
 2. The card: `a[href*="/products/<id>?"]` on the search page (cards link to
-   `smartstore.naver.com/main/products/<id>?nl-query=...`); none -> 404. A click opens the product in a new tab;
+   `smartstore.naver.com/main/products/<id>?nl-query=...`); none -> 404. The card's photo is clicked
+   (`img[class*="productCardThumbnail_image"]` in the `product_card` element whose child is that link; the link
+   itself when there is no photo): the store's name link lies mid-card and opened the store, then the login page
+   (2026-11-05, `ext_product._card`). The click opens the product in a new tab;
    walls are checked as on the listing (`ext_listing.check`). A direct open of the product URL goes to the login
    page instead (2026-11-01), so it is never used.
 3. Up to 8 reads, 2 s apart, until the 상품정보 list is rendered; then `button[data-shp-area="pdinfo.more"]`
@@ -93,9 +96,13 @@ listing answers 409 and a listing during a read 409. ~30-60 s a read; cached 24 
 
 - **Everything runs as the owner**: their IP, cookies and account. Bursts get the network banned for Shopping,
   for their personal browsing too. Keep one listing at a time, sequential, at page speed.
-- **Captcha**: reported through `server/notify.py` (`NAVER_NOTIFY_WEBHOOK`, else a macOS notification) and waited
-  for 60 s while the owner solves it in that Chrome window; then the run stops. **Ban page / refused batch**: stop,
-  never retried.
+- **Captcha**: the adapter saves a screenshot, the page and the question (`ext_listing.captcha_question`), puts the
+  cursor in the answer field, reports it through `server/notify.py` (`NAVER_NOTIFY_WEBHOOK`, else a macOS
+  notification; the `ext-listing: CAPTCHA ... question: ...` log line is what an agent watching the run relays to the
+  owner's chat) and waits `NAVER_CAPTCHA_WAIT_S` (600 s) while the owner answers it in that Chrome window, at the Mac
+  or from a phone through a remote-desktop app. A new captcha after a wrong answer is reported again; when the page
+  shows no captcha the run goes on, else it stops. Nothing is ever typed into a captcha by the code (R-EXT-3).
+  **Ban page / refused batch**: stop, never retried.
 - Chrome must be open with the adapter loaded; the run drives its own tabs only.
 - Coverage: `total` is the site's count for the query (4385 for 남성 골프채 풀세트, vs ~30k in the ns-portal widget:
   different search). No category filter yet.

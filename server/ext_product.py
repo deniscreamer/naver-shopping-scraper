@@ -68,11 +68,17 @@ class NotListed(NotFound):
 
 
 def _card(bridge, tab, product_id):
-    """The selector of the product's card link on the search page, or None.
-    Cards link to smartstore.naver.com/main/products/<id>?nl-query=... (2026-11-01)."""
-    for sel in (f'a[href*="/products/{product_id}?"]', f'a[href$="/products/{product_id}"]'):
-        if (bridge.call("query", tabId=tab, selector=sel) or {}).get("count"):
-            return sel
+    """The selector to click for the product's card on the search page, or None.
+    Cards link to smartstore.naver.com/main/products/<id>?nl-query=... (2026-11-01). Seen 2026-11-05 (thegolf
+    8357720534, 5543663553): that link is a transparent layer over the whole card (178 x 397), and the store's
+    name link (smartstore.naver.com/inflow/outlink -> /thegolf, then Naver's login page) lies above it just under
+    the photo, inside the middle band the adapter clicks in. So the card's photo is clicked (the product link layer
+    covers it, nothing else does); the link itself only when a card has no such photo."""
+    for link in (f'a[href*="/products/{product_id}?"]', f'a[href$="/products/{product_id}"]'):
+        photo = f'[class*="product_card"]:has(> {link}) img[class*="productCardThumbnail_image"]'
+        for sel in (photo, link):
+            if (bridge.call("query", tabId=tab, selector=sel) or {}).get("count"):
+                return sel
     return None
 
 
@@ -110,6 +116,7 @@ def read_page(bridge, product_id, query, out_dir):
     """-> {url, title, html, search_url}: the product page after a click from
     the search for `query`, its 상품정보 list unfolded. Closes its tabs."""
     os.makedirs(out_dir, exist_ok=True)
+    started = time.monotonic()
     try:
         tab, why = ext_listing.open_search(bridge, query, out_dir)
         if tab is None:
@@ -121,9 +128,20 @@ def read_page(bridge, product_id, query, out_dir):
                             "pass a query that finds it (its name, or a shorter part of it)")
         ext_listing.pause(1, 2.5)
         clicked = bridge.call("click", tabId=tab, selector=selector)
+        if not clicked.get("newTabId"):
+            # 2026-11-05: one photo click in 20 opened nothing (still on the search page): one more click
+            ext_listing.pause(1.5, 3)
+            if "/products/" not in ((bridge.call("page", tabId=tab, headChars=0) or {}).get("url") or ""):
+                clicked = bridge.call("click", tabId=tab, selector=selector)
         page_tab = clicked.get("newTabId") or tab
         bridge.call("wait_load", tabId=page_tab, timeoutMs=45000)
         ext_listing.pause(3, 5)
+        # 2026-11-06: a product whose page Naver cannot serve opens shopv.pstatic.net/web/maintenance/
+        # internal-error.html (twice in a row on 10302181901); the adapter may not read that host, and it is not a
+        # wall: the product is unavailable now (404), the run goes on
+        tab_url = next((t.get("url") or "" for t in bridge.call("tabs") or [] if t.get("tabId") == page_tab), "")
+        if "/web/maintenance/" in tab_url:
+            raise NotListed(f"product {product_id}: Naver shows its error page ({tab_url[:80]})")
         if not ext_listing.check(bridge, page_tab, "product", out_dir):
             raise PageBlocked(f"product {product_id}: a wall on the product page")
         # A click on the card's centre can land on its store link (2026-11-01: the Honma D1 card in the
@@ -151,6 +169,10 @@ def read_page(bridge, product_id, query, out_dir):
         if product is not None:
             with open(os.path.join(out_dir, "product.json"), "w", encoding="utf-8") as f:   # local evidence, gitignored
                 json.dump(product, f, ensure_ascii=False)
+        card = "link" if selector.startswith("a[") else "photo"
+        folded = ", folded" if pdp.specs_collapsed(html) else ""
+        print(f"ext-product: {product_id} read in {time.monotonic() - started:.0f} s: card by {card}, "
+              f"{len(pdp.spec_rows(html))} rows{folded}, options {'yes' if product else 'NO'}", flush=True)
         return {"url": page.get("url"), "title": page.get("title"), "html": html, "search_url": search_url,
                 "product": product}
     except ExtError as e:
@@ -170,11 +192,18 @@ def _specs(product, query):
     except listing_jobs.NoExtension:
         raise AdapterError("the browser extension is not connected: open Chrome with the "
                            "naver-scrap adapter loaded (extension/README.md)")
-    rows = pdp.spec_rows(page["html"])
-    if not rows:            # every product page lists at least 상품번호: not rendered, or the layout changed
+    if not pdp.spec_rows(page["html"]):   # every product page lists at least 상품번호: not rendered, or changed
         raise AdapterError(f"product {product_id}: no 상품정보 list on the product page {page['url']} "
                            f"(saved to {out_dir}); retry, or the page layout changed")
-    options = parsers.parse_page_options(page["product"], pdp.text_fields(page["html"])) if page.get("product") else None
+    return specs_from_page(details, page["html"], page.get("product"), query)
+
+
+def specs_from_page(details, page_html, product_answer, query=None):
+    """The /products/specs answer from the product record and the page as read: pure (no browser, no clock but
+    read_at), so saved pages replay offline (naver_shopping/fixtures/pages/, test_pages.py)."""
+    product_id = details["id"]
+    rows = pdp.spec_rows(page_html)
+    options = parsers.parse_page_options(product_answer, pdp.text_fields(page_html)) if product_answer else None
     return {
         "id": product_id,
         "name": details["name"],
@@ -182,13 +211,37 @@ def _specs(product, query):
         "query": query,
         "category": details["category"],
         "specs": rows,
-        "is_complete": not pdp.specs_collapsed(page["html"]),
+        "is_complete": not pdp.specs_collapsed(page_html),
         "facts": parsers.product_facts(details, details["notice"], rows),
         "options": options,
-        "measures": measures.measures(rows, details["notice"], details.get("description"), page["html"], product_id,
+        "delivery": parsers.parse_page_delivery(product_answer, pdp.delivery_promise(page_html))
+        if product_answer else None,
+        "measures": measures.measures(rows, details["notice"], details.get("description"), page_html, product_id,
                                       options, details["name"], details["category"]),
         "read_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
+
+
+def product_page(product, query=None):
+    """The /products/page answer, for development and analysis: the product page itself as the owner's Chrome
+    rendered it (상품정보 unfolded), and the page's own product answer, read the same way as /products/specs
+    (search -> card -> page). Never cached: every call reads the page."""
+    details = api.product_details(product)
+    query = query or details["name"]
+    if not query:
+        raise NotListed(f"product {product}: no name to search for; pass query")
+    out_dir = os.path.join(OUTPUT_ROOT, datetime.now().strftime("%Y%m%d-%H%M%S") + f"-{details['id']}")
+    try:
+        page = listing_jobs.with_adapter(lambda bridge: read_page(bridge, details["id"], query, out_dir))
+    except listing_jobs.Busy as e:
+        raise AdapterBusy(f"the adapter is busy ({e}), retry when it is done")
+    except listing_jobs.NoExtension:
+        raise AdapterError("the browser extension is not connected: open Chrome with the "
+                           "naver-scrap adapter loaded (extension/README.md)")
+    return {"id": details["id"], "link": details["link"], "query": query, "url": page.get("url"),
+            "title": page.get("title"), "search_url": page.get("search_url"), "html": page.get("html") or "",
+            "product_answer": page.get("product"), "saved_to": out_dir,
+            "read_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}
 
 
 def product_specs(product, query=None):

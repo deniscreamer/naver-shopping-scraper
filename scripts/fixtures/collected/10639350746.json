@@ -1,0 +1,1141 @@
+{
+ "key": "fairwardgolf:naver:102349440:10639350746",
+ "listing": {
+  "product_id": "10639350746",
+  "nv_mid": "88183856556",
+  "link": "https://smartstore.naver.com/drallright/products/10639350746",
+  "name": "왼손골프 좌타 골프채풀세트 초보용 남성용 캘러웨이 골프백포함",
+  "store": {
+   "name": "닥터올바른",
+   "slug": "drallright",
+   "link": "https://smartstore.naver.com/drallright",
+   "channel_no": "102349440",
+   "grade": "SEED",
+   "is_brand_store": false
+  },
+  "pricing": {
+   "sale_price": 1489000,
+   "discounted_price": 1414550,
+   "discount_ratio": 5,
+   "currency": "KRW"
+  },
+  "category_id": "50002788",
+  "reviews": {
+   "count": 1,
+   "average_score": 5
+  },
+  "stock_quantity": 97,
+  "image": "https://shopping-phinf.pstatic.net/main_8818385/88183856556.jpg",
+  "is_ad": false,
+  "query": "남성 골프채 풀세트",
+  "batch": 2,
+  "seen_at": "2026-11-06T04:57:14+00:00"
+ },
+ "details": {
+  "id": "10639350746",
+  "origin_product_id": "10588466300",
+  "name": "왼손골프 좌타 골프채풀세트 초보용 남성용 캘러웨이 골프백포함",
+  "link": "https://smartstore.naver.com/drallright/products/10639350746",
+  "catalog_id": "88183856556",
+  "catalog_link": "https://search.shopping.naver.com/catalog/88183856556",
+  "status": "SALE",
+  "sale_type": "NEW",
+  "is_displayed": true,
+  "pricing": {
+   "sale_price": 1489000,
+   "discounted_price": 1414550,
+   "discount_ratio": 5,
+   "seller_discount": 74450,
+   "manager_discount": 0,
+   "currency": "KRW",
+   "points": {
+    "purchase": 14145,
+    "text_review": 0,
+    "photo_video_review": 0,
+    "after_use_text_review": 0,
+    "after_use_photo_video_review": 0,
+    "store_member_review": 0
+   }
+  },
+  "stock_quantity": 97,
+  "has_options": false,
+  "has_supplements": false,
+  "images": [
+   "https://shop-phinf.pstatic.net/20240724_225/1721792702935QbBy4_JPEG/2829906821721910_884620392.jpg",
+   "https://shop-phinf.pstatic.net/20240724_132/17217927116844Uy13_JPEG/4486997081380306_478217058.jpg",
+   "https://shop-phinf.pstatic.net/20240724_262/1721792721233zGE2f_JPEG/1376483118786175_373949882.jpg"
+  ],
+  "category": {
+   "id": "50002788",
+   "name": "풀세트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "풀세트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002788"
+   ]
+  },
+  "brand": "캘러웨이",
+  "brand_id": "316",
+  "manufacturer": "캘러웨이",
+  "model_name": null,
+  "tags": [
+   "N도착보장",
+   "좌타골프채",
+   "왼손골프클럽",
+   "왼손골프채풀세트",
+   "초보용골프채",
+   "초보좌타골프채"
+  ],
+  "page_title": null,
+  "reviews": {
+   "count": 1,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 1
+   },
+   "text_count": 0,
+   "photo_count": 1,
+   "video_count": 0,
+   "after_use_count": 0,
+   "best_count": 0,
+   "recent": null,
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "최고예요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "디자인은 어떤가요?",
+     "answers": [
+      {
+       "name": "별로예요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "화면과 같아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    }
+   ],
+   "representative_reviews": null
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "TODAY",
+   "is_today_delivery": null,
+   "company": "CJ대한통운",
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": null,
+   "extra_fee_text": "7000"
+  },
+  "is_free_delivery": true,
+  "is_today_delivery": true,
+  "has_arrival_guarantee": false,
+  "has_regular_subscription": false,
+  "has_free_return_insurance": false,
+  "is_minor_purchasable": true,
+  "is_adult_restricted": false,
+  "is_in_naver_shopping": true,
+  "option_groups": null,
+  "variants": null,
+  "supplements": null,
+  "description": {
+   "html": null,
+   "text": "남성용 왼손 초보용 골프채 풀세트\n미국내 1위 제품\n\n현지배송비+관세&부가세+국내배송비 모두 포함 금액고객님께서 추가적으로 지불하시는 금액은 없습니다!!!!!\n\nCallaway Golf Men’s Strata Complete Set\n\n[구성] 총 14piece\nDriver\n3 Wood\n5 Hybrid\n6 - 9 Iron\nPW and SW\nPutter\nStand Bag\n3 Headcovers\n\n크기\n14 종(Strata Plus)\n색상\n빨강\n골프채 강도\nR\n사용\n왼손잡이\n재질\n알루미늄\n브랜드\n캘러웨이(Callaway)\n샤프트재질\n스틸\n무게\n14 파운드\n골프퍼터라이앵글\n62.5\n그립타입\n퍼터\n\n우즈: 드라이버는 460cc의 클럽 헤드와 더 큰 스위트 스팟과 그래파이트 샤프트가 있어 티와의 거리가 더 멀어집니다. 3 Wood는 더 빠른 스윙 속도와 긴 샷을 촉진합니다.\n하이브리드: 5 하이브리드는 보통 어려운 롱아이언에 부딪힐 때 다재다능함과 용서를 위해 설계되었습니다.\n아이언/웨지: 6~9개의 아이언, 피칭 웨지 및 샌드 웨지에는 둘레 가중 및 점진적인 밑창 폭 기술이 적용되어 제어력이 향상되었습니다.\n퍼터: 놀라운 정확도를 제공하는 정렬 기능을 갖춘 말렛 퍼터\n\nSize\n‎14 Piece (Strata Plus)\nColor\n‎Red\nGolf Club Flex\n‎Regular\nHand Orientation\n‎Left\nMaterial\n‎Aluminum\nBrand\n‎Callaway\nShaft Material\n‎Steel\nItem Weight\n‎14 Pounds\nGolf Putter Lie Angle\n‎62.5\nGrip Type\n‎Putter\nProduct Dimensions\n‎48\"L x 11\"W x 11\"H\nUPC\n‎190228623812\nGlobal Trade Identification Number\n‎00190228623812\nManufacturer\n‎Callaway Golf\nItem Package Dimensions L x W x H\n‎48.2 x 12.7 x 8.5 inches\nPackage Weight\n‎7.71 Kilograms\nItem Dimensions LxWxH\n‎48 x 11 x 11 inches\nBrand Name\n‎Callaway\nWarranty Description\n‎2 year warranty\nModel Name\n‎STRATA PLUS 19 PACKAGE SET\nSuggested Users\n‎mens\nNumber of Items\n‎14\nPart Number\n‎4PKL190714067\nStyle\n‎Left Hand\nIncluded Components\n‎Golf Package Set",
+   "editor_type": "SEONE",
+   "images": [
+    "https://shop-phinf.pstatic.net/20240724_40/1721796603670Y1U32_JPEG/%ED%95%98%EB%8B%A8%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240724_107/1721795188295KDP0s_JPEG/%ED%95%B4%EC%99%B8%EB%B0%B0%EC%86%A1.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240724_188/1721795433494yG5Jr_JPEG/%ED%86%B5%EA%B4%80%EB%B2%88%ED%98%B8_%EC%95%88%EB%82%B4.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240724_255/1721794378977HEk6p_JPEG/61V8CYTzhOL._AC_SL1500_.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240724_289/17217943790011MgBL_JPEG/2024-07-24_12_44_05.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240724_8/1721794378982Ux6mN_JPEG/2024-07-24_12_44_33.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20240726_45/1721960206004Ekl8d_JPEG/%ED%95%B4%EA%B5%AC%EB%8C%80%EC%95%88%EB%82%B4.jpg?type=w848"
+   ]
+  },
+  "notice": {
+   "type": "SPORTS_EQUIPMENT",
+   "items": [
+    {
+     "label": "품명 / 모델명",
+     "value": "상품상세참조 / 상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "KC 인증정보",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "크기",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "중량",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "색상",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "재질",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제품구성",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "동일 모델의 출시연월",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조자(사)",
+     "value": "캘러웨이",
+     "is_see_description": false
+    },
+    {
+     "label": "제조국",
+     "value": "해외구매대행",
+     "is_see_description": false
+    },
+    {
+     "label": "상품별 세부사양",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "품질보증기준",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "A/S 책임자와 전화번호",
+     "value": null,
+     "is_see_description": false
+    }
+   ],
+   "terms": [
+    {
+     "label": "재화등의 배송방법에 관한 정보",
+     "value": "택배",
+     "is_see_description": false
+    },
+    {
+     "label": "주문 이후 예상되는 배송기간",
+     "value": "대금 지급일로부터 3일 이내에 발송",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+     "value": "상품상세 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+     "value": "편도 8000원 (최초 배송비 무료인 경우 16000원 부과)",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 A/S 관련 전화번호",
+     "value": null,
+     "is_see_description": false
+    },
+    {
+     "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+     "value": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+     "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+     "is_see_description": false
+    }
+   ]
+  },
+  "facts": {
+   "brand": {
+    "value": "캘러웨이",
+    "source": "search_info.brandName"
+   },
+   "manufacturer": {
+    "value": "캘러웨이",
+    "source": "search_info.manufacturerName"
+   },
+   "model_name": null,
+   "origin": {
+    "value": "해외구매대행",
+    "source": "notice:제조국"
+   }
+  },
+  "store": {
+   "id": "102349440",
+   "uid": "2wMLtWo4g2rUCwuIaTb7K",
+   "name": "닥터올바른",
+   "slug": "drallright",
+   "link": "https://smartstore.naver.com/drallright",
+   "type": "smart_store",
+   "grade": "FIFTH",
+   "sale_count": 1,
+   "merchant_id": "512246193",
+   "business": {
+    "legal_name": "올바른(allright)",
+    "representative": "최미나",
+    "type": "SIMPLE",
+    "is_business": true,
+    "is_overseas": false,
+    "phone": null,
+    "email": null,
+    "address": null
+   }
+  }
+ },
+ "specs": {
+  "id": "10639350746",
+  "name": "왼손골프 좌타 골프채풀세트 초보용 남성용 캘러웨이 골프백포함",
+  "link": "https://smartstore.naver.com/drallright/products/10639350746",
+  "query": "왼손골프 좌타 골프채풀세트 초보용 남성용 캘러웨이 골프백포함",
+  "category": {
+   "id": "50002788",
+   "name": "풀세트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "풀세트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002788"
+   ]
+  },
+  "specs": [
+   {
+    "label": "상품번호",
+    "value": "10639350746"
+   },
+   {
+    "label": "제조사",
+    "value": "캘러웨이"
+   },
+   {
+    "label": "브랜드",
+    "value": "캘러웨이"
+   },
+   {
+    "label": "원산지",
+    "value": "해외구매대행"
+   },
+   {
+    "label": "드라이버 로프트각",
+    "value": "12도"
+   },
+   {
+    "label": "아이언 구성",
+    "value": "#6, #7, #8, #9, 샌드웨지(SW), 피칭웨지(PW), W"
+   },
+   {
+    "label": "종류",
+    "value": "풀세트"
+   },
+   {
+    "label": "성별",
+    "value": "남성용"
+   },
+   {
+    "label": "사용방향",
+    "value": "왼손용"
+   },
+   {
+    "label": "출시",
+    "value": "2024년형"
+   },
+   {
+    "label": "풀세트구성",
+    "value": "드라이버, 6아이언세트, 7아이언세트, 8아이언세트, 9아이언세트, 퍼터, 5아이언세트, 웨지, 페어웨이"
+   },
+   {
+    "label": "아이언샤프트소재",
+    "value": "스틸"
+   },
+   {
+    "label": "아이언개수",
+    "value": "7개"
+   },
+   {
+    "label": "퍼터형태",
+    "value": "말렛(반달형)"
+   },
+   {
+    "label": "골프백포함여부",
+    "value": "스탠드백"
+   }
+  ],
+  "is_complete": true,
+  "facts": {
+   "brand": {
+    "value": "캘러웨이",
+    "source": "specs:브랜드"
+   },
+   "manufacturer": {
+    "value": "캘러웨이",
+    "source": "specs:제조사"
+   },
+   "model_name": null,
+   "origin": {
+    "value": "해외구매대행",
+    "source": "specs:원산지"
+   }
+  },
+  "options": {
+   "has_options": false,
+   "status": "SALE",
+   "is_sold_out": false,
+   "stock_quantity": 97,
+   "option_groups": [],
+   "variants": [],
+   "simple_options": [],
+   "text_options": [],
+   "supplements": []
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": "제주,도서지역 추가 4,000원",
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "TODAY",
+   "is_today_delivery": true,
+   "company": "CJ 대한통운(오네)",
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": null,
+   "extra_fee_text": "7000",
+   "is_overseas": false,
+   "scope": "domestic",
+   "customs_tax_type": null,
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": "18:00",
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   }
+  },
+  "measures": {
+   "is_set": true,
+   "weights": [
+    {
+     "value": {
+      "min": 6350.293,
+      "max": 6350.293
+     },
+     "unit": "파운드",
+     "matched": "14 파운드",
+     "kind": "unknown",
+     "scope": "set",
+     "approximate": false,
+     "count": null,
+     "flags": [],
+     "quote": "무게: 14 파운드",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 7,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "product",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 6350.293,
+      "max": 6350.293
+     },
+     "unit": "Pounds",
+     "matched": "14 Pounds",
+     "kind": "unknown",
+     "scope": "set",
+     "approximate": false,
+     "count": null,
+     "flags": [],
+     "quote": "Item Weight: 14 Pounds",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 17,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "product",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "value": {
+      "min": 7710.0,
+      "max": 7710.0
+     },
+     "unit": "Kilograms",
+     "matched": "7.71 Kilograms",
+     "kind": "packed",
+     "scope": "unknown",
+     "approximate": false,
+     "count": null,
+     "flags": [],
+     "quote": "Package Weight: 7.71 Kilograms",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 25,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "product",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    }
+   ],
+   "dimensions": [
+    {
+     "values": [
+      1219.2,
+      279.4,
+      279.4
+     ],
+     "axes": [
+      "length",
+      "width",
+      "height"
+     ],
+     "unit": "\"",
+     "matched": "48\"L x 11\"W x 11\"H",
+     "kind": "product",
+     "state": null,
+     "flags": [
+      "not_confirmed_packed"
+     ],
+     "quote": "Product Dimensions: 48\"L x 11\"W x 11\"H",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 20,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "product",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "values": [
+      1224.28,
+      322.58,
+      215.9
+     ],
+     "axes": [
+      "length",
+      "width",
+      "height"
+     ],
+     "unit": "inches",
+     "matched": "48.2 x 12.7 x 8.5 inches",
+     "kind": "packed",
+     "state": null,
+     "flags": [],
+     "quote": "Item Package Dimensions L x W x H: 48.2 x 12.7 x 8.5 inches",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 24,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "product",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "values": [
+      1219.2,
+      279.4,
+      279.4
+     ],
+     "axes": [
+      "length",
+      "width",
+      "height"
+     ],
+     "unit": "inches",
+     "matched": "48 x 11 x 11 inches",
+     "kind": "unknown",
+     "state": null,
+     "flags": [
+      "not_confirmed_packed"
+     ],
+     "quote": "Item Dimensions LxWxH: 48 x 11 x 11 inches",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 26,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "product",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    }
+   ],
+   "references": [
+    {
+     "quote": "크기: 상품상세참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 2
+     },
+     "measure": "size",
+     "reason": "description_reference"
+    },
+    {
+     "quote": "중량: 상품상세참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 3
+     },
+     "measure": "weight",
+     "reason": "description_reference"
+    }
+   ],
+   "review": []
+  },
+  "read_at": "2026-11-06T12:37:44Z"
+ },
+ "variants": {
+  "paid": true,
+  "base_price": 1414550,
+  "variants": [],
+  "available": 0,
+  "sold_out": 0,
+  "skipped_paid": 0,
+  "name_mismatches": [],
+  "simple_options": [],
+  "text_options": [],
+  "supplements": []
+ },
+ "package": [
+  {
+   "variant_id": null,
+   "fields": {
+    "product_weight_g": {
+     "value": {
+      "min": 6350.293,
+      "max": 6350.293
+     },
+     "source": "source_stated",
+     "confidence": 2,
+     "quote": "무게: 14 파운드",
+     "from": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 7,
+      "cell": "tr"
+     },
+     "kind": "unknown",
+     "scope": "set",
+     "approximate": false,
+     "flags": [],
+     "binding": {
+      "scope": "product",
+      "variant_ids": []
+     },
+     "also": 1
+    },
+    "package_weight_g": {
+     "value": {
+      "min": 7710.0,
+      "max": 7710.0
+     },
+     "source": "source_stated",
+     "confidence": 3,
+     "quote": "Package Weight: 7.71 Kilograms",
+     "from": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 25,
+      "cell": "tr"
+     },
+     "kind": "packed",
+     "scope": "unknown",
+     "approximate": false,
+     "flags": [],
+     "binding": {
+      "scope": "product",
+      "variant_ids": []
+     },
+     "also": 0
+    },
+    "package_length_mm": {
+     "value": {
+      "min": 1224.28,
+      "max": 1224.28
+     },
+     "source": "source_stated",
+     "confidence": 3,
+     "quote": "Item Package Dimensions L x W x H: 48.2 x 12.7 x 8.5 inches",
+     "from": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 24,
+      "cell": "tr"
+     },
+     "kind": "packed",
+     "scope": null,
+     "approximate": false,
+     "flags": [],
+     "binding": {
+      "scope": "product",
+      "variant_ids": []
+     },
+     "also": 0
+    },
+    "package_width_mm": {
+     "value": {
+      "min": 322.58,
+      "max": 322.58
+     },
+     "source": "source_stated",
+     "confidence": 3,
+     "quote": "Item Package Dimensions L x W x H: 48.2 x 12.7 x 8.5 inches",
+     "from": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 24,
+      "cell": "tr"
+     },
+     "kind": "packed",
+     "scope": null,
+     "approximate": false,
+     "flags": [],
+     "binding": {
+      "scope": "product",
+      "variant_ids": []
+     },
+     "also": 0
+    },
+    "package_height_mm": {
+     "value": {
+      "min": 215.9,
+      "max": 215.9
+     },
+     "source": "source_stated",
+     "confidence": 3,
+     "quote": "Item Package Dimensions L x W x H: 48.2 x 12.7 x 8.5 inches",
+     "from": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 24,
+      "cell": "tr"
+     },
+     "kind": "packed",
+     "scope": null,
+     "approximate": false,
+     "flags": [],
+     "binding": {
+      "scope": "product",
+      "variant_ids": []
+     },
+     "also": 0
+    }
+   },
+   "product_size": [
+    {
+     "values": [
+      1219.2,
+      279.4,
+      279.4
+     ],
+     "axes": [
+      "length",
+      "width",
+      "height"
+     ],
+     "unit": "\"",
+     "matched": "48\"L x 11\"W x 11\"H",
+     "kind": "product",
+     "state": null,
+     "flags": [
+      "not_confirmed_packed"
+     ],
+     "quote": "Product Dimensions: 48\"L x 11\"W x 11\"H",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 20,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "product",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    },
+    {
+     "values": [
+      1219.2,
+      279.4,
+      279.4
+     ],
+     "axes": [
+      "length",
+      "width",
+      "height"
+     ],
+     "unit": "inches",
+     "matched": "48 x 11 x 11 inches",
+     "kind": "unknown",
+     "state": null,
+     "flags": [
+      "not_confirmed_packed"
+     ],
+     "quote": "Item Dimensions LxWxH: 48 x 11 x 11 inches",
+     "source": "description_table",
+     "locator": {
+      "block": "html",
+      "row": 26,
+      "cell": "tr"
+     },
+     "binding": {
+      "scope": "product",
+      "variant_ids": []
+     },
+     "origin": "source_stated"
+    }
+   ]
+  }
+ ],
+ "reviews": {
+  "product": {
+   "id": "10639350746",
+   "name": "왼손골프 좌타 골프채풀세트 초보용 남성용 캘러웨이 골프백포함",
+   "link": "https://smartstore.naver.com/drallright/products/10639350746"
+  },
+  "summary": {
+   "count": 1,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 1
+   },
+   "text_count": 0,
+   "photo_count": 1,
+   "video_count": 0,
+   "after_use_count": 0,
+   "best_count": 0,
+   "recent": null,
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "최고예요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "디자인은 어떤가요?",
+     "answers": [
+      {
+       "name": "별로예요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "화면과 같아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    }
+   ],
+   "representative_reviews": null
+  },
+  "mode": "small_source",
+  "count": 1,
+  "scanned": 1,
+  "passes": [
+   {
+    "media": "all",
+    "pages": 1,
+    "total_count": 1,
+    "is_exhausted": true
+   }
+  ],
+  "is_complete": true,
+  "results": [
+   {
+    "id": "4723892113",
+    "score": 5,
+    "text": "넘 좋아요 감사해요",
+    "created_at": "2025-05-15T21:38:29Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": null,
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "myjs****",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20250516_128/17473451044528zzFN_JPEG/1000024513.jpg",
+      "width": 2252,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "10639350746",
+     "origin_product_id": "10588466300",
+     "name": "왼손골프 좌타 골프채풀세트 초보용 남성용 캘러웨이 골프백포함"
+    },
+    "likes": null,
+    "tier": "small"
+   }
+  ]
+ },
+ "photos": {
+  "store": "fairwardgolf",
+  "total": 3,
+  "files": [
+   {
+    "position": 0,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20240724_225/1721792702935QbBy4_JPEG/2829906821721910_884620392.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20240724_225/1721792702935QbBy4_JPEG/2829906821721910_884620392.jpg",
+    "source_sha256": "a832410fea15bef004473f2f52b61edf731ce48dd5a080eeae705f70ed24ad54",
+    "source_bytes": 67066,
+    "source_format": "JPEG",
+    "source_width": 611,
+    "source_height": 1496,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/10639350746/fairwardgolf-10639350746-001-24cc46eca16b5536.webp",
+    "sha256": "24cc46eca16b5536ccfe50ccdbfc96938ae43574c4cde6cbbf77692a500108b6",
+    "bytes": 53056,
+    "width": 611,
+    "height": 1496,
+    "quality": 85
+   },
+   {
+    "position": 1,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20240724_132/17217927116844Uy13_JPEG/4486997081380306_478217058.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20240724_132/17217927116844Uy13_JPEG/4486997081380306_478217058.jpg",
+    "source_sha256": "6c81be23a0362538dc927b6857f49ffaf5e098451c4574d0731c8ea0d803fdaf",
+    "source_bytes": 321261,
+    "source_format": "JPEG",
+    "source_width": 1095,
+    "source_height": 913,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/10639350746/fairwardgolf-10639350746-002-4b2062f52bbb63cd.webp",
+    "sha256": "4b2062f52bbb63cd356ca85e8a66c8191451303c71ba48700dee80de74a3755e",
+    "bytes": 69576,
+    "width": 1095,
+    "height": 913,
+    "quality": 85
+   },
+   {
+    "position": 2,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20240724_262/1721792721233zGE2f_JPEG/1376483118786175_373949882.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20240724_262/1721792721233zGE2f_JPEG/1376483118786175_373949882.jpg",
+    "source_sha256": "f4f48eba8d12312c57f5e25da6de53628600a4adb6bd2e50933b026b222495d0",
+    "source_bytes": 168577,
+    "source_format": "JPEG",
+    "source_width": 1336,
+    "source_height": 428,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/10639350746/fairwardgolf-10639350746-003-271a695a0ef79be0.webp",
+    "sha256": "271a695a0ef79be0aaa4dc7b268a39579f7e0942c66f1952592ae4221a4dddce",
+    "bytes": 27700,
+    "width": 1336,
+    "height": 428,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true,
+  "originals": 3
+ },
+ "review_media": {
+  "store": "fairwardgolf",
+  "files": [
+   {
+    "review_id": "4723892113",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20250516_128/17473451044528zzFN_JPEG/1000024513.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20250516_128/17473451044528zzFN_JPEG/1000024513.jpg",
+    "source_sha256": "7d945ce9386af84ef9e977da8ac14dbff18d110a4fe51c2f8044c714d6957897",
+    "source_bytes": 2826211,
+    "source_format": "JPEG",
+    "source_width": 2252,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run40/full-50002788/images/10639350746/fairwardgolf-review-image-56c977a8d1575551.webp",
+    "sha256": "56c977a8d15755515da06ea9994f0fec18697df9de38b0b2bfd474831b38a518",
+    "bytes": 68806,
+    "width": 577,
+    "height": 1024,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true
+ }
+}

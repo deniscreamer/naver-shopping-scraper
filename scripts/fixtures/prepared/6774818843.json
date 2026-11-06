@@ -1,0 +1,750 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:101343636:6774818843",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "specs_bound_to_variants",
+   "detail": "아이언샤프트소재 스틸 -> S"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "선택"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "UNIT_QUANTITY_PAID 99000 KRW"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "EXCLUDED"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/du-valeur/products/6774818843",
+  "channel_no": "101343636",
+  "product_id": "6774818843",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트",
+  "brand_ko": "캘러웨이",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "선택",
+    "values_ko": [
+     "R",
+     "S"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"R\"]",
+    "naver_variant_id": "46088597323",
+    "options_ko": [
+     "R"
+    ],
+    "price_krw": 699000,
+    "price_usd": "699.00",
+    "sku": "FW-03b9c00d421eb7be5ff1593b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   },
+   {
+    "source_id": "observed:[\"S\"]",
+    "naver_variant_id": "46088597324",
+    "options_ko": [
+     "S"
+    ],
+    "price_krw": 699000,
+    "price_usd": "699.00",
+    "sku": "FW-2b42019c1d0ecd45bc9bc113",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    }
+   }
+  ],
+  "pricing": {
+   "base_krw": 699000,
+   "original_krw": 700000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "캘러웨이 WARBIRD"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "일본산"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "10.5도"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#5, #6, #7, #8, #9, 샌드웨지(SW), 피칭웨지(PW)"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "10개"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2019년형"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "드라이버, 페어웨이, 퍼터, 웨지, 7아이언세트"
+   },
+   {
+    "label_ko": "아이언샤프트소재",
+    "value_ko": "스틸",
+    "for_ko": [
+     "S"
+    ]
+   },
+   {
+    "label_ko": "아이언개수",
+    "value_ko": "7개"
+   },
+   {
+    "label_ko": "퍼터형태",
+    "value_ko": "블레이드(일자형)"
+   },
+   {
+    "label_ko": "골프백포함여부",
+    "value_ko": "캐디백"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.78,
+   "count": 151
+  },
+  "reviews": [
+   {
+    "id": "4586033239",
+    "score": 5,
+    "text_ko": "배송은 딱 2주뒤에 왔고, 추가 관세는 약 11-12정도 나오는거같아요!!!! 선물용으로 산거라 잘 썼으면 좋겠네요 ㅎㅎㅎ 포장은 하나하나 다 싸져서 와요! 그리고 옆주머니에 덮개? 가 들어있어서 거기서 꺼내서 똑딱 채우면 됩니다-!",
+    "created_at": "2024-10-27T01:41:42Z",
+    "writer": "0olu****",
+    "photos": [
+     "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-image-07c5fdb8359a2948.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-avatar-53a0edf58bc1e1b4.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "4424422373",
+    "score": 5,
+    "text_ko": "정말 가성비 끝판왕이고, 배송도 해외배송 치고는 빠릅니다. 단, 관세가 별도로 개인납부인데, 해당건 제목에도 써주세요. 헷갈려요.",
+    "created_at": "2024-02-13T04:08:49Z",
+    "writer": "yuri****",
+    "photos": [
+     "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-image-fb580095fc23f1d7.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-avatar-81fc870d1b951842.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "4398435863",
+    "score": 4,
+    "text_ko": "골프 입문 비기너입니다. 일단 클럽도 가방도 맘에 쏙 이쁘구요, 가볍고 가성비 좋은것 같습니다만, 성능은 한판 쳐봐야 알겠네요 ^^",
+    "created_at": "2023-12-30T12:18:21Z",
+    "writer": "bi****",
+    "photos": [
+     "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-image-a771f2fba8b3ef1b.webp",
+     "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-image-d544d812b8f648ae.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-avatar-15d42389aeacd42c.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "4264367459",
+    "score": 4,
+    "text_ko": "아직 사용전이나 좋아 보입니다. 골프 처음 시작한 아들래미용으로 구입 했습니다. 관부가세 따로 더 냈는데... 그런 안내도 있었더라면 더 좋을번 했습니다. 이번 주말에 쳐보고 리뷰 또 남길께요... ^^",
+    "created_at": "2023-06-02T01:15:52Z",
+    "writer": "viol********",
+    "photos": [
+     "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-image-32e5d7b40279df4c.webp",
+     "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-image-a7efe947daba1c8a.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-avatar-3ae1f3d20fe96c8b.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "4468098681",
+    "score": 5,
+    "text_ko": "입문자용으로 좋은거 같아요 구성도 좋고\n좋습니다 ^^ 주문 후 수령까지 휴일 제외 10일 \n정도 걸렸네요 관세는 6만원 후반대였습니다",
+    "created_at": "2024-04-24T12:34:25Z",
+    "writer": "swat****",
+    "photos": [
+     "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-image-89e35b46c36daf6f.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "4463770769",
+    "score": 5,
+    "text_ko": "비닐벗기는데 힘들긴하지만 그래도 괜찮아요 \n신발도 잘들어가고 아이언커버는 없지만 미리사놓은거있어서 이쁘고 잘맞네요\n고구마도 미리사놨어요 \n\n요 사이트에서 골프채만\n대략72만원정도 든거같아요\n열심히배워볼라구요 ㅋㅋ\n배달은 대략10일정도 걸리는거같습니다\n\n이거근데 일본에서 온거맞아요?알리에서 배달시킨거랑 똑같아요",
+    "created_at": "2024-04-17T13:37:25Z",
+    "writer": "chbj***",
+    "photos": [
+     "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-image-209c9968ac7db3ea.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "4442779092",
+    "score": 4,
+    "text_ko": "5일날 주문하고 13일 오늘 배송받았어요~화면과 같고 가격대비 만족입니다~다만 메이드인차이나 스티커를 보고 첨엔 뭐지~했어요ㅎ문의게시판 글을 확인하다보니 판매자님 답글을 보고 이가격에 재팬을 기대하다니 하며 피식웃었네요;; \n어찌됐건 상품 이상없이 잘받았구요..이제막 입문하는 남편에겐 2년정도는 무난히 잘쓰일듯 합니다~",
+    "created_at": "2024-03-13T12:38:19Z",
+    "writer": "ga****",
+    "photos": [
+     "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-image-d828b3182253214a.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "4584689838",
+    "score": 5,
+    "text_ko": "다 좋음 근데 택배가 진짜 미친듯이 느린데 견디세요 어차피 한국에서 이거 사려면 1,20만원은 더줘야하니까 인생에서 골프채 시킨적ㅇ ㅓㅄ다 생각하고 기다리다보면 좋은 제품 와요",
+    "created_at": "2024-10-25T00:19:38Z",
+    "writer": "skst********",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-avatar-b2f8f2619decb4cb.webp",
+    "tier": "text"
+   },
+   {
+    "id": "4397644241",
+    "score": 5,
+    "text_ko": "요즘 골프에 빠진 남편 입문용 선물로 사줬는데 엄청 좋아하네요 ㅎㅎ 배송은 예상해주신대로 와서 넘 다행 ㅎㅎ 풀세트에 캐디백포함인데도 이가격이면 최고입니다 ~ 남편도 하나씩 다 들어보더니 너무 맘에들어하네오",
+    "created_at": "2023-12-29T05:09:46Z",
+    "writer": "adls****",
+    "photos": [],
+    "avatar": null,
+    "tier": "text"
+   },
+   {
+    "id": "4361558744",
+    "score": 4,
+    "text_ko": "남동생 입문용으로 백과 함께 구매했습니다.\n안전하게 잘 도착했는데 관세부분을 보이도록 명시해두면 좋을것같은 아쉬움이 드네요.",
+    "created_at": "2023-11-02T00:15:41Z",
+    "writer": "leed*****",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-avatar-706112b025013939.webp",
+    "tier": "text"
+   },
+   {
+    "id": "4309597464",
+    "score": 5,
+    "text_ko": "골프 입문하면서 처음 구입했습니다. 태풍을 뚫고 안전히 배송되었습니다. 결제하고 받기까지 10일 정도 걸린거 같구요. 저렴하게 풀세트 갖게되서 부담없이 열심히 쳐보려고 합니다.",
+    "created_at": "2023-08-10T14:30:43Z",
+    "writer": "ijin***",
+    "photos": [],
+    "avatar": null,
+    "tier": "text"
+   },
+   {
+    "id": "4258544978",
+    "score": 5,
+    "text_ko": "아직 시타전이네요\n시타후 후기 다시 작성할께요\n\n시타후기/아직 초보이다보니 드라이버S는 무리네요\n아이언S는 매우 만족합니다",
+    "created_at": "2023-05-23T16:19:04Z",
+    "writer": "jaeh******",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-avatar-89db21c24812edd4.webp",
+    "tier": "text"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/6774818843/fairwardgolf-6774818843-001-46bc472df318402d.webp",
+    "sha256": "46bc472df318402d747e2708f63396ddd915238b641f3c38f0b2dbb5adc9e5da",
+    "width": 780,
+    "height": 700
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/6774818843/fairwardgolf-6774818843-002-9012e10dbc53e3e2.webp",
+    "sha256": "9012e10dbc53e3e2876734e85e46bebe3c18f2ad6c7855ffd60a5668ad9f9ae2",
+    "width": 500,
+    "height": 500
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/6774818843/fairwardgolf-6774818843-003-93afc882ebb0f7ee.webp",
+    "sha256": "93afc882ebb0f7ee36ee080cb25e79b50135bf020043f0ed86dc9607a4e92104",
+    "width": 500,
+    "height": 500
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/6774818843/fairwardgolf-6774818843-004-1deee1b7199c68d6.webp",
+    "sha256": "1deee1b7199c68d611c0d02ace88983fdae25e856470dcbb620cdb4639ddccff",
+    "width": 500,
+    "height": 500
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/6774818843/fairwardgolf-6774818843-005-0d14b7d3b8352766.webp",
+    "sha256": "0d14b7d3b8352766ed9173ca3fdb3d759c6fe7ce84dba4ca7295ec7f461b36f2",
+    "width": 500,
+    "height": 500
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/6774818843/fairwardgolf-6774818843-006-078344e1bbe9dc3c.webp",
+    "sha256": "078344e1bbe9dc3c2b3202aebf67594650bfa32edec6d5b3ed3be16e8b1ec37e",
+    "width": 500,
+    "height": 500
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "UNIT_QUANTITY_PAID",
+   "base_fee": 99000,
+   "is_overseas": true,
+   "customs_tax_type": "EXCLUDED",
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": null,
+   "policy_text": "1개마다 부과 / 제주,도서지역 추가 3,000원",
+   "lead_time": {
+    "seller_average_days": 5.0,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": "제주 도서"
+  },
+  "description_ko": "호평의 캘러웨이 클럽 세트가 리뉴얼된, 고품질 패키지\n\nX2 HOT를 기반으로 한 클럽 헤드 설계\n퍼터를 제외한 9개의 클럽의 헤드 디자인은 2014년의 X2 HOT 시리즈가 베이스로 되어 있습니다. 또, 마무리에 PVD 가공이 더해져, 세트의 클럽으로서는 더 이상 없을 정도의 성능과 질감을 갖추고 있습니다. 드라이버의 길이는 44.5 인치로 설정. 일반 드라이버보다 약간 짧기 때문에 컨택트가 쉽고 초보자도 부드럽게 시작할 수있습니다.\n\n퍼터에는 오딧세이 전통의 화이트・핫 프로 2.0!\n퍼터에도 오딧세이 전통의 화이트 핫 인서트에서 높은 인기를 자랑했던, 사양의 화이트 핫 프로 2.0입니다. 헤드 타입은 컨벤셔널한 블레이드 타입입니다.\n\n캐디 백도 PU를 충분히 사용해, 고급감이 업그레이드 되었습니다.\nWARBIRD 세트라고 하면, 캐디백도 세트로 되어 있는 것이 특징인 입문 전용 골프 클럽 세트입니다.\n캐디백도 보다 훌륭한 구조로 업그레이드 되어, 풍부한 포켓은 물론 소재에는 PU(인공 피혁)를 다량 사용을 통해,\n기능과 퀄리티가 뛰어난 캐디 백입니다.\n\n워버드 클럽 세트 (10 개 세트) 스틸(S) / 카본(R)\n캘러웨이 골프 / WARBIRD\n\n세트 내용 + 캐디백\n10개 세트(1W, 5W, #5-#9, PW, SW, PT) + 캐디백\n\n상품 특징\n\n번호\n드라이버\n#5 우드\n5i\n6i\n7i\n8i\n9i\nPW\nSW\nPutter\n헤드 소재\n티타늄\n스테인리스\n샤프트\n플렉스\n우드 : WARBIRD (S / R)\n아이언 : WARBIRD (R), 오리지널 스틸 (UNI : SR 상당)\n클럽길이\n(S세트)\n44.5\n42.25\n38.0\n37.5\n37.0\n36.5\n36.0\n35.5\n35.25\n34.0\n로프트각(°)\n10.5\n19.0\n23.0\n26.0\n30.0\n34.5\n39.0\n44.0\n54.0\n3.0\n라이각(°)\n58.5\n58.0\n61.3\n62.0\n62.5\n63.0\n63.5\n64.0\n64.0\n70.0\n밸런스\n(S세트)\nD1\nD3\nD4\n밸런스\n(R세트)\nD0\nD1\nD3\n클럽무게\n(S세트)\n약 318g\n약 330g\n약 416g\n약 420g\n약 424g\n약 430g\n약 436g\n약 446g\n약 455g\n약 521g\n클럽무게(R세트)\n약 313g\n약 328g\n약 370g\n약 375g\n약 380g\n약 386g\n약 392g\n약 401g\n약 414g\n약 521g\n※드라이버, 페어웨이 우드, 퍼터, 전용 헤드 커버 부속.",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20220609_241/1654755718416eYCBj_PNG/no_0.84206439562524341653601045805.png?type=w848",
+   "https://shop-phinf.pstatic.net/20220609_158/1654749420924G8u2s_JPEG/1904-bluu00.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220609_81/16547494399570IwhS_JPEG/1904-bluu02.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220609_30/1654749446458sEng0_JPEG/1904-bluu07.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220609_200/1654749500877ErYyw_JPEG/1904-bluu03.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220609_53/16547495045798J9za_JPEG/1904-bluu04.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220609_195/16547495175400d9Hu_JPEG/1904-bluu05.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220609_275/1654749521527Fl6uS_JPEG/1904-bluu09.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220609_296/1654749536607V0CXy_JPEG/1904-bluu01.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230718_85/1689673765854Qml5b_PNG/image.png?type=w848",
+   "https://shop-phinf.pstatic.net/20220609_207/1654749643981vsm7e_JPEG/71O7Y8ubq0L._AC_SL1447_.jpg?type=w848",
+   "https://static.mercdn.net/item/detail/orig/photos/m87911073122_8.jpg?1676454254",
+   "https://static.mercdn.net/item/detail/orig/photos/m87911073122_10.jpg?1676454325"
+  ],
+  "description_dropped": [
+   {
+    "rule": "policy",
+    "text": "◆ 해당 상품 관부가세 및 배송 공지◆\n해당 제품 통관시 관부가세 별도 납부하셔야하며, 배송은 9~14일가량 소요됩니다.\n<환율변동 및 배송상황에 따라 금액 및 배송일에 차이가 있을 수 있습니다>\n관부가세는 세금톡이라고 카카오톡으로 안내됩니다.(이체, 카드 등 결제가능)\n감사합니다.\n듀벨로 올림"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:f23f642818e89bde",
+   "kind": "title",
+   "ko": "캘러웨이 골프 WARBIRD 남성 골프채 풀세트 2019년 초보 입문용 골린이 풀셋트"
+  },
+  {
+   "id": "brand:752b9a8b36b892c4",
+   "kind": "brand",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "option_name:8d1a750c9351d1b8",
+   "kind": "option_name",
+   "ko": "선택"
+  },
+  {
+   "id": "option_value:8c2574892063f995",
+   "kind": "option_value",
+   "ko": "R"
+  },
+  {
+   "id": "option_value:8de0b3c47f112c59",
+   "kind": "option_value",
+   "ko": "S"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:752b9a8b36b892c4",
+   "kind": "spec_value",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:4810d4e4e60c0c74",
+   "kind": "spec_value",
+   "ko": "캘러웨이 WARBIRD"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2d5ea77cf8032c99",
+   "kind": "spec_value",
+   "ko": "일본산"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:de2b6da830b81034",
+   "kind": "spec_value",
+   "ko": "10.5도"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:92f065775edcaa4b",
+   "kind": "spec_value",
+   "ko": "#5, #6, #7, #8, #9, 샌드웨지(SW), 피칭웨지(PW)"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:bb40a8c2bc46094b",
+   "kind": "spec_value",
+   "ko": "10개"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:516a92a512ee113c",
+   "kind": "spec_value",
+   "ko": "2019년형"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:03e8a606d11ff02a",
+   "kind": "spec_value",
+   "ko": "드라이버, 페어웨이, 퍼터, 웨지, 7아이언세트"
+  },
+  {
+   "id": "spec_label:5a12089f44ae3f65",
+   "kind": "spec_label",
+   "ko": "아이언샤프트소재"
+  },
+  {
+   "id": "spec_value:76d45c1471b5954b",
+   "kind": "spec_value",
+   "ko": "스틸"
+  },
+  {
+   "id": "spec_label:cf77915a2f3ab5d8",
+   "kind": "spec_label",
+   "ko": "아이언개수"
+  },
+  {
+   "id": "spec_value:0c5a3886c288bcd6",
+   "kind": "spec_value",
+   "ko": "7개"
+  },
+  {
+   "id": "spec_label:04c52e5b47f70047",
+   "kind": "spec_label",
+   "ko": "퍼터형태"
+  },
+  {
+   "id": "spec_value:db08874d4cf56690",
+   "kind": "spec_value",
+   "ko": "블레이드(일자형)"
+  },
+  {
+   "id": "spec_label:e4aabb2e41b870bd",
+   "kind": "spec_label",
+   "ko": "골프백포함여부"
+  },
+  {
+   "id": "spec_value:00e36a3d18b6bbee",
+   "kind": "spec_value",
+   "ko": "캐디백"
+  },
+  {
+   "id": "review:57104acaf27d61f4",
+   "kind": "review",
+   "ko": "배송은 딱 2주뒤에 왔고, 추가 관세는 약 11-12정도 나오는거같아요!!!! 선물용으로 산거라 잘 썼으면 좋겠네요 ㅎㅎㅎ 포장은 하나하나 다 싸져서 와요! 그리고 옆주머니에 덮개? 가 들어있어서 거기서 꺼내서 똑딱 채우면 됩니다-!"
+  },
+  {
+   "id": "review:3047540432050b2c",
+   "kind": "review",
+   "ko": "정말 가성비 끝판왕이고, 배송도 해외배송 치고는 빠릅니다. 단, 관세가 별도로 개인납부인데, 해당건 제목에도 써주세요. 헷갈려요."
+  },
+  {
+   "id": "review:85cfc23602e7d0d6",
+   "kind": "review",
+   "ko": "골프 입문 비기너입니다. 일단 클럽도 가방도 맘에 쏙 이쁘구요, 가볍고 가성비 좋은것 같습니다만, 성능은 한판 쳐봐야 알겠네요 ^^"
+  },
+  {
+   "id": "review:d30a413fcce789b0",
+   "kind": "review",
+   "ko": "아직 사용전이나 좋아 보입니다. 골프 처음 시작한 아들래미용으로 구입 했습니다. 관부가세 따로 더 냈는데... 그런 안내도 있었더라면 더 좋을번 했습니다. 이번 주말에 쳐보고 리뷰 또 남길께요... ^^"
+  },
+  {
+   "id": "review:6f6c915d8e5bc267",
+   "kind": "review",
+   "ko": "입문자용으로 좋은거 같아요 구성도 좋고\n좋습니다 ^^ 주문 후 수령까지 휴일 제외 10일 \n정도 걸렸네요 관세는 6만원 후반대였습니다"
+  },
+  {
+   "id": "review:c89d89c6ec4443ed",
+   "kind": "review",
+   "ko": "비닐벗기는데 힘들긴하지만 그래도 괜찮아요 \n신발도 잘들어가고 아이언커버는 없지만 미리사놓은거있어서 이쁘고 잘맞네요\n고구마도 미리사놨어요 \n\n요 사이트에서 골프채만\n대략72만원정도 든거같아요\n열심히배워볼라구요 ㅋㅋ\n배달은 대략10일정도 걸리는거같습니다\n\n이거근데 일본에서 온거맞아요?알리에서 배달시킨거랑 똑같아요"
+  },
+  {
+   "id": "review:5a3eafe97aa447c3",
+   "kind": "review",
+   "ko": "5일날 주문하고 13일 오늘 배송받았어요~화면과 같고 가격대비 만족입니다~다만 메이드인차이나 스티커를 보고 첨엔 뭐지~했어요ㅎ문의게시판 글을 확인하다보니 판매자님 답글을 보고 이가격에 재팬을 기대하다니 하며 피식웃었네요;; \n어찌됐건 상품 이상없이 잘받았구요..이제막 입문하는 남편에겐 2년정도는 무난히 잘쓰일듯 합니다~"
+  },
+  {
+   "id": "review:502862ff56f76a2b",
+   "kind": "review",
+   "ko": "다 좋음 근데 택배가 진짜 미친듯이 느린데 견디세요 어차피 한국에서 이거 사려면 1,20만원은 더줘야하니까 인생에서 골프채 시킨적ㅇ ㅓㅄ다 생각하고 기다리다보면 좋은 제품 와요"
+  },
+  {
+   "id": "review:dc1c1e86ddd6d796",
+   "kind": "review",
+   "ko": "요즘 골프에 빠진 남편 입문용 선물로 사줬는데 엄청 좋아하네요 ㅎㅎ 배송은 예상해주신대로 와서 넘 다행 ㅎㅎ 풀세트에 캐디백포함인데도 이가격이면 최고입니다 ~ 남편도 하나씩 다 들어보더니 너무 맘에들어하네오"
+  },
+  {
+   "id": "review:b5ee70e6e5040284",
+   "kind": "review",
+   "ko": "남동생 입문용으로 백과 함께 구매했습니다.\n안전하게 잘 도착했는데 관세부분을 보이도록 명시해두면 좋을것같은 아쉬움이 드네요."
+  },
+  {
+   "id": "review:bb8f25bebb27f0a5",
+   "kind": "review",
+   "ko": "골프 입문하면서 처음 구입했습니다. 태풍을 뚫고 안전히 배송되었습니다. 결제하고 받기까지 10일 정도 걸린거 같구요. 저렴하게 풀세트 갖게되서 부담없이 열심히 쳐보려고 합니다."
+  },
+  {
+   "id": "review:51a01f35e4f51fb2",
+   "kind": "review",
+   "ko": "아직 시타전이네요\n시타후 후기 다시 작성할께요\n\n시타후기/아직 초보이다보니 드라이버S는 무리네요\n아이언S는 매우 만족합니다"
+  }
+ ]
+}

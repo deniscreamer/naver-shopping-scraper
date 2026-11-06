@@ -25,6 +25,8 @@ Where a rule touches such a pattern, the binding part is the invariant only; the
 - **R-LAYOUT-5 (MUST)** The supported entry points are:
   - `.venv/bin/python server/run.py` (or `cd server && ../.venv/bin/python run.py`);
   - `.venv/bin/python server/main.py` (in-process demo, writes `output/` relative to the CWD);
+  - `.venv/bin/python server/naver_shopping/page_fixtures.py <saved page folder> <products.jsonl>` (development:
+    cut a saved page into a regression fixture, R-TEST-5);
   - `.venv/bin/python -m pytest -q` from the repo root (or from `server/`);
   - macOS is the supported platform; the retired Docker setup lives in `archive/docker/` and is not maintained. Do not add Docker/Linux instructions to the docs without a decision entry.
 - **R-LAYOUT-6 (MUST)** File moves are pure `git mv` commits with no content edits, so history and blame survive.
@@ -148,7 +150,7 @@ Every surface that is not the store backend uses this path (R-NAVER-2).
   - `_private` helpers and module state; compiled regexes named `_X_RE`;
   - public endpoint functions named after the resource (`products_search`, `product_details`, `store_products`), private impls as short `_name` (`_search`, `_reviews`, `_store_record`).
 - **R-STYLE-3 (MUST NOT)** No type hints in untyped server modules. `egress.py` is the only typed server module and keeps its hints. Types of API answers live on the consumer side (R-TYPE).
-- **R-STYLE-4 (MUST)** No logging framework. Diagnostic output is `print()`, and only in the browser driver and the entry points. Driver lines carry a subsystem prefix (`patchright: ...`); the entry points (`run.main`, `main.save`) print plain status lines. `api`, `parsers`, `refs`, `fetch`, `cache` and `browser_client` stay silent; exceptions are the signal.
+- **R-STYLE-4 (MUST)** No logging framework. Diagnostic output is `print()`, and only in the browser driver, the adapter transport and the entry points. Lines carry a subsystem prefix (`patchright: ...`, `ext-listing: ...`, `ext-product: ...`, `notify: ...`); the entry points (`run.main`, `main.save`) print plain status lines, and `routes.call` one `api: <status> <path> (<label>): <error>` line per failed answer (not for a 400 from the param schema). `api`, `parsers`, `refs`, `fetch`, `cache` and `browser_client` stay silent; exceptions are the signal.
 - **R-STYLE-5 (MUST)** Heavy or optional dependencies are imported lazily inside the function that needs them: `patchright_driver` in `browser_client._launch`, `curl_cffi` in `fetch._session`, `requests` in `config.exit_geo`, `egress` / `config` / `url_blocking` in `PatchrightDriver.__init__`, browserforge in `PatchrightDriver._main`, pyvirtualdisplay in `_ensure_display`. Keep them lazy; parser tests must not load the browser stack.
 - **R-STYLE-6 (SHOULD)** Double quotes, f-strings, parenthesized multi-line imports. New lines stay at or under 120 characters. 34 existing lines exceed that; do not reformat them in unrelated commits.
 
@@ -196,6 +198,16 @@ Requests are typed on the server, answers on the consumer side.
 - **R-TEST-4 (MUST)** Before merge:
   - `.venv/bin/python -m pytest -q` passes. Baseline: 158 tests (84 parser/schema tests + 8 in `test_pdp.py` + 11 in `test_review_select.py` + 7 in `test_search_filters.py` + 7 in `test_composite.py` + 6 in `test_ext_bridge.py` + 5 in `test_listing_jobs.py` + 5 in `test_ext_product.py` + 25 in `test_import_smoke.py`, which also asserts 34 routes). The count only goes up;
   - any change to transport or browser code (`fetch.py`, `browser_client.py`, `patchright_driver.py`, `url_blocking.py`, `egress.py`, `hostenv.py`, `config.py`, requirements) also passes a live smoke with the server running: `.venv/bin/python scripts/smoke_endpoints.py`, which covers at least one curl call and one box call. Record the result in the commit message.
+
+- **R-TEST-5 (SHOULD)** Saved pages as regression fixtures (2026-11-06): `naver_shopping/fixtures/pages/<product id>/`
+  holds a product page cut by `naver_shopping/page_fixtures.py` (page.html, product.json, details.json,
+  contents.json; checked to read the same as the whole page) and `expected.json`, the description and
+  `/products/specs` answer `test_pages.py` replays from them (`ext_product.specs_from_page`). The scripts side holds
+  the matching collected lines (`scripts/fixtures/collected/`, `scripts/collected_fixtures.py`) and the prepared
+  products (`scripts/fixtures/prepared/`, `scripts/test_prepared_golden.py`). A deliberate parser or transform
+  change rewrites the expected files with `UPDATE_GOLDEN=1` and its diff is read before the commit. Fixtures are
+  added or refreshed only when the owner asks (it is not a step of every change); they never hit the network and
+  the whole set runs in well under a second.
 
 ## Checklist: adding a new endpoint
 
@@ -252,6 +264,13 @@ One entry per MUST exception or rule change, newest first. Format:
 ### YYYY-MM-DD: <rule ID>: <short title>
 What changes. Why. Evidence (A/B numbers, probe, test). Author.
 ```
+
+### 2026-11-05: R-STYLE-4: a log line per failed answer and per product page read
+`routes.call` prints `api: <status> <path> (<label>): <error>` for every failed answer (404, 409, 502, 503, 500, and
+a 400 from Naver; not the schema's own 400), and `ext_product.read_page` prints one `ext-product:` line per read
+(seconds, card clicked by photo or link, 상품정보 rows, folded, options answer yes / NO). Why: a 40-product run
+(2026-11-05) showed a 502 on `/products/reviews/selected` that only the script saw, and page reads (35-43 s, the
+largest part of a product) left no timing or outcome in the server log. Still `print`, no logging stack. Claude.
 
 ### 2026-11-02: R-EXT-2, R-NAVER-2: options from the product page's own answer (beta)
 The adapter's capture filter (`capture_main.js`) also copies the answers whose URL holds `/channels/` and

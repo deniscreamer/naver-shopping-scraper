@@ -15,14 +15,15 @@ Typed shapes of every answer below: `scripts/naver_types.py` (TypedDicts, checke
 
 - All endpoints are `GET` with query-string params and answer JSON encoded as UTF-8 with Korean text unescaped. The
   `Content-Type` header is `application/json` with no `charset` parameter (`routes.json_response`).
-- Each of the 13 endpoints is served at `/<path>` and at `/naver-shopping/<path>` (`routes.mount`). Both forms are
+- Each of the 14 endpoints is served at `/<path>` and at `/naver-shopping/<path>` (`routes.mount`). Both forms are
   equivalent; the unprefixed form (`/products/details`) matches the hosted RapidAPI paths, and `/naver-shopping/...`
   is an alias.
 - `/` and `/health` exist only unprefixed (`routes.health`). `/naver-shopping/health` is a 404.
 - Default base URL: `http://localhost:8000` (`config.PORT`).
 
 ```
-GET /health  ->  {"status": "ok", "version": "0.6.0", "endpoints": ["/products/details", ..., "/listings", ...], "extension": "connected"}
+GET /health  ->  {"status": "ok", "version": "0.6.0", "endpoints": ["/products/details", ..., "/listings", ...],
+"extension": "connected"}
 ```
 
 ### Param rules (all endpoints)
@@ -71,7 +72,8 @@ Every error body is JSON with an `error` string. `<label>` is the path without t
 Validation examples (verified against the schemas):
 
 ```
-?query=x&foo=1                 -> 400 {"error": "Invalid parameters: foo: Unknown field.", "errors": {"foo": ["Unknown field."]}}
+?query=x&foo=1                 -> 400 {"error": "Invalid parameters: foo: Unknown field.", "errors": {"foo": ["Unknown
+field."]}}
 ?query=x&min_price=5&max_price=1 -> 400 errors.min_price = ["min_price must not exceed max_price."]
 /products/reviews?product=123&page=501 -> 400 errors.product + errors.page ("... less than or equal to 500.")
 /keywords/rank?category=0      -> 400 errors.category = ["DataLab needs a category: ..."]
@@ -127,8 +129,10 @@ cheaper. Errors are never cached.
 
 ## Transports
 
-- **curl**: plain HTTPS with a Chrome TLS fingerprint (curl_cffi); a block or transport error gets up to 3 attempts in all.
-- **box**: an in-page `fetch()` inside a real, headed Google Chrome parked on a brand.naver.com page. Needs Google Chrome
+- **curl**: plain HTTPS with a Chrome TLS fingerprint (curl_cffi); a block or transport error gets up to 3 attempts in
+  all.
+- **box**: an in-page `fetch()` inside a real, headed Google Chrome parked on a brand.naver.com page. Needs Google
+  Chrome
   installed on the Mac. Slower; calls on one Chrome run one at a time. Up to 2 attempts
   (`config.NAVER_SHOPPING_BOX_ATTEMPTS`), and only when the box refuses the call; a refusal rotates (relaunches)
   the Chrome it used.
@@ -210,19 +214,28 @@ Output: the product record (`id`, `origin_product_id`, `name`, `link`, `catalog_
 `reviews` (the review summary: counts, `average_score`, `score_counts`, `evaluations`, `representative_reviews`) and
 `store` (`id, uid, name, slug, link, type, grade, sale_count, merchant_id, business`). Any section Naver did not
 answer is null.
+`delivery`: `fee_type`, `base_fee`, `is_free`, `policy_text`, `method_types`, `attribute`, `is_today_delivery`,
+`company`, `extra_fee_area2` / `extra_fee_area3` (Jeju / remote islands, KRW) and `extra_fee_text` (the seller's own
+regional fee text when no amounts are given, as written: "제주 도서산간 10,000").
 
 - `option_groups`, `variants`, `supplements` come from `/n/v1/validation-products/<id>`, which answers 419 to the
   box since 2026-11-02 (it now wants the page's one-time token): they are null today (`stock_quantity` and `status`
-  fall back to the store's product summary); read the options with `/products/specs` (`options`). `variants[]` has the same
+  fall back to the store's product summary); read the options with `/products/specs` (`options`). `variants[]` has the
+same
   shape there, `is_available` included. A slug-less link (`smartstore.naver.com/main/products/<id>`, a bare
   number) needs that answer to find the store, so it answers 404 for now; pass the store's product link.
 
 - `images`: the product's gallery in the page's order, main photo first, as links to the original files (no
   `?type=` rendition; the largest real size of every rendition, measured 2026-11-01). Downloading them:
   `scripts/naver_images.py`, scripts/README.md "Product photos".
-- `description.text`: the description HTML's text nodes, one line per block element (`pdp.description_text`);
-  images, video controls, embedded product cards, buttons and the labels 공지사항 / Notice, 관련 태그 and
-  상품정보 펼쳐보기 are left out. null for an image-only description (common: many sellers post only images).
+`description.text`: the description's readable text (`pdp.description_text`), one line per block element. Since
+2026-11-06, one empty line separates two top-level SmartEditor ONE components (`.se-component`), so a seller's notice
+block can be ended where its component ends. Bodies without components (editor NONE) have no empty lines. Left out:
+SmartEditor cards that are not the product's own text (`se-material` shopping cards, `se-oglink` link cards to other
+products or TalkTalk, `se-placesMap` store map and address, `se-blind` screen-reader text), in-page jump links (`<a
+href="#top">`, "▲ 이동(상단)"), structural labels and lines made only of hashtags ("#골린이#풀세트#스탠드백"; club numbers like
+"#PW" or "#5-#9" stay). `description.images`: the snapImages when the backend gives them, else the body's own photos
+(data-src over src), without the images of those cards (link-card thumbnails, shopping-card posters, the static map).
 - `notice.items[]` / `notice.terms[]`: `{label, value, is_see_description}`; `is_see_description` is true when the
   value only points elsewhere ("상품상세참조", "[상세설명참조]", "크기 항목 참조"). This is the legal 상품정보제공고시
   notice; a store's own announcement (공지사항) is not product data and is not returned.
@@ -290,7 +303,8 @@ is_exhausted}], is_complete, results: [review + tier]}`. `is_complete` is true w
 was read to its end; `summary` is null for a product with no reviews.
 
 ```
-curl "http://localhost:8000/products/reviews/selected?product=https://smartstore.naver.com/thegolf/products/5543663553&count=20"
+curl
+"http://localhost:8000/products/reviews/selected?product=https://smartstore.naver.com/thegolf/products/5543663553&count=20"
 ```
 
 ### `/stores/details`
@@ -415,7 +429,15 @@ verified 2026-11-02).
 
 Transport: box for the product record (as `/products/details`), then the extension (one page read, ~30-60 s, one
 at a time; a running listing job answers 409). Cache: 24 h per `product` + `query` (`PRODUCT_SPECS_CACHE`).
-Output: `{id, name, link, query, category, specs: [{label, value}], is_complete, facts, options, measures, read_at}`.
+Output: `{id, name, link, query, category, specs: [{label, value}], is_complete, facts, options, delivery, measures,
+read_at}`. `delivery` (`parsers.parse_page_delivery`, null without the page's product answer): the fee as the page
+charges it (`/products/details` `delivery` fields) plus `is_overseas`, `scope` (`international` / `domestic`),
+`customs_tax_type` and `lead_time` `{seller_average_days, product_average_days, today_cutoff ("16:00"),
+arrival_days, arrival_date_text ("11.11.(수)"), arrival_probability, ship_date_text ("11.6.(금)")}` (the averages
+from the page's answer, the rest from the purchase box, `pdp.delivery_promise`; null where not shown; `today_cutoff`
+falls back to the answer's `thisDayDispatchBasisTime` in Korean time when `todayDelivery` is true). It can differ from
+the store backend's
+(2026-11-05: 99,000 KRW per unit from Japan on a set the backend called free).
 `is_complete` is false when the list stayed folded.
 
 `options` (`parsers.parse_page_options`): what can be bought, from the product answer the page itself fetched
@@ -446,25 +468,52 @@ value is chosen, no category average filled in, no OCR), the rows and `facts` un
 this product's id), the description HTML's label / value pairs (`li > strong + div`, `dt + dd`, table rows).
 `{is_set, weights, dimensions, references, review}`:
 
-- `weights[]`: `{value {min, max} (grams), unit, matched, kind (net | packed | component | unknown), scope (unit |
-  set | unknown), approximate, quote, source (specs | notice | description | json_ld | description_table), locator
-  {block, row, cell?}, binding, origin: source_stated}`. In a set (`is_set`: 세트 / set in the name or category) a
-  line about a part (드라이버, 아이언, 샤프트, 헤드, ...) is `component`.
-- `dimensions[]`: `{values (mm), axes (width, depth, height, length, thickness, diameter; null when the order is
-  not written), unit, matched, kind (packed | component | product | unknown), state (unfolded | folded | null),
-  flags (axis_order_unresolved, not_confirmed_packed), quote, source, locator, binding, origin}`.
-- `binding`: `{scope: product | variants | context, variant_ids}`. One variant or none: `product`. Several:
-  `variants` only when the line names option values of exactly one composition (variants that differ only in a
-  colour / design group count as one); else `context`.
+- `weights[]`: `{value {min, max} (grams), unit, matched, kind (net | packed | component | unknown), scope (unit | set
+  | unknown), count (pieces of a multiplier, e.g. 12 in "45g x 12개"; else null), flags, approximate, quote, source
+  (specs | notice | description | json_ld | description_table), locator {block, row, cell?}, binding, origin:
+  source_stated}`. `flags`: `alternate_unit` (the same weight also written in another unit, merged; `matched` covers
+  both), `lb_oz` (lb and oz added up), `multiplied` (value x count: a second candidate after the per-piece one),
+  `part_scale` (a set's plain weight row under 1 kg: one part's), `bag_excluded`, `bound_by_count_rank` (see binding).
+  Kind and scope are read from the label and the number's own segment (between `/ , ; |` and the neighbouring numbers,
+  plus a bracket right after it: "약 1.2kg(포장 포함)" is packed). Units: g, kg (also 키로, kgs, kilos), mg, lb (lbs., 파운드),
+  oz (온스; not fl oz); a decimal comma is read ("1,5kg" = 1.5 kg). A tolerance (±50g) is not a candidate. Loads and
+  capacities (최대 하중, 사용자 최대 무게, capacity) are not weights. In a set (`is_set`: 세트 / set, or a count such as 6아이언,
+  12pcs, 3종, 11개 구성 in the name or category) a part's weight is `component`: a part word or club code (드라이버, 캐디백, 1W,
+  5i, #7, PW, 7번), a part before the line's ':', a club heading line above it in the description ("1. 드라이버 (1W)"), or
+  a reference club ("7번 기준"; for any product). A bare 총중량 is a club's total; a set total says 세트 or is in kg / lb. A
+  plain weight row (중량, 무게, 제품 무게, Item Weight) in the 상품정보 rows, the notice, a description table or the JSON-LD of a
+  set is the product as sold: scope `set` from 1 kg, else `component` + `part_scale`. A weight unit in a size row is
+  read too ("크기: 7번 기준 93cm / 7번 기준 328g", "Package Dimensions: ...; 2.27 kg").
+- `dimensions[]`: `{values (mm), axes (width, depth, height, length, thickness, diameter; null when the order is not
+  written), unit, matched, kind (packed | component | product | unknown), state (unfolded | folded | null), flags
+  (axis_order_unresolved, not_confirmed_packed, two_sides), quote, source, locator, binding, origin}`. Every triple of
+  a line is read, each with its own words ("제품 크기 30x20x10cm / 포장 크기 35x25x15cm": product, packed); two sides
+  ("30x20cm") give two values; axes may follow the unit (48"L x 11"W x 11"H) or come from the label ("L x W x H",
+  "가로x세로x높이"); the unit may be given once as "(단위: cm)". A line with a packed word and a triple with a unit is a size
+  line without a size label. In a set a club's length is `component`.
+- `binding`: `{scope: product | variants | context, variant_ids}`. One variant or none: `product`. Several: `variants`
+  only when the line names option values of exactly one composition (variants that differ only in a colour / design
+  group count as one); else `context`. A value list on one line ("중량: 약11.5kg / 4.7kg") binds each value by the option
+  names or club count in its own segment, else heaviest to the most clubs when the variants carry exactly that many
+  club counts ("4스틸", "12카본": flag `bound_by_count_rank`).
 - `references[]`: a pointer instead of a value ("상세페이지 참조"): `{quote, source, locator, measure (weight | size),
   reason (description_reference | measurement_field_reference)}`.
-- `review[]`: lines left for a person, `{quote, source, locator, measure, reason}`: `kind_conflict` (two kinds at
-  once), `unit_conflict` (the label's unit differs from the value's), `two_compositions`, `manual_review` (a size
-  range or a list of sizes), `unit_missing`.
+- `review[]`: lines left for a person, `{quote, source, locator, measure, reason}`: `kind_conflict`, `unit_conflict`,
+  `two_compositions`, `value_list` (several values no variant split explains), `other_part` (a value beside the 본품's
+  own, e.g. "본체 120g / 충전케이스 50g"), `decimal_comma` ("45,50g"), `ambiguous_unit` (근), `manual_review` (a size range
+  with a length unit, or a list of sizes), `unit_missing`.
 
 ```
 curl "http://localhost:8000/products/specs?product=https://smartstore.naver.com/scarabee/products/13021362937"
 ```
+
+### `/products/page` (development and analysis: the owner's Chrome)
+
+Params as `/products/specs` (`product`, optional `query`). The product page itself, read the same way (search ->
+card photo -> page, 상품정보 unfolded; never a direct open of the product link), never cached: `{id, link, query,
+url, title, search_url, html (the rendered DOM, up to 8 M chars), product_answer (the page's own product answer or
+null), saved_to (the server's local evidence folder), read_at}`. For developing parsers and checking collected data
+against the page (`scripts/product_page.py` saves it); collection uses `/products/specs`. Errors as /products/specs.
 
 ## Listing jobs (beta): the full search listing
 
@@ -482,19 +531,30 @@ Both prefixes. One job at a time.
 `max_batches` reached); `stopped` (`stop` says why: a wall, a refused batch, a stall, an adapter error).
 `/health` adds `extension: connected | disconnected | off`.
 
-A row: `{product_id, nv_mid, link, name, store {name, slug, link, channel_no, grade, is_brand_store}, pricing {sale_price,
+A row: `{product_id, nv_mid, link, name, store {name, slug, link, channel_no, grade, is_brand_store}, pricing
+{sale_price,
 discounted_price, discount_ratio, currency}, category_id, reviews {count, average_score}, stock_quantity, image,
 is_ad, query, batch, seen_at}`. `link` is the canonical store product link `/products/details` takes. Unique by
 `product_id`; ads are kept and flagged. `store.channel_no` is the store's number (`channelNo`, null when
 the card has none): with `product_id` it names the product across our shops (`<shop>:naver:<channel_no>:<product_id>`).
 
 ```
-curl -X POST "http://localhost:8000/listings?query=%EB%82%A8%EC%84%B1%20%EA%B3%A8%ED%94%84%EC%B1%84%20%ED%92%80%EC%84%B8%ED%8A%B8&max_batches=3"
+curl -X POST
+"http://localhost:8000/listings?query=%EB%82%A8%EC%84%B1%20%EA%B3%A8%ED%94%84%EC%B1%84%20%ED%92%80%EC%84%B8%ED%8A%B8&max_batches=3"
 curl "http://localhost:8000/listings/<job_id>"
 curl "http://localhost:8000/listings/<job_id>/products?page=1"
 ```
 
 Client: `scripts/naver_api_client.py` `NaverApiClient.listing(query)` starts, polls and returns every row.
+
+### `GET /captcha`: the captcha the adapter waits on
+
+`{status, at, ...}` (`ext_listing.captcha_state`): `none` until the first captcha; `waiting` with `step` (naver,
+shopping-home, search, product), `attempt` (2+ after a wrong answer), `question` (the text the captcha asks, or
+null), `screenshot` (a local path on the server's machine), `url`, `wait_s`; then `solved`, `timed_out` or
+`blocked` with `step`, `attempt`, `after_s`. A listing or product read only waits (`NAVER_CAPTCHA_WAIT_S`, 600 s)
+and goes on when the page shows no captcha; reporting is separate: `scripts/captcha_watch.py` reads this and
+prints one line per event. The human answers in Chrome (R-EXT-3).
 
 ## Search card links
 
