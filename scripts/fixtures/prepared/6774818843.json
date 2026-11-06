@@ -126,7 +126,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"S\"]",
@@ -194,7 +195,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    }
   ],
   "pricing": {
@@ -475,6 +477,7 @@
     "seller_average_days": 5.0,
     "product_average_days": null,
     "today_cutoff": null,
+    "today_off": false,
     "arrival_days": null,
     "arrival_date_text": null,
     "arrival_probability": null,

@@ -208,3 +208,67 @@ def test_naver_error_page_is_not_a_wall(monkeypatch, tmp_path):
     bridge = ErrorPage({f'[class*="product_card"]:has(> {link}) img[class*="productCardThumbnail_image"]'})
     with pytest.raises(ext_product.NotListed, match="Naver shows its error page"):
         ext_product.read_page(bridge, "42", "q", str(tmp_path))
+
+
+# ---- search fallback (pilot 2026-11-06: 13425122164 listed for its first 5 words, not for its full name) ---------
+
+def test_search_queries_shorten_a_long_name_once():
+    name = "초중급 남성 골프채 풀세트 입문 골프클럽 초보 골프"                                   # 13425122164
+    assert ext_product.search_queries(name) == [name, "초중급 남성 골프채 풀세트 입문"]
+    assert ext_product.search_queries(name, name) == [name, "초중급 남성 골프채 풀세트 입문"]   # = no query given
+    assert ext_product.search_queries(name, "남성 골프채 풀세트") == ["남성 골프채 풀세트"]   # the caller's: kept
+    short = "신품 혼마 D1 남성용 골프채"                                                      # 5 words: nothing shorter
+    assert ext_product.search_queries(short) == [short]
+    assert ext_product.search_queries("  핑  G440K   남성 골프 풀세트  9 개  ") == \
+        ["핑 G440K 남성 골프 풀세트 9 개", "핑 G440K 남성 골프 풀세트"]
+    assert ext_product.search_queries(None) == [] and ext_product.search_queries("  ") == []
+
+
+LONG = "초중급 남성 골프채 풀세트 입문 골프클럽 초보 골프"
+
+
+def test_card_missing_retries_with_the_short_name(specs, monkeypatch):
+    def long_name(product):
+        return {**details(product), "name": LONG}
+
+    def read(bridge, product_id, query, out_dir):
+        specs.append((product_id, query))
+        if query.startswith(LONG):
+            raise ext_product.CardMissing(f"product {product_id} is not on the search page for {query!r}")
+        with open(os.path.join(FX, "pdp_specs_honma.html"), encoding="utf-8") as f:
+            return {"url": LINK, "title": "t", "html": f.read(), "search_url": "s"}
+    monkeypatch.setattr(api, "product_details", long_name)
+    monkeypatch.setattr(ext_product, "read_page", read)
+    monkeypatch.setattr(ext_product.ext_listing, "pause", lambda a, b: None)
+    status, body = call("GET", "/products/specs", product=LINK)
+    assert status == 200 and body["query"] == "초중급 남성 골프채 풀세트 입문"           # the query that listed it
+    assert [q for _, q in specs] == [LONG, "초중급 남성 골프채 풀세트 입문"]
+    status, body = call("GET", "/products/page", product=LINK)
+    assert status == 200 and body["query"] == "초중급 남성 골프채 풀세트 입문" and len(specs) == 4
+    del specs[:]
+    assert call("GET", "/products/specs", product=LINK, query=LONG + " x")[0] == 404   # the caller's query: no retry
+    assert [q for _, q in specs] == [LONG + " x"]
+
+
+def test_other_not_listed_is_not_retried(specs, monkeypatch):
+    def long_name(product):
+        return {**details(product), "name": LONG}
+
+    def error_page(bridge, product_id, query, out_dir):
+        specs.append((product_id, query))
+        raise ext_product.NotListed(f"product {product_id}: Naver shows its error page")
+    monkeypatch.setattr(api, "product_details", long_name)
+    monkeypatch.setattr(ext_product, "read_page", error_page)
+    assert call("GET", "/products/specs", product=LINK)[0] == 404 and [q for _, q in specs] == [LONG]
+
+
+def test_read_page_card_missing_is_not_listed(monkeypatch, tmp_path):
+    monkeypatch.setattr(ext_product.ext_listing, "open_search", lambda bridge, query, out_dir: (7, None))
+    monkeypatch.setattr(ext_product, "_close_tabs", lambda bridge: None)
+
+    class NoCard(Cards):
+        def call(self, op, **args):
+            return {"url": "s"} if op == "page" else super().call(op, **args)
+    with pytest.raises(ext_product.CardMissing) as e:
+        ext_product.read_page(NoCard(set()), "42", "q", str(tmp_path))
+    assert isinstance(e.value, ext_product.NotListed)                            # still a 404

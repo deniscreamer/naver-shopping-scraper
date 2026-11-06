@@ -1,0 +1,498 @@
+{
+ "id": "13413924099",
+ "channelServiceType": "STOREFARM",
+ "channelProductType": "SINGLE",
+ "channelProductSupplyType": "OWNER",
+ "channelProductStatusType": "NORMAL",
+ "channelProductDisplayStatusType": "ON",
+ "category": {
+  "categoryId": "50002788",
+  "categoryName": "풀세트",
+  "category1Id": "50000007",
+  "category2Id": "50000029",
+  "category3Id": "50001102",
+  "category4Id": "50002788",
+  "category1Name": "스포츠/레저",
+  "category2Name": "골프",
+  "category3Name": "골프클럽",
+  "category4Name": "풀세트",
+  "wholeCategoryId": "50000007>50000029>50001102>50002788",
+  "wholeCategoryName": "스포츠/레저>골프>골프클럽>풀세트",
+  "categoryLevel": 4,
+  "lastLevel": true,
+  "sortOrder": 10,
+  "validCategory": true,
+  "receiptIssue": true,
+  "exceptionalCategoryTypes": [
+   "MANUFACTURE_DEFINE_NO",
+   "RENTAL_SUBSCRIPTION",
+   "REGULAR_SUBSCRIPTION",
+   "FREE_RETURN_INSURANCE"
+  ],
+  "pointAccumulationYn": false
+ },
+ "name": "캘러웨이 2026 REVA 레바 여성 풀세트 피치/서프 10PCS+골프백 [캘러웨이코리아]",
+ "productUrl": "https://smartstore.naver.com/main/products/13413924099",
+ "mobileProductUrl": "https://m.smartstore.naver.com/main/products/13413924099",
+ "storeKeepExclusiveProduct": false,
+ "best": false,
+ "orderRequestUsable": false,
+ "channelProductAttributes": [],
+ "productNo": "13354981070",
+ "salePrice": 1590000,
+ "dispSalePrice": 1590000,
+ "stockQuantity": 93,
+ "saleType": "NEW",
+ "excludeAdminDiscount": false,
+ "payExposure": true,
+ "productStatusType": "SALE",
+ "statusType": "SALE",
+ "authenticationType": "NORMAL",
+ "itselfProductionProductYn": false,
+ "afterServiceInfo": {
+  "afterServiceTelephoneNumber": "********",
+  "afterServiceGuideContent": "********"
+ },
+ "originAreaInfo": {
+  "originAreaType": "DIRECT_INPUT",
+  "content": "상세설명에 표시",
+  "originAreaCode": "04",
+  "wholeOriginAreaName": "직접입력",
+  "plural": false
+ },
+ "sellerCodeInfo": {
+  "sellerManagementCode": "m2026041736342d430"
+ },
+ "optionUsable": true,
+ "options": [
+  {
+   "id": 11605343386,
+   "optionType": "COMBINATION",
+   "groupName": "(선택)구성"
+  }
+ ],
+ "optionCombinations": [
+  {
+   "id": 57974542172,
+   "optionName1": "피치/서프 클럽 10PCS (캐디백포함)",
+   "stockQuantity": 50,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2026-04-27T06:43:46.392+00:00",
+   "todayDispatch": true
+  },
+  {
+   "id": 59968830041,
+   "optionName1": "피치/서프 클럽 10PCS (캐디백 미포함)",
+   "stockQuantity": 0,
+   "price": -100000,
+   "regOrder": 1,
+   "registerDate": "2026-09-08T03:11:55.809+00:00",
+   "todayDispatch": true
+  },
+  {
+   "id": 57974542173,
+   "optionName1": "블랙 클럽 10PCS (캐디백포함)",
+   "stockQuantity": 43,
+   "price": 0,
+   "regOrder": 2,
+   "registerDate": "2026-04-27T06:43:46.393+00:00",
+   "todayDispatch": true
+  },
+  {
+   "id": 59968830042,
+   "optionName1": "블랙 클럽 10PCS (캐디백 미포함)",
+   "stockQuantity": 0,
+   "price": -100000,
+   "regOrder": 3,
+   "registerDate": "2026-09-08T03:11:55.810+00:00",
+   "todayDispatch": true
+  }
+ ],
+ "optionStandards": [],
+ "supplementProductUsable": false,
+ "supplementProducts": [],
+ "customMadeInfo": {
+  "customMade": false
+ },
+ "taxType": "TAX",
+ "certification": false,
+ "certificationTargetExcludeContent": {
+  "kcCertifiedProductExclusionYn": true,
+  "kcCertifiedProductExclusionType": "TRUE"
+ },
+ "minorPurchasable": true,
+ "productInfoProvidedNoticeView": {
+  "basic": {
+   "품명 / 모델명": "[상세설명참조] / 품명 항목 참조",
+   "KC 인증정보": "[상세설명참조]",
+   "크기": "[상세설명참조]",
+   "중량": "크기 항목 참조",
+   "색상": "[상세설명참조]",
+   "재질": "[상세설명참조]",
+   "제품구성": "[상세설명참조]",
+   "동일 모델의 출시연월": "[상세설명참조]",
+   "제조자(사)": "[상세설명참조]",
+   "제조국": "상세설명에 표시",
+   "상품별 세부사양": "[상세설명참조]",
+   "품질보증기준": "[상세설명참조]",
+   "A/S 책임자와 전화번호": "********"
+  },
+  "additional": {
+   "재화등의 배송방법에 관한 정보": "택배",
+   "주문 이후 예상되는 배송기간": "대금 지급일로부터 3일 이내에 발송",
+   "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보": "상품상세 참조",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보": "편도 9000원 (최초 배송비 무료인 경우 18000원 부과)",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거": "상품상세 참조",
+   "재화등의 교환·반품·보증 조건 및 품질보증기준": "상품상세 참조",
+   "재화등의 A/S 관련 전화번호": "********",
+   "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차": "상품상세 참조",
+   "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항": "상품상세 참조",
+   "거래에 관한 약관의 내용 또는 확인할 수 있는 방법": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다."
+  }
+ },
+ "productDeliveryInfo": {
+  "deliveryFeeType": "FREE",
+  "deliveryMethodTypes": [
+   "DELIVERY"
+  ],
+  "baseFee": 0,
+  "installationFee": false,
+  "deliveryBundleGroup": {
+   "id": 7691928,
+   "deliveryFeeChargeMethodType": "MIN",
+   "deliveryAreaType": "AREA_3",
+   "area2ExtraFee": 3000,
+   "area3ExtraFee": 3000
+  },
+  "deliveryFeePolicyText": "제주 추가 3,000원, 제주 외 도서지역 추가 3,000원",
+  "deliveryAttributeType": "TODAY",
+  "isCustomProductAfterOrder": false,
+  "todayDelivery": true,
+  "thisDayDispatchBasisTime": "07:00:00.000+0000",
+  "deliveryCompany": {
+   "id": "HANJIN",
+   "name": "한진택배"
+  }
+ },
+ "claimDeliveryInfo": {
+  "returnDeliveryCompanyPriority": "PRIMARY",
+  "deliveryCompanyName": "한진택배",
+  "deliveryCompanyCode": "HANJIN",
+  "naverPayAppointment": false,
+  "returnDeliveryFee": 9000,
+  "exchangeDeliveryFee": 18000,
+  "shippingAddressId": 100280514,
+  "returnAddressId": 100280515,
+  "shippingAddress": "부산광역시 동래구 충렬대로 407 5층 더골프 물류센터 (우 : 47796) ",
+  "returnAddress": "부산광역시 동래구 충렬대로 407 5층 더골프 물류센터 (우 : 47796) ",
+  "overseasShipping": false,
+  "freeReturnInsurance": false
+ },
+ "isCultureCostIncomeDeduction": false,
+ "isRestrictCart": false,
+ "naverGuaranteed": false,
+ "newShoppingExposureYn": true,
+ "benefitsView": {
+  "discountedSalePrice": 1590000,
+  "dispDiscountedSalePrice": 1590000,
+  "sellerImmediateDiscountAmount": 0,
+  "managerImmediateDiscountAmount": 0,
+  "specialDiscountAmount": {},
+  "discountedRatio": 0,
+  "dispDiscountedRatio": 0,
+  "sellerPurchasePoint": 0,
+  "sellerCustomerManagementPoint": 0,
+  "managerPurchasePoint": 15900,
+  "managerPurchaseExtraPoint": 0,
+  "managerPaymoneyAccumulatePoint": 23850,
+  "managerBankbookAccumulatePoint": 7950,
+  "managerArrivalGuaranteePoint": 0,
+  "managerMembershipArrivalGuaranteePoint": 0,
+  "generalPurchaseReviewPoint": 5000,
+  "premiumPurchaseReviewPoint": 15000,
+  "managerGeneralPurchaseReviewPoint": 50,
+  "managerPremiumPurchaseReviewPoint": 150,
+  "textReviewPoint": 5000,
+  "photoVideoReviewPoint": 15000,
+  "afterUseTextReviewPoint": 0,
+  "afterUsePhotoVideoReviewPoint": 0,
+  "storeMemberReviewPoint": 0,
+  "managerTextReviewPoint": 50,
+  "managerPhotoVideoReviewPoint": 150,
+  "managerAfterUseTextReviewPoint": 50,
+  "managerAfterUsePhotoVideoReviewPoint": 150,
+  "givePresent": true
+ },
+ "productDeliveryLeadTimes": [
+  {
+   "rangeNumberText": "1",
+   "rangeText": "일 이내",
+   "leadTimeCount": 7,
+   "leadTimePercent": 100
+  },
+  {
+   "rangeNumberText": "2",
+   "rangeText": "일 이내",
+   "leadTimeCount": 0,
+   "leadTimePercent": 0
+  },
+  {
+   "rangeNumberText": "3",
+   "rangeText": "일 이내",
+   "leadTimeCount": 0,
+   "leadTimePercent": 0
+  },
+  {
+   "rangeNumberText": "4",
+   "rangeText": "일 이상",
+   "leadTimeCount": 0,
+   "leadTimePercent": 0
+  }
+ ],
+ "sellerDeliveryLeadTimes": [
+  {
+   "rangeNumberText": "1",
+   "rangeText": "일 이내",
+   "leadTimeCount": 219,
+   "leadTimePercent": 64
+  },
+  {
+   "rangeNumberText": "2",
+   "rangeText": "일 이내",
+   "leadTimeCount": 108,
+   "leadTimePercent": 32
+  },
+  {
+   "rangeNumberText": "3",
+   "rangeText": "일 이내",
+   "leadTimeCount": 10,
+   "leadTimePercent": 3
+  },
+  {
+   "rangeNumberText": "4",
+   "rangeText": "일 이상",
+   "leadTimeCount": 5,
+   "leadTimePercent": 1
+  }
+ ],
+ "averageDeliveryLeadTime": {
+  "productAverageDeliveryLeadTime": 0.85714287,
+  "sellerAverageDeliveryLeadTime": 1.3567251
+ },
+ "productDailyDeliveryLeadTimes": {
+  "leadTimeCount": [
+   1,
+   6,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "leadTimeViewType": "NORMAL_DELIVERY"
+ },
+ "sellerDailyDeliveryLeadTimes": {
+  "leadTimeCount": [
+   25,
+   194,
+   108,
+   10,
+   2,
+   2,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "leadTimeViewType": "NORMAL_DELIVERY"
+ },
+ "detailContents": {
+  "excessDetailContentText": false,
+  "editorType": "NONE"
+ },
+ "useExternalStock": false,
+ "dispName": "캘러웨이 2026 REVA 레바 여성 풀세트 피치/서프 10PCS+골프백 [캘러웨이코리아]",
+ "adultAuthorizationType": "NOT_LOGIN",
+ "authorizationDisplay": "NORMAL",
+ "galleryImages": [
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20260421_99/1776763153244trBsw_JPEG/110896042839624729_1676299843.jpeg",
+   "width": 720,
+   "height": 720,
+   "imageType": "REPRESENTATIVE"
+  },
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20260417_186/1776416159473VNICJ_PNG/51991966584776189_673336273.png",
+   "width": 537,
+   "height": 704,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 2,
+   "url": "https://shop-phinf.pstatic.net/20260417_154/1776416160689te4yD_PNG/110951568643854299_692071371.png",
+   "width": 511,
+   "height": 631,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 3,
+   "url": "https://shop-phinf.pstatic.net/20260417_165/1776416160797SiyYp_PNG/110951568754210092_1544606938.png",
+   "width": 578,
+   "height": 610,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 4,
+   "url": "https://shop-phinf.pstatic.net/20260417_102/1776416161952fkRBK_PNG/18850527750804468_1137609032.png",
+   "width": 642,
+   "height": 691,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 5,
+   "url": "https://shop-phinf.pstatic.net/20260417_32/1776416162193viOOh_PNG/18850527991008617_1844215883.png",
+   "width": 600,
+   "height": 600,
+   "imageType": "OPTIONAL"
+  }
+ ],
+ "soldout": false,
+ "viewAttributes": {
+  "상품상태": "신상품",
+  "상품번호": "13413924099",
+  "제조사": "캘러웨이",
+  "브랜드": "캘러웨이",
+  "원산지": "상세설명에 표시"
+ },
+ "additionalAttributes": {
+  "영수증발급": "신용카드전표, 현금영수증발급",
+  "A/S 안내": [
+   "********",
+   "********"
+  ]
+ },
+ "eCouponCategory": false,
+ "cultureCategory": false,
+ "textOptions": [],
+ "simpleOptions": [],
+ "combinationOptions": [
+  {
+   "groupName": "(선택)구성",
+   "options": [
+    {
+     "id": 57974542172,
+     "optionName1": "피치/서프 클럽 10PCS (캐디백포함)",
+     "stockQuantity": 50,
+     "price": 0,
+     "regOrder": 0,
+     "registerDate": "2026-04-27T06:43:46.392+00:00",
+     "todayDispatch": true
+    },
+    {
+     "id": 59968830041,
+     "optionName1": "피치/서프 클럽 10PCS (캐디백 미포함)",
+     "stockQuantity": 0,
+     "price": -100000,
+     "regOrder": 1,
+     "registerDate": "2026-09-08T03:11:55.809+00:00",
+     "todayDispatch": true
+    },
+    {
+     "id": 57974542173,
+     "optionName1": "블랙 클럽 10PCS (캐디백포함)",
+     "stockQuantity": 43,
+     "price": 0,
+     "regOrder": 2,
+     "registerDate": "2026-04-27T06:43:46.393+00:00",
+     "todayDispatch": true
+    },
+    {
+     "id": 59968830042,
+     "optionName1": "블랙 클럽 10PCS (캐디백 미포함)",
+     "stockQuantity": 0,
+     "price": -100000,
+     "regOrder": 3,
+     "registerDate": "2026-09-08T03:11:55.810+00:00",
+     "todayDispatch": true
+    }
+   ],
+   "checkedName": null,
+   "checkedIds": null,
+   "price": 0,
+   "isLastDepth": true
+  }
+ ],
+ "standardOptions": [],
+ "standardCombinations": [
+  {
+   "id": 57974542172,
+   "optionName1": "피치/서프 클럽 10PCS (캐디백포함)",
+   "stockQuantity": 50,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2026-04-27T06:43:46.392+00:00",
+   "todayDispatch": true,
+   "title": "_피치/서프 클럽 10PCS (캐디백포함)____"
+  },
+  {
+   "id": 59968830041,
+   "optionName1": "피치/서프 클럽 10PCS (캐디백 미포함)",
+   "stockQuantity": 0,
+   "price": -100000,
+   "regOrder": 1,
+   "registerDate": "2026-09-08T03:11:55.809+00:00",
+   "todayDispatch": true,
+   "title": "_피치/서프 클럽 10PCS (캐디백 미포함)____"
+  },
+  {
+   "id": 57974542173,
+   "optionName1": "블랙 클럽 10PCS (캐디백포함)",
+   "stockQuantity": 43,
+   "price": 0,
+   "regOrder": 2,
+   "registerDate": "2026-04-27T06:43:46.393+00:00",
+   "todayDispatch": true,
+   "title": "_블랙 클럽 10PCS (캐디백포함)____"
+  },
+  {
+   "id": 59968830042,
+   "optionName1": "블랙 클럽 10PCS (캐디백 미포함)",
+   "stockQuantity": 0,
+   "price": -100000,
+   "regOrder": 3,
+   "registerDate": "2026-09-08T03:11:55.810+00:00",
+   "todayDispatch": true,
+   "title": "_블랙 클럽 10PCS (캐디백 미포함)____"
+  }
+ ],
+ "supplements": [],
+ "deliveryText": "제주 추가 3,000원, 제주 외 도서지역 추가 3,000원",
+ "deliveryMethodType": {
+  "code": 1,
+  "name": "택배",
+  "description": "택배",
+  "etc": null,
+  "naverPayCode": "DELIVERY"
+ },
+ "discountedSalePrice": 1590000,
+ "mobileDiscountRatio": 0,
+ "derived": {
+  "productType": "DEFAULT"
+ },
+ "hopeDelivery": null,
+ "commentCount": 16,
+ "isPayMember": false,
+ "arrivalGuarantee": false,
+ "groupId": null,
+ "groupEpId": null,
+ "simpleProductAffiliateYn": false,
+ "disableAdditionalApi": false
+}

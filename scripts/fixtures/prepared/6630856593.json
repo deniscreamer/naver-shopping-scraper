@@ -143,7 +143,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"4카본 + 골프백\"]",
@@ -228,7 +229,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"12스틸 + 골프백\"]",
@@ -318,7 +320,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"12카본 + 골프백\"]",
@@ -408,7 +411,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"12스틸 + 골프백 (신축성)\"]",
@@ -498,7 +502,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"12카본 + 골프백 (신축성)\"]",
@@ -588,7 +593,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    }
   ],
   "pricing": {
@@ -896,6 +902,7 @@
     "seller_average_days": null,
     "product_average_days": null,
     "today_cutoff": null,
+    "today_off": false,
     "arrival_days": null,
     "arrival_date_text": null,
     "arrival_probability": null,
@@ -905,7 +912,6 @@
   },
   "description_ko": "PGM 남성용 좌타 1번 우드 연습용\n골프 드라이브\n\nPGM은 중국 Tmall 골프 부문\n판매량 1위 브랜드입니다.\n\n- 세트 설명 -\n4스틸+골프백 / 4카본+골프백\n▼\n\n12스틸+골프백 / 12카본+골프백\n▼\n\n12스틸+골프백(신축성) / 12카본+골프백(신축성)\n▼",
   "description_images": [
-   "https://shop-phinf.pstatic.net/20220719_296/1658194314604QXP7o_JPEG/PGM-%EB%B0%B0%EB%84%88.jpg?type=w848",
    "https://shop-phinf.pstatic.net/20220418_37/1650245101191bWbBC_JPEG/PGM%EC%9D%B8%EC%A6%9D%EC%84%9C%EC%B5%9C%EC%A2%85(%E6%B7%BB%E5%8A%A0%E6%B0%B4%E5%8D%B0).jpg?type=w848",
    "https://shop-phinf.pstatic.net/20240315_85/17104690611982wcnO_JPEG/1.jpg?type=w848",
    "https://shop-phinf.pstatic.net/20240315_165/1710469080785ud4LG_GIF/02.gif?type=wg848",
@@ -968,6 +974,10 @@
    {
     "rule": "monitor",
     "text": "*측정 방법과 모니터 사양에 따라 사이즈와\n컬러는 다소 차이가 있을 수 있습니다"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20220719_296/1658194314604QXP7o_JPEG/PGM-%EB%B0%B0%EB%84%88.jpg?type=w848"
    }
   ]
  },

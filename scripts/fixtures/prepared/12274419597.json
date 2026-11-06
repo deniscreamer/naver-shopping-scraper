@@ -124,7 +124,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": true
    },
    {
     "source_id": "observed:[\"카본9P+캐디백\"]",
@@ -192,7 +193,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": true
    },
    {
     "source_id": "observed:[\"스틸12P+캐디백\"]",
@@ -260,7 +262,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": true
    },
    {
     "source_id": "observed:[\"카본12P+캐디백\"]",
@@ -328,7 +331,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": true
    }
   ],
   "pricing": {
@@ -704,6 +708,7 @@
     "seller_average_days": 1.035533,
     "product_average_days": null,
     "today_cutoff": "14:00",
+    "today_off": false,
     "arrival_days": null,
     "arrival_date_text": "11.11.(수)",
     "arrival_probability": 97,

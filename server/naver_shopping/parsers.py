@@ -277,7 +277,9 @@ def parse_page_delivery(p, promise=None):
     international or domestic, and how fast. Seen 2026-11-05: 99,000 KRW per unit from Japan on a set whose
     backend record said free; claimDeliveryInfo.overseasShipping true; averageDeliveryLeadTime
     {productAverageDeliveryLeadTime 0 = none yet, sellerAverageDeliveryLeadTime 5 (Japan) / 1.2-2.3 (domestic)}.
-    `promise`: what the purchase box shows (pdp.delivery_promise of the page HTML)."""
+    `promise`: what the purchase box shows (pdp.delivery_promise of the page HTML). The box's "오늘출발 휴무"
+    (today_off, 2026-11-06: read after KST midnight / on a weekend) wins over the answer's todayDelivery: no
+    today_cutoff then."""
     p = _dict(p)
     delivery_raw = _dict(p.get("productDeliveryInfo"))
     delivery = _delivery(p.get("productDeliveryInfo"))
@@ -294,7 +296,9 @@ def parse_page_delivery(p, promise=None):
             "customs_tax_type": _clean(p.get("customsTaxType")) or _clean(claim.get("customsTaxType")),
             "lead_time": {"seller_average_days": _float(lead.get("sellerAverageDeliveryLeadTime")) or None,
                           "product_average_days": _float(lead.get("productAverageDeliveryLeadTime")) or None,
-                          "today_cutoff": promise.get("today_cutoff") or _dispatch_kst(delivery_raw),
+                          "today_cutoff": None if promise.get("today_off")
+                          else promise.get("today_cutoff") or _dispatch_kst(delivery_raw),
+                          "today_off": promise.get("today_off"),
                           "arrival_days": promise.get("arrival_days"),
                           "arrival_date_text": promise.get("arrival_date_text"),
                           "arrival_probability": promise.get("arrival_probability"),

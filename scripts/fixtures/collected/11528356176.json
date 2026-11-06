@@ -211,7 +211,7 @@
   "variants": null,
   "supplements": null,
   "description": {
-   "html": null,
+   "html": "<center> <!-- Not Allowed Attribute Filtered ( align=\"absmiddle\") --><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://jjnu08.igearmall.biz/upload/product/imgdetail/product_1740562482_0.jpg\"  /></center>",
    "text": null,
    "editor_type": "NONE",
    "images": [
@@ -1682,6 +1682,7 @@
     "seller_average_days": 1.6451613,
     "product_average_days": null,
     "today_cutoff": "14:30",
+    "today_off": false,
     "arrival_days": null,
     "arrival_date_text": "11.11.(수)",
     "arrival_probability": 96,

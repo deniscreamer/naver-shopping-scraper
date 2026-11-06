@@ -16,6 +16,10 @@
   {
    "code": "option_name_placeholder",
    "detail": "선택"
+  },
+  {
+   "code": "description_tiles_include_banners",
+   "detail": "ktksports 안내문11.jpg"
   }
  ],
  "source": {
@@ -122,7 +126,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"선택2 10.5 도 SR4번유틸 8아이언R퍼터\"]",
@@ -190,7 +195,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"선택3 10.5 도 S4번유틸 8아이언R퍼터\"]",
@@ -258,7 +264,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"선택4 9 도 R 4번유틸 8아이언R퍼터\"]",
@@ -326,7 +333,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"선택5 9 도 SR4번유틸 8아이언R퍼터\"]",
@@ -394,7 +402,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"선택6 10.5 도 S4번유틸 8아이언R퍼터\"]",
@@ -462,7 +471,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    }
   ],
   "pricing": {
@@ -618,6 +628,7 @@
     "seller_average_days": 4.0,
     "product_average_days": null,
     "today_cutoff": null,
+    "today_off": false,
     "arrival_days": null,
     "arrival_date_text": null,
     "arrival_probability": null,

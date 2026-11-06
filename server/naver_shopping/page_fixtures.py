@@ -23,7 +23,7 @@ import sys
 from naver_shopping import measures, parsers, pdp
 
 FIXTURES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures", "pages")
-_PROMISE_RE = re.compile(r"오늘출발|도착\s*확률|발송\s*예정|까지\s*결제|해외직배송")
+_PROMISE_RE = re.compile(r"오늘출발|도착\s*확률|발송\s*예정|까지\s*결제|해외직배송|\)\s*도착$")
 _HEAVY_KEYS = {"productAttributes", "interestFreePlans", "benefitsPolicy", "seoInfo", "epInfo", "productImages",
                "representImage", "productVideos", "view360Image", "product3dImageConfig", "rmids", "channel",
                "sellerTags", "naverShoppingSearchInfo", "purchaseReviewInfo", "reviewAmount"}

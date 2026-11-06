@@ -16,6 +16,10 @@
   {
    "code": "option_name_placeholder",
    "detail": "선택2"
+  },
+  {
+   "code": "description_tiles_include_banners",
+   "detail": "event_main.jpg, separate_shipping_notice_25.jpg, maincopyright.jpg, CSinfo_Majorgolf.jpg"
   }
  ],
  "source": {
@@ -137,7 +141,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"BM 풀세트 스틸 블랙 13PCS\",\"BM 캐디백세트 블랙\"]",
@@ -206,7 +211,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"BM 풀세트 스틸 블랙 13PCS\",\"BM 캐디백세트 화이트\"]",
@@ -275,7 +281,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"BM 풀세트 여성 실버 12PCS\",\"BM 캐디백세트 네이비\"]",
@@ -344,7 +351,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"BM 풀세트 여성 실버 12PCS\",\"BM 캐디백세트 블랙\"]",
@@ -413,7 +421,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"BM 풀세트 여성 실버 12PCS\",\"BM 캐디백세트 화이트\"]",
@@ -482,7 +491,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"BM 풀세트 카본 골드 13PCS\",\"BM 캐디백세트 네이비\"]",
@@ -551,7 +561,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"BM 풀세트 카본 골드 13PCS\",\"BM 캐디백세트 블랙\"]",
@@ -620,7 +631,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"BM 풀세트 카본 골드 13PCS\",\"BM 캐디백세트 화이트\"]",
@@ -689,7 +701,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    }
   ],
   "pricing": {
@@ -899,6 +912,7 @@
     "seller_average_days": 1.2381322,
     "product_average_days": null,
     "today_cutoff": null,
+    "today_off": false,
     "arrival_days": 2,
     "arrival_date_text": null,
     "arrival_probability": 96,

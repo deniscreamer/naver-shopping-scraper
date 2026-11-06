@@ -1,0 +1,381 @@
+{
+ "id": "7166885441",
+ "channelServiceType": "STOREFARM",
+ "channelProductType": "SINGLE",
+ "channelProductSupplyType": "OWNER",
+ "channelProductStatusType": "NORMAL",
+ "channelProductDisplayStatusType": "ON",
+ "category": {
+  "categoryId": "50002788",
+  "categoryName": "풀세트",
+  "category1Id": "50000007",
+  "category2Id": "50000029",
+  "category3Id": "50001102",
+  "category4Id": "50002788",
+  "category1Name": "스포츠/레저",
+  "category2Name": "골프",
+  "category3Name": "골프클럽",
+  "category4Name": "풀세트",
+  "wholeCategoryId": "50000007>50000029>50001102>50002788",
+  "wholeCategoryName": "스포츠/레저>골프>골프클럽>풀세트",
+  "categoryLevel": 4,
+  "lastLevel": true,
+  "sortOrder": 10,
+  "validCategory": true,
+  "receiptIssue": true,
+  "exceptionalCategoryTypes": [
+   "REGULAR_SUBSCRIPTION",
+   "MANUFACTURE_DEFINE_NO",
+   "RENTAL_SUBSCRIPTION",
+   "FREE_RETURN_INSURANCE"
+  ],
+  "pointAccumulationYn": false
+ },
+ "name": "캘러웨이 워버드 남성용 골프채 캐디백 풀세트 Callaway WARBIRD 일본직구",
+ "productUrl": "https://smartstore.naver.com/main/products/7166885441",
+ "mobileProductUrl": "https://m.smartstore.naver.com/main/products/7166885441",
+ "storeKeepExclusiveProduct": false,
+ "best": false,
+ "orderRequestUsable": false,
+ "channelProductAttributes": [],
+ "productNo": "7132874362",
+ "salePrice": 896100,
+ "dispSalePrice": 896100,
+ "stockQuantity": 49,
+ "saleType": "NEW",
+ "excludeAdminDiscount": false,
+ "payExposure": true,
+ "productStatusType": "SALE",
+ "statusType": "SALE",
+ "authenticationType": "NORMAL",
+ "itselfProductionProductYn": false,
+ "afterServiceInfo": {
+  "afterServiceTelephoneNumber": "********",
+  "afterServiceGuideContent": "********"
+ },
+ "originAreaInfo": {
+  "originAreaType": "DIRECT_INPUT",
+  "content": "일본 외 제3국",
+  "originAreaCode": "04",
+  "wholeOriginAreaName": "직접입력",
+  "plural": false
+ },
+ "optionUsable": true,
+ "options": [
+  {
+   "id": 6875279803,
+   "optionType": "COMBINATION",
+   "groupName": "플렉스"
+  }
+ ],
+ "optionCombinations": [
+  {
+   "id": 25316598381,
+   "optionName1": "R",
+   "stockQuantity": 25,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2022-09-11T00:58:23.884+00:00"
+  },
+  {
+   "id": 25316598382,
+   "optionName1": "S",
+   "stockQuantity": 24,
+   "price": 0,
+   "regOrder": 1,
+   "registerDate": "2022-09-11T00:58:23.885+00:00"
+  }
+ ],
+ "optionStandards": [],
+ "supplementProductUsable": false,
+ "supplementProducts": [],
+ "customMadeInfo": {
+  "customMade": false
+ },
+ "eventPhraseCont": "Callaway 100%정품 일본직구",
+ "taxType": "TAX",
+ "customsTaxType": "NOT_APPLICABLE",
+ "certification": false,
+ "certificationTargetExcludeContent": {
+  "kcCertifiedProductExclusionYn": true,
+  "kcCertifiedProductExclusionType": "KC_EXEMPTION_OBJECT",
+  "kcExemptionType": "OVERSEAS"
+ },
+ "minorPurchasable": true,
+ "productInfoProvidedNoticeView": {
+  "basic": {
+   "품명 / 모델명": "상품상세참조 / 상품상세참조",
+   "KC 인증정보": "상품상세참조",
+   "크기": "상품상세참조",
+   "중량": "상품상세참조",
+   "색상": "상품상세참조",
+   "재질": "상품상세참조",
+   "제품구성": "상품상세참조",
+   "동일 모델의 출시연월": "상품상세참조",
+   "제조자(사)": "상품상세참조",
+   "제조국": "일본 외 제3국",
+   "상품별 세부사양": "상품상세참조",
+   "품질보증기준": "상품상세참조",
+   "A/S 책임자와 전화번호": "********"
+  },
+  "additional": {
+   "재화등의 배송방법에 관한 정보": "택배",
+   "주문 이후 예상되는 배송기간": "대금 지급일로부터 3일 이내에 발송",
+   "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보": "상품상세 참조",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보": "편도 100000원 (최초 배송비 무료인 경우 200000원 부과)",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거": "상품상세 참조",
+   "재화등의 교환·반품·보증 조건 및 품질보증기준": "상품상세 참조",
+   "재화등의 A/S 관련 전화번호": "********",
+   "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차": "상품상세 참조",
+   "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항": "상품상세 참조",
+   "거래에 관한 약관의 내용 또는 확인할 수 있는 방법": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다."
+  }
+ },
+ "productDeliveryInfo": {
+  "deliveryFeeType": "UNIT_QUANTITY_PAID",
+  "deliveryMethodTypes": [
+   "DELIVERY"
+  ],
+  "baseFee": 99800,
+  "deliveryFeePayType": "PREPAID",
+  "repeatQuantity": 1,
+  "deliveryAreaType": "AREA_2",
+  "area2ExtraFee": 5000,
+  "installationFee": false,
+  "deliveryFeePolicyText": "1개마다 부과 / 제주,도서지역 추가 5,000원",
+  "deliveryAttributeType": "NORMAL",
+  "todayDelivery": false,
+  "deliveryCompany": {
+   "id": "CJGLS",
+   "name": "CJ 대한통운(오네)"
+  }
+ },
+ "claimDeliveryInfo": {
+  "returnDeliveryCompanyPriority": "PRIMARY",
+  "deliveryCompanyName": "한진택배",
+  "deliveryCompanyCode": "HANJIN",
+  "naverPayAppointment": true,
+  "returnDeliveryFee": 100000,
+  "exchangeDeliveryFee": 200000,
+  "shippingAddressId": 103438472,
+  "returnAddressId": 100797495,
+  "shippingAddress": "1400003 304, 5-3-14, yasio, sinagawagu, Japan",
+  "returnAddress": "부산광역시 부산진구 엄광로182번길 30-8 (우 : 47339) ",
+  "overseasShipping": true,
+  "individualCustomUniqueCodeUsable": true,
+  "freeReturnInsurance": false
+ },
+ "isCultureCostIncomeDeduction": false,
+ "isRestrictCart": false,
+ "naverGuaranteed": false,
+ "newShoppingExposureYn": true,
+ "benefitsView": {
+  "discountedSalePrice": 798700,
+  "dispDiscountedSalePrice": 798700,
+  "sellerImmediateDiscountAmount": 97400,
+  "managerImmediateDiscountAmount": 0,
+  "specialDiscountAmount": {},
+  "discountedRatio": 10,
+  "dispDiscountedRatio": 10,
+  "sellerPurchasePoint": 0,
+  "sellerCustomerManagementPoint": 0,
+  "managerPurchasePoint": 7987,
+  "managerPurchaseExtraPoint": 0,
+  "managerPaymoneyAccumulatePoint": 11980,
+  "managerBankbookAccumulatePoint": 3993,
+  "managerArrivalGuaranteePoint": 0,
+  "managerMembershipArrivalGuaranteePoint": 0,
+  "generalPurchaseReviewPoint": 1000,
+  "premiumPurchaseReviewPoint": 1500,
+  "managerGeneralPurchaseReviewPoint": 50,
+  "managerPremiumPurchaseReviewPoint": 150,
+  "textReviewPoint": 1000,
+  "photoVideoReviewPoint": 1500,
+  "afterUseTextReviewPoint": 0,
+  "afterUsePhotoVideoReviewPoint": 0,
+  "storeMemberReviewPoint": 0,
+  "managerTextReviewPoint": 50,
+  "managerPhotoVideoReviewPoint": 150,
+  "managerAfterUseTextReviewPoint": 50,
+  "managerAfterUsePhotoVideoReviewPoint": 150,
+  "givePresent": false
+ },
+ "averageDeliveryLeadTime": {
+  "productAverageDeliveryLeadTime": 0,
+  "sellerAverageDeliveryLeadTime": 5.5
+ },
+ "detailContents": {
+  "detailContentText": "캘러웨이 워버드 남성 초보 입문용 인기템 클럽 10개 캐디백 풀세트 Callaway WARBIRD 100%정품 일본직구 필드에 나와 충분히 골프를 즐길 수 있는 가성비가 우수한 10개의 풀세트 고성능 모델로 초심자부터 상급자까지 다양한 스킬의 골퍼를 위한 최고의 풀세트 모델입니다. 다양한 상황에서 이상적인 비거리와 고탄도를 부드럽게 칠 수 있도록 설계되어 있으며, 어떤 클럽을 가지고도 안심하고 플레이 할 수 있습니다. 클럽 10개 캐디백 포함 풀세트 Details 드 라 이 버 드라이버의 길이는 44.5인치로 일반 드라이버보다 약간 짧기 때문에 초보자도 쉽게 적응 할 수 있습니다. X2HOT 시리즈 베이스의 우드 X2HOT 기반의 클럽 헤드 설정 2014 X2HOT Seasons 2014 클럽 헤드 디자인을 기반으로 하며 마감은 블랙 PVD 마감으로 고급스러운 느낌을 줍니다. 아이언 I#5~#9, PW, SW 퍼 터 오디세이 전통의 White Hot Insert를 장착한 White Hot Pro 2.0 모델을 셋업했습니다. 헤드는 컨벤셔널한 블레이드 타입. 전용 헤드 커버 (W#1, W#5, PUTTER) 캐디백 포함 PU(인조가죽)소재로 고급스러움을 더한 캐디백은 디테일까지 신경써서 제작. 다양한 포켓과 넉넉한 수납공간. 기능성과 품질이 우수한 캐디백입니다. 스 펙 남성 초보 입문용 골린이 베스트 셀러 번호 1W 5W 5i 6i 7i 8i 9i PW SW Putter 헤드 소재 티타늄 스테인리스 샤프트명(경도) 우드 : WARBIRD (S / R) 아이언 : WARBIRD (R), 오리지널 스틸 (UNI : SR 상당) 로프트 각도 (°) 10.5 19 23 26 30 34.5 39 44 54 3 라이각(°) 58.5 58 61.3 62 62.5 63 63.5 64 64 70 균형 R/D0S/D1 R/D0S/D1 R/D1S/D3 총중량 R(g) 약 313 약 328 약 370 약 375 약 380 약 386 약 392 약 401 약 414 약 521 총중량 S(g) 약 318 약 330 약 416 약 420 약 424 약 430 약 436 약 446 약 455 약 521 ※드라이버와 페어웨이 우드에는 카본 샤프트 장착 ※플렉스 R 모델의 아이언에는 카본 샤프트, 플렉스 S 모델의 아이언에는 스틸 샤프트 장착 ※퍼터에는 스틸 샤프트가 장착되어 있습니다. 도쿄피아 골프",
+  "excessDetailContentText": false,
+  "editorType": "SEONE"
+ },
+ "useExternalStock": false,
+ "dispName": "캘러웨이 워버드 남성용 골프채 캐디백 풀세트 Callaway WARBIRD 일본직구",
+ "adultAuthorizationType": "NOT_LOGIN",
+ "authorizationDisplay": "NORMAL",
+ "galleryImages": [
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20220918_280/1663465769985JTOj5_JPEG/64601665703920864_290590275.jpg",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "REPRESENTATIVE"
+  },
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20220911_157/1662857018810LgkeD_JPEG/63992907509658542_656713844.jpg",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 2,
+   "url": "https://shop-phinf.pstatic.net/20220911_278/1662857018607dli5B_JPEG/63992907305658957_1758940643.jpg",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 3,
+   "url": "https://shop-phinf.pstatic.net/20220911_269/16628570190088MHqe_JPEG/63992907710765544_361819482.jpg",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 4,
+   "url": "https://shop-phinf.pstatic.net/20220911_294/16628570191424higg_JPEG/63992907851272346_998505720.jpg",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 5,
+   "url": "https://shop-phinf.pstatic.net/20220911_124/1662857019317Ji4VL_JPEG/63992908021134907_615199293.jpg",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 6,
+   "url": "https://shop-phinf.pstatic.net/20220911_172/1662857019455H9KES_JPEG/63992908159064562_1334631505.jpg",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 7,
+   "url": "https://shop-phinf.pstatic.net/20220911_222/1662857019610JWHxa_JPEG/63992908310907835_368873353.jpg",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  }
+ ],
+ "soldout": false,
+ "viewAttributes": {
+  "상품상태": "신상품",
+  "상품번호": "7166885441",
+  "제조사": "캘러웨이",
+  "브랜드": "캘러웨이",
+  "모델명": "캘러웨이 워버드 남성용 골프채 캐디백 풀세트",
+  "이벤트": "Callaway 100%정품 일본직구",
+  "원산지": "일본 외 제3국"
+ },
+ "additionalAttributes": {
+  "영수증발급": "신용카드전표, 현금영수증발급",
+  "A/S 안내": [
+   "********",
+   "********"
+  ]
+ },
+ "detailAttributes": {
+  "페어웨이 로프트각": "19도",
+  "드라이버 로프트각": "10.5도",
+  "아이언 구성": "#6, #7, #8, 샌드웨지(SW), 피칭웨지(PW), #5, #9",
+  "종류": "풀세트",
+  "성별": "남성용",
+  "사용방향": "오른손용",
+  "총클럽개수": "10개",
+  "출시": "2019년형",
+  "풀세트구성": "드라이버, 퍼터, 유틸리티, 페어웨이, 웨지, 5아이언세트",
+  "아이언샤프트소재": "그라파이트/카본",
+  "아이언개수": "5개",
+  "퍼터형태": "블레이드(일자형)",
+  "골프백포함여부": "캐디백"
+ },
+ "eCouponCategory": false,
+ "cultureCategory": false,
+ "textOptions": [],
+ "simpleOptions": [],
+ "combinationOptions": [
+  {
+   "groupName": "플렉스",
+   "options": [
+    {
+     "id": 25316598381,
+     "optionName1": "R",
+     "stockQuantity": 25,
+     "price": 0,
+     "regOrder": 0,
+     "registerDate": "2022-09-11T00:58:23.884+00:00"
+    },
+    {
+     "id": 25316598382,
+     "optionName1": "S",
+     "stockQuantity": 24,
+     "price": 0,
+     "regOrder": 1,
+     "registerDate": "2022-09-11T00:58:23.885+00:00"
+    }
+   ],
+   "checkedName": null,
+   "checkedIds": null,
+   "price": 0,
+   "isLastDepth": true
+  }
+ ],
+ "standardOptions": [],
+ "standardCombinations": [
+  {
+   "id": 25316598381,
+   "optionName1": "R",
+   "stockQuantity": 25,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2022-09-11T00:58:23.884+00:00",
+   "title": "_R____"
+  },
+  {
+   "id": 25316598382,
+   "optionName1": "S",
+   "stockQuantity": 24,
+   "price": 0,
+   "regOrder": 1,
+   "registerDate": "2022-09-11T00:58:23.885+00:00",
+   "title": "_S____"
+  }
+ ],
+ "supplements": [],
+ "deliveryText": "1개마다 부과 / 제주,도서지역 추가 5,000원",
+ "deliveryMethodType": {
+  "code": 1,
+  "name": "택배",
+  "description": "택배",
+  "etc": null,
+  "naverPayCode": "DELIVERY"
+ },
+ "deliveryPayType": "PREPAID",
+ "discountedSalePrice": 798700,
+ "mobileDiscountRatio": 10,
+ "derived": {
+  "productType": "DEFAULT"
+ },
+ "hopeDelivery": null,
+ "commentCount": 8,
+ "isPayMember": false,
+ "arrivalGuarantee": false,
+ "groupId": null,
+ "groupEpId": null,
+ "simpleProductAffiliateYn": false,
+ "disableAdditionalApi": false
+}

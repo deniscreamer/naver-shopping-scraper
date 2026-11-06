@@ -165,7 +165,8 @@
       },
       "also": 0
      }
-    }
+    },
+    "today_dispatch": null
    }
   ],
   "pricing": {
@@ -286,6 +287,7 @@
     "seller_average_days": null,
     "product_average_days": null,
     "today_cutoff": "18:00",
+    "today_off": false,
     "arrival_days": null,
     "arrival_date_text": null,
     "arrival_probability": null,

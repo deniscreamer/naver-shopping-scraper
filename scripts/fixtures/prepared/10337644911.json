@@ -116,7 +116,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": true
    },
    {
     "source_id": "observed:[\"선택2 9도S 유틸 8아이언 퍼터\"]",
@@ -184,7 +185,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": true
    },
    {
     "source_id": "observed:[\"선택3 10.5도R 유틸 8아이언 퍼터\"]",
@@ -252,7 +254,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": true
    },
    {
     "source_id": "observed:[\"선택4 10.5도SR 유틸 8아이언 퍼터\"]",
@@ -320,7 +323,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": true
    }
   ],
   "pricing": {
@@ -528,6 +532,7 @@
     "seller_average_days": 1.9166666,
     "product_average_days": null,
     "today_cutoff": "14:00",
+    "today_off": false,
     "arrival_days": null,
     "arrival_date_text": "11.11.(수)",
     "arrival_probability": 98,

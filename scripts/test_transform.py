@@ -373,3 +373,27 @@ def test_reverify40_fixes():
         numbered(line)
         line["specs"]["delivery"]["extra_fee_text"] = "7000"
     assert prep("12945108653", other_number)["product"]["delivery"]["extra_fee_text"] == "7000"
+
+
+def _fixture(pid):
+    with open(os.path.join(os.path.dirname(FX), "collected", pid + ".json"), encoding="utf-8") as f:
+        return json.load(f)
+
+
+def test_pilot20_transform():
+    # 2026-11-06 pilot on 20 more sets
+    p = prepare(_fixture("8958060680"), RULES, "r", 1)               # "[당일출고]" on both values; only S ships today
+    assert p["product"]["options"][0]["values_ko"] == ["스틸 샤프트 (S) SPEC", "카본 샤프트 (R) SPEC"]
+    assert [v["today_dispatch"] for v in p["product"]["variants"]] == [True, False]
+    assert p["product"]["variants"][0]["source_id"].startswith('observed:["[당일출고]')    # the SKU keeps the raw
+    p = prepare(_fixture("13553116678"), RULES, "r", 1)              # "(선택)샤프트/드라이버/아이언"
+    assert all(not o["name_ko"].startswith("(선택)") for o in p["product"]["options"])
+    p = prepare(_fixture("13302492097"), RULES, "r", 1)              # 128 -> 100, 총클럽개수 3개
+    codes = {n["code"]: n["detail"] for n in p["notes"]}
+    assert codes["variants_capped"] == "128 -> 100" and codes["few_pieces"] == "총클럽개수 3개"
+    first = {}
+    for v in p["product"]["variants"]:
+        first[v["options_ko"][0]] = first.get(v["options_ko"][0], 0) + 1
+    assert max(first.values()) - min(first.values()) <= 4             # shared out between the two drivers (was 64 / 36)
+    p = prepare(_fixture("10816781893"), RULES, "r", 1)              # 사은품 오리지널커버 증정: a thing, hidden
+    assert {n["code"]: n["detail"] for n in p["notes"]}["gift_hidden"] == "오리지널커버 증정"

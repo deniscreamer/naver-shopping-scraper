@@ -465,6 +465,21 @@ primary record, with dates; read it before changing the behaviour.
   of the 4-club set, 출시 2026년형 with XR26 / XR 24), and sometimes none (총클럽개수 12개 where every part list counts 11); the
   transform (scripts/spec_variants.py) reads one fact from row and values and drops or binds the row.
 
+- 2026-11-06: the purchase box says "오늘출발 휴무" (then "지금 결제 시 11.9.(월) 발송 예정") on a seller's no-dispatch day, while the
+  page answer still says todayDelivery with thisDayDispatchBasisTime (`pdp.delivery_promise`,
+  `parsers.parse_page_delivery`). 네이버 배송 / 내일배송 boxes print "11.11.(수) 도착" / "내일 11.4.(수) 도착" with no probability. The
+  "평균 N일 이내 도착 확률 P%" line is the answer's sellerDeliveryLeadTimes (P = cumulative percent at N), not
+  productAverageDeliveryLeadTime.
+- 2026-11-06: a long product name can miss its own card on the first search page (13425122164, 8 words); its first 5
+  words found it (`ext_product.search_queries`).
+- SmartEditor image components carry `data-linkdata` JSON (`src`, `originalWidth`, `originalHeight`, `linkUse`,
+  `link`). An outside image the editor did not measure has `originalHeight` "1" (2026-11-06, 8396163567 /
+  12945108653). The JSON can hold `=` escapes and `" : "` spacing. scripts/description_clean.py reads it for link and
+  spacer banners.
+- Golf option values write numbers with units in several ways: a driver loft "11.5도" / "11.5" / "10.5R" / "9.5 SR", a
+  club number "4번" (part in the axis name, e.g. "유틸리티 선택"), "유틸4" / "4번유틸" / "4U" / "5W". "캐디백 미포함" marks a value
+  without the bag. A description may bind a material to a bare flex value in a sentence: "플렉스 R 모델의 아이언에는 카본 샤프트"
+  (seen 2026-11-06, pilot of 19 golf sets).
 - A product page Naver cannot serve opens `shopv.pstatic.net/web/maintenance/internal-error.html` (seen 2026-11-06,
   twice on one product); the adapter may not read that host. It is answered as 404 (unavailable), not a wall. ->
   `ext_product.read_page` comment.

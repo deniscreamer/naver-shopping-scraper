@@ -130,6 +130,7 @@
     "seller_average_days": 1.3333334,
     "product_average_days": null,
     "today_cutoff": "15:00",
+    "today_off": false,
     "arrival_days": 2,
     "arrival_date_text": null,
     "arrival_probability": 100,

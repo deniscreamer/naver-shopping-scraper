@@ -233,22 +233,31 @@ def text_fields(page_html):
 # page answer says overseasShipping). "관부가세 별도" also shows on domestic sets, so it is not read.
 # Seen 2026-11-06 on 13 of 40 (todayDelivery true): "오늘출발" alone, then "14:00 까지 결제 시 오늘 바로 발송" and
 # either "11.11.(수) 도착 확률 98%" (a dated arrival) or the "평균 N일" line.
+# Seen 2026-11-06 after KST midnight / on a weekend (10816781893, 13302492097, 6540695739, 10816904599, 13553116678):
+# "오늘출발 휴무", then "지금 결제 시 11.9.(월) 발송 예정": no dispatch today although the page answer still says
+# todayDelivery with its thisDayDispatchBasisTime. Seen 2026-11-02 / 11-06 on "네이버 배송" and "네이버 내일배송" boxes
+# (13369469193, 8811427777, 10829550821, 12945108653, 13462928946): the arrival date alone, a whole line with no
+# probability, "11.11.(수) 도착" or "내일 11.4.(수) 도착" (the option panel's 배송지 line repeats it).
 _TODAY_RE = re.compile(r"오늘출발\s*(\d{1,2}:\d{2})\s*마감|(\d{1,2}:\d{2})\s*까지\s*결제\s*시\s*오늘")
 _ARRIVE_RE = re.compile(r"평균\s*(\d+)\s*일\s*이내\s*도착\s*확률\s*(\d+)\s*%")
 _ARRIVE_ON_RE = re.compile(r"(\d{1,2}\.\d{1,2}\.\([^)]{1,2}\))\s*도착\s*확률\s*(\d+)\s*%")
 _SHIP_RE = re.compile(r"(\d{1,2}\.\d{1,2}\.\([^)]{1,2}\))\s*발송\s*예정")
+_TODAY_OFF_RE = re.compile(r"^오늘출발\s*휴무$")
+_ARRIVE_DATE_RE = re.compile(r"^(?:내일\s*)?(\d{1,2}\.\d{1,2}\.\([^)]{1,2}\))\s*도착$")
 
 
 def delivery_promise(page_html):
-    """-> {today_cutoff, arrival_days, arrival_date_text, arrival_probability, ship_date_text, overseas_text},
-    None where not shown."""
+    """-> {today_cutoff, today_off, arrival_days, arrival_date_text, arrival_probability, ship_date_text,
+    overseas_text}, None where not shown; today_off and overseas_text are booleans."""
     lines = [_WS_RE.sub(" ", t).strip() for t in _text_nodes(parse_html(page_html))]
     def first(rx):
         return next((m for m in (rx.search(t) for t in lines) if m), None)
     today, arrive, arrive_on, ship = first(_TODAY_RE), first(_ARRIVE_RE), first(_ARRIVE_ON_RE), first(_SHIP_RE)
+    arrive_date = arrive_on or first(_ARRIVE_DATE_RE)
     return {"today_cutoff": (today.group(1) or today.group(2)) if today else None,
+            "today_off": first(_TODAY_OFF_RE) is not None,
             "arrival_days": int(arrive.group(1)) if arrive else None,
-            "arrival_date_text": arrive_on.group(1) if arrive_on else None,
+            "arrival_date_text": arrive_date.group(1) if arrive_date else None,
             "arrival_probability": int(arrive.group(2)) if arrive else int(arrive_on.group(2)) if arrive_on else None,
             "ship_date_text": ship.group(1) if ship else None,
             "overseas_text": any(t == "해외직배송" for t in lines)}

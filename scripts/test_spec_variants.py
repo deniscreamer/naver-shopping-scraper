@@ -372,3 +372,139 @@ def test_title_unchanged_cases(title, options, expected):
 def test_title_gender_without_a_rival_is_noise():
     assert title_one_variant("브랜드 남성 풀세트", [_opt("선택", "남성 풀세트 블랙", "화이트")]) == []
     assert title_one_variant("브랜드 남성 풀세트", [_opt("선택", "남성 풀세트 블랙", "여성 화이트")]) == ["남성"]
+
+
+# ---- pilot 2026-11-06 (19 more golf sets): numbers with units, the driver loft, the bag ------------------
+
+GLORY = [_opt("드라이버+아이언", "11.5도 L+아이언 L", "11.5도 A+아이언 A", "10.5도 A+아이언A"),
+         _opt("유틸리티 선택", "4번 L", "4번 A", "5번 L", "5번 A")]
+
+
+def test_title_loft_and_club_number_10816781893():
+    # "11.5" names the value "11.5도", "유틸4" the 4번 of the 유틸리티 axis; the L of "아이언L" is inside no span
+    # of its own once 11.5L / 유틸4L carry it (the touching rule)
+    assert title_one_variant("2025 테일러메이드 올 뉴 글로리 여성용 풀세트 드라이버11.5L+아이언L+유틸4L", GLORY) == \
+        ["11.5L", "유틸4L"]
+
+
+def test_title_club_numbers_with_latin_parts_13553116678():
+    options = [_opt("페어웨이우드", "5W", "3W", "7W"), _opt("유틸리티", "4U", "3U", "5U", "6U")]
+    assert title_one_variant("혼마 베레스 아이주 2스타 여성 10개 풀세트 11.5+5W+4U+7i (병행)", options) == ["5W", "4U"]
+
+
+def test_model_row_names_loft_wood_and_util_10816904599():
+    options = [_opt("드라이버+아이언+퍼터(32인치)+골프백 선택", "11.5도 L+아이언 L+퍼터+골프백", "11.5도 A+아이언 A+퍼터+골프백",
+                    "10.5도 A+아이언A+퍼터+골프백"),
+               _opt("우드 선택", "5번 L", "5번 A", "3번 L", "3번 A"), _opt("유틸리티 선택", "4번 L", "4번 A", "5번 L", "5번 A")]
+    row = "2025 테일러메이드 올 뉴 글로리 여성용 풀세트 [드라이버11.5L+아이언L+퍼터+골프백+우드5L+유틸4L]"
+    got = check_specs([_spec("모델명", row)], options, [], None)
+    assert _codes(got) == {"specs_name_one_variant": f"모델명 {row}: 11.5L, 우드5L, 유틸4L"}
+
+
+@pytest.mark.parametrize("title, options", [
+    ("핑 G430 10K 남성 클럽 10개 풀세트", [_opt("드라이버", "10도 R", "9도 R")]),      # 10K / 10개 are not a loft
+    ("Qi10 남성 풀세트 9아이언", [_opt("드라이버", "10도 R", "9도 R")]),               # Qi10, 9아이언
+    ("테일러메이드 Qi10 V300 남성골프풀세트클럽11개선택1 9도SR 유틸 8아이언 퍼터",        # 유틸 8아이언: no 유틸8
+     [_opt("선택", "9도SR 유틸 8아이언 퍼터", "9도SR 유틸 7아이언 퍼터")]),
+    ("젝시오 풀세트 3유틸리티 구성", [_opt("유틸리티", "3번", "4번")]),                 # 3유틸리티: a count, not #3
+    ("혼마 풀세트 5W 4U", [_opt("유틸리티", "4번 R", "5번 R")]),                        # 4U is a util: no other axis
+])
+def test_title_numbers_must_not_match(title, options):
+    got = title_one_variant(title, options)
+    assert not any(w in got for w in ("10", "9", "10K", "8", "3유틸리티", "5W")), got
+
+
+def test_title_util_number_is_the_axis_part_not_a_wood():
+    assert title_one_variant("풀세트 우드4", [_opt("유틸리티 선택", "4번 L", "5번 L")]) == []
+
+
+# ---- R-LOFT driver loft ----------------------------------------------------------------------
+
+def test_loft_stated_by_every_value_drops_the_row_11635855564():
+    options = [_opt("드라이버", "10.5도 SR", "10.5도 R", "9도 SR", "9도 R", "9도 S"),
+               _opt("유틸리티", "3번 R", "3번 SR", "3번 S", "4번 R", "4번 SR", "4번 S", "5번 R", "5번 SR", "5번 S")]
+    specs = _rows(드라이버_로프트각="10.5도", 아이언샤프트소재="경량스틸")
+    got = check_specs(specs, options, [], None)
+    assert [r["label_ko"] for r in got["specs"]] == ["아이언샤프트소재"]
+    assert _codes(got) == {"specs_stated_by_variants": "드라이버 로프트각 10.5도: every variant states it"}
+
+
+def test_loft_without_degree_sign_13369469193():
+    options = [_opt("선택", "NEW 2.0 트리슐라 클럽세트 10.5 R", "NEW 2.0 트리슐라 클럽세트 10.5 SR",
+                    "NEW 2.0 트리슐라 클럽세트 9.5 SR")]
+    got = check_specs(_rows(드라이버_로프트각="10.5도"), options, [], None)
+    assert got["specs"] == []
+    assert list(_codes(got)) == ["specs_stated_by_variants"]
+
+
+def test_loft_binds_to_the_values_it_fits_when_some_are_silent():
+    options = [_opt("드라이버", "10.5도 R", "9도 R", "R"), _opt("아이언", "8아이언 R")]
+    got = check_specs(_rows(드라이버_로프트각="10.5도"), options, [], None)
+    assert got["specs"] == [{"label_ko": "드라이버 로프트각", "value_ko": "10.5도", "for_ko": ["10.5도 R", "R"]}]
+
+
+def test_loft_fits_no_variant():
+    got = check_specs(_rows(드라이버_로프트각="11.5도"), [_opt("드라이버", "10.5도 R", "9도 R")], [], None)
+    assert got["specs"] == []
+    assert _codes(got) == {"specs_fit_no_variant": "드라이버 로프트각 11.5도: the variants are 10.5도, 9도"}
+
+
+@pytest.mark.parametrize("specs, options", [
+    (_rows(드라이버_로프트각="11.5도, 10.5도"), GLORY),                                   # 10816781893: lists all sold
+    (_rows(드라이버_로프트각="9.5도, 10.5도"),                                              # 8958060680: values silent
+     [_opt("브리지스톤 BG100 화이트 풀세트 캐디백포함", "스틸 샤프트 (S) SPEC", "카본 샤프트 (R) SPEC")]),
+    (_rows(드라이버_로프트각="11.5도"),                                                     # wood / util lofts
+     [_opt("우드", "우드7번(21도)-L", "우드9번(33도)-A"), _opt("유틸", "유틸8번(36도)-A", "유틸6번(28도)-L")]),
+    (_rows(드라이버_로프트각="10.5도"), [_opt("유틸리티", "4번 R", "5번 S")]),              # 4번 R is no loft
+])
+def test_loft_must_not_match(specs, options):
+    assert check_specs(specs, options, [], None) == {"specs": specs, "notes": []}
+
+
+# ---- R-DESC material bound by a sentence ------------------------------------------------------
+
+WARBIRD = "※플렉스 R 모델의 아이언에는 카본 샤프트,\n플렉스 S 모델의 아이언에는 스틸 샤프트 장착"
+
+
+def test_description_materials_sentence_7166885441():
+    assert description_materials(WARBIRD, ["R", "S"]) == {"R": "CARBON", "S": "STEEL"}
+
+
+def test_description_sentence_binds_the_carbon_row_7166885441():
+    got = check_specs([_spec("아이언샤프트소재", "그라파이트/카본")], [_opt("플렉스", "R", "S")], [], WARBIRD)
+    assert got["specs"] == [{"label_ko": "아이언샤프트소재", "value_ko": "그라파이트/카본", "for_ko": ["R"]}]
+
+
+@pytest.mark.parametrize("text", [
+    "R 모델의 드라이버에는 카본 샤프트, S 모델의 드라이버에는 카본 샤프트",          # the driver, not the irons
+    "R 모델 출시 기념, 스틸 커버 증정\n",                                             # far apart and no shaft
+    "플렉스 R 모델: 경량 설계. 카본 헤드커버",                                         # another sentence
+])
+def test_description_sentence_must_not_match(text):
+    assert description_materials(text, ["R", "S"]) == {}
+
+
+# ---- R-BAG the bag in the title vs values without it -------------------------------------------
+
+REVA = [_opt("구성", "피치/서프 클럽 10PCS (캐디백포함)", "피치/서프 클럽 10PCS (캐디백 미포함)", "블랙 클럽 10PCS (캐디백포함)",
+             "블랙 클럽 10PCS (캐디백 미포함)")]
+
+
+def test_title_bag_with_values_without_it_13413924099():
+    assert title_one_variant("캘러웨이 2026 REVA 레바 여성 풀세트 피치/서프 10PCS+골프백 [캘러웨이코리아]", REVA) == \
+        ["피치", "서프", "골프백"]
+
+
+def test_title_bag_must_not_match_13734679551():
+    options = [_opt("구성", "풀세트+캐디백(화이트)", "풀세트+캐디백(화이트/그레이)")]       # every value has the bag
+    assert title_one_variant("미즈노 RB LADY 여성 풀세트 캐디백", options) == []
+    # a title without the bag names the 미포함 values (one span), not the bag
+    assert title_one_variant("레바 여성 풀세트 캐디백 미포함", REVA) == ["캐디백 미포함"]
+
+
+def test_title_loft_written_two_ways_9343324012():
+    # "10.5R" and "10.5도" are one loft: the title "10.5R" still names the 10.5R value, not both 10.5 values
+    values = ["10.5R 4번유틸R 8아이언R 퍼터", "10.5도 4번유틸SR8아이언R 퍼터", "9도 SR4번유틸SR 8아이언R 퍼터",
+              "9도 S4번유틸S 8아이언S 퍼터"]
+    assert title_one_variant("삼양인터내셔날 핑 G430 브리지스톤 v300 조합 남성골프채풀세트 11개 드라이버10.5R 4번유틸R "
+                             "8아이언R 퍼터", [_opt("선택", *values)]) == ["10.5R", "R"]

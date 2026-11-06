@@ -110,7 +110,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"드라이버+우드+하이브리드/SR\"]",
@@ -178,7 +179,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    }
   ],
   "pricing": {
@@ -468,6 +470,7 @@
     "seller_average_days": 1.92,
     "product_average_days": null,
     "today_cutoff": null,
+    "today_off": false,
     "arrival_days": 2,
     "arrival_date_text": null,
     "arrival_probability": 96,

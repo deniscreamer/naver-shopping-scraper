@@ -207,13 +207,42 @@ def test_page_options_with_the_page_fields():
 def test_delivery_promise():
     with open(os.path.join(FX, "pdp_delivery_promise.html"), encoding="utf-8") as f:   # honma 5543745139, 2026-11-05
         promise = pdp.delivery_promise(f.read())
-    assert promise == {"today_cutoff": "16:00", "arrival_days": 2, "arrival_date_text": None, "arrival_probability": 96,
-                       "ship_date_text": "11.6.(금)", "overseas_text": False}
+    assert promise == {"today_cutoff": "16:00", "today_off": False, "arrival_days": 2, "arrival_date_text": None,
+                       "arrival_probability": 96, "ship_date_text": "11.6.(금)", "overseas_text": False}
     assert pdp.delivery_promise("<div><span>해외직배송</span></div>")["overseas_text"] is True
     with open(os.path.join(FX, "pdp_delivery_promise_today.html"), encoding="utf-8") as f:   # the same set, 2026-11-06
         promise = pdp.delivery_promise(f.read())
-    assert promise == {"today_cutoff": "16:00", "arrival_days": None, "arrival_date_text": "11.11.(수)",
-                       "arrival_probability": 98, "ship_date_text": None, "overseas_text": False}
+    assert promise == {"today_cutoff": "16:00", "today_off": False, "arrival_days": None,
+                       "arrival_date_text": "11.11.(수)", "arrival_probability": 98, "ship_date_text": None,
+                       "overseas_text": False}
+
+
+def test_delivery_promise_day_off():
+    """"오늘출발 휴무": the seller does not dispatch today (4 sets read after KST midnight / on a weekend, 2026-11-06)."""
+    with open(os.path.join(FX, "pdp_delivery_off.html"), encoding="utf-8") as f:   # 6540695739, Saturday 00:17 KST
+        promise = pdp.delivery_promise(f.read())
+    assert promise == {"today_cutoff": None, "today_off": True, "arrival_days": None, "arrival_date_text": "11.11.(수)",
+                       "arrival_probability": 97, "ship_date_text": "11.9.(월)", "overseas_text": False}
+    for line in ("오늘출발", "오늘출발 16:00 마감", "해외 오늘출발", "빠른배송 고맙습니다", "휴무일 안내: 주말 및 공휴일"):
+        assert pdp.delivery_promise(f"<div><span>{line}</span></div>")["today_off"] is False, line
+
+
+def test_delivery_promise_dated_arrival_without_probability():
+    """"네이버 배송" / "네이버 내일배송" boxes print the arrival date with no probability (13369469193 2026-11-06,
+    8811427777 / 10829550821 / 12945108653 2026-11-02)."""
+    with open(os.path.join(FX, "pdp_delivery_naver.html"), encoding="utf-8") as f:   # 13369469193
+        promise = pdp.delivery_promise(f.read())
+    assert promise == {"today_cutoff": None, "today_off": False, "arrival_days": None, "arrival_date_text": "11.11.(수)",
+                       "arrival_probability": None, "ship_date_text": None, "overseas_text": False}
+    tomorrow = pdp.delivery_promise("<div><span>내일 11.4.(수) 도착</span><span>22:00까지 결제 시 모레도착</span></div>")
+    assert (tomorrow["arrival_date_text"], tomorrow["arrival_probability"], tomorrow["today_cutoff"]) == \
+        ("11.4.(수)", None, None)
+    # with a probability the dated line keeps it, wherever the bare line stands
+    both = pdp.delivery_promise("<div><em>11.12.(목) 도착</em><span>11.11.(수) 도착 확률 97%</span></div>")
+    assert (both["arrival_date_text"], both["arrival_probability"]) == ("11.11.(수)", 97)
+    for line in ("주문불가 도착", "11.11.(수) 도착하면 연락주세요", "배송 빠르고 11.3.(화) 도착했어요 좋아요",
+                 "N배송 내일도착🚀", "22:00까지 결제 시 모레도착"):
+        assert pdp.delivery_promise(f"<div><span>{line}</span></div>")["arrival_date_text"] is None, line
 
 
 # ---- description junk (research 2026-11-06, 40 golf sets + 86 saved products) ----------------------------------

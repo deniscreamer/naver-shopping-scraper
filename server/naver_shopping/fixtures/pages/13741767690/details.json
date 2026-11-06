@@ -1,0 +1,236 @@
+{
+ "id": "13741767690",
+ "origin_product_id": "13681129608",
+ "name": "[오늘출고] 테일러메이드 풀세트 여성 Qi4D MAX LITE 10pcs 테일러메이드코리아",
+ "link": "https://smartstore.naver.com/cs_sports/products/13741767690",
+ "catalog_id": "91286279054",
+ "catalog_link": "https://search.shopping.naver.com/catalog/91286279054",
+ "status": "SALE",
+ "sale_type": "NEW",
+ "is_displayed": true,
+ "pricing": {
+  "sale_price": 2700000,
+  "discounted_price": 2349000,
+  "discount_ratio": 13,
+  "seller_discount": 351000,
+  "manager_discount": 0,
+  "currency": "KRW",
+  "points": {
+   "purchase": 23490,
+   "text_review": 0,
+   "photo_video_review": 0,
+   "after_use_text_review": 0,
+   "after_use_photo_video_review": 0,
+   "store_member_review": 0
+  }
+ },
+ "stock_quantity": 31997,
+ "has_options": true,
+ "has_supplements": true,
+ "images": [
+  "https://shop-phinf.pstatic.net/20260906_28/1788674254959sIn0s_PNG/35959037732603992_436271320.png"
+ ],
+ "category": {
+  "id": "50002788",
+  "name": "풀세트",
+  "path": [
+   "스포츠/레저",
+   "골프",
+   "골프클럽",
+   "풀세트"
+  ],
+  "path_ids": [
+   "50000007",
+   "50000029",
+   "50001102",
+   "50002788"
+  ]
+ },
+ "brand": "테일러메이드",
+ "brand_id": "223",
+ "manufacturer": "테일러메이드",
+ "model_name": null,
+ "tags": null,
+ "page_title": null,
+ "delivery": {
+  "fee_type": "FREE",
+  "base_fee": 0,
+  "is_free": true,
+  "policy_text": null,
+  "method_types": [
+   "DELIVERY"
+  ],
+  "attribute": "NORMAL",
+  "is_today_delivery": null,
+  "company": "로젠택배",
+  "extra_fee_area2": null,
+  "extra_fee_area3": null,
+  "extra_fee_text": null
+ },
+ "is_free_delivery": true,
+ "is_today_delivery": false,
+ "has_arrival_guarantee": false,
+ "has_regular_subscription": false,
+ "has_free_return_insurance": false,
+ "is_minor_purchasable": true,
+ "is_adult_restricted": false,
+ "is_in_naver_shopping": true,
+ "option_groups": null,
+ "variants": null,
+ "supplements": null,
+ "notice": {
+  "type": "SPORTS_EQUIPMENT",
+  "items": [
+   {
+    "label": "품명 / 모델명",
+    "value": "골프용품 / 골프용품",
+    "is_see_description": false
+   },
+   {
+    "label": "KC 인증정보",
+    "value": "해당없음",
+    "is_see_description": false
+   },
+   {
+    "label": "크기",
+    "value": "상세페이지참조",
+    "is_see_description": true
+   },
+   {
+    "label": "중량",
+    "value": "상세페이지참조",
+    "is_see_description": true
+   },
+   {
+    "label": "색상",
+    "value": "상세페이지참조",
+    "is_see_description": true
+   },
+   {
+    "label": "재질",
+    "value": "상세페이지참조",
+    "is_see_description": true
+   },
+   {
+    "label": "제품구성",
+    "value": "상세페이지참조",
+    "is_see_description": true
+   },
+   {
+    "label": "동일 모델의 출시연월",
+    "value": "0000년 00월",
+    "is_see_description": false
+   },
+   {
+    "label": "제조자(사)",
+    "value": "정식수입정품 또는 정식제조정품",
+    "is_see_description": false
+   },
+   {
+    "label": "제조국",
+    "value": "상세설명에 표시",
+    "is_see_description": true
+   },
+   {
+    "label": "상품별 세부사양",
+    "value": "상세페이지참조",
+    "is_see_description": true
+   },
+   {
+    "label": "품질보증기준",
+    "value": "관련법 및 소비자분쟁해결 기준에 따름",
+    "is_see_description": false
+   },
+   {
+    "label": "A/S 책임자와 전화번호",
+    "value": null,
+    "is_see_description": false
+   }
+  ],
+  "terms": [
+   {
+    "label": "재화등의 배송방법에 관한 정보",
+    "value": "택배",
+    "is_see_description": false
+   },
+   {
+    "label": "주문 이후 예상되는 배송기간",
+    "value": "대금 지급일로부터 3일 이내에 발송",
+    "is_see_description": false
+   },
+   {
+    "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+    "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+    "is_see_description": false
+   },
+   {
+    "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+    "value": "편도 11000원 (최초 배송비 무료인 경우 22000원 부과)",
+    "is_see_description": false
+   },
+   {
+    "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+    "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+    "is_see_description": false
+   },
+   {
+    "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+    "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+    "is_see_description": false
+   },
+   {
+    "label": "재화등의 A/S 관련 전화번호",
+    "value": null,
+    "is_see_description": false
+   },
+   {
+    "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+    "value": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+    "is_see_description": false
+   },
+   {
+    "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+    "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+    "is_see_description": false
+   },
+   {
+    "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+    "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+    "is_see_description": false
+   }
+  ]
+ },
+ "facts": {
+  "brand": {
+   "value": "테일러메이드",
+   "source": "search_info.brandName"
+  },
+  "manufacturer": {
+   "value": "테일러메이드",
+   "source": "search_info.manufacturerName"
+  },
+  "model_name": null,
+  "origin": null
+ },
+ "store": {
+  "id": "101776803",
+  "uid": "2sWE1vdBUBfA7UveUn5Qq",
+  "name": "씨에스골프 풀세트 드라이버",
+  "slug": "cs_sports",
+  "link": "https://smartstore.naver.com/cs_sports",
+  "type": "smart_store",
+  "grade": "THIRD",
+  "sale_count": 6,
+  "merchant_id": "511690575",
+  "business": {
+   "legal_name": "씨에스골프",
+   "representative": "임태연",
+   "type": "PRIVATE",
+   "is_business": true,
+   "is_overseas": false,
+   "phone": null,
+   "email": null,
+   "address": null
+  }
+ }
+}

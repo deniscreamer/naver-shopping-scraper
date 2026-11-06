@@ -1,0 +1,614 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:100313715:7166885441",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "specs_bound_to_variants",
+   "detail": "아이언샤프트소재 그라파이트/카본 -> R"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "UNIT_QUANTITY_PAID 99800 KRW"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "NOT_APPLICABLE"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/tokyopia/products/7166885441",
+  "channel_no": "100313715",
+  "product_id": "7166885441",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "캘러웨이 워버드 남성용 골프채 캐디백 풀세트 Callaway WARBIRD 일본직구",
+  "brand_ko": "캘러웨이",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "플렉스",
+    "values_ko": [
+     "R",
+     "S"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"R\"]",
+    "naver_variant_id": "25316598381",
+    "options_ko": [
+     "R"
+    ],
+    "price_krw": 798700,
+    "price_usd": "798.70",
+    "sku": "FW-0bf59f727aa1260f35fc4588",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"S\"]",
+    "naver_variant_id": "25316598382",
+    "options_ko": [
+     "S"
+    ],
+    "price_krw": 798700,
+    "price_usd": "798.70",
+    "sku": "FW-3d7e946e968d9138d555b065",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 798700,
+   "original_krw": 896100,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "캘러웨이 워버드 남성용 골프채 캐디백 풀세트"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "일본 외 제3국"
+   },
+   {
+    "label_ko": "페어웨이 로프트각",
+    "value_ko": "19도"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "10.5도"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#6, #7, #8, 샌드웨지(SW), 피칭웨지(PW), #5, #9"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "10개"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2019년형"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "드라이버, 퍼터, 유틸리티, 페어웨이, 웨지, 5아이언세트"
+   },
+   {
+    "label_ko": "아이언샤프트소재",
+    "value_ko": "그라파이트/카본",
+    "for_ko": [
+     "R"
+    ]
+   },
+   {
+    "label_ko": "아이언개수",
+    "value_ko": "5개"
+   },
+   {
+    "label_ko": "퍼터형태",
+    "value_ko": "블레이드(일자형)"
+   },
+   {
+    "label_ko": "골프백포함여부",
+    "value_ko": "캐디백"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 2
+  },
+  "reviews": [
+   {
+    "id": "4501444008",
+    "score": 5,
+    "text_ko": "가성비 갑입니다. 좋아요",
+    "created_at": "2024-06-18T02:31:51Z",
+    "writer": "dasi****",
+    "photos": [
+     "collected/50002788-fixtures/images/7166885441/fairwardgolf-review-image-3950d9a8f2e23ad7.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/7166885441/fairwardgolf-review-avatar-2b5bfe3e921287d0.webp",
+    "tier": "small"
+   },
+   {
+    "id": "4287496688",
+    "score": 5,
+    "text_ko": "하나하나 검수했습니다 좋아요~\n골프백 후드가 있으면 더 좋겠네요~",
+    "created_at": "2023-07-07T01:54:54Z",
+    "writer": "suns*****",
+    "photos": [
+     "collected/50002788-fixtures/images/7166885441/fairwardgolf-review-image-49d6e79f2e01385f.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/7166885441/fairwardgolf-7166885441-001-0db323a2b2e5038e.webp",
+    "sha256": "0db323a2b2e5038e83fe5d04e9ee1fad5616d4720a9f8fa5be3198ae4fc01d52",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/7166885441/fairwardgolf-7166885441-002-41b600ee8cc53191.webp",
+    "sha256": "41b600ee8cc5319107ec9290daaf0c635b81f4db68ad534510dd58c3e4a01d90",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/7166885441/fairwardgolf-7166885441-003-e25ee4cdfc3874f4.webp",
+    "sha256": "e25ee4cdfc3874f4b90d7c5a8e9732a82bac775413fd4838fe472a654b718cab",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/7166885441/fairwardgolf-7166885441-004-d016237d9777e6e8.webp",
+    "sha256": "d016237d9777e6e8882c0e94161838f05729c161ee0cfb81d207a6d93f641a6d",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/7166885441/fairwardgolf-7166885441-005-ae532a2d6b7d5b62.webp",
+    "sha256": "ae532a2d6b7d5b62bf84107b3f26779b106aaa28573cc4a1deab375be775304b",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/7166885441/fairwardgolf-7166885441-006-96360b2ad6172118.webp",
+    "sha256": "96360b2ad617211801e48f7117ec2db639ce04f472617124061d60f99a1172a2",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/7166885441/fairwardgolf-7166885441-007-5b2ec37bab3b134a.webp",
+    "sha256": "5b2ec37bab3b134a50ca0a95e9bf00e96dacedf31e4af59c3f7a991cc17418c5",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/7166885441/fairwardgolf-7166885441-008-c25302e71b36eec7.webp",
+    "sha256": "c25302e71b36eec71ae0310f7036bdfcf4cca882b3a251d0b3b9ec307f69e9ab",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "UNIT_QUANTITY_PAID",
+   "base_fee": 99800,
+   "is_overseas": true,
+   "customs_tax_type": "NOT_APPLICABLE",
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "policy_text": "1개마다 부과 / 제주,도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 5.5,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "캘러웨이 워버드\n\n남성 초보 입문용 인기템\n\n클럽 10개 캐디백 풀세트\nCallaway WARBIRD\n100%정품\n일본직구\n\n필드에 나와 충분히 골프를 즐길 수 있는\n가성비가 우수한\n10개의 풀세트 고성능 모델로\n초심자부터 상급자까지 다양한 스킬의\n골퍼를 위한 최고의 풀세트 모델입니다.\n다양한 상황에서 이상적인 비거리와\n고탄도를 부드럽게 칠 수 있도록\n설계되어 있으며,\n어떤 클럽을 가지고도 안심하고\n플레이 할 수 있습니다.\n\n클럽 10개 캐디백 포함 풀세트\n\nDetails\n\n드 라 이 버\n드라이버의 길이는 44.5인치로\n일반 드라이버보다 약간 짧기 때문에\n초보자도 쉽게 적응 할 수 있습니다.\n\nX2HOT 시리즈 베이스의 우드\nX2HOT 기반의 클럽 헤드 설정\n2014 X2HOT Seasons 2014 클럽 헤드 디자인을 기반으로 하며 마감은\n블랙 PVD 마감으로\n고급스러운 느낌을 줍니다.\n\n아이언\nI#5~#9, PW, SW\n\n퍼 터\n오디세이 전통의\nWhite Hot Insert를 장착한\nWhite Hot Pro 2.0 모델을\n셋업했습니다.\n헤드는 컨벤셔널한 블레이드 타입.\n\n전용 헤드 커버\n(W#1, W#5, PUTTER)\n\n캐디백 포함\nPU(인조가죽)소재로 고급스러움을 더한\n캐디백은 디테일까지 신경써서 제작.\n다양한 포켓과 넉넉한 수납공간.\n기능성과 품질이 우수한 캐디백입니다.\n스 펙\n\n남성 초보 입문용\n골린이 베스트 셀러\n\n번호\n1W\n5W\n5i\n6i\n7i\n8i\n9i\nPW\nSW\nPutter\n헤드 소재\n티타늄\n스테인리스\n샤프트명(경도)\n우드 : WARBIRD (S / R) 아이언 : WARBIRD (R), 오리지널 스틸 (UNI : SR 상당)\n로프트 각도 (°)\n10.5\n19\n23\n26\n30\n34.5\n39\n44\n54\n3\n라이각(°)\n58.5\n58\n61.3\n62\n62.5\n63\n63.5\n64\n64\n70\n균형\nR/D0S/D1\nR/D0S/D1\nR/D1S/D3\n총중량 R(g)\n약 313\n약 328\n약 370\n약 375\n약 380\n약 386\n약 392\n약 401\n약 414\n약 521\n총중량 S(g)\n약 318\n약 330\n약 416\n약 420\n약 424\n약 430\n약 436\n약 446\n약 455\n약 521\n\n※드라이버와 페어웨이 우드에는 카본 샤프트 장착\n※플렉스 R 모델의 아이언에는 카본 샤프트,\n플렉스 S 모델의 아이언에는 스틸 샤프트 장착\n※퍼터에는 스틸 샤프트가 장착되어 있습니다.",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20240823_284/1724391686823pdKJv_PNG/%EC%A0%9C%EB%AA%A9_%EC%B6%94%EA%B0%80.png?type=w848",
+   "https://shop-phinf.pstatic.net/20220911_85/1662861943398pJ2tL_JPEG/%EB%A1%9C%EA%B3%A0%EC%9A%A9.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220911_17/1662862194163Lagb4_JPEG/%EB%A9%94%EC%9D%B8.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220918_55/1663464441947zlPj6_JPEG/%EC%B6%94%EA%B0%80.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220918_186/1663463211245xNMmj_JPEG/0134710096-1.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220918_87/1663461394956FMAUA_JPEG/batch2_%EB%A9%94%EC%9D%B83.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220918_220/16634613949118psVF_JPEG/batch2_%EB%A9%94%EC%9D%B84.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220918_174/1663461395032kUjpT_JPEG/batch2_%EB%A9%94%EC%9D%B85.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220918_133/1663461394854PjrH9_JPEG/batch2_%EB%A9%94%EC%9D%B86.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220918_181/1663461349702abtp6_JPEG/batch_%EB%A9%94%EC%9D%B87.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220918_2/1663464423707eQnOk_JPEG/%EC%B6%94%EA%B0%80.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240823_120/1724391690840Gspm8_PNG/%EB%B6%80%EC%A0%9C%EB%AA%A9_%EC%B6%94%EA%B0%80.png?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "store_name",
+    "text": "도쿄피아 골프"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:8372429ff4308d7b",
+   "kind": "title",
+   "ko": "캘러웨이 워버드 남성용 골프채 캐디백 풀세트 Callaway WARBIRD 일본직구"
+  },
+  {
+   "id": "brand:752b9a8b36b892c4",
+   "kind": "brand",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "option_name:5b4170c8b45155ce",
+   "kind": "option_name",
+   "ko": "플렉스"
+  },
+  {
+   "id": "option_value:8c2574892063f995",
+   "kind": "option_value",
+   "ko": "R"
+  },
+  {
+   "id": "option_value:8de0b3c47f112c59",
+   "kind": "option_value",
+   "ko": "S"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:752b9a8b36b892c4",
+   "kind": "spec_value",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:c43a2e0399e79c8d",
+   "kind": "spec_value",
+   "ko": "캘러웨이 워버드 남성용 골프채 캐디백 풀세트"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:aa46ebc30210c7bf",
+   "kind": "spec_value",
+   "ko": "일본 외 제3국"
+  },
+  {
+   "id": "spec_label:ecef087ddd17d2b5",
+   "kind": "spec_label",
+   "ko": "페어웨이 로프트각"
+  },
+  {
+   "id": "spec_value:2b0f68ffbb4a6fab",
+   "kind": "spec_value",
+   "ko": "19도"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:de2b6da830b81034",
+   "kind": "spec_value",
+   "ko": "10.5도"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:9644dce6e4d274c9",
+   "kind": "spec_value",
+   "ko": "#6, #7, #8, 샌드웨지(SW), 피칭웨지(PW), #5, #9"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:bb40a8c2bc46094b",
+   "kind": "spec_value",
+   "ko": "10개"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:516a92a512ee113c",
+   "kind": "spec_value",
+   "ko": "2019년형"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:872241d2d18fa355",
+   "kind": "spec_value",
+   "ko": "드라이버, 퍼터, 유틸리티, 페어웨이, 웨지, 5아이언세트"
+  },
+  {
+   "id": "spec_label:5a12089f44ae3f65",
+   "kind": "spec_label",
+   "ko": "아이언샤프트소재"
+  },
+  {
+   "id": "spec_value:ef00cceb8d6a2241",
+   "kind": "spec_value",
+   "ko": "그라파이트/카본"
+  },
+  {
+   "id": "spec_label:cf77915a2f3ab5d8",
+   "kind": "spec_label",
+   "ko": "아이언개수"
+  },
+  {
+   "id": "spec_value:e8f987c61dc3a00e",
+   "kind": "spec_value",
+   "ko": "5개"
+  },
+  {
+   "id": "spec_label:04c52e5b47f70047",
+   "kind": "spec_label",
+   "ko": "퍼터형태"
+  },
+  {
+   "id": "spec_value:db08874d4cf56690",
+   "kind": "spec_value",
+   "ko": "블레이드(일자형)"
+  },
+  {
+   "id": "spec_label:e4aabb2e41b870bd",
+   "kind": "spec_label",
+   "ko": "골프백포함여부"
+  },
+  {
+   "id": "spec_value:00e36a3d18b6bbee",
+   "kind": "spec_value",
+   "ko": "캐디백"
+  },
+  {
+   "id": "review:230011d8875b8a16",
+   "kind": "review",
+   "ko": "가성비 갑입니다. 좋아요"
+  },
+  {
+   "id": "review:e7d0bb71e7b6e655",
+   "kind": "review",
+   "ko": "하나하나 검수했습니다 좋아요~\n골프백 후드가 있으면 더 좋겠네요~"
+  }
+ ]
+}

@@ -1,0 +1,1385 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:100568453:10816781893",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "title_names_one_variant",
+   "detail": "11.5L, 유틸4L"
+  },
+  {
+   "code": "gift_hidden",
+   "detail": "오리지널커버 증정"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/thegolf9015/products/10816781893",
+  "channel_no": "100568453",
+  "product_id": "10816781893",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "2025 테일러메이드 올 뉴 글로리 여성용 풀세트 드라이버11.5L+아이언L+유틸4L",
+  "brand_ko": "테일러메이드",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "womens-complete-sets",
+    "product_type": "Women’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:womens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "드라이버+아이언",
+    "values_ko": [
+     "11.5도 L+아이언 L",
+     "11.5도 A+아이언 A",
+     "10.5도 A+아이언A"
+    ]
+   },
+   {
+    "name_ko": "유틸리티 선택",
+    "values_ko": [
+     "4번 L",
+     "4번 A",
+     "5번 L",
+     "5번 A"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"11.5도 L+아이언 L\",\"4번 L\"]",
+    "naver_variant_id": "43931791789",
+    "options_ko": [
+     "11.5도 L+아이언 L",
+     "4번 L"
+    ],
+    "price_krw": 2640000,
+    "price_usd": "2640.00",
+    "sku": "FW-97f5ed92dedab33729ed01e0",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"11.5도 L+아이언 L\",\"4번 A\"]",
+    "naver_variant_id": "43931791791",
+    "options_ko": [
+     "11.5도 L+아이언 L",
+     "4번 A"
+    ],
+    "price_krw": 2640000,
+    "price_usd": "2640.00",
+    "sku": "FW-5631cf629057f605c24b8708",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"11.5도 L+아이언 L\",\"5번 L\"]",
+    "naver_variant_id": "43931791792",
+    "options_ko": [
+     "11.5도 L+아이언 L",
+     "5번 L"
+    ],
+    "price_krw": 2640000,
+    "price_usd": "2640.00",
+    "sku": "FW-4b5d2a9b180f9486297e1924",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"11.5도 L+아이언 L\",\"5번 A\"]",
+    "naver_variant_id": "43931791793",
+    "options_ko": [
+     "11.5도 L+아이언 L",
+     "5번 A"
+    ],
+    "price_krw": 2640000,
+    "price_usd": "2640.00",
+    "sku": "FW-324b42b54ef09e484a67c96b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"11.5도 A+아이언 A\",\"4번 L\"]",
+    "naver_variant_id": "43931791794",
+    "options_ko": [
+     "11.5도 A+아이언 A",
+     "4번 L"
+    ],
+    "price_krw": 2640000,
+    "price_usd": "2640.00",
+    "sku": "FW-518174c94bedb0a729f4cf76",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"11.5도 A+아이언 A\",\"4번 A\"]",
+    "naver_variant_id": "43931791795",
+    "options_ko": [
+     "11.5도 A+아이언 A",
+     "4번 A"
+    ],
+    "price_krw": 2640000,
+    "price_usd": "2640.00",
+    "sku": "FW-22b74db39351872ed24d62a3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"11.5도 A+아이언 A\",\"5번 L\"]",
+    "naver_variant_id": "43931791796",
+    "options_ko": [
+     "11.5도 A+아이언 A",
+     "5번 L"
+    ],
+    "price_krw": 2640000,
+    "price_usd": "2640.00",
+    "sku": "FW-4ac476a20b591ee8de8fb585",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"11.5도 A+아이언 A\",\"5번 A\"]",
+    "naver_variant_id": "43931791797",
+    "options_ko": [
+     "11.5도 A+아이언 A",
+     "5번 A"
+    ],
+    "price_krw": 2640000,
+    "price_usd": "2640.00",
+    "sku": "FW-28dacc939b500549c70c88ee",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 A+아이언A\",\"4번 L\"]",
+    "naver_variant_id": "43931791798",
+    "options_ko": [
+     "10.5도 A+아이언A",
+     "4번 L"
+    ],
+    "price_krw": 2640000,
+    "price_usd": "2640.00",
+    "sku": "FW-e2d829389343a97c4d04ec3d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 A+아이언A\",\"4번 A\"]",
+    "naver_variant_id": "43931791799",
+    "options_ko": [
+     "10.5도 A+아이언A",
+     "4번 A"
+    ],
+    "price_krw": 2640000,
+    "price_usd": "2640.00",
+    "sku": "FW-e8a7cca0b2ddeda2233cc7e0",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 A+아이언A\",\"5번 L\"]",
+    "naver_variant_id": "43931791800",
+    "options_ko": [
+     "10.5도 A+아이언A",
+     "5번 L"
+    ],
+    "price_krw": 2640000,
+    "price_usd": "2640.00",
+    "sku": "FW-1be5bdf10934b21c6e0e974e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 A+아이언A\",\"5번 A\"]",
+    "naver_variant_id": "43931791801",
+    "options_ko": [
+     "10.5도 A+아이언A",
+     "5번 A"
+    ],
+    "price_krw": 2640000,
+    "price_usd": "2640.00",
+    "sku": "FW-eaa80d0c4dbd8e9270da1d88",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 2640000,
+   "original_krw": 2970000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "테일러메이드"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "테일러메이드"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "2025 테일러메이드 올 뉴 글로리 여성용 풀세트 [드라이버+아이언+유틸]"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "11.5도, 10.5도"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "여성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "9개"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2025년형"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "드라이버, 7아이언세트, 유틸리티"
+   },
+   {
+    "label_ko": "아이언샤프트소재",
+    "value_ko": "그라파이트/카본"
+   },
+   {
+    "label_ko": "아이언개수",
+    "value_ko": "7개"
+   },
+   {
+    "label_ko": "골프백포함여부",
+    "value_ko": "미포함"
+   }
+  ],
+  "personalization": [],
+  "addons": [
+   {
+    "group_ko": "우드 추가구매",
+    "name_ko": "3번L",
+    "required": false,
+    "price_krw": 570000,
+    "price_usd": "570.00"
+   },
+   {
+    "group_ko": "우드 추가구매",
+    "name_ko": "3번A",
+    "required": false,
+    "price_krw": 570000,
+    "price_usd": "570.00"
+   },
+   {
+    "group_ko": "우드 추가구매",
+    "name_ko": "5번L",
+    "required": false,
+    "price_krw": 570000,
+    "price_usd": "570.00"
+   },
+   {
+    "group_ko": "우드 추가구매",
+    "name_ko": "5번A",
+    "required": false,
+    "price_krw": 570000,
+    "price_usd": "570.00"
+   },
+   {
+    "group_ko": "24년 스파이더 추가구매",
+    "name_ko": "81.28cm( 32인치 )",
+    "required": false,
+    "price_krw": 400000,
+    "price_usd": "400.00"
+   }
+  ],
+  "rating": {
+   "value": 5.0,
+   "count": 6
+  },
+  "reviews": [
+   {
+    "id": "5043302748",
+    "score": 5,
+    "text_ko": "디자인 예쁘고 너무 너무 마음에 듭니다.",
+    "created_at": "2026-08-14T09:44:00Z",
+    "writer": "star*****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "5024581548",
+    "score": 5,
+    "text_ko": "방문해서 시타후에 구매했습니다. 사장님이 정말 친절하셔서 여기서 구매추천드립니다!",
+    "created_at": "2026-07-19T07:46:10Z",
+    "writer": "educ*********",
+    "photos": [
+     "collected/50002788-fixtures/images/10816781893/fairwardgolf-review-image-dc978a19526db771.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "5015054272",
+    "score": 5,
+    "text_ko": "디자인도 마음에 들지만 가볍고 좋습니다.",
+    "created_at": "2026-07-06T04:10:25Z",
+    "writer": "star*****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4924080821",
+    "score": 5,
+    "text_ko": "비대면거래인데도 불구하고  문의사항 친절하게 응대해주신 여자 사장님 감사합니다.정품클럽이며상태 너무좋습니다.",
+    "created_at": "2026-03-07T05:37:38Z",
+    "writer": "oys5***",
+    "photos": [
+     "collected/50002788-fixtures/images/10816781893/fairwardgolf-review-image-a8fff6d7bb815731.webp",
+     "collected/50002788-fixtures/images/10816781893/fairwardgolf-review-image-149616041c06716f.webp",
+     "collected/50002788-fixtures/images/10816781893/fairwardgolf-review-image-ea439a01627ffa49.webp",
+     "collected/50002788-fixtures/images/10816781893/fairwardgolf-review-image-0e38ca457b084d3d.webp",
+     "collected/50002788-fixtures/images/10816781893/fairwardgolf-review-image-0cc49745b28771cd.webp",
+     "collected/50002788-fixtures/images/10816781893/fairwardgolf-review-image-b04d96e1ad925ceb.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4806333227",
+    "score": 5,
+    "text_ko": "빠른 배송과 디자인 너무 맘에 들어요~",
+    "created_at": "2025-09-18T12:37:52Z",
+    "writer": "ca****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4558551433",
+    "score": 5,
+    "text_ko": "디자인도 너무 예쁘고 연휴전이라고 퀵으로 보내주셔서 감동이에요~\n친절한응대에 감사드립니다~",
+    "created_at": "2024-09-14T05:38:03Z",
+    "writer": "ssu0***",
+    "photos": [
+     "collected/50002788-fixtures/images/10816781893/fairwardgolf-review-image-09fc1573b084e1b3.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/10816781893/fairwardgolf-review-avatar-7111c4aad822aa49.webp",
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/10816781893/fairwardgolf-10816781893-001-308febee50abe038.webp",
+    "sha256": "308febee50abe0384b14fa23ec8ce1b7860e4bd6494d20a8f7845e1802cf7ecc",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 4,000원",
+   "lead_time": {
+    "seller_average_days": 1.6405228,
+    "product_average_days": null,
+    "today_cutoff": "15:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": "11.11.(수)",
+    "arrival_probability": 97,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20240831_23/1725079598721CRAyj_JPEG/30434463209514390_345786175.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241027_257/1729997465817OxTNa_JPEG/9504192473847760_1848577495.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240831_33/172508799435300Uoi_JPEG/1%ED%92%80%EC%84%B8%ED%8A%B8_%EC%9C%97%EB%B6%80%EB%B6%84.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240914_102/1726278757045vEVGx_JPEG/%EC%BB%A4%EB%B2%84_%EC%83%81%EC%84%B8_%EB%93%9C+%EC%9C%A0.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250902_122/17568003999561FM8M_JPEG/%EC%B5%9C%EC%A2%85.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250208_39/1739001246286nlo52_JPEG/8._%EA%B8%80%EB%A1%9C%EB%A6%AC_%EC%97%AC%EC%9E%90_%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250208_127/1739001263560htDoS_JPEG/10._%EA%B8%80%EB%A1%9C%EB%A6%AC_%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250501_298/1746085588346jEE10_JPEG/%EC%88%98%EC%A0%95.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240920_217/1726824380146GdgrX_JPEG/60948062508870618_280838627.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240920_17/1726824380172ToMuX_JPEG/60948062316366678_1397231647.jpg?type=w848"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:a71254e5dc4f6c9d",
+   "kind": "title",
+   "ko": "2025 테일러메이드 올 뉴 글로리 여성용 풀세트 드라이버11.5L+아이언L+유틸4L"
+  },
+  {
+   "id": "brand:18d4028e5665dc1d",
+   "kind": "brand",
+   "ko": "테일러메이드"
+  },
+  {
+   "id": "option_name:bf49fd8fc49a831b",
+   "kind": "option_name",
+   "ko": "드라이버+아이언"
+  },
+  {
+   "id": "option_value:b82ed730c0f8d7d6",
+   "kind": "option_value",
+   "ko": "11.5도 L+아이언 L"
+  },
+  {
+   "id": "option_value:878782e8947cf903",
+   "kind": "option_value",
+   "ko": "11.5도 A+아이언 A"
+  },
+  {
+   "id": "option_value:2ae65e9361d9d3ca",
+   "kind": "option_value",
+   "ko": "10.5도 A+아이언A"
+  },
+  {
+   "id": "option_name:8995108db1c61b0c",
+   "kind": "option_name",
+   "ko": "유틸리티 선택"
+  },
+  {
+   "id": "option_value:81ee40bc339942c0",
+   "kind": "option_value",
+   "ko": "4번 L"
+  },
+  {
+   "id": "option_value:4b3d49ede7c0d7f1",
+   "kind": "option_value",
+   "ko": "4번 A"
+  },
+  {
+   "id": "option_value:de60cecf4885d38e",
+   "kind": "option_value",
+   "ko": "5번 L"
+  },
+  {
+   "id": "option_value:abcbc9bc444a596b",
+   "kind": "option_value",
+   "ko": "5번 A"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:18d4028e5665dc1d",
+   "kind": "spec_value",
+   "ko": "테일러메이드"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:1500d477b9658cf3",
+   "kind": "spec_value",
+   "ko": "2025 테일러메이드 올 뉴 글로리 여성용 풀세트 [드라이버+아이언+유틸]"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:6b07e56e88f0e6a0",
+   "kind": "spec_value",
+   "ko": "11.5도, 10.5도"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:432a74bb0c5028af",
+   "kind": "spec_value",
+   "ko": "#6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:ff90d7cd3c519c1f",
+   "kind": "spec_value",
+   "ko": "여성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:5738400b2e82c687",
+   "kind": "spec_value",
+   "ko": "9개"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:6aea4c4b3fb65e70",
+   "kind": "spec_value",
+   "ko": "2025년형"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:e37cadbbfeff3c1f",
+   "kind": "spec_value",
+   "ko": "드라이버, 7아이언세트, 유틸리티"
+  },
+  {
+   "id": "spec_label:5a12089f44ae3f65",
+   "kind": "spec_label",
+   "ko": "아이언샤프트소재"
+  },
+  {
+   "id": "spec_value:ef00cceb8d6a2241",
+   "kind": "spec_value",
+   "ko": "그라파이트/카본"
+  },
+  {
+   "id": "spec_label:cf77915a2f3ab5d8",
+   "kind": "spec_label",
+   "ko": "아이언개수"
+  },
+  {
+   "id": "spec_value:0c5a3886c288bcd6",
+   "kind": "spec_value",
+   "ko": "7개"
+  },
+  {
+   "id": "spec_label:e4aabb2e41b870bd",
+   "kind": "spec_label",
+   "ko": "골프백포함여부"
+  },
+  {
+   "id": "spec_value:96f0fed466f17e8e",
+   "kind": "spec_value",
+   "ko": "미포함"
+  },
+  {
+   "id": "addon_group:27eb4acf2e39a0d4",
+   "kind": "addon_group",
+   "ko": "우드 추가구매"
+  },
+  {
+   "id": "addon_name:e4ed97e794dd5e70",
+   "kind": "addon_name",
+   "ko": "3번L"
+  },
+  {
+   "id": "addon_name:94e2dce4255d4cae",
+   "kind": "addon_name",
+   "ko": "3번A"
+  },
+  {
+   "id": "addon_name:994e4c309236ff6d",
+   "kind": "addon_name",
+   "ko": "5번L"
+  },
+  {
+   "id": "addon_name:db677feb682c0a48",
+   "kind": "addon_name",
+   "ko": "5번A"
+  },
+  {
+   "id": "addon_group:1c2d36e528bedfd5",
+   "kind": "addon_group",
+   "ko": "24년 스파이더 추가구매"
+  },
+  {
+   "id": "addon_name:a1bc0be1ecd79950",
+   "kind": "addon_name",
+   "ko": "81.28cm( 32인치 )"
+  },
+  {
+   "id": "review:4cb311dbd7101766",
+   "kind": "review",
+   "ko": "디자인 예쁘고 너무 너무 마음에 듭니다."
+  },
+  {
+   "id": "review:2698068b6ccef6fb",
+   "kind": "review",
+   "ko": "방문해서 시타후에 구매했습니다. 사장님이 정말 친절하셔서 여기서 구매추천드립니다!"
+  },
+  {
+   "id": "review:a3d1183b8bcc4f53",
+   "kind": "review",
+   "ko": "디자인도 마음에 들지만 가볍고 좋습니다."
+  },
+  {
+   "id": "review:37af7e5b910b8f81",
+   "kind": "review",
+   "ko": "비대면거래인데도 불구하고  문의사항 친절하게 응대해주신 여자 사장님 감사합니다.정품클럽이며상태 너무좋습니다."
+  },
+  {
+   "id": "review:5e1c3f661f735d7e",
+   "kind": "review",
+   "ko": "빠른 배송과 디자인 너무 맘에 들어요~"
+  },
+  {
+   "id": "review:a9438235e72665bc",
+   "kind": "review",
+   "ko": "디자인도 너무 예쁘고 연휴전이라고 퀵으로 보내주셔서 감동이에요~\n친절한응대에 감사드립니다~"
+  }
+ ]
+}

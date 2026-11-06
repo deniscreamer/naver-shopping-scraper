@@ -45,6 +45,10 @@ FULL_HTML = 8_000_000      # chars: a smartstore product page is ~0.6 MB
 RENDER_TRIES = 8           # page reads, RENDER_WAIT_S apart, until the 상품정보 list is rendered
 RENDER_WAIT_S = 2
 ANSWER_TRIES = 5        # captures reads, RENDER_WAIT_S apart, until the page's product answer is in
+# 2026-11-06 (pilot, 13425122164 "초중급 남성 골프채 풀세트 입문 골프클럽 초보 골프"): the card was on the first search
+# page for the name's first 5 words, not for the full name nor for the listing's query; a long name's tail
+# (초보, 골프 ...) ranks other cards first. One more search with the first words, only for the default query.
+SHORT_QUERY_WORDS = 5
 
 
 # Not UpstreamError / Blocked (502): scripts retry a 502, and a wall in the
@@ -65,6 +69,22 @@ class PageBlocked(AdapterError):
 
 class NotListed(NotFound):
     """The product's card is not on the search page for the query."""
+
+
+class CardMissing(NotListed):
+    """No card for the product on the search page (not: a card that opened something else, Naver's error page)."""
+
+
+def search_queries(name, query=None):
+    """The searches to try, in order: the caller's query alone; else (no query, or the name itself) the name, then
+    its first SHORT_QUERY_WORDS words when it is longer. Pure."""
+    name = " ".join((name or "").split())
+    if query and " ".join(query.split()) != name:
+        return [query]
+    if not name:
+        return []
+    words = name.split()
+    return [name, " ".join(words[:SHORT_QUERY_WORDS])] if len(words) > SHORT_QUERY_WORDS else [name]
 
 
 def _card(bridge, tab, product_id):
@@ -124,8 +144,8 @@ def read_page(bridge, product_id, query, out_dir):
         search_url = (bridge.call("page", tabId=tab, headChars=0) or {}).get("url")
         selector = _card(bridge, tab, product_id)
         if not selector:
-            raise NotListed(f"product {product_id} is not on the search page for {query!r}; "
-                            "pass a query that finds it (its name, or a shorter part of it)")
+            raise CardMissing(f"product {product_id} is not on the search page for {query!r}; "
+                              "pass a query that finds it (its name, or a shorter part of it)")
         ext_listing.pause(1, 2.5)
         clicked = bridge.call("click", tabId=tab, selector=selector)
         if not clicked.get("newTabId"):
@@ -181,21 +201,40 @@ def read_page(bridge, product_id, query, out_dir):
         _close_tabs(bridge)
 
 
-def _specs(product, query):
-    details = api.product_details(product)
-    product_id = details["id"]
-    out_dir = os.path.join(OUTPUT_ROOT, datetime.now().strftime("%Y%m%d-%H%M%S") + f"-{product_id}")
+def _read_listed(bridge, product_id, queries, out_dir):
+    """read_page for the first query whose search page has the card; the next query only when the card was not
+    there (CardMissing), within the same adapter turn (one adapter user at a time) and still from a search page
+    (R-NAVER-1). -> the page dict plus "query" (the one that listed it)."""
+    for i, query in enumerate(queries):
+        try:
+            return {**read_page(bridge, product_id, query, out_dir), "query": query}
+        except CardMissing:
+            if i == len(queries) - 1:
+                raise
+            print(f"ext-product: {product_id} not listed for {query!r}, trying {queries[i + 1]!r}", flush=True)
+            ext_listing.pause(2, 4)
+    raise NotListed(f"product {product_id}: no name to search for; pass query")
+
+
+def _with_adapter(product_id, queries, out_dir):
     try:
-        page = listing_jobs.with_adapter(lambda bridge: read_page(bridge, product_id, query, out_dir))
+        return listing_jobs.with_adapter(lambda bridge: _read_listed(bridge, product_id, queries, out_dir))
     except listing_jobs.Busy as e:
         raise AdapterBusy(f"the adapter is busy ({e}), retry when it is done")
     except listing_jobs.NoExtension:
         raise AdapterError("the browser extension is not connected: open Chrome with the "
                            "naver-scrap adapter loaded (extension/README.md)")
+
+
+def _specs(product, query):
+    details = api.product_details(product)
+    product_id = details["id"]
+    out_dir = os.path.join(OUTPUT_ROOT, datetime.now().strftime("%Y%m%d-%H%M%S") + f"-{product_id}")
+    page = _with_adapter(product_id, search_queries(details["name"], query), out_dir)
     if not pdp.spec_rows(page["html"]):   # every product page lists at least 상품번호: not rendered, or changed
         raise AdapterError(f"product {product_id}: no 상품정보 list on the product page {page['url']} "
                            f"(saved to {out_dir}); retry, or the page layout changed")
-    return specs_from_page(details, page["html"], page.get("product"), query)
+    return specs_from_page(details, page["html"], page.get("product"), page["query"])
 
 
 def specs_from_page(details, page_html, product_answer, query=None):
@@ -227,18 +266,12 @@ def product_page(product, query=None):
     rendered it (상품정보 unfolded), and the page's own product answer, read the same way as /products/specs
     (search -> card -> page). Never cached: every call reads the page."""
     details = api.product_details(product)
-    query = query or details["name"]
-    if not query:
+    queries = search_queries(details["name"], query)
+    if not queries:
         raise NotListed(f"product {product}: no name to search for; pass query")
     out_dir = os.path.join(OUTPUT_ROOT, datetime.now().strftime("%Y%m%d-%H%M%S") + f"-{details['id']}")
-    try:
-        page = listing_jobs.with_adapter(lambda bridge: read_page(bridge, details["id"], query, out_dir))
-    except listing_jobs.Busy as e:
-        raise AdapterBusy(f"the adapter is busy ({e}), retry when it is done")
-    except listing_jobs.NoExtension:
-        raise AdapterError("the browser extension is not connected: open Chrome with the "
-                           "naver-scrap adapter loaded (extension/README.md)")
-    return {"id": details["id"], "link": details["link"], "query": query, "url": page.get("url"),
+    page = _with_adapter(details["id"], queries, out_dir)
+    return {"id": details["id"], "link": details["link"], "query": page["query"], "url": page.get("url"),
             "title": page.get("title"), "search_url": page.get("search_url"), "html": page.get("html") or "",
             "product_answer": page.get("product"), "saved_to": out_dir,
             "read_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}
@@ -246,7 +279,7 @@ def product_page(product, query=None):
 
 def product_specs(product, query=None):
     """The /products/specs answer. `query` (the search that lists the product)
-    defaults to the product's name."""
+    defaults to the product's name, then its first words (search_queries)."""
     query = query or api.product_details(product)["name"]
     if not query:
         raise NotListed(f"product {product}: no name to search for; pass query")

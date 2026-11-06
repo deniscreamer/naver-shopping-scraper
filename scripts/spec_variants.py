@@ -14,6 +14,11 @@ sold variant (research 2026-11-06, 40 golf sets of category 50002788 and 86 more
   * composition (R-FAMILY): 아이언개수, 아이언 구성 and 풀세트구성 describe one set; they follow 총클럽개수, or the
     fewest clubs they imply (their floor), to one group of variant counts.
   * model year (R-YEAR): 출시 2026년형 vs XR26 / "XR 24" / "X HOT 23" in the values.
+  * driver loft (R-LOFT): 드라이버 로프트각 10.5도 vs "9도 SR" / "9.5 SR" / "10.5R" in the values; a row listing every
+    loft sold ("11.5도, 10.5도") stays product-wide (pilot 2026-11-06: 11635855564, 13369469193).
+
+Numbers with units are one word in the title check: "11.5" / "11.5L" names the value "11.5도", "유틸4" / "4U" the
+value "4번" of a 유틸리티 axis, "+골프백" the values with a 캐디백 when others are "캐디백 미포함" (R-TITLE).
 
 The decision per row (Shopify has no per-variant spec rows; the option values are the SKU source, never changed):
   fits no variant                                -> dropped, note specs_fit_no_variant
@@ -70,12 +75,79 @@ def in_text(word: str, text: str) -> bool:
     return re.search(_word_pattern(word), text) is not None
 
 
+# a loft word "11.5도" is also written "11.5", "11.5L", "10.5 R" (a flex may follow), not "10K", "10개", "9아이언",
+# "Qi10" (10816781893 title "드라이버11.5L" vs the value "11.5도 L", 2026-11-06)
+_LOFT_WORD_RE = re.compile(r"(\d{1,2}(?:\.\d)?)도")
+_FLEX_NEXT = r"(?=\s*(?:SR|R|S|X|L|A)(?![A-Za-z]))"
+_NOT_A_LOFT_NEXT = r"(?![0-9A-Za-z가-힣]|\.\d|\s*(?:개|종|번|아이언|피스|[Pp]C?S?(?![A-Za-z])))"
+
+
 def _word_pattern(word: str) -> str:
     if word.endswith("#"):                         # a count: the number with the unit the text writes
         return r"(?<![0-9.])" + re.escape(word[:-1]) + _COUNT_UNIT + r"(?![0-9]|\.\d)"
+    if word in (BAG, NO_BAG):
+        return _BAG_PATTERN if word == BAG else _NO_BAG_PATTERN
+    if word.startswith("~"):                       # a club number "~U4": 유틸4 / 4U / 4번 유틸
+        return _club_pattern(word[1], word[2:])
+    if m := _LOFT_WORD_RE.fullmatch(word):
+        return rf"(?<![0-9.A-Za-z#]){re.escape(m.group(1))}(?:\s*도|°|{_FLEX_NEXT}|{_NOT_A_LOFT_NEXT})"
     left = r"(?<![0-9.])" if word[0].isdigit() else r"(?<![A-Za-z])" if word[0].isascii() else ""
     right = r"(?![0-9]|\.\d)" if word[-1].isdigit() else r"(?![A-Za-z])" if word[-1].isascii() else ""
     return left + re.escape(word) + right
+
+
+# ---- club numbers and the bag (R-TITLE words with a unit of their own) ----------------------------
+
+# a club number: 유틸4 / 우드5 / 5W / 4U / 4번유틸 / 유틸 4번 / 우드9번(33도) -> "~U4" / "~W5"; not "8아이언" (irons),
+# "3유틸리티" (a count of utilities), "유틸 8아이언" (the irons after the part); a bare "4번" is one on an axis named
+# after one part ("유틸리티 선택": 4번 L / 5번 L; 10816781893, 13553116678 "5W" / "4U", 2026-11-06)
+_PART_WORDS = {"W": r"우드|페어웨이", "U": r"유틸리티|유틸|하이브리드"}
+_PART_LATIN = {"W": r"FW|W", "U": r"UT|U|H"}
+_NOT_CLUB_NEXT = r"(?![0-9.]|\s*(?:아이언|개|종|[Pp](?![A-Za-z])|PC|피스|도|[iI](?![A-Za-z])))"
+
+
+def _club_pattern(part: str, n: str | None = None) -> str:
+    """The forms of club number `n` of `part`; without `n`, any single digit (groups a, b, c)."""
+    w, latin = _PART_WORDS[part], _PART_LATIN[part]
+    a, b, c = (re.escape(n),) * 3 if n else (r"(?P<a>\d)", r"(?P<b>\d)", r"(?P<c>\d)")
+    return (rf"(?:{w})\s*#?{a}(?:\s*번)?{_NOT_CLUB_NEXT}|(?<![0-9.]){b}\s*번\s*(?:{w})"
+            rf"|(?<![0-9.]){c}\s*(?:{latin})(?![A-Za-z])")
+
+
+_CLUB_RES = {p: re.compile(_club_pattern(p)) for p in _PART_WORDS}
+
+
+def club_numbers(text: str | None) -> dict[str, str]:
+    """{"~U4": "유틸4"}: the club numbers a text writes with their part."""
+    out: dict[str, str] = {}
+    for p, rx in _CLUB_RES.items():
+        for m in rx.finditer(text or ""):
+            out.setdefault(f"~{p}{m.group('a') or m.group('b') or m.group('c')}", m.group(0))
+    return out
+
+
+def axis_part(name: str | None) -> str | None:
+    """The one club part an axis name names ("유틸리티 선택" -> U, "우드 선택" / "페어웨이우드" -> W), else None."""
+    found = [p for p, w in _PART_WORDS.items() if re.search(w, name or "")]
+    return found[0] if len(found) == 1 else None
+
+
+# the bag: 골프백 / 캐디백 / 스탠드백 are one thing; "캐디백 미포함" is a value without it (13413924099 title
+# "+골프백" with "캐디백 미포함" values, 2026-11-06). A 하프백 / 보스턴백 is an extra bag, not the set's.
+BAG, NO_BAG = "~BAG", "~NOBAG"
+_BAG_WORD = r"(?:(?:골프|캐디|스탠드|카트)백|(?<![가-힣])백)"
+_NO_BAG_PATTERN = _BAG_WORD + r"\s*(?:세트\s*)?(?:미포함|불포함|제외|없음|별도)"
+_BAG_PATTERN = (r"(?:골프|캐디|스탠드|카트)백(?!\s*(?:세트\s*)?(?:미포함|불포함|제외|없음|별도))"
+                r"|백\s*(?:세트\s*)?포함")
+_BAG_WORD_RE = re.compile(r"^(?:골프|캐디|스탠드|카트)?백$")
+
+
+def bag_word(text: str | None) -> tuple[str, str] | None:
+    """(NO_BAG, "캐디백 미포함") when the text says without the bag, (BAG, "캐디백") when it names it, None: silent."""
+    for key, pattern in ((NO_BAG, _NO_BAG_PATTERN), (BAG, _BAG_PATTERN)):
+        if m := re.search(pattern, text or ""):
+            return key, m.group(0)
+    return None
 
 
 # ---- R-MAT material class -------------------------------------------------------------------
@@ -85,6 +157,12 @@ _CARBON_RE = re.compile(r"카본|그라파이트|graphite|carbon", re.I)
 # "스틸(S) / 카본(R)" in the description: a material written on a WHOLE option value (6774818843, 2026-11-06);
 # "카본(R) 샤프트" with the value "4종-카본(R) 샤프트" or "카본샤프트(강도: R)" bind nothing
 _BIND_RE = re.compile(r"(스틸|카본|그라파이트)\s*(?:샤프트)?\s*\(\s*([A-Za-z]{1,2})\s*\)")
+# "※플렉스 R 모델의 아이언에는 카본 샤프트, 플렉스 S 모델의 아이언에는 스틸 샤프트 장착": a whole value, 모델 / 플렉스 /
+# 사양, then in the same clause (no comma, period, line break) the shaft material, of no part but the irons
+# (7166885441, 2026-11-06)
+_BIND_SENTENCE_RE = re.compile(r"(?<![A-Za-z])([A-Za-z]{1,2})\s*(?:모델|플렉스|사양|스펙)([^,.\n]{0,20}?)"
+                               r"(스틸|카본|그라파이트)\s*샤프트")
+_OTHER_PART_RE = re.compile(r"드라이버|우드|페어웨이|유틸|하이브리드|퍼터|웨지")
 
 
 def material(text: str | None) -> str | None:
@@ -97,10 +175,13 @@ def description_materials(description: str | None, values: list[str]) -> dict[st
     """{option value: STEEL | CARBON} where the description writes a material on that whole value; a value it
     binds to both classes is left out."""
     found: dict[str, set[str]] = {}
-    for m in _BIND_RE.finditer(description or ""):
-        cls = material(m.group(1))
-        if m.group(2) in values and cls:
-            found.setdefault(m.group(2), set()).add(cls)
+    pairs = [(m.group(2), m.group(1)) for m in _BIND_RE.finditer(description or "")]
+    pairs += [(m.group(1), m.group(3)) for m in _BIND_SENTENCE_RE.finditer(description or "")
+              if not _OTHER_PART_RE.search(m.group(2))]
+    for value, word in pairs:
+        cls = material(word)
+        if value in values and cls:
+            found.setdefault(value, set()).add(cls)
     return {v: c.pop() for v, c in found.items() if len(c) == 1}
 
 
@@ -191,6 +272,22 @@ def years(text: str | None) -> set[int]:
 def row_year(value: str | None) -> int | None:
     m = re.match(r"\s*(20\d\d)\s*년", value or "")
     return int(m.group(1)) % 100 if m else None
+
+
+# ---- R-LOFT driver loft ------------------------------------------------------------------------
+
+LOFT_ROW = "드라이버 로프트각"
+# a driver loft in a value: "10.5도", "9도 SR", "9.5 SR", "10.5R", "(L) 11.5도"; 7-14 degrees (a wood's "(33도)" or
+# a "4번 R" utility is not one; 11635855564, 13369469193, 2026-11-06)
+_LOFT_RE = re.compile(r"(?<![\d.#])(\d{1,2}(?:\.\d)?)\s*(?:도|°|(?=(?:SR|R|S|X|L|A)(?![A-Za-z])))")
+
+
+def lofts(text: str | None) -> set[float]:
+    return {x for x in map(float, _LOFT_RE.findall(text or "")) if 7 <= x <= 14}
+
+
+def _deg(x: float) -> str:
+    return f"{x:g}도"
 
 
 # ---- the check --------------------------------------------------------------------------------
@@ -290,13 +387,23 @@ def check_specs(spec_rows: list[dict[str, str]], options: list[dict[str, Any]], 
         if any(ry in y for y in ys) and any(y and ry not in y for y in ys):
             bind["출시"] = [c for c, y in zip(combos, ys) if ry in y]
 
+    # driver loft: the loft a combination's values name; a row listing every loft sold changes nothing
+    row_lofts = lofts(rows.get(LOFT_ROW))
+    if row_lofts:
+        handled.add(LOFT_ROW)
+        sold = [_one(set().union(*(lofts(v) for v in c))) for c in combos]
+        rivals = sorted({x for x in sold if x is not None and x not in row_lofts}, reverse=True)
+        if rivals:
+            decide(LOFT_ROW, [c for c, x in zip(combos, sold) if x is None or x in row_lofts],
+                   all(x is not None for x in sold), ", ".join(map(_deg, rivals)))
+
     # other rows: the word match (a row word of part of an axis' values), for a check by hand
     named_rows = []
     for r in spec_rows:
         if r["label_ko"] in handled:
             continue
-        row_words = words(r["value_ko"])
-        hits = _names_some(lambda w: w in row_words, options, False)
+        row_words, value = words(r["value_ko"]), r["value_ko"]
+        hits = _names_some(lambda w: w in row_words or _has_unit(w) and in_text(w, value), options, False)
         if hits:
             named_rows.append(f"{_row(r['label_ko'], r['value_ko'])}: {', '.join(_spans(hits, r['value_ko']))}")
 
@@ -322,12 +429,37 @@ def check_specs(spec_rows: list[dict[str, str]], options: list[dict[str, Any]], 
 
 # ---- R-TITLE: words of the title (or of a row) that name part of the variants -------------------
 
-def _value_words(value: str, both_genders: bool) -> dict[str, str]:
-    """A value's words, plus the club count of a full part list as a count ("드라이버 우드 유틸 7아이언 퍼터" -> 11개)."""
+_LOFT_FLEX_WORD_RE = re.compile(r"(\d{1,2}(?:\.\d)?)(?:SR|R|S|X)")
+
+
+def _has_unit(word: str) -> bool:
+    """A word the text may write another way: a loft "11.5도" ("11.5L"), a club number, the bag."""
+    return word.startswith("~") or _LOFT_WORD_RE.fullmatch(word) is not None
+
+
+def _value_words(value: str, both_genders: bool, part: str | None = None) -> dict[str, str]:
+    """A value's words, plus the club count of a full part list as a count ("드라이버 우드 유틸 7아이언 퍼터" -> 11개),
+    its club numbers ("4번" of a 유틸리티 axis -> ~U4) and the bag (~BAG; "캐디백 미포함" -> ~NOBAG, its bag word
+    left out)."""
     out = words(value, both_genders)
     n = part_count(value)
     if n:
         out.setdefault(f"{n}#", f"{n}개")
+    for k, w in list(out.items()):                 # "10.5R" is the loft 10.5도 too (9343324012: "10.5R" / "10.5도")
+        if (m := _LOFT_FLEX_WORD_RE.fullmatch(k)) and 7 <= float(m.group(1)) <= 14:
+            out.setdefault(f"{m.group(1)}도", w)
+    clubs = club_numbers(value)
+    if part and not clubs:
+        for m in re.finditer(r"(?<![0-9.])(\d)\s*번", value):
+            out.pop(f"{m.group(1)}번", None)
+            clubs[f"~{part}{m.group(1)}"] = m.group(0)
+    out.update(clubs)
+    bag = bag_word(value)
+    if bag:
+        out[bag[0]] = bag[1]
+    if bag and bag[0] == NO_BAG:
+        for k in [k for k in out if _BAG_WORD_RE.match(k)]:
+            del out[k]
     return out
 
 
@@ -345,7 +477,10 @@ def _names_some(found_in: Callable[[str], bool], options: list[dict[str, Any]],
     found = []
     for o in options:
         vals = o["values_ko"]
-        value_words = [_value_words(v, both_genders) for v in vals]
+        value_words = [_value_words(v, both_genders, axis_part(o["name_ko"])) for v in vals]
+        if not any(NO_BAG in ws for ws in value_words):        # the bag tells values apart only by a 미포함
+            for ws in value_words:
+                ws.pop(BAG, None)
         written = {k: v for ws in reversed(value_words) for k, v in ws.items()}
         n = len(value_words)
 

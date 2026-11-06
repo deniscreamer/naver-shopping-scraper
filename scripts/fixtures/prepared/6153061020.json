@@ -4,7 +4,12 @@
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
- "notes": [],
+ "notes": [
+  {
+   "code": "description_tiles_include_banners",
+   "detail": "notice01.jpg, kakao_plusfriend.jpg, open_foot_notice_01.jpg, open_foot_notice_02.jpg, delivery_notice.jpg, kakao_notice.jpg, 휴무 공지사항, 카카오톡 플러스친구, 배송정보, 카카오톡"
+  }
+ ],
  "source": {
   "run": "50002788-fixtures",
   "line": 1,
@@ -100,7 +105,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    }
   ],
   "pricing": {
@@ -350,6 +356,7 @@
     "seller_average_days": 1.6519175,
     "product_average_days": null,
     "today_cutoff": null,
+    "today_off": false,
     "arrival_days": 2,
     "arrival_date_text": null,
     "arrival_probability": 85,

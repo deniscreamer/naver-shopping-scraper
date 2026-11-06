@@ -1309,6 +1309,7 @@
     "seller_average_days": 1.6451613,
     "product_average_days": null,
     "today_cutoff": "14:30",
+    "today_off": false,
     "arrival_days": null,
     "arrival_date_text": "11.11.(수)",
     "arrival_probability": 96,

@@ -5,7 +5,7 @@ A development tool, no network: it reads files only.
     .venv/bin/python scripts/collected_fixtures.py refresh
 
 `add` copies a collected line (the photo / review file entries kept, their files are not needed; the description
-HTML left out: the transform reads its text and images). Both take the
+HTML kept: the transform reads its image links and the banners' linkdata). Both take the
 line's `details.description` and `specs` from the server's replay of the same saved page when there is one
 (server/naver_shopping/fixtures/pages/<id>/expected.json, the file only, R-1: scripts never import server code),
 and compute `package` and `variants` again the way collection does (package_measures, naver_variants). So after a
@@ -37,8 +37,7 @@ def _rebuild(line: dict[str, Any], table: dict[str, Any]) -> dict[str, Any]:
     line["variants"] = choose_variants(options, line["details"]["pricing"]["discounted_price"], paid=True) \
         if options else None
     line["package"] = variant_measures(line["specs"], table)
-    line["details"]["description"] = {**line["details"]["description"], "html": None}   # the transform reads
-    return line                                                                   # text and images only
+    return line
 
 
 def _write(line: dict[str, Any]) -> str:

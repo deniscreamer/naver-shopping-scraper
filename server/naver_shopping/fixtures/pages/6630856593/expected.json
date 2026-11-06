@@ -266,6 +266,7 @@
     "seller_average_days": null,
     "product_average_days": null,
     "today_cutoff": null,
+    "today_off": false,
     "arrival_days": null,
     "arrival_date_text": null,
     "arrival_probability": null,

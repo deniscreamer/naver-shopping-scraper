@@ -1,0 +1,5006 @@
+{
+ "key": "fairwardgolf:naver:500028318:11635855564",
+ "listing": {
+  "product_id": "11635855564",
+  "nv_mid": "89180366009",
+  "link": "https://smartstore.naver.com/scarabee/products/11635855564",
+  "name": "25년 핑 G440 브리지스톤 V300 조합 남성 골프채풀세트 클럽11개",
+  "store": {
+   "name": "디씨골프",
+   "slug": "scarabee",
+   "link": "https://smartstore.naver.com/scarabee",
+   "channel_no": "500028318",
+   "grade": "BIG_POWER",
+   "is_brand_store": false
+  },
+  "pricing": {
+   "sale_price": 2220000,
+   "discounted_price": 2220000,
+   "discount_ratio": 0,
+   "currency": "KRW"
+  },
+  "category_id": "50002788",
+  "reviews": {
+   "count": 5,
+   "average_score": 5
+  },
+  "stock_quantity": 443,
+  "image": "https://shopping-phinf.pstatic.net/main_8918036/89180366009.jpg",
+  "is_ad": false,
+  "query": "남성 골프채 풀세트",
+  "batch": 1,
+  "seen_at": "2026-11-06T14:27:58+00:00"
+ },
+ "details": {
+  "id": "11635855564",
+  "origin_product_id": "11581772940",
+  "name": "25년 핑 G440 브리지스톤 V300 조합 남성 골프채풀세트 클럽11개",
+  "link": "https://smartstore.naver.com/scarabee/products/11635855564",
+  "catalog_id": "89180366009",
+  "catalog_link": "https://search.shopping.naver.com/catalog/89180366009",
+  "status": "SALE",
+  "sale_type": "NEW",
+  "is_displayed": true,
+  "pricing": {
+   "sale_price": 2220000,
+   "discounted_price": 2220000,
+   "discount_ratio": 0,
+   "seller_discount": 0,
+   "manager_discount": 0,
+   "currency": "KRW",
+   "points": {
+    "purchase": 22200,
+    "text_review": 2000,
+    "photo_video_review": 3000,
+    "after_use_text_review": 2000,
+    "after_use_photo_video_review": 3000,
+    "store_member_review": 0
+   }
+  },
+  "stock_quantity": 443,
+  "has_options": true,
+  "has_supplements": true,
+  "images": [
+   "https://shop-phinf.pstatic.net/20250325_249/1742889769186WkxWu_JPEG/51267059938758419_1690216562.jpg"
+  ],
+  "category": {
+   "id": "50002788",
+   "name": "풀세트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "풀세트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002788"
+   ]
+  },
+  "brand": "핑",
+  "brand_id": "76",
+  "manufacturer": "삼양인터내셔날",
+  "model_name": null,
+  "tags": [
+   "남성골프채풀세트",
+   "남자골프채풀세트",
+   "핑g440골프풀세트"
+  ],
+  "page_title": null,
+  "reviews": {
+   "count": 5,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 5
+   },
+   "text_count": 3,
+   "photo_count": 2,
+   "video_count": 0,
+   "after_use_count": 1,
+   "best_count": 0,
+   "recent": {
+    "count": 1,
+    "average_score": 5.0
+   },
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "최고예요",
+       "count": 5,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "디자인은 어떤가요?",
+     "answers": [
+      {
+       "name": "별로예요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "화면과 같아요",
+       "count": 1,
+       "percent": 20
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 4,
+       "percent": 80
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 5,
+       "percent": 100
+      }
+     ]
+    }
+   ],
+   "representative_reviews": [
+    {
+     "id": "4917241398",
+     "score": 5,
+     "text": "핑 드라이버,우드,유틸은 워낙 유명해서..쓰기 좋습니다\n아이언 v300은 확실히 국민아이언이라 그런지 스윙이 편합니다 잘쓰고 있습니다",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260226_199/1772073960160ChEp6_JPEG/KakaoTalk_20260124_101239730.jpg"
+    },
+    {
+     "id": "4892811701",
+     "score": 5,
+     "text": "구성좋고 저렴하게 잘샀네요\n잘쓰겠습니다",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260124_62/1769222233613gP0Y1_JPEG/59944.jpg"
+    },
+    {
+     "id": "5086135200",
+     "score": 5,
+     "text": "구성이 좋아요 친절하고 가성비도 좋습니다",
+     "image": null
+    },
+    {
+     "id": "4758062204",
+     "score": 5,
+     "text": "사장님이 매우 친철하십니다",
+     "image": null
+    },
+    {
+     "id": "4706097391",
+     "score": 5,
+     "text": "배송안내와 배송정보가 맘에 들었어요",
+     "image": null
+    }
+   ]
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "TODAY",
+   "is_today_delivery": null,
+   "company": "CJ대한통운",
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "extra_fee_text": null
+  },
+  "is_free_delivery": true,
+  "is_today_delivery": false,
+  "has_arrival_guarantee": false,
+  "has_regular_subscription": false,
+  "has_free_return_insurance": false,
+  "is_minor_purchasable": true,
+  "is_adult_restricted": false,
+  "is_in_naver_shopping": true,
+  "option_groups": null,
+  "variants": null,
+  "supplements": null,
+  "description": {
+   "html": "<div class=\"se-viewer se-theme-default\" lang=\"ko-KR\">\n    <!-- SE_DOC_HEADER_START -->\n    <!--@CONTENTS_HEADER-->\n    <!-- SE_DOC_HEADER_END -->\n    <div class=\"se-main-container\">\n                <div class=\"se-component se-image se-l-default\" id=\"SE-3d35ab3b-2fe7-4f08-a7ab-fc3af5d27cc0\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:720px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-3d35ab3b-2fe7-4f08-a7ab-fc3af5d27cc0&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20250325_214/17428897961861WYP1_JPEG/%ED%9A%8C%EC%82%AC%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg&quot;,&quot;originalWidth&quot;:&quot;720&quot;,&quot;originalHeight&quot;:&quot;2013&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20250325_214/17428897961861WYP1_JPEG/%ED%9A%8C%EC%82%AC%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-edc8dab3-9753-4d55-821f-4434a398d27c\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-center\" style=\"max-width:720px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-edc8dab3-9753-4d55-821f-4434a398d27c&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20250325_85/1742889808067Y4GQd_JPEG/V300-%EC%83%81%EC%84%B8.jpg&quot;,&quot;originalWidth&quot;:&quot;720&quot;,&quot;originalHeight&quot;:&quot;11024&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20250325_85/1742889808067Y4GQd_JPEG/V300-%EC%83%81%EC%84%B8.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"se-component se-text se-l-default\" id=\"SE-c888061c-1274-451a-9330-282603a0aa30\">\n                    <div class=\"se-component-content\">\n                        <div class=\"se-section se-section-text se-l-default\">\n                            <div class=\"se-module se-module-text\">\n                                    <!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align- \" style=\"\" id=\"SE-a8622850-2e4c-4b28-b321-3cb4507203f5\"><span style=\"\" class=\"se-fs- se-ff-   \" id=\"SE-a7489310-2497-41fa-879b-098537354fc2\">​</span></p><!-- } SE-TEXT -->\n                            </div>\n                        </div>\n                    </div>\n                </div>    </div>\n</div>\n",
+   "text": null,
+   "editor_type": "SEONE",
+   "images": [
+    "https://shop-phinf.pstatic.net/20250325_214/17428897961861WYP1_JPEG/%ED%9A%8C%EC%82%AC%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20250325_85/1742889808067Y4GQd_JPEG/V300-%EC%83%81%EC%84%B8.jpg?type=w848"
+   ]
+  },
+  "notice": {
+   "type": "SPORTS_EQUIPMENT",
+   "items": [
+    {
+     "label": "품명 / 모델명",
+     "value": "25년 핑 G440 브리지스톤 V300 조합 남성 골프채풀세트 클럽11개 / 25년 핑 G440 브리지스톤 V300 조합 남성 골프채풀세트 클럽11개",
+     "is_see_description": false
+    },
+    {
+     "label": "KC 인증정보",
+     "value": "해당사항 없음",
+     "is_see_description": false
+    },
+    {
+     "label": "크기",
+     "value": "상세이미지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "중량",
+     "value": "상세이미지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "색상",
+     "value": "상세이미지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "재질",
+     "value": "상세이미지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제품구성",
+     "value": "드라이버,유틸리티,7아이언,퍼터",
+     "is_see_description": false
+    },
+    {
+     "label": "동일 모델의 출시연월",
+     "value": "2025년",
+     "is_see_description": false
+    },
+    {
+     "label": "제조자(사)",
+     "value": "삼양인터내셔날",
+     "is_see_description": false
+    },
+    {
+     "label": "제조국",
+     "value": "미국산(삼양인터내셔날)",
+     "is_see_description": false
+    },
+    {
+     "label": "상품별 세부사양",
+     "value": "상세이미지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "품질보증기준",
+     "value": "상세이미지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "A/S 책임자와 전화번호",
+     "value": null,
+     "is_see_description": false
+    }
+   ],
+   "terms": [
+    {
+     "label": "재화등의 배송방법에 관한 정보",
+     "value": "택배",
+     "is_see_description": false
+    },
+    {
+     "label": "주문 이후 예상되는 배송기간",
+     "value": "대금 지급일로부터 3일 이내에 발송",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+     "value": "편도 15000원 (최초 배송비 무료인 경우 30000원 부과)",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 A/S 관련 전화번호",
+     "value": null,
+     "is_see_description": false
+    },
+    {
+     "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+     "value": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+     "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+     "is_see_description": false
+    }
+   ]
+  },
+  "facts": {
+   "brand": {
+    "value": "핑",
+    "source": "search_info.brandName"
+   },
+   "manufacturer": {
+    "value": "삼양인터내셔날",
+    "source": "search_info.manufacturerName"
+   },
+   "model_name": null,
+   "origin": {
+    "value": "미국산(삼양인터내셔날)",
+    "source": "notice:제조국"
+   }
+  },
+  "store": {
+   "id": "500028318",
+   "uid": "2sWDvS1w7FoDIWKu39nx5",
+   "name": "디씨골프",
+   "slug": "scarabee",
+   "link": "https://smartstore.naver.com/scarabee",
+   "type": "smart_store",
+   "grade": "SECOND",
+   "sale_count": 48,
+   "merchant_id": "500028318",
+   "business": {
+    "legal_name": "스카라베골프",
+    "representative": "조승희",
+    "type": "PRIVATE",
+    "is_business": true,
+    "is_overseas": false,
+    "phone": null,
+    "email": null,
+    "address": null
+   }
+  }
+ },
+ "specs": {
+  "id": "11635855564",
+  "name": "25년 핑 G440 브리지스톤 V300 조합 남성 골프채풀세트 클럽11개",
+  "link": "https://smartstore.naver.com/scarabee/products/11635855564",
+  "query": "25년 핑 G440 브리지스톤 V300 조합 남성 골프채풀세트 클럽11개",
+  "category": {
+   "id": "50002788",
+   "name": "풀세트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "풀세트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002788"
+   ]
+  },
+  "specs": [
+   {
+    "label": "상품번호",
+    "value": "11635855564"
+   },
+   {
+    "label": "제조사",
+    "value": "삼양인터내셔날"
+   },
+   {
+    "label": "브랜드",
+    "value": "핑"
+   },
+   {
+    "label": "원산지",
+    "value": "미국산(삼양인터내셔날)"
+   },
+   {
+    "label": "드라이버 로프트각",
+    "value": "10.5도"
+   },
+   {
+    "label": "아이언 구성",
+    "value": "#5, #6, #7, #8, #9, 피칭웨지(PW), 피칭샌드(PS), 샌드웨지(SW)"
+   },
+   {
+    "label": "종류",
+    "value": "조합풀세트"
+   },
+   {
+    "label": "성별",
+    "value": "남성용"
+   },
+   {
+    "label": "사용방향",
+    "value": "오른손용"
+   },
+   {
+    "label": "총클럽개수",
+    "value": "11개"
+   },
+   {
+    "label": "출시",
+    "value": "2025년형"
+   },
+   {
+    "label": "풀세트구성",
+    "value": "드라이버, 8아이언세트, 퍼터, 유틸리티"
+   },
+   {
+    "label": "아이언샤프트소재",
+    "value": "경량스틸"
+   },
+   {
+    "label": "아이언개수",
+    "value": "8개"
+   },
+   {
+    "label": "퍼터형태",
+    "value": "말렛(반달형)"
+   },
+   {
+    "label": "골프백포함여부",
+    "value": "미포함"
+   }
+  ],
+  "is_complete": true,
+  "facts": {
+   "brand": {
+    "value": "핑",
+    "source": "specs:브랜드"
+   },
+   "manufacturer": {
+    "value": "삼양인터내셔날",
+    "source": "specs:제조사"
+   },
+   "model_name": null,
+   "origin": {
+    "value": "미국산(삼양인터내셔날)",
+    "source": "specs:원산지"
+   }
+  },
+  "options": {
+   "has_options": true,
+   "status": "SALE",
+   "is_sold_out": false,
+   "stock_quantity": 443,
+   "option_groups": [
+    {
+     "id": "10179021804",
+     "name": "드라이버",
+     "type": "COMBINATION"
+    },
+    {
+     "id": "10179021805",
+     "name": "유틸리티",
+     "type": "COMBINATION"
+    }
+   ],
+   "variants": [
+    {
+     "id": "47919639974",
+     "name": "10.5도 SR / 3번 R",
+     "options": [
+      "10.5도 SR",
+      "3번 R"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639975",
+     "name": "10.5도 SR / 3번 SR",
+     "options": [
+      "10.5도 SR",
+      "3번 SR"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639976",
+     "name": "10.5도 SR / 3번 S",
+     "options": [
+      "10.5도 SR",
+      "3번 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639977",
+     "name": "10.5도 SR / 4번 R",
+     "options": [
+      "10.5도 SR",
+      "4번 R"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639978",
+     "name": "10.5도 SR / 4번 SR",
+     "options": [
+      "10.5도 SR",
+      "4번 SR"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 6,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639979",
+     "name": "10.5도 SR / 4번 S",
+     "options": [
+      "10.5도 SR",
+      "4번 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 9,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639980",
+     "name": "10.5도 SR / 5번 R",
+     "options": [
+      "10.5도 SR",
+      "5번 R"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639981",
+     "name": "10.5도 SR / 5번 SR",
+     "options": [
+      "10.5도 SR",
+      "5번 SR"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 9,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639982",
+     "name": "10.5도 SR / 5번 S",
+     "options": [
+      "10.5도 SR",
+      "5번 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639983",
+     "name": "10.5도 R / 3번 R",
+     "options": [
+      "10.5도 R",
+      "3번 R"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639984",
+     "name": "10.5도 R / 3번 SR",
+     "options": [
+      "10.5도 R",
+      "3번 SR"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639985",
+     "name": "10.5도 R / 3번 S",
+     "options": [
+      "10.5도 R",
+      "3번 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639986",
+     "name": "10.5도 R / 4번 R",
+     "options": [
+      "10.5도 R",
+      "4번 R"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639987",
+     "name": "10.5도 R / 4번 SR",
+     "options": [
+      "10.5도 R",
+      "4번 SR"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639988",
+     "name": "10.5도 R / 4번 S",
+     "options": [
+      "10.5도 R",
+      "4번 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639989",
+     "name": "10.5도 R / 5번 R",
+     "options": [
+      "10.5도 R",
+      "5번 R"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639990",
+     "name": "10.5도 R / 5번 SR",
+     "options": [
+      "10.5도 R",
+      "5번 SR"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639991",
+     "name": "10.5도 R / 5번 S",
+     "options": [
+      "10.5도 R",
+      "5번 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639992",
+     "name": "9도 SR / 3번 R",
+     "options": [
+      "9도 SR",
+      "3번 R"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639993",
+     "name": "9도 SR / 3번 SR",
+     "options": [
+      "9도 SR",
+      "3번 SR"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 9,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639994",
+     "name": "9도 SR / 3번 S",
+     "options": [
+      "9도 SR",
+      "3번 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639995",
+     "name": "9도 SR / 4번 R",
+     "options": [
+      "9도 SR",
+      "4번 R"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639996",
+     "name": "9도 SR / 4번 SR",
+     "options": [
+      "9도 SR",
+      "4번 SR"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639997",
+     "name": "9도 SR / 4번 S",
+     "options": [
+      "9도 SR",
+      "4번 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639998",
+     "name": "9도 SR / 5번 R",
+     "options": [
+      "9도 SR",
+      "5번 R"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919639999",
+     "name": "9도 SR / 5번 SR",
+     "options": [
+      "9도 SR",
+      "5번 SR"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640000",
+     "name": "9도 SR / 5번 S",
+     "options": [
+      "9도 SR",
+      "5번 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640001",
+     "name": "9도 R / 3번 R",
+     "options": [
+      "9도 R",
+      "3번 R"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640002",
+     "name": "9도 R / 3번 SR",
+     "options": [
+      "9도 R",
+      "3번 SR"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640003",
+     "name": "9도 R / 3번 S",
+     "options": [
+      "9도 R",
+      "3번 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640004",
+     "name": "9도 R / 4번 R",
+     "options": [
+      "9도 R",
+      "4번 R"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640005",
+     "name": "9도 R / 4번 SR",
+     "options": [
+      "9도 R",
+      "4번 SR"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640006",
+     "name": "9도 R / 4번 S",
+     "options": [
+      "9도 R",
+      "4번 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640007",
+     "name": "9도 R / 5번 R",
+     "options": [
+      "9도 R",
+      "5번 R"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640008",
+     "name": "9도 R / 5번 SR",
+     "options": [
+      "9도 R",
+      "5번 SR"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640010",
+     "name": "9도 R / 5번 S",
+     "options": [
+      "9도 R",
+      "5번 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640012",
+     "name": "9도 S / 3번 R",
+     "options": [
+      "9도 S",
+      "3번 R"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640014",
+     "name": "9도 S / 3번 SR",
+     "options": [
+      "9도 S",
+      "3번 SR"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640015",
+     "name": "9도 S / 3번 S",
+     "options": [
+      "9도 S",
+      "3번 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640016",
+     "name": "9도 S / 4번 R",
+     "options": [
+      "9도 S",
+      "4번 R"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640018",
+     "name": "9도 S / 4번 SR",
+     "options": [
+      "9도 S",
+      "4번 SR"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640020",
+     "name": "9도 S / 4번 S",
+     "options": [
+      "9도 S",
+      "4번 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640021",
+     "name": "9도 S / 5번 R",
+     "options": [
+      "9도 S",
+      "5번 R"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640022",
+     "name": "9도 S / 5번 SR",
+     "options": [
+      "9도 S",
+      "5번 SR"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    },
+    {
+     "id": "47919640023",
+     "name": "9도 S / 5번 S",
+     "options": [
+      "9도 S",
+      "5번 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 10,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2025-03-25"
+    }
+   ],
+   "simple_options": [],
+   "text_options": [],
+   "supplements": [
+    {
+     "id": "3086218634",
+     "group": "우드추가",
+     "name": "3번R",
+     "price": 490000,
+     "stock_quantity": 10,
+     "status": "SALE"
+    },
+    {
+     "id": "3086218635",
+     "group": "우드추가",
+     "name": "3번SR",
+     "price": 490000,
+     "stock_quantity": 10,
+     "status": "SALE"
+    },
+    {
+     "id": "3086218636",
+     "group": "우드추가",
+     "name": "3번S",
+     "price": 490000,
+     "stock_quantity": 10,
+     "status": "SALE"
+    },
+    {
+     "id": "3086218637",
+     "group": "우드추가",
+     "name": "4번R",
+     "price": 490000,
+     "stock_quantity": 10,
+     "status": "SALE"
+    },
+    {
+     "id": "3086218638",
+     "group": "우드추가",
+     "name": "4번SR",
+     "price": 490000,
+     "stock_quantity": 8,
+     "status": "SALE"
+    },
+    {
+     "id": "3086218639",
+     "group": "우드추가",
+     "name": "4번S",
+     "price": 490000,
+     "stock_quantity": 10,
+     "status": "SALE"
+    },
+    {
+     "id": "3086218640",
+     "group": "우드추가",
+     "name": "5번R",
+     "price": 490000,
+     "stock_quantity": 10,
+     "status": "SALE"
+    },
+    {
+     "id": "3086218641",
+     "group": "우드추가",
+     "name": "5번SR",
+     "price": 490000,
+     "stock_quantity": 10,
+     "status": "SALE"
+    },
+    {
+     "id": "3086218642",
+     "group": "우드추가",
+     "name": "5번S",
+     "price": 490000,
+     "stock_quantity": 10,
+     "status": "SALE"
+    }
+   ]
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": "제주,도서지역 추가 5,000원",
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "TODAY",
+   "is_today_delivery": false,
+   "company": "CJ 대한통운(오네)",
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "extra_fee_text": null,
+   "is_overseas": false,
+   "scope": "domestic",
+   "customs_tax_type": null,
+   "lead_time": {
+    "seller_average_days": 1.9166666,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 92,
+    "ship_date_text": null
+   }
+  },
+  "measures": {
+   "is_set": true,
+   "weights": [],
+   "dimensions": [],
+   "references": [
+    {
+     "quote": "크기: 상세이미지 참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 2
+     },
+     "measure": "size",
+     "reason": "description_reference"
+    },
+    {
+     "quote": "중량: 상세이미지 참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 3
+     },
+     "measure": "weight",
+     "reason": "description_reference"
+    }
+   ],
+   "review": []
+  },
+  "read_at": "2026-11-06T14:32:11Z"
+ },
+ "variants": {
+  "paid": true,
+  "base_price": 2220000,
+  "variants": [
+   {
+    "id": "47919639974",
+    "name": "10.5도 SR / 3번 R",
+    "options": [
+     "10.5도 SR",
+     "3번 R"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639975",
+    "name": "10.5도 SR / 3번 SR",
+    "options": [
+     "10.5도 SR",
+     "3번 SR"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639976",
+    "name": "10.5도 SR / 3번 S",
+    "options": [
+     "10.5도 SR",
+     "3번 S"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639977",
+    "name": "10.5도 SR / 4번 R",
+    "options": [
+     "10.5도 SR",
+     "4번 R"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639978",
+    "name": "10.5도 SR / 4번 SR",
+    "options": [
+     "10.5도 SR",
+     "4번 SR"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 6,
+    "is_available": true
+   },
+   {
+    "id": "47919639979",
+    "name": "10.5도 SR / 4번 S",
+    "options": [
+     "10.5도 SR",
+     "4번 S"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 9,
+    "is_available": true
+   },
+   {
+    "id": "47919639980",
+    "name": "10.5도 SR / 5번 R",
+    "options": [
+     "10.5도 SR",
+     "5번 R"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639981",
+    "name": "10.5도 SR / 5번 SR",
+    "options": [
+     "10.5도 SR",
+     "5번 SR"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 9,
+    "is_available": true
+   },
+   {
+    "id": "47919639982",
+    "name": "10.5도 SR / 5번 S",
+    "options": [
+     "10.5도 SR",
+     "5번 S"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639983",
+    "name": "10.5도 R / 3번 R",
+    "options": [
+     "10.5도 R",
+     "3번 R"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639984",
+    "name": "10.5도 R / 3번 SR",
+    "options": [
+     "10.5도 R",
+     "3번 SR"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639985",
+    "name": "10.5도 R / 3번 S",
+    "options": [
+     "10.5도 R",
+     "3번 S"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639986",
+    "name": "10.5도 R / 4번 R",
+    "options": [
+     "10.5도 R",
+     "4번 R"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639987",
+    "name": "10.5도 R / 4번 SR",
+    "options": [
+     "10.5도 R",
+     "4번 SR"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639988",
+    "name": "10.5도 R / 4번 S",
+    "options": [
+     "10.5도 R",
+     "4번 S"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639989",
+    "name": "10.5도 R / 5번 R",
+    "options": [
+     "10.5도 R",
+     "5번 R"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639990",
+    "name": "10.5도 R / 5번 SR",
+    "options": [
+     "10.5도 R",
+     "5번 SR"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639991",
+    "name": "10.5도 R / 5번 S",
+    "options": [
+     "10.5도 R",
+     "5번 S"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639992",
+    "name": "9도 SR / 3번 R",
+    "options": [
+     "9도 SR",
+     "3번 R"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639993",
+    "name": "9도 SR / 3번 SR",
+    "options": [
+     "9도 SR",
+     "3번 SR"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 9,
+    "is_available": true
+   },
+   {
+    "id": "47919639994",
+    "name": "9도 SR / 3번 S",
+    "options": [
+     "9도 SR",
+     "3번 S"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639995",
+    "name": "9도 SR / 4번 R",
+    "options": [
+     "9도 SR",
+     "4번 R"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639996",
+    "name": "9도 SR / 4번 SR",
+    "options": [
+     "9도 SR",
+     "4번 SR"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639997",
+    "name": "9도 SR / 4번 S",
+    "options": [
+     "9도 SR",
+     "4번 S"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639998",
+    "name": "9도 SR / 5번 R",
+    "options": [
+     "9도 SR",
+     "5번 R"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919639999",
+    "name": "9도 SR / 5번 SR",
+    "options": [
+     "9도 SR",
+     "5번 SR"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640000",
+    "name": "9도 SR / 5번 S",
+    "options": [
+     "9도 SR",
+     "5번 S"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640001",
+    "name": "9도 R / 3번 R",
+    "options": [
+     "9도 R",
+     "3번 R"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640002",
+    "name": "9도 R / 3번 SR",
+    "options": [
+     "9도 R",
+     "3번 SR"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640003",
+    "name": "9도 R / 3번 S",
+    "options": [
+     "9도 R",
+     "3번 S"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640004",
+    "name": "9도 R / 4번 R",
+    "options": [
+     "9도 R",
+     "4번 R"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640005",
+    "name": "9도 R / 4번 SR",
+    "options": [
+     "9도 R",
+     "4번 SR"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640006",
+    "name": "9도 R / 4번 S",
+    "options": [
+     "9도 R",
+     "4번 S"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640007",
+    "name": "9도 R / 5번 R",
+    "options": [
+     "9도 R",
+     "5번 R"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640008",
+    "name": "9도 R / 5번 SR",
+    "options": [
+     "9도 R",
+     "5번 SR"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640010",
+    "name": "9도 R / 5번 S",
+    "options": [
+     "9도 R",
+     "5번 S"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640012",
+    "name": "9도 S / 3번 R",
+    "options": [
+     "9도 S",
+     "3번 R"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640014",
+    "name": "9도 S / 3번 SR",
+    "options": [
+     "9도 S",
+     "3번 SR"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640015",
+    "name": "9도 S / 3번 S",
+    "options": [
+     "9도 S",
+     "3번 S"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640016",
+    "name": "9도 S / 4번 R",
+    "options": [
+     "9도 S",
+     "4번 R"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640018",
+    "name": "9도 S / 4번 SR",
+    "options": [
+     "9도 S",
+     "4번 SR"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640020",
+    "name": "9도 S / 4번 S",
+    "options": [
+     "9도 S",
+     "4번 S"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640021",
+    "name": "9도 S / 5번 R",
+    "options": [
+     "9도 S",
+     "5번 R"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640022",
+    "name": "9도 S / 5번 SR",
+    "options": [
+     "9도 S",
+     "5번 SR"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   },
+   {
+    "id": "47919640023",
+    "name": "9도 S / 5번 S",
+    "options": [
+     "9도 S",
+     "5번 S"
+    ],
+    "extra_price": 0,
+    "price": 2220000,
+    "price_in_name": null,
+    "stock_quantity": 10,
+    "is_available": true
+   }
+  ],
+  "available": 45,
+  "sold_out": 0,
+  "skipped_paid": 0,
+  "name_mismatches": [],
+  "simple_options": [],
+  "text_options": [],
+  "supplements": [
+   {
+    "id": "3086218634",
+    "group": "우드추가",
+    "name": "3번R",
+    "price": 490000,
+    "stock_quantity": 10,
+    "status": "SALE"
+   },
+   {
+    "id": "3086218635",
+    "group": "우드추가",
+    "name": "3번SR",
+    "price": 490000,
+    "stock_quantity": 10,
+    "status": "SALE"
+   },
+   {
+    "id": "3086218636",
+    "group": "우드추가",
+    "name": "3번S",
+    "price": 490000,
+    "stock_quantity": 10,
+    "status": "SALE"
+   },
+   {
+    "id": "3086218637",
+    "group": "우드추가",
+    "name": "4번R",
+    "price": 490000,
+    "stock_quantity": 10,
+    "status": "SALE"
+   },
+   {
+    "id": "3086218638",
+    "group": "우드추가",
+    "name": "4번SR",
+    "price": 490000,
+    "stock_quantity": 8,
+    "status": "SALE"
+   },
+   {
+    "id": "3086218639",
+    "group": "우드추가",
+    "name": "4번S",
+    "price": 490000,
+    "stock_quantity": 10,
+    "status": "SALE"
+   },
+   {
+    "id": "3086218640",
+    "group": "우드추가",
+    "name": "5번R",
+    "price": 490000,
+    "stock_quantity": 10,
+    "status": "SALE"
+   },
+   {
+    "id": "3086218641",
+    "group": "우드추가",
+    "name": "5번SR",
+    "price": 490000,
+    "stock_quantity": 10,
+    "status": "SALE"
+   },
+   {
+    "id": "3086218642",
+    "group": "우드추가",
+    "name": "5번S",
+    "price": 490000,
+    "stock_quantity": 10,
+    "status": "SALE"
+   }
+  ]
+ },
+ "package": [
+  {
+   "variant_id": "47919639974",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639975",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639976",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639977",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639978",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639979",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639980",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639981",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639982",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639983",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639984",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639985",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639986",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639987",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639988",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639989",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639990",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639991",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639992",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639993",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639994",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639995",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639996",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639997",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639998",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919639999",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640000",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640001",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640002",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640003",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640004",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640005",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640006",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640007",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640008",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640010",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640012",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640014",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640015",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640016",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640018",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640020",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640021",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640022",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "47919640023",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  }
+ ],
+ "reviews": {
+  "product": {
+   "id": "11635855564",
+   "name": "25년 핑 G440 브리지스톤 V300 조합 남성 골프채풀세트 클럽11개",
+   "link": "https://smartstore.naver.com/scarabee/products/11635855564"
+  },
+  "summary": {
+   "count": 5,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 5
+   },
+   "text_count": 3,
+   "photo_count": 2,
+   "video_count": 0,
+   "after_use_count": 1,
+   "best_count": 0,
+   "recent": {
+    "count": 1,
+    "average_score": 5.0
+   },
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "최고예요",
+       "count": 5,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "디자인은 어떤가요?",
+     "answers": [
+      {
+       "name": "별로예요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "화면과 같아요",
+       "count": 1,
+       "percent": 20
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 4,
+       "percent": 80
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 5,
+       "percent": 100
+      }
+     ]
+    }
+   ],
+   "representative_reviews": [
+    {
+     "id": "4917241398",
+     "score": 5,
+     "text": "핑 드라이버,우드,유틸은 워낙 유명해서..쓰기 좋습니다\n아이언 v300은 확실히 국민아이언이라 그런지 스윙이 편합니다 잘쓰고 있습니다",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260226_199/1772073960160ChEp6_JPEG/KakaoTalk_20260124_101239730.jpg"
+    },
+    {
+     "id": "4892811701",
+     "score": 5,
+     "text": "구성좋고 저렴하게 잘샀네요\n잘쓰겠습니다",
+     "image": "https://phinf.pstatic.net/checkout.phinf/20260124_62/1769222233613gP0Y1_JPEG/59944.jpg"
+    },
+    {
+     "id": "5086135200",
+     "score": 5,
+     "text": "구성이 좋아요 친절하고 가성비도 좋습니다",
+     "image": null
+    },
+    {
+     "id": "4758062204",
+     "score": 5,
+     "text": "사장님이 매우 친철하십니다",
+     "image": null
+    },
+    {
+     "id": "4706097391",
+     "score": 5,
+     "text": "배송안내와 배송정보가 맘에 들었어요",
+     "image": null
+    }
+   ]
+  },
+  "mode": "small_source",
+  "count": 5,
+  "scanned": 5,
+  "passes": [
+   {
+    "media": "all",
+    "pages": 1,
+    "total_count": 5,
+    "is_exhausted": true
+   }
+  ],
+  "is_complete": true,
+  "results": [
+   {
+    "id": "5086135200",
+    "score": 5,
+    "text": "구성이 좋아요 친절하고 가성비도 좋습니다",
+    "created_at": "2026-10-18T00:31:29Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "드라이버: 10.5도 SR / 유틸리티: 4번 SR",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "go****",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "11635855564",
+     "origin_product_id": "11581772940",
+     "name": "25년 핑 G440 브리지스톤 V300 조합 남성 골프채풀세트 클럽11개"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "4917241398",
+    "score": 5,
+    "text": "핑 드라이버,우드,유틸은 워낙 유명해서..쓰기 좋습니다\n아이언 v300은 확실히 국민아이언이라 그런지 스윙이 편합니다 잘쓰고 있습니다",
+    "created_at": "2026-02-26T02:46:12Z",
+    "type": "AFTER_USE",
+    "content_type": "PHOTO",
+    "option": "드라이버: 10.5도 SR / 유틸리티: 4번 SR",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "hcfc******",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260226_199/1772073960160ChEp6_JPEG/KakaoTalk_20260124_101239730.jpg",
+      "width": 3000,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "11635855564",
+     "origin_product_id": "11581772940",
+     "name": "25년 핑 G440 브리지스톤 V300 조합 남성 골프채풀세트 클럽11개"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "4892811701",
+    "score": 5,
+    "text": "구성좋고 저렴하게 잘샀네요\n잘쓰겠습니다",
+    "created_at": "2026-01-24T02:37:18Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": "드라이버: 10.5도 SR / 유틸리티: 4번 SR",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "hcfc******",
+     "profile_image": null
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260124_62/1769222233613gP0Y1_JPEG/59944.jpg",
+      "width": 3000,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "11635855564",
+     "origin_product_id": "11581772940",
+     "name": "25년 핑 G440 브리지스톤 V300 조합 남성 골프채풀세트 클럽11개"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "4758062204",
+    "score": 5,
+    "text": "사장님이 매우 친철하십니다",
+    "created_at": "2025-07-06T02:56:46Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "드라이버: 10.5도 SR / 유틸리티: 4번 SR",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "10ju*******",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "11635855564",
+     "origin_product_id": "11581772940",
+     "name": "25년 핑 G440 브리지스톤 V300 조합 남성 골프채풀세트 클럽11개"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "4706097391",
+    "score": 5,
+    "text": "배송안내와 배송정보가 맘에 들었어요",
+    "created_at": "2025-04-19T02:03:00Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "드라이버: 10.5도 SR / 유틸리티: 4번 SR",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "sonh******",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "11635855564",
+     "origin_product_id": "11581772940",
+     "name": "25년 핑 G440 브리지스톤 V300 조합 남성 골프채풀세트 클럽11개"
+    },
+    "likes": null,
+    "tier": "small"
+   }
+  ]
+ },
+ "photos": {
+  "store": "fairwardgolf",
+  "total": 1,
+  "files": [
+   {
+    "position": 0,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20250325_249/1742889769186WkxWu_JPEG/51267059938758419_1690216562.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20250325_249/1742889769186WkxWu_JPEG/51267059938758419_1690216562.jpg",
+    "source_sha256": "a785253f6d57159a0292817f052f44fbcc6b975066561ed8e4f20a9ec51a2223",
+    "source_bytes": 283442,
+    "source_format": "JPEG",
+    "source_width": 1000,
+    "source_height": 1000,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run20/full-50002788/images/11635855564/fairwardgolf-11635855564-001-a6fd9558999eb477.webp",
+    "sha256": "a6fd9558999eb4779d8fddfe421c5f0094109f356271bdb43c2196430177829d",
+    "bytes": 55282,
+    "width": 1000,
+    "height": 1000,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true,
+  "originals": 1
+ },
+ "review_media": {
+  "store": "fairwardgolf",
+  "files": [
+   {
+    "review_id": "4917241398",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260226_199/1772073960160ChEp6_JPEG/KakaoTalk_20260124_101239730.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260226_199/1772073960160ChEp6_JPEG/KakaoTalk_20260124_101239730.jpg",
+    "source_sha256": "cebaaf8fa145dc0ce2446e79af10acc656f17a37401455936faa4e902a4d63fd",
+    "source_bytes": 4385915,
+    "source_format": "JPEG",
+    "source_width": 3000,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run20/full-50002788/images/11635855564/fairwardgolf-review-image-244dba9d30e8939f.webp",
+    "sha256": "244dba9d30e8939f96d75864b65ff3aff22e27f6138b68fed8c8896747945cf3",
+    "bytes": 156842,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "4892811701",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260124_62/1769222233613gP0Y1_JPEG/59944.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260124_62/1769222233613gP0Y1_JPEG/59944.jpg",
+    "source_sha256": "cebaaf8fa145dc0ce2446e79af10acc656f17a37401455936faa4e902a4d63fd",
+    "source_bytes": 4385915,
+    "source_format": "JPEG",
+    "source_width": 3000,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "/Users/rentamac/Desktop/naver-shopping-scraper/research/run20/full-50002788/images/11635855564/fairwardgolf-review-image-244dba9d30e8939f.webp",
+    "sha256": "244dba9d30e8939f96d75864b65ff3aff22e27f6138b68fed8c8896747945cf3",
+    "bytes": 156842,
+    "width": 768,
+    "height": 1024,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true
+ }
+}

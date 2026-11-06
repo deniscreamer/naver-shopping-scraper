@@ -1,0 +1,250 @@
+{
+ "id": "13446843026",
+ "origin_product_id": "13387805846",
+ "name": "PRGR 스위프 Sweep M15 여성풀세트12pc 백세트포함 프로기아한국지점 원산지 일본",
+ "link": "https://smartstore.naver.com/adpargolf/products/13446843026",
+ "catalog_id": "90991353378",
+ "catalog_link": "https://search.shopping.naver.com/catalog/90991353378",
+ "status": "SALE",
+ "sale_type": "NEW",
+ "is_displayed": true,
+ "pricing": {
+  "sale_price": 990000,
+  "discounted_price": 990000,
+  "discount_ratio": 0,
+  "seller_discount": 0,
+  "manager_discount": 0,
+  "currency": "KRW",
+  "points": {
+   "purchase": 9900,
+   "text_review": 0,
+   "photo_video_review": 0,
+   "after_use_text_review": 0,
+   "after_use_photo_video_review": 0,
+   "store_member_review": 0
+  }
+ },
+ "stock_quantity": 12,
+ "has_options": true,
+ "has_supplements": false,
+ "images": [
+  "https://shop-phinf.pstatic.net/20260901_243/17882371897456yh98_PNG/19448490617374563_1973053606.png",
+  "https://shop-phinf.pstatic.net/20260424_199/1777005113490uMVDM_PNG/111138045740244195_1092451350.png",
+  "https://shop-phinf.pstatic.net/20260424_285/1777005113633MhRB2_PNG/111138045895948466_1166037107.png",
+  "https://shop-phinf.pstatic.net/20260424_262/1777005113775p9Asc_PNG/111138046042921628_1870012292.png",
+  "https://shop-phinf.pstatic.net/20260424_208/1777005113910hoASm_PNG/111138046173784863_1099835644.png",
+  "https://shop-phinf.pstatic.net/20260424_219/17770051140535T5vF_PNG/111138046321560999_568562751.png",
+  "https://shop-phinf.pstatic.net/20260424_44/1777005114188EQ2gd_PNG/111138046449711744_508018008.png",
+  "https://shop-phinf.pstatic.net/20260424_68/1777005910430UIyNS_PNG/1405524246339301_1249795790.png",
+  "https://shop-phinf.pstatic.net/20260424_157/17770051146498rHjN_PNG/111138046925288742_325822799.png",
+  "https://shop-phinf.pstatic.net/20260424_52/17770051145137MQMN_PNG/111138046777172318_1192267306.png"
+ ],
+ "category": {
+  "id": "50002788",
+  "name": "풀세트",
+  "path": [
+   "스포츠/레저",
+   "골프",
+   "골프클럽",
+   "풀세트"
+  ],
+  "path_ids": [
+   "50000007",
+   "50000029",
+   "50001102",
+   "50002788"
+  ]
+ },
+ "brand": "PRGR",
+ "brand_id": "18154",
+ "manufacturer": "PRGR",
+ "model_name": null,
+ "tags": [
+  "여성풀세트"
+ ],
+ "page_title": null,
+ "delivery": {
+  "fee_type": "FREE",
+  "base_fee": 0,
+  "is_free": true,
+  "policy_text": null,
+  "method_types": [
+   "DELIVERY"
+  ],
+  "attribute": "NORMAL",
+  "is_today_delivery": null,
+  "company": "로젠택배",
+  "extra_fee_area2": null,
+  "extra_fee_area3": null,
+  "extra_fee_text": null
+ },
+ "is_free_delivery": true,
+ "is_today_delivery": false,
+ "has_arrival_guarantee": false,
+ "has_regular_subscription": false,
+ "has_free_return_insurance": false,
+ "is_minor_purchasable": true,
+ "is_adult_restricted": false,
+ "is_in_naver_shopping": true,
+ "option_groups": null,
+ "variants": null,
+ "supplements": null,
+ "notice": {
+  "type": "SPORTS_EQUIPMENT",
+  "items": [
+   {
+    "label": "품명 / 모델명",
+    "value": "상품상세참조 / 상품상세참조",
+    "is_see_description": true
+   },
+   {
+    "label": "KC 인증정보",
+    "value": "상품상세참조",
+    "is_see_description": true
+   },
+   {
+    "label": "크기",
+    "value": "상품상세참조",
+    "is_see_description": true
+   },
+   {
+    "label": "중량",
+    "value": "상품상세참조",
+    "is_see_description": true
+   },
+   {
+    "label": "색상",
+    "value": "상품상세참조",
+    "is_see_description": true
+   },
+   {
+    "label": "재질",
+    "value": "상품상세참조",
+    "is_see_description": true
+   },
+   {
+    "label": "제품구성",
+    "value": "상품상세참조",
+    "is_see_description": true
+   },
+   {
+    "label": "동일 모델의 출시연월",
+    "value": "2025",
+    "is_see_description": false
+   },
+   {
+    "label": "제조자(사)",
+    "value": "PRGR",
+    "is_see_description": false
+   },
+   {
+    "label": "제조국",
+    "value": "일본산(PRGR)",
+    "is_see_description": false
+   },
+   {
+    "label": "상품별 세부사양",
+    "value": "상품상세참조",
+    "is_see_description": true
+   },
+   {
+    "label": "품질보증기준",
+    "value": "상품상세참조",
+    "is_see_description": true
+   },
+   {
+    "label": "A/S 책임자와 전화번호",
+    "value": null,
+    "is_see_description": false
+   }
+  ],
+  "terms": [
+   {
+    "label": "재화등의 배송방법에 관한 정보",
+    "value": "택배",
+    "is_see_description": false
+   },
+   {
+    "label": "주문 이후 예상되는 배송기간",
+    "value": "대금 지급일로부터 3일 이내에 발송",
+    "is_see_description": false
+   },
+   {
+    "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+    "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+    "is_see_description": false
+   },
+   {
+    "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+    "value": "편도 11000원 (최초 배송비 무료인 경우 22000원 부과)",
+    "is_see_description": false
+   },
+   {
+    "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+    "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+    "is_see_description": false
+   },
+   {
+    "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+    "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+    "is_see_description": false
+   },
+   {
+    "label": "재화등의 A/S 관련 전화번호",
+    "value": null,
+    "is_see_description": false
+   },
+   {
+    "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+    "value": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+    "is_see_description": false
+   },
+   {
+    "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+    "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+    "is_see_description": false
+   },
+   {
+    "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+    "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+    "is_see_description": false
+   }
+  ]
+ },
+ "facts": {
+  "brand": {
+   "value": "PRGR",
+   "source": "search_info.brandName"
+  },
+  "manufacturer": {
+   "value": "PRGR",
+   "source": "search_info.manufacturerName"
+  },
+  "model_name": null,
+  "origin": {
+   "value": "일본산(PRGR)",
+   "source": "notice:제조국"
+  }
+ },
+ "store": {
+  "id": "100342675",
+  "uid": "2sWDxeQR7f8dQR0hTePbY",
+  "name": "애드파골프",
+  "slug": "adpargolf",
+  "link": "https://smartstore.naver.com/adpargolf",
+  "type": "smart_store",
+  "grade": "FIRST",
+  "sale_count": 235,
+  "merchant_id": "510318837",
+  "business": {
+   "legal_name": "애드파골프(주)",
+   "representative": "박재근",
+   "type": "CORPORATION",
+   "is_business": true,
+   "is_overseas": false,
+   "phone": null,
+   "email": null,
+   "address": null
+  }
+ }
+}

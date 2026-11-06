@@ -6,6 +6,10 @@
  "held": [],
  "notes": [
   {
+   "code": "gift_hidden",
+   "detail": "캘러웨이아이스백,볼빅비비드우드티,파우치,테일러메이드볼,오디세이디봇툴,볼빅마블모자(소진시대체품)"
+  },
+  {
    "code": "description_mentions_gifts",
    "detail": "사은품, 증정"
   },
@@ -104,7 +108,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    }
   ],
   "pricing": {
@@ -206,6 +211,7 @@
     "seller_average_days": 1.3333334,
     "product_average_days": null,
     "today_cutoff": "15:00",
+    "today_off": false,
     "arrival_days": 2,
     "arrival_date_text": null,
     "arrival_probability": 100,

@@ -3,6 +3,26 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
+## Unreleased
+
+- /products/specs, /products/page: when the card is not on the search page for the product's name (and no query was
+  given), a second search with the name's first 5 words (13425122164).
+- /products/specs delivery.lead_time: new `today_off` ("오늘출발 휴무"); `today_cutoff` is no longer filled from
+  thisDayDispatchBasisTime on such a day (6540695739, 13553116678, 10816781893, 13302492097, 10816904599).
+  `arrival_date_text` also read from the 네이버 배송 / 내일배송 "11.11.(수) 도착" line (13369469193).
+- Description cleanup from the pilot 20: KRW price promos, cross-sell lines, whole contact sentences (만큼 / -면
+  continuation) and contact closings, the store name without a 구매대행 prefix, junk-only text (None, note
+  `description_junk`). Banner images: 톡톡 / 하단_상페 / 하단고정배너 names, Hangul typed on a QWERTY keyboard, and, with the
+  description HTML, link banners (TalkTalk, Band, blog, Instagram, YouTube, Kakao, store pages) and spacer strips (new
+  `clean_images(images, html)` argument, rules `link_banner`, `spacer`).
+- transform: spec rows vs variants add the driver loft (드라이버 로프트각 vs 9도 / 9.5 SR values: dropped or bound like the
+  shaft material), the description sentence "플렉스 R 모델의 아이언에는 카본 샤프트" as a material binding, and title/row number words
+  with units (11.5 = 11.5도, 유틸4 / 4U = 4번 of a 유틸리티 axis, 5W) and the bag (+골프백 vs "캐디백 미포함" values). Pilot
+  2026-11-06: 10816781893, 10816904599, 11635855564, 13369469193, 13413924099, 13553116678, 7166885441.
+- Transform: per-variant `today_dispatch`; value tags ("[당일출고]") and "(선택)" on option names left out; the cap
+  shared out in turn over the first axis; notes `few_pieces` from 총클럽개수, `gift_hidden`.
+- Regression fixtures: 12 more saved pages from the pilot (31 in all).
+
 ## 0.7.0 (2026-11-06)
 
 - **Transform** (`scripts/transform.py`, `transform_shops.py`, `run_transform.py`, `keep_run.py`): kept collection

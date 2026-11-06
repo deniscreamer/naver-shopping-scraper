@@ -1,0 +1,829 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:101921971:8958060680",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "shipping_paid",
+   "detail": "UNIT_QUANTITY_PAID 99900 KRW"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "EXCLUDED"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/happymarojp/products/8958060680",
+  "channel_no": "101921971",
+  "product_id": "8958060680",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "브리지스톤 BG-100 BG100 남성용 골프채 풀세트 11개 캐디백 포함 화이트",
+  "brand_ko": "브리지스톤",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "브리지스톤 BG100 화이트 풀세트 캐디백포함",
+    "values_ko": [
+     "스틸 샤프트 (S) SPEC",
+     "카본 샤프트 (R) SPEC"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"[당일출고] 스틸 샤프트 (S) SPEC\"]",
+    "naver_variant_id": "60244689201",
+    "options_ko": [
+     "스틸 샤프트 (S) SPEC"
+    ],
+    "price_krw": 674700,
+    "price_usd": "674.70",
+    "sku": "FW-f9650f7965b268b4b69fe9d5",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"[당일출고] 카본 샤프트 (R) SPEC\"]",
+    "naver_variant_id": "60244689202",
+    "options_ko": [
+     "카본 샤프트 (R) SPEC"
+    ],
+    "price_krw": 674700,
+    "price_usd": "674.70",
+    "sku": "FW-4eab248fc609ddc8ab72e4f5",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": false
+   }
+  ],
+  "pricing": {
+   "base_krw": 674700,
+   "original_krw": 865000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "브리지스톤"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "브리지스톤"
+   },
+   {
+    "label_ko": "유틸리티/하이브리드 로프트각",
+    "value_ko": "24도"
+   },
+   {
+    "label_ko": "페어웨이 로프트각",
+    "value_ko": "19도"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "9.5도, 10.5도"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "11개"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2022년형"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "드라이버, 7아이언세트, 페어웨이, 유틸리티, 퍼터"
+   },
+   {
+    "label_ko": "아이언개수",
+    "value_ko": "7개"
+   },
+   {
+    "label_ko": "퍼터형태",
+    "value_ko": "블레이드(일자형)"
+   },
+   {
+    "label_ko": "골프백포함여부",
+    "value_ko": "캐디백"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.83,
+   "count": 98
+  },
+  "reviews": [
+   {
+    "id": "4689828065",
+    "score": 5,
+    "text_ko": "여태 빌려쓰고 물려 받아 사용하고 있었는데  내몸에 맞지 않은 옷이랄까 무겁고 어렵게 쓰고 있는중에 새로 장만한 골프채 딱입니다. 구성도 좋고 3번정도 쳤는데 잘맞고 좋습니다. 캐디백도 퀄리티 있게 잘 만들었네요.",
+    "created_at": "2025-03-26T10:45:31Z",
+    "writer": "hoon****",
+    "photos": [
+     "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-image-6558a988426a8238.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-avatar-59cb9fc3ccd9e930.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "4637672307",
+    "score": 5,
+    "text_ko": "사진하고 똑같아요 넘 이뻐요~ 판매자님이 도착할때쯤 연락도 주시고 친절하세요~ 첫 골프를 시작하면서 사게됐는데 이 가격에 정말 만족스럽습니다. 배송은 2주정도 걸렸고 관세와 부가세 총 146,670원 나왔어요~",
+    "created_at": "2025-01-08T00:26:42Z",
+    "writer": "tjwn*****",
+    "photos": [
+     "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-image-5058ba69357207f0.webp",
+     "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-image-2560001f9407ed6a.webp",
+     "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-image-000c8c6b06d1f37c.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-avatar-4f471e0bd6efa8d4.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "4583355686",
+    "score": 5,
+    "text_ko": "남편 사줬는데 확실히 이걸로 치니 잘 쳐진대요~~ 잡아보지 못하고 사서 걱정했는데 쳐보니 잘 맞는다고 하더라구요~~ 비거리도 늘고 잘맞아서 좋아해요~~~",
+    "created_at": "2024-10-23T04:05:45Z",
+    "writer": "mjcu****",
+    "photos": [
+     "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-image-c526253e7addd5c2.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-avatar-9e28edc308981b06.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "4577372089",
+    "score": 5,
+    "text_ko": "이렇게 싼값에 풀세트라니 감사합니다\n벌써 하나 해먹었지만 채가 정타맞추니 찹쌀떡 싸대기 때리는 소리가 나요 좋습니다 ㅎㅎ",
+    "created_at": "2024-10-14T23:43:45Z",
+    "writer": "gdh0***",
+    "photos": [
+     "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-image-25ee4a9678f322db.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-avatar-324bade17661d742.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "4577118314",
+    "score": 5,
+    "text_ko": "남편이 갖고 싶어해서 주문했는데 판매자분이 궁금한거 대답도 잘 해주시고 친절하셔서 맘에 들었어요~~~ 제품도 상세설명과 같아요 잘쓰겠습니다!!",
+    "created_at": "2024-10-14T09:25:34Z",
+    "writer": "mjcu****",
+    "photos": [
+     "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-image-0fb7173074ef6ff7.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-avatar-9e28edc308981b06.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "4555637577",
+    "score": 5,
+    "text_ko": "관세는 17만원가량 나왔구요 배송은 해외직구인데 빨리왔어요 이가격이라면 캘러웨이보다 싼데 구성은 더 마음에 드네요 톡톡 응답도 빠르시구요. 친절하십니다\n감사합니다 이걸로 싱글까지 가겠습니다~ 번창하세요",
+    "created_at": "2024-09-10T07:11:11Z",
+    "writer": "gdh0***",
+    "photos": [
+     "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-image-a42cf063245ae46b.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-avatar-324bade17661d742.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "4524944491",
+    "score": 5,
+    "text_ko": "배송이 너무 늦어서 매우 황당했는데요.\n담당자분이 친절하게 대응해 주시고 늦은 점 진심으로 사과 전화까지 주셔서 고맙게 생각합니다.",
+    "created_at": "2024-07-25T09:03:20Z",
+    "writer": "in****",
+    "photos": [
+     "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-image-7e28531dec04639f.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-avatar-774526b3a088917f.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "4484023834",
+    "score": 5,
+    "text_ko": "스크린과 필드에서 사용하려고 구매했는데 일단 가성비로는 최고입니다. 거리나는거 보면 초중급분들이 사용하기 좋을듯 합니다~!",
+    "created_at": "2024-05-21T03:16:41Z",
+    "writer": "east******",
+    "photos": [
+     "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-image-fa2221b88f41f7ed.webp",
+     "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-image-1c2323266666315c.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-avatar-fdf8906f6caf0f45.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "4436713176",
+    "score": 5,
+    "text_ko": "가격이 저렴하고 무엇보다 포장이 꼼꼼해요. \n골프채 움직이지 않게 타이로 묶었어요. \n개인적으로 골프백 디자인도 좋습니다.\n감사합니다.",
+    "created_at": "2024-03-04T11:07:14Z",
+    "writer": "gold*********",
+    "photos": [
+     "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-image-21d2d59d642ca297.webp",
+     "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-image-53479f688a59dcd9.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-avatar-c4e09bc5f38a8ad6.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "4934446097",
+    "score": 5,
+    "text_ko": "배송이 생각보다 일찍 왔어요~ 세관부과세는 별도이니 잘 읽어보고 구매하시는게 좋아요 못봤다가 세금 낼려고 하니 뒤늦게 쓰렸네요^^;;\n남편 사줬는데 우선 맘에 들어 했어요~~ 처보니 좋다고 하네요~ 제품은 좋습니다",
+    "created_at": "2026-03-20T03:06:08Z",
+    "writer": "zipi***",
+    "photos": [
+     "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-image-1edca9947715a9a8.webp",
+     "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-image-4f19df9d6e0cf1c5.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "4458039202",
+    "score": 5,
+    "text_ko": "가격이 깡패이고 레슨프로님이 추천해줘서 샀네요. 배송빠르고 구성 알차서 저처럼 처음 입문하는분들이 좋아여. 잘쓸께요.",
+    "created_at": "2024-04-08T01:25:29Z",
+    "writer": "kyoz******",
+    "photos": [
+     "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-image-bf1e6201ce9e9cf1.webp",
+     "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-image-d7f4b8886052e3f8.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "4339280774",
+    "score": 5,
+    "text_ko": "상품 잘 받았어요. 배송이 빠르고, 궁금한점 문의했을때 판매자분께서 친절하게 답변도 잘 해주시고 신경도 많이 써 주셨어요. 골프 시작하는 남편에게 선물 하려고 샀어요. 저도 나중에 클럽 바꿀때 또 이용할께요.",
+    "created_at": "2023-09-25T01:34:09Z",
+    "writer": "surp****",
+    "photos": [
+     "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-image-ecc0d875c39dd982.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "4527422994",
+    "score": 5,
+    "text_ko": "이쁘고 배송기간도 괜찮았고 만족합니다\n관세비용이 있어서 생각했던것보다 조금 오버됐는데 그내용이 잘 적혀있으면 도움될것같아요",
+    "created_at": "2024-07-30T02:18:24Z",
+    "writer": "z0****",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/8958060680/fairwardgolf-review-avatar-055f17fb5df4b8e0.webp",
+    "tier": "text"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/8958060680/fairwardgolf-8958060680-001-1c44937792baac82.webp",
+    "sha256": "1c44937792baac82b6d029c1e7b90c64dcb6a1e986e92a930cdad0d8dd9829ef",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/8958060680/fairwardgolf-8958060680-002-0f2d2196ac37ace0.webp",
+    "sha256": "0f2d2196ac37ace00cfbf5d405b9363c3c67d832fdaa8ae412bb243b804b5161",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/8958060680/fairwardgolf-8958060680-003-b13ef5c1c4920897.webp",
+    "sha256": "b13ef5c1c49208977c5f3493c89959f9bc4a0177007496943e7bd8e99219dfd9",
+    "width": 1200,
+    "height": 1200
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/8958060680/fairwardgolf-8958060680-004-fc3af57785b0507f.webp",
+    "sha256": "fc3af57785b0507fa9a4a5009bf92959648adf9bc1d1fcd335c2663bf4cf36d2",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/8958060680/fairwardgolf-8958060680-005-374276cbcbcc75c1.webp",
+    "sha256": "374276cbcbcc75c161b26b531fad4d44681fc91c200cc5330aa3877e3011d489",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/8958060680/fairwardgolf-8958060680-006-ace6349236142e73.webp",
+    "sha256": "ace6349236142e73efc610119c9de5fe91027e6f097fdca9e2252930a6bb8a65",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/8958060680/fairwardgolf-8958060680-007-82a5a1da24d8f880.webp",
+    "sha256": "82a5a1da24d8f8801955e63ae1adf374f28e67fce78bd580f3d4d0c7f18380ce",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/8958060680/fairwardgolf-8958060680-008-8a87eec6a9188858.webp",
+    "sha256": "8a87eec6a91888589fd400e1dafb6164f39d2f7c6fba769fca9bbe09d27ec646",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/8958060680/fairwardgolf-8958060680-009-6be4bdbcacfb1bd1.webp",
+    "sha256": "6be4bdbcacfb1bd1a9138459d1748a03887de9ca41ede1bb613b68a4be34786b",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/8958060680/fairwardgolf-8958060680-010-19fcdbc3c616ec8a.webp",
+    "sha256": "19fcdbc3c616ec8aacd5c945ea29b096cebd3c9792799ce0c66bc877fa274480",
+    "width": 750,
+    "height": 750
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "UNIT_QUANTITY_PAID",
+   "base_fee": 99900,
+   "is_overseas": true,
+   "customs_tax_type": "EXCLUDED",
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": null,
+   "policy_text": "1개마다 부과 / 제주,도서지역 추가 4,000원",
+   "lead_time": {
+    "seller_average_days": 3.6365461,
+    "product_average_days": null,
+    "today_cutoff": "12:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "BRIDGESTONE GOLF는\n브리지스톤 그룹의 기술력과 품질 철학을 바탕으로\n전개되는 골프 브랜드입니다.\n골프 클럽과 골프볼을 비롯한\n다양한 골프용품을 선보이고 있으며,\n2014년부터 일본을 비롯한 글로벌 시장에서\n본격적으로 브랜드를 전개해 왔습니다.\n브리지스톤은 골퍼 한 사람 한 사람에게 맞는\n상품을 기획·개발하며,\n품질과 신뢰를 중요하게 생각합니다.\n\n📢일본 현지 정식 유통 정품만 판매합니다.\n중국 등에서 유통되는\nOEM 표기 골프채는\n공식 유통 제품과 구성 및\n유통 경로가 다를 수 있습니다.\n구매 전 정품 여부와\nA/S 가능 여부를 반드시 확인해 주세요.\n골프채 풀세트는 본래\n클럽과 캐디백이 함께 구성된 세트 상품입니다.\n클럽만 따로 판매하거나\n캐디백과 분리해 판매하는 경우\n정식 세트 상품인지, 유통 경로가 명확한지\n확인해 주세요.\n\n⛳블랙 컬러 모델은 2026년 9월에 출시되었습니다.\n\n브리지스톤 BG-100\n남성용 골프채 풀세트 11개 화이트\n헤드커버 / 캐디백 포함\n2022년 모델 / 아시아스펙\n\n2022년 출시 이후 꾸준히 사랑받아온\n일본 브리지스톤 BG-100 골프 풀세트\n고민하셨던 그 상품, 지금 더 좋은 가격으로!\n믿을 수 있는 브리지스톤의 골프 풀세트를\n놓치기 아쉬운 가격으로 만나보세요.\n\n처음 시작하는 분이나\n오랜만에 골프를 다시 시작하는 분께 추천하는\n사용하기 편한 11개 클럽 세트입니다.\n\n구성\n\n가볍고 스윙하기 쉬운 드라이버\n\n가볍고 미스샷에도 강해 편하게\n비거리를 낼 수 있도록 설계되었습니다.\nS : 297g / R : 294g\n타점이 일정하지 않은 경우를 고려한\n부분별 두께 설계를 적용했습니다.\n\n세컨드 샷을 쉽게 할 수 있는 유틸리티\n\n롱아이언으로 공략하는 거리에서도\n편하게 사용할 수 있는\n4번 유틸리티가 포함되어 있습니다.\n\n어프로치를 쉽게 해주는 3개의 웨지\n상황에 따라 구분해서 사용하기 쉬운 웨지 구성입니다.\n9번 아이언 38° / PW 44° / AW 50° / SW 56°\n※ 각 클럽 간 로프트 각도 차이 6°\n\n페어웨이 우드\n\n아이언\n\n퍼터\n\n샤프트\n\n헤드커버\n\n※ 드라이버(1W), 페어웨이우드(5W),\n유틸리티(U4), 퍼터에는 헤드커버가 포함됩니다.\n\n캐디백\n\n사이즈 : 9형 / 47인치 대응\n무게 : 약 3.8kg\n소재 : 합성피혁\n\nSPEC\n\n모델\nBRIDGESTONE GOLF BG-100\n헤드 소재\n드라이버: 페이스 / 6AL-4V 티타늄 합금, 크라운 / 341 티타늄 합금, 솔 / 순티타늄, 호젤 / 3AL-2V 티타늄 합금\n페어웨이우드·유틸리티: 바디 / SUS630 스테인리스, 크라운 / SUS430 스테인리스\n아이언: SUS630 스테인리스\n퍼터: SUS431 스테인리스\n헤드 제조 방식\n드라이버: 프레스 가공\n페어웨이우드·유틸리티·아이언·퍼터: 로스트왁스 정밀주조\n\n구분\n1W\n5W\nU4\n퍼터\n로프트각(°)\nR: 10.5 / S: 9.5\n19\n24\n3\n라이각(°)\n60\n59.5\n60.5\n70\n길이(인치)\n45.25\n42.5\n39.5\n34\n클럽 무게(g)\nR: 294 / S: 297\nR: 317 / S: 320\nR: 351 / S: 353\n528\n\n구분\n#6\n#7\n#8\n#9\nPW\nAW\nSW\n로프트각(°)\n25\n28\n33\n38\n44\n50\n56\n라이각(°)\n61.5\n62\n62.5\n63\n63.5\n63.5\n63.5\n길이(인치) R\n38\n37.5\n37\n36.5\n36\n35.75\n35.5\n길이(인치) S\n37.75\n37.25\n36.75\n36.25\n35.75\n35.5\n35.25\n#7 클럽 무게(g)\nR: 375 / S: 410\n\n구분\nR 세트 (아이언 카본)\nS 세트 (아이언 스틸)\n샤프트\n1W·5W: Diamana for BG-100w 카본\nU4: Diamana for BG-100u 카본\n아이언: Diamana for BG-100i 카본\n퍼터: BSG 오리지널 스틸\n1W·5W: Diamana for BG-100w 카본\nU4: Diamana for BG-100u 카본\n아이언: N.S.PRO 955GH 스틸\n퍼터: BSG 오리지널 스틸\n샤프트 강도\nR\nS\n밸런스\n1W·5W·U4: D1\n#6~9·PW: D0\nAW: D1\nSW: D2\n1W·5W·U4: D1\n#6~9·PW: D1\nAW: D2\nSW: D3\n출시\n2022년 4월\n\n※ 드라이버(1W), 페어웨이우드(5W), 유틸리티(U4), 퍼터에는 헤드커버가 포함됩니다.\n※ 네임 플레이트는 수기 작성 타입입니다.\n※ 후드는 지퍼 포켓 내부에 수납되어 있습니다.\n※ 클럽 스펙 및 사양은 설계값이며, 실제 측정값과 다소 차이가 있을 수 있습니다.",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20230729_174/1690619005771VIIj4_PNG/Logo-bridgestone.png?type=w848",
+   "https://shop-phinf.pstatic.net/20261002_131/1790917308318uRbqe_PNG/BG100_%EC%8D%B8%EB%84%A4%EC%9D%BC.png?type=w848",
+   "https://image.rakuten.co.jp/arigaen/cabinet/images/shohin62/22bsg_bg100_sp1.jpg",
+   "https://image.rakuten.co.jp/arigaen/cabinet/images/shohin62/22bsg_bg100_sp3.jpg",
+   "https://image.rakuten.co.jp/arigaen/cabinet/images/shohin62/22bsg_bg100_sp5.jpg",
+   "https://image.rakuten.co.jp/arigaen/cabinet/images/shohin62/22bsg_bg100_sp2.jpg",
+   "https://image.rakuten.co.jp/arigaen/cabinet/images/shohin62/22bsg_bg100_sp4.jpg",
+   "https://image.rakuten.co.jp/arigaen/cabinet/images/shohin62/22bsg_bg100_sp6.jpg",
+   "https://image.rakuten.co.jp/arigaen/cabinet/images/shohin62/22bsg_bg100_sp8.jpg",
+   "https://shop-phinf.pstatic.net/20261002_288/1790920417157EpSHO_PNG/%E3%85%8A%E3%85%8D%E3%85%8A.png?type=w848",
+   "https://image.rakuten.co.jp/arigaen/cabinet/images/shohin62/22bsg_bg100_sp9.jpg",
+   "https://image.rakuten.co.jp/arigaen/cabinet/images/shohin62/22bsg_bg100_sp7.jpg",
+   "https://shop-phinf.pstatic.net/20230729_31/1690619052470O5aF0_JPEG/301980247698-01_9.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "store_name",
+    "text": "해피마로는 일본 현지에서\n정식 유통되는 제품만 취급하며,\n일본 내 공식 A/S 대상인 정품만 판매합니다."
+   },
+   {
+    "rule": "contact",
+    "text": "고가의 해외구매대행 상품인 만큼\n궁금한 점이 있으시면\n네이버 톡톡으로 문의해 주세요."
+   },
+   {
+    "rule": "cross_sell",
+    "text": "해당 상품은 아래 링크에서 구매하실 수 있습니다."
+   },
+   {
+    "rule": "price_krw",
+    "text": "무려 190,300원 할인!"
+   },
+   {
+    "rule": "price_krw",
+    "text": "정상가 865,000원"
+   },
+   {
+    "rule": "price_krw",
+    "text": "할인가 674,700원"
+   },
+   {
+    "rule": "price_krw",
+    "text": "정상가 대비 22% 할인 혜택"
+   },
+   {
+    "rule": "contact",
+    "text": "궁금하신 내용을 편하게 여쭤봐주세요!"
+   },
+   {
+    "rule": "contact",
+    "text": "언제나 빠르고 친절하게 답변드리겠습니다!"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20230831_153/1693414160246z47jc_JPEG/230826_happy_maro_%EB%84%A4%EC%9D%B4%EB%B2%84%ED%86%A1%ED%86%A1_%EB%B3%B5%EC%82%AC.jpg?type=w848"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20230831_277/1693485533723aKHdA_JPEG/230826_happy_maro_%EB%B0%B0%EC%86%A1_%EC%A0%88%EC%B0%A8_%EB%B3%B5%EC%82%AC.jpg?type=w848"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20240410_175/1712687943404aexpk_JPEG/230826_happy_maro_%ED%95%98%EB%8B%A8_%EC%83%81%ED%8E%98_%EB%B3%B5%EC%82%AC.jpg?type=w848"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:e9fdce4e89dcc681",
+   "kind": "title",
+   "ko": "브리지스톤 BG-100 BG100 남성용 골프채 풀세트 11개 캐디백 포함 화이트"
+  },
+  {
+   "id": "brand:0c694ec4f85b0c79",
+   "kind": "brand",
+   "ko": "브리지스톤"
+  },
+  {
+   "id": "option_name:269e88d1c32fb937",
+   "kind": "option_name",
+   "ko": "브리지스톤 BG100 화이트 풀세트 캐디백포함"
+  },
+  {
+   "id": "option_value:296fd22ba9697059",
+   "kind": "option_value",
+   "ko": "스틸 샤프트 (S) SPEC"
+  },
+  {
+   "id": "option_value:429b0060f3bc5326",
+   "kind": "option_value",
+   "ko": "카본 샤프트 (R) SPEC"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:0c694ec4f85b0c79",
+   "kind": "spec_value",
+   "ko": "브리지스톤"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:1c0460d0d6673223",
+   "kind": "spec_label",
+   "ko": "유틸리티/하이브리드 로프트각"
+  },
+  {
+   "id": "spec_value:12057cd61703532d",
+   "kind": "spec_value",
+   "ko": "24도"
+  },
+  {
+   "id": "spec_label:ecef087ddd17d2b5",
+   "kind": "spec_label",
+   "ko": "페어웨이 로프트각"
+  },
+  {
+   "id": "spec_value:2b0f68ffbb4a6fab",
+   "kind": "spec_value",
+   "ko": "19도"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:219c558824edff74",
+   "kind": "spec_value",
+   "ko": "9.5도, 10.5도"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:0c16b230164df2c9",
+   "kind": "spec_value",
+   "ko": "#7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:5b1bc698007c9da7",
+   "kind": "spec_value",
+   "ko": "11개"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:1bb71fabcfb2e7d7",
+   "kind": "spec_value",
+   "ko": "2022년형"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:29eb38b193dfdc0c",
+   "kind": "spec_value",
+   "ko": "드라이버, 7아이언세트, 페어웨이, 유틸리티, 퍼터"
+  },
+  {
+   "id": "spec_label:cf77915a2f3ab5d8",
+   "kind": "spec_label",
+   "ko": "아이언개수"
+  },
+  {
+   "id": "spec_value:0c5a3886c288bcd6",
+   "kind": "spec_value",
+   "ko": "7개"
+  },
+  {
+   "id": "spec_label:04c52e5b47f70047",
+   "kind": "spec_label",
+   "ko": "퍼터형태"
+  },
+  {
+   "id": "spec_value:db08874d4cf56690",
+   "kind": "spec_value",
+   "ko": "블레이드(일자형)"
+  },
+  {
+   "id": "spec_label:e4aabb2e41b870bd",
+   "kind": "spec_label",
+   "ko": "골프백포함여부"
+  },
+  {
+   "id": "spec_value:00e36a3d18b6bbee",
+   "kind": "spec_value",
+   "ko": "캐디백"
+  },
+  {
+   "id": "review:9f69c649aebce20b",
+   "kind": "review",
+   "ko": "여태 빌려쓰고 물려 받아 사용하고 있었는데  내몸에 맞지 않은 옷이랄까 무겁고 어렵게 쓰고 있는중에 새로 장만한 골프채 딱입니다. 구성도 좋고 3번정도 쳤는데 잘맞고 좋습니다. 캐디백도 퀄리티 있게 잘 만들었네요."
+  },
+  {
+   "id": "review:348462a684637edb",
+   "kind": "review",
+   "ko": "사진하고 똑같아요 넘 이뻐요~ 판매자님이 도착할때쯤 연락도 주시고 친절하세요~ 첫 골프를 시작하면서 사게됐는데 이 가격에 정말 만족스럽습니다. 배송은 2주정도 걸렸고 관세와 부가세 총 146,670원 나왔어요~"
+  },
+  {
+   "id": "review:9aceb940231c3929",
+   "kind": "review",
+   "ko": "남편 사줬는데 확실히 이걸로 치니 잘 쳐진대요~~ 잡아보지 못하고 사서 걱정했는데 쳐보니 잘 맞는다고 하더라구요~~ 비거리도 늘고 잘맞아서 좋아해요~~~"
+  },
+  {
+   "id": "review:0c09416862222568",
+   "kind": "review",
+   "ko": "이렇게 싼값에 풀세트라니 감사합니다\n벌써 하나 해먹었지만 채가 정타맞추니 찹쌀떡 싸대기 때리는 소리가 나요 좋습니다 ㅎㅎ"
+  },
+  {
+   "id": "review:08342b800f3d1392",
+   "kind": "review",
+   "ko": "남편이 갖고 싶어해서 주문했는데 판매자분이 궁금한거 대답도 잘 해주시고 친절하셔서 맘에 들었어요~~~ 제품도 상세설명과 같아요 잘쓰겠습니다!!"
+  },
+  {
+   "id": "review:b76ee370c7961efa",
+   "kind": "review",
+   "ko": "관세는 17만원가량 나왔구요 배송은 해외직구인데 빨리왔어요 이가격이라면 캘러웨이보다 싼데 구성은 더 마음에 드네요 톡톡 응답도 빠르시구요. 친절하십니다\n감사합니다 이걸로 싱글까지 가겠습니다~ 번창하세요"
+  },
+  {
+   "id": "review:f1e5baee0dd867c0",
+   "kind": "review",
+   "ko": "배송이 너무 늦어서 매우 황당했는데요.\n담당자분이 친절하게 대응해 주시고 늦은 점 진심으로 사과 전화까지 주셔서 고맙게 생각합니다."
+  },
+  {
+   "id": "review:2a132ef4262cd1d3",
+   "kind": "review",
+   "ko": "스크린과 필드에서 사용하려고 구매했는데 일단 가성비로는 최고입니다. 거리나는거 보면 초중급분들이 사용하기 좋을듯 합니다~!"
+  },
+  {
+   "id": "review:e391e79c4964d6d7",
+   "kind": "review",
+   "ko": "가격이 저렴하고 무엇보다 포장이 꼼꼼해요. \n골프채 움직이지 않게 타이로 묶었어요. \n개인적으로 골프백 디자인도 좋습니다.\n감사합니다."
+  },
+  {
+   "id": "review:6d99b83c0f8aacdd",
+   "kind": "review",
+   "ko": "배송이 생각보다 일찍 왔어요~ 세관부과세는 별도이니 잘 읽어보고 구매하시는게 좋아요 못봤다가 세금 낼려고 하니 뒤늦게 쓰렸네요^^;;\n남편 사줬는데 우선 맘에 들어 했어요~~ 처보니 좋다고 하네요~ 제품은 좋습니다"
+  },
+  {
+   "id": "review:85d0e5d275215a48",
+   "kind": "review",
+   "ko": "가격이 깡패이고 레슨프로님이 추천해줘서 샀네요. 배송빠르고 구성 알차서 저처럼 처음 입문하는분들이 좋아여. 잘쓸께요."
+  },
+  {
+   "id": "review:86b107f6b5b21e5d",
+   "kind": "review",
+   "ko": "상품 잘 받았어요. 배송이 빠르고, 궁금한점 문의했을때 판매자분께서 친절하게 답변도 잘 해주시고 신경도 많이 써 주셨어요. 골프 시작하는 남편에게 선물 하려고 샀어요. 저도 나중에 클럽 바꿀때 또 이용할께요."
+  },
+  {
+   "id": "review:4ee5841dc1f86b4f",
+   "kind": "review",
+   "ko": "이쁘고 배송기간도 괜찮았고 만족합니다\n관세비용이 있어서 생각했던것보다 조금 오버됐는데 그내용이 잘 적혀있으면 도움될것같아요"
+  }
+ ]
+}

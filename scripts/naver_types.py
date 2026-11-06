@@ -189,6 +189,7 @@ class DeliveryLeadTime(TypedDict):
     seller_average_days: float | None     # the store's average days to deliver
     product_average_days: float | None    # this product's (null until Naver has one)
     today_cutoff: str | None              # "16:00": ordered before it, sent today (오늘출발)
+    today_off: bool | None                # "오늘출발 휴무": no dispatch today (today_cutoff null); null: no box read
     arrival_days: int | None              # "평균 2일 이내 도착 확률 96%" -> 2, 96
     arrival_date_text: str | None         # "11.11.(수) 도착 확률 98%" -> "11.11.(수)", 98
     arrival_probability: int | None

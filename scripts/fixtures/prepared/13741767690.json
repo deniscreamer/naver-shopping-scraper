@@ -1,0 +1,2830 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:101776803:13741767690",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "gift_hidden",
+   "detail": "마루망 2W 퍼터 사은품 증정!!!"
+  },
+  {
+   "code": "description_junk",
+   "detail": "o"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/cs_sports/products/13741767690",
+  "channel_no": "101776803",
+  "product_id": "13741767690",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "[오늘출고] 테일러메이드 풀세트 여성 Qi4D MAX LITE 10pcs 테일러메이드코리아",
+  "brand_ko": "테일러메이드",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "womens-complete-sets",
+    "product_type": "Women’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:womens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "Qi4D MAX LITE 여성 드라이버",
+    "values_ko": [
+     "12도 REAX 40(L)",
+     "12도 REAX 40(A)",
+     "10.5도 REAX 40(L)",
+     "10.5도 REAX 40(A)"
+    ]
+   },
+   {
+    "name_ko": "Qi4D MAX LITE 여성 유틸리티",
+    "values_ko": [
+     "4번23도 REAX40 (L)",
+     "4번23도 REAX 40(A)",
+     "5번26도 REAX 40(L)",
+     "5번26도 REAX 40(A)"
+    ]
+   },
+   {
+    "name_ko": "Qi MAX 여성 아이언",
+    "values_ko": [
+     "7개구성 REAX 40 카본(L)",
+     "7개구성 REAX 40 카본(A)"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"12도 REAX 40(L)\",\"4번23도 REAX40 (L)\",\"7개구성 REAX 40 카본(L)\"]",
+    "naver_variant_id": "59887006372",
+    "options_ko": [
+     "12도 REAX 40(L)",
+     "4번23도 REAX40 (L)",
+     "7개구성 REAX 40 카본(L)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-9b73052f8bf161665595d2d5",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"12도 REAX 40(L)\",\"4번23도 REAX40 (L)\",\"7개구성 REAX 40 카본(A)\"]",
+    "naver_variant_id": "59887006374",
+    "options_ko": [
+     "12도 REAX 40(L)",
+     "4번23도 REAX40 (L)",
+     "7개구성 REAX 40 카본(A)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-e28e9f6c5a88231bd4e82023",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"12도 REAX 40(L)\",\"4번23도 REAX 40(A)\",\"7개구성 REAX 40 카본(L)\"]",
+    "naver_variant_id": "59887006375",
+    "options_ko": [
+     "12도 REAX 40(L)",
+     "4번23도 REAX 40(A)",
+     "7개구성 REAX 40 카본(L)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-3ed6c4c81e3a147684623e0e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"12도 REAX 40(L)\",\"4번23도 REAX 40(A)\",\"7개구성 REAX 40 카본(A)\"]",
+    "naver_variant_id": "59887006377",
+    "options_ko": [
+     "12도 REAX 40(L)",
+     "4번23도 REAX 40(A)",
+     "7개구성 REAX 40 카본(A)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-623a971463a58b1665ba4993",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"12도 REAX 40(L)\",\"5번26도 REAX 40(L)\",\"7개구성 REAX 40 카본(L)\"]",
+    "naver_variant_id": "59887006379",
+    "options_ko": [
+     "12도 REAX 40(L)",
+     "5번26도 REAX 40(L)",
+     "7개구성 REAX 40 카본(L)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-3848b3a9d8825e6cc66349bb",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"12도 REAX 40(L)\",\"5번26도 REAX 40(L)\",\"7개구성 REAX 40 카본(A)\"]",
+    "naver_variant_id": "59887006381",
+    "options_ko": [
+     "12도 REAX 40(L)",
+     "5번26도 REAX 40(L)",
+     "7개구성 REAX 40 카본(A)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-7ca822effdac5921ef4b6cd8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"12도 REAX 40(L)\",\"5번26도 REAX 40(A)\",\"7개구성 REAX 40 카본(L)\"]",
+    "naver_variant_id": "59887006383",
+    "options_ko": [
+     "12도 REAX 40(L)",
+     "5번26도 REAX 40(A)",
+     "7개구성 REAX 40 카본(L)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-6fdea059eeb1d9f3c5637dfc",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"12도 REAX 40(L)\",\"5번26도 REAX 40(A)\",\"7개구성 REAX 40 카본(A)\"]",
+    "naver_variant_id": "59887006385",
+    "options_ko": [
+     "12도 REAX 40(L)",
+     "5번26도 REAX 40(A)",
+     "7개구성 REAX 40 카본(A)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-75fa27253777aa3840719cac",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"12도 REAX 40(A)\",\"4번23도 REAX40 (L)\",\"7개구성 REAX 40 카본(L)\"]",
+    "naver_variant_id": "59887006387",
+    "options_ko": [
+     "12도 REAX 40(A)",
+     "4번23도 REAX40 (L)",
+     "7개구성 REAX 40 카본(L)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-7159cd55388c88d8b5ff7cfb",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"12도 REAX 40(A)\",\"4번23도 REAX40 (L)\",\"7개구성 REAX 40 카본(A)\"]",
+    "naver_variant_id": "59887006389",
+    "options_ko": [
+     "12도 REAX 40(A)",
+     "4번23도 REAX40 (L)",
+     "7개구성 REAX 40 카본(A)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-69db57cc2a03c2f47b446907",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"12도 REAX 40(A)\",\"4번23도 REAX 40(A)\",\"7개구성 REAX 40 카본(L)\"]",
+    "naver_variant_id": "59887006391",
+    "options_ko": [
+     "12도 REAX 40(A)",
+     "4번23도 REAX 40(A)",
+     "7개구성 REAX 40 카본(L)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-902c94c9d32793aa96347c6b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"12도 REAX 40(A)\",\"4번23도 REAX 40(A)\",\"7개구성 REAX 40 카본(A)\"]",
+    "naver_variant_id": "59887006392",
+    "options_ko": [
+     "12도 REAX 40(A)",
+     "4번23도 REAX 40(A)",
+     "7개구성 REAX 40 카본(A)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-ee98028ef384cb1f56c4b065",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"12도 REAX 40(A)\",\"5번26도 REAX 40(L)\",\"7개구성 REAX 40 카본(L)\"]",
+    "naver_variant_id": "59887006394",
+    "options_ko": [
+     "12도 REAX 40(A)",
+     "5번26도 REAX 40(L)",
+     "7개구성 REAX 40 카본(L)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-9748a4f83ea5f7408cc9750a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"12도 REAX 40(A)\",\"5번26도 REAX 40(L)\",\"7개구성 REAX 40 카본(A)\"]",
+    "naver_variant_id": "59887006396",
+    "options_ko": [
+     "12도 REAX 40(A)",
+     "5번26도 REAX 40(L)",
+     "7개구성 REAX 40 카본(A)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-c81ffccde408b564b5da7e11",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"12도 REAX 40(A)\",\"5번26도 REAX 40(A)\",\"7개구성 REAX 40 카본(L)\"]",
+    "naver_variant_id": "59887006398",
+    "options_ko": [
+     "12도 REAX 40(A)",
+     "5번26도 REAX 40(A)",
+     "7개구성 REAX 40 카본(L)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-07cfddfd7bd1b84509601585",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"12도 REAX 40(A)\",\"5번26도 REAX 40(A)\",\"7개구성 REAX 40 카본(A)\"]",
+    "naver_variant_id": "59887006400",
+    "options_ko": [
+     "12도 REAX 40(A)",
+     "5번26도 REAX 40(A)",
+     "7개구성 REAX 40 카본(A)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-14ace8e17cc898ef07f64144",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"10.5도 REAX 40(L)\",\"4번23도 REAX40 (L)\",\"7개구성 REAX 40 카본(L)\"]",
+    "naver_variant_id": "59887006402",
+    "options_ko": [
+     "10.5도 REAX 40(L)",
+     "4번23도 REAX40 (L)",
+     "7개구성 REAX 40 카본(L)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-328aea8ef83f09b72be15f46",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"10.5도 REAX 40(L)\",\"4번23도 REAX40 (L)\",\"7개구성 REAX 40 카본(A)\"]",
+    "naver_variant_id": "59887006404",
+    "options_ko": [
+     "10.5도 REAX 40(L)",
+     "4번23도 REAX40 (L)",
+     "7개구성 REAX 40 카본(A)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-18b7ea146e6d9ceaadc4094d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"10.5도 REAX 40(L)\",\"4번23도 REAX 40(A)\",\"7개구성 REAX 40 카본(L)\"]",
+    "naver_variant_id": "59887006406",
+    "options_ko": [
+     "10.5도 REAX 40(L)",
+     "4번23도 REAX 40(A)",
+     "7개구성 REAX 40 카본(L)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-6a4252ca6635007419a995a5",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"10.5도 REAX 40(L)\",\"4번23도 REAX 40(A)\",\"7개구성 REAX 40 카본(A)\"]",
+    "naver_variant_id": "59887006409",
+    "options_ko": [
+     "10.5도 REAX 40(L)",
+     "4번23도 REAX 40(A)",
+     "7개구성 REAX 40 카본(A)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-f96213a4ab14daf5a8da04e5",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"10.5도 REAX 40(L)\",\"5번26도 REAX 40(L)\",\"7개구성 REAX 40 카본(L)\"]",
+    "naver_variant_id": "59887006411",
+    "options_ko": [
+     "10.5도 REAX 40(L)",
+     "5번26도 REAX 40(L)",
+     "7개구성 REAX 40 카본(L)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-f5ad851e51d6f2f55a59d948",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"10.5도 REAX 40(L)\",\"5번26도 REAX 40(L)\",\"7개구성 REAX 40 카본(A)\"]",
+    "naver_variant_id": "59887006413",
+    "options_ko": [
+     "10.5도 REAX 40(L)",
+     "5번26도 REAX 40(L)",
+     "7개구성 REAX 40 카본(A)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-662cf722fd7c7129ff2c1dce",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"10.5도 REAX 40(L)\",\"5번26도 REAX 40(A)\",\"7개구성 REAX 40 카본(L)\"]",
+    "naver_variant_id": "59887006415",
+    "options_ko": [
+     "10.5도 REAX 40(L)",
+     "5번26도 REAX 40(A)",
+     "7개구성 REAX 40 카본(L)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-37efc67ce29ed854f7cac275",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"10.5도 REAX 40(L)\",\"5번26도 REAX 40(A)\",\"7개구성 REAX 40 카본(A)\"]",
+    "naver_variant_id": "59887006417",
+    "options_ko": [
+     "10.5도 REAX 40(L)",
+     "5번26도 REAX 40(A)",
+     "7개구성 REAX 40 카본(A)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-d99540bed046c2c3fc4d9645",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"10.5도 REAX 40(A)\",\"4번23도 REAX40 (L)\",\"7개구성 REAX 40 카본(L)\"]",
+    "naver_variant_id": "59887006419",
+    "options_ko": [
+     "10.5도 REAX 40(A)",
+     "4번23도 REAX40 (L)",
+     "7개구성 REAX 40 카본(L)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-6cfda2f021747bee1619fe3c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"10.5도 REAX 40(A)\",\"4번23도 REAX40 (L)\",\"7개구성 REAX 40 카본(A)\"]",
+    "naver_variant_id": "59887006421",
+    "options_ko": [
+     "10.5도 REAX 40(A)",
+     "4번23도 REAX40 (L)",
+     "7개구성 REAX 40 카본(A)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-45fa96a418965d931d830889",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"10.5도 REAX 40(A)\",\"4번23도 REAX 40(A)\",\"7개구성 REAX 40 카본(L)\"]",
+    "naver_variant_id": "59887006423",
+    "options_ko": [
+     "10.5도 REAX 40(A)",
+     "4번23도 REAX 40(A)",
+     "7개구성 REAX 40 카본(L)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-b8bc1a0d8cb57dad45f6aa79",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"10.5도 REAX 40(A)\",\"4번23도 REAX 40(A)\",\"7개구성 REAX 40 카본(A)\"]",
+    "naver_variant_id": "59887006426",
+    "options_ko": [
+     "10.5도 REAX 40(A)",
+     "4번23도 REAX 40(A)",
+     "7개구성 REAX 40 카본(A)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-043cdcd35f02e0ef3e0ded64",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"10.5도 REAX 40(A)\",\"5번26도 REAX 40(L)\",\"7개구성 REAX 40 카본(L)\"]",
+    "naver_variant_id": "59887006428",
+    "options_ko": [
+     "10.5도 REAX 40(A)",
+     "5번26도 REAX 40(L)",
+     "7개구성 REAX 40 카본(L)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-81e2e9fb7f275fa751f657b9",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"10.5도 REAX 40(A)\",\"5번26도 REAX 40(L)\",\"7개구성 REAX 40 카본(A)\"]",
+    "naver_variant_id": "59887006430",
+    "options_ko": [
+     "10.5도 REAX 40(A)",
+     "5번26도 REAX 40(L)",
+     "7개구성 REAX 40 카본(A)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-69ad9e2f84afd11cef339815",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"10.5도 REAX 40(A)\",\"5번26도 REAX 40(A)\",\"7개구성 REAX 40 카본(L)\"]",
+    "naver_variant_id": "59887006432",
+    "options_ko": [
+     "10.5도 REAX 40(A)",
+     "5번26도 REAX 40(A)",
+     "7개구성 REAX 40 카본(L)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-fb3255db77fb41881f5a1d9b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"10.5도 REAX 40(A)\",\"5번26도 REAX 40(A)\",\"7개구성 REAX 40 카본(A)\"]",
+    "naver_variant_id": "59887006434",
+    "options_ko": [
+     "10.5도 REAX 40(A)",
+     "5번26도 REAX 40(A)",
+     "7개구성 REAX 40 카본(A)"
+    ],
+    "price_krw": 2349000,
+    "price_usd": "2349.00",
+    "sku": "FW-fe99b2fb191bce88d7c46b03",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 2349000,
+   "original_krw": 2700000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "테일러메이드"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "테일러메이드"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "10.5도, 12도"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "조합풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "여성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "10개"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2026년형"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "드라이버, 7아이언세트, 유틸리티, 퍼터"
+   },
+   {
+    "label_ko": "아이언샤프트소재",
+    "value_ko": "그라파이트/카본"
+   },
+   {
+    "label_ko": "아이언개수",
+    "value_ko": "7개"
+   },
+   {
+    "label_ko": "퍼터형태",
+    "value_ko": "말렛(반달형)"
+   }
+  ],
+  "personalization": [],
+  "addons": [
+   {
+    "group_ko": "마루망 2W 퍼터 사은품 기본선택",
+    "name_ko": "32인치",
+    "required": false,
+    "price_krw": 0,
+    "price_usd": "0.00"
+   },
+   {
+    "group_ko": "Qi4D MAX 여성 우드추가구매",
+    "name_ko": "3번15도 REAX 40(L)",
+    "required": false,
+    "price_krw": 400000,
+    "price_usd": "400.00"
+   },
+   {
+    "group_ko": "Qi4D MAX 여성 우드추가구매",
+    "name_ko": "3번15도 REAX 40(A)",
+    "required": false,
+    "price_krw": 400000,
+    "price_usd": "400.00"
+   },
+   {
+    "group_ko": "Qi4D MAX 여성 우드추가구매",
+    "name_ko": "5번18도 REAX 40 (L)",
+    "required": false,
+    "price_krw": 400000,
+    "price_usd": "400.00"
+   },
+   {
+    "group_ko": "Qi4D MAX 여성 우드추가구매",
+    "name_ko": "5번18도 REAX 40 (A)",
+    "required": false,
+    "price_krw": 400000,
+    "price_usd": "400.00"
+   }
+  ],
+  "rating": {
+   "value": 5.0,
+   "count": 3
+  },
+  "reviews": [
+   {
+    "id": "5098165138",
+    "score": 5,
+    "text_ko": "초보용으로 샀는데 잘산것같아요 만족합니다",
+    "created_at": "2026-11-04T01:48:52Z",
+    "writer": "duda*****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "5090096888",
+    "score": 5,
+    "text_ko": "거리도 기존보다 더나가고\n공이  잘 맞아요",
+    "created_at": "2026-10-23T12:35:11Z",
+    "writer": "saeg****",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/13741767690/fairwardgolf-review-avatar-80428448b0e5cdf2.webp",
+    "tier": "small"
+   },
+   {
+    "id": "5067589883",
+    "score": 5,
+    "text_ko": "빠른 배송 최고\n너무이쁘네요.\n와이프 선물이데 아주 맘에 들어합니다.\n^^",
+    "created_at": "2026-09-18T07:56:51Z",
+    "writer": "saeg****",
+    "photos": [
+     "collected/50002788-fixtures/images/13741767690/fairwardgolf-review-image-36cb248c1e2e81ca.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/13741767690/fairwardgolf-review-avatar-80428448b0e5cdf2.webp",
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13741767690/fairwardgolf-13741767690-001-591fa9b1ab8f8921.webp",
+    "sha256": "591fa9b1ab8f8921f85eb6683fb16be7b7ea2d257ba63fac2ede06b6478c7bb6",
+    "width": 1254,
+    "height": 1254
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "policy_text": null,
+   "lead_time": {
+    "seller_average_days": 3.5,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260906_270/1788675446426IwBi6_JPEG/p-13681129608-s-2-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20260906_141/1788675446423wsFcJ_JPEG/p-13681129608-s-2-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20260906_263/1788675446418f3WlB_JPEG/p-13681129608-s-2-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20260906_52/1788675446422YFoDc_JPEG/p-13681129608-s-2-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20260906_77/1788675446421dkU7I_JPEG/p-13681129608-s-2-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20260906_12/1788675446416T89iU_JPEG/p-13681129608-s-2-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20260906_60/1788675446420Cz11v_JPEG/p-13681129608-s-2-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20260906_297/1788675446423i9hY3_JPEG/p-13681129608-s-2-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20260906_189/17886754464215rxel_JPEG/p-13681129608-s-2-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20260906_167/1788675446424oRyh7_JPEG/p-13681129608-s-2-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20260906_167/17886754465022u1q5_JPEG/p-13681129608-s-2-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20260906_14/1788675446511ziijJ_JPEG/p-13681129608-s-2-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20260906_220/17886754465166L1d8_JPEG/p-13681129608-s-2-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20260906_6/1788675446523FVe1q_JPEG/p-13681129608-s-2-A-13.jpg",
+   "https://shop-phinf.pstatic.net/20260906_179/1788675446536EbSls_JPEG/p-13681129608-s-2-A-14.jpg",
+   "https://shop-phinf.pstatic.net/20260906_268/17886754465308tjHH_JPEG/p-13681129608-s-2-A-15.jpg",
+   "https://shop-phinf.pstatic.net/20260906_79/1788675446531LPduR_JPEG/p-13681129608-s-2-A-16.jpg",
+   "https://shop-phinf.pstatic.net/20260906_52/1788675446534P2THJ_JPEG/p-13681129608-s-2-A-17.jpg",
+   "https://shop-phinf.pstatic.net/20260906_231/1788675446539NOQw9_JPEG/p-13681129608-s-2-A-18.jpg",
+   "https://shop-phinf.pstatic.net/20260906_233/1788675446542GoyYL_JPEG/p-13681129608-s-2-A-19.jpg",
+   "https://shop-phinf.pstatic.net/20260906_261/1788675446598Exiro_JPEG/p-13681129608-s-2-A-20.jpg",
+   "https://shop-phinf.pstatic.net/20260906_1/1788675446613Aix4r_JPEG/p-13681129608-s-2-A-21.jpg",
+   "https://shop-phinf.pstatic.net/20260906_136/1788675446615LPVtu_JPEG/p-13681129608-s-2-A-22.jpg",
+   "https://shop-phinf.pstatic.net/20260906_221/1788675446641NEDJu_JPEG/p-13681129608-s-2-A-23.jpg",
+   "https://shop-phinf.pstatic.net/20260906_161/1788675446631FPoEE_JPEG/p-13681129608-s-2-A-24.jpg",
+   "https://shop-phinf.pstatic.net/20260906_70/1788675446632dGsKt_JPEG/p-13681129608-s-2-A-25.jpg",
+   "https://shop-phinf.pstatic.net/20260906_233/1788675446639lwEsx_JPEG/p-13681129608-s-2-A-26.jpg",
+   "https://shop-phinf.pstatic.net/20260906_294/17886754466340xKHj_JPEG/p-13681129608-s-2-A-27.jpg",
+   "https://shop-phinf.pstatic.net/20260906_27/1788675446639nW1T6_JPEG/p-13681129608-s-2-A-28.jpg",
+   "https://shop-phinf.pstatic.net/20260906_123/1788675446659whzcT_JPEG/p-13681129608-s-2-A-29.jpg",
+   "https://shop-phinf.pstatic.net/20260906_300/1788675446695TAycT_JPEG/p-13681129608-s-2-A-30.jpg",
+   "https://shop-phinf.pstatic.net/20260906_274/1788675446700gwsQO_JPEG/p-13681129608-s-2-A-31.jpg",
+   "https://shop-phinf.pstatic.net/20260906_236/1788675446709UE9to_JPEG/p-13681129608-s-2-A-32.jpg",
+   "https://shop-phinf.pstatic.net/20260906_67/1788675446716iKFjS_JPEG/p-13681129608-s-2-A-33.jpg",
+   "https://shop-phinf.pstatic.net/20260906_204/1788675446722z1uYq_JPEG/p-13681129608-s-2-A-34.jpg",
+   "https://shop-phinf.pstatic.net/20260906_172/1788675446727vitHk_JPEG/p-13681129608-s-2-A-35.jpg",
+   "https://shop-phinf.pstatic.net/20260906_238/1788675446731k02rY_JPEG/p-13681129608-s-2-A-36.jpg",
+   "https://shop-phinf.pstatic.net/20260906_207/1788675446737pTk0H_JPEG/p-13681129608-s-2-A-37.jpg",
+   "https://shop-phinf.pstatic.net/20260906_78/17886754467411aOiX_JPEG/p-13681129608-s-2-A-38.jpg",
+   "https://shop-phinf.pstatic.net/20260906_113/1788675446753emguh_JPEG/p-13681129608-s-2-A-39.jpg",
+   "https://shop-phinf.pstatic.net/20260906_37/1788675446787khMzQ_JPEG/p-13681129608-s-2-A-40.jpg",
+   "https://shop-phinf.pstatic.net/20260906_164/1788675446798hAnfG_JPEG/p-13681129608-s-2-A-41.jpg",
+   "https://shop-phinf.pstatic.net/20260906_226/1788675446811wxD1l_JPEG/p-13681129608-s-2-A-42.jpg",
+   "https://shop-phinf.pstatic.net/20260906_264/1788675446811NkaIO_JPEG/p-13681129608-s-2-A-43.jpg",
+   "https://shop-phinf.pstatic.net/20260906_112/1788675446816nfBpU_JPEG/p-13681129608-s-2-A-44.jpg",
+   "https://shop-phinf.pstatic.net/20260906_194/1788675446843enguY_JPEG/p-13681129608-s-2-A-45.jpg",
+   "https://shop-phinf.pstatic.net/20260906_151/1788675446846biTqt_JPEG/p-13681129608-s-2-A-46.jpg",
+   "https://shop-phinf.pstatic.net/20260906_164/1788675446855PJhh2_JPEG/p-13681129608-s-2-A-47.jpg",
+   "https://shop-phinf.pstatic.net/20260906_278/1788675446888JUhFn_JPEG/p-13681129608-s-2-A-48.jpg",
+   "https://shop-phinf.pstatic.net/20260906_220/1788675446894DBLSp_JPEG/p-13681129608-s-2-A-49.jpg",
+   "https://shop-phinf.pstatic.net/20260906_81/1788675446895oj74t_JPEG/p-13681129608-s-2-A-50.jpg",
+   "https://shop-phinf.pstatic.net/20260906_265/1788675446897uElHK_JPEG/p-13681129608-s-2-A-51.jpg",
+   "https://shop-phinf.pstatic.net/20260906_135/1788675446914SSeTp_JPEG/p-13681129608-s-2-A-52.jpg",
+   "https://shop-phinf.pstatic.net/20260906_27/17886754468994SylD_JPEG/p-13681129608-s-2-A-53.jpg",
+   "https://shop-phinf.pstatic.net/20260906_16/17886754469401PKKd_JPEG/p-13681129608-s-2-A-54.jpg",
+   "https://shop-phinf.pstatic.net/20260906_108/1788675446942Jzm54_JPEG/p-13681129608-s-2-A-55.jpg",
+   "https://shop-phinf.pstatic.net/20260906_262/1788675446948GsIin_JPEG/p-13681129608-s-2-A-56.jpg",
+   "https://shop-phinf.pstatic.net/20260906_88/17886754469715JJln_JPEG/p-13681129608-s-2-A-57.jpg"
+  ],
+  "description_dropped": [
+   {
+    "rule": "junk",
+    "text": "o"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:41a2fd108aa11f39",
+   "kind": "title",
+   "ko": "[오늘출고] 테일러메이드 풀세트 여성 Qi4D MAX LITE 10pcs 테일러메이드코리아"
+  },
+  {
+   "id": "brand:18d4028e5665dc1d",
+   "kind": "brand",
+   "ko": "테일러메이드"
+  },
+  {
+   "id": "option_name:fa07227b85fa1ded",
+   "kind": "option_name",
+   "ko": "Qi4D MAX LITE 여성 드라이버"
+  },
+  {
+   "id": "option_value:20462f55646131e7",
+   "kind": "option_value",
+   "ko": "12도 REAX 40(L)"
+  },
+  {
+   "id": "option_value:45bfbc03b1379dd8",
+   "kind": "option_value",
+   "ko": "12도 REAX 40(A)"
+  },
+  {
+   "id": "option_value:40dcbb55990c0f95",
+   "kind": "option_value",
+   "ko": "10.5도 REAX 40(L)"
+  },
+  {
+   "id": "option_value:15c02767992be67c",
+   "kind": "option_value",
+   "ko": "10.5도 REAX 40(A)"
+  },
+  {
+   "id": "option_name:f7fad5f9143b1879",
+   "kind": "option_name",
+   "ko": "Qi4D MAX LITE 여성 유틸리티"
+  },
+  {
+   "id": "option_value:0feca11b132efcc7",
+   "kind": "option_value",
+   "ko": "4번23도 REAX40 (L)"
+  },
+  {
+   "id": "option_value:edbc8e7d85343ea9",
+   "kind": "option_value",
+   "ko": "4번23도 REAX 40(A)"
+  },
+  {
+   "id": "option_value:82d182263bb770d1",
+   "kind": "option_value",
+   "ko": "5번26도 REAX 40(L)"
+  },
+  {
+   "id": "option_value:a84cead1e437c2d2",
+   "kind": "option_value",
+   "ko": "5번26도 REAX 40(A)"
+  },
+  {
+   "id": "option_name:1d2bfeccd024131a",
+   "kind": "option_name",
+   "ko": "Qi MAX 여성 아이언"
+  },
+  {
+   "id": "option_value:789dad87ec16b103",
+   "kind": "option_value",
+   "ko": "7개구성 REAX 40 카본(L)"
+  },
+  {
+   "id": "option_value:9b6ff78a98e6bda8",
+   "kind": "option_value",
+   "ko": "7개구성 REAX 40 카본(A)"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:18d4028e5665dc1d",
+   "kind": "spec_value",
+   "ko": "테일러메이드"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:4e96f9f0902bddb2",
+   "kind": "spec_value",
+   "ko": "10.5도, 12도"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:432a74bb0c5028af",
+   "kind": "spec_value",
+   "ko": "#6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:94abee9ad24a637a",
+   "kind": "spec_value",
+   "ko": "조합풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:ff90d7cd3c519c1f",
+   "kind": "spec_value",
+   "ko": "여성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:bb40a8c2bc46094b",
+   "kind": "spec_value",
+   "ko": "10개"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:f36c488b8e796503",
+   "kind": "spec_value",
+   "ko": "2026년형"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:59019f51b65aac9a",
+   "kind": "spec_value",
+   "ko": "드라이버, 7아이언세트, 유틸리티, 퍼터"
+  },
+  {
+   "id": "spec_label:5a12089f44ae3f65",
+   "kind": "spec_label",
+   "ko": "아이언샤프트소재"
+  },
+  {
+   "id": "spec_value:ef00cceb8d6a2241",
+   "kind": "spec_value",
+   "ko": "그라파이트/카본"
+  },
+  {
+   "id": "spec_label:cf77915a2f3ab5d8",
+   "kind": "spec_label",
+   "ko": "아이언개수"
+  },
+  {
+   "id": "spec_value:0c5a3886c288bcd6",
+   "kind": "spec_value",
+   "ko": "7개"
+  },
+  {
+   "id": "spec_label:04c52e5b47f70047",
+   "kind": "spec_label",
+   "ko": "퍼터형태"
+  },
+  {
+   "id": "spec_value:92917baf006633bb",
+   "kind": "spec_value",
+   "ko": "말렛(반달형)"
+  },
+  {
+   "id": "addon_group:dbbc8620747e67de",
+   "kind": "addon_group",
+   "ko": "마루망 2W 퍼터 사은품 기본선택"
+  },
+  {
+   "id": "addon_name:8d58f9576c02b262",
+   "kind": "addon_name",
+   "ko": "32인치"
+  },
+  {
+   "id": "addon_group:d6d900453c27cc56",
+   "kind": "addon_group",
+   "ko": "Qi4D MAX 여성 우드추가구매"
+  },
+  {
+   "id": "addon_name:4836a6c3cbd8e6be",
+   "kind": "addon_name",
+   "ko": "3번15도 REAX 40(L)"
+  },
+  {
+   "id": "addon_name:7d810fdfbf7ee957",
+   "kind": "addon_name",
+   "ko": "3번15도 REAX 40(A)"
+  },
+  {
+   "id": "addon_name:f44e4b975d925b79",
+   "kind": "addon_name",
+   "ko": "5번18도 REAX 40 (L)"
+  },
+  {
+   "id": "addon_name:93576e50d46602bd",
+   "kind": "addon_name",
+   "ko": "5번18도 REAX 40 (A)"
+  },
+  {
+   "id": "review:7d6e119360f45b43",
+   "kind": "review",
+   "ko": "초보용으로 샀는데 잘산것같아요 만족합니다"
+  },
+  {
+   "id": "review:9ab4d7a66f3c8eae",
+   "kind": "review",
+   "ko": "거리도 기존보다 더나가고\n공이  잘 맞아요"
+  },
+  {
+   "id": "review:01fd88135ebe3d69",
+   "kind": "review",
+   "ko": "빠른 배송 최고\n너무이쁘네요.\n와이프 선물이데 아주 맘에 들어합니다.\n^^"
+  }
+ ]
+}

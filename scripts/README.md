@@ -310,6 +310,34 @@ published, SKUs and prices equal on 201 of 201 variants):
   proxy-smartstore links decoded); snap tiles are never cut. Notes: `description_all_boilerplate`,
   `description_covers_several_products` (2+ in-page sections, a 모음전 page), `description_tiles_include_banners`
   (banners baked into Naver's tiles).
+- **Description cleanup** (`description_clean.py`, pilot 20, 2026-11-06): also drops KRW price promotions
+  (`price_krw`: "정상가 865,000원", "190,300원 할인", "22% 할인"; our prices are USD), lines about a product card the parser
+  left out (`cross_sell`: "아래 링크에서 구매"), and contact closings ("여쭤봐주세요", "답변드리겠습니다"). A sentence goes on across lines
+  ending on 만큼 / -시면 / -으면 / -하면 / 는데 / 지만 / 니까 ("타격면", a noun, does not), so a contact sentence goes whole. A store
+  named for its trade ("일본 구매대행 해피마로") is matched without the prefix. When no word of 2+ Hangul or Latin letters is
+  left, the text is None with note `description_junk` (13741767690: "o"). Images: new names 톡톡, 하단_상페 / 하단고정배너 / 하단안내,
+  베너. A Latin name that is Hangul typed on the 2-set keyboard ("gkeksqpsj" = 하단베너) is matched as Hangul, and so is the
+  tile note. With the description HTML, `clean_images(images, html)` reads SmartEditor's data-linkdata. It drops
+  images that link to TalkTalk, Band, Naver blog, Instagram, YouTube, a Kakao channel, Facebook or a store page
+  (`link_banner`), and strips 40 px high or less or wider than 25:1 (`spacer`). originalHeight 1 means not measured,
+  and those images stay.
+* driver loft (R-LOFT): 드라이버 로프트각 is compared with the loft each variant's values name (10.5도 / 9도 SR / 9.5 SR /
+  10.5R, 7-14 degrees). The row is dropped (specs_stated_by_variants) when every variant states its own loft, bound
+  with for_ko when some are silent, and dropped (specs_fit_no_variant) when it fits none. A row that lists every loft
+  sold ("11.5도, 10.5도") stays product-wide.
+* R-DESC also reads the sentence form "플렉스 R 모델의 아이언에는 카본 샤프트": a whole value, then 모델 / 플렉스 / 사양, then the shaft
+  material in the same clause, with no part other than the irons named.
+* R-TITLE treats numbers with units as one word: the title's "11.5" / "11.5L" names the value "11.5도"; "유틸4" / "4U" /
+  "4번유틸" name the 4번 of a 유틸리티 axis (and 우드5 / 5W the 5번 of a 우드 axis); "10.5R" and "10.5도" are one loft. Bag words
+  (골프백 / 캐디백 / 스탠드백 / 카트백 / 백포함) are one thing. When some values say "캐디백 미포함", a title bag names the values with the
+  bag. The same words feed the specs_name_one_variant row match, e.g. 모델명 "[드라이버11.5L+...+우드5L+유틸4L]" -> "11.5L, 우드5L,
+  유틸4L".
+- **Pilot 20 (2026-11-06)**: a variant carries `today_dispatch` (the seller's todayDispatch per variant: one of two
+  may ship today); a tag every value starts with ("[당일출고]") and a "(선택)" in front of an option name are left out
+  (the SKU keeps the raw tuple); past the cap the rows are taken in turn from each value of the first axis; notes
+  `few_pieces` also from 총클럽개수 of 5 or fewer, `gift_hidden` (a hidden 사은품 row naming a thing in the box, not
+  points or a coupon: "오리지널커버 증정"). `delivery.lead_time` passes through: check `today_off` before
+  `today_cutoff`.
 - **Text fields** -> `personalization` (label without ★ and "(필수)": `required` says it); **add-ons**: free ones
   on sale and in stock: free ones, paid ones too with the category's `paid_addons` (`price_krw`, `price_usd`);
   a group named (필수) / (필수선택) is `required`. Why per category: a set's photos often show the extras (bag,

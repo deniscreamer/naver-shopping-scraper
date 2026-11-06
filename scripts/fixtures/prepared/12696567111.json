@@ -20,6 +20,14 @@
   {
    "code": "option_name_placeholder",
    "detail": "옵션+아이언커버.하프백"
+  },
+  {
+   "code": "description_covers_several_products",
+   "detail": "4 in-page sections"
+  },
+  {
+   "code": "description_tiles_include_banners",
+   "detail": "map.jpg, delivery.jpg, buysell_warranty_n.jpg, 최상단 사은품, 하단 안내 이미지"
   }
  ],
  "source": {
@@ -124,7 +132,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"(추가할인) XR 24 백세트포함\"]",
@@ -192,7 +201,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"(추가할인) X HOT 23 백세트포함\"]",
@@ -260,7 +270,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    },
    {
     "source_id": "observed:[\"(추가할인) X HOT 21 캐디백포함\"]",
@@ -328,7 +339,8 @@
       "approved_by": "owner",
       "approved_at": "2026-11-05"
      }
-    }
+    },
+    "today_dispatch": null
    }
   ],
   "pricing": {
@@ -501,6 +513,7 @@
     "seller_average_days": 1.5140845,
     "product_average_days": 4.0,
     "today_cutoff": null,
+    "today_off": false,
     "arrival_days": 2,
     "arrival_date_text": null,
     "arrival_probability": 92,

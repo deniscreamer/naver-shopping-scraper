@@ -57,6 +57,12 @@ _BRACKETS_RE = re.compile(r"\s*[(\[][^()\[\]]*[)\]]")          # innermost: 원�
 _AGENCY_WORD_RE = re.compile(r"구매\s*대행")
 # a seller's numbering in front of a shown value / add-on: "선택1 9도SR", "선택3) ...", "1-1.남성 장갑", "6.쇼핑백"
 _NUMBERING_RE = re.compile(r"^(?:(?:선택|옵션)\s*\d+\s*[).:\-]?|\d+(?:-\d+)?[.)](?!\d))\s*")
+# a seller's tag in front of every value ("[당일출고] 스틸 샤프트 (S) SPEC", 8958060680) or of an option name
+# ("(선택)샤프트/드라이버/아이언", 13553116678): not part of what is chosen (2026-11-06)
+_LEAD_TAG_RE = re.compile(r"^\s*([\[(【][^\])】]{1,12}[\])】])\s*")
+_CHOOSE_TAG_RE = re.compile(r"^\s*[\[(]\s*(?:선택|필수|옵션)\s*[\])]\s*")
+_COUNT_ROW_RE = re.compile(r"^\s*(\d{1,2})\s*개")                    # 총클럽개수 "3개"
+_POINTS_RE = re.compile(r"포인트|적립|쿠폰|할인|페이|마일리지|캐시")     # a promotion, not a thing in the box
 _AREA_WORD_RE = re.compile(r"제주|도서|산간|지역|섬")
 _PIECES_RE = re.compile(r"(?<![\d.])([1-5])\s*(?:PCS|Pcs|pcs|PC|피스)(?![A-Za-z])")
 _GIFT_RE = re.compile(r"사은품|증정")
@@ -125,18 +131,40 @@ def _tidy(text: str) -> str:
 
 
 def _unnumbered(values: list[str]) -> list[str] | None:
-    """The values without the seller's numbering when every one carries it and none is left empty; None else."""
-    if not values or not all(_NUMBERING_RE.match(v) for v in values):
+    """The values without the seller's numbering, or without one tag every value starts with ("[당일출고]"), when
+    every one carries it and none is left empty; None else."""
+    if not values:
         return None
-    out = [_NUMBERING_RE.sub("", v).strip() for v in values]
+    tags = {m.group(1) if m else None for m in map(_LEAD_TAG_RE.match, values)}
+    if len(tags) == 1 and None not in tags:
+        out = [_LEAD_TAG_RE.sub("", v, count=1).strip() for v in values]
+    elif all(_NUMBERING_RE.match(v) for v in values):
+        out = [_NUMBERING_RE.sub("", v).strip() for v in values]
+    else:
+        return None
     return out if all(out) else None
+
+
+def _axis_name(name: str) -> str:
+    """"(선택)샤프트/드라이버/아이언" -> "샤프트/드라이버/아이언"."""
+    return _CHOOSE_TAG_RE.sub("", _tidy(name)) or _tidy(name)
 
 
 def _capped(rows: list[dict[str, Any]], axes: list[int], cap: int) -> list[dict[str, Any]]:
     """At most `cap` rows: in stock first, then the cheaper, then page order; first one row for each option value
     not chosen yet, so every value stays on sale (486 combinations of 6 x 9 x 9 on an XXIO 14 set, 2026-11-06),
-    then the rest in that order."""
+    then the rest; taken in turn from each value of the first axis, so no first-axis value loses its combinations
+    to another's (128 -> 100 on a PING set gave the L driver 64 combinations and the A driver 36)."""
     order = sorted(range(len(rows)), key=lambda i: (rows[i].get("is_available") is False, rows[i]["price"] or 0, i))
+    if axes:                                       # in turn from each value of the first axis
+        queues: dict[str, list[int]] = {}
+        for i in order:
+            queues.setdefault(_tidy(rows[i]["options"][axes[0]]), []).append(i)
+        order = []
+        while any(queues.values()):
+            for q in queues.values():
+                if q:
+                    order.append(q.pop(0))
     picked: list[int] = []
     seen: set[tuple[int, str]] = set()
     for i in order:
@@ -197,26 +225,31 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
     for i in keep:
         if i not in axes and names[i] not in HIDDEN_ROWS:      # a one-value 상품번호 axis is a seller code
             label = _tidy(names[i])                            # "선택: 남성풀세트": the value says it all
+            label = _axis_name(label)
             facts.append({"label_ko": "" if _PLACEHOLDER_NAME_RE.match(label) else label, "value_ko": values[i][0]})
+    today = {v.get("id"): v.get("is_today_dispatch") for v in (specs["options"] or {}).get("variants") or []}
     variants = [_variant(rules, key, product_id, r["options"], r["price"], r.get("id"), r.get("is_available"),
-                         package.get(r.get("id")), [shown[i][_tidy(r["options"][i])] for i in axes]) for r in rows]
+                         package.get(r.get("id")), [shown[i][_tidy(r["options"][i])] for i in axes],
+                         today.get(r.get("id"))) for r in rows]
     if not axes:
         variants = variants[:1]                    # one row (or only constant axes): the default variant
     held = []
     if len(axes) > MAX_AXES:
         held.append({"code": "axes_over_3", "detail": f"{len(axes)} option axes"})
-    return {"options": [{"name_ko": _tidy(names[i]), "values_ko": values[i]} for i in axes], "facts": facts,
+    return {"options": [{"name_ko": _axis_name(names[i]), "values_ko": values[i]} for i in axes], "facts": facts,
             "variants": variants, "held": held, "skipped_paid": skipped, "duplicate_values": duplicate,
             "capped": capped}
 
 
 def _variant(rules: ShopRules, key: str, product_id: str, tuple_ko: list[str], krw: int | None,
-             naver_id: str | None, available: bool | None, package: Any, shown: list[str] | None = None):
+             naver_id: str | None, available: bool | None, package: Any, shown: list[str] | None = None,
+             today: bool | None = None):
     source_id = "observed:" + json.dumps(tuple_ko, ensure_ascii=False, separators=(",", ":")) if tuple_ko \
         else str(product_id)
     return {"source_id": source_id, "naver_variant_id": naver_id, "options_ko": shown or [],
             "price_krw": krw, "price_usd": None if krw is None else usd(krw, rules.krw_per_usd),
-            "sku": sku(rules.sku_prefix, key, source_id), "available": available is not False, "package": package}
+            "sku": sku(rules.sku_prefix, key, source_id), "available": available is not False, "package": package,
+            "today_dispatch": today}   # the seller sends this variant the same day (todayDispatch; one of two, 8958060680)
 
 
 # ---- the rest of the product --------------------------------------------------------------
@@ -389,8 +422,12 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int) -> P
         notes.append({"code": "option_values_duplicate", "detail": ", ".join(ov["duplicate_values"])})
     model = next((r.get("value") or "" for r in specs.get("specs") or [] if r.get("label") == "모델명"), "")
     pieces = _PIECES_RE.search(f"{details['name']} {model}")
+    count = next((_COUNT_ROW_RE.match(r.get("value") or "") for r in specs.get("specs") or []
+                  if r.get("label") == "총클럽개수"), None)
     if pieces:                                      # "[3PCS]": a few clubs, not a full set (leaf, package)
         notes.append({"code": "few_pieces", "detail": pieces.group(0)})
+    elif count and 0 < int(count.group(1)) <= 5:    # 총클럽개수 3개: driver + wood + hybrid (13302492097)
+        notes.append({"code": "few_pieces", "detail": f"총클럽개수 {count.group(1)}개"})
     vague = [o["name_ko"] for o in ov["options"] if _PLACEHOLDER_NAME_RE.match(o["name_ko"])]
     if vague:                                       # the translation names such an axis from its values
         notes.append({"code": "option_name_placeholder", "detail": ", ".join(vague)})
@@ -405,6 +442,10 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int) -> P
     if delivery.get("is_overseas"):
         notes.append({"code": "overseas_shipping", "detail": str(delivery.get("customs_tax_type") or "")})
     hidden_promo = [r for r in specs.get("specs") or [] if r.get("label") in ("이벤트", "사은품")]
+    things = [r["value"] for r in hidden_promo if r.get("label") == "사은품" and r.get("value")
+              and not _POINTS_RE.search(r["value"])]
+    if things:                                      # "오리지널커버 증정": head covers in the box, not points; hidden
+        notes.append({"code": "gift_hidden", "detail": "; ".join(things)})   # with the promotions: list or not?
     raw = desc.get("text") or ""
     if hidden_promo and _GIFT_RE.search(raw):       # the rows are hidden as Naver's promotions; the text still
         notes.append({"code": "description_mentions_gifts", "detail": ", ".join(        # promises them
@@ -413,7 +454,7 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int) -> P
                     promo_hidden=bool(hidden_promo), brand=details.get("brand"))
     notes += [{"code": n["code"], "detail": n["detail"]}
               for n in cleaned["notes"] + body_notes(desc.get("html"), desc.get("images"))]
-    pictures = clean_images(desc.get("images"))
+    pictures = clean_images(desc.get("images"), desc.get("html"))
     extra_text = delivery.get("extra_fee_text")
     number = re.sub(r"[,\s원]", "", extra_text or "")
     returns = " ".join(f"{r.get('label')} {r.get('value')}" for r in (details.get("notice") or {}).get("terms") or []

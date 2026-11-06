@@ -211,7 +211,7 @@
   "variants": null,
   "supplements": null,
   "description": {
-   "html": null,
+   "html": "<center>\n\n <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://gi.esmplus.com/jayfocus/ktksports/ktksports%20%EC%95%88%EB%82%B4%EB%AC%B811.jpg\"  />\n\n<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://ai.esmplus.com/ktksports/%EC%8A%A4%ED%85%94%EC%8A%A42-%ED%92%80%EC%84%B8%ED%8A%B8--v300.jpg\"  /></center>",
    "text": null,
    "editor_type": "NONE",
    "images": [
@@ -593,6 +593,7 @@
     "seller_average_days": 4.0,
     "product_average_days": null,
     "today_cutoff": null,
+    "today_off": false,
     "arrival_days": null,
     "arrival_date_text": null,
     "arrival_probability": null,

@@ -1,0 +1,471 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:100342675:13446843026",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/adpargolf/products/13446843026",
+  "channel_no": "100342675",
+  "product_id": "13446843026",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "PRGR 스위프 Sweep M15 여성풀세트12pc 백세트포함 프로기아한국지점 원산지 일본",
+  "brand_ko": "PRGR",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "womens-complete-sets",
+    "product_type": "Women’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:womens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "13446843026",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 990000,
+    "price_usd": "990.00",
+    "sku": "FW-91582022b6b72084bfb7bac0",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 990000,
+   "original_krw": 990000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "PRGR"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "PRGR"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "일본산"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "11.5도"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "여성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "12개"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "드라이버, 6아이언세트, 2페어웨이, 2유틸리티, 퍼터"
+   },
+   {
+    "label_ko": "아이언개수",
+    "value_ko": "6개"
+   },
+   {
+    "label_ko": "골프백포함여부",
+    "value_ko": "캐디백, 보스턴백"
+   }
+  ],
+  "personalization": [
+   {
+    "label_ko": "네임스티커 성함",
+    "required": true,
+    "max_length": 20,
+    "placeholder_ko": "입력해주세요"
+   }
+  ],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 1
+  },
+  "reviews": [
+   {
+    "id": "5097758098",
+    "score": 5,
+    "text_ko": "여성용으로 어머니 선물했어요\n가볍게 백까지 주고 좋네요",
+    "created_at": "2026-11-03T11:42:48Z",
+    "writer": "dong*****",
+    "photos": [
+     "collected/50002788-fixtures/images/13446843026/fairwardgolf-review-image-e0aff7555791f3bc.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13446843026/fairwardgolf-13446843026-001-55565c3d8630dc3b.webp",
+    "sha256": "55565c3d8630dc3b27326c6ffcb17253aa06ce4a3d7bff2dd670bfe154222957",
+    "width": 1200,
+    "height": 1200
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13446843026/fairwardgolf-13446843026-002-e9830d1cc3ef3764.webp",
+    "sha256": "e9830d1cc3ef37649baeb4748da1c731c9de983b25eff7aaf950aedfd5098fdc",
+    "width": 1200,
+    "height": 1200
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13446843026/fairwardgolf-13446843026-003-d790c1c42ccadf6f.webp",
+    "sha256": "d790c1c42ccadf6f6f4a6a04ad3a7152686065267a5e073ddfe419c5a8a19dcd",
+    "width": 1200,
+    "height": 1200
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/13446843026/fairwardgolf-13446843026-004-6026c49053052de3.webp",
+    "sha256": "6026c49053052de3d53d9bd2b4bd33550578fa009427066e68696e1aa1f687d1",
+    "width": 1200,
+    "height": 1200
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/13446843026/fairwardgolf-13446843026-005-6ac018844dda9544.webp",
+    "sha256": "6ac018844dda95440ce306ab212b1d4533f586776eb5491ef2817dd6c30f67cf",
+    "width": 1200,
+    "height": 1200
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/13446843026/fairwardgolf-13446843026-006-5a24256640ac2014.webp",
+    "sha256": "5a24256640ac201406d78ef41a9f5dd52e08afe23aebc9cddc9784edd32e7b30",
+    "width": 1200,
+    "height": 1200
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/13446843026/fairwardgolf-13446843026-007-28fed14dec098284.webp",
+    "sha256": "28fed14dec098284c9e3b2b9917ec920db8774cfaff7e6cc93cd294f6f4c2a1f",
+    "width": 1200,
+    "height": 1200
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/13446843026/fairwardgolf-13446843026-008-2214f5c2ab3a24d5.webp",
+    "sha256": "2214f5c2ab3a24d5d8f250b8724244a7e18d3734f9da9e12fd8deff2d2125571",
+    "width": 1200,
+    "height": 1200
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/13446843026/fairwardgolf-13446843026-009-59b44e19dbc76cb4.webp",
+    "sha256": "59b44e19dbc76cb43dbf88feb90853fca177e0cb145974029f2a244466346972",
+    "width": 1200,
+    "height": 1200
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/13446843026/fairwardgolf-13446843026-010-cea2c3e5dc0b1154.webp",
+    "sha256": "cea2c3e5dc0b1154745ef709c2831f30b3a7c53d8e7f93c300b6e3959fd97343",
+    "width": 1200,
+    "height": 1200
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "policy_text": null,
+   "lead_time": {
+    "seller_average_days": 1.5384616,
+    "product_average_days": 2.0,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 98,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260806_186/1785988874939bB3tW_PNG/Frame_33794.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260630_29/1782796602465LON20_PNG/Frame_22248.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260626_94/1782462197701VSg2t_PNG/Frame_22255.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260629_163/1782714341447PtBFN_PNG/Frame_22253.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260626_82/1782462197674fU9GT_PNG/Frame_22254.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260629_36/1782719303290NHtAs_PNG/%EC%83%88%EC%82%AC%EC%A7%84.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260630_149/1782796622974mq0c0_PNG/PRGR.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260915_101/1789458638254OluPr_JPEG/m15_11pcs_12pcs.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260831_53/1788166693852gSWjU_PNG/image.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260629_9/17827201952297Ymgr_PNG/Frame_22246.png?type=w848",
+   "https://shop-phinf.pstatic.net/20260522_175/1779436303294Tw19I_JPEG/Frame_1294.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20260629_178/1782715762625NnqIW_PNG/Rectangle_421.png?type=w848"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20260629_7/1782718354270Vw6ox_PNG/Frame_2218.png?type=w848"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20260622_41/1782101312434yAjBs_PNG/Frame_2218.png?type=w848"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20260630_211/1782789965758VU6In_PNG/Frame_2218.png?type=w848"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20260623_40/1782186304173myaaa_PNG/Frame_2218.png?type=w848"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20260330_300/1774849923560vzwXM_PNG/Frame_1297.png?type=w848"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20260330_263/1774849923604rJAwB_PNG/Frame_1298.png?type=w848"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20260330_285/17748499236149cXcO_PNG/Frame_1306.png?type=w848"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:c2ce892683685ba3",
+   "kind": "title",
+   "ko": "PRGR 스위프 Sweep M15 여성풀세트12pc 백세트포함 프로기아한국지점 원산지 일본"
+  },
+  {
+   "id": "brand:d0fdfd92351be067",
+   "kind": "brand",
+   "ko": "PRGR"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:d0fdfd92351be067",
+   "kind": "spec_value",
+   "ko": "PRGR"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2d5ea77cf8032c99",
+   "kind": "spec_value",
+   "ko": "일본산"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:efe3136bd7890788",
+   "kind": "spec_value",
+   "ko": "11.5도"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:0c16b230164df2c9",
+   "kind": "spec_value",
+   "ko": "#7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:ff90d7cd3c519c1f",
+   "kind": "spec_value",
+   "ko": "여성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:409b80822db00dec",
+   "kind": "spec_value",
+   "ko": "12개"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:e37d08621a55eee6",
+   "kind": "spec_value",
+   "ko": "드라이버, 6아이언세트, 2페어웨이, 2유틸리티, 퍼터"
+  },
+  {
+   "id": "spec_label:cf77915a2f3ab5d8",
+   "kind": "spec_label",
+   "ko": "아이언개수"
+  },
+  {
+   "id": "spec_value:bb6a459e40734a7c",
+   "kind": "spec_value",
+   "ko": "6개"
+  },
+  {
+   "id": "spec_label:e4aabb2e41b870bd",
+   "kind": "spec_label",
+   "ko": "골프백포함여부"
+  },
+  {
+   "id": "spec_value:eeda5d7de7e2ade9",
+   "kind": "spec_value",
+   "ko": "캐디백, 보스턴백"
+  },
+  {
+   "id": "text_label:e5143a6231c0e81e",
+   "kind": "text_label",
+   "ko": "네임스티커 성함"
+  },
+  {
+   "id": "text_placeholder:d3c67557e47ff4e8",
+   "kind": "text_placeholder",
+   "ko": "입력해주세요"
+  },
+  {
+   "id": "review:729b2d40678125d2",
+   "kind": "review",
+   "ko": "여성용으로 어머니 선물했어요\n가볍게 백까지 주고 좋네요"
+  }
+ ]
+}

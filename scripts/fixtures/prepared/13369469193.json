@@ -1,0 +1,1047 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:500000592:13369469193",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "specs_stated_by_variants",
+   "detail": "드라이버 로프트각 10.5도: every variant states it"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "선택"
+  },
+  {
+   "code": "description_tiles_include_banners",
+   "detail": "event_main.jpg, maincopyright.jpg, CSinfo_Majorgolf.jpg"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/majorgolf/products/13369469193",
+  "channel_no": "500000592",
+  "product_id": "13369469193",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "히메지몬자 NEW 2.0 아벤타도르 트리슐라 남성 여성 초고반발 카본 골프채 풀세트",
+  "brand_ko": "히메지몬자",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   },
+   {
+    "leaf": "womens-complete-sets",
+    "product_type": "Women’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:womens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "선택",
+    "values_ko": [
+     "NEW 2.0 트리슐라 클럽세트 10.5 R",
+     "NEW 2.0 트리슐라 클럽세트 10.5 SR",
+     "NEW 2.0 트리슐라 클럽세트 9.5 SR"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"NEW 2.0 트리슐라 클럽세트 10.5 R\"]",
+    "naver_variant_id": "57577147760",
+    "options_ko": [
+     "NEW 2.0 트리슐라 클럽세트 10.5 R"
+    ],
+    "price_krw": 1540000,
+    "price_usd": "1540.00",
+    "sku": "FW-d16901313586123db24e2bdf",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"NEW 2.0 트리슐라 클럽세트 10.5 SR\"]",
+    "naver_variant_id": "57577147758",
+    "options_ko": [
+     "NEW 2.0 트리슐라 클럽세트 10.5 SR"
+    ],
+    "price_krw": 1540000,
+    "price_usd": "1540.00",
+    "sku": "FW-4e6b16cfcb7431a2ccb8623c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"NEW 2.0 트리슐라 클럽세트 9.5 SR\"]",
+    "naver_variant_id": "57577147756",
+    "options_ko": [
+     "NEW 2.0 트리슐라 클럽세트 9.5 SR"
+    ],
+    "price_krw": 1540000,
+    "price_usd": "1540.00",
+    "sku": "FW-c4f61e4b32f4364a2d5ece36",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 1540000,
+   "original_krw": 2500000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "히메지몬자"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "히메지몬자"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "아벤타도르 트리슐라"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "기타국가"
+   },
+   {
+    "label_ko": "유틸리티/하이브리드 로프트각",
+    "value_ko": "21도"
+   },
+   {
+    "label_ko": "페어웨이 로프트각",
+    "value_ko": "15도"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#5, #6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "조합풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남녀공용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "12개"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2025년형"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "드라이버, 유틸리티, 퍼터, 8아이언세트, 페어웨이"
+   },
+   {
+    "label_ko": "아이언샤프트소재",
+    "value_ko": "그라파이트/카본"
+   },
+   {
+    "label_ko": "아이언개수",
+    "value_ko": "8개"
+   },
+   {
+    "label_ko": "퍼터형태",
+    "value_ko": "블레이드(일자형)"
+   },
+   {
+    "label_ko": "골프백포함여부",
+    "value_ko": "미포함"
+   }
+  ],
+  "personalization": [],
+  "addons": [
+   {
+    "group_ko": "남여 합피 골프장갑",
+    "name_ko": "남성 합피 E46301 26호 왼손 4장",
+    "required": false,
+    "price_krw": 14900,
+    "price_usd": "14.90"
+   },
+   {
+    "group_ko": "남여 합피 골프장갑",
+    "name_ko": "여성 합피 E46301 18호 양손 2세트",
+    "required": false,
+    "price_krw": 14900,
+    "price_usd": "14.90"
+   },
+   {
+    "group_ko": "남여 양피 골프장갑",
+    "name_ko": "남성 올양피 C36301 화이트 22호 3장",
+    "required": false,
+    "price_krw": 19900,
+    "price_usd": "19.90"
+   },
+   {
+    "group_ko": "남여 양피 골프장갑",
+    "name_ko": "남성 올양피 C36301 화이트 23호 3장",
+    "required": false,
+    "price_krw": 19900,
+    "price_usd": "19.90"
+   },
+   {
+    "group_ko": "남여 양피 골프장갑",
+    "name_ko": "남성 올양피 C36301 화이트 24호 3장",
+    "required": false,
+    "price_krw": 19900,
+    "price_usd": "19.90"
+   },
+   {
+    "group_ko": "남여 양피 골프장갑",
+    "name_ko": "남성 올양피 C36301 화이트 25호 3장",
+    "required": false,
+    "price_krw": 19900,
+    "price_usd": "19.90"
+   },
+   {
+    "group_ko": "남여 양피 골프장갑",
+    "name_ko": "여성 올양피 C36301 화이트 18호 3장",
+    "required": false,
+    "price_krw": 19900,
+    "price_usd": "19.90"
+   },
+   {
+    "group_ko": "남여 양피 골프장갑",
+    "name_ko": "여성 올양피 C36301 화이트 19호 3장",
+    "required": false,
+    "price_krw": 19900,
+    "price_usd": "19.90"
+   },
+   {
+    "group_ko": "남여 양피 골프장갑",
+    "name_ko": "여성 올양피 C36301 화이트 20호 3장",
+    "required": false,
+    "price_krw": 19900,
+    "price_usd": "19.90"
+   },
+   {
+    "group_ko": "남여 양피 골프장갑",
+    "name_ko": "여성 올양피 C36301 화이트 21호 3장",
+    "required": false,
+    "price_krw": 19900,
+    "price_usd": "19.90"
+   },
+   {
+    "group_ko": "골프백",
+    "name_ko": "럭셔리 신발가방 C24307 블랙 2.0",
+    "required": false,
+    "price_krw": 9900,
+    "price_usd": "9.90"
+   },
+   {
+    "group_ko": "골프백",
+    "name_ko": "에나멜 골프 파우치 D34305 블랙",
+    "required": false,
+    "price_krw": 12900,
+    "price_usd": "12.90"
+   },
+   {
+    "group_ko": "골프백",
+    "name_ko": "에나멜 골프 파우치 D34305 화이트",
+    "required": false,
+    "price_krw": 12900,
+    "price_usd": "12.90"
+   },
+   {
+    "group_ko": "필드용품",
+    "name_ko": "아디다스 로고 볼캡 IA9602 블랙",
+    "required": false,
+    "price_krw": 17900,
+    "price_usd": "17.90"
+   },
+   {
+    "group_ko": "필드용품",
+    "name_ko": "아디다스 로고 볼캡 IA9603 화이트",
+    "required": false,
+    "price_krw": 17900,
+    "price_usd": "17.90"
+   },
+   {
+    "group_ko": "필드용품",
+    "name_ko": "아디다스 로고 볼캡 IA9604 네이비",
+    "required": false,
+    "price_krw": 17900,
+    "price_usd": "17.90"
+   },
+   {
+    "group_ko": "필드용품",
+    "name_ko": "브리지스톤 2피스 골프공 12구",
+    "required": false,
+    "price_krw": 17900,
+    "price_usd": "17.90"
+   },
+   {
+    "group_ko": "필드용품",
+    "name_ko": "단목 압박 골프양말 C20304 블랙 3켤레",
+    "required": false,
+    "price_krw": 6900,
+    "price_usd": "6.90"
+   },
+   {
+    "group_ko": "필드용품",
+    "name_ko": "단목 압박 골프양말 C20304 화이트 3켤레",
+    "required": false,
+    "price_krw": 6900,
+    "price_usd": "6.90"
+   },
+   {
+    "group_ko": "쇼핑백",
+    "name_ko": "대형",
+    "required": false,
+    "price_krw": 1000,
+    "price_usd": "1.00"
+   }
+  ],
+  "rating": {
+   "value": 4.6,
+   "count": 5
+  },
+  "reviews": [
+   {
+    "id": "5041151063",
+    "score": 5,
+    "text_ko": "사용해보니 좋아요 \n강추",
+    "created_at": "2026-08-11T11:50:31Z",
+    "writer": "do****",
+    "photos": [
+     "collected/50002788-fixtures/images/13369469193/fairwardgolf-review-image-e5ba8330461f4367.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "5016339877",
+    "score": 5,
+    "text_ko": "이제막시작하는데\n좋은지 나쁜지는잘모르겠어요\n스크린갔는데 괜찮은거같아요",
+    "created_at": "2026-07-07T13:49:58Z",
+    "writer": "do****",
+    "photos": [
+     "collected/50002788-fixtures/images/13369469193/fairwardgolf-review-image-1b86659132720fdd.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "5007647167",
+    "score": 4,
+    "text_ko": "좋아요 적극추천합니다",
+    "created_at": "2026-06-26T09:03:33Z",
+    "writer": "a_78***",
+    "photos": [
+     "collected/50002788-fixtures/images/13369469193/fairwardgolf-review-image-db6c094e9a9aad8a.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4973640798",
+    "score": 4,
+    "text_ko": "제품 너무 좋내요 기대이상입니다.  좋은제품 감사합니다.^^ 근데저는 가방 포함된줄 알앗는데 그건 아니더라고요. 그부분은 살짝 아쉽네요",
+    "created_at": "2026-05-11T05:46:34Z",
+    "writer": "a_78***",
+    "photos": [
+     "collected/50002788-fixtures/images/13369469193/fairwardgolf-review-image-e409ea29bc71ef94.webp",
+     "collected/50002788-fixtures/images/13369469193/fairwardgolf-review-image-83327054b1eef5c6.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "4961627555",
+    "score": 5,
+    "text_ko": "아직사용전이라 성능은 모르겠지만\n제품은 완전 귀티입니다.",
+    "created_at": "2026-04-24T12:31:14Z",
+    "writer": "leeb*******",
+    "photos": [
+     "collected/50002788-fixtures/images/13369469193/fairwardgolf-review-image-c4fe38b8b8359864.webp",
+     "collected/50002788-fixtures/images/13369469193/fairwardgolf-review-image-398c64a91d0d5278.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13369469193/fairwardgolf-13369469193-001-74466b2694b5bc0a.webp",
+    "sha256": "74466b2694b5bc0ae13f6f74110d6bb118ae11aee9739a1313ee4b849e49777f",
+    "width": 600,
+    "height": 600
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13369469193/fairwardgolf-13369469193-002-3912eb8bc7ef47d5.webp",
+    "sha256": "3912eb8bc7ef47d557a2f711d5e8f32942536e362ee949be4055b418be255877",
+    "width": 600,
+    "height": 600
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13369469193/fairwardgolf-13369469193-003-0fce509c7592fe05.webp",
+    "sha256": "0fce509c7592fe05abfe212870cea44a7e2f2741261891d1332ad6036dc2c4bf",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/13369469193/fairwardgolf-13369469193-004-be8a41492d0d71cf.webp",
+    "sha256": "be8a41492d0d71cfe31eadd3acd4fce324a7fbcb81ee74366b65d4c2303e289c",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/13369469193/fairwardgolf-13369469193-005-ec62133bd2e1d104.webp",
+    "sha256": "ec62133bd2e1d104c691d08b9491190dc48f96a591a00890899e8a45784a2206",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/13369469193/fairwardgolf-13369469193-006-b5d593de168a9589.webp",
+    "sha256": "b5d593de168a958971ec416185a78e05c3a066343c254f98082d8063f07842d4",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/13369469193/fairwardgolf-13369469193-007-43f7ae345db1427f.webp",
+    "sha256": "43f7ae345db1427f1ccb1dddb43a1d98b64db70e70c328696bdf961240e86adc",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/13369469193/fairwardgolf-13369469193-008-9cff27952fc46174.webp",
+    "sha256": "9cff27952fc46174e1ac6052a1d918c784e76c4aec5ec70c10d721ac802607a1",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/13369469193/fairwardgolf-13369469193-009-0c5b4bc6d9197785.webp",
+    "sha256": "0c5b4bc6d9197785f005797eaa1acd5425915f7b214717e67c3e22633117ef72",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/13369469193/fairwardgolf-13369469193-010-0a7e577a9cee06d6.webp",
+    "sha256": "0a7e577a9cee06d6123d58221ad698651ca233adec1549e2e4e2eb200e7731e8",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.2381322,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260415_175/17762359766217VJcf_JPEG/p-13310660351-s-2-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20260415_129/1776235976626fMQhl_JPEG/p-13310660351-s-2-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20260415_28/1776235976737taY9D_JPEG/p-13310660351-s-2-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20260415_278/1776235976619ekFCQ_JPEG/p-13310660351-s-2-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20260415_244/17762359766277lFBa_JPEG/p-13310660351-s-2-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20260415_251/1776235976622JQfUI_JPEG/p-13310660351-s-2-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20260415_234/17762359767386ivtb_JPEG/p-13310660351-s-2-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20260415_296/1776235976622aDbsL_JPEG/p-13310660351-s-2-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20260415_197/17762359766204drLQ_JPEG/p-13310660351-s-2-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20260415_25/1776235976728at3aK_JPEG/p-13310660351-s-2-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20260415_263/1776235976618bch8Y_JPEG/p-13310660351-s-2-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20260415_239/1776235976737nxJnr_JPEG/p-13310660351-s-2-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20260415_157/1776235976736e33FX_JPEG/p-13310660351-s-2-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20260415_157/1776235976617shhTj_JPEG/p-13310660351-s-2-A-13.jpg",
+   "https://shop-phinf.pstatic.net/20260415_43/1776235976626niMJi_JPEG/p-13310660351-s-2-A-14.jpg",
+   "https://shop-phinf.pstatic.net/20260415_75/1776235976699ymOtc_JPEG/p-13310660351-s-2-A-15.jpg",
+   "https://shop-phinf.pstatic.net/20260415_67/1776235976758p5og3_JPEG/p-13310660351-s-2-A-16.jpg",
+   "https://shop-phinf.pstatic.net/20260415_212/1776235976747rXJlm_JPEG/p-13310660351-s-2-A-17.jpg",
+   "https://shop-phinf.pstatic.net/20260415_256/1776235976736OONg3_JPEG/p-13310660351-s-2-A-18.jpg",
+   "https://shop-phinf.pstatic.net/20260415_27/1776235976753nhYrL_JPEG/p-13310660351-s-2-A-19.jpg",
+   "https://shop-phinf.pstatic.net/20260415_50/1776235976793wV4GU_JPEG/p-13310660351-s-2-A-20.jpg",
+   "https://shop-phinf.pstatic.net/20260415_112/1776235976821yQivi_JPEG/p-13310660351-s-2-A-21.jpg",
+   "https://shop-phinf.pstatic.net/20260415_189/17762359768360JvDG_JPEG/p-13310660351-s-2-A-22.jpg",
+   "https://shop-phinf.pstatic.net/20260415_22/1776235976841DvvBI_JPEG/p-13310660351-s-2-A-23.jpg",
+   "https://shop-phinf.pstatic.net/20260415_5/1776235976858i8thQ_JPEG/p-13310660351-s-2-A-24.jpg",
+   "https://shop-phinf.pstatic.net/20260415_129/1776235976849QLDWF_JPEG/p-13310660351-s-2-A-25.jpg",
+   "https://shop-phinf.pstatic.net/20260415_30/1776235976848prQeU_JPEG/p-13310660351-s-2-A-26.jpg",
+   "https://shop-phinf.pstatic.net/20260415_50/1776235976961ShFAD_JPEG/p-13310660351-s-2-A-27.jpg",
+   "https://shop-phinf.pstatic.net/20260415_82/1776235976932SEtmf_JPEG/p-13310660351-s-2-A-28.jpg",
+   "https://shop-phinf.pstatic.net/20260415_158/1776235976963NTynL_JPEG/p-13310660351-s-2-A-29.jpg",
+   "https://shop-phinf.pstatic.net/20260415_231/17762359769551IWmY_JPEG/p-13310660351-s-2-A-30.jpg",
+   "https://shop-phinf.pstatic.net/20260415_63/1776235976966l7qLF_JPEG/p-13310660351-s-2-A-31.jpg",
+   "https://shop-phinf.pstatic.net/20260415_86/17762359769893e7N5_JPEG/p-13310660351-s-2-A-32.jpg",
+   "https://shop-phinf.pstatic.net/20260415_120/177623597686079bSR_JPEG/p-13310660351-s-2-A-33.jpg",
+   "https://shop-phinf.pstatic.net/20260415_130/177623597686077skc_JPEG/p-13310660351-s-2-A-34.jpg",
+   "https://shop-phinf.pstatic.net/20260415_33/1776235976943bEoHK_JPEG/p-13310660351-s-2-A-35.jpg",
+   "https://shop-phinf.pstatic.net/20260415_71/1776235976864PrHJJ_JPEG/p-13310660351-s-2-A-36.jpg",
+   "https://shop-phinf.pstatic.net/20260415_173/1776235976958KyInI_JPEG/p-13310660351-s-2-A-37.jpg",
+   "https://shop-phinf.pstatic.net/20260415_149/1776235976894AQP3m_JPEG/p-13310660351-s-2-A-38.jpg",
+   "https://shop-phinf.pstatic.net/20260415_222/1776235976983y2Y1A_JPEG/p-13310660351-s-2-A-39.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:2e18c676632e451d",
+   "kind": "title",
+   "ko": "히메지몬자 NEW 2.0 아벤타도르 트리슐라 남성 여성 초고반발 카본 골프채 풀세트"
+  },
+  {
+   "id": "brand:72cbaba1c3ea77b4",
+   "kind": "brand",
+   "ko": "히메지몬자"
+  },
+  {
+   "id": "option_name:8d1a750c9351d1b8",
+   "kind": "option_name",
+   "ko": "선택"
+  },
+  {
+   "id": "option_value:e23370a18f248f76",
+   "kind": "option_value",
+   "ko": "NEW 2.0 트리슐라 클럽세트 10.5 R"
+  },
+  {
+   "id": "option_value:725590a030712d01",
+   "kind": "option_value",
+   "ko": "NEW 2.0 트리슐라 클럽세트 10.5 SR"
+  },
+  {
+   "id": "option_value:4fb7628b41433d9d",
+   "kind": "option_value",
+   "ko": "NEW 2.0 트리슐라 클럽세트 9.5 SR"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:72cbaba1c3ea77b4",
+   "kind": "spec_value",
+   "ko": "히메지몬자"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:d030daeb85b50d6f",
+   "kind": "spec_value",
+   "ko": "아벤타도르 트리슐라"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:57f94c2d56dee471",
+   "kind": "spec_value",
+   "ko": "기타국가"
+  },
+  {
+   "id": "spec_label:1c0460d0d6673223",
+   "kind": "spec_label",
+   "ko": "유틸리티/하이브리드 로프트각"
+  },
+  {
+   "id": "spec_value:12a73b9098bf50da",
+   "kind": "spec_value",
+   "ko": "21도"
+  },
+  {
+   "id": "spec_label:ecef087ddd17d2b5",
+   "kind": "spec_label",
+   "ko": "페어웨이 로프트각"
+  },
+  {
+   "id": "spec_value:13a3c342a2c78df1",
+   "kind": "spec_value",
+   "ko": "15도"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:5ace0004401aa84b",
+   "kind": "spec_value",
+   "ko": "#5, #6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:94abee9ad24a637a",
+   "kind": "spec_value",
+   "ko": "조합풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:e012efbcc2aa417e",
+   "kind": "spec_value",
+   "ko": "남녀공용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:409b80822db00dec",
+   "kind": "spec_value",
+   "ko": "12개"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:6aea4c4b3fb65e70",
+   "kind": "spec_value",
+   "ko": "2025년형"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:732f1db772125c26",
+   "kind": "spec_value",
+   "ko": "드라이버, 유틸리티, 퍼터, 8아이언세트, 페어웨이"
+  },
+  {
+   "id": "spec_label:5a12089f44ae3f65",
+   "kind": "spec_label",
+   "ko": "아이언샤프트소재"
+  },
+  {
+   "id": "spec_value:ef00cceb8d6a2241",
+   "kind": "spec_value",
+   "ko": "그라파이트/카본"
+  },
+  {
+   "id": "spec_label:cf77915a2f3ab5d8",
+   "kind": "spec_label",
+   "ko": "아이언개수"
+  },
+  {
+   "id": "spec_value:77e34e31f3da3e43",
+   "kind": "spec_value",
+   "ko": "8개"
+  },
+  {
+   "id": "spec_label:04c52e5b47f70047",
+   "kind": "spec_label",
+   "ko": "퍼터형태"
+  },
+  {
+   "id": "spec_value:db08874d4cf56690",
+   "kind": "spec_value",
+   "ko": "블레이드(일자형)"
+  },
+  {
+   "id": "spec_label:e4aabb2e41b870bd",
+   "kind": "spec_label",
+   "ko": "골프백포함여부"
+  },
+  {
+   "id": "spec_value:96f0fed466f17e8e",
+   "kind": "spec_value",
+   "ko": "미포함"
+  },
+  {
+   "id": "addon_group:a27363abd4e493c3",
+   "kind": "addon_group",
+   "ko": "남여 합피 골프장갑"
+  },
+  {
+   "id": "addon_name:4b9f95b896bc5797",
+   "kind": "addon_name",
+   "ko": "남성 합피 E46301 26호 왼손 4장"
+  },
+  {
+   "id": "addon_name:00a9b0bc06fd96f2",
+   "kind": "addon_name",
+   "ko": "여성 합피 E46301 18호 양손 2세트"
+  },
+  {
+   "id": "addon_group:0d768a31b258ae4c",
+   "kind": "addon_group",
+   "ko": "남여 양피 골프장갑"
+  },
+  {
+   "id": "addon_name:5b13eba5c963e374",
+   "kind": "addon_name",
+   "ko": "남성 올양피 C36301 화이트 22호 3장"
+  },
+  {
+   "id": "addon_name:dbbf73fc17710b1c",
+   "kind": "addon_name",
+   "ko": "남성 올양피 C36301 화이트 23호 3장"
+  },
+  {
+   "id": "addon_name:3e956e813a68c3d5",
+   "kind": "addon_name",
+   "ko": "남성 올양피 C36301 화이트 24호 3장"
+  },
+  {
+   "id": "addon_name:2dd7bba75923ced8",
+   "kind": "addon_name",
+   "ko": "남성 올양피 C36301 화이트 25호 3장"
+  },
+  {
+   "id": "addon_name:8d99111526ba7735",
+   "kind": "addon_name",
+   "ko": "여성 올양피 C36301 화이트 18호 3장"
+  },
+  {
+   "id": "addon_name:66b2f04a47a505e1",
+   "kind": "addon_name",
+   "ko": "여성 올양피 C36301 화이트 19호 3장"
+  },
+  {
+   "id": "addon_name:ecf53799b71e670f",
+   "kind": "addon_name",
+   "ko": "여성 올양피 C36301 화이트 20호 3장"
+  },
+  {
+   "id": "addon_name:ce8d61a41925dbf2",
+   "kind": "addon_name",
+   "ko": "여성 올양피 C36301 화이트 21호 3장"
+  },
+  {
+   "id": "addon_group:0da9ae3032060c3c",
+   "kind": "addon_group",
+   "ko": "골프백"
+  },
+  {
+   "id": "addon_name:f9d2a21872e83b28",
+   "kind": "addon_name",
+   "ko": "럭셔리 신발가방 C24307 블랙 2.0"
+  },
+  {
+   "id": "addon_name:4bb4244e0764beb7",
+   "kind": "addon_name",
+   "ko": "에나멜 골프 파우치 D34305 블랙"
+  },
+  {
+   "id": "addon_name:945f81748c26b23c",
+   "kind": "addon_name",
+   "ko": "에나멜 골프 파우치 D34305 화이트"
+  },
+  {
+   "id": "addon_group:d2302d7cd1a11685",
+   "kind": "addon_group",
+   "ko": "필드용품"
+  },
+  {
+   "id": "addon_name:baa624d77b0579c9",
+   "kind": "addon_name",
+   "ko": "아디다스 로고 볼캡 IA9602 블랙"
+  },
+  {
+   "id": "addon_name:877b375877547a39",
+   "kind": "addon_name",
+   "ko": "아디다스 로고 볼캡 IA9603 화이트"
+  },
+  {
+   "id": "addon_name:2b48a67f57734fd6",
+   "kind": "addon_name",
+   "ko": "아디다스 로고 볼캡 IA9604 네이비"
+  },
+  {
+   "id": "addon_name:ea94efb44c63a758",
+   "kind": "addon_name",
+   "ko": "브리지스톤 2피스 골프공 12구"
+  },
+  {
+   "id": "addon_name:a86cb621d8c98fa9",
+   "kind": "addon_name",
+   "ko": "단목 압박 골프양말 C20304 블랙 3켤레"
+  },
+  {
+   "id": "addon_name:6e1e44dc0e79ff0e",
+   "kind": "addon_name",
+   "ko": "단목 압박 골프양말 C20304 화이트 3켤레"
+  },
+  {
+   "id": "addon_group:d9b1677d8cf93b9a",
+   "kind": "addon_group",
+   "ko": "쇼핑백"
+  },
+  {
+   "id": "addon_name:e17d6d9a9050995e",
+   "kind": "addon_name",
+   "ko": "대형"
+  },
+  {
+   "id": "review:bc68d156cbae47a7",
+   "kind": "review",
+   "ko": "사용해보니 좋아요 \n강추"
+  },
+  {
+   "id": "review:2a607370d69a2852",
+   "kind": "review",
+   "ko": "이제막시작하는데\n좋은지 나쁜지는잘모르겠어요\n스크린갔는데 괜찮은거같아요"
+  },
+  {
+   "id": "review:451933cc6344fff8",
+   "kind": "review",
+   "ko": "좋아요 적극추천합니다"
+  },
+  {
+   "id": "review:162cfb0dcbc9b21a",
+   "kind": "review",
+   "ko": "제품 너무 좋내요 기대이상입니다.  좋은제품 감사합니다.^^ 근데저는 가방 포함된줄 알앗는데 그건 아니더라고요. 그부분은 살짝 아쉽네요"
+  },
+  {
+   "id": "review:e7cf767c2f2f3016",
+   "kind": "review",
+   "ko": "아직사용전이라 성능은 모르겠지만\n제품은 완전 귀티입니다."
+  }
+ ]
+}

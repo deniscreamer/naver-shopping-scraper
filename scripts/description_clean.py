@@ -24,19 +24,28 @@ collected golf sets of category 50002788, false positives checked on 46 more sav
   * gift: a block that starts with 사은품 ("사은품 최다 증정(소진시 대체품)"), only when Naver's promotion rows are hidden
     (the transform's hidden_promo): we would not hand those gifts out. "☆ 캐디백 증정 ☆" is part of the set and stays.
   * jump: "▲ 이동(상단)", "▲TOP", "맨 위로": a fallback for the parser's jump-link skip.
+  * price_krw ("정상가 865,000원", "정상가 대비 22% 할인": our prices are USD), cross_sell ("아래 링크에서 구매": the
+    card is gone), junk (no word of two letters left, 13741767690 "o": text None, note description_junk).
 
 Images (clean_images): a description image whose file name says it is the seller's banner (배송, 통관, 공지, 이벤트,
 하단배너, foot_info, as.jpg, ...) is dropped. Names are decoded first (twice URL-encoded names; proxy-smartstore
 links carry the original link base64-encoded after /img/). Snap tiles (p-<id>-s-6-A-<n>.jpg: Naver's pictures of a
 whole editor-NONE body) are never dropped: a banner inside them cannot be cut, body_notes flags it instead.
+A Latin file name that is Hangul typed on the 2-set keyboard ("gkeksqpsj" = 하단베너) is matched as that Hangul.
+With the description HTML, SmartEditor's data-linkdata of each image also drops an image that links to the
+seller's channels (TalkTalk, Band, blog, Instagram, YouTube, Kakao channel) or store pages (link_banner) and thin
+strips (originalHeight <= 40 or width / height > 25: spacer).
 
     from description_clean import clean, clean_images, body_notes
+    pictures = clean_images(details["description"]["images"], details["description"]["html"])
     out = clean(details["description"]["text"], store_name=details["store"]["name"], promo_hidden=bool(hidden),
                 brand=details["brand"])
     out["text"], out["dropped"], out["notes"]
 """
 import base64
 import binascii
+import html as html_lib
+import json
 import re
 from collections.abc import Iterable, Iterator
 from typing import TypedDict
@@ -44,6 +53,8 @@ from urllib.parse import unquote, urlparse
 
 POLICY_MAX_LINES = 12          # a policy block with no component end: the longest seen ran 9 lines (11256507948)
 STORE_SENTENCE_MAX = 80        # the store's name in a longer sentence is product prose more often than a claim
+SPACER_MAX_HEIGHT = 40         # px (SmartEditor originalHeight); 13446843026 spacers 12 / 30, its buttons 160
+SPACER_MIN_RATIO = 25          # width / height; 1080x30 is 36, the narrowest real picture seen 860x100 (8.6)
 
 
 class Dropped(TypedDict):
@@ -75,8 +86,11 @@ class CleanedImages(TypedDict):
 
 # ---- text rules ----------------------------------------------------------------------------------------------------
 
-# a line ending on one of these goes on in the next line (11256507948 "...유선 전화로" / "안내해 드리겠습니다:)")
-_CONTINUES_RE = re.compile(r"(?:으?로|와|과|고|며|서|의|은|는|을|를|에|및|,|이며|하며|에게)$")
+# a line ending on one of these goes on in the next line (11256507948 "...유선 전화로" / "안내해 드리겠습니다:)");
+# seen 2026-11-06 (8958060680): "고가의 해외구매대행 상품인 만큼" / "궁금한 점이 있으시면" / "네이버 톡톡으로 문의해
+# 주세요." is one sentence. "-면" only after a verb ending (시면, 으면, 하면, 다면): "고강도 타격면" is the club face
+_CONTINUES_RE = re.compile(r"(?:으?로|와|과|고|며|서|의|은|는|을|를|에|및|,|이며|하며|에게|"
+                           r"(?:[시으하다라려]|있|없)면|만큼|는데|지만|니까)$")
 _POLICY_HEAD_RE = re.compile(
     r"^[●○■□◆◇▶▷※*☞\-\s\[<]*(?:해당\s*상품\s*)?(?:\S*\s*)?(?:반품|교환|환불|취소|배송|통관|관부가세)\S*"
     r"(?:\s+(?:및|/)?\s*\S+){0,3}\s*(?:안내|주의\s*사항|공지|규정|정책|유의\s*사항)\s*[●◆\]>]*$")
@@ -88,7 +102,16 @@ _JUMP_RE = re.compile(r"^\s*[▲△↑]?\s*(?:이동\s*\(?\s*상단\s*\)?|맨\s*
 _RULES = [
     ("jump", _JUMP_RE),
     ("phone", _PHONE_RE),
-    ("contact", re.compile(r"톡톡|talk\.naver\.com|유선\s*전화|고객\s*센터|카카오톡\s*(?:채널|플러스|상담|문의)|H/?P\s*:")),
+    # closings seen 2026-11-06 (8958060680): "궁금하신 내용을 편하게 여쭤봐주세요!", "...친절하게 답변드리겠습니다!"
+    ("contact", re.compile(r"톡톡|talk\.naver\.com|유선\s*전화|고객\s*센터|카카오톡\s*(?:채널|플러스|상담|문의)|H/?P\s*:|"
+                           r"여쭤\s*(?:봐|보)?\s*주|답변\s*(?:해\s*)?드리|문의\s*(?:해\s*)?주(?:세요|시면|십시오)|"
+                           r"문의\s*(?:하시기|바랍니다)")),
+    # a KRW price promotion (8958060680 "무려 190,300원 할인!", "정상가 865,000원", "정상가 대비 22% 할인 혜택"):
+    # the shop's price is in USD and is not Naver's
+    ("price_krw", re.compile(r"(?:정상가|할인가|판매가|소비자가|시중가|특가|할인)\D{0,10}\d[\d,]*\s*원|"
+                             r"\d[\d,]*\s*원\s*(?:할인|인하|특가)|\d+(?:\.\d+)?\s*%\s*(?:할인|DC|OFF)", re.I)),
+    # a line about a product card the parser left out (8958060680 "해당 상품은 아래 링크에서 구매하실 수 있습니다.")
+    ("cross_sell", re.compile(r"(?:아래|하단)\s*(?:의\s*)?(?:링크|배너)|링크(?:에서|를\s*통해)\s*구매")),
     ("naverpay", re.compile(r"네이버\s*페이\s*(?:자동\s*)?(?:수거|반품|회수)")),
     ("monitor", re.compile(r"모니터.{0,30}(?:차이|다를|상이)")),
     ("greeting", re.compile(r"^안녕하세요[.!~,]?\s*\S{0,20}(?:입니다|이에요|예요)[.!~:)^]*$")),
@@ -103,6 +126,10 @@ _RULES = [
                                r"(?:공식|정식)\s*(?:온라인\s*)?(?:판매\s*)?(?:대리점|수입\s*업체|판매권|판매점)")),
 ]
 _NAME_EDGE_RE = re.compile(r"^[\W_]+|[\W_]+$")
+# a store named for its trade: "일본 구매대행 해피마로" writes itself 해피마로 in the text (8958060680, 2026-11-06)
+_STORE_PREFIX_RE = re.compile(r"^(?:(?:일본|미국|중국|독일|영국|유럽|해외|국내|글로벌)\s*)?"
+                              r"(?:구매\s*대행|해외\s*직구|직구|병행\s*수입|직수입)\s+")
+_WORD_RE = re.compile(r"[가-힣]{2,}|[A-Za-z]{2,}")
 
 
 def sentences(lines: Iterable[str]) -> Iterator[list[str]]:
@@ -121,6 +148,7 @@ def _store_word(store_name: str | None, brand: str | None) -> str | None:
     """The store's name as it is written in a text ("따봉몰." -> "따봉몰"), or None when it says nothing (one letter)
     or is the brand's own store (its name is in every product line)."""
     name = _NAME_EDGE_RE.sub("", store_name or "")
+    name = _STORE_PREFIX_RE.sub("", name) or name
     if len(name) < 2:
         return None
     b = _NAME_EDGE_RE.sub("", brand or "")
@@ -173,6 +201,11 @@ def clean(text: str | None, store_name: str | None = None, promo_hidden: bool = 
         if out:
             kept_blocks.append("\n".join(out))
     cleaned = "\n\n".join(kept_blocks) or None
+    if cleaned and not _WORD_RE.search(cleaned):
+        # 13741767690 (2026-11-06): the whole text is "o": no word of two letters, nothing to show or translate
+        dropped.append({"rule": "junk", "text": cleaned})
+        notes.append({"code": "description_junk", "detail": cleaned[:80]})
+        return {"text": None, "dropped": dropped, "notes": notes}
     if cleaned is None:
         notes.append({"code": "description_all_boilerplate", "detail": f"{len(dropped)} dropped"})
     return {"text": cleaned, "dropped": dropped, "notes": notes}
@@ -190,7 +223,10 @@ _BANNER_NAME_RE = re.compile(
     r"plusfriend|(?<![a-z])event|warranty|^(?:as|map|gift)\.(?:jpe?g|png|gif)$|"
     # seen 2026-11-06 on the 40 re-checked: "ktksports 안내문11.jpg" (4 sets), 디씨골프 "회사이미지.jpg" (3),
     # "택배_Nope_AS.jpg", golfbank "brand.jpg" / "customer.jpg", akgolf "bottom_img_all.jpg"
-    r"안내문|회사\s*_?이미지|택배|bottom_?img|^(?:brand|customer)\.(?:jpe?g|png|gif)$", re.I)
+    r"안내문|회사\s*_?이미지|택배|bottom_?img|^(?:brand|customer)\.(?:jpe?g|png|gif)$|"
+    # seen 2026-11-06 on the pilot 20: "..._네이버톡톡_복사.jpg", "..._하단_상페_복사.jpg" (상세페이지 footer; "민트_드라이버
+    # _상페.jpeg" is the product's own page and stays), "하단고정배너(860)문구O.jpg", 베너 (the common misspelling)
+    r"톡톡|하단[\s_]*(?:고정)?[\s_]*(?:[배베]너|상페|안내)|(?:상단|고정)[\s_]*[배베]너", re.I)
 _SNAP_RE = re.compile(r"/p-\d+-s-\d+-[A-Z]-\d+\.\w+$")
 # the HTML comments sellers mark their banners with in tiled bodies (12696567111 "최상단 사은품", "하단 안내 이미지";
 # 10870655883 "휴무 공지사항", "카카오톡 플러스친구", "배송정보")
@@ -202,35 +238,151 @@ _ANCHOR_RE = re.compile(r"""<a\b[^>]*\bhref\s*=\s*["']#([^"']+)["']""", re.I)
 _TARGET_RE = re.compile(r"""\b(?:id|name)\s*=\s*["']([^"']+)["']""", re.I)
 
 
+# SmartEditor image components: data-linkdata='{"src", "originalWidth", "originalHeight", "linkUse", "link"}'
+_LINKDATA_RE = re.compile(r"""\bdata-linkdata\s*=\s*(["'])(.*?)\1""", re.S)
+# an image that opens the seller's channels is a banner, not the product (2026-11-06: 13446843026 Band / blog /
+# Instagram buttons, 8958060680 the TalkTalk banner)
+_LINK_BANNER_HOSTS = ("talk.naver.com", "band.us", "blog.naver.com", "instagram.com", "youtube.com", "youtu.be",
+                      "pf.kakao.com", "facebook.com")
+_STORE_HOSTS = ("smartstore.naver.com", "brand.naver.com")
+
+# 2-set (dubeolsik) keyboard: the key -> the jamo it types (shifted keys: the double consonants, ㅒ, ㅖ)
+_KEY_JAMO = dict(zip("rRseEfaqQtTdwWczxvgkoiOjpuPhynbml", "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎㅏㅐㅑㅒㅓㅔㅕㅖㅗㅛㅜㅠㅡㅣ"))
+_INITIALS = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ"
+_VOWELS = "ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ"
+_FINALS = ["", *"ㄱㄲㄳㄴㄵㄶㄷㄹㄺㄻㄼㄽㄾㄿㅀㅁㅂㅄㅅㅆㅇㅈㅊㅋㅌㅍㅎ"]
+_VOWEL_PAIRS = {"ㅗㅏ": "ㅘ", "ㅗㅐ": "ㅙ", "ㅗㅣ": "ㅚ", "ㅜㅓ": "ㅝ", "ㅜㅔ": "ㅞ", "ㅜㅣ": "ㅟ", "ㅡㅣ": "ㅢ"}
+_FINAL_PAIRS = {"ㄱㅅ": "ㄳ", "ㄴㅈ": "ㄵ", "ㄴㅎ": "ㄶ", "ㄹㄱ": "ㄺ", "ㄹㅁ": "ㄻ", "ㄹㅂ": "ㄼ", "ㄹㅅ": "ㄽ", "ㄹㅌ": "ㄾ",
+                "ㄹㅍ": "ㄿ", "ㄹㅎ": "ㅀ", "ㅂㅅ": "ㅄ"}
+_LATIN_RUN_RE = re.compile(r"[A-Za-z]{3,}")
+
+
+def qwerty_hangul(word: str) -> str | None:
+    """Latin letters typed with the keyboard left on Latin, as the Hangul they stand for on the 2-set layout
+    ("gkeksqpsj" -> "하단베너", 6540695739, 2026-11-06), or None when they are not whole Hangul syllables (a real
+    Latin word: "brand", "csgolf", "logo": a vowel with no consonant before it, or a consonant with no vowel)."""
+    jamo = []
+    for ch in word:
+        j = _KEY_JAMO.get(ch) or _KEY_JAMO.get(ch.lower())
+        if j is None:
+            return None
+        jamo.append(j)
+
+    def consonant(k: int) -> bool:
+        return k < len(jamo) and jamo[k] in _INITIALS
+
+    def vowel(k: int) -> bool:
+        return k < len(jamo) and jamo[k] not in _INITIALS
+
+    out, i = [], 0
+    while i < len(jamo):
+        if not (consonant(i) and vowel(i + 1)):
+            return None
+        lead, v = jamo[i], jamo[i + 1]
+        i += 2
+        if vowel(i) and v + jamo[i] in _VOWEL_PAIRS:
+            v, i = _VOWEL_PAIRS[v + jamo[i]], i + 1
+        tail = ""
+        if consonant(i) and not vowel(i + 1):
+            pair = jamo[i] + jamo[i + 1] if consonant(i + 1) else ""
+            if pair in _FINAL_PAIRS and not vowel(i + 2):
+                tail, i = _FINAL_PAIRS[pair], i + 2
+            elif jamo[i] in _FINALS:
+                tail, i = jamo[i], i + 1
+        out.append(chr(0xAC00 + (_INITIALS.index(lead) * 21 + _VOWELS.index(v)) * 28 + _FINALS.index(tail)))
+    return "".join(out) if len(out) >= 2 else None
+
+
+def _proxied(link: str) -> str | None:
+    """The original link a proxy-smartstore link carries base64-encoded after /img/, or None."""
+    path = urlparse(link).path
+    if "proxy-smartstore" not in link or "/img/" not in path:
+        return None
+    token = path.split("/img/", 1)[1]
+    try:
+        return base64.b64decode(token + "=" * (-len(token) % 4), validate=False).decode("utf-8")
+    except (binascii.Error, UnicodeDecodeError, ValueError):
+        return None
+
+
 def image_name(link: str) -> str:
     """The file name a description image link stands for, decoded."""
-    path = urlparse(link).path
-    if "proxy-smartstore" in link and "/img/" in path:
-        token = path.split("/img/", 1)[1]
-        try:
-            path = base64.b64decode(token + "=" * (-len(token) % 4), validate=False).decode("utf-8")
-        except (binascii.Error, UnicodeDecodeError, ValueError):
-            pass
+    path = _proxied(link) or urlparse(link).path
     return unquote(unquote(path.rstrip("/").rsplit("/", 1)[-1]))
+
+
+def _image_key(link: str) -> str:
+    """One image whatever its scheme, size query or proxy: host + decoded path."""
+    link = _proxied(link) or link
+    u = urlparse(link if "//" in link else "//" + link)
+    return u.netloc.lower() + unquote(unquote(u.path))
 
 
 def _banner(link: str) -> str | None:
     if _SNAP_RE.search(urlparse(link).path):
         return None
     name = image_name(link)
-    return name if _BANNER_NAME_RE.search(name) else None
+    if _BANNER_NAME_RE.search(name):
+        return name
+    typed = [h for h in map(qwerty_hangul, _LATIN_RUN_RE.findall(name.rsplit(".", 1)[0])) if h]
+    return name if typed and _BANNER_NAME_RE.search(" ".join(typed)) else None
 
 
-def clean_images(urls: Iterable[str] | None) -> CleanedImages:
-    """Description image links -> the product's own (order kept) and the seller banners dropped by name."""
+def _linkdata(html: str | None) -> dict[str, dict]:
+    """The description HTML's SmartEditor image components by image (_image_key)."""
+    found: dict[str, dict] = {}
+    for _, raw in _LINKDATA_RE.findall(html or ""):
+        try:
+            data = json.loads(html_lib.unescape(raw))
+        except ValueError:
+            continue
+        if isinstance(data, dict) and isinstance(data.get("src"), str):
+            found.setdefault(_image_key(data["src"]), data)
+    return found
+
+
+def _int(value: object) -> int:
+    try:
+        return int(str(value))
+    except ValueError:
+        return 0
+
+
+def _link_banner(data: dict) -> bool:
+    if str(data.get("linkUse")).lower() != "true" or not isinstance(data.get("link"), str):
+        return False
+    u = urlparse(data["link"])
+    host = u.netloc.lower().split(":")[0]
+    if any(host == h or host.endswith("." + h) for h in _LINK_BANNER_HOSTS):
+        return True
+    # the store's own pages (home, category, search: 6630856593 ".../viviga_world/search?q=PGM"); a link to a product
+    # is another product's card, not a banner
+    return any(host == h or host.endswith("." + h) for h in _STORE_HOSTS) and "/products/" not in u.path
+
+
+def _spacer(data: dict) -> bool:
+    """A strip between two pictures: originalHeight 1 is an outside image the editor did not measure (8396163567
+    727_01.jpg, the product's photo), not a size."""
+    w, h = _int(data.get("originalWidth")), _int(data.get("originalHeight"))
+    return h > 1 and (h <= SPACER_MAX_HEIGHT or w / h > SPACER_MIN_RATIO)
+
+
+def clean_images(urls: Iterable[str] | None, html: str | None = None) -> CleanedImages:
+    """Description image links -> the product's own (order kept) and the seller banners dropped: by file name, and
+    with the description HTML by what SmartEditor says of the image (a link to the seller's channels or store page:
+    link_banner; a thin strip: spacer)."""
     images: list[str] = []
     dropped: list[DroppedImage] = []
+    components = _linkdata(html)
     for link in urls or []:
         name = _banner(link)
-        if name is None:
+        data = components.get(_image_key(link)) or {}
+        rule = "boilerplate_name" if name else "link_banner" if _link_banner(data) else \
+            "spacer" if _spacer(data) else None
+        if rule is None:
             images.append(link)
         else:
-            dropped.append({"rule": "boilerplate_name", "link": link, "name": name})
+            dropped.append({"rule": rule, "link": link, "name": name or image_name(link)})
     return {"images": images, "dropped": dropped}
 
 

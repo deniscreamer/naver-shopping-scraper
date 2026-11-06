@@ -427,15 +427,24 @@ verified 2026-11-02).
 | `product` | product ref, required | | see "Reference params" |
 | `query` | string, 1-100 chars | the product's name | a search whose first page lists the product's card |
 
+`query` defaults to the product's name. When the card is not on that search page and no query was given, the read
+searches once more with the name's first 5 words, within the same adapter turn and still by clicking the card. The
+answer's `query` is the search that listed the product. With an explicit `query` there is no second search, and a
+missing card answers 404.
+
 Transport: box for the product record (as `/products/details`), then the extension (one page read, ~30-60 s, one
 at a time; a running listing job answers 409). Cache: 24 h per `product` + `query` (`PRODUCT_SPECS_CACHE`).
 Output: `{id, name, link, query, category, specs: [{label, value}], is_complete, facts, options, delivery, measures,
 read_at}`. `delivery` (`parsers.parse_page_delivery`, null without the page's product answer): the fee as the page
 charges it (`/products/details` `delivery` fields) plus `is_overseas`, `scope` (`international` / `domestic`),
 `customs_tax_type` and `lead_time` `{seller_average_days, product_average_days, today_cutoff ("16:00"),
-arrival_days, arrival_date_text ("11.11.(수)"), arrival_probability, ship_date_text ("11.6.(금)")}` (the averages
-from the page's answer, the rest from the purchase box, `pdp.delivery_promise`; null where not shown; `today_cutoff`
-falls back to the answer's `thisDayDispatchBasisTime` in Korean time when `todayDelivery` is true). It can differ from
+today_off, arrival_days, arrival_date_text ("11.11.(수)"), arrival_probability, ship_date_text ("11.6.(금)")}` (the
+averages from the page's answer, the rest from the purchase box, `pdp.delivery_promise`; null where not shown;
+`today_cutoff` falls back to the answer's `thisDayDispatchBasisTime` in Korean time when `todayDelivery` is true,
+except on a `today_off` day). `today_off` is true when the box says "오늘출발 휴무" (no dispatch today: a weekend or
+after KST midnight; `today_cutoff` is then null and `ship_date_text` gives the next dispatch day), false when it does
+not, null when no box was read. `arrival_date_text` also comes from the bare "11.11.(수) 도착" / "내일 11.4.(수) 도착"
+line of 네이버 배송 / 내일배송 boxes, with `arrival_probability` null. It can differ from
 the store backend's
 (2026-11-05: 99,000 KRW per unit from Japan on a set the backend called free).
 `is_complete` is false when the list stayed folded.

@@ -284,7 +284,7 @@
   "variants": null,
   "supplements": null,
   "description": {
-   "html": null,
+   "html": "<br />\n<p align=\"center\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://proxy-smartstore.naver.net/img/amt5c3BvcnQuY2FmZTI0LmNvbS9ldmVudC9jaHVzZW9rLmpwZw==?token=05b24b41d1a548dcf981ef2d967c5df9\"  /></p>\n<p align=\"center\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://proxy-smartstore.naver.net/img/amt5c3BvcnQuY2FmZTI0LmNvbS8vbm90aWNlL25vdGljZTAxLmpwZw==?token=971907af248763fc41b39b9accda47ce\"  /><br /></p><!--휴무 공지사항--><br />\n<p align=\"center\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://proxy-smartstore.naver.net/img/amt5c3BvcnQuY2FmZTI0LmNvbS9rYWthb19wbHVzZnJpZW5kLmpwZw==?token=8190ef1ef79da29bb7ab5c0d1ff5c27b\"  /><br /></p><!--카카오톡 플러스친구--><br />\n<br /><br /><p align=\"center\">\n<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://proxy-smartstore.naver.net/img/amt5c3BvcnQuY2FmZTI0LmNvbS8vZ29sZl9jbHViL3lhbWFtb3RvLzIwMjEveWFtYW1vdG9fc2lndHVyZV9zZXQuanBn?token=32fcf1eacc97e69f66880a4b9d48ac54\"  />\n</p><br /><br />\n<p align=\"center\">\n<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://proxy-smartstore.naver.net/img/amt5c3BvcnQuY2FmZTI0LmNvbS9ub3RpY2Uvb3Blbl9mb290X25vdGljZV8wMS5qcGc=?token=52d0f83f34b5b75b59245cc512674094\"  /><br />\n<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://proxy-smartstore.naver.net/img/amt5c3BvcnQuY2FmZTI0LmNvbS9ub3RpY2Uvb3Blbl9mb290X25vdGljZV8wMi5qcGc=?token=5dbdedce51fd6af17a8b101767416474\"  /><br />\n<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://proxy-smartstore.naver.net/img/amt5c3BvcnQuY2FmZTI0LmNvbS9ub3RpY2UvZGVsaXZlcnlfbm90aWNlLmpwZw==?token=bb5de3182e88f214efa0e607200c7576\"  /><br /><!--배송정보-->\n<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://proxy-smartstore.naver.net/img/amt5c3BvcnQuY2FmZTI0LmNvbS9ub3RpY2Uva2FrYW9fbm90aWNlLmpwZw==?token=de5a1388764bd3b06c8d091327470fc7\"  /><br /></p><!--카카오톡--><br />\n<br />",
    "text": null,
    "editor_type": "NONE",
    "images": [
@@ -643,6 +643,7 @@
     "seller_average_days": 1.6519175,
     "product_average_days": null,
     "today_cutoff": null,
+    "today_off": false,
     "arrival_days": 2,
     "arrival_date_text": null,
     "arrival_probability": 85,

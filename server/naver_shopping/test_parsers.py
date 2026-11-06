@@ -403,6 +403,20 @@ def test_page_delivery_overseas():
                                     "thisDayDispatchBasisTime": "05:30:00.000+0000"}   # UTC: 14:30 in Korea
     assert P.parse_page_delivery(today)["lead_time"]["today_cutoff"] == "14:30"
     assert P.parse_page_delivery(today, {"today_cutoff": "16:00"})["lead_time"]["today_cutoff"] == "16:00"
+    assert P.parse_page_delivery(today)["lead_time"]["today_off"] is None              # no box read: not known
+
+
+def test_page_delivery_day_off_skips_the_dispatch_time():
+    """"오늘출발 휴무" (10816781893, 13302492097, 6540695739, 10816904599 read 2026-11-06 after KST midnight): the
+    answer still says todayDelivery true with thisDayDispatchBasisTime, which would read as a same-day dispatch."""
+    off = fixture("page_delivery_overseas.json")
+    off["productDeliveryInfo"] = {**off["productDeliveryInfo"], "todayDelivery": True,
+                                  "thisDayDispatchBasisTime": "04:00:00.000+0000"}
+    lead = P.parse_page_delivery(off, {"today_cutoff": None, "today_off": True, "ship_date_text": "11.9.(월)"})[
+        "lead_time"]
+    assert (lead["today_cutoff"], lead["today_off"], lead["ship_date_text"]) == (None, True, "11.9.(월)")
+    lead = P.parse_page_delivery(off, {"today_cutoff": None, "today_off": False})["lead_time"]
+    assert (lead["today_cutoff"], lead["today_off"]) == ("13:00", False)          # a box without the cutoff line
 
 
 def test_description_images_inline_plain_and_map():

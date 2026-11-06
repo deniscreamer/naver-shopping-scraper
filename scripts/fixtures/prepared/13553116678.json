@@ -1,0 +1,1124 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:100117142:13553116678",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "leaf_from_name",
+   "detail": "name: 여성"
+  },
+  {
+   "code": "title_names_one_variant",
+   "detail": "5W, 4U"
+  },
+  {
+   "code": "description_tiles_include_banners",
+   "detail": "택배_AS_수정본.jpg, 하단배너_수정.jpg"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/thegolf/products/13553116678",
+  "channel_no": "100117142",
+  "product_id": "13553116678",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "혼마 베레스 아이주 2스타 여성 10개 풀세트 11.5+5W+4U+7i (병행)",
+  "brand_ko": "혼마",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "womens-complete-sets",
+    "product_type": "Women’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:womens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "페어웨이우드",
+    "values_ko": [
+     "5W",
+     "3W",
+     "7W"
+    ]
+   },
+   {
+    "name_ko": "유틸리티",
+    "values_ko": [
+     "4U",
+     "3U",
+     "5U",
+     "6U"
+    ]
+   }
+  ],
+  "facts": [
+   {
+    "label_ko": "샤프트/드라이버/아이언",
+    "value_ko": "(L) 11.5도 / 7i"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "observed:[\"(L) 11.5도 / 7i\",\"5W\",\"4U\"]",
+    "naver_variant_id": "58481224474",
+    "options_ko": [
+     "5W",
+     "4U"
+    ],
+    "price_krw": 1949000,
+    "price_usd": "1949.00",
+    "sku": "FW-ba2f140c84af4762fe46a6c2",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"(L) 11.5도 / 7i\",\"3W\",\"3U\"]",
+    "naver_variant_id": "58481224475",
+    "options_ko": [
+     "3W",
+     "3U"
+    ],
+    "price_krw": 1949000,
+    "price_usd": "1949.00",
+    "sku": "FW-ae79f9faa09a1808456e378a",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"(L) 11.5도 / 7i\",\"3W\",\"4U\"]",
+    "naver_variant_id": "58481224476",
+    "options_ko": [
+     "3W",
+     "4U"
+    ],
+    "price_krw": 1949000,
+    "price_usd": "1949.00",
+    "sku": "FW-c77baf77a0ef4108d468e31d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"(L) 11.5도 / 7i\",\"3W\",\"5U\"]",
+    "naver_variant_id": "58481224477",
+    "options_ko": [
+     "3W",
+     "5U"
+    ],
+    "price_krw": 1949000,
+    "price_usd": "1949.00",
+    "sku": "FW-7b893eb1c7d113fe8234e65e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"(L) 11.5도 / 7i\",\"3W\",\"6U\"]",
+    "naver_variant_id": "58481224478",
+    "options_ko": [
+     "3W",
+     "6U"
+    ],
+    "price_krw": 1949000,
+    "price_usd": "1949.00",
+    "sku": "FW-d18cb50f59b700e2bbf5bc7e",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"(L) 11.5도 / 7i\",\"5W\",\"3U\"]",
+    "naver_variant_id": "58481224479",
+    "options_ko": [
+     "5W",
+     "3U"
+    ],
+    "price_krw": 1949000,
+    "price_usd": "1949.00",
+    "sku": "FW-13de19ca9608f65e68877173",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"(L) 11.5도 / 7i\",\"5W\",\"5U\"]",
+    "naver_variant_id": "58481224480",
+    "options_ko": [
+     "5W",
+     "5U"
+    ],
+    "price_krw": 1949000,
+    "price_usd": "1949.00",
+    "sku": "FW-4b513009bfed4d78bb4aa93c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"(L) 11.5도 / 7i\",\"5W\",\"6U\"]",
+    "naver_variant_id": "58481224481",
+    "options_ko": [
+     "5W",
+     "6U"
+    ],
+    "price_krw": 1949000,
+    "price_usd": "1949.00",
+    "sku": "FW-57a29ea25d9edcefda3d5847",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"(L) 11.5도 / 7i\",\"7W\",\"3U\"]",
+    "naver_variant_id": "58481224483",
+    "options_ko": [
+     "7W",
+     "3U"
+    ],
+    "price_krw": 1949000,
+    "price_usd": "1949.00",
+    "sku": "FW-1044eb4e0a17e91d095cf492",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"(L) 11.5도 / 7i\",\"7W\",\"4U\"]",
+    "naver_variant_id": "58481224484",
+    "options_ko": [
+     "7W",
+     "4U"
+    ],
+    "price_krw": 1949000,
+    "price_usd": "1949.00",
+    "sku": "FW-e73ca2c5856d215f57b2ec20",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"(L) 11.5도 / 7i\",\"7W\",\"5U\"]",
+    "naver_variant_id": "58481224486",
+    "options_ko": [
+     "7W",
+     "5U"
+    ],
+    "price_krw": 1949000,
+    "price_usd": "1949.00",
+    "sku": "FW-88db304ebdf79aa841904128",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"(L) 11.5도 / 7i\",\"7W\",\"6U\"]",
+    "naver_variant_id": "58481224487",
+    "options_ko": [
+     "7W",
+     "6U"
+    ],
+    "price_krw": 1949000,
+    "price_usd": "1949.00",
+    "sku": "FW-11cdf4d2fadb9f7f366d8dd5",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 1949000,
+   "original_krw": 2425000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "혼마"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "혼마"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "일본산"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 2
+  },
+  "reviews": [
+   {
+    "id": "5094879742",
+    "score": 5,
+    "text_ko": "최고입니다. 너무 좋아요.",
+    "created_at": "2026-10-30T10:18:15Z",
+    "writer": "yhyo*****",
+    "photos": [
+     "collected/50002788-fixtures/images/13553116678/fairwardgolf-review-image-09b0390599a8b2a5.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "5093443670",
+    "score": 5,
+    "text_ko": "와이프가 갖고싶다해서\n선물했는데.좋다고하네요\n헤드랑샤프트 이쁘네요",
+    "created_at": "2026-10-28T12:56:54Z",
+    "writer": "oh****",
+    "photos": [
+     "collected/50002788-fixtures/images/13553116678/fairwardgolf-review-image-bd135d8e7c68c773.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13553116678/fairwardgolf-13553116678-001-4b8ca3f4df5aaa23.webp",
+    "sha256": "4b8ca3f4df5aaa235523f0515adbba667e5453d419ad0abe72425edc9901edb9",
+    "width": 720,
+    "height": 720
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 3000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 3,000원",
+   "lead_time": {
+    "seller_average_days": 1.3567251,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": true,
+    "arrival_days": null,
+    "arrival_date_text": "11.10.(화)",
+    "arrival_probability": 93,
+    "ship_date_text": "11.9.(월)"
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260903_231/17884166025449eNDP_JPEG/p-13493747375-s-4-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20260903_113/1788416602542bOX3q_JPEG/p-13493747375-s-4-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20260903_147/1788416602609JfGLY_JPEG/p-13493747375-s-4-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20260903_189/178841660254673Lwe_JPEG/p-13493747375-s-4-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20260903_228/1788416602553JN1P3_JPEG/p-13493747375-s-4-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20260903_184/1788416602549twKh4_JPEG/p-13493747375-s-4-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20260903_240/17884166025474dlBI_JPEG/p-13493747375-s-4-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20260903_247/17884166025547G9Ox_JPEG/p-13493747375-s-4-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20260903_17/1788416602547Yzl8z_JPEG/p-13493747375-s-4-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20260903_59/1788416602557JeTAr_JPEG/p-13493747375-s-4-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20260903_248/1788416602625f7OBM_JPEG/p-13493747375-s-4-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20260903_203/17884166026390KPTG_JPEG/p-13493747375-s-4-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20260903_127/17884166026548SpzC_JPEG/p-13493747375-s-4-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20260903_46/1788416602666lYfke_JPEG/p-13493747375-s-4-A-13.jpg",
+   "https://shop-phinf.pstatic.net/20260903_167/17884166026522iojz_JPEG/p-13493747375-s-4-A-14.jpg",
+   "https://shop-phinf.pstatic.net/20260903_56/1788416602663aPOcC_JPEG/p-13493747375-s-4-A-15.jpg",
+   "https://shop-phinf.pstatic.net/20260903_111/1788416602666nPtJz_JPEG/p-13493747375-s-4-A-16.jpg",
+   "https://shop-phinf.pstatic.net/20260903_155/1788416602672wSR9c_JPEG/p-13493747375-s-4-A-17.jpg",
+   "https://shop-phinf.pstatic.net/20260903_205/1788416602683ckvaa_JPEG/p-13493747375-s-4-A-18.jpg",
+   "https://shop-phinf.pstatic.net/20260903_5/1788416602717sIVfj_JPEG/p-13493747375-s-4-A-19.jpg",
+   "https://shop-phinf.pstatic.net/20260903_60/1788416602732kWyFM_JPEG/p-13493747375-s-4-A-20.jpg",
+   "https://shop-phinf.pstatic.net/20260903_136/178841660273399IxL_JPEG/p-13493747375-s-4-A-21.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:c39c473fea67512f",
+   "kind": "title",
+   "ko": "혼마 베레스 아이주 2스타 여성 10개 풀세트 11.5+5W+4U+7i (병행)"
+  },
+  {
+   "id": "brand:69b4ccbc4e8ab73a",
+   "kind": "brand",
+   "ko": "혼마"
+  },
+  {
+   "id": "option_name:27658c89af093d86",
+   "kind": "option_name",
+   "ko": "페어웨이우드"
+  },
+  {
+   "id": "option_value:72871fd4e141d9fc",
+   "kind": "option_value",
+   "ko": "5W"
+  },
+  {
+   "id": "option_value:96907a8a81e2f665",
+   "kind": "option_value",
+   "ko": "3W"
+  },
+  {
+   "id": "option_value:a086214b5875aa7d",
+   "kind": "option_value",
+   "ko": "7W"
+  },
+  {
+   "id": "option_name:4fddae8b584ba001",
+   "kind": "option_name",
+   "ko": "유틸리티"
+  },
+  {
+   "id": "option_value:07e64e9d3e77aa4f",
+   "kind": "option_value",
+   "ko": "4U"
+  },
+  {
+   "id": "option_value:fc72c86b9d6e209c",
+   "kind": "option_value",
+   "ko": "3U"
+  },
+  {
+   "id": "option_value:e96216b4c7721542",
+   "kind": "option_value",
+   "ko": "5U"
+  },
+  {
+   "id": "option_value:0f2aa8526de6cf53",
+   "kind": "option_value",
+   "ko": "6U"
+  },
+  {
+   "id": "fact_label:33e8f627fa267096",
+   "kind": "fact_label",
+   "ko": "샤프트/드라이버/아이언"
+  },
+  {
+   "id": "fact_value:7f43f2a9d114d655",
+   "kind": "fact_value",
+   "ko": "(L) 11.5도 / 7i"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:69b4ccbc4e8ab73a",
+   "kind": "spec_value",
+   "ko": "혼마"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2d5ea77cf8032c99",
+   "kind": "spec_value",
+   "ko": "일본산"
+  },
+  {
+   "id": "review:773a4a8324c06f2b",
+   "kind": "review",
+   "ko": "최고입니다. 너무 좋아요."
+  },
+  {
+   "id": "review:a2f06e81f622ac71",
+   "kind": "review",
+   "ko": "와이프가 갖고싶다해서\n선물했는데.좋다고하네요\n헤드랑샤프트 이쁘네요"
+  }
+ ]
+}

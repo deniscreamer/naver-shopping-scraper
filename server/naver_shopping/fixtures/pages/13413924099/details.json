@@ -1,0 +1,241 @@
+{
+ "id": "13413924099",
+ "origin_product_id": "13354981070",
+ "name": "캘러웨이 2026 REVA 레바 여성 풀세트 피치/서프 10PCS+골프백 [캘러웨이코리아]",
+ "link": "https://smartstore.naver.com/thegolf/products/13413924099",
+ "catalog_id": "90958434435",
+ "catalog_link": "https://search.shopping.naver.com/catalog/90958434435",
+ "status": "SALE",
+ "sale_type": "NEW",
+ "is_displayed": true,
+ "pricing": {
+  "sale_price": 1590000,
+  "discounted_price": 1590000,
+  "discount_ratio": 0,
+  "seller_discount": 0,
+  "manager_discount": 0,
+  "currency": "KRW",
+  "points": {
+   "purchase": 15900,
+   "text_review": 5000,
+   "photo_video_review": 15000,
+   "after_use_text_review": 0,
+   "after_use_photo_video_review": 0,
+   "store_member_review": 0
+  }
+ },
+ "stock_quantity": 93,
+ "has_options": true,
+ "has_supplements": false,
+ "images": [
+  "https://shop-phinf.pstatic.net/20260421_99/1776763153244trBsw_JPEG/110896042839624729_1676299843.jpeg",
+  "https://shop-phinf.pstatic.net/20260417_186/1776416159473VNICJ_PNG/51991966584776189_673336273.png",
+  "https://shop-phinf.pstatic.net/20260417_154/1776416160689te4yD_PNG/110951568643854299_692071371.png",
+  "https://shop-phinf.pstatic.net/20260417_165/1776416160797SiyYp_PNG/110951568754210092_1544606938.png",
+  "https://shop-phinf.pstatic.net/20260417_102/1776416161952fkRBK_PNG/18850527750804468_1137609032.png",
+  "https://shop-phinf.pstatic.net/20260417_32/1776416162193viOOh_PNG/18850527991008617_1844215883.png"
+ ],
+ "category": {
+  "id": "50002788",
+  "name": "풀세트",
+  "path": [
+   "스포츠/레저",
+   "골프",
+   "골프클럽",
+   "풀세트"
+  ],
+  "path_ids": [
+   "50000007",
+   "50000029",
+   "50001102",
+   "50002788"
+  ]
+ },
+ "brand": "캘러웨이",
+ "brand_id": null,
+ "manufacturer": "캘러웨이",
+ "model_name": null,
+ "tags": null,
+ "page_title": null,
+ "delivery": {
+  "fee_type": "FREE",
+  "base_fee": 0,
+  "is_free": true,
+  "policy_text": null,
+  "method_types": [
+   "DELIVERY"
+  ],
+  "attribute": "TODAY",
+  "is_today_delivery": null,
+  "company": "한진택배",
+  "extra_fee_area2": null,
+  "extra_fee_area3": null,
+  "extra_fee_text": null
+ },
+ "is_free_delivery": true,
+ "is_today_delivery": true,
+ "has_arrival_guarantee": false,
+ "has_regular_subscription": false,
+ "has_free_return_insurance": false,
+ "is_minor_purchasable": true,
+ "is_adult_restricted": false,
+ "is_in_naver_shopping": true,
+ "option_groups": null,
+ "variants": null,
+ "supplements": null,
+ "notice": {
+  "type": "SPORTS_EQUIPMENT",
+  "items": [
+   {
+    "label": "품명 / 모델명",
+    "value": "[상세설명참조] / 품명 항목 참조",
+    "is_see_description": true
+   },
+   {
+    "label": "KC 인증정보",
+    "value": "[상세설명참조]",
+    "is_see_description": true
+   },
+   {
+    "label": "크기",
+    "value": "[상세설명참조]",
+    "is_see_description": true
+   },
+   {
+    "label": "중량",
+    "value": "크기 항목 참조",
+    "is_see_description": true
+   },
+   {
+    "label": "색상",
+    "value": "[상세설명참조]",
+    "is_see_description": true
+   },
+   {
+    "label": "재질",
+    "value": "[상세설명참조]",
+    "is_see_description": true
+   },
+   {
+    "label": "제품구성",
+    "value": "[상세설명참조]",
+    "is_see_description": true
+   },
+   {
+    "label": "동일 모델의 출시연월",
+    "value": "[상세설명참조]",
+    "is_see_description": true
+   },
+   {
+    "label": "제조자(사)",
+    "value": "[상세설명참조]",
+    "is_see_description": true
+   },
+   {
+    "label": "제조국",
+    "value": "상세설명에 표시",
+    "is_see_description": true
+   },
+   {
+    "label": "상품별 세부사양",
+    "value": "[상세설명참조]",
+    "is_see_description": true
+   },
+   {
+    "label": "품질보증기준",
+    "value": "[상세설명참조]",
+    "is_see_description": true
+   },
+   {
+    "label": "A/S 책임자와 전화번호",
+    "value": null,
+    "is_see_description": false
+   }
+  ],
+  "terms": [
+   {
+    "label": "재화등의 배송방법에 관한 정보",
+    "value": "택배",
+    "is_see_description": false
+   },
+   {
+    "label": "주문 이후 예상되는 배송기간",
+    "value": "대금 지급일로부터 3일 이내에 발송",
+    "is_see_description": false
+   },
+   {
+    "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+    "value": "상품상세 참조",
+    "is_see_description": true
+   },
+   {
+    "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+    "value": "편도 9000원 (최초 배송비 무료인 경우 18000원 부과)",
+    "is_see_description": false
+   },
+   {
+    "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+    "value": "상품상세 참조",
+    "is_see_description": true
+   },
+   {
+    "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+    "value": "상품상세 참조",
+    "is_see_description": true
+   },
+   {
+    "label": "재화등의 A/S 관련 전화번호",
+    "value": null,
+    "is_see_description": false
+   },
+   {
+    "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+    "value": "상품상세 참조",
+    "is_see_description": true
+   },
+   {
+    "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+    "value": "상품상세 참조",
+    "is_see_description": true
+   },
+   {
+    "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+    "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+    "is_see_description": false
+   }
+  ]
+ },
+ "facts": {
+  "brand": {
+   "value": "캘러웨이",
+   "source": "search_info.brandName"
+  },
+  "manufacturer": {
+   "value": "캘러웨이",
+   "source": "search_info.manufacturerName"
+  },
+  "model_name": null,
+  "origin": null
+ },
+ "store": {
+  "id": "100117142",
+  "uid": "2sWDwhRZ6xGje1wlKiiYG",
+  "name": "더골프",
+  "slug": "thegolf",
+  "link": "https://smartstore.naver.com/thegolf",
+  "type": "smart_store",
+  "grade": "SECOND",
+  "sale_count": 1510,
+  "merchant_id": "510115509",
+  "business": {
+   "legal_name": "주식회사 더골프",
+   "representative": "김승희",
+   "type": "CORPORATION",
+   "is_business": true,
+   "is_overseas": false,
+   "phone": null,
+   "email": null,
+   "address": null
+  }
+ }
+}

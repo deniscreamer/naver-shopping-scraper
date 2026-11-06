@@ -1,0 +1,856 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:100117142:13413924099",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "leaf_from_name",
+   "detail": "name: 여성"
+  },
+  {
+   "code": "title_names_one_variant",
+   "detail": "피치, 서프, 골프백"
+  },
+  {
+   "code": "description_tiles_include_banners",
+   "detail": "택배_Nope_AS.jpg, 하단배너_수정.jpg"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/thegolf/products/13413924099",
+  "channel_no": "100117142",
+  "product_id": "13413924099",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "캘러웨이 2026 REVA 레바 여성 풀세트 피치/서프 10PCS+골프백 [캘러웨이코리아]",
+  "brand_ko": "캘러웨이",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "womens-complete-sets",
+    "product_type": "Women’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:womens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "구성",
+    "values_ko": [
+     "피치/서프 클럽 10PCS (캐디백포함)",
+     "피치/서프 클럽 10PCS (캐디백 미포함)",
+     "블랙 클럽 10PCS (캐디백포함)",
+     "블랙 클럽 10PCS (캐디백 미포함)"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"피치/서프 클럽 10PCS (캐디백포함)\"]",
+    "naver_variant_id": "57974542172",
+    "options_ko": [
+     "피치/서프 클럽 10PCS (캐디백포함)"
+    ],
+    "price_krw": 1590000,
+    "price_usd": "1590.00",
+    "sku": "FW-aa2287141e266d93913e3462",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"피치/서프 클럽 10PCS (캐디백 미포함)\"]",
+    "naver_variant_id": "59968830041",
+    "options_ko": [
+     "피치/서프 클럽 10PCS (캐디백 미포함)"
+    ],
+    "price_krw": 1490000,
+    "price_usd": "1490.00",
+    "sku": "FW-39b4de93918a94b10a328029",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블랙 클럽 10PCS (캐디백포함)\"]",
+    "naver_variant_id": "57974542173",
+    "options_ko": [
+     "블랙 클럽 10PCS (캐디백포함)"
+    ],
+    "price_krw": 1590000,
+    "price_usd": "1590.00",
+    "sku": "FW-9e90186d888a6ca70ca66fe8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블랙 클럽 10PCS (캐디백 미포함)\"]",
+    "naver_variant_id": "59968830042",
+    "options_ko": [
+     "블랙 클럽 10PCS (캐디백 미포함)"
+    ],
+    "price_krw": 1490000,
+    "price_usd": "1490.00",
+    "sku": "FW-0a839df25427a5c76cdc2bdc",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 1590000,
+   "original_krw": 1590000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "캘러웨이"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.88,
+   "count": 48
+  },
+  "reviews": [
+   {
+    "id": "5093756095",
+    "score": 4,
+    "text_ko": "입문하신분에게 너무 좋은 구성입니다\n클럽과 캐디백 좋습니다\n다만 캐디백 커버가 너무 어울리지 않아요\n참고 하시기 바랍니다",
+    "created_at": "2026-10-29T02:59:49Z",
+    "writer": "beau********",
+    "photos": [
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-abecd7e0c04c80ab.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-avatar-0201b9f908d74f68.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "5089887474",
+    "score": 4,
+    "text_ko": "구성이 잘 조합되어 있어서 참좋네요 \n단지 가방이 너무 허접한게 조금 아쉬워요 ~~  싸서 그런건지 가방은 따로 구입해야겠어요 ~~  이런느낌이였다면 가방은 안샀을텐데 ~~  비올때나 가지고 나가야겠어요 연습장에 두던지 ~~ 가방은 정말 비추입니다..\n구성은 좋은것 같네요  \n가방은 진짜 형편없는것 같아요",
+    "created_at": "2026-10-23T06:59:01Z",
+    "writer": "baby******",
+    "photos": [
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-acabb9ba3ba0deb7.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-12aa5a91790b106f.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-ca052214f1b606f6.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-avatar-bce07c3492a138d3.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "5077333893",
+    "score": 5,
+    "text_ko": "와이프 골프시작한다고해서 여러곳 검색하다 이걸로 정했네요\n아직 초보라 연습장에서 치던 채가 익숙해서 \n처음에는 좀무겁고 좀길다고 좌절하더니\n2일연습하더니 완벽적응했네요\n채도 이쁘고 와이프가 완전 만족합니다\n아직 7번만 연습장에 갔다놓고 치고있어\n사진에는 빠졌네요\n다음에 드라이버 수업들어간다고 치고싶어 안달이 나있네요 ㅋㅋ\n추천합니다~",
+    "created_at": "2026-10-05T00:31:31Z",
+    "writer": "issu***",
+    "photos": [
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-289feffb35bf0c1a.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-acc7daa5cf857a42.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-fcf97e045c5ad936.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-avatar-798c1ce1d835f17b.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "5069367352",
+    "score": 5,
+    "text_ko": "골프를 배워 보고 싶다는 생각에 어떤 골프채를 살까 고민 하던 중에 이 브랜드를 추천 받아서 구매하게 되었습니다. 민트 색상이라서 포인트가 돼서 예쁘고 가방까지 같이 와서 합리적인 구매 어떤 것 같아요.\n\n중급 초반까지 사용 가능한 골프채 세트 라고 봐서 앞으로 오랜기간 함께 잘 쓰겠습니다.",
+    "created_at": "2026-09-21T02:22:22Z",
+    "writer": "cest***",
+    "photos": [
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-2c72a20f8afaf1ff.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-8ff70e9a0ea2a059.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-avatar-f0fb209fee63a0c3.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "5053895554",
+    "score": 5,
+    "text_ko": "첫 골프채로 구매했어요. 예쁜 것 같아요. 7번기준 연습용채보다 길고 무겁고 그립이 두꺼워요. 드라이버는 잘 모르겠어요. 키크고 젊은분 추천해요. 민트가 예뻐서 샀는데 드라이버 칠때는 민트부분은 안보이고 까만손잡이 은색 막대 까만헤드로 아주아주 단정해요 ㅋㅋ",
+    "created_at": "2026-08-30T11:28:52Z",
+    "writer": "ekal*****",
+    "photos": [
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-04013937ab82441a.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-0bd8cdd3f2ed6ab3.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-avatar-827867dbdc109b97.webp",
+    "tier": "primary"
+   },
+   {
+    "id": "5096411918",
+    "score": 5,
+    "text_ko": "골프를 시작하고나서 내것이 필요하다고 느껴져서 큰맘 먹고 구매했습니다 가성비도 좋고 오랫동안 쓸 내 채가 생겨서 기분이 좋아요 잘 쓰겠습니다~",
+    "created_at": "2026-11-01T23:48:55Z",
+    "writer": "jjun****",
+    "photos": [
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-9ea9e8f6aff6c562.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "5089669706",
+    "score": 5,
+    "text_ko": "와이프가 초보라서 어떤걸 사야할지 고민했는데 레바26년형은 풀세트 구성이여서 추가 구매할게 없어서 좋습니다.\n디자인도 이뻐서 와이프가좋아하네요.\n잘쓰겠습니다",
+    "created_at": "2026-10-23T02:21:52Z",
+    "writer": "dbst*****",
+    "photos": [
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-81d75eb31d0a1f1d.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "5087956845",
+    "score": 4,
+    "text_ko": "한 10년을 쉬고 다시 시작하기에는 괜찮은 구성과 가격이라서 구입했어요. 가방은 마음에 안들어서 따로 구매했어요 . 아이언 집도 있어서 좋아요",
+    "created_at": "2026-10-20T12:43:33Z",
+    "writer": "kjs5*****",
+    "photos": [
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-a4060d0dd01773de.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-30f6b4d5d44b4700.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "5087899942",
+    "score": 5,
+    "text_ko": "디자인과 색감, 상품 구성,가격 모두 괜찮은데\n캐디백 검정 커버 퀄리티가 매우 아쉽네요.\n흐물거리는 소재라서 비올때는 유용하겠으닌 평소에는 아예 안가지고 다닐것 같아요.",
+    "created_at": "2026-10-20T11:44:08Z",
+    "writer": "supr*******",
+    "photos": [
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-7da814e9b46a8f31.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-ec63387f5bd76c31.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-0448d33b23c0f3a4.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-8899be3e3ba49f02.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-f17dc4a73a729555.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "5084402946",
+    "score": 5,
+    "text_ko": "골프 클럽 풀세트 구매했는데 우선 디자인이 정말 마음에 들어요. 은은하게 빛나는 마감이라 고급스럽고, 필드에 들고 나가도 전혀 꿀리지 않을 것 같아요. 실물이 사진보다 더 예쁩니다.\n이 가격에 드라이버부터 아이언, 퍼터, 캐디백까지 풀세트로 구성되어 있어서 따로 하나씩 살 필요가 없다는 점이 정말 좋았어요. 입문자나 클럽을 새로 장만하려는 분들께 부담 없이 추천할 만합니다.\n그립감도 손에 잘 감기고 무게도 적당해서 연습장에서 처음 쳐봤을 때부터 어색함 없이 편하게 스윙할 수 있었어요. 타구감도 기대 이상이라 만족스럽습니다.\n포장도 꼼꼼하게 와서 흠집 하나 없이 잘 받았고, 배송도 생각보다 빨랐어요. 가성비 굿입니다! 오래오래 잘 쓰겠습니다. 😊",
+    "created_at": "2026-10-15T08:13:29Z",
+    "writer": "jong****",
+    "photos": [
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-acc0d1a29ba228c7.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "5077010609",
+    "score": 5,
+    "text_ko": "클럽은 남편이 시타해보더니 좋다고하네요\n바로 스크린 가서 시타했답니다.\n골프백은 가벼워서 좋긴한데 질이 부직포같아 비추입니다.",
+    "created_at": "2026-10-04T04:51:35Z",
+    "writer": "ragu****",
+    "photos": [
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-c2bf9800e8806af3.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-ea84548bc1b4e5fc.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-8c37bb45d741f587.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "5070956916",
+    "score": 5,
+    "text_ko": "골프백 검은색은 좀 나을거같았는데.. 골프백 미포함으로 할걸그랬어요 ㅎㅎ 가방은 다시 사야할것같고, 그립 두껍구요 아직 안쳐봐서 다른건 모르겠어요 ㅎㅎ 가성비는 좋은거같아요",
+    "created_at": "2026-09-23T09:13:51Z",
+    "writer": "sm****",
+    "photos": [
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-78e766ce4e770717.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "5070477277",
+    "score": 4,
+    "text_ko": "입문한 지 한 달 되었어요.^^ 친구 추천으로 구매하게 되었는데 초보에 맞게 고민없이 구매할 수 있도록 구성이 안성맞춤입니다. 민트색의 은은함이 너무 마음에 들어요. 아이언 7은 연습장에 보관하고 있습니다. 풀세트로 갖췄으니 마음 다 잡고 열심히 연습해야 하겠습니다. 잘 사용하겠습니다.",
+    "created_at": "2026-09-22T13:18:05Z",
+    "writer": "jiho****",
+    "photos": [
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-d5ea942d7d8b4469.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-15aab71daf4bfbd1.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-1bfd0c3075a358a5.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "5064234879",
+    "score": 5,
+    "text_ko": "온라인 구매 고민하다가 매장 방문에서 보고 구매했습니다! 마침 딱 한 세트 남아있었어요ㅎ 디자인 잘빠졌고 가성비 너무 좋습니다.",
+    "created_at": "2026-09-14T02:15:07Z",
+    "writer": "jinn****",
+    "photos": [
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-34ecd8022cdfffd0.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "5063191606",
+    "score": 5,
+    "text_ko": "배송도 다음날 왔구요\n무엇보다 풀세트로 들어있어서 넘 좋습니다. 초보라 하나하나 골라서 사기 힘들었는데 가성비도 좋고\n백에 클럽 하나하나 다 커버까지 있어서 이거 하나로 준비 끝이네요~ 라운딩 나가서 넘 잘 사용했고 앞으로도 이거로 열심히 연습하려구요!",
+    "created_at": "2026-09-12T07:09:18Z",
+    "writer": "this****",
+    "photos": [
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-c7237dd259ea1294.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "5062350820",
+    "score": 5,
+    "text_ko": "골프 첫 채로 선택했는데 만족스럽네요. 연습용 채보다 묵직한 아이언이라 공도 더 잘 나가고, 손도 좀 덜 아픈 느낌입니다. 중급까지 계속 쓸 수 있을 것 같아 가성비도 좋습니다~!!",
+    "created_at": "2026-09-11T03:59:26Z",
+    "writer": "donn****",
+    "photos": [
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-f5cef8d5a247f1ca.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-737691a0dc62a7cd.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "5037003737",
+    "score": 5,
+    "text_ko": "첫 골프채인데 좋은 가격에 구매 할 수 있어 좋았고, 구매한 채로 연습하고 있는데 만족스러워요!\n골프백도 더운 날씨에  딱 어울리는 재질 이예요\n방문수령 겸 매장구경도 하고 싶었지만 가게사정으로 인해 못했어요 매장이 2, 3층 으로 나눠져 있고 밖에서 보기엔 넓어보였습니다! 열심히 연습해서 필요한 용품 더 생기면 또 들르겠습니다:)",
+    "created_at": "2026-08-05T14:49:35Z",
+    "writer": "shin******",
+    "photos": [
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-d5dc83df7b9fb874.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-ad516682d15dfa95.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-0ab8e6ec360e7e07.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-00feb37f7d91b4e2.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "5035352437",
+    "score": 5,
+    "text_ko": "새 채 같고 딸이랑 라운딩 나왔는데 딸아이가 너무 좋아하네요~^^ 70 전에는 딸이랑 같이 라운딩 나오고 싶었는데 덕분에 재밌게 잘 다녀왔습니다 :)",
+    "created_at": "2026-08-03T17:48:50Z",
+    "writer": "qowo*****",
+    "photos": [],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "4990395298",
+    "score": 5,
+    "text_ko": "골프 3개월차에 접어든 와이프 생일 선물로 젝시오랑 고민하다가 젝시오가 너무 흔한것 같아 갤러웨이로 구매했어요. 필드 나가는데 필요한 모든 채가 다 있어서 추가 비용이 따로 안들것 같고 여성이 쓰기에 채가 이쁜것 같아요. 다만 골프가방과 너무 안 어울리는 후드커버는 하나 사야할것 같아요. 흰색도 아니고 검정은 너무 안어울리네요",
+    "created_at": "2026-06-03T06:42:17Z",
+    "writer": "asia*****",
+    "photos": [
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-19ff1fadc558ddb6.webp",
+     "collected/50002788-fixtures/images/13413924099/fairwardgolf-review-image-f5fa6e42e32c6bbe.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   },
+   {
+    "id": "5090869936",
+    "score": 5,
+    "text_ko": "여자친구 선물용으로 구매했는데 디자인이 이쁘고 몇년 사용하기에 좋은 것 같습니다. 다만 캐디백 커버는 어울리지 않는 블랙이라 좀 당황했네요.",
+    "created_at": "2026-10-25T01:53:31Z",
+    "writer": "bt****",
+    "photos": [],
+    "avatar": null,
+    "tier": "text"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13413924099/fairwardgolf-13413924099-001-77e448d7163a3dde.webp",
+    "sha256": "77e448d7163a3dde176023f7a5afab6c7969e7528038e4c3aab113435b6f939b",
+    "width": 720,
+    "height": 720
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13413924099/fairwardgolf-13413924099-002-2e8aeacfffc367ea.webp",
+    "sha256": "2e8aeacfffc367eaa807f3b83083efac239fac112a9794ca0f0823f0d48b3e32",
+    "width": 537,
+    "height": 704
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13413924099/fairwardgolf-13413924099-003-5a14f6ea73725961.webp",
+    "sha256": "5a14f6ea73725961519717a8173f9bfbbf19baf3d360d445817d0bfeb4427a26",
+    "width": 511,
+    "height": 631
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/13413924099/fairwardgolf-13413924099-004-7b957a96df6853e0.webp",
+    "sha256": "7b957a96df6853e08e78e2dc2cc69bb00a9789d37ddb7d846b859f4c172d3dbc",
+    "width": 578,
+    "height": 610
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/13413924099/fairwardgolf-13413924099-005-08472b60111062a5.webp",
+    "sha256": "08472b60111062a57e0befcf5f63cdf286247f2b9f428384404dcc650af5ecf3",
+    "width": 642,
+    "height": 691
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/13413924099/fairwardgolf-13413924099-006-34e6517b45eb8c9e.webp",
+    "sha256": "34e6517b45eb8c9e11df899e4a264763a6787bf88a3ab31a383cb1a3c2abacb3",
+    "width": 600,
+    "height": 600
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 3000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 3,000원",
+   "lead_time": {
+    "seller_average_days": 1.3567251,
+    "product_average_days": 0.85714287,
+    "today_cutoff": "16:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260903_210/1788417276094zaQaQ_JPEG/p-13354981070-s-5-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20260903_116/1788417276097rzTJf_JPEG/p-13354981070-s-5-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20260903_84/1788417276102ydblA_JPEG/p-13354981070-s-5-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20260903_278/1788417276095YplFX_JPEG/p-13354981070-s-5-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20260903_274/178841727609682NhI_JPEG/p-13354981070-s-5-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20260903_104/1788417276099grivJ_JPEG/p-13354981070-s-5-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20260903_104/1788417276102XdTYQ_JPEG/p-13354981070-s-5-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20260903_280/1788417276241QUWWs_JPEG/p-13354981070-s-5-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20260903_116/1788417276101zCYOy_JPEG/p-13354981070-s-5-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20260903_226/1788417276185uGcIq_JPEG/p-13354981070-s-5-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20260903_11/1788417276099osUiC_JPEG/p-13354981070-s-5-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20260903_164/1788417276199hXTem_JPEG/p-13354981070-s-5-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20260903_191/1788417276100PApgy_JPEG/p-13354981070-s-5-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20260903_121/1788417276197t1frj_JPEG/p-13354981070-s-5-A-13.jpg",
+   "https://shop-phinf.pstatic.net/20260903_112/1788417276185jvq5L_JPEG/p-13354981070-s-5-A-14.jpg",
+   "https://shop-phinf.pstatic.net/20260903_247/1788417276197vLH0S_JPEG/p-13354981070-s-5-A-15.jpg",
+   "https://shop-phinf.pstatic.net/20260903_6/1788417276202OJ0vQ_JPEG/p-13354981070-s-5-A-16.jpg",
+   "https://shop-phinf.pstatic.net/20260903_61/1788417276194BsUxR_JPEG/p-13354981070-s-5-A-17.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:5ee8b554786a84af",
+   "kind": "title",
+   "ko": "캘러웨이 2026 REVA 레바 여성 풀세트 피치/서프 10PCS+골프백 [캘러웨이코리아]"
+  },
+  {
+   "id": "brand:752b9a8b36b892c4",
+   "kind": "brand",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "option_name:1d8936275d565bb0",
+   "kind": "option_name",
+   "ko": "구성"
+  },
+  {
+   "id": "option_value:f52937cec0540196",
+   "kind": "option_value",
+   "ko": "피치/서프 클럽 10PCS (캐디백포함)"
+  },
+  {
+   "id": "option_value:8fd0cb99ae381930",
+   "kind": "option_value",
+   "ko": "피치/서프 클럽 10PCS (캐디백 미포함)"
+  },
+  {
+   "id": "option_value:b4703b6fbdabf684",
+   "kind": "option_value",
+   "ko": "블랙 클럽 10PCS (캐디백포함)"
+  },
+  {
+   "id": "option_value:220785c107904376",
+   "kind": "option_value",
+   "ko": "블랙 클럽 10PCS (캐디백 미포함)"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:752b9a8b36b892c4",
+   "kind": "spec_value",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "review:0ebb0c31859f2205",
+   "kind": "review",
+   "ko": "입문하신분에게 너무 좋은 구성입니다\n클럽과 캐디백 좋습니다\n다만 캐디백 커버가 너무 어울리지 않아요\n참고 하시기 바랍니다"
+  },
+  {
+   "id": "review:91c6ff618faaa4a7",
+   "kind": "review",
+   "ko": "구성이 잘 조합되어 있어서 참좋네요 \n단지 가방이 너무 허접한게 조금 아쉬워요 ~~  싸서 그런건지 가방은 따로 구입해야겠어요 ~~  이런느낌이였다면 가방은 안샀을텐데 ~~  비올때나 가지고 나가야겠어요 연습장에 두던지 ~~ 가방은 정말 비추입니다..\n구성은 좋은것 같네요  \n가방은 진짜 형편없는것 같아요"
+  },
+  {
+   "id": "review:c7d7b6e082cbe66b",
+   "kind": "review",
+   "ko": "와이프 골프시작한다고해서 여러곳 검색하다 이걸로 정했네요\n아직 초보라 연습장에서 치던 채가 익숙해서 \n처음에는 좀무겁고 좀길다고 좌절하더니\n2일연습하더니 완벽적응했네요\n채도 이쁘고 와이프가 완전 만족합니다\n아직 7번만 연습장에 갔다놓고 치고있어\n사진에는 빠졌네요\n다음에 드라이버 수업들어간다고 치고싶어 안달이 나있네요 ㅋㅋ\n추천합니다~"
+  },
+  {
+   "id": "review:b07e29b7826a14c8",
+   "kind": "review",
+   "ko": "골프를 배워 보고 싶다는 생각에 어떤 골프채를 살까 고민 하던 중에 이 브랜드를 추천 받아서 구매하게 되었습니다. 민트 색상이라서 포인트가 돼서 예쁘고 가방까지 같이 와서 합리적인 구매 어떤 것 같아요.\n\n중급 초반까지 사용 가능한 골프채 세트 라고 봐서 앞으로 오랜기간 함께 잘 쓰겠습니다."
+  },
+  {
+   "id": "review:7003610e607b47ed",
+   "kind": "review",
+   "ko": "첫 골프채로 구매했어요. 예쁜 것 같아요. 7번기준 연습용채보다 길고 무겁고 그립이 두꺼워요. 드라이버는 잘 모르겠어요. 키크고 젊은분 추천해요. 민트가 예뻐서 샀는데 드라이버 칠때는 민트부분은 안보이고 까만손잡이 은색 막대 까만헤드로 아주아주 단정해요 ㅋㅋ"
+  },
+  {
+   "id": "review:95374a3e5ea39cbe",
+   "kind": "review",
+   "ko": "골프를 시작하고나서 내것이 필요하다고 느껴져서 큰맘 먹고 구매했습니다 가성비도 좋고 오랫동안 쓸 내 채가 생겨서 기분이 좋아요 잘 쓰겠습니다~"
+  },
+  {
+   "id": "review:d385c6b02ce68134",
+   "kind": "review",
+   "ko": "와이프가 초보라서 어떤걸 사야할지 고민했는데 레바26년형은 풀세트 구성이여서 추가 구매할게 없어서 좋습니다.\n디자인도 이뻐서 와이프가좋아하네요.\n잘쓰겠습니다"
+  },
+  {
+   "id": "review:9abc31f84ff558fe",
+   "kind": "review",
+   "ko": "한 10년을 쉬고 다시 시작하기에는 괜찮은 구성과 가격이라서 구입했어요. 가방은 마음에 안들어서 따로 구매했어요 . 아이언 집도 있어서 좋아요"
+  },
+  {
+   "id": "review:6c0873fc9c989f0b",
+   "kind": "review",
+   "ko": "디자인과 색감, 상품 구성,가격 모두 괜찮은데\n캐디백 검정 커버 퀄리티가 매우 아쉽네요.\n흐물거리는 소재라서 비올때는 유용하겠으닌 평소에는 아예 안가지고 다닐것 같아요."
+  },
+  {
+   "id": "review:c5c41b031420246d",
+   "kind": "review",
+   "ko": "골프 클럽 풀세트 구매했는데 우선 디자인이 정말 마음에 들어요. 은은하게 빛나는 마감이라 고급스럽고, 필드에 들고 나가도 전혀 꿀리지 않을 것 같아요. 실물이 사진보다 더 예쁩니다.\n이 가격에 드라이버부터 아이언, 퍼터, 캐디백까지 풀세트로 구성되어 있어서 따로 하나씩 살 필요가 없다는 점이 정말 좋았어요. 입문자나 클럽을 새로 장만하려는 분들께 부담 없이 추천할 만합니다.\n그립감도 손에 잘 감기고 무게도 적당해서 연습장에서 처음 쳐봤을 때부터 어색함 없이 편하게 스윙할 수 있었어요. 타구감도 기대 이상이라 만족스럽습니다.\n포장도 꼼꼼하게 와서 흠집 하나 없이 잘 받았고, 배송도 생각보다 빨랐어요. 가성비 굿입니다! 오래오래 잘 쓰겠습니다. 😊"
+  },
+  {
+   "id": "review:19a8c79f40488275",
+   "kind": "review",
+   "ko": "클럽은 남편이 시타해보더니 좋다고하네요\n바로 스크린 가서 시타했답니다.\n골프백은 가벼워서 좋긴한데 질이 부직포같아 비추입니다."
+  },
+  {
+   "id": "review:23bf92c6a4680fac",
+   "kind": "review",
+   "ko": "골프백 검은색은 좀 나을거같았는데.. 골프백 미포함으로 할걸그랬어요 ㅎㅎ 가방은 다시 사야할것같고, 그립 두껍구요 아직 안쳐봐서 다른건 모르겠어요 ㅎㅎ 가성비는 좋은거같아요"
+  },
+  {
+   "id": "review:ca9fd0f28d3e3d3a",
+   "kind": "review",
+   "ko": "입문한 지 한 달 되었어요.^^ 친구 추천으로 구매하게 되었는데 초보에 맞게 고민없이 구매할 수 있도록 구성이 안성맞춤입니다. 민트색의 은은함이 너무 마음에 들어요. 아이언 7은 연습장에 보관하고 있습니다. 풀세트로 갖췄으니 마음 다 잡고 열심히 연습해야 하겠습니다. 잘 사용하겠습니다."
+  },
+  {
+   "id": "review:2f3eaa2baeb191e5",
+   "kind": "review",
+   "ko": "온라인 구매 고민하다가 매장 방문에서 보고 구매했습니다! 마침 딱 한 세트 남아있었어요ㅎ 디자인 잘빠졌고 가성비 너무 좋습니다."
+  },
+  {
+   "id": "review:ceb4ae1d555ac38e",
+   "kind": "review",
+   "ko": "배송도 다음날 왔구요\n무엇보다 풀세트로 들어있어서 넘 좋습니다. 초보라 하나하나 골라서 사기 힘들었는데 가성비도 좋고\n백에 클럽 하나하나 다 커버까지 있어서 이거 하나로 준비 끝이네요~ 라운딩 나가서 넘 잘 사용했고 앞으로도 이거로 열심히 연습하려구요!"
+  },
+  {
+   "id": "review:17d4948fc8e6ac32",
+   "kind": "review",
+   "ko": "골프 첫 채로 선택했는데 만족스럽네요. 연습용 채보다 묵직한 아이언이라 공도 더 잘 나가고, 손도 좀 덜 아픈 느낌입니다. 중급까지 계속 쓸 수 있을 것 같아 가성비도 좋습니다~!!"
+  },
+  {
+   "id": "review:7bfd19b42afc5faa",
+   "kind": "review",
+   "ko": "첫 골프채인데 좋은 가격에 구매 할 수 있어 좋았고, 구매한 채로 연습하고 있는데 만족스러워요!\n골프백도 더운 날씨에  딱 어울리는 재질 이예요\n방문수령 겸 매장구경도 하고 싶었지만 가게사정으로 인해 못했어요 매장이 2, 3층 으로 나눠져 있고 밖에서 보기엔 넓어보였습니다! 열심히 연습해서 필요한 용품 더 생기면 또 들르겠습니다:)"
+  },
+  {
+   "id": "review:4955513e53a771ff",
+   "kind": "review",
+   "ko": "새 채 같고 딸이랑 라운딩 나왔는데 딸아이가 너무 좋아하네요~^^ 70 전에는 딸이랑 같이 라운딩 나오고 싶었는데 덕분에 재밌게 잘 다녀왔습니다 :)"
+  },
+  {
+   "id": "review:f87cae4da8b852ad",
+   "kind": "review",
+   "ko": "골프 3개월차에 접어든 와이프 생일 선물로 젝시오랑 고민하다가 젝시오가 너무 흔한것 같아 갤러웨이로 구매했어요. 필드 나가는데 필요한 모든 채가 다 있어서 추가 비용이 따로 안들것 같고 여성이 쓰기에 채가 이쁜것 같아요. 다만 골프가방과 너무 안 어울리는 후드커버는 하나 사야할것 같아요. 흰색도 아니고 검정은 너무 안어울리네요"
+  },
+  {
+   "id": "review:418dbddbe5763708",
+   "kind": "review",
+   "ko": "여자친구 선물용으로 구매했는데 디자인이 이쁘고 몇년 사용하기에 좋은 것 같습니다. 다만 캐디백 커버는 어울리지 않는 블랙이라 좀 당황했네요."
+  }
+ ]
+}
