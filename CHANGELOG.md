@@ -3,7 +3,7 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
-## Unreleased
+## 0.7.0 (2026-11-06)
 
 - **Transform** (`scripts/transform.py`, `transform_shops.py`, `run_transform.py`, `keep_run.py`): kept collection
   runs per shop -> prepared products (Korean, ready / held with codes, a translation worklist with content-hash text
