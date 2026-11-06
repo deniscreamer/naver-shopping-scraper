@@ -3,7 +3,7 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
-## Unreleased
+## 0.6.0 (2026-11-05)
 
 - **Listing screen** (`scripts/listing_filter.py`): every listing row left out gets a reason: `sponsored`,
   `title_unavailable`, `rental` (the naver-harvester's stop words as they are, `listing_exclusions.json`),
