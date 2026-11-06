@@ -283,7 +283,8 @@ reviews.
 Transport: box, through `/products/reviews` pages (`recent`; `photo_video` first, then `text`, up to 25 pages each;
 cached as those pages). The tiers (`naver_shopping/review_select.py`): `primary` (50+ letters / digits, a photo, a
 real avatar), `photo` (the same without an avatar), `text` (50+ letters, no photo), `small` (a product with 20 reviews
-or fewer: every review with text). Score plays no part.
+or fewer: every review with text). Score plays no part. A video's poster counts as a photo (in the tiers and the photo
+caps); the attachment stays `type: video`.
 Output: `{product, summary, mode (quality | small_source), count, scanned, passes: [{media, pages, total_count,
 is_exhausted}], is_complete, results: [review + tier]}`. `is_complete` is true when `count` was reached or every pass
 was read to its end; `summary` is null for a product with no reviews.
@@ -414,7 +415,7 @@ verified 2026-11-02).
 
 Transport: box for the product record (as `/products/details`), then the extension (one page read, ~30-60 s, one
 at a time; a running listing job answers 409). Cache: 24 h per `product` + `query` (`PRODUCT_SPECS_CACHE`).
-Output: `{id, name, link, query, category, specs: [{label, value}], is_complete, facts, options, read_at}`.
+Output: `{id, name, link, query, category, specs: [{label, value}], is_complete, facts, options, measures, read_at}`.
 `is_complete` is false when the list stayed folded.
 
 `options` (`parsers.parse_page_options`): what can be bought, from the product answer the page itself fetched
@@ -439,6 +440,28 @@ supplements}`:
 source `specs:<label>` (브랜드, 제조사 / 제조자, 모델명, 원산지 / 제조국). 404 when the card is not on that search page;
 409 / 503 see Errors.
 
+`measures` (`naver_shopping/measures.py`): weight and size candidates, as the seller wrote them; collection only (no
+value is chosen, no category average filled in, no OCR), the rows and `facts` unchanged. Sources in order: the
+상품정보 rows, the notice, the description text, the page's JSON-LD `Product` (only when its `productID` or `mpn` is
+this product's id), the description HTML's label / value pairs (`li > strong + div`, `dt + dd`, table rows).
+`{is_set, weights, dimensions, references, review}`:
+
+- `weights[]`: `{value {min, max} (grams), unit, matched, kind (net | packed | component | unknown), scope (unit |
+  set | unknown), approximate, quote, source (specs | notice | description | json_ld | description_table), locator
+  {block, row, cell?}, binding, origin: source_stated}`. In a set (`is_set`: 세트 / set in the name or category) a
+  line about a part (드라이버, 아이언, 샤프트, 헤드, ...) is `component`.
+- `dimensions[]`: `{values (mm), axes (width, depth, height, length, thickness, diameter; null when the order is
+  not written), unit, matched, kind (packed | component | product | unknown), state (unfolded | folded | null),
+  flags (axis_order_unresolved, not_confirmed_packed), quote, source, locator, binding, origin}`.
+- `binding`: `{scope: product | variants | context, variant_ids}`. One variant or none: `product`. Several:
+  `variants` only when the line names option values of exactly one composition (variants that differ only in a
+  colour / design group count as one); else `context`.
+- `references[]`: a pointer instead of a value ("상세페이지 참조"): `{quote, source, locator, measure (weight | size),
+  reason (description_reference | measurement_field_reference)}`.
+- `review[]`: lines left for a person, `{quote, source, locator, measure, reason}`: `kind_conflict` (two kinds at
+  once), `unit_conflict` (the label's unit differs from the value's), `two_compositions`, `manual_review` (a size
+  range or a list of sizes), `unit_missing`.
+
 ```
 curl "http://localhost:8000/products/specs?product=https://smartstore.naver.com/scarabee/products/13021362937"
 ```
@@ -459,10 +482,11 @@ Both prefixes. One job at a time.
 `max_batches` reached); `stopped` (`stop` says why: a wall, a refused batch, a stall, an adapter error).
 `/health` adds `extension: connected | disconnected | off`.
 
-A row: `{product_id, nv_mid, link, name, store {name, slug, link, grade, is_brand_store}, pricing {sale_price,
+A row: `{product_id, nv_mid, link, name, store {name, slug, link, channel_no, grade, is_brand_store}, pricing {sale_price,
 discounted_price, discount_ratio, currency}, category_id, reviews {count, average_score}, stock_quantity, image,
 is_ad, query, batch, seen_at}`. `link` is the canonical store product link `/products/details` takes. Unique by
-`product_id`; ads are kept and flagged.
+`product_id`; ads are kept and flagged. `store.channel_no` is the store's number (`channelNo`, null when
+the card has none): with `product_id` it names the product across our shops (`<shop>:naver:<channel_no>:<product_id>`).
 
 ```
 curl -X POST "http://localhost:8000/listings?query=%EB%82%A8%EC%84%B1%20%EA%B3%A8%ED%94%84%EC%B1%84%20%ED%92%80%EC%84%B8%ED%8A%B8&max_batches=3"

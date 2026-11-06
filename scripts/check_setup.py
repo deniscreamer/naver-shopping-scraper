@@ -2,7 +2,8 @@
 check: OK / WARN / FAIL. Exit code 1 when anything FAILs.
 
     .venv/bin/python scripts/check_setup.py              # local + running server + extension
-    .venv/bin/python scripts/check_setup.py --live       # + one plain-HTTP call and one Chrome call to Naver
+    .venv/bin/python scripts/check_setup.py --live       # + one plain-HTTP call and one Chrome call to Naver,
+                                                         #   and a Shopify token for a read-only shop check
     .venv/bin/python scripts/check_setup.py --notify     # + one test POST to NAVER_NOTIFY_WEBHOOK
     .venv/bin/python scripts/check_setup.py --no-server  # local checks only
 
@@ -81,6 +82,26 @@ def check_photos():
         report("FAIL", "SHOP_STORE", str(e))
 
 
+def check_shop(live):
+    """The shop check of example_99 (shopify_catalog.py): the store's Shopify values and its credentials file (0600,
+    ignored by git); with --live a token is minted and checked (shop, read_products, a first product). A WARN only:
+    the other scripts do not need it."""
+    from shop_stores import get_store
+    from shopify_catalog import CatalogError, ShopCatalog, ShopNotConfigured
+    try:
+        store = get_store()
+    except ValueError:
+        return                                   # SHOP_STORE already failed above
+    try:
+        catalog = ShopCatalog(store)
+        if live:
+            catalog.check_shop()                 # mints and verifies the token first
+        report("OK", "Shopify shop check", catalog.shop.domain + (": token minted, read_products, products readable"
+                                                                  if live else " (credentials file found)"))
+    except (ShopNotConfigured, CatalogError) as e:
+        report("WARN", "Shopify shop check", f"{e} (only example_99 needs it)")
+
+
 # ---- server -------------------------------------------------------------------------------
 
 def check_server(api, live):
@@ -135,6 +156,7 @@ def main(argv=None):
     args = parser.parse_args(argv)
     results.clear()
     check_local()
+    check_shop(args.live)
     if not args.no_server:
         check_server(NaverApiClient(read_timeout=180), args.live)
     if args.notify:

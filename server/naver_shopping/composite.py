@@ -83,6 +83,9 @@ def listing_row(product):
         "link": f"{store}/products/{product_id}",
         "name": product.get("productName"),
         "store": {"name": product.get("mallName"), "slug": store.rsplit("/", 1)[1], "link": store,
+                  # the store's number, on every card seen 2026-11-05 (composite_answer.json); our shops key a
+                  # product by it: <shop>:naver:<channelNo>:<productId>
+                  "channel_no": str(product.get("channelNo") or "") or None,
                   "grade": product.get("mallGradeType"), "is_brand_store": bool(product.get("isBrandStore"))},
         "pricing": {"sale_price": product.get("salePrice"), "discounted_price": product.get("discountedSalePrice"),
                     "discount_ratio": product.get("discountedRatio"), "currency": "KRW"},

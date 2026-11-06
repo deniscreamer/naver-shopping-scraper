@@ -15,7 +15,7 @@ MODULES = ["browser_client", "cache", "config", "egress", "hostenv", "patchright
            "schema_fields", "scraper_errors", "url_blocking",
            "naver_shopping.api", "naver_shopping.cache_config", "naver_shopping.fetch",
            "naver_shopping.parsers", "naver_shopping.refs", "naver_shopping.schemas",
-           "naver_shopping.composite", "naver_shopping.pdp", "naver_shopping.review_select", "ext_bridge", "notify", "ext_listing", "listing_jobs",
+           "naver_shopping.composite", "naver_shopping.pdp", "naver_shopping.review_select", "naver_shopping.measures", "ext_bridge", "notify", "ext_listing", "listing_jobs",
            "ext_product"]
 
 

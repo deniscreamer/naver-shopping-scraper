@@ -1,8 +1,10 @@
 # scripts/
 
 Client-side consumers of the Naver Shopping API. Everything here talks to a
-running server over HTTP only, plus one other fetch: the photo files the API
-linked, from Naver's image CDN (`naver_images.py`, see Product photos).
+running server over HTTP only, plus two other fetches: the photo files the API
+linked, from Naver's image CDN (`naver_images.py`, see Product photos), and a
+read-only look at our own Shopify store's catalog (`shopify_catalog.py`, see
+The listing screen and the shop check).
 
 ## Boundary
 
@@ -29,7 +31,12 @@ linked, from Naver's image CDN (`naver_images.py`, see Product photos).
 | `naver_images.py` | Downloads the photos the API linked (gallery, review photos, avatars) from Naver's image CDN with plain HTTP and saves them as the store's WebP (see Product photos) |
 | `image_prep.py` | The WebP preparation, one algorithm for every store: size, bytes, metadata, checks (no network) |
 | `naver_variants.py` | Which variants to collect: free ones by default, paid ones when the operator turns `paid` on; sold-out rows kept and marked (see Product options) |
-| `shop_stores.py` | Our Shopify stores (`StoreId` enum + publisher / site), picked by `SHOP_STORE` |
+| `shop_stores.py` | Our Shopify stores (`StoreId` enum + publisher / site + Shopify values), picked by `SHOP_STORE` |
+| `listing_filter.py`, `listing_exclusions.json` | The listing screen: which rows to open, a reason code for each left out (rental stop words from the naver-harvester) |
+| `shopify_catalog.py` | The "already in the shop" check: every product's source key from the store's Admin API (read only) |
+| `deferred_log.py` | The shop's journal of deferred products (append-only); CLI `list` / `allow <key> --by` |
+| `collect_guard.py` | The run rules around one product: one retry, then deferred; stop on a wall; stop on a repeated defect |
+| `package_measures.py`, `category_measures.json` | Five shipping fields per variant: the seller's values, else the operator's category averages |
 | `smoke_endpoints.py` | Live smoke: `/health` plus 11 endpoints (all but `/products/specs`), one at a time. Networked. |
 | `example_search_harvest.py` | Template: search, classify the cards, fetch details, write resumable JSONL |
 | `test_naver_api_client.py` | Offline tests for the client and the classifier |
@@ -37,6 +44,7 @@ linked, from Naver's image CDN (`naver_images.py`, see Product photos).
 | `test_image_prep.py` | Offline tests for the WebP preparation (Pillow-made photos) |
 | `test_naver_variants.py` | Offline tests for the variant choice (real rows of a product with paid and sold-out variants) |
 | `test_shop_stores.py` | Offline tests for the store registry (every `StoreId` has a profile, `SHOP_STORE`) |
+| `test_listing_filter.py`, `test_shopify_catalog.py`, `test_deferred_log.py`, `test_package_measures.py` | Offline tests for the screen, the shop check (a fake Admin API), the journal and run rules, the shipping fields |
 | `example_0N_*.py` | Runnable examples, one API topic each (see Examples) |
 | `harvest_listing.py` | Full listing of store product links for a keyword + category, price-sliced, resumable |
 | `output/` | Run output (`output/<run>/products.jsonl`, `listing.jsonl`), gitignored |
@@ -92,7 +100,11 @@ An amount in a name counts only as "(+N원)" / "(-N원)": a bare "+" joins the p
 `/products/details` `images` is the product's gallery: the seller's photos in order, main photo first, as links to
 the original files (no `?type=` rendition). Checked 2026-11-01: the same files and count as the gallery on the
 product page, so no page, adapter or zoom viewer is needed. Review photo links (`attachments`) are originals too;
-`writer.profile_image` is the avatar (null for Naver's placeholder). Videos are not downloaded.
+`writer.profile_image` is the avatar (null for Naver's placeholder). Videos are never downloaded: a review video's
+poster (the frame the API links; never a made-up URL) is a photo of the review. The server counts it as a photo when
+it chooses reviews, `download_review_media` saves it as a `review-image` with `from_video: true`, and
+`posters_as_photos(review)` turns the video attachment into `{type: image, ..., source: video_poster}` before the
+review is stored, dropping the video's own data.
 
 Measured on 25 gallery photos of 6 products (smartstore and brand store), every rendition of the same photo:
 
@@ -132,7 +144,62 @@ name there is none and the file is named after the store and product id.
 kyobooks, banafish. Pick one per run with `SHOP_STORE` in `.env` or `get_store("...")`. A new store is one enum
 member and one `STORES` entry; the algorithm does not change.
 
-Not done here: description images, recommendation images, video frames.
+Not done here: description images, recommendation images, the product gallery's videos.
+
+## The listing screen and the shop check
+
+Before a product page is opened (~30-60 s each), `example_99` screens the listing rows (`listing_filter.Screen`) and
+records the reason of every row left out, in this order: `sponsored` (an ad), `title_unavailable`, `rental` (a stop
+word of `listing_exclusions.json`, copied as it is from the naver-harvester: NFKC + lower case, words with
+not-preceded-by / not-followed-by exceptions, latin words whole), `category_mismatch` (only the exact leaf
+category), `key_unavailable` (no store number: no shop check possible), `already_published`, `deferred`. Catalog and
+external-mall cards never reach it (the server keeps store products only).
+
+**Already in the shop** (`shopify_catalog.ShopCatalog`): every product of the store, any status (a draft or an
+archived one counts), read from its Admin GraphQL API, with the source key metafields `<namespace>.source_offer_id`
+and the older `<namespace>.naver_offer_key`; a key is `<namespace>:naver:<channel_no>:<product_id>` (the
+harvester's format; `channel_no` is the listing row's `store.channel_no`). Never matched by name. Before each read
+the API must answer as the store (`shop { id myshopifyDomain }`); another shop, a key in the wrong format or one key
+on two products stops the check (`CatalogError`) instead of answering "not there". The snapshot is read again when
+older than 5 minutes (before the run and before each product). The store's values live in `shop_stores.py`
+(`Shopify`: domain, shop id, API version, credentials variable, namespace); a store without them raises
+`ShopNotConfigured`: ask the operator.
+
+**Access**: there is no lasting token (fairwardgolf, 2026-11-05). `.env` holds only the path of the store app's
+credentials file (`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`; `PRODUCTS_API_CLIENT_ID` / `PRODUCTS_API_CLIENT_SECRET`, the
+harvester's `.env.fairwardgolf`; must be 0600 and ignored by git, else `ShopNotConfigured`). Each run mints a 24 h
+token (`client_credentials`), checks it at once (`shop`, `currentAppInstallation.accessScopes` has `read_products`, a
+probe `products(first: 1)`; a token that fails is dropped), replaces it 10 minutes before it ends, and after a 401 mid-run mints once more and repeats
+the request once. Queries only: the token could write, so a mutation is refused. Token and secret go only to the
+store's own host (no cookies, no redirects), never into `os.environ`, an error or a print. Pages of 100 products;
+a throttled answer waits what Shopify says (`extensions.cost`, `Retry-After`). The 5-minute age is wall-clock time
+from the start of the read (a Mac asleep counts).
+
+**Deferred** (`deferred_log.DeferredLog`, `collect_guard.CollectGuard`; `output/journal/deferred-<store>.jsonl`): a
+product whose collection is partial is tried once more; partial again, it is deferred with the reason and the first
+error, and is not taken again. Only the owner allows one retry of one product
+(`deferred_log.py allow <key> --by <who> [--note]`), written to the journal and spent by the next attempt. Lines are
+never removed; there is no switch to ignore the journal. A captcha / 418 / 429 / login wall or a refused image CDN
+stops the run without marking the product; a card not found on the listing is just not taken; two products in a row
+partial for the same reason stop the run (a defect of the collector).
+
+## Package weight and size
+
+`/products/specs` `measures` holds the seller's weight and size candidates (server: `naver_shopping/measures.py`,
+contract in ENDPOINTS.md). `package_measures.variant_measures(specs, load_table())` turns them into five fields per
+variant: `product_weight_g` (net or unspecified, never a part's; in a set only the whole set's), `package_weight_g`
+(only a weight with the package), `package_length_mm` / `package_width_mm` / `package_height_mm` (only a triple marked
+as the package, longest side first). A value belongs to a variant when its binding is the product or names that
+variant; values that disagree are a contradiction and are not taken. A missing field comes from
+`category_measures.json`, the operator's table (per leaf category: low / central / high of the five fields, who
+approved it and when, the table's version), as `source: category_default`; a seller's value is never overwritten.
+No row for the category: `CategoryDefaultsMissing`, the run stops and asks the operator (values are never made
+up). Every row carries `reliability`; today one level, `estimated_average` (the weakest: an average of estimates,
+not measured), and delivery will apply its own coefficient per level. 50002788 풀세트 is filled (owner, 2026-11-05):
+the median (central) and about the 10th / 90th percentile (low / high) of the naver-harvester's AI estimates on the
+55 fairwardgolf sets in Shopify, sets with and without a bag together (none of their values was seller-stated).
+Product sizes (not the package: kind product or unknown) are kept apart, optional.
+Confidence levels are not computed here.
 
 ## Reviews: two ways
 
@@ -172,7 +239,7 @@ needs Chrome open with the adapter (`example_01` shows `extension: connected`).
 | `example_12_reviews_selected.py` | Reviews, way 2: `selected_reviews()` -> up to 20 reviews worth showing (photo + text + avatar first), with the tier of each, JSONL; their photos and avatars as the store's WebP (`download_review_media()`) |
 | `example_13_product_images.py` | A product's gallery: `product_details()["images"]` -> `naver_images.download_gallery()` -> the store's WebP files, manifest.json with source and result of each |
 | `example_14_product_options.py` | A product's options from the page (`product_specs()["options"]`) and the variants we take (`choose_variants`, `paid` as argument), on real golf sets: no options, free combinations, a text option with a sold-out row, a paid sold-out row |
-| `example_99_full_details.py` | **FULL**, the one to grow: a category's products (listing + category id), each in turn -> details + 상품정보 specs (adapter) + selected reviews + gallery and review photos as the store's WebP, one JSON line per product |
+| `example_99_full_details.py` | **FULL**, the one to grow: a category's products (listing, screened: ads, rental, another category, already in the shop, deferred), each in turn under the run rules -> details + 상품정보 specs and options (adapter) + variants + five shipping fields + selected reviews + gallery and review photos (video posters as photos) as the store's WebP, one JSON line per product. Needs the shop's credentials file (`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`) and the category's averages |
 
 ```sh
 .venv/bin/python scripts/example_01_health.py
@@ -333,7 +400,8 @@ still returns its rows. Contract: server/docs/ENDPOINTS.md "Listing jobs".
 
 ## Shopify roadmap
 
-This is a design note only. There is no code yet.
+This is a design note. The only code so far is the read-only check of what a store already has
+(`shopify_catalog.py`, see The listing screen and the shop check).
 
 The pipeline: harvest JSONL (`output/<run>/products.jsonl`), then map each
 record to a Shopify product, then export.
@@ -357,8 +425,12 @@ Open decisions:
 - Currency and price conversion.
 - Whether options beyond Shopify's variant limits are split or dropped.
 
-Credentials will come from env as `SHOPIFY_STORE` and `SHOPIFY_ADMIN_TOKEN`.
-They are never committed.
+Credentials: a store app's client id + secret file per store, its path in env as `shop_stores.py` names it
+(`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`), next to the store's domain, shop id, API version and namespace there; tokens are
+minted per run (`shopify_catalog.Credentials`). Publishing needs write scopes: reuse `Credentials`, keep the read
+check as it is. They are never committed. When publishing,
+write the same source key (`<namespace>.source_offer_id` = `<namespace>:naver:<channel_no>:<product_id>`) and check
+for it once more right before (a product published after the 5-minute snapshot).
 
 When the work starts, add `scripts/shopify/` as a package (mapper + exporter)
 that reads the harvest JSONL. Until then it stays this section, with no stub

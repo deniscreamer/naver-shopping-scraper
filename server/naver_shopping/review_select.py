@@ -13,6 +13,11 @@ The policy (adapted 2026-11-01 from a catalog project's review collector):
   * small source: when the product has SMALL_SOURCE reviews or fewer, every
     review with any letter or digit is taken, tier "small".
 
+A video's poster counts as a photo (the owner's rule, 2026-11-05): a review with
+only a video still qualifies for primary / photo, and the poster takes a place
+under the photo caps. Only a video with a poster link counts; the attachment
+keeps type "video" (scripts/naver_images saves the poster as a photo).
+
 Up to `target` reviews, primary first, then photo, then text, each tier in
 the order they came (newest first). Score plays no part:
 critical reviews qualify the same way. Photos are capped per review
@@ -34,7 +39,9 @@ def text_length(text):
 
 
 def _photos(review):
-    return [a for a in review.get("attachments") or [] if a.get("type") == "image"]
+    """Photos and video posters, in the review's order."""
+    return [a for a in review.get("attachments") or [] if a.get("type") == "image"
+            or a.get("type") == "video" and a.get("link")]
 
 
 def tier(review, small=False):
@@ -64,7 +71,7 @@ def select(reviews, origin_product_id=None, review_count=None, target=20):
     for review in ordered[:max(0, target)]:
         photos = _photos(review)[:min(MAX_PHOTOS_PER_REVIEW, budget)]
         budget -= len(photos)
-        others = [a for a in review.get("attachments") or [] if a.get("type") != "image"]
+        others = [a for a in review.get("attachments") or [] if a not in _photos(review)]   # videos with no poster
         name = tier(review, small)
         if not photos and name in ("primary", "photo"):     # the product's photo budget is spent
             name = "text"

@@ -45,6 +45,7 @@ def test_listing_row_builds_store_link():
     assert row["product_id"].isdigit() and row["pricing"]["currency"] == "KRW" and row["image"].startswith("https://")
     assert row["is_ad"] is True                      # the first card of that answer is an ad
     assert any(r["store"]["is_brand_store"] for r in rows)
+    assert all(r["store"]["channel_no"].isdigit() for r in rows)       # the card's channelNo, for shop keys
     assert all("clickUrl" not in r for r in rows)
 
 

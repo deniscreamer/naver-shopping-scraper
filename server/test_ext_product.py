@@ -49,6 +49,7 @@ def test_specs_answer(specs):
     assert body["facts"]["brand"] == {"value": "혼마", "source": "specs:제조사"}
     assert body["category"]["id"] == "50002788" and body["read_at"].endswith("Z")
     assert body["options"] is None                                            # the page gave no product answer
+    assert body["measures"] == {"is_set": True, "weights": [], "dimensions": [], "references": [], "review": []}
     status, again = call("GET", "/naver-shopping/products/specs", product=LINK)
     assert status == 200 and len(specs) == 2                                  # options unknown: read again
     status, _ = call("GET", "/products/specs", product=LINK, query="남성 골프채 풀세트")

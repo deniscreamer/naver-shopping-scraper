@@ -433,6 +433,8 @@ primary record, with dates; read it before changing the behaviour.
   the adapter. -> `ext_product._product_answer` docstring, `parsers.parse_page_options` docstring.
 - A text the buyer types (CUSTOM option) is an `<input data-tag="textOption" id=<textOptions id> maxlength=...>`
   with `<label for=id>... (필수)</label>`; the purchase box renders twice (seen 2026-11-02). -> `pdp.text_fields`.
+- A search.shopping listing card carries its store's `channelNo` (seen 2026-11-05); listing rows give it as
+  `store.channel_no`, the store half of our shops' source key. -> `composite.listing_row` comment.
 
 A new upstream fact gets a dated comment at the code that handles it and one
 line here (R-NAVER-4).

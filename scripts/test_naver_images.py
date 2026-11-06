@@ -205,16 +205,36 @@ PHOTO = "https://phinf.pstatic.net/checkout.phinf/20250101_1/a.jpg"
 AVATAR = "https://profile-phinf.pstatic.net/MjAy/b.jpg"
 
 
+POSTER = "https://phinf.pstatic.net/checkout.phinf/20250101_2/poster.jpg"
+
+
 def review(rid, photos=(), avatar=None, video=False):
     attachments = [{"type": "image", "link": p, "width": None, "height": None} for p in photos]
     if video:
-        attachments.append({"type": "video", "link": "https://example.com/v.mp4", "width": None, "height": None})
+        attachments.append({"type": "video", "link": POSTER, "width": 720, "height": 1280})
+        attachments.append({"type": "video", "link": None, "width": None, "height": None})    # no poster
     return {"id": rid, "attachments": attachments, "writer": {"masked_id": "a***", "profile_image": avatar}}
 
 
-def test_review_media_photos_then_avatar_videos_left_out():
+def test_review_media_photos_posters_then_avatar():
     media = I.review_media([review("1", [PHOTO], AVATAR, video=True), review("2")])
-    assert [(r, k.value, u) for r, k, u in media] == [("1", "review-image", PHOTO), ("1", "review-avatar", AVATAR)]
+    assert [(r, k.value, u, v) for r, k, u, v in media] == [
+        ("1", "review-image", PHOTO, False), ("1", "review-image", POSTER, True), ("1", "review-avatar", AVATAR, False)]
+
+
+def test_posters_as_photos():
+    out = I.posters_as_photos(review("1", [PHOTO], video=True))
+    assert out["attachments"] == [{"type": "image", "link": PHOTO, "width": None, "height": None},
+                                  {"type": "image", "link": POSTER, "width": 720, "height": 1280,
+                                   "source": "video_poster"}]
+
+
+def test_a_poster_is_saved_as_a_review_photo(tmp_path):
+    s = Session(Resp(body=photo(720, 1280)))
+    out = I.download_review_media([{"id": "1", "attachments": [{"type": "video", "link": POSTER}], "writer": {}}],
+                                  str(tmp_path), STORE, s, sleep=lambda x: None)
+    [poster] = out["files"]
+    assert poster["kind"] == "review-image" and poster["from_video"] and poster["height"] == 1024
 
 
 def test_review_media_saved_1024_once_per_url(tmp_path):

@@ -89,20 +89,6 @@
   ],
   "variants": [
    {
-    "id": "59353178855",
-    "name": "10.5도 R / 8아이언세트 카본 SR / 3번 SR",
-    "options": [
-     "10.5도 R",
-     "8아이언세트 카본 SR",
-     "3번 SR"
-    ],
-    "extra_price": 0,
-    "stock_quantity": 0,
-    "is_available": false,
-    "is_today_dispatch": true,
-    "registered_at": "2026-07-23"
-   },
-   {
     "id": "59353178830",
     "name": "9.5도 R / 8아이언세트 카본 R / 3번 R",
     "options": [
@@ -157,6 +143,20 @@
     "is_available": true,
     "is_today_dispatch": true,
     "registered_at": "2026-07-23"
+   },
+   {
+    "id": "59353178841",
+    "name": "9.5도 R / 8아이언세트 카본 SR / 3번 R",
+    "options": [
+     "9.5도 R",
+     "8아이언세트 카본 SR",
+     "3번 R"
+    ],
+    "extra_price": 0,
+    "stock_quantity": 1,
+    "is_available": true,
+    "is_today_dispatch": true,
+    "registered_at": "2026-07-23"
    }
   ],
   "simple_options": [],
@@ -200,5 +200,33 @@
    }
   ]
  },
- "read_at": "2026-11-02T16:10:35Z"
+ "measures": {
+  "is_set": true,
+  "weights": [],
+  "dimensions": [],
+  "references": [
+   {
+    "quote": "크기: 제품 상세 이미지 참조",
+    "source": "notice",
+    "locator": {
+     "block": "items",
+     "row": 2
+    },
+    "measure": "size",
+    "reason": "description_reference"
+   },
+   {
+    "quote": "중량: 제품 상세 이미지 참조",
+    "source": "notice",
+    "locator": {
+     "block": "items",
+     "row": 3
+    },
+    "measure": "weight",
+    "reason": "description_reference"
+   }
+  ],
+  "review": []
+ },
+ "read_at": "2026-11-06T03:47:05Z"
 }

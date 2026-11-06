@@ -34,8 +34,9 @@ Google Chrome (a real window opens). Docker/Linux is archived in
 1. Read the nearest AGENTS.md before editing files in a directory.
 2. [server/docs/DEVELOPMENT_RULES.md](server/docs/DEVELOPMENT_RULES.md) is
    MANDATORY for any change under `server/`.
-3. `scripts/` talks to the server over HTTP only and never imports server modules. The one other fetch:
-   photo files the API linked, from Naver's image CDN (`scripts/naver_images.py`).
+3. `scripts/` talks to the server over HTTP only and never imports server modules. Two other fetches:
+   photo files the API linked, from Naver's image CDN (`scripts/naver_images.py`), and a read of our own
+   Shopify store's catalog (`scripts/shopify_catalog.py`, Admin API, read only).
 4. Tests never hit the network.
    API answer types live in `scripts/naver_types.py`; a shape change updates type + fixture + client method (R-TYPE).
 5. Move or rename tracked files with `git mv` so history follows them.
@@ -52,7 +53,7 @@ Run from the repo root.
 python -m venv .venv
 .venv/bin/pip install -r server/requirements.txt -r scripts/requirements.txt
 .venv/bin/python server/run.py              # http://localhost:8000, PORT=... to change
-.venv/bin/python -m pytest -q               # offline suite, 166 tests
+.venv/bin/python -m pytest -q               # offline suite, 232 tests
 .venv/bin/python -m pytest scripts -q       # scripts/ client tests, offline, separate suite
 ```
 

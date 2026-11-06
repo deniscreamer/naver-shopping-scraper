@@ -35,7 +35,7 @@ import ext_listing
 import listing_jobs
 from cache import cached_call, forget
 from ext_bridge import ExtError
-from naver_shopping import api, parsers, pdp
+from naver_shopping import api, measures, parsers, pdp
 from naver_shopping import cache_config as ttl
 from scraper_errors import NotFound
 
@@ -174,6 +174,7 @@ def _specs(product, query):
     if not rows:            # every product page lists at least 상품번호: not rendered, or the layout changed
         raise AdapterError(f"product {product_id}: no 상품정보 list on the product page {page['url']} "
                            f"(saved to {out_dir}); retry, or the page layout changed")
+    options = parsers.parse_page_options(page["product"], pdp.text_fields(page["html"])) if page.get("product") else None
     return {
         "id": product_id,
         "name": details["name"],
@@ -183,7 +184,9 @@ def _specs(product, query):
         "specs": rows,
         "is_complete": not pdp.specs_collapsed(page["html"]),
         "facts": parsers.product_facts(details, details["notice"], rows),
-        "options": parsers.parse_page_options(page["product"], pdp.text_fields(page["html"])) if page.get("product") else None,
+        "options": options,
+        "measures": measures.measures(rows, details["notice"], details.get("description"), page["html"], product_id,
+                                      options, details["name"], details["category"]),
         "read_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
 

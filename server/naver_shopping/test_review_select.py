@@ -147,3 +147,14 @@ def test_selected_small_source_reads_all(monkeypatch):
     A, sent = _backend(monkeypatch, {"ALL": [_page(payload, 1, 1)]})
     out = A.product_reviews_selected(product="10352481064", count=20)
     assert out["mode"] == "small_source" and out["count"] == 20 and [p["media"] for p in out["passes"]] == ["all"]
+
+
+def test_a_video_poster_counts_as_a_photo():
+    text = "영상으로 남깁니다 " * 8
+    video = {"type": "video", "link": "https://phinf.pstatic.net/checkout/poster.jpg", "width": 720, "height": 1280}
+    bare = {"type": "video", "link": None, "width": None, "height": None}
+    rs = [{"id": "1", "text": text, "writer": {"profile_image": "https://x/a.jpg"}, "attachments": [video]},
+          {"id": "2", "text": text, "writer": {}, "attachments": [bare]}]
+    chosen, _ = S.select(rs, target=20)
+    assert [r["tier"] for r in chosen] == ["primary", "text"]          # a video with no poster is not a photo
+    assert chosen[0]["attachments"] == [video] and chosen[1]["attachments"] == [bare]

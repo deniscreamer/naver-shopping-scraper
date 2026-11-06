@@ -259,41 +259,58 @@ def download_gallery(urls, out_dir, store, product_id=None, seo=None, session=No
 
 
 def review_media(reviews):
-    """[(review id, kind, url)] of selected / listed reviews: photos in order, then the avatar.
-    Videos are left out; a null avatar is Naver's placeholder (the server drops it)."""
+    """[(review id, kind, url, from_video)] of selected / listed reviews: photos and video posters in order, then the
+    avatar. A video's poster is a photo of the review (the owner's rule, 2026-11-05): the link the API gave, never a
+    made-up one; the video itself is never fetched. A null avatar is Naver's placeholder (the server drops it)."""
     out = []
     for review in reviews:
         for a in review.get("attachments") or []:
-            if a.get("type") == "image" and a.get("link"):
-                out.append((review.get("id"), ImageKind.REVIEW_IMAGE, a["link"]))
+            if a.get("type") in ("image", "video") and a.get("link"):
+                out.append((review.get("id"), ImageKind.REVIEW_IMAGE, a["link"], a.get("type") == "video"))
         avatar = (review.get("writer") or {}).get("profile_image")
         if avatar:
-            out.append((review.get("id"), ImageKind.REVIEW_AVATAR, avatar))
+            out.append((review.get("id"), ImageKind.REVIEW_AVATAR, avatar, False))
     return out
+
+
+def posters_as_photos(review):
+    """The review with each video turned into its poster photo ({type: image, ..., source: video_poster}) and the
+    video's own data dropped; a video with no poster is left out. Run after the collection, before the review is
+    stored (scripts keep photos only, 2026-11-05)."""
+    attachments = []
+    for a in review.get("attachments") or []:
+        if a.get("type") == "video":
+            if a.get("link"):
+                attachments.append({"type": "image", "link": a["link"], "width": a.get("width"),
+                                    "height": a.get("height"), "source": "video_poster"})
+        else:
+            attachments.append(a)
+    return {**review, "attachments": attachments}
 
 
 def download_review_media(reviews, out_dir, store, session=None, sleep=time.sleep):
     """Review photos and avatars as the store's WebP files (1024 px, publisher only, no SEO):
     <store>-review-image-<sha16>.webp, <store>-review-avatar-<sha16>.webp. A URL shared by several
     reviews is fetched once. A failed one is skipped (the review stays); 403/429 stops the rest.
-    -> {store, files [{review_id, kind, ...save_image}], failed [{review_id, kind, url, error}],
+    A video poster is saved as a review-image with from_video true.
+    -> {store, files [{review_id, kind, from_video, ...save_image}], failed [{review_id, kind, url, error}],
     stopped, is_complete}."""
     session = session or new_session()
     os.makedirs(out_dir, exist_ok=True)
     files, failed, stopped = [], [], None
     done: dict[str, dict | str] = {}                     # url -> its record, or its error
-    for review_id, kind, url in review_media(reviews):
+    for review_id, kind, url, from_video in review_media(reviews):
         if url in done:                                  # the same file: its result again
             prior = done[url]
             if isinstance(prior, dict):
-                files.append({**prior, "review_id": review_id, "kind": kind.value})
+                files.append({**prior, "review_id": review_id, "kind": kind.value, "from_video": from_video})
             else:
                 failed.append({"review_id": review_id, "kind": kind.value, "url": url, "error": prior})
             continue
         try:
             saved = save_image(url, out_dir, kind, store, f"{store.file_prefix}-{kind.value}", None, session, sleep)
             done[url] = saved
-            files.append({"review_id": review_id, "kind": kind.value, **saved})
+            files.append({"review_id": review_id, "kind": kind.value, "from_video": from_video, **saved})
         except CdnRefused as e:
             stopped = str(e)
             failed.append({"review_id": review_id, "kind": kind.value, "url": url, "error": stopped})

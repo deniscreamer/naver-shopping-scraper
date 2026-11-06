@@ -47,8 +47,19 @@ Every value is optional; each line of [.env.example](.env.example) says what it 
 example. Usually all stay empty. Fill only what this machine needs (another port; a proxy if Naver refuses this
 IP; a webhook to get captcha notices; `SHOP_STORE` when the saved photos are for a store other than
 fairwardgolf). Secrets go only into `.env` (gitignored), never into a commit or the chat.
-If a value must come from the operator (proxy credentials, a webhook URL), ask them to paste it into `.env`
-themselves.
+If a value must come from the operator (proxy credentials, a webhook URL, where the Shopify app's credentials file is), ask them to paste it
+into `.env` themselves.
+
+For the full collection (`scripts/example_99_full_details.py`) two things come from the operator:
+
+- where the store app's credentials file is (client id + secret of the products app, mode 0600, ignored by git;
+  fairwardgolf: the naver-harvester's `.env.fairwardgolf`): its path in `.env` as the variable
+  `scripts/shop_stores.py` names (`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`), and `chmod 600 .env`. No token is stored: one
+  is minted per run. `scripts/check_setup.py --live` then mints one and checks the shop, `read_products` and a first
+  product. A store without Shopify values in `shop_stores.py` waits for the operator's domain, shop id, API version
+  and namespace;
+- the category's package averages in `scripts/category_measures.json` (low / central / high, who approved, when).
+  Without a row for the category the run stops and asks for it.
 
 ## 4. Offline tests (no network)
 

@@ -3,6 +3,35 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
+## Unreleased
+
+- **Listing screen** (`scripts/listing_filter.py`): every listing row left out gets a reason: `sponsored`,
+  `title_unavailable`, `rental` (the naver-harvester's stop words as they are, `listing_exclusions.json`),
+  `category_mismatch` (exact leaf only), `key_unavailable`, `already_published`, `deferred`. Listing rows add
+  `store.channel_no`.
+- **Already in the shop** (`scripts/shopify_catalog.py`): the store's Admin API catalog, read only, any status, by
+  the source key metafields `source_offer_id` / `naver_offer_key` (never by name); the shop is checked before each
+  read; a bad or duplicated key stops the check; snapshot at most 5 minutes. Store values in `shop_stores.Shopify`
+  (fairwardgolf given; the others wait for the operator). No stored token: a 24 h token is minted per run from the
+  store app's client id + secret (a 0600, git-ignored file whose path is in `.env`), checked for the shop and
+  `read_products`, renewed before it ends and once after a 401; queries only; never printed.
+- **Deferred products** (`scripts/deferred_log.py`, `scripts/collect_guard.py`): partial -> one retry -> deferred
+  with the first error; the owner allows one retry of one product (`deferred_log.py allow`); a wall stops the run
+  without marking; two products in a row partial for the same reason stop the run.
+- **Video posters as photos**: `/products/reviews/selected` counts a video's poster as a photo (tiers and caps);
+  `naver_images` saves it as a review photo (`from_video`), `posters_as_photos` stores the video as its poster.
+- **Weight and size candidates**: `/products/specs` `measures` (`naver_shopping/measures.py`): the seller's values
+  from the rows, the notice, the description, JSON-LD and description tables, with quote, place, kind, scope,
+  variant binding; pointers and doubtful lines kept apart. `scripts/package_measures.py`: five shipping fields per
+  variant, the operator's category averages (`category_measures.json`) where the seller gives none; no row -> the run
+  stops and asks. 50002788 풀세트 is filled (owner, 2026-11-05): the median of the harvester's estimates on the 55
+  fairwardgolf sets in Shopify, `reliability: estimated_average` (the weakest level; delivery will add a coefficient).
+- `example_99` runs all of it; it needs the shop's credentials file (`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`) and the
+  category's averages. A wall (503, 502 "blocked the request") or a busy adapter (409) stops the run without
+  marking a product. Verified live 2026-11-05: 2 sets collected; 25 published products found in a listing, all with
+  the same source key as in Shopify.
+- Stop words: `scripts/listing_exclusions.json` is now the harvester's file byte for byte.
+
 ## 0.5.0 (2026-11-02)
 
 - **Options from the product page** (Naver change, 2026-11-02): the store backend's `validation-products` answers

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "fairwardgolf-listing-exclusions/v1",
+  "tenantId": "fairwardgolf",
+  "universal": {
+    "excludeSponsored": true,
+    "rules": [
+      {
+        "code": "rental",
+        "tokens": [
+          {
+            "text": "대여",
+            "boundary": "none",
+            "notFollowedBy": ["성", "섯", "자", "름", "행", "유"],
+            "notPrecededBy": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "휴", "그", "특", "최", "무료"]
+          },
+          {"text": "렌탈", "boundary": "none", "notFollowedBy": [], "notPrecededBy": []},
+          {"text": "렌털", "boundary": "none", "notFollowedBy": [], "notPrecededBy": []},
+          {"text": "렌트", "boundary": "none", "notFollowedBy": [], "notPrecededBy": ["토", "브", "트", "플", "클라"]},
+          {"text": "랜탈", "boundary": "none", "notFollowedBy": [], "notPrecededBy": []},
+          {"text": "랜털", "boundary": "none", "notFollowedBy": [], "notPrecededBy": []},
+          {"text": "랜트", "boundary": "none", "notFollowedBy": [], "notPrecededBy": ["플", "그", "브"]},
+          {"text": "렌터", "boundary": "none", "notFollowedBy": [], "notPrecededBy": ["플"]},
+          {"text": "임대", "boundary": "none", "notFollowedBy": [], "notPrecededBy": ["게", "타", "네", "레"]},
+          {"text": "レンタル", "boundary": "none", "notFollowedBy": [], "notPrecededBy": []},
+          {"text": "rental", "boundary": "latin-word", "notFollowedBy": [], "notPrecededBy": []},
+          {"text": "rentals", "boundary": "latin-word", "notFollowedBy": [], "notPrecededBy": []},
+          {"text": "rent", "boundary": "latin-word", "notFollowedBy": [], "notPrecededBy": []}
+        ]
+      }
+    ]
+  },
+  "parents": {},
+  "leaves": {}
+}

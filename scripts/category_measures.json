@@ -1,0 +1,41 @@
+{
+ "about": "Package weight and size averages per leaf category, given by the operator (never made up). A row: category_id, category_name, fields (low / central / high of product_weight_g, package_weight_g, package_length_mm, package_width_mm, package_height_mm), approved_by, approved_at (YYYY-MM-DD), reliability (estimated_average: the weakest level), basis. A new or changed row raises version.",
+ "version": 1,
+ "rows": [
+  {
+   "category_id": "50002788",
+   "category_name": "스포츠/레저 > 골프 > 골프클럽 > 풀세트",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330
+    }
+   },
+   "reliability": "estimated_average",
+   "basis": "Median (central) and about the 10th / 90th percentile (low / high) of the naver-harvester's AI estimates on the 55 fairwardgolf full sets that have one in Shopify (read 2026-11-05; none seller-stated; sets with and without a bag together).",
+   "approved_by": "owner",
+   "approved_at": "2026-11-05"
+  }
+ ]
+}

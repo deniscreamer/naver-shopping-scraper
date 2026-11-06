@@ -411,6 +411,77 @@ class PageOptions(TypedDict):
     supplements: list[Supplement]
 
 
+MeasureSource = Literal["specs", "notice", "description", "json_ld", "description_table"]
+
+
+class MeasureSpan(TypedDict):
+    """products/specs measures.weights[].value: grams."""
+    min: float
+    max: float
+
+
+class MeasureLocator(TypedDict):
+    """products/specs measures.*[].locator: where the quote is (`cell` only for description_table)."""
+    block: str
+    row: int
+    cell: NotRequired[str]
+
+
+class MeasureBinding(TypedDict):
+    """products/specs measures.*[].binding: which variants a value belongs to."""
+    scope: Literal["product", "variants", "context"]
+    variant_ids: list[str | None]
+
+
+class WeightCandidate(TypedDict):
+    """products/specs measures.weights[] (naver_shopping/measures.py)."""
+    value: MeasureSpan
+    unit: str
+    matched: str
+    kind: Literal["net", "packed", "component", "unknown"]
+    scope: Literal["unit", "set", "unknown"]
+    approximate: bool
+    quote: str
+    source: MeasureSource
+    locator: MeasureLocator
+    binding: MeasureBinding
+    origin: Literal["source_stated"]
+
+
+class SizeCandidate(TypedDict):
+    """products/specs measures.dimensions[]: millimetres."""
+    values: list[float]
+    axes: list[str] | None
+    unit: str
+    matched: str
+    kind: Literal["packed", "component", "product", "unknown"]
+    state: Literal["unfolded", "folded"] | None
+    flags: list[str]
+    quote: str
+    source: MeasureSource
+    locator: MeasureLocator
+    binding: MeasureBinding
+    origin: Literal["source_stated"]
+
+
+class MeasureNote(TypedDict):
+    """products/specs measures.references[] / review[]: a pointer, or a line left for a person."""
+    quote: str
+    source: MeasureSource
+    locator: MeasureLocator
+    measure: Literal["weight", "size"]
+    reason: str
+
+
+class Measures(TypedDict):
+    """products/specs measures: weight and size candidates as the seller wrote them."""
+    is_set: bool
+    weights: list[WeightCandidate]
+    dimensions: list[SizeCandidate]
+    references: list[MeasureNote]
+    review: list[MeasureNote]
+
+
 class ProductSpecs(TypedDict):
     """products/specs response (ext_product._specs): the product page's rows, read in the owner's Chrome."""
     id: str | None
@@ -422,6 +493,7 @@ class ProductSpecs(TypedDict):
     is_complete: bool                 # rows found and the list was not left folded
     facts: ProductFacts
     options: PageOptions | None       # null: the page gave no product answer
+    measures: Measures
     read_at: str
 
 
@@ -847,6 +919,7 @@ class ListingStore(TypedDict):
     name: str | None
     slug: str
     link: str
+    channel_no: str | None            # the card's channelNo (null if a card has none)
     grade: str | None
     is_brand_store: bool
 
