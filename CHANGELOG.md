@@ -3,7 +3,7 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
-## Unreleased
+## 0.8.0 (2026-11-07)
 
 - Run of 40 more (2026-11-07), generic fixes: spec rows vs variants read a part count in an axis name ("아이언 선택
   (8개)") as that part's, not the set's (a true 총클럽개수 row was dropped on 7 sets); notes `specs_contradict`,
