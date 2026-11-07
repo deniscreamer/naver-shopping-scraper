@@ -21,6 +21,8 @@ Three jobs:
     nodes; block elements end a line, inline ones do not split words, and one
     empty line separates two top-level SmartEditor ONE components (.se-component),
     so a later stage can end a seller's notice block where its component ends.
+    A table is one line per row, its cells joined by " | " (a per-club spec
+    table keeps its columns; measures.table_rows reads the HTML, not this text).
     Images, video controls (.pzp), buttons, hidden nodes and the SmartEditor
     cards that are not the product's own text are skipped: .se-material (a
     shopping card), .se-oglink (a link card: another product of the store, a
@@ -292,9 +294,44 @@ def _tag_line(line):
     return bool(_TAG_LINE_RE.match(line)) and bool(_HANGUL_RE.search(line))
 
 
+def _cell_text(cell):
+    """A table cell on one line: its blocks (paragraphs, a nested table's cells) joined by "; "."""
+    parts = []
+
+    def walk(n):
+        for c in n.children:
+            if isinstance(c, str):
+                parts.append(c)
+            elif not _skipped(c) and not _jump_link(c):
+                block = c.tag in _BLOCK
+                parts.append("\n" if block else "")
+                walk(c)
+                parts.append("\n" if block else "")
+    walk(cell)
+    lines = (_WS_RE.sub(" ", _ZERO_WIDTH_RE.sub("", x)).strip() for x in "".join(parts).split("\n"))
+    return "; ".join(x for x in lines if x)
+
+
+def _table_lines(table):
+    """A table -> one line per row, cells joined by " | " (the header row too; an empty cell keeps its column, an
+    empty row goes). Seen 2026-11-07 on SmartEditor se-table (8958060680, 13728190518, 7166885441, 13657325637):
+    per-club spec tables of 4-11 columns, one cell per line lost which number is the loft and which the lie.
+    The rows of a nested table are cells of the outer one (_cell_text)."""
+    rows, stack = [], list(reversed(table.elements()))
+    while stack:
+        node = stack.pop()
+        if node.tag == "tr":
+            cells = [_cell_text(c) for c in node.elements() if c.tag in ("td", "th") and not _skipped(c)]
+            if any(cells):
+                rows.append(" | ".join(cells))
+        elif node.tag != "table" and not _skipped(node):
+            stack.extend(reversed(node.elements()))
+    return rows
+
+
 def description_text(html_text):
-    """Description HTML -> its text, one line per block, an empty line between SmartEditor components, or None
-    when empty."""
+    """Description HTML -> its text, one line per block (a table: one line per row), an empty line between
+    SmartEditor components, or None when empty."""
     if not html_text:
         return None
     parts = []
@@ -303,6 +340,8 @@ def description_text(html_text):
         for c in node.children:
             if isinstance(c, str):
                 parts.append(_WS_RE.sub(" ", c))
+            elif c.tag == "table" and not _skipped(c):
+                parts.append("\n" + "".join(row + "\n" for row in _table_lines(c)))
             elif not _skipped(c) and not _jump_link(c):
                 component = not in_component and _COMPONENT_CLASS in c.attrs.get("class", "").split()
                 block = c.tag in _BLOCK

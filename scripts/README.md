@@ -138,7 +138,10 @@ photo or avatar is skipped, the review stays.
 | XMP | publisher + site; with an `ImageSeo`: title, description (= alt), subject (brand, title) | publisher + site | publisher + site |
 
 Gallery 1500: Google Merchant Center recommends 1500x1500 or more (minimum 500x500 from 31 January 2027, checked
-2026-11-01) and asks not to submit scaled-up images, so a smaller photo is kept as it is. For all: a static WebP,
+2026-11-01) and asks not to submit scaled-up images, so a smaller photo is kept as it is. Against the
+naver-harvester (long side at most 2048, never enlarged) the 1500 short side gives the same file for about 96 % of
+real photos (9 of its 250 published differ, sources with a long side over 2048); 22 of those 250 have a short side
+under 500 and were not filtered. For all: a static WebP,
 never enlarged or cropped, at most 1,000,000 bytes (quality 85, 80, 75 at that size, then each smaller long side;
 the first that fits), EXIF orientation applied, sRGB, transparency kept, an animation becomes
 its first frame (its last frame must decode), every old EXIF / GPS / IPTC / ICC / XMP dropped, then read back
@@ -155,7 +158,9 @@ Not done here: description images, recommendation images, the product gallery's 
 ## The listing screen and the shop check
 
 Before a product page is opened (~30-60 s each), `example_99` screens the listing rows (`listing_filter.Screen`) and
-records the reason of every row left out, in this order: `sponsored` (an ad), `title_unavailable`, `rental` (a stop
+records the reason of every row left out, in this order: `sponsored` (an ad: only with `exclude_sponsored=True`;
+ad cards are kept by default, the owner 2026-11-06, though the harvester file says exclude), `title_unavailable`,
+`rental` (a stop
 word of `listing_exclusions.json`, copied as it is from the naver-harvester: NFKC + lower case, words with
 not-preceded-by / not-followed-by exceptions, latin words whole), `category_mismatch` (only the exact leaf
 category), `key_unavailable` (no store number: no shop check possible), `already_published`, `deferred`. Catalog and
@@ -338,6 +343,48 @@ published, SKUs and prices equal on 201 of 201 variants):
   `few_pieces` also from 총클럽개수 of 5 or fewer, `gift_hidden` (a hidden 사은품 row naming a thing in the box, not
   points or a coupon: "오리지널커버 증정"). `delivery.lead_time` passes through: check `today_off` before
   `today_cutoff`.
+Spec rows vs variants, run 40b additions (2026-11-07):
+- A count right after a part word is that part's count, not the set's total: "아이언 선택 (8개)" in an axis name, "아이언 6개"
+  and "웨지2개" in a title or value. "아이언포함 11개", "클럽11개" and "드라이버+8개 아이언" are still totals or not counts. The option
+  axes give a lower bound (axis_floor): the irons an iron axis counts, plus one per other part an axis names, so 드라이버
+  로프트 + 드라이버 강도 + 아이언 (8개) = 9.
+- specs_contradict (check_specs needs the title): 총클럽개수 N while 아이언개수 or 아이언 구성 gives N irons or more on a set with
+  other clubs. If the title states another total (12pc), the total row is dropped. If the title's total equals N, the
+  iron rows are dropped. With no total in the title, the iron rows are dropped only when 풀세트구성 or the option axes
+  count N clubs and the title does not back the irons ("8i").
+- specs_stated_by_variants now says "each variant states its own value (10.5도, 9도)" and lists the values found.
+- specs_loft_near_miss: a sold driver loft half a degree from the row's (row 9.5도, values 9도). The row is kept as
+  written, noted for a check by hand.
+- specs_lists_unsold: a 드라이버 로프트각 row listing several lofts on a product of one variant. The row is kept and noted.
+- Title check: an option value of two words or more that the title writes whole names that value, ignoring spacing,
+  brackets and case ("NS PRO950GH NEO R" = "NS PRO950GH NEO(R)"). A value starting with a club number must follow its
+  axis' part word ("우드3번55S", not the "3번65S" after 유틸). A value followed by "/" is a list of choices. Word hits
+  inside such a value with no word between them become one span.
+description_clean also drops: the lead line of a cross-sell pair. When a cross_sell sentence starting with 해당 / 이 / 그
+/ 위 + 상품 / 제품 / 모델 follows, in the same block, a sentence about another colour or model (컬러 / 색상 / 다른 / 기존 / 신형 / 구형 /
+이전 ... 은/는), both go as cross_sell. The seller's genuine-goods pitch is store_claim: 정품만 판매/취급, 유통 경로, 정품 여부, OEM 표기.
+A lone section label line '제품상세 / 상품상세 / 상세정보 / 상세설명 (/ 이미지 / 페이지)' is label. Images: 1x1 tracking pixels (SmartEditor
+originalWidth 1 and originalHeight 1) are pixel, and dispatch / holiday banners by file name (오늘출발, 당일발송/출고/출발/배송, 추석,
+설날, 명절, 한가위, chuseok, seollal) are boilerplate_name. Sentence joins now continue after -거나, 경우, an adnominal + 지 (인지 /
+한지 / 는지 / 은지 / 던지), and 본래.
+**Run level (run_transform.py -> shared_images.py)**: after every product is prepared, one step looks across the run's
+products. It catches store-wide description banners whose numeric or hashed file names no name rule can catch (seen
+2026-11-07, 100568453: 30434463209514390_345786175.jpg opens and 60948062508870618_280838627.jpg +
+22313003105171778_1094441035.jpg close 17 of its 18 listings). An image is a store banner when it is in at least 3
+listing groups of the same store (source.channel_no) and in at least half of them. Listings that share more than half
+of the smaller description's images are one set listed again and form one group. It must also open or close the
+product's description. It moves to description_dropped (rule shared_store_image), and the product gets the note
+description_shared_images ("dropped: <name> (n of m listing groups); kept in the middle: ..."). A shared image among
+the product's own photos stays, and the note names it. A store with fewer than 3 groups is untouched. "The same image"
+is the link without its query. A distinctive file name (12+ characters, 8+ digits) also merges re-uploads of one file,
+since the seller uploads a banner again for each batch of listings. Generic names (image.png, 1.jpg, 상세.jpg) count per
+link. The report says how many were dropped. The step is pure: same products in, same bytes out.
+- **Run 40b (2026-11-07)**: past the cap, rows that cover the most pairs of option values first, the rest shared over
+  the first axis; few_pieces from "(3종)" / "(2종)" / "하프세트(5P)" too, the title's count winning over a wrong
+  총클럽개수 row, never on "10+1pcs" or when a variant is a full set; 원산지 brackets naming 2+ countries kept; a SIMPLE
+  option of one value becomes a fact (several: note `simple_options_left_out`); an axis named 색상 whose values are
+  not colours is a placeholder name; add-on codes ("[G192]01_") left out; "택1" numbering left out. Seller data
+  patterns behind these rules: [SELLER_DATA.md](SELLER_DATA.md).
 - **Text fields** -> `personalization` (label without ★ and "(필수)": `required` says it); **add-ons**: free ones
   on sale and in stock: free ones, paid ones too with the category's `paid_addons` (`price_krw`, `price_usd`);
   a group named (필수) / (필수선택) is `required`. Why per category: a set's photos often show the extras (bag,
@@ -357,6 +404,53 @@ run stops and asks the operator.
 
 Not here (later stages): English (titles, options, specs, reviews), vendor spelling, handle, alt texts, the
 seller's description prose (images only on the sets checked), publication.
+
+## Checking a run against product pages
+
+How the 2026-11-05..07 checks of 139 golf sets were run, to rebuild them (no code is kept for it; the collection
+and the transform are the project's own, the check is an offline reading of saved pages).
+
+The run, in batches of 5 products, resumable (products already in `products.jsonl` and batches already done are
+skipped):
+1. Targets: `api.listing(query, max_batches=2..4)` for "남성 골프채 풀세트" and "여성 골프채 풀세트", screened by
+   `listing_filter.Screen(category, namespace, ShopCatalog(store).keys(), deferred)`; duplicates and products of
+   earlier runs left out; the list saved, so a rerun takes the same products.
+2. Collect each product as example_99 does: `product_details`, `selected_reviews(count=20)`, `product_specs` (the
+   name first, the listing query on a 404), `choose_variants(options, discounted_price, paid=...)`,
+   `variant_measures(specs, load_table())`, `download_gallery`, `download_review_media`, `posters_as_photos`; all
+   under `CollectGuard(DeferredLog(...)).run(key, ...)`; one line `{key, listing, details, specs, variants, package,
+   reviews, photos, review_media}` appended, 2 s apart.
+3. Read the same 5 pages through `/products/page` one at a time, 30 s apart, saved by `product_page.save`.
+4. `keep_run.keep(run, shops)` then `run_transform.run(store, None, shops)` on everything collected so far; a batch
+   list `[{id, key, dir}]` starts the check of those 5.
+
+Pacing and retries: one page read at a time; 60 s before the next product after two reads of one product (back to
+back they brought Naver's error page on 4 of 8); 409 (adapter busy): every 30 s, up to 12 times; Naver's
+internal-error page (503, server/docs/KNOWN_ISSUES.md K-21): wait 120 s, twice, then skip the product and read it
+again at the end (it came back after 2-15 min every time). No captcha in 139 products; one at the search page earlier,
+answered by the owner.
+
+Cost (medians): a product 58-73 s to collect (the page read 48-50 s, details 4-7 s, reviews 0.4 s, gallery 1-3 s,
+review photos 4.5-11 s); a `/products/page` read 48 s (38-194); a batch of 5 with its pages ~10-12 min; 40 products
+~64 min; keep + transform ~0.2 s. Reading the page by the product's name first (not the listing's query) took the
+page read from 74 s to 48 s and 40 products from 61 to 45 min.
+
+The check: one reader per product, offline, from the saved page (page.html, product.json), the collected line and
+the prepared product (the browser tools of the session cannot open naver.com, so saved pages are the only way). 12
+phases, each `{phase, verdict: ok | issue | changed_since_collection | n/a, page, ours}`: price, delivery, options,
+text inputs, add-ons, gallery, specs, notice, description, reviews, measures, transform; then the issues `{phase, kind:
+missing_data | wrong_data | transform_decision | improvement | noise, known: <id> | new, severity, what, evidence,
+suggested_fix}`. Collection: every page item present and right; transform: status, prices, axes, variants, facts,
+leaves, spec rows, add-ons, description, images; for the buyer: anything lost, anything shown that should not be.
+Measure across runs by high + medium findings per product (0.65 on 40 known sets after two fix rounds; 1.21 then 1.00
+on new products).
+
+After a parser change, a run can be replayed offline: the adapter keeps each page it read in
+`server/output/ext-product/<time>-<id>/` (product.html, product.json); the newest folder within 10 s of the line's
+`specs.read_at` replays through `ext_product.specs_from_page` and `parsers.parse_contents(page_fixtures.contents_from(
+description))`, then `choose_variants` / `variant_measures` and the transform (equal to the live API on 4 of 4). New
+patterns found this way go to the regression fixtures (server DEVELOPMENT_RULES R-TEST-5) and to
+[SELLER_DATA.md](SELLER_DATA.md).
 
 ## Reviews: two ways
 
@@ -397,7 +491,7 @@ needs Chrome open with the adapter (`example_01` shows `extension: connected`).
 | `example_12_reviews_selected.py` | Reviews, way 2: `selected_reviews()` -> up to 20 reviews worth showing (photo + text + avatar first), with the tier of each, JSONL; their photos and avatars as the store's WebP (`download_review_media()`) |
 | `example_13_product_images.py` | A product's gallery: `product_details()["images"]` -> `naver_images.download_gallery()` -> the store's WebP files, manifest.json with source and result of each |
 | `example_14_product_options.py` | A product's options from the page (`product_specs()["options"]`) and the variants we take (`choose_variants`, `paid` as argument), on real golf sets: no options, free combinations, a text option with a sold-out row, a paid sold-out row |
-| `example_99_full_details.py` | **FULL**, the one to grow: a category's products (listing, screened: ads, rental, another category, already in the shop, deferred), each in turn under the run rules -> details + 상품정보 specs and options (adapter) + variants + five shipping fields + selected reviews + gallery and review photos (video posters as photos) as the store's WebP, one JSON line per product. Needs the shop's credentials file (`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`) and the category's averages |
+| `example_99_full_details.py` | **FULL**, the one to grow: a category's products (listing, screened: rental, another category, already in the shop, deferred), each in turn under the run rules -> details + 상품정보 specs and options (adapter) + variants + five shipping fields + selected reviews + gallery and review photos (video posters as photos) as the store's WebP, one JSON line per product. Needs the shop's credentials file (`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`) and the category's averages |
 
 ```sh
 .venv/bin/python scripts/example_01_health.py
@@ -565,9 +659,10 @@ keeps `shops/<shop>/translations.jsonl` by text id; publication joins the two.
 
 The pipeline: collection (example_99) -> kept runs (`keep_run.py`) -> prepared products (`run_transform.py`:
 prices in USD, options, SKUs, leaves and tags, spec rows, text fields, free add-ons, reviews, photo files) ->
-translations by text id -> publication. Settled in the transform: the currency rule, the variant cap (over it:
-held), the photos (re-uploaded WebP files, not Naver's CDN). Open: publication through the Admin GraphQL `productSet`
-(the harvester's way) or a CSV import; folding products over the variant cap (2 of 23 sets checked).
+translations by text id -> publication. Settled in the transform: the currency rule, the variant cap (over it: the
+first combinations, every pair of values, `variants_capped`), the photos (re-uploaded WebP files, not Naver's CDN).
+Open: publication through the Admin GraphQL `productSet` (the harvester's way) or a CSV import; whether shipping goes
+into the price (today the price stays the cost and the operator decides).
 
 Credentials: a store app's client id + secret file per store, its path in env as `shop_stores.py` names it
 (`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`), next to the store's domain, shop id, API version and namespace there; tokens are
@@ -578,3 +673,41 @@ for it once more right before (a product published after the 5-minute snapshot).
 
 When publication starts, add it as a flat module (`publish_shopify.py`) reading the prepared products and the
 translations, reusing `shopify_catalog.Credentials` and the source-key check.
+
+### What the naver-harvester published (reference for publication)
+
+Read from 60 of its products in the shop (391 variants, all metafields; 2026-11-05). Repeat what works, not its
+mistakes. A local snapshot of those 60 (not in git): `scripts/output/harvester-shopify-products-2026-11-05.json`.
+- Body: `descriptionHtml` empty on 60 of 60; the text is in `custom.description_html`: optional prose `<p>` blocks,
+  then one `<p>` of `<strong>Label:</strong> value<br>` rows (at most 60000 characters; 37 of 60 had spec rows
+  only). Hidden labels: product number and date of manufacture (the label NFKC-lowercased, `\s:._-` stripped:
+  productnumber, productno, 상품번호, manufacturedate, manufacturingdate, dateofmanufacture, 제조일자, 제조년월, 제조연월).
+- Reviews: `custom.review` `{"scale_min":"1.0","scale_max":"5.0","value":"4.9"}` and `custom.rating_count` from
+  Naver's summary, only with a count above 0; `custom.reviews_seo` holds the rows, and the same rows go to a Shopify
+  File linked from `custom.reviews_feed_url`. A row: `id = int(sha256("naver:" + reviewId)[:12], 16) + 1`,
+  `customer.name` the masked id, `title ""`, `verified false`, `source {platform: naver, language: ko, translated:
+  true, reviewId}`, `createdAt`, images as Shopify Files links.
+- Text fields: `custom.personalization_fields` (product-personalization/v1: key, label, required, placeholder, hint,
+  maxLength; the seller's maxLength less the operator's suffix). Add-ons: `custom.optional_addons`
+  (product-optional-addons/v1: groups `{key addon_<24hex>, label, choices [{key choice_<24hex>, label, priceKrw}]}`).
+  `custom.required_selections` (a fold), `custom.category_start_variants`.
+- Private `fairwardgolf.*` metafields (no storefront access): `source_offer_id`, `source_url` (no query or
+  fragment), `naver_offer_key` (legacy), `catalog_fingerprint`, `catalog_stage` `showcase-cost-priced/v1`,
+  `source_variants` v2 `{offerKey, translationHash, variants [{sourceId, variantId, optionValues, sku}]}`,
+  `source_pricing` `{source {url, observedAt, basePriceKrw, originalPriceKrw}, policy, excluded, variants}`.
+- Tags: leaf, parent and showcase tags plus `fairwardgolf:naver` (dropped once the public handle is set). Products are
+  created DRAFT, then activated; `inventoryQuantity` 0 on all 391 variants.
+- Handle: strip ™®© and apostrophes, NFKD without combining marks, refuse any non-ASCII left, lower case, join
+  `[^a-z0-9]+` with "-"; refuse an empty one, over 255 characters, the word "naver" or a source id; the brand in front
+  unless the name starts with it; a collision holds the product until a person writes a seoName.
+- Brand: a Latin brand is its own English name, else a 23-entry dictionary (`mappings/brands.en.json`), then a
+  reviewed spelling; distributors dropped (테일러메이드코리아 -> TaylorMade, 던롭코리아 -> XXIO).
+- Images: `<handle>-NNN-<hash16>.webp`, alt = the title (at most 125 characters).
+- Its mistakes: vendor drift (HONMA / Honma / Mutsumi Honma, PING / PING Golf) and doubled-brand handles, "korea" in
+  6 handles, 45 distinct option names (one of 35 characters, "Color: L"), spec-label drift ("Total club count" /
+  "Total number of clubs"), Event rows on 11 of 60 and pointer rows on 7 of 60, 62 of 250 alts duplicated or stale,
+  2 products with no review rows though the counts said 3 and 21.
+- Translation plan: `translations.jsonl` append-only `{id, kind, ko, en, by, at}`, the last line per id wins, the
+  English checks (no Hangul, option values of 32 characters at most) there; publication maps every `*_ko` through
+  `text_id` and skips a product with a missing id as `untranslated:<ids>`, results in `shops/<shop>/published.jsonl`.
+

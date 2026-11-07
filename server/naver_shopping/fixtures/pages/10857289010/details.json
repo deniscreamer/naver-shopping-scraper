@@ -1,0 +1,223 @@
+{
+ "id": "10857289010",
+ "origin_product_id": "10805756858",
+ "name": "PGM 리오 골프채세트 남성 입문용 골프채 4종",
+ "link": "https://smartstore.naver.com/dessauros/products/10857289010",
+ "catalog_id": "88401795023",
+ "catalog_link": "https://search.shopping.naver.com/catalog/88401795023",
+ "status": "SALE",
+ "sale_type": "NEW",
+ "is_displayed": true,
+ "pricing": {
+  "sale_price": 153000,
+  "discounted_price": 153000,
+  "discount_ratio": 0,
+  "seller_discount": 0,
+  "manager_discount": 0,
+  "currency": "KRW",
+  "points": {
+   "purchase": 1530,
+   "text_review": 0,
+   "photo_video_review": 0,
+   "after_use_text_review": 0,
+   "after_use_photo_video_review": 0,
+   "store_member_review": 0
+  }
+ },
+ "stock_quantity": 2999,
+ "has_options": true,
+ "has_supplements": false,
+ "images": [
+  "https://shop-phinf.pstatic.net/20240909_72/1725879305546yhwnd_JPEG/6974711440364983_392819322.jpg",
+  "https://shop-phinf.pstatic.net/20240909_18/1725879305355uwDOh_JPEG/6974711249130428_1893526985.jpg",
+  "https://shop-phinf.pstatic.net/20240909_58/1725879305684FPr4n_JPEG/6974711579975380_1165816066.jpg",
+  "https://shop-phinf.pstatic.net/20240909_118/1725879306545E5AiV_JPEG/6974712435035809_1608934015.jpg",
+  "https://shop-phinf.pstatic.net/20240909_261/17258793062754x5Mm_JPEG/6974712168706838_666933577.jpg",
+  "https://shop-phinf.pstatic.net/20240909_24/1725879306150Qu2ry_JPEG/6974712044061032_567061378.jpg"
+ ],
+ "category": {
+  "id": "50002788",
+  "name": "풀세트",
+  "path": [
+   "스포츠/레저",
+   "골프",
+   "골프클럽",
+   "풀세트"
+  ],
+  "path_ids": [
+   "50000007",
+   "50000029",
+   "50001102",
+   "50002788"
+  ]
+ },
+ "brand": "PGM",
+ "brand_id": null,
+ "manufacturer": "azor협력사",
+ "model_name": "PGM 리오 골프채세트 남성 입문용 골프채 4종",
+ "tags": [
+  "골프연습",
+  "골프가방세트",
+  "골프채풀세트",
+  "골프브랜드",
+  "골프세트",
+  "초보자",
+  "명품골프채",
+  "스크린골프",
+  "골프채세트",
+  "골프풀세트"
+ ],
+ "page_title": null,
+ "delivery": {
+  "fee_type": "UNIT_QUANTITY_PAID",
+  "base_fee": 15000,
+  "is_free": false,
+  "policy_text": null,
+  "method_types": [
+   "DELIVERY"
+  ],
+  "attribute": "NORMAL",
+  "is_today_delivery": null,
+  "company": "CJ대한통운",
+  "extra_fee_area2": 4000,
+  "extra_fee_area3": 6000,
+  "extra_fee_text": null
+ },
+ "is_free_delivery": false,
+ "is_today_delivery": false,
+ "has_arrival_guarantee": false,
+ "has_regular_subscription": false,
+ "has_free_return_insurance": false,
+ "is_minor_purchasable": true,
+ "is_adult_restricted": false,
+ "is_in_naver_shopping": true,
+ "option_groups": null,
+ "variants": null,
+ "supplements": null,
+ "notice": {
+  "type": "ETC",
+  "items": [
+   {
+    "label": "품명 / 모델명",
+    "value": "상품상세참조 / 상품상세참조",
+    "is_see_description": true
+   },
+   {
+    "label": "법에 의한 인증, 허가 등을 받았음을 확인할 수 있는 경우 그에 대한 사항",
+    "value": "상품상세참조",
+    "is_see_description": true
+   },
+   {
+    "label": "제조자(사)",
+    "value": "상품상세참조",
+    "is_see_description": true
+   },
+   {
+    "label": "제조국",
+    "value": "중국산(중국, 홍콩) 등",
+    "is_see_description": false
+   },
+   {
+    "label": "A/S 책임자",
+    "value": "상품상세참조",
+    "is_see_description": true
+   },
+   {
+    "label": "A/S 전화번호",
+    "value": null,
+    "is_see_description": false
+   }
+  ],
+  "terms": [
+   {
+    "label": "재화등의 배송방법에 관한 정보",
+    "value": "택배",
+    "is_see_description": false
+   },
+   {
+    "label": "주문 이후 예상되는 배송기간",
+    "value": "대금 지급일로부터 3일 이내에 발송",
+    "is_see_description": false
+   },
+   {
+    "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+    "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+    "is_see_description": false
+   },
+   {
+    "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+    "value": "편도 150000원 (최초 배송비 무료인 경우 300000원 부과)",
+    "is_see_description": false
+   },
+   {
+    "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+    "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+    "is_see_description": false
+   },
+   {
+    "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+    "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+    "is_see_description": false
+   },
+   {
+    "label": "재화등의 A/S 관련 전화번호",
+    "value": null,
+    "is_see_description": false
+   },
+   {
+    "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+    "value": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+    "is_see_description": false
+   },
+   {
+    "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+    "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+    "is_see_description": false
+   },
+   {
+    "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+    "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+    "is_see_description": false
+   }
+  ]
+ },
+ "facts": {
+  "brand": {
+   "value": "PGM",
+   "source": "search_info.brandName"
+  },
+  "manufacturer": {
+   "value": "azor협력사",
+   "source": "search_info.manufacturerName"
+  },
+  "model_name": {
+   "value": "PGM 리오 골프채세트 남성 입문용 골프채 4종",
+   "source": "search_info.modelName"
+  },
+  "origin": {
+   "value": "중국산(중국, 홍콩) 등",
+   "source": "notice:제조국"
+  }
+ },
+ "store": {
+  "id": "102412170",
+  "uid": "2x08omchrlFFX2WelSdre",
+  "name": "아소르",
+  "slug": "dessauros",
+  "link": "https://smartstore.naver.com/dessauros",
+  "type": "smart_store",
+  "grade": "FOURTH",
+  "sale_count": 16,
+  "merchant_id": "512307330",
+  "business": {
+   "legal_name": "무지개",
+   "representative": "이정희",
+   "type": "SIMPLE",
+   "is_business": true,
+   "is_overseas": false,
+   "phone": null,
+   "email": null,
+   "address": null
+  }
+ }
+}

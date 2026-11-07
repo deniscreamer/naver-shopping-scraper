@@ -1,0 +1,378 @@
+{
+ "id": "13780241403",
+ "channelServiceType": "STOREFARM",
+ "channelProductType": "SINGLE",
+ "channelProductSupplyType": "OWNER",
+ "channelProductStatusType": "NORMAL",
+ "channelProductDisplayStatusType": "ON",
+ "category": {
+  "categoryId": "50002788",
+  "categoryName": "풀세트",
+  "category1Id": "50000007",
+  "category2Id": "50000029",
+  "category3Id": "50001102",
+  "category4Id": "50002788",
+  "category1Name": "스포츠/레저",
+  "category2Name": "골프",
+  "category3Name": "골프클럽",
+  "category4Name": "풀세트",
+  "wholeCategoryId": "50000007>50000029>50001102>50002788",
+  "wholeCategoryName": "스포츠/레저>골프>골프클럽>풀세트",
+  "categoryLevel": 4,
+  "lastLevel": true,
+  "sortOrder": 10,
+  "validCategory": true,
+  "receiptIssue": true,
+  "exceptionalCategoryTypes": [
+   "RENTAL_SUBSCRIPTION",
+   "FREE_RETURN_INSURANCE",
+   "REGULAR_SUBSCRIPTION",
+   "MANUFACTURE_DEFINE_NO"
+  ],
+  "pointAccumulationYn": false
+ },
+ "name": "[캘러웨이코리아정품]엑스 핫 스틸 풀세트 남성용 12pc/8i 백세트 포함",
+ "productUrl": "https://smartstore.naver.com/main/products/13780241403",
+ "mobileProductUrl": "https://m.smartstore.naver.com/main/products/13780241403",
+ "storeKeepExclusiveProduct": false,
+ "best": false,
+ "orderRequestUsable": false,
+ "channelProductAttributes": [],
+ "productNo": "13719226388",
+ "salePrice": 1690000,
+ "dispSalePrice": 1690000,
+ "stockQuantity": 2,
+ "saleType": "NEW",
+ "excludeAdminDiscount": false,
+ "payExposure": true,
+ "productStatusType": "SALE",
+ "statusType": "SALE",
+ "authenticationType": "NORMAL",
+ "itselfProductionProductYn": false,
+ "afterServiceInfo": {
+  "afterServiceTelephoneNumber": "********",
+  "afterServiceGuideContent": "********"
+ },
+ "originAreaInfo": {
+  "originAreaType": "DIRECT_INPUT",
+  "content": "일본",
+  "originAreaCode": "04",
+  "wholeOriginAreaName": "직접입력",
+  "plural": false
+ },
+ "sellerCodeInfo": {
+  "sellerManagementCode": "1020"
+ },
+ "optionUsable": true,
+ "options": [
+  {
+   "id": 11910263902,
+   "optionType": "COMBINATION",
+   "groupName": "옵션"
+  }
+ ],
+ "optionCombinations": [
+  {
+   "id": 60209190164,
+   "optionName1": "엑스 핫 23 풀세트",
+   "stockQuantity": 2,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2026-09-29T08:06:59.121+00:00"
+  }
+ ],
+ "optionStandards": [],
+ "supplementProductUsable": false,
+ "supplementProducts": [],
+ "customMadeInfo": {
+  "customMade": false
+ },
+ "taxType": "TAX",
+ "certification": false,
+ "certificationTargetExcludeContent": {
+  "kcCertifiedProductExclusionYn": true,
+  "kcCertifiedProductExclusionType": "TRUE"
+ },
+ "minorPurchasable": true,
+ "productInfoProvidedNoticeView": {
+  "basic": {
+   "품명 / 모델명": "2023 캘러웨이 엑스 핫 남성 풀세트 / 2023 캘러웨이 엑스 핫 남성 풀세트",
+   "KC 인증정보": "제품 상세설명 참조",
+   "크기": "제품 상세설명 참조",
+   "중량": "제품 상세설명 참조",
+   "색상": "블랙",
+   "재질": "제품 상세설명 참조",
+   "제품구성": "골프클럽, 헤드커버(브랜드 및 모델에 따라 제공 여부 다름)",
+   "동일 모델의 출시연월": "2023-04",
+   "제조자(사)": "한국캘러웨이골프",
+   "제조국": "일본",
+   "상품별 세부사양": "제품 상세설명 참조",
+   "품질보증기준": "관련법 및 소비자분쟁해결 규정에 따름",
+   "A/S 책임자와 전화번호": "********"
+  },
+  "additional": {
+   "재화등의 배송방법에 관한 정보": "택배등",
+   "주문 이후 예상되는 배송기간": "대금 지급일로부터 3일 이내에 발송",
+   "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보": "편도 4000원 (최초 배송비 무료인 경우 8000원 부과)",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+   "재화등의 교환·반품·보증 조건 및 품질보증기준": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "재화등의 A/S 관련 전화번호": "********",
+   "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+   "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "거래에 관한 약관의 내용 또는 확인할 수 있는 방법": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다."
+  }
+ },
+ "productDeliveryInfo": {
+  "deliveryFeeType": "FREE",
+  "deliveryMethodTypes": [
+   "DELIVERY",
+   "VISIT_RECEIPT",
+   "QUICK_SERVICE"
+  ],
+  "baseFee": 0,
+  "visitAddressId": 101106279,
+  "quickServiceArea": "서울(전지역)",
+  "installationFee": false,
+  "deliveryBundleGroup": {
+   "id": 7687077,
+   "deliveryFeeChargeMethodType": "MIN",
+   "deliveryAreaType": "AREA_2",
+   "area2ExtraFee": 5000
+  },
+  "deliveryFeePolicyText": "제주,도서지역 추가 5,000원",
+  "deliveryAttributeType": "NORMAL",
+  "isCustomProductAfterOrder": false,
+  "todayDelivery": false,
+  "deliveryCompany": {
+   "id": "KGB",
+   "name": "로젠택배"
+  }
+ },
+ "claimDeliveryInfo": {
+  "returnDeliveryCompanyPriority": "PRIMARY",
+  "deliveryCompanyName": "로젠택배",
+  "deliveryCompanyCode": "KGB",
+  "naverPayAppointment": false,
+  "returnDeliveryFee": 4000,
+  "exchangeDeliveryFee": 8000,
+  "shippingAddressId": 101106279,
+  "returnAddressId": 101106279,
+  "shippingAddress": "경기도 하남시 감일남로 33 1층 바이셀골프 (우 : 12993) ",
+  "returnAddress": "경기도 하남시 감일남로 33 1층 바이셀골프 (우 : 12993) ",
+  "overseasShipping": false,
+  "freeReturnInsurance": false,
+  "contractId": 2025102810074700
+ },
+ "isCultureCostIncomeDeduction": false,
+ "isRestrictCart": false,
+ "naverGuaranteed": false,
+ "newShoppingExposureYn": true,
+ "benefitsView": {
+  "discountedSalePrice": 1365000,
+  "dispDiscountedSalePrice": 1365000,
+  "sellerImmediateDiscountAmount": 325000,
+  "managerImmediateDiscountAmount": 0,
+  "specialDiscountAmount": {},
+  "discountedRatio": 19,
+  "dispDiscountedRatio": 19,
+  "sellerPurchasePoint": 0,
+  "sellerCustomerManagementPoint": 0,
+  "managerPurchasePoint": 13650,
+  "managerPurchaseExtraPoint": 0,
+  "managerPaymoneyAccumulatePoint": 20475,
+  "managerBankbookAccumulatePoint": 6825,
+  "managerArrivalGuaranteePoint": 0,
+  "managerMembershipArrivalGuaranteePoint": 0,
+  "generalPurchaseReviewPoint": 0,
+  "premiumPurchaseReviewPoint": 0,
+  "managerGeneralPurchaseReviewPoint": 50,
+  "managerPremiumPurchaseReviewPoint": 150,
+  "textReviewPoint": 0,
+  "photoVideoReviewPoint": 0,
+  "afterUseTextReviewPoint": 0,
+  "afterUsePhotoVideoReviewPoint": 0,
+  "storeMemberReviewPoint": 0,
+  "managerTextReviewPoint": 50,
+  "managerPhotoVideoReviewPoint": 150,
+  "managerAfterUseTextReviewPoint": 50,
+  "managerAfterUsePhotoVideoReviewPoint": 150,
+  "givePresent": true
+ },
+ "sellerDeliveryLeadTimes": [
+  {
+   "rangeNumberText": "1",
+   "rangeText": "일 이내",
+   "leadTimeCount": 156,
+   "leadTimePercent": 55
+  },
+  {
+   "rangeNumberText": "2",
+   "rangeText": "일 이내",
+   "leadTimeCount": 104,
+   "leadTimePercent": 37
+  },
+  {
+   "rangeNumberText": "3",
+   "rangeText": "일 이내",
+   "leadTimeCount": 16,
+   "leadTimePercent": 6
+  },
+  {
+   "rangeNumberText": "4",
+   "rangeText": "일 이상",
+   "leadTimeCount": 8,
+   "leadTimePercent": 3
+  }
+ ],
+ "averageDeliveryLeadTime": {
+  "productAverageDeliveryLeadTime": 0,
+  "sellerAverageDeliveryLeadTime": 1.5140845
+ },
+ "sellerDailyDeliveryLeadTimes": {
+  "leadTimeCount": [
+   14,
+   142,
+   104,
+   16,
+   8,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "leadTimeViewType": "NORMAL_DELIVERY"
+ },
+ "detailContents": {
+  "excessDetailContentText": false,
+  "editorType": "NONE"
+ },
+ "useExternalStock": false,
+ "dispName": "[캘러웨이코리아정품]엑스 핫 스틸 풀세트 남성용 12pc/8i 백세트 포함",
+ "adultAuthorizationType": "NOT_LOGIN",
+ "authorizationDisplay": "NORMAL",
+ "galleryImages": [
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20260929_197/1790661372271bpLUT_JPEG/29507631377491444_1358636083.jpg",
+   "width": 700,
+   "height": 700,
+   "imageType": "REPRESENTATIVE"
+  },
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20260929_239/1790661373604txH5m_JPEG/6543799727576850_1174313003.jpg",
+   "width": 700,
+   "height": 700,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 2,
+   "url": "https://shop-phinf.pstatic.net/20260929_212/1790661374919VSolf_JPEG/3100399813007151_262078011.jpg",
+   "width": 700,
+   "height": 700,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 3,
+   "url": "https://shop-phinf.pstatic.net/20260929_142/17906613762274kyDY_JPEG/6183933348651366_797440848.jpg",
+   "width": 700,
+   "height": 700,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 4,
+   "url": "https://shop-phinf.pstatic.net/20260929_36/17906613775635xPEe_JPEG/76703721008596906_904672827.jpg",
+   "width": 700,
+   "height": 700,
+   "imageType": "OPTIONAL"
+  }
+ ],
+ "soldout": false,
+ "viewAttributes": {
+  "상품상태": "신상품",
+  "상품번호": "13780241403",
+  "제조사": "캘러웨이",
+  "브랜드": "캘러웨이",
+  "모델명": "23캘러웨이 풀세트 X-HOT  스틸+BAG",
+  "원산지": "일본"
+ },
+ "additionalAttributes": {
+  "영수증발급": "신용카드전표, 현금영수증발급",
+  "A/S 안내": [
+   "********",
+   "********"
+  ]
+ },
+ "detailAttributes": {
+  "드라이버 로프트각": "10.5도",
+  "아이언 구성": "#5, #6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)",
+  "종류": "풀세트",
+  "성별": "남성용",
+  "사용방향": "오른손용",
+  "총클럽개수": "3개",
+  "풀세트구성": "드라이버, 페어웨이, 유틸리티",
+  "아이언샤프트소재": "스틸",
+  "퍼터형태": "말렛(반달형)",
+  "골프백포함여부": "캐디백, 보스턴백"
+ },
+ "eCouponCategory": false,
+ "cultureCategory": false,
+ "textOptions": [],
+ "simpleOptions": [],
+ "combinationOptions": [
+  {
+   "groupName": "옵션",
+   "options": [
+    {
+     "id": 60209190164,
+     "optionName1": "엑스 핫 23 풀세트",
+     "stockQuantity": 2,
+     "price": 0,
+     "regOrder": 0,
+     "registerDate": "2026-09-29T08:06:59.121+00:00"
+    }
+   ],
+   "checkedName": null,
+   "checkedIds": null,
+   "price": 0,
+   "isLastDepth": true
+  }
+ ],
+ "standardOptions": [],
+ "standardCombinations": [
+  {
+   "id": 60209190164,
+   "optionName1": "엑스 핫 23 풀세트",
+   "stockQuantity": 2,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2026-09-29T08:06:59.121+00:00",
+   "title": "_엑스 핫 23 풀세트____"
+  }
+ ],
+ "supplements": [],
+ "deliveryText": "제주,도서지역 추가 5,000원",
+ "deliveryMethodType": {
+  "code": 1,
+  "name": "택배",
+  "description": "택배",
+  "etc": null,
+  "naverPayCode": "DELIVERY"
+ },
+ "discountedSalePrice": 1365000,
+ "mobileDiscountRatio": 19,
+ "derived": {
+  "productType": "DEFAULT"
+ },
+ "hopeDelivery": null,
+ "commentCount": 0,
+ "isPayMember": false,
+ "arrivalGuarantee": false,
+ "groupId": null,
+ "groupEpId": null,
+ "simpleProductAffiliateYn": false,
+ "disableAdditionalApi": false
+}

@@ -1,0 +1,595 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:102412170:10857289010",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "few_pieces",
+   "detail": "4종"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "색상"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "UNIT_QUANTITY_PAID 15000 KRW"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "NOT_APPLICABLE"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/dessauros/products/10857289010",
+  "channel_no": "102412170",
+  "product_id": "10857289010",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "PGM 리오 골프채세트 남성 입문용 골프채 4종",
+  "brand_ko": "PGM",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "색상",
+    "values_ko": [
+     "스틸 4종+골프백",
+     "카본 R급 4종+골프백",
+     "카본 S급 4종+골프백"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"스틸 4종+골프백\"]",
+    "naver_variant_id": "44113455751",
+    "options_ko": [
+     "스틸 4종+골프백"
+    ],
+    "price_krw": 153000,
+    "price_usd": "153.00",
+    "sku": "FW-88d3c5d2e44acfb2076ae914",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"카본 R급 4종+골프백\"]",
+    "naver_variant_id": "44113455752",
+    "options_ko": [
+     "카본 R급 4종+골프백"
+    ],
+    "price_krw": 167500,
+    "price_usd": "167.50",
+    "sku": "FW-a49eeb73591443d0c93f73fb",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"카본 S급 4종+골프백\"]",
+    "naver_variant_id": "44113455753",
+    "options_ko": [
+     "카본 S급 4종+골프백"
+    ],
+    "price_krw": 167500,
+    "price_usd": "167.50",
+    "sku": "FW-5db0a3591ef8b86704fccb76",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 153000,
+   "original_krw": 153000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "azor협력사"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "PGM"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "PGM 리오 골프채세트 남성 입문용 골프채 4종"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산(중국, 홍콩) 등"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "10.5도"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#7, 52"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "조합풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "드라이버, 퍼터, 웨지"
+   },
+   {
+    "label_ko": "퍼터형태",
+    "value_ko": "말렛(반달형)"
+   },
+   {
+    "label_ko": "골프백포함여부",
+    "value_ko": "스탠드백"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 1
+  },
+  "reviews": [
+   {
+    "id": "4826387954",
+    "score": 5,
+    "text_ko": "좋네요 \n품질도 굿입니다",
+    "created_at": "2025-10-22T12:33:15Z",
+    "writer": "gss6***",
+    "photos": [
+     "collected/50002788-fixtures/images/10857289010/fairwardgolf-review-image-026502e592b8fd5d.webp"
+    ],
+    "avatar": null,
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/10857289010/fairwardgolf-10857289010-001-8cb292ffa29739a7.webp",
+    "sha256": "8cb292ffa29739a7eaea708d89b0b6ae21b70d934b148c37d854a5ce8fe5bd34",
+    "width": 650,
+    "height": 595
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/10857289010/fairwardgolf-10857289010-002-a76334b34768f72f.webp",
+    "sha256": "a76334b34768f72f19759f45230b344858af1ed1956df62d130f0a86e135cb08",
+    "width": 650,
+    "height": 599
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/10857289010/fairwardgolf-10857289010-003-375abb3105d0c969.webp",
+    "sha256": "375abb3105d0c969c0b4c9a1abd821fa64559ff996d9bc380b68cd0fc5cea8a1",
+    "width": 505,
+    "height": 585
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/10857289010/fairwardgolf-10857289010-004-b2c6f77dc0c8845f.webp",
+    "sha256": "b2c6f77dc0c8845f3fdd05820123e65f796cd8522f6fc3e23fdccd318911e7bb",
+    "width": 482,
+    "height": 587
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/10857289010/fairwardgolf-10857289010-005-b9e770943555d1c3.webp",
+    "sha256": "b9e770943555d1c3c7157fac6fb0dc9176184a1bc642ff2f86d5d66a3d0bae70",
+    "width": 541,
+    "height": 602
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/10857289010/fairwardgolf-10857289010-006-dce4dfa1109e456f.webp",
+    "sha256": "dce4dfa1109e456f7a96e2d149ac12078b1b54b1a43e9c453eb269962d89e9e2",
+    "width": 512,
+    "height": 607
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "UNIT_QUANTITY_PAID",
+   "base_fee": 15000,
+   "is_overseas": true,
+   "customs_tax_type": "NOT_APPLICABLE",
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": 6000,
+   "policy_text": "1개마다 부과 / 제주 추가 4,000원, 제주 외 도서지역 추가 6,000원",
+   "lead_time": {
+    "seller_average_days": 2.0,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "PGM 리오 골프채세트\n남성 입문용 골프채 4종\n\n아이언\nCNC 밀링 디자인\n\n옵션\n스틸 4종+골프백\n\n카본 R급 4종+골프백\n\n카본 S급 4종+골프백",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20221213_32/1670912579746wEY5q_JPEG/2.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20221213_228/1670912579749U8rPO_JPEG/3.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240909_101/1725880987927o3tQt_PNG/image.png?type=w848",
+   "https://shop-phinf.pstatic.net/20221213_100/1670912711183cGAp7_JPEG/4.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240909_229/1725881176194AgOKp_PNG/image.png?type=w848",
+   "https://shop-phinf.pstatic.net/20221213_148/1670912579949hD7jl_JPEG/4-2.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240909_253/172588114044681mg4_PNG/image.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240909_151/1725877084542xtWta_PNG/image.png?type=w848",
+   "https://shop-phinf.pstatic.net/20240909_236/17258772289986Kkfk_PNG/image.png?type=w848",
+   "https://shop-phinf.pstatic.net/20221213_78/1670912580079Fk4Lj_JPEG/5-2.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20221213_35/1670912580082RykHG_JPEG/5-3.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230515_37/1684114825055C4ugR_JPEG/%E8%AF%A6%E6%83%85%E9%A1%B5_02.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230515_146/1684114824841XI942_JPEG/%E8%AF%A6%E6%83%85%E9%A1%B5_03.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230515_247/1684114824978sInvg_JPEG/%E8%AF%A6%E6%83%85%E9%A1%B5_04.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230515_296/1684114824930b6fJb_JPEG/%E8%AF%A6%E6%83%85%E9%A1%B5_05.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20230515_89/1684114824947lzO2o_JPEG/%E8%AF%A6%E6%83%85%E9%A1%B5_06.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240909_138/1725880467673hUkyJ_JPEG/11.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240909_294/1725880473503q1RCz_JPEG/10.jpg?type=w848"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:933a36c8fa536afc",
+   "kind": "title",
+   "ko": "PGM 리오 골프채세트 남성 입문용 골프채 4종"
+  },
+  {
+   "id": "brand:58db3c0debb8c723",
+   "kind": "brand",
+   "ko": "PGM"
+  },
+  {
+   "id": "option_name:d1b87acb2d2239e7",
+   "kind": "option_name",
+   "ko": "색상"
+  },
+  {
+   "id": "option_value:9b1f2cacbafa86c2",
+   "kind": "option_value",
+   "ko": "스틸 4종+골프백"
+  },
+  {
+   "id": "option_value:1643e94667515026",
+   "kind": "option_value",
+   "ko": "카본 R급 4종+골프백"
+  },
+  {
+   "id": "option_value:64f7c90d0e3304c0",
+   "kind": "option_value",
+   "ko": "카본 S급 4종+골프백"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:e937ec11ab06b7c1",
+   "kind": "spec_value",
+   "ko": "azor협력사"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:58db3c0debb8c723",
+   "kind": "spec_value",
+   "ko": "PGM"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:933a36c8fa536afc",
+   "kind": "spec_value",
+   "ko": "PGM 리오 골프채세트 남성 입문용 골프채 4종"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:66ffd82a66e86f2e",
+   "kind": "spec_value",
+   "ko": "중국산(중국, 홍콩) 등"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:de2b6da830b81034",
+   "kind": "spec_value",
+   "ko": "10.5도"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:d2e1b836a486d737",
+   "kind": "spec_value",
+   "ko": "#7, 52"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:94abee9ad24a637a",
+   "kind": "spec_value",
+   "ko": "조합풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:e369fa5dbc934acd",
+   "kind": "spec_value",
+   "ko": "드라이버, 퍼터, 웨지"
+  },
+  {
+   "id": "spec_label:04c52e5b47f70047",
+   "kind": "spec_label",
+   "ko": "퍼터형태"
+  },
+  {
+   "id": "spec_value:92917baf006633bb",
+   "kind": "spec_value",
+   "ko": "말렛(반달형)"
+  },
+  {
+   "id": "spec_label:e4aabb2e41b870bd",
+   "kind": "spec_label",
+   "ko": "골프백포함여부"
+  },
+  {
+   "id": "spec_value:68d1701a10addde1",
+   "kind": "spec_value",
+   "ko": "스탠드백"
+  },
+  {
+   "id": "review:8a0c0e50dc3ba5f3",
+   "kind": "review",
+   "ko": "좋네요 \n품질도 굿입니다"
+  }
+ ]
+}

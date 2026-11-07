@@ -1,0 +1,613 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:500173121:13026991307",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "title_names_one_variant",
+   "detail": "9도, 4S"
+  },
+  {
+   "code": "specs_contradict",
+   "detail": "아이언개수 11개: 총클럽개수 11개, the title says 11"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "선택"
+  },
+  {
+   "code": "description_tiles_include_banners",
+   "detail": "gkeksqpsj.jpg"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/daumgolf/products/13026991307",
+  "channel_no": "500173121",
+  "product_id": "13026991307",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "핑 G440K 남성조합골프채풀세트 미즈노 925 아이언포함 11개 택1 9도유틸4S번6아이언웨지2개퍼터",
+  "brand_ko": "핑",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "선택",
+    "values_ko": [
+     "9도유틸4S번6아이언웨지2개퍼터",
+     "9도유틸4SR번6아이언웨지2개퍼터",
+     "10.5도유틸4SR번6아이언웨지2개퍼터",
+     "10.5도유틸4R번6아이언웨지2개퍼터"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"택1 9도유틸4S번6아이언웨지2개퍼터\"]",
+    "naver_variant_id": "55583778966",
+    "options_ko": [
+     "9도유틸4S번6아이언웨지2개퍼터"
+    ],
+    "price_krw": 2290000,
+    "price_usd": "2290.00",
+    "sku": "FW-8e86d0c0cadb2b14bb361d45",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"택2 9도유틸4SR번6아이언웨지2개퍼터\"]",
+    "naver_variant_id": "55583778967",
+    "options_ko": [
+     "9도유틸4SR번6아이언웨지2개퍼터"
+    ],
+    "price_krw": 2290000,
+    "price_usd": "2290.00",
+    "sku": "FW-f364057d095cd807726988a3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"택3 10.5도유틸4SR번6아이언웨지2개퍼터\"]",
+    "naver_variant_id": "55583778968",
+    "options_ko": [
+     "10.5도유틸4SR번6아이언웨지2개퍼터"
+    ],
+    "price_krw": 2290000,
+    "price_usd": "2290.00",
+    "sku": "FW-c07af9859202b231de0de14d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"택4 10.5도유틸4R번6아이언웨지2개퍼터\"]",
+    "naver_variant_id": "55583778969",
+    "options_ko": [
+     "10.5도유틸4R번6아이언웨지2개퍼터"
+    ],
+    "price_krw": 2290000,
+    "price_usd": "2290.00",
+    "sku": "FW-0569e9fdc685c888054cea57",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 2290000,
+   "original_krw": 2790000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "핑"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "핑"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "미국산(핑(미국) 미즈노(일본) 웨지퍼터(중국))"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW), #8"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "조합풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "11개"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2026년형"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "드라이버, 유틸리티, 퍼터, 8아이언세트"
+   },
+   {
+    "label_ko": "아이언샤프트소재",
+    "value_ko": "스틸"
+   },
+   {
+    "label_ko": "퍼터형태",
+    "value_ko": "블레이드(일자형)"
+   },
+   {
+    "label_ko": "골프백포함여부",
+    "value_ko": "미포함"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13026991307/fairwardgolf-13026991307-001-c5d50c19eb9647b6.webp",
+    "sha256": "c5d50c19eb9647b62c7aec03bc43c89c67eca75606719ab039612b5ba249327d",
+    "width": 720,
+    "height": 720
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 3,000원",
+   "lead_time": {
+    "seller_average_days": 1.6013986,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 97,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260127_221/1769502222581d8f6j_JPEG/p-12969138051-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20260127_273/1769502222576NuTfu_JPEG/p-12969138051-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20260127_249/1769502222577es8UR_JPEG/p-12969138051-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20260127_283/1769502222577oeqKY_JPEG/p-12969138051-s-1-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20260127_172/1769502222579DxFv9_JPEG/p-12969138051-s-1-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20260127_69/1769502222579Y0WDK_JPEG/p-12969138051-s-1-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20260127_298/1769502222576g31Mv_JPEG/p-12969138051-s-1-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20260127_164/1769502222575EIbg0_JPEG/p-12969138051-s-1-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20260127_212/1769502222576yKnK7_JPEG/p-12969138051-s-1-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20260127_90/1769502222575LXfD6_JPEG/p-12969138051-s-1-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20260127_252/1769502222672BAk7k_JPEG/p-12969138051-s-1-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20260127_298/1769502222664LOLdc_JPEG/p-12969138051-s-1-A-11.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:b9caaec675fed645",
+   "kind": "title",
+   "ko": "핑 G440K 남성조합골프채풀세트 미즈노 925 아이언포함 11개 택1 9도유틸4S번6아이언웨지2개퍼터"
+  },
+  {
+   "id": "brand:a1287ded4209f758",
+   "kind": "brand",
+   "ko": "핑"
+  },
+  {
+   "id": "option_name:8d1a750c9351d1b8",
+   "kind": "option_name",
+   "ko": "선택"
+  },
+  {
+   "id": "option_value:1b7ab03909530688",
+   "kind": "option_value",
+   "ko": "9도유틸4S번6아이언웨지2개퍼터"
+  },
+  {
+   "id": "option_value:464d55da20d98c23",
+   "kind": "option_value",
+   "ko": "9도유틸4SR번6아이언웨지2개퍼터"
+  },
+  {
+   "id": "option_value:41d95e182e2e967f",
+   "kind": "option_value",
+   "ko": "10.5도유틸4SR번6아이언웨지2개퍼터"
+  },
+  {
+   "id": "option_value:7fdf0a7c308a24a0",
+   "kind": "option_value",
+   "ko": "10.5도유틸4R번6아이언웨지2개퍼터"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:a1287ded4209f758",
+   "kind": "spec_value",
+   "ko": "핑"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:ffdde3a2878aeffd",
+   "kind": "spec_value",
+   "ko": "미국산(핑(미국) 미즈노(일본) 웨지퍼터(중국))"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:7de8002396dfafef",
+   "kind": "spec_value",
+   "ko": "피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW), #8"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:94abee9ad24a637a",
+   "kind": "spec_value",
+   "ko": "조합풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:5b1bc698007c9da7",
+   "kind": "spec_value",
+   "ko": "11개"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:f36c488b8e796503",
+   "kind": "spec_value",
+   "ko": "2026년형"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:bbb40176e84f0b5f",
+   "kind": "spec_value",
+   "ko": "드라이버, 유틸리티, 퍼터, 8아이언세트"
+  },
+  {
+   "id": "spec_label:5a12089f44ae3f65",
+   "kind": "spec_label",
+   "ko": "아이언샤프트소재"
+  },
+  {
+   "id": "spec_value:76d45c1471b5954b",
+   "kind": "spec_value",
+   "ko": "스틸"
+  },
+  {
+   "id": "spec_label:04c52e5b47f70047",
+   "kind": "spec_label",
+   "ko": "퍼터형태"
+  },
+  {
+   "id": "spec_value:db08874d4cf56690",
+   "kind": "spec_value",
+   "ko": "블레이드(일자형)"
+  },
+  {
+   "id": "spec_label:e4aabb2e41b870bd",
+   "kind": "spec_label",
+   "ko": "골프백포함여부"
+  },
+  {
+   "id": "spec_value:96f0fed466f17e8e",
+   "kind": "spec_value",
+   "ko": "미포함"
+  }
+ ]
+}

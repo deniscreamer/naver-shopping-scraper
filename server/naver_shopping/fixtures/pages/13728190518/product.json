@@ -1,0 +1,351 @@
+{
+ "id": "13728190518",
+ "channelServiceType": "STOREFARM",
+ "channelProductType": "SINGLE",
+ "channelProductSupplyType": "OWNER",
+ "channelProductStatusType": "NORMAL",
+ "channelProductDisplayStatusType": "ON",
+ "category": {
+  "categoryId": "50002788",
+  "categoryName": "풀세트",
+  "category1Id": "50000007",
+  "category2Id": "50000029",
+  "category3Id": "50001102",
+  "category4Id": "50002788",
+  "category1Name": "스포츠/레저",
+  "category2Name": "골프",
+  "category3Name": "골프클럽",
+  "category4Name": "풀세트",
+  "wholeCategoryId": "50000007>50000029>50001102>50002788",
+  "wholeCategoryName": "스포츠/레저>골프>골프클럽>풀세트",
+  "categoryLevel": 4,
+  "lastLevel": true,
+  "sortOrder": 10,
+  "validCategory": true,
+  "receiptIssue": true,
+  "exceptionalCategoryTypes": [
+   "RENTAL_SUBSCRIPTION",
+   "MANUFACTURE_DEFINE_NO",
+   "REGULAR_SUBSCRIPTION",
+   "FREE_RETURN_INSURANCE"
+  ],
+  "pointAccumulationYn": false
+ },
+ "name": "캘러웨이 워버드 골프채 세트 10개 캐디백 포함",
+ "productUrl": "https://smartstore.naver.com/main/products/13728190518",
+ "mobileProductUrl": "https://m.smartstore.naver.com/main/products/13728190518",
+ "storeKeepExclusiveProduct": false,
+ "best": false,
+ "orderRequestUsable": false,
+ "channelProductAttributes": [],
+ "productNo": "13667713213",
+ "salePrice": 641400,
+ "dispSalePrice": 641400,
+ "stockQuantity": 606,
+ "saleType": "NEW",
+ "excludeAdminDiscount": false,
+ "payExposure": true,
+ "productStatusType": "SALE",
+ "statusType": "SALE",
+ "authenticationType": "NORMAL",
+ "itselfProductionProductYn": false,
+ "afterServiceInfo": {
+  "afterServiceTelephoneNumber": "********",
+  "afterServiceGuideContent": "********"
+ },
+ "purchaseQuantityInfo": {
+  "maxPurchaseQuantityPerOrder": 99
+ },
+ "originAreaInfo": {
+  "originAreaType": "DIRECT_INPUT",
+  "content": "상세페이지 참조",
+  "originAreaCode": "04",
+  "wholeOriginAreaName": "직접입력",
+  "plural": false
+ },
+ "sellerCodeInfo": {
+  "sellerManagementCode": "6a86d63e42e7754b885ab8c4"
+ },
+ "optionUsable": true,
+ "options": [
+  {
+   "id": 11867246300,
+   "optionType": "COMBINATION",
+   "groupName": "세트명/아이언 샤프트"
+  }
+ ],
+ "optionCombinations": [
+  {
+   "id": 60457832730,
+   "optionName1": "R 세트/카본",
+   "stockQuantity": 367,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2026-10-20T14:36:42.183+00:00",
+   "sellerManagerCode": "0"
+  },
+  {
+   "id": 60457832731,
+   "optionName1": "S 세트/스틸",
+   "stockQuantity": 239,
+   "price": 0,
+   "regOrder": 1,
+   "registerDate": "2026-10-20T14:36:42.184+00:00",
+   "sellerManagerCode": "1"
+  }
+ ],
+ "optionStandards": [],
+ "supplementProductUsable": false,
+ "supplementProducts": [],
+ "customMadeInfo": {
+  "customMade": false
+ },
+ "taxType": "TAX",
+ "customsTaxType": "NOT_APPLICABLE",
+ "certification": false,
+ "certificationTargetExcludeContent": {
+  "kcCertifiedProductExclusionYn": true,
+  "kcCertifiedProductExclusionType": "KC_EXEMPTION_OBJECT",
+  "kcExemptionType": "OVERSEAS"
+ },
+ "minorPurchasable": true,
+ "productInfoProvidedNoticeView": {
+  "basic": {
+   "품명 / 모델명": "상세페이지 참조 / 상세페이지 참조",
+   "법에 의한 인증, 허가 등을 받았음을 확인할 수 있는 경우 그에 대한 사항": "상세페이지 참조",
+   "제조자(사)": "캘러웨이",
+   "제조국": "상세페이지 참조",
+   "A/S 책임자": "07080191713",
+   "A/S 전화번호": "********"
+  },
+  "additional": {
+   "재화등의 배송방법에 관한 정보": "택배",
+   "주문 이후 예상되는 배송기간": "대금 지급일로부터 3일 이내에 발송",
+   "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보": "상품상세 참조",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보": "편도 100000원 (최초 배송비 무료인 경우 200000원 부과)",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거": "상품상세 참조",
+   "재화등의 교환·반품·보증 조건 및 품질보증기준": "상품상세 참조",
+   "재화등의 A/S 관련 전화번호": "********",
+   "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차": "상품상세 참조",
+   "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항": "상품상세 참조",
+   "거래에 관한 약관의 내용 또는 확인할 수 있는 방법": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다."
+  }
+ },
+ "productDeliveryInfo": {
+  "deliveryFeeType": "UNIT_QUANTITY_PAID",
+  "deliveryMethodTypes": [
+   "DELIVERY"
+  ],
+  "baseFee": 99000,
+  "deliveryFeePayType": "PREPAID",
+  "repeatQuantity": 1,
+  "deliveryAreaType": "AREA_3",
+  "area2ExtraFee": 4000,
+  "area3ExtraFee": 5000,
+  "installationFee": false,
+  "deliveryFeePolicyText": "1개마다 부과 / 제주 추가 4,000원, 제주 외 도서지역 추가 5,000원",
+  "deliveryAttributeType": "NORMAL",
+  "todayDelivery": false,
+  "deliveryCompany": {
+   "id": "CJGLS",
+   "name": "CJ 대한통운(오네)"
+  }
+ },
+ "claimDeliveryInfo": {
+  "returnDeliveryCompanyPriority": "PRIMARY",
+  "deliveryCompanyName": "한진택배",
+  "deliveryCompanyCode": "HANJIN",
+  "naverPayAppointment": true,
+  "returnDeliveryFee": 100000,
+  "exchangeDeliveryFee": 100000,
+  "shippingAddressId": 107306798,
+  "returnAddressId": 107300844,
+  "shippingAddress": "2730017 ELDEX, ELDEXPanasiarozi4F, 3-4-1, Nisiura, Funahasisi, Nisiura Funahasisi, Chiba Ken, Japan",
+  "returnAddress": "경기도 광주시 고불로 461-26 (힐스테이트 삼동역) 106동 303호 (우 : 12767) ",
+  "overseasShipping": true,
+  "individualCustomUniqueCodeUsable": true,
+  "freeReturnInsurance": false
+ },
+ "isCultureCostIncomeDeduction": false,
+ "isRestrictCart": false,
+ "naverGuaranteed": false,
+ "newShoppingExposureYn": true,
+ "benefitsView": {
+  "discountedSalePrice": 590100,
+  "dispDiscountedSalePrice": 590100,
+  "sellerImmediateDiscountAmount": 51300,
+  "managerImmediateDiscountAmount": 0,
+  "specialDiscountAmount": {},
+  "discountedRatio": 7,
+  "dispDiscountedRatio": 7,
+  "sellerPurchasePoint": 0,
+  "sellerCustomerManagementPoint": 0,
+  "managerPurchasePoint": 5901,
+  "managerPurchaseExtraPoint": 0,
+  "managerPaymoneyAccumulatePoint": 8851,
+  "managerBankbookAccumulatePoint": 2950,
+  "managerArrivalGuaranteePoint": 0,
+  "managerMembershipArrivalGuaranteePoint": 0,
+  "generalPurchaseReviewPoint": 200,
+  "premiumPurchaseReviewPoint": 400,
+  "managerGeneralPurchaseReviewPoint": 50,
+  "managerPremiumPurchaseReviewPoint": 150,
+  "textReviewPoint": 200,
+  "photoVideoReviewPoint": 400,
+  "afterUseTextReviewPoint": 150,
+  "afterUsePhotoVideoReviewPoint": 300,
+  "storeMemberReviewPoint": 10,
+  "managerTextReviewPoint": 50,
+  "managerPhotoVideoReviewPoint": 150,
+  "managerAfterUseTextReviewPoint": 50,
+  "managerAfterUsePhotoVideoReviewPoint": 150,
+  "givePresent": false
+ },
+ "averageDeliveryLeadTime": {
+  "productAverageDeliveryLeadTime": 5,
+  "sellerAverageDeliveryLeadTime": 5.55
+ },
+ "detailContents": {
+  "detailContentText": "캘러웨이 워버드 골프채 세트 10개 캐디백 포함 [제품 상세 사양] 구분 상세 내용 상품명 캘러웨이(Callaway) 워버드 클럽 세트 (10본 구성 + 캐디백) 성별 / 방향 남성용 / 우용 (RH, 오른손잡이 전용) 세트 구성 1W(드라이버), 5W(페어웨이 우드), #5~#9, PW, SW(아이언 7개), PT(오디세이 퍼터) 총 10본 + 전용 캐디백 및 헤드커버 선택 가능 옵션 • S세트: 우드 카본(S) / 아이언 오리지널 스틸 (S) • R세트: 우드 카본(R) / 아이언 카본 (R) 헤드 소재 • 1W: 티타늄 • 5W / 아이언 (#5~SW): 스테인리스 • PT: 스테인리스 (오디세이 화이트·핫 프로 2.0) 캐디백 제원 • 소재: 폴리우레탄(PU 인조가죽) • 규격: 9형 / 46인치 대응 / 5분할 구멍 [클럽별 주요 제원] 클럽 번수 로프트각 (°) 라이각 (°) 클럽 길이 (인치 - S/R) 총중량 (g - S / R) 밸런스 (S / R) 1W (드라이버) 10.5° 58.5° 44.5인치 약 318g / 약 313g D1 / D0 5W (우드) 19° 58° 42.25인치 약 330g / 약 328g D1 / D0 #5 아이언 23° 61.25° 38인치 / 38.5인치 약 416g / 약 370g D1 / D0 #7 아이언 30° 62.5° 37인치 / 37.5인치 약 424g / 약 380g D1 / D0 PW 44° 64° 35.5인치 약 446g / 약 401g D1 / D1 SW 54° 64° 35.25인치 약 455g / 약 414g D4 / D3 PT (퍼터) 3° 70° 34인치 약 521g - [주요 특징] X2 HOT 헤드 설계 계승: 드라이버부터 웨지까지 과거 명기인 X2 HOT 시리즈의 헤드 설계를 베이스로 채택하여, 세트 클럽의 한계를 뛰어넘는 압도적인 비거리 성능과 견고한 타구감을 선사합니다. 초보자 맞춤형 드라이버 설계: 일반적인 드라이버보다 약간 짧은 44.5인치 길이로 설정하여 정타 맞추기가 수월하며, 빗맞더라도 슬라이스를 줄여주는 드로 바이어스 설계로 초보 골퍼도 편안하게 다룰 수 있습니다. 오디세이 프리미엄 퍼터 탑재: 투어에서 엄청난 인기를 증명한 오디세이 전통의 '화이트·핫 인서트'가 적용된 [화이트·핫 프로 2.0 (#1 블레이드)] 퍼터를 기본 장착하여 부드러운 타구감과 정교한 퍼팅 정밀도를 제공합니다. 고급스러운 전용 캐디백 세트: 인조가죽(PU) 소재를 아낌없이 사용하여 기능성과 훌륭한 고급스러움을 동시에 잡은 전용 캐디백과 헤드커버가 함께 구성되어 있어, 별도의 장비 준비 없이 곧바로 필드에 나갈 수 있습니다.",
+  "excessDetailContentText": false,
+  "editorType": "SEONE"
+ },
+ "useExternalStock": false,
+ "dispName": "캘러웨이 워버드 골프채 세트 10개 캐디백 포함",
+ "adultAuthorizationType": "NOT_LOGIN",
+ "authorizationDisplay": "NORMAL",
+ "galleryImages": [
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20260820_80/1787223890459Fd5Hu_JPEG/100748959265746135_506235677.jpeg",
+   "width": 600,
+   "height": 600,
+   "imageType": "REPRESENTATIVE"
+  },
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20260820_244/1787223890696S4FkI_JPEG/100748959503133909_884033369.jpeg",
+   "width": 1300,
+   "height": 600,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 2,
+   "url": "https://shop-phinf.pstatic.net/20260820_290/1787223890938ufh7Y_JPEG/100748959741378989_262103495.jpeg",
+   "width": 1300,
+   "height": 600,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 3,
+   "url": "https://shop-phinf.pstatic.net/20260820_273/1787223891218Rz1nB_JPEG/100748960022420286_173258229.jpeg",
+   "width": 1300,
+   "height": 600,
+   "imageType": "OPTIONAL"
+  }
+ ],
+ "soldout": false,
+ "viewAttributes": {
+  "상품상태": "신상품",
+  "상품번호": "13728190518",
+  "제조사": "캘러웨이",
+  "브랜드": "캘러웨이",
+  "모델명": "상세페이지 참조",
+  "원산지": "상세페이지 참조"
+ },
+ "additionalAttributes": {
+  "영수증발급": "신용카드전표, 현금영수증발급",
+  "A/S 안내": [
+   "********",
+   "********"
+  ]
+ },
+ "detailAttributes": {
+  "종류": "풀세트",
+  "성별": "남성용",
+  "사용방향": "오른손용",
+  "총클럽개수": "10개",
+  "아이언 구성": "#5, #6, #7, #8, #9, 피칭웨지(PW), 샌드웨지(SW)",
+  "아이언개수": "7개",
+  "골프백포함여부": "캐디백"
+ },
+ "eCouponCategory": false,
+ "cultureCategory": false,
+ "textOptions": [],
+ "simpleOptions": [],
+ "combinationOptions": [
+  {
+   "groupName": "세트명/아이언 샤프트",
+   "options": [
+    {
+     "id": 60457832730,
+     "optionName1": "R 세트/카본",
+     "stockQuantity": 367,
+     "price": 0,
+     "regOrder": 0,
+     "registerDate": "2026-10-20T14:36:42.183+00:00",
+     "sellerManagerCode": "0"
+    },
+    {
+     "id": 60457832731,
+     "optionName1": "S 세트/스틸",
+     "stockQuantity": 239,
+     "price": 0,
+     "regOrder": 1,
+     "registerDate": "2026-10-20T14:36:42.184+00:00",
+     "sellerManagerCode": "1"
+    }
+   ],
+   "checkedName": null,
+   "checkedIds": null,
+   "price": 0,
+   "isLastDepth": true
+  }
+ ],
+ "standardOptions": [],
+ "standardCombinations": [
+  {
+   "id": 60457832730,
+   "optionName1": "R 세트/카본",
+   "stockQuantity": 367,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2026-10-20T14:36:42.183+00:00",
+   "sellerManagerCode": "0",
+   "title": "_R 세트/카본____"
+  },
+  {
+   "id": 60457832731,
+   "optionName1": "S 세트/스틸",
+   "stockQuantity": 239,
+   "price": 0,
+   "regOrder": 1,
+   "registerDate": "2026-10-20T14:36:42.184+00:00",
+   "sellerManagerCode": "1",
+   "title": "_S 세트/스틸____"
+  }
+ ],
+ "supplements": [],
+ "deliveryText": "1개마다 부과 / 제주 추가 4,000원, 제주 외 도서지역 추가 5,000원",
+ "deliveryMethodType": {
+  "code": 1,
+  "name": "택배",
+  "description": "택배",
+  "etc": null,
+  "naverPayCode": "DELIVERY"
+ },
+ "deliveryPayType": "PREPAID",
+ "discountedSalePrice": 590100,
+ "mobileDiscountRatio": 7,
+ "derived": {
+  "productType": "DEFAULT"
+ },
+ "hopeDelivery": null,
+ "commentCount": 2,
+ "isPayMember": false,
+ "arrivalGuarantee": false,
+ "groupId": null,
+ "groupEpId": null,
+ "simpleProductAffiliateYn": false,
+ "disableAdditionalApi": false
+}

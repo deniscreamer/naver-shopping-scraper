@@ -232,7 +232,7 @@ def test_more_pointers(value):
     assert [r["measure"] for r in out["references"]] == ["weight", "size"]
 
 
-# ---- 2026-11-06: the rules of the two weight / size research results (research/rnd/research-results.json) -------
+# ---- 2026-11-06: the weight / size rules from the 40 golf sets and 86 saved pages checked by hand ------------------
 
 def notice(label, value, **kw):
     return M.measures(notice={"items": [{"label": label, "value": value}]}, **kw)

@@ -1,0 +1,2036 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:100568453:13002289437",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "title_names_one_variant",
+   "detail": "10.5도R, NS PRO950GH NEO R"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/thegolf9015/products/13002289437",
+  "channel_no": "100568453",
+  "product_id": "13002289437",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "핑 G440 MAX 드라이버 10.5도R+스릭슨 ZXi5 아이언 NS PRO950GH NEO R 조합 풀세트",
+  "brand_ko": "핑",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "핑 g440 max 로프트 선택",
+    "values_ko": [
+     "10.5도",
+     "9도"
+    ]
+   },
+   {
+    "name_ko": "핑 g440 max 샤프트 선택",
+    "values_ko": [
+     "ALTA J CB BLUE (R)",
+     "ALTA J CB BLUE (SR)",
+     "ALTA J CB BLUE (S)",
+     "TOUR 2.0 CHROME 65 S"
+    ]
+   },
+   {
+    "name_ko": "스릭슨 ZXi5 아이언 선택",
+    "values_ko": [
+     "NS PRO950GH NEO(R)",
+     "NS PRO950GH NEO(S)",
+     "D/G S200"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"10.5도\",\"ALTA J CB BLUE (R)\",\"NS PRO950GH NEO(R)\"]",
+    "naver_variant_id": "55436229369",
+    "options_ko": [
+     "10.5도",
+     "ALTA J CB BLUE (R)",
+     "NS PRO950GH NEO(R)"
+    ],
+    "price_krw": 1800000,
+    "price_usd": "1800.00",
+    "sku": "FW-23b7e33c0b92647d97d87692",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도\",\"ALTA J CB BLUE (R)\",\"NS PRO950GH NEO(S)\"]",
+    "naver_variant_id": "55436229371",
+    "options_ko": [
+     "10.5도",
+     "ALTA J CB BLUE (R)",
+     "NS PRO950GH NEO(S)"
+    ],
+    "price_krw": 1800000,
+    "price_usd": "1800.00",
+    "sku": "FW-c328198e9fdc7b45ffcc244d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도\",\"ALTA J CB BLUE (R)\",\"D/G S200\"]",
+    "naver_variant_id": "55436229374",
+    "options_ko": [
+     "10.5도",
+     "ALTA J CB BLUE (R)",
+     "D/G S200"
+    ],
+    "price_krw": 1800000,
+    "price_usd": "1800.00",
+    "sku": "FW-7edd3cedad4deceac2f23024",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도\",\"ALTA J CB BLUE (SR)\",\"NS PRO950GH NEO(R)\"]",
+    "naver_variant_id": "55436229376",
+    "options_ko": [
+     "10.5도",
+     "ALTA J CB BLUE (SR)",
+     "NS PRO950GH NEO(R)"
+    ],
+    "price_krw": 1800000,
+    "price_usd": "1800.00",
+    "sku": "FW-bc7899a20b7c45a4ddc4a6dd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도\",\"ALTA J CB BLUE (SR)\",\"NS PRO950GH NEO(S)\"]",
+    "naver_variant_id": "55436229379",
+    "options_ko": [
+     "10.5도",
+     "ALTA J CB BLUE (SR)",
+     "NS PRO950GH NEO(S)"
+    ],
+    "price_krw": 1800000,
+    "price_usd": "1800.00",
+    "sku": "FW-60a160a794ee9ad338e1c0b5",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도\",\"ALTA J CB BLUE (SR)\",\"D/G S200\"]",
+    "naver_variant_id": "55436229382",
+    "options_ko": [
+     "10.5도",
+     "ALTA J CB BLUE (SR)",
+     "D/G S200"
+    ],
+    "price_krw": 1800000,
+    "price_usd": "1800.00",
+    "sku": "FW-b6fea5689bfe322902d87814",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도\",\"ALTA J CB BLUE (S)\",\"NS PRO950GH NEO(R)\"]",
+    "naver_variant_id": "55436229384",
+    "options_ko": [
+     "10.5도",
+     "ALTA J CB BLUE (S)",
+     "NS PRO950GH NEO(R)"
+    ],
+    "price_krw": 1800000,
+    "price_usd": "1800.00",
+    "sku": "FW-e6a85ecae9773271f8b010bd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도\",\"ALTA J CB BLUE (S)\",\"NS PRO950GH NEO(S)\"]",
+    "naver_variant_id": "55436229386",
+    "options_ko": [
+     "10.5도",
+     "ALTA J CB BLUE (S)",
+     "NS PRO950GH NEO(S)"
+    ],
+    "price_krw": 1800000,
+    "price_usd": "1800.00",
+    "sku": "FW-7836438a7da00c41cf7d31eb",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도\",\"ALTA J CB BLUE (S)\",\"D/G S200\"]",
+    "naver_variant_id": "55436229389",
+    "options_ko": [
+     "10.5도",
+     "ALTA J CB BLUE (S)",
+     "D/G S200"
+    ],
+    "price_krw": 1800000,
+    "price_usd": "1800.00",
+    "sku": "FW-93eb134cbdde34f416bdca3d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도\",\"TOUR 2.0 CHROME 65 S\",\"NS PRO950GH NEO(R)\"]",
+    "naver_variant_id": "55436229392",
+    "options_ko": [
+     "10.5도",
+     "TOUR 2.0 CHROME 65 S",
+     "NS PRO950GH NEO(R)"
+    ],
+    "price_krw": 1840000,
+    "price_usd": "1840.00",
+    "sku": "FW-02f2e5115561ab0b382a4453",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도\",\"TOUR 2.0 CHROME 65 S\",\"NS PRO950GH NEO(S)\"]",
+    "naver_variant_id": "55436229394",
+    "options_ko": [
+     "10.5도",
+     "TOUR 2.0 CHROME 65 S",
+     "NS PRO950GH NEO(S)"
+    ],
+    "price_krw": 1840000,
+    "price_usd": "1840.00",
+    "sku": "FW-ae2401e0ddae70bcdabe0e18",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도\",\"TOUR 2.0 CHROME 65 S\",\"D/G S200\"]",
+    "naver_variant_id": "55436229397",
+    "options_ko": [
+     "10.5도",
+     "TOUR 2.0 CHROME 65 S",
+     "D/G S200"
+    ],
+    "price_krw": 1840000,
+    "price_usd": "1840.00",
+    "sku": "FW-74aba10a44d06fabda05ae60",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도\",\"ALTA J CB BLUE (R)\",\"NS PRO950GH NEO(R)\"]",
+    "naver_variant_id": "55436229399",
+    "options_ko": [
+     "9도",
+     "ALTA J CB BLUE (R)",
+     "NS PRO950GH NEO(R)"
+    ],
+    "price_krw": 1800000,
+    "price_usd": "1800.00",
+    "sku": "FW-7c453fd536f644d2679af848",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도\",\"ALTA J CB BLUE (R)\",\"NS PRO950GH NEO(S)\"]",
+    "naver_variant_id": "55436229402",
+    "options_ko": [
+     "9도",
+     "ALTA J CB BLUE (R)",
+     "NS PRO950GH NEO(S)"
+    ],
+    "price_krw": 1800000,
+    "price_usd": "1800.00",
+    "sku": "FW-71a08e71e7e255adf0a0a5ca",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도\",\"ALTA J CB BLUE (R)\",\"D/G S200\"]",
+    "naver_variant_id": "55436229404",
+    "options_ko": [
+     "9도",
+     "ALTA J CB BLUE (R)",
+     "D/G S200"
+    ],
+    "price_krw": 1800000,
+    "price_usd": "1800.00",
+    "sku": "FW-a5b491cb0c80777c0bd5525b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도\",\"ALTA J CB BLUE (SR)\",\"NS PRO950GH NEO(R)\"]",
+    "naver_variant_id": "55436229406",
+    "options_ko": [
+     "9도",
+     "ALTA J CB BLUE (SR)",
+     "NS PRO950GH NEO(R)"
+    ],
+    "price_krw": 1800000,
+    "price_usd": "1800.00",
+    "sku": "FW-0cad54e381a46898e6e8e4ef",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도\",\"ALTA J CB BLUE (SR)\",\"NS PRO950GH NEO(S)\"]",
+    "naver_variant_id": "55436229408",
+    "options_ko": [
+     "9도",
+     "ALTA J CB BLUE (SR)",
+     "NS PRO950GH NEO(S)"
+    ],
+    "price_krw": 1800000,
+    "price_usd": "1800.00",
+    "sku": "FW-25a948944b38dc68e9c1f175",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도\",\"ALTA J CB BLUE (SR)\",\"D/G S200\"]",
+    "naver_variant_id": "55436229411",
+    "options_ko": [
+     "9도",
+     "ALTA J CB BLUE (SR)",
+     "D/G S200"
+    ],
+    "price_krw": 1800000,
+    "price_usd": "1800.00",
+    "sku": "FW-7b77e8f3fe8ad80ea3eecaf6",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도\",\"ALTA J CB BLUE (S)\",\"NS PRO950GH NEO(R)\"]",
+    "naver_variant_id": "55436229413",
+    "options_ko": [
+     "9도",
+     "ALTA J CB BLUE (S)",
+     "NS PRO950GH NEO(R)"
+    ],
+    "price_krw": 1800000,
+    "price_usd": "1800.00",
+    "sku": "FW-a9c14fa2b7c6db5c9b790218",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도\",\"ALTA J CB BLUE (S)\",\"NS PRO950GH NEO(S)\"]",
+    "naver_variant_id": "55436229415",
+    "options_ko": [
+     "9도",
+     "ALTA J CB BLUE (S)",
+     "NS PRO950GH NEO(S)"
+    ],
+    "price_krw": 1800000,
+    "price_usd": "1800.00",
+    "sku": "FW-644c9628968ab018e563223a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도\",\"ALTA J CB BLUE (S)\",\"D/G S200\"]",
+    "naver_variant_id": "55436229417",
+    "options_ko": [
+     "9도",
+     "ALTA J CB BLUE (S)",
+     "D/G S200"
+    ],
+    "price_krw": 1800000,
+    "price_usd": "1800.00",
+    "sku": "FW-38f066da1e6b9eb590dd1655",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도\",\"TOUR 2.0 CHROME 65 S\",\"NS PRO950GH NEO(R)\"]",
+    "naver_variant_id": "55436229420",
+    "options_ko": [
+     "9도",
+     "TOUR 2.0 CHROME 65 S",
+     "NS PRO950GH NEO(R)"
+    ],
+    "price_krw": 1840000,
+    "price_usd": "1840.00",
+    "sku": "FW-864c96658c8ed7cd661af5f6",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도\",\"TOUR 2.0 CHROME 65 S\",\"NS PRO950GH NEO(S)\"]",
+    "naver_variant_id": "55436229424",
+    "options_ko": [
+     "9도",
+     "TOUR 2.0 CHROME 65 S",
+     "NS PRO950GH NEO(S)"
+    ],
+    "price_krw": 1840000,
+    "price_usd": "1840.00",
+    "sku": "FW-94b7f5fdfe333bcc23564623",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도\",\"TOUR 2.0 CHROME 65 S\",\"D/G S200\"]",
+    "naver_variant_id": "55436229427",
+    "options_ko": [
+     "9도",
+     "TOUR 2.0 CHROME 65 S",
+     "D/G S200"
+    ],
+    "price_krw": 1840000,
+    "price_usd": "1840.00",
+    "sku": "FW-dba5d59140057ad598f4db8d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 1800000,
+   "original_krw": 1800000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "핑"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "핑"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "기타 국가"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "9도, 10.5도"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "8개"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2025년형"
+   },
+   {
+    "label_ko": "아이언개수",
+    "value_ko": "7개"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13002289437/fairwardgolf-13002289437-001-1845eaea9e50bcfd.webp",
+    "sha256": "1845eaea9e50bcfdd7869926278cbcdd81b175dae20362ab683a7d8f965485bf",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "policy_text": null,
+   "lead_time": {
+    "seller_average_days": 1.6405228,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": true,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 95,
+    "ship_date_text": "11.9.(월)"
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20250405_199/1743831662836dw1fg_JPEG/30434463209514390_345786175.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260329_65/1774762792266yvbTp_JPEG/108824944177622709_915232433.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260121_162/1769004900662qCeMB_JPEG/KakaoTalk_20260120_145404224.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251005_7/1759631986376gVWHF_JPEG/%EC%83%81%EC%84%B8_%EA%B8%B0%EB%B3%B8.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251223_173/1766472734566wv6d3_JPEG/KakaoTalk_20251223_151514485.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251005_75/17596308720768hMye_JPEG/%EC%83%A4%ED%94%84%ED%8A%B8.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251213_145/1765604356328AkYVk_JPEG/000000000000000.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260121_14/1769004912174nwziz_JPEG/46.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260224_135/1771916407872zqM0s_JPEG/106045372569381021_707943351.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250405_45/1743831640922Pa6E3_JPEG/60948062508870618_280838627.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251009_45/1759978486373imRv2_JPEG/22313003105171778_1094441035.jpg?type=w848"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:138ad49746dfdda4",
+   "kind": "title",
+   "ko": "핑 G440 MAX 드라이버 10.5도R+스릭슨 ZXi5 아이언 NS PRO950GH NEO R 조합 풀세트"
+  },
+  {
+   "id": "brand:a1287ded4209f758",
+   "kind": "brand",
+   "ko": "핑"
+  },
+  {
+   "id": "option_name:559f06eec33ff155",
+   "kind": "option_name",
+   "ko": "핑 g440 max 로프트 선택"
+  },
+  {
+   "id": "option_value:de2b6da830b81034",
+   "kind": "option_value",
+   "ko": "10.5도"
+  },
+  {
+   "id": "option_value:55a8421e068efb83",
+   "kind": "option_value",
+   "ko": "9도"
+  },
+  {
+   "id": "option_name:ffcf92a5fe26eb76",
+   "kind": "option_name",
+   "ko": "핑 g440 max 샤프트 선택"
+  },
+  {
+   "id": "option_value:94064664e9cab974",
+   "kind": "option_value",
+   "ko": "ALTA J CB BLUE (R)"
+  },
+  {
+   "id": "option_value:3120f7cb16a01626",
+   "kind": "option_value",
+   "ko": "ALTA J CB BLUE (SR)"
+  },
+  {
+   "id": "option_value:4700fa124f7baed0",
+   "kind": "option_value",
+   "ko": "ALTA J CB BLUE (S)"
+  },
+  {
+   "id": "option_value:e29d97379c7f5c80",
+   "kind": "option_value",
+   "ko": "TOUR 2.0 CHROME 65 S"
+  },
+  {
+   "id": "option_name:858bd4bfae3d5c09",
+   "kind": "option_name",
+   "ko": "스릭슨 ZXi5 아이언 선택"
+  },
+  {
+   "id": "option_value:1871db06a992c864",
+   "kind": "option_value",
+   "ko": "NS PRO950GH NEO(R)"
+  },
+  {
+   "id": "option_value:b52c24afe6ff7fd6",
+   "kind": "option_value",
+   "ko": "NS PRO950GH NEO(S)"
+  },
+  {
+   "id": "option_value:6b09475a09005dca",
+   "kind": "option_value",
+   "ko": "D/G S200"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:a1287ded4209f758",
+   "kind": "spec_value",
+   "ko": "핑"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:af369e064954c712",
+   "kind": "spec_value",
+   "ko": "기타 국가"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:51448635721ac33e",
+   "kind": "spec_value",
+   "ko": "9도, 10.5도"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:77e34e31f3da3e43",
+   "kind": "spec_value",
+   "ko": "8개"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:6aea4c4b3fb65e70",
+   "kind": "spec_value",
+   "ko": "2025년형"
+  },
+  {
+   "id": "spec_label:cf77915a2f3ab5d8",
+   "kind": "spec_label",
+   "ko": "아이언개수"
+  },
+  {
+   "id": "spec_value:0c5a3886c288bcd6",
+   "kind": "spec_value",
+   "ko": "7개"
+  }
+ ]
+}

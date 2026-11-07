@@ -56,7 +56,7 @@ _PLACEHOLDER_NAME_RE = re.compile(r"^(?:선택|옵션)(?:사항|선택)?\s*\d*(?
 _BRACKETS_RE = re.compile(r"\s*[(\[][^()\[\]]*[)\]]")          # innermost: 원산지 "중국산((주)위스트OEM)"
 _AGENCY_WORD_RE = re.compile(r"구매\s*대행")
 # a seller's numbering in front of a shown value / add-on: "선택1 9도SR", "선택3) ...", "1-1.남성 장갑", "6.쇼핑백"
-_NUMBERING_RE = re.compile(r"^(?:(?:선택|옵션)\s*\d+\s*[).:\-]?|\d+(?:-\d+)?[.)](?!\d))\s*")
+_NUMBERING_RE = re.compile(r"^(?:(?:선택|옵션|택)\s*\d+\s*[).:\-]?|\d+(?:-\d+)?[.)](?!\d))\s*")   # 택1 (2026-11-07)
 # a seller's tag in front of every value ("[당일출고] 스틸 샤프트 (S) SPEC", 8958060680) or of an option name
 # ("(선택)샤프트/드라이버/아이언", 13553116678): not part of what is chosen (2026-11-06)
 _LEAD_TAG_RE = re.compile(r"^\s*([\[(【][^\])】]{1,12}[\])】])\s*")
@@ -64,7 +64,17 @@ _CHOOSE_TAG_RE = re.compile(r"^\s*[\[(]\s*(?:선택|필수|옵션)\s*[\])]\s*")
 _COUNT_ROW_RE = re.compile(r"^\s*(\d{1,2})\s*개")                    # 총클럽개수 "3개"
 _POINTS_RE = re.compile(r"포인트|적립|쿠폰|할인|페이|마일리지|캐시")     # a promotion, not a thing in the box
 _AREA_WORD_RE = re.compile(r"제주|도서|산간|지역|섬")
-_PIECES_RE = re.compile(r"(?<![\d.])([1-5])\s*(?:PCS|Pcs|pcs|PC|피스)(?![A-Za-z])")
+# a club count in the title / 모델명: "[3PCS]", "(3종)", "하프세트(5P)", "12pc"; not the "1pcs" of "10+1pcs"
+_PIECES_RE = re.compile(r"(?<![\d.+])(\d{1,2})\s*(?:PCS|Pcs|pcs|PC|pc|피스|종|P)(?![A-Za-z0-9])")
+_HALF_SET_RE = re.compile(r"하프\s*세트")
+# 원산지 brackets naming the parts' own countries ("미국산(핑(미국) 미즈노(일본) 웨지퍼터(중국))", 2026-11-07)
+_COUNTRY_RE = re.compile(r"미국|일본|중국|한국|국산|대만|베트남|태국|인도네시아|말레이시아|홍콩|필리핀|멕시코|USA|Japan|China",
+                         re.I)
+# add-on codes of a seller's catalogue: "[G192]01_미즈노 클럽 렌치" (13462927626)
+_ADDON_CODE_RE = re.compile(r"^\s*\[[A-Za-z]{0,3}\d{2,6}\]\s*(?:\d{1,3}[_.)]\s*)?")
+_COLOUR_AXIS_RE = re.compile(r"^(?:색상|컬러|칼라|color|colour)$", re.I)
+_COLOUR_WORD_RE = re.compile(r"블랙|화이트|레드|블루|그레이|네이비|실버|골드|핑크|그린|옐로|오렌지|퍼플|브라운|베이지|민트|"
+                             r"아이보리|카키|와인|black|white|red|blue|gray|grey|navy|silver|gold|pink|green", re.I)
 _GIFT_RE = re.compile(r"사은품|증정")
 # a value that only points to the description (server/naver_shopping/parsers.py _SEE_DESCRIPTION_RE, 2026-11-01)
 _POINTER_RE = re.compile(
@@ -151,10 +161,11 @@ def _axis_name(name: str) -> str:
 
 
 def _capped(rows: list[dict[str, Any]], axes: list[int], cap: int) -> list[dict[str, Any]]:
-    """At most `cap` rows: in stock first, then the cheaper, then page order; first one row for each option value
-    not chosen yet, so every value stays on sale (486 combinations of 6 x 9 x 9 on an XXIO 14 set, 2026-11-06),
-    then the rest; taken in turn from each value of the first axis, so no first-axis value loses its combinations
-    to another's (128 -> 100 on a PING set gave the L driver 64 combinations and the A driver 36)."""
+    """At most `cap` rows: in stock first, then the cheaper, then page order. First the rows that cover the most
+    pairs of option values not offered yet (every value of one axis with every value of another), so no pair is
+    left unbuyable while the cap allows (497 combinations of a TaylorMade set kept every value but sold each 5번
+    wood with one driver only, 2026-11-07); with one axis, one row per value. Then the rest, in turn from each
+    value of the first axis (128 -> 100 on a PING set gave the L driver 64 combinations and the A driver 36)."""
     order = sorted(range(len(rows)), key=lambda i: (rows[i].get("is_available") is False, rows[i]["price"] or 0, i))
     if axes:                                       # in turn from each value of the first axis
         queues: dict[str, list[int]] = {}
@@ -165,15 +176,47 @@ def _capped(rows: list[dict[str, Any]], axes: list[int], cap: int) -> list[dict[
             for q in queues.values():
                 if q:
                     order.append(q.pop(0))
+
+    def units(i: int) -> set[tuple[Any, ...]]:
+        vals = [(a, _tidy(rows[i]["options"][a])) for a in axes]
+        return {(*x, *y) for k, x in enumerate(vals) for y in vals[k + 1:]} if len(vals) > 1 else set(vals)
+    first = (lambda i: _tidy(rows[i]["options"][axes[0]])) if axes else (lambda i: "")
+    count: dict[str, int] = {}
     picked: list[int] = []
-    seen: set[tuple[int, str]] = set()
-    for i in order:
-        new = {(a, _tidy(rows[i]["options"][a])) for a in axes} - seen
-        if new and len(picked) < cap:
-            picked.append(i)
-            seen |= new
-    picked += [i for i in order if i not in picked][:cap - len(picked)]
+    seen: set[tuple[Any, ...]] = set()
+    gain = {i: units(i) for i in order if rows[i].get("is_available") is not False}
+    while len(picked) < cap:                       # most new pairs; of equals, the value offered least
+        best = max(gain, key=lambda i: (len(gain[i] - seen), -count.get(first(i), 0)), default=None)
+        if best is None or not gain[best] - seen:
+            break
+        picked.append(best)
+        seen |= gain.pop(best)
+        count[first(best)] = count.get(first(best), 0) + 1
+    rest = [i for i in order if i not in picked]
+    while rest and len(picked) < cap:              # the next row from the first-axis value offered least
+        i = min(rest, key=lambda r: (count.get(first(r), 0), rest.index(r)))
+        rest.remove(i)
+        picked.append(i)
+        count[first(i)] = count.get(first(i), 0) + 1
     return [rows[i] for i in sorted(picked)]
+
+
+def simple_choices(specs: dict[str, Any]) -> tuple[list[dict[str, str]], list[str]]:
+    """SIMPLE option groups (a choice that is not a variant): one value -> a fact like a one-value axis
+    ("선택: 드라이버+우드+하이브리드/SR", the set's only option, 9168175809, 2026-11-07); several -> their names, for a
+    note (they are not sold as variants)."""
+    groups: dict[str, list[str]] = {}
+    for o in (specs.get("options") or {}).get("simple_options") or []:
+        groups.setdefault(_tidy(o.get("group") or ""), []).append(_tidy(o.get("name") or ""))
+    facts, left = [], []
+    for name, values in groups.items():
+        values = [v for v in dict.fromkeys(values) if v]
+        if len(values) == 1:
+            label = _axis_name(name)
+            facts.append({"label_ko": "" if _PLACEHOLDER_NAME_RE.match(label) else label, "value_ko": values[0]})
+        elif values:
+            left.append(name)
+    return facts, left
 
 
 def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: CategoryRules) -> dict[str, Any]:
@@ -260,8 +303,10 @@ def spec_rows(specs: dict[str, Any]) -> list[dict[str, str]]:
         label, value = r.get("label"), r.get("value") or ""
         if label == "원산지":                       # the reseller's purchase agency / importer is not an origin
             value = _AGENCY_RE.sub("", value)
-            while _BRACKETS_RE.search(value):
-                value = _BRACKETS_RE.sub("", value)
+            inner = value[value.find("("):] if "(" in value else ""
+            if len(set(_COUNTRY_RE.findall(inner))) < 2:   # brackets naming 2+ countries are the parts' origins
+                while _BRACKETS_RE.search(value):
+                    value = _BRACKETS_RE.sub("", value)
             value = re.sub(r"\s+", " ", value).strip()
         if label not in HIDDEN_ROWS and value and not _pointer(value):
             out.append({"label_ko": label, "value_ko": value})
@@ -333,7 +378,7 @@ def personalization(specs: dict[str, Any]) -> list[dict[str, Any]]:
 
 def _plain(text: str) -> str:
     """"1-1.남성 장갑" -> "남성 장갑": an add-on's numbering is the seller's list order, not its name."""
-    return _NUMBERING_RE.sub("", _tidy(text)).strip() or _tidy(text)
+    return _NUMBERING_RE.sub("", _ADDON_CODE_RE.sub("", _tidy(text))).strip() or _tidy(text)
 
 
 def addons(specs: dict[str, Any], krw_per_usd: int, paid: bool = False) -> list[dict[str, Any]]:
@@ -386,6 +431,10 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int) -> P
     cat = rules.category(category.get("id"), category.get("name"))
     ov = options_and_variants(line, rules, key, cat)
     held += ov["held"]
+    simple_facts, simple_left = simple_choices(specs)
+    ov["facts"] = ov["facts"] + simple_facts
+    if simple_left:                                 # chosen at the order, not a variant: the operator decides
+        notes.append({"code": "simple_options_left_out", "detail": ", ".join(simple_left)})
     found_leaves, how = leaves(specs, rules, details.get("name"),
                                [v for o in ov["options"] for v in o["values_ko"]] + [f["value_ko"] for f in ov["facts"]])
     if not found_leaves:
@@ -413,7 +462,7 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int) -> P
     if one:                                         # the translation keeps the title to what every variant is
         notes.append({"code": "title_names_one_variant", "detail": ", ".join(one)})
     desc = details.get("description") or {}
-    checked = check_specs(spec_rows(specs), ov["options"], ov["variants"], desc.get("text"))
+    checked = check_specs(spec_rows(specs), ov["options"], ov["variants"], desc.get("text"), details["name"])
     shown_specs = checked["specs"]                  # rows true of part of the variants: bound (for_ko) or dropped
     notes += checked["notes"]
     if ov["capped"]:                                # combinations past the shop's cap are not offered
@@ -424,11 +473,17 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int) -> P
     pieces = _PIECES_RE.search(f"{details['name']} {model}")
     count = next((_COUNT_ROW_RE.match(r.get("value") or "") for r in specs.get("specs") or []
                   if r.get("label") == "총클럽개수"), None)
-    if pieces:                                      # "[3PCS]": a few clubs, not a full set (leaf, package)
-        notes.append({"code": "few_pieces", "detail": pieces.group(0)})
+    bigger = any(int(m.group(1)) > 5 for o in ov["options"] for v in o["values_ko"]
+                 for m in _PIECES_RE.finditer(v))   # values of 4종 and 12종 sets: the title names one (6999516176)
+    if pieces:                                      # the title / 모델명 count wins: "(3종)" few, "12pc" a full set
+        if int(pieces.group(1)) <= 5 and not bigger:   # even when its 총클럽개수 row says 3개 (13780241403)
+            notes.append({"code": "few_pieces", "detail": pieces.group(0)})
+    elif _HALF_SET_RE.search(details["name"]):      # "하프세트": a half set (10954221464)
+        notes.append({"code": "few_pieces", "detail": "하프세트"})
     elif count and 0 < int(count.group(1)) <= 5:    # 총클럽개수 3개: driver + wood + hybrid (13302492097)
         notes.append({"code": "few_pieces", "detail": f"총클럽개수 {count.group(1)}개"})
-    vague = [o["name_ko"] for o in ov["options"] if _PLACEHOLDER_NAME_RE.match(o["name_ko"])]
+    vague = [o["name_ko"] for o in ov["options"] if _PLACEHOLDER_NAME_RE.match(o["name_ko"])
+             or _COLOUR_AXIS_RE.match(o["name_ko"]) and not any(_COLOUR_WORD_RE.search(v) for v in o["values_ko"])]
     if vague:                                       # the translation names such an axis from its values
         notes.append({"code": "option_name_placeholder", "detail": ", ".join(vague)})
     paid_addons = [s for s in (specs.get("options") or {}).get("supplements") or [] if (s.get("price") or 0) > 0]

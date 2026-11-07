@@ -53,7 +53,7 @@ Run from the repo root.
 python -m venv .venv
 .venv/bin/pip install -r server/requirements.txt -r scripts/requirements.txt
 .venv/bin/python server/run.py              # http://localhost:8000, PORT=... to change
-.venv/bin/python -m pytest -q               # offline suite, 420 tests
+.venv/bin/python -m pytest -q               # offline suite, 441 tests
 .venv/bin/python -m pytest scripts -q       # scripts/ client tests, offline, separate suite
 UPDATE_GOLDEN=1 .venv/bin/python -m pytest server/naver_shopping/test_pages.py scripts/test_prepared_golden.py
                                             # after a deliberate parser / transform change: read the diff (R-TEST-5)
@@ -76,6 +76,7 @@ Live check (server running, uses the network): `curl http://localhost:8000/healt
 | Known issues | [server/docs/KNOWN_ISSUES.md](server/docs/KNOWN_ISSUES.md) | Before "fixing" anything that looks wrong, before upgrading deps |
 | Operations | [server/README.md](server/README.md) | Running on macOS, env vars, tests |
 | Consumer scripts, Shopify roadmap | [scripts/README.md](scripts/README.md) | Writing scripts against the API, starting Shopify work |
+| Seller data patterns | [scripts/SELLER_DATA.md](scripts/SELLER_DATA.md) | Before changing parsers or the transform: what pages and sellers write |
 | Security | [SECURITY.md](SECURITY.md) | Reporting vulnerabilities |
 | Releases | [CHANGELOG.md](CHANGELOG.md), `VERSION` | Cutting a release, what changed |
 | Extension transport (beta) | [server/docs/EXTENSION.md](server/docs/EXTENSION.md), [extension/README.md](extension/README.md) | search.shopping listing, anything touching extension/ or ext_*.py |

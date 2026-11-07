@@ -1,0 +1,431 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:100113347:13780241403",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "specs_contradict",
+   "detail": "총클럽개수 3개: 아이언 구성 lists 8 irons, the title says 12"
+  },
+  {
+   "code": "description_tiles_include_banners",
+   "detail": "map.jpg, delivery.jpg, buysell_warranty_n.jpg, 하단교환 반품 관련 내용 이미지 배너자리"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/buysellgolf/products/13780241403",
+  "channel_no": "100113347",
+  "product_id": "13780241403",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "[캘러웨이코리아정품]엑스 핫 스틸 풀세트 남성용 12pc/8i 백세트 포함",
+  "brand_ko": "캘러웨이",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [],
+  "facts": [
+   {
+    "label_ko": "",
+    "value_ko": "엑스 핫 23 풀세트"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "observed:[\"엑스 핫 23 풀세트\"]",
+    "naver_variant_id": "60209190164",
+    "options_ko": [],
+    "price_krw": 1365000,
+    "price_usd": "1365.00",
+    "sku": "FW-cd06dd547f90dbed698cdc58",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 1365000,
+   "original_krw": 1690000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "23캘러웨이 풀세트 X-HOT 스틸+BAG"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "일본"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "10.5도"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#5, #6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "드라이버, 페어웨이, 유틸리티"
+   },
+   {
+    "label_ko": "아이언샤프트소재",
+    "value_ko": "스틸"
+   },
+   {
+    "label_ko": "퍼터형태",
+    "value_ko": "말렛(반달형)"
+   },
+   {
+    "label_ko": "골프백포함여부",
+    "value_ko": "캐디백, 보스턴백"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 1
+  },
+  "reviews": [
+   {
+    "id": "5087604249",
+    "score": 5,
+    "text_ko": "디자인 좋고요 가성비 끝내줍니다",
+    "created_at": "2026-10-20T06:15:21Z",
+    "writer": "pmg3****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13780241403/fairwardgolf-13780241403-001-6b6f2888d41f2120.webp",
+    "sha256": "6b6f2888d41f212026a4ec7aa32661a531c4c4128b4858e4c322256ebc60d9a0",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13780241403/fairwardgolf-13780241403-002-cc564174461f69b6.webp",
+    "sha256": "cc564174461f69b666f1dfd181de722136aa485edda9463483a33c76e5efcb2e",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13780241403/fairwardgolf-13780241403-003-feab16d002bad906.webp",
+    "sha256": "feab16d002bad9066b8fae0694f74451ce7650b19b0af1ba098736d98092713c",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/13780241403/fairwardgolf-13780241403-004-89d41aaa72cbe444.webp",
+    "sha256": "89d41aaa72cbe444aa9daa5c91de6abdfc65fbda2bc8ae36190ffbb5abff55bd",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/13780241403/fairwardgolf-13780241403-005-7edb4c4ffca9df3f.webp",
+    "sha256": "7edb4c4ffca9df3fe0a18ba6d38f5ff5480b54f8880f25c7920bcaa33a9250ec",
+    "width": 700,
+    "height": 700
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.5140845,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 92,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260929_210/17906613886246NHuj_JPEG/p-13719226388-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20260929_296/1790661388619fD9rv_JPEG/p-13719226388-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20260929_127/1790661388624NHGiu_JPEG/p-13719226388-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20260929_213/1790661388623exCco_JPEG/p-13719226388-s-1-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20260929_181/17906613886229gxxR_JPEG/p-13719226388-s-1-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20260929_166/1790661388620KrHWL_JPEG/p-13719226388-s-1-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20260929_78/1790661388622O7XdA_JPEG/p-13719226388-s-1-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20260929_148/17906613886235mXje_JPEG/p-13719226388-s-1-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20260929_46/17906613886186E8Ok_JPEG/p-13719226388-s-1-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20260929_100/1790661388620FIdgM_JPEG/p-13719226388-s-1-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20260929_91/1790661388708Jir9O_JPEG/p-13719226388-s-1-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20260929_225/1790661388709mcxnT_JPEG/p-13719226388-s-1-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20260929_17/1790661388715Neox3_JPEG/p-13719226388-s-1-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20260929_131/17906613887242awra_JPEG/p-13719226388-s-1-A-13.jpg",
+   "https://shop-phinf.pstatic.net/20260929_255/1790661388717VFNn1_JPEG/p-13719226388-s-1-A-14.jpg",
+   "https://shop-phinf.pstatic.net/20260929_136/1790661388800HrEF7_JPEG/p-13719226388-s-1-A-15.jpg",
+   "https://shop-phinf.pstatic.net/20260929_226/1790661388727oxcQI_JPEG/p-13719226388-s-1-A-16.jpg",
+   "https://shop-phinf.pstatic.net/20260929_38/1790661388725UehAv_JPEG/p-13719226388-s-1-A-17.jpg",
+   "https://shop-phinf.pstatic.net/20260929_293/17906613887299rEqh_JPEG/p-13719226388-s-1-A-18.jpg",
+   "https://shop-phinf.pstatic.net/20260929_197/1790661388822Dc9iR_JPEG/p-13719226388-s-1-A-19.jpg",
+   "https://shop-phinf.pstatic.net/20260929_47/1790661388818NCKir_JPEG/p-13719226388-s-1-A-20.jpg",
+   "https://shop-phinf.pstatic.net/20260929_25/17906613888537PQhd_JPEG/p-13719226388-s-1-A-21.jpg",
+   "https://shop-phinf.pstatic.net/20260929_106/1790661388813AQRl0_JPEG/p-13719226388-s-1-A-22.jpg",
+   "https://shop-phinf.pstatic.net/20260929_38/1790661388734s3rPq_JPEG/p-13719226388-s-1-A-23.jpg",
+   "https://shop-phinf.pstatic.net/20260929_294/17906613888229LW0p_JPEG/p-13719226388-s-1-A-24.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:9620e9e92d758013",
+   "kind": "title",
+   "ko": "[캘러웨이코리아정품]엑스 핫 스틸 풀세트 남성용 12pc/8i 백세트 포함"
+  },
+  {
+   "id": "brand:752b9a8b36b892c4",
+   "kind": "brand",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "fact_value:5adac9244fb6dfb9",
+   "kind": "fact_value",
+   "ko": "엑스 핫 23 풀세트"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:752b9a8b36b892c4",
+   "kind": "spec_value",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:1d797936555eb280",
+   "kind": "spec_value",
+   "ko": "23캘러웨이 풀세트 X-HOT 스틸+BAG"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:da6b9174cdf15e47",
+   "kind": "spec_value",
+   "ko": "일본"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:de2b6da830b81034",
+   "kind": "spec_value",
+   "ko": "10.5도"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:5ace0004401aa84b",
+   "kind": "spec_value",
+   "ko": "#5, #6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:9ab530ecf657606e",
+   "kind": "spec_value",
+   "ko": "드라이버, 페어웨이, 유틸리티"
+  },
+  {
+   "id": "spec_label:5a12089f44ae3f65",
+   "kind": "spec_label",
+   "ko": "아이언샤프트소재"
+  },
+  {
+   "id": "spec_value:76d45c1471b5954b",
+   "kind": "spec_value",
+   "ko": "스틸"
+  },
+  {
+   "id": "spec_label:04c52e5b47f70047",
+   "kind": "spec_label",
+   "ko": "퍼터형태"
+  },
+  {
+   "id": "spec_value:92917baf006633bb",
+   "kind": "spec_value",
+   "ko": "말렛(반달형)"
+  },
+  {
+   "id": "spec_label:e4aabb2e41b870bd",
+   "kind": "spec_label",
+   "ko": "골프백포함여부"
+  },
+  {
+   "id": "spec_value:eeda5d7de7e2ade9",
+   "kind": "spec_value",
+   "ko": "캐디백, 보스턴백"
+  },
+  {
+   "id": "review:647221a9da46185c",
+   "kind": "review",
+   "ko": "디자인 좋고요 가성비 끝내줍니다"
+  }
+ ]
+}

@@ -1,0 +1,116 @@
+# Seller data: what product pages say, and how collection and the transform read it
+
+Patterns seen on 139 golf sets of category 50002788 checked against their product pages (2026-11-05..07: 40 + 19 +
+40 new products, the first 40 checked twice). Each line: what the page or the seller writes, an example product id,
+where it is handled. Rules: [server/docs/ENDPOINTS.md](../server/docs/ENDPOINTS.md) (collection),
+[README.md](README.md) "Transform" (the transform). Regression fixtures of these products:
+`server/naver_shopping/fixtures/pages/` and `fixtures/collected|prepared/` (server DEVELOPMENT_RULES R-TEST-5).
+
+## Collection (server)
+
+Finding the page
+- The product page is opened only from a search page (name -> card photo). A long name can miss its own card on the
+  first page; its first 5 words find it (13425122164) -> `ext_product.search_queries`.
+- A click on the card's photo opens nothing about 1 time in 20; the read tries again.
+- Ad cards (`is_ad`) are products like the others and are kept by the listing screen (the owner, 2026-11-06);
+  rental, another category, already in the shop and deferred stay screened -> `listing_filter.Screen`.
+- Naver sometimes answers a page with its own `maintenance/internal-error.html` (about 1 read in 25, for minutes,
+  on any product); it passes within ~2-15 min. Two reads of one product right after each other made it likelier.
+  A run waits 2 min and tries again, then skips the product for later (research runners).
+
+The purchase box (delivery promise) -> `pdp.delivery_promise`, `parsers.parse_page_delivery`
+- Three wordings: "오늘출발 16:00 마감" (old), "오늘출발" + "14:00 까지 결제 시 오늘 바로 발송" + "11.11.(수) 도착 확률
+  98%", and 네이버 배송 "11.11.(수) 도착" (no probability).
+- "오늘출발 휴무" on a weekend / after KST midnight: no dispatch today, the answer's thisDayDispatchBasisTime is not a
+  cutoff then (`today_off`).
+- The same-day dispatch is per variant (todayDispatch): one of two may ship today (8958060680).
+- "평균 N일 이내 도착 확률 P%" is the answer's sellerDeliveryLeadTimes (cumulative %), not productAverageDeliveryLeadTime:
+  N is the first day whose cumulative share reaches about 72-80 % (80 or 89 on day 1 gives N=1, 53-71 gives N=2;
+  matched on ~130 reads); the line can be missing from one read and present a minute later.
+- The regional fee text (differentialFeeByArea) sometimes holds the return fee typed there ("18000" = 반품 편도
+  18000원, 6153061020) -> dropped in the transform only when it equals the notice's return fee.
+
+Description -> `parsers.parse_contents`, `pdp.description_text`
+- Naver's own text leaves out SmartEditor cards: se-oglink (other products, TalkTalk), se-placesMap (store map and
+  address), se-material (shopping cards); we skip them in text and images too.
+- Tables (se-table) are per-club specs of 4-11 columns: one line per row, cells joined by " | " (spanned cells once).
+- An editor-NONE body comes as Naver's snapshot tiles (p-<id>-s-N-A-<n>.jpg): banners are baked in, not cut.
+- YouTube oembeds in the body are not collected yet.
+
+Weight and size -> `measures.py`, `package_measures.py`
+- Most sets give weight / size only in images (no OCR): the category default (confidence 1).
+- Notice 중량 may list one weight per club count ("약11.5kg / 4.7kg", 6630856593) -> bound by club count.
+- Club spec tables (td-only, column headers) and "총중량" under a club heading are one club's, never the set's.
+- "7번 기준 36인치, 332g" is one reference club; "6아이언" is a set of six irons.
+- A plain 중량 row of a set is the set as sold, but with or without the box is not said: confidence 2.
+
+## Transform (scripts)
+
+Options and variants -> `transform.options_and_variants`
+- Sellers number values ("선택1 9도SR", "선택3)", "택1 ..."), tag them ("[당일출고] ..."), decorate axis names
+  ("(선택)샤프트/드라이버/아이언"): shown without, the SKU keeps the raw tuple; values equal once unnumbered stay
+  numbered (option_values_duplicate, 9496523995).
+- Axes named 선택 / 옵션 / 색상 whose values are not colours ("세트 R / 세트 S", 13462927626): option_name_placeholder.
+- A SIMPLE option of one value can be the set's only option ("드라이버+우드+하이브리드/SR", 9168175809): a fact.
+- Configurators of 128-497 combinations at one price (an XXIO 14 set: 6 x 9 x 9): offered up to the shop's cap,
+  covering every pair of values first, shared over the first axis (variants_capped).
+- A "write a delivery message" row and a review-discount axis are not versions of the product.
+
+Spec rows vs variants -> `spec_variants.check_specs`
+- 상품정보 rows are product-wide but often describe one version: shaft material (스틸 / 카본), club count (12종 /
+  9P / "4스틸"), the composition rows (아이언개수, 아이언 구성, 풀세트구성), model year (출시 2026년형 vs XR26), driver
+  loft (row 10.5도 while 9도 heads are sold).
+- A count after a part word is that part's ("아이언 선택 (8개)" = 8 irons, not an 8-club set; 12999501692).
+- Sellers contradict themselves: 총클럽개수 3개 on a 12pc set (13780241403), 아이언개수 11개 = 총클럽개수 (13026991307),
+  아이언 구성 missing #6 while 아이언개수 says 7 -> specs_contradict when the title decides, else kept.
+- A loft half a degree off the sold heads (row 9.5도, values 9도): kept, specs_loft_near_miss.
+- Titles write a whole value with other spacing ("NS PRO950GH NEO R" = "NS PRO950GH NEO(R)").
+
+Small sets -> few_pieces
+- "[3PCS]", "(3종)", "(2종)", "하프세트(5P)", or 총클럽개수 of 5 or fewer; the title's count wins over a wrong row
+  ("12pc" with 총클럽개수 3개); not "10+1pcs"; not when a variant is a full set (4종 / 12종 values).
+
+Origin, gifts, add-ons
+- 원산지 brackets name an importer ("일본(IRUGI SHOJI)", "중국산((주)위스트OEM)") -> cut; or the parts' countries
+  ("미국산(핑(미국) 미즈노(일본) 웨지퍼터(중국))") -> kept.
+- A hidden 사은품 row can name a thing in the box ("오리지널커버 증정") -> gift_hidden.
+- Add-on names carry the seller's codes and numbering ("[G192]01_미즈노 클럽 렌치", "1-1.남성 장갑") -> left out.
+
+Description cleanup -> `description_clean.py`, `shared_images.py`
+- A SmartEditor line is not a sentence: sellers wrap after connectives (-로, -만큼, -시면, -거나, -는 경우);
+  rules match the joined sentence.
+- Boilerplate: greetings, signatures, phones, TalkTalk / Kakao, Naver Pay pickup, return / delivery / customs blocks,
+  KRW price promos (our prices are USD), cross-sell pairs ("화이트 컬러 모델은 ..." + "아래 링크에서 구매"), the
+  store's claims and anti-OEM pitch; product claims that look alike stay ("정품 헤드커버 포함", "정식통관 ... 품질AS
+  보증라벨").
+- Banner images: by name (배송, 공지, 하단배너, 톡톡, 오늘출발, 추석, Hangul typed on a QWERTY layout "gkeksqpsj"),
+  by link (TalkTalk, Band, blog, Instagram), by size (spacers, 1x1 tracking pixels), and run-level by repetition
+  across one store's listings (numeric names, re-uploaded per batch of listings).
+- A description that is only "o" is junk (13741767690).
+
+## Not handled yet (known)
+- Weights and sizes in images; banners inside snapshot tiles; per-buyer purchase limits; YouTube in descriptions;
+  the notice's 제품구성 not carried; the return fee near the item price; spanned table cells (colspan) lose their column.
+- S/R club weights and lofts given per flex in a description table, not bound to the S/R variants (6774818843,
+  8958060680).
+- An option value that is a service, not a product ("피팅상담요청", 10954221464) is a sellable variant.
+- Left-handed (좌타 / 왼손) only in the title, no fact or tag (10954221464); a 모델명 naming another product type.
+- 원산지 with an importer after a slash ("기타국가 / 테일러메이드코리아", 12973604141); 병행수입 (grey import) gets no note.
+- A putter counted in the set also offered as an add-on (13741767690).
+- Composition rows that fit no variant on a product with one variant group (7632306067); "+우드" sets losing their
+  아이언 구성 binding (9902027106); a title year (2026) not flagged (12696567111).
+- A chosen photo review whose photo failed to decode is published without it, no note (13413924099); notes
+  `reviews_incomplete` (a count but no rows) and `photo_small` were planned, not built.
+- Banners not caught: a lister's shared `/profile/` header and footer (13728190518), names like 수서권_2026.png,
+  golf_top.jpg.
+
+## Open questions (defaults taken, not yet confirmed by the owner)
+- Shipping into the price, or the price stays the cost (today: the cost; the operator decides).
+- Shared store images: half of a store's listing groups, at the start or end of a description only; does a banner
+  linking to the store's own page (PGM-배너.jpg) count as a link banner (today: yes)?
+- A loft half a degree off: kept with a note (today) or bound to the matching variants? Keep dropped spec rows for
+  audit (`specs_dropped`)? Shorten `for_ko`? A carbon row bound by elimination (9868413561)?
+- A stated set weight above the category's high (11.5 kg): the product's weight (today) or with the box? Multiplied
+  totals ("500g x 2개") taken as stated? 1 kg as the boundary between a part and a set? A club length a component?
+- A description that is all boilerplate becomes null (8978750961): accept (today) or hold?
+- Should the translator get a bare flex letter (R / S) as an option value?

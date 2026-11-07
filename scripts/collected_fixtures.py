@@ -40,7 +40,18 @@ def _rebuild(line: dict[str, Any], table: dict[str, Any]) -> dict[str, Any]:
     return line
 
 
+def _relative_files(value: Any) -> Any:
+    """Saved file paths as "images/<product id>/<file>": no local folder (a home path) in a fixture."""
+    if isinstance(value, dict):
+        return {k: (f"images/{v.split('/images/', 1)[1]}" if k == "file" and isinstance(v, str) and "/images/" in v
+                    else _relative_files(v)) for k, v in value.items()}
+    if isinstance(value, list):
+        return [_relative_files(v) for v in value]
+    return value
+
+
 def _write(line: dict[str, Any]) -> str:
+    line = _relative_files(line)
     os.makedirs(COLLECTED, exist_ok=True)
     path = os.path.join(COLLECTED, line["key"].split(":")[3] + ".json")
     with open(path, "w", encoding="utf-8") as f:

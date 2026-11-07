@@ -480,9 +480,15 @@ primary record, with dates; read it before changing the behaviour.
   club number "4번" (part in the axis name, e.g. "유틸리티 선택"), "유틸4" / "4번유틸" / "4U" / "5W". "캐디백 미포함" marks a value
   without the bag. A description may bind a material to a bare flex value in a sentence: "플렉스 R 모델의 아이언에는 카본 샤프트"
   (seen 2026-11-06, pilot of 19 golf sets).
-- A product page Naver cannot serve opens `shopv.pstatic.net/web/maintenance/internal-error.html` (seen 2026-11-06,
-  twice on one product); the adapter may not read that host. It is answered as 404 (unavailable), not a wall. ->
-  `ext_product.read_page` comment.
+- SmartEditor se-table (seen 2026-11-07, 8958060680, 13728190518, 7166885441, 13657325637): per-club spec tables of
+  4-11 columns. description_text renders one row per line, cells joined by " | " (pdp._table_lines);
+  measures.table_rows reads the HTML.
+- Seller data patterns of the 139 checked sets (collection and transform):
+  [scripts/SELLER_DATA.md](../../scripts/SELLER_DATA.md).
+- A product page Naver cannot serve opens `shopv.pstatic.net/web/maintenance/internal-error.html` (seen 2026-11-06/07,
+  about 1 read in 25, any product, gone after 2-15 min). When the tab is readable, `ext_product.read_page` answers 404;
+  mostly the adapter cannot read that host at all and the read fails first, answered 503 ("adapter error: page:
+  Cannot access contents of url .../maintenance/internal-error.html"): K-21.
 
 A new upstream fact gets a dated comment at the code that handles it and one
 line here (R-NAVER-4).

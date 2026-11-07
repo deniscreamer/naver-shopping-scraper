@@ -1,10 +1,10 @@
 """spec_variants: spec rows vs the sold variants, and the title check. Offline; every case is a real quote from the
-40 collected golf sets (category 50002788, research 2026-11-06) or from saved pages beside them (11164222651,
-10649210920). Must-not-match cases are tests too: a wrong binding publishes a false fact for some variants."""
+40 collected golf sets (category 50002788, research 2026-11-06), the 19 of run 40b (2026-11-07) or from saved pages
+beside them (11164222651, 10649210920). Must-not-match cases are tests too: a wrong binding publishes a false fact for some variants."""
 import pytest
 
-from spec_variants import (check_specs, description_materials, family_floor, material, part_count, row_year,
-                           stated_total, title_one_variant, years)
+from spec_variants import (axis_floor, check_specs, description_materials, family_floor, material, part_count,
+                           part_counts, row_year, stated_total, title_one_variant, years)
 
 
 def _opt(name, *values):
@@ -344,8 +344,10 @@ def test_title_gender_with_a_rival_7674852369():
 
 
 def test_title_count_from_part_lists_5182294301():
+    # the count names the 10-club list, and so does the list the title writes whole (run 40b, 2026-11-07)
     assert title_one_variant("핑 G425,다이와 조합 남성골프채풀세트(클럽10개) 선택1 드라이버 유틸 7아이언 퍼터",
-                             [_opt("선택", "드라이버 유틸 7아이언 퍼터", "드라이버 우드 유틸 7아이언 퍼터")]) == ["10개"]
+                             [_opt("선택", "드라이버 유틸 7아이언 퍼터", "드라이버 우드 유틸 7아이언 퍼터")]) == \
+        ["10개", "드라이버 유틸 7아이언 퍼터"]
 
 
 @pytest.mark.parametrize("title, options, expected", [
@@ -426,7 +428,8 @@ def test_loft_stated_by_every_value_drops_the_row_11635855564():
     specs = _rows(드라이버_로프트각="10.5도", 아이언샤프트소재="경량스틸")
     got = check_specs(specs, options, [], None)
     assert [r["label_ko"] for r in got["specs"]] == ["아이언샤프트소재"]
-    assert _codes(got) == {"specs_stated_by_variants": "드라이버 로프트각 10.5도: every variant states it"}
+    assert _codes(got) == {"specs_stated_by_variants":
+                           "드라이버 로프트각 10.5도: each variant states its own value (10.5도, 9도)"}
 
 
 def test_loft_without_degree_sign_13369469193():
@@ -508,3 +511,159 @@ def test_title_loft_written_two_ways_9343324012():
               "9도 S4번유틸S 8아이언S 퍼터"]
     assert title_one_variant("삼양인터내셔날 핑 G430 브리지스톤 v300 조합 남성골프채풀세트 11개 드라이버10.5R 4번유틸R "
                              "8아이언R 퍼터", [_opt("선택", *values)]) == ["10.5R", "R"]
+
+
+# ---- run 40b 2026-11-07 (19 more golf sets): part counts, contradictions, value spans, loft near misses ----
+
+XXIO_PLUS = [_opt("드라이버 선택 (VENTUS for XXIO)", "10.5도R", "10.5도S", "9도R", "9도S"),
+             _opt("유틸리티 선택 (VENTUS for XXIO)", "3번R", "3번S", "4번R", "4번S", "5번R", "5번S", "6번R", "6번S"),
+             _opt("아이언 선택 (6개)", "카본 R", "카본 S", "스틸 R", "스틸 S")]
+G440 = [_opt("드라이버 선택 (ALTA J CB BLUE)", "10.5도 R", "10.5도 SR", "10.5도 S", "9도 R", "9도 SR", "9도 S"),
+        _opt("아이언 선택 (8개)", "카본 ALTA J CB BLUE (R)", "카본 ALTA J CB BLUE (SR)", "스틸 AWT 3.0 Lite (R)",
+             "스틸 AWT 3.0 Lite (S)")]
+XXIO14 = [_opt("드라이버 로프트 선택 (MP1400K)", "10.5도", "9.5도"), _opt("드라이버 강도 선택", "R", "SR", "S"),
+          _opt("아이언 선택 (8개)", "카본 MP1400K (R)", "카본 MP1400K (SR)", "카본 MP1400K (S)",
+               "스틸 NS PRO 850GH NEO(R)", "스틸 NS PRO 850GH NEO(S)")]
+
+
+@pytest.mark.parametrize("text, expected", [
+    ("아이언 선택 (8개)", None), ("아이언 선택 (6개)", None),                              # 13002235969, 12999501692
+    ("젝시오14+ 플러스 남성용 풀세트 - 드라이버 10.5도 R+우드3번R+아이언 6개 NS PRO 950GH NEO(R)", None),   # 12999388634
+    ("핑 G440K 남성조합골프채풀세트 미즈노 925 아이언포함 11개 택1 9도유틸4S번6아이언웨지2개퍼터", 11),    # 13026991307
+    ("타이틀리스트 GT2 브리지스톤V300 조합 남성 골프채풀세트 클럽11개", 11),                    # 12863028632
+    ("[캘러웨이코리아정품]엑스 핫 스틸 풀세트 남성용 12pc/8i 백세트 포함", 12),                # 13780241403
+])
+def test_stated_total_part_counts_are_not_the_total(text, expected):
+    assert stated_total(text) == expected
+
+
+@pytest.mark.parametrize("text, expected", [
+    ("아이언 선택 (8개)", {"I": 8}), ("아이언 6개 NS PRO 950GH NEO(R)", {"I": 6}), ("웨지2개퍼터", {"G": 2}),
+    ("아이언포함 11개", {}), ("남성골프풀세트클럽11개", {}), ("드라이버+8개 아이언", {}),
+])
+def test_part_counts(text, expected):
+    assert part_counts(text) == expected
+
+
+@pytest.mark.parametrize("specs, options", [
+    (_rows(총클럽개수="8개", 풀세트구성="드라이버, 6아이언세트, 유틸리티", 아이언개수="6개"), XXIO_PLUS),   # 12999501692
+    (_rows(총클럽개수="9개", 풀세트구성="8아이언세트, 드라이버", 아이언개수="8개"), G440),                # 13002235969
+    (_rows(총클럽개수="9개", 풀세트구성="드라이버, 8아이언세트", 아이언개수="8개"), XXIO14),              # 12975257923
+    (_rows(총클럽개수="8개", 풀세트구성="드라이버, 6아이언세트, 페어웨이", 아이언개수="6개"),              # 12999388634
+     [_opt("드라이버 선택 (VENTUS for XXIO)", "10.5도R", "9도R"), _opt("우드 선택 (VENTUS for XXIO)", "3번R", "5번R"),
+      _opt("아이언 선택 (6개)", "NS PRO 950GH NEO(R)", "VENTUS for XXIO(R)")]),
+])
+def test_count_part_count_in_axis_name_keeps_the_total_row(specs, options):
+    assert check_specs(specs, options, [], None, "젝시오14 남성용 풀세트") == {"specs": specs, "notes": []}
+
+
+def test_axis_floor_counts_parts_once():
+    # a driver axis = 1 however many axes name it, a wood / util axis = 1, the irons the count they name
+    assert axis_floor([o["name_ko"] for o in XXIO14]) == 9
+    assert axis_floor([o["name_ko"] for o in XXIO_PLUS]) == 8
+    assert axis_floor(["드라이버 선택 (MP1400K)", "우드 선택 (MP1400K)", "유틸리티 선택 (MP1400K)"]) == 3
+    assert axis_floor(["선택"]) is None and axis_floor(["드라이버", "유틸리티"]) == 2
+
+
+def test_contradict_total_against_listed_irons_and_title_13780241403():
+    specs = _rows(드라이버_로프트각="10.5도", 아이언_구성="#5, #6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)",
+                  총클럽개수="3개", 풀세트구성="드라이버, 페어웨이, 유틸리티", 아이언샤프트소재="스틸")
+    got = check_specs(specs, [], [], None, "[캘러웨이코리아정품]엑스 핫 스틸 풀세트 남성용 12pc/8i 백세트 포함")
+    assert "총클럽개수" not in _by_label(got) and len(got["specs"]) == 4
+    assert _codes(got) == {"specs_contradict": "총클럽개수 3개: 아이언 구성 lists 8 irons, the title says 12"}
+
+
+def test_contradict_iron_count_on_a_3_club_set_12975223812():
+    options = [_opt("드라이버 선택 (MP1400K)", "10.5도 R", "9.5도R"), _opt("우드 선택 (MP1400K)", "3번R", "5번R"),
+               _opt("유틸리티 선택 (MP1400K)", "3번R", "4번R")]
+    specs = _rows(드라이버_로프트각="9.5도, 10.5도", 총클럽개수="3개", 풀세트구성="드라이버, 페어웨이, 유틸리티",
+                  아이언개수="8개")
+    got = check_specs(specs, options, [], None, "[정식대리점] 젝시오14 남성용 풀세트 (드라이버 10.5도 R 우드3번R 유틸리티 3번R)")
+    assert [r["label_ko"] for r in got["specs"]] == ["드라이버 로프트각", "총클럽개수", "풀세트구성"]
+    assert _codes(got)["specs_contradict"] == "아이언개수 8개: 총클럽개수 3개, 풀세트구성 드라이버, 페어웨이, 유틸리티"
+
+
+def test_contradict_iron_count_equal_to_the_total_13026991307():
+    options = [_opt("선택", "9도유틸4S번6아이언웨지2개퍼터", "10.5도유틸4R번6아이언웨지2개퍼터")]
+    specs = _rows(아이언_구성="피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW), #8", 총클럽개수="11개",
+                  풀세트구성="드라이버, 유틸리티, 퍼터, 8아이언세트", 아이언개수="11개")
+    got = check_specs(specs, options, [], None,
+                      "핑 G440K 남성조합골프채풀세트 미즈노 925 아이언포함 11개 택1 9도유틸4S번6아이언웨지2개퍼터")
+    assert "아이언개수" not in _by_label(got) and "총클럽개수" in _by_label(got)
+    assert _codes(got)["specs_contradict"].startswith("아이언개수 11개: 총클럽개수 11개")
+
+
+@pytest.mark.parametrize("specs, title", [
+    (_rows(아이언_구성="#5, #6, #7, #8, #9, 어프로치웨지(AW), 샌드웨지(SW)", 총클럽개수="12개",             # 12712365040
+           풀세트구성="드라이버, 페어웨이, 유틸리티, 퍼터, 8아이언세트", 아이언개수="8개"),
+     "캘러웨이 XR26 남성 골프클럽 풀세트 12개클럽 + 스탠드백"),
+    (_rows(아이언_구성="#5, #6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)", 총클럽개수="11개",  # 12863028632
+           풀세트구성="드라이버, 8아이언세트, 페어웨이, 퍼터", 아이언개수="8개"),
+     "타이틀리스트 GT2 브리지스톤V300 조합 남성 골프채풀세트 클럽11개"),
+    (_rows(아이언_구성="#5, #6, #7, #8, #9, 피칭웨지(PW), 샌드웨지(SW)", 총클럽개수="7개", 아이언개수="7개"),  # iron set
+     "미즈노 JPX 아이언세트 7개"),
+    (_rows(총클럽개수="3개", 풀세트구성="드라이버, 페어웨이, 유틸리티", 아이언개수="8개"),                    # no title:
+     None),                                                                                            # undecided
+    (_rows(총클럽개수="3개", 풀세트구성="드라이버, 페어웨이, 유틸리티", 아이언개수="8개"),                    # the title
+     "젝시오 풀세트 8아이언"),                                                                        # backs 8
+])
+def test_contradict_must_not_match(specs, title):
+    got = check_specs(specs, [], [], None, title)
+    assert got == {"specs": specs, "notes": []}
+
+
+def test_stated_by_variants_lists_each_variants_value_11635694901():
+    options = [_opt("드라이버", "10.5도 SR", "10.5도 R", "9도SR", "9도 R", "9도 S"), _opt("유틸리티", "3번 R", "4번 R")]
+    got = check_specs(_rows(드라이버_로프트각="10.5도"), options, [], None)
+    assert _codes(got) == {"specs_stated_by_variants":
+                           "드라이버 로프트각 10.5도: each variant states its own value (10.5도, 9도)"}
+
+
+def test_loft_near_miss_keeps_the_row_12999487292():
+    options = [_opt("드라이버 선택 (VENTUS for XXIO)", "10.5도R", "10.5도S", "9도R", "9도S"),
+               _opt("아이언 선택", "카본R", "카본S", "스틸R", "스틸S")]
+    specs = _rows(드라이버_로프트각="9.5도, 10.5도")
+    got = check_specs(specs, options, [], None)
+    assert got["specs"] == specs
+    assert _codes(got) == {"specs_loft_near_miss": "드라이버 로프트각 9.5도, 10.5도: the variants sell 9도"}
+
+
+def test_loft_lists_unsold_on_one_variant_12863028632():
+    specs = _rows(드라이버_로프트각="10도, 9도", 총클럽개수="11개")
+    got = check_specs(specs, [], [], None)
+    assert got["specs"] == specs
+    assert _codes(got) == {"specs_lists_unsold": "드라이버 로프트각 10도, 9도: one variant is sold"}
+    assert check_specs(_rows(드라이버_로프트각="10.5도"), [], [], None)["notes"] == []
+
+
+def test_title_multi_word_value_13002289437():
+    options = [_opt("핑 g440 max 로프트 선택", "10.5도", "9도"),
+               _opt("핑 g440 max 샤프트 선택", "ALTA J CB BLUE (R)", "ALTA J CB BLUE (SR)", "TOUR 2.0 CHROME 65 S"),
+               _opt("스릭슨 ZXi5 아이언 선택", "NS PRO950GH NEO(R)", "NS PRO950GH NEO(S)", "D/G S200")]
+    assert title_one_variant("핑 G440 MAX 드라이버 10.5도R+스릭슨 ZXi5 아이언 NS PRO950GH NEO R 조합 풀세트", options) == \
+        ["10.5도R", "NS PRO950GH NEO R"]
+
+
+def test_title_multi_word_value_after_its_part_12950788305():
+    options = [_opt("Qi4D 드라이버/샤프트 REAX MR", "9도 50 S", "9도 50 SR", "10.5도 50 S"),
+               _opt("Qi4D 우드 / REAX", "3번 55S", "3번 55 SR", "3번 65 S", "5번 55 S"),
+               _opt("Qi4D 유틸리티 / REAX", "3번 65S", "3번 65SR", "4번 65S")]
+    assert title_one_variant("테일러메이드 Qi4D 드라이버 9도S 우드3번55S 유틸3번65S(3종 풀세트)", options) == \
+        ["9도S", "우드3번55S", "유틸3번65S"]
+
+
+def test_title_multi_word_value_merges_its_words_12999388634():
+    options = [_opt("드라이버 선택 (VENTUS for XXIO)", "10.5도R", "10.5도S", "9도R", "9도S"),
+               _opt("우드 선택 (VENTUS for XXIO)", "3번R", "3번S", "5번R"),
+               _opt("아이언 선택 (6개)", "NS PRO 950GH NEO(R)", "NS PRO 950GH NEO(S)", "VENTUS for XXIO(R)")]
+    assert title_one_variant("젝시오14+ 플러스 남성용 풀세트 - 드라이버 10.5도 R+우드3번R+아이언 6개 NS PRO 950GH NEO(R)",
+                             options) == ["10.5도", "우드3번R", "NS PRO 950GH NEO"]
+
+
+@pytest.mark.parametrize("title, options", [
+    ("PGM 풀세트 NS PRO950GH NEO R/S 선택", [_opt("아이언", "NS PRO950GH NEO(R)", "NS PRO950GH NEO(S)")]),  # a choice
+    ("테일러메이드 풀세트 13번55S", [_opt("우드", "3번 55S", "5번 55S")]),                     # 13번: another number
+    ("테일러메이드 풀세트 유틸3번55S", [_opt("우드", "3번 55S", "5번 55S")]),                  # the util's, not the wood's
+])
+def test_title_multi_word_value_must_not_match(title, options):
+    assert title_one_variant(title, options) == []

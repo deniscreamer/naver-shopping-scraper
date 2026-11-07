@@ -5,6 +5,18 @@ version in `extension/manifest.json`.
 
 ## Unreleased
 
+- Run of 40 more (2026-11-07), generic fixes: spec rows vs variants read a part count in an axis name ("아이언 선택
+  (8개)") as that part's, not the set's (a true 총클럽개수 row was dropped on 7 sets); notes `specs_contradict`,
+  `specs_loft_near_miss`, `specs_lists_unsold`; title words of whole multi-word values; the variant cap covers value
+  pairs; few_pieces from 종 / 하프세트, not on "10+1pcs"; 원산지 with the parts' countries kept; SIMPLE one-value
+  options as facts; add-on codes and 택N numbering out; colour-named axes of flex values as placeholders.
+- Description: table rows as one line ("a | b | c") in `description.text` (shape change, ENDPOINTS); cross-sell
+  pairs, the store's genuine-goods pitch, section labels, tracking pixels, dispatch / holiday banners out; run-level
+  store banners repeated across one store's listings (`shared_images.py`, note `description_shared_images`).
+- Docs: [scripts/SELLER_DATA.md](scripts/SELLER_DATA.md), the seller data patterns behind the collection and
+  transform rules. Regression fixtures: 19 more products of the run (50 in all).
+- Listing screen: ad cards are kept by default (the owner, 2026-11-06); `Screen(exclude_sponsored=True)` leaves
+  them out. Rental, another category, already in the shop and deferred stay screened.
 - /products/specs, /products/page: when the card is not on the search page for the product's name (and no query was
   given), a second search with the name's first 5 words (13425122164).
 - /products/specs delivery.lead_time: new `today_off` ("오늘출발 휴무"); `today_cutoff` is no longer filled from

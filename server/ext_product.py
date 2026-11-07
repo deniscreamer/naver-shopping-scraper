@@ -157,8 +157,9 @@ def read_page(bridge, product_id, query, out_dir):
         bridge.call("wait_load", tabId=page_tab, timeoutMs=45000)
         ext_listing.pause(3, 5)
         # 2026-11-06: a product whose page Naver cannot serve opens shopv.pstatic.net/web/maintenance/
-        # internal-error.html (twice in a row on 10302181901); the adapter may not read that host, and it is not a
-        # wall: the product is unavailable now (404), the run goes on
+        # internal-error.html (twice in a row on 10302181901): when the tab can be read it is not a wall, the
+        # product is unavailable now (404). Mostly the adapter cannot read that host and the read fails before this
+        # check, answered 503 (KNOWN_ISSUES K-21); it passes in minutes
         tab_url = next((t.get("url") or "" for t in bridge.call("tabs") or [] if t.get("tabId") == page_tab), "")
         if "/web/maintenance/" in tab_url:
             raise NotListed(f"product {product_id}: Naver shows its error page ({tab_url[:80]})")

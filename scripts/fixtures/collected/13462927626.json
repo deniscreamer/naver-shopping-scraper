@@ -1,0 +1,1453 @@
+{
+ "key": "fairwardgolf:naver:500014455:13462927626",
+ "listing": {
+  "product_id": "13462927626",
+  "nv_mid": "91007437978",
+  "link": "https://smartstore.naver.com/sbgolf/products/13462927626",
+  "name": "테일러메이드 (26)RBZ SL2 스틸 풀세트",
+  "store": {
+   "name": "SB골프",
+   "slug": "sbgolf",
+   "link": "https://smartstore.naver.com/sbgolf",
+   "channel_no": "500014455",
+   "grade": "PREMIUM",
+   "is_brand_store": false
+  },
+  "pricing": {
+   "sale_price": 1590000,
+   "discounted_price": 1590000,
+   "discount_ratio": 0,
+   "currency": "KRW"
+  },
+  "category_id": "50002788",
+  "reviews": {
+   "count": 1,
+   "average_score": 5
+  },
+  "stock_quantity": 1994,
+  "image": "https://shopping-phinf.pstatic.net/main_9100743/91007437978.1.jpg",
+  "is_ad": true,
+  "query": "남성 골프채 풀세트",
+  "batch": 2,
+  "seen_at": "2026-11-06T16:14:02+00:00"
+ },
+ "details": {
+  "id": "13462927626",
+  "origin_product_id": "13403836681",
+  "name": "테일러메이드 (26)RBZ SL2 스틸 풀세트",
+  "link": "https://smartstore.naver.com/sbgolf/products/13462927626",
+  "catalog_id": "91007437978",
+  "catalog_link": "https://search.shopping.naver.com/catalog/91007437978",
+  "status": "SALE",
+  "sale_type": "NEW",
+  "is_displayed": true,
+  "pricing": {
+   "sale_price": 1590000,
+   "discounted_price": 1590000,
+   "discount_ratio": 0,
+   "seller_discount": 0,
+   "manager_discount": 0,
+   "currency": "KRW",
+   "points": {
+    "purchase": 15900,
+    "text_review": 0,
+    "photo_video_review": 0,
+    "after_use_text_review": 0,
+    "after_use_photo_video_review": 0,
+    "store_member_review": 0
+   }
+  },
+  "stock_quantity": 1994,
+  "has_options": true,
+  "has_supplements": true,
+  "images": [
+   "https://shop-phinf.pstatic.net/20260507_176/1778120205018sFLC0_JPEG/15905209205096743_996507048.jpg"
+  ],
+  "category": {
+   "id": "50002788",
+   "name": "풀세트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "풀세트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002788"
+   ]
+  },
+  "brand": "테일러메이드",
+  "brand_id": "223",
+  "manufacturer": "테일러메이드",
+  "model_name": "26 RBZ SL2 스틸 풀세트",
+  "tags": [
+   "남성풀세트",
+   "골프풀세트"
+  ],
+  "page_title": null,
+  "reviews": {
+   "count": 1,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 1
+   },
+   "text_count": 1,
+   "photo_count": 0,
+   "video_count": 0,
+   "after_use_count": 0,
+   "best_count": 0,
+   "recent": {
+    "count": 1,
+    "average_score": 5.0
+   },
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "최고예요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "디자인은 어떤가요?",
+     "answers": [
+      {
+       "name": "별로예요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "화면과 같아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    }
+   ],
+   "representative_reviews": null
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "SELLER_GUARANTEE",
+   "is_today_delivery": null,
+   "company": "CJ대한통운",
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "extra_fee_text": null
+  },
+  "is_free_delivery": true,
+  "is_today_delivery": false,
+  "has_arrival_guarantee": true,
+  "has_regular_subscription": false,
+  "has_free_return_insurance": true,
+  "is_minor_purchasable": true,
+  "is_adult_restricted": false,
+  "is_in_naver_shopping": true,
+  "option_groups": null,
+  "variants": null,
+  "supplements": null,
+  "description": {
+   "html": "<p align=\"center\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://sbgolf.speedgabia.com/event/sbgolf_holiday_20251003.jpg\"  /></p><br /><p align=\"center\"> <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://proxy-smartstore.naver.net/img/c2Jnb2xmLnNwZWVkZ2FiaWEuY29tL1RheWxvcm1hZGUvRnVsbHNldC8yMDI2L3NiX0ZTLTIwMjZfUkJaX1NULmpwZw==?token=a1d278eabcdb894c783fe1ba3b8e0c21\"  /> </p><br /><p align=\"center\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://sbgolf.speedgabia.com/event/seller-sbgolf-1.jpg\"  /></p>",
+   "text": null,
+   "editor_type": "NONE",
+   "images": [
+    "https://shop-phinf.pstatic.net/20261021_6/1792559079090VK73U_JPEG/p-13403836681-s-7-A-0.jpg",
+    "https://shop-phinf.pstatic.net/20261021_18/1792559079092l3KhT_JPEG/p-13403836681-s-7-A-1.jpg",
+    "https://shop-phinf.pstatic.net/20261021_184/1792559079089Hidf4_JPEG/p-13403836681-s-7-A-2.jpg",
+    "https://shop-phinf.pstatic.net/20261021_102/1792559079092gMgCN_JPEG/p-13403836681-s-7-A-3.jpg",
+    "https://shop-phinf.pstatic.net/20261021_87/1792559079088h9QXO_JPEG/p-13403836681-s-7-A-4.jpg",
+    "https://shop-phinf.pstatic.net/20261021_273/1792559079184BIf5f_JPEG/p-13403836681-s-7-A-5.jpg",
+    "https://shop-phinf.pstatic.net/20261021_86/17925590790962YXdO_JPEG/p-13403836681-s-7-A-6.jpg",
+    "https://shop-phinf.pstatic.net/20261021_245/17925590790935HghA_JPEG/p-13403836681-s-7-A-7.jpg",
+    "https://shop-phinf.pstatic.net/20261021_13/1792559079098cetcq_JPEG/p-13403836681-s-7-A-8.jpg",
+    "https://shop-phinf.pstatic.net/20261021_267/17925590790887Pb0N_JPEG/p-13403836681-s-7-A-9.jpg",
+    "https://shop-phinf.pstatic.net/20261021_139/1792559079089I3H1Y_JPEG/p-13403836681-s-7-A-10.jpg",
+    "https://shop-phinf.pstatic.net/20261021_86/1792559079167z652C_JPEG/p-13403836681-s-7-A-11.jpg",
+    "https://shop-phinf.pstatic.net/20261021_204/1792559079179djrom_JPEG/p-13403836681-s-7-A-12.jpg",
+    "https://shop-phinf.pstatic.net/20261021_294/17925590791808frO3_JPEG/p-13403836681-s-7-A-13.jpg",
+    "https://shop-phinf.pstatic.net/20261021_211/1792559079179byeJy_JPEG/p-13403836681-s-7-A-14.jpg",
+    "https://shop-phinf.pstatic.net/20261021_37/1792559079182Ra615_JPEG/p-13403836681-s-7-A-15.jpg",
+    "https://shop-phinf.pstatic.net/20261021_268/1792559079190OxW8V_JPEG/p-13403836681-s-7-A-16.jpg",
+    "https://shop-phinf.pstatic.net/20261021_98/1792559079192K4kVp_JPEG/p-13403836681-s-7-A-17.jpg",
+    "https://shop-phinf.pstatic.net/20261021_284/1792559079213EE14D_JPEG/p-13403836681-s-7-A-18.jpg",
+    "https://shop-phinf.pstatic.net/20261021_288/1792559079217D13WX_JPEG/p-13403836681-s-7-A-19.jpg",
+    "https://shop-phinf.pstatic.net/20261021_73/1792559079265nuJ8f_JPEG/p-13403836681-s-7-A-20.jpg",
+    "https://shop-phinf.pstatic.net/20261021_51/1792559079298IAGLW_JPEG/p-13403836681-s-7-A-21.jpg",
+    "https://shop-phinf.pstatic.net/20261021_216/1792559079265hMF5m_JPEG/p-13403836681-s-7-A-22.jpg"
+   ]
+  },
+  "notice": {
+   "type": "SPORTS_EQUIPMENT",
+   "items": [
+    {
+     "label": "품명 / 모델명",
+     "value": "상세페이지 참조 / 상세페이지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "KC 인증정보",
+     "value": "N 해당사항 없음",
+     "is_see_description": false
+    },
+    {
+     "label": "크기",
+     "value": "상세페이지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "중량",
+     "value": "상세페이지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "색상",
+     "value": "상세페이지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "재질",
+     "value": "상세페이지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제품구성",
+     "value": "상세페이지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "동일 모델의 출시연월",
+     "value": "2026-04",
+     "is_see_description": false
+    },
+    {
+     "label": "제조자(사)",
+     "value": "테일러메이드/(유)테일러메이드코리아",
+     "is_see_description": false
+    },
+    {
+     "label": "제조국",
+     "value": "중국산(중국)",
+     "is_see_description": false
+    },
+    {
+     "label": "상품별 세부사양",
+     "value": "상세페이지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "품질보증기준",
+     "value": "관련법 및 소비자분쟁해결 규정에 따름",
+     "is_see_description": false
+    },
+    {
+     "label": "A/S 책임자와 전화번호",
+     "value": null,
+     "is_see_description": false
+    }
+   ],
+   "terms": [
+    {
+     "label": "재화등의 배송방법에 관한 정보",
+     "value": "택배",
+     "is_see_description": false
+    },
+    {
+     "label": "주문 이후 예상되는 배송기간",
+     "value": "대금 지급일로부터 3일 이내에 발송",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+     "value": "편도 3500원 (최초 배송비 무료인 경우 7000원 부과)",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 A/S 관련 전화번호",
+     "value": null,
+     "is_see_description": false
+    },
+    {
+     "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+     "value": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+     "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+     "is_see_description": false
+    }
+   ]
+  },
+  "facts": {
+   "brand": {
+    "value": "테일러메이드",
+    "source": "search_info.brandName"
+   },
+   "manufacturer": {
+    "value": "테일러메이드",
+    "source": "search_info.manufacturerName"
+   },
+   "model_name": {
+    "value": "26 RBZ SL2 스틸 풀세트",
+    "source": "search_info.modelName"
+   },
+   "origin": {
+    "value": "중국산(중국)",
+    "source": "notice:제조국"
+   }
+  },
+  "store": {
+   "id": "500014455",
+   "uid": "2sWDvQ0xuRY0RzUPrFNwy",
+   "name": "SB골프",
+   "slug": "sbgolf",
+   "link": "https://smartstore.naver.com/sbgolf",
+   "type": "smart_store",
+   "grade": "FIRST",
+   "sale_count": 3138,
+   "merchant_id": "500014455",
+   "business": {
+    "legal_name": "(주)에스비스포츠",
+    "representative": "조현억",
+    "type": "CORPORATION",
+    "is_business": true,
+    "is_overseas": false,
+    "phone": null,
+    "email": null,
+    "address": null
+   }
+  }
+ },
+ "specs": {
+  "id": "13462927626",
+  "name": "테일러메이드 (26)RBZ SL2 스틸 풀세트",
+  "link": "https://smartstore.naver.com/sbgolf/products/13462927626",
+  "query": "테일러메이드 (26)RBZ SL2 스틸 풀세트",
+  "category": {
+   "id": "50002788",
+   "name": "풀세트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "풀세트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002788"
+   ]
+  },
+  "specs": [
+   {
+    "label": "상품번호",
+    "value": "13462927626"
+   },
+   {
+    "label": "제조사",
+    "value": "테일러메이드"
+   },
+   {
+    "label": "브랜드",
+    "value": "테일러메이드"
+   },
+   {
+    "label": "모델명",
+    "value": "26 RBZ SL2 스틸 풀세트"
+   },
+   {
+    "label": "원산지",
+    "value": "중국산(중국)"
+   },
+   {
+    "label": "제조일자",
+    "value": "2026.03.01."
+   },
+   {
+    "label": "유틸리티/하이브리드 로프트각",
+    "value": "22도"
+   },
+   {
+    "label": "페어웨이 로프트각",
+    "value": "15도"
+   },
+   {
+    "label": "드라이버 로프트각",
+    "value": "10.5도"
+   },
+   {
+    "label": "아이언 구성",
+    "value": "#6, #7, #8, #9, 피칭웨지(PW), 샌드웨지(SW)"
+   },
+   {
+    "label": "종류",
+    "value": "풀세트"
+   },
+   {
+    "label": "성별",
+    "value": "남성용"
+   },
+   {
+    "label": "사용방향",
+    "value": "오른손용"
+   },
+   {
+    "label": "총클럽개수",
+    "value": "10개"
+   },
+   {
+    "label": "출시",
+    "value": "2026년형"
+   },
+   {
+    "label": "풀세트구성",
+    "value": "드라이버, 6아이언세트, 페어웨이, 퍼터, 유틸리티"
+   },
+   {
+    "label": "아이언샤프트소재",
+    "value": "스틸"
+   },
+   {
+    "label": "아이언개수",
+    "value": "6개"
+   },
+   {
+    "label": "퍼터형태",
+    "value": "말렛(반달형)"
+   },
+   {
+    "label": "골프백포함여부",
+    "value": "캐디백"
+   }
+  ],
+  "is_complete": true,
+  "facts": {
+   "brand": {
+    "value": "테일러메이드",
+    "source": "specs:브랜드"
+   },
+   "manufacturer": {
+    "value": "테일러메이드",
+    "source": "specs:제조사"
+   },
+   "model_name": {
+    "value": "26 RBZ SL2 스틸 풀세트",
+    "source": "specs:모델명"
+   },
+   "origin": {
+    "value": "중국산(중국)",
+    "source": "specs:원산지"
+   }
+  },
+  "options": {
+   "has_options": true,
+   "status": "SALE",
+   "is_sold_out": false,
+   "stock_quantity": 1994,
+   "option_groups": [
+    {
+     "id": "11645256997",
+     "name": "색상",
+     "type": "COMBINATION"
+    }
+   ],
+   "variants": [
+    {
+     "id": "57999594856",
+     "name": "세트 R",
+     "options": [
+      "세트 R"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 998,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-04-28"
+    },
+    {
+     "id": "57999594857",
+     "name": "세트 S",
+     "options": [
+      "세트 S"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 996,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2026-04-28"
+    }
+   ],
+   "simple_options": [],
+   "text_options": [],
+   "supplements": [
+    {
+     "id": "3747650548",
+     "group": "[G192]렌치",
+     "name": "[G192]01_미즈노 클럽 렌치",
+     "price": 8500,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650549",
+     "group": "[G192]렌치",
+     "name": "[G192]02_핑 클럽 렌치",
+     "price": 10000,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650550",
+     "group": "[G192]렌치",
+     "name": "[G192]03_클리브랜드 클럽 렌치",
+     "price": 10000,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650551",
+     "group": "[G192]렌치",
+     "name": "[G192]04_테일러메이드 클럽 렌치",
+     "price": 8000,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650552",
+     "group": "[G193]골프장갑",
+     "name": "[G193]01_캘러웨이 (23)쉐브 합피장갑 25호",
+     "price": 11900,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650553",
+     "group": "[G193]골프장갑",
+     "name": "[G193]01_캘러웨이 (23)쉐브 합피장갑 26호",
+     "price": 11900,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650554",
+     "group": "[G193]골프장갑",
+     "name": "[G193]02_테일러메이드 인터크로스쿨 장갑 화이트블루_25호",
+     "price": 15900,
+     "stock_quantity": 2,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650555",
+     "group": "[G193]골프장갑",
+     "name": "[G193]02_테일러메이드 인터크로스쿨 장갑 화이트실버_25호",
+     "price": 15900,
+     "stock_quantity": 10,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650556",
+     "group": "[G193]골프장갑",
+     "name": "[G193]04_PXG 플레이어 올양피장갑_남성블랙ML_24호",
+     "price": 40900,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650557",
+     "group": "[G193]골프장갑",
+     "name": "[G193]04_PXG 플레이어 올양피장갑_남성블랙L_25호",
+     "price": 40900,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650558",
+     "group": "[G193]골프장갑",
+     "name": "[G193]04_PXG 플레이어 올양피장갑_남성블랙XL_26호",
+     "price": 40900,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650559",
+     "group": "[G193]골프장갑",
+     "name": "[G193]04_PXG 플레이어 올양피장갑_남성블랙XXL_27호",
+     "price": 40900,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650560",
+     "group": "[G194]파우치",
+     "name": "[G194]01_닥스 DKPB-007M 파우치_블랙",
+     "price": 34500,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650561",
+     "group": "[G194]파우치",
+     "name": "[G194]04_핑 (23)K1 1단 파우치_화이트",
+     "price": 54000,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650562",
+     "group": "[G194]파우치",
+     "name": "[G194]04_핑 (23)K1 1단 파우치_블랙",
+     "price": 54000,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650563",
+     "group": "[G195]볼주머니",
+     "name": "[G195]01_테일러메이드 시티테크 볼 파우치_베이지",
+     "price": 24000,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650564",
+     "group": "[G195]볼주머니",
+     "name": "[G195]01_테일러메이드 시티테크 볼 파우치_버건디",
+     "price": 24000,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650565",
+     "group": "[G195]볼주머니",
+     "name": "[G195]03_핑 (23)K1 볼 파우치_블랙",
+     "price": 25550,
+     "stock_quantity": 2,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650566",
+     "group": "[G195]볼주머니",
+     "name": "[G195]03_핑 (23)K1 볼 파우치_화이트",
+     "price": 25550,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650567",
+     "group": "[G195]볼주머니",
+     "name": "[G195]04_던롭 젝시오 볼파우치(21097)_화이트",
+     "price": 22500,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650568",
+     "group": "[G195]볼주머니",
+     "name": "[G195]04_던롭 젝시오 볼파우치(21097)_네이비",
+     "price": 22500,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650569",
+     "group": "[G198]거리측정기 케이스",
+     "name": "[G198]01_SB 컴팩트 거리측정기 케이스_블랙",
+     "price": 25000,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650570",
+     "group": "[G198]거리측정기 케이스",
+     "name": "[G198]01_SB 컴팩트 거리측정기 케이스_화이트",
+     "price": 25000,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650571",
+     "group": "[G198]거리측정기 케이스",
+     "name": "[G198]02_핑 (23)K1-V 거리측정기 케이스_블랙",
+     "price": 31000,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650572",
+     "group": "[G198]거리측정기 케이스",
+     "name": "[G198]02_핑 (23)K1-V 거리측정기 케이스_화이트",
+     "price": 31000,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650573",
+     "group": "[G201]헤드커버",
+     "name": "[G201]04_테일러메이드 니트 말렛 퍼터커버_네이비",
+     "price": 23000,
+     "stock_quantity": 43,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650574",
+     "group": "[G201]헤드커버",
+     "name": "[G201]07_클리브랜드 CBX 집코어 여성 웨지커버_50도",
+     "price": 5000,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650575",
+     "group": "[G201]헤드커버",
+     "name": "[G201]07_클리브랜드 CBX 집코어 여성 웨지커버_52도",
+     "price": 5000,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650576",
+     "group": "[G201]헤드커버",
+     "name": "[G201]07_클리브랜드 CBX 집코어 여성 웨지커버_54도",
+     "price": 5000,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650577",
+     "group": "[G201]헤드커버",
+     "name": "[G201]07_클리브랜드 CBX 집코어 여성 웨지커버_58도",
+     "price": 5000,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650578",
+     "group": "[G201]헤드커버",
+     "name": "[G201]07_클리브랜드 CBX 집코어 여성 웨지커버_60도",
+     "price": 5000,
+     "stock_quantity": 999,
+     "status": "SALE"
+    },
+    {
+     "id": "3747650579",
+     "group": "[G214]골프공",
+     "name": "[G214]4.캘러웨이 크롬소프트 360볼(3PCS)_화이트",
+     "price": 48900,
+     "stock_quantity": 999,
+     "status": "SALE"
+    }
+   ]
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "SELLER_GUARANTEE",
+   "is_today_delivery": false,
+   "company": "CJ 대한통운(오네)",
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "extra_fee_text": null,
+   "is_overseas": false,
+   "scope": "domestic",
+   "customs_tax_type": null,
+   "lead_time": {
+    "seller_average_days": 1.4288,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": "11.10.(화)",
+    "arrival_probability": null,
+    "ship_date_text": null
+   }
+  },
+  "measures": {
+   "is_set": true,
+   "weights": [],
+   "dimensions": [],
+   "references": [
+    {
+     "quote": "크기: 상세페이지 참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 2
+     },
+     "measure": "size",
+     "reason": "description_reference"
+    },
+    {
+     "quote": "중량: 상세페이지 참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 3
+     },
+     "measure": "weight",
+     "reason": "description_reference"
+    }
+   ],
+   "review": []
+  },
+  "read_at": "2026-11-06T16:52:17Z"
+ },
+ "variants": {
+  "paid": true,
+  "base_price": 1590000,
+  "variants": [
+   {
+    "id": "57999594856",
+    "name": "세트 R",
+    "options": [
+     "세트 R"
+    ],
+    "extra_price": 0,
+    "price": 1590000,
+    "price_in_name": null,
+    "stock_quantity": 998,
+    "is_available": true
+   },
+   {
+    "id": "57999594857",
+    "name": "세트 S",
+    "options": [
+     "세트 S"
+    ],
+    "extra_price": 0,
+    "price": 1590000,
+    "price_in_name": null,
+    "stock_quantity": 996,
+    "is_available": true
+   }
+  ],
+  "available": 2,
+  "sold_out": 0,
+  "skipped_paid": 0,
+  "name_mismatches": [],
+  "simple_options": [],
+  "text_options": [],
+  "supplements": [
+   {
+    "id": "3747650548",
+    "group": "[G192]렌치",
+    "name": "[G192]01_미즈노 클럽 렌치",
+    "price": 8500,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650549",
+    "group": "[G192]렌치",
+    "name": "[G192]02_핑 클럽 렌치",
+    "price": 10000,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650550",
+    "group": "[G192]렌치",
+    "name": "[G192]03_클리브랜드 클럽 렌치",
+    "price": 10000,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650551",
+    "group": "[G192]렌치",
+    "name": "[G192]04_테일러메이드 클럽 렌치",
+    "price": 8000,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650552",
+    "group": "[G193]골프장갑",
+    "name": "[G193]01_캘러웨이 (23)쉐브 합피장갑 25호",
+    "price": 11900,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650553",
+    "group": "[G193]골프장갑",
+    "name": "[G193]01_캘러웨이 (23)쉐브 합피장갑 26호",
+    "price": 11900,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650554",
+    "group": "[G193]골프장갑",
+    "name": "[G193]02_테일러메이드 인터크로스쿨 장갑 화이트블루_25호",
+    "price": 15900,
+    "stock_quantity": 2,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650555",
+    "group": "[G193]골프장갑",
+    "name": "[G193]02_테일러메이드 인터크로스쿨 장갑 화이트실버_25호",
+    "price": 15900,
+    "stock_quantity": 10,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650556",
+    "group": "[G193]골프장갑",
+    "name": "[G193]04_PXG 플레이어 올양피장갑_남성블랙ML_24호",
+    "price": 40900,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650557",
+    "group": "[G193]골프장갑",
+    "name": "[G193]04_PXG 플레이어 올양피장갑_남성블랙L_25호",
+    "price": 40900,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650558",
+    "group": "[G193]골프장갑",
+    "name": "[G193]04_PXG 플레이어 올양피장갑_남성블랙XL_26호",
+    "price": 40900,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650559",
+    "group": "[G193]골프장갑",
+    "name": "[G193]04_PXG 플레이어 올양피장갑_남성블랙XXL_27호",
+    "price": 40900,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650560",
+    "group": "[G194]파우치",
+    "name": "[G194]01_닥스 DKPB-007M 파우치_블랙",
+    "price": 34500,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650561",
+    "group": "[G194]파우치",
+    "name": "[G194]04_핑 (23)K1 1단 파우치_화이트",
+    "price": 54000,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650562",
+    "group": "[G194]파우치",
+    "name": "[G194]04_핑 (23)K1 1단 파우치_블랙",
+    "price": 54000,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650563",
+    "group": "[G195]볼주머니",
+    "name": "[G195]01_테일러메이드 시티테크 볼 파우치_베이지",
+    "price": 24000,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650564",
+    "group": "[G195]볼주머니",
+    "name": "[G195]01_테일러메이드 시티테크 볼 파우치_버건디",
+    "price": 24000,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650565",
+    "group": "[G195]볼주머니",
+    "name": "[G195]03_핑 (23)K1 볼 파우치_블랙",
+    "price": 25550,
+    "stock_quantity": 2,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650566",
+    "group": "[G195]볼주머니",
+    "name": "[G195]03_핑 (23)K1 볼 파우치_화이트",
+    "price": 25550,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650567",
+    "group": "[G195]볼주머니",
+    "name": "[G195]04_던롭 젝시오 볼파우치(21097)_화이트",
+    "price": 22500,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650568",
+    "group": "[G195]볼주머니",
+    "name": "[G195]04_던롭 젝시오 볼파우치(21097)_네이비",
+    "price": 22500,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650569",
+    "group": "[G198]거리측정기 케이스",
+    "name": "[G198]01_SB 컴팩트 거리측정기 케이스_블랙",
+    "price": 25000,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650570",
+    "group": "[G198]거리측정기 케이스",
+    "name": "[G198]01_SB 컴팩트 거리측정기 케이스_화이트",
+    "price": 25000,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650571",
+    "group": "[G198]거리측정기 케이스",
+    "name": "[G198]02_핑 (23)K1-V 거리측정기 케이스_블랙",
+    "price": 31000,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650572",
+    "group": "[G198]거리측정기 케이스",
+    "name": "[G198]02_핑 (23)K1-V 거리측정기 케이스_화이트",
+    "price": 31000,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650573",
+    "group": "[G201]헤드커버",
+    "name": "[G201]04_테일러메이드 니트 말렛 퍼터커버_네이비",
+    "price": 23000,
+    "stock_quantity": 43,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650574",
+    "group": "[G201]헤드커버",
+    "name": "[G201]07_클리브랜드 CBX 집코어 여성 웨지커버_50도",
+    "price": 5000,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650575",
+    "group": "[G201]헤드커버",
+    "name": "[G201]07_클리브랜드 CBX 집코어 여성 웨지커버_52도",
+    "price": 5000,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650576",
+    "group": "[G201]헤드커버",
+    "name": "[G201]07_클리브랜드 CBX 집코어 여성 웨지커버_54도",
+    "price": 5000,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650577",
+    "group": "[G201]헤드커버",
+    "name": "[G201]07_클리브랜드 CBX 집코어 여성 웨지커버_58도",
+    "price": 5000,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650578",
+    "group": "[G201]헤드커버",
+    "name": "[G201]07_클리브랜드 CBX 집코어 여성 웨지커버_60도",
+    "price": 5000,
+    "stock_quantity": 999,
+    "status": "SALE"
+   },
+   {
+    "id": "3747650579",
+    "group": "[G214]골프공",
+    "name": "[G214]4.캘러웨이 크롬소프트 360볼(3PCS)_화이트",
+    "price": 48900,
+    "stock_quantity": 999,
+    "status": "SALE"
+   }
+  ]
+ },
+ "package": [
+  {
+   "variant_id": "57999594856",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "57999594857",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  }
+ ],
+ "reviews": {
+  "product": {
+   "id": "13462927626",
+   "name": "테일러메이드 (26)RBZ SL2 스틸 풀세트",
+   "link": "https://smartstore.naver.com/sbgolf/products/13462927626"
+  },
+  "summary": {
+   "count": 1,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 1
+   },
+   "text_count": 1,
+   "photo_count": 0,
+   "video_count": 0,
+   "after_use_count": 0,
+   "best_count": 0,
+   "recent": {
+    "count": 1,
+    "average_score": 5.0
+   },
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "최고예요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "디자인은 어떤가요?",
+     "answers": [
+      {
+       "name": "별로예요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "화면과 같아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    }
+   ],
+   "representative_reviews": null
+  },
+  "mode": "small_source",
+  "count": 1,
+  "scanned": 1,
+  "passes": [
+   {
+    "media": "all",
+    "pages": 1,
+    "total_count": 1,
+    "is_exhausted": true
+   }
+  ],
+  "is_complete": true,
+  "results": [
+   {
+    "id": "5080848396",
+    "score": 5,
+    "text": "가격도 멋지고 디자인도 멋집니다.",
+    "created_at": "2026-10-10T04:32:46Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "색상: 세트 R",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "star*****",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "13462927626",
+     "origin_product_id": "13403836681",
+     "name": "테일러메이드 (26)RBZ SL2 스틸 풀세트"
+    },
+    "likes": null,
+    "tier": "small"
+   }
+  ]
+ },
+ "photos": {
+  "store": "fairwardgolf",
+  "total": 1,
+  "files": [
+   {
+    "position": 0,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20260507_176/1778120205018sFLC0_JPEG/15905209205096743_996507048.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20260507_176/1778120205018sFLC0_JPEG/15905209205096743_996507048.jpg",
+    "source_sha256": "390afaa717b694e4b1d4a1a4b219235271149357464ac0981745b47b8bbcf475",
+    "source_bytes": 364185,
+    "source_format": "JPEG",
+    "source_width": 1000,
+    "source_height": 1000,
+    "first_frame_of": null,
+    "file": "images/13462927626/fairwardgolf-13462927626-001-c3bf52f0de478333.webp",
+    "sha256": "c3bf52f0de478333dea6d026a47062f1bf5f7e6044c56dbf3e35a572525d80ed",
+    "bytes": 87594,
+    "width": 1000,
+    "height": 1000,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true,
+  "originals": 1
+ },
+ "review_media": {
+  "store": "fairwardgolf",
+  "files": [],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true
+ }
+}

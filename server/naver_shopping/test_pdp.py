@@ -271,7 +271,7 @@ def test_description_keeps_text_quotation_table_and_links():
     body = ('<div class="se-component se-quotation"><blockquote><p>PGM은 중국 Tmall 골프 부문</p></blockquote></div>'
             '<div class="se-component se-table"><table><tr><td>로프트</td><td>10.5</td></tr></table></div>'
             '<div class="se-component se-text"><p><a class="se-link" href="https://www.callawaygolf.com">캘러웨이</a> 정품</p></div>')
-    assert pdp.description_text(body) == "PGM은 중국 Tmall 골프 부문\n\n로프트\n10.5\n\n캘러웨이 정품"
+    assert pdp.description_text(body) == "PGM은 중국 Tmall 골프 부문\n\n로프트 | 10.5\n\n캘러웨이 정품"
 
 
 def test_description_cards_fixture():
@@ -312,4 +312,41 @@ def test_description_blank_line_between_components():
     assert pdp.description_text("<p>첫 줄입니다</p><p>둘째</p>") == "첫 줄입니다\n둘째"
     nested = ('<div class="se-component se-table"><table><tr><td><div class="se-component se-text"><p>a</p></div>'
               '</td><td><p>b</p></td></tr></table></div><div class="se-component se-text"><p>c</p></div>')
-    assert pdp.description_text(nested) == "a\nb\n\nc"
+    assert pdp.description_text(nested) == "a | b\n\nc"
+
+
+def test_description_table_rows_one_line():
+    """A SmartEditor se-table is one line per row, cells joined by " | ", the header row too: one cell per line lost
+    the columns (8958060680, 13728190518, 7166885441, 13657325637; seen 2026-11-07). Real components cut from
+    8958060680 (SPEC, the woods, the shafts) and 13728190518 (클럽별 주요 제원) with the text after them."""
+    text = pdp.description_text(fixture("contents_seone_table.html"))
+    blocks = text.split("\n\n")
+    assert blocks[0] == "SPEC"
+    # a cell of several paragraphs is one cell: its lines joined by "; "
+    assert blocks[1].split("\n") == [
+        "모델 | BRIDGESTONE GOLF BG-100",
+        "헤드 소재 | 드라이버: 페이스 / 6AL-4V 티타늄 합금, 크라운 / 341 티타늄 합금, 솔 / 순티타늄, 호젤 / 3AL-2V 티타늄 합금; "
+        "페어웨이우드·유틸리티: 바디 / SUS630 스테인리스, 크라운 / SUS430 스테인리스; 아이언: SUS630 스테인리스; "
+        "퍼터: SUS431 스테인리스",
+        "헤드 제조 방식 | 드라이버: 프레스 가공; 페어웨이우드·유틸리티·아이언·퍼터: 로스트왁스 정밀주조"]
+    assert blocks[2].split("\n") == ["구분 | 1W | 5W | U4 | 퍼터", "로프트각(°) | R: 10.5 / S: 9.5 | 19 | 24 | 3",
+                                     "라이각(°) | 60 | 59.5 | 60.5 | 70", "길이(인치) | 45.25 | 42.5 | 39.5 | 34",
+                                     "클럽 무게(g) | R: 294 / S: 297 | R: 317 / S: 320 | R: 351 / S: 353 | 528"]
+    assert blocks[3].split("\n")[0] == "구분 | R 세트 (아이언 카본) | S 세트 (아이언 스틸)"
+    assert blocks[3].split("\n")[-1] == "출시 | 2022년 4월"
+    assert blocks[4].split("\n")[:2] == [
+        "클럽 번수 | 로프트각 (°) | 라이각 (°) | 클럽 길이 (인치 - S/R) | 총중량 (g - S / R) | 밸런스 (S / R)",
+        "1W (드라이버) | 10.5° | 58.5° | 44.5인치 | 약 318g / 약 313g | D1 / D0"]
+    assert blocks[4].split("\n")[-1] == "PT (퍼터) | 3° | 70° | 34인치 | 약 521g | -"
+    assert len(blocks) == 6 and blocks[5].startswith("[주요 특징]\nX2 HOT 헤드 설계 계승:")
+
+
+def test_description_table_edges():
+    """An empty cell keeps its column, an empty row goes, a nested table stays inside its cell, skipped nodes stay
+    out of a cell; text outside tables is one line per block as before."""
+    html = ('<div class="se-component se-table"><table><tr><th>구분</th><th>R</th><th>S</th></tr>'
+            '<tr><td>샤프트 강도</td><td></td><td>S</td></tr><tr><td> </td><td>​</td></tr>'
+            '<tr><td>밸런스<img data-src="x"><span class="se-blind">네이버페이</span></td>'
+            '<td><table><tr><td>D1</td><td>D0</td></tr></table></td></tr></table></div>'
+            '<div class="se-component se-text"><p>a</p><p>b</p></div>')
+    assert pdp.description_text(html) == "구분 | R | S\n샤프트 강도 | | S\n밸런스 | D1; D0\n\na\nb"

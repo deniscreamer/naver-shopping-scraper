@@ -1,0 +1,474 @@
+{
+ "id": "10954221464",
+ "channelServiceType": "STOREFARM",
+ "channelProductType": "SINGLE",
+ "channelProductSupplyType": "OWNER",
+ "channelProductStatusType": "NORMAL",
+ "channelProductDisplayStatusType": "ON",
+ "category": {
+  "categoryId": "50002788",
+  "categoryName": "풀세트",
+  "category1Id": "50000007",
+  "category2Id": "50000029",
+  "category3Id": "50001102",
+  "category4Id": "50002788",
+  "category1Name": "스포츠/레저",
+  "category2Name": "골프",
+  "category3Name": "골프클럽",
+  "category4Name": "풀세트",
+  "wholeCategoryId": "50000007>50000029>50001102>50002788",
+  "wholeCategoryName": "스포츠/레저>골프>골프클럽>풀세트",
+  "categoryLevel": 4,
+  "lastLevel": true,
+  "sortOrder": 10,
+  "validCategory": true,
+  "receiptIssue": true,
+  "exceptionalCategoryTypes": [
+   "FREE_RETURN_INSURANCE",
+   "MANUFACTURE_DEFINE_NO",
+   "REGULAR_SUBSCRIPTION",
+   "RENTAL_SUBSCRIPTION"
+  ],
+  "pointAccumulationYn": false
+ },
+ "name": "왼손골프채 풀세트 남성 클라우드 하프세트(5P) 아화",
+ "productUrl": "https://smartstore.naver.com/main/products/10954221464",
+ "mobileProductUrl": "https://m.smartstore.naver.com/main/products/10954221464",
+ "storeKeepExclusiveProduct": false,
+ "best": false,
+ "orderRequestUsable": false,
+ "channelProductAttributes": [],
+ "productNo": "10902379191",
+ "salePrice": 798000,
+ "dispSalePrice": 798000,
+ "stockQuantity": 4995,
+ "saleType": "NEW",
+ "excludeAdminDiscount": false,
+ "payExposure": true,
+ "productStatusType": "SALE",
+ "statusType": "SALE",
+ "authenticationType": "NORMAL",
+ "itselfProductionProductYn": false,
+ "afterServiceInfo": {
+  "afterServiceTelephoneNumber": "********",
+  "afterServiceGuideContent": "********"
+ },
+ "originAreaInfo": {
+  "originAreaType": "LOCAL",
+  "content": "국산",
+  "originAreaCode": "00",
+  "wholeOriginAreaName": "국산",
+  "plural": false
+ },
+ "optionUsable": true,
+ "options": [
+  {
+   "id": 9669739598,
+   "optionType": "COMBINATION",
+   "groupName": "아이언샤프트 선택"
+  }
+ ],
+ "optionCombinations": [
+  {
+   "id": 44543292520,
+   "optionName1": "그라파이트 R",
+   "stockQuantity": 999,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2024-10-03T07:41:55.857+00:00",
+   "todayDispatch": true
+  },
+  {
+   "id": 44543292522,
+   "optionName1": "그라파이트 RS",
+   "stockQuantity": 999,
+   "price": 0,
+   "regOrder": 1,
+   "registerDate": "2024-10-03T07:41:55.858+00:00",
+   "todayDispatch": true
+  },
+  {
+   "id": 44543292524,
+   "optionName1": "그라파이트 S",
+   "stockQuantity": 999,
+   "price": 0,
+   "regOrder": 2,
+   "registerDate": "2024-10-03T07:41:55.859+00:00",
+   "todayDispatch": true
+  },
+  {
+   "id": 44543292526,
+   "optionName1": "스틸",
+   "stockQuantity": 999,
+   "price": 0,
+   "regOrder": 3,
+   "registerDate": "2024-10-03T07:41:55.860+00:00",
+   "todayDispatch": true
+  },
+  {
+   "id": 44543292528,
+   "optionName1": "피팅상담요청",
+   "stockQuantity": 999,
+   "price": 0,
+   "regOrder": 4,
+   "registerDate": "2024-10-03T07:41:55.860+00:00",
+   "todayDispatch": true
+  }
+ ],
+ "optionStandards": [],
+ "supplementProductUsable": false,
+ "supplementProducts": [],
+ "customMadeInfo": {
+  "customMade": false
+ },
+ "taxType": "TAX",
+ "certification": false,
+ "certificationTargetExcludeContent": {
+  "kcCertifiedProductExclusionYn": true
+ },
+ "minorPurchasable": true,
+ "productInfoProvidedNoticeView": {
+  "basic": {
+   "품명 / 모델명": "클라우드 왼손 남성 하프세트(5P) / 클라우드 왼손 남성 하프세트(5P)",
+   "KC 인증정보": "해당없음",
+   "크기": "상세설명참조",
+   "중량": "상세설명참조",
+   "색상": "상세설명참조",
+   "재질": "상세설명참조",
+   "제품구성": "상세설명참조",
+   "동일 모델의 출시연월": "상세설명참조",
+   "제조자(사)": "아화골프",
+   "제조국": "국산",
+   "상품별 세부사양": "상세설명참조",
+   "품질보증기준": "1년",
+   "A/S 책임자와 전화번호": "********"
+  },
+  "additional": {
+   "재화등의 배송방법에 관한 정보": "택배",
+   "주문 이후 예상되는 배송기간": "대금 지급일로부터 3일 이내에 발송",
+   "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보": "편도 4000원 (최초 배송비 무료인 경우 8000원 부과)",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+   "재화등의 교환·반품·보증 조건 및 품질보증기준": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "재화등의 A/S 관련 전화번호": "********",
+   "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+   "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "거래에 관한 약관의 내용 또는 확인할 수 있는 방법": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다."
+  }
+ },
+ "productDeliveryInfo": {
+  "deliveryFeeType": "FREE",
+  "deliveryMethodTypes": [
+   "DELIVERY"
+  ],
+  "baseFee": 0,
+  "installationFee": false,
+  "deliveryBundleGroup": {
+   "id": 4104849,
+   "deliveryFeeChargeMethodType": "MAX",
+   "deliveryAreaType": "AREA_3",
+   "area2ExtraFee": 3000,
+   "area3ExtraFee": 7000
+  },
+  "deliveryFeePolicyText": "제주 추가 3,000원, 제주 외 도서지역 추가 7,000원",
+  "deliveryAttributeType": "TODAY",
+  "todayStockQuantity": 4995,
+  "todayDelivery": true,
+  "thisDayDispatchBasisTime": "03:00:00.000+0000",
+  "deliveryCompany": {
+   "id": "KGB",
+   "name": "로젠택배"
+  }
+ },
+ "claimDeliveryInfo": {
+  "returnDeliveryCompanyPriority": "PRIMARY",
+  "deliveryCompanyName": "로젠택배",
+  "deliveryCompanyCode": "KGB",
+  "naverPayAppointment": false,
+  "returnDeliveryFee": 4000,
+  "exchangeDeliveryFee": 8000,
+  "shippingAddressId": 25097,
+  "returnAddressId": 25098,
+  "shippingAddress": "대전광역시 서구 동서대로  1009-1 아화골프 (우 : 302-817) ",
+  "returnAddress": "대전광역시 서구 동서대로  1009-1 아화골프 (우 : 302817) ",
+  "overseasShipping": false,
+  "freeReturnInsurance": false
+ },
+ "isCultureCostIncomeDeduction": false,
+ "isRestrictCart": false,
+ "naverGuaranteed": false,
+ "newShoppingExposureYn": true,
+ "benefitsView": {
+  "discountedSalePrice": 798000,
+  "dispDiscountedSalePrice": 798000,
+  "sellerImmediateDiscountAmount": 0,
+  "managerImmediateDiscountAmount": 0,
+  "specialDiscountAmount": {},
+  "discountedRatio": 0,
+  "dispDiscountedRatio": 0,
+  "sellerPurchasePoint": 0,
+  "sellerCustomerManagementPoint": 0,
+  "managerPurchasePoint": 7980,
+  "managerPurchaseExtraPoint": 0,
+  "managerPaymoneyAccumulatePoint": 11970,
+  "managerBankbookAccumulatePoint": 3990,
+  "managerArrivalGuaranteePoint": 0,
+  "managerMembershipArrivalGuaranteePoint": 0,
+  "generalPurchaseReviewPoint": 0,
+  "premiumPurchaseReviewPoint": 0,
+  "managerGeneralPurchaseReviewPoint": 50,
+  "managerPremiumPurchaseReviewPoint": 150,
+  "textReviewPoint": 0,
+  "photoVideoReviewPoint": 0,
+  "afterUseTextReviewPoint": 0,
+  "afterUsePhotoVideoReviewPoint": 0,
+  "storeMemberReviewPoint": 0,
+  "managerTextReviewPoint": 50,
+  "managerPhotoVideoReviewPoint": 150,
+  "managerAfterUseTextReviewPoint": 50,
+  "managerAfterUsePhotoVideoReviewPoint": 150,
+  "givePresent": false
+ },
+ "sellerDeliveryLeadTimes": [
+  {
+   "rangeNumberText": "1",
+   "rangeText": "일 이내",
+   "leadTimeCount": 22,
+   "leadTimePercent": 40
+  },
+  {
+   "rangeNumberText": "2",
+   "rangeText": "일 이내",
+   "leadTimeCount": 30,
+   "leadTimePercent": 55
+  },
+  {
+   "rangeNumberText": "3",
+   "rangeText": "일 이내",
+   "leadTimeCount": 3,
+   "leadTimePercent": 5
+  },
+  {
+   "rangeNumberText": "4",
+   "rangeText": "일 이상",
+   "leadTimeCount": 0,
+   "leadTimePercent": 0
+  }
+ ],
+ "averageDeliveryLeadTime": {
+  "productAverageDeliveryLeadTime": 0,
+  "sellerAverageDeliveryLeadTime": 1.5818182
+ },
+ "sellerDailyDeliveryLeadTimes": {
+  "leadTimeCount": [
+   4,
+   18,
+   30,
+   3,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "leadTimeViewType": "NORMAL_DELIVERY"
+ },
+ "detailContents": {
+  "excessDetailContentText": false,
+  "editorType": "NONE"
+ },
+ "useExternalStock": false,
+ "dispName": "왼손골프채 풀세트 남성 클라우드 하프세트(5P) 아화",
+ "adultAuthorizationType": "NOT_LOGIN",
+ "authorizationDisplay": "NORMAL",
+ "galleryImages": [
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20241003_157/1727941310896RqCP0_JPEG/7525072787219923_1488648593.jpg",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "REPRESENTATIVE"
+  },
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20220408_176/1649386957783sID1X_JPEG/50522856495506009_640135853.jpg",
+   "width": 600,
+   "height": 600,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 2,
+   "url": "https://shop-phinf.pstatic.net/20221222_187/1671681052454rmPDa_JPEG/72816895162891250_1569722512.jpg",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 3,
+   "url": "https://shop-phinf.pstatic.net/20221222_112/1671681052642h0dPA_JPEG/72816895347459529_83439111.jpg",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 4,
+   "url": "https://shop-phinf.pstatic.net/20221222_9/1671681052829145qj_JPEG/72816895537866991_2066040646.jpg",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  }
+ ],
+ "soldout": false,
+ "viewAttributes": {
+  "상품상태": "신상품",
+  "상품번호": "10954221464",
+  "제조사": "아화",
+  "브랜드": "아화",
+  "모델명": "아티스틱 파크골프채 샤프트M_cloud_halfset_5P",
+  "원산지": "국산"
+ },
+ "additionalAttributes": {
+  "영수증발급": "신용카드전표, 현금영수증발급",
+  "A/S 안내": [
+   "********",
+   "********"
+  ]
+ },
+ "eCouponCategory": false,
+ "cultureCategory": false,
+ "textOptions": [],
+ "simpleOptions": [],
+ "combinationOptions": [
+  {
+   "groupName": "아이언샤프트 선택",
+   "options": [
+    {
+     "id": 44543292520,
+     "optionName1": "그라파이트 R",
+     "stockQuantity": 999,
+     "price": 0,
+     "regOrder": 0,
+     "registerDate": "2024-10-03T07:41:55.857+00:00",
+     "todayDispatch": true
+    },
+    {
+     "id": 44543292522,
+     "optionName1": "그라파이트 RS",
+     "stockQuantity": 999,
+     "price": 0,
+     "regOrder": 1,
+     "registerDate": "2024-10-03T07:41:55.858+00:00",
+     "todayDispatch": true
+    },
+    {
+     "id": 44543292524,
+     "optionName1": "그라파이트 S",
+     "stockQuantity": 999,
+     "price": 0,
+     "regOrder": 2,
+     "registerDate": "2024-10-03T07:41:55.859+00:00",
+     "todayDispatch": true
+    },
+    {
+     "id": 44543292526,
+     "optionName1": "스틸",
+     "stockQuantity": 999,
+     "price": 0,
+     "regOrder": 3,
+     "registerDate": "2024-10-03T07:41:55.860+00:00",
+     "todayDispatch": true
+    },
+    {
+     "id": 44543292528,
+     "optionName1": "피팅상담요청",
+     "stockQuantity": 999,
+     "price": 0,
+     "regOrder": 4,
+     "registerDate": "2024-10-03T07:41:55.860+00:00",
+     "todayDispatch": true
+    }
+   ],
+   "checkedName": null,
+   "checkedIds": null,
+   "price": 0,
+   "isLastDepth": true
+  }
+ ],
+ "standardOptions": [],
+ "standardCombinations": [
+  {
+   "id": 44543292520,
+   "optionName1": "그라파이트 R",
+   "stockQuantity": 999,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2024-10-03T07:41:55.857+00:00",
+   "todayDispatch": true,
+   "title": "_그라파이트 R____"
+  },
+  {
+   "id": 44543292522,
+   "optionName1": "그라파이트 RS",
+   "stockQuantity": 999,
+   "price": 0,
+   "regOrder": 1,
+   "registerDate": "2024-10-03T07:41:55.858+00:00",
+   "todayDispatch": true,
+   "title": "_그라파이트 RS____"
+  },
+  {
+   "id": 44543292524,
+   "optionName1": "그라파이트 S",
+   "stockQuantity": 999,
+   "price": 0,
+   "regOrder": 2,
+   "registerDate": "2024-10-03T07:41:55.859+00:00",
+   "todayDispatch": true,
+   "title": "_그라파이트 S____"
+  },
+  {
+   "id": 44543292526,
+   "optionName1": "스틸",
+   "stockQuantity": 999,
+   "price": 0,
+   "regOrder": 3,
+   "registerDate": "2024-10-03T07:41:55.860+00:00",
+   "todayDispatch": true,
+   "title": "_스틸____"
+  },
+  {
+   "id": 44543292528,
+   "optionName1": "피팅상담요청",
+   "stockQuantity": 999,
+   "price": 0,
+   "regOrder": 4,
+   "registerDate": "2024-10-03T07:41:55.860+00:00",
+   "todayDispatch": true,
+   "title": "_피팅상담요청____"
+  }
+ ],
+ "supplements": [],
+ "deliveryText": "제주 추가 3,000원, 제주 외 도서지역 추가 7,000원",
+ "deliveryMethodType": {
+  "code": 1,
+  "name": "택배",
+  "description": "택배",
+  "etc": null,
+  "naverPayCode": "DELIVERY"
+ },
+ "discountedSalePrice": 798000,
+ "mobileDiscountRatio": 0,
+ "derived": {
+  "productType": "DEFAULT"
+ },
+ "hopeDelivery": null,
+ "commentCount": 0,
+ "isPayMember": false,
+ "arrivalGuarantee": false,
+ "groupId": null,
+ "groupEpId": null,
+ "simpleProductAffiliateYn": false,
+ "disableAdditionalApi": false
+}

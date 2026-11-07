@@ -191,6 +191,17 @@ Python 3.14.5): offline suite 99 passed.
 - **Impact:** disk litter only. Clear with `rm -rf "$TMPDIR"/patchright-profile-*` while the server is stopped.
   A fix (an `atexit` close of `browser_client`'s browsers) needs only the live smoke, not an A/B.
 
+### K-21 Naver's internal-error page is answered 503, not 404
+- **Where:** `ext_product.read_page` (the tab-URL check), the extension's page read.
+- **Observed (2026-11-06/07, 139 products, ~1 page read in 25):** Naver opens
+  `shopv.pstatic.net/web/maintenance/internal-error.html` on any product for 2-15 minutes. The extension cannot read
+  that host ("Cannot access contents of url ... Extension manifest must request permission to access this host"), so
+  `/products/specs` and `/products/page` answer 503 before the 404 check runs; `CollectGuard` takes a 503 as a stop.
+  Two reads of one product right after each other made it likelier.
+- **Impact:** a collection run stops on a passing Naver error. Callers wait ~2 min and retry (twice), then skip the
+  product and come back to it (scripts/README.md "Checking a run against product pages"). A fix would map that
+  adapter error to its own retryable answer.
+
 ## Stale references and unused code
 
 ### K-18 References to code that is not in this repo

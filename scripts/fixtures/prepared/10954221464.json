@@ -1,0 +1,583 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:500008085:10954221464",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "leaf_from_name",
+   "detail": "name: 남성"
+  },
+  {
+   "code": "few_pieces",
+   "detail": "5P"
+  },
+  {
+   "code": "description_tiles_include_banners",
+   "detail": "delivery_as.jpg"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/ahwagolf/products/10954221464",
+  "channel_no": "500008085",
+  "product_id": "10954221464",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "왼손골프채 풀세트 남성 클라우드 하프세트(5P) 아화",
+  "brand_ko": "아화",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "아이언샤프트 선택",
+    "values_ko": [
+     "그라파이트 R",
+     "그라파이트 RS",
+     "그라파이트 S",
+     "스틸",
+     "피팅상담요청"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"그라파이트 R\"]",
+    "naver_variant_id": "44543292520",
+    "options_ko": [
+     "그라파이트 R"
+    ],
+    "price_krw": 798000,
+    "price_usd": "798.00",
+    "sku": "FW-53312aa4ff31026634e034be",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"그라파이트 RS\"]",
+    "naver_variant_id": "44543292522",
+    "options_ko": [
+     "그라파이트 RS"
+    ],
+    "price_krw": 798000,
+    "price_usd": "798.00",
+    "sku": "FW-5ae0e916f69bfb1b617e7a87",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"그라파이트 S\"]",
+    "naver_variant_id": "44543292524",
+    "options_ko": [
+     "그라파이트 S"
+    ],
+    "price_krw": 798000,
+    "price_usd": "798.00",
+    "sku": "FW-64ce92ced040155b19314506",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"스틸\"]",
+    "naver_variant_id": "44543292526",
+    "options_ko": [
+     "스틸"
+    ],
+    "price_krw": 798000,
+    "price_usd": "798.00",
+    "sku": "FW-c542f6a254a122c9a103d18a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"피팅상담요청\"]",
+    "naver_variant_id": "44543292528",
+    "options_ko": [
+     "피팅상담요청"
+    ],
+    "price_krw": 798000,
+    "price_usd": "798.00",
+    "sku": "FW-51adfe6c2ff6520de7cb87da",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 798000,
+   "original_krw": 798000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "아화"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "아화"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "아티스틱 파크골프채 샤프트M_cloud_halfset_5P"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "국산"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/10954221464/fairwardgolf-10954221464-001-216b7af72a50e1a9.webp",
+    "sha256": "216b7af72a50e1a9f47a7a6d0e11e3ad48e5b66d82545c05797522ceaa12ea3e",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/10954221464/fairwardgolf-10954221464-002-e314a2b4fbe24778.webp",
+    "sha256": "e314a2b4fbe2477814acb1ca61f1f4c8ec295e3e1e13e288adf0849e06a9293c",
+    "width": 600,
+    "height": 600
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/10954221464/fairwardgolf-10954221464-003-05ce16537b33986e.webp",
+    "sha256": "05ce16537b33986e910f43b0f1571121c13eb74873325200ade39f1108275172",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/10954221464/fairwardgolf-10954221464-004-677b42fb39b7c157.webp",
+    "sha256": "677b42fb39b7c157f50b05ed186634ccbe4c822ef2fddf0d0c5446b4177154f2",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/10954221464/fairwardgolf-10954221464-005-65edf2bc8993c541.webp",
+    "sha256": "65edf2bc8993c541cb79d1cc25cbd97c08bb122e26bdb300a390e15a45f88462",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 7000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 7,000원",
+   "lead_time": {
+    "seller_average_days": 1.5818182,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": true,
+    "arrival_days": null,
+    "arrival_date_text": "11.11.(수)",
+    "arrival_probability": 96,
+    "ship_date_text": "11.9.(월)"
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20241003_249/172796582857789CyW_JPEG/p-10902379191-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20241003_164/1727965828577nNz4t_JPEG/p-10902379191-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20241003_257/1727965828575oqxF8_JPEG/p-10902379191-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20241003_10/1727965828575NJhBr_JPEG/p-10902379191-s-1-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20241003_86/1727965828578gxaCF_JPEG/p-10902379191-s-1-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20241003_56/1727965828577QNChg_JPEG/p-10902379191-s-1-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20241003_190/1727965828580DBjOV_JPEG/p-10902379191-s-1-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20241003_218/1727965828577YwfG9_JPEG/p-10902379191-s-1-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20241003_239/1727965828575FKktf_JPEG/p-10902379191-s-1-A-8.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:8c1bd1ec722e09e1",
+   "kind": "title",
+   "ko": "왼손골프채 풀세트 남성 클라우드 하프세트(5P) 아화"
+  },
+  {
+   "id": "brand:6c458501d842b33c",
+   "kind": "brand",
+   "ko": "아화"
+  },
+  {
+   "id": "option_name:64297bcb141279cd",
+   "kind": "option_name",
+   "ko": "아이언샤프트 선택"
+  },
+  {
+   "id": "option_value:984f9c8fe7a84b78",
+   "kind": "option_value",
+   "ko": "그라파이트 R"
+  },
+  {
+   "id": "option_value:7d463f6f32f655dc",
+   "kind": "option_value",
+   "ko": "그라파이트 RS"
+  },
+  {
+   "id": "option_value:619ee8774b0ce95a",
+   "kind": "option_value",
+   "ko": "그라파이트 S"
+  },
+  {
+   "id": "option_value:76d45c1471b5954b",
+   "kind": "option_value",
+   "ko": "스틸"
+  },
+  {
+   "id": "option_value:2d465f4bb3561c68",
+   "kind": "option_value",
+   "ko": "피팅상담요청"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:6c458501d842b33c",
+   "kind": "spec_value",
+   "ko": "아화"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:304733478a4fc1ea",
+   "kind": "spec_value",
+   "ko": "아티스틱 파크골프채 샤프트M_cloud_halfset_5P"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2c9897140d6cbb96",
+   "kind": "spec_value",
+   "ko": "국산"
+  }
+ ]
+}

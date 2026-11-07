@@ -1,0 +1,2944 @@
+{
+ "key": "fairwardgolf:naver:100568453:13002235969",
+ "listing": {
+  "product_id": "13002235969",
+  "nv_mid": "90546747061",
+  "link": "https://smartstore.naver.com/thegolf9015/products/13002235969",
+  "name": "핑 G440 MAX 풀세트 (드라이버 10.5도R, 카본 아이언 ALTA J CB BLUE (R)",
+  "store": {
+   "name": "더골프샵",
+   "slug": "thegolf9015",
+   "link": "https://smartstore.naver.com/thegolf9015",
+   "channel_no": "100568453",
+   "grade": "PREMIUM",
+   "is_brand_store": false
+  },
+  "pricing": {
+   "sale_price": 2200000,
+   "discounted_price": 2090000,
+   "discount_ratio": 5,
+   "currency": "KRW"
+  },
+  "category_id": "50002788",
+  "reviews": {
+   "count": 3,
+   "average_score": 5
+  },
+  "stock_quantity": 2398,
+  "image": "https://shopping-phinf.pstatic.net/main_9054674/90546747061.1.jpg",
+  "is_ad": true,
+  "query": "남성 골프채 풀세트",
+  "batch": 2,
+  "seen_at": "2026-11-06T16:14:02+00:00"
+ },
+ "details": {
+  "id": "13002235969",
+  "origin_product_id": "12944454813",
+  "name": "핑 G440 MAX 풀세트 (드라이버 10.5도R, 카본 아이언 ALTA J CB BLUE (R)",
+  "link": "https://smartstore.naver.com/thegolf9015/products/13002235969",
+  "catalog_id": "90546747061",
+  "catalog_link": "https://search.shopping.naver.com/catalog/90546747061",
+  "status": "SALE",
+  "sale_type": "NEW",
+  "is_displayed": true,
+  "pricing": {
+   "sale_price": 2200000,
+   "discounted_price": 2090000,
+   "discount_ratio": 5,
+   "seller_discount": 110000,
+   "manager_discount": 0,
+   "currency": "KRW",
+   "points": {
+    "purchase": 20900,
+    "text_review": 0,
+    "photo_video_review": 0,
+    "after_use_text_review": 0,
+    "after_use_photo_video_review": 0,
+    "store_member_review": 0
+   }
+  },
+  "stock_quantity": 2398,
+  "has_options": true,
+  "has_supplements": false,
+  "images": [
+   "https://shop-phinf.pstatic.net/20260822_44/17873901208696ddht_JPEG/121523042767717589_496196363.jpg"
+  ],
+  "category": {
+   "id": "50002788",
+   "name": "풀세트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "풀세트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002788"
+   ]
+  },
+  "brand": "핑",
+  "brand_id": null,
+  "manufacturer": "핑",
+  "model_name": null,
+  "tags": null,
+  "page_title": null,
+  "reviews": {
+   "count": 3,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 3
+   },
+   "text_count": 3,
+   "photo_count": 0,
+   "video_count": 0,
+   "after_use_count": 1,
+   "best_count": 0,
+   "recent": {
+    "count": 3,
+    "average_score": 5.0
+   },
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "최고예요",
+       "count": 3,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "디자인은 어떤가요?",
+     "answers": [
+      {
+       "name": "별로예요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "화면과 같아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 3,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 3,
+       "percent": 100
+      }
+     ]
+    }
+   ],
+   "representative_reviews": [
+    {
+     "id": "5050209826",
+     "score": 5,
+     "text": "구성도 알차고 전체적으로 깔끔하게 잘 받았습니다.\n한 번에 세트로 준비할 수 있어서 편하고 디자인도 마음에 들어요.\n직접 사용해보니 만족스러워서 잘 선택한 것 같습니다.",
+     "image": null
+    },
+    {
+     "id": "5031447848",
+     "score": 5,
+     "text": "타구감이 부드럽고 방향성이 안정적이라 만족합니다. 드라이버와 아이언의 밸런스도 좋고 전체적인 완성도가 높아 라운드가 더욱 즐거워졌습니다. 오래 사용할 수 있을 것 같습니다.",
+     "image": null
+    },
+    {
+     "id": "5059007509",
+     "score": 5,
+     "text": "드라이버 비거리가 30m이상 늘었네요ㅎㅎ 좋습니다",
+     "image": null
+    }
+   ]
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY",
+    "VISIT_RECEIPT"
+   ],
+   "attribute": "TODAY",
+   "is_today_delivery": null,
+   "company": "로젠택배",
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "extra_fee_text": null
+  },
+  "is_free_delivery": true,
+  "is_today_delivery": true,
+  "has_arrival_guarantee": false,
+  "has_regular_subscription": false,
+  "has_free_return_insurance": false,
+  "is_minor_purchasable": true,
+  "is_adult_restricted": false,
+  "is_in_naver_shopping": true,
+  "option_groups": null,
+  "variants": null,
+  "supplements": null,
+  "description": {
+   "html": "<div class=\"se-viewer se-theme-default\" lang=\"ko-KR\">\n    <!-- SE_DOC_HEADER_START -->\n    <!--@CONTENTS_HEADER-->\n    <!-- SE_DOC_HEADER_END -->\n    <div class=\"se-main-container\">\n                <div class=\"se-component se-image se-l-default\" id=\"SE-44efb269-c746-4486-a1cf-fa6b4f7ae17f\">\n                    <div class=\"se-component-content se-component-content-fit\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-44efb269-c746-4486-a1cf-fa6b4f7ae17f&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20250405_199/1743831662836dw1fg_JPEG/30434463209514390_345786175.jpg&quot;,&quot;originalWidth&quot;:&quot;2467&quot;,&quot;originalHeight&quot;:&quot;783&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;503234&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20250405_199/1743831662836dw1fg_JPEG/30434463209514390_345786175.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-44efb269-c746-4486-a1cf-fa6b4f7ae17f&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot;, &quot;fileSize&quot;: &quot;503234&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-74523cfa-0e9e-4cf2-99d5-507f69c1c08a\">\n                    <div class=\"se-component-content se-component-content-fit\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-74523cfa-0e9e-4cf2-99d5-507f69c1c08a&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20260329_154/1774766455680fm1pv_JPEG/108824944177622709_915232433.jpg&quot;,&quot;originalWidth&quot;:&quot;1000&quot;,&quot;originalHeight&quot;:&quot;546&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;152854&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20260329_154/1774766455680fm1pv_JPEG/108824944177622709_915232433.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-74523cfa-0e9e-4cf2-99d5-507f69c1c08a&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot;, &quot;fileSize&quot;: &quot;152854&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-3c1ed0b2-4260-4f54-a98a-c3b4cf652bc1\">\n                    <div class=\"se-component-content se-component-content-fit\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-3c1ed0b2-4260-4f54-a98a-c3b4cf652bc1&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20260121_241/1769003816917yny08_JPEG/KakaoTalk_20260120_120911944_(1).jpg&quot;,&quot;originalWidth&quot;:&quot;890&quot;,&quot;originalHeight&quot;:&quot;356&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;45740&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20260121_241/1769003816917yny08_JPEG/KakaoTalk_20260120_120911944_(1).jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-3c1ed0b2-4260-4f54-a98a-c3b4cf652bc1&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot;, &quot;fileSize&quot;: &quot;45740&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-7d9f6bb3-6f77-424e-8545-9bfd132365ef\">\n                    <div class=\"se-component-content se-component-content-fit\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-7d9f6bb3-6f77-424e-8545-9bfd132365ef&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20251005_7/1759631986376gVWHF_JPEG/%EC%83%81%EC%84%B8_%EA%B8%B0%EB%B3%B8.jpg&quot;,&quot;originalWidth&quot;:&quot;841&quot;,&quot;originalHeight&quot;:&quot;8604&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;1134610&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20251005_7/1759631986376gVWHF_JPEG/%EC%83%81%EC%84%B8_%EA%B8%B0%EB%B3%B8.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-7d9f6bb3-6f77-424e-8545-9bfd132365ef&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot;, &quot;fileSize&quot;: &quot;1134610&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-text se-l-default\" id=\"SE-9c3a8cd2-7d3c-4c88-8837-42f98a021b91\">\n                    <div class=\"se-component-content\">\n                        <div class=\"se-section se-section-text se-l-default\">\n                            <div class=\"se-module se-module-text\">\n                                    <!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align- \" style=\"\" id=\"SE-5d7cfd94-1595-4a49-89fc-62898c2b37c5\"><span style=\"\" class=\"se-fs- se-ff-   \" id=\"SE-4aade037-db09-4aa7-8463-44ac84091af1\">​</span></p><!-- } SE-TEXT -->\n                            </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_text&quot;, &quot;id&quot;: &quot;SE-9c3a8cd2-7d3c-4c88-8837-42f98a021b91&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;text&quot;  }}\"></script>\n                </div>                <div class=\"se-component se-image se-l-default\" id=\"SE-3347948c-cc70-4925-a2a0-443a3f2e594c\">\n                    <div class=\"se-component-content se-component-content-fit\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-3347948c-cc70-4925-a2a0-443a3f2e594c&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20251223_173/1766472734566wv6d3_JPEG/KakaoTalk_20251223_151514485.jpg&quot;,&quot;originalWidth&quot;:&quot;890&quot;,&quot;originalHeight&quot;:&quot;341&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;57434&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20251223_173/1766472734566wv6d3_JPEG/KakaoTalk_20251223_151514485.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-3347948c-cc70-4925-a2a0-443a3f2e594c&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot;, &quot;fileSize&quot;: &quot;57434&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-ec5602c1-02ea-44ae-98ef-e5486b4e4b9b\">\n                    <div class=\"se-component-content se-component-content-fit\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-ec5602c1-02ea-44ae-98ef-e5486b4e4b9b&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20251005_75/17596308720768hMye_JPEG/%EC%83%A4%ED%94%84%ED%8A%B8.jpg&quot;,&quot;originalWidth&quot;:&quot;890&quot;,&quot;originalHeight&quot;:&quot;597&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;77127&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20251005_75/17596308720768hMye_JPEG/%EC%83%A4%ED%94%84%ED%8A%B8.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-ec5602c1-02ea-44ae-98ef-e5486b4e4b9b&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot;, &quot;fileSize&quot;: &quot;77127&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-5d8d499a-6469-4e4a-91f1-00530f5d3833\">\n                    <div class=\"se-component-content se-component-content-normal\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-\" style=\"max-width:841px;\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-5d8d499a-6469-4e4a-91f1-00530f5d3833&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20260121_75/1769003834997kYiJD_JPEG/KakaoTalk_20260112_151648430_02.jpg&quot;,&quot;originalWidth&quot;:&quot;841&quot;,&quot;originalHeight&quot;:&quot;8936&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;1006555&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20260121_75/1769003834997kYiJD_JPEG/KakaoTalk_20260112_151648430_02.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-5d8d499a-6469-4e4a-91f1-00530f5d3833&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot;, &quot;fileSize&quot;: &quot;1006555&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-text se-l-default\" id=\"SE-ff16ee1c-cdce-42ca-9f03-b237e17717d2\">\n                    <div class=\"se-component-content\">\n                        <div class=\"se-section se-section-text se-l-default\">\n                            <div class=\"se-module se-module-text\">\n                                    <!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align- \" style=\"\" id=\"SE-572b25e5-7bd1-4b27-9420-e541603c453d\"><span style=\"\" class=\"se-fs- se-ff-   \" id=\"SE-e74a4809-b751-43ec-a706-80ad9f29a63c\">​</span></p><!-- } SE-TEXT -->\n                            </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_text&quot;, &quot;id&quot;: &quot;SE-ff16ee1c-cdce-42ca-9f03-b237e17717d2&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;text&quot;  }}\"></script>\n                </div>                <div class=\"se-component se-image se-l-default\" id=\"SE-95973ac0-9e4a-41a3-9738-51e32c645bd0\">\n                    <div class=\"se-component-content se-component-content-fit\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-95973ac0-9e4a-41a3-9738-51e32c645bd0&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20260121_249/1769003847255eI4dJ_JPEG/%EC%95%84%EC%9D%B4%EC%96%B8_%EC%8A%A4%ED%8E%991.jpg&quot;,&quot;originalWidth&quot;:&quot;2189&quot;,&quot;originalHeight&quot;:&quot;1266&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;232836&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20260121_249/1769003847255eI4dJ_JPEG/%EC%95%84%EC%9D%B4%EC%96%B8_%EC%8A%A4%ED%8E%991.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-95973ac0-9e4a-41a3-9738-51e32c645bd0&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot;, &quot;fileSize&quot;: &quot;232836&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-46dc084c-bd37-4832-a1fc-c75b9c0b6e4a\">\n                    <div class=\"se-component-content se-component-content-fit\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-46dc084c-bd37-4832-a1fc-c75b9c0b6e4a&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20260121_28/17690038472680QS3t_JPEG/%EC%95%84%EC%9D%B4%EC%96%B8_%EC%8A%A4%ED%8E%992.jpg&quot;,&quot;originalWidth&quot;:&quot;1920&quot;,&quot;originalHeight&quot;:&quot;1065&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;105706&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20260121_28/17690038472680QS3t_JPEG/%EC%95%84%EC%9D%B4%EC%96%B8_%EC%8A%A4%ED%8E%992.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-46dc084c-bd37-4832-a1fc-c75b9c0b6e4a&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot;, &quot;fileSize&quot;: &quot;105706&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-da30fc0d-8506-41e2-830e-d1d4757d5800\">\n                    <div class=\"se-component-content se-component-content-fit\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-da30fc0d-8506-41e2-830e-d1d4757d5800&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20260121_176/1769003847269Xnbfq_JPEG/%EC%95%84%EC%9D%B4%EC%96%B8_%EC%8A%A4%ED%8E%993.jpg&quot;,&quot;originalWidth&quot;:&quot;1920&quot;,&quot;originalHeight&quot;:&quot;1065&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;126716&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20260121_176/1769003847269Xnbfq_JPEG/%EC%95%84%EC%9D%B4%EC%96%B8_%EC%8A%A4%ED%8E%993.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-da30fc0d-8506-41e2-830e-d1d4757d5800&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot;, &quot;fileSize&quot;: &quot;126716&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-9134ae4a-b836-49ce-afdc-cbc630409584\">\n                    <div class=\"se-component-content se-component-content-fit\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-9134ae4a-b836-49ce-afdc-cbc630409584&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20260224_115/1771916339257im4ST_JPEG/106045372569381021_707943351.jpg&quot;,&quot;originalWidth&quot;:&quot;1920&quot;,&quot;originalHeight&quot;:&quot;540&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;63212&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20260224_115/1771916339257im4ST_JPEG/106045372569381021_707943351.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-9134ae4a-b836-49ce-afdc-cbc630409584&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot;, &quot;fileSize&quot;: &quot;63212&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-32121adb-3b28-4a41-b2e4-acfcf767a89a\">\n                    <div class=\"se-component-content se-component-content-fit\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-32121adb-3b28-4a41-b2e4-acfcf767a89a&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20250405_45/1743831640922Pa6E3_JPEG/60948062508870618_280838627.jpg&quot;,&quot;originalWidth&quot;:&quot;890&quot;,&quot;originalHeight&quot;:&quot;238&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;40691&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20250405_45/1743831640922Pa6E3_JPEG/60948062508870618_280838627.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-32121adb-3b28-4a41-b2e4-acfcf767a89a&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot;, &quot;fileSize&quot;: &quot;40691&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-image se-l-default\" id=\"SE-e3c702e4-4c8f-4968-8283-6b37fee0d89f\">\n                    <div class=\"se-component-content se-component-content-fit\">\n                        <div class=\"se-section se-section-image se-l-default se-section-align-\">\n                                <div class=\"se-module se-module-image\" style=\"\">\n                                    <a class=\"se-module-image-link __se_image_link __se_link\" style=\"\" onclick=\"return false;\" data-linktype=\"img\" data-linkdata=\"{&quot;id&quot;:&quot;SE-e3c702e4-4c8f-4968-8283-6b37fee0d89f&quot;,&quot;src&quot;:&quot;https://shop-phinf.pstatic.net/20251009_45/1759978486373imRv2_JPEG/22313003105171778_1094441035.jpg&quot;,&quot;originalWidth&quot;:&quot;860&quot;,&quot;originalHeight&quot;:&quot;982&quot;,&quot;linkUse&quot;:&quot;false&quot;,&quot;link&quot;:&quot;&quot;,&quot;fileSize&quot;:&quot;894838&quot;}\">\n                                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://shop-phinf.pstatic.net/20251009_45/1759978486373imRv2_JPEG/22313003105171778_1094441035.jpg?type=w848\"  alt=\"\" class=\"se-image-resource\">\n                                    </a>\n                                </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_image&quot;, &quot;id&quot;: &quot;SE-e3c702e4-4c8f-4968-8283-6b37fee0d89f&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;image&quot;, &quot;ai&quot;: &quot;false&quot;, &quot;fileSize&quot;: &quot;894838&quot; }}\"></script>\n                </div>\n                <div class=\"se-component se-text se-l-default\" id=\"SE-fb1977ac-b375-425e-8a37-eca26f785d39\">\n                    <div class=\"se-component-content\">\n                        <div class=\"se-section se-section-text se-l-default\">\n                            <div class=\"se-module se-module-text\">\n                                    <!-- SE-TEXT { --><p class=\"se-text-paragraph se-text-paragraph-align- \" style=\"\" id=\"SE-8ef3a2e0-25b5-4222-adff-9a6e3637c0da\"><span style=\"\" class=\"se-fs- se-ff-   \" id=\"SE-13ada4f2-1cdb-46d8-a424-e24a38115644\">​</span></p><!-- } SE-TEXT -->\n                            </div>\n                        </div>\n                    </div>\n                    <script type=\"text/data\" class=\"__se_module_data\" data-module-v2=\"{&quot;type&quot;: &quot;v2_text&quot;, &quot;id&quot;: &quot;SE-fb1977ac-b375-425e-8a37-eca26f785d39&quot;, &quot;data&quot;: {&quot;ctype&quot;: &quot;text&quot;  }}\"></script>\n                </div>    </div>\n</div>\n",
+   "text": null,
+   "editor_type": "SEONE",
+   "images": [
+    "https://shop-phinf.pstatic.net/20250405_199/1743831662836dw1fg_JPEG/30434463209514390_345786175.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20260329_154/1774766455680fm1pv_JPEG/108824944177622709_915232433.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20260121_241/1769003816917yny08_JPEG/KakaoTalk_20260120_120911944_(1).jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20251005_7/1759631986376gVWHF_JPEG/%EC%83%81%EC%84%B8_%EA%B8%B0%EB%B3%B8.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20251223_173/1766472734566wv6d3_JPEG/KakaoTalk_20251223_151514485.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20251005_75/17596308720768hMye_JPEG/%EC%83%A4%ED%94%84%ED%8A%B8.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20260121_75/1769003834997kYiJD_JPEG/KakaoTalk_20260112_151648430_02.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20260121_249/1769003847255eI4dJ_JPEG/%EC%95%84%EC%9D%B4%EC%96%B8_%EC%8A%A4%ED%8E%991.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20260121_28/17690038472680QS3t_JPEG/%EC%95%84%EC%9D%B4%EC%96%B8_%EC%8A%A4%ED%8E%992.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20260121_176/1769003847269Xnbfq_JPEG/%EC%95%84%EC%9D%B4%EC%96%B8_%EC%8A%A4%ED%8E%993.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20260224_115/1771916339257im4ST_JPEG/106045372569381021_707943351.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20250405_45/1743831640922Pa6E3_JPEG/60948062508870618_280838627.jpg?type=w848",
+    "https://shop-phinf.pstatic.net/20251009_45/1759978486373imRv2_JPEG/22313003105171778_1094441035.jpg?type=w848"
+   ]
+  },
+  "notice": {
+   "type": "SPORTS_EQUIPMENT",
+   "items": [
+    {
+     "label": "품명 / 모델명",
+     "value": "핑 G440 MAX 풀세트 (드라이버 10.5도R, 카본 아이언 ALTA J CB BLUE / 핑 G440 MAX 풀세트 (드라이버 10.5도R, 카본 아이언 ALTA J CB BLUE",
+     "is_see_description": false
+    },
+    {
+     "label": "KC 인증정보",
+     "value": ".",
+     "is_see_description": false
+    },
+    {
+     "label": "크기",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "중량",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "색상",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "재질",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제품구성",
+     "value": "본품+오리지널 커버",
+     "is_see_description": false
+    },
+    {
+     "label": "동일 모델의 출시연월",
+     "value": "2025",
+     "is_see_description": false
+    },
+    {
+     "label": "제조자(사)",
+     "value": "핑",
+     "is_see_description": false
+    },
+    {
+     "label": "제조국",
+     "value": "기타 국가",
+     "is_see_description": false
+    },
+    {
+     "label": "상품별 세부사양",
+     "value": "상품상세참조",
+     "is_see_description": true
+    },
+    {
+     "label": "품질보증기준",
+     "value": "삼양인터내셔널 정품 제품으로 보증기간 내 무상 규정에 한하여 1년  품질보증이 가능합니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "A/S 책임자와 전화번호",
+     "value": null,
+     "is_see_description": false
+    }
+   ],
+   "terms": [
+    {
+     "label": "재화등의 배송방법에 관한 정보",
+     "value": "택배등",
+     "is_see_description": false
+    },
+    {
+     "label": "주문 이후 예상되는 배송기간",
+     "value": "대금 지급일로부터 3일 이내에 발송",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+     "value": "편도 14000원 (최초 배송비 무료인 경우 28000원 부과)",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 A/S 관련 전화번호",
+     "value": null,
+     "is_see_description": false
+    },
+    {
+     "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+     "value": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+     "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+     "is_see_description": false
+    }
+   ]
+  },
+  "facts": {
+   "brand": {
+    "value": "핑",
+    "source": "search_info.brandName"
+   },
+   "manufacturer": {
+    "value": "핑",
+    "source": "search_info.manufacturerName"
+   },
+   "model_name": null,
+   "origin": {
+    "value": "기타 국가",
+    "source": "notice:제조국"
+   }
+  },
+  "store": {
+   "id": "100568453",
+   "uid": "2sWDyPslvjMOKFulUBTIr",
+   "name": "더골프샵",
+   "slug": "thegolf9015",
+   "link": "https://smartstore.naver.com/thegolf9015",
+   "type": "smart_store",
+   "grade": "FIRST",
+   "sale_count": 640,
+   "merchant_id": "510528784",
+   "business": {
+    "legal_name": "더골프샵(메이필드)",
+    "representative": "반효숙",
+    "type": "PRIVATE",
+    "is_business": true,
+    "is_overseas": false,
+    "phone": null,
+    "email": null,
+    "address": null
+   }
+  }
+ },
+ "specs": {
+  "id": "13002235969",
+  "name": "핑 G440 MAX 풀세트 (드라이버 10.5도R, 카본 아이언 ALTA J CB BLUE (R)",
+  "link": "https://smartstore.naver.com/thegolf9015/products/13002235969",
+  "query": "핑 G440 MAX 풀세트 (드라이버 10.5도R, 카본 아이언 ALTA J CB BLUE (R)",
+  "category": {
+   "id": "50002788",
+   "name": "풀세트",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "풀세트"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002788"
+   ]
+  },
+  "specs": [
+   {
+    "label": "상품번호",
+    "value": "13002235969"
+   },
+   {
+    "label": "제조사",
+    "value": "핑"
+   },
+   {
+    "label": "브랜드",
+    "value": "핑"
+   },
+   {
+    "label": "이벤트",
+    "value": "삼양인터내셔널 공식 대리점 더골프샵(메이필드)에서 믿고 구매하세요."
+   },
+   {
+    "label": "원산지",
+    "value": "기타 국가"
+   },
+   {
+    "label": "드라이버 로프트각",
+    "value": "9도, 10.5도"
+   },
+   {
+    "label": "종류",
+    "value": "풀세트"
+   },
+   {
+    "label": "성별",
+    "value": "남성용"
+   },
+   {
+    "label": "사용방향",
+    "value": "오른손용"
+   },
+   {
+    "label": "총클럽개수",
+    "value": "9개"
+   },
+   {
+    "label": "출시",
+    "value": "2025년형"
+   },
+   {
+    "label": "풀세트구성",
+    "value": "8아이언세트, 드라이버"
+   },
+   {
+    "label": "아이언개수",
+    "value": "8개"
+   }
+  ],
+  "is_complete": true,
+  "facts": {
+   "brand": {
+    "value": "핑",
+    "source": "specs:브랜드"
+   },
+   "manufacturer": {
+    "value": "핑",
+    "source": "specs:제조사"
+   },
+   "model_name": null,
+   "origin": {
+    "value": "기타 국가",
+    "source": "specs:원산지"
+   }
+  },
+  "options": {
+   "has_options": true,
+   "status": "SALE",
+   "is_sold_out": false,
+   "stock_quantity": 2398,
+   "option_groups": [
+    {
+     "id": "11263597709",
+     "name": "드라이버 선택 (ALTA J CB BLUE)",
+     "type": "COMBINATION"
+    },
+    {
+     "id": "11263597710",
+     "name": "아이언 선택 (8개)",
+     "type": "COMBINATION"
+    }
+   ],
+   "variants": [
+    {
+     "id": "55435915135",
+     "name": "10.5도 R / 카본 ALTA J CB BLUE (R)",
+     "options": [
+      "10.5도 R",
+      "카본 ALTA J CB BLUE (R)"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 98,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915136",
+     "name": "10.5도 R / 카본 ALTA J CB BLUE (SR)",
+     "options": [
+      "10.5도 R",
+      "카본 ALTA J CB BLUE (SR)"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915137",
+     "name": "10.5도 R / 스틸 AWT 3.0 Lite (R)",
+     "options": [
+      "10.5도 R",
+      "스틸 AWT 3.0 Lite (R)"
+     ],
+     "extra_price": -90000,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915138",
+     "name": "10.5도 R / 스틸 AWT 3.0 Lite (S)",
+     "options": [
+      "10.5도 R",
+      "스틸 AWT 3.0 Lite (S)"
+     ],
+     "extra_price": -90000,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915139",
+     "name": "10.5도 SR / 카본 ALTA J CB BLUE (R)",
+     "options": [
+      "10.5도 SR",
+      "카본 ALTA J CB BLUE (R)"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915140",
+     "name": "10.5도 SR / 카본 ALTA J CB BLUE (SR)",
+     "options": [
+      "10.5도 SR",
+      "카본 ALTA J CB BLUE (SR)"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915141",
+     "name": "10.5도 SR / 스틸 AWT 3.0 Lite (R)",
+     "options": [
+      "10.5도 SR",
+      "스틸 AWT 3.0 Lite (R)"
+     ],
+     "extra_price": -90000,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915142",
+     "name": "10.5도 SR / 스틸 AWT 3.0 Lite (S)",
+     "options": [
+      "10.5도 SR",
+      "스틸 AWT 3.0 Lite (S)"
+     ],
+     "extra_price": -90000,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915143",
+     "name": "10.5도 S / 카본 ALTA J CB BLUE (R)",
+     "options": [
+      "10.5도 S",
+      "카본 ALTA J CB BLUE (R)"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915144",
+     "name": "10.5도 S / 카본 ALTA J CB BLUE (SR)",
+     "options": [
+      "10.5도 S",
+      "카본 ALTA J CB BLUE (SR)"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915145",
+     "name": "10.5도 S / 스틸 AWT 3.0 Lite (R)",
+     "options": [
+      "10.5도 S",
+      "스틸 AWT 3.0 Lite (R)"
+     ],
+     "extra_price": -90000,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915146",
+     "name": "10.5도 S / 스틸 AWT 3.0 Lite (S)",
+     "options": [
+      "10.5도 S",
+      "스틸 AWT 3.0 Lite (S)"
+     ],
+     "extra_price": -90000,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915147",
+     "name": "9도 R / 카본 ALTA J CB BLUE (R)",
+     "options": [
+      "9도 R",
+      "카본 ALTA J CB BLUE (R)"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915148",
+     "name": "9도 R / 카본 ALTA J CB BLUE (SR)",
+     "options": [
+      "9도 R",
+      "카본 ALTA J CB BLUE (SR)"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915150",
+     "name": "9도 R / 스틸 AWT 3.0 Lite (R)",
+     "options": [
+      "9도 R",
+      "스틸 AWT 3.0 Lite (R)"
+     ],
+     "extra_price": -90000,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915153",
+     "name": "9도 R / 스틸 AWT 3.0 Lite (S)",
+     "options": [
+      "9도 R",
+      "스틸 AWT 3.0 Lite (S)"
+     ],
+     "extra_price": -90000,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915155",
+     "name": "9도 SR / 카본 ALTA J CB BLUE (R)",
+     "options": [
+      "9도 SR",
+      "카본 ALTA J CB BLUE (R)"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915157",
+     "name": "9도 SR / 카본 ALTA J CB BLUE (SR)",
+     "options": [
+      "9도 SR",
+      "카본 ALTA J CB BLUE (SR)"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915160",
+     "name": "9도 SR / 스틸 AWT 3.0 Lite (R)",
+     "options": [
+      "9도 SR",
+      "스틸 AWT 3.0 Lite (R)"
+     ],
+     "extra_price": -90000,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915161",
+     "name": "9도 SR / 스틸 AWT 3.0 Lite (S)",
+     "options": [
+      "9도 SR",
+      "스틸 AWT 3.0 Lite (S)"
+     ],
+     "extra_price": -90000,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915163",
+     "name": "9도 S / 카본 ALTA J CB BLUE (R)",
+     "options": [
+      "9도 S",
+      "카본 ALTA J CB BLUE (R)"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915165",
+     "name": "9도 S / 카본 ALTA J CB BLUE (SR)",
+     "options": [
+      "9도 S",
+      "카본 ALTA J CB BLUE (SR)"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915166",
+     "name": "9도 S / 스틸 AWT 3.0 Lite (R)",
+     "options": [
+      "9도 S",
+      "스틸 AWT 3.0 Lite (R)"
+     ],
+     "extra_price": -90000,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    },
+    {
+     "id": "55435915168",
+     "name": "9도 S / 스틸 AWT 3.0 Lite (S)",
+     "options": [
+      "9도 S",
+      "스틸 AWT 3.0 Lite (S)"
+     ],
+     "extra_price": -90000,
+     "stock_quantity": 100,
+     "is_available": true,
+     "is_today_dispatch": true,
+     "registered_at": "2026-01-21"
+    }
+   ],
+   "simple_options": [],
+   "text_options": [],
+   "supplements": []
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY",
+    "VISIT_RECEIPT"
+   ],
+   "attribute": "TODAY",
+   "is_today_delivery": true,
+   "company": "로젠택배",
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "extra_fee_text": null,
+   "is_overseas": false,
+   "scope": "domestic",
+   "customs_tax_type": null,
+   "lead_time": {
+    "seller_average_days": 1.6405228,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": true,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 95,
+    "ship_date_text": "11.9.(월)"
+   }
+  },
+  "measures": {
+   "is_set": true,
+   "weights": [],
+   "dimensions": [],
+   "references": [
+    {
+     "quote": "크기: 상품상세참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 2
+     },
+     "measure": "size",
+     "reason": "description_reference"
+    },
+    {
+     "quote": "중량: 상품상세참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 3
+     },
+     "measure": "weight",
+     "reason": "description_reference"
+    }
+   ],
+   "review": []
+  },
+  "read_at": "2026-11-06T16:40:10Z"
+ },
+ "variants": {
+  "paid": true,
+  "base_price": 2090000,
+  "variants": [
+   {
+    "id": "55435915135",
+    "name": "10.5도 R / 카본 ALTA J CB BLUE (R)",
+    "options": [
+     "10.5도 R",
+     "카본 ALTA J CB BLUE (R)"
+    ],
+    "extra_price": 0,
+    "price": 2090000,
+    "price_in_name": null,
+    "stock_quantity": 98,
+    "is_available": true
+   },
+   {
+    "id": "55435915136",
+    "name": "10.5도 R / 카본 ALTA J CB BLUE (SR)",
+    "options": [
+     "10.5도 R",
+     "카본 ALTA J CB BLUE (SR)"
+    ],
+    "extra_price": 0,
+    "price": 2090000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915137",
+    "name": "10.5도 R / 스틸 AWT 3.0 Lite (R)",
+    "options": [
+     "10.5도 R",
+     "스틸 AWT 3.0 Lite (R)"
+    ],
+    "extra_price": -90000,
+    "price": 2000000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915138",
+    "name": "10.5도 R / 스틸 AWT 3.0 Lite (S)",
+    "options": [
+     "10.5도 R",
+     "스틸 AWT 3.0 Lite (S)"
+    ],
+    "extra_price": -90000,
+    "price": 2000000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915139",
+    "name": "10.5도 SR / 카본 ALTA J CB BLUE (R)",
+    "options": [
+     "10.5도 SR",
+     "카본 ALTA J CB BLUE (R)"
+    ],
+    "extra_price": 0,
+    "price": 2090000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915140",
+    "name": "10.5도 SR / 카본 ALTA J CB BLUE (SR)",
+    "options": [
+     "10.5도 SR",
+     "카본 ALTA J CB BLUE (SR)"
+    ],
+    "extra_price": 0,
+    "price": 2090000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915141",
+    "name": "10.5도 SR / 스틸 AWT 3.0 Lite (R)",
+    "options": [
+     "10.5도 SR",
+     "스틸 AWT 3.0 Lite (R)"
+    ],
+    "extra_price": -90000,
+    "price": 2000000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915142",
+    "name": "10.5도 SR / 스틸 AWT 3.0 Lite (S)",
+    "options": [
+     "10.5도 SR",
+     "스틸 AWT 3.0 Lite (S)"
+    ],
+    "extra_price": -90000,
+    "price": 2000000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915143",
+    "name": "10.5도 S / 카본 ALTA J CB BLUE (R)",
+    "options": [
+     "10.5도 S",
+     "카본 ALTA J CB BLUE (R)"
+    ],
+    "extra_price": 0,
+    "price": 2090000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915144",
+    "name": "10.5도 S / 카본 ALTA J CB BLUE (SR)",
+    "options": [
+     "10.5도 S",
+     "카본 ALTA J CB BLUE (SR)"
+    ],
+    "extra_price": 0,
+    "price": 2090000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915145",
+    "name": "10.5도 S / 스틸 AWT 3.0 Lite (R)",
+    "options": [
+     "10.5도 S",
+     "스틸 AWT 3.0 Lite (R)"
+    ],
+    "extra_price": -90000,
+    "price": 2000000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915146",
+    "name": "10.5도 S / 스틸 AWT 3.0 Lite (S)",
+    "options": [
+     "10.5도 S",
+     "스틸 AWT 3.0 Lite (S)"
+    ],
+    "extra_price": -90000,
+    "price": 2000000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915147",
+    "name": "9도 R / 카본 ALTA J CB BLUE (R)",
+    "options": [
+     "9도 R",
+     "카본 ALTA J CB BLUE (R)"
+    ],
+    "extra_price": 0,
+    "price": 2090000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915148",
+    "name": "9도 R / 카본 ALTA J CB BLUE (SR)",
+    "options": [
+     "9도 R",
+     "카본 ALTA J CB BLUE (SR)"
+    ],
+    "extra_price": 0,
+    "price": 2090000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915150",
+    "name": "9도 R / 스틸 AWT 3.0 Lite (R)",
+    "options": [
+     "9도 R",
+     "스틸 AWT 3.0 Lite (R)"
+    ],
+    "extra_price": -90000,
+    "price": 2000000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915153",
+    "name": "9도 R / 스틸 AWT 3.0 Lite (S)",
+    "options": [
+     "9도 R",
+     "스틸 AWT 3.0 Lite (S)"
+    ],
+    "extra_price": -90000,
+    "price": 2000000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915155",
+    "name": "9도 SR / 카본 ALTA J CB BLUE (R)",
+    "options": [
+     "9도 SR",
+     "카본 ALTA J CB BLUE (R)"
+    ],
+    "extra_price": 0,
+    "price": 2090000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915157",
+    "name": "9도 SR / 카본 ALTA J CB BLUE (SR)",
+    "options": [
+     "9도 SR",
+     "카본 ALTA J CB BLUE (SR)"
+    ],
+    "extra_price": 0,
+    "price": 2090000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915160",
+    "name": "9도 SR / 스틸 AWT 3.0 Lite (R)",
+    "options": [
+     "9도 SR",
+     "스틸 AWT 3.0 Lite (R)"
+    ],
+    "extra_price": -90000,
+    "price": 2000000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915161",
+    "name": "9도 SR / 스틸 AWT 3.0 Lite (S)",
+    "options": [
+     "9도 SR",
+     "스틸 AWT 3.0 Lite (S)"
+    ],
+    "extra_price": -90000,
+    "price": 2000000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915163",
+    "name": "9도 S / 카본 ALTA J CB BLUE (R)",
+    "options": [
+     "9도 S",
+     "카본 ALTA J CB BLUE (R)"
+    ],
+    "extra_price": 0,
+    "price": 2090000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915165",
+    "name": "9도 S / 카본 ALTA J CB BLUE (SR)",
+    "options": [
+     "9도 S",
+     "카본 ALTA J CB BLUE (SR)"
+    ],
+    "extra_price": 0,
+    "price": 2090000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915166",
+    "name": "9도 S / 스틸 AWT 3.0 Lite (R)",
+    "options": [
+     "9도 S",
+     "스틸 AWT 3.0 Lite (R)"
+    ],
+    "extra_price": -90000,
+    "price": 2000000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   },
+   {
+    "id": "55435915168",
+    "name": "9도 S / 스틸 AWT 3.0 Lite (S)",
+    "options": [
+     "9도 S",
+     "스틸 AWT 3.0 Lite (S)"
+    ],
+    "extra_price": -90000,
+    "price": 2000000,
+    "price_in_name": null,
+    "stock_quantity": 100,
+    "is_available": true
+   }
+  ],
+  "available": 24,
+  "sold_out": 0,
+  "skipped_paid": 0,
+  "name_mismatches": [],
+  "simple_options": [],
+  "text_options": [],
+  "supplements": []
+ },
+ "package": [
+  {
+   "variant_id": "55435915135",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915136",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915137",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915138",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915139",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915140",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915141",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915142",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915143",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915144",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915145",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915146",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915147",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915148",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915150",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915153",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915155",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915157",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915160",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915161",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915163",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915165",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915166",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "55435915168",
+   "fields": {
+    "product_weight_g": {
+     "low": 3500,
+     "central": 5700,
+     "high": 9500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_weight_g": {
+     "low": 4500,
+     "central": 7000,
+     "high": 11000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_length_mm": {
+     "low": 1150,
+     "central": 1250,
+     "high": 1350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 280,
+     "high": 380,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    },
+    "package_height_mm": {
+     "low": 160,
+     "central": 230,
+     "high": 330,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 1,
+     "approved_by": "owner",
+     "approved_at": "2026-11-05"
+    }
+   },
+   "product_size": []
+  }
+ ],
+ "reviews": {
+  "product": {
+   "id": "13002235969",
+   "name": "핑 G440 MAX 풀세트 (드라이버 10.5도R, 카본 아이언 ALTA J CB BLUE (R)",
+   "link": "https://smartstore.naver.com/thegolf9015/products/13002235969"
+  },
+  "summary": {
+   "count": 3,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 3
+   },
+   "text_count": 3,
+   "photo_count": 0,
+   "video_count": 0,
+   "after_use_count": 1,
+   "best_count": 0,
+   "recent": {
+    "count": 3,
+    "average_score": 5.0
+   },
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "최고예요",
+       "count": 3,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "디자인은 어떤가요?",
+     "answers": [
+      {
+       "name": "별로예요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "화면과 같아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 3,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 3,
+       "percent": 100
+      }
+     ]
+    }
+   ],
+   "representative_reviews": [
+    {
+     "id": "5050209826",
+     "score": 5,
+     "text": "구성도 알차고 전체적으로 깔끔하게 잘 받았습니다.\n한 번에 세트로 준비할 수 있어서 편하고 디자인도 마음에 들어요.\n직접 사용해보니 만족스러워서 잘 선택한 것 같습니다.",
+     "image": null
+    },
+    {
+     "id": "5031447848",
+     "score": 5,
+     "text": "타구감이 부드럽고 방향성이 안정적이라 만족합니다. 드라이버와 아이언의 밸런스도 좋고 전체적인 완성도가 높아 라운드가 더욱 즐거워졌습니다. 오래 사용할 수 있을 것 같습니다.",
+     "image": null
+    },
+    {
+     "id": "5059007509",
+     "score": 5,
+     "text": "드라이버 비거리가 30m이상 늘었네요ㅎㅎ 좋습니다",
+     "image": null
+    }
+   ]
+  },
+  "mode": "small_source",
+  "count": 3,
+  "scanned": 3,
+  "passes": [
+   {
+    "media": "all",
+    "pages": 1,
+    "total_count": 3,
+    "is_exhausted": true
+   }
+  ],
+  "is_complete": true,
+  "results": [
+   {
+    "id": "5059007509",
+    "score": 5,
+    "text": "드라이버 비거리가 30m이상 늘었네요ㅎㅎ 좋습니다",
+    "created_at": "2026-09-06T14:15:29Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "드라이버 선택 (ALTA J CB BLUE): 10.5도 R / 아이언 선택 (8개): 카본 ALTA J CB BLUE (R)",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "kims*****",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "13002235969",
+     "origin_product_id": "12944454813",
+     "name": "핑 G440 MAX 풀세트 (드라이버 10.5도R, 카본 아이언 ALTA J CB BLUE (R)"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "5050209826",
+    "score": 5,
+    "text": "구성도 알차고 전체적으로 깔끔하게 잘 받았습니다.\n한 번에 세트로 준비할 수 있어서 편하고 디자인도 마음에 들어요.\n직접 사용해보니 만족스러워서 잘 선택한 것 같습니다.",
+    "created_at": "2026-08-25T07:07:27Z",
+    "type": "AFTER_USE",
+    "content_type": "TEXT",
+    "option": "드라이버 선택 (ALTA J CB BLUE): 10.5도 R / 아이언 선택 (8개): 카본 ALTA J CB BLUE (R)",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "dkss******",
+     "profile_image": "https://phinf.pstatic.net/contact/20230522_78/1684741313198RQbpb_JPEG/image.jpg"
+    },
+    "attachments": [],
+    "product": {
+     "id": "13002235969",
+     "origin_product_id": "12944454813",
+     "name": "핑 G440 MAX 풀세트 (드라이버 10.5도R, 카본 아이언 ALTA J CB BLUE (R)"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "5031447848",
+    "score": 5,
+    "text": "타구감이 부드럽고 방향성이 안정적이라 만족합니다. 드라이버와 아이언의 밸런스도 좋고 전체적인 완성도가 높아 라운드가 더욱 즐거워졌습니다. 오래 사용할 수 있을 것 같습니다.",
+    "created_at": "2026-07-28T23:27:34Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "드라이버 선택 (ALTA J CB BLUE): 10.5도 R / 아이언 선택 (8개): 카본 ALTA J CB BLUE (R)",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "dkss******",
+     "profile_image": "https://phinf.pstatic.net/contact/20230522_78/1684741313198RQbpb_JPEG/image.jpg"
+    },
+    "attachments": [],
+    "product": {
+     "id": "13002235969",
+     "origin_product_id": "12944454813",
+     "name": "핑 G440 MAX 풀세트 (드라이버 10.5도R, 카본 아이언 ALTA J CB BLUE (R)"
+    },
+    "likes": null,
+    "tier": "small"
+   }
+  ]
+ },
+ "photos": {
+  "store": "fairwardgolf",
+  "total": 1,
+  "files": [
+   {
+    "position": 0,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20260822_44/17873901208696ddht_JPEG/121523042767717589_496196363.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20260822_44/17873901208696ddht_JPEG/121523042767717589_496196363.jpg",
+    "source_sha256": "5b9c5326af7b16741d2acedb6a10c047d54e6b9ae015497840afd6fa08fa2022",
+    "source_bytes": 594225,
+    "source_format": "JPEG",
+    "source_width": 1000,
+    "source_height": 1000,
+    "first_frame_of": null,
+    "file": "images/13002235969/fairwardgolf-13002235969-001-0d65543d0b66743d.webp",
+    "sha256": "0d65543d0b66743d8cff47c4122d5283dec701f9a0ad74d4a304ebc8455bfd82",
+    "bytes": 120800,
+    "width": 1000,
+    "height": 1000,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true,
+  "originals": 1
+ },
+ "review_media": {
+  "store": "fairwardgolf",
+  "files": [
+   {
+    "review_id": "5050209826",
+    "kind": "review-avatar",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/contact/20230522_78/1684741313198RQbpb_JPEG/image.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20230522_78/1684741313198RQbpb_JPEG/image.jpg",
+    "source_sha256": "42f5fc1464e1978dad5f090efd9f97a1c0035d18e4885eb731734cf1bf7fe052",
+    "source_bytes": 339176,
+    "source_format": "JPEG",
+    "source_width": 1440,
+    "source_height": 810,
+    "first_frame_of": null,
+    "file": "images/13002235969/fairwardgolf-review-avatar-eb0fdaff5e2122ec.webp",
+    "sha256": "eb0fdaff5e2122ec8668f0f7c21ca1051231dc6021089dc46a231d9df28f902f",
+    "bytes": 71968,
+    "width": 1024,
+    "height": 576,
+    "quality": 85
+   },
+   {
+    "url": "https://phinf.pstatic.net/contact/20230522_78/1684741313198RQbpb_JPEG/image.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20230522_78/1684741313198RQbpb_JPEG/image.jpg",
+    "source_sha256": "42f5fc1464e1978dad5f090efd9f97a1c0035d18e4885eb731734cf1bf7fe052",
+    "source_bytes": 339176,
+    "source_format": "JPEG",
+    "source_width": 1440,
+    "source_height": 810,
+    "first_frame_of": null,
+    "file": "images/13002235969/fairwardgolf-review-avatar-eb0fdaff5e2122ec.webp",
+    "sha256": "eb0fdaff5e2122ec8668f0f7c21ca1051231dc6021089dc46a231d9df28f902f",
+    "bytes": 71968,
+    "width": 1024,
+    "height": 576,
+    "quality": 85,
+    "review_id": "5031447848",
+    "kind": "review-avatar",
+    "from_video": false
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true
+ }
+}

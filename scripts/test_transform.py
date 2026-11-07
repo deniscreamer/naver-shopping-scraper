@@ -390,10 +390,42 @@ def test_pilot20_transform():
     assert all(not o["name_ko"].startswith("(선택)") for o in p["product"]["options"])
     p = prepare(_fixture("13302492097"), RULES, "r", 1)              # 128 -> 100, 총클럽개수 3개
     codes = {n["code"]: n["detail"] for n in p["notes"]}
-    assert codes["variants_capped"] == "128 -> 100" and codes["few_pieces"] == "총클럽개수 3개"
+    assert codes["variants_capped"] == "128 -> 100" and codes["few_pieces"] == "3종"           # the title says it
     first = {}
     for v in p["product"]["variants"]:
         first[v["options_ko"][0]] = first.get(v["options_ko"][0], 0) + 1
     assert max(first.values()) - min(first.values()) <= 4             # shared out between the two drivers (was 64 / 36)
     p = prepare(_fixture("10816781893"), RULES, "r", 1)              # 사은품 오리지널커버 증정: a thing, hidden
     assert {n["code"]: n["detail"] for n in p["notes"]}["gift_hidden"] == "오리지널커버 증정"
+
+
+def test_run40b_transform():
+    # 2026-11-07, 40 more sets
+    full = _fixture("12950788305")                                   # 497 combinations of 3 axes, cap 100
+    p = prepare(full, RULES, "r", 1)
+    assert len(p["product"]["variants"]) == 100
+    sold = {tuple(v["options_ko"]) for v in p["product"]["variants"]}
+    n = len(p["product"]["options"])
+    pairs = lambda combos: {(a, x[a], b, x[b]) for x in combos for a in range(n) for b in range(a + 1, n)}
+    every = {tuple(_tidy_all(r["options"])) for r in full["specs"]["options"]["variants"] if r.get("is_available")}
+    assert pairs(every) <= pairs(sold)                                # every pair of values still buyable
+    def few(pid):
+        return {x["code"]: x["detail"] for x in prepare(_fixture(pid), RULES, "r", 1)["notes"]}.get("few_pieces")
+    assert few("13058280430") == "3종" and few("10954221464") in ("5P", "하프세트") and few("13058200331") == "2종"
+    assert few("11042680586") is None and few("13780241403") is None        # "10+1pcs"; a 12pc set (row 3개)
+    origin = {r["label_ko"]: r["value_ko"] for r in prepare(_fixture("13026991307"), RULES, "r", 1)["product"]["specs"]}
+    assert origin["원산지"] == "미국산(핑(미국) 미즈노(일본) 웨지퍼터(중국))"       # the parts' own countries
+    p = prepare(_fixture("9168175809"), RULES, "r", 1)              # the only option is SIMPLE
+    assert {"label_ko": "", "value_ko": "드라이버+우드+하이브리드/SR"} in p["product"]["facts"]
+    p = prepare(_fixture("13462927626"), RULES, "r", 1)             # "[G192]01_미즈노 클럽 렌치"; 색상 = 세트 R / S
+    assert p["product"]["addons"][0]["name_ko"] == "미즈노 클럽 렌치" and p["product"]["addons"][0]["group_ko"] == "렌치"
+    assert "색상" in {x["code"]: x["detail"] for x in p["notes"]}["option_name_placeholder"]
+
+
+def _tidy_all(values):
+    return [transform._tidy(v) for v in values]
+
+
+def test_few_pieces_not_when_a_variant_is_a_full_set():
+    p = prepare(_fixture("6999516176"), RULES, "r", 1)              # title "4종 스틸", values 4종 / 12종 sets
+    assert "few_pieces" not in {x["code"] for x in p["notes"]}

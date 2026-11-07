@@ -1,0 +1,412 @@
+{
+ "id": "13026991307",
+ "channelServiceType": "STOREFARM",
+ "channelProductType": "SINGLE",
+ "channelProductSupplyType": "OWNER",
+ "channelProductStatusType": "NORMAL",
+ "channelProductDisplayStatusType": "ON",
+ "category": {
+  "categoryId": "50002788",
+  "categoryName": "풀세트",
+  "category1Id": "50000007",
+  "category2Id": "50000029",
+  "category3Id": "50001102",
+  "category4Id": "50002788",
+  "category1Name": "스포츠/레저",
+  "category2Name": "골프",
+  "category3Name": "골프클럽",
+  "category4Name": "풀세트",
+  "wholeCategoryId": "50000007>50000029>50001102>50002788",
+  "wholeCategoryName": "스포츠/레저>골프>골프클럽>풀세트",
+  "categoryLevel": 4,
+  "lastLevel": true,
+  "sortOrder": 10,
+  "validCategory": true,
+  "receiptIssue": true,
+  "exceptionalCategoryTypes": [
+   "REGULAR_SUBSCRIPTION",
+   "RENTAL_SUBSCRIPTION",
+   "MANUFACTURE_DEFINE_NO",
+   "FREE_RETURN_INSURANCE"
+  ],
+  "pointAccumulationYn": false
+ },
+ "name": "핑 G440K 남성조합골프채풀세트 미즈노 925 아이언포함 11개 택1 9도유틸4S번6아이언웨지2개퍼터",
+ "productUrl": "https://smartstore.naver.com/main/products/13026991307",
+ "mobileProductUrl": "https://m.smartstore.naver.com/main/products/13026991307",
+ "storeKeepExclusiveProduct": false,
+ "best": false,
+ "orderRequestUsable": false,
+ "channelProductAttributes": [],
+ "productNo": "12969138051",
+ "salePrice": 2790000,
+ "dispSalePrice": 2790000,
+ "stockQuantity": 400,
+ "saleType": "NEW",
+ "excludeAdminDiscount": false,
+ "payExposure": true,
+ "productStatusType": "SALE",
+ "statusType": "SALE",
+ "authenticationType": "NORMAL",
+ "itselfProductionProductYn": false,
+ "afterServiceInfo": {
+  "afterServiceTelephoneNumber": "********",
+  "afterServiceGuideContent": "********"
+ },
+ "originAreaInfo": {
+  "originAreaType": "IMPORT",
+  "content": "미국산(핑(미국) 미즈노(일본) 웨지퍼터(중국))",
+  "originAreaCode": "0204000",
+  "wholeOriginAreaName": "수입산:북아메리카(북미)>미국",
+  "importer": "핑(미국) 미즈노(일본) 웨지퍼터(중국)",
+  "plural": false
+ },
+ "optionUsable": true,
+ "options": [
+  {
+   "id": 11285048443,
+   "optionType": "COMBINATION",
+   "groupName": "선택"
+  }
+ ],
+ "optionCombinations": [
+  {
+   "id": 55583778966,
+   "optionName1": "택1 9도유틸4S번6아이언웨지2개퍼터",
+   "stockQuantity": 100,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2026-01-27T08:23:36.493+00:00"
+  },
+  {
+   "id": 55583778967,
+   "optionName1": "택2 9도유틸4SR번6아이언웨지2개퍼터",
+   "stockQuantity": 100,
+   "price": 0,
+   "regOrder": 1,
+   "registerDate": "2026-01-27T08:23:36.494+00:00"
+  },
+  {
+   "id": 55583778968,
+   "optionName1": "택3 10.5도유틸4SR번6아이언웨지2개퍼터",
+   "stockQuantity": 100,
+   "price": 0,
+   "regOrder": 2,
+   "registerDate": "2026-01-27T08:23:36.495+00:00"
+  },
+  {
+   "id": 55583778969,
+   "optionName1": "택4 10.5도유틸4R번6아이언웨지2개퍼터",
+   "stockQuantity": 100,
+   "price": 0,
+   "regOrder": 3,
+   "registerDate": "2026-01-27T08:23:36.496+00:00"
+  }
+ ],
+ "optionStandards": [],
+ "supplementProductUsable": false,
+ "supplementProducts": [],
+ "customMadeInfo": {
+  "customMade": false
+ },
+ "taxType": "TAX",
+ "certification": false,
+ "certificationTargetExcludeContent": {
+  "kcCertifiedProductExclusionYn": true,
+  "kcCertifiedProductExclusionType": "TRUE"
+ },
+ "minorPurchasable": true,
+ "productInfoProvidedNoticeView": {
+  "basic": {
+   "종류": "상품상세참조",
+   "소재": "상품상세참조",
+   "치수": "상품상세참조",
+   "제조자(사)": "상품상세참조",
+   "제조국": "미국산(핑(미국) 미즈노(일본) 웨지퍼터(중국))",
+   "취급시 주의사항": "상품상세참조",
+   "품질보증기준": "상품상세참조",
+   "A/S 책임자와 전화번호": "********"
+  },
+  "additional": {
+   "재화등의 배송방법에 관한 정보": "택배",
+   "주문 이후 예상되는 배송기간": "대금 지급일로부터 3일 이내에 발송",
+   "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보": "상품상세 참조",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보": "편도 3000원 (최초 배송비 무료인 경우 6000원 부과)",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거": "상품상세 참조",
+   "재화등의 교환·반품·보증 조건 및 품질보증기준": "상품상세 참조",
+   "재화등의 A/S 관련 전화번호": "********",
+   "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차": "상품상세 참조",
+   "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항": "상품상세 참조",
+   "거래에 관한 약관의 내용 또는 확인할 수 있는 방법": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다."
+  }
+ },
+ "productDeliveryInfo": {
+  "deliveryFeeType": "FREE",
+  "deliveryMethodTypes": [
+   "DELIVERY"
+  ],
+  "baseFee": 0,
+  "installationFee": false,
+  "deliveryBundleGroup": {
+   "id": 700804,
+   "deliveryFeeChargeMethodType": "MAX",
+   "deliveryAreaType": "AREA_2",
+   "area2ExtraFee": 3000
+  },
+  "deliveryFeePolicyText": "제주,도서지역 추가 3,000원",
+  "deliveryAttributeType": "NORMAL",
+  "todayDelivery": false,
+  "deliveryCompany": {
+   "id": "HYUNDAI",
+   "name": "롯데택배"
+  }
+ },
+ "claimDeliveryInfo": {
+  "returnDeliveryCompanyPriority": "PRIMARY",
+  "deliveryCompanyName": "롯데택배",
+  "deliveryCompanyCode": "HYUNDAI",
+  "naverPayAppointment": false,
+  "returnDeliveryFee": 3000,
+  "exchangeDeliveryFee": 6000,
+  "shippingAddressId": 838041,
+  "returnAddressId": 838040,
+  "shippingAddress": "경기도 하남시 천호대로1358번길  27 초이동 29-1 (우 : 12987) ",
+  "returnAddress": "경기도 하남시 천호대로1358번길  27 초이동 29-1 (우 : 12987) ",
+  "overseasShipping": false,
+  "freeReturnInsurance": false
+ },
+ "isCultureCostIncomeDeduction": false,
+ "isRestrictCart": false,
+ "naverGuaranteed": false,
+ "newShoppingExposureYn": true,
+ "benefitsView": {
+  "discountedSalePrice": 2290000,
+  "dispDiscountedSalePrice": 2290000,
+  "sellerImmediateDiscountAmount": 500000,
+  "managerImmediateDiscountAmount": 0,
+  "specialDiscountAmount": {},
+  "discountedRatio": 17,
+  "dispDiscountedRatio": 17,
+  "sellerPurchasePoint": 0,
+  "sellerCustomerManagementPoint": 0,
+  "managerPurchasePoint": 22900,
+  "managerPurchaseExtraPoint": 0,
+  "managerPaymoneyAccumulatePoint": 30000,
+  "managerBankbookAccumulatePoint": 10000,
+  "managerArrivalGuaranteePoint": 0,
+  "managerMembershipArrivalGuaranteePoint": 0,
+  "generalPurchaseReviewPoint": 0,
+  "premiumPurchaseReviewPoint": 0,
+  "managerGeneralPurchaseReviewPoint": 50,
+  "managerPremiumPurchaseReviewPoint": 150,
+  "textReviewPoint": 0,
+  "photoVideoReviewPoint": 0,
+  "afterUseTextReviewPoint": 0,
+  "afterUsePhotoVideoReviewPoint": 0,
+  "storeMemberReviewPoint": 0,
+  "managerTextReviewPoint": 50,
+  "managerPhotoVideoReviewPoint": 150,
+  "managerAfterUseTextReviewPoint": 50,
+  "managerAfterUsePhotoVideoReviewPoint": 150,
+  "givePresent": false
+ },
+ "sellerDeliveryLeadTimes": [
+  {
+   "rangeNumberText": "1",
+   "rangeText": "일 이내",
+   "leadTimeCount": 114,
+   "leadTimePercent": 40
+  },
+  {
+   "rangeNumberText": "2",
+   "rangeText": "일 이내",
+   "leadTimeCount": 162,
+   "leadTimePercent": 57
+  },
+  {
+   "rangeNumberText": "3",
+   "rangeText": "일 이내",
+   "leadTimeCount": 7,
+   "leadTimePercent": 2
+  },
+  {
+   "rangeNumberText": "4",
+   "rangeText": "일 이상",
+   "leadTimeCount": 3,
+   "leadTimePercent": 1
+  }
+ ],
+ "averageDeliveryLeadTime": {
+  "productAverageDeliveryLeadTime": 0,
+  "sellerAverageDeliveryLeadTime": 1.6013986
+ },
+ "sellerDailyDeliveryLeadTimes": {
+  "leadTimeCount": [
+   14,
+   100,
+   162,
+   7,
+   2,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "leadTimeViewType": "NORMAL_DELIVERY"
+ },
+ "detailContents": {
+  "excessDetailContentText": false,
+  "editorType": "NONE"
+ },
+ "useExternalStock": false,
+ "dispName": "핑 G440K 남성조합골프채풀세트 미즈노 925 아이언포함 11개 택1 9도유틸4S번6아이언웨지2개퍼터",
+ "adultAuthorizationType": "NOT_LOGIN",
+ "authorizationDisplay": "NORMAL",
+ "galleryImages": [
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20260127_39/1769501988168qYS0j_JPEG/27879456308000839_1277521930.jpg",
+   "width": 720,
+   "height": 720,
+   "imageType": "REPRESENTATIVE"
+  }
+ ],
+ "soldout": false,
+ "viewAttributes": {
+  "상품상태": "신상품",
+  "상품번호": "13026991307",
+  "제조사": "핑",
+  "브랜드": "핑",
+  "원산지": "미국산(핑(미국) 미즈노(일본) 웨지퍼터(중국))"
+ },
+ "additionalAttributes": {
+  "영수증발급": "신용카드전표, 현금영수증발급",
+  "A/S 안내": [
+   "********",
+   "********"
+  ]
+ },
+ "detailAttributes": {
+  "아이언 구성": "피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW), #8",
+  "종류": "조합풀세트",
+  "성별": "남성용",
+  "사용방향": "오른손용",
+  "총클럽개수": "11개",
+  "출시": "2026년형",
+  "풀세트구성": "드라이버, 유틸리티, 퍼터, 8아이언세트",
+  "아이언샤프트소재": "스틸",
+  "아이언개수": "11개",
+  "퍼터형태": "블레이드(일자형)",
+  "골프백포함여부": "미포함"
+ },
+ "eCouponCategory": false,
+ "cultureCategory": false,
+ "textOptions": [],
+ "simpleOptions": [],
+ "combinationOptions": [
+  {
+   "groupName": "선택",
+   "options": [
+    {
+     "id": 55583778966,
+     "optionName1": "택1 9도유틸4S번6아이언웨지2개퍼터",
+     "stockQuantity": 100,
+     "price": 0,
+     "regOrder": 0,
+     "registerDate": "2026-01-27T08:23:36.493+00:00"
+    },
+    {
+     "id": 55583778967,
+     "optionName1": "택2 9도유틸4SR번6아이언웨지2개퍼터",
+     "stockQuantity": 100,
+     "price": 0,
+     "regOrder": 1,
+     "registerDate": "2026-01-27T08:23:36.494+00:00"
+    },
+    {
+     "id": 55583778968,
+     "optionName1": "택3 10.5도유틸4SR번6아이언웨지2개퍼터",
+     "stockQuantity": 100,
+     "price": 0,
+     "regOrder": 2,
+     "registerDate": "2026-01-27T08:23:36.495+00:00"
+    },
+    {
+     "id": 55583778969,
+     "optionName1": "택4 10.5도유틸4R번6아이언웨지2개퍼터",
+     "stockQuantity": 100,
+     "price": 0,
+     "regOrder": 3,
+     "registerDate": "2026-01-27T08:23:36.496+00:00"
+    }
+   ],
+   "checkedName": null,
+   "checkedIds": null,
+   "price": 0,
+   "isLastDepth": true
+  }
+ ],
+ "standardOptions": [],
+ "standardCombinations": [
+  {
+   "id": 55583778966,
+   "optionName1": "택1 9도유틸4S번6아이언웨지2개퍼터",
+   "stockQuantity": 100,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2026-01-27T08:23:36.493+00:00",
+   "title": "_택1 9도유틸4S번6아이언웨지2개퍼터____"
+  },
+  {
+   "id": 55583778967,
+   "optionName1": "택2 9도유틸4SR번6아이언웨지2개퍼터",
+   "stockQuantity": 100,
+   "price": 0,
+   "regOrder": 1,
+   "registerDate": "2026-01-27T08:23:36.494+00:00",
+   "title": "_택2 9도유틸4SR번6아이언웨지2개퍼터____"
+  },
+  {
+   "id": 55583778968,
+   "optionName1": "택3 10.5도유틸4SR번6아이언웨지2개퍼터",
+   "stockQuantity": 100,
+   "price": 0,
+   "regOrder": 2,
+   "registerDate": "2026-01-27T08:23:36.495+00:00",
+   "title": "_택3 10.5도유틸4SR번6아이언웨지2개퍼터____"
+  },
+  {
+   "id": 55583778969,
+   "optionName1": "택4 10.5도유틸4R번6아이언웨지2개퍼터",
+   "stockQuantity": 100,
+   "price": 0,
+   "regOrder": 3,
+   "registerDate": "2026-01-27T08:23:36.496+00:00",
+   "title": "_택4 10.5도유틸4R번6아이언웨지2개퍼터____"
+  }
+ ],
+ "supplements": [],
+ "deliveryText": "제주,도서지역 추가 3,000원",
+ "deliveryMethodType": {
+  "code": 1,
+  "name": "택배",
+  "description": "택배",
+  "etc": null,
+  "naverPayCode": "DELIVERY"
+ },
+ "discountedSalePrice": 2290000,
+ "mobileDiscountRatio": 17,
+ "derived": {
+  "productType": "DEFAULT"
+ },
+ "hopeDelivery": null,
+ "commentCount": 0,
+ "isPayMember": false,
+ "arrivalGuarantee": false,
+ "groupId": null,
+ "groupEpId": null,
+ "simpleProductAffiliateYn": false,
+ "disableAdditionalApi": false
+}

@@ -1,0 +1,939 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:100335426:11042680586",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/samsung-golf/products/11042680586",
+  "channel_no": "100335426",
+  "product_id": "11042680586",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "마제스티 로얄 남성 조합 풀세트 10+1pcs 마제스티골프코리아100%",
+  "brand_ko": "마제스티",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "아이언세트(25년 로얄)",
+    "values_ko": [
+     "8아이언세트 카본 R",
+     "8아이언세트 카본 SR"
+    ]
+   },
+   {
+    "name_ko": "우드(23년 로얄)",
+    "values_ko": [
+     "3번 R",
+     "5번 R"
+    ]
+   },
+   {
+    "name_ko": "유틸리티(23년 로얄)",
+    "values_ko": [
+     "3번 R",
+     "5번 R"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"8아이언세트 카본 R\",\"3번 R\",\"3번 R\"]",
+    "naver_variant_id": "57661193066",
+    "options_ko": [
+     "8아이언세트 카본 R",
+     "3번 R",
+     "3번 R"
+    ],
+    "price_krw": 3800000,
+    "price_usd": "3800.00",
+    "sku": "FW-632828daffdaa083a094d52d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"8아이언세트 카본 R\",\"3번 R\",\"5번 R\"]",
+    "naver_variant_id": "57661193067",
+    "options_ko": [
+     "8아이언세트 카본 R",
+     "3번 R",
+     "5번 R"
+    ],
+    "price_krw": 3800000,
+    "price_usd": "3800.00",
+    "sku": "FW-58511eacb89f4ae7cbd83e96",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"8아이언세트 카본 R\",\"5번 R\",\"3번 R\"]",
+    "naver_variant_id": "57661193068",
+    "options_ko": [
+     "8아이언세트 카본 R",
+     "5번 R",
+     "3번 R"
+    ],
+    "price_krw": 3800000,
+    "price_usd": "3800.00",
+    "sku": "FW-548f4465a81aacdb4577404b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"8아이언세트 카본 R\",\"5번 R\",\"5번 R\"]",
+    "naver_variant_id": "57661193069",
+    "options_ko": [
+     "8아이언세트 카본 R",
+     "5번 R",
+     "5번 R"
+    ],
+    "price_krw": 3800000,
+    "price_usd": "3800.00",
+    "sku": "FW-68d0d31617713cd86276e128",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"8아이언세트 카본 SR\",\"3번 R\",\"3번 R\"]",
+    "naver_variant_id": "57661193070",
+    "options_ko": [
+     "8아이언세트 카본 SR",
+     "3번 R",
+     "3번 R"
+    ],
+    "price_krw": 3800000,
+    "price_usd": "3800.00",
+    "sku": "FW-54c6bccffa85f35d8c046a2f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"8아이언세트 카본 SR\",\"3번 R\",\"5번 R\"]",
+    "naver_variant_id": "57661193071",
+    "options_ko": [
+     "8아이언세트 카본 SR",
+     "3번 R",
+     "5번 R"
+    ],
+    "price_krw": 3800000,
+    "price_usd": "3800.00",
+    "sku": "FW-aaf0dd5a38123647a2dd2052",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"8아이언세트 카본 SR\",\"5번 R\",\"3번 R\"]",
+    "naver_variant_id": "57661193072",
+    "options_ko": [
+     "8아이언세트 카본 SR",
+     "5번 R",
+     "3번 R"
+    ],
+    "price_krw": 3800000,
+    "price_usd": "3800.00",
+    "sku": "FW-a2aea59eef6c9d961c445705",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"8아이언세트 카본 SR\",\"5번 R\",\"5번 R\"]",
+    "naver_variant_id": "57661193073",
+    "options_ko": [
+     "8아이언세트 카본 SR",
+     "5번 R",
+     "5번 R"
+    ],
+    "price_krw": 3800000,
+    "price_usd": "3800.00",
+    "sku": "FW-f067ffe58c9e7256f8398f1e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 3800000,
+   "original_krw": 5400000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "마제스티"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "마제스티"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "마제스티 로얄 남성 조합 풀세트"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "일본산"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "9.5도, 10.5도"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#5, #6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "조합풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "11개"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "드라이버, 8아이언세트, 페어웨이, 유틸리티"
+   },
+   {
+    "label_ko": "아이언샤프트소재",
+    "value_ko": "그라파이트/카본"
+   },
+   {
+    "label_ko": "아이언개수",
+    "value_ko": "8개"
+   },
+   {
+    "label_ko": "골프백포함여부",
+    "value_ko": "미포함"
+   }
+  ],
+  "personalization": [
+   {
+    "label_ko": "네임택용 성함 및 장갑 사이즈",
+    "required": true,
+    "max_length": 20,
+    "placeholder_ko": "입력해주세요"
+   }
+  ],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/11042680586/fairwardgolf-11042680586-001-6ca2bdb05462c2c3.webp",
+    "sha256": "6ca2bdb05462c2c37d646a477d4286f44aec816df34e8ef7beb0d791eef6f2fa",
+    "width": 500,
+    "height": 500
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 2.3,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": true,
+    "arrival_days": 3,
+    "arrival_date_text": null,
+    "arrival_probability": 90,
+    "ship_date_text": "11.9.(월)"
+   },
+   "extra_fee_text": "제주/도서산간 제외"
+  },
+  "description_ko": "🖤 무상 A/S 3년 🖤\n🖤 3년 1회 무상 그립 교체 🖤\n🖤 마제스티 100% 정품 🖤\n🖤 본사 정품 등록가능 제품 🖤\n※ 값싼 병행 상품 절대 아닙니다 ※",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20241024_117/17297416404935WPbI_PNG/%EB%A7%88%EC%A0%9C%EC%8A%A4%ED%8B%B0%ED%94%84%EB%A1%9C%EB%AA%A8%EC%85%9801.png?type=w848",
+   "https://shop-phinf.pstatic.net/20241024_68/1729741748753DfWhO_PNG/%EB%A7%88%EC%A0%9C%EC%8A%A4%ED%8B%B0%EB%A1%9C%EC%96%84%EB%B3%B8%EB%AC%B801.png?type=w848",
+   "https://shop-phinf.pstatic.net/20230412_137/1681264184916H3YYR_PNG/%EC%A0%9C%EB%AA%A9_%EC%97%86%EB%8A%94_%EB%94%94%EC%9E%90%EC%9D%B8_(17).png?type=w848",
+   "https://shop-phinf.pstatic.net/20230412_61/1681264193307xoMxw_PNG/%EC%A0%9C%EB%AA%A9_%EC%97%86%EB%8A%94_%EB%94%94%EC%9E%90%EC%9D%B8_(16).png?type=w848",
+   "https://shop-phinf.pstatic.net/20230412_77/1681264199171KlwP4_PNG/%EC%A0%9C%EB%AA%A9_%EC%97%86%EB%8A%94_%EB%94%94%EC%9E%90%EC%9D%B8_(18).png?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "store_claim",
+    "text": "🖤 마제스티 공식 대리점 🖤"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:a2732ddf239e4ea1",
+   "kind": "title",
+   "ko": "마제스티 로얄 남성 조합 풀세트 10+1pcs 마제스티골프코리아100%"
+  },
+  {
+   "id": "brand:c6e2221f8524a588",
+   "kind": "brand",
+   "ko": "마제스티"
+  },
+  {
+   "id": "option_name:cc357023568464f9",
+   "kind": "option_name",
+   "ko": "아이언세트(25년 로얄)"
+  },
+  {
+   "id": "option_value:f44e632c75a88e69",
+   "kind": "option_value",
+   "ko": "8아이언세트 카본 R"
+  },
+  {
+   "id": "option_value:f88c65c81eca3d90",
+   "kind": "option_value",
+   "ko": "8아이언세트 카본 SR"
+  },
+  {
+   "id": "option_name:d208c8e0ea8ca9e7",
+   "kind": "option_name",
+   "ko": "우드(23년 로얄)"
+  },
+  {
+   "id": "option_value:801d05af7315856f",
+   "kind": "option_value",
+   "ko": "3번 R"
+  },
+  {
+   "id": "option_value:572e0d25c20592b7",
+   "kind": "option_value",
+   "ko": "5번 R"
+  },
+  {
+   "id": "option_name:dcf3ea530b21d90e",
+   "kind": "option_name",
+   "ko": "유틸리티(23년 로얄)"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:c6e2221f8524a588",
+   "kind": "spec_value",
+   "ko": "마제스티"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:dbb8b3f786213bda",
+   "kind": "spec_value",
+   "ko": "마제스티 로얄 남성 조합 풀세트"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2d5ea77cf8032c99",
+   "kind": "spec_value",
+   "ko": "일본산"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:219c558824edff74",
+   "kind": "spec_value",
+   "ko": "9.5도, 10.5도"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:5ace0004401aa84b",
+   "kind": "spec_value",
+   "ko": "#5, #6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:94abee9ad24a637a",
+   "kind": "spec_value",
+   "ko": "조합풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:5b1bc698007c9da7",
+   "kind": "spec_value",
+   "ko": "11개"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:a7a4a6dacf139245",
+   "kind": "spec_value",
+   "ko": "드라이버, 8아이언세트, 페어웨이, 유틸리티"
+  },
+  {
+   "id": "spec_label:5a12089f44ae3f65",
+   "kind": "spec_label",
+   "ko": "아이언샤프트소재"
+  },
+  {
+   "id": "spec_value:ef00cceb8d6a2241",
+   "kind": "spec_value",
+   "ko": "그라파이트/카본"
+  },
+  {
+   "id": "spec_label:cf77915a2f3ab5d8",
+   "kind": "spec_label",
+   "ko": "아이언개수"
+  },
+  {
+   "id": "spec_value:77e34e31f3da3e43",
+   "kind": "spec_value",
+   "ko": "8개"
+  },
+  {
+   "id": "spec_label:e4aabb2e41b870bd",
+   "kind": "spec_label",
+   "ko": "골프백포함여부"
+  },
+  {
+   "id": "spec_value:96f0fed466f17e8e",
+   "kind": "spec_value",
+   "ko": "미포함"
+  },
+  {
+   "id": "text_label:e718ea00bb58d7b2",
+   "kind": "text_label",
+   "ko": "네임택용 성함 및 장갑 사이즈"
+  },
+  {
+   "id": "text_placeholder:d3c67557e47ff4e8",
+   "kind": "text_placeholder",
+   "ko": "입력해주세요"
+  }
+ ]
+}

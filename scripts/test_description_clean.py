@@ -268,7 +268,7 @@ def test_clean_images_store_banners_seen_on_the_rerun():
     assert clean_images(kept)["images"] == kept
 
 
-# ---- pilot 20 (research 2026-11-06, research/PILOT20-FINDINGS.md T1 / T2) ----------------------------------------
+# ---- pilot 20 (2026-11-06, scripts/SELLER_DATA.md "Description cleanup") -------------------------------------------
 
 def test_junk_only_description_is_none():
     """13741767690: the whole description text is "o" (editor NONE): no word, nothing to translate."""
@@ -308,11 +308,87 @@ def test_krw_price_must_not_match(kept):
 
 
 def test_cross_sell_line():
-    """8958060680: the line points at a product card the parser left out."""
-    t = "⛳블랙 컬러 모델은 2026년 9월에 출시되었습니다.\n해당 상품은 아래 링크에서 구매하실 수 있습니다."
-    assert text(t) == "⛳블랙 컬러 모델은 2026년 9월에 출시되었습니다."
-    assert rules(t) == ["cross_sell"]
+    """8958060680 / 13785630702: the follow-up points at a product card the parser left out, and its lead line is
+    about that other product (the other colour): both go, the lead first."""
+    for lead in ("⛳블랙 컬러 모델은 2026년 9월에 출시되었습니다.", "⛳화이트 컬러 모델은 기존 출시 상품입니다."):
+        t = f"{lead}\n해당 상품은 아래 링크에서 구매하실 수 있습니다.\n\n브리지스톤 BG-100"
+        out = clean(t)
+        assert out["text"] == "브리지스톤 BG-100"
+        assert out["dropped"] == [{"rule": "cross_sell", "text": lead},
+                                  {"rule": "cross_sell", "text": "해당 상품은 아래 링크에서 구매하실 수 있습니다."}]
     assert text("아래 이미지로 직접 확인하십시오!") == "아래 이미지로 직접 확인하십시오!"      # 12931402258
+
+
+@pytest.mark.parametrize("t,kept", [
+    # the line before is the product itself (8958060680 text), not another colour / model: it stays
+    ("사용하기 편한 11개 클럽 세트입니다.\n해당 상품은 아래 링크에서 구매하실 수 있습니다.", "사용하기 편한 11개 클럽 세트입니다."),
+    # another block: the colour line ends its own component
+    ("⛳블랙 컬러 모델은 2026년 9월에 출시되었습니다.\n\n해당 상품은 아래 링크에서 구매하실 수 있습니다.",
+     "⛳블랙 컬러 모델은 2026년 9월에 출시되었습니다."),
+    # the follow-up does not refer back ("해당 / 이 상품"): the lead is not its subject
+    ("⛳블랙 컬러 모델은 2026년 9월에 출시되었습니다.\n아래 링크에서 구매하실 수 있습니다.",
+     "⛳블랙 컬러 모델은 2026년 9월에 출시되었습니다."),
+])
+def test_cross_sell_lead_must_not_match(t, kept):
+    assert text(t) == kept
+
+
+def test_authenticity_pitch():
+    """8958060680 / 13785630702: the seller's quotation block on genuine goods and OEM-marked clubs is about the
+    store and other sellers, not the product: store_claim, sentence by sentence."""
+    t = ("📢일본 현지 정식 유통 정품만 판매합니다.\n중국 등에서 유통되는\nOEM 표기 골프채는\n공식 유통 제품과 구성 및\n"
+         "유통 경로가 다를 수 있습니다.\n구매 전 정품 여부와\nA/S 가능 여부를 반드시 확인해 주세요.\n"
+         "골프채 풀세트는 본래\n클럽과 캐디백이 함께 구성된 세트 상품입니다.\n클럽만 따로 판매하거나\n"
+         "캐디백과 분리해 판매하는 경우\n정식 세트 상품인지, 유통 경로가 명확한지\n확인해 주세요.")
+    out = clean(t)
+    assert out["text"] == "골프채 풀세트는 본래\n클럽과 캐디백이 함께 구성된 세트 상품입니다."
+    assert [d["rule"] for d in out["dropped"]] == ["store_claim"] * 4
+    assert out["dropped"][3]["text"].startswith("클럽만 따로 판매하거나\n")
+
+
+@pytest.mark.parametrize("kept", [
+    "🖤 마제스티 코리아 100% 정품",                                              # 10649210920
+    "🖤 본사 정품등록 가능 제품",
+    "※ 값싼 병행 상품 절대 아닙니다.",
+    "던롭스포츠코리아 100% 정품",                                                # 12931412033
+    "[ 한국캘러웨이골프 정품 ]",                                                 # 13049116377
+    "정품 헤드커버 포함",                                                        # 13302492097
+    "(정식통관및 품질AS보증라벨 부착)",                                           # 10302181901
+    "2013년 폭발적인 비거리와 성능으로 큰 사랑을 받았던 명기 캘러웨이 X HOT의 정식 복각 패키지 세트!",  # 13777887875
+    "정품 등록 후\n무상 A/S 3년 보장",                                           # 12434254421
+    "🖤 무상 A/S, 그립교체",                                                     # 10649210920
+])
+def test_authenticity_must_not_match(kept):
+    assert text(kept) == kept
+
+
+def test_sentences_join_on_or_case_and_whether():
+    """"...판매하거나" / "...판매하는 경우" / "...명확한지" go on in the next line (8958060680); "본래" too."""
+    lines = ["클럽만 따로 판매하거나", "캐디백과 분리해 판매하는 경우", "정식 세트 상품인지, 유통 경로가 명확한지", "확인해 주세요.",
+             "골프채 풀세트는 본래", "클럽과 캐디백이 함께 구성된 세트 상품입니다."]
+    assert list(sentences(lines)) == [lines[:4], lines[4:]]
+    # nouns ending on 지 are not "whether" (8958060680, 13049116377, 5342852376, 6774818843)
+    for noun in ("어프로치를 쉽게 해주는 3개의 웨지", "PW,AW,SW: 웨지 디자인을 적용한 샌드웨지",
+                 "추가 구매 상품 여성 골프장갑 미끄럼방지", "호평의 캘러웨이 클럽 세트가 리뉴얼된, 고품질 패키지"):
+        assert list(sentences([noun, "x"])) == [[noun], ["x"]], noun
+
+
+def test_label_line():
+    """10076378929 / 12391261816 / 12391346892: "제품상세" heads the images, alone on its line: nothing to read."""
+    t = "캐디백 포함\n\n제품상세\n\n[안내사항]\n스틸 세트"
+    assert text(t) == "캐디백 포함\n\n[안내사항]\n스틸 세트" and rules(t) == ["label"]
+    assert text("캐디백 포함\n제품상세\n[안내사항]") == "캐디백 포함\n[안내사항]"     # editor NONE, one block
+
+
+@pytest.mark.parametrize("kept", [
+    "[제품 상세 사양]",                                                          # 13728190518, a table's heading
+    "구분 | 상세 내용",
+    "Details\n\n드 라 이 버",                                                   # 7166885441, heads text
+    "상세 페이지 내용 확인후 구매 바랍니다.",                                      # 5342852376
+    "제품상세 스펙은 아래와 같습니다.",
+])
+def test_label_must_not_match(kept):
+    assert text(kept) == kept
 
 
 def test_contact_sentence_goes_whole():
@@ -349,7 +425,9 @@ def test_store_name_without_its_prefix():
     """8958060680: the store is "일본 구매대행 해피마로", the text says "해피마로는"."""
     t = "해피마로는 일본 현지에서\n정식 유통되는 제품만 취급하며,\n일본 내 공식 A/S 대상인 정품만 판매합니다.\n\n아이언"
     assert text(t, store_name="일본 구매대행 해피마로") == "아이언"
-    assert rules(t, store_name="일본 구매대행 해피마로") == ["store_name"]
+    # the real quote is a genuine-goods claim too (store_claim comes first); the name alone is store_name
+    assert rules(t, store_name="일본 구매대행 해피마로") == ["store_claim"]
+    assert rules("해피마로 추천 세트\n\n아이언", store_name="일본 구매대행 해피마로") == ["store_name"]
     # a store named after products keeps its whole name: no word of it alone is the store
     assert text("풀세트 드라이버 10.5도", store_name="씨에스골프 풀세트 드라이버") == "풀세트 드라이버 10.5도"
     assert text("좋은 상점 풀세트", store_name="쓸모있는 상점") == "좋은 상점 풀세트"
@@ -464,4 +542,44 @@ def test_qwerty_banner_name():
                                   # Latin runs that do type whole syllables (찯야색, 터도뿋), no banner word in them
                                   "ckeditor_202603100624083429_0.jpg", "O1CN01eZnhbN1xy5XjehQYG_3694786511.jpg"])
 def test_qwerty_banner_name_must_not_match(name):
+    assert clean_images(["https://a.b/" + name])["dropped"] == []
+
+
+def test_tracking_pixel():
+    """13728190518: p.tcdn.co.kr/.../6a86d63e42e7754b885ab8c4 is 1x1 (originalWidth 1 / originalHeight 1, no file
+    extension): a tracking pixel, not a picture."""
+    src = "https://p.tcdn.co.kr/wejrljelwkrw/ss/6a86d63e42e7754b885ab8c4"
+    photo = "https://file.percenty.co.kr/public/x/products/y/093870ed.jpg"
+    out = clean_images([src, photo], _ld(src, 1, 1) + _ld(photo, 600, 600))
+    assert out["images"] == [photo]
+    assert out["dropped"] == [{"rule": "pixel", "link": src, "name": "6a86d63e42e7754b885ab8c4"}]
+
+
+@pytest.mark.parametrize("w,h", [(860, 1), (0, 0), (1, 600), ("", "")])
+def test_tracking_pixel_must_not_match(w, h):
+    """860x1: an outside image the editor did not measure (8396163567 727_01.jpg); 0x0 (13728190518 percenty
+    /profile/ images) and no size: unknown."""
+    src = "https://ai.esmplus.com/yyuu88/dysys/pgm/727x6/727_01.jpg"
+    assert clean_images([src], _ld(src, w, h))["dropped"] == []
+
+
+def test_banner_names_today_and_holidays():
+    """10076378929 / 12391261816 "오늘출발.gif" (830x830, the store's same-day dispatch badge); 5558420432 / 6153061020
+    event/chuseok.jpg (a 추석 delivery notice, in the tiles: body_notes lists it)."""
+    names = ["https://shop-phinf.pstatic.net/x/%EC%98%A4%EB%8A%98%EC%B6%9C%EB%B0%9C.gif",
+             "https://a.b/%EB%8B%B9%EC%9D%BC%EB%B0%9C%EC%86%A1.jpg",                       # 당일발송.jpg
+             "https://a.b/2026_%EC%B6%94%EC%84%9D_%EC%95%88%EB%82%B4.jpg",                 # 2026_추석_안내.jpg
+             "https://a.b/%EC%84%A4%EB%82%A0.png",                                         # 설날.png
+             proxy("gvtour.cafe24.com/event/chuseok.jpg")]
+    assert [d["name"] for d in clean_images(names)["dropped"]] == [
+        "오늘출발.gif", "당일발송.jpg", "2026_추석_안내.jpg", "설날.png", "chuseok.jpg"]
+    tiles = ["https://shop-phinf.pstatic.net/20210430_1/p-5534659640-s-1-A-0.jpg"]
+    assert body_notes(f'<img src="{proxy("gvtour.cafe24.com/event/chuseok.jpg")}">', tiles) == [
+        {"code": "description_tiles_include_banners", "detail": "chuseok.jpg"}]
+
+
+@pytest.mark.parametrize("name", ["%EC%88%98%EC%84%9C%EA%B6%8C_2026.png",                 # 수서권_2026.png
+                                  "gvtour_instar_gr_21.jpg", "today_g430.jpg", "%EC%B6%9C%EB%B0%9C.jpg",
+                                  "%EC%84%A4%EB%AA%85.jpg"])                               # 설명.jpg
+def test_banner_names_today_must_not_match(name):
     assert clean_images(["https://a.b/" + name])["dropped"] == []

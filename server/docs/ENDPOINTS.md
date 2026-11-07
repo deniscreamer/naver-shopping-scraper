@@ -234,7 +234,9 @@ block can be ended where its component ends. Bodies without components (editor N
 SmartEditor cards that are not the product's own text (`se-material` shopping cards, `se-oglink` link cards to other
 products or TalkTalk, `se-placesMap` store map and address, `se-blind` screen-reader text), in-page jump links (`<a
 href="#top">`, "▲ 이동(상단)"), structural labels and lines made only of hashtags ("#골린이#풀세트#스탠드백"; club numbers like
-"#PW" or "#5-#9" stay). `description.images`: the snapImages when the backend gives them, else the body's own photos
+"#PW" or "#5-#9" stay). Tables (se-table) give one line per row, cells joined by " | " (the header row too; a spanned
+cell once; since 2026-11-07, before each cell was its own line).
+`description.images`: the snapImages when the backend gives them, else the body's own photos
 (data-src over src), without the images of those cards (link-card thumbnails, shopping-card posters, the static map).
 - `notice.items[]` / `notice.terms[]`: `{label, value, is_see_description}`; `is_see_description` is true when the
   value only points elsewhere ("상품상세참조", "[상세설명참조]", "크기 항목 참조"). This is the legal 상품정보제공고시

@@ -1,0 +1,396 @@
+{
+ "id": "13785630702",
+ "channelServiceType": "STOREFARM",
+ "channelProductType": "SINGLE",
+ "channelProductSupplyType": "OWNER",
+ "channelProductStatusType": "NORMAL",
+ "channelProductDisplayStatusType": "ON",
+ "category": {
+  "categoryId": "50002788",
+  "categoryName": "풀세트",
+  "category1Id": "50000007",
+  "category2Id": "50000029",
+  "category3Id": "50001102",
+  "category4Id": "50002788",
+  "category1Name": "스포츠/레저",
+  "category2Name": "골프",
+  "category3Name": "골프클럽",
+  "category4Name": "풀세트",
+  "wholeCategoryId": "50000007>50000029>50001102>50002788",
+  "wholeCategoryName": "스포츠/레저>골프>골프클럽>풀세트",
+  "categoryLevel": 4,
+  "lastLevel": true,
+  "sortOrder": 10,
+  "validCategory": true,
+  "receiptIssue": true,
+  "exceptionalCategoryTypes": [
+   "MANUFACTURE_DEFINE_NO",
+   "RENTAL_SUBSCRIPTION",
+   "REGULAR_SUBSCRIPTION",
+   "FREE_RETURN_INSURANCE"
+  ],
+  "pointAccumulationYn": false
+ },
+ "name": "브리지스톤 BG-100 BG100 남성용 골프채 풀세트 11개 캐디백 포함 블랙",
+ "productUrl": "https://smartstore.naver.com/main/products/13785630702",
+ "mobileProductUrl": "https://m.smartstore.naver.com/main/products/13785630702",
+ "storeKeepExclusiveProduct": false,
+ "best": false,
+ "orderRequestUsable": false,
+ "channelProductAttributes": [],
+ "productNo": "13724574062",
+ "salePrice": 865000,
+ "dispSalePrice": 865000,
+ "stockQuantity": 1998,
+ "saleType": "NEW",
+ "excludeAdminDiscount": false,
+ "payExposure": true,
+ "productStatusType": "SALE",
+ "statusType": "SALE",
+ "authenticationType": "NORMAL",
+ "itselfProductionProductYn": false,
+ "afterServiceInfo": {
+  "afterServiceTelephoneNumber": "********",
+  "afterServiceGuideContent": "********"
+ },
+ "originAreaInfo": {
+  "originAreaType": "INCLUDE_IN_DETAILS",
+  "content": "상세설명에 표시",
+  "originAreaCode": "03",
+  "wholeOriginAreaName": "상세설명에 표시",
+  "plural": false
+ },
+ "sellerCodeInfo": {
+  "sellerManagementCode": "83215",
+  "sellerCustomCode1": "GOLF SET - BRIDGESTONE BG-100 Black Edition",
+  "sellerCustomCode2": "950631"
+ },
+ "optionUsable": true,
+ "options": [
+  {
+   "id": 11913613204,
+   "optionType": "COMBINATION",
+   "groupName": "브리지스톤 BG-100 블랙 풀세트 캐디백포함"
+  }
+ ],
+ "optionCombinations": [
+  {
+   "id": 60244480012,
+   "optionName1": "블랙 에디션 스틸 샤프트 (S) SPEC",
+   "stockQuantity": 999,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2026-10-02T06:53:49.818+00:00"
+  },
+  {
+   "id": 60244480013,
+   "optionName1": "블랙 에디션 카본 샤프트 (R) SPEC",
+   "stockQuantity": 999,
+   "price": 0,
+   "regOrder": 1,
+   "registerDate": "2026-10-02T06:53:49.820+00:00"
+  }
+ ],
+ "optionStandards": [],
+ "supplementProductUsable": false,
+ "supplementProducts": [],
+ "customMadeInfo": {
+  "customMade": false
+ },
+ "eventPhraseCont": "알림받기 1,000원 쿠폰 / 리뷰 작성 시 최대 2,000원 적립",
+ "taxType": "TAX",
+ "customsTaxType": "EXCLUDED",
+ "certification": false,
+ "certificationTargetExcludeContent": {
+  "kcCertifiedProductExclusionYn": true,
+  "kcCertifiedProductExclusionType": "KC_EXEMPTION_OBJECT",
+  "kcExemptionType": "OVERSEAS"
+ },
+ "sellerCommentContent": "🔸반품 / 교환을 원하시는 경우\n\n상품 수령 후 7일 이내 상품과 구성품, 태그, 상품 박스 등의 상품 가치를 훼손하지 않고 수령했었던 원상태 그대로 보내주셔야하며 현지 왕복배송비 + 국제 왕복배송비 + 수입세금 및 제비용이 청구됩니다\n\n🔸상품에 불량을 발견했을 경우\n\n불량인 부분의 사진과 함께 1:1 문의를 남겨주시기 바랍니다\n\n- 상품 수령 7일 이후의 반품 및 교환은 어려울 수 있으니, 상품에 문제가 없는지 바로 확인해주시길 바랍니다.\n- 판매처 및 제조사 규정에 따라 반품 불가 사유가 있을 수 있습니다.\n\n자세한 사항은 톡톡으로 문의주시면\n친절히 답변드리겠습니다🙇‍♀",
+ "minorPurchasable": true,
+ "productInfoProvidedNoticeView": {
+  "basic": {
+   "품명 / 모델명": "브리지스톤 BG-100 BG100 블랙 남성용 골프채 풀세트 11개 캐디백 포함 / 브리지스톤 BG-100 BG100 블랙 남성용 골프채 풀세트 11개 캐디백 포함",
+   "법에 의한 인증, 허가 등을 받았음을 확인할 수 있는 경우 그에 대한 사항": "상품상세참조",
+   "제조자(사)": "브리지스톤",
+   "제조국": "상세설명에 표시",
+   "A/S 책임자": "상품상세참조",
+   "A/S 전화번호": "********"
+  },
+  "additional": {
+   "재화등의 배송방법에 관한 정보": "택배",
+   "주문 이후 예상되는 배송기간": "대금 지급일로부터 3일 이내에 발송",
+   "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보": "편도 80000원 (최초 배송비 무료인 경우 160000원 부과)",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+   "재화등의 교환·반품·보증 조건 및 품질보증기준": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "재화등의 A/S 관련 전화번호": "********",
+   "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+   "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "거래에 관한 약관의 내용 또는 확인할 수 있는 방법": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다."
+  }
+ },
+ "productDeliveryInfo": {
+  "deliveryFeeType": "UNIT_QUANTITY_PAID",
+  "deliveryMethodTypes": [
+   "DELIVERY"
+  ],
+  "baseFee": 99900,
+  "deliveryFeePayType": "PREPAID",
+  "repeatQuantity": 1,
+  "deliveryAreaType": "AREA_2",
+  "area2ExtraFee": 4000,
+  "installationFee": false,
+  "deliveryFeePolicyText": "1개마다 부과 / 제주,도서지역 추가 4,000원",
+  "deliveryAttributeType": "NORMAL",
+  "todayDelivery": false,
+  "deliveryCompany": {
+   "id": "PANTOS",
+   "name": "LX판토스"
+  }
+ },
+ "claimDeliveryInfo": {
+  "returnDeliveryCompanyPriority": "PRIMARY",
+  "deliveryCompanyName": "한진택배",
+  "deliveryCompanyCode": "HANJIN",
+  "naverPayAppointment": true,
+  "returnDeliveryFee": 80000,
+  "exchangeDeliveryFee": 80000,
+  "shippingAddressId": 105676717,
+  "returnAddressId": 105676716,
+  "shippingAddress": "537 0024 5F Okouchibiru, 1-11-2 Higashiobase Higashinari-ku, Osakashi, Osakafu, Japan",
+  "returnAddress": "537 0024 5F Okouchibiru, 1-11-2 Higashiobase Higashinari-ku, Osakashi, Osakafu, Japan",
+  "overseasShipping": true,
+  "individualCustomUniqueCodeUsable": true,
+  "freeReturnInsurance": false
+ },
+ "isCultureCostIncomeDeduction": false,
+ "isRestrictCart": false,
+ "naverGuaranteed": false,
+ "newShoppingExposureYn": true,
+ "benefitsView": {
+  "discountedSalePrice": 724700,
+  "dispDiscountedSalePrice": 724700,
+  "sellerImmediateDiscountAmount": 140300,
+  "managerImmediateDiscountAmount": 0,
+  "specialDiscountAmount": {},
+  "discountedRatio": 16,
+  "dispDiscountedRatio": 16,
+  "sellerPurchasePoint": 0,
+  "sellerCustomerManagementPoint": 0,
+  "managerPurchasePoint": 7247,
+  "managerPurchaseExtraPoint": 0,
+  "managerPaymoneyAccumulatePoint": 10870,
+  "managerBankbookAccumulatePoint": 3623,
+  "managerArrivalGuaranteePoint": 0,
+  "managerMembershipArrivalGuaranteePoint": 0,
+  "generalPurchaseReviewPoint": 500,
+  "premiumPurchaseReviewPoint": 1000,
+  "managerGeneralPurchaseReviewPoint": 50,
+  "managerPremiumPurchaseReviewPoint": 150,
+  "textReviewPoint": 500,
+  "photoVideoReviewPoint": 1000,
+  "afterUseTextReviewPoint": 500,
+  "afterUsePhotoVideoReviewPoint": 1000,
+  "storeMemberReviewPoint": 0,
+  "managerTextReviewPoint": 50,
+  "managerPhotoVideoReviewPoint": 150,
+  "managerAfterUseTextReviewPoint": 50,
+  "managerAfterUsePhotoVideoReviewPoint": 150,
+  "presentContent": "알림받기 1,000원 쿠폰 / 리뷰 작성 시 최대 2,000원 적립",
+  "givePresent": false
+ },
+ "averageDeliveryLeadTime": {
+  "productAverageDeliveryLeadTime": 0,
+  "sellerAverageDeliveryLeadTime": 3.6365461
+ },
+ "detailContents": {
+  "detailContentText": "BRIDGESTONE GOLF는 브리지스톤 그룹의 기술력과 품질 철학을 바탕으로 전개되는 골프 브랜드입니다. 골프 클럽과 골프볼을 비롯한 다양한 골프용품을 선보이고 있으며, 2014년부터 일본을 비롯한 글로벌 시장에서 본격적으로 브랜드를 전개해 왔습니다. 브리지스톤은 골퍼 한 사람 한 사람에게 맞는 상품을 기획·개발하며, 품질과 신뢰를 중요하게 생각합니다. 📢일본 현지 정식 유통 정품만 판매합니다. 중국 등에서 유통되는 OEM 표기 골프채는 공식 유통 제품과 구성 및 유통 경로가 다를 수 있습니다. 구매 전 정품 여부와 A/S 가능 여부를 반드시 확인해 주세요. 골프채 풀세트는 본래 클럽과 캐디백이 함께 구성된 세트 상품입니다. 클럽만 따로 판매하거나 캐디백과 분리해 판매하는 경우 정식 세트 상품인지, 유통 경로가 명확한지 확인해 주세요. 해피마로는 일본 현지에서 정식 유통되는 제품만 취급하며, 일본 내 공식 A/S 대상인 정품만 판매합니다. 고가의 해외구매대행 상품인 만큼 궁금한 점이 있으시면 네이버 톡톡으로 문의해 주세요. ⛳화이트 컬러 모델은 기존 출시 상품입니다. 해당 상품은 아래 링크에서 구매하실 수 있습니다. 브리지스톤 BG-100 남성용 골프채 풀세트 11개 블랙 헤드커버 / 캐디백 포함 2026년 9월 모델 📢 관부가세 별도 상품입니다. 처음 시작하는 분이나 오랜만에 골프를 다시 시작하는 분께 추천하는 사용하기 편한 11개 클럽 세트입니다. 구성 가볍고 미스샷에도 강해 편하게 비거리를 낼 수 있도록 설계되었습니다. S : 297g / R : 294g 타점이 일정하지 않은 경우를 고려한 부분별 두께 설계를 적용했습니다. 세컨드 샷을 쉽게 할 수 있는 유틸리티 롱아이언으로 공략하는 거리에서도 편하게 사용할 수 있는 4번 유틸리티가 포함되어 있습니다. 어프로치를 쉽게 해주는 3개의 웨지 상황에 따라 구분해서 사용하기 쉬운 웨지 구성입니다. 9번 아이언 38° / PW 44° / AW 50° / SW 56° ※ 각 클럽 간 로프트 각도 차이 6° 페어웨이 우드 아이언 퍼터 샤프트 헤드커버 ※ 드라이버(1W), 페어웨이우드(5W), 유틸리티(U4), 퍼터에는 헤드커버가 포함됩니다. 캐디백 사이즈 : 9형 / 47인치 대응 무게 : 약 3.8kg 소재 : 합성피혁 SPEC 모델 BRIDGESTONE GOLF BG-100 헤드 소재 드라이버: 페이스 / 6AL-4V 티타늄 합금, 크라운 / 341 티타늄 합금, 솔 / 순티타늄, 호젤 / 3AL-2V 티타늄 합금 페어웨이우드·유틸리티: 바디 / SUS630 스테인리스, 크라운 / SUS430 스테인리스 아이언: SUS630 스테인리스 퍼터: SUS431 스테인리스 헤드 제조 방식 드라이버: 프레스 가공 페어웨이우드·유틸리티·아이언·퍼터: 로스트왁스 정밀주조 구분 1W 5W U4 퍼터 로프트각(°) R: 10.5 / S: 9.5 19 24 3 라이각(°) 60 59.5 60.5 70 길이(인치) 45.25 42.5 39.5 34 클럽 무게(g) R: 294 / S: 297 R: 317 / S: 320 R: 351 / S: 353 528 구분 #6 #7 #8 #9 PW AW SW 로프트각(°) 25 28 33 38 44 50 56 라이각(°) 61.5 62 62.5 63 63.5 63.5 63.5 길이(인치) R 38 37.5 37 36.5 36 35.75 35.5 길이(인치) S 37.75 37.25 36.75 36.25 35.75 35.5 35.25 #7 클럽 무게(g) R: 375 / S: 410 구분 R 세트 (아이언 카본) S 세트 (아이언 스틸) 샤프트 1W·5W: Diamana for BG-100w 카본 U4: Diamana for BG-100u 카본 아이언: Diamana for BG-100i 카본 퍼터: BSG 오리지널 스틸 1W·5W: Diamana for BG-100w 카본 U4: Diamana for BG-100u 카본 아이언: N.S.PRO 955GH 스틸 퍼터: BSG 오리지널 스틸 샤프트 강도 R S 밸런스 1W·5W·U4: D1 #6~9·PW: D0 AW: D1 SW: D2 1W·5W·U4: D1 #6~9·PW: D1 AW: D2 SW: D3 출시 2026년 9월 ※ 드라이버(1W), 페",
+  "excessDetailContentText": true,
+  "editorType": "SEONE"
+ },
+ "useExternalStock": false,
+ "dispName": "브리지스톤 BG-100 BG100 남성용 골프채 풀세트 11개 캐디백 포함 블랙",
+ "adultAuthorizationType": "NOT_LOGIN",
+ "authorizationDisplay": "NORMAL",
+ "galleryImages": [
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20261002_291/1790923280224CcNMo_PNG/15891096858594667_1808645768.png",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "REPRESENTATIVE"
+  },
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20261002_69/1790923303552Quz5N_PNG/125056088703119050_289736927.png",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 2,
+   "url": "https://shop-phinf.pstatic.net/20261002_253/1790923303664cIgze_PNG/125056088809429781_1199138180.png",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 3,
+   "url": "https://shop-phinf.pstatic.net/20261002_29/1790923303796dA7kU_PNG/125056088947947385_2110417736.png",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 4,
+   "url": "https://shop-phinf.pstatic.net/20261002_36/17909233039020UXT6_PNG/125056089053616833_1536359623.png",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 5,
+   "url": "https://shop-phinf.pstatic.net/20261002_15/1790923304034zEX1b_PNG/125056089186909325_916093916.png",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 6,
+   "url": "https://shop-phinf.pstatic.net/20261002_220/1790923304168JJQwj_PNG/125056089321586979_1361205904.png",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 7,
+   "url": "https://shop-phinf.pstatic.net/20261002_231/1790923304283stXLh_PNG/125056089437514176_1041877467.png",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 8,
+   "url": "https://shop-phinf.pstatic.net/20261002_201/1790923304409f58va_PNG/125056089560555378_1656038839.png",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 9,
+   "url": "https://shop-phinf.pstatic.net/20261002_22/1790923304540KzMO0_PNG/125056089687785208_1611588034.png",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  }
+ ],
+ "soldout": false,
+ "viewAttributes": {
+  "상품상태": "신상품",
+  "상품번호": "13785630702",
+  "제조사": "브리지스톤",
+  "브랜드": "브리지스톤",
+  "이벤트": "알림받기 1,000원 쿠폰 / 리뷰 작성 시 최대 2,000원 적립",
+  "사은품": "알림받기 1,000원 쿠폰 / 리뷰 작성 시 최대 2,000원 적립",
+  "원산지": "상세설명에 표시"
+ },
+ "additionalAttributes": {
+  "영수증발급": "신용카드전표, 현금영수증발급",
+  "A/S 안내": [
+   "********",
+   "********"
+  ],
+  "판매자 특이사항": "🔸반품 / 교환을 원하시는 경우\n\n상품 수령 후 7일 이내 상품과 구성품, 태그, 상품 박스 등의 상품 가치를 훼손하지 않고 수령했었던 원상태 그대로 보내주셔야하며 현지 왕복배송비 + 국제 왕복배송비 + 수입세금 및 제비용이 청구됩니다\n\n🔸상품에 불량을 발견했을 경우\n\n불량인 부분의 사진과 함께 1:1 문의를 남겨주시기 바랍니다\n\n- 상품 수령 7일 이후의 반품 및 교환은 어려울 수 있으니, 상품에 문제가 없는지 바로 확인해주시길 바랍니다.\n- 판매처 및 제조사 규정에 따라 반품 불가 사유가 있을 수 있습니다.\n\n자세한 사항은 톡톡으로 문의주시면\n친절히 답변드리겠습니다🙇‍♀"
+ },
+ "detailAttributes": {
+  "유틸리티/하이브리드 로프트각": "24도",
+  "페어웨이 로프트각": "19도",
+  "드라이버 로프트각": "9.5도, 10.5도",
+  "아이언 구성": "#7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)",
+  "종류": "풀세트",
+  "성별": "남성용",
+  "사용방향": "오른손용",
+  "총클럽개수": "11개",
+  "출시": "2026년형",
+  "풀세트구성": "드라이버, 7아이언세트, 페어웨이, 유틸리티, 퍼터",
+  "아이언개수": "7개",
+  "퍼터형태": "블레이드(일자형)",
+  "골프백포함여부": "캐디백"
+ },
+ "eCouponCategory": false,
+ "cultureCategory": false,
+ "textOptions": [],
+ "simpleOptions": [],
+ "combinationOptions": [
+  {
+   "groupName": "브리지스톤 BG-100 블랙 풀세트 캐디백포함",
+   "options": [
+    {
+     "id": 60244480012,
+     "optionName1": "블랙 에디션 스틸 샤프트 (S) SPEC",
+     "stockQuantity": 999,
+     "price": 0,
+     "regOrder": 0,
+     "registerDate": "2026-10-02T06:53:49.818+00:00"
+    },
+    {
+     "id": 60244480013,
+     "optionName1": "블랙 에디션 카본 샤프트 (R) SPEC",
+     "stockQuantity": 999,
+     "price": 0,
+     "regOrder": 1,
+     "registerDate": "2026-10-02T06:53:49.820+00:00"
+    }
+   ],
+   "checkedName": null,
+   "checkedIds": null,
+   "price": 0,
+   "isLastDepth": true
+  }
+ ],
+ "standardOptions": [],
+ "standardCombinations": [
+  {
+   "id": 60244480012,
+   "optionName1": "블랙 에디션 스틸 샤프트 (S) SPEC",
+   "stockQuantity": 999,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2026-10-02T06:53:49.818+00:00",
+   "title": "_블랙 에디션 스틸 샤프트 (S) SPEC____"
+  },
+  {
+   "id": 60244480013,
+   "optionName1": "블랙 에디션 카본 샤프트 (R) SPEC",
+   "stockQuantity": 999,
+   "price": 0,
+   "regOrder": 1,
+   "registerDate": "2026-10-02T06:53:49.820+00:00",
+   "title": "_블랙 에디션 카본 샤프트 (R) SPEC____"
+  }
+ ],
+ "supplements": [],
+ "deliveryText": "1개마다 부과 / 제주,도서지역 추가 4,000원",
+ "deliveryMethodType": {
+  "code": 1,
+  "name": "택배",
+  "description": "택배",
+  "etc": null,
+  "naverPayCode": "DELIVERY"
+ },
+ "deliveryPayType": "PREPAID",
+ "discountedSalePrice": 724700,
+ "mobileDiscountRatio": 16,
+ "derived": {
+  "productType": "DEFAULT"
+ },
+ "hopeDelivery": null,
+ "commentCount": 0,
+ "isPayMember": false,
+ "arrivalGuarantee": false,
+ "groupId": null,
+ "groupEpId": null,
+ "simpleProductAffiliateYn": false,
+ "disableAdditionalApi": false
+}

@@ -35,7 +35,7 @@ Per candidate:
 The words that decide kind and scope are the label and the value's segment holding the number (between '/', ',',
 ';', '|', ' 및 ' and the neighbouring numbers, plus a bracket right after it: "약 1.2kg(포장 포함)").
 
-Sets (2026-11-06, research/rnd on the 40 golf sets and 86 saved pages): `is_set` comes from the name or category
+Sets (2026-11-06, checked on 40 golf sets and 86 saved pages): `is_set` comes from the name or category
 (세트, set, a count: 6아이언, 12pcs, 3종, 11개 구성). In a set a part's weight is kind component: a part word or club
 code (드라이버, 캐디백, 1W, 5i, #7, PW, 7번), a part named before the line's ':' ("#6 아이언: ... 418g"), a club
 heading line above it in the description ("1. 드라이버 (1W)"), a reference club ("7번 기준", any "...기준" in a set).
@@ -213,8 +213,8 @@ def _lines(rows, notice, description, page_html, product_id):
         for i, r in enumerate((notice or {}).get(part) or []):
             yield "notice", {"block": part, "row": i}, r.get("label") or "", r.get("value") or ""
     for i, line in enumerate(((description or {}).get("text") or "").split("\n")):
-        if line.strip():
-            yield "description", {"block": "text", "row": i}, "", line
+        if line.strip() and " | " not in line:      # a table row "a | b | c" (pdp.description_text, 2026-11-07):
+            yield "description", {"block": "text", "row": i}, "", line     # read cell by cell from the HTML below
     for i, (label, value) in enumerate(json_ld_rows(page_html, product_id)):
         yield "json_ld", {"block": "Product", "row": i}, label, value
     for i, (label, value, cell) in enumerate(table_rows((description or {}).get("html"))):

@@ -4,7 +4,9 @@ A product page costs ~30-60 s in the owner's Chrome (search -> card -> page), so
 listing already shows, and every row left out gets one reason code (the owner's list, 2026-11-05), checked in
 this order:
 
-  sponsored          an ad card (`is_ad`), when the exclusions file says exclude_sponsored
+  sponsored          an ad card (`is_ad`), only when the run asks for it (exclude_sponsored=True): ads are kept
+                     by default (the owner, 2026-11-06: an ad card is a product like the others); the
+                     harvester file's excludeSponsored is not followed
   title_unavailable  no product name: nothing to screen or search by
   rental             a rental offer: a stop word of listing_exclusions.json in the name
   category_mismatch  the row's category is not exactly the leaf category of the run (no parent matches)
@@ -93,11 +95,12 @@ class Screen:
     (refresh `published` with set_published before each product: the snapshot is kept 5 minutes at most)."""
 
     def __init__(self, category_id: str, namespace: str, published: Iterable[str] = (),
-                 deferred: Iterable[str] = (), exclusions: dict[str, Any] | None = None):
+                 deferred: Iterable[str] = (), exclusions: dict[str, Any] | None = None,
+                 exclude_sponsored: bool = False):
         rules = (exclusions or load_exclusions())["universal"]
         self.category_id = str(category_id)
         self.namespace = namespace
-        self.exclude_sponsored = bool(rules.get("excludeSponsored"))
+        self.exclude_sponsored = exclude_sponsored    # ads kept (the owner, 2026-11-06), whatever the file says
         self.rules = rules.get("rules", [])
         self.published = set(published)
         self.deferred = set(deferred)

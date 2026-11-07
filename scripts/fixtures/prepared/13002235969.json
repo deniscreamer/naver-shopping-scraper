@@ -1,0 +1,2073 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:100568453:13002235969",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "title_names_one_variant",
+   "detail": "10.5도R, 카본, ALTA, J, CB, BLUE"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/thegolf9015/products/13002235969",
+  "channel_no": "100568453",
+  "product_id": "13002235969",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "핑 G440 MAX 풀세트 (드라이버 10.5도R, 카본 아이언 ALTA J CB BLUE (R)",
+  "brand_ko": "핑",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "드라이버 선택 (ALTA J CB BLUE)",
+    "values_ko": [
+     "10.5도 R",
+     "10.5도 SR",
+     "10.5도 S",
+     "9도 R",
+     "9도 SR",
+     "9도 S"
+    ]
+   },
+   {
+    "name_ko": "아이언 선택 (8개)",
+    "values_ko": [
+     "카본 ALTA J CB BLUE (R)",
+     "카본 ALTA J CB BLUE (SR)",
+     "스틸 AWT 3.0 Lite (R)",
+     "스틸 AWT 3.0 Lite (S)"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"10.5도 R\",\"카본 ALTA J CB BLUE (R)\"]",
+    "naver_variant_id": "55435915135",
+    "options_ko": [
+     "10.5도 R",
+     "카본 ALTA J CB BLUE (R)"
+    ],
+    "price_krw": 2090000,
+    "price_usd": "2090.00",
+    "sku": "FW-ad410be937f8d7dc59449775",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 R\",\"카본 ALTA J CB BLUE (SR)\"]",
+    "naver_variant_id": "55435915136",
+    "options_ko": [
+     "10.5도 R",
+     "카본 ALTA J CB BLUE (SR)"
+    ],
+    "price_krw": 2090000,
+    "price_usd": "2090.00",
+    "sku": "FW-7617f3d152746d6574863134",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 R\",\"스틸 AWT 3.0 Lite (R)\"]",
+    "naver_variant_id": "55435915137",
+    "options_ko": [
+     "10.5도 R",
+     "스틸 AWT 3.0 Lite (R)"
+    ],
+    "price_krw": 2000000,
+    "price_usd": "2000.00",
+    "sku": "FW-caa0b1a5b7e1f5e80a382654",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 R\",\"스틸 AWT 3.0 Lite (S)\"]",
+    "naver_variant_id": "55435915138",
+    "options_ko": [
+     "10.5도 R",
+     "스틸 AWT 3.0 Lite (S)"
+    ],
+    "price_krw": 2000000,
+    "price_usd": "2000.00",
+    "sku": "FW-25d3758e869c72301265c46f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 SR\",\"카본 ALTA J CB BLUE (R)\"]",
+    "naver_variant_id": "55435915139",
+    "options_ko": [
+     "10.5도 SR",
+     "카본 ALTA J CB BLUE (R)"
+    ],
+    "price_krw": 2090000,
+    "price_usd": "2090.00",
+    "sku": "FW-7780ba8b47b9822f857d9064",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 SR\",\"카본 ALTA J CB BLUE (SR)\"]",
+    "naver_variant_id": "55435915140",
+    "options_ko": [
+     "10.5도 SR",
+     "카본 ALTA J CB BLUE (SR)"
+    ],
+    "price_krw": 2090000,
+    "price_usd": "2090.00",
+    "sku": "FW-92724b3d9b46dc6b5d53ff64",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 SR\",\"스틸 AWT 3.0 Lite (R)\"]",
+    "naver_variant_id": "55435915141",
+    "options_ko": [
+     "10.5도 SR",
+     "스틸 AWT 3.0 Lite (R)"
+    ],
+    "price_krw": 2000000,
+    "price_usd": "2000.00",
+    "sku": "FW-77397cb3f9c5dfdf5e90a4bd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 SR\",\"스틸 AWT 3.0 Lite (S)\"]",
+    "naver_variant_id": "55435915142",
+    "options_ko": [
+     "10.5도 SR",
+     "스틸 AWT 3.0 Lite (S)"
+    ],
+    "price_krw": 2000000,
+    "price_usd": "2000.00",
+    "sku": "FW-231f126a34f4879830b1cc3a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 S\",\"카본 ALTA J CB BLUE (R)\"]",
+    "naver_variant_id": "55435915143",
+    "options_ko": [
+     "10.5도 S",
+     "카본 ALTA J CB BLUE (R)"
+    ],
+    "price_krw": 2090000,
+    "price_usd": "2090.00",
+    "sku": "FW-47e66713fb72cbdca1e9629e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 S\",\"카본 ALTA J CB BLUE (SR)\"]",
+    "naver_variant_id": "55435915144",
+    "options_ko": [
+     "10.5도 S",
+     "카본 ALTA J CB BLUE (SR)"
+    ],
+    "price_krw": 2090000,
+    "price_usd": "2090.00",
+    "sku": "FW-9c329a3d38b1eac231799021",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 S\",\"스틸 AWT 3.0 Lite (R)\"]",
+    "naver_variant_id": "55435915145",
+    "options_ko": [
+     "10.5도 S",
+     "스틸 AWT 3.0 Lite (R)"
+    ],
+    "price_krw": 2000000,
+    "price_usd": "2000.00",
+    "sku": "FW-83c6743c4b77c167bf346e14",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 S\",\"스틸 AWT 3.0 Lite (S)\"]",
+    "naver_variant_id": "55435915146",
+    "options_ko": [
+     "10.5도 S",
+     "스틸 AWT 3.0 Lite (S)"
+    ],
+    "price_krw": 2000000,
+    "price_usd": "2000.00",
+    "sku": "FW-676a8dcc7d0e413dec55cd4e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도 R\",\"카본 ALTA J CB BLUE (R)\"]",
+    "naver_variant_id": "55435915147",
+    "options_ko": [
+     "9도 R",
+     "카본 ALTA J CB BLUE (R)"
+    ],
+    "price_krw": 2090000,
+    "price_usd": "2090.00",
+    "sku": "FW-2b40467ea449d78397a5abea",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도 R\",\"카본 ALTA J CB BLUE (SR)\"]",
+    "naver_variant_id": "55435915148",
+    "options_ko": [
+     "9도 R",
+     "카본 ALTA J CB BLUE (SR)"
+    ],
+    "price_krw": 2090000,
+    "price_usd": "2090.00",
+    "sku": "FW-55a47d872e0e0b9c761e1121",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도 R\",\"스틸 AWT 3.0 Lite (R)\"]",
+    "naver_variant_id": "55435915150",
+    "options_ko": [
+     "9도 R",
+     "스틸 AWT 3.0 Lite (R)"
+    ],
+    "price_krw": 2000000,
+    "price_usd": "2000.00",
+    "sku": "FW-7d9d7a8ed3d7f220c8b6a21c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도 R\",\"스틸 AWT 3.0 Lite (S)\"]",
+    "naver_variant_id": "55435915153",
+    "options_ko": [
+     "9도 R",
+     "스틸 AWT 3.0 Lite (S)"
+    ],
+    "price_krw": 2000000,
+    "price_usd": "2000.00",
+    "sku": "FW-7813ee4bfa219911ae2acd5c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도 SR\",\"카본 ALTA J CB BLUE (R)\"]",
+    "naver_variant_id": "55435915155",
+    "options_ko": [
+     "9도 SR",
+     "카본 ALTA J CB BLUE (R)"
+    ],
+    "price_krw": 2090000,
+    "price_usd": "2090.00",
+    "sku": "FW-bf6e9d5b7f277042688cc420",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도 SR\",\"카본 ALTA J CB BLUE (SR)\"]",
+    "naver_variant_id": "55435915157",
+    "options_ko": [
+     "9도 SR",
+     "카본 ALTA J CB BLUE (SR)"
+    ],
+    "price_krw": 2090000,
+    "price_usd": "2090.00",
+    "sku": "FW-78ed26c39b69b9186b55dde3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도 SR\",\"스틸 AWT 3.0 Lite (R)\"]",
+    "naver_variant_id": "55435915160",
+    "options_ko": [
+     "9도 SR",
+     "스틸 AWT 3.0 Lite (R)"
+    ],
+    "price_krw": 2000000,
+    "price_usd": "2000.00",
+    "sku": "FW-0f73a25e4c550f82f98bb403",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도 SR\",\"스틸 AWT 3.0 Lite (S)\"]",
+    "naver_variant_id": "55435915161",
+    "options_ko": [
+     "9도 SR",
+     "스틸 AWT 3.0 Lite (S)"
+    ],
+    "price_krw": 2000000,
+    "price_usd": "2000.00",
+    "sku": "FW-ad15ae585c01054f74f76780",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도 S\",\"카본 ALTA J CB BLUE (R)\"]",
+    "naver_variant_id": "55435915163",
+    "options_ko": [
+     "9도 S",
+     "카본 ALTA J CB BLUE (R)"
+    ],
+    "price_krw": 2090000,
+    "price_usd": "2090.00",
+    "sku": "FW-df78809b0a62cfa48d26b7d0",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도 S\",\"카본 ALTA J CB BLUE (SR)\"]",
+    "naver_variant_id": "55435915165",
+    "options_ko": [
+     "9도 S",
+     "카본 ALTA J CB BLUE (SR)"
+    ],
+    "price_krw": 2090000,
+    "price_usd": "2090.00",
+    "sku": "FW-b8579c22d156dcb59e8f8c3c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도 S\",\"스틸 AWT 3.0 Lite (R)\"]",
+    "naver_variant_id": "55435915166",
+    "options_ko": [
+     "9도 S",
+     "스틸 AWT 3.0 Lite (R)"
+    ],
+    "price_krw": 2000000,
+    "price_usd": "2000.00",
+    "sku": "FW-7cf01da257ec23f18a6993bd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9도 S\",\"스틸 AWT 3.0 Lite (S)\"]",
+    "naver_variant_id": "55435915168",
+    "options_ko": [
+     "9도 S",
+     "스틸 AWT 3.0 Lite (S)"
+    ],
+    "price_krw": 2000000,
+    "price_usd": "2000.00",
+    "sku": "FW-84c6cab233d85bf4a65b948f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 2090000,
+   "original_krw": 2200000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "핑"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "핑"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "기타 국가"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "9도, 10.5도"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "9개"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2025년형"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "8아이언세트, 드라이버"
+   },
+   {
+    "label_ko": "아이언개수",
+    "value_ko": "8개"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 3
+  },
+  "reviews": [
+   {
+    "id": "5059007509",
+    "score": 5,
+    "text_ko": "드라이버 비거리가 30m이상 늘었네요ㅎㅎ 좋습니다",
+    "created_at": "2026-09-06T14:15:29Z",
+    "writer": "kims*****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small"
+   },
+   {
+    "id": "5050209826",
+    "score": 5,
+    "text_ko": "구성도 알차고 전체적으로 깔끔하게 잘 받았습니다.\n한 번에 세트로 준비할 수 있어서 편하고 디자인도 마음에 들어요.\n직접 사용해보니 만족스러워서 잘 선택한 것 같습니다.",
+    "created_at": "2026-08-25T07:07:27Z",
+    "writer": "dkss******",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/13002235969/fairwardgolf-review-avatar-eb0fdaff5e2122ec.webp",
+    "tier": "small"
+   },
+   {
+    "id": "5031447848",
+    "score": 5,
+    "text_ko": "타구감이 부드럽고 방향성이 안정적이라 만족합니다. 드라이버와 아이언의 밸런스도 좋고 전체적인 완성도가 높아 라운드가 더욱 즐거워졌습니다. 오래 사용할 수 있을 것 같습니다.",
+    "created_at": "2026-07-28T23:27:34Z",
+    "writer": "dkss******",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/13002235969/fairwardgolf-review-avatar-eb0fdaff5e2122ec.webp",
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13002235969/fairwardgolf-13002235969-001-0d65543d0b66743d.webp",
+    "sha256": "0d65543d0b66743d8cff47c4122d5283dec701f9a0ad74d4a304ebc8455bfd82",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "policy_text": null,
+   "lead_time": {
+    "seller_average_days": 1.6405228,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": true,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 95,
+    "ship_date_text": "11.9.(월)"
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20250405_199/1743831662836dw1fg_JPEG/30434463209514390_345786175.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260329_154/1774766455680fm1pv_JPEG/108824944177622709_915232433.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260121_241/1769003816917yny08_JPEG/KakaoTalk_20260120_120911944_(1).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251005_7/1759631986376gVWHF_JPEG/%EC%83%81%EC%84%B8_%EA%B8%B0%EB%B3%B8.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251223_173/1766472734566wv6d3_JPEG/KakaoTalk_20251223_151514485.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251005_75/17596308720768hMye_JPEG/%EC%83%A4%ED%94%84%ED%8A%B8.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260121_75/1769003834997kYiJD_JPEG/KakaoTalk_20260112_151648430_02.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260121_249/1769003847255eI4dJ_JPEG/%EC%95%84%EC%9D%B4%EC%96%B8_%EC%8A%A4%ED%8E%991.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260121_28/17690038472680QS3t_JPEG/%EC%95%84%EC%9D%B4%EC%96%B8_%EC%8A%A4%ED%8E%992.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260121_176/1769003847269Xnbfq_JPEG/%EC%95%84%EC%9D%B4%EC%96%B8_%EC%8A%A4%ED%8E%993.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260224_115/1771916339257im4ST_JPEG/106045372569381021_707943351.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250405_45/1743831640922Pa6E3_JPEG/60948062508870618_280838627.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251009_45/1759978486373imRv2_JPEG/22313003105171778_1094441035.jpg?type=w848"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:2da18e599f955546",
+   "kind": "title",
+   "ko": "핑 G440 MAX 풀세트 (드라이버 10.5도R, 카본 아이언 ALTA J CB BLUE (R)"
+  },
+  {
+   "id": "brand:a1287ded4209f758",
+   "kind": "brand",
+   "ko": "핑"
+  },
+  {
+   "id": "option_name:1349e7973fbbcd49",
+   "kind": "option_name",
+   "ko": "드라이버 선택 (ALTA J CB BLUE)"
+  },
+  {
+   "id": "option_value:fbdc8ac2d1d16581",
+   "kind": "option_value",
+   "ko": "10.5도 R"
+  },
+  {
+   "id": "option_value:0d8a363016141bf1",
+   "kind": "option_value",
+   "ko": "10.5도 SR"
+  },
+  {
+   "id": "option_value:15add75d9709f0d3",
+   "kind": "option_value",
+   "ko": "10.5도 S"
+  },
+  {
+   "id": "option_value:c7e2c88cb30d2832",
+   "kind": "option_value",
+   "ko": "9도 R"
+  },
+  {
+   "id": "option_value:d6209180f79a2ed3",
+   "kind": "option_value",
+   "ko": "9도 SR"
+  },
+  {
+   "id": "option_value:c99db2c38e379b91",
+   "kind": "option_value",
+   "ko": "9도 S"
+  },
+  {
+   "id": "option_name:cc6dd5f13e4b75c9",
+   "kind": "option_name",
+   "ko": "아이언 선택 (8개)"
+  },
+  {
+   "id": "option_value:edab26da6b3ae052",
+   "kind": "option_value",
+   "ko": "카본 ALTA J CB BLUE (R)"
+  },
+  {
+   "id": "option_value:5d85890ae9b59470",
+   "kind": "option_value",
+   "ko": "카본 ALTA J CB BLUE (SR)"
+  },
+  {
+   "id": "option_value:dff5ce684bee6c77",
+   "kind": "option_value",
+   "ko": "스틸 AWT 3.0 Lite (R)"
+  },
+  {
+   "id": "option_value:82ab75fa2aa2ebd9",
+   "kind": "option_value",
+   "ko": "스틸 AWT 3.0 Lite (S)"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:a1287ded4209f758",
+   "kind": "spec_value",
+   "ko": "핑"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:af369e064954c712",
+   "kind": "spec_value",
+   "ko": "기타 국가"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:51448635721ac33e",
+   "kind": "spec_value",
+   "ko": "9도, 10.5도"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:5738400b2e82c687",
+   "kind": "spec_value",
+   "ko": "9개"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:6aea4c4b3fb65e70",
+   "kind": "spec_value",
+   "ko": "2025년형"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:5c206f56113d13ba",
+   "kind": "spec_value",
+   "ko": "8아이언세트, 드라이버"
+  },
+  {
+   "id": "spec_label:cf77915a2f3ab5d8",
+   "kind": "spec_label",
+   "ko": "아이언개수"
+  },
+  {
+   "id": "spec_value:77e34e31f3da3e43",
+   "kind": "spec_value",
+   "ko": "8개"
+  },
+  {
+   "id": "review:bdea95c42485872a",
+   "kind": "review",
+   "ko": "드라이버 비거리가 30m이상 늘었네요ㅎㅎ 좋습니다"
+  },
+  {
+   "id": "review:a83cce13be4c2895",
+   "kind": "review",
+   "ko": "구성도 알차고 전체적으로 깔끔하게 잘 받았습니다.\n한 번에 세트로 준비할 수 있어서 편하고 디자인도 마음에 들어요.\n직접 사용해보니 만족스러워서 잘 선택한 것 같습니다."
+  },
+  {
+   "id": "review:d7e3ea9649c60786",
+   "kind": "review",
+   "ko": "타구감이 부드럽고 방향성이 안정적이라 만족합니다. 드라이버와 아이언의 밸런스도 좋고 전체적인 완성도가 높아 라운드가 더욱 즐거워졌습니다. 오래 사용할 수 있을 것 같습니다."
+  }
+ ]
+}

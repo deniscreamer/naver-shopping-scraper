@@ -25,7 +25,11 @@ collected golf sets of category 50002788, false positives checked on 46 more sav
     (the transform's hidden_promo): we would not hand those gifts out. "☆ 캐디백 증정 ☆" is part of the set and stays.
   * jump: "▲ 이동(상단)", "▲TOP", "맨 위로": a fallback for the parser's jump-link skip.
   * price_krw ("정상가 865,000원", "정상가 대비 22% 할인": our prices are USD), cross_sell ("아래 링크에서 구매": the
-    card is gone), junk (no word of two letters left, 13741767690 "o": text None, note description_junk).
+    card is gone; its lead line goes too when the follow-up says "해당 상품은" and the lead is about another colour /
+    model: "⛳화이트 컬러 모델은 기존 출시 상품입니다."), junk (no word of two letters left, 13741767690 "o": text None,
+    note description_junk).
+  * store_claim also covers the genuine-goods pitch ("정품만 판매", "유통 경로", "정품 여부", "OEM 표기"); the product's
+    own "100% 정품", "정품 헤드커버", "정식통관" stay. label: "제품상세" alone on its line (it headed the images).
 
 Images (clean_images): a description image whose file name says it is the seller's banner (배송, 통관, 공지, 이벤트,
 하단배너, foot_info, as.jpg, ...) is dropped. Names are decoded first (twice URL-encoded names; proxy-smartstore
@@ -34,7 +38,7 @@ whole editor-NONE body) are never dropped: a banner inside them cannot be cut, b
 A Latin file name that is Hangul typed on the 2-set keyboard ("gkeksqpsj" = 하단베너) is matched as that Hangul.
 With the description HTML, SmartEditor's data-linkdata of each image also drops an image that links to the
 seller's channels (TalkTalk, Band, blog, Instagram, YouTube, Kakao channel) or store pages (link_banner) and thin
-strips (originalHeight <= 40 or width / height > 25: spacer).
+strips (originalHeight <= 40 or width / height > 25: spacer) and 1x1 tracking pixels (pixel).
 
     from description_clean import clean, clean_images, body_notes
     pictures = clean_images(details["description"]["images"], details["description"]["html"])
@@ -88,9 +92,11 @@ class CleanedImages(TypedDict):
 
 # a line ending on one of these goes on in the next line (11256507948 "...유선 전화로" / "안내해 드리겠습니다:)");
 # seen 2026-11-06 (8958060680): "고가의 해외구매대행 상품인 만큼" / "궁금한 점이 있으시면" / "네이버 톡톡으로 문의해
-# 주세요." is one sentence. "-면" only after a verb ending (시면, 으면, 하면, 다면): "고강도 타격면" is the club face
+# 주세요." is one sentence. "-면" only after a verb ending (시면, 으면, 하면, 다면): "고강도 타격면" is the club face.
+# seen 2026-11-07 (13785630702): "클럽만 따로 판매하거나" / "...판매하는 경우" / "...명확한지" / "확인해 주세요." and
+# "골프채 풀세트는 본래" go on; "-지" only after an adnominal ending (인지, 한지, 는지): "웨지", "미끄럼방지", "패키지" end
 _CONTINUES_RE = re.compile(r"(?:으?로|와|과|고|며|서|의|은|는|을|를|에|및|,|이며|하며|에게|"
-                           r"(?:[시으하다라려]|있|없)면|만큼|는데|지만|니까)$")
+                           r"(?:[시으하다라려]|있|없)면|만큼|는데|지만|니까|거나|경우|[인한는은던]지|본래)$")
 _POLICY_HEAD_RE = re.compile(
     r"^[●○■□◆◇▶▷※*☞\-\s\[<]*(?:해당\s*상품\s*)?(?:\S*\s*)?(?:반품|교환|환불|취소|배송|통관|관부가세)\S*"
     r"(?:\s+(?:및|/)?\s*\S+){0,3}\s*(?:안내|주의\s*사항|공지|규정|정책|유의\s*사항)\s*[●◆\]>]*$")
@@ -122,9 +128,23 @@ _RULES = [
                           r"(?:포함|별도|미포함|납부|지불).{0,40}(?:관부가세|관세&?부가세)")),
     ("lead_time", re.compile(r"배송(?:은|기간|소요일?)?.{0,15}\d+\s*~\s*\d+\s*(?:일|영업일)")),
     ("promo", re.compile(r"최저가|득템|안심하고\s*구매")),
+    # the seller's genuine-goods pitch, about the store and other sellers (2026-11-07, 13785630702 / 8958060680:
+    # "일본 현지 정식 유통 정품만 판매합니다", "OEM 표기 골프채는 ... 유통 경로가 다를 수 있습니다", "구매 전 정품 여부와 A/S
+    # 가능 여부를 반드시 확인해 주세요"). The product's own "100% 정품", "정품 헤드커버 포함", "정품등록", "정식통관",
+    # "정식 복각" stay
     ("store_claim", re.compile(r"(?:저희|당사)\s*\S+(?:는|은)|"
-                               r"(?:공식|정식)\s*(?:온라인\s*)?(?:판매\s*)?(?:대리점|수입\s*업체|판매권|판매점)")),
+                               r"(?:공식|정식)\s*(?:온라인\s*)?(?:판매\s*)?(?:대리점|수입\s*업체|판매권|판매점)|"
+                               r"정품만\s*(?:을\s*)?(?:판매|취급)|유통\s*경로|정품\s*여부|OEM\s*표기")),
 ]
+# a section label alone on its line, heading the images that follow (2026-11-07: "제품상세" in 10076378929,
+# 12391261816, 12391346892): nothing to read once the images are apart. "[제품 상세 사양]" (a table's heading),
+# "Details" (heads text) stay
+_LABEL_RE = re.compile(r"^(?:제품|상품)\s*상세(?:\s*(?:정보|설명|이미지|페이지))?$|^상세\s*(?:정보|설명|이미지)$")
+# the lead line of a cross-sell pair: another colour / model, which the follow-up "해당 상품은 아래 링크에서 구매하실 수
+# 있습니다." points at (2026-11-07: "⛳화이트 컬러 모델은 기존 출시 상품입니다." 13785630702, "⛳블랙 컬러 모델은 2026년 9월에
+# 출시되었습니다." 8958060680)
+_OTHER_MODEL_RE = re.compile(r"(?:컬러|색상|칼라|다른|기존|신형|구형|이전)\s*(?:\S*\s*)?(?:모델|버전|제품|상품)?\s*(?:은|는)\s")
+_REFERS_BACK_RE = re.compile(r"^\W*(?:해당|이|그|위)\s*(?:상품|제품|모델)")
 _NAME_EDGE_RE = re.compile(r"^[\W_]+|[\W_]+$")
 # a store named for its trade: "일본 구매대행 해피마로" writes itself 해피마로 in the text (8958060680, 2026-11-06)
 _STORE_PREFIX_RE = re.compile(r"^(?:(?:일본|미국|중국|독일|영국|유럽|해외|국내|글로벌)\s*)?"
@@ -181,22 +201,34 @@ def clean(text: str | None, store_name: str | None = None, promo_hidden: bool = 
         out: list[str] = []
         lines = [x for x in block.split("\n") if x.strip()]
         i = 0
+        last: list[str] = []            # the sentence just kept in this block, [] when the one before was dropped
         while i < len(lines):
             head = lines[i].strip()
+            if _LABEL_RE.match(head):
+                dropped.append({"rule": "label", "text": lines[i]})
+                i, last = i + 1, []
+                continue
             if _POLICY_HEAD_RE.match(head) or promo_hidden and _GIFT_HEAD_RE.match(head):
                 end = len(lines) if bounded else min(len(lines), i + POLICY_MAX_LINES)
                 if not bounded and end < len(lines):
                     notes.append({"code": "description_policy_block_unbounded", "detail": head})
                 dropped.append({"rule": "policy" if _POLICY_HEAD_RE.match(head) else "gift",
                                 "text": "\n".join(lines[i:end])})
-                i = end
+                i, last = end, []
                 continue
             sentence = next(sentences(lines[i:]))
-            why = _rule(" ".join(x.strip() for x in sentence), store)
+            joined = " ".join(x.strip() for x in sentence)
+            why = _rule(joined, store)
+            if why == "cross_sell" and last and _REFERS_BACK_RE.match(joined) and \
+                    _OTHER_MODEL_RE.search(" ".join(x.strip() for x in last)):
+                del out[len(out) - len(last):]
+                dropped.append({"rule": "cross_sell", "text": "\n".join(last)})
             if why:
                 dropped.append({"rule": why, "text": "\n".join(sentence)})
+                last = []
             else:
                 out.extend(sentence)
+                last = sentence
             i += len(sentence)
         if out:
             kept_blocks.append("\n".join(out))
@@ -226,7 +258,10 @@ _BANNER_NAME_RE = re.compile(
     r"안내문|회사\s*_?이미지|택배|bottom_?img|^(?:brand|customer)\.(?:jpe?g|png|gif)$|"
     # seen 2026-11-06 on the pilot 20: "..._네이버톡톡_복사.jpg", "..._하단_상페_복사.jpg" (상세페이지 footer; "민트_드라이버
     # _상페.jpeg" is the product's own page and stays), "하단고정배너(860)문구O.jpg", 베너 (the common misspelling)
-    r"톡톡|하단[\s_]*(?:고정)?[\s_]*(?:[배베]너|상페|안내)|(?:상단|고정)[\s_]*[배베]너", re.I)
+    r"톡톡|하단[\s_]*(?:고정)?[\s_]*(?:[배베]너|상페|안내)|(?:상단|고정)[\s_]*[배베]너|"
+    # seen 2026-11-07: "오늘출발.gif" (10076378929, 12391261816, 12391346892: the store's same-day dispatch badge),
+    # holiday notices "chuseok.jpg" (5558420432, 6153061020 tiles), 추석 / 설날 / 명절 / 당일발송
+    r"오늘[\s_]*출발|당일[\s_]*(?:발송|출고|출발|배송)|추석|설날|명절|한가위|chuseok|seollal", re.I)
 _SNAP_RE = re.compile(r"/p-\d+-s-\d+-[A-Z]-\d+\.\w+$")
 # the HTML comments sellers mark their banners with in tiled bodies (12696567111 "최상단 사은품", "하단 안내 이미지";
 # 10870655883 "휴무 공지사항", "카카오톡 플러스친구", "배송정보")
@@ -360,6 +395,12 @@ def _link_banner(data: dict) -> bool:
     return any(host == h or host.endswith("." + h) for h in _STORE_HOSTS) and "/products/" not in u.path
 
 
+def _pixel(data: dict) -> bool:
+    """A 1x1 image: a tracking pixel (13728190518 p.tcdn.co.kr/.../6a86d63e42e7754b885ab8c4, originalWidth 1 /
+    originalHeight 1, no file extension; seen 2026-11-07). 860x1 is an unmeasured picture (_spacer); 0x0 unknown."""
+    return _int(data.get("originalWidth")) == 1 and _int(data.get("originalHeight")) == 1
+
+
 def _spacer(data: dict) -> bool:
     """A strip between two pictures: originalHeight 1 is an outside image the editor did not measure (8396163567
     727_01.jpg, the product's photo), not a size."""
@@ -378,7 +419,7 @@ def clean_images(urls: Iterable[str] | None, html: str | None = None) -> Cleaned
         name = _banner(link)
         data = components.get(_image_key(link)) or {}
         rule = "boilerplate_name" if name else "link_banner" if _link_banner(data) else \
-            "spacer" if _spacer(data) else None
+            "pixel" if _pixel(data) else "spacer" if _spacer(data) else None
         if rule is None:
             images.append(link)
         else:

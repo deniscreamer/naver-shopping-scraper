@@ -15,7 +15,7 @@
   },
   {
    "code": "few_pieces",
-   "detail": "총클럽개수 3개"
+   "detail": "3종"
   },
   {
    "code": "gift_hidden",
@@ -2710,77 +2710,6 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"드라이버11.5도-L\",\"우드7번(28도)-L\",\"유틸7번(31도)-A\"]",
-    "naver_variant_id": "57135743457",
-    "options_ko": [
-     "드라이버11.5도-L",
-     "우드7번(28도)-L",
-     "유틸7번(31도)-A"
-    ],
-    "price_krw": 1510000,
-    "price_usd": "1510.00",
-    "sku": "FW-1c93d84b6df7b329cf88c570",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
     "source_id": "observed:[\"드라이버11.5도-L\",\"우드7번(28도)-L\",\"유틸8번(36도)-L\"]",
     "naver_variant_id": "57135743459",
     "options_ko": [
@@ -2791,77 +2720,6 @@
     "price_krw": 1510000,
     "price_usd": "1510.00",
     "sku": "FW-1253a4e1504662fac15cf715",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"드라이버11.5도-L\",\"우드7번(28도)-L\",\"유틸8번(36도)-A\"]",
-    "naver_variant_id": "57135743460",
-    "options_ko": [
-     "드라이버11.5도-L",
-     "우드7번(28도)-L",
-     "유틸8번(36도)-A"
-    ],
-    "price_krw": 1510000,
-    "price_usd": "1510.00",
-    "sku": "FW-2ebff4196ebdf08479223682",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -2994,77 +2852,6 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"드라이버11.5도-L\",\"우드7번(28도)-A\",\"유틸5번(22도)-A\"]",
-    "naver_variant_id": "57135743463",
-    "options_ko": [
-     "드라이버11.5도-L",
-     "우드7번(28도)-A",
-     "유틸5번(22도)-A"
-    ],
-    "price_krw": 1510000,
-    "price_usd": "1510.00",
-    "sku": "FW-4de3dae2c90a5508f293d299",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
     "source_id": "observed:[\"드라이버11.5도-L\",\"우드7번(28도)-A\",\"유틸6번(26도)-L\"]",
     "naver_variant_id": "57135743465",
     "options_ko": [
@@ -3075,148 +2862,6 @@
     "price_krw": 1510000,
     "price_usd": "1510.00",
     "sku": "FW-b226a11ad1c60898e36be348",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"드라이버11.5도-L\",\"우드7번(28도)-A\",\"유틸6번(26도)-A\"]",
-    "naver_variant_id": "57135743468",
-    "options_ko": [
-     "드라이버11.5도-L",
-     "우드7번(28도)-A",
-     "유틸6번(26도)-A"
-    ],
-    "price_krw": 1510000,
-    "price_usd": "1510.00",
-    "sku": "FW-43dcbc828122ce766b9257d0",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"드라이버11.5도-L\",\"우드7번(28도)-A\",\"유틸7번(31도)-L\"]",
-    "naver_variant_id": "57135743471",
-    "options_ko": [
-     "드라이버11.5도-L",
-     "우드7번(28도)-A",
-     "유틸7번(31도)-L"
-    ],
-    "price_krw": 1510000,
-    "price_usd": "1510.00",
-    "sku": "FW-eaf3fe3bdc284bb334a2288b",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -3420,77 +3065,6 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"드라이버11.5도-L\",\"우드7번(28도)-A\",\"유틸8번(36도)-A\"]",
-    "naver_variant_id": "57135743476",
-    "options_ko": [
-     "드라이버11.5도-L",
-     "우드7번(28도)-A",
-     "유틸8번(36도)-A"
-    ],
-    "price_krw": 1510000,
-    "price_usd": "1510.00",
-    "sku": "FW-e188d60088927f0a98907540",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
     "source_id": "observed:[\"드라이버11.5도-L\",\"우드9번(33도)-L\",\"유틸5번(22도)-L\"]",
     "naver_variant_id": "57135743477",
     "options_ko": [
@@ -3562,16 +3136,158 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"드라이버11.5도-L\",\"우드9번(33도)-L\",\"유틸5번(22도)-A\"]",
-    "naver_variant_id": "57135743478",
+    "source_id": "observed:[\"드라이버11.5도-L\",\"우드9번(33도)-L\",\"유틸6번(26도)-L\"]",
+    "naver_variant_id": "57135743479",
     "options_ko": [
      "드라이버11.5도-L",
      "우드9번(33도)-L",
-     "유틸5번(22도)-A"
+     "유틸6번(26도)-L"
     ],
     "price_krw": 1510000,
     "price_usd": "1510.00",
-    "sku": "FW-2e35a7fd6a648f324da4d076",
+    "sku": "FW-c7567c268e566665be91934a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"드라이버11.5도-L\",\"우드9번(33도)-L\",\"유틸7번(31도)-L\"]",
+    "naver_variant_id": "57135743481",
+    "options_ko": [
+     "드라이버11.5도-L",
+     "우드9번(33도)-L",
+     "유틸7번(31도)-L"
+    ],
+    "price_krw": 1510000,
+    "price_usd": "1510.00",
+    "sku": "FW-5ee6768f832d04cdeca51726",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"드라이버11.5도-L\",\"우드9번(33도)-L\",\"유틸8번(36도)-L\"]",
+    "naver_variant_id": "57135743483",
+    "options_ko": [
+     "드라이버11.5도-L",
+     "우드9번(33도)-L",
+     "유틸8번(36도)-L"
+    ],
+    "price_krw": 1510000,
+    "price_usd": "1510.00",
+    "sku": "FW-854b47238a52a6dce7316e30",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -3643,6 +3359,219 @@
     "price_krw": 1510000,
     "price_usd": "1510.00",
     "sku": "FW-91e4725d8ac73df29079c404",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"드라이버11.5도-L\",\"우드9번(33도)-A\",\"유틸6번(26도)-L\"]",
+    "naver_variant_id": "57135743487",
+    "options_ko": [
+     "드라이버11.5도-L",
+     "우드9번(33도)-A",
+     "유틸6번(26도)-L"
+    ],
+    "price_krw": 1510000,
+    "price_usd": "1510.00",
+    "sku": "FW-2a6e75724c5864be9ae6cb50",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"드라이버11.5도-L\",\"우드9번(33도)-A\",\"유틸7번(31도)-L\"]",
+    "naver_variant_id": "57135743489",
+    "options_ko": [
+     "드라이버11.5도-L",
+     "우드9번(33도)-A",
+     "유틸7번(31도)-L"
+    ],
+    "price_krw": 1510000,
+    "price_usd": "1510.00",
+    "sku": "FW-44e3188eb19276905c26ffa0",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"드라이버11.5도-L\",\"우드9번(33도)-A\",\"유틸8번(36도)-A\"]",
+    "naver_variant_id": "57135743492",
+    "options_ko": [
+     "드라이버11.5도-L",
+     "우드9번(33도)-A",
+     "유틸8번(36도)-A"
+    ],
+    "price_krw": 1510000,
+    "price_usd": "1510.00",
+    "sku": "FW-1e9867a30c59aacb1e0ea732",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -6260,77 +6189,6 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"드라이버11.5도-A\",\"우드7번(28도)-L\",\"유틸7번(31도)-L\"]",
-    "naver_variant_id": "57135743536",
-    "options_ko": [
-     "드라이버11.5도-A",
-     "우드7번(28도)-L",
-     "유틸7번(31도)-L"
-    ],
-    "price_krw": 1510000,
-    "price_usd": "1510.00",
-    "sku": "FW-532ed14ee6175ef504cea931",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
     "source_id": "observed:[\"드라이버11.5도-A\",\"우드7번(28도)-L\",\"유틸7번(31도)-A\"]",
     "naver_variant_id": "57135743538",
     "options_ko": [
@@ -6341,77 +6199,6 @@
     "price_krw": 1510000,
     "price_usd": "1510.00",
     "sku": "FW-612bd8b5832aac9c798c23ce",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"드라이버11.5도-A\",\"우드7번(28도)-L\",\"유틸8번(36도)-L\"]",
-    "naver_variant_id": "57135743539",
-    "options_ko": [
-     "드라이버11.5도-A",
-     "우드7번(28도)-L",
-     "유틸8번(36도)-L"
-    ],
-    "price_krw": 1510000,
-    "price_usd": "1510.00",
-    "sku": "FW-8bbee727d6fefd29000c9a14",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -6544,77 +6331,6 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"드라이버11.5도-A\",\"우드7번(28도)-A\",\"유틸5번(22도)-L\"]",
-    "naver_variant_id": "57135743541",
-    "options_ko": [
-     "드라이버11.5도-A",
-     "우드7번(28도)-A",
-     "유틸5번(22도)-L"
-    ],
-    "price_krw": 1510000,
-    "price_usd": "1510.00",
-    "sku": "FW-48e89a101ed43c7d4efdc25a",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
     "source_id": "observed:[\"드라이버11.5도-A\",\"우드7번(28도)-A\",\"유틸5번(22도)-A\"]",
     "naver_variant_id": "57135743542",
     "options_ko": [
@@ -6625,77 +6341,6 @@
     "price_krw": 1510000,
     "price_usd": "1510.00",
     "sku": "FW-1aacf47cf178f9167f567b63",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"드라이버11.5도-A\",\"우드7번(28도)-A\",\"유틸6번(26도)-L\"]",
-    "naver_variant_id": "57135743543",
-    "options_ko": [
-     "드라이버11.5도-A",
-     "우드7번(28도)-A",
-     "유틸6번(26도)-L"
-    ],
-    "price_krw": 1510000,
-    "price_usd": "1510.00",
-    "sku": "FW-0865da9b79e251944fdb0be6",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -6899,148 +6544,6 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"드라이버11.5도-A\",\"우드7번(28도)-A\",\"유틸7번(31도)-A\"]",
-    "naver_variant_id": "57135743546",
-    "options_ko": [
-     "드라이버11.5도-A",
-     "우드7번(28도)-A",
-     "유틸7번(31도)-A"
-    ],
-    "price_krw": 1510000,
-    "price_usd": "1510.00",
-    "sku": "FW-f42d782c6ba8fa0a70b4857f",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"드라이버11.5도-A\",\"우드7번(28도)-A\",\"유틸8번(36도)-L\"]",
-    "naver_variant_id": "57135743547",
-    "options_ko": [
-     "드라이버11.5도-A",
-     "우드7번(28도)-A",
-     "유틸8번(36도)-L"
-    ],
-    "price_krw": 1510000,
-    "price_usd": "1510.00",
-    "sku": "FW-d57b351d40bc6d4a54907c1d",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
     "source_id": "observed:[\"드라이버11.5도-A\",\"우드7번(28도)-A\",\"유틸8번(36도)-A\"]",
     "naver_variant_id": "57135743550",
     "options_ko": [
@@ -7112,16 +6615,513 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"드라이버11.5도-A\",\"우드9번(33도)-L\",\"유틸5번(22도)-L\"]",
-    "naver_variant_id": "57135743552",
+    "source_id": "observed:[\"드라이버11.5도-A\",\"우드9번(33도)-L\",\"유틸5번(22도)-A\"]",
+    "naver_variant_id": "57135743554",
     "options_ko": [
      "드라이버11.5도-A",
      "우드9번(33도)-L",
-     "유틸5번(22도)-L"
+     "유틸5번(22도)-A"
     ],
     "price_krw": 1510000,
     "price_usd": "1510.00",
-    "sku": "FW-e766c0ad02a1e15836c63b2a",
+    "sku": "FW-0bd443c92f84147fc1f5ca61",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"드라이버11.5도-A\",\"우드9번(33도)-L\",\"유틸6번(26도)-A\"]",
+    "naver_variant_id": "57135743557",
+    "options_ko": [
+     "드라이버11.5도-A",
+     "우드9번(33도)-L",
+     "유틸6번(26도)-A"
+    ],
+    "price_krw": 1510000,
+    "price_usd": "1510.00",
+    "sku": "FW-2430b038878c7b7c4d5ed22a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"드라이버11.5도-A\",\"우드9번(33도)-L\",\"유틸7번(31도)-A\"]",
+    "naver_variant_id": "57135743559",
+    "options_ko": [
+     "드라이버11.5도-A",
+     "우드9번(33도)-L",
+     "유틸7번(31도)-A"
+    ],
+    "price_krw": 1510000,
+    "price_usd": "1510.00",
+    "sku": "FW-349b4d1194b6c3553d1edec3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"드라이버11.5도-A\",\"우드9번(33도)-L\",\"유틸8번(36도)-A\"]",
+    "naver_variant_id": "57135743561",
+    "options_ko": [
+     "드라이버11.5도-A",
+     "우드9번(33도)-L",
+     "유틸8번(36도)-A"
+    ],
+    "price_krw": 1510000,
+    "price_usd": "1510.00",
+    "sku": "FW-b4e0de65d14530ef116b4ca1",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"드라이버11.5도-A\",\"우드9번(33도)-A\",\"유틸5번(22도)-A\"]",
+    "naver_variant_id": "57135743563",
+    "options_ko": [
+     "드라이버11.5도-A",
+     "우드9번(33도)-A",
+     "유틸5번(22도)-A"
+    ],
+    "price_krw": 1510000,
+    "price_usd": "1510.00",
+    "sku": "FW-e8445dc16d60ab6da7b8619e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"드라이버11.5도-A\",\"우드9번(33도)-A\",\"유틸6번(26도)-A\"]",
+    "naver_variant_id": "57135743565",
+    "options_ko": [
+     "드라이버11.5도-A",
+     "우드9번(33도)-A",
+     "유틸6번(26도)-A"
+    ],
+    "price_krw": 1510000,
+    "price_usd": "1510.00",
+    "sku": "FW-00b6ff496407216078d3339c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"드라이버11.5도-A\",\"우드9번(33도)-A\",\"유틸7번(31도)-A\"]",
+    "naver_variant_id": "57135743567",
+    "options_ko": [
+     "드라이버11.5도-A",
+     "우드9번(33도)-A",
+     "유틸7번(31도)-A"
+    ],
+    "price_krw": 1510000,
+    "price_usd": "1510.00",
+    "sku": "FW-2acc1c3feb521a28269cc7ba",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"드라이버11.5도-A\",\"우드9번(33도)-A\",\"유틸8번(36도)-L\"]",
+    "naver_variant_id": "57135743568",
+    "options_ko": [
+     "드라이버11.5도-A",
+     "우드9번(33도)-A",
+     "유틸8번(36도)-L"
+    ],
+    "price_krw": 1510000,
+    "price_usd": "1510.00",
+    "sku": "FW-b9a55fa5df2efecd0962243d",
     "available": true,
     "package": {
      "product_weight_g": {

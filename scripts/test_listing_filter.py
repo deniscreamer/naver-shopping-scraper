@@ -53,7 +53,7 @@ def test_reason_order_and_counts():
     base = next(r for r in data if not r["is_ad"] and r["category_id"] == "50002788")
     key = source_key(base, "fairwardgolf")
     assert key == f"fairwardgolf:naver:{base['store']['channel_no']}:{base['product_id']}"
-    screen = Screen("50002788", "fairwardgolf")
+    screen = Screen("50002788", "fairwardgolf", exclude_sponsored=True)
     assert screen.reason(base) is None
     cases = {
         "sponsored": {**base, "is_ad": True, "name": "렌탈"},             # the first reason wins
@@ -72,11 +72,13 @@ def test_reason_order_and_counts():
     assert set(screen.counts) <= set(REASONS) and sum(screen.counts.values()) == 7
 
 
-def test_ads_kept_when_the_file_says_so():
-    exclusions = load_exclusions()
-    exclusions["universal"]["excludeSponsored"] = False
+def test_ads_kept_by_default():
+    # the owner, 2026-11-06: an ad card is a product like the others, though the harvester file says exclude
     row = {**rows()[0], "is_ad": True, "category_id": "50002788"}
-    assert Screen("50002788", "fairwardgolf", exclusions=exclusions).check(row) is None
+    assert load_exclusions()["universal"]["excludeSponsored"]
+    assert Screen("50002788", "fairwardgolf").check(row) is None
+    assert Screen("50002788", "fairwardgolf", exclude_sponsored=True).check(row) == "sponsored"
+    assert Screen("50002788", "fairwardgolf").check({**row, "name": row["name"] + " 렌탈"}) == "rental"
 
 
 def test_normalize():

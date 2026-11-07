@@ -1,0 +1,517 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:102095797:9168175809",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/jd-sport/products/9168175809",
+  "channel_no": "102095797",
+  "product_id": "9168175809",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "야마모토 다이너스티 고반발 남성 골드 풀세트(스탠드백,보스턴백 포함) [스틸아이언/12pc]",
+  "brand_ko": "야마모토",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [],
+  "facts": [
+   {
+    "label_ko": "",
+    "value_ko": "드라이버+우드+하이브리드/SR"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "9168175809",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 654000,
+    "price_usd": "654.00",
+    "sku": "FW-b8e3416416a617c030f94450",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 654000,
+   "original_krw": 654000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "펜타곤 골프 코리아"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "야마모토"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "야마모토 다이너스티(DYNASTY) 고반발 남성 골드 풀세트(캐디백세트 포함) [스틸아이언/12pc]"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   },
+   {
+    "label_ko": "유틸리티/하이브리드 로프트각",
+    "value_ko": "21도"
+   },
+   {
+    "label_ko": "페어웨이 로프트각",
+    "value_ko": "15도"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "10.5도"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#5, #6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "12개"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2021년형"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "드라이버, 8아이언세트, 페어웨이, 유틸리티, 퍼터"
+   },
+   {
+    "label_ko": "아이언샤프트소재",
+    "value_ko": "경량스틸"
+   },
+   {
+    "label_ko": "아이언개수",
+    "value_ko": "8개"
+   },
+   {
+    "label_ko": "퍼터형태",
+    "value_ko": "블레이드(일자형)"
+   },
+   {
+    "label_ko": "골프백포함여부",
+    "value_ko": "캐디백, 보스턴백"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.96,
+   "count": 27
+  },
+  "reviews": [
+   {
+    "id": "4354687392",
+    "score": 5,
+    "text_ko": "배송: 하루만에 왔네요\n상담: 톡톡문의 친절하고 빠른 대응\n상품: 좋아요\n\n동일 상품 여러곳에서 판매하나, 여기 사장님 빠른고 친절하게 응대해주시니 믿음이 갑니다.",
+    "created_at": "2023-10-22T01:28:39Z",
+    "writer": "mins*******",
+    "photos": [
+     "collected/50002788-fixtures/images/9168175809/fairwardgolf-review-image-859ca9e906a5897c.webp"
+    ],
+    "avatar": null,
+    "tier": "photo"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/9168175809/fairwardgolf-9168175809-001-3fc2040a95c2ddcf.webp",
+    "sha256": "3fc2040a95c2ddcf9f5ad17ac7bb14cd9c10c3f1b67e33e0083a6f4fddcc05df",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/9168175809/fairwardgolf-9168175809-002-8ee85124c85e1cb2.webp",
+    "sha256": "8ee85124c85e1cb295c77c48e59f83c3a08a7b472b4c2d8d4e9bdf138b06d8bb",
+    "width": 558,
+    "height": 479
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/9168175809/fairwardgolf-9168175809-003-045e34e22712f638.webp",
+    "sha256": "045e34e22712f638a43be1b30902cc5b316b15d5f466690baafae66665dc998f",
+    "width": 554,
+    "height": 510
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/9168175809/fairwardgolf-9168175809-004-7b2d4bc518803f4d.webp",
+    "sha256": "7b2d4bc518803f4d2ef48d7e7c770e44bc7bc3d4be76211405a25dcba5765991",
+    "width": 555,
+    "height": 575
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/9168175809/fairwardgolf-9168175809-005-732216f858006836.webp",
+    "sha256": "732216f85800683688dc2e02867ec8562aa9a5f37d8df29c1680aa18216abc61",
+    "width": 892,
+    "height": 455
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/9168175809/fairwardgolf-9168175809-006-88355fee7bf45f5b.webp",
+    "sha256": "88355fee7bf45f5ba921d0ac144c26873ac04cef33baf7ae2d49b5a345ae8785",
+    "width": 640,
+    "height": 681
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/9168175809/fairwardgolf-9168175809-007-535da043af654ce0.webp",
+    "sha256": "535da043af654ce08f8345fd78bb30d260e76c8528b5b9b13e87bc4e98affd08",
+    "width": 643,
+    "height": 486
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/9168175809/fairwardgolf-9168175809-008-e6afed09acc80952.webp",
+    "sha256": "e6afed09acc80952af681b41eed139121ec2129afe9b71e865ac738f83d62e29",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/9168175809/fairwardgolf-9168175809-009-885ede718ef86a39.webp",
+    "sha256": "885ede718ef86a39644e1bf3e4b718c0f880783357eaebb74c18457d79dd1a01",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": 3000,
+   "policy_text": "제주 추가 5,000원, 제주 외 도서지역 추가 3,000원",
+   "lead_time": {
+    "seller_average_days": 1.92,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 96,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "야마모토 다이너스티 풀세트\n12PCS 구성\n스탠드백, 보스턴백 포함\n\n야마모토 다이너스티 풀세트는 티타늄 헤드인 드라이버를\n시작으로 우드, 하이브리드, 경량 스틸 8아이언, 블레이드\n퍼터 그리고 캐디백 세트로 구성된 극가성비 풀세트입니다!\n티타늄 헤드인 드라이버는 460CC 체적으로 부드러운 타구감과 경쾌한 타구음을 경험해 보실 수 있으며 비거리 향상의\n많은 도움을 받을 수 있습니다.",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20230906_256/1693966652228XA3if_PNG/image.png?type=w848",
+   "https://shop-phinf.pstatic.net/20250925_167/17587781189744yXxR_JPEG/yamamoto_dynasty_gold_fullset_signature_2025.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "greeting",
+    "text": "안녕하세요. 제이디스포츠:)입니다."
+   },
+   {
+    "rule": "contact",
+    "text": "* 추가적으로 궁금하신 내용은 네이버 톡톡 또는 유선 전화로\n안내해 드리겠습니다:)"
+   },
+   {
+    "rule": "policy",
+    "text": "●반품 및 교환 관련 안내\n당사 특성상 네이버페이 자동수거 요청이 불가합니다.\n반품 및 교환을 원하신다면 네이버 톡톡 또는 유선 전화로\n문의하시기 바라며 상담원 안내 및 당사와 계약된\n택배사가 방문하여 회수하도록 처리하겠습니다:)\n●반품 시 주의사항\n해당 상품에 관련하여 클럽 헤드 비닐을 벗기시거나 시타 후에는 반품이 불가합니다. 반품 시 기존에 포장되어 있는\n에어캡을 반드시 재포장해 주시기 바랍니다:)\n-제이디스포츠-"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:d5c972d1c5da0a8e",
+   "kind": "title",
+   "ko": "야마모토 다이너스티 고반발 남성 골드 풀세트(스탠드백,보스턴백 포함) [스틸아이언/12pc]"
+  },
+  {
+   "id": "brand:e41b4d987101f2f1",
+   "kind": "brand",
+   "ko": "야마모토"
+  },
+  {
+   "id": "fact_value:0ac23a084a85b591",
+   "kind": "fact_value",
+   "ko": "드라이버+우드+하이브리드/SR"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:06acc81dfd3ac0a9",
+   "kind": "spec_value",
+   "ko": "펜타곤 골프 코리아"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:e41b4d987101f2f1",
+   "kind": "spec_value",
+   "ko": "야마모토"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:a4ca18652e404e46",
+   "kind": "spec_value",
+   "ko": "야마모토 다이너스티(DYNASTY) 고반발 남성 골드 풀세트(캐디백세트 포함) [스틸아이언/12pc]"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "spec_label:1c0460d0d6673223",
+   "kind": "spec_label",
+   "ko": "유틸리티/하이브리드 로프트각"
+  },
+  {
+   "id": "spec_value:12a73b9098bf50da",
+   "kind": "spec_value",
+   "ko": "21도"
+  },
+  {
+   "id": "spec_label:ecef087ddd17d2b5",
+   "kind": "spec_label",
+   "ko": "페어웨이 로프트각"
+  },
+  {
+   "id": "spec_value:13a3c342a2c78df1",
+   "kind": "spec_value",
+   "ko": "15도"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:de2b6da830b81034",
+   "kind": "spec_value",
+   "ko": "10.5도"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:5ace0004401aa84b",
+   "kind": "spec_value",
+   "ko": "#5, #6, #7, #8, #9, 피칭웨지(PW), 어프로치웨지(AW), 샌드웨지(SW)"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:409b80822db00dec",
+   "kind": "spec_value",
+   "ko": "12개"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:6d2d10e4d5df41e6",
+   "kind": "spec_value",
+   "ko": "2021년형"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:8896dd98fd9d15dc",
+   "kind": "spec_value",
+   "ko": "드라이버, 8아이언세트, 페어웨이, 유틸리티, 퍼터"
+  },
+  {
+   "id": "spec_label:5a12089f44ae3f65",
+   "kind": "spec_label",
+   "ko": "아이언샤프트소재"
+  },
+  {
+   "id": "spec_value:6ed197f5a449c360",
+   "kind": "spec_value",
+   "ko": "경량스틸"
+  },
+  {
+   "id": "spec_label:cf77915a2f3ab5d8",
+   "kind": "spec_label",
+   "ko": "아이언개수"
+  },
+  {
+   "id": "spec_value:77e34e31f3da3e43",
+   "kind": "spec_value",
+   "ko": "8개"
+  },
+  {
+   "id": "spec_label:04c52e5b47f70047",
+   "kind": "spec_label",
+   "ko": "퍼터형태"
+  },
+  {
+   "id": "spec_value:db08874d4cf56690",
+   "kind": "spec_value",
+   "ko": "블레이드(일자형)"
+  },
+  {
+   "id": "spec_label:e4aabb2e41b870bd",
+   "kind": "spec_label",
+   "ko": "골프백포함여부"
+  },
+  {
+   "id": "spec_value:eeda5d7de7e2ade9",
+   "kind": "spec_value",
+   "ko": "캐디백, 보스턴백"
+  },
+  {
+   "id": "review:4d05916f2ae64a27",
+   "kind": "review",
+   "ko": "배송: 하루만에 왔네요\n상담: 톡톡문의 친절하고 빠른 대응\n상품: 좋아요\n\n동일 상품 여러곳에서 판매하나, 여기 사장님 빠른고 친절하게 응대해주시니 믿음이 갑니다."
+  }
+ ]
+}

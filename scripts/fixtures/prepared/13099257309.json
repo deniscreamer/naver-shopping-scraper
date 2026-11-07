@@ -361,77 +361,6 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"10.5도 R+아이언 R\",\"5번 R\",\"4번 SR\"]",
-    "naver_variant_id": "56121564153",
-    "options_ko": [
-     "10.5도 R+아이언 R",
-     "5번 R",
-     "4번 SR"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-564602779d6b58d5f948396c",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
     "source_id": "observed:[\"10.5도 R+아이언 R\",\"5번 R\",\"3번 SR\"]",
     "naver_variant_id": "56121564156",
     "options_ko": [
@@ -442,77 +371,6 @@
     "price_krw": 3750000,
     "price_usd": "3750.00",
     "sku": "FW-14fd1c8975bf3e3c350d8341",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"10.5도 R+아이언 R\",\"5번 R\",\"5번 S\"]",
-    "naver_variant_id": "56121564160",
-    "options_ko": [
-     "10.5도 R+아이언 R",
-     "5번 R",
-     "5번 S"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-6797fa751d1fd6d3ef93e721",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -645,148 +503,6 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"10.5도 R+아이언 R\",\"5번 R\",\"3번 S\"]",
-    "naver_variant_id": "56121564166",
-    "options_ko": [
-     "10.5도 R+아이언 R",
-     "5번 R",
-     "3번 S"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-d1d71555513c2623f0ec10d9",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"10.5도 R+아이언 R\",\"4번 R\",\"5번 R\"]",
-    "naver_variant_id": "56121564168",
-    "options_ko": [
-     "10.5도 R+아이언 R",
-     "4번 R",
-     "5번 R"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-db5e8470f61b1cded76fc4e3",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
     "source_id": "observed:[\"10.5도 R+아이언 R\",\"4번 R\",\"4번 R\"]",
     "naver_variant_id": "56121564169",
     "options_ko": [
@@ -858,16 +574,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"10.5도 R+아이언 R\",\"4번 R\",\"3번 R\"]",
-    "naver_variant_id": "56121564170",
+    "source_id": "observed:[\"10.5도 R+아이언 R\",\"3번 R\",\"3번 R\"]",
+    "naver_variant_id": "56121564179",
     "options_ko": [
      "10.5도 R+아이언 R",
-     "4번 R",
+     "3번 R",
      "3번 R"
     ],
     "price_krw": 3750000,
     "price_usd": "3750.00",
-    "sku": "FW-db8536546bcb187301dfc938",
+    "sku": "FW-0c87900d910a8196a418df78",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -929,16 +645,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"10.5도 R+아이언 R\",\"4번 R\",\"5번 SR\"]",
-    "naver_variant_id": "56121564171",
+    "source_id": "observed:[\"10.5도 R+아이언 R\",\"5번 SR\",\"5번 SR\"]",
+    "naver_variant_id": "56121564190",
     "options_ko": [
      "10.5도 R+아이언 R",
-     "4번 R",
+     "5번 SR",
      "5번 SR"
     ],
     "price_krw": 3750000,
     "price_usd": "3750.00",
-    "sku": "FW-909879484b611bdc05aa3589",
+    "sku": "FW-131ccfde20cb69f0dd46f28c",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -1000,16 +716,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"10.5도 R+아이언 R\",\"4번 R\",\"4번 SR\"]",
-    "naver_variant_id": "56121564172",
+    "source_id": "observed:[\"10.5도 R+아이언 R\",\"4번 SR\",\"4번 SR\"]",
+    "naver_variant_id": "56121564200",
     "options_ko": [
      "10.5도 R+아이언 R",
-     "4번 R",
+     "4번 SR",
      "4번 SR"
     ],
     "price_krw": 3750000,
     "price_usd": "3750.00",
-    "sku": "FW-d372d97376d23525a2aeec1f",
+    "sku": "FW-3fb0e06e436a60cac7fcd87a",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -1071,16 +787,87 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"10.5도 R+아이언 R\",\"4번 R\",\"3번 SR\"]",
-    "naver_variant_id": "56121564173",
+    "source_id": "observed:[\"10.5도 R+아이언 R\",\"4번 SR\",\"4번 S\"]",
+    "naver_variant_id": "56121564203",
     "options_ko": [
      "10.5도 R+아이언 R",
-     "4번 R",
+     "4번 SR",
+     "4번 S"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-30400ea1054f037c781ed973",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 R+아이언 R\",\"3번 SR\",\"3번 SR\"]",
+    "naver_variant_id": "56121564210",
+    "options_ko": [
+     "10.5도 R+아이언 R",
+     "3번 SR",
      "3번 SR"
     ],
     "price_krw": 3750000,
     "price_usd": "3750.00",
-    "sku": "FW-c86d7a8376067ff10fb2f065",
+    "sku": "FW-54c49d6707fb120d6f07c504",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -1142,16 +929,300 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"10.5도 R+아이언 R\",\"4번 R\",\"5번 S\"]",
-    "naver_variant_id": "56121564174",
+    "source_id": "observed:[\"10.5도 R+아이언 R\",\"5번 S\",\"5번 SR\"]",
+    "naver_variant_id": "56121564224",
     "options_ko": [
      "10.5도 R+아이언 R",
-     "4번 R",
+     "5번 S",
+     "5번 SR"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-2af4c6a170532ff6c9f83493",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 R+아이언 R\",\"5번 S\",\"5번 S\"]",
+    "naver_variant_id": "56121564230",
+    "options_ko": [
+     "10.5도 R+아이언 R",
+     "5번 S",
      "5번 S"
     ],
     "price_krw": 3750000,
     "price_usd": "3750.00",
-    "sku": "FW-82b675e0ff75eaf08812f5e8",
+    "sku": "FW-fda461e11de10f70aa2020f8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 R+아이언 R\",\"4번 S\",\"3번 S\"]",
+    "naver_variant_id": "56121564255",
+    "options_ko": [
+     "10.5도 R+아이언 R",
+     "4번 S",
+     "3번 S"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-8a08a83de6dc0219ac70eee9",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 R+아이언 R\",\"3번 S\",\"4번 R\"]",
+    "naver_variant_id": "56121564258",
+    "options_ko": [
+     "10.5도 R+아이언 R",
+     "3번 S",
+     "4번 R"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-525b845244150bfb2c4e7427",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 R+아이언 R\",\"3번 S\",\"4번 SR\"]",
+    "naver_variant_id": "56121564263",
+    "options_ko": [
+     "10.5도 R+아이언 R",
+     "3번 S",
+     "4번 SR"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-d6a9a8e3cc9f400ba63026cf",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -1568,290 +1639,6 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"4번 R\",\"3번 R\"]",
-    "naver_variant_id": "56121564288",
-    "options_ko": [
-     "10.5도 SR+아이언 SR",
-     "4번 R",
-     "3번 R"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-da3612e4a739d23fb0f5e6df",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"4번 R\",\"5번 SR\"]",
-    "naver_variant_id": "56121564290",
-    "options_ko": [
-     "10.5도 SR+아이언 SR",
-     "4번 R",
-     "5번 SR"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-6f21606835d809634f85c5aa",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"4번 R\",\"4번 SR\"]",
-    "naver_variant_id": "56121564292",
-    "options_ko": [
-     "10.5도 SR+아이언 SR",
-     "4번 R",
-     "4번 SR"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-acb4477faeae8abb64e58da1",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"4번 R\",\"3번 SR\"]",
-    "naver_variant_id": "56121564294",
-    "options_ko": [
-     "10.5도 SR+아이언 SR",
-     "4번 R",
-     "3번 SR"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-092b34b8420aa9b012fe7174",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
     "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"4번 R\",\"5번 S\"]",
     "naver_variant_id": "56121564296",
     "options_ko": [
@@ -1862,219 +1649,6 @@
     "price_krw": 3750000,
     "price_usd": "3750.00",
     "sku": "FW-fbe894cf6b7d2eb088e7879a",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"4번 R\",\"4번 S\"]",
-    "naver_variant_id": "56121564298",
-    "options_ko": [
-     "10.5도 SR+아이언 SR",
-     "4번 R",
-     "4번 S"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-389f905bf74d3a79901d2cff",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"4번 R\",\"3번 S\"]",
-    "naver_variant_id": "56121564300",
-    "options_ko": [
-     "10.5도 SR+아이언 SR",
-     "4번 R",
-     "3번 S"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-4573667debf0f8c303c177f1",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"3번 R\",\"5번 R\"]",
-    "naver_variant_id": "56121564302",
-    "options_ko": [
-     "10.5도 SR+아이언 SR",
-     "3번 R",
-     "5번 R"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-f5b03aa39f8fb72573adf521",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -2207,16 +1781,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"3번 R\",\"3번 R\"]",
-    "naver_variant_id": "56121564306",
+    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"5번 SR\",\"3번 R\"]",
+    "naver_variant_id": "56121564322",
     "options_ko": [
      "10.5도 SR+아이언 SR",
-     "3번 R",
+     "5번 SR",
      "3번 R"
     ],
     "price_krw": 3750000,
     "price_usd": "3750.00",
-    "sku": "FW-cd051b15d68920bae03a34e1",
+    "sku": "FW-f8a642f36a19534e1750ac16",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -2278,16 +1852,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"3번 R\",\"5번 SR\"]",
-    "naver_variant_id": "56121564308",
+    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"4번 SR\",\"5번 SR\"]",
+    "naver_variant_id": "56121564332",
     "options_ko": [
      "10.5도 SR+아이언 SR",
-     "3번 R",
+     "4번 SR",
      "5번 SR"
     ],
     "price_krw": 3750000,
     "price_usd": "3750.00",
-    "sku": "FW-58eee41dcf82d36cf95abe98",
+    "sku": "FW-7e2e1dbf8bf766e8762dd500",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -2349,87 +1923,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"5번 SR\",\"5번 R\"]",
-    "naver_variant_id": "56121564320",
-    "options_ko": [
-     "10.5도 SR+아이언 SR",
-     "5번 SR",
-     "5번 R"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-4496b2d5fbe5557e2536113d",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"4번 SR\",\"5번 R\"]",
-    "naver_variant_id": "56121564329",
+    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"4번 SR\",\"5번 S\"]",
+    "naver_variant_id": "56121564335",
     "options_ko": [
      "10.5도 SR+아이언 SR",
      "4번 SR",
-     "5번 R"
+     "5번 S"
     ],
     "price_krw": 3750000,
     "price_usd": "3750.00",
-    "sku": "FW-dc978559d7c8dde43bdc6093",
+    "sku": "FW-c1ca06826270df28927f7b15",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -2491,16 +1994,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"3번 SR\",\"5번 R\"]",
-    "naver_variant_id": "56121564338",
+    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"3번 SR\",\"4번 SR\"]",
+    "naver_variant_id": "56121564342",
     "options_ko": [
      "10.5도 SR+아이언 SR",
      "3번 SR",
-     "5번 R"
+     "4번 SR"
     ],
     "price_krw": 3750000,
     "price_usd": "3750.00",
-    "sku": "FW-de7f1fd6e2b1060ff8d38038",
+    "sku": "FW-d733ef5221a9509b9a3687a1",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -2562,16 +2065,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"5번 S\",\"5번 R\"]",
-    "naver_variant_id": "56121564347",
+    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"5번 S\",\"3번 R\"]",
+    "naver_variant_id": "56121564349",
     "options_ko": [
      "10.5도 SR+아이언 SR",
      "5번 S",
-     "5번 R"
+     "3번 R"
     ],
     "price_krw": 3750000,
     "price_usd": "3750.00",
-    "sku": "FW-6864aea7a85f8ecd6056d310",
+    "sku": "FW-6753dd73deebbcac6ef3b57e",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -2633,16 +2136,87 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"4번 S\",\"5번 R\"]",
-    "naver_variant_id": "56121564356",
+    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"5번 S\",\"3번 SR\"]",
+    "naver_variant_id": "56121564352",
     "options_ko": [
      "10.5도 SR+아이언 SR",
-     "4번 S",
-     "5번 R"
+     "5번 S",
+     "3번 SR"
     ],
     "price_krw": 3750000,
     "price_usd": "3750.00",
-    "sku": "FW-88de873d04fb2711478f457c",
+    "sku": "FW-adceff36e73b5b72c5389d1d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"4번 S\",\"4번 S\"]",
+    "naver_variant_id": "56121564363",
+    "options_ko": [
+     "10.5도 SR+아이언 SR",
+     "4번 S",
+     "4번 S"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-01f8712c5b5cd44dd99edecd",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -2714,6 +2288,77 @@
     "price_krw": 3750000,
     "price_usd": "3750.00",
     "sku": "FW-2a10d68fd8fddb75db15b04c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 SR+아이언 SR\",\"3번 S\",\"5번 SR\"]",
+    "naver_variant_id": "56121564368",
+    "options_ko": [
+     "10.5도 SR+아이언 SR",
+     "3번 S",
+     "5번 SR"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-5141d3ffe14aa78477806789",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -3059,503 +2704,6 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"5번 R\",\"4번 SR\"]",
-    "naver_variant_id": "56121993510",
-    "options_ko": [
-     "10.5도 R+아이언 SR",
-     "5번 R",
-     "4번 SR"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-abbc3fc29f4f97b44d011cff",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"5번 R\",\"3번 SR\"]",
-    "naver_variant_id": "56121993511",
-    "options_ko": [
-     "10.5도 R+아이언 SR",
-     "5번 R",
-     "3번 SR"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-cdd7ff07541007eff9a21fbd",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"5번 R\",\"5번 S\"]",
-    "naver_variant_id": "56121993512",
-    "options_ko": [
-     "10.5도 R+아이언 SR",
-     "5번 R",
-     "5번 S"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-81c6d5a3265aecd4c58dcbf3",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"5번 R\",\"4번 S\"]",
-    "naver_variant_id": "56121993513",
-    "options_ko": [
-     "10.5도 R+아이언 SR",
-     "5번 R",
-     "4번 S"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-f5dc421114e76f46cffc53bf",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"5번 R\",\"3번 S\"]",
-    "naver_variant_id": "56121993514",
-    "options_ko": [
-     "10.5도 R+아이언 SR",
-     "5번 R",
-     "3번 S"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-1b9d336c71628b5b87d1009c",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"4번 R\",\"5번 R\"]",
-    "naver_variant_id": "56121993515",
-    "options_ko": [
-     "10.5도 R+아이언 SR",
-     "4번 R",
-     "5번 R"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-0db8f4caf81ed5d6b405582b",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"4번 R\",\"4번 R\"]",
-    "naver_variant_id": "56121993516",
-    "options_ko": [
-     "10.5도 R+아이언 SR",
-     "4번 R",
-     "4번 R"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-5e94ad8308e870d6fcb345dd",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
     "source_id": "observed:[\"10.5도 R+아이언 SR\",\"4번 R\",\"3번 R\"]",
     "naver_variant_id": "56121993517",
     "options_ko": [
@@ -3627,16 +2775,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"4번 R\",\"5번 SR\"]",
-    "naver_variant_id": "56121993518",
+    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"4번 R\",\"3번 S\"]",
+    "naver_variant_id": "56121993523",
     "options_ko": [
      "10.5도 R+아이언 SR",
      "4번 R",
-     "5번 SR"
+     "3번 S"
     ],
     "price_krw": 3750000,
     "price_usd": "3750.00",
-    "sku": "FW-7614047e890230ae63e5651f",
+    "sku": "FW-19381fd732b7854d1db2ac9c",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -3698,16 +2846,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"4번 R\",\"4번 SR\"]",
-    "naver_variant_id": "56121993519",
+    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"3번 R\",\"5번 R\"]",
+    "naver_variant_id": "56121993524",
     "options_ko": [
      "10.5도 R+아이언 SR",
-     "4번 R",
-     "4번 SR"
+     "3번 R",
+     "5번 R"
     ],
     "price_krw": 3750000,
     "price_usd": "3750.00",
-    "sku": "FW-d113c110591cf41a3fa8de5a",
+    "sku": "FW-5823909e2cb01b59602a97e6",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -3769,87 +2917,655 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"4번 R\",\"3번 SR\"]",
-    "naver_variant_id": "56121993520",
+    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"3번 R\",\"5번 S\"]",
+    "naver_variant_id": "56121993530",
     "options_ko": [
      "10.5도 R+아이언 SR",
-     "4번 R",
-     "3번 SR"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-2badf0ee6a152c44d6a454e8",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"4번 R\",\"5번 S\"]",
-    "naver_variant_id": "56121993521",
-    "options_ko": [
-     "10.5도 R+아이언 SR",
-     "4번 R",
+     "3번 R",
      "5번 S"
     ],
     "price_krw": 3750000,
     "price_usd": "3750.00",
-    "sku": "FW-aa2aebb5b9ff2d21035d217f",
+    "sku": "FW-5b136785ca12ef5e53ea0552",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"5번 SR\",\"4번 SR\"]",
+    "naver_variant_id": "56121993537",
+    "options_ko": [
+     "10.5도 R+아이언 SR",
+     "5번 SR",
+     "4번 SR"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-e81baae35387436af3c0fdb8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"4번 SR\",\"3번 SR\"]",
+    "naver_variant_id": "56121993547",
+    "options_ko": [
+     "10.5도 R+아이언 SR",
+     "4번 SR",
+     "3번 SR"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-93b5328a23648fb4b4e4c5b9",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"4번 SR\",\"3번 S\"]",
+    "naver_variant_id": "56121993550",
+    "options_ko": [
+     "10.5도 R+아이언 SR",
+     "4번 SR",
+     "3번 S"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-063a3d85bca9bc566a3985f1",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"3번 SR\",\"5번 SR\"]",
+    "naver_variant_id": "56121993554",
+    "options_ko": [
+     "10.5도 R+아이언 SR",
+     "3번 SR",
+     "5번 SR"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-a5aa4eca23d8baea6adddf95",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"5번 S\",\"4번 SR\"]",
+    "naver_variant_id": "56121993564",
+    "options_ko": [
+     "10.5도 R+아이언 SR",
+     "5번 S",
+     "4번 SR"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-d02f3848d546b2009e1b0212",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"5번 S\",\"4번 S\"]",
+    "naver_variant_id": "56121993567",
+    "options_ko": [
+     "10.5도 R+아이언 SR",
+     "5번 S",
+     "4번 S"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-021fb1353c2698dc555f66a4",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"4번 S\",\"5번 R\"]",
+    "naver_variant_id": "56121993569",
+    "options_ko": [
+     "10.5도 R+아이언 SR",
+     "4번 S",
+     "5번 R"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-432677f4b7c37fb95d341046",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"3번 S\",\"3번 SR\"]",
+    "naver_variant_id": "56121993583",
+    "options_ko": [
+     "10.5도 R+아이언 SR",
+     "3번 S",
+     "3번 SR"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-205d74fdafae497f511ea4bd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"10.5도 R+아이언 SR\",\"3번 S\",\"5번 S\"]",
+    "naver_variant_id": "56121993584",
+    "options_ko": [
+     "10.5도 R+아이언 SR",
+     "3번 S",
+     "5번 S"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-a250ae77fb288d68441b8e07",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -4266,503 +3982,6 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"9.5도 R+아이언 R\",\"5번 R\",\"3번 SR\"]",
-    "naver_variant_id": "56121564379",
-    "options_ko": [
-     "9.5도 R+아이언 R",
-     "5번 R",
-     "3번 SR"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-9af03fb9e90e1b74dcce8815",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 R+아이언 R\",\"5번 R\",\"5번 S\"]",
-    "naver_variant_id": "56121564380",
-    "options_ko": [
-     "9.5도 R+아이언 R",
-     "5번 R",
-     "5번 S"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-4f91e917fb7437b5ad8298c6",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 R+아이언 R\",\"5번 R\",\"4번 S\"]",
-    "naver_variant_id": "56121564381",
-    "options_ko": [
-     "9.5도 R+아이언 R",
-     "5번 R",
-     "4번 S"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-983c2612b6c91e770e44f373",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 R+아이언 R\",\"5번 R\",\"3번 S\"]",
-    "naver_variant_id": "56121564383",
-    "options_ko": [
-     "9.5도 R+아이언 R",
-     "5번 R",
-     "3번 S"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-1282859971aa9c92247987ff",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 R+아이언 R\",\"4번 R\",\"5번 R\"]",
-    "naver_variant_id": "56121564385",
-    "options_ko": [
-     "9.5도 R+아이언 R",
-     "4번 R",
-     "5번 R"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-c782c79c037003e2afe6ddd1",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 R+아이언 R\",\"4번 R\",\"4번 R\"]",
-    "naver_variant_id": "56121564387",
-    "options_ko": [
-     "9.5도 R+아이언 R",
-     "4번 R",
-     "4번 R"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-e6bc59b56e870d6c017d49a5",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 R+아이언 R\",\"4번 R\",\"3번 R\"]",
-    "naver_variant_id": "56121564389",
-    "options_ko": [
-     "9.5도 R+아이언 R",
-     "4번 R",
-     "3번 R"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-2a9daee4efe84cd99bfdc47c",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
     "source_id": "observed:[\"9.5도 R+아이언 R\",\"4번 R\",\"5번 SR\"]",
     "naver_variant_id": "56121564391",
     "options_ko": [
@@ -4834,16 +4053,87 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"9.5도 R+아이언 R\",\"4번 R\",\"4번 SR\"]",
-    "naver_variant_id": "56121564393",
+    "source_id": "observed:[\"9.5도 R+아이언 R\",\"4번 R\",\"4번 S\"]",
+    "naver_variant_id": "56121564399",
     "options_ko": [
      "9.5도 R+아이언 R",
      "4번 R",
+     "4번 S"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-8d8114c5c446c97090efbe4d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 R\",\"3번 R\",\"4번 SR\"]",
+    "naver_variant_id": "56121564410",
+    "options_ko": [
+     "9.5도 R+아이언 R",
+     "3번 R",
      "4번 SR"
     ],
     "price_krw": 3750000,
     "price_usd": "3750.00",
-    "sku": "FW-39546d4ddaab552e0a554a41",
+    "sku": "FW-05e65fcb574807aefc2f733d",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -4905,16 +4195,87 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"9.5도 R+아이언 R\",\"4번 R\",\"3번 SR\"]",
-    "naver_variant_id": "56121564395",
+    "source_id": "observed:[\"9.5도 R+아이언 R\",\"5번 SR\",\"5번 R\"]",
+    "naver_variant_id": "56121564415",
     "options_ko": [
      "9.5도 R+아이언 R",
-     "4번 R",
+     "5번 SR",
+     "5번 R"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-8b398bfd71f94d0c8756988b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 R\",\"5번 SR\",\"3번 SR\"]",
+    "naver_variant_id": "56121564420",
+    "options_ko": [
+     "9.5도 R+아이언 R",
+     "5번 SR",
      "3번 SR"
     ],
     "price_krw": 3750000,
     "price_usd": "3750.00",
-    "sku": "FW-945be1a5ed5b2d4deb52ea6b",
+    "sku": "FW-c67d25afab6c783f2707d2c2",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -4976,16 +4337,442 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"9.5도 R+아이언 R\",\"4번 R\",\"5번 S\"]",
-    "naver_variant_id": "56121564397",
+    "source_id": "observed:[\"9.5도 R+아이언 R\",\"4번 SR\",\"4번 R\"]",
+    "naver_variant_id": "56121564425",
     "options_ko": [
      "9.5도 R+아이언 R",
-     "4번 R",
+     "4번 SR",
+     "4번 R"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-f188932a9fd794ede7e02a7e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 R\",\"3번 SR\",\"4번 R\"]",
+    "naver_variant_id": "56121564441",
+    "options_ko": [
+     "9.5도 R+아이언 R",
+     "3번 SR",
+     "4번 R"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-2d80050b92074122dfefdd9c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 R\",\"3번 SR\",\"5번 S\"]",
+    "naver_variant_id": "56121564453",
+    "options_ko": [
+     "9.5도 R+아이언 R",
+     "3번 SR",
      "5번 S"
     ],
     "price_krw": 3750000,
     "price_usd": "3750.00",
-    "sku": "FW-abf3c81bd4fd3838ac097dc7",
+    "sku": "FW-4dd7b7d9a232af991f17c134",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 R\",\"5번 S\",\"3번 S\"]",
+    "naver_variant_id": "56121564464",
+    "options_ko": [
+     "9.5도 R+아이언 R",
+     "5번 S",
+     "3번 S"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-b9df28f46f325c84da085950",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 R\",\"4번 S\",\"3번 R\"]",
+    "naver_variant_id": "56121564467",
+    "options_ko": [
+     "9.5도 R+아이언 R",
+     "4번 S",
+     "3번 R"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-468d83d5e2ed1903393e1cd5",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 R\",\"4번 S\",\"3번 SR\"]",
+    "naver_variant_id": "56121564470",
+    "options_ko": [
+     "9.5도 R+아이언 R",
+     "4번 S",
+     "3번 SR"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-20adb5e1abf65415a1314cbb",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 R\",\"3번 S\",\"3번 R\"]",
+    "naver_variant_id": "56121564476",
+    "options_ko": [
+     "9.5도 R+아이언 R",
+     "3번 S",
+     "3번 R"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-a8b8185ba387788a527f185a",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -5331,645 +5118,6 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"5번 R\",\"4번 SR\"]",
-    "naver_variant_id": "56121564488",
-    "options_ko": [
-     "9.5도 SR+아이언 SR",
-     "5번 R",
-     "4번 SR"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-d50078f3afab69c32c25760d",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"5번 R\",\"3번 SR\"]",
-    "naver_variant_id": "56121564489",
-    "options_ko": [
-     "9.5도 SR+아이언 SR",
-     "5번 R",
-     "3번 SR"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-165657f7409c14acb40b950d",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"5번 R\",\"5번 S\"]",
-    "naver_variant_id": "56121564490",
-    "options_ko": [
-     "9.5도 SR+아이언 SR",
-     "5번 R",
-     "5번 S"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-4209bc370d868309dd8ea409",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"5번 R\",\"4번 S\"]",
-    "naver_variant_id": "56121564491",
-    "options_ko": [
-     "9.5도 SR+아이언 SR",
-     "5번 R",
-     "4번 S"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-52d02a1009df4a41acc21763",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"5번 R\",\"3번 S\"]",
-    "naver_variant_id": "56121564492",
-    "options_ko": [
-     "9.5도 SR+아이언 SR",
-     "5번 R",
-     "3번 S"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-16043c7ab88291d885ab3967",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"4번 R\",\"5번 R\"]",
-    "naver_variant_id": "56121564493",
-    "options_ko": [
-     "9.5도 SR+아이언 SR",
-     "4번 R",
-     "5번 R"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-49927a4b454aba61e0f82e74",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"4번 R\",\"4번 R\"]",
-    "naver_variant_id": "56121564494",
-    "options_ko": [
-     "9.5도 SR+아이언 SR",
-     "4번 R",
-     "4번 R"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-0b4ecd37000580edde46e5c3",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"4번 R\",\"3번 R\"]",
-    "naver_variant_id": "56121564495",
-    "options_ko": [
-     "9.5도 SR+아이언 SR",
-     "4번 R",
-     "3번 R"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-3a05b644bb3bb22566c64260",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"4번 R\",\"5번 SR\"]",
-    "naver_variant_id": "56121564496",
-    "options_ko": [
-     "9.5도 SR+아이언 SR",
-     "4번 R",
-     "5번 SR"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-c71b6bf1cf60fefe5269ee47",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
     "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"4번 R\",\"4번 SR\"]",
     "naver_variant_id": "56121564497",
     "options_ko": [
@@ -6041,16 +5189,726 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"4번 R\",\"3번 SR\"]",
-    "naver_variant_id": "56121564498",
+    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"3번 R\",\"3번 SR\"]",
+    "naver_variant_id": "56121564507",
     "options_ko": [
      "9.5도 SR+아이언 SR",
-     "4번 R",
+     "3번 R",
      "3번 SR"
     ],
     "price_krw": 3750000,
     "price_usd": "3750.00",
-    "sku": "FW-96f1adb2fb225b0f95ecf246",
+    "sku": "FW-3287ee1b83b2d2ce6cd88f17",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"3번 R\",\"3번 S\"]",
+    "naver_variant_id": "56121564510",
+    "options_ko": [
+     "9.5도 SR+아이언 SR",
+     "3번 R",
+     "3번 S"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-bf187441a12ba4332490e31d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"5번 SR\",\"4번 R\"]",
+    "naver_variant_id": "56121564513",
+    "options_ko": [
+     "9.5도 SR+아이언 SR",
+     "5번 SR",
+     "4번 R"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-3f81fff9e7e558482aca2ddd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"5번 SR\",\"4번 S\"]",
+    "naver_variant_id": "56121564527",
+    "options_ko": [
+     "9.5도 SR+아이언 SR",
+     "5번 SR",
+     "4번 S"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-0edee2985c9fe7404edf74ff",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"4번 SR\",\"5번 R\"]",
+    "naver_variant_id": "56121564531",
+    "options_ko": [
+     "9.5도 SR+아이언 SR",
+     "4번 SR",
+     "5번 R"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-f1a4af59409c7e4e5972a8c9",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"3번 SR\",\"3번 R\"]",
+    "naver_variant_id": "56121564542",
+    "options_ko": [
+     "9.5도 SR+아이언 SR",
+     "3번 SR",
+     "3번 R"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-96d0e6c892613f87eab9982e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"3번 SR\",\"4번 S\"]",
+    "naver_variant_id": "56121564547",
+    "options_ko": [
+     "9.5도 SR+아이언 SR",
+     "3번 SR",
+     "4번 S"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-c254d9537bc4d15e2827fe0c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"5번 S\",\"5번 R\"]",
+    "naver_variant_id": "56121564549",
+    "options_ko": [
+     "9.5도 SR+아이언 SR",
+     "5번 S",
+     "5번 R"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-3b4a88e5a7c47ed3843c1af4",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"4번 S\",\"5번 SR\"]",
+    "naver_variant_id": "56121564567",
+    "options_ko": [
+     "9.5도 SR+아이언 SR",
+     "4번 S",
+     "5번 SR"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-a6e4acb5d0ac22dc9ce5c9ff",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"4번 S\",\"5번 S\"]",
+    "naver_variant_id": "56121564571",
+    "options_ko": [
+     "9.5도 SR+아이언 SR",
+     "4번 S",
+     "5번 S"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-b80c44cb3fd6d4a20ff09d0d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 SR+아이언 SR\",\"3번 S\",\"4번 S\"]",
+    "naver_variant_id": "56121564586",
+    "options_ko": [
+     "9.5도 SR+아이언 SR",
+     "3번 S",
+     "4번 S"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-9895028fbaa6a326401b2e69",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -6467,645 +6325,6 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"5번 R\",\"3번 SR\"]",
-    "naver_variant_id": "56121993593",
-    "options_ko": [
-     "9.5도 R+아이언 SR",
-     "5번 R",
-     "3번 SR"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-ed94a382edf69cbc319a467f",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"5번 R\",\"5번 S\"]",
-    "naver_variant_id": "56121993594",
-    "options_ko": [
-     "9.5도 R+아이언 SR",
-     "5번 R",
-     "5번 S"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-601c17746bceba0310762491",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"5번 R\",\"4번 S\"]",
-    "naver_variant_id": "56121993595",
-    "options_ko": [
-     "9.5도 R+아이언 SR",
-     "5번 R",
-     "4번 S"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-2f5d314da40c5f6fcd2ba4c9",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"5번 R\",\"3번 S\"]",
-    "naver_variant_id": "56121993596",
-    "options_ko": [
-     "9.5도 R+아이언 SR",
-     "5번 R",
-     "3번 S"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-886e3caeea234a5baceeec1f",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"4번 R\",\"5번 R\"]",
-    "naver_variant_id": "56121993597",
-    "options_ko": [
-     "9.5도 R+아이언 SR",
-     "4번 R",
-     "5번 R"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-0f4e4b74f891376dcc8274d4",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"4번 R\",\"4번 R\"]",
-    "naver_variant_id": "56121993598",
-    "options_ko": [
-     "9.5도 R+아이언 SR",
-     "4번 R",
-     "4번 R"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-c69800e90bcdbc0d8e48b5e5",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"4번 R\",\"3번 R\"]",
-    "naver_variant_id": "56121993599",
-    "options_ko": [
-     "9.5도 R+아이언 SR",
-     "4번 R",
-     "3번 R"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-4a89cfddd6ad396020b5afb0",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"4번 R\",\"5번 SR\"]",
-    "naver_variant_id": "56121993600",
-    "options_ko": [
-     "9.5도 R+아이언 SR",
-     "4번 R",
-     "5번 SR"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-6db7a413c65794380fa0b8e7",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"4번 R\",\"4번 SR\"]",
-    "naver_variant_id": "56121993601",
-    "options_ko": [
-     "9.5도 R+아이언 SR",
-     "4번 R",
-     "4번 SR"
-    ],
-    "price_krw": 3750000,
-    "price_usd": "3750.00",
-    "sku": "FW-4876ee92fe30548c3618fe0a",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     },
-     "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
     "source_id": "observed:[\"9.5도 R+아이언 SR\",\"4번 R\",\"3번 SR\"]",
     "naver_variant_id": "56121993602",
     "options_ko": [
@@ -7116,6 +6335,787 @@
     "price_krw": 3750000,
     "price_usd": "3750.00",
     "sku": "FW-a7a761c63e3f0836ad4eb512",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"3번 R\",\"5번 SR\"]",
+    "naver_variant_id": "56121993609",
+    "options_ko": [
+     "9.5도 R+아이언 SR",
+     "3번 R",
+     "5번 SR"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-cd2cda6cceace7341f4b7234",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"3번 R\",\"4번 S\"]",
+    "naver_variant_id": "56121993613",
+    "options_ko": [
+     "9.5도 R+아이언 SR",
+     "3번 R",
+     "4번 S"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-0207c306c762d48c7f0e6c50",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"5번 SR\",\"5번 S\"]",
+    "naver_variant_id": "56121993621",
+    "options_ko": [
+     "9.5도 R+아이언 SR",
+     "5번 SR",
+     "5번 S"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-5c3c2bff38d542cc8573f9cf",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"5번 SR\",\"3번 S\"]",
+    "naver_variant_id": "56121993623",
+    "options_ko": [
+     "9.5도 R+아이언 SR",
+     "5번 SR",
+     "3번 S"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-8e3b88af5dfaf280201c76b7",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"4번 SR\",\"3번 R\"]",
+    "naver_variant_id": "56121993626",
+    "options_ko": [
+     "9.5도 R+아이언 SR",
+     "4번 SR",
+     "3번 R"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-7df2628feac2e7ab7a51138e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"3번 SR\",\"5번 R\"]",
+    "naver_variant_id": "56121993633",
+    "options_ko": [
+     "9.5도 R+아이언 SR",
+     "3번 SR",
+     "5번 R"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-704b819ea63ecb42ef25d947",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"3번 SR\",\"3번 S\"]",
+    "naver_variant_id": "56121993644",
+    "options_ko": [
+     "9.5도 R+아이언 SR",
+     "3번 SR",
+     "3번 S"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-9332f17b2c25db05bd0d7326",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"5번 S\",\"4번 R\"]",
+    "naver_variant_id": "56121993648",
+    "options_ko": [
+     "9.5도 R+아이언 SR",
+     "5번 S",
+     "4번 R"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-0822c68f753c75f8695a5ca7",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"4번 S\",\"4번 R\"]",
+    "naver_variant_id": "56121993662",
+    "options_ko": [
+     "9.5도 R+아이언 SR",
+     "4번 S",
+     "4번 R"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-0a7bc1cf46fbc70a17037082",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"4번 S\",\"4번 SR\"]",
+    "naver_variant_id": "56121993665",
+    "options_ko": [
+     "9.5도 R+아이언 SR",
+     "4번 S",
+     "4번 SR"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-d614af3fa478f4312ffd3d40",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"9.5도 R+아이언 SR\",\"3번 S\",\"3번 S\"]",
+    "naver_variant_id": "56121993683",
+    "options_ko": [
+     "9.5도 R+아이언 SR",
+     "3번 S",
+     "3번 S"
+    ],
+    "price_krw": 3750000,
+    "price_usd": "3750.00",
+    "sku": "FW-bf48e59ca8419ee65dac4142",
     "available": true,
     "package": {
      "product_weight_g": {

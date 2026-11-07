@@ -10,7 +10,10 @@ sold variant (research 2026-11-06, 40 golf sets of category 50002788 and 86 more
     conflicts with "남성용 SR스틸" though they share no word. Bare R / S values get a class from the description only
     when it writes the material on that whole value: "스틸(S) / 카본(R)" (R-DESC, 6774818843).
   * count (R-COUNT, R-PARTS): 총클럽개수 vs the total a variant states (12종 / 9P / 13PCS / 10개세트 / "4스틸") or the
-    clubs of a full part list ("드라이버 우드 유틸 7아이언 퍼터" = 11).
+    clubs of a full part list ("드라이버 우드 유틸 7아이언 퍼터" = 11). A count after a part word ("아이언 선택 (8개)",
+    "아이언 6개") is that part's, never the total (run 40b, 2026-11-07).
+  * contradiction (R-CONTRA): 총클럽개수 N with N irons or more in 아이언개수 / 아이언 구성 on a set with other clubs:
+    the title's total, else 풀세트구성 or the option axes (axis_floor) counting N, says which row is wrong.
   * composition (R-FAMILY): 아이언개수, 아이언 구성 and 풀세트구성 describe one set; they follow 총클럽개수, or the
     fewest clubs they imply (their floor), to one group of variant counts.
   * model year (R-YEAR): 출시 2026년형 vs XR26 / "XR 24" / "X HOT 23" in the values.
@@ -20,16 +23,22 @@ sold variant (research 2026-11-06, 40 golf sets of category 50002788 and 86 more
 Numbers with units are one word in the title check: "11.5" / "11.5L" names the value "11.5도", "유틸4" / "4U" the
 value "4번" of a 유틸리티 axis, "+골프백" the values with a 캐디백 when others are "캐디백 미포함" (R-TITLE).
 
+Whole values count too: "NS PRO950GH NEO R" names the value "NS PRO950GH NEO(R)", "우드3번55S" the value "3번 55S" of
+the 우드 axis (value_spans; spacing, brackets and case aside).
+
 The decision per row (Shopify has no per-variant spec rows; the option values are the SKU source, never changed):
+  proved wrong by the product's own rows / title -> dropped, note specs_contradict (needs the title)
   fits no variant                                -> dropped, note specs_fit_no_variant
   every variant's own value states the fact      -> dropped, note specs_stated_by_variants (the variant title says it)
+  a sold loft half a degree from the row's       -> kept as is, note specs_loft_near_miss (9도 sold, row 9.5도)
+  several lofts on a product of one variant      -> kept as is, note specs_lists_unsold
   some variants silent, or a composition row     -> kept with for_ko (the option values it fits, as written),
                                                     note specs_bound_to_variants
   composition rows with no decidable set         -> dropped, note specs_composition_undecided
   other rows (모델명 ...) still word-matched       -> kept, note specs_name_one_variant (checked by hand)
 
     from spec_variants import check_specs, title_one_variant
-    checked = check_specs(spec_rows(specs), ov["options"], ov["variants"], description_text)
+    checked = check_specs(spec_rows(specs), ov["options"], ov["variants"], description_text, details["name"])
     product["specs"], notes = checked["specs"], notes + checked["notes"]
 """
 import re
@@ -198,9 +207,47 @@ _DRIVER_RE = re.compile(r"드라이버")
 _PUTTER_RE = re.compile(r"퍼터")
 
 
+# a count right after a part word is that part's count, not the set's total: "아이언 선택 (8개)" (an axis name),
+# "아이언 6개 NS PRO 950GH NEO(R)", "웨지2개퍼터"; not "아이언포함 11개", "클럽11개", "드라이버+8개 아이언" (seen
+# 2026-11-07: 12999501692, 13002235969, 12979780461, 12975257923, 13002228030, 12999388634 lost a true 총클럽개수)
+_PART_LETTERS = (("D", "드라이버"), ("W", "우드|페어웨이"), ("U", "유틸리티|유틸|하이브리드"), ("I", "아이언"), ("P", "퍼터"),
+                 ("G", "웨지"))
+_PART_COUNT_RE = re.compile(r"(드라이버|우드|페어웨이|유틸리티|유틸|하이브리드|아이언|퍼터|웨지)(?:\s*세트)?(?:\s*선택)?"
+                            r"\s*[(\[]?\s*(\d{1,2})\s*(?:개|PCS|pcs|P|피스)(?![A-Za-z\d])")
+
+
+def _letter(word: str) -> str:
+    return next(k for k, w in _PART_LETTERS if re.fullmatch(w, word))
+
+
+def part_counts(text: str | None) -> dict[str, int]:
+    """{"I": 8} for "아이언 선택 (8개)": the counts a text writes after a part word (D W U I P G)."""
+    return {_letter(m.group(1)): int(m.group(2)) for m in _PART_COUNT_RE.finditer(text or "")}
+
+
+def axis_floor(names: list[str]) -> int | None:
+    """Fewest clubs the option axes sell: the irons an iron axis counts ("아이언 선택 (8개)") plus one for each other
+    part an axis names (드라이버 / 우드 / 유틸리티 ..., once however many axes name it); None when no axis names a part
+    or an iron axis does not say how many ("드라이버 로프트 선택", "드라이버 강도 선택", "아이언 선택 (8개)" = 9)."""
+    parts: set[str] = set()
+    irons = 0
+    for name in names:
+        counted = part_counts(name)
+        for k, w in _PART_LETTERS:
+            if re.search(w, name or ""):
+                if k == "I" and "I" not in counted:
+                    return None
+                parts.add(k)
+        irons = counted.get("I", irons)
+    if not parts:
+        return None
+    return irons + len(parts - {"I"})
+
+
 def stated_total(text: str | None) -> int | None:
-    """The one club total a text states; None when it states none or two ("11PC+(사은품 7종 세트 포함)")."""
-    found = {int(a or b) for a, b in _TOTAL_RE.findall(text or "")}
+    """The one club total a text states; None when it states none or two ("11PC+(사은품 7종 세트 포함)"). A part's
+    count ("아이언 선택 (8개)") is not one."""
+    found = {int(a or b) for a, b in _TOTAL_RE.findall(_PART_COUNT_RE.sub(" ", text or ""))}
     found = {n for n in found if 3 <= n <= 16}
     return found.pop() if len(found) == 1 else None
 
@@ -316,24 +363,81 @@ def _row(label: str, value: str) -> str:
     return f"{label} {value}"
 
 
+# "8i" / "8아이언" / "아이언 8개" in a title: the irons it says (13780241403 "12pc/8i", 2026-11-07)
+_TITLE_IRONS_RE = re.compile(r"(?<![\d.])(\d{1,2})\s*(?:i(?![A-Za-z])|아이언(?!\s*세트)|개\s*아이언)")
+
+
+def _contradictions(rows: dict[str, str], names: list[str], title: str | None) -> dict[str, str]:
+    """{label: detail} of the count rows the product's own rows and title prove wrong. 총클럽개수 N while 아이언개수 /
+    아이언 구성 give N irons or more on a set with other clubs: the title's total decides (12pc: the total row is wrong;
+    = N: the iron rows are); a title without one leaves it to 풀세트구성 or the option axes counting N clubs, unless the
+    title backs the irons ("8i"). Seen 2026-11-07: 13780241403 총클럽개수 3개 on a 12pc/8i set with 8 irons listed,
+    12975223812 아이언개수 8개 on a driver + wood + utility set of 3, 13026991307 아이언개수 11개 = 총클럽개수 11개."""
+    n = stated_total(rows.get("총클럽개수")) if title is not None else None
+    if not n:
+        return {}
+    irons: dict[str, int] = {}
+    if m := re.match(r"\s*(\d+)\s*개?\s*$", rows.get("아이언개수", "")):
+        irons["아이언개수"] = int(m.group(1))
+    if rows.get("아이언 구성", "").strip():
+        irons["아이언 구성"] = len([x for x in rows["아이언 구성"].split(",") if x.strip()])
+    comp = rows.get("풀세트구성", "")
+    others = bool(_NON_IRON_RE.search(comp)) or LOFT_ROW in rows or any(_DRIVER_RE.search(x) for x in names)
+    bad = {k: v for k, v in irons.items() if v > n or v == n and others}
+    if not bad:
+        return {}
+    total_row = _row("총클럽개수", rows["총클럽개수"])
+    t = stated_total(title)
+    if t and t != n:
+        if t <= max(bad.values()):
+            return {}
+        listed = ", ".join(f"{k} lists {v} irons" for k, v in bad.items())
+        return {"총클럽개수": f"{total_row}: {listed}, the title says {t}"}
+    if t == n:
+        return {k: f"{_row(k, rows[k])}: {total_row}, the title says {t}" for k in bad}
+    said = {int(x) for x in _TITLE_IRONS_RE.findall(title or "")} | set(part_counts(title).values())
+    if any(v in said for v in bad.values()) or _checklist(comp):
+        return {}
+    parts = [p.strip() for p in comp.split(",") if p.strip()]
+    sets = [int(x) for x in _IRON_SET_RE.findall(comp)]
+    by_comp = sum(1 for p in parts if _NON_IRON_RE.search(p)) + sum(sets) if parts else None
+    if by_comp == n:
+        return {k: f"{_row(k, rows[k])}: {total_row}, {_row('풀세트구성', comp)}" for k in bad}
+    if axis_floor(names) == n:
+        return {k: f"{_row(k, rows[k])}: {total_row}, the option axes sell {n} clubs" for k in bad}
+    return {}
+
+
 def check_specs(spec_rows: list[dict[str, str]], options: list[dict[str, Any]], variants: list[dict[str, Any]],
-                description_text: str | None) -> dict[str, Any]:
+                description_text: str | None, title: str | None = None) -> dict[str, Any]:
     """Spec rows vs the sold variants -> {"specs": the rows kept, in order, a bound one with "for_ko",
-    "notes": [{code, detail}]}. A product without two sold combinations is never touched."""
+    "notes": [{code, detail}]}. Count rows the product's own rows and `title` prove wrong are dropped
+    (specs_contradict; no title: not checked); a driver loft row listing several lofts on a product of one variant
+    is noted (specs_lists_unsold). Otherwise a product without two sold combinations is never touched."""
+    names = [o["name_ko"] for o in options]
+    contra = _contradictions({r["label_ko"]: r["value_ko"] for r in spec_rows}, names, title)
     combos = _combos(options, variants)
     if len(combos) < 2:
-        return {"specs": list(spec_rows), "notes": []}
+        kept = [dict(r) for r in spec_rows if r["label_ko"] not in contra]
+        one = [{"code": "specs_contradict", "detail": "; ".join(contra.values())}] if contra else []
+        many = next((r for r in kept if r["label_ko"] == LOFT_ROW and len(lofts(r["value_ko"])) > 1), None)
+        if many:                                          # "10도, 9도" on the one variant (12863028632)
+            one.append({"code": "specs_lists_unsold",
+                          "detail": f"{_row(LOFT_ROW, many['value_ko'])}: one variant is sold"})
+        return {"specs": kept if contra else list(spec_rows), "notes": one}
+    spec_rows = [r for r in spec_rows if r["label_ko"] not in contra]
     rows = {r["label_ko"]: r["value_ko"] for r in spec_rows}
-    names = [o["name_ko"] for o in options]
     drop: dict[str, tuple[str, str]] = {}                 # label -> (note code, detail)
     bind: dict[str, list[tuple[str, ...]]] = {}           # label -> the combinations it fits
     handled: set[str] = set()                             # rows a fact check read: no word match after it
+    extra: dict[str, list[str]] = {}                      # notes of rows kept as they are
 
-    def decide(label: str, fits: list[tuple[str, ...]], stated: bool, rival: str) -> None:
+    def decide(label: str, fits: list[tuple[str, ...]], stated: bool, rival: str, found: str) -> None:
         if not fits:
             drop[label] = ("specs_fit_no_variant", f"{_row(label, rows[label])}: the variants are {rival}")
-        elif stated:
-            drop[label] = ("specs_stated_by_variants", f"{_row(label, rows[label])}: every variant states it")
+        elif stated:                                      # the row is one of the values: the variant titles say each
+            drop[label] = ("specs_stated_by_variants",
+                           f"{_row(label, rows[label])}: each variant states its own value ({found})")
         else:
             bind[label] = fits
 
@@ -348,8 +452,9 @@ def check_specs(spec_rows: list[dict[str, str]], options: list[dict[str, Any]], 
         classes = [n or _one({bound.get(v) for v in c}) for c, n in zip(combos, named)]
         if any(k and k != row_class for k in classes):
             rival = "스틸" if row_class == "CARBON" else "카본"
+            found = ", ".join(w for k, w in (("STEEL", "스틸"), ("CARBON", "카본")) if k in classes)
             decide("아이언샤프트소재", [c for c, k in zip(combos, classes) if k in (None, row_class)],
-                   all(named), rival)
+                   all(named), rival, found)
 
     # count: the total a combination's values (or the axis names) state, else the clubs of a full part list
     stated = [_one({stated_total(t) for t in (*c, *names)}) for c in combos]
@@ -360,7 +465,7 @@ def check_specs(spec_rows: list[dict[str, str]], options: list[dict[str, Any]], 
         handled.add("총클럽개수")
         if any(n and n != total for n in counts):
             decide("총클럽개수", [c for c, n in zip(combos, counts) if n in (None, total)], all(stated),
-                   ", ".join(map(str, groups)))
+                   ", ".join(map(str, groups)), ", ".join(f"{g}개" for g in groups))
 
     # composition: one set; it follows the total, else the group its floor names
     family = [k for k in FAMILY if k in rows]
@@ -387,15 +492,23 @@ def check_specs(spec_rows: list[dict[str, str]], options: list[dict[str, Any]], 
         if any(ry in y for y in ys) and any(y and ry not in y for y in ys):
             bind["출시"] = [c for c, y in zip(combos, ys) if ry in y]
 
-    # driver loft: the loft a combination's values name; a row listing every loft sold changes nothing
+    # driver loft: the loft a combination's values name; a row listing every loft sold changes nothing. A sold loft
+    # half a degree from a row loft is a near miss (row "9.5도, 10.5도", values "9도R" / "10.5도R": 12999487292,
+    # 12999388634, 2026-11-07): the row stays, noted, those variants are not called rivals
     row_lofts = lofts(rows.get(LOFT_ROW))
     if row_lofts:
         handled.add(LOFT_ROW)
         sold = [_one(set().union(*(lofts(v) for v in c))) for c in combos]
-        rivals = sorted({x for x in sold if x is not None and x not in row_lofts}, reverse=True)
+        other = {x for x in sold if x is not None and x not in row_lofts}
+        near = sorted({x for x in other if any(abs(x - y) <= 0.5 for y in row_lofts)}, reverse=True)
+        rivals = sorted(other - set(near), reverse=True)
+        if near:
+            extra.setdefault("specs_loft_near_miss", []).append(
+                f"{_row(LOFT_ROW, rows[LOFT_ROW])}: the variants sell {', '.join(map(_deg, near))}")
         if rivals:
-            decide(LOFT_ROW, [c for c, x in zip(combos, sold) if x is None or x in row_lofts],
-                   all(x is not None for x in sold), ", ".join(map(_deg, rivals)))
+            decide(LOFT_ROW, [c for c, x in zip(combos, sold) if x is None or x in row_lofts or x in near],
+                   all(x is not None for x in sold) and not near, ", ".join(map(_deg, rivals)),
+                   ", ".join(map(_deg, sorted({x for x in sold if x is not None}, reverse=True))))
 
     # other rows: the word match (a row word of part of an axis' values), for a check by hand
     named_rows = []
@@ -408,7 +521,8 @@ def check_specs(spec_rows: list[dict[str, str]], options: list[dict[str, Any]], 
             named_rows.append(f"{_row(r['label_ko'], r['value_ko'])}: {', '.join(_spans(hits, r['value_ko']))}")
 
     out: list[dict[str, Any]] = []
-    notes: dict[str, list[str]] = {}
+    notes: dict[str, list[str]] = {"specs_contradict": list(contra.values())} if contra else {}
+    notes.update(extra)
     for r in spec_rows:
         label = r["label_ko"]
         if label in drop:
@@ -422,8 +536,8 @@ def check_specs(spec_rows: list[dict[str, str]], options: list[dict[str, Any]], 
             out.append(dict(r))
     if named_rows:
         notes["specs_name_one_variant"] = named_rows
-    order = ("specs_fit_no_variant", "specs_stated_by_variants", "specs_composition_undecided",
-             "specs_bound_to_variants", "specs_name_one_variant")
+    order = ("specs_contradict", "specs_fit_no_variant", "specs_stated_by_variants", "specs_composition_undecided",
+             "specs_bound_to_variants", "specs_loft_near_miss", "specs_name_one_variant")
     return {"specs": out, "notes": [{"code": c, "detail": "; ".join(notes[c])} for c in order if c in notes]}
 
 
@@ -507,10 +621,12 @@ def _names_some(found_in: Callable[[str], bool], options: list[dict[str, Any]],
     return list(dict.fromkeys(found))
 
 
-def _spans(hits: list[tuple[str, str]], text: str) -> list[str]:
+def _spans(hits: list[tuple[str, str]], text: str, whole: list[tuple[int, int]] | None = None) -> list[str]:
     """The hits as `text` writes them, in its order; hits that touch are one span ("XR" + "26" -> "XR26"). An
     occurrence inside a longer hit ("R" of "10.5R") is not one of its own; a hit also written inside a merged
-    span is not repeated alone (모델명 "26캘러웨이 ... XR26" -> "XR26")."""
+    span is not repeated alone (모델명 "26캘러웨이 ... XR26" -> "XR26"). `whole`: (start, end) of values `text`
+    writes whole (value_spans): one with no span inside is a span of its own, the spans inside one with no word
+    between them are one ("NS" "PRO" "950GH" "NEO" -> "NS PRO 950GH NEO", "유틸3" "65S" -> "유틸3번65S")."""
     found = [(m.start(), m.end(), k) for k in dict.fromkeys(k for k, _ in hits)
              for m in re.finditer(_word_pattern(k), text)]
     found = [f for f in found if not any(g[0] <= f[0] and f[1] <= g[1] and g[1] - g[0] > f[1] - f[0] for g in found)]
@@ -523,9 +639,64 @@ def _spans(hits: list[tuple[str, str]], text: str) -> list[str]:
         else:
             merged.append([a, b, {k}])
     in_long = set().union(*[m[2] for m in merged if len(m[2]) > 1]) if merged else set()
-    out = [text[a:b] for a, b, ks in merged if len(ks) > 1 or not ks & in_long]
+    shown = [(a, b) for a, b, ks in merged if len(ks) > 1 or not ks & in_long]
+    for wa, wb in whole or []:
+        inside = [x for x in shown if wa <= x[0] and x[1] <= wb]
+        if not inside:
+            shown.append((wa, wb))
+        elif len(inside) > 1 and not any(words(text[x[1]:y[0]]) for x, y in zip(inside, inside[1:])):
+            shown = [x for x in shown if x not in inside] + [(inside[0][0], inside[-1][1])]
+    out = [text[a:b] for a, b in sorted(set(shown))]
     missing = [w for k, w in hits if not any(k in m[2] for m in merged)]
     return list(dict.fromkeys(out + missing))
+
+
+# a value's whole written span in the title, spacing, brackets and case aside: "NS PRO950GH NEO R" is the value
+# "NS PRO950GH NEO(R)", "우드3번55S" the value "3번 55S" of the 우드 axis (not "3번 65 S": the "3번65S" there
+# follows 유틸). Seen 2026-11-07: 13002289437, 13002279921 (the "G" of G440 hid the word match), 12950788305.
+_LOOSE = set(" \t()[]{}-_")
+_ANY_PART = "|".join(_PART_WORDS.values())
+
+
+def _loose(text: str) -> tuple[str, list[int]]:
+    keep = [(i, ch.lower()) for i, ch in enumerate(text) if ch not in _LOOSE and not ch.isspace()]
+    return "".join(ch for _, ch in keep), [i for i, _ in keep]
+
+
+def _edge(a: str, b: str) -> bool:
+    """True when the two characters would join one word: digit + digit / ".", Latin + Latin."""
+    return bool(a and b) and (a.isdigit() and (b.isdigit() or b == ".") or b.isdigit() and a == "."
+                              or a.isascii() and a.isalpha() and b.isascii() and b.isalpha())
+
+
+def value_spans(title: str, options: list[dict[str, Any]]) -> list[tuple[int, int]]:
+    """(start, end) in `title` of each value of two words or more the title writes whole, on an axis where it writes
+    part of the values only; a value that starts with a club number must follow its axis' part word ("우드3번55S"),
+    no other part's; one followed by "/" is a list of choices ("NEO R/S")."""
+    flat, at = _loose(title)
+    out: list[tuple[int, int]] = []
+    for o in options:
+        part = axis_part(o["name_ko"])
+        found: dict[str, tuple[int, int]] = {}
+        for v in o["values_ko"]:
+            lv, _ = _loose(v)
+            if len(words(v)) < 2 or not lv:
+                continue
+            for m in re.finditer(re.escape(lv), flat):
+                a, b = m.start(), m.end()
+                before, after = flat[a - 1] if a else "", flat[b] if b < len(flat) else ""
+                if _edge(before, lv[0]) or _edge(lv[-1], after) or after == "/":
+                    continue
+                if lv[0].isdigit():
+                    lead = re.search(rf"(?:{_PART_WORDS[part] if part else _ANY_PART})$", flat[:a])
+                    if bool(part) != bool(lead):
+                        continue
+                    a -= len(lead.group(0)) if lead else 0
+                found.setdefault(v, (at[a], at[b - 1] + 1))
+                break
+        if 0 < len(found) < len(o["values_ko"]):
+            out += found.values()
+    return out
 
 
 def title_one_variant(title: str, options: list[dict[str, Any]]) -> list[str]:
@@ -537,4 +708,5 @@ def title_one_variant(title: str, options: list[dict[str, Any]]) -> list[str]:
     title = re.sub(r"(\d)\s+(?=[A-Za-z]{2,}\b)", r"\1", title or "")         # "13 PCS" -> "13PCS"
     both = bool(re.search(r"여성|여자", title)) and bool(re.search(r"남성|남자", title))
     hits = _names_some(lambda w: in_text(w, title), options, both)
-    return _spans(hits, title) if hits else []
+    whole = value_spans(title, options)
+    return _spans(hits, title, whole) if hits or whole else []

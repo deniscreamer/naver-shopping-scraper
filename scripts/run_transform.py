@@ -1,6 +1,8 @@
 """Run the transform for one shop: every kept run (keep_run.py) -> scripts/output/shops/<shop>/prepared/.
 
-A product in several runs is taken from the newest run. The output is rebuilt each time from the kept runs and the
+A product in several runs is taken from the newest run. After the per-product prepare, one step looks across the
+products: store-wide description banners (the same image opening or closing most listings of one store) move to
+description_dropped (shared_images.py). The output is rebuilt each time from the kept runs and the
 rules (same input + same rules = the same bytes: sorted by key, no time inside):
 
     prepared/products.jsonl   one prepared product per line (transform.Prepared, ready or held)
@@ -16,6 +18,7 @@ import sys
 from collections import Counter
 
 from keep_run import SHOPS_ROOT, kept_run_ids
+from shared_images import RULE as SHARED_RULE, drop_shared_images
 from transform import prepare
 from transform_shops import ShopRulesMissing, rules_for
 
@@ -37,6 +40,7 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT) 
                     latest[line["key"]] = (run_id, n, line)
     prepared = [prepare(line, rules, run_id, n) for run_id, n, line in latest.values()]
     prepared.sort(key=lambda p: p["key"])
+    prepared = drop_shared_images(prepared)                             # run-level: needs the store's other listings
     out_dir = os.path.join(shops_root, shop, "prepared")
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "products.jsonl"), "w", encoding="utf-8") as f:
@@ -49,6 +53,12 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT) 
     lines = [f"transform {shop}: {len(prepared)} products from {len(chosen)} run(s): {status['ready']} ready, "
              f"{status['held']} held {dict(sorted(codes.items()))}, notes {dict(sorted(notes.items()))}, "
              f"{len(texts)} distinct texts to translate"]
+    shared = [(p["source"]["channel_no"],
+               sum(d["rule"] == SHARED_RULE for d in p["product"].get("description_dropped") or []))
+              for p in prepared]
+    if any(n for _, n in shared):
+        lines.append(f"  shared store images: {sum(n for _, n in shared)} dropped from "
+                     f"{sum(1 for _, n in shared if n)} products of {len({c for c, n in shared if n})} store(s)")
     lines += [f"  held {p['key']}: " + "; ".join(f"{h['code']} ({h['detail']})" for h in p["held"])
               for p in prepared if p["held"]]
     with open(os.path.join(out_dir, "report.txt"), "w", encoding="utf-8") as f:

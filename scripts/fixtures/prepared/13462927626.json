@@ -1,0 +1,975 @@
+{
+ "format": "prepared/1",
+ "key": "fairwardgolf:naver:500014455:13462927626",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "option_name_placeholder",
+   "detail": "색상"
+  },
+  {
+   "code": "description_tiles_include_banners",
+   "detail": "sbgolf_holiday_20251003.jpg"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/sbgolf/products/13462927626",
+  "channel_no": "500014455",
+  "product_id": "13462927626",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "테일러메이드 (26)RBZ SL2 스틸 풀세트",
+  "brand_ko": "테일러메이드",
+  "brand_source": "specs:브랜드",
+  "leaves": [
+   {
+    "leaf": "mens-complete-sets",
+    "product_type": "Men’s Complete Golf Sets",
+    "tags": [
+     "fairwardgolf:leaf:mens-complete-sets",
+     "fairwardgolf:parent:clubs",
+     "fairwardgolf:showcase"
+    ]
+   }
+  ],
+  "options": [
+   {
+    "name_ko": "색상",
+    "values_ko": [
+     "세트 R",
+     "세트 S"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"세트 R\"]",
+    "naver_variant_id": "57999594856",
+    "options_ko": [
+     "세트 R"
+    ],
+    "price_krw": 1590000,
+    "price_usd": "1590.00",
+    "sku": "FW-78616e8dd4dc23ae7f14b3f8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"세트 S\"]",
+    "naver_variant_id": "57999594857",
+    "options_ko": [
+     "세트 S"
+    ],
+    "price_krw": 1590000,
+    "price_usd": "1590.00",
+    "sku": "FW-d2ee5ebd3f3fc2ecff65afb4",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "low": 1150,
+      "central": 1250,
+      "high": 1350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_width_mm": {
+      "low": 200,
+      "central": 280,
+      "high": 380,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_height_mm": {
+      "low": 160,
+      "central": 230,
+      "high": 330,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 1,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 1590000,
+   "original_krw": 1590000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "테일러메이드"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "테일러메이드"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "26 RBZ SL2 스틸 풀세트"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   },
+   {
+    "label_ko": "유틸리티/하이브리드 로프트각",
+    "value_ko": "22도"
+   },
+   {
+    "label_ko": "페어웨이 로프트각",
+    "value_ko": "15도"
+   },
+   {
+    "label_ko": "드라이버 로프트각",
+    "value_ko": "10.5도"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#6, #7, #8, #9, 피칭웨지(PW), 샌드웨지(SW)"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "10개"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2026년형"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "드라이버, 6아이언세트, 페어웨이, 퍼터, 유틸리티"
+   },
+   {
+    "label_ko": "아이언샤프트소재",
+    "value_ko": "스틸"
+   },
+   {
+    "label_ko": "아이언개수",
+    "value_ko": "6개"
+   },
+   {
+    "label_ko": "퍼터형태",
+    "value_ko": "말렛(반달형)"
+   },
+   {
+    "label_ko": "골프백포함여부",
+    "value_ko": "캐디백"
+   }
+  ],
+  "personalization": [],
+  "addons": [
+   {
+    "group_ko": "렌치",
+    "name_ko": "미즈노 클럽 렌치",
+    "required": false,
+    "price_krw": 8500,
+    "price_usd": "8.50"
+   },
+   {
+    "group_ko": "렌치",
+    "name_ko": "핑 클럽 렌치",
+    "required": false,
+    "price_krw": 10000,
+    "price_usd": "10.00"
+   },
+   {
+    "group_ko": "렌치",
+    "name_ko": "클리브랜드 클럽 렌치",
+    "required": false,
+    "price_krw": 10000,
+    "price_usd": "10.00"
+   },
+   {
+    "group_ko": "렌치",
+    "name_ko": "테일러메이드 클럽 렌치",
+    "required": false,
+    "price_krw": 8000,
+    "price_usd": "8.00"
+   },
+   {
+    "group_ko": "골프장갑",
+    "name_ko": "캘러웨이 (23)쉐브 합피장갑 25호",
+    "required": false,
+    "price_krw": 11900,
+    "price_usd": "11.90"
+   },
+   {
+    "group_ko": "골프장갑",
+    "name_ko": "캘러웨이 (23)쉐브 합피장갑 26호",
+    "required": false,
+    "price_krw": 11900,
+    "price_usd": "11.90"
+   },
+   {
+    "group_ko": "골프장갑",
+    "name_ko": "테일러메이드 인터크로스쿨 장갑 화이트블루_25호",
+    "required": false,
+    "price_krw": 15900,
+    "price_usd": "15.90"
+   },
+   {
+    "group_ko": "골프장갑",
+    "name_ko": "테일러메이드 인터크로스쿨 장갑 화이트실버_25호",
+    "required": false,
+    "price_krw": 15900,
+    "price_usd": "15.90"
+   },
+   {
+    "group_ko": "골프장갑",
+    "name_ko": "PXG 플레이어 올양피장갑_남성블랙ML_24호",
+    "required": false,
+    "price_krw": 40900,
+    "price_usd": "40.90"
+   },
+   {
+    "group_ko": "골프장갑",
+    "name_ko": "PXG 플레이어 올양피장갑_남성블랙L_25호",
+    "required": false,
+    "price_krw": 40900,
+    "price_usd": "40.90"
+   },
+   {
+    "group_ko": "골프장갑",
+    "name_ko": "PXG 플레이어 올양피장갑_남성블랙XL_26호",
+    "required": false,
+    "price_krw": 40900,
+    "price_usd": "40.90"
+   },
+   {
+    "group_ko": "골프장갑",
+    "name_ko": "PXG 플레이어 올양피장갑_남성블랙XXL_27호",
+    "required": false,
+    "price_krw": 40900,
+    "price_usd": "40.90"
+   },
+   {
+    "group_ko": "파우치",
+    "name_ko": "닥스 DKPB-007M 파우치_블랙",
+    "required": false,
+    "price_krw": 34500,
+    "price_usd": "34.50"
+   },
+   {
+    "group_ko": "파우치",
+    "name_ko": "핑 (23)K1 1단 파우치_화이트",
+    "required": false,
+    "price_krw": 54000,
+    "price_usd": "54.00"
+   },
+   {
+    "group_ko": "파우치",
+    "name_ko": "핑 (23)K1 1단 파우치_블랙",
+    "required": false,
+    "price_krw": 54000,
+    "price_usd": "54.00"
+   },
+   {
+    "group_ko": "볼주머니",
+    "name_ko": "테일러메이드 시티테크 볼 파우치_베이지",
+    "required": false,
+    "price_krw": 24000,
+    "price_usd": "24.00"
+   },
+   {
+    "group_ko": "볼주머니",
+    "name_ko": "테일러메이드 시티테크 볼 파우치_버건디",
+    "required": false,
+    "price_krw": 24000,
+    "price_usd": "24.00"
+   },
+   {
+    "group_ko": "볼주머니",
+    "name_ko": "핑 (23)K1 볼 파우치_블랙",
+    "required": false,
+    "price_krw": 25550,
+    "price_usd": "25.55"
+   },
+   {
+    "group_ko": "볼주머니",
+    "name_ko": "핑 (23)K1 볼 파우치_화이트",
+    "required": false,
+    "price_krw": 25550,
+    "price_usd": "25.55"
+   },
+   {
+    "group_ko": "볼주머니",
+    "name_ko": "던롭 젝시오 볼파우치(21097)_화이트",
+    "required": false,
+    "price_krw": 22500,
+    "price_usd": "22.50"
+   },
+   {
+    "group_ko": "볼주머니",
+    "name_ko": "던롭 젝시오 볼파우치(21097)_네이비",
+    "required": false,
+    "price_krw": 22500,
+    "price_usd": "22.50"
+   },
+   {
+    "group_ko": "거리측정기 케이스",
+    "name_ko": "SB 컴팩트 거리측정기 케이스_블랙",
+    "required": false,
+    "price_krw": 25000,
+    "price_usd": "25.00"
+   },
+   {
+    "group_ko": "거리측정기 케이스",
+    "name_ko": "SB 컴팩트 거리측정기 케이스_화이트",
+    "required": false,
+    "price_krw": 25000,
+    "price_usd": "25.00"
+   },
+   {
+    "group_ko": "거리측정기 케이스",
+    "name_ko": "핑 (23)K1-V 거리측정기 케이스_블랙",
+    "required": false,
+    "price_krw": 31000,
+    "price_usd": "31.00"
+   },
+   {
+    "group_ko": "거리측정기 케이스",
+    "name_ko": "핑 (23)K1-V 거리측정기 케이스_화이트",
+    "required": false,
+    "price_krw": 31000,
+    "price_usd": "31.00"
+   },
+   {
+    "group_ko": "헤드커버",
+    "name_ko": "테일러메이드 니트 말렛 퍼터커버_네이비",
+    "required": false,
+    "price_krw": 23000,
+    "price_usd": "23.00"
+   },
+   {
+    "group_ko": "헤드커버",
+    "name_ko": "클리브랜드 CBX 집코어 여성 웨지커버_50도",
+    "required": false,
+    "price_krw": 5000,
+    "price_usd": "5.00"
+   },
+   {
+    "group_ko": "헤드커버",
+    "name_ko": "클리브랜드 CBX 집코어 여성 웨지커버_52도",
+    "required": false,
+    "price_krw": 5000,
+    "price_usd": "5.00"
+   },
+   {
+    "group_ko": "헤드커버",
+    "name_ko": "클리브랜드 CBX 집코어 여성 웨지커버_54도",
+    "required": false,
+    "price_krw": 5000,
+    "price_usd": "5.00"
+   },
+   {
+    "group_ko": "헤드커버",
+    "name_ko": "클리브랜드 CBX 집코어 여성 웨지커버_58도",
+    "required": false,
+    "price_krw": 5000,
+    "price_usd": "5.00"
+   },
+   {
+    "group_ko": "헤드커버",
+    "name_ko": "클리브랜드 CBX 집코어 여성 웨지커버_60도",
+    "required": false,
+    "price_krw": 5000,
+    "price_usd": "5.00"
+   },
+   {
+    "group_ko": "골프공",
+    "name_ko": "캘러웨이 크롬소프트 360볼(3PCS)_화이트",
+    "required": false,
+    "price_krw": 48900,
+    "price_usd": "48.90"
+   }
+  ],
+  "rating": {
+   "value": 5.0,
+   "count": 1
+  },
+  "reviews": [
+   {
+    "id": "5080848396",
+    "score": 5,
+    "text_ko": "가격도 멋지고 디자인도 멋집니다.",
+    "created_at": "2026-10-10T04:32:46Z",
+    "writer": "star*****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small"
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13462927626/fairwardgolf-13462927626-001-c3bf52f0de478333.webp",
+    "sha256": "c3bf52f0de478333dea6d026a47062f1bf5f7e6044c56dbf3e35a572525d80ed",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "policy_text": null,
+   "lead_time": {
+    "seller_average_days": 1.4288,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": "11.10.(화)",
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20261021_6/1792559079090VK73U_JPEG/p-13403836681-s-7-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20261021_18/1792559079092l3KhT_JPEG/p-13403836681-s-7-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20261021_184/1792559079089Hidf4_JPEG/p-13403836681-s-7-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20261021_102/1792559079092gMgCN_JPEG/p-13403836681-s-7-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20261021_87/1792559079088h9QXO_JPEG/p-13403836681-s-7-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20261021_273/1792559079184BIf5f_JPEG/p-13403836681-s-7-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20261021_86/17925590790962YXdO_JPEG/p-13403836681-s-7-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20261021_245/17925590790935HghA_JPEG/p-13403836681-s-7-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20261021_13/1792559079098cetcq_JPEG/p-13403836681-s-7-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20261021_267/17925590790887Pb0N_JPEG/p-13403836681-s-7-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20261021_139/1792559079089I3H1Y_JPEG/p-13403836681-s-7-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20261021_86/1792559079167z652C_JPEG/p-13403836681-s-7-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20261021_204/1792559079179djrom_JPEG/p-13403836681-s-7-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20261021_294/17925590791808frO3_JPEG/p-13403836681-s-7-A-13.jpg",
+   "https://shop-phinf.pstatic.net/20261021_211/1792559079179byeJy_JPEG/p-13403836681-s-7-A-14.jpg",
+   "https://shop-phinf.pstatic.net/20261021_37/1792559079182Ra615_JPEG/p-13403836681-s-7-A-15.jpg",
+   "https://shop-phinf.pstatic.net/20261021_268/1792559079190OxW8V_JPEG/p-13403836681-s-7-A-16.jpg",
+   "https://shop-phinf.pstatic.net/20261021_98/1792559079192K4kVp_JPEG/p-13403836681-s-7-A-17.jpg",
+   "https://shop-phinf.pstatic.net/20261021_284/1792559079213EE14D_JPEG/p-13403836681-s-7-A-18.jpg",
+   "https://shop-phinf.pstatic.net/20261021_288/1792559079217D13WX_JPEG/p-13403836681-s-7-A-19.jpg",
+   "https://shop-phinf.pstatic.net/20261021_73/1792559079265nuJ8f_JPEG/p-13403836681-s-7-A-20.jpg",
+   "https://shop-phinf.pstatic.net/20261021_51/1792559079298IAGLW_JPEG/p-13403836681-s-7-A-21.jpg",
+   "https://shop-phinf.pstatic.net/20261021_216/1792559079265hMF5m_JPEG/p-13403836681-s-7-A-22.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:8179da3e01041022",
+   "kind": "title",
+   "ko": "테일러메이드 (26)RBZ SL2 스틸 풀세트"
+  },
+  {
+   "id": "brand:18d4028e5665dc1d",
+   "kind": "brand",
+   "ko": "테일러메이드"
+  },
+  {
+   "id": "option_name:d1b87acb2d2239e7",
+   "kind": "option_name",
+   "ko": "색상"
+  },
+  {
+   "id": "option_value:de67ae94141f19b7",
+   "kind": "option_value",
+   "ko": "세트 R"
+  },
+  {
+   "id": "option_value:b030fb6cb82646c2",
+   "kind": "option_value",
+   "ko": "세트 S"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:18d4028e5665dc1d",
+   "kind": "spec_value",
+   "ko": "테일러메이드"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:8d674a8fdda75a7c",
+   "kind": "spec_value",
+   "ko": "26 RBZ SL2 스틸 풀세트"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "spec_label:1c0460d0d6673223",
+   "kind": "spec_label",
+   "ko": "유틸리티/하이브리드 로프트각"
+  },
+  {
+   "id": "spec_value:34077a7aa10c24ae",
+   "kind": "spec_value",
+   "ko": "22도"
+  },
+  {
+   "id": "spec_label:ecef087ddd17d2b5",
+   "kind": "spec_label",
+   "ko": "페어웨이 로프트각"
+  },
+  {
+   "id": "spec_value:13a3c342a2c78df1",
+   "kind": "spec_value",
+   "ko": "15도"
+  },
+  {
+   "id": "spec_label:8c8cb3b96f7fe3e9",
+   "kind": "spec_label",
+   "ko": "드라이버 로프트각"
+  },
+  {
+   "id": "spec_value:de2b6da830b81034",
+   "kind": "spec_value",
+   "ko": "10.5도"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:8507182955781ed1",
+   "kind": "spec_value",
+   "ko": "#6, #7, #8, #9, 피칭웨지(PW), 샌드웨지(SW)"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:bb40a8c2bc46094b",
+   "kind": "spec_value",
+   "ko": "10개"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:f36c488b8e796503",
+   "kind": "spec_value",
+   "ko": "2026년형"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:30a3d64a7cd41287",
+   "kind": "spec_value",
+   "ko": "드라이버, 6아이언세트, 페어웨이, 퍼터, 유틸리티"
+  },
+  {
+   "id": "spec_label:5a12089f44ae3f65",
+   "kind": "spec_label",
+   "ko": "아이언샤프트소재"
+  },
+  {
+   "id": "spec_value:76d45c1471b5954b",
+   "kind": "spec_value",
+   "ko": "스틸"
+  },
+  {
+   "id": "spec_label:cf77915a2f3ab5d8",
+   "kind": "spec_label",
+   "ko": "아이언개수"
+  },
+  {
+   "id": "spec_value:bb6a459e40734a7c",
+   "kind": "spec_value",
+   "ko": "6개"
+  },
+  {
+   "id": "spec_label:04c52e5b47f70047",
+   "kind": "spec_label",
+   "ko": "퍼터형태"
+  },
+  {
+   "id": "spec_value:92917baf006633bb",
+   "kind": "spec_value",
+   "ko": "말렛(반달형)"
+  },
+  {
+   "id": "spec_label:e4aabb2e41b870bd",
+   "kind": "spec_label",
+   "ko": "골프백포함여부"
+  },
+  {
+   "id": "spec_value:00e36a3d18b6bbee",
+   "kind": "spec_value",
+   "ko": "캐디백"
+  },
+  {
+   "id": "addon_group:663ac2fbbac41a91",
+   "kind": "addon_group",
+   "ko": "렌치"
+  },
+  {
+   "id": "addon_name:8378a95cbc989a6c",
+   "kind": "addon_name",
+   "ko": "미즈노 클럽 렌치"
+  },
+  {
+   "id": "addon_name:ec4332073c1f9e03",
+   "kind": "addon_name",
+   "ko": "핑 클럽 렌치"
+  },
+  {
+   "id": "addon_name:7c9d7b82f011e519",
+   "kind": "addon_name",
+   "ko": "클리브랜드 클럽 렌치"
+  },
+  {
+   "id": "addon_name:3f2a16edc885abf9",
+   "kind": "addon_name",
+   "ko": "테일러메이드 클럽 렌치"
+  },
+  {
+   "id": "addon_group:6c20ae3ea3ff6a12",
+   "kind": "addon_group",
+   "ko": "골프장갑"
+  },
+  {
+   "id": "addon_name:9dde9b944b7014b0",
+   "kind": "addon_name",
+   "ko": "캘러웨이 (23)쉐브 합피장갑 25호"
+  },
+  {
+   "id": "addon_name:721f61d4b3c72c51",
+   "kind": "addon_name",
+   "ko": "캘러웨이 (23)쉐브 합피장갑 26호"
+  },
+  {
+   "id": "addon_name:a569ae2462211091",
+   "kind": "addon_name",
+   "ko": "테일러메이드 인터크로스쿨 장갑 화이트블루_25호"
+  },
+  {
+   "id": "addon_name:5c5322b0f596efef",
+   "kind": "addon_name",
+   "ko": "테일러메이드 인터크로스쿨 장갑 화이트실버_25호"
+  },
+  {
+   "id": "addon_name:9bf8212521fcb9bd",
+   "kind": "addon_name",
+   "ko": "PXG 플레이어 올양피장갑_남성블랙ML_24호"
+  },
+  {
+   "id": "addon_name:c4e290c631b17996",
+   "kind": "addon_name",
+   "ko": "PXG 플레이어 올양피장갑_남성블랙L_25호"
+  },
+  {
+   "id": "addon_name:d8eb8fc77a3e4da8",
+   "kind": "addon_name",
+   "ko": "PXG 플레이어 올양피장갑_남성블랙XL_26호"
+  },
+  {
+   "id": "addon_name:12c072f8f6e9476d",
+   "kind": "addon_name",
+   "ko": "PXG 플레이어 올양피장갑_남성블랙XXL_27호"
+  },
+  {
+   "id": "addon_group:9cb6ae7a3bc59a3f",
+   "kind": "addon_group",
+   "ko": "파우치"
+  },
+  {
+   "id": "addon_name:4afe02f1c26b3597",
+   "kind": "addon_name",
+   "ko": "닥스 DKPB-007M 파우치_블랙"
+  },
+  {
+   "id": "addon_name:9b392da7178df315",
+   "kind": "addon_name",
+   "ko": "핑 (23)K1 1단 파우치_화이트"
+  },
+  {
+   "id": "addon_name:db345a69a7d0faba",
+   "kind": "addon_name",
+   "ko": "핑 (23)K1 1단 파우치_블랙"
+  },
+  {
+   "id": "addon_group:6f7d186eb9bdced9",
+   "kind": "addon_group",
+   "ko": "볼주머니"
+  },
+  {
+   "id": "addon_name:35379def184b5473",
+   "kind": "addon_name",
+   "ko": "테일러메이드 시티테크 볼 파우치_베이지"
+  },
+  {
+   "id": "addon_name:1d690e83e4d27dd3",
+   "kind": "addon_name",
+   "ko": "테일러메이드 시티테크 볼 파우치_버건디"
+  },
+  {
+   "id": "addon_name:2adab025945389a5",
+   "kind": "addon_name",
+   "ko": "핑 (23)K1 볼 파우치_블랙"
+  },
+  {
+   "id": "addon_name:bf1b3db1da9c641f",
+   "kind": "addon_name",
+   "ko": "핑 (23)K1 볼 파우치_화이트"
+  },
+  {
+   "id": "addon_name:5d59b3cc85680c28",
+   "kind": "addon_name",
+   "ko": "던롭 젝시오 볼파우치(21097)_화이트"
+  },
+  {
+   "id": "addon_name:bdb15307d0331496",
+   "kind": "addon_name",
+   "ko": "던롭 젝시오 볼파우치(21097)_네이비"
+  },
+  {
+   "id": "addon_group:671a8031433dad07",
+   "kind": "addon_group",
+   "ko": "거리측정기 케이스"
+  },
+  {
+   "id": "addon_name:febdb27526332c23",
+   "kind": "addon_name",
+   "ko": "SB 컴팩트 거리측정기 케이스_블랙"
+  },
+  {
+   "id": "addon_name:3948e1847c2f79f3",
+   "kind": "addon_name",
+   "ko": "SB 컴팩트 거리측정기 케이스_화이트"
+  },
+  {
+   "id": "addon_name:4079071179ceae14",
+   "kind": "addon_name",
+   "ko": "핑 (23)K1-V 거리측정기 케이스_블랙"
+  },
+  {
+   "id": "addon_name:4a4616eb42162d8a",
+   "kind": "addon_name",
+   "ko": "핑 (23)K1-V 거리측정기 케이스_화이트"
+  },
+  {
+   "id": "addon_group:ce8e13d9b018e410",
+   "kind": "addon_group",
+   "ko": "헤드커버"
+  },
+  {
+   "id": "addon_name:0eea0460ea37deda",
+   "kind": "addon_name",
+   "ko": "테일러메이드 니트 말렛 퍼터커버_네이비"
+  },
+  {
+   "id": "addon_name:3daa54bf8a346d8a",
+   "kind": "addon_name",
+   "ko": "클리브랜드 CBX 집코어 여성 웨지커버_50도"
+  },
+  {
+   "id": "addon_name:bf0f5ee110e4cfa3",
+   "kind": "addon_name",
+   "ko": "클리브랜드 CBX 집코어 여성 웨지커버_52도"
+  },
+  {
+   "id": "addon_name:6a2a4cbaa544bfba",
+   "kind": "addon_name",
+   "ko": "클리브랜드 CBX 집코어 여성 웨지커버_54도"
+  },
+  {
+   "id": "addon_name:a402132d4850ccc6",
+   "kind": "addon_name",
+   "ko": "클리브랜드 CBX 집코어 여성 웨지커버_58도"
+  },
+  {
+   "id": "addon_name:b921d54efd949ea3",
+   "kind": "addon_name",
+   "ko": "클리브랜드 CBX 집코어 여성 웨지커버_60도"
+  },
+  {
+   "id": "addon_group:46fedd4905d5ca4f",
+   "kind": "addon_group",
+   "ko": "골프공"
+  },
+  {
+   "id": "addon_name:9009dfed34227111",
+   "kind": "addon_name",
+   "ko": "캘러웨이 크롬소프트 360볼(3PCS)_화이트"
+  },
+  {
+   "id": "review:d749ad1d47200f38",
+   "kind": "review",
+   "ko": "가격도 멋지고 디자인도 멋집니다."
+  }
+ ]
+}
