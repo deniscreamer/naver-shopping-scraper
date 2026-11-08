@@ -10,7 +10,7 @@ category, one product at a time. When the API learns more, add it here.
      the adapter), screened by listing_filter: ads, no name, rental, another category (exactly the leaf),
      already in the shop, deferred; each left out with its reason. (A category page entry is not built;
      the search + category id filter stands in for it.) The catalog is read again when older than 5 minutes.
-  2. Per product, in turn (collect_guard: a partial product is tried once more, then deferred; a captcha /
+  2. Per product, in turn (collect_product.collect, shared with job.py; collect_guard: a partial product is tried once more, then deferred; a captcha /
      wall / refused CDN stops the run; two products in a row partial for the same reason stop the run):
      - details   /products/details           prices, stock, category path, notice, description, facts
      - specs     /products/specs             the page's 상품정보 rows, options, weight / size candidates
@@ -41,14 +41,12 @@ import sys
 import time
 from collections import Counter
 
-import naver_types as T
-from collect_guard import CollectGuard, Outcome, RunStopped, SourceStopped
+from collect_guard import CollectGuard, RunStopped, SourceStopped
+from collect_product import collect
 from deferred_log import DeferredLog
 from listing_filter import Screen, source_key
-from naver_api_client import ApiError, NaverApiClient
-from naver_images import download_gallery, download_review_media, posters_as_photos
-from naver_variants import choose_variants
-from package_measures import CategoryDefaultsMissing, load_table, variant_measures
+from naver_api_client import NaverApiClient
+from package_measures import CategoryDefaultsMissing, load_table
 from shop_stores import get_store
 from shopify_catalog import CatalogError, ShopCatalog, ShopNotConfigured
 
@@ -75,58 +73,6 @@ journal = DeferredLog(store.id.value)
 guard = CollectGuard(journal)
 
 
-def specs_for(link: str) -> T.ProductSpecs | None:
-    """The specs, or None when the card is on neither search; a wall / busy adapter raises ApiError."""
-    # the product's name first: in a 40-product run (2026-11-05) the listing's search did not show the card on its
-    # first page for 27 of 40, so the page was read twice (median 74 s instead of ~35 s)
-    for query in (None, QUERY):
-        try:
-            return api.product_specs(link, query=query)
-        except ApiError as e:
-            if e.status != 404:
-                raise
-    return None
-
-
-def collect(row: T.ListingRow, media_dir: str) -> Outcome:
-    try:
-        details = api.product_details(row["link"])     # -> naver_types.ProductDetails
-        reviews = api.selected_reviews(row["link"], count=REVIEWS)
-        specs = specs_for(row["link"])
-    except ApiError as e:
-        # a wall (503 from the adapter, 502 "blocked the request" from the box: captcha, login, 403/418/429) or a
-        # busy adapter (409, a listing job holds Chrome): the whole source stops, no product is marked
-        if e.status in (409, 503) or e.status == 502 and "blocked the request" in (e.error or ""):
-            raise SourceStopped(f"{e.status} {e.error}")
-        if e.status == 404:
-            return Outcome("not_taken", "not_found", e.error)
-        return Outcome.partial(f"api_{e.status}", e.error)
-    if specs is None:
-        return Outcome("not_taken", "card_not_found")
-    options = specs["options"]
-    variants = choose_variants(options, details["pricing"]["discounted_price"], paid=PAID) if options else None
-    category = (specs["category"] or {}).get("id")
-    if category != CATEGORY_ID:                       # the page's category differs from the listing card's
-        return Outcome("not_taken", "category_mismatch", f"page category {category}")
-    package = variant_measures(specs, table)          # the run's table row was checked before the run
-    photos = download_gallery(details["images"], media_dir, store, details["id"])
-    if photos["stopped"]:
-        raise SourceStopped(f"image CDN: {photos['stopped']}")
-    review_media = download_review_media(reviews["results"], media_dir, store)
-    if review_media["stopped"]:
-        raise SourceStopped(f"image CDN: {review_media['stopped']}")
-    reviews["results"] = [posters_as_photos(r) for r in reviews["results"]]   # a video is stored as its poster
-    data = {"listing": row, "details": details, "specs": specs, "variants": variants, "package": package,
-            "reviews": reviews, "photos": photos, "review_media": review_media}
-    if options is None:
-        return Outcome.partial("options_missing", "the page gave no product answer", data)
-    if not specs["is_complete"]:                     # the 상품정보 list stayed folded: seller rows missing
-        return Outcome.partial("specs_folded", f"{len(specs['specs'])} rows", data)
-    if not photos["is_complete"]:
-        return Outcome.partial("photos_incomplete", photos["failed"][:3], data)
-    return Outcome("complete", data=data)
-
-
 listing = api.listing(QUERY, max_batches=1)               # -> naver_types.ListingResult
 screen = Screen(CATEGORY_ID, store.shopify.namespace, published, journal.blocked())
 rows = [r for r in listing["results"] if screen.reason(r) is None]
@@ -151,7 +97,9 @@ with open(os.path.join(out_dir, "products.jsonl"), "w", encoding="utf-8") as out
             print(f"- {key}: already_published")
             continue
         try:
-            outcome = guard.run(key, lambda: collect(row, os.path.join(out_dir, "images", row["product_id"])))
+            outcome = guard.run(key, lambda: collect(api, store, table, row,
+                                                     os.path.join(out_dir, "images", row["product_id"]),
+                                                     query=QUERY, category=CATEGORY_ID, paid=PAID, reviews=REVIEWS))
         except (SourceStopped, RunStopped) as e:
             print(f"stop: {e}")
             break

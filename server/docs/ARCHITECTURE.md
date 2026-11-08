@@ -502,5 +502,13 @@ primary record, with dates; read it before changing the behaviour.
   without a valid one the proxy answers 302 to `no_img_dotxdot.gif` (a redirect is a failed image). No host needed a
   cookie or a Referer (shop-phinf, esmplus, cafe24, igearmall, rakuten). Description GIFs are product videos, no text.
 
+- A long listing (probed 2026-11-08, 남성 골프채 풀세트): 12 batches read by wheel scrolls in 110 s (~9 s a batch),
+  43-50 rows each, 583 unique, all 50002788, no stall; 10 ads, all in the first batches. A job reads deeper by
+  reading from the top again with more batches (no cursor). -> `scripts/job.py` docstring.
+- The search page's own box (probed 2026-11-07): `input[class*="_searchInput_search_text"]` holds the last query;
+  the visible clear button is `button[class*="_searchInput_button_clear"]` (the `_delete` one is 0 x 0), and typing
+  without clearing inserts at the caret. A login page (nid.naver.com) on the way is reset from naver.com, not waited
+  for (the owner). -> `ext_listing.SEARCH_BOX` / `search_again`, `ext_product` docstring.
+
 A new upstream fact gets a dated comment at the code that handles it and one
 line here (R-NAVER-4).

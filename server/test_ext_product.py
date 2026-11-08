@@ -19,6 +19,14 @@ FX = os.path.join(os.path.dirname(os.path.abspath(__file__)), "naver_shopping", 
 LINK = "https://smartstore.naver.com/thegolf/products/5543663553"
 
 
+@pytest.fixture(autouse=True)
+def no_kept_tab():
+    """The kept search tab is module state: every test starts without one."""
+    ext_product._home.clear()
+    yield
+    ext_product._home.clear()
+
+
 def details(product):
     return {"id": "5543663553", "name": "신품 혼마 D1 남성용 골프채 풀세트", "link": LINK,
             "category": {"id": "50002788", "name": "풀세트", "path": ["스포츠/레저", "골프", "골프클럽", "풀세트"],
@@ -203,7 +211,7 @@ class ErrorPage(Cards):
 def test_naver_error_page_is_not_a_wall(monkeypatch, tmp_path):
     monkeypatch.setattr(ext_product.ext_listing, "open_search", lambda bridge, query, out_dir: (7, None))
     monkeypatch.setattr(ext_product.ext_listing, "pause", lambda a, b: None)
-    monkeypatch.setattr(ext_product, "_close_tabs", lambda bridge: None)
+    monkeypatch.setattr(ext_product, "_close_tabs", lambda bridge, keep=None: 0)
     link = 'a[href*="/products/42?"]'
     bridge = ErrorPage({f'[class*="product_card"]:has(> {link}) img[class*="productCardThumbnail_image"]'})
     with pytest.raises(ext_product.NotListed, match="Naver shows its error page"):
@@ -264,7 +272,7 @@ def test_other_not_listed_is_not_retried(specs, monkeypatch):
 
 def test_read_page_card_missing_is_not_listed(monkeypatch, tmp_path):
     monkeypatch.setattr(ext_product.ext_listing, "open_search", lambda bridge, query, out_dir: (7, None))
-    monkeypatch.setattr(ext_product, "_close_tabs", lambda bridge: None)
+    monkeypatch.setattr(ext_product, "_close_tabs", lambda bridge, keep=None: 0)
 
     class NoCard(Cards):
         def call(self, op, **args):
@@ -272,3 +280,128 @@ def test_read_page_card_missing_is_not_listed(monkeypatch, tmp_path):
     with pytest.raises(ext_product.CardMissing) as e:
         ext_product.read_page(NoCard(set()), "42", "q", str(tmp_path))
     assert isinstance(e.value, ext_product.NotListed)                            # still a 404
+
+
+# ---- the kept search tab, the login reset, error kinds (the owner 2026-11-07: one product per iteration) ------
+
+class Browser:
+    """A fake adapter with tabs: naver.com path, a search tab with its own box, a card that opens a product tab.
+    `login_on` makes the n-th product tab (1-based) land on nid.naver.com."""
+    def __init__(self, login_on=()):
+        self.tabs, self.next_id, self.ops, self.products, self.login_on = {}, 100, [], 0, set(login_on)
+        self.box = ""
+
+    def _open(self, url):
+        self.next_id += 1
+        self.tabs[self.next_id] = url
+        return self.next_id
+
+    def call(self, op, **a):
+        self.ops.append((op, a.get("tabId"), a.get("selector") or a.get("text")))
+        tab = a.get("tabId")
+        if op == "tab_open":
+            return {"tabId": self._open(a["url"])}
+        if op == "tab_close":
+            self.tabs.pop(tab, None)
+            return True
+        if op == "tabs":
+            return [{"tabId": t, "url": u} for t, u in self.tabs.items()]
+        if op in ("wait_load", "key", "screenshot"):
+            if op == "key" and self.tabs.get(tab, "").startswith("https://shopping.naver.com"):
+                self.tabs[self._open("https://search.shopping.naver.com/ns/search?query=x")] = \
+                    "https://search.shopping.naver.com/ns/search?query=x"
+            return True
+        if op == "type":
+            self.box += a["text"]
+            return True
+        if op == "page":
+            return {"url": self.tabs.get(tab, ""), "title": "t", "html": "<html>상품</html>"}
+        if op == "captures":
+            return []
+        if op == "query":
+            sel = a["selector"]
+            if sel == ext_product.ext_listing.SEARCH_BOX:
+                return {"count": 1, "visible": True, "value": self.box}
+            return {"count": 1, "visible": True}
+        if op == "click":
+            sel = a["selector"]
+            if sel == ext_product.ext_listing.SHOPPING_LINK:
+                return {"newTabId": self._open("https://shopping.naver.com/ns/home")}
+            if sel == ext_product.ext_listing.SEARCH_CLEAR:
+                self.box = ""
+                return {}
+            if "/products/" in sel:
+                self.products += 1
+                url = ("https://nid.naver.com/nidlogin.login" if self.products in self.login_on
+                       else "https://smartstore.naver.com/s/products/42")
+                return {"newTabId": self._open(url)}
+            return {}
+        raise AssertionError(op)
+
+
+@pytest.fixture
+def browser(monkeypatch, tmp_path):
+    monkeypatch.setattr(ext_product.ext_listing, "pause", lambda a, b: None)
+    monkeypatch.setattr(ext_product.ext_listing.time, "sleep", lambda s: None)
+    monkeypatch.setattr(ext_product.time, "sleep", lambda s: None)
+    monkeypatch.setattr(ext_product.pdp, "spec_rows", lambda html: [{"label": "상품번호", "value": "42"}])
+    monkeypatch.setattr(ext_product, "ANSWER_TRIES", 1)
+    ext_product._home.clear()
+    yield
+    ext_product._home.clear()
+
+
+def search_tabs(b):
+    return [t for t, u in b.tabs.items() if "search.shopping" in u]
+
+
+def test_search_tab_is_kept_and_reused(browser, tmp_path):
+    b = Browser()
+    ext_product._read_listed(b, "42", ["first name"], str(tmp_path))
+    assert list(b.tabs) == search_tabs(b) and len(b.tabs) == 1                # only the search tab is left
+    opens = sum(op == "tab_open" for op, _, _ in b.ops)
+    ext_product._read_listed(b, "42", ["second name"], str(tmp_path))
+    assert sum(op == "tab_open" for op, _, _ in b.ops) == opens               # no naver.com path the 2nd time
+    assert b.box == "second name"                                             # cleared before typing
+    assert len(b.tabs) == 1 and list(b.tabs) == search_tabs(b)
+
+
+def test_login_gate_resets_from_naver_once(browser, tmp_path):
+    b = Browser(login_on={1})
+    out = ext_product._read_listed(b, "42", ["name"], str(tmp_path))
+    assert out["url"].endswith("/products/42")
+    assert sum(op == "tab_open" for op, _, _ in b.ops) == 2                    # naver.com twice: the reset
+    assert not any(u.startswith("https://nid.") for u in b.tabs.values())    # the login tab is closed
+    assert not any(op == "type" and "nid" in (b.tabs.get(t) or "") for op, t, _ in b.ops)   # never typed there
+
+
+def test_login_gate_twice_is_a_wall(browser, tmp_path):
+    with pytest.raises(ext_product.PageBlocked) as e:
+        ext_product._read_listed(Browser(login_on={1, 2}), "42", ["name"], str(tmp_path))
+    assert str(e.value).startswith("wall:")
+
+
+def test_adapter_errors_say_their_kind(browser, tmp_path, monkeypatch):
+    def broken(text):
+        def search_tab(bridge, query, out_dir):
+            raise ext_product.ExtError(text)
+        return search_tab
+    monkeypatch.setattr(ext_product, "_search_tab", broken("Cannot access contents of url "
+                                                          "https://shopv.pstatic.net/web/maintenance/internal-error"))
+    with pytest.raises(ext_product.AdapterError) as e:
+        ext_product.read_page(Browser(), "42", "q", str(tmp_path))
+    assert str(e.value).startswith("naver error page:")
+    monkeypatch.setattr(ext_product, "_search_tab", broken("op click timed out"))
+    with pytest.raises(ext_product.AdapterError) as e:
+        ext_product.read_page(Browser(), "42", "q", str(tmp_path))
+    assert str(e.value).startswith("adapter error:")
+
+
+def test_a_stale_search_tab_is_never_taken_for_a_new_search(browser, tmp_path):
+    """Review 2026-11-08: a search tab of another query left open (a kept tab the read could not reuse) was the
+    first search.shopping tab the naver.com path saw after Enter, so it was taken as the new results."""
+    b = Browser()
+    stale = b._open("https://search.shopping.naver.com/ns/search?query=old")
+    out = ext_product._read_listed(b, "42", ["name"], str(tmp_path))
+    assert out["url"].endswith("/products/42")
+    assert ext_product._home["tab"] != stale and stale not in b.tabs        # a new results tab; the stale one closed

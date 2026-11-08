@@ -22,7 +22,12 @@ from deferred_log import DeferredLog
 
 
 class SourceStopped(Exception):
-    """A captcha, 418 / 429 or a login wall: stop the source, mark no product."""
+    """A captcha, 418 / 429 or a login wall: stop the source, mark no product. `status` / `error`: the API's answer
+    (None for a refused image CDN), so a job can tell a wall from a busy adapter or Naver's error page."""
+
+    def __init__(self, message: str, status: int | None = None, error: Any = None):
+        super().__init__(message)
+        self.status, self.error = status, error
 
 
 class RunStopped(Exception):

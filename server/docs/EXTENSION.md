@@ -62,7 +62,11 @@ full flow in the owner's Chrome.
 The seller's attribute rows of a smartstore product (종류, 성별, 총클럽개수, 원산지 ...) are only on its product page
 (decision log 2026-11-01). `ext_product.read_page`, all in Python over the existing ops:
 
-1. `open_search(query)` as for a listing: naver.com -> 쇼핑 -> the search. Two ways in: a known product searches its
+1. The search tab (2026-11-07, the owner: one product per iteration of a job): the tab of the previous read is kept and
+   searched again by its own box (`ext_listing.search_again`: click `input[class*="_searchInput_search_text"]`,
+   click the visible clear button `button[class*="_searchInput_button_clear"]` (typing without it inserts at the
+   caret), type, Enter); only when there is no such tab (first read, gone, another page) `open_search(query)` as
+   for a listing: naver.com -> 쇼핑 -> the search. Two ways in: a known product searches its
    full Korean name (the default `query`); a product from a listing uses that listing's search as `query` (its card
    is on the first search page only for the first rows; deeper ones fall back to the name). A category entry is not
    built yet.
@@ -78,7 +82,12 @@ The seller's attribute rows of a smartstore product (종류, 성별, 총클럽�
 4. The HTML (saved to `server/output/ext-product/<run>/product.html`, gitignored) goes to `naver_shopping/pdp.py`:
    rows found by the heading text 상품정보 and the `<li><div>label</div><div>value</div>` shape, not by the hashed
    class names. `parsers.product_facts` merges them with the box record (brand, manufacturer, model, origin, each with
-   its source). All tabs it opened are closed.
+   its source). Every tab the adapter drives but the search tab is closed (the product tab), so Chrome is back on the
+   search tab; the server log says `tabs left: 1 (search tab kept)`.
+   A **login gate** (nid.naver.com) on the way is not waited for (the owner 2026-11-07: there is no account, and the
+   naver.com path resets the session): `ext_listing.check` raises `LoginGate`; `open_search` closes its tabs and
+   takes the path again (twice), a product read closes every tab and reads once more from naver.com; a second gate
+   is a wall (503 `wall:`). Nothing is ever typed on the login page. A captcha still waits for the owner.
 5. **Options from the page's own answer** (2026-11-02). While the page loads, it fetches its product
    (`/i/v2/channels/<uid>/products/<id>` on smartstore, `/n/v2/.../products/<id>?withWindow=false` on brand) with a
    one-time page token (`x-client-rtk`); `capture_main.js` copies the answer (filter `/channels/` + `/products/`),

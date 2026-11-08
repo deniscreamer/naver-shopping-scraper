@@ -19,11 +19,21 @@ smartstore.naver.com/scarabee/products/13021362937):
     null) when read, so the rendered 상품정보 list is the source; it shows 9
     rows and folds the rest behind a button (15 after the click).
 
+The search tab stays (the owner 2026-11-07, one product per iteration of a job): the next read types its query
+into that tab's own box (ext_listing.search_again) instead of the naver.com -> 쇼핑 path, and every other tab
+the adapter drives (the product tab) is closed after each read, so the browser is back on the search tab. The
+path is taken again when the tab is gone or is not a search page. A login gate is not waited for: the read
+closes its tabs, the search tab included, and starts again from naver.com (once).
+
 Products/details stays on the box; this route only adds what the page has.
 One adapter user at a time (listing_jobs.with_adapter): a running listing
 job makes a read busy (409). Walls are handled like the listing's
 (ext_listing.check: a captcha is reported and waited for, a ban page stops)
-and answer 503, which scripts do not retry.
+and answer 503; only a `wall:` one is final. A 503's error starts with its kind
+(the owner 2026-11-07, for a job that goes on by itself): "wall:" (captcha not
+answered, ban page, login gate after the reset: stop), "naver error page:"
+(K-21: Naver's maintenance page, passes in minutes: wait and retry),
+"adapter error:" (a read that failed mid-way: retry).
 """
 import json
 import os
@@ -64,7 +74,10 @@ class AdapterBusy(AdapterError):
 
 
 class PageBlocked(AdapterError):
-    """A captcha not solved in time, a login gate or a ban page on the way to the product page."""
+    """A captcha not solved in time, a ban page, or a login gate again after the reset."""
+
+
+_home = {}          # the search tab kept between reads: {"tab": id}; one adapter user at a time (with_adapter)
 
 
 class NotListed(NotFound):
@@ -124,23 +137,47 @@ def _product_answer(bridge, tab, product_id):
     return None
 
 
-def _close_tabs(bridge):
+def _close_tabs(bridge, keep=None):
+    """Close every tab the adapter drives but `keep` (the search tab); -> how many are left."""
+    left = 0
     try:
         for t in bridge.call("tabs") or []:
+            if t["tabId"] == keep:
+                left += 1
+                continue
             bridge.call("tab_close", tabId=t["tabId"])
     except ExtError:
         pass
+    return left
+
+
+def _search_tab(bridge, query, out_dir):
+    """The search page for `query`: the kept tab searched again, else the naver.com path. -> tab id."""
+    tab = _home.get("tab")
+    if tab is not None:
+        if ext_listing.search_again(bridge, tab, query, out_dir):
+            if not ext_listing.check(bridge, tab, "search", out_dir):
+                raise PageBlocked(f"wall: a wall on the search page for {query!r}")
+            return tab
+        _home.pop("tab", None)
+        try:
+            bridge.call("tab_close", tabId=tab)        # not usable: never left to be taken for another search
+        except ExtError:
+            pass
+    tab, why = ext_listing.open_search(bridge, query, out_dir)
+    if tab is None:
+        raise PageBlocked(f"wall: {why}")
+    _home["tab"] = tab
+    return tab
 
 
 def read_page(bridge, product_id, query, out_dir):
     """-> {url, title, html, search_url}: the product page after a click from
-    the search for `query`, its 상품정보 list unfolded. Closes its tabs."""
+    the search for `query`, its 상품정보 list unfolded. Closes every tab but the search tab."""
     os.makedirs(out_dir, exist_ok=True)
     started = time.monotonic()
     try:
-        tab, why = ext_listing.open_search(bridge, query, out_dir)
-        if tab is None:
-            raise PageBlocked(f"product {product_id}: {why}")
+        tab = _search_tab(bridge, query, out_dir)
         search_url = (bridge.call("page", tabId=tab, headChars=0) or {}).get("url")
         selector = _card(bridge, tab, product_id)
         if not selector:
@@ -154,17 +191,19 @@ def read_page(bridge, product_id, query, out_dir):
             if "/products/" not in ((bridge.call("page", tabId=tab, headChars=0) or {}).get("url") or ""):
                 clicked = bridge.call("click", tabId=tab, selector=selector)
         page_tab = clicked.get("newTabId") or tab
+        if page_tab == tab:                        # the card opened in the search tab itself: it is not kept
+            _home.pop("tab", None)
         bridge.call("wait_load", tabId=page_tab, timeoutMs=45000)
         ext_listing.pause(3, 5)
         # 2026-11-06: a product whose page Naver cannot serve opens shopv.pstatic.net/web/maintenance/
         # internal-error.html (twice in a row on 10302181901): when the tab can be read it is not a wall, the
         # product is unavailable now (404). Mostly the adapter cannot read that host and the read fails before this
-        # check, answered 503 (KNOWN_ISSUES K-21); it passes in minutes
+        # check, answered 503 "naver error page:" (KNOWN_ISSUES K-21); it passes in minutes
         tab_url = next((t.get("url") or "" for t in bridge.call("tabs") or [] if t.get("tabId") == page_tab), "")
         if "/web/maintenance/" in tab_url:
             raise NotListed(f"product {product_id}: Naver shows its error page ({tab_url[:80]})")
         if not ext_listing.check(bridge, page_tab, "product", out_dir):
-            raise PageBlocked(f"product {product_id}: a wall on the product page")
+            raise PageBlocked(f"wall: product {product_id}: a wall on the product page")
         # A click on the card's centre can land on its store link (2026-11-01: the Honma D1 card in the
         # 남성 골프채 풀세트 search opened smartstore.naver.com/thegolf); then the card counts as not found.
         landed = (bridge.call("page", tabId=page_tab, headChars=0) or {}).get("url") or ""
@@ -196,24 +235,41 @@ def read_page(bridge, product_id, query, out_dir):
               f"{len(pdp.spec_rows(html))} rows{folded}, options {'yes' if product else 'NO'}", flush=True)
         return {"url": page.get("url"), "title": page.get("title"), "html": html, "search_url": search_url,
                 "product": product}
+    except ext_listing.LoginGate:
+        _home.pop("tab", None)                     # the reset: every tab goes, the next read starts at naver.com
+        raise
     except ExtError as e:
-        raise AdapterError(f"product {product_id}: adapter error: {e}")
+        if "maintenance" in str(e) or "internal-error" in str(e):
+            raise AdapterError(f"naver error page: product {product_id}: {e}")
+        raise AdapterError(f"adapter error: product {product_id}: {e}")
     finally:
-        _close_tabs(bridge)
+        left = _close_tabs(bridge, keep=_home.get("tab"))
+        print(f"ext-product: tabs left: {left} (search tab {'kept' if left else 'none'})", flush=True)
 
 
 def _read_listed(bridge, product_id, queries, out_dir):
     """read_page for the first query whose search page has the card; the next query only when the card was not
     there (CardMissing), within the same adapter turn (one adapter user at a time) and still from a search page
-    (R-NAVER-1). -> the page dict plus "query" (the one that listed it)."""
-    for i, query in enumerate(queries):
+    (R-NAVER-1). A login gate: every tab closed, once more from naver.com. -> the page dict plus "query"."""
+    resets = 0
+    i = 0
+    while i < len(queries):
+        query = queries[i]
         try:
             return {**read_page(bridge, product_id, query, out_dir), "query": query}
+        except ext_listing.LoginGate as e:
+            if resets >= 1:
+                raise PageBlocked(f"wall: product {product_id}: a login gate again after the reset ({e})")
+            resets += 1
+            print(f"ext-product: {product_id} login gate ({e}); every tab closed, from naver.com again", flush=True)
+            ext_listing.pause(3, 6)
+            continue
         except CardMissing:
             if i == len(queries) - 1:
                 raise
             print(f"ext-product: {product_id} not listed for {query!r}, trying {queries[i + 1]!r}", flush=True)
             ext_listing.pause(2, 4)
+            i += 1
     raise NotListed(f"product {product_id}: no name to search for; pass query")
 
 
@@ -233,7 +289,7 @@ def _specs(product, query):
     out_dir = os.path.join(OUTPUT_ROOT, datetime.now().strftime("%Y%m%d-%H%M%S") + f"-{product_id}")
     page = _with_adapter(product_id, search_queries(details["name"], query), out_dir)
     if not pdp.spec_rows(page["html"]):   # every product page lists at least 상품번호: not rendered, or changed
-        raise AdapterError(f"product {product_id}: no 상품정보 list on the product page {page['url']} "
+        raise AdapterError(f"adapter error: product {product_id}: no 상품정보 list on the product page {page['url']} "
                            f"(saved to {out_dir}); retry, or the page layout changed")
     return specs_from_page(details, page["html"], page.get("product"), page["query"])
 

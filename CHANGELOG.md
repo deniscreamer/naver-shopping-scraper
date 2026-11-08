@@ -3,6 +3,22 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
+## Unreleased
+
+- `scripts/job.py` (new, the owner 2026-11-07): a job takes one listing and works one product per iteration
+  (collect -> one-line kept run -> description images -> prepare), resumable, each product's stage read from the
+  files; 409 waits, Naver's error page waits and retries then skips, a wall stops; `new` / `run` / `status`.
+  Translation and publication are named stages, not built. `scripts/JOB_AGENT.md`: how an agent runs it.
+  `collect_product.py`: example_99's per-product collect, shared. `SourceStopped` carries the API status.
+  Then: waits 15 min for the extension / server instead of stopping, asks the owner again for a captcha not answered
+  in time (6 times), reads the listings deeper when too few products pass the screen or the snapshot is used up
+  (`refresh`), a start / done line per product with stage times, a `== progress:` line every 10, `status` shows the
+  running product and stage.
+- /products/specs, /products/page: the search tab is kept between reads and the next product is searched in its
+  own box; the product tab is closed after each read. A login page on the way is reset from naver.com (no wait;
+  R-EXT-3 changed, decision log). A 503's error starts with its kind: `wall:`, `naver error page:`,
+  `adapter error:` (ENDPOINTS, K-21).
+
 ## 0.9.0 (2026-11-07)
 
 - No brand stated is no longer a hold (`brand_missing` removed): `brand_ko` stays null with the note

@@ -213,8 +213,9 @@ either, every sidecar is read again on the next run; check one product's rows by
   `/products/specs` and `/products/page` answer 503 before the 404 check runs; `CollectGuard` takes a 503 as a stop.
   Two reads of one product right after each other made it likelier.
 - **Impact:** a collection run stops on a passing Naver error. Callers wait ~2 min and retry (twice), then skip the
-  product and come back to it (scripts/README.md "Checking a run against product pages"). A fix would map that
-  adapter error to its own retryable answer.
+  product and come back to it (scripts/README.md "Checking a run against product pages"). Since 2026-11-07 the 503's
+  error starts with its kind: `naver error page:` for this one (`adapter error:` for another failed read, `wall:`
+  for a wall), so `scripts/job.py` waits and retries it and stops only on a wall; the status stays 503.
 
 ## Stale references and unused code
 

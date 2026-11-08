@@ -245,7 +245,8 @@ Scope: the files listed in R-TEST-4 (including `hostenv.py`, which picks the Chr
   stop rules). Its only Naver-specific parts are the `*.naver.com` host scope in `manifest.json` and the capture filter
   in `capture_main.js` (`/ns/v1/`, and `/channels/` + `/products/` for the product page's own product answer). Paths, walls, stop rules and parsing live in Python (`ext_listing.py`,
   `naver_shopping/composite.py`).
-- **R-EXT-3 (MUST)** A captcha / login gate: notify (`notify.py`) and wait for the human (60 s), never solve it.
+- **R-EXT-3 (MUST)** A captcha: notify (`notify.py`) and wait for the human, never solve it. A login gate: never
+  waited for and never typed into; the tabs are closed and the naver.com path is taken again (decision 2026-11-07).
   A ban page or a refused batch: stop, no retry. One listing at a time, sequential, at page speed.
 - **R-EXT-4 (MUST)** Parsers are pure and tested on trimmed real captures with tracking / session fields removed
   (`fixtures/composite_*`). Captured raw answers and HARs never enter git.
@@ -264,6 +265,16 @@ One entry per MUST exception or rule change, newest first. Format:
 ### YYYY-MM-DD: <rule ID>: <short title>
 What changes. Why. Evidence (A/B numbers, probe, test). Author.
 ```
+
+### 2026-11-07: R-EXT-3: a login gate is reset, not waited for; the search tab is kept between reads
+A login page (nid.naver.com) on the way to a search or a product page closes the read's tabs and takes the naver.com
+-> 쇼핑 path again (open_search: twice; a product read: once more), never waits and never types there; a captcha still
+waits for the owner. A product read keeps its search tab and searches the next product in that tab's own box; the
+product tab is closed after each read. 503 errors start with their kind (`wall:`, `naver error page:`,
+`adapter error:`). Why: the owner (2026-11-07): there is no account, the naver.com path resets the session, and a
+job of one product per iteration must go on by itself and leave the browser on its search tab. Evidence: probe
+2026-11-07 (two searches typed into one kept tab, product tabs closed, the search tab active again); offline tests
+in server/test_ext_product.py. Claude.
 
 ### 2026-11-05: R-STYLE-4: a log line per failed answer and per product page read
 `routes.call` prints `api: <status> <path> (<label>): <error>` for every failed answer (404, 409, 502, 503, 500, and

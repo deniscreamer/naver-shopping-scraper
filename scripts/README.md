@@ -70,8 +70,9 @@ Two ways to get a product's details:
 | Flexible | fixed set of backend answers; no attribute rows exist there | anything rendered on the page can be read later the same way (Python parses the page HTML) |
 
 The catch of way 2 is the path. The adapter cannot open a product page directly (Naver redirects that to the
-login page), so every read walks the whole flow like a person: naver.com -> the shopping home (쇼핑) -> a search
--> click the product's card -> the product opens in a new tab -> unfold the list. Two ways in:
+login page), so a read walks the flow like a person: naver.com -> the shopping home (쇼핑) -> a search -> click the
+product's card -> the product opens in a new tab -> unfold the list. The search tab is kept (2026-11-07): the next
+read types its search into that tab's box and skips naver.com; the product tab is closed after each read. Two ways in:
 
 - **A known product**: search its full Korean name (the default `query`) and click the card whose link carries
   its id (`example_10_known_products_specs.py`, `example_08_product_full.py`).
@@ -197,6 +198,36 @@ error, and is not taken again. Only the owner allows one retry of one product
 never removed; there is no switch to ignore the journal. A captcha / 418 / 429 / login wall or a refused image CDN
 stops the run without marking the product; a card not found on the listing is just not taken; two products in a row
 partial for the same reason stop the run (a defect of the collector).
+
+## A job: one listing, one product at a time (`job.py`)
+
+The iterative way (the owner, 2026-11-07): one listing, then each product in turn through every built stage
+(collect -> keep as a one-line run -> description images -> prepare) before the next opens; resumable at any point,
+the stage of each product read from the files. Translation and publication are named stages, not built yet. The
+browser stays on the job's search tab (the server searches the next product in it and closes the product tab); a
+login page is reset from naver.com, a captcha waits for the owner. How an agent runs it: [JOB_AGENT.md](JOB_AGENT.md);
+files, waits and stops: the `job.py` docstring. The per-product collect is `collect_product.collect`, shared with
+example_99.
+
+```sh
+.venv/bin/python scripts/job.py new --query "남성 골프채 풀세트" --category 50002788 --count 40 --paid
+.venv/bin/python -u scripts/job.py run          # resumes; --items N for a few
+.venv/bin/python scripts/job.py status [--json]
+.venv/bin/python scripts/job.py refresh --more 50  # by hand: the listings read deeper, new products appended
+```
+
+The owner's decisions (2026-11-07): one product per iteration (fewer reads in a burst: less risk of a block);
+translation is done by the agent of the session that runs the job (a script with a model API maybe later);
+publication goes straight to ACTIVE, right after translation; no age limit between collection and publication; the
+description's translation scope is still open (a translate stage is assumed). Not built on purpose (the owner,
+2026-11-08): OCR in parallel with the next collect, an incremental prepare (run_transform.run(shop) rebuilds the
+shop after each product: 1-2 s at 143 products, the pace did not drift over 100), a guard memory across runs.
+
+Checked live (2026-11-08, 50002788, own shops root): 40 sets in 53 min and 100 sets in 146 min, every one prepared
+`ready`, no stop, wait, captcha, login gate or Naver error page; ~80-88 s a product (collect median 52-56 s, page
+read 34-48 s, OCR median 21-22 s, prepare 1-2 s); the search tab reused for every read (`tabs left: 1`). A listing
+of 12 batches (one query) read in 110 s: 583 unique rows, no stall. Captcha, login reset, Naver's error page and a
+lost extension are covered by offline tests only (none came up live).
 
 ## Package weight and size
 

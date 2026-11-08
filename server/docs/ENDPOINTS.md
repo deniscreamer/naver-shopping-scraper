@@ -66,7 +66,7 @@ Every error body is JSON with an `error` string. `<label>` is the path without t
 | 502 | blocked by Naver: captcha, login gate, 403/405/418/429/490 (`Blocked`) | `{"error": "naver-shopping blocked the request, retry later: <detail>"}` |
 | 502 | transport failure, upstream 5xx, empty answer, Chrome could not start (`UpstreamError`) | `{"error": "naver-shopping <label> failed: <detail>"}` |
 | 409 | `/products/specs` only: the adapter is busy (a listing job runs) (`ext_product.AdapterBusy`) | `{"error": "the adapter is busy (<job id>), retry when it is done"}` |
-| 503 | `/products/specs` only: extension not connected, a wall on the way (captcha not solved, login gate, ban page), the page not rendered, an adapter error (`ext_product.AdapterError`) | `{"error": "<detail>"}` |
+| 503 | `/products/specs` only: extension not connected, a wall on the way (captcha not solved, login gate again after the reset, ban page), the page not rendered, an adapter error (`ext_product.AdapterError`) | `{"error": "<detail>"}`; a read's error starts with its kind (2026-11-07): `wall: ...` (stop), `naver error page: ...` (K-21, passes in minutes), `adapter error: ...` (a failed read) |
 | 500 | anything else (parser surprise) | `{"error": "naver-shopping <label> failed: <ExceptionType>: <detail>"}` |
 
 Validation examples (verified against the schemas):
@@ -80,8 +80,10 @@ field."]}}
 ```
 
 Client policy: 400 and 404 are final, do not retry. 502 is retryable after a pause. 409 / 503 from
-`/products/specs` are not retried automatically: they come from the owner's Chrome, where a retry after a wall
-risks a ban (R-EXT-3); retry a 409 once the listing is done. If a 502 that says
+`/products/specs` come from the owner's Chrome, where a retry after a wall risks a ban (R-EXT-3): a 503 whose
+error starts with `wall:` (or has no kind, e.g. the extension not connected) is final; one starting with
+`naver error page:` or `adapter error:` may be retried after ~120 s, at most twice (scripts/job.py); retry a 409
+once the listing is done. If a 502 that says
 `blocked the request` persists, Naver is refusing this machine's IP (set `NAVER_SHOPPING_PROXY`, see
 `server/README.md`). If a 502 that says `failed: ... browser box unavailable` persists, Chrome cannot start on the
 host; a proxy does not help. 500 is a server bug.
@@ -188,8 +190,9 @@ Two ways to get a product's details:
 | Flexible | fixed set of backend answers; no attribute rows exist there | anything rendered on the page can be read later the same way (Python parses the page HTML) |
 
 The catch of way 2 is the path. The adapter cannot open a product page directly (Naver redirects that to the
-login page), so every read walks the whole flow like a person: naver.com -> the shopping home (쇼핑) -> a search
--> click the product's card -> the product opens in a new tab -> unfold the list. Two ways in:
+login page), so a read walks the flow like a person: naver.com -> the shopping home (쇼핑) -> a search -> click the
+product's card -> the product opens in a new tab -> unfold the list. The search tab is kept (2026-11-07): the next
+read types its search into that tab's box and skips naver.com; the product tab is closed after each read. Two ways in:
 
 - **A known product**: search its full Korean name (the default `query`) and click the card whose link carries
   its id (`scripts/example_10_known_products_specs.py`, `example_08_product_full.py`).

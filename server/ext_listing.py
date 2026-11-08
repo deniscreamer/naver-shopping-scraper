@@ -12,10 +12,12 @@ that page's HTML; every next batch is loaded by the PAGE when the wheel
 scrolls to the end of the list, and the adapter copies the page's own
 paged-composite-cards answer. Until hasMore=false or --max-batches.
 
-Walls: a captcha / login gate is reported (notify.py) and waited for
-HUMAN_WAIT_S while the human solves it in that Chrome window; a ban page
-("접속이 일시적으로 제한", HTTP 418) or any refused batch stops the run, never
-retried.
+Walls: a captcha is reported (notify.py) and waited for HUMAN_WAIT_S while
+the human solves it in that Chrome window; a ban page ("접속이 일시적으로 제한",
+HTTP 418) or any refused batch stops the run, never retried. A login gate
+(nid.naver.com) is never waited for (the owner 2026-11-07: there is no account;
+the naver.com -> 쇼핑 path again resets the session): check raises LoginGate,
+open_search closes its tabs and takes the path again (LOGIN_RESETS times).
 
 Output under server/output/ext-listing/<run>/:
   listing.jsonl  one line per unique Naver store product (composite.listing_row
@@ -23,7 +25,7 @@ Output under server/output/ext-listing/<run>/:
   summary.json   counts, last cursor, total, stop reason
 summary.json is written on every exit. Exit code: 0 done or --max-batches reached;
 1 stalled, layout changed (no search box / no first batch) or an adapter error;
-2 the extension did not connect; 3 a wall (captcha not solved, login gate, ban page, refused batch).
+2 the extension did not connect; 3 a wall (captcha not solved, login gate after the resets, ban page, refused batch).
 """
 import argparse
 import base64
@@ -57,6 +59,15 @@ FULL_HTML = 5_000_000      # chars: the whole ns/search document (~0.7 MB)
 HUMAN_WALLS = ('title="captcha"', "wtm_captcha")
 # these end the run
 HARD_WALLS = ("접속이 일시적으로 제한", "internal-error", "에러페이지")
+LOGIN_RESETS = 2           # a login gate: the naver.com path again, this many times
+# the search page's own box and its clear button (probed 2026-11-07: the clear button is the visible one; the
+# "_searchInput_button_delete" one is 0 x 0); typing without clearing inserts at the caret
+SEARCH_BOX = 'input[class*="_searchInput_search_text"]'
+SEARCH_CLEAR = 'button[class*="_searchInput_button_clear"]'
+
+
+class LoginGate(Exception):
+    """Naver's login page (nid.naver.com) on the way: not waited for, the path is taken again."""
 
 
 def log(msg):
@@ -113,12 +124,14 @@ def walls(bridge, tab):
     page = bridge.call("page", tabId=tab) or {}
     html, url = page.get("html") or "", page.get("url") or ""
     hard = [m for m in HARD_WALLS if m in html]
-    human = [m for m in HUMAN_WALLS if m in html] + (["login gate"] if "nid.naver.com" in url else [])
+    human = [m for m in HUMAN_WALLS if m in html]
+    if "nid.naver.com" in url:
+        raise LoginGate(url[:120])
     return page, hard, human
 
 
 def check(bridge, tab, step, out_dir, summary=None):
-    """True to go on. Waits HUMAN_WAIT_S for a human on a captcha / login; False on a ban.
+    """True to go on. Waits HUMAN_WAIT_S for a human on a captcha; False on a ban; raises LoginGate on a login page.
     summary["status"] reads "captcha" while it waits (the HTTP job shows it)."""
     summary = summary if summary is not None else {}
     page, hard, human = walls(bridge, tab)
@@ -185,9 +198,27 @@ def _show_captcha(bridge, tab, out_dir, step, page, human, n):
 # ---- path ---------------------------------------------------------------------------
 
 def open_search(bridge, query, out_dir, summary=None):
-    """naver.com -> 쇼핑 -> typed search -> (results tab id, None) or (None, why it stopped)."""
+    """naver.com -> 쇼핑 -> typed search -> (results tab id, None) or (None, why it stopped). A login gate on the
+    way closes the path's tabs and takes it again from naver.com (LOGIN_RESETS times)."""
+    for attempt in range(LOGIN_RESETS + 1):
+        opened = []
+        try:
+            return _open_search(bridge, query, out_dir, summary, opened)
+        except LoginGate as e:
+            log(f"login gate on the way ({e}); closing {len(opened)} tab(s), naver.com again "
+                f"({attempt + 1} of {LOGIN_RESETS})")
+            for other in opened:
+                try:
+                    bridge.call("tab_close", tabId=other)
+                except ExtError:
+                    pass
+            pause(3, 6)
+    return None, f"login gate after {LOGIN_RESETS} resets"
+
+
+def _open_search(bridge, query, out_dir, summary, opened):
     tab = bridge.call("tab_open", url=HOME)["tabId"]
-    opened = [tab]
+    opened.append(tab)
     pause(2.5, 4)
     if not check(bridge, tab, "naver", out_dir, summary):
         return None, "wall at naver.com"
@@ -211,13 +242,16 @@ def open_search(bridge, query, out_dir, summary=None):
     pause(0.4, 0.9)
     bridge.call("type", tabId=tab, text=query)
     pause(0.5, 1.1)
+    before = {t["tabId"] for t in bridge.call("tabs") or []} - {tab}   # e.g. a kept search tab of another query
     bridge.call("key", tabId=tab, key="Enter")
     for _ in range(40):                       # the site routes to search.shopping (same tab or a new one)
         time.sleep(0.5)
-        hit = [t for t in bridge.call("tabs") if "search.shopping.naver.com" in (t.get("url") or "")]
+        hit = [t for t in bridge.call("tabs") if "search.shopping.naver.com" in (t.get("url") or "")
+               and t["tabId"] not in before]
         if hit:
             tab = hit[-1]["tabId"]
             break
+    opened.append(tab)
     bridge.call("wait_load", tabId=tab, timeoutMs=45000)
     pause(3, 5)
     if not check(bridge, tab, "search", out_dir, summary):
@@ -228,6 +262,31 @@ def open_search(bridge, query, out_dir, summary=None):
         except ExtError:
             pass
     return tab, None
+
+
+def search_again(bridge, tab, query, out_dir):
+    """A new search typed into an open search page's own box, as a person does (clear, type, Enter): the same tab
+    shows the results for `query`. -> True, or False when the tab is not a usable search page (gone, another page,
+    no box); a wall raises / returns like check (LoginGate; False on a ban is reported by the caller's check)."""
+    url = next((t.get("url") or "" for t in bridge.call("tabs") or [] if t.get("tabId") == tab), "")
+    if "search.shopping.naver.com" not in url:
+        return False
+    if not (bridge.call("query", tabId=tab, selector=SEARCH_BOX) or {}).get("visible"):
+        return False
+    bridge.call("click", tabId=tab, selector=SEARCH_BOX)
+    pause(0.6, 1.2)
+    if (bridge.call("query", tabId=tab, selector=SEARCH_CLEAR) or {}).get("visible"):
+        bridge.call("click", tabId=tab, selector=SEARCH_CLEAR)
+        pause(0.4, 0.9)
+    if (bridge.call("query", tabId=tab, selector=SEARCH_BOX) or {}).get("value"):
+        return False                              # not cleared: typing would insert at the caret
+    bridge.call("type", tabId=tab, text=query)
+    pause(0.5, 1.1)
+    bridge.call("key", tabId=tab, key="Enter")
+    pause(1.5, 2.5)
+    bridge.call("wait_load", tabId=tab, timeoutMs=45000)
+    pause(2.5, 4)
+    return True
 
 
 # ---- listing ------------------------------------------------------------------------
@@ -324,7 +383,11 @@ def walk(bridge, query, out_dir, max_batches, keep_tab, summary):
                 continue
             captures = next_batches(bridge, tab)
             if not captures:
-                if not check(bridge, tab, f"batch-{summary['batches'] + 1}", out_dir, summary):
+                try:
+                    walled = not check(bridge, tab, f"batch-{summary['batches'] + 1}", out_dir, summary)
+                except LoginGate:
+                    walled = True                 # mid-scroll: the rows so far are kept; a new listing starts over
+                if walled:
                     summary["stop"], code = "wall while scrolling", 3
                     break
                 captures = next_batches(bridge, tab)
