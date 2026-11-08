@@ -47,8 +47,8 @@ def test_pick_links():
         SE + "?type=w848", "https://shop-phinf.pstatic.net/a/anim.gif?type=w848",
         "https://cafe24.example.com/x.jpg", "https://shop-phinf.pstatic.net/20260101_1/notice_banner.jpg",
         "http://cafe24.example.com/y.jpg", "https://10.0.0.1/z.jpg", "https://localhost/z.jpg"]})
-    assert links == [SE, "https://cafe24.example.com/x.jpg"]   # the original: no ?type; a seller's own host too
-    assert [s["rule"] for s in skipped] == ["boilerplate_name", "gif"] + ["not_https_public"] * 3
+    assert links == [SE, "https://shop-phinf.pstatic.net/a/anim.gif", "https://cafe24.example.com/x.jpg"]
+    assert [s["rule"] for s in skipped] == ["boilerplate_name"] + ["not_https_public"] * 3   # a GIF is fetched
 
 
 def test_read_product_writes_rows_and_failures():
@@ -295,3 +295,19 @@ def test_equal_slices_are_read_once():
     pic = jpeg(900)
     out = DI.ocr.read_slices(engine, DI.ocr.slices_of([("https://a/1.jpg", pic), ("https://a/2.jpg", pic)]))
     assert engine.calls == 1 and out[0]["rows"] == out[1]["rows"]
+
+
+def gif(frames):
+    from PIL import Image
+    im = [Image.new("RGB", (200, 300), (255, 40 * i, 0)) for i in range(frames)]
+    buf = io.BytesIO()
+    im[0].save(buf, "GIF", save_all=frames > 1, append_images=im[1:])
+    return buf.getvalue()
+
+
+def test_a_static_gif_is_read_an_animated_one_skipped():
+    """2026-11-08, 9942710033: the whole description was one static GIF (spec tables) and the GIF rule skipped it."""
+    data = {"https://a.example.com/static.gif": gif(1), "https://a.example.com/video.gif": gif(3)}
+    images, got, skipped = DI._fetch_all(list(data), lambda link, *a: data[link], "", None, lambda s: None, {})
+    assert [i["link"] for i in images] == ["https://a.example.com/static.gif"] and len(got) == 1
+    assert skipped == [{"link": "https://a.example.com/video.gif", "rule": "gif_animated"}]

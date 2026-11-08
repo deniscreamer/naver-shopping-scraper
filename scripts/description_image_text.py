@@ -11,12 +11,15 @@ character fragments of photos ("B4", "ecco"), 11 % have a low OCR confidence, ~1
 So, per read image in description order:
 
   rows      the sidecar's rows as read, normalised (description_ocr.norm)
-  dropped   repeat (the same row earlier in the product), cross_sell (from a 함께 구매 / 추천 상품 heading to the
-            end of the image), low_confidence (< MIN_CONF), fragment (no word of two letters and not a table row),
-            price (a money amount, 가격), contact (a phone, an address, a URL, 우편번호), shop_policy (delivery,
-            returns, orders, A/S: the shop's terms, not the product); an image whose rows are mostly shop_policy /
-            contact is the shop's notice image: dropped whole (shop_notice_image); store_info (branches, hours, its
-            channels and events, a branch list, a floor); legal (copyright notices); promo (gifts, memberships,
+  dropped   repeat (a sentence seen earlier in the product; a short or table row only within REPEAT_WINDOW
+            rows: a slice overlap), cross_sell (from a 함께 구매 / 추천 상품 heading, a short row or the heading
+            phrases, never a sentence or a policy line, to the end of the image), low_confidence (< MIN_CONF),
+            fragment (no word of two letters and not a table row; "R / D1/296" is a table row), price (a money amount,
+            가격), contact (a phone, an address with a street or a lot number, a URL, 우편번호), shop_policy
+            (delivery, returns, orders, A/S, a notice card's lines: the shop's terms, not the product); an image whose
+            rows are mostly shop_policy / contact is the shop's notice image: dropped whole (shop_notice_image);
+            store_info (branches, hours, its channels and events, a branch list, a floor, its trade-in and fitting
+            services, parking, its map's stations and shops); legal (copyright notices); promo (gifts, memberships,
             dealer claims); photo_label (a Latin-only label of a photo, no digit: "POWER TRAJECTORY")
   blocks    consecutive rows of one kind: `table` (3+ cells with a number, or a Korean label and its number:
             cells joined " | ", as the description text writes table rows) or `text` (rows as lines; " / " parts
@@ -44,19 +47,34 @@ TRANSLATION_FORMAT = "description_image_translation/1"
 MIN_CONF = 0.6                   # RapidOCR row confidence: below it the row is mostly misread (OCR study 2026-11-07)
 NOTICE_SHARE = 0.4               # an image with this share of shop rows is the shop's notice image
 _CROSS_SELL = re.compile(r"함께\s*구매|추천\s*상품|같이\s*구매|관련\s*상품|다른\s*상품|BEST\s*ITEM", re.I)
+# A cross-sell cut starts only at a heading: a short row, or the heading phrases. Seen 2026-11-08: a sentence did it
+# (thegolf "원하시는퍼터를함께구매하시어본인만의풀세트를완성하세요!", the putter add-on, near the top of 29 stitched
+# tiles: the cut to the end of the image took 292-330 rows of the set's own spec sheet on 3 Sterna listings), and so
+# did shop-policy sentences ("다른 상품으로 교환하는 경우"), which the policy rule drops row by row anyway.
+_CROSS_SELL_HEAD = re.compile(r"함께\s*구매하면\s*좋은|추천\s*상품|BEST\s*ITEM|관련\s*상품|같이\s*구매하면", re.I)
+CROSS_SELL_HEADING = 20          # characters (no spaces): a cross-sell row this short is a heading
+REPEAT_WINDOW = 12               # rows: a short or table row is a repeat only this close (a slice overlap read twice)
 _WORD = re.compile(r"[가-힣]{2,}|[A-Za-z]{2,}")
 _PRICE = re.compile(r"\d[\d,.]*\s*(?:원|만원)(?![가-힣])|[¥￥$€]\s*\d|\d\s*(?:엔|달러|USD|JPY)\b|가격|판매가|정상가|할인|쿠폰|적립",
                     re.I)
 _CONTACT = re.compile(r"(?<![\d-])(?:0\d{1,2}|1[56]\d\d)[-. )]\s?\d{3,4}(?:[-. ]\d{4})?(?![\d-])|우편\s*번호|주소|"
                       r"https?://|www\.|\.co(?:m|\.kr)\b|[가-힣]+[시구군]\s+[가-힣\d]+(?:로|길)\s*\d+|"
+                      r"[가-힣]+[시군구]\s*[가-힣\d]+[동읍면리]\s*\d+(?:-\d+)?|"     # a lot address: "부천시 중동1160-3"
                       r"카카오\s*톡|톡톡|고객\s*센터|상담\s*(?:원|시간|문의)|문의\s*(?:하|주|사항|전화)")
 # the shop's terms; not words a product's copy uses ("손목 부담", "오염에 강한" stay)
 _POLICY = re.compile(r"배송|택배|출고|발송|교환|반품|환불|결제|주문\s*(?:취소|건|시)|도서\s*산간|영업\s*시간|공휴일|"
-                     r"A\s*/\s*S|무상\s*수리|보증\s*기간|처리\s*불가|양해")
+                     r"A\s*/\s*S|무상\s*수리|보증\s*기간|처리\s*불가|양해|"
+                     # a notice card's own lines (13464713764, 2026-11-08; "공지사함" / "제크자" as OCR reads them)
+                     r"공지\s*사[항함]|간주\s*됩니다|동의\s*한|부담\s*하셔야|제\s*[3크키]\s*자|개인\s*정보")
 # the store, not the product: branches, opening hours, pick-up, its channels and events (10870655883 AK골프's
 # store list and "초특가 상품 알림 서비스", 2026-11-07)
 _STORE = re.compile(r"매장|영업점|직영|지점|본점|방문\s*수령|연중\s*무휴|\d{1,2}:\d{2}\s*[~-]|오픈\s*채팅|채널|기획전|"
-                    r"알림\s*서비스|이벤트|회원\s*가입|리뷰\s*작성|창립|유통사")
+                    r"알림\s*서비스|이벤트|회원\s*가입|리뷰\s*작성|창립|유통사|"
+                    # a store banner baked into snap tiles: hours, its services, its map (7429347947, 10050313095,
+                    # 10341805328, 5479607864, 8822855547, 2026-11-08)
+                    r"(?:평일|주말|토요일|일요일)\s*:?\s*(?:오전|오후)|(?:오전|오후)\s*\d{1,2}\s*시|중고\s*채|보상\s*판매|"
+                    r"위탁|주차|피팅\s*스튜디오|(?:시청|구청|대입구|입구)역|\d+\s*번\s*출구|GS25|세븐\s*일레븐|스타벅스|"
+                    r"농협|은행")
 # the shop's legal notice, promotions and dealer claims (12975257923 "무단도용금지 ... 저작권법 제 98조", "구매 고객 전원
 #클럽 네임택 증정", "XXIO CREW ... 웰컴키트", "공식 온라인 인증 대리점", 2026-11-07)
 _LEGAL = re.compile(r"저작권|무단\s*(?:도용|사용|복제|배포)|copyright|all\s*rights\s*reserved|민\s*,?\s*형사|손해\s*배상", re.I)
@@ -71,12 +89,24 @@ def _table_row(text: str) -> bool:
     """3+ cells with a number, or a label and its numbers ("헤드체적(cm) / 460", "로프트각(°) / 21.5 25 28.5")."""
     cells = text.split(" / ")
     numbers = sum(bool(re.search(r"\d", c)) for c in cells)
-    return len(cells) >= 3 and numbers >= 1 or len(cells) == 2 and numbers >= 1 and bool(_HANGUL.search(cells[0])) \
-        and not _HANGUL.search(cells[1])               # "여성용은 / 12PCS/남성용은13PCS로" is a sentence
+    # 2 cells: a label and its numbers; the label Korean, or a short code (a flex "R / D1/296", "SR / D2/299", a
+    # garbled "4( / 9.5/10.5": 10341805328, 2026-11-08, dropped as fragments before)
+    return len(cells) >= 3 and numbers >= 1 or len(cells) == 2 and bool(re.search(r"\d", cells[1])) \
+        and not _HANGUL.search(cells[1]) \
+        and (bool(_HANGUL.search(cells[0])) or 0 < len(cells[0].strip()) <= 4)   # "여성용은 / 12PCS/..." is a sentence
 
 
-def _why(text: str, conf: float, seen: set[str]) -> str | None:
-    if text in seen:
+def _repeat(text: str, at: int, seen: dict[str, int]) -> bool:
+    """A sentence seen anywhere before in the product; a short or table row only within REPEAT_WINDOW rows (a slice
+    overlap): a table's own heading or row repeated in another table is kept (8822855547, 2026-11-08: 드라이버 / 퍼터
+    headings and the iron 모델 #6..S row were dropped, the putter's rows left under the irons)."""
+    if text not in seen:
+        return False
+    return not (len(text.replace(" ", "")) <= 12 or _table_row(text)) or at - seen[text] <= REPEAT_WINDOW
+
+
+def _why(text: str, conf: float, seen: dict[str, int], at: int = 0) -> str | None:
+    if _repeat(text, at, seen):
         return "repeat"
     if conf < MIN_CONF:
         return "low_confidence"
@@ -99,6 +129,13 @@ def _why(text: str, conf: float, seen: set[str]) -> str | None:
     return None
 
 
+def _cross_sell_heading(text: str) -> bool:
+    if _POLICY.search(text):
+        return False
+    return bool(_CROSS_SELL_HEAD.search(text)) or bool(_CROSS_SELL.search(text)) and \
+        len(text.replace(" ", "")) <= CROSS_SELL_HEADING
+
+
 def _degrees(row: str) -> str:
     return _DEGREE_0.sub(r"\1°", row) if _ANGLE_ROW.search(row) else row
 
@@ -108,19 +145,21 @@ def blocks(sidecar: dict[str, Any] | None, store_name: str | None = None,
     """-> {"blocks": [{id, kind, image, text}], "dropped": {rule: rows}} for one product's sidecar."""
     dropped: Counter = Counter()
     out: list[dict[str, Any]] = []
-    seen: set[str] = set()
+    seen: dict[str, int] = {}
+    at = 0
     images = [img for img in (sidecar or {}).get("images") or [] if img.get("status") == "read"]
     for n, img in enumerate(images):
         rows = [(ocr.norm(r["text"]), r["conf"]) for s in img.get("slices") or [] for r in s["rows"]]
         kept: list[str] = []
         why_all: list[str | None] = []
         for i, (text, conf) in enumerate(rows):
-            if _CROSS_SELL.search(text):
+            if _cross_sell_heading(text):
                 dropped["cross_sell"] += len(rows) - i
                 break
-            why = _why(text, conf, seen)
+            at += 1
+            why = _why(text, conf, seen, at)
             why_all.append(why)
-            seen.add(text)
+            seen[text] = at
             if why:
                 dropped[why] += 1
             else:

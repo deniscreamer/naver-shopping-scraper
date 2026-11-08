@@ -502,6 +502,10 @@ primary record, with dates; read it before changing the behaviour.
   without a valid one the proxy answers 302 to `no_img_dotxdot.gif` (a redirect is a failed image). No host needed a
   cookie or a Referer (shop-phinf, esmplus, cafe24, igearmall, rakuten). Description GIFs are product videos, no text.
 
+- A 제조사 of `M0000000` (page row and naverShoppingSearchInfo.manufacturerName, 2026-11-08, 13464713764) is Naver's
+  code for no manufacturer. A description GIF can be a static one-frame page holding the whole description (9942710033:
+  720 x 11489, spec tables); the animated ones are product videos. -> `transform._PLACEHOLDER_CODE`,
+  `description_images` docstring.
 - A long listing (probed 2026-11-08, 남성 골프채 풀세트): 12 batches read by wheel scrolls in 110 s (~9 s a batch),
   43-50 rows each, 583 unique, all 50002788, no stall; 10 ads, all in the first batches. A job reads deeper by
   reading from the top again with more batches (no cursor). -> `scripts/job.py` docstring.

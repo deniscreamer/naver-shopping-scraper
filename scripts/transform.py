@@ -133,7 +133,7 @@ def brand_hints(facts: dict[str, Any]) -> str:
     images' text."""
     hints = []
     maker = facts.get("manufacturer") or {}
-    if maker.get("value"):
+    if maker.get("value") and not _PLACEHOLDER_CODE.match(str(maker["value"]).strip()):
         hints.append(f"{maker['value']} ({maker.get('source')})")
     origin = facts.get("origin") or {}
     for inner in re.findall(r"\(([^()]+)\)", origin.get("value") or ""):
@@ -324,6 +324,11 @@ def _variant(rules: ShopRules, key: str, product_id: str, tuple_ko: list[str], k
 
 # ---- the rest of the product --------------------------------------------------------------
 
+# Naver's "no value" codes: a 제조사 of "M0000000" is its placeholder for no manufacturer (seen 2026-11-08,
+# 13464713764: the page row and naverShoppingSearchInfo.manufacturerName both say it); never a spec or a hint
+_PLACEHOLDER_CODE = re.compile(r"^[A-Z]0{6,}$")
+
+
 def spec_rows(specs: dict[str, Any]) -> list[dict[str, str]]:
     out = []
     for r in specs.get("specs") or []:
@@ -335,7 +340,7 @@ def spec_rows(specs: dict[str, Any]) -> list[dict[str, str]]:
                 while _BRACKETS_RE.search(value):
                     value = _BRACKETS_RE.sub("", value)
             value = re.sub(r"\s+", " ", value).strip()
-        if label not in HIDDEN_ROWS and value and not _pointer(value):
+        if label not in HIDDEN_ROWS and value and not _pointer(value) and not _PLACEHOLDER_CODE.match(value.strip()):
             out.append({"label_ko": label, "value_ko": value})
     return out
 

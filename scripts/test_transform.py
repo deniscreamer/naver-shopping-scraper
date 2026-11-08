@@ -153,6 +153,7 @@ def test_brand_unstated_is_a_note_not_a_hold():
     ({"origin": {"value": "일본산(구매대행)", "source": "specs:원산지"}}, None),          # an agency word
     ({"manufacturer": {"value": "(주)삼양인터내셔날", "source": "search_info.manufacturerName"}},
      "(주)삼양인터내셔날 (search_info.manufacturerName)"),
+    ({"manufacturer": {"value": "M0000000", "source": "search_info.manufacturerName"}}, None),   # Naver's "none"
     ({}, None),
 ])
 def test_brand_hints(facts, hints):
@@ -531,3 +532,10 @@ def test_image_measures_without_a_profile_use_the_core_only(monkeypatch):
                 sidecar([["제품 무게 / 12kg", "제품 사이즈 / 140 x 35 x 30cm"]]))
     pk = p["product"]["variants"][0]["package"]
     assert pk["product_weight_g"]["value"]["max"] == 12000 and pk["package_length_mm"]["value"]["max"] == 1400
+
+
+def test_naver_placeholder_manufacturer_is_not_a_spec():
+    """13464713764, 2026-11-08: 제조사 "M0000000" is Naver's code for no manufacturer."""
+    from transform import spec_rows
+    rows = spec_rows({"specs": [{"label": "제조사", "value": "M0000000"}, {"label": "원산지", "value": "국내산"}]})
+    assert rows == [{"label_ko": "원산지", "value_ko": "국내산"}]

@@ -17,7 +17,8 @@ only supplies the publisher written into the file.
   * at most MAX_OUTPUT_BYTES: quality 85, 80, 75 at that size, then the same at
     each smaller long side in SIZES; the first that fits wins;
   * an animation (GIF, WebP) becomes its first frame, after its last frame
-    decoded (a broken animation is refused, not cut);
+    decoded (a broken animation is refused, not cut); a phone's MPO becomes its
+    first picture (the later ones, depth or HDR gain maps, are not decoded);
   * every old EXIF / GPS / IPTC / ICC / XMP block is dropped; the only metadata
     is a new XMP: dc:publisher + dc:source (the store) and, for a gallery photo
     with English SEO text, dc:title, dc:description (the alt) and dc:subject;
@@ -136,15 +137,24 @@ def _open(data):
 
 
 def _first_frame(im):
-    """-> (decoded first frame, frame count or None). The last frame must decode too."""
+    """-> (decoded first frame, frame count or None). An animation's last frame must decode too (a broken one is
+    refused, not cut). An MPO's later pictures are only size-checked, never decoded: an iPhone HDR photo carries a
+    gain map there that Pillow cannot read ("not a JPEG file", seen 2026-11-08 on 4 review photos of the 100-run,
+    8822855547, 10050313095, 7674969995), while its first picture, the photo itself, decodes."""
     try:
         frames = getattr(im, "n_frames", 1)              # counting may read the whole file
         if frames > 1:
-            im.seek(frames - 1)
-            w, h = im.size                               # an MPO's later picture can be larger than its first
-            if w * h > MAX_PIXELS:
-                raise PrepError(f"frame {frames} size {w}x{h} out of range")
-            im.load()
+            try:
+                im.seek(frames - 1)
+            except Exception:
+                if im.format != "MPO":
+                    raise
+            else:
+                w, h = im.size                           # an MPO's later picture can be larger than its first
+                if w * h > MAX_PIXELS:
+                    raise PrepError(f"frame {frames} size {w}x{h} out of range")
+                if im.format != "MPO":
+                    im.load()
             im.seek(0)
         im.load()
     except PrepError:

@@ -3,6 +3,16 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
+## Unreleased
+
+- Fixes from the quality check of the 100-product run (2026-11-08, 19 suspicious products re-read via
+  /products/page): the images' text keeps the spec sheet a cross-sell sentence used to cut (a cut starts only at a
+  heading), keeps table headings and rows repeated in other tables (a repeat is only a slice overlap for short and
+  table rows), keeps short flex rows ("R / D1/296"), and cuts a store banner's address, hours, services and map
+  labels and a notice card's lines; a one-frame GIF in a description is read (animated ones skipped as
+  `gif_animated`); an iPhone HDR review photo (MPO with a gain map) is kept (its first picture); 제조사 `M0000000`
+  (Naver's "none") is no spec and no hint. Fixture sidecar 6630856593 re-read (its 11 GIFs are animated).
+
 ## 0.10.0 (2026-11-08)
 
 - `scripts/job.py` (new, the owner 2026-11-07): a job takes one listing and works one product per iteration

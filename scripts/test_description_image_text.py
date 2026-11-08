@@ -153,3 +153,45 @@ def test_a_sentence_split_by_ocr_boxes_stays_text():
     """7583123963: "여성용은 / 12PCS/남성용은13PCS로" then "구성되어 있으니 ..." is one sentence, not a table row."""
     b = T.blocks(sidecar(["여성용은 / 12PCS/남성용은13PCS로", "구성되어 있으니 구매 시 참고 부탁드립니다."]))
     assert [k for k, _ in kinds(b)] == ["text"]
+
+
+# ---- 2026-11-08: the 100-run's quality check ---------------------------------------------------------------
+
+def test_a_cross_sell_sentence_does_not_cut_the_spec_sheet():
+    """12606951277: the putter add-on sentence near the top of 29 stitched tiles cut 330 of 349 rows to the end."""
+    b = T.blocks(sidecar(["퍼터 추가구매상품", "원하시는퍼터를함께구매하시어본인만의풀세트를완성하세요!",
+                          "DETAIL / Information / MAJESTY", "로프트(이) / 10.5 / 11.5", "헤드체적(cc) / 460 / 460"]))
+    assert ("table", "로프트(°) | 10.5 | 11.5\n헤드체적(cc) | 460 | 460") in kinds(b) or \
+        any("헤드체적" in x["text"] for x in b["blocks"])
+    assert b["dropped"].get("cross_sell") is None
+
+
+def test_a_cross_sell_heading_still_cuts_to_the_end():
+    b = T.blocks(sidecar(["헤드체적(cc) / 460", "함께 구매하면 좋은 상품", "다른 퍼터 상품명", "골프백 / 25 / 30"]))
+    assert b["dropped"]["cross_sell"] == 3 and kinds(b) == [("table", "헤드체적(cc) | 460")]
+
+
+def test_short_flex_rows_are_table_rows():
+    """10341805328: "R / 01/296", "s / 02/301" and "4( / 9.5/10.5" were dropped as fragments."""
+    b = T.blocks(sidecar(["로프트각 / 9.5/10.5", "R / 01/296", "s / 02/301", "4( / 9.5/10.5"]))
+    assert b["dropped"] == {} and len(b["blocks"]) == 1 and b["blocks"][0]["kind"] == "table"
+
+
+def test_a_table_heading_repeated_far_away_is_kept():
+    """8822855547: 드라이버 / 퍼터 headings were dropped as repeats; a slice overlap still is one."""
+    rows = ["드라이버", "로프트각(°) / 11.5"] + [f"{n}번째 기술 설명 문장입니다" for n in range(15)] + ["퍼터", "드라이버",
+                                                                                                "로프트각(°) / 3"]
+    b = T.blocks(sidecar(rows))
+    text = "\n".join(x["text"] for x in b["blocks"])
+    assert text.count("드라이버") == 2 and "퍼터" in text
+    near = T.blocks(sidecar(["퍼터 헤드", "로프트각(°) / 3", "퍼터 헤드"]))
+    assert near["dropped"] == {"repeat": 1}
+
+
+def test_a_store_banner_in_tiles_is_cut():
+    """7429347947 / 10050313095 / 13464713764: the store's address, hours, map and a notice card's lines."""
+    b = T.blocks(sidecar(["토요일오전10시30분-오후7시", "소 / 경기도 부천시 중동1160-3", "중고채보상", "주차장완비",
+                          "GS25 / 공영", "부천시청역", "공지사함", "것으로 간주됩니다.", "제크자에게 주문과 관련된 최소한의"],
+                         ["가볍고 관용성이 높은 헤드 설계로 비거리를 늘려줍니다"]))
+    assert kinds(b) == [("text", "가볍고 관용성이 높은 헤드 설계로 비거리를 늘려줍니다")]
+    assert b["dropped"].get("shop_notice_image") is None                        # each row by its own rule

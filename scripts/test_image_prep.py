@@ -176,3 +176,16 @@ def test_mpo_later_picture_size_checked(monkeypatch):
     monkeypatch.setattr(P, "MAX_PIXELS", 10_000)
     with pytest.raises(P.PrepError, match="frame 2 size 640x480"):
         P.prepare(mpo, "gallery", STORE)
+
+
+def test_mpo_with_an_unreadable_gain_map_keeps_the_photo():
+    """2026-11-08: iPhone HDR review photos (MPO, an Apple gain map as the 2nd picture) failed with "not a JPEG
+    file" because the last picture was decoded; the photo itself is the first picture."""
+    photo, gain = Image.new("RGB", (64, 48), (10, 120, 200)), Image.new("L", (32, 24), 128)
+    mpo = bytearray(encode(photo, "MPO", save_all=True, append_images=[gain.convert("RGB")]))
+    second = mpo.rfind(b"\xff\xd8")                            # break the second picture's JPEG header
+    mpo[second:second + 2] = b"\x00\x00"
+    out = P.prepare(bytes(mpo), "review-image", STORE)
+    assert (out.width, out.height) == (64, 48) and out.source_format == "MPO"
+    r, g, b = back(out).getpixel((5, 5))[:3]
+    assert b > 150 and r < 60

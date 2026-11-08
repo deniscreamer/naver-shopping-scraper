@@ -148,7 +148,7 @@ real photos (9 of its 250 published differ, sources with a long side over 2048);
 under 500 and were not filtered. For all: a static WebP,
 never enlarged or cropped, at most 1,000,000 bytes (quality 85, 80, 75 at that size, then each smaller long side;
 the first that fits), EXIF orientation applied, sRGB, transparency kept, an animation becomes
-its first frame (its last frame must decode), every old EXIF / GPS / IPTC / ICC / XMP dropped, then read back
+its first frame (its last frame must decode; a phone's MPO: its first picture only, an iPhone HDR gain map is not decoded), every old EXIF / GPS / IPTC / ICC / XMP dropped, then read back
 (chunks, size, one frame, exactly our XMP). No author or copyright is written; the store is the publisher, not the
 brand. `ImageSeo` takes reviewed English text only (slug `a-z0-9-` up to 200, alt up to 125); with only the Korean
 name there is none and the file is named after the store and product id.
@@ -278,7 +278,8 @@ transform still runs: the products get the note `description_images_missing` and
 `--products <id> ...` reads some products only, `--force` reads again.
 
 **What it fetches.** Each kept product's `details.description.images`, in order: seller banners out (by name, link,
-spacer, 1x1 pixel: description_clean.clean_images), GIFs out, images smaller than 60 px out (`tiny`: counters,
+spacer, 1x1 pixel: description_clean.clean_images), animated GIFs out (a one-frame GIF is read: 9942710033's whole
+description is one), images smaller than 60 px out (`tiny`: counters,
 icons), a link repeated in one body once. Hosts: Naver's image CDN and any public HTTPS host the seller links (the
 owner, 2026-11-07; never http, an IP, localhost, or a name that resolves to a private / local address; AGENTS.md
 rule 3). On 50 golf sets 8 products have 35 such images
@@ -382,7 +383,10 @@ not used; run the stage again).
 Checked by eye against the images (2026-11-07, 20 live sets): prose reads near-exact, spec tables ~95 % (a digit
 lost now and then, a degree sign read as 0), small lettering on photos poorly; the rows as read are not a text yet.
 `run_transform` turns each product's current sidecar into clean Korean blocks (`description_image_text.py`) and
-writes them for the next step, translation (not done here):
+writes them for the next step, translation (not done here). Fixed after the 100-run check (2026-11-08): a
+cross-sell cut starts only at a heading (a sentence cut 292-330 rows of three Sterna listings' spec sheets), a table
+heading or row repeated in another table is kept (only a slice overlap is a repeat), short flex rows ("R / D1/296")
+are table rows, and a store banner's address, hours, services and map labels are cut:
 
 ```
 scripts/output/shops/<shop>/translation/<product id>/

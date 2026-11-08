@@ -1451,57 +1451,57 @@
   }
  ],
  "key": "fairwardgolf:naver:100249211:6630856593",
- "links_sha256": "2eb9066b1b9b9ed337c3720261a20128ef5d1dd060898ebd817731b3a963e159",
+ "links_sha256": "8fe42d4aba985cd4892a9a535c3fd69fa0f025a69dbcdc3f8987ed83e3edef57",
  "product_id": "6630856593",
- "seconds": 0,
+ "seconds": 64.8,
  "skipped": [
   {
    "link": "https://shop-phinf.pstatic.net/20220719_296/1658194314604QXP7o_JPEG/PGM-%EB%B0%B0%EB%84%88.jpg?type=w848",
    "rule": "link_banner"
   },
   {
-   "link": "https://shop-phinf.pstatic.net/20240315_165/1710469080785ud4LG_GIF/02.gif?type=wg848",
-   "rule": "gif"
+   "link": "https://shop-phinf.pstatic.net/20240315_165/1710469080785ud4LG_GIF/02.gif",
+   "rule": "gif_animated"
   },
   {
-   "link": "https://shop-phinf.pstatic.net/20240315_199/1710469115732wX1aW_GIF/04.gif?type=wg848",
-   "rule": "gif"
+   "link": "https://shop-phinf.pstatic.net/20240315_199/1710469115732wX1aW_GIF/04.gif",
+   "rule": "gif_animated"
   },
   {
-   "link": "https://shop-phinf.pstatic.net/20240315_185/1710469115094GfH8b_GIF/05.gif?type=wg848",
-   "rule": "gif"
+   "link": "https://shop-phinf.pstatic.net/20240315_185/1710469115094GfH8b_GIF/05.gif",
+   "rule": "gif_animated"
   },
   {
-   "link": "https://shop-phinf.pstatic.net/20240315_296/1710469486454yB34S_GIF/08.gif?type=wg848",
-   "rule": "gif"
+   "link": "https://shop-phinf.pstatic.net/20240315_296/1710469486454yB34S_GIF/08.gif",
+   "rule": "gif_animated"
   },
   {
-   "link": "https://shop-phinf.pstatic.net/20240315_114/1710469485826BgGGn_GIF/09.gif?type=wg848",
-   "rule": "gif"
+   "link": "https://shop-phinf.pstatic.net/20240315_114/1710469485826BgGGn_GIF/09.gif",
+   "rule": "gif_animated"
   },
   {
-   "link": "https://shop-phinf.pstatic.net/20240315_81/1710469485844Enu91_GIF/10.gif?type=wg848",
-   "rule": "gif"
+   "link": "https://shop-phinf.pstatic.net/20240315_81/1710469485844Enu91_GIF/10.gif",
+   "rule": "gif_animated"
   },
   {
-   "link": "https://shop-phinf.pstatic.net/20240315_266/1710469531700725Nd_GIF/12.gif?type=wg848",
-   "rule": "gif"
+   "link": "https://shop-phinf.pstatic.net/20240315_266/1710469531700725Nd_GIF/12.gif",
+   "rule": "gif_animated"
   },
   {
-   "link": "https://shop-phinf.pstatic.net/20240315_178/1710469533580FLJfN_GIF/13.gif?type=wg848",
-   "rule": "gif"
+   "link": "https://shop-phinf.pstatic.net/20240315_178/1710469533580FLJfN_GIF/13.gif",
+   "rule": "gif_animated"
   },
   {
-   "link": "https://shop-phinf.pstatic.net/20240315_246/17104695784062daHh_GIF/15.gif?type=wg848",
-   "rule": "gif"
+   "link": "https://shop-phinf.pstatic.net/20240315_246/17104695784062daHh_GIF/15.gif",
+   "rule": "gif_animated"
   },
   {
-   "link": "https://shop-phinf.pstatic.net/20240315_71/1710469584091eDHfc_GIF/16.gif?type=wg848",
-   "rule": "gif"
+   "link": "https://shop-phinf.pstatic.net/20240315_71/1710469584091eDHfc_GIF/16.gif",
+   "rule": "gif_animated"
   },
   {
-   "link": "https://shop-phinf.pstatic.net/20240315_58/1710469578750xuG21_GIF/17.gif?type=wg848",
-   "rule": "gif"
+   "link": "https://shop-phinf.pstatic.net/20240315_58/1710469578750xuG21_GIF/17.gif",
+   "rule": "gif_animated"
   }
  ]
 }

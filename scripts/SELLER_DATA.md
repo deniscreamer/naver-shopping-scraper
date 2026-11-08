@@ -109,7 +109,8 @@ Description cleanup -> `description_clean.py`, `shared_images.py`
   bag's mouth / sides) and the larger of that and today's value wins.
 
 ## Not handled yet (known)
-- Banners inside snapshot tiles (OCR reads them; the guess skips cross-sell blocks only); per-buyer purchase limits; YouTube in descriptions;
+- Banners inside snapshot tiles (OCR reads them; their address, hours, services and stations / shops of the map
+  are cut from the text since 2026-11-08, a map's restaurant names are not); per-buyer purchase limits; YouTube in descriptions;
   the notice's 제품구성 not carried; the return fee near the item price; spanned table cells (colspan) lose their column.
 - S/R club weights and lofts given per flex in a description table, not bound to the S/R variants (6774818843,
   8958060680).
@@ -119,7 +120,8 @@ Description cleanup -> `description_clean.py`, `shared_images.py`
 - A putter counted in the set also offered as an add-on (13741767690).
 - Composition rows that fit no variant on a product with one variant group (7632306067); "+우드" sets losing their
   아이언 구성 binding (9902027106); a title year (2026) not flagged (12696567111).
-- A chosen photo review whose photo failed to decode is published without it, no note (13413924099); notes
+- A chosen photo review whose photo failed to decode is published without it, no note (13413924099; iPhone HDR
+  photos, an MPO with a gain map, decode since 2026-11-08); notes
   `reviews_incomplete` (a count but no rows) and `photo_small` were planned, not built.
 - Banners not caught: a lister's shared `/profile/` header and footer (13728190518), names like 수서권_2026.png,
   golf_top.jpg.

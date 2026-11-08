@@ -6,8 +6,8 @@ weight, the larger of that and today's value wins; description_image_text.py: cl
 Per product (the newest kept line of each key, as run_transform takes it), one at a time:
 
   links     details.description.images, in order -> clean_images (seller banners by name / link / spacer / pixel
-            out) -> the first SmartEditor image when lower than FIRST_HEADER_MAX (the store's header strip) -> GIFs
-            out -> any public HTTPS host (the owner, 2026-11-07, AGENTS.md rule 3; never http, an IP, localhost, a
+            out) -> the first SmartEditor image when lower than FIRST_HEADER_MAX (the store's header strip) -> any
+            public HTTPS host (the owner, 2026-11-07, AGENTS.md rule 3; never http, an IP, localhost, a
             name resolving to a private address) -> a SmartEditor link without its `?type=w848` (the original:
             w1280 / w2000 answer 404, research 2026-11-07) -> a link repeated in one body once
   sources   Naver first (the owner, 2026-11-07): a body Naver cut into snap tiles is read from the tiles, stitched;
@@ -20,7 +20,10 @@ Per product (the newest kept line of each key, as run_transform takes it), one a
   download  naver_images.fetch (HTTPS, no redirects, MAX_BYTES, pace, retries); Naver's CDN answering 403 / 429
             stops the whole stage (CdnRefused, like a collection); a seller's host doing so fails that image only
             (`refused`); 5xx / network: `failed` (read again next run); 4xx / not an image: `gone` (an expired
-            proxy-smartstore token: for good); smaller than MIN_SIDE: skipped `tiny`. Bytes cached per product
+            proxy-smartstore token: for good); smaller than MIN_SIDE: skipped `tiny`; a GIF of more than one frame:
+            skipped `gif_animated` (a product video, no text). A one-frame GIF is read like any image (2026-11-08,
+            9942710033: the whole description, spec tables included, is one static 720 x 11489 GIF; 13 GIFs in 6 of
+            143 products, "...상세.gif"). Bytes cached per product
             under description_images/cache/<product id>/ (--prune-cache deletes them, the sidecars stay)
   OCR       description_ocr: slices (snap tiles stitched), RapidOCR, rows; in a fresh worker process per product
             (read_isolated: no memory build-up; a crash, a kill or PRODUCT_TIMEOUT is that product's error, one
@@ -40,6 +43,7 @@ Cost (live 2026-11-07, 20 sets): ~20 s a product (13-100 s), the worker up to ~2
 import argparse
 import fcntl
 import hashlib
+import io
 import json
 import multiprocessing
 import os
@@ -106,9 +110,7 @@ def pick_links(description: dict[str, Any]) -> tuple[list[str], list[dict[str, s
         cleaned = {**cleaned, "images": cleaned["images"][1:]}                 # (never useful, research)
     for link in dict.fromkeys(cleaned["images"]):         # a link repeated in one body is read once
         parts = urlsplit(link)
-        if parts.path.lower().endswith(".gif"):
-            skipped.append({"link": link, "rule": "gif"})
-        elif not allowed(link, any_host=True):              # any public HTTPS host (the owner, 2026-11-07)
+        if not allowed(link, any_host=True):              # any public HTTPS host (the owner, 2026-11-07)
             skipped.append({"link": link, "rule": "not_https_public"})
         else:
             plain = link.split("?")[0] if parts.hostname in RENDITION_HOSTS and parts.query.startswith("type=") else link
@@ -167,6 +169,9 @@ def _fetch_all(links: list[str], fetcher: Callable[..., bytes], cache: str, sess
             # a seller's host refusing a hotlink (shopping.c.yimg.jp 403, 2026-11-07): that image only, for good
             images.append({"link": link, "host": host, "status": "refused", "error": str(e)[:300]})
             continue
+        if data[:6] in (b"GIF87a", b"GIF89a") and _frames(data) > 1:
+            skipped.append({"link": link, "rule": "gif_animated"})     # a product video: no text
+            continue
         try:
             im = ocr.open_rgb(data)
         except Exception as e:                       # noqa: BLE001  (a broken file fails that image only)
@@ -179,6 +184,14 @@ def _fetch_all(links: list[str], fetcher: Callable[..., bytes], cache: str, sess
                        "bytes": len(data), "slices": []})
         got.append((link, data))
     return images, got, skipped
+
+
+def _frames(data: bytes) -> int:
+    try:
+        from PIL import Image
+        return int(getattr(Image.open(io.BytesIO(data)), "n_frames", 1))
+    except Exception:                                # noqa: BLE001  (open_rgb reports a broken file)
+        return 1
 
 
 def read_product(line: dict[str, Any], engine: Any, cache: str, session: Any = None,
