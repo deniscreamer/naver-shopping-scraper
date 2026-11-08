@@ -93,6 +93,8 @@ label.
 
 - **The OpenAI fallback** has never answered live: the account has no credits (429). Until it has, a down Anthropic
   leaves products `pending`.
-- **The live dictionaries** (`scripts/output/dictionaries/`) hold the entries of the checks. Read them with
-  `translation_dicts.py status` before `backup`. New brands enter the brand dictionary without the owner's word.
+- **The dictionaries** were backed up on 2026-11-08T14:06:19Z (372 entries; every backup file carries `backed_up`,
+  and `translation_dicts.py status` prints the last one). A few model answers there are worth a second look, for
+  example "9도 S4번유틸S ..." -> "9° S4 Hybrid ..." (a flex letter glued to the next club's number, with a space
+  before it). New brands enter the brand dictionary without the owner's word.
 - **Publication** reads `translation/translated.jsonl` and is not built yet.

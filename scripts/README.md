@@ -259,7 +259,8 @@ Per text, the first that answers:
 2. **The dictionary of its kind:** brand, option name / value, spec and fact label / value, add-on group / name,
    text-field label / placeholder. One file per kind. The live copies in `scripts/output/dictionaries/` grow during
    runs and are out of git. Their backups in `scripts/dictionaries/` are in git and seed a missing live copy; they
-   are updated by hand with `backup`, after `status`, since runs never commit. The brand dictionary comes first: the
+   are updated by hand with `backup`, after `status`, since runs never commit; a backup stamps each file
+   `backed_up`. The brand dictionary comes first: the
    model gets the shop's vendor spellings and reuses one for the same brand.
 3. **The rules** (`translation_rules.py`):
    - 10.5도 -> 10.5°, 33인치 -> 33 in, 22호 -> Size 22, 3번 -> #3, 7개 -> 7 / 7 pcs, 12종 -> 12 pcs, 2026년형 -> 2026 model;

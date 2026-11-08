@@ -7,7 +7,8 @@ Two copies of each dictionary:
   backup   scripts/dictionaries/<kind>.json          in git; updated by hand from the live copy (`backup`)
 
 A missing live file is seeded from its backup. `status` lists what the live copies have that the backups do not
-(new entries, changed ones) so the owner reads them before `backup`.
+(new entries, changed ones) so the owner reads them before `backup`; `backup` stamps each backup file `backed_up`
+(UTC), and `status` prints the last one.
 
     .venv/bin/python scripts/translation_dicts.py status
     .venv/bin/python scripts/translation_dicts.py backup
@@ -18,6 +19,7 @@ import os
 import shutil
 import sys
 import tempfile
+from datetime import datetime, timezone
 from typing import Any
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -46,10 +48,12 @@ def _read(path: str, kind: str) -> dict[str, str]:
     return {str(k): str(v) for k, v in data["entries"].items()}
 
 
-def _write(path: str, kind: str, entries: dict[str, str]) -> None:
+def _write(path: str, kind: str, entries: dict[str, str], backed_up: str | None = None) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    body = json.dumps({"format": FORMAT, "kind": kind, "entries": dict(sorted(entries.items()))},
-                      ensure_ascii=False, indent=1) + "\n"
+    head: dict[str, Any] = {"format": FORMAT, "kind": kind}
+    if backed_up:
+        head["backed_up"] = backed_up                # a backup file: when it was last taken from the live copy
+    body = json.dumps({**head, "entries": dict(sorted(entries.items()))}, ensure_ascii=False, indent=1) + "\n"
     fd, tmp = tempfile.mkstemp(dir=os.path.dirname(path), prefix=f".{kind}.", suffix=".tmp")
     with os.fdopen(fd, "w", encoding="utf-8") as f:
         f.write(body)
@@ -112,15 +116,28 @@ def status(live_root: str = LIVE_ROOT, backup_root: str = BACKUP_ROOT) -> list[d
     return out
 
 
-def backup(live_root: str = LIVE_ROOT, backup_root: str = BACKUP_ROOT) -> list[str]:
-    """The live copies -> the backups (in git). Returns the kinds written."""
+def backup(live_root: str = LIVE_ROOT, backup_root: str = BACKUP_ROOT, at: str | None = None) -> list[str]:
+    """The live copies -> the backups (in git), each stamped `backed_up` with the time (UTC). Returns the kinds
+    written."""
+    at = at or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     written = []
     for kind in KINDS:
         live_path = os.path.join(live_root, f"{kind}.json")
         if os.path.exists(live_path):
-            _write(os.path.join(backup_root, f"{kind}.json"), kind, _read(live_path, kind))
+            _write(os.path.join(backup_root, f"{kind}.json"), kind, _read(live_path, kind), backed_up=at)
             written.append(kind)
     return written
+
+
+def backed_up(backup_root: str = BACKUP_ROOT) -> str | None:
+    """The time of the last backup (the latest `backed_up` of the backup files), None before the first one."""
+    stamps = []
+    for kind in KINDS:
+        path = os.path.join(backup_root, f"{kind}.json")
+        if os.path.exists(path):
+            with open(path, encoding="utf-8") as f:
+                stamps.append(json.load(f).get("backed_up") or "")
+    return max((x for x in stamps if x), default=None)
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -132,6 +149,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "backup":
         print("backed up: " + (", ".join(backup(args.live_root, args.backup_root)) or "nothing"))
         return 0
+    print(f"last backup: {backed_up(args.backup_root) or 'never (the seeds only)'}")
     for row in status(args.live_root, args.backup_root):
         print(f"{row['kind']}: live {row['live']}, backup {row['backup']}, new {len(row['new'])}, "
               f"changed {len(row['changed'])}")

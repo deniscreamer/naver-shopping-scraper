@@ -85,8 +85,9 @@ def test_live_dictionaries_seed_from_the_backup_and_back_up(tmp_path):
     assert set(D.backup(live, backup)) == {"brand", "spec_label"}
     assert all(not r["new"] and not r["changed"] for r in D.status(live, backup))
     with open(os.path.join(backup, "brand.json"), encoding="utf-8") as f:
-        assert json.load(f) == {"format": "dictionary/1", "kind": "brand",
-                                "entries": {"캘러웨이": "Callaway", "핑": "PING"}}
+        data = json.load(f)
+    assert data.pop("backed_up").endswith("Z")
+    assert data == {"format": "dictionary/1", "kind": "brand", "entries": {"캘러웨이": "Callaway", "핑": "PING"}}
 
 
 def test_a_broken_dictionary_stops(tmp_path):
@@ -804,3 +805,16 @@ def test_two_runs_saving_the_same_dictionary_keep_both(tmp_path):
     b.save()
     assert D.Dictionaries(str(tmp_path / "live"), str(tmp_path / "b")).entries["option_value"] == {
         "화이트": "White", "레드": "Red"}
+
+
+def test_a_backup_is_stamped_with_its_time(tmp_path):
+    live, backup = str(tmp_path / "live"), str(tmp_path / "backup")
+    assert D.backed_up(backup) is None
+    d = D.Dictionaries(live, backup)
+    d.add("brand", "핑", "PING")
+    d.save()
+    D.backup(live, backup, at="2026-11-08T13:00:00Z")
+    with open(os.path.join(backup, "brand.json"), encoding="utf-8") as f:
+        assert json.load(f)["backed_up"] == "2026-11-08T13:00:00Z"
+    assert D.backed_up(backup) == "2026-11-08T13:00:00Z"
+    assert D.Dictionaries(str(tmp_path / "live2"), backup).get("brand", "핑") == "PING"   # a stamped backup seeds

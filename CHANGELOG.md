@@ -12,6 +12,8 @@ version in `extension/manifest.json`.
   - **Graded:** `text_grade` full / short / rating_only, plus `text_quality`.
   - **Patterns:** mined by agents on 666 real reviews, now a test fixture.
   - **On the 143 trial sets:** 448 of 448 kept.
+- Dictionary backups carry `backed_up` (UTC) and `translation_dicts.py status` prints the last backup; first
+  backup of the live dictionaries (2026-11-08, 372 entries).
 - `translate_eval.py`: the quality check (a varied sample translated with empty dictionaries, judged by a second
   model, a side-by-side report). `scripts/TRANSLATION.md`: decisions, a new shop or category, limits, open items.
 - The job translates: `job.py` takes each product to translated, right after prepare (a job made with
