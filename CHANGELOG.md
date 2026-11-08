@@ -3,7 +3,7 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
-## Unreleased
+## 0.9.0 (2026-11-07)
 
 - No brand stated is no longer a hold (`brand_missing` removed): `brand_ko` stays null with the note
   `brand_unstated`, whose detail lists the page's hints (manufacturer, a name in brackets in 원산지); the vendor step
