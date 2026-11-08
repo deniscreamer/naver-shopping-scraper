@@ -72,6 +72,11 @@ For the full collection (`scripts/example_99_full_details.py`) two things come f
 - the category's package averages in `scripts/category_measures.json` (low / central / high, who approved, when).
   Without a row for the category the run stops and asks for it.
 
+Before placement (`scripts/placement.py <shop>`, the last stage before Shopify), the shop's profile in
+`scripts/placement_rules.py` (Naver category id -> its sections, the attribute that splits it, what an unresolved
+product does); with no profile placement stops (`PlacementRulesMissing`), a category missing from it leaves its
+products `no_profile`. How to add one: [scripts/PLACEMENT.md](scripts/PLACEMENT.md).
+
 ## 4. Offline tests (no network)
 
 ```sh

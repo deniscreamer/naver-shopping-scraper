@@ -1,14 +1,10 @@
 {
- "format": "prepared/2",
+ "format": "prepared/3",
  "key": "fairwardgolf:naver:500000592:7583123963",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
-  {
-   "code": "leaf_from_name",
-   "detail": "name: 여성, 남성"
-  },
   {
    "code": "title_names_one_variant",
    "detail": "13PCS"
@@ -38,26 +34,40 @@
   "title_ko": "지브이투어 벨로시티 BM 13 PCS 남성 여성 풀세트 (백세트포함)",
   "brand_ko": "지브이투어",
   "brand_source": "specs:브랜드",
-  "leaves": [
-   {
-    "leaf": "womens-complete-sets",
-    "product_type": "Women’s Complete Golf Sets",
-    "tags": [
-     "fairwardgolf:leaf:womens-complete-sets",
-     "fairwardgolf:parent:clubs",
-     "fairwardgolf:showcase"
-    ]
-   },
-   {
-    "leaf": "mens-complete-sets",
-    "product_type": "Men’s Complete Golf Sets",
-    "tags": [
-     "fairwardgolf:leaf:mens-complete-sets",
-     "fairwardgolf:parent:clubs",
-     "fairwardgolf:showcase"
-    ]
+  "attributes": {
+   "gender": {
+    "value": "mixed",
+    "variants": {
+     "FW-354a33cd0b261d60bee72e5d": "mens",
+     "FW-fb27717ac4dbbc330c02d534": "mens",
+     "FW-4a789d2d3cb33fab16a93f41": "mens",
+     "FW-8e40bf55b623e19c20c06523": "womens",
+     "FW-f1685f38e9c7832203a87158": "womens",
+     "FW-8a7900fa172b9968510114bd": "womens",
+     "FW-555a72ccb220d1f56c27170b": "mens",
+     "FW-2d73a14f36b1ce2ae01c0757": "mens",
+     "FW-c4d78b41978c2b91c27440cf": "mens"
+    },
+    "evidence": [
+     {
+      "source": "title",
+      "value": "unisex",
+      "text": "지브이투어 벨로시티 BM 13 PCS 남성 여성 풀세트 (백세트포함)"
+     },
+     {
+      "source": "variants",
+      "value": "womens",
+      "text": "3 of 9 variants"
+     },
+     {
+      "source": "listing",
+      "value": "mens",
+      "text": "남성 골프채 풀세트"
+     }
+    ],
+    "flags": []
    }
-  ],
+  },
   "options": [
    {
     "name_ko": "골프클럽구분",

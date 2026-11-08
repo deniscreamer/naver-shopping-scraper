@@ -1,5 +1,5 @@
 {
- "format": "prepared/2",
+ "format": "prepared/3",
  "key": "fairwardgolf:naver:500028318:10337644911",
  "shop": "fairwardgolf",
  "status": "ready",
@@ -26,17 +26,30 @@
   "title_ko": "테일러메이드 Qi10 V300 남성골프풀세트클럽11개선택1 9도SR 유틸 8아이언 퍼터",
   "brand_ko": "테일러메이드",
   "brand_source": "specs:브랜드",
-  "leaves": [
-   {
-    "leaf": "mens-complete-sets",
-    "product_type": "Men’s Complete Golf Sets",
-    "tags": [
-     "fairwardgolf:leaf:mens-complete-sets",
-     "fairwardgolf:parent:clubs",
-     "fairwardgolf:showcase"
-    ]
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "title",
+      "value": "mens",
+      "text": "테일러메이드 Qi10 V300 남성골프풀세트클럽11개선택1 9도SR 유틸 8아이언 퍼터"
+     },
+     {
+      "source": "listing",
+      "value": "mens",
+      "text": "남성 골프채 풀세트"
+     }
+    ],
+    "flags": []
    }
-  ],
+  },
   "options": [
    {
     "name_ko": "선택",

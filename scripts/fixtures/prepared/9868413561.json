@@ -1,5 +1,5 @@
 {
- "format": "prepared/2",
+ "format": "prepared/3",
  "key": "fairwardgolf:naver:102229173:9868413561",
  "shop": "fairwardgolf",
  "status": "ready",
@@ -26,26 +26,38 @@
   "title_ko": "일본 Wistella 위스텔라 여성용 남성용 골프채풀세트",
   "brand_ko": "Wistella",
   "brand_source": "specs:브랜드",
-  "leaves": [
-   {
-    "leaf": "mens-complete-sets",
-    "product_type": "Men’s Complete Golf Sets",
-    "tags": [
-     "fairwardgolf:leaf:mens-complete-sets",
-     "fairwardgolf:parent:clubs",
-     "fairwardgolf:showcase"
-    ]
-   },
-   {
-    "leaf": "womens-complete-sets",
-    "product_type": "Women’s Complete Golf Sets",
-    "tags": [
-     "fairwardgolf:leaf:womens-complete-sets",
-     "fairwardgolf:parent:clubs",
-     "fairwardgolf:showcase"
-    ]
+  "attributes": {
+   "gender": {
+    "value": "mixed",
+    "variants": {
+     "FW-fe440c4b9d4cd0e1144d7b4b": "womens",
+     "FW-b31e1f22b0d577c7079def68": "mens"
+    },
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "unisex",
+      "text": "남녀공용"
+     },
+     {
+      "source": "title",
+      "value": "unisex",
+      "text": "일본 Wistella 위스텔라 여성용 남성용 골프채풀세트"
+     },
+     {
+      "source": "variants",
+      "value": "mens,womens",
+      "text": "2 of 2 variants"
+     },
+     {
+      "source": "listing",
+      "value": "mens",
+      "text": "남성 골프채 풀세트"
+     }
+    ],
+    "flags": []
    }
-  ],
+  },
   "options": [
    {
     "name_ko": "옵션",

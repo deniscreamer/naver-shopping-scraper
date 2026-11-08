@@ -44,6 +44,10 @@ The listing screen and the shop check).
 | `captcha_watch.py` | Reports a Naver captcha the adapter waits on (reads `/captcha`): one line per new captcha / solved / timed out; independent of any collection |
 | `keep_run.py` | Keeps a collection run (example_99 output) per shop, byte for byte, read-only (see Transform) |
 | `transform.py`, `transform_shops.py`, `run_transform.py` | The transform: kept runs -> prepared products per shop (shared rules, per-shop rules as data, the CLI) |
+| `attributes.py` | Neutral attributes the transform writes to `product.attributes` (gender with its evidence: the variants, the 성별 row, the title; the listing query only flags `listing_disagrees`). A new kind of split is a new `Attribute` (data) |
+| `brand_fallback.py` | Run-level: a brand for every prepared product that states none (a brand of the shop in the title, 원산지's importer, the images' text, else 노브랜드; note `brand_fallback`) |
+| `placement.py`, `placement_rules.py` | The last stage before Shopify: prepared products -> the shop's sections (leaf tags, product type, `start_variants`) from the shop's profile (data); unknown / conflict held as `unresolved`. How to add a split: [PLACEMENT.md](PLACEMENT.md) |
+| `test_placement.py`, `test_brand_fallback.py` | Offline tests: the gender attribute and placement (the 50 fixtures, the rules case by case), the brand fallback |
 | `test_transform.py` | Offline tests for the transform on real collected lines (`fixtures/collected_fairwardgolf.jsonl`) |
 | `test_prepared_golden.py`, `collected_fixtures.py` | Regression: collected lines of real products (`fixtures/collected/`, from the server's saved-page fixtures) through the transform must equal `fixtures/prepared/`; `UPDATE_GOLDEN=1` rewrites them after a deliberate change, read the diff. Added only when the owner asks (server DEVELOPMENT_RULES R-TEST-5) |
 | `smoke_endpoints.py` | Live smoke: `/health` plus 11 endpoints (all but `/products/specs`), one at a time. Networked. |
@@ -203,7 +207,9 @@ partial for the same reason stop the run (a defect of the collector).
 
 The iterative way (the owner, 2026-11-07): one listing, then each product in turn through every built stage
 (collect -> keep as a one-line run -> description images -> prepare) before the next opens; resumable at any point,
-the stage of each product read from the files. Translation and publication are named stages, not built yet. The
+the stage of each product read from the files. Translation, placement and publication are named stages
+(`job.py STAGES`): placement is built (`placement.py`, run on the whole shop before publication, not by the job),
+translation and publication are not yet. The
 browser stays on the job's search tab (the server searches the next product in it and closes the product tab); a
 login page is reset from naver.com, a captcha waits for the owner. How an agent runs it: [JOB_AGENT.md](JOB_AGENT.md);
 files, waits and stops: the `job.py` docstring. The per-product collect is `collect_product.collect`, shared with
@@ -228,6 +234,44 @@ Checked live (2026-11-08, 50002788, own shops root): 40 sets in 53 min and 100 s
 read 34-48 s, OCR median 21-22 s, prepare 1-2 s); the search tab reused for every read (`tabs left: 1`). A listing
 of 12 batches (one query) read in 110 s: 583 unique rows, no stall. Captcha, login reset, Naver's error page and a
 lost extension are covered by offline tests only (none came up live).
+
+## Placement: the shop's sections, the last stage before Shopify (`placement.py`)
+
+The owner (2026-11-08): a shop is split into its sections at the last stage before Shopify, from its own profile,
+not while a job collects; one Naver category id can be several sections (50002788 풀세트: men's and women's sets),
+and another shop may split other categories by other marks. So the transform only states what the seller says, as
+neutral **attributes** with their evidence (`attributes.py`, data: a value's words, the 상품정보 rows that state it,
+what a value implies), and placement maps them to the shop's sections by **profile** (`placement_rules.py`, data:
+Naver category id -> parent, the attribute that splits it, value -> section (collection handle, product type, tags),
+what an unresolved product does: `hold` or a fallback section). A new split is a new attribute and a profile entry.
+
+One product, several collections: a product in two sections stays ONE Shopify product (card, variants, stock
+shared, never a second copy) carrying the leaf tags of both (`tags`: fairwardgolf:leaf:mens-complete-sets and
+...:womens-complete-sets), shown by both tag collections; `product_type` is the primary section's (the most
+variants). A section showing only part of the card (a set with separate men's and women's variants) gets a
+start-variant hint (`start_variants` {leaf: sku}, for publication's metafield of start variants per collection: from
+the men's collection the men's variant opens), never a removal of the other variants. A stated unisex goes to both;
+an unknown gender is not unisex and goes nowhere (held).
+
+Gender (50002788, fairwardgolf): each sold variant's option values first ("여성용-그라파이트": that variant is
+women's; a set with both is `mixed` and goes to both sections, each with its own start variant; when the seller marks only
+one gender's variants beside a unisex row, the unmarked ones are the other), else the 성별 row, else the title
+(여성 / 레이디스 / LADIES, 남성 / MEN'S, 남녀공용 -> both). A row and a title naming opposite genders, or every
+variant the opposite of the row: `conflict`; nothing says it: `unknown`; both are held (`unresolved`) for the owner,
+never guessed from a flex, a colour or a model. The job's listing query is evidence only (flag `listing_disagrees`).
+Checked on the 143 trial sets and the 50 fixtures (2026-11-08): the same sections as the transform's leaves before
+on all but one (13425122164: a men's listing with a women's variant: both sections, 2 and 1 variants). GVTOUR
+8514409092: 46 men's and 23 women's variants, as the harvester's live check pinned them (2026-09-26).
+
+```sh
+.venv/bin/python scripts/placement.py fairwardgolf      # -> shops/<shop>/placement/placements.jsonl, report.txt
+```
+
+**The same case in another shop or category**, or a split by another mark: step by step in
+[PLACEMENT.md](PLACEMENT.md) (which file for which case, the profile entry, a new attribute, the unresolved policy,
+the tests to add). In short: the category's transform rules (`transform_shops.py`), its profile entry
+(`placement_rules.py`: parent, `split_by`, value -> section, `unresolved`), and for a new mark an `Attribute` in
+`attributes.py`; no code.
 
 ## Package weight and size
 
@@ -450,11 +494,12 @@ example_99 overwrites its `products.jsonl`: a run not kept before the next colle
 namespace of the source keys, one shop and one category per run; a product in several runs comes from the newest.
 A run is copied into `<run>.partial` and renamed when complete; only folders with a `manifest.json` are runs.
 
-**Prepared product** (`transform.Prepared`, `format: prepared/2`; 2 since 2026-11-07: a variant's `package` fields
+**Prepared product** (`transform.Prepared`, `format: prepared/3`; 3 since 2026-11-08: no shop leaves, `product.attributes`
+instead (see Placement); 2 since 2026-11-07: a variant's `package` fields
 may carry `how`, `quote`, `flags` and `compared` (the images' guess, see Package weight and size), and `product` has
 `description_images_text` (the images' text flag, see The images' text)): `key`, `shop`, `status` (`ready` / `held`),
 `held` and `notes` (`{code, detail}`), `source` (run, line, link, channel_no, product_id, category_id), `product`
-(`title_ko`, `brand_ko`, `leaves` with tags and product type, `options` `[{name_ko, values_ko}]`, `facts`,
+(`title_ko`, `brand_ko`, `brand_source`, `attributes` (`{gender: {value, variants, evidence, flags}}`), `options` `[{name_ko, values_ko}]`, `facts`,
 `variants` `[{source_id, naver_variant_id, options_ko, price_krw, price_usd, sku, available, package}]`, `pricing`,
 `specs`, `personalization`, `addons`, `rating`, `reviews`, `images`), and `texts` `[{id, kind, ko}]`: the translation
 worklist, `id = <kind>:<sha256(ko)[:16]>`, so the same Korean text has one id (one translation) in every product.
@@ -600,7 +645,7 @@ link. The report says how many were dropped. The step is pure: same products in,
   a group named (필수) / (필수선택) is `required`. Why per category: a set's photos often show the extras (bag,
   covers, utility clubs); sold without them, a buyer takes them as part of the set (owner 2026-11-06).
 - **Reviews**: the selected reviews (video posters already photos), rating and count from Naver's summary.
-- **Held**: `collect_incomplete`, `price_unknown`, `leaf_undecided`, `no_variants`,
+- **Held**: `collect_incomplete`, `price_unknown`, `no_variants`,
   `options_unaligned` (rows that do not fit the groups), `specs_folded` (the 상품정보 list stayed folded), `axes_over_3`,
   `no_images`, `images_over_50`.
 - **A brand for every product** (the owner, 2026-11-08: the Shopify vendor is never empty; no brand, at least the
@@ -614,13 +659,12 @@ link. The report says how many were dropped. The step is pure: same products in,
   unbranded putter). These add the note `brand_fallback` (source, other candidates). No brand list is kept by hand.
 
 **Per-shop rules** (`transform_shops.py`, data): SKU prefix, KRW per USD, variant cap, and per Naver leaf category
-the shop's leaves: fairwardgolf 50002788 풀세트 by the 성별 row (여성용 -> women's sets, 남성용 -> men's, 남녀공용 ->
-both), by words in the name when the row is missing (the sold option values then add theirs: 남성 in the name,
-여성 sets among the values -> both); `paid_variants` / `paid_addons` per category,
-off by default, both on for fairwardgolf 50002788. A shop or a category without rules: `ShopRulesMissing`, the
+`paid_variants` / `paid_addons` / `description_images`, off by default, all on for fairwardgolf 50002788. The shop's
+sections are not decided here (Placement). A shop or a category without rules: `ShopRulesMissing`, the
 run stops and asks the operator.
 
-Not here (later stages): English (titles, options, specs, reviews), vendor spelling (every product: the same brand
+Not here (later stages): the shop's sections, tags and product type (Placement, `placement.py`), English (titles,
+options, specs, reviews), vendor spelling (every product: the same brand
 is written 캘러웨이 / 캘러웨이골프, PGM / 피지엠, 젝시오 / XXIO; a `brand_fallback` can be checked against its other
 candidates), handle, alt texts, the seller's description prose (images only on the sets checked), publication.
 
@@ -660,7 +704,7 @@ phases, each `{phase, verdict: ok | issue | changed_since_collection | n/a, page
 text inputs, add-ons, gallery, specs, notice, description, reviews, measures, transform; then the issues `{phase, kind:
 missing_data | wrong_data | transform_decision | improvement | noise, known: <id> | new, severity, what, evidence,
 suggested_fix}`. Collection: every page item present and right; transform: status, prices, axes, variants, facts,
-leaves, spec rows, add-ons, description, images; for the buyer: anything lost, anything shown that should not be.
+attributes (and the placement's sections), spec rows, add-ons, description, images; for the buyer: anything lost, anything shown that should not be.
 Measure across runs by high + medium findings per product (0.65 on 40 known sets after two fix rounds; 1.21 then 1.00
 on new products).
 
@@ -873,13 +917,14 @@ still returns its rows. Contract: server/docs/ENDPOINTS.md "Listing jobs".
 
 ## Shopify roadmap
 
-This is a design note. The code so far: the read-only check of what a store already has (`shopify_catalog.py`)
-and the transform to prepared products (see Transform). Translation reads `prepared/products.jsonl` (`texts`) and
+This is a design note. The code so far: the read-only check of what a store already has (`shopify_catalog.py`),
+the transform to prepared products (see Transform) and the placement into the shop's sections (`placement.py`, see
+Placement). Translation reads `prepared/products.jsonl` (`texts`) and
 keeps `shops/<shop>/translations.jsonl` by text id; publication joins the two.
 
 The pipeline: collection (example_99) -> kept runs (`keep_run.py`) -> prepared products (`run_transform.py`:
-prices in USD, options, SKUs, leaves and tags, spec rows, text fields, free add-ons, reviews, photo files) ->
-translations by text id -> publication. Settled in the transform: the currency rule, the variant cap (over it: the
+prices in USD, options, SKUs, attributes, spec rows, text fields, free add-ons, reviews, photo files) ->
+translations by text id -> placement (`placement.py`: the shop's sections, tags, product type) -> publication. Settled in the transform: the currency rule, the variant cap (over it: the
 first combinations, every pair of values, `variants_capped`), the photos (re-uploaded WebP files, not Naver's CDN).
 Open: publication through the Admin GraphQL `productSet` (the harvester's way) or a CSV import; whether shipping goes
 into the price (today the price stays the cost and the operator decides).
@@ -891,8 +936,9 @@ check as it is. They are never committed. When publishing,
 write the same source key (`<namespace>.source_offer_id` = `<namespace>:naver:<channel_no>:<product_id>`) and check
 for it once more right before (a product published after the 5-minute snapshot).
 
-When publication starts, add it as a flat module (`publish_shopify.py`) reading the prepared products and the
-translations, reusing `shopify_catalog.Credentials` and the source-key check.
+When publication starts, add it as a flat module (`publish_shopify.py`) reading the prepared products, the
+translations and `placement/placements.jsonl` (only `placed` products: their tags, product type, and the start
+variant per collection as a metafield), reusing `shopify_catalog.Credentials` and the source-key check.
 
 ### What the naver-harvester published (reference for publication)
 

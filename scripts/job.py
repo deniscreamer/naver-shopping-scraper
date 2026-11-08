@@ -1,5 +1,5 @@
 """A job: one shop, one listing query, one product at a time from the listing to prepared (and, later, translated
-and published), resumable at any point. The agent that runs it reads scripts/JOB_AGENT.md.
+and published; placement.py puts the whole shop into its sections before publication), resumable at any point. The agent that runs it reads scripts/JOB_AGENT.md.
 
 Why one product per iteration (the owner, 2026-11-07): fewer reads in a burst, so less risk of a Naver block, and
 every product is done (collected, its description images read, prepared) before the next one opens; a stop loses
@@ -21,7 +21,8 @@ Files, scripts/output/jobs/<job id>/:
 
 A product's stage is read from the files, not from the log: collected = its key in the shop's kept runs
 (run_transform.latest_lines); images = the category's switch off, or a current sidecar (description_images.current);
-prepared = its key in prepared/products.jsonl. Later stages (translate, publish) are named in STAGES and not built.
+prepared = its key in prepared/products.jsonl. Later stages are named in STAGES: translated and published are not
+built; placed is placement.py, built but run on the whole shop before publication, not per product by the job.
 
 `new --count N` reads the listings deeper (batches doubled, up to MAX_BATCHES; a listing is read from the top
 every time) until N products pass the screen; when `run` uses up the snapshot with fewer than N prepared, it
@@ -50,7 +51,8 @@ from typing import Any
 
 SCRIPTS = os.path.dirname(os.path.abspath(__file__))
 JOBS_ROOT = os.path.join(SCRIPTS, "output", "jobs")
-STAGES = ("collected", "images", "prepared", "translated", "published")
+STAGES = ("collected", "images", "prepared", "translated", "placed", "published")   # placed: placement.py, run on
+                                                                                    # the shop before publication
 BUILT = ("collected", "images", "prepared")
 BUSY_WAIT_S, BUSY_TRIES = 30, 12
 ERROR_WAIT_S, ERROR_TRIES = 120, 2

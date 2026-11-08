@@ -98,8 +98,8 @@ Offline (no network, no Chrome), from the repo root; config in `/pyproject.toml`
 cd server && ../.venv/bin/python -m pytest -q      # also works
 ```
 
-`test_import_smoke.py` imports every library module (not `run.py` / `main.py`) by its bare name and checks the 30 mounted routes (11 endpoints and 3 `/listings`
-routes x 2 prefixes, plus `/` and `/health`).
+`test_import_smoke.py` imports every library module (not `run.py` / `main.py`) by its bare name and checks the 38 mounted routes (14 endpoints, 3 `/listings`
+routes and `/captcha` x 2 prefixes, plus `/` and `/health`).
 
 Live smoke (server running, networked, may launch Chrome); required after any transport or browser change:
 

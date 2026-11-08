@@ -77,6 +77,7 @@ Live check (server running, uses the network): `curl http://localhost:8000/healt
 | Known issues | [server/docs/KNOWN_ISSUES.md](server/docs/KNOWN_ISSUES.md) | Before "fixing" anything that looks wrong, before upgrading deps |
 | Operations | [server/README.md](server/README.md) | Running on macOS, env vars, tests |
 | Consumer scripts, Shopify roadmap | [scripts/README.md](scripts/README.md) | Writing scripts against the API, starting Shopify work |
+| Shop sections (placement) | [scripts/PLACEMENT.md](scripts/PLACEMENT.md) | A new shop or Naver category, one Naver category holding several shop sections |
 | Running a job (agent) | [scripts/JOB_AGENT.md](scripts/JOB_AGENT.md) | Running or watching `scripts/job.py` (one product per iteration) |
 | Seller data patterns | [scripts/SELLER_DATA.md](scripts/SELLER_DATA.md) | Before changing parsers or the transform: what pages and sellers write |
 | Security | [SECURITY.md](SECURITY.md) | Reporting vulnerabilities |

@@ -6,12 +6,10 @@ to transform.py only when a second shop needs it, and a shop gets code only when
 fairwardgolf, checked 2026-11-05 on the 60 products the naver-harvester published:
   * prices: 1000 KRW = 1 USD, no margin, rounded up to the cent (391 of 391 variants);
   * SKU "FW-" + 24 hex of the harvester's recipe (391 of 391, transform.sku);
-  * a Naver leaf category maps to the shop's own leaves by a spec row: 50002788 풀세트 by 성별 (여성용 -> women's
-    sets, 남성용 -> men's, 남녀공용 -> both; 6 of 6 collected products carry exactly those leaf tags), and by words
-    in the name when the row is missing (2 of 10), or in the option values when the name has none;
-  * paid variants (a configuration that costs more or less) and paid add-on products (추가상품) per category:
-    off by default, both on for 50002788 (owner 2026-11-06);
-  * tags fairwardgolf:leaf:<leaf>, fairwardgolf:parent:<parent>, fairwardgolf:showcase.
+  * the shop's sections (leaves, collections, product types) are not here: placement_rules.py, at the last stage
+    before Shopify (the owner, 2026-11-08);
+  * paid variants (a configuration that costs more or less), paid add-on products (추가상품) and the description
+    images' OCR per category: off by default, all on for 50002788 (owner 2026-11-06, -07);
 
 A shop or a Naver category with no rules here raises ShopRulesMissing: the run stops and asks the operator,
 like package_measures.CategoryDefaultsMissing.
@@ -29,17 +27,7 @@ class ShopRulesMissing(Exception):
 
 
 @dataclass(frozen=True)
-class Leaf:
-    handle: str                          # the shop's leaf, e.g. womens-complete-sets
-    product_type: str                    # Shopify productType of that leaf
-
-
-@dataclass(frozen=True)
 class CategoryRules:
-    parent: str                          # the shop's parent collection, e.g. clubs
-    by_row: str | None                   # the 상품정보 row that picks the leaves (None: always `leaves[None]`)
-    leaves: dict[str | None, tuple[Leaf, ...]]      # the row's value -> the shop's leaves
-    by_title: dict[str, tuple[Leaf, ...]] = field(default_factory=dict)   # no such row: words in the name
     paid_variants: bool = False          # also sell the variants that change the price (naver_variants paid=True)
     paid_addons: bool = False            # also offer add-on products (추가상품) that cost money
     description_images: bool = False     # OCR the description images (description_images.py) and guess the
@@ -59,23 +47,16 @@ class ShopRules:
         rules = self.categories.get(str(category_id))
         if rules is None:
             raise ShopRulesMissing(f"{self.shop.value}: no transform rules for Naver category {category_id} "
-                                   f"({name or '?'}): ask the operator which shop leaves it maps to")
+                                   f"({name or '?'}): ask the operator for its rules (paid variants, paid add-ons, "
+                                   "description images); its sections go in placement_rules.py")
         return rules
 
-
-WOMENS = Leaf("womens-complete-sets", "Women’s Complete Golf Sets")
-MENS = Leaf("mens-complete-sets", "Men’s Complete Golf Sets")
 
 RULES = {
     StoreId.FAIRWARDGOLF: ShopRules(
         StoreId.FAIRWARDGOLF, sku_prefix="FW-", krw_per_usd=1000, variant_cap=100,
         categories={
-            # no 성별 row on 2 of 10 collected sets (thegolf 8357720534 "... 여성용 ...", golfzonmarket 12945108653
-            # "젝시오13 여성 풀세트"; both published as women's sets): the name decides then
-            "50002788": CategoryRules(parent="clubs", by_row="성별",
-                                      leaves={"여성용": (WOMENS,), "남성용": (MENS,), "남녀공용": (MENS, WOMENS)},
-                                      by_title={"여성": (WOMENS,), "남성": (MENS,), "남녀": (MENS, WOMENS),
-                                                "남여": (MENS, WOMENS)},
+            "50002788": CategoryRules(
                                       # owner 2026-11-06: sets are sold with their paid configurations and
                                       # paid add-ons too. The photos of a set often show the extras (bag,
                                       # covers, utility clubs); sold without them, a buyer takes them as part

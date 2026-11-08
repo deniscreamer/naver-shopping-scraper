@@ -53,17 +53,17 @@ def test_one_variant_is_the_default_and_its_value_a_fact():
     assert p["status"] == "ready" and p["product"]["options"] == []
     assert (v["sku"], v["price_krw"], v["price_usd"]) == ("FW-9402af11868726eba5902af5", 1970000, "1970.00")
     assert p["product"]["facts"] == [{"label_ko": "", "value_ko": "풀세트"}]          # 선택사항 says nothing
-    assert [n["code"] for n in p["notes"]] == ["leaf_from_name"]           # no 성별 row: "여성" in the name
-    assert [l["leaf"] for l in p["product"]["leaves"]] == ["womens-complete-sets"]
+    assert p["notes"] == []
+    gender = p["product"]["attributes"]["gender"]                          # no 성별 row: "여성" in the name
+    assert gender["value"] == "womens" and [e["source"] for e in gender["evidence"]] == ["title"]
 
 
 def test_observed_rows_three_axes_two_leaves():
     p = prep("8514409092")                             # GVTOUR: 69 rows of 3 axes, 남녀공용
     pr = p["product"]
     assert p["status"] == "ready" and len(pr["variants"]) == 69 and len(pr["options"]) == 3
-    assert {l["leaf"] for l in pr["leaves"]} == {"mens-complete-sets", "womens-complete-sets"}
-    assert pr["leaves"][0]["tags"] == ["fairwardgolf:leaf:mens-complete-sets", "fairwardgolf:parent:clubs",
-                                       "fairwardgolf:showcase"]
+    gender = pr["attributes"]["gender"]                    # the 성별 row 남녀공용, "(여성용)" on a third of the values
+    assert gender["value"] == "mixed" and sorted(set(gender["variants"].values())) == ["mens", "womens"]
     base = pr["pricing"]["base_krw"]
     assert all(v["price_krw"] >= base and v["sku"].startswith("FW-") for v in pr["variants"])
     assert len({v["sku"] for v in pr["variants"]}) == 69
@@ -128,8 +128,6 @@ def test_a_review_discount_axis_is_dropped():
     (lambda l: l["details"]["pricing"].update(discounted_price=None), "price_unknown"),
     (lambda l: l["photos"].update(files=[]), "no_images"),
     (lambda l: l["photos"].update(files=l["photos"]["files"] * 51), "images_over_50"),
-    (lambda l: (l["specs"].update(specs=[r for r in l["specs"]["specs"] if r["label"] != "성별"]),
-                l["details"].update(name="골프 풀세트")), "leaf_undecided"),
     (lambda l: l["specs"]["options"].update(variants=[]), "no_variants"),
 ])
 def test_held(change, code):
@@ -334,7 +332,8 @@ def test_pages40_fixes():
         line["specs"]["options"]["variants"] = [{**base, "id": "a", "options": ["남성 R"], "extra_price": 0},
                                                 {**base, "id": "b", "options": ["여성 L"], "extra_price": 0}]
     p = prep("8514409092", mixed)
-    assert {l["leaf"] for l in p["product"]["leaves"]} == {"mens-complete-sets", "womens-complete-sets"}
+    gender = p["product"]["attributes"]["gender"]
+    assert gender["value"] == "mixed" and sorted(gender["variants"].values()) == ["mens", "womens"]
 
     def required_group(line):                      # T5: a free add-on group the buyer must choose from
         line["specs"]["options"]["supplements"] = [

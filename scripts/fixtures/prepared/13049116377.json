@@ -1,5 +1,5 @@
 {
- "format": "prepared/2",
+ "format": "prepared/3",
  "key": "fairwardgolf:naver:100371182:13049116377",
  "shop": "fairwardgolf",
  "status": "ready",
@@ -17,17 +17,30 @@
   "title_ko": "2026년 캘러웨이 XR26 남성 골프채 12개 풀세트 한국캘러웨이골프",
   "brand_ko": "캘러웨이",
   "brand_source": "specs:브랜드",
-  "leaves": [
-   {
-    "leaf": "mens-complete-sets",
-    "product_type": "Men’s Complete Golf Sets",
-    "tags": [
-     "fairwardgolf:leaf:mens-complete-sets",
-     "fairwardgolf:parent:clubs",
-     "fairwardgolf:showcase"
-    ]
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "title",
+      "value": "mens",
+      "text": "2026년 캘러웨이 XR26 남성 골프채 12개 풀세트 한국캘러웨이골프"
+     },
+     {
+      "source": "listing",
+      "value": "mens",
+      "text": "남성 골프채 풀세트"
+     }
+    ],
+    "flags": []
    }
-  ],
+  },
   "options": [],
   "facts": [],
   "variants": [

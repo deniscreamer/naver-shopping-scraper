@@ -1,8 +1,10 @@
 """Run the transform for one shop: every kept run (keep_run.py) -> scripts/output/shops/<shop>/prepared/.
 
-A product in several runs is taken from the newest run. After the per-product prepare, one step looks across the
+A product in several runs is taken from the newest run. After the per-product prepare, steps look across the
 products: store-wide description banners (the same image opening or closing most listings of one store) move to
-description_dropped (shared_images.py). The output is rebuilt each time from the kept runs and the
+description_dropped (shared_images.py); the images' Korean text is written for translation (image_texts); a product
+with no brand stated gets one from the shop's own brands in its title, 원산지's importer, the images' text, or
+노브랜드 (brand_fallback.py). The shop's sections are not here: placement.py reads prepared/ afterwards. The output is rebuilt each time from the kept runs and the
 rules (same input + same rules = the same bytes: sorted by key, no time inside):
 
     prepared/products.jsonl   one prepared product per line (transform.Prepared, ready or held)

@@ -1,5 +1,5 @@
 {
- "format": "prepared/2",
+ "format": "prepared/3",
  "key": "fairwardgolf:naver:101776803:13741767690",
  "shop": "fairwardgolf",
  "status": "ready",
@@ -26,17 +26,30 @@
   "title_ko": "[오늘출고] 테일러메이드 풀세트 여성 Qi4D MAX LITE 10pcs 테일러메이드코리아",
   "brand_ko": "테일러메이드",
   "brand_source": "specs:브랜드",
-  "leaves": [
-   {
-    "leaf": "womens-complete-sets",
-    "product_type": "Women’s Complete Golf Sets",
-    "tags": [
-     "fairwardgolf:leaf:womens-complete-sets",
-     "fairwardgolf:parent:clubs",
-     "fairwardgolf:showcase"
-    ]
+  "attributes": {
+   "gender": {
+    "value": "womens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "womens",
+      "text": "여성용"
+     },
+     {
+      "source": "title",
+      "value": "womens",
+      "text": "[오늘출고] 테일러메이드 풀세트 여성 Qi4D MAX LITE 10pcs 테일러메이드코리아"
+     },
+     {
+      "source": "listing",
+      "value": "womens",
+      "text": "여성 골프채 풀세트"
+     }
+    ],
+    "flags": []
    }
-  ],
+  },
   "options": [
    {
     "name_ko": "Qi4D MAX LITE 여성 드라이버",

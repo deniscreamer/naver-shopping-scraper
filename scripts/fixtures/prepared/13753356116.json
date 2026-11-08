@@ -1,14 +1,10 @@
 {
- "format": "prepared/2",
+ "format": "prepared/3",
  "key": "fairwardgolf:naver:100568453:13753356116",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
-  {
-   "code": "leaf_from_name",
-   "detail": "name: 남성"
-  },
   {
    "code": "title_names_one_variant",
    "detail": "카본"
@@ -30,17 +26,25 @@
   "title_ko": "핑 G440 MAX 남성 세트 카본 (드라이버+카본 아이언+유틸)[10개]",
   "brand_ko": "핑",
   "brand_source": "specs:브랜드",
-  "leaves": [
-   {
-    "leaf": "mens-complete-sets",
-    "product_type": "Men’s Complete Golf Sets",
-    "tags": [
-     "fairwardgolf:leaf:mens-complete-sets",
-     "fairwardgolf:parent:clubs",
-     "fairwardgolf:showcase"
-    ]
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "title",
+      "value": "mens",
+      "text": "핑 G440 MAX 남성 세트 카본 (드라이버+카본 아이언+유틸)[10개]"
+     },
+     {
+      "source": "listing",
+      "value": "mens",
+      "text": "남성 골프채 풀세트"
+     }
+    ],
+    "flags": []
    }
-  ],
+  },
   "options": [
    {
     "name_ko": "아이언 ( 8개 구성: 6~W.52.56 )",

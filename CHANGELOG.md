@@ -12,6 +12,18 @@ version in `extension/manifest.json`.
   labels and a notice card's lines; a one-frame GIF in a description is read (animated ones skipped as
   `gif_animated`); an iPhone HDR review photo (MPO with a gain map) is kept (its first picture); 제조사 `M0000000`
   (Naver's "none") is no spec and no hint. Fixture sidecar 6630856593 re-read (its 11 GIFs are animated).
+- Placement, the last stage before Shopify (the owner, 2026-11-08): `placement.py` puts a shop's prepared products
+  into its sections from the shop's profile (`placement_rules.py`: Naver category id -> sections, the attribute that
+  splits one id, what an unresolved product does). The transform no longer decides shop leaves: it writes neutral
+  `product.attributes` with their evidence (`attributes.py`; gender from each variant's option values, the 성별 row,
+  the title; the listing query only flags) and the prepared format is `prepared/3`; `leaf_undecided` and
+  `leaf_from_name` are gone. A product in two sections stays one Shopify product with both leaf tags; a set with
+  men's and women's variants also gets a start variant per collection (`start_variants`);
+  unknown / conflict is held for the owner. Same sections as before on 192 of 193 checked sets (the other: a women's
+  variant in a men's listing, now in both). Tests: `test_placement.py` (the 50 fixtures, the rules case by case).
+  `transform_shops.CategoryRules` loses `parent`, `by_row`, `leaves`, `by_title`; `Leaf` / `WOMENS` / `MENS` move to
+  `placement_rules.py`. `job.py` STAGES names `placed` between `translated` and `published` (run on the whole shop,
+  not by the job). How to add a split for another shop or category: `scripts/PLACEMENT.md`.
 - Every prepared product has a brand (the owner, 2026-11-08): no brand stated, the manufacturer; still none,
   `brand_fallback.py` (run-level) takes a brand of the shop from the title, the importer in 원산지's brackets, the
   shop's brand most read in the images, a repeated Latin brand phrase in the images, or 노브랜드; note

@@ -76,6 +76,21 @@ Small sets -> few_pieces
 - "[3PCS]", "(3종)", "(2종)", "하프세트(5P)", or 총클럽개수 of 5 or fewer; the title's count wins over a wrong row
   ("12pc" with 총클럽개수 3개); not "10+1pcs"; not when a variant is a full set (4종 / 12종 values).
 
+Gender -> `attributes.py` (read by `placement.py`; 2026-11-08 on the 143 trial sets)
+- No 성별 row on some sets (19 of 143): the title says it ("젝시오13 여성 풀세트").
+- The variants say it per variant ("여성용-그라파이트"); a set listing both genders is `mixed` (13425122164: a men's
+  listing with a women's variant).
+- A seller marks only the women's variants "(여성용)" beside the plain model, with 성별 남녀공용: the unmarked ones
+  are men's (8514409092 GVTOUR: 46 men's, 23 women's).
+- A row and a title naming opposite genders: `conflict`; nothing says it: `unknown`; both held, never guessed from a
+  flex, a colour or a model.
+
+Brand -> `transform.prepare`, `brand_fallback.py` (2026-11-08)
+- A seller who links no Naver brand leaves no 브랜드 row and no brandName anywhere Naver serves (6 of 143 sets): the
+  manufacturer, else a brand of the shop in the title (4 of 6), 원산지's importer, the images' text (BEN SAYERS
+  repeated, 13425122164), else 노브랜드 (13464713764).
+- 제조사 "M0000000" is Naver's code for no manufacturer: not a spec row, not a brand (13464713764).
+
 Origin, gifts, add-ons
 - 원산지 brackets name an importer ("일본(IRUGI SHOJI)", "중국산((주)위스트OEM)") -> cut; or the parts' countries
   ("미국산(핑(미국) 미즈노(일본) 웨지퍼터(중국))") -> kept.

@@ -18,13 +18,18 @@ naver-harvester published, and its 60 published products):
   * spec rows shown: all but 상품번호, 제조일자, Naver promotions (이벤트, 사은품: points, coupons; 11 of the 60 shop
     products showed them) and pointers ("상세페이지 참조": no value; 7 of 60).
   * variants: the category's choice (transform_shops paid_variants; off by default), made from the page's options.
+  * attributes (attributes.py): what the seller states that a shop may split a category by (gender: the variants,
+    the 성별 row, the title), with its evidence -> product.attributes; the shop's sections are not decided here
+    (placement.py, the last stage before Shopify; the owner 2026-11-08).
+  * brand: the 브랜드 row / brandName, else the manufacturer (never Naver's M0000000 or a pointer); none ->
+    run_transform's brand_fallback.
   * text fields (a name on a tag) -> personalization; add-ons on sale and in stock: free ones, paid ones too
     with the category's paid_addons (price in KRW and USD); a (필수) group is required.
-  * held (not published, kept with codes): collect_incomplete, price_unknown, leaf_undecided, no_variants,
+  * held (not published, kept with codes): collect_incomplete, price_unknown, no_variants,
     options_unaligned, axes_over_3, specs_folded, no_images, images_over_50. More combinations than the shop's
     cap: the first ones are offered, every option value kept (note variants_capped).
   * notes (never block): shipping_paid, overseas_shipping (the price stays the cost; the operator decides),
-    leaf_from_name, brand_fallback (no brand and no manufacturer stated: run_transform takes one from the
+    brand_fallback (no brand and no manufacturer stated: run_transform takes one from the
     title, the origin's importer, the images' text, or 노브랜드; brand_fallback.py),
     option_name_placeholder (선택 / 선택2 / 옵션: named from the values in translation),
     paid_addons_left_out, paid_variants_left_out, title_names_one_variant, purchase_agency, price_name_mismatch,
@@ -43,6 +48,7 @@ import re
 from collections import Counter
 from typing import Any, TypedDict
 
+import attributes
 from description_clean import body_notes, clean, clean_images
 from description_images import current, image_rows
 from description_measures import container_in, package_for, profile_for, read_rows
@@ -51,8 +57,9 @@ from package_measures import load_table
 from spec_variants import check_specs, title_one_variant
 from transform_shops import CategoryRules, ShopRules
 
-FORMAT = "prepared/2"           # 2 (2026-11-07): package fields may carry how / quote / flags / compared;
-                                 # product.description_images_text (run_transform)
+FORMAT = "prepared/3"           # 2 (2026-11-07): package fields may carry how / quote / flags / compared;
+                                 # product.description_images_text (run_transform); 3 (2026-11-08): no shop
+                                 # leaves, product.attributes instead (the shop's sections: placement.py)
 MAX_AXES = 3                       # Shopify options per product
 MAX_IMAGES = 50
 HIDDEN_ROWS = {"상품번호", "제조일자", "이벤트", "사은품", "인증정보"}     # 인증정보: purchase-agency / KC legal text
@@ -325,30 +332,6 @@ def spec_rows(specs: dict[str, Any]) -> list[dict[str, str]]:
     return out
 
 
-def leaves(specs: dict[str, Any], rules: ShopRules, name: str | None,
-           option_values: tuple[str, ...] | list[str] = ()) -> tuple[list[dict[str, Any]], str | None]:
-    """The shop's leaves, decided by the category's row (or, with no such row, words in the name; the sold option
-    values then add theirs: "남성 ..." in the name, 여성 sets among the values -> both; values alone never decide,
-    an unmarked value is not a gender) -> (leaves, how);
-    ([], None) when undecided."""
-    category = specs.get("category") or {}
-    cat = rules.category(category.get("id"), category.get("name"))
-    value = next((r["value"] for r in specs.get("specs") or [] if r.get("label") == cat.by_row), None) \
-        if cat.by_row else None
-    found, how = cat.leaves.get(value), f"{cat.by_row}={value}"
-    if not found and value is None and cat.by_title:
-        words = [w for w in cat.by_title if w in (name or "")]
-        more = [w for w in cat.by_title if words and w not in words and any(w in v for v in option_values)]
-        found = tuple(dict.fromkeys(leaf for w in words + more for leaf in cat.by_title[w])) or None
-        how = f"name: {', '.join(words)}" + (f"; options: {', '.join(more)}" if more else "")
-    if not found:
-        return [], None
-    shop = rules.shop.value
-    return [{"leaf": f.handle, "product_type": f.product_type,
-             "tags": [f"{shop}:leaf:{f.handle}", f"{shop}:parent:{cat.parent}", f"{shop}:showcase"]}
-            for f in found], how
-
-
 def _relative(run: str, product_id: str, file: str | None) -> str | None:
     return f"collected/{run}/images/{product_id}/{os.path.basename(file)}" if file else None
 
@@ -507,12 +490,11 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int,
     ov["facts"] = ov["facts"] + simple_facts
     if simple_left:                                 # chosen at the order, not a variant: the operator decides
         notes.append({"code": "simple_options_left_out", "detail": ", ".join(simple_left)})
-    found_leaves, how = leaves(specs, rules, details.get("name"),
-                               [v for o in ov["options"] for v in o["values_ko"]] + [f["value_ko"] for f in ov["facts"]])
-    if not found_leaves:
-        held.append({"code": "leaf_undecided", "detail": "no leaf row value or name word matched"})
-    elif how and how.startswith("name:"):
-        notes.append({"code": "leaf_from_name", "detail": how})
+    # neutral attributes (the seller's gender, ...) with their evidence; the shop's sections are decided at the
+    # last stage before Shopify from them (placement.py, the owner 2026-11-08), never here
+    stated = attributes.extract([(v["sku"], list(v.get("options_ko") or [])) for v in ov["variants"]],
+                                specs.get("specs") or [], details.get("name"),
+                                (line.get("listing") or {}).get("query"))
     if details["pricing"].get("discounted_price") is None:
         held.append({"code": "price_unknown", "detail": "no product price"})
     facts = specs.get("facts") or {}
@@ -608,7 +590,7 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int,
         notes.append({"code": "photos_incomplete", "detail": f"{len(imgs)} of {line['photos'].get('total')}"})
     product = {
         "title_ko": details["name"], "brand_ko": brand.get("value"), "brand_source": brand.get("source"),
-        "leaves": found_leaves, "options": ov["options"], "facts": ov["facts"], "variants": ov["variants"],
+        "attributes": stated, "options": ov["options"], "facts": ov["facts"], "variants": ov["variants"],
         "pricing": {"base_krw": details["pricing"].get("discounted_price"),
                     "original_krw": details["pricing"].get("sale_price"), "krw_per_usd": rules.krw_per_usd,
                     "rounding": "ceil-cent", "taxable": False, "compare_at": None},

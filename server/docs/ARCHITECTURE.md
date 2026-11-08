@@ -34,7 +34,7 @@ All paths are relative to `server/`, which is the import root (section 10).
 | `naver_shopping/parsers.py` | Pure functions: raw JSON / HTML to output dicts. |
 | `naver_shopping/review_select.py` | Pure: which reviews `/products/reviews/selected` keeps (tiers, caps). |
 | `naver_shopping/cache_config.py` | One TTL per cached namespace, each with its reason. |
-| `test_import_smoke.py`, `naver_shopping/test_*.py` | Offline tests (158 at the time of writing). Fixtures in `naver_shopping/fixtures/`. |
+| `test_import_smoke.py`, `naver_shopping/test_*.py` | Offline tests (446 at the time of writing). Fixtures in `naver_shopping/fixtures/`. |
 
 ## 2. Layers
 
@@ -329,7 +329,7 @@ the above and is harmless. Heavy dependencies are imported lazily
 requests in `config.exit_geo`, egress / config / url_blocking inside
 `PatchrightDriver`). `test_import_smoke.py` imports every library module by
 bare name (`MODULES`; not the `run.py` / `main.py` entry points, `main.py`
-creates `output/` at import) and checks the 34 routes. R-LAYOUT-1, R-LAYOUT-2, R-STYLE-5.
+creates `output/` at import) and checks the 38 routes. R-LAYOUT-1, R-LAYOUT-2, R-STYLE-5.
 
 ## 12. Extension transport (beta)
 
@@ -500,7 +500,7 @@ primary record, with dates; read it before changing the behaviour.
   before reading); `m10000_10000_no_rotate` caps the long side at 10000 px. A proxy-smartstore token signs its
   target (the same file, the same token in two stores), still answered a day after collection (lifetime unknown);
   without a valid one the proxy answers 302 to `no_img_dotxdot.gif` (a redirect is a failed image). No host needed a
-  cookie or a Referer (shop-phinf, esmplus, cafe24, igearmall, rakuten). Description GIFs are product videos, no text.
+  cookie or a Referer (shop-phinf, esmplus, cafe24, igearmall, rakuten). An animated description GIF is a product video, no text (a one-frame one is read: next item).
 
 - A 제조사 of `M0000000` (page row and naverShoppingSearchInfo.manufacturerName, 2026-11-08, 13464713764) is Naver's
   code for no manufacturer. A description GIF can be a static one-frame page holding the whole description (9942710033:
@@ -513,6 +513,13 @@ primary record, with dates; read it before changing the behaviour.
   the visible clear button is `button[class*="_searchInput_button_clear"]` (the `_delete` one is 0 x 0), and typing
   without clearing inserts at the caret. A login page (nid.naver.com) on the way is reset from naver.com, not waited
   for (the owner). -> `ext_listing.SEARCH_BOX` / `search_again`, `ext_product` docstring.
+
+- A seller who links no Naver brand leaves no brand anywhere Naver serves (checked 2026-11-08 on 6 of 143 trial sets:
+  product answer, page answer, raw search cards, 상품정보제공고시 rows, ld+json, meta tags). -> `scripts/brand_fallback.py`
+  docstring.
+- A review photo from an iPhone can be served as MPO with an HDR gain map as its second picture, which Pillow cannot
+  decode (seen 2026-11-08 on 4 review photos of the 100-run); the first picture is the photo. ->
+  `scripts/image_prep._first_frame` docstring.
 
 A new upstream fact gets a dated comment at the code that handles it and one
 line here (R-NAVER-4).

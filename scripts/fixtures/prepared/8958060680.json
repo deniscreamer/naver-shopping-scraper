@@ -1,5 +1,5 @@
 {
- "format": "prepared/2",
+ "format": "prepared/3",
  "key": "fairwardgolf:naver:101921971:8958060680",
  "shop": "fairwardgolf",
  "status": "ready",
@@ -30,17 +30,30 @@
   "title_ko": "브리지스톤 BG-100 BG100 남성용 골프채 풀세트 11개 캐디백 포함 화이트",
   "brand_ko": "브리지스톤",
   "brand_source": "specs:브랜드",
-  "leaves": [
-   {
-    "leaf": "mens-complete-sets",
-    "product_type": "Men’s Complete Golf Sets",
-    "tags": [
-     "fairwardgolf:leaf:mens-complete-sets",
-     "fairwardgolf:parent:clubs",
-     "fairwardgolf:showcase"
-    ]
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "title",
+      "value": "mens",
+      "text": "브리지스톤 BG-100 BG100 남성용 골프채 풀세트 11개 캐디백 포함 화이트"
+     },
+     {
+      "source": "listing",
+      "value": "mens",
+      "text": "남성 골프채 풀세트"
+     }
+    ],
+    "flags": []
    }
-  ],
+  },
   "options": [
    {
     "name_ko": "브리지스톤 BG100 화이트 풀세트 캐디백포함",

@@ -1,8 +1,9 @@
 # Running a job (for the agent)
 
 A job takes one listing and works product by product: collect -> description images (OCR) -> prepare, then the next
-product. It resumes where it stopped. Translation and publication are later stages (named in `job.py STAGES`, not
-built): you, the agent of the session, will translate; publication goes straight to ACTIVE after it. Code and
+product. It resumes where it stopped. Translation, placement and publication are later stages (named in `job.py
+STAGES`): you, the agent of the session, will translate (not built yet); placement (`placement.py <shop>`, the
+shop's sections) is built and runs on the whole shop after the job; publication goes straight to ACTIVE after it. Code and
 files: `scripts/job.py` docstring; the stages' own docs: [README.md](README.md).
 
 ## Before
@@ -43,6 +44,12 @@ lost, done products are not read again.
 
 A captcha is answered by the owner in Chrome while the read waits; a login page is reset by the server
 (naver.com again), never waited for.
+
+## After
+
+`.venv/bin/python scripts/placement.py <shop>`, then read `shops/<shop>/placement/report.txt`: the `unresolved`
+products (the attribute unknown or in conflict) and the `no_profile` ones go to the owner with their evidence; never
+pick a section for them. A new category or split: [PLACEMENT.md](PLACEMENT.md).
 
 ## Never
 
