@@ -3,7 +3,7 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
-## Unreleased
+## 0.10.0 (2026-11-08)
 
 - `scripts/job.py` (new, the owner 2026-11-07): a job takes one listing and works one product per iteration
   (collect -> one-line kept run -> description images -> prepare), resumable, each product's stage read from the
