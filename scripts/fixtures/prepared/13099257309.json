@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:101054995:13099257309",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "1 of 1 kept (short 1); 1 trimmed"
+  },
   {
    "code": "variants_capped",
    "detail": "486 -> 100"
@@ -9077,12 +9081,18 @@
    {
     "id": "5040113062",
     "score": 5,
-    "text_ko": "구매처 크루께서 친절하게 전화해주시고 구매자가 필요한 상담까지 받아주시는등 고객관리가 좋았습니다. 제품또한 만족합니다.",
+    "text_ko": "제품또한 만족합니다.",
     "created_at": "2026-08-10T05:03:11Z",
     "writer": "pn****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 2,
+    "text_original_ko": "구매처 크루께서 친절하게 전화해주시고 구매자가 필요한 상담까지 받아주시는등 고객관리가 좋았습니다. 제품또한 만족합니다.",
+    "text_cut": [
+     "seller"
+    ]
    }
   ],
   "images": [
@@ -9418,9 +9428,9 @@
    "ko": "입력해주세요"
   },
   {
-   "id": "review:89f24dfb5cc3fad5",
+   "id": "review:874c0221a1b204a2",
    "kind": "review",
-   "ko": "구매처 크루께서 친절하게 전화해주시고 구매자가 필요한 상담까지 받아주시는등 고객관리가 좋았습니다. 제품또한 만족합니다."
+   "ko": "제품또한 만족합니다."
   }
  ]
 }

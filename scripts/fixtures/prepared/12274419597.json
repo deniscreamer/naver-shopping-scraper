@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:100210420:12274419597",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "19 of 19 kept (full 10, rating_only 4, short 5); 10 trimmed"
+  },
   {
    "code": "title_names_one_variant",
    "detail": "스틸, 9P"
@@ -428,36 +432,54 @@
    {
     "id": "5077646658",
     "score": 5,
-    "text_ko": "가성비좋고요.그냥 사용합니다",
+    "text_ko": "그냥 사용합니다",
     "created_at": "2026-10-05T10:04:27Z",
     "writer": "sid1***",
     "photos": [
      "collected/50002788-fixtures/images/12274419597/fairwardgolf-review-image-e7981329a8bbdaa8.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 16,
+    "text_original_ko": "가성비좋고요.그냥 사용합니다",
+    "text_cut": [
+     "price"
+    ]
    },
    {
     "id": "5043048877",
     "score": 5,
-    "text_ko": "왕초보라서 좋다.별로다 그런말 하지않겠습니다.젤 저렴해서 구입했는데 보기에는 나쁘지 않네요",
+    "text_ko": "왕초보라서 좋다. 별로다 그런말 하지않겠습니다. 구입했는데 보기에는 나쁘지 않네요",
     "created_at": "2026-08-14T02:48:01Z",
     "writer": "sid1***",
     "photos": [
      "collected/50002788-fixtures/images/12274419597/fairwardgolf-review-image-302877457ace612d.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 43,
+    "text_original_ko": "왕초보라서 좋다.별로다 그런말 하지않겠습니다.젤 저렴해서 구입했는데 보기에는 나쁘지 않네요",
+    "text_cut": [
+     "price"
+    ]
    },
    {
     "id": "5027588076",
     "score": 5,
-    "text_ko": "만족스럽습니다 잘쓰겠습니다",
+    "text_ko": "만족스럽습니다",
     "created_at": "2026-07-23T08:01:37Z",
     "writer": "iris********",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 1,
+    "text_original_ko": "만족스럽습니다 잘쓰겠습니다",
+    "text_cut": [
+     "filler"
+    ]
    },
    {
     "id": "4991825870",
@@ -467,22 +489,27 @@
     "writer": "redj****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 2
    },
    {
     "id": "4982580331",
     "score": 5,
-    "text_ko": "사용 잘하고 있습니다 ~^^",
+    "text_ko": "사용 잘하고 있습니다",
     "created_at": "2026-05-23T00:31:39Z",
     "writer": "hyd_****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 2,
+    "text_original_ko": "사용 잘하고 있습니다 ~^^"
    },
    {
     "id": "4975970157",
     "score": 5,
-    "text_ko": "힘이 센 와이프를 위해 연습용&실전용으로 구매했어요 일반 여자채는 너무 약해서 ㅎㅎ\n빠른배송 굳 일단 써보고 한달리뷰 올릴예정",
+    "text_ko": "힘이 센 와이프를 위해 연습용&실전용으로 구매했어요 일반 여자채는 너무 약해서\n굳",
     "created_at": "2026-05-14T02:54:57Z",
     "writer": "hy****",
     "photos": [
@@ -491,39 +518,64 @@
      "collected/50002788-fixtures/images/12274419597/fairwardgolf-review-image-d26172e7674f9bbf.webp"
     ],
     "avatar": "collected/50002788-fixtures/images/12274419597/fairwardgolf-review-avatar-01bd228bfeae5260.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 43,
+    "text_original_ko": "힘이 센 와이프를 위해 연습용&실전용으로 구매했어요 일반 여자채는 너무 약해서 ㅎㅎ\n빠른배송 굳 일단 써보고 한달리뷰 올릴예정",
+    "text_cut": [
+     "platform",
+     "shipping"
+    ]
    },
    {
     "id": "4968256877",
     "score": 5,
-    "text_ko": "가성비넘좋은 골프채에요",
+    "text_ko": "골프채에요",
     "created_at": "2026-05-04T06:39:20Z",
     "writer": "khs9*******",
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/12274419597/fairwardgolf-review-avatar-cd5f1d7f48ea4d0b.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 21,
+    "text_original_ko": "가성비넘좋은 골프채에요",
+    "text_cut": [
+     "price"
+    ]
    },
    {
     "id": "4943358654",
     "score": 5,
-    "text_ko": "배송도 빠르고 넘좋아요 초보자 치기는 딱입니다",
+    "text_ko": "넘좋아요 초보자 치기는 딱입니다",
     "created_at": "2026-04-01T01:29:30Z",
     "writer": "khs9*******",
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/12274419597/fairwardgolf-review-avatar-cd5f1d7f48ea4d0b.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 23,
+    "text_original_ko": "배송도 빠르고 넘좋아요 초보자 치기는 딱입니다",
+    "text_cut": [
+     "shipping"
+    ]
    },
    {
     "id": "4939256902",
     "score": 5,
-    "text_ko": "잘받았습니다 빠른배송 감사합니다",
+    "text_ko": "",
     "created_at": "2026-03-26T09:07:33Z",
     "writer": "yhlo****",
     "photos": [
      "collected/50002788-fixtures/images/12274419597/fairwardgolf-review-image-c62e4256c5600a61.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "rating_only",
+    "text_quality": 15,
+    "text_original_ko": "잘받았습니다 빠른배송 감사합니다",
+    "text_cut": [
+     "shipping"
+    ]
    },
    {
     "id": "4937254564",
@@ -535,39 +587,59 @@
      "collected/50002788-fixtures/images/12274419597/fairwardgolf-review-image-acf8e920d88d6965.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 58
    },
    {
     "id": "4922444195",
     "score": 5,
-    "text_ko": "상품을  잘받았습니다 ~^^",
+    "text_ko": "",
     "created_at": "2026-03-05T07:03:27Z",
     "writer": "hyd_****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "rating_only",
+    "text_quality": 0,
+    "text_original_ko": "상품을  잘받았습니다 ~^^",
+    "text_cut": [
+     "shipping"
+    ]
    },
    {
     "id": "4917331028",
     "score": 5,
-    "text_ko": "후배 입문을 위해 선물로\n가성비 굿",
+    "text_ko": "후배 입문을 위해 선물로",
     "created_at": "2026-02-26T04:55:17Z",
     "writer": "dark******",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 22,
+    "text_original_ko": "후배 입문을 위해 선물로\n가성비 굿",
+    "text_cut": [
+     "price"
+    ]
    },
    {
     "id": "4907825970",
     "score": 4,
-    "text_ko": "약간의 기스가 있긴하지만 가성비 좋은거 같아요",
+    "text_ko": "약간의 기스가 있긴하지만 좋은거 같아요",
     "created_at": "2026-02-12T02:09:53Z",
     "writer": "vaul****",
     "photos": [
      "collected/50002788-fixtures/images/12274419597/fairwardgolf-review-image-0fe51f2c1279ea7d.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 39,
+    "text_original_ko": "약간의 기스가 있긴하지만 가성비 좋은거 같아요",
+    "text_cut": [
+     "price"
+    ]
    },
    {
     "id": "4895361335",
@@ -577,17 +649,25 @@
     "writer": "dark******",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 24
    },
    {
     "id": "4878953376",
     "score": 5,
-    "text_ko": "전에쓰던거랑 로프트 각도가 조금 다르긴 한데\n가성비 완전 좋은듯합니다.\n여성 L에서 갈아탔는데 무게 던져지는게 완전 느껴져요.\n오늘 1일차인데, 이전 실력이 바로 다 나오는건 아니지만 점점나아지고 있어요.\n적응하면 나아질거 같아요.",
+    "text_ko": "전에쓰던거랑 로프트 각도가 조금 다르긴 한데\n여성 L에서 갈아탔는데 무게 던져지는게 완전 느껴져요.\n오늘 1일차인데, 이전 실력이 바로 다 나오는건 아니지만 점점나아지고 있어요.\n적응하면 나아질거 같아요.",
     "created_at": "2026-01-06T17:16:20Z",
     "writer": "dipu***",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 60,
+    "text_original_ko": "전에쓰던거랑 로프트 각도가 조금 다르긴 한데\n가성비 완전 좋은듯합니다.\n여성 L에서 갈아탔는데 무게 던져지는게 완전 느껴져요.\n오늘 1일차인데, 이전 실력이 바로 다 나오는건 아니지만 점점나아지고 있어요.\n적응하면 나아질거 같아요.",
+    "text_cut": [
+     "price"
+    ]
    },
    {
     "id": "4869248889",
@@ -599,41 +679,61 @@
      "collected/50002788-fixtures/images/12274419597/fairwardgolf-review-image-27804439761170de.webp"
     ],
     "avatar": "collected/50002788-fixtures/images/12274419597/fairwardgolf-review-avatar-49458a1277c86eb6.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 22
    },
    {
     "id": "4848553913",
     "score": 5,
-    "text_ko": "가성비가 최고입니다",
+    "text_ko": "",
     "created_at": "2025-11-24T14:21:59Z",
     "writer": "lhk0****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "rating_only",
+    "text_quality": 0,
+    "text_original_ko": "가성비가 최고입니다",
+    "text_cut": [
+     "price"
+    ]
    },
    {
     "id": "4832208882",
     "score": 5,
-    "text_ko": "유명 브랜드랑 비거리 차이가 똑같고 가성비는 진짜 최고네요. 입문용 경품용으로 굉장히 추천합니다",
+    "text_ko": "유명 브랜드랑 비거리 차이가 똑같고 입문용 경품용으로 굉장히 추천합니다",
     "created_at": "2025-10-31T10:00:27Z",
     "writer": "leeh******",
     "photos": [
      "collected/50002788-fixtures/images/12274419597/fairwardgolf-review-image-db0627839c764a43.webp"
     ],
     "avatar": "collected/50002788-fixtures/images/12274419597/fairwardgolf-review-avatar-49458a1277c86eb6.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 62,
+    "text_original_ko": "유명 브랜드랑 비거리 차이가 똑같고 가성비는 진짜 최고네요. 입문용 경품용으로 굉장히 추천합니다",
+    "text_cut": [
+     "price"
+    ]
    },
    {
     "id": "4810492132",
     "score": 5,
-    "text_ko": "빠른배송 감사합니다",
+    "text_ko": "",
     "created_at": "2025-09-25T01:37:12Z",
     "writer": "lhk0****",
     "photos": [
      "collected/50002788-fixtures/images/12274419597/fairwardgolf-review-image-4e1bb2144d4d3b37.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "rating_only",
+    "text_quality": 15,
+    "text_original_ko": "빠른배송 감사합니다",
+    "text_cut": [
+     "shipping"
+    ]
    }
   ],
   "images": [
@@ -912,19 +1012,19 @@
    "ko": "캐디백"
   },
   {
-   "id": "review:1aeca64932e280c9",
+   "id": "review:5a22e2093283d47d",
    "kind": "review",
-   "ko": "가성비좋고요.그냥 사용합니다"
+   "ko": "그냥 사용합니다"
   },
   {
-   "id": "review:392f70cdec388da0",
+   "id": "review:2b0c470342d690cd",
    "kind": "review",
-   "ko": "왕초보라서 좋다.별로다 그런말 하지않겠습니다.젤 저렴해서 구입했는데 보기에는 나쁘지 않네요"
+   "ko": "왕초보라서 좋다. 별로다 그런말 하지않겠습니다. 구입했는데 보기에는 나쁘지 않네요"
   },
   {
-   "id": "review:1e744f01dfd5f31e",
+   "id": "review:ffd1f0dddde5f11a",
    "kind": "review",
-   "ko": "만족스럽습니다 잘쓰겠습니다"
+   "ko": "만족스럽습니다"
   },
   {
    "id": "review:054107ca8760bb9a",
@@ -932,29 +1032,24 @@
    "ko": "적당한 갯수로 만족합니다."
   },
   {
-   "id": "review:6fc50f92df83b461",
+   "id": "review:1baa5519468be95b",
    "kind": "review",
-   "ko": "사용 잘하고 있습니다 ~^^"
+   "ko": "사용 잘하고 있습니다"
   },
   {
-   "id": "review:218c3a494f4ead77",
+   "id": "review:8b8800135edfc240",
    "kind": "review",
-   "ko": "힘이 센 와이프를 위해 연습용&실전용으로 구매했어요 일반 여자채는 너무 약해서 ㅎㅎ\n빠른배송 굳 일단 써보고 한달리뷰 올릴예정"
+   "ko": "힘이 센 와이프를 위해 연습용&실전용으로 구매했어요 일반 여자채는 너무 약해서\n굳"
   },
   {
-   "id": "review:5846f5a12ef4f5ab",
+   "id": "review:93b9d5201e09c6a0",
    "kind": "review",
-   "ko": "가성비넘좋은 골프채에요"
+   "ko": "골프채에요"
   },
   {
-   "id": "review:14522be11e134cac",
+   "id": "review:cc277bb235eb7dfe",
    "kind": "review",
-   "ko": "배송도 빠르고 넘좋아요 초보자 치기는 딱입니다"
-  },
-  {
-   "id": "review:e8bbf2bdc7a5bc71",
-   "kind": "review",
-   "ko": "잘받았습니다 빠른배송 감사합니다"
+   "ko": "넘좋아요 초보자 치기는 딱입니다"
   },
   {
    "id": "review:c11756d9bdf21ec5",
@@ -962,19 +1057,14 @@
    "ko": "디자인도 괜찮고 풀 세트라 더 좋네요"
   },
   {
-   "id": "review:c8068f7c934c35c3",
+   "id": "review:987c4f0b93b53aa3",
    "kind": "review",
-   "ko": "상품을  잘받았습니다 ~^^"
+   "ko": "후배 입문을 위해 선물로"
   },
   {
-   "id": "review:7c5cc2724fbc2b3f",
+   "id": "review:73e221288045994b",
    "kind": "review",
-   "ko": "후배 입문을 위해 선물로\n가성비 굿"
-  },
-  {
-   "id": "review:76d1e18369119698",
-   "kind": "review",
-   "ko": "약간의 기스가 있긴하지만 가성비 좋은거 같아요"
+   "ko": "약간의 기스가 있긴하지만 좋은거 같아요"
   },
   {
    "id": "review:7ea0ff89d62ffe88",
@@ -982,9 +1072,9 @@
    "ko": "후배 입문시키려고 샀어요\n잘쓰면 좋겠네요"
   },
   {
-   "id": "review:b23d91fd31b157c7",
+   "id": "review:8a46b73cc9c8be3c",
    "kind": "review",
-   "ko": "전에쓰던거랑 로프트 각도가 조금 다르긴 한데\n가성비 완전 좋은듯합니다.\n여성 L에서 갈아탔는데 무게 던져지는게 완전 느껴져요.\n오늘 1일차인데, 이전 실력이 바로 다 나오는건 아니지만 점점나아지고 있어요.\n적응하면 나아질거 같아요."
+   "ko": "전에쓰던거랑 로프트 각도가 조금 다르긴 한데\n여성 L에서 갈아탔는데 무게 던져지는게 완전 느껴져요.\n오늘 1일차인데, 이전 실력이 바로 다 나오는건 아니지만 점점나아지고 있어요.\n적응하면 나아질거 같아요."
   },
   {
    "id": "review:578638fa72f15912",
@@ -992,19 +1082,9 @@
    "ko": "생각보다 좋아서 아주 잘 쓰고있습니다.\n타수도 줄고 매우 만족스럽네요"
   },
   {
-   "id": "review:1ee4115b0fff5e0b",
+   "id": "review:398982133331e2a1",
    "kind": "review",
-   "ko": "가성비가 최고입니다"
-  },
-  {
-   "id": "review:b2382873e7bd178b",
-   "kind": "review",
-   "ko": "유명 브랜드랑 비거리 차이가 똑같고 가성비는 진짜 최고네요. 입문용 경품용으로 굉장히 추천합니다"
-  },
-  {
-   "id": "review:b67d3463bb845c51",
-   "kind": "review",
-   "ko": "빠른배송 감사합니다"
+   "ko": "유명 브랜드랑 비거리 차이가 똑같고 입문용 경품용으로 굉장히 추천합니다"
   }
  ]
 }

@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:100130532:6153061020",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "7 of 7 kept (full 7); 5 trimmed"
+  },
   {
    "code": "description_tiles_include_banners",
    "detail": "chuseok.jpg, notice01.jpg, kakao_plusfriend.jpg, open_foot_notice_01.jpg, open_foot_notice_02.jpg, delivery_notice.jpg, kakao_notice.jpg, 휴무 공지사항, 카카오톡 플러스친구, 배송정보, 카카오톡"
@@ -219,31 +223,37 @@
    {
     "id": "3421243640",
     "score": 5,
-    "text_ko": "몇 번 해보고 자신에 몸에 맞는 채를 사라고 하는데 그냥 채 먼저 사고 채에 몸을 맞추려고 합니다. 완전 입문자라면 이 세트 하나면 고민할 게 없네요!!",
+    "text_ko": "몇 번 해보고 자신에 몸에 맞는 채를 사라고 하는데 그냥 채 먼저 사고 채에 몸을 맞추려고 합니다. 완전 입문자라면 이 세트 하나면 고민할 게 없네요!",
     "created_at": "2022-04-29T09:36:17Z",
     "writer": "icec******",
     "photos": [
      "collected/50002788-fixtures/images/6153061020/fairwardgolf-review-image-478c15db9984c2e0.webp"
     ],
     "avatar": "collected/50002788-fixtures/images/6153061020/fairwardgolf-review-avatar-8f72ba0d1fbb066b.webp",
-    "tier": "primary"
+    "tier": "primary",
+    "text_grade": "full",
+    "text_quality": 89,
+    "text_original_ko": "몇 번 해보고 자신에 몸에 맞는 채를 사라고 하는데 그냥 채 먼저 사고 채에 몸을 맞추려고 합니다. 완전 입문자라면 이 세트 하나면 고민할 게 없네요!!"
    },
    {
     "id": "4680470590",
     "score": 1,
-    "text_ko": "우선 제품을 잘못보내주셔서 다시 제품 받았습니다.\n제품검수를 제대로 하지 않는것같습니다. 아이언채 중간에 뜯어져서 오는 경우도있네요 다시구매하고싶지는 않습니다..ㅎ",
+    "text_ko": "우선 제품을 잘못보내주셔서 다시 제품 받았습니다.\n제품검수를 제대로 하지 않는것같습니다. 아이언채 중간에 뜯어져서 오는 경우도있네요 다시구매하고싶지는 않습니다.",
     "created_at": "2025-03-13T04:02:09Z",
     "writer": "rurv****",
     "photos": [
      "collected/50002788-fixtures/images/6153061020/fairwardgolf-review-image-f6a6abf833e36a4a.webp"
     ],
     "avatar": null,
-    "tier": "photo"
+    "tier": "photo",
+    "text_grade": "full",
+    "text_quality": 72,
+    "text_original_ko": "우선 제품을 잘못보내주셔서 다시 제품 받았습니다.\n제품검수를 제대로 하지 않는것같습니다. 아이언채 중간에 뜯어져서 오는 경우도있네요 다시구매하고싶지는 않습니다..ㅎ"
    },
    {
     "id": "4215008154",
     "score": 5,
-    "text_ko": "이야...정말 인생 최고의 골프채 입니다.\n가성비 및 구성자체가 말이 안됩니다...\n코로나로 인해 골프할 시간이 없었는데...\n앞으로 정말 열심히 골프연습 해야겠네요...^^\n감사합니다...",
+    "text_ko": "이야. 정말 인생 최고의 골프채 입니다.\n구성자체가 말이 안됩니다.\n코로나로 인해 골프할 시간이 없었는데.\n앞으로 정말 열심히 골프연습 해야겠네요.",
     "created_at": "2023-03-21T11:10:23Z",
     "writer": "skyk****",
     "photos": [
@@ -251,53 +261,87 @@
      "collected/50002788-fixtures/images/6153061020/fairwardgolf-review-image-fa4518fc9c45fd69.webp"
     ],
     "avatar": null,
-    "tier": "photo"
+    "tier": "photo",
+    "text_grade": "full",
+    "text_quality": 69,
+    "text_original_ko": "이야...정말 인생 최고의 골프채 입니다.\n가성비 및 구성자체가 말이 안됩니다...\n코로나로 인해 골프할 시간이 없었는데...\n앞으로 정말 열심히 골프연습 해야겠네요...^^\n감사합니다...",
+    "text_cut": [
+     "filler",
+     "shipping"
+    ]
    },
    {
     "id": "4132493157",
     "score": 5,
-    "text_ko": "입문인데 짱좋아요 주변지인도 한번쳐보고 금액대에서 괜찮다고 이야기를 해주셨늠데 홀인원까지 열심히 해보겠습니다",
+    "text_ko": "입문인데 짱좋아요 주변지인도 한번쳐보고 괜찮다고 이야기를 해주셨늠데 홀인원까지 열심히 해보겠습니다",
     "created_at": "2022-11-24T06:37:37Z",
     "writer": "rlsk*****",
     "photos": [
      "collected/50002788-fixtures/images/6153061020/fairwardgolf-review-image-3db4723a986cbdb5.webp"
     ],
     "avatar": null,
-    "tier": "photo"
+    "tier": "photo",
+    "text_grade": "full",
+    "text_quality": 46,
+    "text_original_ko": "입문인데 짱좋아요 주변지인도 한번쳐보고 금액대에서 괜찮다고 이야기를 해주셨늠데 홀인원까지 열심히 해보겠습니다",
+    "text_cut": [
+     "price"
+    ]
    },
    {
     "id": "3412485858",
     "score": 5,
-    "text_ko": "빠른배송 감사합니다 덕분에 주말에 재밌게 쳤어요 \n캐디백 포함 상품 구성도 좋습니다 \n이제 실력만 늘 일 만 남았네요\n번창하세요",
+    "text_ko": "덕분에 주말에 재밌게 쳤어요\n캐디백 포함 상품 구성도 좋습니다\n이제 실력만 늘 일 만 남았네요",
     "created_at": "2022-04-17T09:51:53Z",
     "writer": "55dh***",
     "photos": [
      "collected/50002788-fixtures/images/6153061020/fairwardgolf-review-image-56adda145aab11ef.webp"
     ],
     "avatar": null,
-    "tier": "photo"
+    "tier": "photo",
+    "text_grade": "full",
+    "text_quality": 64,
+    "text_original_ko": "빠른배송 감사합니다 덕분에 주말에 재밌게 쳤어요 \n캐디백 포함 상품 구성도 좋습니다 \n이제 실력만 늘 일 만 남았네요\n번창하세요",
+    "text_cut": [
+     "seller",
+     "shipping"
+    ]
    },
    {
     "id": "3406579553",
     "score": 5,
-    "text_ko": "정말 어이가 없네요..이가격에 이런디자인..많은 매장을 다녔지만 이렇게 좋은채, 이렇게 마음에 드는채가 없었는데 가격성능디자인 뭐하나 떨어지는게 없습니다. 부드럽고 타구감 좋습니다. 번창하세요👍",
+    "text_ko": "정말 어이가 없네요. 이런디자인. 많은 매장을 다녔지만 이렇게 좋은채, 이렇게 마음에 드는채가 없었는데 가격성능디자인 뭐하나 떨어지는게 없습니다. 부드럽고 타구감 좋습니다.",
     "created_at": "2022-04-08T23:48:58Z",
     "writer": "ye****",
     "photos": [
      "collected/50002788-fixtures/images/6153061020/fairwardgolf-review-image-1929cd60e5f58619.webp"
     ],
     "avatar": null,
-    "tier": "photo"
+    "tier": "photo",
+    "text_grade": "full",
+    "text_quality": 93,
+    "text_original_ko": "정말 어이가 없네요..이가격에 이런디자인..많은 매장을 다녔지만 이렇게 좋은채, 이렇게 마음에 드는채가 없었는데 가격성능디자인 뭐하나 떨어지는게 없습니다. 부드럽고 타구감 좋습니다. 번창하세요👍",
+    "text_cut": [
+     "price",
+     "seller"
+    ]
    },
    {
     "id": "4143870921",
     "score": 1,
-    "text_ko": "싼가격에 너무 큰기대를 했나봅니다. 갈비뼈와 엘보가 또 올까봐서 겁도 많이 나서 연습은 못할듯~ㅠㅠ; \n비닐포장까지 다 뜯었으니 반품도 안되고~ㅠㅠ; (허접?)",
+    "text_ko": "너무 큰기대를 했나봅니다. 갈비뼈와 엘보가 또 올까봐서 겁도 많이 나서 연습은 못할듯.\n비닐 뜯었으니 반품도 안되고 ; (허접?)",
     "created_at": "2022-12-10T07:38:41Z",
     "writer": "ko****",
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/6153061020/fairwardgolf-review-avatar-58eb348ecd7021ed.webp",
-    "tier": "text"
+    "tier": "text",
+    "text_grade": "full",
+    "text_quality": 32,
+    "text_original_ko": "싼가격에 너무 큰기대를 했나봅니다. 갈비뼈와 엘보가 또 올까봐서 겁도 많이 나서 연습은 못할듯~ㅠㅠ; \n비닐포장까지 다 뜯었으니 반품도 안되고~ㅠㅠ; (허접?)",
+    "text_cut": [
+     "packing",
+     "price"
+    ]
    }
   ],
   "images": [
@@ -596,39 +640,39 @@
    "ko": "블레이드(일자형)"
   },
   {
-   "id": "review:9857b28055ae179f",
+   "id": "review:49b1c26861f4972a",
    "kind": "review",
-   "ko": "몇 번 해보고 자신에 몸에 맞는 채를 사라고 하는데 그냥 채 먼저 사고 채에 몸을 맞추려고 합니다. 완전 입문자라면 이 세트 하나면 고민할 게 없네요!!"
+   "ko": "몇 번 해보고 자신에 몸에 맞는 채를 사라고 하는데 그냥 채 먼저 사고 채에 몸을 맞추려고 합니다. 완전 입문자라면 이 세트 하나면 고민할 게 없네요!"
   },
   {
-   "id": "review:3c5662f45762773d",
+   "id": "review:23f38bd10ef66578",
    "kind": "review",
-   "ko": "우선 제품을 잘못보내주셔서 다시 제품 받았습니다.\n제품검수를 제대로 하지 않는것같습니다. 아이언채 중간에 뜯어져서 오는 경우도있네요 다시구매하고싶지는 않습니다..ㅎ"
+   "ko": "우선 제품을 잘못보내주셔서 다시 제품 받았습니다.\n제품검수를 제대로 하지 않는것같습니다. 아이언채 중간에 뜯어져서 오는 경우도있네요 다시구매하고싶지는 않습니다."
   },
   {
-   "id": "review:986e750152e2944f",
+   "id": "review:c42fdeaf02446140",
    "kind": "review",
-   "ko": "이야...정말 인생 최고의 골프채 입니다.\n가성비 및 구성자체가 말이 안됩니다...\n코로나로 인해 골프할 시간이 없었는데...\n앞으로 정말 열심히 골프연습 해야겠네요...^^\n감사합니다..."
+   "ko": "이야. 정말 인생 최고의 골프채 입니다.\n구성자체가 말이 안됩니다.\n코로나로 인해 골프할 시간이 없었는데.\n앞으로 정말 열심히 골프연습 해야겠네요."
   },
   {
-   "id": "review:288473a404fb442a",
+   "id": "review:7467f9ba479aa908",
    "kind": "review",
-   "ko": "입문인데 짱좋아요 주변지인도 한번쳐보고 금액대에서 괜찮다고 이야기를 해주셨늠데 홀인원까지 열심히 해보겠습니다"
+   "ko": "입문인데 짱좋아요 주변지인도 한번쳐보고 괜찮다고 이야기를 해주셨늠데 홀인원까지 열심히 해보겠습니다"
   },
   {
-   "id": "review:95ad2334d2157f5d",
+   "id": "review:beddc4c371dbe6a0",
    "kind": "review",
-   "ko": "빠른배송 감사합니다 덕분에 주말에 재밌게 쳤어요 \n캐디백 포함 상품 구성도 좋습니다 \n이제 실력만 늘 일 만 남았네요\n번창하세요"
+   "ko": "덕분에 주말에 재밌게 쳤어요\n캐디백 포함 상품 구성도 좋습니다\n이제 실력만 늘 일 만 남았네요"
   },
   {
-   "id": "review:6077efb646399843",
+   "id": "review:41e5780e7737992c",
    "kind": "review",
-   "ko": "정말 어이가 없네요..이가격에 이런디자인..많은 매장을 다녔지만 이렇게 좋은채, 이렇게 마음에 드는채가 없었는데 가격성능디자인 뭐하나 떨어지는게 없습니다. 부드럽고 타구감 좋습니다. 번창하세요👍"
+   "ko": "정말 어이가 없네요. 이런디자인. 많은 매장을 다녔지만 이렇게 좋은채, 이렇게 마음에 드는채가 없었는데 가격성능디자인 뭐하나 떨어지는게 없습니다. 부드럽고 타구감 좋습니다."
   },
   {
-   "id": "review:193e2f980d88f857",
+   "id": "review:e5b38f3f14aeae75",
    "kind": "review",
-   "ko": "싼가격에 너무 큰기대를 했나봅니다. 갈비뼈와 엘보가 또 올까봐서 겁도 많이 나서 연습은 못할듯~ㅠㅠ; \n비닐포장까지 다 뜯었으니 반품도 안되고~ㅠㅠ; (허접?)"
+   "ko": "너무 큰기대를 했나봅니다. 갈비뼈와 엘보가 또 올까봐서 겁도 많이 나서 연습은 못할듯.\n비닐 뜯었으니 반품도 안되고 ; (허접?)"
   }
  ]
 }

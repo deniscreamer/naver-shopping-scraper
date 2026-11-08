@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:102349440:10639350746",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "1 of 1 kept (short 1); 1 trimmed"
+  },
   {
    "code": "purchase_agency",
    "detail": "구매대행 in the specs / notice / delivery policy"
@@ -260,14 +264,20 @@
    {
     "id": "4723892113",
     "score": 5,
-    "text_ko": "넘 좋아요 감사해요",
+    "text_ko": "넘 좋아요",
     "created_at": "2025-05-15T21:38:29Z",
     "writer": "myjs****",
     "photos": [
      "collected/50002788-fixtures/images/10639350746/fairwardgolf-review-image-56c977a8d1575551.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 16,
+    "text_original_ko": "넘 좋아요 감사해요",
+    "text_cut": [
+     "filler"
+    ]
    }
   ],
   "images": [
@@ -477,9 +487,9 @@
    "ko": "스탠드백"
   },
   {
-   "id": "review:f84362d4d2299734",
+   "id": "review:002ed17f6eb93921",
    "kind": "review",
-   "ko": "넘 좋아요 감사해요"
+   "ko": "넘 좋아요"
   }
  ]
 }

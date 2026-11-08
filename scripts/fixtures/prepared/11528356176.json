@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:500047358:11528356176",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "3 of 3 kept (full 3); 0 trimmed"
+  },
   {
    "code": "few_pieces",
    "detail": "3PCS"
@@ -8050,7 +8054,9 @@
     "writer": "assa****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 24
    },
    {
     "id": "4761004554",
@@ -8062,7 +8068,9 @@
      "collected/50002788-fixtures/images/11528356176/fairwardgolf-review-image-b359a268316e861e.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 79
    },
    {
     "id": "4756980887",
@@ -8072,7 +8080,9 @@
     "writer": "hl****",
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/11528356176/fairwardgolf-review-avatar-32d56b08a9c425b1.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 46
    }
   ],
   "images": [

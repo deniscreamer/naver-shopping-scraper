@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:500028318:10337644911",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "6 of 6 kept (full 2, short 4); 5 trimmed"
+  },
   {
    "code": "title_names_one_variant",
    "detail": "9도SR"
@@ -571,22 +575,35 @@
    {
     "id": "4716836336",
     "score": 5,
-    "text_ko": "모든 것이 만족스러웠어요!\n사장님도 매우 친절!!",
+    "text_ko": "모든 것이 만족스러웠어요!",
     "created_at": "2025-05-05T18:50:49Z",
     "writer": "rn****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 2,
+    "text_original_ko": "모든 것이 만족스러웠어요!\n사장님도 매우 친절!!",
+    "text_cut": [
+     "seller"
+    ]
    },
    {
     "id": "4664864408",
     "score": 5,
-    "text_ko": "좋습니다 감사합니다~ 번창하세요",
+    "text_ko": "좋습니다",
     "created_at": "2025-02-18T11:33:49Z",
     "writer": "nown****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 1,
+    "text_original_ko": "좋습니다 감사합니다~ 번창하세요",
+    "text_cut": [
+     "filler",
+     "seller"
+    ]
    },
    {
     "id": "4649994412",
@@ -596,39 +613,60 @@
     "writer": "leew*********",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 63
    },
    {
     "id": "4640027796",
     "score": 5,
-    "text_ko": "드라이브, 퍼터 덮개까지 줘서 좋았어요\n퍼터가 금색이라 빛 반사가 좀 있어서 적응은 필요할 것 같아요 번창하세요",
+    "text_ko": "드라이브, 퍼터 덮개까지 줘서 좋았어요\n퍼터가 금색이라 빛 반사가 좀 있어서 적응은 필요할 것 같아요",
     "created_at": "2025-01-11T03:35:14Z",
     "writer": "gnsc***",
     "photos": [
      "collected/50002788-fixtures/images/10337644911/fairwardgolf-review-image-c7bf8f7dcd283c01.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 85,
+    "text_original_ko": "드라이브, 퍼터 덮개까지 줘서 좋았어요\n퍼터가 금색이라 빛 반사가 좀 있어서 적응은 필요할 것 같아요 번창하세요",
+    "text_cut": [
+     "seller"
+    ]
    },
    {
     "id": "4635579146",
     "score": 5,
-    "text_ko": "배송관련으로 사장님께서 먼저 전화주셔서 빠른 대응 해주신점 인상 깊었습니다. 많이 파세요.",
+    "text_ko": "먼저 빠른",
     "created_at": "2025-01-04T23:01:45Z",
     "writer": "nown****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 1,
+    "text_original_ko": "배송관련으로 사장님께서 먼저 전화주셔서 빠른 대응 해주신점 인상 깊었습니다. 많이 파세요.",
+    "text_cut": [
+     "seller",
+     "shipping"
+    ]
    },
    {
     "id": "4629345478",
     "score": 5,
-    "text_ko": "좋아요 또 구매할께요~~ 잘사용하고 있습니다!",
+    "text_ko": "좋아요 잘사용하고 있습니다!",
     "created_at": "2024-12-26T01:08:27Z",
     "writer": "rami*****",
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/10337644911/fairwardgolf-review-avatar-93990e33831882ef.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 3,
+    "text_original_ko": "좋아요 또 구매할께요~~ 잘사용하고 있습니다!",
+    "text_cut": [
+     "seller"
+    ]
    }
   ],
   "images": [
@@ -889,14 +927,14 @@
    "ko": "5번S"
   },
   {
-   "id": "review:0a8ab00c2bfbe3bf",
+   "id": "review:4381f02ddcd26056",
    "kind": "review",
-   "ko": "모든 것이 만족스러웠어요!\n사장님도 매우 친절!!"
+   "ko": "모든 것이 만족스러웠어요!"
   },
   {
-   "id": "review:3faa0c34c75da1c2",
+   "id": "review:933d8569b7ee01ff",
    "kind": "review",
-   "ko": "좋습니다 감사합니다~ 번창하세요"
+   "ko": "좋습니다"
   },
   {
    "id": "review:64812e1e007c8cc7",
@@ -904,19 +942,19 @@
    "ko": "디지인 및 샤프트 강도 좋네요"
   },
   {
-   "id": "review:aa893768bdd3a2fc",
+   "id": "review:bd44b19dc6399691",
    "kind": "review",
-   "ko": "드라이브, 퍼터 덮개까지 줘서 좋았어요\n퍼터가 금색이라 빛 반사가 좀 있어서 적응은 필요할 것 같아요 번창하세요"
+   "ko": "드라이브, 퍼터 덮개까지 줘서 좋았어요\n퍼터가 금색이라 빛 반사가 좀 있어서 적응은 필요할 것 같아요"
   },
   {
-   "id": "review:bd39f807accb4b39",
+   "id": "review:d5cdc9e8b3c9933d",
    "kind": "review",
-   "ko": "배송관련으로 사장님께서 먼저 전화주셔서 빠른 대응 해주신점 인상 깊었습니다. 많이 파세요."
+   "ko": "먼저 빠른"
   },
   {
-   "id": "review:d011d5c21a349a21",
+   "id": "review:27f4001d043f6f84",
    "kind": "review",
-   "ko": "좋아요 또 구매할께요~~ 잘사용하고 있습니다!"
+   "ko": "좋아요 잘사용하고 있습니다!"
   }
  ]
 }

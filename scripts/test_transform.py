@@ -53,7 +53,7 @@ def test_one_variant_is_the_default_and_its_value_a_fact():
     assert p["status"] == "ready" and p["product"]["options"] == []
     assert (v["sku"], v["price_krw"], v["price_usd"]) == ("FW-9402af11868726eba5902af5", 1970000, "1970.00")
     assert p["product"]["facts"] == [{"label_ko": "", "value_ko": "풀세트"}]          # 선택사항 says nothing
-    assert p["notes"] == []
+    assert [n for n in p["notes"] if n["code"] != "reviews_cleaned"] == []   # the reviews' counts: review_clean
     gender = p["product"]["attributes"]["gender"]                          # no 성별 row: "여성" in the name
     assert gender["value"] == "womens" and [e["source"] for e in gender["evidence"]] == ["title"]
 

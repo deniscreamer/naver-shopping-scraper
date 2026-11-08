@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:100568453:12975257923",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "1 of 1 kept (short 1); 1 trimmed"
+  },
   {
    "code": "title_names_one_variant",
    "detail": "10.5도, R, 카본, MP1400K"
@@ -3091,12 +3095,18 @@
    {
     "id": "5045964192",
     "score": 5,
-    "text_ko": "만족합니다.라운드때 실 사용 후 후기 남길게요.",
+    "text_ko": "만족합니다. 라운드때 실 사용 후.",
     "created_at": "2026-08-19T09:45:15Z",
     "writer": "pa****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 3,
+    "text_original_ko": "만족합니다.라운드때 실 사용 후 후기 남길게요.",
+    "text_cut": [
+     "platform"
+    ]
    }
   ],
   "images": [
@@ -3337,9 +3347,9 @@
    "ko": "입력해주세요"
   },
   {
-   "id": "review:a9bc7c1f57ad101a",
+   "id": "review:5f27ca6f061bffa0",
    "kind": "review",
-   "ko": "만족합니다.라운드때 실 사용 후 후기 남길게요."
+   "ko": "만족합니다. 라운드때 실 사용 후."
   }
  ]
 }

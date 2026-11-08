@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:100416178:9496523995",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "3 of 3 kept (full 1, short 2); 2 trimmed"
+  },
   {
    "code": "title_names_one_variant",
    "detail": "10.5"
@@ -749,36 +753,52 @@
    {
     "id": "4508430574",
     "score": 5,
-    "text_ko": "구성이  좋습니다.",
+    "text_ko": "구성이 좋습니다.",
     "created_at": "2024-06-28T13:32:47Z",
     "writer": "phsy****",
     "photos": [
      "collected/50002788-fixtures/images/9496523995/fairwardgolf-review-image-8385932c70eccbf2.webp"
     ],
     "avatar": "collected/50002788-fixtures/images/9496523995/fairwardgolf-review-avatar-5c0be2ba97b1f37c.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 36,
+    "text_original_ko": "구성이  좋습니다."
    },
    {
     "id": "4461549822",
     "score": 5,
-    "text_ko": "빠른 배송 좋아요\n감사합니다",
+    "text_ko": "좋아요",
     "created_at": "2024-04-14T07:18:15Z",
     "writer": "wssj*****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 0,
+    "text_original_ko": "빠른 배송 좋아요\n감사합니다",
+    "text_cut": [
+     "filler",
+     "shipping"
+    ]
    },
    {
     "id": "4458658738",
     "score": 5,
-    "text_ko": "ㅡ요구사항에 친절한 설명도 해주시고 너무나 감사합니다",
+    "text_ko": "요구사항에 너무나 감사합니다",
     "created_at": "2024-04-09T03:26:37Z",
     "writer": "ptlo*******",
     "photos": [
      "collected/50002788-fixtures/images/9496523995/fairwardgolf-review-image-fc42778527cb5f6a.webp"
     ],
     "avatar": "collected/50002788-fixtures/images/9496523995/fairwardgolf-review-avatar-0374aa7f8c8a9737.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 18,
+    "text_original_ko": "ㅡ요구사항에 친절한 설명도 해주시고 너무나 감사합니다",
+    "text_cut": [
+     "seller"
+    ]
    }
   ],
   "images": [
@@ -996,19 +1016,19 @@
    "ko": "5번 S"
   },
   {
-   "id": "review:c9d9eaa698ff9ed4",
+   "id": "review:589100f9cc90a4db",
    "kind": "review",
-   "ko": "구성이  좋습니다."
+   "ko": "구성이 좋습니다."
   },
   {
-   "id": "review:99baf2a83559c91a",
+   "id": "review:4e89f12afd275d8a",
    "kind": "review",
-   "ko": "빠른 배송 좋아요\n감사합니다"
+   "ko": "좋아요"
   },
   {
-   "id": "review:41ae5c34401bac74",
+   "id": "review:324c9e9177bba5bf",
    "kind": "review",
-   "ko": "ㅡ요구사항에 친절한 설명도 해주시고 너무나 감사합니다"
+   "ko": "요구사항에 너무나 감사합니다"
   }
  ]
 }

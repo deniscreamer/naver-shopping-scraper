@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:100113347:12696567111",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "5 of 5 kept (rating_only 2, short 3); 1 trimmed"
+  },
   {
    "code": "title_names_one_variant",
    "detail": "XR26"
@@ -529,14 +533,21 @@
    {
     "id": "5089429407",
     "score": 5,
-    "text_ko": "배송 빠릅니다\n포장도 잘 되어 배송됩니다",
+    "text_ko": "",
     "created_at": "2026-10-22T13:16:58Z",
     "writer": "donk*****",
     "photos": [
      "collected/50002788-fixtures/images/12696567111/fairwardgolf-review-image-e10c77521b583d17.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "rating_only",
+    "text_quality": 15,
+    "text_original_ko": "배송 빠릅니다\n포장도 잘 되어 배송됩니다",
+    "text_cut": [
+     "packing",
+     "shipping"
+    ]
    },
    {
     "id": "5085191416",
@@ -548,43 +559,61 @@
      "collected/50002788-fixtures/images/12696567111/fairwardgolf-review-image-e58a4e62e8e82f23.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 18
    },
    {
     "id": "5070807803",
     "score": 5,
-    "text_ko": "추석임에도 배송도 빠르고, 신경을 많이 써주시네요. 감사합니다.",
+    "text_ko": "추석임에도 신경을 많이 써주시네요.",
     "created_at": "2026-09-23T04:55:05Z",
     "writer": "kks1******",
     "photos": [
      "collected/50002788-fixtures/images/12696567111/fairwardgolf-review-image-3af50b0457dfb2fb.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 18,
+    "text_original_ko": "추석임에도 배송도 빠르고, 신경을 많이 써주시네요. 감사합니다.",
+    "text_cut": [
+     "filler",
+     "shipping"
+    ]
    },
    {
     "id": "5049472217",
     "score": 5,
-    "text_ko": "깔끔하니 좋습니다!ㅎㅎ",
+    "text_ko": "깔끔하니 좋습니다!",
     "created_at": "2026-08-24T05:02:30Z",
     "writer": "wmov****",
     "photos": [
      "collected/50002788-fixtures/images/12696567111/fairwardgolf-review-image-9a9233ecf769704b.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 17,
+    "text_original_ko": "깔끔하니 좋습니다!ㅎㅎ"
    },
    {
     "id": "4995220309",
     "score": 5,
-    "text_ko": "아침에 택배가 도착했네요\n빠른배송 감사합니다",
+    "text_ko": "",
     "created_at": "2026-06-10T02:39:06Z",
     "writer": "bass****",
     "photos": [
      "collected/50002788-fixtures/images/12696567111/fairwardgolf-review-image-91d2017231387db5.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "rating_only",
+    "text_quality": 15,
+    "text_original_ko": "아침에 택배가 도착했네요\n빠른배송 감사합니다",
+    "text_cut": [
+     "shipping"
+    ]
    }
   ],
   "images": [
@@ -843,29 +872,19 @@
    "ko": "2026년형"
   },
   {
-   "id": "review:dda94db077c4282d",
-   "kind": "review",
-   "ko": "배송 빠릅니다\n포장도 잘 되어 배송됩니다"
-  },
-  {
    "id": "review:5c562e0cd73e818f",
    "kind": "review",
    "ko": "아직사용전이지만 기대되요"
   },
   {
-   "id": "review:e0c1598c4b01d840",
+   "id": "review:0611aa9e2033489a",
    "kind": "review",
-   "ko": "추석임에도 배송도 빠르고, 신경을 많이 써주시네요. 감사합니다."
+   "ko": "추석임에도 신경을 많이 써주시네요."
   },
   {
-   "id": "review:e775abda52c99414",
+   "id": "review:7258ceb2eb29f041",
    "kind": "review",
-   "ko": "깔끔하니 좋습니다!ㅎㅎ"
-  },
-  {
-   "id": "review:9ba00fe6bbc2a9e6",
-   "kind": "review",
-   "ko": "아침에 택배가 도착했네요\n빠른배송 감사합니다"
+   "ko": "깔끔하니 좋습니다!"
   }
  ]
 }

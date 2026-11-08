@@ -77,6 +77,39 @@ Before placement (`scripts/placement.py <shop>`, the last stage before Shopify),
 product does); with no profile placement stops (`PlacementRulesMissing`), a category missing from it leaves its
 products `no_profile`. How to add one: [scripts/PLACEMENT.md](scripts/PLACEMENT.md).
 
+For translation (`scripts/translate.py`): the API keys. Anthropic is the main provider and OpenAI the fallback;
+either key may be left out.
+
+1. **The operator writes the keys into a plain text file**, anywhere, e.g. `~/Desktop/translate.keys` (TextEdit:
+   Format → Make Plain Text). One key per line:
+
+   ```
+   ANTHROPIC_API_KEY=sk-ant-...
+   OPENAI_API_KEY=sk-...
+   ```
+
+2. **Install the file** (by the operator or the agent; the values are never printed):
+
+   ```sh
+   .venv/bin/python scripts/translate_keys.py install ~/Desktop/translate.keys
+   ```
+
+   It checks each key starts as its provider's, moves the file to
+   `~/.config/naver-shopping-scraper/translate.keys` (outside the repo, mode 600), and writes
+   `TRANSLATE_KEY_FILE=<that path>` into `.env`. The original file is gone from the Desktop.
+3. **Check:** `.venv/bin/python scripts/translate_keys.py check`, then `scripts/check_setup.py` (row "translation").
+
+The stage refuses a key file readable by others or one git does not ignore. The keys go only to the API clients:
+not into the environment and not into logs. `translate.py <shop> --offline` needs no key.
+
+**The models are set in `.env`, not in the code** (`.env.example` lists them):
+- `TRANSLATE_PROVIDERS`: the order of the chain, `anthropic,openai` by default;
+- `ANTHROPIC_TRANSLATE_MODEL` / `ANTHROPIC_TRANSLATE_EFFORT`: default `claude-sonnet-5-5` / `low`;
+- `OPENAI_TRANSLATE_MODEL` / `OPENAI_TRANSLATE_EFFORT`: default `gpt-6.1-terra` / `low`.
+
+An effort `off` is not sent, for a model that takes none. `ANTHROPIC_TRANSLATE_THINKING`: `off` (the default, no
+thinking tokens) or `adaptive`. The report's first lines name the chain that ran.
+
 ## 4. Offline tests (no network)
 
 ```sh

@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:500101251:13302492097",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "2 of 2 kept (full 2); 1 trimmed"
+  },
   {
    "code": "title_names_one_variant",
    "detail": "5번, L"
@@ -9067,19 +9071,27 @@
      "collected/50002788-fixtures/images/13302492097/fairwardgolf-review-image-8ae1f06c575430b5.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 58
    },
    {
     "id": "5057342649",
     "score": 5,
-    "text_ko": "아직 미사용이나 튼튼하고 좋아요. 판매자분.친절하세요",
+    "text_ko": "아직 미사용이나 튼튼하고 좋아요.",
     "created_at": "2026-09-04T04:26:50Z",
     "writer": "kms8******",
     "photos": [
      "collected/50002788-fixtures/images/13302492097/fairwardgolf-review-image-35438eb48ea1dc4b.webp"
     ],
     "avatar": "collected/50002788-fixtures/images/13302492097/fairwardgolf-review-avatar-959e89c3dce232e8.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 38,
+    "text_original_ko": "아직 미사용이나 튼튼하고 좋아요. 판매자분.친절하세요",
+    "text_cut": [
+     "seller"
+    ]
    }
   ],
   "images": [
@@ -9434,9 +9446,9 @@
    "ko": "색상이나 디자인 마음에 들어요."
   },
   {
-   "id": "review:f3089263ac790592",
+   "id": "review:f0b32bee2b340951",
    "kind": "review",
-   "ko": "아직 미사용이나 튼튼하고 좋아요. 판매자분.친절하세요"
+   "ko": "아직 미사용이나 튼튼하고 좋아요."
   }
  ]
 }

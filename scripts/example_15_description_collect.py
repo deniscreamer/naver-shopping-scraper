@@ -11,7 +11,7 @@ The whole chain on one product, in its own folder (the operator's kept runs and 
   3. keep      keep_run into scripts/output/description-example/shops/ (read-only, like a real run)
   4. images    description_images: the description images (Naver's CDN first), RapidOCR in a worker process,
                the sidecar (needs `pip install -r scripts/requirements.txt`; the models download on first use)
-  5. prepare   run_transform: the prepared product (prepared/3: attributes, no shop sections) with the images' size / weight merged in (the
+  5. prepare   run_transform: the prepared product (prepared/4: attributes, no shop sections, reviews sanitized) with the images' size / weight merged in (the
                larger value wins), and the images' Korean text for the translation step with its flag
   6. print     what came out: status and notes, the five package fields and where each came from, the page text
                and the images' text (state, blocks, the file), the description photos kept

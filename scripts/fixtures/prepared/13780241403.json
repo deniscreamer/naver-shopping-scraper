@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:100113347:13780241403",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "1 of 1 kept (full 1); 1 trimmed"
+  },
   {
    "code": "specs_contradict",
    "detail": "총클럽개수 3개: 아이언 구성 lists 8 irons, the title says 12"
@@ -216,12 +220,18 @@
    {
     "id": "5087604249",
     "score": 5,
-    "text_ko": "디자인 좋고요 가성비 끝내줍니다",
+    "text_ko": "디자인 좋고요",
     "created_at": "2026-10-20T06:15:21Z",
     "writer": "pmg3****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 21,
+    "text_original_ko": "디자인 좋고요 가성비 끝내줍니다",
+    "text_cut": [
+     "price"
+    ]
    }
   ],
   "images": [
@@ -454,9 +464,9 @@
    "ko": "캐디백, 보스턴백"
   },
   {
-   "id": "review:647221a9da46185c",
+   "id": "review:b8ed6e88fcdd4b27",
    "kind": "review",
-   "ko": "디자인 좋고요 가성비 끝내줍니다"
+   "ko": "디자인 좋고요"
   }
  ]
 }

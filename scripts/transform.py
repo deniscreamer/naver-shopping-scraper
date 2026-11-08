@@ -33,7 +33,7 @@ naver-harvester published, and its 60 published products):
     title, the origin's importer, the images' text, or 노브랜드; brand_fallback.py),
     option_name_placeholder (선택 / 선택2 / 옵션: named from the values in translation),
     paid_addons_left_out, paid_variants_left_out, title_names_one_variant, purchase_agency, price_name_mismatch,
-    photos_incomplete, reviews_none_chosen, measures_from_images / description_images_missing / _stale / _failed / _partial (the category's
+    photos_incomplete, reviews_none_chosen, reviews_cleaned (review_clean.py: kept, by grade, trimmed), measures_from_images / description_images_missing / _stale / _failed / _partial (the category's
     description_images switch: the images' size / weight guess, the larger value wins; description_measures.py).
 
     from transform import prepare
@@ -55,11 +55,15 @@ from description_measures import container_in, package_for, profile_for, read_ro
 from naver_variants import choose_variants
 from package_measures import load_table
 from spec_variants import check_specs, title_one_variant
+from review_clean import clean_reviews
 from transform_shops import CategoryRules, ShopRules
 
-FORMAT = "prepared/3"           # 2 (2026-11-07): package fields may carry how / quote / flags / compared;
+FORMAT = "prepared/4"           # 2 (2026-11-07): package fields may carry how / quote / flags / compared;
                                  # product.description_images_text (run_transform); 3 (2026-11-08): no shop
-                                 # leaves, product.attributes instead (the shop's sections: placement.py)
+                                 # leaves, product.attributes instead (the shop's sections: placement.py);
+                                 # 4 (2026-11-08): reviews sanitized (review_clean.py): text_ko cleaned,
+                                 # text_original_ko, text_cut, text_grade, text_quality; every review kept
+                                 # (its score) but sponsored ones
 MAX_AXES = 3                       # Shopify options per product
 MAX_IMAGES = 50
 HIDDEN_ROWS = {"상품번호", "제조일자", "이벤트", "사은품", "인증정보"}     # 인증정보: purchase-agency / KC legal text
@@ -509,9 +513,14 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int,
         held.append({"code": "no_images", "detail": "no gallery photo saved"})
     if len(imgs) > MAX_IMAGES:
         held.append({"code": "images_over_50", "detail": f"{len(imgs)} photos"})
-    rating, picked = reviews(line, run)
-    if rating and rating["count"] and not picked:
+    rating, chosen = reviews(line, run)
+    if rating and rating["count"] and not chosen:
         notes.append({"code": "reviews_none_chosen", "detail": f"{rating['count']} reviews, none chosen"})
+    picked, review_stats = clean_reviews(chosen, source["category_id"])
+    if review_stats["in"]:
+        grades = ", ".join(f"{k} {v}" for k, v in sorted(review_stats["grades"].items()))
+        notes.append({"code": "reviews_cleaned", "detail": f"{review_stats['kept']} of {review_stats['in']} kept "
+                      f"({grades}); {review_stats['trimmed']} trimmed"})
     if (line.get("variants") or {}).get("name_mismatches"):
         notes.append({"code": "price_name_mismatch", "detail": ",".join(line["variants"]["name_mismatches"])})
     if ov["skipped_paid"]:                          # a smaller set than the title may describe is sold

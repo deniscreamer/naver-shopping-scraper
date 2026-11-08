@@ -37,7 +37,8 @@ Google Chrome (a real window opens). Docker/Linux is archived in
 3. `scripts/` talks to the server over HTTP only and never imports server modules. Other fetches:
    photo files the API linked, from Naver's image CDN (`scripts/naver_images.py`); the description images the
    API linked, from any public HTTPS host the seller uses (`scripts/description_images.py`, the owner
-   2026-11-07); and a read of our own Shopify store's catalog (`scripts/shopify_catalog.py`, Admin API, read only).
+   2026-11-07); a read of our own Shopify store's catalog (`scripts/shopify_catalog.py`, Admin API, read only); and
+   the Anthropic API for translation, OpenAI as its fallback (`scripts/translate.py`, the owner 2026-11-08).
 4. Tests never hit the network.
    API answer types live in `scripts/naver_types.py`; a shape change updates type + fixture + client method (R-TYPE).
 5. Move or rename tracked files with `git mv` so history follows them.
@@ -77,6 +78,7 @@ Live check (server running, uses the network): `curl http://localhost:8000/healt
 | Known issues | [server/docs/KNOWN_ISSUES.md](server/docs/KNOWN_ISSUES.md) | Before "fixing" anything that looks wrong, before upgrading deps |
 | Operations | [server/README.md](server/README.md) | Running on macOS, env vars, tests |
 | Consumer scripts, Shopify roadmap | [scripts/README.md](scripts/README.md) | Writing scripts against the API, starting Shopify work |
+| Translation (model, dictionaries) | [scripts/TRANSLATION.md](scripts/TRANSLATION.md) | Running or changing `translate.py`, the dictionaries, the prompts, review cleaning; a new shop or category; the quality check |
 | Shop sections (placement) | [scripts/PLACEMENT.md](scripts/PLACEMENT.md) | A new shop or Naver category, one Naver category holding several shop sections |
 | Running a job (agent) | [scripts/JOB_AGENT.md](scripts/JOB_AGENT.md) | Running or watching `scripts/job.py` (one product per iteration) |
 | Seller data patterns | [scripts/SELLER_DATA.md](scripts/SELLER_DATA.md) | Before changing parsers or the transform: what pages and sellers write |

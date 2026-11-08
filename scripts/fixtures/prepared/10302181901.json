@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:101231454:10302181901",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "3 of 3 kept (full 1, short 2); 1 trimmed"
+  },
   {
    "code": "shipping_paid",
    "detail": "PAID 8000 KRW"
@@ -187,7 +191,7 @@
    {
     "id": "4973131447",
     "score": 5,
-    "text_ko": "가격적으로도 기능적으로도  만족합니다",
+    "text_ko": "기능적으로도 만족합니다",
     "created_at": "2026-05-10T11:45:56Z",
     "writer": "ktop****",
     "photos": [
@@ -196,7 +200,13 @@
      "collected/50002788-fixtures/images/10302181901/fairwardgolf-review-image-6fb15eea9583d21e.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 17,
+    "text_original_ko": "가격적으로도 기능적으로도  만족합니다",
+    "text_cut": [
+     "price"
+    ]
    },
    {
     "id": "4679811297",
@@ -208,7 +218,9 @@
      "collected/50002788-fixtures/images/10302181901/fairwardgolf-review-image-c0223ed40a02027d.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 17
    },
    {
     "id": "4660244662",
@@ -220,7 +232,9 @@
      "collected/50002788-fixtures/images/10302181901/fairwardgolf-review-image-d58d5f0b027748ae.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 58
    }
   ],
   "images": [
@@ -356,9 +370,9 @@
    "ko": "화이트네이비레드"
   },
   {
-   "id": "review:c2d1cbf18a67067b",
+   "id": "review:bf59253f3f21a9fd",
    "kind": "review",
-   "ko": "가격적으로도 기능적으로도  만족합니다"
+   "ko": "기능적으로도 만족합니다"
   },
   {
    "id": "review:284861dbd5ead421",

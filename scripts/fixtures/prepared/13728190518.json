@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:102519697:13728190518",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "6 of 6 kept (full 4, short 2); 2 trimmed"
+  },
   {
    "code": "shipping_paid",
    "detail": "UNIT_QUANTITY_PAID 99000 KRW"
@@ -255,26 +259,32 @@
    {
     "id": "5100440257",
     "score": 5,
-    "text_ko": "너무너무너무너무좋아요~",
+    "text_ko": "너무너무좋아요",
     "created_at": "2026-11-06T12:30:14Z",
     "writer": "kkan*****",
     "photos": [
      "collected/50002788-fixtures/images/13728190518/fairwardgolf-review-image-5e34bd383bef75fd.webp"
     ],
     "avatar": "collected/50002788-fixtures/images/13728190518/fairwardgolf-review-avatar-f6ec2377ffe715ff.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 16,
+    "text_original_ko": "너무너무너무너무좋아요~"
    },
    {
     "id": "5095875941",
     "score": 4,
-    "text_ko": "어제 시타해 봤습니다\n 엄청 좋다라고는 아니지만 만족하고요 \n그립감은 참 좋습니더",
+    "text_ko": "어제 시타해 봤습니다\n엄청 좋다라고는 아니지만 만족하고요\n그립감은 참 좋습니더",
     "created_at": "2026-11-01T02:45:30Z",
     "writer": "ym****",
     "photos": [
      "collected/50002788-fixtures/images/13728190518/fairwardgolf-review-image-8eea326fead896df.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 43,
+    "text_original_ko": "어제 시타해 봤습니다\n 엄청 좋다라고는 아니지만 만족하고요 \n그립감은 참 좋습니더"
    },
    {
     "id": "5093149966",
@@ -286,22 +296,30 @@
      "collected/50002788-fixtures/images/13728190518/fairwardgolf-review-image-429a7517d46cdbbb.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 40
    },
    {
     "id": "5085177763",
     "score": 5,
-    "text_ko": "깔끔하고 초보자에게 부담되지 않는 무게로 세팅이 된 것 같아요. 잘 사용하겠습니다.",
+    "text_ko": "깔끔하고 초보자에게 부담되지 않는 무게로 세팅이 된 것 같아요.",
     "created_at": "2026-10-16T07:52:38Z",
     "writer": "mjs6***",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 46,
+    "text_original_ko": "깔끔하고 초보자에게 부담되지 않는 무게로 세팅이 된 것 같아요. 잘 사용하겠습니다.",
+    "text_cut": [
+     "filler"
+    ]
    },
    {
     "id": "5073572312",
     "score": 5,
-    "text_ko": "아들 선물 해주었는데 너무 좋아하네요\n빽이 예뻐요^^",
+    "text_ko": "아들 선물 해주었는데 너무 좋아하네요\n빽이 예뻐요",
     "created_at": "2026-09-29T09:22:57Z",
     "writer": "ji****",
     "photos": [
@@ -309,17 +327,28 @@
      "collected/50002788-fixtures/images/13728190518/fairwardgolf-review-image-fba5cf68b148124e.webp"
     ],
     "avatar": "collected/50002788-fixtures/images/13728190518/fairwardgolf-review-avatar-804b26ba64a93dad.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 40,
+    "text_original_ko": "아들 선물 해주었는데 너무 좋아하네요\n빽이 예뻐요^^"
    },
    {
     "id": "5066294943",
     "score": 5,
-    "text_ko": "통관세금 12만원쯤 나왔어요 \n생각보다 빨리 도착했습니다\n모두맘에 들어요정말 잘 샀어요 \n감사해요",
+    "text_ko": "모두맘에 들어요정말 잘 샀어요",
     "created_at": "2026-09-16T14:05:40Z",
     "writer": "mw****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 3,
+    "text_original_ko": "통관세금 12만원쯤 나왔어요 \n생각보다 빨리 도착했습니다\n모두맘에 들어요정말 잘 샀어요 \n감사해요",
+    "text_cut": [
+     "filler",
+     "price",
+     "shipping"
+    ]
    }
   ],
   "images": [
@@ -501,14 +530,14 @@
    "ko": "캐디백"
   },
   {
-   "id": "review:ce24a95c77cc599c",
+   "id": "review:618e03081cc60193",
    "kind": "review",
-   "ko": "너무너무너무너무좋아요~"
+   "ko": "너무너무좋아요"
   },
   {
-   "id": "review:ec87106c592d50f4",
+   "id": "review:121a4f9faa90f36e",
    "kind": "review",
-   "ko": "어제 시타해 봤습니다\n 엄청 좋다라고는 아니지만 만족하고요 \n그립감은 참 좋습니더"
+   "ko": "어제 시타해 봤습니다\n엄청 좋다라고는 아니지만 만족하고요\n그립감은 참 좋습니더"
   },
   {
    "id": "review:61649a8de81b6ada",
@@ -516,19 +545,19 @@
    "ko": "골프 입문자로 추천받아서 구매하였네요.\n좋아요"
   },
   {
-   "id": "review:6e53d831e21cb322",
+   "id": "review:7a6b5c680a6ba307",
    "kind": "review",
-   "ko": "깔끔하고 초보자에게 부담되지 않는 무게로 세팅이 된 것 같아요. 잘 사용하겠습니다."
+   "ko": "깔끔하고 초보자에게 부담되지 않는 무게로 세팅이 된 것 같아요."
   },
   {
-   "id": "review:5c47c7615d7b3c3f",
+   "id": "review:b5f44facc01a1a2c",
    "kind": "review",
-   "ko": "아들 선물 해주었는데 너무 좋아하네요\n빽이 예뻐요^^"
+   "ko": "아들 선물 해주었는데 너무 좋아하네요\n빽이 예뻐요"
   },
   {
-   "id": "review:28e45589f833829c",
+   "id": "review:24e26b719ec04225",
    "kind": "review",
-   "ko": "통관세금 12만원쯤 나왔어요 \n생각보다 빨리 도착했습니다\n모두맘에 들어요정말 잘 샀어요 \n감사해요"
+   "ko": "모두맘에 들어요정말 잘 샀어요"
   }
  ]
 }

@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:100249211:6999516176",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "6 of 6 kept (full 3, short 3); 2 trimmed"
+  },
   {
    "code": "title_names_one_variant",
    "detail": "4종 스틸"
@@ -574,26 +578,38 @@
    {
     "id": "4701197618",
     "score": 5,
-    "text_ko": "가격 대비 퀄리티가 괜찮습니다.",
+    "text_ko": "퀄리티가 괜찮습니다.",
     "created_at": "2025-04-12T01:40:17Z",
     "writer": "sn****",
     "photos": [
      "collected/50002788-fixtures/images/6999516176/fairwardgolf-review-image-9c0bb09676028590.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 37,
+    "text_original_ko": "가격 대비 퀄리티가 괜찮습니다.",
+    "text_cut": [
+     "price"
+    ]
    },
    {
     "id": "4678260935",
     "score": 5,
-    "text_ko": "해외 배송이지만 빠르고 제품 퀄리티도 좋습니다.",
+    "text_ko": "제품 퀄리티도 좋습니다.",
     "created_at": "2025-03-10T03:22:12Z",
     "writer": "sn****",
     "photos": [
      "collected/50002788-fixtures/images/6999516176/fairwardgolf-review-image-9c0bb09676028590.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 37,
+    "text_original_ko": "해외 배송이지만 빠르고 제품 퀄리티도 좋습니다.",
+    "text_cut": [
+     "shipping"
+    ]
    },
    {
     "id": "4323364560",
@@ -606,12 +622,14 @@
      "collected/50002788-fixtures/images/6999516176/fairwardgolf-review-image-7ee2a6d13cc7f394.webp"
     ],
     "avatar": "collected/50002788-fixtures/images/6999516176/fairwardgolf-review-avatar-88df82d436932fea.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 18
    },
    {
     "id": "4302483544",
     "score": 5,
-    "text_ko": "남친 생일선물로 사줬네요. 잘쳐서 백돌이 탈출해야죠^^",
+    "text_ko": "남친 생일선물로 사줬네요. 잘쳐서 백돌이 탈출해야죠",
     "created_at": "2023-07-30T14:03:06Z",
     "writer": "love****",
     "photos": [
@@ -620,7 +638,10 @@
      "collected/50002788-fixtures/images/6999516176/fairwardgolf-review-image-2ced497169668e5f.webp"
     ],
     "avatar": "collected/50002788-fixtures/images/6999516176/fairwardgolf-review-avatar-88df82d436932fea.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 40,
+    "text_original_ko": "남친 생일선물로 사줬네요. 잘쳐서 백돌이 탈출해야죠^^"
    },
    {
     "id": "4156653284",
@@ -630,17 +651,22 @@
     "writer": "eldr*******",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 2
    },
    {
     "id": "4122264100",
     "score": 5,
-    "text_ko": "정말좋네요감사합니다^^~~",
+    "text_ko": "정말좋네요감사합니다",
     "created_at": "2022-11-09T22:24:36Z",
     "writer": "eldr*******",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 2,
+    "text_original_ko": "정말좋네요감사합니다^^~~"
    }
   ],
   "images": [
@@ -956,14 +982,14 @@
    "ko": "말렛(반달형)"
   },
   {
-   "id": "review:e83b2b58a434bb44",
+   "id": "review:fca0a0287854b3f2",
    "kind": "review",
-   "ko": "가격 대비 퀄리티가 괜찮습니다."
+   "ko": "퀄리티가 괜찮습니다."
   },
   {
-   "id": "review:010478099bfbfee4",
+   "id": "review:6f44d38f945e0421",
    "kind": "review",
-   "ko": "해외 배송이지만 빠르고 제품 퀄리티도 좋습니다."
+   "ko": "제품 퀄리티도 좋습니다."
   },
   {
    "id": "review:8eb234db2f765cd7",
@@ -971,9 +997,9 @@
    "ko": "선물로 줬는데 맘에 들어해요"
   },
   {
-   "id": "review:f391daac218febb2",
+   "id": "review:270af31e9cf4b407",
    "kind": "review",
-   "ko": "남친 생일선물로 사줬네요. 잘쳐서 백돌이 탈출해야죠^^"
+   "ko": "남친 생일선물로 사줬네요. 잘쳐서 백돌이 탈출해야죠"
   },
   {
    "id": "review:8b004c5d4382ae65",
@@ -981,9 +1007,9 @@
    "ko": "최고에요 정말좋네요"
   },
   {
-   "id": "review:65b6ee8dca0d3fbb",
+   "id": "review:5d1e89df209c3c27",
    "kind": "review",
-   "ko": "정말좋네요감사합니다^^~~"
+   "ko": "정말좋네요감사합니다"
   }
  ]
 }

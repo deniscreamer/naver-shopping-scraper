@@ -84,6 +84,28 @@ def check_ocr():
                if absent else ", Korean models present"))
 
 
+def check_translation():
+    """translate.py: the anthropic and openai packages and the key file (TRANSLATE_KEY_FILE: 0600, ignored by git). A
+    WARN only: --offline and the other scripts work without it. The keys are read to check they are there, never
+    printed; no call."""
+    missing = [p for p in ("anthropic", "openai") if importlib.util.find_spec(p) is None]
+    if missing:
+        report("WARN", "translation (translate.py)", f"missing: {', '.join(missing)}: pip install -r "
+               "scripts/requirements.txt")
+        return
+    from translate import TranslateError, build_chain, keys_from_env
+    from translate_keys import looks_right
+    try:
+        keys = keys_from_env()
+        wrong = looks_right(keys)
+        chain = " -> ".join(m.name for m in build_chain(keys).models)
+        report("WARN" if wrong or len(keys) < 2 else "OK", "translation (translate.py)",
+               f"chain {chain}" + (f"; check {', '.join(wrong)}" if wrong else "")
+               + ("" if len(keys) == 2 else f"; only {', '.join(keys)}: no fallback"))
+    except TranslateError as e:
+        report("WARN", "translation (translate.py)", str(e))
+
+
 def check_photos():
     """scripts/requirements.txt: Pillow with WebP (image_prep.py) and a known SHOP_STORE (shop_stores.py)."""
     try:
@@ -94,6 +116,7 @@ def check_photos():
     except ImportError:
         report("FAIL", "Pillow with WebP (photo scripts)", "missing: pip install -r scripts/requirements.txt")
     check_ocr()
+    check_translation()
     from shop_stores import get_store
     try:
         store = get_store()

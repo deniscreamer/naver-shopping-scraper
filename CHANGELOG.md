@@ -5,6 +5,41 @@ version in `extension/manifest.json`.
 
 ## Unreleased
 
+- Reviews sanitized in the transform (`review_clean.py`, the owner 2026-11-08; `prepared/4`).
+  - **Kept:** every review and its score; only sponsored ones are dropped.
+  - **Cut** as whole clauses that never cross a product word: shipping, customs, Korean prices, the seller and
+    service, packing, gifts, platforms, thanks and other filler, emoji, emoticons.
+  - **Graded:** `text_grade` full / short / rating_only, plus `text_quality`.
+  - **Patterns:** mined by agents on 666 real reviews, now a test fixture.
+  - **On the 143 trial sets:** 448 of 448 kept.
+- `translate_eval.py`: the quality check (a varied sample translated with empty dictionaries, judged by a second
+  model, a side-by-side report). `scripts/TRANSLATION.md`: decisions, a new shop or category, limits, open items.
+- The job translates: `job.py` takes each product to translated, right after prepare (a job made with
+  `--no-translate`, or before, stops at prepared). The model is asked only for that product. A product left
+  untranslated is `failed` and tried again; every provider down stops the run. Quality rounds with a judge model:
+  10 of 260 texts flagged (3.8%).
+- Translation tokens: compact requests (short batch ids, no repeated glossary, vendors only with a brand), no
+  thinking by default (`ANTHROPIC_TRANSLATE_THINKING`). Reviews are written as an American buyer would write them;
+  titles drop the Korean distributor and add no name. A 브랜드 / 제조사 row takes the shop's vendor spelling.
+- Translation in batches: a product's short texts by 40 items / 2 500 characters, its reviews apart by 8 / 2 500.
+  Each batch is its own conversation with checks, fixes and fallback, and every id is checked at the end. The system
+  prompt is the translator's role plus the shop's brief (`prompts/tenants/`) plus the category's brief
+  (`prompts/categories/`).
+- Translation (the owner, 2026-11-08): `translate.py` translates the prepared `texts` into English through Claude
+  Sonnet 5.5 (effort low, JSON output). The texts are resolved in this order:
+  - the product's own store (title, reviews, placeholder option names);
+  - one dictionary per kind (`translation_dicts.py`: live copies out of git, backups in `scripts/dictionaries/`
+    updated by hand);
+  - unit rules and 노브랜드 -> the tenant's name (`translation_rules.py`);
+  - the model, one request per product.
+
+  Every answer is checked for ids, Hangul, numbers, codes, length and distinct option values. Failures are asked
+  again in the same conversation, at most twice. OpenAI is the fallback when Anthropic is down (Anthropic then rests 10
+  minutes) or declines a batch. The prompts are in `scripts/prompts/`. The keys are in one 600,
+  git-ignored file named by `TRANSLATE_KEY_FILE`, installed by `translate_keys.py install <file>`. The models,
+  efforts and chain order are `.env` settings (`TRANSLATE_PROVIDERS`, `*_TRANSLATE_MODEL`, `*_TRANSLATE_EFFORT`).
+  The description and the images' text are not translated. New
+  dependencies: `anthropic`, `openai`. Tests: `test_translate.py`, offline with fake models.
 - Fixes from the quality check of the 100-product run (2026-11-08, 19 suspicious products re-read via
   /products/page): the images' text keeps the spec sheet a cross-sell sentence used to cut (a cut starts only at a
   heading), keeps table headings and rows repeated in other tables (a repeat is only a slice overlap for short and

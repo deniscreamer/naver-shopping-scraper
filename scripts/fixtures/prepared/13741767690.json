@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:101776803:13741767690",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "3 of 3 kept (full 3); 1 trimmed"
+  },
   {
    "code": "gift_hidden",
    "detail": "마루망 2W 퍼터 사은품 증정!!!"
@@ -3041,29 +3045,40 @@
     "writer": "duda*****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 24
    },
    {
     "id": "5090096888",
     "score": 5,
-    "text_ko": "거리도 기존보다 더나가고\n공이  잘 맞아요",
+    "text_ko": "거리도 기존보다 더나가고\n공이 잘 맞아요",
     "created_at": "2026-10-23T12:35:11Z",
     "writer": "saeg****",
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/13741767690/fairwardgolf-review-avatar-80428448b0e5cdf2.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 24,
+    "text_original_ko": "거리도 기존보다 더나가고\n공이  잘 맞아요"
    },
    {
     "id": "5067589883",
     "score": 5,
-    "text_ko": "빠른 배송 최고\n너무이쁘네요.\n와이프 선물이데 아주 맘에 들어합니다.\n^^",
+    "text_ko": "최고\n너무이쁘네요.\n와이프 선물이데 아주 맘에 들어합니다.",
     "created_at": "2026-09-18T07:56:51Z",
     "writer": "saeg****",
     "photos": [
      "collected/50002788-fixtures/images/13741767690/fairwardgolf-review-image-36cb248c1e2e81ca.webp"
     ],
     "avatar": "collected/50002788-fixtures/images/13741767690/fairwardgolf-review-avatar-80428448b0e5cdf2.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 41,
+    "text_original_ko": "빠른 배송 최고\n너무이쁘네요.\n와이프 선물이데 아주 맘에 들어합니다.\n^^",
+    "text_cut": [
+     "shipping"
+    ]
    }
   ],
   "images": [
@@ -3406,14 +3421,14 @@
    "ko": "초보용으로 샀는데 잘산것같아요 만족합니다"
   },
   {
-   "id": "review:9ab4d7a66f3c8eae",
+   "id": "review:cfdd410f828909f1",
    "kind": "review",
-   "ko": "거리도 기존보다 더나가고\n공이  잘 맞아요"
+   "ko": "거리도 기존보다 더나가고\n공이 잘 맞아요"
   },
   {
-   "id": "review:01fd88135ebe3d69",
+   "id": "review:891ea1dce0f54f4c",
    "kind": "review",
-   "ko": "빠른 배송 최고\n너무이쁘네요.\n와이프 선물이데 아주 맘에 들어합니다.\n^^"
+   "ko": "최고\n너무이쁘네요.\n와이프 선물이데 아주 맘에 들어합니다."
   }
  ]
 }

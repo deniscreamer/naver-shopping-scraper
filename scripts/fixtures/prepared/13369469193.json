@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:500000592:13369469193",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "5 of 5 kept (full 2, short 3); 0 trimmed"
+  },
   {
    "code": "specs_stated_by_variants",
    "detail": "드라이버 로프트각 10.5도: each variant states its own value (10.5도, 9.5도)"
@@ -530,14 +534,17 @@
    {
     "id": "5041151063",
     "score": 5,
-    "text_ko": "사용해보니 좋아요 \n강추",
+    "text_ko": "사용해보니 좋아요\n강추",
     "created_at": "2026-08-11T11:50:31Z",
     "writer": "do****",
     "photos": [
      "collected/50002788-fixtures/images/13369469193/fairwardgolf-review-image-e5ba8330461f4367.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 17,
+    "text_original_ko": "사용해보니 좋아요 \n강추"
    },
    {
     "id": "5016339877",
@@ -549,7 +556,9 @@
      "collected/50002788-fixtures/images/13369469193/fairwardgolf-review-image-1b86659132720fdd.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 23
    },
    {
     "id": "5007647167",
@@ -561,12 +570,14 @@
      "collected/50002788-fixtures/images/13369469193/fairwardgolf-review-image-db6c094e9a9aad8a.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 17
    },
    {
     "id": "4973640798",
     "score": 4,
-    "text_ko": "제품 너무 좋내요 기대이상입니다.  좋은제품 감사합니다.^^ 근데저는 가방 포함된줄 알앗는데 그건 아니더라고요. 그부분은 살짝 아쉽네요",
+    "text_ko": "제품 너무 좋내요 기대이상입니다. 좋은제품 감사합니다. 근데저는 가방 포함된줄 알앗는데 그건 아니더라고요. 그부분은 살짝 아쉽네요",
     "created_at": "2026-05-11T05:46:34Z",
     "writer": "a_78***",
     "photos": [
@@ -574,7 +585,10 @@
      "collected/50002788-fixtures/images/13369469193/fairwardgolf-review-image-83327054b1eef5c6.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 48,
+    "text_original_ko": "제품 너무 좋내요 기대이상입니다.  좋은제품 감사합니다.^^ 근데저는 가방 포함된줄 알앗는데 그건 아니더라고요. 그부분은 살짝 아쉽네요"
    },
    {
     "id": "4961627555",
@@ -587,7 +601,9 @@
      "collected/50002788-fixtures/images/13369469193/fairwardgolf-review-image-398c64a91d0d5278.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 41
    }
   ],
   "images": [
@@ -1050,9 +1066,9 @@
    "ko": "대형"
   },
   {
-   "id": "review:bc68d156cbae47a7",
+   "id": "review:c37a174c25a0561f",
    "kind": "review",
-   "ko": "사용해보니 좋아요 \n강추"
+   "ko": "사용해보니 좋아요\n강추"
   },
   {
    "id": "review:2a607370d69a2852",
@@ -1065,9 +1081,9 @@
    "ko": "좋아요 적극추천합니다"
   },
   {
-   "id": "review:162cfb0dcbc9b21a",
+   "id": "review:c92b43a6ae443688",
    "kind": "review",
-   "ko": "제품 너무 좋내요 기대이상입니다.  좋은제품 감사합니다.^^ 근데저는 가방 포함된줄 알앗는데 그건 아니더라고요. 그부분은 살짝 아쉽네요"
+   "ko": "제품 너무 좋내요 기대이상입니다. 좋은제품 감사합니다. 근데저는 가방 포함된줄 알앗는데 그건 아니더라고요. 그부분은 살짝 아쉽네요"
   },
   {
    "id": "review:e7cf767c2f2f3016",

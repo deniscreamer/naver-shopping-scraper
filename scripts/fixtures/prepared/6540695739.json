@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:500173121:6540695739",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "8 of 8 kept (full 1, rating_only 2, short 5); 3 trimmed"
+  },
   {
    "code": "description_tiles_include_banners",
    "detail": "gkeksqpsj.jpg"
@@ -207,66 +211,99 @@
    {
     "id": "4971480049",
     "score": 5,
-    "text_ko": "좋아여 잘쓸꼐요 ㅎㅎㅎ",
+    "text_ko": "좋아여 잘쓸꼐요",
     "created_at": "2026-05-08T07:58:56Z",
     "writer": "jtgs*****",
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/6540695739/fairwardgolf-review-avatar-92ce57e1d2c9ad65.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 1,
+    "text_original_ko": "좋아여 잘쓸꼐요 ㅎㅎㅎ"
    },
    {
     "id": "4859635371",
     "score": 5,
-    "text_ko": "빠른배송 고맙습니다",
+    "text_ko": "",
     "created_at": "2025-12-10T10:31:24Z",
     "writer": "l6****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "rating_only",
+    "text_quality": 0,
+    "text_original_ko": "빠른배송 고맙습니다",
+    "text_cut": [
+     "shipping"
+    ]
    },
    {
     "id": "4763866069",
     "score": 5,
-    "text_ko": "안전하게 포장되어 와요",
+    "text_ko": "",
     "created_at": "2025-07-14T15:35:03Z",
     "writer": "good****",
     "photos": [
      "collected/50002788-fixtures/images/6540695739/fairwardgolf-review-image-2a788045024d831c.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "rating_only",
+    "text_quality": 15,
+    "text_original_ko": "안전하게 포장되어 와요",
+    "text_cut": [
+     "packing"
+    ]
    },
    {
     "id": "4316153572",
     "score": 4,
-    "text_ko": "배송이 빨라서 좋았고 제품이 마음에 들었어요",
+    "text_ko": "좋았고 제품이 마음에 들었어요",
     "created_at": "2023-08-21T05:07:02Z",
     "writer": "powe********",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 3,
+    "text_original_ko": "배송이 빨라서 좋았고 제품이 마음에 들었어요",
+    "text_cut": [
+     "shipping"
+    ]
    },
    {
     "id": "4286479324",
     "score": 5,
-    "text_ko": "처음 시작하는 딸한테 선물함.\n가성비좋고 쓸만합니다.",
+    "text_ko": "처음 시작하는 딸한테 선물함.\n쓸만합니다.",
     "created_at": "2023-07-05T11:35:40Z",
     "writer": "an****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 4,
+    "text_original_ko": "처음 시작하는 딸한테 선물함.\n가성비좋고 쓸만합니다.",
+    "text_cut": [
+     "price"
+    ]
    },
    {
     "id": "4274854322",
     "score": 5,
-    "text_ko": "배송하루만에 받았어요너무예쁘네요",
+    "text_ko": "너무예쁘네요",
     "created_at": "2023-06-17T07:03:53Z",
     "writer": "ssar*****",
     "photos": [
      "collected/50002788-fixtures/images/6540695739/fairwardgolf-review-image-ddd2de1f6a5e3dd0.webp"
     ],
     "avatar": "collected/50002788-fixtures/images/6540695739/fairwardgolf-review-avatar-e0b3d3ef2e50ecaa.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 36,
+    "text_original_ko": "배송하루만에 받았어요너무예쁘네요",
+    "text_cut": [
+     "shipping"
+    ]
    },
    {
     "id": "4121224509",
@@ -276,7 +313,9 @@
     "writer": "mpda****",
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/6540695739/fairwardgolf-review-avatar-8b7828f9b762c52d.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 2
    },
    {
     "id": "4094427076",
@@ -288,7 +327,9 @@
      "collected/50002788-fixtures/images/6540695739/fairwardgolf-review-image-a28d1f7814e852ed.webp"
     ],
     "avatar": "collected/50002788-fixtures/images/6540695739/fairwardgolf-review-avatar-8b7828f9b762c52d.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 17
    }
   ],
   "images": [
@@ -494,34 +535,24 @@
    "ko": "미포함"
   },
   {
-   "id": "review:b18cfd8e20c89b7a",
+   "id": "review:13f2f335059b7d70",
    "kind": "review",
-   "ko": "좋아여 잘쓸꼐요 ㅎㅎㅎ"
+   "ko": "좋아여 잘쓸꼐요"
   },
   {
-   "id": "review:51cadd064e323072",
+   "id": "review:016dc2feb850bdbc",
    "kind": "review",
-   "ko": "빠른배송 고맙습니다"
+   "ko": "좋았고 제품이 마음에 들었어요"
   },
   {
-   "id": "review:d96e79624ee5fa46",
+   "id": "review:3090dba72ef5b82d",
    "kind": "review",
-   "ko": "안전하게 포장되어 와요"
+   "ko": "처음 시작하는 딸한테 선물함.\n쓸만합니다."
   },
   {
-   "id": "review:80a18f0befb817ac",
+   "id": "review:da111f2ed2a4a66f",
    "kind": "review",
-   "ko": "배송이 빨라서 좋았고 제품이 마음에 들었어요"
-  },
-  {
-   "id": "review:34112003bf247ef1",
-   "kind": "review",
-   "ko": "처음 시작하는 딸한테 선물함.\n가성비좋고 쓸만합니다."
-  },
-  {
-   "id": "review:ddfa254b4e796c3d",
-   "kind": "review",
-   "ko": "배송하루만에 받았어요너무예쁘네요"
+   "ko": "너무예쁘네요"
   },
   {
    "id": "review:0cd6c72d267d0a76",

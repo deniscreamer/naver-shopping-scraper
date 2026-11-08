@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:100117142:13553116678",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "2 of 2 kept (full 1, short 1); 0 trimmed"
+  },
   {
    "code": "title_names_one_variant",
    "detail": "5W, 4U"
@@ -1059,19 +1063,24 @@
      "collected/50002788-fixtures/images/13553116678/fairwardgolf-review-image-09b0390599a8b2a5.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 17
    },
    {
     "id": "5093443670",
     "score": 5,
-    "text_ko": "와이프가 갖고싶다해서\n선물했는데.좋다고하네요\n헤드랑샤프트 이쁘네요",
+    "text_ko": "와이프가 갖고싶다해서\n선물했는데. 좋다고하네요\n헤드랑샤프트 이쁘네요",
     "created_at": "2026-10-28T12:56:54Z",
     "writer": "oh****",
     "photos": [
      "collected/50002788-fixtures/images/13553116678/fairwardgolf-review-image-bd135d8e7c68c773.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 82,
+    "text_original_ko": "와이프가 갖고싶다해서\n선물했는데.좋다고하네요\n헤드랑샤프트 이쁘네요"
    }
   ],
   "images": [
@@ -1228,9 +1237,9 @@
    "ko": "최고입니다. 너무 좋아요."
   },
   {
-   "id": "review:a2f06e81f622ac71",
+   "id": "review:76638f0adb1258f3",
    "kind": "review",
-   "ko": "와이프가 갖고싶다해서\n선물했는데.좋다고하네요\n헤드랑샤프트 이쁘네요"
+   "ko": "와이프가 갖고싶다해서\n선물했는데. 좋다고하네요\n헤드랑샤프트 이쁘네요"
   }
  ]
 }

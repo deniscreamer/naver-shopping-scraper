@@ -1,9 +1,9 @@
 # Running a job (for the agent)
 
-A job takes one listing and works product by product: collect -> description images (OCR) -> prepare, then the next
-product. It resumes where it stopped. Translation, placement and publication are later stages (named in `job.py
-STAGES`): you, the agent of the session, will translate (not built yet); placement (`placement.py <shop>`, the
-shop's sections) is built and runs on the whole shop after the job; publication goes straight to ACTIVE after it. Code and
+A job takes one listing and works product by product: collect -> description images (OCR) -> prepare (reviews
+sanitized) -> translate (the model API, `translate.py`; a job made with `new --no-translate`, or before 2026-11-08,
+stops at prepare), then the next product. It resumes where it stopped. Placement (`placement.py <shop>`, the shop's
+sections) runs on the whole shop after the job; publication (not built yet) goes straight to ACTIVE after it. Code and
 files: `scripts/job.py` docstring; the stages' own docs: [README.md](README.md).
 
 ## Before
@@ -11,6 +11,7 @@ files: `scripts/job.py` docstring; the stages' own docs: [README.md](README.md).
 - Server running (`.venv/bin/python server/run.py`), `/health` shows `extension: connected` (Chrome open with the
   adapter), `SHOP_STORE` set, the category has a row in `category_measures.json` (no row: ask the owner).
 - No other job, listing or description_images run at the same time (one Chrome, one OCR lock per shop).
+- For translation: `scripts/translate_keys.py check` shows the keys (SETUP.md); `run` stops at once without them.
 
 ## Loop
 
@@ -27,6 +28,10 @@ not the logs. The log has one line when a product starts, one when it is done (w
 `== progress:` line every 10 products (prepared of the target, ready / held / closed / failed, time a product,
 time left): a watcher can relay those lines to the owner. `run` again after any stop: nothing is
 lost, done products are not read again.
+
+Translation per product: each done line ends with `translated (N calls, $cost)`. A product the model could not
+translate is `failed` (stage translate, the problems in the event) and is tried again after the fresh ones; every
+provider down stops the run (`run` again resumes; nothing is asked twice).
 
 ## What stops, and who acts
 

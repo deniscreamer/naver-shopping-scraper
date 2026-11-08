@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:100342675:13446843026",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "1 of 1 kept (full 1); 0 trimmed"
+  },
   {
    "code": "measures_from_images",
    "detail": "package_height_mm 1/1, package_width_mm 1/1"
@@ -225,7 +229,9 @@
      "collected/50002788-fixtures/images/13446843026/fairwardgolf-review-image-e0aff7555791f3bc.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 81
    }
   ],
   "images": [

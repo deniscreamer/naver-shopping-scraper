@@ -198,3 +198,80 @@ def test_heartbeat_is_shown_only_while_the_runner_lives(tmp_path):
     with open(os.path.join(job.folder, "now.json"), "w") as f:
         json.dump({"pid": 999_999_999, "stage": "collect"}, f)
     assert job.now() is None
+
+
+# ---- the translate stage (offline: a fake model) --------------------------------------------------------------
+
+def _translating_job(tmp_path, statuses=None):
+    """A job taken to translated, its products prepared from fixtures, translated.jsonl with the given statuses."""
+    from test_translate import fixture, FIXTURES
+    job = make_job(tmp_path)
+    job.meta["translate"] = True
+    job.save_meta()
+    products = []
+    for key, name in zip(KEYS, FIXTURES):
+        p = fixture(name)
+        products.append({**p, "key": key})
+    shop = tmp_path / "shops" / SHOP
+    (shop / "prepared").mkdir(parents=True)
+    (shop / "prepared" / "products.jsonl").write_text(
+        "".join(json.dumps(p, ensure_ascii=False) + "\n" for p in products), encoding="utf-8")
+    if statuses:
+        (shop / "translation").mkdir()
+        (shop / "translation" / "translated.jsonl").write_text(
+            "".join(json.dumps({"key": k, "status": s}) + "\n" for k, s in statuses.items()), encoding="utf-8")
+    return job
+
+
+def test_a_job_without_the_flag_stops_at_prepared(tmp_path):
+    job = make_job(tmp_path)
+    assert job.final == "prepared" and J.next_key(job, {k: "prepared" for k in KEYS}) is None
+
+
+def test_a_translating_job_takes_prepared_products_on(tmp_path):
+    job = _translating_job(tmp_path)
+    assert job.final == "translated"
+    assert J.next_key(job, {KEYS[0]: "translated", KEYS[1]: "prepared"}) == KEYS[1]
+
+
+def test_translate_one_closes_fails_or_stops(tmp_path, monkeypatch):
+    import translate as T
+    from test_translate import FakeModel
+    import translation_dicts as D
+    monkeypatch.setattr(D, "LIVE_ROOT", str(tmp_path / "live"))              # the job's run uses the live default
+    monkeypatch.setattr(T, "Dictionaries", lambda: D.Dictionaries(str(tmp_path / "live")))
+    job = _translating_job(tmp_path)
+    what = J.translate_one(job, {"translator": T.Chain([FakeModel()])}, KEYS[0])
+    assert what.startswith("translated (") and [e["event"] for e in job.events()] == ["translated"]
+    rows = [json.loads(x) for x in open(tmp_path / "shops" / SHOP / "translation" / "translated.jsonl")]
+    assert {r["key"]: r["status"] for r in rows}[KEYS[1]] == "pending"       # only the one product was asked
+
+    def korean(items):
+        from test_translate import answer
+        return answer(items, lambda rows: [{**r, "en": "레드"} for r in rows])
+    what = J.translate_one(job, {"translator": T.Chain([FakeModel(korean)])}, KEYS[1])
+    assert what.startswith("translate failed") and job.events()[-1]["event"] == "failed"
+
+    class Down:
+        name = "down"
+
+        def send(self, system, messages):
+            raise T.ProviderDown("overloaded")
+    with pytest.raises(J.Stop, match="no provider answered"):
+        J.translate_one(job, {"translator": T.Chain([Down()])}, KEYS[2])
+
+
+def test_stages_read_the_translation(tmp_path, monkeypatch):
+    job = _translating_job(tmp_path, {KEYS[0]: "translated", KEYS[1]: "untranslated", KEYS[2]: "held"})
+    (tmp_path / "shops" / SHOP / "collected").mkdir()
+    monkeypatch.setattr("run_transform.latest_lines", lambda *a, **k: {k: (None, None, {}) for k in KEYS})
+    got = J.stages(job)
+    assert got == {KEYS[0]: "translated", KEYS[1]: "prepared", KEYS[2]: "translated"}   # held: nothing to translate
+
+
+def test_a_job_without_translation_never_reads_translated(tmp_path, monkeypatch):
+    job = _translating_job(tmp_path, {KEYS[0]: "translated"})
+    job.meta["translate"] = False
+    (tmp_path / "shops" / SHOP / "collected").mkdir()
+    monkeypatch.setattr("run_transform.latest_lines", lambda *a, **k: {k: (None, None, {}) for k in KEYS})
+    assert J.stages(job)[KEYS[0]] == "prepared"

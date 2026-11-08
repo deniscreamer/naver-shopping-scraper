@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:101878037:13734679551",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "4 of 4 kept (full 4); 3 trimmed"
+  },
   {
    "code": "measures_from_images",
    "detail": "package_height_mm 2/2, package_width_mm 2/2"
@@ -324,50 +328,71 @@
    {
     "id": "5085475446",
     "score": 5,
-    "text_ko": "이제 골프 입문한 초보한테 너무 잘맞는 제품입니다\n디자인도 너무 예쁘구요 가볍구 구성도 알찹니다\n가격대도 너무 착하네요",
+    "text_ko": "이제 골프 입문한 초보한테 너무 잘맞는 제품입니다\n디자인도 너무 예쁘구요 가볍구 구성도 알찹니다",
     "created_at": "2026-10-16T20:12:39Z",
     "writer": "lsm2*****",
     "photos": [
      "collected/50002788-fixtures/images/13734679551/fairwardgolf-review-image-c6fee89d5a103747.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 85,
+    "text_original_ko": "이제 골프 입문한 초보한테 너무 잘맞는 제품입니다\n디자인도 너무 예쁘구요 가볍구 구성도 알찹니다\n가격대도 너무 착하네요",
+    "text_cut": [
+     "price"
+    ]
    },
    {
     "id": "5084642977",
     "score": 5,
-    "text_ko": "디자인도 이쁘고 가성비 최고인 클럽 입니다.",
+    "text_ko": "디자인도 이쁘고 최고인 클럽 입니다.",
     "created_at": "2026-10-15T13:26:21Z",
     "writer": "01****",
     "photos": [
      "collected/50002788-fixtures/images/13734679551/fairwardgolf-review-image-2f099fe3719c6e7d.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 78,
+    "text_original_ko": "디자인도 이쁘고 가성비 최고인 클럽 입니다.",
+    "text_cut": [
+     "price"
+    ]
    },
    {
     "id": "5083103075",
     "score": 5,
-    "text_ko": "가방도 이쁘고 무엇보다 구성도 너무좋아요!  하나하나 확인해보니 상태도 매우 훌룡합니다!",
+    "text_ko": "가방도 이쁘고 무엇보다 구성도 너무좋아요! 하나하나 확인해보니 상태도 매우 훌룡합니다!",
     "created_at": "2026-10-13T14:06:01Z",
     "writer": "kjhs******",
     "photos": [
      "collected/50002788-fixtures/images/13734679551/fairwardgolf-review-image-a1b49d9e838887a1.webp"
     ],
     "avatar": "collected/50002788-fixtures/images/13734679551/fairwardgolf-review-avatar-7a6e12a134971b10.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 84,
+    "text_original_ko": "가방도 이쁘고 무엇보다 구성도 너무좋아요!  하나하나 확인해보니 상태도 매우 훌룡합니다!"
    },
    {
     "id": "5075505469",
     "score": 5,
-    "text_ko": "힘있는 여성 입문자를 위해 선물했습니다\n실물이 너무 이쁘고\n무엇보다 로켓배송급이네요",
+    "text_ko": "힘있는 여성 입문자를 위해 선물했습니다\n실물이 너무 이쁘고",
     "created_at": "2026-10-01T22:47:29Z",
     "writer": "ehgh*******",
     "photos": [
      "collected/50002788-fixtures/images/13734679551/fairwardgolf-review-image-f12747c3707ecbdb.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 81,
+    "text_original_ko": "힘있는 여성 입문자를 위해 선물했습니다\n실물이 너무 이쁘고\n무엇보다 로켓배송급이네요",
+    "text_cut": [
+     "shipping"
+    ]
    }
   ],
   "images": [
@@ -665,24 +690,24 @@
    "ko": "화이트"
   },
   {
-   "id": "review:a54a89a78c4222e7",
+   "id": "review:725e1492450c28c1",
    "kind": "review",
-   "ko": "이제 골프 입문한 초보한테 너무 잘맞는 제품입니다\n디자인도 너무 예쁘구요 가볍구 구성도 알찹니다\n가격대도 너무 착하네요"
+   "ko": "이제 골프 입문한 초보한테 너무 잘맞는 제품입니다\n디자인도 너무 예쁘구요 가볍구 구성도 알찹니다"
   },
   {
-   "id": "review:b3b5b2c7db82a938",
+   "id": "review:f8a7fac07018da47",
    "kind": "review",
-   "ko": "디자인도 이쁘고 가성비 최고인 클럽 입니다."
+   "ko": "디자인도 이쁘고 최고인 클럽 입니다."
   },
   {
-   "id": "review:47adaf3239850a1d",
+   "id": "review:a5fc578fc494ff01",
    "kind": "review",
-   "ko": "가방도 이쁘고 무엇보다 구성도 너무좋아요!  하나하나 확인해보니 상태도 매우 훌룡합니다!"
+   "ko": "가방도 이쁘고 무엇보다 구성도 너무좋아요! 하나하나 확인해보니 상태도 매우 훌룡합니다!"
   },
   {
-   "id": "review:a55fb73a725fd940",
+   "id": "review:f2b4b09347c83d4f",
    "kind": "review",
-   "ko": "힘있는 여성 입문자를 위해 선물했습니다\n실물이 너무 이쁘고\n무엇보다 로켓배송급이네요"
+   "ko": "힘있는 여성 입문자를 위해 선물했습니다\n실물이 너무 이쁘고"
   }
  ]
 }

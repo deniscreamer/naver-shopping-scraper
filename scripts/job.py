@@ -21,8 +21,12 @@ Files, scripts/output/jobs/<job id>/:
 
 A product's stage is read from the files, not from the log: collected = its key in the shop's kept runs
 (run_transform.latest_lines); images = the category's switch off, or a current sidecar (description_images.current);
-prepared = its key in prepared/products.jsonl. Later stages are named in STAGES: translated and published are not
-built; placed is placement.py, built but run on the whole shop before publication, not per product by the job.
+prepared = its key in prepared/products.jsonl; translated = its key `translated` (or `held`: the transform held it,
+nothing to translate) in translation/translated.jsonl. A job created with translation (`new`, the default since
+2026-11-08; `--no-translate` leaves it out) takes each product to translated: right after it is prepared, through
+translate.py (only that product goes to the model; the chain and its fallback as there). A product the model could
+not translate is `failed` (tried again after the fresh ones, MAX_FAILS times); every provider down stops the run
+(`run` again resumes). Published is not built; placed is placement.py, run on the whole shop before publication.
 
 `new --count N` reads the listings deeper (batches doubled, up to MAX_BATCHES; a listing is read from the top
 every time) until N products pass the screen; when `run` uses up the snapshot with fewer than N prepared, it
@@ -53,7 +57,7 @@ SCRIPTS = os.path.dirname(os.path.abspath(__file__))
 JOBS_ROOT = os.path.join(SCRIPTS, "output", "jobs")
 STAGES = ("collected", "images", "prepared", "translated", "placed", "published")   # placed: placement.py, run on
                                                                                     # the shop before publication
-BUILT = ("collected", "images", "prepared")
+BUILT = ("collected", "images", "prepared", "translated")
 BUSY_WAIT_S, BUSY_TRIES = 30, 12
 ERROR_WAIT_S, ERROR_TRIES = 120, 2
 MAX_FAILS = 2
@@ -78,6 +82,12 @@ class Job:
             self.meta = json.load(f)
         self.shop, self.category = self.meta["shop"], self.meta["category"]
         self.shops_root = self.meta["shops_root"]
+
+    @property
+    def final(self) -> str:
+        """The stage a product of this job is taken to: translated, or prepared for a job without translation (and
+        for a job created before translation was built)."""
+        return "translated" if self.meta.get("translate") else "prepared"
 
     @property
     def id(self) -> str:
@@ -148,6 +158,12 @@ def stages(job: Job) -> dict[str, str]:
     if os.path.exists(path):
         with open(path, encoding="utf-8") as f:
             prepared = {json.loads(x)["key"] for x in f if x.strip()}
+    translated = set()
+    path = os.path.join(job.shops_root, job.shop, "translation", "translated.jsonl")
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            rows = [json.loads(x) for x in f if x.strip()]
+        translated = {r["key"] for r in rows if r.get("status") in ("translated", "held")}
     rules = rules_for(job.shop)
     out = {}
     for row in job.rows():
@@ -155,7 +171,7 @@ def stages(job: Job) -> dict[str, str]:
         if key not in latest:
             continue
         if key in prepared:                         # prepared also with the images' note (failed / partial)
-            out[key] = "prepared"
+            out[key] = "translated" if key in translated and job.final == "translated" else "prepared"
             continue
         out[key] = "collected"
         line = latest[key][2]
@@ -184,10 +200,10 @@ def closed(job: Job) -> dict[str, str]:
 
 
 def next_key(job: Job, done: dict[str, str]) -> str | None:
-    """The first snapshot key not prepared and not closed; fresh ones before those that failed once."""
+    """The first snapshot key not at the job's final stage and not closed; fresh ones before those that failed."""
     out = closed(job)
     failed = {e["key"] for e in job.events() if e["event"] == "failed"}
-    todo = [r["key"] for r in job.rows() if done.get(r["key"]) != "prepared" and r["key"] not in out]
+    todo = [r["key"] for r in job.rows() if done.get(r["key"]) != job.final and r["key"] not in out]
     fresh = [k for k in todo if k not in failed]
     return (fresh or todo or [None])[0]
 
@@ -270,7 +286,7 @@ def cmd_new(args: argparse.Namespace) -> int:
     meta = {"shop": store.id.value, "category": args.category, "queries": args.query, "paid": args.paid,
             "reviews": args.reviews, "shops_root": shops_root, "created_at": _now(), "count": args.count,
             "batches": batches, "listings": listings, "screen": counts, "excluded_known": len(known),
-            "exclude_known": args.exclude_known}
+            "exclude_known": args.exclude_known, "translate": not args.no_translate}
     with open(os.path.join(folder, "job.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=1)
     with open(os.path.join(folder, "listing.jsonl"), "w", encoding="utf-8") as f:
@@ -443,18 +459,46 @@ def one(job: Job, ctx: dict, key: str, stage_now: str | None, n: int = 0) -> str
         if r["counts"].get("errors"):
             job.log(key, "failed", stage="images", reason="description_images error sidecar")
     t2 = time.monotonic()
-    job.beat(key=key, n=n, stage="prepare", since=_now())
-    try:
-        run_transform.run(job.shop, None, job.shops_root)
-    except Exception as e:                                       # a transform defect: stop, never loop on it
-        raise Stop(f"prepare: {type(e).__name__}: {e}") from None
+    if stage_now != "prepared":
+        job.beat(key=key, n=n, stage="prepare", since=_now())
+        try:
+            run_transform.run(job.shop, None, job.shops_root)
+        except Exception as e:                                   # a transform defect: stop, never loop on it
+            raise Stop(f"prepare: {type(e).__name__}: {e}") from None
     done = {p["key"]: p for p in _prepared(job)}
     p = done.get(key)
-    job.log(key, "prepared", status=p and p["status"], held=[h["code"] for h in (p or {}).get("held") or []],
-            images_s=round(t2 - t1), prepare_s=round(time.monotonic() - t2))
-    times = f"collect {round(t1 - t0)} s, images {round(t2 - t1)} s, prepare {round(time.monotonic() - t2)} s"
-    return (f"prepared: {p and p['status']}" + (f" {[h['code'] for h in p['held']]}" if p and p["held"] else "")
-            + f" ({times})")
+    t3 = time.monotonic()
+    if stage_now != "prepared":
+        job.log(key, "prepared", status=p and p["status"], held=[h["code"] for h in (p or {}).get("held") or []],
+                images_s=round(t2 - t1), prepare_s=round(t3 - t2))
+    what = f"prepared: {p and p['status']}" + (f" {[h['code'] for h in p['held']]}" if p and p["held"] else "")
+    times = f"collect {round(t1 - t0)} s, images {round(t2 - t1)} s, prepare {round(t3 - t2)} s"
+    if job.final == "translated" and p:
+        job.beat(key=key, n=n, stage="translate", since=_now())
+        what += "; " + translate_one(job, ctx, key)
+        times += f", translate {round(time.monotonic() - t3)} s"
+    return f"{what} ({times})"
+
+
+def translate_one(job: Job, ctx: dict, key: str) -> str:
+    """The product through translate.py (only it goes to the model). -> what happened. A product the model could not
+    translate is `failed` (tried again later); every provider down stops the run."""
+    import translate
+    try:
+        r = translate.run(job.shop, ctx["translator"], job.shops_root, only=key)
+    except translate.TranslateError as e:                         # a refused key: nothing will work
+        raise Stop(f"translate: {e}") from None
+    rec = next((x for x in r["records"] if x["key"] == key), None)
+    status = rec and rec["status"]
+    calls, cost = (rec or {}).get("model_calls", 0), translate.cost(r["usage"])[0]
+    if status in ("translated", "held"):
+        job.log(key, "translated", status=status, calls=calls, provider=(rec or {}).get("provider"), cost=round(cost, 4))
+        return f"translated ({calls} calls, ${cost:.3f})" if status == "translated" else "translate: held, nothing"
+    problems = "; ".join(f"{p.get('id')}: {', '.join(p.get('problems') or [])}" for p in (rec or {}).get("problems", [])[:3])
+    if status == "pending" and "provider down" in problems:      # every provider down for a batch
+        raise Stop(f"translate: no provider answered: {problems}"[:300])
+    job.log(key, "failed", stage="translate", reason=problems[:300])
+    return f"translate failed: {problems}"[:200]
 
 
 def _prepared(job: Job) -> list[dict]:
@@ -477,6 +521,13 @@ def cmd_run(args: argparse.Namespace) -> int:
         return 2
     ctx = {"api": NaverApiClient(), "store": store, "table": load_table(), "catalog": ShopCatalog(store),
            "guard": CollectGuard(DeferredLog(store.id.value))}
+    if job.final == "translated":
+        import translate
+        try:
+            ctx["translator"] = translate.build_chain(translate.keys_from_env())
+        except translate.TranslateError as e:
+            print(f"stop: translation: {e} (a job without it: job.py new ... --no-translate)")
+            return 2
     taken = 0
     started = time.monotonic()
     print(f"job {job.id}: run ({len(job.rows())} products in the snapshot, target {job.meta.get('count') or 'all'})",
@@ -486,9 +537,9 @@ def cmd_run(args: argparse.Namespace) -> int:
         key = next_key(job, done)
         if key is None:
             target = job.meta.get("count") or 0
-            have = sum(1 for r in job.rows() if done.get(r["key"]) == "prepared")
+            have = sum(1 for r in job.rows() if done.get(r["key"]) == job.final)
             if target and have < target:
-                print(f"the snapshot is used up with {have} of {target} prepared: reading the listings deeper",
+                print(f"the snapshot is used up with {have} of {target} {job.final}: reading the listings deeper",
                       flush=True)
                 try:
                     added = refresh(job, ctx["api"], store, target - have)
@@ -500,7 +551,7 @@ def cmd_run(args: argparse.Namespace) -> int:
                 if added:
                     continue
             job.log(None, "done")
-            print("done: every product of the job is prepared or closed", flush=True)
+            print(f"done: every product of the job is {job.final} or closed", flush=True)
             break
         n = [r["key"] for r in job.rows()].index(key) + 1
         name = (next(r for r in job.rows() if r["key"] == key).get("name") or "")[:50]
@@ -532,8 +583,8 @@ def progress(job: Job, taken: int, seconds: float) -> str:
     st = s["stages"]
     target = job.meta.get("count") or s["products"]
     per = seconds / taken if taken else 0
-    left = max(target - st["prepared"], 0)
-    return (f"progress: {st['prepared']} of {target} prepared (ready {s['ready']}, held {len(s['held'])}), closed "
+    left = max(target - st[job.final], 0)
+    return (f"progress: {st[job.final]} of {target} {job.final} (ready {s['ready']}, held {len(s['held'])}), closed "
             f"{st['closed']}, failed once {len(s['failed_once'])}; this run {taken} in {round(seconds / 60)} min, "
             f"~{round(per)} s a product, ~{round(left * per / 60)} min left")
 
@@ -549,11 +600,11 @@ def summary(job: Job) -> dict[str, Any]:
         job.shops_root, job.shop, "prepared", "products.jsonl")) else []) if p["key"] in done and p["held"]}
     stops = [e for e in events if e["event"] == "stop"]
     ready = sum(1 for e in {e["key"]: e for e in events if e["event"] == "prepared"}.values()
-                if e.get("status") == "ready" and done.get(e["key"]) == "prepared")
+                if e.get("status") == "ready" and done.get(e["key"]) == job.final)
     now = job.now()
     return {"ready": ready, "running": now, "job": job.id, "shop": job.shop, "category": job.category, "products": len(job.rows()),
             "stages": {s: counts.get(s, 0) for s in ("queued",) + BUILT + ("closed",)},
-            "not_built": [s for s in STAGES if s not in BUILT], "closed": out, "held": held,
+            "final": job.final, "not_built": [s for s in STAGES if s not in BUILT], "closed": out, "held": held,
             "failed_once": sorted({e["key"] for e in events if e["event"] == "failed"} - set(out)),
             "last_stop": stops[-1] if stops else None, "next": next_key(job, done),
             "finished": bool(events) and events[-1]["event"] == "done"}
@@ -595,6 +646,7 @@ def main(argv: list[str] | None = None) -> int:
     n.add_argument("--reviews", type=int, default=20)
     n.add_argument("--exclude-known", action="store_true", help="leave out products collected before anywhere")
     n.add_argument("--shops-root", help="the shops folder (default scripts/output/shops)")
+    n.add_argument("--no-translate", action="store_true", help="stop each product at prepared (no model API)")
     r = sub.add_parser("run")
     r.add_argument("--job")
     r.add_argument("--items", type=int, default=0, help="stop after N products (0: to the end)")

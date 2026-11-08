@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:100112239:8978750961",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "2 of 2 kept (rating_only 1, short 1); 1 trimmed"
+  },
   {
    "code": "gift_hidden",
    "detail": "캘러웨이아이스백,볼빅비비드우드티,파우치,테일러메이드볼,오디세이디봇툴,볼빅마블모자(소진시대체품)"
@@ -186,22 +190,35 @@
    {
     "id": "4642700862",
     "score": 5,
-    "text_ko": "배송 빨라서 좋아요. 잘 쓰겠습니다.",
+    "text_ko": "좋아요.",
     "created_at": "2025-01-15T04:20:49Z",
     "writer": "bbo7*****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 0,
+    "text_original_ko": "배송 빨라서 좋아요. 잘 쓰겠습니다.",
+    "text_cut": [
+     "filler",
+     "shipping"
+    ]
    },
    {
     "id": "4604760386",
     "score": 5,
-    "text_ko": "빠른 배송 감사합니다",
+    "text_ko": "",
     "created_at": "2024-11-22T00:22:45Z",
     "writer": "bbo7*****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "rating_only",
+    "text_quality": 0,
+    "text_original_ko": "빠른 배송 감사합니다",
+    "text_cut": [
+     "shipping"
+    ]
    }
   ],
   "images": [
@@ -343,14 +360,9 @@
    "ko": "2023년형"
   },
   {
-   "id": "review:faace47703c166e3",
+   "id": "review:da29cc3d56f6057f",
    "kind": "review",
-   "ko": "배송 빨라서 좋아요. 잘 쓰겠습니다."
-  },
-  {
-   "id": "review:3e08913779791f34",
-   "kind": "review",
-   "ko": "빠른 배송 감사합니다"
+   "ko": "좋아요."
   }
  ]
 }

@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:100249211:6630856593",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "12 of 12 kept (full 2, rating_only 2, short 8); 4 trimmed"
+  },
   {
    "code": "specs_stated_by_variants",
    "detail": "총클럽개수 12개: each variant states its own value (4개, 12개); 아이언샤프트소재 그라파이트/카본: each variant states its own value (스틸, 카본)"
@@ -741,7 +745,9 @@
     "writer": "choi******",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 43
    },
    {
     "id": "4851863789",
@@ -753,31 +759,43 @@
      "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-image-6ac64ef5c8518a1c.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 24
    },
    {
     "id": "4831589171",
     "score": 5,
-    "text_ko": "연습용으로 좋습니다~^^",
+    "text_ko": "연습용으로 좋습니다",
     "created_at": "2025-10-30T12:32:31Z",
     "writer": "ac****",
     "photos": [
      "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-image-0eaa986ef6d2b5eb.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 17,
+    "text_original_ko": "연습용으로 좋습니다~^^"
    },
    {
     "id": "4829297366",
     "score": 3,
-    "text_ko": "배송이 생각보다 많이 늦고 문의시 답변 잘해주신거 같아요",
+    "text_ko": "",
     "created_at": "2025-10-27T06:15:52Z",
     "writer": "jinu***",
     "photos": [
      "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-image-a6635f90c972ac2f.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "rating_only",
+    "text_quality": 15,
+    "text_original_ko": "배송이 생각보다 많이 늦고 문의시 답변 잘해주신거 같아요",
+    "text_cut": [
+     "seller",
+     "shipping"
+    ]
    },
    {
     "id": "4810555653",
@@ -789,7 +807,9 @@
      "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-image-419c2676cce076bc.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 17
    },
    {
     "id": "4716568504",
@@ -799,17 +819,26 @@
     "writer": "gold*****",
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-avatar-322a15e2757d2d0e.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 3
    },
    {
     "id": "4692982177",
     "score": 5,
-    "text_ko": "배송 안전하게 잘받았습니다\n감사합니다 디자인도 좋아요",
+    "text_ko": "디자인도 좋아요",
     "created_at": "2025-03-31T05:20:53Z",
     "writer": "gold*****",
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-avatar-322a15e2757d2d0e.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 21,
+    "text_original_ko": "배송 안전하게 잘받았습니다\n감사합니다 디자인도 좋아요",
+    "text_cut": [
+     "filler",
+     "shipping"
+    ]
    },
    {
     "id": "4648000841",
@@ -821,49 +850,76 @@
      "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-image-5df85e91a7a86bea.webp"
     ],
     "avatar": "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-avatar-2c2157a470cfce4a.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 18
    },
    {
     "id": "4598084112",
     "score": 4,
-    "text_ko": "가격대비 좋아요,.",
+    "text_ko": "좋아요",
     "created_at": "2024-11-13T01:30:57Z",
     "writer": "neve*******",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 0,
+    "text_original_ko": "가격대비 좋아요,.",
+    "text_cut": [
+     "price"
+    ]
    },
    {
     "id": "4542860018",
     "score": 4,
-    "text_ko": "해외배송치고 빠르고 물건도 가성비 매우 좋아요!!",
+    "text_ko": "",
     "created_at": "2024-08-24T00:17:52Z",
     "writer": "toma******",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "rating_only",
+    "text_quality": 0,
+    "text_original_ko": "해외배송치고 빠르고 물건도 가성비 매우 좋아요!!",
+    "text_cut": [
+     "price",
+     "shipping"
+    ]
    },
    {
     "id": "4423079515",
     "score": 5,
-    "text_ko": "비용대비 너무 마음에 듭니다",
+    "text_ko": "너무 마음에 듭니다",
     "created_at": "2024-02-09T00:19:13Z",
     "writer": "jung*****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 2,
+    "text_original_ko": "비용대비 너무 마음에 듭니다",
+    "text_cut": [
+     "price"
+    ]
    },
    {
     "id": "4065916440",
     "score": 5,
-    "text_ko": "해외배송이라 오래걸릴까봐 걱정되었는데 배송도 생각보다 빨리왔고 상품상태도 만족스럽습니다^^",
+    "text_ko": "상품상태도 만족스럽습니다",
     "created_at": "2022-08-18T06:20:09Z",
     "writer": "wnst****",
     "photos": [
      "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-image-637d9bbf31172d08.webp"
     ],
     "avatar": "collected/50002788-fixtures/images/6630856593/fairwardgolf-review-avatar-154f3e86463778a5.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 18,
+    "text_original_ko": "해외배송이라 오래걸릴까봐 걱정되었는데 배송도 생각보다 빨리왔고 상품상태도 만족스럽습니다^^",
+    "text_cut": [
+     "shipping"
+    ]
    }
   ],
   "images": [
@@ -1217,14 +1273,9 @@
    "ko": "딱히 장소가 없어서 베란다에서 연습하고 있어요 나름만족하며 사용합니다 연습용 좋아요"
   },
   {
-   "id": "review:aac8eb97376d2969",
+   "id": "review:7c2ec2b4670f7006",
    "kind": "review",
-   "ko": "연습용으로 좋습니다~^^"
-  },
-  {
-   "id": "review:f25a0ffa2ad28a1b",
-   "kind": "review",
-   "ko": "배송이 생각보다 많이 늦고 문의시 답변 잘해주신거 같아요"
+   "ko": "연습용으로 좋습니다"
   },
   {
    "id": "review:ccc67a7c8e6081af",
@@ -1237,9 +1288,9 @@
    "ko": "잘 사용하고있답니다\n좋아요"
   },
   {
-   "id": "review:3528d2a317d5b371",
+   "id": "review:445a6631c164f6df",
    "kind": "review",
-   "ko": "배송 안전하게 잘받았습니다\n감사합니다 디자인도 좋아요"
+   "ko": "디자인도 좋아요"
   },
   {
    "id": "review:56e83b81490670c7",
@@ -1247,24 +1298,19 @@
    "ko": "너무좋네요 찾고있던 제품이예요"
   },
   {
-   "id": "review:1ffb39e45d9ba707",
+   "id": "review:4e89f12afd275d8a",
    "kind": "review",
-   "ko": "가격대비 좋아요,."
+   "ko": "좋아요"
   },
   {
-   "id": "review:654a60268dc372ef",
+   "id": "review:34d56a97dc0f4d17",
    "kind": "review",
-   "ko": "해외배송치고 빠르고 물건도 가성비 매우 좋아요!!"
+   "ko": "너무 마음에 듭니다"
   },
   {
-   "id": "review:878bfd508b607294",
+   "id": "review:ce83a0a6a09a4fc1",
    "kind": "review",
-   "ko": "비용대비 너무 마음에 듭니다"
-  },
-  {
-   "id": "review:5611d6db99f592f2",
-   "kind": "review",
-   "ko": "해외배송이라 오래걸릴까봐 걱정되었는데 배송도 생각보다 빨리왔고 상품상태도 만족스럽습니다^^"
+   "ko": "상품상태도 만족스럽습니다"
   }
  ]
 }

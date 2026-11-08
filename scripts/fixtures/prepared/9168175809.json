@@ -1,10 +1,15 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:102095797:9168175809",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
- "notes": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "1 of 1 kept (short 1); 1 trimmed"
+  }
+ ],
  "source": {
   "run": "50002788-fixtures",
   "line": 1,
@@ -215,14 +220,21 @@
    {
     "id": "4354687392",
     "score": 5,
-    "text_ko": "배송: 하루만에 왔네요\n상담: 톡톡문의 친절하고 빠른 대응\n상품: 좋아요\n\n동일 상품 여러곳에서 판매하나, 여기 사장님 빠른고 친절하게 응대해주시니 믿음이 갑니다.",
+    "text_ko": "빠른 대응\n상품: 좋아요\n동일 상품 여러곳에서 판매하나, 여기",
     "created_at": "2023-10-22T01:28:39Z",
     "writer": "mins*******",
     "photos": [
      "collected/50002788-fixtures/images/9168175809/fairwardgolf-review-image-859ca9e906a5897c.webp"
     ],
     "avatar": null,
-    "tier": "photo"
+    "tier": "photo",
+    "text_grade": "short",
+    "text_quality": 21,
+    "text_original_ko": "배송: 하루만에 왔네요\n상담: 톡톡문의 친절하고 빠른 대응\n상품: 좋아요\n\n동일 상품 여러곳에서 판매하나, 여기 사장님 빠른고 친절하게 응대해주시니 믿음이 갑니다.",
+    "text_cut": [
+     "seller",
+     "shipping"
+    ]
    }
   ],
   "images": [
@@ -528,9 +540,9 @@
    "ko": "캐디백, 보스턴백"
   },
   {
-   "id": "review:4d05916f2ae64a27",
+   "id": "review:e1ea93137821ae13",
    "kind": "review",
-   "ko": "배송: 하루만에 왔네요\n상담: 톡톡문의 친절하고 빠른 대응\n상품: 좋아요\n\n동일 상품 여러곳에서 판매하나, 여기 사장님 빠른고 친절하게 응대해주시니 믿음이 갑니다."
+   "ko": "빠른 대응\n상품: 좋아요\n동일 상품 여러곳에서 판매하나, 여기"
   }
  ]
 }

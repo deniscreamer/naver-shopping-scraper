@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:102229173:9868413561",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "1 of 1 kept (full 1); 0 trimmed"
+  },
   {
    "code": "specs_bound_to_variants",
    "detail": "아이언샤프트소재 그라파이트/카본 -> 여성용"
@@ -298,7 +302,9 @@
     "writer": "guem****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 24
    }
   ],
   "images": [

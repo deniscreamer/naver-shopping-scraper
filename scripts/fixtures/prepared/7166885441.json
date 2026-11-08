@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:100313715:7166885441",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "2 of 2 kept (full 1, short 1); 1 trimmed"
+  },
   {
    "code": "specs_bound_to_variants",
    "detail": "아이언샤프트소재 그라파이트/카본 -> R"
@@ -299,26 +303,35 @@
    {
     "id": "4501444008",
     "score": 5,
-    "text_ko": "가성비 갑입니다. 좋아요",
+    "text_ko": "좋아요",
     "created_at": "2024-06-18T02:31:51Z",
     "writer": "dasi****",
     "photos": [
      "collected/50002788-fixtures/images/7166885441/fairwardgolf-review-image-3950d9a8f2e23ad7.webp"
     ],
     "avatar": "collected/50002788-fixtures/images/7166885441/fairwardgolf-review-avatar-2b5bfe3e921287d0.webp",
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "short",
+    "text_quality": 15,
+    "text_original_ko": "가성비 갑입니다. 좋아요",
+    "text_cut": [
+     "price"
+    ]
    },
    {
     "id": "4287496688",
     "score": 5,
-    "text_ko": "하나하나 검수했습니다 좋아요~\n골프백 후드가 있으면 더 좋겠네요~",
+    "text_ko": "하나하나 검수했습니다 좋아요.\n골프백 후드가 있으면 더 좋겠네요",
     "created_at": "2023-07-07T01:54:54Z",
     "writer": "suns*****",
     "photos": [
      "collected/50002788-fixtures/images/7166885441/fairwardgolf-review-image-49d6e79f2e01385f.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 41,
+    "text_original_ko": "하나하나 검수했습니다 좋아요~\n골프백 후드가 있으면 더 좋겠네요~"
    }
   ],
   "images": [
@@ -614,14 +627,14 @@
    "ko": "캐디백"
   },
   {
-   "id": "review:230011d8875b8a16",
+   "id": "review:4e89f12afd275d8a",
    "kind": "review",
-   "ko": "가성비 갑입니다. 좋아요"
+   "ko": "좋아요"
   },
   {
-   "id": "review:e7d0bb71e7b6e655",
+   "id": "review:430e362f57f041aa",
    "kind": "review",
-   "ko": "하나하나 검수했습니다 좋아요~\n골프백 후드가 있으면 더 좋겠네요~"
+   "ko": "하나하나 검수했습니다 좋아요.\n골프백 후드가 있으면 더 좋겠네요"
   }
  ]
 }

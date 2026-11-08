@@ -1,0 +1,19 @@
+{
+ "format": "dictionary/1",
+ "kind": "option_name",
+ "entries": {
+  "드라이버": "Driver",
+  "사이즈": "Size",
+  "색상": "Color",
+  "샤프트": "Shaft",
+  "샤프트강도": "Shaft Flex",
+  "소재": "Material",
+  "아이언": "Irons",
+  "우드": "Fairway Wood",
+  "유틸": "Hybrid",
+  "유틸리티": "Hybrid",
+  "컬러": "Color",
+  "타입": "Type",
+  "페어웨이 우드": "Fairway Wood"
+ }
+}

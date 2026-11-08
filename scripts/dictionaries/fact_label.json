@@ -1,0 +1,17 @@
+{
+ "format": "dictionary/1",
+ "kind": "fact_label",
+ "entries": {
+  "구성": "Set Composition",
+  "모델명": "Model",
+  "사이즈": "Size",
+  "색상": "Color",
+  "샤프트": "Shaft",
+  "손 방향": "Handedness",
+  "아이언": "Irons",
+  "유틸리티": "Hybrid",
+  "제품 번호": "Product Number",
+  "컬러": "Color",
+  "클럽 색상": "Club Color"
+ }
+}

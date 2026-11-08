@@ -1,0 +1,25 @@
+{
+ "format": "dictionary/1",
+ "kind": "spec_label",
+ "entries": {
+  "골프백포함여부": "Golf Bag Included",
+  "드라이버 로프트각": "Driver Loft",
+  "모델명": "Model",
+  "브랜드": "Brand",
+  "사용방향": "Handedness",
+  "성별": "Gender",
+  "아이언 구성": "Iron Composition",
+  "아이언개수": "Number of Irons",
+  "아이언샤프트소재": "Iron Shaft Material",
+  "원산지": "Country of Origin",
+  "유틸리티/하이브리드 로프트각": "Hybrid Loft",
+  "제조사": "Manufacturer",
+  "종류": "Type",
+  "총클럽개수": "Total Clubs",
+  "출시": "Model Year",
+  "퍼터형태": "Putter Type",
+  "페어웨이 로프트각": "Fairway Wood Loft",
+  "풀세트구성": "Set Composition",
+  "품번": "Item Number"
+ }
+}

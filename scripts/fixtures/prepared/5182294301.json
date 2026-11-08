@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:500028318:5182294301",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "1 of 1 kept (full 1); 1 trimmed"
+  },
   {
    "code": "title_names_one_variant",
    "detail": "10개, 드라이버 유틸 7아이언 퍼터"
@@ -350,12 +354,18 @@
    {
     "id": "3049407193",
     "score": 5,
-    "text_ko": "배송도 빠르고 구성품 좋아요~",
+    "text_ko": "구성품 좋아요",
     "created_at": "2020-11-18T08:21:58Z",
     "writer": "easl*****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 21,
+    "text_original_ko": "배송도 빠르고 구성품 좋아요~",
+    "text_cut": [
+     "shipping"
+    ]
    }
   ],
   "images": [
@@ -581,9 +591,9 @@
    "ko": "미포함"
   },
   {
-   "id": "review:84947b7516dc3dcd",
+   "id": "review:a919b8ec61f2e3ed",
    "kind": "review",
-   "ko": "배송도 빠르고 구성품 좋아요~"
+   "ko": "구성품 좋아요"
   }
  ]
 }

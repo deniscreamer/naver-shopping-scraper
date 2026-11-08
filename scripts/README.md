@@ -38,6 +38,8 @@ The listing screen and the shop check).
 | `collect_guard.py` | The run rules around one product: one retry, then deferred; stop on a wall; stop on a repeated defect |
 | `package_measures.py`, `category_measures.json` | Five shipping fields per variant: the seller's values, else the operator's category averages |
 | `description_images.py`, `description_ocr.py`, `description_measures.py` | Optional stage: OCR of the description images (RapidOCR; Naver's CDN and the seller's HTTPS hosts; a worker process per product) into a sidecar per product; the transform guesses size / weight from it (a core for every category + parts profiles by Naver category id), the larger of that and today's value wins (see Package weight and size) |
+| `review_clean.py` | The reviews sanitized in the transform: decoration out, the Korean purchase cut, empty reviews dropped (see Transform) |
+| `translate.py`, `translation_dicts.py`, `translation_rules.py`, `translate_keys.py`, `translate_eval.py`, `prompts/` | Translation of the prepared texts (see Translation): the model stage, the per-kind dictionaries (live / backup), the unit rules, the prompts |
 | `description_image_text.py` | The images' OCR rows -> clean Korean blocks (text / table) for the translation step; run_transform writes `translation/<product id>/description_images.ko.*` and the flag `product.description_images_text.state` |
 | `test_description_images.py`, `test_description_ocr.py`, `test_description_measures.py`, `test_description_image_text.py` | Offline tests for the stage (fake fetcher and engine), the slicer / rows, the guess and the merge (real OCR rows) |
 | `product_page.py` | Saves a product page as the owner's Chrome renders it (`/products/page`): page.html, the page's own answer, meta; for developing parsers and checking collected data |
@@ -223,9 +225,9 @@ example_99.
 ```
 
 The owner's decisions (2026-11-07): one product per iteration (fewer reads in a burst: less risk of a block);
-translation is done by the agent of the session that runs the job (a script with a model API maybe later);
-publication goes straight to ACTIVE, right after translation; no age limit between collection and publication; the
-description's translation scope is still open (a translate stage is assumed). Not built on purpose (the owner,
+publication goes straight to ACTIVE, right after translation; no age limit between collection and publication.
+Changed 2026-11-08: translation is a model API stage (`translate.py`, see Translation), not the session's agent; the
+description and the images' text are not translated (a later stage writes the description from them). Not built on purpose (the owner,
 2026-11-08): OCR in parallel with the next collect, an incremental prepare (run_transform.run(shop) rebuilds the
 shop after each product: 1-2 s at 143 products, the pace did not drift over 100), a guard memory across runs.
 
@@ -234,6 +236,113 @@ Checked live (2026-11-08, 50002788, own shops root): 40 sets in 53 min and 100 s
 read 34-48 s, OCR median 21-22 s, prepare 1-2 s); the search tab reused for every read (`tabs left: 1`). A listing
 of 12 batches (one query) read in 110 s: 583 unique rows, no stall. Captcha, login reset, Naver's error page and a
 lost extension are covered by offline tests only (none came up live).
+
+## Translation (`translate.py`)
+
+Decisions, a new shop or category, the quality check (`translate_eval.py`), limits: [TRANSLATION.md](TRANSLATION.md).
+
+The owner (2026-11-08): the prepared products' `texts` go to English through Claude Sonnet 5.5 (effort low, JSON
+output) before placement and publication. Not translated: `description_ko` and the images' text (a later stage
+writes the description from them; their `to_translate` flag is not this stage's).
+
+```sh
+.venv/bin/python scripts/translate.py fairwardgolf --offline   # no model: what the dictionaries and rules leave
+.venv/bin/python scripts/translate.py fairwardgolf --limit 3   # the model for 3 products
+.venv/bin/python scripts/translation_dicts.py status           # what the live dictionaries added
+.venv/bin/python scripts/translation_dicts.py backup           # by hand: live -> scripts/dictionaries/ (git)
+```
+
+Per text, the first that answers:
+
+1. **The product's own store:** title, review, a placeholder option name (선택 / 옵션, named from its values), in
+   `translation/texts.jsonl`.
+2. **The dictionary of its kind:** brand, option name / value, spec and fact label / value, add-on group / name,
+   text-field label / placeholder. One file per kind. The live copies in `scripts/output/dictionaries/` grow during
+   runs and are out of git. Their backups in `scripts/dictionaries/` are in git and seed a missing live copy; they
+   are updated by hand with `backup`, after `status`, since runs never commit. The brand dictionary comes first: the
+   model gets the shop's vendor spellings and reuses one for the same brand.
+3. **The rules** (`translation_rules.py`):
+   - 10.5도 -> 10.5°, 33인치 -> 33 in, 22호 -> Size 22, 3번 -> #3, 7개 -> 7 / 7 pcs, 12종 -> 12 pcs, 2026년형 -> 2026 model;
+   - 노브랜드 alone becomes the tenant's name (`Store.publisher`), and inside a text it is removed;
+   - a text with no Hangul left is done; the rest goes to the model already converted.
+4. **The model:** one request per product, with the system prompt in `prompts/translate_system.md`. Each item is
+   checked:
+   - every id is returned once;
+   - no Hangul is left;
+   - the source's numbers and Latin codes are kept;
+   - the text is within its length limit;
+   - the option values stay distinct.
+
+   What fails goes back in the same conversation (`prompts/translate_fix.md`), at most twice. What still fails
+   leaves the product `untranslated`; what passed is kept.
+
+   **Fallback:** OpenAI (the owner, 2026-11-08), through Chat Completions with a strict JSON schema, the same
+   prompts and reasoning effort low. Its model is `OPENAI_MODEL` in `translate.py`; `OPENAI_TRANSLATE_MODEL` in
+   `.env` overrides it.
+   - **When Anthropic is down** (network, 5xx or overload, a rate limit after the SDK's retries, another API error):
+     that batch starts again on OpenAI, and Anthropic rests 10 minutes. A declined or cut batch also goes to OpenAI,
+     without the rest.
+   - **A refused key** stops the run.
+   - **Every provider down:** the product stays `pending` for the next run.
+   - The report says which model answered each product.
+
+**Batches.** A product is never sent whole when it is long. Its short texts go in batches of at most 40 items /
+2 500 characters, its reviews apart in batches of at most 8 / 2 500 (`make_batches`). Each batch is its own
+conversation with its own fix rounds and provider fallback. At the end every pending text must have an answer, or
+the product is `untranslated` (a batch no provider could take: `pending`).
+
+**Checked 2026-11-08** on 12 varied trial products with a second model (Opus 5.5) as the judge: 25 of 260 texts
+flagged, then 17, then 10 (3.8%) after three rounds of fixes.
+- **The fixes:**
+  - the golf terms and model lines in the category brief;
+  - a glued spec run split after each flex letter (`CATEGORY_RULES`);
+  - review fidelity in the system prompt: no "for the price", the subject kept, no upgrade of strength;
+  - a title's words that only some variants have (the note `title_names_one_variant`) passed as context;
+  - text addressed to a model cut from reviews.
+- **Live checks also run:** rerun (0 calls), resume of an untranslated item, every provider down (`pending`, then
+  resumed), a 24-value option and a 1 700-character review.
+- **The report:** `translate_eval.py` writes `report.html` (see TRANSLATION.md).
+
+**Tokens** (the owner, 2026-11-08: no overspend):
+- **The request:**
+  - compact JSON;
+  - the batch's short ids (`1`, `2` ...) instead of the text ids, both ways;
+  - the category's terms only in the system prompt, which is cached and read at a tenth of the input price;
+  - the shop's vendor list only when a brand is asked.
+- **No thinking:** `thinking: between_tools`, with effort low. On simple words it gave the same English at fewer
+  output tokens and 20% less time. `ANTHROPIC_TRANSLATE_THINKING=adaptive` turns it back on.
+- **Where the cost goes:** the output, that is the English itself.
+- **Measured 2026-11-08** on 4 varied trial products (129 texts, empty dictionaries): 11 batches, 12 calls (one fix
+  round), all translated, about $0.015 and 8 s a product, $0.0005 a text. With the dictionaries the shop's repeated
+  texts cost nothing.
+
+**The system prompt is assembled** (`system_prompt`):
+- the translator's role and rules (`prompts/translate_system.md`);
+- the shop's brief (`prompts/tenants/<shop>.md`: who sells to whom, spelling, tone);
+- the category's brief (`prompts/categories/<Naver category id>.md`: what the products are, their terms, how buyers
+  write about them).
+
+**A new shop or category** needs a short brief file only, no code. Write the file following the 50002788 one; the
+category's review aspects go in `review_clean.ASPECTS` / `CONTEXT`. A missing brief is left out, and the base prompt
+works alone, less precisely.
+
+Out: `translation/translated.jsonl` (per product: status, English by text id, where each came from) and
+`report.txt` (counts, tokens and cost, new dictionary entries).
+
+The keys: `scripts/translate_keys.py install <file>` moves the operator's key file out of the repo, makes it 600,
+and sets `TRANSLATE_KEY_FILE` in `.env` ([SETUP.md](../SETUP.md)). The models, their efforts and the chain's order
+are `.env` settings, not code (`TRANSLATE_PROVIDERS`, `ANTHROPIC_TRANSLATE_MODEL` / `_EFFORT`,
+`OPENAI_TRANSLATE_MODEL` / `_EFFORT`; `translate.settings()`). The server-side refusal fallback is sent only to the
+Claude models that take it.
+
+On the 143 trial sets (2026-11-08):
+- without the model, the dictionaries and rules gave 3 606 of 4 877 texts;
+- the model is left 1 271: titles 143, reviews 442, option values 292, spec values 505 (with repeats across
+  products, each asked once per product);
+- the reviews are sanitized but all kept, so 411 review texts are left (the cut text is gone from them).
+
+A job made since 2026-11-08 runs this stage per product, right after prepare (`job.py`, translated; `new --no-translate`
+leaves it out). See [JOB_AGENT.md](JOB_AGENT.md).
 
 ## Placement: the shop's sections, the last stage before Shopify (`placement.py`)
 
@@ -541,6 +650,20 @@ published, SKUs and prices equal on 201 of 201 variants):
   shop's cap; the first ones are offered, in stock and cheaper first, one row per option value first so every
   value stays on sale; not held). `description_ko` and `description_images` (the seller's boilerplate out, see
   Description; what was cut in `description_dropped`) are carried for the later stages (not in `texts` yet).
+- **Reviews sanitized** (`review_clean.py`, the owner 2026-11-08). Every review is kept with its score; only a
+  sponsored one is dropped.
+  - **Cut out:** spans about the Korean purchase, since they do not describe our shop: shipping, customs, prices in
+    won, value for money, the seller and their service, packing, the seller's gifts, other platforms, review
+    promises. Filler is cut too: thanks, wishes, "잘 쓰겠습니다", decoration. A span is a whole clause up to its joint
+    or the sentence end and never crosses a product word, so "배송도 빠르고 디자인도 맘에 듭니다" -> "디자인도 맘에
+    듭니다".
+  - **Kept, on purpose:** short praise, "not used yet", criticism.
+  - **Grades:** `text_grade` is `full` (names the product), `short` (an opinion) or `rating_only` (no text left: the
+    score and the photos stay). `text_quality` 0..100 gives an order.
+  - **Where the patterns come from:** agents mined them on 666 real reviews (`fixtures/reviews/golf_50002788.jsonl`)
+    and checked each other's work. `test_review_clean.py` runs on all of the corpus: no review lost, no won amount
+    or decoration left, no product word cut.
+  - **On the 143 trial sets:** 448 of 448 reviews kept: 263 full, 154 short, 31 rating only, 192 trimmed.
 - **Spec rows vs variants** (`spec_variants.check_specs`): a row is compared with the sold combinations on one fact
   read the same way from both. Material is STEEL / CARBON ("남성용 SR스틸" is steel), and bare R / S values take a class
   only when the description writes it on the whole value, "스틸(S) / 카본(R)". Club count is a stated total (12종 / 9P /
@@ -919,8 +1042,8 @@ still returns its rows. Contract: server/docs/ENDPOINTS.md "Listing jobs".
 
 This is a design note. The code so far: the read-only check of what a store already has (`shopify_catalog.py`),
 the transform to prepared products (see Transform) and the placement into the shop's sections (`placement.py`, see
-Placement). Translation reads `prepared/products.jsonl` (`texts`) and
-keeps `shops/<shop>/translations.jsonl` by text id; publication joins the two.
+Placement) and the translation (`translate.py`, see Translation: `translation/translated.jsonl`, English by text
+id); publication joins them.
 
 The pipeline: collection (example_99) -> kept runs (`keep_run.py`) -> prepared products (`run_transform.py`:
 prices in USD, options, SKUs, attributes, spec rows, text fields, free add-ons, reviews, photo files) ->

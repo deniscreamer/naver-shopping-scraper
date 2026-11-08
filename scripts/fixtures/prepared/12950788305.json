@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:100568453:12950788305",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "2 of 2 kept (full 2); 0 trimmed"
+  },
   {
    "code": "title_names_one_variant",
    "detail": "9도S, 우드3번55S, 유틸3번65S"
@@ -9946,17 +9950,22 @@
     "writer": "asia***",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 43
    },
    {
     "id": "4916036830",
     "score": 5,
-    "text_ko": "중고채만 쓰던 골린인데요...\n큰맘 먹고 새채 구매했는데 너무 맘에 듭니다.\n더 열심히 연습하고자하는 마음이 왕왕생기네요.ㅎㅎ",
+    "text_ko": "중고채만 쓰던 골린인데요.\n큰맘 먹고 새채 구매했는데 너무 맘에 듭니다.\n더 열심히 연습하고자하는 마음이 왕왕생기네요.",
     "created_at": "2026-02-24T12:26:26Z",
     "writer": "asia***",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 32,
+    "text_original_ko": "중고채만 쓰던 골린인데요...\n큰맘 먹고 새채 구매했는데 너무 맘에 듭니다.\n더 열심히 연습하고자하는 마음이 왕왕생기네요.ㅎㅎ"
    }
   ],
   "images": [
@@ -10224,9 +10233,9 @@
    "ko": "타구음과 관용성이 너무 좋습니다."
   },
   {
-   "id": "review:3d9780748c2ef7bc",
+   "id": "review:806e3c1a3a2e32b5",
    "kind": "review",
-   "ko": "중고채만 쓰던 골린인데요...\n큰맘 먹고 새채 구매했는데 너무 맘에 듭니다.\n더 열심히 연습하고자하는 마음이 왕왕생기네요.ㅎㅎ"
+   "ko": "중고채만 쓰던 골린인데요.\n큰맘 먹고 새채 구매했는데 너무 맘에 듭니다.\n더 열심히 연습하고자하는 마음이 왕왕생기네요."
   }
  ]
 }

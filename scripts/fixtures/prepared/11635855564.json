@@ -1,10 +1,14 @@
 {
- "format": "prepared/3",
+ "format": "prepared/4",
  "key": "fairwardgolf:naver:500028318:11635855564",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "5 of 5 kept (full 3, rating_only 2); 2 trimmed"
+  },
   {
    "code": "specs_stated_by_variants",
    "detail": "드라이버 로프트각 10.5도: each variant states its own value (10.5도, 9도)"
@@ -4580,56 +4584,85 @@
    {
     "id": "5086135200",
     "score": 5,
-    "text_ko": "구성이 좋아요 친절하고 가성비도 좋습니다",
+    "text_ko": "구성이 좋아요",
     "created_at": "2026-10-18T00:31:29Z",
     "writer": "go****",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 21,
+    "text_original_ko": "구성이 좋아요 친절하고 가성비도 좋습니다",
+    "text_cut": [
+     "price",
+     "seller"
+    ]
    },
    {
     "id": "4917241398",
     "score": 5,
-    "text_ko": "핑 드라이버,우드,유틸은 워낙 유명해서..쓰기 좋습니다\n아이언 v300은 확실히 국민아이언이라 그런지 스윙이 편합니다 잘쓰고 있습니다",
+    "text_ko": "핑 드라이버,우드,유틸은 워낙 유명해서. 쓰기 좋습니다\n아이언 v300은 확실히 국민아이언이라 그런지 스윙이 편합니다 잘쓰고 있습니다",
     "created_at": "2026-02-26T02:46:12Z",
     "writer": "hcfc******",
     "photos": [
      "collected/50002788-fixtures/images/11635855564/fairwardgolf-review-image-244dba9d30e8939f.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 88,
+    "text_original_ko": "핑 드라이버,우드,유틸은 워낙 유명해서..쓰기 좋습니다\n아이언 v300은 확실히 국민아이언이라 그런지 스윙이 편합니다 잘쓰고 있습니다"
    },
    {
     "id": "4892811701",
     "score": 5,
-    "text_ko": "구성좋고 저렴하게 잘샀네요\n잘쓰겠습니다",
+    "text_ko": "구성좋고 잘샀네요",
     "created_at": "2026-01-24T02:37:18Z",
     "writer": "hcfc******",
     "photos": [
      "collected/50002788-fixtures/images/11635855564/fairwardgolf-review-image-244dba9d30e8939f.webp"
     ],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "full",
+    "text_quality": 37,
+    "text_original_ko": "구성좋고 저렴하게 잘샀네요\n잘쓰겠습니다",
+    "text_cut": [
+     "filler",
+     "price"
+    ]
    },
    {
     "id": "4758062204",
     "score": 5,
-    "text_ko": "사장님이 매우 친철하십니다",
+    "text_ko": "",
     "created_at": "2025-07-06T02:56:46Z",
     "writer": "10ju*******",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "rating_only",
+    "text_quality": 0,
+    "text_original_ko": "사장님이 매우 친철하십니다",
+    "text_cut": [
+     "seller"
+    ]
    },
    {
     "id": "4706097391",
     "score": 5,
-    "text_ko": "배송안내와 배송정보가 맘에 들었어요",
+    "text_ko": "",
     "created_at": "2025-04-19T02:03:00Z",
     "writer": "sonh******",
     "photos": [],
     "avatar": null,
-    "tier": "small"
+    "tier": "small",
+    "text_grade": "rating_only",
+    "text_quality": 0,
+    "text_original_ko": "배송안내와 배송정보가 맘에 들었어요",
+    "text_cut": [
+     "shipping"
+    ]
    }
   ],
   "images": [
@@ -4955,29 +4988,19 @@
    "ko": "5번S"
   },
   {
-   "id": "review:30175c0a7455ccf2",
+   "id": "review:68a4bc9f653de130",
    "kind": "review",
-   "ko": "구성이 좋아요 친절하고 가성비도 좋습니다"
+   "ko": "구성이 좋아요"
   },
   {
-   "id": "review:c272093b2748b242",
+   "id": "review:77924005c221c82b",
    "kind": "review",
-   "ko": "핑 드라이버,우드,유틸은 워낙 유명해서..쓰기 좋습니다\n아이언 v300은 확실히 국민아이언이라 그런지 스윙이 편합니다 잘쓰고 있습니다"
+   "ko": "핑 드라이버,우드,유틸은 워낙 유명해서. 쓰기 좋습니다\n아이언 v300은 확실히 국민아이언이라 그런지 스윙이 편합니다 잘쓰고 있습니다"
   },
   {
-   "id": "review:756d9ea839dd858d",
+   "id": "review:a8356eed38fffb89",
    "kind": "review",
-   "ko": "구성좋고 저렴하게 잘샀네요\n잘쓰겠습니다"
-  },
-  {
-   "id": "review:1318aee3ee48a7d1",
-   "kind": "review",
-   "ko": "사장님이 매우 친철하십니다"
-  },
-  {
-   "id": "review:19ea058fe967e6f6",
-   "kind": "review",
-   "ko": "배송안내와 배송정보가 맘에 들었어요"
+   "ko": "구성좋고 잘샀네요"
   }
  ]
 }
