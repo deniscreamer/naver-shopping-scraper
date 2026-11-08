@@ -603,11 +603,15 @@ link. The report says how many were dropped. The step is pure: same products in,
 - **Held**: `collect_incomplete`, `price_unknown`, `leaf_undecided`, `no_variants`,
   `options_unaligned` (rows that do not fit the groups), `specs_folded` (the 상품정보 list stayed folded), `axes_over_3`,
   `no_images`, `images_over_50`.
-- **No brand stated** (no 브랜드 row and no brandName: the seller linked no Naver brand; 2 of 40 sets on 2026-11-07):
-  not held and not guessed, `brand_ko` stays null with the note `brand_unstated`; its detail lists what the page
-  states instead (the manufacturer, a name in brackets in 원산지, often a distributor: "일본산(던롭스포츠코리아)" for an
-  XXIO set). No brand list is kept: brands are not known ahead of a run. The vendor step decides from the title,
-  these hints and the images' text (13425122164 states BEN SAYERS only in its images).
+- **A brand for every product** (the owner, 2026-11-08: the Shopify vendor is never empty; no brand, at least the
+  manufacturer). A seller who links no Naver brand leaves no 브랜드 row and no brandName, and Naver then knows none
+  anywhere (6 of 143 sets: not in the product answer, the page's answer, the search cards, the notice, the page's
+  ld+json). `brand_source` says where it came from: the row / brandName; else the manufacturer
+  (`manufacturer:<source>`, never Naver's M0000000); else, run-level (`brand_fallback.py`), a brand the shop's other
+  products state found in the title (`title`: 4 of the 6; the first one of a combination set), the importer in
+  원산지's brackets (`origin`), the shop's brand most read in the images (`images_text`), a Latin brand phrase the
+  images repeat 5+ times (`images_text_latin`: BEN SAYERS on 13425122164), or 노브랜드 (`none`: 13464713764, an
+  unbranded putter). These add the note `brand_fallback` (source, other candidates). No brand list is kept by hand.
 
 **Per-shop rules** (`transform_shops.py`, data): SKU prefix, KRW per USD, variant cap, and per Naver leaf category
 the shop's leaves: fairwardgolf 50002788 풀세트 by the 성별 row (여성용 -> women's sets, 남성용 -> men's, 남녀공용 ->
@@ -617,8 +621,8 @@ off by default, both on for fairwardgolf 50002788. A shop or a category without 
 run stops and asks the operator.
 
 Not here (later stages): English (titles, options, specs, reviews), vendor spelling (every product: the same brand
-is written 캘러웨이 / 캘러웨이골프, PGM / 피지엠, 젝시오 / XXIO; with `brand_unstated` from the title, the note's hints and
-the images' text), handle, alt texts, the seller's description prose (images only on the sets checked), publication.
+is written 캘러웨이 / 캘러웨이골프, PGM / 피지엠, 젝시오 / XXIO; a `brand_fallback` can be checked against its other
+candidates), handle, alt texts, the seller's description prose (images only on the sets checked), publication.
 
 ## Checking a run against product pages
 

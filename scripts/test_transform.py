@@ -20,7 +20,7 @@ import keep_run
 import run_transform
 import spec_variants
 import transform
-from transform import brand_hints, prepare, sku, text_id, usd
+from transform import prepare, sku, text_id, usd
 from transform_shops import ShopRulesMissing, rules_for
 
 FX = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures", "collected_fairwardgolf.jsonl")
@@ -137,29 +137,19 @@ def test_held(change, code):
     assert p["status"] == "held" and code in [h["code"] for h in p["held"]]
 
 
-def test_brand_unstated_is_a_note_not_a_hold():
-    # 7202588289 (2026-11-07): no 브랜드 row, no brandName; "젝시오" only in the title, the distributor in 원산지
-    def no_brand(line):
-        line["specs"]["facts"].update(brand=None, manufacturer=None,
-                                      origin={"value": "일본산(던롭스포츠코리아)", "source": "specs:원산지"})
-    p = prep("8514409092", no_brand)
-    assert p["status"] == "ready" and p["product"]["brand_ko"] is None
-    note = next(n for n in p["notes"] if n["code"] == "brand_unstated")
-    assert "던롭스포츠코리아 (specs:원산지, in brackets)" in note["detail"]
-
-
-@pytest.mark.parametrize("facts, hints", [
-    ({"origin": {"value": "중국산(상세정보참조)", "source": "specs:원산지"}}, None),      # 13425122164: a pointer
-    ({"origin": {"value": "일본산(구매대행)", "source": "specs:원산지"}}, None),          # an agency word
-    ({"manufacturer": {"value": "(주)삼양인터내셔날", "source": "search_info.manufacturerName"}},
-     "(주)삼양인터내셔날 (search_info.manufacturerName)"),
-    ({"manufacturer": {"value": "M0000000", "source": "search_info.manufacturerName"}}, None),   # Naver's "none"
-    ({}, None),
-])
-def test_brand_hints(facts, hints):
-    detail = brand_hints(facts)
-    assert detail.startswith("the vendor is decided from the title and the images' text")
-    assert (hints in detail) if hints else ("page hints" not in detail)
+def test_no_brand_takes_the_manufacturer():
+    """The owner, 2026-11-08: no brand stated, at least the manufacturer; Naver's M0000000 and a pointer are none."""
+    def maker(value):
+        def change(line):
+            line["specs"]["facts"].update(brand=None, manufacturer={"value": value,
+                                                                    "source": "search_info.manufacturerName"})
+        return change
+    p = prep("8514409092", maker("(주)삼양인터내셔날"))
+    assert p["product"]["brand_ko"] == "(주)삼양인터내셔날"
+    assert p["product"]["brand_source"] == "manufacturer:search_info.manufacturerName"
+    for none in ("M0000000", "상세정보참조"):
+        p = prep("8514409092", maker(none))
+        assert p["status"] == "ready" and p["product"]["brand_ko"] is None   # left to brand_fallback (run-level)
 
 
 def test_caps():

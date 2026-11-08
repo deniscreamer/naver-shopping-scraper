@@ -24,8 +24,10 @@ from typing import Any
 import description_image_text as image_text
 from description_images import current, load_sidecar
 from keep_run import SHOPS_ROOT, kept_run_ids
+import brand_fallback
+from description_images import image_rows
 from shared_images import RULE as SHARED_RULE, drop_shared_images
-from transform import prepare
+from transform import _texts, prepare
 from transform_shops import ShopRulesMissing, rules_for
 
 
@@ -128,6 +130,12 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT) 
     prepared.sort(key=lambda p: p["key"])
     prepared = drop_shared_images(prepared)                             # run-level: needs the store's other listings
     image_texts(shop, rules, prepared, latest, shops_root)              # run-level: blocks a store repeats
+    brand_fallback.fill(                                                # run-level: the shop's own brands
+        prepared,
+        lambda key: [r for img in image_rows(load_sidecar(shop, key.split(":")[3], shops_root)) for r in img],
+        {k: (((line[2].get("specs") or {}).get("facts") or {}).get("origin") or {}).get("value")
+         for k, line in latest.items()},
+        _texts)
     out_dir = os.path.join(shops_root, shop, "prepared")
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "products.jsonl"), "w", encoding="utf-8") as f:

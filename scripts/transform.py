@@ -24,7 +24,8 @@ naver-harvester published, and its 60 published products):
     options_unaligned, axes_over_3, specs_folded, no_images, images_over_50. More combinations than the shop's
     cap: the first ones are offered, every option value kept (note variants_capped).
   * notes (never block): shipping_paid, overseas_shipping (the price stays the cost; the operator decides),
-    leaf_from_name, brand_unstated (no brand stated: not guessed, the page's hints in the note),
+    leaf_from_name, brand_fallback (no brand and no manufacturer stated: run_transform takes one from the
+    title, the origin's importer, the images' text, or 노브랜드; brand_fallback.py),
     option_name_placeholder (선택 / 선택2 / 옵션: named from the values in translation),
     paid_addons_left_out, paid_variants_left_out, title_names_one_variant, purchase_agency, price_name_mismatch,
     photos_incomplete, reviews_none_chosen, measures_from_images / description_images_missing / _stale / _failed / _partial (the category's
@@ -124,27 +125,6 @@ def _pointer(value: str | None) -> bool:
     parts = [p.strip() for p in (value or "").split("/")]
     return bool(parts) and all(_POINTER_RE.match(p) for p in parts)
 
-
-def brand_hints(facts: dict[str, Any]) -> str:
-    """The note brand_unstated: no 브랜드 row and no brandName (the seller linked no Naver brand: the row is
-    brandName in 98 of 98 sets, 2026-11-07). The brand is not guessed here (a maker, a distributor or nothing:
-    7202588289 "일본산(던롭스포츠코리아)" names the distributor of XXIO; 13425122164 states it only in its images,
-    BEN SAYERS): the hints the page states, for the step that decides the vendor from them, the title and the
-    images' text."""
-    hints = []
-    maker = facts.get("manufacturer") or {}
-    if maker.get("value") and not _PLACEHOLDER_CODE.match(str(maker["value"]).strip()):
-        hints.append(f"{maker['value']} ({maker.get('source')})")
-    origin = facts.get("origin") or {}
-    for inner in re.findall(r"\(([^()]+)\)", origin.get("value") or ""):
-        inner = inner.strip()
-        if inner and not _pointer(inner) and not _AGENCY_WORD_RE.search(inner):
-            hints.append(f"{inner} ({origin.get('source')}, in brackets)")
-    return "the vendor is decided from the title and the images' text" + (f"; page hints: {', '.join(hints)}"
-                                                                           if hints else "")
-
-
-# ---- options ------------------------------------------------------------------------------
 
 def _drop_promo_axes(names: list[str], rows: list[dict[str, Any]]) -> tuple[list[int], list[dict[str, Any]]]:
     """Axis indexes to keep, and the rows left once a review / coupon axis is gone (per remaining tuple, the row
@@ -535,9 +515,13 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int,
         notes.append({"code": "leaf_from_name", "detail": how})
     if details["pricing"].get("discounted_price") is None:
         held.append({"code": "price_unknown", "detail": "no product price"})
-    brand = (specs.get("facts") or {}).get("brand") or {}
-    if not brand.get("value"):
-        notes.append({"code": "brand_unstated", "detail": brand_hints(specs.get("facts") or {})})
+    facts = specs.get("facts") or {}
+    brand = facts.get("brand") or {}
+    maker = facts.get("manufacturer") or {}
+    if not brand.get("value") and maker.get("value") and not _PLACEHOLDER_CODE.match(str(maker["value"]).strip()) \
+            and not _pointer(str(maker["value"])):
+        # no brand: the manufacturer (the owner, 2026-11-08); still none: brand_fallback.py, run-level
+        brand = {"value": maker["value"], "source": f"manufacturer:{maker.get('source')}"}
     imgs = images(line, run)
     if not imgs:
         held.append({"code": "no_images", "detail": "no gallery photo saved"})

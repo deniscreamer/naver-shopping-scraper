@@ -12,6 +12,11 @@ version in `extension/manifest.json`.
   labels and a notice card's lines; a one-frame GIF in a description is read (animated ones skipped as
   `gif_animated`); an iPhone HDR review photo (MPO with a gain map) is kept (its first picture); 제조사 `M0000000`
   (Naver's "none") is no spec and no hint. Fixture sidecar 6630856593 re-read (its 11 GIFs are animated).
+- Every prepared product has a brand (the owner, 2026-11-08): no brand stated, the manufacturer; still none,
+  `brand_fallback.py` (run-level) takes a brand of the shop from the title, the importer in 원산지's brackets, the
+  shop's brand most read in the images, a repeated Latin brand phrase in the images, or 노브랜드; note
+  `brand_fallback`, `brand_source` says which. The note `brand_unstated` is gone. On the 143 trial sets: 4 from the
+  title, 1 from the images, 1 노브랜드.
 
 ## 0.10.0 (2026-11-08)
 
