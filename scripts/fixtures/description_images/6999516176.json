@@ -1,0 +1,1041 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 504777,
+   "height": 607,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220418_37/1650245101191bWbBC_JPEG/PGM%EC%9D%B8%EC%A6%9D%EC%84%9C%EC%B5%9C%EC%A2%85(%E6%B7%BB%E5%8A%A0%E6%B0%B4%E5%8D%B0).jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.526,
+       "text": "O / PGn",
+       "y": 47
+      },
+      {
+       "conf": 0.987,
+       "text": "AUTHORIZATION",
+       "y": 73
+      },
+      {
+       "conf": 0.989,
+       "text": "Pro Golf Master",
+       "y": 117
+      },
+      {
+       "conf": 0.969,
+       "text": "YIBANG GOLF PRODUCTS CO.,LTD hereby authorizes viviga_wolrd overseas",
+       "y": 144
+      },
+      {
+       "conf": 0.982,
+       "text": "online sales right.Website address: www.naver.com. Promote and sell all",
+       "y": 166
+      },
+      {
+       "conf": 0.986,
+       "text": "series products under brand name PGM and given full responsibility for",
+       "y": 191
+      },
+      {
+       "conf": 0.969,
+       "text": "managing related affairs on this selling website. The authorization is valid",
+       "y": 214
+      },
+      {
+       "conf": 0.98,
+       "text": "from April 14th 2022 to April 14th 18th 2023.",
+       "y": 238
+      },
+      {
+       "conf": 0.891,
+       "text": "Authorized trademark : / -PGm",
+       "y": 266
+      },
+      {
+       "conf": 0.98,
+       "text": "Pro Golf Master",
+       "y": 301
+      },
+      {
+       "conf": 0.99,
+       "text": "https://smartstore.naver.com/viviga_world",
+       "y": 320
+      },
+      {
+       "conf": 0.885,
+       "text": ": / www.naver.com.PGM",
+       "y": 347
+      },
+      {
+       "conf": 0.998,
+       "text": "2022041420230414",
+       "y": 393
+      },
+      {
+       "conf": 0.731,
+       "text": ": / -PGn",
+       "y": 422
+      },
+      {
+       "conf": 0.993,
+       "text": "Pro Golf Master",
+       "y": 459
+      },
+      {
+       "conf": 0.748,
+       "text": "PGT",
+       "y": 466
+      },
+      {
+       "conf": 0.957,
+       "text": "Pro Golf Master / Hereby Authorize",
+       "y": 492
+      },
+      {
+       "conf": 0.935,
+       "text": "YIBANG GOLF GOODS CO., LTD",
+       "y": 517
+      }
+     ],
+     "y0": 0,
+     "y1": 607
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 1146288,
+   "height": 1276,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_146/1658994105370UyBYD_JPEG/%E8%AF%A6%E6%83%85-16.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.725,
+       "text": "RID",
+       "y": 814
+      },
+      {
+       "conf": 0.719,
+       "text": "52",
+       "y": 1005
+      }
+     ],
+     "y0": 0,
+     "y1": 1276
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 406533,
+   "height": 1039,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_190/1658994104444is7O9_JPEG/%E8%AF%A6%E6%83%85-02.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "12종+캐디백",
+       "y": 108
+      },
+      {
+       "conf": 0.989,
+       "text": "드라이버 / 1채",
+       "y": 154
+      },
+      {
+       "conf": 0.845,
+       "text": "PGin",
+       "y": 175
+      },
+      {
+       "conf": 0.995,
+       "text": "퍼터웨이 / 2채",
+       "y": 186
+      },
+      {
+       "conf": 0.992,
+       "text": "유틸리티 / 1채",
+       "y": 218
+      },
+      {
+       "conf": 0.999,
+       "text": "아이언 / 7채",
+       "y": 251
+      },
+      {
+       "conf": 0.996,
+       "text": "퍼터 / 1채",
+       "y": 283
+      },
+      {
+       "conf": 0.992,
+       "text": "캐디백 / 1개",
+       "y": 314
+      },
+      {
+       "conf": 0.671,
+       "text": "미2",
+       "y": 326
+      },
+      {
+       "conf": 0.528,
+       "text": "미!2",
+       "y": 401
+      },
+      {
+       "conf": 0.774,
+       "text": "-PGim7",
+       "y": 495
+      },
+      {
+       "conf": 0.637,
+       "text": "Rin",
+       "y": 487
+      },
+      {
+       "conf": 0.523,
+       "text": "Rio / 01d",
+       "y": 676
+      },
+      {
+       "conf": 0.757,
+       "text": "2026 M",
+       "y": 698
+      },
+      {
+       "conf": 0.527,
+       "text": "o!d",
+       "y": 691
+      },
+      {
+       "conf": 0.998,
+       "text": "R",
+       "y": 731
+      },
+      {
+       "conf": 0.616,
+       "text": "Rio",
+       "y": 775
+      }
+     ],
+     "y0": 0,
+     "y1": 1039
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 867212,
+   "height": 1238,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_32/1658994106286XSxg0_JPEG/%E8%AF%A6%E6%83%85-21.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.844,
+       "text": "RECISIOI",
+       "y": 594
+      },
+      {
+       "conf": 0.715,
+       "text": "-PGm",
+       "y": 806
+      }
+     ],
+     "y0": 0,
+     "y1": 1238
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 221506,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_247/1658994105158PVJU3_JPEG/%E8%AF%A6%E6%83%85-15.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.707,
+       "text": "EHECTION",
+       "y": 448
+      },
+      {
+       "conf": 0.614,
+       "text": "AF",
+       "y": 562
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 302892,
+   "height": 1061,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_190/1658994104393pxwHW_JPEG/%E8%AF%A6%E6%83%85-03.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.849,
+       "text": "PGin",
+       "y": 174
+      }
+     ],
+     "y0": 0,
+     "y1": 1061
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 221182,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_236/1658994104379JJGWq_JPEG/%E8%AF%A6%E6%83%85-04.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.903,
+       "text": "||",
+       "y": 192
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 265828,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_246/1658994104393bYM5A_JPEG/%E8%AF%A6%E6%83%85-05.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 318386,
+   "height": 976,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_177/1658994104435p5Sy3_JPEG/%E8%AF%A6%E6%83%85-07.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.753,
+       "text": "Rio / Rio",
+       "y": 236
+      },
+      {
+       "conf": 0.863,
+       "text": "A",
+       "y": 256
+      },
+      {
+       "conf": 0.867,
+       "text": "202611 / 20161",
+       "y": 264
+      },
+      {
+       "conf": 0.681,
+       "text": "/N",
+       "y": 276
+      },
+      {
+       "conf": 0.726,
+       "text": "Rio",
+       "y": 264
+      },
+      {
+       "conf": 0.826,
+       "text": "20161",
+       "y": 295
+      },
+      {
+       "conf": 0.811,
+       "text": "Rio",
+       "y": 302
+      },
+      {
+       "conf": 0.863,
+       "text": "20161",
+       "y": 335
+      },
+      {
+       "conf": 0.727,
+       "text": "IN",
+       "y": 462
+      },
+      {
+       "conf": 0.632,
+       "text": "Rio / Rio",
+       "y": 451
+      },
+      {
+       "conf": 0.829,
+       "text": "20161",
+       "y": 484
+      },
+      {
+       "conf": 0.658,
+       "text": "20161 / Rio",
+       "y": 498
+      },
+      {
+       "conf": 0.823,
+       "text": "201611",
+       "y": 529
+      }
+     ],
+     "y0": 0,
+     "y1": 976
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 194300,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_63/1658994104414UxK2F_JPEG/%E8%AF%A6%E6%83%85-08.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.58,
+       "text": "L",
+       "y": 0
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 217804,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_298/1658994104996PX4dE_JPEG/%E8%AF%A6%E6%83%85-09.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.615,
+       "text": "1",
+       "y": 120
+      },
+      {
+       "conf": 0.772,
+       "text": "FPGim",
+       "y": 269
+      },
+      {
+       "conf": 0.672,
+       "text": "Rio",
+       "y": 310
+      },
+      {
+       "conf": 0.761,
+       "text": "IN",
+       "y": 388
+      },
+      {
+       "conf": 0.83,
+       "text": "z016111",
+       "y": 389
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 300579,
+   "height": 917,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_189/1658994105032vImnV_JPEG/%E8%AF%A6%E6%83%85-11.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.604,
+       "text": "O!d",
+       "y": 188
+      }
+     ],
+     "y0": 0,
+     "y1": 917
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 184318,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_123/1658994105090ecCmT_JPEG/%E8%AF%A6%E6%83%85-13.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.538,
+       "text": "2D",
+       "y": 291
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 204156,
+   "height": 890,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_288/16589941051103ELLg_JPEG/%E8%AF%A6%E6%83%85-14.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.963,
+       "text": "우드/아이언 그립",
+       "y": 148
+      },
+      {
+       "conf": 0.985,
+       "text": "WOOD/HARDCORE GRIPS",
+       "y": 207
+      },
+      {
+       "conf": 0.918,
+       "text": "퍼터 그립",
+       "y": 581
+      },
+      {
+       "conf": 0.951,
+       "text": "PUTTER GRIP",
+       "y": 637
+      }
+     ],
+     "y0": 0,
+     "y1": 890
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 482611,
+   "height": 975,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_35/16589941057489sw24_JPEG/%E8%AF%A6%E6%83%85-17.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 975
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 622618,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_258/1658994105889XVsYQ_JPEG/%E8%AF%A6%E6%83%85-18.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.579,
+       "text": "©TOZ",
+       "y": 469
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 558542,
+   "height": 1094,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_194/1658994105981aQeVk_JPEG/%E8%AF%A6%E6%83%85-19.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.834,
+       "text": "Rio",
+       "y": 377
+      },
+      {
+       "conf": 0.61,
+       "text": "Z01GII!",
+       "y": 425
+      },
+      {
+       "conf": 0.816,
+       "text": "RiO",
+       "y": 629
+      },
+      {
+       "conf": 0.615,
+       "text": "20161",
+       "y": 680
+      }
+     ],
+     "y0": 0,
+     "y1": 1094
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 503996,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_19/1658994105953cflOO_JPEG/%E8%AF%A6%E6%83%85-20.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 196713,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_167/1658994236791XeNm5_JPEG/SKU-06-MTG040---%E9%92%A2%E6%9D%864%E6%94%AF_%E6%9E%AA%E5%8C%85.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.997,
+       "text": "4종 풀세트",
+       "y": 31
+      },
+      {
+       "conf": 0.807,
+       "text": "PGin",
+       "y": 58
+      },
+      {
+       "conf": 0.949,
+       "text": "스틸 샤프트",
+       "y": 100
+      },
+      {
+       "conf": 0.743,
+       "text": "-PGim7",
+       "y": 341
+      },
+      {
+       "conf": 0.997,
+       "text": "R",
+       "y": 380
+      },
+      {
+       "conf": 0.704,
+       "text": "Rio",
+       "y": 442
+      },
+      {
+       "conf": 0.728,
+       "text": "2026M",
+       "y": 464
+      },
+      {
+       "conf": 0.959,
+       "text": "우드:#] / 아이언:#7#52 / 퍼터: #PT",
+       "y": 814
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 197804,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_274/1658994236781oev47_JPEG/SKU-07-%E6%A1%94%E8%89%B2.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.997,
+       "text": "4종 풀세트",
+       "y": 31
+      },
+      {
+       "conf": 0.807,
+       "text": "PGin",
+       "y": 58
+      },
+      {
+       "conf": 0.998,
+       "text": "카본(R) / 샤프트",
+       "y": 101
+      },
+      {
+       "conf": 0.743,
+       "text": "-PGim7",
+       "y": 341
+      },
+      {
+       "conf": 0.996,
+       "text": "R",
+       "y": 381
+      },
+      {
+       "conf": 0.704,
+       "text": "Rio",
+       "y": 442
+      },
+      {
+       "conf": 0.728,
+       "text": "2026M",
+       "y": 464
+      },
+      {
+       "conf": 0.915,
+       "text": "우드:#1 / 아이언:#7#52 / 퍼터: #PT",
+       "y": 812
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 198026,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_257/1658994299965Xo8TW_JPEG/SKU-05-MTG040%EF%BC%88S%E7%BA%A7%EF%BC%89%E7%A2%B3%E6%9D%864%E6%94%AF_%E6%9E%AA%E5%8C%85.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.997,
+       "text": "4종 풀세트",
+       "y": 31
+      },
+      {
+       "conf": 0.807,
+       "text": "PGin",
+       "y": 58
+      },
+      {
+       "conf": 0.998,
+       "text": "카본(R) / 샤프트",
+       "y": 101
+      },
+      {
+       "conf": 0.743,
+       "text": "-PGim7",
+       "y": 341
+      },
+      {
+       "conf": 0.996,
+       "text": "R",
+       "y": 381
+      },
+      {
+       "conf": 0.704,
+       "text": "Rio",
+       "y": 442
+      },
+      {
+       "conf": 0.728,
+       "text": "2026M",
+       "y": 464
+      },
+      {
+       "conf": 0.915,
+       "text": "우드:#1 / 아이언:#7#52 / 퍼터: #PT",
+       "y": 812
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 298281,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_218/1658994300014pxnyj_JPEG/SKU-03-MTG040---%E9%92%A2%E6%9D%8612%E6%94%AF_%E7%90%83%E5%8C%85.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.801,
+       "text": "Gin / 12종 풀세트",
+       "y": 49
+      },
+      {
+       "conf": 1.0,
+       "text": "스틸샤프트",
+       "y": 99
+      },
+      {
+       "conf": 0.893,
+       "text": "202",
+       "y": 132
+      },
+      {
+       "conf": 0.547,
+       "text": "미!X",
+       "y": 283
+      },
+      {
+       "conf": 0.666,
+       "text": "-PGim",
+       "y": 329
+      },
+      {
+       "conf": 0.807,
+       "text": "RiD",
+       "y": 352
+      },
+      {
+       "conf": 0.779,
+       "text": "Rio",
+       "y": 483
+      },
+      {
+       "conf": 0.976,
+       "text": "R",
+       "y": 535
+      },
+      {
+       "conf": 0.762,
+       "text": "Rio",
+       "y": 573
+      },
+      {
+       "conf": 0.909,
+       "text": "우드:#1#3#5 #4H / 아이언:#5 #6 #7 #8 #9 #P #52 / 퍼터:#PT",
+       "y": 816
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 297935,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_135/1658994332916OFd9T_JPEG/SKU-01-MTG040%EF%BC%88R%E7%BA%A7%EF%BC%89%E7%A2%B3%E6%9D%8612%E6%94%AF_%E7%90%83%E5%8C%85.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.801,
+       "text": "Gin / 12종 풀세트",
+       "y": 49
+      },
+      {
+       "conf": 1.0,
+       "text": "스틸샤프트",
+       "y": 99
+      },
+      {
+       "conf": 0.893,
+       "text": "202",
+       "y": 132
+      },
+      {
+       "conf": 0.547,
+       "text": "미!X",
+       "y": 283
+      },
+      {
+       "conf": 0.666,
+       "text": "-PGim",
+       "y": 329
+      },
+      {
+       "conf": 0.807,
+       "text": "RiD",
+       "y": 352
+      },
+      {
+       "conf": 0.779,
+       "text": "Rio",
+       "y": 483
+      },
+      {
+       "conf": 0.976,
+       "text": "R",
+       "y": 535
+      },
+      {
+       "conf": 0.762,
+       "text": "Rio",
+       "y": 573
+      },
+      {
+       "conf": 0.909,
+       "text": "우드:#1#3#5 #4H / 아이언:#5 #6 #7 #8 #9 #P #52 / 퍼터:#PT",
+       "y": 816
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 297899,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220728_240/16589943329229lzm1_JPEG/SKU-02-MTG040%EF%BC%88S%E7%BA%A7%EF%BC%89%E7%A2%B3%E6%9D%8612%E6%94%AF_%E7%90%83%E5%8C%85.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.801,
+       "text": "Gin / 12종 풀세트",
+       "y": 49
+      },
+      {
+       "conf": 1.0,
+       "text": "스틸샤프트",
+       "y": 99
+      },
+      {
+       "conf": 0.893,
+       "text": "202",
+       "y": 132
+      },
+      {
+       "conf": 0.547,
+       "text": "미!X",
+       "y": 283
+      },
+      {
+       "conf": 0.666,
+       "text": "-PGim",
+       "y": 329
+      },
+      {
+       "conf": 0.807,
+       "text": "RiD",
+       "y": 352
+      },
+      {
+       "conf": 0.779,
+       "text": "Rio",
+       "y": 483
+      },
+      {
+       "conf": 0.976,
+       "text": "R",
+       "y": 535
+      },
+      {
+       "conf": 0.762,
+       "text": "Rio",
+       "y": 573
+      },
+      {
+       "conf": 0.909,
+       "text": "우드:#1#3#5 #4H / 아이언:#5 #6 #7 #8 #9 #P #52 / 퍼터:#PT",
+       "y": 816
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  }
+ ],
+ "key": "fairwardgolf:naver:100249211:6999516176",
+ "links_sha256": "5387ad5bf5508977fe01ee194889c46b8cf678cd1db348bed78064c4d52f6ff0",
+ "product_id": "6999516176",
+ "seconds": 0,
+ "skipped": [
+  {
+   "link": "https://shop-phinf.pstatic.net/20220719_296/1658194314604QXP7o_JPEG/PGM-%EB%B0%B0%EB%84%88.jpg?type=w848",
+   "rule": "link_banner"
+  }
+ ]
+}

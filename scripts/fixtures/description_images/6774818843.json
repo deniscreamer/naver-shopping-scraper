@@ -1,0 +1,486 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 496501,
+   "height": 1675,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220609_241/1654755718416eYCBj_PNG/no_0.84206439562524341653601045805.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.979,
+       "text": "개인통관고유부호는 주문자가 아닌",
+       "y": 29
+      },
+      {
+       "conf": 0.974,
+       "text": "수취인의 통관부호를 기재해주세요.",
+       "y": 78
+      },
+      {
+       "conf": 0.979,
+       "text": "일본 현지에서 판매되는 정품\"만 취급합니다.",
+       "y": 188
+      },
+      {
+       "conf": 0.958,
+       "text": "구매 전 필독사항",
+       "y": 316
+      },
+      {
+       "conf": 0.979,
+       "text": "듀벨로는 해외 구매대행으로 재고를 보유하고 있지 않습니다.",
+       "y": 392
+      },
+      {
+       "conf": 0.974,
+       "text": "배송기간(영업일기준) 7일 -14일 가량 소요됩니다.",
+       "y": 436
+      },
+      {
+       "conf": 0.992,
+       "text": "모든 상품은 주문과 동시에 발주/출고되며,",
+       "y": 477
+      },
+      {
+       "conf": 0.972,
+       "text": "주문 이후 현지에서 출고과 완료된 건은 반품비용이 발생할 수 있습니다.",
+       "y": 519
+      },
+      {
+       "conf": 0.988,
+       "text": "모든 상품에는 관/부가세가 미포함되어 있습니다.",
+       "y": 559
+      },
+      {
+       "conf": 0.985,
+       "text": "정확한 개인통관부호 입력은 필수입니다.",
+       "y": 603
+      },
+      {
+       "conf": 0.969,
+       "text": "취소/교환/반품/기타 안내",
+       "y": 667
+      },
+      {
+       "conf": 0.914,
+       "text": "·실재고는해외판매자가 보유하고 있어 고객님 주문 후 가격상승 또는품절이 발생할 수 있습니다.",
+       "y": 783
+      },
+      {
+       "conf": 0.92,
+       "text": "해당사항 발생 시,문자안내 후 주문취소로 진행되는 점 양해부탁드립니다.",
+       "y": 814
+      },
+      {
+       "conf": 0.937,
+       "text": "·현재 전화문의에는 대응하기 어려운 점 양해 부탁드리며,",
+       "y": 875
+      },
+      {
+       "conf": 0.966,
+       "text": "문의글로 남겨주시면 신속히 답변 드리겠습니다.(문의는 비밀글로 남겨주시길 바랍니다.)",
+       "y": 905
+      },
+      {
+       "conf": 0.974,
+       "text": "발주확인 후 변경,취소,반품 요청 시에 상품이 현지내 배송중인 경우 반품 수수료가 발생하므로",
+       "y": 995
+      },
+      {
+       "conf": 0.984,
+       "text": "해당 상품 주문시에 신중히 결정해주시길 바랍니다.",
+       "y": 1025
+      },
+      {
+       "conf": 0.916,
+       "text": "·전자제품의 경우 변압기가 필요할 수있으며, 변압기가 아닌 변환플러그(돼지코)",
+       "y": 1084
+      },
+      {
+       "conf": 0.93,
+       "text": "사용 및 오작동으로 인한 고장의 책임은 고객님에게 있습니다.",
+       "y": 1114
+      },
+      {
+       "conf": 0.972,
+       "text": "·해외배송상품 특성상국내A/S가불가합니다(일부상품제외)",
+       "y": 1173
+      },
+      {
+       "conf": 0.942,
+       "text": "·상품가격에 관/부가세는 포함되어있지 않습니다.배송비를제외한 상품가격의총 합이",
+       "y": 1234
+      },
+      {
+       "conf": 0.99,
+       "text": "미화150달러를초과하는상품은관/부가세가별도로발생합니다.(상품대금의18%~)",
+       "y": 1263
+      },
+      {
+       "conf": 0.984,
+       "text": "관/부가세 미납시 상품수령이 불가하므로 안내에 따라 납부해주십시오.",
+       "y": 1296
+      },
+      {
+       "conf": 0.936,
+       "text": "타업체와의 합산과세 발생시해당 세금은당사에서 책임지지 않습니다",
+       "y": 1325
+      },
+      {
+       "conf": 0.962,
+       "text": "·교환/반품은 상품수령후7일이내에연락주셔야가능합니다.",
+       "y": 1385
+      },
+      {
+       "conf": 0.958,
+       "text": "·개인통관고유부호는주문자가 아닌수취인의 정보를기재해주셔야합니다.",
+       "y": 1442
+      },
+      {
+       "conf": 0.929,
+       "text": "수취인이 아닌 다른 사람의 개인통관고유부호를 적어서 발생되는",
+       "y": 1475
+      },
+      {
+       "conf": 0.931,
+       "text": "통관 지연 등의 문제는 당사에서 책임지지 않습니다.",
+       "y": 1506
+      },
+      {
+       "conf": 0.947,
+       "text": "·공지사항의 미숙지로 인한 책임은 일절 고객님에게 있는 점 양해 부탁드리겠습니다.",
+       "y": 1595
+      }
+     ],
+     "y0": 0,
+     "y1": 1675
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 120558,
+   "height": 700,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220609_158/1654749420924G8u2s_JPEG/1904-bluu00.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.627,
+       "text": "Lallawy",
+       "y": 0
+      },
+      {
+       "conf": 0.912,
+       "text": "WARBIRD",
+       "y": 34
+      }
+     ],
+     "y0": 0,
+     "y1": 700
+    }
+   ],
+   "status": "read",
+   "width": 780
+  },
+  {
+   "bytes": 30707,
+   "height": 500,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220609_81/16547494399570IwhS_JPEG/1904-bluu02.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.894,
+       "text": "WAR3IRD",
+       "y": 87
+      },
+      {
+       "conf": 0.999,
+       "text": "10.5",
+       "y": 254
+      }
+     ],
+     "y0": 0,
+     "y1": 500
+    }
+   ],
+   "status": "read",
+   "width": 500
+  },
+  {
+   "bytes": 16783,
+   "height": 500,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220609_30/1654749446458sEng0_JPEG/1904-bluu07.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 500
+    }
+   ],
+   "status": "read",
+   "width": 500
+  },
+  {
+   "bytes": 27799,
+   "height": 500,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220609_200/1654749500877ErYyw_JPEG/1904-bluu03.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.522,
+       "text": "7",
+       "y": 71
+      },
+      {
+       "conf": 0.889,
+       "text": "WAR3IRD",
+       "y": 100
+      },
+      {
+       "conf": 0.975,
+       "text": "5w",
+       "y": 229
+      }
+     ],
+     "y0": 0,
+     "y1": 500
+    }
+   ],
+   "status": "read",
+   "width": 500
+  },
+  {
+   "bytes": 45650,
+   "height": 500,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220609_53/16547495045798J9za_JPEG/1904-bluu04.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.697,
+       "text": "callauau",
+       "y": 130
+      },
+      {
+       "conf": 0.646,
+       "text": "REIRD",
+       "y": 202
+      }
+     ],
+     "y0": 0,
+     "y1": 500
+    }
+   ],
+   "status": "read",
+   "width": 500
+  },
+  {
+   "bytes": 24323,
+   "height": 500,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220609_195/16547495175400d9Hu_JPEG/1904-bluu05.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 500
+    }
+   ],
+   "status": "read",
+   "width": 500
+  },
+  {
+   "bytes": 41055,
+   "height": 500,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220609_275/1654749521527Fl6uS_JPEG/1904-bluu09.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.64,
+       "text": "-",
+       "y": 160
+      }
+     ],
+     "y0": 0,
+     "y1": 500
+    }
+   ],
+   "status": "read",
+   "width": 500
+  },
+  {
+   "bytes": 35810,
+   "height": 500,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220609_296/1654749536607V0CXy_JPEG/1904-bluu01.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.595,
+       "text": "WRRRO",
+       "y": 285
+      }
+     ],
+     "y0": 0,
+     "y1": 500
+    }
+   ],
+   "status": "read",
+   "width": 500
+  },
+  {
+   "bytes": 303571,
+   "height": 729,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230718_85/1689673765854Qml5b_PNG/image.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.993,
+       "text": "8.5인치5분할입구",
+       "y": 304
+      },
+      {
+       "conf": 0.908,
+       "text": "캐디백후드 커버 확인",
+       "y": 633
+      },
+      {
+       "conf": 0.973,
+       "text": "좌,우측큰포켓에",
+       "y": 664
+      },
+      {
+       "conf": 0.964,
+       "text": "내장되어있습니다.",
+       "y": 689
+      }
+     ],
+     "y0": 0,
+     "y1": 729
+    }
+   ],
+   "status": "read",
+   "width": 796
+  },
+  {
+   "bytes": 124827,
+   "height": 1417,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220609_207/1654749643981vsm7e_JPEG/71O7Y8ubq0L._AC_SL1447_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.894,
+       "text": "WAR3IRD",
+       "y": 30
+      },
+      {
+       "conf": 0.999,
+       "text": "10.5",
+       "y": 141
+      },
+      {
+       "conf": 0.994,
+       "text": "5w",
+       "y": 178
+      },
+      {
+       "conf": 0.722,
+       "text": "callau",
+       "y": 714
+      },
+      {
+       "conf": 0.795,
+       "text": "WAREIRD",
+       "y": 1084
+      }
+     ],
+     "y0": 0,
+     "y1": 1417
+    }
+   ],
+   "status": "read",
+   "width": 868
+  },
+  {
+   "bytes": 179196,
+   "height": 1080,
+   "host": "seller",
+   "link": "https://static.mercdn.net/item/detail/orig/photos/m87911073122_8.jpg?1676454254",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.97,
+       "text": "WRREIRD",
+       "y": 582
+      },
+      {
+       "conf": 0.637,
+       "text": "Haway",
+       "y": 780
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  },
+  {
+   "bytes": 94552,
+   "height": 1080,
+   "host": "seller",
+   "link": "https://static.mercdn.net/item/detail/orig/photos/m87911073122_10.jpg?1676454325",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.56,
+       "text": "-",
+       "y": 1032
+      }
+     ],
+     "y0": 0,
+     "y1": 1080
+    }
+   ],
+   "status": "read",
+   "width": 1080
+  }
+ ],
+ "key": "fairwardgolf:naver:101343636:6774818843",
+ "links_sha256": "0dd702e833501883c81d8c14cf72ea6e984cdf6b21a148b379d386570fe21d4b",
+ "product_id": "6774818843",
+ "seconds": 0,
+ "skipped": []
+}

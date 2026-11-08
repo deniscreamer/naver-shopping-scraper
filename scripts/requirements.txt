@@ -1,2 +1,4 @@
 requests
 Pillow                          # image_prep.py: WebP with XMP (needs Pillow built with WebP, the wheels are)
+rapidocr                        # description_ocr.py: OCR of description images (PP-OCRv5 Korean; models download on first run)
+onnxruntime                     # rapidocr's engine (CPU)

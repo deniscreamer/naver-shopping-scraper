@@ -15,15 +15,19 @@ import stat
 
 import pytest
 
+import description_images
 import keep_run
 import run_transform
 import spec_variants
 import transform
-from transform import prepare, sku, text_id, usd
+from transform import brand_hints, prepare, sku, text_id, usd
 from transform_shops import ShopRulesMissing, rules_for
 
 FX = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures", "collected_fairwardgolf.jsonl")
-RULES = rules_for("fairwardgolf")
+RULES_ON = rules_for("fairwardgolf")
+# the description images' guess is tested on its own (test_image_measures_*): off here, as for a category without it
+RULES = dataclasses.replace(RULES_ON, categories={k: dataclasses.replace(v, description_images=False)
+                                                  for k, v in RULES_ON.categories.items()})
 
 
 def lines():
@@ -121,7 +125,6 @@ def test_a_review_discount_axis_is_dropped():
 @pytest.mark.parametrize("change, code", [
     (lambda l: l.update(specs=None), "collect_incomplete"),
     (lambda l: l["specs"].update(options=None), "collect_incomplete"),
-    (lambda l: l["specs"]["facts"].update(brand=None), "brand_missing"),
     (lambda l: l["details"]["pricing"].update(discounted_price=None), "price_unknown"),
     (lambda l: l["photos"].update(files=[]), "no_images"),
     (lambda l: l["photos"].update(files=l["photos"]["files"] * 51), "images_over_50"),
@@ -132,6 +135,30 @@ def test_a_review_discount_axis_is_dropped():
 def test_held(change, code):
     p = prep("8514409092", change)
     assert p["status"] == "held" and code in [h["code"] for h in p["held"]]
+
+
+def test_brand_unstated_is_a_note_not_a_hold():
+    # 7202588289 (2026-11-07): no 브랜드 row, no brandName; "젝시오" only in the title, the distributor in 원산지
+    def no_brand(line):
+        line["specs"]["facts"].update(brand=None, manufacturer=None,
+                                      origin={"value": "일본산(던롭스포츠코리아)", "source": "specs:원산지"})
+    p = prep("8514409092", no_brand)
+    assert p["status"] == "ready" and p["product"]["brand_ko"] is None
+    note = next(n for n in p["notes"] if n["code"] == "brand_unstated")
+    assert "던롭스포츠코리아 (specs:원산지, in brackets)" in note["detail"]
+
+
+@pytest.mark.parametrize("facts, hints", [
+    ({"origin": {"value": "중국산(상세정보참조)", "source": "specs:원산지"}}, None),      # 13425122164: a pointer
+    ({"origin": {"value": "일본산(구매대행)", "source": "specs:원산지"}}, None),          # an agency word
+    ({"manufacturer": {"value": "(주)삼양인터내셔날", "source": "search_info.manufacturerName"}},
+     "(주)삼양인터내셔날 (search_info.manufacturerName)"),
+    ({}, None),
+])
+def test_brand_hints(facts, hints):
+    detail = brand_hints(facts)
+    assert detail.startswith("the vendor is decided from the title and the images' text")
+    assert (hints in detail) if hints else ("page hints" not in detail)
 
 
 def test_caps():
@@ -429,3 +456,78 @@ def _tidy_all(values):
 def test_few_pieces_not_when_a_variant_is_a_full_set():
     p = prepare(_fixture("6999516176"), RULES, "r", 1)              # title "4종 스틸", values 4종 / 12종 sets
     assert "few_pieces" not in {x["code"] for x in p["notes"]}
+
+
+SIDECAR_ROWS = [["BM 캐디백 세트", "소재:PVC 코팅면/총무게:(캐디백+보스턴백)약4.95kg",
+                 "사이즈:캐디백-91cm(세로)*31cm(폭)*40cm(가로),"],
+                ["클럽중량(g) / 300g / 310g / 320g", "길이 / 45.5\""]]
+
+
+def sidecar(rows=SIDECAR_ROWS, pid="7583123963"):
+    links, _ = description_images.pick_links(lines()[pid]["details"].get("description") or {})
+    return {"format": "description_images/1", "links_sha256": description_images.links_sha(links), "images": [
+        {"link": f"https://shop-phinf.pstatic.net/{n}.jpg", "status": "read",
+         "slices": [{"y0": 0, "y1": 100, "rows": [{"text": t, "conf": 0.99, "y": 0} for t in r]}]}
+        for n, r in enumerate(rows)]}
+
+
+def test_image_measures_switch_on_without_sidecar_is_a_note():
+    pid = next(iter(lines()))
+    p = prepare(copy.deepcopy(lines()[pid]), RULES_ON, "r", 1)
+    assert {"code": "description_images_missing", "detail": "no sidecar: run description_images.py"} in p["notes"]
+    assert p["status"] == prep(pid)["status"]                    # never holds
+
+
+def test_image_measures_larger_wins_per_variant():
+    """The owner, 2026-11-07: the larger of today's value and the images' guess. A 13-club set with the bag set
+    (4.95 kg): 13 x 310 g + 4950 g = 8980 g (the women's 12PCS variants: 8670 g) beats the category's 7000 g; the bag's 40 x 31 cm beats 280 / 230 mm;
+    the longest side (1156 mm club, 910 mm bag) stays under the category's 1250 mm. 7583123963: "13 PCS ...
+    (백세트포함)"."""
+    pid = "7583123963"
+    line = copy.deepcopy(lines()[pid])
+    p = prepare(line, RULES_ON, "r", 1, sidecar())
+    off = prep(pid)
+    for v, before in zip(p["product"]["variants"], off["product"]["variants"]):
+        pk = v["package"]
+        assert pk["package_weight_g"]["source"] == "description_image"
+        clubs = 12 if "12PCS" in " ".join(v["options_ko"]) else 13          # the variant's own count
+        assert pk["package_weight_g"]["value"]["max"] == clubs * 310 + 4950 == pk["product_weight_g"]["value"]["max"]
+        assert pk["package_weight_g"]["compared"] == {"value": 7000, "source": "category_default",
+                                                     **({"confidence": 1} if "confidence" in before["package"][
+                                                         "package_weight_g"] else {})}
+        assert pk["package_width_mm"]["value"]["max"] == 400 and pk["package_height_mm"]["value"]["max"] == 310
+        assert pk["package_length_mm"] == {**before["package"]["package_length_mm"],
+                                           "compared": pk["package_length_mm"]["compared"]}
+    note = next(n for n in p["notes"] if n["code"] == "measures_from_images")
+    assert "package_weight_g" in note["detail"] and "package_length_mm" not in note["detail"]
+    assert lines()[pid]["package"] == line["package"]            # the collected line is never changed
+
+
+def test_image_measures_nothing_to_go_on_changes_nothing():
+    pid = next(iter(lines()))
+    p = prepare(copy.deepcopy(lines()[pid]), RULES_ON, "r", 1, sidecar([["좋은 클럽입니다"]], pid))
+    assert [v["package"] for v in p["product"]["variants"]] == [v["package"] for v in prep(pid)["product"]["variants"]]
+    assert not any(n["code"].startswith(("measures_from", "description_images")) for n in p["notes"])
+
+
+def test_image_measures_stale_sidecar_is_a_note_and_not_used():
+    """A sidecar read from other links (an older collection of the product) is not used."""
+    pid = "7583123963"
+    p = prepare(copy.deepcopy(lines()[pid]), RULES_ON, "r", 1, {**sidecar(), "links_sha256": "old"})
+    assert any(n["code"] == "description_images_stale" for n in p["notes"])
+    assert [v["package"] for v in p["product"]["variants"]] == [v["package"] for v in prep(pid)["product"]["variants"]]
+
+
+def test_image_measures_without_a_profile_use_the_core_only(monkeypatch):
+    """A category with the switch on and no parts profile (none mapped to its Naver id): club tables and bags mean
+    nothing; a stated product weight and size still count (any category)."""
+    import description_measures
+    monkeypatch.setattr(description_measures, "CATEGORY_PROFILES", {})
+    core = RULES_ON
+    pid = "7583123963"
+    p = prepare(copy.deepcopy(lines()[pid]), core, "r", 1, sidecar())
+    assert all(f["source"] != "description_image" for v in p["product"]["variants"] for f in v["package"].values())
+    p = prepare(copy.deepcopy(lines()[pid]), core, "r", 1,
+                sidecar([["제품 무게 / 12kg", "제품 사이즈 / 140 x 35 x 30cm"]]))
+    pk = p["product"]["variants"][0]["package"]
+    assert pk["product_weight_g"]["value"]["max"] == 12000 and pk["package_length_mm"]["value"]["max"] == 1400

@@ -35,7 +35,13 @@ python3 -m venv .venv
 ```
 
 The server drives the installed Google Chrome through patchright; `patchright install` is **not** needed.
-`scripts/requirements.txt` brings Pillow, which the photo scripts use to write WebP (its macOS wheels include WebP).
+`scripts/requirements.txt` brings Pillow, which the photo scripts use to write WebP (its macOS wheels include WebP),
+and rapidocr + onnxruntime for the optional OCR of description images (`scripts/description_images.py`). Its
+Korean models (~15 MB) are downloaded into the rapidocr package by its first run; to fetch them now:
+
+```sh
+.venv/bin/python -c "import sys; sys.path.insert(0, 'scripts'); import description_ocr; description_ocr.Engine()"
+```
 
 ## 3. Per-machine settings (.env)
 
@@ -109,6 +115,10 @@ Still `disconnected` after a minute: ask the operator whether Chrome is open and
 ```sh
 .venv/bin/python scripts/check_setup.py --live            # add --notify if NAVER_NOTIFY_WEBHOOK is set
 ```
+
+It also checks the OCR of description images (`OCR (description_images.py)`: rapidocr + onnxruntime installed, the
+Korean models downloaded). A WARN there blocks nothing else: install `scripts/requirements.txt` and fetch the models
+(section 2) before the first run of `scripts/description_images.py`. Verified versions: KNOWN_ISSUES K-17.
 
 `READY` = done. Each FAIL line says what to fix. `--live` makes one plain-HTTP call and one Chrome call to Naver;
 a 418/429/502 there means this IP is refused (wait, or set `NAVER_SHOPPING_PROXY`). Optional end-to-end: run

@@ -7,6 +7,9 @@ rules (same input + same rules = the same bytes: sorted by key, no time inside):
 
     prepared/products.jsonl   one prepared product per line (transform.Prepared, ready or held)
     prepared/report.txt       counts, held products with their codes, texts to translate
+    translation/<product id>/description_images.ko.txt|.ko.json
+                              the description images' Korean text for the translation step, and the flag
+                              product.description_images_text.state on each product (image_texts below)
 
     .venv/bin/python scripts/run_transform.py fairwardgolf            # every kept run
     .venv/bin/python scripts/run_transform.py fairwardgolf 50002788-20261105T193000Z
@@ -16,7 +19,10 @@ import json
 import os
 import sys
 from collections import Counter
+from typing import Any
 
+import description_image_text as image_text
+from description_images import current, load_sidecar
 from keep_run import SHOPS_ROOT, kept_run_ids
 from shared_images import RULE as SHARED_RULE, drop_shared_images
 from transform import prepare
@@ -27,8 +33,8 @@ def kept_runs(shop: str, shops_root: str = SHOPS_ROOT) -> list[str]:
     return kept_run_ids(os.path.join(shops_root, shop, "collected"))
 
 
-def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT) -> dict:
-    rules = rules_for(shop)
+def latest_lines(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT) -> dict[str, tuple]:
+    """{key: (run id, line number, line)}: each product from the newest of the chosen kept runs."""
     chosen = runs or kept_runs(shop, shops_root)
     latest: dict[str, tuple[str, int, dict]] = {}
     for run_id in sorted(chosen, key=lambda r: r.split("-")[-1]):        # newest last: it wins
@@ -38,9 +44,90 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT) 
                 if raw.strip():
                     line = json.loads(raw)
                     latest[line["key"]] = (run_id, n, line)
-    prepared = [prepare(line, rules, run_id, n) for run_id, n, line in latest.values()]
+    return latest
+
+
+def image_texts(shop: str, rules: Any, prepared: list[Any], latest: dict[str, tuple], shops_root: str) -> None:
+    """The description images' Korean text for the translation step (description_image_text): written to
+    <shop>/translation/<product id>/description_images.ko.txt (to read) and .ko.json (blocks with ids), and one
+    flag on each prepared product, product["description_images_text"]["state"]:
+
+      off           the category does not read its images (CategoryRules.description_images)
+      not_read      it does, but description_images.py has not read this product's current links
+      empty         read, nothing left to translate (photos, the shop's own blocks)
+      to_translate  the .ko files are written; no translation of this text yet
+      translated    description_images.en.json exists with source_sha256 = this text's sha256
+
+    The translation step reads the flag (not the folder), writes description_images.en.json
+    {format, source_sha256, blocks: [{id, text}]} next to the .ko files; the next run_transform sets translated.
+    A product left with no text loses its .ko files (an .en file is the translator's and is kept)."""
+    folder = os.path.join(shops_root, shop, "translation")
+    read: dict[str, tuple[str, dict]] = {}
+    state: dict[str, str] = {}
+    for p in prepared:
+        line = latest[p["key"]][2]
+        category = ((line.get("specs") or {}).get("category") or {})
+        try:
+            on = rules.category(category.get("id"), category.get("name")).description_images
+        except ShopRulesMissing:
+            on = False
+        if not on:
+            state[p["key"]] = "off"
+            continue
+        sidecar = load_sidecar(shop, p["source"]["product_id"], shops_root)
+        if not current(sidecar, line):
+            state[p["key"]] = "not_read"
+            continue
+        details = line.get("details") or {}
+        read[p["key"]] = (p["source"]["channel_no"], image_text.blocks(
+            sidecar, (details.get("store") or {}).get("name"), details.get("brand")))
+    shared = image_text.mark_shared(read)
+    for p in prepared:
+        product_id = p["source"]["product_id"]
+        where = os.path.join(folder, product_id)
+        ko_txt, ko_json, en_json = (os.path.join(where, f"description_images.{x}") for x in ("ko.txt", "ko.json",
+                                                                                           "en.json"))
+        rel = f"translation/{product_id}/description_images"
+        flag: dict = {"state": state.get(p["key"]), "ko": None, "en": f"{rel}.en.json"}
+        got = shared.get(p["key"])
+        if got is not None:
+            digest = image_text.sha(got["blocks"])
+            flag.update(blocks=len(got["blocks"]), chars=sum(len(b["text"]) for b in got["blocks"]),
+                        sha256=digest, dropped=got["dropped"])
+            if got["blocks"]:
+                os.makedirs(where, exist_ok=True)
+                glossary = image_text.glossary_for(p["source"].get("category_id"))
+                with open(ko_txt, "w", encoding="utf-8") as f:
+                    f.write(image_text.as_text(product_id, got["blocks"], digest, glossary))
+                with open(ko_json, "w", encoding="utf-8") as f:
+                    json.dump({"format": image_text.FORMAT, "product_id": product_id, "key": p["key"],
+                               "sha256": digest, "instructions": list(image_text.INSTRUCTIONS),
+                               "glossary": glossary, "blocks": got["blocks"]}, f, ensure_ascii=False, indent=1)
+                flag.update(state="to_translate", ko=f"{rel}.ko.json")
+                try:
+                    with open(en_json, encoding="utf-8") as f:
+                        if json.load(f).get("source_sha256") == digest:
+                            flag["state"] = "translated"
+                except (OSError, ValueError):
+                    pass
+            else:
+                flag["state"] = "empty"
+        if flag["ko"] is None:
+            for old in (ko_txt, ko_json):
+                if os.path.exists(old):
+                    os.remove(old)
+        p["product"]["description_images_text"] = flag
+
+
+def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT) -> dict:
+    rules = rules_for(shop)
+    chosen = runs or kept_runs(shop, shops_root)
+    latest = latest_lines(shop, runs, shops_root)
+    prepared = [prepare(line, rules, run_id, n, load_sidecar(shop, line["key"].split(":")[3], shops_root))
+                for run_id, n, line in latest.values()]
     prepared.sort(key=lambda p: p["key"])
     prepared = drop_shared_images(prepared)                             # run-level: needs the store's other listings
+    image_texts(shop, rules, prepared, latest, shops_root)              # run-level: blocks a store repeats
     out_dir = os.path.join(shops_root, shop, "prepared")
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "products.jsonl"), "w", encoding="utf-8") as f:
@@ -59,6 +146,9 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT) 
     if any(n for _, n in shared):
         lines.append(f"  shared store images: {sum(n for _, n in shared)} dropped from "
                      f"{sum(1 for _, n in shared if n)} products of {len({c for c, n in shared if n})} store(s)")
+    states = Counter(p["product"].get("description_images_text", {}).get("state") for p in prepared)
+    if set(states) - {"off"}:
+        lines.append(f"  description image text: {dict(sorted(states.items()))} (translation/<product id>/)")
     lines += [f"  held {p['key']}: " + "; ".join(f"{h['code']} ({h['detail']})" for h in p["held"])
               for p in prepared if p["held"]]
     with open(os.path.join(out_dir, "report.txt"), "w", encoding="utf-8") as f:

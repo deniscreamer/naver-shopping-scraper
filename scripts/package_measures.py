@@ -14,6 +14,8 @@ measures.py) is each variant's own. Candidates of one field that disagree (no co
 14 lb are one weight) are a contradiction: the field is not taken from the seller. Parts' weights (kind component)
 are never added up into a set's (2026-11-06): the sums of the club spec tables leave out the bag, the head covers
 and sometimes the putter, so they are not the product's weight, not even as a lower bound worth a field.
+(The description images' guess, description_measures.py, does sum the clubs, plus a bag weight the images state,
+as a lower bound compared with these fields in the transform: the owner, 2026-11-07, the larger wins.)
 
 A field the seller does not give is filled from the category table (low / central / high, its version, who approved
 it and its reliability level), `source: category_default`; a seller's value is never overwritten. A default package

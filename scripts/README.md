@@ -37,6 +37,9 @@ The listing screen and the shop check).
 | `deferred_log.py` | The shop's journal of deferred products (append-only); CLI `list` / `allow <key> --by` |
 | `collect_guard.py` | The run rules around one product: one retry, then deferred; stop on a wall; stop on a repeated defect |
 | `package_measures.py`, `category_measures.json` | Five shipping fields per variant: the seller's values, else the operator's category averages |
+| `description_images.py`, `description_ocr.py`, `description_measures.py` | Optional stage: OCR of the description images (RapidOCR; Naver's CDN and the seller's HTTPS hosts; a worker process per product) into a sidecar per product; the transform guesses size / weight from it (a core for every category + parts profiles by Naver category id), the larger of that and today's value wins (see Package weight and size) |
+| `description_image_text.py` | The images' OCR rows -> clean Korean blocks (text / table) for the translation step; run_transform writes `translation/<product id>/description_images.ko.*` and the flag `product.description_images_text.state` |
+| `test_description_images.py`, `test_description_ocr.py`, `test_description_measures.py`, `test_description_image_text.py` | Offline tests for the stage (fake fetcher and engine), the slicer / rows, the guess and the merge (real OCR rows) |
 | `product_page.py` | Saves a product page as the owner's Chrome renders it (`/products/page`): page.html, the page's own answer, meta; for developing parsers and checking collected data |
 | `captcha_watch.py` | Reports a Naver captcha the adapter waits on (reads `/captcha`): one line per new captcha / solved / timed out; independent of any collection |
 | `keep_run.py` | Keeps a collection run (example_99 output) per shop, byte for byte, read-only (see Transform) |
@@ -222,6 +225,176 @@ the package, the box's sides); 2 = stated but its kind left open (a plain 중량
 by club count, or a per-piece weight times the count; 1 = the category default. Of candidates that agree, the most
 certain is taken.
 
+### From the description images (optional stage, the owner 2026-11-07)
+
+The images are most of a description (golf sets: ~12x the page's text) and state what the page does not: a box,
+a product's weight and size, or, for sets, each part's. The stage reads them; the transform guesses the five
+fields from that text and keeps, per field, the larger of the guess and today's value.
+
+**The operator's (or an agent's) order of commands**, after each collection:
+
+```sh
+.venv/bin/python scripts/example_99_full_details.py                  # 1. collect (server running)
+.venv/bin/python scripts/keep_run.py scripts/output/full-50002788    # 2. keep the run
+.venv/bin/python scripts/description_images.py fairwardgolf          # 3. read the description images (network)
+.venv/bin/python scripts/run_transform.py fairwardgolf               # 4. prepare (offline)
+```
+
+Step 3 is not part of the collection on purpose: it is slow (~20 s a product, ~3.5 h per 1000), needs only the
+image hosts (no server, no Chrome) and can be run, stopped and resumed on its own. It reads only the categories
+whose shop rules set `description_images` (transform_shops; off by default, on for 50002788). Skipped, the
+transform still runs: the products get the note `description_images_missing` and today's values.
+`--products <id> ...` reads some products only, `--force` reads again.
+
+**What it fetches.** Each kept product's `details.description.images`, in order: seller banners out (by name, link,
+spacer, 1x1 pixel: description_clean.clean_images), GIFs out, images smaller than 60 px out (`tiny`: counters,
+icons), a link repeated in one body once. Hosts: Naver's image CDN and any public HTTPS host the seller links (the
+owner, 2026-11-07; never http, an IP, localhost, or a name that resolves to a private / local address; AGENTS.md
+rule 3). On 50 golf sets 8 products have 35 such images
+(igearmall / esmplus pages with the product copy and the clubs' spec tables, percenty shop-policy pages, rakuten /
+mercari photos): checked by eye, they are the description, with the same boilerplate and photos as Naver-hosted
+ones. A SmartEditor link is fetched without `?type` (the original). naver_images fetch rules: HTTPS, no
+redirects, MAX_BYTES, image types only, one request a second; a 403 / 429 from Naver's CDN stops the stage (the
+sidecars so far are kept); from a seller's host it fails that image only (`refused`, not retried: hotlink blocks).
+
+**Memory and failures.** Each product is read in a fresh worker process (one at a time, synchronous,
+`read_isolated`); the OCR engine and the image bytes die with it, so a long run never accumulates RapidOCR's memory
+(live: the worker up to ~2.1 GB, the run ~50 MB). A worker that crashes, is killed (memory) or outlives
+PRODUCT_TIMEOUT (900 s) is that product's error: one more try, then an error sidecar (note
+`description_images_failed`; `--force` reads it again); the run goes on. Ctrl+C stops cleanly (exit 130). One run
+per shop at a time (a lock; a second run stops with exit 4). A script that calls `description_images.run()` keeps its
+work under `if __name__ == "__main__":`: the spawned worker imports the calling script again (example_15 hung once
+without it, its worker collecting a second product).
+
+**Files**, per shop, under `scripts/output/shops/<shop>/description_images/`:
+
+```
+<product id>.json            the sidecar: the rows as read per image and slice, skipped links with their rule,
+                             each image's host (naver / seller), the engine and its settings
+cache/<product id>/<sha>.bin the downloaded bytes of that product: `--prune-cache [--products ...]` deletes them
+                             (the sidecars stay; a --force run fetches again)
+```
+
+The cache holds ~6 MB a product (~6 GB per 1000, 2026-11-07): prune it once the sidecars are good (whether to keep
+it by default is still open with the owner).
+
+A product is read again when its links or the engine (rapidocr, onnxruntime, params) changed, or when an image
+failed last time with a 5xx / network error (`failed`); a 4xx or a non-image (`gone`, e.g. an expired proxy-smartstore
+token) and a seller's hotlink block (`refused`) are not retried; the transform notes them (`description_images_partial`).
+Naver first (the owner, 2026-11-07): a body Naver cut into snap tiles is read from the tiles; the seller's own `<img>`
+sources in its HTML (7583123963: 45 instead of 113) are fetched only when a tile does not read, and used when every
+source reads (a seller's host can be 5x slower: 13369469193 266 s vs 54 s; its proxy-smartstore links expire; the
+tiles also carry the store's banners, which the text rules cut). To fetch less, an image another product of the store
+already read is reused from its
+sidecar (`reused`), equal slices in one product are read once (dHash), and a first SmartEditor image lower than
+400 px (the store's header strip) is skipped (`first_header`). Measured 2026-11-07 on the 977 slices of the 50 golf
+sets: 53 % useful (copy 26 %, spec tables 17 %, set contents 9 %), photos 30 % (cheap to read), store boilerplate
+17 %. Not done on purpose: a per-slice "has text" detector (it costs more than the OCR it saves) and a height rule
+before the download (set contents sit on small cards: >= 1000 px loses 49 of the 330 useful slices). The download,
+not the OCR, sets the time (~13 s against ~7 s a product). A store's first product costs the most (~10 requests,
+6.6 MB); later ones reuse its banners. Run step 3 soon after step 2: proxy-smartstore links seemed to expire within
+about a day (2026-11-07, not re-checked), and an expired one is `gone`, not retried. Not checked yet: a batch well
+over 20 products for the worker's memory and time per product.
+
+**The guess** (`description_measures.py`, offline, in the transform) has two layers:
+
+* the **core**, for every category: what a seller writes of the product itself: a packed weight / box (박스 / 포장 /
+  택배 / 패키지), a set / product weight (세트 / 본품 / 제품 / 상품 무게; a row labelled 무게 / 중량 / weight with kg,
+  even when OCR split the label: "무 / 0.6kg"), a product size triple (크기 / 사이즈 / 규격 / size, or with a unit:
+  "W53 x D38 x H62.5 cm"). Live check 2026-11-07 on other categories: a camping chair (625 x 530 x 380 mm), a
+  kettle (0.6 kg, 170 x 170 x 100 mm); a kettle and desks whose images give sizes only as photo callouts: nothing;
+* a **parts profile**, only where the category is sold as a set of like items in a container. Profiles are data
+  (description_measures `Profile`: the items' weight / length ranges and labels, part labels that are never an item,
+  the container's words and ranges, count words, a count row, plausible bands), mapped by the **Naver leaf category
+  id** in `CATEGORY_PROFILES`:
+
+  | Naver category | profile | items / container |
+  |---|---|---|
+  | 50002788 골프클럽 > 풀세트 | `GOLF_SET` | clubs (클럽 중량(g) rows, lengths in inches / cm; 샤프트 / 헤드 / 그립 are parts) / the bag (weight, height, mouth, sides) |
+
+  A category with no profile gets the core only. Add a profile only when the core cannot read a category's images
+  (its own tables of parts); a new category is otherwise just its shop rule's `description_images` switch.
+
+Never read in either layer: a shop rule, customs, a person, a price, a disclaimer, anything after a cross-sell
+heading to the end of the image. Lower bounds per variant (the item count from the variant's option values, the
+title / 모델명, the profile's count row 총클럽개수, or the images; the container from the variant's values, the title /
+facts, or the images' 포함 / 미포함 / 별도):
+
+| field | guess | confidence |
+|---|---|---|
+| product_weight_g | a set / product weight stated; else (profile) items x the median item weight + the container's stated weight when the variant has it; else a plain 무게 / 중량 row | 2 |
+| package_weight_g | a packed weight stated; never below the product guess (a box weighs at least its contents) | 2 |
+| package_length_mm | a box side stated; else the longest of the product size, (profile) the longest item, the container's long side | 2 |
+| package_width_mm, package_height_mm | a box side stated; else the product size's short sides or (profile) the container's mouth / sides | 2 |
+
+An image's reading is never a seller's typed value: confidence 2 at most. A row OCR read below 0.9 (its weakest cell) gives no single
+value (a box, a weight, a size, a length; research: ~38 % of such digit boxes were wrong, and the larger value wins,
+so an upward misread is the one that would get in), only its share of the items' median weight.
+
+With a profile and no word on the container (the variant, the title and the images say neither with nor without
+the bag), every guess but a stated box drops to confidence 1, flag `container_unknown`: the operator's one default
+row covers sets with and without the bag (the owner, 2026-11-07: no separate rows).
+
+`merge_fields` compares each guess with today's value (a seller's value: its max; a category default: its central)
+and keeps the larger; the other one travels as `compared`. **Absurd guesses are never taken** (`compared.rejected`):
+above the field's band (the operator's `plausible` in category_measures.json, else the profile's, else the core's:
+weight 10 g - 200 kg, a side up to 3 m), or more than 3x today's value (`far_above_today`: a misread "45.5kg", another
+product). The owner's rule on parts (never summed) holds for the seller's text values; for the images' guess,
+summing the items is the point. On the 50 fixture sets the guess wins on 4 (heavy or wide bags stated; parts alone
+are lighter and shorter than the centrals: 12 clubs x ~330 g = ~4 kg < 5.7 / 7 kg; a 45.5" driver = 1156 mm < 1250
+mm). Notes: `measures_from_images` (fields taken, per variant count), `description_images_missing` (switch on, no
+sidecar; never holds), `description_images_stale` (the sidecar was read from other links, an older collection:
+not used; run the stage again).
+
+### The images' text, ready for the translation step
+
+Checked by eye against the images (2026-11-07, 20 live sets): prose reads near-exact, spec tables ~95 % (a digit
+lost now and then, a degree sign read as 0), small lettering on photos poorly; the rows as read are not a text yet.
+`run_transform` turns each product's current sidecar into clean Korean blocks (`description_image_text.py`) and
+writes them for the next step, translation (not done here):
+
+```
+scripts/output/shops/<shop>/translation/<product id>/
+    description_images.ko.txt    the blocks to read: a header (format, sha256), then "[b01 text image 1]" / "[b02
+                                 table image 3]" and the block; table rows are cells "a | b | c"
+    description_images.ko.json   {format: description_image_text/1, product_id, key, sha256, blocks: [{id, kind:
+                                 text | table, image, text}]}
+    description_images.en.json   written by the translation step: {format: description_image_translation/1,
+                                 source_sha256: the .ko sha256 it translated, blocks: [{id, text}]}
+```
+
+**One flag** on every prepared product says where it stands; the translation step (and any checker) reads the flag,
+never the folder: `product.description_images_text = {state, blocks, chars, sha256, dropped, ko, en}`, `state`:
+
+| state | meaning | the translation step |
+|---|---|---|
+| `off` | the category does not read its images | nothing to do |
+| `not_read` | it does; description_images.py has not read this product's current links | run the stage first |
+| `empty` | read; nothing left (photos, the shop's own blocks) | nothing to do |
+| `to_translate` | `ko` written; no translation of this exact text | translate `ko`, write `en` with `source_sha256 = sha256` |
+| `translated` | `en` exists with `source_sha256 = sha256` | done (a changed Korean text goes back to `to_translate`) |
+
+What is cut (counts per rule in `dropped`): rows repeated in the product (slice overlaps), low OCR confidence (<
+0.6), fragments and photo labels ("B4", "POWER TRAJECTORY"), prices (KRW, yen), contacts (phones, addresses, URLs),
+the shop's terms (delivery, returns, orders, A/S), store info (branches, hours, channels, events), legal notices,
+promotions and dealer claims, everything after a cross-sell heading in an image, an image that is mostly the
+shop's own notice, and the page text's sentence rules (description_clean.clean: greetings, store claims, ...).
+
+**Kept on purpose, for the agent who writes the description to leave out** (the owner, 2026-11-07: this step
+gathers context; a little extra text is fine): screenshots of buyers' reviews that some sellers put in the
+description images (13777887875: a "재팬잇 Customer's Real Review" banner with masked ids "ridb*", dates "25.10.23",
+"사이즈:240", "175cm, 77~79kg", reviews of shoes and a cap). They read as text like the rest; they are never the
+product's description or facts, and may name other products and buyers' body data. The instructions in every
+`.ko.txt` / `.ko.json` say so.
+A store's block repeated in several listings (a model's spec sheet) **stays**: its `key` (sha256 of its text, 16 hex)
+is the same in each, `shared` says in how many of the store's products, and the translation step translates one key
+once; `shared` is not part of the product's sha256, so another product's change never resets a translation. On the
+20 live sets: 4369 rows -> ~500 blocks, ~60k characters. A degree sign read as 0 is put back in angle rows ("+1.00"
+-> "+1.0°"). The `.ko.txt` header and the `.ko.json` carry the instructions for the translator (OCR faults to
+expect, keep numbers / units / model names / table cells, do not invent, translate a key once) and the category's
+glossary (`GLOSSARIES` by Naver category id; 50002788: 로프트각 = loft, 라이각 = lie angle, ...); neither is part of
+the sha256.
+
 ## Transform (collected -> prepared, per shop)
 
 The step after collection and before translation and Shopify: offline, deterministic, no AI, no English, no
@@ -242,7 +415,9 @@ example_99 overwrites its `products.jsonl`: a run not kept before the next colle
 namespace of the source keys, one shop and one category per run; a product in several runs comes from the newest.
 A run is copied into `<run>.partial` and renamed when complete; only folders with a `manifest.json` are runs.
 
-**Prepared product** (`transform.Prepared`, `format: prepared/1`): `key`, `shop`, `status` (`ready` / `held`),
+**Prepared product** (`transform.Prepared`, `format: prepared/2`; 2 since 2026-11-07: a variant's `package` fields
+may carry `how`, `quote`, `flags` and `compared` (the images' guess, see Package weight and size), and `product` has
+`description_images_text` (the images' text flag, see The images' text)): `key`, `shop`, `status` (`ready` / `held`),
 `held` and `notes` (`{code, detail}`), `source` (run, line, link, channel_no, product_id, category_id), `product`
 (`title_ko`, `brand_ko`, `leaves` with tags and product type, `options` `[{name_ko, values_ko}]`, `facts`,
 `variants` `[{source_id, naver_variant_id, options_ko, price_krw, price_usd, sku, available, package}]`, `pricing`,
@@ -390,10 +565,14 @@ link. The report says how many were dropped. The step is pure: same products in,
   a group named (필수) / (필수선택) is `required`. Why per category: a set's photos often show the extras (bag,
   covers, utility clubs); sold without them, a buyer takes them as part of the set (owner 2026-11-06).
 - **Reviews**: the selected reviews (video posters already photos), rating and count from Naver's summary.
-- **Held**: `collect_incomplete`, `price_unknown`, `brand_missing`, `leaf_undecided`, `no_variants`,
+- **Held**: `collect_incomplete`, `price_unknown`, `leaf_undecided`, `no_variants`,
   `options_unaligned` (rows that do not fit the groups), `specs_folded` (the 상품정보 list stayed folded), `axes_over_3`,
-`no_images`,
-  `images_over_50`.
+  `no_images`, `images_over_50`.
+- **No brand stated** (no 브랜드 row and no brandName: the seller linked no Naver brand; 2 of 40 sets on 2026-11-07):
+  not held and not guessed, `brand_ko` stays null with the note `brand_unstated`; its detail lists what the page
+  states instead (the manufacturer, a name in brackets in 원산지, often a distributor: "일본산(던롭스포츠코리아)" for an
+  XXIO set). No brand list is kept: brands are not known ahead of a run. The vendor step decides from the title,
+  these hints and the images' text (13425122164 states BEN SAYERS only in its images).
 
 **Per-shop rules** (`transform_shops.py`, data): SKU prefix, KRW per USD, variant cap, and per Naver leaf category
 the shop's leaves: fairwardgolf 50002788 풀세트 by the 성별 row (여성용 -> women's sets, 남성용 -> men's, 남녀공용 ->
@@ -402,8 +581,9 @@ both), by words in the name when the row is missing (the sold option values then
 off by default, both on for fairwardgolf 50002788. A shop or a category without rules: `ShopRulesMissing`, the
 run stops and asks the operator.
 
-Not here (later stages): English (titles, options, specs, reviews), vendor spelling, handle, alt texts, the
-seller's description prose (images only on the sets checked), publication.
+Not here (later stages): English (titles, options, specs, reviews), vendor spelling (every product: the same brand
+is written 캘러웨이 / 캘러웨이골프, PGM / 피지엠, 젝시오 / XXIO; with `brand_unstated` from the title, the note's hints and
+the images' text), handle, alt texts, the seller's description prose (images only on the sets checked), publication.
 
 ## Checking a run against product pages
 
@@ -491,6 +671,7 @@ needs Chrome open with the adapter (`example_01` shows `extension: connected`).
 | `example_12_reviews_selected.py` | Reviews, way 2: `selected_reviews()` -> up to 20 reviews worth showing (photo + text + avatar first), with the tier of each, JSONL; their photos and avatars as the store's WebP (`download_review_media()`) |
 | `example_13_product_images.py` | A product's gallery: `product_details()["images"]` -> `naver_images.download_gallery()` -> the store's WebP files, manifest.json with source and result of each |
 | `example_14_product_options.py` | A product's options from the page (`product_specs()["options"]`) and the variants we take (`choose_variants`, `paid` as argument), on real golf sets: no options, free combinations, a text option with a sold-out row, a paid sold-out row |
+| `example_15_description_collect.py` | **One golf full set end to end, its description included**: the first new screened card of 남성 골프채 풀세트 (or a product link as argument) -> details, specs and options, variants, five package fields, reviews and photos -> kept in its own folder (`output/description-example/shops/`, the operator's runs untouched) -> description images read (OCR) -> prepared (prepared/2): prints the notes, the five fields with where each came from, the page text and the images' text for translation. Needs the server and the adapter; ~2-4 min |
 | `example_99_full_details.py` | **FULL**, the one to grow: a category's products (listing, screened: rental, another category, already in the shop, deferred), each in turn under the run rules -> details + 상품정보 specs and options (adapter) + variants + five shipping fields + selected reviews + gallery and review photos (video posters as photos) as the store's WebP, one JSON line per product. Needs the shop's credentials file (`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`) and the category's averages |
 
 ```sh

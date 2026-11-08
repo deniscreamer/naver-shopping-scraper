@@ -313,7 +313,7 @@ def test_examples_compile():
     import py_compile
     here = os.path.dirname(os.path.abspath(__file__))
     examples = sorted(glob.glob(os.path.join(here, "example_[0-9][0-9]_*.py")))
-    assert len(examples) == 15
+    assert len(examples) == 16                      # 01-14, 15 (description images), 99
     for path in examples:
         py_compile.compile(path, doraise=True)
 

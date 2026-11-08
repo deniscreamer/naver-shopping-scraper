@@ -1,0 +1,1513 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 376547,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_165/1740621311112uh9R2_JPEG/p-11474625629-s-1-A-0.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.896,
+       "text": "Mizuno",
+       "y": 56
+      },
+      {
+       "conf": 0.986,
+       "text": "한국미즈노 주식회사 정품",
+       "y": 142
+      },
+      {
+       "conf": 0.964,
+       "text": "미즈노 / ST-MAX 230",
+       "y": 170
+      },
+      {
+       "conf": 0.999,
+       "text": "풀세트",
+       "y": 231
+      },
+      {
+       "conf": 0.916,
+       "text": "A",
+       "y": 488
+      },
+      {
+       "conf": 0.649,
+       "text": "SMA",
+       "y": 629
+      },
+      {
+       "conf": 0.996,
+       "text": "미즈노조합풀세트",
+       "y": 1049
+      },
+      {
+       "conf": 0.601,
+       "text": "Mx",
+       "y": 1140
+      },
+      {
+       "conf": 0.993,
+       "text": "#남성용 / #3PCS",
+       "y": 1230
+      },
+      {
+       "conf": 0.961,
+       "text": "ST-MAX 230 드라이버 / ST-MAX 230 / ST-MAX 230 유틸리티 / 헤드커버",
+       "y": 1525
+      },
+      {
+       "conf": 0.991,
+       "text": "남성(택1) / 페어웨이우드남성(택1) / 남성(택1)",
+       "y": 1548
+      },
+      {
+       "conf": 0.957,
+       "text": "※본 풀세트는 아이언/퍼터/골프백 미포함 제품입니다.",
+       "y": 1610
+      }
+     ],
+     "y0": 0,
+     "y1": 1684
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.964,
+       "text": "01 / 미즈노 ST-MAX230 남성 드라이버(택1)",
+       "y": 76
+      },
+      {
+       "conf": 0.999,
+       "text": "10.5",
+       "y": 611
+      },
+      {
+       "conf": 0.95,
+       "text": "CORTECH CHAMBER 구조와 효과",
+       "y": 1080
+      },
+      {
+       "conf": 0.978,
+       "text": "Stainless Steel과 TPU 일체성형으로 반발 성능 향상",
+       "y": 1125
+      },
+      {
+       "conf": 0.903,
+       "text": "HEAD와 BALL의 충돌에 의해 TPU(우레탄 수지) 와",
+       "y": 1194
+      },
+      {
+       "conf": 0.962,
+       "text": "일체 성형된 Stainless Steel 이 비구선()방향으로",
+       "y": 1234
+      },
+      {
+       "conf": 0.975,
+       "text": "운동량을 가지며 BALL SPEED를 증가 시킴",
+       "y": 1271
+      }
+     ],
+     "y0": 1684,
+     "y1": 3541
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "MAX를위한",
+       "y": 48
+      },
+      {
+       "conf": 0.976,
+       "text": "Next-Generation CORTECH CHAMBER 탑재",
+       "y": 96
+      },
+      {
+       "conf": 0.982,
+       "text": "Next-Generation CORTECH CHAMBER는 퀵스위치 내부까지 확장되고,",
+       "y": 163
+      },
+      {
+       "conf": 0.951,
+       "text": "CORTECH CHAMBER의 위치를페이스 센터에 가깝게 함으로써",
+       "y": 200
+      },
+      {
+       "conf": 0.973,
+       "text": "CORAREA(고초속 에어리어)를 힐 부분까지 확대",
+       "y": 238
+      },
+      {
+       "conf": 0.972,
+       "text": "FORGED“Ti-LFS\"채용하여",
+       "y": 872
+      },
+      {
+       "conf": 0.963,
+       "text": "완성한 NEW CORTECH Face",
+       "y": 916
+      },
+      {
+       "conf": 0.978,
+       "text": "광범위하고,반발계수 룰 한계의 고반발 성능을 발휘하는 기술",
+       "y": 985
+      },
+      {
+       "conf": 0.969,
+       "text": "중심부를 두껍게,주변부를 더욱 얇게 함으로써,",
+       "y": 1023
+      },
+      {
+       "conf": 0.997,
+       "text": "페이스의 굴곡을 중폭시키는 미즈노의 독자적인 페이스 두께 설계",
+       "y": 1061
+      },
+      {
+       "conf": 0.973,
+       "text": "ST-MAX230에서는 토우와 힐을 이전 보다 얇게 함으로써",
+       "y": 1098
+      },
+      {
+       "conf": 0.963,
+       "text": "고초속 에어리어를 확대",
+       "y": 1139
+      }
+     ],
+     "y0": 3541,
+     "y1": 5261
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.966,
+       "text": "Beta Titanium보다 가볍고,빠르고,강해진",
+       "y": 46
+      },
+      {
+       "conf": 0.932,
+       "text": "Forged \"Ti-LFS\" Face Material 채택",
+       "y": 92
+      },
+      {
+       "conf": 0.965,
+       "text": "고강도 페이스에 의해 BALL SPEED UP",
+       "y": 160
+      },
+      {
+       "conf": 0.976,
+       "text": "경량화를 통한 잉여 중량을 후방/하부에 배치하여",
+       "y": 198
+      },
+      {
+       "conf": 0.937,
+       "text": "높은 M이 X고초속 설계 달성",
+       "y": 238
+      },
+      {
+       "conf": 0.981,
+       "text": "FORGED Ti-LFS",
+       "y": 480
+      },
+      {
+       "conf": 0.977,
+       "text": "MAX MOI & MAX CORAREA Construction",
+       "y": 860
+      },
+      {
+       "conf": 0.97,
+       "text": "ST-Z230보다 솔의 카본 면적이 40%(녹색부분) 확대",
+       "y": 929
+      },
+      {
+       "conf": 0.957,
+       "text": "절감된 중량 Back Weight 증가",
+       "y": 968
+      },
+      {
+       "conf": 0.957,
+       "text": "ST-Z 230 보다 75% Back Weight 증가",
+       "y": 1005
+      },
+      {
+       "conf": 0.978,
+       "text": "(49g: 45.5g inner weight + 3.5g weight screw)",
+       "y": 1042
+      },
+      {
+       "conf": 0.951,
+       "text": "ST-MAX 230 / ST-Z 230",
+       "y": 1176
+      },
+      {
+       "conf": 0.962,
+       "text": "Composite Area",
+       "y": 1212
+      },
+      {
+       "conf": 0.977,
+       "text": "40%UP",
+       "y": 1229
+      },
+      {
+       "conf": 0.991,
+       "text": "49g Back Weight / 28g Back Weight",
+       "y": 1496
+      },
+      {
+       "conf": 0.945,
+       "text": "ST-MAX 230 / ST-Z 230",
+       "y": 1622
+      },
+      {
+       "conf": 0.895,
+       "text": "BACK WEIGHT / 49g / 28g",
+       "y": 1659
+      }
+     ],
+     "y0": 5261,
+     "y1": 7073
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.979,
+       "text": "QUICK SWITCH",
+       "y": 43
+      },
+      {
+       "conf": 0.945,
+       "text": "어답터 세팅케이스(8EA)",
+       "y": 131
+      },
+      {
+       "conf": 0.994,
+       "text": "탄도 / 페이스 앵글 / 라이각",
+       "y": 149
+      },
+      {
+       "conf": 0.924,
+       "text": "라이 세팅 / 로프트 세팅 / 어답터",
+       "y": 172
+      },
+      {
+       "conf": 0.795,
+       "text": "7.5° / LoW(-2) / OPEN 2.5° / 61.5",
+       "y": 219
+      },
+      {
+       "conf": 0.903,
+       "text": "8.5 / -(-1) / OPEN 1.25° / 61.0°",
+       "y": 265
+      },
+      {
+       "conf": 0.971,
+       "text": "STANDARD / SQUARE",
+       "y": 297
+      },
+      {
+       "conf": 0.847,
+       "text": "(60.5' ~62.0') / 9.5 / STD(LOFT) / 60.5",
+       "y": 308
+      },
+      {
+       "conf": 0.748,
+       "text": "Low / 10.5° / -(+1) / CLOSE 1.25 / 61.5°",
+       "y": 351
+      },
+      {
+       "conf": 0.831,
+       "text": "HIGH / 11.5 / HIGH(+2) / CLOSE 2.5 / 62.0°",
+       "y": 399
+      },
+      {
+       "conf": 0.904,
+       "text": "8.5U / -(-1U) / OPEN 1.25° / 63.0°",
+       "y": 444
+      },
+      {
+       "conf": 0.997,
+       "text": "UPRIGHT",
+       "y": 476
+      },
+      {
+       "conf": 0.957,
+       "text": "9.5U / UPRT(3U) / SQUARE / 63.5",
+       "y": 487
+      },
+      {
+       "conf": 0.863,
+       "text": "(63.0'~63.5\")",
+       "y": 503
+      },
+      {
+       "conf": 0.888,
+       "text": "10.5U / -(+1U) / CLOSE 1.25* / 63.0°",
+       "y": 533
+      },
+      {
+       "conf": 0.957,
+       "text": "A",
+       "y": 920
+      },
+      {
+       "conf": 0.571,
+       "text": "U",
+       "y": 1407
+      }
+     ],
+     "y0": 7073,
+     "y1": 8749
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "상세스펙",
+       "y": 42
+      },
+      {
+       "conf": 0.911,
+       "text": "모델 / 미즈노 ST-MAX 230 남성 드라이버",
+       "y": 91
+      },
+      {
+       "conf": 0.916,
+       "text": "로프트각(o) / 9.5(±2)",
+       "y": 127
+      },
+      {
+       "conf": 0.818,
+       "text": "헤드체적(Cmi) / 460",
+       "y": 167
+      },
+      {
+       "conf": 0.981,
+       "text": "라이각() / 60.5-63.5",
+       "y": 208
+      },
+      {
+       "conf": 0.999,
+       "text": "길이 / 45.75",
+       "y": 249
+      },
+      {
+       "conf": 0.915,
+       "text": "스윙웨이트 / (R, SR) D1-D3 / (S) D2-D4",
+       "y": 291
+      },
+      {
+       "conf": 0.999,
+       "text": "소재",
+       "y": 342
+      },
+      {
+       "conf": 0.951,
+       "text": "FACE - Ti-LFS(Ti412) 플레이트 단조/BODY-Ti811 Cast /SOLE/CROWN-CARBON /",
+       "y": 374
+      },
+      {
+       "conf": 0.963,
+       "text": "웨이트 파츠 3.5g(SUS304) /CORTECH CHAMBER-TPU(1195A)/ SUS316",
+       "y": 404
+      },
+      {
+       "conf": 0.932,
+       "text": "마무리미러 처리(BLACKIP) /Blast처리/ Body Paint/ Decal",
+       "y": 433
+      },
+      {
+       "conf": 0.926,
+       "text": "※모든클럽의오차값은±1입니다.",
+       "y": 467
+      },
+      {
+       "conf": 0.997,
+       "text": "샤프트",
+       "y": 562
+      },
+      {
+       "conf": 0.981,
+       "text": "샤프트 / FUJIKURA VENTUS BLUE FMD",
+       "y": 615
+      },
+      {
+       "conf": 0.957,
+       "text": "샤프트강도 / R / SR / S",
+       "y": 653
+      },
+      {
+       "conf": 0.892,
+       "text": "샤프트중량(g) / 45 / 50 / 55",
+       "y": 691
+      },
+      {
+       "conf": 0.832,
+       "text": "샤프트토크() / 5.8 / 5.2 / 5.0",
+       "y": 733
+      },
+      {
+       "conf": 0.89,
+       "text": "킥포인트 / Middle / Middle / Middle",
+       "y": 774
+      },
+      {
+       "conf": 0.997,
+       "text": "총중량(g) / 288 / 292 / 297",
+       "y": 815
+      },
+      {
+       "conf": 0.925,
+       "text": "FM D50-SR Fujikura",
+       "y": 944
+      },
+      {
+       "conf": 0.885,
+       "text": "※샤프트 무게는컷 전의중량입니다. 클럽 무게는 참고값입니다.",
+       "y": 1047
+      },
+      {
+       "conf": 0.997,
+       "text": "그립",
+       "y": 1149
+      },
+      {
+       "conf": 0.965,
+       "text": "IOMIC Sticky 1.8 Black Mizuno Original (R60/44g)",
+       "y": 1408
+      }
+     ],
+     "y0": 8749,
+     "y1": 10249
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.969,
+       "text": "02 / 미즈노 ST-MAX 230 남성 페어웨이우드(택1)",
+       "y": 80
+      },
+      {
+       "conf": 0.765,
+       "text": "SMAx",
+       "y": 464
+      },
+      {
+       "conf": 0.959,
+       "text": "MAX FW 위한 NEXT GENERATION",
+       "y": 1087
+      },
+      {
+       "conf": 0.969,
+       "text": "CORTECH CHAMBER탑재",
+       "y": 1134
+      },
+      {
+       "conf": 0.975,
+       "text": "Next-Generation CORTECH CHAMBER는 퀵스위치 내부까지 확장되고,",
+       "y": 1201
+      },
+      {
+       "conf": 0.96,
+       "text": "CORTECH CHAMBER의 위치를페이스 센터에 가깝게 함으로써",
+       "y": 1240
+      },
+      {
+       "conf": 0.933,
+       "text": "CORAREA(고초속 에어리어)를 힐 부분까지 확대",
+       "y": 1276
+      }
+     ],
+     "y0": 10249,
+     "y1": 12100
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.99,
+       "text": "Toe Wrap Composite DESIGN",
+       "y": 62
+      },
+      {
+       "conf": 0.998,
+       "text": "카본 크라운을 솔의 토우측까지 확대하여",
+       "y": 129
+      },
+      {
+       "conf": 0.95,
+       "text": "보다 설계의 자유도를 높이고,높은M이실현",
+       "y": 163
+      },
+      {
+       "conf": 0.957,
+       "text": "SOLE의 리딩 엣지(leading edge)를 절단",
+       "y": 796
+      },
+      {
+       "conf": 0.969,
+       "text": "뒤쪽으로 둥글게 만든",
+       "y": 843
+      },
+      {
+       "conf": 0.977,
+       "text": "\"Speed Bevel SOLE\"설계",
+       "y": 887
+      },
+      {
+       "conf": 0.695,
+       "text": "DMAX",
+       "y": 1107
+      }
+     ],
+     "y0": 12100,
+     "y1": 13596
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.984,
+       "text": "QUICK SWITCH - FW#3",
+       "y": 46
+      },
+      {
+       "conf": 0.975,
+       "text": "어답터 세팅케이스(8EA)",
+       "y": 133
+      },
+      {
+       "conf": 0.987,
+       "text": "탄도 / 페이스 앵글 / 라이각",
+       "y": 154
+      },
+      {
+       "conf": 0.945,
+       "text": "라이 세팅 / 로프트 세팅 / 어답터",
+       "y": 176
+      },
+      {
+       "conf": 0.892,
+       "text": "13 / LOW(2) / OPEN 2.5° / 61.0°",
+       "y": 224
+      },
+      {
+       "conf": 0.887,
+       "text": "14 / -(-1) / OPEN 1.25' / 60.0°",
+       "y": 268
+      },
+      {
+       "conf": 0.916,
+       "text": "STANDARD / STD(LOFT) / 59.5",
+       "y": 297
+      },
+      {
+       "conf": 0.931,
+       "text": "(59.5 ~61.0) / 15 / SQUARE",
+       "y": 313
+      },
+      {
+       "conf": 0.883,
+       "text": "Low / 16° / -(+1) / CLOSE 1.25° / 60.5",
+       "y": 353
+      },
+      {
+       "conf": 0.846,
+       "text": "HIGH / 17° / HIGH(+2) / CLOSE 2.5 / 61.0°",
+       "y": 401
+      },
+      {
+       "conf": 0.874,
+       "text": "14'U / -(-1U) / OPEN 1.25' / 62.0°",
+       "y": 448
+      },
+      {
+       "conf": 0.923,
+       "text": "UPRIGHT / 15U / UPRT(3U) / 62.5°",
+       "y": 480
+      },
+      {
+       "conf": 0.973,
+       "text": "SQUARE",
+       "y": 495
+      },
+      {
+       "conf": 0.886,
+       "text": "(62.0'~62.5°)",
+       "y": 507
+      },
+      {
+       "conf": 0.905,
+       "text": "16U / -(+1U) / CLOSE 1.25' / 62.0°",
+       "y": 537
+      },
+      {
+       "conf": 0.987,
+       "text": "QUICK SWITCH - FW#5",
+       "y": 676
+      },
+      {
+       "conf": 0.963,
+       "text": "어답터 세팅케이스(8EA)",
+       "y": 761
+      },
+      {
+       "conf": 0.979,
+       "text": "탄도 / 페이스 앵글 / 라이각",
+       "y": 781
+      },
+      {
+       "conf": 0.976,
+       "text": "라이 세팅 / 로프트 세팅 / 어답터",
+       "y": 804
+      },
+      {
+       "conf": 0.849,
+       "text": "16° / LOW(-2) / OPEN 2.5° / 61.5",
+       "y": 853
+      },
+      {
+       "conf": 0.791,
+       "text": "17° / -(-1) / OPEN 1.25 / 60.5",
+       "y": 895
+      },
+      {
+       "conf": 0.894,
+       "text": "STANDARD / STD(LOFT) / 60.0'",
+       "y": 929
+      },
+      {
+       "conf": 0.946,
+       "text": "18° / SQUARE",
+       "y": 943
+      },
+      {
+       "conf": 0.906,
+       "text": "(60.0' ~61.5)",
+       "y": 955
+      },
+      {
+       "conf": 0.752,
+       "text": "Low / 19° / -(+1) / CLOSE 1.25° / 61.0'",
+       "y": 982
+      },
+      {
+       "conf": 0.772,
+       "text": "HIGH / 20° / HIGH(+2) / CLOSE 2.5* / 61.5",
+       "y": 1029
+      },
+      {
+       "conf": 0.805,
+       "text": "17U / -(1U) / OPEN 1.25 / 62.5°",
+       "y": 1075
+      },
+      {
+       "conf": 0.997,
+       "text": "UPRIGHT",
+       "y": 1110
+      },
+      {
+       "conf": 0.86,
+       "text": "(62.5 ~63.0') / 18'U / UPRT(3U) / SQUARE / 63.0°",
+       "y": 1120
+      },
+      {
+       "conf": 0.877,
+       "text": "19'U / -(+1U) / CLOSE 1.25° / 62.5",
+       "y": 1165
+      },
+      {
+       "conf": 0.534,
+       "text": "SN/Ax",
+       "y": 1594
+      }
+     ],
+     "y0": 13596,
+     "y1": 15398
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.713,
+       "text": "In",
+       "y": 247
+      },
+      {
+       "conf": 0.998,
+       "text": "상세스펙",
+       "y": 557
+      },
+      {
+       "conf": 0.95,
+       "text": "모델 / 미즈노ST-MAX 230 남성페어웨이우드",
+       "y": 607
+      },
+      {
+       "conf": 0.894,
+       "text": "로프트각(o) / #3-15(±2) / #5-18(±2)",
+       "y": 644
+      },
+      {
+       "conf": 0.894,
+       "text": "헤드체적(cm) / 178 / 170",
+       "y": 686
+      },
+      {
+       "conf": 0.868,
+       "text": "라이각(이) / 59.5-62.5 / 60.0-63.0",
+       "y": 728
+      },
+      {
+       "conf": 0.89,
+       "text": "길이 / 43.25 / 42.75",
+       "y": 764
+      },
+      {
+       "conf": 0.858,
+       "text": "스윙웨이트 / (R, SR) D1 / (S) D2 / (R, SR) D1 / (S) D2",
+       "y": 809
+      },
+      {
+       "conf": 0.999,
+       "text": "소재",
+       "y": 858
+      },
+      {
+       "conf": 0.941,
+       "text": "FACE -머레이징 MAS1C 단조/BODY - SUS630 주조/CROWN- CARBON/",
+       "y": 890
+      },
+      {
+       "conf": 0.964,
+       "text": "웨이트 파츠(SUS304)/ CORTECH CHAMBER - TPU(1195A)/SUS316",
+       "y": 920
+      },
+      {
+       "conf": 0.967,
+       "text": "마무리미러처리(BLACKIP)/SHOT처리/페인트/데칼",
+       "y": 949
+      },
+      {
+       "conf": 0.973,
+       "text": "※모든클럽의오차값은1입니다",
+       "y": 982
+      },
+      {
+       "conf": 0.994,
+       "text": "샤프트",
+       "y": 1080
+      },
+      {
+       "conf": 0.969,
+       "text": "샤프트 / FUJIKURA VENTUS BLUE FM F",
+       "y": 1125
+      },
+      {
+       "conf": 0.977,
+       "text": "샤프트강도 / R / SR / S",
+       "y": 1169
+      },
+      {
+       "conf": 0.993,
+       "text": "샤프트중량(g) / 48 / 53 / 58",
+       "y": 1205
+      },
+      {
+       "conf": 0.894,
+       "text": "샤프트토크() / 5.6 / 4.7 / 4.4",
+       "y": 1249
+      },
+      {
+       "conf": 0.903,
+       "text": "킥포인트 / Middle / Middle / Middle",
+       "y": 1292
+      },
+      {
+       "conf": 0.987,
+       "text": "총중량(g)(#3/5) / 306/310 / 312/316 / 317/321",
+       "y": 1333
+      },
+      {
+       "conf": 0.929,
+       "text": "FM F53-SR / Fujikura",
+       "y": 1462
+      },
+      {
+       "conf": 0.91,
+       "text": "※샤프트무게는컷전의중량입니다. 클럽 무게는참고값입니다.",
+       "y": 1564
+      },
+      {
+       "conf": 0.997,
+       "text": "그립",
+       "y": 1665
+      },
+      {
+       "conf": 0.968,
+       "text": "IOMIC Sticky 1.8 Black Mizuno Original (R60/44g)",
+       "y": 1925
+      }
+     ],
+     "y0": 15398,
+     "y1": 17415
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.976,
+       "text": "03 / 미즈노 ST-MAX230 남성 유틸리티우드(택1)",
+       "y": 82
+      },
+      {
+       "conf": 0.974,
+       "text": "MAX UTY 위한 NEXT GENERATION",
+       "y": 1076
+      },
+      {
+       "conf": 0.979,
+       "text": "CORTECH CHAMBER탑재",
+       "y": 1120
+      },
+      {
+       "conf": 0.957,
+       "text": "Next-Generation CORTECH CHAMBER는 퀵스위치 내부까지 확장되고,",
+       "y": 1186
+      },
+      {
+       "conf": 0.973,
+       "text": "CORTECHCHAMBER의 위치를페이스 센터에 가깝게 함으로써",
+       "y": 1226
+      },
+      {
+       "conf": 0.964,
+       "text": "CORAREA(고초속 에어리어)를 힐 부분까지 확대",
+       "y": 1265
+      }
+     ],
+     "y0": 17415,
+     "y1": 19266
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.949,
+       "text": "경량화된 Waffle Crown채택",
+       "y": 49
+      },
+      {
+       "conf": 0.948,
+       "text": "경량 Waffle Crown 채택으로 잉여 중량을",
+       "y": 114
+      },
+      {
+       "conf": 0.961,
+       "text": "후방에배치하여 높은M이달성",
+       "y": 148
+      },
+      {
+       "conf": 0.565,
+       "text": "R",
+       "y": 483
+      },
+      {
+       "conf": 0.967,
+       "text": "SOLE의 리딩 엣지(leading edge)를 절단",
+       "y": 1245
+      },
+      {
+       "conf": 0.951,
+       "text": "뒤쪽으로 둥글게 만든",
+       "y": 1293
+      },
+      {
+       "conf": 0.976,
+       "text": "\"Speed Bevel SOLE\"설계",
+       "y": 1334
+      }
+     ],
+     "y0": 19266,
+     "y1": 21213
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.964,
+       "text": "QUICK SWITCH - 3U",
+       "y": 46
+      },
+      {
+       "conf": 0.974,
+       "text": "어답터세팅케이스(8EA)",
+       "y": 134
+      },
+      {
+       "conf": 0.986,
+       "text": "탄도 / 페이스 앵글 / 라이각",
+       "y": 154
+      },
+      {
+       "conf": 0.965,
+       "text": "라이 세팅 / 로프트 세팅 / 어답터",
+       "y": 177
+      },
+      {
+       "conf": 0.771,
+       "text": "17° / LOW(-2) / OPEN 2.5° / 60.0°",
+       "y": 224
+      },
+      {
+       "conf": 0.813,
+       "text": "18° / (-1) / OPEN 1.25 / 59.0°",
+       "y": 269
+      },
+      {
+       "conf": 0.968,
+       "text": "STANDARD / STD(LOFT) / 58.5",
+       "y": 302
+      },
+      {
+       "conf": 0.754,
+       "text": "19° / SQUARE",
+       "y": 316
+      },
+      {
+       "conf": 0.871,
+       "text": "(58.5 ~60.0)",
+       "y": 328
+      },
+      {
+       "conf": 0.789,
+       "text": "Low / 20° / -(+1) / CLOSE 1.25° / 59.5",
+       "y": 355
+      },
+      {
+       "conf": 0.812,
+       "text": "HIGH / 21° / HIGH(+2) / CLOSE 2.5 / 60.0",
+       "y": 403
+      },
+      {
+       "conf": 0.859,
+       "text": "18'U / -(-1U) / OPEN 1.25' / 61.0°",
+       "y": 448
+      },
+      {
+       "conf": 0.845,
+       "text": "UPRIGHT / 19'U / UPRT(3U) / 61.5",
+       "y": 481
+      },
+      {
+       "conf": 0.967,
+       "text": "SQUARE",
+       "y": 496
+      },
+      {
+       "conf": 0.886,
+       "text": "(61.0 ~61.5)",
+       "y": 508
+      },
+      {
+       "conf": 0.823,
+       "text": "20'U / -(+1U) / CLOSE 1.25° / 61.0°",
+       "y": 540
+      },
+      {
+       "conf": 0.939,
+       "text": "QUICK SWITCH - 4U",
+       "y": 677
+      },
+      {
+       "conf": 0.923,
+       "text": "어답터 세팅케이스(8EA)",
+       "y": 760
+      },
+      {
+       "conf": 0.997,
+       "text": "탄도 / 페이스앵글 / 라이각",
+       "y": 783
+      },
+      {
+       "conf": 0.936,
+       "text": "라이 세팅 / 로프트 세팅 / 어답터",
+       "y": 803
+      },
+      {
+       "conf": 0.86,
+       "text": "20' / LOW(2) / OPEN 2.5° / 60.5°",
+       "y": 847
+      },
+      {
+       "conf": 0.829,
+       "text": "21 / -(-1) / OPEN 1.25° / 59.5",
+       "y": 896
+      },
+      {
+       "conf": 0.909,
+       "text": "STANDARD / STD(LOFT) / SQUARE / 59.0°",
+       "y": 928
+      },
+      {
+       "conf": 0.834,
+       "text": "(59.0' ~60.5) / 22'",
+       "y": 940
+      },
+      {
+       "conf": 0.844,
+       "text": "Low / 23 / -(+1) / CLOSE 1.25* / 60.0°",
+       "y": 981
+      },
+      {
+       "conf": 0.806,
+       "text": "HIGH / 24' / HIGH(+2) / CLOSE 2.5 / 60.5°",
+       "y": 1027
+      },
+      {
+       "conf": 0.86,
+       "text": "21°U / -(1U) / OPEN 1.25 / 61.5°",
+       "y": 1074
+      },
+      {
+       "conf": 0.835,
+       "text": "UPRIGHT / 22'U / UPRT(3U) / 62.0°",
+       "y": 1107
+      },
+      {
+       "conf": 0.968,
+       "text": "SQUARE",
+       "y": 1122
+      },
+      {
+       "conf": 0.845,
+       "text": "(61.5%~62.0')",
+       "y": 1133
+      },
+      {
+       "conf": 0.857,
+       "text": "23U / -(+1U) / CLOSE 1.25° / 61.5°",
+       "y": 1165
+      },
+      {
+       "conf": 0.76,
+       "text": "SA",
+       "y": 1588
+      },
+      {
+       "conf": 0.996,
+       "text": "19",
+       "y": 1757
+      }
+     ],
+     "y0": 21213,
+     "y1": 23017
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "상세스펙",
+       "y": 559
+      },
+      {
+       "conf": 0.912,
+       "text": "모델 / 미즈노 ST-MAX 230 남성 유틸리티",
+       "y": 608
+      },
+      {
+       "conf": 0.908,
+       "text": "로프트각(o) / #3-19(±2) / #4-22(±2)",
+       "y": 644
+      },
+      {
+       "conf": 0.851,
+       "text": "헤드체적(cmi) / 122 / 116",
+       "y": 688
+      },
+      {
+       "conf": 0.983,
+       "text": "라이각() / 58.5-61.5 / 59.0-62.0",
+       "y": 727
+      },
+      {
+       "conf": 0.92,
+       "text": "길이 / 40.75 / 40.25",
+       "y": 766
+      },
+      {
+       "conf": 0.89,
+       "text": "스윙웨이트 / (R, SR) DO-D2 / (S) D1-D3 / (R, SR) DO-D2 / (S) D1-D3",
+       "y": 811
+      },
+      {
+       "conf": 0.999,
+       "text": "소재",
+       "y": 858
+      },
+      {
+       "conf": 0.961,
+       "text": "FACE -머레이징 MAS1C 단조/BODY - SUS630 주조/CORTECH CHAMBER - TPU(1195A)/SUS316",
+       "y": 893
+      },
+      {
+       "conf": 0.945,
+       "text": "마무리미러처리(BLACKIP)/SHOT처리/페인트/데칼",
+       "y": 923
+      },
+      {
+       "conf": 0.974,
+       "text": "※모든클럽의오차값은1입니다",
+       "y": 953
+      },
+      {
+       "conf": 0.996,
+       "text": "샤프트",
+       "y": 1081
+      },
+      {
+       "conf": 0.945,
+       "text": "샤프트 / FUJIKURA VENTUS BLUE FM U",
+       "y": 1127
+      },
+      {
+       "conf": 0.977,
+       "text": "샤프트강도 / R / SR / S",
+       "y": 1169
+      },
+      {
+       "conf": 0.948,
+       "text": "샤프트중량(g) / 55 / 60 / 65",
+       "y": 1208
+      },
+      {
+       "conf": 0.927,
+       "text": "샤프트토크() / 4.2 / 3.6 / 3.5",
+       "y": 1252
+      },
+      {
+       "conf": 0.924,
+       "text": "킥포인트 / Middle / Middle / Middle",
+       "y": 1291
+      },
+      {
+       "conf": 0.938,
+       "text": "총중량(g) (#3/#4) / 333/347 / 338/343 / 343/338",
+       "y": 1333
+      },
+      {
+       "conf": 0.872,
+       "text": "FM U60-SR_ / Fujikura",
+       "y": 1462
+      },
+      {
+       "conf": 0.939,
+       "text": "※샤프트무게는컷전의중량입니다. 클럽무게는 참고값입니다",
+       "y": 1566
+      },
+      {
+       "conf": 0.997,
+       "text": "그립",
+       "y": 1665
+      },
+      {
+       "conf": 0.955,
+       "text": "IOMIC Sticky 1.8 Black Mizuno Original (R60/44g)",
+       "y": 1927
+      }
+     ],
+     "y0": 23017,
+     "y1": 25066
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "상품색상및밝기차이",
+       "y": 88
+      },
+      {
+       "conf": 0.9,
+       "text": "상기사양 및디자인은출시제품과 차이가 있을수 있습니다.",
+       "y": 113
+      },
+      {
+       "conf": 0.913,
+       "text": "모니터 및 스마트폰의 브랜드,기종마다디스플레이 컬러감과 컬러 설정에 따라 왜곡되거나 실제 색상과 다소 차이가있을 수있습니다.",
+       "y": 138
+      },
+      {
+       "conf": 0.897,
+       "text": "제품컷은 조명과 각도 등의 영향으로 인해 컷마다 다소 색상이 다를 수 있습니다.",
+       "y": 162
+      },
+      {
+       "conf": 0.926,
+       "text": "본쇼핑몰의 상품콘텐트는 저작권법에 보호 받고 있습니다",
+       "y": 215
+      },
+      {
+       "conf": 0.955,
+       "text": "골프콘텐트허브의 모든 상품콘텐트는 지적재산권 행사를 위해 한국저작권위원회에등록됩니다.저작권 등록시",
+       "y": 237
+      },
+      {
+       "conf": 0.946,
+       "text": "많은 비용이발생하지만관렵업계 분들과의불편한상황이벌어지는것을최소화하고콘텐트구매고객 보호및콘텐트의 정확성,객관성",
+       "y": 261
+      },
+      {
+       "conf": 0.934,
+       "text": "품질향상을 위함입니다.부디 이를근거로관련업계 분들의 손해배상및 사용금지 가처분,영업금지가처분등의 피해가 없으시길 당부드립니다.",
+       "y": 286
+      },
+      {
+       "conf": 0.931,
+       "text": "01.골프콘텐트허브 상품콘텐트는 영리를 목적으로하지 않는 개인홈페이지라도 출처를 표시하고 허락을받아야합니다.",
+       "y": 320
+      },
+      {
+       "conf": 0.975,
+       "text": "(문화관광부저작권심의조정위원회에서발취)",
+       "y": 345
+      },
+      {
+       "conf": 0.969,
+       "text": "02.골프콘텐트허브 상품콘텐트는 저작권법 제2조 15호와 18호에 의거하여 보호됩니다.",
+       "y": 370
+      },
+      {
+       "conf": 0.95,
+       "text": "03.골프콘텐트허브 상품콘텐트는 저작권법 제2조 14호에 의거 컴퓨터 장치를 이용한 저장,예를 들어 USB나 디스크에 복제하거나 통신망에",
+       "y": 395
+      },
+      {
+       "conf": 0.923,
+       "text": "업로드하거나 다운로드하는 것도 복제에 해당함.상품콘텐트를 인터넷 상이나 모바일 상에 업로드하거나 다운로드 하는 모든행위는 복제행위임.",
+       "y": 418
+      },
+      {
+       "conf": 0.988,
+       "text": "관련사이트-저작권심의조정위원회:http://www.copyright.or.kr",
+       "y": 453
+      }
+     ],
+     "y0": 25066,
+     "y1": 25703
+    }
+   ],
+   "status": "read",
+   "width": 945
+  },
+  {
+   "bytes": 369918,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_75/1740621311248eQkdh_JPEG/p-11474625629-s-1-A-1.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 412185,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_270/1740621311253msvdE_JPEG/p-11474625629-s-1-A-2.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 395351,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_262/17406213111134iMQq_JPEG/p-11474625629-s-1-A-3.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 313308,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_39/1740621311110BVNn1_JPEG/p-11474625629-s-1-A-4.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 391998,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_111/1740621311113R5jJN_JPEG/p-11474625629-s-1-A-5.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 214760,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_122/1740621311226xo8s7_JPEG/p-11474625629-s-1-A-6.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 315913,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_1/1740621311110QbYCX_JPEG/p-11474625629-s-1-A-7.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 258337,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_44/17406213114316xuFd_JPEG/p-11474625629-s-1-A-8.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 344438,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_242/1740621311111B09Gt_JPEG/p-11474625629-s-1-A-9.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 395800,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_164/1740621311145nwCwG_JPEG/p-11474625629-s-1-A-10.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 380548,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_104/17406213111134xV4h_JPEG/p-11474625629-s-1-A-11.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 230027,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_270/1740621311104S93Gl_JPEG/p-11474625629-s-1-A-12.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 280475,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_75/1740621311252ikybY_JPEG/p-11474625629-s-1-A-13.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 285156,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_125/1740621311258WfSRQ_JPEG/p-11474625629-s-1-A-14.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 337845,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_257/1740621311112CbbLM_JPEG/p-11474625629-s-1-A-15.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 418547,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_10/1740621311378wUy3J_JPEG/p-11474625629-s-1-A-16.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 311546,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_85/1740621311320LHBO6_JPEG/p-11474625629-s-1-A-17.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 330948,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_126/1740621311447ahG94_JPEG/p-11474625629-s-1-A-18.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 220990,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_57/1740621311269pJhI9_JPEG/p-11474625629-s-1-A-19.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 264551,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_23/1740621311276f5EDl_JPEG/p-11474625629-s-1-A-20.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 263660,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_209/1740621311273PTefv_JPEG/p-11474625629-s-1-A-21.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 235259,
+   "height": 755,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250227_68/1740621311382Bm2vU_JPEG/p-11474625629-s-1-A-22.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  }
+ ],
+ "key": "fairwardgolf:naver:500047358:11528356176",
+ "links_sha256": "72934fb55b9712752cf57fd682447a769a12ba7306fb81d33c14f9398bd909bd",
+ "product_id": "11528356176",
+ "seconds": 0,
+ "skipped": []
+}

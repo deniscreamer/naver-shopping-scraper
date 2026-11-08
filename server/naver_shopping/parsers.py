@@ -348,7 +348,10 @@ def parse_simple_product(sp, slug=None, is_brand=False):
     search_info = _dict(sp.get("naverShoppingSearchInfo"))
     ep = _dict(sp.get("epInfo"))
     # the product page's gallery, in order, as original-file links (no ?type= rendition): same files and
-    # count as the page's gallery, largest real size of every rendition (2026-11-01, scripts/naver_images.py)
+    # count as the page's gallery, largest real size of every rendition (2026-11-01, scripts/naver_images.py).
+    # One image is the seller's choice, not a gap (2026-11-07, 5 of 5 one-photo sets read via /products/page): the
+    # page's own productImages / galleryImages hold 1, view360Image is empty, no option images; the other shop-phinf
+    # images in the page HTML are the similar-products block (data-nlog-area="similar.pd"), other products.
     images = [u for u in [_clean(sp.get("representativeImageUrl"))] + [_clean(u) for u in _list(sp.get("optionalImageUrls"))] if u]
     reviews = _dict(sp.get("reviewAmount"))
     catalog_id = _clean(str(ep.get("syncNvMid") or "")) or None

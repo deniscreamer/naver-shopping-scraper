@@ -42,6 +42,9 @@ class CategoryRules:
     by_title: dict[str, tuple[Leaf, ...]] = field(default_factory=dict)   # no such row: words in the name
     paid_variants: bool = False          # also sell the variants that change the price (naver_variants paid=True)
     paid_addons: bool = False            # also offer add-on products (추가상품) that cost money
+    description_images: bool = False     # OCR the description images (description_images.py) and guess the
+                                         # package from them: the larger of that and today's value wins; the
+                                         # parts profile follows the Naver category id (description_measures)
 
 
 @dataclass(frozen=True)
@@ -79,7 +82,11 @@ RULES = {
                                       # of the set. Offered with their prices, the photo matches what is
                                       # sold (4 of 40 sold a smaller set than the title without them; 13 of
                                       # 40 have paid add-ons). A per-category choice: off elsewhere.
-                                      paid_variants=True, paid_addons=True),
+                                      paid_variants=True, paid_addons=True,
+                                      # owner 2026-11-07: the images state the parts (club weights and
+                                      # lengths, the bag's weight and size); OCR study on the 50 sets
+                                      # (its parts profile: description_measures.CATEGORY_PROFILES)
+                                      description_images=True),
         }),
 }
 

@@ -25,7 +25,8 @@ non-image answer, a file image_prep refuses, 5xx after retries) is the same
 photo tried as FALLBACKS in order; each file records its `rendition`.
 
 Fetch rules (adapted from a catalog project's image downloader):
-  * HTTPS and IMAGE_HOSTS only; no redirects (a redirect fails the file);
+  * HTTPS and IMAGE_HOSTS only (description images: any public HTTPS host, `any_host`); no redirects (a
+    redirect fails the file);
   * TIMEOUT per request, MAX_BYTES per file, also with no Content-Length;
   * image/* content type and a known file signature (JPEG, PNG, GIF, WebP);
   * 403 / 429 stop the whole download (CdnRefused): no other rendition, no
@@ -41,11 +42,15 @@ Fetch rules (adapted from a catalog project's image downloader):
     media = download_review_media(picked["results"], "scripts/output/images-123", store)
 """
 import hashlib
+import ipaddress
 import http.cookiejar
 import os
 import struct
 import time
 from urllib.parse import urlsplit
+
+import re
+import socket
 
 import requests
 
@@ -62,6 +67,7 @@ RETRY_WAITS = (3, 6)            # seconds before the 2nd and 3rd attempt
 PACE = 1.0                      # seconds between downloads, at least (2.0 until 2026-11-05: review photos took up
                                 # to 96 s a product in a 40-product run; still one request at a time)
 CHUNK = 64 * 1024
+_IP_RE = re.compile(r"^\d{1,3}(?:\.\d{1,3}){3}$")
 
 
 class CdnRefused(Exception):
@@ -83,9 +89,28 @@ def new_session():
     return session
 
 
-def allowed(url):
+def public_host(host, resolve=None):
+    """Every address the name resolves to is public (a seller's link never reaches this Mac, the LAN or a
+    cloud metadata address: 127.*, 10.*, 192.168.*, 169.254.*, ::1, ...). An unresolvable name is not public."""
+    resolve = resolve or socket.getaddrinfo
+    try:
+        addresses = {info[4][0] for info in resolve(host, 443, proto=socket.IPPROTO_TCP)}
+    except (OSError, UnicodeError):
+        return False
+    return bool(addresses) and all(ipaddress.ip_address(a.split("%")[0]).is_global for a in addresses)
+
+
+def allowed(url, any_host=False):
+    """HTTPS on Naver's image CDN; with any_host (a description image the seller hosts elsewhere, 2026-11-07) any
+    public HTTPS host by name: never an IP literal, localhost or a single-label name."""
     parts = urlsplit(url or "")
-    return parts.scheme == "https" and parts.hostname in IMAGE_HOSTS
+    if parts.scheme != "https" or not parts.hostname:
+        return False
+    if not any_host:
+        return parts.hostname in IMAGE_HOSTS
+    host = parts.hostname.lower()
+    return "." in host and not host.endswith((".local", ".localhost", ".internal")) and host != "localhost" \
+        and not _IP_RE.match(host) and ":" not in host
 
 
 def image_info(data):
@@ -191,12 +216,15 @@ def _fetch(session, url, sleep):
     return data, ctype, info
 
 
-def fetch(url, session=None, sleep=time.sleep, prepare_with=None):
+def fetch(url, session=None, sleep=time.sleep, prepare_with=None, any_host=False):
     """The photo at `url`, or its best FALLBACKS rendition when that fails -> (rendition, source url,
     bytes, prepare_with(bytes) or None). A rendition whose bytes `prepare_with` refuses (PrepError) counts
-    as failed too. Raises CdnRefused / ImageError."""
-    if not allowed(url):
+    as failed too. Raises CdnRefused / ImageError. any_host: see allowed()."""
+    if not allowed(url, any_host):
         raise ImageError(f"not an allowed image URL: {url}")
+    host = urlsplit(url).hostname or ""
+    if any_host and host not in IMAGE_HOSTS and not public_host(host):
+        raise ImageError(f"{host} resolves to a private / local address: not fetched")
     session = session or new_session()
     errors = []
     for rendition, source in renditions(url):

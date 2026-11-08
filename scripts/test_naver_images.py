@@ -264,3 +264,19 @@ def test_review_media_skips_a_failed_photo_and_stops_on_403(tmp_path):
 def test_new_session_keeps_no_cookies():
     policy = I.new_session().cookies._policy          # applies to cookies from answers and on requests
     assert policy.is_not_allowed("shop-phinf.pstatic.net") and policy.is_not_allowed(".naver.com")
+
+
+
+def test_seller_hosts_must_resolve_to_public_addresses():
+    """Description images from a seller's host (any_host): never this Mac, the LAN or a metadata address."""
+    def resolver(*ips):
+        return lambda host, port, proto=0: [(0, 0, 0, "", (ip, port)) for ip in ips]
+    assert I.public_host("img.example.com", resolver("203.0.113.9")) is False      # TEST-NET: not global
+    assert I.public_host("img.example.com", resolver("8.8.8.8")) is True
+    assert I.public_host("img.example.com", resolver("8.8.8.8", "10.0.0.5")) is False
+    for ip in ("127.0.0.1", "192.168.1.10", "169.254.169.254", "::1"):
+        assert I.public_host("x.example.com", resolver(ip)) is False
+
+    def fails(host, port, proto=0):
+        raise OSError("no such host")
+    assert I.public_host("nowhere.example.com", fails) is False

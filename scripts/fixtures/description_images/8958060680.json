@@ -1,0 +1,347 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 797783,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261002_131/1790917308318uRbqe_PNG/BG100_%EC%8D%B8%EB%84%A4%EC%9D%BC.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.884,
+       "text": "BRIDGESTONE",
+       "y": 15
+      },
+      {
+       "conf": 0.939,
+       "text": "G O L F",
+       "y": 80
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 50264,
+   "height": 700,
+   "host": "seller",
+   "link": "https://image.rakuten.co.jp/arigaen/cabinet/images/shohin62/22bsg_bg100_sp1.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.705,
+       "text": "BRIDGESTONE / GOLF",
+       "y": 32
+      },
+      {
+       "conf": 0.932,
+       "text": "-100",
+       "y": 79
+      }
+     ],
+     "y0": 0,
+     "y1": 700
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 37725,
+   "height": 700,
+   "host": "seller",
+   "link": "https://image.rakuten.co.jp/arigaen/cabinet/images/shohin62/22bsg_bg100_sp3.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.715,
+       "text": "ZRIDGESTONE / GOLF",
+       "y": 38
+      },
+      {
+       "conf": 0.995,
+       "text": "U4",
+       "y": 347
+      }
+     ],
+     "y0": 0,
+     "y1": 700
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 37420,
+   "height": 700,
+   "host": "seller",
+   "link": "https://image.rakuten.co.jp/arigaen/cabinet/images/shohin62/22bsg_bg100_sp5.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.983,
+       "text": "BG-100",
+       "y": 327
+      },
+      {
+       "conf": 0.896,
+       "text": "GOLF / BRIDGESTONE",
+       "y": 530
+      }
+     ],
+     "y0": 0,
+     "y1": 700
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 46024,
+   "height": 700,
+   "host": "seller",
+   "link": "https://image.rakuten.co.jp/arigaen/cabinet/images/shohin62/22bsg_bg100_sp2.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.834,
+       "text": "ZBRIDGESTONE",
+       "y": 49
+      },
+      {
+       "conf": 0.984,
+       "text": "BG-100",
+       "y": 82
+      },
+      {
+       "conf": 0.819,
+       "text": "UI",
+       "y": 379
+      }
+     ],
+     "y0": 0,
+     "y1": 700
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 38987,
+   "height": 700,
+   "host": "seller",
+   "link": "https://image.rakuten.co.jp/arigaen/cabinet/images/shohin62/22bsg_bg100_sp4.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.992,
+       "text": "BG-100",
+       "y": 324
+      },
+      {
+       "conf": 0.849,
+       "text": "COLF / BRIDGESTOI",
+       "y": 485
+      }
+     ],
+     "y0": 0,
+     "y1": 700
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 36437,
+   "height": 700,
+   "host": "seller",
+   "link": "https://image.rakuten.co.jp/arigaen/cabinet/images/shohin62/22bsg_bg100_sp6.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 700
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 35308,
+   "height": 700,
+   "host": "seller",
+   "link": "https://image.rakuten.co.jp/arigaen/cabinet/images/shohin62/22bsg_bg100_sp8.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.674,
+       "text": "XMITSUBISHICHEMICAL / Dlamanar / foPBG-IDD",
+       "y": 99
+      }
+     ],
+     "y0": 0,
+     "y1": 700
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 183502,
+   "height": 308,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20261002_288/1790920417157EpSHO_PNG/%E3%85%8A%E3%85%8D%E3%85%8A.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "샤프트",
+       "y": 4
+      },
+      {
+       "conf": 0.958,
+       "text": "(드라이버·페어웨이우드용) / (유틸리티용)",
+       "y": 38
+      },
+      {
+       "conf": 0.984,
+       "text": "Diamana / for / BG-100w / 샤프트 / (카본) / Diamana / for / BG-100u / 샤프트 / (카본)",
+       "y": 69
+      },
+      {
+       "conf": 0.526,
+       "text": "EDianana / Csiamana",
+       "y": 104
+      },
+      {
+       "conf": 0.993,
+       "text": "(아이언용) / (퍼터용)",
+       "y": 136
+      },
+      {
+       "conf": 0.898,
+       "text": "N.S.PRO / 955GH / 샤프트(스틸) / BRIDGESTONE / GOLF / 오리지널 스틸 시 / 샤프트",
+       "y": 170
+      },
+      {
+       "conf": 0.993,
+       "text": "Diamana / for / BG-100i / 샤프트 / (카본)",
+       "y": 239
+      }
+     ],
+     "y0": 0,
+     "y1": 308
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 47345,
+   "height": 700,
+   "host": "seller",
+   "link": "https://image.rakuten.co.jp/arigaen/cabinet/images/shohin62/22bsg_bg100_sp9.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 700
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 48446,
+   "height": 700,
+   "host": "seller",
+   "link": "https://image.rakuten.co.jp/arigaen/cabinet/images/shohin62/22bsg_bg100_sp7.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.848,
+       "text": "4",
+       "y": 161
+      },
+      {
+       "conf": 0.951,
+       "text": "V",
+       "y": 178
+      }
+     ],
+     "y0": 0,
+     "y1": 700
+    }
+   ],
+   "status": "read",
+   "width": 700
+  },
+  {
+   "bytes": 121370,
+   "height": 750,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230729_31/1690619052470O5aF0_JPEG/301980247698-01_9.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.789,
+       "text": "4",
+       "y": 491
+      }
+     ],
+     "y0": 0,
+     "y1": 750
+    }
+   ],
+   "status": "read",
+   "width": 750
+  }
+ ],
+ "key": "fairwardgolf:naver:101921971:8958060680",
+ "links_sha256": "4457cf88e496c25e6f8fb7c11fe6ab4add2e6ee2d924422cef4af0fc16789992",
+ "product_id": "8958060680",
+ "seconds": 0,
+ "skipped": [
+  {
+   "link": "https://shop-phinf.pstatic.net/20230831_153/1693414160246z47jc_JPEG/230826_happy_maro_%EB%84%A4%EC%9D%B4%EB%B2%84%ED%86%A1%ED%86%A1_%EB%B3%B5%EC%82%AC.jpg?type=w848",
+   "rule": "boilerplate_name"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20230831_277/1693485533723aKHdA_JPEG/230826_happy_maro_%EB%B0%B0%EC%86%A1_%EC%A0%88%EC%B0%A8_%EB%B3%B5%EC%82%AC.jpg?type=w848",
+   "rule": "boilerplate_name"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20240410_175/1712687943404aexpk_JPEG/230826_happy_maro_%ED%95%98%EB%8B%A8_%EC%83%81%ED%8E%98_%EB%B3%B5%EC%82%AC.jpg?type=w848",
+   "rule": "boilerplate_name"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20230729_174/1690619005771VIIj4_PNG/Logo-bridgestone.png?type=w848",
+   "rule": "first_header"
+  }
+ ]
+}

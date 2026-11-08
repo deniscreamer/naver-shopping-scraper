@@ -1,0 +1,1507 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 504777,
+   "height": 607,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220418_37/1650245101191bWbBC_JPEG/PGM%EC%9D%B8%EC%A6%9D%EC%84%9C%EC%B5%9C%EC%A2%85(%E6%B7%BB%E5%8A%A0%E6%B0%B4%E5%8D%B0).jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.526,
+       "text": "O / PGn",
+       "y": 47
+      },
+      {
+       "conf": 0.987,
+       "text": "AUTHORIZATION",
+       "y": 73
+      },
+      {
+       "conf": 0.989,
+       "text": "Pro Golf Master",
+       "y": 117
+      },
+      {
+       "conf": 0.969,
+       "text": "YIBANG GOLF PRODUCTS CO.,LTD hereby authorizes viviga_wolrd overseas",
+       "y": 144
+      },
+      {
+       "conf": 0.982,
+       "text": "online sales right.Website address: www.naver.com. Promote and sell all",
+       "y": 166
+      },
+      {
+       "conf": 0.986,
+       "text": "series products under brand name PGM and given full responsibility for",
+       "y": 191
+      },
+      {
+       "conf": 0.969,
+       "text": "managing related affairs on this selling website. The authorization is valid",
+       "y": 214
+      },
+      {
+       "conf": 0.98,
+       "text": "from April 14th 2022 to April 14th 18th 2023.",
+       "y": 238
+      },
+      {
+       "conf": 0.891,
+       "text": "Authorized trademark : / -PGm",
+       "y": 266
+      },
+      {
+       "conf": 0.98,
+       "text": "Pro Golf Master",
+       "y": 301
+      },
+      {
+       "conf": 0.99,
+       "text": "https://smartstore.naver.com/viviga_world",
+       "y": 320
+      },
+      {
+       "conf": 0.885,
+       "text": ": / www.naver.com.PGM",
+       "y": 347
+      },
+      {
+       "conf": 0.998,
+       "text": "2022041420230414",
+       "y": 393
+      },
+      {
+       "conf": 0.731,
+       "text": ": / -PGn",
+       "y": 422
+      },
+      {
+       "conf": 0.993,
+       "text": "Pro Golf Master",
+       "y": 459
+      },
+      {
+       "conf": 0.748,
+       "text": "PGT",
+       "y": 466
+      },
+      {
+       "conf": 0.957,
+       "text": "Pro Golf Master / Hereby Authorize",
+       "y": 492
+      },
+      {
+       "conf": 0.935,
+       "text": "YIBANG GOLF GOODS CO., LTD",
+       "y": 517
+      }
+     ],
+     "y0": 0,
+     "y1": 607
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 533046,
+   "height": 1307,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_85/17104690611982wcnO_JPEG/1.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.87,
+       "text": "1300 / MEN'S LEFT GLOVE BAR / MTG025",
+       "y": 23
+      },
+      {
+       "conf": 0.967,
+       "text": "남성 골프클럽세트",
+       "y": 109
+      },
+      {
+       "conf": 0.987,
+       "text": "고반발 드라이버·초경량 샤프트·스테인리스 소재",
+       "y": 214
+      },
+      {
+       "conf": 0.994,
+       "text": "G / 300",
+       "y": 383
+      },
+      {
+       "conf": 0.894,
+       "text": "T4PE",
+       "y": 418
+      },
+      {
+       "conf": 0.845,
+       "text": "G / 300",
+       "y": 476
+      },
+      {
+       "conf": 0.851,
+       "text": "T4PE / 10.5",
+       "y": 503
+      },
+      {
+       "conf": 0.997,
+       "text": "300",
+       "y": 527
+      },
+      {
+       "conf": 0.993,
+       "text": "TYPE",
+       "y": 550
+      },
+      {
+       "conf": 0.978,
+       "text": "300",
+       "y": 619
+      },
+      {
+       "conf": 0.886,
+       "text": "TVPE",
+       "y": 635
+      },
+      {
+       "conf": 0.955,
+       "text": "G / 300",
+       "y": 869
+      },
+      {
+       "conf": 0.577,
+       "text": "G300",
+       "y": 1006
+      }
+     ],
+     "y0": 0,
+     "y1": 1307
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 382059,
+   "height": 1307,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_287/1710469098573gLqoE_JPEG/03.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.97,
+       "text": "CAST TITANIUM DRIVER / MTG025",
+       "y": 46
+      },
+      {
+       "conf": 0.999,
+       "text": "G300",
+       "y": 154
+      },
+      {
+       "conf": 1.0,
+       "text": "골프드라이버",
+       "y": 237
+      },
+      {
+       "conf": 0.989,
+       "text": "G / 300",
+       "y": 613
+      },
+      {
+       "conf": 0.875,
+       "text": "TYPE",
+       "y": 686
+      },
+      {
+       "conf": 0.999,
+       "text": "10.5",
+       "y": 768
+      }
+     ],
+     "y0": 0,
+     "y1": 1307
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 398354,
+   "height": 1243,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_180/17104691914534q5rl_JPEG/06.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.827,
+       "text": "BRAND NEW CUP HEAD / MT6025",
+       "y": 22
+      },
+      {
+       "conf": 0.963,
+       "text": "고반발 드라이버",
+       "y": 130
+      },
+      {
+       "conf": 0.944,
+       "text": "최신형 헤드를 사용한 고반발 드라이버 페이스",
+       "y": 245
+      },
+      {
+       "conf": 0.967,
+       "text": "높이를 20% 증가해 유효 타격 및 비거리 증가해 졌습니다",
+       "y": 286
+      },
+      {
+       "conf": 0.568,
+       "text": "»}>",
+       "y": 506
+      }
+     ],
+     "y0": 0,
+     "y1": 1243
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 370571,
+   "height": 1198,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_283/1710469463312FBR8G_JPEG/07.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.953,
+       "text": "STAINLESS STEEL HEAD / ITG025",
+       "y": 73
+      },
+      {
+       "conf": 0.997,
+       "text": "스테인리스 / 7번 아이언",
+       "y": 163
+      },
+      {
+       "conf": 0.957,
+       "text": "초저 무게중심 디자인",
+       "y": 271
+      },
+      {
+       "conf": 0.992,
+       "text": "임팩트 / 정확하고! / 방향도 정확함",
+       "y": 315
+      },
+      {
+       "conf": 0.709,
+       "text": "G / 300",
+       "y": 730
+      },
+      {
+       "conf": 0.82,
+       "text": "T4PE / -PGm",
+       "y": 772
+      },
+      {
+       "conf": 0.984,
+       "text": "G / 300",
+       "y": 1088
+      },
+      {
+       "conf": 0.974,
+       "text": "GOLF IS A SPORT THAT USES DIFFERENT GOLF CLUBS TO",
+       "y": 1134
+      },
+      {
+       "conf": 0.954,
+       "text": "HIT THE GOLF BALL INTO THE HOLE. GOLF 1",
+       "y": 1148
+      }
+     ],
+     "y0": 0,
+     "y1": 1198
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 334391,
+   "height": 923,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_41/1710469517168yPXQ8_JPEG/11.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.964,
+       "text": "ULTRA-LIGHT CARBON SHAFT / MTG025",
+       "y": 56
+      },
+      {
+       "conf": 0.973,
+       "text": "65g / 카본샤프트",
+       "y": 163
+      },
+      {
+       "conf": 0.956,
+       "text": "초경량·우수한 탄성",
+       "y": 285
+      },
+      {
+       "conf": 0.973,
+       "text": "방향성이 강하고 먼 비거리 실현 가능",
+       "y": 323
+      },
+      {
+       "conf": 0.939,
+       "text": "100% Certified Grapmite Flex-R",
+       "y": 393
+      },
+      {
+       "conf": 0.832,
+       "text": "T4PE",
+       "y": 471
+      },
+      {
+       "conf": 0.837,
+       "text": "C300",
+       "y": 473
+      },
+      {
+       "conf": 0.801,
+       "text": "Flex-R",
+       "y": 600
+      },
+      {
+       "conf": 0.978,
+       "text": "100% Certified Graprite",
+       "y": 622
+      },
+      {
+       "conf": 0.85,
+       "text": "TYPE",
+       "y": 692
+      },
+      {
+       "conf": 0.784,
+       "text": "G300",
+       "y": 700
+      }
+     ],
+     "y0": 0,
+     "y1": 923
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 433503,
+   "height": 1216,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_138/1710469554697Ii9ad_JPEG/14.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.792,
+       "text": "ULTRA-LIGHT CARBON SHAFT / MT6025",
+       "y": 34
+      },
+      {
+       "conf": 0.915,
+       "text": "CNC 밀링 퍼터",
+       "y": 134
+      },
+      {
+       "conf": 0.977,
+       "text": "스피드 조절기능이 업그레이드 되었으며",
+       "y": 245
+      },
+      {
+       "conf": 0.989,
+       "text": "안정적인 방향으로 공을 보낼 수 있습니다",
+       "y": 286
+      },
+      {
+       "conf": 0.961,
+       "text": "YB 012P",
+       "y": 683
+      }
+     ],
+     "y0": 0,
+     "y1": 1216
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 361255,
+   "height": 1459,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_26/1710469618749LYBSW_JPEG/18.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.929,
+       "text": "제품 설명",
+       "y": 37
+      },
+      {
+       "conf": 0.997,
+       "text": "Product Information",
+       "y": 136
+      },
+      {
+       "conf": 0.604,
+       "text": "TPGm",
+       "y": 236
+      },
+      {
+       "conf": 0.976,
+       "text": "300 / TYPE",
+       "y": 300
+      },
+      {
+       "conf": 0.692,
+       "text": "PRECISIONX",
+       "y": 640
+      },
+      {
+       "conf": 0.971,
+       "text": "블루 블랙 / _12개 클럽+1개 골프가방",
+       "y": 935
+      },
+      {
+       "conf": 0.989,
+       "text": "우드(1/3/5 하이브리드):4개 / 골프백:1개",
+       "y": 1035
+      },
+      {
+       "conf": 0.94,
+       "text": "아O언/IRON(5-9PS):77H / HE/PUTTER: 1개",
+       "y": 1090
+      },
+      {
+       "conf": 0.993,
+       "text": "헤드커버/HEAD:5개",
+       "y": 1144
+      },
+      {
+       "conf": 0.828,
+       "text": "종류 / 넘버 / 라이각 / 로프트각 / 헤드무게바디무게그립무게 / 길이 / 밸런스",
+       "y": 1239
+      },
+      {
+       "conf": 0.839,
+       "text": "WOOD / #1 / 60 / 10.5 / 197 / 65 / 51 / 45\" / D1",
+       "y": 1268
+      },
+      {
+       "conf": 0.99,
+       "text": "#3 / 58.5 / 15 / 212 / 65 / 51 / 43\" / D1",
+       "y": 1301
+      },
+      {
+       "conf": 0.983,
+       "text": "#5 / 59 / 18 / 221 / 65 / 51 / 42\" / D1",
+       "y": 1335
+      },
+      {
+       "conf": 0.905,
+       "text": "HYBRID / #4H / 59.5 / 21 / 234 / 64 / 51 / 40\" / D1",
+       "y": 1372
+      }
+     ],
+     "y0": 0,
+     "y1": 1459
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 485335,
+   "height": 2075,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_159/1710469618894MprJG_JPEG/19.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.563,
+       "text": "MTG025/W0OD / Ⅲ",
+       "y": 25
+      },
+      {
+       "conf": 0.876,
+       "text": "G300 / T4PE / G / 300",
+       "y": 236
+      },
+      {
+       "conf": 0.804,
+       "text": "TUPE",
+       "y": 309
+      },
+      {
+       "conf": 0.995,
+       "text": "G / 300",
+       "y": 354
+      },
+      {
+       "conf": 0.982,
+       "text": "10.5 / TYPE",
+       "y": 378
+      },
+      {
+       "conf": 0.881,
+       "text": "518 / G300",
+       "y": 408
+      },
+      {
+       "conf": 0.966,
+       "text": "TYPE",
+       "y": 451
+      },
+      {
+       "conf": 0.555,
+       "text": "N",
+       "y": 480
+      },
+      {
+       "conf": 0.994,
+       "text": "G / 300",
+       "y": 1111
+      },
+      {
+       "conf": 0.918,
+       "text": "T4PE",
+       "y": 1154
+      },
+      {
+       "conf": 0.999,
+       "text": "10.5",
+       "y": 1245
+      },
+      {
+       "conf": 0.835,
+       "text": "종류 / 넘버 / 라이각 / 로프트각 / 헤드무게 / 바디무게그립무게 / 길이 / 밸런스",
+       "y": 1735
+      },
+      {
+       "conf": 0.995,
+       "text": "IRON / #5 / 61 / 24 / 258 / 64 / 51 / 38\" / D1",
+       "y": 1770
+      },
+      {
+       "conf": 0.923,
+       "text": "#6 / 61.5 / 27 / 264 / 64 / 51 / 37.5\" / D1",
+       "y": 1803
+      },
+      {
+       "conf": 0.994,
+       "text": "#7 / 62 / 30 / 271 / 64 / 51 / 37\" / D1",
+       "y": 1837
+      },
+      {
+       "conf": 0.907,
+       "text": "#8 / 62.5 / 34 / 276 / 64 / 51 / 36.5\" / D1",
+       "y": 1874
+      },
+      {
+       "conf": 0.993,
+       "text": "#9 / 63 / 38 / 285 / 64 / 51 / 36\" / D1",
+       "y": 1908
+      },
+      {
+       "conf": 0.986,
+       "text": "#PW / 63.5 / 43 / 294 / 64 / 51 / 35.5\" / D1",
+       "y": 1942
+      },
+      {
+       "conf": 0.981,
+       "text": "#SW / 64 / 55 / 301 / 64 / 51 / 35\" / D1",
+       "y": 1974
+      }
+     ],
+     "y0": 0,
+     "y1": 2075
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 97710,
+   "height": 927,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_110/1710469618507umn0d_JPEG/20.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.571,
+       "text": "MTG025/HARDCORE / |",
+       "y": 73
+      },
+      {
+       "conf": 0.646,
+       "text": "G300 / TVPE / PGm",
+       "y": 314
+      },
+      {
+       "conf": 0.578,
+       "text": "G300 / TVPE / PGm",
+       "y": 470
+      }
+     ],
+     "y0": 0,
+     "y1": 927
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 66102,
+   "height": 807,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_101/1710469618332py4ul_JPEG/21.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.842,
+       "text": "300 / T4PE / -PGm",
+       "y": 269
+      },
+      {
+       "conf": 0.952,
+       "text": "G",
+       "y": 300
+      }
+     ],
+     "y0": 0,
+     "y1": 807
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 31863,
+   "height": 870,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_115/1710469618142DsNjD_JPEG/22.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 870
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 22261,
+   "height": 182,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_130/1710469618143V5ubE_JPEG/23.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.848,
+       "text": "종류 / 넘버 / 라이각 / 로프트각 / 헤드무게 / 바디무게 / 그립무게 / 길이 / 벨런스",
+       "y": 42
+      },
+      {
+       "conf": 0.781,
+       "text": "PUTTER / #PT / 71 / 3 / 360 / 113 / 113 / 34\" / |",
+       "y": 75
+      },
+      {
+       "conf": 0.949,
+       "text": "오차범위 / ±1.5 / ±1.5 / ±3 / ±3 / ±2 / ±1/8\" / +/-1.5",
+       "y": 108
+      }
+     ],
+     "y0": 0,
+     "y1": 182
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 62192,
+   "height": 920,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_253/1710469619897lMzp9_JPEG/24.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.687,
+       "text": "MTG025/PUTTER / Ⅲ",
+       "y": 33
+      },
+      {
+       "conf": 0.972,
+       "text": "012P",
+       "y": 349
+      },
+      {
+       "conf": 0.763,
+       "text": "43",
+       "y": 375
+      }
+     ],
+     "y0": 0,
+     "y1": 920
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 34174,
+   "height": 882,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_279/1710469619815INIvG_JPEG/25.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.712,
+       "text": "C",
+       "y": 566
+      }
+     ],
+     "y0": 0,
+     "y1": 882
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 71276,
+   "height": 869,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_65/1710469620225dBSEr_JPEG/26.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 869
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 44080,
+   "height": 562,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_169/1710469620298w6scj_JPEG/27.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.91,
+       "text": "PGm",
+       "y": 135
+      },
+      {
+       "conf": 0.707,
+       "text": "PGm.",
+       "y": 373
+      }
+     ],
+     "y0": 0,
+     "y1": 562
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 119517,
+   "height": 849,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_203/1710469620806XrOOh_JPEG/28.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.782,
+       "text": "4",
+       "y": 477
+      },
+      {
+       "conf": 0.761,
+       "text": "PRECISIONX",
+       "y": 425
+      },
+      {
+       "conf": 0.584,
+       "text": "PGm",
+       "y": 568
+      },
+      {
+       "conf": 0.882,
+       "text": "PRECISIOnX",
+       "y": 624
+      }
+     ],
+     "y0": 0,
+     "y1": 849
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 100742,
+   "height": 879,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_121/1710469621077jBH2X_JPEG/29.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.857,
+       "text": "P6m",
+       "y": 524
+      },
+      {
+       "conf": 0.547,
+       "text": "L92",
+       "y": 562
+      }
+     ],
+     "y0": 0,
+     "y1": 879
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 70863,
+   "height": 666,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_18/1710469621654hwkKF_JPEG/30.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.834,
+       "text": "COLLECTION / GTI",
+       "y": 145
+      },
+      {
+       "conf": 0.884,
+       "text": "@",
+       "y": 321
+      },
+      {
+       "conf": 0.728,
+       "text": "PGm / PGn,",
+       "y": 290
+      },
+      {
+       "conf": 0.686,
+       "text": "0",
+       "y": 379
+      }
+     ],
+     "y0": 0,
+     "y1": 666
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 366934,
+   "height": 961,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_32/1710469622359SgqrJ_JPEG/31.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.842,
+       "text": "G300 / TYPE",
+       "y": 117
+      },
+      {
+       "conf": 0.829,
+       "text": "PGm",
+       "y": 699
+      }
+     ],
+     "y0": 0,
+     "y1": 961
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 212118,
+   "height": 958,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_172/1710469622485DkLns_JPEG/32.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.794,
+       "text": "1300",
+       "y": 118
+      },
+      {
+       "conf": 0.674,
+       "text": "PGm",
+       "y": 181
+      },
+      {
+       "conf": 0.94,
+       "text": "300",
+       "y": 769
+      }
+     ],
+     "y0": 0,
+     "y1": 958
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 88636,
+   "height": 709,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_147/17104696222928jpMl_JPEG/33.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.952,
+       "text": "30 / G300",
+       "y": 215
+      },
+      {
+       "conf": 0.997,
+       "text": "G",
+       "y": 294
+      },
+      {
+       "conf": 0.894,
+       "text": "10.5 / 300 / T4PE",
+       "y": 309
+      }
+     ],
+     "y0": 0,
+     "y1": 709
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 239797,
+   "height": 962,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240315_244/1710469623175HVgji_JPEG/34.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.834,
+       "text": "PGm.",
+       "y": 400
+      },
+      {
+       "conf": 0.693,
+       "text": "PGim.",
+       "y": 524
+      },
+      {
+       "conf": 0.875,
+       "text": "PRE",
+       "y": 621
+      },
+      {
+       "conf": 0.537,
+       "text": "A",
+       "y": 666
+      }
+     ],
+     "y0": 0,
+     "y1": 962
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 244333,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_217/1714443922007bpBcS_JPEG/SKU-06-%E3%80%90%E5%B7%A6%E6%89%8B%E3%80%91%E9%92%A2%E6%9D%864%E6%94%AF%E7%90%83%E6%9D%86_%E7%AB%99%E7%AB%8B%E7%90%83%E5%8C%85.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.973,
+       "text": "MTG025(4종)",
+       "y": 49
+      },
+      {
+       "conf": 0.969,
+       "text": "300 / 스틸 샤프트",
+       "y": 114
+      },
+      {
+       "conf": 0.84,
+       "text": "G / TYPE",
+       "y": 132
+      },
+      {
+       "conf": 0.999,
+       "text": "10.5",
+       "y": 209
+      },
+      {
+       "conf": 0.569,
+       "text": "300 / P6m",
+       "y": 478
+      },
+      {
+       "conf": 0.886,
+       "text": "우드:#] / 아이언:#7/#S / 퍼터:PT",
+       "y": 808
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 246562,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_7/17144439220598K99W_JPEG/SKU-05-%E3%80%90%E5%B7%A6%E6%89%8B%E3%80%91%E7%A2%B3%E7%B4%A04%E6%94%AF%E7%90%83%E6%9D%86_%E7%AB%99%E7%AB%8B%E7%90%83%E5%8C%85.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "MTG025(4종)",
+       "y": 49
+      },
+      {
+       "conf": 0.997,
+       "text": "300 / 카본(R)샤프트",
+       "y": 116
+      },
+      {
+       "conf": 0.84,
+       "text": "G / TYPE",
+       "y": 132
+      },
+      {
+       "conf": 0.999,
+       "text": "10.5",
+       "y": 209
+      },
+      {
+       "conf": 0.534,
+       "text": "300 / TP6m",
+       "y": 478
+      },
+      {
+       "conf": 0.901,
+       "text": "우드:#] / 아이언:#7/#S / 퍼터:PT",
+       "y": 808
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 354083,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_210/1714444015734mFG5G_JPEG/SKU-03-%E3%80%90%E5%B7%A6%E6%89%8B%E3%80%91%E9%92%A2%E6%9D%8612%E6%94%AF%E7%90%83%E6%9D%86_%E6%A0%87%E5%87%86%E7%90%83%E5%8C%85.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.959,
+       "text": "MTG025(12종)",
+       "y": 49
+      },
+      {
+       "conf": 0.999,
+       "text": "300",
+       "y": 82
+      },
+      {
+       "conf": 0.744,
+       "text": "ㅁ / TYPE / 스틸 샤프트(기본 캐디백)",
+       "y": 114
+      },
+      {
+       "conf": 0.998,
+       "text": "10.5",
+       "y": 173
+      },
+      {
+       "conf": 0.77,
+       "text": "FYPE",
+       "y": 190
+      },
+      {
+       "conf": 0.509,
+       "text": "Q.",
+       "y": 237
+      },
+      {
+       "conf": 0.671,
+       "text": "60",
+       "y": 263
+      },
+      {
+       "conf": 0.994,
+       "text": "TYPE",
+       "y": 280
+      },
+      {
+       "conf": 0.955,
+       "text": "300",
+       "y": 358
+      },
+      {
+       "conf": 0.973,
+       "text": "G",
+       "y": 549
+      },
+      {
+       "conf": 0.939,
+       "text": "우드:#/#3/#5/#4H / 아f0언:#5/#6/#7/#8/#9/#P/#S / 퍼터:PT",
+       "y": 808
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 363230,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_281/1714444015705m7coA_JPEG/SKU-01-%E3%80%90%E5%B7%A6%E6%89%8B%E3%80%91%E7%A2%B3%E7%B4%A012%E6%94%AF%E7%90%83%E6%9D%86_%E6%A0%87%E5%87%86%E7%90%83%E5%8C%85.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.959,
+       "text": "MTG025(12종)",
+       "y": 49
+      },
+      {
+       "conf": 0.999,
+       "text": "300",
+       "y": 82
+      },
+      {
+       "conf": 0.744,
+       "text": "ㅁ / TYPE / 카본 샤프트(기본 캐디백)",
+       "y": 114
+      },
+      {
+       "conf": 0.998,
+       "text": "10.5",
+       "y": 173
+      },
+      {
+       "conf": 0.77,
+       "text": "FYPE",
+       "y": 190
+      },
+      {
+       "conf": 0.671,
+       "text": "60",
+       "y": 263
+      },
+      {
+       "conf": 0.994,
+       "text": "TYPE",
+       "y": 280
+      },
+      {
+       "conf": 0.955,
+       "text": "300",
+       "y": 358
+      },
+      {
+       "conf": 0.531,
+       "text": "G",
+       "y": 550
+      },
+      {
+       "conf": 0.738,
+       "text": "PAECISIOnX",
+       "y": 541
+      },
+      {
+       "conf": 0.939,
+       "text": "우드:#]/#3/#5/#4H / 아f0언:#5/#6/#7/#8/#9/#P/#S / 퍼터:PT",
+       "y": 808
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 354852,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_3/1714444047605Ksg8Q_JPEG/SKU-04-%E3%80%90%E5%B7%A6%E6%89%8B%E3%80%91%E9%92%A2%E6%9D%8612%E6%94%AF%E7%90%83%E6%9D%86_%E4%BC%B8%E7%BC%A9%E7%90%83%E5%8C%85.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.959,
+       "text": "MTG025(12종)",
+       "y": 49
+      },
+      {
+       "conf": 0.999,
+       "text": "300",
+       "y": 82
+      },
+      {
+       "conf": 0.744,
+       "text": "ㅁ / TYPE / 스틸 샤프트(기본 캐디백)",
+       "y": 114
+      },
+      {
+       "conf": 0.998,
+       "text": "10.5",
+       "y": 173
+      },
+      {
+       "conf": 0.77,
+       "text": "FYPE",
+       "y": 190
+      },
+      {
+       "conf": 0.509,
+       "text": "Q.",
+       "y": 237
+      },
+      {
+       "conf": 0.671,
+       "text": "60",
+       "y": 263
+      },
+      {
+       "conf": 0.994,
+       "text": "TYPE",
+       "y": 280
+      },
+      {
+       "conf": 0.955,
+       "text": "300",
+       "y": 358
+      },
+      {
+       "conf": 0.973,
+       "text": "G",
+       "y": 549
+      },
+      {
+       "conf": 0.939,
+       "text": "우드:#/#3/#5/#4H / 아f0언:#5/#6/#7/#8/#9/#P/#S / 퍼터:PT",
+       "y": 808
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 364183,
+   "height": 860,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240430_254/1714444048012IK8de_JPEG/SKU-02-%E3%80%90%E5%B7%A6%E6%89%8B%E3%80%91%E7%A2%B3%E7%B4%A012%E6%94%AF%E7%90%83%E6%9D%86_%E4%BC%B8%E7%BC%A9%E7%90%83%E5%8C%85.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.959,
+       "text": "MTG025(12종)",
+       "y": 49
+      },
+      {
+       "conf": 0.999,
+       "text": "300",
+       "y": 82
+      },
+      {
+       "conf": 0.744,
+       "text": "ㅁ / TYPE / 카본 샤프트(기본 캐디백)",
+       "y": 114
+      },
+      {
+       "conf": 0.998,
+       "text": "10.5",
+       "y": 173
+      },
+      {
+       "conf": 0.77,
+       "text": "FYPE",
+       "y": 190
+      },
+      {
+       "conf": 0.671,
+       "text": "60",
+       "y": 263
+      },
+      {
+       "conf": 0.994,
+       "text": "TYPE",
+       "y": 280
+      },
+      {
+       "conf": 0.955,
+       "text": "300",
+       "y": 358
+      },
+      {
+       "conf": 0.531,
+       "text": "G",
+       "y": 550
+      },
+      {
+       "conf": 0.738,
+       "text": "PAECISIOnX",
+       "y": 541
+      },
+      {
+       "conf": 0.939,
+       "text": "우드:#]/#3/#5/#4H / 아f0언:#5/#6/#7/#8/#9/#P/#S / 퍼터:PT",
+       "y": 808
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  }
+ ],
+ "key": "fairwardgolf:naver:100249211:6630856593",
+ "links_sha256": "2eb9066b1b9b9ed337c3720261a20128ef5d1dd060898ebd817731b3a963e159",
+ "product_id": "6630856593",
+ "seconds": 0,
+ "skipped": [
+  {
+   "link": "https://shop-phinf.pstatic.net/20220719_296/1658194314604QXP7o_JPEG/PGM-%EB%B0%B0%EB%84%88.jpg?type=w848",
+   "rule": "link_banner"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20240315_165/1710469080785ud4LG_GIF/02.gif?type=wg848",
+   "rule": "gif"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20240315_199/1710469115732wX1aW_GIF/04.gif?type=wg848",
+   "rule": "gif"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20240315_185/1710469115094GfH8b_GIF/05.gif?type=wg848",
+   "rule": "gif"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20240315_296/1710469486454yB34S_GIF/08.gif?type=wg848",
+   "rule": "gif"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20240315_114/1710469485826BgGGn_GIF/09.gif?type=wg848",
+   "rule": "gif"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20240315_81/1710469485844Enu91_GIF/10.gif?type=wg848",
+   "rule": "gif"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20240315_266/1710469531700725Nd_GIF/12.gif?type=wg848",
+   "rule": "gif"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20240315_178/1710469533580FLJfN_GIF/13.gif?type=wg848",
+   "rule": "gif"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20240315_246/17104695784062daHh_GIF/15.gif?type=wg848",
+   "rule": "gif"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20240315_71/1710469584091eDHfc_GIF/16.gif?type=wg848",
+   "rule": "gif"
+  },
+  {
+   "link": "https://shop-phinf.pstatic.net/20240315_58/1710469578750xuG21_GIF/17.gif?type=wg848",
+   "rule": "gif"
+  }
+ ]
+}

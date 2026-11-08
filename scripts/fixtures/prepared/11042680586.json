@@ -1,5 +1,5 @@
 {
- "format": "prepared/1",
+ "format": "prepared/2",
  "key": "fairwardgolf:naver:100335426:11042680586",
  "shop": "fairwardgolf",
  "status": "ready",
@@ -75,7 +75,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 3905,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "11 clubs x median club weight",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_weight_g": {
       "low": 4500,
@@ -86,7 +95,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 3905,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "11 clubs x median club weight (box >= contents)",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_length_mm": {
       "low": 1150,
@@ -97,7 +115,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 1156,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "longest club",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_width_mm": {
       "low": 200,
@@ -146,7 +173,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 3905,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "11 clubs x median club weight",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_weight_g": {
       "low": 4500,
@@ -157,7 +193,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 3905,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "11 clubs x median club weight (box >= contents)",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_length_mm": {
       "low": 1150,
@@ -168,7 +213,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 1156,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "longest club",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_width_mm": {
       "low": 200,
@@ -217,7 +271,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 3905,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "11 clubs x median club weight",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_weight_g": {
       "low": 4500,
@@ -228,7 +291,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 3905,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "11 clubs x median club weight (box >= contents)",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_length_mm": {
       "low": 1150,
@@ -239,7 +311,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 1156,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "longest club",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_width_mm": {
       "low": 200,
@@ -288,7 +369,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 3905,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "11 clubs x median club weight",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_weight_g": {
       "low": 4500,
@@ -299,7 +389,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 3905,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "11 clubs x median club weight (box >= contents)",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_length_mm": {
       "low": 1150,
@@ -310,7 +409,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 1156,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "longest club",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_width_mm": {
       "low": 200,
@@ -359,7 +467,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 3905,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "11 clubs x median club weight",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_weight_g": {
       "low": 4500,
@@ -370,7 +487,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 3905,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "11 clubs x median club weight (box >= contents)",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_length_mm": {
       "low": 1150,
@@ -381,7 +507,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 1156,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "longest club",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_width_mm": {
       "low": 200,
@@ -430,7 +565,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 3905,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "11 clubs x median club weight",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_weight_g": {
       "low": 4500,
@@ -441,7 +585,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 3905,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "11 clubs x median club weight (box >= contents)",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_length_mm": {
       "low": 1150,
@@ -452,7 +605,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 1156,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "longest club",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_width_mm": {
       "low": 200,
@@ -501,7 +663,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 3905,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "11 clubs x median club weight",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_weight_g": {
       "low": 4500,
@@ -512,7 +683,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 3905,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "11 clubs x median club weight (box >= contents)",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_length_mm": {
       "low": 1150,
@@ -523,7 +703,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 1156,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "longest club",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_width_mm": {
       "low": 200,
@@ -572,7 +761,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 3905,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "11 clubs x median club weight",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_weight_g": {
       "low": 4500,
@@ -583,7 +781,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 3905,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "11 clubs x median club weight (box >= contents)",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_length_mm": {
       "low": 1150,
@@ -594,7 +801,16 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 1156,
+       "source": "description_image",
+       "confidence": 1,
+       "how": "longest club",
+       "flags": [
+        "container_unknown"
+       ]
+      }
      },
      "package_width_mm": {
       "low": 200,

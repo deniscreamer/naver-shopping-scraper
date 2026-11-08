@@ -3,6 +3,47 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
+## Unreleased
+
+- No brand stated is no longer a hold (`brand_missing` removed): `brand_ko` stays null with the note
+  `brand_unstated`, whose detail lists the page's hints (manufacturer, a name in brackets in 원산지); the vendor step
+  decides from the title, the hints and the images' text. No brand list: brands are not known ahead of a run
+  (the owner 2026-11-07; 2 of 40 sets held for it before).
+- Description images (optional stage, the owner 2026-11-07): `scripts/description_images.py` reads a product's
+  description images with RapidOCR (PP-OCRv5 Korean) into a sidecar per product. Images from Naver's CDN and any
+  public HTTPS host the seller links (AGENTS.md rule 3; never http, an IP, localhost or a name resolving to a private
+  address); banners, the first SmartEditor header strip, GIFs and tiny images out; Naver first: a tiled body read
+  from its tiles, from the seller's own sources only when a tile fails; an image another product of the store already read is reused; equal
+  slices read once (dHash). One fresh worker process per product (no memory build-up; a crash, a kill or a timeout
+  is that product's error, one retry, then an error sidecar), one run per shop (a lock), Ctrl+C clean. Image status
+  read / failed (5xx, read again) / gone (4xx, for good) / refused (a seller's hotlink block). Cache one folder per
+  product, `--prune-cache`. Switch `CategoryRules.description_images`: off by default, on for 50002788.
+- Size / weight from the images (`description_measures.py`), in the transform: a core for every category (stated
+  packed / set / product weight and size, axis-letter sizes) and a parts profile per Naver category id
+  (`CATEGORY_PROFILES`; 50002788 `GOLF_SET`: clubs x median weight + the bag, the longest club / bag, the bag's
+  sides); per field the larger of the guess and today's value wins (`compared`: the other one, brief). Never taken:
+  a guess above its band (operator > profile > core) or over 3x today's value, a single value read below OCR
+  row confidence 0.9; an image's value is confidence 2 at most; an unknown bag drops a set's guesses to 1
+  (`container_unknown`). A box never weighs less than its contents. Notes `measures_from_images`,
+  `description_images_missing` / `_stale` / `_failed` / `_partial`.
+- The images' text for the translation step (`description_image_text.py`): run_transform writes clean Korean blocks
+  (text / table; repeats, low confidence, fragments, photo labels, prices, contacts, shop terms, store info, legal,
+  promos, cross-sell out; a degree sign read as 0 put back; review screenshots in the images kept as context, the
+  instructions say to leave them out) with instructions and the category's
+  glossary to `shops/<shop>/translation/<product id>/description_images.ko.txt|.ko.json`; a block's `key` is the
+  same in every listing that carries it (`shared`: how many of the store's do), so a store's spec sheet stays and is
+  translated once. One flag per prepared product, `product.description_images_text.state`: off | not_read | empty |
+  to_translate | translated (an `en.json` with `source_sha256` = the text's sha256). The translation itself is a
+  later step.
+- `scripts/example_15_description_collect.py`: one golf full set collected end to end with its description images
+  (OCR) and prepared, in its own folder; prints where each package field and the images' text came from.
+- Prepared format `prepared/2` (the package fields' `how` / `quote` / `flags` / `compared`, the text flag). New
+  requirements rapidocr + onnxruntime (check_setup, SETUP.md, K-17). Regression: OCR sidecars of the 50 fixture
+  products.
+- Docs: the OCR study's durable results moved into the code and docs before its notes were deleted: engines
+  and options rejected and why, RapidOCR misreads not repaired, image selection numbers, the cache size, Naver CDN
+  facts for description images; a one-photo gallery is the seller's (the page holds one, checked via /products/page).
+
 ## 0.8.0 (2026-11-07)
 
 - Run of 40 more (2026-11-07), generic fixes: spec rows vs variants read a part count in an axis name ("아이언 선택

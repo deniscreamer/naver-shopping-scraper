@@ -425,7 +425,9 @@ primary record, with dates; read it before changing the behaviour.
   (seen 2026-11-05), so the card's photo is clicked. -> `ext_product._card` docstring.
 - `images` from simple-products are the page's gallery (same files, same count) as original-file links; `?type=`
   renditions are re-encodes (`m10000_10000_no_rotate`) or 1000 px resizes (`o1000`, upscaling small photos). ->
-  `parsers.parse_simple_product` comment, `scripts/naver_images.py` docstring.
+  `parsers.parse_simple_product` comment, `scripts/naver_images.py` docstring. A one-photo gallery is the seller's
+  (2026-11-07, 5 of 5 checked): the page's productImages / galleryImages hold 1; the other shop-phinf images in the
+  page are the `similar.pd` block of other products. -> the same comment.
 - A review video attachment is `reviewAttachmentType` "M" with a `video/*` `mimeTypeName`; its URL is a poster
   frame. -> `parsers._attachment_type` docstring.
 - A review writer without an avatar comes with the placeholder `profile-phinf.pstatic.net/404/default.png`. ->
@@ -489,6 +491,16 @@ primary record, with dates; read it before changing the behaviour.
   about 1 read in 25, any product, gone after 2-15 min). When the tab is readable, `ext_product.read_page` answers 404;
   mostly the adapter cannot read that host at all and the read fails first, answered 503 ("adapter error: page:
   Cannot access contents of url .../maintenance/internal-error.html"): K-21.
+- Description images (seen 2026-11-07, 50 + 20 golf sets; scripts/description_images.py): a SmartEditor image link
+  `?type=w848` is a rendition, the link without `?type` the original (w1280 / w2000 answer 404). An editor-less body
+  is served as 945 x 1134 snap tiles (`/p-<n>-s-<n>-<X>-<n>`), one picture cut up; its HTML still holds the seller's
+  own `<img>` links (7583123963: 113 tiles, 45 sources), often on the seller's hosts (igearmall, esmplus, cafe24,
+  godohosting, percenty) and `proxy-smartstore.naver.net` links with tokens that can expire. Sellers' hosts may block
+  hotlinks (shopping.c.yimg.jp: 403). Snap tiles are JPEG q100 cut at a fixed 1134 px through text lines (stitch
+  before reading); `m10000_10000_no_rotate` caps the long side at 10000 px. A proxy-smartstore token signs its
+  target (the same file, the same token in two stores), still answered a day after collection (lifetime unknown);
+  without a valid one the proxy answers 302 to `no_img_dotxdot.gif` (a redirect is a failed image). No host needed a
+  cookie or a Referer (shop-phinf, esmplus, cafe24, igearmall, rakuten). Description GIFs are product videos, no text.
 
 A new upstream fact gets a dated comment at the code that handles it and one
 line here (R-NAVER-4).

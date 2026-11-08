@@ -20,30 +20,38 @@ naver-harvester published, and its 60 published products):
   * variants: the category's choice (transform_shops paid_variants; off by default), made from the page's options.
   * text fields (a name on a tag) -> personalization; add-ons on sale and in stock: free ones, paid ones too
     with the category's paid_addons (price in KRW and USD); a (필수) group is required.
-  * held (not published, kept with codes): collect_incomplete, price_unknown, brand_missing, leaf_undecided,
-    no_variants, options_unaligned, axes_over_3, specs_folded, no_images, images_over_50. More combinations than
-    the shop's cap: the first ones are offered, every option value kept (note variants_capped).
+  * held (not published, kept with codes): collect_incomplete, price_unknown, leaf_undecided, no_variants,
+    options_unaligned, axes_over_3, specs_folded, no_images, images_over_50. More combinations than the shop's
+    cap: the first ones are offered, every option value kept (note variants_capped).
   * notes (never block): shipping_paid, overseas_shipping (the price stays the cost; the operator decides),
-    leaf_from_name, option_name_placeholder (선택 / 선택2 / 옵션: named from the values in translation),
+    leaf_from_name, brand_unstated (no brand stated: not guessed, the page's hints in the note),
+    option_name_placeholder (선택 / 선택2 / 옵션: named from the values in translation),
     paid_addons_left_out, paid_variants_left_out, title_names_one_variant, purchase_agency, price_name_mismatch,
-    photos_incomplete, reviews_none_chosen.
+    photos_incomplete, reviews_none_chosen, measures_from_images / description_images_missing / _stale / _failed / _partial (the category's
+    description_images switch: the images' size / weight guess, the larger value wins; description_measures.py).
 
     from transform import prepare
     from transform_shops import rules_for
     prepared = prepare(line, rules_for("fairwardgolf"), run="50002788-20261105T193000Z", line_no=1)
 """
+import functools
 import hashlib
 import json
 import os
 import re
+from collections import Counter
 from typing import Any, TypedDict
 
 from description_clean import body_notes, clean, clean_images
+from description_images import current, image_rows
+from description_measures import container_in, package_for, profile_for, read_rows
 from naver_variants import choose_variants
+from package_measures import load_table
 from spec_variants import check_specs, title_one_variant
 from transform_shops import CategoryRules, ShopRules
 
-FORMAT = "prepared/1"
+FORMAT = "prepared/2"           # 2 (2026-11-07): package fields may carry how / quote / flags / compared;
+                                 # product.description_images_text (run_transform)
 MAX_AXES = 3                       # Shopify options per product
 MAX_IMAGES = 50
 HIDDEN_ROWS = {"상품번호", "제조일자", "이벤트", "사은품", "인증정보"}     # 인증정보: purchase-agency / KC legal text
@@ -115,6 +123,25 @@ def sku(prefix: str, key: str, source_id: str) -> str:
 def _pointer(value: str | None) -> bool:
     parts = [p.strip() for p in (value or "").split("/")]
     return bool(parts) and all(_POINTER_RE.match(p) for p in parts)
+
+
+def brand_hints(facts: dict[str, Any]) -> str:
+    """The note brand_unstated: no 브랜드 row and no brandName (the seller linked no Naver brand: the row is
+    brandName in 98 of 98 sets, 2026-11-07). The brand is not guessed here (a maker, a distributor or nothing:
+    7202588289 "일본산(던롭스포츠코리아)" names the distributor of XXIO; 13425122164 states it only in its images,
+    BEN SAYERS): the hints the page states, for the step that decides the vendor from them, the title and the
+    images' text."""
+    hints = []
+    maker = facts.get("manufacturer") or {}
+    if maker.get("value"):
+        hints.append(f"{maker['value']} ({maker.get('source')})")
+    origin = facts.get("origin") or {}
+    for inner in re.findall(r"\(([^()]+)\)", origin.get("value") or ""):
+        inner = inner.strip()
+        if inner and not _pointer(inner) and not _AGENCY_WORD_RE.search(inner):
+            hints.append(f"{inner} ({origin.get('source')}, in brackets)")
+    return "the vendor is decided from the title and the images' text" + (f"; page hints: {', '.join(hints)}"
+                                                                           if hints else "")
 
 
 # ---- options ------------------------------------------------------------------------------
@@ -415,7 +442,67 @@ def _texts(product: dict[str, Any]) -> list[dict[str, str]]:
     return out
 
 
-def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int) -> Prepared:
+def _images_unread(sidecar: dict[str, Any] | None) -> list[dict[str, str]]:
+    """The stage could not read this product (description_images_failed: its error; --force reads it again), or
+    some of its images (description_images_partial: n of m, by status: failed = 5xx / network, read again next
+    run; gone = 4xx / not an image; refused = a seller's host blocks hotlinks)."""
+    if not sidecar:
+        return []
+    if sidecar.get("error"):
+        return [{"code": "description_images_failed", "detail": str(sidecar["error"])[:200]}]
+    images = sidecar.get("images") or []
+    unread = Counter(i["status"] for i in images if i.get("status") in ("failed", "gone", "refused"))
+    if not unread:
+        return []
+    return [{"code": "description_images_partial", "detail": f"{sum(unread.values())} of {len(images)} images not "
+             f"read ({', '.join(f'{k} {v}' for k, v in sorted(unread.items()))})"}]
+
+
+@functools.lru_cache(maxsize=1)
+def _measures_table() -> dict[str, Any]:
+    return load_table()
+
+
+def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: str, model: str,
+                    pieces: re.Match | None, spec_rows_raw: list[dict[str, Any]], category_id: str | None) -> list[dict[str, str]]:
+    """Merge the description images' size / weight guess into each variant's package (description_measures):
+    per field the larger of today's value and the guess. With the category's parts profile: the item count of a
+    variant is its option values' ("12종"), else the title / 모델명's, else the profile's count row (총클럽개수),
+    else the images'; the container: its option values, else the title and the product's one-value facts, else
+    the images."""
+    if sidecar is None:
+        return [{"code": "description_images_missing", "detail": "no sidecar: run description_images.py"}]
+    profile = profile_for(category_id)               # by the Naver leaf category id; None: the core only
+    facts = read_rows(image_rows(sidecar, with_conf=True), profile)
+    row: dict[str, Any] = next((r for r in _measures_table().get("rows", [])
+                                if str(r["category_id"]) == str(category_id)), {})
+    band = profile.count if profile else (0, 0)
+    counted = [int(pieces.group(1))] if pieces else []
+    if profile and profile.count_row:
+        counted += [int(m.group(1)) for r in spec_rows_raw if r.get("label") == profile.count_row
+                    for m in [_COUNT_ROW_RE.match(r.get("value") or "")] if m]
+    product_count = next((c for c in counted if band[0] <= c <= band[1]), None)     # not a 2-club "set"
+    product_text = " ".join([title, model] + [f["value_ko"] for f in ov["facts"]])
+    taken: dict[str, int] = {}
+    for v in ov["variants"]:
+        if not v.get("package"):
+            continue
+        text = " ".join(v["options_ko"])
+        own = [int(m.group(1)) for m in _PIECES_RE.finditer(text) if band[0] <= int(m.group(1)) <= band[1]]
+        has = container_in(text, profile)
+        v["package"], names = package_for(v["package"], facts, max(own) if own else product_count,
+                                          has if has is not None else container_in(product_text, profile),
+                                          row.get("plausible"), profile)
+        for name in names:
+            taken[name] = taken.get(name, 0) + 1
+    if not taken:
+        return []
+    return [{"code": "measures_from_images", "detail": ", ".join(
+        f"{n} {c}/{len(ov['variants'])}" for n, c in sorted(taken.items()))}]
+
+
+def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int,
+            images_text: dict[str, Any] | None = None) -> Prepared:
     key = line["key"]
     details, specs = line.get("details"), line.get("specs")
     held: list[dict[str, str]] = []
@@ -445,7 +532,7 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int) -> P
         held.append({"code": "price_unknown", "detail": "no product price"})
     brand = (specs.get("facts") or {}).get("brand") or {}
     if not brand.get("value"):
-        held.append({"code": "brand_missing", "detail": "no 브랜드 / 제조사 row"})
+        notes.append({"code": "brand_unstated", "detail": brand_hints(specs.get("facts") or {})})
     imgs = images(line, run)
     if not imgs:
         held.append({"code": "no_images", "detail": "no gallery photo saved"})
@@ -482,6 +569,14 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int) -> P
         notes.append({"code": "few_pieces", "detail": "하프세트"})
     elif count and 0 < int(count.group(1)) <= 5:    # 총클럽개수 3개: driver + wood + hybrid (13302492097)
         notes.append({"code": "few_pieces", "detail": f"총클럽개수 {count.group(1)}개"})
+    if cat.description_images:                      # the images' guess: the larger of it and today's value
+        if images_text is not None and not current(images_text, line):
+            notes.append({"code": "description_images_stale", "detail": "sidecar read from other links: run "
+                          "description_images.py again"})
+        else:
+            notes += _image_measures(ov, images_text, details["name"], model, pieces, specs.get("specs") or [],
+                                     category.get("id"))
+            notes += _images_unread(images_text)
     vague = [o["name_ko"] for o in ov["options"] if _PLACEHOLDER_NAME_RE.match(o["name_ko"])
              or _COLOUR_AXIS_RE.match(o["name_ko"]) and not any(_COLOUR_WORD_RE.search(v) for v in o["values_ko"])]
     if vague:                                       # the translation names such an axis from its values

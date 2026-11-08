@@ -1,0 +1,1211 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 204524,
+   "height": 1328,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250807_106/1754544109062eckrF_JPEG/A_01.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.816,
+       "text": "PGn",
+       "y": 69
+      },
+      {
+       "conf": 0.996,
+       "text": "Pro Golf Master",
+       "y": 195
+      },
+      {
+       "conf": 0.808,
+       "text": "JCT3",
+       "y": 586
+      },
+      {
+       "conf": 0.567,
+       "text": "D0 / 10.5 / F6m",
+       "y": 709
+      },
+      {
+       "conf": 0.997,
+       "text": "3",
+       "y": 777
+      },
+      {
+       "conf": 0.923,
+       "text": "3",
+       "y": 856
+      },
+      {
+       "conf": 0.868,
+       "text": "JCT",
+       "y": 1014
+      },
+      {
+       "conf": 0.936,
+       "text": "JCT3",
+       "y": 1056
+      }
+     ],
+     "y0": 0,
+     "y1": 1328
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 174683,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250807_185/17545441090621PPps_JPEG/A_02.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.743,
+       "text": "VCT3 / 골프클럽 풀세트",
+       "y": 79
+      },
+      {
+       "conf": 0.977,
+       "text": "넓은 페이스 흔들림없는 안정감으로",
+       "y": 271
+      },
+      {
+       "conf": 0.959,
+       "text": "관용성과 비거리 둘 다 잡았다!",
+       "y": 350
+      },
+      {
+       "conf": 0.979,
+       "text": "입문자 초보자 골퍼 분들의 높은 레벨을 향한 선택",
+       "y": 469
+      },
+      {
+       "conf": 0.961,
+       "text": "VCT3 골프 풀세트는 그런 분들을 위해 준비된 제품입니다.",
+       "y": 514
+      },
+      {
+       "conf": 0.987,
+       "text": "골프백과 드라이버부터 퍼터까지 꼭 필요한 구성만 담아",
+       "y": 602
+      },
+      {
+       "conf": 0.94,
+       "text": "처음부터 끝까지 부담 없이 연습할 수 있어요.",
+       "y": 644
+      },
+      {
+       "conf": 0.966,
+       "text": "샤프트 재질은 가볍고 부드러운 카본",
+       "y": 733
+      },
+      {
+       "conf": 0.976,
+       "text": "혹은 조금 더 묵직하고 단단한 스틸",
+       "y": 775
+      },
+      {
+       "conf": 0.979,
+       "text": "9개 세트/12개 세트 거기에 골프백까지 풀세트 구성",
+       "y": 821
+      },
+      {
+       "conf": 0.995,
+       "text": "골프가 처음인 당신에게 가장 든든한 첫 시작.",
+       "y": 907
+      },
+      {
+       "conf": 0.976,
+       "text": "PGMVCT3로 골프를 쉽게,즐겁게 시작해보세요.",
+       "y": 953
+      }
+     ],
+     "y0": 0,
+     "y1": 1134
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 331238,
+   "height": 1861,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260511_112/1778487687718UF0C0_JPEG/A_04.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.997,
+       "text": "제품옵션",
+       "y": 215
+      },
+      {
+       "conf": 1.0,
+       "text": "구성",
+       "y": 268
+      },
+      {
+       "conf": 0.978,
+       "text": "VCT3 남성용 골프클럽 세트(우타용)",
+       "y": 425
+      },
+      {
+       "conf": 0.982,
+       "text": "ALL-IN-ONE MEN'S GOLF CLUB SET",
+       "y": 494
+      },
+      {
+       "conf": 0.996,
+       "text": "옵션01 / 옵션02",
+       "y": 627
+      },
+      {
+       "conf": 0.998,
+       "text": "스틸9세트+골프백 / 스틸12세트+골프백",
+       "y": 676
+      },
+      {
+       "conf": 0.708,
+       "text": "JCT3 / JCT3",
+       "y": 802
+      },
+      {
+       "conf": 0.991,
+       "text": "3",
+       "y": 856
+      },
+      {
+       "conf": 0.707,
+       "text": "VCT",
+       "y": 1005
+      },
+      {
+       "conf": 0.742,
+       "text": "JiCTOR / JiCTOR",
+       "y": 999
+      },
+      {
+       "conf": 0.695,
+       "text": "UCT",
+       "y": 1057
+      },
+      {
+       "conf": 0.957,
+       "text": "드라이버1/우드3/아이언6-9/P/S/PT / 드라이버1/우드3,5/하이브리드4/아이언 5-9/P/S/PT",
+       "y": 1157
+      },
+      {
+       "conf": 0.998,
+       "text": "옵션03 / 옵션04",
+       "y": 1255
+      },
+      {
+       "conf": 0.995,
+       "text": "카본9세트+골프백 / 카본12세트+골프백",
+       "y": 1307
+      },
+      {
+       "conf": 0.802,
+       "text": "JCT3 / JCT3",
+       "y": 1444
+      },
+      {
+       "conf": 0.969,
+       "text": "3",
+       "y": 1499
+      },
+      {
+       "conf": 0.511,
+       "text": "VCT",
+       "y": 1634
+      },
+      {
+       "conf": 0.741,
+       "text": "VeT",
+       "y": 1652
+      },
+      {
+       "conf": 0.745,
+       "text": "JiCTOR / JiCTOR",
+       "y": 1646
+      },
+      {
+       "conf": 0.955,
+       "text": "드라이버 1/우드3/아이언6-9/P/S/PT / 드라이버1/우드3,5/하이브리드4/아이언 5-9/P/S/PT",
+       "y": 1785
+      }
+     ],
+     "y0": 0,
+     "y1": 1861
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 97620,
+   "height": 814,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260511_48/17784876947035TKXS_JPEG/A_05.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.892,
+       "text": "-PGm",
+       "y": 83
+      },
+      {
+       "conf": 0.999,
+       "text": "클럽",
+       "y": 272
+      },
+      {
+       "conf": 0.999,
+       "text": "세트구성",
+       "y": 328
+      },
+      {
+       "conf": 0.954,
+       "text": "DR / WOOD / Hybrid / IRON / PUTTER / BAG",
+       "y": 430
+      },
+      {
+       "conf": 0.952,
+       "text": "옵션1. / 스틸9세트 / 1 / 3 / 6,7,8,9,P,S / G300 PT / GOLFBAG",
+       "y": 473
+      },
+      {
+       "conf": 0.824,
+       "text": "옵션2. / 스틸12세트 / 3.5 / 4 / 5,6,7,8,9,P,S / G300 PT / GOLFBAG",
+       "y": 528
+      },
+      {
+       "conf": 0.922,
+       "text": "옵션3. / 카본9세트 / 3 / 6,7,8,9,P,S / G300 PT / GOLF BAG",
+       "y": 580
+      },
+      {
+       "conf": 0.845,
+       "text": "옵션4. / 카본12세트 / 1 / 3.5 / 4 / 5,6,7,8,9,P,S / G300 PT / GOLF BAG",
+       "y": 641
+      }
+     ],
+     "y0": 0,
+     "y1": 814
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 169260,
+   "height": 1506,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250807_58/1754544110092PDQ02_JPEG/A_06.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "제품스펙",
+       "y": 86
+      },
+      {
+       "conf": 0.807,
+       "text": "UCT3",
+       "y": 260
+      },
+      {
+       "conf": 1.0,
+       "text": "Driver",
+       "y": 428
+      },
+      {
+       "conf": 0.995,
+       "text": "CLUB",
+       "y": 489
+      },
+      {
+       "conf": 0.825,
+       "text": "종류 / 번호 / LE / LOFT / 헤드 / 샤프트 / 길이 / 벨런스",
+       "y": 609
+      },
+      {
+       "conf": 0.94,
+       "text": "DRVER / 56° / 10.5° / 198g / 65g / 약114cm / D1",
+       "y": 652
+      },
+      {
+       "conf": 0.643,
+       "text": "VZT / 3",
+       "y": 872
+      },
+      {
+       "conf": 0.89,
+       "text": "10.5",
+       "y": 1042
+      }
+     ],
+     "y0": 0,
+     "y1": 1506
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 421209,
+   "height": 1967,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250807_154/1754544110167aenIb_JPEG/A_07.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.856,
+       "text": "JZT3",
+       "y": 131
+      },
+      {
+       "conf": 1.0,
+       "text": "10.5",
+       "y": 235
+      },
+      {
+       "conf": 0.996,
+       "text": "고강도타격면",
+       "y": 574
+      },
+      {
+       "conf": 0.962,
+       "text": "합금 우드 헤드",
+       "y": 602
+      },
+      {
+       "conf": 0.992,
+       "text": "확장 스윗스팟",
+       "y": 949
+      },
+      {
+       "conf": 0.848,
+       "text": "VCT3",
+       "y": 1040
+      },
+      {
+       "conf": 0.982,
+       "text": "VCT THIRD GENERATION",
+       "y": 1076
+      },
+      {
+       "conf": 0.971,
+       "text": "MEN'S GOLF CLUBS",
+       "y": 1088
+      },
+      {
+       "conf": 0.861,
+       "text": "JCT 3 DRIVER",
+       "y": 1214
+      },
+      {
+       "conf": 0.984,
+       "text": "대형 헤드로 쉽게 더 멀리!확장된 스윗스짜",
+       "y": 1422
+      },
+      {
+       "conf": 0.974,
+       "text": "조금 빗맞아도 직진성 비거리 초장타 실현 가능!",
+       "y": 1476
+      },
+      {
+       "conf": 0.949,
+       "text": "처음 드라이버를 잡는 분들도 부담 없이 칠 수 있도록",
+       "y": 1581
+      },
+      {
+       "conf": 0.973,
+       "text": "460cc메인 헤드를 적용 높은 관성모멘트(M이I)덕분에",
+       "y": 1634
+      },
+      {
+       "conf": 0.989,
+       "text": "헤드 면적이 넓어 공을 맞추기 쉽고,관용성이 큽니다.",
+       "y": 1686
+      },
+      {
+       "conf": 0.978,
+       "text": "더 많은 반발력으로 시원하게 멀리 보내는 샷이 가능합니다.",
+       "y": 1741
+      },
+      {
+       "conf": 0.996,
+       "text": "처음 골프 시작하는 분들이 가장 먼저 만족하는 클럽",
+       "y": 1844
+      },
+      {
+       "conf": 0.925,
+       "text": "바로 이 VCT3 드라이버입니다.",
+       "y": 1897
+      }
+     ],
+     "y0": 0,
+     "y1": 1967
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 140703,
+   "height": 1152,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260511_258/1778487707598PkJL2_JPEG/A_08.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "Wood",
+       "y": 77
+      },
+      {
+       "conf": 0.995,
+       "text": "CLUB",
+       "y": 138
+      },
+      {
+       "conf": 0.83,
+       "text": "종류 / 번호 / LE / LOFT / 헤드 / 샤프트 / 길이 / 밸런스",
+       "y": 226
+      },
+      {
+       "conf": 0.848,
+       "text": "WOOD / 3 / 59° / 15° / 205g / 65g / 약109cm / D1",
+       "y": 268
+      },
+      {
+       "conf": 0.894,
+       "text": "WOOD / 5 / 60° / 18° / 220g / 65g / 약106cm / D1",
+       "y": 318
+      },
+      {
+       "conf": 0.912,
+       "text": "Hybrid / 4 / 59.5° / 24° / 232g / 65g / 약101cm / D1",
+       "y": 371
+      },
+      {
+       "conf": 0.809,
+       "text": "UCT3",
+       "y": 606
+      },
+      {
+       "conf": 0.801,
+       "text": "JCT3",
+       "y": 706
+      },
+      {
+       "conf": 0.988,
+       "text": "519",
+       "y": 795
+      },
+      {
+       "conf": 0.616,
+       "text": "JCT / 3",
+       "y": 838
+      },
+      {
+       "conf": 0.536,
+       "text": "22",
+       "y": 891
+      }
+     ],
+     "y0": 0,
+     "y1": 1152
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 273185,
+   "height": 1658,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250807_298/1754544109489vgglG_JPEG/A_09.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.83,
+       "text": "JET3",
+       "y": 125
+      },
+      {
+       "conf": 0.999,
+       "text": "424",
+       "y": 232
+      },
+      {
+       "conf": 0.718,
+       "text": "VET3",
+       "y": 1047
+      },
+      {
+       "conf": 0.979,
+       "text": "VCT THIRD GENERATION",
+       "y": 1080
+      },
+      {
+       "conf": 0.949,
+       "text": "MEN'S GOLF CLUBS",
+       "y": 1095
+      },
+      {
+       "conf": 0.86,
+       "text": "JCT3 / 4H하이브리드",
+       "y": 1215
+      },
+      {
+       "conf": 0.962,
+       "text": "고강도 얇은 타격면 설계로 뛰어난 고탄도 반발력 제공",
+       "y": 1427
+      },
+      {
+       "conf": 0.966,
+       "text": "중심에서 벗어난 위치로 쳐도 높은 볼 스피드 유지",
+       "y": 1478
+      },
+      {
+       "conf": 0.968,
+       "text": "안정적이고 강력한 합금 하이브리드 유틸리티",
+       "y": 1530
+      },
+      {
+       "conf": 0.977,
+       "text": "더 먼 비거리 향상을 실현시켜드립니다.",
+       "y": 1582
+      }
+     ],
+     "y0": 0,
+     "y1": 1658
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 271903,
+   "height": 1440,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250807_20/1754544109516i0j0K_JPEG/A_10.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.903,
+       "text": "lrons",
+       "y": 30
+      },
+      {
+       "conf": 0.995,
+       "text": "CLUB",
+       "y": 90
+      },
+      {
+       "conf": 0.817,
+       "text": "종류 / 번호 / LE / LOFT / 길이 / 밸런스",
+       "y": 204
+      },
+      {
+       "conf": 0.773,
+       "text": "IRON / 5 / 61° / 26° / 약96cm / D1",
+       "y": 247
+      },
+      {
+       "conf": 0.957,
+       "text": "IRON / 6 / 61.5° / 29° / 약95cm / D1",
+       "y": 298
+      },
+      {
+       "conf": 0.846,
+       "text": "IRON / 7 / 62° / 32° / 약94cm / D1",
+       "y": 348
+      },
+      {
+       "conf": 0.981,
+       "text": "IRON / 8 / 62.5° / 36° / 약92cm / D1",
+       "y": 398
+      },
+      {
+       "conf": 0.856,
+       "text": "IRON / 9 / 63° / 41° / 약91cm / D1",
+       "y": 453
+      },
+      {
+       "conf": 0.919,
+       "text": "IRON / PW / 64° / 45° / 약90cm / D1",
+       "y": 503
+      },
+      {
+       "conf": 0.779,
+       "text": "IRON / sW / 64° / 52° / 약89cm / D1",
+       "y": 554
+      },
+      {
+       "conf": 0.857,
+       "text": "-PGm",
+       "y": 857
+      },
+      {
+       "conf": 0.729,
+       "text": "-PGm",
+       "y": 945
+      },
+      {
+       "conf": 0.677,
+       "text": "R",
+       "y": 980
+      },
+      {
+       "conf": 0.745,
+       "text": "-PGm",
+       "y": 990
+      },
+      {
+       "conf": 0.705,
+       "text": "JCT3 / -PGm",
+       "y": 1036
+      },
+      {
+       "conf": 0.727,
+       "text": "VCT3",
+       "y": 1080
+      }
+     ],
+     "y0": 0,
+     "y1": 1440
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 358882,
+   "height": 1841,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250807_176/1754544109619VIMaA_JPEG/A_11.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.541,
+       "text": "Pr",
+       "y": 85
+      },
+      {
+       "conf": 0.793,
+       "text": "JCT3",
+       "y": 135
+      },
+      {
+       "conf": 0.946,
+       "text": "정밀 CNC 가공 아이언 페이스",
+       "y": 554
+      },
+      {
+       "conf": 0.802,
+       "text": "O",
+       "y": 752
+      },
+      {
+       "conf": 0.751,
+       "text": "JCT3 / VCT THIRD GENERATION",
+       "y": 1067
+      },
+      {
+       "conf": 0.944,
+       "text": "MEN'S GOLF CLUBS",
+       "y": 1080
+      },
+      {
+       "conf": 0.866,
+       "text": "JCT 3 IRONS",
+       "y": 1191
+      },
+      {
+       "conf": 0.98,
+       "text": "처음 골프 시작해도,아이언샷이 더 쉽고 편해집니다.",
+       "y": 1403
+      },
+      {
+       "conf": 0.984,
+       "text": "CNC 정밀 가공한 넓은 헤드페이스 VCT3 아이언은",
+       "y": 1455
+      },
+      {
+       "conf": 0.978,
+       "text": "페이스(공 맞는 면)를 넓게,바닥을 안정감 있게 설계해",
+       "y": 1511
+      },
+      {
+       "conf": 0.979,
+       "text": "초보자도 공을 쉽게 띄우고,편하게 칠 수 있도록 설계되었습니다.",
+       "y": 1560
+      },
+      {
+       "conf": 0.966,
+       "text": "공이 살짝 빗맞아도",
+       "y": 1666
+      },
+      {
+       "conf": 0.987,
+       "text": "방향이나 거리에 큰 영향을 주지 않아",
+       "y": 1718
+      },
+      {
+       "conf": 0.984,
+       "text": "골린이에게 딱 좋은 아이언이에요.",
+       "y": 1774
+      }
+     ],
+     "y0": 0,
+     "y1": 1841
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 231127,
+   "height": 1478,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250807_243/1754544109061mdiM7_JPEG/A_12.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "Shaft",
+       "y": 39
+      },
+      {
+       "conf": 0.879,
+       "text": "Type",
+       "y": 98
+      },
+      {
+       "conf": 0.924,
+       "text": "GOUD SESMIC PERFORMANEE, HIGH FAOLT TOLERANCESUTTABLE FOK BEGI",
+       "y": 198
+      },
+      {
+       "conf": 0.916,
+       "text": "HIGH PERFORMANCE GRAPHITE",
+       "y": 475
+      },
+      {
+       "conf": 0.835,
+       "text": "JCT3",
+       "y": 812
+      },
+      {
+       "conf": 0.979,
+       "text": "VCT THIRD GENERATION",
+       "y": 847
+      },
+      {
+       "conf": 0.959,
+       "text": "MEN'S GOLF CLUBS",
+       "y": 860
+      },
+      {
+       "conf": 0.905,
+       "text": "UCT 3 SHAFT",
+       "y": 982
+      },
+      {
+       "conf": 0.98,
+       "text": "카본R급| 스테인레스스틸",
+       "y": 1201
+      },
+      {
+       "conf": 0.98,
+       "text": "탄성과 강도,두가지 샤프트로 완성하는",
+       "y": 1305
+      },
+      {
+       "conf": 0.958,
+       "text": "최적의 샷을 위한 두 가지 옵션",
+       "y": 1357
+      },
+      {
+       "conf": 0.97,
+       "text": "나만의 플레이 스타일에 맞게 자유롭게 선택하세요",
+       "y": 1411
+      }
+     ],
+     "y0": 0,
+     "y1": 1478
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 306704,
+   "height": 1516,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250807_62/17545441090626MeA4_JPEG/A_13.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "Petter",
+       "y": 37
+      },
+      {
+       "conf": 0.996,
+       "text": "CLUB",
+       "y": 98
+      },
+      {
+       "conf": 0.929,
+       "text": "종류 / 번호 / LE / LOFT / 헤드 / 샤프트 / 길이",
+       "y": 198
+      },
+      {
+       "conf": 0.826,
+       "text": "PETTER / PT / 71° / 3° / 350g / 113g / 약86cm",
+       "y": 245
+      },
+      {
+       "conf": 0.88,
+       "text": "오차범위 / PT / ±1.5° / ±1.5°",
+       "y": 290
+      },
+      {
+       "conf": 0.577,
+       "text": "92",
+       "y": 552
+      },
+      {
+       "conf": 0.749,
+       "text": "2Gm",
+       "y": 610
+      },
+      {
+       "conf": 0.982,
+       "text": "초경량퍼터 / 선명한조준선 / 정확한타점",
+       "y": 1447
+      }
+     ],
+     "y0": 0,
+     "y1": 1516
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 101632,
+   "height": 707,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250807_44/1754544109052vWoTF_JPEG/A_14.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.849,
+       "text": "-PGㄱ / G300 PUTTER",
+       "y": 63
+      },
+      {
+       "conf": 0.994,
+       "text": "당신의 감을 믿게 만드는 퍼터",
+       "y": 277
+      },
+      {
+       "conf": 0.989,
+       "text": "선명한 조준선이 스윙의 정렬을 돕고",
+       "y": 327
+      },
+      {
+       "conf": 0.966,
+       "text": "임팩트 순간 정확한 타점을 형성해 줍니다.",
+       "y": 379
+      },
+      {
+       "conf": 0.981,
+       "text": "\"조준선 정렬+낮은 무게중심=일관된 퍼팅\"",
+       "y": 485
+      },
+      {
+       "conf": 0.998,
+       "text": "\"헤드 흔들림을 줄이는 안정적인 스트로크\"",
+       "y": 535
+      },
+      {
+       "conf": 0.971,
+       "text": "\"직진성 향상 설계로 홀컵까지 한 줄\"",
+       "y": 588
+      },
+      {
+       "conf": 0.989,
+       "text": "\"퍼터의 핵심은 방향성과 정렬입니다\"",
+       "y": 643
+      }
+     ],
+     "y0": 0,
+     "y1": 707
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 179722,
+   "height": 1328,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250807_202/1754544109711cofUm_JPEG/A_15.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.902,
+       "text": "Golf",
+       "y": 40
+      },
+      {
+       "conf": 0.999,
+       "text": "BAG",
+       "y": 101
+      },
+      {
+       "conf": 0.725,
+       "text": "TOR",
+       "y": 464
+      },
+      {
+       "conf": 0.739,
+       "text": "ntlor",
+       "y": 745
+      },
+      {
+       "conf": 0.895,
+       "text": "JCT3 표준 골프백",
+       "y": 960
+      },
+      {
+       "conf": 0.965,
+       "text": "세련된 블랙 디자인 고급스러운 광택 소재",
+       "y": 1177
+      },
+      {
+       "conf": 0.967,
+       "text": "녁넉한 수납공간과 견고한 마감으로 실용성과 내구성",
+       "y": 1231
+      }
+     ],
+     "y0": 0,
+     "y1": 1328
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 199003,
+   "height": 1185,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250807_34/17545441098190FYlN_JPEG/A_16.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.818,
+       "text": "-PGm",
+       "y": 66
+      },
+      {
+       "conf": 0.996,
+       "text": "Pro Golf Master",
+       "y": 144
+      },
+      {
+       "conf": 0.966,
+       "text": "클럽별 남성 평균 비거리",
+       "y": 369
+      },
+      {
+       "conf": 0.875,
+       "text": "클럽 / D / W3 W5 4H 15 / 16 / 17 / 18 / 19 / P",
+       "y": 517
+      },
+      {
+       "conf": 0.976,
+       "text": "비거리(m) 210 190 180 170 155 145 135 125 115 100 / 80",
+       "y": 585
+      },
+      {
+       "conf": 0.727,
+       "text": "JET3",
+       "y": 766
+      },
+      {
+       "conf": 0.806,
+       "text": "0",
+       "y": 839
+      },
+      {
+       "conf": 0.765,
+       "text": "3'",
+       "y": 869
+      },
+      {
+       "conf": 0.7,
+       "text": "JiCTOR / VCT3",
+       "y": 895
+      },
+      {
+       "conf": 0.792,
+       "text": "VCT3 / VCT THIRD GENERATION",
+       "y": 1073
+      },
+      {
+       "conf": 0.934,
+       "text": "MEN'S GOLF CLUBS",
+       "y": 1087
+      }
+     ],
+     "y0": 0,
+     "y1": 1185
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 309990,
+   "height": 1086,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20250807_155/17545441098598dKub_JPEG/A_17.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.635,
+       "text": "TP67",
+       "y": 153
+      },
+      {
+       "conf": 0.827,
+       "text": "VCT3",
+       "y": 188
+      },
+      {
+       "conf": 0.991,
+       "text": "Golf Clubs",
+       "y": 273
+      },
+      {
+       "conf": 0.997,
+       "text": "Occupation",
+       "y": 304
+      },
+      {
+       "conf": 0.999,
+       "text": "MTG031",
+       "y": 368
+      },
+      {
+       "conf": 0.846,
+       "text": "CLASSIC ADIDAS OESICN STVLE. IOTH SPORTS",
+       "y": 406
+      },
+      {
+       "conf": 0.852,
+       "text": "LEATHERUMAFRAUD TO FIELO GRASS RAM WATER",
+       "y": 422
+      },
+      {
+       "conf": 0.828,
+       "text": "G300",
+       "y": 475
+      },
+      {
+       "conf": 0.999,
+       "text": "Gentleman's",
+       "y": 530
+      },
+      {
+       "conf": 0.97,
+       "text": "Practice Stick",
+       "y": 567
+      },
+      {
+       "conf": 0.887,
+       "text": "CLASSIC AOIDAS OESIGN STYLE, BOTH SPORTS",
+       "y": 620
+      },
+      {
+       "conf": 0.929,
+       "text": "ATHERUNAFRAID TO FIELO GRASS RAIN WATER LEAKAGE.",
+       "y": 639
+      },
+      {
+       "conf": 0.869,
+       "text": "상품 색상 및 밝기 차이",
+       "y": 826
+      },
+      {
+       "conf": 0.992,
+       "text": "스마트폰 브랜드 및 기종,디스플레이 설정에 따라 실제 색상과",
+       "y": 887
+      },
+      {
+       "conf": 0.978,
+       "text": "화면에서 보는 색상이 다소 다를 수 있습니다.또한 제품컷은 촬영 시 조명과",
+       "y": 913
+      },
+      {
+       "conf": 0.94,
+       "text": "각도의 영향으로 실제 색상과 약간의 차이가 있을 수 있습니다.",
+       "y": 939
+      }
+     ],
+     "y0": 0,
+     "y1": 1086
+    }
+   ],
+   "status": "read",
+   "width": 860
+  }
+ ],
+ "key": "fairwardgolf:naver:100210420:12274419597",
+ "links_sha256": "b2cd840d4c7d6a75fda54cf51c429d4a69c2bc307c3ecab0307ce3715760f2c1",
+ "product_id": "12274419597",
+ "seconds": 0,
+ "skipped": [
+  {
+   "link": "https://shop-phinf.pstatic.net/20260522_204/1779432390695e91Q0_JPEG/%EB%94%B0%EB%B4%89%EB%AA%B0_%ED%95%98%EB%8B%A8%EB%B0%B0%EB%84%88.jpg?type=w848",
+   "rule": "boilerplate_name"
+  }
+ ]
+}

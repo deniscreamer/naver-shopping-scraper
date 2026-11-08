@@ -66,6 +66,24 @@ def check_local():
            "extension/ folder", os.path.join(ROOT, "extension"))
 
 
+def check_ocr():
+    """scripts/requirements.txt: rapidocr + onnxruntime and the Korean models (description_images.py, optional:
+    a WARN, the rest works without it). The models are downloaded once, by the first run of the stage."""
+    missing = [p for p in ("rapidocr", "onnxruntime") if importlib.util.find_spec(p) is None]
+    if missing:
+        report("WARN", "OCR (description_images.py)", f"missing: {', '.join(missing)}: pip install -r "
+               "scripts/requirements.txt")
+        return
+    spec = importlib.util.find_spec("rapidocr")
+    models = os.path.join(os.path.dirname((spec and spec.origin) or ""), "models")
+    need = ("ch_PP-OCRv5_det_mobile.onnx", "korean_PP-OCRv5_rec_mobile.onnx")
+    absent = [m for m in need if not os.path.isfile(os.path.join(models, m))]
+    report("WARN" if absent else "OK", "OCR (description_images.py)",
+           f"rapidocr {importlib.metadata.version('rapidocr')}" + (
+               f"; models not downloaded yet ({', '.join(absent)}): the stage's first run fetches them"
+               if absent else ", Korean models present"))
+
+
 def check_photos():
     """scripts/requirements.txt: Pillow with WebP (image_prep.py) and a known SHOP_STORE (shop_stores.py)."""
     try:
@@ -75,6 +93,7 @@ def check_photos():
         report("OK" if webp else "FAIL", "Pillow with WebP (photo scripts)", detail)
     except ImportError:
         report("FAIL", "Pillow with WebP (photo scripts)", "missing: pip install -r scripts/requirements.txt")
+    check_ocr()
     from shop_stores import get_store
     try:
         store = get_store()

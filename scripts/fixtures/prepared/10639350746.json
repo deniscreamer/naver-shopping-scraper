@@ -1,5 +1,5 @@
 {
- "format": "prepared/1",
+ "format": "prepared/2",
  "key": "fairwardgolf:naver:102349440:10639350746",
  "shop": "fairwardgolf",
  "status": "ready",
@@ -115,7 +115,13 @@
        "scope": "product",
        "variant_ids": []
       },
-      "also": 0
+      "also": 0,
+      "compared": {
+       "value": 1080,
+       "source": "description_image",
+       "confidence": 2,
+       "how": "longest club"
+      }
      },
      "package_width_mm": {
       "value": {

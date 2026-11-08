@@ -1,0 +1,605 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 206168,
+   "height": 1355,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20221213_32/1670912579746wEY5q_JPEG/2.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.972,
+       "text": "MEN'S GOLF SET",
+       "y": 76
+      },
+      {
+       "conf": 0.963,
+       "text": "티타늄 / 합금 헤드",
+       "y": 137
+      },
+      {
+       "conf": 0.971,
+       "text": "460cc 유선형 헤드 설계로 스윙 속도를 향상시켰습니다",
+       "y": 260
+      },
+      {
+       "conf": 0.764,
+       "text": "PGm",
+       "y": 454
+      },
+      {
+       "conf": 0.518,
+       "text": "MITTT",
+       "y": 632
+      }
+     ],
+     "y0": 0,
+     "y1": 1355
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 163368,
+   "height": 1178,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20221213_228/1670912579749U8rPO_JPEG/3.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.968,
+       "text": "MEN'S GOLF SET",
+       "y": 78
+      },
+      {
+       "conf": 0.956,
+       "text": "넓은 유효타격면",
+       "y": 135
+      },
+      {
+       "conf": 0.97,
+       "text": "쉽게 칠 수 있도록 유효 타격면을 넓게 설계했습니다",
+       "y": 257
+      }
+     ],
+     "y0": 0,
+     "y1": 1178
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 57084,
+   "height": 90,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240909_101/1725880987927o3tQt_PNG/image.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.974,
+       "text": "명칭 / 넘버 / LIE / LOFT / 헤드무게 / 그립무게 / 샤프트무게 / 샤프트길이 / 스윙웨이트",
+       "y": 15
+      },
+      {
+       "conf": 0.983,
+       "text": "WOOD / #1 / 60 / 10.5 / 197 / 50 / 62 / 45\" / D1",
+       "y": 57
+      }
+     ],
+     "y0": 0,
+     "y1": 90
+    }
+   ],
+   "status": "read",
+   "width": 861
+  },
+  {
+   "bytes": 152876,
+   "height": 1243,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20221213_100/1670912711183cGAp7_JPEG/4.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "고강도 / 스테인리스 / 헤드",
+       "y": 97
+      },
+      {
+       "conf": 0.968,
+       "text": "초저중심 설계로 높이 멀리 날아갑니다",
+       "y": 225
+      },
+      {
+       "conf": 0.546,
+       "text": "IN",
+       "y": 636
+      },
+      {
+       "conf": 0.779,
+       "text": "Rio",
+       "y": 611
+      },
+      {
+       "conf": 0.535,
+       "text": "10161II",
+       "y": 684
+      },
+      {
+       "conf": 0.948,
+       "text": "PGm",
+       "y": 738
+      }
+     ],
+     "y0": 0,
+     "y1": 1243
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 234123,
+   "height": 625,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240909_229/1725881176194AgOKp_PNG/image.png",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 625
+    }
+   ],
+   "status": "read",
+   "width": 876
+  },
+  {
+   "bytes": 149094,
+   "height": 1125,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20221213_148/1670912579949hD7jl_JPEG/4-2.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "스테인리스 / 헤드",
+       "y": 104
+      },
+      {
+       "conf": 0.966,
+       "text": "가볍고 내구성이 뛰어나서 타격시 실수를 줄여 줍니다",
+       "y": 209
+      },
+      {
+       "conf": 0.569,
+       "text": "1",
+       "y": 383
+      },
+      {
+       "conf": 0.999,
+       "text": "52도 / 샌드웨지",
+       "y": 459
+      },
+      {
+       "conf": 0.826,
+       "text": "-PGim",
+       "y": 534
+      },
+      {
+       "conf": 0.64,
+       "text": "Ri0",
+       "y": 570
+      },
+      {
+       "conf": 0.534,
+       "text": "'N",
+       "y": 651
+      },
+      {
+       "conf": 0.702,
+       "text": "z016 1I1",
+       "y": 651
+      }
+     ],
+     "y0": 0,
+     "y1": 1125
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 65667,
+   "height": 138,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240909_253/172588114044681mg4_PNG/image.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "명칭 / 넘버 / LIE / LOFT / 헤드무게 / 그립무게 / 샤프트무게 / 샤프트길이 / 스윙웨이트",
+       "y": 10
+      },
+      {
+       "conf": 0.997,
+       "text": "IRON / #7 / 62 / 28 / 272 / 50 / 66 / 37\" / D1",
+       "y": 56
+      },
+      {
+       "conf": 0.997,
+       "text": "#52 / 64 / 52 / 302 / 50 / 100 / 35.25 / D1",
+       "y": 93
+      }
+     ],
+     "y0": 0,
+     "y1": 138
+    }
+   ],
+   "status": "read",
+   "width": 859
+  },
+  {
+   "bytes": 1374201,
+   "height": 1722,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240909_151/1725877084542xtWta_PNG/image.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.991,
+       "text": "MEN'S GOLFSET",
+       "y": 120
+      },
+      {
+       "conf": 0.944,
+       "text": "저중심 퍼터",
+       "y": 189
+      },
+      {
+       "conf": 0.981,
+       "text": "스템은 합금 재질로 되어 있어 고내결함 제어가 용이하다.",
+       "y": 370
+      },
+      {
+       "conf": 0.775,
+       "text": "NI",
+       "y": 916
+      },
+      {
+       "conf": 0.619,
+       "text": "APSLECON",
+       "y": 1179
+      },
+      {
+       "conf": 0.938,
+       "text": "퍼터 커버 1개 배송",
+       "y": 1542
+      }
+     ],
+     "y0": 0,
+     "y1": 1722
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 69780,
+   "height": 138,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240909_236/17258772289986Kkfk_PNG/image.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "명칭 / 넘버 / LIE / LOFT / 헤드무게 / 그립무게 / 샤프트무게 / 샤프트길이 / 스윙웨이트",
+       "y": 22
+      },
+      {
+       "conf": 0.981,
+       "text": "PUTTER / #PT / 72 / 3.5 / 360 / 105 / 120 / 34\" / /",
+       "y": 86
+      }
+     ],
+     "y0": 0,
+     "y1": 138
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 125416,
+   "height": 1085,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20221213_78/1670912580079Fk4Lj_JPEG/5-2.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "2종류 / 샤프트",
+       "y": 97
+      },
+      {
+       "conf": 0.994,
+       "text": "FLEX-R",
+       "y": 387
+      },
+      {
+       "conf": 0.904,
+       "text": "R급/S급 카본파이버(60g) / 2016Ⅲ",
+       "y": 489
+      },
+      {
+       "conf": 0.981,
+       "text": "스테인리스(110g)",
+       "y": 780
+      }
+     ],
+     "y0": 0,
+     "y1": 1085
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 133062,
+   "height": 1126,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20221213_35/1670912580082RykHG_JPEG/5-3.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.956,
+       "text": "신형 고무 손잡이",
+       "y": 92
+      },
+      {
+       "conf": 0.848,
+       "text": "드라이버/아이언손잡이 / PGm",
+       "y": 353
+      },
+      {
+       "conf": 0.992,
+       "text": "WOOD/HARDCORE GRIPS",
+       "y": 429
+      },
+      {
+       "conf": 0.935,
+       "text": "퍼터 손잡이",
+       "y": 808
+      },
+      {
+       "conf": 0.969,
+       "text": "PUTTER GRIP",
+       "y": 863
+      }
+     ],
+     "y0": 0,
+     "y1": 1126
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 331521,
+   "height": 1159,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230515_37/1684114825055C4ugR_JPEG/%E8%AF%A6%E6%83%85%E9%A1%B5_02.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.772,
+       "text": "RIO",
+       "y": 745
+      },
+      {
+       "conf": 0.754,
+       "text": "4",
+       "y": 816
+      },
+      {
+       "conf": 0.505,
+       "text": "52 / D!X",
+       "y": 920
+      }
+     ],
+     "y0": 0,
+     "y1": 1159
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 108169,
+   "height": 891,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230515_146/1684114824841XI942_JPEG/%E8%AF%A6%E6%83%85%E9%A1%B5_03.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 891
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 172646,
+   "height": 904,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230515_247/1684114824978sInvg_JPEG/%E8%AF%A6%E6%83%85%E9%A1%B5_04.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.734,
+       "text": "MSTOZ",
+       "y": 536
+      },
+      {
+       "conf": 0.872,
+       "text": "NI",
+       "y": 605
+      }
+     ],
+     "y0": 0,
+     "y1": 904
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 147129,
+   "height": 1107,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230515_296/1684114824930b6fJb_JPEG/%E8%AF%A6%E6%83%85%E9%A1%B5_05.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.676,
+       "text": "Rio",
+       "y": 449
+      },
+      {
+       "conf": 0.707,
+       "text": "Z0161I!",
+       "y": 496
+      },
+      {
+       "conf": 0.794,
+       "text": "Rio",
+       "y": 685
+      },
+      {
+       "conf": 0.792,
+       "text": "20261",
+       "y": 727
+      }
+     ],
+     "y0": 0,
+     "y1": 1107
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 140097,
+   "height": 886,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230515_89/1684114824947lzO2o_JPEG/%E8%AF%A6%E6%83%85%E9%A1%B5_06.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 886
+    }
+   ],
+   "status": "read",
+   "width": 790
+  },
+  {
+   "bytes": 66912,
+   "height": 595,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240909_138/1725880467673hUkyJ_JPEG/11.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.518,
+       "text": "ain",
+       "y": 43
+      },
+      {
+       "conf": 0.72,
+       "text": "-PGm7",
+       "y": 254
+      },
+      {
+       "conf": 0.997,
+       "text": "R",
+       "y": 287
+      },
+      {
+       "conf": 0.682,
+       "text": "Rio",
+       "y": 331
+      }
+     ],
+     "y0": 0,
+     "y1": 595
+    }
+   ],
+   "status": "read",
+   "width": 650
+  },
+  {
+   "bytes": 66635,
+   "height": 599,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240909_294/1725880473503q1RCz_JPEG/10.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.509,
+       "text": "Ri",
+       "y": 70
+      },
+      {
+       "conf": 0.776,
+       "text": "FPGm7",
+       "y": 256
+      },
+      {
+       "conf": 0.704,
+       "text": "RiD",
+       "y": 332
+      }
+     ],
+     "y0": 0,
+     "y1": 599
+    }
+   ],
+   "status": "read",
+   "width": 650
+  }
+ ],
+ "key": "fairwardgolf:naver:102412170:10857289010",
+ "links_sha256": "635fad55d734afa04b065405bd17b8971ad6b93161146eae183702d3383668ca",
+ "product_id": "10857289010",
+ "seconds": 0,
+ "skipped": []
+}

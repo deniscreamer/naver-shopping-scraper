@@ -1,10 +1,14 @@
 {
- "format": "prepared/1",
+ "format": "prepared/2",
  "key": "fairwardgolf:naver:101878037:13734679551",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
  "notes": [
+  {
+   "code": "measures_from_images",
+   "detail": "package_height_mm 2/2, package_width_mm 2/2"
+  },
   {
    "code": "gift_hidden",
    "detail": "미즈노 RB LADY WCB 캐디백"
@@ -86,29 +90,43 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 1105,
+       "source": "description_image",
+       "confidence": 2,
+       "how": "longest club"
+      }
      },
      "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 300,
+       "max": 300
+      },
+      "source": "description_image",
+      "confidence": 2,
+      "how": "product size",
+      "quote": "사이즈 / L48×W24×H30CM",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 240,
+       "max": 240
+      },
+      "source": "description_image",
+      "confidence": 2,
+      "how": "product size",
+      "quote": "사이즈 / L48×W24×H30CM",
+      "compared": {
+       "value": 230,
+       "source": "category_default",
+       "confidence": 1
+      }
      }
     },
     "today_dispatch": null
@@ -155,29 +173,43 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 1105,
+       "source": "description_image",
+       "confidence": 2,
+       "how": "longest club"
+      }
      },
      "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 300,
+       "max": 300
+      },
+      "source": "description_image",
+      "confidence": 2,
+      "how": "product size",
+      "quote": "사이즈 / L48×W24×H30CM",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 240,
+       "max": 240
+      },
+      "source": "description_image",
+      "confidence": 2,
+      "how": "product size",
+      "quote": "사이즈 / L48×W24×H30CM",
+      "compared": {
+       "value": 230,
+       "source": "category_default",
+       "confidence": 1
+      }
      }
     },
     "today_dispatch": null

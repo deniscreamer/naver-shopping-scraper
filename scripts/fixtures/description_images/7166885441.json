@@ -1,0 +1,479 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 459359,
+   "height": 1900,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240823_284/1724391686823pdKJv_PNG/%EC%A0%9C%EB%AA%A9_%EC%B6%94%EA%B0%80.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.981,
+       "text": "도쿄 현지 온.오프라인 매장에서",
+       "y": 115
+      },
+      {
+       "conf": 0.985,
+       "text": "100% 정품만을 직접 구매",
+       "y": 180
+      },
+      {
+       "conf": 0.975,
+       "text": "항공특송 발송(최단 5일내 배송)",
+       "y": 241
+      },
+      {
+       "conf": 0.988,
+       "text": "tokyopia",
+       "y": 439
+      },
+      {
+       "conf": 0.985,
+       "text": "CHECK POINT",
+       "y": 522
+      },
+      {
+       "conf": 0.988,
+       "text": "구매전 필독사항",
+       "y": 578
+      },
+      {
+       "conf": 1.0,
+       "text": "해외구매 / 국제배송 / 수입통관 / 국내배송 / 상품수령",
+       "y": 887
+      },
+      {
+       "conf": 0.99,
+       "text": "구매 전 필독사항",
+       "y": 1011
+      },
+      {
+       "conf": 0.993,
+       "text": "-모든 상품은 일본 도쿄 현지 온,오프라인 정식 매장에서 직접 구매하는 정품만을 취급합니다.",
+       "y": 1097
+      },
+      {
+       "conf": 0.963,
+       "text": "-정품이 아닐 시 100% 환불해 드립니다.",
+       "y": 1136
+      },
+      {
+       "conf": 0.986,
+       "text": "-본 사이트는 해외 구매대행 전문 사이트이며,모든 상품은 주문 후 재고/가격 변동이 있을 수 있습니다.",
+       "y": 1176
+      },
+      {
+       "conf": 0.987,
+       "text": "-주문 결제 후 현지 사정으로 품절,취소될 경우 전액 환불 처리해 드립니다.",
+       "y": 1211
+      },
+      {
+       "conf": 0.995,
+       "text": "-모든 제품은 정식 수입,통관을 거치는 상품으로 반드시 수취인의 이름과 개인통관고유부호를",
+       "y": 1251
+      },
+      {
+       "conf": 0.99,
+       "text": "정확하게 입력해 주셔야 합니다.",
+       "y": 1290
+      },
+      {
+       "conf": 0.968,
+       "text": "배송 관련",
+       "y": 1344
+      },
+      {
+       "conf": 0.97,
+       "text": "-모든 상품은 빠르고 안전한 국제 특송으로 배송됩니다.",
+       "y": 1436
+      },
+      {
+       "conf": 0.981,
+       "text": "-배송 기간은 7-15일(주말 및 공휴일 제외) 정도 소요됩니다.",
+       "y": 1475
+      },
+      {
+       "conf": 0.983,
+       "text": "-현지 사정 및 통관 지연으로 인해 지연될 수 있으며 지연 시 별도 안내 드립니다.",
+       "y": 1514
+      },
+      {
+       "conf": 0.974,
+       "text": "-모든 제품은 발송 처리 및 국내 반입 후 배송 조회가 가능합니다.",
+       "y": 1550
+      },
+      {
+       "conf": 0.886,
+       "text": "B R A N D",
+       "y": 1844
+      }
+     ],
+     "y0": 0,
+     "y1": 1900
+    }
+   ],
+   "status": "read",
+   "width": 1100
+  },
+  {
+   "bytes": 7401,
+   "height": 72,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220911_85/1662861943398pJ2tL_JPEG/%EB%A1%9C%EA%B3%A0%EC%9A%A9.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.767,
+       "text": "Cal / away / WARBIRE",
+       "y": 0
+      },
+      {
+       "conf": 0.738,
+       "text": "D",
+       "y": 32
+      }
+     ],
+     "y0": 0,
+     "y1": 72
+    }
+   ],
+   "status": "read",
+   "width": 232
+  },
+  {
+   "bytes": 186640,
+   "height": 1000,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220911_17/1662862194163Lagb4_JPEG/%EB%A9%94%EC%9D%B8.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.722,
+       "text": "Callaa / WRR3IRD",
+       "y": 45
+      },
+      {
+       "conf": 0.836,
+       "text": "10s",
+       "y": 172
+      },
+      {
+       "conf": 0.677,
+       "text": "ARE",
+       "y": 767
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 66268,
+   "height": 691,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220918_55/1663464441947zlPj6_JPEG/%EC%B6%94%EA%B0%80.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.637,
+       "text": "WRRI",
+       "y": 404
+      },
+      {
+       "conf": 0.792,
+       "text": "^",
+       "y": 459
+      }
+     ],
+     "y0": 0,
+     "y1": 691
+    }
+   ],
+   "status": "read",
+   "width": 544
+  },
+  {
+   "bytes": 67875,
+   "height": 600,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220918_186/1663463211245xNMmj_JPEG/0134710096-1.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 39970,
+   "height": 760,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220918_87/1663461394956FMAUA_JPEG/batch2_%EB%A9%94%EC%9D%B83.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.875,
+       "text": "WAR3IRD",
+       "y": 122
+      }
+     ],
+     "y0": 0,
+     "y1": 760
+    }
+   ],
+   "status": "read",
+   "width": 760
+  },
+  {
+   "bytes": 33360,
+   "height": 760,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220918_220/16634613949118psVF_JPEG/batch2_%EB%A9%94%EC%9D%B84.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.637,
+       "text": "Cal",
+       "y": 74
+      },
+      {
+       "conf": 0.862,
+       "text": "WAR3IRD",
+       "y": 128
+      }
+     ],
+     "y0": 0,
+     "y1": 760
+    }
+   ],
+   "status": "read",
+   "width": 760
+  },
+  {
+   "bytes": 45507,
+   "height": 760,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220918_174/1663461395032kUjpT_JPEG/batch2_%EB%A9%94%EC%9D%B85.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 760
+    }
+   ],
+   "status": "read",
+   "width": 760
+  },
+  {
+   "bytes": 38966,
+   "height": 760,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220918_133/1663461394854PjrH9_JPEG/batch2_%EB%A9%94%EC%9D%B86.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.79,
+       "text": "_",
+       "y": 53
+      }
+     ],
+     "y0": 0,
+     "y1": 760
+    }
+   ],
+   "status": "read",
+   "width": 760
+  },
+  {
+   "bytes": 47747,
+   "height": 760,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220918_181/1663461349702abtp6_JPEG/batch_%EB%A9%94%EC%9D%B87.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 760
+    }
+   ],
+   "status": "read",
+   "width": 760
+  },
+  {
+   "bytes": 66268,
+   "height": 691,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220918_2/1663464423707eQnOk_JPEG/%EC%B6%94%EA%B0%80.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.637,
+       "text": "WRRI",
+       "y": 404
+      },
+      {
+       "conf": 0.792,
+       "text": "^",
+       "y": 459
+      }
+     ],
+     "y0": 0,
+     "y1": 691
+    }
+   ],
+   "status": "read",
+   "width": 544
+  },
+  {
+   "bytes": 348565,
+   "height": 1836,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240823_120/1724391690840Gspm8_PNG/%EB%B6%80%EC%A0%9C%EB%AA%A9_%EC%B6%94%EA%B0%80.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.977,
+       "text": "tokyopia",
+       "y": 277
+      },
+      {
+       "conf": 0.96,
+       "text": "저희 Tokyopia를",
+       "y": 359
+      },
+      {
+       "conf": 0.982,
+       "text": "찾아 주셔서 감사합니다.",
+       "y": 436
+      },
+      {
+       "conf": 0.999,
+       "text": "해외 구매대행 정책",
+       "y": 656
+      },
+      {
+       "conf": 0.982,
+       "text": "구매대행 특성상 재고 확보를 하지 않기 때문에 고객님의 주문 후 현지의 세일 정책 등의 변동,",
+       "y": 742
+      },
+      {
+       "conf": 0.974,
+       "text": "판매 종료,현지 상품의 판매가 인상 및 품절 및 재고 변동으로 인한 품절,현지에서의 오배송 및 파손,",
+       "y": 779
+      },
+      {
+       "conf": 0.983,
+       "text": "분실 등으로 인해 발주가 불가능한 상황이 발생할 수 있으며 고객님께 직접 연락을 드려",
+       "y": 817
+      },
+      {
+       "conf": 0.98,
+       "text": "양해를 구한 후 상품 구매 취소 처리를 진행하오니 양해 부탁드립니다.",
+       "y": 856
+      },
+      {
+       "conf": 0.971,
+       "text": "구매대행 서비스는'중개'의 범주에 속하며 고객님께서는 2차 구매자임을 인지해 주시고,반품 및 교환이",
+       "y": 892
+      },
+      {
+       "conf": 0.994,
+       "text": "고객님과 판매자 모두 복잡하고 어려운 점 이해해 주시기 바라며 보다 신중한 상품 구매 부탁드립니다.",
+       "y": 929
+      },
+      {
+       "conf": 0.992,
+       "text": "관부가세 관련 안내",
+       "y": 1104
+      },
+      {
+       "conf": 0.989,
+       "text": "-상품 가격에 관/부가세는 포함되어 있지 않으며 해외,국내 배송비,",
+       "y": 1188
+      },
+      {
+       "conf": 0.986,
+       "text": "구매대행 수수료 등의 비용이 포함된 금액입니다.",
+       "y": 1225
+      },
+      {
+       "conf": 0.971,
+       "text": "-배송비를 제외한 상품 가격의 총합이 미화 150달러를 초과하는 상품은 관/부가세가 별도로 발생합니다.",
+       "y": 1263
+      },
+      {
+       "conf": 0.977,
+       "text": "-타 사이트에서 구매하신 물품,해외 쇼핑몰 직접 구매 제품이 동일한 날짜에 국내 세관에 입고될 경우",
+       "y": 1299
+      },
+      {
+       "conf": 0.968,
+       "text": "합산과세가 발생할 수 있으므로 꼭 확인 부탁드립니다.(배송일 조정 문의 가능)",
+       "y": 1339
+      },
+      {
+       "conf": 0.984,
+       "text": "-현금영수증은 구매대행 수수료에 대해서만 발급 가능합니다.",
+       "y": 1376
+      },
+      {
+       "conf": 0.984,
+       "text": "(관계 법령 및 예규 부가세법 제12조,부가-1957조세특례제한법 126조 3)",
+       "y": 1417
+      },
+      {
+       "conf": 0.998,
+       "text": "문의 안내 및 전화",
+       "y": 1591
+      },
+      {
+       "conf": 0.975,
+       "text": "일본 현지 근무 관계로 국내 유선통화 및 문자 확인이 불가할 수 있으니",
+       "y": 1675
+      },
+      {
+       "conf": 0.993,
+       "text": "문의 내용을 톡톡문의(네이버톡)으로 남겨주시면 담당자가 확인 후 신속하게 답변드리겠습니다.",
+       "y": 1712
+      }
+     ],
+     "y0": 0,
+     "y1": 1836
+    }
+   ],
+   "status": "read",
+   "width": 995
+  }
+ ],
+ "key": "fairwardgolf:naver:100313715:7166885441",
+ "links_sha256": "e8e036446f222cc1eeb67e08428715211caaa3eadaa74b11c3b0a4f6986ce30a",
+ "product_id": "7166885441",
+ "seconds": 0,
+ "skipped": []
+}

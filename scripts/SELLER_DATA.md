@@ -18,6 +18,12 @@ Finding the page
   on any product); it passes within ~2-15 min. Two reads of one product right after each other made it likelier.
   A run waits 2 min and tries again, then skips the product for later (research runners).
 
+Gallery -> `/products/details` `images`
+- One photo is common (21 of 40 sets in the 2026-11-07 run): the page itself has one (its productImages /
+  galleryImages; no 360 view, no option images). The seller puts a collage there (clubs, bag, gifts) and the rest in
+  the description images. The other shop-phinf images in the page are "similar products" (`similar.pd`), never the
+  gallery -> `parsers.parse_simple_product` comment.
+
 The purchase box (delivery promise) -> `pdp.delivery_promise`, `parsers.parse_page_delivery`
 - Three wordings: "오늘출발 16:00 마감" (old), "오늘출발" + "14:00 까지 결제 시 오늘 바로 발송" + "11.11.(수) 도착 확률
   98%", and 네이버 배송 "11.11.(수) 도착" (no probability).
@@ -88,8 +94,22 @@ Description cleanup -> `description_clean.py`, `shared_images.py`
   across one store's listings (numeric names, re-uploaded per batch of listings).
 - A description that is only "o" is junk (13741767690).
 
+## Description images (OCR, research 2026-11-07 on the 50 fixture products)
+
+- The images are the description: their text is ~12x the page's text, and 31 of 50 sets have no page text at all.
+- No image states a box size, a package weight or the whole set's weight. 74 % of the number + unit tokens sit in
+  per-club spec tables: 클럽 중량(g) / 총중량(g) (a whole club: ~250-450 g), 헤드 / 샤프트 / 그립 중량 (parts),
+  길이 in inches or cm (33-46"). `총중량` there is one club's, never the set's.
+- Kilograms are a bag's own weight (stand bag 4.1 kg, caddie bags 3.5 / 4.5 kg, "총무게:(캐디백+보스턴백) 약4.95kg"),
+  a shop rule ("20kg 초과 화물"), customs ("5kg 이하 통관") or a buyer's body weight in a review screenshot.
+- Size triples are bags ("캐디백-91cm(세로)*31cm(폭)*40cm(가로)", a boston bag L48xW24xH30) or a shop's cross-sell
+  cards below "함께 구매" (a half bag 10x7x126 cm of another product). A bag's mouth is written in inches (8.5 / 9인치).
+- "본 풀세트는 골프백 미포함 제품입니다" (5 sets) and "12종+캐디백" / "GOLF BAG" (2) say what the name does not.
+- So description_measures.py guesses from the parts (clubs x median weight + the bag; the longest club or bag; the
+  bag's mouth / sides) and the larger of that and today's value wins.
+
 ## Not handled yet (known)
-- Weights and sizes in images; banners inside snapshot tiles; per-buyer purchase limits; YouTube in descriptions;
+- Banners inside snapshot tiles (OCR reads them; the guess skips cross-sell blocks only); per-buyer purchase limits; YouTube in descriptions;
   the notice's 제품구성 not carried; the return fee near the item price; spanned table cells (colspan) lose their column.
 - S/R club weights and lofts given per flex in a description table, not bound to the S/R variants (6774818843,
   8958060680).
@@ -103,6 +123,15 @@ Description cleanup -> `description_clean.py`, `shared_images.py`
   `reviews_incomplete` (a count but no rows) and `photo_small` were planned, not built.
 - Banners not caught: a lister's shared `/profile/` header and footer (13728190518), names like 수서권_2026.png,
   golf_top.jpg.
+- Store banners re-uploaded per product (another URL, the same bytes: 14 of 43 identical-file groups on the 50) are
+  read again: reuse is by link and dHash runs within one product. A store-wide slice dHash (218 pairs across
+  products, all within one store, 0 false) would skip them (2026-11-07).
+- Images that contradict the spec rows or the name on the set's contents (13026991307: images 6 irons + 2 wedges,
+  rows 8 irons; 13741767690: name 10 counting a separately sold wood, images 9; 13099257309: the name's 8 counts
+  irons only, images 11): no note flags it (2026-11-07).
+- Reviews: the summary's photo_count can be lower than the files a selection downloads, and selected_reviews took 6
+  of 35 and 2 of 36 reviews on two ktksports sets (7202588289, 7632306067) under a cap of 20: not looked into
+  (2026-11-07).
 
 ## Open questions (defaults taken, not yet confirmed by the owner)
 - Shipping into the price, or the price stays the cost (today: the cost; the operator decides).

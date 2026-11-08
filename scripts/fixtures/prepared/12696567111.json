@@ -1,5 +1,5 @@
 {
- "format": "prepared/1",
+ "format": "prepared/2",
  "key": "fairwardgolf:naver:100113347:12696567111",
  "shop": "fairwardgolf",
  "status": "ready",
@@ -16,6 +16,10 @@
   {
    "code": "specs_name_one_variant",
    "detail": "모델명 26캘러웨이 풀세트 XR26 FULL SET 12PC: XR26"
+  },
+  {
+   "code": "measures_from_images",
+   "detail": "package_weight_g 4/4, product_weight_g 4/4"
   },
   {
    "code": "option_name_placeholder",
@@ -78,26 +82,34 @@
     "available": true,
     "package": {
      "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 9092,
+       "max": 9092
+      },
+      "source": "description_image",
+      "confidence": 2,
+      "how": "12 clubs x median club weight + bag",
+      "quote": "사이즈 / 남성용9인치|무게 약 4.1kg |높이 약89cm",
+      "compared": {
+       "value": 5700,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 9092,
+       "max": 9092
+      },
+      "source": "description_image",
+      "confidence": 2,
+      "how": "12 clubs x median club weight + bag (box >= contents)",
+      "quote": "사이즈 / 남성용9인치|무게 약 4.1kg |높이 약89cm",
+      "compared": {
+       "value": 7000,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_length_mm": {
       "low": 1150,
@@ -108,7 +120,13 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 1156,
+       "source": "description_image",
+       "confidence": 2,
+       "how": "longest club"
+      }
      },
      "package_width_mm": {
       "low": 200,
@@ -119,7 +137,13 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 229,
+       "source": "description_image",
+       "confidence": 2,
+       "how": "bag mouth / sides"
+      }
      },
      "package_height_mm": {
       "low": 160,
@@ -130,7 +154,13 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 229,
+       "source": "description_image",
+       "confidence": 2,
+       "how": "bag mouth / sides"
+      }
      }
     },
     "today_dispatch": null
@@ -147,26 +177,34 @@
     "available": true,
     "package": {
      "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 9092,
+       "max": 9092
+      },
+      "source": "description_image",
+      "confidence": 2,
+      "how": "12 clubs x median club weight + bag",
+      "quote": "사이즈 / 남성용9인치|무게 약 4.1kg |높이 약89cm",
+      "compared": {
+       "value": 5700,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 9092,
+       "max": 9092
+      },
+      "source": "description_image",
+      "confidence": 2,
+      "how": "12 clubs x median club weight + bag (box >= contents)",
+      "quote": "사이즈 / 남성용9인치|무게 약 4.1kg |높이 약89cm",
+      "compared": {
+       "value": 7000,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_length_mm": {
       "low": 1150,
@@ -177,7 +215,13 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 1156,
+       "source": "description_image",
+       "confidence": 2,
+       "how": "longest club"
+      }
      },
      "package_width_mm": {
       "low": 200,
@@ -188,7 +232,13 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 229,
+       "source": "description_image",
+       "confidence": 2,
+       "how": "bag mouth / sides"
+      }
      },
      "package_height_mm": {
       "low": 160,
@@ -199,7 +249,13 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 229,
+       "source": "description_image",
+       "confidence": 2,
+       "how": "bag mouth / sides"
+      }
      }
     },
     "today_dispatch": null
@@ -216,26 +272,34 @@
     "available": true,
     "package": {
      "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 9092,
+       "max": 9092
+      },
+      "source": "description_image",
+      "confidence": 2,
+      "how": "12 clubs x median club weight + bag",
+      "quote": "사이즈 / 남성용9인치|무게 약 4.1kg |높이 약89cm",
+      "compared": {
+       "value": 5700,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 9092,
+       "max": 9092
+      },
+      "source": "description_image",
+      "confidence": 2,
+      "how": "12 clubs x median club weight + bag (box >= contents)",
+      "quote": "사이즈 / 남성용9인치|무게 약 4.1kg |높이 약89cm",
+      "compared": {
+       "value": 7000,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_length_mm": {
       "low": 1150,
@@ -246,7 +310,13 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 1156,
+       "source": "description_image",
+       "confidence": 2,
+       "how": "longest club"
+      }
      },
      "package_width_mm": {
       "low": 200,
@@ -257,7 +327,13 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 229,
+       "source": "description_image",
+       "confidence": 2,
+       "how": "bag mouth / sides"
+      }
      },
      "package_height_mm": {
       "low": 160,
@@ -268,7 +344,13 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 229,
+       "source": "description_image",
+       "confidence": 2,
+       "how": "bag mouth / sides"
+      }
      }
     },
     "today_dispatch": null
@@ -285,26 +367,34 @@
     "available": true,
     "package": {
      "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 9092,
+       "max": 9092
+      },
+      "source": "description_image",
+      "confidence": 2,
+      "how": "12 clubs x median club weight + bag",
+      "quote": "사이즈 / 남성용9인치|무게 약 4.1kg |높이 약89cm",
+      "compared": {
+       "value": 5700,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 9092,
+       "max": 9092
+      },
+      "source": "description_image",
+      "confidence": 2,
+      "how": "12 clubs x median club weight + bag (box >= contents)",
+      "quote": "사이즈 / 남성용9인치|무게 약 4.1kg |높이 약89cm",
+      "compared": {
+       "value": 7000,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_length_mm": {
       "low": 1150,
@@ -315,7 +405,13 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 1156,
+       "source": "description_image",
+       "confidence": 2,
+       "how": "longest club"
+      }
      },
      "package_width_mm": {
       "low": 200,
@@ -326,7 +422,13 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 229,
+       "source": "description_image",
+       "confidence": 2,
+       "how": "bag mouth / sides"
+      }
      },
      "package_height_mm": {
       "low": 160,
@@ -337,7 +439,13 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 229,
+       "source": "description_image",
+       "confidence": 2,
+       "how": "bag mouth / sides"
+      }
      }
     },
     "today_dispatch": null

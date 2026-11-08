@@ -183,6 +183,20 @@ Python 3.14.5): offline suite 99 passed.
 | PyVirtualDisplay | 3.0 |
 | pytest | 9.2.0 |
 
+`scripts/requirements.txt` floats too. Last verified 2026-11-07 (Python 3.11.18, scripts suite passing, the
+description images stage live on 20 products): the OCR set below. A sidecar records the rapidocr version (it ships
+its ONNX models), the onnxruntime version and the engine params (`description_ocr.engine_info()`): after an upgrade of
+either, every sidecar is read again on the next run; check one product's rows by eye.
+
+| Package | Version |
+|---|---|
+| rapidocr | 3.10.0 |
+| onnxruntime | 1.31.1 |
+| opencv-python-headless | 5.0.0.93 |
+| numpy | 2.4.6 |
+| Pillow | 13.0.0 |
+| requests | 2.34.2 |
+
 ### K-20 No shutdown hook: temp profiles survive Ctrl+C
 - **Where:** `run.main` (catches `KeyboardInterrupt`, stops cheroot only); `PatchrightDriver.close` is the only
   place that removes `_profile_dir`.

@@ -1,0 +1,146 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 2693072,
+   "height": 11281,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260421_163/1776737300104Qcz0e_JPEG/4fdaaf9144718ff34cb08dae979c9918e17a82676c8a08e6e91dbcdb23f6.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.843,
+       "text": "EZ / SPEEDLITE",
+       "y": 231
+      },
+      {
+       "conf": 0.951,
+       "text": "EEDLITE",
+       "y": 492
+      }
+     ],
+     "y0": 0,
+     "y1": 2064
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.749,
+       "text": "7",
+       "y": 254
+      },
+      {
+       "conf": 0.871,
+       "text": "EDLIT",
+       "y": 670
+      }
+     ],
+     "y0": 2064,
+     "y1": 3928
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.879,
+       "text": "34CV837",
+       "y": 102
+      }
+     ],
+     "y0": 3928,
+     "y1": 5808
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.986,
+       "text": "aylorMade",
+       "y": 904
+      },
+      {
+       "conf": 0.877,
+       "text": "RBZ",
+       "y": 954
+      },
+      {
+       "conf": 0.97,
+       "text": "BLMING 2nd Generation i50",
+       "y": 1427
+      },
+      {
+       "conf": 0.502,
+       "text": "0",
+       "y": 1603
+      }
+     ],
+     "y0": 5648,
+     "y1": 7304
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.897,
+       "text": "2E-OW",
+       "y": 33
+      }
+     ],
+     "y0": 7304,
+     "y1": 9331
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.963,
+       "text": "aylorMade",
+       "y": 464
+      },
+      {
+       "conf": 0.679,
+       "text": "A",
+       "y": 816
+      },
+      {
+       "conf": 0.887,
+       "text": "VaylorMade",
+       "y": 847
+      },
+      {
+       "conf": 0.777,
+       "text": "ayorMade",
+       "y": 1214
+      },
+      {
+       "conf": 0.999,
+       "text": "컬러",
+       "y": 1643
+      },
+      {
+       "conf": 0.992,
+       "text": "화이트/네이비/레드 / 블랙 / 화이트/블랙",
+       "y": 1877
+      }
+     ],
+     "y0": 9331,
+     "y1": 11281
+    }
+   ],
+   "status": "read",
+   "width": 780
+  }
+ ],
+ "key": "fairwardgolf:naver:101231454:10302181901",
+ "links_sha256": "df1da1560af8a2dd9fb8f9ec55063dba9149240630191676d0e98dcbcd487cce",
+ "product_id": "10302181901",
+ "seconds": 0,
+ "skipped": []
+}

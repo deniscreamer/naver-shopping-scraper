@@ -1,0 +1,807 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 69478,
+   "height": 512,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230802_254/1690952278605Jxlrr_JPEG/FEF42630-AFAC-4E8E-ABE1-2650806B0E10.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.989,
+       "text": "한국캘러웨이골프 공식 온라인 판매 대리점",
+       "y": 57
+      },
+      {
+       "conf": 0.999,
+       "text": "대리점명:(주)프라임골프",
+       "y": 111
+      },
+      {
+       "conf": 0.848,
+       "text": "callaway",
+       "y": 187
+      },
+      {
+       "conf": 0.973,
+       "text": "본 상품은 한국캘러웨이골프(유)에서 공급하는 정품입니다.",
+       "y": 388
+      },
+      {
+       "conf": 0.926,
+       "text": "본사 규정에 따라 A/S 가능합니다.",
+       "y": 432
+      }
+     ],
+     "y0": 0,
+     "y1": 512
+    }
+   ],
+   "status": "read",
+   "width": 768
+  },
+  {
+   "bytes": 1812717,
+   "height": 15302,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230802_231/16909522895914FKrF_JPEG/E0044AAF-F0F5-4278-8A8F-61C0EAB3664B.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.951,
+       "text": "CALLAWAYS DNA",
+       "y": 180
+      },
+      {
+       "conf": 0.541,
+       "text": "Q",
+       "y": 689
+      },
+      {
+       "conf": 0.711,
+       "text": "XHT",
+       "y": 958
+      },
+      {
+       "conf": 0.966,
+       "text": "DR_1/ FW_1/ HYB_1/8iron/PT_1/GOLF BAG",
+       "y": 1036
+      },
+      {
+       "conf": 0.915,
+       "text": "n",
+       "y": 1524
+      },
+      {
+       "conf": 0.633,
+       "text": "AMV",
+       "y": 1508
+      },
+      {
+       "conf": 0.857,
+       "text": "W",
+       "y": 1571
+      },
+      {
+       "conf": 0.996,
+       "text": "CALLAWA",
+       "y": 1704
+      },
+      {
+       "conf": 0.94,
+       "text": "드라이버 / 페어웨이우드 / 하이브리드 / 8 아이언세트 / 퍼터 / 골프백",
+       "y": 1858
+      },
+      {
+       "conf": 0.882,
+       "text": "10.5도 / 5번19도 / 5번25도 / #5~9,P.A.S / MALLET / CB/BB",
+       "y": 1888
+      }
+     ],
+     "y0": 0,
+     "y1": 1958
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.977,
+       "text": "2021 / NEW STYLE",
+       "y": 45
+      },
+      {
+       "conf": 0.966,
+       "text": "X HOT FULL SET",
+       "y": 80
+      },
+      {
+       "conf": 0.965,
+       "text": "CALLAWAY Best Selling X-HOT Series",
+       "y": 146
+      },
+      {
+       "conf": 0.951,
+       "text": "베스트 셀링 X-HOT 시리즈의 유전자를이어 받아 한국인 체형에 맞게 제작하였으며",
+       "y": 196
+      },
+      {
+       "conf": 0.954,
+       "text": "최적의 무게중심으로 설계된 헤드는관용성을 높였습니다.캘러웨이골프의 기술력이",
+       "y": 225
+      },
+      {
+       "conf": 0.933,
+       "text": "집약되어 최적의 탄도와 향상된 비거리를 제공하는 클럽들로 구성되어",
+       "y": 254
+      },
+      {
+       "conf": 0.893,
+       "text": "편안하게 플레이 하실 수 있습니다.",
+       "y": 282
+      },
+      {
+       "conf": 0.957,
+       "text": "PERFORMANCE / NO.1 PUTTER",
+       "y": 408
+      },
+      {
+       "conf": 0.896,
+       "text": "X-HOT 드라OlH는 VFT Variable Face / 레전드의 귀환",
+       "y": 465
+      },
+      {
+       "conf": 0.949,
+       "text": "Thickness)기술이 적용되I어 높은 관용성과 / 골프 시장을 평정했던 화이트 핫",
+       "y": 492
+      },
+      {
+       "conf": 0.947,
+       "text": "향상된 비거리를제공합니다.페어웨이우드와 / 퍼터와 쌍벽을 이루며 골퍼들을",
+       "y": 517
+      },
+      {
+       "conf": 0.945,
+       "text": "하이브리드는 살로우한헤드 타입으로셋업시 / 사로잡아던 오디세이 대표모델.",
+       "y": 542
+      },
+      {
+       "conf": 0.957,
+       "text": "안정감을 높여주며 일정한 탄도와 비거리를",
+       "y": 582
+      },
+      {
+       "conf": 0.999,
+       "text": "제공합니다",
+       "y": 609
+      },
+      {
+       "conf": 0.849,
+       "text": "Callau",
+       "y": 697
+      },
+      {
+       "conf": 0.741,
+       "text": "KHd / XHOT",
+       "y": 729
+      },
+      {
+       "conf": 0.821,
+       "text": "KHDT",
+       "y": 762
+      },
+      {
+       "conf": 0.995,
+       "text": "드라이버",
+       "y": 1060
+      },
+      {
+       "conf": 0.798,
+       "text": "allawau",
+       "y": 1167
+      },
+      {
+       "conf": 0.879,
+       "text": "KHOT",
+       "y": 1214
+      }
+     ],
+     "y0": 1958,
+     "y1": 3917
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.542,
+       "text": "HO",
+       "y": 247
+      },
+      {
+       "conf": 0.992,
+       "text": "CLUB SPECIFICATIONS",
+       "y": 379
+      },
+      {
+       "conf": 0.92,
+       "text": "로프트각(°) / 10.5",
+       "y": 453
+      },
+      {
+       "conf": 0.907,
+       "text": "라이각(°) / 57",
+       "y": 517
+      },
+      {
+       "conf": 0.962,
+       "text": "클럽길이(inch) / 45.5",
+       "y": 580
+      },
+      {
+       "conf": 0.992,
+       "text": "스윙웨이트 / D2",
+       "y": 646
+      },
+      {
+       "conf": 0.964,
+       "text": "클럽무게(g) / 298",
+       "y": 711
+      },
+      {
+       "conf": 0.993,
+       "text": "SHAFT SPECIFICATIONS",
+       "y": 784
+      },
+      {
+       "conf": 0.642,
+       "text": "PeeDER EvOLUTON tor Alawas / FLEK:R",
+       "y": 848
+      },
+      {
+       "conf": 0.989,
+       "text": "SHAFT SPEEDER EVOLUTION FOR CALLAWAY",
+       "y": 906
+      },
+      {
+       "conf": 0.999,
+       "text": "페어웨이우드",
+       "y": 951
+      }
+     ],
+     "y0": 3917,
+     "y1": 5764
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.735,
+       "text": "callaual",
+       "y": 82
+      },
+      {
+       "conf": 0.584,
+       "text": "HOT",
+       "y": 245
+      },
+      {
+       "conf": 0.975,
+       "text": "CLUB SPECIFICATIONS",
+       "y": 382
+      },
+      {
+       "conf": 0.989,
+       "text": "로프트각() / #5_19",
+       "y": 458
+      },
+      {
+       "conf": 0.934,
+       "text": "라이각(°) / 58",
+       "y": 522
+      },
+      {
+       "conf": 0.953,
+       "text": "클럽길이(inch) / 42.5",
+       "y": 585
+      },
+      {
+       "conf": 0.995,
+       "text": "스윙웨이트 / D2",
+       "y": 650
+      },
+      {
+       "conf": 0.989,
+       "text": "클럽무게(g) / 312",
+       "y": 714
+      },
+      {
+       "conf": 0.997,
+       "text": "SHAFT SPECIFICATIONS",
+       "y": 787
+      },
+      {
+       "conf": 0.749,
+       "text": "peeder EvOLurION tor cAlaua / FLEK:R",
+       "y": 867
+      },
+      {
+       "conf": 0.956,
+       "text": "SHAFT SPEEDER EVOLUTION FOR CALLAWAY",
+       "y": 908
+      },
+      {
+       "conf": 0.999,
+       "text": "하이브리드",
+       "y": 955
+      },
+      {
+       "conf": 0.73,
+       "text": "LHDT",
+       "y": 1080
+      }
+     ],
+     "y0": 5764,
+     "y1": 7622
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.795,
+       "text": "HOT",
+       "y": 137
+      },
+      {
+       "conf": 0.996,
+       "text": "CLUB SPECIFICATIONS",
+       "y": 376
+      },
+      {
+       "conf": 0.91,
+       "text": "로프트각(°) / #5_25",
+       "y": 452
+      },
+      {
+       "conf": 0.942,
+       "text": "라이각(°) / 59.5",
+       "y": 517
+      },
+      {
+       "conf": 0.99,
+       "text": "클럽길이(inch) / 39.25",
+       "y": 582
+      },
+      {
+       "conf": 0.996,
+       "text": "스윙웨이트 / D2",
+       "y": 646
+      },
+      {
+       "conf": 0.946,
+       "text": "클럽무게(g) / 331",
+       "y": 710
+      },
+      {
+       "conf": 0.978,
+       "text": "SHAFT SPECIFICATIONS",
+       "y": 784
+      },
+      {
+       "conf": 0.778,
+       "text": "' EVOLUTION / FLEK:R",
+       "y": 861
+      },
+      {
+       "conf": 0.994,
+       "text": "<",
+       "y": 870
+      },
+      {
+       "conf": 0.969,
+       "text": "SHAFT  SPEEDER EVOLUTION FOR CALLAWAY",
+       "y": 904
+      },
+      {
+       "conf": 0.997,
+       "text": "아이언",
+       "y": 948
+      },
+      {
+       "conf": 0.98,
+       "text": "HOT",
+       "y": 1206
+      }
+     ],
+     "y0": 7622,
+     "y1": 9165
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.974,
+       "text": "CLUB SPECIFICATIONS",
+       "y": 343
+      },
+      {
+       "conf": 0.912,
+       "text": "번호 / #5 / #6 / #7 / #8 / #9 / PW / AW / SW",
+       "y": 418
+      },
+      {
+       "conf": 0.927,
+       "text": "로프트각(°) / 25 / 28 / 32 / 36 / 40 / 44 / 49 / 54",
+       "y": 484
+      },
+      {
+       "conf": 0.989,
+       "text": "라이각() / 61.25 / 62 / 62.5 / 63 / 63.5 / 64 / 64 / 64",
+       "y": 548
+      },
+      {
+       "conf": 0.955,
+       "text": "클럽길이(inch) / 38 / 37.5 / 37 / 36.5 / 36 / 35.75 / 35.5 / 35.25",
+       "y": 611
+      },
+      {
+       "conf": 0.983,
+       "text": "스윙웨이트 / D2 / D2 / D2 / D2 / D2 / D2 / D2 / D2",
+       "y": 677
+      },
+      {
+       "conf": 0.849,
+       "text": "클럽무게(g) / 404 / 409 / 416 / 422 / 427 / 432 / 435 / 438",
+       "y": 737
+      },
+      {
+       "conf": 0.987,
+       "text": "SHAFT SPECIFICATIONS",
+       "y": 815
+      },
+      {
+       "conf": 0.954,
+       "text": "SHAFT TRUE TEMPER XP85",
+       "y": 927
+      },
+      {
+       "conf": 0.99,
+       "text": "퍼터",
+       "y": 973
+      },
+      {
+       "conf": 0.847,
+       "text": "7SSIE",
+       "y": 1365
+      }
+     ],
+     "y0": 9165,
+     "y1": 10701
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.893,
+       "text": "ODYSSEI / ODYSSEY",
+       "y": 153
+      },
+      {
+       "conf": 0.974,
+       "text": "CLUB SPECIFICATIONS",
+       "y": 377
+      },
+      {
+       "conf": 0.999,
+       "text": "헤드타입 / 로시",
+       "y": 454
+      },
+      {
+       "conf": 0.925,
+       "text": "페이스 소재 / DFX 인서트",
+       "y": 516
+      },
+      {
+       "conf": 0.995,
+       "text": "마감 / 프리미엄블랙마감",
+       "y": 582
+      },
+      {
+       "conf": 0.874,
+       "text": "길이 (Inch) / 34",
+       "y": 646
+      },
+      {
+       "conf": 0.99,
+       "text": "헤드무게(g) / 345",
+       "y": 710
+      },
+      {
+       "conf": 0.976,
+       "text": "토행 / 0",
+       "y": 777
+      },
+      {
+       "conf": 0.998,
+       "text": "백세트",
+       "y": 873
+      },
+      {
+       "conf": 0.841,
+       "text": "ㅅVN",
+       "y": 1053
+      },
+      {
+       "conf": 0.751,
+       "text": "D",
+       "y": 1105
+      },
+      {
+       "conf": 0.909,
+       "text": "F",
+       "y": 1117
+      },
+      {
+       "conf": 0.922,
+       "text": "F",
+       "y": 1130
+      },
+      {
+       "conf": 0.842,
+       "text": "D",
+       "y": 1140
+      },
+      {
+       "conf": 0.951,
+       "text": "W",
+       "y": 1151
+      },
+      {
+       "conf": 0.766,
+       "text": "D",
+       "y": 1167
+      },
+      {
+       "conf": 0.996,
+       "text": "CALLAWA",
+       "y": 1296
+      },
+      {
+       "conf": 0.962,
+       "text": "4",
+       "y": 1643
+      },
+      {
+       "conf": 0.643,
+       "text": "D",
+       "y": 1661
+      },
+      {
+       "conf": 0.775,
+       "text": "D",
+       "y": 1724
+      },
+      {
+       "conf": 1.0,
+       "text": "4 / 4",
+       "y": 1801
+      },
+      {
+       "conf": 0.519,
+       "text": "U / U",
+       "y": 1831
+      }
+     ],
+     "y0": 10701,
+     "y1": 12694
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "CALLAWA",
+       "y": 825
+      },
+      {
+       "conf": 0.999,
+       "text": "CALLAWA",
+       "y": 1371
+      }
+     ],
+     "y0": 12694,
+     "y1": 14333
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "BAG",
+       "y": 602
+      },
+      {
+       "conf": 0.966,
+       "text": "NO. / 2023XHOT23백세트",
+       "y": 699
+      },
+      {
+       "conf": 0.998,
+       "text": "소재 / 나일론100%",
+       "y": 760
+      },
+      {
+       "conf": 0.992,
+       "text": "입구 / 5분할투입구",
+       "y": 825
+      }
+     ],
+     "y0": 14333,
+     "y1": 15302
+    }
+   ],
+   "status": "read",
+   "width": 720
+  },
+  {
+   "bytes": 194081,
+   "height": 427,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230802_101/16909523531037oOBL_JPEG/CE62649C-4B79-46CB-AE49-8618E5BE24B0.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.959,
+       "text": "MARVEL / [정품] / 블랙리스트골프 파우치백",
+       "y": 13
+      },
+      {
+       "conf": 0.942,
+       "text": "×",
+       "y": 65
+      },
+      {
+       "conf": 0.977,
+       "text": "BLACK LIST / POUCH / Volvik",
+       "y": 64
+      },
+      {
+       "conf": 0.958,
+       "text": "Volvik / VIVID",
+       "y": 91
+      },
+      {
+       "conf": 0.859,
+       "text": "MARVE",
+       "y": 263
+      },
+      {
+       "conf": 0.62,
+       "text": "AVENGERS / VoMk",
+       "y": 274
+      }
+     ],
+     "y0": 0,
+     "y1": 427
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 210427,
+   "height": 427,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20230802_214/1690952353145wWtb5_JPEG/2C1F2EF2-2CBB-43F9-96FD-0265D3B06A2D.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.995,
+       "text": "N",
+       "y": 36
+      },
+      {
+       "conf": 0.783,
+       "text": "NOUN",
+       "y": 50
+      },
+      {
+       "conf": 0.995,
+       "text": "TaylorMade",
+       "y": 57
+      },
+      {
+       "conf": 0.773,
+       "text": "AVM / ODYSSEY",
+       "y": 85
+      },
+      {
+       "conf": 0.564,
+       "text": "VM / CAL / BURnER",
+       "y": 158
+      },
+      {
+       "conf": 0.642,
+       "text": "X / Callaway",
+       "y": 158
+      },
+      {
+       "conf": 0.996,
+       "text": "SPEED",
+       "y": 201
+      },
+      {
+       "conf": 0.674,
+       "text": "3",
+       "y": 263
+      },
+      {
+       "conf": 0.987,
+       "text": "WAY / CALLAW / NAY",
+       "y": 266
+      },
+      {
+       "conf": 0.97,
+       "text": "POWERFUL PLAYABLE. DISTA",
+       "y": 290
+      },
+      {
+       "conf": 0.96,
+       "text": "PUSSANCE MANIABIEITE DIST",
+       "y": 306
+      },
+      {
+       "conf": 0.785,
+       "text": "4 / AV",
+       "y": 321
+      },
+      {
+       "conf": 0.512,
+       "text": "U / 60 COMPRESS",
+       "y": 331
+      },
+      {
+       "conf": 0.514,
+       "text": "X",
+       "y": 343
+      },
+      {
+       "conf": 0.997,
+       "text": "CA",
+       "y": 346
+      },
+      {
+       "conf": 0.992,
+       "text": "NAY",
+       "y": 366
+      },
+      {
+       "conf": 0.8,
+       "text": "LLAWA",
+       "y": 372
+      }
+     ],
+     "y0": 0,
+     "y1": 427
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  }
+ ],
+ "key": "fairwardgolf:naver:100112239:8978750961",
+ "links_sha256": "c799a390ed7357da5f088a7cd02e68b3a37c64711b6ee6b8b3278c0d3b7c92bc",
+ "product_id": "8978750961",
+ "seconds": 0,
+ "skipped": [
+  {
+   "link": "https://shop-phinf.pstatic.net/20230802_268/1690952278466GCLaC_JPEG/766DED9E-1E78-47B4-819A-1088D914E39A.jpg?type=w848",
+   "rule": "first_header"
+  }
+ ]
+}

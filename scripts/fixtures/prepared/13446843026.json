@@ -1,10 +1,15 @@
 {
- "format": "prepared/1",
+ "format": "prepared/2",
  "key": "fairwardgolf:naver:100342675:13446843026",
  "shop": "fairwardgolf",
  "status": "ready",
  "held": [],
- "notes": [],
+ "notes": [
+  {
+   "code": "measures_from_images",
+   "detail": "package_height_mm 1/1, package_width_mm 1/1"
+  }
+ ],
  "source": {
   "run": "50002788-fixtures",
   "line": 1,
@@ -49,7 +54,13 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 3984,
+       "source": "description_image",
+       "confidence": 2,
+       "how": "12 clubs x median club weight"
+      }
      },
      "package_weight_g": {
       "low": 4500,
@@ -60,7 +71,13 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 3984,
+       "source": "description_image",
+       "confidence": 2,
+       "how": "12 clubs x median club weight (box >= contents)"
+      }
      },
      "package_length_mm": {
       "low": 1150,
@@ -71,29 +88,43 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "approved_at": "2026-11-05",
+      "compared": {
+       "value": 1105,
+       "source": "description_image",
+       "confidence": 2,
+       "how": "longest club"
+      }
      },
      "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 400,
+       "max": 400
+      },
+      "source": "description_image",
+      "confidence": 2,
+      "how": "bag mouth / sides",
+      "quote": "사이즈:캐디백-91cm(세로)*31cm(폭)*40cm(가로),",
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 310,
+       "max": 310
+      },
+      "source": "description_image",
+      "confidence": 2,
+      "how": "bag mouth / sides",
+      "quote": "사이즈:캐디백-91cm(세로)*31cm(폭)*40cm(가로),",
+      "compared": {
+       "value": 230,
+       "source": "category_default",
+       "confidence": 1
+      }
      }
     },
     "today_dispatch": null
