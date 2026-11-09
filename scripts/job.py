@@ -552,6 +552,7 @@ def cmd_run(args: argparse.Namespace) -> int:
                     continue
             job.log(None, "done")
             print(f"done: every product of the job is {job.final} or closed", flush=True)
+            _dictionaries_reminder(job)
             break
         n = [r["key"] for r in job.rows()].index(key) + 1
         name = (next(r for r in job.rows() if r["key"] == key).get("name") or "")[:50]
@@ -629,7 +630,17 @@ def cmd_status(args: argparse.Namespace) -> int:
     else:
         print("  no runner")
     print(f"  ready {s['ready']}; next: {s['next']}; finished: {s['finished']}; not built yet: {s['not_built']}")
+    _dictionaries_reminder(open_job(args.job))
     return 0
+
+
+def _dictionaries_reminder(job: Job) -> None:
+    """A job that translates grows the live dictionaries: one line when their backup is due."""
+    if job.final == "translated":
+        from translation_dicts import reminder
+        line = reminder()
+        if line:
+            print("  " + line, flush=True)
 
 
 def main(argv: list[str] | None = None) -> int:

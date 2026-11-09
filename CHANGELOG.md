@@ -14,6 +14,9 @@ version in `extension/manifest.json`.
   - **On the 143 trial sets:** 448 of 448 kept.
 - Dictionary backups carry `backed_up` (UTC) and `translation_dicts.py status` prints the last backup; first
   backup of the live dictionaries (2026-11-08, 372 entries).
+- `translation_dicts.py status` is the sync helper: when the live copies were written, the last backup, new /
+  changed entries, the ones only in git, and the advice (due at 20 entries or 7 days; changed ones read first),
+  `--json` for scripts. The sync only adds: a run takes the entries only git has, a backup keeps git's others. A due backup is a reminder line in the translate report and in `job.py` done / status.
 - `translate_eval.py`: the quality check (a varied sample translated with empty dictionaries, judged by a second
   model, a side-by-side report). `scripts/TRANSLATION.md`: decisions, a new shop or category, limits, open items.
 - The job translates: `job.py` takes each product to translated, right after prepare (a job made with

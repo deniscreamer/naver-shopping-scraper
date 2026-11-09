@@ -5,6 +5,7 @@ network), the files, the key file and the Anthropic request.
     .venv/bin/python -m pytest scripts/test_translate.py -q
 """
 import json
+from datetime import datetime, timezone
 import os
 import re
 from types import SimpleNamespace
@@ -818,3 +819,104 @@ def test_a_backup_is_stamped_with_its_time(tmp_path):
         assert json.load(f)["backed_up"] == "2026-11-08T13:00:00Z"
     assert D.backed_up(backup) == "2026-11-08T13:00:00Z"
     assert D.Dictionaries(str(tmp_path / "live2"), backup).get("brand", "핑") == "PING"   # a stamped backup seeds
+
+
+def _synced(tmp_path, live_entries, backup_entries, at="2026-11-08T13:00:00Z"):
+    live, backup = str(tmp_path / "live"), str(tmp_path / "backup")
+    D._write(os.path.join(backup, "option_value.json"), "option_value", backup_entries, backed_up=at)
+    D._write(os.path.join(live, "option_value.json"), "option_value", live_entries)
+    return live, backup
+
+
+NOW = datetime(2026, 11, 9, 13, 0, 0, tzinfo=timezone.utc)                 # a day after the backup
+
+
+def test_sync_in_sync_and_waiting(tmp_path):
+    live, backup = _synced(tmp_path, {"레드": "Red"}, {"레드": "Red"})
+    s = D.sync(live, backup, now=NOW)
+    assert (s["action"], s["waiting"], s["days_since_backup"]) == ("none", 0, 1.0) and s["last_backup"]
+    assert s["live_updated"].endswith("Z") and s["entries"] == {}
+    live, backup = _synced(tmp_path, {"레드": "Red", "화이트": "White"}, {"레드": "Red"})
+    s = D.sync(live, backup, now=NOW)
+    assert (s["action"], s["new"]) == ("wait", 1) and "1 of 20 entries, 1.0 of 7 days" in s["advice"]
+    assert s["entries"] == {"option_value": {"new": {"화이트": "White"}, "changed": {}, "git_only": {}}}
+    assert D.reminder(live, backup, now=NOW) is None
+
+
+def test_sync_due_by_count_by_days_and_before_any_backup(tmp_path):
+    many = {f"색{i}": f"Color {i}" for i in range(D.BACKUP_AT_CHANGES)}
+    live, backup = _synced(tmp_path, many, {})
+    s = D.sync(live, backup, now=NOW)
+    assert s["action"] == "backup" and "20 entries waiting" in s["reason"]
+    live, backup = _synced(tmp_path, {"레드": "Red", "화이트": "White"}, {"레드": "Red"})
+    s = D.sync(live, backup, now=datetime(2026, 11, 15, 13, 0, 0, tzinfo=timezone.utc))
+    assert s["action"] == "backup" and s["reason"].startswith("7.0 days")
+    live, backup = str(tmp_path / "l2"), str(tmp_path / "b2")
+    D._write(os.path.join(live, "brand.json"), "brand", {"핑": "PING"})
+    s = D.sync(live, backup, now=NOW)
+    assert (s["action"], s["reason"], s["last_backup"]) == ("backup", "never backed up", None)
+    assert "a backup is due (never backed up)" in D.reminder(live, backup, now=NOW)
+
+
+def test_sync_changed_entries_are_read_first(tmp_path):
+    many = {f"색{i}": f"Color {i}" for i in range(D.BACKUP_AT_CHANGES)}
+    live, backup = _synced(tmp_path, {**many, "레드": "Crimson"}, {"레드": "Red"})
+    s = D.sync(live, backup, now=NOW)
+    assert (s["action"], s["changed"]) == ("review", 1)
+    assert s["entries"]["option_value"]["changed"] == {"레드": ["Red", "Crimson"]}
+    assert "the changed ones first" in D.reminder(live, backup, now=NOW)
+
+
+def test_entries_only_in_git_are_never_dropped(tmp_path):
+    """A backup newer than the live copy (pulled from git, seeded by hand): the entries wait for no backup, a
+    backup keeps them, and the next run takes them into the live copy (the review of 2026-11-08)."""
+    many = {f"색{i}": f"Color {i}" for i in range(25)}
+    live, backup = _synced(tmp_path, {"레드": "Red"}, {"레드": "Red", **many})
+    s = D.sync(live, backup, now=NOW)
+    assert (s["action"], s["waiting"], s["git_only"]) == ("none", 0, 25) and "25 entries only in git" in s["advice"]
+    D.backup(live, backup, at="2026-11-09T00:00:00Z")
+    assert len(D._read(os.path.join(backup, "option_value.json"), "option_value")) == 26
+    d = D.Dictionaries(live, backup)
+    assert d.get("option_value", "색3") == "Color 3"
+    assert len(D._read(os.path.join(live, "option_value.json"), "option_value")) == 26
+    assert D.sync(live, backup, now=NOW)["git_only"] == 0
+
+
+def test_a_live_fix_reaches_git_and_a_live_entry_is_not_overwritten_by_git(tmp_path):
+    live, backup = _synced(tmp_path, {"레드": "Red"}, {"레드": "Rouge"})
+    assert D.Dictionaries(live, backup).get("option_value", "레드") == "Red"     # the live copy wins in a run
+    D.backup(live, backup, at="2026-11-09T00:00:00Z")
+    assert D._read(os.path.join(backup, "option_value.json"), "option_value") == {"레드": "Red"}
+
+
+def test_a_live_copy_not_written_yet_differs_in_nothing(tmp_path):
+    backup = str(tmp_path / "backup")
+    D._write(os.path.join(backup, "brand.json"), "brand", {"핑": "PING"}, backed_up="2026-11-08T13:00:00Z")
+    s = D.sync(str(tmp_path / "no-live"), backup, now=NOW)
+    assert (s["action"], s["git_only"], s["live_updated"]) == ("none", 0, None)
+
+
+def test_the_reminder_never_stops_a_run(tmp_path):
+    live, backup = _synced(tmp_path, {"레드": "Red", "화이트": "White"}, {"레드": "Red"}, at="2026-11-08")
+    assert D.reminder(live, backup, now=NOW) is None                  # a hand-edited stamp: `status` shows it
+
+
+def test_status_cli_prints_the_advice_and_json(tmp_path, capsys):
+    at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")      # the CLI reads the clock: a fresh backup
+    live, backup = _synced(tmp_path, {"레드": "Red", "화이트": "White"}, {"레드": "Red", "블루": "Blue"}, at=at)
+    assert D.main(["status", "--live-root", live, "--backup-root", backup]) == 0
+    out = capsys.readouterr().out
+    assert f"last backup: {at} (" in out and "+ 화이트 -> White" in out and "< 블루 -> Blue (only in git)" in out
+    assert "advice: not yet" in out
+    assert D.main(["status", "--json", "--live-root", live, "--backup-root", backup]) == 0
+    assert json.loads(capsys.readouterr().out)["action"] == "wait"
+
+
+def test_a_run_reminds_when_the_backup_is_due(tmp_path):
+    shop = tmp_path / "shops" / "fairwardgolf"
+    (shop / "prepared").mkdir(parents=True)
+    (shop / "prepared" / "products.jsonl").write_text(
+        json.dumps(fixture(FIXTURES[0]), ensure_ascii=False) + "\n", encoding="utf-8")
+    d = D.Dictionaries(str(tmp_path / "live"), str(tmp_path / "no-backup"))
+    report = T.run("fairwardgolf", FakeModel(), str(tmp_path / "shops"), dicts=d)["report"]
+    assert any("dictionaries: a backup is due (never backed up)" in line for line in report)

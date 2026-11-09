@@ -31,7 +31,8 @@ lost, done products are not read again.
 
 Translation per product: each done line ends with `translated (N calls, $cost)`. A product the model could not
 translate is `failed` (stage translate, the problems in the event) and is tried again after the fresh ones; every
-provider down stops the run (`run` again resumes; nothing is asked twice).
+provider down stops the run (`run` again resumes; nothing is asked twice). A line `dictionaries: a backup is due`
+(at done and in `status`): tell the owner; `translation_dicts.py status` lists the entries, the owner backs them up.
 
 ## What stops, and who acts
 

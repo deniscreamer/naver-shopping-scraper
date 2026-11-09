@@ -52,7 +52,7 @@ import shop_stores
 from keep_run import SHOPS_ROOT
 from shopify_catalog import _git_ignored
 from translation_dicts import KINDS as DICT_KINDS
-from translation_dicts import Dictionaries
+from translation_dicts import Dictionaries, reminder
 from translation_rules import codes, has_hangul, numbers, sanitize
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -688,6 +688,9 @@ def run(shop: str, model: "Model | Chain | None", shops_root: str = SHOPS_ROOT, 
              f"  not translated yet, by kind: {pending_kinds or 'none'}",
              f"  new dictionary entries: " + (", ".join(f"{k} {len(v)}" for k, v in dicts.added.items() if v)
                                              or "none")]
+    due = reminder(dicts.live_root, dicts.backup_root) if not only else None   # a job's product: the job says it
+    if due:
+        lines.append("  " + due)
     if isinstance(model, Chain):
         lines.insert(1, "  chain: " + " -> ".join(f"{m.name}" for m in model.models))
         lines += [f"  {e}" for e in model.events]

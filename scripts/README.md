@@ -248,8 +248,8 @@ writes the description from them; their `to_translate` flag is not this stage's)
 ```sh
 .venv/bin/python scripts/translate.py fairwardgolf --offline   # no model: what the dictionaries and rules leave
 .venv/bin/python scripts/translate.py fairwardgolf --limit 3   # the model for 3 products
-.venv/bin/python scripts/translation_dicts.py status           # what the live dictionaries added
-.venv/bin/python scripts/translation_dicts.py backup           # by hand: live -> scripts/dictionaries/ (git)
+.venv/bin/python scripts/translation_dicts.py status [--json]  # sync helper: dates, what the backup lacks, advice
+.venv/bin/python scripts/translation_dicts.py backup           # by hand: live -> scripts/dictionaries/, then commit
 ```
 
 Per text, the first that answers:
@@ -260,7 +260,14 @@ Per text, the first that answers:
    text-field label / placeholder. One file per kind. The live copies in `scripts/output/dictionaries/` grow during
    runs and are out of git. Their backups in `scripts/dictionaries/` are in git and seed a missing live copy; they
    are updated by hand with `backup`, after `status`, since runs never commit; a backup stamps each file
-   `backed_up`. The brand dictionary comes first: the
+   `backed_up`. The sync only adds: a run takes the entries only the backup has (pulled from git, seeded by hand),
+   a backup writes the live entries over the backup's and keeps its others. A wrong entry is fixed in the live
+   copy; deleting one for good means both copies. `status` shows when the live copies were last written and the
+   last backup, the new and changed entries, the ones only in git, and the advice (`action` none / wait / backup /
+   review in `--json`). A backup is due at 20 waiting entries, or 7 days after the last one with any waiting
+   (`BACKUP_AT_CHANGES`, `BACKUP_AFTER_DAYS`); changed entries are read first, since the backup writes the live
+   English over git's. When it is due, a `translate.py` run's report (not `--only`) and `job.py run` (done) /
+   `job.py status` print one reminder line. The brand dictionary comes first: the
    model gets the shop's vendor spellings and reuses one for the same brand.
 3. **The rules** (`translation_rules.py`):
    - 10.5도 -> 10.5°, 33인치 -> 33 in, 22호 -> Size 22, 3번 -> #3, 7개 -> 7 / 7 pcs, 12종 -> 12 pcs, 2026년형 -> 2026 model;
