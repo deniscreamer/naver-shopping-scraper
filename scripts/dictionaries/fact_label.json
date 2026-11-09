@@ -1,22 +1,27 @@
 {
  "format": "dictionary/1",
  "kind": "fact_label",
- "backed_up": "2026-11-08T14:06:19Z",
+ "backed_up": "2026-11-09T07:13:28Z",
  "entries": {
   "3스타 드라이버+아이언": "3-Star Driver + Irons",
   "구성": "Set Composition",
   "모델명": "Model",
   "사이즈": "Size",
+  "상세페이지 약관 동의": "Product Page Terms Agreement",
   "색상": "Color",
   "샤프트": "Shaft",
+  "샤프트/경도": "Shaft/Flex",
   "손 방향": "Handedness",
   "아이언": "Irons",
   "유틸리티": "Hybrid",
   "제품 번호": "Product Number",
+  "제품선택": "Product Selection",
   "컬러": "Color",
   "클럽 색상": "Club Color",
   "키와미5 2스타 드라이버+ 7개 아이언세트": "Kiwami 5 2-Star Driver + 7-Piece Iron Set",
+  "키와미5 2스타 아이언세트": "Kiwami 5 2-Star Iron Set",
   "퍼터 증정": "Free Putter",
+  "플렉스": "Flex",
   "필독": "Must Read"
  }
 }

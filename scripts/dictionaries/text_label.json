@@ -1,14 +1,16 @@
 {
  "format": "dictionary/1",
  "kind": "text_label",
- "backed_up": "2026-11-08T14:06:19Z",
+ "backed_up": "2026-11-09T07:13:28Z",
  "entries": {
   "네임스티커 성함과 장갑사이즈(22~25호)": "Name Sticker Name and Glove Size (Size 22–25)",
+  "네임택용 성함": "Name for Name Tag",
   "드라이버 유틸강도스펙예시 S.SR 표기해주세요": "Driver/Hybrid Flex Spec (e.g., S, SR)",
   "사은품 7종세트-장갑 사이즈 (18-21호)": "Gift 7-Piece Set - Glove Size (Size 18-21)",
   "이름표(ex홍길동)골프채색상(ex화이트)": "Name Tag (e.g. John Doe) / Club Color (e.g. White)",
   "카본 아이언 강도 - R/SR/S": "Carbon Iron Flex - R/SR/S",
   "클럽에 부착하실 이름 (ex 홍길동)": "Name to Put on the Clubs (ex John Doe)",
+  "클럽에 부착하실 이름(ex 홍길동)": "Name to Attach to Clubs (ex. John Doe)",
   "클럽에 부착하실 이름(ex 홍길동)기재": "Name to Attach to Clubs (e.g. John Doe)"
  }
 }
