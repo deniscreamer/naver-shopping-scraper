@@ -1,5 +1,5 @@
 {
- "format": "prepared/4",
+ "format": "prepared/5",
  "key": "fairwardgolf:naver:101231454:10302181901",
  "shop": "fairwardgolf",
  "status": "ready",
@@ -8,6 +8,10 @@
   {
    "code": "reviews_cleaned",
    "detail": "3 of 3 kept (full 1, short 2); 1 trimmed"
+  },
+  {
+   "code": "measures_from_images",
+   "detail": "package_height_mm 1/1, package_length_mm 1/1, package_width_mm 1/1"
   },
   {
    "code": "shipping_paid",
@@ -85,37 +89,86 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 1240,
+       "max": 1240
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1140,
+        "from": "baseline"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 200,
+       "max": 200
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "box side, no bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 200,
+        "from": "baseline",
+        "said_by": "listing"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 160,
+       "max": 160
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "box side, no bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 160,
+        "from": "baseline",
+        "said_by": "listing"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 230,
+       "source": "category_default",
+       "confidence": 1
+      }
      }
     },
     "today_dispatch": null

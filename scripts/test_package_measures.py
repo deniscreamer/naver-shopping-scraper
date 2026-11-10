@@ -7,8 +7,8 @@ import copy
 
 import pytest
 
-from package_measures import (FIELDS, CategoryDefaultsInvalid, CategoryDefaultsMissing, check_row, load_table,
-                              variant_measures)
+from package_measures import (BASELINE_SIDES, BASELINES, FIELDS, CategoryDefaultsInvalid, CategoryDefaultsMissing,
+                              check_row, load_table, on_scale, variant_measures)
 
 ROW = {"category_id": "50002788", "category_name": "풀세트", "approved_by": "test", "approved_at": "2026-11-05",
        "reliability": "estimated_average",
@@ -172,16 +172,60 @@ def test_bad_bands(band):
 
 
 def test_confidence():
-    # the owner, 2026-11-06: a stated weight whose kind is open is used, at confidence 2
+    # the owner, 2026-11-06: a stated weight whose kind is open is used; 2026-11-10: the scale is 1-5 (4 here, 2 before)
     twelve = {"scope": "variants", "variant_ids": ["12s"]}
     f = variant_measures(specs([{**weight(11500, scope="set", binding=twelve), "flags": ["bound_by_count_rank"]}],
                                variants=["12s"], is_set=True), TABLE)[0]["fields"]          # 6630856593
-    assert (f["product_weight_g"]["source"], f["product_weight_g"]["confidence"]) == ("source_stated", 2)
+    assert (f["product_weight_g"]["source"], f["product_weight_g"]["confidence"]) == ("source_stated", 4)
     assert f["package_weight_g"]["confidence"] == 1                                       # the category default
     f = variant_measures(specs([weight(9000)]), TABLE)[0]["fields"]
-    assert f["product_weight_g"]["confidence"] == 2                       # "무게 9kg": with the box or not?
+    assert f["product_weight_g"]["confidence"] == 4                       # "무게 9kg": with the box or not?
     f = variant_measures(specs([weight(9000, kind="net"), weight(9500, kind="packed")], [box([30, 120, 25])]),
                          TABLE)[0]["fields"]
-    assert [f[n]["confidence"] for n in FIELDS] == [3, 3, 3, 3, 3]
+    assert [f[n]["confidence"] for n in FIELDS] == [5, 5, 5, 5, 5]        # stated with its kind (3 before)
     f = variant_measures(specs([weight(9000), weight(9000, kind="net")]), TABLE)[0]["fields"]["product_weight_g"]
-    assert (f["kind"], f["confidence"], f["also"]) == ("net", 3, 1)        # the more certain of two that agree
+    assert (f["kind"], f["confidence"], f["also"]) == ("net", 5, 1)        # the more certain of two that agree
+
+
+def test_on_scale_puts_a_collected_line_on_todays_levels():
+    """Lines collected before 2026-11-10 carry 1-3: a seller's value (and a contradiction's) is levelled again from
+    its own kind and flags, so one prepared record never mixes the scales; a default is 1 on both."""
+    f = variant_measures(specs([weight(9000, kind="net")], [box([30, 120, 25])]), TABLE)[0]["fields"]
+    old = {n: {**v, "confidence": {5: 3, 4: 2}.get(v["confidence"], 1)} for n, v in f.items()}       # as collected then
+    old["package_weight_g"] = {**old["package_weight_g"],                    # two packed weights that disagreed
+                               "contradiction": [{**f["product_weight_g"], "kind": "packed", "confidence": 3}]}
+    new = on_scale(old)
+    assert [new[n]["confidence"] for n in FIELDS] == [5, 1, 5, 5, 5]
+    assert new["package_weight_g"]["contradiction"][0]["confidence"] == 5 and on_scale(new) == new
+
+
+# ---- 2026-11-10: the operator's baselines for the composition (an optional block of a row) ---------------------
+
+BASE = {"item_g": 340, "container_g": 3800, "carton_g": 2000, "longest_item_mm": 1140, "length_margin_mm": 100,
+        "sides_mm": [200, 160], "sides_with_container_mm": [400, 320], "basis": {"item_g": "the sellers' tables"},
+        "approved_by": "owner", "approved_at": "2026-11-10"}
+
+
+def test_baselines_block_is_optional_and_the_operators():
+    """The owner's amounts of 2026-11-10 for 50002788, with where each comes from; the table's version rose."""
+    table = load_table()
+    block = table["rows"][0]["baselines"]
+    assert {k: block[k] for k in BASE if k != "basis"} == {k: v for k, v in BASE.items() if k != "basis"}
+    assert table["version"] == 2 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
+    check_row(ROW)                                                    # a row without the block: no composition
+    check_row({**ROW, "baselines": BASE})
+
+
+@pytest.mark.parametrize("block", [
+    {k: v for k, v in BASE.items() if k != "approved_by"},            # nobody approved it
+    {k: v for k, v in BASE.items() if k != "approved_at"},
+    {k: v for k, v in BASE.items() if k != "basis"},                  # where the amounts come from
+    {k: v for k, v in BASE.items() if k != "container_g"},            # whole or not at all
+    {**BASE, "carton_g": "2kg"}, {**BASE, "length_margin_mm": -100}, {**BASE, "item_g": True}, {**BASE, "item_g": 0},
+    {**BASE, "sides_mm": [200]}, {**BASE, "sides_mm": [160, 200]},    # [width, height], the wider first
+    {**BASE, "sides_with_container_mm": 400}, {**BASE, "width_margin_mm": 50},
+    [340, 3800], {},
+])
+def test_bad_baselines(block):
+    with pytest.raises(CategoryDefaultsInvalid, match="baselines"):
+        check_row({**ROW, "baselines": block})

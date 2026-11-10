@@ -1,5 +1,5 @@
 {
- "format": "prepared/4",
+ "format": "prepared/5",
  "key": "fairwardgolf:naver:102349440:10639350746",
  "shop": "fairwardgolf",
  "status": "ready",
@@ -68,7 +68,7 @@
        "max": 6350.293
       },
       "source": "source_stated",
-      "confidence": 2,
+      "confidence": 4,
       "quote": "무게: 14 파운드",
       "from": "description_table",
       "locator": {
@@ -84,7 +84,13 @@
        "scope": "product",
        "variant_ids": []
       },
-      "also": 1
+      "also": 1,
+      "compared": {
+       "value": 8675,
+       "source": "composed",
+       "confidence": 2,
+       "how": "clubs + bag"
+      }
      },
      "package_weight_g": {
       "value": {
@@ -92,7 +98,7 @@
        "max": 7710.0
       },
       "source": "source_stated",
-      "confidence": 3,
+      "confidence": 5,
       "quote": "Package Weight: 7.71 Kilograms",
       "from": "description_table",
       "locator": {
@@ -108,7 +114,13 @@
        "scope": "product",
        "variant_ids": []
       },
-      "also": 0
+      "also": 0,
+      "compared": {
+       "value": 8350,
+       "source": "composed",
+       "confidence": 3,
+       "how": "product weight + carton"
+      }
      },
      "package_length_mm": {
       "value": {
@@ -116,7 +128,7 @@
        "max": 1224.28
       },
       "source": "source_stated",
-      "confidence": 3,
+      "confidence": 5,
       "quote": "Item Package Dimensions L x W x H: 48.2 x 12.7 x 8.5 inches",
       "from": "description_table",
       "locator": {
@@ -134,10 +146,11 @@
       },
       "also": 0,
       "compared": {
-       "value": 1080,
+       "value": 1224,
        "source": "description_image",
-       "confidence": 2,
-       "how": "longest club"
+       "confidence": 5,
+       "how": "stated box size",
+       "from": "description_text"
       }
      },
      "package_width_mm": {
@@ -146,7 +159,7 @@
        "max": 322.58
       },
       "source": "source_stated",
-      "confidence": 3,
+      "confidence": 5,
       "quote": "Item Package Dimensions L x W x H: 48.2 x 12.7 x 8.5 inches",
       "from": "description_table",
       "locator": {
@@ -162,7 +175,14 @@
        "scope": "product",
        "variant_ids": []
       },
-      "also": 0
+      "also": 0,
+      "compared": {
+       "value": 323,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated box size",
+       "from": "description_text"
+      }
      },
      "package_height_mm": {
       "value": {
@@ -170,7 +190,7 @@
        "max": 215.9
       },
       "source": "source_stated",
-      "confidence": 3,
+      "confidence": 5,
       "quote": "Item Package Dimensions L x W x H: 48.2 x 12.7 x 8.5 inches",
       "from": "description_table",
       "locator": {
@@ -186,7 +206,14 @@
        "scope": "product",
        "variant_ids": []
       },
-      "also": 0
+      "also": 0,
+      "compared": {
+       "value": 216,
+       "source": "description_image",
+       "confidence": 5,
+       "how": "stated box size",
+       "from": "description_text"
+      }
      }
     },
     "today_dispatch": null

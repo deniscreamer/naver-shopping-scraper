@@ -468,36 +468,39 @@ def test_image_measures_switch_on_without_sidecar_is_a_note():
     assert p["status"] == prep(pid)["status"]                    # never holds
 
 
-def test_image_measures_larger_wins_per_variant():
-    """The owner, 2026-11-07: the larger of today's value and the images' guess. A 13-club set with the bag set
-    (4.95 kg): 13 x 310 g + 4950 g = 8980 g (the women's 12PCS variants: 8670 g) beats the category's 7000 g; the bag's 40 x 31 cm beats 280 / 230 mm;
-    the longest side (1156 mm club, 910 mm bag) stays under the category's 1250 mm. 7583123963: "13 PCS ...
-    (백세트포함)"."""
+def test_image_measures_compose_per_variant():
+    """The owner, 2026-11-10: a field the seller does not state is composed from the set's parts, the flat default
+    is the last resort. 7583123963 ("13 PCS ... (백세트포함)"): three club weights are not the set, so 13 x the
+    baseline 340 g (the women's 12PCS variants: 12 x) + the bag set's stated 4.95 kg; the package is that + the
+    2 kg carton; the 45.5 in driver + 100 mm; a set with a bag: 400 x 320. Each carries the default it replaced."""
     pid = "7583123963"
     line = copy.deepcopy(lines()[pid])
     p = prepare(line, RULES_ON, "r", 1, sidecar())
-    off = prep(pid)
-    for v, before in zip(p["product"]["variants"], off["product"]["variants"]):
+    for v in p["product"]["variants"]:
         pk = v["package"]
-        assert pk["package_weight_g"]["source"] == "description_image"
         clubs = 12 if "12PCS" in " ".join(v["options_ko"]) else 13          # the variant's own count
-        assert pk["package_weight_g"]["value"]["max"] == clubs * 310 + 4950 == pk["product_weight_g"]["value"]["max"]
-        assert pk["package_weight_g"]["compared"] == {"value": 7000, "source": "category_default",
-                                                     **({"confidence": 1} if "confidence" in before["package"][
-                                                         "package_weight_g"] else {})}
-        assert pk["package_width_mm"]["value"]["max"] == 400 and pk["package_height_mm"]["value"]["max"] == 310
-        assert pk["package_length_mm"] == {**before["package"]["package_length_mm"],
-                                           "compared": pk["package_length_mm"]["compared"]}
+        assert [(f["value"]["max"], f["confidence"], f["source"]) for f in pk.values()] == [
+            (x, level, "composed") for x, level in ((clubs * 340 + 4950, 2), (clubs * 340 + 6950, 2), (1256, 3),
+                                                    (400, 2), (320, 2))]
+        assert [f["compared"] for f in pk.values()] == [{"value": x, "source": "category_default", "confidence": 1}
+                                                        for x in (5700, 7000, 1250, 280, 230)]
+        assert [x["from"] for x in pk["product_weight_g"]["parts"]] == [f"{clubs} clubs x baseline club weight", "stated"]
     note = next(n for n in p["notes"] if n["code"] == "measures_from_images")
-    assert "package_weight_g" in note["detail"] and "package_length_mm" not in note["detail"]
+    assert all(name in note["detail"] for name in pk)
     assert lines()[pid]["package"] == line["package"]            # the collected line is never changed
 
 
-def test_image_measures_nothing_to_go_on_changes_nothing():
+def test_image_measures_nothing_read_composes_what_the_listing_says():
+    """Nothing in the images and no club count anywhere: the two weights stay the flat default. The length is the
+    baseline driver + the margin, the sides those of the listing's bag state (the variants' "블랙백")."""
     pid = next(iter(lines()))
     p = prepare(copy.deepcopy(lines()[pid]), RULES_ON, "r", 1, sidecar([["좋은 클럽입니다"]], pid))
-    assert [v["package"] for v in p["product"]["variants"]] == [v["package"] for v in prep(pid)["product"]["variants"]]
-    assert not any(n["code"].startswith(("measures_from", "description_images")) for n in p["notes"])
+    for v, before in zip(p["product"]["variants"], prep(pid)["product"]["variants"]):
+        pk = v["package"]
+        assert [pk[n] for n in list(pk)[:2]] == [before["package"][n] for n in list(pk)[:2]]
+        assert pk["product_weight_g"]["source"] == "category_default" and pk["product_weight_g"]["confidence"] == 1
+        assert (pk["package_length_mm"]["value"]["max"], pk["package_length_mm"]["confidence"]) == (1240, 2)
+        assert pk["package_width_mm"]["how"].startswith("box side, ")
 
 
 def test_image_measures_stale_sidecar_is_a_note_and_not_used():
@@ -510,17 +513,121 @@ def test_image_measures_stale_sidecar_is_a_note_and_not_used():
 
 def test_image_measures_without_a_profile_use_the_core_only(monkeypatch):
     """A category with the switch on and no parts profile (none mapped to its Naver id): club tables and bags mean
-    nothing; a stated product weight and size still count (any category)."""
+    nothing, and nothing is composed from parts; a stated product weight still counts (any category), and the
+    package is that weight + the row's carton. A product's size is not its box."""
     import description_measures
     monkeypatch.setattr(description_measures, "CATEGORY_PROFILES", {})
     core = RULES_ON
     pid = "7583123963"
     p = prepare(copy.deepcopy(lines()[pid]), core, "r", 1, sidecar())
-    assert all(f["source"] != "description_image" for v in p["product"]["variants"] for f in v["package"].values())
+    assert all(f["source"] == "category_default" for v in p["product"]["variants"] for f in v["package"].values())
     p = prepare(copy.deepcopy(lines()[pid]), core, "r", 1,
                 sidecar([["제품 무게 / 12kg", "제품 사이즈 / 140 x 35 x 30cm"]]))
     pk = p["product"]["variants"][0]["package"]
-    assert pk["product_weight_g"]["value"]["max"] == 12000 and pk["package_length_mm"]["value"]["max"] == 1400
+    assert (pk["product_weight_g"]["value"]["max"], pk["product_weight_g"]["confidence"]) == (12000, 4)
+    assert (pk["package_weight_g"]["value"]["max"], pk["package_weight_g"]["confidence"]) == (14000, 3)
+    assert pk["package_length_mm"]["source"] == "category_default"
+
+
+def _images(pid):
+    with open(os.path.join(os.path.dirname(FX), "description_images", pid + ".json"), encoding="utf-8") as f:
+        return json.load(f)
+
+
+def test_image_measures_read_the_typed_text():
+    """8958060680: the bag's weight and the club table are typed, not in an image ("캐디백" / "무게 : 약 3.8kg",
+    "클럽 무게(g) | R: 294 / S: 297 | R: 317 / S: 320 | R: 351 / S: 353 | 528"). Five weights of 11 clubs are not
+    the set: 11 x the baseline club + the bag's own 3.8 kg."""
+    pid = "8958060680"
+    p = prepare(_fixture(pid), RULES_ON, "r", 1, _images(pid))
+    for v in p["product"]["variants"]:
+        w = v["package"]["product_weight_g"]
+        assert (w["value"]["max"], w["how"], w["source"], w["confidence"]) == (11 * 340 + 3800, "clubs + bag", "composed", 2)
+        assert w["parts"][1] == {"part": "bag", "value": 3800, "from": "stated", "quote": "무게 : 약 3.8kg",
+                                 "said_by": "listing"}
+        assert w["compared"] == {"value": 5700, "source": "category_default", "confidence": 1}
+        assert v["package"]["package_length_mm"]["parts"][0]["value"] == 1149      # 45.25", not the bag's "47인치 대응"
+    off = prepare(_fixture(pid), RULES_ON, "r", 1, {**_images(pid), "links_sha256": "old"})
+    assert all(f["source"] == "category_default" for v in off["product"]["variants"] for f in v["package"].values())
+    # read with the images or not at all: a stale sidecar is a note, the typed text waits for the next reading
+
+
+def test_image_measures_the_spec_row_says_no_bag():
+    """10337644911: 골프백포함여부 "미포함" (no bag word in the options, the title or the images): the clubs alone,
+    in a box of a set without a bag."""
+    pid = "10337644911"
+    p = prepare(_fixture(pid), RULES_ON, "r", 1, _images(pid))
+    for v in p["product"]["variants"]:
+        w = v["package"]["product_weight_g"]
+        assert w["how"] == "clubs, no bag" and w["parts"][0]["from"] == "11 clubs x median club weight"
+        assert w["parts"][1] == {"part": "bag", "value": 0, "from": "not in the set", "said_by": "listing"}
+        assert [v["package"][n]["value"]["max"] for n in ("package_width_mm", "package_height_mm")] == [200, 160]
+
+
+def test_image_measures_compose_only_with_the_tables_block(monkeypatch):
+    """10337644911 (11 clubs, 골프백포함여부 미포함): with the operator's `baselines` in the category's row, 11 x the
+    median 326.5 g, that + the carton, the 45.25 in driver + the margin, the sides of a set without a bag. A row
+    without the block composes nothing: the flat defaults, as before the block existed."""
+    pid = "10337644911"
+    p = prepare(_fixture(pid), RULES_ON, "r", 1, _images(pid))
+    for v in p["product"]["variants"]:
+        assert [(f["value"]["max"], f["how"], f["confidence"]) for f in v["package"].values()] == [
+            (3592, "clubs, no bag", 2), (5592, "product weight + carton", 2), (1249, "longest club + margin", 3),
+            (200, "box side, no bag", 2), (160, "box side, no bag", 2)]
+        assert [f["compared"]["value"] for f in v["package"].values()] == [5700, 7000, 1250, 280, 230]
+    assert {"code": "measures_from_images", "detail": "package_height_mm 4/4, package_length_mm 4/4, "
+            "package_weight_g 4/4, package_width_mm 4/4, product_weight_g 4/4"} in p["notes"]
+    table = copy.deepcopy(transform._measures_table())
+    del table["rows"][0]["baselines"]
+    monkeypatch.setattr(transform, "_measures_table", lambda: table)
+    for v in prepare(_fixture(pid), RULES_ON, "r", 1, _images(pid))["product"]["variants"]:
+        assert all(f["source"] == "category_default" and "compared" not in f for f in v["package"].values())
+
+
+def test_image_measures_an_addon_boston_bag_is_not_the_package():
+    """13734679551: "사이즈 / L48×W24×H30CM" is the Boston bag sold as an add-on ("RB LADY 보스턴 백" 46,000); it was
+    the package's width and height (300 / 240). The set's own bag (title "캐디백 포함") states its weight, "약2.8Kg
+    (본체)": the sides are the baseline's for a set with a bag."""
+    pid = "13734679551"
+    p = prepare(_fixture(pid), RULES_ON, "r", 1, _images(pid))
+    for v in p["product"]["variants"]:
+        pk = v["package"]
+        assert [(pk[n]["value"]["max"], pk[n]["how"]) for n in ("package_width_mm", "package_height_mm")] == [
+            (400, "box side, with bag"), (320, "box side, with bag")]
+        assert pk["product_weight_g"]["value"]["max"] == 10 * 340 + 2800
+        assert pk["product_weight_g"]["parts"][1]["quote"] == "중량 / 약2.8Kg (본체)"
+
+
+def test_image_measures_a_collected_sellers_value_on_todays_scale():
+    """6630856593 was collected with the 1-3 scale: its "중량: 약11.5kg / 4.7kg" (bound by club count) carries 2 in
+    the line and 4 in the prepared record, with or without the description stage. The package, a default of
+    7000 g below the 11.5 kg, is that weight + the carton: 3, the seller's own figure."""
+    pid = "6630856593"
+    assert {p["fields"]["product_weight_g"]["confidence"] for p in _fixture(pid)["package"]} == {2}
+    for rules in (RULES, RULES_ON):
+        p = prepare(_fixture(pid), rules, "r", 1, _images(pid))
+        assert {v["package"]["product_weight_g"]["confidence"] for v in p["product"]["variants"]} == {4}
+    for v in p["product"]["variants"]:
+        weight, packed = v["package"]["product_weight_g"], v["package"]["package_weight_g"]
+        assert weight["source"] == "source_stated" and weight["value"]["max"] in (4700, 11500)
+        assert (packed["value"]["max"], packed["confidence"], packed["how"]) == \
+            (weight["value"]["max"] + 2000, 3, "product weight + carton")
+
+
+def test_image_measures_club_count_the_title_before_the_row():
+    """The title's "N개" counts the clubs before the 총클럽개수 row and without one. 10481094198: the title's "10개
+    풀세트" with a row of "3개" was a set of 3 clubs (846 g); shown on 13728190518 ("캘러웨이 워버드 골프채 세트 10개
+    캐디백 포함", row "10개"), whose typed table gives the weights."""
+    pid = "13728190518"
+    for value in ("3개", None):
+        line = _fixture(pid)
+        rows = line["specs"]["specs"]
+        assert [r["value"] for r in rows if r["label"] == "총클럽개수"] == ["10개"]
+        line["specs"]["specs"] = [{**r, "value": value} if r["label"] == "총클럽개수" else r
+                                  for r in rows if r["label"] != "총클럽개수" or value]
+        p = prepare(line, RULES_ON, "r", 1, _images(pid))
+        for v in p["product"]["variants"]:
+            assert v["package"]["product_weight_g"]["parts"][0]["from"] == "10 clubs x median club weight"
 
 
 def test_naver_placeholder_manufacturer_is_not_a_spec():

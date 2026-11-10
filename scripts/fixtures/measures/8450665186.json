@@ -1,0 +1,512 @@
+{
+ "product_id": "8450665186",
+ "covers": "A listing of several models and sets (men's and women's; 4, 9, 11 and 12 clubs, each with a bag): each variant's own count. No whole-club weights (the tables give the heads'): the baseline club and bag (2).",
+ "checked": [
+  "count: each variant's own \"4P\" / \"9P\" / \"11P\" / \"12P\" (the title's \"9P세트\" and 총클럽개수 \"9개\" are one of the sets)",
+  "bag: \"+캐디백\" in every variant; 골프백포함여부 \"캐디백\"; no weight stated: 3800 g",
+  "weights: \"품목 / 품번 / LIE / LOFT / 헤드무게 / 길이 / 밸런스\", \"WOOD / #1 / 60 / 10.5 / 198 / 45\\\" / D1\": heads, none read; count x 340 + 3800: 4 -> 5160, 9 -> 6860, 11 -> 7540, 12 -> 7880 g",
+  "length 1243 mm = 45 in (\"WOOD / #1 / 60 / 10.5 / 198 / 45\\\" / D1\", the men's sets: 1143 mm) + 100"
+ ],
+ "note": "The women's models' drivers are 44 in (\"WOOD / #1 / 60 / 13.5 / 186 / 44\\\" / B8\"): the page's longest, the men's 45 in, stands for every variant.",
+ "input": {
+  "title": "골프채 풀세트 골프클럽 초,중급용 PGM 스틸 남성9P세트",
+  "category": {"id": "50002788", "name": "스포츠/레저 > 골프 > 골프클럽 > 풀세트"},
+  "spec_rows": [
+   {"label": "상품번호", "value": "8450665186"},
+   {"label": "제조사", "value": "x"},
+   {"label": "브랜드", "value": "PGM"},
+   {"label": "모델명", "value": "PGM 골프채"},
+   {"label": "이벤트", "value": "런칭기념 무료배송,프리미엄후기 작성시 골프공증정"},
+   {"label": "원산지", "value": "중국산(x)"},
+   {"label": "드라이버 로프트각", "value": "10.5도"},
+   {"label": "아이언 구성", "value": "#6, #7, #8, #9, 샌드웨지(SW), 피칭웨지(PW)"},
+   {"label": "종류", "value": "풀세트"},
+   {"label": "성별", "value": "남성용"},
+   {"label": "사용방향", "value": "오른손용"},
+   {"label": "총클럽개수", "value": "9개"},
+   {"label": "출시", "value": "2023년형"},
+   {"label": "풀세트구성", "value": "드라이버, 퍼터, 3유틸리티, 웨지, 6아이언세트, 7아이언세트, 8아이언세트, 9아이언세트"},
+   {"label": "아이언샤프트소재", "value": "그라파이트/카본"},
+   {"label": "아이언개수", "value": "4개"},
+   {"label": "퍼터형태", "value": "블레이드(일자형)"},
+   {"label": "골프백포함여부", "value": "캐디백"}
+  ],
+  "facts": [],
+  "variants": [
+   {"id": "35860668117", "options_ko": ["MTG051남성9P", "MTG051스틸남성9P+캐디백"]},
+   {"id": "35860668118", "options_ko": ["MTG051남성9P", "MTG051카본남성9P+캐디백"]},
+   {"id": "35860668115", "options_ko": ["MTG051남성4P", "MTG051스틸남성4P+캐디백"]},
+   {"id": "35860668116", "options_ko": ["MTG051남성4P", "MTG051카본남성4P+캐디백"]},
+   {"id": "35860668119", "options_ko": ["MTG051남성12P", "MTG051스틸남성12P+캐디백"]},
+   {"id": "35860668120", "options_ko": ["MTG051남성12P", "MTG051카본남성12P+캐디백"]},
+   {"id": "43431934341", "options_ko": ["MTG040남성", "MTG040남성카본4P+캐디백"]},
+   {"id": "43431934342", "options_ko": ["MTG040남성", "MTG040남성카본12P+캐디백"]},
+   {"id": "43431934343", "options_ko": ["LTG038여성", "LTG038여성카본4P+캐디백"]},
+   {"id": "43431934345", "options_ko": ["LTG038여성", "LTG038여성카본11P+캐디백"]},
+   {"id": "43431934347", "options_ko": ["LTG007여성", "LTG007여성카본4P+캐디백"]},
+   {"id": "43431934349", "options_ko": ["LTG007여성", "LTG007여성카본9P+캐디백"]},
+   {"id": "43431934351", "options_ko": ["LTG007여성", "LTG007여성카본12P+캐디백"]},
+   {"id": "43431934353", "options_ko": ["LTG014여성", "LTG014여성카본4P+캐디백"]},
+   {"id": "43431934355", "options_ko": ["LTG014여성", "LTG014여성카본9P+캐디백"]},
+   {"id": "43431934358", "options_ko": ["LTG014여성", "LTG014여성카본11P+캐디백"]}
+  ],
+  "supplements": [],
+  "typed": [],
+  "images": [
+   [
+    12,
+    ["1.2개이상 주문시 이어서 발송가능한 상품은 이어서 발송됩니다.", 0.983],
+    ["소포장/재단을 원하실 경우 문의글로 미리 연락주세요!", 0.972],
+    ["2.아이디, 수취인이 다를 경우 합포장이 되지않아 배송비가 각각 부과됩니다.", 0.98],
+    1,
+    ["(시간차가 있는 주문 또한 합포장이 되지 않을 수 있습니다.)", 0.92],
+    2
+   ],
+   [4],
+   [15],
+   [
+    1,
+    ["옵션 / MTG051남성카본12P / 옵션 / MTG051남성카본 9P / 옵션 / MTG051남성카본 4P", 0.931],
+    2,
+    ["드라이버1/우드3.5.4H / 드라이버1/우드5 / 드라이버1", 0.976],
+    ["아이언 5.6.7.8.9.P.S / 아이언6.7.8.9.P.S / 아이언7.S", 0.937],
+    ["퍼터+캐디백 / 퍼터+캐디백 / 퍼터+캐디백", 0.978],
+    ["카본12P세트+캐디백 / 카본9P세트+캐디백 / 카본4P 세트+캐디백", 0.942],
+    ["옵션 / MTG051남성스틸12P / 옵션MTG051 남성스틸9P / 옵션 / MTG051남성스틸4P", 0.934],
+    1,
+    ["드라이버1/우드 3.5.4H / 드라이버1/우드5 / 드라이버1", 0.977],
+    ["아이언 5.6.7.8.9.P.S / 아이언6.7.8.9.P.S / 아이언7.S", 0.943],
+    ["퍼터+캐디백 / 퍼터+캐디백 / 퍼터+캐디백", 0.973],
+    ["스틸12P 세트+캐디백 / 스틸9P세트+캐디백 / 스틸 4P 세트+캐디백", 0.911],
+    ["옵션 / MTG040 남성 카본12P / 옵션MTG040 남성카본4P", 0.923],
+    3,
+    ["퍼터+캐디백 / 퍼터+캐디백", 0.978],
+    ["카본12P세트+캐디백 / 카본4P세트+캐디백", 0.929]
+   ],
+   [
+    ["옵션 / TG007여성카본12P / 옵션 / LTG007 여성카본9P / 옵션 / LTG007 여성 카본 4P", 0.918],
+    2,
+    ["드라이버1/우드3.5.4H / 드라이버1/우드3 / 드라이버1", 0.984],
+    ["아0언5.6.7.8.9.P.S / 아이언5.6.7.8.9.P / 아이언7.S", 0.911],
+    ["퍼터+캐디백 / 퍼터+캐디백 / 퍼터+캐디백", 0.979],
+    ["카본12P 세트+캐디백 / 카본9P세트+캐디백 / 카본4P세트+캐디백", 0.96],
+    ["옵션 / LTG014 여성카본11P / 옵션 / LTG014 여성 카본9P / 옵션 / LTG014여성 카본 4P", 0.937],
+    2,
+    ["드라이버1/우드3.5.4H / 드라이버1/우드5 / 드라이버1", 0.996],
+    ["아이언6.7.8.9.P.S / 아이언6.7.8.9.P.S / 아이언7.S", 0.904],
+    ["퍼터+캐디백 / 퍼터+캐디백 / 퍼터+캐디백", 0.982],
+    ["카본 11P세트+캐디백 / 카본9P세트+캐디백 / 카본4P세트+캐디백", 0.951],
+    ["옵션 / LTG038 여성 카본11P / 옵션 / LTG038 여성카본4P", 0.956],
+    3,
+    ["퍼터+캐디백 / 퍼터+캐디백", 0.981],
+    ["카본 11P세트+캐디백 / 카본4P 세트+캐디백", 0.936],
+    1
+   ],
+   [1, ["남성용 스틸12/9/4P", 0.976], ["카본12/9/4P", 1.0], 9],
+   [
+    1,
+    ["MTG051-카본12P", 0.999],
+    2,
+    ["아이언(5,6,7,8,9,P,S),퍼터,캐디백", 0.98],
+    1,
+    ["MTG051- 스틸12P", 0.982],
+    2,
+    ["아이언(5,6,7,8,9,P,S),퍼터,캐디백", 0.957],
+    1,
+    ["MTG051-카본9P", 0.999],
+    2,
+    ["아이언(6,7,8,9,P,S),퍼터,캐디백", 0.977],
+    1,
+    ["MTG051- 스틸 9P / PGin7", 0.718],
+    2,
+    ["아이언(6,7,8,9,P,S),퍼터,캐디백", 0.974],
+    1,
+    ["MTG051-카본 4P", 0.967],
+    2,
+    ["아이언(7,S), 퍼터,캐디백 / PG7", 0.831],
+    2,
+    ["MTG051-카본4P / PGin7", 0.832],
+    3,
+    ["아이언(7,S), 퍼터,캐디백", 0.939],
+    1
+   ],
+   [4],
+   [7],
+   [4, ["60g 초경량 카본 샤프트", 0.922], 6],
+   [6],
+   [
+    ["품목 / 품번 / LIE / LOFT / 헤드무게 / 길이 / 밸런스", 0.869],
+    ["WOOD / #1 / 60 / 10.5 / 198 / 45\" / D1", 0.954],
+    ["#3 / 58 / 16 / 205 / 43\" / D1", 0.979],
+    ["#5 / 59 / 20 / 220 / 42\" / D1", 0.982],
+    ["HYBRID / #4H / 60 / 24 / 232 / 40\" / D1", 0.975],
+    ["IRON / #5 / 61 / 27 / 261 / 38\" / D1", 0.991],
+    ["#6 / 61 / 33 / 266 / 37.5\" / D1", 0.984],
+    ["#7 / 61 / 36 / 273 / 37\" / D1", 0.989],
+    ["#8 / 61 / 40 / 281 / 36.5\" / D1", 0.987],
+    ["#9 / 62.5 / 43 / 289 / 36\" / D1", 0.981],
+    ["#P / 63 / 46 / 296 / 35.5\" / D1", 0.971],
+    ["#S / 64 / 54 / 300 / 35.25\" / D1", 0.903],
+    ["PUTTER / #PT / 71 / 3 / 350 / 34\" / /", 0.925]
+   ],
+   [
+    1,
+    ["남성 카본12/9P", 0.982],
+    10,
+    ["04MTG040남성-카본12P", 0.995],
+    5,
+    ["캐디백", 0.997],
+    ["05MTG040남성 - 카본4P", 0.954],
+    4,
+    ["캐디백", 0.998]
+   ],
+   [["460CC대용량 클럽헤드", 0.992], 4],
+   [6, ["60g초경량카본샤프트", 0.994], 3, ["※퍼터와 52#웨지는 스틸 샤프트 입니다.", 0.927], ["※스틸 샤프트의 무게는 110g 입니다.", 0.944]],
+   [13, ["퍼터헤드커버1개제공", 0.972]],
+   [3],
+   [8],
+   [
+    ["품목 / 품번 / LIE / LOFT / 헤드무게 / 길이 / 밸런스", 0.936],
+    ["WOOD / #1 / 60 / 10.5 / 197 / 45\" / D1", 0.837],
+    ["#3 / 58 / 15 / 212 / 43\" / D1", 0.941],
+    ["#5 / 59 / 18 / 221 / 42\" / D1", 0.978],
+    ["HYBRID / #4H / 59.5 / 21 / 237 / 40\" / D1", 0.933],
+    ["IRON / #5 / 61 / 22 / 259 / 38\" / D1", 0.897],
+    ["#6 / 61.5 / 25 / 266 / 37.5\" / D1", 0.924],
+    ["#7 / 62 / 28 / 272 / 37\" / D1", 0.98],
+    ["#8 / 62.5 / 33 / 279 / 36.5\" / D1", 0.947],
+    ["#9 / 63 / 39 / 287 / 36\" / D1", 0.981],
+    ["#PW / 63.5 / 45 / 294 / 35.5\" / D1", 0.846],
+    ["#52 / 64 / 52 / 302 / 35.25\" / D1", 0.866],
+    ["PUTTER / #PT / 72 / 3.5 / 360 / 34\" / /", 0.77]
+   ],
+   [
+    1,
+    ["여성 카본11/4P", 0.979],
+    10,
+    ["06LTG038여성-카본11P", 0.999],
+    8,
+    ["캐디백", 0.998],
+    2,
+    ["07 LTG038여성- 카본4P", 0.969],
+    5,
+    ["캐디백", 0.997]
+   ],
+   [["450CC대용량 / 클럽헤드", 0.976], 8],
+   [5],
+   [3],
+   [9],
+   [8],
+   [
+    ["품목 / 품번 / LIE / LOFT / 헤드무게 / 길이 / 밸런스", 0.854],
+    ["WOOD / #1 / 60 / 13.5 / 186 / 44\" / B8", 0.907],
+    ["#3 / 59 / 17 / 199 / 42\" / B8", 0.947],
+    ["#5 / 60 / 20 / 208 / 41\" / B8", 0.805],
+    ["HYBRID / #4H / 61 / 24 / 219 / 39\" / B8", 0.993],
+    ["IRON / #6 / 62 / 30 / 246 / 36.5\" / B8", 0.915],
+    ["#7 / 62.5 / 34 / 253 / 36\" / B8", 0.892],
+    ["#8 / 63 / 38 / 259 / 35.5\" / B8", 0.923],
+    ["#9 / 63.5 / 42 / 267 / 35\" / B8", 0.953],
+    ["#PW / 64 / 46 / 275 / 34.5\" / B8", 0.831],
+    ["#SW / 64.5 / 54 / 286 / 34\" / B8", 0.977],
+    ["PUTTER / #PT / 72 / 3.5 / 370 / 33\" / /", 0.851]
+   ],
+   [
+    1,
+    ["여성 카본11/9P", 0.923],
+    12,
+    ["08 / LTG014여성-카본11P", 0.999],
+    5,
+    ["캐디백", 0.998],
+    ["09 / LTG014여성-카본9P", 0.998],
+    5,
+    ["캐디백", 0.998],
+    ["09-1 LTG014여성-카본4P", 0.98],
+    4,
+    ["캐디백", 0.997]
+   ],
+   [["450CC대용량 클럽헤드", 0.996], 8],
+   [4],
+   [],
+   [3],
+   [3],
+   [
+    ["품목 / 품번 / LIE / LOFT / 헤드무게 / 길이 / 밸런스", 0.868],
+    ["WOOD / #1 / 58 / 13.5 / 193 / 44\" / C9", 0.899],
+    ["#3 / 59 / 15 / 205 / 42\" / C9", 0.838],
+    ["#5 / 60 / 19 / 215 / 41\" / C9", 0.899],
+    ["HYBRID / #4H / 61 / 22 / 231 / 39\" / C9", 0.87],
+    ["IRON / #6 / 61 / 30 / 262 / 36.5\" / C9", 0.898],
+    ["#7 / 61.5 / 33 / 269 / 36\" / C9", 0.868],
+    ["#8 / 62 / 38 / 274 / 35.5\" / C9", 0.883],
+    ["#9 / 62.5 / 42 / 282 / 35\" / C9", 0.908],
+    ["#PW / 63 / 46 / 289 / 34.5\" / C9", 0.889],
+    ["#SW / 64 / 56 / 294 / 34\" / C9", 0.814],
+    ["PUTTER / #PT / 71 / 3 / 350 / 33\" / /", 0.822]
+   ],
+   [
+    1,
+    ["여성 카본12/9/4P", 0.965],
+    14,
+    ["10 LTG007여성- 카본12P / JICTOR / PGm", 0.654],
+    ["(구성품) / P5m7", 0.621],
+    1,
+    ["드라이버+우드1,3,5,4H / 0R / PGm7", 0.51],
+    2,
+    ["캐디백", 0.998],
+    ["11 LTG007여성- 카본9P / JICTOR / PGi", 0.585],
+    6,
+    ["캐디백", 0.998],
+    ["12LTG007여성-카본4P", 0.998],
+    5,
+    ["캐디백", 0.998]
+   ],
+   [4],
+   [2],
+   [9],
+   [
+    ["품목 / 품번 / LIE / LOFT / 헤드무게 / 길이 / 밸런스", 0.915],
+    ["WOOD / #1 / 56 / 12 / 198 / 44\" / C9", 0.88],
+    ["#3 / 59 / 15 / 208 / 42\" / C9", 0.802],
+    ["#5 / 60 / 18 / 218 / 41\" / C9", 0.876],
+    ["HYBRID / #4H / 59.5 / 24 / 235 / 39\" / C9", 0.823],
+    ["IRON / #5 / 60 / 27 / 261 / 37\" / C9", 0.843],
+    ["#6 / 61.5 / 30 / 266 / 36.5\" / C9", 0.836],
+    ["#7 / 62 / 34 / 273 / 36\" / C9", 0.868],
+    ["#8 / 62.5 / 37 / 281 / 35.5\" / C9", 0.743],
+    ["#9 / 63 / 41 / 289 / 35\" / C9", 0.866],
+    ["#PW / 64 / 46 / 296 / 34.5\" / C9", 0.851],
+    ["#SW / 64 / 56 / 300 / 34.25\" / C9", 0.868],
+    ["PUTTER / #PT / 71 / 3 / 350 / 33\" / /", 0.68]
+   ],
+   [
+    2,
+    ["x의 배송은 빠르고 안전한 우체국택배(x)로 배송됩니다.", 0.941],
+    4,
+    ["교환/반품안내 / 반품,교환시 지정택배로만 보내주셔야 합니다", 0.975],
+    ["단순변심및사이즈,색상교환의 경우왕복택배비6,000원입니다", 0.973],
+    1,
+    ["반품, 교환시 보내드린 택배사나 마켓 지정택배로만 보내주셔야 합니다.", 0.935],
+    ["(그외택배, 편의점택배포함 추가금발생시추가로청구됩니다.)", 0.951],
+    16,
+    ["x / 상담하기 / x", 0.998]
+   ]
+  ],
+  "measures": {"is_set": true, "weights": [], "dimensions": []}
+ },
+ "expected": [
+  {
+   "variants": [
+    ["MTG051남성9P", "MTG051스틸남성9P+캐디백"],
+    ["MTG051남성9P", "MTG051카본남성9P+캐디백"],
+    ["LTG007여성", "LTG007여성카본9P+캐디백"],
+    ["LTG014여성", "LTG014여성카본9P+캐디백"]
+   ],
+   "fields": {
+    "product_weight_g": {
+     "value": 6860,
+     "source": "composed",
+     "confidence": 2,
+     "how": "clubs + bag",
+     "parts": [
+      {"part": "clubs", "value": 3060, "from": "9 clubs x baseline club weight", "count_from": "listing"},
+      {"part": "bag", "value": 3800, "from": "baseline", "said_by": "listing"}
+     ]
+    },
+    "package_weight_g": {
+     "value": 8860,
+     "source": "composed",
+     "confidence": 2,
+     "how": "product weight + carton",
+     "parts": [
+      {"part": "product", "value": 6860, "from": "product_weight_g"},
+      {"part": "carton", "value": 2000, "from": "baseline"}
+     ]
+    },
+    "package_length_mm": {
+     "value": 1243,
+     "source": "composed",
+     "confidence": 3,
+     "how": "longest club + margin",
+     "parts": [
+      {"part": "longest club", "value": 1143, "from": "stated", "quote": "WOOD / #1 / 60 / 10.5 / 198 / 45\" / D1"},
+      {"part": "margin", "value": 100, "from": "baseline"}
+     ]
+    },
+    "package_width_mm": {
+     "value": 400,
+     "source": "composed",
+     "confidence": 2,
+     "how": "box side, with bag",
+     "parts": [{"part": "box side", "value": 400, "from": "baseline", "said_by": "listing"}]
+    },
+    "package_height_mm": {
+     "value": 320,
+     "source": "composed",
+     "confidence": 2,
+     "how": "box side, with bag",
+     "parts": [{"part": "box side", "value": 320, "from": "baseline", "said_by": "listing"}]
+    }
+   }
+  },
+  {
+   "variants": [
+    ["MTG051남성4P", "MTG051스틸남성4P+캐디백"],
+    ["MTG051남성4P", "MTG051카본남성4P+캐디백"],
+    ["MTG040남성", "MTG040남성카본4P+캐디백"],
+    ["LTG038여성", "LTG038여성카본4P+캐디백"],
+    ["LTG007여성", "LTG007여성카본4P+캐디백"],
+    ["LTG014여성", "LTG014여성카본4P+캐디백"]
+   ],
+   "fields": {
+    "product_weight_g": {
+     "value": 5160,
+     "source": "composed",
+     "confidence": 2,
+     "how": "clubs + bag",
+     "parts": [
+      {"part": "clubs", "value": 1360, "from": "4 clubs x baseline club weight", "count_from": "listing"},
+      {"part": "bag", "value": 3800, "from": "baseline", "said_by": "listing"}
+     ]
+    },
+    "package_weight_g": {
+     "value": 7160,
+     "source": "composed",
+     "confidence": 2,
+     "how": "product weight + carton",
+     "parts": [
+      {"part": "product", "value": 5160, "from": "product_weight_g"},
+      {"part": "carton", "value": 2000, "from": "baseline"}
+     ]
+    },
+    "package_length_mm": {
+     "value": 1243,
+     "source": "composed",
+     "confidence": 3,
+     "how": "longest club + margin",
+     "parts": [
+      {"part": "longest club", "value": 1143, "from": "stated", "quote": "WOOD / #1 / 60 / 10.5 / 198 / 45\" / D1"},
+      {"part": "margin", "value": 100, "from": "baseline"}
+     ]
+    },
+    "package_width_mm": {
+     "value": 400,
+     "source": "composed",
+     "confidence": 2,
+     "how": "box side, with bag",
+     "parts": [{"part": "box side", "value": 400, "from": "baseline", "said_by": "listing"}]
+    },
+    "package_height_mm": {
+     "value": 320,
+     "source": "composed",
+     "confidence": 2,
+     "how": "box side, with bag",
+     "parts": [{"part": "box side", "value": 320, "from": "baseline", "said_by": "listing"}]
+    }
+   }
+  },
+  {
+   "variants": [
+    ["MTG051남성12P", "MTG051스틸남성12P+캐디백"],
+    ["MTG051남성12P", "MTG051카본남성12P+캐디백"],
+    ["MTG040남성", "MTG040남성카본12P+캐디백"],
+    ["LTG007여성", "LTG007여성카본12P+캐디백"]
+   ],
+   "fields": {
+    "product_weight_g": {
+     "value": 7880,
+     "source": "composed",
+     "confidence": 2,
+     "how": "clubs + bag",
+     "parts": [
+      {"part": "clubs", "value": 4080, "from": "12 clubs x baseline club weight", "count_from": "listing"},
+      {"part": "bag", "value": 3800, "from": "baseline", "said_by": "listing"}
+     ]
+    },
+    "package_weight_g": {
+     "value": 9880,
+     "source": "composed",
+     "confidence": 2,
+     "how": "product weight + carton",
+     "parts": [
+      {"part": "product", "value": 7880, "from": "product_weight_g"},
+      {"part": "carton", "value": 2000, "from": "baseline"}
+     ]
+    },
+    "package_length_mm": {
+     "value": 1243,
+     "source": "composed",
+     "confidence": 3,
+     "how": "longest club + margin",
+     "parts": [
+      {"part": "longest club", "value": 1143, "from": "stated", "quote": "WOOD / #1 / 60 / 10.5 / 198 / 45\" / D1"},
+      {"part": "margin", "value": 100, "from": "baseline"}
+     ]
+    },
+    "package_width_mm": {
+     "value": 400,
+     "source": "composed",
+     "confidence": 2,
+     "how": "box side, with bag",
+     "parts": [{"part": "box side", "value": 400, "from": "baseline", "said_by": "listing"}]
+    },
+    "package_height_mm": {
+     "value": 320,
+     "source": "composed",
+     "confidence": 2,
+     "how": "box side, with bag",
+     "parts": [{"part": "box side", "value": 320, "from": "baseline", "said_by": "listing"}]
+    }
+   }
+  },
+  {
+   "variants": [["LTG038여성", "LTG038여성카본11P+캐디백"], ["LTG014여성", "LTG014여성카본11P+캐디백"]],
+   "fields": {
+    "product_weight_g": {
+     "value": 7540,
+     "source": "composed",
+     "confidence": 2,
+     "how": "clubs + bag",
+     "parts": [
+      {"part": "clubs", "value": 3740, "from": "11 clubs x baseline club weight", "count_from": "listing"},
+      {"part": "bag", "value": 3800, "from": "baseline", "said_by": "listing"}
+     ]
+    },
+    "package_weight_g": {
+     "value": 9540,
+     "source": "composed",
+     "confidence": 2,
+     "how": "product weight + carton",
+     "parts": [
+      {"part": "product", "value": 7540, "from": "product_weight_g"},
+      {"part": "carton", "value": 2000, "from": "baseline"}
+     ]
+    },
+    "package_length_mm": {
+     "value": 1243,
+     "source": "composed",
+     "confidence": 3,
+     "how": "longest club + margin",
+     "parts": [
+      {"part": "longest club", "value": 1143, "from": "stated", "quote": "WOOD / #1 / 60 / 10.5 / 198 / 45\" / D1"},
+      {"part": "margin", "value": 100, "from": "baseline"}
+     ]
+    },
+    "package_width_mm": {
+     "value": 400,
+     "source": "composed",
+     "confidence": 2,
+     "how": "box side, with bag",
+     "parts": [{"part": "box side", "value": 400, "from": "baseline", "said_by": "listing"}]
+    },
+    "package_height_mm": {
+     "value": 320,
+     "source": "composed",
+     "confidence": 2,
+     "how": "box side, with bag",
+     "parts": [{"part": "box side", "value": 320, "from": "baseline", "said_by": "listing"}]
+    }
+   }
+  }
+ ]
+}

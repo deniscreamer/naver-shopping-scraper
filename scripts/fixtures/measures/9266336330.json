@@ -1,0 +1,86 @@
+{
+ "product_id": "9266336330",
+ "covers": "The bag sold as a paid add-on: the set has none (sides 200 x 160). No club count anywhere: the two weights stay the flat default (1). No length read: the baseline longest club (2).",
+ "checked": [
+  "the bag: add-ons \"테일러메이드골프백\" at 190,000 KRW; typed \"<골프백 별매 추가선택가능>\"",
+  "no count: none in the title, no 총클럽개수 row (the typed list names a driver, a wood, a utility, irons \"6,7,8,9,P,S\" and a putter: not read as a count)",
+  "no length in the description: 1140 + 100 = 1240 mm"
+ ],
+ "input": {
+  "title": "왼손/ 테일러메이드/ 풀세트 골프채  남자 좌타 남성 왼손잡이 골프 R강도 S강도",
+  "category": {"id": "50002788", "name": "스포츠/레저 > 골프 > 골프클럽 > 풀세트"},
+  "spec_rows": [
+   {"label": "상품번호", "value": "9266336330"},
+   {"label": "제조사", "value": "테일러메이드"},
+   {"label": "브랜드", "value": "테일러메이드"},
+   {"label": "모델명", "value": "테일러메이드"},
+   {"label": "원산지", "value": "미국산(테일러메이드골프)"},
+   {"label": "드라이버 로프트각", "value": "10.5도"},
+   {"label": "종류", "value": "풀세트"},
+   {"label": "성별", "value": "남성용"},
+   {"label": "사용방향", "value": "왼손용"},
+   {"label": "퍼터형태", "value": "말렛(반달형)"}
+  ],
+  "facts": [],
+  "variants": [{"id": "36844767807", "options_ko": ["R강도"]}, {"id": "36844767809", "options_ko": ["S강도"]}],
+  "supplements": [
+   {"group": "테일러메이드골프백", "name": "블랙", "price": 190000},
+   {"group": "테일러메이드골프백", "name": "화이트", "price": 190000},
+   {"group": "테일러메이드골프백", "name": "화이트네이비레드", "price": 190000}
+  ],
+  "typed": [
+   "NEW 왼손 테일러메이드 신형 풀세트",
+   "(정식통관및 품질AS보증라벨 부착)",
+   "글로벌 스펙 (일본/미국스펙 동일)모델",
+   "제품구성",
+   "1> 드라이버: 테일러메이드 RBZ 스피드 LITE 10.5도-R강도 /S강도",
+   "2> 우드: 테일러메이드 RBZ 스피드 LITE 15도 (3번) 우드-R강도 / S강도",
+   "3> 유틸리티: 테일러메이드 RBZ 스피드 LITE 22도(4번) 유틸-R강도/S강도",
+   "(4번/5번 아이언 대용으로 사용하기 좋은 제품)",
+   "4> 아이언: 테일러메이드 RBZ 스피드 LITE 경량스틸 아이언 -R강도 / S강도",
+   "6,7,8,9,P,S",
+   "5> 퍼터: 테일러메이드 MO-32 퍼터",
+   "<골프백 별매 추가선택가능>",
+   "테일러메이드 캐디백",
+   "본 제품은 왼손용 풀세트입니다.",
+   "치기 편한 제품은 많은 골퍼분들이 사용하는 테일러메이드 제품입니다.",
+   "캐디백구조의 아이언은 관용성이 좋아 방향성 잘 잡아줍니다.",
+   "(실 제 제 품 사 진)"
+  ],
+  "images": [[5], [30], [7, ["one lightweight package.", 0.971], 16]],
+  "measures": {"is_set": true, "weights": [], "dimensions": []}
+ },
+ "expected": [
+  {
+   "variants": [["R강도"], ["S강도"]],
+   "fields": {
+    "product_weight_g": {"value": 5700, "source": "category_default", "confidence": 1},
+    "package_weight_g": {"value": 7000, "source": "category_default", "confidence": 1},
+    "package_length_mm": {
+     "value": 1240,
+     "source": "composed",
+     "confidence": 2,
+     "how": "longest club + margin",
+     "parts": [
+      {"part": "longest club", "value": 1140, "from": "baseline"},
+      {"part": "margin", "value": 100, "from": "baseline"}
+     ]
+    },
+    "package_width_mm": {
+     "value": 200,
+     "source": "composed",
+     "confidence": 2,
+     "how": "box side, no bag",
+     "parts": [{"part": "box side", "value": 200, "from": "baseline", "said_by": "listing"}]
+    },
+    "package_height_mm": {
+     "value": 160,
+     "source": "composed",
+     "confidence": 2,
+     "how": "box side, no bag",
+     "parts": [{"part": "box side", "value": 160, "from": "baseline", "said_by": "listing"}]
+    }
+   }
+  }
+ ]
+}

@@ -1,5 +1,5 @@
 {
- "format": "prepared/4",
+ "format": "prepared/5",
  "key": "fairwardgolf:naver:101878037:13734679551",
  "shop": "fairwardgolf",
  "status": "ready",
@@ -11,7 +11,7 @@
   },
   {
    "code": "measures_from_images",
-   "detail": "package_height_mm 2/2, package_width_mm 2/2"
+   "detail": "package_height_mm 2/2, package_length_mm 2/2, package_weight_g 2/2, package_width_mm 2/2, product_weight_g 2/2"
   },
   {
    "code": "gift_hidden",
@@ -77,53 +77,119 @@
     "available": true,
     "package": {
      "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 6200,
+       "max": 6200
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "clubs + bag",
+      "parts": [
+       {
+        "part": "clubs",
+        "value": 3400,
+        "from": "10 clubs x baseline club weight",
+        "count_from": "listing"
+       },
+       {
+        "part": "bag",
+        "value": 2800,
+        "from": "stated",
+        "quote": "중량 / 약2.8Kg (본체)",
+        "said_by": "listing"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 5700,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 8200,
+       "max": 8200
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "product weight + carton",
+      "parts": [
+       {
+        "part": "product",
+        "value": 6200,
+        "from": "product_weight_g"
+       },
+       {
+        "part": "carton",
+        "value": 2000,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 7000,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1205,
+       "max": 1205
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1105,
+        "from": "stated",
+        "quote": "길이(inch) / 43.5 / 41 / 37.5 / 36.25 / 35.75 / 35.25 / 34.75 / 34.25 / 34.25 / 32"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1105,
-       "source": "description_image",
-       "confidence": 2,
-       "how": "longest club"
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
       "value": {
-       "min": 300,
-       "max": 300
+       "min": 400,
+       "max": 400
       },
-      "source": "description_image",
+      "source": "composed",
       "confidence": 2,
-      "how": "product size",
-      "quote": "사이즈 / L48×W24×H30CM",
+      "how": "box side, with bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 400,
+        "from": "baseline",
+        "said_by": "listing"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
        "value": 280,
        "source": "category_default",
@@ -132,13 +198,24 @@
      },
      "package_height_mm": {
       "value": {
-       "min": 240,
-       "max": 240
+       "min": 320,
+       "max": 320
       },
-      "source": "description_image",
+      "source": "composed",
       "confidence": 2,
-      "how": "product size",
-      "quote": "사이즈 / L48×W24×H30CM",
+      "how": "box side, with bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 320,
+        "from": "baseline",
+        "said_by": "listing"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
        "value": 230,
        "source": "category_default",
@@ -160,53 +237,119 @@
     "available": true,
     "package": {
      "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 6200,
+       "max": 6200
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "clubs + bag",
+      "parts": [
+       {
+        "part": "clubs",
+        "value": 3400,
+        "from": "10 clubs x baseline club weight",
+        "count_from": "listing"
+       },
+       {
+        "part": "bag",
+        "value": 2800,
+        "from": "stated",
+        "quote": "중량 / 약2.8Kg (본체)",
+        "said_by": "listing"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 5700,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 8200,
+       "max": 8200
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "product weight + carton",
+      "parts": [
+       {
+        "part": "product",
+        "value": 6200,
+        "from": "product_weight_g"
+       },
+       {
+        "part": "carton",
+        "value": 2000,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 7000,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1205,
+       "max": 1205
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1105,
+        "from": "stated",
+        "quote": "길이(inch) / 43.5 / 41 / 37.5 / 36.25 / 35.75 / 35.25 / 34.75 / 34.25 / 34.25 / 32"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1105,
-       "source": "description_image",
-       "confidence": 2,
-       "how": "longest club"
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
       "value": {
-       "min": 300,
-       "max": 300
+       "min": 400,
+       "max": 400
       },
-      "source": "description_image",
+      "source": "composed",
       "confidence": 2,
-      "how": "product size",
-      "quote": "사이즈 / L48×W24×H30CM",
+      "how": "box side, with bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 400,
+        "from": "baseline",
+        "said_by": "listing"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
        "value": 280,
        "source": "category_default",
@@ -215,13 +358,24 @@
      },
      "package_height_mm": {
       "value": {
-       "min": 240,
-       "max": 240
+       "min": 320,
+       "max": 320
       },
-      "source": "description_image",
+      "source": "composed",
       "confidence": 2,
-      "how": "product size",
-      "quote": "사이즈 / L48×W24×H30CM",
+      "how": "box side, with bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 320,
+        "from": "baseline",
+        "said_by": "listing"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
        "value": 230,
        "source": "category_default",

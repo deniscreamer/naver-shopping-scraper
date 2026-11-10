@@ -1,0 +1,205 @@
+{
+ "product_id": "5543663553",
+ "covers": "No club count stated anywhere: the seller's own table gives it (two rows of ten clubs, the lighter), a count from the table is 2. The bag's stated weight. The bag state from a variant's own words, else from an image's sentence (said_by description_image): the baseline sides with a bag (2).",
+ "checked": [
+  "no count stated: none in the title, no 총클럽개수 row, none said in the images; the tables' header names ten clubs, \"번호 / 1W / 5W / #5 / #6 / #7 / #8 / #9 / PW / SW / PT\", and each weight row holds ten, driver to putter: 10 clubs (count_from table)",
+  "clubs 3793 g = 299 + 322 + 360 + 366 + 372 + 378 + 383 + 389 + 398 + 526: \"총중량(g) / 299 / 322 / 360 / 366 / 372 / 378 / 383 / 389 / 398 / 526\", the R set's row (the first table, graphite irons)",
+  "bag: the variant \"캐디백 색상 랜덤\"; for the colour variants the image's \"캐디백까지 포함된\"; 2900 g: \"사이즈 / 9인치,2.9kg\" under \"모델명 / D1캐디백\" (\"약1.5kg경량화되어\" is no weight)",
+  "product 6693 g = 3793 + 2900; package 8693 g = that + the 2000 g carton (5700 / 7000 g, the flat default, before 2026-11-10)",
+  "length 1268 mm = 116.84 cm (46 in) + 100: \"길이 / 116.84107.32 / 97.79 / ...\" (two cells read as one)"
+ ],
+ "note": "Approximate for the five S 세트 variants: they get the R row's 3793 g as well (of two tables the lightest) where their own row, \"총중량(g) / 301 / 324 / 407 / 413 / 419 / 426 / 434 / 442 / 451 / 526\" (N.S.PRO 950 steel irons), sums 4143 g, 350 g more: a table is not bound to a variant. For them the value pinned is the rule's, not the page's.",
+ "input": {
+  "title": "신품 혼마 D1 남성용 골프채 풀세트 S세트 2021 D1 500 S+950 S(병행)",
+  "category": {"id": "50002788", "name": "스포츠/레저 > 골프 > 골프클럽 > 풀세트"},
+  "spec_rows": [{"label": "상품번호", "value": "5543663553"}, {"label": "제조사", "value": "혼마"}, {"label": "원산지", "value": "중국"}],
+  "facts": [],
+  "variants": [
+   {"id": "54638713170", "options_ko": ["S 세트 (D1 500 S+950 S)", "캐디백 색상 랜덤"]},
+   {"id": "44683849991", "options_ko": ["S 세트 (D1 500 S+950 S)", "네이비"]},
+   {"id": "44683849992", "options_ko": ["S 세트 (D1 500 S+950 S)", "그레이"]},
+   {"id": "44683849993", "options_ko": ["S 세트 (D1 500 S+950 S)", "화이트"]},
+   {"id": "44683849994", "options_ko": ["S 세트 (D1 500 S+950 S)", "블랙"]},
+   {"id": "44683849995", "options_ko": ["R 세트 (D1 500 R)", "네이비"]},
+   {"id": "44683849996", "options_ko": ["R 세트 (D1 500 R)", "그레이"]},
+   {"id": "44683849997", "options_ko": ["R 세트 (D1 500 R)", "화이트"]},
+   {"id": "44683849998", "options_ko": ["R 세트 (D1 500 R)", "블랙"]}
+  ],
+  "supplements": [],
+  "typed": [],
+  "images": [
+   [
+    11,
+    ["(아이언의 경우 S 플렉스는 N.S.PRO 950 샤프트만 있습니다.)", 0.939],
+    12,
+    ["볼을 띄우기 쉬운 살로우백 형태와", 0.957],
+    27,
+    ["살로우백 형상으로 공을 띄우기 쉬우며", 0.907],
+    12,
+    ["SHAFT / Information / HDNMA", 0.796],
+    26,
+    ["제품구성 / 5,6,7,8,9,PW,SW (7아이언)", 0.963],
+    6,
+    ["D134인치 말렛 퍼터", 0.941],
+    13,
+    ["모델명 / D1 34인치 말렛 퍼터", 0.935],
+    5,
+    ["P HONMA D1 ST 34.00P", 0.941],
+    6,
+    ["혼마D1캐디백", 0.999],
+    4,
+    ["캐디백까지 포함된", 0.973],
+    3,
+    ["D1풀세트 전용으로제작된캐디백이며,", 0.953],
+    ["D1의 헤드커버 및 클럽과잘어울립니다. / HONMA", 0.684],
+    ["또한 기존의 9인치 남성 캐디백에 비해", 0.99],
+    ["약1.5kg경량화되어 가법게사용할수 있는", 0.942],
+    ["최신형 남성 경량캐디백입니다. / HQNMA", 0.892],
+    2,
+    ["모델명 / D1캐디백", 0.997],
+    ["사이즈 / 9인치,2.9kg", 0.994],
+    7,
+    ["번호 / 1W / 5W / #5 / #6 / #7 / #8 / #9 / PW / SW / PT", 0.802],
+    ["로프트(이) / 10.5 / 18 / 24 / 27 / 30 / 34 / 38 / 43 / 56 / 2.5", 0.903],
+    ["길이 / 116.84107.32 / 97.79 / 96.52 / 95.25 / 93.98 / 92.71 / 91.44 / 90.17 / 86.36", 0.998],
+    ["(cm/inch) / /46.0 / /42.25 / /38.5 / /38.0 / /37.5 / /37.0 / /36.5 / /36.0 / /35.5 / /34.0", 0.944],
+    ["총중량(g) / 299 / 322 / 360 / 366 / 372 / 378 / 383 / 389 / 398 / 526", 0.998],
+    ["벨런스 / D2 / D2 / D1 / D1 / D1 / D1 / D1 / D1 / D2", 0.886],
+    4,
+    ["번호 / 1W / 5W / #5 / #6 / #7 / #8 / #9 / PW / SW / PT", 0.957],
+    ["로프트(이) / 10.5 / 18 / 24 / 27 / 30 / 34 / 38 / 43 / 56 / 2.5", 0.867],
+    ["길이 / 116.84107.32 / 96.52 / 95.25 / 93.98 / 92.71 / 91.44 / 90.17 / 88.9 / 86.36", 0.985],
+    ["(cm/inch) / /46.0 / /42.25 / /38.0 / /37.5 / /37.0 / /36.5 / /36.0 / /35.5 / /35.0 / /34.0", 0.904],
+    ["총중량(g) / 301 / 324 / 407 / 413 / 419 / 426 / 434 / 442 / 451 / 526", 0.959],
+    ["벨런스 / D2 / D2 / D1 / D1 / D1 / D1 / D1 / D1 / D2", 0.868],
+    3,
+    ["택배사는 한진택배 (x) 입니다.", 0.923],
+    4,
+    ["배송안내 / 왕복 택배비를 부담하셔야 합니다", 0.932],
+    2,
+    ["택배사의 사정에 따라 배송이 지연될 수 있으니 참고 부탁드립니다.", 0.968],
+    4,
+    ["교환 및 반품은 한진택배(x)를 이용해주셔야 하며,", 0.937],
+    ["타 택배(편의점포함) 이용시편도 택배비(5,000원) 동봉후", 0.92],
+    2,
+    ["왕복 택배비(10,000원)를고객님께서 부담하셔야합니다", 0.945],
+    ["부피가 큰 캐디백의 경우 교환 및 반품시 왕복 택배비(18,000원)를", 0.94],
+    4,
+    ["상품을 받아보시고 포장을 뜯거나,사용 및 상품이 웨손되었을 때", 0.968],
+    2,
+    ["골프용품 / 오염물질이나 라벨/텍 웨손 시,정품 박스 웨손 시 교환/환불 처리 불가", 0.95],
+    7
+   ]
+  ],
+  "measures": {"is_set": true, "weights": [], "dimensions": []}
+ },
+ "expected": [
+  {
+   "variants": [["S 세트 (D1 500 S+950 S)", "캐디백 색상 랜덤"]],
+   "fields": {
+    "product_weight_g": {
+     "value": 6693,
+     "source": "composed",
+     "confidence": 2,
+     "how": "clubs + bag",
+     "parts": [
+      {"part": "clubs", "value": 3793, "from": "sum of 10 club weights", "quote": "총중량(g) / 299 / 322 / 360 / 366 / 372 / 378 / 383 / 389 / 398 / 526", "count_from": "table"},
+      {"part": "bag", "value": 2900, "from": "stated", "quote": "사이즈 / 9인치,2.9kg", "said_by": "listing"}
+     ]
+    },
+    "package_weight_g": {
+     "value": 8693,
+     "source": "composed",
+     "confidence": 2,
+     "how": "product weight + carton",
+     "parts": [
+      {"part": "product", "value": 6693, "from": "product_weight_g"},
+      {"part": "carton", "value": 2000, "from": "baseline"}
+     ]
+    },
+    "package_length_mm": {
+     "value": 1268,
+     "source": "composed",
+     "confidence": 3,
+     "how": "longest club + margin",
+     "parts": [
+      {"part": "longest club", "value": 1168, "from": "stated", "quote": "길이 / 116.84107.32 / 97.79 / 96.52 / 95.25 / 93.98 / 92.71 / 91.44 / 90.17 / 86.36"},
+      {"part": "margin", "value": 100, "from": "baseline"}
+     ]
+    },
+    "package_width_mm": {
+     "value": 400,
+     "source": "composed",
+     "confidence": 2,
+     "how": "box side, with bag",
+     "parts": [{"part": "box side", "value": 400, "from": "baseline", "said_by": "listing"}]
+    },
+    "package_height_mm": {
+     "value": 320,
+     "source": "composed",
+     "confidence": 2,
+     "how": "box side, with bag",
+     "parts": [{"part": "box side", "value": 320, "from": "baseline", "said_by": "listing"}]
+    }
+   }
+  },
+  {
+   "variants": [
+    ["S 세트 (D1 500 S+950 S)", "네이비"],
+    ["S 세트 (D1 500 S+950 S)", "그레이"],
+    ["S 세트 (D1 500 S+950 S)", "화이트"],
+    ["S 세트 (D1 500 S+950 S)", "블랙"],
+    ["R 세트 (D1 500 R)", "네이비"],
+    ["R 세트 (D1 500 R)", "그레이"],
+    ["R 세트 (D1 500 R)", "화이트"],
+    ["R 세트 (D1 500 R)", "블랙"]
+   ],
+   "fields": {
+    "product_weight_g": {
+     "value": 6693,
+     "source": "composed",
+     "confidence": 2,
+     "how": "clubs + bag",
+     "parts": [
+      {"part": "clubs", "value": 3793, "from": "sum of 10 club weights", "quote": "총중량(g) / 299 / 322 / 360 / 366 / 372 / 378 / 383 / 389 / 398 / 526", "count_from": "table"},
+      {"part": "bag", "value": 2900, "from": "stated", "quote": "사이즈 / 9인치,2.9kg", "said_by": "description_image"}
+     ]
+    },
+    "package_weight_g": {
+     "value": 8693,
+     "source": "composed",
+     "confidence": 2,
+     "how": "product weight + carton",
+     "parts": [
+      {"part": "product", "value": 6693, "from": "product_weight_g"},
+      {"part": "carton", "value": 2000, "from": "baseline"}
+     ]
+    },
+    "package_length_mm": {
+     "value": 1268,
+     "source": "composed",
+     "confidence": 3,
+     "how": "longest club + margin",
+     "parts": [
+      {"part": "longest club", "value": 1168, "from": "stated", "quote": "길이 / 116.84107.32 / 97.79 / 96.52 / 95.25 / 93.98 / 92.71 / 91.44 / 90.17 / 86.36"},
+      {"part": "margin", "value": 100, "from": "baseline"}
+     ]
+    },
+    "package_width_mm": {
+     "value": 400,
+     "source": "composed",
+     "confidence": 2,
+     "how": "box side, with bag",
+     "parts": [{"part": "box side", "value": 400, "from": "baseline", "said_by": "description_image"}]
+    },
+    "package_height_mm": {
+     "value": 320,
+     "source": "composed",
+     "confidence": 2,
+     "how": "box side, with bag",
+     "parts": [{"part": "box side", "value": 320, "from": "baseline", "said_by": "description_image"}]
+    }
+   }
+  }
+ ]
+}

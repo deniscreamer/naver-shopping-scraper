@@ -34,7 +34,8 @@ naver-harvester published, and its 60 published products):
     option_name_placeholder (선택 / 선택2 / 옵션: named from the values in translation),
     paid_addons_left_out, paid_variants_left_out, title_names_one_variant, purchase_agency, price_name_mismatch,
     photos_incomplete, reviews_none_chosen, reviews_cleaned (review_clean.py: kept, by grade, trimmed), measures_from_images / description_images_missing / _stale / _failed / _partial (the category's
-    description_images switch: the images' size / weight guess, the larger value wins; description_measures.py).
+    description_images switch: the package fields the description states or its parts compose, in place of the
+    category default; description_measures.py).
 
     from transform import prepare
     from transform_shops import rules_for
@@ -51,19 +52,20 @@ from typing import Any, TypedDict
 import attributes
 from description_clean import body_notes, clean, clean_images
 from description_images import current, image_rows
-from description_measures import container_in, package_for, profile_for, read_rows
+from description_measures import container_in, container_listed, package_for, profile_for, read_rows
 from naver_variants import choose_variants
-from package_measures import load_table
+from package_measures import load_table, on_scale
 from spec_variants import check_specs, title_one_variant
 from review_clean import clean_reviews
 from transform_shops import CategoryRules, ShopRules
 
-FORMAT = "prepared/4"           # 2 (2026-11-07): package fields may carry how / quote / flags / compared;
+FORMAT = "prepared/5"           # 2 (2026-11-07): package fields may carry how / quote / flags / compared;
                                  # product.description_images_text (run_transform); 3 (2026-11-08): no shop
                                  # leaves, product.attributes instead (the shop's sections: placement.py);
                                  # 4 (2026-11-08): reviews sanitized (review_clean.py): text_ko cleaned,
                                  # text_original_ko, text_cut, text_grade, text_quality; every review kept
-                                 # (its score) but sponsored ones
+                                 # (its score) but sponsored ones; 5 (2026-11-10): package confidence 1-5 (1-3
+                                 # before), a field may be `source: composed` with parts / baseline / refused
 MAX_AXES = 3                       # Shopify options per product
 MAX_IMAGES = 50
 HIDDEN_ROWS = {"상품번호", "제조일자", "이벤트", "사은품", "인증정보"}     # 인증정보: purchase-agency / KC legal text
@@ -256,7 +258,7 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
             "code": "options_unaligned", "detail": f"{len(names)} option groups, rows of "
             f"{sorted({len(r['options']) for r in rows})} values"}], "skipped_paid": 0, "duplicate_values": [],
             "capped": None}
-    package = {p.get("variant_id"): p.get("fields") for p in line.get("package") or []}
+    package = {p.get("variant_id"): p.get("fields") and on_scale(p["fields"]) for p in line.get("package") or []}
     product_id = line["details"]["id"]
     skipped = choice.get("skipped_paid") or 0
     facts: list[dict[str, str]] = []
@@ -437,26 +439,48 @@ def _measures_table() -> dict[str, Any]:
     return load_table()
 
 
+def _model_pieces(title: str, spec_rows_raw: list[dict[str, Any]]) -> tuple[str, re.Match | None]:
+    """The 모델명 row and the piece count the title or it states ("12pc"), as prepare and the measures' fixtures
+    (test_measures_fixtures.py) hand them to _image_measures."""
+    model = next((r.get("value") or "" for r in spec_rows_raw if r.get("label") == "모델명"), "")
+    return model, _PIECES_RE.search(f"{title} {model}")
+
+
 def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: str, model: str,
-                    pieces: re.Match | None, spec_rows_raw: list[dict[str, Any]], category_id: str | None) -> list[dict[str, str]]:
-    """Merge the description images' size / weight guess into each variant's package (description_measures):
-    per field the larger of today's value and the guess. With the category's parts profile: the item count of a
-    variant is its option values' ("12종"), else the title / 모델명's, else the profile's count row (총클럽개수),
-    else the images'; the container: its option values, else the title and the product's one-value facts, else
-    the images."""
+                    pieces: re.Match | None, spec_rows_raw: list[dict[str, Any]], category_id: str | None,
+                    typed: str | None = None, supplements: list[dict[str, Any]] | None = None) -> list[dict[str, str]]:
+    """Merge the description's size and weight into each variant's package (description_measures): the rows of
+    its images and the lines of its typed text (`typed`). A seller's value stays; in place of a category default
+    goes the description's own statement of the field, else the composition from the set's parts when the
+    category's row of the operator's table carries the `baselines` block.
+    With the category's parts profile: the item count of a variant is its option values' ("스틸12P+캐디백": the
+    variants of a listing are different sets), else the title / 모델명's ("12pc", then the profile's "클럽 10개"),
+    else the profile's count row (총클럽개수: it disagrees with the title on 5 of 120 sets and the title is right on
+    4), else the images' (the weakest: a page shows other sets); a full table of the items' weights goes before
+    a count of pieces and gives the count nothing states (description_measures._items_total); the container, in
+    the order of trust: its option values, else the title and the product's one-value facts, else the profile's
+    상품정보 row (골프백포함여부), else a container sold as a paid add-on (the set has none), else the typed text's
+    sentences, else the images'."""
     if sidecar is None:
         return [{"code": "description_images_missing", "detail": "no sidecar: run description_images.py"}]
     profile = profile_for(category_id)               # by the Naver leaf category id; None: the core only
-    facts = read_rows(image_rows(sidecar, with_conf=True), profile)
+    facts = read_rows(image_rows(sidecar, with_conf=True), profile,
+                      [t.strip() for t in (typed or "").split("\n") if t.strip()])
     row: dict[str, Any] = next((r for r in _measures_table().get("rows", [])
                                 if str(r["category_id"]) == str(category_id)), {})
     band = profile.count if profile else (0, 0)
     counted = [int(pieces.group(1))] if pieces else []
+    if profile and profile.count_title:              # "야마하 cs HM+ 씨즈 10개 풀세트" with a 총클럽개수 row of
+        counted += [int(g) for m in profile.count_title.finditer(f"{title} {model}")     # "3개" (10481094198)
+                    for g in m.groups() if g]
     if profile and profile.count_row:
         counted += [int(m.group(1)) for r in spec_rows_raw if r.get("label") == profile.count_row
                     for m in [_COUNT_ROW_RE.match(r.get("value") or "")] if m]
     product_count = next((c for c in counted if band[0] <= c <= band[1]), None)     # not a 2-club "set"
     product_text = " ".join([title, model] + [f["value_ko"] for f in ov["facts"]])
+    listed = container_in(product_text, profile)
+    if listed is None:
+        listed = container_listed(spec_rows_raw, supplements or [], profile)
     taken: dict[str, int] = {}
     for v in ov["variants"]:
         if not v.get("package"):
@@ -465,8 +489,8 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
         own = [int(m.group(1)) for m in _PIECES_RE.finditer(text) if band[0] <= int(m.group(1)) <= band[1]]
         has = container_in(text, profile)
         v["package"], names = package_for(v["package"], facts, max(own) if own else product_count,
-                                          has if has is not None else container_in(product_text, profile),
-                                          row.get("plausible"), profile)
+                                          has if has is not None else listed,
+                                          row.get("plausible"), profile, row.get("baselines"))
         for name in names:
             taken[name] = taken.get(name, 0) + 1
     if not taken:
@@ -538,8 +562,7 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int,
         notes.append({"code": "variants_capped", "detail": ov["capped"]})
     if ov["duplicate_values"]:                      # "선택3 S" / "선택6 S": the numbering is the only difference
         notes.append({"code": "option_values_duplicate", "detail": ", ".join(ov["duplicate_values"])})
-    model = next((r.get("value") or "" for r in specs.get("specs") or [] if r.get("label") == "모델명"), "")
-    pieces = _PIECES_RE.search(f"{details['name']} {model}")
+    model, pieces = _model_pieces(details["name"], specs.get("specs") or [])
     count = next((_COUNT_ROW_RE.match(r.get("value") or "") for r in specs.get("specs") or []
                   if r.get("label") == "총클럽개수"), None)
     bigger = any(int(m.group(1)) > 5 for o in ov["options"] for v in o["values_ko"]
@@ -551,13 +574,14 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int,
         notes.append({"code": "few_pieces", "detail": "하프세트"})
     elif count and 0 < int(count.group(1)) <= 5:    # 총클럽개수 3개: driver + wood + hybrid (13302492097)
         notes.append({"code": "few_pieces", "detail": f"총클럽개수 {count.group(1)}개"})
-    if cat.description_images:                      # the images' guess: the larger of it and today's value
+    if cat.description_images:                      # the description's statements, the set's composition
         if images_text is not None and not current(images_text, line):
             notes.append({"code": "description_images_stale", "detail": "sidecar read from other links: run "
                           "description_images.py again"})
         else:
             notes += _image_measures(ov, images_text, details["name"], model, pieces, specs.get("specs") or [],
-                                     category.get("id"))
+                                     category.get("id"), desc.get("text"),
+                                     (specs.get("options") or {}).get("supplements"))
             notes += _images_unread(images_text)
     vague = [o["name_ko"] for o in ov["options"] if _PLACEHOLDER_NAME_RE.match(o["name_ko"])
              or _COLOUR_AXIS_RE.match(o["name_ko"]) and not any(_COLOUR_WORD_RE.search(v) for v in o["values_ko"])]

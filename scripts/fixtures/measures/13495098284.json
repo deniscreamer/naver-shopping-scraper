@@ -1,0 +1,105 @@
+{
+ "product_id": "13495098284",
+ "covers": "A box and a packed weight read from an image (4). The clubs' exact sum without a bag (3).",
+ "checked": [
+  "10 clubs: \"10PCS\" in the title; 총클럽개수 \"10개\"; typed \"총 10PCS 클럽셋트\"",
+  "no bag: 골프백포함여부 \"미포함\"; image \"-골프가방 불포함상품입니다.\"",
+  "clubs 3679 g: \"클럼무게(g) / 307 / 313 / 352 / 352 / 358 / 364 / 370 / 375 / 386 / 502\" (OCR's 클럽)",
+  "box 1210 x 200 x 160 mm, 10800 g: image rows \"-패키지크기:L20×W16×H121cm\" (OCR 0.936), \"-패키지무게:10.8kg\" (0.966)"
+ ],
+ "input": {
+  "title": "캘러웨이 엣지 여성 골프채 풀세트 10PCS (재고보유)",
+  "category": {"id": "50002788", "name": "스포츠/레저 > 골프 > 골프클럽 > 풀세트"},
+  "spec_rows": [
+   {"label": "상품번호", "value": "13495098284"},
+   {"label": "제조사", "value": "캘러웨이"},
+   {"label": "브랜드", "value": "캘러웨이"},
+   {"label": "모델명", "value": "캘러웨이 엣지 여성용 골프채 풀세트"},
+   {"label": "품번", "value": "CallawayEdgewomen"},
+   {"label": "원산지", "value": "상세설명에 표시"},
+   {"label": "제조일자", "value": "2026.05.06."},
+   {"label": "유효일자", "value": "2026.05.06."},
+   {"label": "드라이버 로프트각", "value": "11.5도"},
+   {"label": "아이언 구성", "value": "#6, #7, #8, #9, 샌드웨지(SW), 피칭웨지(PW)"},
+   {"label": "종류", "value": "풀세트"},
+   {"label": "성별", "value": "여성용"},
+   {"label": "사용방향", "value": "오른손용"},
+   {"label": "총클럽개수", "value": "10개"},
+   {"label": "출시", "value": "2025년형"},
+   {"label": "풀세트구성", "value": "드라이버, 6아이언세트, 페어웨이, 유틸리티, 퍼터, 웨지"},
+   {"label": "아이언샤프트소재", "value": "그라파이트/카본"},
+   {"label": "아이언개수", "value": "6개"},
+   {"label": "퍼터형태", "value": "블레이드(일자형)"},
+   {"label": "골프백포함여부", "value": "미포함"}
+  ],
+  "facts": [{"label_ko": "제품선택", "value_ko": "개봉 후 변심 교환 및 리턴 불가함"}],
+  "variants": [{"id": "58326063498", "options_ko": []}],
+  "supplements": [],
+  "typed": [
+   "캘러웨이 여성전용 골프 클럽 풀세트",
+   "초보자~중급자까지 쉽게 사용가능합니다.",
+   "최강의 가성비 제품입니다.",
+   "[최신제조 제품]",
+   "캘러웨이 여성 골프 클럽 풀세트",
+   "[11.5도 드라이버, 우드, 유틸, (6789PS) 6개 아이언, 퍼터]",
+   "총 10PCS 클럽셋트",
+   "화이트핫 블레이드 퍼터 슈퍼스트로크 그립적용!!",
+   "2026년 캘러웨이 엣지 여성 골프채 풀세트",
+   "구성에서 모든 채가 갖춰진 풀세트 입니다.",
+   "샌드까지 구성되어 있습니다."
+  ],
+  "images": [
+   [2, ["10PCS 여성용", 0.93], 14, ["-골프가방 불포함상품입니다.", 0.899]],
+   [5],
+   [
+    3,
+    ["-패키지크기:L20×W16×H121cm", 0.936],
+    ["-패키지무게:10.8kg", 0.966],
+    1,
+    ["골프가방 불포함 상품입니다.", 0.926],
+    1,
+    ["모델넘버 / Driver 3-Wood 5-Hybrid 6-Iron / 7-Iron / 8-Iron / 9-Iron / PW / SW / Putter", 0.725],
+    ["로프트각() / 11.5 / 15 / 25 / 26 / 30 / 34.5 / 39 / 44 / 54 / 3", 0.992],
+    ["라이각() / 58.5 / 57 / 60 / 62 / 62.5 / 63 / 63.5 / 64 / 64 / 70", 0.96],
+    ["클럽길이(inch) / 43.75 / 421/8 / 38 1/8 / 36 3/8 / 36 / 35 3/8 / 35 1/8 / 3415/16 / 341/2 / 33", 0.916],
+    ["클럽길이(cm) / 111.12 / 106.99 / 96.83 / 92.39 / 91.44 / 89.85 / 89.21 / 88.74 / 87.63 / 83.82", 0.975],
+    ["스윙웨이트 / C5 / C5 / C5 / C1 / C1 / C1 / C2 / C3 / C6 / N/A", 0.857],
+    ["클럼무게(g) / 307 / 313 / 352 / 352 / 358 / 364 / 370 / 375 / 386 / 502", 0.78],
+    8,
+    ["10-PIECE SET / DRIVER / ·3-WG00 / #5-HYBRID / IRONS:6,7,da.pw.SW / ODYSSEY PUTTER", 0.596],
+    1
+   ],
+   [
+    6,
+    ["구성품 (제품 구성) / 10개 (드라이버 11.5°,#3페어웨이 우드,#5 하이브리드,#6 아이언,", 0.883],
+    2,
+    ["크기 / 패키지: L20×W 16×H 121cm, 10.8kg", 0.916],
+    6,
+    ["배송포장 안내 / 본상품은 별도의 택배 포장없이 본품 박스 또는본품에택배 운송장", 0.904],
+    1
+   ]
+  ],
+  "measures": {"is_set": true, "weights": [], "dimensions": []}
+ },
+ "expected": [
+  {
+   "variants": [[]],
+   "fields": {
+    "product_weight_g": {
+     "value": 3679,
+     "source": "composed",
+     "confidence": 3,
+     "how": "clubs, no bag",
+     "parts": [
+      {"part": "clubs", "value": 3679, "from": "sum of 10 club weights", "quote": "클럼무게(g) / 307 / 313 / 352 / 352 / 358 / 364 / 370 / 375 / 386 / 502", "count_from": "listing"},
+      {"part": "bag", "value": 0, "from": "not in the set", "said_by": "listing"}
+     ]
+    },
+    "package_weight_g": {"value": 10800, "source": "description_image", "confidence": 4, "how": "stated packed weight", "quote": "-패키지무게:10.8kg"},
+    "package_length_mm": {"value": 1210, "source": "description_image", "confidence": 4, "how": "stated box size", "quote": "-패키지크기:L20×W16×H121cm"},
+    "package_width_mm": {"value": 200, "source": "description_image", "confidence": 4, "how": "stated box size", "quote": "-패키지크기:L20×W16×H121cm"},
+    "package_height_mm": {"value": 160, "source": "description_image", "confidence": 4, "how": "stated box size", "quote": "-패키지크기:L20×W16×H121cm"}
+   }
+  }
+ ]
+}

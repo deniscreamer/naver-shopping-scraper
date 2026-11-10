@@ -30,8 +30,8 @@ class ShopRulesMissing(Exception):
 class CategoryRules:
     paid_variants: bool = False          # also sell the variants that change the price (naver_variants paid=True)
     paid_addons: bool = False            # also offer add-on products (추가상품) that cost money
-    description_images: bool = False     # OCR the description images (description_images.py) and guess the
-                                         # package from them: the larger of that and today's value wins; the
+    description_images: bool = False     # OCR the description images (description_images.py) and take the
+                                         # package from them: what the seller states, else the set's parts; the
                                          # parts profile follows the Naver category id (description_measures)
 
 

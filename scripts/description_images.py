@@ -1,7 +1,7 @@
 """Optional stage between keep_run and run_transform: read the text of a product's description images (RapidOCR)
 into a sidecar file, for the categories whose transform rules switch it on (CategoryRules.description_images: off
-by default, on for 50002788 golf full sets). The transform reads the sidecar offline (description_measures.py: size /
-weight, the larger of that and today's value wins; description_image_text.py: clean Korean text for translation).
+by default, on for 50002788 golf full sets). The transform reads the sidecar offline (description_measures.py: the
+package's size and weight, stated or composed from the set's parts; description_image_text.py: clean Korean text for translation).
 
 Per product (the newest kept line of each key, as run_transform takes it), one at a time:
 

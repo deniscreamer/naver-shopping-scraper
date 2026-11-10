@@ -3,6 +3,74 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
+## Unreleased
+
+- Package weight and size of golf sets: the flat category default is now the last resort (the owner,
+  2026-11-10; it replaces "the larger value wins" of 2026-11-07). A field takes the seller's own statement of it
+  (the server path's value, never replaced; else a packed weight, a box or a set weight read in the description's
+  typed text or images), else an estimate composed from the set's parts, each part from the product's own data
+  when it is there and from the operator's baseline when it is not: product weight = clubs (the sum of one
+  table, else the count x the median when the weights cover half the clubs, else the count x the baseline club)
+  + bag (none, its stated weight, else the baseline bag); package weight = product weight + the baseline carton;
+  package length = the driver read, else the baseline driver, + the baseline margin; width and height = a stated
+  box, whole or not at all, else the baseline sides without / with a bag. The default stays only when the number
+  of clubs or the bag's state cannot be told (21 of the 120 sets: the bag's state on 20, the count on 1). A
+  composed field carries `source: composed`, `how`, `parts` (where each part came from), `baseline` and, as
+  `compared`, the default it replaced.
+- After a second independent check of that change (2026-11-10):
+  - a known composition is never dropped for being under the band of a full set: 13302492097 and 12966969668 (a
+    driver, a wood and a utility, no bag) are 1020 g and 3020 g packed, not the flat 5700 / 7000 g. The band's
+    lower side now holds for statements read in the description only, its upper side for everything;
+  - the seller's own club table goes before the listing's "pieces": a full table (one row or the rows under one
+    header, 9 weights and up, the heaviest a putter's, 475 g and up) is the set when the listing counts up to 3
+    more or states no count: its sum, its length the count (8053135821, "12개" with the bag and two head covers:
+    3955 g for nine clubs, 5340 g before; 13657325637, "11피스": 3634 g; 5543663553 and 7674852369, no count
+    stated, leave the flat default). The count is then the table's (`count_from: "table"`, `count_listed`),
+    confidence 2;
+  - a stated packed weight always goes before the composition, also under the composed product weight (it was
+    refused as `below_contents`); under the seller's own product weight (4-5) it is taken with `flags:
+    ["below_contents"]`;
+  - "the weights cover half the clubs" counts clubs, not values: weights within 2 % of each other are one club's
+    (a club by two flexes). Five sets go from the median to the baseline club (10816781893: 3 clubs of 9 weighed,
+    3060 g, 2664 g before; 10816508198, 10839715113, 13747890950, 13229257286);
+  - the same statement read in an image and in the typed text is the typed one (5, not 4).
+  Known limits, left as they are: a "1+1" listing weighed as one set (5684497984); a table is not bound to a
+  variant (the lightest of several whole tables for every variant); on a page of several models the bag's weight
+  may be another model's and the longest driver stands for all (scripts/README.md, "Known limits").
+- `category_measures.json` version 2: row 50002788 has a `baselines` block (the owner, 2026-11-10: club 340 g,
+  bag 3800 g, carton 2000 g, longest club 1140 mm, length margin 100 mm, box sides 200 x 160 mm without a bag and
+  400 x 320 mm with one; approximate until the first real shipment), with the basis of each amount; validated in
+  `package_measures.check_row` (all amounts or no block). It replaces the optional `estimates` block, which no
+  row ever had. A row without the block composes nothing.
+- **Confidence is 1-5 on every package field (it was 1-3).** 5 stated in typed text with its kind (the old 3), 4
+  stated with a weaker reading: an image, the kind left open, bound by count (the old 2), 3 composed wholly from
+  the seller's own figures plus the carton / margin, 2 composed with a baseline or a weak part, 1 the flat
+  default. Records written before this change carry the old 1-3: collected lines, prepared records of
+  `prepared/4` and below, and what was published from them. Prepared records are now `prepared/5`; the transform
+  puts a collected line's seller values on the new scale (`package_measures.on_scale`).
+- Fixed in the description reader after an independent check: a stated box was merged side by side (a refused
+  length left its width and height behind); the count x the median stood as a set's weight when the page gave the
+  driver's shaft options only (8029218821, 13728931694); a shaft's model number was read as a club weight
+  ("C1(ULT 250 J-L)", 9321714669); "클럽만의 ..." said the set has no bag; a paid add-on for the bag (a cover, a
+  name tag) said so too; a table header whose first cell is the label was no header; the golf constants of the
+  shared items code are profile data.
+- Regression fixtures for the five package fields (`scripts/test_measures_fixtures.py`,
+  `scripts/fixtures/measures/`): 17 of the 120 collected golf sets, cut down to what the measures code reads,
+  with the fields each variant must get, checked by hand against the product's own lines (where a fixture's
+  note says "approximate", the value pinned is the rule's present approximation, not the page's figure).
+  Together they cover every level 1-5, every source and the paths of the rule: a typed box and packed weight, a
+  box read from an image, the clubs' exact sum with and without a bag, the count x the median, the baseline
+  club / bag / longest club, a bag sold as an add-on, the bag state from the 상품정보 row / unknown, the count
+  unknown, the count from the clubs' table, a 3-club listing, counts that differ by variant, an accessory's
+  size, a listing of several models, the server path's weight.
+- Fixed while checking them: a "중량(g)" row of head weights was read as clubs. 7583123963's summary tables give
+  the irons' heads (257-297 g) under the label of the woods' heads (198-233 g); 22 such values made the median
+  club 296 g. A row of a weight label with only weights under a club's now makes the label a part's in that
+  image (the clubs of that set: 4258 g for 13, 3854 g before; no other of the 120 sets has such rows).
+- Nothing under `scripts/output/` was rewritten: at the next `run_transform` every prepared record of the
+  category changes (new fields, levels, format), so every published product's digest changes. Whether products
+  already in the store are sent again is the owner's decision.
+
 ## 0.12.0 (2026-11-10)
 
 - Descriptions for all 110 products in the store (2026-11-10). After a check of the last 75 against their

@@ -1,5 +1,5 @@
 {
- "format": "prepared/4",
+ "format": "prepared/5",
  "key": "fairwardgolf:naver:101921971:8958060680",
  "shop": "fairwardgolf",
  "status": "ready",
@@ -8,6 +8,10 @@
   {
    "code": "reviews_cleaned",
    "detail": "13 of 13 kept (full 9, rating_only 1, short 3); 10 trimmed"
+  },
+  {
+   "code": "measures_from_images",
+   "detail": "package_height_mm 2/2, package_length_mm 2/2, package_weight_g 2/2, package_width_mm 2/2, product_weight_g 2/2"
   },
   {
    "code": "shipping_paid",
@@ -81,59 +85,150 @@
     "available": true,
     "package": {
      "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 7540,
+       "max": 7540
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "clubs + bag",
+      "parts": [
+       {
+        "part": "clubs",
+        "value": 3740,
+        "from": "11 clubs x baseline club weight",
+        "count_from": "listing"
+       },
+       {
+        "part": "bag",
+        "value": 3800,
+        "from": "stated",
+        "quote": "무게 : 약 3.8kg",
+        "said_by": "listing"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 5700,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 9540,
+       "max": 9540
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "product weight + carton",
+      "parts": [
+       {
+        "part": "product",
+        "value": 7540,
+        "from": "product_weight_g"
+       },
+       {
+        "part": "carton",
+        "value": 2000,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 7000,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 1249,
+       "max": 1249
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1149,
+        "from": "stated",
+        "quote": "길이(인치) | 45.25 | 42.5 | 39.5 | 34"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 400,
+       "max": 400
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "box side, with bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 400,
+        "from": "baseline",
+        "said_by": "listing"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 320,
+       "max": 320
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "box side, with bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 320,
+        "from": "baseline",
+        "said_by": "listing"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 230,
+       "source": "category_default",
+       "confidence": 1
+      }
      }
     },
     "today_dispatch": true
@@ -150,59 +245,150 @@
     "available": true,
     "package": {
      "product_weight_g": {
-      "low": 3500,
-      "central": 5700,
-      "high": 9500,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 7540,
+       "max": 7540
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "clubs + bag",
+      "parts": [
+       {
+        "part": "clubs",
+        "value": 3740,
+        "from": "11 clubs x baseline club weight",
+        "count_from": "listing"
+       },
+       {
+        "part": "bag",
+        "value": 3800,
+        "from": "stated",
+        "quote": "무게 : 약 3.8kg",
+        "said_by": "listing"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 5700,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_weight_g": {
-      "low": 4500,
-      "central": 7000,
-      "high": 11000,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 9540,
+       "max": 9540
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "product weight + carton",
+      "parts": [
+       {
+        "part": "product",
+        "value": 7540,
+        "from": "product_weight_g"
+       },
+       {
+        "part": "carton",
+        "value": 2000,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 7000,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 1249,
+       "max": 1249
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1149,
+        "from": "stated",
+        "quote": "길이(인치) | 45.25 | 42.5 | 39.5 | 34"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 400,
+       "max": 400
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "box side, with bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 400,
+        "from": "baseline",
+        "said_by": "listing"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 320,
+       "max": 320
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "box side, with bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 320,
+        "from": "baseline",
+        "said_by": "listing"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 230,
+       "source": "category_default",
+       "confidence": 1
+      }
      }
     },
     "today_dispatch": false

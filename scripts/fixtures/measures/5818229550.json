@@ -1,0 +1,139 @@
+{
+ "product_id": "5818229550",
+ "covers": "A typed box and a typed packed weight read by the description path (5): the server path's candidates are bound to the context, not to the product. The clubs' exact sum without a bag (3).",
+ "checked": [
+  "10 clubs: \"10pcs\" in the title; 총클럽개수 \"10개\"",
+  "no bag: 골프백포함여부 \"미포함\"; typed \"골프 가방 불포함 상품 입니다.\"",
+  "clubs 3679 g: \"클럽무게(g) / 307 / 313 / 352 / 352 / 358 / 364 / 370 / 375 / 386 / 502\"",
+  "box 1210 x 200 x 160 mm, 10800 g: typed \"패키지 크기 : L 20 x W 16 x H 121 cm\", \"패키지 무게 : 10.8kg\""
+ ],
+ "input": {
+  "title": "코스트코 캘러웨이 여성 골프 클럽 세트 골프채 10pcs",
+  "category": {"id": "50002788", "name": "스포츠/레저 > 골프 > 골프클럽 > 풀세트"},
+  "spec_rows": [
+   {"label": "상품번호", "value": "5818229550"},
+   {"label": "제조사", "value": "캘러웨이"},
+   {"label": "브랜드", "value": "캘러웨이"},
+   {"label": "모델명", "value": "캘러웨이 골프클럽 세트 10pcs"},
+   {"label": "원산지", "value": "베트남산(한국캘러웨이)"},
+   {"label": "종류", "value": "풀세트"},
+   {"label": "성별", "value": "남녀공용"},
+   {"label": "사용방향", "value": "오른손용"},
+   {"label": "총클럽개수", "value": "10개"},
+   {"label": "골프백포함여부", "value": "미포함"}
+  ],
+  "facts": [{"label_ko": "성별", "value_ko": "여성용"}],
+  "variants": [{"id": "41411221812", "options_ko": ["블루"]}, {"id": "41411221813", "options_ko": ["골드"]}],
+  "supplements": [],
+  "typed": [
+   "블루",
+   "제품 특징",
+   "캘러웨이 2024 엣지 클럽세트 디자인은 새롭게 블루 색상을 채택하여 고급스럽고 편안한 디자인으로 설계",
+   "캘러웨이골프의 기술력이 집약되어 최적의 탄도와 향상된 비거리를 제공하는 클럽들로 구성되어 편안하게 플레이 가능",
+   "오디세이 퍼터는 SUPER STROKE 그립이 장착되어 보다 편안하고 안정감 있게 그린에서 숏게임을 즐길수 있도록 설계",
+   "캘러웨이코리아를 통해 AS 가능",
+   "골프 가방 불포함 상품 입니다.",
+   "제품 사양",
+   "그라파이트: 드라이버 11.5°, #3 페어웨이 우드, #5 하이브리드, #6~#9 아이언, PW, SW",
+   "스틸: 퍼터",
+   "패키지 크기 : L 20 x W 16 x H 121 cm",
+   "패키지 무게 : 10.8kg",
+   "캘러웨이코리아를 통해 AS 가능합니다.",
+   "골프 가방 불포함 상품 입니다.",
+   "캘러웨이 2021 엣지 클럽세트는 여성의 취향의 디자인과 컬러로 외관을 장식",
+   "오딧세이 퍼터는 SUPER STROKE 그립이 장착되어 보다 편안하고 안정감 있게 그린에서 숏게임을 즐길수 있도록 설계",
+   "캘러웨이코리아를 통해 AS 가능",
+   "골프 가방 불포함 상품 입니다.",
+   "제품 사양",
+   "색상: 블랙, 골드 외",
+   "소재: 그라파이트, 스틸 외",
+   "그라파이트: 드라이버, 우드, 하이브리드, 아이언 (PW, SW 포함)",
+   "스틸: 퍼터",
+   "패키지: L 20 x W 16 x H 121 cm , 10.8kg",
+   "제조국: 베트남 또는 중국"
+  ],
+  "images": [
+   [3],
+   [2],
+   [],
+   [2],
+   [1],
+   [1],
+   [1],
+   [2],
+   [2],
+   [24, ["3503 / insert andstroke-stabilizing SuperStrokegrip.", 0.893], 2],
+   [27],
+   [5],
+   [
+    1,
+    ["모델넘버 / Driver / 3-Wood / 5-Hybrid / 6-Iron / 7-Iron / 8-Iron / 9-Iron / PW / SW / Putter", 0.752],
+    ["로프트각( / 11.5 / 15 / 25 / 26 / 30 / 34.5 / 39 / 44 / 54 / 3", 0.976],
+    ["라이각() / 58.5 / 57 / 60 / 62 / 62.5 / 63 / 63.5 / 64 / 64 / 70", 0.926],
+    ["클럽길이(inch) / 43.75 / 421/8 / 38 1/8 / 36 3/8 / 36 / 35 3/8 / 35 1/8 / 34 15/16 / 34 1/2 / 33", 0.769],
+    ["클럽길이(cm) / 111.12 / 106.99 / 96.83 / 92.39 / 91.44 / 89.85 / 89.21 / 88.74 / 87.63 / 83.82", 0.915],
+    ["스윙웨이트 / C5 / C5 / C5 / C1 / C1 / C1 / C2 / C3 / C6 / N/A", 0.985],
+    ["클럽무게(g) / 307 / 313 / 352 / 352 / 358 / 364 / 370 / 375 / 386 / 502", 0.982],
+    1
+   ]
+  ],
+  "measures": {
+   "is_set": true,
+   "weights": [
+    {
+     "value": {"min": 10800.0, "max": 10800.0},
+     "kind": "component",
+     "scope": "unknown",
+     "approximate": false,
+     "count": null,
+     "flags": [],
+     "quote": "패키지: L 20 x W 16 x H 121 cm , 10.8kg",
+     "source": "description",
+     "locator": {"block": "text", "row": 25},
+     "binding": {"scope": "context", "variant_ids": []}
+    }
+   ],
+   "dimensions": [
+    {
+     "values": [200.0, 160.0, 1210.0],
+     "kind": "packed",
+     "flags": [],
+     "quote": "패키지 크기 : L 20 x W 16 x H 121 cm",
+     "source": "description",
+     "locator": {"block": "text", "row": 11},
+     "binding": {"scope": "context", "variant_ids": []}
+    },
+    {
+     "values": [200.0, 160.0, 1210.0],
+     "kind": "packed",
+     "flags": [],
+     "quote": "패키지: L 20 x W 16 x H 121 cm , 10.8kg",
+     "source": "description",
+     "locator": {"block": "text", "row": 25},
+     "binding": {"scope": "context", "variant_ids": []}
+    }
+   ]
+  }
+ },
+ "expected": [
+  {
+   "variants": [["블루"], ["골드"]],
+   "fields": {
+    "product_weight_g": {
+     "value": 3679,
+     "source": "composed",
+     "confidence": 3,
+     "how": "clubs, no bag",
+     "parts": [
+      {"part": "clubs", "value": 3679, "from": "sum of 10 club weights", "quote": "클럽무게(g) / 307 / 313 / 352 / 352 / 358 / 364 / 370 / 375 / 386 / 502", "count_from": "listing"},
+      {"part": "bag", "value": 0, "from": "not in the set", "said_by": "listing"}
+     ]
+    },
+    "package_weight_g": {"value": 10800, "source": "description_image", "confidence": 5, "how": "stated packed weight", "from": "description_text", "quote": "패키지 무게 : 10.8kg"},
+    "package_length_mm": {"value": 1210, "source": "description_image", "confidence": 5, "how": "stated box size", "from": "description_text", "quote": "패키지 크기 : L 20 x W 16 x H 121 cm"},
+    "package_width_mm": {"value": 200, "source": "description_image", "confidence": 5, "how": "stated box size", "from": "description_text", "quote": "패키지 크기 : L 20 x W 16 x H 121 cm"},
+    "package_height_mm": {"value": 160, "source": "description_image", "confidence": 5, "how": "stated box size", "from": "description_text", "quote": "패키지 크기 : L 20 x W 16 x H 121 cm"}
+   }
+  }
+ ]
+}

@@ -1,5 +1,5 @@
 {
- "format": "prepared/4",
+ "format": "prepared/5",
  "key": "fairwardgolf:naver:100416178:9496523995",
  "shop": "fairwardgolf",
  "status": "ready",
@@ -16,6 +16,10 @@
   {
    "code": "option_values_duplicate",
    "detail": "선택"
+  },
+  {
+   "code": "measures_from_images",
+   "detail": "package_length_mm 6/6"
   },
   {
    "code": "option_name_placeholder",
@@ -97,16 +101,7 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05",
-      "compared": {
-       "value": 3421,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "11 clubs x median club weight",
-       "flags": [
-        "container_unknown"
-       ]
-      }
+      "approved_at": "2026-11-05"
      },
      "package_weight_g": {
       "low": 4500,
@@ -117,35 +112,37 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05",
-      "compared": {
-       "value": 3421,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "11 clubs x median club weight (box >= contents)",
-       "flags": [
-        "container_unknown"
-       ]
-      }
+      "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1262,
+       "max": 1262
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1162,
+        "from": "stated",
+        "quote": "길이(인치) / 45.75 / 45.25"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1162,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -193,16 +190,7 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05",
-      "compared": {
-       "value": 3421,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "11 clubs x median club weight",
-       "flags": [
-        "container_unknown"
-       ]
-      }
+      "approved_at": "2026-11-05"
      },
      "package_weight_g": {
       "low": 4500,
@@ -213,35 +201,37 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05",
-      "compared": {
-       "value": 3421,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "11 clubs x median club weight (box >= contents)",
-       "flags": [
-        "container_unknown"
-       ]
-      }
+      "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1262,
+       "max": 1262
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1162,
+        "from": "stated",
+        "quote": "길이(인치) / 45.75 / 45.25"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1162,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -289,16 +279,7 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05",
-      "compared": {
-       "value": 3421,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "11 clubs x median club weight",
-       "flags": [
-        "container_unknown"
-       ]
-      }
+      "approved_at": "2026-11-05"
      },
      "package_weight_g": {
       "low": 4500,
@@ -309,35 +290,37 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05",
-      "compared": {
-       "value": 3421,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "11 clubs x median club weight (box >= contents)",
-       "flags": [
-        "container_unknown"
-       ]
-      }
+      "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1262,
+       "max": 1262
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1162,
+        "from": "stated",
+        "quote": "길이(인치) / 45.75 / 45.25"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1162,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -385,16 +368,7 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05",
-      "compared": {
-       "value": 3421,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "11 clubs x median club weight",
-       "flags": [
-        "container_unknown"
-       ]
-      }
+      "approved_at": "2026-11-05"
      },
      "package_weight_g": {
       "low": 4500,
@@ -405,35 +379,37 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05",
-      "compared": {
-       "value": 3421,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "11 clubs x median club weight (box >= contents)",
-       "flags": [
-        "container_unknown"
-       ]
-      }
+      "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1262,
+       "max": 1262
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1162,
+        "from": "stated",
+        "quote": "길이(인치) / 45.75 / 45.25"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1162,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -481,16 +457,7 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05",
-      "compared": {
-       "value": 3421,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "11 clubs x median club weight",
-       "flags": [
-        "container_unknown"
-       ]
-      }
+      "approved_at": "2026-11-05"
      },
      "package_weight_g": {
       "low": 4500,
@@ -501,35 +468,37 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05",
-      "compared": {
-       "value": 3421,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "11 clubs x median club weight (box >= contents)",
-       "flags": [
-        "container_unknown"
-       ]
-      }
+      "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1262,
+       "max": 1262
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1162,
+        "from": "stated",
+        "quote": "길이(인치) / 45.75 / 45.25"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1162,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -577,16 +546,7 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05",
-      "compared": {
-       "value": 3421,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "11 clubs x median club weight",
-       "flags": [
-        "container_unknown"
-       ]
-      }
+      "approved_at": "2026-11-05"
      },
      "package_weight_g": {
       "low": 4500,
@@ -597,35 +557,37 @@
       "reliability": "estimated_average",
       "table_version": 1,
       "approved_by": "owner",
-      "approved_at": "2026-11-05",
-      "compared": {
-       "value": 3421,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "11 clubs x median club weight (box >= contents)",
-       "flags": [
-        "container_unknown"
-       ]
-      }
+      "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1262,
+       "max": 1262
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1162,
+        "from": "stated",
+        "quote": "길이(인치) / 45.75 / 45.25"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1162,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {

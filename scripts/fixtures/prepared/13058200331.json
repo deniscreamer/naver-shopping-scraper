@@ -1,5 +1,5 @@
 {
- "format": "prepared/4",
+ "format": "prepared/5",
  "key": "fairwardgolf:naver:100568453:13058200331",
  "shop": "fairwardgolf",
  "status": "ready",
@@ -16,6 +16,10 @@
   {
    "code": "few_pieces",
    "detail": "2종"
+  },
+  {
+   "code": "measures_from_images",
+   "detail": "package_length_mm 100/100"
   }
  ],
  "source": {
@@ -118,23 +122,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -197,23 +212,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -276,23 +302,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -355,23 +392,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -434,23 +482,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -513,23 +572,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -592,23 +662,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -671,23 +752,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -750,23 +842,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -829,23 +932,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -908,23 +1022,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -987,23 +1112,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -1066,23 +1202,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -1145,23 +1292,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -1224,23 +1382,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -1303,23 +1472,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -1382,23 +1562,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -1461,23 +1652,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -1540,23 +1742,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -1619,23 +1832,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -1698,23 +1922,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -1777,23 +2012,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -1856,23 +2102,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -1935,23 +2192,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -2014,23 +2282,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -2093,23 +2372,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -2172,23 +2462,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -2251,23 +2552,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -2330,23 +2642,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -2409,23 +2732,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -2488,23 +2822,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -2567,23 +2912,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -2646,23 +3002,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -2725,23 +3092,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -2804,23 +3182,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -2883,23 +3272,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -2962,23 +3362,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -3041,23 +3452,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -3120,23 +3542,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -3199,23 +3632,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -3278,23 +3722,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -3357,23 +3812,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -3436,23 +3902,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -3515,23 +3992,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -3594,23 +4082,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -3673,23 +4172,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -3752,23 +4262,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -3831,23 +4352,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -3910,23 +4442,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -3989,23 +4532,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -4068,23 +4622,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -4147,23 +4712,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -4226,23 +4802,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -4305,23 +4892,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -4384,23 +4982,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -4463,23 +5072,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -4542,23 +5162,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -4621,23 +5252,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -4700,23 +5342,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -4779,23 +5432,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -4858,23 +5522,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -4937,23 +5612,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -5016,23 +5702,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -5095,23 +5792,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -5174,23 +5882,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -5253,23 +5972,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -5332,23 +6062,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -5411,23 +6152,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -5490,23 +6242,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -5569,23 +6332,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -5648,23 +6422,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -5727,23 +6512,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -5806,23 +6602,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -5885,23 +6692,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -5964,23 +6782,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -6043,23 +6872,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -6122,23 +6962,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -6201,23 +7052,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -6280,23 +7142,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -6359,23 +7232,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -6438,23 +7322,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -6517,23 +7412,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -6596,23 +7502,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -6675,23 +7592,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -6754,23 +7682,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -6833,23 +7772,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -6912,23 +7862,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -6991,23 +7952,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -7070,23 +8042,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -7149,23 +8132,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -7228,23 +8222,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -7307,23 +8312,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -7386,23 +8402,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -7465,23 +8492,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -7544,23 +8582,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -7623,23 +8672,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -7702,23 +8762,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -7781,23 +8852,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -7860,23 +8942,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {
@@ -7939,23 +9032,34 @@
       "approved_at": "2026-11-05"
      },
      "package_length_mm": {
-      "low": 1150,
-      "central": 1250,
-      "high": 1350,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05",
+      "value": {
+       "min": 1268,
+       "max": 1268
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1168,
+        "from": "stated",
+        "quote": "총 중량(g) / 밸런스 / 약 300g / D3 (ALTA J CB BLUE.SR.46인치)"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
       "compared": {
-       "value": 1168,
-       "source": "description_image",
-       "confidence": 1,
-       "how": "longest club",
-       "flags": [
-        "container_unknown"
-       ]
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
       }
      },
      "package_width_mm": {

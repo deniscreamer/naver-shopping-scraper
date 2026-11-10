@@ -48,7 +48,8 @@ Weight and size -> `measures.py`, `package_measures.py`
 - Notice 중량 may list one weight per club count ("약11.5kg / 4.7kg", 6630856593) -> bound by club count.
 - Club spec tables (td-only, column headers) and "총중량" under a club heading are one club's, never the set's.
 - "7번 기준 36인치, 332g" is one reference club; "6아이언" is a set of six irons.
-- A plain 중량 row of a set is the set as sold, but with or without the box is not said: confidence 2.
+- A plain 중량 row of a set is the set as sold, but with or without the box is not said: confidence 4 (2 on the
+  1-3 scale used until 2026-11-10).
 
 ## Transform (scripts)
 
@@ -114,14 +115,43 @@ Description cleanup -> `description_clean.py`, `shared_images.py`
 - The images are the description: their text is ~12x the page's text, and 31 of 50 sets have no page text at all.
 - No image states a box size, a package weight or the whole set's weight. 74 % of the number + unit tokens sit in
   per-club spec tables: 클럽 중량(g) / 총중량(g) (a whole club: ~250-450 g), 헤드 / 샤프트 / 그립 중량 (parts),
-  길이 in inches or cm (33-46"). `총중량` there is one club's, never the set's.
+  길이 in inches or cm (33-46"). `총중량` there is one club's, never the set's. A plain "중량(g)" may be the heads':
+  7583123963's summary tables give "중량(g) / 198 / 202 / 207 / 233" (woods) and "중량(g) / 257 / ... / 297" (irons)
+  beside per-club 총중량 rows of 280-515 g (2026-11-10: a row of only under-club weights marks the label).
 - Kilograms are a bag's own weight (stand bag 4.1 kg, caddie bags 3.5 / 4.5 kg, "총무게:(캐디백+보스턴백) 약4.95kg"),
   a shop rule ("20kg 초과 화물"), customs ("5kg 이하 통관") or a buyer's body weight in a review screenshot.
 - Size triples are bags ("캐디백-91cm(세로)*31cm(폭)*40cm(가로)", a boston bag L48xW24xH30) or a shop's cross-sell
   cards below "함께 구매" (a half bag 10x7x126 cm of another product). A bag's mouth is written in inches (8.5 / 9인치).
 - "본 풀세트는 골프백 미포함 제품입니다" (5 sets) and "12종+캐디백" / "GOLF BAG" (2) say what the name does not.
-- So description_measures.py guesses from the parts (clubs x median weight + the bag; the longest club or bag; the
-  bag's mouth / sides) and the larger of that and today's value wins.
+- So description_measures.py composes the fields from the parts (the clubs' weights + the bag; the driver + a
+  margin), each part from the page when it is there and from the operator's baseline when it is not (2026-11-10;
+  until then: a guess from the parts, the larger of it and today's value).
+- What the baselines rest on, the 120 sets (2026-11-10): the median club of the sellers' tables is 332 g; 11 sets
+  state their bag's weight, 2.6-4.8 kg; 4 state a caddie bag's sides, 39-40 x 31 cm; one set (a Callaway Edge, on 3
+  listings) states its box, 121 x 20 x 16 cm, around a 111 cm driver.
+- On the 120 collected sets (2026-11-10): the 상품정보 row 골프백포함여부 is on 81 (미포함 47, 캐디백 24, 캐디백 +
+  보스턴백 6, 스탠드백 4) and agrees with every other explicit word but one listing whose free variants are the
+  no-bag ones (8514409092: the variant's words go first). A bag sold as a paid add-on means the set has none (6
+  sets); an add-on Boston bag, shoe bag or pouch says nothing, and its table ("여성용 경량 보스턴" ... "사이즈 /
+  L48×W24×H30CM") looks like the caddie bag's. 38 sets have typed text: the box and its weight ("패키지 크기 : L 20
+  x W 16 x H 121 cm", "패키지 무게 : 10.8kg", one Callaway set on 3 listings), club tables with cells joined by
+  " | ", the bag's lines ("캐디백" / "무게 : 약 3.8kg"; "47인치 대응" is the club length a bag takes). A bag's kg also
+  comes as "약4.1 (kg)"; "약1.5kg경량화되어" is a comparison. "함께 구매" / "다른 상품" in a sentence is no cross-sell
+  heading (20 sets have such a row, 5 are headings).
+- The clubs on the same 120 (2026-11-10). 118 state the driver's length, 43.5-46.0 in (1105-1168 mm; ladies'
+  43.5-45.25, men's 44.5-46.0); no other club is that long (a men's 3-wood 43-43.5 in, a ladies' 41-42.5). Tables
+  come as a labelled row ("클럽길이(inch) / 45.5 / 43 / ...", 91 sets) or as a header with one club per row ("1W /
+  10.5 / 58 / 45.25 inch / D0 / R / 197g / 320g", 19 sets, 21 for weights); cm and inches side by side
+  ("112.395/44.25", "114.3cm(45인치)"); the driver's row is often the one OCR reads worst. A shaft maker's table
+  (TIP / Butt 외경) gives the uncut shaft, 46 in. Per-club totals are on 95 sets, 252-549 g; one page may hold
+  several sets' tables (R and S, last year's model) and, on a combination set, each maker's table with its
+  choices (a driver by nine shafts). The club count: the title's "N개" / "NPCS" is right more often than the
+  총클럽개수 row (5 disagree, the title right on 4); 총클럽개수 may count the bag and covers (8053135821: 12개, 9
+  clubs), and so may the title ("11피스": ten clubs and the bag, 13657325637); "4피스 티타늄 페이스" / "4PCS단조" in
+  an image is the head's make. A whole set's table runs from the driver to the putter: the putters stated are
+  485-549 g, the heaviest wedge 462 g; a table that stops at the SW leaves the putter out (X HOT: ten weights
+  of "총 11개 클럽", 8974646004). A club is often weighed by flex, the two values within 2 % ("약252 / 약255" L /
+  A, 10816781893); the step between two irons is about as small (343 / 348 / 354).
 
 ## Not handled yet (known)
 - Banners inside snapshot tiles (OCR reads them; their address, hours, services and stations / shops of the map

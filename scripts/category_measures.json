@@ -1,6 +1,6 @@
 {
- "about": "Package weight and size averages per leaf category, given by the operator (never made up). A row: category_id, category_name, fields (low / central / high of product_weight_g, package_weight_g, package_length_mm, package_width_mm, package_height_mm), approved_by, approved_at (YYYY-MM-DD), reliability (estimated_average: the weakest level), basis. A new or changed row raises version.",
- "version": 1,
+ "about": "Package weight and size averages per leaf category, given by the operator (never made up). A row: category_id, category_name, fields (low / central / high of product_weight_g, package_weight_g, package_length_mm, package_width_mm, package_height_mm), approved_by, approved_at (YYYY-MM-DD), reliability (estimated_average: the weakest level), basis. Optional per row: plausible ({field: {min, max}}: a value outside is not taken); baselines, the operator's amounts for the parts of a set of like items in a container, all of them or no block: item_g (one item), container_g (the container), carton_g (the box and its packing), longest_item_mm (the longest item), length_margin_mm (the box's length over the longest item), sides_mm and sides_with_container_mm (the box's [width, height] without the container and with it), approved_by, approved_at, basis (where each amount comes from). With the block a field the seller does not state is composed from the set's parts, each part from the product's own data when it is there and from the baseline when it is not (product weight = items + container; package weight = product weight + carton_g; package length = longest item + length_margin_mm; width and height = the sides), and the fields' flat averages are the last resort, used when the number of items or the container's state cannot be told; without the block a field is the seller's statement or the flat average. A new or changed row raises version.",
+ "version": 2,
  "rows": [
   {
    "category_id": "50002788",
@@ -31,6 +31,33 @@
      "central": 230,
      "high": 330
     }
+   },
+   "baselines": {
+    "item_g": 340,
+    "container_g": 3800,
+    "carton_g": 2000,
+    "longest_item_mm": 1140,
+    "length_margin_mm": 100,
+    "sides_mm": [
+     200,
+     160
+    ],
+    "sides_with_container_mm": [
+     400,
+     320
+    ],
+    "basis": {
+     "item_g": "One club: the median of the sellers' club weight tables (332 g) over the 120 collected sets.",
+     "container_g": "The bag: the median of the 11 bag weights sellers state (2.6-4.8 kg).",
+     "carton_g": "A Callaway Edge 10-club set: clubs 3.7 kg, boxed 6 kg.",
+     "longest_item_mm": "The driver, when its length is not read (the 118 stated drivers are 1105-1168 mm).",
+     "length_margin_mm": "The one stated box, 121 cm, against its 111 cm driver.",
+     "sides_mm": "Without a bag: that stated box, 20 x 16 cm.",
+     "sides_with_container_mm": "With a bag: the caddie bags stated on 4 sets, 39-40 x 31 cm.",
+     "certainty": "Low: approximate until the first real shipment (the owner, 2026-11-10)."
+    },
+    "approved_by": "owner",
+    "approved_at": "2026-11-10"
    },
    "reliability": "estimated_average",
    "basis": "Median (central) and about the 10th / 90th percentile (low / high) of the naver-harvester's AI estimates on the 55 fairwardgolf full sets that have one in Shopify (read 2026-11-05; none seller-stated; sets with and without a bag together).",
