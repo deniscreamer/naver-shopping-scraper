@@ -935,3 +935,119 @@ def test_a_brand_keeps_the_dictionarys_case(tmp_path):
     d.add("brand", "핑골프", "Ping")                 # the model wrote it in another case: one spelling
     d.add("brand", "요넥스", "Yonex")
     assert d.get("brand", "핑골프") == "PING" and d.brand_spelling("YONEX") == "Yonex" and d.brand_spelling("Acme") == "Acme"
+
+
+# ---- a title's length (2026-11-10: a 137-character title on the store; Google Merchant takes 150) ----------------
+
+LONG = "Callaway REVA 2027 Women's Complete Golf Club Set 10 Pieces " + "Graphite Lightweight " * 4          # 144
+
+
+def _titled(text):
+    return lambda rows: [{**r, "en": text} if r["_kind"] == "title" else r for r in rows]
+
+
+def test_a_long_title_is_sent_back_and_the_short_one_kept(tmp_path):
+    short = "Callaway REVA 2027 Women's Complete Set 10 Pieces"
+    model = FakeModel(lambda items: answer(items, _titled(LONG)), lambda items: answer(items, _titled(short)))
+    out = T.translate_product(small(), dicts(tmp_path), {}, TENANT, model, "t")
+    assert out.calls == 2 and out.record["status"] == "translated"
+    assert out.record["en"][text_id("title", small()["product"]["title_ko"])] == short
+    fix = model.calls[1][2]["content"]
+    assert f"too long: {len(LONG.strip())} characters, at most 100" in fix and '"usable"' not in fix
+
+
+def test_a_title_that_never_gets_short_does_not_hold_the_product(tmp_path):
+    shorter = LONG[:120].strip()
+    lost = "Callaway REVA Women's Set"                               # short, but 2027 and 10 are gone: not usable
+    model = FakeModel(lambda items: answer(items, _titled(LONG)), lambda items: answer(items, _titled(shorter)),
+                      lambda items: answer(items, _titled(lost)))
+    out = T.translate_product(small(), dicts(tmp_path), {}, TENANT, model, "t")
+    assert out.calls == T.FIX_ROUNDS + 1 and out.record["status"] == "translated" and not out.record["problems"]
+    assert out.record["en"][text_id("title", small()["product"]["title_ko"])] == shorter     # the shortest good one
+
+
+def test_only_a_title_has_the_asking_length():
+    item = {"id": "t", "kind": "title", "source": "캘러웨이 풀세트"}
+    accepted, failed = T.verify([item], json.dumps({"items": [{"id": "t", "en": "A" * 100}]}))
+    assert accepted == {"t": "A" * 100} and not failed
+    accepted, failed = T.verify([item], json.dumps({"items": [{"id": "t", "en": "A " * 60}]}))
+    assert not accepted and failed[0]["usable"] == ("A " * 60).strip() and "at most 100" in failed[0]["problems"][0]
+    review = {"id": "r", "kind": "review", "source": "좋아요"}
+    assert T.verify([review], json.dumps({"items": [{"id": "r", "en": "Good. " * 60}]}))[1] == []
+
+
+def test_a_long_title_with_another_problem_is_not_usable(tmp_path):
+    lost = LONG.replace("2027 ", "")                               # long AND the year is gone: held as before
+    out = T.translate_product(small(), dicts(tmp_path), {}, TENANT, FakeModel(lambda items: answer(items, _titled(lost))), "t")
+    assert out.record["status"] == "untranslated"
+    assert any("numbers changed: missing 2027" in x for p in out.record["problems"] for x in p["problems"])
+    item = {"id": "t", "kind": "title", "source": small()["product"]["title_ko"]}
+    failed = T.verify([item], json.dumps({"items": [{"id": "t", "en": lost}]}))[1][0]
+    assert "usable" not in failed and not any("at most 100" in x for x in failed["problems"])
+
+
+def test_the_shortest_usable_title_is_kept_not_the_last(tmp_path):
+    model = FakeModel(lambda items: answer(items, _titled(LONG[:120].strip())), lambda items: answer(items, _titled(LONG)))
+    out = T.translate_product(small(), dicts(tmp_path), {}, TENANT, model, "t")
+    assert out.record["en"][text_id("title", small()["product"]["title_ko"])] == LONG[:120].strip()
+
+
+@pytest.mark.parametrize("stop", ["refusal", "max_tokens"])
+def test_a_refused_or_cut_shortening_round_keeps_the_long_title(tmp_path, stop):
+    class Stops(FakeModel):
+        def send(self, system, messages):
+            reply = super().send(system, messages)
+            return reply if len(self.calls) == 1 else T.Reply(reply.content, reply.text, stop, reply.usage)
+    p = small(options=[{"name_ko": "색상", "values_ko": ["레드"]}])
+    d = dicts(tmp_path)
+    out = T.translate_product(p, d, {}, TENANT, T.Chain([Stops(lambda items: answer(items, _titled(LONG))), FakeModel(name="b")]), "t")
+    assert out.record["status"] == "translated" and out.calls == 2 and out.record["provider"] == "fake"   # not handed to b
+    assert out.record["en"][text_id("title", p["product"]["title_ko"])] == LONG.strip() and d.added["option_value"]
+
+
+def test_a_provider_down_in_a_shortening_round_keeps_the_batch(tmp_path):
+    class Down(FakeModel):
+        def send(self, system, messages):
+            if self.calls:
+                raise T.ProviderDown("overloaded")
+            return super().send(system, messages)
+    p = small(options=[{"name_ko": "색상", "values_ko": ["레드"]}])
+    d = dicts(tmp_path)
+    out = T.translate_product(p, d, {}, TENANT, Down(lambda items: answer(items, _titled(LONG))), "t")
+    assert out.record["status"] == "translated" and out.calls == 1 and d.added["option_value"]
+    # down in a round that also fixes something else: the conversation fails as before
+    def korean(rows):
+        return [{**r, "en": "레드"} if r["_kind"] == "option_value" else {**r, "en": LONG} if r["_kind"] == "title" else r
+                for r in rows]
+    out = T.translate_product(p, dicts(tmp_path), {}, TENANT, Down(lambda items: answer(items, korean)), "t")
+    assert out.record["status"] == "pending"
+
+
+# ---- the real titles of the store (fixtures/titles/golf_50002788.jsonl, see test_publish.py) ----------------------
+
+def _real_titles():
+    with open(os.path.join(FX, "titles", "golf_50002788.jsonl"), encoding="utf-8") as f:
+        return [json.loads(line) for line in f if line.strip()]
+
+
+def test_no_real_title_of_the_store_is_over_the_asking_length():
+    rows = _real_titles()
+    assert len(rows) == 105 and max(len(r["en"]) for r in rows) <= T.ASK_SHORTER["title"]
+    assert all(not has_hangul(r["en"]) for r in rows)
+
+
+@pytest.mark.parametrize("product", ["8514409092", "6655509590"])          # GV Tour (137), Mutsumi Honma (116)
+def test_the_real_long_titles_go_back_and_the_real_short_ones_are_kept(tmp_path, product):
+    row = next(r for r in _real_titles() if r["id"] == product)
+    p = small(title=row["title_ko"], brand=row["brand_ko"])
+    item = {"id": "1", "kind": "title", "source": T.sanitize("title", row["title_ko"], TENANT, "50002788")}
+    failed = T.verify([item], json.dumps({"items": [{"id": "1", "en": row["en_long"]}]}))[1][0]
+    assert failed["usable"] == row["en_long"]                               # long is its only problem
+    assert failed["problems"] == [f"too long: {len(row['en_long'])} characters, at most 100"]
+    model = FakeModel(lambda items: answer(items, _titled(row["en_long"])), lambda items: answer(items, _titled(row["en"])))
+    out = T.translate_product(p, dicts(tmp_path), {}, TENANT, model, "t")
+    assert out.record["status"] == "translated" and out.calls == 2
+    assert out.record["en"][text_id("title", row["title_ko"])] == row["en"] and len(row["en"]) <= 100
+    stuck = FakeModel(lambda items: answer(items, _titled(row["en_long"])))  # the model never shortens it
+    out = T.translate_product(p, dicts(tmp_path / "2"), {}, TENANT, stuck, "t")
+    assert out.record["status"] == "translated" and out.record["en"][text_id("title", row["title_ko"])] == row["en_long"]

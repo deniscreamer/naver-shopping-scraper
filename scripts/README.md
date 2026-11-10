@@ -1087,7 +1087,14 @@ The owner's rules (`shopify_payload.py`):
   variant is named by the seller's one remaining choice (a constant option axis the transform keeps as a fact:
   "Set: 12 Pcs + Caddie Bag"), else `Option: Standard` (`FALLBACK_OPTION`); a gift line is not a choice.
 - **Title clean-up** (`clean_title`): "(Parallel Import)", a word written twice in a row, a model code written
-  twice. SEO title = the title (the site's page `<title>`).
+  twice. SEO title = the title (the site's page `<title>`), cut at a whole word within 70 characters.
+- **Title length** (`fit_title`): at most 150 characters, Google Merchant Center's limit for `title` (a longer one
+  is an item issue there; Shopify itself takes 255). The translation already asks the model again for a title over
+  100 (TRANSLATION.md); this is the last guard, with the brand put in front counted: the facts after a comma go
+  first, from the end, when that keeps 60% of the limit, else whole words from the end; nothing is left dangling (a
+  joining word, a comma, a count without its unit: "Set 13" of "13 Pieces", an open bracket), and a brand that
+  stood only in the part cut off goes in front. Google truncates a longer title itself and warns ("Text too
+  long"); it shows about the first 70 characters, which is why the title's order is brand, model, who, what.
 - **Add-ons**: gift words out of the English labels ("Free", "Gift", "Default Selection"); a required free group
   of a one-variant product goes to `custom.required_selections` (product-required-selections/v1, the site's field
   for a choice the buyer must make; "do not add" is no value there). A required choice of a product with several

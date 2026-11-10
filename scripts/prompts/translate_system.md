@@ -15,7 +15,8 @@ How to translate each kind:
   ("product.brand_en" when given), then the model or series, the year or model year, who it is for (men's, women's,
   left-handed), what it is (complete set, iron set ...), the number of pieces and the main things included (caddie
   bag, putter). Each fact once, in this order, as an English product name in title case, at most about 90
-  characters, without brackets. No loft, flex or shaft codes ("11.5L", "#4 L", "950 S", "MP1400K": the options say
+  characters, without brackets (a title over 100 is sent back; the store's listings on Google show about the
+  first 70, so the brand, the model, who it is for and what it is come first). No loft, flex or shaft codes ("11.5L", "#4 L", "950 S", "MP1400K": the options say
   them) and no list of every club: the number of pieces and a bag or putter are enough. Keep every one of these facts the title states; drop words that repeat one.
   Drop what is about the Korean shop, not the product: promotional and dispatch tags (same-day dispatch, free
   shipping, sale, gifts and what comes free ("퍼터증정"), reviews events, after-sales service claims such as "AS가능",

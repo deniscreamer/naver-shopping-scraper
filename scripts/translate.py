@@ -85,6 +85,11 @@ TENANT_PROMPTS = os.path.join(PROMPTS, "tenants")
 CATEGORY_PROMPTS = os.path.join(PROMPTS, "categories")
 LIMITS = {"option_name": 32, "option_value": 64, "addon_name": 64, "fact_value": 64, "fact_label": 60,
           "spec_label": 60, "addon_group": 80, "text_label": 80, "text_placeholder": 80, "title": 255}
+# A title over ASK_SHORTER is sent back to the model once or twice ("too long": the prompt's own target is about
+# 90); the shortest answer that passed every other check is kept when it never gets under (a long title never
+# holds a product: shopify_payload.fit_title cuts it to Google's 150 at publication). 2026-11-10: a GV Tour set
+# came out at 137 characters; Google Merchant Center takes at most 150 and shows about the first 70.
+ASK_SHORTER = {"title": 100}
 SCHEMA = {"type": "object", "additionalProperties": False, "required": ["items"],
           "properties": {"items": {"type": "array", "items": {
               "type": "object", "additionalProperties": False, "required": ["id", "en"],
@@ -424,7 +429,8 @@ def _checked_source(item: dict[str, Any]) -> str:
 
 
 def verify(items: list[dict[str, Any]], text: str) -> tuple[dict[str, str], list[dict[str, Any]]]:
-    """The model's answer -> (accepted English by id, failed items with their problems)."""
+    """The model's answer -> (accepted English by id, failed items with their problems). An item whose only problem
+    is being over ASK_SHORTER carries `usable`: its English, good enough when no shorter one comes."""
     want = {i["id"]: i for i in items}
     try:
         got = json.loads(text)
@@ -461,8 +467,15 @@ def verify(items: list[dict[str, Any]], text: str) -> tuple[dict[str, str], list
         limit = LIMITS.get(item["kind"])
         if limit and len(out) > limit:
             problems.append(f"too long: {len(out)} characters, at most {limit}")
+        usable = None
+        ask = ASK_SHORTER.get(item["kind"])
+        if ask and not problems and len(out) > ask:
+            problems.append(f"too long: {len(out)} characters, at most {ask}")
+            usable = out
         if problems:
             failed[rid] = {"id": rid, "source": item["source"], "en": out or None, "problems": problems}
+            if usable:
+                failed[rid]["usable"] = usable
             accepted.pop(rid, None)
         else:
             accepted[rid] = out
@@ -499,27 +512,48 @@ def _converse(model: Model, prepared: dict[str, Any], pending: list[dict[str, An
               system: str | None = None) -> tuple[dict[str, str], list[dict[str, Any]], int, str]:
     """One conversation with one model: the request, then the fix rounds. -> (accepted English by id, the problems
     left, calls, how it ended: done | refusal | max_tokens). ProviderDown passes up. The model sees the batch's short
-    ids ("1", "2" ...: fewer tokens in and out than the text ids); they are mapped back here."""
+    ids ("1", "2" ...: fewer tokens in and out than the text ids); they are mapped back here.
+    A fix round asked only to shorten titles (every item still asked has a usable answer) never costs the batch:
+    the provider going down, a refusal or a cut answer in it ends the conversation as done, with those answers."""
     real = {str(n): i["id"] for n, i in enumerate(pending, 1)}
     wire = {v: k for k, v in real.items()}
     items = {str(n): {**i, "id": str(n)} for n, i in enumerate(pending, 1)}
     messages: list[dict[str, Any]] = [{"role": "user", "content": request(prepared, en, list(items.values()), dicts)}]
     ask = list(items.values())
     model_en: dict[str, str] = {}
+    usable: dict[str, str] = {}                       # over ASK_SHORTER only: the shortest answer so far
     problems: list[dict[str, Any]] = []
     system = system or _prompt("translate_system.md")
     calls = 0
+
+    def settle() -> None:
+        """A problem whose item has a usable answer is no problem: the shortest good one stands."""
+        for p in [p for p in problems if p["id"] in usable and p["id"] not in model_en]:
+            model_en[p["id"]] = usable[p["id"]]
+            problems.remove(p)
+
     for round_no in range(FIX_ROUNDS + 1):
-        reply = model.send(system, messages)
+        only_length = bool(round_no) and all(i["id"] in usable for i in ask)
+        try:
+            reply = model.send(system, messages)
+        except ProviderDown:
+            if not only_length:
+                raise
+            break                                     # the answers so far stand (settle below)
         calls += 1
         for k, v in reply.usage.items():
             usage[k] = usage.get(k, 0) + v
         if reply.stop_reason in ("refusal", "max_tokens"):
             problems = [{"id": i["id"], "source": i["source"], "en": None, "problems": [str(reply.stop_reason)]}
                         for i in ask]
-            return _back(model_en, problems, real) + (calls, str(reply.stop_reason))
+            settle()
+            return _back(model_en, problems, real) + (calls, "done" if not problems else str(reply.stop_reason))
         accepted, problems = verify(ask, reply.text)
         model_en.update(accepted)
+        for p in problems:
+            text = p.pop("usable", None)
+            if text and len(text) < len(usable.get(p["id"], text + " ")):
+                usable[p["id"]] = text
         merged = {**en, **{real[k]: v for k, v in model_en.items()}}
         for same in collisions(prepared, merged):
             for i in [wire[i] for i in same if i in wire and wire[i] in model_en]:
@@ -532,6 +566,7 @@ def _converse(model: Model, prepared: dict[str, Any], pending: list[dict[str, An
                                                               separators=(",", ":"))
         messages += [{"role": "assistant", "content": reply.content}, {"role": "user", "content": fix}]
         ask = [items[p["id"]] for p in problems if p["id"] in items]
+    settle()                                          # never under the asked length: the shortest good one stands
     return _back(model_en, problems, real) + (calls, "done")
 
 

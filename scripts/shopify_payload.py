@@ -35,11 +35,13 @@ from review_clean import cut_english
 from shop_pricing import Policy, money
 from transform import text_id
 
-VERSION = "payload/9"                         # bump on a change of what this module builds: every product is sent again
+VERSION = "payload/10"                         # bump on a change of what this module builds: every product is sent again
 FALLBACK_OPTION = ("Option", "Standard")      # a product with no option of its own (Shopify's "Title / Default")
 OPTION_VALUE_MAX = 255
 ALT_MAX = 512
 HANDLE_MAX = 200
+TITLE_MAX = 150                               # Google Merchant Center's limit for a product title (title [title])
+SEO_TITLE_MAX = 70                            # the page <title>; about what a search result shows
 REVIEW_ROWS = 20                              # rows in custom.reviews_seo (the site's SEO block); the feed has all
 GALLERY_MIN = 2                               # fewer product photos: buyers' photos fill the gallery (the owner,
 GALLERY_MAX = 5                               # 2026-11-09: a fuller gallery for Google Merchant) up to this many photos
@@ -124,10 +126,50 @@ def title_vendor(product: dict[str, Any], en: "English", vendors: dict[str, str]
         title = f"{brand} {title}"
     elif brand:                                 # the title spells the brand as the vendor does ("Yonex" -> "YONEX"
         title = re.sub(rf"(?<![\w-]){re.escape(brand)}(?![\w-])", lambda _: brand, title, flags=re.I)   # if so)
-    return title, brand
+    fitted = fit_title(title)
+    if brand and brand != tenant and brand.lower() not in fitted.lower():      # the brand stood in the part cut off
+        fitted = fit_title(f"{brand} {fitted}")
+    return fitted, brand
 
 
 _IMPORT_RE = re.compile(r"\s*\(?\b(?:Parallel[- ]Import(?:ed)?|Korea(?:n)? (?:Genuine|Official)(?: Product)?)\b\)?", re.I)
+
+
+# what a cut must not end on: punctuation, a joining word ("Set with", "Bag Made in"; "Plus" is a model's name and
+# a capital "A" a flex, so they stay), and a count whose unit was cut off ("Set 13" of "13 Pieces", "Hybrid 8" of
+# "8 Irons")
+_DANGLING_RE = re.compile(r"(?:[\s,;:/&+–-]+|\s+(?:(?i:with|and|for|in|of|the|an|to|by|or|made|from|on|at|including"
+                          r"|w/?)|a)(?=\s*$|[\s,;:/&+–-]))+$")
+_COUNTED_RE = re.compile(r"(?:pieces?|pcs?|irons?|woods?|hybrids?|wedges?|clubs?|putters?|balls?|dozen|packs?|sets?|"
+                         r"degrees?|inch(?:es)?|in|cm|mm|g|kg|oz|lbs?)\b", re.I)
+FIT_KEEP = 0.6                                # a cut at a comma must keep this share of the limit, else words are cut
+
+
+def fit_title(title: str, limit: int = TITLE_MAX) -> str:
+    """The title within `limit` characters, whole words only. The translation asks the model for a short title
+    (translate.ASK_SHORTER); this is the last guard, for the title that stayed long and for the brand put in front
+    of it. Too long: the facts after a comma go first, from the end (a store title ends on its least important
+    facts: "..., Driver, Hybrid, 7 Irons, Putter"), when that keeps FIT_KEEP of the limit; else whole words from
+    the end. Nothing is left dangling: a joining word, a comma, a count without its unit, an open bracket."""
+    title = re.sub(r"\s+", " ", title or "").strip()
+    if len(title) <= limit:
+        return title
+    out = title
+    while len(out) > limit and ", " in out:
+        out = out.rsplit(", ", 1)[0]
+    if len(out) > limit or len(out) < FIT_KEEP * limit:
+        cut = title[:limit + 1]
+        out = cut[:cut.rfind(" ")] if " " in cut else title[:limit]
+        rest = title[len(out):].lstrip()
+        if _COUNTED_RE.match(rest):                       # "... Set 13" | "Pieces ..."
+            out = re.sub(r"\s+#?\d+(?:\.\d+)?$", "", out)
+    if out.count("(") > out.count(")"):
+        out = out[:out.rfind("(")]
+    while True:
+        shorter = _DANGLING_RE.sub("", out).strip()
+        if shorter == out:
+            return out
+        out = shorter
 
 
 def clean_title(title: str) -> str:
@@ -626,7 +668,7 @@ def product_input(prepared: dict[str, Any], translated: dict[str, Any], placemen
     return {
         "title": title, "handle": handle_override or handle(title, brand), "vendor": brand,
         "productType": product_type, "tags": tags, "status": "ACTIVE", "descriptionHtml": "",
-        "seo": {"title": title[:70], "description": ""},            # the site's <title> (2026-11-09: "Fairward Golf |
+        "seo": {"title": fit_title(title, SEO_TITLE_MAX), "description": ""},            # the site's <title> (2026-11-09: "Fairward Golf |
                                                                      # Fairward Golf" on every product page)
         "productOptions": options, "variants": variants, "files": files, "metafields": metafields,
     }

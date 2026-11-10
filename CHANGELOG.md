@@ -3,6 +3,15 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
+## Unreleased
+
+- Title length (2026-11-10, a 137-character title on the store): the translation sends a title over 100 characters
+  back to the model (`translate.ASK_SHORTER`, the shortest good answer kept when it never gets under), and the
+  publication cuts whole facts, then whole words, to Google Merchant Center's 150 (`shopify_payload.fit_title`);
+  the SEO title is cut at a word, not mid-word. `payload/10`: a whole-shop `publish.py` run would send every published product again; a job sends only its own.
+- Rule for agents (the owner, 2026-11-10): a fix is for future products; whether products already in the store get
+  it too is asked of the owner first (JOB_AGENT.md, Never).
+
 ## 0.11.0 (2026-11-09)
 
 - Publication to Shopify, MVP (the owner, 2026-11-08): `publish.py` (CLI and the job's stage, `job.py new

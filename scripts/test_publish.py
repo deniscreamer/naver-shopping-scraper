@@ -5,6 +5,7 @@ No network.
 """
 import json
 import os
+import re
 
 import pytest
 
@@ -551,3 +552,95 @@ def test_a_struck_out_gallery_photo_publishes_the_product_again(tmp_path):
     prepared, translated, placement = shop.inputs()[0][KEY], shop.inputs()[1][KEY], shop.inputs()[2][KEY]
     a = PB.inputs_digest(prepared, translated, placement, "fairwardgolf", [{"file": "x", "sha256": "1"}])
     assert a != PB.inputs_digest(prepared, translated, placement, "fairwardgolf", [])
+
+# ---- title length (Google Merchant Center: 150 characters; 2026-11-10) -------------------------------------------
+
+def test_fit_title_cuts_whole_facts_then_whole_words():
+    t = "PING GLE2 Yonex Elite Mixed Women's Complete Golf Set, 10 Pieces, Driver, Hybrid, 7 Irons, Putter"
+    assert sp.TITLE_MAX == 150 and sp.SEO_TITLE_MAX == 70                    # Google Merchant Center; the page title
+    assert sp.fit_title(t) == t and sp.fit_title("  A   B ") == "A B"
+    assert sp.fit_title(t, 90) == "PING GLE2 Yonex Elite Mixed Women's Complete Golf Set, 10 Pieces, Driver, Hybrid, 7 Irons"
+    assert sp.fit_title("A B Complete Golf Set, 10 Pieces, Caddie Bag", 40) == "A B Complete Golf Set, 10 Pieces"   # a fact whole
+    assert sp.fit_title(t, 48) == "PING GLE2 Yonex Elite Mixed Women's Complete"                 # words, never "Go"
+    assert sp.fit_title("Callaway REVA Women's Set with Bag and Putter", 30) == "Callaway REVA Women's Set"     # no "with"
+    assert sp.fit_title("X" * 200, 150) == "X" * 150
+    # a comma early in the title does not take the rest with it
+    early = "PING G430 Max, Men's Complete Golf Set 12 Pieces with Caddie Bag and Mallet Putter"
+    assert sp.fit_title(early, 70) == "PING G430 Max, Men's Complete Golf Set 12 Pieces with Caddie Bag"
+    # no count without its unit, no joining word, no open bracket; a model's "Plus" stays
+    assert sp.fit_title("Honma Mutsumi Special 3-Star Women's High-COR Complete Golf Set 13 Pieces", 70) \
+        == "Honma Mutsumi Special 3-Star Women's High-COR Complete Golf Set"
+    assert sp.fit_title("PRGR Sweep M15 Women's Complete Set 12 Pcs With Caddie Bag Made in Japan", 70) \
+        == "PRGR Sweep M15 Women's Complete Set 12 Pcs With Caddie Bag"
+    assert sp.fit_title("PING G440 Bridgestone V300 Mixed Men's Complete Golf Set 2025 11 Pieces", 70) \
+        == "PING G440 Bridgestone V300 Mixed Men's Complete Golf Set 2025"                      # the year stays
+    assert sp.fit_title("TaylorMade Stealth 2 Plus Men's Driver 10.5 Degrees Stiff", 27) == "TaylorMade Stealth 2 Plus"
+    assert sp.fit_title("Callaway REVA Women's Set (Driver, Hybrid, 7 Irons, Putter)", 50) == "Callaway REVA Women's Set"
+    for source in (t + " " + t, early + " and more words to cut here", t.replace(",", "")):
+        for limit in range(20, 160):
+            out = sp.fit_title(source, limit)
+            assert 0 < len(out) <= limit and source.startswith(out) and out == out.strip(" ,")
+            assert source[len(out):len(out) + 1] in ("", " ", ",")                               # a whole word
+
+
+def test_a_long_title_is_published_within_googles_limit():
+    prepared, translated, placement = _product()
+    long = "REVA 2027 Women's Complete Golf Club Set 10 Pieces " + "Graphite Lightweight Steel Black Bag " * 4
+    translated["en"][text_id("title", prepared["product"]["title_ko"])] = long
+    out = _build(prepared, translated, placement)
+    assert out["title"].startswith("Callaway REVA 2027") and len(out["title"]) <= 150            # the brand counted
+    assert out["title"].endswith("Black Bag Graphite Lightweight Steel Black Bag Graphite")      # a whole word, 143
+    assert out["seo"]["title"] == "Callaway REVA 2027 Women's Complete Golf Club Set 10 Pieces Graphite"   # 68, a word
+    assert all(len(f["alt"]) <= sp.ALT_MAX for f in out["files"]) and len(out["handle"]) <= sp.HANDLE_MAX
+    # the brand only in the part cut off: it goes in front after the cut
+    filler = " ".join(f"Part{n:02d}" for n in range(25))
+    translated["en"][text_id("title", prepared["product"]["title_ko"])] = f"Women's Complete Golf Set {filler} by Callaway"
+    title = _build(prepared, translated, placement)["title"]
+    assert title.startswith("Callaway Women's Complete Golf Set Part00") and len(title) <= 150
+
+
+# ---- the real titles of the store (fixtures/titles/golf_50002788.jsonl: the 105 products published 2026-11-10;
+#      title_ko / brand_ko, the translation `en` / `brand_en`, the published `title` / `vendor` / `seo`, and for two
+#      products `en_long`: the 116- and 137-character titles the model wrote before the length rule) -----------------
+
+def _real_titles():
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures", "titles", "golf_50002788.jsonl")
+    with open(path, encoding="utf-8") as f:
+        return [json.loads(line) for line in f if line.strip()]
+
+
+def test_real_titles_are_published_as_recorded():
+    rows = _real_titles()
+    vendors = {r["vendor"].lower(): r["vendor"] for r in rows}             # the brand dictionary's spellings
+    assert len(rows) == 105
+    for r in rows:
+        ids = {text_id("title", r["title_ko"]): r["en"]}
+        if r["brand_ko"]:
+            ids[text_id("brand", r["brand_ko"])] = r["brand_en"]
+        title, vendor = sp.title_vendor({"title_ko": r["title_ko"], "brand_ko": r["brand_ko"]}, sp.English({"en": ids}),
+                                        vendors, "Fairward Golf")
+        assert (title, vendor) == (r["title"], r["vendor"]), r["id"]
+        assert len(title) <= sp.TITLE_MAX and sp.fit_title(title) == title, r["id"]      # none is cut for Google
+        assert sp.fit_title(title, sp.SEO_TITLE_MAX) == r["seo"], r["id"]                # the page title, as recorded
+
+
+def test_real_titles_cut_to_any_length_stay_whole():
+    for r in _real_titles():
+        for source in [r["title"]] + ([r["en_long"]] if r.get("en_long") else []):
+            for limit in range(30, 151, 3):
+                out = sp.fit_title(source, limit)
+                assert 0 < len(out) <= limit and source.startswith(out), (r["id"], limit, out)
+                assert source[len(out):len(out) + 1] in ("", " ", ","), (r["id"], limit, out)        # a whole word
+                assert not re.search(r"(?:[,;:/&+-]|\b(?:with|and|for|in|of|the|to|or|made))$", out, re.I), (limit, out)
+                assert out.count("(") == out.count(")"), (r["id"], limit, out)
+
+
+def test_the_two_real_long_titles_within_googles_limit():
+    long = {r["id"]: r["en_long"] for r in _real_titles() if r.get("en_long")}
+    assert sorted(len(t) for t in long.values()) == [116, 137]
+    assert sp.fit_title(long["8514409092"]) == long["8514409092"]                         # 137: Google takes it whole
+    assert sp.fit_title(long["8514409092"], 100) == ("GV Tour 2026 New Great Victory Complete Golf Club Set for Beginner "
+                                                     "to Intermediate Men's and Women's")
+    assert sp.fit_title(long["8514409092"], 70) == "GV Tour 2026 New Great Victory Complete Golf Club Set for Beginner"
+    assert sp.fit_title(long["6655509590"], 100) == ("Mutsumi Honma Premium Gold 2-Star High-Rebound Women's Mixed "
+                                                     "Complete Set 10 Pcs Driver Wood 7-Piece")
