@@ -5,6 +5,47 @@ version in `extension/manifest.json`.
 
 ## Unreleased
 
+- Publication to Shopify, MVP (the owner, 2026-11-08): `publish.py` (CLI and the job's stage, `job.py new
+  --publish`), `shopify_payload.py` (offline), `shopify_admin.py` (the products app and the files app),
+  `shop_pricing.py` (1 000 KRW = 1 USD up to a whole dollar, cost = price until the margin rule exists). Per product:
+  review photos, avatars and a JSON feed on Shopify Files; gallery photos with alt "<brand> <title> - photo N";
+  productSet create or update by the source key; ACTIVE; the website publication; a ledger
+  `publish/published.jsonl`. Variants on sale are sold without limit (sold-out ones too since 2026-11-09). Metafields:
+  the site's `custom.*` in their formats, ours as `fairwardgolf.source` / `pricing` (product) and `source` /
+  `package` (variant). No description, delivery, facts or compare-at yet. Three test products live.
+- Publication follows the site's strict reader contract (checked on the site 2026-11-08): `custom.optional_addons`
+  holds complimentary choices only, in its exact keys (a paid choice or an extra key hid the block); every add-on,
+  paid ones with USD prices, goes to `fairwardgolf.addons`; a text field gets `maxLength` only when the seller set
+  one; an update deletes the managed metafields a product no longer has.
+- Reviews: a line holding only a tax or shipping cost ("세금 배송10", "관세 10만 배송비 2만") is cut; so are a line
+  about dealing with the seller, the surprise that it came fast, and a service word left alone ("꼼꼼하게").
+- The 100-product pilot (2026-11-09): every store product deleted first (a snapshot kept), 100 golf sets published
+  through `job.py new --publish` (50 men's, 50 women's queries; no paid variant or add-on: a job without `--paid`
+  now also prepares free-only, `run_transform.run(free_only=True)`). Checked product by product and by four review
+  agents; fixed from their patterns:
+  - reviews: the seller's service and advice, "I'll come back", what the seller sent, order dates and delivery
+    time, weather and holidays, packing (bubble wrap, a torn box), discount and points as the reason to buy, a
+    line left on a particle after a cut, `*^^*`;
+  - titles: no loft / flex / shaft codes, no club list, no usage or gift words in the prompt; `clean_title` (a
+    doubled word or code, "(Parallel Import)"); model spellings in the golf brief (Gloire, X HOT, EFIL-8);
+  - vendor: a second brand cut, the brand dictionary's spelling, new vendors remembered within a run;
+  - options: a one-variant product named by its remaining choice; seller numbering out of values; option names
+    by the kind of choice in the prompt;
+  - add-ons: gift words out; a required free choice of a one-variant product to `custom.required_selections`;
+  - a title's gender beats a unisex 성별 row; package weight read from a description image's range; SEO title;
+    a review ending on "and" closed; one wording for text-field labels.
+- The owner's answers after the pilot (2026-11-09): review sentences about the price or value and ones naming
+  another platform or a buying agent go (on the English, `review_clean.cut_english`); photo-only reviews get a
+  short neutral line; a product with under 2 photos gets buyers' photos in its gallery (ranked: several photos first, useful reviews, no purchase snapshots; 5 photos in all); every variant buyable
+  (sold out on Naver too, its state kept in the metafield); a "1+1" repeated option at one price is one option;
+  every sales channel; a brand keeps the dictionary's case everywhere (vendor, title, new dictionary entries).
+- Publication uploads in batches: review files and gallery photos staged in parallel, created and polled together
+  (30 photos: 8 s instead of ~2 min); Shopify's throttling kept (GraphQL calls one at a time, waits on THROTTLED /
+  429 / 5xx, the bucket uploads retried).
+- A 10-product job published live (2026-11-09) and checked product by product; fixed on the way: " / " in an
+  option name, the vendor's company form and spelling, the brand missing from a title, "AS가능" in titles,
+  "Select" in option names, rating-only review rows; `publish.py --rehandle`.
+- Titles are translated as the store's names: brand first, no shop, dispatch or distributor words.
 - Reviews sanitized in the transform (`review_clean.py`, the owner 2026-11-08; `prepared/4`).
   - **Kept:** every review and its score; only sponsored ones are dropped.
   - **Cut** as whole clauses that never cross a product word: shipping, customs, Korean prices, the seller and

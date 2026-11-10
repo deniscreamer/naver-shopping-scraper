@@ -37,7 +37,9 @@ Google Chrome (a real window opens). Docker/Linux is archived in
 3. `scripts/` talks to the server over HTTP only and never imports server modules. Other fetches:
    photo files the API linked, from Naver's image CDN (`scripts/naver_images.py`); the description images the
    API linked, from any public HTTPS host the seller uses (`scripts/description_images.py`, the owner
-   2026-11-07); a read of our own Shopify store's catalog (`scripts/shopify_catalog.py`, Admin API, read only); and
+   2026-11-07); a read of our own Shopify store's catalog (`scripts/shopify_catalog.py`, Admin API, read only); the publication to
+   that store (`scripts/publish.py` through `scripts/shopify_admin.py`, the owner 2026-11-08: the only code that writes
+   to Shopify); and
    the Anthropic API for translation, OpenAI as its fallback (`scripts/translate.py`, the owner 2026-11-08).
 4. Tests never hit the network.
    API answer types live in `scripts/naver_types.py`; a shape change updates type + fixture + client method (R-TYPE).

@@ -275,3 +275,32 @@ def test_a_job_without_translation_never_reads_translated(tmp_path, monkeypatch)
     (tmp_path / "shops" / SHOP / "collected").mkdir()
     monkeypatch.setattr("run_transform.latest_lines", lambda *a, **k: {k: (None, None, {}) for k in KEYS})
     assert J.stages(job)[KEYS[0]] == "prepared"
+
+
+# ---- the publish stage (offline: fake Shopify clients) -------------------------------------------------------
+
+def test_a_publishing_job_reads_the_ledger_and_publishes_one(tmp_path, monkeypatch):
+    import publish as PB
+    from test_publish import FakeFiles, FakeProducts
+    job = _translating_job(tmp_path, {KEYS[0]: "translated", KEYS[1]: "translated", KEYS[2]: "held"})
+    job.meta["publish"] = True
+    job.save_meta()
+    assert job.final == "published"
+    shop = tmp_path / "shops" / SHOP
+    (shop / "collected").mkdir()
+    monkeypatch.setattr("run_transform.latest_lines", lambda *a, **k: {k: (None, None, {}) for k in KEYS})
+    (shop / "publish").mkdir()
+    (shop / "publish" / "published.jsonl").write_text(json.dumps({"key": KEYS[0], "status": "published"}) + "\n")
+    got = J.stages(job)
+    assert got[KEYS[0]] == "published" and got[KEYS[1]] == "translated"
+    assert J.next_key(job, got) == KEYS[1]
+    calls = []
+    monkeypatch.setattr(PB, "clients", lambda shop_name: (FakeProducts(), FakeFiles(), {}))
+    monkeypatch.setattr(PB.Shop, "ready", lambda self: [KEYS[1]])
+    monkeypatch.setattr(PB, "publish_one", lambda shop, key, *a, **k: calls.append(key) or
+                        {"key": key, "status": "published", "handle": "h", "product_id": "gid://shopify/Product/1"})
+    monkeypatch.setattr("placement.run", lambda *a, **k: None)
+    assert J.publish_step(job, {}, KEYS[1]).startswith("published h") and calls == [KEYS[1]]
+    assert job.events()[-1]["event"] == "published"
+    what = J.publish_step(job, {}, KEYS[2])                     # not ready (held): closed, not sent
+    assert what.startswith("not ready") and calls == [KEYS[1]] and job.events()[-1]["event"] == "not_taken"

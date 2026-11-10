@@ -2,8 +2,9 @@
 
 A job takes one listing and works product by product: collect -> description images (OCR) -> prepare (reviews
 sanitized) -> translate (the model API, `translate.py`; a job made with `new --no-translate`, or before 2026-11-08,
-stops at prepare), then the next product. It resumes where it stopped. Placement (`placement.py <shop>`, the shop's
-sections) runs on the whole shop after the job; publication (not built yet) goes straight to ACTIVE after it. Code and
+stops at prepare) -> with `new --publish`: placement (the whole shop, offline) and publication of this product
+(`publish.py`: Shopify, ACTIVE, every sales channel), then the next product. It resumes where it stopped. Without
+`--publish`, placement (`placement.py <shop>`) and `publish.py <shop>` run on the whole shop after the job. Code and
 files: `scripts/job.py` docstring; the stages' own docs: [README.md](README.md).
 
 ## Before
@@ -34,6 +35,13 @@ translate is `failed` (stage translate, the problems in the event) and is tried 
 provider down stops the run (`run` again resumes; nothing is asked twice). A line `dictionaries: a backup is due`
 (at done and in `status`): tell the owner; `translation_dicts.py status` lists the entries, the owner backs them up.
 
+Paid choices: a job made without `--paid` (the owner's pilot, 2026-11-09) collects and prepares only the variants
+and add-ons that cost nothing extra; `--paid` takes them too.
+
+Publication per product (`new --publish`): the done line ends with `published <handle> <admin link>`. A product
+Shopify refused (userErrors, a file not ready) is `failed` (stage publish) and tried again; one placement could not
+place, or held, is `not_taken` with the reason (tell the owner); a refused token or a missing scope stops the run.
+
 ## What stops, and who acts
 
 | Seen | What the job did | You |
@@ -62,7 +70,7 @@ pick a section for them. A new category or split: [PLACEMENT.md](PLACEMENT.md).
 - Solve, answer or screenshot a captcha; type into a login page; open a product URL directly; forge or copy page
   tokens.
 - Use browser, extension or computer-use tools on Naver or Shopify pages during a job; write to Shopify by any
-  other way than the (future) publish stage.
+  other way than the publish stage (`job.py new --publish`, `publish.py`).
 - Read `.env*` or credential files; print secrets.
 - Run `--force`, `deferred_log.py allow`, or edit the job's files by hand.
 - Invent a category value, a vendor or a price rule: ask the owner.

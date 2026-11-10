@@ -143,6 +143,18 @@ def check_shop(live):
                                                                   if live else " (credentials file found)"))
     except (ShopNotConfigured, CatalogError) as e:
         report("WARN", "Shopify shop check", f"{e} (only example_99 needs it)")
+        return
+    # publication (publish.py, job.py new --publish): the two writing apps of the same credentials file
+    from shopify_admin import FilesAdmin, ProductsAdmin
+    for name, client in (("products app, write_products", ProductsAdmin), ("files app, write_files", FilesAdmin)):
+        try:
+            admin = client(store)
+            if live:
+                admin.check_shop()               # mints the app's token and checks its scope
+            report("OK", f"Shopify publication ({name})", "token minted, scope granted" if live
+                   else f"{', '.join(client.NAMES)} found")
+        except (ShopNotConfigured, CatalogError) as e:
+            report("WARN", f"Shopify publication ({name})", f"{e} (only publish.py / job.py --publish need it)")
 
 
 # ---- server -------------------------------------------------------------------------------

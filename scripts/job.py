@@ -8,7 +8,7 @@ it, the product tab of the previous read is closed; a login gate is reset from n
 owner as always.
 
     .venv/bin/python scripts/job.py new --query "남성 골프채 풀세트" --category 50002788 [--count 40] [--batches 2]
-                                        [--paid] [--exclude-known] [--shops-root DIR]
+                                        [--paid] [--exclude-known] [--shops-root DIR] [--publish]
     .venv/bin/python scripts/job.py run [--job ID] [--items N]
     .venv/bin/python scripts/job.py status [--job ID] [--json]
 
@@ -26,7 +26,10 @@ nothing to translate) in translation/translated.jsonl. A job created with transl
 2026-11-08; `--no-translate` leaves it out) takes each product to translated: right after it is prepared, through
 translate.py (only that product goes to the model; the chain and its fallback as there). A product the model could
 not translate is `failed` (tried again after the fresh ones, MAX_FAILS times); every provider down stops the run
-(`run` again resumes). Published is not built; placed is placement.py, run on the whole shop before publication.
+(`run` again resumes). A job made with `--publish` takes each translated product on: placement.py over the
+whole shop (offline), then publish.py for this product (Shopify, ACTIVE); published = its key in
+publish/published.jsonl. A product not ready to publish (held, not placed) is `not_taken`; a refused write is
+`failed` (tried again); a refused token or scope stops the run.
 
 `new --count N` reads the listings deeper (batches doubled, up to MAX_BATCHES; a listing is read from the top
 every time) until N products pass the screen; when `run` uses up the snapshot with fewer than N prepared, it
@@ -57,7 +60,7 @@ SCRIPTS = os.path.dirname(os.path.abspath(__file__))
 JOBS_ROOT = os.path.join(SCRIPTS, "output", "jobs")
 STAGES = ("collected", "images", "prepared", "translated", "placed", "published")   # placed: placement.py, run on
                                                                                     # the shop before publication
-BUILT = ("collected", "images", "prepared", "translated")
+BUILT = ("collected", "images", "prepared", "translated", "published")
 BUSY_WAIT_S, BUSY_TRIES = 30, 12
 ERROR_WAIT_S, ERROR_TRIES = 120, 2
 MAX_FAILS = 2
@@ -87,6 +90,8 @@ class Job:
     def final(self) -> str:
         """The stage a product of this job is taken to: translated, or prepared for a job without translation (and
         for a job created before translation was built)."""
+        if self.meta.get("publish"):
+            return "published"
         return "translated" if self.meta.get("translate") else "prepared"
 
     @property
@@ -164,6 +169,10 @@ def stages(job: Job) -> dict[str, str]:
         with open(path, encoding="utf-8") as f:
             rows = [json.loads(x) for x in f if x.strip()]
         translated = {r["key"] for r in rows if r.get("status") in ("translated", "held")}
+    published = set()
+    if job.final == "published":
+        from publish import Shop
+        published = set(Shop(job.shop, job.shops_root).ledger())
     rules = rules_for(job.shop)
     out = {}
     for row in job.rows():
@@ -171,7 +180,8 @@ def stages(job: Job) -> dict[str, str]:
         if key not in latest:
             continue
         if key in prepared:                         # prepared also with the images' note (failed / partial)
-            out[key] = "translated" if key in translated and job.final == "translated" else "prepared"
+            out[key] = ("published" if key in published else "translated") if key in translated and \
+                job.final in ("translated", "published") else "prepared"
             continue
         out[key] = "collected"
         line = latest[key][2]
@@ -286,7 +296,9 @@ def cmd_new(args: argparse.Namespace) -> int:
     meta = {"shop": store.id.value, "category": args.category, "queries": args.query, "paid": args.paid,
             "reviews": args.reviews, "shops_root": shops_root, "created_at": _now(), "count": args.count,
             "batches": batches, "listings": listings, "screen": counts, "excluded_known": len(known),
-            "exclude_known": args.exclude_known, "translate": not args.no_translate}
+            "exclude_known": args.exclude_known, "translate": not args.no_translate or args.publish,
+            "publish": args.publish,
+            "free_only": not args.paid}                   # 2026-11-09: no paid variant / add-on in the transform either
     with open(os.path.join(folder, "job.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=1)
     with open(os.path.join(folder, "listing.jsonl"), "w", encoding="utf-8") as f:
@@ -446,6 +458,8 @@ def one(job: Job, ctx: dict, key: str, stage_now: str | None, n: int = 0) -> str
         kept = keep_line(job, {"key": key, **outcome.data}, tmp)
         shutil.rmtree(tmp, ignore_errors=True)
         job.log(key, "collected", run=os.path.basename(kept), seconds=round(time.monotonic() - t0))
+    if stage_now == "translated":                               # only the publication is left
+        return publish_step(job, ctx, key, n)
     t1 = time.monotonic()
     if stage_now in (None, "collected"):
         job.beat(key=key, n=n, stage="images", since=_now())
@@ -462,7 +476,7 @@ def one(job: Job, ctx: dict, key: str, stage_now: str | None, n: int = 0) -> str
     if stage_now != "prepared":
         job.beat(key=key, n=n, stage="prepare", since=_now())
         try:
-            run_transform.run(job.shop, None, job.shops_root)
+            run_transform.run(job.shop, None, job.shops_root, free_only=bool(job.meta.get("free_only")))
         except Exception as e:                                   # a transform defect: stop, never loop on it
             raise Stop(f"prepare: {type(e).__name__}: {e}") from None
     done = {p["key"]: p for p in _prepared(job)}
@@ -473,11 +487,51 @@ def one(job: Job, ctx: dict, key: str, stage_now: str | None, n: int = 0) -> str
                 images_s=round(t2 - t1), prepare_s=round(t3 - t2))
     what = f"prepared: {p and p['status']}" + (f" {[h['code'] for h in p['held']]}" if p and p["held"] else "")
     times = f"collect {round(t1 - t0)} s, images {round(t2 - t1)} s, prepare {round(t3 - t2)} s"
-    if job.final == "translated" and p:
+    if job.final in ("translated", "published") and p:
         job.beat(key=key, n=n, stage="translate", since=_now())
-        what += "; " + translate_one(job, ctx, key)
+        translated = translate_one(job, ctx, key)
+        what += "; " + translated
         times += f", translate {round(time.monotonic() - t3)} s"
+        if job.final == "published" and translated.startswith("translated ("):
+            t4 = time.monotonic()
+            what += "; " + publish_step(job, ctx, key, n)
+            times += f", publish {round(time.monotonic() - t4)} s"
     return f"{what} ({times})"
+
+
+def publish_step(job: Job, ctx: dict, key: str, n: int = 0) -> str:
+    """Placement (the whole shop, offline) and then this product to Shopify (publish.py). -> what happened.
+    A product placement cannot place or a refused write is `failed` (tried again later); a token or scope problem
+    stops the run."""
+    import placement
+    import publish
+    import shopify_payload
+    from shopify_catalog import CatalogError, ShopNotConfigured
+    job.beat(key=key, n=n, stage="publish", since=_now())
+    placement.run(job.shop, job.shops_root)
+    shop = publish.Shop(job.shop, job.shops_root)
+    if key not in shop.ready():                                 # held by the transform or the translation, or
+        placed = publish._last(os.path.join(shop.dir, "placement", "placements.jsonl")).get(key) or {}
+        reason = f"not ready to publish (placement {placed.get('status')}: {placed.get('reason')})"
+        job.log(key, "not_taken", reason=reason[:300])          # not placed: closed, the owner decides
+        return reason
+    try:
+        if "publisher" not in ctx:
+            ctx["publisher"] = publish.clients(job.shop)
+        products, files, ids = ctx["publisher"]
+        row = publish.publish_one(shop, key, products, files, ids)
+    except ShopNotConfigured as e:
+        raise Stop(f"publish: {e}") from None
+    except (shopify_payload.Untranslated, shopify_payload.PayloadError) as e:
+        job.log(key, "failed", stage="publish", reason=f"{type(e).__name__}: {e}"[:300])
+        return f"publish held: {e}"[:200]
+    except CatalogError as e:
+        if "token" in str(e) or "401" in str(e) or "lacks" in str(e):
+            raise Stop(f"publish: {e}") from None
+        job.log(key, "failed", stage="publish", reason=str(e)[:300])
+        return f"publish failed: {e}"[:200]
+    job.log(key, "published", product_id=row.get("product_id"), handle=row.get("handle"), status=row["status"])
+    return f"published {row.get('handle')} {row.get('admin_url') or ''}".strip()
 
 
 def translate_one(job: Job, ctx: dict, key: str) -> str:
@@ -521,7 +575,7 @@ def cmd_run(args: argparse.Namespace) -> int:
         return 2
     ctx = {"api": NaverApiClient(), "store": store, "table": load_table(), "catalog": ShopCatalog(store),
            "guard": CollectGuard(DeferredLog(store.id.value))}
-    if job.final == "translated":
+    if job.final in ("translated", "published"):
         import translate
         try:
             ctx["translator"] = translate.build_chain(translate.keys_from_env())
@@ -636,7 +690,7 @@ def cmd_status(args: argparse.Namespace) -> int:
 
 def _dictionaries_reminder(job: Job) -> None:
     """A job that translates grows the live dictionaries: one line when their backup is due."""
-    if job.final == "translated":
+    if job.final in ("translated", "published"):
         from translation_dicts import reminder
         line = reminder()
         if line:
@@ -653,11 +707,14 @@ def main(argv: list[str] | None = None) -> int:
     n.add_argument("--count", type=int, default=0, help="keep the first N screened products (0: all)")
     n.add_argument("--batches", type=int, default=2, help="listing batches of ~50 per query to start with; doubled "
                    "(up to MAX_BATCHES) while fewer than --count products pass the screen")
-    n.add_argument("--paid", action="store_true", help="paid variants too")
+    n.add_argument("--paid", action="store_true", help="paid variants (and the category's paid add-ons) too; "
+                   "without it the job collects and prepares only what costs nothing extra")
     n.add_argument("--reviews", type=int, default=20)
     n.add_argument("--exclude-known", action="store_true", help="leave out products collected before anywhere")
     n.add_argument("--shops-root", help="the shops folder (default scripts/output/shops)")
     n.add_argument("--no-translate", action="store_true", help="stop each product at prepared (no model API)")
+    n.add_argument("--publish", action="store_true", help="take each product on to Shopify (ACTIVE) after "
+                   "translation: placement, then publish.py")
     r = sub.add_parser("run")
     r.add_argument("--job")
     r.add_argument("--items", type=int, default=0, help="stop after N products (0: to the end)")

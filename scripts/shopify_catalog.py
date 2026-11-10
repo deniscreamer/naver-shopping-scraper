@@ -109,7 +109,8 @@ def _git_ignored(path: str) -> bool:
     return b"not a git repository" in r.stderr.lower()
 
 
-def read_credentials(path: str, ignored: Callable[[str], bool] = _git_ignored) -> tuple[str, str]:
+def read_credentials(path: str, ignored: Callable[[str], bool] = _git_ignored,
+                     names: tuple[str, str] = (CLIENT_ID, CLIENT_SECRET)) -> tuple[str, str]:
     """(client id, client secret) from a KEY=value file that is 0600 and ignored by git. Never into os.environ.
     A symlink is checked as the file it points to (mode and git both)."""
     path = os.path.realpath(os.path.expanduser(path))
@@ -133,9 +134,9 @@ def read_credentials(path: str, ignored: Callable[[str], bool] = _git_ignored) -
             if len(value) >= 2 and value[0] == value[-1] and value[0] in "'\"":
                 value = value[1:-1]
             values[key.strip().removeprefix("export ").strip()] = value
-    client_id, secret = values.get(CLIENT_ID, ""), values.get(CLIENT_SECRET, "")
+    client_id, secret = values.get(names[0], ""), values.get(names[1], "")
     if not client_id or not secret:
-        raise ShopNotConfigured(f"credentials file {path} lacks {CLIENT_ID} / {CLIENT_SECRET}")
+        raise ShopNotConfigured(f"credentials file {path} lacks {names[0]} / {names[1]}")
     return client_id, secret
 
 
@@ -210,7 +211,12 @@ def _cost_wait(body: dict[str, Any]) -> float | None:
 
 
 class ShopCatalog:
-    """One store's catalog of source keys, read through the Admin GraphQL API (queries only)."""
+    """One store's catalog of source keys, read through the Admin GraphQL API (queries only). The writing clients of
+    shopify_admin.py subclass it with their own app keys, scope and WRITES = True."""
+    NAMES = (CLIENT_ID, CLIENT_SECRET)            # the app's keys in the credentials file
+    SCOPE = SCOPE                                 # the scope a new token must have
+    PROBE = True                                  # a new token must read products(first: 1)
+    WRITES = False                                # a mutation is refused
 
     def __init__(self, store: Store, session: requests.Session | None = None,
                  clock: Callable[[], float] = time.time, sleep: Callable[[float], None] = time.sleep,
@@ -226,7 +232,7 @@ class ShopCatalog:
             raise ShopNotConfigured(f"{store.id.value}: {self.shop.credentials_env} is not set; put the path of the "
                                     f"store app's credentials file ({CLIENT_ID}, {CLIENT_SECRET}) in .env")
         self._session = session or _session()
-        self.credentials = Credentials(self.shop.domain, *read_credentials(path, ignored),
+        self.credentials = Credentials(self.shop.domain, *read_credentials(path, ignored, self.NAMES),
                                        session=self._session, clock=wall_clock)
         self._clock, self._sleep = clock, sleep
         self._keys: dict[str, str] | None = None
@@ -252,7 +258,7 @@ class ShopCatalog:
         return token
 
     def _post(self, query: str, variables: dict[str, Any] | None = None, token: str | None = None) -> dict[str, Any]:
-        if _MUTATION_RE.search(query):
+        if not self.WRITES and _MUTATION_RE.search(query):
             raise CatalogError("shopify_catalog reads only: a mutation is refused")
         try:
             return self._send(query, variables, token or self._token())
@@ -306,9 +312,9 @@ class ShopCatalog:
             raise CatalogError(f"{self.store.id.value}: the API answered for {shop.get('myshopifyDomain')} "
                                f"({shop.get('id')}), not {self.shop.domain} ({self.shop.shop_id})")
         scopes = {s.get("handle") for s in ((data.get("currentAppInstallation") or {}).get("accessScopes") or [])}
-        if SCOPE not in scopes:
-            raise CatalogError(f"{self.store.id.value}: the app's token lacks {SCOPE}")
-        if "products" not in self._post(PROBE_QUERY, token=token):
+        if self.SCOPE not in scopes:
+            raise CatalogError(f"{self.store.id.value}: the app's token lacks {self.SCOPE}")
+        if self.PROBE and "products" not in self._post(PROBE_QUERY, token=token):
             raise CatalogError(f"{self.store.id.value}: products(first: 1) gave no products field")
 
     def check_shop(self) -> None:

@@ -4,7 +4,7 @@ Client-side consumers of the Naver Shopping API. Everything here talks to a
 running server over HTTP only, plus two other fetches: the photo files the API
 linked, from Naver's image CDN (`naver_images.py`, see Product photos), and a
 read-only look at our own Shopify store's catalog (`shopify_catalog.py`, see
-The listing screen and the shop check).
+The listing screen and the shop check), and the publication to that store (`publish.py`, see Publication).
 
 ## Boundary
 
@@ -34,6 +34,8 @@ The listing screen and the shop check).
 | `shop_stores.py` | Our Shopify stores (`StoreId` enum + publisher / site + Shopify values), picked by `SHOP_STORE` |
 | `listing_filter.py`, `listing_exclusions.json` | The listing screen: which rows to open, a reason code for each left out (rental stop words from the naver-harvester) |
 | `shopify_catalog.py` | The "already in the shop" check: every product's source key from the store's Admin API (read only) |
+| `publish.py`, `shopify_payload.py`, `shopify_admin.py`, `shop_pricing.py` | Publication: prepared + translated + placed -> the store (productSet, photos, reviews' files, ACTIVE, the website); the payload built offline; the two writing apps; the price rule (1 000 KRW = 1 USD up to a dollar, the margin hook). See Publication |
+| `test_publish.py` | Offline tests for the price rule, the payload and publish.py (fake Shopify clients) |
 | `deferred_log.py` | The shop's journal of deferred products (append-only); CLI `list` / `allow <key> --by` |
 | `collect_guard.py` | The run rules around one product: one retry, then deferred; stop on a wall; stop on a repeated defect |
 | `package_measures.py`, `category_measures.json` | Five shipping fields per variant: the seller's values, else the operator's category averages |
@@ -1046,12 +1048,113 @@ out["job"]["status"], out["job"]["stop"], len(out["results"])
 `ApiError` 409: another listing runs (one at a time); 503: the browser extension is not connected. A stopped job
 still returns its rows. Contract: server/docs/ENDPOINTS.md "Listing jobs".
 
+## Publication (`publish.py`, MVP, the owner 2026-11-08)
+
+```sh
+.venv/bin/python scripts/publish.py fairwardgolf [--only <key>] [--force] [--dry-run] [--shops-root DIR]
+```
+
+A product goes to the store when it is `ready` (transform), `translated` and `placed`; a job made with
+`job.py new --publish` does it for each product right after translation (placement of the whole shop, offline,
+then this one product). Per product: the reviews' photos and avatars to Shopify Files (the files app, once per
+file, named by its hash, `publish/files.jsonl`), the review rows as a JSON feed file there, the gallery photos as
+staged uploads attached in `productSet` (create, or update the product with its source key), ACTIVE, published
+to every sales channel of the store (the owner, 2026-11-09); one line in `shops/<shop>/publish/published.jsonl` (product id, handle,
+photos by hash, admin link). Unchanged inputs: skipped; on an update photos already there are kept by hash, and a
+managed metafield the product no longer has is deleted (`shopify_payload.MANAGED`; productSet never removes one).
+`--dry-run` writes the payload to `publish/payloads/` and sends nothing. `shopify_payload.VERSION` is in the
+digest: a change of what the builder makes sends every product again.
+
+The owner's rules (`shopify_payload.py`):
+- **Title, vendor**: the translation's (the title prompt makes the store name: brand first, no shop, distributor or
+  after-sales words, no loft / flex / shaft codes, no club list, no usage or gift words). The vendor loses a
+  maker's company form and a second brand ("Prokenex / SJG Co., Ltd." -> "Prokenex", "Mizuno, Hillcreek" ->
+  "Mizuno") and takes the brand dictionary's spelling, compared without case (the owner, 2026-11-09: PING stays
+  PING, Yonex stays Yonex, whatever the case it came in; the dictionary keeps one spelling per brand), else the
+  shop's (not the capitals one when the shop has both; a run remembers each new vendor for its next products); the
+  title spells the brand as the vendor; a title without its brand gets it in front (not the tenant's name). Handle from the title (ASCII, the brand in front; a taken handle
+  gets `-2`, `-3`; an update keeps the shop's handle, `--rehandle` sets the new one with a redirect).
+- **Price**: cost = the Naver KRW at 1 000 KRW = 1 USD rounded UP to a whole dollar; price = cost through
+  `shop_pricing.Policy.margin` (none yet: price = cost). No compare-at price. Add-ons the same.
+- **Buyable**: every variant is untracked and sold without limit (CONTINUE), one sold out on Naver too (the owner,
+  2026-11-09: buying opens on the site later); the variant's `fairwardgolf.source.available` keeps Naver's state.
+  Weight: the package's central weight in grams.
+- **"1+1" options**: an option with the same English name and values as an earlier one, which no price depends on,
+  is dropped (one variant per choice of the others, the one whose repeat equals the option); a repeat that changes
+  the price stays an option of its own ("Flex", "Flex 2").
+- **Options**: the translation's, without a leading "Select" and with " / " made "/" (Shopify refuses it in a name),
+  values without a seller's numbering ("01.", "SPEC"); two values with one English get "(2)". A product with one
+  variant is named by the seller's one remaining choice (a constant option axis the transform keeps as a fact:
+  "Set: 12 Pcs + Caddie Bag"), else `Option: Standard` (`FALLBACK_OPTION`); a gift line is not a choice.
+- **Title clean-up** (`clean_title`): "(Parallel Import)", a word written twice in a row, a model code written
+  twice. SEO title = the title (the site's page `<title>`).
+- **Add-ons**: gift words out of the English labels ("Free", "Gift", "Default Selection"); a required free group
+  of a one-variant product goes to `custom.required_selections` (product-required-selections/v1, the site's field
+  for a choice the buyer must make; "do not add" is no value there). A required choice of a product with several
+  variants stays in `custom.optional_addons`: the site's contract allows `required_selections` on one-variant
+  products only, so showing it as required is the site's change (the owner, 2026-11-09).
+- **Reviews**: a review the cleaning cut mid-sentence and the English ends on "and" is closed ("Lightweight.").
+  Text-field labels take one wording ("(e.g., John Doe)").
+- **Reviews**: a sentence of the English about the price or the value, or naming another platform or a buying
+  agent, goes (`review_clean.cut_english`, the owner 2026-11-09); a review with no text left and no photo is not a
+  row (its score is in the rating); one with photos only gets a short neutral line (`PHOTO_ONLY_TEXTS`, picked by
+  the review's id); a row Naver gave without an id, score or date is left out (one bad row empties the site's
+  whole feed).
+- **Photos**: alt "<brand> <title> - photo N" (the brand once when the title starts with it). A product with fewer
+  than 2 photos of its own gets buyers' photos after them, 5 photos in all at most (the owner 2026-11-09, a fuller
+  gallery for Google Merchant; never from the description images). `review_rank` orders the reviews rated 4-5:
+  the review's usefulness (`text_quality`, Naver's "helpful" votes `likes`, a full text over a short one), several
+  photos first (the owner), lower for a review that told of the purchase (seller, packing, shipping: its photo is
+  often the box); a review with one photo and no product words, or about the purchase only, is passed over.
+  `review_gallery` takes one photo per review a round (the review's first photo the gallery may show), two rounds;
+  never a photo shown already (same hash), one under 400 px, a strip (over 2.2:1) or one mostly grass-green (over
+  15%: a course, a range, a screen-golf room). Measured on the pilot (judging agents on 80 picks): the text tells
+  little of what a photo shows, so `publish/gallery_skip.txt` (sha256 per line, "# why") strikes out a photo a
+  person saw was wrong (boxes, a shop, people); a photo check by a vision model was offered and declined (the owner,
+  2026-11-09).
+- **Not sent**: descriptionHtml (empty: a later stage), HS / origin codes, delivery data, facts, gender (placement
+  uses it for the sections), compare-at.
+
+Metafields. Storefront (`custom.*`, the site reads them, the harvester's formats kept): `review` (rating),
+`rating_count`, `reviews_seo` (up to 20 rows: id, customer {name, avatarUrl}, rating, title "", description,
+images, verified false, source, createdAt), `reviews_feed_url` (the JSON feed, every row, `date` instead of
+`createdAt`), `personalization_fields` (product-personalization/v1; a field without an English label is left out,
+`maxLength` only when the seller set one), `optional_addons` (product-optional-addons/v1: complimentary choices
+only, `{key, label, priceKrw: 0}` and nothing more). The site reads these through strict schemas (naver-harvester
+`store-scripts/shared/src/product-*.ts`, `shared/product-configuration/limits.ts`, `shared/reviews/`): an extra key
+or a paid choice hides the whole block (seen on the site 2026-11-08). Ours (`fairwardgolf.*`, not on the storefront, one JSON per
+concern with a `schemaVersion`; a new value is a new field there, a new concern a new key):
+
+| Owner | Key | What |
+|---|---|---|
+| product | `source_offer_id` | The source key (the shop check and the update find the product by it) |
+| product | `source_url` | The Naver page, without its query |
+| product | `source` (json) | platform, key, url, channel / product / category ids, run, Korean title and brand, `priceKrw`, `originalPriceKrw` |
+| product | `pricing` (json) | How the prices were made: version, `krwPerUsd`, rounding, margin |
+| product | `addons` (json) | Every add-on, paid ones too: group (`required`), choices with `priceKrw`, `costUsd`, `priceUsd`, `free`; ready for the day the site sells paid add-ons |
+| variant | `source` (json) | Naver variant id, source id, Korean options, `priceKrw`, `costUsd`, `priceUsd`, `available` |
+| variant | `package` (json) | The five shipping fields as the transform made them (value range, `confidence`, source, reliability) |
+
+The harvester's other keys (`custom.measurements`, `*_confidence_level`, `fairwardgolf.source_variants`,
+`source_pricing`, `catalog_*`, `enrichment_state` ...) are not written; their definitions stay for its 60 products.
+
+Access: `ProductsAdmin` (PRODUCTS_API_*, write_products) and `FilesAdmin` (ADMIN_API_*, write_files), both keys in
+the store's credentials file, tokens minted per run as in the shop check. `ShopCatalog` stays read-only.
+
+Uploads in batches (2026-11-09): a product's new review photos and avatars, and its new gallery photos, go at once:
+names searched 10 a query, one `stagedUploadsCreate` and one `fileCreate` per 50 files, the files sent to the
+staging bucket 6 at a time (each retried on 429 / 5xx), one `nodes()` poll for the whole batch. The GraphQL calls
+stay one at a time: Shopify limits by query cost per app and store (this store: a 2 000-point bucket, 100 points a
+second back; a search of 10 names costs ~5, a mutation ~10), and a THROTTLED answer, a 429 or a 5xx waits what
+Shopify says and repeats (`shopify_catalog._send`). Measured live: 30 photos in 8.3 s (0.28 s a file, 7 GraphQL
+calls) against 4.0 s a file one by one (5 calls a file).
+
 ## Shopify roadmap
 
-This is a design note. The code so far: the read-only check of what a store already has (`shopify_catalog.py`),
+This is a design note, older than the publication above. The code so far: the read-only check of what a store already has (`shopify_catalog.py`),
 the transform to prepared products (see Transform) and the placement into the shop's sections (`placement.py`, see
 Placement) and the translation (`translate.py`, see Translation: `translation/translated.jsonl`, English by text
-id); publication joins them.
+id); publication joins them (`publish.py`, see Publication).
 
 The pipeline: collection (example_99) -> kept runs (`keep_run.py`) -> prepared products (`run_transform.py`:
 prices in USD, options, SKUs, attributes, spec rows, text fields, free add-ons, reviews, photo files) ->

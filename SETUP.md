@@ -68,7 +68,10 @@ For the full collection (`scripts/example_99_full_details.py`) two things come f
   `scripts/shop_stores.py` names (`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`), and `chmod 600 .env`. No token is stored: one
   is minted per run. `scripts/check_setup.py --live` then mints one and checks the shop, `read_products` and a first
   product. A store without Shopify values in `shop_stores.py` waits for the operator's domain, shop id, API version
-  and namespace;
+  and namespace. Publication (`scripts/publish.py`, `job.py new --publish`) needs the same file to hold two apps:
+  the products app with `write_products` and the publications scopes, and the files app (`ADMIN_API_CLIENT_ID`,
+  `ADMIN_API_CLIENT_SECRET`) with `write_files`; `check_setup.py --live` mints a token for each and checks its
+  scope;
 - the category's package averages in `scripts/category_measures.json` (low / central / high, who approved, when).
   Without a row for the category the run stops and asks for it.
 
