@@ -3,7 +3,7 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
-## Unreleased
+## 0.12.0 (2026-11-10)
 
 - Descriptions for all 110 products in the store (2026-11-10). After a check of the last 75 against their
   sources: a choice the seller's texts offer is not written when "What is sold" fixes the configuration (a
