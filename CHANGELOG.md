@@ -11,9 +11,10 @@ version in `extension/manifest.json`.
   and an intro whose naming sentence was cut starts with the title instead of "It".
 
 - Descriptions after a check of 35 against their sources (2026-11-10: 15 had a wrong club list or count, a fact
-  of one choice told of all, or a lost "no bag" sentence): the stage asks at its own effort, `medium` with
-  thinking on (`DESCRIBE_EFFORT`; chosen after a comparison of Haiku 5.5, Sonnet 5.5, Opus 5.5 and Fable 5.2 at
-  several efforts, the tables with prices are in scripts/README.md "Which model writes the descriptions"); the tables read from the seller's images are sent in a section of their own (the set's
+  of one choice told of all, or a lost "no bag" sentence): the stage asks at its own effort, `high` with
+  thinking on (`DESCRIBE_EFFORT`; Sonnet 5.5 chosen after a comparison of Haiku 5.5, Sonnet 5.5, Opus 5.5 and
+  Fable 5.2 at several efforts, the tables with prices are in scripts/README.md "Which model writes the
+  descriptions"; `medium` did as well on 35 easy products and worse on the 75 harder ones); the tables read from the seller's images are sent in a section of their own (the set's
   clubs are listed there; a figure only a table gives is not stated); the prompt has the model compare the
   sources and add the clubs up, put the seller's own lists before the Naver spec rows, and tie a fact to the
   choice it holds for; a club inside a range the source gives passes the number check; a seller's disclaimer

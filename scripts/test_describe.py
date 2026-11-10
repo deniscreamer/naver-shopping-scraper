@@ -265,11 +265,10 @@ def test_the_clubs_inside_a_range_are_the_models_to_name():
 
 def test_the_stage_asks_at_its_own_effort_with_thinking_on():
     chain = D.build_chain({translate.ANTHROPIC_KEY: "k", translate.OPENAI_KEY: "o"}, {})
-    assert [(m.name, m.effort) for m in chain.models] == [(translate.MODEL, "medium"),
-                                                         (translate.OPENAI_MODEL, "medium")]
+    assert [(m.name, m.effort) for m in chain.models] == [(translate.MODEL, "high"), (translate.OPENAI_MODEL, "high")]
     assert chain.models[0].thinking == "adaptive"
-    one = D.build_chain({translate.ANTHROPIC_KEY: "k"}, {"DESCRIBE_EFFORT": "high", "TRANSLATE_PROVIDERS": "anthropic"})
-    assert [(m.name, m.effort) for m in one.models] == [(translate.MODEL, "high")]
+    one = D.build_chain({translate.ANTHROPIC_KEY: "k"}, {"DESCRIBE_EFFORT": "medium", "TRANSLATE_PROVIDERS": "anthropic"})
+    assert [(m.name, m.effort) for m in one.models] == [(translate.MODEL, "medium")]
     with pytest.raises(translate.TranslateError):
         D.build_chain({}, {})
 

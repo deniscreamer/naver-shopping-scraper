@@ -49,10 +49,11 @@ FORMAT = "description/1"
 STORE = "descriptions.jsonl"
 REPORT = "descriptions_report.txt"
 
-EFFORT, EFFORT_ENV = "medium", "DESCRIBE_EFFORT"    # with thinking on: the answer needs the sources compared and
+EFFORT, EFFORT_ENV = "high", "DESCRIBE_EFFORT"      # with thinking on: the answer needs the sources compared and
                                                     # the clubs counted. The translation's "low" without thinking
-                                                    # made real errors; "medium" was as good as "high" on 35
-                                                    # products at two thirds of the price (README, model comparison)
+                                                    # made real errors. "medium" was as good on 35 easy products
+                                                    # but left 16 of the 75 harder ones wrong; "high" then fixed 14
+                                                    # of those (the owner, 2026-11-10: high, fewer errors)
 INTRO_MAX, ITEM_MAX, TOTAL_MAX = 400, 220, 1500        # characters of text (Google reads the first 160-500)
 OCR_MAX = 12000                                        # characters of image text sent (the longest of 105: 11,410)
 TABLES_MAX = 8000                                      # characters of image tables sent

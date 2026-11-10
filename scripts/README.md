@@ -1165,7 +1165,7 @@ calls) against 4.0 s a file one by one (5 calls a file).
 
 A minimalist English description in HTML for Shopify's own body (`descriptionHtml`; no metafield, no SEO
 description). One model request and one answer per product, through translate.py's client (the same key, models
-and fallback order) at this stage's own effort: `medium` with thinking on (`DESCRIBE_EFFORT` in .env changes it);
+and fallback order) at this stage's own effort: `high` with thinking on (`DESCRIBE_EFFORT` in .env changes it);
 no fix rounds. Why not the translation's `low` without thinking: checked 2026-11-10 on 35 descriptions against
 their sources, 15 had a wrong club list or count, a fact of one choice told of all, or a lost "no bag" sentence;
 the answer needs the sources compared and the clubs added up ("Which model" below). The script works before and after the request:
@@ -1217,8 +1217,9 @@ and the next `publish.py` run sends the product (the owner's go-ahead first, JOB
 
 ### Which model writes the descriptions (compared 2026-11-10)
 
-The default is **claude-sonnet-5-5 at effort `medium`** (the owner, 2026-11-10). Two tests stand behind it; repeat
-them when a new model comes out, and add its row here.
+The default is **claude-sonnet-5-5 at effort `high`** (the owner, 2026-11-10: fewer errors; `medium` was the
+default for a day, see the note after test 2). Two tests stand behind the choice of the model; repeat them when a
+new model comes out, and add its row here.
 
 **Test 1, breadth: one product, every model.** The same packet (Bridgestone BG-100, 8958060680: a clean listing
 with two traps, a spec row that drops the #6 iron and a driver loft tied to the shaft set; 2 requests a setting)
@@ -1265,6 +1266,12 @@ Sonnet `medium` and `high` cannot be told apart at this size (0 against 2 wrong 
 third less and answers twice as fast. Haiku `high` is five times cheaper and makes no gross error, but writes
 poorer descriptions (more slips, more empty lists, one description that fell back to the title) and is the
 slowest, because it thinks the longest: the candidate for very large volumes, after the prompt is tuned for it.
+
+**In use, the other 75 products of the store (harder listings: several configurations in one listing, sets
+mixed from several makers).** Written at `medium` and checked the same way: 23 good, 36 minor, 16 wrong (a choice
+described where one fixed combination is sold, another edition's features, a wrong count). The 16 asked again at
+`high`, with one prompt line added: 14 passed, the other 2 had one highlight cut by hand. `medium` saves about $9
+per 1 000 products against `high`; on hard listings that is not worth the errors, hence the default.
 
 How the tests were run (scratch scripts, not in the repo): the packet, `describe.ask` and `describe.settle` called
 directly for each model (`translate.AnthropicModel(key, model, effort, thinking="adaptive")`), nothing stored in
