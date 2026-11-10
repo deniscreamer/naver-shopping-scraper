@@ -3,7 +3,7 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
-## Unreleased
+## 0.11.0 (2026-11-09)
 
 - Publication to Shopify, MVP (the owner, 2026-11-08): `publish.py` (CLI and the job's stage, `job.py new
   --publish`), `shopify_payload.py` (offline), `shopify_admin.py` (the products app and the files app),
