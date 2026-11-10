@@ -8055,6 +8055,7 @@
     "photos": [],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 24
    },
@@ -8069,6 +8070,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 79
    },
@@ -8081,6 +8083,7 @@
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/11528356176/fairwardgolf-review-avatar-32d56b08a9c425b1.webp",
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 46
    }

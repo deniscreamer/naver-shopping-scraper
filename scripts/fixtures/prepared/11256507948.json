@@ -312,6 +312,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 25
    },
@@ -324,6 +325,7 @@
     "photos": [],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 3
    },
@@ -336,6 +338,7 @@
     "photos": [],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 2
    },
@@ -350,6 +353,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 20
    },
@@ -362,6 +366,7 @@
     "photos": [],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 22
    },
@@ -376,6 +381,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 17,
     "text_original_ko": "제품도 좋고 배송도 빠르게 와서 좋았습니다.",
@@ -392,6 +398,7 @@
     "photos": [],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 1,
     "text_original_ko": "가격대비연습용좋아요",
@@ -408,6 +415,7 @@
     "photos": [],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 1,
     "text_original_ko": "빠른배송이 좋았습니다.",
@@ -424,6 +432,7 @@
     "photos": [],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 22
    },
@@ -436,6 +445,7 @@
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/11256507948/fairwardgolf-review-avatar-11d15bb4129d299f.webp",
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 26
    },
@@ -450,6 +460,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 15,
     "text_original_ko": "가성비 좋아서 좋아요",
@@ -466,6 +477,7 @@
     "photos": [],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 1,
     "text_original_ko": "너무너무좋아요!!!"
@@ -481,6 +493,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 41
    },
@@ -495,6 +508,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 22,
     "text_original_ko": "연습용으로 가성비만 보고 샀는데\n당연히 아쉬운 점이 있지만\n연습용으로는 가격 대비 꽤 괜찮습니다.",
@@ -511,6 +525,7 @@
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/11256507948/fairwardgolf-review-avatar-11d15bb4129d299f.webp",
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 3,
     "text_original_ko": "가성비 좋습니다.\n스크린에서 시타했는데 문제없네요",
@@ -530,6 +545,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 2,
     "text_grade": "full",
     "text_quality": 80,
     "text_original_ko": "배송 완전 빠르고 가방이 가볍고 튼실합니다. 상단 커버는 좀 빈약하지만 가성비는 끝장인거 같아요.",

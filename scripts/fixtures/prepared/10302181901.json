@@ -201,6 +201,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 17,
     "text_original_ko": "가격적으로도 기능적으로도  만족합니다",
@@ -219,6 +220,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 17
    },
@@ -233,6 +235,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 58
    }

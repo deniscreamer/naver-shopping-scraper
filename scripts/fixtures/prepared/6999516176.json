@@ -586,6 +586,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 37,
     "text_original_ko": "가격 대비 퀄리티가 괜찮습니다.",
@@ -604,6 +605,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 37,
     "text_original_ko": "해외 배송이지만 빠르고 제품 퀄리티도 좋습니다.",
@@ -623,6 +625,7 @@
     ],
     "avatar": "collected/50002788-fixtures/images/6999516176/fairwardgolf-review-avatar-88df82d436932fea.webp",
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 18
    },
@@ -639,6 +642,7 @@
     ],
     "avatar": "collected/50002788-fixtures/images/6999516176/fairwardgolf-review-avatar-88df82d436932fea.webp",
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 40,
     "text_original_ko": "남친 생일선물로 사줬네요. 잘쳐서 백돌이 탈출해야죠^^"
@@ -652,6 +656,7 @@
     "photos": [],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 2
    },
@@ -664,6 +669,7 @@
     "photos": [],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 2,
     "text_original_ko": "정말좋네요감사합니다^^~~"

@@ -11,20 +11,28 @@ The user message is a JSON object for one product (often one batch of its texts)
   {"items": [{"id", "en"}]} with one entry for every item and the same id; never merge, split, skip or add items.
 
 How to translate each kind:
-- title: a faithful, literal translation of the seller's title. Keep every fact it states: brand, model, year,
-  number of pieces, specs, gender, what is included. Drop shop-only promotional tags (same-day dispatch, free
-  shipping, sale) and the Korean distributor or importer wherever it stands ("OO코리아", "던롭스포츠코리아", "삼양인터내셔날",
-  "100% 정품" claims tied to them). A title's "context" may list words only some variants have: leave them out of the title. Never add a name the title does not have (no parent company, no series name you
-  know). Write it as an English product name in title case, without brackets around words that remain. Spell the
-  brand as "product.brand_en" when given.
+- title: the product's name in the store, made from the seller's title. It starts with the brand, once
+  ("product.brand_en" when given), then the model or series, the year or model year, who it is for (men's, women's,
+  left-handed), what it is (complete set, iron set ...), the number of pieces and the main things included (caddie
+  bag, putter). Each fact once, in this order, as an English product name in title case, at most about 90
+  characters, without brackets. No loft, flex or shaft codes ("11.5L", "#4 L", "950 S", "MP1400K": the options say
+  them) and no list of every club: the number of pieces and a bag or putter are enough. Keep every one of these facts the title states; drop words that repeat one.
+  Drop what is about the Korean shop, not the product: promotional and dispatch tags (same-day dispatch, free
+  shipping, sale, gifts and what comes free ("퍼터증정"), reviews events, after-sales service claims such as "AS가능",
+  what the buyer may use it for ("스크린 전용", "연습용")), the Korean distributor or importer wherever it stands ("OO코리아",
+  "던롭스포츠코리아", "삼양인터내셔날", "정식대리점", "병행수입", "100% 정품" claims), store names. A title's "context" may list
+  words only some variants have: leave them out of the title. Never add a name the title does not have (no parent
+  company, no series name you know).
 - brand: the brand's own Latin name. If "vendors" holds a spelling of the same brand (a company suffix like 골프 /
   Golf or 코리아 / Korea does not make another brand), return exactly that spelling. Otherwise the brand's official
   Latin name; if you do not know it, a careful romanization.
 - option_name, fact_label, spec_label, addon_group, text_label: a short label in Title Case (at most 32 characters
-  for option_name). An option_name with "context" lists that option's values: name the option by what the values
-  are, not "Option" or "Select".
+  for option_name). An option_name with "context" lists that option's values: name the option by the kind of
+  choice the values are (Flex, Driver Loft, Color, Set), even when the seller's name says something else ("색상"
+  over flex and bag values is not Color), never a product name, a value or "Option" / "Select".
 - option_value, fact_value, spec_value, addon_name: short and exact, as a customer chooses it. At most 64
-  characters. Keep the order of the parts. "context" may name the option the value belongs to.
+  characters. Keep the order of the parts. Add no word the value does not have (no "Driver" before a loft the
+  seller wrote alone), and write the same thing the same way in every value of an option. "context" may name the option the value belongs to.
 - text_placeholder: a short hint for a text field ("Enter your name").
 - review: rewrite one buyer's review the way an American golfer would write it in a US store's review section. It
   does not have to be word for word: keep the meaning, every fact and the tone and strength (mild praise stays mild, never
@@ -34,8 +42,11 @@ How to translate each kind:
   product", "I am using it very happily") and stock filler ("Highly recommend!", "Great product!") the buyer did not
   write. No additions, no summary, no marketing: never add "for the price" or any value claim, never upgrade "괜찮은 편" to
   "good". Korean often leaves the subject out: keep it on the buyer ("I") unless the sentence names someone, and
-  "좋아하네요 / 맘에 들어하네요" is someone else liking it (she / he / they), not the buyer. A sentence that trails off
-  stays open ("Maybe because it's the basic set...?"); do not complete it. Keep line breaks. The review was cleaned before you see it (emoji,
+  "좋아하네요 / 맘에 들어하네요" is someone else liking it (she / he / they), not the buyer. A question or a thought
+  the buyer left open stays open ("Maybe because it's the basic set...?"). A sentence that ends on a joining word
+  because the cleaning cut what followed ("가볍고", "디자인도 예쁘고") ends there as a full sentence ("It's light.",
+  never "Lightweight and"). A fragment left by the cleaning with no meaning of its own is dropped, never given an
+  invented subject or meaning. Keep line breaks. The review was cleaned before you see it (emoji,
   emoticons, laughter and remarks about the Korean seller, shipping and prices taken out): do not add emoji; a
   sentence that starts or ends mid-thought may be smoothed so it reads naturally, without adding facts. Buyer slang
   and misspellings are translated by their meaning.

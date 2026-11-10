@@ -40,7 +40,11 @@ def test_product_words_are_never_cut():
     lost = [r["id"] for r, v in CLEANED
             if {m.group(0) for m in aspects.finditer(R.tidy(R.strip_decoration(r["text"])))}
             - {m.group(0) for m in aspects.finditer(v.text)}]
-    assert lost == ["4413056688"]                  # "배송은 아이언셋과 드라이버퍼터 박스 따로옵니다": the parcels, not an opinion
+    assert sorted(lost) == sorted([
+        "4413056688",                              # "배송은 아이언셋과 드라이버퍼터 박스 따로옵니다": the parcels, not an opinion
+        "4232942809", "4266792371",                # the half bag the seller gave as a gift (2026-11-09 pilot rules)
+        "4436713176",                              # "골프채 움직이지 않게 타이로 묶었어요": how the seller packed them
+    ])
 
 
 def test_residual_purchase_words_stay_rare():
@@ -142,3 +146,75 @@ def test_review_fixes_keep_product_information(text, kept):
 def test_a_freebie_is_not_sponsorship():
     assert R.clean("사은품도 제공받아서 좋았고 그립이 편해요", category_id=GOLF).grade != "sponsored"
     assert R.clean("업체로부터 제품을 제공받아 작성한 후기입니다. 타구감 좋아요", category_id=GOLF).grade == "sponsored"
+
+
+def test_a_line_of_only_tax_and_shipping_cost_is_cut():
+    # the BG-100L set's review on the site (2026-11-08) still said "Tax, shipping 10."
+    text, cut = R.cut_purchase("7번 9번 P S뿐이네요\n세금 배송10\n다 따지면 중고가 나을듯", "50002788")
+    assert "세금" not in text and "배송" not in text and "7번 9번" in text and "다 따지면" in text and cut == ["price"]
+    assert R.cut_purchase("세금, 배송비 3만원 정도", None)[0].strip() == ""
+    assert R.cut_purchase("드라이버 10.5\n좋아요", "50002788") == ("드라이버 10.5\n좋아요", [])   # a spec stays
+
+
+def test_the_raw_review_with_customs_and_cost_line():
+    raw = ("7.8.9.P S구성이 더 나을거 같아요\n세관신고 18만원 세금 배송10\n다 따지면 그냥 일반 여성 아이언세트 "
+           "제대로된거 160만원이 중고로 팔기도 더 나을듯하네요")
+    text = R.clean(raw, False, "50002788").text
+    assert "세금" not in text and "배송" not in text and "세관" not in text and "나을거 같아요" in text
+
+
+def test_seller_dealings_arrival_surprise_and_service_fragments_go():
+    # the Daiwa set's review on the site (2026-11-09) kept the seller and shipping talk in fragments
+    raw = ("상품주문 후 바로  일시판매중지라 이렇게 빨리 도착할꺼라곤\n기대도 안했는데 주문하고 담날 도착해서 깜짝 놀랐습니다,\n"
+           " 택배도착후 궁금한점들 통화로  상세 설명해주시고 꼼꼼하게\n챙겨주신 사은품들도 감사히 잘 쓰겠습니다,\n"
+           "우연찮은 계기로  판매자님과 십년넘게 거래하신다는분\n말씀도 들었는데 저도 강추합니다,\n판매자님 많이 파세요,")
+    text = R.clean(raw, False, "50002788").text
+    assert not any(w in text for w in ("도착", "놀랐", "꼼꼼", "챙겨", "판매자", "거래")) and "강추" in text
+    kept = R.clean("제 체격엔 딱 맞는것같고 스윙도 잘 나오는데\n아직까진 아이언7번만 사용중이라\n친절하신", False, "50002788")
+    assert kept.text.endswith("사용중이라")
+    assert R.tidy("약간오픈된\n페이스") == "약간오픈된\n페이스"                      # a product word stays
+
+
+def test_discount_and_points_as_the_reason_to_buy_go():
+    text = R.clean("우연히 구경하다가 가격할인에 포인트 적립도 커서 일단 질렀습니다.", False, "50002788").text
+    assert "할인" not in text and "적립" not in text and "질렀습니다" in text
+    assert "할인받고 싶어요" in R.cut_purchase("최신형 골프채 할인받고 싶어요", None)[0]
+
+
+def test_pilot_purchase_talk_goes_and_product_words_stay():
+    # the 100-product pilot (2026-11-09): seller service, coming back, gifts sent, order dates, weather, packing
+    cases = {
+        "디자인도 너무 예쁘고 연휴전이라고 퀵으로 보내주셔서 감동이에요": "연휴",
+        "골프 입문하면서 처음 구입했습니다. 태풍을 뚫고 풀세트 갖게되서 열심히 쳐보려고 합니다.": "태풍",
+        "타구감 좋아요. 다음에 필요한 제품이 생기면 또 들릴게요.": "들릴",
+        "보내주신 커버인형두 맘에 쏙 들어요! 드라이버 타구감 최고": "보내주신",
+        "6일날 주문했고 12일에 바로 냈습니다 아이언 타구감 좋아요": "주문",
+        "골프채 움직이지 않게 타이로 묶었어요.\n개인적으로 골프백 디자인도 좋습니다.": "타이",
+        "정말 친절하게 대처해주시고계세요! 아이언 좋아요": "대처",
+    }
+    for raw, gone in cases.items():
+        text = R.clean(raw, False, "50002788").text
+        assert gone not in text and text, (raw, text)
+    assert R.clean("드라이버 정말 좋아요 *^^*", False, "50002788").text == "드라이버 정말 좋아요"
+    kept = "경량 합성 크라운\n으로 인해 저중심 설계"                       # a wrapped line with nothing cut stays
+    assert "으로 인해" in R.tidy(kept)
+
+
+def test_pilot_second_pass_forms():
+    for raw, gone in (("주문후 미안하시다며 아이언커버를 서비스로 주셨어요! 드라이버 좋아요", "서비스"),
+                      ("사은품도 예쁜 제품들로 잘 챙겨주셔서 감사합니다! 아이언 좋아요", "사은품"),
+                      ("생각보다 빠르게 안전하게 잘 도착했네요\n클럽도 맘에드네요", "도착"),
+                      ("잦은 질문에도 늘 빠르고 친절하게 답변해주시는\n다음에 아들꺼 살때도 들릴게요\n드라이버 좋아요", "들릴")):
+        text = R.clean(raw, False, "50002788").text
+        assert gone not in text and text, (raw, text)
+
+
+def test_english_sentences_about_the_price_or_another_platform_go():
+    text = ("It's light. Great value for the price!\nThe bag feels a bit cheap, but the heads look great.\n"
+            "You can't get premium clubs like these at this price. Got it from Golfzon Market!\n"
+            "It's the real deal. They asked for extra money for the swap. Won't be buying again.\n"
+            "People think I paid 2.5 million won. Best bang for the buck.")
+    assert R.cut_english(text) == ("It's light.\nThe bag feels a bit cheap, but the heads look great.\n"
+                                   "It's the real deal. They asked for extra money for the swap. Won't be buying again.")
+    assert R.english_cut("Bought through a Japan buying agent.") == "platform"
+    assert R.english_cut("Cheap-looking bag.") is None and R.english_cut("It's cheap and the lineup is decent.") == "price"

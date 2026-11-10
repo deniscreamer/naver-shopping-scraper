@@ -83,6 +83,17 @@ LEAD = (r"(?:(?:정말|너무|엄청|완전|생각보다|생\S?각보다|오늘|
         r"|무엇보다|단|다만|암튼|무튼|그래도)\s*){0,2}")
 
 
+# a line (or a sentence ending a line) that is only what the purchase cost besides the price: "세금 배송10",
+# "관세랑 배송비 합쳐서 3만", "배송비 별도 5천원", "관세 10만 배송비 2만" (2026-11-08: a set's review on the site still
+# said "Tax, shipping 10.")
+_COST_WORD = r"(?:세관신고|세금|관세|관부가세|부가세|통관비?|배송비?|택배비?|운송비|운임)(?:는|은|도|이랑|랑|과|와|까지)?"
+_COST_JOIN = r"(?:합쳐서|합해서|포함해서|포함|별도|각각|따로|총)"
+_COST_AMOUNT = r"\d[\d,.]*[ \t]*(?:만[ \t]*원|만|원|천[ \t]*원)?[ \t]*(?:정도|가량|쯤)?"
+_COST_PART = r"(?:" + _COST_WORD + r"[ \t]*[,+/·]?[ \t]*(?:" + _COST_JOIN + r"[ \t]*)?)+" + r"(?:" + _COST_AMOUNT + r")?"   # the amount may be cut already
+_COST_LINE = (r"(?:(?<=^)|(?<=\n)|(?<=[.!?] ))[ \t]*" + _COST_PART + r"(?:[ \t]*[,+/·]?[ \t]*" + _COST_PART
+              + r")*[ \t.!]*(?=\n|$)")
+
+
 def _body(guard: str, n: int) -> str:
     return rf"(?:(?!{guard})[^.!?\n]){{0,{n}}}?"
 
@@ -113,12 +124,18 @@ def _spans(guard: str) -> list[tuple[str, str, str]]:
         ("shipping", "received", SENT_START + r"(?:(?:상품|제품|물건|골프클럽)\s*(?:을|은|도)?\s*)?(?:(?:이상\s*없이|손상\s*없이|안전하게|"
          r"무사히|깔끔하게)\s*)?(?:잘\s*)?(?:받았|도착했|왔)(?:습니다|어요|구요|고요|네요|어여|어용)?(?:[\s.,!?~^;ㅎㅋ]+|$)"),
         # customs and money
+        # a line that is only what the purchase cost besides the price: "세금 배송10", "관세, 배송비 3만" (2026-11-08,
+        # a set's review on the site still said "Tax, shipping 10.")
         ("price", "customs", r"(?:(?:단|추가로?|해외)\s*,?\s*)?(?:위\s*)?(?:가격에서\s*|가격에\s*)?(?:관부가세|관부과세|관세|부가세|부과세|세관|통관|세금)[^.!?\n]{0,40}?"
          + END),
         ("price", "amount_clause", r"(?:(?:결제\s*후에?|추가로)\s*)?(?:약\s*|대략\s*|총\s*)?\d[\d,.]*\s*(?:만\s*원|만|원|천\s*원)"
          r"(?:\s*(?:정도|가량|쯤|대|후반대|초반대|이상|더))*(?:은|이|을)?\s*(?:[가-힣]+\s+)?(?:나왔|나오|들었|든|냈|내라|내야|지불|"
          r"더\s*주|더\s*줘|들어)[^.!?\n]{0,20}?" + END),
-        ("price", "amount", r"(?:약\s*|대략\s*|총\s*)?\d[\d,.]*\s*(?:만\s*원|원|천\s*원)(?:\s*(?:정도|가량|쯤|대|이상))*(?:에|이|은|을|으로)?\s*"),
+        ("price", "amount", r"(?:약\s*|대략\s*|총\s*)?\d[\d,.]*\s*(?:만\s*원|원|천\s*원)(?:\s*(?:정도|가량|쯤|대|이상))*(?:에|이|은|을|으로)?[ \t]*"),
+        ("price", "cost_line", _COST_LINE),            # after the amounts: "세관신고 18만원 세금 배송10" is a cost line
+        # the Korean shop's discount or points as the reason to buy: "가격할인에 포인트 적립도 커서" (2026-11-09)
+        ("price", "discount_points", r"(?:가격\s*)?(?:할인|세일|포인트(?:\s*적립)?|적립금?|쿠폰)(?:에|도|이|가|과|와|하고|이랑|까지)?"
+         r"(?:\s*(?:포인트(?:\s*적립)?|적립금?|쿠폰)(?:도|이|가|까지)?)?\s*(?:커서|많아서|쏠쏠해서|좋아서|크고|많고|받아서|받고(?![\s/]*싶))\s*"),
         ("price", "cheaper_elsewhere", r"(?:(?:가격이|가격은|가격도)\s*)?(?:알리|테무|쿠팡|매장|다른\s*곳|다른곳|타\s*사이트|"
          r"(?<!무엇)[가-힣]+보다)[^.!?\n]{0,20}?(?:싸|쌉|저렴)(?!\s?보|해\s?보|하게\s?보)[가-힣]*"
          + END),
@@ -142,6 +159,11 @@ def _spans(guard: str) -> list[tuple[str, str, str]]:
         # the seller, the shop, its service
         ("seller", "sentence", SENT_START + r"(?:판매자|사장|셀러|담당자|상담원|구매처)(?:님|분)?(?:께서|이|가|도|은|는|의)?\s*"
          + _body(guard, 70) + r"(?:[.!?]+|\n|$)"),
+        # a line about dealing with the seller ("판매자님과 십년넘게 거래하신다는분"), and the surprise that it came fast
+        # ("주문 후 ... 이렇게 빨리 도착할꺼라곤 / 기대도 안했는데 깜짝 놀랐습니다") (2026-11-09, a Daiwa set's review)
+        ("seller", "dealings", r"(?:(?<=^)|(?<=\n))[^\n]*(?:판매자|사장|셀러)(?:님|분)?(?:과|와|이랑|하고)\s*[^\n]{0,20}?(?:거래|단골)[^\n]*"),
+        ("shipping", "surprise", r"(?:(?<=^)|(?<=\n))[^\n]{0,40}?(?:빨리|일찍|금방)\s*(?:도착|올|받을)[가-힣]*\s*(?:꺼|거|것)라(?:곤|고는?|고)?"
+         r"[^\n]*(?:\n[^\n]{0,40}?(?:놀랐|몰랐)[^\n]*)?"),
         ("seller", "subject", r"(?:판매자|사장|셀러|담당자)(?:님|분)?(?:께서|이|가|도|은|는)?\s*" + b30 + END),
         ("seller", "thanks_service", r"(?:(?<=\s)|(?<=^))(?:및|,)?\s*(?:(?:친절한|빠른|신속한|자세한)\s*)?(?:답변|안내|응대|대응|설명|연락|"
          r"전화\s*연락|전화|상담)(?:과|와|및|,|에|에도)?\s*(?:(?:답변|안내|응대|대응|설명|연락)(?:과|와|및|,|에|에도)?\s*)?"
@@ -167,6 +189,42 @@ def _spans(guard: str) -> list[tuple[str, str, str]]:
         ("packing", "list", r"(?:(?:꼼꼼한|견고한|깔끔한|안전한)\s*)?포장(?:과|및|,)\s*"),
         ("packing", "clause", LEAD + r"(?:(?:꼼꼼한|견고한|깔끔한|안전한)\s*)?포장(?:상태)?(?:도|이|은)?\s*" + b20 + END),
         ("packing", "adverb", r"(?:꼼꼼하게|꼼꼼히|깔끔하게|안전하게|하나하나)\s*포장[가-힣]*\s*" + b15 + END),
+        # the 100-product pilot, 2026-11-09 (112 rows in 36 products still told of the purchase): coming back to the
+        # shop, the seller's service in a product story, what the seller sent, order dates, weather, packing
+        ("seller", "comeback_sentence", r"(?:(?<=^)|(?<=\n)|(?<=[.!?] ))[^.!?\n]{0,45}?(?:또|다시)\s*(?:들릴|들르|찾아올|구매하러|"
+         r"상담드리)[가-힣]*[.!?\s]*"),
+        ("seller", "from_here", r"(?:(?<=^)|(?<=\n)|(?<=[.!?] ))[^.!?\n]{0,30}?(?:여기서|이\s*샾|이\s*샵)[^.!?\n]{0,25}?"
+         r"(?:바꿔야|구매|주문|알아본)[가-힣]*[^.!?\n]{0,8}?(?:[.!?]+|(?=\n)|$)"),
+        ("seller", "comeback", r"(?:다음에(?:도)?|담에|나중에|앞으로(?:도)?)?\s*(?:[^.!?\n]{0,25}?(?:필요한\s*(?:제품|것|거|용품)이?\s*"
+         r"(?:더\s*)?생기면|바꿀\s*때|교체(?:할)?\s*때(?:\s*되면)?|상급자가?\s*되어서|구매때))\s*(?:또|다시)\s*(?:들릴|들르|찾아올|"
+         r"찾아뵙|구매하러|상담드리|이용할|구매할|주문할)?[가-힣]*" + END),
+        ("seller", "did", r"(?:정말\s*)?(?:친절하게|세심하게)\s*(?:대처|배려|상담|설명|응대|안내)[가-힣\s]{0,8}?"
+         r"(?:주셨|주시고|주셔서|주시네요|주십니다)[가-힣]*" + END),
+        ("seller", "answered", r"(?:늘\s*|항상\s*)?(?:빠르고\s*)?친절하게\s*(?:답변|응대|안내)해\s*주(?:시는|신|셔서)[가-힣]*\s*"),
+        ("seller", "inquiry", r"(?:비대면\s*거래인데도\s*불구하고\s*)?문의\s*사항\s*(?:친절하게\s*응대해\s*주신\s*)?(?=\S)"),
+        ("seller", "visit_again", r"(?:(?<=^)|(?<=\n)|(?<=[.!?] ))[^.!?\n]{0,40}?(?:살\s*때도|살때도|때도)\s*(?:들릴|들를|올)[가-힣]*[.!?\s]*"),
+        ("gift", "service_given", r"(?:주문\s*후\s*)?(?:미안하시다며\s*)?[가-힣]*(?:를|을)\s*서비스로\s*주셨[가-힣]*[.!\s]*"),
+        ("gift", "thanks", r"사은품도\s*[^.!?\n]{0,25}?챙겨\s*주셔서\s*(?:감사합니다|감사해요)?[.!\s]*"),
+        ("shipping", "arrived_well", r"(?:생각보다\s*)?빠르게\s*(?:안전하게\s*)?잘\s*도착했[가-힣]*\s*"),
+        ("seller", "advice", r"(?:직접\s*)?(?:상세히|자세히)\s*[^.!?\n]{0,20}?(?:알려|설명해)\s*주셔서\s*"),
+        ("seller", "polite", r"(?:복\s*많이\s*받으세요|더\s*많은\s*응원\s*보내드릴[께게]요|응원\s*보내드릴[께게]요)[.!\s]*"),
+        ("seller", "always", r"항상\s*주문하는\s*제품입니다\s*"),
+        ("gift", "sent", r"(?:정성껏\s*)?(?:별도로\s*)?(?:보내\s*주신|선물로\s*주신|사은품으로\s*주는|서비스로\s*주는)\s*[가-힣]*"
+         r"(?:도|은|이)?\s*[^.!?\n]{0,20}?" + END),
+        ("gift", "sense", r"센스있게[^.!?\n]{0,30}?서비스[^.!?\n]{0,5}?" + END + "?"),
+        ("gift", "covers_given", r"(?:골프채마다\s*)?헤드커버도\s*주시고\s*[^.!?\n]{0,20}?챙겨\s*주셔서\s*"),
+        ("shipping", "dates", r"(?:\d+\s*월\s*)?\d+\s*일(?:날)?\s*(?:주문|결제)(?:했고|하고|후)?\s*(?:(?:\d+\s*월\s*)?\d+\s*일"
+         r"(?:에|날)?\s*(?:바로\s*냈습니다|관세)?\s*)*"),
+        ("shipping", "took", r"(?:주문\s*(?:후|하고)?\s*)?(?:수령|도착|받기)까지[^.!?]{0,30}?(?:걸렸|걸린|걸리)[가-힣]*" + END),
+        ("shipping", "weather", r"(?:폭설\s*속에|폭설속에|태풍을\s*뚫고|추석임에도|연휴\s*전에|연휴전에|연휴전이라고|연휴가\s*포함됐음에도\s*"
+         r"불구하고|퀵으로\s*보내주셔서)\s*"),
+        ("shipping", "weeks", r"딱?\s*\d+\s*주\s*정도에\s*오는\s*것\s*같[가-힣]*" + END),
+        ("packing", "careful", r"(?:새제품\s*)?포장\s*(?:진짜|정말|너무|엄청)?\s*꼼꼼하게\s*[가-힣]*" + END + "?"),
+        ("packing", "thanks", r"(?:판매자님?\s*)?포장(?:을)?\s*꼼꼼하게\s*해\s*주신\s*덕분에\s*"),
+        ("packing", "wrap", r"(?:골프채\s*)?(?:뽁뽁이|뽁뾱이|에어캡|완충재)[에로]?\s*(?:정말\s*)?(?:꼼꼼하게)?\s*"),
+        ("packing", "came_careful", r"(?:엄청|정말|너무)\s*꼼꼼하게\s*왔고\s*"),
+        ("packing", "tied", r"(?:골프채\s*)?움직이지\s*않게\s*타이로\s*묶었어요[.!\s]*"),
+        ("packing", "box_torn", r"(?:그런지\s*)?(?:무게\s*때문에\s*)?박스가[^.!?\n]{0,25}?찢어져서\s*왔지만\s*"),
         ("gift", "freebie", r"(?:귀여운\s*)?(?:추가\s*)?(?:사은품|증정품|서비스템|서비스\s*상품)(?:도|은|을|이|으로|까지)?\s*" + b30 + END),
         ("gift", "given", r"(?:선물|서비스)(?:도|을|까지)\s*(?:많이|엄청|이것저것|푸짐하게|빵빵하게|잘)?\s*(?:주|챙겨)[가-힣]*" + END),
         ("platform", "review_promise", r"(?:(?:일단\s*)?(?:사용해|사용|써|쳐)\s*보고\s*)?(?:또|다시)?\s*(?:한\s*달\s*|일주일\s*)?"
@@ -221,9 +279,19 @@ def strip_decoration(text: str) -> str:
             out[-1] = prev + ("." if _ENDED_RE.search(prev) and part.strip() else "") + ("" if part[:1] == "\n" else " ")
         out.append(part)
     text = "".join(out)
+    text = re.sub(r"\*\^+\*|(?<!\S)\*(?!\S)", " ", text)       # *^^* and a lone star (2026-11-09: "/ *" on the site)
     text = _MASK_RE.sub(" ", text)
     text = _LETTER_RUN_RE.sub(" ", text)
     return _WORD_REPEAT_RE.sub(r"\1\1", text)
+
+
+# a line left with one dangling word of a cut sentence: an adverb or a modifier with nothing to modify ("꼼꼼하게",
+# "챙겨주신"); a word that says something on its own ("좋아요", "만족") is not one
+_FRAGMENT_RE = re.compile(r"(?:꼼꼼|친절|신속|빠르|안전|정성스럽|세심)(?:하게|히|하신|게)|(?:챙겨|보내|포장해|해|신경써)\s*주신|친절하신")
+
+
+# a line that starts with the particle of a noun that was cut ("으로 왔어요"); only these, so "이 클럽세트" and "와" stay
+_ORPHAN_RE = re.compile(r"^(?:으로|은|는|을|를)\s+")
 
 
 def tidy(text: str) -> str:
@@ -240,7 +308,7 @@ def tidy(text: str) -> str:
         text = text.replace("(", " ").replace(")", " ")
     text = re.sub(r"[ \t]{2,}", " ", text)
     lines = [line.strip(" \t,;:/").lstrip(".!? ") for line in text.split("\n")]
-    text = "\n".join(lines)
+    text = "\n".join("" if _FRAGMENT_RE.fullmatch(line) else line for line in lines)
     text = re.sub(r"\n(?:[ \t]*\n)+", "\n", text)            # a line whose words were all cut
     return text.strip(" \n,;:/")
 
@@ -263,6 +331,47 @@ def cut_purchase(text: str, category_id: str | None = None) -> tuple[str, list[s
         if n:
             cut.append(topic)
     return text, sorted(set(cut))
+
+
+# ---- the English side (after translation) ----------------------------------------------------------------------
+# The owner, 2026-11-09, after the 100-product pilot: a review says nothing about the price or the value ("가성비",
+# "이 가격에 얻을 수 없죠", "for the price") and names no other platform or buying agent ("11번가", "구매대행"). The
+# Korean says it in too many ways to cut by clause; the English says it in a few words, so a sentence of the
+# translated review that does goes whole (58 sentences of the pilot). "cheap-looking", "feels cheap" are about the
+# product and stay, and so do "the real deal" and a seller story's "asked for extra money" (complaints stay).
+_EN_PRICE_RE = re.compile(
+    r"\b(?:price[ds]?|pricey|pricier|pricing|value|(?<!extra )(?<!more )money|bang for (?:the|your|my) buck|budget(?:-friendly)?|"
+    r"afford(?:able|ably)?|bargain|steal|cost(?:s|ing|ly)?|cheap(?:er|est|ly)?|inexpensive|expensive|"
+    r"(?:good|great|better|best|sweet|nice|fair|decent) deal|easy on the wallet|"
+    r"\d[\d,.]*\s*(?:million\s*|thousand\s*)?(?:won|bucks|dollars|KRW)|(?:thousand|million)\s+(?:won|bucks|dollars)|"
+    r"won(?=\s*[.,!?)]|$))\b", re.I)
+_EN_QUALITY_CHEAP_RE = re.compile(
+    r"\bcheap(?:-|\s+)(?:look|feel|made|plastic|material|finish|quality)\w*|\b(?:looks?|looking|looked|feels?|feeling|felt|"
+    r"seems?|seemed)\s+(?:a\s+(?:bit|little)\s+|kind\s+of\s+|pretty\s+|really\s+|very\s+|too\s+|so\s+)?cheap\w*", re.I)
+_EN_PLATFORM_RE = re.compile(
+    r"\b(?:Naver|Smart\s?Store|Coupang|11st|11th\s+Street|G-?Market|SSG(?:\.com)?|Lotte\s?On|Musinsa|AliExpress|Temu|"
+    r"Amazon|Golfzon\s+(?:Market|Mall)|(?:buying|purchasing|purchase)\s+agen(?:t|cy)|proxy\s+(?:buyer|service)|"
+    r"overseas\s+(?:shopping|purchase|direct)|direct\s+(?:purchase|import)s?)\b", re.I)
+_EN_SENTENCE_RE = re.compile(r"(?<=[.!?…])\s+")
+
+
+def english_cut(sentence: str) -> str | None:
+    """The topic that sends this English sentence out ("price", "platform"), or None."""
+    if _EN_PLATFORM_RE.search(sentence):
+        return "platform"
+    if _EN_PRICE_RE.search(_EN_QUALITY_CHEAP_RE.sub(" ", sentence)):
+        return "price"
+    return None
+
+
+def cut_english(text: str) -> str:
+    """The translated review without its sentences about the price or another platform (line breaks kept)."""
+    lines = []
+    for line in (text or "").split("\n"):
+        kept = [s for s in _EN_SENTENCE_RE.split(line.strip()) if s and english_cut(s) is None]
+        if kept:
+            lines.append(" ".join(kept))
+    return "\n".join(lines)
 
 
 # ---- the verdict -----------------------------------------------------------------------------------------------
@@ -290,6 +399,8 @@ def clean(text: str, has_photos: bool = False, category_id: str | None = None) -
     if injected:
         cut = sorted(set(cut) | {"injection"})
     out = tidy(strip_decoration(cut_text))
+    if cut:                                     # a cut can leave a line on the particle of its noun ("으로 왔어요")
+        out = tidy("\n".join(_ORPHAN_RE.sub("", line) for line in out.split("\n")))
     _, aspects_re = _compiled(category)
     aspects = len({m.group(0) for m in aspects_re.finditer(out)})
     syllables = _syllables(out) + 2 * len(re.findall(r"[A-Za-z]{2,}", out))   # an English review counts too

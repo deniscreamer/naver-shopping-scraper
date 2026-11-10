@@ -303,6 +303,7 @@
     "photos": [],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 24
    }

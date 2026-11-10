@@ -406,7 +406,7 @@ def system_prompt(shop: str | None, category_id: str | None) -> str:
 
 _PROMO = r"당일|발송|출고|배송|무료|할인|특가|이벤트|사은품|증정|AS|A/S|정품|쿠폰|적립"
 _BRACKETS_RE = re.compile(r"\[[^\]]*\]|[(（][^)）]*(?:" + _PROMO + r")[^)）]*[)）]|[가-힣]*(?:코리아|인터내셔날|인터내셔널)\s*"
-                          r"(?:\d+\s*%)?|\d+\s*%\s*(?:정품|할인|적립)")
+                          r"(?:\d+\s*%)?|\d+\s*%\s*(?:정품|할인|적립)|(?<![A-Za-z])(?:무상\s*A/?S|A/S(?:\s*(?:가능|보장))?|AS\s*(?:가능|보장))(?![A-Za-z])")   # after-sales claims
 
 
 def _checked_source(item: dict[str, Any]) -> str:

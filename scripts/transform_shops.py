@@ -72,6 +72,14 @@ RULES = {
 }
 
 
+def without_paid(rules: ShopRules) -> ShopRules:
+    """The shop's rules with every category's paid variants and paid add-ons off: a run that takes only what costs
+    nothing extra (a job made without --paid; the owner, 2026-11-09, the 100-product pilot)."""
+    from dataclasses import replace
+    return replace(rules, categories={k: replace(c, paid_variants=False, paid_addons=False)
+                                      for k, c in rules.categories.items()})
+
+
 def rules_for(shop: str | StoreId) -> ShopRules:
     try:
         return RULES[StoreId(str(shop).strip().lower())]

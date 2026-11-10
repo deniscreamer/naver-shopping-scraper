@@ -2468,6 +2468,7 @@
     "photos": [],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 44,
     "text_original_ko": "드라이버 비거리가 30m이상 늘었네요ㅎㅎ 좋습니다"
@@ -2481,6 +2482,7 @@
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/13002235969/fairwardgolf-review-avatar-eb0fdaff5e2122ec.webp",
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 77
    },
@@ -2493,6 +2495,7 @@
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/13002235969/fairwardgolf-review-avatar-eb0fdaff5e2122ec.webp",
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 78
    }

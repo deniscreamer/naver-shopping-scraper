@@ -55,7 +55,8 @@ The gender attribute already exists; a profile names it and maps its values:
 ```
 
 The values are `mens` / `womens`. `unisex` goes to both, because `GENDER.implies` says so, and `mixed` goes to
-every section one of its variants fits. A category whose 상품정보 row is not named 성별 needs that label added to
+every section one of its variants fits. A title naming one gender beats a 남녀공용 (unisex) row: sellers fill the row
+from a template (the owner's pilot, 2026-11-09: a "PGM 여성골프채풀세트" went to the men's section too). A category whose 상품정보 row is not named 성별 needs that label added to
 `GENDER.rows`. A category whose sellers write other words needs those words added to `GENDER.words`. Both are data.
 
 ## 3. Another shop (tenant)

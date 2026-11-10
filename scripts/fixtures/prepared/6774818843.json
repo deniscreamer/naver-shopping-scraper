@@ -311,6 +311,7 @@
     ],
     "avatar": "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-avatar-53a0edf58bc1e1b4.webp",
     "tier": "primary",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 27,
     "text_original_ko": "배송은 딱 2주뒤에 왔고, 추가 관세는 약 11-12정도 나오는거같아요!!!! 선물용으로 산거라 잘 썼으면 좋겠네요 ㅎㅎㅎ 포장은 하나하나 다 싸져서 와요! 그리고 옆주머니에 덮개? 가 들어있어서 거기서 꺼내서 똑딱 채우면 됩니다-!",
@@ -331,6 +332,7 @@
     ],
     "avatar": "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-avatar-81fc870d1b951842.webp",
     "tier": "primary",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 16,
     "text_original_ko": "정말 가성비 끝판왕이고, 배송도 해외배송 치고는 빠릅니다. 단, 관세가 별도로 개인납부인데, 해당건 제목에도 써주세요. 헷갈려요.",
@@ -351,6 +353,7 @@
     ],
     "avatar": "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-avatar-15d42389aeacd42c.webp",
     "tier": "primary",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 87,
     "text_original_ko": "골프 입문 비기너입니다. 일단 클럽도 가방도 맘에 쏙 이쁘구요, 가볍고 가성비 좋은것 같습니다만, 성능은 한판 쳐봐야 알겠네요 ^^",
@@ -370,6 +373,7 @@
     ],
     "avatar": "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-avatar-3ae1f3d20fe96c8b.webp",
     "tier": "primary",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 25,
     "text_original_ko": "아직 사용전이나 좋아 보입니다. 골프 처음 시작한 아들래미용으로 구입 했습니다. 관부가세 따로 더 냈는데... 그런 안내도 있었더라면 더 좋을번 했습니다. 이번 주말에 쳐보고 리뷰 또 남길께요... ^^",
@@ -382,7 +386,7 @@
    {
     "id": "4468098681",
     "score": 5,
-    "text_ko": "입문자용으로 좋은거 같아요 구성도 좋고\n좋습니다. 주문 후 수령까지 휴일 제외 10일\n정도 걸렸네요",
+    "text_ko": "입문자용으로 좋은거 같아요 구성도 좋고\n좋습니다",
     "created_at": "2024-04-24T12:34:25Z",
     "writer": "swat****",
     "photos": [
@@ -390,11 +394,13 @@
     ],
     "avatar": null,
     "tier": "photo",
+    "likes": 1,
     "text_grade": "full",
-    "text_quality": 64,
+    "text_quality": 60,
     "text_original_ko": "입문자용으로 좋은거 같아요 구성도 좋고\n좋습니다 ^^ 주문 후 수령까지 휴일 제외 10일 \n정도 걸렸네요 관세는 6만원 후반대였습니다",
     "text_cut": [
-     "price"
+     "price",
+     "shipping"
     ]
    },
    {
@@ -408,6 +414,7 @@
     ],
     "avatar": null,
     "tier": "photo",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 97,
     "text_original_ko": "비닐벗기는데 힘들긴하지만 그래도 괜찮아요 \n신발도 잘들어가고 아이언커버는 없지만 미리사놓은거있어서 이쁘고 잘맞네요\n고구마도 미리사놨어요 \n\n요 사이트에서 골프채만\n대략72만원정도 든거같아요\n열심히배워볼라구요 ㅋㅋ\n배달은 대략10일정도 걸리는거같습니다\n\n이거근데 일본에서 온거맞아요?알리에서 배달시킨거랑 똑같아요",
@@ -428,6 +435,7 @@
     ],
     "avatar": null,
     "tier": "photo",
+    "likes": 1,
     "text_grade": "full",
     "text_quality": 54,
     "text_original_ko": "5일날 주문하고 13일 오늘 배송받았어요~화면과 같고 가격대비 만족입니다~다만 메이드인차이나 스티커를 보고 첨엔 뭐지~했어요ㅎ문의게시판 글을 확인하다보니 판매자님 답글을 보고 이가격에 재팬을 기대하다니 하며 피식웃었네요;; \n어찌됐건 상품 이상없이 잘받았구요..이제막 입문하는 남편에겐 2년정도는 무난히 잘쓰일듯 합니다~",
@@ -446,6 +454,7 @@
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-avatar-b2f8f2619decb4cb.webp",
     "tier": "text",
+    "likes": 1,
     "text_grade": "full",
     "text_quality": 30,
     "text_original_ko": "다 좋음 근데 택배가 진짜 미친듯이 느린데 견디세요 어차피 한국에서 이거 사려면 1,20만원은 더줘야하니까 인생에서 골프채 시킨적ㅇ ㅓㅄ다 생각하고 기다리다보면 좋은 제품 와요",
@@ -463,6 +472,7 @@
     "photos": [],
     "avatar": null,
     "tier": "text",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 76,
     "text_original_ko": "요즘 골프에 빠진 남편 입문용 선물로 사줬는데 엄청 좋아하네요 ㅎㅎ 배송은 예상해주신대로 와서 넘 다행 ㅎㅎ 풀세트에 캐디백포함인데도 이가격이면 최고입니다 ~ 남편도 하나씩 다 들어보더니 너무 맘에들어하네오",
@@ -480,6 +490,7 @@
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-avatar-706112b025013939.webp",
     "tier": "text",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 47,
     "text_original_ko": "남동생 입문용으로 백과 함께 구매했습니다.\n안전하게 잘 도착했는데 관세부분을 보이도록 명시해두면 좋을것같은 아쉬움이 드네요.",
@@ -490,14 +501,15 @@
    {
     "id": "4309597464",
     "score": 5,
-    "text_ko": "골프 입문하면서 처음 구입했습니다. 태풍을 뚫고 풀세트 갖게되서 부담없이 열심히 쳐보려고 합니다.",
+    "text_ko": "골프 입문하면서 처음 구입했습니다. 풀세트 갖게되서 부담없이 열심히 쳐보려고 합니다.",
     "created_at": "2023-08-10T14:30:43Z",
     "writer": "ijin***",
     "photos": [],
     "avatar": null,
     "tier": "text",
+    "likes": 0,
     "text_grade": "full",
-    "text_quality": 50,
+    "text_quality": 49,
     "text_original_ko": "골프 입문하면서 처음 구입했습니다. 태풍을 뚫고 안전히 배송되었습니다. 결제하고 받기까지 10일 정도 걸린거 같구요. 저렴하게 풀세트 갖게되서 부담없이 열심히 쳐보려고 합니다.",
     "text_cut": [
      "price",
@@ -513,6 +525,7 @@
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/6774818843/fairwardgolf-review-avatar-89db21c24812edd4.webp",
     "tier": "text",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 70,
     "text_original_ko": "아직 시타전이네요\n시타후 후기 다시 작성할께요\n\n시타후기/아직 초보이다보니 드라이버S는 무리네요\n아이언S는 매우 만족합니다",
@@ -811,9 +824,9 @@
    "ko": "아직 사용전이나 좋아 보입니다. 골프 처음 시작한 아들래미용으로 구입 했습니다. 그런 이번 주말에."
   },
   {
-   "id": "review:0e3cb5374a776afc",
+   "id": "review:b8b55d3fd83a0ca1",
    "kind": "review",
-   "ko": "입문자용으로 좋은거 같아요 구성도 좋고\n좋습니다. 주문 후 수령까지 휴일 제외 10일\n정도 걸렸네요"
+   "ko": "입문자용으로 좋은거 같아요 구성도 좋고\n좋습니다"
   },
   {
    "id": "review:3583b272cf4b99de",
@@ -841,9 +854,9 @@
    "ko": "남동생 입문용으로 백과 함께 구매했습니다.\n안전하게 잘 도착했는데"
   },
   {
-   "id": "review:1136e13e233d75b8",
+   "id": "review:3fc3628466cfbcfd",
    "kind": "review",
-   "ko": "골프 입문하면서 처음 구입했습니다. 태풍을 뚫고 풀세트 갖게되서 부담없이 열심히 쳐보려고 합니다."
+   "ko": "골프 입문하면서 처음 구입했습니다. 풀세트 갖게되서 부담없이 열심히 쳐보려고 합니다."
   },
   {
    "id": "review:1023484d2436b202",

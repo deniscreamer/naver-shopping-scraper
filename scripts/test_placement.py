@@ -174,3 +174,12 @@ def test_gvtour_46_mens_23_womens_in_one_product():
     assert got["start_variants"] == {M: fit[M][0], W: fit[W][0]} and skus.index(fit[M][0]) < skus.index(fit[W][0])
     women = next(v for v in p["product"]["variants"] if v["sku"] == fit[W][0])
     assert any("여성용" in o for o in women["options_ko"])
+
+
+def test_a_gendered_title_beats_a_unisex_row():
+    # 2026-11-09 pilot: "PGM 여성골프채풀세트" with 성별 남녀공용 went to the men's section too
+    out = A.decide(A.ATTRIBUTES["gender"], [("s1", ["9P 스틸"])], [{"label": "성별", "value": "남녀공용"}],
+                   "PGM 여성골프채풀세트", "여성 골프채 풀세트")
+    assert out["value"] == "womens"
+    both = A.decide(A.ATTRIBUTES["gender"], [("s1", ["9P"])], [{"label": "성별", "value": "남녀공용"}], "PGM 풀세트")
+    assert both["value"] == "unisex"

@@ -17,9 +17,10 @@ place in the pipeline and the details of each part: [README.md](README.md) "Tran
 | The brand is looked up first; one spelling per brand in the whole shop | brand dictionary, `vendors` in the request |
 | No brand (노브랜드): the tenant's name; inside a text the word is removed | `translation_rules.sanitize` |
 | Units and sizes by templates (10.5도, 33인치, 22호, 3번, 7개, 2026년형); the model only for the rest | `translation_rules.py` |
-| Titles literal: a template cannot fit products nobody can foresee | `prompts/translate_system.md` |
-| Reviews as an American buyer would write them: the meaning and the strength kept, casual allowed, no machine phrasing | `prompts/translate_system.md` |
+| Titles are the store's names (the owner, 2026-11-08, as the harvester's): brand first, then model, year, who it is for, the kind of set, pieces, what is included; no shop, dispatch, distributor or after-sales ("AS가능") words, no loft / flex / shaft codes or club list, no usage or gift words (the 100-product pilot, 2026-11-09). The model, not templates: nobody can foresee every title | `prompts/translate_system.md` |
+| Reviews as an American buyer would write them: the meaning and the strength kept, casual allowed, no machine phrasing; a sentence the cleaning cut on a joining word ends as a full sentence, a meaningless fragment is dropped | `prompts/translate_system.md` |
 | Reviews kept with their score; their text loses the Korean purchase (seller, shipping, customs, won, packing, gifts) | `review_clean.py` |
+| After translation, at publication: an English sentence about the price or value, or naming another platform or a buying agent, goes (the owner, 2026-11-09; complaints about the seller stay) | `review_clean.cut_english` |
 | Bounded batches, a final check that every text came back, retries in the same conversation | `make_batches`, `_converse` |
 | Few tokens: short ids, compact JSON, the category's terms in the cached system prompt, no thinking tokens | `request`, `system_prompt`, `ANTHROPIC_TRANSLATE_THINKING` |
 | The job translates each product right after it is prepared | `job.py` (`translate_one`) |
@@ -78,14 +79,15 @@ label.
 ## Known limits
 
 - **Reviews**:
-  - A purchase remark in the middle of a sentence that also names the product stays: "제품구성이 좋고 가격도 저렴해요".
-    Cutting it would break the sentence.
+  - A purchase remark in the middle of a Korean sentence that also names the product stays there: "제품구성이 좋고
+    가격도 저렴해요". Cutting it would break the sentence. When it is about the price, the English sentence goes at
+    publication (`cut_english`), the product words in it too.
   - A rare form the patterns do not know stays in the text, for example "여러가지로 친절하고 ... 처리해 주었으나". Add
     such forms to `review_clean.py` with a test when they show up.
 - **Ambiguous Korean.** The model may give an opinion to the wrong person ("디자인도 맘에 듭니다" after "와이프 ...").
   The judge flags it; the prompt asks to keep the buyer as the subject.
-- **Titles stay literal and can repeat words** ("Complete Set ... Golf Club Set"). Rewriting them is the later
-  description/SEO stage.
+- **Titles keep every code of the source**, so a model written twice stays ("BG-100L BG100L"). Titles translated
+  before 2026-11-08 evening are the literal ones (in the texts store); they change only when translated again.
 - **Category scope.** Only 50002788 has a category brief, aspects and rules. Another category gets the base prompt
   and the general aspects until it has its own.
 
@@ -97,4 +99,5 @@ label.
   and `translation_dicts.py status` prints the last one). A few model answers there are worth a second look, for
   example "9도 S4번유틸S ..." -> "9° S4 Hybrid ..." (a flex letter glued to the next club's number, with a space
   before it). New brands enter the brand dictionary without the owner's word.
-- **Publication** reads `translation/translated.jsonl` and is not built yet.
+- **Publication** (`publish.py`, 2026-11-08) reads `translation/translated.jsonl`; a text without English holds
+  the product.

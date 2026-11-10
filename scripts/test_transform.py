@@ -528,3 +528,10 @@ def test_naver_placeholder_manufacturer_is_not_a_spec():
     from transform import spec_rows
     rows = spec_rows({"specs": [{"label": "제조사", "value": "M0000000"}, {"label": "원산지", "value": "국내산"}]})
     assert rows == [{"label_ko": "원산지", "value_ko": "국내산"}]
+
+
+def test_free_only_rules_turn_paid_off_for_every_category():
+    from transform_shops import rules_for, without_paid
+    free = without_paid(rules_for("fairwardgolf")).category("50002788")
+    assert not free.paid_variants and not free.paid_addons and free.description_images
+    assert rules_for("fairwardgolf").category("50002788").paid_addons          # the shop's own rule unchanged

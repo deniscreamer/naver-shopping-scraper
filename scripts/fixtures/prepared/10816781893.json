@@ -1358,6 +1358,7 @@
     "photos": [],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 44
    },
@@ -1372,6 +1373,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 18,
     "text_original_ko": "방문해서 시타후에 구매했습니다. 사장님이 정말 친절하셔서 여기서 구매추천드립니다!",
@@ -1388,13 +1390,14 @@
     "photos": [],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 44
    },
    {
     "id": "4924080821",
     "score": 5,
-    "text_ko": "비대면거래인데도 불구하고 문의사항 친절하게 응대해주신 여자 정품클럽이며상태 너무좋습니다.",
+    "text_ko": "여자 정품클럽이며상태 너무좋습니다.",
     "created_at": "2026-03-07T05:37:38Z",
     "writer": "oys5***",
     "photos": [
@@ -1407,8 +1410,9 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
-    "text_quality": 45,
+    "text_quality": 39,
     "text_original_ko": "비대면거래인데도 불구하고  문의사항 친절하게 응대해주신 여자 사장님 감사합니다.정품클럽이며상태 너무좋습니다.",
     "text_cut": [
      "seller"
@@ -1423,6 +1427,7 @@
     "photos": [],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 22,
     "text_original_ko": "빠른 배송과 디자인 너무 맘에 들어요~",
@@ -1433,7 +1438,7 @@
    {
     "id": "4558551433",
     "score": 5,
-    "text_ko": "디자인도 너무 예쁘고 연휴전이라고 퀵으로 보내주셔서 감동이에요",
+    "text_ko": "디자인도 너무 예쁘고 감동이에요",
     "created_at": "2024-09-14T05:38:03Z",
     "writer": "ssu0***",
     "photos": [
@@ -1441,11 +1446,13 @@
     ],
     "avatar": "collected/50002788-fixtures/images/10816781893/fairwardgolf-review-avatar-7111c4aad822aa49.webp",
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
-    "text_quality": 62,
+    "text_quality": 58,
     "text_original_ko": "디자인도 너무 예쁘고 연휴전이라고 퀵으로 보내주셔서 감동이에요~\n친절한응대에 감사드립니다~",
     "text_cut": [
-     "seller"
+     "seller",
+     "shipping"
     ]
    }
   ],
@@ -1736,9 +1743,9 @@
    "ko": "디자인도 마음에 들지만 가볍고 좋습니다."
   },
   {
-   "id": "review:98d12efa132914cc",
+   "id": "review:043d39e499393185",
    "kind": "review",
-   "ko": "비대면거래인데도 불구하고 문의사항 친절하게 응대해주신 여자 정품클럽이며상태 너무좋습니다."
+   "ko": "여자 정품클럽이며상태 너무좋습니다."
   },
   {
    "id": "review:2056f5a99b0f7bf4",
@@ -1746,9 +1753,9 @@
    "ko": "디자인 너무 맘에 들어요"
   },
   {
-   "id": "review:b257a04c4e1af751",
+   "id": "review:218dfe28e058016c",
    "kind": "review",
-   "ko": "디자인도 너무 예쁘고 연휴전이라고 퀵으로 보내주셔서 감동이에요"
+   "ko": "디자인도 너무 예쁘고 감동이에요"
   }
  ]
 }

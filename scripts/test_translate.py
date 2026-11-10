@@ -920,3 +920,18 @@ def test_a_run_reminds_when_the_backup_is_due(tmp_path):
     d = D.Dictionaries(str(tmp_path / "live"), str(tmp_path / "no-backup"))
     report = T.run("fairwardgolf", FakeModel(), str(tmp_path / "shops"), dicts=d)["report"]
     assert any("dictionaries: a backup is due (never backed up)" in line for line in report)
+
+
+def test_a_titles_after_sales_claim_may_be_dropped_but_flex_letters_stay():
+    item = {"id": "1", "kind": "title", "source": "S강도/ 왼손/ PXG/ 테일러메이드/ 골프채 풀세트 좌타 남성 AS가능 왼손잡이"}
+    assert "AS" not in T._checked_source(item) and "PXG" in T._checked_source(item)
+    flex = {"id": "2", "kind": "title", "source": "드라이버 A S 강도 선택 MASTER"}
+    assert T._checked_source(flex) == flex["source"]
+
+
+def test_a_brand_keeps_the_dictionarys_case(tmp_path):
+    d = D.Dictionaries(str(tmp_path / "live"), str(tmp_path / "backup"))
+    d.add("brand", "핑", "PING")
+    d.add("brand", "핑골프", "Ping")                 # the model wrote it in another case: one spelling
+    d.add("brand", "요넥스", "Yonex")
+    assert d.get("brand", "핑골프") == "PING" and d.brand_spelling("YONEX") == "Yonex" and d.brand_spelling("Acme") == "Acme"

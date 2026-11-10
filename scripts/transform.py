@@ -364,7 +364,9 @@ def reviews(line: dict[str, Any], run: str) -> tuple[dict[str, Any] | None, list
         m = media.get(r["id"], {"photos": [], "avatar": None})
         out.append({"id": r["id"], "score": r["score"], "text_ko": r["text"], "created_at": r["created_at"],
                     "writer": (r.get("writer") or {}).get("masked_id"), "photos": m["photos"],
-                    "avatar": m["avatar"], "tier": r.get("tier")})
+                    "avatar": m["avatar"], "tier": r.get("tier"),
+                    "likes": r.get("likes") if isinstance(r.get("likes"), int) else 0})   # Naver's "helpful" votes:
+                                                                                          # the gallery's ranking
     return rating, out
 
 

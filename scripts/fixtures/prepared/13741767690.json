@@ -3046,6 +3046,7 @@
     "photos": [],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 24
    },
@@ -3058,6 +3059,7 @@
     "photos": [],
     "avatar": "collected/50002788-fixtures/images/13741767690/fairwardgolf-review-avatar-80428448b0e5cdf2.webp",
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 24,
     "text_original_ko": "거리도 기존보다 더나가고\n공이  잘 맞아요"
@@ -3073,6 +3075,7 @@
     ],
     "avatar": "collected/50002788-fixtures/images/13741767690/fairwardgolf-review-avatar-80428448b0e5cdf2.webp",
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 41,
     "text_original_ko": "빠른 배송 최고\n너무이쁘네요.\n와이프 선물이데 아주 맘에 들어합니다.\n^^",

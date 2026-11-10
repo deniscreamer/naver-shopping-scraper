@@ -101,6 +101,8 @@ class Dictionaries:
     def add(self, kind: str, ko: str, en: str) -> None:
         if kind not in KINDS:
             raise KeyError(kind)
+        if kind == "brand":                     # one brand, one spelling whatever the case the model wrote it in
+            en = self.brand_spelling(en)        # (the owner, 2026-11-09: "YONEX" stays YONEX, "Yonex" Yonex)
         if self.entries[kind].get(ko) != en:
             self.entries[kind][ko] = en
             self.added[kind][ko] = en
@@ -113,6 +115,13 @@ class Dictionaries:
                 current = _read(path, kind) if os.path.exists(path) else {}
                 self.entries[kind] = {**current, **self.added[kind]}
                 _write(path, kind, self.entries[kind])
+
+    def brand_spelling(self, name: str) -> str:
+        """The dictionary's spelling of this brand, compared without case; the name itself for a new brand."""
+        for v in self.entries["brand"].values():
+            if v.lower() == (name or "").lower():
+                return v
+        return name
 
     def vendors(self) -> list[str]:
         """The canonical brand spellings (the model reuses one of them for the same brand)."""

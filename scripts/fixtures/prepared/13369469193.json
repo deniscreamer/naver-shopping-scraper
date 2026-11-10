@@ -542,6 +542,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 17,
     "text_original_ko": "사용해보니 좋아요 \n강추"
@@ -557,6 +558,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 23
    },
@@ -571,6 +573,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "short",
     "text_quality": 17
    },
@@ -586,6 +589,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 48,
     "text_original_ko": "제품 너무 좋내요 기대이상입니다.  좋은제품 감사합니다.^^ 근데저는 가방 포함된줄 알앗는데 그건 아니더라고요. 그부분은 살짝 아쉽네요"
@@ -602,6 +606,7 @@
     ],
     "avatar": null,
     "tier": "small",
+    "likes": 0,
     "text_grade": "full",
     "text_quality": 41
    }

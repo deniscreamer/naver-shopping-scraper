@@ -108,6 +108,11 @@ def decide(attr: Attribute, variants: list[tuple[str, list[str]]], rows: list[di
     if titled:
         evidence.append({"source": "title", "value": titled, "text": (title or "")[:80]})
     own = row or (titled if titled != "conflict" else None)
+    if row == "unisex" and titled in attr.opposite:
+        # a title naming one gender beats a 남녀공용 row (2026-11-09 pilot: "PGM 여성골프채풀세트" with 성별 남녀공용
+        # went to the men's section too): a seller fills the row from a template, the name is what they sell
+        own = titled
+        evidence.append({"source": "rule", "value": titled, "text": "the title's gender over a unisex row"})
     per_variant: dict[str, str] = {}
     for sku, values in variants:
         v = _one(attr, values_in(attr, " ".join(values)))
@@ -135,7 +140,7 @@ def decide(attr: Attribute, variants: list[tuple[str, list[str]]], rows: list[di
                 "unisex" if all(v == "unisex" for v in per_variant.values()) else "mixed")
     else:
         variant_values = {}
-        value = row or titled
+        value = own or titled
         if row and titled and titled != "conflict" and attr.opposite.get(row) == titled:
             value = "conflict"
     value = value or "unknown"
