@@ -5,6 +5,15 @@ version in `extension/manifest.json`.
 
 ## Unreleased
 
+- Descriptions after a check of 35 against their sources (2026-11-10: 15 had a wrong club list or count, a fact
+  of one choice told of all, or a lost "no bag" sentence): the stage asks at its own effort, `medium` with
+  thinking on (`DESCRIBE_EFFORT`; chosen after a comparison of Haiku 5.5, Sonnet 5.5, Opus 5.5 and Fable 5.2 at
+  several efforts, the tables with prices are in scripts/README.md "Which model writes the descriptions"); the tables read from the seller's images are sent in a section of their own (the set's
+  clubs are listed there; a figure only a table gives is not stated); the prompt has the model compare the
+  sources and add the clubs up, put the seller's own lists before the Naver spec rows, and tie a fact to the
+  choice it holds for; a club inside a range the source gives passes the number check; a seller's disclaimer
+  ("specs may differ") is cut; highlights are what sets the clubs apart, not raw measurements.
+
 - Product descriptions (the owner, 2026-11-10): `describe.py` writes a minimalist English description in HTML
   for Shopify's `descriptionHtml`, one model request per product through translate.py's client. The script builds
   the packet (what is sold first, the shop's English, the seller's texts without OCR tables, paid extras, gifts,

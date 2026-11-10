@@ -74,6 +74,7 @@ def test_packet_names_the_product_as_the_shop_does_and_puts_what_is_sold_first()
     order = [m.index(h) for h in ("# Product", "# What is sold", "# Specifications", "# Seller's text")]
     assert order == sorted(order)
     assert "# Text read from the seller's images" not in m               # its only block is a table
+    assert m.index("# Tables read from the seller's images") > m.index("# Seller's text")
 
 
 def test_packet_says_one_configuration_when_there_is_nothing_to_pick():
@@ -87,11 +88,29 @@ def test_a_fact_without_a_label_and_the_listings_hints():
     assert "paid extras: they are not part of this product" in packet("12606747315")["message"]
 
 
-def test_tables_read_by_ocr_are_not_sent():
-    p = packet("13627933340")
-    assert p["dropped"] == {"table": 14}
-    assert "로프트각" not in p["message"] and "59.5" not in p["message"]    # the per-club table
-    assert "드라이버(#1 11.5°)" in p["message"]                            # the text blocks stay
+def test_tables_read_by_ocr_are_sent_apart_from_the_text():
+    m = packet("13627933340")["message"]
+    text, tables = m.split("# Tables read from the seller's images")
+    assert "드라이버(#1 11.5°)" in text and "로프트각" not in text.split("# Text read from")[1]
+    assert "로프트각() | 11.5 | 18 | 24 | 29" in tables and "2003년부터 | 쌓아온" not in tables   # words in columns: text
+    assert packet("13627933340")["dropped"] == {}
+
+
+@pytest.mark.parametrize("text, table", [
+    ("NEW 2019 | 여성|카본10pcs | 클럽만", False),                      # 5479607864: "clubs only" must reach the model
+    ("우드:1 | 아이언:7 | S | 퍼터:PT", False),
+    ("제품구성 | 10PCS +골프백 | 제조자 | 캘러웨이", False),
+    ("10.5 | 58.5 | H1 | 460 | 45.25 | Do | 298", True),
+    ("중량(g) | 67 | 68 | 69\n토크() | 3.6 | 3.5 | 3.5", True),
+    ("길이 | 43inch | 42inch", True),
+    ("헤드 | 1W | 4W\n로프트각 | 11.5 | 18\n라이각 | 59.5 | 60", True),      # three rows: a table whatever the words
+])
+def test_words_in_columns_are_text_and_figures_are_a_table(text, table):
+    block = {"id": "b1", "kind": "table", "image": 1, "text": text}
+    assert D._is_table(block) is table
+    sent, tables, dropped = D.image_text([block])
+    assert (sent, tables) == (("", text) if table else (text, "")) and dropped == {}
+    assert D._is_table({**block, "kind": "text"}) is False
 
 
 def test_a_block_headed_by_a_paid_extra_is_not_sent():
@@ -102,7 +121,7 @@ def test_a_block_headed_by_a_paid_extra_is_not_sent():
 def test_a_line_naming_an_extra_further_down_stays_with_its_label():
     blocks = [{"id": "b1", "kind": "text", "image": 1,
                "text": "제품 구성\n핑 G440 MAX 10.5도SR 드라이버\n테일러메이드 M4 경량스틸R 7아이언\n추가 주문 상품:5번 SR 페어웨이 우드"}]
-    text, dropped = D.image_text(blocks)                                  # 11635694901: the composition block
+    text, _, dropped = D.image_text(blocks)                               # 11635694901: the composition block
     assert dropped == {} and "드라이버" in text and "추가 주문 상품:5번" in text
     typed = D._lines_kept("5> 퍼터: MO-32 퍼터\n<골프백 별매 추가선택가능>\n테일러메이드 캐디백\n제조국 : 중국")
     assert "골프백 별매" in typed and "캐디백" in typed and "제조국" not in typed     # 9266336330: the label stays
@@ -117,20 +136,22 @@ def test_a_gift_fact_is_not_what_is_sold():
                                    text_id("fact_label", "색상"): "Color", text_id("fact_value", "레드"): "Red"})
     m = D.packet(fx["prepared"], fx["translated"], fx["blocks"], None, "Fairward Golf")["message"]
     assert "Fixed: Color: Red" in m and "Fixed: Free Gift" not in m
-    assert "# Gifts of the seller: never mention these items, and never say they are missing\nFree Gift: Putter" in m
+    assert "write that the product has no such item\nFree Gift: Putter" in m
     assert m.index("# Gifts of the seller") > m.index("Origin: ")
 
 
 def test_an_image_of_buyers_reviews_is_not_sent():
     p = packet("11061911792")
-    assert p["dropped"]["review"] == 10
+    assert p["dropped"]["review"] == 19
     assert "kdse***" not in p["message"] and "입을수 있어서" not in p["message"]      # ids and the reviews by them
 
 
 def test_long_image_text_is_cut_at_a_block():
     blocks = [{"id": f"b{i}", "kind": "text", "image": i, "text": "가" * 5000} for i in range(4)]
-    text, dropped = D.image_text(blocks)
-    assert len(text) <= D.OCR_MAX + 10 and dropped == {"over": 2}
+    text, tables, dropped = D.image_text(blocks)
+    assert len(text) <= D.OCR_MAX + 10 and tables == "" and dropped == {"over": 2}
+    rows = [{"id": f"t{i}", "kind": "table", "image": i, "text": "1 | 2 | 3\n" * 500} for i in range(3)]
+    assert D.image_text(rows)[2] == {"over": 2}
 
 
 @pytest.mark.parametrize("row, texts, country, why", [
@@ -198,6 +219,7 @@ def test_a_plain_fact_passes(text):
     ("Only $499 this week.", "price"),
     ("Costs 880,000 won.", "price"),
     ("<b>Forged</b> irons.", "markup"),
+    ("A set for right-hand... women golfers.", "markup"),
     ("Free shipping on this set.", "shop talk: shipping"),
     ("3-year warranty included.", "shop talk: warranty"),
     ("100% genuine product.", "shop talk: 100% genuine"),
@@ -219,6 +241,7 @@ def test_a_plain_fact_passes(text):
     ("Hybrid, depending on the option chosen", "about the listing: depending on the option"),
     ("It is aimed at men who want a full set of 10 clubs.", "about the listing: who want"),
     ("The set is a parallel import.", "shop talk: parallel import"),
+    ("Specs may differ slightly from the actual product.", "about the listing: may differ"),
     ("No putter is mentioned.", "about the listing: is mentioned"),
 ])
 def test_what_cannot_be_shown(text, why):
@@ -230,6 +253,25 @@ def test_a_number_glued_by_ocr_is_still_the_models_to_use():
     assert D.problems("2 fairway woods (#4 at 18°, #7 at 24°)", numbers | {"2", "4", "7"}, None) == []
     assert D.problems("Fairway wood, 19°", numbers, None) == ["numbers not in the source: 19"]
     assert D.problems("8 irons", numbers, None) == ["numbers not in the source: 8"]    # one digit: as given only
+
+
+def test_the_clubs_inside_a_range_are_the_models_to_name():
+    numbers = D.allowed_numbers("12.5도 | 18도 | 5번,6번 | (7-9,P,S)\n아이언 #5~9")        # 13719960843
+    assert D.problems("Irons and wedges: 7, 8, 9, P, S", numbers, None) == []
+    assert D.problems("Irons: #5, #6, #7, #8, #9", numbers, None) == []
+    assert D.problems("Irons: #4-#9", numbers, None) == ["numbers not in the source: 4"]
+    assert "13" not in D.allowed_numbers("6-4 Ti, 2020-2026")                          # not a range of clubs
+
+
+def test_the_stage_asks_at_its_own_effort_with_thinking_on():
+    chain = D.build_chain({translate.ANTHROPIC_KEY: "k", translate.OPENAI_KEY: "o"}, {})
+    assert [(m.name, m.effort) for m in chain.models] == [(translate.MODEL, "medium"),
+                                                         (translate.OPENAI_MODEL, "medium")]
+    assert chain.models[0].thinking == "adaptive"
+    one = D.build_chain({translate.ANTHROPIC_KEY: "k"}, {"DESCRIBE_EFFORT": "high", "TRANSLATE_PROVIDERS": "anthropic"})
+    assert [(m.name, m.effort) for m in one.models] == [(translate.MODEL, "high")]
+    with pytest.raises(translate.TranslateError):
+        D.build_chain({}, {})
 
 
 def test_no_origin_decided_means_no_origin_in_the_text():
@@ -296,7 +338,7 @@ def test_the_wrong_country_never_reaches_the_page():
 
 def test_lists_and_length_are_capped():
     answer = {"intro": "A set. " + "It is light. " * 60, "included": [f"Item {c}" for c in "abcdefghij"],
-              "highlights": ["Light.", "x" * 200, "Stable.", "Soft.", "Easy.", "Plain."], "conflicts": []}
+              "highlights": ["Light.", "x" * 230, "Stable.", "Soft.", "Easy.", "Plain."], "conflicts": []}
     done = D.settle(answer, GOLF, packet("13627933340"))
     f = done["fields"]
     assert len(f["intro"]) <= D.INTRO_MAX and f["intro"].startswith("A set. It is light.")
@@ -405,7 +447,7 @@ def test_each_product_is_asked_once_and_kept(shop):
     assert [x["status"] for x in r["rows"]] == ["ok", "ok"] and len(model.calls) == 2
     row = D.load_store(os.path.join(root, "fairwardgolf"))[keys[0]]
     assert row["html"].startswith("<p>The PRGR Sweep M17") and row["by"] == "fake" and row["origin"] == "Japan"
-    assert row["generated"] == "model" and row["profile"] == "golf_set" and row["left_out"] == {"table": 14}
+    assert row["generated"] == "model" and row["profile"] == "golf_set" and row["left_out"] == {}
     assert "golf club sets" in model.calls[0]["system"] and model.calls[0]["schema"] == D.schema(GOLF)
     again = D.run("fairwardgolf", Fake([]), root)                        # a model that would fail if asked
     assert again["rows"] == [] and again["stale"] == [] and "0 described" in again["report"][0]

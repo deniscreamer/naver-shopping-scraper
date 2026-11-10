@@ -328,7 +328,7 @@ def test_a_describing_job_writes_the_description_before_it_publishes(tmp_path, m
     monkeypatch.setattr(PB, "publish_one", lambda shop, key, *a, **k: order.append(("publish", key)) or
                         {"key": key, "status": "published", "handle": "h", "product_id": "gid://shopify/Product/1"})
     monkeypatch.setattr("placement.run", lambda *a, **k: None)
-    ctx = {"translator": "CHAIN"}
+    ctx = {"describer": "CHAIN"}
     assert J.publish_step(job, ctx, KEYS[1]).startswith("described (trimmed, 1 cut); published h")
     assert order == [("describe", KEYS[1], "CHAIN"), ("publish", KEYS[1])]          # described first, by the chain
     event = next(e for e in job.events() if e["event"] == "described")

@@ -1164,14 +1164,19 @@ calls) against 4.0 s a file one by one (5 calls a file).
 ```
 
 A minimalist English description in HTML for Shopify's own body (`descriptionHtml`; no metafield, no SEO
-description). One model request and one answer per product, through translate.py's client and chain (the same
-key and models); no fix rounds. The script works before and after the request:
+description). One model request and one answer per product, through translate.py's client (the same key, models
+and fallback order) at this stage's own effort: `medium` with thinking on (`DESCRIBE_EFFORT` in .env changes it);
+no fix rounds. Why not the translation's `low` without thinking: checked 2026-11-10 on 35 descriptions against
+their sources, 15 had a wrong club list or count, a fact of one choice told of all, or a lost "no bag" sentence;
+the answer needs the sources compared and the clubs added up ("Which model" below). The script works before and after the request:
 
 - **Before** (`packet`): what is sold goes first (the facts and the options of the variants we publish, the free
   required choices), then the English the shop already shows (title, brand, spec rows, option values: the
   description names the product as its title does), then the seller's typed text and the OCR blocks of the
-  description images in Korean. Left out: OCR table blocks (digits are lost in them: per-club tables belong to a
-  later characteristics stage), a block headed by an offer of a paid extra or a gift (a line naming an extra
+  description images in Korean, and, in a section of their own, the tables read from those images (digits are
+  lost in them, so a figure only a table gives is not stated; but the seller lists the set's clubs there, and the
+  Naver spec rows are often wrong about them; one or two rows of mostly Korean words are text in columns, e.g.
+  "여성 | 카본10pcs | 클럽만"). Left out:, a block headed by an offer of a paid extra or a gift (a line naming an extra
   inside another block stays with its label: the label is what tells the model to leave the item out), an image of
   buyers' reviews (masked ids), every line on the country of manufacture. A gift among the facts or the free
   choices is listed under "Gifts of the seller: never mention", not as what is sold. Notes the transform already made about the listing (other
@@ -1186,11 +1191,11 @@ key and models); no fix rounds. The script works before and after the request:
   text, shown in the report), `intro`, and the lists of the product's profile.
 - **After** (`settle`): each intro sentence and each list item is checked alone: English only, no link, phone,
   price or markup, no shop talk (warranty, shipping, gifts, reviews, authenticity, parallel import), no talk about
-  the listing ("per the specifications", "depending on the option"), every number is one the model was given (a
-  tripwire, not a proof: a wrong number that stands elsewhere in the packet passes), no country but the decided
+  the listing ("per the specifications", "depending on the option", a seller's disclaimer "specs may differ"), every number is one the model was given or a club inside
+  a range it was given (a tripwire, not a proof: a wrong number that stands elsewhere in the packet passes), no country but the decided
   one. A failing highlight or intro sentence is dropped; a failing item of another list drops that list (half a
   list of the box's contents misleads; so does a clean list over its cap of 12). No intro left: the title as one
-  sentence (`fallback`). Caps: intro 400 characters, an item 160, the whole text 1 500. The HTML is built by the script (`p`, `h3`, `ul`, `li`, text
+  sentence (`fallback`). Caps: intro 400 characters, an item 220, the whole text 1 500. The HTML is built by the script (`p`, `h3`, `ul`, `li`, text
   escaped, a line break between blocks).
 - **What nothing checks**: a claim without a number that the seller did not make (the model explaining a term).
   The prompt forbids it; read a sample of `translation/descriptions.jsonl` when a category or the prompt changes.
@@ -1208,8 +1213,64 @@ Google asks for AI-written text to be declared). A product with a row is not ask
 changed is reported `stale` and kept (`--force` asks again). `publish.py` puts the row's HTML into the payload and
 into the publish digest only when the product has a row, so a product without one keeps its digest. Products
 already in the shop are skipped unless `--published` or `--only` names them: a new description changes the digest,
-and the next `publish.py` run sends the product (the owner's go-ahead first, JOB_AGENT.md). Measured 2026-11-10 on
-22 real requests: 2-5 s and about $0.01 a product (claude-sonnet-5-5, effort low).
+and the next `publish.py` run sends the product (the owner's go-ahead first, JOB_AGENT.md).
+
+### Which model writes the descriptions (compared 2026-11-10)
+
+The default is **claude-sonnet-5-5 at effort `medium`** (the owner, 2026-11-10). Two tests stand behind it; repeat
+them when a new model comes out, and add its row here.
+
+**Test 1, breadth: one product, every model.** The same packet (Bridgestone BG-100, 8958060680: a clean listing
+with two traps, a spec row that drops the #6 iron and a driver loft tied to the shaft set; 2 requests a setting)
+and a stress packet (Mutsumi Honma + TaylorMade mixed set, 6707956586: the sources disagree on the loft, the
+irons and the shaft material; 1 request). Three blind judges a product scored each answer against a fact list,
+0-10. Accuracy and coverage are "clean packet / stress packet"; the price is the list price of the tokens used
+(input + output, thinking included), no cache discount.
+
+| Model | Effort | Accuracy | Coverage | Errors that block publishing | $ per 1 000 products | Time |
+|---|---|---|---|---|---|---|
+| claude-haiku-5-5 | medium | 9.8 / 5.5 | 7.4 / 5.7 | yes (stress) | 1.5 | 10 s |
+| claude-haiku-5-5 | high | 10 / 10 | 5.0 / 6.0 | no | 3 | 21 s |
+| claude-sonnet-5-5 | low, thinking off | 8.4 / 6.5 | 6.0 / 6.7 | yes (both) | 16 | 4 s |
+| claude-sonnet-5-5 | medium | 10 / 9.7 | 8.9 / 9.0 | no | 24 | 11 s |
+| claude-sonnet-5-5 | high | 10 / 10 | 7.7 / 9.0 | no | 29 | 13 s |
+| claude-opus-5-5 | low | 10 / 10 | 6.8 / 9.7 | no | 36 | 8 s |
+| claude-opus-5-5 | medium | 9.6 / 10 | 5.3 / 7.7 | no | 49 | 14 s |
+| claude-opus-5-5 | high | 10 / 10 | 8.5 / 8.5 | no | 62 | 19 s |
+| claude-fable-5-2 | low | 10 / 10 | 8.5 / 10 | no | 67 | 9 s |
+| claude-fable-5-2 | medium | 9.2 / 10 | 8.2 / 9.2 | no | 109 | 23 s |
+| claude-fable-5-2 | high | 9.0 / 10 | 8.3 / 7.7 | no | 208 | 56 s |
+| claude-fable-5-1 (legacy) | medium | 8.5 / 10 | 4.3 / 10 | no | 146 | 23 s |
+
+Prices per million tokens then (input / output): Haiku 5.5 $0.10 / $0.50, Sonnet 5.5 $2 / $10, Opus 5.5 $4 / $20,
+Fable 5.2 $8 / $40. The answer itself is about 400 tokens; the rest of the output is thinking, which is what a
+higher effort or a bigger model costs. From Sonnet `medium` up every setting was accurate; the dearer ones bought
+nothing on this task.
+
+**Test 2, depth: 35 products, the three candidates.** The 35 products first described (golf sets, 50002788), each
+written by the three settings from the same prompt; one blind checker a product compared the three descriptions
+(letters shuffled per product) with the packet: `good` (every claim supported), `minor` (slips of wording),
+`wrong` (a false, unsupported or missing fact that misleads), and a usefulness mark 0-10.
+
+| | claude-haiku-5-5 high | claude-sonnet-5-5 medium | claude-sonnet-5-5 high |
+|---|---|---|---|
+| good / minor / wrong | 11 / 22 / 2 | 18 / 17 / 0 | 20 / 13 / 2 |
+| Usefulness, 0-10 | 6.7 | 7.3 | 7.6 |
+| Picked as the best of the three | 9 | 14 | 12 |
+| Empty "What's included" | 12 | 10 | 7 |
+| $ per 1 000 products | 3.6 | 18 | 27 |
+| Time a product (mean) | 27 s | 5 s | 12 s |
+
+Sonnet `medium` and `high` cannot be told apart at this size (0 against 2 wrong of 35 is noise); `medium` costs a
+third less and answers twice as fast. Haiku `high` is five times cheaper and makes no gross error, but writes
+poorer descriptions (more slips, more empty lists, one description that fell back to the title) and is the
+slowest, because it thinks the longest: the candidate for very large volumes, after the prompt is tuned for it.
+
+How the tests were run (scratch scripts, not in the repo): the packet, `describe.ask` and `describe.settle` called
+directly for each model (`translate.AnthropicModel(key, model, effort, thinking="adaptive")`), nothing stored in
+the shop and nothing published; the judging by agents that see the answers under neutral labels with the packet.
+Limits: one or two requests a setting in test 1, one checker a product in test 2; only large differences are
+reliable.
 
 ## Shopify roadmap
 

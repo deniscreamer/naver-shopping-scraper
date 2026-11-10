@@ -9,9 +9,9 @@ one answer per product (no fix rounds); a product always gets a description, at 
 title.
 
 Before the request (packet): what is sold first (the facts and the options of the variants we publish), the English
-the shop already shows (title, brand, spec rows, option values), then the seller's Korean texts with this removed:
-table blocks read by OCR (digits are lost in them), blocks about paid extras, gifts and buyers' reviews, and every
-line about the country of manufacture. The country is decided here (origin): stated when the sources name one
+the shop already shows (title, brand, spec rows, option values), then the seller's Korean texts and, apart, the
+tables read from the images (digits are lost in them, but the set's clubs are listed there), with this removed:
+blocks about paid extras, gifts and buyers' reviews, and every line about the country of manufacture. The country is decided here (origin): stated when the sources name one
 country, left out and reported when they disagree (the owner, 2026-11-10).
 
 After the answer (settle): each sentence of the intro and each list item is checked alone (no Hangul, no link, phone
@@ -49,8 +49,13 @@ FORMAT = "description/1"
 STORE = "descriptions.jsonl"
 REPORT = "descriptions_report.txt"
 
-INTRO_MAX, ITEM_MAX, TOTAL_MAX = 400, 160, 1500        # characters of text (Google reads the first 160-500)
+EFFORT, EFFORT_ENV = "medium", "DESCRIBE_EFFORT"    # with thinking on: the answer needs the sources compared and
+                                                    # the clubs counted. The translation's "low" without thinking
+                                                    # made real errors; "medium" was as good as "high" on 35
+                                                    # products at two thirds of the price (README, model comparison)
+INTRO_MAX, ITEM_MAX, TOTAL_MAX = 400, 220, 1500        # characters of text (Google reads the first 160-500)
 OCR_MAX = 12000                                        # characters of image text sent (the longest of 105: 11,410)
+TABLES_MAX = 8000                                      # characters of image tables sent
 
 # A kind of product: the Naver leaf categories it covers, its lists (key, heading, most items) and its brief
 # (prompts/describe/<name>.md: what each list holds, what a buyer of this kind of product must be told).
@@ -64,6 +69,21 @@ PROFILES: dict[str, dict[str, Any]] = {
 
 class NoProvider(Exception):
     """No provider answered (all down): the product waits, the run stops (as the translation does)."""
+
+
+def build_chain(keys: dict[str, str], env: Any = os.environ) -> Chain:
+    """translate.py's providers and models (the same keys and .env names), at this stage's effort and with
+    thinking on. DESCRIBE_EFFORT in .env changes the effort (low | medium | high | xhigh | max)."""
+    effort = (env.get(EFFORT_ENV) or EFFORT).strip().lower()
+    models: list[Model] = []
+    for provider, name, _ in translate.settings(env):
+        if provider == "anthropic" and keys.get(translate.ANTHROPIC_KEY):
+            models.append(translate.AnthropicModel(keys[translate.ANTHROPIC_KEY], name, effort, thinking="adaptive"))
+        elif provider == "openai" and keys.get(translate.OPENAI_KEY):
+            models.append(translate.OpenAIModel(keys[translate.OPENAI_KEY], name, effort))
+    if not models:
+        raise TranslateError(f"no key in the key file for the providers of {translate.PROVIDERS_ENV}")
+    return Chain(models)
 
 
 def profile_of(category_id: Any) -> tuple[str, dict[str, Any]]:
@@ -157,32 +177,45 @@ def _lines_kept(text: str) -> str:
                      if not _ORIGIN_RE.search(x) and not _PRODUCED_RE.search(x)).strip()
 
 
-def image_text(blocks: list[dict[str, Any]]) -> tuple[str, dict[str, int]]:
-    """The image text to send and what was left out: {table, extra, review, over}. A block headed by an offer of an
-    extra (its first two lines) goes whole; a block that names an extra further down stays, with that line: it
-    often holds the set's composition too (11635694901). An image that shows buyers' reviews (masked ids with
-    dates: "kdse***23.12.25.") goes whole, the reviews being in blocks of their own (11061911792)."""
+def _is_table(block: dict[str, Any]) -> bool:
+    """A table of figures (sent apart: OCR loses digits in them). One or two rows whose cells are mostly Korean
+    words are text laid out in columns: "NEW 2019 | 여성 | 카본10pcs | 클럽만" (5479607864: clubs only, no bag),
+    "우드:1 | 아이언:7 | S | 퍼터:PT"."""
+    if block.get("kind") != "table":
+        return False
+    rows = (block.get("text") or "").strip().splitlines()
+    cells = [c for row in rows for c in row.split("|") if c.strip()]
+    return len(rows) > 2 or 2 * sum(1 for c in cells if HANGUL_RE.search(c)) <= len(cells)
+
+
+def image_text(blocks: list[dict[str, Any]]) -> tuple[str, str, dict[str, int]]:
+    """(the image text to send, the image tables to send, what was left out: {extra, review, over}). Tables of
+    figures go apart, with a warning: OCR loses digits in them, but they are where the seller lists the clubs of
+    the set, and the Naver spec rows are often wrong about that (2026-11-10: "#5 ... SW" in the seller's table,
+    "#6 ... AW" in the row). A block headed by an offer of an extra (its first two lines) goes whole; a block that
+    names an extra further down stays, with that line: it often holds the set's composition too (11635694901). An
+    image that shows buyers' reviews (masked ids with dates: "kdse***23.12.25.") goes whole, the reviews being in
+    blocks of their own (11061911792)."""
     reviews = {b.get("image") for b in blocks if len(_MASKED_RE.findall(b.get("text") or "")) >= 2}
-    out: list[str] = []
+    out: dict[bool, list[str]] = {False: [], True: []}
+    size = {False: 0, True: 0}
     dropped: dict[str, int] = {}
-    size = 0
     for b in blocks:
-        text = (b.get("text") or "").strip()
-        why = ("table" if b.get("kind") == "table" else
-               "extra" if _EXTRA_RE.search("\n".join(text.splitlines()[:2])) else
+        text, table = (b.get("text") or "").strip(), _is_table(b)
+        why = ("extra" if _EXTRA_RE.search("\n".join(text.splitlines()[:2])) else
                "review" if _REVIEW_RE.search(text) or b.get("image") in reviews else None)
         if why is None:
             text = _lines_kept(text)
             if not text:
                 continue
-            if size + len(text) > OCR_MAX:
+            if size[table] + len(text) > (TABLES_MAX if table else OCR_MAX):
                 why = "over"
         if why:
             dropped[why] = dropped.get(why, 0) + 1
             continue
-        out.append(text)
-        size += len(text)
-    return "\n\n".join(out), dropped
+        out[table].append(text)
+        size[table] += len(text)
+    return "\n\n".join(out[False]), "\n\n".join(out[True]), dropped
 
 
 def load_blocks(shop_dir: str, product: dict[str, Any]) -> list[dict[str, Any]]:
@@ -206,7 +239,7 @@ def packet(prepared: dict[str, Any], translated: dict[str, Any], blocks: list[di
     title, brand = sp.title_vendor(product, en, vendors, tenant)
     notes = {n["code"] for n in prepared.get("notes") or []}
     seller = product.get("description_ko") or ""
-    raw_images = "\n\n".join((b.get("text") or "") for b in blocks if b.get("kind") != "table")
+    raw_images = "\n\n".join((b.get("text") or "") for b in blocks)
     row = next((s["value_ko"] for s in product.get("specs") or [] if s["label_ko"] == ORIGIN_LABEL), None)
     country, origin_note = origin(row, [seller, raw_images])
 
@@ -225,7 +258,7 @@ def packet(prepared: dict[str, Any], translated: dict[str, Any], blocks: list[di
         (free if gift else picks).append(f"{g or 'Selection'}: " + " | ".join(names))
     specs = [f"{en('spec_label', s['label_ko'])}: {en('spec_value', s['value_ko'])}"
              for s in product.get("specs") or [] if s["label_ko"] != ORIGIN_LABEL]
-    images, dropped = image_text(blocks)
+    images, tables, dropped = image_text(blocks)
 
     parts = ["# Product", f"Title: {title}", f"Brand: {brand}", f"Title in Korean: {product['title_ko']}",
              "", "# What is sold"]
@@ -236,7 +269,8 @@ def packet(prepared: dict[str, Any], translated: dict[str, Any], blocks: list[di
     parts.append(f"Origin: made in {country}" if country else "Origin: do not state")
     parts += [HINTS[c] for c in HINTS if c in notes]
     if free:
-        parts += ["", "# Gifts of the seller: never mention these items, and never say they are missing"] + free
+        parts += ["", "# Gifts of the seller: the buyer gets these free. Never list or describe them, and never "
+                  "write that the product has no such item"] + free
     if specs:
         parts += ["", "# Specifications (rows typed by the seller)"] + specs
     seller = _lines_kept(seller)
@@ -244,6 +278,9 @@ def packet(prepared: dict[str, Any], translated: dict[str, Any], blocks: list[di
         parts += ["", "# Seller's text (Korean)", seller]
     if images:
         parts += ["", "# Text read from the seller's images (Korean, OCR: letters and digits may be wrong)", images]
+    if tables:
+        parts += ["", "# Tables read from the seller's images (OCR: a digit or a cell may be lost; rows are cells "
+                  "\"a | b | c\")", tables]
     return {"message": "\n".join(parts), "title": title, "brand": brand, "origin": country,
             "origin_note": origin_note, "dropped": dropped}
 
@@ -254,7 +291,7 @@ _CJK_RE = re.compile(r"[぀-ヿ㐀-䶿一-鿿]")                 # kana and han 
 _SHAPES = (("link", re.compile(r"https?://|www\.|\b[\w-]+\.(?:com|net|kr|co|org|jp)\b", re.I)),
            ("phone", re.compile(r"\b\d{2,4}[-.\s]\d{3,4}[-.\s]\d{4}\b")),
            ("price", re.compile(r"[₩$€¥]|\bKRW\b|\bUSD\b|\bwon\b|\d\s*원", re.I)),
-           ("markup", re.compile(r"<[a-zA-Z/][^>]*>|\*\*|^#+\s", re.M)))
+           ("markup", re.compile(r"<[a-zA-Z/][^>]*>|\*\*|^#+\s|\.\.\.|…", re.M)))    # tags, markdown, a trailing-off "..."
 _BANNED_RE = re.compile(
     r"\b(?:warrant\w*|guarantee\w*|refund\w*|coupon\w*|discount\w*|shipping|delivery|customs|import dut\w+|"
     r"authentic\w*|100% genuine|genuine\w*|parallel[- ]import\w*|gr[ae]y[- ](?:import\w*|market)|"
@@ -264,7 +301,8 @@ _BANNED_RE = re.compile(
 # talk about the listing instead of the product ("per the specifications", "depending on the option chosen")
 _META_RE = re.compile(r"\b(?:listings?|sellers?|the title|specifications? (?:say|list|state|give)s?|per the|according to|"
                       r"(?:is|are|not) (?:mentioned|stated|listed|specified)|unclear|unknown|option chosen|"
-                      r"depending on the option|as shown|the sources?|who wants?|looking for)\b", re.I)
+                      r"depending on the option|as shown|the sources?|who wants?|looking for|"
+                      r"may (?:differ|vary|change)|subject to change|actual product)\b", re.I)
 _MADE_RE = re.compile(r"\b(?i:made|manufactured|produced|built|assembled|crafted)\s+(?i:in)\s+(?i:the\s+)?"
                       r"([A-Z][A-Za-z.]*(?:\s[A-Z][a-z]+)?)")
 _ORIGIN_NAMES = {"USA": ("usa", "u.s", "u.s.a", "us", "united states", "america")}
@@ -276,6 +314,7 @@ _ADJECTIVES = {"Japan": "Japanese", "China": "Chinese", "Korea": "Korean", "Viet
 _NAMED_RE = {c: re.compile(rf"\b(?:{re.escape(c)}|{_ADJECTIVES.get(c, c)})\b(?![- ](?:market|spec))")
              for c in sorted(set(COUNTRIES.values()))}
 _NUMBER_RE = re.compile(r"\d+(?:\.\d+)?")
+_RANGE_RE = re.compile(r"(?<![\d.])#?(\d{1,2})\s*[-~–]\s*#?(\d{1,2})(?![\d.])")
 _YEAR2_RE = re.compile(r"(?<!\d)(\d{2})\s*년")                         # 23년 -> 2023 is the same year
 _SENTENCE_RE = re.compile(r"(?<=[.!?])\s+(?=[A-Z0-9\"“'])")
 _SPACES_RE = re.compile(r"\s+")
@@ -286,8 +325,12 @@ def _norm(number: str) -> str:
 
 
 def allowed_numbers(message: str) -> set[str]:
-    """The numbers the model was given (as written, "10.50" as "10.5"), and 20yy for a "yy년" of the Korean."""
+    """The numbers the model was given (as written, "10.50" as "10.5"), the club numbers inside a range it was
+    given, and 20yy for a "yy년" of the Korean."""
     out = {_norm(n) for n in _NUMBER_RE.findall(message)}
+    for a, b in _RANGE_RE.findall(message):                    # "(7-9,P,S)", "#5~9": the clubs in between
+        if int(a) < int(b) <= 13:
+            out |= {str(n) for n in range(int(a), int(b) + 1)}
     return out | {f"20{yy}" for yy in _YEAR2_RE.findall(message)}
 
 
@@ -548,7 +591,7 @@ def main(argv: list[str] | None = None) -> int:
         print(packet(p, t, load_blocks(shop_dir, p["product"]), publish.vendor_spellings({}), tenant)["message"])
         return 0
     try:
-        model = None if args.offline else translate.build_chain(translate.keys_from_env())
+        model = None if args.offline else build_chain(translate.keys_from_env())
         r = run(args.shop, model, args.shops_root, only=args.only, limit=args.limit, published=args.published,
                 force=args.force)
     except (TranslateError, NoProvider) as e:

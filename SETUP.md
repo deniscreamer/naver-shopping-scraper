@@ -113,6 +113,9 @@ not into the environment and not into logs. `translate.py <shop> --offline` need
 An effort `off` is not sent, for a model that takes none. `ANTHROPIC_TRANSLATE_THINKING`: `off` (the default, no
 thinking tokens) or `adaptive`. The report's first lines name the chain that ran.
 
+The products' descriptions (`describe.py`) use the same key, providers and models, at their own effort:
+`DESCRIBE_EFFORT`, default `medium`, with thinking on (optional; nothing to set for the default).
+
 ## 4. Offline tests (no network)
 
 ```sh

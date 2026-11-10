@@ -548,7 +548,9 @@ def describe_one(job: Job, ctx: dict, key: str) -> str:
     import describe
     import translate
     try:
-        r = describe.run(job.shop, ctx["translator"], job.shops_root, only=key)
+        if "describer" not in ctx:                               # its own chain: the same models at a higher effort
+            ctx["describer"] = describe.build_chain(translate.keys_from_env())
+        r = describe.run(job.shop, ctx["describer"], job.shops_root, only=key)
     except translate.TranslateError as e:
         raise Stop(f"describe: {e}") from None
     except describe.NoProvider as e:
