@@ -1,7 +1,7 @@
 {
  "format": "dictionary/1",
  "kind": "spec_label",
- "backed_up": "2026-11-09T07:13:28Z",
+ "backed_up": "2026-11-10T07:52:46Z",
  "entries": {
   "골프백포함여부": "Golf Bag Included",
   "드라이버 로프트각": "Driver Loft",
@@ -14,6 +14,7 @@
   "아이언샤프트소재": "Iron Shaft Material",
   "원산지": "Country of Origin",
   "유틸리티/하이브리드 로프트각": "Hybrid Loft",
+  "유효일자": "Expiration Date",
   "제조사": "Manufacturer",
   "종류": "Type",
   "총클럽개수": "Total Clubs",
