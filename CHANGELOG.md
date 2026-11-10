@@ -5,6 +5,11 @@ version in `extension/manifest.json`.
 
 ## Unreleased
 
+- Descriptions for all 110 products in the store (2026-11-10). After a check of the last 75 against their
+  sources: a choice the seller's texts offer is not written when "What is sold" fixes the configuration (a
+  "popular combination" was described as a free choice), features of another edition or colour are not a source,
+  and an intro whose naming sentence was cut starts with the title instead of "It".
+
 - Descriptions after a check of 35 against their sources (2026-11-10: 15 had a wrong club list or count, a fact
   of one choice told of all, or a lost "no bag" sentence): the stage asks at its own effort, `medium` with
   thinking on (`DESCRIBE_EFFORT`; chosen after a comparison of Haiku 5.5, Sonnet 5.5, Opus 5.5 and Fable 5.2 at

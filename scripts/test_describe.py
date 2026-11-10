@@ -316,6 +316,14 @@ def test_a_bad_item_takes_the_whole_included_list():
     assert done["fields"]["highlights"] == GOOD["highlights"] and done["status"] == "trimmed"
 
 
+def test_an_intro_whose_naming_sentence_was_cut_still_names_the_product():
+    answer = {**GOOD, "intro": "The PRGR Sweep M17 is a 99-club set. It combines a driver, woods and irons with a "
+                               "mallet putter. No bag is included."}
+    done = D.settle(answer, GOLF, packet("13627933340"))                 # 9266336330: "It combines ..." came first
+    assert done["fields"]["intro"] == ("PRGR Sweep M17 Women's Complete Set 11-Piece with Caddie Bag combines a "
+                                       "driver, woods and irons with a mallet putter. No bag is included.")
+
+
 def test_a_bad_intro_sentence_goes_alone():
     answer = {**GOOD, "intro": GOOD["intro"] + " It ships with a 3-year warranty."}
     done = D.settle(answer, GOLF, packet("13627933340"))

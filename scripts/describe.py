@@ -382,13 +382,16 @@ def settle(answer: Any, profile: dict[str, Any], pkt: dict[str, Any]) -> dict[st
         return bool(why)
 
     intro: list[str] = []
-    for s in _SENTENCE_RE.split(_clean(answer.get("intro"))):
-        if not s or bad("intro", s):
+    sentences = [s for s in _SENTENCE_RE.split(_clean(answer.get("intro"))) if s]
+    for s in sentences:
+        if bad("intro", s):
             continue
         if len(" ".join(intro + [s])) > INTRO_MAX:
             dropped.append({"where": "intro", "text": s[:200], "why": ["intro too long"]})
             continue
         intro.append(s)
+    if intro and intro[0] is not sentences[0] and intro[0].startswith("It "):
+        intro[0] = pkt["title"].rstrip(".") + intro[0][2:]         # the sentence that named the product was cut
     status = "ok"
     fields: dict[str, Any] = {"intro": " ".join(intro)}
     if not fields["intro"]:
