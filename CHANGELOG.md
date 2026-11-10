@@ -5,6 +5,15 @@ version in `extension/manifest.json`.
 
 ## Unreleased
 
+- Product descriptions (the owner, 2026-11-10): `describe.py` writes a minimalist English description in HTML
+  for Shopify's `descriptionHtml`, one model request per product through translate.py's client. The script builds
+  the packet (what is sold first, the shop's English, the seller's texts without OCR tables, paid extras, gifts,
+  review screenshots and origin lines), decides the country of origin itself (stated when the sources name one
+  country, silent when they disagree), checks every sentence and list item of the answer and renders the HTML. A
+  product always gets a description, at the least its title as one sentence. `job.py new --publish --describe`
+  describes each product before it is sent. The description enters the publish digest only for a product that
+  has one: no `payload` version bump, products already in the store are not sent again.
+
 - Title length (2026-11-10, a 137-character title on the store): the translation sends a title over 100 characters
   back to the model (`translate.ASK_SHORTER`, the shortest good answer kept when it never gets under), and the
   publication cuts whole facts, then whole words, to Google Merchant Center's 150 (`shopify_payload.fit_title`);

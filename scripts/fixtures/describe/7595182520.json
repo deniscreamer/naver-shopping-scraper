@@ -1,0 +1,561 @@
+{
+ "prepared": {
+  "key": "fairwardgolf:naver:500028318:7595182520",
+  "shop": "fairwardgolf",
+  "status": "ready",
+  "source": {
+   "category_id": "50002788",
+   "product_id": "7595182520"
+  },
+  "notes": [
+   {
+    "code": "reviews_cleaned"
+   },
+   {
+    "code": "paid_variants_left_out"
+   }
+  ],
+  "product": {
+   "title_ko": "핑G430,테일러메이드 조합 남성골프채풀세트 10개세트 선택1 드라이버 유틸 7아이언 퍼터",
+   "brand_ko": "핑",
+   "specs": [
+    {
+     "label_ko": "제조사",
+     "value_ko": "삼양인터내셔날"
+    },
+    {
+     "label_ko": "브랜드",
+     "value_ko": "핑"
+    },
+    {
+     "label_ko": "원산지",
+     "value_ko": "미국산"
+    },
+    {
+     "label_ko": "드라이버 로프트각",
+     "value_ko": "10.5도"
+    },
+    {
+     "label_ko": "아이언 구성",
+     "value_ko": "#5, #6, #7, #8, #9, 피칭웨지(PW), 샌드웨지(SW)"
+    },
+    {
+     "label_ko": "종류",
+     "value_ko": "조합풀세트"
+    },
+    {
+     "label_ko": "성별",
+     "value_ko": "남성용"
+    },
+    {
+     "label_ko": "사용방향",
+     "value_ko": "오른손용"
+    },
+    {
+     "label_ko": "총클럽개수",
+     "value_ko": "10개"
+    },
+    {
+     "label_ko": "출시",
+     "value_ko": "2023년형"
+    },
+    {
+     "label_ko": "풀세트구성",
+     "value_ko": "드라이버, 7아이언세트, 유틸리티, 퍼터"
+    },
+    {
+     "label_ko": "아이언샤프트소재",
+     "value_ko": "스틸"
+    },
+    {
+     "label_ko": "아이언개수",
+     "value_ko": "7개"
+    },
+    {
+     "label_ko": "퍼터형태",
+     "value_ko": "말렛(반달형)"
+    },
+    {
+     "label_ko": "골프백포함여부",
+     "value_ko": "미포함"
+    }
+   ],
+   "facts": [
+    {
+     "label_ko": "",
+     "value_ko": "선택1- 드라이버 유틸 7아이언 퍼터"
+    }
+   ],
+   "options": [],
+   "addons": [],
+   "description_ko": null,
+   "description_images_text": {
+    "blocks": 67,
+    "chars": 8868,
+    "dropped": {
+     "contact": 2,
+     "fragment": 6,
+     "low_confidence": 7,
+     "photo_label": 52,
+     "repeat": 27,
+     "shop_policy": 4,
+     "store_info": 1
+    },
+    "en": "translation/7595182520/description_images.en.json",
+    "ko": "translation/7595182520/description_images.ko.json",
+    "sha256": "e038d227e21df81a5445cf9db6b63b187bb4b938d46f13a5ca65ecde2a1635d1",
+    "state": "to_translate"
+   },
+   "variants": [
+    {
+     "options_ko": [],
+     "price_krw": 1950000,
+     "available": true
+    }
+   ]
+  }
+ },
+ "translated": {
+  "key": "fairwardgolf:naver:500028318:7595182520",
+  "status": "translated",
+  "en": {
+   "brand:a1287ded4209f758": "PING",
+   "fact_value:d9d44b4bd910b580": "Option 1 - Driver, Hybrid, 7 Irons, Putter",
+   "spec_label:04c52e5b47f70047": "Putter Type",
+   "spec_label:218ed002882e4623": "Total Clubs",
+   "spec_label:27a9b13cf3b83049": "Iron Composition",
+   "spec_label:2e6adf4ec98d6823": "Type",
+   "spec_label:3ecc0ce552283c4e": "Manufacturer",
+   "spec_label:559380a1cea8a17c": "Brand",
+   "spec_label:5a12089f44ae3f65": "Iron Shaft Material",
+   "spec_label:84af996296131844": "Model Year",
+   "spec_label:8c8cb3b96f7fe3e9": "Driver Loft",
+   "spec_label:b6eec4943f7543e8": "Gender",
+   "spec_label:cf77915a2f3ab5d8": "Number of Irons",
+   "spec_label:e4aabb2e41b870bd": "Golf Bag Included",
+   "spec_label:ed8bec519f97c9d9": "Set Composition",
+   "spec_label:edb42073f8735b63": "Handedness",
+   "spec_value:0c5a3886c288bcd6": "7",
+   "spec_value:14dc0bae76e6f933": "Right-Handed",
+   "spec_value:34d87cd3a6809bfa": "Samyang International",
+   "spec_value:59019f51b65aac9a": "Driver, 7-Piece Iron Set, Hybrid, Putter",
+   "spec_value:76d45c1471b5954b": "Steel",
+   "spec_value:8c96d3352f0a5446": "Men's",
+   "spec_value:92917baf006633bb": "Mallet",
+   "spec_value:94abee9ad24a637a": "Combination Complete Set",
+   "spec_value:96f0fed466f17e8e": "Not Included",
+   "spec_value:a1287ded4209f758": "PING",
+   "spec_value:bb40a8c2bc46094b": "10",
+   "spec_value:bed47e98ee4bbea0": "2023",
+   "spec_value:de2b6da830b81034": "10.5°",
+   "spec_value:fc173592227e8cff": "#5, #6, #7, #8, #9, Pitching Wedge (PW), Sand Wedge (SW)",
+   "title:ec0c0b0e04e6a1f1": "PING G430 TaylorMade Mixed Men's Complete Golf Set 10 Pieces Driver Hybrid 7-Piece Iron Set Putter",
+   "spec_label:765723acfadff305": "Country of Origin",
+   "spec_value:57b26fd6c0138455": "USA"
+  }
+ },
+ "blocks": [
+  {
+   "id": "b01",
+   "kind": "text",
+   "image": 1,
+   "text": "남성용 조합 풀세트\n선택1\n드라이버 / 핑G430 9도R드라이버\n유틸리티 우드 / 핑G430 4번 SR 유틸리티\n아이언 / 테일러메이드 M4경량스틸 7아이언\n퍼터 / 예스 타바사2 C-그루브 말렛 34인치퍼터\n선택2"
+  },
+  {
+   "id": "b02",
+   "kind": "table",
+   "image": 1,
+   "text": "드라이버 | 핑G430 | 9도R드라이버\n페어웨이 우드 | 핑 G430 | 3번 15도 R페어웨이우드\n유틸리티 우드 | 핑G430 | 4번 SR 유틸리티"
+  },
+  {
+   "id": "b03",
+   "kind": "text",
+   "image": 1,
+   "text": "아이언 / 테일러메이드M4경량스틸 7아이언\n퍼터 / 예스 타바사2C-그루브 말렛 34인치퍼터\n(주)삼양인터내셔날 정품"
+  },
+  {
+   "id": "b04",
+   "kind": "table",
+   "image": 1,
+   "text": "430 | DRIVER | NEW"
+  },
+  {
+   "id": "b05",
+   "kind": "text",
+   "image": 1,
+   "text": "초박형 고반발 페이스의 업그레이드 된\n3가지 모델로 최대 볼 스피드와 비거리 실현!\n공기저항을줄여주는\n터불레이터"
+  },
+  {
+   "id": "b06",
+   "kind": "table",
+   "image": 1,
+   "text": "G | H30"
+  },
+  {
+   "id": "b07",
+   "kind": "text",
+   "image": 1,
+   "text": "스핀 시스텐시 테크놀로지로 / 최대 반발 페이스,트램폴린 효과로\n최대비거리 제공 / 비거리극대화\n새로운벌지&롤설계로미스 히트에도일관된 / 진화한 단조 페이스가 중심부 약 6%,주변부\n스핀량과 탄도를 제공하여 최대 캐리와 비거리를 / 약 9%얇아져 트램폴린 효과가 증가되어 최대\n만들어 냅니다. / 볼스피드를실현하였습니다\n»MAX드라이버 / »SFT드라이버\n최대 관성 모멘트로관용성 극대화 / 견고한어드레스를위한 헤드설계와\n구질조절이가능한무게추이동기능탑재\nMAX SFT / L8T\n완벽한타구음을만드는\n새로운사운드립탑재\n크라운부터 솔까지설계를향상시키고헤드내부에\n진동이 가장많이발생하는곳에 립을 배치하여\n타점이 혼들려도 청명한 타구음을 제공합니다.\n각헤드모델별\n새롭게설계된크라운\n매트블랙의 새로운디자인으로\n헤드가 날렵해 보일 수있도록 / MAX/SFT / LST\n합니다. / 헤드체적 / 헤드체적\n460cc / 440cc\n»LST드라이버\n카본플라이랩테크놀로지로최대비거리제공\n8겹의 카본을크라운 부분에 적용하여 헤드를 경량화하였으며\n남은 중량을 주변부에 배치하여 LST 역사상 가장 관용성 높은\n헤드로탄생하였습니다.저중심 설계로적정한 탄도,로우 스판.\n최대 비거리를 제공합니다."
+  },
+  {
+   "id": "b08",
+   "kind": "table",
+   "image": 1,
+   "text": "430 | DRIVER | NEW"
+  },
+  {
+   "id": "b09",
+   "kind": "text",
+   "image": 1,
+   "text": "G430 MAX 드라이버 / MAX\n헤드 소재: 단조T9S+티탄(페이스)/811티탄(바디/크라운) / 최대관용성으로\n·높은관성모멘트로비거리 극대화 / 비거리극대화\n•최고의관용성과최대볼스피드제공\nG430 MAX 기본 스펙"
+  },
+  {
+   "id": "b10",
+   "kind": "table",
+   "image": 1,
+   "text": "로프트각(°) | 9 | 10.5 | 12"
+  },
+  {
+   "id": "b11",
+   "kind": "text",
+   "image": 1,
+   "text": "헤드 체적(cc) / 페이스"
+  },
+  {
+   "id": "b12",
+   "kind": "table",
+   "image": 1,
+   "text": "라이각(') | 59.5"
+  },
+  {
+   "id": "b13",
+   "kind": "text",
+   "image": 1,
+   "text": "총중량(a) 벌런스 / 약300g- D2 (ALTA J CB BLACK-SR·45.75인치)\n어드레스\nG430 SFT 드라이버 / SFT\n헤드소재: 단조 T9S+티탄(페이스)/811 티탄(바디/크라운) / 드로우구질\nPING / 설계\n•견고한어드레스를위한헤드설계와\nG430 SFT 기본 스펙"
+  },
+  {
+   "id": "b14",
+   "kind": "table",
+   "image": 1,
+   "text": "로프트각(°) | 10.5"
+  },
+  {
+   "id": "b15",
+   "kind": "text",
+   "image": 1,
+   "text": "총 중량(g) 밸런스 / 약290g·C9 (ALTA J CB BLACK-R·45.75인치)\nG430 LST 드라이버 / LST\n헤드소재: 단조T9S+티탄(페이스)/81 티탄(바디)/카본(크라운) / 로우스핀페이드\nPING / 구질설계\n•크라운에카본소재적용\n높은 탄도&로우스핀으로비거리증가\nG430 LST 기본 스펙"
+  },
+  {
+   "id": "b16",
+   "kind": "table",
+   "image": 1,
+   "text": "로프트각(') | 9 | 10.5 | 페이스\n헤드 체적(cc) | 440\n라이각(') | 58"
+  },
+  {
+   "id": "b17",
+   "kind": "text",
+   "image": 1,
+   "text": "총 중량(g) 밸런스 / 약 305g · D3 (ALTA J CB BLACK-S· 45.75인치)\n최적의 헤드와 샤프트의 조합을 찾아 보세요!\n높은관성모멘트로비거리 극대화\nALTA J CB BLACK\n견고한손맛의중탄도용샤프트\nPING TOUR 2.0 CHROME\n저스핀,저탄도용샤프트\nMITSUBISHI KA/'LI WHITE 6OS (LST 전용)"
+  },
+  {
+   "id": "b18",
+   "kind": "table",
+   "image": 1,
+   "text": "LEFT | GP360 LITE"
+  },
+  {
+   "id": "b19",
+   "kind": "text",
+   "image": 1,
+   "text": "원손용 / 전용헤드커버 / TOUR VELVET-\n주문가능 / AQUA그립\nG430 드라이버 샤프트스펙"
+  },
+  {
+   "id": "b20",
+   "kind": "table",
+   "image": 1,
+   "text": "PING TOUR 2.0 | MITSUBISHI | PING TOUR 2.0 | PING TOUR 2.0 | PING TOUR 2.0\n샤프트명 | ALTA J CB BLACK | CHROME 65 | KALI | CHROME 75 | BLACK 65 | BLACK 75"
+  },
+  {
+   "id": "b21",
+   "kind": "text",
+   "image": 1,
+   "text": "WHITE 60"
+  },
+  {
+   "id": "b22",
+   "kind": "table",
+   "image": 1,
+   "text": "길이 (inch) | 45.75 | 45.25 | 45.25 | 45.25 | 45.25 | 45.25\n증량(g) | 49 | 53 | 58 | 55 | 60 | 65 | 68 | 67 | 69 | 72 | 59 | 65 | 73 | 76\n토크(도) | 5.3 | 5.2 | 5.0 | 4.4 | 4.2 | 3.8 | 4.1 | 3.7 | 3.3 | 3.2 | 3.8 | 3.5 | 3.2 | 2.9"
+  },
+  {
+   "id": "b23",
+   "kind": "text",
+   "image": 1,
+   "text": "릭포인트 / Low / Mid-Low / Mid / Mid / Mid-High / Mid-Hgh / High / Mid / Mid-High / Mid-High / High / Mid-High / Hgh\n* 스페설사프트 추가 비용이 발생될 수 있습니다.\n*표기된 무거, 벌린스 등은 표준오차가 있을 수 있습니다\n* 구질 변화 웨이트는 헤드 무게에 따라 오차가 있을수 있습니다\n*상기 재원은 제품의 성능 항상을 위해 변경될 수 있으며, 제조사 공식 표준수치입니다.\n* Assemblied in USA (거스템 제품 일부 Assembied in Japan)"
+  },
+  {
+   "id": "b24",
+   "kind": "table",
+   "image": 1,
+   "text": "G | V3O"
+  },
+  {
+   "id": "b25",
+   "kind": "text",
+   "image": 1,
+   "text": "(주)삼양인터내셔날 정품"
+  },
+  {
+   "id": "b26",
+   "kind": "table",
+   "image": 1,
+   "text": "5 | 430 | FAIRWAYWOOD | NEW"
+  },
+  {
+   "id": "b27",
+   "kind": "text",
+   "image": 1,
+   "text": "3가지 기술로 비거리 극대화\n카본플라이랩테크놀로지\n8겹카본레이어층의크라운을통해\n헤드를경량화하였으며 낮은 중심 설계로\n높은 탄도,로우스핀을제공하여 최대\n비거리를 실현합니다\n새로운카본크라운으로청명한 타구음\n크라운부터 솔까지디자인을향상시키고\n가벼운 소재를 적용하여 타점이 흔들려도\n청명한 타구음을 제공합니다\n새로운저중심설계로안정된디자인\n힐과 토우 부분을감싸면서 10g의 무게\n절감 효과를 제공하는 경량합성 크라운\n으로인해 저중심설계제작되어 볼스피드를\n증가시컵니다. 또한새로운매트블랙 마감\n으로 헤드가 사프해 보일 수 있도록합니다.\n[Technology 1]\n스핀 시스텐시 테크놀로지로\n페이스 랩 패스트 테크놀로지 / 최대 비거리 효과\n페이스 면적이 솔과 크라운 부분으로 / 새로운벌지와롤설계는미스히트에\n확대되어 트램폴린 효과와 볼 스피드를 / 최적의스핀량과탄도로최대캐리와\n극대화하여 비거리를 증가시컵니다. / 비거리를 제공합니다\n[Technology 2] / [Technology 3]\nG430 MAX 페어웨이우드 / MAX"
+  },
+  {
+   "id": "b28",
+   "kind": "table",
+   "image": 1,
+   "text": "헤드소재 :단조 머레이징 스틸C300(페이스)/ | 6PING"
+  },
+  {
+   "id": "b29",
+   "kind": "text",
+   "image": 1,
+   "text": "17·4 스테인리스 스틸(바디)/카본(크라운) / 최고의 관용성\n•높은관성 모멘트로 안정감 UP!\n•최대 볼스피드로 비거리 MAX!\nG430 MAX 기본 스펙 / 페이스"
+  },
+  {
+   "id": "b30",
+   "kind": "table",
+   "image": 1,
+   "text": "Club | 3 | 5 | 7 | 9\n로프트각(°) | 15 | 18 | 21 | 24\n헤드 체적(cc) | 176 | 165 | 154 | 148\n라이각(°) | 57.5 | 58 | 58.5 | 59\n길이(inch) | 43 | 42.5 | 42 | 41.5 | 어드레스"
+  },
+  {
+   "id": "b31",
+   "kind": "text",
+   "image": 1,
+   "text": "총 중량(g) 빌런스 / 약 315g - D1 (#5 ALTA J CB BLACK-SR)\nG430 SFT페어웨이우드\n헤드소재 :단조 머레이징 스틸C300 (페이스)/ / SFT\n17·4 스테인리스 스틸(바디)/카본(크라운)\nPING / 드로우구질설계\n·힐측무게중심설계로안정감있는스윙!\n•슬라이스 방지 효과!\nG430 SFT 기본 스펙"
+  },
+  {
+   "id": "b32",
+   "kind": "table",
+   "image": 1,
+   "text": "Club | 3 | 5 | 7 | 페이스\n로프트각(') | 16 | 19 | 22"
+  },
+  {
+   "id": "b33",
+   "kind": "text",
+   "image": 1,
+   "text": "헤드소재:단조 머레이징 스틸 C300 (페이스)/ / SFT\n17·4 스테인리스스틸(바디)/카본(크라운) / 드로우구질설계\nG430 SFT기본스펙"
+  },
+  {
+   "id": "b34",
+   "kind": "table",
+   "image": 1,
+   "text": "헤드 체적(cc) | 188 | 178 | 166\n라이각(') | 58 | 58.5 | 59\n길이 (inch) | 43 | 42.5 | 42\n총 중량(g) 밸런스 | 약 310g - D0 (#5 ALTA J CB BLACK-R) | 어드레스\nLEFT | GP360 LITE"
+  },
+  {
+   "id": "b35",
+   "kind": "text",
+   "image": 1,
+   "text": "주문가능 / AQUA그립\nG430 페어웨이우드 샤프트 스펙"
+  },
+  {
+   "id": "b36",
+   "kind": "table",
+   "image": 1,
+   "text": "사프트명 | ALTA J CB BLACK | PING TOUR 2.0 | PING TOUR 2.0 | PING TOUR 2.0 | PING TOUR 2.0\nCHROME 65 | CHROME 75 | BLACK 65 | BLACK 75\n중량(g) | 46 | 50 | 54 | 51 | 56 | 60 | 62 | 64 | 67 | 54 | 61 | 67 | 70\n토크 (도) | 4.1 | 4.0 | 3.9 | 4.4 | 4.2 | 3.8 | 3.6 | 3.3 | 3.1 | 3.8 | 3.5 | 3.2 | 2.9"
+  },
+  {
+   "id": "b37",
+   "kind": "text",
+   "image": 1,
+   "text": "익포인트 / Low / Mid-Low / Mid / Mid / Mid-High / Mid / Mid-High / Md-High / Mid-Hgh / High / Mid-High / High\n*페이스랩 제조 공정상 할 쪽에세로 형태의 줄무니가 발생될 수 있습니다. / ALTA J CB BLACK\n* 스페실 사프트 추가 비용이 발생될 수 있습니다\n프기원 무게 벌련스 등은 표준오차가 있을 수 있습니다"
+  },
+  {
+   "id": "b38",
+   "kind": "table",
+   "image": 1,
+   "text": "상기 제원은 제품의 성능 향상을 위해 변경될 수 있으며 | PING TOUR 2.0 CHROME\n제조시 공식 표준수치입니다 | 2.0"
+  },
+  {
+   "id": "b39",
+   "kind": "text",
+   "image": 1,
+   "text": "* Assembied in USA (스템 제품 일부 Assembled in Japan)\n(주)삼양인터내셔날 정품"
+  },
+  {
+   "id": "b40",
+   "kind": "table",
+   "image": 1,
+   "text": "430 | HYBRID | NEW"
+  },
+  {
+   "id": "b41",
+   "kind": "text",
+   "image": 1,
+   "text": "뛰어난 관용성과 안정적인 샷!\nG430 하이브리드\n카본플라이랩테크놀로지\n이상적인높이로안정된스윙을할\n수 있는 새로운카본 크라운설계\n[FACE WRAP]FAST / 스핀시스텐시 테크놀로지\n페이스 랩 패스트 테크놀로지 / 미스히트시에도최적의스핀량과\n탄도 제공\n최고의 트램폴린 효과로 볼스피드를\n증가시켜최대비거리 제공\n새로운카본크라운으로\n향상된타구음\n다양한 탄도 튜닝 호젤\n로프트각 조절 기능 탑재\nG430 하이브리드\n헤드 소재: 단조 머레이징 스틸 C300(페이스)/\n174 스테인리스 스틸(바디)/카본(크라운)\n업그레이드된3가지테크놀로지를 탑재한 / PING\nG430하이브리드는높은반발력으로\n향상된비거리를 실현합니다\n페이스 / 어드레스"
+  },
+  {
+   "id": "b42",
+   "kind": "table",
+   "image": 1,
+   "text": "LEFT | GP360 LITE"
+  },
+  {
+   "id": "b43",
+   "kind": "text",
+   "image": 1,
+   "text": "주문가능 / AQUA그립\nG430 하이브리드 기본 스펙"
+  },
+  {
+   "id": "b44",
+   "kind": "table",
+   "image": 1,
+   "text": "Club | 2 | 3 | 4 | 5 | 6\n로프트각(°) | 17 | 19 | 22 | 28 | 30 | 34\n120 | 128\n주문가능 | 4 | AQUA그립\nClub | 2 | 3 | 4 | 5 | 6 | 7\n로프트각(°) | 17 | 19 | 22 | 26 | 30 | 34\n헤드체적(cc) | 129 | 128 | 126 | 124 | 121 | 113\n라이각(°) | 58 | 58.5 | 59 | 59.5 | 60 | 60.5\n길이 (inch) | 40.75 | 40.25 | 39.75 | 39.25 | 38.75 | 38.25"
+  },
+  {
+   "id": "b45",
+   "kind": "text",
+   "image": 1,
+   "text": "총 중량(g) 빌런스 / 약 345g -D0 (#4-ALTA J CB BLACK-SR)\nG430 하이브리드 시프트 스펙"
+  },
+  {
+   "id": "b46",
+   "kind": "table",
+   "image": 1,
+   "text": "PING TOUR 2.0 | AWT 2.0 | NS.PRO | N.S.PRO | N.SPRO | NS.PRO | DG EX\n사프트명 | ALTA J CB BLACK | CHROME 85 | UTE | 850GH neo | 950GH neo | MODUS3 | MODUS | TOUR\nTOUR 105 | TOUR 115 | SSUE"
+  },
+  {
+   "id": "b47",
+   "kind": "text",
+   "image": 1,
+   "text": "소재 / 그리파이트 / 그리파이트 / 스틸 / 스틸 / 스틸 / 스틸 / 스틸 / 스틸"
+  },
+  {
+   "id": "b48",
+   "kind": "table",
+   "image": 1,
+   "text": "강도 | R | SR | R | × | R | SR | s | s | s | s | S200\n중량(g) | 52 | 56 | 65 | 73 | 80 | 85 | 87 | 93 | 98 | 88 | 98 | 106.5 | 118.5 | 131\n(도) | 3.1 | 2.8 | 2.3 | 2.8 | 2.3 | 2.2 | 1.9 | 1.8 1.6 | 20 | 1.7 | 1.7 | 1.6 | -"
+  },
+  {
+   "id": "b49",
+   "kind": "text",
+   "image": 1,
+   "text": "*메이스럽 제조 공정상 일 꼭에 서로 형태의 줄무늬가 발성될 수 있습니다.\n*스페설 사프트 추가 비용이 발성될 수 있습니다 / ALTASC\n*표기된 무게 벌련스 등은 표준오차가 있을 수 있습니다."
+  },
+  {
+   "id": "b50",
+   "kind": "table",
+   "image": 1,
+   "text": "*상기제원은 제품의 성능 형상을 위해 변경될 수 있으며. | PING TOUR 2.0 CHROME"
+  },
+  {
+   "id": "b51",
+   "kind": "text",
+   "image": 1,
+   "text": "제조사공식 표준수치입니다"
+  },
+  {
+   "id": "b52",
+   "kind": "table",
+   "image": 1,
+   "text": "* Assemoiod in USA (커스텀 저품 일부 Assembled in Japon) | 20"
+  },
+  {
+   "id": "b53",
+   "kind": "text",
+   "image": 1,
+   "text": "본 제품은 정식수입원인 테일러메이드코리아에서\n테일러메이드 / 베스트셀러M4재출시!\n제품 스펙 / 제품 특징 / 제품상세 / 제품색상\n테일러메이드베스트셀러VF\n테일러메이드M시리즈중가장인기있던 모델M4, 전세계소비자들의 요청으로M4재출시 확정!\n일반 아마추어 골퍼 라인"
+  },
+  {
+   "id": "b54",
+   "kind": "table",
+   "image": 1,
+   "text": "≥2 | M2HL"
+  },
+  {
+   "id": "b55",
+   "kind": "text",
+   "image": 1,
+   "text": "관용성"
+  },
+  {
+   "id": "b56",
+   "kind": "table",
+   "image": 1,
+   "text": "5 | 2021 | BST"
+  },
+  {
+   "id": "b57",
+   "kind": "text",
+   "image": 1,
+   "text": "비거리 / 수요 / T / FNL\n5 / 최대관용성 모델\n일반아마추어 / 및주말골퍼에 적합\n보통스윙속도에적합\n기능 / 컨트롤\n#1 DRIVER IN GOLF\n테일러메이드 M 시리즈\n플레이어\n*2018년 M시리즈를 사용했던 선수입니다.\n립코어RIBCOR\n페이스 뒷면 토우와힐의강도를높임으로써페이스\n중앙의 반발력을 높여줍니다. 또한 탑라인의 불필요한\n진동을줄여 타구감 타구음이개선되었습니다\n스피드 포켓\n페이스하단에미스샷의비거리손실을\n최소화하여 비거리를 유지시켜 줍니다\n와이드솔디자인\n잔디와의 마찰을 줄여주고 낮은 무게\n중심으로높은관용성을 제공합니다\n중앙에 움폭파인 홈디자인은토우와\n힐의관성모멘트를증가시켜더큰\n스위스팟을제공합니다\n|클럽스펙"
+  },
+  {
+   "id": "b58",
+   "kind": "table",
+   "image": 1,
+   "text": "HEAD | #5 | #6 | #7 | #8 | #9 | PW | sw\n로프트각(°) | 21.5 | 25 | 28.5 | 33 | 38 | 43.5 | 54\n라이각() | 62 | 62.5 | 63 | 63.5 | 64 | 64.5 | 64.5\n길이(\") | 38.25 | 37.63 | 37 | 36.5 | 36 | 35.5 | 35.25\n밸런스 | D2 | D3.5"
+  },
+  {
+   "id": "b59",
+   "kind": "text",
+   "image": 1,
+   "text": "|샤프트스펙\nSHAFT / 샤프트명 / 강도 / 중량 / 이미지"
+  },
+  {
+   "id": "b60",
+   "kind": "table",
+   "image": 1,
+   "text": "스틸 | KBS MAX 85 | R/S | 100g 초반대 | MAX\n그라파이트 | Fujikura Atmos Red | R/S | 60g전후\n여성 | TM Tuned IR 45 | L | 40g대"
+  },
+  {
+   "id": "b61",
+   "kind": "text",
+   "image": 1,
+   "text": "* 상기사양 및 디자인은 출시제품과차이가 있을 수 있음."
+  },
+  {
+   "id": "b62",
+   "kind": "table",
+   "image": 1,
+   "text": "품명 및 모델명 | M4 NL 7아O언(NEW LAUNCHING) | 제조자 | 테일러에이드"
+  },
+  {
+   "id": "b63",
+   "kind": "text",
+   "image": 1,
+   "text": "제품구성 / 아이언세트 / 제조국 / 베트남(변동될수 있음)\n헤드-베트남, 사프트-베트남, 조립-베트남\n*테일러메이드 공장일정에 따라 베트남, 타이완,중국에서 생산됩니다.\nYES가 선보이는 프리미엄 퍼터\nErnie / 티Is 의 선택\n프로골퍼 어니 엘스가 YES Putter\nSandy 모델을 사용하고 있다.\nEmie Els has 70 professional career victories to\nhis name, including four Major Championships,\ntwo Word Golf Championships and seven World\nPOR A DETTER NOLL EVERY TIME\nHe is ranked No.1 in al-time career eamings on\nthe European Tour (correct at end of 2013 season).\nDavid Howell의\n예스하라, 롤링하라!\nErnie Els / 의선택\n퍼터의 5 / 명가,예스퍼터!\n프로골퍼 어니 엘스가 YES Putter Sandy 모멜을선택했습니다.\n어니엘스는4개의메이저대회,2개의세계골프선수권 대회를 포함한\n7개의세계적인 매치 플레이타이틀에서70번의우승을거됐습니다\nEmie Els has 70 professional carrer victories to his name,\nincluding four major Championships,\ntwo World Golf Championships and seven World Matchplay titles.\nYES!Putter 누적 / 180승\n최단기간 최대 우승 제조, / ,역시 퍼터의 명가!\n2016 KLPGA 한국투자증권\n2015 KLPGA 2015 영광CC 점프투어 3차전 박수민 우승"
+  },
+  {
+   "id": "b64",
+   "kind": "table",
+   "image": 1,
+   "text": "2015 중고연맹 제 13회 건국대학교총장배 이효린 우승 | 2009 PGA | 플레이어스 | 챔피언집"
+  },
+  {
+   "id": "b65",
+   "kind": "text",
+   "image": 1,
+   "text": "2015 KLPGA제 8회 롯데마트 오픈 김보경 우승 / 2009 HSBC 뉴질랜트 PGA 챔피인십 Steve Alker 프로 우승\n2014 KLPGA제 1회 교촌 허니레이디스 오픈 김보경 준우승 / 2009 LTE 호주여자오픈 로라데이비스 프로 우승\n2013 제3회 롯데칸타타 여자오픈 김보경프로 우승 / 2008 KLPGA SK에너지 인비터이셔널 김하늘 프로 우승\n2012 HSBC Women's Champions 신지은 준우승 / 2008 KPGA SBS 연우 헤븐랜드 오픈 김위중프로 우승\n2012 제5회 롯데마트 여자오픈 문현희 준우승 / 2008 제12회 익성배 매경아아추어골프대회 장하나 우승\n2012 KB금을 Star 행피언십 김현지 프로 준우 / 2008 일송배 한국주니어선수권대회 서영재 우승\n2011 KLPGA UG 손해보험 클래식 문현희 우승 / 2008 유럽피안 러시안오픈 미카엘레드버그 우\n강다나 프로 우\nYES / TABATHA II\n정교한 마이크로 CNC 밀링으로 페이스의 C-GROOVE 보다\n빠르고 정확한 룰을 형성하며,무게 배분 시스템 탑재로 보다\n안정적인 스트로크를 실현합니다.\n(MO 시스템)"
+  },
+  {
+   "id": "b66",
+   "kind": "table",
+   "image": 1,
+   "text": "LOFT | 2.0° ±1°\nLIE | 72° ±1°"
+  },
+  {
+   "id": "b67",
+   "kind": "text",
+   "image": 1,
+   "text": "LENGTH / 33\",34\"\nHEAD MATERIAL / 303 STAINLESS STEEL\nC-GROOVE의 동심원 날은Ball의 표면을잡아주어 퍼팅과 동시에 전회전을 시켜 미끄러짐과뒤는 현상\n을잡아줍니다\n묵직한 무게감으로안정감을높였습니다.\nTRIPLE BEND SHAGFT NECK\nM이를극대화하기위하여 밴드샤프트를미세한부분까지 조정하였습니다\nM이를중시하여 스트로크에적합한 발란스입니다\nFACE면은100%정밀한CNCMILLED처리로일관적이고높은관용성을가집니다.\n303스테인리스스틸단조와정밀이온 플레이트도금을헤드피니쉬에사용했습니다\nC-GROOVE의동심원날은BALL의 표면을 잡아주어 퍼팅과동시에 전회전을 시켜미끄러짐과동시에 뒤는 현상을잡아줍니다.\n한국인에게 잘맞는그립두께로그립감과그립의무게조절로\n퍼터의균형을재조정하여스트로크의 템포와일관성을향상시켰습니다."
+  }
+ ]
+}

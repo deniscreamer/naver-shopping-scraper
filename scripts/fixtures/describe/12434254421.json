@@ -1,0 +1,450 @@
+{
+ "prepared": {
+  "key": "fairwardgolf:naver:100335426:12434254421",
+  "shop": "fairwardgolf",
+  "status": "ready",
+  "source": {
+   "category_id": "50002788",
+   "product_id": "12434254421"
+  },
+  "notes": [
+   {
+    "code": "reviews_cleaned"
+   },
+   {
+    "code": "title_names_one_variant"
+   }
+  ],
+  "product": {
+   "title_ko": "마제스티 23년 로얄 남성 풀세트 R 마제스티골프코리아100%",
+   "brand_ko": "마제스티",
+   "specs": [
+    {
+     "label_ko": "제조사",
+     "value_ko": "마제스티"
+    },
+    {
+     "label_ko": "브랜드",
+     "value_ko": "마제스티"
+    },
+    {
+     "label_ko": "모델명",
+     "value_ko": "마제스티 조합 남성 풀세트"
+    },
+    {
+     "label_ko": "원산지",
+     "value_ko": "일본산"
+    },
+    {
+     "label_ko": "드라이버 로프트각",
+     "value_ko": "9.5도, 10.5도"
+    },
+    {
+     "label_ko": "종류",
+     "value_ko": "풀세트"
+    },
+    {
+     "label_ko": "성별",
+     "value_ko": "남성용"
+    },
+    {
+     "label_ko": "사용방향",
+     "value_ko": "오른손용"
+    },
+    {
+     "label_ko": "총클럽개수",
+     "value_ko": "11개"
+    },
+    {
+     "label_ko": "풀세트구성",
+     "value_ko": "8아이언세트, 드라이버, 유틸리티, 페어웨이"
+    },
+    {
+     "label_ko": "아이언샤프트소재",
+     "value_ko": "그라파이트/카본"
+    },
+    {
+     "label_ko": "아이언개수",
+     "value_ko": "8개"
+    },
+    {
+     "label_ko": "골프백포함여부",
+     "value_ko": "미포함"
+    }
+   ],
+   "facts": [],
+   "options": [
+    {
+     "name_ko": "드라이버",
+     "values_ko": [
+      "9.5도 R",
+      "10.5도 R",
+      "10.5도 SR"
+     ]
+    },
+    {
+     "name_ko": "아이언",
+     "values_ko": [
+      "8아이언세트 카본 R",
+      "8아이언세트 카본 SR"
+     ]
+    },
+    {
+     "name_ko": "페어웨이 우드",
+     "values_ko": [
+      "3번 R",
+      "3번 SR",
+      "5번 R",
+      "5번 SR"
+     ]
+    }
+   ],
+   "addons": [
+    {
+     "group_ko": "유틸리티",
+     "name_ko": "4번 R",
+     "price_krw": 0,
+     "price_usd": "0.00",
+     "required": true
+    },
+    {
+     "group_ko": "유틸리티",
+     "name_ko": "5번 R",
+     "price_krw": 0,
+     "price_usd": "0.00",
+     "required": true
+    },
+    {
+     "group_ko": "유틸리티",
+     "name_ko": "5번 SR",
+     "price_krw": 0,
+     "price_usd": "0.00",
+     "required": true
+    }
+   ],
+   "description_ko": "마제스티 골프 100% 정품\n정품 등록 후\n무상 A/S 3년 보장\n그립 1회 무상 교환(1회)\n※ 값싸고 A/S 안되는 병행 절대 아닙니다 ※",
+   "description_images_text": {
+    "blocks": 6,
+    "chars": 182,
+    "dropped": {
+     "contact": 1,
+     "fragment": 2,
+     "low_confidence": 2,
+     "photo_label": 9,
+     "promo": 2,
+     "repeat": 2,
+     "store_name": 2
+    },
+    "en": "translation/12434254421/description_images.en.json",
+    "ko": "translation/12434254421/description_images.ko.json",
+    "sha256": "14b90e5b5b1e1ad6e9e0ca7647710024cc1d28f562a3c3c4aaccb7c7c69e81ef",
+    "state": "to_translate"
+   },
+   "variants": [
+    {
+     "options_ko": [
+      "9.5도 R",
+      "8아이언세트 카본 R",
+      "3번 R"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "9.5도 R",
+      "8아이언세트 카본 R",
+      "3번 SR"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "9.5도 R",
+      "8아이언세트 카본 R",
+      "5번 R"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "9.5도 R",
+      "8아이언세트 카본 R",
+      "5번 SR"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "9.5도 R",
+      "8아이언세트 카본 SR",
+      "3번 R"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "9.5도 R",
+      "8아이언세트 카본 SR",
+      "3번 SR"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "9.5도 R",
+      "8아이언세트 카본 SR",
+      "5번 R"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "9.5도 R",
+      "8아이언세트 카본 SR",
+      "5번 SR"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "10.5도 R",
+      "8아이언세트 카본 R",
+      "3번 R"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "10.5도 R",
+      "8아이언세트 카본 R",
+      "3번 SR"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "10.5도 R",
+      "8아이언세트 카본 R",
+      "5번 R"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "10.5도 R",
+      "8아이언세트 카본 R",
+      "5번 SR"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "10.5도 R",
+      "8아이언세트 카본 SR",
+      "3번 R"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "10.5도 R",
+      "8아이언세트 카본 SR",
+      "3번 SR"
+     ],
+     "price_krw": 2900000,
+     "available": false
+    },
+    {
+     "options_ko": [
+      "10.5도 R",
+      "8아이언세트 카본 SR",
+      "5번 R"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "10.5도 R",
+      "8아이언세트 카본 SR",
+      "5번 SR"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "10.5도 SR",
+      "8아이언세트 카본 R",
+      "3번 R"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "10.5도 SR",
+      "8아이언세트 카본 R",
+      "3번 SR"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "10.5도 SR",
+      "8아이언세트 카본 R",
+      "5번 R"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "10.5도 SR",
+      "8아이언세트 카본 R",
+      "5번 SR"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "10.5도 SR",
+      "8아이언세트 카본 SR",
+      "3번 R"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "10.5도 SR",
+      "8아이언세트 카본 SR",
+      "3번 SR"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "10.5도 SR",
+      "8아이언세트 카본 SR",
+      "5번 R"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    },
+    {
+     "options_ko": [
+      "10.5도 SR",
+      "8아이언세트 카본 SR",
+      "5번 SR"
+     ],
+     "price_krw": 2900000,
+     "available": true
+    }
+   ]
+  }
+ },
+ "translated": {
+  "key": "fairwardgolf:naver:100335426:12434254421",
+  "status": "translated",
+  "en": {
+   "addon_group:4fddae8b584ba001": "Hybrid",
+   "addon_name:38abff5f0766090a": "#4 R",
+   "addon_name:572e0d25c20592b7": "#5 R",
+   "addon_name:f624c2b0859d8f58": "#5 SR",
+   "brand:c6e2221f8524a588": "Majesty",
+   "option_name:5077409b14e3b4f1": "Driver",
+   "option_name:5e1845f06008a34c": "Fairway Wood",
+   "option_name:765d9fbf8f69c5c7": "Irons",
+   "option_value:0d8a363016141bf1": "10.5° SR",
+   "option_value:182966f9f2aa2b06": "#3 SR",
+   "option_value:572e0d25c20592b7": "#5 R",
+   "option_value:801d05af7315856f": "#3 R",
+   "option_value:d7154bece3d7d73d": "9.5° R",
+   "option_value:f44e632c75a88e69": "8-Piece Iron Set Graphite R",
+   "option_value:f624c2b0859d8f58": "#5 SR",
+   "option_value:f88c65c81eca3d90": "8-Piece Iron Set Graphite SR",
+   "option_value:fbdc8ac2d1d16581": "10.5° R",
+   "spec_label:218ed002882e4623": "Total Clubs",
+   "spec_label:2e6adf4ec98d6823": "Type",
+   "spec_label:3ecc0ce552283c4e": "Manufacturer",
+   "spec_label:45ecef3c70c3d0be": "Model",
+   "spec_label:559380a1cea8a17c": "Brand",
+   "spec_label:5a12089f44ae3f65": "Iron Shaft Material",
+   "spec_label:8c8cb3b96f7fe3e9": "Driver Loft",
+   "spec_label:b6eec4943f7543e8": "Gender",
+   "spec_label:cf77915a2f3ab5d8": "Number of Irons",
+   "spec_label:e4aabb2e41b870bd": "Golf Bag Included",
+   "spec_label:ed8bec519f97c9d9": "Set Composition",
+   "spec_label:edb42073f8735b63": "Handedness",
+   "spec_value:14dc0bae76e6f933": "Right-Handed",
+   "spec_value:219c558824edff74": "9.5°, 10.5°",
+   "spec_value:4100397326fa9876": "Majesty Mixed Men's Complete Set",
+   "spec_value:5b1bc698007c9da7": "11",
+   "spec_value:77e34e31f3da3e43": "8",
+   "spec_value:8c96d3352f0a5446": "Men's",
+   "spec_value:95f51b3dedaa0e80": "8-Piece Iron Set, Driver, Hybrid, Fairway Wood",
+   "spec_value:96f0fed466f17e8e": "Not Included",
+   "spec_value:a633376d7e319617": "Complete Set",
+   "spec_value:c6e2221f8524a588": "Majesty",
+   "spec_value:ef00cceb8d6a2241": "Graphite/Carbon",
+   "title:17524f828c98a9e4": "Majesty 2023 Royal Men's Complete Set",
+   "spec_label:765723acfadff305": "Country of Origin",
+   "spec_value:2d5ea77cf8032c99": "Japan"
+  }
+ },
+ "blocks": [
+  {
+   "id": "b01",
+   "kind": "table",
+   "image": 1,
+   "text": "051 | - | -324- 6360"
+  },
+  {
+   "id": "b02",
+   "kind": "table",
+   "image": 3,
+   "text": "삼성골프 | T.324-6360"
+  },
+  {
+   "id": "b03",
+   "kind": "text",
+   "image": 4,
+   "text": "영리하게위대하게"
+  },
+  {
+   "id": "b04",
+   "kind": "text",
+   "image": 5,
+   "text": "경동리인 / 주례1동\n감전역 / 아파트\n주례청구\n아파트 / 반도보라\n아파트\n사상구청\n사상공업단지 / 주례롯데캐슬"
+  },
+  {
+   "id": "b05",
+   "kind": "table",
+   "image": 5,
+   "text": "골드스마트 | 부산2호선 | 냉정역"
+  },
+  {
+   "id": "b06",
+   "kind": "text",
+   "image": 5,
+   "text": "감전동 / 주례역\n서적도매단지 / 럭키주례\n대학교\n주례3동\n동서대학교\n사상공업지역\n일반산업단지\n석타보"
+  }
+ ]
+}

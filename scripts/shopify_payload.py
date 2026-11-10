@@ -610,9 +610,11 @@ def _placement(placement: dict[str, Any]) -> tuple[str, list[str]]:
 def product_input(prepared: dict[str, Any], translated: dict[str, Any], placement: dict[str, Any],
                   pricing: Policy, location_id: str, photos: list[dict[str, Any]], feed_url: str | None = None,
                   rows: list[dict[str, Any]] | None = None, handle_override: str | None = None,
-                  vendors: dict[str, str] | None = None, tenant: str | None = None) -> dict[str, Any]:
+                  vendors: dict[str, str] | None = None, tenant: str | None = None,
+                  description_html: str = "") -> dict[str, Any]:
     """The productSet input. `photos`: one {"originalSource"} (a new upload) or {"id"} (a photo already on the
-    product) per gallery photo, in order; alt is set here. `rows`: the review rows (reviews())."""
+    product) per gallery photo, in order; alt is set here. `rows`: the review rows (reviews()).
+    `description_html`: the product's description (describe.py); a product without one keeps an empty body."""
     en = English(translated)
     prepared = {**prepared, "product": _twins(prepared["product"], en)}
     product, source = prepared["product"], prepared["source"]
@@ -667,7 +669,8 @@ def product_input(prepared: dict[str, Any], translated: dict[str, Any], placemen
         metafields.append({"namespace": "fairwardgolf", "key": "addons", "type": "json", "value": _json(extra_all)})
     return {
         "title": title, "handle": handle_override or handle(title, brand), "vendor": brand,
-        "productType": product_type, "tags": tags, "status": "ACTIVE", "descriptionHtml": "",
+        "productType": product_type, "tags": tags, "status": "ACTIVE",
+        "descriptionHtml": description_html,
         "seo": {"title": fit_title(title, SEO_TITLE_MAX), "description": ""},            # the site's <title> (2026-11-09: "Fairward Golf |
                                                                      # Fairward Golf" on every product page)
         "productOptions": options, "variants": variants, "files": files, "metafields": metafields,

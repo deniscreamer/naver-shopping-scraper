@@ -156,7 +156,8 @@ class Reply:
 class Model(Protocol):
     name: str
 
-    def send(self, system: str, messages: list[dict[str, Any]]) -> Reply: ...
+    def send(self, system: str, messages: list[dict[str, Any]],
+             schema: dict[str, Any] | None = None) -> Reply: ...
 
 
 class AnthropicModel:
@@ -169,10 +170,11 @@ class AnthropicModel:
             client = anthropic.Anthropic(api_key=api_key, max_retries=4)
         self.client, self.name, self.effort, self.thinking = client, model, effort, thinking
 
-    def send(self, system: str, messages: list[dict[str, Any]]) -> Reply:
+    def send(self, system: str, messages: list[dict[str, Any]], schema: dict[str, Any] | None = None) -> Reply:
+        """`schema`: the JSON the answer must be (default: the translation's items; describe.py sends its own)."""
         import anthropic
         try:
-            output: dict[str, Any] = {"format": {"type": "json_schema", "schema": SCHEMA}}
+            output: dict[str, Any] = {"format": {"type": "json_schema", "schema": schema or SCHEMA}}
             if self.effort:
                 output["effort"] = self.effort
             extra: dict[str, Any] = {}
@@ -208,7 +210,7 @@ class OpenAIModel:
             client = openai.OpenAI(api_key=api_key, max_retries=4)
         self.client, self.name, self.effort = client, model, effort
 
-    def send(self, system: str, messages: list[dict[str, Any]]) -> Reply:
+    def send(self, system: str, messages: list[dict[str, Any]], schema: dict[str, Any] | None = None) -> Reply:
         import openai
         try:
             extra = {"reasoning_effort": self.effort} if self.effort else {}
@@ -216,7 +218,8 @@ class OpenAIModel:
                 model=self.name, max_completion_tokens=MAX_TOKENS,
                 messages=[{"role": "system", "content": system}] + messages,
                 response_format={"type": "json_schema",
-                                 "json_schema": {"name": "translations", "strict": True, "schema": SCHEMA}},
+                                 "json_schema": {"name": "answer" if schema else "translations", "strict": True,
+                                                 "schema": schema or SCHEMA}},
                 **extra)
         except openai.AuthenticationError as e:
             raise TranslateError(f"OpenAI refused the key: {type(e).__name__}") from None

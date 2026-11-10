@@ -229,7 +229,7 @@ example_99.
 The owner's decisions (2026-11-07): one product per iteration (fewer reads in a burst: less risk of a block);
 publication goes straight to ACTIVE, right after translation; no age limit between collection and publication.
 Changed 2026-11-08: translation is a model API stage (`translate.py`, see Translation), not the session's agent; the
-description and the images' text are not translated (a later stage writes the description from them). Not built on purpose (the owner,
+description and the images' text are not translated (`describe.py` writes the description from them, 2026-11-10). Not built on purpose (the owner,
 2026-11-08): OCR in parallel with the next collect, an incremental prepare (run_transform.run(shop) rebuilds the
 shop after each product: 1-2 s at 143 products, the pace did not drift over 100), a guard memory across runs.
 
@@ -1056,7 +1056,7 @@ still returns its rows. Contract: server/docs/ENDPOINTS.md "Listing jobs".
 
 A product goes to the store when it is `ready` (transform), `translated` and `placed`; a job made with
 `job.py new --publish` does it for each product right after translation (placement of the whole shop, offline,
-then this one product). Per product: the reviews' photos and avatars to Shopify Files (the files app, once per
+then this one product; with `--describe` its description is written in between, see the next section). Per product: the reviews' photos and avatars to Shopify Files (the files app, once per
 file, named by its hash, `publish/files.jsonl`), the review rows as a JSON feed file there, the gallery photos as
 staged uploads attached in `productSet` (create, or update the product with its source key), ACTIVE, published
 to every sales channel of the store (the owner, 2026-11-09); one line in `shops/<shop>/publish/published.jsonl` (product id, handle,
@@ -1155,6 +1155,61 @@ stay one at a time: Shopify limits by query cost per app and store (this store: 
 second back; a search of 10 names costs ~5, a mutation ~10), and a THROTTLED answer, a 429 or a 5xx waits what
 Shopify says and repeats (`shopify_catalog._send`). Measured live: 30 photos in 8.3 s (0.28 s a file, 7 GraphQL
 calls) against 4.0 s a file one by one (5 calls a file).
+
+## The product's description (`describe.py`, the owner 2026-11-10)
+
+```sh
+.venv/bin/python scripts/describe.py fairwardgolf [--only <key>] [--limit N] [--offline] [--packet]
+.venv/bin/python scripts/job.py new ... --publish --describe      # each product described right before it is sent
+```
+
+A minimalist English description in HTML for Shopify's own body (`descriptionHtml`; no metafield, no SEO
+description). One model request and one answer per product, through translate.py's client and chain (the same
+key and models); no fix rounds. The script works before and after the request:
+
+- **Before** (`packet`): what is sold goes first (the facts and the options of the variants we publish, the free
+  required choices), then the English the shop already shows (title, brand, spec rows, option values: the
+  description names the product as its title does), then the seller's typed text and the OCR blocks of the
+  description images in Korean. Left out: OCR table blocks (digits are lost in them: per-club tables belong to a
+  later characteristics stage), a block headed by an offer of a paid extra or a gift (a line naming an extra
+  inside another block stays with its label: the label is what tells the model to leave the item out), an image of
+  buyers' reviews (masked ids), every line on the country of manufacture. A gift among the facts or the free
+  choices is listed under "Gifts of the seller: never mention", not as what is sold. Notes the transform already made about the listing (other
+  configurations sold, paid extras, gifts, several products in one description) are passed as one line each.
+- **Origin** (the owner: keep the country): decided by the script, not the model. The 원산지 row and every
+  "제조국 / made in" line of the texts name one country: `Origin: made in <country>`. They disagree or hedge
+  ("may differ", "not Japan", "and others"), or the row names a country the table does not know: `Origin: do not
+  state`, the reason in the report. Of the first 105: stated for 66, silent for 28, no source for 11. After the
+  answer any other country in the text, in any wording ("Japanese-made", "a product of China"), cuts that
+  sentence; "Japan-market model" is not an origin.
+- **The answer**: JSON fields, not HTML: `conflicts` (points the sources disagree on: asked first, kept out of the
+  text, shown in the report), `intro`, and the lists of the product's profile.
+- **After** (`settle`): each intro sentence and each list item is checked alone: English only, no link, phone,
+  price or markup, no shop talk (warranty, shipping, gifts, reviews, authenticity, parallel import), no talk about
+  the listing ("per the specifications", "depending on the option"), every number is one the model was given (a
+  tripwire, not a proof: a wrong number that stands elsewhere in the packet passes), no country but the decided
+  one. A failing highlight or intro sentence is dropped; a failing item of another list drops that list (half a
+  list of the box's contents misleads; so does a clean list over its cap of 12). No intro left: the title as one
+  sentence (`fallback`). Caps: intro 400 characters, an item 160, the whole text 1 500. The HTML is built by the script (`p`, `h3`, `ul`, `li`, text
+  escaped, a line break between blocks).
+- **What nothing checks**: a claim without a number that the seller did not make (the model explaining a term).
+  The prompt forbids it; read a sample of `translation/descriptions.jsonl` when a category or the prompt changes.
+
+A kind of product has a profile (`describe.PROFILES`: its Naver leaf categories, its lists with headings and
+caps) and a brief (`prompts/describe/<profile>.md`: what each list holds, what a buyer of this kind of product
+must be told). `golf_set` (50002788): "What's included" and "Highlights"; no bag or no putter is said plainly; a
+non-conforming driver gets one fixed sentence; a version for the Asian or Japanese market is one highlight, joined
+with the origin. A category without a profile gets `default`: the intro and highlights only. The common prompt
+(`prompts/describe_system.md`) holds no golf word.
+
+The answers are kept in `shops/<shop>/translation/descriptions.jsonl` (append-only; fields, HTML, what was cut
+and why, conflicts, the origin decision, the model, the time; `generated: model` for a later Merchant feed, where
+Google asks for AI-written text to be declared). A product with a row is not asked again; a row whose source
+changed is reported `stale` and kept (`--force` asks again). `publish.py` puts the row's HTML into the payload and
+into the publish digest only when the product has a row, so a product without one keeps its digest. Products
+already in the shop are skipped unless `--published` or `--only` names them: a new description changes the digest,
+and the next `publish.py` run sends the product (the owner's go-ahead first, JOB_AGENT.md). Measured 2026-11-10 on
+22 real requests: 2-5 s and about $0.01 a product (claude-sonnet-5-5, effort low).
 
 ## Shopify roadmap
 

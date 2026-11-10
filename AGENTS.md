@@ -40,7 +40,8 @@ Google Chrome (a real window opens). Docker/Linux is archived in
    2026-11-07); a read of our own Shopify store's catalog (`scripts/shopify_catalog.py`, Admin API, read only); the publication to
    that store (`scripts/publish.py` through `scripts/shopify_admin.py`, the owner 2026-11-08: the only code that writes
    to Shopify); and
-   the Anthropic API for translation, OpenAI as its fallback (`scripts/translate.py`, the owner 2026-11-08).
+   the Anthropic API for translation, OpenAI as its fallback (`scripts/translate.py`, the owner 2026-11-08), and
+   for the products' descriptions through the same client (`scripts/describe.py`, the owner 2026-11-10).
 4. Tests never hit the network.
    API answer types live in `scripts/naver_types.py`; a shape change updates type + fixture + client method (R-TYPE).
 5. Move or rename tracked files with `git mv` so history follows them.

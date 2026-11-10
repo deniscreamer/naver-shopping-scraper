@@ -304,3 +304,48 @@ def test_a_publishing_job_reads_the_ledger_and_publishes_one(tmp_path, monkeypat
     assert job.events()[-1]["event"] == "published"
     what = J.publish_step(job, {}, KEYS[2])                     # not ready (held): closed, not sent
     assert what.startswith("not ready") and calls == [KEYS[1]] and job.events()[-1]["event"] == "not_taken"
+
+
+def test_a_describing_job_writes_the_description_before_it_publishes(tmp_path, monkeypatch):
+    import describe as D
+    import publish as PB
+    import translate
+    from test_publish import FakeFiles, FakeProducts
+    job = _translating_job(tmp_path, {KEYS[0]: "translated", KEYS[1]: "translated"})
+    job.meta.update(publish=True, describe=True)
+    job.save_meta()
+    order = []
+    row = {"key": KEYS[1], "status": "trimmed", "dropped": [{"where": "highlights"}], "conflicts": ["a", "b"],
+           "origin": None, "origin_note": "origin not stated (sources disagree: row: USA; text: Vietnam)"}
+    answers = [{"rows": [row], "usage": {}}, {"rows": [], "usage": {}}]
+
+    def described(shop, model, root, only=None):
+        order.append(("describe", only, model))
+        return answers.pop(0)
+    monkeypatch.setattr(D, "run", described)
+    monkeypatch.setattr(PB, "clients", lambda shop_name: (FakeProducts(), FakeFiles(), {}))
+    monkeypatch.setattr(PB.Shop, "ready", lambda self: [KEYS[0], KEYS[1]])
+    monkeypatch.setattr(PB, "publish_one", lambda shop, key, *a, **k: order.append(("publish", key)) or
+                        {"key": key, "status": "published", "handle": "h", "product_id": "gid://shopify/Product/1"})
+    monkeypatch.setattr("placement.run", lambda *a, **k: None)
+    ctx = {"translator": "CHAIN"}
+    assert J.publish_step(job, ctx, KEYS[1]).startswith("described (trimmed, 1 cut); published h")
+    assert order == [("describe", KEYS[1], "CHAIN"), ("publish", KEYS[1])]          # described first, by the chain
+    event = next(e for e in job.events() if e["event"] == "described")
+    assert event["status"] == "trimmed" and event["cut"] == 1 and event["conflicts"] == 2
+    assert "sources disagree" in event["origin_note"]
+    assert J.publish_step(job, ctx, KEYS[0]).startswith("description kept; published h")   # it has one already
+
+    def down(*a, **k):
+        raise D.NoProvider("no provider answered")
+    monkeypatch.setattr(D, "run", down)
+    with pytest.raises(J.Stop, match="describe: no provider answered"):               # not published without it
+        J.publish_step(job, ctx, KEYS[1])
+    monkeypatch.setattr(D, "run", lambda *a, **k: (_ for _ in ()).throw(translate.TranslateError("key refused")))
+    with pytest.raises(J.Stop, match="describe: key refused"):
+        J.publish_step(job, ctx, KEYS[1])
+    assert [o for o in order if o[0] == "publish"] == [("publish", KEYS[1]), ("publish", KEYS[0])]
+
+    job.meta["describe"] = False                                # a job made without --describe asks nothing
+    monkeypatch.setattr(D, "run", lambda *a, **k: order.append("asked"))
+    assert J.publish_step(job, ctx, KEYS[1]).startswith("published h") and "asked" not in order

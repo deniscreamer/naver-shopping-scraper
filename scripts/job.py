@@ -8,7 +8,7 @@ it, the product tab of the previous read is closed; a login gate is reset from n
 owner as always.
 
     .venv/bin/python scripts/job.py new --query "남성 골프채 풀세트" --category 50002788 [--count 40] [--batches 2]
-                                        [--paid] [--exclude-known] [--shops-root DIR] [--publish]
+                                        [--paid] [--exclude-known] [--shops-root DIR] [--publish [--describe]]
     .venv/bin/python scripts/job.py run [--job ID] [--items N]
     .venv/bin/python scripts/job.py status [--job ID] [--json]
 
@@ -29,7 +29,9 @@ not translate is `failed` (tried again after the fresh ones, MAX_FAILS times); e
 (`run` again resumes). A job made with `--publish` takes each translated product on: placement.py over the
 whole shop (offline), then publish.py for this product (Shopify, ACTIVE); published = its key in
 publish/published.jsonl. A product not ready to publish (held, not placed) is `not_taken`; a refused write is
-`failed` (tried again); a refused token or scope stops the run.
+`failed` (tried again); a refused token or scope stops the run. With `--describe` too (the owner, 2026-11-10) the
+product's description is written right before it is sent (describe.py, one model request; the answer is checked
+and cut by the script, never a reason to hold the product); no provider answering stops the run.
 
 `new --count N` reads the listings deeper (batches doubled, up to MAX_BATCHES; a listing is read from the top
 every time) until N products pass the screen; when `run` uses up the snapshot with fewer than N prepared, it
@@ -274,6 +276,9 @@ def cmd_new(args: argparse.Namespace) -> int:
     from naver_api_client import NaverApiClient
     from package_measures import load_table
     from shop_stores import get_store
+    if args.describe and not args.publish:
+        print("stop: --describe needs --publish (a job without publication: describe.py <shop> after it)")
+        return 2
     api, store = NaverApiClient(), get_store()
     if not any(str(r["category_id"]) == args.category for r in load_table()["rows"]):
         print(f"stop: no category_measures.json row for {args.category}: ask the operator")
@@ -297,7 +302,7 @@ def cmd_new(args: argparse.Namespace) -> int:
             "reviews": args.reviews, "shops_root": shops_root, "created_at": _now(), "count": args.count,
             "batches": batches, "listings": listings, "screen": counts, "excluded_known": len(known),
             "exclude_known": args.exclude_known, "translate": not args.no_translate or args.publish,
-            "publish": args.publish,
+            "publish": args.publish, "describe": args.describe,
             "free_only": not args.paid}                   # 2026-11-09: no paid variant / add-on in the transform either
     with open(os.path.join(folder, "job.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=1)
@@ -515,6 +520,7 @@ def publish_step(job: Job, ctx: dict, key: str, n: int = 0) -> str:
         reason = f"not ready to publish (placement {placed.get('status')}: {placed.get('reason')})"
         job.log(key, "not_taken", reason=reason[:300])          # not placed: closed, the owner decides
         return reason
+    described = describe_one(job, ctx, key) + "; " if job.meta.get("describe") else ""
     try:
         if "publisher" not in ctx:
             ctx["publisher"] = publish.clients(job.shop)
@@ -531,7 +537,29 @@ def publish_step(job: Job, ctx: dict, key: str, n: int = 0) -> str:
         job.log(key, "failed", stage="publish", reason=str(e)[:300])
         return f"publish failed: {e}"[:200]
     job.log(key, "published", product_id=row.get("product_id"), handle=row.get("handle"), status=row["status"])
-    return f"published {row.get('handle')} {row.get('admin_url') or ''}".strip()
+    return f"{described}published {row.get('handle')} {row.get('admin_url') or ''}".strip()
+
+
+def describe_one(job: Job, ctx: dict, key: str) -> str:
+    """The product's description (describe.py: one model request; a product that has one is not asked again).
+    -> what happened. A refused key or no provider answering stops the run: a job made with --describe does not
+    publish a product without its description. An answer that fails the checks is never a stop: the script cuts
+    what failed, down to the title as one sentence."""
+    import describe
+    import translate
+    try:
+        r = describe.run(job.shop, ctx["translator"], job.shops_root, only=key)
+    except translate.TranslateError as e:
+        raise Stop(f"describe: {e}") from None
+    except describe.NoProvider as e:
+        raise Stop(f"describe: {e}") from None
+    row = r["rows"][0] if r["rows"] else None
+    if row is None:
+        return "description kept"
+    cut = len(row["dropped"])
+    job.log(key, "described", status=row["status"], cut=cut, origin=row["origin"], origin_note=row["origin_note"],
+            conflicts=len(row["conflicts"]), cost=round(translate.cost(r["usage"])[0], 4))
+    return f"described ({row['status']}" + (f", {cut} cut" if cut else "") + ")"
 
 
 def translate_one(job: Job, ctx: dict, key: str) -> str:
@@ -715,6 +743,8 @@ def main(argv: list[str] | None = None) -> int:
     n.add_argument("--no-translate", action="store_true", help="stop each product at prepared (no model API)")
     n.add_argument("--publish", action="store_true", help="take each product on to Shopify (ACTIVE) after "
                    "translation: placement, then publish.py")
+    n.add_argument("--describe", action="store_true", help="with --publish: write each product's description "
+                   "before it is sent (describe.py: one model request a product)")
     r = sub.add_parser("run")
     r.add_argument("--job")
     r.add_argument("--items", type=int, default=0, help="stop after N products (0: to the end)")

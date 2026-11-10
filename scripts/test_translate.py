@@ -483,6 +483,10 @@ def test_the_openai_request():
     assert sent["response_format"]["json_schema"] == {"name": "translations", "strict": True, "schema": T.SCHEMA}
     assert reply.text == '{"items": []}' and reply.content == reply.text and reply.stop_reason == "stop"
     assert reply.usage == {"input": 6, "output": 5, "cache_read": 4}
+    other = {"type": "object", "additionalProperties": False, "required": ["intro"],
+             "properties": {"intro": {"type": "string"}}}
+    model.send("SYSTEM", [{"role": "user", "content": "{}"}], other)                # describe.py sends its own
+    assert sent["response_format"]["json_schema"] == {"name": "answer", "strict": True, "schema": other}
 
 
 @pytest.mark.parametrize("finish, refusal, stop", [("length", None, "max_tokens"), ("content_filter", None, "refusal"),
@@ -526,6 +530,10 @@ def test_the_anthropic_request():
                                usage=SimpleNamespace(input_tokens=10, output_tokens=5, cache_read_input_tokens=3,
                                                      cache_creation_input_tokens=0))
     client = SimpleNamespace(beta=SimpleNamespace(messages=SimpleNamespace(create=create)))
+    other = {"type": "object", "additionalProperties": False, "required": ["intro"],
+             "properties": {"intro": {"type": "string"}}}
+    T.AnthropicModel("unused", client=client).send("SYSTEM", [{"role": "user", "content": "{}"}], other)
+    assert sent["output_config"]["format"] == {"type": "json_schema", "schema": other}   # describe.py sends its own
     reply = T.AnthropicModel("unused", client=client).send("SYSTEM", [{"role": "user", "content": "{}"}])
     assert sent["model"] == "claude-sonnet-5-5" and sent["output_config"]["effort"] == "low"
     assert sent["output_config"]["format"] == {"type": "json_schema", "schema": T.SCHEMA}

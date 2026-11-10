@@ -12,6 +12,7 @@ product, in this order (shopify_payload.py builds, shopify_admin.py sends):
      a product with fewer than 2 photos of its own gets buyers' photos after them, 5 in all at most
      (shopify_payload.review_gallery, ranked by review_rank);
   4. productSet: create, or update the product that has its source key (fairwardgolf.source_offer_id); ACTIVE;
+     the body (descriptionHtml) is the product's description when describe.py wrote one, empty otherwise;
   5. published to every sales channel of the store (the owner, 2026-11-09); one line in
      shops/<shop>/publish/published.jsonl.
 
@@ -27,6 +28,7 @@ import sys
 from datetime import datetime, timezone
 from typing import Any
 
+import describe
 import shopify_payload as sp
 from shop_pricing import policy
 from shop_stores import get_store
@@ -121,11 +123,17 @@ class Shop:
         return os.path.join(self.dir, rel)
 
 
-def inputs_digest(prepared: dict, translated: dict, placement: dict, shop: str, gallery: list | None = None) -> str:
-    """`gallery`: the buyers' photos chosen for the gallery (a photo struck out in gallery_skip.txt changes it)."""
-    return sp.digest({"prepared": prepared, "en": translated.get("en"), "placement": placement,
-                      "pricing": policy(shop).describe(), "format": FORMAT, "payload": sp.VERSION,
-                      "gallery": gallery or []})
+def inputs_digest(prepared: dict, translated: dict, placement: dict, shop: str, gallery: list | None = None,
+                  description: str | None = None) -> str:
+    """`gallery`: the buyers' photos chosen for the gallery (a photo struck out in gallery_skip.txt changes it).
+    `description`: the product's description HTML (describe.py). It enters the digest only when the product has
+    one, so a product without a description keeps the digest it was published with (2026-11-10: adding the key
+    for every product would send the whole shop again)."""
+    inputs = {"prepared": prepared, "en": translated.get("en"), "placement": placement,
+              "pricing": policy(shop).describe(), "format": FORMAT, "payload": sp.VERSION, "gallery": gallery or []}
+    if description:
+        inputs["description"] = description
+    return sp.digest(inputs)
 
 
 def gallery(shop: "Shop", prepared: dict[str, Any]) -> list[dict[str, Any]]:
@@ -146,7 +154,8 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
     prepared_all, translated_all, placed_all = shop.inputs()
     prepared, translated, placement = prepared_all[key], translated_all.get(key) or {}, placed_all.get(key) or {}
     extra = gallery(shop, prepared)
-    digest = inputs_digest(prepared, translated, placement, shop.shop, extra)
+    description = (describe.load_store(shop.dir).get(key) or {}).get("html") or ""
+    digest = inputs_digest(prepared, translated, placement, shop.shop, extra, description)
     before = shop.ledger().get(key)
     if before and before.get("digest") == digest and not force and not dry_run and not rehandle:
         return {**before, "status": "skipped"}
@@ -201,7 +210,7 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
     # 4. the product (an update keeps the handle it has in the shop)
     payload = sp.product_input(prepared, translated, placement, pricing, ids.get("location", "dry-run:location"),
                                photos, feed_url, rows, handle_override=handle, vendors=ids.get("vendors"),
-                               tenant=ids.get("tenant"))
+                               tenant=ids.get("tenant"), description_html=description)
     if product_id and not rehandle:
         del payload["handle"]
     elif product_id:

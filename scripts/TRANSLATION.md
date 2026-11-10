@@ -12,7 +12,7 @@ place in the pipeline and the details of each part: [README.md](README.md) "Tran
 |---|---|
 | A model API translates. Not the session's agent. | `translate.py` |
 | Claude Sonnet 5.5 at effort low; OpenAI as the fallback; models changed in `.env`, not in code | `settings()`, `.env.example` |
-| The description and the images' text are not translated: a later stage writes the description from them | `transform._texts` (not in `texts`) |
+| The description and the images' text are not translated: `describe.py` reads them in Korean and writes the English description (the owner, 2026-11-10; README "The product's description") | `transform._texts` (not in `texts`), `describe.packet` |
 | One dictionary per kind of text, in JSON, growing during runs out of git; backups in git, updated by hand; `status` says when a backup is due | `translation_dicts.py`, `scripts/dictionaries/` |
 | The brand is looked up first; one spelling per brand in the whole shop | brand dictionary, `vendors` in the request |
 | No brand (노브랜드): the tenant's name; inside a text the word is removed | `translation_rules.sanitize` |
