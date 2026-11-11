@@ -3,7 +3,7 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
-## Unreleased
+## 0.13.0 (2026-11-11)
 
 - **Prices with delivery, duty and margin inside them** (the owner, 2026-11-11). In fairwardgolf every variant's
   price comes from `shop_pricing.Policy.quote` under the rule `landed/2`: the purchase (the Naver price as shown,
