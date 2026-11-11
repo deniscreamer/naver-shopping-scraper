@@ -1,20 +1,28 @@
 {
  "format": "dictionary/1",
  "kind": "text_label",
- "backed_up": "2026-11-10T07:52:46Z",
+ "backed_up": "2026-11-11T23:56:20Z",
  "entries": {
   "네임스티커 성함": "Name Sticker Name",
+  "네임스티커 성함과 장갑사이즈 (18호~21호)": "Name Sticker Name and Glove Size (Size 18-Size 21)",
+  "네임스티커 성함과 장갑사이즈(18호~21호)": "Name Sticker Name and Glove Size (Size 18 to Size 21)",
   "네임스티커 성함과 장갑사이즈(22~25호)": "Name Sticker Name and Glove Size (Size 22–25)",
   "네임택용 성함": "Name for Name Tag",
+  "네임택용 성함 및 장갑 사이즈": "Name for Name Tag and Glove Size",
   "드라이버 유틸강도스펙예시 S.SR 표기해주세요": "Driver/Hybrid Flex Spec (e.g., S, SR)",
   "사은품 7종세트-장갑 사이즈 (18-21호)": "Gift 7-Piece Set - Glove Size (Size 18-21)",
+  "아이언 샤프트 선택 NS PRO [R / S]": "Select Iron Shaft NS PRO [R / S]",
   "이름표(ex 홍길동)골프채색상(ex화이트)": "Name Tag (e.g. John Doe) Club Color (e.g. White)",
   "이름표(ex홍길동)골프채색상(ex화이트)": "Name Tag (e.g. John Doe) / Club Color (e.g. White)",
   "이름표(ex홍길동)기재 해주세요": "Name Tag (e.g., John Doe)",
+  "장갑 사이즈(18-21호) 및 네임스티커 성함": "Glove Size (Size 18–21) and Name Sticker Name",
   "카본 아이언 강도 - R/SR/S": "Carbon Iron Flex - R/SR/S",
+  "클럽 부착용 성함": "Name for Club Tag",
   "클럽에 부착하실 이름 (ex 홍길동)": "Name to Put on the Clubs (ex John Doe)",
   "클럽에 부착하실 이름(ex 홍길동)": "Name to Attach to Clubs (ex. John Doe)",
   "클럽에 부착하실 이름(ex 홍길동) 기재": "Name to Attach to Clubs (e.g. John Doe)",
-  "클럽에 부착하실 이름(ex 홍길동)기재": "Name to Attach to Clubs (e.g. John Doe)"
+  "클럽에 부착하실 이름(ex 홍길동)기재": "Name to Attach to Clubs (e.g. John Doe)",
+  "퍼터 사이즈": "Putter Size",
+  "퍼터사이즈": "Putter Size"
  }
 }
