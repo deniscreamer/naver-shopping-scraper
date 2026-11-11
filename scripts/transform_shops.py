@@ -80,6 +80,13 @@ def without_paid(rules: ShopRules) -> ShopRules:
                                       for k, c in rules.categories.items()})
 
 
+def without_paid_addons(rules: ShopRules) -> ShopRules:
+    """The shop's rules with paid variants as the category allows them and every paid add-on off (a job made with
+    --paid-variants; the owner, 2026-11-11: paid variants yes, paid add-ons no)."""
+    from dataclasses import replace
+    return replace(rules, categories={k: replace(c, paid_addons=False) for k, c in rules.categories.items()})
+
+
 def rules_for(shop: str | StoreId) -> ShopRules:
     try:
         return RULES[StoreId(str(shop).strip().lower())]

@@ -8,7 +8,7 @@ it, the product tab of the previous read is closed; a login gate is reset from n
 owner as always.
 
     .venv/bin/python scripts/job.py new --query "남성 골프채 풀세트" --category 50002788 [--count 40] [--batches 2]
-                                        [--paid] [--exclude-known] [--shops-root DIR] [--publish [--describe]]
+                                        [--paid | --paid-variants] [--exclude-known] [--shops-root DIR] [--publish [--describe]]
     .venv/bin/python scripts/job.py run [--job ID] [--items N]
     .venv/bin/python scripts/job.py status [--job ID] [--json]
 
@@ -298,12 +298,14 @@ def cmd_new(args: argparse.Namespace) -> int:
     job_id = f"{store.id.value}-{args.category}-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}"
     folder = os.path.join(JOBS_ROOT, job_id)
     os.makedirs(folder)
-    meta = {"shop": store.id.value, "category": args.category, "queries": args.query, "paid": args.paid,
+    meta = {"shop": store.id.value, "category": args.category, "queries": args.query,
+            "paid": args.paid or args.paid_variants, "paid_variants": args.paid_variants,
             "reviews": args.reviews, "shops_root": shops_root, "created_at": _now(), "count": args.count,
             "batches": batches, "listings": listings, "screen": counts, "excluded_known": len(known),
             "exclude_known": args.exclude_known, "translate": not args.no_translate or args.publish,
             "publish": args.publish, "describe": args.describe,
             "free_only": not args.paid}                   # 2026-11-09: no paid variant / add-on in the transform either
+                                                          # (--paid-variants: this job's products take paid variants)
     with open(os.path.join(folder, "job.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=1)
     with open(os.path.join(folder, "listing.jsonl"), "w", encoding="utf-8") as f:
@@ -481,7 +483,9 @@ def one(job: Job, ctx: dict, key: str, stage_now: str | None, n: int = 0) -> str
     if stage_now != "prepared":
         job.beat(key=key, n=n, stage="prepare", since=_now())
         try:
-            run_transform.run(job.shop, None, job.shops_root, free_only=bool(job.meta.get("free_only")))
+            run_transform.run(job.shop, None, job.shops_root, free_only=bool(job.meta.get("free_only")),
+                              paid_variants=frozenset(str(r["product_id"]) for r in job.rows())
+                              if job.meta.get("paid_variants") else frozenset())
         except Exception as e:                                   # a transform defect: stop, never loop on it
             raise Stop(f"prepare: {type(e).__name__}: {e}") from None
     done = {p["key"]: p for p in _prepared(job)}
@@ -741,6 +745,8 @@ def main(argv: list[str] | None = None) -> int:
                    "(up to MAX_BATCHES) while fewer than --count products pass the screen")
     n.add_argument("--paid", action="store_true", help="paid variants (and the category's paid add-ons) too; "
                    "without it the job collects and prepares only what costs nothing extra")
+    n.add_argument("--paid-variants", action="store_true", help="the job's products take paid variants but no paid "
+                   "add-on (the owner, 2026-11-11); the shop's other prepared records stay as they were")
     n.add_argument("--reviews", type=int, default=20)
     n.add_argument("--exclude-known", action="store_true", help="leave out products collected before anywhere")
     n.add_argument("--shops-root", help="the shops folder (default scripts/output/shops)")

@@ -36,7 +36,8 @@ provider down stops the run (`run` again resumes; nothing is asked twice). A lin
 (at done and in `status`): tell the owner; `translation_dicts.py status` lists the entries, the owner backs them up.
 
 Paid choices: a job made without `--paid` (the owner's pilot, 2026-11-09) collects and prepares only the variants
-and add-ons that cost nothing extra; `--paid` takes them too.
+and add-ons that cost nothing extra; `--paid` takes them too. `--paid-variants` (the owner, 2026-11-11) takes the paid variants
+but no paid add-on, for the job's own products only (the shop's other prepared records stay as they were).
 
 Publication per product (`new --publish`): the done line ends with `published <handle> $<price> <admin link>`
 (`$<min>-<max>` when the variants differ; the shop's price rule: [README.md](README.md) "The price"). A product

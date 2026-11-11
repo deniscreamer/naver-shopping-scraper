@@ -30,7 +30,7 @@ import brand_fallback
 from description_images import image_rows
 from shared_images import RULE as SHARED_RULE, drop_shared_images
 from transform import _texts, prepare
-from transform_shops import ShopRulesMissing, rules_for, without_paid
+from transform_shops import ShopRulesMissing, rules_for, without_paid, without_paid_addons
 
 
 def kept_runs(shop: str, shops_root: str = SHOPS_ROOT) -> list[str]:
@@ -123,12 +123,17 @@ def image_texts(shop: str, rules: Any, prepared: list[Any], latest: dict[str, tu
         p["product"]["description_images_text"] = flag
 
 
-def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT, free_only: bool = False) -> dict:
-    """`free_only`: no paid variant and no paid add-on, whatever the category allows (a job made without --paid)."""
+def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT, free_only: bool = False,
+        paid_variants: frozenset[str] | set[str] = frozenset()) -> dict:
+    """`free_only`: no paid variant and no paid add-on, whatever the category allows (a job made without --paid).
+    `paid_variants`: product ids that take the category's paid variants but no paid add-on (a job made with
+    --paid-variants: its own products only, so the shop's other records stay as they were prepared)."""
     rules = without_paid(rules_for(shop)) if free_only else rules_for(shop)
+    with_variants = without_paid_addons(rules_for(shop))
     chosen = runs or kept_runs(shop, shops_root)
     latest = latest_lines(shop, runs, shops_root)
-    prepared = [prepare(line, rules, run_id, n, load_sidecar(shop, line["key"].split(":")[3], shops_root))
+    prepared = [prepare(line, with_variants if line["key"].split(":")[3] in paid_variants else rules, run_id, n,
+                        load_sidecar(shop, line["key"].split(":")[3], shops_root))
                 for run_id, n, line in latest.values()]
     prepared.sort(key=lambda p: p["key"])
     prepared = drop_shared_images(prepared)                             # run-level: needs the store's other listings

@@ -642,3 +642,9 @@ def test_free_only_rules_turn_paid_off_for_every_category():
     free = without_paid(rules_for("fairwardgolf")).category("50002788")
     assert not free.paid_variants and not free.paid_addons and free.description_images
     assert rules_for("fairwardgolf").category("50002788").paid_addons          # the shop's own rule unchanged
+
+
+def test_paid_variants_without_paid_addons():
+    from transform_shops import rules_for, without_paid_addons
+    rule = without_paid_addons(rules_for("fairwardgolf")).category("50002788")
+    assert rule.paid_variants and not rule.paid_addons and rule.description_images
