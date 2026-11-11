@@ -1,0 +1,2866 @@
+{
+ "format": "shopnship-capture/1",
+ "source": "https://shopnship.co.kr/form/calculator.php",
+ "page": "https://shopnship.co.kr/en/help/shipping_calculator.php",
+ "country": "US",
+ "units": "kg, cm",
+ "carriers": [
+  "dhl",
+  "fedex",
+  "ems",
+  "ems_premium",
+  "shopnship_standard"
+ ],
+ "started_at": "2026-11-11T06:59:53Z",
+ "finished_at": "2026-11-11T07:04:14Z",
+ "requests": [
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "0.5",
+   "at": "2026-11-11T06:59:53Z",
+   "raw": "0.00/42.49/0.00/0.00/27.46",
+   "usd": {
+    "dhl": null,
+    "fedex": "42.49",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "27.46"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "1.0",
+   "at": "2026-11-11T06:59:55Z",
+   "raw": "0.00/48.51/0.00/0.00/37.20",
+   "usd": {
+    "dhl": null,
+    "fedex": "48.51",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "37.20"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "1.5",
+   "at": "2026-11-11T06:59:56Z",
+   "raw": "0.00/58.10/0.00/0.00/51.31",
+   "usd": {
+    "dhl": null,
+    "fedex": "58.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "51.31"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "2.0",
+   "at": "2026-11-11T06:59:58Z",
+   "raw": "0.00/62.70/0.00/0.00/57.80",
+   "usd": {
+    "dhl": null,
+    "fedex": "62.70",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "57.80"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "2.5",
+   "at": "2026-11-11T06:59:59Z",
+   "raw": "0.00/67.07/0.00/0.00/66.33",
+   "usd": {
+    "dhl": null,
+    "fedex": "67.07",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "66.33"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "3.0",
+   "at": "2026-11-11T07:00:00Z",
+   "raw": "0.00/75.79/0.00/0.00/75.95",
+   "usd": {
+    "dhl": null,
+    "fedex": "75.79",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "75.95"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "3.5",
+   "at": "2026-11-11T07:00:02Z",
+   "raw": "0.00/81.92/0.00/0.00/86.10",
+   "usd": {
+    "dhl": null,
+    "fedex": "81.92",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "86.10"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "4.0",
+   "at": "2026-11-11T07:00:03Z",
+   "raw": "0.00/88.05/0.00/0.00/95.32",
+   "usd": {
+    "dhl": null,
+    "fedex": "88.05",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "95.32"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "4.5",
+   "at": "2026-11-11T07:00:04Z",
+   "raw": "0.00/94.20/0.00/0.00/101.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "94.20",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "101.93"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "5.0",
+   "at": "2026-11-11T07:00:06Z",
+   "raw": "0.00/100.33/0.00/0.00/117.82",
+   "usd": {
+    "dhl": null,
+    "fedex": "100.33",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "117.82"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "5.5",
+   "at": "2026-11-11T07:00:07Z",
+   "raw": "0.00/108.10/0.00/0.00/128.45",
+   "usd": {
+    "dhl": null,
+    "fedex": "108.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "128.45"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "6.0",
+   "at": "2026-11-11T07:00:08Z",
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "6.5",
+   "at": "2026-11-11T07:00:10Z",
+   "raw": "0.00/119.31/0.00/0.00/150.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "119.31",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "150.00"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "7.0",
+   "at": "2026-11-11T07:00:11Z",
+   "raw": "0.00/124.91/0.00/0.00/159.57",
+   "usd": {
+    "dhl": null,
+    "fedex": "124.91",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "159.57"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "7.5",
+   "at": "2026-11-11T07:00:12Z",
+   "raw": "0.00/130.52/0.00/0.00/168.78",
+   "usd": {
+    "dhl": null,
+    "fedex": "130.52",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "168.78"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "8.0",
+   "at": "2026-11-11T07:00:14Z",
+   "raw": "0.00/136.12/0.00/0.00/186.79",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "186.79"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "8.5",
+   "at": "2026-11-11T07:00:15Z",
+   "raw": "0.00/141.71/0.00/0.00/195.71",
+   "usd": {
+    "dhl": null,
+    "fedex": "141.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "195.71"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "9.0",
+   "at": "2026-11-11T07:00:16Z",
+   "raw": "0.00/152.10/0.00/0.00/205.92",
+   "usd": {
+    "dhl": null,
+    "fedex": "152.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "205.92"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "9.5",
+   "at": "2026-11-11T07:00:17Z",
+   "raw": "0.00/157.88/0.00/0.00/216.39",
+   "usd": {
+    "dhl": null,
+    "fedex": "157.88",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "216.39"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "10.0",
+   "at": "2026-11-11T07:00:19Z",
+   "raw": "0.00/163.66/0.00/0.00/228.97",
+   "usd": {
+    "dhl": null,
+    "fedex": "163.66",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "228.97"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "10.5",
+   "at": "2026-11-11T07:00:20Z",
+   "raw": "0.00/178.42/0.00/0.00/237.60",
+   "usd": {
+    "dhl": null,
+    "fedex": "178.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "237.60"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "11.0",
+   "at": "2026-11-11T07:00:22Z",
+   "raw": "0.00/183.30/0.00/0.00/249.40",
+   "usd": {
+    "dhl": null,
+    "fedex": "183.30",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "249.40"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "11.5",
+   "at": "2026-11-11T07:00:23Z",
+   "raw": "0.00/188.16/0.00/0.00/280.80",
+   "usd": {
+    "dhl": null,
+    "fedex": "188.16",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "280.80"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "12.0",
+   "at": "2026-11-11T07:00:24Z",
+   "raw": "0.00/193.04/0.00/0.00/291.27",
+   "usd": {
+    "dhl": null,
+    "fedex": "193.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "291.27"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "12.5",
+   "at": "2026-11-11T07:00:26Z",
+   "raw": "0.00/197.92/0.00/0.00/301.88",
+   "usd": {
+    "dhl": null,
+    "fedex": "197.92",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "301.88"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "13.0",
+   "at": "2026-11-11T07:00:27Z",
+   "raw": "0.00/202.78/0.00/0.00/322.76",
+   "usd": {
+    "dhl": null,
+    "fedex": "202.78",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "322.76"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "13.5",
+   "at": "2026-11-11T07:00:28Z",
+   "raw": "0.00/207.66/0.00/0.00/331.29",
+   "usd": {
+    "dhl": null,
+    "fedex": "207.66",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "331.29"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "14.0",
+   "at": "2026-11-11T07:00:30Z",
+   "raw": "0.00/212.52/0.00/0.00/341.98",
+   "usd": {
+    "dhl": null,
+    "fedex": "212.52",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "341.98"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "14.5",
+   "at": "2026-11-11T07:00:32Z",
+   "raw": "0.00/217.39/0.00/0.00/352.67",
+   "usd": {
+    "dhl": null,
+    "fedex": "217.39",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "352.67"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "15.0",
+   "at": "2026-11-11T07:00:33Z",
+   "raw": "0.00/222.27/0.00/0.00/363.49",
+   "usd": {
+    "dhl": null,
+    "fedex": "222.27",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "363.49"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "15.5",
+   "at": "2026-11-11T07:00:36Z",
+   "raw": "0.00/227.13/0.00/0.00/374.18",
+   "usd": {
+    "dhl": null,
+    "fedex": "227.13",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "374.18"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "16.0",
+   "at": "2026-11-11T07:00:37Z",
+   "raw": "0.00/232.01/0.00/0.00/384.87",
+   "usd": {
+    "dhl": null,
+    "fedex": "232.01",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "384.87"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "16.5",
+   "at": "2026-11-11T07:00:38Z",
+   "raw": "0.00/258.78/0.00/0.00/395.69",
+   "usd": {
+    "dhl": null,
+    "fedex": "258.78",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "395.69"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "17.0",
+   "at": "2026-11-11T07:00:40Z",
+   "raw": "0.00/264.10/0.00/0.00/406.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "264.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "406.38"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "17.5",
+   "at": "2026-11-11T07:00:41Z",
+   "raw": "0.00/269.42/0.00/0.00/417.20",
+   "usd": {
+    "dhl": null,
+    "fedex": "269.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "417.20"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "18.0",
+   "at": "2026-11-11T07:00:42Z",
+   "raw": "0.00/274.74/0.00/0.00/443.29",
+   "usd": {
+    "dhl": null,
+    "fedex": "274.74",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "443.29"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "18.5",
+   "at": "2026-11-11T07:00:44Z",
+   "raw": "0.00/280.08/0.00/0.00/454.87",
+   "usd": {
+    "dhl": null,
+    "fedex": "280.08",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "454.87"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "19.0",
+   "at": "2026-11-11T07:00:45Z",
+   "raw": "0.00/285.40/0.00/0.00/466.45",
+   "usd": {
+    "dhl": null,
+    "fedex": "285.40",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "466.45"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "19.5",
+   "at": "2026-11-11T07:00:46Z",
+   "raw": "0.00/290.72/0.00/0.00/477.78",
+   "usd": {
+    "dhl": null,
+    "fedex": "290.72",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "477.78"
+   }
+  },
+  {
+   "group": "table",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "20.0",
+   "at": "2026-11-11T07:00:48Z",
+   "raw": "0.00/296.04/0.00/0.00/489.11",
+   "usd": {
+    "dhl": null,
+    "fedex": "296.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "489.11"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "20.5",
+   "at": "2026-11-11T07:00:49Z",
+   "raw": "0.00/301.36/0.00/0.00/504.64",
+   "usd": {
+    "dhl": null,
+    "fedex": "301.36",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "504.64"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "21.0",
+   "at": "2026-11-11T07:00:52Z",
+   "raw": "0.00/327.00/0.00/0.00/516.35",
+   "usd": {
+    "dhl": null,
+    "fedex": "327.00",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "516.35"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "21.5",
+   "at": "2026-11-11T07:00:54Z",
+   "raw": "0.00/343.42/0.00/0.00/527.67",
+   "usd": {
+    "dhl": null,
+    "fedex": "343.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "527.67"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "22.0",
+   "at": "2026-11-11T07:00:57Z",
+   "raw": "0.00/343.42/0.00/0.00/539.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "343.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "539.38"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "22.5",
+   "at": "2026-11-11T07:00:58Z",
+   "raw": "0.00/359.83/0.00/0.00/550.45",
+   "usd": {
+    "dhl": null,
+    "fedex": "359.83",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "550.45"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "23.0",
+   "at": "2026-11-11T07:00:59Z",
+   "raw": "0.00/359.83/0.00/0.00/561.91",
+   "usd": {
+    "dhl": null,
+    "fedex": "359.83",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "561.91"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "23.5",
+   "at": "2026-11-11T07:01:01Z",
+   "raw": "0.00/376.25/0.00/0.00/573.24",
+   "usd": {
+    "dhl": null,
+    "fedex": "376.25",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "573.24"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "24.0",
+   "at": "2026-11-11T07:01:02Z",
+   "raw": "0.00/376.25/0.00/0.00/584.44",
+   "usd": {
+    "dhl": null,
+    "fedex": "376.25",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "584.44"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "24.5",
+   "at": "2026-11-11T07:01:05Z",
+   "raw": "0.00/392.65/0.00/0.00/595.13",
+   "usd": {
+    "dhl": null,
+    "fedex": "392.65",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "595.13"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "25.0",
+   "at": "2026-11-11T07:01:06Z",
+   "raw": "0.00/392.65/0.00/0.00/604.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "392.65",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "604.93"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "25.5",
+   "at": "2026-11-11T07:01:08Z",
+   "raw": "0.00/441.42/0.00/0.00/614.85",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "614.85"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "26.0",
+   "at": "2026-11-11T07:01:10Z",
+   "raw": "0.00/441.42/0.00/0.00/625.42",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "625.42"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "26.5",
+   "at": "2026-11-11T07:01:11Z",
+   "raw": "0.00/457.84/0.00/0.00/635.98",
+   "usd": {
+    "dhl": null,
+    "fedex": "457.84",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "635.98"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "27.0",
+   "at": "2026-11-11T07:01:13Z",
+   "raw": "0.00/457.84/0.00/0.00/646.67",
+   "usd": {
+    "dhl": null,
+    "fedex": "457.84",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "646.67"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "27.5",
+   "at": "2026-11-11T07:01:14Z",
+   "raw": "0.00/474.24/0.00/0.00/657.49",
+   "usd": {
+    "dhl": null,
+    "fedex": "474.24",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "657.49"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "28.0",
+   "at": "2026-11-11T07:01:16Z",
+   "raw": "0.00/474.24/0.00/0.00/668.31",
+   "usd": {
+    "dhl": null,
+    "fedex": "474.24",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "668.31"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "28.5",
+   "at": "2026-11-11T07:01:17Z",
+   "raw": "0.00/490.66/0.00/0.00/679.13",
+   "usd": {
+    "dhl": null,
+    "fedex": "490.66",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "679.13"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "29.0",
+   "at": "2026-11-11T07:01:18Z",
+   "raw": "0.00/490.66/0.00/0.00/689.69",
+   "usd": {
+    "dhl": null,
+    "fedex": "490.66",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "689.69"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "29.5",
+   "at": "2026-11-11T07:01:21Z",
+   "raw": "0.00/507.06/0.00/0.00/700.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "507.06",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "700.38"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "30.0",
+   "at": "2026-11-11T07:01:22Z",
+   "raw": "0.00/507.06/0.00/0.00/711.07",
+   "usd": {
+    "dhl": null,
+    "fedex": "507.06",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "711.07"
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "30.5",
+   "at": "2026-11-11T07:01:24Z",
+   "raw": "0.00/523.48/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "523.48",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "31.0",
+   "at": "2026-11-11T07:01:25Z",
+   "raw": "0.00/523.48/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "523.48",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "31.5",
+   "at": "2026-11-11T07:01:26Z",
+   "raw": "0.00/539.89/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "539.89",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "32.0",
+   "at": "2026-11-11T07:01:28Z",
+   "raw": "0.00/539.89/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "539.89",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "32.5",
+   "at": "2026-11-11T07:01:29Z",
+   "raw": "0.00/545.85/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "545.85",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "33.0",
+   "at": "2026-11-11T07:01:31Z",
+   "raw": "0.00/545.85/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "545.85",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "33.5",
+   "at": "2026-11-11T07:01:32Z",
+   "raw": "0.00/561.37/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "561.37",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "34.0",
+   "at": "2026-11-11T07:01:34Z",
+   "raw": "0.00/561.37/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "561.37",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "34.5",
+   "at": "2026-11-11T07:01:35Z",
+   "raw": "0.00/576.89/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "576.89",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "35.0",
+   "at": "2026-11-11T07:01:37Z",
+   "raw": "0.00/576.89/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "576.89",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "35.5",
+   "at": "2026-11-11T07:01:38Z",
+   "raw": "0.00/592.41/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "592.41",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "36.0",
+   "at": "2026-11-11T07:01:40Z",
+   "raw": "0.00/592.41/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "592.41",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "36.5",
+   "at": "2026-11-11T07:01:41Z",
+   "raw": "0.00/607.93/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "607.93",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "37.0",
+   "at": "2026-11-11T07:01:43Z",
+   "raw": "0.00/607.93/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "607.93",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "37.5",
+   "at": "2026-11-11T07:01:44Z",
+   "raw": "0.00/623.44/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "623.44",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "38.0",
+   "at": "2026-11-11T07:01:47Z",
+   "raw": "0.00/623.44/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "623.44",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "38.5",
+   "at": "2026-11-11T07:01:49Z",
+   "raw": "0.00/638.96/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "638.96",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "39.0",
+   "at": "2026-11-11T07:01:50Z",
+   "raw": "0.00/638.96/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "638.96",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "39.5",
+   "at": "2026-11-11T07:01:52Z",
+   "raw": "0.00/654.48/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "654.48",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "40.0",
+   "at": "2026-11-11T07:01:54Z",
+   "raw": "0.00/654.48/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "654.48",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "40.5",
+   "at": "2026-11-11T07:01:55Z",
+   "raw": "0.00/670.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "670.00",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "41.0",
+   "at": "2026-11-11T07:01:56Z",
+   "raw": "0.00/670.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "670.00",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "41.5",
+   "at": "2026-11-11T07:01:58Z",
+   "raw": "0.00/685.52/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "685.52",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "42.0",
+   "at": "2026-11-11T07:02:00Z",
+   "raw": "0.00/685.52/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "685.52",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "42.5",
+   "at": "2026-11-11T07:02:01Z",
+   "raw": "0.00/701.04/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "701.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "43.0",
+   "at": "2026-11-11T07:02:03Z",
+   "raw": "0.00/701.04/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "701.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "43.5",
+   "at": "2026-11-11T07:02:06Z",
+   "raw": "0.00/716.56/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "716.56",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "44.0",
+   "at": "2026-11-11T07:02:08Z",
+   "raw": "0.00/716.56/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "716.56",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "44.5",
+   "at": "2026-11-11T07:02:09Z",
+   "raw": "0.00/732.08/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "732.08",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "45.0",
+   "at": "2026-11-11T07:02:11Z",
+   "raw": "0.00/732.08/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "732.08",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "45.5",
+   "at": "2026-11-11T07:02:12Z",
+   "raw": "0.00/747.60/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "747.60",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "46.0",
+   "at": "2026-11-11T07:02:14Z",
+   "raw": "0.00/747.60/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "747.60",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "46.5",
+   "at": "2026-11-11T07:02:15Z",
+   "raw": "0.00/763.11/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "763.11",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "47.0",
+   "at": "2026-11-11T07:02:17Z",
+   "raw": "0.00/763.11/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "763.11",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "47.5",
+   "at": "2026-11-11T07:02:18Z",
+   "raw": "0.00/778.63/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "778.63",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "48.0",
+   "at": "2026-11-11T07:02:20Z",
+   "raw": "0.00/778.63/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "778.63",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "48.5",
+   "at": "2026-11-11T07:02:21Z",
+   "raw": "0.00/794.15/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "794.15",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "49.0",
+   "at": "2026-11-11T07:02:22Z",
+   "raw": "0.00/794.15/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "794.15",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "49.5",
+   "at": "2026-11-11T07:02:24Z",
+   "raw": "0.00/809.67/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "809.67",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "50.0",
+   "at": "2026-11-11T07:02:25Z",
+   "raw": "0.00/809.67/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "809.67",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "51",
+   "at": "2026-11-11T07:02:27Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "52",
+   "at": "2026-11-11T07:02:28Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "53",
+   "at": "2026-11-11T07:02:30Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "54",
+   "at": "2026-11-11T07:02:31Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "55",
+   "at": "2026-11-11T07:02:33Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "56",
+   "at": "2026-11-11T07:02:34Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "57",
+   "at": "2026-11-11T07:02:36Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "58",
+   "at": "2026-11-11T07:02:37Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "59",
+   "at": "2026-11-11T07:02:39Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "60",
+   "at": "2026-11-11T07:02:40Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "61",
+   "at": "2026-11-11T07:02:41Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "62",
+   "at": "2026-11-11T07:02:43Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "63",
+   "at": "2026-11-11T07:02:44Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "64",
+   "at": "2026-11-11T07:02:46Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "65",
+   "at": "2026-11-11T07:02:47Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "66",
+   "at": "2026-11-11T07:02:48Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "67",
+   "at": "2026-11-11T07:02:50Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "68",
+   "at": "2026-11-11T07:02:51Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "69",
+   "at": "2026-11-11T07:02:53Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "above",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "70",
+   "at": "2026-11-11T07:02:54Z",
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "0.1",
+   "at": "2026-11-11T07:02:55Z",
+   "raw": "0.00/42.49/0.00/0.00/18.61",
+   "usd": {
+    "dhl": null,
+    "fedex": "42.49",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "18.61"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "0.49",
+   "at": "2026-11-11T07:02:57Z",
+   "raw": "0.00/42.49/0.00/0.00/27.46",
+   "usd": {
+    "dhl": null,
+    "fedex": "42.49",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "27.46"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "0.51",
+   "at": "2026-11-11T07:02:58Z",
+   "raw": "0.00/48.51/34.80/0.00/28.96",
+   "usd": {
+    "dhl": null,
+    "fedex": "48.51",
+    "ems": "34.80",
+    "ems_premium": null,
+    "shopnship_standard": "28.96"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "2.001",
+   "at": "2026-11-11T07:02:59Z",
+   "raw": "0.00/62.70/0.00/0.00/57.80",
+   "usd": {
+    "dhl": null,
+    "fedex": "62.70",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "57.80"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "2.004",
+   "at": "2026-11-11T07:03:01Z",
+   "raw": "0.00/62.70/0.00/0.00/57.80",
+   "usd": {
+    "dhl": null,
+    "fedex": "62.70",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "57.80"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "2.005",
+   "at": "2026-11-11T07:03:02Z",
+   "raw": "0.00/67.07/0.00/0.00/66.33",
+   "usd": {
+    "dhl": null,
+    "fedex": "67.07",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "66.33"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "2.006",
+   "at": "2026-11-11T07:03:04Z",
+   "raw": "0.00/67.07/0.00/0.00/66.33",
+   "usd": {
+    "dhl": null,
+    "fedex": "67.07",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "66.33"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "2.01",
+   "at": "2026-11-11T07:03:05Z",
+   "raw": "0.00/67.07/0.00/0.00/66.33",
+   "usd": {
+    "dhl": null,
+    "fedex": "67.07",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "66.33"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "2.49",
+   "at": "2026-11-11T07:03:07Z",
+   "raw": "0.00/67.07/0.00/0.00/66.33",
+   "usd": {
+    "dhl": null,
+    "fedex": "67.07",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "66.33"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "2.499",
+   "at": "2026-11-11T07:03:08Z",
+   "raw": "0.00/67.07/0.00/0.00/66.33",
+   "usd": {
+    "dhl": null,
+    "fedex": "67.07",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "66.33"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "2.5",
+   "at": "2026-11-11T07:03:10Z",
+   "raw": "0.00/67.07/0.00/0.00/66.33",
+   "usd": {
+    "dhl": null,
+    "fedex": "67.07",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "66.33"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "2.501",
+   "at": "2026-11-11T07:03:11Z",
+   "raw": "0.00/67.07/0.00/0.00/66.33",
+   "usd": {
+    "dhl": null,
+    "fedex": "67.07",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "66.33"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "19.99",
+   "at": "2026-11-11T07:03:12Z",
+   "raw": "0.00/296.04/0.00/0.00/489.11",
+   "usd": {
+    "dhl": null,
+    "fedex": "296.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "489.11"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "20.001",
+   "at": "2026-11-11T07:03:14Z",
+   "raw": "0.00/296.04/0.00/0.00/489.11",
+   "usd": {
+    "dhl": null,
+    "fedex": "296.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "489.11"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "20.004",
+   "at": "2026-11-11T07:03:15Z",
+   "raw": "0.00/296.04/0.00/0.00/489.11",
+   "usd": {
+    "dhl": null,
+    "fedex": "296.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "489.11"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "20.006",
+   "at": "2026-11-11T07:03:17Z",
+   "raw": "0.00/301.36/0.00/0.00/504.64",
+   "usd": {
+    "dhl": null,
+    "fedex": "301.36",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "504.64"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "20.01",
+   "at": "2026-11-11T07:03:18Z",
+   "raw": "0.00/301.36/0.00/0.00/504.64",
+   "usd": {
+    "dhl": null,
+    "fedex": "301.36",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "504.64"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "20.49",
+   "at": "2026-11-11T07:03:19Z",
+   "raw": "0.00/301.36/0.00/0.00/504.64",
+   "usd": {
+    "dhl": null,
+    "fedex": "301.36",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "504.64"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "20.51",
+   "at": "2026-11-11T07:03:20Z",
+   "raw": "0.00/327.00/0.00/0.00/516.35",
+   "usd": {
+    "dhl": null,
+    "fedex": "327.00",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "516.35"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "21.01",
+   "at": "2026-11-11T07:03:22Z",
+   "raw": "0.00/343.42/0.00/0.00/527.67",
+   "usd": {
+    "dhl": null,
+    "fedex": "343.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "527.67"
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "30.01",
+   "at": "2026-11-11T07:03:23Z",
+   "raw": "0.00/523.48/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "523.48",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "rounding",
+   "length": "10",
+   "width": "10",
+   "height": "10",
+   "weight": "30.49",
+   "at": "2026-11-11T07:03:24Z",
+   "raw": "0.00/523.48/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "523.48",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "volume",
+   "length": "41.7",
+   "width": "30",
+   "height": "20",
+   "weight": "1",
+   "at": "2026-11-11T07:03:26Z",
+   "raw": "0.00/100.33/0.00/0.00/101.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "100.33",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "101.93"
+   }
+  },
+  {
+   "group": "volume",
+   "length": "41.75",
+   "width": "30",
+   "height": "20",
+   "weight": "1",
+   "at": "2026-11-11T07:03:27Z",
+   "raw": "0.00/108.10/0.00/0.00/101.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "108.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "101.93"
+   }
+  },
+  {
+   "group": "volume",
+   "length": "41.8",
+   "width": "30",
+   "height": "20",
+   "weight": "1",
+   "at": "2026-11-11T07:03:29Z",
+   "raw": "0.00/108.10/0.00/0.00/101.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "108.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "101.93"
+   }
+  },
+  {
+   "group": "volume",
+   "length": "50",
+   "width": "25",
+   "height": "20",
+   "weight": "1",
+   "at": "2026-11-11T07:03:30Z",
+   "raw": "0.00/100.33/0.00/0.00/101.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "100.33",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "101.93"
+   }
+  },
+  {
+   "group": "volume",
+   "length": "50.1",
+   "width": "25",
+   "height": "20",
+   "weight": "1",
+   "at": "2026-11-11T07:03:31Z",
+   "raw": "0.00/108.10/0.00/0.00/101.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "108.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "101.93"
+   }
+  },
+  {
+   "group": "volume",
+   "length": "60",
+   "width": "40",
+   "height": "25",
+   "weight": "1",
+   "at": "2026-11-11T07:03:33Z",
+   "raw": "0.00/193.04/0.00/0.00/228.97",
+   "usd": {
+    "dhl": null,
+    "fedex": "193.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "228.97"
+   }
+  },
+  {
+   "group": "volume",
+   "length": "124",
+   "width": "20",
+   "height": "16",
+   "weight": "1",
+   "at": "2026-11-11T07:03:34Z",
+   "raw": "0.00/136.12/0.00/0.00/159.57",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "159.57"
+   }
+  },
+  {
+   "group": "volume",
+   "length": "110",
+   "width": "25",
+   "height": "22",
+   "weight": "1",
+   "at": "2026-11-11T07:03:35Z",
+   "raw": "0.00/197.92/0.00/0.00/237.60",
+   "usd": {
+    "dhl": null,
+    "fedex": "197.92",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "237.60"
+   }
+  },
+  {
+   "group": "volume",
+   "length": "100",
+   "width": "50",
+   "height": "40",
+   "weight": "1",
+   "at": "2026-11-11T07:03:37Z",
+   "raw": "0.00/654.48/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "654.48",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "volume",
+   "length": "100",
+   "width": "50",
+   "height": "40.1",
+   "weight": "1",
+   "at": "2026-11-11T07:03:38Z",
+   "raw": "0.00/670.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "670.00",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "volume",
+   "length": "123",
+   "width": "40",
+   "height": "32",
+   "weight": "1",
+   "at": "2026-11-11T07:03:40Z",
+   "raw": "0.00/539.89/0.00/0.00/635.98",
+   "usd": {
+    "dhl": null,
+    "fedex": "539.89",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "635.98"
+   }
+  },
+  {
+   "group": "volume",
+   "length": "125",
+   "width": "35",
+   "height": "35",
+   "weight": "1",
+   "at": "2026-11-11T07:03:41Z",
+   "raw": "0.00/523.48/0.00/0.00/625.42",
+   "usd": {
+    "dhl": null,
+    "fedex": "523.48",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "625.42"
+   }
+  },
+  {
+   "group": "volume",
+   "length": "126",
+   "width": "44",
+   "height": "36",
+   "weight": "1",
+   "at": "2026-11-11T07:03:42Z",
+   "raw": "0.00/654.48/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "654.48",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "volume",
+   "length": "127",
+   "width": "45",
+   "height": "37",
+   "weight": "1",
+   "at": "2026-11-11T07:03:44Z",
+   "raw": "0.00/701.04/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "701.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "volume",
+   "length": "135",
+   "width": "40",
+   "height": "35",
+   "weight": "1",
+   "at": "2026-11-11T07:03:45Z",
+   "raw": "0.00/623.44/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "623.44",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  },
+  {
+   "group": "sides",
+   "length": "100",
+   "width": "20",
+   "height": "12.4",
+   "weight": "1",
+   "at": "2026-11-11T07:03:47Z",
+   "raw": "0.00/100.33/0.00/0.00/101.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "100.33",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "101.93"
+   }
+  },
+  {
+   "group": "sides",
+   "length": "100",
+   "width": "20",
+   "height": "12.5",
+   "weight": "1",
+   "at": "2026-11-11T07:03:48Z",
+   "raw": "0.00/100.33/0.00/0.00/101.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "100.33",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "101.93"
+   }
+  },
+  {
+   "group": "sides",
+   "length": "100",
+   "width": "20",
+   "height": "12.6",
+   "weight": "1",
+   "at": "2026-11-11T07:03:49Z",
+   "raw": "0.00/108.10/0.00/0.00/101.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "108.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "101.93"
+   }
+  },
+  {
+   "group": "sides",
+   "length": "100",
+   "width": "20",
+   "height": "13",
+   "weight": "1",
+   "at": "2026-11-11T07:03:51Z",
+   "raw": "0.00/108.10/0.00/0.00/101.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "108.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "101.93"
+   }
+  },
+  {
+   "group": "sides",
+   "length": "100.4",
+   "width": "20",
+   "height": "12",
+   "weight": "1",
+   "at": "2026-11-11T07:03:52Z",
+   "raw": "0.00/100.33/0.00/0.00/101.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "100.33",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "101.93"
+   }
+  },
+  {
+   "group": "long",
+   "length": "120",
+   "width": "20",
+   "height": "16",
+   "weight": "6",
+   "at": "2026-11-11T07:03:53Z",
+   "raw": "0.00/136.12/0.00/0.00/150.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "150.00"
+   }
+  },
+  {
+   "group": "long",
+   "length": "121",
+   "width": "20",
+   "height": "16",
+   "weight": "6",
+   "at": "2026-11-11T07:03:55Z",
+   "raw": "0.00/136.12/0.00/0.00/150.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "150.00"
+   }
+  },
+  {
+   "group": "long",
+   "length": "122",
+   "width": "20",
+   "height": "16",
+   "weight": "6",
+   "at": "2026-11-11T07:03:56Z",
+   "raw": "0.00/136.12/0.00/0.00/159.57",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "159.57"
+   }
+  },
+  {
+   "group": "long",
+   "length": "124",
+   "width": "20",
+   "height": "16",
+   "weight": "6",
+   "at": "2026-11-11T07:03:57Z",
+   "raw": "0.00/136.12/0.00/0.00/159.57",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "159.57"
+   }
+  },
+  {
+   "group": "long",
+   "length": "127",
+   "width": "20",
+   "height": "16",
+   "weight": "6",
+   "at": "2026-11-11T07:03:59Z",
+   "raw": "0.00/141.71/0.00/0.00/159.57",
+   "usd": {
+    "dhl": null,
+    "fedex": "141.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "159.57"
+   }
+  },
+  {
+   "group": "examples",
+   "length": "16",
+   "width": "12",
+   "height": "8",
+   "weight": "0.35",
+   "at": "2026-11-11T07:04:00Z",
+   "raw": "0.00/42.49/0.00/0.00/23.82",
+   "usd": {
+    "dhl": null,
+    "fedex": "42.49",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "23.82"
+   }
+  },
+  {
+   "group": "examples",
+   "length": "22",
+   "width": "16",
+   "height": "12",
+   "weight": "0.9",
+   "at": "2026-11-11T07:04:01Z",
+   "raw": "0.00/48.51/0.00/0.00/35.55",
+   "usd": {
+    "dhl": null,
+    "fedex": "48.51",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "35.55"
+   }
+  },
+  {
+   "group": "examples",
+   "length": "28",
+   "width": "22",
+   "height": "17",
+   "weight": "1.5",
+   "at": "2026-11-11T07:04:03Z",
+   "raw": "0.00/67.07/0.00/0.00/54.55",
+   "usd": {
+    "dhl": null,
+    "fedex": "67.07",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "54.55"
+   }
+  },
+  {
+   "group": "examples",
+   "length": "25",
+   "width": "16",
+   "height": "13",
+   "weight": "1.25",
+   "at": "2026-11-11T07:04:04Z",
+   "raw": "0.00/58.10/0.00/0.00/46.98",
+   "usd": {
+    "dhl": null,
+    "fedex": "58.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "46.98"
+   }
+  },
+  {
+   "group": "examples",
+   "length": "30",
+   "width": "22",
+   "height": "16",
+   "weight": "2.45",
+   "at": "2026-11-11T07:04:05Z",
+   "raw": "0.00/67.07/0.00/0.00/66.33",
+   "usd": {
+    "dhl": null,
+    "fedex": "67.07",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "66.33"
+   }
+  },
+  {
+   "group": "examples",
+   "length": "28",
+   "width": "22",
+   "height": "8",
+   "weight": "0.5",
+   "at": "2026-11-11T07:04:07Z",
+   "raw": "0.00/48.51/0.00/0.00/35.55",
+   "usd": {
+    "dhl": null,
+    "fedex": "48.51",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "35.55"
+   }
+  },
+  {
+   "group": "examples",
+   "length": "35",
+   "width": "27",
+   "height": "12",
+   "weight": "1.1",
+   "at": "2026-11-11T07:04:08Z",
+   "raw": "0.00/67.07/0.00/0.00/55.48",
+   "usd": {
+    "dhl": null,
+    "fedex": "67.07",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "55.48"
+   }
+  },
+  {
+   "group": "examples",
+   "length": "115",
+   "width": "12",
+   "height": "12",
+   "weight": "1.5",
+   "at": "2026-11-11T07:04:09Z",
+   "raw": "0.00/81.92/0.00/0.00/75.95",
+   "usd": {
+    "dhl": null,
+    "fedex": "81.92",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "75.95"
+   }
+  },
+  {
+   "group": "examples",
+   "length": "110",
+   "width": "25",
+   "height": "22",
+   "weight": "5",
+   "at": "2026-11-11T07:04:11Z",
+   "raw": "0.00/197.92/0.00/0.00/237.60",
+   "usd": {
+    "dhl": null,
+    "fedex": "197.92",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "237.60"
+   }
+  },
+  {
+   "group": "examples",
+   "length": "125",
+   "width": "35",
+   "height": "35",
+   "weight": "12",
+   "at": "2026-11-11T07:04:12Z",
+   "raw": "0.00/523.48/0.00/0.00/625.42",
+   "usd": {
+    "dhl": null,
+    "fedex": "523.48",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "625.42"
+   }
+  },
+  {
+   "group": "examples",
+   "length": "135",
+   "width": "40",
+   "height": "35",
+   "weight": "15",
+   "at": "2026-11-11T07:04:13Z",
+   "raw": "0.00/623.44/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "623.44",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   }
+  }
+ ]
+}

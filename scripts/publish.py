@@ -234,6 +234,7 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
            "photos": [{"sha256": img["sha256"], "media_id": m["id"]} for img, m in zip(images, media)
                       if m["status"] != "FAILED"],
            "photos_failed": failed, "reviews": len(rows), "feed_url": feed_url,
+           "pricing": pricing.describe()["version"], "prices_usd": prices_of(payload),
            "admin_url": f"https://admin.shopify.com/store/{products.shop.domain.split('.')[0]}/products/"
                         f"{product['id'].rsplit('/', 1)[-1]}",
            "preview_url": product.get("onlineStorePreviewUrl")}
@@ -241,6 +242,13 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
     if ids.get("vendors") is not None and payload.get("vendor"):    # the next products of this run spell it so
         ids["vendors"].setdefault(payload["vendor"].lower(), payload["vendor"])
     return row
+
+
+def prices_of(payload: dict[str, Any]) -> list[int]:
+    """The lowest and the highest variant price a payload sends, whole dollars (the ledger keeps them, so a new
+    price rule can show what it changes: reprice.py)."""
+    prices = [int(float(v["price"])) for v in payload["variants"]]
+    return [min(prices), max(prices)]
 
 
 def vendor_spellings(store: dict[str, str]) -> dict[str, str]:

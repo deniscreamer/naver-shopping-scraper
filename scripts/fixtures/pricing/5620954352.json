@@ -1,0 +1,54 @@
+{
+ "key": "fairwardgolf:naver:100677985:5620954352",
+ "why": "CONDITIONAL_FREE with a base fee of 20 000 KRW: free, nothing added",
+ "product": {"delivery": {"fee_type": "CONDITIONAL_FREE", "base_fee": 20000}},
+ "variants": [
+  {
+   "sku": "FW-19b562dbe6fda544ee790493",
+   "price_krw": 1100000,
+   "package": {
+    "package_length_mm": {"confidence": 3, "source": "composed", "value": {"max": 1230, "min": 1230}},
+    "package_width_mm": {"confidence": 2, "source": "composed", "value": {"max": 200, "min": 200}},
+    "package_height_mm": {"confidence": 2, "source": "composed", "value": {"max": 160, "min": 160}},
+    "package_weight_g": {"confidence": 3, "source": "composed", "value": {"max": 5891, "min": 5891}},
+    "product_weight_g": {"confidence": 3, "source": "composed", "value": {"max": 3891, "min": 3891}}
+   }
+  }
+ ],
+ "expected": [
+  {
+   "sku": "FW-19b562dbe6fda544ee790493",
+   "cost": "1103.00",
+   "price": 1799,
+   "breakdown": {
+    "rule": "landed/2",
+    "krwPerUsd": 1000,
+    "naverKrw": 1100000,
+    "koreaDeliveryKrw": 0,
+    "koreaFeeType": "CONDITIONAL_FREE",
+    "purchaseUsd": 1100,
+    "serviceUsd": "3.00",
+    "dutyRate": "0.125",
+    "dutyUsd": "137.50",
+    "costUsd": "1103.00",
+    "box": {"cm": ["123", "20", "16"], "grossKg": "5.891", "billableKg": "7.87", "stepKg": "8"},
+    "level": 2,
+    "coefficient": "1.40",
+    "tariff": {"id": "shopnship-fedex-ip-kr-us", "checkedAt": "2026-11-11", "version": 1, "sha256": "b947de75554b9048"},
+    "gridUsd": "136.12",
+    "insideUsd": "0.00",
+    "deliveryUsd": "190.57",
+    "fees": [{"id": "fedex_ahs_dimension", "usd": "35.60", "because": ["longest_cm_over"]}],
+    "feeUsd": "35.60",
+    "baseUsd": "1466.67",
+    "marginUsd": "186.33",
+    "keepUsd": "1653.00",
+    "paymentRate": "0.03",
+    "neededUsd": "1704.12",
+    "priceUsd": 1799,
+    "paymentUsd": "53.97",
+    "surplusUsd": "92.03"
+   }
+  }
+ ]
+}

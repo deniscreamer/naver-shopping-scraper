@@ -1,0 +1,99 @@
+{
+ "key": "fairwardgolf:naver:101231454:9266336330",
+ "why": "level 2 without a bag at 124 cm: the fee 35.60 added; a default weight (level 1) under sides of level 2 stays level 2; PAID 8 000 KRW added",
+ "product": {"delivery": {"fee_type": "PAID", "base_fee": 8000}},
+ "variants": [
+  {
+   "sku": "FW-40dc79e90123d908a346f77a",
+   "price_krw": 1749000,
+   "package": {
+    "package_length_mm": {"confidence": 2, "source": "composed", "value": {"max": 1240, "min": 1240}},
+    "package_width_mm": {"confidence": 2, "source": "composed", "value": {"max": 200, "min": 200}},
+    "package_height_mm": {"confidence": 2, "source": "composed", "value": {"max": 160, "min": 160}},
+    "package_weight_g": {"confidence": 1, "source": "category_default", "central": 7000},
+    "product_weight_g": {"confidence": 1, "source": "category_default", "central": 5700}
+   }
+  },
+  {
+   "sku": "FW-bc2db0280b11124e15c3078b",
+   "price_krw": 1749000,
+   "package": {
+    "package_length_mm": {"confidence": 2, "source": "composed", "value": {"max": 1240, "min": 1240}},
+    "package_width_mm": {"confidence": 2, "source": "composed", "value": {"max": 200, "min": 200}},
+    "package_height_mm": {"confidence": 2, "source": "composed", "value": {"max": 160, "min": 160}},
+    "package_weight_g": {"confidence": 1, "source": "category_default", "central": 7000},
+    "product_weight_g": {"confidence": 1, "source": "category_default", "central": 5700}
+   }
+  }
+ ],
+ "expected": [
+  {
+   "sku": "FW-40dc79e90123d908a346f77a",
+   "cost": "1760.00",
+   "price": 2599,
+   "breakdown": {
+    "rule": "landed/2",
+    "krwPerUsd": 1000,
+    "naverKrw": 1749000,
+    "koreaDeliveryKrw": 8000,
+    "koreaFeeType": "PAID",
+    "purchaseUsd": 1757,
+    "serviceUsd": "3.00",
+    "dutyRate": "0.125",
+    "dutyUsd": "219.63",
+    "costUsd": "1760.00",
+    "box": {"cm": ["124", "20", "16"], "grossKg": "7", "billableKg": "7.94", "stepKg": "8"},
+    "level": 2,
+    "coefficient": "1.40",
+    "tariff": {"id": "shopnship-fedex-ip-kr-us", "checkedAt": "2026-11-11", "version": 1, "sha256": "b947de75554b9048"},
+    "gridUsd": "136.12",
+    "insideUsd": "0.00",
+    "deliveryUsd": "190.57",
+    "fees": [{"id": "fedex_ahs_dimension", "usd": "35.60", "because": ["longest_cm_over"]}],
+    "feeUsd": "35.60",
+    "baseUsd": "2205.80",
+    "marginUsd": "267.64",
+    "keepUsd": "2473.44",
+    "paymentRate": "0.03",
+    "neededUsd": "2549.94",
+    "priceUsd": 2599,
+    "paymentUsd": "77.97",
+    "surplusUsd": "47.59"
+   }
+  },
+  {
+   "sku": "FW-bc2db0280b11124e15c3078b",
+   "cost": "1760.00",
+   "price": 2599,
+   "breakdown": {
+    "rule": "landed/2",
+    "krwPerUsd": 1000,
+    "naverKrw": 1749000,
+    "koreaDeliveryKrw": 8000,
+    "koreaFeeType": "PAID",
+    "purchaseUsd": 1757,
+    "serviceUsd": "3.00",
+    "dutyRate": "0.125",
+    "dutyUsd": "219.63",
+    "costUsd": "1760.00",
+    "box": {"cm": ["124", "20", "16"], "grossKg": "7", "billableKg": "7.94", "stepKg": "8"},
+    "level": 2,
+    "coefficient": "1.40",
+    "tariff": {"id": "shopnship-fedex-ip-kr-us", "checkedAt": "2026-11-11", "version": 1, "sha256": "b947de75554b9048"},
+    "gridUsd": "136.12",
+    "insideUsd": "0.00",
+    "deliveryUsd": "190.57",
+    "fees": [{"id": "fedex_ahs_dimension", "usd": "35.60", "because": ["longest_cm_over"]}],
+    "feeUsd": "35.60",
+    "baseUsd": "2205.80",
+    "marginUsd": "267.64",
+    "keepUsd": "2473.44",
+    "paymentRate": "0.03",
+    "neededUsd": "2549.94",
+    "priceUsd": 2599,
+    "paymentUsd": "77.97",
+    "surplusUsd": "47.59"
+   }
+  }
+ ]
+}

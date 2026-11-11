@@ -297,11 +297,16 @@ def test_a_publishing_job_reads_the_ledger_and_publishes_one(tmp_path, monkeypat
     calls = []
     monkeypatch.setattr(PB, "clients", lambda shop_name: (FakeProducts(), FakeFiles(), {}))
     monkeypatch.setattr(PB.Shop, "ready", lambda self: [KEYS[1]])
+    prices = [[819, 829]]
     monkeypatch.setattr(PB, "publish_one", lambda shop, key, *a, **k: calls.append(key) or
-                        {"key": key, "status": "published", "handle": "h", "product_id": "gid://shopify/Product/1"})
+                        {"key": key, "status": "published", "handle": "h", "product_id": "gid://shopify/Product/1",
+                         "prices_usd": prices[0]})
     monkeypatch.setattr("placement.run", lambda *a, **k: None)
-    assert J.publish_step(job, {}, KEYS[1]).startswith("published h") and calls == [KEYS[1]]
-    assert job.events()[-1]["event"] == "published"
+    assert J.publish_step(job, {}, KEYS[1]) == "published h $819-829" and calls == [KEYS[1]]
+    assert job.events()[-1]["event"] == "published" and job.events()[-1]["prices_usd"] == [819, 829]
+    prices[0] = [1099, 1099]                                    # one price: shown once
+    assert J.publish_step(job, {}, KEYS[1]) == "published h $1099"
+    calls.pop()
     what = J.publish_step(job, {}, KEYS[2])                     # not ready (held): closed, not sent
     assert what.startswith("not ready") and calls == [KEYS[1]] and job.events()[-1]["event"] == "not_taken"
 

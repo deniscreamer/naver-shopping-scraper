@@ -38,9 +38,12 @@ provider down stops the run (`run` again resumes; nothing is asked twice). A lin
 Paid choices: a job made without `--paid` (the owner's pilot, 2026-11-09) collects and prepares only the variants
 and add-ons that cost nothing extra; `--paid` takes them too.
 
-Publication per product (`new --publish`): the done line ends with `published <handle> <admin link>`. A product
+Publication per product (`new --publish`): the done line ends with `published <handle> $<price> <admin link>`
+(`$<min>-<max>` when the variants differ; the shop's price rule: [README.md](README.md) "The price"). A product
 Shopify refused (userErrors, a file not ready) is `failed` (stage publish) and tried again; one placement could not
 place, or held, is `not_taken` with the reason (tell the owner); a refused token or a missing scope stops the run.
+A product that cannot be priced (a variant without a box, a box over the tariff's 50 kg) is not sent:
+`publish held: variant <sku>: <why>` (`failed`, stage publish); tell the owner.
 
 Description per product (`new --publish --describe`, the owner 2026-11-10): before the product is sent the done
 line says `described (ok)`, `described (trimmed, N cut)` or `described (fallback)` (the answer failed the checks
@@ -75,12 +78,13 @@ pick a section for them. A new category or split: [PLACEMENT.md](PLACEMENT.md).
 - Solve, answer or screenshot a captcha; type into a login page; open a product URL directly; forge or copy page
   tokens.
 - Use browser, extension or computer-use tools on Naver or Shopify pages during a job; write to Shopify by any
-  other way than the publish stage (`job.py new --publish`, `publish.py`).
+  other way than the publish stage (`job.py new --publish`, `publish.py`; `reprice.py --apply` on the owner's word).
 - Read `.env*` or credential files; print secrets.
 - Run `--force`, `deferred_log.py allow`, or edit the job's files by hand.
 - Re-send products already in the store to apply a new fix (a whole-shop `publish.py <shop>` run after a
-  `shopify_payload.VERSION` bump, `--force`, `--rehandle`) without asking the owner first: a fix is for future
-  products; whether the old ones get it too is the owner's decision each time (2026-11-10).
+  `shopify_payload.VERSION` bump or a new price rule or tariff, `--force`, `--rehandle`, `reprice.py --apply`)
+  without asking the owner first: a fix is for future products; whether the old ones get it too is the owner's
+  decision each time (2026-11-10).
 - Run `describe.py <shop> --published` or `--only` / `--force` on a product already in the store without asking
   the owner: its next publication sends it again (the same rule as above).
 - Invent a category value, a vendor or a price rule: ask the owner.

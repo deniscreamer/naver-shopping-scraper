@@ -536,8 +536,10 @@ def publish_step(job: Job, ctx: dict, key: str, n: int = 0) -> str:
             raise Stop(f"publish: {e}") from None
         job.log(key, "failed", stage="publish", reason=str(e)[:300])
         return f"publish failed: {e}"[:200]
-    job.log(key, "published", product_id=row.get("product_id"), handle=row.get("handle"), status=row["status"])
-    return f"{described}published {row.get('handle')} {row.get('admin_url') or ''}".strip()
+    job.log(key, "published", product_id=row.get("product_id"), handle=row.get("handle"), status=row["status"],
+            prices_usd=row.get("prices_usd"))
+    price = "-".join(dict.fromkeys(str(p) for p in row.get("prices_usd") or []))
+    return f"{described}published {row.get('handle')} {f'${price} ' if price else ''}{row.get('admin_url') or ''}".strip()
 
 
 def describe_one(job: Job, ctx: dict, key: str) -> str:

@@ -6,7 +6,8 @@ Why each rule (research 2026-11-05: 23 collected products, 13 of them compared o
 naver-harvester published, and its 60 published products):
 
   * prices: krw = the product's price + the variant's extra_price (the page's own answer); usd = KRW rounded up to
-    the cent at the shop's rate; cost = price, no compare-at, not taxable. Our extra_price gave the harvester's
+    the cent at the shop's rate (kept in the record; Shopify's cost and price are made at publication by
+    shop_pricing); no compare-at, not taxable. Our extra_price gave the harvester's
     published price for 191 of 191 variants of 6 products, so option names are never parsed for money.
   * options: the option groups but CUSTOM / SIMPLE (COMBINATION here), the observed rows only (a GVTOUR set: 69 rows, not 360), sold-out rows kept
     (available false). An axis with one value across the rows becomes a fact; one row -> no options (one default
@@ -28,7 +29,8 @@ naver-harvester published, and its 60 published products):
   * held (not published, kept with codes): collect_incomplete, price_unknown, no_variants,
     options_unaligned, axes_over_3, specs_folded, no_images, images_over_50. More combinations than the shop's
     cap: the first ones are offered, every option value kept (note variants_capped).
-  * notes (never block): shipping_paid, overseas_shipping (the price stays the cost; the operator decides),
+  * notes (never block): shipping_paid, overseas_shipping (a shop with the price rule puts a PAID / UNIT_QUANTITY_PAID
+    fee into the purchase: shop_pricing),
     brand_fallback (no brand and no manufacturer stated: run_transform takes one from the
     title, the origin's importer, the images' text, or 노브랜드; brand_fallback.py),
     option_name_placeholder (선택 / 선택2 / 옵션: named from the values in translation),

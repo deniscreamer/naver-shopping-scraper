@@ -39,10 +39,12 @@ Google Chrome (a real window opens). Docker/Linux is archived in
    API linked, from any public HTTPS host the seller uses (`scripts/description_images.py`, the owner
    2026-11-07); a read of our own Shopify store's catalog (`scripts/shopify_catalog.py`, Admin API, read only); the publication to
    that store (`scripts/publish.py` through `scripts/shopify_admin.py`, the owner 2026-11-08: the only code that writes
-   to Shopify); and
+   to Shopify);
    the Anthropic API for translation, OpenAI as its fallback (`scripts/translate.py`, the owner 2026-11-08), and
-   for the products' descriptions through the same client (`scripts/describe.py`, the owner 2026-11-10).
-4. Tests never hit the network.
+   for the products' descriptions through the same client (`scripts/describe.py`, the owner 2026-11-10); and
+   ShopNShip's public shipping calculator, by hand only to capture the delivery tariff, never in the price path
+   (`scripts/shopnship_rates.py`, `scripts/shopnship_explore.py`, the owner 2026-11-11).
+4. Tests never hit the network (in scripts/, `scripts/conftest.py` fails a test that tries).
    API answer types live in `scripts/naver_types.py`; a shape change updates type + fixture + client method (R-TYPE).
 5. Move or rename tracked files with `git mv` so history follows them.
 6. A behaviour change updates its doc in the same commit. A contract change goes in
@@ -81,6 +83,7 @@ Live check (server running, uses the network): `curl http://localhost:8000/healt
 | Known issues | [server/docs/KNOWN_ISSUES.md](server/docs/KNOWN_ISSUES.md) | Before "fixing" anything that looks wrong, before upgrading deps |
 | Operations | [server/README.md](server/README.md) | Running on macOS, env vars, tests |
 | Consumer scripts, Shopify roadmap | [scripts/README.md](scripts/README.md) | Writing scripts against the API, starting Shopify work |
+| Price rule, delivery tariff, repricing | [scripts/README.md](scripts/README.md), "The price" | Changing `shop_pricing.py`, the coefficients or the tariff; a new tariff capture; repricing products in the store |
 | Translation (model, dictionaries) | [scripts/TRANSLATION.md](scripts/TRANSLATION.md) | Running or changing `translate.py`, the dictionaries, the prompts, review cleaning; a new shop or category; the quality check |
 | Shop sections (placement) | [scripts/PLACEMENT.md](scripts/PLACEMENT.md) | A new shop or Naver category, one Naver category holding several shop sections |
 | Running a job (agent) | [scripts/JOB_AGENT.md](scripts/JOB_AGENT.md) | Running or watching `scripts/job.py` (one product per iteration) |

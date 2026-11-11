@@ -1,0 +1,6079 @@
+{
+ "format": "shopnship-explore/1",
+ "source": "https://shopnship.co.kr/form/calculator.php",
+ "country": "US",
+ "carriers": [
+  "dhl",
+  "fedex",
+  "ems",
+  "ems_premium",
+  "shopnship_standard"
+ ],
+ "started_at": "2026-11-11T07:36:32Z",
+ "finished_at": "2026-11-11T07:43:09Z",
+ "requests": [
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "50",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:36:32Z",
+   "predicted": "113.71",
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "60",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:36:35Z",
+   "predicted": "113.71",
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "70",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:36:36Z",
+   "predicted": "113.71",
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "80",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:36:40Z",
+   "predicted": "113.71",
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "90",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:36:41Z",
+   "predicted": "113.71",
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:36:43Z",
+   "predicted": "119.31",
+   "raw": "0.00/119.31/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "119.31",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "110",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:36:45Z",
+   "predicted": "130.52",
+   "raw": "0.00/130.52/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "130.52",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "120",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:36:47Z",
+   "predicted": "136.12",
+   "raw": "0.00/136.12/0.00/0.00/150.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "150.00"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "130",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:36:49Z",
+   "predicted": "141.71",
+   "raw": "0.00/141.71/0.00/0.00/159.57",
+   "usd": {
+    "dhl": null,
+    "fedex": "141.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "159.57"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "140",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:36:51Z",
+   "predicted": "152.10",
+   "raw": "0.00/152.10/0.00/0.00/168.78",
+   "usd": {
+    "dhl": null,
+    "fedex": "152.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "168.78"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "150",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:36:52Z",
+   "predicted": "163.66",
+   "raw": "0.00/163.66/0.00/0.00/186.79",
+   "usd": {
+    "dhl": null,
+    "fedex": "163.66",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "186.79"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "160",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:36:55Z",
+   "predicted": "178.42",
+   "raw": "0.00/178.42/0.00/0.00/205.92",
+   "usd": {
+    "dhl": null,
+    "fedex": "178.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "205.92"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "170",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:36:57Z",
+   "predicted": "183.30",
+   "raw": "0.00/183.30/0.00/0.00/216.39",
+   "usd": {
+    "dhl": null,
+    "fedex": "183.30",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "216.39"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "180",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:36:59Z",
+   "predicted": "193.04",
+   "raw": "0.00/193.04/0.00/0.00/228.97",
+   "usd": {
+    "dhl": null,
+    "fedex": "193.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "228.97"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "190",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:01Z",
+   "predicted": "197.92",
+   "raw": "0.00/197.92/0.00/0.00/237.60",
+   "usd": {
+    "dhl": null,
+    "fedex": "197.92",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "237.60"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "200",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:04Z",
+   "predicted": "202.78",
+   "raw": "0.00/202.78/0.00/0.00/249.40",
+   "usd": {
+    "dhl": null,
+    "fedex": "202.78",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "249.40"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "210",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:05Z",
+   "predicted": "207.66",
+   "raw": "0.00/207.66/0.00/0.00/280.80",
+   "usd": {
+    "dhl": null,
+    "fedex": "207.66",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "280.80"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "220",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:06Z",
+   "predicted": "217.39",
+   "raw": "0.00/217.39/0.00/0.00/291.27",
+   "usd": {
+    "dhl": null,
+    "fedex": "217.39",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "291.27"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "230",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:09Z",
+   "predicted": "222.27",
+   "raw": "0.00/222.27/0.00/0.00/301.88",
+   "usd": {
+    "dhl": null,
+    "fedex": "222.27",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "301.88"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "240",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:11Z",
+   "predicted": "227.13",
+   "raw": "0.00/227.13/0.00/0.00/322.76",
+   "usd": {
+    "dhl": null,
+    "fedex": "227.13",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "322.76"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "250",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:12Z",
+   "predicted": "232.01",
+   "raw": "0.00/232.01/0.00/0.00/331.29",
+   "usd": {
+    "dhl": null,
+    "fedex": "232.01",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "331.29"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "260",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:14Z",
+   "predicted": "264.10",
+   "raw": "0.00/264.10/0.00/0.00/341.98",
+   "usd": {
+    "dhl": null,
+    "fedex": "264.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "341.98"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "270",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:16Z",
+   "predicted": "269.42",
+   "raw": "0.00/269.42/0.00/0.00/352.67",
+   "usd": {
+    "dhl": null,
+    "fedex": "269.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "352.67"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "280",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:17Z",
+   "predicted": "274.74",
+   "raw": "0.00/274.74/0.00/0.00/363.49",
+   "usd": {
+    "dhl": null,
+    "fedex": "274.74",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "363.49"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "290",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:18Z",
+   "predicted": "285.40",
+   "raw": "0.00/285.40/0.00/0.00/374.18",
+   "usd": {
+    "dhl": null,
+    "fedex": "285.40",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "374.18"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "300",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:20Z",
+   "predicted": "290.72",
+   "raw": "0.00/290.72/0.00/0.00/384.87",
+   "usd": {
+    "dhl": null,
+    "fedex": "290.72",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "384.87"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "118",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:21Z",
+   "predicted": "136.12",
+   "raw": "0.00/136.12/0.00/0.00/150.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "150.00"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "119",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:23Z",
+   "predicted": "136.12",
+   "raw": "0.00/136.12/0.00/0.00/150.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "150.00"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "121",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:24Z",
+   "predicted": "136.12",
+   "raw": "0.00/136.12/0.00/0.00/150.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "150.00"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "122",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:26Z",
+   "predicted": "136.12",
+   "raw": "0.00/136.12/0.00/0.00/159.57",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "159.57"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "123",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:27Z",
+   "predicted": "136.12",
+   "raw": "0.00/136.12/0.00/0.00/159.57",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "159.57"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "125",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:29Z",
+   "predicted": "136.12",
+   "raw": "0.00/136.12/0.00/0.00/159.57",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "159.57"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "149",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:31Z",
+   "predicted": "163.66",
+   "raw": "0.00/163.66/0.00/0.00/186.79",
+   "usd": {
+    "dhl": null,
+    "fedex": "163.66",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "186.79"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "151",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:32Z",
+   "predicted": "163.66",
+   "raw": "0.00/163.66/0.00/0.00/195.71",
+   "usd": {
+    "dhl": null,
+    "fedex": "163.66",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "195.71"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "152",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:35Z",
+   "predicted": "163.66",
+   "raw": "0.00/163.66/0.00/0.00/195.71",
+   "usd": {
+    "dhl": null,
+    "fedex": "163.66",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "195.71"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "153",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:37Z",
+   "predicted": "163.66",
+   "raw": "0.00/163.66/0.00/0.00/195.71",
+   "usd": {
+    "dhl": null,
+    "fedex": "163.66",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "195.71"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "243",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:38Z",
+   "predicted": "232.01",
+   "raw": "0.00/232.01/0.00/0.00/322.76",
+   "usd": {
+    "dhl": null,
+    "fedex": "232.01",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "322.76"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "244",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:39Z",
+   "predicted": "232.01",
+   "raw": "0.00/232.01/0.00/0.00/331.29",
+   "usd": {
+    "dhl": null,
+    "fedex": "232.01",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "331.29"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "273",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:41Z",
+   "predicted": "269.42",
+   "raw": "0.00/269.42/0.00/0.00/363.49",
+   "usd": {
+    "dhl": null,
+    "fedex": "269.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "363.49"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "274",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:42Z",
+   "predicted": "274.74",
+   "raw": "0.00/274.74/0.00/0.00/363.49",
+   "usd": {
+    "dhl": null,
+    "fedex": "274.74",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "363.49"
+   },
+   "match": true
+  },
+  {
+   "group": "length",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "275",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:43Z",
+   "predicted": "274.74",
+   "raw": "0.00/274.74/0.00/0.00/363.49",
+   "usd": {
+    "dhl": null,
+    "fedex": "274.74",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "363.49"
+   },
+   "match": true
+  },
+  {
+   "group": "length_thin",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "10",
+    "height": "10",
+    "weight": "1"
+   },
+   "note": "a thin box: little volume, a long side",
+   "at": "2026-11-11T07:37:45Z",
+   "predicted": "62.70",
+   "raw": "0.00/62.70/0.00/0.00/53.47",
+   "usd": {
+    "dhl": null,
+    "fedex": "62.70",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "53.47"
+   },
+   "match": true
+  },
+  {
+   "group": "length_thin",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "150",
+    "width": "10",
+    "height": "10",
+    "weight": "1"
+   },
+   "note": "a thin box: little volume, a long side",
+   "at": "2026-11-11T07:37:46Z",
+   "predicted": "75.79",
+   "raw": "0.00/75.79/0.00/0.00/66.33",
+   "usd": {
+    "dhl": null,
+    "fedex": "75.79",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "66.33"
+   },
+   "match": true
+  },
+  {
+   "group": "length_thin",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "200",
+    "width": "10",
+    "height": "10",
+    "weight": "1"
+   },
+   "note": "a thin box: little volume, a long side",
+   "at": "2026-11-11T07:37:47Z",
+   "predicted": "88.05",
+   "raw": "0.00/88.05/0.00/0.00/86.10",
+   "usd": {
+    "dhl": null,
+    "fedex": "88.05",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "86.10"
+   },
+   "match": true
+  },
+  {
+   "group": "length_thin",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "250",
+    "width": "10",
+    "height": "10",
+    "weight": "1"
+   },
+   "note": "a thin box: little volume, a long side",
+   "at": "2026-11-11T07:37:49Z",
+   "predicted": "100.33",
+   "raw": "0.00/100.33/0.00/0.00/101.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "100.33",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "101.93"
+   },
+   "match": true
+  },
+  {
+   "group": "length_thin",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "274",
+    "width": "10",
+    "height": "10",
+    "weight": "1"
+   },
+   "note": "a thin box: little volume, a long side",
+   "at": "2026-11-11T07:37:50Z",
+   "predicted": "108.10",
+   "raw": "0.00/108.10/0.00/0.00/117.82",
+   "usd": {
+    "dhl": null,
+    "fedex": "108.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "117.82"
+   },
+   "match": true
+  },
+  {
+   "group": "length_thin",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "275",
+    "width": "10",
+    "height": "10",
+    "weight": "1"
+   },
+   "note": "a thin box: little volume, a long side",
+   "at": "2026-11-11T07:37:51Z",
+   "predicted": "108.10",
+   "raw": "0.00/108.10/0.00/0.00/117.82",
+   "usd": {
+    "dhl": null,
+    "fedex": "108.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "117.82"
+   },
+   "match": true
+  },
+  {
+   "group": "length_thin",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "300",
+    "width": "10",
+    "height": "10",
+    "weight": "1"
+   },
+   "note": "a thin box: little volume, a long side",
+   "at": "2026-11-11T07:37:53Z",
+   "predicted": "113.71",
+   "raw": "0.00/113.71/0.00/0.00/117.82",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "117.82"
+   },
+   "match": true
+  },
+  {
+   "group": "length_thin",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "330",
+    "width": "10",
+    "height": "10",
+    "weight": "1"
+   },
+   "note": "a thin box: little volume, a long side",
+   "at": "2026-11-11T07:37:54Z",
+   "predicted": "124.91",
+   "raw": "0.00/124.91/0.00/0.00/128.45",
+   "usd": {
+    "dhl": null,
+    "fedex": "124.91",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "128.45"
+   },
+   "match": true
+  },
+  {
+   "group": "length_thin",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "400",
+    "width": "10",
+    "height": "10",
+    "weight": "1"
+   },
+   "note": "a thin box: little volume, a long side",
+   "at": "2026-11-11T07:37:55Z",
+   "predicted": "136.12",
+   "raw": "0.00/136.12/0.00/0.00/159.57",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "159.57"
+   },
+   "match": true
+  },
+  {
+   "group": "second_side",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "40",
+    "height": "10",
+    "weight": "2"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:57Z",
+   "predicted": "136.12",
+   "raw": "0.00/136.12/0.00/0.00/159.57",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "159.57"
+   },
+   "match": true
+  },
+  {
+   "group": "second_side",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "50",
+    "height": "10",
+    "weight": "2"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:58Z",
+   "predicted": "163.66",
+   "raw": "0.00/163.66/0.00/0.00/195.71",
+   "usd": {
+    "dhl": null,
+    "fedex": "163.66",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "195.71"
+   },
+   "match": true
+  },
+  {
+   "group": "second_side",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "60",
+    "height": "10",
+    "weight": "2"
+   },
+   "note": "",
+   "at": "2026-11-11T07:37:59Z",
+   "predicted": "193.04",
+   "raw": "0.00/193.04/0.00/0.00/228.97",
+   "usd": {
+    "dhl": null,
+    "fedex": "193.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "228.97"
+   },
+   "match": true
+  },
+  {
+   "group": "second_side",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "70",
+    "height": "10",
+    "weight": "2"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:01Z",
+   "predicted": "212.52",
+   "raw": "0.00/212.52/0.00/0.00/291.27",
+   "usd": {
+    "dhl": null,
+    "fedex": "212.52",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "291.27"
+   },
+   "match": true
+  },
+  {
+   "group": "second_side",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "75",
+    "height": "10",
+    "weight": "2"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:02Z",
+   "predicted": "222.27",
+   "raw": "0.00/222.27/0.00/0.00/301.88",
+   "usd": {
+    "dhl": null,
+    "fedex": "222.27",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "301.88"
+   },
+   "match": true
+  },
+  {
+   "group": "second_side",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "76",
+    "height": "10",
+    "weight": "2"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:03Z",
+   "predicted": "227.13",
+   "raw": "0.00/227.13/0.00/0.00/322.76",
+   "usd": {
+    "dhl": null,
+    "fedex": "227.13",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "322.76"
+   },
+   "match": true
+  },
+  {
+   "group": "second_side",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "77",
+    "height": "10",
+    "weight": "2"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:05Z",
+   "predicted": "227.13",
+   "raw": "0.00/227.13/0.00/0.00/322.76",
+   "usd": {
+    "dhl": null,
+    "fedex": "227.13",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "322.76"
+   },
+   "match": true
+  },
+  {
+   "group": "second_side",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "78",
+    "height": "10",
+    "weight": "2"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:07Z",
+   "predicted": "232.01",
+   "raw": "0.00/232.01/0.00/0.00/322.76",
+   "usd": {
+    "dhl": null,
+    "fedex": "232.01",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "322.76"
+   },
+   "match": true
+  },
+  {
+   "group": "second_side",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "80",
+    "height": "10",
+    "weight": "2"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:11Z",
+   "predicted": "232.01",
+   "raw": "0.00/232.01/0.00/0.00/331.29",
+   "usd": {
+    "dhl": null,
+    "fedex": "232.01",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "331.29"
+   },
+   "match": true
+  },
+  {
+   "group": "second_side",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "90",
+    "height": "10",
+    "weight": "2"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:12Z",
+   "predicted": "274.74",
+   "raw": "0.00/274.74/0.00/0.00/363.49",
+   "usd": {
+    "dhl": null,
+    "fedex": "274.74",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "363.49"
+   },
+   "match": true
+  },
+  {
+   "group": "second_side",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "100",
+    "height": "10",
+    "weight": "2"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:13Z",
+   "predicted": "296.04",
+   "raw": "0.00/296.04/0.00/0.00/406.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "296.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "406.38"
+   },
+   "match": true
+  },
+  {
+   "group": "girth",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "25",
+    "height": "25",
+    "weight": "3"
+   },
+   "note": "100 + 4 x side; volume 100 x side^2",
+   "at": "2026-11-11T07:38:15Z",
+   "predicted": "197.92",
+   "raw": "0.00/197.92/0.00/0.00/237.60",
+   "usd": {
+    "dhl": null,
+    "fedex": "197.92",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "237.60"
+   },
+   "match": true
+  },
+  {
+   "group": "girth",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "30",
+    "height": "30",
+    "weight": "3"
+   },
+   "note": "100 + 4 x side; volume 100 x side^2",
+   "at": "2026-11-11T07:38:16Z",
+   "predicted": "274.74",
+   "raw": "0.00/274.74/0.00/0.00/363.49",
+   "usd": {
+    "dhl": null,
+    "fedex": "274.74",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "363.49"
+   },
+   "match": true
+  },
+  {
+   "group": "girth",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "35",
+    "height": "35",
+    "weight": "3"
+   },
+   "note": "100 + 4 x side; volume 100 x side^2",
+   "at": "2026-11-11T07:38:18Z",
+   "predicted": "392.65",
+   "raw": "0.00/392.65/0.00/0.00/504.64",
+   "usd": {
+    "dhl": null,
+    "fedex": "392.65",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "504.64"
+   },
+   "match": true
+  },
+  {
+   "group": "girth",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "38",
+    "height": "38",
+    "weight": "3"
+   },
+   "note": "100 + 4 x side; volume 100 x side^2",
+   "at": "2026-11-11T07:38:19Z",
+   "predicted": "490.66",
+   "raw": "0.00/490.66/0.00/0.00/595.13",
+   "usd": {
+    "dhl": null,
+    "fedex": "490.66",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "595.13"
+   },
+   "match": true
+  },
+  {
+   "group": "girth",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "40",
+    "height": "40",
+    "weight": "3"
+   },
+   "note": "100 + 4 x side; volume 100 x side^2",
+   "at": "2026-11-11T07:38:20Z",
+   "predicted": "539.89",
+   "raw": "0.00/539.89/0.00/0.00/646.67",
+   "usd": {
+    "dhl": null,
+    "fedex": "539.89",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "646.67"
+   },
+   "match": true
+  },
+  {
+   "group": "girth",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "41",
+    "height": "41",
+    "weight": "3"
+   },
+   "note": "100 + 4 x side; volume 100 x side^2",
+   "at": "2026-11-11T07:38:22Z",
+   "predicted": "561.37",
+   "raw": "0.00/561.37/0.00/0.00/679.13",
+   "usd": {
+    "dhl": null,
+    "fedex": "561.37",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "679.13"
+   },
+   "match": true
+  },
+  {
+   "group": "girth",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "41.2",
+    "height": "41.2",
+    "weight": "3"
+   },
+   "note": "100 + 4 x side; volume 100 x side^2",
+   "at": "2026-11-11T07:38:23Z",
+   "predicted": "561.37",
+   "raw": "0.00/561.37/0.00/0.00/679.13",
+   "usd": {
+    "dhl": null,
+    "fedex": "561.37",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "679.13"
+   },
+   "match": true
+  },
+  {
+   "group": "girth",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "41.3",
+    "height": "41.3",
+    "weight": "3"
+   },
+   "note": "100 + 4 x side; volume 100 x side^2",
+   "at": "2026-11-11T07:38:25Z",
+   "predicted": "576.89",
+   "raw": "0.00/576.89/0.00/0.00/679.13",
+   "usd": {
+    "dhl": null,
+    "fedex": "576.89",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "679.13"
+   },
+   "match": true
+  },
+  {
+   "group": "girth",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "41.5",
+    "height": "41.5",
+    "weight": "3"
+   },
+   "note": "100 + 4 x side; volume 100 x side^2",
+   "at": "2026-11-11T07:38:26Z",
+   "predicted": "576.89",
+   "raw": "0.00/576.89/0.00/0.00/689.69",
+   "usd": {
+    "dhl": null,
+    "fedex": "576.89",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "689.69"
+   },
+   "match": true
+  },
+  {
+   "group": "girth",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "42",
+    "height": "42",
+    "weight": "3"
+   },
+   "note": "100 + 4 x side; volume 100 x side^2",
+   "at": "2026-11-11T07:38:27Z",
+   "predicted": "592.41",
+   "raw": "0.00/592.41/0.00/0.00/700.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "592.41",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "700.38"
+   },
+   "match": true
+  },
+  {
+   "group": "girth",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "43",
+    "height": "43",
+    "weight": "3"
+   },
+   "note": "100 + 4 x side; volume 100 x side^2",
+   "at": "2026-11-11T07:38:29Z",
+   "predicted": "607.93",
+   "raw": "0.00/607.93/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "607.93",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "girth",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "45",
+    "height": "45",
+    "weight": "3"
+   },
+   "note": "100 + 4 x side; volume 100 x side^2",
+   "at": "2026-11-11T07:38:30Z",
+   "predicted": "670.00",
+   "raw": "0.00/670.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "670.00",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "girth",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "48",
+    "height": "48",
+    "weight": "3"
+   },
+   "note": "100 + 4 x side; volume 100 x side^2",
+   "at": "2026-11-11T07:38:33Z",
+   "predicted": "763.11",
+   "raw": "0.00/763.11/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "763.11",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "girth",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "100",
+    "width": "50",
+    "height": "50",
+    "weight": "3"
+   },
+   "note": "100 + 4 x side; volume 100 x side^2",
+   "at": "2026-11-11T07:38:34Z",
+   "predicted": "809.67",
+   "raw": "0.00/809.67/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "809.67",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "big",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "200",
+    "width": "30",
+    "height": "30",
+    "weight": "5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:36Z",
+   "predicted": "592.41",
+   "raw": "0.00/592.41/0.00/0.00/711.07",
+   "usd": {
+    "dhl": null,
+    "fedex": "592.41",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "711.07"
+   },
+   "match": true
+  },
+  {
+   "group": "big",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "200",
+    "width": "33",
+    "height": "33",
+    "weight": "5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:37Z",
+   "predicted": "716.56",
+   "raw": "0.00/716.56/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "716.56",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "big",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "200",
+    "width": "35",
+    "height": "35",
+    "weight": "5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:39Z",
+   "predicted": "794.15",
+   "raw": "0.00/794.15/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "794.15",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "big",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "250",
+    "width": "20",
+    "height": "20",
+    "weight": "5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:40Z",
+   "predicted": "296.04",
+   "raw": "0.00/296.04/0.00/0.00/406.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "296.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "406.38"
+   },
+   "match": true
+  },
+  {
+   "group": "big",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "260",
+    "width": "20",
+    "height": "20",
+    "weight": "5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:41Z",
+   "predicted": "327.00",
+   "raw": "0.00/327.00/0.00/0.00/417.20",
+   "usd": {
+    "dhl": null,
+    "fedex": "327.00",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "417.20"
+   },
+   "match": true
+  },
+  {
+   "group": "big",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "150",
+    "width": "40",
+    "height": "40",
+    "weight": "5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:43Z",
+   "predicted": "778.63",
+   "raw": "0.00/778.63/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "778.63",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "big",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "160",
+    "width": "39",
+    "height": "39",
+    "weight": "5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:44Z",
+   "predicted": "794.15",
+   "raw": "0.00/794.15/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "794.15",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "big",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "120",
+    "width": "45",
+    "height": "45",
+    "weight": "5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:46Z",
+   "predicted": "794.15",
+   "raw": "0.00/794.15/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "794.15",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "big",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "60",
+    "width": "60",
+    "height": "47",
+    "weight": "5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:47Z",
+   "predicted": "561.37",
+   "raw": "0.00/561.37/0.00/0.00/679.13",
+   "usd": {
+    "dhl": null,
+    "fedex": "561.37",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "679.13"
+   },
+   "match": true
+  },
+  {
+   "group": "big",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "88",
+    "width": "44",
+    "height": "44",
+    "weight": "5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:48Z",
+   "predicted": "576.89",
+   "raw": "0.00/576.89/0.00/0.00/679.13",
+   "usd": {
+    "dhl": null,
+    "fedex": "576.89",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "679.13"
+   },
+   "match": true
+  },
+  {
+   "group": "big",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "88",
+    "width": "44",
+    "height": "43.5",
+    "weight": "5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:50Z",
+   "predicted": "561.37",
+   "raw": "0.00/561.37/0.00/0.00/679.13",
+   "usd": {
+    "dhl": null,
+    "fedex": "561.37",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "679.13"
+   },
+   "match": true
+  },
+  {
+   "group": "big",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "70",
+    "width": "60",
+    "height": "55",
+    "weight": "5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:51Z",
+   "predicted": "763.11",
+   "raw": "0.00/763.11/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "763.11",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "big",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "55",
+    "width": "55",
+    "height": "55",
+    "weight": "5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:53Z",
+   "predicted": "561.37",
+   "raw": "0.00/561.37/0.00/0.00/668.31",
+   "usd": {
+    "dhl": null,
+    "fedex": "561.37",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "668.31"
+   },
+   "match": true
+  },
+  {
+   "group": "big",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "56",
+    "width": "56",
+    "height": "56",
+    "weight": "5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:54Z",
+   "predicted": "592.41",
+   "raw": "0.00/592.41/0.00/0.00/700.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "592.41",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "700.38"
+   },
+   "match": true
+  },
+  {
+   "group": "order",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "124",
+    "width": "20",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:55Z",
+   "predicted": "136.12",
+   "raw": "0.00/136.12/0.00/0.00/159.57",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "159.57"
+   },
+   "match": true
+  },
+  {
+   "group": "order",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "20",
+    "width": "124",
+    "height": "16",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:57Z",
+   "predicted": "136.12",
+   "raw": "0.00/136.12/0.00/0.00/159.57",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "159.57"
+   },
+   "match": true
+  },
+  {
+   "group": "order",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "16",
+    "width": "20",
+    "height": "124",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:58Z",
+   "predicted": "136.12",
+   "raw": "0.00/136.12/0.00/0.00/159.57",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "159.57"
+   },
+   "match": true
+  },
+  {
+   "group": "order",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "20",
+    "width": "16",
+    "height": "124",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:38:59Z",
+   "predicted": "136.12",
+   "raw": "0.00/136.12/0.00/0.00/159.57",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "159.57"
+   },
+   "match": true
+  },
+  {
+   "group": "order",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "123",
+    "width": "40",
+    "height": "32",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:39:01Z",
+   "predicted": "539.89",
+   "raw": "0.00/539.89/0.00/0.00/635.98",
+   "usd": {
+    "dhl": null,
+    "fedex": "539.89",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "635.98"
+   },
+   "match": true
+  },
+  {
+   "group": "order",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "32",
+    "width": "123",
+    "height": "40",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:39:02Z",
+   "predicted": "539.89",
+   "raw": "0.00/539.89/0.00/0.00/635.98",
+   "usd": {
+    "dhl": null,
+    "fedex": "539.89",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "635.98"
+   },
+   "match": true
+  },
+  {
+   "group": "order",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "40",
+    "width": "32",
+    "height": "123",
+    "weight": "6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:39:03Z",
+   "predicted": "539.89",
+   "raw": "0.00/539.89/0.00/0.00/635.98",
+   "usd": {
+    "dhl": null,
+    "fedex": "539.89",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "635.98"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "50",
+    "width": "25",
+    "height": "20",
+    "weight": "1"
+   },
+   "note": "volumetric 5 kg",
+   "at": "2026-11-11T07:39:05Z",
+   "predicted": "100.33",
+   "raw": "0.00/100.33/0.00/0.00/101.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "100.33",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "101.93"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "50",
+    "width": "25",
+    "height": "20",
+    "weight": "10"
+   },
+   "note": "volumetric 5 kg",
+   "at": "2026-11-11T07:39:06Z",
+   "predicted": "163.66",
+   "raw": "0.00/163.66/0.00/0.00/228.97",
+   "usd": {
+    "dhl": null,
+    "fedex": "163.66",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "228.97"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "50",
+    "width": "25",
+    "height": "20",
+    "weight": "20"
+   },
+   "note": "volumetric 5 kg",
+   "at": "2026-11-11T07:39:07Z",
+   "predicted": "296.04",
+   "raw": "0.00/296.04/0.00/0.00/489.11",
+   "usd": {
+    "dhl": null,
+    "fedex": "296.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "489.11"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "50",
+    "width": "25",
+    "height": "20",
+    "weight": "26"
+   },
+   "note": "volumetric 5 kg",
+   "at": "2026-11-11T07:39:09Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/625.42",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "625.42"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "50",
+    "width": "25",
+    "height": "20",
+    "weight": "30"
+   },
+   "note": "volumetric 5 kg",
+   "at": "2026-11-11T07:39:10Z",
+   "predicted": "507.06",
+   "raw": "0.00/507.06/0.00/0.00/711.07",
+   "usd": {
+    "dhl": null,
+    "fedex": "507.06",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "711.07"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "50",
+    "width": "25",
+    "height": "20",
+    "weight": "45"
+   },
+   "note": "volumetric 5 kg",
+   "at": "2026-11-11T07:39:12Z",
+   "predicted": "732.08",
+   "raw": "0.00/732.08/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "732.08",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "60",
+    "width": "40",
+    "height": "25",
+    "weight": "1"
+   },
+   "note": "volumetric 12 kg",
+   "at": "2026-11-11T07:39:13Z",
+   "predicted": "193.04",
+   "raw": "0.00/193.04/0.00/0.00/228.97",
+   "usd": {
+    "dhl": null,
+    "fedex": "193.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "228.97"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "60",
+    "width": "40",
+    "height": "25",
+    "weight": "10"
+   },
+   "note": "volumetric 12 kg",
+   "at": "2026-11-11T07:39:15Z",
+   "predicted": "193.04",
+   "raw": "0.00/193.04/0.00/0.00/228.97",
+   "usd": {
+    "dhl": null,
+    "fedex": "193.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "228.97"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "60",
+    "width": "40",
+    "height": "25",
+    "weight": "20"
+   },
+   "note": "volumetric 12 kg",
+   "at": "2026-11-11T07:39:16Z",
+   "predicted": "296.04",
+   "raw": "0.00/296.04/0.00/0.00/489.11",
+   "usd": {
+    "dhl": null,
+    "fedex": "296.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "489.11"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "60",
+    "width": "40",
+    "height": "25",
+    "weight": "26"
+   },
+   "note": "volumetric 12 kg",
+   "at": "2026-11-11T07:39:17Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/625.42",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "625.42"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "60",
+    "width": "40",
+    "height": "25",
+    "weight": "30"
+   },
+   "note": "volumetric 12 kg",
+   "at": "2026-11-11T07:39:19Z",
+   "predicted": "507.06",
+   "raw": "0.00/507.06/0.00/0.00/711.07",
+   "usd": {
+    "dhl": null,
+    "fedex": "507.06",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "711.07"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "60",
+    "width": "40",
+    "height": "25",
+    "weight": "45"
+   },
+   "note": "volumetric 12 kg",
+   "at": "2026-11-11T07:39:20Z",
+   "predicted": "732.08",
+   "raw": "0.00/732.08/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "732.08",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "65",
+    "width": "50",
+    "height": "30",
+    "weight": "1"
+   },
+   "note": "volumetric 19.5 kg",
+   "at": "2026-11-11T07:39:21Z",
+   "predicted": "290.72",
+   "raw": "0.00/290.72/0.00/0.00/395.69",
+   "usd": {
+    "dhl": null,
+    "fedex": "290.72",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "395.69"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "65",
+    "width": "50",
+    "height": "30",
+    "weight": "10"
+   },
+   "note": "volumetric 19.5 kg",
+   "at": "2026-11-11T07:39:23Z",
+   "predicted": "290.72",
+   "raw": "0.00/290.72/0.00/0.00/395.69",
+   "usd": {
+    "dhl": null,
+    "fedex": "290.72",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "395.69"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "65",
+    "width": "50",
+    "height": "30",
+    "weight": "20"
+   },
+   "note": "volumetric 19.5 kg",
+   "at": "2026-11-11T07:39:24Z",
+   "predicted": "296.04",
+   "raw": "0.00/296.04/0.00/0.00/489.11",
+   "usd": {
+    "dhl": null,
+    "fedex": "296.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "489.11"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "65",
+    "width": "50",
+    "height": "30",
+    "weight": "26"
+   },
+   "note": "volumetric 19.5 kg",
+   "at": "2026-11-11T07:39:25Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/625.42",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "625.42"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "65",
+    "width": "50",
+    "height": "30",
+    "weight": "30"
+   },
+   "note": "volumetric 19.5 kg",
+   "at": "2026-11-11T07:39:27Z",
+   "predicted": "507.06",
+   "raw": "0.00/507.06/0.00/0.00/711.07",
+   "usd": {
+    "dhl": null,
+    "fedex": "507.06",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "711.07"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "65",
+    "width": "50",
+    "height": "30",
+    "weight": "45"
+   },
+   "note": "volumetric 19.5 kg",
+   "at": "2026-11-11T07:39:28Z",
+   "predicted": "732.08",
+   "raw": "0.00/732.08/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "732.08",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "101",
+    "width": "50",
+    "height": "20",
+    "weight": "1"
+   },
+   "note": "volumetric 20.2 kg",
+   "at": "2026-11-11T07:39:29Z",
+   "predicted": "301.36",
+   "raw": "0.00/301.36/0.00/0.00/406.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "301.36",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "406.38"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "101",
+    "width": "50",
+    "height": "20",
+    "weight": "10"
+   },
+   "note": "volumetric 20.2 kg",
+   "at": "2026-11-11T07:39:31Z",
+   "predicted": "301.36",
+   "raw": "0.00/301.36/0.00/0.00/406.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "301.36",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "406.38"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "101",
+    "width": "50",
+    "height": "20",
+    "weight": "20"
+   },
+   "note": "volumetric 20.2 kg",
+   "at": "2026-11-11T07:39:32Z",
+   "predicted": "301.36",
+   "raw": "0.00/301.36/0.00/0.00/489.11",
+   "usd": {
+    "dhl": null,
+    "fedex": "301.36",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "489.11"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "101",
+    "width": "50",
+    "height": "20",
+    "weight": "26"
+   },
+   "note": "volumetric 20.2 kg",
+   "at": "2026-11-11T07:39:33Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/625.42",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "625.42"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "101",
+    "width": "50",
+    "height": "20",
+    "weight": "30"
+   },
+   "note": "volumetric 20.2 kg",
+   "at": "2026-11-11T07:39:35Z",
+   "predicted": "507.06",
+   "raw": "0.00/507.06/0.00/0.00/711.07",
+   "usd": {
+    "dhl": null,
+    "fedex": "507.06",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "711.07"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "101",
+    "width": "50",
+    "height": "20",
+    "weight": "45"
+   },
+   "note": "volumetric 20.2 kg",
+   "at": "2026-11-11T07:39:36Z",
+   "predicted": "732.08",
+   "raw": "0.00/732.08/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "732.08",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "85",
+    "width": "50",
+    "height": "30",
+    "weight": "1"
+   },
+   "note": "volumetric 25.5 kg",
+   "at": "2026-11-11T07:39:37Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/527.67",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "527.67"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "85",
+    "width": "50",
+    "height": "30",
+    "weight": "10"
+   },
+   "note": "volumetric 25.5 kg",
+   "at": "2026-11-11T07:39:39Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/527.67",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "527.67"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "85",
+    "width": "50",
+    "height": "30",
+    "weight": "20"
+   },
+   "note": "volumetric 25.5 kg",
+   "at": "2026-11-11T07:39:40Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/527.67",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "527.67"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "85",
+    "width": "50",
+    "height": "30",
+    "weight": "26"
+   },
+   "note": "volumetric 25.5 kg",
+   "at": "2026-11-11T07:39:41Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/625.42",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "625.42"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "85",
+    "width": "50",
+    "height": "30",
+    "weight": "30"
+   },
+   "note": "volumetric 25.5 kg",
+   "at": "2026-11-11T07:39:43Z",
+   "predicted": "507.06",
+   "raw": "0.00/507.06/0.00/0.00/711.07",
+   "usd": {
+    "dhl": null,
+    "fedex": "507.06",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "711.07"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "85",
+    "width": "50",
+    "height": "30",
+    "weight": "45"
+   },
+   "note": "volumetric 25.5 kg",
+   "at": "2026-11-11T07:39:44Z",
+   "predicted": "732.08",
+   "raw": "0.00/732.08/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "732.08",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "110",
+    "width": "50",
+    "height": "30",
+    "weight": "1"
+   },
+   "note": "volumetric 33 kg",
+   "at": "2026-11-11T07:39:47Z",
+   "predicted": "545.85",
+   "raw": "0.00/545.85/0.00/0.00/657.49",
+   "usd": {
+    "dhl": null,
+    "fedex": "545.85",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "657.49"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "110",
+    "width": "50",
+    "height": "30",
+    "weight": "10"
+   },
+   "note": "volumetric 33 kg",
+   "at": "2026-11-11T07:39:48Z",
+   "predicted": "545.85",
+   "raw": "0.00/545.85/0.00/0.00/657.49",
+   "usd": {
+    "dhl": null,
+    "fedex": "545.85",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "657.49"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "110",
+    "width": "50",
+    "height": "30",
+    "weight": "20"
+   },
+   "note": "volumetric 33 kg",
+   "at": "2026-11-11T07:39:49Z",
+   "predicted": "545.85",
+   "raw": "0.00/545.85/0.00/0.00/657.49",
+   "usd": {
+    "dhl": null,
+    "fedex": "545.85",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "657.49"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "110",
+    "width": "50",
+    "height": "30",
+    "weight": "26"
+   },
+   "note": "volumetric 33 kg",
+   "at": "2026-11-11T07:39:51Z",
+   "predicted": "545.85",
+   "raw": "0.00/545.85/0.00/0.00/657.49",
+   "usd": {
+    "dhl": null,
+    "fedex": "545.85",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "657.49"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "110",
+    "width": "50",
+    "height": "30",
+    "weight": "30"
+   },
+   "note": "volumetric 33 kg",
+   "at": "2026-11-11T07:39:52Z",
+   "predicted": "545.85",
+   "raw": "0.00/545.85/0.00/0.00/711.07",
+   "usd": {
+    "dhl": null,
+    "fedex": "545.85",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "711.07"
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "110",
+    "width": "50",
+    "height": "30",
+    "weight": "45"
+   },
+   "note": "volumetric 33 kg",
+   "at": "2026-11-11T07:39:53Z",
+   "predicted": "732.08",
+   "raw": "0.00/732.08/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "732.08",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "120",
+    "width": "50",
+    "height": "40",
+    "weight": "1"
+   },
+   "note": "volumetric 48 kg",
+   "at": "2026-11-11T07:39:55Z",
+   "predicted": "778.63",
+   "raw": "0.00/778.63/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "778.63",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "120",
+    "width": "50",
+    "height": "40",
+    "weight": "10"
+   },
+   "note": "volumetric 48 kg",
+   "at": "2026-11-11T07:39:56Z",
+   "predicted": "778.63",
+   "raw": "0.00/778.63/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "778.63",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "120",
+    "width": "50",
+    "height": "40",
+    "weight": "20"
+   },
+   "note": "volumetric 48 kg",
+   "at": "2026-11-11T07:39:57Z",
+   "predicted": "778.63",
+   "raw": "0.00/778.63/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "778.63",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "120",
+    "width": "50",
+    "height": "40",
+    "weight": "26"
+   },
+   "note": "volumetric 48 kg",
+   "at": "2026-11-11T07:39:59Z",
+   "predicted": "778.63",
+   "raw": "0.00/778.63/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "778.63",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "120",
+    "width": "50",
+    "height": "40",
+    "weight": "30"
+   },
+   "note": "volumetric 48 kg",
+   "at": "2026-11-11T07:40:01Z",
+   "predicted": "778.63",
+   "raw": "0.00/778.63/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "778.63",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "gross_or_volume",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "120",
+    "width": "50",
+    "height": "40",
+    "weight": "45"
+   },
+   "note": "volumetric 48 kg",
+   "at": "2026-11-11T07:40:05Z",
+   "predicted": "778.63",
+   "raw": "0.00/778.63/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "778.63",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:06Z",
+   "predicted": "100.33",
+   "raw": "0.00/100.33/0.00/0.00/117.82",
+   "usd": {
+    "dhl": null,
+    "fedex": "100.33",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "117.82"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.05"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:07Z",
+   "predicted": "108.10",
+   "raw": "0.00/108.10/0.00/0.00/128.45",
+   "usd": {
+    "dhl": null,
+    "fedex": "108.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "128.45"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.10"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:09Z",
+   "predicted": "108.10",
+   "raw": "0.00/108.10/0.00/0.00/128.45",
+   "usd": {
+    "dhl": null,
+    "fedex": "108.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "128.45"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.15"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:11Z",
+   "predicted": "108.10",
+   "raw": "0.00/108.10/0.00/0.00/128.45",
+   "usd": {
+    "dhl": null,
+    "fedex": "108.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "128.45"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.20"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:13Z",
+   "predicted": "108.10",
+   "raw": "0.00/108.10/0.00/0.00/128.45",
+   "usd": {
+    "dhl": null,
+    "fedex": "108.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "128.45"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.25"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:14Z",
+   "predicted": "108.10",
+   "raw": "0.00/108.10/0.00/0.00/128.45",
+   "usd": {
+    "dhl": null,
+    "fedex": "108.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "128.45"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.30"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:16Z",
+   "predicted": "108.10",
+   "raw": "0.00/108.10/0.00/0.00/128.45",
+   "usd": {
+    "dhl": null,
+    "fedex": "108.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "128.45"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.35"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:17Z",
+   "predicted": "108.10",
+   "raw": "0.00/108.10/0.00/0.00/128.45",
+   "usd": {
+    "dhl": null,
+    "fedex": "108.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "128.45"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.40"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:18Z",
+   "predicted": "108.10",
+   "raw": "0.00/108.10/0.00/0.00/128.45",
+   "usd": {
+    "dhl": null,
+    "fedex": "108.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "128.45"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.45"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:20Z",
+   "predicted": "108.10",
+   "raw": "0.00/108.10/0.00/0.00/128.45",
+   "usd": {
+    "dhl": null,
+    "fedex": "108.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "128.45"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.50"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:21Z",
+   "predicted": "108.10",
+   "raw": "0.00/108.10/0.00/0.00/128.45",
+   "usd": {
+    "dhl": null,
+    "fedex": "108.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "128.45"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.55"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:22Z",
+   "predicted": "113.71",
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.60"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:24Z",
+   "predicted": "113.71",
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.65"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:25Z",
+   "predicted": "113.71",
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.70"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:26Z",
+   "predicted": "113.71",
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.75"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:28Z",
+   "predicted": "113.71",
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.80"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:29Z",
+   "predicted": "113.71",
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.85"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:31Z",
+   "predicted": "113.71",
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.90"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:32Z",
+   "predicted": "113.71",
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "5.95"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:34Z",
+   "predicted": "113.71",
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "6.00"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:36Z",
+   "predicted": "113.71",
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "16"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:37Z",
+   "predicted": "232.01",
+   "raw": "0.00/232.01/0.00/0.00/384.87",
+   "usd": {
+    "dhl": null,
+    "fedex": "232.01",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "384.87"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "16.1"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:38Z",
+   "predicted": "258.78",
+   "raw": "0.00/258.78/0.00/0.00/395.69",
+   "usd": {
+    "dhl": null,
+    "fedex": "258.78",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "395.69"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "16.2"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:40Z",
+   "predicted": "258.78",
+   "raw": "0.00/258.78/0.00/0.00/395.69",
+   "usd": {
+    "dhl": null,
+    "fedex": "258.78",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "395.69"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "16.3"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:41Z",
+   "predicted": "258.78",
+   "raw": "0.00/258.78/0.00/0.00/395.69",
+   "usd": {
+    "dhl": null,
+    "fedex": "258.78",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "395.69"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "16.4"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:43Z",
+   "predicted": "258.78",
+   "raw": "0.00/258.78/0.00/0.00/395.69",
+   "usd": {
+    "dhl": null,
+    "fedex": "258.78",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "395.69"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "16.5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:44Z",
+   "predicted": "258.78",
+   "raw": "0.00/258.78/0.00/0.00/395.69",
+   "usd": {
+    "dhl": null,
+    "fedex": "258.78",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "395.69"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "16.6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:47Z",
+   "predicted": "264.10",
+   "raw": "0.00/264.10/0.00/0.00/406.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "264.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "406.38"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "16.7"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:48Z",
+   "predicted": "264.10",
+   "raw": "0.00/264.10/0.00/0.00/406.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "264.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "406.38"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "16.8"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:50Z",
+   "predicted": "264.10",
+   "raw": "0.00/264.10/0.00/0.00/406.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "264.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "406.38"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "16.9"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:51Z",
+   "predicted": "264.10",
+   "raw": "0.00/264.10/0.00/0.00/406.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "264.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "406.38"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "17.0"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:52Z",
+   "predicted": "264.10",
+   "raw": "0.00/264.10/0.00/0.00/406.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "264.10",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "406.38"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "20"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:54Z",
+   "predicted": "296.04",
+   "raw": "0.00/296.04/0.00/0.00/489.11",
+   "usd": {
+    "dhl": null,
+    "fedex": "296.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "489.11"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "20.1"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:55Z",
+   "predicted": "301.36",
+   "raw": "0.00/301.36/0.00/0.00/504.64",
+   "usd": {
+    "dhl": null,
+    "fedex": "301.36",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "504.64"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "20.2"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:57Z",
+   "predicted": "301.36",
+   "raw": "0.00/301.36/0.00/0.00/504.64",
+   "usd": {
+    "dhl": null,
+    "fedex": "301.36",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "504.64"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "20.3"
+   },
+   "note": "",
+   "at": "2026-11-11T07:40:58Z",
+   "predicted": "301.36",
+   "raw": "0.00/301.36/0.00/0.00/504.64",
+   "usd": {
+    "dhl": null,
+    "fedex": "301.36",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "504.64"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "20.4"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:00Z",
+   "predicted": "301.36",
+   "raw": "0.00/301.36/0.00/0.00/504.64",
+   "usd": {
+    "dhl": null,
+    "fedex": "301.36",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "504.64"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "20.5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:01Z",
+   "predicted": "301.36",
+   "raw": "0.00/301.36/0.00/0.00/504.64",
+   "usd": {
+    "dhl": null,
+    "fedex": "301.36",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "504.64"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "20.6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:02Z",
+   "predicted": "327.00",
+   "raw": "0.00/327.00/0.00/0.00/516.35",
+   "usd": {
+    "dhl": null,
+    "fedex": "327.00",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "516.35"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "20.7"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:04Z",
+   "predicted": "327.00",
+   "raw": "0.00/327.00/0.00/0.00/516.35",
+   "usd": {
+    "dhl": null,
+    "fedex": "327.00",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "516.35"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "20.8"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:05Z",
+   "predicted": "327.00",
+   "raw": "0.00/327.00/0.00/0.00/516.35",
+   "usd": {
+    "dhl": null,
+    "fedex": "327.00",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "516.35"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "20.9"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:07Z",
+   "predicted": "327.00",
+   "raw": "0.00/327.00/0.00/0.00/516.35",
+   "usd": {
+    "dhl": null,
+    "fedex": "327.00",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "516.35"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "21.0"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:08Z",
+   "predicted": "327.00",
+   "raw": "0.00/327.00/0.00/0.00/516.35",
+   "usd": {
+    "dhl": null,
+    "fedex": "327.00",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "516.35"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "21.1"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:09Z",
+   "predicted": "343.42",
+   "raw": "0.00/343.42/0.00/0.00/527.67",
+   "usd": {
+    "dhl": null,
+    "fedex": "343.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "527.67"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "21.2"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:11Z",
+   "predicted": "343.42",
+   "raw": "0.00/343.42/0.00/0.00/527.67",
+   "usd": {
+    "dhl": null,
+    "fedex": "343.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "527.67"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "21.3"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:12Z",
+   "predicted": "343.42",
+   "raw": "0.00/343.42/0.00/0.00/527.67",
+   "usd": {
+    "dhl": null,
+    "fedex": "343.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "527.67"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "21.4"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:13Z",
+   "predicted": "343.42",
+   "raw": "0.00/343.42/0.00/0.00/527.67",
+   "usd": {
+    "dhl": null,
+    "fedex": "343.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "527.67"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "21.5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:15Z",
+   "predicted": "343.42",
+   "raw": "0.00/343.42/0.00/0.00/527.67",
+   "usd": {
+    "dhl": null,
+    "fedex": "343.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "527.67"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "21.6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:16Z",
+   "predicted": "343.42",
+   "raw": "0.00/343.42/0.00/0.00/539.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "343.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "539.38"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "21.7"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:17Z",
+   "predicted": "343.42",
+   "raw": "0.00/343.42/0.00/0.00/539.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "343.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "539.38"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "21.8"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:19Z",
+   "predicted": "343.42",
+   "raw": "0.00/343.42/0.00/0.00/539.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "343.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "539.38"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "21.9"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:20Z",
+   "predicted": "343.42",
+   "raw": "0.00/343.42/0.00/0.00/539.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "343.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "539.38"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "22.0"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:22Z",
+   "predicted": "343.42",
+   "raw": "0.00/343.42/0.00/0.00/539.38",
+   "usd": {
+    "dhl": null,
+    "fedex": "343.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "539.38"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "24.5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:23Z",
+   "predicted": "392.65",
+   "raw": "0.00/392.65/0.00/0.00/595.13",
+   "usd": {
+    "dhl": null,
+    "fedex": "392.65",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "595.13"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "24.6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:24Z",
+   "predicted": "392.65",
+   "raw": "0.00/392.65/0.00/0.00/604.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "392.65",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "604.93"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "24.7"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:26Z",
+   "predicted": "392.65",
+   "raw": "0.00/392.65/0.00/0.00/604.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "392.65",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "604.93"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "24.8"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:29Z",
+   "predicted": "392.65",
+   "raw": "0.00/392.65/0.00/0.00/604.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "392.65",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "604.93"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "24.9"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:30Z",
+   "predicted": "392.65",
+   "raw": "0.00/392.65/0.00/0.00/604.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "392.65",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "604.93"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "25.0"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:31Z",
+   "predicted": "392.65",
+   "raw": "0.00/392.65/0.00/0.00/604.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "392.65",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "604.93"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "25.1"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:33Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/614.85",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "614.85"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "25.2"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:34Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/614.85",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "614.85"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "25.3"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:35Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/614.85",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "614.85"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "25.4"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:37Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/614.85",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "614.85"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "25.5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:39Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/614.85",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "614.85"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "25.6"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:40Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/625.42",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "625.42"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "25.7"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:42Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/625.42",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "625.42"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "25.8"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:43Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/625.42",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "625.42"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "25.9"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:46Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/625.42",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "625.42"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "26.0"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:47Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/625.42",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "625.42"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "26.1"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:49Z",
+   "predicted": "457.84",
+   "raw": "0.00/457.84/0.00/0.00/635.98",
+   "usd": {
+    "dhl": null,
+    "fedex": "457.84",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "635.98"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "26.2"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:50Z",
+   "predicted": "457.84",
+   "raw": "0.00/457.84/0.00/0.00/635.98",
+   "usd": {
+    "dhl": null,
+    "fedex": "457.84",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "635.98"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "26.3"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:52Z",
+   "predicted": "457.84",
+   "raw": "0.00/457.84/0.00/0.00/635.98",
+   "usd": {
+    "dhl": null,
+    "fedex": "457.84",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "635.98"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "26.4"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:53Z",
+   "predicted": "457.84",
+   "raw": "0.00/457.84/0.00/0.00/635.98",
+   "usd": {
+    "dhl": null,
+    "fedex": "457.84",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "635.98"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "26.5"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:55Z",
+   "predicted": "457.84",
+   "raw": "0.00/457.84/0.00/0.00/635.98",
+   "usd": {
+    "dhl": null,
+    "fedex": "457.84",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "635.98"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "32"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:56Z",
+   "predicted": "539.89",
+   "raw": "0.00/539.89/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "539.89",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "32.25"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:57Z",
+   "predicted": "545.85",
+   "raw": "0.00/545.85/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "545.85",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "32.50"
+   },
+   "note": "",
+   "at": "2026-11-11T07:41:59Z",
+   "predicted": "545.85",
+   "raw": "0.00/545.85/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "545.85",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "32.75"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:00Z",
+   "predicted": "545.85",
+   "raw": "0.00/545.85/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "545.85",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "33.00"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:02Z",
+   "predicted": "545.85",
+   "raw": "0.00/545.85/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "545.85",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "33.25"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:03Z",
+   "predicted": "561.37",
+   "raw": "0.00/561.37/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "561.37",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "33.50"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:05Z",
+   "predicted": "561.37",
+   "raw": "0.00/561.37/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "561.37",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "33.75"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:06Z",
+   "predicted": "561.37",
+   "raw": "0.00/561.37/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "561.37",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "34.00"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:07Z",
+   "predicted": "561.37",
+   "raw": "0.00/561.37/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "561.37",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "49"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:09Z",
+   "predicted": "794.15",
+   "raw": "0.00/794.15/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "794.15",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "49.25"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:10Z",
+   "predicted": "809.67",
+   "raw": "0.00/809.67/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "809.67",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "49.50"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:11Z",
+   "predicted": "809.67",
+   "raw": "0.00/809.67/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "809.67",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "49.75"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:13Z",
+   "predicted": "809.67",
+   "raw": "0.00/809.67/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "809.67",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "50.00"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:14Z",
+   "predicted": "809.67",
+   "raw": "0.00/809.67/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "809.67",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "50.25"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:17Z",
+   "predicted": null,
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "50.50"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:18Z",
+   "predicted": null,
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "50.75"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:19Z",
+   "predicted": null,
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_sweep",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "51.00"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:21Z",
+   "predicted": null,
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_edge",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "0.01"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:22Z",
+   "predicted": "42.49",
+   "raw": "0.00/42.49/0.00/0.00/18.61",
+   "usd": {
+    "dhl": null,
+    "fedex": "42.49",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "18.61"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_edge",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "0.05"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:23Z",
+   "predicted": "42.49",
+   "raw": "0.00/42.49/0.00/0.00/18.61",
+   "usd": {
+    "dhl": null,
+    "fedex": "42.49",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "18.61"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_edge",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "0.2"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:25Z",
+   "predicted": "42.49",
+   "raw": "0.00/42.49/0.00/0.00/18.61",
+   "usd": {
+    "dhl": null,
+    "fedex": "42.49",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "18.61"
+   },
+   "match": true
+  },
+  {
+   "group": "weight_edge",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "60"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:27Z",
+   "predicted": null,
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_edge",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "68"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:28Z",
+   "predicted": null,
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_edge",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "69"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:30Z",
+   "predicted": null,
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "weight_edge",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "10",
+    "width": "10",
+    "height": "10",
+    "weight": "100"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:31Z",
+   "predicted": null,
+   "raw": "0.00/0.00/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": null,
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "long_heavy",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "124",
+    "width": "20",
+    "height": "16",
+    "weight": "8"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:32Z",
+   "predicted": "136.12",
+   "raw": "0.00/136.12/0.00/0.00/186.79",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "186.79"
+   },
+   "match": true
+  },
+  {
+   "group": "long_heavy",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "124",
+    "width": "20",
+    "height": "16",
+    "weight": "10.8"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:34Z",
+   "predicted": "183.30",
+   "raw": "0.00/183.30/0.00/0.00/249.40",
+   "usd": {
+    "dhl": null,
+    "fedex": "183.30",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "249.40"
+   },
+   "match": true
+  },
+  {
+   "group": "long_heavy",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "124",
+    "width": "20",
+    "height": "16",
+    "weight": "12"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:35Z",
+   "predicted": "193.04",
+   "raw": "0.00/193.04/0.00/0.00/291.27",
+   "usd": {
+    "dhl": null,
+    "fedex": "193.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "291.27"
+   },
+   "match": true
+  },
+  {
+   "group": "long_heavy",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "124",
+    "width": "20",
+    "height": "16",
+    "weight": "18"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:36Z",
+   "predicted": "274.74",
+   "raw": "0.00/274.74/0.00/0.00/443.29",
+   "usd": {
+    "dhl": null,
+    "fedex": "274.74",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "443.29"
+   },
+   "match": true
+  },
+  {
+   "group": "long_heavy",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "124",
+    "width": "20",
+    "height": "16",
+    "weight": "18.1"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:38Z",
+   "predicted": "280.08",
+   "raw": "0.00/280.08/0.00/0.00/454.87",
+   "usd": {
+    "dhl": null,
+    "fedex": "280.08",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "454.87"
+   },
+   "match": true
+  },
+  {
+   "group": "long_heavy",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "124",
+    "width": "20",
+    "height": "16",
+    "weight": "25"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:39Z",
+   "predicted": "392.65",
+   "raw": "0.00/392.65/0.00/0.00/604.93",
+   "usd": {
+    "dhl": null,
+    "fedex": "392.65",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "604.93"
+   },
+   "match": true
+  },
+  {
+   "group": "long_heavy",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "124",
+    "width": "20",
+    "height": "16",
+    "weight": "25.1"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:40Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/614.85",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "614.85"
+   },
+   "match": true
+  },
+  {
+   "group": "long_heavy",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "124",
+    "width": "20",
+    "height": "16",
+    "weight": "26"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:42Z",
+   "predicted": "441.42",
+   "raw": "0.00/441.42/0.00/0.00/625.42",
+   "usd": {
+    "dhl": null,
+    "fedex": "441.42",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "625.42"
+   },
+   "match": true
+  },
+  {
+   "group": "long_heavy",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "124",
+    "width": "20",
+    "height": "16",
+    "weight": "30"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:43Z",
+   "predicted": "507.06",
+   "raw": "0.00/507.06/0.00/0.00/711.07",
+   "usd": {
+    "dhl": null,
+    "fedex": "507.06",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "711.07"
+   },
+   "match": true
+  },
+  {
+   "group": "long_heavy",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "124",
+    "width": "20",
+    "height": "16",
+    "weight": "45"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:44Z",
+   "predicted": "732.08",
+   "raw": "0.00/732.08/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "732.08",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "long_heavy",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "123",
+    "width": "40",
+    "height": "32",
+    "weight": "31"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:46Z",
+   "predicted": "539.89",
+   "raw": "0.00/539.89/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "539.89",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "long_heavy",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "123",
+    "width": "40",
+    "height": "32",
+    "weight": "32"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:47Z",
+   "predicted": "539.89",
+   "raw": "0.00/539.89/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "539.89",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "long_heavy",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "123",
+    "width": "40",
+    "height": "32",
+    "weight": "33"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:48Z",
+   "predicted": "545.85",
+   "raw": "0.00/545.85/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "545.85",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "long_heavy",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "123",
+    "width": "40",
+    "height": "32",
+    "weight": "40"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:50Z",
+   "predicted": "654.48",
+   "raw": "0.00/654.48/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "654.48",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "long_heavy",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "123",
+    "width": "40",
+    "height": "32",
+    "weight": "50"
+   },
+   "note": "",
+   "at": "2026-11-11T07:42:51Z",
+   "predicted": "809.67",
+   "raw": "0.00/809.67/0.00/0.00/0.00",
+   "usd": {
+    "dhl": null,
+    "fedex": "809.67",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": null
+   },
+   "match": true
+  },
+  {
+   "group": "no_sides",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "weight": "1"
+   },
+   "note": "weight only: the page asks for no sides",
+   "at": "2026-11-11T07:42:52Z",
+   "predicted": null,
+   "raw": "0.00/48.51/0.00/0.00/37.20",
+   "usd": {
+    "dhl": null,
+    "fedex": "48.51",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "37.20"
+   },
+   "match": false
+  },
+  {
+   "group": "no_sides",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "",
+    "width": "",
+    "height": "",
+    "weight": "1"
+   },
+   "note": "empty sides",
+   "at": "2026-11-11T07:42:55Z",
+   "predicted": null,
+   "raw": "0.00/48.51/0.00/0.00/37.20",
+   "usd": {
+    "dhl": null,
+    "fedex": "48.51",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "37.20"
+   },
+   "match": false
+  },
+  {
+   "group": "no_sides",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "weight": "6"
+   },
+   "note": "weight only: the page asks for no sides",
+   "at": "2026-11-11T07:42:56Z",
+   "predicted": null,
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": false
+  },
+  {
+   "group": "no_sides",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "",
+    "width": "",
+    "height": "",
+    "weight": "6"
+   },
+   "note": "empty sides",
+   "at": "2026-11-11T07:42:57Z",
+   "predicted": null,
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": false
+  },
+  {
+   "group": "no_sides",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "weight": "30"
+   },
+   "note": "weight only: the page asks for no sides",
+   "at": "2026-11-11T07:42:59Z",
+   "predicted": null,
+   "raw": "0.00/507.06/0.00/0.00/711.07",
+   "usd": {
+    "dhl": null,
+    "fedex": "507.06",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "711.07"
+   },
+   "match": false
+  },
+  {
+   "group": "no_sides",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "",
+    "width": "",
+    "height": "",
+    "weight": "30"
+   },
+   "note": "empty sides",
+   "at": "2026-11-11T07:43:00Z",
+   "predicted": null,
+   "raw": "0.00/507.06/0.00/0.00/711.07",
+   "usd": {
+    "dhl": null,
+    "fedex": "507.06",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "711.07"
+   },
+   "match": false
+  },
+  {
+   "group": "no_sides",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "0",
+    "width": "0",
+    "height": "0",
+    "weight": "6"
+   },
+   "note": "zero sides",
+   "at": "2026-11-11T07:43:02Z",
+   "predicted": null,
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": false
+  },
+  {
+   "group": "no_sides",
+   "form": {
+    "country": "US",
+    "danwe": "1",
+    "length": "124",
+    "width": "",
+    "height": "",
+    "weight": "6"
+   },
+   "note": "one side only",
+   "at": "2026-11-11T07:43:03Z",
+   "predicted": null,
+   "raw": "0.00/113.71/0.00/0.00/139.23",
+   "usd": {
+    "dhl": null,
+    "fedex": "113.71",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "139.23"
+   },
+   "match": false
+  },
+  {
+   "group": "pounds_inches",
+   "form": {
+    "country": "US",
+    "danwe": "2",
+    "length": "48.8189",
+    "width": "7.8740",
+    "height": "6.2992",
+    "weight": "13.2277"
+   },
+   "note": "the box (124, 20, 16) cm, 6 kg in lb and in",
+   "at": "2026-11-11T07:43:04Z",
+   "predicted": null,
+   "raw": "0.00/136.12/0.00/0.00/159.57",
+   "usd": {
+    "dhl": null,
+    "fedex": "136.12",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "159.57"
+   },
+   "match": false
+  },
+  {
+   "group": "pounds_inches",
+   "form": {
+    "country": "US",
+    "danwe": "2",
+    "length": "48.4252",
+    "width": "15.7480",
+    "height": "12.5984",
+    "weight": "22.0462"
+   },
+   "note": "the box (123, 40, 32) cm, 10 kg in lb and in",
+   "at": "2026-11-11T07:43:06Z",
+   "predicted": null,
+   "raw": "0.00/539.89/0.00/0.00/635.98",
+   "usd": {
+    "dhl": null,
+    "fedex": "539.89",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "635.98"
+   },
+   "match": false
+  },
+  {
+   "group": "pounds_inches",
+   "form": {
+    "country": "US",
+    "danwe": "2",
+    "length": "3.9370",
+    "width": "3.9370",
+    "height": "3.9370",
+    "weight": "4.4203"
+   },
+   "note": "the box (10, 10, 10) cm, 2.005 kg in lb and in",
+   "at": "2026-11-11T07:43:07Z",
+   "predicted": null,
+   "raw": "0.00/67.07/0.00/0.00/66.33",
+   "usd": {
+    "dhl": null,
+    "fedex": "67.07",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "66.33"
+   },
+   "match": false
+  },
+  {
+   "group": "pounds_inches",
+   "form": {
+    "country": "US",
+    "danwe": "2",
+    "length": "23.6220",
+    "width": "15.7480",
+    "height": "9.8425",
+    "weight": "2.2046"
+   },
+   "note": "the box (60, 40, 25) cm, 1 kg in lb and in",
+   "at": "2026-11-11T07:43:08Z",
+   "predicted": null,
+   "raw": "0.00/193.04/0.00/0.00/228.97",
+   "usd": {
+    "dhl": null,
+    "fedex": "193.04",
+    "ems": null,
+    "ems_premium": null,
+    "shopnship_standard": "228.97"
+   },
+   "match": false
+  }
+ ]
+}

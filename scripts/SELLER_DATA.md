@@ -181,7 +181,8 @@ Description cleanup -> `description_clean.py`, `shared_images.py`
   (2026-11-07).
 
 ## Open questions (defaults taken, not yet confirmed by the owner)
-- Shipping into the price, or the price stays the cost (today: the cost; the operator decides).
+- Settled 2026-11-11: delivery, duty and margin are inside the price of a shop with the rule (scripts/README.md,
+  "The price").
 - Shared store images: half of a store's listing groups, at the start or end of a description only; does a banner
   linking to the store's own page (PGM-배너.jpg) count as a link banner (today: yes)?
 - A loft half a degree off: kept with a note (today) or bound to the matching variants? Keep dropped spec rows for

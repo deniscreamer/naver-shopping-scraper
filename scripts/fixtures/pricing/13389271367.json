@@ -1,0 +1,54 @@
+{
+ "key": "fairwardgolf:naver:100245430:13389271367",
+ "why": "level 5 from the seller's text, its sides written as floats (1210.0); UNIT_QUANTITY_PAID 99 000 KRW added",
+ "product": {"delivery": {"fee_type": "UNIT_QUANTITY_PAID", "base_fee": 99000}},
+ "variants": [
+  {
+   "sku": "FW-c83b4914788709871b3e2024",
+   "price_krw": 743100,
+   "package": {
+    "package_length_mm": {"confidence": 5, "source": "source_stated", "value": {"max": 1210.0, "min": 1210.0}},
+    "package_width_mm": {"confidence": 5, "source": "source_stated", "value": {"max": 200.0, "min": 200.0}},
+    "package_height_mm": {"confidence": 5, "source": "source_stated", "value": {"max": 160.0, "min": 160.0}},
+    "package_weight_g": {"confidence": 5, "source": "description_image", "value": {"max": 10800, "min": 10800}},
+    "product_weight_g": {"confidence": 3, "source": "composed", "value": {"max": 3679, "min": 3679}}
+   }
+  }
+ ],
+ "expected": [
+  {
+   "sku": "FW-c83b4914788709871b3e2024",
+   "cost": "846.00",
+   "price": 1399,
+   "breakdown": {
+    "rule": "landed/2",
+    "krwPerUsd": 1000,
+    "naverKrw": 743100,
+    "koreaDeliveryKrw": 99000,
+    "koreaFeeType": "UNIT_QUANTITY_PAID",
+    "purchaseUsd": 843,
+    "serviceUsd": "3.00",
+    "dutyRate": "0.125",
+    "dutyUsd": "105.38",
+    "costUsd": "846.00",
+    "box": {"cm": ["121", "20", "16"], "grossKg": "10.8", "billableKg": "10.80", "stepKg": "11"},
+    "level": 5,
+    "coefficient": "1.00",
+    "tariff": {"id": "shopnship-fedex-ip-kr-us", "checkedAt": "2026-11-11", "version": 1, "sha256": "b947de75554b9048"},
+    "gridUsd": "183.30",
+    "insideUsd": "0.00",
+    "deliveryUsd": "183.30",
+    "fees": [],
+    "feeUsd": "0.00",
+    "baseUsd": "1134.68",
+    "marginUsd": "149.81",
+    "keepUsd": "1284.49",
+    "paymentRate": "0.03",
+    "neededUsd": "1324.22",
+    "priceUsd": 1399,
+    "paymentUsd": "41.97",
+    "surplusUsd": "72.54"
+   }
+  }
+ ]
+}

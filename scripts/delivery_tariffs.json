@@ -1,0 +1,151 @@
+{
+ "about": "Delivery tariffs per partner, carrier, service and route, given by the operator and traced to a dated capture of the partner's calculator (never made up). A tariff: id, partner, carrier, service, origin, destination, currency, checked_at (the day of the capture), source (the capture file), divisor (volumetric weight = L x W x H in cm / divisor, in kg), weight_round (the billable weight is rounded to this, half up: a power of ten, 0.01 = hundredths), table ({weight step in kg: price of one box}: every step the partner's calculator has; the price is the row of the first step not under the billable weight; over the last step there is no price), surcharges (lines added to the base, each once per box when one of any_of holds: longest_cm_over, second_cm_over, length_girth_cm_over = longest + 2 x the two others, volume_cm3_over; amount in its own currency; min_billable_kg: when set, a box that pays the line is billed at that weight at least), table_note (where the steps come from), included_surcharge ({id, over_step_kg, usd}: a surcharge the partner's table already holds on every step over that weight; the surcharge of that id is then not added again), not_included (what the operator decided to leave out, with the date), approved_by, approved_at. shops: which tariff a shop's prices carry; it must agree with shop_pricing.POLICIES, which decides which shops carry delivery in the price (a test checks the two). A new or changed tariff raises version. history: one row per version of this file (version, date, what changed, the capture it rests on); the captures stay in fixtures/shopnship/ as the backup to compare a new capture with (shopnship_rates.py compare).",
+ "version": 1,
+ "history": [
+  {
+   "version": 1,
+   "date": "2026-11-11",
+   "tariff": "shopnship-fedex-ip-kr-us",
+   "source": "fixtures/shopnship/shopnship-us-20261111T072303Z.json",
+   "change": "First tariff: ShopNShip's FedEx International Priority, Korea to the US, 71 steps from 0.5 to 50 kg; the dimension fee KRW 35,600 once per box, inside the base over 25 kg."
+  }
+ ],
+ "shops": {
+  "fairwardgolf": "shopnship-fedex-ip-kr-us"
+ },
+ "tariffs": [
+  {
+   "id": "shopnship-fedex-ip-kr-us",
+   "partner": "ShopNShip",
+   "carrier": "FedEx",
+   "service": "International Priority",
+   "origin": "KR",
+   "destination": "US",
+   "currency": "USD",
+   "checked_at": "2026-11-11",
+   "source": "fixtures/shopnship/shopnship-us-20261111T072303Z.json",
+   "calculator": "https://shopnship.co.kr/en/help/shipping_calculator.php",
+   "divisor": 5000,
+   "weight_round": "0.01",
+   "table": {
+    "0.5": "42.49",
+    "1": "48.51",
+    "1.5": "58.10",
+    "2": "62.70",
+    "2.5": "67.07",
+    "3": "75.79",
+    "3.5": "81.92",
+    "4": "88.05",
+    "4.5": "94.20",
+    "5": "100.33",
+    "5.5": "108.10",
+    "6": "113.71",
+    "6.5": "119.31",
+    "7": "124.91",
+    "7.5": "130.52",
+    "8": "136.12",
+    "8.5": "141.71",
+    "9": "152.10",
+    "9.5": "157.88",
+    "10": "163.66",
+    "10.5": "178.42",
+    "11": "183.30",
+    "11.5": "188.16",
+    "12": "193.04",
+    "12.5": "197.92",
+    "13": "202.78",
+    "13.5": "207.66",
+    "14": "212.52",
+    "14.5": "217.39",
+    "15": "222.27",
+    "15.5": "227.13",
+    "16": "232.01",
+    "16.5": "258.78",
+    "17": "264.10",
+    "17.5": "269.42",
+    "18": "274.74",
+    "18.5": "280.08",
+    "19": "285.40",
+    "19.5": "290.72",
+    "20": "296.04",
+    "20.5": "301.36",
+    "21": "327.00",
+    "22": "343.42",
+    "23": "359.83",
+    "24": "376.25",
+    "25": "392.65",
+    "26": "441.42",
+    "27": "457.84",
+    "28": "474.24",
+    "29": "490.66",
+    "30": "507.06",
+    "31": "523.48",
+    "32": "539.89",
+    "33": "545.85",
+    "34": "561.37",
+    "35": "576.89",
+    "36": "592.41",
+    "37": "607.93",
+    "38": "623.44",
+    "39": "638.96",
+    "40": "654.48",
+    "41": "670.00",
+    "42": "685.52",
+    "43": "701.04",
+    "44": "716.56",
+    "45": "732.08",
+    "46": "747.60",
+    "47": "763.11",
+    "48": "778.63",
+    "49": "794.15",
+    "50": "809.67"
+   },
+   "surcharges": [
+    {
+     "id": "fedex_ahs_dimension",
+     "label": "FedEx Additional Handling Surcharge - Dimension",
+     "amount": "35600",
+     "currency": "KRW",
+     "per": "box",
+     "any_of": {
+      "longest_cm_over": 121,
+      "second_cm_over": 76,
+      "length_girth_cm_over": 266,
+      "volume_cm3_over": 169901
+     },
+     "source": "https://www.fedex.com/content/dam/fedex/international/rates/fedex-rates-sur-en-kr-2026.pdf",
+     "approved_by": "owner",
+     "approved_at": "2026-11-10",
+     "min_billable_kg": null,
+     "min_billable_note": "FedEx bills a box that pays this fee at 18 kg at least; left out (the owner, 2026-11-11: not seen on real invoices of long boxes). Set 18 here to switch it on, with a new version and a history line; the tariff's fingerprint changes, so the products are priced and sent again."
+    }
+   ],
+   "not_included": [
+    {
+     "what": "FedEx's 18 kg minimum billable weight for a box that pays the dimension fee",
+     "decided": "2026-11-11",
+     "why": "the owner: not seen on real shipments of long boxes; the switch is the fee's min_billable_kg"
+    },
+    {
+     "what": "fuel, insurance and the partner's other fees",
+     "decided": "2026-11-11",
+     "why": "the owner: inside the partner's tariff"
+    },
+    {
+     "what": "FedEx demand surcharges (KRW 7,200 per box and per kg), the residential delivery fee (KRW 4,400), the inbound processing fee (KRW 3,900), remote-area fees",
+     "decided": "2026-11-11",
+     "why": "the owner: left out for now, to be added if an invoice shows them; the partner's calculator states its fee excludes any remote area surcharge"
+    }
+   ],
+   "approved_by": "owner",
+   "approved_at": "2026-11-11",
+   "table_note": "Steps to 20 kg are the owner's table of 2026-11-11 (the capture agrees on all 40). Steps from 20.5 to 50 kg were captured from the partner's calculator the same day (twice, and crossed again by gross and by volume in two explorations): they are used instead of a fresh quote; the tariff is reviewed by hand (the owner, 2026-11-11). Over 50 kg the calculator gives no FedEx price: such a box has no price here.",
+   "included_surcharge": {
+    "id": "fedex_ahs_dimension",
+    "over_step_kg": 25,
+    "usd": "32.36",
+    "why": "Over 25 kg of billable weight every step of the partner's table holds a constant 32.36 USD more than the per-kilogram line under it (25 -> 26 kg: +48.77 against +16.41 per kg); the same shows for Japan, the United Kingdom, Germany and Canada (exploration of 2026-11-11): FedEx's additional handling fee, KRW 35,600 at the partner's 1,100 KRW per USD. A box billed over 25 kg already pays it inside its base: the dimension fee is not added again (the owner, 2026-11-11: the fee once per box)."
+   }
+  }
+ ]
+}

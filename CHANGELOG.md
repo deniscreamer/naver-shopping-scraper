@@ -5,6 +5,45 @@ version in `extension/manifest.json`.
 
 ## Unreleased
 
+- **Prices with delivery, duty and margin inside them** (the owner, 2026-11-11). In fairwardgolf every variant's
+  price comes from `shop_pricing.Policy.quote` under the rule `landed/2`: the purchase (the Naver price as shown,
+  the discount included, plus the seller's delivery in Korea when the listing's fee is PAID or
+  UNIT_QUANTITY_PAID; at the owner's constant 1 000 KRW = 1 USD, up to a dollar), ShopNShip's 3 USD, the US duty
+  prepaid (PDD, 12.5 % of the purchase whatever the country of manufacture), the delivery by the partner's tariff
+  times the coefficient of the box's least certain side (1.00 / 1.10 / 1.20 / 1.40 / 2.50 for levels 5 ... 1), FedEx's
+  dimension fee once per box, the margin (25 USD + 11 % of the base, never under 30), the payment system's 3 %,
+  then up to a number ending in 9 (99 from 1000). Shopify's cost per item is the purchase with the commission; the
+  duty is a line of its own in the price, never in the cost per item (`landed/1` of the same day had the margin on
+  the owner's points and the duty in the cost: replaced). A shop
+  without the rule keeps `krw-cost/1` (price = cost). The rule, its numbers, what it leaves out on purpose
+  (fuel and insurance are in the tariff, FedEx's 18 kg minimum is a switch, off) and the behaviours the owner
+  accepted after a review on the 120 products: scripts/README.md, "The price".
+- The delivery tariff as data (`delivery_tariff.py`, `delivery_tariffs.json` version 1 with a `history`):
+  ShopNShip's FedEx International Priority, Korea -> US, 71 steps from 0.5 to 50 kg, captured from the partner's
+  public calculator on 2026-11-11 (`shopnship_rates.py`: `quote`, `capture`, `compare`). The captures and two
+  explorations (`shopnship_explore.py`, 427 requests, every modelled answer equal to the model but one weight of
+  17 digits the server reads as a binary number) are in
+  `scripts/fixtures/shopnship/`, the backups a new capture is compared with. Over 25 kg the partner's steps
+  already hold FedEx's dimension fee (`included_surcharge`): it is not added again nor multiplied. A box over 50
+  kg, or a variant without a box, has no price: the product is held. The review of the tariff is by hand: a new
+  capture is compared, then adopted with a new version. AGENTS.md rule 3: the calculator is a new outside fetch,
+  by hand only, never in the price path.
+- Shopify: a new variant metafield `fairwardgolf.price` (`fairwardgolf-variant-price/1`: the whole breakdown, the
+  tariff's id, date and version included); the product's `pricing` is `fairwardgolf-pricing/2` in a shop with the
+  rule; the variant's `source.costUsd` is the cost per item. Add-ons: the rate only. The rule's
+  numbers and the tariff's version are in the publish digest: the next whole-shop `publish.py` run would send
+  every published product again.
+- The ledger row keeps `pricing` (the rule's version) and `prices_usd` [min, max]; a job's `published` event and
+  its done line show the price.
+- `reprice.py <shop>` for products already in the store: a dry-run table of old -> new prices (also a TSV under
+  `publish/`), `--apply` sends them through `publish.publish_one`, on the owner's word. New products get the rule
+  in the full flow (`job.py new --publish`). The 120 products of the store were moved to `landed/1`, then all 125
+  (with the 5 of a pilot job) to `landed/2` the same day, on the owner's word: every one of the 1 127 variants in the
+  store checked against the rule (price and cost per item), 939 to 5 099 USD.
+- Tests: `test_shop_pricing.py` on real products cut down to what the rule reads (`fixtures/pricing/`,
+  `UPDATE_GOLDEN=1`), `test_delivery_tariff.py`, `test_shopnship_rates.py`, `test_shopnship_explore.py`, `test_reprice.py`;
+  `scripts/conftest.py` fails any test of the folder that opens a network connection.
+
 - Package weight and size of golf sets: the flat category default is now the last resort (the owner,
   2026-11-10; it replaces "the larger value wins" of 2026-11-07). A field takes the seller's own statement of it
   (the server path's value, never replaced; else a packed weight, a box or a set weight read in the description's

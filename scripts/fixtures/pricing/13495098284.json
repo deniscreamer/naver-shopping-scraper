@@ -1,0 +1,54 @@
+{
+ "key": "fairwardgolf:naver:500262847:13495098284",
+ "why": "level 4: the same Callaway Edge box read from an image, x 1.10; free delivery in Korea",
+ "product": {"delivery": {"fee_type": "FREE", "base_fee": 0}},
+ "variants": [
+  {
+   "sku": "FW-15cb045e8b321a026b9bd991",
+   "price_krw": 898000,
+   "package": {
+    "package_length_mm": {"confidence": 4, "source": "description_image", "value": {"max": 1210, "min": 1210}},
+    "package_width_mm": {"confidence": 4, "source": "description_image", "value": {"max": 200, "min": 200}},
+    "package_height_mm": {"confidence": 4, "source": "description_image", "value": {"max": 160, "min": 160}},
+    "package_weight_g": {"confidence": 4, "source": "description_image", "value": {"max": 10800, "min": 10800}},
+    "product_weight_g": {"confidence": 3, "source": "composed", "value": {"max": 3679, "min": 3679}}
+   }
+  }
+ ],
+ "expected": [
+  {
+   "sku": "FW-15cb045e8b321a026b9bd991",
+   "cost": "901.00",
+   "price": 1499,
+   "breakdown": {
+    "rule": "landed/2",
+    "krwPerUsd": 1000,
+    "naverKrw": 898000,
+    "koreaDeliveryKrw": 0,
+    "koreaFeeType": "FREE",
+    "purchaseUsd": 898,
+    "serviceUsd": "3.00",
+    "dutyRate": "0.125",
+    "dutyUsd": "112.25",
+    "costUsd": "901.00",
+    "box": {"cm": ["121", "20", "16"], "grossKg": "10.8", "billableKg": "10.80", "stepKg": "11"},
+    "level": 4,
+    "coefficient": "1.10",
+    "tariff": {"id": "shopnship-fedex-ip-kr-us", "checkedAt": "2026-11-11", "version": 1, "sha256": "b947de75554b9048"},
+    "gridUsd": "183.30",
+    "insideUsd": "0.00",
+    "deliveryUsd": "201.63",
+    "fees": [],
+    "feeUsd": "0.00",
+    "baseUsd": "1214.88",
+    "marginUsd": "158.64",
+    "keepUsd": "1373.52",
+    "paymentRate": "0.03",
+    "neededUsd": "1416.00",
+    "priceUsd": 1499,
+    "paymentUsd": "44.97",
+    "surplusUsd": "80.51"
+   }
+  }
+ ]
+}

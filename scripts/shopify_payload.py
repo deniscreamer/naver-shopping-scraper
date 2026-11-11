@@ -9,13 +9,18 @@ One product is built in two steps, because the reviews' files must be on Shopify
 
 The owner's rules:
 - English everywhere from the translation (by text id); a text without English stops the product (`Untranslated`).
-- Price: KRW kept in metafields; cost = KRW at 1 000 = 1 USD rounded up to a dollar; price = cost through the shop's
-  margin hook (shop_pricing.py, none yet). No compare-at price.
+- Price: per variant from shop_pricing.Policy.quote: in a shop with the delivery rule (fairwardgolf, 2026-11-11) the
+  price holds the purchase, the duty, the delivery by the partner's tariff and the margin, the cost per item is the
+  purchase with ShopNShip's commission (the duty is a line of the price, never in the cost), and the variant's
+  fairwardgolf.price says how; elsewhere cost = price =
+  KRW at 1 000 = 1 USD up to a dollar. A variant that cannot be priced holds the product (PayloadError). No
+  compare-at price.
 - Buyable: every variant is untracked and sold without limit (CONTINUE), one sold out on Naver too (the owner,
   2026-11-09: the site opens buying later); `available` in the variant's fairwardgolf.source says which it is.
 - A seller's "1+1" listing repeats one option (two sets, one flex each): an option with the same English name and
   the same values as an earlier one, which no price depends on, is one option (the owner, 2026-11-09).
-- No description (descriptionHtml empty), no HS / origin codes, no delivery data, no facts, no gender metafield
+- The description from describe.py when there is one; no HS / origin codes, no delivery data as such (the delivery
+  is inside the price; the variant's fairwardgolf.price says how), no facts, no gender metafield
   (the gender places the product: tags and type come from placement.py).
 - Photos: the product's gallery, alt "<brand> <title> - photo N" (the brand once when the title starts with it); a
   product with fewer than GALLERY_MIN photos gets buyers' photos after its own, up to GALLERY_MAX in all
@@ -32,7 +37,7 @@ import unicodedata
 from typing import Any
 
 from review_clean import cut_english
-from shop_pricing import Policy, money
+from shop_pricing import Policy, PriceError, money
 from transform import text_id
 
 VERSION = "payload/10"                         # bump on a change of what this module builds: every product is sent again
@@ -463,8 +468,11 @@ def _variants(prepared: dict[str, Any], options: list[dict[str, Any]], values_en
             raise PayloadError(f"two variants with the same options {combo}")
         seen.add(combo)
         krw = int(v["price_krw"])
-        cost = pricing.cost_usd(krw)
-        price = pricing.price_usd(cost, {"variant": v, "product": product})
+        try:
+            quote = pricing.quote(v, product)
+        except PriceError as e:
+            raise PayloadError(f"variant {v.get('sku')}: {e}") from None
+        cost, price = quote.cost, quote.price
         available = bool(v.get("available"))
         item: dict[str, Any] = {"tracked": False, "cost": money(cost), "requiresShipping": True}
         weight = _weight_g(v)
@@ -476,8 +484,12 @@ def _variants(prepared: dict[str, Any], options: list[dict[str, Any]], values_en
             "metafields": [{"namespace": "fairwardgolf", "key": "source", "type": "json", "value": _json({
                 "schemaVersion": "fairwardgolf-variant-source/1", "naverVariantId": v.get("naver_variant_id"),
                 "sourceId": v.get("source_id"), "optionsKo": v.get("options_ko") or [], "priceKrw": krw,
-                "costUsd": cost, "priceUsd": price, "available": available})}],
+                "costUsd": float(cost) if cost != int(cost) else int(cost), "priceUsd": price,
+                "available": available})}],
         }
+        if quote.breakdown:
+            variant["metafields"].append({"namespace": "fairwardgolf", "key": "price", "type": "json", "value": _json({
+                "schemaVersion": "fairwardgolf-variant-price/1", **quote.breakdown})})
         package = _package(v)
         if package:
             variant["metafields"].append({"namespace": "fairwardgolf", "key": "package", "type": "json",
@@ -645,7 +657,8 @@ def product_input(prepared: dict[str, Any], translated: dict[str, Any], placemen
             "run": source.get("run"), "titleKo": product["title_ko"], "brandKo": product.get("brand_ko"),
             "priceKrw": base.get("base_krw"), "originalPriceKrw": base.get("original_krw")})},
         {"namespace": "fairwardgolf", "key": "pricing", "type": "json", "value": _json({
-            "schemaVersion": "fairwardgolf-pricing/1", **pricing.describe()})},
+            "schemaVersion": "fairwardgolf-pricing/2" if pricing.delivered else "fairwardgolf-pricing/1",
+            **pricing.describe()})},
     ]
     rating = product.get("rating") or {}
     if rating.get("count"):

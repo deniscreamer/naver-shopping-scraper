@@ -27,8 +27,9 @@ def _product(options=True, available=(True, False), reviews=True, extras=True):
         variants.append({"available": ok, "naver_variant_id": f"9{i}", "options_ko": ["빨강", f"{i + 1}번"] if options
                          else [], "price_krw": 5560 + i * 1000, "price_usd": "5.56", "sku": f"FW-{i}",
                          "source_id": f"s{i}", "today_dispatch": None,
-                         "package": {"package_weight_g": {"central": 4500, "confidence": 1, "low": 3600,
-                                                          "high": 5800, "source": "category_default"}}})
+                         "package": {f: {"central": c, "confidence": 1, "source": "category_default"} for f, c in
+                                     (("package_weight_g", 4500), ("package_length_mm", 1250),
+                                      ("package_width_mm", 280), ("package_height_mm", 230))}})
     product = {
         "title_ko": "[오늘출고] 캘러웨이 레바 풀세트", "brand_ko": "캘러웨이",
         "options": [{"name_ko": "색상", "values_ko": ["빨강"]},
@@ -84,9 +85,10 @@ def test_cost_rounds_up_to_a_dollar_at_1000_krw():
     assert p.cost_usd(5560) == 6 and p.cost_usd(5000) == 5 and p.cost_usd(1_449_900) == 1450 and p.cost_usd(0) == 0
 
 
-def test_price_is_the_cost_until_a_margin_rule_exists():
-    assert Policy().price_usd(6) == 6
-    assert Policy(margin=lambda cost, ctx: cost * 2).price_usd(6) == 12        # the hook the owner fills later
+def test_a_shop_without_the_delivery_rule_sells_at_the_cost():
+    q = Policy().quote({"price_krw": 5560}, {})
+    assert (q.cost, q.price, q.breakdown) == (6, 6, None) and Policy().price_usd(6) == 6
+    assert policy("another")  == Policy() and policy("another").describe()["version"] == "krw-cost/1"
 
 
 # ---- payload ----------------------------------------------------------------------------------------------------
@@ -126,11 +128,17 @@ def test_a_repeated_option_at_one_price_is_one_option():
 
 def test_variant_price_cost_weight_and_metafields():
     v = _build(*_product())["variants"][0]
-    assert v["price"] == "6.00" and v["inventoryItem"]["cost"] == "6.00" and "compareAtPrice" not in v
+    assert v["price"] == "819.00" and v["inventoryItem"]["cost"] == "9.00" and "compareAtPrice" not in v
     assert v["inventoryItem"]["measurement"] == {"weight": {"value": 4500, "unit": "GRAMS"}}
     assert v["optionValues"] == [{"optionName": "Color", "name": "Red"}, {"optionName": "Number", "name": "#1"}]
     source = json.loads(_mf(v["metafields"], "fairwardgolf", "source")["value"])
-    assert source["priceKrw"] == 5560 and source["costUsd"] == 6 and source["available"] is True
+    assert source["priceKrw"] == 5560 and source["costUsd"] == 9 and source["priceUsd"] == 819
+    assert source["available"] is True
+    price = json.loads(_mf(v["metafields"], "fairwardgolf", "price")["value"])      # the default box, level 1
+    assert price["schemaVersion"] == "fairwardgolf-variant-price/1" and price["level"] == 1
+    assert (price["purchaseUsd"], price["dutyUsd"], price["costUsd"], price["gridUsd"], price["coefficient"],
+            price["deliveryUsd"], price["feeUsd"], price["marginUsd"], price["priceUsd"]) == (
+        6, "0.75", "9.00", "258.78", "2.50", "646.95", "35.60", "101.15", 819)
     package = json.loads(_mf(v["metafields"], "fairwardgolf", "package")["value"])
     assert package["fields"]["package_weight_g"]["confidence"] == 1
 
@@ -179,8 +187,17 @@ def test_product_metafields_reviews_text_fields_addons_source():
     source = json.loads(_mf(mfs, "fairwardgolf", "source")["value"])
     assert source["url"] == "https://smartstore.naver.com/x/products/555" and source["priceKrw"] == 5560
     assert _mf(mfs, "fairwardgolf", "source_offer_id")["value"] == KEY
-    assert json.loads(_mf(mfs, "fairwardgolf", "pricing")["value"])["krwPerUsd"] == 1000
+    pricing = json.loads(_mf(mfs, "fairwardgolf", "pricing")["value"])
+    assert pricing["schemaVersion"] == "fairwardgolf-pricing/2" and pricing["krwPerUsd"] == 1000
+    assert pricing["coefficients"] == {"5": "1.00", "4": "1.10", "3": "1.20", "2": "1.40", "1": "2.50"}
     assert not [m for m in mfs if "gender" in m["key"] or "fact" in m["key"] or "deliver" in m["key"]]
+
+
+def test_a_variant_without_a_box_holds_the_product():
+    prepared, translated, placement = _product()
+    del prepared["product"]["variants"][1]["package"]["package_width_mm"]
+    with pytest.raises(sp.PayloadError, match="FW-1: no package box"):
+        _build(prepared, translated, placement)
 
 
 def test_no_reviews_no_review_metafields():
