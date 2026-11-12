@@ -3,7 +3,7 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
-## Unreleased
+## 0.16.0 (2026-11-12)
 
 - **Brands** (the junior clubs' 30, 2026-11-12): a trading company's name is no brand (`brand_fallback.trade_name`:
   상점, 상사, 홀딩(스), 무역, 유통, 인터내셔널, ...; "X 협력사 / 협력업체" is X's): a shop wrote 세모물상점 as the
