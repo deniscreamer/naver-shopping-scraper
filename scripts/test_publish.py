@@ -661,3 +661,10 @@ def test_the_two_real_long_titles_within_googles_limit():
     assert sp.fit_title(long["8514409092"], 70) == "GV Tour 2026 New Great Victory Complete Golf Club Set for Beginner"
     assert sp.fit_title(long["6655509590"], 100) == ("Mutsumi Honma Premium Gold 2-Star High-Rebound Women's Mixed "
                                                      "Complete Set 10 Pcs Driver Wood 7-Piece")
+
+
+def test_a_dry_run_spells_the_vendor_as_the_real_run(tmp_path):
+    """2026-11-11: a dry run without the store wrote "maruman" and "Fairward Golf <title>"; it takes the brand
+    dictionary's spellings and the tenant's name offline."""
+    ids = PB.offline_ids("fairwardgolf")
+    assert ids["tenant"] == "Fairward Golf" and ids["vendors"].get("maruman") == "Maruman"

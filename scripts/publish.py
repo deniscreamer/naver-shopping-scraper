@@ -268,6 +268,14 @@ def vendor_spellings(store: dict[str, str]) -> dict[str, str]:
     return out
 
 
+def offline_ids(shop: str) -> dict[str, Any]:
+    """What a dry run knows without the store: the brand dictionary's vendor spellings and the tenant's name, so its
+    payload spells the vendor and the title as the real run does (2026-11-11: without them a dry run wrote "maruman"
+    for Maruman and put "Fairward Golf" before a title of the shop's own brand, and read as a regression). The
+    shop's own spellings of brands the dictionary lacks come only with the store."""
+    return {"vendors": vendor_spellings({}), "tenant": get_store(shop).publisher}
+
+
 def clients(shop: str) -> tuple[Any, Any, dict[str, Any]]:
     from shopify_admin import FilesAdmin, ProductsAdmin
     store = get_store(shop)
@@ -295,7 +303,7 @@ def main(argv: list[str] | None = None) -> int:
     for k in set(args.only) - set(ready):
         print(f"{k}: not ready (needs prepared ready, translated, placed)", file=sys.stderr)
     products = files = None
-    ids: dict[str, Any] = {}
+    ids: dict[str, Any] = offline_ids(args.shop)
     if not args.dry_run and keys:
         products, files, ids = clients(args.shop)
     counts: dict[str, int] = {}
