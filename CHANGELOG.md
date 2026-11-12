@@ -32,6 +32,10 @@ version in `extension/manifest.json`.
   515 titles of 50002787 (toys, play sticks, educational toys, gloves, an iron cover, loose heads and shafts, an
   adult-club store, a book: 46 of 56 misfits, no product that fits) and 351 of 50002788 (park golf, a woods-only
   "풀세트"). One published junior product matches (4987660149, soft clubs, 교구): left for the owner.
+- **A cap on reviews** (`review_pick`, in `collect_product`): a product with more than 8 chosen reviews keeps the 8
+  that say most of the product, 3 photos each and 12 in all, before any photo is downloaded; sponsored reviews go,
+  a fair low score stays, a text repeated word for word is taken once. On the 10 junior products: 16-20 reviews
+  and 13-36 photos -> 8 reviews and 8-12 photos. Full sets (1-2 reviews) are left as they came.
 - Dictionaries: 108 entries of the junior run backed up, 8 set by hand first (an age lost from "01.9-12세 퍼터",
   호수 = Size, 선택하세요 = Option).
 

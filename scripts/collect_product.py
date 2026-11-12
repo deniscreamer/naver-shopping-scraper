@@ -2,7 +2,8 @@
 per-product step, moved here so a job can call it one product at a time; example_99 and job.py share it).
 
     details   /products/details           prices, stock, category path, notice, description, facts
-    reviews   /products/reviews/selected  up to `reviews` worth showing, with photos
+    reviews   /products/reviews/selected  up to `reviews` worth showing, with photos; more than review_pick.KEEP: the
+                                          best of them by what they say, their photos capped (review_pick)
     specs     /products/specs             the page's 상품정보 rows, options, weight / size candidates (the owner's
                                           Chrome: search -> card -> page); by the product's name first, then the
                                           listing's query (2026-11-05: the listing's search did not show the card on
@@ -17,7 +18,7 @@ kind: "wall:", "naver error page:", "adapter error:"; ENDPOINTS.md), a 502 "bloc
 
     outcome = guard.run(key, lambda: collect(api, store, table, row, media_dir, query=QUERY, category=CATEGORY))
 """
-from typing import Any
+from typing import Any, cast
 
 import naver_types as T
 from collect_guard import Outcome, SourceStopped
@@ -25,6 +26,7 @@ from naver_api_client import ApiError, NaverApiClient
 from naver_images import download_gallery, download_review_media, posters_as_photos
 from naver_variants import choose_variants
 from package_measures import variant_measures
+from review_pick import pick
 
 
 def specs_for(api: NaverApiClient, link: str, query: str | None) -> T.ProductSpecs | None:
@@ -64,6 +66,9 @@ def collect(api: NaverApiClient, store: Any, table: dict, row: T.ListingRow, med
     if page_category != category:                    # the page's category differs from the listing card's
         return Outcome("not_taken", "category_mismatch", f"page category {page_category}")
     package = variant_measures(specs, table)          # the run's table row was checked before the run
+    kept, summary = pick(picked["results"], category)  # many reviews: the best KEEP, their photos capped, before any
+    if summary:                                        # photo is fetched (review_pick; the owner, 2026-11-11)
+        picked = cast(T.SelectedReviews, {**picked, "results": kept, "count": len(kept), "picked": summary})
     photos = download_gallery(details["images"], media_dir, store, details["id"])
     if photos["stopped"]:
         raise SourceStopped(f"image CDN: {photos['stopped']}", status=None, error=photos["stopped"])

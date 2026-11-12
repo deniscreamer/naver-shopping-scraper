@@ -233,7 +233,12 @@ product, and in a job made with `--publish` placement and publication too. The
 browser stays on the job's search tab (the server searches the next product in it and closes the product tab); a
 login page is reset from naver.com, a captcha waits for the owner. How an agent runs it: [JOB_AGENT.md](JOB_AGENT.md);
 files, waits and stops: the `job.py` docstring. The per-product collect is `collect_product.collect`, shared with
-example_99.
+example_99. Reviews: the server chooses up to 20 (`/products/reviews/selected`); a product with more than 8 keeps
+the 8 that say most of the product (`review_pick`: review_clean's text quality, a full text, "helpful" votes,
+several photos; a purchase story without the product loses; sponsored ones go, a fair low score stays, a text
+repeated word for word is taken once), 3 photos each and 12 in all, before any photo is downloaded (the owner,
+2026-11-11: 50002787's 19-20 reviews and 20-36 photos a product had doubled its collection time). The choice is in
+the collected line, `reviews.picked`.
 
 ```sh
 .venv/bin/python scripts/job.py new --query "남성 골프채 풀세트" --category 50002788 --count 40 --paid

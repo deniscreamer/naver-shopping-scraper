@@ -101,8 +101,9 @@ last step.
    a wrong id. Then `job.py run` collects, reads the images and prepares. `stop: prepare: ShopRulesMissing` means
    A2. `Untranslated` means the translation. OCR `off` is the owner's choice (`description_images=False`), not a
    missing rule.
-   Cheap, popular categories carry many reviews: 50002787 scanned a median 134 reviews a product (sets: 1), so
-   collection took 47-186 s a product against 45-65 s.
+   Cheap, popular categories carry many reviews: 50002787 scanned a median 134 reviews a product (sets: 1) and
+   kept 19-20 with 20-36 photos, so collection took 47-186 s a product against 45-65 s. Since 2026-11-11 a product
+   with more than 8 chosen reviews keeps the 8 best, 3 photos each, 12 in all (`review_pick`).
 5. Read 2-3 products by hand: package fields and confidence, title, description. Run `placement.py <shop>` and check
    that nothing is `no_profile` or `unresolved` (A3). Then run `publish.py <shop> --dry-run`: it builds only what is
    ready, translated and placed. Read the price breakdown in `shops/<shop>/publish/payloads/<id>.json`: the
