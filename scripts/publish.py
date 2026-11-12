@@ -26,6 +26,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import sys
 from datetime import datetime, timezone
 from typing import Any
@@ -178,6 +179,49 @@ def gallery(shop: "Shop", prepared: dict[str, Any]) -> list[dict[str, Any]]:
     return [{"file": rel, "sha256": info[rel]["sha256"]} for rel in sp.review_gallery(prepared, info, skip)]
 
 
+# A photo's file name carries its content's hash ("fairwardgolf-12211893510-007-73e48f31ce6df744.webp"); Shopify
+# adds "_<uuid>" to a name it already holds.
+_MEDIA_SHA = re.compile(r"-([0-9a-f]{16})(?:_[0-9a-f-]+)?\.[a-z]+(?:\?|$)")
+
+
+def _unique(images: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Each photo once (12211893510, 2026-11-12: the seller's gallery held its first photo twice; Shopify kept it
+    once, the ledger paired the photos with the media by position, and the next update sent every media id one
+    place off: the store lost the first photo and showed the putter twice)."""
+    seen: set[str] = set()
+    return [img for img in images if not (img["sha256"] in seen or seen.add(img["sha256"]))]
+
+
+def _sha16(media: dict[str, Any]) -> str | None:
+    found = _MEDIA_SHA.search(((media.get("image") or {}).get("url") or "").split("/")[-1])
+    return found.group(1) if found else None
+
+
+def _on_store(product: dict[str, Any], images: list[dict[str, Any]]) -> dict[str, str]:
+    """{photo sha256: the store's media id} for the photos the store holds, read from its media's file names; a
+    media whose name carries no hash, or a second media of one photo, is left out (productSet then drops it)."""
+    by16 = {img["sha256"][:16]: img["sha256"] for img in images}
+    out: dict[str, str] = {}
+    for m in product.get("media", {}).get("nodes") or []:
+        sha = by16.get(_sha16(m) or "")
+        if sha and sha not in out and m.get("status") != "FAILED":
+            out[sha] = m["id"]
+    return out
+
+
+def _ledger_photos(images: list[dict[str, Any]], media: list[dict[str, Any]]) -> list[dict[str, str]]:
+    """The ledger's photos: each media paired with its photo by the hash in its file name, by position when a name
+    carries none."""
+    out, by16 = [], {img["sha256"][:16]: img["sha256"] for img in images}
+    for i, m in enumerate(media):
+        if m["status"] == "FAILED":
+            continue
+        sha = by16.get(_sha16(m) or "") or (images[i]["sha256"] if i < len(images) else None)
+        if sha and all(p["sha256"] != sha for p in out):
+            out.append({"sha256": sha, "media_id": m["id"]})
+    return out
+
+
 def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, Any], force: bool = False,
                 dry_run: bool = False, rehandle: bool = False) -> dict[str, Any]:
     """One product to Shopify -> its ledger row (status published / skipped / dry-run)."""
@@ -209,7 +253,7 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
     rows = sp.reviews(prepared, en, urls)
     body = json.dumps(rows, ensure_ascii=False, separators=(",", ":")).encode()
     feed_sha = hashlib.sha256(body).hexdigest()[:24] if rows else None
-    images = list(prepared["product"].get("images") or []) + extra
+    images = _unique(list(prepared["product"].get("images") or []) + extra)
     output = output_digest(sp.product_input(
         prepared, translated, placement, pricing, "check", [{"id": img["sha256"]} for img in images],
         f"sha:{feed_sha}" if feed_sha else None, rows, handle_override="check", vendors=ids.get("vendors"),
@@ -238,6 +282,8 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
                 break
             handle, n = f"{base}-{n}", n + 1
     on_product = {p["sha256"]: p["media_id"] for p in (before or {}).get("photos") or []} if product_id else {}
+    if product_id and not dry_run:                  # the store's own media, by the hash in their file names: the
+        on_product = _on_store(products.media_ready(product_id), images) or on_product   # ledger can be wrong
     upload = [img for img in images if img["sha256"] not in on_product]
     staged = dict(zip((img["file"] for img in upload), [f"dry-run:{img['file']}" for img in upload] if dry_run else
                       products.stage_many([(shop.path(img["file"]), "IMAGE", None) for img in upload])))
@@ -270,8 +316,7 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
            "digest": None if failed else digest,                  # a failed photo: the next run sends it again
            "output": None if failed else output,
            "product_id": product["id"], "handle": product["handle"], "created": not product_id,
-           "photos": [{"sha256": img["sha256"], "media_id": m["id"]} for img, m in zip(images, media)
-                      if m["status"] != "FAILED"],
+           "photos": _ledger_photos(images, media),
            "photos_failed": failed, "reviews": len(rows), "feed_url": feed_url,
            "pricing": pricing.describe()["version"], "prices_usd": prices_of(payload),
            "admin_url": f"https://admin.shopify.com/store/{products.shop.domain.split('.')[0]}/products/"

@@ -53,3 +53,13 @@ def test_each_kind_of_change_is_named():
 def test_the_output_digest_leaves_the_handle_out():
     assert P.output_digest(PAYLOAD) == P.output_digest({**PAYLOAD, "handle": "another"})
     assert P.output_digest(PAYLOAD) != P.output_digest({**PAYLOAD, "title": "Junior Putter 2"})
+
+
+def test_photos_are_compared_in_order_by_their_hashes():
+    from store_diff import compare
+    live = {"title": "", "vendor": "", "productType": "", "status": "", "tags": [], "variants": {"nodes": []},
+            "metafields": {"nodes": []}, "options": []}
+    payload = {"tags": [], "variants": []}
+    assert compare(payload, live, None, ["a", "b"], ["a", "b"]) == []
+    assert compare(payload, live, None, ["a", "b"], ["b", "b"]) == ["photos: 2 -> 2 (order or content)"]
+    assert compare(payload, live, None, ["a"], ["a", "a"]) == ["photos: 2 -> 1"]

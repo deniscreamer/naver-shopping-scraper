@@ -10,8 +10,8 @@ For each product in the ledger (publish/published.jsonl) it builds what publish.
 run: no upload, no write) and reads the product from the store (Admin API, the catalog app's read access), then
 compares what Shopify keeps: title, vendor, type, tags, status, body, SEO title, options, each variant (by SKU:
 price, option values, its metafields), the product's metafields (the reviews' feed by its content hash), the
-photos (by the hashes the ledger recorded). Out: one line per product that would change, with the fields, and
-shops/<shop>/publish/store_diff.json. A published product that cannot be built now (no longer ready, translated
+photos (the store's media by the hash in their file names, in order). Out: one line per product that would
+change, with the fields, and shops/<shop>/publish/store_diff.json. A published product that cannot be built now (no longer ready, translated
 or placed: an untranslated paid variant, a placement lost) is listed apart: publish.py would leave it as it is.
 
 --adopt: a product whose store data equals what would be sent gets a ledger row with today's `output` (the hash of
@@ -31,6 +31,7 @@ from shop_stores import get_store
 QUERY = """query($ids: [ID!]!) { nodes(ids: $ids) { ... on Product {
   id title vendor productType status tags descriptionHtml seo { title }
   options { name values }
+  media(first: 60) { nodes { ... on MediaImage { image { url } } } }
   metafields(first: 60) { nodes { namespace key value } }
   variants(first: 100) { nodes { sku price selectedOptions { name value } metafields(first: 10) {
     nodes { namespace key value } } } }
@@ -96,7 +97,7 @@ def compare(payload: dict[str, Any], live: dict[str, Any], feed_sha: str | None,
             out.append(f"{k[0]}.{k[1]}")
     out += [f"{k[0]}.{k[1]} (deleted)" for k in P.sp.MANAGED if k in lm and k not in sent]
     if photos != images:
-        out.append(f"photos: {len(photos)} -> {len(images)}")
+        out.append(f"photos: {len(photos)} -> {len(images)}" + ("" if len(photos) != len(images) else " (order or content)"))
     return list(dict.fromkeys(out))
 
 
@@ -144,8 +145,10 @@ def main(argv: list[str] | None = None) -> int:
                 continue
             with open(row["payload"], encoding="utf-8") as f:
                 payload = json.load(f)
-            photos = [p["sha256"] for p in ledger[key].get("photos") or []]
-            diff = compare(payload, live, row["feed_sha"], row["images"], photos)
+            # the store's own photos, by the hash in their file names (2026-11-12: the ledger said 12211893510 had
+            # 6 of its 7 photos; the store had lost the first and showed the putter twice)
+            photos = [P._sha16(m) or "?" for m in (live.get("media") or {}).get("nodes") or []]
+            diff = compare(payload, live, row["feed_sha"], [s[:16] for s in row["images"]], photos)
             if diff:
                 report["changes"][key] = diff
                 continue

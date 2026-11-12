@@ -694,3 +694,32 @@ def test_vendor_spellings_join_one_brand_whatever_its_dots(monkeypatch):
     spell = PB.vendor_spellings(store)
     assert spell[PB.sp.brand_key("U.S.KIDSGOLF")] in ("U.S. Kids Golf",)
     assert PB.sp.vendor_name("U.S.KIDSGOLF", spell) == "U.S. Kids Golf"
+
+
+# 12211893510, 2026-11-12: the seller's gallery held its first photo twice; Shopify kept it once, the ledger paired
+# photos and media by position, the next update sent every media id one place off (the first photo lost, the
+# putter twice)
+_A, _B, _C = "8dddab04e6ede853" + "0" * 48, "a0f5fbcd0e6606c9" + "0" * 48, "73e48f31ce6df744" + "0" * 48
+
+
+def _media(mid, sha16, status="READY", suffix=""):
+    return {"id": mid, "status": status,
+            "image": {"url": f"https://cdn.shopify.com/s/files/1/x/files/fairwardgolf-1-001-{sha16}{suffix}.webp?v=1"}}
+
+
+def test_each_photo_is_sent_once():
+    images = [{"file": "1", "sha256": _A}, {"file": "2", "sha256": _A}, {"file": "3", "sha256": _B}]
+    assert [i["file"] for i in PB._unique(images)] == ["1", "3"]
+
+
+def test_the_ledger_pairs_media_and_photos_by_the_hash_in_their_names():
+    images = [{"sha256": _A}, {"sha256": _B}, {"sha256": _C}]
+    media = [_media("m1", _B[:16]), _media("m2", _C[:16]), _media("m3", _A[:16], "FAILED")]
+    assert PB._ledger_photos(images, media) == [{"sha256": _B, "media_id": "m1"}, {"sha256": _C, "media_id": "m2"}]
+
+
+def test_an_update_reuses_the_stores_media_found_by_hash():
+    product = {"media": {"nodes": [_media("m1", _B[:16]), _media("m2", _C[:16]),
+                                   _media("m3", _C[:16], suffix="_60a81808-e1e5-4b6f-9c1e-1d2f3a4b5c6d")]}}
+    images = [{"sha256": _A}, {"sha256": _B}, {"sha256": _C}]
+    assert PB._on_store(product, images) == {_B: "m1", _C: "m2"}      # the second putter is dropped; A uploaded

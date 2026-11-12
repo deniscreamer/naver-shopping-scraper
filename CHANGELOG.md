@@ -22,6 +22,12 @@ version in `extension/manifest.json`.
   year is no club count for the package kind (four single junior clubs had the set's box, $709-729 -> $259-289).
   Two measures fixtures (5396141262, 6849582078). 363 new dictionary entries read by a review and an adversarial check: 11 non-brands
   out of the brand dictionary, 20 entries corrected (option names fit to one product: 모델선택 "Age Group" -> Model).
+- **A photo twice in a seller's gallery broke the store's photos** (12211893510, 2026-11-12): Shopify kept it once,
+  the ledger paired photos and media by position, and the next update sent every media id one place off (the first
+  photo lost, the putter twice). Each photo is sent once (`publish._unique`); media and photos are paired by the
+  hash in their file names (`_ledger_photos`), and an update reuses the store's own media found that way
+  (`_on_store`), not the ledger's. `store_diff.py` reads the store's media instead of the ledger: 4 products
+  differed (12211893510 and three with one photo shown twice).
 - **The run's leftovers** (2026-11-12): a brand the dictionary knows at the start of a title is the brand (Franklin
   Sports, published again); a purchase agency's junior import with no brand is held (`agency_needs_brand`) and four
   such were withdrawn (three no-name sets at $1499-1899, UTIMATE); a school pack of ten irons is left out by the title
