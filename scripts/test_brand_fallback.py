@@ -100,3 +100,51 @@ def _rows(name):
 def test_the_images_name_the_maker_when_the_seller_names_a_trader(name, title, origin, brand):
     got, source, _ = B.decide(title, origin, ["인파로", "PGM", "스컬독", "아화"], _rows(name))
     assert (got, source) == (brand, "images_text")
+
+
+@pytest.mark.parametrize("name, brand", [
+    # 2026-11-12, junior clubs: what sellers write in the 브랜드 / 제조사 rows
+    ("코알라(200874)", "코알라"), ("지브이골프코리아(자체제작 상품)", "지브이골프코리아"), ("던롭 던롭", "던롭"),
+    ("(주)감씨", "감씨"), ("진월드스타 어린이용 주니어 골프 클럽 아이언 퍼터 드라이버", "진월드스타"),
+    ("6~8세 퍼터", None), ("우리쇼핑하자 협력 업체", None), ("유무상회", None), ("건이네 만물상", None),
+    ("상아네", None), ("세모물상점", None), ("유니코스 협력사", "유니코스"),
+    ("GB", "GB"), ("핑", "핑"), ("아화골프", "아화골프"), ("U.S. Kids Golf", "U.S. Kids Golf"),
+    ("혼마코리아", "혼마코리아"), ("US키즈골프", "US키즈골프"), ("", None),
+])
+def test_a_sellers_brand_row_cleaned(name, brand):
+    assert B.clean(name) == brand
+
+
+def test_a_latin_brand_is_read_as_whole_words_only():
+    # 13425122164: the junior brand GB inside "golf bag" made a Ben Sayers set GB
+    rows = ["BEN SAYERS golf bag included", "GOLF BAG", "Stand bag"]
+    assert B.in_images(rows, ["GB", "PGM"]) == {}
+    assert B.in_images(["GB Junior driver", "gb"], ["GB"]) == {"GB": 2}
+    assert B.in_images(["US KIDS GOLF ultralight", "U.S.Kids Golf"], ["U.S. Kids Golf"]) == {"U.S. Kids Golf": 2}
+    assert B.in_images(["PGM골프 정품"], ["PGM"]) == {"PGM": 1}           # a Korean word after it: still a word end
+
+
+def test_the_origin_names_the_firm_not_the_making():
+    assert B.distributors("중국산(중국 oem / 인파로)") == ["인파로"]       # 5859220164
+    assert B.distributors("중국(OEM)") == []
+
+
+def test_a_brand_inside_a_korean_branch_name_comes_last():
+    # 7202588289: "던롭스포츠코리아 젝시오 12" is an XXIO set, imported by Dunlop's Korean branch
+    assert B.in_title("던롭스포츠코리아 젝시오 12 여성골프채", ["젝시오", "던롭"]) == ["젝시오", "던롭"]
+    assert B.in_title("던롭 클리브랜드 골프 주니어 세트", ["클리브랜드", "던롭"]) == ["던롭", "클리브랜드"]
+    assert B.in_title("캘러웨이코리아 정품 주니어", ["캘러웨이"]) == ["캘러웨이"]
+
+
+@pytest.mark.parametrize("name, maker, store, own", [
+    # 11674983361, 2026-11-12: the reselling shop's own name in the brand row, "<shop>협력사" as the maker
+    ("재팬도코도코", "재팬도코도코협력사", {"name": "재팬 도코도코", "business": {"legal_name": "재팬도코도코"}}, True),
+    ("홈앤컴", "홈앤컴협력사", {"name": "홈앤컴"}, True),
+    ("굿세라", "굿세라 협력사", {"name": "굿세라"}, True),
+    ("스컬독", "스컬독", {"name": "스컬독"}, False),                  # a shop selling its own brand: no 협력
+    ("버디온", "B tree", {"name": "버디온"}, False),
+    ("인파로", "모아와치협력사", {"name": "모아와치"}, False),          # the brand is another's: it stays
+    ("유니코스", "유니코스 협력사", {"name": "골프마켓"}, False),       # a maker's contract maker, another shop
+])
+def test_a_reselling_shops_own_name_is_no_brand(name, maker, store, own):
+    assert B.resellers_own(name, maker, store) is own

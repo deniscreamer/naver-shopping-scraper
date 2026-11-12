@@ -1,0 +1,517 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:100026902:5558127399",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "5 of 5 kept (full 5); 2 trimmed"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "CONDITIONAL_FREE 3000 KRW"
+  },
+  {
+   "code": "description_tiles_include_banners",
+   "detail": "delivery_info1.jpg"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/vicxgolfm/products/5558127399",
+  "channel_no": "100026902",
+  "product_id": "5558127399",
+  "category_id": "50002787"
+ },
+ "product": {
+  "title_ko": "마젤골프 KOARA 코알라 골프클럽 주니어 7번 아이언",
+  "brand_ko": "코알라",
+  "brand_source": "specs:브랜드",
+  "attributes": {},
+  "options": [
+   {
+    "name_ko": "사이즈 선택",
+    "values_ko": [
+     "대",
+     "중",
+     "소"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"대\"]",
+    "naver_variant_id": "19283761719",
+    "options_ko": [
+     "대"
+    ],
+    "price_krw": 39000,
+    "price_usd": "39.00",
+    "sku": "FW-20ab25ded08da75362f7bf4b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"중\"]",
+    "naver_variant_id": "19283761720",
+    "options_ko": [
+     "중"
+    ],
+    "price_krw": 39000,
+    "price_usd": "39.00",
+    "sku": "FW-afce87ad026586b03e485778",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"소\"]",
+    "naver_variant_id": "17714526461",
+    "options_ko": [
+     "소"
+    ],
+    "price_krw": 39000,
+    "price_usd": "39.00",
+    "sku": "FW-4a16bb8ed59f338f7d434939",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 39000,
+   "original_krw": 39000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "마젤골프"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "코알라"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "KOARA"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "국산"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.6,
+   "count": 5
+  },
+  "reviews": [
+   {
+    "id": "4014447608",
+    "score": 5,
+    "text_ko": "아들이 만족해서 저두 만족합니다.",
+    "created_at": "2022-06-05T18:39:20Z",
+    "writer": "powe********",
+    "photos": [],
+    "avatar": "collected/50002788-fixtures/images/5558127399/fairwardgolf-review-avatar-c87789a5499dfaad.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 23
+   },
+   {
+    "id": "3337279745",
+    "score": 5,
+    "text_ko": "아들 연습용으로 구매",
+    "created_at": "2022-01-02T03:10:22Z",
+    "writer": "feri****",
+    "photos": [
+     "collected/50002788-fixtures/images/5558127399/fairwardgolf-review-image-71fbcc4473706685.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/5558127399/fairwardgolf-review-avatar-7afb6c27ddcc9b1e.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 37
+   },
+   {
+    "id": "3329067345",
+    "score": 3,
+    "text_ko": "초등4학년인데 조금 짧은것 같아요.",
+    "created_at": "2021-12-21T07:15:48Z",
+    "writer": "hanr****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 23
+   },
+   {
+    "id": "3193190926",
+    "score": 5,
+    "text_ko": "사이즈 딱 좋네요",
+    "created_at": "2021-06-08T14:18:20Z",
+    "writer": "doom*****",
+    "photos": [
+     "collected/50002788-fixtures/images/5558127399/fairwardgolf-review-image-580c5f296c9516e8.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 36,
+    "text_original_ko": "사이즈 딱 좋네요 잘쓸께요",
+    "text_cut": [
+     "filler"
+    ]
+   },
+   {
+    "id": "3193190332",
+    "score": 5,
+    "text_ko": "사이즈 딱 좋네요",
+    "created_at": "2021-06-08T14:17:34Z",
+    "writer": "doom*****",
+    "photos": [
+     "collected/50002788-fixtures/images/5558127399/fairwardgolf-review-image-580c5f296c9516e8.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 36,
+    "text_original_ko": "사이즈 딱 좋네요 잘쓸께요",
+    "text_cut": [
+     "filler"
+    ]
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/5558127399/fairwardgolf-5558127399-001-990eedc785f89112.webp",
+    "sha256": "990eedc785f891122f3512d7a3f533a0b392aeb4ff2de68ef63d147e40326abf",
+    "width": 600,
+    "height": 600
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "CONDITIONAL_FREE",
+   "base_fee": 3000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "policy_text": "50,000원 이상 구매 시 무료",
+   "lead_time": {
+    "seller_average_days": 1.7272727,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20210430_283/1619772525066l7PFm_JPEG/p-5534370976-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20210430_95/1619772525077A66AB_JPEG/p-5534370976-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20210430_1/1619772524977dz0Cz_JPEG/p-5534370976-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20210430_31/1619772524986bgPhl_JPEG/p-5534370976-s-1-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20210430_31/1619772524990BpQe3_JPEG/p-5534370976-s-1-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20210430_220/1619772525077RuzkF_JPEG/p-5534370976-s-1-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20210430_179/1619772525097i5gdb_JPEG/p-5534370976-s-1-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20210430_1/1619772524994eqMKX_JPEG/p-5534370976-s-1-A-7.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:fa85067b84daa7a2",
+   "kind": "title",
+   "ko": "마젤골프 KOARA 코알라 골프클럽 주니어 7번 아이언"
+  },
+  {
+   "id": "brand:cce020a14ef70895",
+   "kind": "brand",
+   "ko": "코알라"
+  },
+  {
+   "id": "option_name:dec10a63e8beb488",
+   "kind": "option_name",
+   "ko": "사이즈 선택"
+  },
+  {
+   "id": "option_value:364d448a22b1512f",
+   "kind": "option_value",
+   "ko": "대"
+  },
+  {
+   "id": "option_value:b558d7af71515538",
+   "kind": "option_value",
+   "ko": "중"
+  },
+  {
+   "id": "option_value:8c57fafb0573bcf5",
+   "kind": "option_value",
+   "ko": "소"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:30a74a2c9017b787",
+   "kind": "spec_value",
+   "ko": "마젤골프"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:cce020a14ef70895",
+   "kind": "spec_value",
+   "ko": "코알라"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:648400351bec585b",
+   "kind": "spec_value",
+   "ko": "KOARA"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2c9897140d6cbb96",
+   "kind": "spec_value",
+   "ko": "국산"
+  },
+  {
+   "id": "review:94daa66859750b96",
+   "kind": "review",
+   "ko": "아들이 만족해서 저두 만족합니다."
+  },
+  {
+   "id": "review:9cd60e8de0b1410e",
+   "kind": "review",
+   "ko": "아들 연습용으로 구매"
+  },
+  {
+   "id": "review:f9c970418ea5f947",
+   "kind": "review",
+   "ko": "초등4학년인데 조금 짧은것 같아요."
+  },
+  {
+   "id": "review:7e5f2164926950b3",
+   "kind": "review",
+   "ko": "사이즈 딱 좋네요"
+  }
+ ]
+}

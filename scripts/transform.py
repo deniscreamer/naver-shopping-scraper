@@ -370,9 +370,11 @@ def spec_rows(specs: dict[str, Any]) -> list[dict[str, str]]:
                     value = _BRACKETS_RE.sub("", value)
             value = re.sub(r"\s+", " ", value).strip()
         if label in ("브랜드", "제조사") and value.strip() in NOT_A_BRAND or label == "브랜드" \
-                and brand_fallback.trade_name(value):     # a shop's name in the brand row (세모물상점); a 제조사 row
-                                                          # naming an importer stays a fact
+                and brand_fallback.clean(value) is None:  # a shop's name in the brand row (세모물상점), an age
+                                                          # (6~8세 퍼터); a 제조사 row naming an importer stays a fact
             continue                                # "Brand: Other" says nothing (10697131625, 2026-11-11)
+        if label == "브랜드":
+            value = brand_fallback.clean(value) or value          # 코알라(200874), 던롭 던롭 (2026-11-12)
         if label not in HIDDEN_ROWS and value and not _pointer(value) and not _PLACEHOLDER_CODE.match(value.strip()):
             out.append({"label_ko": label, "value_ko": value})
     return out
@@ -605,11 +607,19 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int,
         held.append({"code": "price_unknown", "detail": "no product price"})
     facts = specs.get("facts") or {}
     brand = facts.get("brand") or {}
-    if str(brand.get("value") or "").strip() in NOT_A_BRAND or brand_fallback.trade_name(str(brand.get("value") or "")):
-        brand = {}                                  # 기타, or a shop's name (세모물상점, 2026-11-11)
+    raw_maker = str((facts.get("manufacturer") or {}).get("value") or "")
+    shop = details.get("store")
+    if str(brand.get("value") or "").strip() in NOT_A_BRAND \
+            or brand_fallback.resellers_own(str(brand.get("value") or ""), raw_maker, shop):
+        brand = {}                                  # 기타; the reselling seller's own shop (재팬도코도코, 2026-11-12)
+    elif brand.get("value"):                        # a shop's name (세모물상점, 2026-11-11), an age and a club,
+        cleaned = brand_fallback.clean(str(brand["value"]))   # a code, a title (2026-11-12): brand_fallback.clean
+        brand = {**brand, "value": cleaned} if cleaned else {}
     maker = dict(facts.get("manufacturer") or {})
-    if maker.get("value"):                          # "X 협력사 / 협력업체" (X's contract maker) names X (2026-11-11)
-        maker["value"] = re.sub(r"\s*협력(?:사|업체)\s*$", "", str(maker["value"])) or maker["value"]
+    if maker.get("value"):                          # "X 협력사 / 협력 업체" (X's contract maker) names X (2026-11-11)
+        maker["value"] = brand_fallback.clean(str(maker["value"])) or maker["value"]
+    if brand_fallback.resellers_own(str(maker.get("value") or ""), raw_maker, shop):
+        maker = {}                                  # "홈앤컴협력사" by the shop 홈앤컴: no maker named (2026-11-12)
     if not brand.get("value") and maker.get("value") and not _PLACEHOLDER_CODE.match(str(maker["value"]).strip()) \
             and not _pointer(str(maker["value"])) and str(maker["value"]).strip() not in NOT_A_BRAND \
             and not brand_fallback.trade_name(str(maker["value"])):

@@ -5,7 +5,8 @@ A deliberate change of the transform shows here as a diff: rewrite the expected 
     UPDATE_GOLDEN=1 .venv/bin/python -m pytest scripts/test_prepared_golden.py
 and read the diff of fixtures/prepared/ before committing. The set grows only when the owner asks (2026-11-12:
 five junior clubs of 50002787 for the brand, bag and two-club rules: a shop's name as the brand, a supplier in
-the origin, U.S.KIDSGOLF, two clubs, a club and a glove).
+the origin, U.S.KIDSGOLF, two clubs, a club and a glove; five more of the 100-run for the brand rows and the
+package kind: a reselling shop's own name, a code, a title as the brand, an age after 클럽).
 
 fixtures/description_images/<product id>.json: the description images' OCR sidecars of the same products
 (description_images.py with RapidOCR on the images downloaded 2026-11-07), read by the transform as

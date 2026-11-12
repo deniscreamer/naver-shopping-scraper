@@ -1,9 +1,11 @@
 {
  "format": "dictionary/1",
  "kind": "text_label",
- "backed_up": "2026-11-12T09:37:06Z",
+ "backed_up": "2026-11-12T13:59:00Z",
  "entries": {
+  "네임스티커 성함": "Name Sticker Name",
   "신장 기입요망 / cm": "Enter Height (cm)",
-  "신장(cm)": "Height (cm)"
+  "신장(cm)": "Height (cm)",
+  "키 사이즈 입력해주세요": "Enter Height"
  }
 }

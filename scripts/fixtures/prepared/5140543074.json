@@ -1,0 +1,771 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:100797216:5140543074",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "4 of 4 kept (full 2, short 2); 2 trimmed"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "PAID 6000 KRW"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/ginworld/products/5140543074",
+  "channel_no": "100797216",
+  "product_id": "5140543074",
+  "category_id": "50002787"
+ },
+ "product": {
+  "title_ko": "어린이용 주니어 골프 클럽 아이언 퍼터 드라이버",
+  "brand_ko": "진월드스타",
+  "brand_source": "specs:브랜드",
+  "attributes": {},
+  "options": [
+   {
+    "name_ko": "선택하세요",
+    "values_ko": [
+     "6~8세 드라이버",
+     "6~8세 아이언 6/7번",
+     "6~8세 퍼터",
+     "9~12세 드라이버",
+     "9~12세 아이언 6/7번",
+     "9~12세 퍼터"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"6~8세 드라이버\"]",
+    "naver_variant_id": "15388588506",
+    "options_ko": [
+     "6~8세 드라이버"
+    ],
+    "price_krw": 40600,
+    "price_usd": "40.60",
+    "sku": "FW-822f86c7de256a38054e6ba6",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"6~8세 아이언 6/7번\"]",
+    "naver_variant_id": "15388588507",
+    "options_ko": [
+     "6~8세 아이언 6/7번"
+    ],
+    "price_krw": 32100,
+    "price_usd": "32.10",
+    "sku": "FW-abcff64ac556a4fb4b5e620a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"6~8세 퍼터\"]",
+    "naver_variant_id": "15388588508",
+    "options_ko": [
+     "6~8세 퍼터"
+    ],
+    "price_krw": 27100,
+    "price_usd": "27.10",
+    "sku": "FW-d1289b5ad60df936f8e9557e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"9~12세 드라이버\"]",
+    "naver_variant_id": "15388588509",
+    "options_ko": [
+     "9~12세 드라이버"
+    ],
+    "price_krw": 40600,
+    "price_usd": "40.60",
+    "sku": "FW-a1fd12859d90911c9bb9d584",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"9~12세 아이언 6/7번\"]",
+    "naver_variant_id": "15388588510",
+    "options_ko": [
+     "9~12세 아이언 6/7번"
+    ],
+    "price_krw": 32100,
+    "price_usd": "32.10",
+    "sku": "FW-f76dcca8f55c8e0eab5ea1b6",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"9~12세 퍼터\"]",
+    "naver_variant_id": "15388588511",
+    "options_ko": [
+     "9~12세 퍼터"
+    ],
+    "price_krw": 27100,
+    "price_usd": "27.10",
+    "sku": "FW-d33c0a3580fcc0e463d562e1",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 27100,
+   "original_krw": 49000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "진월드스타 OEM"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "진월드스타"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "진월드스타 어린이용 주니어 골프 클럽 아이언 퍼터 드라이버"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 4
+  },
+  "reviews": [
+   {
+    "id": "3207808155",
+    "score": 5,
+    "text_ko": "생각보다 퍼터 완성도가 좋습니다!\n아이가 맞는 사이즈 퍼터로 제대로 퍼팅 따라하는 것 보면 흐뭇합니다",
+    "created_at": "2021-06-29T13:28:14Z",
+    "writer": "ch****",
+    "photos": [
+     "collected/50002788-fixtures/images/5140543074/fairwardgolf-review-image-6c9ccf695b88b13e.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 85,
+    "text_original_ko": "생각보다 퍼터 완성도가 좋습니다!\n아이가 맞는 사이즈 퍼터로 제대로 퍼팅 따라하는 것 보면 흐뭇합니다 ㅎ"
+   },
+   {
+    "id": "3114634536",
+    "score": 5,
+    "text_ko": "아이랑 집에서 놀려고 구매했어요 키작은 어른이 쓰기에도 괜찮을듯한 무게내요",
+    "created_at": "2021-02-17T23:42:42Z",
+    "writer": "snic********",
+    "photos": [
+     "collected/50002788-fixtures/images/5140543074/fairwardgolf-review-image-9dc2fa296a56a66e.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 63,
+    "text_original_ko": "아이랑 집에서  놀려고  구매했어요  키작은  어른이  쓰기에도  괜찮을듯한  무게내요"
+   },
+   {
+    "id": "3086988433",
+    "score": 5,
+    "text_ko": "집에서 게임하고 놀고싶어사 구매했는데",
+    "created_at": "2021-01-09T07:30:21Z",
+    "writer": "snic********",
+    "photos": [
+     "collected/50002788-fixtures/images/5140543074/fairwardgolf-review-image-07a311e9259e6eb5.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "short",
+    "text_quality": 19,
+    "text_original_ko": "집에서 게임하고  놀고싶어사  구매했는데  가성비 좋네요",
+    "text_cut": [
+     "price"
+    ]
+   },
+   {
+    "id": "3081902436",
+    "score": 5,
+    "text_ko": "적당한 결과물입니다",
+    "created_at": "2021-01-02T23:00:16Z",
+    "writer": "carr******",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "short",
+    "text_quality": 2,
+    "text_original_ko": "이가격에 적당한 결과물입니다",
+    "text_cut": [
+     "price"
+    ]
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/5140543074/fairwardgolf-5140543074-001-7819456c36a7ce47.webp",
+    "sha256": "7819456c36a7ce473d3ddebedb59760b61c369cf89285044bb8eea553cc5041c",
+    "width": 860,
+    "height": 748
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/5140543074/fairwardgolf-5140543074-002-cefee2039599c2d2.webp",
+    "sha256": "cefee2039599c2d2751fa2dcac09e3f593e3a9cc033484336c4d3ab458bc41ec",
+    "width": 860,
+    "height": 860
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/5140543074/fairwardgolf-5140543074-003-a377d39fee0dd2ad.webp",
+    "sha256": "a377d39fee0dd2ad3ad713e90d09e155788afbf6052f962d6aa7291e1face10c",
+    "width": 860,
+    "height": 702
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/5140543074/fairwardgolf-5140543074-004-269ad41390cb4804.webp",
+    "sha256": "269ad41390cb48047ffd547fd4a4a90b5bc065b6f789588f33574559cd90a69d",
+    "width": 860,
+    "height": 780
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/5140543074/fairwardgolf-5140543074-005-da47a6b1af4f9a62.webp",
+    "sha256": "da47a6b1af4f9a629e6b4dc2ba6621c44058ff4e80f5a6d207ee6c242e4073ed",
+    "width": 860,
+    "height": 841
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/5140543074/fairwardgolf-5140543074-006-e1fdf63994ca88db.webp",
+    "sha256": "e1fdf63994ca88dbb18d9d06ad19d60c85266746144948e05315f320b208c7be",
+    "width": 860,
+    "height": 852
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "PAID",
+   "base_fee": 6000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 8000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 8,000원",
+   "lead_time": {
+    "seller_average_days": 1.8,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "주니어 전용 골프 클럽\n어린이가 사용하기에 적합한 그라파이트 샤프트\n반발력이 뛰어난 고반발 스틸 주조 헤드",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20200929_244/1601355512593QYS8u_JPEG/3.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20200929_262/16013551077824dNEk_JPEG/2.jpg?type=w848"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:debf3a87f4c0ab88",
+   "kind": "title",
+   "ko": "어린이용 주니어 골프 클럽 아이언 퍼터 드라이버"
+  },
+  {
+   "id": "brand:9f31925bedbfd01d",
+   "kind": "brand",
+   "ko": "진월드스타"
+  },
+  {
+   "id": "option_name:33ae8967881d0ba7",
+   "kind": "option_name",
+   "ko": "선택하세요"
+  },
+  {
+   "id": "option_value:729e8ba658e92cc1",
+   "kind": "option_value",
+   "ko": "6~8세 드라이버"
+  },
+  {
+   "id": "option_value:82fdc6c971526035",
+   "kind": "option_value",
+   "ko": "6~8세 아이언 6/7번"
+  },
+  {
+   "id": "option_value:0ae26b347da0ef38",
+   "kind": "option_value",
+   "ko": "6~8세 퍼터"
+  },
+  {
+   "id": "option_value:e5ecbdf97810118f",
+   "kind": "option_value",
+   "ko": "9~12세 드라이버"
+  },
+  {
+   "id": "option_value:7fb3ce23c0c17b32",
+   "kind": "option_value",
+   "ko": "9~12세 아이언 6/7번"
+  },
+  {
+   "id": "option_value:2d42f0b6bbae10e6",
+   "kind": "option_value",
+   "ko": "9~12세 퍼터"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:79ddef5e1a23e285",
+   "kind": "spec_value",
+   "ko": "진월드스타 OEM"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:9f31925bedbfd01d",
+   "kind": "spec_value",
+   "ko": "진월드스타"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:0ff98ba650bd08c0",
+   "kind": "spec_value",
+   "ko": "진월드스타 어린이용 주니어 골프 클럽 아이언 퍼터 드라이버"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "review:7b676799ddb2e6eb",
+   "kind": "review",
+   "ko": "생각보다 퍼터 완성도가 좋습니다!\n아이가 맞는 사이즈 퍼터로 제대로 퍼팅 따라하는 것 보면 흐뭇합니다"
+  },
+  {
+   "id": "review:2c31eab78694bfcc",
+   "kind": "review",
+   "ko": "아이랑 집에서 놀려고 구매했어요 키작은 어른이 쓰기에도 괜찮을듯한 무게내요"
+  },
+  {
+   "id": "review:034c886f73d6c60d",
+   "kind": "review",
+   "ko": "집에서 게임하고 놀고싶어사 구매했는데"
+  },
+  {
+   "id": "review:35a969bb712b65fa",
+   "kind": "review",
+   "ko": "적당한 결과물입니다"
+  }
+ ]
+}

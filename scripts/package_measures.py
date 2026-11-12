@@ -143,6 +143,17 @@ def _check_fields(where: str, fields: Any) -> None:
             raise CategoryDefaultsInvalid(f"{where}: {name} needs numbers low, central, high") from None
 
 
+# an age, a height, a size, a loft or a year next to a club word is not a count of clubs (2026-11-12, junior clubs:
+# "골프클럽 6~8세 드라이버" read as "클럽 6", three single GB clubs of 21-34,000 KRW took the set's box, $709-719;
+# "웨지 클럽 56도웨지" the same, $729): taken out of the words before the kinds are read
+_MEASURE = re.compile(r"\d+\s*(?:[~\-]\s*\d+\s*)?(?:세(?:\s*이상|\s*부터)?|cm|센치|mm|도|°|사이즈|size|년)"
+                      r"|(?<!\d)20\d\d(?!\d)", re.I)
+
+
+def _measure_words(text: str | None) -> str:
+    return _MEASURE.sub(" ", text or "")
+
+
 def default_kind(row: Mapping[str, Any], title: str | None, variant_name: str | None) -> dict[str, Any] | None:
     """The row's kind of product (`kinds`) a variant is, for its defaults; None: the row's own fields. The title and
     the variant's words are read apart (glued, "...클럽" + "6~8세" read as "클럽 6", a count). A kind is taken when
@@ -151,7 +162,7 @@ def default_kind(row: Mapping[str, Any], title: str | None, variant_name: str | 
     one club of a "퍼터 클럽 세트" listing is that club; of a 풀세트 it is the set's choice); or when `match` is in the
     title or the variant and `unless` in neither (the owner, 2026-11-11: a single junior club gets a single club's
     box, a set the set's; in doubt the set's, the larger, box)."""
-    t, v = title or "", variant_name or ""
+    t, v = _measure_words(title), _measure_words(variant_name)
 
     def has(key: str, text: str) -> bool:
         return bool(kind.get(key)) and re.search(kind[key], text) is not None

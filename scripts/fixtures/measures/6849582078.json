@@ -1,0 +1,67 @@
+{
+ "product_id": "6849582078",
+ "covers": "junior single wedge: a loft and a height after 클럽 are no count",
+ "checked": ["single_club box 900x120x100 mm, 1000 g", "price $289"],
+ "note": "2026-11-12: was the set's box, $729",
+ "input": {
+  "title": "어린이골프채 주니어 샌드 웨지 클럽 56도웨지 사용자 키 130-160cm",
+  "category": {"id": "50002787", "name": "주니어용클럽"},
+  "spec_rows": [
+   {"label": "상품번호", "value": "6849582078"},
+   {"label": "제조사", "value": "인파로"},
+   {"label": "브랜드", "value": "인파로"},
+   {"label": "원산지", "value": "중국"},
+   {"label": "스펙", "value": "ASIA"},
+   {"label": "종류", "value": "웨지"},
+   {"label": "사용방향", "value": "오른손용"},
+   {"label": "주니어 클럽개수", "value": "1개"}
+  ],
+  "facts": [{"label_ko": "선택하세요", "value_ko": "주니어 샌드 웨지"}],
+  "variants": [{"id": "23967971991", "options_ko": []}],
+  "supplements": [],
+  "typed": ["설연휴 임시 추가할인 특가!", "'주니어 샌드 웨지 클럽'을", "2월1일 ~ 2월5일 기간동안만 추가 할인된 37,800원 초파격특가로 모십니다."],
+  "images": [
+   [
+    ["1rara / JR.", 0.511],
+    ["주니어 웨지 56°", 0.932],
+    2,
+    ["]R. / 130~160cm", 0.882],
+    4,
+    ["1R.", 0.764],
+    10,
+    ["사용자키130~160cm", 0.969],
+    1,
+    ["라이각 / 62°", 0.995],
+    ["로프트각 / 56°", 0.998],
+    ["헤드 무게 265g", 0.98],
+    ["그립 무게 479", 0.89],
+    ["길이31\"/78.7cm", 0.983],
+    2,
+    ["부드러운 스윙을 하며 동시에 웨지의 무게감을 느낄 수 있는 적절한 스윙웨이트를", 0.922],
+    8,
+    ["7R.", 0.741],
+    ["9", 0.806],
+    ["95", 0.705],
+    1,
+    ["(2)", 0.667],
+    2,
+    ["9 / Irparo / 97AMZL6", 0.669],
+    2
+   ],
+   [3, ["골프 가방의 스탠드(다리) 보호 비닐이 제거된 경우", 0.977], 1, ["공정거래 표준 약관 제15조 2항에 의한 이용자의 사용 또는", 0.982], 1]
+  ],
+  "measures": {"is_set": false, "weights": [], "dimensions": [], "references": [], "review": []}
+ },
+ "expected": [
+  {
+   "variants": [[]],
+   "fields": {
+    "product_weight_g": {"value": 350, "source": "category_default", "confidence": 1},
+    "package_weight_g": {"value": 1000, "source": "category_default", "confidence": 1},
+    "package_length_mm": {"value": 900, "source": "category_default", "confidence": 1},
+    "package_width_mm": {"value": 120, "source": "category_default", "confidence": 1},
+    "package_height_mm": {"value": 100, "source": "category_default", "confidence": 1}
+   }
+  }
+ ]
+}

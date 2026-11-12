@@ -1,0 +1,501 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102563157:11674983361",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "1 of 1 kept (full 1); 1 trimmed"
+  },
+  {
+   "code": "few_pieces",
+   "detail": "4종"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "PAID 98000 KRW"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "NOT_APPLICABLE"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/japandokodoko/products/11674983361",
+  "channel_no": "102563157",
+  "product_id": "11674983361",
+  "category_id": "50002787"
+ },
+ "product": {
+  "title_ko": "UTIMATE 주니어 골프클럽 세트 4종 5~7세용 가방 포함",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {},
+  "options": [
+   {
+    "name_ko": "색상",
+    "values_ko": [
+     "핑크",
+     "그린",
+     "블루"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"핑크\"]",
+    "naver_variant_id": "48114860428",
+    "options_ko": [
+     "핑크"
+    ],
+    "price_krw": 205100,
+    "price_usd": "205.10",
+    "sku": "FW-4a44f20c8c84894740727b56",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 1500,
+      "central": 3500,
+      "high": 6500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 2500,
+      "central": 4500,
+      "high": 8000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 800,
+      "central": 1050,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 120,
+      "central": 250,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"그린\"]",
+    "naver_variant_id": "48114860429",
+    "options_ko": [
+     "그린"
+    ],
+    "price_krw": 205100,
+    "price_usd": "205.10",
+    "sku": "FW-397ec3ca1386f0c15f46fa17",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 1500,
+      "central": 3500,
+      "high": 6500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 2500,
+      "central": 4500,
+      "high": 8000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 800,
+      "central": 1050,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 120,
+      "central": 250,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"블루\"]",
+    "naver_variant_id": "48114860430",
+    "options_ko": [
+     "블루"
+    ],
+    "price_krw": 205100,
+    "price_usd": "205.10",
+    "sku": "FW-f1db907ec9499932c34d4a1e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 1500,
+      "central": 3500,
+      "high": 6500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 2500,
+      "central": 4500,
+      "high": 8000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 800,
+      "central": 1050,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 120,
+      "central": 250,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 205100,
+   "original_krw": 215900,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "재팬도코도코협력사"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "재팬도코도코"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "스펙",
+    "value_ko": "ASIA"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "주니어 클럽개수",
+    "value_ko": "4개"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 1
+  },
+  "reviews": [
+   {
+    "id": "5015575142",
+    "score": 5,
+    "text_ko": "애들쓰긴 좋아요 구성도 아쉽진 않습니다",
+    "created_at": "2026-07-07T00:32:54Z",
+    "writer": "cbnd*****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 44,
+    "text_original_ko": "배송이 너무 느려요. 애들쓰긴 좋아요 구성도 아쉽진 않습니다 ㅎ",
+    "text_cut": [
+     "shipping"
+    ]
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/11674983361/fairwardgolf-11674983361-001-4cc77d4d40faef53.webp",
+    "sha256": "4cc77d4d40faef537a88a92ae28d20af70a435930f27dbd12171efae05c41e3a",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/11674983361/fairwardgolf-11674983361-002-56ba70b1ca83d37e.webp",
+    "sha256": "56ba70b1ca83d37eb7e9a7a7bf1277b926f67208ae79fb52784ae82459afba94",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/11674983361/fairwardgolf-11674983361-003-072fbf9758b46b97.webp",
+    "sha256": "072fbf9758b46b973d27bda8409029f36bdab618b22ccef7485a603c82fcc411",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/11674983361/fairwardgolf-11674983361-004-ec9fd0dae98efd0c.webp",
+    "sha256": "ec9fd0dae98efd0c0e9b445d4ff1c8d6eae91ba0112d162240a08c3762c58b1e",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/11674983361/fairwardgolf-11674983361-005-d0517f03db125b14.webp",
+    "sha256": "d0517f03db125b14cddb0bf582a872b6faf1ce20ab5b9d63081ac08124b6191a",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/11674983361/fairwardgolf-11674983361-006-e42db90b3983bff5.webp",
+    "sha256": "e42db90b3983bff5a23db7313451d186b0711e22eb83287ed546972cc464a45d",
+    "width": 800,
+    "height": 800
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "PAID",
+   "base_fee": 98000,
+   "is_overseas": true,
+   "customs_tax_type": "NOT_APPLICABLE",
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": 7000,
+   "policy_text": "제주 추가 5,000원, 제주 외 도서지역 추가 7,000원",
+   "lead_time": {
+    "seller_average_days": 4.25,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "대표 이미지\n\nGYMAX 주니어 골프클럽 세트 4종 5~7세용 가방 포함\n5세부터 7세 어린이를 위한 주니어 골프 입문 세트입니다.\n구성: 페어웨이우드, #7 아이언, S 웨지, 퍼터 총 4종\n205cc 페어웨이우드는 저중심 설계와 넓은 스위트 스폿으로 비거리와 관용성 향상\n아이언은 깊은 홈으로 정확도 높은 샷 가능, 퍼터는 정렬라인 설계로 정확한 퍼팅 가능\n경량 그래파이트 샤프트와 미끄럼 방지 고무 그립 적용\n전용 스탠드백은 다양한 수납포켓과 듀얼 스트랩 설계로 이동이 편리\n실내 연습용, 골프 체험용, 어린이 입문용 선물로 적합합니다.\n\n주니어골프채, 어린이골프세트, 골프입문용, 유아골프채, 아동골프용품, 키즈골프, 5세골프, 6세골프, 7세골프, 퍼터포함세트, 경량골프채, 골프클럽세트, 어린이선물추천, 골프가방포함, 오른손골프채, 주니어스포츠용품",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20250124_211/1737700460383Kg1HF_JPEG/84665715181252710_654189980.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250404_167/1743701127442QK7uz_JPEG/117402574817469_29063265.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250404_71/17437011269797eCpR_JPEG/20163571820791842_1119166936.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250404_265/17437011345301HOm9_JPEG/77833966696113784_1499222143.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250404_17/17437011280289Y7pX_JPEG/6689359179843412_1537917532.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250404_280/1743701135114LNX3l_JPEG/14227989950938182_346635414.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250404_290/1743701135525rb5wT_JPEG/117410664474401_612287553.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250404_57/1743701148335c5Hib_JPEG/62004455288455163_1002968918.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250124_220/1737700466535cSvvK_JPEG/24109477346851886_1955794462.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "label",
+    "text": "상세설명"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://global.windly.cc/t/ss/230905206"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:13917a7efa813d8a",
+   "kind": "title",
+   "ko": "UTIMATE 주니어 골프클럽 세트 4종 5~7세용 가방 포함"
+  },
+  {
+   "id": "option_name:d1b87acb2d2239e7",
+   "kind": "option_name",
+   "ko": "색상"
+  },
+  {
+   "id": "option_value:5c94888b2e8d96b6",
+   "kind": "option_value",
+   "ko": "핑크"
+  },
+  {
+   "id": "option_value:8b9236867da1c7c5",
+   "kind": "option_value",
+   "ko": "그린"
+  },
+  {
+   "id": "option_value:a3e6a09feea96ddf",
+   "kind": "option_value",
+   "ko": "블루"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:6acda62a63730ec3",
+   "kind": "spec_value",
+   "ko": "재팬도코도코협력사"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:a673bf4d913292f4",
+   "kind": "spec_value",
+   "ko": "재팬도코도코"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:fe1f28dc14e0d313",
+   "kind": "spec_label",
+   "ko": "스펙"
+  },
+  {
+   "id": "spec_value:e1eba3226891f58a",
+   "kind": "spec_value",
+   "ko": "ASIA"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:76bfc3afc6e74a18",
+   "kind": "spec_label",
+   "ko": "주니어 클럽개수"
+  },
+  {
+   "id": "spec_value:c0750b12402c91dc",
+   "kind": "spec_value",
+   "ko": "4개"
+  },
+  {
+   "id": "review:eee05da7ab112c08",
+   "kind": "review",
+   "ko": "애들쓰긴 좋아요 구성도 아쉽진 않습니다"
+  }
+ ]
+}

@@ -1,17 +1,25 @@
 {
  "format": "dictionary/1",
  "kind": "spec_label",
- "backed_up": "2026-11-12T09:37:06Z",
+ "backed_up": "2026-11-12T13:59:00Z",
  "entries": {
   "구성": "Contents",
   "모델명": "Model",
+  "부가기능": "Extra Features",
   "브랜드": "Brand",
   "사용방향": "Handedness",
+  "성별": "Gender",
+  "세트구성": "Set Contents",
+  "소재": "Material",
   "스펙": "Specs",
   "원산지": "Country of Origin",
+  "유효일자": "Expiration Date",
+  "입구분할": "Top Dividers",
   "제조사": "Manufacturer",
   "종류": "Type",
   "주니어 클럽개수": "Number of Junior Clubs",
+  "출시": "Release",
+  "투입구사이즈": "Opening Size",
   "품번": "Item Number"
  }
 }

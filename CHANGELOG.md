@@ -14,6 +14,14 @@ version in `extension/manifest.json`.
   and is never sent again. Withdrawn: a junior bag alone (314400655) and soft toddler clubs (4987660149).
 - **Junior clubs**: a bag alone is left out of the listing (`bag_only`, with `unless` words for a set with a
   bag); two clubs get a box for two (`two_clubs`, 95 x 15 x 12 cm, 1.5 kg: the single club's with one more).
+- **The junior clubs' 100** (2026-11-12): 100 published, 6 closed (card gone). The run showed: a seller's brand row
+  is cleaned (`brand_fallback.clean`: a code, a note, a word twice, the product's words go; an age, a shop's name
+  (상회, 만물상, 쇼핑, "X네") give none; a reselling shop's own name, its maker "<shop>협력사", is none); a Latin brand of the shop counts in the images as whole words only (GB in
+  "golf bag" had made two Ben Sayers sets GB); 원산지's brackets split ("중국 oem / 인파로": 인파로); a brand inside a
+  Korean branch's name comes last in a title (던롭스포츠코리아 젝시오: XXIO); an age, a height, a loft, a size or a
+  year is no club count for the package kind (four single junior clubs had the set's box, $709-729 -> $259-289).
+  Two measures fixtures (5396141262, 6849582078). 363 new dictionary entries read by a review and an adversarial check: 11 non-brands
+  out of the brand dictionary, 20 entries corrected (option names fit to one product: 모델선택 "Age Group" -> Model).
 - 18 junior products and one full set published again (brands, titles, two-club prices $749-799 -> $349-399,
   dictionary fixes), 7 with a new handle (the old one redirects); 24 dictionary entries set by hand, then backed up.
 

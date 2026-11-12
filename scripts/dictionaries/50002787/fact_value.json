@@ -1,13 +1,21 @@
 {
  "format": "dictionary/1",
  "kind": "fact_value",
- "backed_up": "2026-11-12T09:37:06Z",
+ "backed_up": "2026-11-12T13:59:00Z",
  "entries": {
   "(라지)": "(Large)",
   "(미디엄)": "(Medium)",
+  "4개세트(아이언번호는 선택)": "4-Piece Set (Iron Numbers of Your Choice)",
   "6개세트": "6-Piece Set",
   "7개 클럽＋골프백": "7 Clubs + Golf Bag",
   "P/S웨지(피칭/샌드)": "P/S Wedge (Pitching/Sand)",
-  "블랙": "Black"
+  "XJ 3 8개 구성 세트": "XJ 3 8-Piece Set",
+  "[레드][9-12세]세트": "Red, Ages 9-12 Set",
+  "드라이버+하이브리드+아이언.웨지": "Driver + Hybrid + Irons + Wedge",
+  "버디온 버튼 주니어 7번 아이언": "Birdie On Button Junior #7 Iron",
+  "붐 아동용 아이언": "Boom Kids' Iron",
+  "블랙": "Black",
+  "주니어 샌드 웨지": "Junior Sand Wedge",
+  "특대": "Extra Large"
  }
 }

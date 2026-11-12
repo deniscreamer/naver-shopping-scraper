@@ -255,6 +255,14 @@ JUNIOR = next(r for r in load_table()["rows"] if r["category_id"] == "50002787")
     ("PGM 주니어 골프채 풀세트", "드라이버 10.5도", None),                    # a 풀세트's choice: the set's box
     ("어린이골프채 아기골프채 안전인증 교구 아이언 퍼터 우드 클럽", "퍼터 / 9호 / ORANGE", "single_club"),  # 4987660149
     ("엠유스포츠 밀키 주니어 골프채", None, None),                              # no club word: the set's box
+    # 2026-11-12: an age, a height, a loft or a size after 클럽 is not a count of clubs (was the set's box, $709-729)
+    ("[감씨]주니어 골프채 어린이 골프클럽 6~8세 드라이버", None, "single_club"),      # 5396141262
+    ("어린이 주니어 골프채 아동 초등학생용 클럽 6-8세 퍼터", None, "single_club"),     # 4649618264
+    ("어린이골프채 주니어 샌드 웨지 클럽 56도웨지 사용자 키 130-160cm", None, "single_club"),  # 6849582078
+    ("주니어 UL7 단품 아이언 7번 아이언, 57 사이즈", None, "single_club"),
+    ("US키즈골프 어린이 골프채 주니어 세트 가방포함 UL7 57사이즈 7클럽", None, None),  # the count stays
+    ("캘러웨이 XJ2 주니어 풀세트 115CM-130CM (6개 세트) 2026", None, None),
+    ("주니어 골프 세트 조절식 드라이버 3세 이상, Red", None, None),                # a set word: the set's box
 ])
 def test_junior_single_club_or_set(title, variant, kind):
     found = default_kind(JUNIOR, title, variant)
