@@ -33,6 +33,9 @@ class CategoryRules:
     description_images: bool = False     # OCR the description images (description_images.py) and take the
                                          # package from them: what the seller states, else the set's parts; the
                                          # parts profile follows the Naver category id (description_measures)
+    agency_needs_brand: bool = False     # a purchase agency's import with no brand anywhere is held (run_transform):
+                                         # junior clubs, 2026-11-12, three no-name US sets resold at 631-689,000
+                                         # KRW ($1499-1899), titles cut ("부 주니어 골프 세트 클럽 Ages 4-8 (44-49 )")
 
 
 @dataclass(frozen=True)
@@ -71,7 +74,8 @@ RULES = {
             "50002787": CategoryRules(
                                       # owner 2026-11-11: junior clubs and sets, the full sets' rules (paid
                                       # configurations and add-ons, the images read); no parts profile
-                                      paid_variants=True, paid_addons=True, description_images=True),
+                                      paid_variants=True, paid_addons=True, description_images=True,
+                                      agency_needs_brand=True),
         }),
 }
 

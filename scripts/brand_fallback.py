@@ -15,6 +15,7 @@ order, the first that gives a value (`brand_source` says which):
                                                         89 % the same brand, most others the same brand spelled
                                                         another way (피지엠 / PGM, 캘러웨이골프 / 캘러웨이); a
                                                         combination set (조합, 32 titles) names several: the first
+  3b. a brand the dictionary knows starting the title "title_known" ("프랭클린 스포츠 ...", 2026-11-12)
   4. the importer / distributor in 원산지's brackets   "origin" ("일본산(혼마코리아)": 혼마코리아)
   5. a brand of the shop in the images' text           "images_text": the one read most often (a Korean
                                                         brand only where a word starts: 쇼핑 is not 핑)
@@ -169,11 +170,24 @@ def latin_phrases(rows: list[str]) -> Counter:
     return Counter(m.upper() for r in rows for m in _LATIN_PHRASE.findall(r))
 
 
-def decide(title: str | None, origin: str | None, brands: list[str], rows: list[str]) -> tuple[str, str, list[str]]:
-    """-> (brand, source, other candidates) for a product with no brand of its own (steps 3-7)."""
+def leading(title: str | None, known: list[str]) -> str | None:
+    """A brand the shop's brand dictionary knows that starts the title ("프랭클린 스포츠 조절 가능한 유소년 골프 세트":
+    13324651260, 2026-11-12, an import with no brand row, maker or importer), the longest; two letters at least."""
+    t = _norm(title)
+    found = [b for b in known if len(_norm(b)) >= 2 and t.startswith(_norm(b))]
+    return max(found, key=lambda b: len(_norm(b))) if found else None
+
+
+def decide(title: str | None, origin: str | None, brands: list[str], rows: list[str],
+           known: list[str] | None = None) -> tuple[str, str, list[str]]:
+    """-> (brand, source, other candidates) for a product with no brand of its own (steps 3-7; known: the brand
+    dictionary's Korean names, for a title that starts with one)."""
     titled = in_title(title, brands)
     if titled:
         return titled[0], "title", titled[1:]
+    first = leading(title, known or [])
+    if first:
+        return first, "title_known", []
     dist = distributors(origin)
     if dist:
         return dist[0], "origin", dist[1:]
@@ -188,7 +202,8 @@ def decide(title: str | None, origin: str | None, brands: list[str], rows: list[
 
 
 def fill(prepared: list[Any], rows_of: Callable[[str], list[str]],
-         origins: dict[str, str | None], texts: Callable[[Any], list[dict[str, str]]]) -> int:
+         origins: dict[str, str | None], texts: Callable[[Any], list[dict[str, str]]],
+         known: list[str] | None = None) -> int:
     """Give every product without a brand one (steps 3-7), add the note and the brand to its texts. rows_of(key): the
     images' OCR rows of the product; origins: {key: 원산지 as the page states it}. -> how many were filled."""
     brands = shop_brands(prepared)
@@ -197,7 +212,8 @@ def fill(prepared: list[Any], rows_of: Callable[[str], list[str]],
         product = p["product"]
         if product.get("brand_ko"):
             continue
-        brand, source, others = decide(product.get("title_ko"), origins.get(p["key"]), brands, rows_of(p["key"]))
+        brand, source, others = decide(product.get("title_ko"), origins.get(p["key"]), brands, rows_of(p["key"]),
+                                       known)
         p["product"]["brand_ko"], p["product"]["brand_source"] = brand, source
         p["notes"] = [x for x in p["notes"] if x["code"] != "brand_fallback"] + [
             {"code": "brand_fallback", "detail": f"{source}: {brand}" + (f"; also {', '.join(others)}" if others else "")}]

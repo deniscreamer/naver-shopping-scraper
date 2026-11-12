@@ -88,3 +88,24 @@ def test_each_product_keeps_its_own_jobs_paid_choice(tmp_path):
     _job(jobs, "_superseded-x", shops, ["7"], "2026-11-12T07:00:00+00:00", paid=True, free_only=False)
     got = run_transform.paid_choices("fairwardgolf", str(shops), str(jobs))
     assert got == {"3": run_transform.VARIANTS, "4": run_transform.VARIANTS, "5": run_transform.PAID}
+
+
+def test_a_junior_agency_import_with_no_brand_is_held(tmp_path):
+    """2026-11-12: three no-name US sets resold by purchase agencies at $1499-1899 were published; 50002787 holds
+    such an import (CategoryRules.agency_needs_brand) once the brand fallback found nothing."""
+    ls = []
+    for name in ("11674983361", "5396141262", "5140543074"):
+        with open(os.path.join(FX, name + ".json"), encoding="utf-8") as f:
+            ls.append(json.load(f))
+    src = tmp_path / "full-50002787"
+    src.mkdir()
+    (src / "products.jsonl").write_text("".join(json.dumps(x, ensure_ascii=False) + "\n" for x in ls),
+                                        encoding="utf-8")
+    shops = tmp_path / "shops"
+    keep_run.keep(str(src), str(shops))
+    result = run_transform.run("fairwardgolf", None, str(shops), choices={})
+    by_id = {p["key"].split(":")[3]: p for p in result["prepared"]}
+    assert by_id["11674983361"]["status"] == "held"
+    assert [h["code"] for h in by_id["11674983361"]["held"]] == ["agency_no_brand"]
+    assert by_id["5396141262"]["status"] == by_id["5140543074"]["status"] == "ready"
+    assert "held fairwardgolf:naver:102563157:11674983361: agency_no_brand" in "\n".join(result["report"])

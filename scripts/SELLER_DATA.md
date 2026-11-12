@@ -104,7 +104,12 @@ Brand -> `transform.prepare`, `brand_fallback.py` (2026-11-08)
   `brand_fallback.clean` keeps the name or gives none. A reselling shop writes its own name as the brand and
   "<its shop>협력사" as the maker (재팬도코도코, 홈앤컴, 굿세라, 구띵상점: 9 shops of 45 whose brand or maker is the
   shop's name): neither is a brand (`brand_fallback.resellers_own`); a shop selling its own brand (스컬독, 버디온,
-  아화골프) writes no 협력. Still taken as written: a shop name with no such sign (Pick Cat). 원산지 brackets may name the making with the maker ("중국 oem / 인파로"): the parts.
+  아화골프) writes no 협력. Still taken as written: a shop name with no such sign (Pick Cat).
+- A purchase agency's import (구매대행, 원산지 기타/해외) states no brand row and no maker: the title may start with the
+  brand in Korean ("프랭클린 스포츠 ...", 13324651260): a brand the dictionary knows starting the title is taken
+  (`brand_fallback` step 3b). With none anywhere, junior clubs hold it (`agency_no_brand`): three cut US titles
+  ("부 주니어 골프 세트 클럽 Ages 4-8 (44-49 )") at 631-689,000 KRW, and 11674983361 (UTIMATE / GYMAX), 2026-11-12.
+- A school or group pack of one club ("학교/단체 세트(10개)", 10348222504): left out by the title (`group_pack`). 원산지 brackets may name the making with the maker ("중국 oem / 인파로"): the parts.
 - A title may start with a Korean branch that imports another brand ("던롭스포츠코리아 젝시오 12": XXIO): a brand
   inside such a name comes last.
 - A number after 클럽 is mostly not a count: an age ("골프클럽 6~8세 드라이버"), a loft ("클럽 56도웨지"), a height:

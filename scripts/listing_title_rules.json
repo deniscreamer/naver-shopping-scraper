@@ -242,6 +242,42 @@
       "notPrecededBy": []
      }
     ]
+   },
+   {
+    "code": "group_pack",
+    "why": "A school or group pack of one club ('록스프랜드 주니어 7번아이언 학교/단체 세트(10개)', 10348222504, 2026-11-12: ten #7 irons, $1299): sold to schools and academies, not to a family.",
+    "tokens": [
+     {
+      "text": "학교/단체",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "단체세트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "단체용",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "학교용",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "골프스쿨용",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "아카데미용",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
    }
   ],
   "50002788": [

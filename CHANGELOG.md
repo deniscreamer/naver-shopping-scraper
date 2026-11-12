@@ -22,6 +22,10 @@ version in `extension/manifest.json`.
   year is no club count for the package kind (four single junior clubs had the set's box, $709-729 -> $259-289).
   Two measures fixtures (5396141262, 6849582078). 363 new dictionary entries read by a review and an adversarial check: 11 non-brands
   out of the brand dictionary, 20 entries corrected (option names fit to one product: 모델선택 "Age Group" -> Model).
+- **The run's leftovers** (2026-11-12): a brand the dictionary knows at the start of a title is the brand (Franklin
+  Sports, published again); a purchase agency's junior import with no brand is held (`agency_needs_brand`) and four
+  such were withdrawn (three no-name sets at $1499-1899, UTIMATE); a school pack of ten irons is left out by the title
+  (`group_pack`) and withdrawn; a TaylorMade Qi4D set collected in a superseded job published.
 - 18 junior products and one full set published again (brands, titles, two-club prices $749-799 -> $349-399,
   dictionary fixes), 7 with a new handle (the old one redirects); 24 dictionary entries set by hand, then backed up.
 

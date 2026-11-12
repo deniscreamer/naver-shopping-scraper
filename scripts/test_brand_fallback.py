@@ -148,3 +148,14 @@ def test_a_brand_inside_a_korean_branch_name_comes_last():
 ])
 def test_a_reselling_shops_own_name_is_no_brand(name, maker, store, own):
     assert B.resellers_own(name, maker, store) is own
+
+
+def test_a_known_brand_starting_the_title():
+    # 13324651260: an import with no brand row, maker or importer; the title starts with the brand
+    known = ["프랭클린 스포츠", "아화", "핑", "인파로"]
+    assert B.leading("프랭클린 스포츠 조절 가능한 유소년 골프 세트 Red", known) == "프랭클린 스포츠"
+    assert B.leading("주니어 골프채 프랭클린 스포츠", known) is None          # only where the title starts
+    assert B.leading("핑크 주니어 골프채", known) is None                     # one syllable: never
+    assert B.decide("프랭클린 스포츠 조절 가능한 유소년 골프 세트", None, [], [], known) == (
+        "프랭클린 스포츠", "title_known", [])
+    assert B.decide("프랭클린 스포츠 유소년 세트", None, [], [])[1] == "none"   # no dictionary: as before

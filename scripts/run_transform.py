@@ -19,6 +19,7 @@ rules (same input + same rules = the same bytes: sorted by key, no time inside):
 import argparse
 import json
 import os
+import re
 import sys
 from collections import Counter
 from typing import Any
@@ -160,6 +161,17 @@ def paid_choices(shop: str, shops_root: str = SHOPS_ROOT, jobs_root: str = JOBS_
     return out
 
 
+def _known_brands(shops_root: str) -> list[str]:
+    """The Korean names of the brand dictionary (brand_fallback step 3b); none for another shops root (a test's)."""
+    if os.path.abspath(shops_root) != os.path.abspath(SHOPS_ROOT):
+        return []
+    try:
+        from translation_dicts import Dictionaries
+        return sorted(k for k in Dictionaries().entries["brand"] if re.search(r"[가-힣]", k))
+    except Exception:                                                   # a test's shops root: no dictionary
+        return []
+
+
 def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
         choices: dict[str, str] | None = None) -> dict:
     """Prepare the shop's latest lines. Each product with the paid choices of its job (`choices`, default
@@ -181,7 +193,15 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
         lambda key: [r for img in image_rows(load_sidecar(shop, key.split(":")[3], shops_root)) for r in img],
         {k: (((line[2].get("specs") or {}).get("facts") or {}).get("origin") or {}).get("value")
          for k, line in latest.items()},
-        _texts)
+        _texts,
+        _known_brands(shops_root))
+    for p in prepared:                                                  # after the brand: needs the fallback's answer
+        cat = rules.categories.get(str(p["source"].get("category_id")))
+        if cat and cat.agency_needs_brand and p["status"] == "ready" \
+                and p["product"].get("brand_source") == "none" \
+                and any(n["code"] == "purchase_agency" for n in p["notes"]):
+            p["held"].append({"code": "agency_no_brand", "detail": "a purchase agency's import with no brand"})
+            p["status"] = "held"
     out_dir = os.path.join(shops_root, shop, "prepared")
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "products.jsonl"), "w", encoding="utf-8") as f:
