@@ -135,6 +135,15 @@ Description cleanup -> `description_clean.py`, `shared_images.py`
 - What the baselines rest on, the 120 sets (2026-11-10): the median club of the sellers' tables is 332 g; 11 sets
   state their bag's weight, 2.6-4.8 kg; 4 state a caddie bag's sides, 39-40 x 31 cm; one set (a Callaway Edge, on 3
   listings) states its box, 121 x 20 x 16 cm, around a 111 cm driver.
+- On the 300 sets of the fairwardgolf job (2026-11-11): 64 of the 87 on the flat default weight said nothing of the
+  bag, 28 no club count, 13 were one club filed as a set, 6 stated nothing. Sellers write the bag in machine
+  translation of 球包 / 枪包 (볼백, 볼 가방, 공 봉투, 건백), as an item of the composition ("... / 퍼터(33\") /
+  골프백"), or in a gift (레디백: not the set's); a count in option values ("4개 스틸 건백"), in the 풀세트구성 row,
+  in a typed numbered list ("1> 드라이버", the irons "6,7,8,9,P,S" on their own line); one weight for the irons
+  ("410(#7)", "#7 약320g", "(7번 R 기준)", on 55 of 300); PGM / SMACK tables of head + shaft + grip without a total
+  (20); OCR's spellings of the labels (19). Rows that look like a statement and are not: a shipping rule ("5kg내외:
+  4만원"), a buyer ("175cm, 77~79kg"), the returns' shoe box ("골프화박스 규격 395 x 250 x 155"), a bag's accepted
+  length ("대응 클럽 길이 45인치"), an uncut shaft (CPM / torque tables), "풀세트 패키지" (the set).
 - On the 120 collected sets (2026-11-10): the 상품정보 row 골프백포함여부 is on 81 (미포함 47, 캐디백 24, 캐디백 +
   보스턴백 6, 스탠드백 4) and agrees with every other explicit word but one listing whose free variants are the
   no-bag ones (8514409092: the variant's words go first). A bag sold as a paid add-on means the set has none (6

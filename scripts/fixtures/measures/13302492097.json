@@ -1,14 +1,13 @@
 {
  "product_id": "13302492097",
- "covers": "A listing of three clubs (a driver, a wood and a utility, no bag): the count and the bag's state are known, so the composition stands though it is under the weight of any full set (2), not the flat default. No table of the three: the count x the baseline club weight.",
+ "covers": "A listing of three clubs (a driver, a wood and a utility, no bag): the count and the bag's state are known, so the composition stands though it is under the weight of any full set (2), not the flat default. The three clubs' own weights, one per image: their sum (3, since 2026-11-11).",
  "checked": [
   "3 clubs: \"3종\" in the title; 총클럽개수 \"3개\" (풀세트구성: 드라이버, 페어웨이, 유틸리티); every variant is one driver, one wood and one utility (\"드라이버11.5도-L\", \"우드3번(18도)-L\", \"유틸5번(22도)-L\")",
   "no bag: 골프백포함여부 \"미포함\"",
-  "product 1020 g = 3 x 340: the page weighs each club once, in three images (\"총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / ...\" the driver, \"... / 약270g·C3 (#5·ALTAJLE·L) / ...\" the wood, \"... / 약300g·C2 (#5·ALTAJLE·L) / ...\" the utility); three rows are no table, and 300 g is under 1.25 x 255 g (the spread of a set), so the baseline club stands in",
-  "package 3020 g = 1020 + the 2000 g carton (7000 g, the flat default of a full set, before 2026-11-10)",
+  "product 825 g = 255 + 270 + 300: the page weighs each club once, in three images (\"총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / ...\" the driver, \"... / 약270g·C3 ...\" the wood, \"... / 약300g·C2 ...\" the utility); a set of three needs a spread of 1.1 only (2026-11-11), so the three weights are the clubs",
+  "package 2825 g = 825 + the 2000 g carton",
   "length 1243 mm = 45 in (\"길이(inch) / 45 / 토크(°) / 7.8 / 7.5\": 1143 mm) + 100; sides 200 x 160: the baseline without a bag"
  ],
- "note": "Approximate: the three rows add up to 825 g (255 + 270 + 300), 195 g under the 1020 g the rule gives; the value pinned is the rule's. Three of the listing's variants: the others' words give the same fields.",
  "input": {
   "title": "핑 GLE4 여성 풀세트 3종 드라이버 우드 유틸 3번 5번 L",
   "category": {"id": "50002788", "name": "스포츠/레저 > 골프 > 골프클럽 > 풀세트"},
@@ -115,22 +114,22 @@
    ],
    "fields": {
     "product_weight_g": {
-     "value": 1020,
+     "value": 825,
      "source": "composed",
-     "confidence": 2,
+     "confidence": 3,
      "how": "clubs, no bag",
      "parts": [
-      {"part": "clubs", "value": 1020, "from": "3 clubs x baseline club weight", "count_from": "listing"},
+      {"part": "clubs", "value": 825, "from": "sum of 3 club weights", "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low", "count_from": "listing"},
       {"part": "bag", "value": 0, "from": "not in the set", "said_by": "listing"}
      ]
     },
     "package_weight_g": {
-     "value": 3020,
+     "value": 2825,
      "source": "composed",
-     "confidence": 2,
+     "confidence": 3,
      "how": "product weight + carton",
      "parts": [
-      {"part": "product", "value": 1020, "from": "product_weight_g"},
+      {"part": "product", "value": 825, "from": "product_weight_g"},
       {"part": "carton", "value": 2000, "from": "baseline"}
      ]
     },
@@ -160,5 +159,6 @@
     }
    }
   }
- ]
+ ],
+ "note": "Three of the listing's variants: the others' words give the same fields."
 }

@@ -64,8 +64,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 7784,
-       "max": 7784
+       "min": 7818,
+       "max": 7818
       },
       "source": "composed",
       "confidence": 2,
@@ -73,8 +73,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3984,
-        "from": "12 clubs x median club weight",
+        "value": 4018,
+        "from": "11 club weights + 1 x their median",
         "quote": "총중량(g) / 262 / 278 / 293 / 302 / 313",
         "count_from": "listing"
        },
@@ -97,8 +97,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 9784,
-       "max": 9784
+       "min": 9818,
+       "max": 9818
       },
       "source": "composed",
       "confidence": 2,
@@ -106,7 +106,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 7784,
+        "value": 7818,
         "from": "product_weight_g"
        },
        {

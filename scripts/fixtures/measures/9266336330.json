@@ -54,8 +54,26 @@
   {
    "variants": [["R강도"], ["S강도"]],
    "fields": {
-    "product_weight_g": {"value": 5700, "source": "category_default", "confidence": 1},
-    "package_weight_g": {"value": 7000, "source": "category_default", "confidence": 1},
+    "product_weight_g": {
+     "value": 3400,
+     "source": "composed",
+     "confidence": 2,
+     "how": "clubs, no bag",
+     "parts": [
+      {"part": "clubs", "value": 3400, "from": "10 clubs x baseline club weight", "count_from": "listing"},
+      {"part": "bag", "value": 0, "from": "not in the set", "said_by": "listing"}
+     ]
+    },
+    "package_weight_g": {
+     "value": 5400,
+     "source": "composed",
+     "confidence": 2,
+     "how": "product weight + carton",
+     "parts": [
+      {"part": "product", "value": 3400, "from": "product_weight_g"},
+      {"part": "carton", "value": 2000, "from": "baseline"}
+     ]
+    },
     "package_length_mm": {
      "value": 1240,
      "source": "composed",

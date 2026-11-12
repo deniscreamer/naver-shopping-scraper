@@ -118,17 +118,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -138,10 +139,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -150,16 +147,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -279,17 +276,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -299,10 +297,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -311,16 +305,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -440,17 +434,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -460,10 +455,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -472,16 +463,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -601,17 +592,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -621,10 +613,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -633,16 +621,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -762,17 +750,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -782,10 +771,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -794,16 +779,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -923,17 +908,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -943,10 +929,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -955,16 +937,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -1084,17 +1066,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -1104,10 +1087,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -1116,16 +1095,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -1245,17 +1224,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -1265,10 +1245,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -1277,16 +1253,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -1406,17 +1382,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -1426,10 +1403,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -1438,16 +1411,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -1567,17 +1540,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -1587,10 +1561,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -1599,16 +1569,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -1728,17 +1698,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -1748,10 +1719,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -1760,16 +1727,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -1889,17 +1856,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -1909,10 +1877,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -1921,16 +1885,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -2050,17 +2014,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -2070,10 +2035,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -2082,16 +2043,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -2211,17 +2172,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -2231,10 +2193,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -2243,16 +2201,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -2372,17 +2330,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -2392,10 +2351,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -2404,16 +2359,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -2533,17 +2488,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -2553,10 +2509,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -2565,16 +2517,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -2694,17 +2646,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -2714,10 +2667,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -2726,16 +2675,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -2855,17 +2804,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -2875,10 +2825,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -2887,16 +2833,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -3016,17 +2962,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -3036,10 +2983,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -3048,16 +2991,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -3177,17 +3120,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -3197,10 +3141,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -3209,16 +3149,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -3338,17 +3278,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -3358,10 +3299,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -3370,16 +3307,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -3499,17 +3436,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -3519,10 +3457,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -3531,16 +3465,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -3660,17 +3594,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -3680,10 +3615,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -3692,16 +3623,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -3821,17 +3752,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -3841,10 +3773,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -3853,16 +3781,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -3982,17 +3910,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -4002,10 +3931,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -4014,16 +3939,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -4143,17 +4068,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -4163,10 +4089,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -4175,16 +4097,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -4304,17 +4226,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -4324,10 +4247,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -4336,16 +4255,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -4465,17 +4384,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -4485,10 +4405,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -4497,16 +4413,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -4626,17 +4542,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -4646,10 +4563,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -4658,16 +4571,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -4787,17 +4700,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -4807,10 +4721,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -4819,16 +4729,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -4948,17 +4858,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -4968,10 +4879,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -4980,16 +4887,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -5109,17 +5016,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -5129,10 +5037,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -5141,16 +5045,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -5270,17 +5174,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -5290,10 +5195,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -5302,16 +5203,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -5431,17 +5332,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -5451,10 +5353,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -5463,16 +5361,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -5592,17 +5490,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -5612,10 +5511,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -5624,16 +5519,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -5753,17 +5648,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -5773,10 +5669,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -5785,16 +5677,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -5914,17 +5806,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -5934,10 +5827,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -5946,16 +5835,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -6075,17 +5964,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -6095,10 +5985,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -6107,16 +5993,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -6236,17 +6122,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -6256,10 +6143,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -6268,16 +6151,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -6397,17 +6280,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -6417,10 +6301,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -6429,16 +6309,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -6558,17 +6438,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -6578,10 +6459,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -6590,16 +6467,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -6719,17 +6596,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -6739,10 +6617,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -6751,16 +6625,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -6880,17 +6754,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -6900,10 +6775,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -6912,16 +6783,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -7041,17 +6912,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -7061,10 +6933,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -7073,16 +6941,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -7202,17 +7070,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -7222,10 +7091,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -7234,16 +7099,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -7363,17 +7228,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -7383,10 +7249,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -7395,16 +7257,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -7524,17 +7386,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -7544,10 +7407,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -7556,16 +7415,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -7685,17 +7544,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -7705,10 +7565,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -7717,16 +7573,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -7846,17 +7702,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -7866,10 +7723,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -7878,16 +7731,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -8007,17 +7860,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -8027,10 +7881,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -8039,16 +7889,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -8168,17 +8018,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -8188,10 +8039,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -8200,16 +8047,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -8329,17 +8176,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -8349,10 +8197,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -8361,16 +8205,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -8490,17 +8334,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -8510,10 +8355,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -8522,16 +8363,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -8651,17 +8492,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -8671,10 +8513,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -8683,16 +8521,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -8812,17 +8650,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -8832,10 +8671,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -8844,16 +8679,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -8973,17 +8808,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -8993,10 +8829,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -9005,16 +8837,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -9134,17 +8966,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -9154,10 +8987,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -9166,16 +8995,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -9295,17 +9124,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -9315,10 +9145,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -9327,16 +9153,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -9456,17 +9282,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -9476,10 +9303,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -9488,16 +9311,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -9617,17 +9440,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -9637,10 +9461,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -9649,16 +9469,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -9778,17 +9598,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -9798,10 +9619,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -9810,16 +9627,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -9939,17 +9756,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -9959,10 +9777,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -9971,16 +9785,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -10100,17 +9914,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -10120,10 +9935,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -10132,16 +9943,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -10261,17 +10072,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -10281,10 +10093,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -10293,16 +10101,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -10422,17 +10230,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -10442,10 +10251,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -10454,16 +10259,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -10583,17 +10388,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -10603,10 +10409,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -10615,16 +10417,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -10744,17 +10546,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -10764,10 +10567,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -10776,16 +10575,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -10905,17 +10704,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -10925,10 +10725,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -10937,16 +10733,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -11066,17 +10862,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -11086,10 +10883,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -11098,16 +10891,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -11227,17 +11020,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -11247,10 +11041,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -11259,16 +11049,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -11388,17 +11178,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -11408,10 +11199,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -11420,16 +11207,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -11549,17 +11336,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -11569,10 +11357,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -11581,16 +11365,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -11710,17 +11494,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -11730,10 +11515,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -11742,16 +11523,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -11871,17 +11652,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -11891,10 +11673,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -11903,16 +11681,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -12032,17 +11810,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -12052,10 +11831,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -12064,16 +11839,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -12193,17 +11968,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -12213,10 +11989,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -12225,16 +11997,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -12354,17 +12126,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -12374,10 +12147,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -12386,16 +12155,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -12515,17 +12284,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -12535,10 +12305,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -12547,16 +12313,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -12676,17 +12442,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -12696,10 +12463,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -12708,16 +12471,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -12837,17 +12600,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -12857,10 +12621,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -12869,16 +12629,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -12998,17 +12758,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -13018,10 +12779,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -13030,16 +12787,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -13159,17 +12916,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -13179,10 +12937,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -13191,16 +12945,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -13320,17 +13074,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -13340,10 +13095,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -13352,16 +13103,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -13481,17 +13232,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -13501,10 +13253,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -13513,16 +13261,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -13642,17 +13390,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -13662,10 +13411,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -13674,16 +13419,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -13803,17 +13548,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -13823,10 +13569,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -13835,16 +13577,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -13964,17 +13706,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -13984,10 +13727,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -13996,16 +13735,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -14125,17 +13864,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -14145,10 +13885,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -14157,16 +13893,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -14286,17 +14022,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -14306,10 +14043,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -14318,16 +14051,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -14447,17 +14180,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -14467,10 +14201,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -14479,16 +14209,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -14608,17 +14338,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -14628,10 +14359,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -14640,16 +14367,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -14769,17 +14496,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -14789,10 +14517,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -14801,16 +14525,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -14930,17 +14654,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -14950,10 +14675,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -14962,16 +14683,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -15091,17 +14812,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -15111,10 +14833,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -15123,16 +14841,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -15252,17 +14970,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -15272,10 +14991,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -15284,16 +14999,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -15413,17 +15128,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -15433,10 +15149,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -15445,16 +15157,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -15574,17 +15286,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -15594,10 +15307,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -15606,16 +15315,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -15735,17 +15444,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -15755,10 +15465,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -15767,16 +15473,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -15896,17 +15602,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -15916,10 +15623,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -15928,16 +15631,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {
@@ -16057,17 +15760,18 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 825,
+       "max": 825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "clubs, no bag",
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 825,
+        "from": "sum of 3 club weights",
+        "quote": "총중량(g)/밸런스 / 약255g·C4 (ALTAJLE-L) / 킥 포인트 / Low",
         "count_from": "listing"
        },
        {
@@ -16077,10 +15781,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -16089,16 +15789,16 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2825,
+       "max": 2825
       },
       "source": "composed",
-      "confidence": 2,
+      "confidence": 3,
       "how": "product weight + carton",
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 825,
         "from": "product_weight_g"
        },
        {

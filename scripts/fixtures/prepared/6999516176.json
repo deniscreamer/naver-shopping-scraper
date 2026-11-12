@@ -102,8 +102,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 5160,
-       "max": 5160
+       "min": 5422,
+       "max": 5422
       },
       "source": "composed",
       "confidence": 2,
@@ -111,8 +111,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1360,
-        "from": "4 clubs x baseline club weight",
+        "value": 1622,
+        "from": "sum of 4 club weights",
+        "quote": "WOOD | #1 | 60 | 10.5 | 197 | 50 | 62 | 45″ | D1",
         "count_from": "listing"
        },
        {
@@ -134,8 +135,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 7160,
-       "max": 7160
+       "min": 7422,
+       "max": 7422
       },
       "source": "composed",
       "confidence": 2,
@@ -143,7 +144,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 5160,
+        "value": 5422,
         "from": "product_weight_g"
        },
        {
@@ -261,8 +262,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 5160,
-       "max": 5160
+       "min": 5422,
+       "max": 5422
       },
       "source": "composed",
       "confidence": 2,
@@ -270,8 +271,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1360,
-        "from": "4 clubs x baseline club weight",
+        "value": 1622,
+        "from": "sum of 4 club weights",
+        "quote": "WOOD | #1 | 60 | 10.5 | 197 | 50 | 62 | 45″ | D1",
         "count_from": "listing"
        },
        {
@@ -293,8 +295,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 7160,
-       "max": 7160
+       "min": 7422,
+       "max": 7422
       },
       "source": "composed",
       "confidence": 2,
@@ -302,7 +304,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 5160,
+        "value": 5422,
         "from": "product_weight_g"
        },
        {
@@ -420,8 +422,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 5160,
-       "max": 5160
+       "min": 5422,
+       "max": 5422
       },
       "source": "composed",
       "confidence": 2,
@@ -429,8 +431,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1360,
-        "from": "4 clubs x baseline club weight",
+        "value": 1622,
+        "from": "sum of 4 club weights",
+        "quote": "WOOD | #1 | 60 | 10.5 | 197 | 50 | 62 | 45″ | D1",
         "count_from": "listing"
        },
        {
@@ -452,8 +455,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 7160,
-       "max": 7160
+       "min": 7422,
+       "max": 7422
       },
       "source": "composed",
       "confidence": 2,
@@ -461,7 +464,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 5160,
+        "value": 5422,
         "from": "product_weight_g"
        },
        {

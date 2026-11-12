@@ -455,7 +455,7 @@ Every field carries `confidence`, **1 to 5** (the owner, 2026-11-10):
 | 5 | the seller states this field itself in typed text and says what it is: a net weight, a weight with the package, the box's sides (the server path); a typed box or packed weight in the description |
 | 4 | the seller states it, a weaker reading: read from an image, or its kind left open (a plain 중량 11.5kg: with the box or not), or bound to the variant by club count, or a per-piece weight times the count |
 | 3 | worked out wholly from the seller's own figures for this product, plus the operator's carton / margin: the clubs' exact sum with the bag absent or its weight stated (the count and the bag's state from the listing or the typed text); the length from the driver read; a package weight on such a product weight |
-| 2 | composed with a baseline or a weak part: the count x the median, a baseline club / bag / longest club, the baseline box sides, the bag's state known only from an image's sentence, the count read from the images or taken from the clubs' table alone |
+| 2 | composed with a baseline or a weak part: the count x the median, a baseline club / bag / longest club, the baseline box sides, the bag's state known only from an image's sentence or a closed list of clubs, the count read from the images or taken from the clubs' table alone; the bag assumed (`flags: ["container_assumed"]`: the clubs are known and nothing says whether the bag ships, so the baseline bag, the heavy side; the owner 2026-11-11) |
 | 1 | the flat category default: the composition is unknown |
 
 **The scale changed on 2026-11-10** (it was 1-3 since 2026-11-06: 3 stated with its kind, 2 stated with the kind
@@ -598,6 +598,35 @@ Butt 외경 in its header, is not the clubs').
   which made the median club of 7583123963's 13-club set 296 g; the only set of the 120 with such rows). 스윙웨이트
   beside a total is the balance, not a part. A bare number after a name is the shaft's model, not a club ("약256g /
   C1(ULT 250 J-L)" gave a 250 g club on three rows of 9321714669). Read for 94 of the 120 sets (80 before).
+
+**More of the page, 2026-11-11** (the 300 sets of the fairwardgolf job; the products on the flat default weight
+went from 109 to 23 of 426, every one of the rules below a regex or a condition; one fixture per rule in
+`fixtures/measures/`, made with `make_measures_fixture.py` from a real product):
+
+* core (every category): shipping rules ("5kg내외", "2kg까지는", "160cm이상"), a buyer's height and weight, the
+  returns' shoe box are never read; "풀세트 패키지" is the set, not its box; the notice's "크기,중량 1230mm/10kg" is
+  the product's weight.
+* golf sets, the bag: machine-translated bag words (볼백, 볼 가방, 공 봉투, 건백); the bag as an item of a
+  composition line, or "8개+캐디백"; a gift's 레디백 / 버킷백 / 텀블러백 is an accessory; a bag table with no bag
+  word in reach (its mouth "9형"); a list of the clubs from the driver to the putter with no bag, or a title that
+  lists the clubs ("[드라이버+우드+유틸리티]", "드라이버 10.5도 R, 아이언 6개"), says no bag (weak); the typed "<캐디백
+  별매>" beats a bare bag word in the title (9266324198: "레프트 캐디백" there is a cavity back); nothing says:
+  the bag assumed (flagged).
+* golf sets, the count: an option value's "11개", "12+볼백", "10클럽"; "11PC" / "11ps"; the 풀세트구성 row and
+  composition lines kind by kind ("드라이버 1개/아이언8개/퍼터 1개", "드라이버, 7아이언세트, 유틸리티, 퍼터", the
+  typed "1> 드라이버 ... 4> 아이언 / 6,7,8,9,P,S / 5> 퍼터"); a single club filed as a set (치퍼, 드라이빙 아이언,
+  접이식 / 실내 골프채, options of one club's lofts x shafts) is one club without a bag; an option's "N개" beside
+  other options ("8개구성 NS820", "아이언 9개") is the irons', not the set.
+* golf sets, the clubs' weights: OCR's labels (총 종량, 클럽 증량, 무계, Club중량, 클립 무게, T/W(g)); a weight in
+  its label's cell, one row above its label, or after an option index ("1378(S:#7)"); head + shaft + grip columns
+  (PGM, SMACK) summed per club; the #7 iron's weight ("410(#7)", "#7 약320g", "(7번 R 기준)") for the clubs no row
+  weighs in the same image ("(#5 기준)" is a wood's own); a table of half the set or more plus its own median for
+  the rest (in place of the count x the page's median); per-row tables that together are the set, summed; a set
+  of 3-4 clubs needs a spread of 1.1 only.
+* golf sets, the length: a bag's "대응 / 지원" length and a shaft maker's table (CPM, torque, kick point) are not a
+  club's; a driver over 46.5 in needs two rows; OCR's labels (같이(inch), 집이(nch), "길 / 이"), inch spellings
+  (인츠, 인체, 인처) and a lost dot ("4375": 43.75); an L / A variant takes the driver row of its flex when it is
+  within 30 mm of the longest (a wood's L row never stands for the driver).
 * **Count**, in the order of trust: the variant's own option values ("스틸12P+캐디백" / "스틸9P+캐디백": the variants
   of a listing are different sets), the title / 모델명 ("12pc", "9종", then the profile's "클럽 10개", "10개 풀세트",
   "[11개]"), the 상품정보 row 총클럽개수 (it disagrees with the title on 5 of the 120 and the title is right on 4:

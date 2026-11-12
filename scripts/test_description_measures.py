@@ -297,14 +297,16 @@ def test_absurd_guesses_are_never_taken():
     assert out["package_width_mm"]["compared"]["rejected"] == "implausible_for_category"   # golf box: <= 700 mm
 
 
-def test_unknown_container_or_count_leaves_the_default():
-    """The composition is unknown when nothing says whether the set has the bag (the weight, the two sides) or
-    how many clubs it has (the weight): the flat default stays, 1. The length needs neither."""
+def test_unknown_container_is_assumed_unknown_count_leaves_the_default():
+    """Nothing says whether the set has the bag: the owner (2026-11-11) takes the heavy side, the baseline bag (here
+    the stated one), flagged container_assumed, 2 at most (it was the flat default, 1, on 64 of 300 sets). How many
+    clubs it has, nobody says: the weight stays the default. The length needs neither."""
     f = D.read_rows([["클럽중량(g) / 300g / 310g / 320g", "캐디백 무게 / 4kg"]], GOLF)
-    assert sorted(made(f, 12, None)) == ["package_length_mm"]
-    out, taken = D.package_for(fields(), f, 12, None, None, GOLF, BASE)
-    assert taken == ["package_length_mm"] and brief(out["package_length_mm"]) == (1240, 2, "longest club + margin")
-    assert [out[n] for n in D.FIELDS[:2] + D.FIELDS[3:]] == [fields()[n] for n in D.FIELDS[:2] + D.FIELDS[3:]]
+    out = made(f, 12, None)
+    assert sorted(out) == ["package_height_mm", "package_length_mm", "package_width_mm", "product_weight_g"]
+    assert brief(out["product_weight_g"]) == (12 * 340 + 4000, 2, "clubs + bag")
+    assert out["product_weight_g"]["flags"] == out["package_width_mm"]["flags"] == ["container_assumed"]
+    assert out["product_weight_g"]["parts"][1]["said_by"] == "baseline"
     out, taken = D.package_for(fields(), f, None, True, None, GOLF, BASE)             # a bag, no count anywhere
     assert taken == list(D.FIELDS[2:]) and out["product_weight_g"] == fields()["product_weight_g"]
     assert out["package_weight_g"] == fields()["package_weight_g"]
@@ -739,7 +741,7 @@ def test_every_level():
     assert levels(out) == [2, 2, 3, 2, 2] and values(out) == {
         "product_weight_g": 7479, "package_weight_g": 9479, "package_length_mm": 1211, "package_width_mm": 400,
         "package_height_mm": 320}
-    assert levels(packed(D.read_rows(clubs, GOLF), 10, None)) == [1, 1, 3, 1, 1]      # with a bag or without?
+    assert levels(packed(D.read_rows(clubs, GOLF), 10, None)) == [2, 2, 3, 2, 2]      # the bag assumed (2026-11-11)
     out = packed(D.read_rows([["여성용 풀세트"]], GOLF), None, None)       # nothing read: the baseline driver
     assert levels(out) == [1, 1, 2, 1, 1] and out["package_length_mm"]["value"]["max"] == 1240
 
@@ -850,18 +852,19 @@ def test_a_known_composition_is_kept_under_the_band():
              ["총중량(g)/밸런스 / 약300g·C2 (#5·ALTAJLE·L) / 킥 포인트 / Low"]]
     xxio = [["클럽중량(g) / L / 267"], ["클럽중량(g) / L / 268 / 271 / 275 / 279 / 283"],
             ["클럽중량(g) / L / 291 / 295 / 300 / 304 / 309"]]
-    for rows in (three, xxio):
+    # 2026-11-11: a set of three needs a spread of 1.1 only (255-300 g: 1.18), so the three weights stand
+    for rows, want, how in ((three, (825, 3), "sum of 3 club weights"), (xxio, (849, 2), "3 clubs x median club weight")):
         out, taken = D.package_for(fields(), D.read_rows(rows, GOLF), 3, False, None, GOLF, BASE)
         assert taken == list(D.FIELDS)
-        assert [brief(out[n]) for n in D.FIELDS[:2]] == [(1020, 2, "clubs, no bag"), (3020, 2, "product weight + carton")]
-        assert out["product_weight_g"]["parts"][0]["from"] == "3 clubs x baseline club weight"
+        assert [brief(out[n])[:2] for n in D.FIELDS[:2]] == [want, (want[0] + 2000, want[1])]
+        assert out["product_weight_g"]["parts"][0]["from"] == how
         assert [out[n]["compared"] for n in D.FIELDS[:2]] == [{"value": 5700, **WAS}, {"value": 7000, **WAS}]
     f = D.read_rows(three + [["풀세트 무게 약 0.9kg"]], GOLF)                # a statement under the band: absurd
     out = packed(f, 3, False)
-    assert brief(out["product_weight_g"]) == (1020, 2, "clubs, no bag")
+    assert brief(out["product_weight_g"]) == (825, 3, "clubs, no bag")
     assert out["product_weight_g"]["refused"] == {"value": 900, "source": "description_image", "confidence": 4,
                                                   "how": "stated set weight", "rejected": "implausible_for_category"}
-    low = {"product_weight_g": {"min": 100, "max": 1000}}                  # the operator's band: its upper side
+    low = {"product_weight_g": {"min": 100, "max": 800}}                   # the operator's band: its upper side
     out, taken = D.package_for(fields(), D.read_rows(three, GOLF), 3, False, low, GOLF, BASE)
     assert "product_weight_g" not in taken and out["product_weight_g"]["compared"]["rejected"] == \
         "implausible_for_category"
@@ -952,7 +955,7 @@ def test_the_clubs_own_table_before_the_listings_pieces():
     assert clubs(f, 11) == (3634, "sum of 10 club weights", "table")
     assert values(packed(f, 11, True))["package_weight_g"] == 3634 + 3800 + 2000
     assert clubs(f, 13) == (3634, "sum of 10 club weights", "table")
-    assert clubs(f, 14)[1:] == ("14 clubs x median club weight", "listing")    # four over: not pieces
+    assert clubs(f, 14) == (3634 + 4 * 357.5, "10 club weights + 4 x their median", "listing")  # not pieces
     assert clubs(f, 8)[1:] == ("8 clubs x median club weight", "listing")      # a smaller set of the page's
 
 
@@ -962,15 +965,15 @@ def test_a_table_short_of_the_set_is_not_the_set():
     "1드라이버 / 2페어웨이우드 / 2유틸리티 / 6아이언 / 1퍼터"): two rows under one label hold 11 of the 12, a putter
     among them; rows gathered under a label are not one table for this rule. 13627933340's row of seven (the
     irons and the putter of 11) is under nine weights: a listing of nine or ten would not be seven clubs."""
-    f = D.read_rows([], GOLF, XHOT)
-    assert clubs(f, 11) == (round(11 * 406.5), "11 clubs x median club weight", "listing")
+    f = D.read_rows([], GOLF, XHOT)                 # 2026-11-11: the ten stated + the baseline for the putter
+    assert clubs(f, 11) == (4072 + 429, "10 club weights + 1 x their median", "listing")
     assert made(f, None, False).get("product_weight_g") is None                 # and gives no count
     f = D.read_rows([["총중량(g) / 262 / 278 / 293 / 302 / 313", "아이언,퍼터",
                       "총중량(g) / 332 / 337 / 343 / 350 / 356 / 520"]], GOLF)
-    assert clubs(f, 12) == (12 * 332, "12 clubs x median club weight", "listing")
-    f = D.read_rows([["총중량(g) / 332 / 338 / 344 / 350 / 357 / 357 / 523"]], GOLF)
-    assert clubs(f, 9)[1:] == ("9 clubs x baseline club weight", "listing")
-    assert clubs(f, 10)[1:] == ("10 clubs x baseline club weight", "listing")
+    assert clubs(f, 12) == (3686 + 332, "11 club weights + 1 x their median", "listing")
+    f = D.read_rows([["총중량(g) / 332 / 338 / 344 / 350 / 357 / 357 / 523"]], GOLF)     # the irons and the putter
+    assert clubs(f, 9) == (2601 + 2 * 350, "7 club weights + 2 x their median", "listing")
+    assert clubs(f, 10)[1:] == ("7 club weights + 3 x their median", "listing")
 
 
 def test_a_full_table_gives_the_count_nothing_states():
@@ -986,7 +989,7 @@ def test_a_full_table_gives_the_count_nothing_states():
                                                    "quote": D1[1], "count_from": "table"}
     f = D.read_rows([BAZOOKA], GOLF)
     assert clubs(f, None, True) == (5120, "sum of 12 club weights", "table")
-    assert levels(packed(f, None, True))[:2] == [2, 2] and levels(packed(f, None, None))[:2] == [1, 1]
+    assert levels(packed(f, None, True))[:2] == [2, 2] and levels(packed(f, None, None))[:2] == [2, 2]  # assumed
     assert "product_weight_g" not in made(D.read_rows([BAZOOKA, D1], GOLF), None, True)       # 12 or 10?
     f = D.read_rows([BAZOOKA, ["13PCS 구성"]], GOLF)                             # an image's count: pieces too
     assert D.image_count(f) == 13 and clubs(f, None, True) == (5120, "sum of 12 club weights", "table")
@@ -1001,8 +1004,9 @@ def test_coverage_counts_clubs_not_values():
              [("클럽 중량(g) / #7약320g (L). 약321g (A)", 0.867), ("클럽 중량(g) / 약320g / 약321g", 0.889)]]
     f = D.read_rows(glory, GOLF)
     assert sorted({x["g"] for x in f["item_weights"]}) == [252, 255, 292, 296, 320, 321]
-    assert clubs(f, 9) == (9 * 340, "9 clubs x baseline club weight", "listing")
-    assert clubs(f, 6)[1] == "6 clubs x median club weight"                     # three clubs of six
+    # 2026-11-11: "#7약320g" is the reference iron's, for the clubs its own image does not weigh (the page's other
+    # images may show other lineups)
+    assert clubs(f, 9) == (9 * 320, "0 club weights + reference club weight x 9", "listing")
     f = D.read_rows([["총중량(g)/ / SR / 343/D1 / 348/D1 / 354/D1 / 359/D1 / 366/D1 / 372/D1",
                       "총중량(g)/ / SR / 381/D2 / 388/D3 / 390/D4"],
                      ["총중량(g)/밸런스 / SR / 293/D1 / 296/D1 / (300/D1)"]], GOLF)
@@ -1021,3 +1025,127 @@ def test_typed_statement_before_the_images_reading_of_it():
     assert out["package_weight_g"]["quote"] == typed[1] and out["package_length_mm"]["quote"] == typed[0]
     out = packed(D.read_rows([EDGE], GOLF, ["패키지 무게 : 9.8kg"]), 10, False)
     assert brief(out["package_weight_g"])[:2] == (10800, 4) and "from" not in out["package_weight_g"]
+
+
+# ---- 2026-11-11: the 300 sets of the fairwardgolf job (core first, then the golf-set profile) ----------------
+
+def test_core_rows_never_read():
+    """A shipping rule, a buyer's height and weight, the returns' shoe box: never a value (8822855547 and others)."""
+    for row in ("5kg내외:4만원", "2kg까지는 기본요금", "세변합이160cm이상", "무게가10kg 이상이면", "175cm, 77~79kg",
+                "182cm- 84kg", "골프화박스 규격 395 x 250 x 155"):
+        f = D.read_rows([[row]])
+        assert not any(f[k] for k in ("packed_weights", "packed_boxes", "product_weights", "product_sizes")), row
+
+
+def test_core_set_package_and_notice_weight():
+    """"풀세트 패키지" is the set, not its box; the notice's "크기,중량 1230mm/10kg" is the product's weight."""
+    assert D.read_rows([["풀세트 패키지 무게 4kg"]])["packed_weights"] == []
+    assert [f["g"] for f in D.read_rows([["크기,중량 1230mm/10kg"]], GOLF)["set_weights"]] == [10000]
+
+
+def test_bag_words_machine_translated_and_gift_bags():
+    """13024139837 ("볼 가방용"), 13842637863 ("공 봉투 크기"): the bag. 12979780461's "레디백": a gift's."""
+    assert D.container_in("오른손 + 볼 가방용 12 장", GOLF) is True
+    assert D.container_in("MTG040 12 스틸 로드+볼백", GOLF) is True
+    f = D.read_rows([["젝시오 크루 고급 레디백", "무게 / 1.2kg"]], GOLF)
+    assert f["container_weights"] == []
+    f = D.read_rows([["크기 / 9형", "중량(g) / 약4kg"]], GOLF)                 # 9626476348: no bag word in reach
+    assert [x["g"] for x in f["container_weights"]] == [4000]
+
+
+def test_bag_in_the_composition_and_a_closed_composition():
+    """8822855547: the bag as an item of the set. 11658240481-like: a closed list of clubs, no bag (weak)."""
+    f = D.read_rows([["드라이버 / 아이언세트(6~S) / 퍼터(33\") / 골프백"]], GOLF)
+    assert f["container_yes"] and not f["container_closed"]
+    f = D.read_rows([["1드라이버+1우드+2유틸리티+7아이언+1퍼터(12pcs)"]], GOLF)
+    assert f["container_closed"] and not f["container_yes"]
+    assert "with bag" not in made(f, 12, None)["package_width_mm"]["how"]        # no bag, not assumed
+    f = D.read_rows([["1드라이버+1우드+2유틸리티+7아이언+1퍼터(12pcs)", "캐디백 포함"]], GOLF)
+    assert made(f, 12, None)["package_width_mm"]["how"] == "box side, with bag"     # a yes beats the closed list
+
+
+def test_composition_count():
+    assert D.composition_count("드라이버 1개/페어웨이우드2개/유틸리티 1개/아이언8개/퍼터 1개", GOLF) == 13
+    assert D.composition_count("드라이버, 7아이언세트, 유틸리티, 퍼터", GOLF) == 10
+    assert D.composition_count("1> 드라이버: PXG 0211 2> 우드 3> 유틸 4> 아이언 6,7,8,9,P,S 5> 퍼터", GOLF) == 10
+    assert D.composition_count("드라이버, 우드, 유틸리티, 퍼터", GOLF) is None          # no number: no count
+    assert D.composition_count("1드라이버+1우드+2유틸리티+7아이언+1퍼터(12pcs)", GOLF) == 12
+    assert D.composition_count("구성 / Qi4D 드라이버·우드·유틸리티 +P8CB 아이언(총 11개)", GOLF) == 11
+    assert D.composition_count("XXI014 드라이버 / XXI014 아이언 / XXIO 스텐드백", GOLF) is None   # model numbers
+    assert D.composition_count("하이브리드 / 7아이언/8아이언", GOLF) is None                       # a choice
+    assert D.composition_count("헤드커버5개 / 아이언커버8개 / 퍼터 커버 1개", GOLF) is None          # covers
+    assert D.composition_count("8아이언세트, 2페어웨이, 유틸리티, 퍼터, 7아이언세트, 드라이버", GOLF) is None
+    assert D.composition_count("1> 드라이버 2> 우드 3> 유틸 4> 아이언 6,7,8,9,P,S 5> 퍼터: MO-32 퍼터", GOLF) == 10
+    f = D.read_rows([["드라이버 1개/페어웨이우드2개", "유틸리티 1개/아이언8개", "퍼터 1개/캐디백 세트"]], GOLF)
+    assert D.image_count(f) is None or D.image_count(f) != 2                         # rows apart: no 2-club count
+
+
+def test_club_weight_labels_as_ocr_spells_them():
+    rows = ["총 종량(L기준) / 약259g", "클럽 증량(g) / 약252 / 약255", "무계(g) / 400g", "Club중량(g) / 282 / 286",
+            "클립 무게(g) / 307", "T/W(g) / 268 / 295 / 324"]
+    f = D.read_rows([rows], GOLF)
+    assert sorted({x["g"] for x in f["item_weights"]}) == [252, 255, 259, 268, 282, 286, 295, 307, 324, 400]
+    assert D.read_rows([["무게 10g 증량 / 300"]], GOLF)["item_weights"] == []      # a weight gain, not a label
+
+
+def test_reference_iron_stands_for_the_rest():
+    """12049132531: "무게(g) | 297 | 320 | 353 | 410(#7) | 528" of 11 clubs: four stated, seven at the #7's."""
+    f = D.read_rows([], GOLF, ["무게(g) | 297 | 320 | 353 | 410(#7) | 528"])
+    assert [x.get("ref", False) for x in f["item_weights"]] == [False, False, False, True, False]
+    assert clubs(f, 11) == (297 + 320 + 353 + 528 + 7 * 410, "4 club weights + reference club weight x 7", "listing")
+    f = D.read_rows([["클럽 중량(g) / 333g / 340g / #4-324g / #4-322g"]], GOLF)     # the #4's own weight: no reference
+    assert not any(x.get("ref") for x in f["item_weights"])
+
+
+def test_part_columns_sum_to_a_club():
+    """12391346892 (PGM): head + shaft + grip, no total column."""
+    f = D.read_rows([["TYPE / No. / LIE / LOFT / Head(g) / Shaft(g) / Grip(g) / Len",
+                      "WOOD / #1 / 56 / 10.5 / 198 / 65 / 50 / 45\" / D1",
+                      "PUTTER / #PT / 71 / 3 / 350 / 113 / 105 / 34\""]], GOLF)
+    assert sorted(x["g"] for x in f["item_weights"]) == [313, 568]
+
+
+def test_weight_in_its_label_cell_a_row_up_and_a_glued_index():
+    f = D.read_rows([["드라이버(L기준)총 중량 약 305g / 킥포인트"]], GOLF)
+    assert [x["g"] for x in f["item_weights"]] == [305]
+    f = D.read_rows([["310 / 320 / 330 / 340", "총중량(g) / C9 / D0 / D0 / D1"]], GOLF)         # OCR moved the values up
+    assert [x["g"] for x in f["item_weights"]] == [310, 320, 330, 340]
+    f = D.read_rows([["클럽중량(g) / 1378(S:#7) / 2403(R:7)"]], GOLF)                          # 6728937165
+    assert [x["g"] for x in f["item_weights"]] == [378, 403]
+
+
+def test_lengths_that_are_not_a_clubs():
+    f = D.read_rows([["대응 클럽 길이: 45인치"], ["9형 / 47 Inch 지원"]], GOLF)                  # a bag's (8958623680)
+    assert f["item_lengths"] == []
+    f = D.read_rows([["Flex / Weight / CPM / Torque / Kick Point / inch", "RS / 55g / 230 / 3.8 / Mid / 46inch"]], GOLF)
+    assert f["item_lengths"] == []                                                         # 10954221464: uncut shaft
+    f = D.read_rows([["드라이버 / 47인치"], ["길이 / 45.5인치"]], GOLF)                       # one noisy row over 46.5 in
+    assert D.longest_item(f, GOLF)["mm"] == round(45.5 * 25.4)
+
+
+def test_length_labels_as_ocr_spells_them_and_a_lost_dot():
+    f = D.read_rows([["립같이(inch) / 43.75"], ["길 / 이 / 44.5"], ["클럽길이 / 4375"], ["45인츠"]], GOLF)
+    assert sorted({x["mm"] for x in f["item_lengths"]}) == [1111, 1130, 1143]
+
+
+def test_a_womens_set_takes_the_womens_driver():
+    """XXIO 14: the driver by flex, R 45.5 in, L 44.5 in; a women's set takes the L row."""
+    f = D.read_rows([["드라이버 R / 45.5인치", "드라이버 L / 44.5인치"]], GOLF)
+    assert D.longest_item(f, GOLF)["mm"] == 1156 and D.longest_item(f, GOLF, ladies=True)["mm"] == 1130
+
+
+def test_review_cases_2026_11_11():
+    """The review of the new rules on the 300 sets: the #7's weight in a cell that names the #5 first (9343324012);
+    the driver row without a flex mark stays the longest of a women's set (13022225490); a lone 48.25 in row
+    dropped leaves the baseline, never the 3-wood (11578482349); a composition split over rows gives no count
+    (13409110111); a grip's 구경 is not a bag's mouth."""
+    f = D.read_rows([["무게(g)/델 / R / #5 365g #7 376g/C9"]], GOLF)
+    assert [(x["g"], x.get("ref", False)) for x in f["item_weights"]] == [(376, True)]
+    f = D.read_rows([["DRVER / 11.5 / 61 / 44.5\" / C1 / 186", "F/W / 15 / 59 / 42.5\" / C1 / L / 204"]], GOLF)
+    assert D.longest_item(f, GOLF, ladies=True)["mm"] == 1130
+    f = D.read_rows([["길이 / 48.25 / 43.78"]], GOLF)
+    assert D.longest_item(f, GOLF) is None
+    f = D.read_rows([["드라이버 1개/페어웨이우드2개", "유틸리티 1개/아이언8개", "퍼터 1개/캐디백 세트"]], GOLF)
+    assert D.image_count(f) is None
+    f = D.read_rows([["(구경 60/중량27g)", "무게 / 3.5kg"]], GOLF)
+    assert f["container_weights"] == []

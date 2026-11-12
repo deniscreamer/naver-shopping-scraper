@@ -1,0 +1,282 @@
+{
+ "product_id": "9266324198",
+ "covers": "A typed numbered composition counts the clubs (1> 드라이버 ... 4> 아이언 / 6,7,8,9,P,S / 5> 퍼터: 10), and the typed <골프백 별매> beats the title's bare 캐디백 (a cavity back): no bag.",
+ "checked": [
+  "typed 1> to 5>, the irons 6,7,8,9,P,S on their own line: 10 clubs",
+  "typed \"<골프백 별매-추가선택가능>\": no bag",
+  "10 x the baseline club, no bag"
+ ],
+ "input": {
+  "title": "AS가능/ S강도/ 왼손/ 테일러메이드/ 풀세트 골프채 좌타 남자 골프 레프트 캐디백 왼손잡이",
+  "category": {
+   "id": "50002788",
+   "name": "풀세트"
+  },
+  "spec_rows": [
+   {
+    "label": "상품번호",
+    "value": "9266324198"
+   },
+   {
+    "label": "제조사",
+    "value": "테일러메이드"
+   },
+   {
+    "label": "브랜드",
+    "value": "테일러메이드"
+   },
+   {
+    "label": "모델명",
+    "value": "테일러메이드"
+   },
+   {
+    "label": "원산지",
+    "value": "미국산(테일러메이드골프)"
+   },
+   {
+    "label": "종류",
+    "value": "풀세트"
+   },
+   {
+    "label": "성별",
+    "value": "남성용"
+   },
+   {
+    "label": "사용방향",
+    "value": "왼손용"
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "id": null,
+    "options_ko": []
+   }
+  ],
+  "supplements": [
+   {
+    "id": "2875390619",
+    "group": "테일러메이드골프백",
+    "name": "블랙",
+    "price": 190000,
+    "stock_quantity": 97,
+    "status": "SALE"
+   },
+   {
+    "id": "2875390620",
+    "group": "테일러메이드골프백",
+    "name": "화이트",
+    "price": 190000,
+    "stock_quantity": 99,
+    "status": "SALE"
+   },
+   {
+    "id": "2875390621",
+    "group": "테일러메이드골프백",
+    "name": "화이트네이비레드",
+    "price": 190000,
+    "stock_quantity": 100,
+    "status": "SALE"
+   }
+  ],
+  "typed": [
+   "S강도 NEW 왼손 테일러메이드 신형 풀세트",
+   "(정식통관및 품질AS보증라벨 부착)",
+   "글로벌 스펙 (일본/미국스펙 동일)모델",
+   "제품구성",
+   "1> 드라이버: 테일러메이드 RBZ 스피드 LITE 10.5도-S강도",
+   "2> 우드: 테일러메이드 RBZ 스피드 LITE 15도 (3번) 우드-S강도",
+   "3> 유틸리티: 테일러메이드 RBZ 스피드 LITE 22도 유틸리티-S강도",
+   "(4번/5번 아이언 대용으로 사용하기 좋은 제품)",
+   "4> 아이언: 테일러메이드 RBZ 스피드 LITE 경량 스틸 아이언 -S강도",
+   "6,7,8,9,P,S",
+   "5> 퍼터: 테일러메이드 MO-32 퍼터",
+   "<골프백 별매-추가선택가능>",
+   "테일러메이드 골프백",
+   "본 제품은 왼손용 S강도 풀세트입니다.",
+   "치기 편한 제품은 많은 골퍼분들이 사용하는 테일러메이드 제품입니다.",
+   "캐디백구조의 아이언은 관용성이 좋아 방향성 잘 잡아줍니다.",
+   "강도 선택관련 문의 사항 있으면 연락주세요.",
+   "전문 피팅 분석가가 상담해 드립니다",
+   "x",
+   "(실 제 제 품 사 진)"
+  ],
+  "images": [
+   [
+    3,
+    [
+     "PPECMID",
+     0.515
+    ],
+    5,
+    [
+     "34CV1637",
+     0.927
+    ],
+    [
+     "4",
+     0.534
+    ],
+    10,
+    [
+     "2E-OW",
+     0.907
+    ],
+    8
+   ],
+   [
+    2,
+    [
+     "2Z",
+     0.545
+    ],
+    1,
+    [
+     "Joining Team TaylorMade has never been easier. Packed with proven",
+     0.975
+    ],
+    3,
+    [
+     "<드라이버>",
+     1.0
+    ],
+    3,
+    [
+     "ㅋ15",
+     0.559
+    ],
+    [
+     "<유틸리티>",
+     1.0
+    ],
+    1,
+    [
+     "<아이언>",
+     1.0
+    ],
+    8
+   ]
+  ],
+  "measures": {
+   "is_set": true,
+   "weights": [],
+   "dimensions": [],
+   "references": [
+    {
+     "quote": "크기: 상품상세참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 2
+     },
+     "measure": "size",
+     "reason": "description_reference"
+    },
+    {
+     "quote": "중량: 상품상세참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 3
+     },
+     "measure": "weight",
+     "reason": "description_reference"
+    }
+   ],
+   "review": []
+  }
+ },
+ "expected": [
+  {
+   "variants": [
+    []
+   ],
+   "fields": {
+    "product_weight_g": {
+     "value": 3400,
+     "source": "composed",
+     "confidence": 2,
+     "how": "clubs, no bag",
+     "parts": [
+      {
+       "part": "clubs",
+       "value": 3400,
+       "from": "10 clubs x baseline club weight",
+       "count_from": "listing"
+      },
+      {
+       "part": "bag",
+       "value": 0,
+       "from": "not in the set",
+       "said_by": "listing"
+      }
+     ]
+    },
+    "package_weight_g": {
+     "value": 5400,
+     "source": "composed",
+     "confidence": 2,
+     "how": "product weight + carton",
+     "parts": [
+      {
+       "part": "product",
+       "value": 3400,
+       "from": "product_weight_g"
+      },
+      {
+       "part": "carton",
+       "value": 2000,
+       "from": "baseline"
+      }
+     ]
+    },
+    "package_length_mm": {
+     "value": 1240,
+     "source": "composed",
+     "confidence": 2,
+     "how": "longest club + margin",
+     "parts": [
+      {
+       "part": "longest club",
+       "value": 1140,
+       "from": "baseline"
+      },
+      {
+       "part": "margin",
+       "value": 100,
+       "from": "baseline"
+      }
+     ]
+    },
+    "package_width_mm": {
+     "value": 200,
+     "source": "composed",
+     "confidence": 2,
+     "how": "box side, no bag",
+     "parts": [
+      {
+       "part": "box side",
+       "value": 200,
+       "from": "baseline",
+       "said_by": "listing"
+      }
+     ]
+    },
+    "package_height_mm": {
+     "value": 160,
+     "source": "composed",
+     "confidence": 2,
+     "how": "box side, no bag",
+     "parts": [
+      {
+       "part": "box side",
+       "value": 160,
+       "from": "baseline",
+       "said_by": "listing"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

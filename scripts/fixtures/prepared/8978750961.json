@@ -11,7 +11,7 @@
   },
   {
    "code": "measures_from_images",
-   "detail": "package_length_mm 1/1"
+   "detail": "package_height_mm 1/1, package_length_mm 1/1, package_width_mm 1/1"
   },
   {
    "code": "gift_hidden",
@@ -128,26 +128,56 @@
       }
      },
      "package_width_mm": {
-      "low": 200,
-      "central": 280,
-      "high": 380,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 400,
+       "max": 400
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "box side, with bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 400,
+        "from": "baseline",
+        "said_by": "description_image"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
      },
      "package_height_mm": {
-      "low": 160,
-      "central": 230,
-      "high": 330,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 1,
-      "approved_by": "owner",
-      "approved_at": "2026-11-05"
+      "value": {
+       "min": 320,
+       "max": 320
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "box side, with bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 320,
+        "from": "baseline",
+        "said_by": "description_image"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 230,
+       "source": "category_default",
+       "confidence": 1
+      }
      }
     },
     "today_dispatch": null

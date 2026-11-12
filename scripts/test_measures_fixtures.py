@@ -17,10 +17,11 @@ A fixture pins one of two things, and says which. Without a word in its `note`: 
 the lines in `checked`, not what the code printed. Where the `note` says "approximate": the rule's present
 approximation, a value the page's own figures do not give and the rule cannot do better on today (7583123963: 13
 x a median that holds no iron, 4258 g where the seller's tables add up to about 4.9-5.4 kg; the S 세트 variants of
-5543663553: the R set's row, 350 g under their own; 13302492097: 3 x the baseline club, 1020 g for three clubs
-of 825 g; 12736318849: 12 x the baseline club, 4080 g, where the page's twelve weights sum 4973 g and OCR lost
+5543663553: the R set's row, 350 g under their own; 12736318849: 12 x the baseline club, 4080 g, where the page's twelve weights sum 4973 g and OCR lost
 seven). Such a pin holds the rule still so that a change shows; it does not call the value right, and a rule
 that reads the page better should move it.
+
+A new fixture from a real product: scripts/make_measures_fixture.py (2026-11-11; one per rule of that day).
 
 A deliberate change of the rules shows here as a failure that names the product, the variant, the field and both
 values. Rewrite the expected part with

@@ -102,8 +102,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -111,8 +111,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -131,8 +131,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -140,7 +140,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -260,8 +260,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -269,8 +269,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -289,8 +289,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -298,7 +298,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -418,8 +418,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -427,8 +427,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -447,8 +447,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -456,7 +456,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -576,8 +576,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -585,8 +585,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -605,8 +605,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -614,7 +614,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -734,8 +734,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -743,8 +743,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -763,8 +763,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -772,7 +772,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -892,8 +892,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -901,8 +901,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -921,8 +921,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -930,7 +930,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -1050,8 +1050,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -1059,8 +1059,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -1079,8 +1079,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -1088,7 +1088,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -1208,8 +1208,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -1217,8 +1217,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -1237,8 +1237,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -1246,7 +1246,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -1366,8 +1366,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -1375,8 +1375,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -1395,8 +1395,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -1404,7 +1404,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -1524,8 +1524,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -1533,8 +1533,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -1553,8 +1553,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -1562,7 +1562,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -1682,8 +1682,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -1691,8 +1691,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -1711,8 +1711,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -1720,7 +1720,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -1840,8 +1840,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -1849,8 +1849,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -1869,8 +1869,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -1878,7 +1878,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -1998,8 +1998,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -2007,8 +2007,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -2027,8 +2027,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -2036,7 +2036,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -2156,8 +2156,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -2165,8 +2165,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -2185,8 +2185,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -2194,7 +2194,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -2314,8 +2314,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -2323,8 +2323,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -2343,8 +2343,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -2352,7 +2352,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -2472,8 +2472,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -2481,8 +2481,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -2501,8 +2501,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -2510,7 +2510,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -2630,8 +2630,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -2639,8 +2639,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -2659,8 +2659,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -2668,7 +2668,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -2788,8 +2788,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -2797,8 +2797,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -2817,8 +2817,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -2826,7 +2826,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -2946,8 +2946,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -2955,8 +2955,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -2975,8 +2975,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -2984,7 +2984,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -3104,8 +3104,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -3113,8 +3113,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -3133,8 +3133,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -3142,7 +3142,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -3262,8 +3262,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -3271,8 +3271,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -3291,8 +3291,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -3300,7 +3300,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -3420,8 +3420,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -3429,8 +3429,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -3449,8 +3449,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -3458,7 +3458,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -3578,8 +3578,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -3587,8 +3587,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -3607,8 +3607,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -3616,7 +3616,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -3736,8 +3736,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -3745,8 +3745,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -3765,8 +3765,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -3774,7 +3774,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -3894,8 +3894,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -3903,8 +3903,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -3923,8 +3923,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -3932,7 +3932,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -4052,8 +4052,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -4061,8 +4061,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -4081,8 +4081,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -4090,7 +4090,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -4210,8 +4210,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -4219,8 +4219,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -4239,8 +4239,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -4248,7 +4248,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -4368,8 +4368,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -4377,8 +4377,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -4397,8 +4397,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -4406,7 +4406,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -4526,8 +4526,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -4535,8 +4535,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -4555,8 +4555,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -4564,7 +4564,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -4684,8 +4684,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -4693,8 +4693,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -4713,8 +4713,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -4722,7 +4722,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -4842,8 +4842,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -4851,8 +4851,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -4871,8 +4871,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -4880,7 +4880,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {
@@ -5000,8 +5000,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3185,
-       "max": 3185
+       "min": 3407,
+       "max": 3407
       },
       "source": "composed",
       "confidence": 2,
@@ -5009,8 +5009,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3185,
-        "from": "10 clubs x median club weight",
+        "value": 3407,
+        "from": "4 club weights + reference club weight x 6",
         "quote": "L / 약284 / 약40 / C2.5",
         "count_from": "listing"
        },
@@ -5029,8 +5029,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5185,
-       "max": 5185
+       "min": 5407,
+       "max": 5407
       },
       "source": "composed",
       "confidence": 2,
@@ -5038,7 +5038,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3185,
+        "value": 3407,
         "from": "product_weight_g"
        },
        {

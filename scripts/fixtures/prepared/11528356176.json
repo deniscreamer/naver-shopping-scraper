@@ -110,8 +110,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -119,8 +119,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -130,10 +131,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -142,8 +139,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -151,7 +148,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -270,8 +267,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -279,8 +276,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -290,10 +288,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -302,8 +296,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -311,7 +305,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -430,8 +424,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -439,8 +433,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -450,10 +445,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -462,8 +453,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -471,7 +462,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -590,8 +581,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -599,8 +590,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -610,10 +602,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -622,8 +610,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -631,7 +619,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -750,8 +738,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -759,8 +747,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -770,10 +759,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -782,8 +767,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -791,7 +776,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -910,8 +895,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -919,8 +904,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -930,10 +916,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -942,8 +924,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -951,7 +933,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -1070,8 +1052,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -1079,8 +1061,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -1090,10 +1073,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -1102,8 +1081,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -1111,7 +1090,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -1230,8 +1209,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -1239,8 +1218,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -1250,10 +1230,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -1262,8 +1238,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -1271,7 +1247,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -1390,8 +1366,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -1399,8 +1375,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -1410,10 +1387,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -1422,8 +1395,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -1431,7 +1404,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -1550,8 +1523,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -1559,8 +1532,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -1570,10 +1544,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -1582,8 +1552,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -1591,7 +1561,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -1710,8 +1680,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -1719,8 +1689,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -1730,10 +1701,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -1742,8 +1709,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -1751,7 +1718,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -1870,8 +1837,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -1879,8 +1846,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -1890,10 +1858,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -1902,8 +1866,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -1911,7 +1875,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -2030,8 +1994,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -2039,8 +2003,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -2050,10 +2015,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -2062,8 +2023,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -2071,7 +2032,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -2190,8 +2151,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -2199,8 +2160,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -2210,10 +2172,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -2222,8 +2180,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -2231,7 +2189,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -2350,8 +2308,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -2359,8 +2317,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -2370,10 +2329,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -2382,8 +2337,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -2391,7 +2346,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -2510,8 +2465,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -2519,8 +2474,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -2530,10 +2486,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -2542,8 +2494,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -2551,7 +2503,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -2670,8 +2622,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -2679,8 +2631,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -2690,10 +2643,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -2702,8 +2651,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -2711,7 +2660,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -2830,8 +2779,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -2839,8 +2788,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -2850,10 +2800,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -2862,8 +2808,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -2871,7 +2817,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -2990,8 +2936,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -2999,8 +2945,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -3010,10 +2957,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -3022,8 +2965,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -3031,7 +2974,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -3150,8 +3093,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -3159,8 +3102,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -3170,10 +3114,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -3182,8 +3122,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -3191,7 +3131,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -3310,8 +3250,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -3319,8 +3259,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -3330,10 +3271,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -3342,8 +3279,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -3351,7 +3288,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -3470,8 +3407,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -3479,8 +3416,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -3490,10 +3428,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -3502,8 +3436,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -3511,7 +3445,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -3630,8 +3564,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -3639,8 +3573,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -3650,10 +3585,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -3662,8 +3593,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -3671,7 +3602,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -3790,8 +3721,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -3799,8 +3730,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -3810,10 +3742,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -3822,8 +3750,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -3831,7 +3759,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -3950,8 +3878,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -3959,8 +3887,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -3970,10 +3899,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -3982,8 +3907,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -3991,7 +3916,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -4110,8 +4035,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -4119,8 +4044,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -4130,10 +4056,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -4142,8 +4064,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -4151,7 +4073,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -4270,8 +4192,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -4279,8 +4201,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -4290,10 +4213,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -4302,8 +4221,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -4311,7 +4230,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -4430,8 +4349,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -4439,8 +4358,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -4450,10 +4370,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -4462,8 +4378,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -4471,7 +4387,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -4590,8 +4506,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -4599,8 +4515,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -4610,10 +4527,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -4622,8 +4535,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -4631,7 +4544,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -4750,8 +4663,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -4759,8 +4672,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -4770,10 +4684,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -4782,8 +4692,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -4791,7 +4701,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -4910,8 +4820,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -4919,8 +4829,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -4930,10 +4841,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -4942,8 +4849,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -4951,7 +4858,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -5070,8 +4977,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -5079,8 +4986,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -5090,10 +4998,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -5102,8 +5006,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -5111,7 +5015,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -5230,8 +5134,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -5239,8 +5143,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -5250,10 +5155,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -5262,8 +5163,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -5271,7 +5172,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -5390,8 +5291,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -5399,8 +5300,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -5410,10 +5312,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -5422,8 +5320,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -5431,7 +5329,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -5550,8 +5448,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -5559,8 +5457,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -5570,10 +5469,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -5582,8 +5477,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -5591,7 +5486,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -5710,8 +5605,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -5719,8 +5614,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -5730,10 +5626,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -5742,8 +5634,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -5751,7 +5643,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -5870,8 +5762,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -5879,8 +5771,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -5890,10 +5783,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -5902,8 +5791,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -5911,7 +5800,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -6030,8 +5919,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -6039,8 +5928,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -6050,10 +5940,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -6062,8 +5948,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -6071,7 +5957,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -6190,8 +6076,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -6199,8 +6085,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -6210,10 +6097,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -6222,8 +6105,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -6231,7 +6114,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -6350,8 +6233,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -6359,8 +6242,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -6370,10 +6254,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -6382,8 +6262,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -6391,7 +6271,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -6510,8 +6390,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -6519,8 +6399,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -6530,10 +6411,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -6542,8 +6419,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -6551,7 +6428,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -6670,8 +6547,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -6679,8 +6556,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -6690,10 +6568,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -6702,8 +6576,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -6711,7 +6585,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -6830,8 +6704,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -6839,8 +6713,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -6850,10 +6725,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -6862,8 +6733,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -6871,7 +6742,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -6990,8 +6861,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -6999,8 +6870,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -7010,10 +6882,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -7022,8 +6890,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -7031,7 +6899,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -7150,8 +7018,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -7159,8 +7027,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -7170,10 +7039,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -7182,8 +7047,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -7191,7 +7056,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -7310,8 +7175,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -7319,8 +7184,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -7330,10 +7196,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -7342,8 +7204,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -7351,7 +7213,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -7470,8 +7332,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -7479,8 +7341,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -7490,10 +7353,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -7502,8 +7361,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -7511,7 +7370,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -7630,8 +7489,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -7639,8 +7498,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -7650,10 +7510,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -7662,8 +7518,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -7671,7 +7527,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -7790,8 +7646,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -7799,8 +7655,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -7810,10 +7667,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -7822,8 +7675,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -7831,7 +7684,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -7950,8 +7803,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -7959,8 +7812,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -7970,10 +7824,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -7982,8 +7832,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -7991,7 +7841,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -8110,8 +7960,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -8119,8 +7969,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -8130,10 +7981,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -8142,8 +7989,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -8151,7 +7998,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -8270,8 +8117,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -8279,8 +8126,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -8290,10 +8138,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -8302,8 +8146,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -8311,7 +8155,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -8430,8 +8274,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -8439,8 +8283,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -8450,10 +8295,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -8462,8 +8303,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -8471,7 +8312,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -8590,8 +8431,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -8599,8 +8440,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -8610,10 +8452,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -8622,8 +8460,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -8631,7 +8469,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -8750,8 +8588,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -8759,8 +8597,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -8770,10 +8609,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -8782,8 +8617,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -8791,7 +8626,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -8910,8 +8745,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -8919,8 +8754,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -8930,10 +8766,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -8942,8 +8774,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -8951,7 +8783,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -9070,8 +8902,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -9079,8 +8911,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -9090,10 +8923,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -9102,8 +8931,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -9111,7 +8940,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -9230,8 +9059,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -9239,8 +9068,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -9250,10 +9080,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -9262,8 +9088,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -9271,7 +9097,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -9390,8 +9216,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -9399,8 +9225,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -9410,10 +9237,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -9422,8 +9245,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -9431,7 +9254,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -9550,8 +9373,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -9559,8 +9382,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -9570,10 +9394,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -9582,8 +9402,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -9591,7 +9411,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -9710,8 +9530,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -9719,8 +9539,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -9730,10 +9551,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -9742,8 +9559,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -9751,7 +9568,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -9870,8 +9687,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -9879,8 +9696,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -9890,10 +9708,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -9902,8 +9716,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -9911,7 +9725,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -10030,8 +9844,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -10039,8 +9853,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -10050,10 +9865,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -10062,8 +9873,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -10071,7 +9882,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -10190,8 +10001,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -10199,8 +10010,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -10210,10 +10022,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -10222,8 +10030,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -10231,7 +10039,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -10350,8 +10158,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -10359,8 +10167,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -10370,10 +10179,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -10382,8 +10187,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -10391,7 +10196,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -10510,8 +10315,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -10519,8 +10324,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -10530,10 +10336,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -10542,8 +10344,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -10551,7 +10353,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -10670,8 +10472,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -10679,8 +10481,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -10690,10 +10493,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -10702,8 +10501,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -10711,7 +10510,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -10830,8 +10629,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -10839,8 +10638,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -10850,10 +10650,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -10862,8 +10658,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -10871,7 +10667,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -10990,8 +10786,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -10999,8 +10795,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -11010,10 +10807,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -11022,8 +10815,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -11031,7 +10824,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -11150,8 +10943,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -11159,8 +10952,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -11170,10 +10964,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -11182,8 +10972,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -11191,7 +10981,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -11310,8 +11100,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -11319,8 +11109,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -11330,10 +11121,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -11342,8 +11129,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -11351,7 +11138,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -11470,8 +11257,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -11479,8 +11266,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -11490,10 +11278,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -11502,8 +11286,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -11511,7 +11295,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -11630,8 +11414,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -11639,8 +11423,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -11650,10 +11435,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -11662,8 +11443,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -11671,7 +11452,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -11790,8 +11571,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -11799,8 +11580,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -11810,10 +11592,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -11822,8 +11600,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -11831,7 +11609,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -11950,8 +11728,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -11959,8 +11737,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -11970,10 +11749,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -11982,8 +11757,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -11991,7 +11766,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -12110,8 +11885,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -12119,8 +11894,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -12130,10 +11906,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -12142,8 +11914,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -12151,7 +11923,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -12270,8 +12042,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -12279,8 +12051,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -12290,10 +12063,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -12302,8 +12071,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -12311,7 +12080,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -12430,8 +12199,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -12439,8 +12208,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -12450,10 +12220,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -12462,8 +12228,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -12471,7 +12237,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -12590,8 +12356,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -12599,8 +12365,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -12610,10 +12377,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -12622,8 +12385,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -12631,7 +12394,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -12750,8 +12513,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -12759,8 +12522,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -12770,10 +12534,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -12782,8 +12542,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -12791,7 +12551,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -12910,8 +12670,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -12919,8 +12679,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -12930,10 +12691,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -12942,8 +12699,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -12951,7 +12708,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -13070,8 +12827,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -13079,8 +12836,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -13090,10 +12848,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -13102,8 +12856,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -13111,7 +12865,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -13230,8 +12984,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -13239,8 +12993,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -13250,10 +13005,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -13262,8 +13013,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -13271,7 +13022,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -13390,8 +13141,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -13399,8 +13150,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -13410,10 +13162,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -13422,8 +13170,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -13431,7 +13179,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -13550,8 +13298,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -13559,8 +13307,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -13570,10 +13319,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -13582,8 +13327,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -13591,7 +13336,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -13710,8 +13455,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -13719,8 +13464,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -13730,10 +13476,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -13742,8 +13484,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -13751,7 +13493,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -13870,8 +13612,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -13879,8 +13621,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -13890,10 +13633,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -13902,8 +13641,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -13911,7 +13650,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -14030,8 +13769,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -14039,8 +13778,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -14050,10 +13790,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -14062,8 +13798,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -14071,7 +13807,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -14190,8 +13926,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -14199,8 +13935,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -14210,10 +13947,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -14222,8 +13955,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -14231,7 +13964,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {
@@ -14350,8 +14083,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 1020,
-       "max": 1020
+       "min": 936,
+       "max": 936
       },
       "source": "composed",
       "confidence": 2,
@@ -14359,8 +14092,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 1020,
-        "from": "3 clubs x baseline club weight",
+        "value": 936,
+        "from": "3 clubs x median club weight",
+        "quote": "총중량(g) / 288 / 292 / 297",
         "count_from": "listing"
        },
        {
@@ -14370,10 +14104,6 @@
         "said_by": "description_image"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -14382,8 +14112,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 3020,
-       "max": 3020
+       "min": 2936,
+       "max": 2936
       },
       "source": "composed",
       "confidence": 2,
@@ -14391,7 +14121,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 1020,
+        "value": 936,
         "from": "product_weight_g"
        },
        {

@@ -81,8 +81,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 8040,
-       "max": 8040
+       "min": 7982,
+       "max": 7982
       },
       "source": "composed",
       "confidence": 2,
@@ -90,8 +90,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 4240,
-        "from": "10 clubs x median club weight",
+        "value": 4182,
+        "from": "7 club weights + 3 x their median",
         "quote": "1W (드라이버) | 10.5° | 58.5° | 44.5인치 | 약 318g / 약 313g | D1 / D0",
         "count_from": "listing"
        },
@@ -114,8 +114,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 10040,
-       "max": 10040
+       "min": 9982,
+       "max": 9982
       },
       "source": "composed",
       "confidence": 2,
@@ -123,7 +123,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 8040,
+        "value": 7982,
         "from": "product_weight_g"
        },
        {
@@ -241,8 +241,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 8040,
-       "max": 8040
+       "min": 7982,
+       "max": 7982
       },
       "source": "composed",
       "confidence": 2,
@@ -250,8 +250,8 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 4240,
-        "from": "10 clubs x median club weight",
+        "value": 4182,
+        "from": "7 club weights + 3 x their median",
         "quote": "1W (드라이버) | 10.5° | 58.5° | 44.5인치 | 약 318g / 약 313g | D1 / D0",
         "count_from": "listing"
        },
@@ -274,8 +274,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 10040,
-       "max": 10040
+       "min": 9982,
+       "max": 9982
       },
       "source": "composed",
       "confidence": 2,
@@ -283,7 +283,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 8040,
+        "value": 7982,
         "from": "product_weight_g"
        },
        {

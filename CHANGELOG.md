@@ -3,6 +3,26 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
+## Unreleased
+
+- **More package weight and size read from the description** (the owner, 2026-11-11, after the 300-product run):
+  small rules in `description_measures.py` (core and the golf-set profile) and the transform's hook, from a study
+  of the 300 sets (29 patterns, each checked over all 300). The bag: machine-translated words, a bag as an item
+  of the composition, gift bags as accessories, a bag table without the bag's name, a closed list of clubs (no
+  bag), the typed "별매" over a bare title word, and the bag assumed when nothing says (flag `container_assumed`,
+  confidence 2). The count: option values, 11PC / 11ps, the 풀세트구성 row and composition lines, a typed numbered
+  list; one club filed as a set; a title or a list of clubs without a bag says no bag. The clubs' weights: OCR's label spellings and T/W(g), a weight in its label's
+  cell / a row above / after an option index, head + shaft + grip columns, the #7 iron's weight for the clubs not
+  weighed, a part table + its median for the rest, per-row tables that make the set, short sets. The length: a
+  bag's accepted length and a shaft maker's table are not a club's, a driver over 46.5 in needs two rows, OCR's
+  labels and a lost dot, the driver row of an L / A variant's flex.
+  Core: shipping rules, a buyer, a shoe box never read; "풀세트 패키지" is the set; "크기,중량" is the product's
+  weight. On the 426 products: the flat default weight from 109 to 23; 200 products get new fields (26 of them
+  with the bag assumed). Two review rounds over the 300 changed the first cut (an option's "아이언 9개" is the
+  irons', not the set; "(#5 기준)" is a wood's; a women's driver only for an L / A variant; the bag's own size is
+  not the box). Fixtures: 18 new real products in `fixtures/measures/`, one per rule; the pins of the others
+  moved where the rules read more.
+
 ## 0.13.0 (2026-11-11)
 
 - **Prices with delivery, duty and margin inside them** (the owner, 2026-11-11). In fairwardgolf every variant's

@@ -93,8 +93,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3060,
-       "max": 3060
+       "min": 2880,
+       "max": 2880
       },
       "source": "composed",
       "confidence": 2,
@@ -102,8 +102,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3060,
-        "from": "9 clubs x baseline club weight",
+        "value": 2880,
+        "from": "0 club weights + reference club weight x 9",
+        "quote": "클럽 중량(g) / #7약320g (L). 약321g (A)",
         "count_from": "listing"
        },
        {
@@ -113,10 +114,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -125,8 +122,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5060,
-       "max": 5060
+       "min": 4880,
+       "max": 4880
       },
       "source": "composed",
       "confidence": 2,
@@ -134,7 +131,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3060,
+        "value": 2880,
         "from": "product_weight_g"
        },
        {
@@ -253,8 +250,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3060,
-       "max": 3060
+       "min": 2880,
+       "max": 2880
       },
       "source": "composed",
       "confidence": 2,
@@ -262,8 +259,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3060,
-        "from": "9 clubs x baseline club weight",
+        "value": 2880,
+        "from": "0 club weights + reference club weight x 9",
+        "quote": "클럽 중량(g) / #7약320g (L). 약321g (A)",
         "count_from": "listing"
        },
        {
@@ -273,10 +271,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -285,8 +279,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5060,
-       "max": 5060
+       "min": 4880,
+       "max": 4880
       },
       "source": "composed",
       "confidence": 2,
@@ -294,7 +288,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3060,
+        "value": 2880,
         "from": "product_weight_g"
        },
        {
@@ -413,8 +407,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3060,
-       "max": 3060
+       "min": 2880,
+       "max": 2880
       },
       "source": "composed",
       "confidence": 2,
@@ -422,8 +416,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3060,
-        "from": "9 clubs x baseline club weight",
+        "value": 2880,
+        "from": "0 club weights + reference club weight x 9",
+        "quote": "클럽 중량(g) / #7약320g (L). 약321g (A)",
         "count_from": "listing"
        },
        {
@@ -433,10 +428,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -445,8 +436,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5060,
-       "max": 5060
+       "min": 4880,
+       "max": 4880
       },
       "source": "composed",
       "confidence": 2,
@@ -454,7 +445,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3060,
+        "value": 2880,
         "from": "product_weight_g"
        },
        {
@@ -573,8 +564,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3060,
-       "max": 3060
+       "min": 2880,
+       "max": 2880
       },
       "source": "composed",
       "confidence": 2,
@@ -582,8 +573,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3060,
-        "from": "9 clubs x baseline club weight",
+        "value": 2880,
+        "from": "0 club weights + reference club weight x 9",
+        "quote": "클럽 중량(g) / #7약320g (L). 약321g (A)",
         "count_from": "listing"
        },
        {
@@ -593,10 +585,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -605,8 +593,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5060,
-       "max": 5060
+       "min": 4880,
+       "max": 4880
       },
       "source": "composed",
       "confidence": 2,
@@ -614,7 +602,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3060,
+        "value": 2880,
         "from": "product_weight_g"
        },
        {
@@ -733,8 +721,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3060,
-       "max": 3060
+       "min": 2880,
+       "max": 2880
       },
       "source": "composed",
       "confidence": 2,
@@ -742,8 +730,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3060,
-        "from": "9 clubs x baseline club weight",
+        "value": 2880,
+        "from": "0 club weights + reference club weight x 9",
+        "quote": "클럽 중량(g) / #7약320g (L). 약321g (A)",
         "count_from": "listing"
        },
        {
@@ -753,10 +742,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -765,8 +750,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5060,
-       "max": 5060
+       "min": 4880,
+       "max": 4880
       },
       "source": "composed",
       "confidence": 2,
@@ -774,7 +759,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3060,
+        "value": 2880,
         "from": "product_weight_g"
        },
        {
@@ -893,8 +878,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3060,
-       "max": 3060
+       "min": 2880,
+       "max": 2880
       },
       "source": "composed",
       "confidence": 2,
@@ -902,8 +887,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3060,
-        "from": "9 clubs x baseline club weight",
+        "value": 2880,
+        "from": "0 club weights + reference club weight x 9",
+        "quote": "클럽 중량(g) / #7약320g (L). 약321g (A)",
         "count_from": "listing"
        },
        {
@@ -913,10 +899,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -925,8 +907,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5060,
-       "max": 5060
+       "min": 4880,
+       "max": 4880
       },
       "source": "composed",
       "confidence": 2,
@@ -934,7 +916,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3060,
+        "value": 2880,
         "from": "product_weight_g"
        },
        {
@@ -1053,8 +1035,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3060,
-       "max": 3060
+       "min": 2880,
+       "max": 2880
       },
       "source": "composed",
       "confidence": 2,
@@ -1062,8 +1044,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3060,
-        "from": "9 clubs x baseline club weight",
+        "value": 2880,
+        "from": "0 club weights + reference club weight x 9",
+        "quote": "클럽 중량(g) / #7약320g (L). 약321g (A)",
         "count_from": "listing"
        },
        {
@@ -1073,10 +1056,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -1085,8 +1064,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5060,
-       "max": 5060
+       "min": 4880,
+       "max": 4880
       },
       "source": "composed",
       "confidence": 2,
@@ -1094,7 +1073,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3060,
+        "value": 2880,
         "from": "product_weight_g"
        },
        {
@@ -1213,8 +1192,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3060,
-       "max": 3060
+       "min": 2880,
+       "max": 2880
       },
       "source": "composed",
       "confidence": 2,
@@ -1222,8 +1201,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3060,
-        "from": "9 clubs x baseline club weight",
+        "value": 2880,
+        "from": "0 club weights + reference club weight x 9",
+        "quote": "클럽 중량(g) / #7약320g (L). 약321g (A)",
         "count_from": "listing"
        },
        {
@@ -1233,10 +1213,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -1245,8 +1221,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5060,
-       "max": 5060
+       "min": 4880,
+       "max": 4880
       },
       "source": "composed",
       "confidence": 2,
@@ -1254,7 +1230,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3060,
+        "value": 2880,
         "from": "product_weight_g"
        },
        {
@@ -1373,8 +1349,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3060,
-       "max": 3060
+       "min": 2880,
+       "max": 2880
       },
       "source": "composed",
       "confidence": 2,
@@ -1382,8 +1358,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3060,
-        "from": "9 clubs x baseline club weight",
+        "value": 2880,
+        "from": "0 club weights + reference club weight x 9",
+        "quote": "클럽 중량(g) / #7약320g (L). 약321g (A)",
         "count_from": "listing"
        },
        {
@@ -1393,10 +1370,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -1405,8 +1378,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5060,
-       "max": 5060
+       "min": 4880,
+       "max": 4880
       },
       "source": "composed",
       "confidence": 2,
@@ -1414,7 +1387,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3060,
+        "value": 2880,
         "from": "product_weight_g"
        },
        {
@@ -1533,8 +1506,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3060,
-       "max": 3060
+       "min": 2880,
+       "max": 2880
       },
       "source": "composed",
       "confidence": 2,
@@ -1542,8 +1515,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3060,
-        "from": "9 clubs x baseline club weight",
+        "value": 2880,
+        "from": "0 club weights + reference club weight x 9",
+        "quote": "클럽 중량(g) / #7약320g (L). 약321g (A)",
         "count_from": "listing"
        },
        {
@@ -1553,10 +1527,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -1565,8 +1535,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5060,
-       "max": 5060
+       "min": 4880,
+       "max": 4880
       },
       "source": "composed",
       "confidence": 2,
@@ -1574,7 +1544,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3060,
+        "value": 2880,
         "from": "product_weight_g"
        },
        {
@@ -1693,8 +1663,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3060,
-       "max": 3060
+       "min": 2880,
+       "max": 2880
       },
       "source": "composed",
       "confidence": 2,
@@ -1702,8 +1672,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3060,
-        "from": "9 clubs x baseline club weight",
+        "value": 2880,
+        "from": "0 club weights + reference club weight x 9",
+        "quote": "클럽 중량(g) / #7약320g (L). 약321g (A)",
         "count_from": "listing"
        },
        {
@@ -1713,10 +1684,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -1725,8 +1692,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5060,
-       "max": 5060
+       "min": 4880,
+       "max": 4880
       },
       "source": "composed",
       "confidence": 2,
@@ -1734,7 +1701,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3060,
+        "value": 2880,
         "from": "product_weight_g"
        },
        {
@@ -1853,8 +1820,8 @@
     "package": {
      "product_weight_g": {
       "value": {
-       "min": 3060,
-       "max": 3060
+       "min": 2880,
+       "max": 2880
       },
       "source": "composed",
       "confidence": 2,
@@ -1862,8 +1829,9 @@
       "parts": [
        {
         "part": "clubs",
-        "value": 3060,
-        "from": "9 clubs x baseline club weight",
+        "value": 2880,
+        "from": "0 club weights + reference club weight x 9",
+        "quote": "클럽 중량(g) / #7약320g (L). 약321g (A)",
         "count_from": "listing"
        },
        {
@@ -1873,10 +1841,6 @@
         "said_by": "listing"
        }
       ],
-      "baseline": {
-       "approved_by": "owner",
-       "approved_at": "2026-11-10"
-      },
       "compared": {
        "value": 5700,
        "source": "category_default",
@@ -1885,8 +1849,8 @@
      },
      "package_weight_g": {
       "value": {
-       "min": 5060,
-       "max": 5060
+       "min": 4880,
+       "max": 4880
       },
       "source": "composed",
       "confidence": 2,
@@ -1894,7 +1858,7 @@
       "parts": [
        {
         "part": "product",
-        "value": 3060,
+        "value": 2880,
         "from": "product_weight_g"
        },
        {

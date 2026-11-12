@@ -55,7 +55,7 @@ from typing import Any, TypedDict
 import attributes
 from description_clean import body_notes, clean, clean_images
 from description_images import current, image_rows
-from description_measures import container_in, container_listed, package_for, profile_for, read_rows
+from description_measures import composition_count, container_in, container_listed, package_for, profile_for, read_rows
 from naver_variants import choose_variants
 from package_measures import load_table, on_scale
 from spec_variants import check_specs, title_one_variant
@@ -92,6 +92,32 @@ _AREA_WORD_RE = re.compile(r"제주|도서|산간|지역|섬")
 # a club count in the title / 모델명: "[3PCS]", "(3종)", "하프세트(5P)", "12pc"; not the "1pcs" of "10+1pcs"
 _PIECES_RE = re.compile(r"(?<![\d.+])(\d{1,2})\s*(?:PCS|Pcs|pcs|PC|pc|피스|종|P)(?![A-Za-z0-9])")
 _HALF_SET_RE = re.compile(r"하프\s*세트")
+# 2026-11-11 (300 sets): a club count in an option value ("4개 스틸 건백", "12개세트 카본 R", "10클럽", "12+볼백"), a
+# typed numbered composition ("1> 드라이버"), set words that keep a listing a set, a women's set (its driver row)
+_OPTION_COUNT_RE = re.compile(r"(?<![\d.+~])(\d{1,2})\s*(?:개(?![월입])|클럽|\+\s*(?:볼|캐디|골프|스탠드)\s*백)")
+_NUMBERED_RE = re.compile(r"^\s*\d\s*[>)]\s*\S")
+_KIND_RE = re.compile(r"드라이[버브]|우드|유틸|하이브리드|아이언|웨지|퍼터|\bIR\b|\bI\b|\d\s*[~\-]\s*(?:\d|[PAGS]W?\b)")
+_SOFT_FLEX_RE = re.compile(r"(?<![A-Za-z])[LA](?![A-Za-z])|레이디")
+_HARD_FLEX_RE = re.compile(r"(?<![A-Za-z])(?:R|S|SR|X)(?![A-Za-z])|남성")
+
+
+def _closed_list(text: str, profile: Any) -> bool:
+    """The clubs listed with no bag: three kinds or more down to the putter ("11.5L 5번유틸 7아이언 퍼터": 8437045488;
+    "10.5R유틸4번R8아이언R퍼터": 10208717296), or two kinds or more with a count ("드라이버 10.5도 R, 아이언 6개":
+    12999322418; the typed "드라이버+8개아이언 9개 구성": 12931412033; 2026-11-11)."""
+    if not text or profile.container_word.search(text) or not profile.kind_word:
+        return False
+    kinds = {w for w in profile.kind_word.findall(text)}
+    return len(kinds) >= 3 and "퍼터" in kinds \
+        or len(kinds) >= 2 and composition_count(text, profile) is not None   # (the driver often a loft: "10.5R")
+
+
+_SET_OPTION_RE = re.compile(r"세트|풀\s*세트|볼\s*백|캐디\s*백|골프\s*백|건\s*백|스탠드\s*백")
+_CLOSED_TITLE_RE = re.compile(r"[\[(]\s*(?:드라이버|우드|유틸|아이언)[^\])]*\+[^\])]*[\])]")
+_IRONS_RE = re.compile(r"^\s*(?:\d{1,2}|[PAGSW])(?:\s*,\s*(?:\d{1,2}|[PAGSW]|PW|AW|SW)){3,}\s*$")
+_SET_RE = re.compile(r"세트|풀\s*세트|\d\s*(?:PCS|pcs|피스|개)")
+_LADIES_RE = re.compile(r"여성|레이디|ladies|우먼|women", re.I)
+_MENS_RE = re.compile(r"남성|남자|men'?s(?!.*women)|남녀", re.I)
 # 원산지 brackets naming the parts' own countries ("미국산(핑(미국) 미즈노(일본) 웨지퍼터(중국))", 2026-11-07)
 _COUNTRY_RE = re.compile(r"미국|일본|중국|한국|국산|대만|베트남|태국|인도네시아|말레이시아|홍콩|필리핀|멕시코|USA|Japan|China",
                          re.I)
@@ -485,21 +511,57 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
     if profile and profile.count_row:
         counted += [int(m.group(1)) for r in spec_rows_raw if r.get("label") == profile.count_row
                     for m in [_COUNT_ROW_RE.match(r.get("value") or "")] if m]
+    # 2026-11-11: the kinds the listing lists, after its own numbers: the 풀세트구성 row ("드라이버, 7아이언세트,
+    # 유틸리티, 퍼터": 10), the typed numbered list ("1> 드라이버 ... 4> 아이언 6,7,8,9,P,S 5> 퍼터": 10, 9277462047)
+    if profile and profile.composition_row:
+        counted += [c for r in spec_rows_raw if r.get("label") == profile.composition_row
+                    if (c := composition_count(r.get("value") or "", profile))]
+    lines, numbered_lines = (typed or "").split("\n"), []  # type: list[str], list[str]
+    for n, t in enumerate(lines):                    # "4> 아이언: ...", then its own line "6,7,8,9,P,S"
+        if _NUMBERED_RE.match(t) or numbered_lines and n and _NUMBERED_RE.match(lines[n - 1]) and _IRONS_RE.match(t):
+            numbered_lines.append(t)
+    numbered = " ".join(numbered_lines)
+    if profile and numbered and (c := composition_count(numbered, profile)):
+        counted.append(c)
     product_count = next((c for c in counted if band[0] <= c <= band[1]), None)     # not a 2-club "set"
     product_text = " ".join([title, model] + [f["value_ko"] for f in ov["facts"]])
-    listed = container_in(product_text, profile)
+    options = [" ".join(v["options_ko"]) for v in ov["variants"] if v.get("options_ko")]
+    single = bool(profile and (profile.single_item and profile.single_item.search(f"{title} {model}")
+                               and not _SET_RE.search(f"{title} {model}")
+                               or profile.single_option and product_count is None and options
+                               and all(profile.single_option.match(o) for o in options)))   # one club: no bag
+    listed = False if single else container_in(product_text, profile)
+    if listed is True and profile and not profile.container_yes.search(product_text) and \
+            any("from" in f for f in facts["container_no"]):
+        listed = None          # a bare bag word in the title against the typed "<캐디백 별매>" (9266324198, 2026-11-11)
     if listed is None:
         listed = container_listed(spec_rows_raw, supplements or [], profile)
+    first = " ".join((ov["variants"][0].get("options_ko") or []) if ov["variants"] else [])
+    told = [t for t in (typed or "").split("\n") if "구성" in t]
+    if listed is None and profile and (_CLOSED_TITLE_RE.search(title) or _closed_list(title, profile)
+                                       or _closed_list(first, profile) or _closed_list(numbered, profile)
+                                       or any(_closed_list(t, profile) for t in told)):
+        listed = False       # "[드라이버+우드+유틸리티]", "(드라이버+아이언세트)": the title lists the clubs, no bag
+                             # (13068838282, 6767889105; 2026-11-11)
     taken: dict[str, int] = {}
     for v in ov["variants"]:
         if not v.get("package"):
             continue
         text = " ".join(v["options_ko"])
         own = [int(m.group(1)) for m in _PIECES_RE.finditer(text) if band[0] <= int(m.group(1)) <= band[1]]
+        # "4개 스틸 건백", "12+볼백" (2026-11-11): an option value that names no club kind; "아이언 9개", "8개구성
+        # (6~S)", "IR 7개L" count the irons of a set picked over several options (13313940582, 13741964465)
+        # (a variant picked over several options counts the set only where the value names the set or its bag:
+        # "8개구성 NS820 (R)" beside the driver's and the wood's options is the irons, 13741704872)
+        own += [int(m.group(1)) for o in v["options_ko"] if not _KIND_RE.search(o)
+                and (len(v["options_ko"]) == 1 or _SET_OPTION_RE.search(o))
+                for m in _OPTION_COUNT_RE.finditer(o) if band[0] <= int(m.group(1)) <= band[1]]
         has = container_in(text, profile)
-        v["package"], names = package_for(v["package"], facts, max(own) if own else product_count,
+        # the variant's own flex: an L / A (or 여성) variant takes its row; an R one keeps the longest (12965307704)
+        ladies = bool(_SOFT_FLEX_RE.search(text) or _LADIES_RE.search(text)) and not _HARD_FLEX_RE.search(text)
+        v["package"], names = package_for(v["package"], facts, 1 if single else max(own) if own else product_count,
                                           has if has is not None else listed,
-                                          row.get("plausible"), profile, row.get("baselines"))
+                                          row.get("plausible"), profile, row.get("baselines"), ladies)
         for name in names:
             taken[name] = taken.get(name, 0) + 1
     if not taken:

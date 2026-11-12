@@ -647,7 +647,8 @@ def test_image_measures_club_count_the_title_before_the_row():
                                   for r in rows if r["label"] != "총클럽개수" or value]
         p = prepare(line, RULES_ON, "r", 1, _images(pid))
         for v in p["product"]["variants"]:
-            assert v["package"]["product_weight_g"]["parts"][0]["from"] == "10 clubs x median club weight"
+            assert v["package"]["product_weight_g"]["parts"][0]["from"] == \
+                "7 club weights + 3 x their median"                   # its table of seven (2026-11-11)
 
 
 def test_naver_placeholder_manufacturer_is_not_a_spec():
@@ -668,3 +669,44 @@ def test_paid_variants_without_paid_addons():
     from transform_shops import rules_for, without_paid_addons
     rule = without_paid_addons(rules_for("fairwardgolf")).category("50002788")
     assert rule.paid_variants and not rule.paid_addons and rule.description_images
+
+
+def test_measures_counts_and_single_clubs_2026_11_11():
+    """The 300 sets of the fairwardgolf job: a club count in an option value ("4개 스틸 건백", "12+볼백"), a typed
+    numbered composition, one club filed as a set (13743963823: a driving iron), a women's set."""
+    from transform import _LADIES_RE, _MENS_RE, _NUMBERED_RE, _OPTION_COUNT_RE, _SET_RE
+    from description_measures import GOLF_SET
+    assert [int(m.group(1)) for m in _OPTION_COUNT_RE.finditer("4개 스틸 건백 / 12+볼백 / 10클럽 / 3개월")] == [4, 12, 10]
+    assert _NUMBERED_RE.match("1> 드라이버: PXG 0211") and not _NUMBERED_RE.match("10.5도")
+    title = "벤세이어스 RED LINE 드라이빙 아이언"
+    assert GOLF_SET.single_item.search(title) and not _SET_RE.search(title)
+    assert _SET_RE.search("접이식 실내 골프채 풀세트")                       # a set word keeps it a set
+    assert _LADIES_RE.search("젝시오 14 여성 풀세트") and _MENS_RE.search("남녀공용 골프채")
+
+
+def test_measures_option_counts_skip_the_irons_count_2026_11_11():
+    """An option value that names a club kind counts the irons of a set picked over several options, not the set
+    (13313940582 "드라이버 10.5도(R)+아이언 9개(R)", 13741964465 "8개구성(6~S)", 12211893510 "IR 7개L"); the title's
+    closed list of clubs means no bag (13068838282)."""
+    from transform import _CLOSED_TITLE_RE, _KIND_RE
+    for o in ("드라이버 10.5도(R)+아이언 9개(R)", "8개구성(6~S)", "IR 7개L", "8개아이언", "7개(6-9+P+A+S)-L"):
+        assert _KIND_RE.search(o), o
+    for o in ("4개 스틸 건백", "12개세트 카본 R", "MTG040 12 스틸 로드+볼백"):
+        assert not _KIND_RE.search(o), o
+    assert _CLOSED_TITLE_RE.search("핑 G440K 드라이버 남성 골프채 조합세트 [드라이버+우드+유틸리티]")
+    assert _CLOSED_TITLE_RE.search("야마하 Cs 여성용 클럽세트 (드라이버+아이언세트) 8I")
+    assert not _CLOSED_TITLE_RE.search("테일러메이드 풀세트 [11개]")
+    from transform import _SET_OPTION_RE
+    assert not _SET_OPTION_RE.search("8개구성 NS820 (R)") and _SET_OPTION_RE.search("9개 스틸 스탠드백")
+
+
+def test_measures_a_list_of_the_clubs_means_no_bag_2026_11_11():
+    """The clubs listed with no bag: down to the putter (8437045488, 10208717296), or with a count (12999322418, the
+    typed line of 12931412033); a bag word in the list keeps it open; a kind alone says nothing."""
+    from transform import _closed_list
+    from description_measures import GOLF_SET as G
+    for text in ("11.5L 5번유틸 7아이언 퍼터", "10.5R유틸4번R8아이언R퍼터", "드라이버 10.5도 R, 아이언 6개",
+                 "드라이버+8개아이언 9개 구성"):
+        assert _closed_list(text, G), text
+    for text in ("드라이버+우드+아이언+퍼터+캐디백", "카본 아이언 구성 11개", "10.5도 R"):
+        assert not _closed_list(text, G), text
