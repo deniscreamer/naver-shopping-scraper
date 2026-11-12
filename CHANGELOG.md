@@ -3,8 +3,17 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
-## Unreleased
+## 0.14.0 (2026-11-11)
 
+- **`job.py --paid-variants`** (the owner, 2026-11-11): the job's own products get the category's paid variants and
+  no paid add-on; the shop's other prepared records keep the free-only rules.
+- **A brand of 기타 ("other") is no brand** (the owner: the tenant's name, Fairward Golf, at the end of the
+  fallback): neither the brand nor the manufacturer, no "Brand: Other" spec row, the brand rule's last guard. In
+  the images' text a Korean brand counts only where a word starts (쇼핑, 치핑 are not 핑) and a web address is no
+  brand. Five published sets got their right brand (TaylorMade once, Ben Sayers three times, the tenant once).
+- **Translation dictionaries cleaned**: all 1,676 entries reviewed, 40 wrong ones deleted and translated again;
+  24 of the new answers repeated a mistake and were set by hand. The 23 published products that used them were
+  published again.
 - **More package weight and size read from the description** (the owner, 2026-11-11, after the 300-product run):
   small rules in `description_measures.py` (core and the golf-set profile) and the transform's hook, from a study
   of the 300 sets (29 patterns, each checked over all 300). The bag: machine-translated words, a bag as an item
