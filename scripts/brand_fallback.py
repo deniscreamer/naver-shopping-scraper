@@ -16,7 +16,8 @@ order, the first that gives a value (`brand_source` says which):
                                                         another way (피지엠 / PGM, 캘러웨이골프 / 캘러웨이); a
                                                         combination set (조합, 32 titles) names several: the first
   4. the importer / distributor in 원산지's brackets   "origin" ("일본산(혼마코리아)": 혼마코리아)
-  5. a brand of the shop in the images' text           "images_text": the one read most often
+  5. a brand of the shop in the images' text           "images_text": the one read most often (a Korean
+                                                        brand only where a word starts: 쇼핑 is not 핑)
   6. a Latin brand phrase the images repeat            "images_text_latin": two words or more, read MIN_LATIN times
                                                         or more (13425122164: "BEN SAYERS" 24 times)
   7. 노브랜드 (no brand)                                "none": an unbranded product (13464713764: an indoor putter
@@ -71,9 +72,31 @@ def distributors(origin: str | None) -> list[str]:
             if x.strip() and not _POINTER.search(x) and not _AGENCY.search(x)]
 
 
+# a Korean brand (핑, 핑골프, 혼마) is counted in the images' text only where a word starts: 13445783517, 2026-11-11,
+# "쇼핑골프처음" (a shop's name, "shopping") counted as 핑 and 핑골프 (Ping), 13625754692 "치핑" (chipping) as 핑;
+# a brand glued after another word ("정품캘러웨이") is then missed, and the next step decides. A brand of one
+# syllable must also end the word or go on with 골프 (핑크 "pink", 핑거 "finger" are not 핑). Spaces inside the brand
+# are free ("테일러 메이드", "펜타곤 야마모토").
+_HANGUL_BRAND = re.compile(r"^[가-힣]+$")
+# a web address in the images names the shop that made them, not the product's brand: 13445783517, 2026-11-11,
+# "www.houma.co.kr" (a retailer) counted as HOUMA on a Ben Sayers set; only the address's own characters go
+_ADDRESS = re.compile(r"https?://[^\s가-힣]+|www\.[A-Za-z0-9.-]+|[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*"
+                      r"\.(?:co\.kr|com|net|kr)\b", re.I)
+
+
+def _count(text: str, spaced: str, brand: str) -> int:
+    n = _norm(brand)
+    if _HANGUL_BRAND.match(n):
+        tail = r"(?:(?![가-힣])|(?=\s*골프))" if len(n) == 1 else ""
+        return len(re.findall(r"(?<![가-힣])" + r"\s*".join(map(re.escape, n)) + tail, spaced))
+    return text.count(n)
+
+
 def in_images(rows: list[str], brands: list[str]) -> Counter:
-    text = _norm(" ".join(rows))
-    return Counter({b: text.count(_norm(b)) for b in brands if _norm(b) and text.count(_norm(b))})
+    spaced = _ADDRESS.sub(" ", " ".join(rows)).casefold()
+    text = _norm(spaced)
+    counts = {b: _count(text, spaced, b) for b in brands if _norm(b)}
+    return Counter({b: c for b, c in counts.items() if c})
 
 
 def latin_phrases(rows: list[str]) -> Counter:

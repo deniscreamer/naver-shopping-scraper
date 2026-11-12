@@ -150,6 +150,26 @@ def test_no_brand_takes_the_manufacturer():
         assert p["status"] == "ready" and p["product"]["brand_ko"] is None   # left to brand_fallback (run-level)
 
 
+def test_brand_other_is_no_brand():
+    """10697131625, 2026-11-11: a 브랜드 row of 기타 ("other") names no brand: the manufacturer next, then
+    brand_fallback (the tenant's name at the end; the owner: Fairward Golf); a 제조사 of 기타 is none either."""
+    def rows(brand, manufacturer):
+        def change(line):
+            line["specs"]["specs"] = [r for r in line["specs"]["specs"] if r["label"] not in ("브랜드", "제조사")] + [
+                {"label": "브랜드", "value": brand}, {"label": "제조사", "value": manufacturer or "기타"}]
+            line["specs"]["facts"].update(brand={"value": brand, "source": "specs:브랜드"},
+                                          manufacturer=manufacturer and {"value": manufacturer,
+                                                                         "source": "search_info.manufacturerName"})
+        return change
+    p = prep("8514409092", rows("기타", "테일러메이드코리아"))
+    assert p["product"]["brand_ko"] == "테일러메이드코리아"
+    assert p["product"]["brand_source"] == "manufacturer:search_info.manufacturerName"
+    for maker in (None, "기타"):
+        p = prep("8514409092", rows("기타", maker))
+        assert p["status"] == "ready" and p["product"]["brand_ko"] is None   # left to brand_fallback (run-level)
+    assert not [r for r in p["product"]["specs"] if r["label_ko"] in ("브랜드", "제조사")]      # "Brand: Other": none
+
+
 def test_caps():
     small = dataclasses.replace(RULES, variant_cap=10)
     full, p = prep("8514409092"), prep("8514409092", rules=small)

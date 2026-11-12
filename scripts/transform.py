@@ -22,7 +22,8 @@ naver-harvester published, and its 60 published products):
   * attributes (attributes.py): what the seller states that a shop may split a category by (gender: the variants,
     the 성별 row, the title), with its evidence -> product.attributes; the shop's sections are not decided here
     (placement.py, the last stage before Shopify; the owner 2026-11-08).
-  * brand: the 브랜드 row / brandName, else the manufacturer (never Naver's M0000000 or a pointer); none ->
+  * brand: the 브랜드 row / brandName (never 기타, "other"), else the manufacturer (never Naver's M0000000 or a
+    pointer); none ->
     run_transform's brand_fallback.
   * text fields (a name on a tag) -> personalization; add-ons on sale and in stock: free ones, paid ones too
     with the category's paid_addons (price in KRW and USD); a (필수) group is required.
@@ -322,6 +323,10 @@ def _variant(rules: ShopRules, key: str, product_id: str, tuple_ko: list[str], k
 # Naver's "no value" codes: a 제조사 of "M0000000" is its placeholder for no manufacturer (seen 2026-11-08,
 # 13464713764: the page row and naverShoppingSearchInfo.manufacturerName both say it); never a spec or a hint
 _PLACEHOLDER_CODE = re.compile(r"^[A-Z]0{6,}$")
+# a 브랜드 row of "기타" ("other") names no brand (10697131625, 2026-11-11: a TaylorMade set; the model translated
+# 기타 as TaylorMade once and the dictionary gave three no-name sets that brand): no brand, so the manufacturer and
+# brand_fallback come next, and with nothing found the tenant's name (the owner, 2026-11-11: Fairward Golf)
+NOT_A_BRAND = frozenset({"기타"})
 
 
 def spec_rows(specs: dict[str, Any]) -> list[dict[str, str]]:
@@ -335,6 +340,8 @@ def spec_rows(specs: dict[str, Any]) -> list[dict[str, str]]:
                 while _BRACKETS_RE.search(value):
                     value = _BRACKETS_RE.sub("", value)
             value = re.sub(r"\s+", " ", value).strip()
+        if label in ("브랜드", "제조사") and value.strip() in NOT_A_BRAND:
+            continue                                # "Brand: Other" says nothing (10697131625, 2026-11-11)
         if label not in HIDDEN_ROWS and value and not _pointer(value) and not _PLACEHOLDER_CODE.match(value.strip()):
             out.append({"label_ko": label, "value_ko": value})
     return out
@@ -531,9 +538,11 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int,
         held.append({"code": "price_unknown", "detail": "no product price"})
     facts = specs.get("facts") or {}
     brand = facts.get("brand") or {}
+    if str(brand.get("value") or "").strip() in NOT_A_BRAND:
+        brand = {}
     maker = facts.get("manufacturer") or {}
     if not brand.get("value") and maker.get("value") and not _PLACEHOLDER_CODE.match(str(maker["value"]).strip()) \
-            and not _pointer(str(maker["value"])):
+            and not _pointer(str(maker["value"])) and str(maker["value"]).strip() not in NOT_A_BRAND:
         # no brand: the manufacturer (the owner, 2026-11-08); still none: brand_fallback.py, run-level
         brand = {"value": maker["value"], "source": f"manufacturer:{maker.get('source')}"}
     imgs = images(line, run)

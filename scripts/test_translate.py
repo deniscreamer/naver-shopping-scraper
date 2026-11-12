@@ -41,6 +41,8 @@ TENANT = "Fairward Golf"
     ("title", "캘러웨이 2026년형 풀세트", "캘러웨이 2026 model 풀세트"),
     ("brand", "노브랜드", TENANT),                                 # the whole text: the tenant's name
     ("spec_value", "노브랜드", TENANT),
+    ("brand", "기타", TENANT),                                     # "other" as the brand (the owner, 2026-11-11)
+    ("spec_value", "기타", "기타"),                                # elsewhere it is "Other": the model's
     ("title", "노브랜드 실내 골프채", "실내 골프채"),               # inside a text: removed
     ("option_name", "샤프트강도", "샤프트강도"),                    # 강도 is not a degree: no number before it
     ("text_label", "제주도 배송", "제주도 배송"),

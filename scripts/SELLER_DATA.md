@@ -91,6 +91,12 @@ Brand -> `transform.prepare`, `brand_fallback.py` (2026-11-08)
   manufacturer, else a brand of the shop in the title (4 of 6), 원산지's importer, the images' text (BEN SAYERS
   repeated, 13425122164), else 노브랜드 (13464713764).
 - 제조사 "M0000000" is Naver's code for no manufacturer: not a spec row, not a brand (13464713764).
+- 브랜드 "기타" ("other") names no brand (10697131625, 2026-11-11): neither the brand nor the manufacturer; the
+  fallback goes on, the tenant's name at the end (the owner: Fairward Golf). The model once translated it as
+  TaylorMade, and the dictionary then gave that brand to three no-name sets.
+- The images' text holds words that contain a short brand (쇼핑 "shopping" and 치핑 "chipping" hold 핑, Ping) and the
+  retailer's web address (www.houma.co.kr): a Korean brand counts only where a word starts, an address not at all
+  (13445783517, 13625754692, 2026-11-11).
 
 Origin, gifts, add-ons
 - 원산지 brackets name an importer ("일본(IRUGI SHOJI)", "중국산((주)위스트OEM)") -> cut; or the parts' countries

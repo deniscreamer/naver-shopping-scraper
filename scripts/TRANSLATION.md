@@ -15,7 +15,7 @@ place in the pipeline and the details of each part: [README.md](README.md) "Tran
 | The description and the images' text are not translated: `describe.py` reads them in Korean and writes the English description (the owner, 2026-11-10; README "The product's description") | `transform._texts` (not in `texts`), `describe.packet` |
 | One dictionary per kind of text, in JSON, growing during runs out of git; backups in git, updated by hand; `status` says when a backup is due | `translation_dicts.py`, `scripts/dictionaries/` |
 | The brand is looked up first; one spelling per brand in the whole shop | brand dictionary, `vendors` in the request |
-| No brand (노브랜드): the tenant's name; inside a text the word is removed | `translation_rules.sanitize` |
+| No brand (노브랜드): the tenant's name; inside a text the word is removed. A brand of 기타 ("other", the owner 2026-11-11): the tenant's name too (transform already leaves it out: the fallback decides) | `translation_rules.sanitize`, `transform.NOT_A_BRAND` |
 | Units and sizes by templates (10.5도, 33인치, 22호, 3번, 7개, 2026년형); the model only for the rest | `translation_rules.py` |
 | Titles are the store's names (the owner, 2026-11-08, as the harvester's): brand first, then model, year, who it is for, the kind of set, pieces, what is included; no shop, dispatch, distributor or after-sales ("AS가능") words, no loft / flex / shaft codes or club list, no usage or gift words (the 100-product pilot, 2026-11-09). The model, not templates: nobody can foresee every title | `prompts/translate_system.md` |
 | A title's length: the prompt asks for about 90 characters; over 100 the title goes back to the model with "too long" (it drops the least important facts from the end: materials, colours, the club list, "for beginners"), up to 2 times; a title that never gets under keeps its shortest answer that passed the other checks and does not hold the product (nor does a refusal, a cut answer or the provider going down in a round asked only to shorten); a title already in `translation/texts.jsonl` is not asked again (delete its row to translate it again); the publication cuts to Google Merchant Center's 150 (`shopify_payload.fit_title`) | `translate.ASK_SHORTER`, `prompts/translate_fix.md` |
@@ -100,5 +100,11 @@ label.
   and `translation_dicts.py status` prints the last one). A few model answers there are worth a second look, for
   example "9도 S4번유틸S ..." -> "9° S4 Hybrid ..." (a flex letter glued to the next club's number, with a space
   before it). New brands enter the brand dictionary without the owner's word.
+- **Wrong entries deleted** (2026-11-11, the owner: "ошибочные удаляй"): all 1,676 entries were read by a model
+  reviewer and each flag by three more; the 40 that at least two confirmed were deleted from both copies (기타 ->
+  TaylorMade, 브리지스톤골프 -> Bridgestone Golf, Nikent for Nickent, flex letters glued to the next club ("S4
+  Hybrid"), 백미포함 read as "with bag", an added "Driver", a dropped 여성, Glory for Gloire, ...). The next run
+  asks the model for them again. The 23 published products that used them stay as they are in the store until
+  they are published again; until a full `translate.py` run their record is `pending`.
 - **Publication** (`publish.py`, 2026-11-08) reads `translation/translated.jsonl`; a text without English holds
   the product.

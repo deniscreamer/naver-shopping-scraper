@@ -288,6 +288,7 @@ Per text, the first that answers:
 3. **The rules** (`translation_rules.py`):
    - 10.5도 -> 10.5°, 33인치 -> 33 in, 22호 -> Size 22, 3번 -> #3, 7개 -> 7 / 7 pcs, 12종 -> 12 pcs, 2026년형 -> 2026 model;
    - 노브랜드 alone becomes the tenant's name (`Store.publisher`), and inside a text it is removed;
+   - a brand of 기타 ("other") alone becomes the tenant's name as well (2026-11-11);
    - a text with no Hangul left is done; the rest goes to the model already converted.
 4. **The model:** one request per product, with the system prompt in `prompts/translate_system.md`. Each item is
    checked:

@@ -6,6 +6,8 @@ text with Hangul left goes to the model already partly converted ("9도SR 스틸
   22호 -> Size 22        22~25호 -> Size 22–25  3번 -> #3
   7개 -> 7 (the whole text) / 7 pcs           12종 -> 12 pcs           2026년형 -> 2026 model
   노브랜드: the whole text -> the tenant's name (a brand, a spec / fact value); inside a text -> removed
+  기타 ("other") as the whole brand -> the tenant's name (the owner, 2026-11-11; transform.NOT_A_BRAND keeps it
+  out of the brand already, this is the last guard: the model once gave it a maker's name)
 
 A unit is taken only right after a number and not before another Hangul syllable (강도, 제주도, 1호점 and 3번째
 stay). Reviews are left as written: "3번 썼는데" is three times, not club #3.
@@ -18,7 +20,8 @@ import re
 HANGUL_RE = re.compile(r"[ᄀ-ᇿ㄰-㆏가-힣]")
 NO_BRAND = "노브랜드"
 NO_BRAND_KINDS = ("brand", "spec_value", "fact_value")     # whole text 노브랜드 there: the tenant's name
-UNTOUCHED_KINDS = ("review",)
+OTHER_BRAND = "기타"                                     # the whole brand 기타: the tenant's name (only the brand:
+UNTOUCHED_KINDS = ("review",)                            # 기타 as a spec / fact value is "Other")
 
 _NUM = r"(\d+(?:\.\d+)?)"
 _FREE = r"(?![가-힣])"                             # not followed by another Hangul syllable
@@ -65,7 +68,7 @@ def sanitize(kind: str, ko: str, tenant: str, category_id: str | None = None) ->
     for pattern, repl in CATEGORY_RULES.get(str(category_id or ""), []):
         ko = pattern.sub(repl, ko)
     text = ko.strip()
-    if text == NO_BRAND and kind in NO_BRAND_KINDS:
+    if (text == NO_BRAND and kind in NO_BRAND_KINDS) or (text == OTHER_BRAND and kind == "brand"):
         return tenant
     text = text.replace(NO_BRAND, " ")
     whole = _WHOLE_COUNT_RE.match(text) or _WHOLE_YEAR_RE.match(text)
