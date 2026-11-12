@@ -315,7 +315,7 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
     for t in prepared.get("texts") or []:
         tid, kind, ko = t["id"], t["kind"], t["ko"]
         own = kind in PRODUCT_KINDS or (kind == "option_name" and ko in placeholders)
-        hit = store.get((key, tid)) if own else dicts.get(kind, ko)
+        hit = store.get((key, tid)) if own else dicts.get(kind, ko, category)
         if hit is None and kind in ("spec_value", "fact_value"):
             hit = dicts.get("brand", ko)                 # a 브랜드 / 제조사 row: the shop's vendor spelling
         if hit is not None:
@@ -627,7 +627,7 @@ def translate_product(prepared: dict[str, Any], dicts: Dictionaries, store: dict
             new_texts.append({"key": key, "id": t["id"], "kind": t["kind"], "ko": t["ko"], "en": en[t["id"]],
                               "by": model_of.get(t["id"]), "at": now})
         else:
-            dicts.add(t["kind"], t["ko"], en[t["id"]])
+            dicts.add(t["kind"], t["ko"], en[t["id"]], (prepared.get("source") or {}).get("category_id"))
     missing = [t["id"] for t in prepared.get("texts") or [] if t["id"] not in en]
     collide = collisions(prepared, en)
     if collide:
@@ -724,7 +724,7 @@ def run(shop: str, model: "Model | Chain | None", shops_root: str = SHOPS_ROOT, 
              f"answered by {providers or 'none'}; tokens {usage or 0}, cost ${dollars:.4f}"
              + (f" (+ {', '.join(unpriced)}: no price set)" if unpriced else ""),
              f"  not translated yet, by kind: {pending_kinds or 'none'}",
-             f"  new dictionary entries: " + (", ".join(f"{k} {len(v)}" for k, v in dicts.added.items() if v)
+             f"  new dictionary entries: " + (", ".join(f"{k} {len(v)}" for k, v in dicts.all_added().items())
                                              or "none")]
     due = reminder(dicts.live_root, dicts.backup_root) if not only else None   # a job's product: the job says it
     if due:

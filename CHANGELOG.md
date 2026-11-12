@@ -23,6 +23,10 @@ version in `extension/manifest.json`.
   products that cannot be built now. **publish.py skips by what it sends** (`output` in the ledger,
   `output_digest`): the inputs' digest had moved on 18 of 20 products the store already matched. First run: 434
   of 435 products as in the store (`--adopt` recorded their `output`), one would get a new photo (12211893510).
+- **Dictionaries per category**: brands stay the shop's (`dictionaries/brand.json`), every other kind is a Naver
+  category's own (`dictionaries/<category id>/<kind>.json`); a new category starts empty. Split by what each
+  category's products use: 50002788 1613 entries, 50002787 122; the whole shop translated offline as before and
+  `store_diff` found nothing new.
 - Dictionaries: 108 entries of the junior run backed up, 8 set by hand first (an age lost from "01.9-12세 퍼터",
   호수 = Size, 선택하세요 = Option).
 

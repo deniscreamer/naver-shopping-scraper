@@ -79,13 +79,13 @@ def test_live_dictionaries_seed_from_the_backup_and_back_up(tmp_path):
     d = D.Dictionaries(live, backup)
     assert d.get("brand", "캘러웨이") == "Callaway" and os.path.exists(os.path.join(live, "brand.json"))
     d.add("brand", "핑", "PING")
-    d.add("spec_label", "브랜드", "Brand")
+    d.add("spec_label", "브랜드", "Brand", "50002788")
     d.save()
     again = D.Dictionaries(live, backup)                           # the live copy, not the backup, is read
     assert again.get("brand", "핑") == "PING" and again.vendors() == ["Callaway", "PING"]
     rows = {r["kind"]: r for r in D.status(live, backup)}
-    assert rows["brand"]["new"] == {"핑": "PING"} and rows["spec_label"]["new"] == {"브랜드": "Brand"}
-    assert set(D.backup(live, backup)) == {"brand", "spec_label"}
+    assert rows["brand"]["new"] == {"핑": "PING"} and rows["50002788/spec_label"]["new"] == {"브랜드": "Brand"}
+    assert set(D.backup(live, backup)) == {"brand", "50002788/spec_label"}
     assert all(not r["new"] and not r["changed"] for r in D.status(live, backup))
     with open(os.path.join(backup, "brand.json"), encoding="utf-8") as f:
         data = json.load(f)
@@ -100,9 +100,10 @@ def test_a_broken_dictionary_stops(tmp_path):
 
 
 def test_the_backups_in_git_are_valid():
-    for kind in D.KINDS:
-        entries = D._read(os.path.join(D.BACKUP_ROOT, f"{kind}.json"), kind)
-        assert all(not has_hangul(en) for en in entries.values()), kind
+    files = [f for f in D._files(D.BACKUP_ROOT, D.BACKUP_ROOT) if os.path.exists(f[3])]
+    assert {f[0] for f in files} >= {"brand", "50002788/option_value", "50002787/option_value"}
+    for label, kind, _, path in files:
+        assert all(not has_hangul(en) for en in D._read(path, kind).values()), label
 
 
 # ---- a fake model --------------------------------------------------------------------------------------------
@@ -145,8 +146,8 @@ class FakeModel:
 
 def dicts(tmp_path, **entries):
     backup = tmp_path / "backup"
-    for kind, e in entries.items():
-        D._write(str(backup / f"{kind}.json"), kind, e)
+    for kind, e in entries.items():                 # a brand is the shop's, every other kind its category's
+        D._write(str(backup / ("" if kind in D.SHARED else "50002788") / f"{kind}.json"), kind, e)
     return D.Dictionaries(str(tmp_path / "live"), str(backup))
 
 
@@ -216,7 +217,7 @@ def test_a_placeholder_option_name_is_the_products_own_with_its_values(tmp_path)
     assert name["context"] == "values: 9도R 스틸 | 10.5도R 스틸"
     out = T.translate_product(p, d, {}, TENANT, FakeModel(), "t")
     assert out.record["status"] == "translated"
-    assert "선택" not in d.added["option_name"]                       # kept per product, not in the dictionary
+    assert "선택" not in d.scope("50002788").added["option_name"]                       # kept per product, not in the dictionary
     assert {r["kind"] for r in out.new_texts} == {"title", "option_name"}
 
 
@@ -238,7 +239,7 @@ def test_failed_items_are_asked_again_in_the_same_conversation(tmp_path):
     assert history[1]["content"][0]["type"] == "text"                  # the assistant turn sent back unchanged
     fix = history[2]["content"]
     assert fix.startswith(T._prompt("translate_fix.md")) and "korean left" in fix and '"missing"' in fix
-    assert d.added["option_value"] and out.usage == {"fake": {"input": 200, "output": 100}}
+    assert d.scope("50002788").added["option_value"] and out.usage == {"fake": {"input": 200, "output": 100}}
 
 
 def test_numbers_and_codes_must_survive(tmp_path):
@@ -294,7 +295,7 @@ def test_still_failing_after_the_fix_rounds_leaves_the_product_untranslated(tmp_
     out = T.translate_product(p, d, {}, TENANT, model, "t")
     assert out.calls == T.FIX_ROUNDS + 1 and out.record["status"] == "untranslated"
     assert out.record["missing"] == [text_id("option_value", "레드")]
-    assert d.added["option_name"] == {"색상": _fake_en("색상")}          # what passed is kept
+    assert d.scope("50002788").added["option_name"] == {"색상": _fake_en("색상")}          # what passed is kept
     assert [r["kind"] for r in out.new_texts] == ["title"]
 
 
@@ -782,7 +783,7 @@ def test_notes_with_several_spans_are_split(tmp_path):
     accepted, failed = T.verify(names[1:], json.dumps({"items": [{"id": names[1]["id"], "en": "Color"}]}))
     assert accepted and not failed                                  # "선택2" -> "Color": the 2 need not survive
     out = T.translate_product(p, d, {}, TENANT, FakeModel(), "t")
-    assert "선택1" not in d.added["option_name"] and {"option_name"} <= {r["kind"] for r in out.new_texts}
+    assert "선택1" not in d.scope("50002788").added["option_name"] and {"option_name"} <= {r["kind"] for r in out.new_texts}
 
 
 def test_a_promo_tag_in_round_brackets_may_go():
@@ -810,11 +811,11 @@ def test_a_torn_store_line_is_skipped(tmp_path):
 def test_two_runs_saving_the_same_dictionary_keep_both(tmp_path):
     a = D.Dictionaries(str(tmp_path / "live"), str(tmp_path / "b"))
     b = D.Dictionaries(str(tmp_path / "live"), str(tmp_path / "b"))
-    a.add("option_value", "화이트", "White")
+    a.add("option_value", "화이트", "White", "50002788")
     a.save()
-    b.add("option_value", "레드", "Red")
+    b.add("option_value", "레드", "Red", "50002788")
     b.save()
-    assert D.Dictionaries(str(tmp_path / "live"), str(tmp_path / "b")).entries["option_value"] == {
+    assert D.Dictionaries(str(tmp_path / "live"), str(tmp_path / "b")).scope("50002788").entries["option_value"] == {
         "화이트": "White", "레드": "Red"}
 
 
@@ -833,8 +834,8 @@ def test_a_backup_is_stamped_with_its_time(tmp_path):
 
 def _synced(tmp_path, live_entries, backup_entries, at="2026-11-08T13:00:00Z"):
     live, backup = str(tmp_path / "live"), str(tmp_path / "backup")
-    D._write(os.path.join(backup, "option_value.json"), "option_value", backup_entries, backed_up=at)
-    D._write(os.path.join(live, "option_value.json"), "option_value", live_entries)
+    D._write(os.path.join(backup, "50002788", "option_value.json"), "option_value", backup_entries, backed_up=at)
+    D._write(os.path.join(live, "50002788", "option_value.json"), "option_value", live_entries)
     return live, backup
 
 
@@ -849,7 +850,7 @@ def test_sync_in_sync_and_waiting(tmp_path):
     live, backup = _synced(tmp_path, {"레드": "Red", "화이트": "White"}, {"레드": "Red"})
     s = D.sync(live, backup, now=NOW)
     assert (s["action"], s["new"]) == ("wait", 1) and "1 of 20 entries, 1.0 of 7 days" in s["advice"]
-    assert s["entries"] == {"option_value": {"new": {"화이트": "White"}, "changed": {}, "git_only": {}}}
+    assert s["entries"] == {"50002788/option_value": {"new": {"화이트": "White"}, "changed": {}, "git_only": {}}}
     assert D.reminder(live, backup, now=NOW) is None
 
 
@@ -873,7 +874,7 @@ def test_sync_changed_entries_are_read_first(tmp_path):
     live, backup = _synced(tmp_path, {**many, "레드": "Crimson"}, {"레드": "Red"})
     s = D.sync(live, backup, now=NOW)
     assert (s["action"], s["changed"]) == ("review", 1)
-    assert s["entries"]["option_value"]["changed"] == {"레드": ["Red", "Crimson"]}
+    assert s["entries"]["50002788/option_value"]["changed"] == {"레드": ["Red", "Crimson"]}
     assert "the changed ones first" in D.reminder(live, backup, now=NOW)
 
 
@@ -885,18 +886,18 @@ def test_entries_only_in_git_are_never_dropped(tmp_path):
     s = D.sync(live, backup, now=NOW)
     assert (s["action"], s["waiting"], s["git_only"]) == ("none", 0, 25) and "25 entries only in git" in s["advice"]
     D.backup(live, backup, at="2026-11-09T00:00:00Z")
-    assert len(D._read(os.path.join(backup, "option_value.json"), "option_value")) == 26
+    assert len(D._read(os.path.join(backup, "50002788", "option_value.json"), "option_value")) == 26
     d = D.Dictionaries(live, backup)
-    assert d.get("option_value", "색3") == "Color 3"
-    assert len(D._read(os.path.join(live, "option_value.json"), "option_value")) == 26
+    assert d.get("option_value", "색3", "50002788") == "Color 3"
+    assert len(D._read(os.path.join(live, "50002788", "option_value.json"), "option_value")) == 26
     assert D.sync(live, backup, now=NOW)["git_only"] == 0
 
 
 def test_a_live_fix_reaches_git_and_a_live_entry_is_not_overwritten_by_git(tmp_path):
     live, backup = _synced(tmp_path, {"레드": "Red"}, {"레드": "Rouge"})
-    assert D.Dictionaries(live, backup).get("option_value", "레드") == "Red"     # the live copy wins in a run
+    assert D.Dictionaries(live, backup).get("option_value", "레드", "50002788") == "Red"   # the live copy wins
     D.backup(live, backup, at="2026-11-09T00:00:00Z")
-    assert D._read(os.path.join(backup, "option_value.json"), "option_value") == {"레드": "Red"}
+    assert D._read(os.path.join(backup, "50002788", "option_value.json"), "option_value") == {"레드": "Red"}
 
 
 def test_a_live_copy_not_written_yet_differs_in_nothing(tmp_path):
@@ -1012,7 +1013,7 @@ def test_a_refused_or_cut_shortening_round_keeps_the_long_title(tmp_path, stop):
     d = dicts(tmp_path)
     out = T.translate_product(p, d, {}, TENANT, T.Chain([Stops(lambda items: answer(items, _titled(LONG))), FakeModel(name="b")]), "t")
     assert out.record["status"] == "translated" and out.calls == 2 and out.record["provider"] == "fake"   # not handed to b
-    assert out.record["en"][text_id("title", p["product"]["title_ko"])] == LONG.strip() and d.added["option_value"]
+    assert out.record["en"][text_id("title", p["product"]["title_ko"])] == LONG.strip() and d.scope("50002788").added["option_value"]
 
 
 def test_a_provider_down_in_a_shortening_round_keeps_the_batch(tmp_path):
@@ -1024,7 +1025,7 @@ def test_a_provider_down_in_a_shortening_round_keeps_the_batch(tmp_path):
     p = small(options=[{"name_ko": "색상", "values_ko": ["레드"]}])
     d = dicts(tmp_path)
     out = T.translate_product(p, d, {}, TENANT, Down(lambda items: answer(items, _titled(LONG))), "t")
-    assert out.record["status"] == "translated" and out.calls == 1 and d.added["option_value"]
+    assert out.record["status"] == "translated" and out.calls == 1 and d.scope("50002788").added["option_value"]
     # down in a round that also fixes something else: the conversation fails as before
     def korean(rows):
         return [{**r, "en": "레드"} if r["_kind"] == "option_value" else {**r, "en": LONG} if r["_kind"] == "title" else r
@@ -1061,3 +1062,21 @@ def test_the_real_long_titles_go_back_and_the_real_short_ones_are_kept(tmp_path,
     stuck = FakeModel(lambda items: answer(items, _titled(row["en_long"])))  # the model never shortens it
     out = T.translate_product(p, dicts(tmp_path / "2"), {}, TENANT, stuck, "t")
     assert out.record["status"] == "translated" and out.record["en"][text_id("title", row["title_ko"])] == row["en_long"]
+
+
+def test_a_category_reads_and_learns_only_its_own_entries(tmp_path):
+    """2026-11-11: 50002787's "구성" -> "Contents" changed four products of 50002788, and its "호수" -> "Club Number"
+    would have read wrong anywhere else. A brand stays the shop's."""
+    d = dicts(tmp_path, option_name={"구성": "Set Configuration"}, brand={"핑": "PING"})
+    assert d.get("option_name", "구성", "50002788") == "Set Configuration"
+    assert d.get("option_name", "구성", "50002787") is None                  # a new category starts empty
+    d.add("option_name", "구성", "Contents", "50002787")
+    d.add("option_name", "호수", "Size", "50002787")
+    d.add("brand", "스컬독", "Skulldog")
+    d.save()
+    again = D.Dictionaries(str(tmp_path / "live"), str(tmp_path / "backup"))
+    assert again.get("option_name", "구성", "50002788") == "Set Configuration"
+    assert again.get("option_name", "구성", "50002787") == "Contents" and again.get("brand", "스컬독") == "Skulldog"
+    assert again.get("option_name", "호수", "50002788") is None
+    rows = {r["kind"]: r for r in D.status(str(tmp_path / "live"), str(tmp_path / "backup"))}
+    assert rows["50002787/option_name"]["new"] == {"구성": "Contents", "호수": "Size"}

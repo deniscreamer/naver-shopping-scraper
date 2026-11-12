@@ -274,7 +274,8 @@ Per text, the first that answers:
 1. **The product's own store:** title, review, a placeholder option name (선택 / 옵션, named from its values), in
    `translation/texts.jsonl`.
 2. **The dictionary of its kind:** brand, option name / value, spec and fact label / value, add-on group / name,
-   text-field label / placeholder. One file per kind. The live copies in `scripts/output/dictionaries/` grow during
+   text-field label / placeholder. One file per kind: the brand's for the whole shop, every other kind's per Naver
+   category (`<category id>/<kind>.json`, 2026-11-11: a new category starts empty). The live copies in `scripts/output/dictionaries/` grow during
    runs and are out of git. Their backups in `scripts/dictionaries/` are in git and seed a missing live copy; they
    are updated by hand with `backup`, after `status`, since runs never commit; a backup stamps each file
    `backed_up`. The sync only adds: a run takes the entries only the backup has (pulled from git, seeded by hand),

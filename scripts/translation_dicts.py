@@ -11,6 +11,13 @@ pulled from git, added in git by hand), and `backup` writes the live entries ove
 backup's others. A wrong entry is fixed (or deleted) in the live copy; the next backup carries a fix to git. To
 delete an entry for good, delete it in both copies.
 
+Scopes (2026-11-11, after the first new category: an entry of 50002787 changed four products of 50002788, and
+`호수` -> "Club Number" or `선택하세요` -> "Club Type" would have read wrong anywhere else): a brand is the shop's,
+one spelling for every category (`<root>/brand.json`); every other kind is a category's own, `<root>/<Naver
+category id>/<kind>.json` (live and backup alike). A new category starts empty: the model translates its texts once,
+and nothing it learns reaches another category. `get` / `add` take the product's category; status and backup cover
+every scope (a row's kind reads "<category>/<kind>").
+
 `status` is the sync helper: when the live copies were last written, the last backup (`backup` stamps each backup
 file `backed_up`, UTC), what the backup lacks (new entries, changed ones: live and git differ), what only git has
 (the next run takes it) and the advice: nothing to do, wait, back up, or read the changed entries first (a backup
@@ -40,6 +47,26 @@ BACKUP_AFTER_DAYS = 7           # days since the last backup with any entry wait
 # per product), so they have no dictionary
 KINDS = ("brand", "option_name", "option_value", "spec_label", "spec_value", "fact_label", "fact_value",
          "addon_group", "addon_name", "text_label", "text_placeholder")
+
+
+SHARED = ("brand",)            # one per shop; the other kinds are per Naver category (a scope)
+
+
+def scopes(*roots: str) -> list[str]:
+    """The category scopes (sub-folders) any of the roots has."""
+    return sorted({d for r in roots if os.path.isdir(r) for d in os.listdir(r) if os.path.isdir(os.path.join(r, d))
+                   and not d.startswith(".")})
+
+
+def _files(live_root: str, backup_root: str) -> list[tuple[str, str, str, str]]:
+    """(label, kind, live path, backup path) of every dictionary: the shared kinds at the roots, every other kind
+    under each category's folder."""
+    out = [(kind, kind, os.path.join(live_root, f"{kind}.json"), os.path.join(backup_root, f"{kind}.json"))
+           for kind in SHARED]
+    for scope in scopes(live_root, backup_root):
+        out += [(f"{scope}/{kind}", kind, os.path.join(live_root, scope, f"{kind}.json"),
+                 os.path.join(backup_root, scope, f"{kind}.json")) for kind in KINDS if kind not in SHARED]
+    return out
 
 
 class DictionaryError(Exception):
@@ -73,11 +100,12 @@ class Dictionaries:
     """The live dictionaries of every kind, seeded from the backups; entries a backup has and a live copy lacks are
     added to it (a newer backup from git), never the other way round."""
 
-    def __init__(self, live_root: str = LIVE_ROOT, backup_root: str = BACKUP_ROOT):
-        self.live_root, self.backup_root = live_root, backup_root
-        self.entries: dict[str, dict[str, str]] = {}
+    def __init__(self, live_root: str = LIVE_ROOT, backup_root: str = BACKUP_ROOT, kinds: tuple[str, ...] = SHARED):
+        self.live_root, self.backup_root, self.kinds = live_root, backup_root, kinds
+        self.entries: dict[str, dict[str, str]] = {k: {} for k in KINDS}
         self.added: dict[str, dict[str, str]] = {k: {} for k in KINDS}      # this run's new entries
-        for kind in KINDS:
+        self._scopes: dict[str, "Dictionaries"] = {}
+        for kind in kinds:
             live = self.path(kind)
             if not os.path.exists(live):
                 backup = os.path.join(backup_root, f"{kind}.json")
@@ -95,12 +123,25 @@ class Dictionaries:
     def path(self, kind: str) -> str:
         return os.path.join(self.live_root, f"{kind}.json")
 
-    def get(self, kind: str, ko: str) -> str | None:
+    def scope(self, category: str | None) -> "Dictionaries":
+        """The dictionaries of one Naver category (its own folder; created by the first entry it learns)."""
+        name = str(category or "none")
+        if name not in self._scopes:
+            self._scopes[name] = Dictionaries(os.path.join(self.live_root, name), os.path.join(self.backup_root, name),
+                                              tuple(k for k in KINDS if k not in SHARED))
+        return self._scopes[name]
+
+    def get(self, kind: str, ko: str, category: str | None = None) -> str | None:
+        if kind not in SHARED and kind not in self.kinds:
+            return self.scope(category).get(kind, ko)
         return self.entries.get(kind, {}).get(ko)
 
-    def add(self, kind: str, ko: str, en: str) -> None:
+    def add(self, kind: str, ko: str, en: str, category: str | None = None) -> None:
         if kind not in KINDS:
             raise KeyError(kind)
+        if kind not in SHARED and kind not in self.kinds:
+            self.scope(category).add(kind, ko, en)
+            return
         if kind == "brand":                     # one brand, one spelling whatever the case the model wrote it in
             en = self.brand_spelling(en)        # (the owner, 2026-11-09: "YONEX" stays YONEX, "Yonex" Yonex)
         if self.entries[kind].get(ko) != en:
@@ -109,12 +150,21 @@ class Dictionaries:
 
     def save(self) -> None:
         """This run's new entries over the file as it is now (another run may have added its own meanwhile)."""
-        for kind in KINDS:
+        for scoped in self._scopes.values():
+            scoped.save()
+        for kind in self.kinds:
             if self.added[kind]:
                 path = self.path(kind)
                 current = _read(path, kind) if os.path.exists(path) else {}
                 self.entries[kind] = {**current, **self.added[kind]}
                 _write(path, kind, self.entries[kind])
+
+    def all_added(self) -> dict[str, dict[str, str]]:
+        """This run's new entries by "<kind>" (shared) and "<category>/<kind>"."""
+        out = {k: v for k, v in self.added.items() if v}
+        for name, scoped in self._scopes.items():
+            out.update({f"{name}/{k}": v for k, v in scoped.added.items() if v})
+        return out
 
     def brand_spelling(self, name: str) -> str:
         """The dictionary's spelling of this brand, compared without case; the name itself for a new brand."""
@@ -133,14 +183,13 @@ def status(live_root: str = LIVE_ROOT, backup_root: str = BACKUP_ROOT) -> list[d
     entries only the backup has (git_only: the next run takes them into the live copy; a backup keeps them). A live
     file not written yet (seeded from the backup on the first run) differs in nothing."""
     out = []
-    for kind in KINDS:
-        live_path, backup_path = os.path.join(live_root, f"{kind}.json"), os.path.join(backup_root, f"{kind}.json")
+    for label, kind, live_path, backup_path in _files(live_root, backup_root):
         backup = _read(backup_path, kind) if os.path.exists(backup_path) else {}
         live = _read(live_path, kind) if os.path.exists(live_path) else dict(backup)
         new = {k: v for k, v in live.items() if k not in backup}
         changed = {k: (backup[k], v) for k, v in live.items() if k in backup and backup[k] != v}
         git_only = {k: v for k, v in backup.items() if k not in live}
-        out.append({"kind": kind, "live": len(live), "backup": len(backup), "new": new, "changed": changed,
+        out.append({"kind": label, "live": len(live), "backup": len(backup), "new": new, "changed": changed,
                     "git_only": git_only})
     return out
 
@@ -151,7 +200,7 @@ def _utc(seconds: float) -> str:
 
 def live_updated(live_root: str = LIVE_ROOT) -> str | None:
     """When a live copy was last written (UTC), None before the first run."""
-    times = [os.path.getmtime(p) for p in (os.path.join(live_root, f"{k}.json") for k in KINDS) if os.path.exists(p)]
+    times = [os.path.getmtime(f[2]) for f in _files(live_root, BACKUP_ROOT) if os.path.exists(f[2])]
     return _utc(max(times)) if times else None
 
 
@@ -217,21 +266,18 @@ def backup(live_root: str = LIVE_ROOT, backup_root: str = BACKUP_ROOT, at: str |
     the backup's, the backup's others kept. Returns the kinds written."""
     at = at or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     written = []
-    for kind in KINDS:
-        live_path = os.path.join(live_root, f"{kind}.json")
+    for label, kind, live_path, backup_path in _files(live_root, backup_root):
         if os.path.exists(live_path):
-            backup_path = os.path.join(backup_root, f"{kind}.json")
             kept = _read(backup_path, kind) if os.path.exists(backup_path) else {}
             _write(backup_path, kind, {**kept, **_read(live_path, kind)}, backed_up=at)
-            written.append(kind)
+            written.append(label)
     return written
 
 
 def backed_up(backup_root: str = BACKUP_ROOT) -> str | None:
     """The time of the last backup (the latest `backed_up` of the backup files), None before the first one."""
     stamps = []
-    for kind in KINDS:
-        path = os.path.join(backup_root, f"{kind}.json")
+    for _, _, _, path in _files(backup_root, backup_root):
         if os.path.exists(path):
             with open(path, encoding="utf-8") as f:
                 stamps.append(json.load(f).get("backed_up") or "")

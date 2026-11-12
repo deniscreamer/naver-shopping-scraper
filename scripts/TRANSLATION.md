@@ -14,6 +14,7 @@ place in the pipeline and the details of each part: [README.md](README.md) "Tran
 | Claude Sonnet 5.5 at effort low; OpenAI as the fallback; models changed in `.env`, not in code | `settings()`, `.env.example` |
 | The description and the images' text are not translated: `describe.py` reads them in Korean and writes the English description (the owner, 2026-11-10; README "The product's description") | `transform._texts` (not in `texts`), `describe.packet` |
 | One dictionary per kind of text, in JSON, growing during runs out of git; backups in git, updated by hand; `status` says when a backup is due | `translation_dicts.py`, `scripts/dictionaries/` |
+| Brands are the shop's (`dictionaries/brand.json`); every other kind is a Naver category's own (`dictionaries/<category id>/<kind>.json`): a new category starts empty and its entries never reach another (2026-11-11: 50002787's entries had changed four products of 50002788) | `translation_dicts.SHARED`, `Dictionaries.scope` |
 | The brand is looked up first; one spelling per brand in the whole shop | brand dictionary, `vendors` in the request |
 | No brand (노브랜드): the tenant's name; inside a text the word is removed. A brand of 기타 ("other", the owner 2026-11-11): the tenant's name too (transform already leaves it out: the fallback decides) | `translation_rules.sanitize`, `transform.NOT_A_BRAND` |
 | Units and sizes by templates (10.5도, 33인치, 22호, 3번, 7개, 2026년형); the model only for the rest | `translation_rules.py` |
@@ -44,7 +45,9 @@ Nothing in the stage's code changes. Per case:
    The purchase topics (shipping, seller, price ...) are the same for every category.
 4. **Templates of that category**, if its specs glue together like golf's flex runs: `CATEGORY_RULES` in
    `translation_rules.py`, with a test.
-5. **Dictionaries.** Optionally, seed `scripts/dictionaries/` with the category's spec labels and common values.
+5. **Dictionaries.** The category gets its own folder `scripts/dictionaries/<category id>/` with its first entries;
+   optionally seed it with the category's spec labels and common values. Read every new entry before the first
+   backup (8 of the junior clubs' first 108 were wrong).
    Otherwise the first runs fill the live copies, and `status` then `backup` keeps them.
 6. **Check:**
    - `translate_eval.py <shop> --products 12`;
