@@ -123,16 +123,54 @@ def image_texts(shop: str, rules: Any, prepared: list[Any], latest: dict[str, tu
         p["product"]["description_images_text"] = flag
 
 
-def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT, free_only: bool = False,
-        paid_variants: frozenset[str] | set[str] = frozenset()) -> dict:
-    """`free_only`: no paid variant and no paid add-on, whatever the category allows (a job made without --paid).
-    `paid_variants`: product ids that take the category's paid variants but no paid add-on (a job made with
-    --paid-variants: its own products only, so the shop's other records stay as they were prepared)."""
-    rules = without_paid(rules_for(shop)) if free_only else rules_for(shop)
-    with_variants = without_paid_addons(rules_for(shop))
+JOBS_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output", "jobs")
+PAID, VARIANTS = "paid", "variants"
+
+
+def paid_choices(shop: str, shops_root: str = SHOPS_ROOT, jobs_root: str = JOBS_ROOT) -> dict[str, str]:
+    """Product id -> the paid choices its job took: PAID (a job made with --paid: the category's paid variants and
+    add-ons) or VARIANTS (--paid-variants: paid variants, no paid add-on); a product of no such job takes only what
+    costs nothing extra. The latest job of a product decides. Read from the jobs' own files, so a job's choice stays
+    with its products whoever prepares the shop again (2026-11-11: the transform prepares the whole shop, and a
+    --paid job of 50002787 turned the paid variants of 101 published full sets on; a run by hand did the same). Jobs
+    from before the choice was recorded (no `free_only` in job.json, before 2026-11-09) count as free: their products
+    were prepared free since. A job of another shops root (a trial) does not count."""
+    found: list[tuple[str, str | None, list[str]]] = []
+    for name in sorted(os.listdir(jobs_root)) if os.path.isdir(jobs_root) else []:
+        folder = os.path.join(jobs_root, name)
+        if name.startswith("_") or not os.path.isfile(os.path.join(folder, "job.json")):
+            continue
+        with open(os.path.join(folder, "job.json"), encoding="utf-8") as f:
+            meta = json.load(f)
+        if meta.get("shop") != shop or "free_only" not in meta or \
+                os.path.abspath(meta.get("shops_root") or SHOPS_ROOT) != os.path.abspath(shops_root):
+            continue
+        choice = VARIANTS if meta.get("paid_variants") else None if meta["free_only"] else PAID
+        rows = os.path.join(folder, "listing.jsonl")
+        ids = [str(json.loads(line)["product_id"]) for line in open(rows, encoding="utf-8")] \
+            if os.path.exists(rows) else []
+        found.append((meta.get("created_at") or "", choice, ids))
+    out: dict[str, str] = {}
+    for _, choice, ids in sorted(found, key=lambda f: f[0]):
+        for pid in ids:
+            if choice:
+                out[pid] = choice
+            else:
+                out.pop(pid, None)
+    return out
+
+
+def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
+        choices: dict[str, str] | None = None) -> dict:
+    """Prepare the shop's latest lines. Each product with the paid choices of its job (`choices`, default
+    paid_choices(): the jobs' files), every other one with what costs nothing extra (the owner, 2026-11-09)."""
+    choices = paid_choices(shop, shops_root) if choices is None else choices
+    rules = rules_for(shop)
+    by_choice = {PAID: rules, VARIANTS: without_paid_addons(rules)}
+    free = without_paid(rules)
     chosen = runs or kept_runs(shop, shops_root)
     latest = latest_lines(shop, runs, shops_root)
-    prepared = [prepare(line, with_variants if line["key"].split(":")[3] in paid_variants else rules, run_id, n,
+    prepared = [prepare(line, by_choice.get(choices.get(line["key"].split(":")[3], ""), free), run_id, n,
                         load_sidecar(shop, line["key"].split(":")[3], shops_root))
                 for run_id, n, line in latest.values()]
     prepared.sort(key=lambda p: p["key"])

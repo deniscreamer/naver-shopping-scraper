@@ -5,6 +5,20 @@ version in `extension/manifest.json`.
 
 ## Unreleased
 
+- **A new category: 50002787 주니어용클럽** (the owner, 2026-11-11) for fairwardgolf's Junior Golf Clubs & Sets
+  (`junior-clubs-sets`, one section, no split). The full sets' rules (paid variants and add-ons, the images read; no
+  parts profile), the same price rule. **Two defaults** in one row: a set's box (105 x 28 x 25 cm, 4.5 kg) and a
+  single club's (90 x 12 x 10 cm, 1 kg), by the title's and the variant's words (`kinds`,
+  `package_measures.default_kind`). The transform takes each default from today's table (`current_defaults`). Its
+  translation brief, a description profile `junior_clubs`, the sets' review aspects, glued-flex rule and glossary.
+  10 real products published and checked in the collection; two measures fixtures. First run of the
+  `new-category-or-shop` skill; ONBOARDING.md and the skill carry what it taught.
+- **A job's paid choice stays with its own products** (`run_transform.paid_choices`, read from the jobs' files):
+  the transform prepares the whole shop, and the `--paid` junior job had prepared 101 published full sets with
+  their paid variants (nothing was sent: they stood untranslated). A run by hand now prepares the same way.
+- Dictionaries: 108 entries of the junior run backed up, 8 set by hand first (an age lost from "01.9-12세 퍼터",
+  호수 = Size, 선택하세요 = Option).
+
 - **`scripts/ONBOARDING.md`** and the agents' skill `new-category-or-shop` (the owner, 2026-11-11): where to add what
   for a new Naver category or a new shop, what stops, what goes wrong silently, and the golf / fairwardgolf
   literals in shared code to decide on first (the metafield namespace before a second shop).

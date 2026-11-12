@@ -61,3 +61,27 @@ def test_a_run_without_the_store_is_unchanged(tmp_path):
     assert not any(d["rule"] == "shared_store_image" for p in result["prepared"]
                    for d in p["product"]["description_dropped"])
     assert not any(line.startswith("  shared store images") for line in result["report"])
+
+
+def _job(root, name, shops_root, ids, created, **meta):
+    folder = root / name
+    folder.mkdir()
+    (folder / "job.json").write_text(json.dumps({"shop": "fairwardgolf", "shops_root": str(shops_root),
+                                                 "created_at": created, **meta}))
+    (folder / "listing.jsonl").write_text("".join(json.dumps({"product_id": i}) + "\n" for i in ids))
+
+
+def test_each_product_keeps_its_own_jobs_paid_choice(tmp_path):
+    """2026-11-11: the transform prepares the whole shop, and a --paid job of 50002787 turned the paid variants of
+    101 published full sets on; a job's choice now goes with its own products only."""
+    jobs, shops = tmp_path / "jobs", tmp_path / "shops"
+    jobs.mkdir()
+    _job(jobs, "a-old", shops, ["1"], "2026-11-08T00:00:00+00:00", paid=True)               # no free_only: free
+    _job(jobs, "b-free", shops, ["2", "3"], "2026-11-10T00:00:00+00:00", paid=False, free_only=True)
+    _job(jobs, "c-variants", shops, ["3", "4"], "2026-11-11T12:00:00+00:00", paid=True, paid_variants=True,
+         free_only=True)
+    _job(jobs, "d-paid", shops, ["5"], "2026-11-12T05:00:00+00:00", paid=True, paid_variants=False, free_only=False)
+    _job(jobs, "e-trial", tmp_path / "trial", ["6"], "2026-11-12T06:00:00+00:00", paid=True, free_only=False)
+    _job(jobs, "_superseded-x", shops, ["7"], "2026-11-12T07:00:00+00:00", paid=True, free_only=False)
+    got = run_transform.paid_choices("fairwardgolf", str(shops), str(jobs))
+    assert got == {"3": run_transform.VARIANTS, "4": run_transform.VARIANTS, "5": run_transform.PAID}

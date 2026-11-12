@@ -37,7 +37,10 @@ provider down stops the run (`run` again resumes; nothing is asked twice). A lin
 
 Paid choices: a job made without `--paid` (the owner's pilot, 2026-11-09) collects and prepares only the variants
 and add-ons that cost nothing extra; `--paid` takes them too. `--paid-variants` (the owner, 2026-11-11) takes the paid variants
-but no paid add-on, for the job's own products only (the shop's other prepared records stay as they were).
+but no paid add-on. A job's choice holds for its own products only, whoever prepares the shop again (a job, or
+`run_transform.py` by hand): `run_transform.paid_choices` reads it from the jobs' files, the latest job of a product
+decides, and every other product takes only what costs nothing extra (2026-11-11: a `--paid` job of 50002787 had
+turned the paid variants of 101 published full sets on).
 
 Publication per product (`new --publish`): the done line ends with `published <handle> $<price> <admin link>`
 (`$<min>-<max>` when the variants differ; the shop's price rule: [README.md](README.md) "The price"). A product

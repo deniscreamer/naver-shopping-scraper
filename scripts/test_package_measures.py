@@ -8,7 +8,8 @@ import copy
 import pytest
 
 from package_measures import (BASELINE_SIDES, BASELINES, FIELDS, CategoryDefaultsInvalid, CategoryDefaultsMissing,
-                              check_row, load_table, on_scale, variant_measures)
+                              check_row, current_defaults, default_kind, load_table, on_scale,
+                              variant_measures)
 
 ROW = {"category_id": "50002788", "category_name": "풀세트", "approved_by": "test", "approved_at": "2026-11-05",
        "reliability": "estimated_average",
@@ -211,7 +212,7 @@ def test_baselines_block_is_optional_and_the_operators():
     table = load_table()
     block = table["rows"][0]["baselines"]
     assert {k: block[k] for k in BASE if k != "basis"} == {k: v for k, v in BASE.items() if k != "basis"}
-    assert table["version"] == 2 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
+    assert table["version"] == 3 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
     check_row(ROW)                                                    # a row without the block: no composition
     check_row({**ROW, "baselines": BASE})
 
@@ -229,3 +230,71 @@ def test_baselines_block_is_optional_and_the_operators():
 def test_bad_baselines(block):
     with pytest.raises(CategoryDefaultsInvalid, match="baselines"):
         check_row({**ROW, "baselines": block})
+
+
+JUNIOR = next(r for r in load_table()["rows"] if r["category_id"] == "50002787")
+
+
+@pytest.mark.parametrize("title, variant, kind", [
+    # the owner's two defaults of 2026-11-11 (titles of the 50002787 listing that day)
+    ("안전성시험통과 주니어골프채 퍼터 어린이 골프클럽 아동 초등학생", None, "single_club"),
+    ("아화 그린록 주니어 드라이버", "S(9-12세)", "single_club"),
+    ("PGM 주니어 드라이버 하이브리드 골프클럽 카본파이버 샤프트", None, "single_club"),
+    ("PGM 주니어골프클럽 풀세트6 핑크", "드라이버 단품", "single_club"),     # 단품 in the variant: alone
+    ("3종세트 주니어 골프채 어린이 퍼터 아이언 드라이버 골프클럽", None, None),   # a set word: the set's box
+    ("클리브랜드 주니어 라지 풀세트 7개 11~14세", None, None),
+    ("US키즈골프 어린이 골프채 주니어 세트 가방포함 UL7 54사이즈 5클럽", None, None),
+    ("어린이 골프채 3종 + 골프가방 세트 주니어 퍼터 아이언 드라이버 아동 캐디백", None, None),
+    ("주니어 골프채 어린이", "드라이버+퍼터 2개", None),                       # two clubs said as a count: a set
+    ("PGM 주니어 골프 세트", "아이언", "single_club"),                        # the variant names one club
+    ("키즈 어린이 주니어 골프채 퍼터 클럽 세트", "6-8세 아이언 6/7번", "single_club"),   # 5035551656
+    ("키즈 어린이 주니어 골프채 퍼터 클럽 세트", "주니어 골프가방 블루", None),          # the bag: the larger box
+    ("주니어골프채 연습용 어린이 초등학생골프채 퍼터 유아용 클럽", "6~8세 퍼터", "single_club"),  # 5447766140: not "클럽 6"
+    ("3종세트 주니어 골프채 어린이 퍼터 아이언 드라이버", "5-8세 골프채 3종세트", None),     # 6232511226
+    ("캘러웨이 XJ 주니어 골프채 풀세트 2026", "XJ2풀세트 (7개 구성)", None),              # 10573086064
+    ("PGM 주니어 골프채 풀세트", "드라이버 10.5도", None),                    # a 풀세트's choice: the set's box
+    ("어린이골프채 아기골프채 안전인증 교구 아이언 퍼터 우드 클럽", "퍼터 / 9호 / ORANGE", "single_club"),  # 4987660149
+    ("엠유스포츠 밀키 주니어 골프채", None, None),                              # no club word: the set's box
+])
+def test_junior_single_club_or_set(title, variant, kind):
+    found = default_kind(JUNIOR, title, variant)
+    assert (found or {}).get("kind") == kind
+
+
+def test_a_kind_fills_its_own_defaults_per_variant():
+    s = {"name": "PGM 주니어골프클럽 풀세트6", "category": {"id": "50002787", "name": "주니어용클럽"},
+         "options": {"variants": [{"id": "1", "name": "풀세트6 핑크"}, {"id": "2", "name": "드라이버 단품"}]},
+         "measures": {"is_set": True, "weights": [], "dimensions": [], "references": [], "review": []}}
+    by = {p["variant_id"]: p["fields"] for p in variant_measures(s, load_table())}
+    assert by["1"]["package_length_mm"]["central"] == 1050 and "kind" not in by["1"]["package_length_mm"]
+    assert by["2"]["package_length_mm"]["central"] == 900 and by["2"]["package_weight_g"]["kind"] == "single_club"
+    assert by["2"]["package_weight_g"]["source"] == "category_default" and by["2"]["package_weight_g"]["confidence"] == 1
+
+
+@pytest.mark.parametrize("kinds", [
+    [{"kind": "x", "fields": ROW["fields"], "basis": "b"}],                                  # no match
+    [{"kind": "x", "match": "(", "fields": ROW["fields"], "basis": "b"}],                    # not a regex
+    [{"kind": "x", "match": "a", "fields": {}, "basis": "b"}],                               # no fields
+    [{"kind": "x", "match": "a", "fields": ROW["fields"]}],                                  # no basis
+    [{"kind": "x", "match": "a", "fields": ROW["fields"], "basis": "b", "size": 1}],         # unknown key
+])
+def test_bad_kinds(kinds):
+    with pytest.raises(CategoryDefaultsInvalid, match="kind"):
+        check_row({**ROW, "kinds": kinds})
+
+
+def test_the_transform_takes_todays_default_and_keeps_the_rest():
+    """5447766140 (2026-11-11): collected while "...클럽" + "6~8세" read as a count, its putter got the set's box;
+    the kept run is never rewritten, so the transform takes today's default. A default already today's is kept as
+    collected (its table_version too), and a seller's value is never touched."""
+    s = {"name": "주니어골프채 연습용 어린이 초등학생골프채 퍼터 유아용 클럽", "category": {"id": "50002787"},
+         "options": {"variants": [{"id": "1", "name": "6~8세 퍼터"}]}}
+    table = load_table()
+    old = {**JUNIOR["fields"]["package_length_mm"], "source": "category_default", "confidence": 1, "table_version": 1}
+    seller = {"value": {"min": 1300, "max": 1300}, "source": "source_stated", "confidence": 5}
+    got = current_defaults({"package_length_mm": old, "package_weight_g": seller}, s, "1", table)
+    assert got["package_length_mm"]["central"] == 900 and got["package_length_mm"]["kind"] == "single_club"
+    assert got["package_length_mm"]["table_version"] == table["version"] and got["package_weight_g"] == seller
+    same = {**JUNIOR["kinds"][0]["fields"]["package_length_mm"], "source": "category_default", "kind": "single_club",
+            "table_version": 1}
+    assert current_defaults({"package_length_mm": same}, s, "1", table)["package_length_mm"] == same

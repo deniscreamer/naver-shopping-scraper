@@ -57,7 +57,7 @@ from description_clean import body_notes, clean, clean_images
 from description_images import current, image_rows
 from description_measures import composition_count, container_in, container_listed, package_for, profile_for, read_rows
 from naver_variants import choose_variants
-from package_measures import load_table, on_scale
+from package_measures import current_defaults, load_table, on_scale
 from spec_variants import check_specs, title_one_variant
 from review_clean import clean_reviews
 from transform_shops import CategoryRules, ShopRules
@@ -287,7 +287,9 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
             "code": "options_unaligned", "detail": f"{len(names)} option groups, rows of "
             f"{sorted({len(r['options']) for r in rows})} values"}], "skipped_paid": 0, "duplicate_values": [],
             "capped": None}
-    package = {p.get("variant_id"): p.get("fields") and on_scale(p["fields"]) for p in line.get("package") or []}
+    package = {p.get("variant_id"): p.get("fields") and current_defaults(on_scale(p["fields"]), line.get("specs") or {},
+                                                                         p.get("variant_id"), _measures_table())
+               for p in line.get("package") or []}
     product_id = line["details"]["id"]
     skipped = choice.get("skipped_paid") or 0
     facts: list[dict[str, str]] = []

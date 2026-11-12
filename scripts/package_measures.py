@@ -28,7 +28,10 @@ of like items in a container (BASELINES: one item, the container, the carton, th
 over it; BASELINE_SIDES: the box's width and height without the container and with it; approved_by, approved_at,
 basis). With them description_measures.py composes a field the seller does not state from the set's parts, each
 part from the product's own data when it is there and from the baseline when it is not; the flat default is then
-the last resort. No amount is made up in code; a row without the block gets no composition. `reliability` today
+the last resort. No amount is made up in code; a row without the block gets no composition. A row may also carry
+`kinds` (the owner, 2026-11-11, 50002787 junior clubs: single clubs and sets in one category): [{kind, match,
+alone, always, unless, strong, fields, basis}], a kind of product with its own low / central / high, taken by
+default_kind() from the title and the variant's words; its defaults carry `kind`. `reliability` today
 has one level, `estimated_average` (the weakest: an average of estimates, not measured); delivery will apply its
 own coefficient per level.
 
@@ -50,6 +53,7 @@ The evidence (source, quote, kind, scope, binding, flags, contradiction) travels
 """
 import json
 import os
+import re
 from collections.abc import Mapping
 from typing import Any
 
@@ -111,13 +115,79 @@ def check_row(row: dict[str, Any]) -> None:
             raise CategoryDefaultsInvalid(
                 f"{where}: baselines needs {', '.join(BASELINES)} (numbers > 0), {', '.join(BASELINE_SIDES)} "
                 "([width, height], width >= height > 0), approved_by, approved_at and basis, and nothing else")
+    _check_fields(where, row.get("fields"))
+    for kind in row.get("kinds") or []:
+        named = f"{where} kind {kind.get('kind')}"
+        if not kind.get("kind") or not kind.get("basis") or set(kind) - {"kind", "match", "alone", "unless",
+                                                                          "strong", "always", "fields", "basis"}:
+            raise CategoryDefaultsInvalid(f"{named}: needs kind, match, fields and basis (alone, unless, strong, "
+                                          "always optional)")
+        try:
+            for key in ("match", "alone", "unless", "strong", "always"):
+                if kind.get(key) is not None:
+                    re.compile(kind[key])
+            re.compile(kind["match"])
+        except (KeyError, TypeError, re.error) as e:
+            raise CategoryDefaultsInvalid(f"{named}: match / alone / unless must be regular expressions: {e}") \
+                from None
+        _check_fields(named, kind.get("fields"))
+
+
+def _check_fields(where: str, fields: Any) -> None:
     for name in FIELDS:
-        v = (row.get("fields") or {}).get(name) or {}
+        v = (fields or {}).get(name) or {}
         try:
             if not 0 < v["low"] <= v["central"] <= v["high"]:
                 raise CategoryDefaultsInvalid(f"{where}: {name} must be 0 < low <= central <= high")
         except (KeyError, TypeError):
             raise CategoryDefaultsInvalid(f"{where}: {name} needs numbers low, central, high") from None
+
+
+def default_kind(row: Mapping[str, Any], title: str | None, variant_name: str | None) -> dict[str, Any] | None:
+    """The row's kind of product (`kinds`) a variant is, for its defaults; None: the row's own fields. The title and
+    the variant's words are read apart (glued, "...클럽" + "6~8세" read as "클럽 6", a count). A kind is taken when
+`always` is in the variant's own words (단품: sold alone, whatever the title says); when
+    `alone` is in the variant's own words, `unless` is not, and the title has no `strong` word (a variant that names
+    one club of a "퍼터 클럽 세트" listing is that club; of a 풀세트 it is the set's choice); or when `match` is in the
+    title or the variant and `unless` in neither (the owner, 2026-11-11: a single junior club gets a single club's
+    box, a set the set's; in doubt the set's, the larger, box)."""
+    t, v = title or "", variant_name or ""
+
+    def has(key: str, text: str) -> bool:
+        return bool(kind.get(key)) and re.search(kind[key], text) is not None
+    for kind in row.get("kinds") or []:
+        if has("always", v) or has("alone", v) and not has("unless", v) and not has("strong", t):
+            return dict(kind)
+        if (has("match", t) or has("match", v)) and not has("unless", t) and not has("unless", v):
+            return dict(kind)
+    return None
+
+
+def current_defaults(fields: dict[str, Any], specs: Mapping[str, Any], variant_id: str | None,
+                     table: dict[str, Any]) -> dict[str, Any]:
+    """A collected variant's fields with each category default as today's table gives it (the transform, 2026-11-11):
+    a kept run is never rewritten, so a row changed after the collection (a new `kinds` entry, other low / central /
+    high) reaches the product when it is prepared again. A default whose numbers and kind are today's is kept as it
+    was collected (its table_version too: nothing changes for a product the change does not touch); a seller's value
+    is never touched."""
+    category = specs.get("category") or {}
+    row = next((r for r in table.get("rows", []) if str(r["category_id"]) == str(category.get("id"))), None)
+    if row is None:
+        return fields
+    name_of = {v.get("id"): v.get("name") for v in ((specs.get("options") or {}).get("variants") or [])}
+    kind = default_kind(row, specs.get("name"), name_of.get(variant_id))
+    defaults = kind["fields"] if kind else row["fields"]
+    out = dict(fields)
+    for name, f in fields.items():
+        if not isinstance(f, dict) or f.get("source") != "category_default" or name not in defaults:
+            continue
+        today = defaults[name]
+        if all(f.get(k) == today[k] for k in ("low", "central", "high")) and f.get("kind") == (kind or {}).get("kind"):
+            continue
+        out[name] = {**{k: v for k, v in f.items() if k != "kind"}, **today,
+                     **({"kind": kind["kind"]} if kind else {}), "table_version": table["version"],
+                     "approved_by": row["approved_by"], "approved_at": row["approved_at"]}
+    return out
 
 
 def _belongs(candidate: dict[str, Any], variant_id: str | None) -> bool:
@@ -195,7 +265,10 @@ def variant_measures(specs: Mapping[str, Any], table: dict[str, Any]) -> list[di
     category = specs.get("category") or {}
     row = next((r for r in table.get("rows", []) if str(r["category_id"]) == str(category.get("id"))), None)
     out = []
+    names = {v.get("id"): v.get("name") for v in ((specs.get("options") or {}).get("variants") or [])}
     for variant_id in variants:
+        kind = default_kind(row, specs.get("name"), names.get(variant_id)) if row else None
+        defaults: dict[str, Any] = kind["fields"] if kind else (row or {}).get("fields") or {}
         fields: dict[str, Any] = stated(measures, variant_id)
         for name, band in ((row or {}).get("plausible") or {}).items():
             f = fields.get(name)
@@ -207,7 +280,8 @@ def variant_measures(specs: Mapping[str, Any], table: dict[str, Any]) -> list[di
                 continue
             if row is None:
                 raise CategoryDefaultsMissing(category.get("id"), category.get("name"))
-            fields[name] = {**row["fields"][name], "source": "category_default", "confidence": 1,
+            fields[name] = {**defaults[name], "source": "category_default", "confidence": 1,
+                            **({"kind": kind["kind"]} if kind else {}),
                             "reliability": row["reliability"],
                             "table_version": table["version"],
                             "approved_by": row["approved_by"], "approved_at": row["approved_at"],

@@ -234,6 +234,8 @@ GLOSSARIES: dict[str, dict[str, str]] = {
                  "말렛형": "mallet", "일자형": "blade"},
 }
 
+GLOSSARIES["50002787"] = GLOSSARIES["50002788"]               # junior clubs: the same terms (2026-11-11)
+
 
 def glossary_for(category_id: str | None) -> dict[str, str]:
     return GLOSSARIES.get(str(category_id or ""), {})

@@ -46,8 +46,9 @@ def measured(given: dict[str, Any]) -> list[dict[str, Any]]:
     """Each variant's five fields from a fixture's input, the way a product gets them: the server path's fields
     (collect_product: variant_measures with the real category_measures.json; on today's scale, as the transform
     reads a collected line), then the transform's hook over the description."""
-    specs = {"category": given["category"], "measures": given["measures"],
-             "options": {"variants": [{"id": v["id"]} for v in given["variants"] if v["id"]]}}
+    specs = {"category": given["category"], "measures": given["measures"], "name": given["title"],
+             "options": {"variants": [{"id": v["id"], "name": " / ".join(v["options_ko"])}  # a kind's words
+                                      for v in given["variants"] if v["id"]]}}
     package = {p["variant_id"]: on_scale(p["fields"]) for p in variant_measures(specs, load_table())}
     ov = {"facts": given["facts"],
           "variants": [{"options_ko": v["options_ko"], "package": package[v["id"]]} for v in given["variants"]]}

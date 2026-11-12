@@ -59,6 +59,7 @@ _CLUB = r"(?:드라이버|유틸|우드|아이언|퍼터|웨지|\d)"
 CATEGORY_RULES: dict[str, list[tuple[re.Pattern[str], str]]] = {
     "50002788": [(re.compile(r"(?<=[0-9가-힣°])(SR|R|S|L|A|X)(?=" + _CLUB + ")"), r"\1, ")],
 }
+CATEGORY_RULES["50002787"] = CATEGORY_RULES["50002788"]       # junior clubs write their specs the same way (2026-11-11)
 
 
 def sanitize(kind: str, ko: str, tenant: str, category_id: str | None = None) -> str:

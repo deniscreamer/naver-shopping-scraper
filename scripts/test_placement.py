@@ -183,3 +183,13 @@ def test_a_gendered_title_beats_a_unisex_row():
     assert out["value"] == "womens"
     both = A.decide(A.ATTRIBUTES["gender"], [("s1", ["9P"])], [{"label": "성별", "value": "남녀공용"}], "PGM 풀세트")
     assert both["value"] == "unisex"
+
+
+def test_junior_clubs_go_to_their_one_section_whatever_the_gender():
+    """50002787 (the owner, 2026-11-11): single clubs and sets in Junior Golf Clubs & Sets, the store's collection
+    fairwardgolf-junior-clubs-sets (tag rule fairwardgolf:leaf:junior-clubs-sets, read 2026-11-11)."""
+    for value in ("unknown", "mens", "womens"):
+        got = PL.place(product(value, category="50002787"), PROFILE)
+        assert got["status"] == "placed" and got["product_type"] == "Junior Golf Clubs & Sets"
+        assert got["tags"] == ["fairwardgolf:leaf:junior-clubs-sets", "fairwardgolf:parent:clubs",
+                               "fairwardgolf:showcase"]

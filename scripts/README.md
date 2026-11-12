@@ -447,6 +447,15 @@ not measured); the price rule's coefficient goes by the lowest `confidence` of t
 50002788 풀세트 is filled (owner, 2026-11-05):
 the median (central) and about the 10th / 90th percentile (low / high) of the naver-harvester's AI estimates on the
 55 fairwardgolf sets in Shopify, sets with and without a bag together (none of their values was seller-stated).
+50002787 주니어용클럽 (owner, 2026-11-11) holds single clubs and sets, so its row has **two defaults**: the row's
+own fields are a junior set's (105 x 28 x 25 cm, 4.5 kg central) and its `kinds` entry `single_club` a single
+club's (90 x 12 x 10 cm, 1 kg). `default_kind()` takes the kind per variant: a club word (퍼터, 드라이버, 아이언, ...)
+in the title and the variant's words with no set word (세트, N종, N개, 가방, 구성, ...), or 단품 in the variant's
+own words, or a variant that names one club when the title has no strong set word (풀세트, N종, N개, 구성, a bag); a
+set word otherwise keeps the set's box, the larger one. The title and the variant are read apart ("...클럽" +
+"6~8세" is no count). Such a default carries `kind`. The table's `version` is 3 since that row. A kept run is never
+rewritten, so the transform takes each default as today's table gives it (`current_defaults`): a changed row
+reaches the product when it is prepared again; a default already today's stays as collected.
 Product sizes (not the package: kind product or unknown) are kept apart, optional.
 Every field carries `confidence`, **1 to 5** (the owner, 2026-11-10):
 
@@ -1015,7 +1024,8 @@ link. The report says how many were dropped. The step is pure: same products in,
   unbranded putter). These add the note `brand_fallback` (source, other candidates). No brand list is kept by hand.
 
 **Per-shop rules** (`transform_shops.py`, data): SKU prefix, KRW per USD, variant cap, and per Naver leaf category
-`paid_variants` / `paid_addons` / `description_images`, off by default, all on for fairwardgolf 50002788. The shop's
+`paid_variants` / `paid_addons` / `description_images`, off by default, all on for fairwardgolf 50002788 and
+50002787 (junior clubs, 2026-11-11; no parts profile: the core reading only). The shop's
 sections are not decided here (Placement). A shop or a category without rules: `ShopRulesMissing`, the
 run stops and asks the operator.
 
@@ -1460,7 +1470,8 @@ Level 1 is 2.50 so the margin stays whole when the set does have a bag: the cate
 x 23 cm) is 232-259 USD by the grid, a set with a bag 523-546, and under 2.33 the difference would come out of the
 margin; without a bag the price carries 444-511 USD the delivery does not need, kept for the risks. 2.50 was derived
 for 50002788: a new category in the shop needs its own check of level 1 (the coefficients are one table per shop,
-`shop_pricing.FAIRWARDGOLF`). All five are starting estimates: no set had shipped yet. After the first 10-20 sets
+`shop_pricing.FAIRWARDGOLF`). 50002787 junior clubs (the owner, 2026-11-11) keeps them as they are, to be measured
+on its first shipments like the sets. All five are starting estimates: no set had shipped yet. After the first 10-20 sets
 shipped, compare each invoice with the variant's `fairwardgolf.price` (the box FedEx measured, the billable kg,
 every fee line) and replace them with measured ones; check the first invoice of a set without a bag for FedEx's
 18 kg minimum (the switch below). Where they come from: 1-6 cm more on the two short sides raises the grid's price
@@ -1670,7 +1681,8 @@ A kind of product has a profile (`describe.PROFILES`: its Naver leaf categories,
 caps) and a brief (`prompts/describe/<profile>.md`: what each list holds, what a buyer of this kind of product
 must be told). `golf_set` (50002788): "What's included" and "Highlights"; no bag or no putter is said plainly; a
 non-conforming driver gets one fixed sentence; a version for the Asian or Japanese market is one highlight, joined
-with the origin. A category without a profile gets `default`: the intro and highlights only. The common prompt
+with the origin. `junior_clubs` (50002787, 2026-11-11): the same two lists, a single club or a set said in the
+intro with the age or height range the seller gives. A category without a profile gets `default`: the intro and highlights only. The common prompt
 (`prompts/describe_system.md`) holds no golf word.
 
 The answers are kept in `shops/<shop>/translation/descriptions.jsonl` (append-only; fields, HTML, what was cut

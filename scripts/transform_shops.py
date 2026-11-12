@@ -68,6 +68,10 @@ RULES = {
                                       # lengths, the bag's weight and size); OCR study on the 50 sets
                                       # (its parts profile: description_measures.CATEGORY_PROFILES)
                                       description_images=True),
+            "50002787": CategoryRules(
+                                      # owner 2026-11-11: junior clubs and sets, the full sets' rules (paid
+                                      # configurations and add-ons, the images read); no parts profile
+                                      paid_variants=True, paid_addons=True, description_images=True),
         }),
 }
 

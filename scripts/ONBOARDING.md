@@ -23,12 +23,12 @@ are the owner's decisions. They are never made up. Ask, then write each one down
 
 | # | Where | What | Without it |
 |---|---|---|---|
-| A1 | `scripts/category_measures.json` | A row with `category_id`, `category_name`, `fields` (low / central / high of the 5 package fields), `reliability`, `approved_by`, `approved_at`, `basis`. Optional: `plausible`; `baselines` (only a set of like items in a container; all of them or none). Append it after 50002788 (tests read `rows[0]`) and raise `version`, then update the pin in `test_package_measures.py::test_baselines_block_is_optional_and_the_operators`. | **stops**: `job.py new` exits 2 ("no category_measures.json row"); `CategoryDefaultsMissing` |
+| A1 | `scripts/category_measures.json` | A row with `category_id`, `category_name`, `fields` (low / central / high of the 5 package fields), `reliability`, `approved_by`, `approved_at`, `basis`. Optional: `plausible`; `baselines` (only a set of like items in a container; all of them or none); `kinds` (a category that mixes kinds of very different size, e.g. 50002787: single clubs and sets: each kind its own defaults, chosen by title and variant words, `package_measures.default_kind`). Before asking, price the central box (`shop_pricing.POLICIES[shop].quote`) on a cheap and a dear product of the listing: at level 1 (x2.50) one default box for a 25,000 KRW putter and a set came to $699. A row changed later reaches the products already collected when they are prepared again (`current_defaults`; kept runs are read-only, never edit them), then `publish.py --only` them. Append it after 50002788 (tests read `rows[0]`) and raise `version`, then update the pin in `test_package_measures.py::test_baselines_block_is_optional_and_the_operators`. | **stops**: `job.py new` exits 2 ("no category_measures.json row"); `CategoryDefaultsMissing` |
 | A2 | `scripts/transform_shops.py` `RULES[shop].categories` | `CategoryRules(paid_variants, paid_addons, description_images)`, with the owner's reason in a comment | **stops**: `ShopRulesMissing` in `transform.prepare`; a job stops with `stop: prepare: ShopRulesMissing` |
 | A3 | `scripts/placement_rules.py` `PROFILES[shop].categories` | `CategoryPlacement(parent, leaves, split_by, unresolved)` and its `Leaf(handle, product_type)` constants. How: [PLACEMENT.md](PLACEMENT.md) | **silent**: status `no_profile` (in `placements.jsonl` and the counts of `placement.py`), and `publish.py <shop>` skips the product without a word |
 | A4 | `scripts/attributes.py` `ATTRIBUTES` | Only when the split is by something other than `gender`: a new `Attribute` | **stops**: `KeyError` in `placement.place` |
 | A5 | Price, `scripts/shop_pricing.py` (the shop's `Delivered`) | Check level 1 (2.50) and the duty (12.5%) for this category. The rule is per shop, not per category: a different value needs a category override (new code). [README.md](README.md) "The price" | **silent**: priced with golf's coefficients and duty |
-| A6 | Shopify admin | A smart collection for every new `Leaf` handle, condition tag = `<shop>:leaf:<handle>`. No code creates collections | **silent**: products are ACTIVE but in no section |
+| A6 | Shopify admin | A smart collection for every new `Leaf` handle, condition tag = `<shop>:leaf:<handle>`. No code creates collections. Read what exists first (read-only: `ShopCatalog(store)._post("{ collections(first: 100) { nodes { handle ruleSet { rules { column condition } } } } }")`): fairwardgolf already has 36, empty ones included, and the `Leaf` handle is the tag's part, without the `fairwardgolf-` of the collection's handle | **silent**: products are ACTIVE but in no section |
 
 ### Quality: works without these, but worse
 
@@ -86,6 +86,8 @@ before a different kind of product or a second shop is published.
    a wrong id. Then `job.py run` collects, reads the images and prepares. `stop: prepare: ShopRulesMissing` means
    A2. `Untranslated` means the translation. OCR `off` is the owner's choice (`description_images=False`), not a
    missing rule.
+   Cheap, popular categories carry many reviews: 50002787 scanned a median 134 reviews a product (sets: 1), so
+   collection took 47-186 s a product against 45-65 s.
 5. Read 2-3 products by hand: package fields and confidence, title, description. Run `placement.py <shop>` and check
    that nothing is `no_profile` or `unresolved` (A3). Then run `publish.py <shop> --dry-run`: it builds only what is
    ready, translated and placed. Read the price breakdown in `shops/<shop>/publish/payloads/<id>.json`: the

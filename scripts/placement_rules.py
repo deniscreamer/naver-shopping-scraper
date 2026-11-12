@@ -55,6 +55,8 @@ class PlacementProfile:
 
 WOMENS = Leaf("womens-complete-sets", "Women’s Complete Golf Sets")
 MENS = Leaf("mens-complete-sets", "Men’s Complete Golf Sets")
+JUNIOR = Leaf("junior-clubs-sets", "Junior Golf Clubs & Sets")    # owner 2026-11-11: single clubs and sets, one
+                                                                   # section; age, height and club count not checked
 
 PROFILES = {
     StoreId.FAIRWARDGOLF: PlacementProfile(
@@ -62,6 +64,7 @@ PROFILES = {
         categories={
             "50002788": CategoryPlacement(parent="clubs", split_by="gender",
                                           leaves={"mens": MENS, "womens": WOMENS}),
+            "50002787": CategoryPlacement(parent="clubs", leaves={None: JUNIOR}),     # 주니어용클럽
         }),
 }
 

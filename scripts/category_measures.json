@@ -1,6 +1,6 @@
 {
  "about": "Package weight and size averages per leaf category, given by the operator (never made up). A row: category_id, category_name, fields (low / central / high of product_weight_g, package_weight_g, package_length_mm, package_width_mm, package_height_mm), approved_by, approved_at (YYYY-MM-DD), reliability (estimated_average: the weakest level), basis. Optional per row: plausible ({field: {min, max}}: a value outside is not taken); baselines, the operator's amounts for the parts of a set of like items in a container, all of them or no block: item_g (one item), container_g (the container), carton_g (the box and its packing), longest_item_mm (the longest item), length_margin_mm (the box's length over the longest item), sides_mm and sides_with_container_mm (the box's [width, height] without the container and with it), approved_by, approved_at, basis (where each amount comes from). With the block a field the seller does not state is composed from the set's parts, each part from the product's own data when it is there and from the baseline when it is not (product weight = items + container; package weight = product weight + carton_g; package length = longest item + length_margin_mm; width and height = the sides), and the fields' flat averages are the last resort, used when the number of items or the container's state cannot be told; without the block a field is the seller's statement or the flat average. A new or changed row raises version.",
- "version": 2,
+ "version": 3,
  "rows": [
   {
    "category_id": "50002788",
@@ -63,6 +63,79 @@
    "basis": "Median (central) and about the 10th / 90th percentile (low / high) of the naver-harvester's AI estimates on the 55 fairwardgolf full sets that have one in Shopify (read 2026-11-05; none seller-stated; sets with and without a bag together).",
    "approved_by": "owner",
    "approved_at": "2026-11-05"
+  },
+  {
+   "category_id": "50002787",
+   "category_name": "스포츠/레저 > 골프 > 골프클럽 > 주니어용클럽",
+   "fields": {
+    "product_weight_g": {
+     "low": 1500,
+     "central": 3500,
+     "high": 6500
+    },
+    "package_weight_g": {
+     "low": 2500,
+     "central": 4500,
+     "high": 8000
+    },
+    "package_length_mm": {
+     "low": 800,
+     "central": 1050,
+     "high": 1200
+    },
+    "package_width_mm": {
+     "low": 150,
+     "central": 280,
+     "high": 350
+    },
+    "package_height_mm": {
+     "low": 120,
+     "central": 250,
+     "high": 300
+    }
+   },
+   "kinds": [
+    {
+     "kind": "single_club",
+     "match": "퍼터|드라이버|아이언|우드|유틸|웨지|하이브리드|치퍼|단품",
+     "alone": "퍼터|드라이버|아이언|우드|유틸|웨지|하이브리드|치퍼",
+     "always": "단품",
+     "unless": "(?i)세트|셋트|\\d\\s*종|\\d\\s*(?:pcs|pc|개|클럽)|클럽\\s*\\d|가방|캐디백|스탠드백|백\\s*포함|구성",
+     "strong": "(?i)풀\\s*세트|\\d\\s*종|\\d\\s*(?:pcs|pc|개|클럽)|클럽\\s*\\d|구성|가방|캐디백|스탠드백|백\\s*포함",
+     "fields": {
+      "product_weight_g": {
+       "low": 200,
+       "central": 350,
+       "high": 600
+      },
+      "package_weight_g": {
+       "low": 500,
+       "central": 1000,
+       "high": 1500
+      },
+      "package_length_mm": {
+       "low": 700,
+       "central": 900,
+       "high": 1100
+      },
+      "package_width_mm": {
+       "low": 80,
+       "central": 120,
+       "high": 150
+      },
+      "package_height_mm": {
+       "low": 60,
+       "central": 100,
+       "high": 120
+      }
+     },
+     "basis": "One junior club in its own box. Central 90 x 12 x 10 cm, 1 kg: the agent's estimate from the listing of 2026-11-11 (junior putters, drivers and irons of 26-95,000 KRW), approved by the owner; low / high the agent's range. 단품 in the variant; a variant that names a club with no set word of its own and no strong set word in the title (풀세트, N종, N개, 구성, a bag); else a club word in the title or the variant with no set word in either."
+    }
+   ],
+   "reliability": "estimated_average",
+   "basis": "A junior set, often with a stand bag. Central 105 x 28 x 25 cm, 4.5 kg: the agent's estimate from the listing of 2026-11-11 (sets of 3-7 clubs, with and without a bag, 95,000-660,000 KRW), approved by the owner as the second of two defaults; low / high the agent's range. Nothing measured.",
+   "approved_by": "owner",
+   "approved_at": "2026-11-11"
   }
  ]
 }

@@ -89,8 +89,9 @@ label.
   The judge flags it; the prompt asks to keep the buyer as the subject.
 - **Titles keep every code of the source**, so a model written twice stays ("BG-100L BG100L"). Titles translated
   before 2026-11-08 evening are the literal ones (in the texts store); they change only when translated again.
-- **Category scope.** Only 50002788 has a category brief, aspects and rules. Another category gets the base prompt
-  and the general aspects until it has its own.
+- **Category scope.** 50002788 and 50002787 (junior clubs, 2026-11-11: its own brief; the sets' glued-flex rule, review
+  aspects with a parent's words and glossary) have a category brief, aspects and rules. Another category gets the
+  base prompt and the general aspects until it has its own.
 
 ## Open (2026-11-08)
 

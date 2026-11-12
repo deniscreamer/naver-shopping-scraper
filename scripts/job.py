@@ -483,9 +483,7 @@ def one(job: Job, ctx: dict, key: str, stage_now: str | None, n: int = 0) -> str
     if stage_now != "prepared":
         job.beat(key=key, n=n, stage="prepare", since=_now())
         try:
-            run_transform.run(job.shop, None, job.shops_root, free_only=bool(job.meta.get("free_only")),
-                              paid_variants=frozenset(str(r["product_id"]) for r in job.rows())
-                              if job.meta.get("paid_variants") else frozenset())
+            run_transform.run(job.shop, None, job.shops_root)     # each product with its own job's paid choices
         except Exception as e:                                   # a transform defect: stop, never loop on it
             raise Stop(f"prepare: {type(e).__name__}: {e}") from None
     done = {p["key"]: p for p in _prepared(job)}
