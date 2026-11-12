@@ -3,7 +3,7 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
-## Unreleased
+## 0.15.0 (2026-11-11)
 
 - **A new category: 50002787 주니어용클럽** (the owner, 2026-11-11) for fairwardgolf's Junior Golf Clubs & Sets
   (`junior-clubs-sets`, one section, no split). The full sets' rules (paid variants and add-ons, the images read; no
