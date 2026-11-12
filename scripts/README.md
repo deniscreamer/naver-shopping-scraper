@@ -42,6 +42,7 @@ outside fetches: AGENTS.md rule 3.
 | `delivery_tariff.py`, `delivery_tariffs.json` | The delivery cost of one packed box by a recorded tariff, offline (billable weight, step, fees once per box); the tariffs as data, each traced to a dated capture, with `version` and `history`. See The price |
 | `shopnship_rates.py` | ShopNShip's public calculator (networked, by hand only): `quote` one box, `capture` the grid into a dated file, `compare` a capture with the recorded table. Never in the price path |
 | `shopnship_explore.py` | Research tool (networked, by hand only): wide sets of boxes asked of the calculator and compared with the tariff model (`run`, `report`). Never in the price path |
+| `listing_title_rules.json` | Ours: per Naver category, the title words of what the shop's section does not sell; the screen drops such a row as `title:<code>` (listing_filter) |
 | `store_diff.py` | Read only: what a publication would change in the store, field by field, per published product; the published products that cannot be built now; `--adopt` records `output` for those the store already has. Run it after any change of rules, dictionaries or a new category (ONBOARDING.md part D) |
 | `reprice.py` | Products already in the store: old -> new prices under the shop's rule (a dry-run table, also a TSV under `publish/`); `--apply` sends them, on the owner's word. See The price |
 | `test_publish.py` | Offline tests for the payload (the variants' prices and metafields included) and publish.py (fake Shopify clients) |

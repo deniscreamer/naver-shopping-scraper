@@ -1,0 +1,237 @@
+{
+ "format": "listing-title-rules/1",
+ "about": "Per Naver leaf category, title words that leave a listing row out before its page is read (listing_filter.Screen; the owner, 2026-11-11: what the shop's section does not sell). Matched on the title NFKC-normalized, lower case and without spaces; notFollowedBy / notPrecededBy as in listing_exclusions.json. Studied on the listings of 2026-11-11: 515 titles of 50002787 (46 of 56 that do not fit, none that fits), 351 of 50002788 (3 of 23 beside the rentals the shared file already drops). A rule names its code, which is the row's reason (title:<code>).",
+ "categories": {
+  "50002787": [
+   {
+    "code": "toy",
+    "why": "Toys, foam or rubber play sticks, kindergarten and school PE kits, indoor home-golf and folding play sets, the 똑딱이 approach trainer, putting mats, educational toys (교구). KC안전 shows only on the 70 cm play sticks; real clubs write 안전인증 or 안전성시험통과.",
+    "tokens": [
+     {
+      "text": "장난감",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "골프놀이",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "신체활동",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "신체운동",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "체육활동",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "학교체육",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "유치용",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "히트핏",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "접이식",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "홈골프",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "똑딱이",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "어프로치연습기",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "퍼팅매트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "교구",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "러버재질",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "kc안전",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "training_aid",
+    "why": "A swing speed trainer.",
+    "tokens": [
+     {
+      "text": "스피드트레이너",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "glove",
+    "why": "A glove alone (a club sold with a glove says 장갑 and stays).",
+    "tokens": [
+     {
+      "text": "글러브",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "골프장갑",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "cover",
+    "why": "An iron cover alone (헤드커버 stays: real clubs say 헤드커버 포함 / 별매).",
+    "tokens": [
+     {
+      "text": "아이언커버",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "parts",
+    "why": "A loose head or shaft for fitting, not a club.",
+    "tokens": [
+     {
+      "text": "퍼터헤드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "드라이버헤드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "아이언헤드",
+      "notFollowedBy": [
+       "커버"
+      ],
+      "notPrecededBy": []
+     },
+     {
+      "text": "아이언샤프트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "드라이버샤프트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "유틸리티샤프트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "adult",
+    "why": "Adult clubs listed here: the store 래핑차일드 (14 of 14 titles adult Ping clubs or accessories, 2026-11-11: check again if it starts selling junior clubs) and 남성골프채.",
+    "tokens": [
+     {
+      "text": "래핑차일드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "남성골프채",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "not_golf",
+    "why": "A book set and a loafer that slipped into the category.",
+    "tokens": [
+     {
+      "text": "전3권",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "로퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   }
+  ],
+  "50002788": [
+   {
+    "code": "park_golf",
+    "why": "Park golf: another sport, its own clubs.",
+    "tokens": [
+     {
+      "text": "파크골프",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "woods_only",
+    "why": "A '풀세트' of a driver, a wood and a hybrid only (no irons, no putter); 13종세트 / 13pcs stay.",
+    "tokens": [
+     {
+      "text": "3종세트",
+      "notFollowedBy": [],
+      "notPrecededBy": [
+       "1",
+       "2"
+      ]
+     },
+     {
+      "text": "3pcs",
+      "notFollowedBy": [],
+      "notPrecededBy": [
+       "1",
+       "2"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

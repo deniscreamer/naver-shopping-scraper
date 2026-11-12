@@ -40,6 +40,7 @@ are the owner's decisions. They are never made up. Ask, then write each one down
 | A10 | `scripts/describe.py` `PROFILES` and `scripts/prompts/describe/<profile>.md` | A profile with its lists (e.g. "What's included") and its brief. Ship the two together | **weaker**: `default` (highlights only). A profile without its `.md` **stops** with `FileNotFoundError` |
 | A11 | `scripts/description_image_text.py` `GLOSSARIES` | The fixed Korean -> English terms of the images' text | **weaker**: terms are translated inconsistently |
 | A12 | `scripts/description_measures.py` `CATEGORY_PROFILES` | Only a set of like items in a container (its tables of parts); otherwise the core is enough. [README.md](README.md) "More of the page" | **weaker**: no counts, no container, no composition. Unstated fields fall to the flat default (A1) |
+| A14 | `scripts/listing_title_rules.json` | The category's title words for what its section does not sell (toys, gloves, loose heads, another sport), studied on 300-500 listing titles of the category: every rule checked on all of them, none may drop a product that fits (2026-11-11: 46 of 56 misfits of 50002787 with no false hit) | **weaker**: misfits are collected, translated and published; a person has to find them |
 | A13 | Tests | Fixtures from the first checked products: `make_measures_fixture.py` (package), `fixtures/collected` with `test_placement.EXPECTED` (placement), the golden prepared files | regressions go unnoticed |
 
 ## B. A new shop (tenant)

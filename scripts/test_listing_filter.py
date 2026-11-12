@@ -98,3 +98,29 @@ def test_the_harvester_file_as_it_is():
 ])
 def test_live_rental_names(name):
     assert stop_word(name, RULES) == "rental"
+
+
+@pytest.mark.parametrize("category, title, code", [
+    # the listings of 2026-11-11 (listing_title_rules.json): what the category's section does not sell
+    ("50002787", "어린이골프채 아기골프채 안전인증 교구 아이언 퍼터 우드 클럽", "title:toy"),
+    ("50002787", "키즈스포츠 KC안전 초등용 아이언 7번 스틱 골프 70cm 유아골프 신체운동", "title:toy"),
+    ("50002787", "골프채 장난감 세트 실내 연습 야외 운동 abs 플라스틱", "title:toy"),
+    ("50002787", "주니어 골프 전용 장갑 어린이 반양피 골프장갑 (왼손에착용)1장", "title:glove"),
+    ("50002787", "[A GRIND]에이그라인드주니어 아이언 헤드", "title:parts"),
+    ("50002787", "래핑차일드 핑 G440 MAX 드라이버 S, 9도", "title:adult"),
+    ("50002787", "US키즈골프 RS3 스윙 스피드 트레이너", "title:training_aid"),
+    ("50002788", "SMB 프리미엄 파크 골프 풀세트", "title:park_golf"),
+    ("50002788", "2025 핑 G440 MAX 풀세트 3종세트 드라이버 우드 유틸 9도 3번R", "title:woods_only"),
+    # what fits stays
+    ("50002787", "어린이 골프채 7번+양손 장갑", None),                         # a club with a glove
+    ("50002787", "주니어 골프 세트 골프풀 아이언 헤드커버", None),              # 헤드커버 is not a loose head
+    ("50002787", "안전성시험통과 주니어골프채 퍼터 어린이 골프클럽 아동 초등학생", None),
+    ("50002787", "캘러웨이 XJ 주니어 골프채 풀세트 2026", None),
+    ("50002788", "테일러메이드 13종세트 남성 골프채 풀세트", None),             # 13종세트 is no 3종세트
+    ("50002788", "남성 골프채 풀세트 초보", None),
+    ("50002789", "어린이 장난감 골프", None),                                  # a category without rules
+])
+def test_category_title_rules(category, title, code):
+    screen = Screen(category, namespace="fairwardgolf")
+    row = {"name": title, "category_id": category, "product_id": "1", "store": {"channel_no": "2"}}
+    assert screen.check(row) == code

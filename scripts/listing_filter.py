@@ -9,6 +9,9 @@ this order:
                      harvester file's excludeSponsored is not followed
   title_unavailable  no product name: nothing to screen or search by
   rental             a rental offer: a stop word of listing_exclusions.json in the name
+  title:<code>       a word the run's category does not sell (listing_title_rules.json, ours, per Naver leaf
+                     category; the owner, 2026-11-11: toys, gloves, loose heads in junior clubs, park golf in
+                     full sets): matched on the name without spaces
   category_mismatch  the row's category is not exactly the leaf category of the run (no parent matches)
   key_unavailable    no store number or product id: the shop check cannot be done, so the row is not taken
   already_published  the source key is in the shop's catalog snapshot (shopify_catalog), any product status
@@ -38,9 +41,27 @@ from collections import Counter
 from typing import Any, Iterable
 
 EXCLUSIONS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "listing_exclusions.json")
+TITLE_RULES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "listing_title_rules.json")
 REASONS = ("sponsored", "title_unavailable", "rental", "category_mismatch", "key_unavailable",
            "already_published", "deferred")
 _ASCII_WORD = re.compile(r"[a-z0-9]")
+
+
+def title_rules(category_id: str, path: str = TITLE_RULES) -> list[dict[str, Any]]:
+    """The category's own title rules (listing_title_rules.json), [] for a category without any."""
+    if not os.path.exists(path):
+        return []
+    with open(path, encoding="utf-8") as f:
+        return json.load(f).get("categories", {}).get(str(category_id), [])
+
+
+def title_rule(name: str | None, rules: Iterable[dict[str, Any]]) -> str | None:
+    """`title:<code>` of the first category rule whose term is in the name without spaces, or None."""
+    text = re.sub(r"\s+", "", normalize(name))
+    for rule in rules:
+        if any(term_matches(text, {**t, "text": re.sub(r"\s+", "", t["text"])}) for t in rule["tokens"]):
+            return f"title:{rule['code']}"
+    return None
 
 
 def load_exclusions(path: str = EXCLUSIONS) -> dict[str, Any]:
@@ -96,8 +117,9 @@ class Screen:
 
     def __init__(self, category_id: str, namespace: str, published: Iterable[str] = (),
                  deferred: Iterable[str] = (), exclusions: dict[str, Any] | None = None,
-                 exclude_sponsored: bool = False):
+                 exclude_sponsored: bool = False, category_rules: list[dict[str, Any]] | None = None):
         rules = (exclusions or load_exclusions())["universal"]
+        self.category_rules = title_rules(category_id) if category_rules is None else category_rules
         self.category_id = str(category_id)
         self.namespace = namespace
         self.exclude_sponsored = exclude_sponsored    # ads kept (the owner, 2026-11-06), whatever the file says
@@ -116,7 +138,7 @@ class Screen:
         name = (row.get("name") or "").strip()
         if not name:
             return "title_unavailable"
-        word = stop_word(name, self.rules)
+        word = stop_word(name, self.rules) or title_rule(name, self.category_rules)
         if word:
             return word
         if str(row.get("category_id") or "") != self.category_id:

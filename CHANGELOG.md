@@ -27,6 +27,11 @@ version in `extension/manifest.json`.
   category's own (`dictionaries/<category id>/<kind>.json`); a new category starts empty. Split by what each
   category's products use: 50002788 1613 entries, 50002787 122; the whole shop translated offline as before and
   `store_diff` found nothing new.
+- **Title rules per category** (`listing_title_rules.json`, read by `listing_filter.Screen`): a listing row whose
+  title names what the section does not sell is left out before its page is read (`title:<code>`). Studied on
+  515 titles of 50002787 (toys, play sticks, educational toys, gloves, an iron cover, loose heads and shafts, an
+  adult-club store, a book: 46 of 56 misfits, no product that fits) and 351 of 50002788 (park golf, a woods-only
+  "풀세트"). One published junior product matches (4987660149, soft clubs, 교구): left for the owner.
 - Dictionaries: 108 entries of the junior run backed up, 8 set by hand first (an age lost from "01.9-12세 퍼터",
   호수 = Size, 선택하세요 = Option).
 
