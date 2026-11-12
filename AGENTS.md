@@ -85,6 +85,7 @@ Live check (server running, uses the network): `curl http://localhost:8000/healt
 | Consumer scripts, Shopify roadmap | [scripts/README.md](scripts/README.md) | Writing scripts against the API, starting Shopify work |
 | Price rule, delivery tariff, repricing | [scripts/README.md](scripts/README.md), "The price" | Changing `shop_pricing.py`, the coefficients or the tariff; a new tariff capture; repricing products in the store |
 | Translation (model, dictionaries) | [scripts/TRANSLATION.md](scripts/TRANSLATION.md) | Running or changing `translate.py`, the dictionaries, the prompts, review cleaning; a new shop or category; the quality check |
+| New category or shop (tenant) | [scripts/ONBOARDING.md](scripts/ONBOARDING.md), skill `new-category-or-shop` | Adding a Naver category or a shop: what to fill where, what fails silently |
 | Shop sections (placement) | [scripts/PLACEMENT.md](scripts/PLACEMENT.md) | A new shop or Naver category, one Naver category holding several shop sections |
 | Running a job (agent) | [scripts/JOB_AGENT.md](scripts/JOB_AGENT.md) | Running or watching `scripts/job.py` (one product per iteration) |
 | Seller data patterns | [scripts/SELLER_DATA.md](scripts/SELLER_DATA.md) | Before changing parsers or the transform: what pages and sellers write |

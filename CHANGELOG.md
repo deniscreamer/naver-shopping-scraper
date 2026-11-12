@@ -3,6 +3,12 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
+## Unreleased
+
+- **`scripts/ONBOARDING.md`** and the agents' skill `new-category-or-shop` (the owner, 2026-11-11): where to add what
+  for a new Naver category or a new shop, what stops, what goes wrong silently, and the golf / fairwardgolf
+  literals in shared code to decide on first (the metafield namespace before a second shop).
+
 ## 0.14.0 (2026-11-11)
 
 - **`job.py --paid-variants`** (the owner, 2026-11-11): the job's own products get the category's paid variants and

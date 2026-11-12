@@ -347,7 +347,7 @@ flagged, then 17, then 10 (3.8%) after three rounds of fixes.
 - the category's brief (`prompts/categories/<Naver category id>.md`: what the products are, their terms, how buyers
   write about them).
 
-**A new shop or category** needs a short brief file only, no code. Write the file following the 50002788 one; the
+**A new shop or category** (the whole checklist, every stage: [ONBOARDING.md](ONBOARDING.md)) needs a short brief file only here, no code. Write the file following the 50002788 one; the
 category's review aspects go in `review_clean.ASPECTS` / `CONTEXT`. A missing brief is left out, and the base prompt
 works alone, less precisely.
 
