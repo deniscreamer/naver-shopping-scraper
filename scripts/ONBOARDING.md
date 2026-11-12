@@ -87,7 +87,8 @@ last step.
 | L2 | Package defaults are written when a product is **collected**, and kept runs are read-only (never edit them): a fixed table row did not reach the products already collected | the transform takes each default from today's table (`package_measures.current_defaults`); prepare again, then publish |
 | L3 | `publish.py --dry-run` did not know the store: it wrote "maruman" for Maruman and the tenant's name before an own-brand title | `publish.offline_ids`: the brand dictionary's spellings and the tenant's name offline |
 | L4 | A new dictionary entry of the new category changed four products of the old one (`구성` -> "Contents"); 8 of its 108 entries were wrong (an age lost, `호수` -> "Club Number") | read every new entry before the backup (`translation_dicts.py status`); C2 |
-| L5 | A rule fixed earlier (a brand read in "치핑" / "쇼핑") had not reached a product published before the fix | part D's last step finds such products |
+| L5 | A rule fixed earlier (a brand read in "치핑" / "쇼핑") had not reached a product published before the fix | `store_diff.py` (part D, step 6) finds such products |
+| L6 | publish.py's skip compared its inputs: 18 of 20 products whose inputs moved would have sent what the store already had, and hid the two real changes | the ledger keeps `output`, the hash of what productSet sends (`publish.output_digest`): a product is skipped when that did not change |
 
 ## D. The order of a first run
 
@@ -106,5 +107,10 @@ last step.
    ready, translated and placed. Read the price breakdown in `shops/<shop>/publish/payloads/<id>.json`: the
    variant's `fairwardgolf.price` and the product's `fairwardgolf.pricing`; the namespace is literal, see C1. Do the
    real publish only after the owner says yes.
-6. Turn the checked products into fixtures (A13) and update [CHANGELOG.md](../CHANGELOG.md) and the docs of each
+6. **What the new category did to the rest of the shop.** `store_diff.py <shop>` (read only): the published products
+   whose store data a publication would change, field by field, and those that cannot be built now (an untranslated
+   paid variant, a lost placement: L1). Then `translation_dicts.py status`: read every new entry before the backup
+   (L4). Each product it lists is the owner's to decide; `--adopt` records `output` for the products the store
+   already has, so a moved input alone sends nothing.
+7. Turn the checked products into fixtures (A13) and update [CHANGELOG.md](../CHANGELOG.md) and the docs of each
    changed rule.

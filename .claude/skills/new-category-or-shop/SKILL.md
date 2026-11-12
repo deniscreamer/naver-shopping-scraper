@@ -40,9 +40,9 @@ The checklist and the reasons are in `scripts/ONBOARDING.md`. Read it first; thi
    - The job's `--paid` / `--paid-variants` holds for its own products only (ONBOARDING.md L1).
    - Publish for real only after the owner says yes. Shopify writes go only through `publish.py` /
      `shopify_admin.py`.
-8. **Read what the new category did to the rest of the shop** (ONBOARDING.md "Learned", part D's last step): every
-   new dictionary entry before the backup; other categories' products that are no longer translated or would
-   change in the store. Any such product is the owner's to decide: never republish it unasked.
+8. **Read what the new category did to the rest of the shop** (ONBOARDING.md "Learned", part D step 6):
+   `.venv/bin/python scripts/store_diff.py <shop>` (read only) lists the published products a publication would
+   change, field by field, and those that cannot be built now; every new dictionary entry before the backup. Any such product is the owner's to decide: never republish it unasked.
 9. **Finish.**
    - Update the docs of every rule you changed and `CHANGELOG.md`.
    - Correct ONBOARDING.md if the code differed from it (it is the map: keep it true).

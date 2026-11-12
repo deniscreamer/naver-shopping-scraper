@@ -16,7 +16,8 @@ product, in this order (shopify_payload.py builds, shopify_admin.py sends):
   5. published to every sales channel of the store (the owner, 2026-11-09); one line in
      shops/<shop>/publish/published.jsonl.
 
-A product whose inputs did not change since its last publication is skipped (`--force` sends it again). On an update
+A product whose inputs did not change since its last publication is skipped (`--force` sends it again), and so is
+one whose productSet would send what it sent last time (`output` in the ledger, output_digest; 2026-11-11). On an update
 photos already on the product are kept by their hash (no new upload). --dry-run builds and writes the payload to
 shops/<shop>/publish/payloads/<id>.json and sends nothing (no upload, no write).
 """
@@ -136,6 +137,14 @@ def inputs_digest(prepared: dict, translated: dict, placement: dict, shop: str, 
     return sp.digest(inputs)
 
 
+def output_digest(payload: dict[str, Any]) -> str:
+    """The sha256 of what a product's productSet sends, built with each photo as its file's hash and the reviews'
+    feed as its content's hash (no upload, no link, no handle: an update keeps the handle it has). Two runs that
+    would send the same agree on it, whatever else changed in the inputs (2026-11-11: inputs_digest moved on 18 of
+    20 products whose Shopify data stood still, and hid the two that did change)."""
+    return sp.digest({k: v for k, v in payload.items() if k != "handle"})
+
+
 def gallery(shop: "Shop", prepared: dict[str, Any]) -> list[dict[str, Any]]:
     """The buyers' photos that follow the product's own ([{file, sha256}], shopify_payload.review_gallery), with
     each candidate photo read here (hash, size, the share of green) and the shop's struck-out list applied."""
@@ -177,10 +186,18 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
     urls = {rel: known.get(sha, f"dry-run:{rel}") for rel, sha in shas.items()}
     en = sp.English(translated)
     rows = sp.reviews(prepared, en, urls)
+    body = json.dumps(rows, ensure_ascii=False, separators=(",", ":")).encode()
+    feed_sha = hashlib.sha256(body).hexdigest()[:24] if rows else None
+    images = list(prepared["product"].get("images") or []) + extra
+    output = output_digest(sp.product_input(
+        prepared, translated, placement, pricing, "check", [{"id": img["sha256"]} for img in images],
+        f"sha:{feed_sha}" if feed_sha else None, rows, handle_override="check", vendors=ids.get("vendors"),
+        tenant=ids.get("tenant"), description_html=description))
+    if before and before.get("output") == output and not new and not force and not dry_run and not rehandle:
+        return {**before, "status": "skipped"}             # what Shopify would get is what it has
     feed_url = None
     if rows:
-        body = json.dumps(rows, ensure_ascii=False, separators=(",", ":")).encode()
-        name = f"{shop.shop}-reviews-{pid}-{hashlib.sha256(body).hexdigest()[:24]}.json"
+        name = f"{shop.shop}-reviews-{pid}-{feed_sha}.json"
         local = shop.path(os.path.join("publish", "payloads" if dry_run else "feeds", name))
         os.makedirs(os.path.dirname(local), exist_ok=True)
         with open(local, "wb") as f:
@@ -200,7 +217,6 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
                 break
             handle, n = f"{base}-{n}", n + 1
     on_product = {p["sha256"]: p["media_id"] for p in (before or {}).get("photos") or []} if product_id else {}
-    images = list(prepared["product"].get("images") or []) + extra
     upload = [img for img in images if img["sha256"] not in on_product]
     staged = dict(zip((img["file"] for img in upload), [f"dry-run:{img['file']}" for img in upload] if dry_run else
                       products.stage_many([(shop.path(img["file"]), "IMAGE", None) for img in upload])))
@@ -220,7 +236,8 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
         os.makedirs(os.path.dirname(out), exist_ok=True)
         with open(out, "w", encoding="utf-8") as f:
             json.dump(payload, f, ensure_ascii=False, indent=1)
-        return {"key": key, "status": "dry-run", "payload": out, "handle": handle}
+        return {"key": key, "status": "dry-run", "payload": out, "handle": handle, "output": output,
+                "product_id": product_id, "feed_sha": feed_sha, "images": [img["sha256"] for img in images]}
     product = products.product_set(payload, product_id)
     if product_id:                                  # productSet never removes a metafield: drop what is gone
         products.delete_metafields(product["id"], sp.stale(payload))
@@ -230,6 +247,7 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
     failed = [m["id"] for m in media if m["status"] == "FAILED"]
     row = {"format": FORMAT, "key": key, "status": "published", "at": _now(),
            "digest": None if failed else digest,                  # a failed photo: the next run sends it again
+           "output": None if failed else output,
            "product_id": product["id"], "handle": product["handle"], "created": not product_id,
            "photos": [{"sha256": img["sha256"], "media_id": m["id"]} for img, m in zip(images, media)
                       if m["status"] != "FAILED"],

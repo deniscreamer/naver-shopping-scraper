@@ -19,6 +19,10 @@ version in `extension/manifest.json`.
 - **`publish.py --dry-run` spells the vendor as the real run** (`offline_ids`: the brand dictionary's spellings and the
   tenant's name without the store): it had written "maruman" for Maruman and "Fairward Golf <title>" for the
   shop's own brand, which read as a regression.
+- **`store_diff.py`** (read only): what a publication would change in the store, field by field, and the published
+  products that cannot be built now. **publish.py skips by what it sends** (`output` in the ledger,
+  `output_digest`): the inputs' digest had moved on 18 of 20 products the store already matched. First run: 434
+  of 435 products as in the store (`--adopt` recorded their `output`), one would get a new photo (12211893510).
 - Dictionaries: 108 entries of the junior run backed up, 8 set by hand first (an age lost from "01.9-12세 퍼터",
   호수 = Size, 선택하세요 = Option).
 
