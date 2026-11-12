@@ -142,10 +142,11 @@ def test_no_brand_takes_the_manufacturer():
             line["specs"]["facts"].update(brand=None, manufacturer={"value": value,
                                                                     "source": "search_info.manufacturerName"})
         return change
-    p = prep("8514409092", maker("(주)삼양인터내셔날"))
-    assert p["product"]["brand_ko"] == "(주)삼양인터내셔날"
+    p = prep("8514409092", maker("혼마코리아"))
+    assert p["product"]["brand_ko"] == "혼마코리아"
     assert p["product"]["brand_source"] == "manufacturer:search_info.manufacturerName"
-    for none in ("M0000000", "상세정보참조"):
+    # a trading company is no maker (2026-11-11): PING's importer, a shop's name; brand_fallback goes on (the title)
+    for none in ("M0000000", "상세정보참조", "(주)삼양인터내셔날", "세모물상점", "스퀘어홀딩"):
         p = prep("8514409092", maker(none))
         assert p["status"] == "ready" and p["product"]["brand_ko"] is None   # left to brand_fallback (run-level)
 

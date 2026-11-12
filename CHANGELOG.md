@@ -3,6 +3,20 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
+## Unreleased
+
+- **Brands** (the junior clubs' 30, 2026-11-12): a trading company's name is no brand (`brand_fallback.trade_name`:
+  상점, 상사, 홀딩(스), 무역, 유통, 인터내셔널, ...; "X 협력사 / 협력업체" is X's): a shop wrote 세모물상점 as the
+  brand, a supplier 스퀘어홀딩 stood in 원산지; the next source decides (the images said Inparo, PGM). One brand
+  whatever its dots and spaces (`shopify_payload.brand_key`: "U.S.KIDSGOLF" is U.S. Kids Golf), written once in
+  the title; a first word with the brand's letters swapped is the brand ("PMG" -> PGM).
+- **`publish.py --withdraw <key> --reason`**: a published product goes DRAFT (off every channel, nothing deleted)
+  and is never sent again. Withdrawn: a junior bag alone (314400655) and soft toddler clubs (4987660149).
+- **Junior clubs**: a bag alone is left out of the listing (`bag_only`, with `unless` words for a set with a
+  bag); two clubs get a box for two (`two_clubs`, 95 x 15 x 12 cm, 1.5 kg: the single club's with one more).
+- 18 junior products and one full set published again (brands, titles, two-club prices $749-799 -> $349-399,
+  dictionary fixes), 7 with a new handle (the old one redirects); 24 dictionary entries set by hand, then backed up.
+
 ## 0.15.0 (2026-11-11)
 
 - **A new category: 50002787 주니어용클럽** (the owner, 2026-11-11) for fairwardgolf's Junior Golf Clubs & Sets

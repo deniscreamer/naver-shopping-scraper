@@ -1,0 +1,1093 @@
+{
+ "key": "fairwardgolf:naver:102594228:12552413383",
+ "listing": {
+  "product_id": "12552413383",
+  "nv_mid": "90096924236",
+  "link": "https://smartstore.naver.com/unique-epic/products/12552413383",
+  "name": "US키즈골프(U.S.KIDSGOLF) UL7-51 주니어 풀세트 (7PCS) 129-137cm",
+  "store": {
+   "name": "유니크에픽",
+   "slug": "unique-epic",
+   "link": "https://smartstore.naver.com/unique-epic",
+   "channel_no": "102594228",
+   "grade": "BIG_POWER",
+   "is_brand_store": false
+  },
+  "pricing": {
+   "sale_price": 735000,
+   "discounted_price": 698250,
+   "discount_ratio": 5,
+   "currency": "KRW"
+  },
+  "category_id": "50002787",
+  "reviews": {
+   "count": 2,
+   "average_score": 5
+  },
+  "stock_quantity": 2995,
+  "image": "https://shopping-phinf.pstatic.net/main_9009692/90096924236.jpg",
+  "is_ad": true,
+  "query": "주니어 골프채",
+  "batch": 1,
+  "seen_at": "2026-11-12T08:54:15+00:00",
+  "key": "fairwardgolf:naver:102594228:12552413383",
+  "refresh": 4
+ },
+ "details": {
+  "id": "12552413383",
+  "origin_product_id": "12495759704",
+  "name": "US키즈골프(U.S.KIDSGOLF) UL7-51 주니어 풀세트 (7PCS) 129-137cm",
+  "link": "https://smartstore.naver.com/unique-epic/products/12552413383",
+  "catalog_id": "90096924236",
+  "catalog_link": "https://search.shopping.naver.com/catalog/90096924236",
+  "status": "SALE",
+  "sale_type": "NEW",
+  "is_displayed": true,
+  "pricing": {
+   "sale_price": 735000,
+   "discounted_price": 698250,
+   "discount_ratio": 5,
+   "seller_discount": 36750,
+   "manager_discount": 0,
+   "currency": "KRW",
+   "points": {
+    "purchase": 7082,
+    "text_review": 100,
+    "photo_video_review": 100,
+    "after_use_text_review": 100,
+    "after_use_photo_video_review": 100,
+    "store_member_review": 100
+   }
+  },
+  "stock_quantity": 2995,
+  "has_options": true,
+  "has_supplements": false,
+  "images": [
+   "https://shop-phinf.pstatic.net/20251017_293/1760665300155C0oLj_JPEG/94798216296283223_34802041.jpg",
+   "https://shop-phinf.pstatic.net/20251017_66/1760665301510NUaia_JPEG/94798137161896845_435331358.jpg",
+   "https://shop-phinf.pstatic.net/20251017_44/1760665303060RWPub_JPEG/6664878871947359_1147191293.jpg",
+   "https://shop-phinf.pstatic.net/20251017_105/1760665304579wxFaR_JPEG/94798120683090142_231320055.jpg",
+   "https://shop-phinf.pstatic.net/20251017_181/1760665309367xfkU7_JPEG/6635029210582589_1087009980.jpg",
+   "https://shop-phinf.pstatic.net/20251017_92/1760665310796kOLDw_JPEG/94798229918070345_1540048175.jpg",
+   "https://shop-phinf.pstatic.net/20251017_234/1760681714716eydSr_JPEG/15344097695609754_2016431463.jpg"
+  ],
+  "category": {
+   "id": "50002787",
+   "name": "주니어용클럽",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "주니어용클럽"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002787"
+   ]
+  },
+  "brand": "U.S.KIDSGOLF",
+  "brand_id": null,
+  "manufacturer": "U.S.KIDSGOLF",
+  "model_name": "UL7-51-7 주니어풀세트",
+  "tags": null,
+  "page_title": null,
+  "reviews": {
+   "count": 2,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 2
+   },
+   "text_count": 2,
+   "photo_count": 0,
+   "video_count": 0,
+   "after_use_count": 1,
+   "best_count": 0,
+   "recent": null,
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "최고예요",
+       "count": 2,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "무게는 어떤가요?",
+     "answers": [
+      {
+       "name": "가벼워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "적당해요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "무거워요",
+       "count": 2,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 2,
+       "percent": 100
+      }
+     ]
+    }
+   ],
+   "representative_reviews": null
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": null,
+   "company": "한진택배",
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "extra_fee_text": null
+  },
+  "is_free_delivery": true,
+  "is_today_delivery": false,
+  "has_arrival_guarantee": false,
+  "has_regular_subscription": false,
+  "has_free_return_insurance": false,
+  "is_minor_purchasable": true,
+  "is_adult_restricted": false,
+  "is_in_naver_shopping": true,
+  "option_groups": null,
+  "variants": null,
+  "supplements": null,
+  "description": {
+   "html": "<center><div><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://proxy-smartstore.naver.net/img/dWVwaWMuc3BlZWRnYWJpYS5jb20vaW1hZ2UvZXBpY190b3AuanBn?token=424497028bf2976b53e9f2d41ee912c3\"  /></div></center> <center><div><!-- Not Allowed Attribute Filtered ( allowfullscreen=\"allowfullscreen\") --><iframe src=\"https://www.youtube.com/embed/YQWg36kYKZs?loop=1&amp;autoplay=1&amp;mute=1&amp;playlist=YQWg36kYKZs\" width=\"860\" height=\"484\" frameborder=\"0\"></iframe></div></center> <center><div><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://proxy-smartstore.naver.net/img/dWVwaWMuc3BlZWRnYWJpYS5jb20vaW1hZ2UvdXNraWRzZ29sZi91bDdfNTFfNy9kZXRhaWwuanBn?token=bf6b1ea2701b45db84e0d36b7a016641\"  /></div></center> <center><div><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://proxy-smartstore.naver.net/img/dWVwaWMuc3BlZWRnYWJpYS5jb20vaW1hZ2UvZXBpY19jb250ZW50cy5qcGc=?token=256f0ee2c68cbd1e0cb0e09cdbfd033c\"  /></div></center> <center><div><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://proxy-smartstore.naver.net/img/dWVwaWMuc3BlZWRnYWJpYS5jb20vaW1hZ2UvZXBpY19lbmQuanBn?token=c93f85f5a3c585f22c8d7c67ebf78133\"  /></div></center>",
+   "text": null,
+   "editor_type": "NONE",
+   "images": [
+    "https://proxy-smartstore.naver.net/img/dWVwaWMuc3BlZWRnYWJpYS5jb20vaW1hZ2UvZXBpY190b3AuanBn?token=424497028bf2976b53e9f2d41ee912c3",
+    "https://proxy-smartstore.naver.net/img/dWVwaWMuc3BlZWRnYWJpYS5jb20vaW1hZ2UvdXNraWRzZ29sZi91bDdfNTFfNy9kZXRhaWwuanBn?token=bf6b1ea2701b45db84e0d36b7a016641",
+    "https://proxy-smartstore.naver.net/img/dWVwaWMuc3BlZWRnYWJpYS5jb20vaW1hZ2UvZXBpY19jb250ZW50cy5qcGc=?token=256f0ee2c68cbd1e0cb0e09cdbfd033c",
+    "https://proxy-smartstore.naver.net/img/dWVwaWMuc3BlZWRnYWJpYS5jb20vaW1hZ2UvZXBpY19lbmQuanBn?token=c93f85f5a3c585f22c8d7c67ebf78133"
+   ]
+  },
+  "notice": {
+   "type": "SPORTS_EQUIPMENT",
+   "items": [
+    {
+     "label": "품명 / 모델명",
+     "value": "상세페이지 참조 / 상세페이지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "KC 인증정보",
+     "value": "해당사항 없음",
+     "is_see_description": false
+    },
+    {
+     "label": "크기",
+     "value": "상세페이지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "중량",
+     "value": "상세페이지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "색상",
+     "value": "상세페이지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "재질",
+     "value": "상세페이지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제품구성",
+     "value": "상세페이지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "동일 모델의 출시연월",
+     "value": "상세페이지참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조자(사)",
+     "value": "제조사: U.S.KIDSGOLF / 수입자: (주)믹스스포츠",
+     "is_see_description": false
+    },
+    {
+     "label": "제조국",
+     "value": "중국산(중국)",
+     "is_see_description": false
+    },
+    {
+     "label": "상품별 세부사양",
+     "value": "상세페이지 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "품질보증기준",
+     "value": "공정거래위원회 고시(소비자분쟁해결기준)에 의거하여 보상해 드립니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "A/S 책임자와 전화번호",
+     "value": null,
+     "is_see_description": false
+    }
+   ],
+   "terms": [
+    {
+     "label": "재화등의 배송방법에 관한 정보",
+     "value": "택배",
+     "is_see_description": false
+    },
+    {
+     "label": "주문 이후 예상되는 배송기간",
+     "value": "대금 지급일로부터 3일 이내에 발송",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+     "value": "편도 3000원 (최초 배송비 무료인 경우 6000원 부과)",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+     "value": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "재화등의 A/S 관련 전화번호",
+     "value": null,
+     "is_see_description": false
+    },
+    {
+     "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+     "value": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+     "value": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+     "is_see_description": false
+    },
+    {
+     "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+     "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+     "is_see_description": false
+    }
+   ]
+  },
+  "facts": {
+   "brand": {
+    "value": "U.S.KIDSGOLF",
+    "source": "search_info.brandName"
+   },
+   "manufacturer": {
+    "value": "U.S.KIDSGOLF",
+    "source": "search_info.manufacturerName"
+   },
+   "model_name": {
+    "value": "UL7-51-7 주니어풀세트",
+    "source": "search_info.modelName"
+   },
+   "origin": {
+    "value": "중국산(중국)",
+    "source": "notice:제조국"
+   }
+  },
+  "store": {
+   "id": "102594228",
+   "uid": "2z556kHqEeD0FrrKldyDl",
+   "name": "유니크에픽",
+   "slug": "unique-epic",
+   "link": "https://smartstore.naver.com/unique-epic",
+   "type": "smart_store",
+   "grade": "SECOND",
+   "sale_count": 402,
+   "merchant_id": "512484355",
+   "business": {
+    "legal_name": "유니크에픽 주식회사",
+    "representative": "최병우",
+    "type": "CORPORATION",
+    "is_business": true,
+    "is_overseas": false,
+    "phone": null,
+    "email": null,
+    "address": null
+   }
+  }
+ },
+ "specs": {
+  "id": "12552413383",
+  "name": "US키즈골프(U.S.KIDSGOLF) UL7-51 주니어 풀세트 (7PCS) 129-137cm",
+  "link": "https://smartstore.naver.com/unique-epic/products/12552413383",
+  "query": "US키즈골프(U.S.KIDSGOLF) UL7-51 주니어 풀세트 (7PCS) 129-137cm",
+  "category": {
+   "id": "50002787",
+   "name": "주니어용클럽",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "주니어용클럽"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002787"
+   ]
+  },
+  "specs": [
+   {
+    "label": "상품번호",
+    "value": "12552413383"
+   },
+   {
+    "label": "제조사",
+    "value": "U.S.KIDSGOLF"
+   },
+   {
+    "label": "브랜드",
+    "value": "U.S.KIDSGOLF"
+   },
+   {
+    "label": "모델명",
+    "value": "UL7-51-7 주니어풀세트"
+   },
+   {
+    "label": "원산지",
+    "value": "중국산(중국)"
+   }
+  ],
+  "is_complete": true,
+  "facts": {
+   "brand": {
+    "value": "U.S.KIDSGOLF",
+    "source": "specs:브랜드"
+   },
+   "manufacturer": {
+    "value": "U.S.KIDSGOLF",
+    "source": "specs:제조사"
+   },
+   "model_name": {
+    "value": "UL7-51-7 주니어풀세트",
+    "source": "specs:모델명"
+   },
+   "origin": {
+    "value": "중국산(중국)",
+    "source": "specs:원산지"
+   }
+  },
+  "options": {
+   "has_options": true,
+   "status": "SALE",
+   "is_sold_out": false,
+   "stock_quantity": 2995,
+   "option_groups": [
+    {
+     "id": "10886142695",
+     "name": "모델명/품번",
+     "type": "COMBINATION"
+    },
+    {
+     "id": "10884939598",
+     "name": "사이즈",
+     "type": "COMBINATION"
+    }
+   ],
+   "variants": [
+    {
+     "id": "52763487589",
+     "name": "블랙오렌지 / UL7-51-7",
+     "options": [
+      "블랙오렌지",
+      "UL7-51-7"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2025-10-17"
+    },
+    {
+     "id": "52763487590",
+     "name": "실버네이비 / UL7-51-7",
+     "options": [
+      "실버네이비",
+      "UL7-51-7"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 997,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2025-10-17"
+    },
+    {
+     "id": "52763487591",
+     "name": "핑크화이트 / UL7-51-7",
+     "options": [
+      "핑크화이트",
+      "UL7-51-7"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 999,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2025-10-17"
+    }
+   ],
+   "simple_options": [],
+   "text_options": [],
+   "supplements": []
+  },
+  "delivery": {
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_free": true,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": false,
+   "company": "한진택배",
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "extra_fee_text": null,
+   "is_overseas": false,
+   "scope": "domestic",
+   "customs_tax_type": null,
+   "lead_time": {
+    "seller_average_days": 1.6590909,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 96,
+    "ship_date_text": null
+   }
+  },
+  "measures": {
+   "is_set": true,
+   "weights": [],
+   "dimensions": [],
+   "references": [
+    {
+     "quote": "크기: 상세페이지 참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 2
+     },
+     "measure": "size",
+     "reason": "description_reference"
+    },
+    {
+     "quote": "중량: 상세페이지 참조",
+     "source": "notice",
+     "locator": {
+      "block": "items",
+      "row": 3
+     },
+     "measure": "weight",
+     "reason": "description_reference"
+    }
+   ],
+   "review": []
+  },
+  "read_at": "2026-11-12T08:56:03Z"
+ },
+ "variants": {
+  "paid": true,
+  "base_price": 698250,
+  "variants": [
+   {
+    "id": "52763487589",
+    "name": "블랙오렌지 / UL7-51-7",
+    "options": [
+     "블랙오렌지",
+     "UL7-51-7"
+    ],
+    "extra_price": 0,
+    "price": 698250,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   },
+   {
+    "id": "52763487590",
+    "name": "실버네이비 / UL7-51-7",
+    "options": [
+     "실버네이비",
+     "UL7-51-7"
+    ],
+    "extra_price": 0,
+    "price": 698250,
+    "price_in_name": null,
+    "stock_quantity": 997,
+    "is_available": true
+   },
+   {
+    "id": "52763487591",
+    "name": "핑크화이트 / UL7-51-7",
+    "options": [
+     "핑크화이트",
+     "UL7-51-7"
+    ],
+    "extra_price": 0,
+    "price": 698250,
+    "price_in_name": null,
+    "stock_quantity": 999,
+    "is_available": true
+   }
+  ],
+  "available": 3,
+  "sold_out": 0,
+  "skipped_paid": 0,
+  "name_mismatches": [],
+  "simple_options": [],
+  "text_options": [],
+  "supplements": []
+ },
+ "package": [
+  {
+   "variant_id": "52763487589",
+   "fields": {
+    "product_weight_g": {
+     "low": 1500,
+     "central": 3500,
+     "high": 6500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_weight_g": {
+     "low": 2500,
+     "central": 4500,
+     "high": 8000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_length_mm": {
+     "low": 800,
+     "central": 1050,
+     "high": 1200,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_width_mm": {
+     "low": 150,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_height_mm": {
+     "low": 120,
+     "central": 250,
+     "high": 300,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "52763487590",
+   "fields": {
+    "product_weight_g": {
+     "low": 1500,
+     "central": 3500,
+     "high": 6500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_weight_g": {
+     "low": 2500,
+     "central": 4500,
+     "high": 8000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_length_mm": {
+     "low": 800,
+     "central": 1050,
+     "high": 1200,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_width_mm": {
+     "low": 150,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_height_mm": {
+     "low": 120,
+     "central": 250,
+     "high": 300,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "52763487591",
+   "fields": {
+    "product_weight_g": {
+     "low": 1500,
+     "central": 3500,
+     "high": 6500,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_weight_g": {
+     "low": 2500,
+     "central": 4500,
+     "high": 8000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_length_mm": {
+     "low": 800,
+     "central": 1050,
+     "high": 1200,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_width_mm": {
+     "low": 150,
+     "central": 280,
+     "high": 350,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_height_mm": {
+     "low": 120,
+     "central": 250,
+     "high": 300,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    }
+   },
+   "product_size": []
+  }
+ ],
+ "reviews": {
+  "product": {
+   "id": "12552413383",
+   "name": "US키즈골프(U.S.KIDSGOLF) UL7-51 주니어 풀세트 (7PCS) 129-137cm",
+   "link": "https://smartstore.naver.com/unique-epic/products/12552413383"
+  },
+  "summary": {
+   "count": 2,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 2
+   },
+   "text_count": 2,
+   "photo_count": 0,
+   "video_count": 0,
+   "after_use_count": 1,
+   "best_count": 0,
+   "recent": null,
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "최고예요",
+       "count": 2,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "무게는 어떤가요?",
+     "answers": [
+      {
+       "name": "가벼워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "적당해요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "무거워요",
+       "count": 2,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "구성은 어떤가요?",
+     "answers": [
+      {
+       "name": "아쉬워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "마음에 들어요",
+       "count": 2,
+       "percent": 100
+      }
+     ]
+    }
+   ],
+   "representative_reviews": null
+  },
+  "mode": "small_source",
+  "count": 2,
+  "scanned": 2,
+  "passes": [
+   {
+    "media": "all",
+    "pages": 1,
+    "total_count": 2,
+    "is_exhausted": true
+   }
+  ],
+  "is_complete": true,
+  "results": [
+   {
+    "id": "4851630578",
+    "score": 5,
+    "text": "항상 이제품만 구입합니다 이번에도 재구매 하고 항상 만족합니다 감사합니다",
+    "created_at": "2025-11-29T03:48:50Z",
+    "type": "AFTER_USE",
+    "content_type": "TEXT",
+    "option": "모델명/품번: 실버네이비 / 사이즈: UL7-51-7",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "jbs7***",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "12552413383",
+     "origin_product_id": "12495759704",
+     "name": "US키즈골프(U.S.KIDSGOLF) UL7-51 주니어 풀세트 (7PCS) 129-137cm"
+    },
+    "likes": null,
+    "tier": "small"
+   },
+   {
+    "id": "4830796039",
+    "score": 5,
+    "text": "항상 이제품만 구입합니다 이번에도 재구매 하고 항상 만족합니다 감사합니다",
+    "created_at": "2025-10-29T10:08:01Z",
+    "type": "NORMAL",
+    "content_type": "TEXT",
+    "option": "모델명/품번: 실버네이비 / 사이즈: UL7-51-7",
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "jbs7***",
+     "profile_image": null
+    },
+    "attachments": [],
+    "product": {
+     "id": "12552413383",
+     "origin_product_id": "12495759704",
+     "name": "US키즈골프(U.S.KIDSGOLF) UL7-51 주니어 풀세트 (7PCS) 129-137cm"
+    },
+    "likes": null,
+    "tier": "small"
+   }
+  ]
+ },
+ "photos": {
+  "store": "fairwardgolf",
+  "total": 7,
+  "files": [
+   {
+    "position": 0,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20251017_293/1760665300155C0oLj_JPEG/94798216296283223_34802041.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20251017_293/1760665300155C0oLj_JPEG/94798216296283223_34802041.jpg",
+    "source_sha256": "898b7a8f8bbddbfd7e04fbd02fd91f2562feb2421ac60beafa3a9c59510dca41",
+    "source_bytes": 68087,
+    "source_format": "JPEG",
+    "source_width": 1000,
+    "source_height": 1000,
+    "first_frame_of": null,
+    "file": "images/12552413383/fairwardgolf-12552413383-001-ecd8a1f3004e9662.webp",
+    "sha256": "ecd8a1f3004e9662e047bf8a5e06f6fc268b97fe64e3929b600631e6a9809116",
+    "bytes": 54302,
+    "width": 1000,
+    "height": 1000,
+    "quality": 85
+   },
+   {
+    "position": 1,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20251017_66/1760665301510NUaia_JPEG/94798137161896845_435331358.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20251017_66/1760665301510NUaia_JPEG/94798137161896845_435331358.jpg",
+    "source_sha256": "cab9bf5d5149277ac785e866e1cb11dd85b15af30acb9af77ca9bec08eb4182d",
+    "source_bytes": 277390,
+    "source_format": "JPEG",
+    "source_width": 1000,
+    "source_height": 1000,
+    "first_frame_of": null,
+    "file": "images/12552413383/fairwardgolf-12552413383-002-5eba2a8b896baf4f.webp",
+    "sha256": "5eba2a8b896baf4f2bfb30b26ed75ca8e2b5297c7be5c926df5b1d77e125fb12",
+    "bytes": 55994,
+    "width": 1000,
+    "height": 1000,
+    "quality": 85
+   },
+   {
+    "position": 2,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20251017_44/1760665303060RWPub_JPEG/6664878871947359_1147191293.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20251017_44/1760665303060RWPub_JPEG/6664878871947359_1147191293.jpg",
+    "source_sha256": "e595d68974fde10414b29d05fc19b33b69cb183ac5d1f3ea5accf46d3a165be4",
+    "source_bytes": 337412,
+    "source_format": "JPEG",
+    "source_width": 1000,
+    "source_height": 1000,
+    "first_frame_of": null,
+    "file": "images/12552413383/fairwardgolf-12552413383-003-41a94cbd505589dc.webp",
+    "sha256": "41a94cbd505589dc8ed2032ae85250ed177389e638b860c5c2fbebafa4dc484e",
+    "bytes": 67440,
+    "width": 1000,
+    "height": 1000,
+    "quality": 85
+   },
+   {
+    "position": 3,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20251017_105/1760665304579wxFaR_JPEG/94798120683090142_231320055.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20251017_105/1760665304579wxFaR_JPEG/94798120683090142_231320055.jpg",
+    "source_sha256": "00cc9bf9f34698286d7789d8c55c09af55a48b6951910c7d509e08b5348742d7",
+    "source_bytes": 495508,
+    "source_format": "JPEG",
+    "source_width": 1000,
+    "source_height": 1000,
+    "first_frame_of": null,
+    "file": "images/12552413383/fairwardgolf-12552413383-004-d9c0f6ab90de9d85.webp",
+    "sha256": "d9c0f6ab90de9d85d1a424d41a03984901adb44465f7c8fb083564c84c9ccdc4",
+    "bytes": 111770,
+    "width": 1000,
+    "height": 1000,
+    "quality": 85
+   },
+   {
+    "position": 4,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20251017_181/1760665309367xfkU7_JPEG/6635029210582589_1087009980.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20251017_181/1760665309367xfkU7_JPEG/6635029210582589_1087009980.jpg",
+    "source_sha256": "9ceda92a7d5b943d7f7d8ea174ecdb4be6bac9d79ff88b109bda53defcd0abb6",
+    "source_bytes": 289581,
+    "source_format": "JPEG",
+    "source_width": 1000,
+    "source_height": 1000,
+    "first_frame_of": null,
+    "file": "images/12552413383/fairwardgolf-12552413383-005-38c69ef141476f76.webp",
+    "sha256": "38c69ef141476f7630dc30e7a2221c059b5e3f72943b04a44ba46481de2e8ff2",
+    "bytes": 63480,
+    "width": 1000,
+    "height": 1000,
+    "quality": 85
+   },
+   {
+    "position": 5,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20251017_92/1760665310796kOLDw_JPEG/94798229918070345_1540048175.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20251017_92/1760665310796kOLDw_JPEG/94798229918070345_1540048175.jpg",
+    "source_sha256": "67a4275f1da427edf7f2ddae32b8225a4c628acbeee61e16b54c220d8bccbf9c",
+    "source_bytes": 259887,
+    "source_format": "JPEG",
+    "source_width": 1000,
+    "source_height": 1000,
+    "first_frame_of": null,
+    "file": "images/12552413383/fairwardgolf-12552413383-006-fde98bafb50df8e8.webp",
+    "sha256": "fde98bafb50df8e8aac8456e219c3bab165e6005af1bbe807d21c6581b4bcbed",
+    "bytes": 53698,
+    "width": 1000,
+    "height": 1000,
+    "quality": 85
+   },
+   {
+    "position": 6,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20251017_234/1760681714716eydSr_JPEG/15344097695609754_2016431463.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20251017_234/1760681714716eydSr_JPEG/15344097695609754_2016431463.jpg",
+    "source_sha256": "3e360b729945a159326d8d26b6ada87a2b9063921974e869e3a37ad3c74151d5",
+    "source_bytes": 346756,
+    "source_format": "JPEG",
+    "source_width": 1000,
+    "source_height": 1000,
+    "first_frame_of": null,
+    "file": "images/12552413383/fairwardgolf-12552413383-007-e5950fe03f3c59ce.webp",
+    "sha256": "e5950fe03f3c59ceae9699b0c1aae2b7f83342d88e4e51a0b319d341db4a4b11",
+    "bytes": 72462,
+    "width": 1000,
+    "height": 1000,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true,
+  "originals": 7
+ },
+ "review_media": {
+  "store": "fairwardgolf",
+  "files": [],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true
+ }
+}

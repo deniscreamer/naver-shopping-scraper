@@ -36,6 +36,16 @@ _LATIN_PHRASE = re.compile(r"\b[A-Z][A-Za-z]{2,}(?:\s+[A-Z][A-Za-z]{2,})+\b")
 _BRACKETS = re.compile(r"\(([^()]+)\)")
 _POINTER = re.compile(r"상세|참조|페이지|설명")
 _AGENCY = re.compile(r"구매\s*대행|병행\s*수입|해외\s*직구")
+# a trading company's name, not a maker's brand (2026-11-11, junior clubs: a seller wrote its shop 세모물상점 as the
+# 브랜드, another's 원산지 named its supplier 스퀘어홀딩 where the title says PMG): a shop, a holding, a trader, a
+# distributor. 혼마코리아 (a maker's Korean branch) stays.
+_TRADE_NAME = re.compile(r"(?:상점|상사|홀딩스?|무역|유통|인터내셔[널날]|코퍼레이션|컴퍼니)(?:\s*\(주\)|\s*㈜)?\s*$")
+
+
+def trade_name(name: str | None) -> bool:
+    """A shop's or a trading company's name, never a brand."""
+    base = re.sub(r"\s*협력(?:사|업체)\s*$", "", (name or "").strip())      # "X 협력업체": X's contract maker
+    return bool(_TRADE_NAME.search(base))
 
 
 def _norm(text: str | None) -> str:
@@ -68,7 +78,7 @@ def in_title(title: str | None, brands: list[str]) -> list[str]:
 
 
 def distributors(origin: str | None) -> list[str]:
-    return [x.strip() for x in _BRACKETS.findall(origin or "")
+    return [x.strip() for x in _BRACKETS.findall(origin or "") if not trade_name(x)
             if x.strip() and not _POINTER.search(x) and not _AGENCY.search(x)]
 
 

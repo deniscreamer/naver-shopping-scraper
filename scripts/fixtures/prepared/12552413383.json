@@ -1,0 +1,482 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102594228:12552413383",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "2 of 2 kept (short 2); 2 trimmed"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/unique-epic/products/12552413383",
+  "channel_no": "102594228",
+  "product_id": "12552413383",
+  "category_id": "50002787"
+ },
+ "product": {
+  "title_ko": "US키즈골프(U.S.KIDSGOLF) UL7-51 주니어 풀세트 (7PCS) 129-137cm",
+  "brand_ko": "U.S.KIDSGOLF",
+  "brand_source": "specs:브랜드",
+  "attributes": {},
+  "options": [
+   {
+    "name_ko": "모델명/품번",
+    "values_ko": [
+     "블랙오렌지",
+     "실버네이비",
+     "핑크화이트"
+    ]
+   }
+  ],
+  "facts": [
+   {
+    "label_ko": "사이즈",
+    "value_ko": "UL7-51-7"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "observed:[\"블랙오렌지\",\"UL7-51-7\"]",
+    "naver_variant_id": "52763487589",
+    "options_ko": [
+     "블랙오렌지"
+    ],
+    "price_krw": 698250,
+    "price_usd": "698.25",
+    "sku": "FW-a47ee84d75d943f5906b98d5",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 1500,
+      "central": 3500,
+      "high": 6500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 2500,
+      "central": 4500,
+      "high": 8000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 800,
+      "central": 1050,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 120,
+      "central": 250,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"실버네이비\",\"UL7-51-7\"]",
+    "naver_variant_id": "52763487590",
+    "options_ko": [
+     "실버네이비"
+    ],
+    "price_krw": 698250,
+    "price_usd": "698.25",
+    "sku": "FW-a31a63eac3ccb990b5a0526f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 1500,
+      "central": 3500,
+      "high": 6500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 2500,
+      "central": 4500,
+      "high": 8000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 800,
+      "central": 1050,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 120,
+      "central": 250,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"핑크화이트\",\"UL7-51-7\"]",
+    "naver_variant_id": "52763487591",
+    "options_ko": [
+     "핑크화이트"
+    ],
+    "price_krw": 698250,
+    "price_usd": "698.25",
+    "sku": "FW-3a394d93f7ceefe100dfdac4",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 1500,
+      "central": 3500,
+      "high": 6500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 2500,
+      "central": 4500,
+      "high": 8000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 800,
+      "central": 1050,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 120,
+      "central": 250,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 698250,
+   "original_krw": 735000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "U.S.KIDSGOLF"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "U.S.KIDSGOLF"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "UL7-51-7 주니어풀세트"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 2
+  },
+  "reviews": [
+   {
+    "id": "4851630578",
+    "score": 5,
+    "text_ko": "항상 이제품만 구입합니다 이번에도 재구매 하고 항상 만족합니다",
+    "created_at": "2025-11-29T03:48:50Z",
+    "writer": "jbs7***",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "short",
+    "text_quality": 6,
+    "text_original_ko": "항상 이제품만 구입합니다 이번에도 재구매 하고 항상 만족합니다 감사합니다",
+    "text_cut": [
+     "filler"
+    ]
+   },
+   {
+    "id": "4830796039",
+    "score": 5,
+    "text_ko": "항상 이제품만 구입합니다 이번에도 재구매 하고 항상 만족합니다",
+    "created_at": "2025-10-29T10:08:01Z",
+    "writer": "jbs7***",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "short",
+    "text_quality": 6,
+    "text_original_ko": "항상 이제품만 구입합니다 이번에도 재구매 하고 항상 만족합니다 감사합니다",
+    "text_cut": [
+     "filler"
+    ]
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/12552413383/fairwardgolf-12552413383-001-ecd8a1f3004e9662.webp",
+    "sha256": "ecd8a1f3004e9662e047bf8a5e06f6fc268b97fe64e3929b600631e6a9809116",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/12552413383/fairwardgolf-12552413383-002-5eba2a8b896baf4f.webp",
+    "sha256": "5eba2a8b896baf4f2bfb30b26ed75ca8e2b5297c7be5c926df5b1d77e125fb12",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/12552413383/fairwardgolf-12552413383-003-41a94cbd505589dc.webp",
+    "sha256": "41a94cbd505589dc8ed2032ae85250ed177389e638b860c5c2fbebafa4dc484e",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/12552413383/fairwardgolf-12552413383-004-d9c0f6ab90de9d85.webp",
+    "sha256": "d9c0f6ab90de9d85d1a424d41a03984901adb44465f7c8fb083564c84c9ccdc4",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/12552413383/fairwardgolf-12552413383-005-38c69ef141476f76.webp",
+    "sha256": "38c69ef141476f7630dc30e7a2221c059b5e3f72943b04a44ba46481de2e8ff2",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/12552413383/fairwardgolf-12552413383-006-fde98bafb50df8e8.webp",
+    "sha256": "fde98bafb50df8e8aac8456e219c3bab165e6005af1bbe807d21c6581b4bcbed",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/12552413383/fairwardgolf-12552413383-007-e5950fe03f3c59ce.webp",
+    "sha256": "e5950fe03f3c59ceae9699b0c1aae2b7f83342d88e4e51a0b319d341db4a4b11",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.6590909,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 96,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://proxy-smartstore.naver.net/img/dWVwaWMuc3BlZWRnYWJpYS5jb20vaW1hZ2UvZXBpY190b3AuanBn?token=424497028bf2976b53e9f2d41ee912c3",
+   "https://proxy-smartstore.naver.net/img/dWVwaWMuc3BlZWRnYWJpYS5jb20vaW1hZ2UvdXNraWRzZ29sZi91bDdfNTFfNy9kZXRhaWwuanBn?token=bf6b1ea2701b45db84e0d36b7a016641",
+   "https://proxy-smartstore.naver.net/img/dWVwaWMuc3BlZWRnYWJpYS5jb20vaW1hZ2UvZXBpY19jb250ZW50cy5qcGc=?token=256f0ee2c68cbd1e0cb0e09cdbfd033c",
+   "https://proxy-smartstore.naver.net/img/dWVwaWMuc3BlZWRnYWJpYS5jb20vaW1hZ2UvZXBpY19lbmQuanBn?token=c93f85f5a3c585f22c8d7c67ebf78133"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:1729d8fe4d5eddbb",
+   "kind": "title",
+   "ko": "US키즈골프(U.S.KIDSGOLF) UL7-51 주니어 풀세트 (7PCS) 129-137cm"
+  },
+  {
+   "id": "brand:c166cd5f485bde15",
+   "kind": "brand",
+   "ko": "U.S.KIDSGOLF"
+  },
+  {
+   "id": "option_name:4add04160ce373a8",
+   "kind": "option_name",
+   "ko": "모델명/품번"
+  },
+  {
+   "id": "option_value:8e60effdf67849e5",
+   "kind": "option_value",
+   "ko": "블랙오렌지"
+  },
+  {
+   "id": "option_value:ca55a30442e960e9",
+   "kind": "option_value",
+   "ko": "실버네이비"
+  },
+  {
+   "id": "option_value:805830e5b94b5a34",
+   "kind": "option_value",
+   "ko": "핑크화이트"
+  },
+  {
+   "id": "fact_label:e0511ad24076321c",
+   "kind": "fact_label",
+   "ko": "사이즈"
+  },
+  {
+   "id": "fact_value:77d625bd7ba987b8",
+   "kind": "fact_value",
+   "ko": "UL7-51-7"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:c166cd5f485bde15",
+   "kind": "spec_value",
+   "ko": "U.S.KIDSGOLF"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:fdd548fa1f9c49cf",
+   "kind": "spec_value",
+   "ko": "UL7-51-7 주니어풀세트"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "review:b777f0a76a3c311e",
+   "kind": "review",
+   "ko": "항상 이제품만 구입합니다 이번에도 재구매 하고 항상 만족합니다"
+  }
+ ]
+}

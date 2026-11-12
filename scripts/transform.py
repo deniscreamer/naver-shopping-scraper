@@ -53,6 +53,7 @@ from collections import Counter
 from typing import Any, TypedDict
 
 import attributes
+import brand_fallback
 from description_clean import body_notes, clean, clean_images
 from description_images import current, image_rows
 from description_measures import composition_count, container_in, container_listed, package_for, profile_for, read_rows
@@ -368,7 +369,9 @@ def spec_rows(specs: dict[str, Any]) -> list[dict[str, str]]:
                 while _BRACKETS_RE.search(value):
                     value = _BRACKETS_RE.sub("", value)
             value = re.sub(r"\s+", " ", value).strip()
-        if label in ("브랜드", "제조사") and value.strip() in NOT_A_BRAND:
+        if label in ("브랜드", "제조사") and value.strip() in NOT_A_BRAND or label == "브랜드" \
+                and brand_fallback.trade_name(value):     # a shop's name in the brand row (세모물상점); a 제조사 row
+                                                          # naming an importer stays a fact
             continue                                # "Brand: Other" says nothing (10697131625, 2026-11-11)
         if label not in HIDDEN_ROWS and value and not _pointer(value) and not _PLACEHOLDER_CODE.match(value.strip()):
             out.append({"label_ko": label, "value_ko": value})
@@ -602,11 +605,14 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int,
         held.append({"code": "price_unknown", "detail": "no product price"})
     facts = specs.get("facts") or {}
     brand = facts.get("brand") or {}
-    if str(brand.get("value") or "").strip() in NOT_A_BRAND:
-        brand = {}
-    maker = facts.get("manufacturer") or {}
+    if str(brand.get("value") or "").strip() in NOT_A_BRAND or brand_fallback.trade_name(str(brand.get("value") or "")):
+        brand = {}                                  # 기타, or a shop's name (세모물상점, 2026-11-11)
+    maker = dict(facts.get("manufacturer") or {})
+    if maker.get("value"):                          # "X 협력사 / 협력업체" (X's contract maker) names X (2026-11-11)
+        maker["value"] = re.sub(r"\s*협력(?:사|업체)\s*$", "", str(maker["value"])) or maker["value"]
     if not brand.get("value") and maker.get("value") and not _PLACEHOLDER_CODE.match(str(maker["value"]).strip()) \
-            and not _pointer(str(maker["value"])) and str(maker["value"]).strip() not in NOT_A_BRAND:
+            and not _pointer(str(maker["value"])) and str(maker["value"]).strip() not in NOT_A_BRAND \
+            and not brand_fallback.trade_name(str(maker["value"])):
         # no brand: the manufacturer (the owner, 2026-11-08); still none: brand_fallback.py, run-level
         brand = {"value": maker["value"], "source": f"manufacturer:{maker.get('source')}"}
     imgs = images(line, run)

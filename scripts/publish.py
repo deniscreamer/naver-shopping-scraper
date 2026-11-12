@@ -18,7 +18,8 @@ product, in this order (shopify_payload.py builds, shopify_admin.py sends):
 
 A product whose inputs did not change since its last publication is skipped (`--force` sends it again), and so is
 one whose productSet would send what it sent last time (`output` in the ledger, output_digest; 2026-11-11). On an update
-photos already on the product are kept by their hash (no new upload). --dry-run builds and writes the payload to
+photos already on the product are kept by their hash (no new upload). `--withdraw <key> --reason "..."` takes a
+published product off the store (DRAFT, nothing deleted) and keeps it from being sent again. --dry-run builds and writes the payload to
 shops/<shop>/publish/payloads/<id>.json and sends nothing (no upload, no write).
 """
 import argparse
@@ -108,9 +109,14 @@ class Shop:
                 _last(os.path.join(self.dir, "translation", "translated.jsonl")),
                 _last(os.path.join(self.dir, "placement", "placements.jsonl")))
 
+    def withdrawn(self) -> set[str]:
+        """The products taken off the store by hand (`--withdraw`): never sent again until a later row says so."""
+        return {k for k, r in _last(self.ledger_path).items() if r.get("status") == "withdrawn"}
+
     def ready(self) -> list[str]:
         prepared, translated, placed = self.inputs()
-        return [k for k, p in prepared.items() if p.get("status") == "ready"
+        gone = self.withdrawn()
+        return [k for k, p in prepared.items() if p.get("status") == "ready" and k not in gone
                 and (translated.get(k) or {}).get("status") == "translated"
                 and (placed.get(k) or {}).get("status") == "placed"]
 
@@ -135,6 +141,21 @@ def inputs_digest(prepared: dict, translated: dict, placement: dict, shop: str, 
     if description:
         inputs["description"] = description
     return sp.digest(inputs)
+
+
+def withdraw(shop: Shop, key: str, products: Any, reason: str) -> dict[str, Any]:
+    """Take a published product off the store: DRAFT (off every sales channel, nothing deleted; the owner,
+    2026-11-11: a bag alone and a toy in the junior clubs). The ledger row `withdrawn` keeps publish.py from sending
+    it again; the store keeps it, so the listing's screen still finds it as already published."""
+    before = _last(shop.ledger_path).get(key)
+    if not before or before.get("status") not in ("published", "withdrawn"):
+        raise SystemExit(f"{key}: not published here")
+    status = products.set_status(before["product_id"], "DRAFT")
+    row: dict[str, Any] = {**{k: before[k] for k in ("format", "key", "product_id", "handle", "admin_url")
+                              if k in before},
+           "status": "withdrawn", "store_status": status, "reason": reason, "at": _now()}
+    _append(shop.ledger_path, row)
+    return row
 
 
 def output_digest(payload: dict[str, Any]) -> str:
@@ -258,7 +279,7 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
            "preview_url": product.get("onlineStorePreviewUrl")}
     _append(shop.ledger_path, row)
     if ids.get("vendors") is not None and payload.get("vendor"):    # the next products of this run spell it so
-        ids["vendors"].setdefault(payload["vendor"].lower(), payload["vendor"])
+        ids["vendors"].setdefault(sp.brand_key(payload["vendor"]), payload["vendor"])
     return row
 
 
@@ -280,9 +301,9 @@ def vendor_spellings(store: dict[str, str]) -> dict[str, str]:
     except Exception:                                       # no dictionary: the shop's spellings only
         brands = []
     for v in brands:
-        out.setdefault(sp.vendor_name(v).lower(), sp.vendor_name(v))
-    for k, v in store.items():
-        out.setdefault(k, v)
+        out.setdefault(sp.brand_key(sp.vendor_name(v)), sp.vendor_name(v))
+    for v in store.values():                         # the store's first spelling of a brand (shopify_admin's order)
+        out.setdefault(sp.brand_key(v), v)
     return out
 
 
@@ -312,10 +333,23 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--shops-root", default=SHOPS_ROOT, help="the folder holding <shop>/")
     ap.add_argument("--force", action="store_true", help="send even when nothing changed")
     ap.add_argument("--dry-run", action="store_true", help="build and save the payload; send nothing")
+    ap.add_argument("--withdraw", action="append", default=[], help="a published product's key: set it DRAFT and "
+                    "never send it again (with --reason)")
+    ap.add_argument("--reason", help="why a product is withdrawn (kept in the ledger)")
     ap.add_argument("--rehandle", action="store_true", help="give a product already in the shop the handle its "
                     "title makes now (the old one redirects)")
     args = ap.parse_args(argv)
     shop = Shop(args.shop, args.shops_root)
+    if args.withdraw:
+        if not args.reason:
+            ap.error("--withdraw needs --reason")
+        from shopify_admin import ProductsAdmin
+        admin = ProductsAdmin(get_store(args.shop))
+        admin.check_shop()
+        for key in args.withdraw:
+            row = withdraw(shop, key, admin, args.reason)
+            print(f"{key}: withdrawn ({row['store_status']}) {row.get('admin_url', '')}")
+        return 0
     ready = shop.ready()
     keys = [k for k in args.only if k in ready] if args.only else ready
     for k in set(args.only) - set(ready):

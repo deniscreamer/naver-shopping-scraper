@@ -668,3 +668,29 @@ def test_a_dry_run_spells_the_vendor_as_the_real_run(tmp_path):
     dictionary's spellings and the tenant's name offline."""
     ids = PB.offline_ids("fairwardgolf")
     assert ids["tenant"] == "Fairward Golf" and ids["vendors"].get("maruman") == "Maruman"
+
+
+def test_a_withdrawn_product_is_drafted_and_never_sent_again(tmp_path):
+    """2026-11-11: a bag alone and a toy published in the junior clubs are taken off the store, not deleted."""
+    shop = PB.Shop("fairwardgolf", str(tmp_path))
+    PB._append(shop.ledger_path, {"format": PB.FORMAT, "key": "k1", "status": "published", "product_id": "gid://1",
+                                  "handle": "h", "admin_url": "a"})
+
+    class Admin:
+        calls: list = []
+
+        def set_status(self, pid, status):
+            self.calls.append((pid, status))
+            return status
+    admin = Admin()
+    row = PB.withdraw(shop, "k1", admin, "a bag alone")
+    assert admin.calls == [("gid://1", "DRAFT")] and row["status"] == "withdrawn" and row["reason"] == "a bag alone"
+    assert shop.withdrawn() == {"k1"} and "k1" not in shop.ledger()
+
+
+def test_vendor_spellings_join_one_brand_whatever_its_dots(monkeypatch):
+    """12552413383 / 12813088660 (2026-11-12): the store had U.S.KIDSGOLF and U.S. Kids Golf as two vendors."""
+    store = {"u.s. kids golf": "U.S. Kids Golf", "u.s.kidsgolf": "U.S.KIDSGOLF"}       # the store's order
+    spell = PB.vendor_spellings(store)
+    assert spell[PB.sp.brand_key("U.S.KIDSGOLF")] in ("U.S. Kids Golf",)
+    assert PB.sp.vendor_name("U.S.KIDSGOLF", spell) == "U.S. Kids Golf"

@@ -29,6 +29,7 @@ after the last backup with any waiting. `--json` gives the same as one object (f
 """
 import argparse
 import json
+import re
 import os
 import shutil
 import sys
@@ -168,8 +169,10 @@ class Dictionaries:
 
     def brand_spelling(self, name: str) -> str:
         """The dictionary's spelling of this brand, compared without case; the name itself for a new brand."""
+        def key(s: str) -> str:                  # letters and digits only: "U.S.KIDSGOLF" is "U.S. Kids Golf"
+            return re.sub(r"[^0-9a-z가-힣]", "", (s or "").lower())
         for v in self.entries["brand"].values():
-            if v.lower() == (name or "").lower():
+            if key(v) == key(name):
                 return v
         return name
 

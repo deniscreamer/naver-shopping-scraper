@@ -124,3 +124,16 @@ def test_category_title_rules(category, title, code):
     screen = Screen(category, namespace="fairwardgolf")
     row = {"name": title, "category_id": category, "product_id": "1", "store": {"channel_no": "2"}}
     assert screen.check(row) == code
+
+
+@pytest.mark.parametrize("title, code", [
+    ("주니어골프백(스탠드형) 어린이 골프가방", "title:bag_only"),           # 314400655, published then withdrawn
+    ("US키즈골프 UL7 주니어 스탠드 골프백", "title:bag_only"),
+    ("재미있는 주니어 골프세트 스탠드 골프백 골프채 3종", None),           # a set with a bag stays
+    ("어린이 골프채 3종 + 골프가방 세트 주니어 퍼터 아이언 드라이버 아동 캐디백", None),
+    ("PGM 주니어 어린이 골프채 골프클럽 세트 가방포함", None),
+])
+def test_a_junior_bag_alone_is_left_out(title, code):
+    screen = Screen("50002787", namespace="fairwardgolf")
+    assert screen.check({"name": title, "category_id": "50002787", "product_id": "1",
+                         "store": {"channel_no": "2"}}) == code

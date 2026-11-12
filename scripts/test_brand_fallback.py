@@ -3,6 +3,8 @@ check (2026-11-08) with no brand stated.
 
     .venv/bin/python -m pytest scripts/test_brand_fallback.py -q
 """
+import pytest
+
 import brand_fallback as B
 from transform import _texts
 
@@ -62,3 +64,39 @@ def test_fill_adds_the_brand_its_text_and_a_note():
     assert (product["brand_ko"], product["brand_source"]) == ("혼마", "title")
     assert missing["notes"] == [{"code": "brand_fallback", "detail": "title: 혼마"}]
     assert {"kind": "brand", "ko": "혼마"}.items() <= next(t for t in missing["texts"] if t["kind"] == "brand").items()
+
+
+@pytest.mark.parametrize("name, trade", [
+    # 2026-11-12, the junior clubs' first 30: a shop's or a supplier's name is no brand
+    ("세모물상점", True), ("세모물상점 협력업체", True), ("스퀘어홀딩", True), ("(주)삼양인터내셔날", True),
+    ("석교상사", True), ("내면무역", True), ("한국유통", True), ("삼양인터내셔널", True),
+    ("혼마코리아", False), ("던롭코리아", False), ("스컬독", False), ("아화", False), ("PGM", False),
+    ("유니코스 협력사", False), ("캘러웨이골프", False), ("", False),
+])
+def test_a_trading_name_is_no_brand(name, trade):
+    assert B.trade_name(name) is trade
+
+
+def test_a_trading_company_in_the_origin_is_no_distributor():
+    assert B.distributors("중국산(세모물상점 협력업체)") == []
+    assert B.distributors("중국(스퀘어홀딩)") == []
+    assert B.distributors("일본산(혼마코리아)") == ["혼마코리아"]
+
+
+def _rows(name):
+    import json
+    import os
+    from description_images import image_rows
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures", "description_images", name + ".json")
+    with open(path, encoding="utf-8") as f:
+        return [r for img in image_rows(json.load(f)) for r in img]
+
+
+@pytest.mark.parametrize("name, title, origin, brand", [
+    # 2026-11-12: the shop's name (세모물상점) and a supplier (스퀘어홀딩) were the brands; the images name the maker
+    ("9498347018", "주니어골프채 어린이골프채 초등학생 7번아이언 세트 아동", "중국(세모물상점 협력업체)", "인파로"),
+    ("7151166811", "PMG 아동용 주니어 어린이 골프채 유아 초등학생 골프클럽세트", "중국(스퀘어홀딩)", "PGM"),
+])
+def test_the_images_name_the_maker_when_the_seller_names_a_trader(name, title, origin, brand):
+    got, source, _ = B.decide(title, origin, ["인파로", "PGM", "스컬독", "아화"], _rows(name))
+    assert (got, source) == (brand, "images_text")

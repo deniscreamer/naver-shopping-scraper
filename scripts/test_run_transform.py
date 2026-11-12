@@ -16,10 +16,13 @@ STORE = "100568453"
 
 
 def collected():
+    """The full sets' fixtures (a kept run holds one category; the junior clubs' are 50002787, 2026-11-12)."""
     out = []
     for name in sorted(os.listdir(FX)):
         with open(os.path.join(FX, name), encoding="utf-8") as f:
-            out.append(json.load(f))
+            line = json.load(f)
+        if str(((line.get("specs") or {}).get("category") or {}).get("id")) == "50002788":
+            out.append(line)
     return out
 
 

@@ -1,6 +1,6 @@
 {
  "about": "Package weight and size averages per leaf category, given by the operator (never made up). A row: category_id, category_name, fields (low / central / high of product_weight_g, package_weight_g, package_length_mm, package_width_mm, package_height_mm), approved_by, approved_at (YYYY-MM-DD), reliability (estimated_average: the weakest level), basis. Optional per row: plausible ({field: {min, max}}: a value outside is not taken); baselines, the operator's amounts for the parts of a set of like items in a container, all of them or no block: item_g (one item), container_g (the container), carton_g (the box and its packing), longest_item_mm (the longest item), length_margin_mm (the box's length over the longest item), sides_mm and sides_with_container_mm (the box's [width, height] without the container and with it), approved_by, approved_at, basis (where each amount comes from). With the block a field the seller does not state is composed from the set's parts, each part from the product's own data when it is there and from the baseline when it is not (product weight = items + container; package weight = product weight + carton_g; package length = longest item + length_margin_mm; width and height = the sides), and the fields' flat averages are the last resort, used when the number of items or the container's state cannot be told; without the block a field is the seller's statement or the flat average. A new or changed row raises version.",
- "version": 3,
+ "version": 4,
  "rows": [
   {
    "category_id": "50002788",
@@ -130,6 +130,39 @@
       }
      },
      "basis": "One junior club in its own box. Central 90 x 12 x 10 cm, 1 kg: the agent's estimate from the listing of 2026-11-11 (junior putters, drivers and irons of 26-95,000 KRW), approved by the owner; low / high the agent's range. 단품 in the variant; a variant that names a club with no set word of its own and no strong set word in the title (풀세트, N종, N개, 구성, a bag); else a club word in the title or the variant with no set word in either."
+    },
+    {
+     "kind": "two_clubs",
+     "match": "(?i)(?<![0-9])2\\s*(?:종|개|pcs|pc|p\\b)",
+     "unless": "(?i)풀\\s*세트|(?<![0-9])(?:[3-9]|1[0-9])\\s*(?:종|개|pcs|pc|클럽)|가방|캐디백|스탠드백|백\\s*포함",
+     "fields": {
+      "product_weight_g": {
+       "low": 300,
+       "central": 700,
+       "high": 1100
+      },
+      "package_weight_g": {
+       "low": 800,
+       "central": 1500,
+       "high": 2200
+      },
+      "package_length_mm": {
+       "low": 700,
+       "central": 950,
+       "high": 1150
+      },
+      "package_width_mm": {
+       "low": 100,
+       "central": 150,
+       "high": 180
+      },
+      "package_height_mm": {
+       "low": 80,
+       "central": 120,
+       "high": 150
+      }
+     },
+     "basis": "Two junior clubs (or a club and a glove) in one box, 2종 / 2개 / 2pcs with no bag and no larger count (8457258079, 2026-11-11: a #7 iron and a putter took the set's box, $799). Central 95 x 15 x 12 cm, 1.5 kg: the single club's box with one club more (the agent, on the owner's \"fix it all\" of 2026-11-11); low / high the agent's range."
     }
    ],
    "reliability": "estimated_average",

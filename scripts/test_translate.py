@@ -1080,3 +1080,10 @@ def test_a_category_reads_and_learns_only_its_own_entries(tmp_path):
     assert again.get("option_name", "호수", "50002788") is None
     rows = {r["kind"]: r for r in D.status(str(tmp_path / "live"), str(tmp_path / "backup"))}
     assert rows["50002787/option_name"]["new"] == {"구성": "Contents", "호수": "Size"}
+
+
+def test_one_brand_spelling_whatever_its_dots_and_spaces(tmp_path):
+    """12552413383 (2026-11-12): "U.S.KIDSGOLF" is the dictionary's U.S. Kids Golf."""
+    d = dicts(tmp_path, brand={"US키즈골프": "U.S. Kids Golf"})
+    assert d.brand_spelling("U.S.KIDSGOLF") == "U.S. Kids Golf" == d.brand_spelling("us kids golf")
+    assert d.brand_spelling("Inparo") == "Inparo"

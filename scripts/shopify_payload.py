@@ -121,18 +121,48 @@ _LEGAL_RE = re.compile(r"(?:[\s,]*(?:Co\.?,?\s*Ltd\.?|Ltd\.?|Inc\.?|Corp\.?|Corp
                        re.I)
 
 
+def brand_key(name: str | None) -> str:
+    """A brand as compared: letters and digits only, lower case ("U.S.KIDSGOLF", "U.S. Kids Golf" and "US Kids
+    Golf" are one brand, 2026-11-11)."""
+    return re.sub(r"[^0-9a-z가-힣]", "", (name or "").lower())
+
+
+def _brand_in(title: str, brand: str) -> str:
+    """The title with every spelling of the brand as the vendor spells it, and a brand written twice in a row once
+    ("US Kids Golf U.S.KIDSGOLF UL7-51" -> "U.S. Kids Golf UL7-51", 12552413383)."""
+    key, words = brand_key(brand), title.split(" ")
+    out: list[str] = []
+    i = 0
+    while i < len(words):
+        for n in range(min(4, len(words) - i), 0, -1):      # the longest run of words that spells the brand
+            span = " ".join(words[i:i + n])
+            if brand_key(span) == key:
+                if not (out and out[-1] == brand):          # once, where it stood twice
+                    out.append(brand)
+                i += n
+                break
+        else:
+            out.append(words[i])
+            i += 1
+    return " ".join(out)
+
+
 def title_vendor(product: dict[str, Any], en: "English", vendors: dict[str, str] | None = None,
                  tenant: str | None = None) -> tuple[str, str]:
     """(title, vendor): the vendor as the shop spells it, and the title starting with it when the model left the
     brand out (a maker's name; not the tenant's own name for 노브랜드)."""
     title = clean_title(en("title", product["title_ko"]))
     brand = vendor_name(en("brand", product.get("brand_ko")).strip(), vendors)
-    if brand and brand != tenant and brand.lower() not in title.lower():
+    first = title.split(" ", 1)
+    if brand and brand_key(brand) not in brand_key(title) and len(brand_key(brand)) >= 3 \
+            and sorted(brand_key(first[0])) == sorted(brand_key(brand)):
+        title = " ".join([brand] + first[1:])  # the seller's letters swapped: "PMG" for PGM (7151166811, 2026-11-11)
+    if brand and brand != tenant and brand_key(brand) not in brand_key(title):
         title = f"{brand} {title}"
-    elif brand:                                 # the title spells the brand as the vendor does ("Yonex" -> "YONEX"
-        title = re.sub(rf"(?<![\w-]){re.escape(brand)}(?![\w-])", lambda _: brand, title, flags=re.I)   # if so)
+    elif brand:                                 # the title spells the brand as the vendor does ("Yonex" -> "YONEX",
+        title = _brand_in(title, brand)         # "U.S.KIDSGOLF" -> "U.S. Kids Golf"), once
     fitted = fit_title(title)
-    if brand and brand != tenant and brand.lower() not in fitted.lower():      # the brand stood in the part cut off
+    if brand and brand != tenant and brand_key(brand) not in brand_key(fitted):  # the brand stood in the part cut off
         fitted = fit_title(f"{brand} {fitted}")
     return fitted, brand
 
@@ -200,10 +230,10 @@ def vendor_name(brand: str, spellings: dict[str, str] | None = None) -> str:
     """The shop's vendor from the translated brand: a maker's company form cut ("Prokenex / SJG Co., Ltd." ->
     "Prokenex"), and the one spelling of it, compared without case ({lower case: spelling}: the brand dictionary's,
     else the shop's; the owner, 2026-11-09: a brand the dictionary writes in capitals is in capitals, and the other
-    way round, whatever the case it came in)."""
+    way round, whatever the case it came in; and since 2026-11-11 whatever its dots and spaces: brand_key)."""
     name = re.split(r"\s*/\s*|\s*,\s*", brand or "")[0]      # "Mizuno, Hillcreek" -> "Mizuno" (2026-11-09)
     name = _LEGAL_RE.sub("", name).strip(" ,./")
-    return (spellings or {}).get(name.lower(), name)
+    return (spellings or {}).get(brand_key(name), name)
 
 
 def _unique(values: list[str]) -> list[str]:

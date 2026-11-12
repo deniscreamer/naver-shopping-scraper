@@ -59,6 +59,8 @@ def title_rule(name: str | None, rules: Iterable[dict[str, Any]]) -> str | None:
     """`title:<code>` of the first category rule whose term is in the name without spaces, or None."""
     text = re.sub(r"\s+", "", normalize(name))
     for rule in rules:
+        if any(re.sub(r"\s+", "", normalize(u)) in text for u in rule.get("unless", ())):
+            continue                                # a word that says the row is what the section sells
         if any(term_matches(text, {**t, "text": re.sub(r"\s+", "", t["text"])}) for t in rule["tokens"]):
             return f"title:{rule['code']}"
     return None

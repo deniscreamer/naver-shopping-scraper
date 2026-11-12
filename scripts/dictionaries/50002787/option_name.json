@@ -1,16 +1,31 @@
 {
  "format": "dictionary/1",
  "kind": "option_name",
- "backed_up": "2026-11-12T06:15:51Z",
+ "backed_up": "2026-11-12T09:37:06Z",
  "entries": {
+  "그립색상": "Grip Color",
   "그립컬러": "Grip Color",
   "나이선택": "Age",
+  "모델명/품번": "Model",
+  "번호 선택": "Number",
+  "색상": "Color",
   "색상선택": "Color",
   "선택하세요": "Option",
+  "신장(cm) / 샤프트": "Height (cm) / Shaft",
+  "연령선택": "Age",
+  "장갑싸이즈": "Glove Size",
+  "제품선택": "Product",
   "주니어 골프채": "Junior Golf Clubs",
+  "주니어 골프채 + 타점스티커": "Junior Club + Impact Sticker",
+  "주니어 골프클럽": "Junior Golf Club",
   "주니어골프채": "Junior Golf Clubs",
+  "커버(뚜껑)선택": "Cover Selection",
   "클럽구분": "Club Type",
+  "키선택": "Height",
   "타입": "Type",
+  "퍼터선택": "Putter",
+  "헤드그립색상": "Head Grip Color",
+  "헤드색상": "Head Color",
   "호수": "Size"
  }
 }

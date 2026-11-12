@@ -19,7 +19,7 @@ from transform_shops import rules_for
 HERE = os.path.dirname(os.path.abspath(__file__))
 FX = os.path.join(HERE, "fixtures")
 PROFILE = profile_for("fairwardgolf")
-M, W = "mens-complete-sets", "womens-complete-sets"
+M, W, J = "mens-complete-sets", "womens-complete-sets", "junior-clubs-sets"
 
 # The 50 fixture sets (2026-11-08): the sections they go to, the same as the leaves the transform decided before
 # the split moved to placement (prepared/2), and how many variants each section lists where a set is split.
@@ -34,6 +34,8 @@ EXPECTED = {
     "13780241403": (M,), "13785630702": (M,), "5182294301": (M,), "6153061020": (M,), "6540695739": (W,),
     "6630856593": (M,), "6774818843": (M,), "6999516176": (M,), "7166885441": (M,), "7583123963": (M, W),
     "8958060680": (M,), "8978750961": (M,), "9168175809": (M,), "9496523995": (M,), "9868413561": (M, W),
+    # 50002787 junior clubs (2026-11-12): one section, whatever a variant's gender
+    "9498347018": (J,), "7151166811": (J,), "12552413383": (J,), "8457258079": (J,), "271986826": (J,),
 }
 SPLIT = {"13369469193": ("unisex", {M: 3, W: 3}),        # 성별 남녀공용: each section every variant
          "7583123963": ("mixed", {M: 6, W: 3}),          # variants of both genders: each section its own

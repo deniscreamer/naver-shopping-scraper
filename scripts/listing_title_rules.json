@@ -1,6 +1,6 @@
 {
  "format": "listing-title-rules/1",
- "about": "Per Naver leaf category, title words that leave a listing row out before its page is read (listing_filter.Screen; the owner, 2026-11-11: what the shop's section does not sell). Matched on the title NFKC-normalized, lower case and without spaces; notFollowedBy / notPrecededBy as in listing_exclusions.json. Studied on the listings of 2026-11-11: 515 titles of 50002787 (46 of 56 that do not fit, none that fits), 351 of 50002788 (3 of 23 beside the rentals the shared file already drops). A rule names its code, which is the row's reason (title:<code>).",
+ "about": "Per Naver leaf category, title words that leave a listing row out before its page is read (listing_filter.Screen; the owner, 2026-11-11: what the shop's section does not sell). Matched on the title NFKC-normalized, lower case and without spaces; notFollowedBy / notPrecededBy as in listing_exclusions.json. Studied on the listings of 2026-11-11: 515 titles of 50002787 (46 of 56 that do not fit, none that fits), 351 of 50002788 (3 of 23 beside the rentals the shared file already drops). A rule may list `unless` words: any of them in the title and the rule does not apply. A rule names its code, which is the row's reason (title:<code>).",
  "categories": {
   "50002787": [
    {
@@ -192,6 +192,52 @@
      },
      {
       "text": "로퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "bag_only",
+    "why": "A bag alone (314400655, 2026-11-11: '주니어골프백(스탠드형) 어린이 골프가방' was published): a bag word with no club or set word; a set with a bag names its clubs or 세트.",
+    "unless": [
+     "골프채",
+     "클럽",
+     "아이언",
+     "퍼터",
+     "드라이버",
+     "웨지",
+     "우드",
+     "유틸",
+     "세트",
+     "셋트",
+     "종",
+     "pcs",
+     "개구성"
+    ],
+    "tokens": [
+     {
+      "text": "골프백",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "골프가방",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스탠드백",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "캐디백",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "보스턴백",
       "notFollowedBy": [],
       "notPrecededBy": []
      }

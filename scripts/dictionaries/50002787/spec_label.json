@@ -1,7 +1,7 @@
 {
  "format": "dictionary/1",
  "kind": "spec_label",
- "backed_up": "2026-11-12T06:15:51Z",
+ "backed_up": "2026-11-12T09:37:06Z",
  "entries": {
   "구성": "Contents",
   "모델명": "Model",
@@ -11,6 +11,7 @@
   "원산지": "Country of Origin",
   "제조사": "Manufacturer",
   "종류": "Type",
-  "주니어 클럽개수": "Number of Junior Clubs"
+  "주니어 클럽개수": "Number of Junior Clubs",
+  "품번": "Item Number"
  }
 }

@@ -1,0 +1,1554 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:500008085:8457258079",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "few_pieces",
+   "detail": "2종"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "CONDITIONAL_FREE 4000 KRW"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/ahwagolf/products/8457258079",
+  "channel_no": "500008085",
+  "product_id": "8457258079",
+  "category_id": "50002787"
+ },
+ "product": {
+  "title_ko": "주니어 골프채2종세트 7번아이언 퍼터 어린이골프 아화골프",
+  "brand_ko": "아화",
+  "brand_source": "specs:브랜드",
+  "attributes": {},
+  "options": [
+   {
+    "name_ko": "키선택",
+    "values_ko": [
+     "100cm 이하",
+     "100-110cm",
+     "110-120cm",
+     "120-130cm",
+     "130-140cm",
+     "140-150cm",
+     "150-155cm",
+     "155-160cm"
+    ]
+   },
+   {
+    "name_ko": "색상",
+    "values_ko": [
+     "블루그린",
+     "핑크오렌지"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"100cm 이하\",\"블루그린\"]",
+    "naver_variant_id": "31172652975",
+    "options_ko": [
+     "100cm 이하",
+     "블루그린"
+    ],
+    "price_krw": 98000,
+    "price_usd": "98.00",
+    "sku": "FW-1260876bf202984e6bef4345",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 300,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1500,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 950,
+      "high": 1150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 100,
+      "central": 150,
+      "high": 180,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"100cm 이하\",\"핑크오렌지\"]",
+    "naver_variant_id": "31172652976",
+    "options_ko": [
+     "100cm 이하",
+     "핑크오렌지"
+    ],
+    "price_krw": 98000,
+    "price_usd": "98.00",
+    "sku": "FW-f278bdcef2fe8f221c89592a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 300,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1500,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 950,
+      "high": 1150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 100,
+      "central": 150,
+      "high": 180,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"100-110cm\",\"블루그린\"]",
+    "naver_variant_id": "31172652977",
+    "options_ko": [
+     "100-110cm",
+     "블루그린"
+    ],
+    "price_krw": 98000,
+    "price_usd": "98.00",
+    "sku": "FW-5ddc20d17616282f2391fc80",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 300,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1500,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 950,
+      "high": 1150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 100,
+      "central": 150,
+      "high": 180,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"100-110cm\",\"핑크오렌지\"]",
+    "naver_variant_id": "31172652978",
+    "options_ko": [
+     "100-110cm",
+     "핑크오렌지"
+    ],
+    "price_krw": 98000,
+    "price_usd": "98.00",
+    "sku": "FW-1e800d3c9e7bee4bf685dddf",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 300,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1500,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 950,
+      "high": 1150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 100,
+      "central": 150,
+      "high": 180,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"110-120cm\",\"블루그린\"]",
+    "naver_variant_id": "31172652979",
+    "options_ko": [
+     "110-120cm",
+     "블루그린"
+    ],
+    "price_krw": 98000,
+    "price_usd": "98.00",
+    "sku": "FW-0bad59a5e57f06804decaae6",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 300,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1500,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 950,
+      "high": 1150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 100,
+      "central": 150,
+      "high": 180,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"110-120cm\",\"핑크오렌지\"]",
+    "naver_variant_id": "31172652980",
+    "options_ko": [
+     "110-120cm",
+     "핑크오렌지"
+    ],
+    "price_krw": 98000,
+    "price_usd": "98.00",
+    "sku": "FW-53b3b8bd4d9cd791a4ef1040",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 300,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1500,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 950,
+      "high": 1150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 100,
+      "central": 150,
+      "high": 180,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"120-130cm\",\"블루그린\"]",
+    "naver_variant_id": "31172652981",
+    "options_ko": [
+     "120-130cm",
+     "블루그린"
+    ],
+    "price_krw": 98000,
+    "price_usd": "98.00",
+    "sku": "FW-24cbe9ff759c3af42b7ab950",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 300,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1500,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 950,
+      "high": 1150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 100,
+      "central": 150,
+      "high": 180,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"120-130cm\",\"핑크오렌지\"]",
+    "naver_variant_id": "31172652982",
+    "options_ko": [
+     "120-130cm",
+     "핑크오렌지"
+    ],
+    "price_krw": 98000,
+    "price_usd": "98.00",
+    "sku": "FW-5bf98d4427d26ad32a40428a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 300,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1500,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 950,
+      "high": 1150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 100,
+      "central": 150,
+      "high": 180,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"130-140cm\",\"블루그린\"]",
+    "naver_variant_id": "31172652983",
+    "options_ko": [
+     "130-140cm",
+     "블루그린"
+    ],
+    "price_krw": 98000,
+    "price_usd": "98.00",
+    "sku": "FW-fd3d4992f9387b9efa37a154",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 300,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1500,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 950,
+      "high": 1150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 100,
+      "central": 150,
+      "high": 180,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"130-140cm\",\"핑크오렌지\"]",
+    "naver_variant_id": "31172652984",
+    "options_ko": [
+     "130-140cm",
+     "핑크오렌지"
+    ],
+    "price_krw": 98000,
+    "price_usd": "98.00",
+    "sku": "FW-db4321cec688864f6a74164e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 300,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1500,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 950,
+      "high": 1150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 100,
+      "central": 150,
+      "high": 180,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"140-150cm\",\"블루그린\"]",
+    "naver_variant_id": "31172652985",
+    "options_ko": [
+     "140-150cm",
+     "블루그린"
+    ],
+    "price_krw": 98000,
+    "price_usd": "98.00",
+    "sku": "FW-bbfdf94b2da48f4c62784787",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 300,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1500,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 950,
+      "high": 1150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 100,
+      "central": 150,
+      "high": 180,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"140-150cm\",\"핑크오렌지\"]",
+    "naver_variant_id": "31172652986",
+    "options_ko": [
+     "140-150cm",
+     "핑크오렌지"
+    ],
+    "price_krw": 98000,
+    "price_usd": "98.00",
+    "sku": "FW-8df55d1ae2290d690a2ce51e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 300,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1500,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 950,
+      "high": 1150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 100,
+      "central": 150,
+      "high": 180,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"150-155cm\",\"블루그린\"]",
+    "naver_variant_id": "31172652987",
+    "options_ko": [
+     "150-155cm",
+     "블루그린"
+    ],
+    "price_krw": 98000,
+    "price_usd": "98.00",
+    "sku": "FW-c4b5b7c032710651ec80cf65",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 300,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1500,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 950,
+      "high": 1150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 100,
+      "central": 150,
+      "high": 180,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"150-155cm\",\"핑크오렌지\"]",
+    "naver_variant_id": "31172652988",
+    "options_ko": [
+     "150-155cm",
+     "핑크오렌지"
+    ],
+    "price_krw": 98000,
+    "price_usd": "98.00",
+    "sku": "FW-5ad966c1f223d3f8f4cd1e50",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 300,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1500,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 950,
+      "high": 1150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 100,
+      "central": 150,
+      "high": 180,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"155-160cm\",\"블루그린\"]",
+    "naver_variant_id": "31172652989",
+    "options_ko": [
+     "155-160cm",
+     "블루그린"
+    ],
+    "price_krw": 98000,
+    "price_usd": "98.00",
+    "sku": "FW-55bc991c61cf237dfbd91c52",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 300,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1500,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 950,
+      "high": 1150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 100,
+      "central": 150,
+      "high": 180,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"155-160cm\",\"핑크오렌지\"]",
+    "naver_variant_id": "31172652990",
+    "options_ko": [
+     "155-160cm",
+     "핑크오렌지"
+    ],
+    "price_krw": 98000,
+    "price_usd": "98.00",
+    "sku": "FW-b2f10a22f00f4085d5c6ae04",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 300,
+      "central": 700,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1500,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 950,
+      "high": 1150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 100,
+      "central": 150,
+      "high": 180,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_clubs",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 98000,
+   "original_krw": 98000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "아화"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "아화"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "주니어4종세트"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "국산"
+   },
+   {
+    "label_ko": "스펙",
+    "value_ko": "ASIA"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "아이언"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "주니어 클럽개수",
+    "value_ko": "2개"
+   },
+   {
+    "label_ko": "구성",
+    "value_ko": "#7아이언, 퍼터"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/8457258079/fairwardgolf-8457258079-001-82a476f47ca6fbde.webp",
+    "sha256": "82a476f47ca6fbdeaabf72ce0e9f56538490c816867c0cf6e710d13bda32187c",
+    "width": 600,
+    "height": 600
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/8457258079/fairwardgolf-8457258079-002-722451b073a0b6ac.webp",
+    "sha256": "722451b073a0b6ac2bc5ce20337e421149ed748f7cb369a787f0e5fb111ea982",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/8457258079/fairwardgolf-8457258079-003-82431061bb355ee1.webp",
+    "sha256": "82431061bb355ee12a92c020c74aa4cf2efc983aa323a93c7aeb9c4955742a47",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/8457258079/fairwardgolf-8457258079-004-9728537fb10e3efa.webp",
+    "sha256": "9728537fb10e3efa28e9e0c7ae9915f9b2774a4bd1d7b711e3404c30b11c73eb",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/8457258079/fairwardgolf-8457258079-005-0ca5db3c1d53e38b.webp",
+    "sha256": "0ca5db3c1d53e38b0507483f58c346ec0cea60c022b5a13459496f1079fa4d57",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/8457258079/fairwardgolf-8457258079-006-b1ab41a47a7cd0fc.webp",
+    "sha256": "b1ab41a47a7cd0fca8e2b00f73bde7961bb1562a2807c919bc424b2947fff036",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/8457258079/fairwardgolf-8457258079-007-1240e20ce39f6fe5.webp",
+    "sha256": "1240e20ce39f6fe535722d780f3313fe1eca694d94529d772dda7d9b062a52d9",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/8457258079/fairwardgolf-8457258079-008-337531820cce5a84.webp",
+    "sha256": "337531820cce5a8409e82481e122676a2d840e81ad1f821dda6e870ede06ac71",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "CONDITIONAL_FREE",
+   "base_fee": 4000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 7000,
+   "policy_text": "100,000원 이상 구매 시 무료 / 제주 추가 3,000원, 제주 외 도서지역 추가 7,000원",
+   "lead_time": {
+    "seller_average_days": 1.5882353,
+    "product_average_days": null,
+    "today_cutoff": "12:00",
+    "today_off": false,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 96,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20230614_269/1686737282588TJSEY_JPEG/p-8416929654-s-2-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20230614_191/1686737282638HRGoc_JPEG/p-8416929654-s-2-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20230614_81/1686737282612Bj0kE_JPEG/p-8416929654-s-2-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20230614_18/1686737282622v2PUi_JPEG/p-8416929654-s-2-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20230614_55/1686737282600uonFk_JPEG/p-8416929654-s-2-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20230614_146/1686737282597gqV3d_JPEG/p-8416929654-s-2-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20230614_97/1686737282663frYmv_JPEG/p-8416929654-s-2-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20230614_65/1686737282557yMdnP_JPEG/p-8416929654-s-2-A-7.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:74344e63265c56a0",
+   "kind": "title",
+   "ko": "주니어 골프채2종세트 7번아이언 퍼터 어린이골프 아화골프"
+  },
+  {
+   "id": "brand:6c458501d842b33c",
+   "kind": "brand",
+   "ko": "아화"
+  },
+  {
+   "id": "option_name:0fb51ac400c0d11b",
+   "kind": "option_name",
+   "ko": "키선택"
+  },
+  {
+   "id": "option_value:1d1c96d76f2a0c1c",
+   "kind": "option_value",
+   "ko": "100cm 이하"
+  },
+  {
+   "id": "option_value:21e12d2896bb1e64",
+   "kind": "option_value",
+   "ko": "100-110cm"
+  },
+  {
+   "id": "option_value:369441540da06baa",
+   "kind": "option_value",
+   "ko": "110-120cm"
+  },
+  {
+   "id": "option_value:c56feed351e36781",
+   "kind": "option_value",
+   "ko": "120-130cm"
+  },
+  {
+   "id": "option_value:fdf9efe5b21a2a29",
+   "kind": "option_value",
+   "ko": "130-140cm"
+  },
+  {
+   "id": "option_value:70ec317e300cdc51",
+   "kind": "option_value",
+   "ko": "140-150cm"
+  },
+  {
+   "id": "option_value:0449fe8972da03ac",
+   "kind": "option_value",
+   "ko": "150-155cm"
+  },
+  {
+   "id": "option_value:0c0c3619c2d6e4dd",
+   "kind": "option_value",
+   "ko": "155-160cm"
+  },
+  {
+   "id": "option_name:d1b87acb2d2239e7",
+   "kind": "option_name",
+   "ko": "색상"
+  },
+  {
+   "id": "option_value:08ef66955f3cecc1",
+   "kind": "option_value",
+   "ko": "블루그린"
+  },
+  {
+   "id": "option_value:66e628999d866622",
+   "kind": "option_value",
+   "ko": "핑크오렌지"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:6c458501d842b33c",
+   "kind": "spec_value",
+   "ko": "아화"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:719d6bd706dff1f2",
+   "kind": "spec_value",
+   "ko": "주니어4종세트"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2c9897140d6cbb96",
+   "kind": "spec_value",
+   "ko": "국산"
+  },
+  {
+   "id": "spec_label:fe1f28dc14e0d313",
+   "kind": "spec_label",
+   "ko": "스펙"
+  },
+  {
+   "id": "spec_value:e1eba3226891f58a",
+   "kind": "spec_value",
+   "ko": "ASIA"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:765d9fbf8f69c5c7",
+   "kind": "spec_value",
+   "ko": "아이언"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:76bfc3afc6e74a18",
+   "kind": "spec_label",
+   "ko": "주니어 클럽개수"
+  },
+  {
+   "id": "spec_value:276aca83ba2d4a2a",
+   "kind": "spec_value",
+   "ko": "2개"
+  },
+  {
+   "id": "spec_label:1d8936275d565bb0",
+   "kind": "spec_label",
+   "ko": "구성"
+  },
+  {
+   "id": "spec_value:f20a6b4a373e8e9e",
+   "kind": "spec_value",
+   "ko": "#7아이언, 퍼터"
+  }
+ ]
+}

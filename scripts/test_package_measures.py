@@ -212,7 +212,7 @@ def test_baselines_block_is_optional_and_the_operators():
     table = load_table()
     block = table["rows"][0]["baselines"]
     assert {k: block[k] for k in BASE if k != "basis"} == {k: v for k, v in BASE.items() if k != "basis"}
-    assert table["version"] == 3 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
+    assert table["version"] == 4 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
     check_row(ROW)                                                    # a row without the block: no composition
     check_row({**ROW, "baselines": BASE})
 
@@ -245,7 +245,7 @@ JUNIOR = next(r for r in load_table()["rows"] if r["category_id"] == "50002787")
     ("클리브랜드 주니어 라지 풀세트 7개 11~14세", None, None),
     ("US키즈골프 어린이 골프채 주니어 세트 가방포함 UL7 54사이즈 5클럽", None, None),
     ("어린이 골프채 3종 + 골프가방 세트 주니어 퍼터 아이언 드라이버 아동 캐디백", None, None),
-    ("주니어 골프채 어린이", "드라이버+퍼터 2개", None),                       # two clubs said as a count: a set
+    ("주니어 골프채 어린이", "드라이버+퍼터 2개", "two_clubs"),                # two clubs: a box for two (2026-11-11)
     ("PGM 주니어 골프 세트", "아이언", "single_club"),                        # the variant names one club
     ("키즈 어린이 주니어 골프채 퍼터 클럽 세트", "6-8세 아이언 6/7번", "single_club"),   # 5035551656
     ("키즈 어린이 주니어 골프채 퍼터 클럽 세트", "주니어 골프가방 블루", None),          # the bag: the larger box
@@ -298,3 +298,14 @@ def test_the_transform_takes_todays_default_and_keeps_the_rest():
     same = {**JUNIOR["kinds"][0]["fields"]["package_length_mm"], "source": "category_default", "kind": "single_club",
             "table_version": 1}
     assert current_defaults({"package_length_mm": same}, s, "1", table)["package_length_mm"] == same
+
+
+@pytest.mark.parametrize("title, kind", [
+    ("주니어 골프채2종세트 7번아이언 퍼터 어린이골프 아화골프", "two_clubs"),          # 8457258079: was the set's box
+    ("주니어 7번아이언+어린이장갑 록스프랜드 2종세트", "two_clubs"),
+    ("어린이 골프채 3종 + 골프가방 세트 주니어 퍼터 아이언 드라이버", None),
+    ("캘러웨이 XT 주니어 풀세트 [10개+골프백]", None),
+    ("주니어 2종 풀세트 가방포함", None),                                       # a bag: the set's box
+])
+def test_two_junior_clubs_get_a_box_for_two(title, kind):
+    assert (default_kind(JUNIOR, title, None) or {}).get("kind") == kind

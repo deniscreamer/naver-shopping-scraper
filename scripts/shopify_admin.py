@@ -168,6 +168,13 @@ class ProductsAdmin(_Writer):
         _errors(result, "productSet")
         return result["product"]
 
+    def set_status(self, product_id: str, status: str) -> str:
+        """The product's status (ACTIVE, DRAFT, ARCHIVED); a DRAFT is off every sales channel and keeps all its data."""
+        data = self._post("""mutation($p: ProductUpdateInput!) { productUpdate(product: $p) {
+            product { id status } userErrors { field message } } }""", {"p": {"id": product_id, "status": status}})
+        _errors(data["productUpdate"], "productUpdate")
+        return data["productUpdate"]["product"]["status"]
+
     def delete_metafields(self, product_id: str, keys: list[tuple[str, str]]) -> None:
         """Remove these metafields from the product (a key it does not have is no error)."""
         if not keys:
