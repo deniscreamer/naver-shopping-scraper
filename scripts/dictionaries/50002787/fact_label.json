@@ -1,20 +1,32 @@
 {
  "format": "dictionary/1",
  "kind": "fact_label",
- "backed_up": "2026-11-12T15:11:11Z",
+ "backed_up": "2026-11-13T03:24:23Z",
  "entries": {
+  "7-10세": "Ages 7-10",
+  "9~12세용": "Ages 9-12",
+  "개인정보제공 동의": "Consent to Provide Personal Information",
   "구 성": "Includes",
   "구성": "Includes",
   "구성 ( 6개 )": "Includes (6 Pieces)",
   "길이": "Length",
+  "단일 제품": "Single Product",
+  "단일옵션": "Single Option",
   "로프트": "Loft",
   "번호": "Number",
   "번호선택": "Club Number",
   "사이즈": "Size",
   "색상": "Color",
   "선택하세요": "Select",
+  "세트": "Set",
+  "스타일 이름": "Style Name",
   "아이언": "Irons",
+  "옵션(9-12세)": "Option (Ages 9-12)",
+  "종류": "Type",
   "컬러": "Color",
-  "타입": "Type"
+  "크기": "Size",
+  "타입": "Type",
+  "필독": "Important",
+  "학생키참고하세요": "Please Check Student's Height"
  }
 }
