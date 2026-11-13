@@ -183,7 +183,7 @@
    },
    {
     "code": "not_golf",
-    "why": "A book set and a loafer that slipped into the category.",
+    "why": "A book set and a loafer that slipped into the category. A cable-pulling mesh grip ('전선 케이블 망 메쉬 인입 풀링 그립', 13753814944, 2026-11-12).",
     "tokens": [
      {
       "text": "전3권",
@@ -192,6 +192,16 @@
      },
      {
       "text": "로퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "전선",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "케이블",
       "notFollowedBy": [],
       "notPrecededBy": []
      }

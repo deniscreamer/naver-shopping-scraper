@@ -370,8 +370,10 @@ def spec_rows(specs: dict[str, Any]) -> list[dict[str, str]]:
                     value = _BRACKETS_RE.sub("", value)
             value = re.sub(r"\s+", " ", value).strip()
         if label in ("브랜드", "제조사") and value.strip() in NOT_A_BRAND or label == "브랜드" \
-                and brand_fallback.clean(value) is None:  # a shop's name in the brand row (세모물상점), an age
-                                                          # (6~8세 퍼터); a 제조사 row naming an importer stays a fact
+                and brand_fallback.clean(value) is None \
+                or label == "제조사" and brand_fallback.clean(value) is None and not brand_fallback.trade_name(value):
+            # a shop's name in the brand row (세모물상점), an age (6~8세 퍼터); a 제조사 row naming an importer stays a
+            # fact, one naming no firm goes ("협력업체", "중국": 13853234379, 2026-11-13)
             continue                                # "Brand: Other" says nothing (10697131625, 2026-11-11)
         if label == "브랜드":
             value = brand_fallback.clean(value) or value          # 코알라(200874), 던롭 던롭 (2026-11-12)
@@ -620,7 +622,8 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int,
         maker["value"] = brand_fallback.clean(str(maker["value"])) or maker["value"]
     if brand_fallback.resellers_own(str(maker.get("value") or ""), raw_maker, shop):
         maker = {}                                  # "홈앤컴협력사" by the shop 홈앤컴: no maker named (2026-11-12)
-    if not brand.get("value") and maker.get("value") and not _PLACEHOLDER_CODE.match(str(maker["value"]).strip()) \
+    if not brand.get("value") and maker.get("value") and brand_fallback.clean(str(maker["value"])) \
+            and not _PLACEHOLDER_CODE.match(str(maker["value"]).strip()) \
             and not _pointer(str(maker["value"])) and str(maker["value"]).strip() not in NOT_A_BRAND \
             and not brand_fallback.trade_name(str(maker["value"])):
         # no brand: the manufacturer (the owner, 2026-11-08); still none: brand_fallback.py, run-level

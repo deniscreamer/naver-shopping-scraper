@@ -1078,10 +1078,6 @@
   },
   "specs": [
    {
-    "label_ko": "제조사",
-    "value_ko": "협력사"
-   },
-   {
     "label_ko": "브랜드",
     "value_ko": "피지엠"
    },
@@ -1561,16 +1557,6 @@
    "id": "option_value:ccaad9d5b8a630f6",
    "kind": "option_value",
    "ko": "12카본 + 골프백 (신축성)"
-  },
-  {
-   "id": "spec_label:3ecc0ce552283c4e",
-   "kind": "spec_label",
-   "ko": "제조사"
-  },
-  {
-   "id": "spec_value:2b13ecd02074309a",
-   "kind": "spec_value",
-   "ko": "협력사"
   },
   {
    "id": "spec_label:559380a1cea8a17c",

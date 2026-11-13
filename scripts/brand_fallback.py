@@ -43,12 +43,22 @@ _AGENCY = re.compile(r"구매\s*대행|병행\s*수입|해외\s*직구")
 _TRADE_NAME = re.compile(r"(?:상점|상사|상회|만물상|홀딩스?|무역|유통|인터내셔[널날]|코퍼레이션|컴퍼니)(?:\s*\(주\)|\s*㈜)?\s*$"
                          # 2026-11-12, junior clubs: 유무상회 (a trading house), 건이네 만물상 (a general store),
                          # 우리쇼핑하자 (a shop: "let's go shopping"), 상아네 / 건이네 ("Sang-a's place": a family shop)
-                         r"|쇼핑|^[가-힣]{1,3}네(?:\s|$)")
-_PARTNER = re.compile(r"\s*협력\s*(?:사|업체)\s*$")
+                         r"|쇼핑|^[가-힣]{1,3}네(?:\s|$)"
+                         # 2026-11-13, the junior pilot: 막팔아스토어, 보라잡화점 (the seller's shop in the 브랜드 row)
+                         r"|스토어\s*$|잡화점?\s*$|몰\s*$")             # 해외몰 (an overseas mall, origin brackets)
+_PARTNER = re.compile(r"\s*(?:협력\s*(?:사|업체)|제휴(?:\s*(?:사|업체))?)\s*$")   # 빅토르몰 제휴 (2026-11-13)
 # a brand row that goes on into the product's words (5140543074, 2026-11-12: "진월드스타 어린이용 주니어 골프 클럽 아이언
 # 퍼터 드라이버") keeps the words before them; one that is only an age and a club ("6~8세 퍼터", 4194532081) is none
-_PRODUCT_WORD = re.compile(r"\s(?:어린이|유아|아동|주니어|키즈|골프\s*클럽|골프채|클럽|퍼터|아이언|드라이버|우드|웨지|유틸|세트)")
+_WORDS = r"(?:어린이|유아|아동|주니어|키즈|골프\s*클럽|골프채|클럽|퍼터|아이언|드라이버|우드|웨지|유틸|세트)"
+# ... and one that starts with them as a word of its own ("주니어", "주니어 어린이용 골프채": 2026-11-13) is none;
+# a brand that only starts like one (키즈짐) stays
+_PRODUCT_WORD = re.compile(r"\s" + _WORDS + r"|^" + _WORDS + r"(?:용)?(?=\s|$)")
 _NOT_A_NAME = re.compile(r"^[\d\s~\-.,세cmCM]*$|^\d+\s*[~\-]?\s*\d*\s*세")
+# words a seller writes in the 브랜드 / 제조사 row that name no firm (2026-11-13, the junior pilot: "주니어" in 3 brand
+# rows became a shop brand, then the brand of 74 junior titles and "PGM" in the dictionary; "별도표기" (stated
+# elsewhere) in 6, "중국" / "중국 브랜드" (a country) in 9, a bare "협력사" (a contract maker) in 2, "알수없음" (unknown)
+# in the origin's brackets, 7659269727)
+_NO_FIRM = re.compile(r"^(?:별도\s*표기|알\s*수\s*없음|미상|불명|없음|모름|(?:중국|한국|국산|일본|대만|베트남|태국|미국)(?:\s*(?:산|브랜드|제조사?|oem|OEM))?)$")
 _CODE = re.compile(r"\s*\((?:\d+|자체\s*제작[^()]*)\)\s*$")       # 코알라(200874), 지브이골프코리아(자체제작 상품)
 
 
@@ -80,7 +90,7 @@ def clean(name: str | None) -> str | None:
         value = value[:cut.start()].strip()
     words = value.split(" ")
     value = " ".join(w for i, w in enumerate(words) if i == 0 or w != words[i - 1])
-    if not value or _NOT_A_NAME.search(value) or trade_name(value):
+    if not value or _NOT_A_NAME.search(value) or _NO_FIRM.search(value) or trade_name(value):
         return None
     return value
 
@@ -128,8 +138,9 @@ _MAKING = re.compile(r"(?i)\b(?:oem|odm)\b|^(?:중국|한국|국산|일본|대�
 
 def distributors(origin: str | None) -> list[str]:
     parts = [p.strip() for x in _BRACKETS.findall(origin or "") for p in re.split(r"[/,]", x)]
-    return [p for p in parts if p and not trade_name(p) and not _POINTER.search(p) and not _AGENCY.search(p)
-            and not _MAKING.search(p)]
+    # a bare 협력사 or a word that names no firm is none either (2026-11-13: "(협력사)", "(해외몰)")
+    return [clean(p) for p in parts if p and clean(p) and not trade_name(p) and not _POINTER.search(p)
+            and not _AGENCY.search(p) and not _MAKING.search(p)]
 
 
 # a Korean brand (핑, 핑골프, 혼마) is counted in the images' text only where a word starts: 13445783517, 2026-11-11,
@@ -166,8 +177,14 @@ def in_images(rows: list[str], brands: list[str]) -> Counter:
     return Counter({b: c for b, c in counts.items() if c})
 
 
+# a spec table's headings, not a brand (13024208178, 2026-11-13: "DEGREE LOFT")
+_SPEC_WORDS = {"DEGREE", "LOFT", "LIE", "ANGLE", "LENGTH", "SHAFT", "FLEX", "GRIP", "WEIGHT", "HEAD", "CLUB", "IRON",
+               "DRIVER", "PUTTER", "WEDGE", "WOOD", "SIZE", "AGE", "HEIGHT", "TOTAL", "MODEL", "TYPE", "COLOR", "SPEC"}
+
+
 def latin_phrases(rows: list[str]) -> Counter:
-    return Counter(m.upper() for r in rows for m in _LATIN_PHRASE.findall(r))
+    return Counter(u for r in rows for m in _LATIN_PHRASE.findall(r)
+                   if not set((u := m.upper()).split()) <= _SPEC_WORDS)
 
 
 def leading(title: str | None, known: list[str]) -> str | None:

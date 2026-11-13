@@ -110,6 +110,11 @@ def test_the_images_name_the_maker_when_the_seller_names_a_trader(name, title, o
     ("상아네", None), ("세모물상점", None), ("유니코스 협력사", "유니코스"),
     ("GB", "GB"), ("핑", "핑"), ("아화골프", "아화골프"), ("U.S. Kids Golf", "U.S. Kids Golf"),
     ("혼마코리아", "혼마코리아"), ("US키즈골프", "US키즈골프"), ("", None),
+    # 2026-11-13, the junior pilot: words that name no firm, the seller's shop
+    ("주니어", None), ("주니어 어린이용 골프채 클럽", None), ("어린이용", None), ("키즈짐", "키즈짐"),
+    ("별도표기", None), ("중국", None), ("중국 브랜드", None), ("중국 제조사", None), ("중국산", None),
+    ("협력사", None), ("협력업체", None), ("막팔아스토어", None), ("보라잡화점", None), ("해외몰", None),
+    ("빅토르몰 제휴", None), ("EVEN", "EVEN"), ("알수없음", None), ("미상", None),
 ])
 def test_a_sellers_brand_row_cleaned(name, brand):
     assert B.clean(name) == brand
@@ -159,3 +164,23 @@ def test_a_known_brand_starting_the_title():
     assert B.decide("프랭클린 스포츠 조절 가능한 유소년 골프 세트", None, [], [], known) == (
         "프랭클린 스포츠", "title_known", [])
     assert B.decide("프랭클린 스포츠 유소년 세트", None, [], [])[1] == "none"   # no dictionary: as before
+
+
+def test_a_generic_word_is_never_a_shop_brand():
+    # 2026-11-13: "주니어" in three brand rows became a shop brand, then the brand of 74 junior titles
+    prepared = [{"product": {"brand_ko": B.clean("주니어"), "brand_source": "specs:브랜드"}},
+                {"product": {"brand_ko": "인파로", "brand_source": "specs:브랜드"}}]
+    assert B.shop_brands(prepared) == ["인파로"]
+    assert B.decide("초등학생골프채 주니어 드라이버 퍼터", None, ["인파로"], [])[1] == "none"
+
+
+def test_the_origin_names_no_partner_or_mall():
+    assert B.distributors("중국(협력사)") == []
+    assert B.distributors("중국(해외몰)") == []
+    assert B.distributors("중국(새롭다 협력사)") == ["새롭다"]
+
+
+def test_a_spec_tables_headings_are_no_latin_brand():
+    rows = ["DEGREE LOFT"] * 6 + ["BEN SAYERS"] * 5                    # 13024208178
+    assert B.decide("주니어 세트", None, [], rows)[:2] == ("BEN SAYERS", "images_text_latin")
+    assert B.decide("주니어 세트", None, [], ["DEGREE LOFT"] * 6)[1] == "none"

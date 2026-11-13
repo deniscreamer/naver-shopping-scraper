@@ -129,6 +129,7 @@ def test_category_title_rules(category, title, code):
 @pytest.mark.parametrize("title, code", [
     ("주니어골프백(스탠드형) 어린이 골프가방", "title:bag_only"),           # 314400655, published then withdrawn
     ("록스프랜드 주니어 7번아이언 학교/단체 세트(10개) 아화", "title:group_pack"),   # 10348222504, withdrawn
+    ("전선 케이블 망 메쉬 인입 풀링 그립 2눈 경량 중량 메쉬그립", "title:not_golf"),   # 13753814944
     ("주니어 골프채 단체용 7번 아이언 10개", "title:group_pack"),
     ("US키즈골프 UL7 주니어 스탠드 골프백", "title:bag_only"),
     ("재미있는 주니어 골프세트 스탠드 골프백 골프채 3종", None),           # a set with a bag stays

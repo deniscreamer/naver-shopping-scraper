@@ -1,0 +1,801 @@
+{
+ "key": "fairwardgolf:naver:100069141:8742181933",
+ "listing": {
+  "product_id": "8742181933",
+  "nv_mid": "86286682256",
+  "link": "https://smartstore.naver.com/anas/products/8742181933",
+  "name": "어린이 골프채 키즈 초등 중 학생 주니어 클럽 퍼터",
+  "store": {
+   "name": "아나스",
+   "slug": "anas",
+   "link": "https://smartstore.naver.com/anas",
+   "channel_no": "100069141",
+   "grade": "SPROUT",
+   "is_brand_store": false
+  },
+  "pricing": {
+   "sale_price": 37180,
+   "discounted_price": 35320,
+   "discount_ratio": 5,
+   "currency": "KRW"
+  },
+  "category_id": "50002787",
+  "reviews": {
+   "count": 0,
+   "average_score": 0
+  },
+  "stock_quantity": 2247,
+  "image": "https://shopping-phinf.pstatic.net/main_8628668/86286682256.jpg",
+  "is_ad": false,
+  "query": "어린이 골프채",
+  "batch": 3,
+  "seen_at": "2026-11-12T15:49:07+00:00",
+  "key": "fairwardgolf:naver:100069141:8742181933"
+ },
+ "details": {
+  "id": "8742181933",
+  "origin_product_id": "8700936529",
+  "name": "어린이 골프채 키즈 초등 중 학생 주니어 클럽 퍼터",
+  "link": "https://smartstore.naver.com/anas/products/8742181933",
+  "catalog_id": "86286682256",
+  "catalog_link": "https://search.shopping.naver.com/catalog/86286682256",
+  "status": "SALE",
+  "sale_type": "NEW",
+  "is_displayed": true,
+  "pricing": {
+   "sale_price": 37180,
+   "discounted_price": 35320,
+   "discount_ratio": 5,
+   "seller_discount": 1860,
+   "manager_discount": 0,
+   "currency": "KRW",
+   "points": {
+    "purchase": 353,
+    "text_review": 0,
+    "photo_video_review": 0,
+    "after_use_text_review": 0,
+    "after_use_photo_video_review": 0,
+    "store_member_review": 0
+   }
+  },
+  "stock_quantity": 2247,
+  "has_options": true,
+  "has_supplements": false,
+  "images": [
+   "https://shop-phinf.pstatic.net/20230615_163/16868133655764wyfv_JPEG/0039.jpg"
+  ],
+  "category": {
+   "id": "50002787",
+   "name": "주니어용클럽",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "주니어용클럽"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002787"
+   ]
+  },
+  "brand": null,
+  "brand_id": null,
+  "manufacturer": null,
+  "model_name": "해당없음",
+  "tags": null,
+  "page_title": null,
+  "reviews": {
+   "count": 0,
+   "average_score": 0.0,
+   "premium_count": 0
+  },
+  "delivery": {
+   "fee_type": "UNIT_QUANTITY_PAID",
+   "base_fee": 5500,
+   "is_free": false,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": null,
+   "company": "CJ대한통운",
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "extra_fee_text": null
+  },
+  "is_free_delivery": false,
+  "is_today_delivery": false,
+  "has_arrival_guarantee": false,
+  "has_regular_subscription": false,
+  "has_free_return_insurance": false,
+  "is_minor_purchasable": true,
+  "is_adult_restricted": false,
+  "is_in_naver_shopping": true,
+  "option_groups": null,
+  "variants": null,
+  "supplements": null,
+  "description": {
+   "html": "<img alt=\"\" src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://gi.esmplus.com/gamci2021/GOLF/golfclub.jpg\"  /> <img alt=\"\" src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://ai.esmplus.com/inparo/Golf/wedge_jr.jpg\"  /><img alt=\"\" src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://ai.esmplus.com/inparo/Customer/caution_golf.jpg\"  /><p style=\"text-align: center;padding:5px;\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://cdn2.domeggook.com/china/domeme/upload/content/tempimg/bane2_m.png\"  /></p><p style=\"text-align: center;padding:5px;\"><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://cdn2.domeggook.com/china/domeme/upload/content/tempimg/bane5_s.png\"  /></p>",
+   "text": null,
+   "editor_type": "NONE",
+   "images": [
+    "https://shop-phinf.pstatic.net/20230620_297/1687268513592gbcnb_JPEG/p-8700936529-s-1-A-0.jpg",
+    "https://shop-phinf.pstatic.net/20230620_68/16872685136767Se9n_JPEG/p-8700936529-s-1-A-1.jpg",
+    "https://shop-phinf.pstatic.net/20230620_272/1687268513593i6bxY_JPEG/p-8700936529-s-1-A-2.jpg",
+    "https://shop-phinf.pstatic.net/20230620_71/1687268513511bHU1f_JPEG/p-8700936529-s-1-A-3.jpg",
+    "https://shop-phinf.pstatic.net/20230620_300/1687268513621WnDIA_JPEG/p-8700936529-s-1-A-4.jpg",
+    "https://shop-phinf.pstatic.net/20230620_110/1687268513656SPqMT_JPEG/p-8700936529-s-1-A-5.jpg",
+    "https://shop-phinf.pstatic.net/20230620_87/1687268513636q5XWM_JPEG/p-8700936529-s-1-A-6.jpg",
+    "https://shop-phinf.pstatic.net/20230620_110/1687268513623ldjJb_JPEG/p-8700936529-s-1-A-7.jpg",
+    "https://shop-phinf.pstatic.net/20230620_74/1687268513511Ot0GV_JPEG/p-8700936529-s-1-A-8.jpg",
+    "https://shop-phinf.pstatic.net/20230620_153/1687268513667WYi6K_JPEG/p-8700936529-s-1-A-9.jpg",
+    "https://shop-phinf.pstatic.net/20230620_114/1687268513508ff3lQ_JPEG/p-8700936529-s-1-A-10.jpg",
+    "https://shop-phinf.pstatic.net/20230620_28/1687268513560nFtYB_JPEG/p-8700936529-s-1-A-11.jpg",
+    "https://shop-phinf.pstatic.net/20230620_10/1687268513608udmib_JPEG/p-8700936529-s-1-A-12.jpg",
+    "https://shop-phinf.pstatic.net/20230620_128/1687268513645yDlAJ_JPEG/p-8700936529-s-1-A-13.jpg",
+    "https://shop-phinf.pstatic.net/20230620_181/1687268513526qVmJS_JPEG/p-8700936529-s-1-A-14.jpg",
+    "https://shop-phinf.pstatic.net/20230620_203/16872685135936UK2V_JPEG/p-8700936529-s-1-A-15.jpg",
+    "https://shop-phinf.pstatic.net/20230620_99/1687268513622loym1_JPEG/p-8700936529-s-1-A-16.jpg",
+    "https://shop-phinf.pstatic.net/20230620_39/1687268513571s6Gxd_JPEG/p-8700936529-s-1-A-17.jpg",
+    "https://shop-phinf.pstatic.net/20230620_167/1687268513603qAJaQ_JPEG/p-8700936529-s-1-A-18.jpg",
+    "https://shop-phinf.pstatic.net/20230620_99/1687268513593aPaak_JPEG/p-8700936529-s-1-A-19.jpg",
+    "https://shop-phinf.pstatic.net/20230620_183/1687268513591ix0z3_JPEG/p-8700936529-s-1-A-20.jpg",
+    "https://shop-phinf.pstatic.net/20230620_13/1687268513709n0Ptb_JPEG/p-8700936529-s-1-A-21.jpg",
+    "https://shop-phinf.pstatic.net/20230620_256/16872685137266CfsC_JPEG/p-8700936529-s-1-A-22.jpg",
+    "https://shop-phinf.pstatic.net/20230620_158/1687268513662r9Tgn_JPEG/p-8700936529-s-1-A-23.jpg",
+    "https://shop-phinf.pstatic.net/20230620_241/1687268513688gKvpY_JPEG/p-8700936529-s-1-A-24.jpg"
+   ]
+  },
+  "notice": {
+   "type": "ETC",
+   "items": [
+    {
+     "label": "품명 / 모델명",
+     "value": "상세정보 별도표기 / 상세정보 별도표기",
+     "is_see_description": true
+    },
+    {
+     "label": "법에 의한 인증, 허가 등을 받았음을 확인할 수 있는 경우 그에 대한 사항",
+     "value": "상세정보 별도표기",
+     "is_see_description": true
+    },
+    {
+     "label": "제조자(사)",
+     "value": "중국",
+     "is_see_description": false
+    },
+    {
+     "label": "제조국",
+     "value": "수입산_아시아_중국",
+     "is_see_description": false
+    },
+    {
+     "label": "A/S 책임자",
+     "value": "상세정보 별도표기",
+     "is_see_description": true
+    },
+    {
+     "label": "A/S 전화번호",
+     "value": null,
+     "is_see_description": false
+    }
+   ],
+   "terms": [
+    {
+     "label": "재화등의 배송방법에 관한 정보",
+     "value": "택배",
+     "is_see_description": false
+    },
+    {
+     "label": "주문 이후 예상되는 배송기간",
+     "value": "대금 지급일로부터 3일 이내에 발송",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+     "value": "상세정보 별도표기",
+     "is_see_description": true
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+     "value": "편도 7500원 (최초 배송비 무료인 경우 15000원 부과)",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+     "value": "상세정보 별도표기",
+     "is_see_description": true
+    },
+    {
+     "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+     "value": "상세정보 별도표기",
+     "is_see_description": true
+    },
+    {
+     "label": "재화등의 A/S 관련 전화번호",
+     "value": null,
+     "is_see_description": false
+    },
+    {
+     "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+     "value": "상세정보 별도표기",
+     "is_see_description": true
+    },
+    {
+     "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+     "value": "상세정보 별도표기",
+     "is_see_description": true
+    },
+    {
+     "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+     "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+     "is_see_description": false
+    }
+   ]
+  },
+  "facts": {
+   "brand": null,
+   "manufacturer": {
+    "value": "중국",
+    "source": "notice:제조자(사)"
+   },
+   "model_name": null,
+   "origin": {
+    "value": "수입산_아시아_중국",
+    "source": "notice:제조국"
+   }
+  },
+  "store": {
+   "id": "100069141",
+   "uid": "2sWDwXXjZXkcrwJEmUCMl",
+   "name": "아나스",
+   "slug": "anas",
+   "link": "https://smartstore.naver.com/anas",
+   "type": "smart_store",
+   "grade": "FOURTH",
+   "sale_count": 71,
+   "merchant_id": "510071608",
+   "business": {
+    "legal_name": "라인컴퍼니",
+    "representative": "김태환",
+    "type": "PRIVATE",
+    "is_business": true,
+    "is_overseas": false,
+    "phone": null,
+    "email": null,
+    "address": null
+   }
+  }
+ },
+ "specs": {
+  "id": "8742181933",
+  "name": "어린이 골프채 키즈 초등 중 학생 주니어 클럽 퍼터",
+  "link": "https://smartstore.naver.com/anas/products/8742181933",
+  "query": "어린이 골프채 키즈 초등 중 학생 주니어 클럽 퍼터",
+  "category": {
+   "id": "50002787",
+   "name": "주니어용클럽",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "주니어용클럽"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002787"
+   ]
+  },
+  "specs": [
+   {
+    "label": "상품번호",
+    "value": "8742181933"
+   },
+   {
+    "label": "모델명",
+    "value": "해당없음"
+   },
+   {
+    "label": "원산지",
+    "value": "수입산_아시아_중국"
+   }
+  ],
+  "is_complete": true,
+  "facts": {
+   "brand": null,
+   "manufacturer": {
+    "value": "중국",
+    "source": "notice:제조자(사)"
+   },
+   "model_name": null,
+   "origin": {
+    "value": "수입산_아시아_중국",
+    "source": "specs:원산지"
+   }
+  },
+  "options": {
+   "has_options": true,
+   "status": "SALE",
+   "is_sold_out": false,
+   "stock_quantity": 2247,
+   "option_groups": [
+    {
+     "id": "8021434321",
+     "name": "클럽 선택",
+     "type": "COMBINATION"
+    }
+   ],
+   "variants": [
+    {
+     "id": "32515728311",
+     "name": "9-12세 아이언",
+     "options": [
+      "9-12세 아이언"
+     ],
+     "extra_price": 6300,
+     "stock_quantity": 732,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2023-06-20"
+    },
+    {
+     "id": "32515728312",
+     "name": "9-12세 퍼터",
+     "options": [
+      "9-12세 퍼터"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 697,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2023-06-20"
+    },
+    {
+     "id": "32515728313",
+     "name": "9-12세 드라이버",
+     "options": [
+      "9-12세 드라이버"
+     ],
+     "extra_price": 17280,
+     "stock_quantity": 818,
+     "is_available": true,
+     "is_today_dispatch": null,
+     "registered_at": "2023-06-20"
+    },
+    {
+     "id": "32515728314",
+     "name": "주니어 샌드 웨지",
+     "options": [
+      "주니어 샌드 웨지"
+     ],
+     "extra_price": 0,
+     "stock_quantity": 0,
+     "is_available": false,
+     "is_today_dispatch": null,
+     "registered_at": "2023-06-20"
+    }
+   ],
+   "simple_options": [],
+   "text_options": [],
+   "supplements": []
+  },
+  "delivery": {
+   "fee_type": "UNIT_QUANTITY_PAID",
+   "base_fee": 5500,
+   "is_free": false,
+   "policy_text": "10개마다 부과 / 제주 추가 4,000원, 제주 외 도서지역 추가 7,000원",
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "NORMAL",
+   "is_today_delivery": false,
+   "company": "CJ 대한통운(오네)",
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": 7000,
+   "extra_fee_text": null,
+   "is_overseas": false,
+   "scope": "domestic",
+   "customs_tax_type": null,
+   "lead_time": {
+    "seller_average_days": 2.0,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   }
+  },
+  "measures": {
+   "is_set": false,
+   "weights": [],
+   "dimensions": [],
+   "references": [],
+   "review": []
+  },
+  "read_at": "2026-11-12T22:28:26Z"
+ },
+ "variants": {
+  "paid": true,
+  "base_price": 35320,
+  "variants": [
+   {
+    "id": "32515728311",
+    "name": "9-12세 아이언",
+    "options": [
+     "9-12세 아이언"
+    ],
+    "extra_price": 6300,
+    "price": 41620,
+    "price_in_name": null,
+    "stock_quantity": 732,
+    "is_available": true
+   },
+   {
+    "id": "32515728312",
+    "name": "9-12세 퍼터",
+    "options": [
+     "9-12세 퍼터"
+    ],
+    "extra_price": 0,
+    "price": 35320,
+    "price_in_name": null,
+    "stock_quantity": 697,
+    "is_available": true
+   },
+   {
+    "id": "32515728313",
+    "name": "9-12세 드라이버",
+    "options": [
+     "9-12세 드라이버"
+    ],
+    "extra_price": 17280,
+    "price": 52600,
+    "price_in_name": null,
+    "stock_quantity": 818,
+    "is_available": true
+   },
+   {
+    "id": "32515728314",
+    "name": "주니어 샌드 웨지",
+    "options": [
+     "주니어 샌드 웨지"
+    ],
+    "extra_price": 0,
+    "price": 35320,
+    "price_in_name": null,
+    "stock_quantity": 0,
+    "is_available": false
+   }
+  ],
+  "available": 3,
+  "sold_out": 1,
+  "skipped_paid": 0,
+  "name_mismatches": [],
+  "simple_options": [],
+  "text_options": [],
+  "supplements": []
+ },
+ "package": [
+  {
+   "variant_id": "32515728311",
+   "fields": {
+    "product_weight_g": {
+     "low": 200,
+     "central": 350,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_weight_g": {
+     "low": 500,
+     "central": 1000,
+     "high": 1500,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_length_mm": {
+     "low": 700,
+     "central": 900,
+     "high": 1100,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_width_mm": {
+     "low": 80,
+     "central": 120,
+     "high": 150,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_height_mm": {
+     "low": 60,
+     "central": 100,
+     "high": 120,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "32515728312",
+   "fields": {
+    "product_weight_g": {
+     "low": 200,
+     "central": 350,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_weight_g": {
+     "low": 500,
+     "central": 1000,
+     "high": 1500,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_length_mm": {
+     "low": 700,
+     "central": 900,
+     "high": 1100,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_width_mm": {
+     "low": 80,
+     "central": 120,
+     "high": 150,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_height_mm": {
+     "low": 60,
+     "central": 100,
+     "high": 120,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "32515728313",
+   "fields": {
+    "product_weight_g": {
+     "low": 200,
+     "central": 350,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_weight_g": {
+     "low": 500,
+     "central": 1000,
+     "high": 1500,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_length_mm": {
+     "low": 700,
+     "central": 900,
+     "high": 1100,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_width_mm": {
+     "low": 80,
+     "central": 120,
+     "high": 150,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_height_mm": {
+     "low": 60,
+     "central": 100,
+     "high": 120,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    }
+   },
+   "product_size": []
+  },
+  {
+   "variant_id": "32515728314",
+   "fields": {
+    "product_weight_g": {
+     "low": 200,
+     "central": 350,
+     "high": 600,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_weight_g": {
+     "low": 500,
+     "central": 1000,
+     "high": 1500,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_length_mm": {
+     "low": 700,
+     "central": 900,
+     "high": 1100,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_width_mm": {
+     "low": 80,
+     "central": 120,
+     "high": 150,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    },
+    "package_height_mm": {
+     "low": 60,
+     "central": 100,
+     "high": 120,
+     "source": "category_default",
+     "confidence": 1,
+     "kind": "single_club",
+     "reliability": "estimated_average",
+     "table_version": 4,
+     "approved_by": "owner",
+     "approved_at": "2026-11-11"
+    }
+   },
+   "product_size": []
+  }
+ ],
+ "reviews": {
+  "product": {
+   "id": "8742181933",
+   "name": "어린이 골프채 키즈 초등 중 학생 주니어 클럽 퍼터",
+   "link": "https://smartstore.naver.com/anas/products/8742181933"
+  },
+  "summary": null,
+  "mode": "quality",
+  "count": 0,
+  "scanned": 0,
+  "passes": [],
+  "is_complete": true,
+  "results": []
+ },
+ "photos": {
+  "store": "fairwardgolf",
+  "total": 1,
+  "files": [
+   {
+    "position": 0,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20230615_163/16868133655764wyfv_JPEG/0039.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20230615_163/16868133655764wyfv_JPEG/0039.jpg",
+    "source_sha256": "9d76e02a168b7c1819b835f61719e0fa545b800560bbfc794042d77045de98b7",
+    "source_bytes": 263101,
+    "source_format": "JPEG",
+    "source_width": 1000,
+    "source_height": 1000,
+    "first_frame_of": null,
+    "file": "images/8742181933/fairwardgolf-8742181933-001-f45af6ddcfdd8a91.webp",
+    "sha256": "f45af6ddcfdd8a91c154bd45d589924fe55a2137ffc206066d7f9f65bbe607c7",
+    "bytes": 37370,
+    "width": 1000,
+    "height": 1000,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true,
+  "originals": 1
+ },
+ "review_media": {
+  "store": "fairwardgolf",
+  "files": [],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true
+ }
+}

@@ -1,0 +1,301 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102694472:13256185420",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "title_names_one_variant",
+   "detail": "드라이버"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "옵션"
+  },
+  {
+   "code": "gift_hidden",
+   "detail": "정성포장빠른배송"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/tjsekfrn29/products/13256185420",
+  "channel_no": "102694472",
+  "product_id": "13256185420",
+  "category_id": "50002787"
+ },
+ "product": {
+  "title_ko": "막팔아스토어 주니어 골프채 어린이퍼터 주니어퍼터 어린이드라이버",
+  "brand_ko": "골드벙커",
+  "brand_source": "manufacturer:specs:제조사",
+  "attributes": {},
+  "options": [
+   {
+    "name_ko": "옵션",
+    "values_ko": [
+     "9-12세 아이언",
+     "9-12세 드라이버"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"01. 9-12세 아이언\"]",
+    "naver_variant_id": "56879751277",
+    "options_ko": [
+     "9-12세 아이언"
+    ],
+    "price_krw": 34630,
+    "price_usd": "34.63",
+    "sku": "FW-b54a994bd50d5e16adf0d91f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"03. 9-12세 드라이버\"]",
+    "naver_variant_id": "56879751278",
+    "options_ko": [
+     "9-12세 드라이버"
+    ],
+    "price_krw": 43400,
+    "price_usd": "43.40",
+    "sku": "FW-6a0afbae88fdaa52679945eb",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 34630,
+   "original_krw": 38480,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "골드벙커"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "해외|아시아|중국"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13256185420/fairwardgolf-13256185420-001-bc939c84cfac14c9.webp",
+    "sha256": "bc939c84cfac14c9ec7f01c847fd6779fed3a512032396a609dff96def5331f2",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": 4000,
+   "policy_text": "제주 추가 4,000원, 제주 외 도서지역 추가 4,000원",
+   "lead_time": {
+    "seller_average_days": 1.5454545,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "본 제품을 구매하시면 원활한 배송을 위해 꼭 필요한 고객님의 개인정보를 (성함, 주소, 전화번호 등) 택배사 및 제 3업체에서 이용하는 것에 동의하시는 것으로 간주됩니다.\n개인정보는 배송 외의 용도로는 절대 사용되지 않으니 안심하시기 바랍니다. 안전하게 배송해 드리겠습니다.",
+  "description_images": [
+   "https://gi.esmplus.com/gamci2021/GOLF/golfclub.jpg",
+   "https://ai.esmplus.com/inparo/Golf/wedge_jr.jpg",
+   "https://ai.esmplus.com/inparo/Customer/caution_golf.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:92dd0c0d5c314497",
+   "kind": "title",
+   "ko": "막팔아스토어 주니어 골프채 어린이퍼터 주니어퍼터 어린이드라이버"
+  },
+  {
+   "id": "brand:17433b517596640a",
+   "kind": "brand",
+   "ko": "골드벙커"
+  },
+  {
+   "id": "option_name:cb076d9796f531e2",
+   "kind": "option_name",
+   "ko": "옵션"
+  },
+  {
+   "id": "option_value:d17fdd6a8012fe06",
+   "kind": "option_value",
+   "ko": "9-12세 아이언"
+  },
+  {
+   "id": "option_value:891f00ed8b5df7c1",
+   "kind": "option_value",
+   "ko": "9-12세 드라이버"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:17433b517596640a",
+   "kind": "spec_value",
+   "ko": "골드벙커"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:574776636e062a13",
+   "kind": "spec_value",
+   "ko": "해외|아시아|중국"
+  }
+ ]
+}

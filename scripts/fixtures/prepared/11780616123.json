@@ -1,0 +1,330 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:101398113:11780616123",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "option_name_placeholder",
+   "detail": "선택"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "PAID 3000 KRW"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/smartcowork/products/11780616123",
+  "channel_no": "101398113",
+  "product_id": "11780616123",
+  "category_id": "50002787"
+ },
+ "product": {
+  "title_ko": "주니어골프채 어린이골프채 초등생 7번 아이언 연습 남여 초보",
+  "brand_ko": "BURDION",
+  "brand_source": "manufacturer:specs:제조사",
+  "attributes": {
+   "gender": {
+    "value": "unisex",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "title",
+      "value": "unisex",
+      "text": "주니어골프채 어린이골프채 초등생 7번 아이언 연습 남여 초보"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "주니어 골프채"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "선택",
+    "values_ko": [
+     "버디온 주니어 7번 아이언 3-7세",
+     "버디온 주니어 7번 아이언 8-12세"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"버디온 주니어 7번 아이언 3-7세\"]",
+    "naver_variant_id": "48610225092",
+    "options_ko": [
+     "버디온 주니어 7번 아이언 3-7세"
+    ],
+    "price_krw": 36760,
+    "price_usd": "36.76",
+    "sku": "FW-6313b67ede92a8f4ecd19b64",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"버디온 주니어 7번 아이언 8-12세\"]",
+    "naver_variant_id": "48610225094",
+    "options_ko": [
+     "버디온 주니어 7번 아이언 8-12세"
+    ],
+    "price_krw": 36760,
+    "price_usd": "36.76",
+    "sku": "FW-21ec5091712df470d4f63e95",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 4,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 36760,
+   "original_krw": 38700,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "BURDION"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "BURDION BUTTON JUNIOR #7 iron"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/11780616123/fairwardgolf-11780616123-001-51bb2edc21673162.webp",
+    "sha256": "51bb2edc21673162baff010e6f098085ea267ceb71e247aa7335a007fbc70244",
+    "width": 760,
+    "height": 760
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "PAID",
+   "base_fee": 3000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 20000,
+   "extra_fee_area3": 40000,
+   "policy_text": "제주 추가 20,000원, 제주 외 도서지역 추가 40,000원",
+   "lead_time": {
+    "seller_average_days": 1.6571429,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 92,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20250429_185/1745928119758Rmrrw_JPEG/p-11726037806-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20250429_10/1745928119760IKxg6_JPEG/p-11726037806-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20250429_129/1745928119757dNb3o_JPEG/p-11726037806-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20250429_296/1745928119760IogcP_JPEG/p-11726037806-s-1-A-3.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:c7a5b267af4bb38c",
+   "kind": "title",
+   "ko": "주니어골프채 어린이골프채 초등생 7번 아이언 연습 남여 초보"
+  },
+  {
+   "id": "brand:26521ed731c7e62c",
+   "kind": "brand",
+   "ko": "BURDION"
+  },
+  {
+   "id": "option_name:8d1a750c9351d1b8",
+   "kind": "option_name",
+   "ko": "선택"
+  },
+  {
+   "id": "option_value:56b6cdd6ea3067bd",
+   "kind": "option_value",
+   "ko": "버디온 주니어 7번 아이언 3-7세"
+  },
+  {
+   "id": "option_value:1a7a9409b6936e54",
+   "kind": "option_value",
+   "ko": "버디온 주니어 7번 아이언 8-12세"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:26521ed731c7e62c",
+   "kind": "spec_value",
+   "ko": "BURDION"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:252f10e696bd2eeb",
+   "kind": "spec_value",
+   "ko": "BURDION BUTTON JUNIOR #7 iron"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  }
+ ]
+}

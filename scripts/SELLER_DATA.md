@@ -105,6 +105,11 @@ Brand -> `transform.prepare`, `brand_fallback.py` (2026-11-08)
   "<its shop>협력사" as the maker (재팬도코도코, 홈앤컴, 굿세라, 구띵상점: 9 shops of 45 whose brand or maker is the
   shop's name): neither is a brand (`brand_fallback.resellers_own`); a shop selling its own brand (스컬독, 버디온,
   아화골프) writes no 협력. Still taken as written: a shop name with no such sign (Pick Cat).
+- The junior pilot (300 products, 2026-11-13) added words that name no firm in the 브랜드 / 제조사 rows and the
+  원산지 brackets: "주니어" (3 brand rows: it became a shop brand, then the brand of 74 junior titles), "별도표기",
+  "중국" / "중국 브랜드" / "중국 제조사", a bare "협력사" / "협력업체", "알수없음", "해외몰"; the seller's shop with
+  스토어 / 잡화점 / 몰 ("막팔아스토어", "보라잡화점", "빅토르몰 제휴"); a spec table's heading read as a Latin
+  brand ("DEGREE LOFT"). `brand_fallback.clean` gives none for each, a 제조사 row naming no firm is not shown.
 - A purchase agency's import (구매대행, 원산지 기타/해외) states no brand row and no maker: the title may start with the
   brand in Korean ("프랭클린 스포츠 ...", 13324651260): a brand the dictionary knows starting the title is taken
   (`brand_fallback` step 3b). With none anywhere, junior clubs hold it (`agency_no_brand`): three cut US titles

@@ -3,6 +3,15 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
+## Unreleased
+
+- **Brands** (the junior pilot, 300 products, 2026-11-13): words that name no firm are no brand
+  (`brand_fallback.clean`): a brand row that is only the product's words ("주니어": it had become a shop brand and
+  the brand of 74 junior titles, and "PGM" in the brand dictionary), "별도표기", a country ("중국 브랜드"), a bare
+  협력사, "알수없음", a shop with 스토어 / 잡화점 / 몰 / 제휴; the origin's brackets and the maker go through the same
+  cleaning; a spec heading ("DEGREE LOFT") is no Latin brand; a 제조사 row naming no firm is not shown. Eight such
+  entries left the brand dictionary. Five fixtures of the pilot.
+
 ## 0.16.0 (2026-11-12)
 
 - **Brands** (the junior clubs' 30, 2026-11-12): a trading company's name is no brand (`brand_fallback.trade_name`:
