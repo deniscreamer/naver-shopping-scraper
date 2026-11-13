@@ -45,7 +45,9 @@ starts its own bridge on the same port, so stop the API server first (or the por
 3. **Next batches by the page.** Wheel scrolls (debugger input) bring the list end into view; the page mints its
    token and fetches the next batch; `extension/capture_main.js` copies the answer body (page world wrapper around
    `fetch` / XHR for `/ns/v1/`), the adapter hands it over with `captures`. ~2-4 s per batch of 50; `cursor` grows
-   by ~38 per batch. Until `hasMore=false`.
+   by ~38 per batch. Until `hasMore=false`. Before each next batch the walk rests (`ext_listing.BATCH_REST_S`,
+   3-7 s; every `REST_EVERY` = 10 batches `LONG_REST_S`, 20-40 s; the owner, 2026-11-12): a deep read is spread
+   out, ~8 min per 50 batches more.
 4. **Rows.** `composite.listing_row`: the canonical store link `https://{smartstore|brand}.naver.com/<slug>/products/<id>`
    (store from `mallUrl`'s `inflow/outlink?url=`, or a direct store link; cards without one are skipped), name, store, prices, category, reviews, stock, image,
    `is_ad` (`cardType == "AD"`). Deduplicated by `channelProductId` (ads repeat).

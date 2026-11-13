@@ -53,6 +53,10 @@ CONNECT_WAIT_S = 600       # for the extension to (re)connect
 HUMAN_WAIT_S = config.NAVER_CAPTCHA_WAIT_S     # a captcha is reported and waited for this long (default 600 s)
 CAPTCHA_INPUT = 'input[type="text"]'           # the answer field on Naver's captcha page (2026-11-05)
 SCROLLS_PER_BATCH = 25     # wheel scrolls before a batch counts as stalled
+# 2026-11-12, the owner: a long listing read (jobs read 32 to 200 batches a query from the top) is spread out, not
+# one burst: a short random rest before each next batch is scrolled for, a longer one every REST_EVERY batches
+BATCH_REST_S = (3, 7)
+REST_EVERY, LONG_REST_S = 10, (20, 40)
 FULL_HTML = 5_000_000      # chars: the whole ns/search document (~0.7 MB)
 # a human clears these in the window; NOT "ncpt.naver.com" alone (real pages load it too);
 # the login gate is told by the URL (nid.naver.com): "nidlogin.login" is also an ordinary header link
@@ -320,6 +324,11 @@ class Listing:
         return new
 
 
+def rest(batches):
+    """Before the page is scrolled for batch `batches + 1`: a short rest, a longer one after every REST_EVERY."""
+    pause(*(LONG_REST_S if batches % REST_EVERY == 0 else BATCH_REST_S))
+
+
 def next_batches(bridge, tab):
     """The page's listing answers copied so far; if none yet, wheel-scroll until
     the page fetches its next batch -> [captures] in arrival order ([] = stalled)."""
@@ -381,6 +390,7 @@ def walk(bridge, query, out_dir, max_batches, keep_tab, summary):
                 break
             if pending:
                 continue
+            rest(summary["batches"])
             captures = next_batches(bridge, tab)
             if not captures:
                 try:

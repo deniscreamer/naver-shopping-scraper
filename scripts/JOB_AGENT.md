@@ -23,6 +23,9 @@ files: `scripts/job.py` docstring; the stages' own docs: [README.md](README.md).
 .venv/bin/python scripts/job.py status --json
 ```
 
+`--all` instead of `--count` (the owner, 2026-11-12): no count, the job goes on until the listings have no more
+products (each used-up snapshot: the listings read deeper, no cap of our own: the server takes at most 200 batches a query and rests between batches, EXTENSION.md).
+
 Start `run` in the background and wait for it; read `status --json` (stages per product, closed ones with why,
 held ones with their codes, the last stop, the next product, `running`: the product and stage of this moment),
 not the logs. The log has one line when a product starts, one when it is done (with its stage times), and a
@@ -62,7 +65,7 @@ The cuts, the origin decisions and the conflicts are in `shops/<shop>/translatio
 | `a captcha was not answered in time` | reads again: the owner is asked again (up to 6 times) | relay it to the owner |
 | `waiting up to 15 min for the server and the extension` | waits, then goes on by itself | ask the owner to open Chrome / start the server |
 | `STOP ... for 15 min` (they did not come back) | stopped | once they are back, `run` |
-| `the snapshot is used up ... reading the listings deeper` | reads the listings again with twice the batches, adds new products | nothing |
+| `the snapshot is used up ... reading the listings deeper` | reads the listings again with twice the batches, adds new products (`new --all`: every new one, until the listings end; then done) | nothing |
 | `STOP ... RunStopped` (two products partial for one reason) | stopped | a collector defect: investigate, report; do not edit code during the job |
 | `failed` (a 503 `naver error page:` or `adapter error:` still there after 2 retries, 120 s apart) | the next product; tried again at the end | nothing; twice failed: closed |
 | `not_taken` / `deferred` | the next product | nothing; a defer is lifted only by the owner (`deferred_log.py allow`) |

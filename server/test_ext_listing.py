@@ -73,3 +73,31 @@ def test_captcha_state_while_waiting(tmp_path, monkeypatch):
     waiting = seen[0]
     assert waiting["status"] == "waiting" and waiting["question"].startswith("What is the first number")
     assert waiting["screenshot"].endswith("product-captcha.png") and waiting["wait_s"] == ext_listing.HUMAN_WAIT_S
+
+
+def test_the_walk_rests_before_each_next_batch(tmp_path, monkeypatch):
+    """2026-11-12, the owner: a long listing is spread out: BATCH_REST_S before each scroll for the next batch,
+    LONG_REST_S after every REST_EVERY batches; batches the page fetched while loading are taken without a rest."""
+    rests = []
+    monkeypatch.setattr(ext_listing, "pause", lambda a, b: rests.append((a, b)))
+    monkeypatch.setattr(ext_listing, "open_search", lambda bridge, q, out, summary: (7, None))
+
+    def batch(n, more=True):
+        return {"total": 1000, "cursor": n, "hasMore": more, "products": []}
+    monkeypatch.setattr(ext_listing.composite, "first_batch", lambda html: batch(1))
+    monkeypatch.setattr(ext_listing.composite, "batch_from_answer", lambda body: body)
+    n = iter(range(2, 100))
+    monkeypatch.setattr(ext_listing, "next_batches",
+                        lambda bridge, tab: [{"status": 200, "body": batch(k := next(n), k < 23)}])
+
+    class Bridge:
+        def call(self, op, **a):
+            return {"html": ""} if op == "page" else None
+    monkeypatch.setattr(ext_listing, "Listing", lambda out, q: type("L", (), {"kept": 0, "ads": 0, "skipped": 0,
+                                                                               "add": lambda self, b, no: 0})())
+    summary = {"batches": 0, "stop": None}
+    ext_listing.walk(Bridge(), "q", str(tmp_path), 0, True, summary)
+    assert summary["batches"] == 23 and summary["stop"] == "hasMore=false"
+    assert len(rests) == 22                                                     # one before each next batch
+    assert [i + 1 for i, r in enumerate(rests) if r == ext_listing.LONG_REST_S] == [10, 20]
+    assert all(r == ext_listing.BATCH_REST_S for i, r in enumerate(rests) if i + 1 not in (10, 20))

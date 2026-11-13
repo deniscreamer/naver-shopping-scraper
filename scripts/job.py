@@ -7,7 +7,7 @@ nothing. The browser side (server, ext_product): the job's search tab stays open
 it, the product tab of the previous read is closed; a login gate is reset from naver.com; a captcha waits for the
 owner as always.
 
-    .venv/bin/python scripts/job.py new --query "남성 골프채 풀세트" --category 50002788 [--count 40] [--batches 2]
+    .venv/bin/python scripts/job.py new --query "남성 골프채 풀세트" --category 50002788 [--count 40 | --all] [--batches 2]
                                         [--paid | --paid-variants] [--exclude-known] [--shops-root DIR] [--publish [--describe]]
     .venv/bin/python scripts/job.py run [--job ID] [--items N]
     .venv/bin/python scripts/job.py status [--job ID] [--json]
@@ -32,6 +32,10 @@ publish/published.jsonl. A product not ready to publish (held, not placed) is `n
 `failed` (tried again); a refused token or scope stops the run. With `--describe` too (the owner, 2026-11-10) the
 product's description is written right before it is sent (describe.py, one model request; the answer is checked
 and cut by the script, never a reason to hold the product); no provider answering stops the run.
+
+`new --all` (the owner, 2026-11-12) has no count: whenever `run` uses up the snapshot it reads the listings deeper
+the same way (up to MAX_BATCHES_ALL) and takes every new product, until the listings end (has_more false) or
+stop; then the job is done.
 
 `new --count N` reads the listings deeper (batches doubled, up to MAX_BATCHES; a listing is read from the top
 every time) until N products pass the screen; when `run` uses up the snapshot with fewer than N prepared, it
@@ -70,6 +74,9 @@ PAUSE_S = 2
 RECONNECT_WAIT_S, RECONNECT_S = 30, 900      # the extension / server gone: poll /health this long, then stop
 CAPTCHA_TRIES = 6                            # a captcha not answered in time: the read asks the owner again
 MAX_BATCHES = 40                             # listing batches of ~50 per query (probed 2026-11-08: 12 in 110 s)
+MAX_BATCHES_ALL = 200                        # `new --all`: the server's cap (schemas.MAX_LISTING_BATCHES); the
+                                             # listing's own end (has_more false) comes first (2026-11-12: the junior
+                                             # queries ended at 19-31 batches)
 REPORT_EVERY = 10
 RETRYABLE = ("naver error page:", "adapter error:")
 
@@ -264,11 +271,26 @@ def read_listings(api: Any, store: Any, queries: list[str], category: str, batch
     return mixed, listings, dict(screen.counts)
 
 
-def more_batches(listings: list[dict], batches: int) -> int | None:
+def more_batches(listings: list[dict], batches: int, cap: int = MAX_BATCHES) -> int | None:
     """The next listing depth to try when there are too few rows: double, while any listing has more; else None."""
-    if batches >= MAX_BATCHES or not any(x.get("has_more") and x.get("status") == "done" for x in listings):
+    if batches >= cap or not any(x.get("has_more") and x.get("status") == "done" for x in listings):
         return None
-    return min(batches * 2, MAX_BATCHES)
+    return min(batches * 2, cap)
+
+
+def batch_cap(meta: dict) -> int:
+    """How deep the job's listings may be read: to their end for a `new --all` job, else MAX_BATCHES."""
+    return MAX_BATCHES_ALL if meta.get("until_end") else MAX_BATCHES
+
+
+def wanted(job: "Job", done: dict[str, str]) -> int | None:
+    """The snapshot is used up: how many more products to read the listings deeper for (None: the job is done).
+    A `--count N` job wants what is missing to N; a `--all` job wants every new row, while the listings have more."""
+    if job.meta.get("until_end"):
+        return 0
+    target = job.meta.get("count") or 0
+    have = sum(1 for r in job.rows() if done.get(r["key"]) == job.final)
+    return target - have if target and have < target else None
 
 
 def cmd_new(args: argparse.Namespace) -> int:
@@ -278,6 +300,9 @@ def cmd_new(args: argparse.Namespace) -> int:
     from shop_stores import get_store
     if args.describe and not args.publish:
         print("stop: --describe needs --publish (a job without publication: describe.py <shop> after it)")
+        return 2
+    if args.all and args.count:
+        print("stop: --all and --count: one or the other")
         return 2
     api, store = NaverApiClient(), get_store()
     if not any(str(r["category_id"]) == args.category for r in load_table()["rows"]):
@@ -304,6 +329,7 @@ def cmd_new(args: argparse.Namespace) -> int:
             "batches": batches, "listings": listings, "screen": counts, "excluded_known": len(known),
             "exclude_known": args.exclude_known, "translate": not args.no_translate or args.publish,
             "publish": args.publish, "describe": args.describe,
+            "until_end": args.all,                    # 2026-11-12, the owner: no count, to the listings' end
             "free_only": not args.paid}                   # 2026-11-09: no paid variant / add-on in the transform either
                                                           # (--paid-variants: this job's products take paid variants)
     with open(os.path.join(folder, "job.json"), "w", encoding="utf-8") as f:
@@ -316,15 +342,15 @@ def cmd_new(args: argparse.Namespace) -> int:
 
 
 def refresh(job: Job, api: Any, store: Any, need: int) -> int:
-    """`need` more products for the job: the listings again, deeper (more_batches), rows not in the job appended.
-    -> how many were added (0: the listings have no more)."""
-    batches = more_batches(job.meta.get("listings") or [], job.meta.get("batches") or 2)
+    """`need` more products for the job (0: all there are): the listings again, deeper (more_batches), rows not in
+    the job appended. -> how many were added (0: the listings have no more)."""
+    batches = more_batches(job.meta.get("listings") or [], job.meta.get("batches") or 2, batch_cap(job.meta))
     if batches is None:
         return 0
     have = {r["key"] for r in job.rows()}
     known = known_ids() if job.meta.get("exclude_known") else set()
     rows, listings, counts = read_listings(api, store, job.meta["queries"], job.category, batches, have, known)
-    rows = rows[:need]
+    rows = rows[:need] if need else rows                  # need 0: every new row (a `--all` job)
     with open(os.path.join(job.folder, "listing.jsonl"), "a", encoding="utf-8") as f:
         f.write("".join(json.dumps({**r, "refresh": batches}, ensure_ascii=False) + "\n" for r in rows))
     job.meta.update(batches=batches, listings=listings)
@@ -618,26 +644,28 @@ def cmd_run(args: argparse.Namespace) -> int:
             return 2
     taken = 0
     started = time.monotonic()
-    print(f"job {job.id}: run ({len(job.rows())} products in the snapshot, target {job.meta.get('count') or 'all'})",
+    goal = "to the listings' end" if job.meta.get("until_end") else job.meta.get("count") or "all"
+    print(f"job {job.id}: run ({len(job.rows())} products in the snapshot, target {goal})",
           flush=True)
     while not args.items or taken < args.items:
         done = stages(job)
         key = next_key(job, done)
         if key is None:
-            target = job.meta.get("count") or 0
-            have = sum(1 for r in job.rows() if done.get(r["key"]) == job.final)
-            if target and have < target:
-                print(f"the snapshot is used up with {have} of {target} {job.final}: reading the listings deeper",
-                      flush=True)
+            need = wanted(job, done)
+            if need is not None:
+                have = sum(1 for r in job.rows() if done.get(r["key"]) == job.final)
+                print(f"the snapshot is used up with {have} {job.final} (target {goal}): reading the listings "
+                      f"deeper", flush=True)
                 try:
-                    added = refresh(job, ctx["api"], store, target - have)
+                    added = refresh(job, ctx["api"], store, need)
                 except Exception as e:
                     job.log(None, "stop", reason=f"refresh: {type(e).__name__}: {e}"[:300])
                     print(f"STOP: refresh: {e}\n   run again to resume", flush=True)
                     return 3
                 print(f"   {added} products added", flush=True)
-                if added:
-                    continue
+                if added or more_batches(job.meta.get("listings") or [], job.meta.get("batches") or 2,
+                                         batch_cap(job.meta)) is not None:
+                    continue                          # none passed the screen at this depth: deeper still
             job.log(None, "done")
             print(f"done: every product of the job is {job.final} or closed", flush=True)
             _dictionaries_reminder(job)
@@ -738,7 +766,10 @@ def main(argv: list[str] | None = None) -> int:
     n = sub.add_parser("new")
     n.add_argument("--query", action="append", required=True, help="a listing query; twice for two (alternated)")
     n.add_argument("--category", required=True)
-    n.add_argument("--count", type=int, default=0, help="keep the first N screened products (0: all)")
+    n.add_argument("--count", type=int, default=0, help="keep the first N screened products (0: all of the "
+                   "first read)")
+    n.add_argument("--all", action="store_true", help="no count: whenever the snapshot is used up, read the "
+                   "listings deeper (doubled, up to MAX_BATCHES_ALL) until they have no more products")
     n.add_argument("--batches", type=int, default=2, help="listing batches of ~50 per query to start with; doubled "
                    "(up to MAX_BATCHES) while fewer than --count products pass the screen")
     n.add_argument("--paid", action="store_true", help="paid variants (and the category's paid add-ons) too; "

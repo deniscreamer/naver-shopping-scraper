@@ -191,6 +191,37 @@ def test_more_batches_doubles_while_there_is_more():
     assert J.more_batches([{"status": "stopped", "has_more": True}], 2) is None     # a stopped listing: not deeper
 
 
+def test_an_all_job_reads_to_the_listings_end(tmp_path):
+    """`new --all` (2026-11-12): no count, every new row taken, the depth capped by the server, not MAX_BATCHES."""
+    job = make_job(tmp_path)
+    assert J.wanted(job, {}) is None                                             # count 0, no --all: the snapshot
+    job.meta["count"] = 5
+    assert J.wanted(job, {KEYS[0]: job.final}) == 4
+    job.meta.update(count=0, until_end=True)
+    assert J.wanted(job, {k: job.final for k in KEYS}) == 0                      # 0: every new row
+    more = [{"status": "done", "has_more": True}]
+    assert J.more_batches(more, J.MAX_BATCHES, J.batch_cap(job.meta)) == J.MAX_BATCHES * 2
+    assert J.more_batches(more, J.MAX_BATCHES_ALL, J.batch_cap(job.meta)) is None
+    assert J.more_batches([{"status": "done", "has_more": False}], 4, J.batch_cap(job.meta)) is None
+
+
+def test_refresh_with_need_0_appends_every_new_row(tmp_path, monkeypatch):
+    job = make_job(tmp_path)
+    job.meta.update(until_end=True, batches=40, queries=["q"], listings=[{"status": "done", "has_more": True}])
+    new = [{"key": f"{SHOP}:naver:100:{n}", "product_id": str(n), "query": "q", "link": "l"} for n in range(20, 70)]
+    seen = {}
+
+    def fake_read(api, store, queries, category, batches, skip, known):
+        seen.update(batches=batches, skip=set(skip))
+        return new, [{"status": "done", "has_more": False, "batches": batches}], {}
+    monkeypatch.setattr(J, "read_listings", fake_read)
+    assert J.refresh(job, None, None, 0) == 50
+    assert seen == {"batches": 80, "skip": set(KEYS)}                           # past MAX_BATCHES, the job's rows skipped
+    job = J.Job(job.folder)
+    assert len(job.rows()) == 53 and job.meta["batches"] == 80
+    assert J.refresh(job, None, None, 0) == 0                                   # the listing ended: no deeper read
+
+
 def test_heartbeat_is_shown_only_while_the_runner_lives(tmp_path):
     job = make_job(tmp_path)
     job.beat(key=KEYS[0], n=1, stage="collect", since="t")
