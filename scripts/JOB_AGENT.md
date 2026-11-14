@@ -91,9 +91,10 @@ category and 100 products: revise when a longer run says otherwise.
 ```
 
 No snapshot and no search per product: the server holds one listing tab open (`/listing-tabs`,
-server/docs/EXTENSION.md) and the job takes it batch by batch. Each batch is screened like `new`'s rows, every row taken
-goes into `listing.jsonl` and through the same stages at once, its page opened by a click on its card in that tab;
-then the next batch, until the listing's end (`has_more` false) or `--count` products at the final stage. One
+server/docs/EXTENSION.md) and the job takes it batch by batch. Each batch is screened like `new`'s rows (every row
+left out is appended to the job's `screened.jsonl`: at, batch, product_id, name, reason; the audit of the
+leave-outs), every row taken goes into `listing.jsonl` and through the same stages at once, its page opened by a
+click on its card in that tab; then the next batch, until the listing's end (`has_more` false) or `--count` products at the final stage. One
 `batch N: R rows, T to take (listing total ..., has_more ...)` line per batch, then the product lines as in `run`.
 Products with a stage left (collected to translated, failed once) are taken on without the tab, when the job starts
 and after the listing's end. The done line says how many were taken of the listing's `total`, and how many were not
@@ -129,6 +130,17 @@ A captcha is answered by the owner in Chrome while the read waits; a login page 
 `.venv/bin/python scripts/placement.py <shop>`, then read `shops/<shop>/placement/report.txt`: the `unresolved`
 products (the attribute unknown or in conflict) and the `no_profile` ones go to the owner with their evidence; never
 pick a section for them. A new category or split: [PLACEMENT.md](PLACEMENT.md).
+
+`.venv/bin/python scripts/review_suspects.py <shop> [--job <id>]` (read only, offline; the owner, 2026-11-14: the
+screen of 50002788 is lenient in both ways to run a job, so what is doubtful is published and reviewed afterwards) lists the published products
+of the category (`--category`, default 50002788; `--job`: only that job's keys) that may not be a full set, each with
+its key, the store's product id and handle, today's price and the reasons: `single_club` (the transform's
+single-club test, 아이언개수 단품 / 총클럽개수 1개, a folding club), `few_clubs` (2-3 clubs: 2종 / 3종 / 2pcs / 3pcs,
+총클럽개수 2-3개), `used` (중고, not 중고급), `junior` (주니어, 어린이, kids, ...: no title rule leaves a junior set out,
+no other job collects the ones listed here) and `accessory` (the words of that title rule, its `unless` not applied,
+and golf balls). It prints the table and writes `suspects.csv` next to the job (else
+`shops/<shop>/review_suspects-<category>.csv`); give it to the owner, and change nothing in the store: a withdrawal is
+the owner's (`publish.py --withdraw`). The rows the screen left out are in the job's `screened.jsonl`.
 
 ## Never
 

@@ -576,6 +576,27 @@ def test_a_scroll_job_reads_the_listing_batch_by_batch_to_its_end(tmp_path, monk
     assert events.count("batch") == 3 and events[-1] == "done"
 
 
+def test_a_scroll_job_writes_every_row_left_out_to_screened_jsonl(tmp_path, monkeypatch, no_sleep):
+    """The owner, 2026-11-14: a lenient screen, and every leave-out on file for the audit (once a product a run)."""
+    from listing_filter import Screen
+    job = scroll_job(tmp_path)
+    p = Pipeline(monkeypatch)
+    batches = [tab_answer(1, [1, 2, 3]), tab_answer(2, [4, 2], has_more=False)]
+    batches[0]["results"][1]["name"] = "어린이용 발광 피클볼 라켓 세트 야간용 초보자용 라켓"    # title:accessory
+    batches[0]["results"][2]["category_id"] = "999"
+    batches[1]["results"][1]["name"] = batches[0]["results"][1]["name"]              # the same product again
+    tab = J.Tab(job, TabApi(batches))
+    ctx = {"api": tab.api, "catalog": Catalog(), "specs": tab.specs}
+    screen = Screen("50002788", SHOP, exclusions={"universal": {"rules": []}})
+    assert J.run_scroll(job, ctx, tab, screen, set()) == 0
+    assert [key for key, _ in p.taken] == [k(1), k(4)]
+    with open(os.path.join(job.folder, "screened.jsonl"), encoding="utf-8") as f:
+        lines = [json.loads(x) for x in f]
+    assert [(x["batch"], x["product_id"], x["reason"]) for x in lines] == [
+        (1, "2", "title:accessory"), (1, "3", "category_mismatch")]
+    assert lines[0]["name"].startswith("어린이용 발광 피클볼") and lines[0]["at"]
+
+
 def test_a_scroll_job_stops_at_its_count_mid_batch_and_closes_the_tab(tmp_path, monkeypatch, no_sleep):
     job = scroll_job(tmp_path, count=2)
     p = Pipeline(monkeypatch)

@@ -18,6 +18,8 @@ Files, scripts/output/jobs/<job id>/:
 
     job.json       shop, category, query(s), settings, the shops root, the listing job(s) read
     listing.jsonl  the screened snapshot in listing order (row + key)
+    screened.jsonl scroll: every row the screen left out, append-only (at, batch, product_id, name, reason: the
+                   Screen's code, or known), once a product a run, for the audit of the leave-outs
     events.jsonl   what no other file records, append-only: not_taken / deferred / failed / stop / done, with time
     tmp/           a product's line and photos until they are kept (keep_run), then removed
 
@@ -57,7 +59,7 @@ stop the run (collect_guard).
 
 `scroll` (the owner, 2026-11-14; the other way to run a job, `new` + `run` unchanged): no snapshot, no search per
 product. The server holds one listing tab open (POST /listing-tabs) and hands it out batch by batch (~50 rows);
-each batch is screened like `new`'s rows and every row taken is appended to listing.jsonl and taken through the same
+each batch is screened like `new`'s rows (every row left out, with its reason, appended to screened.jsonl) and every row taken is appended to listing.jsonl and taken through the same
 one() at once, its page opened by a click on its card in that tab (ctx["specs"]: the list is virtualized, a batch's
 cards leave the page a few batches later), then the next batch, until the listing's end (has_more false) or
 `--count` products at the job's final stage. job.json has `mode: scroll`, the listing's size (`total`, the first
@@ -972,10 +974,13 @@ def _reopen(job: Job, why: str, batch: int) -> int | None:
 def _batch_rows(job: Job, answer: dict, screen: Any, known: set[str], out: dict[str, str],
                 taken: set[str]) -> list[dict]:
     """The batch's rows to take: through the screen (once a product: `out` keeps why it was left out), not
-    `known`, not taken in this tab; a product already in the job is skipped only at its final stage or closed."""
+    `known`, not taken in this tab; a product already in the job is skipped only at its final stage or closed.
+    Every row left out is appended to screened.jsonl (at, batch, product_id, name, reason), once a product a run, so
+    each leave-out can be audited (the owner, 2026-11-14: a lenient screen, nothing lost unseen)."""
     from listing_filter import source_key
     done, gone = stages(job), closed(job)
-    keep = []
+    keep: list[dict] = []
+    left_out: list[dict] = []
     for row in answer["results"]:
         pid = str(row.get("product_id"))
         if pid in out:
@@ -986,10 +991,15 @@ def _batch_rows(job: Job, answer: dict, screen: Any, known: set[str], out: dict[
             why = "known"
         if why is not None:
             out[pid] = why
+            left_out.append({"at": _now(), "batch": answer.get("batch"), "product_id": pid, "name": row.get("name"),
+                             "reason": why})
             continue
         if key in taken or done.get(key) == job.final or key in gone:
             continue
         keep.append({**row, "key": key})
+    if left_out:
+        with open(os.path.join(job.folder, "screened.jsonl"), "a", encoding="utf-8") as f:
+            f.writelines(json.dumps(x, ensure_ascii=False) + "\n" for x in left_out)
     return keep
 
 

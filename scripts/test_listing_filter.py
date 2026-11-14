@@ -140,3 +140,47 @@ def test_a_junior_bag_alone_is_left_out(title, code):
     screen = Screen("50002787", namespace="fairwardgolf")
     assert screen.check({"name": title, "category_id": "50002787", "product_id": "1",
                          "store": {"channel_no": "2"}}) == code
+
+
+@pytest.mark.parametrize("title, code", [
+    # the owner, 2026-11-14 (50002788, lenient: only what is certainly not a set; the doubtful ones are published
+    # and reviewed afterwards, review_suspects.py). Past titles of the category:
+    ("IMIKEYA 미니 골프 카트: 다이 캐스트 메탈 모델 골프 카트 미니 1:20 스케일 카트 다이캐스트 모델 카트", "title:accessory"),
+    ("어린이용 발광 피클볼 라켓 세트 야간용 초보자용 라켓 Type-C 충전", "title:accessory"),
+    ("입문용 성인 골프채 접이식 실내 골프채 좌타 남성", "title:folding"),          # 13464713764, one club, 27,800 KRW
+    ("접이식 성인용 골프채 가족 휴대용 골프채 남성 여성", "title:folding"),        # 13742222509, 풀세트구성 퍼터
+    # made up: an accessory alone
+    ("레이저 골프 거리측정기 고급형", "title:accessory"),
+    ("투어 골프그립 교체용 남성", "title:accessory"),
+    # what stays: junior sets (no other job collects them: the review lists them), balls (a set given with balls
+    # may name no set word), a set that comes with an accessory or a folding item, an adult word, a used set
+    ("캘러웨이 XJ3 주니어 골프채 풀세트 7개 캐디백 포함 어린이용", None),
+    ("Tour Edge Hot Launch HLJ Junior Sets RIGHT HAND Kids GREEN SET Ages 710yrs", None),
+    ("기가골프 R3 주니어 풀세트 골프백 포함 9~13세", None),
+    ("골프공 3구 세 박스 비거리 골프볼", None),
+    ("핑 G430 드라이버 우드 아이언 퍼터 + 골프공", None),
+    ("혼마 남성 골프채 풀세트 + 접이식 카트 증정", None),
+    ("노션몰 뛰어난접착력 고급 골프납테이프 훅 슬라이스 뜬볼 방지, 30개, 5 X 1.3, GL20 납테이프", None),  # to the review
+    ("혼마 베레스 남성 골프채 풀세트 + 골프공 증정", None),
+    ("젝시오 13 풀세트 거리측정기 사은품", None),
+    ("테일러메이드 풀셋 캐디백 골프장갑 포함", None),
+    ("중고 그립교체 완료 핑 G430 풀세트", None),
+    ("AS가능/ 여성/ 왼손/ 테일러메이드/ 풀세트 골프채 좌타 여자 L강도 레프티 캐디백 레이디 골프 쥬니어 주니어", None),
+    ("골프 퍼터, 남성용 투웨이 여성 오른손/왼손잡이, 어린이용 미니 클럽 세트, 골프공 2개", None),
+    ("성인 및 주니어용가능 입문 골프채 풀세트", None),
+    ("야마하 인프레스 남성 골프채 풀세트 10개", None),
+])
+def test_the_lenient_rules_of_full_sets(title, code):
+    screen = Screen("50002788", namespace="fairwardgolf")
+    assert screen.check({"name": title, "category_id": "50002788", "product_id": "1",
+                         "store": {"channel_no": "2"}}) == code
+
+
+def test_published_full_set_titles_pass_the_screen():
+    """2026-11-14: published 50002788 titles (a sample; the offline study: none left out but the three folding clubs)."""
+    screen = Screen("50002788", namespace="fairwardgolf")
+    for title in ("[클럽] 스크린 전용 1+1 남성용 야마모토 쇼군 풀세트 12피스 -연습용 라운딩 골프용품",
+                  "요넥스 뉴 이존 3.0 엘리트+ PRGR 고반발 드라이버 조합 여성골프채풀세트",
+                  "정품 요넥스 뉴 이존엘리트 3.0 여성 11개구성 여성 입문골프채풀세트"):
+        assert screen.check({"name": title, "category_id": "50002788", "product_id": "1",
+                             "store": {"channel_no": "2"}}) is None

@@ -1,6 +1,6 @@
 {
  "format": "listing-title-rules/1",
- "about": "Per Naver leaf category, title words that leave a listing row out before its page is read (listing_filter.Screen; the owner, 2026-11-11: what the shop's section does not sell). Matched on the title NFKC-normalized, lower case and without spaces; notFollowedBy / notPrecededBy as in listing_exclusions.json. Studied on the listings of 2026-11-11: 515 titles of 50002787 (46 of 56 that do not fit, none that fits), 351 of 50002788 (3 of 23 beside the rentals the shared file already drops). A rule may list `unless` words: any of them in the title and the rule does not apply. A rule names its code, which is the row's reason (title:<code>).",
+ "about": "Per Naver leaf category, title words that leave a listing row out before its page is read (listing_filter.Screen; the owner, 2026-11-11: what the shop's section does not sell). Matched on the title NFKC-normalized, lower case and without spaces; notFollowedBy / notPrecededBy as in listing_exclusions.json. Studied on the listings of 2026-11-11: 515 titles of 50002787 (46 of 56 that do not fit, none that fits), 351 of 50002788 (3 of 23 beside the rentals the shared file already drops). A rule may list `unless` words: any of them in the title and the rule does not apply. A rule names its code, which is the row's reason (title:<code>). 50002788 since 2026-11-14 is lenient (the owner: never lose a real product): only what is certainly not a set is left out (1,817 past titles: 5 left out, 3 published, the folding one-club products, no set; junior sets are not left out: no other job collects them, review_suspects.py lists them); the doubtful ones are published and listed by review_suspects.py.",
  "categories": {
   "50002787": [
    {
@@ -321,6 +321,130 @@
        "1",
        "2"
       ]
+     }
+    ]
+   },
+   {
+    "code": "accessory",
+    "why": "Not golf at all (2026-11-14): a pickleball racket, a diecast model cart; no set comes with one. lenient: the owner reviews doubtful products after publication.",
+    "tokens": [
+     {
+      "text": "피클볼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "다이캐스트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "accessory",
+    "why": "An accessory alone (2026-11-14): lead tape, a grip, a range finder, a swing trainer, a mat, a glove, an iron cover; a set that comes with one says so (세트, 개, pcs, 포함, 증정, a bag) and stays. Not golf balls: a set given with balls may name no set word (a ball listing goes to review_suspects.py instead). lenient: the owner reviews doubtful products after publication.",
+    "unless": [
+     "세트",
+     "셋트",
+     "풀세트",
+     "풀셋",
+     "개",
+     "pcs",
+     "구성",
+     "포함",
+     "증정",
+     "사은품",
+     "캐디백",
+     "골프백"
+    ],
+    "tokens": [
+     {
+      "text": "납테이프",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "골프납",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "리드테이프",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "골프그립",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "그립교체",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "거리측정기",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스윙연습기",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "퍼팅매트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "연습매트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "골프장갑",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "아이언커버",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "folding",
+    "why": "A folding (adjustable) indoor club, one club (2026-11-14: 13464713764, 13761129272, 13742222509 published at ~28,000 KRW, 풀세트구성 퍼터); a set word (세트, 개구성, pcs, 포함, 증정, a bag) keeps the row, so a set given with a folding cart or club stays. lenient: the owner reviews doubtful products after publication.",
+    "unless": [
+     "세트",
+     "셋트",
+     "풀셋",
+     "개구성",
+     "pcs",
+     "포함",
+     "증정",
+     "사은품",
+     "캐디백",
+     "골프백"
+    ],
+    "tokens": [
+     {
+      "text": "접이식",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "실내골프채",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "휴대용골프채",
+      "notFollowedBy": [],
+      "notPrecededBy": []
      }
     ]
    }
