@@ -61,7 +61,7 @@ Run from the repo root.
 python -m venv .venv
 .venv/bin/pip install -r server/requirements.txt -r scripts/requirements.txt
 .venv/bin/python server/run.py              # http://localhost:8000, PORT=... to change
-.venv/bin/python -m pytest -q               # offline suite, 446 tests
+.venv/bin/python -m pytest -q               # offline suite, 471 tests
 .venv/bin/python -m pytest scripts -q       # scripts/ client tests, offline, separate suite
 UPDATE_GOLDEN=1 .venv/bin/python -m pytest server/naver_shopping/test_pages.py scripts/test_prepared_golden.py
                                             # after a deliberate parser / transform change: read the diff (R-TEST-5)
@@ -88,7 +88,7 @@ Live check (server running, uses the network): `curl http://localhost:8000/healt
 | Translation (model, dictionaries) | [scripts/TRANSLATION.md](scripts/TRANSLATION.md) | Running or changing `translate.py`, the dictionaries, the prompts, review cleaning; a new shop or category; the quality check |
 | New category or shop (tenant) | [scripts/ONBOARDING.md](scripts/ONBOARDING.md), skill `new-category-or-shop` | Adding a Naver category or a shop: what to fill where, what fails silently |
 | Shop sections (placement) | [scripts/PLACEMENT.md](scripts/PLACEMENT.md) | A new shop or Naver category, one Naver category holding several shop sections |
-| Running a job (agent) | [scripts/JOB_AGENT.md](scripts/JOB_AGENT.md) | Running or watching `scripts/job.py` (one product per iteration) |
+| Running a job (agent) | [scripts/JOB_AGENT.md](scripts/JOB_AGENT.md) | Running or watching `scripts/job.py` (one product per iteration); which mode when (`new` + `run` or `scroll`) |
 | Seller data patterns | [scripts/SELLER_DATA.md](scripts/SELLER_DATA.md) | Before changing parsers or the transform: what pages and sellers write |
 | Security | [SECURITY.md](SECURITY.md) | Reporting vulnerabilities |
 | Releases | [CHANGELOG.md](CHANGELOG.md), `VERSION` | Cutting a release, what changed |

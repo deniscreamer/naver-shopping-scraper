@@ -308,6 +308,29 @@ def test_listing_busy_raises():
     assert e.value.status == 409
 
 
+def test_listing_tab_methods_call_their_routes():
+    tab = {"id": "20261114-070000-aaaa", "query": "q", "batch": 1, "has_more": True, "total": 53, "results": []}
+    api, _ = client(ok(tab), ok({**tab, "batch": 2}), ok({"id": "1"}), ok({"id": tab["id"], "closed": True}))
+    assert api.listing_tab_open("q")["batch"] == 1
+    assert api.listing_tab_next(tab["id"])["batch"] == 2
+    link = "https://smartstore.naver.com/s/products/1"
+    api.listing_tab_specs(tab["id"], link)
+    assert api.listing_tab_close(tab["id"])["closed"] is True
+    calls = [(c["method"], c["url"].removeprefix("http://api.test"), c["params"]) for c in api.session.calls]
+    assert calls == [("POST", "/listing-tabs", {"query": "q"}),
+                     ("POST", f"/listing-tabs/{tab['id']}/next", {}),
+                     ("GET", f"/listing-tabs/{tab['id']}/specs", {"product": link}),
+                     ("DELETE", f"/listing-tabs/{tab['id']}", {})]
+
+
+@pytest.mark.parametrize("status", [404, 409, 410, 503])
+def test_listing_tab_errors_are_not_retried(status):
+    api, sleeps = client(FakeResponse(status, {"error": "listing tab x is gone"}))
+    with pytest.raises(ApiError) as e:
+        api.listing_tab_next("20261114-070000-aaaa")
+    assert e.value.status == status and sleeps == [] and len(api.session.calls) == 1
+
+
 def test_examples_compile():
     import glob
     import py_compile

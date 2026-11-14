@@ -261,6 +261,9 @@ read 34-48 s, OCR median 21-22 s, prepare 1-2 s); the search tab reused for ever
 of 12 batches (one query) read in 110 s: 583 unique rows, no stall. Captcha, login reset, Naver's error page and a
 lost extension are covered by offline tests only (none came up live).
 
+The other way to run a job (the owner, 2026-11-14, beta): `job.py scroll`, products clicked from one held listing tab,
+no search per product; which one when: [JOB_AGENT.md](JOB_AGENT.md#two-ways-to-run-a-job-which-one-when).
+
 ## Translation (`translate.py`)
 
 Decisions, a new shop or category, the quality check (`translate_eval.py`), limits: [TRANSLATION.md](TRANSLATION.md).
@@ -1148,7 +1151,7 @@ The generic `get(path, **params)` / `pages(path, **params)` reach any route. Any
 
 ## Response types (`naver_types.py`)
 
-TypedDicts for every answer (83 names: `SearchCard`, `ProductDetails`, `ReviewsPage`, `ListingRow`, ...). `X | None`
+TypedDicts for every answer (91 names: `SearchCard`, `ProductDetails`, `ReviewsPage`, `ListingRow`, `ListingTab`, ...). `X | None`
 means the server may send null: guard it (`product["reviews"]` can be None). They were written from real answers
 (`fixtures/*.json`, captured live 2026-11-01) and the server's parser code; `test_naver_types.py` checks each
 fixture against its type strictly (missing or unknown keys fail).

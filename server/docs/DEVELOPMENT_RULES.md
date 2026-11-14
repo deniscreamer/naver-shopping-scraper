@@ -83,7 +83,7 @@ Every surface that is not the store backend uses this path (R-NAVER-2).
 
 ## R-NAVER: upstream surfaces
 
-- **R-NAVER-1 (MUST NOT)** Never request Naver's walled pages: `search.shopping.naver.com/ns/*`, catalog pages, `smartstore.naver.com/<store>/products/<id>` (smartstore PDP), `shopping.naver.com`. They serve a captcha (405/490), a login redirect or 429 to every client tried (`naver_shopping/fetch.py` module docstring, research 2026-10-23/24). The same holds for store home, category and search pages (they redirect to login). Exceptions (2026-11-01, decision log): the search.shopping listing, and a smartstore product page reached by a click from that search (`/products/specs`), read only in the owner's Chrome through the adapter under R-EXT-*.
+- **R-NAVER-1 (MUST NOT)** Never request Naver's walled pages: `search.shopping.naver.com/ns/*`, catalog pages, `smartstore.naver.com/<store>/products/<id>` (smartstore PDP), `shopping.naver.com`. They serve a captcha (405/490), a login redirect or 429 to every client tried (`naver_shopping/fetch.py` module docstring, research 2026-10-23/24). The same holds for store home, category and search pages (they redirect to login). Exceptions (2026-11-01, decision log): the search.shopping listing, and a smartstore product page reached by a click from that search (`/products/specs`) or from a held listing tab (`/listing-tabs`, 2026-11-14), read only in the owner's Chrome through the adapter under R-EXT-*.
 - **R-NAVER-2 (MUST)** Source each datum from the surface that serves it, on the transport listed:
 
   | Data | Surface | Transport | Symbol |
@@ -251,7 +251,7 @@ Scope: the files listed in R-TEST-4 (including `hostenv.py`, which picks the Chr
 - **R-EXT-4 (MUST)** Parsers are pure and tested on trimmed real captures with tracking / session fields removed
   (`fixtures/composite_*`). Captured raw answers and HARs never enter git.
 - **R-EXT-6 (MUST)** Consumers reach the extension transport only through the HTTP routes (`/listings`,
-  `/products/specs`), like every
+  `/listing-tabs`, `/products/specs`), like every
   other endpoint: `scripts/` never import `ext_*` / `listing_jobs` and never talk to the bridge. A new kind of data
   read through the adapter becomes a server route (or job) first.
 - **R-EXT-5 (SHOULD)** Bump the adapter version in `manifest.json` and `background.js` together on any change, and
@@ -265,6 +265,28 @@ One entry per MUST exception or rule change, newest first. Format:
 ### YYYY-MM-DD: <rule ID>: <short title>
 What changes. Why. Evidence (A/B numbers, probe, test). Author.
 ```
+
+### 2026-11-14: R-NAVER-1, R-EXT-3, R-EXT-6, R-CACHE-1: product pages by a click from a held listing tab (beta)
+A second way to run a job (`job.py scroll`): the server holds one search.shopping listing tab open between HTTP calls
+(`ext_listing_tab.py`, `/listing-tabs`: open, next, specs, close) and a product page is read by a click on its card in
+that tab, with no search per product. It changes four earlier decisions, for this mode only: product page reads now
+alternate with scrolls inside one listing session (2026-11-01 said "never while a listing job runs"); the click comes
+from the listing tab instead of the kept search tab (2026-11-07); the server keeps a listing position across HTTP
+calls (R-EXT-6: still only through the routes; one session, it holds the adapter lock from open to close, `holder`
+names it in every 409); the four routes are stateful and not cached, like `/listings` (R-CACHE-1). The pace of batches
+is now set by the product reads between them as well as by `ext_listing.rest`. Walls as before (R-EXT-3): a ban, a
+refused batch or a stall ends the session (503 `wall:`), a captcha not answered on a product page closes only that
+page; a lost session is one signal, 410. Before each click the card is wheeled to the middle of the viewport and its
+rect read until steady, the opened URL is checked and a wrong product clicked once more, else 404 `card_opened_other`.
+Why: the owner (2026-11-14): no `card_not_found` from a search by name (~1.8% of the old mode), one page load per
+product, no listing burst at the start. Evidence (2026-11-14, the owner's Chrome, research probes 1-3, no captcha, ban
+or login gate): each card opened a new tab in 16 + 30 + 4 clicks and closing it left the listing tab active; a scroll
+after the clicks and after 22 min idle brought the next batch; the list is virtualized (batch 1: 0 of 36 cards left
+after 10 batches) but the current batch is always whole in the DOM; a plain click opened another product 2 times in
+16 while the page inserted a batch, the wheeled-in steady click 0 in 30 (one card opened another product of its store
+at every click and was skipped); the last batch carries `hasMore=false` and the first batch's `total` is the listing
+size (53 and 122). Offline tests: `server/test_ext_listing_tab.py`, `scripts/test_job.py`. The live A/B against the
+old mode (transport checklist step 3) is the 100-product pilot. Claude.
 
 ### 2026-11-07: R-EXT-3: a login gate is reset, not waited for; the search tab is kept between reads
 A login page (nid.naver.com) on the way to a search or a product page closes the read's tabs and takes the naver.com

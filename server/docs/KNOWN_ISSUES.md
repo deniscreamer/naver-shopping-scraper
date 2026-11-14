@@ -206,7 +206,7 @@ either, every sidecar is read again on the next run; check one product's rows by
   A fix (an `atexit` close of `browser_client`'s browsers) needs only the live smoke, not an A/B.
 
 ### K-21 Naver's internal-error page is answered 503, not 404
-- **Where:** `ext_product.read_page` (the tab-URL check), the extension's page read.
+- **Where:** `ext_product._land` (the tab-URL check, both product reads), the extension's page read.
 - **Observed (2026-11-06/07, 139 products, ~1 page read in 25):** Naver opens
   `shopv.pstatic.net/web/maintenance/internal-error.html` on any product for 2-15 minutes. The extension cannot read
   that host ("Cannot access contents of url ... Extension manifest must request permission to access this host"), so
@@ -216,6 +216,26 @@ either, every sidecar is read again on the next run; check one product's rows by
   product and come back to it (scripts/README.md "Checking a run against product pages"). Since 2026-11-07 the 503's
   error starts with its kind: `naver error page:` for this one (`adapter error:` for another failed read, `wall:`
   for a wall), so `scripts/job.py` waits and retries it and stops only on a wall; the status stays 503.
+
+### K-22 Held listing tab: limits the probes did not cover
+- **Where:** `ext_listing_tab.py` (`/listing-tabs`), `scripts/job.py scroll`; `scripts/collect_guard.py`
+  `CollectGuard.run`.
+- **Observed (2026-11-14, probes 1-3: 11 + 6 + 5 batches, 50 clicks, ~22 min idle at most):**
+  - A product partial on the first collect (e.g. `photos_incomplete`) is collected once more by `CollectGuard`; the
+    old mode's second `/products/specs` call is a 24 h cache hit, here `/listing-tabs/<id>/specs` is not cached, so
+    the product page is loaded and clicked a second time (accepted for the MVP, Fable review 7).
+  - A long tab life is unproven: a real job leaves ~100 min between scrolls (a batch's products read, translated and
+    published), the probes 22 min. A stale tab would show as a stall (503 `wall:`, the job stops) or a 410 (the job
+    opens a new tab, at most 2 times an hour).
+  - Very long listings are unproven: the probes went to batch 11 (~500 rows) and saw two ends (53, 122 rows); a
+    listing of thousands, read over a day, has not been walked in one tab.
+  - A reopen starts from the top and scrolls past done batches (~20-40 s a batch, estimated); products whose card
+    does not come again (the list is virtualized) are not read by the tab: `job.py` reports them as `left` for the
+    other mode.
+  - `scripts/fixtures/listing_tab.json` is synthetic (built offline through a fake Chrome, not captured from a
+    running server as R-TYPE-6 asks): re-capture it from `POST /listing-tabs` + `/next` at the pilot.
+- **Impact:** measured by the 100-product pilot (reopens, partials, idle). Until then a scroll job runs with the
+  owner near for captchas; a stop says why and `scroll --job` resumes.
 
 ## Stale references and unused code
 

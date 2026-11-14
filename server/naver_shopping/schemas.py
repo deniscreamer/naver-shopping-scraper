@@ -215,3 +215,18 @@ class ListingStartSchema(BaseSchema):
 
 class ListingProductsSchema(BaseSchema):
     page = PageField(max_page=MAX_LISTING_PAGE, metadata={"description": "1-based page of 50 listing rows"})
+
+
+# ---- held listing tabs (extension transport, beta: ext_listing_tab.py) ----------------
+
+class ListingTabOpenSchema(BaseSchema):
+    query = QueryField(max_length=100, metadata={"description": "search keywords, as on search.shopping.naver.com"})
+
+
+class ListingTabSchema(BaseSchema):
+    """next / close take no params (the tab id is in the path)."""
+
+
+class ListingTabSpecsSchema(BaseSchema):
+    product = ProductRefField(metadata={
+        "description": "the product whose card is clicked in the listing tab: a link or id from its batch"})

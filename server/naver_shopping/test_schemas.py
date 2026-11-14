@@ -123,3 +123,19 @@ def test_keyword_trend_and_categories():
     assert schemas.CategoriesListSchema().load({"category": "50000003"}) == {"category": "50000003"}
     with pytest.raises(ValidationError):
         schemas.CategoriesListSchema().load({"category": "x"})
+
+
+def test_listing_tab_schemas():
+    loaded = schemas.ListingTabOpenSchema().load({"query": " 남성 골프채 풀세트 "})
+    assert loaded == {"query": "남성 골프채 풀세트"}
+    for params in ({}, {"query": "x" * 101}, {"query": "x", "max_batches": "1"}):
+        with pytest.raises(ValidationError):
+            schemas.ListingTabOpenSchema().load(params)
+    assert schemas.ListingTabSchema().load({}) == {}
+    with pytest.raises(ValidationError):
+        schemas.ListingTabSchema().load({"x": "1"})
+    assert schemas.ListingTabSpecsSchema().load({"product": "https://smartstore.naver.com/shop/products/10352481064"}) == \
+        {"product": "https://smartstore.naver.com/shop/products/10352481064"}
+    for params in ({}, {"product": "https://example.com/x/products/1"}, {"product": "10352481064", "query": "q"}):
+        with pytest.raises(ValidationError):
+            schemas.ListingTabSpecsSchema().load(params)

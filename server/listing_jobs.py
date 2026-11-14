@@ -8,6 +8,10 @@ per batch, ~2-4 s a batch) and a captcha can hold it for HUMAN_WAIT_S while
 the owner solves it. One job at a time: there is one browser, and Naver bans
 bursts (server/docs/EXTENSION.md).
 
+The adapter lock (_adapter) is held by a listing job for its whole run, by a product page read (with_adapter)
+for one read, and by a held listing tab (ext_listing_tab, job.py scroll) from its open to its close; `holder`
+names that tab for the 409 texts, so a caller knows who holds the adapter and how to free it.
+
 State: the job's summary dict (ext_listing.walk updates it batch by batch)
 and its listing.jsonl under server/output/listings/<id>/. Jobs are kept in
 memory; after a restart a finished job is still read from its summary.json.
@@ -32,6 +36,7 @@ _lock = threading.Lock()
 _adapter = threading.Lock()  # one user of the owner's Chrome at a time: a listing job or a product page read
 _jobs = {}                  # id -> summary dict
 _bridge = None
+holder = None               # who holds _adapter besides a job or a read: "listing tab <id> (since ...)", for a 409
 
 
 class Busy(Exception):
@@ -114,15 +119,20 @@ def start(query, max_batches=0):
     return view(summary)
 
 
+def who():
+    """Who holds the adapter, for a 409: a running listing job's id, else the held listing tab, else a read."""
+    with _lock:
+        running = [j["id"] for j in _jobs.values() if j["status"] in ("running", "captcha")]
+    return running[0] if running else (holder or "another product page read")
+
+
 def with_adapter(read):
     """Run read(bridge) as the adapter's only user (ext_product). Busy while a
-    listing job or another read holds it; NoExtension when not connected."""
+    listing job, a held listing tab or another read holds it; NoExtension when not connected."""
     if start_bridge() is None or not _bridge.wait_connected(0):
         raise NoExtension()
     if not _adapter.acquire(blocking=False):
-        with _lock:
-            running = [j["id"] for j in _jobs.values() if j["status"] in ("running", "captcha")]
-        raise Busy(running[0] if running else "another product page read")
+        raise Busy(who())
     try:
         return read(_bridge)
     finally:

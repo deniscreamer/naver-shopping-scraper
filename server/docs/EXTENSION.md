@@ -3,7 +3,9 @@
 Status: **beta** (2026-11-01). Two jobs: the full search.shopping.naver.com listing for a query, served by
 the HTTP API as listing jobs (`POST /listings`, [ENDPOINTS.md](ENDPOINTS.md#listing-jobs-beta-the-full-search-listing))
 and runnable by hand (`server/ext_listing.py`); and a product page's 상품정보 rows (`GET /products/specs`,
-`server/ext_product.py`, [below](#product-page-specs-products-specs)). Rules: [DEVELOPMENT_RULES.md](DEVELOPMENT_RULES.md) R-EXT-*, decision log 2026-11-01.
+`server/ext_product.py`, [below](#product-page-specs-products-specs)); since 2026-11-14 a third, a listing tab held
+open between calls whose products are read by a click on their cards (`POST /listing-tabs`, `server/ext_listing_tab.py`,
+[below](#held-listing-tab-listing-tabs)). Rules: [DEVELOPMENT_RULES.md](DEVELOPMENT_RULES.md) R-EXT-*, decision log 2026-11-01.
 
 ## Why an adapter at all
 
@@ -103,6 +105,38 @@ The seller's attribute rows of a smartstore product (종류, 성별, 총클럽�
 One adapter user at a time: `listing_jobs.with_adapter` holds the same lock a listing job holds, so a read during a
 listing answers 409 and a listing during a read 409. ~30-60 s a read; cached 24 h.
 
+## Held listing tab (`/listing-tabs`)
+
+The way `scripts/job.py scroll` reads products (the owner, 2026-11-14; [ENDPOINTS.md](ENDPOINTS.md#held-listing-tabs-beta-listing-tabs)):
+one listing tab, opened as for a listing job (`open_search`, the first batch from the HTML), kept open between HTTP
+calls and walked one batch per `next` (`rest`, then wheel scrolls, as `walk`); a product of the current batch is read
+by a click on its card in that tab (`ext_product._read_card`, the same read as step 2-5 above without the search) and
+its tab closed, so Chrome is back on the listing. Probed 2026-11-14 (module docstring): every click opened a new tab,
+scrolls after clicks and after 22 min idle brought the next batch, the current batch's cards are always in the DOM
+while older ones leave it (a virtualized list: a product is read right after its batch came, never later), and the
+last batch carries `hasMore=false` (no scroll after it). Before a click (`steady=True`) the card is wheeled to the
+middle of the viewport with the generic `scroll` op and its rect read with `query` until two reads 400 ms apart agree;
+the opened URL must be `/products/<id>`, else that tab is closed and the card clicked once more; still another
+product -> 404 `card_opened_other` (a plain click opened another product 2 times in 16 while the page inserted a
+batch; this one 0 in 30). A click that opened nothing is not repeated (the listing tab may be navigating in place):
+404 `card_opened_nothing`, the session lives. No extension change.
+
+- **One session**, `ext_listing_tab._session`. It holds the adapter lock (`listing_jobs._adapter`) from open to
+  close: a listing job or a `/products/specs` read meanwhile answers 409, the text naming the tab and its DELETE
+  (`listing_jobs.holder`, `who()`). A new open closes the previous session first (its caller is gone, or it is the
+  same job opening again), every adapter tab with it.
+- **The session lock** (`ext_listing_tab._lock`): `next` and `specs` never wait for it (409), open and close do, so a
+  call left running on the server after a client's Ctrl+C (a captcha wait is up to 600 s) cannot close the next
+  session's tabs or free the adapter twice.
+- **410 is the one "session gone" signal**: unknown id, a server restart, the listing tab closed or no longer a
+  search page, an adapter error on it, a login gate, a card that opened in the listing tab itself. The caller opens
+  a new tab from the top and skips what it has done. Walls as for a listing (R-EXT-3): a ban, a refused batch or a
+  stall end the session (503 `wall:`); a captcha not answered on a product page closes only that page's tab
+  (`wall: captcha ...`, the session lives).
+- **No idle timer**: a session whose caller died without DELETE holds the adapter until the next open, a DELETE
+  (`curl -X DELETE localhost:8000/listing-tabs/<id>`) or a server restart. `job.py` closes it in a `finally`, SIGTERM
+  included.
+
 ## Effects and limits
 
 - **Everything runs as the owner**: their IP, cookies and account. Bursts get the network banned for Shopping,
@@ -119,6 +153,8 @@ listing answers 409 and a listing during a read 409. ~30-60 s a read; cached 24 
   different search). No category filter yet.
 - The adapter keeps the list of tabs it drives in its service-worker memory: if Chrome restarts the worker mid-run
   (extension reload, Chrome update), the run stops with an adapter error; start it again.
+  A held listing tab is then not in the adapter's list any more (`owned` in `background.js`): the session answers
+  410 and the next open cannot close that tab, so it stays open in Chrome; the owner closes it.
 - Fragile points: the 쇼핑 shortcut selector, the search box selector, the RSC key name, the card fields.
   The offline tests pin the parsers to trimmed real captures.
 
@@ -148,7 +184,8 @@ batch). Install / reload the adapter: [extension/README.md](../../extension/READ
 | `server/ext_listing.py` | the listing walk (path, walls, scroll loop, output); also a CLI |
 | `server/listing_jobs.py` | HTTP jobs: one at a time, a thread per job, status + rows for `/listings`; the adapter lock |
 | `server/ext_product.py` | `/products/specs`: the product page read (search, card click, unfold) and its answer |
+| `server/ext_listing_tab.py` | `/listing-tabs`: the held listing tab session (open, next batch, a product by its card, close) |
 | `server/naver_shopping/pdp.py` | pure parsers: the 상품정보 rows, the description text walk |
 | `server/naver_shopping/composite.py` | pure parsers (first batch, answers, rows) |
 | `server/notify.py` | captcha / stop notifications (webhook or macOS) |
-| tests | `test_ext_bridge.py`, `test_listing_jobs.py`, `test_ext_product.py`, `naver_shopping/test_composite.py`, `naver_shopping/test_pdp.py` (offline) |
+| tests | `test_ext_bridge.py`, `test_listing_jobs.py`, `test_ext_product.py`, `test_ext_listing_tab.py`, `naver_shopping/test_composite.py`, `naver_shopping/test_pdp.py` (offline) |

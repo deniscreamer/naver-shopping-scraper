@@ -38,6 +38,7 @@ The checklist and the reasons are in `scripts/ONBOARDING.md`. Read it first; thi
    - Run `placement.py <shop>`; `no_profile` means A3.
    - Check 2-3 products by hand, then run `publish.py <shop> --dry-run` (ONBOARDING.md part D).
    - The job's `--paid` / `--paid-variants` holds for its own products only (ONBOARDING.md L1).
+   - A big target later (the whole category): `job.py scroll` may fit better; see JOB_AGENT.md "Two ways to run a job".
    - Publish for real only after the owner says yes. Shopify writes go only through `publish.py` /
      `shopify_admin.py`.
 8. **Read what the new category did to the rest of the shop** (ONBOARDING.md "Learned", part D step 6):

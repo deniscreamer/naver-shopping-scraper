@@ -25,9 +25,13 @@ the adapter drives (the product tab) is closed after each read, so the browser i
 path is taken again when the tab is gone or is not a search page. A login gate is not waited for: the read
 closes its tabs, the search tab included, and starts again from naver.com (once).
 
+The same read from a held listing tab (ext_listing_tab, /listing-tabs/<id>/specs, 2026-11-14): _read_card from
+the click on, the card wheeled in and steady first and a wrong product clicked once more (steady=True), the
+listing tab kept instead of the search tab; _specs_tail is the answer for both.
+
 Products/details stays on the box; this route only adds what the page has.
 One adapter user at a time (listing_jobs.with_adapter): a running listing
-job makes a read busy (409). Walls are handled like the listing's
+job or a held listing tab makes a read busy (409). Walls are handled like the listing's
 (ext_listing.check: a captcha is reported and waited for, a ban page stops)
 and answer 503; only a `wall:` one is final. A 503's error starts with its kind
 (the owner 2026-11-07, for a job that goes on by itself): "wall:" (captcha not
@@ -59,6 +63,11 @@ ANSWER_TRIES = 5        # captures reads, RENDER_WAIT_S apart, until the page's 
 # page for the name's first 5 words, not for the full name nor for the listing's query; a long name's tail
 # (초보, 골프 ...) ranks other cards first. One more search with the first words, only for the default query.
 SHORT_QUERY_WORDS = 5
+# Probe 2 (2026-11-14, the held listing tab, ext_listing_tab): before a click the card is wheeled until its top is
+# STEADY_BAND px from the viewport's top (STEADY_MID aimed at, at most STEADY_DY a wheel, STEADY_WHEELS wheels), then
+# its rect read until two reads STEADY_GAP_S apart agree (STEADY_READS reads): 30 clicks, 0 shifts (_steady)
+STEADY_BAND, STEADY_MID, STEADY_DY, STEADY_WHEELS = (150, 650), 400, 2500, 8
+STEADY_READS, STEADY_GAP_S = 6, 0.4
 
 
 # Not UpstreamError / Blocked (502): scripts retry a 502, and a wall in the
@@ -171,11 +180,149 @@ def _search_tab(bridge, query, out_dir):
     return tab
 
 
+def _rect(bridge, tab, selector):
+    """The card's (x, y) in the viewport, rounded; None when it is not in the DOM."""
+    rect = (bridge.call("query", tabId=tab, selector=selector) or {}).get("rect")
+    return (round(rect.get("x", -1)), round(rect.get("y", -1))) if rect else None
+
+
+def _steady(bridge, tab, selector):
+    """Wheel the card to the middle of the viewport (the adapter's generic `scroll`), then read its rect until two
+    reads STEADY_GAP_S apart agree. -> True when it stood still. Probe 2 (2026-11-14, listing tab, 30 clicks right
+    after a batch came): the click's own scrollIntoView, while the page inserted a batch, opened another product
+    2 times in 16 (probe 1); wheeled in and steady first, 0 in 30."""
+    for _ in range(STEADY_WHEELS):
+        at = _rect(bridge, tab, selector)
+        if at is None or STEADY_BAND[0] <= at[1] <= STEADY_BAND[1]:
+            break
+        bridge.call("scroll", tabId=tab, dy=max(min(at[1] - STEADY_MID, STEADY_DY), -STEADY_DY))
+        ext_listing.pause(0.6, 1.0)
+    prev = _rect(bridge, tab, selector)
+    for _ in range(STEADY_READS):
+        time.sleep(STEADY_GAP_S)
+        cur = _rect(bridge, tab, selector)
+        if cur == prev:
+            return True
+        prev = cur
+    return False
+
+
+def _click_card(bridge, tab, selector, steady):
+    """Click the card -> the tab it opened (`tab` itself when it opened there, or when nothing opened)."""
+    if steady:
+        _steady(bridge, tab, selector)
+        # One click: the probes saw a new tab at every one of 50; a second click in a listing tab that may be
+        # navigating in place would land on a page mid-load (_read_card tells "nothing opened" from "opened here")
+        return bridge.call("click", tabId=tab, selector=selector).get("newTabId") or tab
+    ext_listing.pause(1, 2.5)
+    clicked = bridge.call("click", tabId=tab, selector=selector)
+    if not clicked.get("newTabId"):
+        # 2026-11-05: one photo click in 20 opened nothing (still on the search page): one more click
+        ext_listing.pause(1.5, 3)
+        if "/products/" not in ((bridge.call("page", tabId=tab, headChars=0) or {}).get("url") or ""):
+            clicked = bridge.call("click", tabId=tab, selector=selector)
+    return clicked.get("newTabId") or tab
+
+
+def _land(bridge, page_tab, product_id, out_dir):
+    """Wait for the opened page, check it for Naver's error page and walls -> the URL it landed on."""
+    bridge.call("wait_load", tabId=page_tab, timeoutMs=45000)
+    ext_listing.pause(3, 5)
+    # 2026-11-06: a product whose page Naver cannot serve opens shopv.pstatic.net/web/maintenance/
+    # internal-error.html (twice in a row on 10302181901): when the tab can be read it is not a wall, the
+    # product is unavailable now (404). Mostly the adapter cannot read that host and the read fails before this
+    # check, answered 503 "naver error page:" (KNOWN_ISSUES K-21); it passes in minutes
+    tab_url = next((t.get("url") or "" for t in bridge.call("tabs") or [] if t.get("tabId") == page_tab), "")
+    if "/web/maintenance/" in tab_url:
+        raise NotListed(f"product {product_id}: Naver shows its error page ({tab_url[:80]})")
+    if not ext_listing.check(bridge, page_tab, "product", out_dir):
+        raise PageBlocked(f"wall: product {product_id}: a wall on the product page")
+    return (bridge.call("page", tabId=page_tab, headChars=0) or {}).get("url") or ""
+
+
+def _open_card(bridge, tab, product_id, selector, query, opened, steady):
+    """Click the card -> the tab it opened, kept in opened["page_tab"]. steady (the listing tab): a click that
+    opened nothing (no new tab, the listing tab still a search page) leaves page_tab None, the listing tab and its
+    position intact, and the card counts as not found (NotListed card_opened_nothing)."""
+    page_tab = opened["page_tab"] = _click_card(bridge, tab, selector, steady)
+    if steady and page_tab == tab:
+        ext_listing.pause(1.5, 3)
+        url = (bridge.call("page", tabId=tab, headChars=0) or {}).get("url") or ""
+        if "search.shopping.naver.com" in url and "/products/" not in url:
+            opened["page_tab"] = None
+            raise NotListed(f"product {product_id}: card_opened_nothing: its card in the listing for {query!r} "
+                            "opened no page")
+    return page_tab
+
+
+def _read_card(bridge, tab, product_id, selector, query, out_dir, opened, steady=False):
+    """From the click on the product's card in `tab` to the product page read: -> {url, title, html, product}.
+    opened["page_tab"] is the tab the click opened (`tab` itself when the card opened there), set even when the
+    read fails; closing tabs is the caller's (read_page keeps its search tab, a listing tab session its listing).
+    steady (the held listing tab, ext_listing_tab): the card is wheeled in and steady before the click, a card
+    that opened another product is closed and clicked once more (probe 2, 2026-11-14), one that opened nothing is
+    not clicked again (_open_card)."""
+    page_tab = _open_card(bridge, tab, product_id, selector, query, opened, steady)
+    landed = _land(bridge, page_tab, product_id, out_dir)
+    if steady and f"/products/{product_id}" not in landed:
+        # Probe 2 (2026-11-14): one card in 30 (thegolf 8986473641) opened another product of its store at every
+        # click, the layout standing still; a URL check catches it, one more click after a shift.
+        if page_tab != tab:
+            bridge.call("tab_close", tabId=page_tab)
+            ext_listing.pause(1.5, 3)
+            page_tab = _open_card(bridge, tab, product_id, selector, query, opened, steady)
+            landed = _land(bridge, page_tab, product_id, out_dir)
+        if f"/products/{product_id}" not in landed:
+            raise NotListed(f"product {product_id}: card_opened_other: its card in the listing for {query!r} "
+                            f"opened {landed[:80]}")
+    # A click on the card's centre can land on its store link (2026-11-01: the Honma D1 card in the
+    # 남성 골프채 풀세트 search opened smartstore.naver.com/thegolf); then the card counts as not found.
+    if f"/products/{product_id}" not in landed:
+        raise NotListed(f"product {product_id}: its card on the search page for {query!r} opened {landed[:80]}; "
+                        "pass a query that finds it (its name)")
+    # The list can render seconds after the load event (2026-11-01: a Honma
+    # page read 3-5 s after load had none, 4 s later it had its 3 rows).
+    page = {}
+    for _ in range(RENDER_TRIES):
+        page = bridge.call("page", tabId=page_tab, headChars=FULL_HTML) or {}
+        if pdp.spec_rows(page.get("html")):
+            break
+        time.sleep(RENDER_WAIT_S)
+    if (bridge.call("query", tabId=page_tab, selector=MORE_BUTTON) or {}).get("count"):
+        bridge.call("click", tabId=page_tab, selector=MORE_BUTTON)
+        ext_listing.pause(1.5, 2.5)
+        page = bridge.call("page", tabId=page_tab, headChars=FULL_HTML) or {}
+    html = page.get("html") or ""
+    with open(os.path.join(out_dir, "product.html"), "w", encoding="utf-8") as f:   # local evidence, gitignored
+        f.write(html)
+    product = _product_answer(bridge, page_tab, product_id)
+    if product is not None:
+        with open(os.path.join(out_dir, "product.json"), "w", encoding="utf-8") as f:   # local evidence, gitignored
+            json.dump(product, f, ensure_ascii=False)
+    return {"url": page.get("url"), "title": page.get("title"), "html": html, "product": product}
+
+
+def _read_log(product_id, started, selector, page):
+    card = "link" if selector.startswith("a[") else "photo"
+    folded = ", folded" if pdp.specs_collapsed(page["html"]) else ""
+    print(f"ext-product: {product_id} read in {time.monotonic() - started:.0f} s: card by {card}, "
+          f"{len(pdp.spec_rows(page['html']))} rows{folded}, options {'yes' if page['product'] else 'NO'}", flush=True)
+
+
+def _adapter_error(product_id, e):
+    """An ExtError mid-read -> the 503 that says its kind."""
+    if "maintenance" in str(e) or "internal-error" in str(e):
+        return AdapterError(f"naver error page: product {product_id}: {e}")
+    return AdapterError(f"adapter error: product {product_id}: {e}")
+
+
 def read_page(bridge, product_id, query, out_dir):
-    """-> {url, title, html, search_url}: the product page after a click from
+    """-> {url, title, html, search_url, product}: the product page after a click from
     the search for `query`, its 상품정보 list unfolded. Closes every tab but the search tab."""
     os.makedirs(out_dir, exist_ok=True)
     started = time.monotonic()
+    opened = {}
+    tab = None
     try:
         tab = _search_tab(bridge, query, out_dir)
         search_url = (bridge.call("page", tabId=tab, headChars=0) or {}).get("url")
@@ -183,66 +330,17 @@ def read_page(bridge, product_id, query, out_dir):
         if not selector:
             raise CardMissing(f"product {product_id} is not on the search page for {query!r}; "
                               "pass a query that finds it (its name, or a shorter part of it)")
-        ext_listing.pause(1, 2.5)
-        clicked = bridge.call("click", tabId=tab, selector=selector)
-        if not clicked.get("newTabId"):
-            # 2026-11-05: one photo click in 20 opened nothing (still on the search page): one more click
-            ext_listing.pause(1.5, 3)
-            if "/products/" not in ((bridge.call("page", tabId=tab, headChars=0) or {}).get("url") or ""):
-                clicked = bridge.call("click", tabId=tab, selector=selector)
-        page_tab = clicked.get("newTabId") or tab
-        if page_tab == tab:                        # the card opened in the search tab itself: it is not kept
-            _home.pop("tab", None)
-        bridge.call("wait_load", tabId=page_tab, timeoutMs=45000)
-        ext_listing.pause(3, 5)
-        # 2026-11-06: a product whose page Naver cannot serve opens shopv.pstatic.net/web/maintenance/
-        # internal-error.html (twice in a row on 10302181901): when the tab can be read it is not a wall, the
-        # product is unavailable now (404). Mostly the adapter cannot read that host and the read fails before this
-        # check, answered 503 "naver error page:" (KNOWN_ISSUES K-21); it passes in minutes
-        tab_url = next((t.get("url") or "" for t in bridge.call("tabs") or [] if t.get("tabId") == page_tab), "")
-        if "/web/maintenance/" in tab_url:
-            raise NotListed(f"product {product_id}: Naver shows its error page ({tab_url[:80]})")
-        if not ext_listing.check(bridge, page_tab, "product", out_dir):
-            raise PageBlocked(f"wall: product {product_id}: a wall on the product page")
-        # A click on the card's centre can land on its store link (2026-11-01: the Honma D1 card in the
-        # 남성 골프채 풀세트 search opened smartstore.naver.com/thegolf); then the card counts as not found.
-        landed = (bridge.call("page", tabId=page_tab, headChars=0) or {}).get("url") or ""
-        if f"/products/{product_id}" not in landed:
-            raise NotListed(f"product {product_id}: its card on the search page for {query!r} opened {landed[:80]}; "
-                            "pass a query that finds it (its name)")
-        # The list can render seconds after the load event (2026-11-01: a Honma
-        # page read 3-5 s after load had none, 4 s later it had its 3 rows).
-        page = {}
-        for _ in range(RENDER_TRIES):
-            page = bridge.call("page", tabId=page_tab, headChars=FULL_HTML) or {}
-            if pdp.spec_rows(page.get("html")):
-                break
-            time.sleep(RENDER_WAIT_S)
-        if (bridge.call("query", tabId=page_tab, selector=MORE_BUTTON) or {}).get("count"):
-            bridge.call("click", tabId=page_tab, selector=MORE_BUTTON)
-            ext_listing.pause(1.5, 2.5)
-            page = bridge.call("page", tabId=page_tab, headChars=FULL_HTML) or {}
-        html = page.get("html") or ""
-        with open(os.path.join(out_dir, "product.html"), "w", encoding="utf-8") as f:   # local evidence, gitignored
-            f.write(html)
-        product = _product_answer(bridge, page_tab, product_id)
-        if product is not None:
-            with open(os.path.join(out_dir, "product.json"), "w", encoding="utf-8") as f:   # local evidence, gitignored
-                json.dump(product, f, ensure_ascii=False)
-        card = "link" if selector.startswith("a[") else "photo"
-        folded = ", folded" if pdp.specs_collapsed(html) else ""
-        print(f"ext-product: {product_id} read in {time.monotonic() - started:.0f} s: card by {card}, "
-              f"{len(pdp.spec_rows(html))} rows{folded}, options {'yes' if product else 'NO'}", flush=True)
-        return {"url": page.get("url"), "title": page.get("title"), "html": html, "search_url": search_url,
-                "product": product}
+        page = _read_card(bridge, tab, product_id, selector, query, out_dir, opened)
+        _read_log(product_id, started, selector, page)
+        return {**page, "search_url": search_url}
     except ext_listing.LoginGate:
         _home.pop("tab", None)                     # the reset: every tab goes, the next read starts at naver.com
         raise
     except ExtError as e:
-        if "maintenance" in str(e) or "internal-error" in str(e):
-            raise AdapterError(f"naver error page: product {product_id}: {e}")
-        raise AdapterError(f"adapter error: product {product_id}: {e}")
+        raise _adapter_error(product_id, e)
     finally:
+        if tab is not None and opened.get("page_tab") == tab:   # the card opened in the search tab: not kept
+            _home.pop("tab", None)
         left = _close_tabs(bridge, keep=_home.get("tab"))
         print(f"ext-product: tabs left: {left} (search tab {'kept' if left else 'none'})", flush=True)
 
@@ -288,10 +386,17 @@ def _specs(product, query):
     product_id = details["id"]
     out_dir = os.path.join(OUTPUT_ROOT, datetime.now().strftime("%Y%m%d-%H%M%S") + f"-{product_id}")
     page = _with_adapter(product_id, search_queries(details["name"], query), out_dir)
+    return _specs_tail(details, page, page["query"], out_dir)
+
+
+def _specs_tail(details, page, query, out_dir):
+    """The /products/specs answer from a page read ({url, html, product}), however the card was reached (the
+    search here, a held listing tab in ext_listing_tab). `details` is read before the click (the box: its failure
+    costs no page load)."""
     if not pdp.spec_rows(page["html"]):   # every product page lists at least 상품번호: not rendered, or changed
-        raise AdapterError(f"adapter error: product {product_id}: no 상품정보 list on the product page {page['url']} "
-                           f"(saved to {out_dir}); retry, or the page layout changed")
-    return specs_from_page(details, page["html"], page.get("product"), page["query"])
+        raise AdapterError(f"adapter error: product {details['id']}: no 상품정보 list on the product page "
+                           f"{page['url']} (saved to {out_dir}); retry, or the page layout changed")
+    return specs_from_page(details, page["html"], page.get("product"), query)
 
 
 def specs_from_page(details, page_html, product_answer, query=None):

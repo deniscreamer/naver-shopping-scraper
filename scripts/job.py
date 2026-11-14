@@ -10,6 +10,8 @@ owner as always.
     .venv/bin/python scripts/job.py new --query "남성 골프채 풀세트" --category 50002788 [--count 40 | --all] [--batches 2]
                                         [--paid | --paid-variants] [--exclude-known] [--shops-root DIR] [--publish [--describe]]
     .venv/bin/python scripts/job.py run [--job ID] [--items N]
+    .venv/bin/python scripts/job.py scroll --query "남성 골프채 풀세트" --category 50002788 [--count 100] [--paid | ...]
+    .venv/bin/python scripts/job.py scroll --job ID          # resume a scroll job (its listing from the top)
     .venv/bin/python scripts/job.py status [--job ID] [--json]
 
 Files, scripts/output/jobs/<job id>/:
@@ -52,12 +54,30 @@ timed_out, not a ban): read again, the owner asked again, CAPTCHA_TRIES times. A
 fresh ones, at most MAX_FAILS times). Anything else that stops the source (a wall, a refused CDN, the extension not
 connected, the server down) stops the run: `run` again resumes. Two products in a row partial for the same reason
 stop the run (collect_guard).
+
+`scroll` (the owner, 2026-11-14; the other way to run a job, `new` + `run` unchanged): no snapshot, no search per
+product. The server holds one listing tab open (POST /listing-tabs) and hands it out batch by batch (~50 rows);
+each batch is screened like `new`'s rows and every row taken is appended to listing.jsonl and taken through the same
+one() at once, its page opened by a click on its card in that tab (ctx["specs"]: the list is virtualized, a batch's
+cards leave the page a few batches later), then the next batch, until the listing's end (has_more false) or
+`--count` products at the job's final stage. job.json has `mode: scroll`, the listing's size (`total`, the first
+batch's: /products/count does not predict it) and the open tab's id (`tab`; free a tab a dead job left with
+`curl -X DELETE localhost:8000/listing-tabs/<id>`). A row is skipped only when its product is at the job's final
+stage or closed: one cut off mid-read is read again when its card comes. Products with a stage left (collected to
+translated, or failed once) are taken on without the tab, when the job starts and at the listing's end. The tab
+gone (410: closed, a login gate, the server restarted, a card that opened in the listing itself): a pause, a new
+tab from the top, done products skipped, REOPEN_MAX times in REOPEN_WINDOW_S, else the run stops. A captcha not
+answered on a product page ("wall: captcha", the tab kept) is read again as above; any other wall stops. SIGTERM
+or Ctrl+C closes the tab before the run ends. `run` and `refresh` refuse a scroll job; `scroll --job` resumes it
+(its listing walked from the top again, done products skipped).
 """
 import argparse
 import glob
 import json
 import os
+import random
 import shutil
+import signal
 import sys
 import time
 from collections import Counter
@@ -84,6 +104,12 @@ REPORT_EVERY = 10
 # again (tenacity) after 30 s, doubled each time up to 15 min, +-10 s jitter; after 2 h of it the run stops
 NET_WAIT_S, NET_MAX_WAIT_S, NET_JITTER_S, NET_GIVE_UP_S = 30, 900, 10, 7200
 RETRYABLE = ("naver error page:", "adapter error:")
+# scroll: the held listing tab gone (410), opened again after REOPEN_WAIT_S, at most REOPEN_MAX times in
+# REOPEN_WINDOW_S (2026-11-14: no login gate in ~710 products of the old mode; the pilot measures it)
+REOPEN_MAX, REOPEN_WINDOW_S, REOPEN_WAIT_S = 2, 3600, (30, 60)
+# scroll: the 404s of /listing-tabs/<id>/specs that mean "not read from this tab" (card_not_found), by their text
+# (ext_listing_tab.specs, ext_product._read_card / _land, 2026-11-14); any other 404 is the product's (not_found)
+CARD_404 = ("has no card in the listing tab", "card_opened_other", "card_opened_nothing", "Naver shows its error page")
 
 
 def _now() -> str:
@@ -223,11 +249,13 @@ def closed(job: Job) -> dict[str, str]:
     return out
 
 
-def next_key(job: Job, done: dict[str, str]) -> str | None:
-    """The first snapshot key not at the job's final stage and not closed; fresh ones before those that failed."""
+def next_key(job: Job, done: dict[str, str], staged: bool = False) -> str | None:
+    """The first snapshot key not at the job's final stage and not closed; fresh ones before those that failed.
+    `staged`: only keys with a stage (collected on; scroll takes them on without its listing tab)."""
     out = closed(job)
     failed = {e["key"] for e in job.events() if e["event"] == "failed"}
-    todo = [r["key"] for r in job.rows() if done.get(r["key"]) != job.final and r["key"] not in out]
+    todo = [r["key"] for r in job.rows() if done.get(r["key"]) != job.final and r["key"] not in out
+            and (not staged or r["key"] in done)]
     fresh = [k for k in todo if k not in failed]
     return (fresh or todo or [None])[0]
 
@@ -370,6 +398,8 @@ def cmd_refresh(args: argparse.Namespace) -> int:
     from naver_api_client import NaverApiClient
     from shop_stores import get_store
     job = open_job(args.job)
+    if _scroll_job(job):
+        return 2
     added = refresh(job, NaverApiClient(), get_store(), args.more)
     print(f"job {job.id}: {added} products added")
     return 0
@@ -383,6 +413,10 @@ class Stop(Exception):
 
 class NetworkStop(Stop):
     """The network or every model provider is down: the product is tried again with growing waits (net_retry)."""
+
+
+class TabLost(Stop):
+    """scroll: the held listing tab is gone (410): a new one is opened, done products skipped (REOPEN_MAX)."""
 
 
 def net_retry(job: "Job", key: str) -> Any:
@@ -410,20 +444,26 @@ def _network(e: Exception) -> bool:
     return "request failed" in str(e)
 
 
-def collect_with_waits(job: Job, api: Any, store: Any, table: dict, guard: Any, row: dict, tmp: str) -> Any:
+def collect_with_waits(job: Job, api: Any, store: Any, table: dict, guard: Any, row: dict, tmp: str,
+                       specs: Any = None) -> Any:
     """CollectGuard over collect_product.collect, with the job's waits; -> Outcome, or None when the product failed
-    (logged); raises Stop."""
+    (logged); raises Stop (TabLost: a scroll job's listing tab is gone). `specs`: collect's (None: its search)."""
     import requests
     from collect_guard import SourceStopped
     from collect_product import collect
     busy = errors = captchas = 0
+    how = {"specs": specs} if specs else {}
+    scroll = job.meta.get("mode") == "scroll"
     while True:
         try:
             return guard.run(row["key"], lambda: collect(
                 api, store, table, row, os.path.join(tmp, "images", str(row["product_id"])),  # type: ignore[arg-type]
-                query=row.get("query"), category=job.category, paid=job.meta["paid"], reviews=job.meta["reviews"]))
+                query=row.get("query"), category=job.category, paid=job.meta["paid"], reviews=job.meta["reviews"],
+                **how))
         except SourceStopped as e:
             error = str(e.error or "")
+            if e.status == 410 and scroll:            # only /listing-tabs answers 410; elsewhere a plain Stop
+                raise TabLost(f"{e}") from None
             if e.status == 409 and busy < BUSY_TRIES:
                 busy += 1
                 print(f"   adapter busy, waiting {BUSY_WAIT_S} s ({busy}/{BUSY_TRIES})", flush=True)
@@ -440,7 +480,10 @@ def collect_with_waits(job: Job, api: Any, store: Any, table: dict, guard: Any, 
             if e.status == 503 and "extension is not connected" in error:
                 wait_service(job, api, "the browser extension is not connected")
                 continue
-            if e.status == 503 and captchas < CAPTCHA_TRIES and _captcha_status(api) == "timed_out":
+            # scroll: only the server's own words (the tab kept): /captcha stays timed_out until the next captcha,
+            # and a ban after one would be read again (Fable review 5, 2026-11-14)
+            if e.status == 503 and captchas < CAPTCHA_TRIES and (
+                    error.startswith("wall: captcha") if scroll else _captcha_status(api) == "timed_out"):
                 captchas += 1                              # not a ban: the owner did not answer in time
                 job.log(row["key"], "captcha_again", attempt=captchas)
                 print(f"   a captcha was not answered in time: reading again, the owner is asked again "
@@ -515,7 +558,8 @@ def one(job: Job, ctx: dict, key: str, stage_now: str | None, n: int = 0) -> str
         tmp = os.path.join(job.folder, "tmp", pid)
         shutil.rmtree(tmp, ignore_errors=True)
         job.beat(key=key, n=n, stage="collect", since=_now())
-        outcome = collect_with_waits(job, ctx["api"], ctx["store"], ctx["table"], ctx["guard"], row, tmp)
+        outcome = collect_with_waits(job, ctx["api"], ctx["store"], ctx["table"], ctx["guard"], row, tmp,
+                                     ctx.get("specs"))
         if outcome is None:
             return "failed (collect)"
         if outcome.status in ("not_taken", "deferred"):
@@ -657,18 +701,19 @@ def _prepared(job: Job) -> list[dict]:
         return [json.loads(x) for x in f if x.strip()]
 
 
-def cmd_run(args: argparse.Namespace) -> int:
-    from collect_guard import CollectGuard, RunStopped
+def _context(job: Job) -> tuple[dict | None, int]:
+    """What one() needs for the job (the API, the store, the shop's catalog, the guard, the translator): -> (ctx, 0),
+    or (None, 2) with the reason printed."""
+    from collect_guard import CollectGuard
     from deferred_log import DeferredLog
     from naver_api_client import NaverApiClient
     from package_measures import load_table
     from shop_stores import get_store
     from shopify_catalog import ShopCatalog
-    job = open_job(args.job)
     store = get_store()
     if store.id.value != job.shop:
         print(f"stop: SHOP_STORE is {store.id.value}, the job is for {job.shop}")
-        return 2
+        return None, 2
     ctx = {"api": NaverApiClient(), "store": store, "table": load_table(), "catalog": ShopCatalog(store),
            "guard": CollectGuard(DeferredLog(store.id.value))}
     if job.final in ("translated", "published"):
@@ -677,13 +722,66 @@ def cmd_run(args: argparse.Namespace) -> int:
             ctx["translator"] = translate.build_chain(translate.keys_from_env())
         except translate.TranslateError as e:
             print(f"stop: translation: {e} (a job without it: job.py new ... --no-translate)")
-            return 2
-    taken = 0
-    started = time.monotonic()
+            return None, 2
+    return ctx, 0
+
+
+def _scroll_job(job: Job) -> bool:
+    """A scroll job: `run` / `refresh` refuse it (no snapshot to read deeper; its tab is scroll's)."""
+    if job.meta.get("mode") != "scroll":
+        return False
+    print(f"stop: job {job.id} is a scroll job: resume it with job.py scroll --job {job.id}")
+    return True
+
+
+def take(job: Job, ctx: dict, key: str, stage_now: str | None, run: dict) -> int | None:
+    """One product through one() (net_retry: the network down is waited out), with its start and done lines, the
+    progress line every REPORT_EVERY and the pause after it. -> None, or 3 when the run stops (logged, printed).
+    TabLost goes up: scroll opens a new tab and the product is read again when its card comes."""
+    from collect_guard import RunStopped
+    rows = job.rows()
+    n = [r["key"] for r in rows].index(key) + 1
+    name = (rows[n - 1].get("name") or "")[:50]
+    print(f"[{n}/{len(rows)}] {key.split(':')[3]} {name}", flush=True)
+    try:
+        for attempt in net_retry(job, key):
+            with attempt:
+                what = one(job, ctx, key, stage_now if attempt.retry_state.attempt_number == 1
+                           else stages(job).get(key), n)
+    except TabLost:
+        raise
+    except (Stop, RunStopped) as e:
+        if isinstance(e, RunStopped):                 # the guard deferred this product before it stopped
+            job.log(key, "deferred", reason="run_stopped")
+        job.log(key, "stop", reason=str(e)[:300])
+        print(f"STOP at {key}: {e}\n   {run['again']} to resume", flush=True)
+        return 3
+    except (OSError, ConnectionError) as e:
+        job.log(key, "stop", reason=f"{type(e).__name__}: {e}"[:300])
+        print(f"STOP at {key}: {type(e).__name__}: {e}\n   {run['again']} to resume", flush=True)
+        return 3
+    run["taken"] += 1
+    print(f"[{n}/{len(rows)}] {key.split(':')[3]} {what}", flush=True)
+    if run["taken"] % REPORT_EVERY == 0:
+        print("== " + progress(job, run["taken"], time.monotonic() - run["started"]), flush=True)
+    job.beat(key=None, n=n, stage="pause", since=_now())
+    time.sleep(PAUSE_S)
+    return None
+
+
+def cmd_run(args: argparse.Namespace) -> int:
+    job = open_job(args.job)
+    if _scroll_job(job):
+        return 2
+    ctx, code = _context(job)
+    if ctx is None:
+        return code
+    store = ctx["store"]
+    run = {"taken": 0, "started": time.monotonic(), "again": "run again"}
     goal = "to the listings' end" if job.meta.get("until_end") else job.meta.get("count") or "all"
     print(f"job {job.id}: run ({len(job.rows())} products in the snapshot, target {goal})",
           flush=True)
-    while not args.items or taken < args.items:
+    while not args.items or run["taken"] < args.items:
         done = stages(job)
         key = next_key(job, done)
         if key is None:
@@ -706,30 +804,9 @@ def cmd_run(args: argparse.Namespace) -> int:
             print(f"done: every product of the job is {job.final} or closed", flush=True)
             _dictionaries_reminder(job)
             break
-        n = [r["key"] for r in job.rows()].index(key) + 1
-        name = (next(r for r in job.rows() if r["key"] == key).get("name") or "")[:50]
-        print(f"[{n}/{len(job.rows())}] {key.split(':')[3]} {name}", flush=True)
-        try:
-            for attempt in net_retry(job, key):
-                with attempt:
-                    what = one(job, ctx, key, done.get(key) if attempt.retry_state.attempt_number == 1
-                               else stages(job).get(key), n)
-        except (Stop, RunStopped) as e:
-            if isinstance(e, RunStopped):                 # the guard deferred this product before it stopped
-                job.log(key, "deferred", reason="run_stopped")
-            job.log(key, "stop", reason=str(e)[:300])
-            print(f"STOP at {key}: {e}\n   run again to resume", flush=True)
-            return 3
-        except (OSError, ConnectionError) as e:
-            job.log(key, "stop", reason=f"{type(e).__name__}: {e}"[:300])
-            print(f"STOP at {key}: {type(e).__name__}: {e}\n   run again to resume", flush=True)
-            return 3
-        taken += 1
-        print(f"[{n}/{len(job.rows())}] {key.split(':')[3]} {what}", flush=True)
-        if taken % REPORT_EVERY == 0:
-            print("== " + progress(job, taken, time.monotonic() - started), flush=True)
-        job.beat(key=None, n=n, stage="pause", since=_now())
-        time.sleep(PAUSE_S)
+        stop = take(job, ctx, key, done.get(key), run)
+        if stop:
+            return stop
     return 0
 
 
@@ -743,6 +820,309 @@ def progress(job: Job, taken: int, seconds: float) -> str:
     return (f"progress: {st[job.final]} of {target} {job.final} (ready {s['ready']}, held {len(s['held'])}), closed "
             f"{st['closed']}, failed once {len(s['failed_once'])}; this run {taken} in {round(seconds / 60)} min, "
             f"~{round(per)} s a product, ~{round(left * per / 60)} min left")
+
+
+# ---- scroll: a held listing tab, its cards clicked (the owner, 2026-11-14) -----------------------------------
+
+class Tab:
+    """The job's held listing tab on the server (/listing-tabs): open / next / specs / close, its id in job.json
+    while it is open. specs() is collect_product.collect's `specs=`."""
+
+    def __init__(self, job: Job, api: Any):
+        self.job, self.api, self.id = job, api, None
+        self.opening = False                       # an open sent and not answered (the server may hold a tab)
+
+    def _keep(self, answer: dict) -> dict:
+        self.id = answer["id"]
+        self.job.meta.update(tab=self.id, batches=answer["batch"])
+        self.job.save_meta()
+        return answer
+
+    def open(self) -> dict:
+        self.opening = True
+        answer = self._calls(lambda: self.api.listing_tab_open(self.job.meta["queries"][0]))
+        self.opening = False
+        self.job.meta["total"] = answer["total"]                  # the listing's size (2026-11-14: 53, 122 seen)
+        return self._keep(answer)
+
+    def next(self) -> dict:
+        return self._keep(self._calls(lambda: self.api.listing_tab_next(self.id), resend=False))
+
+    def specs(self, api: Any, link: str, query: str | None) -> Any:
+        """The page's specs by a click on its card, None when the tab has no card for it (or it opened another
+        product, or nothing; or Naver's error page): not_taken card_not_found, as a search that did not show it.
+        Another 404 (the product itself gone) goes up: collect's not_found."""
+        from naver_api_client import ApiError
+        if self.id is None:
+            raise ApiError(410, "no listing tab open", path="/listing-tabs")
+        try:
+            return api.listing_tab_specs(self.id, link)
+        except ApiError as e:
+            if e.status != 404 or not any(w in (e.error or "") for w in CARD_404):
+                raise
+            return None
+
+    def lost(self) -> None:
+        """The server has no session for it any more (410): nothing to close."""
+        self.id = None
+        self.job.meta["tab"] = None
+        self.job.save_meta()
+
+    def close(self) -> None:
+        """DELETE it (idempotent); never raises: it runs in the run's finally."""
+        if self.id is None:
+            if self.opening:                           # interrupted mid-open: the server may have finished it
+                print("   an open of the listing tab was cut off: if the server finished it, the tab holds the "
+                      "adapter until the next scroll, a server restart or the DELETE a 409 names", flush=True)
+            return
+        try:
+            self.api.listing_tab_close(self.id)
+        except Exception as e:                         # the server down: a restart frees the adapter anyway
+            print(f"   the listing tab {self.id} was not closed ({type(e).__name__}: {e}); free it with "
+                  f"curl -X DELETE localhost:8000/listing-tabs/{self.id}", flush=True)
+        self.lost()
+
+    def _calls(self, call: Any, resend: bool = True) -> dict:
+        """open / next with the job's waits: 409 (adapter busy) BUSY_TRIES times, the extension or the server gone
+        (wait_service); 410 -> TabLost; anything else (a wall, a stall, a refused batch) -> Stop. resend False
+        (next): a connection lost after the call was sent is TabLost once the server is back, not a second next
+        (the server may have handed out the batch: sent again, it would answer the one after it)."""
+        import requests
+        from naver_api_client import ApiError
+        busy = 0
+        while True:
+            try:
+                return call()
+            except ApiError as e:
+                if e.status == 410:
+                    raise TabLost(f"{e}") from None
+                if e.status == 409 and busy < BUSY_TRIES:
+                    busy += 1
+                    print(f"   adapter busy ({e.error}), waiting {BUSY_WAIT_S} s ({busy}/{BUSY_TRIES})", flush=True)
+                    time.sleep(BUSY_WAIT_S)
+                    continue
+                if e.status == 503 and "extension is not connected" in str(e.error or ""):
+                    wait_service(self.job, self.api, "the browser extension is not connected")
+                    continue
+                raise Stop(f"listing tab: {e}") from None
+            except requests.exceptions.ConnectionError:
+                wait_service(self.job, self.api, "the API server does not answer")
+                if not resend:
+                    raise TabLost("the connection was lost during next: a new tab, done products skipped") from None
+
+
+def new_scroll_job(args: argparse.Namespace, shop: str, shops_root: str, root: str = JOBS_ROOT) -> Job:
+    """A scroll job's folder: job.json (`new`'s settings, so paid_choices and status read it the same way, plus
+    mode, total, tab, reopens) and an empty listing.jsonl that grows with each row taken."""
+    job_id = f"{shop}-{args.category}-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}"
+    folder = os.path.join(root, job_id)
+    os.makedirs(folder)
+    meta = {"shop": shop, "category": args.category, "queries": [args.query], "mode": "scroll",
+            "paid": args.paid or args.paid_variants, "paid_variants": args.paid_variants,
+            "reviews": args.reviews, "shops_root": shops_root, "created_at": _now(), "count": args.count,
+            "excluded_known": 0, "exclude_known": args.exclude_known,
+            "translate": not args.no_translate or args.publish, "publish": args.publish, "describe": args.describe,
+            "free_only": not args.paid, "total": None, "tab": None, "batches": 0, "reopens": [], "screen": {}}
+    with open(os.path.join(folder, "job.json"), "w", encoding="utf-8") as f:
+        json.dump(meta, f, ensure_ascii=False, indent=1)
+    open(os.path.join(folder, "listing.jsonl"), "w").close()
+    return Job(folder)
+
+
+def _reached(job: Job) -> bool:
+    count = job.meta.get("count") or 0
+    if not count:
+        return False
+    done = stages(job)
+    return sum(1 for r in job.rows() if done.get(r["key"]) == job.final) >= count
+
+
+def _drain(job: Job, ctx: dict, run: dict) -> int | None:
+    """The products with a stage left (collected to translated, and those that failed once), without the tab:
+    the same next_key / one() as `run`. -> None, or 3 (a stop)."""
+    while True:
+        done = stages(job)
+        key = next_key(job, done, staged=True)
+        if key is None:
+            return None
+        code = take(job, ctx, key, done.get(key), run)
+        if code:
+            return code
+
+
+def _reopen(job: Job, why: str, batch: int) -> int | None:
+    """TabLost: a pause and then a new tab (None), or 3 when it is the REOPEN_MAX+1-th in REOPEN_WINDOW_S."""
+    now = time.time()
+    recent = [r for r in job.meta.get("reopens") or [] if now - r.get("t", 0) < REOPEN_WINDOW_S]
+    if len(recent) >= REOPEN_MAX:
+        reason = f"the listing tab lost {len(recent) + 1} times in {REOPEN_WINDOW_S // 60} min: {why}"
+        job.log(None, "stop", reason=reason[:300])
+        print(f"STOP: {reason}\n   scroll --job {job.id} to resume", flush=True)
+        return 3
+    wait = random.uniform(*REOPEN_WAIT_S)
+    job.meta.setdefault("reopens", []).append({"at": _now(), "t": now, "batch": batch, "reason": why[:200]})
+    job.save_meta()
+    job.log(None, "reopen", batch=batch, reason=why[:300])
+    print(f"   the listing tab is gone after batch {batch} ({why[:120]}): a new one in {round(wait)} s, done "
+          "products skipped", flush=True)
+    time.sleep(wait)
+    return None
+
+
+def _batch_rows(job: Job, answer: dict, screen: Any, known: set[str], out: dict[str, str],
+                taken: set[str]) -> list[dict]:
+    """The batch's rows to take: through the screen (once a product: `out` keeps why it was left out), not
+    `known`, not taken in this tab; a product already in the job is skipped only at its final stage or closed."""
+    from listing_filter import source_key
+    done, gone = stages(job), closed(job)
+    keep = []
+    for row in answer["results"]:
+        pid = str(row.get("product_id"))
+        if pid in out:
+            continue
+        key = source_key(row, screen.namespace) or ""
+        why = screen.reason(row) if key else "key_unavailable"
+        if why is None and pid in known:
+            why = "known"
+        if why is not None:
+            out[pid] = why
+            continue
+        if key in taken or done.get(key) == job.final or key in gone:
+            continue
+        keep.append({**row, "key": key})
+    return keep
+
+
+def scroll(job: Job, ctx: dict, tab: Tab, screen: Any, known: set[str]) -> int:
+    """The scroll loop: the products with a stage first, then the listing batch by batch, each row taken at once,
+    until has_more false or --count; then the products with a stage left. -> the exit code."""
+    run = {"taken": 0, "started": time.monotonic(), "again": f"scroll --job {job.id}"}
+    code = _drain(job, ctx, run)
+    if code:
+        return code
+    out: dict[str, str] = {}                                   # product id -> why the screen left it out
+    taken: set[str] = set()                                    # keys taken from this tab (reset with a new tab)
+    batch = 0
+    while not _reached(job):
+        try:
+            job.beat(key=None, n=0, stage="listing", since=_now())
+            answer = tab.next() if tab.id else tab.open()
+            batch = answer["batch"]
+            try:
+                screen.set_published(ctx["catalog"].keys())    # one() checks it again before a product
+            except Exception:
+                pass
+            rows = _batch_rows(job, answer, screen, known, out, taken)
+            job.meta["screen"] = dict(screen.counts)
+            job.save_meta()
+            job.log(None, "batch", batch=batch, rows=len(answer["results"]), taken=len(rows),
+                    has_more=answer["has_more"])
+            print(f"batch {batch}: {len(answer['results'])} rows, {len(rows)} to take (listing total "
+                  f"{job.meta.get('total')}, has_more {answer['has_more']})", flush=True)
+            have = {r["key"] for r in job.rows()}
+            for row in rows:
+                if _reached(job):
+                    break
+                if row["key"] not in have:
+                    with open(os.path.join(job.folder, "listing.jsonl"), "a", encoding="utf-8") as f:
+                        f.write(json.dumps(row, ensure_ascii=False) + "\n")
+                taken.add(row["key"])
+                code = take(job, ctx, row["key"], stages(job).get(row["key"]), run)
+                if code:
+                    return code
+            if not answer["has_more"]:
+                break
+        except TabLost as e:
+            tab.lost()
+            taken.clear()
+            code = _reopen(job, str(e), batch)
+            if code:
+                return code
+        except Stop as e:
+            job.log(None, "stop", reason=str(e)[:300])
+            print(f"STOP: {e}\n   {run['again']} to resume", flush=True)
+            return 3
+        except (OSError, ConnectionError) as e:
+            job.log(None, "stop", reason=f"listing tab: {type(e).__name__}: {e}"[:300])
+            print(f"STOP: listing tab: {type(e).__name__}: {e}\n   {run['again']} to resume", flush=True)
+            return 3
+    tab.close()                                                # the adapter is free before the rest
+    code = _drain(job, ctx, run)
+    if code:
+        return code
+    done = stages(job)
+    gone = closed(job)
+    left = [r["key"] for r in job.rows() if done.get(r["key"]) != job.final and r["key"] not in gone]
+    cards = sum(1 for why in gone.values() if why == "not_taken: card_not_found")
+    job.log(None, "done", total=job.meta.get("total"), products=len(job.rows()), left=len(left),
+            card_not_found=cards)
+    end = f"--count {job.meta['count']} reached" if _reached(job) else "the listing's end"
+    print(f"done ({end}): every product of the job is {job.final} or closed; {len(job.rows())} taken of the "
+          f"listing's {job.meta.get('total')}" + (f"; {len(left)} not read (their card did not come again)"
+                                                    if left else "")
+          + (f"; {cards} card_not_found" if cards else "")
+          + ("; the other mode can take them (new --exclude-known)" if left or cards else ""), flush=True)
+    _dictionaries_reminder(job)
+    return 0
+
+
+def run_scroll(job: Job, ctx: dict, tab: Tab, screen: Any, known: set[str]) -> int:
+    """scroll() with the tab closed however it ends: SIGTERM is turned into KeyboardInterrupt so the finally runs
+    (by default SIGTERM skips it and the tab keeps the adapter: Fable review 4, 2026-11-14)."""
+    def term(signum: int, frame: Any) -> None:
+        raise KeyboardInterrupt("SIGTERM")
+    before = signal.signal(signal.SIGTERM, term)
+    try:
+        return scroll(job, ctx, tab, screen, known)
+    except KeyboardInterrupt as e:
+        job.log(None, "stop", reason=f"interrupted ({e or 'Ctrl+C'})")
+        print(f"STOP: interrupted\n   scroll --job {job.id} to resume", flush=True)
+        return 130
+    finally:
+        tab.close()
+        signal.signal(signal.SIGTERM, before)
+
+
+def cmd_scroll(args: argparse.Namespace) -> int:
+    from deferred_log import DeferredLog
+    from keep_run import SHOPS_ROOT
+    from listing_filter import Screen
+    from package_measures import load_table
+    from shop_stores import get_store
+    if args.job:
+        job = open_job(args.job)
+        if job.meta.get("mode") != "scroll":
+            print(f"stop: job {job.id} is not a scroll job: job.py run --job {job.id}")
+            return 2
+    else:
+        if not args.query or not args.category:
+            print("stop: a new scroll job needs --query and --category (or --job ID to resume one)")
+            return 2
+        if args.describe and not args.publish:
+            print("stop: --describe needs --publish (a job without publication: describe.py <shop> after it)")
+            return 2
+        if not any(str(r["category_id"]) == args.category for r in load_table()["rows"]):
+            print(f"stop: no category_measures.json row for {args.category}: ask the operator")
+            return 2
+        job = new_scroll_job(args, get_store().id.value, os.path.abspath(args.shops_root or SHOPS_ROOT))
+        print(f"job {job.id}: scroll {job.meta['queries'][0]!r} (target {args.count or 'the listing end'})",
+              flush=True)
+    ctx, code = _context(job)
+    if ctx is None:
+        return code
+    store = ctx["store"]
+    assert store.shopify
+    try:
+        published = ctx["catalog"].keys()
+    except Exception as e:
+        print(f"stop: shop check: {type(e).__name__}: {e}")
+        return 3
+    screen = Screen(job.category, store.shopify.namespace, published, DeferredLog(store.id.value).blocked())
+    known = known_ids() - {str(r["product_id"]) for r in job.rows()} if job.meta.get("exclude_known") else set()
+    job.meta["excluded_known"] = len(known)                    # its own products are not "known before"
+    tab = Tab(job, ctx["api"])
+    ctx["specs"] = tab.specs
+    return run_scroll(job, ctx, tab, screen, known)
 
 
 # ---- status --------------------------------------------------------------------------------------------------
@@ -798,6 +1178,22 @@ def _dictionaries_reminder(job: Job) -> None:
             print("  " + line, flush=True)
 
 
+def _job_flags(p: argparse.ArgumentParser) -> None:
+    """The settings `new` and `scroll` share."""
+    p.add_argument("--paid", action="store_true", help="paid variants (and the category's paid add-ons) too; "
+                   "without it the job collects and prepares only what costs nothing extra")
+    p.add_argument("--paid-variants", action="store_true", help="the job's products take paid variants but no paid "
+                   "add-on (the owner, 2026-11-11); the shop's other prepared records stay as they were")
+    p.add_argument("--reviews", type=int, default=20)
+    p.add_argument("--exclude-known", action="store_true", help="leave out products collected before anywhere")
+    p.add_argument("--shops-root", help="the shops folder (default scripts/output/shops)")
+    p.add_argument("--no-translate", action="store_true", help="stop each product at prepared (no model API)")
+    p.add_argument("--publish", action="store_true", help="take each product on to Shopify (ACTIVE) after "
+                   "translation: placement, then publish.py")
+    p.add_argument("--describe", action="store_true", help="with --publish: write each product's description "
+                   "before it is sent (describe.py: one model request a product)")
+
+
 def main(argv: list[str] | None = None) -> int:
     sys.path.insert(0, SCRIPTS)
     p = argparse.ArgumentParser(description="A job: one listing, one product at a time to prepared.")
@@ -811,18 +1207,14 @@ def main(argv: list[str] | None = None) -> int:
                    "listings deeper (doubled, up to MAX_BATCHES_ALL) until they have no more products")
     n.add_argument("--batches", type=int, default=2, help="listing batches of ~50 per query to start with; doubled "
                    "(up to MAX_BATCHES) while fewer than --count products pass the screen")
-    n.add_argument("--paid", action="store_true", help="paid variants (and the category's paid add-ons) too; "
-                   "without it the job collects and prepares only what costs nothing extra")
-    n.add_argument("--paid-variants", action="store_true", help="the job's products take paid variants but no paid "
-                   "add-on (the owner, 2026-11-11); the shop's other prepared records stay as they were")
-    n.add_argument("--reviews", type=int, default=20)
-    n.add_argument("--exclude-known", action="store_true", help="leave out products collected before anywhere")
-    n.add_argument("--shops-root", help="the shops folder (default scripts/output/shops)")
-    n.add_argument("--no-translate", action="store_true", help="stop each product at prepared (no model API)")
-    n.add_argument("--publish", action="store_true", help="take each product on to Shopify (ACTIVE) after "
-                   "translation: placement, then publish.py")
-    n.add_argument("--describe", action="store_true", help="with --publish: write each product's description "
-                   "before it is sent (describe.py: one model request a product)")
+    _job_flags(n)
+    c = sub.add_parser("scroll", help="the listing in one held tab, each product read by a click on its card")
+    c.add_argument("--query", help="the listing query (one)")
+    c.add_argument("--category")
+    c.add_argument("--count", type=int, default=0, help="stop once N products are at the job's final stage "
+                   "(0: to the listing's end)")
+    c.add_argument("--job", help="resume this scroll job (its own settings; the other flags are not read)")
+    _job_flags(c)
     r = sub.add_parser("run")
     r.add_argument("--job")
     r.add_argument("--items", type=int, default=0, help="stop after N products (0: to the end)")
@@ -833,7 +1225,8 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--job")
     s.add_argument("--json", action="store_true")
     args = p.parse_args(argv)
-    return {"new": cmd_new, "run": cmd_run, "status": cmd_status, "refresh": cmd_refresh}[args.cmd](args)
+    return {"new": cmd_new, "run": cmd_run, "status": cmd_status, "refresh": cmd_refresh,
+            "scroll": cmd_scroll}[args.cmd](args)
 
 
 if __name__ == "__main__":                 # description_images spawns workers that import this file again

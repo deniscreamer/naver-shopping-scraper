@@ -13,6 +13,7 @@ from bottle import request, response, route
 
 import config
 import ext_listing
+import ext_listing_tab
 import ext_product
 import listing_jobs
 from naver_shopping import api, schemas
@@ -87,7 +88,7 @@ def _failed(label, status, error):
 def call(label, schema_cls, impl, paginated=False):
     """Validate, run, map errors: bad params -> 400, missing entity -> 404,
     blocks and transport failures -> 502 (retry, or set a proxy), the
-    adapter (products/specs) busy -> 409 or unavailable / walled -> 503."""
+    adapter (products/specs, listing tabs) busy -> 409, a listing tab gone -> 410, unavailable / walled -> 503."""
     raw = query_dict()
     data, error = load_query(schema_cls, raw)
     if error:
@@ -149,7 +150,9 @@ for _path, _schema, _impl, _paginated in ENDPOINTS:
 
 # ---- listing jobs (extension transport, beta: server/docs/EXTENSION.md) --------------
 
-LISTING_PATHS = ("/listings", "/listings/<job_id>", "/listings/<job_id>/products")
+LISTING_PATHS = ("/listings", "/listings/<job_id>", "/listings/<job_id>/products",
+                 "/listing-tabs", "/listing-tabs/<tab_id>", "/listing-tabs/<tab_id>/next",
+                 "/listing-tabs/<tab_id>/specs")
 
 
 def listings_start():
@@ -160,6 +163,9 @@ def listings_start():
         job = listing_jobs.start(data["query"], data["max_batches"])
     except listing_jobs.Busy as e:
         if e.args[0] is None:
+            if listing_jobs.holder:
+                return json_response({"error": f"the adapter is held by {listing_jobs.holder}",
+                                      "job_id": None}, 409)
             return json_response({"error": "the adapter is reading a product page (/products/specs), retry shortly",
                                   "job_id": None}, 409)
         return json_response({"error": f"a listing job is running: {e}", "job_id": str(e)}, 409)
@@ -189,6 +195,38 @@ for _prefix in ("", "/" + SITE):
     route(_prefix + "/listings", method="POST")(listings_start)
     route(_prefix + "/listings/<job_id>", method="GET")(listings_get)
     route(_prefix + "/listings/<job_id>/products", method="GET")(listings_products)
+
+
+# ---- held listing tabs (ext_listing_tab, job.py scroll). Stateful like /listings: not cached (no cached_call) ----
+
+def _tab_call(label, schema_cls, tab_id, impl):
+    if not ext_listing_tab.TAB_ID.match(tab_id or ""):
+        return json_response({"error": f"Invalid listing tab id {tab_id[:40]!r}: expected YYYYMMDD-HHMMSS-xxxx"}, 400)
+    return call(label, schema_cls, impl)
+
+
+def listing_tab_open():
+    return call("listing-tabs", schemas.ListingTabOpenSchema, ext_listing_tab.open_tab)
+
+
+def listing_tab_next(tab_id):
+    return _tab_call("listing-tabs/next", schemas.ListingTabSchema, tab_id, lambda: ext_listing_tab.next_batch(tab_id))
+
+
+def listing_tab_specs(tab_id):
+    return _tab_call("listing-tabs/specs", schemas.ListingTabSpecsSchema, tab_id,
+                     lambda product: ext_listing_tab.specs(tab_id, product))
+
+
+def listing_tab_close(tab_id):
+    return _tab_call("listing-tabs", schemas.ListingTabSchema, tab_id, lambda: ext_listing_tab.close(tab_id))
+
+
+for _prefix in ("", "/" + SITE):
+    route(_prefix + "/listing-tabs", method="POST")(listing_tab_open)
+    route(_prefix + "/listing-tabs/<tab_id>", method="DELETE")(listing_tab_close)
+    route(_prefix + "/listing-tabs/<tab_id>/next", method="POST")(listing_tab_next)
+    route(_prefix + "/listing-tabs/<tab_id>/specs", method="GET")(listing_tab_specs)
 
 
 # ---- the captcha the adapter waits on (read by scripts/captcha_watch.py) ----------------------

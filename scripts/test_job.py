@@ -451,3 +451,322 @@ def test_the_shop_check_tells_the_network_from_the_shop(tmp_path):
         J.one(job, {"catalog": Catalog(CatalogError("shop.myshopify.com: HTTP 403 (the token is refused)"))},
               KEYS[0], None)
     assert not isinstance(e.value, J.NetworkStop)
+
+
+# ---- scroll: a held listing tab, its cards clicked (2026-11-14) -------------------------------------------------
+
+def tab_row(n, batch=1, category="50002788"):
+    return {"product_id": str(n), "nv_mid": None, "link": f"https://smartstore.naver.com/s/products/{n}",
+            "name": f"상품 {n}", "store": {"channel_no": "100"}, "category_id": category, "query": "q",
+            "batch": batch}
+
+
+def tab_answer(batch, ns, has_more=True, total=7, tab_id="20261114-070000-aaaa"):
+    return {"id": tab_id, "query": "q", "batch": batch, "has_more": has_more, "total": total,
+            "results": [tab_row(n, batch) for n in ns]}
+
+
+class TabApi:
+    """The /listing-tabs routes: each open starts the scripted listing from its top; a step may be an ApiError
+    to raise instead of the batch (`fail`: the call number -> the error)."""
+    def __init__(self, batches, fail=None):
+        self.batches, self.fail, self.calls = batches, dict(fail or {}), []
+        self.at = 0
+
+    def _step(self, name, *a):
+        self.calls.append((name, *a))
+        error = self.fail.pop(len(self.calls), None)
+        if error is not None:
+            raise error
+
+    def listing_tab_open(self, query):
+        self._step("open", query)
+        self.at = 1
+        return self.batches[0]
+
+    def listing_tab_next(self, tab_id):
+        self._step("next", tab_id)
+        self.at += 1
+        return self.batches[self.at - 1]
+
+    def listing_tab_specs(self, tab_id, product):
+        self._step("specs", tab_id, product)
+        return {"specs": []}
+
+    def listing_tab_close(self, tab_id):
+        self.calls.append(("close", tab_id))
+        return {"id": tab_id, "closed": True}
+
+    def health(self):
+        return {"extension": "connected"}
+
+    def captcha(self):
+        return {"status": "none"}
+
+    def names(self):
+        return [c[0] for c in self.calls]
+
+
+def scroll_job(tmp_path, **flags):
+    import argparse
+    args = argparse.Namespace(**{"query": "q", "category": "50002788", "count": 0, "paid": False,
+                                 "paid_variants": False, "reviews": 20, "exclude_known": False, "no_translate": True,
+                                 "publish": False, "describe": False, **flags})
+    return J.new_scroll_job(args, SHOP, str(tmp_path / "shops"), str(tmp_path / "jobs"))
+
+
+class Pipeline:
+    """one() stood in for: each product to the job's final stage at once (stages() read from `state`); `lost`:
+    keys whose first read loses the tab; `fail`: keys whose first read fails at translate (prepared, failed)."""
+    def __init__(self, monkeypatch, lost=(), fail=()):
+        self.state, self.taken, self.lost, self.fail = {}, [], set(lost), set(fail)
+        monkeypatch.setattr(J, "stages", lambda job: dict(self.state))
+        monkeypatch.setattr(J, "one", self.one)
+        monkeypatch.setattr(J.random, "uniform", lambda a, b: a)
+
+    def one(self, job, ctx, key, stage_now, n=0):
+        self.taken.append((key, stage_now))
+        if key in self.lost:
+            self.lost.discard(key)
+            raise J.TabLost("/listing-tabs/x/specs -> 410: a login gate on product")
+        if key in self.fail:
+            self.fail.discard(key)
+            self.state[key] = "prepared"
+            job.log(key, "failed", stage="translate", reason="x")
+            return "translate failed"
+        self.state[key] = job.final
+        return "done"
+
+
+def screen():
+    from listing_filter import Screen
+    return Screen("50002788", SHOP, exclusions={"universal": {"rules": []}}, category_rules=[])
+
+
+class Catalog:
+    def keys(self):
+        return set()
+
+
+def run_scroll(job, api):
+    tab = J.Tab(job, api)
+    ctx = {"api": api, "catalog": Catalog(), "specs": tab.specs}
+    return J.run_scroll(job, ctx, tab, screen(), set())
+
+
+def k(n):
+    return f"{SHOP}:naver:100:{n}"
+
+
+def test_a_scroll_job_reads_the_listing_batch_by_batch_to_its_end(tmp_path, monkeypatch, no_sleep):
+    job = scroll_job(tmp_path)
+    p = Pipeline(monkeypatch)
+    batches = [tab_answer(1, [1, 2]), tab_answer(2, [3, 4]), tab_answer(3, [5], has_more=False)]
+    batches[1]["results"][1]["category_id"] = "999"                             # left out by the screen
+    batches[1]["results"].append(tab_row(2, 2))                                 # a repeat of a done product
+    api = TabApi(batches)
+    assert run_scroll(job, api) == 0
+    assert [key for key, _ in p.taken] == [k(1), k(2), k(3), k(5)]
+    assert api.names() == ["open", "next", "next", "close"]                    # no scroll after has_more false
+    job = J.Job(job.folder)
+    assert [r["key"] for r in job.rows()] == [k(1), k(2), k(3), k(5)]
+    assert job.meta["mode"] == "scroll" and job.meta["total"] == 7 and job.meta["tab"] is None
+    assert job.meta["screen"] == {"category_mismatch": 1}
+    events = [e["event"] for e in job.events()]
+    assert events.count("batch") == 3 and events[-1] == "done"
+
+
+def test_a_scroll_job_stops_at_its_count_mid_batch_and_closes_the_tab(tmp_path, monkeypatch, no_sleep):
+    job = scroll_job(tmp_path, count=2)
+    p = Pipeline(monkeypatch)
+    api = TabApi([tab_answer(1, [1, 2, 3]), tab_answer(2, [4])])
+    assert run_scroll(job, api) == 0
+    assert [key for key, _ in p.taken] == [k(1), k(2)] and api.names() == ["open", "close"]
+    assert len(J.Job(job.folder).rows()) == 2 and job.events()[-1]["event"] == "done"
+
+
+def test_a_lost_tab_is_opened_again_and_done_products_are_skipped(tmp_path, monkeypatch, no_sleep):
+    from naver_api_client import ApiError
+    job = scroll_job(tmp_path)
+    p = Pipeline(monkeypatch)
+    api = TabApi([tab_answer(1, [1, 2]), tab_answer(2, [3], has_more=False)],
+                 fail={2: ApiError(410, "listing tab x: the listing tab was closed; open a new one")})
+    assert run_scroll(job, api) == 0
+    assert [key for key, _ in p.taken] == [k(1), k(2), k(3)]                    # 1 and 2 not read again
+    assert api.names() == ["open", "next", "open", "next", "close"]
+    assert no_sleep.count(J.REOPEN_WAIT_S[0]) == 1
+    reopen = next(e for e in job.events() if e["event"] == "reopen")
+    assert reopen["batch"] == 1 and "closed" in reopen["reason"]
+    assert len(J.Job(job.folder).meta["reopens"]) == 1
+
+
+def test_a_product_cut_off_by_a_lost_tab_is_read_again_when_its_card_comes(tmp_path, monkeypatch, no_sleep):
+    """Fable review 1: a row already in listing.jsonl but with no stage is not skipped, nor written twice."""
+    job = scroll_job(tmp_path)
+    p = Pipeline(monkeypatch, lost={k(2)})
+    api = TabApi([tab_answer(1, [1, 2, 3], has_more=False)])
+    assert run_scroll(job, api) == 0
+    assert [key for key, _ in p.taken] == [k(1), k(2), k(2), k(3)]
+    assert [r["key"] for r in J.Job(job.folder).rows()] == [k(1), k(2), k(3)]
+    assert api.names() == ["open", "open", "close"]
+
+
+def test_the_third_lost_tab_in_an_hour_stops(tmp_path, monkeypatch, no_sleep):
+    from naver_api_client import ApiError
+    job = scroll_job(tmp_path)
+    now = J.time.time()
+    job.meta["reopens"] = [{"t": now - 600}, {"t": now - 60}, {"t": now - 4000}]  # the last one is too old to count
+    job.save_meta()
+    Pipeline(monkeypatch)
+    api = TabApi([tab_answer(1, [1]), tab_answer(2, [2])], fail={2: ApiError(410, "gone")})
+    assert run_scroll(job, api) == 3
+    assert job.events()[-1]["event"] == "stop" and "lost 3 times" in job.events()[-1]["reason"]
+    assert api.names() == ["open", "next"]                                      # nothing left open to close
+
+
+def test_a_wall_while_scrolling_stops_and_closes_the_tab(tmp_path, monkeypatch, no_sleep):
+    from naver_api_client import ApiError
+    job = scroll_job(tmp_path)
+    Pipeline(monkeypatch)
+    api = TabApi([tab_answer(1, [1]), tab_answer(2, [2])],
+                 fail={3: ApiError(503, "wall: listing tab x: stalled, the page loaded no batch 2")})
+    assert run_scroll(job, api) == 3
+    assert api.names() == ["open", "next", "next", "close"] and "stalled" in job.events()[-1]["reason"]
+
+
+def test_scroll_job_resumes_and_takes_the_ones_with_a_stage_first_and_a_failed_one_at_the_end(
+        tmp_path, monkeypatch, no_sleep):
+    job = scroll_job(tmp_path, no_translate=False)
+    with open(os.path.join(job.folder, "listing.jsonl"), "w") as f:            # an earlier run of the job
+        f.write("".join(json.dumps({**tab_row(n), "key": k(n)}) + "\n" for n in (1, 2, 3)))
+    p = Pipeline(monkeypatch, fail={k(4)})
+    p.state.update({k(1): job.final, k(2): "collected"})                        # 3: cut off before its stage
+    api = TabApi([tab_answer(1, [1, 2, 3, 4], has_more=False)])
+    assert run_scroll(J.Job(job.folder), api) == 0
+    assert p.taken == [(k(2), "collected"), (k(3), None), (k(4), None), (k(4), "prepared")]
+    assert api.names() == ["open", "close"]
+    assert J.Job(job.folder).events()[-1]["event"] == "done"
+
+
+def test_sigterm_closes_the_tab(tmp_path, monkeypatch, no_sleep):
+    import signal
+    job = scroll_job(tmp_path)
+    p = Pipeline(monkeypatch)
+    real = p.one
+
+    def killed(job, ctx, key, stage_now, n=0):
+        os.kill(os.getpid(), signal.SIGTERM)
+        return real(job, ctx, key, stage_now, n)
+    monkeypatch.setattr(J, "one", killed)
+    before = signal.getsignal(signal.SIGTERM)
+    api = TabApi([tab_answer(1, [1, 2])])
+    assert run_scroll(job, api) == 130
+    assert api.names() == ["open", "close"] and J.Job(job.folder).meta["tab"] is None
+    assert signal.getsignal(signal.SIGTERM) is before and job.events()[-1]["event"] == "stop"
+
+
+def test_run_and_refresh_refuse_a_scroll_job(tmp_path, capsys):
+    import argparse
+    job = scroll_job(tmp_path)
+    assert J.cmd_run(argparse.Namespace(job=job.folder, items=0)) == 2
+    assert J.cmd_refresh(argparse.Namespace(job=job.folder, more=50)) == 2
+    assert f"scroll --job {job.id}" in capsys.readouterr().out
+    assert not J._scroll_job(make_job(tmp_path / "old"))                          # an old job.json has no mode
+
+
+def test_paid_choices_read_a_scroll_job(tmp_path):
+    import run_transform
+    job = scroll_job(tmp_path, paid=True, paid_variants=True)
+    with open(os.path.join(job.folder, "listing.jsonl"), "w") as f:
+        f.write(json.dumps({**tab_row(5), "key": k(5)}) + "\n")
+    got = run_transform.paid_choices(SHOP, str(tmp_path / "shops"), str(tmp_path / "jobs"))
+    assert got == {"5": run_transform.VARIANTS}
+
+
+def test_tab_specs_read_by_the_click_and_a_missing_card_is_none(tmp_path):
+    from naver_api_client import ApiError
+    job = scroll_job(tmp_path)
+    api = TabApi([tab_answer(1, [1])], fail={
+        3: ApiError(404, "product 1 has no card in the listing tab for 'q' (batch 1)"),
+        4: ApiError(404, "product 1: card_opened_nothing: its card in the listing for 'q' opened no page"),
+        5: ApiError(404, "product 1 is not found")})                         # the product itself: collect's
+    tab = J.Tab(job, api)
+    with pytest.raises(ApiError) as e:
+        tab.specs(api, "l", "q")                                                # no tab open yet: as a lost one
+    assert e.value.status == 410
+    tab.open()
+    assert tab.specs(api, "link", "q") == {"specs": []} and api.calls[-1] == ("specs", tab.id, "link")
+    assert tab.specs(api, "link", "q") is None and tab.specs(api, "link", "q") is None
+    with pytest.raises(ApiError, match="not found"):
+        tab.specs(api, "link", "q")
+    assert J.Job(job.folder).meta["tab"] == tab.id
+
+
+def test_a_lost_tab_while_collecting_is_tab_lost(tmp_path, no_sleep):
+    job = make_job(tmp_path)
+    guard = Guard(SourceStopped("410", status=410, error="listing tab x is gone"))
+    with pytest.raises(J.Stop) as e:                                           # the old mode: a plain stop
+        J.collect_with_waits(job, Api(), None, {}, guard, job.rows()[0], str(tmp_path))
+    assert not isinstance(e.value, J.TabLost)
+    job.meta["mode"] = "scroll"
+    guard = Guard(SourceStopped("410", status=410, error="listing tab x is gone"))
+    with pytest.raises(J.TabLost):
+        J.collect_with_waits(job, Api(), None, {}, guard, job.rows()[0], str(tmp_path), specs=lambda *a: None)
+
+
+def test_a_connection_lost_during_next_opens_a_new_tab_not_a_second_next(tmp_path, monkeypatch, no_sleep):
+    """The server may have handed out the batch before the connection dropped: sent again, next would skip it."""
+    import requests
+    job = scroll_job(tmp_path)
+    p = Pipeline(monkeypatch)
+    api = TabApi([tab_answer(1, [1]), tab_answer(2, [2], has_more=False)],
+                 fail={2: requests.exceptions.ConnectionError("connection aborted mid-body")})
+    assert run_scroll(job, api) == 0
+    assert api.names() == ["open", "next", "open", "next", "close"]
+    assert [key for key, _ in p.taken] == [k(1), k(2)]
+    assert any(e["event"] == "reopen" and "connection" in e["reason"] for e in job.events())
+
+
+def test_an_open_cut_off_says_how_the_adapter_is_freed(tmp_path, capsys):
+    job = scroll_job(tmp_path)
+    api = TabApi([tab_answer(1, [1])], fail={1: KeyboardInterrupt()})
+    tab = J.Tab(job, api)
+    with pytest.raises(KeyboardInterrupt):
+        tab.open()
+    tab.close()
+    assert "open of the listing tab was cut off" in capsys.readouterr().out and api.names() == ["open"]
+
+
+def test_scroll_asks_again_only_on_the_servers_captcha_words(tmp_path, no_sleep):
+    """Fable review 5: /captcha stays timed_out until the next captcha; a ban after one is not read again."""
+    job = make_job(tmp_path)
+    job.meta["mode"] = "scroll"
+    guard = Guard(SourceStopped("503", status=503, error="wall: captcha not answered on product 11; the listing "
+                                                         "tab is kept"))
+    out = J.collect_with_waits(job, Api(captcha="none"), None, {}, guard, job.rows()[0], str(tmp_path))
+    assert out.status == "complete" and [e["event"] for e in job.events()] == ["captcha_again"]
+    guard = Guard(SourceStopped("503", status=503, error="wall: ban page at product 11; the listing tab is closed"))
+    with pytest.raises(J.Stop):
+        J.collect_with_waits(job, Api(captcha="timed_out"), None, {}, guard, job.rows()[0], str(tmp_path))
+
+
+def test_collect_reads_specs_its_way_and_a_410_stops_the_source():
+    from collect_product import collect, stopped
+    from naver_api_client import ApiError
+
+    class Box:
+        def product_details(self, link):
+            return {"id": "11"}
+
+        def selected_reviews(self, link, count):
+            return {"results": []}
+    asked = []
+    out = collect(Box(), None, {}, {"link": "l"}, "/nowhere", query="q", category="50002788",  # type: ignore
+                  specs=lambda api, link, query: asked.append((link, query)))
+    assert out.status == "not_taken" and out.reason == "card_not_found" and asked == [("l", "q")]
+
+    def gone(api, link, query):
+        raise ApiError(410, "listing tab x is gone")
+    with pytest.raises(SourceStopped) as e:
+        collect(Box(), None, {}, {"link": "l"}, "/nowhere", query="q", category="50002788", specs=gone)  # type: ignore
+    assert e.value.status == 410 and stopped(ApiError(410)) and not stopped(ApiError(404))

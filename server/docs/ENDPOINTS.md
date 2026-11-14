@@ -65,8 +65,9 @@ Every error body is JSON with an `error` string. `<label>` is the path without t
 | 404 | product / store / catalog / category does not exist (`NotFound`) | `{"error": "<message>"}` (or `"not found"`) |
 | 502 | blocked by Naver: captcha, login gate, 403/405/418/429/490 (`Blocked`) | `{"error": "naver-shopping blocked the request, retry later: <detail>"}` |
 | 502 | transport failure, upstream 5xx, empty answer, Chrome could not start (`UpstreamError`) | `{"error": "naver-shopping <label> failed: <detail>"}` |
-| 409 | `/products/specs` only: the adapter is busy (a listing job runs) (`ext_product.AdapterBusy`) | `{"error": "the adapter is busy (<job id>), retry when it is done"}` |
-| 503 | `/products/specs` only: extension not connected, a wall on the way (captcha not solved, login gate again after the reset, ban page), the page not rendered, an adapter error (`ext_product.AdapterError`) | `{"error": "<detail>"}`; a read's error starts with its kind (2026-11-07): `wall: ...` (stop), `naver error page: ...` (K-21, passes in minutes), `adapter error: ...` (a failed read) |
+| 409 | the extension routes (`/products/specs`, `/listing-tabs`): the adapter is busy (a listing job runs, a held listing tab, another read), or a listing tab's own call runs (`ext_product.AdapterBusy`) | `{"error": "the adapter is busy (<job id> \| listing tab <id> (since <at>); free it with DELETE /listing-tabs/<id>), retry when it is done"}`; `{"error": "listing tab <id> is busy with another call, retry when it is done"}` |
+| 410 | `/listing-tabs/<id>/next` and `/specs`: the session is gone (unknown id, closed, replaced, the server restarted; its tab closed or no longer a search page; an adapter error on it; a login gate; a card that opened in the listing tab itself) (`ext_listing_tab.TabGone`) | `{"error": "listing tab <id>: <why>; open a new one"}` |
+| 503 | the extension routes: extension not connected, a wall on the way (captcha not solved, login gate again after the reset, ban page; a listing tab's refused batch or stall), the page not rendered, an adapter error (`ext_product.AdapterError`) | `{"error": "<detail>"}`; a read's error starts with its kind (2026-11-07): `wall: ...` (stop; `wall: captcha ...` from a listing tab: not answered in time, the tab kept), `naver error page: ...` (K-21, passes in minutes), `adapter error: ...` (a failed read) |
 | 500 | anything else (parser surprise) | `{"error": "naver-shopping <label> failed: <ExceptionType>: <detail>"}` |
 
 Validation examples (verified against the schemas):
@@ -80,10 +81,11 @@ field."]}}
 ```
 
 Client policy: 400 and 404 are final, do not retry. 502 is retryable after a pause. 409 / 503 from
-`/products/specs` come from the owner's Chrome, where a retry after a wall risks a ban (R-EXT-3): a 503 whose
+`/products/specs` and `/listing-tabs` come from the owner's Chrome, where a retry after a wall risks a ban (R-EXT-3): a 503 whose
 error starts with `wall:` (or has no kind, e.g. the extension not connected) is final; one starting with
 `naver error page:` or `adapter error:` may be retried after ~120 s, at most twice (scripts/job.py); retry a 409
-once the listing is done. If a 502 that says
+once the listing is done. A listing tab's `wall: captcha` may be read again (the tab is kept; scripts/job.py: up to
+6 times); a 410 is final for that tab: open a new one. If a 502 that says
 `blocked the request` persists, Naver is refusing this machine's IP (set `NAVER_SHOPPING_PROXY`, see
 `server/README.md`). If a 502 that says `failed: ... browser box unavailable` persists, Chrome cannot start on the
 host; a proxy does not help. 500 is a server bug.
@@ -438,7 +440,7 @@ answer's `query` is the search that listed the product. With an explicit `query`
 missing card answers 404.
 
 Transport: box for the product record (as `/products/details`), then the extension (one page read, ~30-60 s, one
-at a time; a running listing job answers 409). Cache: 24 h per `product` + `query` (`PRODUCT_SPECS_CACHE`).
+at a time; a running listing job or a held listing tab answers 409). Cache: 24 h per `product` + `query` (`PRODUCT_SPECS_CACHE`).
 Output: `{id, name, link, query, category, specs: [{label, value}], is_complete, facts, options, delivery, measures,
 read_at}`. `delivery` (`parsers.parse_page_delivery`, null without the page's product answer): the fee as the page
 charges it (`/products/details` `delivery` fields) plus `is_overseas`, `scope` (`international` / `domestic`),
@@ -537,7 +539,7 @@ Both prefixes. One job at a time.
 
 | Route | Params | Answer |
 |---|---|---|
-| `POST /listings` | `query` (1-100 chars, required), `max_batches` (0-200, 0 = all) as query params | `202` job; `409 {error, job_id}` another job runs (`job_id` null: a `/products/specs` read holds the adapter, retry shortly); `503` the browser extension is not connected; `400` bad params |
+| `POST /listings` | `query` (1-100 chars, required), `max_batches` (0-200, 0 = all) as query params | `202` job; `409 {error, job_id}` another job runs (`job_id` null: a `/products/specs` read holds the adapter, retry shortly, or a held listing tab: the error names it); `503` the browser extension is not connected; `400` bad params |
 | `GET /listings/<job_id>` | - | job: `{id, query, status, max_batches, batches, kept, ads, total, cursor, has_more, stop, started_at, finished_at}`; `404` unknown |
 | `GET /listings/<job_id>/products` | `page` (1-1000) | rows, 50 a page, the usual pagination shape (works while the job runs: rows so far) |
 
@@ -560,6 +562,41 @@ curl "http://localhost:8000/listings/<job_id>/products?page=1"
 ```
 
 Client: `scripts/naver_api_client.py` `NaverApiClient.listing(query)` starts, polls and returns every row.
+
+### Held listing tabs (beta): `/listing-tabs`
+
+One search.shopping listing tab kept open on the server between calls (`ext_listing_tab.py`, the owner 2026-11-14),
+handed out one batch per call; a product of the current batch is read by a click on its card in that tab, with no
+search ([EXTENSION.md](EXTENSION.md#held-listing-tab-listing-tabs)). For `scripts/job.py scroll`. Both prefixes. One
+session at a time: it holds the adapter from open to close, so `POST /listings` and `/products/specs` answer 409
+meanwhile, naming it. Stateful, never cached.
+
+| Route | Params | Answer |
+|---|---|---|
+| `POST /listing-tabs` | `query` (1-100 chars, required) as a query param | `200` ListingTab, batch 1 (a previous session is closed first); `409` the adapter is busy (a listing job or a read); `503` not connected / `wall:` / `adapter error:`; `400` bad params |
+| `POST /listing-tabs/<id>/next` | - | `200` ListingTab, the next batch (one already loaded, else a scroll for it); after the last batch `has_more` false and `results` `[]`, no scroll; `409` another call of the tab runs; `410`; `503` `wall:` (a stall, a refused batch, a ban: the session is closed) |
+| `GET /listing-tabs/<id>/specs` | `product` (product ref, required: a row of a batch) | `200` the `/products/specs` answer, `query` the tab's; `404` no card in the tab (`... has no card in the listing tab ...`) or its card opened another product (`card_opened_other`) or nothing (`card_opened_nothing`) or Naver's error page: the session lives (a card that opened another product in the listing tab itself ends it: the next call is `410`); `409`; `410`; `503` `wall: captcha ...` (the tab kept), `wall: ...` (a ban: the tab closed), `naver error page:`, `adapter error:` |
+| `DELETE /listing-tabs/<id>` | - | `200 {id, closed: true}`; idempotent (an unknown id too); waits for a running call of the tab |
+
+`<id>` is `YYYYMMDD-HHMMSS-xxxx` (else `400`). ListingTab: `{id, query, batch, has_more, total, results: [row]}`;
+`total` is the first batch's (the listing's size, 2026-11-14: `/products/count` does not predict it), repeated in
+every answer; rows have the listing jobs' row shape (above), unique within a batch only: a repeat across batches is
+the caller's to drop. The current batch's cards are all in the page; older ones leave it (a virtualized list), so a
+product is read right after its batch came. A card is wheeled to the middle of the view and read until steady before
+the click; the opened page must be `/products/<id>`, else it is closed and the card clicked once more (2026-11-14); a
+click that opened nothing is not repeated (`404 card_opened_nothing`).
+A card that opened in the listing tab itself is answered `200` and the session ends (the next call is `410`).
+No idle timer: a session its caller left open holds the adapter until the next open, a DELETE or a server restart.
+
+```
+curl -X POST "http://localhost:8000/listing-tabs?query=%EB%82%A8%EC%84%B1%20%EA%B3%A8%ED%94%84%EC%B1%84%20%ED%92%80%EC%84%B8%ED%8A%B8"
+curl -X POST "http://localhost:8000/listing-tabs/<id>/next"
+curl "http://localhost:8000/listing-tabs/<id>/specs?product=https://smartstore.naver.com/scarabee/products/13021362937"
+curl -X DELETE "http://localhost:8000/listing-tabs/<id>"
+```
+
+Client: `NaverApiClient.listing_tab_open / listing_tab_next / listing_tab_specs / listing_tab_close`; types
+`ListingTab`, `ListingTabClosed` (`scripts/naver_types.py`).
 
 ### `GET /captcha`: the captcha the adapter waits on
 

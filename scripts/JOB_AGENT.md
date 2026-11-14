@@ -58,6 +58,42 @@ line says `described (ok)`, `described (trimmed, N cut)` or `described (fallback
 and the description is the title as one sentence: tell the owner how many). No provider answering stops the run.
 The cuts, the origin decisions and the conflicts are in `shops/<shop>/translation/descriptions.jsonl`.
 
+## Two ways to run a job: which one when
+
+Preliminary (2026-11-14, before the pilot): the numbers are guesses, revised after the 100-product pilot of `scroll`.
+
+- **`scroll`**: the whole category or most of it (a target over ~150-200 products); or the old mode's `card_not_found`
+  over 2% in this category (common names, many look-alikes); one query, one sitting, the owner near for captchas.
+- **`new` + `run`**: a small target (`--count` up to ~100: the start's listing burst is short, `scroll` gains little);
+  2+ queries; a run stopped for days and resumed exactly where it was (the snapshot is fixed, `scroll --job` walks
+  the listing from the top again); given products, the `card_not_found` of a scroll job among them (`new
+  --exclude-known`, `run --job`); `refresh`.
+- **The listing's size alone decides little**: reading 698 rows up front costs ~5 min. The size is the first batch's
+  `total` (`/products/count` does not predict it: 289 vs 53, 1148 vs 122); to see it without a job, one search page
+  load: `curl -X POST "localhost:8000/listing-tabs?query=<urlencoded>"`, read `total`, then
+  `curl -X DELETE localhost:8000/listing-tabs/<id>`. A scroll job writes it into `job.json` (`total`).
+- **After a captcha or a ban in the last 24 h**: either mode, only with a small `--count` (up to 50). Which mode is
+  safer is for the pilot to show.
+
+## Loop: `scroll` (beta, the owner 2026-11-14)
+
+```sh
+.venv/bin/python -u scripts/job.py scroll --query "남성 골프채 풀세트" --category 50002788 --count 100 --paid
+.venv/bin/python -u scripts/job.py scroll --job <id>      # resume (the listing from the top, done products skipped)
+.venv/bin/python scripts/job.py status --json
+```
+
+No snapshot and no search per product: the server holds one listing tab open (`/listing-tabs`,
+server/docs/EXTENSION.md) and the job takes it batch by batch. Each batch is screened like `new`'s rows, every row taken
+goes into `listing.jsonl` and through the same stages at once, its page opened by a click on its card in that tab;
+then the next batch, until the listing's end (`has_more` false) or `--count` products at the final stage. One
+`batch N: R rows, T to take (listing total ..., has_more ...)` line per batch, then the product lines as in `run`.
+Products with a stage left (collected to translated, failed once) are taken on without the tab, when the job starts
+and after the listing's end. The done line says how many were taken of the listing's `total`, and how many were not
+read (their card did not come again after a lost tab): the other mode can take those. The tab is closed (DELETE) however
+the run ends, SIGTERM and Ctrl+C included; while it is open, `/products/specs` and `POST /listings` answer 409. `run`
+and `refresh` refuse a scroll job (`scroll --job` resumes it); one query a job (a second query: another job).
+
 ## What stops, and who acts
 
 | Seen | What the job did | You |
@@ -71,6 +107,11 @@ The cuts, the origin decisions and the conflicts are in `shops/<shop>/translatio
 | `STOP ... RunStopped` (two products partial for one reason) | stopped | a collector defect: investigate, report; do not edit code during the job |
 | `failed` (a 503 `naver error page:` or `adapter error:` still there after 2 retries, 120 s apart) | the next product; tried again at the end | nothing; twice failed: closed |
 | `not_taken` / `deferred` | the next product | nothing; a defer is lifted only by the owner (`deferred_log.py allow`) |
+| scroll: `the listing tab is gone after batch N (...): a new one in S s` (410: tab closed, login gate, server restart, a card that opened in the listing; or the connection lost during `next`) | waits 30-60 s, opens a new tab from the top, done products skipped; event `reopen` | nothing |
+| scroll: `STOP: the listing tab lost 3 times in 60 min` | stopped (at most 2 reopens an hour) | tell the owner; `scroll --job <id>` once they say so |
+| scroll: `STOP: listing tab: ... wall: ... stalled` (no batch while `has_more` was true) or `refused` | stopped: a stall is not the listing's end | tell the owner; `scroll --job <id>` only after they say so |
+| scroll: `done (the listing's end)` with `has_more false` | the last batch read; no scroll after it | nothing; `left` products: the other mode, on the owner's word |
+| `adapter busy ... waiting 30 s` with no other job running, or scroll's `the listing tab <id> was not closed` | waits 30 s, 12 times, then stops: a dead scroll job may hold the adapter (no idle timer; the 409 names `listing tab <id>`, so does that job's `job.json` `tab`) | when no `job.py scroll` runs: `curl -X DELETE localhost:8000/listing-tabs/<id>` (or restart the server) |
 | `held` codes in status | the product is prepared as held | read the codes ([README.md](README.md) Transform); report |
 
 A captcha is answered by the owner in Chrome while the read waits; a login page is reset by the server

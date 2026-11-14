@@ -99,6 +99,10 @@ class NaverApiClient:
         """POST with query params (POST /listings); answers 200 / 202 are returned."""
         return self._request("POST", path, params)
 
+    def delete(self, path, **params):
+        """DELETE (DELETE /listing-tabs/<id>)."""
+        return self._request("DELETE", path, params)
+
     def _request(self, method, path, params):
         url = self.base_url + "/" + path.lstrip("/")
         params = {k: v for k, v in params.items() if v is not None}
@@ -243,6 +247,29 @@ class NaverApiClient:
         for page in self.pages(f"/listings/{job['id']}/products"):
             rows.extend(page.get("results") or [])
         return {"job": job, "results": rows}
+
+    # ---- a held listing tab (job.py scroll): one session at a time, server-side state, never cached ----------
+    # ApiError 410 = the session is gone (closed, replaced, its tab lost, a login gate, the server restarted):
+    # open a new one; 409 = the adapter is busy (a listing job, a /products/specs read, or another call of the
+    # session); 503 = the extension is not connected, or a wall ("wall: captcha ..." on a product page keeps the
+    # session). None of them is retried here (RETRY_STATUSES).
+
+    def listing_tab_open(self, query: str) -> T.ListingTab:
+        """A new listing tab session for `query` (a previous one is closed first) -> its first batch."""
+        return self.post("/listing-tabs", query=query)
+
+    def listing_tab_next(self, tab_id: str) -> T.ListingTab:
+        """The session's next batch (~50 rows); has_more false with no rows after the listing's end."""
+        return self.post(f"/listing-tabs/{tab_id}/next")
+
+    def listing_tab_specs(self, tab_id: str, product: str) -> T.ProductSpecs:
+        """The /products/specs answer for `product`, its card clicked in the session's listing tab (no search).
+        ApiError 404 = no card for it in the tab, or the card opened another product or nothing."""
+        return self.get(f"/listing-tabs/{tab_id}/specs", product=product)
+
+    def listing_tab_close(self, tab_id: str) -> T.ListingTabClosed:
+        """End the session (idempotent: an unknown id is closed too)."""
+        return self.delete(f"/listing-tabs/{tab_id}")
 
 
 def _never_connected(exc):

@@ -17,7 +17,7 @@ All paths are relative to `server/`, which is the import root (section 10).
 |---|---|
 | `run.py` | Entry point. cheroot WSGI server on `0.0.0.0:config.PORT`, 16 threads, serving bottle's default app. |
 | `main.py` | In-process demo: calls `naver_shopping.api` directly and writes `output/*.json` relative to the CWD. |
-| `routes.py` | Mounts the 14 endpoints (`routes.ENDPOINTS`) at `/path` and `/naver-shopping/path`, plus the listing job routes (`routes.LISTING_PATHS`, both prefixes) and unprefixed `/` and `/health` (with the extension status). `routes.call` validates, runs, maps errors to HTTP. `routes.paginate` flattens pagination. |
+| `routes.py` | Mounts the 14 endpoints (`routes.ENDPOINTS`) at `/path` and `/naver-shopping/path`, plus the listing job and held listing tab routes (`routes.LISTING_PATHS`, both prefixes) and unprefixed `/` and `/health` (with the extension status). `routes.call` validates, runs, maps errors to HTTP. `routes.paginate` flattens pagination. |
 | `schema_fields.py` | marshmallow base schema (`unknown=RAISE`), `load_query`, field types (`RefField`, `Flag`, page fields). |
 | `scraper_errors.py` | Base taxonomy: `UpstreamError`, `Blocked(UpstreamError)`, `BadRequest`, `NotFound`. |
 | `cache.py` | In-process TTL cache, `cached_call`. |
@@ -34,7 +34,7 @@ All paths are relative to `server/`, which is the import root (section 10).
 | `naver_shopping/parsers.py` | Pure functions: raw JSON / HTML to output dicts. |
 | `naver_shopping/review_select.py` | Pure: which reviews `/products/reviews/selected` keeps (tiers, caps). |
 | `naver_shopping/cache_config.py` | One TTL per cached namespace, each with its reason. |
-| `test_import_smoke.py`, `naver_shopping/test_*.py` | Offline tests (446 at the time of writing). Fixtures in `naver_shopping/fixtures/`. |
+| `test_import_smoke.py`, `naver_shopping/test_*.py` | Offline tests (469 at the time of writing). Fixtures in `naver_shopping/fixtures/`. |
 
 ## 2. Layers
 
@@ -340,6 +340,8 @@ like a person, takes the first batch from the HTML and lets the page load the re
 serves it as listing jobs (`listing_jobs.py`, `POST /listings`); `run.py` starts the bridge. A second use: a
 product page's 상품정보 rows (`ext_product.py`, `GET /products/specs`), reached by a click from the search and parsed
 in Python (`naver_shopping/pdp.py`); it shares one adapter lock with the listing jobs (`listing_jobs.with_adapter`).
+A third (2026-11-14): a held listing tab (`ext_listing_tab.py`, `/listing-tabs`) takes that same lock from its open to
+its close, so nothing else uses the adapter while it is open, and a lock of its own keeps its calls in turn.
 Everything about it: [EXTENSION.md](EXTENSION.md); rules R-EXT-*.
 
 ## 13. Naver specifics
@@ -520,6 +522,19 @@ primary record, with dates; read it before changing the behaviour.
 - A review photo from an iPhone can be served as MPO with an HDR gain map as its second picture, which Pillow cannot
   decode (seen 2026-11-08 on 4 review photos of the 100-run); the first picture is the photo. ->
   `scripts/image_prep._first_frame` docstring.
+
+- The search.shopping list is virtualized (probed 2026-11-14 in a held listing tab): older batches leave the DOM
+  (batch 1: 0 of 36 cards after 10 batches, ~800-900 cards held), the current batch is always whole in it. A card
+  click opens the product in a new tab and the listing tab survives it (16 + 30 + 4 clicks). -> `ext_listing_tab`
+  module docstring.
+- The listing's end: the last batch carries `hasMore=false`; a scroll after it brings nothing or a repeat of that
+  batch (probed 2026-11-14, two listings). -> `ext_listing_tab._take` docstring.
+- The first batch's `total` is the listing's size (53 and 122 seen, 2026-11-14); `/products/count` (ns-portal) does
+  not predict it (289 and 1148 for the same queries). -> `ext_listing_tab` module docstring.
+- A card clicked right after the page inserted a batch can open another product (2 in 16, 2026-11-14: the layout
+  shifts between the click's scrollIntoView and the click); wheeled to the middle of the view and steady first, 0 in
+  30. One card opened another product of its store at every click (thegolf 8986473641). -> `ext_product.STEADY_*`
+  comment, `_steady` and `_read_card` docstrings.
 
 A new upstream fact gets a dated comment at the code that handles it and one
 line here (R-NAVER-4).

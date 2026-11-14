@@ -401,6 +401,7 @@ def walk(bridge, query, out_dir, max_batches, keep_tab, summary):
                     summary["stop"], code = "wall while scrolling", 3
                     break
                 captures = next_batches(bridge, tab)
+            # the same stall / refused-batch stops as ext_listing_tab.next_batch: a change here is made there too
             if not captures:
                 summary["stop"], code = "stalled: the page loaded no next batch", 1
                 notify("stalled", f"Listing for {query!r} stalled after {summary['batches']} batches")

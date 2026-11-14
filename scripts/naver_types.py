@@ -1023,3 +1023,23 @@ class ListingResult(TypedDict):
     """scripts/naver_api_client.NaverApiClient.listing(): the final job and every row."""
     job: ListingJob
     results: list[ListingRow]
+
+
+# ---- /listing-tabs (a held listing tab, job.py scroll) -------------------------------
+
+class ListingTab(TypedDict):
+    """POST /listing-tabs and POST /listing-tabs/<id>/next (ext_listing_tab): one batch of the held listing tab.
+    `total` is the first batch's total (the listing's size, repeated in every answer; null when the page gave
+    none); `results` are unique within the batch only; has_more false with no results: the listing ended."""
+    id: str
+    query: str
+    batch: int
+    has_more: bool
+    total: int | None
+    results: list[ListingRow]
+
+
+class ListingTabClosed(TypedDict):
+    """DELETE /listing-tabs/<id> (ext_listing_tab.close): idempotent, an unknown id is closed too."""
+    id: str
+    closed: bool
