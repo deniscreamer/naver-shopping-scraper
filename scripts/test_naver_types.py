@@ -37,8 +37,8 @@ FIXTURES = {
     "categories_trend.json": T.CategoryTrend,
     "listing_job.json": T.ListingJob,
     "listing_products.json": T.ListingProductsPage,
-    # synthetic (2026-11-14): built offline from the server fixtures through a fake Chrome (an ended 2-batch
-    # listing of 53, as probe 3 saw); re-capture it from a running server at the pilot (KNOWN_ISSUES K-22, R-TYPE-6)
+    # captured 2026-11-14 from POST /listing-tabs/<id>/next: the last batch (5 rows, has_more false) of a 53-product
+    # listing ("캘러웨이 엘리트 풀세트")
     "listing_tab.json": T.ListingTab,
 }
 

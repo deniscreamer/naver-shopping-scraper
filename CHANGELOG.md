@@ -3,6 +3,26 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
+## 0.18.0 (2026-11-14)
+
+- **`job.py scroll`: a second way to run a job** (the owner, 2026-11-14; the old `new` + `run` unchanged). The server
+  holds one listing tab (`/listing-tabs`: open, next, specs, close; one session holding the adapter); the job takes
+  one batch at a time, screens it and clicks each product's card in that tab, to the listing's last batch
+  (`hasMore=false`) or `--count`. A product stopped mid-read is read again, failed ones are drained at the start and
+  the end, a lost tab (410) reopens from the top (at most 2 times an hour), SIGTERM frees the adapter. Live probes
+  first: the tab survives clicks and idle; the list is virtualized but the current batch stays in the DOM; a click
+  can land on another card while the page inserts a batch, so the card is wheeled into view and clicked once still,
+  the URL checked, one retry; the first batch's `total` is the listing's size. Pilot (50002788, 100): 100
+  published in 191 min, collect 22 s a product (51 s the old way), `card_not_found` 0 (1.8%), no captcha, no reopen.
+  Which mode when: `scripts/JOB_AGENT.md`.
+- **`job.py new --all`**: no count; when the snapshot is used up the listings are read deeper to their end.
+  **Listing reads rest** between batches (3-7 s, 20-40 s every 10), so a deep read is not one burst.
+- **A job waits out the network** (tenacity): a product whose step fails on the network (a ConnectionError or Timeout,
+  Shopify's "request failed", every model provider down) is tried again from its stage, 30 s doubled up to 15 min,
+  for 2 h, then the run stops; a network failure at publication no longer counts as the product's failure.
+- **The adult full sets** (50002788, the old mode, 2026-11-13/14): 698 more published (715 of 1049 of the job's
+  first snapshot taken, the rest left for later).
+
 ## 0.17.0 (2026-11-13)
 
 - **Junior pilot, 300 products** (50002787): 300 published, 55 closed (33 cards gone from Naver, 20 purchase

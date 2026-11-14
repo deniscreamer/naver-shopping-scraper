@@ -60,20 +60,27 @@ The cuts, the origin decisions and the conflicts are in `shops/<shop>/translatio
 
 ## Two ways to run a job: which one when
 
-Preliminary (2026-11-14, before the pilot): the numbers are guesses, revised after the 100-product pilot of `scroll`.
+From the 100-product pilot of `scroll` (2026-11-14, 50002788, one query) against the old mode's 698 (2026-11-13):
+collect 22 s against 51 s a product (median), the whole product ~115 s against ~120 s (translation, description and
+publication do not change), `card_not_found` 0 against 1.8%, captchas and login gates 0 in both, no reopen. One
+category and 100 products: revise when a longer run says otherwise.
 
-- **`scroll`**: the whole category or most of it (a target over ~150-200 products); or the old mode's `card_not_found`
-  over 2% in this category (common names, many look-alikes); one query, one sitting, the owner near for captchas.
-- **`new` + `run`**: a small target (`--count` up to ~100: the start's listing burst is short, `scroll` gains little);
-  2+ queries; a run stopped for days and resumed exactly where it was (the snapshot is fixed, `scroll --job` walks
-  the listing from the top again); given products, the `card_not_found` of a scroll job among them (`new
-  --exclude-known`, `run --job`); `refresh`.
-- **The listing's size alone decides little**: reading 698 rows up front costs ~5 min. The size is the first batch's
-  `total` (`/products/count` does not predict it: 289 vs 53, 1148 vs 122); to see it without a job, one search page
-  load: `curl -X POST "localhost:8000/listing-tabs?query=<urlencoded>"`, read `total`, then
-  `curl -X DELETE localhost:8000/listing-tabs/<id>`. A scroll job writes it into `job.json` (`total`).
-- **After a captcha or a ban in the last 24 h**: either mode, only with a small `--count` (up to 50). Which mode is
-  safer is for the pilot to show.
+- **`scroll`, the default for one query**: no typed search per product (one page load less each, no
+  `card_not_found`), no listing burst up front, and it goes to the listing's end by itself (no `--count`). Most worth it
+  for a big target (over ~100-200) or a category with look-alike names (the old mode's `card_not_found` over ~2%).
+- **`new` + `run`**:
+  - 2+ queries alternated (scroll takes one; a second query is a second scroll job);
+  - a run that must stop for days and resume exactly where it was (the snapshot is fixed; `scroll --job` walks the
+    listing from the top again, ~20-40 s a done batch);
+  - given products, the `card_not_found` / `left` of a scroll job among them (`new --exclude-known`, `run --job`);
+  - `refresh`;
+  - other adapter reads wanted meanwhile (a scroll job holds the adapter until it ends: `/products/specs` and
+    `/listings` answer 409).
+- **Size**: the first batch's `total` (`/products/count` does not predict it: 289 vs 53, 1148 vs 122); to see it
+  without a job, one search page load: `curl -X POST "localhost:8000/listing-tabs?query=<urlencoded>"`, read `total`,
+  then `curl -X DELETE localhost:8000/listing-tabs/<id>`. A scroll job writes it into `job.json` (`total`). A listing
+  whose top is already in the shop is scrolled past at ~10 s a batch (the pilot: 12 batches with 0-3 new products).
+- **After a captcha or a ban in the last 24 h**: either mode, only with a small `--count` (up to 50).
 
 ## Loop: `scroll` (beta, the owner 2026-11-14)
 

@@ -224,18 +224,19 @@ either, every sidecar is read again on the next run; check one product's rows by
   - A product partial on the first collect (e.g. `photos_incomplete`) is collected once more by `CollectGuard`; the
     old mode's second `/products/specs` call is a 24 h cache hit, here `/listing-tabs/<id>/specs` is not cached, so
     the product page is loaded and clicked a second time (accepted for the MVP, Fable review 7).
-  - A long tab life is unproven: a real job leaves ~100 min between scrolls (a batch's products read, translated and
-    published), the probes 22 min. A stale tab would show as a stall (503 `wall:`, the job stops) or a 410 (the job
-    opens a new tab, at most 2 times an hour).
-  - Very long listings are unproven: the probes went to batch 11 (~500 rows) and saw two ends (53, 122 rows); a
-    listing of thousands, read over a day, has not been walked in one tab.
+  - Tab life: the 100-product pilot (2026-11-14, 191 min, one tab, 15 batches) kept its tab 3 h 13 min; batch 13
+    stayed ~70 min without a scroll and the next scroll brought batch 14, no reopen. Longer than that is unproven; a
+    stale tab would show as a stall (503 `wall:`, the job stops) or a 410 (the job opens a new tab, at most 2 times
+    an hour).
+  - Very long listings are unproven: the furthest walked is batch 15 of ~90 (the pilot) and two ends were seen
+    (53, 122 rows); a listing of thousands, read over a day, has not been walked to its end in one tab.
   - A reopen starts from the top and scrolls past done batches (~20-40 s a batch, estimated); products whose card
     does not come again (the list is virtualized) are not read by the tab: `job.py` reports them as `left` for the
     other mode.
-  - `scripts/fixtures/listing_tab.json` is synthetic (built offline through a fake Chrome, not captured from a
-    running server as R-TYPE-6 asks): re-capture it from `POST /listing-tabs` + `/next` at the pilot.
-- **Impact:** measured by the 100-product pilot (reopens, partials, idle). Until then a scroll job runs with the
-  owner near for captchas; a stop says why and `scroll --job` resumes.
+  - Not seen live yet: a reopen, the drain of a product stopped mid-read, a second page load on a partial (the pilot
+    had none of them: 0 reopens, 0 partials, 0 captchas, 0 login gates).
+- **Impact:** small so far (the pilot: 100 published of 101 taken, the one closed by translation). A scroll job
+  runs with the owner near for captchas; a stop says why and `scroll --job` resumes.
 
 ## Stale references and unused code
 
