@@ -597,6 +597,24 @@ def test_a_scroll_job_writes_every_row_left_out_to_screened_jsonl(tmp_path, monk
     assert lines[0]["name"].startswith("어린이용 발광 피클볼") and lines[0]["at"]
 
 
+def test_an_ad_card_is_not_clicked_and_its_product_is_taken_as_an_ordinary_card(tmp_path, monkeypatch, no_sleep):
+    """2026-11-14 (골프채 풀세트): an ad card links through Naver's ad redirect, the tab cannot click it. It is logged
+    (reason ad) and left; the same product as an ordinary card later is taken."""
+    from listing_filter import Screen
+    job = scroll_job(tmp_path)
+    p = Pipeline(monkeypatch)
+    batches = [tab_answer(1, [1, 2]), tab_answer(2, [2, 3], has_more=False)]
+    batches[0]["results"][0]["is_ad"] = True                                          # product 1: an ad only
+    batches[0]["results"][1]["is_ad"] = True                                          # product 2: an ad, then ordinary
+    tab = J.Tab(job, TabApi(batches))
+    ctx = {"api": tab.api, "catalog": Catalog(), "specs": tab.specs}
+    screen = Screen("50002788", SHOP, exclusions={"universal": {"rules": []}})
+    assert J.run_scroll(job, ctx, tab, screen, set()) == 0
+    assert [key for key, _ in p.taken] == [k(2), k(3)]
+    with open(os.path.join(job.folder, "screened.jsonl"), encoding="utf-8") as f:
+        assert [(x["product_id"], x["reason"]) for x in map(json.loads, f)] == [("1", "ad"), ("2", "ad")]
+
+
 def test_a_scroll_job_stops_at_its_count_mid_batch_and_closes_the_tab(tmp_path, monkeypatch, no_sleep):
     job = scroll_job(tmp_path, count=2)
     p = Pipeline(monkeypatch)

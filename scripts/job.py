@@ -985,6 +985,15 @@ def _batch_rows(job: Job, answer: dict, screen: Any, known: set[str], out: dict[
         pid = str(row.get("product_id"))
         if pid in out:
             continue
+        if row.get("is_ad"):
+            # 2026-11-14 (골프채 풀세트, batch 1-2): an ad card links through Naver's ad redirect, not /products/<id>, so
+            # the tab cannot click it (6 of 6 were card_not_found). Not taken here; the same product is taken when it
+            # comes as an ordinary card, else `new` + `run` reach it by a search of its name. Logged once a run.
+            if "ad:" + pid not in out:
+                out["ad:" + pid] = "ad"
+                left_out.append({"at": _now(), "batch": answer.get("batch"), "product_id": pid,
+                                 "name": row.get("name"), "reason": "ad"})
+            continue
         key = source_key(row, screen.namespace) or ""
         why = screen.reason(row) if key else "key_unavailable"
         if why is None and pid in known:

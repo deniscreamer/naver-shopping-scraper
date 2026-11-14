@@ -93,7 +93,8 @@ category and 100 products: revise when a longer run says otherwise.
 No snapshot and no search per product: the server holds one listing tab open (`/listing-tabs`,
 server/docs/EXTENSION.md) and the job takes it batch by batch. Each batch is screened like `new`'s rows (every row
 left out is appended to the job's `screened.jsonl`: at, batch, product_id, name, reason; the audit of the
-leave-outs), every row taken goes into `listing.jsonl` and through the same stages at once, its page opened by a
+leave-outs; an ad card is not clicked, reason `ad`: its link is Naver's ad redirect, the product is taken when it
+comes as an ordinary card, else `new` + `run` reach it by its name), every row taken goes into `listing.jsonl` and through the same stages at once, its page opened by a
 click on its card in that tab; then the next batch, until the listing's end (`has_more` false) or `--count` products at the final stage. One
 `batch N: R rows, T to take (listing total ..., has_more ...)` line per batch, then the product lines as in `run`.
 Products with a stage left (collected to translated, failed once) are taken on without the tab, when the job starts
