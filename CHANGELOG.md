@@ -3,18 +3,6 @@
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
-## Unreleased
-
-- **A lenient screen for the adult full sets** (50002788, the owner 2026-11-14: never lose a real product; only what
-  is certainly not a set is left out, the doubtful ones are published and reviewed): title rules `accessory` (an
-  accessory alone, not golf balls; a set with one, 세트 / 개 / 포함 / 증정 / a bag, stays; pickleball, diecast) and
-  `folding` (a folding club; a set word keeps the row), for both ways to run a job (`new` + `run` and `scroll`). On
-  1,817 past titles: 5 left out, 3 of them published (the three folding one-club products), no set. Junior sets,
-  single clubs, 2-3 clubs and used sets are not screened: no other job collects the junior sets listed here, so
-  `review_suspects.py` lists them instead.
-- **`job.py scroll` writes `screened.jsonl`**: every row the screen left out, with its reason, for the audit.
-- **`review_suspects.py`**: the published products to review after such a run (read only, offline, a CSV).
-
 ## 0.18.0 (2026-11-14)
 
 - **`job.py scroll`: a second way to run a job** (the owner, 2026-11-14; the old `new` + `run` unchanged). The server

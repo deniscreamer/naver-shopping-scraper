@@ -104,7 +104,8 @@ read types its search into that tab's box and skips naver.com; the product tab i
   its id (`example_10_known_products_specs.py`, `example_08_product_full.py`).
 - **Products not known yet**: take them from a search (a listing job), then read each with that search as `query`;
   a card not on the search's first page falls back to its name (`example_09_listing_then_specs.py`).
-  Entering through a category page is not built yet (the listing has no category filter either).
+  A category page is not used: it needs a signed-in Naver account (probed 2026-11-14, every level of the 카테고리
+  menu lands on nid.naver.com); a listing is a search, the category is the screen's.
 
 Use both together: way 1 for prices / reviews / description, way 2 for the attribute rows and the options.
 Contract: [server/docs/ENDPOINTS.md](../server/docs/ENDPOINTS.md#product-details-two-ways).

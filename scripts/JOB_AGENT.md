@@ -82,6 +82,22 @@ category and 100 products: revise when a longer run says otherwise.
   whose top is already in the shop is scrolled past at ~10 s a batch (the pilot: 12 batches with 0-3 new products).
 - **After a captcha or a ban in the last 24 h**: either mode, only with a small `--count` (up to 50).
 
+### The query: what a listing holds (2026-11-14, 50002788)
+
+A listing is always a search: a Naver category page needs a signed-in Naver account (probed 2026-11-14: the menu
+path naver.com -> 쇼핑 -> 카테고리 -> hover -> click lands on nid.naver.com at every level), so it is not used. The
+category is the screen's (`--category`): the card's category, which the seller sets. Both kinds of query work in both
+ways to run a job; pick by what the run is for:
+
+- **Narrow** ("남성 골프채 풀세트", "여성 골프채 풀세트", a model or brand): a smaller listing, mostly the category's
+  real products. 50002788: 4,343 and ~4,000 rows; ~3% of 1,225 published were not sets (single clubs, 2-3 clubs).
+  Two genders = two queries: two scroll jobs one after the other, or one `new` with two `--query`.
+- **Generic** ("골프채 풀세트"): one listing for both genders, 13,336 rows, reaches sets whose titles name no gender.
+  Measured over 126 products (2026-11-14): ~10% not sets (bags, covers, lead tape, ground-golf clubs, a display
+  stand; sellers file them under full sets), ~23% left unplaced (gender unknown or in conflict: most of the non-sets,
+  and ~13% real sets with no gender: lefty, unisex), 1 non-set published (a club cover). More review after the run.
+- Anything doubtful that was published: `review_suspects.py` lists it (see "After").
+
 ## Loop: `scroll` (beta, the owner 2026-11-14)
 
 ```sh
