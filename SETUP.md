@@ -36,7 +36,7 @@ python3 -m venv .venv
 
 The server drives the installed Google Chrome through patchright; `patchright install` is **not** needed.
 `scripts/requirements.txt` brings Pillow, which the photo scripts use to write WebP (its macOS wheels include WebP),
-and rapidocr + onnxruntime for the optional OCR of description images (`scripts/description_images.py`). Its
+tenacity for `job.py`'s retries while the network is down, and rapidocr + onnxruntime for the optional OCR of description images (`scripts/description_images.py`). Its
 Korean models (~15 MB) are downloaded into the rapidocr package by its first run; to fetch them now:
 
 ```sh

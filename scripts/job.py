@@ -25,7 +25,7 @@ prepared = its key in prepared/products.jsonl; translated = its key `translated`
 nothing to translate) in translation/translated.jsonl. A job created with translation (`new`, the default since
 2026-11-08; `--no-translate` leaves it out) takes each product to translated: right after it is prepared, through
 translate.py (only that product goes to the model; the chain and its fallback as there). A product the model could
-not translate is `failed` (tried again after the fresh ones, MAX_FAILS times); every provider down stops the run
+not translate is `failed` (tried again after the fresh ones, MAX_FAILS times); every provider down: tried again with growing waits, then the run stops
 (`run` again resumes). A job made with `--publish` takes each translated product on: placement.py over the
 whole shop (offline), then publish.py for this product (Shopify, ACTIVE); published = its key in
 publish/published.jsonl. A product not ready to publish (held, not placed) is `not_taken`; a refused write is
@@ -43,7 +43,9 @@ reads them deeper again and appends the new products (`refresh` does that by han
 of one query in 110 s, 583 unique rows, no stall. Each product prints a start line and a done line (stage
 times), and every REPORT_EVERY products a `== progress:` line; now.json says what the runner does (status).
 
-Waits and stops: 409 (adapter busy): 30 s, up to 12 times. The extension not connected or the API server not
+Waits and stops: the network down (a ConnectionError / Timeout, Shopify's "request failed", every model
+provider down for translate or describe): the product is tried again from its stage, waits NET_WAIT_S doubled
+up to NET_MAX_WAIT_S (tenacity, net_retry), for NET_GIVE_UP_S, then the run stops. 409 (adapter busy): 30 s, up to 12 times. The extension not connected or the API server not
 answering: /health polled RECONNECT_S (15 min), then on. A captcha not answered in time (GET /captcha
 timed_out, not a ban): read again, the owner asked again, CAPTCHA_TRIES times. A 503 "naver error page:" / "adapter error:" (ENDPOINTS):
 120 s, 2 more tries, then the product is `failed` and the run goes on (a failed product is tried again after the
@@ -78,6 +80,9 @@ MAX_BATCHES_ALL = 200                        # `new --all`: the server's cap (sc
                                              # listing's own end (has_more false) comes first (2026-11-12: the junior
                                              # queries ended at 19-31 batches)
 REPORT_EVERY = 10
+# the network down (2026-11-13: Shopify, then both model providers, unreachable for minutes): the product is tried
+# again (tenacity) after 30 s, doubled each time up to 15 min, +-10 s jitter; after 2 h of it the run stops
+NET_WAIT_S, NET_MAX_WAIT_S, NET_JITTER_S, NET_GIVE_UP_S = 30, 900, 10, 7200
 RETRYABLE = ("naver error page:", "adapter error:")
 
 
@@ -376,6 +381,35 @@ class Stop(Exception):
     """The run must stop here (a wall, the extension, the server): `run` again resumes."""
 
 
+class NetworkStop(Stop):
+    """The network or every model provider is down: the product is tried again with growing waits (net_retry)."""
+
+
+def net_retry(job: "Job", key: str) -> Any:
+    """Tries one product again while it ends in NetworkStop (a ConnectionError / Timeout counts too): waits from
+    NET_WAIT_S doubled up to NET_MAX_WAIT_S, for NET_GIVE_UP_S in all, then the last error goes up (the run stops).
+    Each try starts from the product's stage read from the files: what was done is not done again."""
+    import requests
+    import tenacity
+
+    def waiting(state: Any) -> None:
+        e = state.outcome.exception()
+        wait = round(state.next_action.sleep)
+        job.log(key, "network_wait", attempt=state.attempt_number, wait_s=wait, reason=str(e)[:200])
+        print(f"   network down ({str(e)[:120]}): try {state.attempt_number + 1} in {wait} s", flush=True)
+    return tenacity.Retrying(
+        retry=tenacity.retry_if_exception_type((NetworkStop, ConnectionError, requests.exceptions.ConnectionError,
+                                                requests.exceptions.Timeout)),
+        wait=tenacity.wait_exponential_jitter(multiplier=NET_WAIT_S, max=NET_MAX_WAIT_S, jitter=NET_JITTER_S),
+        stop=tenacity.stop_after_delay(NET_GIVE_UP_S), before_sleep=waiting, reraise=True,
+        sleep=lambda s: time.sleep(s))
+
+
+def _network(e: Exception) -> bool:
+    """A CatalogError that is the network, not the shop (shopify_catalog: "request failed: <requests error>")."""
+    return "request failed" in str(e)
+
+
 def collect_with_waits(job: Job, api: Any, store: Any, table: dict, guard: Any, row: dict, tmp: str) -> Any:
     """CollectGuard over collect_product.collect, with the job's waits; -> Outcome, or None when the product failed
     (logged); raises Stop."""
@@ -474,7 +508,7 @@ def one(job: Job, ctx: dict, key: str, stage_now: str | None, n: int = 0) -> str
         try:
             published = ctx["catalog"].keys()                   # published meanwhile (read again every 5 min)
         except Exception as e:                                  # CatalogError / ShopNotConfigured: no shop check
-            raise Stop(f"shop check: {type(e).__name__}: {e}") from None
+            raise (NetworkStop if _network(e) else Stop)(f"shop check: {type(e).__name__}: {e}") from None
         if key in published:
             job.log(key, "not_taken", reason="already_published")
             return "not taken: already published"
@@ -562,6 +596,8 @@ def publish_step(job: Job, ctx: dict, key: str, n: int = 0) -> str:
     except CatalogError as e:
         if "token" in str(e) or "401" in str(e) or "lacks" in str(e):
             raise Stop(f"publish: {e}") from None
+        if _network(e):                                         # not the product's fault: not counted as failed
+            raise NetworkStop(f"publish: {e}") from None
         job.log(key, "failed", stage="publish", reason=str(e)[:300])
         return f"publish failed: {e}"[:200]
     job.log(key, "published", product_id=row.get("product_id"), handle=row.get("handle"), status=row["status"],
@@ -584,7 +620,7 @@ def describe_one(job: Job, ctx: dict, key: str) -> str:
     except translate.TranslateError as e:
         raise Stop(f"describe: {e}") from None
     except describe.NoProvider as e:
-        raise Stop(f"describe: {e}") from None
+        raise NetworkStop(f"describe: {e}") from None
     row = r["rows"][0] if r["rows"] else None
     if row is None:
         return "description kept"
@@ -596,7 +632,7 @@ def describe_one(job: Job, ctx: dict, key: str) -> str:
 
 def translate_one(job: Job, ctx: dict, key: str) -> str:
     """The product through translate.py (only it goes to the model). -> what happened. A product the model could not
-    translate is `failed` (tried again later); every provider down stops the run."""
+    translate is `failed` (tried again later); every provider down is a NetworkStop (net_retry)."""
     import translate
     try:
         r = translate.run(job.shop, ctx["translator"], job.shops_root, only=key)
@@ -610,7 +646,7 @@ def translate_one(job: Job, ctx: dict, key: str) -> str:
         return f"translated ({calls} calls, ${cost:.3f})" if status == "translated" else "translate: held, nothing"
     problems = "; ".join(f"{p.get('id')}: {', '.join(p.get('problems') or [])}" for p in (rec or {}).get("problems", [])[:3])
     if status == "pending" and "provider down" in problems:      # every provider down for a batch
-        raise Stop(f"translate: no provider answered: {problems}"[:300])
+        raise NetworkStop(f"translate: no provider answered: {problems}"[:300])
     job.log(key, "failed", stage="translate", reason=problems[:300])
     return f"translate failed: {problems}"[:200]
 
@@ -674,7 +710,10 @@ def cmd_run(args: argparse.Namespace) -> int:
         name = (next(r for r in job.rows() if r["key"] == key).get("name") or "")[:50]
         print(f"[{n}/{len(job.rows())}] {key.split(':')[3]} {name}", flush=True)
         try:
-            what = one(job, ctx, key, done.get(key), n)
+            for attempt in net_retry(job, key):
+                with attempt:
+                    what = one(job, ctx, key, done.get(key) if attempt.retry_state.attempt_number == 1
+                               else stages(job).get(key), n)
         except (Stop, RunStopped) as e:
             if isinstance(e, RunStopped):                 # the guard deferred this product before it stopped
                 job.log(key, "deferred", reason="run_stopped")

@@ -385,3 +385,69 @@ def test_a_describing_job_writes_the_description_before_it_publishes(tmp_path, m
     job.meta["describe"] = False                                # a job made without --describe asks nothing
     monkeypatch.setattr(D, "run", lambda *a, **k: order.append("asked"))
     assert J.publish_step(job, ctx, KEYS[1]).startswith("published h") and "asked" not in order
+
+
+# ---- the network down: tried again with growing waits (tenacity, 2026-11-13) ------------------------------------
+
+def test_a_network_stop_is_tried_again_with_growing_waits(tmp_path, monkeypatch):
+    job = make_job(tmp_path)
+    waits, calls = [], []
+    monkeypatch.setattr(J.time, "sleep", waits.append)
+    monkeypatch.setattr(J, "NET_JITTER_S", 0)
+
+    def flaky():
+        calls.append(1)
+        if len(calls) < 4:
+            raise J.NetworkStop("translate: no provider answered")
+        return "ok"
+    for attempt in J.net_retry(job, KEYS[0]):
+        with attempt:
+            out = flaky()
+    assert out == "ok" and len(calls) == 4
+    assert waits == [J.NET_WAIT_S, J.NET_WAIT_S * 2, J.NET_WAIT_S * 4]          # doubled each time
+    assert [e["attempt"] for e in job.events() if e["event"] == "network_wait"] == [1, 2, 3]
+
+
+def test_the_wait_is_capped_and_the_run_gives_up(tmp_path, monkeypatch):
+    import requests
+    job = make_job(tmp_path)
+    monkeypatch.setattr(J, "NET_JITTER_S", 0)
+    monkeypatch.setattr(J.time, "sleep", lambda s: None)
+    retrying = J.net_retry(job, KEYS[0])
+    assert retrying.wait.max == J.NET_MAX_WAIT_S
+    monkeypatch.setattr(J, "NET_GIVE_UP_S", 0)
+    with pytest.raises(requests.exceptions.ConnectionError):                    # given up: the error goes up
+        for attempt in J.net_retry(job, KEYS[0]):
+            with attempt:
+                raise requests.exceptions.ConnectionError("down")
+
+
+def test_a_plain_stop_is_not_tried_again(tmp_path, monkeypatch):
+    job = make_job(tmp_path)
+    calls = []
+    monkeypatch.setattr(J.time, "sleep", lambda s: None)
+    with pytest.raises(J.Stop):
+        for attempt in J.net_retry(job, KEYS[0]):
+            with attempt:
+                calls.append(1)
+                raise J.Stop("wall: ban page")
+    assert calls == [1]
+
+
+def test_the_shop_check_tells_the_network_from_the_shop(tmp_path):
+    from shopify_catalog import CatalogError
+    job = make_job(tmp_path)
+
+    class Catalog:
+        def __init__(self, error):
+            self.error = error
+
+        def keys(self):
+            raise self.error
+    net = CatalogError("shop.myshopify.com: request failed: ConnectionError")
+    with pytest.raises(J.NetworkStop):
+        J.one(job, {"catalog": Catalog(net)}, KEYS[0], None)
+    with pytest.raises(J.Stop) as e:
+        J.one(job, {"catalog": Catalog(CatalogError("shop.myshopify.com: HTTP 403 (the token is refused)"))},
+              KEYS[0], None)
+    assert not isinstance(e.value, J.NetworkStop)

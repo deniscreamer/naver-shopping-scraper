@@ -4,3 +4,4 @@ rapidocr                        # description_ocr.py: OCR of description images 
 onnxruntime                     # rapidocr's engine (CPU)
 anthropic                       # translate.py: Claude API for translation (Sonnet 5.5)
 openai                          # translate.py: the fallback provider for translation
+tenacity                        # job.py: a product tried again with growing waits while the network is down

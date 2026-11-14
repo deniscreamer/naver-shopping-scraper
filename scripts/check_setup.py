@@ -117,6 +117,9 @@ def check_photos():
         report("FAIL", "Pillow with WebP (photo scripts)", "missing: pip install -r scripts/requirements.txt")
     check_ocr()
     check_translation()
+    report("OK" if importlib.util.find_spec("tenacity") else "FAIL", "tenacity (job.py network retries)",
+           importlib.metadata.version("tenacity") if importlib.util.find_spec("tenacity")
+           else "missing: pip install -r scripts/requirements.txt")
     from shop_stores import get_store
     try:
         store = get_store()

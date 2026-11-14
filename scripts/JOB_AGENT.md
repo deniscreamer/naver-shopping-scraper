@@ -35,7 +35,8 @@ lost, done products are not read again.
 
 Translation per product: each done line ends with `translated (N calls, $cost)`. A product the model could not
 translate is `failed` (stage translate, the problems in the event) and is tried again after the fresh ones; every
-provider down stops the run (`run` again resumes; nothing is asked twice). A line `dictionaries: a backup is due`
+provider down: the product is tried again with growing waits (up to 2 h), then the run stops (`run` again
+resumes; nothing is asked twice). A line `dictionaries: a backup is due`
 (at done and in `status`): tell the owner; `translation_dicts.py status` lists the entries, the owner backs them up.
 
 Paid choices: a job made without `--paid` (the owner's pilot, 2026-11-09) collects and prepares only the variants
@@ -63,6 +64,7 @@ The cuts, the origin decisions and the conflicts are in `shops/<shop>/translatio
 |---|---|---|
 | `STOP ... wall:` (ban page, login gate twice, a captcha not answered 6 times) | stopped, nothing marked | tell the owner; `run` again only after they say so |
 | `a captcha was not answered in time` | reads again: the owner is asked again (up to 6 times) | relay it to the owner |
+| `network down (...): try N in S s` (Shopify or every model provider unreachable) | tries the product again after ~30 s, doubled up to 15 min; after 2 h the run stops | nothing; a `STOP` after it: tell the owner, `run` once the network is back |
 | `waiting up to 15 min for the server and the extension` | waits, then goes on by itself | ask the owner to open Chrome / start the server |
 | `STOP ... for 15 min` (they did not come back) | stopped | once they are back, `run` |
 | `the snapshot is used up ... reading the listings deeper` | reads the listings again with twice the batches, adds new products (`new --all`: every new one, until the listings end; then done) | nothing |
