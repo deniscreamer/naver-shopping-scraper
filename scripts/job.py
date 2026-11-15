@@ -1312,8 +1312,9 @@ def _job_flags(p: argparse.ArgumentParser) -> None:
                    "translation: placement, then publish.py")
     p.add_argument("--describe", action="store_true", help="with --publish: write each product's description "
                    "before it is sent (describe.py: one model request a product)")
-    p.add_argument("--dedupe", choices=("off", "log", "on"), default="off", help="duplicates of a product sold by "
-                   "another store (dedupe.py): log the decisions only, or on: skip and replace (JOB_AGENT.md)")
+    p.add_argument("--dedupe", choices=("off", "log", "on"), default="on", help="duplicates of a product sold by "
+                   "another store (dedupe.py): on (the default, the owner 2026-11-15): skip and replace; log: the "
+                   "decisions only; off: none (JOB_AGENT.md)")
 
 
 def main(argv: list[str] | None = None) -> int:

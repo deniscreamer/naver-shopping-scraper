@@ -122,8 +122,8 @@ and `refresh` refuse a scroll job (`scroll --job` resumes it); one query a job (
 ## Duplicates: `--dedupe off|log|on` (the owner, 2026-11-15)
 
 One product is often sold by several stores (Wilson Profile JGI: 9 copies in the store). `new` and `scroll` take
-`--dedupe log` or `--dedupe on` (kept in job.json, read again by `run` / `scroll --job`; `off`, the default, is the
-old behaviour, no key written). Right after a product is collected, before its description images, `dedupe.py`
+`--dedupe on|log|off`, `on` by default (the owner, 2026-11-15, after the log pilot); kept in job.json, read again by
+`run` / `scroll --job`; a job made before has no key and runs as `off`; `off` writes no key. Right after a product is collected, before its description images, `dedupe.py`
 looks it up in an index built when the run starts (the shop's published products and the ones the owner withdrew,
 plus the job's own collected products; each product the job takes on joins it, so a later seller in the same job
 is compared too, and one of them closed later in the run, not_taken / deferred / failed, leaves it again):
@@ -145,10 +145,12 @@ it is published the old product is withdrawn (`publish.withdraw`, DRAFT, reason 
 `replaced`) if it is still published and the new one has no fewer variants; else `replace_skipped` with why, the old
 one stays. A product withdrawn as `replaced_by:` is not compared again (its replacement is).
 
-Pilot (the owner): the junior clubs first with `--dedupe log`, then `.venv/bin/python scripts/dedupe.py --pairs <shop>
+Pilot (2026-11-15, junior clubs, `log`, 103 published): 7 duplicates, all the same product on the owner's look at
+the pairs sheet (6 by photo and variants, 1 by variants only: a reshuffled title, another colour on the main photo),
+no false merge, no better seller (equal grades); 5 of 7 matched products of the same job. Then `on` became the default.
+To check a run's decisions: `.venv/bin/python scripts/dedupe.py --pairs <shop>
 --job <id>` (sheets `pairs1.jpg` ... of candidate | match photos, numbered, `dup` on the confirmed ones, and
-`index.tsv`: decision, signals, both keys and titles, in the job's `pairs/`) for the owner to check the decisions;
-`--dedupe on` only after they say so. `.venv/bin/python scripts/dedupe.py --report <shop> [--category <id>] [--list]`
+`index.tsv`: decision, signals, both keys and titles, in the job's `pairs/`) for the owner to check the decisions. `.venv/bin/python scripts/dedupe.py --report <shop> [--category <id>] [--list]`
 counts the duplicate groups already in the store, best first (read only; withdrawing them is the owner's word).
 
 ## What stops, and who acts
