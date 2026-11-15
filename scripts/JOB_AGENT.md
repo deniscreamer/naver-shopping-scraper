@@ -148,6 +148,12 @@ A captcha is answered by the owner in Chrome while the read waits; a login page 
 products (the attribute unknown or in conflict) and the `no_profile` ones go to the owner with their evidence; never
 pick a section for them. A new category or split: [PLACEMENT.md](PLACEMENT.md).
 
+A look by eye (the owner, 2026-11-15; run by hand, never by itself): `.venv/bin/python scripts/review_grid.py <shop>
+--job <id>` (or `--category <id>`) writes numbered sheets of each published product's first photo (`sheet1.jpg` ...,
+60 a sheet) and `index.tsv` (number, key, product id, title, handle, admin link) into the job's `grid/`. Read the
+sheets in one go (they are small JPGs), list what is not the section's product by number, show the owner; the
+owner decides what is withdrawn (`publish.py <shop> --withdraw <key> --reason ...`). Read only, offline.
+
 `.venv/bin/python scripts/review_suspects.py <shop> [--job <id>]` (read only, offline; the owner, 2026-11-14: the
 screen of 50002788 is lenient in both ways to run a job, so what is doubtful is published and reviewed afterwards) lists the published products
 of the category (`--category`, default 50002788; `--job`: only that job's keys) that may not be a full set, each with
