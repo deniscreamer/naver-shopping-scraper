@@ -183,7 +183,7 @@
    },
    {
     "code": "not_golf",
-    "why": "A book set and a loafer that slipped into the category. A cable-pulling mesh grip ('전선 케이블 망 메쉬 인입 풀링 그립', 13753814944, 2026-11-12).",
+    "why": "A book set and a loafer that slipped into the category. A cable-pulling mesh grip ('전선 케이블 망 메쉬 인입 풀링 그립', 13753814944, 2026-11-12). Junior underwear (sports bras, briefs, camisoles), sneakers and an after-school kit filed under junior clubs (the junior scroll run, 2026-11-14/15: 13 published, withdrawn by the owner).",
     "tokens": [
      {
       "text": "전3권",
@@ -204,12 +204,73 @@
       "text": "케이블",
       "notFollowedBy": [],
       "notPrecededBy": []
+     },
+     {
+      "text": "브라",
+      "notFollowedBy": [
+       "운",
+       "보",
+       "이트",
+       "질",
+       "더"
+      ],
+      "notPrecededBy": []
+     },
+     {
+      "text": "브래지어",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "팬티",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "속옷",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "런닝",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "캐미솔",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "언더웨어",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "이너웨어",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "운동화",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스니커즈",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "방과후",
+      "notFollowedBy": [],
+      "notPrecededBy": []
      }
     ]
    },
    {
     "code": "bag_only",
-    "why": "A bag alone (314400655, 2026-11-11: '주니어골프백(스탠드형) 어린이 골프가방' was published): a bag word with no club or set word; a set with a bag names its clubs or 세트.",
+    "why": "A bag alone (314400655, 2026-11-11: '주니어골프백(스탠드형) 어린이 골프가방' was published): a bag word with no club or set word; a set with a bag names its clubs or 세트. '가방' alone too (a Ping Prodi G junior bag, 12941462550, 2026-11-15).",
     "unless": [
      "골프채",
      "클럽",
@@ -248,6 +309,11 @@
      },
      {
       "text": "보스턴백",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "가방",
       "notFollowedBy": [],
       "notPrecededBy": []
      }

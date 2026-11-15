@@ -143,6 +143,24 @@ def test_a_junior_bag_alone_is_left_out(title, code):
 
 
 @pytest.mark.parametrize("title, code", [
+    # the junior scroll run, 2026-11-14/15: underwear, sneakers, a bag and a kit filed under junior clubs (withdrawn)
+    ("주니어 스포츠브라 중학생 여아용 편안한 브라", "title:not_golf"),                       # 13726226449
+    ("주니어 여아팬티 삼각 주니어속옷 초등학생 면스판 순면 편한 팬티 여아용", "title:not_golf"),  # 13734339115
+    ("주니어 브라런닝 초등학생 런닝 주니어런닝 브라캐미솔 여아 인견 런닝나시", "title:not_golf"),  # 13727592833
+    ("아디다스 그랜드코트 3.0 주니어 로우컷 캐주얼 운동화 (일본직배송)", "title:not_golf"),       # 13825101750
+    ("학생 주니어 방과 후 취미 레슨 교육용 장비 자세 교정 기초", "title:not_golf"),              # 13829360410
+    ("핑 Prodi G 주니어 가방 / 프로디 지", "title:bag_only"),                               # 12941462550
+    ("브라운 주니어 골프채 세트 드라이버 아이언 퍼터", None),                               # brown stays
+    ("PING 프로디지 주니어 아이언 7번", None),
+    ("윌슨 주니어 프로파일 JGI 골프클럽 패키지 세트 스탠드백", None),
+])
+def test_junior_apparel_shoes_and_kits_are_left_out(title, code):
+    screen = Screen("50002787", namespace="fairwardgolf")
+    assert screen.check({"name": title, "category_id": "50002787", "product_id": "1",
+                         "store": {"channel_no": "2"}}) == code
+
+
+@pytest.mark.parametrize("title, code", [
     # the owner, 2026-11-14 (50002788, lenient: only what is certainly not a set; the doubtful ones are published
     # and reviewed afterwards, review_suspects.py). Past titles of the category:
     ("IMIKEYA 미니 골프 카트: 다이 캐스트 메탈 모델 골프 카트 미니 1:20 스케일 카트 다이캐스트 모델 카트", "title:accessory"),
