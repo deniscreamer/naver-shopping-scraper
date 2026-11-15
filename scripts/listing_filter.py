@@ -18,7 +18,8 @@ this order:
   deferred           the source key is deferred in the shop's journal (deferred_log) and no retry is allowed
 
 Catalog (가격비교) cards and external malls never reach here: the server keeps Naver store products only.
-Products are matched by the source key, never by name.
+The screen matches products by the source key, never by name; the same product sold by another store (the same
+title, another key) is dedupe.py's, after collect (job.py --dedupe, the owner 2026-11-15).
 
 The stop words are the naver-harvester's file, copied byte for byte (listing_exclusions.json = its
 store-scripts/fairwardgolf/fairwardgolf-catalog/mappings/listing-exclusions.json, schema

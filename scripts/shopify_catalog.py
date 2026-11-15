@@ -3,7 +3,8 @@
 Read only. Every product of the store is read page by page, in any status (active, draft and archived alike:
 a draft or an archived product is still "already there"), with the source key metafields the naver-harvester
 writes: `<namespace>.source_offer_id`, and the older `<namespace>.naver_offer_key`; either one counts. A key is
-`<namespace>:naver:<channelNo>:<productId>` (listing_filter.source_key). Products are never matched by name.
+`<namespace>:naver:<channelNo>:<productId>` (listing_filter.source_key). This check matches by the source key only,
+never by name; one product sold by another store (another key) is dedupe.py's, after collect (job.py --dedupe).
 
 The check fails loudly instead of answering "not there" (the owner's rule, 2026-11-05):
   * the store has no Shopify values or no credentials yet: ShopNotConfigured, ask the operator, stop on that store;

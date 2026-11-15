@@ -119,6 +119,38 @@ read (their card did not come again after a lost tab): the other mode can take t
 the run ends, SIGTERM and Ctrl+C included; while it is open, `/products/specs` and `POST /listings` answer 409. `run`
 and `refresh` refuse a scroll job (`scroll --job` resumes it); one query a job (a second query: another job).
 
+## Duplicates: `--dedupe off|log|on` (the owner, 2026-11-15)
+
+One product is often sold by several stores (Wilson Profile JGI: 9 copies in the store). `new` and `scroll` take
+`--dedupe log` or `--dedupe on` (kept in job.json, read again by `run` / `scroll --job`; `off`, the default, is the
+old behaviour, no key written). Right after a product is collected, before its description images, `dedupe.py`
+looks it up in an index built when the run starts (the shop's published products and the ones the owner withdrew,
+plus the job's own collected products; each product the job takes on joins it, so a later seller in the same job
+is compared too, and one of them closed later in the run, not_taken / deferred / failed, leaves it again):
+
+- a possible duplicate: the same category and the same set of title words (case, signs and order ignored, what is
+  in brackets kept: `27ZXI-RKT LS` is not `27ZXI-RKT`, `Qi4D MAX` is not `Qi4D`), another store, prices within x2;
+- confirmed when the first photo is the same file, or half the photos are, or the variants agree >= 80%; not
+  confirmed: an ordinary product (event `duplicate_seen`, decision `not_confirmed`);
+- better = a higher store grade (PLATINUM > PREMIUM > BIG_POWER > POWER > SPROUT > SEED), then more reviews; price
+  never decides.
+
+`log`: one event `duplicate_seen` per product with a title match (the would-be decision `duplicate_of:<key>` /
+`duplicate_better:<key>` / `duplicate_of_withdrawn:<key>`, the matches and their signals); nothing else changes
+(the index grows as in `on`: a would-be `duplicate_of` does not join it, so later decisions are the same).
+`on` (the owner's decision 2026-11-15: replace automatically): a confirmed match the owner withdrew ->
+`not_taken: duplicate_of_withdrawn:<key>`; not strictly better than the best match -> `not_taken: duplicate_of:<key>`
+(closed: no images, no translation); strictly better -> event `duplicate_better {replaces}`, taken as usual, and once
+it is published the old product is withdrawn (`publish.withdraw`, DRAFT, reason `replaced_by:<new key>`, event
+`replaced`) if it is still published and the new one has no fewer variants; else `replace_skipped` with why, the old
+one stays. A product withdrawn as `replaced_by:` is not compared again (its replacement is).
+
+Pilot (the owner): the junior clubs first with `--dedupe log`, then `.venv/bin/python scripts/dedupe.py --pairs <shop>
+--job <id>` (sheets `pairs1.jpg` ... of candidate | match photos, numbered, `dup` on the confirmed ones, and
+`index.tsv`: decision, signals, both keys and titles, in the job's `pairs/`) for the owner to check the decisions;
+`--dedupe on` only after they say so. `.venv/bin/python scripts/dedupe.py --report <shop> [--category <id>] [--list]`
+counts the duplicate groups already in the store, best first (read only; withdrawing them is the owner's word).
+
 ## What stops, and who acts
 
 | Seen | What the job did | You |

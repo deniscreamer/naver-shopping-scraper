@@ -9,6 +9,7 @@ owner as always.
 
     .venv/bin/python scripts/job.py new --query "남성 골프채 풀세트" --category 50002788 [--count 40 | --all] [--batches 2]
                                         [--paid | --paid-variants] [--exclude-known] [--shops-root DIR] [--publish [--describe]]
+                                        [--dedupe off|log|on]
     .venv/bin/python scripts/job.py run [--job ID] [--items N]
     .venv/bin/python scripts/job.py scroll --query "남성 골프채 풀세트" --category 50002788 [--count 100] [--paid | ...]
     .venv/bin/python scripts/job.py scroll --job ID          # resume a scroll job (its listing from the top)
@@ -72,6 +73,17 @@ tab from the top, done products skipped, REOPEN_MAX times in REOPEN_WINDOW_S, el
 answered on a product page ("wall: captcha", the tab kept) is read again as above; any other wall stops. SIGTERM
 or Ctrl+C closes the tab before the run ends. `run` and `refresh` refuse a scroll job; `scroll --job` resumes it
 (its listing walked from the top again, done products skipped).
+
+`--dedupe off|log|on` (`new` and `scroll`, the owner 2026-11-15; kept in job.json, read again on resume; off, the
+default, leaves the job as it was and writes no key): right after a product is collected, before its description
+images, dedupe.py looks it up in an index built at the run's start (the shop's published and owner-withdrawn products
+and the job's own collected ones): the same title key, another store, a price within x2, confirmed by the photos or
+the variants. `log`: one event `duplicate_seen` (the would-be decision, the matches and their signals), nothing
+else changes. `on`: a confirmed match withdrawn by the owner, or one the candidate is not strictly better than
+(grade, then reviews): `not_taken` `duplicate_of_withdrawn:<key>` / `duplicate_of:<key>` (closed: no images, no
+translation); strictly better: `duplicate_better {replaces}` and on, and once it is published the old product is
+withdrawn (publish.withdraw, DRAFT, reason replaced_by:<new key>) if it is still published and the new product has
+no fewer variants (`replaced`, else `replace_skipped`). A title match not confirmed is `duplicate_seen` (not_confirmed).
 """
 import argparse
 import glob
@@ -367,6 +379,8 @@ def cmd_new(args: argparse.Namespace) -> int:
             "until_end": args.all,                    # 2026-11-12, the owner: no count, to the listings' end
             "free_only": not args.paid}                   # 2026-11-09: no paid variant / add-on in the transform either
                                                           # (--paid-variants: this job's products take paid variants)
+    if args.dedupe != "off":                              # 2026-11-15: off writes no key (job.json as before)
+        meta["dedupe"] = args.dedupe
     with open(os.path.join(folder, "job.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=1)
     with open(os.path.join(folder, "listing.jsonl"), "w", encoding="utf-8") as f:
@@ -542,6 +556,77 @@ def keep_line(job: Job, line: dict, tmp: str) -> str:
     raise Stop(f"keep: {path}: run id taken three times")
 
 
+DEDUPE_EVENTS = ("duplicate_seen", "duplicate_better")
+
+
+def dedupe_step(job: Job, ctx: dict, key: str, line: dict | None) -> str | None:
+    """--dedupe log / on, right after collect: the product against ctx["dedupe"] (dedupe.Index). -> what happened
+    when it is not taken (on: a confirmed duplicate not strictly better), else None (go on). A product decided before
+    (a resume) is not looked up again."""
+    import dedupe
+    index = ctx["dedupe"]
+    if any(e.get("key") == key and e["event"] in DEDUPE_EVENTS for e in job.events()):
+        return None
+    for k in closed(job):                                   # this job's own products closed meanwhile block nothing
+        if (index.by_key.get(k) or {}).get("status") == "job":
+            index.drop(k)
+    if line is None:
+        line = (ctx.get("dedupe_records") or {}).get(key)  # read once at the run's start
+    if line is None:
+        from run_transform import latest_lines
+        line = latest_lines(job.shop, None, job.shops_root)[key][2]
+    cand = dedupe.entry(line)
+    d = index.decide(cand)
+    if not d["matches"]:
+        index.add(cand)
+        return None
+    if job.meta.get("dedupe") == "log" or d["decision"] is None:
+        job.log(key, "duplicate_seen", decision=f"{d['decision']}:{d['of']}" if d["decision"] else "not_confirmed",
+                grade=cand["grade"], reviews=cand["reviews"], price=cand["price"], matches=d["matches"])
+        if d["decision"] in (None, "duplicate_better"):    # log builds the index on mode would build
+            index.add(cand)
+        return None
+    if d["decision"] in ("duplicate_of_withdrawn", "duplicate_of"):
+        reason = f"{d['decision']}:{d['of']}"
+        job.log(key, "not_taken", reason=reason, grade=cand["grade"], reviews=cand["reviews"], price=cand["price"],
+                matches=d["matches"])
+        index.drop(key)
+        return f"not taken: {reason}"
+    job.log(key, "duplicate_better", replaces=d["of"], grade=cand["grade"], reviews=cand["reviews"],
+            price=cand["price"], matches=d["matches"])
+    index.add(cand)
+    return None
+
+
+def replace_step(job: Job, ctx: dict, shop: Any, key: str) -> str:
+    """--dedupe on, after `key` is published: the product it replaces (its duplicate_better event) withdrawn when it is
+    still published and `key` has no fewer variants. -> a note for the printed line ("" when nothing to do)."""
+    import dedupe
+    import publish
+    from shopify_catalog import CatalogError
+    events = [e for e in job.events() if e.get("key") == key]
+    old = next((e.get("replaces") for e in reversed(events) if e["event"] == "duplicate_better"), None)
+    if not old or any(e["event"] in ("replaced", "replace_skipped") for e in events):
+        return ""
+    ledger = shop.ledger()
+    new_n, old_n = dedupe.variant_count(job.shop, key, job.shops_root), dedupe.variant_count(job.shop, old,
+                                                                                            job.shops_root)
+    why = ("not published" if key not in ledger else "the old one is not published" if old not in ledger
+           else f"fewer variants ({new_n} < {old_n})" if (new_n or 0) < (old_n or 0) else None)
+    if why:
+        job.log(key, "replace_skipped", replaces=old, why=why)
+        return f"; {old.split(':')[3]} kept: {why}"
+    try:
+        publish.withdraw(shop, old, ctx["publisher"][0], reason=f"{dedupe.REPLACED}{key}")
+    except CatalogError as e:                                   # the new one stays; the owner withdraws by hand
+        job.log(key, "replace_skipped", replaces=old, why=f"withdraw failed: {e}"[:300])
+        return f"; {old.split(':')[3]} not withdrawn: {e}"[:200]
+    if "dedupe" in ctx:
+        ctx["dedupe"].drop(old)
+    job.log(key, "replaced", replaces=old, variants=[new_n, old_n])
+    return f"; replaces {old.split(':')[3]} (withdrawn)"
+
+
 def one(job: Job, ctx: dict, key: str, stage_now: str | None, n: int = 0) -> str:
     """Take one product from its stage to prepared. -> what happened (for the line printed)."""
     import description_images
@@ -549,6 +634,7 @@ def one(job: Job, ctx: dict, key: str, stage_now: str | None, n: int = 0) -> str
     row = next(r for r in job.rows() if r["key"] == key)
     pid = str(row["product_id"])
     t0 = time.monotonic()
+    line = None
     if stage_now is None:
         try:
             published = ctx["catalog"].keys()                   # published meanwhile (read again every 5 min)
@@ -568,9 +654,14 @@ def one(job: Job, ctx: dict, key: str, stage_now: str | None, n: int = 0) -> str
             job.log(key, outcome.status, reason=outcome.reason)
             shutil.rmtree(tmp, ignore_errors=True)
             return f"{outcome.status}: {outcome.reason}"
-        kept = keep_line(job, {"key": key, **outcome.data}, tmp)
+        line = {"key": key, **outcome.data}
+        kept = keep_line(job, line, tmp)
         shutil.rmtree(tmp, ignore_errors=True)
         job.log(key, "collected", run=os.path.basename(kept), seconds=round(time.monotonic() - t0))
+    if stage_now in (None, "collected") and ctx.get("dedupe") is not None:
+        dropped = dedupe_step(job, ctx, key, line)
+        if dropped:
+            return dropped
     if stage_now == "translated":                               # only the publication is left
         return publish_step(job, ctx, key, n)
     t1 = time.monotonic()
@@ -649,7 +740,9 @@ def publish_step(job: Job, ctx: dict, key: str, n: int = 0) -> str:
     job.log(key, "published", product_id=row.get("product_id"), handle=row.get("handle"), status=row["status"],
             prices_usd=row.get("prices_usd"))
     price = "-".join(dict.fromkeys(str(p) for p in row.get("prices_usd") or []))
-    return f"{described}published {row.get('handle')} {f'${price} ' if price else ''}{row.get('admin_url') or ''}".strip()
+    replaced = replace_step(job, ctx, shop, key) if job.meta.get("dedupe") == "on" else ""
+    return (f"{described}published {row.get('handle')} {f'${price} ' if price else ''}"
+            f"{row.get('admin_url') or ''}".strip() + replaced)
 
 
 def describe_one(job: Job, ctx: dict, key: str) -> str:
@@ -725,6 +818,12 @@ def _context(job: Job) -> tuple[dict | None, int]:
         except translate.TranslateError as e:
             print(f"stop: translation: {e} (a job without it: job.py new ... --no-translate)")
             return None, 2
+    if job.meta.get("dedupe") in ("log", "on"):
+        import dedupe
+        gone = closed(job)
+        ctx["dedupe_records"] = dedupe.collected(job.shop, job.shops_root)
+        ctx["dedupe"] = dedupe.load(job.shop, job.shops_root, [r["key"] for r in job.rows() if r["key"] not in gone],
+                                    records=ctx["dedupe_records"])
     return ctx, 0
 
 
@@ -925,6 +1024,8 @@ def new_scroll_job(args: argparse.Namespace, shop: str, shops_root: str, root: s
             "excluded_known": 0, "exclude_known": args.exclude_known,
             "translate": not args.no_translate or args.publish, "publish": args.publish, "describe": args.describe,
             "free_only": not args.paid, "total": None, "tab": None, "batches": 0, "reopens": [], "screen": {}}
+    if getattr(args, "dedupe", "off") != "off":
+        meta["dedupe"] = args.dedupe
     with open(os.path.join(folder, "job.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=1)
     open(os.path.join(folder, "listing.jsonl"), "w").close()
@@ -1211,6 +1312,8 @@ def _job_flags(p: argparse.ArgumentParser) -> None:
                    "translation: placement, then publish.py")
     p.add_argument("--describe", action="store_true", help="with --publish: write each product's description "
                    "before it is sent (describe.py: one model request a product)")
+    p.add_argument("--dedupe", choices=("off", "log", "on"), default="off", help="duplicates of a product sold by "
+                   "another store (dedupe.py): log the decisions only, or on: skip and replace (JOB_AGENT.md)")
 
 
 def main(argv: list[str] | None = None) -> int:

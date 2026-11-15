@@ -45,6 +45,7 @@ outside fetches: AGENTS.md rule 3.
 | `listing_title_rules.json` | Ours: per Naver category, the title words of what the shop's section does not sell; the screen drops such a row as `title:<code>` (listing_filter) |
 | `review_grid.py` | Read only, offline, by hand: numbered sheets of the published products' first photos and an index (number, key, title, handle, admin link), for a look by eye after a run (JOB_AGENT.md, After) |
 | `review_suspects.py` | Read only, offline: the published products of a category that may not be what its section sells (one club, 2-3 clubs, used, junior or accessory words), with key, store id, handle, price and reason; a table and a CSV for the owner's review after a lenient run (JOB_AGENT.md, After) |
+| `dedupe.py` | Duplicates (the owner, 2026-11-15): the rule (title key, photo / variant confirmation, grade then reviews) and the index `job.py --dedupe log` / `on` uses after collect; `--report <shop> [--category]` lists the duplicate groups already in the store, best first, `--pairs <shop> --job <id>` draws a job's pairs side by side with an index.tsv. Read only, offline (JOB_AGENT.md, Duplicates) |
 | `publish.py --withdraw` | Takes a published product off the store (DRAFT, nothing deleted) and keeps it from being sent again; the ledger keeps why |
 | `store_diff.py` | Read only: what a publication would change in the store, field by field, per published product; the published products that cannot be built now; `--adopt` records `output` for those the store already has. Run it after any change of rules, dictionaries or a new category (ONBOARDING.md part D) |
 | `reprice.py` | Products already in the store: old -> new prices under the shop's rule (a dry-run table, also a TSV under `publish/`); `--apply` sends them, on the owner's word. See The price |
@@ -257,6 +258,11 @@ Changed 2026-11-08: translation is a model API stage (`translate.py`, see Transl
 description and the images' text are not translated (`describe.py` writes the description from them, 2026-11-10). Not built on purpose (the owner,
 2026-11-08): OCR in parallel with the next collect, an incremental prepare (run_transform.run(shop) rebuilds the
 shop after each product: 1-2 s at 143 products, the pace did not drift over 100), a guard memory across runs.
+
+Duplicates (the owner, 2026-11-15): `new` / `scroll` `--dedupe log|on` compares each collected product with the
+shop's published and withdrawn ones and the job's own (`dedupe.py`: the same title words, another store, confirmed by
+the photos or the variants); `on` closes a duplicate that is not strictly better (grade, then reviews) and replaces
+the old product with a better one once it is published. `off`, the default, changes nothing. [JOB_AGENT.md](JOB_AGENT.md), Duplicates.
 
 Checked live (2026-11-08, 50002788, own shops root): 40 sets in 53 min and 100 sets in 146 min, every one prepared
 `ready`, no stop, wait, captcha, login gate or Naver error page; ~80-88 s a product (collect median 52-56 s, page
