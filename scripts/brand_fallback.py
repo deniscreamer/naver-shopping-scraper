@@ -60,7 +60,7 @@ _NOT_A_NAME = re.compile(r"^[\d\s~\-.,세cmCM]*$|^\d+\s*[~\-]?\s*\d*\s*세")
 # in the origin's brackets, 7659269727)
 # ... and the sport itself (10979283479, 2026-11-14: "골프" in the 브랜드 row became a shop brand, then the brand of
 # every title that says 골프: 55 junior and full sets published with the vendor "Golf", 183 more would have followed)
-_NO_FIRM = re.compile(r"(?i)^(?:별도\s*표기|알\s*수\s*없음|미상|불명|없음|모름|(?:중국|한국|국산|일본|대만|베트남|태국|미국)(?:\s*(?:산|브랜드|제조사?|oem|OEM))?"
+_NO_FIRM = re.compile(r"(?i)^(?:별도\s*표기|알\s*수\s*없음|미상|불명|없음|모름|브랜드\s*없음|제조(?:자|사)\s*미상|(?:중국|한국|국산|일본|대만|베트남|태국|미국)(?:\s*(?:산|브랜드|제조사?|oem|OEM))?"
                       r"|골프(?:\s*(?:용품|클럽|채|스포츠))?|golf|스포츠|sports?"
                       # who it is for, a lone letter, an authenticity claim (2026-11-15: 남성용 / 여성용 in two brand
                       # rows became the brand of 32 titles that say 남성용 / 여성용, vendor "Yoshino" on a TaylorMade

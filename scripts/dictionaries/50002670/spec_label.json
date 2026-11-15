@@ -1,0 +1,27 @@
+{
+ "format": "dictionary/1",
+ "kind": "spec_label",
+ "backed_up": "2026-11-15T12:07:24Z",
+ "entries": {
+  "구성": "Set Type",
+  "모델명": "Model Name",
+  "브랜드": "Brand",
+  "사용방향": "Handedness",
+  "샤프트 강도": "Shaft Flex",
+  "샤프트소재": "Shaft Material",
+  "성별": "Gender",
+  "수입원": "Importer",
+  "스윙웨이트": "Swing Weight",
+  "스펙": "Specs",
+  "아이언 구성": "Iron Set Composition",
+  "아이언#7로프트각": "#7 Iron Loft",
+  "아이언개수": "Number of Irons",
+  "원산지": "Country of Origin",
+  "제조공법": "Manufacturing Method",
+  "제조사": "Manufacturer",
+  "출시": "Release",
+  "킥포인트": "Kick Point",
+  "품번": "Model Number",
+  "헤드형태": "Head Type"
+ }
+}

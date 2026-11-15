@@ -175,7 +175,7 @@ def test_a_generic_word_is_never_a_shop_brand():
 
 
 @pytest.mark.parametrize("word", ["골프", "골프 용품", "골프클럽", "GOLF", "Golf", "스포츠", "남성용", "여성용", "남녀공용",
-                                  "ㅊ", "정식수입정품 또는 정식제조정품"])
+                                  "ㅊ", "정식수입정품 또는 정식제조정품", "브랜드없음", "제조자 미상"])
 def test_the_sport_is_no_brand(word):
     # 10979283479, 2026-11-14: "골프" in the 브랜드 row became a shop brand, then the brand of every title saying 골프
     # (55 products published with the vendor "Golf"); a record prepared before, and the dictionary's "골프" -> "Golf"
