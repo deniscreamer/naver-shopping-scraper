@@ -711,3 +711,39 @@ def test_measures_a_list_of_the_clubs_means_no_bag_2026_11_11():
         assert _closed_list(text, G), text
     for text in ("드라이버+우드+아이언+퍼터+캐디백", "카본 아이언 구성 11개", "10.5도 R"):
         assert not _closed_list(text, G), text
+
+
+def test_a_sellers_contact_note_is_no_option_and_no_addon():
+    """The iron sets' review (2026-11-15): a phone number in an option name (9707668123), a "contact us" variant
+    (12198910588) and add-on (12219474816) were published."""
+    from transform import _axis_name, _contact_only
+    assert _axis_name("샤프트 선택(문의010-7229-8779)") == "샤프트 선택"
+    assert _contact_only("커스텀 오더는 톡톡 문의 부탁드립니다.") and _contact_only("특주주문시 연락주세요(02-2200-1633)")
+    assert not _contact_only("A(주문전문의)") and not _contact_only("7아이언세트 L") and not _contact_only("오른손(기본)")
+
+    def contact_row(line):
+        line["specs"]["options"]["option_groups"] = [{"id": "1", "name": "구성", "type": "COMBINATION"}]
+        base = line["specs"]["options"]["variants"][0]
+        line["specs"]["options"]["variants"] = [{**base, "id": "a", "options": ["7아이언세트 L"]},
+                                                {**base, "id": "b", "options": ["커스텀 오더는 톡톡 문의 부탁드립니다."]}]
+    assert len(prep("8514409092", contact_row)["product"]["variants"]) == 1
+
+
+def test_the_maker_naming_a_longer_brand_the_title_names_wins():
+    """7186088743 (2026-11-15): 혼마 in the brand row, 무쯔미혼마 the maker, "무쯔미 혼마 스페셜 2스타" the title: a Mutsumi
+    Honma set, not Honma. A Korean distributor's name (지브이골프코리아) never wins."""
+    def mutsumi(line):
+        line["details"]["name"] = "무쯔미 혼마 스페셜 2스타 여성 경량 아이언세트 (8개)"
+        line["specs"]["facts"]["brand"] = {"value": "혼마", "source": "specs:브랜드"}
+        line["specs"]["facts"]["manufacturer"] = {"value": "무쯔미혼마", "source": "specs:제조사"}
+    assert prep("8514409092", mutsumi)["product"]["brand_ko"] == "무쯔미혼마"
+    assert prep("8514409092")["product"]["brand_ko"] == "지브이투어"
+
+
+def test_a_sellers_note_leaves_an_option_value():
+    """2026-11-15: "L/세금미포함" (tax not included) and "A(주문전문의)" (ask before ordering) were published as values."""
+    from transform import _without_notes
+    assert _without_notes(["L/세금미포함", "A/세금미포함"]) == ["L", "A"]
+    assert _without_notes(["A(주문전문의)", "L(주문전문의)"]) == ["A", "L"]
+    assert _without_notes(["L", "L 당일출고"]) is None                  # two values would be one: kept
+    assert _without_notes(["7아이언세트 L", "8아이언세트 L"]) is None      # no note

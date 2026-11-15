@@ -76,6 +76,12 @@ RULES = {
                                       # configurations and add-ons, the images read); no parts profile
                                       paid_variants=True, paid_addons=True, description_images=True,
                                       agency_needs_brand=True),
+            "50002670": CategoryRules(
+                                      # owner 2026-11-14: women's iron sets (아이언), the full sets' rules: paid
+                                      # configurations (iron count, shaft) and add-ons, the images read, a
+                                      # no-brand agency import held; no parts profile
+                                      paid_variants=True, paid_addons=True, description_images=True,
+                                      agency_needs_brand=True),
         }),
 }
 

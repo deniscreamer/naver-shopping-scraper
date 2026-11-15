@@ -8,7 +8,7 @@ may differ in the store). It changes nothing in the store.
 
 A product is listed with every reason that fits (none: not listed):
 
-  single_club   the transform's own single-club test (package_measures.default_kind with the 50002787 row's
+  single_club   the transform's own single-club test (package_measures.default_kind with the category row's own kinds, else the 50002787 row's
                 `single_club` kind, on the title and each variant's words), or the spec rows 아이언개수 단품 /
                 총클럽개수 1개, or a word of the category's `folding` title rule (a folding club is one club)
   few_clubs     2-3 clubs: 2종 / 3종 / 2pcs / 3pcs (not 12종, 13pcs) in the title, the `two_clubs` kind, or
@@ -65,10 +65,14 @@ def published(shop_dir: str) -> dict[str, dict[str, Any]]:
     return {k: r for k, r in last.items() if r.get("status") == "published"}
 
 
-def _kinds() -> dict[str, dict[str, Any]]:
-    """The transform's club-count kinds (category_measures.json, the 50002787 row: single_club, two_clubs)."""
+def _kinds(category: str | None = None) -> dict[str, dict[str, Any]]:
+    """The transform's club-count kinds (category_measures.json): the category's own when its row has any (50002670:
+    an iron sold alone, 2026-11-15: "7아이언" is a 7-piece set there, 16 sets were listed as single clubs), else the
+    50002787 row's (single_club, two_clubs)."""
     from package_measures import load_table
-    row = next((r for r in load_table()["rows"] if str(r["category_id"]) == "50002787"), {})
+    rows = load_table()["rows"]
+    own = next((r for r in rows if str(r["category_id"]) == str(category) and r.get("kinds")), None)
+    row = own or next((r for r in rows if str(r["category_id"]) == "50002787"), {})
     return {"kinds": [k for k in row.get("kinds") or [] if k["kind"] in ("single_club", "two_clubs")]}
 
 
@@ -127,7 +131,7 @@ def price(shop: str, product: dict[str, Any]) -> str:
 
 def suspects(shop_dir: str, category: str, keys: set[str] | None = None) -> list[dict[str, Any]]:
     live = published(shop_dir)
-    kinds = _kinds()
+    kinds = _kinds(category)
     junior, accessory, folding = JUNIOR, _words(category, ("accessory",)) + BALLS, _words(category, ("folding",))
     out = []
     for r in _lines(os.path.join(shop_dir, "prepared", "products.jsonl")):

@@ -58,7 +58,14 @@ _NOT_A_NAME = re.compile(r"^[\d\s~\-.,세cmCM]*$|^\d+\s*[~\-]?\s*\d*\s*세")
 # rows became a shop brand, then the brand of 74 junior titles and "PGM" in the dictionary; "별도표기" (stated
 # elsewhere) in 6, "중국" / "중국 브랜드" (a country) in 9, a bare "협력사" (a contract maker) in 2, "알수없음" (unknown)
 # in the origin's brackets, 7659269727)
-_NO_FIRM = re.compile(r"^(?:별도\s*표기|알\s*수\s*없음|미상|불명|없음|모름|(?:중국|한국|국산|일본|대만|베트남|태국|미국)(?:\s*(?:산|브랜드|제조사?|oem|OEM))?)$")
+# ... and the sport itself (10979283479, 2026-11-14: "골프" in the 브랜드 row became a shop brand, then the brand of
+# every title that says 골프: 55 junior and full sets published with the vendor "Golf", 183 more would have followed)
+_NO_FIRM = re.compile(r"(?i)^(?:별도\s*표기|알\s*수\s*없음|미상|불명|없음|모름|(?:중국|한국|국산|일본|대만|베트남|태국|미국)(?:\s*(?:산|브랜드|제조사?|oem|OEM))?"
+                      r"|골프(?:\s*(?:용품|클럽|채|스포츠))?|golf|스포츠|sports?"
+                      # who it is for, a lone letter, an authenticity claim (2026-11-15: 남성용 / 여성용 in two brand
+                      # rows became the brand of 32 titles that say 남성용 / 여성용, vendor "Yoshino" on a TaylorMade
+                      # set; "ㅊ" on a Callaway set; "정식수입정품 또는 정식제조정품" as a maker)
+                      r"|(?:남성|여성|남자|여자|남녀|공용|남녀\s*공용|유니섹스)(?:\s*용)?|[ㄱ-ㅎㅏ-ㅣ]+|.*정품.*)$")
 _CODE = re.compile(r"\s*\((?:\d+|자체\s*제작[^()]*)\)\s*$")       # 코알라(200874), 지브이골프코리아(자체제작 상품)
 
 
@@ -104,6 +111,7 @@ def shop_brands(prepared: list[Any]) -> list[str]:
     found = {p["product"]["brand_ko"] for p in prepared
              if p["product"].get("brand_ko") and str(p["product"].get("brand_source") or "").startswith(
                  ("specs:", "search_info."))}
+    found = {b for b in found if clean(b)}          # a record prepared before a word joined _NO_FIRM ("골프")
     return sorted(found, key=lambda b: (-len(_norm(b)), b))
 
 
@@ -191,7 +199,7 @@ def leading(title: str | None, known: list[str]) -> str | None:
     """A brand the shop's brand dictionary knows that starts the title ("프랭클린 스포츠 조절 가능한 유소년 골프 세트":
     13324651260, 2026-11-12, an import with no brand row, maker or importer), the longest; two letters at least."""
     t = _norm(title)
-    found = [b for b in known if len(_norm(b)) >= 2 and t.startswith(_norm(b))]
+    found = [b for b in known if len(_norm(b)) >= 2 and t.startswith(_norm(b)) and clean(b)]   # 골프 is in it
     return max(found, key=lambda b: len(_norm(b))) if found else None
 
 

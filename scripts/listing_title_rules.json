@@ -1,6 +1,6 @@
 {
  "format": "listing-title-rules/1",
- "about": "Per Naver leaf category, title words that leave a listing row out before its page is read (listing_filter.Screen; the owner, 2026-11-11: what the shop's section does not sell). Matched on the title NFKC-normalized, lower case and without spaces; notFollowedBy / notPrecededBy as in listing_exclusions.json. Studied on the listings of 2026-11-11: 515 titles of 50002787 (46 of 56 that do not fit, none that fits), 351 of 50002788 (3 of 23 beside the rentals the shared file already drops). A rule may list `unless` words: any of them in the title and the rule does not apply. A rule names its code, which is the row's reason (title:<code>). 50002788 since 2026-11-14 is lenient (the owner: never lose a real product): only what is certainly not a set is left out (1,817 past titles: 5 left out, 3 published, the folding one-club products, no set; junior sets are not left out: no other job collects them, review_suspects.py lists them); the doubtful ones are published and listed by review_suspects.py.",
+ "about": "Per Naver leaf category, title words that leave a listing row out before its page is read (listing_filter.Screen; the owner, 2026-11-11: what the shop's section does not sell). Matched on the title NFKC-normalized, lower case and without spaces; notFollowedBy / notPrecededBy as in listing_exclusions.json. Studied on the listings of 2026-11-11: 515 titles of 50002787 (46 of 56 that do not fit, none that fits), 351 of 50002788 (3 of 23 beside the rentals the shared file already drops). A rule may list `unless` words: any of them in the title and the rule does not apply. A rule names its code, which is the row's reason (title:<code>). 50002788 since 2026-11-14 is lenient (the owner: never lose a real product): only what is certainly not a set is left out (1,817 past titles: 5 left out, 3 published, the folding one-club products, no set; junior sets are not left out: no other job collects them, review_suspects.py lists them); the doubtful ones are published and listed by review_suspects.py. 50002670 (2026-11-14, women's iron sets): loose heads and shafts, a single iron (단품 with no set word) and a men's set (남성 with no women's word); a set whose gender no word states is left to placement (held).; a used or refurbished set (중고, 리퍼; 2026-11-15).",
  "categories": {
   "50002787": [
    {
@@ -511,6 +511,120 @@
       "text": "휴대용골프채",
       "notFollowedBy": [],
       "notPrecededBy": []
+     }
+    ]
+   }
+  ],
+  "50002670": [
+   {
+    "code": "parts",
+    "why": "A loose iron head or shaft for fitting, not a club (Itobori and like head makers, 2026-11-14).",
+    "tokens": [
+     {
+      "text": "아이언헤드",
+      "notFollowedBy": [
+       "커버"
+      ],
+      "notPrecededBy": []
+     },
+     {
+      "text": "헤드만",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "헤드단품",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "아이언샤프트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "샤프트단품",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "single",
+    "why": "One iron sold alone (단품, 낱개), not a set: the owner, 2026-11-14, the section sells iron sets only. A title with a set word or count stays (\"7아이언세트 단품\"); no \"7i\" in `unless`: model names end so (LP-425I, LM423i).",
+    "tokens": [
+     {
+      "text": "단품",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "낱개",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ],
+    "unless": [
+     "세트",
+     "셋트",
+     "개구성",
+     "pcs",
+     "아이언5개",
+     "아이언6개",
+     "아이언7개",
+     "아이언8개"
+    ]
+   },
+   {
+    "code": "mens",
+    "why": "A men's set (the owner, 2026-11-14: women's sets only): 남성 with no women's word. A set that names no gender is held by placement, not here.",
+    "tokens": [
+     {
+      "text": "남성",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "남자",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ],
+    "unless": [
+     "여성",
+     "여자",
+     "레이디",
+     "우먼",
+     "women",
+     "lady",
+     "ladies",
+     "남녀",
+     "공용",
+     "겸용"
+    ]
+   },
+   {
+    "code": "used",
+    "why": "A used or refurbished set (11658140244, \"[중고] 중고 로마로 레이 알파\", published as new and withdrawn, 2026-11-15). 초중고 / 중고급 / 중고생 are no condition (review_suspects._USED). Only here: 50002788 keeps used sets on purpose (lenient, review_suspects lists them).",
+    "tokens": [
+     {
+      "text": "중고",
+      "notFollowedBy": [
+       "급",
+       "생",
+       "등",
+       "수"
+      ],
+      "notPrecededBy": [
+       "초"
+      ]
+     },
+     {
+      "text": "리퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": [
+       "그"
+      ]
      }
     ]
    }

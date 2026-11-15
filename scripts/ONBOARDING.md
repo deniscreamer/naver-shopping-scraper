@@ -2,7 +2,8 @@
 
 Where to add what, so that a new Naver leaf category in a shop, or a new shop, runs through the whole pipeline
 (collect, transform, OCR, translate, describe, place, price, publish) without silent gaps. Checked against the
-code on 2026-11-11 (today: one shop, `fairwardgolf`, one category, 50002788 golf full sets). Agents: the
+code on 2026-11-11 (then: one shop, `fairwardgolf`, one category, 50002788 golf full sets; since then 50002787 junior
+clubs and 50002670 women's iron sets, 2026-11-14). Agents: the
 `new-category-or-shop` skill (`.claude/skills/`) walks through this file.
 
 Each row says what happens **without** the step:
@@ -91,6 +92,7 @@ last step.
 | L5 | A rule fixed earlier (a brand read in "치핑" / "쇼핑") had not reached a product published before the fix | `store_diff.py` (part D, step 6) finds such products |
 | L7 | The first 30 junior products: a shop's or a supplier's name as the brand (세모물상점, 스퀘어홀딩), one brand spelled two ways (U.S.KIDSGOLF / U.S. Kids Golf) and written twice in a title, a bag alone and a toy published, two clubs priced as a set | trading names are no brand, brands compared by letters and digits, `publish.py --withdraw`, the category's `bag_only` rule and `two_clubs` kind. Read the new category's vendors and its cheapest and dearest prices after the first run |
 | L8 | The next 100 junior products: a shop brand of one category is looked for in every category's images (GB in "golf bag" changed two adult sets), the cleaned brand of one product (던롭) took two XXIO sets' titles; ages and lofts after 클럽 read as a count (single clubs priced as sets, $709-729) | Latin brands as whole words, a brand inside a Korean branch's name last, `brand_fallback.clean` for the brand rows, measures out of the package words. After every run, `store_diff.py` over the **whole shop**, not only the new category. Then read the new category's no-brand, agency and dearest products: three no-name agency imports at $1499-1899 and a school pack of ten irons went out; `agency_needs_brand`, the title rule `group_pack` |
+| L9 | The first 100 women's iron sets (50002670, 2026-11-15, a review in six phases): a brand row of "골프" (one junior product) made "Golf" the vendor of 55 published junior and full sets; a used set ([중고]) published as new; a phone number in an option name, a "contact us" variant and add-on; a brand spelled from its sound (제스타임 "Jestime", the maker writes ZESTAIM), a maker's longer brand lost (무쯔미혼마 as 혼마), a model line invented in a title (Prestigio for 로얄); four XXIO 14 and two V300 listings of one model the title-word dedupe does not see | `brand_fallback._NO_FIRM` (the sport, a gender word, a lone letter, a 정품 claim are no firm), the category's `used` title rule (not shared: 50002788 keeps used sets on purpose), a seller's note out of option values, contact notes dropped in the transform, the maker naming a longer brand the title names wins, the category brief's makers and lines. After the first run of a category: `review_grid.py`, then read its new brands against the makers' own Latin spelling |
 | L6 | publish.py's skip compared its inputs: 18 of 20 products whose inputs moved would have sent what the store already had, and hid the two real changes | the ledger keeps `output`, the hash of what productSet sends (`publish.output_digest`): a product is skipped when that did not change |
 
 ## D. The order of a first run

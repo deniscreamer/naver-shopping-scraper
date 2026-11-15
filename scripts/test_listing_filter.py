@@ -202,3 +202,31 @@ def test_published_full_set_titles_pass_the_screen():
                   "정품 요넥스 뉴 이존엘리트 3.0 여성 11개구성 여성 입문골프채풀세트"):
         assert screen.check({"name": title, "category_id": "50002788", "product_id": "1",
                              "store": {"channel_no": "2"}}) is None
+
+
+@pytest.mark.parametrize("title, code", [
+    # 50002670 irons, sold as women's iron sets (the owner, 2026-11-14): 338 titles of 6 searches that day, 86 out
+    ("ITOBORI 이토보리 25 아이언 헤드 VR.4 4세대 아이언헤드", "title:parts"),
+    ("ZESTAIM 라제스타임 THE 레이디스 아이언 헤드 6-PW,G(6i)", "title:parts"),
+    ("던롭 젝시오 13 5번 아이언 단품 여성용", "title:single"),
+    ("테일러메이드 P790 여성용 5번단품 아이언 투어AD 50L", "title:single"),
+    ("온오프 레디 아이언 단품 여성 경량 LP-425I", "title:single"),              # 425I is a model, not 5 irons
+    ("[정식대리점] 젝시오14 여성용 아이언 단품 5번 낱개", "title:single"),
+    ("주문제작 포틴 TB3 포지드 카본 낱개아이언 여성용 블랙 새틴 PA TOUR AD 50", "title:single"),
+    ("재고보유 당일출고가능 ALL-NEW PXG 0211 DC 7아이언세트 남성 병행수입", "title:mens"),
+    ("던롭 젝시오 13 레이디스 아이언 7개 세트 2024년 여성용", None),
+    ("다이와 온오프 LP 425 아이언 세트 2025년 여성용 병행 AS보증 6개", None),
+    ("혼마 골프 베레스 08 아이즈 aizu 여성 아이언 7개세트 카본 샤프트", None),   # 샤프트 stays
+    ("젝시오 XXIO 12 블루 아이언 레이디스 5개세트 MP1200L블루 L샤프트", None),
+    ("미즈노 JPX925 포지드 아이언 8개 세트 2024년", None),                     # no gender: placement holds it
+    ("남녀공용 경량 카본 아이언 7개 세트", None),
+    ("7아이언세트 단품 여성 카본", None),
+    ("[중고] 중고 로마로 레이 알파 여성용 7아이언세트 블루 투어 AD 40 L 유니스골프", "title:used"),   # 11658140244
+    ("젝시오 13 여성 아이언 리퍼 7개 세트", "title:used"),
+    ("초중고 여성 입문용 아이언 7개 세트", None),
+    ("중고급자 여성 아이언 세트 7i", None),
+])
+def test_iron_sets_leave_heads_singles_and_mens_out(title, code):
+    screen = Screen("50002670", namespace="fairwardgolf")
+    assert screen.check({"name": title, "category_id": "50002670", "product_id": "1",
+                         "store": {"channel_no": "2"}}) == code

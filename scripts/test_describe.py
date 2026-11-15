@@ -193,6 +193,7 @@ def test_the_answer_schema_follows_the_profile():
     assert D.schema(D.PROFILES["default"])["required"] == ["conflicts", "intro", "highlights"]
     assert D.profile_of("50002788")[0] == "golf_set" and D.profile_of("50000167")[0] == "default"
     assert D.profile_of("50002787")[0] == "junior_clubs" and "junior golf clubs" in D.system_prompt("junior_clubs")
+    assert D.profile_of("50002670")[0] == "iron_set" and "women's iron sets" in D.system_prompt("iron_set")
     assert "golf club sets" in D.system_prompt("golf_set") and "`included`" not in D.system_prompt("default")
 
 

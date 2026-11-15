@@ -24,6 +24,7 @@ another shop (tenant) or another category. The code: `attributes.py` (what the s
 | Case | Code? | Files |
 |---|---|---|
 | A category of a configured shop with no split (one section), like 50002787 junior clubs | no | `placement_rules.py` (and `transform_shops.py` if the transform has no rules for it yet) |
+| A category of a configured shop that sells one side of a split only, like 50002670 irons (2026-11-14: `split_by="gender"`, the one leaf `womens`; men's and unknown are held) | no | `placement_rules.py` |
 | A category split by gender, like 50002788 | no | `placement_rules.py` |
 | The same in another shop (tenant) | no | `shop_stores.py` (the shop), `transform_shops.py`, `placement_rules.py` |
 | A split by a new kind of mark (function, size, material ...) | data only | `attributes.py` (a new `Attribute`), `placement_rules.py` |

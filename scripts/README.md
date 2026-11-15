@@ -477,6 +477,9 @@ set word otherwise keeps the set's box, the larger one. The title and the varian
 "6~8세" is no count). Such a default carries `kind`. The table's `version` is 3 since that row. A kept run is never
 rewritten, so the transform takes each default as today's table gives it (`current_defaults`): a changed row
 reaches the product when it is prepared again; a default already today's stays as collected.
+50002670 아이언 (owner, 2026-11-14), sold as women's iron sets: a set of 5-8 irons in a carton, no bag (100 x 25 x
+12 cm, 3.5 kg central), and a `single_club` kind (98 x 11 x 8 cm, 1 kg) for an iron sold alone (단품 with no set word
+or count); singles are left out by the title screen, so the kind is for one that slips through. Version 5 since.
 Product sizes (not the package: kind product or unknown) are kept apart, optional.
 Every field carries `confidence`, **1 to 5** (the owner, 2026-11-10):
 
@@ -895,8 +898,11 @@ published, SKUs and prices equal on 201 of 201 variants):
   shown with single spaces, and without the seller's numbering ("선택1 9도SR" -> "9도SR") when every value of the
   axis has it and the values stay different (else kept, note `option_values_duplicate`); add-on groups and names
   without theirs ("1-1.남성 장갑"). The SKU keeps the raw tuple.
-- **Rows that are not versions**: a row asking for a delivery message (배송메세지) is dropped; a one-value axis named
-  like a hidden row (상품번호) is not a fact.
+- **Rows that are not versions**: a row asking for a delivery message (배송메세지) is dropped, and so is a row or an
+  add-on choice that only asks the buyer to contact the seller (문의, 연락주세요, 톡톡 with no club, shaft or count:
+  2026-11-15); a phone number or a "(문의...)" note leaves an option name, and a seller's note leaves the values
+  when they stay different ("L/세금미포함", "A(주문전문의)", "(오늘출발)" -> "L", "A"); a one-value axis named like a
+  hidden row (상품번호) is not a fact.
 - **Delivery**: `delivery` from the page (fee as charged, scope international / domestic, customs, lead time);
   notes `shipping_paid` and `overseas_shipping`. In a shop with the price rule the base fee of a PAID or
   UNIT_QUANTITY_PAID listing goes into the purchase; any other fee type counts as free (see The price). An
@@ -1043,10 +1049,16 @@ link. The report says how many were dropped. The step is pure: same products in,
   원산지's brackets (`origin`), the shop's brand most read in the images (`images_text`), a Latin brand phrase the
   images repeat 5+ times (`images_text_latin`: BEN SAYERS on 13425122164), or 노브랜드 (`none`: 13464713764, an
   unbranded putter). These add the note `brand_fallback` (source, other candidates). No brand list is kept by hand.
+  A brand row the maker's own name extends, when the title names the maker too, gives way to the maker (혼마 /
+  무쯔미혼마, 7186088743, 2026-11-15; a Korean branch's name never). No firm, dropped from a 브랜드 row and never a
+  shop brand: the sport (골프, 골프용품, GOLF, 스포츠: one junior row's "골프" made "Golf" the vendor of 55 products,
+  2026-11-14), who it is for (남성용, 여성용, 남녀공용: 32 titles got "Yoshino" through a dictionary guess), a lone letter
+  (ㅊ) and an authenticity claim (정품).
 
 **Per-shop rules** (`transform_shops.py`, data): SKU prefix, KRW per USD, variant cap, and per Naver leaf category
 `paid_variants` / `paid_addons` / `description_images`, off by default, all on for fairwardgolf 50002788 and
-50002787 (junior clubs, 2026-11-11; no parts profile: the core reading only). The shop's
+50002787 (junior clubs, 2026-11-11) and 50002670 (women's iron sets, 2026-11-14; no parts profile: the core
+reading only). The shop's
 sections are not decided here (Placement). A shop or a category without rules: `ShopRulesMissing`, the
 run stops and asks the operator.
 
@@ -1491,7 +1503,8 @@ Level 1 is 2.50 so the margin stays whole when the set does have a bag: the cate
 x 23 cm) is 232-259 USD by the grid, a set with a bag 523-546, and under 2.33 the difference would come out of the
 margin; without a bag the price carries 444-511 USD the delivery does not need, kept for the risks. 2.50 was derived
 for 50002788: a new category in the shop needs its own check of level 1 (the coefficients are one table per shop,
-`shop_pricing.FAIRWARDGOLF`). 50002787 junior clubs (the owner, 2026-11-11) keeps them as they are, to be measured
+`shop_pricing.FAIRWARDGOLF`). 50002787 junior clubs (the owner, 2026-11-11) and 50002670 women's iron sets
+(2026-11-14) keep them as they are, to be measured
 on its first shipments like the sets. All five are starting estimates: no set had shipped yet. After the first 10-20 sets
 shipped, compare each invoice with the variant's `fairwardgolf.price` (the box FedEx measured, the billable kg,
 every fee line) and replace them with measured ones; check the first invoice of a set without a bag for FedEx's
@@ -1703,7 +1716,8 @@ caps) and a brief (`prompts/describe/<profile>.md`: what each list holds, what a
 must be told). `golf_set` (50002788): "What's included" and "Highlights"; no bag or no putter is said plainly; a
 non-conforming driver gets one fixed sentence; a version for the Asian or Japanese market is one highlight, joined
 with the origin. `junior_clubs` (50002787, 2026-11-11): the same two lists, a single club or a set said in the
-intro with the age or height range the seller gives. A category without a profile gets `default`: the intro and highlights only. The common prompt
+intro with the age or height range the seller gives. `iron_set` (50002670, 2026-11-14): the set's irons in one
+item, the choice of iron count, shaft or flex in a highlight, 정품 / 병행 one highlight. A category without a profile gets `default`: the intro and highlights only. The common prompt
 (`prompts/describe_system.md`) holds no golf word.
 
 The answers are kept in `shops/<shop>/translation/descriptions.jsonl` (append-only; fields, HTML, what was cut

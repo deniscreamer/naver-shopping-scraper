@@ -75,6 +75,20 @@ MAX_IMAGES = 50
 HIDDEN_ROWS = {"상품번호", "제조일자", "이벤트", "사은품", "인증정보"}     # 인증정보: purchase-agency / KC legal text
 _AGENCY_RE = re.compile(r"\(?\s*(?:해외\s*)?구매\s*대행\s*\)?")             # 원산지 "일본산(구매대행)", "해외구매대행"
 _DELIVERY_NOTE_RE = re.compile(r"배송\s*메[세시]지")                         # a row asking for a delivery note
+# a seller's contact note, never a product (2026-11-15, the iron sets' review): a phone number or "(문의 ...)" in an
+# option name ("샤프트 선택(문의010-7229-8779)"); an option value or add-on choice that only asks the buyer to call or
+# write ("커스텀 오더는 톡톡 문의 부탁드립니다.", "특주주문시 연락주세요(02-2200-1633)"), its brackets aside
+_PHONE_RE = re.compile(r"\(?\s*(?:문의|tel|☎)?\s*0\d{1,2}[-\s.]?\d{3,4}[-\s.]?\d{4}\s*\)?", re.I)
+_CONTACT_PAREN_RE = re.compile(r"\([^()]*(?:문의|연락|톡톡)[^()]*\)")
+_CONTACT_RE = re.compile(r"문의|연락\s*(?:주|바|부탁)|톡톡")
+
+
+def _contact_only(text: str) -> bool:
+    """An option value or add-on choice that is only a request to contact the seller."""
+    core = _PHONE_RE.sub("", _CONTACT_PAREN_RE.sub("", text or "")).strip()
+    if _CONTACT_RE.search(core):                   # ... and names nothing of the product (a club, a shaft, a count)
+        return not re.search(r"아이언|샤프트|강도|플렉스|우드|드라이버|퍼터|웨지|\d", core)
+    return bool(text and not core and _PHONE_RE.search(text))
 _LABEL_DECOR_RE = re.compile(r"[★☆※]+|\(\s*필수\s*(?:선택)?\s*\)")             # "(필수)", "(필수선택)"
 _REQUIRED_RE = re.compile(r"필수")
 # "선택2", "옵션선택", "옵션+아이언커버.하프백" (2026-11-06): the name says nothing, the values do
@@ -190,6 +204,20 @@ def _tidy(text: str) -> str:
     return re.sub(r"\s+", " ", text or "").strip()
 
 
+# a seller's note inside an option value, not a version (2026-11-15, the iron sets' review: "L/세금미포함" -> "L /
+# Tax Not Included", "A(주문전문의)" -> "A (Custom Order)" were published): tax, "ask before ordering", dispatch today
+_VALUE_NOTE_RE = re.compile(r"\s*[/,\-]?\s*[(\[]?\s*(?:세금\s*미\s*포함|부가세\s*(?:별도|미포함)|주문\s*전\s*문의|"
+                            r"(?:오늘|당일|즉시)\s*(?:출발|출고|발송))\s*[)\]]?\s*")
+
+
+def _without_notes(values: list[str]) -> list[str] | None:
+    """The values without a seller's note, when one carries it, none is left empty and they stay different."""
+    out = [_VALUE_NOTE_RE.sub(" ", v).strip(" /-") for v in values]
+    if out == values or not all(out) or len(set(out)) != len(out):
+        return None
+    return out
+
+
 def _unnumbered(values: list[str]) -> list[str] | None:
     """The values without the seller's numbering, or without one tag every value starts with ("[당일출고]"), when
     every one carries it and none is left empty; None else."""
@@ -207,7 +235,8 @@ def _unnumbered(values: list[str]) -> list[str] | None:
 
 def _axis_name(name: str) -> str:
     """"(선택)샤프트/드라이버/아이언" -> "샤프트/드라이버/아이언"."""
-    return _CHOOSE_TAG_RE.sub("", _tidy(name)) or _tidy(name)
+    name = _tidy(_PHONE_RE.sub("", _CONTACT_PAREN_RE.sub("", name or ""))) or _tidy(name)   # a phone note goes
+    return _CHOOSE_TAG_RE.sub("", name) or name
 
 
 def _capped(rows: list[dict[str, Any]], axes: list[int], cap: int) -> list[dict[str, Any]]:
@@ -281,7 +310,7 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
     rows = [r for r in choice.get("variants") or [] if r.get("options")]
     # a seller's "write a delivery message" row is not a version of the product (2026-11-05: 선택사항 = 인기조합 /
     # 배송메세지기입 on a TaylorMade set); a product of only such rows keeps them (nothing else to sell)
-    real = [r for r in rows if not any(_DELIVERY_NOTE_RE.search(v) for v in r["options"])]
+    real = [r for r in rows if not any(_DELIVERY_NOTE_RE.search(v) or _contact_only(v) for v in r["options"])]
     rows = real or rows
     if rows and any(len(r["options"]) != len(names) for r in rows):           # rows that do not fit the groups:
         return {"options": [], "facts": [], "variants": [], "held": [{             # never publish one of them alone
@@ -317,6 +346,10 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
             values[i] = plain
         elif plain:
             duplicate.append(_tidy(names[i]))
+        bare = _without_notes(values[i])          # "L/세금미포함" -> "L" (a note, not a version)
+        if bare:
+            shown[i] = {raw: dict(zip(values[i], bare))[v] for raw, v in shown[i].items()}
+            values[i] = bare
     for i in keep:
         if i not in axes and names[i] not in HIDDEN_ROWS:      # a one-value 상품번호 axis is a seller code
             label = _tidy(names[i])                            # "선택: 남성풀세트": the value says it all
@@ -434,6 +467,8 @@ def addons(specs: dict[str, Any], krw_per_usd: int, paid: bool = False) -> list[
     out = []
     for s in (specs.get("options") or {}).get("supplements") or []:
         price = s.get("price") or 0
+        if _contact_only(s.get("name") or ""):     # "특주주문시 연락주세요(02-...)": a note, not an add-on
+            continue
         if (price == 0 or paid) and s.get("status") in (None, "SALE") and (s.get("stock_quantity") or 0) > 0:
             group = s.get("group") or ""
             out.append({"group_ko": _plain(_LABEL_DECOR_RE.sub("", group)), "name_ko": _plain(s.get("name") or ""),
@@ -622,6 +657,13 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int,
         maker["value"] = brand_fallback.clean(str(maker["value"])) or maker["value"]
     if brand_fallback.resellers_own(str(maker.get("value") or ""), raw_maker, shop):
         maker = {}                                  # "홈앤컴협력사" by the shop 홈앤컴: no maker named (2026-11-12)
+    b_norm, m_norm = (re.sub(r"\s+", "", str(x.get("value") or "")).casefold() for x in (brand, maker))
+    if b_norm and m_norm != b_norm and b_norm in m_norm and m_norm in re.sub(r"\s+", "", details["name"]).casefold() \
+            and brand_fallback.clean(str(maker["value"])) and not brand_fallback.trade_name(str(maker["value"])) \
+            and not re.search(r"코리아|한국|지점", str(maker["value"])):
+        # the maker names a longer brand the title names too: 혼마 in the brand row, 무쯔미혼마 the maker, "무쯔미 혼마
+        # 스페셜 2스타" the title (7186088743, 2026-11-15: a Mutsumi Honma set published as Honma)
+        brand = {"value": maker["value"], "source": f"manufacturer:{maker.get('source')}"}
     if not brand.get("value") and maker.get("value") and brand_fallback.clean(str(maker["value"])) \
             and not _PLACEHOLDER_CODE.match(str(maker["value"]).strip()) \
             and not _pointer(str(maker["value"])) and str(maker["value"]).strip() not in NOT_A_BRAND \

@@ -79,3 +79,10 @@ def test_without_a_job_the_csv_goes_in_the_shop_folder(tmp_path):
     root = shop(tmp_path, PRODUCTS, LIVE)
     assert R.main([SHOP, "--shops-root", str(root)]) == 0
     assert os.path.exists(root / SHOP / "review_suspects-50002788.csv")
+
+
+def test_a_category_with_its_own_kinds_uses_them():
+    """50002670 (2026-11-15): "7아이언" is a 7-piece set there; only 단품 is one iron."""
+    import review_suspects as R
+    assert [k["kind"] for k in R._kinds("50002670")["kinds"]] == ["single_club"]
+    assert [k["kind"] for k in R._kinds("50002788")["kinds"]] == ["single_club", "two_clubs"]

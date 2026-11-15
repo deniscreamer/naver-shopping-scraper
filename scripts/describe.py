@@ -66,6 +66,8 @@ PROFILES: dict[str, dict[str, Any]] = {
                  "lists": (("included", "What's included", 12), ("highlights", "Highlights", 4))},
     "junior_clubs": {"categories": ("50002787",),         # single junior clubs and junior sets (2026-11-11)
                      "lists": (("included", "What's included", 10), ("highlights", "Highlights", 4))},
+    "iron_set": {"categories": ("50002670",),             # women's iron sets (2026-11-14)
+                 "lists": (("included", "What's included", 6), ("highlights", "Highlights", 4))},
     "default": {"categories": (), "lists": (("highlights", "Highlights", 4),)},
 }
 

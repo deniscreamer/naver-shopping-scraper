@@ -12,6 +12,10 @@ mens-complete-sets and womens-complete-sets (published by the naver-harvester wi
 checked 2026-11-05). The split is the gender the seller states (variants, the 성별 row, the title); unisex goes to
 both; a set whose variants carry both genders goes to both, each section with its own variants.
 
+50002670 아이언 (2026-11-14): only women's iron sets, one section womens-iron-sets split by the same gender: unisex goes
+there, and a mixed set too (one product, all its variants sold), a men's set and a set whose gender nothing states
+are held (`unresolved`), never placed by the listing's query.
+
     from placement_rules import profile_for
     profile = profile_for("fairwardgolf")
 """
@@ -57,6 +61,8 @@ WOMENS = Leaf("womens-complete-sets", "Women’s Complete Golf Sets")
 MENS = Leaf("mens-complete-sets", "Men’s Complete Golf Sets")
 JUNIOR = Leaf("junior-clubs-sets", "Junior Golf Clubs & Sets")    # owner 2026-11-11: single clubs and sets, one
                                                                    # section; age, height and club count not checked
+WOMENS_IRONS = Leaf("womens-iron-sets", "Women’s Iron Sets")    # owner 2026-11-14: women's iron sets only; a men's
+                                                                   # or an unknown-gender set is held (unresolved)
 
 PROFILES = {
     StoreId.FAIRWARDGOLF: PlacementProfile(
@@ -65,6 +71,8 @@ PROFILES = {
             "50002788": CategoryPlacement(parent="clubs", split_by="gender",
                                           leaves={"mens": MENS, "womens": WOMENS}),
             "50002787": CategoryPlacement(parent="clubs", leaves={None: JUNIOR}),     # 주니어용클럽
+            "50002670": CategoryPlacement(parent="clubs", split_by="gender",           # 아이언
+                                          leaves={"womens": WOMENS_IRONS}),
         }),
 }
 

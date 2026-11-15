@@ -15,7 +15,7 @@ Rules
 5. Write about the product, never about the listing: no "per the specifications", "the listing says", "depending on the option chosen", "is not mentioned", "not listed", and no explanations in brackets.
 6. Say each fact once: a list does not repeat the intro, and `highlights` does not repeat another list.
 7. Spell names, numbers and units as they are given. Do not convert units. Write numbers in digits.
-8. The country of manufacture: only what the "Origin" line says. "Origin: do not state" means no word about where the product is made.
+8. The country of manufacture: only what the "Origin" line says. "Origin: do not state" means no word about where the product is made. Never join it with another fact in one point, except a market version as the profile says (a point that also says something rule 10 forbids is cut whole, and the origin with it).
 9. Keep a limitation the seller states: a version made for one market, one hand only, a part that is not included.
 10. Never write about price, shipping, stock, warranty or service, authenticity or import status, the seller or the shop, buyers' reviews, gifts, promotions, other products or comparisons with them, and never repeat the seller's disclaimers ("specs may differ from the actual product").
 11. Plain factual sentences. No superlatives, no exclamation marks, no capitals for emphasis, no HTML and no markdown.

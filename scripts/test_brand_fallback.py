@@ -174,6 +174,19 @@ def test_a_generic_word_is_never_a_shop_brand():
     assert B.decide("초등학생골프채 주니어 드라이버 퍼터", None, ["인파로"], [])[1] == "none"
 
 
+@pytest.mark.parametrize("word", ["골프", "골프 용품", "골프클럽", "GOLF", "Golf", "스포츠", "남성용", "여성용", "남녀공용",
+                                  "ㅊ", "정식수입정품 또는 정식제조정품"])
+def test_the_sport_is_no_brand(word):
+    # 10979283479, 2026-11-14: "골프" in the 브랜드 row became a shop brand, then the brand of every title saying 골프
+    # (55 products published with the vendor "Golf"); a record prepared before, and the dictionary's "골프" -> "Golf"
+    assert B.clean(word) is None
+    prepared = [{"product": {"brand_ko": word, "brand_source": "specs:브랜드"}},
+                {"product": {"brand_ko": "인파로", "brand_source": "specs:브랜드"}}]
+    assert B.shop_brands(prepared) == ["인파로"]
+    assert B.leading("골프 주니어 세트 인파로", [word, "인파로"]) is None
+    assert B.clean("아화골프") == "아화골프" and B.clean("골프존") == "골프존"     # a name with the word stays
+
+
 def test_the_origin_names_no_partner_or_mall():
     assert B.distributors("중국(협력사)") == []
     assert B.distributors("중국(해외몰)") == []
