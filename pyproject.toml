@@ -4,3 +4,11 @@
 [tool.pytest.ini_options]
 testpaths = ["server"]
 pythonpath = ["server"]
+
+# The static check of scripts/ (R-TYPE-5): `.venv/bin/python -m mypy` from the repo root, also run by scripts/check.sh.
+# Tests are left out; the server is not typed (R-STYLE-3).
+[tool.mypy]
+files = ["scripts"]
+exclude = ['(^|/)test_[^/]*\.py$', '(^|/)conftest\.py$']
+ignore_missing_imports = true
+check_untyped_defs = true

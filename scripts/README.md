@@ -1205,8 +1205,8 @@ fixture against its type strictly (missing or unknown keys fail).
 
 ```sh
 .venv/bin/python -m pytest scripts -q                      # includes the type conformance test
-.venv/bin/pip install mypy && .venv/bin/python -m mypy --ignore-missing-imports --check-untyped-defs \
-    $(ls scripts/*.py | grep -v /test_)   # static check of every script (tests excluded)
+.venv/bin/python -m mypy                                   # static check of every script, tests excluded
+                                                           # ([tool.mypy] in pyproject.toml; mypy is in requirements)
 ```
 
 When a server answer changes shape: re-capture its fixture (one call with the client, json.dump, lists trimmed to

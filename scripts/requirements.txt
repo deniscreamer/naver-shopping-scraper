@@ -6,3 +6,4 @@ anthropic                       # translate.py: Claude API for translation (Sonn
 openai                          # translate.py: the fallback provider for translation
 tenacity                        # job.py: a product tried again with growing waits while the network is down
 zstandard>=0.25                 # state_backup.py: the backup archives (tar + zstd; no zstd CLI or Homebrew on the Mac)
+mypy                            # scripts/check.sh: the static check of scripts/ ([tool.mypy] in pyproject.toml)
