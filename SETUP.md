@@ -121,7 +121,12 @@ The products' descriptions (`describe.py`) use the same key, providers and model
 ```sh
 .venv/bin/python -m pytest -q             # server
 .venv/bin/python -m pytest scripts -q     # scripts, types, client
+.venv/bin/python -m mypy                  # static check of scripts/
+scripts/check.sh                          # all three, each in its own process (run it before a commit)
 ```
+
+The two suites cannot share one pytest process (`scripts/conftest.py` blocks sockets for the whole process), so
+`scripts/check.sh` runs them apart, prints the three results and exits non-zero when any fails.
 
 ## 5. Install the browser adapter into the operator's Chrome
 

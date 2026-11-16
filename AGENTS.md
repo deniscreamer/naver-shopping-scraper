@@ -63,6 +63,8 @@ python -m venv .venv
 .venv/bin/python server/run.py              # http://localhost:8000, PORT=... to change
 .venv/bin/python -m pytest -q               # offline suite, 471 tests
 .venv/bin/python -m pytest scripts -q       # scripts/ client tests, offline, separate suite
+.venv/bin/python -m mypy                    # static check of scripts/ ([tool.mypy] in pyproject.toml), 0 errors
+scripts/check.sh                            # before a commit: the three above, separate processes, non-zero on a failure
 UPDATE_GOLDEN=1 .venv/bin/python -m pytest server/naver_shopping/test_pages.py scripts/test_prepared_golden.py
                                             # after a deliberate parser / transform change: read the diff (R-TEST-5)
 ```

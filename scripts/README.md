@@ -71,6 +71,7 @@ outside fetches: AGENTS.md rule 3.
 | `product_page.py` | Saves a product page as the owner's Chrome renders it (`/products/page`): page.html, the page's own answer, meta; for developing parsers and checking collected data |
 | `captcha_watch.py` | Reports a Naver captcha the adapter waits on (reads `/captcha`): one line per new captcha / solved / timed out; independent of any collection |
 | `keep_run.py` | Keeps a collection run (example_99 output) per shop, byte for byte, read-only (see Transform) |
+| `check.sh` | Offline, before a commit: the server suite, the scripts suite and mypy, each in its own process; prints the three results, non-zero exit when any fails |
 | `state_backup.py`, `test_state_backup.py` | Offline, by hand: the backup of `scripts/output`, `server/output` and `research/` (plans outside git, with the state) into tar + zstd archives by phase outside the repository (state, photos, description images in parts, server pages, old runs), `MANIFEST.json` with sha256, `RESTORE.md`; `--dry-run`, `--verify`, `--restore` into an empty folder. Reads the sources only (see Backup) |
 | `transform.py`, `transform_shops.py`, `run_transform.py` | The transform: kept runs -> prepared products per shop (shared rules, per-shop rules as data, the CLI) |
 | `attributes.py` | Neutral attributes the transform writes to `product.attributes` (gender with its evidence: the variants, the 성별 row, the title; the listing query only flags `listing_disagrees`). A new kind of split is a new `Attribute` (data) |
