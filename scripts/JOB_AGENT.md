@@ -177,7 +177,9 @@ the translation (agency_no_brand, single_only: 2026-11-15), leaves it again):
 (closed: no images, no translation); strictly better -> event `duplicate_better {replaces}`, taken as usual, and once
 it is published the old product is withdrawn (`publish.withdraw`, DRAFT, reason `replaced_by:<new key>`, event
 `replaced`) if it is still published and the new one has no fewer variants; else `replace_skipped` with why, the old
-one stays. A product withdrawn as `replaced_by:` is not compared again (its replacement is).
+one stays. A draft (draft first, 2026-11-16) never replaces a live product (`replace_skipped`: the new one is a
+draft): `job.py activate --job <id>` prints the old one's `--withdraw` line, run on the owner's word once the new one
+is live. A product withdrawn as `replaced_by:` is not compared again (its replacement is).
 
 Pilot (2026-11-15, junior clubs, `log`, 103 published): 7 duplicates, all the same product on the owner's look at
 the pairs sheet (6 by photo and variants, 1 by variants only: a reshuffled title, another colour on the main photo),
@@ -254,6 +256,8 @@ the owner's (`publish.py --withdraw`). The rows the screen left out are in the j
 - Use browser, extension or computer-use tools on Naver or Shopify pages during a job; write to Shopify by any
   other way than the publish stage (`job.py new --publish`, `publish.py`; `reprice.py --apply` on the owner's word).
 - Read `.env*` or credential files; print secrets.
+- Activate a draft (`publish.py --activate`, `job.py activate`) or set a category `reviewed=True` without the owner's
+  word; activate in the Shopify admin by hand (the ledger keeps DRAFT until an update reads the store's status).
 - Run `--force`, `deferred_log.py allow`, or edit the job's files by hand.
 - Re-send products already in the store to apply a new fix (a whole-shop `publish.py <shop>` run after a
   `shopify_payload.VERSION` bump or a new price rule or tariff, `--force`, `--rehandle`, `reprice.py --apply`)

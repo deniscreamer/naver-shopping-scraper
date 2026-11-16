@@ -22,7 +22,8 @@ A product whose inputs did not change since its last publication is skipped (`--
 one whose productSet would send what it sent last time (`output` in the ledger, output_digest; 2026-11-11). On an update
 photos already on the product are kept by their hash (no new upload). `--withdraw <key> --reason "..."` takes a
 published product off the store (DRAFT, nothing deleted) and keeps it from being sent again; `--restore` puts it back
-as it was (ACTIVE, or DRAFT for a draft). --dry-run builds and writes the payload to
+as it was (ACTIVE, or DRAFT for a draft). `--activate <key>` puts a draft live (ACTIVE) on the owner's word after the
+lens review (job.py activate --job does a job's drafts). --dry-run builds and writes the payload to
 shops/<shop>/publish/payloads/<id>.json and sends nothing (no upload, no write).
 """
 import argparse
@@ -187,6 +188,19 @@ def restore(shop: Shop, key: str, products: Any, reason: str) -> dict[str, Any]:
         raise SystemExit(f"{key}: no published row to restore")
     status = products.set_status(before["product_id"], "DRAFT" if published.get("store_status") == "DRAFT" else "ACTIVE")
     row = {**published, "digest": "", "at": _now(), "restored": reason, "store_status": status}
+    _append(shop.ledger_path, row)
+    return row
+
+
+def activate(shop: Shop, key: str, products: Any) -> dict[str, Any] | None:
+    """A draft (store_status DRAFT, draft first) live: ACTIVE, on the owner's word after the lens review (2026-11-16).
+    The ledger takes its row again with store_status ACTIVE and `activated`; digest, output and photos stay, so
+    nothing is sent again. -> the row, or None for a key that is not a published draft here (no call, no line)."""
+    before = shop.ledger().get(key)
+    if not before or before.get("store_status") != "DRAFT":
+        return None
+    status = products.set_status(before["product_id"], "ACTIVE")
+    row = {**before, "store_status": status, "activated": _now()}
     _append(shop.ledger_path, row)
     return row
 
@@ -447,11 +461,22 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--restore", action="append", default=[],
                     help="a withdrawn product's key: ACTIVE again (a draft: DRAFT), sent with today's data by the "
                     "next run (with --reason)")
+    ap.add_argument("--activate", action="append", default=[], help="a draft's key (a category not marked "
+                    "reviewed): ACTIVE, on the owner's word after the lens review (repeat for several)")
     ap.add_argument("--reason", help="why a product is withdrawn or restored (kept in the ledger)")
     ap.add_argument("--rehandle", action="store_true", help="give a product already in the shop the handle its "
                     "title makes now (the old one redirects)")
     args = ap.parse_args(argv)
     shop = Shop(args.shop, args.shops_root)
+    if args.activate:
+        from shopify_admin import ProductsAdmin
+        admin = ProductsAdmin(get_store(args.shop))
+        admin.check_shop()
+        for key in args.activate:
+            got = activate(shop, key, admin)
+            print(f"{key}: activated ({got['store_status']}) {got.get('admin_url', '')}" if got else
+                  f"{key}: not a draft here")
+        return 0
     if args.restore:
         if not args.reason:
             ap.error("--restore needs --reason")

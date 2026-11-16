@@ -540,3 +540,40 @@ def test_strong_needs_the_category_most_photos_and_the_variants():
     assert not D.strong(a, E(2, 2, "어린이 골프 클럽", photos=("p", "q"), values=[["9-12세 퍼터"], ["9-12세 아이언"]]))
     assert not D.strong(a, E(2, 2, "어린이 골프 클럽", photos=("p", "q"), values=[["6-8세 퍼터"], ["6-8세 아이언"]],
                              category="50002788"))
+
+
+def test_a_draft_does_not_replace_a_live_product_and_activate_prints_its_withdraw_line(tmp_path, capsys):
+    """Draft first, 2026-11-16: the old one stays live until the new one is activated, then the owner withdraws it."""
+    import publish as PB
+    shop, old, new = _published_shop(tmp_path, 4, 4)
+    PB._append(shop.ledger_path, {"format": PB.FORMAT, "key": new, "status": "published", "product_id": "gid://new",
+                                  "store_status": "DRAFT"})
+    job = dedupe_job(tmp_path, "on", [record(2, 22, WILSON)])
+    job.log(new, "duplicate_better", replaces=old, matches=[])
+    admin = Admin()
+    what = J.replace_step(job, {"publisher": (admin, None, {})}, shop, new)
+    assert what == "; 11 kept: the new one is a draft" and admin.calls == []
+    assert job.events()[-1]["why"] == J.DRAFT_WHY
+    assert J.withdraw_lines(job) == [f".venv/bin/python scripts/publish.py {SHOP} --withdraw {old} "
+                                     f"--reason replaced_by:{new}"]
+
+
+def test_a_draft_replaces_a_draft(tmp_path):
+    import publish as PB
+    shop, old, new = _published_shop(tmp_path, 4, 4)
+    for k, pid in ((old, "gid://old"), (new, "gid://new")):
+        PB._append(shop.ledger_path, {"format": PB.FORMAT, "key": k, "status": "published", "product_id": pid,
+                                      "store_status": "DRAFT"})
+    job = dedupe_job(tmp_path, "on", [record(2, 22, WILSON)])
+    job.log(new, "duplicate_better", replaces=old, matches=[])
+    admin = Admin()
+    assert J.replace_step(job, {"publisher": (admin, None, {})}, shop, new) == "; replaces 11 (withdrawn)"
+    assert admin.calls == [("gid://old", "DRAFT")]
+
+
+def test_a_draft_is_in_the_duplicates_index_as_published(tmp_path):
+    import publish as PB
+    shop, old, new = _published_shop(tmp_path, 4, 4)
+    PB._append(shop.ledger_path, {"format": PB.FORMAT, "key": old, "status": "published", "product_id": "gid://old",
+                                  "store_status": "DRAFT"})
+    assert D.ledger_status(D.ledger(SHOP, str(tmp_path / "shops"))[old]) == "published"

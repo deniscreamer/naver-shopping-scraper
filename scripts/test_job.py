@@ -1024,3 +1024,73 @@ def test_job_imports_run_transform_first_so_the_code_signature_is_taken_at_start
     src = open(J.__file__, encoding="utf-8").read()
     assert src.index("import run_transform") < src.index("def _context")
     assert "run_transform" in sys.modules and importlib.import_module("run_transform")._CODE_SIG
+
+
+# ---- draft first: activate (2026-11-16) ------------------------------------------------------------------------
+
+def _drafts_job(tmp_path):
+    """KEYS[0] a draft, KEYS[1] live, KEYS[2] a draft then withdrawn; a key of another job a draft too."""
+    import publish as PB
+    job = make_job(tmp_path)
+    shop = PB.Shop(SHOP, str(tmp_path / "shops"))
+    for key, extra in ((KEYS[0], {"store_status": "DRAFT"}), (KEYS[1], {}), (KEYS[2], {"store_status": "DRAFT"}),
+                       (f"{SHOP}:naver:100:99", {"store_status": "DRAFT"})):
+        PB._append(shop.ledger_path, {"key": key, "status": "published", "product_id": f"gid://{key[-2:]}",
+                                      "admin_url": "a", **extra})
+    PB._append(shop.ledger_path, {"key": KEYS[2], "status": "withdrawn", "product_id": "gid://13"})
+    return job, shop
+
+
+class StatusAdmin:
+    def __init__(self, fail=()):
+        self.calls, self.fail = [], fail
+
+    def set_status(self, pid, status):
+        from shopify_catalog import CatalogError
+        self.calls.append((pid, status))
+        if pid in self.fail:
+            raise CatalogError("refused")
+        return status
+
+    def check_shop(self):
+        pass
+
+
+def _activate(monkeypatch, job, admin, *flags):
+    import shopify_admin
+    import shop_stores
+    monkeypatch.setattr(shopify_admin, "ProductsAdmin", lambda store: admin)
+    monkeypatch.setattr(shop_stores, "get_store", lambda shop=None: None)
+    return J.main(["activate", "--job", job.folder, *flags])         # a full path: open_job joins it as is
+
+
+def test_activate_dry_run_lists_the_jobs_drafts_and_calls_nothing(tmp_path, monkeypatch, capsys):
+    job, _ = _drafts_job(tmp_path)
+    admin = StatusAdmin()
+    assert J.drafts(job) == [KEYS[0]]                          # not the live, the withdrawn, another job's
+    assert _activate(monkeypatch, job, admin, "--dry-run") == 0 and admin.calls == []
+    out = capsys.readouterr().out
+    assert f"{KEYS[0]}: would be activated" in out and "1 drafts" in out
+    assert "category 50002788" not in out                      # reviewed: no reminder
+
+
+def test_activate_sets_the_drafts_live_without_a_job_event(tmp_path, monkeypatch, capsys):
+    job, shop = _drafts_job(tmp_path)
+    job.log(None, "done")
+    admin = StatusAdmin()
+    assert _activate(monkeypatch, job, admin) == 0 and admin.calls == [("gid://11", "ACTIVE")]
+    assert shop.ledger()[KEYS[0]]["store_status"] == "ACTIVE" and J.drafts(job) == []
+    assert J.summary(job)["finished"] and "1 activated, 0 failed" in capsys.readouterr().out
+
+
+def test_activate_goes_on_past_a_refused_one_and_exits_1(tmp_path, monkeypatch, capsys):
+    import publish as PB
+    job, shop = _drafts_job(tmp_path)
+    PB._append(shop.ledger_path, {"key": KEYS[1], "status": "published", "product_id": "gid://12",
+                                  "store_status": "DRAFT"})
+    admin = StatusAdmin(fail=("gid://11",))
+    monkeypatch.setattr("transform_shops.reviewed", lambda shop, category: False)
+    assert _activate(monkeypatch, job, admin) == 1
+    assert admin.calls == [("gid://11", "ACTIVE"), ("gid://12", "ACTIVE")]
+    out = capsys.readouterr().out
+    assert "1 activated, 1 failed" in out and "set reviewed=True in transform_shops.py on the owner's word" in out

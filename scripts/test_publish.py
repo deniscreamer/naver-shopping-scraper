@@ -886,3 +886,49 @@ def test_a_withdrawn_draft_is_restored_a_draft(tmp_path):
     row = PB.restore(shop, "k1", admin, "right after all")
     assert admin.calls[-1] == ("gid://1", "DRAFT") and row["store_status"] == "DRAFT"
     assert shop.ledger()["k1"]["store_status"] == "DRAFT"
+
+
+class StatusAdmin:
+    def __init__(self):
+        self.calls = []
+
+    def set_status(self, pid, status):
+        self.calls.append((pid, status))
+        return status
+
+    def check_shop(self):
+        pass
+
+
+def test_activate_puts_a_draft_live_and_nothing_is_sent_again(tmp_path, monkeypatch):
+    _unreviewed(monkeypatch)
+    shop = _shop(tmp_path)
+    products = FakeProducts()
+    draft = PB.publish_one(shop, KEY, products, FakeFiles(), IDS)
+    admin = StatusAdmin()
+    row = PB.activate(shop, KEY, admin)
+    assert admin.calls == [("gid://shopify/Product/1", "ACTIVE")] and row["store_status"] == "ACTIVE"
+    assert row["activated"] and {k: row[k] for k in ("digest", "output", "handle", "photos", "product_id")} == \
+        {k: draft[k] for k in ("digest", "output", "handle", "photos", "product_id")}
+    assert PB.publish_one(shop, KEY, products, FakeFiles(), IDS)["status"] == "skipped"
+    PB.publish_one(shop, KEY, products, FakeFiles(), IDS, force=True)
+    assert products.sent[-1][0]["status"] == "ACTIVE"                   # live, the category still not reviewed
+    assert PB.activate(shop, KEY, admin) is None and len(admin.calls) == 1      # not a draft any more
+
+
+def test_activate_leaves_a_live_a_withdrawn_or_an_unknown_key(tmp_path, monkeypatch, capsys):
+    shop = PB.Shop("fairwardgolf", str(tmp_path))
+    PB._append(shop.ledger_path, {"key": "live", "status": "published", "product_id": "gid://1"})
+    PB._append(shop.ledger_path, {"key": "gone", "status": "published", "product_id": "gid://2",
+                                  "store_status": "DRAFT"})
+    PB._append(shop.ledger_path, {"key": "gone", "status": "withdrawn", "product_id": "gid://2",
+                                  "store_status": "DRAFT"})
+    admin = StatusAdmin()
+    lines = open(shop.ledger_path).read()
+    assert [PB.activate(shop, k, admin) for k in ("live", "gone", "nobody")] == [None, None, None]
+    assert admin.calls == [] and open(shop.ledger_path).read() == lines
+    import shopify_admin
+    monkeypatch.setattr(shopify_admin, "ProductsAdmin", lambda store: admin)
+    monkeypatch.setattr(PB, "get_store", lambda shop: None)
+    assert PB.main(["fairwardgolf", "--shops-root", str(tmp_path), "--activate", "live"]) == 0
+    assert capsys.readouterr().out.strip() == "live: not a draft here"

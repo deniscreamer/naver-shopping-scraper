@@ -14,6 +14,7 @@ owner as always.
     .venv/bin/python scripts/job.py scroll --query "남성 골프채 풀세트" --category 50002788 [--count 100] [--paid | ...]
     .venv/bin/python scripts/job.py scroll --job ID          # resume a scroll job (its listing from the top)
     .venv/bin/python scripts/job.py status [--job ID] [--json]
+    .venv/bin/python scripts/job.py activate --job ID [--dry-run]   # the job's drafts live, on the owner's word
 
 Files, scripts/output/jobs/<job id>/:
 
@@ -95,6 +96,13 @@ else changes. `on`: a confirmed match withdrawn by the owner, or one the candida
 translation); strictly better: `duplicate_better {replaces}` and on, and once it is published the old product is
 withdrawn (publish.withdraw, DRAFT, reason replaced_by:<new key>) if it is still published and the new product has
 no fewer variants (`replaced`, else `replace_skipped`). A title match not confirmed is `duplicate_seen` (not_confirmed).
+A draft (draft first, 2026-11-16) does not replace a live product (`replace_skipped`, "the new one is a draft"):
+`activate` prints the withdraw line of the old one.
+
+`activate --job ID [--dry-run]` (draft first, 2026-11-16): the job's products the ledger has as drafts
+(store_status DRAFT; a category not marked reviewed in transform_shops) set ACTIVE through publish.activate, on the
+owner's word after the lens review; withdrawn ones are skipped; the store checked as publish.py does
+(get_store(job.shop) + check_shop); no job event.
 """
 import argparse
 import glob
@@ -134,6 +142,7 @@ MAX_BATCHES_ALL = 200                        # `new --all`: the server's cap (sc
                                              # listing's own end (has_more false) comes first (2026-11-12: the junior
                                              # queries ended at 19-31 batches)
 REPORT_EVERY = 10
+DRAFT_WHY = "the new one is a draft"         # replace_skipped: the old one stays live until the new one is activated
 # the network down (2026-11-13: Shopify, then both model providers, unreachable for minutes): the product is tried
 # again (tenacity) after 30 s, doubled each time up to 15 min, +-10 s jitter; after 2 h of it the run stops
 NET_WAIT_S, NET_MAX_WAIT_S, NET_JITTER_S, NET_GIVE_UP_S = 30, 900, 10, 7200
@@ -645,7 +654,9 @@ def replace_step(job: Job, ctx: dict, shop: Any, key: str) -> str:
     ledger = shop.ledger()
     new_n, old_n = dedupe.variant_count(job.shop, key, job.shops_root), dedupe.variant_count(job.shop, old,
                                                                                             job.shops_root)
+    # draft first (2026-11-16): a live product is not swapped for a draft; `job.py activate` prints its withdraw line
     why = ("not published" if key not in ledger else "the old one is not published" if old not in ledger
+           else DRAFT_WHY if ledger[key].get("store_status") == "DRAFT" and ledger[old].get("store_status") != "DRAFT"
            else f"fewer variants ({new_n} < {old_n})" if (new_n or 0) < (old_n or 0) else None)
     if why:
         job.log(key, "replace_skipped", replaces=old, why=why)
@@ -1351,6 +1362,69 @@ def _scroll_run(job: Job) -> int:
     return run_scroll(job, ctx, tab, screen, known)
 
 
+# ---- activate (draft first, 2026-11-16) ----------------------------------------------------------------------
+
+def drafts(job: Job) -> list[str]:
+    """The job's products published as drafts (ledger store_status DRAFT), in listing order; withdrawn ones are not
+    published, so they are not here."""
+    from publish import Shop
+    ledger = Shop(job.shop, job.shops_root).ledger()
+    return [r["key"] for r in job.rows() if (ledger.get(r["key"]) or {}).get("store_status") == "DRAFT"]
+
+
+def withdraw_lines(job: Job) -> list[str]:
+    """`publish.py --withdraw` lines for the old copies a draft did not replace (replace_skipped, DRAFT_WHY) and that
+    are still published: run on the owner's word once the new one is live."""
+    import dedupe
+    from publish import Shop
+    ledger = Shop(job.shop, job.shops_root).ledger()
+    pairs = {(e["key"], e.get("replaces")) for e in job.events()
+             if e["event"] == "replace_skipped" and e.get("why") == DRAFT_WHY}
+    return [f".venv/bin/python scripts/publish.py {job.shop} --withdraw {old} --reason {dedupe.REPLACED}{new}"
+            for new, old in sorted(pairs) if old in ledger and new in ledger]
+
+
+def cmd_activate(args: argparse.Namespace) -> int:
+    """Every draft of the job live (publish.activate), on the owner's word after the lens review; --dry-run lists
+    them. No job event (summary's `finished` reads the last one). Exit 1 when one failed."""
+    import publish
+    import transform_shops
+    from shopify_catalog import CatalogError
+    job = open_job(args.job)
+    keys = drafts(job)
+    admin = None
+    if keys and not args.dry_run:
+        from shop_stores import get_store
+        from shopify_admin import ProductsAdmin
+        admin = ProductsAdmin(get_store(job.shop))
+        admin.check_shop()
+    shop, done, failed = publish.Shop(job.shop, job.shops_root), 0, 0
+    for key in keys:
+        if args.dry_run:
+            print(f"{key}: would be activated")
+            continue
+        try:
+            row = publish.activate(shop, key, admin)
+        except CatalogError as e:
+            failed += 1
+            print(f"{key}: failed: {e}"[:300])
+            continue
+        done += 1
+        print(f"{key}: activated ({row['store_status']}) {row.get('admin_url', '')}" if row else
+              f"{key}: not a draft here")
+    print(f"activate {job.id}: {len(keys)} drafts" + ("" if args.dry_run else f", {done} activated, {failed} failed"))
+    lines = withdraw_lines(job)
+    if lines:
+        print("the old copies the drafts were to replace, still live (withdraw them on the owner's word once the new "
+              "ones are live):")
+        for line in lines:
+            print("  " + line)
+    if not transform_shops.reviewed(job.shop, job.category):
+        print(f"category {job.category} is not marked reviewed: set reviewed=True in transform_shops.py on the "
+              "owner's word (a dated comment)")
+    return 1 if failed else 0
+
+
 # ---- status --------------------------------------------------------------------------------------------------
 
 def summary(job: Job) -> dict[str, Any]:
@@ -1453,9 +1527,12 @@ def main(argv: list[str] | None = None) -> int:
     s = sub.add_parser("status")
     s.add_argument("--job")
     s.add_argument("--json", action="store_true")
+    a = sub.add_parser("activate", help="every draft of the job live (ACTIVE), on the owner's word")
+    a.add_argument("--job", required=True)
+    a.add_argument("--dry-run", action="store_true", help="list what would be activated; no store call")
     args = p.parse_args(argv)
     code = {"new": cmd_new, "run": cmd_run, "status": cmd_status, "refresh": cmd_refresh,
-            "scroll": cmd_scroll}[args.cmd](args)
+            "scroll": cmd_scroll, "activate": cmd_activate}[args.cmd](args)
     if args.cmd in ("run", "scroll") and getattr(args, "ran", None):
         tell_owner(args.ran, code)
     return code
