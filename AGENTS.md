@@ -96,7 +96,7 @@ Live check (server running, uses the network): `curl http://localhost:8000/healt
 | Seller data patterns | [scripts/SELLER_DATA.md](scripts/SELLER_DATA.md) | Before changing parsers or the transform: what pages and sellers write |
 | Products by eye (lenses) | [scripts/LENSES.md](scripts/LENSES.md), skill `visual-review` | After a run, before withdrawing duplicates, many held products, a price / brand / placement / dedupe rule change |
 | Security | [SECURITY.md](SECURITY.md) | Reporting vulnerabilities |
-| Releases | [CHANGELOG.md](CHANGELOG.md), `VERSION` | Cutting a release, what changed |
+| Releases | [CHANGELOG.md](CHANGELOG.md), `VERSION`, `scripts/state_backup.py` | Cutting a release, what changed; a backup after each release |
 | Extension transport (beta) | [server/docs/EXTENSION.md](server/docs/EXTENSION.md), [extension/README.md](extension/README.md) | search.shopping listing, anything touching extension/ or ext_*.py |
 | Archived Docker setup | [archive/docker/README.md](archive/docker/README.md) | Only if Linux deployment comes back |
 
