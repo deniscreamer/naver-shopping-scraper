@@ -71,6 +71,7 @@ outside fetches: AGENTS.md rule 3.
 | `product_page.py` | Saves a product page as the owner's Chrome renders it (`/products/page`): page.html, the page's own answer, meta; for developing parsers and checking collected data |
 | `captcha_watch.py` | Reports a Naver captcha the adapter waits on (reads `/captcha`): one line per new captcha / solved / timed out; independent of any collection |
 | `keep_run.py` | Keeps a collection run (example_99 output) per shop, byte for byte, read-only (see Transform) |
+| `state_backup.py`, `test_state_backup.py` | Offline, by hand: the backup of `scripts/output` and `server/output` into tar + zstd archives by phase outside the repository (state, photos, description images in parts, server pages, old runs), `MANIFEST.json` with sha256, `RESTORE.md`; `--dry-run`, `--verify`, `--restore` into an empty folder. Reads the sources only (see Backup) |
 | `transform.py`, `transform_shops.py`, `run_transform.py` | The transform: kept runs -> prepared products per shop (shared rules, per-shop rules as data, the CLI) |
 | `attributes.py` | Neutral attributes the transform writes to `product.attributes` (gender with its evidence: the variants, the 성별 row, the title; the listing query only flags `listing_disagrees`). A new kind of split is a new `Attribute` (data) |
 | `brand_fallback.py` | Run-level: a brand for every prepared product that states none (a brand of the shop in the title, a dictionary brand in the title, 원산지's importer, the images' text, else 노브랜드; note `brand_fallback`) |
@@ -1228,6 +1229,28 @@ Then run the scripts:
 .venv/bin/python scripts/harvest_listing.py "남성 골프채 풀세트" --category 50002788 --out golf-mens
 .venv/bin/python -m pytest scripts -q                # offline; not part of the default `pytest` run
 ```
+
+## Backup (`state_backup.py`, the owner 2026-11-16)
+
+The data on disk (ledger, translations, prepared, jobs, dictionaries, photos, description images, saved pages) is
+in no git and no cloud: back it up before a risky change and after each release, then upload the folder to the
+cloud by hand (the script uploads nothing).
+
+```sh
+.venv/bin/python scripts/state_backup.py --dry-run            # the plan: archives, files, sizes, what is left out
+.venv/bin/python scripts/state_backup.py                      # all five phases -> ~/Desktop/naver-backups/<date>/
+.venv/bin/python scripts/state_backup.py --phase state        # one phase (adds to the folder's MANIFEST.json)
+.venv/bin/python scripts/state_backup.py --verify ~/Desktop/naver-backups/<date>
+.venv/bin/python scripts/state_backup.py --restore ~/Desktop/naver-backups/<date> --to /tmp/restored --phase state
+```
+
+Five archives, paths inside relative to the repository root: `01-state` (shops without photos, description images
+and `prepare_cache/`; jobs, journal, live dictionaries; zstd-19), `02-photos` (`collected/<run>/images/`, zstd-3),
+`03-description-images-partNN` (`description_images/cache/<id>/`, parts of at most 4 GB uncompressed, a product never
+split, zstd-3), `04-server-pages` (`server/output/`, zstd-19), `05-archive` (the rest of `scripts/output/`, zstd-19).
+Text compresses 17-37x at level 19; images are compressed already, so level 3. Left out by name: `.env*`, secret-like
+names, `*.part`, `*.lock`, `prepare_cache/`, `__pycache__/`, `.venv/`. A folder inside the repository is refused, an
+existing archive is never overwritten, a running job is warned about (back up between jobs).
 
 ## Conventions
 
