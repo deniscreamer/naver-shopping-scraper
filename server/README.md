@@ -11,6 +11,19 @@ Docs: [docs/ENDPOINTS.md](docs/ENDPOINTS.md) (HTTP contract), [docs/DEVELOPMENT_
 (binding rules), [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) (how it works), [docs/KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md)
 (inherited defects, dependency risk).
 
+## How to use
+
+| Task | Section |
+|---|---|
+| Install the venv and the dependencies (a new machine: [../SETUP.md](../SETUP.md)) | Install |
+| Start the server, change the port or bind address, check it is up | Run |
+| Chrome window, profile, identity, stopping the server on a Mac | macOS |
+| An env var (`PORT`, `API_HOST`, `NAVER_SHOPPING_PROXY`, `PATCHRIGHT_*`), the `.env` file | Environment variables |
+| The offline suite, the import smoke | Tests |
+| The live smoke after a transport or browser change (`scripts/smoke_endpoints.py`) | Tests |
+| Calling `naver_shopping.api` without the server | main.py |
+| Listings through your own Chrome, the extension, `NAVER_NOTIFY_WEBHOOK` | Listing through your own Chrome (beta) |
+
 ## Install
 
 One venv at the repo root:

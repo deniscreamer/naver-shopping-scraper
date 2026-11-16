@@ -10,15 +10,17 @@ The checklist and the reasons: `scripts/ONBOARDING.md`; this skill is the proced
 
 | Task | `scripts/ONBOARDING.md` section |
 |---|---|
+| The commands of a first run, what each result means, what to read after it | "How to use" |
+| The legend (stops / silent / weaker), one leaf id everywhere, the owner gives the values | "Rules for every row" |
 | A category in an existing shop: what stops without it | "A. A new category in an existing shop", "Required" |
 | What works without, but worse | "Quality: works without these, but worse" |
 | A new shop (tenant) | "B. A new shop (tenant)" |
 | Golf or `fairwardgolf` in shared code | "C. Golf or fairwardgolf in shared code" |
-| What the first new category taught | "Learned on the first new category" |
+| What earlier categories did to the rest of the shop (L1-L10), when the file was written | "History", "Learned on the first new category" |
 | The first run, in order | "D. The order of a first run" |
 | Each stage's own part | skills `transform`, `translation`, `describe`, `placement`, `price`, `publish` |
 
-Rules: `scripts/OWNER_RULES.md`; values are the owner's, dated (ONBOARDING.md opening).
+Rules: `scripts/OWNER_RULES.md`; values are the owner's, dated (ONBOARDING.md "Rules for every row").
 
 1. **Scope.** Say which case it is: a category in an existing shop (part A), a new shop (part B), or both. Find
    the Naver **leaf** id (`/categories/list`, or a product page's `specs.category.id`). Every file uses that one
@@ -56,9 +58,10 @@ Rules: `scripts/OWNER_RULES.md`; values are the owner's, dated (ONBOARDING.md op
    - A big target later (the whole category): `job.py scroll` may fit better; see JOB_AGENT.md "Two ways to run a job".
    - Publish for real only after the owner says yes. Shopify writes go only through `publish.py` /
      `shopify_admin.py`.
-8. **Read what the new category did to the rest of the shop** (ONBOARDING.md "Learned", part D step 6):
+8. **Read what the new category did to the rest of the shop** (ONBOARDING.md "Learned" under "History", part D step 6):
    `.venv/bin/python scripts/store_diff.py <shop>` (read only) lists the published products a publication would
-   change, field by field, and those that cannot be built now; every new dictionary entry before the dictionaries' backup. Any such product is the owner's to decide
+   change, field by field, and those that cannot be built now; then `translation_dicts.py status`: read every new
+   dictionary entry before the dictionaries' backup. Any such product is the owner's to decide
    (`scripts/OWNER_RULES.md` rule 1).
 9. **Finish.**
    - Update the docs of every rule you changed, in the same commit (AGENTS.md rule 6). CHANGELOG.md is frozen at

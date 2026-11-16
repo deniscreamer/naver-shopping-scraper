@@ -9,21 +9,25 @@ Citations name symbols (`module.function`, `module.CONSTANT`). A `~N` is a
 line hint only and may drift. Dated upstream evidence lives in the code's
 docstrings and comments; this file points at them and does not copy them.
 
-How to use: read the one section your question needs.
+## How to use
+
+Read the one section your question needs.
 
 | Question | Section |
 |---|---|
 | which module does what; where a request goes | 1 Module map, 2 Layers, 3 Request flow |
 | a block, a 502, a retry that did or did not happen | 5 Transports, 6 Box mechanics, 7 Retry topology; then [KNOWN_ISSUES.md](KNOWN_ISSUES.md) |
+| threads, slots, locks; why calls wait for each other | 4 Threading model |
 | why a second call was cheap or stale | 8 Cache |
 | a proxy, language or timezone; an env var | 9 Default identity, 10 Config and environment |
 | an import error, a test that cannot find a module | 11 Import model |
 | the owner's Chrome (listings, product pages, held listing tabs) | 12 Extension transport, then [EXTENSION.md](EXTENSION.md) |
 | what Naver does on one surface (search, store, product page, options, reviews, images, DataLab, walls) | 13 Naver specifics, by surface |
+| where a new upstream fact goes | 13 Naver specifics (one line under its surface, R-NAVER-4) |
 
 ## 1. Module map
 
-All paths are relative to `server/`, which is the import root (section 10).
+All paths are relative to `server/`, which is the import root (section 11).
 
 | Module | Role |
 |---|---|

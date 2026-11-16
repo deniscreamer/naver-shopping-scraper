@@ -9,10 +9,12 @@ Running the scripts and keeping their state safe. The doc: `scripts/OPERATIONS.m
 
 | Task | `scripts/OPERATIONS.md` section |
 |---|---|
-| The server, the scripts' requirements, the entry points, smoke and harvest examples, the offline checks | "Running" |
+| What `check.sh` and `state_backup.py` print and what to do; a `busy` refusal; a `LedgerError` | "How to use" |
+| The server, the scripts' requirements, the entry points with their skills, the live smoke (harvest examples: skill `collect-api`), the offline checks | "Running" |
 | Back up `scripts/output`, `server/output` and `research/` into archives outside the repo; verify; restore | "Backup" |
 | Code that writes a shop's files: atomic writes, appended lines, `read_jsonl`, `shop_lock` | "Shared files" |
 | Typed calls, sequential by default, the server cache, status handling, pagination, naming, style | "Conventions" |
+| When the doc was split out | "History" |
 | An error from the API or a job | skill `api-error-triage` |
 
 Commands (repo root):

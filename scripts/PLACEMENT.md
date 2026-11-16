@@ -5,10 +5,11 @@ another shop (tenant) or another category. The code: `attributes.py` (what the s
 (each shop's profile, data), `placement.py` (the stage). Its place in the pipeline: after the transform and the
 translation, right before publication ([PUBLISH.md](PUBLISH.md)).
 
-## How to run
+## How to use
 
 ```sh
 .venv/bin/python scripts/placement.py fairwardgolf [--shops-root DIR]  # -> shops/<shop>/placement/placements.jsonl, report.txt
+.venv/bin/python -m pytest scripts/test_placement.py -q
 ```
 
 No network, no Shopify write; `placements.jsonl` is rebuilt each run, sorted by key. Read `report.txt`: counts per
@@ -19,6 +20,21 @@ status and section, and every `unresolved` product with why. Per status:
   evidence in the report (5, below).
 - `no_profile`: the Naver category has no placement in the shop's profile; add one (1, below).
 - `held`: the transform held the product; placement does not place it.
+
+A profile change moves published products only when they are published again: `store_diff.py <shop>` lists them,
+and re-sending them is the owner's word ([OWNER_RULES.md](OWNER_RULES.md) rule 1). One product in a wrong section:
+skill `fix-a-product`.
+
+| Task | Section |
+|---|---|
+| Why sections are decided here, from neutral attributes and a profile | [The idea](#the-idea) |
+| Which files a case changes | [What to change, by case](#what-to-change-by-case) |
+| A category with one section (`no_profile` in the report) | [1. A category with one section](#1-a-category-with-one-section) |
+| A category split by gender; how gender is read | [2. A category split by gender](#2-a-category-split-by-gender-another-category-or-shop) |
+| A new shop (tenant) | [3. Another shop (tenant)](#3-another-shop-tenant) |
+| A split by another mark (function, size, material ...); how words match | [4. A split by a new kind of mark](#4-a-split-by-a-new-kind-of-mark) |
+| `unresolved`: hold or a fallback section | [5. What an unresolved product does](#5-what-an-unresolved-product-does) |
+| Tests for a new rule or profile | [Tests to add](#tests-to-add) |
 
 ## The idea
 

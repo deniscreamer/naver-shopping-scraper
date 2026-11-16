@@ -4,12 +4,40 @@ How prepared, translated and placed products reach the Shopify store (`publish.p
 hold, restore, activate), the payload and its metafields, and the history (the Shopify roadmap, the harvester's
 products); split from scripts/README.md on 2026-11-16 (history: `git log --follow scripts/README.md`).
 
-## Publication (`publish.py`, MVP, the owner 2026-11-08)
+## How to use
+
+What waits for the owner (re-sending a published product, a whole-shop run, every store action) and what does not
+(a job's own `--publish` of its new products, every read-only command): [OWNER_RULES.md](OWNER_RULES.md) rule 1; the
+procedure for store actions: skill `store-actions`. Commands from the repo root:
 
 ```sh
 .venv/bin/python scripts/publish.py fairwardgolf [--only <key>] [--force] [--dry-run] [--rehandle] [--shops-root DIR]
 .venv/bin/python scripts/publish.py fairwardgolf --withdraw <key> | --restore <key> --reason "..."   # also --activate <key>
+.venv/bin/python scripts/store_diff.py fairwardgolf [--only <key>] [--category <id>]                 # read only
 ```
+
+| Task | Run | Section |
+|---|---|---|
+| See what a product would become, send nothing | `publish.py <shop> --dry-run [--only <key>]` (payloads in `publish/payloads/`) | [Publication](#publication-publishpy-mvp-the-owner-2026-11-08), [The payload](#the-payload-shopify_payloadpy) |
+| Publish what is ready (a job with `--publish` does it per product) | `publish.py <shop> [--only <key>]` | [Publication](#publication-publishpy-mvp-the-owner-2026-11-08) |
+| The store and our files disagree | `store_diff.py <shop> [--only <key>]`; skill `product-trace` | [Store actions](#withdraw-hold-restore-activate-store-actions) |
+| Withdraw, hold, restore, activate, rehandle, force | the flags above, on the owner's word | [Store actions](#withdraw-hold-restore-activate-store-actions) |
+| A published product looks wrong (title, vendor, price, options, reviews, photos) | `--dry-run --only <key>`, read the payload | [The payload](#the-payload-shopify_payloadpy), [Metafields](#metafields) |
+| Credentials, tokens, uploads | never read the credential files | [Access and uploads](#access-and-uploads) |
+
+What a publication run prints, one line per product (`<key>: <status> ...`), then the counts:
+
+| Status | Means | You |
+|---|---|---|
+| `published` | sent; its row is in `publish/published.jsonl` | nothing |
+| `skipped` | its inputs (or what Shopify would get) did not change | nothing; `--force --only <key>` only on the owner's word |
+| `dry-run` | the payload is in `publish/payloads/`, nothing sent | read it |
+| `held` | no English for a text (`Untranslated`) or a payload that cannot be built (`PayloadError`: a variant with no price) | fix the cause (translation, package, price), run `--only <key>` again (a product already in the store: rule 1) |
+| `failed` | Shopify refused (userErrors, a file not ready ...) | read the reason; fix it, then `--only <key>` again (a product already in the store: rule 1) |
+| `<key>: not ready (...)` (stderr) | an `--only` key not prepared `ready`, `translated` and `placed`, or withdrawn | finish its stages first; a withdrawn one: `--restore` on the owner's word |
+| `publish: stop: <shop> is busy: ...` (exit 2) | a job of the shop runs: sending takes the shop's lock (a dry run, withdraw, restore and activate do not) | wait for the job, or `--dry-run` |
+
+## Publication (`publish.py`, MVP, the owner 2026-11-08)
 
 A product goes to the store when it is `ready` (transform), `translated` and `placed`; a job made with
 `job.py new --publish` does it for each product right after translation (placement of the whole shop, offline,

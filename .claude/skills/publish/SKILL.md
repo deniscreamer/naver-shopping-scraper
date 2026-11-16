@@ -10,13 +10,14 @@ The stage: `publish.py` sends prepared, translated and placed products to the Sh
 
 | Task | `scripts/PUBLISH.md` section |
 |---|---|
+| Commands, what a run prints per product (published, skipped, dry-run, held, failed, not ready, busy) and what to do | "How to use" |
 | What makes a product publishable (ready, translated, placed), what one publication sends | "Publication" |
 | Draft first for a category not marked reviewed; the ledger | "Publication" |
 | Withdraw, hold, restore, activate (the operator's procedure: skill `store-actions`) | "Withdraw, hold, restore, activate" |
 | The owner's payload rules (title, vendor, price) | "The payload" |
 | Metafields | "Metafields" |
 | Credentials (never read them), tokens, uploads | "Access and uploads" |
-| The Shopify roadmap, what the naver-harvester published | "Shopify roadmap", "What the naver-harvester published" |
+| The Shopify roadmap, what the naver-harvester published, the upload measurement | "History": "Shopify roadmap", "What the naver-harvester published" |
 | The store and our files disagree | `store_diff.py` below; skill `product-trace` |
 
 Commands (repo root):

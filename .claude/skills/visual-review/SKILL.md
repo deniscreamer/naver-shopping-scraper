@@ -6,15 +6,18 @@ description: Look at a shop's products by eye through contact sheets (scripts/le
 # Visual review of products
 
 The stage: `lens.py` draws a shop's products as numbered contact sheets for one question; the agent reads them and
-proves each doubt from the data. Read only and offline. The doc: `scripts/LENSES.md`.
+proves each doubt from the data. Read only and offline. The doc: `scripts/LENSES.md` (opens with "How to use");
+read the one section the task needs.
 
 | Task | `scripts/LENSES.md` section |
 |---|---|
-| The five rules of use (read only, the text proves, the owner decides, drafts) | "The rule of use" |
+| Which lens and command for a question, what the output means, what to do on each result (usage errors too) | "How to use" |
+| The five rules of use (read only, the text proves, the owner decides, say what was not looked at, drafts) | "The rule of use" |
 | The files, `index.tsv`, `summary.json` | "The tools" |
 | Which lens for which question | "The lenses and when to use them" (`section`, `price`, `brand`, `dupes`, `held`, `products`) |
 | How to read a sheet | "Reading a sheet (for an agent)" |
 | The lens fixture, a new lens | "Tests and the fixture", "Adding a lens" |
+| Why lenses exist (the 2026-11-15 duplicate cleanup) | "History" |
 | Duplicates: what dedupe decided | `scripts/DEDUPE.md` "How to use" |
 
 Rules: `scripts/OWNER_RULES.md` (sections 2 and 3). The procedure:

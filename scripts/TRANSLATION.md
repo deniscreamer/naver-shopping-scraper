@@ -7,11 +7,9 @@ measurements and history are at the end. The code: `translate.py` (the stage), `
 `translate_keys.py` (the keys), `translate_eval.py` (the quality check), `prompts/` (system prompt and briefs). The
 transform that writes the texts: [TRANSFORM.md](TRANSFORM.md) "Transform".
 
-## Translation (`translate.py`)
+## How to use
 
-The owner (2026-11-08): the prepared products' `texts` go to English through Claude Sonnet 5.5 (effort low, JSON
-output) before placement and publication. Not translated: `description_ko` and the images' text (a later stage
-writes the description from them; their `to_translate` flag is not this stage's).
+Commands from the repo root (the model calls cost money: small runs first):
 
 ```sh
 .venv/bin/python scripts/translate.py fairwardgolf --offline   # no model: what the dictionaries and rules leave
@@ -19,13 +17,11 @@ writes the description from them; their `to_translate` flag is not this stage's)
 .venv/bin/python scripts/translate.py fairwardgolf --only <key>  # only this product to the model
 .venv/bin/python scripts/translation_dicts.py status [--json]  # sync helper: dates, what the backup lacks, advice
 .venv/bin/python scripts/translation_dicts.py backup           # by hand: live -> scripts/dictionaries/, then commit
+.venv/bin/python scripts/translate_eval.py fairwardgolf --products 12   # the quality check (a second model judges)
 ```
 
 A job made since 2026-11-08 runs this stage per product, right after prepare (`job.py`, `translate_one`, translated;
 `new --no-translate` leaves it out). See [JOB_AGENT.md](JOB_AGENT.md).
-
-Per text, the first that answers: (1) the product's own store, (2) the dictionary of its kind, (3) the rules,
-(4) the model. Each is below.
 
 Out, in `shops/<shop>/translation/`: `translated.jsonl` (per product: status, English by text id, where each came
 from) and `report.txt` (counts, tokens and cost, new dictionary entries). What to do per status:
@@ -39,6 +35,27 @@ from) and `report.txt` (counts, tokens and cost, new dictionary entries). What t
 
 When a dictionary backup is due, a `translate.py` run's report (not `--only`) and `job.py run` (done) /
 `job.py status` print one reminder line: run `translation_dicts.py status`, read the changed entries, then `backup`.
+
+| Task | Section |
+|---|---|
+| Why the stage works as it does (model, fallback, tokens, what is not translated) | [Decisions](#decisions-the-owner-2026-11-08) |
+| A product's own title or review | [1. The product's own store](#1-the-products-own-store) |
+| A term wrong for every product; live and backup dictionaries | [2. Dictionaries](#2-dictionaries) |
+| Units, sizes, 노브랜드, 기타 | [3. The rules](#3-the-rules-translation_rulespy) |
+| Prompts, briefs, checks, fix rounds, fallback, batches, tokens, keys (a change: skill `prompt-change`) | [4. The model and its prompts](#4-the-model-and-its-prompts) |
+| Reviews cleaned wrong | [Review cleaning](#review-cleaning-review_cleanpy) |
+| A new shop (tenant) or Naver category | [A new shop (tenant) or category](#a-new-shop-tenant-or-category) |
+| Is the translation good? | [Quality check](#quality-check) |
+| A known wrong case, what is still open | [Known limits](#known-limits), [Open](#open-2026-11-08) |
+
+## Translation (`translate.py`)
+
+The owner (2026-11-08): the prepared products' `texts` go to English through Claude Sonnet 5.5 (effort low, JSON
+output) before placement and publication. Not translated: `description_ko` and the images' text (a later stage
+writes the description from them; their `to_translate` flag is not this stage's).
+
+Per text, the first that answers: (1) the product's own store, (2) the dictionary of its kind, (3) the rules,
+(4) the model. Each is below. The commands, the outputs and what to do per status: [How to use](#how-to-use).
 
 ## Decisions (the owner, 2026-11-08)
 

@@ -5,10 +5,40 @@ wedge set?", "which of these are one product?"). An AI agent reads the sheets as
 then proves each doubt from the text (`index.tsv`, `summary.json`, the variants, the description). Counts and rules
 find what the data says; the photo finds what the data hides: a single wedge sold as a "set", a black edition under
 a colourless title, a bag missing from a "with bag" listing, a brand printed on the head and absent from the specs.
+Code: the `lens.py` docstring. What waits for the owner: [OWNER_RULES.md](OWNER_RULES.md). How it began: [History](#history).
 
-Born 2026-11-15 from the store's duplicate cleanup: 54 products joined by title words alone were looked at on
-sheets, 3 of them were not one product (BG-100 Black Edition, REVA with and without its bags), 188 copies went to
-DRAFT with no false withdrawal. Owner: "check it is no error, then DRAFT".
+## How to use
+
+Run from the repo root: `.venv/bin/python scripts/lens.py <lens> <shop> [scope]`. Read only and offline.
+
+| Question | Run | Then |
+|---|---|---|
+| A job printed `review due` (drafts of a category not marked reviewed) | exactly its commands: `job.py status --job <id> --json`, key `review.commands` | read the sheets, report; activation waits for the owner ([rule 5](#the-rule-of-use)) |
+| Is every product the section's (after a pilot, a job, a placement rule change)? | `lens.py section <shop> --leaf <leaf>` (or `--category <id>`, `--job <id>`) | [`section`](#section-is-every-product-the-sections) |
+| Odd items among sets, a price far from the category's | `lens.py price <shop> --category <id>` (or `--leaf <leaf>`) | [`price`](#price-what-sits-far-from-the-categorys-price) |
+| Is the vendor right (after a brand rule or dictionary change)? | `lens.py brand <shop> --category <id> --source none,title_word,description_row` | [`brand`](#brand-is-the-vendor-right) |
+| The store's duplicate groups: one product or versions? | `lens.py dupes <shop> [--category <id>]` | [`dupes`](#dupes-one-product-or-versions); the rule: [DEDUPE.md](DEDUPE.md) |
+| Many prepared but not published: was the hold right? | `lens.py held <shop> --job <id>` | [`held`](#held-was-the-hold-right) |
+| One doubt, two listings to compare, a finding to show | `lens.py products <shop> <id or key> ...` | [`products`](#products-these-side-by-side) |
+
+What it prints: `<lens>: N cards, F flagged (red) <numbers>; M marked to look at (blue) <numbers>` (the first 30 of
+each; all in `summary.json` `meta.flagged` / `meta.marked`), then the meta lines it has (`note`, `published`,
+`same_title_groups`, `reviewed_groups`, `spellings`), the sheets' paths, `index.tsv` and `summary.json`
+([The tools](#the-tools)).
+
+What to do on each result:
+- **Red or blue numbers:** look at every sheet, then prove each number from its `index.tsv` line
+  ([Reading a sheet](#reading-a-sheet-for-an-agent)); a photo alone is never the reason.
+- **Nothing red or blue:** still read every sheet: a mark is only the lens's rule, the eye finds the rest.
+- **`note: fewer than 5 prices: no median, nothing marked`** (`price`): read the ladder by eye.
+- **A usage error** (exit 2, nothing drawn): `section` needs `--category`, `--leaf` or `--job`; `price` needs
+  `--category` or `--leaf`; `held` needs `--job`; `products` needs one or more keys or ids; `dupes --versions` needs
+  two or more keys and `--note` (whose word, why).
+- **`<ref>: not in the shop's files, left out`** / **`<ref>: N keys (...); shown: <key>`** (`products`): the id is
+  unknown, or found under several stores' keys (the first is shown).
+- **A finding:** report it to the owner (numbers, keys, titles, reason, what was not looked at, the sheets' folder).
+  A withdrawal, a hold, a republish or a rule change waits for the owner's word (skill `store-actions`); a copy of a
+  live product the rules missed is held as a draft and asked about ([`dupes`](#dupes-one-product-or-versions)).
 
 ## The rule of use
 
@@ -219,3 +249,9 @@ A lens is a function `(view: ShopView, ...) -> Plan(lens, cards, layout, columns
 `scripts/test_lens_fixture.py` and a section here with its question, command,
 when, and what it catches. Cards take their data from `Product.row()` plus the lens's own fields; a mark means
 "flag" only when the lens has a rule for it.
+
+## History
+
+- **Born 2026-11-15** from the store's duplicate cleanup: 54 products joined by title words alone were looked at on
+  sheets, 3 of them were not one product (BG-100 Black Edition, REVA with and without its bags), 188 copies went to
+  DRAFT with no false withdrawal. Owner: "check it is no error, then DRAFT".

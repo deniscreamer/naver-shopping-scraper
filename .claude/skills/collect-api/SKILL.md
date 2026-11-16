@@ -6,20 +6,23 @@ description: Collect from Naver Shopping through the running local API with the 
 # Collecting from the API
 
 The stage: scripts call the running local API over HTTP (`NaverApiClient`) and save what it answers. Read the one
-section of `scripts/COLLECT.md` the task needs; the scripts table and the boundary: `scripts/README.md`.
+section of `scripts/COLLECT.md` the task needs (it opens with "How to use"); the scripts table and the boundary:
+`scripts/README.md`.
 
 | Task | `scripts/COLLECT.md` section |
 |---|---|
-| Which script to start from | "Examples: start here" |
+| The commands, what a call can answer (400 / 404 / 409 / 500 / 502 / 503, harvest exit codes) and what to do | "How to use" |
+| Which script or client method to start from | "Examples: start here" |
 | Product details: the record or the page (`/products/specs`) | "Product details: two ways" |
 | Options: free / paid / sold-out variants | "Product options" |
 | Photos (`naver_images.py`, WebP) | "Product photos" |
-| The listing screen, "already in the shop" (`listing_filter.py`, `shopify_catalog.py`) | "The listing screen and the shop check" |
-| Check a run against product pages | "Checking a run against product pages" |
 | Reviews: the endpoint or the page | "Reviews: two ways" |
-| The answer types (`naver_types.py`) | "Response types" |
+| The listing screen, "already in the shop", deferred (`listing_filter.py`, `shopify_catalog.py`, `deferred_log.py`) | "The listing screen and the shop check" |
 | Which links to harvest | "Link semantics for harvesting" |
 | A listing harvest (`harvest_listing.py`), the full listing (`api.listing`) | "Listing harvest", "Full search listing through the API" |
+| The answer types (`naver_types.py`) | "Response types" |
+| Check a run against product pages, replay offline | "Checking a run against product pages" |
+| How long a collection takes | "Measurements" |
 | An error from a call | skill `api-error-triage` |
 
 Commands (repo root, server running for anything networked):

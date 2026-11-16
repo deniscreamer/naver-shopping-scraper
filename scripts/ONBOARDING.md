@@ -1,11 +1,40 @@
 # A new Naver category or a new shop (tenant)
 
 Where to add what, so that a new Naver leaf category in a shop, or a new shop, runs through the whole pipeline
-(collect, transform, OCR, translate, describe, place, price, publish) without silent gaps. Written against the
-code on 2026-11-11 (one shop, `fairwardgolf`, one category, 50002788 golf full sets), kept up with each category
-since: 50002787 junior clubs (2026-11-11), 50002670 women's iron sets (2026-11-14), 50002783 wedge sets (2026-11-15),
-draft first (2026-11-16). Agents: the
-`new-category-or-shop` skill (`.claude/skills/`) walks through this file.
+(collect, transform, OCR, translate, describe, place, price, publish) without silent gaps. Agents: the
+`new-category-or-shop` skill (`.claude/skills/`) walks through this file. The rows' ids (A1-A14, B1-B10, C1-C11,
+L1-L10) are cited from code and other docs: keep them. When was what written: [History](#history).
+
+## How to use
+
+| Task | Section |
+|---|---|
+| A category in an existing shop: what stops without it | [A. Required](#required) (A1-A6) |
+| What works without, but worse | [A. Quality](#quality-works-without-these-but-worse) (A7-A14) |
+| A new shop (tenant) | [B](#b-a-new-shop-tenant) (B1-B10), then A for each of its categories |
+| Golf or `fairwardgolf` in shared code: decide before the first run | [C](#c-golf-or-fairwardgolf-in-shared-code-decide-before-the-first-run) (C1-C11) |
+| The first run, in order | [D](#d-the-order-of-a-first-run) |
+| What earlier categories did to the rest of the shop, and the fix | [Learned](#learned-on-the-first-new-category-50002787-2026-11-11) (L1-L10) |
+
+First, ask the owner for the values (A1, A2, A3, A5; for a shop B1, B2, B6), never invent them. Then the first run
+(part D) prints, and you:
+
+| Command | Result | You |
+|---|---|---|
+| `SHOP_STORE=<shop> .venv/bin/python scripts/job.py new --query "..." --category <leaf id> --count 5` | `stop: no category_measures.json row for <id>: ask the operator` (exit 2) | A1 |
+| the same | `category_mismatch` in the screen counts | a wrong id: use the leaf id (below) |
+| `job.py run` | `stop: prepare: ShopRulesMissing` | A2 (a new shop: B4) |
+| `job.py run` | `Untranslated` | the translation (skill `translation`) |
+| `.venv/bin/python scripts/placement.py <shop>` | `no_profile` or `unresolved` in the counts; a new shop without a profile: `PlacementRulesMissing` | A3; B5 |
+| `.venv/bin/python scripts/publish.py <shop> --dry-run` | builds only what is ready, translated and placed; payloads in `shops/<shop>/publish/payloads/<id>.json` | read the price breakdown (D step 5); the real publish only after the owner says yes |
+| `.venv/bin/python scripts/store_diff.py <shop>`, then `translation_dicts.py status` | the published products a publication would change, those that cannot be built now; the new dictionary entries | each product is the owner's to decide; read every new entry before the dictionaries' backup (D step 6) |
+
+After the first run of a category, also read by hand what the [Learned](#learned-on-the-first-new-category-50002787-2026-11-11)
+rows ask: its vendors and its cheapest and dearest prices (L7); its no-brand, agency and dearest products (L8);
+`review_grid.py`, then its new brands against the makers' own Latin spelling (L9); the held products' titles, not
+only their codes (L10). `store_diff.py` goes over the **whole shop**, not only the new category (L8).
+
+## Rules for every row
 
 Each row says what happens **without** the step:
 - **stops**: an exception or an exit 2, named;
@@ -79,24 +108,6 @@ before a different kind of product or a second shop is published.
 | C10 | `scripts/example_99_full_details.py`, `example_15_description_collect.py` | `QUERY` and `CATEGORY_ID` constants | use `job.py new --query --category` instead |
 | C11 | `placement.start_variants` | Computed but not written by `shopify_payload` (no `custom.category_start_variants`) | a split category opens every section on the same variant |
 
-### Learned on the first new category (50002787, 2026-11-11)
-
-Each of these touched the shop's other products without a word; each is fixed, and each is a reason for part D's
-last step.
-
-| # | What happened | Now |
-|---|---|---|
-| L1 | Every job prepares the **whole shop** (`run_transform.run`). A `--paid` job prepared all 436 products with paid variants and add-ons: 101 published full sets stood untranslated (nothing was sent) | `run_transform.paid_choices`: each product takes its own job's paid choice from the jobs' files, every other one only what is free; a run by hand does the same. Pick the job's `--paid` / `--paid-variants` for its own products only |
-| L2 | Package defaults are written when a product is **collected**, and kept runs are read-only (never edit them): a fixed table row did not reach the products already collected | the transform takes each default from today's table (`package_measures.current_defaults`); prepare again, then publish |
-| L3 | `publish.py --dry-run` did not know the store: it wrote "maruman" for Maruman and the tenant's name before an own-brand title | `publish.offline_ids`: the brand dictionary's spellings and the tenant's name offline |
-| L4 | A new dictionary entry of the new category changed four products of the old one (`구성` -> "Contents"); 8 of its 108 entries were wrong (an age lost, `호수` -> "Club Number") | dictionaries per category (C2); read every new entry before the dictionaries' backup (`translation_dicts.py status`) |
-| L5 | A rule fixed earlier (a brand read in "치핑" / "쇼핑") had not reached a product published before the fix | `store_diff.py` (part D, step 6) finds such products |
-| L6 | publish.py's skip compared its inputs: 18 of 20 products whose inputs moved would have sent what the store already had, and hid the two real changes | the ledger keeps `output`, the hash of what productSet sends (`publish.output_digest`): a product is skipped when that did not change |
-| L7 | The first 30 junior products: a shop's or a supplier's name as the brand (세모물상점, 스퀘어홀딩), one brand spelled two ways (U.S.KIDSGOLF / U.S. Kids Golf) and written twice in a title, a bag alone and a toy published, two clubs priced as a set | trading names are no brand, brands compared by letters and digits, `publish.py --withdraw`, the category's `bag_only` rule and `two_clubs` kind. Read the new category's vendors and its cheapest and dearest prices after the first run |
-| L8 | The next 100 junior products: a shop brand of one category is looked for in every category's images (GB in "golf bag" changed two adult sets), the cleaned brand of one product (던롭) took two XXIO sets' titles; ages and lofts after 클럽 read as a count (single clubs priced as sets, $709-729) | Latin brands as whole words, a brand inside a Korean branch's name last, `brand_fallback.clean` for the brand rows, measures out of the package words. After every run, `store_diff.py` over the **whole shop**, not only the new category. Then read the new category's no-brand, agency and dearest products: three no-name agency imports at $1499-1899 and a school pack of ten irons went out; `agency_needs_brand`, the title rule `group_pack` |
-| L9 | The first 100 women's iron sets (50002670, 2026-11-15, a review in six phases): a brand row of "골프" (one junior product) made "Golf" the vendor of 55 published junior and full sets; a used set ([중고]) published as new; a phone number in an option name, a "contact us" variant and add-on; a brand spelled from its sound (제스타임 "Jestime", the maker writes ZESTAIM), a maker's longer brand lost (무쯔미혼마 as 혼마), a model line invented in a title (Prestigio for 로얄); four XXIO 14 and two V300 listings of one model the title-word dedupe does not see | `brand_fallback._NO_FIRM` (the sport, a gender word, a lone letter, a 정품 claim are no firm), the category's `used` title rule (not shared: 50002788 keeps used sets on purpose), a seller's note out of option values, contact notes dropped in the transform, the maker naming a longer brand the title names wins, the category brief's makers and lines. After the first run of a category: `review_grid.py`, then read its new brands against the makers' own Latin spelling |
-| L10 | The first 60 wedge sets (50002783, 2026-11-15): 17 listings titled "웨지 세트 (또는 개별)" sold one wedge per variant (a loft, 1PC) and were published as sets; 16 agency imports held as agency_no_brand, 5 of them with the maker in the title (라즈러스, 야마토, 버뮤다 mid-title, GoSports); the job's dedupe kept 10 sellers out as copies of those held products, so the models reached the store from none | `sets_only` (a one-club variant out, a listing of them held `single_only`), `brand_fallback.as_word` (`title_word`: a dictionary brand as a word of its own, Korean or Latin) and the makers in the brand dictionary, a held job product leaves the dedupe index (`job.held_keys`). After the first run: read the held products' titles, not only their codes. The owner then turned the hold off: a no-brand import is sold under the shop's name (Fairward Golf) |
-
 ## D. The order of a first run
 
 1. Ask the owner for the values of A1, A2, A3, A5 (and B1, B2, B6 for a shop). Write them down with the date.
@@ -123,3 +134,27 @@ last step.
    already has, so a moved input alone sends nothing.
 7. Turn the checked products into fixtures (A13) and update the docs of each changed rule (no CHANGELOG entry: the
    owner, 2026-11-14; a release is the skill `release`).
+
+## History
+
+Written against the code on 2026-11-11 (one shop, `fairwardgolf`, one category, 50002788 golf full sets), kept up
+with each category since: 50002787 junior clubs (2026-11-11), 50002670 women's iron sets (2026-11-14), 50002783
+wedge sets (2026-11-15), draft first (2026-11-16).
+
+### Learned on the first new category (50002787, 2026-11-11)
+
+Each of these touched the shop's other products without a word; each is fixed, and each is a reason for part D's
+last step.
+
+| # | What happened | Now |
+|---|---|---|
+| L1 | Every job prepares the **whole shop** (`run_transform.run`). A `--paid` job prepared all 436 products with paid variants and add-ons: 101 published full sets stood untranslated (nothing was sent) | `run_transform.paid_choices`: each product takes its own job's paid choice from the jobs' files, every other one only what is free; a run by hand does the same. Pick the job's `--paid` / `--paid-variants` for its own products only |
+| L2 | Package defaults are written when a product is **collected**, and kept runs are read-only (never edit them): a fixed table row did not reach the products already collected | the transform takes each default from today's table (`package_measures.current_defaults`); prepare again, then publish |
+| L3 | `publish.py --dry-run` did not know the store: it wrote "maruman" for Maruman and the tenant's name before an own-brand title | `publish.offline_ids`: the brand dictionary's spellings and the tenant's name offline |
+| L4 | A new dictionary entry of the new category changed four products of the old one (`구성` -> "Contents"); 8 of its 108 entries were wrong (an age lost, `호수` -> "Club Number") | dictionaries per category (C2); read every new entry before the dictionaries' backup (`translation_dicts.py status`) |
+| L5 | A rule fixed earlier (a brand read in "치핑" / "쇼핑") had not reached a product published before the fix | `store_diff.py` (part D, step 6) finds such products |
+| L6 | publish.py's skip compared its inputs: 18 of 20 products whose inputs moved would have sent what the store already had, and hid the two real changes | the ledger keeps `output`, the hash of what productSet sends (`publish.output_digest`): a product is skipped when that did not change |
+| L7 | The first 30 junior products: a shop's or a supplier's name as the brand (세모물상점, 스퀘어홀딩), one brand spelled two ways (U.S.KIDSGOLF / U.S. Kids Golf) and written twice in a title, a bag alone and a toy published, two clubs priced as a set | trading names are no brand, brands compared by letters and digits, `publish.py --withdraw`, the category's `bag_only` rule and `two_clubs` kind. Read the new category's vendors and its cheapest and dearest prices after the first run |
+| L8 | The next 100 junior products: a shop brand of one category is looked for in every category's images (GB in "golf bag" changed two adult sets), the cleaned brand of one product (던롭) took two XXIO sets' titles; ages and lofts after 클럽 read as a count (single clubs priced as sets, $709-729) | Latin brands as whole words, a brand inside a Korean branch's name last, `brand_fallback.clean` for the brand rows, measures out of the package words. After every run, `store_diff.py` over the **whole shop**, not only the new category. Then read the new category's no-brand, agency and dearest products: three no-name agency imports at $1499-1899 and a school pack of ten irons went out; `agency_needs_brand`, the title rule `group_pack` |
+| L9 | The first 100 women's iron sets (50002670, 2026-11-15, a review in six phases): a brand row of "골프" (one junior product) made "Golf" the vendor of 55 published junior and full sets; a used set ([중고]) published as new; a phone number in an option name, a "contact us" variant and add-on; a brand spelled from its sound (제스타임 "Jestime", the maker writes ZESTAIM), a maker's longer brand lost (무쯔미혼마 as 혼마), a model line invented in a title (Prestigio for 로얄); four XXIO 14 and two V300 listings of one model the title-word dedupe does not see | `brand_fallback._NO_FIRM` (the sport, a gender word, a lone letter, a 정품 claim are no firm), the category's `used` title rule (not shared: 50002788 keeps used sets on purpose), a seller's note out of option values, contact notes dropped in the transform, the maker naming a longer brand the title names wins, the category brief's makers and lines. After the first run of a category: `review_grid.py`, then read its new brands against the makers' own Latin spelling |
+| L10 | The first 60 wedge sets (50002783, 2026-11-15): 17 listings titled "웨지 세트 (또는 개별)" sold one wedge per variant (a loft, 1PC) and were published as sets; 16 agency imports held as agency_no_brand, 5 of them with the maker in the title (라즈러스, 야마토, 버뮤다 mid-title, GoSports); the job's dedupe kept 10 sellers out as copies of those held products, so the models reached the store from none | `sets_only` (a one-club variant out, a listing of them held `single_only`), `brand_fallback.as_word` (`title_word`: a dictionary brand as a word of its own, Korean or Latin) and the makers in the brand dictionary, a held job product leaves the dedupe index (`job.held_keys`). After the first run: read the held products' titles, not only their codes. The owner then turned the hold off: a no-brand import is sold under the shop's name (Fairward Golf) |

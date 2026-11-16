@@ -10,7 +10,7 @@ doc: `scripts/PLACEMENT.md`.
 
 | Task | `scripts/PLACEMENT.md` section |
 |---|---|
-| Run it, read `report.txt` | "How to run" |
+| Run it, read `report.txt` and each status, a profile change and published products | "How to use" |
 | The idea: neutral attributes the seller states, a shop profile (data) that maps them to sections | "The idea" |
 | Which change for which case | "What to change, by case" |
 | A category with one section | "1. A category with one section" |

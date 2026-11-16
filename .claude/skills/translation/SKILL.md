@@ -10,7 +10,8 @@ rules, then the model), before placement and publication. The doc: `scripts/TRAN
 
 | Task | `scripts/TRANSLATION.md` section |
 |---|---|
-| Run it, read `translated` / `untranslated` / `pending` / `held`, the dictionary backup reminder | "Translation" |
+| Run it, read `translated` / `untranslated` / `pending` / `held`, the dictionary backup reminder | "How to use" |
+| What the stage translates and in which order (own store, dictionary, rules, model) | "Translation" |
 | The owner's decisions: model, fallback, few tokens, what is not translated (the description is `describe`'s) | "Decisions" |
 | A product's own title or review | "1. The product's own store" |
 | A term wrong for every product; live / backup dictionaries | "2. Dictionaries" |

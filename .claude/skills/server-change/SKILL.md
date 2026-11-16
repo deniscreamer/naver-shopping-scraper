@@ -32,8 +32,8 @@ Checks:
   `.venv/bin/python scripts/smoke_endpoints.py`. It uses the network: only when the task allows it, never
   during a job.
 - After a deliberate parser change: `UPDATE_GOLDEN=1 .venv/bin/python -m pytest server/naver_shopping/test_pages.py`,
-  then read the diff (R-TEST-5); then `scripts/collected_fixtures.py refresh` and the prepared golden: skill
-  `seller-pattern-rule` step 5.
+  then read the diff (R-TEST-5); then `scripts/collected_fixtures.py refresh` and the prepared golden: `scripts/SELLER_DATA.md`
+  "A new pattern: from the page to a rule" step 5 (skill `seller-pattern-rule`).
 
 Fixtures (R-TEST-2, R-TYPE-6):
 - a product page in the owner's Chrome: `scripts/product_page.py <link>`, then

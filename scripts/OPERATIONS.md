@@ -1,6 +1,29 @@
 # Operations
 
-Running the scripts, the state backup, the shop's shared files and the conventions; split from scripts/README.md on 2026-11-16 (history: `git log --follow scripts/README.md`).
+Running the scripts, the state backup, the shop's shared files and the conventions. What waits for the owner, and
+the Never list: [OWNER_RULES.md](OWNER_RULES.md).
+
+## How to use
+
+| Task | Section |
+|---|---|
+| Start the server, the entry points and their skills | [Running](#running) |
+| Before a commit: the offline checks | [Running](#running) (`scripts/check.sh`) |
+| Back up the state (before a risky change, after each release), verify, restore | [Backup](#backup-state_backuppy-the-owner-2026-11-16) |
+| Code that writes or reads a shop's files; a `busy` refusal; a `LedgerError` | [Shared files](#shared-files-shop_filespy-2026-11-16) |
+| Code that calls the API: typed calls, sequential, cache, status codes, pagination, env, naming, style | [Conventions](#conventions) |
+| An error from the API or a job | skill `api-error-triage` |
+
+Commands (repo root), what they print and what you do:
+
+| Command | Prints | You |
+|---|---|---|
+| `scripts/check.sh` | the tail of each of `server`, `scripts`, `mypy`, then `== results:` with `ok` / `FAILED` per step | non-zero exit: fix the `FAILED` step before the commit |
+| `.venv/bin/python scripts/state_backup.py --dry-run` | the files left out (and why), `plan -> <folder>`, each archive's files and sizes, the estimate and the free space; `WARNING: a job is running` | a warning: back up between jobs; then run it without `--dry-run` |
+| `.venv/bin/python scripts/state_backup.py` | `writing <archive> ...` per archive, then `for the cloud:` and the files | upload that folder to the cloud by hand; `refused: ...` (exit 2): not enough space, a folder inside the repository, or an archive already there (another `--dest`, or delete it yourself) |
+| `.venv/bin/python scripts/state_backup.py --verify <folder>` | `ok` / `FAIL: ...` per archive, then `verify: ok` or `verify: N FAILED` (exit 1) | a failure: make the backup again |
+| A command refused with `<tool>: stop: <shop> is busy: <holder>: ...` (exit 2) | another process holds the shop's lock | wait for it (`job.py status`) or stop it; see [Shared files](#shared-files-shop_filespy-2026-11-16) |
+| `LedgerError: <path>:<n>: ...` (a job: `STOP ... LedgerError`) | a line of a shop's file is not JSON | fix the line by hand; a rebuilt file: the command that rebuilds it |
 
 ## Running
 
@@ -125,3 +148,7 @@ writes them goes through `shop_files.py`:
   - `print("<script>: ...")` with a prefix;
   - type hints in new and changed code, checked by mypy (R-TYPE-5; the server stays untyped, R-STYLE-3).
 
+## History
+
+- 2026-11-16: split from scripts/README.md (history: `git log --follow scripts/README.md`); the backup
+  (`state_backup.py`, the owner) and the shared files (`shop_files.py`) added the same day.

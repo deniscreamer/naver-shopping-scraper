@@ -1,6 +1,97 @@
 # Collecting from the API
 
-What the scripts collect through the API and how: product details, options, photos, the listing screen, run checks, reviews, the examples, the answer types and listing harvests; split from scripts/README.md on 2026-11-16 (history: `git log --follow scripts/README.md`).
+What the scripts collect through the API and how: product details, options, photos, reviews, the listing screen and
+the shop check, the examples, the answer types and listing harvests. All calls go over HTTP through
+`naver_api_client.NaverApiClient` (`scripts/` never imports server modules, AGENTS.md rule 3). Contract:
+[server/docs/ENDPOINTS.md](../server/docs/ENDPOINTS.md); blocks and 502s:
+[server/docs/KNOWN_ISSUES.md](../server/docs/KNOWN_ISSUES.md); a whole category as a job: skill `run-a-job`.
+
+## How to use
+
+Start the server first (`.venv/bin/python server/run.py`). Examples 7-10, 14, 15 and 99, and every
+`/products/specs` or listing read, also need Chrome open with the adapter (`example_01` shows
+`extension: connected`). From the repo root:
+
+```sh
+.venv/bin/python scripts/example_01_health.py                 # the server is up, the extension status, the endpoints
+.venv/bin/python scripts/example_07_listing_then_details.py   # then the example closest to the task
+.venv/bin/python scripts/harvest_listing.py "<query>" --category <id> --out <name>   # every store link for a keyword
+.venv/bin/python -m pytest scripts -q                          # offline, includes the type conformance test
+.venv/bin/python -m mypy                                       # offline, 0 errors expected
+```
+
+| Task | Section |
+|---|---|
+| Which script or client method to start from | [Examples: start here](#examples-start-here) |
+| A product's details: the backend record or the page (`/products/specs`) | [Product details: two ways](#product-details-two-ways) |
+| Options: free / paid / sold-out variants, text options, add-ons | [Product options](#product-options) |
+| Photos: gallery, review photos, avatars, video posters (`naver_images.py`, WebP) | [Product photos](#product-photos) |
+| Reviews: every review or the ones worth showing | [Reviews: two ways](#reviews-two-ways) |
+| Screen listing rows, "already in the shop", the deferred journal | [The listing screen and the shop check](#the-listing-screen-and-the-shop-check) |
+| Which link of a search card to pass on | [Link semantics for harvesting](#link-semantics-for-harvesting) |
+| Every store link for a keyword, past the 96-card ceiling | [Listing harvest](#listing-harvest-harvest_listingpy) |
+| The whole search listing in the owner's Chrome | [Full search listing through the API](#full-search-listing-through-the-api-apilisting) |
+| An answer's shape changed (`naver_types.py`, fixtures) | [Response types](#response-types-naver_typespy) |
+| Check a run against product pages, replay one offline | [Checking a run against product pages](#checking-a-run-against-product-pages) |
+| What sellers write on their pages | [SELLER_DATA.md](SELLER_DATA.md) |
+
+What a call can answer, and what to do (`ApiError(status, error, errors)`; full triage: skill `api-error-triage`):
+
+| Result | Means | Do |
+|---|---|---|
+| 200 (202 for a started listing job) | the answer, typed in `naver_types.py` | guard every `X \| None` field |
+| `ApiError` 400 | the input is wrong (e.g. a store link without a real slug) | fix the call ([Link semantics](#link-semantics-for-harvesting)); a harvest logs it, counts it failed and goes on |
+| `ApiError` 404 | details: a bare id or slug-less link (since 2026-11-02); specs: the card was not on that search page | skip, or read specs again with another `query` (the name first, the listing's query on a 404) |
+| `ApiError` 409 | the adapter is busy: a listing job, a `/products/specs` read, another listing (one at a time) | wait and retry (the check run: every 30 s, up to 12 times) |
+| `ApiError` 500 | a server parser bug | report it (skill `api-error-triage`) |
+| `ApiError` 502 | blocked / upstream failure; the client already retried twice (10 s, then 30 s) | KNOWN_ISSUES.md; skill `api-error-triage` |
+| `ApiError` 503 | the extension is not connected, a wall, the page did not render, or Naver's internal-error page (K-21) | `example_01`; K-21: wait 120 s, twice, then skip and read it again at the end |
+| `harvest_listing.py` exit 0 / 3 | done / paused with ranges pending | 3: run again with the same `--out` |
+| `ShopNotConfigured`, `CatalogError` | the shop check cannot answer (no store values or credentials; another shop, a bad or doubled key) | ask the operator; never treat it as "not there" |
+| a product `deferred` | partial twice | not taken again; only the owner allows one retry (`deferred_log.py allow`) |
+
+A shape change updates the type in `naver_types.py`, its fixture and the client method together (R-TYPE in
+[server/docs/DEVELOPMENT_RULES.md](../server/docs/DEVELOPMENT_RULES.md)). Tests never hit the network. Never use the
+session's browser tools on Naver during a job ([OWNER_RULES.md](OWNER_RULES.md) section 3).
+
+## Examples: start here
+
+Small, runnable scripts, one topic each, in the order to read them. Start `server/run.py` first; examples 7-10, 14, 15
+and 99 also need Chrome open with the adapter (`example_01` shows `extension: connected`).
+
+| Script | Shows |
+|---|---|
+| `example_01_health.py` | `api.health()`: the server is up, the extension status, the endpoint list |
+| `example_02_search.py` | `api.get()` with filters: `/products/count` + `/products/search` (up to 96 cards) |
+| `example_03_product_details.py` | `/products/details`: prices, stock, review stats of one product (its `variants` are null since 2026-11-02: options come from `/products/specs`, way 2) |
+| `example_04_reviews.py` | `api.pages()`: `/products/reviews` page by page |
+| `example_05_store.py` | `/stores/details` + `/stores/products` (best-sellers) |
+| `example_06_datalab.py` | `/keywords/rank` + `/keywords/trend` (Naver DataLab) |
+| `example_07_listing_then_details.py` | `api.listing()`: the full search listing (server: your Chrome via the adapter), then `/products/details` for its rows (server: its own Chrome). Two transports, one API |
+| `example_08_product_full.py` | One product as complete as it gets (a golf club set): `product_details()` + `product_specs()` -> the 상품정보 rows, brand / manufacturer / model / origin with their sources, category, the legal notice (pointer rows marked), the description text |
+| `example_09_listing_then_specs.py` | Like example 7, details the new way: a listing, then `product_details()` + `product_specs(link, query=<the listing's search>)` per product (name fallback). Collecting products not known yet |
+| `example_10_known_products_specs.py` | Known product links -> `product_specs(link, query=<full Korean name>)`: the card is matched by its id on that search page |
+| `example_11_reviews_full.py` | `api.reviews()` read completely: every review field in the store's order (id, score, date, full text, option, likes, writer, photo / video links and sizes), the product summary, JSONL to `output/reviews-<id>/` |
+| `example_12_reviews_selected.py` | Reviews, way 2: `selected_reviews()` -> up to 20 reviews worth showing (photo + text + avatar first), with the tier of each, JSONL; their photos and avatars as the store's WebP (`download_review_media()`) |
+| `example_13_product_images.py` | A product's gallery: `product_details()["images"]` -> `naver_images.download_gallery()` -> the store's WebP files, manifest.json with source and result of each |
+| `example_14_product_options.py` | A product's options from the page (`product_specs()["options"]`) and the variants we take (`choose_variants`, `paid` as argument), on real golf sets: no options, free combinations, a text option with a sold-out row, a paid sold-out row |
+| `example_15_description_collect.py` | **One golf full set end to end, its description included**: the first new screened card of 남성 골프채 풀세트 (or a product link as argument) -> details, specs and options, variants, five package fields, reviews and photos -> kept in its own folder (`output/description-example/shops/`, the operator's runs untouched) -> description images read (OCR) -> prepared (prepared/2): prints the notes, the five fields with where each came from, the page text and the images' text for translation. Needs the server and the adapter; ~2-4 min |
+| `example_99_full_details.py` | **FULL**, the one to grow: a category's products (listing, screened: rental, another category, already in the shop, deferred), each in turn under the run rules -> details + 상품정보 specs and options (adapter) + variants + five shipping fields + selected reviews + gallery and review photos (video posters as photos) as the store's WebP, one JSON line per product. Needs the shop's credentials file (`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`) and the category's averages |
+
+```sh
+.venv/bin/python scripts/example_01_health.py
+.venv/bin/python scripts/example_07_listing_then_details.py
+```
+
+All calls go through `naver_api_client.NaverApiClient`. Typed methods, one per endpoint, return the shapes in
+`naver_types.py`: `health()`, `search(query, **filters)`, `count(...)`, `product_details(product)`,
+`product_specs(product, query)`, `product_page(product, query)`, `captcha()`, `reviews(product, sort, max_page,
+media)` (pages), `selected_reviews(product, count)`, `store_details(store)`, `store_products(store, list, period)`,
+`catalog_reviews(catalog)`, `categories(category)`, `keywords_rank(category, **window)` (pages),
+`keyword_trend(keyword, category, **window)`, `category_trend(category, **window)`, `listing(query, max_batches)`,
+`listing_tab_open` / `listing_tab_next` / `listing_tab_specs` / `listing_tab_close`.
+The generic `get(path, **params)` / `pages(path, **params)` reach any route. Any answer but 200 / 202 raises
+`ApiError(status, error, errors)`.
 
 ## Product details: two ways
 
@@ -104,6 +195,23 @@ member and one `STORES` entry; the algorithm does not change.
 
 Not done here: description images, recommendation images, the product gallery's videos.
 
+## Reviews: two ways
+
+Reviews come from the store backend in both ways (no adapter): the same JSON a product page loads in its review
+window (`query-pages`), so photo links are originals, product ids are checked and avatars are known.
+
+| | 1. `/products/reviews` (every review) | 2. `/products/reviews/selected` (the ones worth showing) |
+|---|---|---|
+| Gives | one page of 20, any sort (`ranking`, `recent`, `score_high`, `score_low`), `media` filter (`all`, `photo_video`, `text`) | up to `count` (20) chosen reviews: 50+ letters + photo + real avatar first, then photo + text, then text; all with text when the product has 20 or fewer; at most 8 photos a review, 100 a product |
+| Cost | ~0.4 s a page after the record | reads only the pages it needs, newest first: photo/video pages, then text-only pages (Honma D1, 202 reviews: 11 pages, ~5 s) |
+
+Why not through the product page (researched 2026-11-01 on the Honma D1 set): the review window opens from the
+"N건 리뷰" link, takes the 최신순 / 포토/동영상 radios, and loads 20 more reviews only on wheel input (~5 wheels and
+~4 s a page) after the whole search -> card -> page walk in the owner's Chrome; its answers are this same
+`query-pages` JSON, and copying them would need an adapter change. The rendered rows carry only thumbnails and no
+product ids. The backend answers the same filter directly (`reviewContentClassTypes`), so the page adds nothing for
+reviews.
+
 ## The listing screen and the shop check
 
 Before a product page is opened (~30-60 s each), `example_99` screens the listing rows (`listing_filter.Screen`) and
@@ -144,126 +252,6 @@ error, and is not taken again. Only the owner allows one retry of one product
 never removed; there is no switch to ignore the journal. A captcha / 418 / 429 / login wall or a refused image CDN
 stops the run without marking the product; a card not found on the listing is just not taken; two products in a row
 partial for the same reason stop the run (a defect of the collector).
-
-## Checking a run against product pages
-
-How the 2026-11-05..07 checks of 139 golf sets were run, to rebuild them (no code is kept for it; the collection
-and the transform are the project's own, the check is an offline reading of saved pages).
-
-The run, in batches of 5 products, resumable (products already in `products.jsonl` and batches already done are
-skipped):
-1. Targets: `api.listing(query, max_batches=2..4)` for "남성 골프채 풀세트" and "여성 골프채 풀세트", screened by
-   `listing_filter.Screen(category, namespace, ShopCatalog(store).keys(), deferred)`; duplicates and products of
-   earlier runs left out; the list saved, so a rerun takes the same products.
-2. Collect each product as example_99 does: `product_details`, `selected_reviews(count=20)`, `product_specs` (the
-   name first, the listing query on a 404), `choose_variants(options, discounted_price, paid=...)`,
-   `variant_measures(specs, load_table())`, `download_gallery`, `download_review_media`, `posters_as_photos`; all
-   under `CollectGuard(DeferredLog(...)).run(key, ...)`; one line `{key, listing, details, specs, variants, package,
-   reviews, photos, review_media}` appended, 2 s apart.
-3. Read the same 5 pages through `/products/page` one at a time, 30 s apart, saved by `product_page.save`.
-4. `keep_run.keep(run, shops)` then `run_transform.run(store, None, shops)` on everything collected so far; a batch
-   list `[{id, key, dir}]` starts the check of those 5.
-
-Pacing and retries: one page read at a time; 60 s before the next product after two reads of one product (back to
-back they brought Naver's error page on 4 of 8); 409 (adapter busy): every 30 s, up to 12 times; Naver's
-internal-error page (503, server/docs/KNOWN_ISSUES.md K-21): wait 120 s, twice, then skip the product and read it
-again at the end (it came back after 2-15 min every time). No captcha in 139 products; one at the search page earlier,
-answered by the owner.
-
-Cost (medians): a product 58-73 s to collect (the page read 48-50 s, details 4-7 s, reviews 0.4 s, gallery 1-3 s,
-review photos 4.5-11 s); a `/products/page` read 48 s (38-194); a batch of 5 with its pages ~10-12 min; 40 products
-~64 min; keep + transform ~0.2 s. Reading the page by the product's name first (not the listing's query) took the
-page read from 74 s to 48 s and 40 products from 61 to 45 min.
-
-The check: one reader per product, offline, from the saved page (page.html, product.json), the collected line and
-the prepared product (the browser tools of the session cannot open naver.com, so saved pages are the only way). 12
-phases, each `{phase, verdict: ok | issue | changed_since_collection | n/a, page, ours}`: price, delivery, options,
-text inputs, add-ons, gallery, specs, notice, description, reviews, measures, transform; then the issues `{phase, kind:
-missing_data | wrong_data | transform_decision | improvement | noise, known: <id> | new, severity, what, evidence,
-suggested_fix}`. Collection: every page item present and right; transform: status, prices, axes, variants, facts,
-attributes (and the placement's sections), spec rows, add-ons, description, images; for the buyer: anything lost, anything shown that should not be.
-Measure across runs by high + medium findings per product (0.65 on 40 known sets after two fix rounds; 1.21 then 1.00
-on new products).
-
-After a parser change, a run can be replayed offline: the adapter keeps each page it read in
-`server/output/ext-product/<time>-<id>/` (product.html, product.json); the newest folder within 10 s of the line's
-`specs.read_at` replays through `ext_product.specs_from_page` and `parsers.parse_contents(page_fixtures.contents_from(
-description))`, then `choose_variants` / `variant_measures` and the transform (equal to the live API on 4 of 4). New
-patterns found this way go to the regression fixtures (server DEVELOPMENT_RULES R-TEST-5) and to
-[SELLER_DATA.md](SELLER_DATA.md).
-
-## Reviews: two ways
-
-Reviews come from the store backend in both ways (no adapter): the same JSON a product page loads in its review
-window (`query-pages`), so photo links are originals, product ids are checked and avatars are known.
-
-| | 1. `/products/reviews` (every review) | 2. `/products/reviews/selected` (the ones worth showing) |
-|---|---|---|
-| Gives | one page of 20, any sort (`ranking`, `recent`, `score_high`, `score_low`), `media` filter (`all`, `photo_video`, `text`) | up to `count` (20) chosen reviews: 50+ letters + photo + real avatar first, then photo + text, then text; all with text when the product has 20 or fewer; at most 8 photos a review, 100 a product |
-| Cost | ~0.4 s a page after the record | reads only the pages it needs, newest first: photo/video pages, then text-only pages (Honma D1, 202 reviews: 11 pages, ~5 s) |
-
-Why not through the product page (researched 2026-11-01 on the Honma D1 set): the review window opens from the
-"N건 리뷰" link, takes the 최신순 / 포토/동영상 radios, and loads 20 more reviews only on wheel input (~5 wheels and
-~4 s a page) after the whole search -> card -> page walk in the owner's Chrome; its answers are this same
-`query-pages` JSON, and copying them would need an adapter change. The rendered rows carry only thumbnails and no
-product ids. The backend answers the same filter directly (`reviewContentClassTypes`), so the page adds nothing for
-reviews.
-
-## Examples: start here
-
-Small, runnable scripts, one topic each, in the order to read them. Start `server/run.py` first; examples 7-10, 14, 15
-and 99 also need Chrome open with the adapter (`example_01` shows `extension: connected`).
-
-| Script | Shows |
-|---|---|
-| `example_01_health.py` | `api.health()`: the server is up, the extension status, the endpoint list |
-| `example_02_search.py` | `api.get()` with filters: `/products/count` + `/products/search` (up to 96 cards) |
-| `example_03_product_details.py` | `/products/details`: prices, stock, review stats of one product (its `variants` are null since 2026-11-02: options come from `/products/specs`, way 2) |
-| `example_04_reviews.py` | `api.pages()`: `/products/reviews` page by page |
-| `example_05_store.py` | `/stores/details` + `/stores/products` (best-sellers) |
-| `example_06_datalab.py` | `/keywords/rank` + `/keywords/trend` (Naver DataLab) |
-| `example_07_listing_then_details.py` | `api.listing()`: the full search listing (server: your Chrome via the adapter), then `/products/details` for its rows (server: its own Chrome). Two transports, one API |
-| `example_08_product_full.py` | One product as complete as it gets (a golf club set): `product_details()` + `product_specs()` -> the 상품정보 rows, brand / manufacturer / model / origin with their sources, category, the legal notice (pointer rows marked), the description text |
-| `example_09_listing_then_specs.py` | Like example 7, details the new way: a listing, then `product_details()` + `product_specs(link, query=<the listing's search>)` per product (name fallback). Collecting products not known yet |
-| `example_10_known_products_specs.py` | Known product links -> `product_specs(link, query=<full Korean name>)`: the card is matched by its id on that search page |
-| `example_11_reviews_full.py` | `api.reviews()` read completely: every review field in the store's order (id, score, date, full text, option, likes, writer, photo / video links and sizes), the product summary, JSONL to `output/reviews-<id>/` |
-| `example_12_reviews_selected.py` | Reviews, way 2: `selected_reviews()` -> up to 20 reviews worth showing (photo + text + avatar first), with the tier of each, JSONL; their photos and avatars as the store's WebP (`download_review_media()`) |
-| `example_13_product_images.py` | A product's gallery: `product_details()["images"]` -> `naver_images.download_gallery()` -> the store's WebP files, manifest.json with source and result of each |
-| `example_14_product_options.py` | A product's options from the page (`product_specs()["options"]`) and the variants we take (`choose_variants`, `paid` as argument), on real golf sets: no options, free combinations, a text option with a sold-out row, a paid sold-out row |
-| `example_15_description_collect.py` | **One golf full set end to end, its description included**: the first new screened card of 남성 골프채 풀세트 (or a product link as argument) -> details, specs and options, variants, five package fields, reviews and photos -> kept in its own folder (`output/description-example/shops/`, the operator's runs untouched) -> description images read (OCR) -> prepared (prepared/2): prints the notes, the five fields with where each came from, the page text and the images' text for translation. Needs the server and the adapter; ~2-4 min |
-| `example_99_full_details.py` | **FULL**, the one to grow: a category's products (listing, screened: rental, another category, already in the shop, deferred), each in turn under the run rules -> details + 상품정보 specs and options (adapter) + variants + five shipping fields + selected reviews + gallery and review photos (video posters as photos) as the store's WebP, one JSON line per product. Needs the shop's credentials file (`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`) and the category's averages |
-
-```sh
-.venv/bin/python scripts/example_01_health.py
-.venv/bin/python scripts/example_07_listing_then_details.py
-```
-
-All calls go through `naver_api_client.NaverApiClient`. Typed methods, one per endpoint, return the shapes in
-`naver_types.py`: `health()`, `search(query, **filters)`, `count(...)`, `product_details(product)`,
-`product_specs(product, query)`, `reviews(product, sort, max_page, media)` (pages), `selected_reviews(product,
-count)`, `store_details(store)`, `store_products(store, list, period)`,
-`catalog_reviews(catalog)`, `categories(category)`, `keywords_rank(category, **window)` (pages),
-`keyword_trend(keyword, category, **window)`, `category_trend(category, **window)`, `listing(query, max_batches)`.
-The generic `get(path, **params)` / `pages(path, **params)` reach any route. Any non-200 raises
-`ApiError(status, error, errors)`.
-
-## Response types (`naver_types.py`)
-
-TypedDicts for every answer (91 names: `SearchCard`, `ProductDetails`, `ReviewsPage`, `ListingRow`, `ListingTab`, ...). `X | None`
-means the server may send null: guard it (`product["reviews"]` can be None). They were written from real answers
-(`fixtures/*.json`, captured live 2026-11-01) and the server's parser code; `test_naver_types.py` checks each
-fixture against its type strictly (missing or unknown keys fail).
-
-```sh
-.venv/bin/python -m pytest scripts -q                      # includes the type conformance test
-.venv/bin/python -m mypy                                   # static check of every script, tests excluded
-                                                           # ([tool.mypy] in pyproject.toml; mypy is in requirements)
-```
-
-mypy is clean on scripts/ (0 errors since 2026-11-15): a new error is a finding to fix, not to ignore.
-
-When a server answer changes shape: re-capture its fixture (one call with the client, json.dump, lists trimmed to
-5 items, long strings to 300 chars), update the type, and commit both with the server change.
 
 ## Link semantics for harvesting
 
@@ -329,3 +317,80 @@ out["job"]["status"], out["job"]["stop"], len(out["results"])
 `ApiError` 409: another listing runs (one at a time); 503: the browser extension is not connected. A stopped job
 still returns its rows. Contract: server/docs/ENDPOINTS.md "Listing jobs".
 
+## Response types (`naver_types.py`)
+
+TypedDicts for every answer (91 names: `SearchCard`, `ProductDetails`, `ReviewsPage`, `ListingRow`, `ListingTab`, ...). `X | None`
+means the server may send null: guard it (`product["reviews"]` can be None). They were written from real answers
+(`fixtures/*.json`, captured live 2026-11-01) and the server's parser code; `test_naver_types.py` checks each
+fixture against its type strictly (missing or unknown keys fail).
+
+```sh
+.venv/bin/python -m pytest scripts -q                      # includes the type conformance test
+.venv/bin/python -m mypy                                   # static check of every script, tests excluded
+                                                           # ([tool.mypy] in pyproject.toml; mypy is in requirements)
+```
+
+mypy is clean on scripts/ (0 errors since 2026-11-15): a new error is a finding to fix, not to ignore.
+
+When a server answer changes shape: re-capture its fixture (one call with the client, json.dump, lists trimmed to
+5 items, long strings to 300 chars), update the type, and commit both with the server change.
+
+## Checking a run against product pages
+
+How the 2026-11-05..07 checks of 139 golf sets were run, to rebuild them (no code is kept for it; the collection
+and the transform are the project's own, the check is an offline reading of saved pages).
+
+The run, in batches of 5 products, resumable (products already in `products.jsonl` and batches already done are
+skipped):
+1. Targets: `api.listing(query, max_batches=2..4)` for "남성 골프채 풀세트" and "여성 골프채 풀세트", screened by
+   `listing_filter.Screen(category, namespace, ShopCatalog(store).keys(), deferred)`; duplicates and products of
+   earlier runs left out; the list saved, so a rerun takes the same products.
+2. Collect each product as example_99 does: `product_details`, `selected_reviews(count=20)`, `product_specs` (the
+   name first, the listing query on a 404), `choose_variants(options, discounted_price, paid=...)`,
+   `variant_measures(specs, load_table())`, `download_gallery`, `download_review_media`, `posters_as_photos`; all
+   under `CollectGuard(DeferredLog(...)).run(key, ...)`; one line `{key, listing, details, specs, variants, package,
+   reviews, photos, review_media}` appended, 2 s apart.
+3. Read the same 5 pages through `/products/page` one at a time, 30 s apart, saved by `product_page.save`.
+4. `keep_run.keep(run, shops)` then `run_transform.run(store, None, shops)` on everything collected so far; a batch
+   list `[{id, key, dir}]` starts the check of those 5.
+
+Pacing and retries: one page read at a time; 60 s before the next product after two reads of one product (back to
+back they brought Naver's error page on 4 of 8); 409 (adapter busy): every 30 s, up to 12 times; Naver's
+internal-error page (503, server/docs/KNOWN_ISSUES.md K-21): wait 120 s, twice, then skip the product and read it
+again at the end (it came back after 2-15 min every time). No captcha in 139 products; one at the search page earlier,
+answered by the owner.
+
+Cost: [Measurements](#measurements).
+
+The check: one reader per product, offline, from the saved page (page.html, product.json), the collected line and
+the prepared product (the browser tools of the session cannot open naver.com, so saved pages are the only way). 12
+phases, each `{phase, verdict: ok | issue | changed_since_collection | n/a, page, ours}`: price, delivery, options,
+text inputs, add-ons, gallery, specs, notice, description, reviews, measures, transform; then the issues `{phase, kind:
+missing_data | wrong_data | transform_decision | improvement | noise, known: <id> | new, severity, what, evidence,
+suggested_fix}`. Collection: every page item present and right; transform: status, prices, axes, variants, facts,
+attributes (and the placement's sections), spec rows, add-ons, description, images; for the buyer: anything lost, anything shown that should not be.
+Measure across runs by high + medium findings per product (0.65 on 40 known sets after two fix rounds; 1.21 then 1.00
+on new products).
+
+After a parser change, a run can be replayed offline: the adapter keeps each page it read in
+`server/output/ext-product/<time>-<id>/` (product.html, product.json); the newest folder within 10 s of the line's
+`specs.read_at` replays through `ext_product.specs_from_page` and `parsers.parse_contents(page_fixtures.contents_from(
+description))`, then `choose_variants` / `variant_measures` and the transform (equal to the live API on 4 of 4). New
+patterns found this way go to the regression fixtures (server DEVELOPMENT_RULES R-TEST-5) and to
+[SELLER_DATA.md](SELLER_DATA.md).
+
+## Measurements
+
+The check run of 2026-11-05..07 ([Checking a run against product pages](#checking-a-run-against-product-pages)),
+medians: a product 58-73 s to collect (the page read 48-50 s, details 4-7 s, reviews 0.4 s, gallery 1-3 s,
+review photos 4.5-11 s); a `/products/page` read 48 s (38-194); a batch of 5 with its pages ~10-12 min; 40 products
+~64 min; keep + transform ~0.2 s. Reading the page by the product's name first (not the listing's query) took the
+page read from 74 s to 48 s and 40 products from 61 to 45 min.
+
+Other measurements stay at their rule: photo renditions ([Product photos](#product-photos), 2026-11-01), the
+harvest's cost ([Listing harvest](#listing-harvest-harvest_listingpy), 2026-11-01), the reviews' cost
+([Reviews: two ways](#reviews-two-ways)).
+
+## History
+
+- 2026-11-16: split from scripts/README.md (history before: `git log --follow scripts/README.md`).
