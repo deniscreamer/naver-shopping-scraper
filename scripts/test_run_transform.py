@@ -170,3 +170,161 @@ def test_a_ko_file_is_rewritten_only_when_its_bytes_change(tmp_path):
     assert run_transform._write_if_changed(path, "한글 other\n") is True
     assert open(path, encoding="utf-8").read() == "한글 other\n" and os.stat(path).st_mtime != 1_000_000
     assert os.listdir(tmp_path) == ["description_images.ko.json"]                  # no .part left
+
+
+# ---- the prepare cache (run(cache=True), 2026-11-16) -----------------------------------------------------------
+
+SIDECARS = os.path.join(os.path.dirname(FX), "description_images")
+
+
+def _cached_shop(tmp_path, ls):
+    """A kept run of `ls` with the fixtures' description image sidecars."""
+    import shutil
+    shops = kept(tmp_path, ls)
+    side = os.path.join(shops, "fairwardgolf", "description_images")
+    os.makedirs(side, exist_ok=True)
+    for x in ls:
+        name = x["key"].split(":")[3] + ".json"
+        if os.path.exists(os.path.join(SIDECARS, name)):
+            shutil.copy(os.path.join(SIDECARS, name), side)
+    return shops
+
+
+def _add_run(tmp_path, shops, ls, n):
+    """A newer kept run of `ls` (keep_run names a run by its file's mtime)."""
+    src = tmp_path / f"later-{n}"
+    src.mkdir()
+    (src / "products.jsonl").write_text("".join(json.dumps(x, ensure_ascii=False) + "\n" for x in ls),
+                                        encoding="utf-8")
+    os.utime(src / "products.jsonl", (1_900_000_000 + n * 60, 1_900_000_000 + n * 60))
+    return os.path.basename(keep_run.keep(str(src), shops))
+
+
+def _files(shops):
+    """{path: bytes} of prepared/ and translation/: what a build writes."""
+    out = {}
+    for sub in ("prepared", "translation"):
+        for d, _, names in os.walk(os.path.join(shops, "fairwardgolf", sub)):
+            for name in names:
+                with open(os.path.join(d, name), "rb") as f:
+                    out[os.path.relpath(os.path.join(d, name), shops)] = f.read()
+    return out
+
+
+def _cached_vs_full(shops, choices=None):
+    """run(cache=True), then a full build; both must write the same bytes. -> (cached result, {hit, miss})."""
+    got = run_transform.run("fairwardgolf", None, shops, choices or {}, cache=True)
+    cached = _files(shops)
+    full = run_transform.run("fairwardgolf", None, shops, choices or {})
+    assert cached == _files(shops)
+    assert got["prepared"] == full["prepared"] and got["report"] == full["report"]
+    return got, got["cache"]
+
+
+def test_a_warm_cache_writes_the_same_bytes_as_a_full_build(tmp_path):
+    ls = collected()
+    shops = _cached_shop(tmp_path, ls)
+    full = run_transform.run("fairwardgolf", None, shops, {})
+    before = _files(shops)
+    assert "cache" not in full and not os.path.exists(os.path.join(shops, "fairwardgolf", "prepare_cache"))
+    cold = run_transform.run("fairwardgolf", None, shops, {}, cache=True)
+    assert cold["cache"] == {"hit": 0, "miss": len(ls)} and _files(shops) == before
+    warm = run_transform.run("fairwardgolf", None, shops, {}, cache=True)
+    assert warm["cache"] == {"hit": len(ls), "miss": 0} and _files(shops) == before
+    assert warm["prepared"] == full["prepared"]
+    records = os.listdir(os.path.join(shops, "fairwardgolf", "prepare_cache"))
+    assert sorted(records) == sorted(x["key"].split(":")[3] + ".json" for x in ls)
+    assert run_transform.latest_lines("fairwardgolf", None, shops)[ls[0]["key"]][:2] == (
+        os.listdir(os.path.join(shops, "fairwardgolf", "collected"))[0], 1)            # still (run, n, line)
+
+
+def test_each_input_of_a_product_misses_only_that_product(tmp_path, monkeypatch):
+    import dataclasses
+    import transform
+    ls = collected()[:8]                                                # 8 products keep it quick
+    shops = _cached_shop(tmp_path, ls)
+    _cached_vs_full(shops)
+    newer = dict(ls[0], details={**ls[0]["details"], "title": ls[0]["details"].get("title", "") + " 신상"})
+    _add_run(tmp_path, shops, [newer], 1)                              # a newer collection of the product
+    assert _cached_vs_full(shops)[1] == {"hit": len(ls) - 1, "miss": 1}
+    run_id = _add_run(tmp_path, shops, [ls[1]], 2)                     # the same bytes, another run and line
+    got, count = _cached_vs_full(shops)
+    assert count == {"hit": len(ls) - 1, "miss": 1}
+    assert next(p for p in got["prepared"] if p["key"] == ls[1]["key"])["source"]["run"] == run_id
+    side = os.path.join(shops, "fairwardgolf", "description_images", ls[2]["key"].split(":")[3] + ".json")
+    with open(side, encoding="utf-8") as f:
+        sc = json.load(f)
+    with open(side, "w", encoding="utf-8") as f:                       # the sidecar read again: other bytes
+        json.dump(sc, f, ensure_ascii=False, indent=2)
+    assert _cached_vs_full(shops)[1] == {"hit": len(ls) - 1, "miss": 1}
+    os.remove(side)                                                     # no sidecar any more
+    assert _cached_vs_full(shops)[1] == {"hit": len(ls) - 1, "miss": 1}
+    paid = {ls[3]["key"].split(":")[3]: run_transform.PAID}            # its job's choice: free -> paid
+    assert _cached_vs_full(shops, paid)[1] == {"hit": len(ls) - 1, "miss": 1}
+    assert _cached_vs_full(shops, paid)[1] == {"hit": len(ls), "miss": 0}
+    monkeypatch.setattr(run_transform, "_CODE_SIG", "another code")    # a change of scripts/*.py
+    assert _cached_vs_full(shops, paid)[1] == {"hit": 0, "miss": len(ls)}
+    table = transform._measures_table()
+    monkeypatch.setattr(transform, "_measures_table", lambda: {**table, "edited": True})   # the table as loaded
+    assert _cached_vs_full(shops, paid)[1] == {"hit": 0, "miss": len(ls)}
+    rules = run_transform.rules_for("fairwardgolf")                    # the base rules: images' text off
+    cats = {k: dataclasses.replace(v, description_images=False) for k, v in rules.categories.items()}
+    monkeypatch.setattr(run_transform, "rules_for", lambda shop: dataclasses.replace(rules, categories=cats))
+    assert _cached_vs_full(shops, paid)[1] == {"hit": 0, "miss": len(ls)}
+
+
+def test_the_steps_across_products_never_come_from_the_cache(tmp_path):
+    """A product whose record is a hit still gets what the shop's other products, files and the owner decide."""
+    ls = [x for x in collected() if x["key"].split(":")[2] in (STORE, "101921971")]
+    late = [x for x in ls if x["key"].split(":")[3] in ("8958060680", "13002235969", "12975257923", "12999501692")]
+    shops = _cached_shop(tmp_path, [x for x in ls if x not in late])
+    _cached_vs_full(shops)
+    _cached_vs_full(shops)
+    _add_run(tmp_path, shops, late, 1)
+    import shutil
+    for x in late:
+        name = x["key"].split(":")[3] + ".json"
+        shutil.copy(os.path.join(SIDECARS, name), os.path.join(shops, "fairwardgolf", "description_images"))
+    got, count = _cached_vs_full(shops)
+    assert count == {"hit": len(ls) - len(late), "miss": len(late)}
+    by_id = {p["key"].split(":")[3]: p for p in got["prepared"]}
+    with open(os.path.join(shops, "fairwardgolf", "translation", "13785630702", "description_images.ko.json"),
+              encoding="utf-8") as f:                                   # 8958060680 of its store came: shared 2
+        assert {b["shared"] for b in json.load(f)["blocks"]} >= {2}
+    assert len([d for d in by_id["13058280430"]["product"]["description_dropped"]
+                if d["rule"] == "shared_store_image"]) == 3
+    flag = by_id["13785630702"]["product"]["description_images_text"]
+    where = os.path.join(shops, "fairwardgolf", "translation", "13785630702")
+    with open(os.path.join(where, "description_images.en.json"), "w", encoding="utf-8") as f:
+        json.dump({"format": "x", "source_sha256": flag["sha256"], "blocks": []}, f)
+    key = by_id["13058280430"]["key"]
+    with open(os.path.join(shops, "fairwardgolf", "brand_by_owner.json"), "w", encoding="utf-8") as f:
+        json.dump({"entries": {key: {"brand": "Alvo Golf", "why": "photo", "at": "2026-11-16"}}}, f)
+    got, count = _cached_vs_full(shops)
+    assert count == {"hit": len(ls), "miss": 0}
+    by_id = {p["key"].split(":")[3]: p for p in got["prepared"]}
+    assert by_id["13785630702"]["product"]["description_images_text"]["state"] == "translated"
+    assert (by_id["13058280430"]["product"]["brand_ko"], by_id["13058280430"]["product"]["brand_source"]) == (
+        "Alvo Golf", "owner")
+
+
+def test_a_broken_record_is_a_miss_and_is_written_again(tmp_path):
+    ls = collected()[:8]
+    shops = _cached_shop(tmp_path, ls)
+    _cached_vs_full(shops)
+    folder = os.path.join(shops, "fairwardgolf", "prepare_cache")
+    paths = [os.path.join(folder, x["key"].split(":")[3] + ".json") for x in ls[:4]]
+    with open(paths[0], "rb") as f:
+        data = f.read()
+    cut = data.index("브".encode()) + 1                                 # in the middle of a Hangul character
+    with open(paths[0], "wb") as f:
+        f.write(data[:cut])
+    with open(paths[1], "wb") as f:
+        f.write(b"\x00garbage")
+    with open(paths[2], "wb") as f:
+        f.write(b"0" * 64 + data[data.index(b"\n"):])                  # another signature, the same body
+    with open(paths[3], "wb") as f:
+        f.write(data.split(b"\n")[0] + b"\n[1, 2]\n")                  # its signature, not a record
+    assert _cached_vs_full(shops)[1] == {"hit": len(ls) - 4, "miss": 4}
+    assert _cached_vs_full(shops)[1] == {"hit": len(ls), "miss": 0}
+    assert not [n for n in os.listdir(folder) if n.endswith(".part")]

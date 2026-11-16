@@ -45,3 +45,40 @@ def test_prepared_as_expected(name):
             f.write("\n")
     with open(path, encoding="utf-8") as f:
         assert got == json.load(f)
+
+
+def _fixture(name):
+    sidecar = os.path.join(SIDECARS, name + ".json")
+    images_text = None
+    if os.path.isfile(sidecar):
+        with open(sidecar, encoding="utf-8") as f:
+            images_text = json.load(f)
+    with open(os.path.join(COLLECTED, name + ".json"), encoding="utf-8") as f:
+        return json.load(f), images_text
+
+
+def test_prepare_is_json_native_and_reads_only_the_measures_table(monkeypatch):
+    """The prepare cache (run_transform._prepared_cached, 2026-11-16) hands on json.loads of a stored record, and
+    its key holds only the line, the sidecar, the rules, the measures table and the code: prepare's output must
+    survive a JSON round trip unchanged (no tuple, no non-string key), and prepare must open no other file."""
+    import builtins
+    import io
+    import transform
+    from transform_shops import without_paid, without_paid_addons
+    fixtures = {name: _fixture(name) for name in NAMES}
+    transform._measures_table.cache_clear()
+    opened = []
+    real_open = builtins.open
+
+    def spy(file, *a, **k):
+        opened.append(os.path.basename(str(file)))
+        return real_open(file, *a, **k)
+    monkeypatch.setattr(builtins, "open", spy)
+    monkeypatch.setattr(io, "open", spy)
+    for rules in (RULES, without_paid(RULES), without_paid_addons(RULES)):
+        for name, (line, images_text) in fixtures.items():
+            got = prepare(line, rules, "50002788-fixtures", 1, images_text)
+            assert json.loads(json.dumps(got, ensure_ascii=False)) == got, name
+    monkeypatch.undo()
+    assert "category_measures.json" in opened and set(opened) <= {"category_measures.json"}, (
+        f"prepare opened {sorted(set(opened))}: add it to run_transform's cache signature")
