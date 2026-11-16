@@ -10,8 +10,37 @@ same commit; test_shop_types.py checks the golden prepared products against Prep
     PreparedProduct   transform.prepare's `product` (+ description_images_text, set by run_transform.image_texts)
     LedgerRow         a line of <shop>/publish/published.jsonl (publish.py; store_diff --adopt)
     JobMeta           scripts/output/jobs/<job id>/job.json (job.py new / scroll; refresh and scroll update it)
+    CollectedLine     a line of <shop>/collected/<run>/products.jsonl, transform.prepare's input (collect_product)
 """
 from typing import Any, NotRequired, Required, TypedDict
+
+import naver_types as T
+from naver_variants import VariantChoice
+
+
+# ==== the collected line (collect_product.collect, keep_run; <shop>/collected/<run>/products.jsonl) ===========
+
+class CollectedListing(T.ListingRow):
+    """CollectedLine.listing: the job's listing row (listing.jsonl): the API's row, its source key (not in an
+    example_99 line: fixtures/collected), and the depth of the deeper read that found it (job.py refresh)."""
+    key: NotRequired[str]
+    refresh: NotRequired[int]
+
+
+class CollectedLine(TypedDict):
+    """{"key": source key, **collect_product.collect's data}: the API's answers as they came (naver_types), and what
+    the collector made of them. Checked 2026-11-16 over the 2,444 lines of the shop's kept runs and the 65
+    fixtures/collected lines."""
+    key: str                           # <namespace>:naver:<channel no>:<product id>
+    listing: CollectedListing
+    details: T.ProductDetails
+    specs: T.ProductSpecs
+    variants: VariantChoice | None     # naver_variants.choose_variants; None when the page gave no options
+    package: list[dict[str, Any]]      # package_measures.variant_measures: [{variant_id, fields, product_size}]
+    reviews: dict[str, Any]            # T.SelectedReviews (+ picked: review_pick's summary), a video attachment as
+                                       # its poster photo (source video_poster, naver_images.posters_as_photos)
+    photos: dict[str, Any]             # naver_images.download_gallery: {store, total, files, failed, stopped, ...}
+    review_media: dict[str, Any]       # naver_images.download_review_media: {store, files, failed, stopped, ...}
 
 
 # ==== the prepared product (transform.prepare, prepared/products.jsonl) ===============================

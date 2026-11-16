@@ -51,8 +51,8 @@ import binascii
 import html as html_lib
 import json
 import re
-from collections.abc import Iterable, Iterator
-from typing import TypedDict
+from collections.abc import Iterable, Iterator, Mapping
+from typing import Any, TypedDict
 from urllib.parse import unquote, urlparse
 
 POLICY_MAX_LINES = 12          # a policy block with no component end: the longest seen ran 9 lines (11256507948)
@@ -174,7 +174,7 @@ def decode_escapes(text: str | None) -> str | None:
     return _ESCAPE_RE.sub(one, text)
 
 
-def decode_line(line: dict) -> dict:
+def decode_line(line: Mapping[str, Any]) -> dict[str, Any]:
     """A collected line whose names and description text are decoded (decode_escapes); the rest shared as it is."""
     details, listing = line.get("details"), line.get("listing")
     out = dict(line)

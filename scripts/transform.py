@@ -61,8 +61,8 @@ from naver_variants import choose_variants
 from package_measures import current_defaults, load_table, on_scale
 from spec_variants import check_specs, title_one_variant
 from review_clean import clean_reviews
-from shop_types import (PreparedAddon, PreparedImage, PreparedPersonalization, PreparedProduct, PreparedRating,
-                        PreparedSource, PreparedVariant)
+from shop_types import (CollectedLine, PreparedAddon, PreparedImage, PreparedPersonalization, PreparedProduct,
+                        PreparedRating, PreparedSource, PreparedVariant)
 from transform_shops import CategoryRules, ShopRules
 
 FORMAT = "prepared/5"           # 2 (2026-11-07): package fields may carry how / quote / flags / compared;
@@ -656,10 +656,10 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
         f"{n} {c}/{len(ov['variants'])}" for n, c in sorted(taken.items()))}]
 
 
-def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int,
+def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
             images_text: dict[str, Any] | None = None) -> Prepared:
-    key = line["key"]
-    line = decode_line(line)                       # "u2013" written out by the seller: the character (2026-11-15)
+    key = collected["key"]
+    line = decode_line(collected)                  # "u2013" written out by the seller: the character (2026-11-15)
     details, specs = line.get("details"), line.get("specs")
     held: list[dict[str, str]] = []
     notes: list[dict[str, str]] = []

@@ -145,7 +145,7 @@ def _records(shop: str, shops_root: str, latest: dict[str, tuple], variant: Any,
             reprs.setdefault(id(rules), repr(rules))]).encode()).hexdigest()
         path = os.path.join(folder, f"{pid}.json")
 
-        def fresh(line: dict = line, rules: Any = rules, run_id: str = run_id, n: int = n,
+        def fresh(line: Any = line, rules: Any = rules, run_id: str = run_id, n: int = n,   # a CollectedLine
                   side_raw: bytes | None = side_raw) -> str:
             def sidecar() -> Any:
                 return None if side_raw is None else json.loads(side_raw)

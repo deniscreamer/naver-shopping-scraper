@@ -1252,8 +1252,11 @@ stay plain JSON and nothing is checked when one is read. Each mirrors the one pl
 store_diff's adopted; `key`, `status`, `at` always there).
 `JobMeta` is a job's `job.json` (job.py `new` / `scroll`; only `shop`, `category`, `shops_root` are in every job, the
 rest is read with `.get()`: older jobs lack newer keys, `mode` is only in scroll jobs).
+`CollectedLine` is a line of `collected/<run>/products.jsonl`, `prepare`'s input: the API's answers as
+`naver_types` names them (details, specs, the listing row) and what collect_product made of them.
 `test_shop_types.py` checks the golden prepared products against them (no unknown key, no wrong type, every key of
-a built product). A change of a record's shape updates its type in the same commit.
+a built product) and their collected lines against `CollectedLine`. A change of a record's shape updates its type
+in the same commit.
 
 ## Running
 
