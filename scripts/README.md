@@ -71,6 +71,7 @@ outside fetches: AGENTS.md rule 3.
 | `product_page.py` | Saves a product page as the owner's Chrome renders it (`/products/page`): page.html, the page's own answer, meta; for developing parsers and checking collected data |
 | `captcha_watch.py` | Reports a Naver captcha the adapter waits on (reads `/captcha`): one line per new captcha / solved / timed out; independent of any collection |
 | `keep_run.py` | Keeps a collection run (example_99 output) per shop, byte for byte, read-only (see Transform) |
+| `shop_files.py`, `test_shop_files.py` | The shop's shared files written and read safely: `write_atomic` (a rewritten file through `<path>.<pid>.part` and a rename), `append_line` (one write of whole lines, a line end first when the file lacks one), `read_jsonl` (a bad line is `LedgerError` naming `<path>:<n>`; a cut-off last line of an append-only file ignored with `tail_ok`), `shop_lock` (see Shared files) |
 | `check.sh` | Offline, before a commit: the server suite, the scripts suite and mypy, each in its own process; prints the three results, non-zero exit when any fails |
 | `state_backup.py`, `test_state_backup.py` | Offline, by hand: the backup of `scripts/output`, `server/output` and `research/` (plans outside git, with the state) into tar + zstd archives by phase outside the repository (state, photos, description images in parts, server pages, old runs), `MANIFEST.json` with sha256, `RESTORE.md`; `--dry-run`, `--verify`, `--restore` into an empty folder. Reads the sources only (see Backup) |
 | `transform.py`, `transform_shops.py`, `run_transform.py` | The transform: kept runs -> prepared products per shop (shared rules, per-shop rules as data, the CLI) |
@@ -1254,6 +1255,22 @@ split, zstd-3), `04-server-pages` (`server/output/`, zstd-19), `05-archive` (the
 Text compresses 17-37x at level 19; images are compressed already, so level 3. Left out by name: `.env*`, secret-like
 names, `*.part`, `*.lock`, `prepare_cache/`, `__pycache__/`, `.venv/`. A folder inside the repository is refused, an
 existing archive is never overwritten, a running job is warned about (back up between jobs).
+
+## Shared files (`shop_files.py`, 2026-11-16)
+
+A shop's files are read and written by a job, by hand commands and by the lenses, often at once. New code that
+writes them goes through `shop_files.py`:
+
+- **A rewritten file** (`prepared/products.jsonl`, `translation/translated.jsonl`, `placement/placements.jsonl`, a
+  job's `job.json` / `now.json`): `write_atomic(path, text)`: `<path>.<pid>.part` beside it, then a rename. A killed
+  process leaves the old file whole (and maybe a `.part`, never read: delete it by hand); a reader never sees half.
+- **An append-only file** (the ledger, `files.jsonl`, a job's `events.jsonl` / `listing.jsonl` / `screened.jsonl`,
+  `texts.jsonl`, `descriptions.jsonl`, the journal, `lens/reviewed.jsonl`): `append_line(path, *lines)`: one write of
+  whole lines; when the file does not end with a line end (a cut-off row, a hand edit), one comes first, so the new
+  row stays readable and the fragment becomes a bad line the reader names.
+- **Reading**: `read_jsonl(path, tail_ok=False)`: a line that is not JSON is `LedgerError: <path>:<n>: ...` (fix the
+  line by hand; a rebuilt file: the command that rebuilds it). Only an append-only file (`tail_ok`) may end in a
+  cut-off line: ignored with one warning.
 
 ## Conventions
 
