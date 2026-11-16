@@ -1242,6 +1242,15 @@ mypy is clean on scripts/ (0 errors since 2026-11-15): a new error is a finding 
 When a server answer changes shape: re-capture its fixture (one call with the client, json.dump, lists trimmed to
 5 items, long strings to 300 chars), update the type, and commit both with the server change.
 
+## Record types (`shop_types.py`)
+
+TypedDicts of what the pipeline itself writes (2026-11-16), for mypy and the reader: annotations only, the files
+stay plain JSON and nothing is checked when one is read. Each mirrors the one place that builds the record:
+`PreparedProduct` (+ `PreparedVariant`, `PreparedOption`, `PreparedPricing`, `PreparedImage`, ...) is
+`transform.Prepared.product` as `prepare` builds it, plus `description_images_text` from run_transform.
+`test_shop_types.py` checks the golden prepared products against them (no unknown key, no wrong type, every key of
+a built product). A change of a record's shape updates its type in the same commit.
+
 ## Running
 
 Start the server first, in another terminal:

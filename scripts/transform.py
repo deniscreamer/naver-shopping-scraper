@@ -50,7 +50,7 @@ import json
 import os
 import re
 from collections import Counter
-from typing import Any, TypedDict
+from typing import Any, Mapping, TypedDict
 
 import attributes
 import brand_fallback
@@ -61,6 +61,8 @@ from naver_variants import choose_variants
 from package_measures import current_defaults, load_table, on_scale
 from spec_variants import check_specs, title_one_variant
 from review_clean import clean_reviews
+from shop_types import (PreparedAddon, PreparedImage, PreparedPersonalization, PreparedProduct, PreparedRating,
+                        PreparedSource, PreparedVariant)
 from transform_shops import CategoryRules, ShopRules
 
 FORMAT = "prepared/5"           # 2 (2026-11-07): package fields may carry how / quote / flags / compared;
@@ -156,8 +158,8 @@ class Prepared(TypedDict):
     status: str                    # ready | held
     held: list[dict[str, str]]
     notes: list[dict[str, str]]
-    source: dict[str, Any]
-    product: dict[str, Any]
+    source: PreparedSource
+    product: PreparedProduct          # shop_types.py
     texts: list[dict[str, str]]
 
 
@@ -411,7 +413,7 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
 
 def _variant(rules: ShopRules, key: str, product_id: str, tuple_ko: list[str], krw: int | None,
              naver_id: str | None, available: bool | None, package: Any, shown: list[str] | None = None,
-             today: bool | None = None):
+             today: bool | None = None) -> PreparedVariant:
     source_id = "observed:" + json.dumps(tuple_ko, ensure_ascii=False, separators=(",", ":")) if tuple_ko \
         else str(product_id)
     return {"source_id": source_id, "naver_variant_id": naver_id, "options_ko": shown or [],
@@ -459,16 +461,16 @@ def _relative(run: str, product_id: str, file: str | None) -> str | None:
     return f"collected/{run}/images/{product_id}/{os.path.basename(file)}" if file else None
 
 
-def images(line: dict[str, Any], run: str) -> list[dict[str, Any]]:
+def images(line: dict[str, Any], run: str) -> list[PreparedImage]:
     pid = line["details"]["id"]
     return [{"position": f["position"], "file": _relative(run, pid, f["file"]), "sha256": f["sha256"],
              "width": f["width"], "height": f["height"]} for f in (line.get("photos") or {}).get("files") or []]
 
 
-def reviews(line: dict[str, Any], run: str) -> tuple[dict[str, Any] | None, list[dict[str, Any]]]:
+def reviews(line: dict[str, Any], run: str) -> tuple[PreparedRating | None, list[dict[str, Any]]]:
     picked = line.get("reviews") or {}
     summary = picked.get("summary") or line["details"].get("reviews") or {}
-    rating = ({"value": summary.get("average_score"), "count": summary.get("count")}
+    rating: PreparedRating | None = ({"value": summary.get("average_score"), "count": summary.get("count")}
               if summary.get("count") else None)
     pid = line["details"]["id"]
     media: dict[str, dict[str, Any]] = {}
@@ -489,7 +491,7 @@ def reviews(line: dict[str, Any], run: str) -> tuple[dict[str, Any] | None, list
     return rating, out
 
 
-def personalization(specs: dict[str, Any]) -> list[dict[str, Any]]:
+def personalization(specs: dict[str, Any]) -> list[PreparedPersonalization]:
     return [{"label_ko": re.sub(r"\s+", " ", _LABEL_DECOR_RE.sub("", t.get("label") or t.get("name") or "")).strip(),
              "required": bool(t.get("required")),
              "max_length": t.get("max_length"), "placeholder_ko": t.get("placeholder")}
@@ -501,10 +503,10 @@ def _plain(text: str) -> str:
     return _NUMBERING_RE.sub("", _ADDON_CODE_RE.sub("", _tidy(text))).strip() or _tidy(text)
 
 
-def addons(specs: dict[str, Any], krw_per_usd: int, paid: bool = False) -> list[dict[str, Any]]:
+def addons(specs: dict[str, Any], krw_per_usd: int, paid: bool = False) -> list[PreparedAddon]:
     """Add-ons on sale and in stock: free ones only, paid ones too with the category's `paid_addons`. A group
     named (필수) / (필수선택) must be chosen: `required`, the decoration dropped."""
-    out = []
+    out: list[PreparedAddon] = []
     for s in (specs.get("options") or {}).get("supplements") or []:
         price = s.get("price") or 0
         if _contact_only(s.get("name") or ""):     # "특주주문시 연락주세요(02-...)": a note, not an add-on
@@ -517,8 +519,8 @@ def addons(specs: dict[str, Any], krw_per_usd: int, paid: bool = False) -> list[
     return out
 
 
-def _texts(product: dict[str, Any]) -> list[dict[str, str]]:
-    found: list[tuple[str, str]] = [("title", product["title_ko"]), ("brand", product["brand_ko"])]
+def _texts(product: Mapping[str, Any]) -> list[dict[str, str]]:
+    found: list[tuple[str, str | None]] = [("title", product["title_ko"]), ("brand", product["brand_ko"])]
     for o in product["options"]:
         found += [("option_name", o["name_ko"])] + [("option_value", v) for v in o["values_ko"]]
     for kind, rows in (("fact", product["facts"]), ("spec", product["specs"])):
@@ -661,7 +663,7 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int,
     details, specs = line.get("details"), line.get("specs")
     held: list[dict[str, str]] = []
     notes: list[dict[str, str]] = []
-    source = {"run": run, "line": line_no, "link": (details or {}).get("link"),
+    source: PreparedSource = {"run": run, "line": line_no, "link": (details or {}).get("link"),
               "channel_no": key.split(":")[2], "product_id": key.split(":")[3],
               "category_id": ((specs or {}).get("category") or {}).get("id")}
     if not details or not specs or specs.get("options") is None:
@@ -800,7 +802,7 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int,
         notes.append({"code": "purchase_agency", "detail": "구매대행 in the specs / notice / delivery policy"})
     if not (line.get("photos") or {}).get("is_complete", True):
         notes.append({"code": "photos_incomplete", "detail": f"{len(imgs)} of {line['photos'].get('total')}"})
-    product = {
+    product: PreparedProduct = {
         "title_ko": details["name"], "brand_ko": brand.get("value"), "brand_source": brand.get("source"),
         "attributes": stated, "options": ov["options"], "facts": ov["facts"], "variants": ov["variants"],
         "pricing": {"base_krw": details["pricing"].get("discounted_price"),
