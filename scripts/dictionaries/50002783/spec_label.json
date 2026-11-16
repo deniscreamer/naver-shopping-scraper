@@ -1,0 +1,25 @@
+{
+ "format": "dictionary/1",
+ "kind": "spec_label",
+ "backed_up": "2026-11-16T03:13:45Z",
+ "entries": {
+  "라이각": "Lie Angle",
+  "모델명": "Model Name",
+  "바운스각": "Bounce Angle",
+  "브랜드": "Brand",
+  "사용방향": "Handedness",
+  "샤프트 강도": "Shaft Flex",
+  "샤프트소재": "Shaft Material",
+  "성별": "Gender",
+  "수입원": "Importer",
+  "스윙웨이트": "Swing Weight",
+  "원산지": "Country of Origin",
+  "웨지 로프트각": "Wedge Loft",
+  "제조공법": "Manufacturing Method",
+  "제조사": "Manufacturer",
+  "출시": "Release",
+  "클럽길이": "Club Length",
+  "킥포인트": "Kick Point",
+  "헤드형태": "Head Shape"
+ }
+}
