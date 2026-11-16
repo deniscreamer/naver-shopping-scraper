@@ -87,18 +87,19 @@ Live check (server running, uses the network): `curl http://localhost:8000/healt
 | API contract | [server/docs/ENDPOINTS.md](server/docs/ENDPOINTS.md) | Adding or changing endpoints, writing scripts |
 | Known issues | [server/docs/KNOWN_ISSUES.md](server/docs/KNOWN_ISSUES.md) | Before "fixing" anything that looks wrong, before upgrading deps |
 | Operations | [server/README.md](server/README.md) | Running on macOS, env vars, tests |
-| Consumer scripts, Shopify roadmap | [scripts/README.md](scripts/README.md) | Writing scripts against the API, starting Shopify work |
-| Price rule, delivery tariff, repricing | [scripts/README.md](scripts/README.md), "The price" | Changing `shop_pricing.py`, the coefficients or the tariff; a new tariff capture; repricing products in the store |
-| Translation (model, dictionaries) | [scripts/TRANSLATION.md](scripts/TRANSLATION.md) | Running or changing `translate.py`, the dictionaries, the prompts, review cleaning; a new shop or category; the quality check |
+| Consumer scripts: map, collecting | [scripts/README.md](scripts/README.md) (boundary, scripts table, topic map), [scripts/COLLECT.md](scripts/COLLECT.md), skill `collect-api` | Writing scripts against the API: details, options, photos, listing screen, reviews, examples, answer types, harvests |
+| Price, publication, Shopify | [scripts/PRICE.md](scripts/PRICE.md), [scripts/PUBLISH.md](scripts/PUBLISH.md), skills `price`, `publish` | `shop_pricing.py`, the coefficients, the tariff, repricing; `publish.py` (withdraw / restore / activate), the Shopify roadmap |
+| Translation, description | [scripts/TRANSLATION.md](scripts/TRANSLATION.md), [scripts/DESCRIBE.md](scripts/DESCRIBE.md), skills `translation`, `describe` | Running or changing `translate.py`, the dictionaries, the prompts, review cleaning, the quality check; `describe.py` and its model |
 | New category or shop (tenant) | [scripts/ONBOARDING.md](scripts/ONBOARDING.md), skill `new-category-or-shop` | Adding a Naver category or a shop: what to fill where, what fails silently |
-| Shop sections (placement) | [scripts/PLACEMENT.md](scripts/PLACEMENT.md) | A new shop or Naver category, one Naver category holding several shop sections |
-| Running a job (agent) | [scripts/JOB_AGENT.md](scripts/JOB_AGENT.md) | Running or watching `scripts/job.py` (one product per iteration); which mode when (`new` + `run` or `scroll`) |
-| Seller data patterns | [scripts/SELLER_DATA.md](scripts/SELLER_DATA.md) | Before changing parsers or the transform: what pages and sellers write |
+| Shop sections (placement) | [scripts/PLACEMENT.md](scripts/PLACEMENT.md), skill `placement` | A new shop or Naver category, one Naver category holding several shop sections |
+| Running a job (agent) | [scripts/JOB_AGENT.md](scripts/JOB_AGENT.md), skill `run-a-job` | Running or watching `scripts/job.py` (one product per iteration); which mode when (`new` + `run` or `scroll`) |
+| Transform, package size, seller data | [scripts/TRANSFORM.md](scripts/TRANSFORM.md), skill `transform`; [scripts/SELLER_DATA.md](scripts/SELLER_DATA.md) | The transform, the five package fields, the OCR stage, record types; before changing parsers or the transform: what pages and sellers write |
 | Products by eye (lenses) | [scripts/LENSES.md](scripts/LENSES.md), skill `visual-review` | After a run, before withdrawing duplicates, many held products, a price / brand / placement / dedupe rule change |
 | Security | [SECURITY.md](SECURITY.md) | Reporting vulnerabilities |
-| Releases | [CHANGELOG.md](CHANGELOG.md), `VERSION`, `scripts/state_backup.py` | Cutting a release, what changed; a backup after each release |
+| Releases, running the scripts, backup | [CHANGELOG.md](CHANGELOG.md), `VERSION`; [scripts/OPERATIONS.md](scripts/OPERATIONS.md), skill `operations` | Cutting a release, what changed; a backup after each release (`state_backup.py`); commands, checks, shared files, conventions |
 | Extension transport (beta) | [server/docs/EXTENSION.md](server/docs/EXTENSION.md), [extension/README.md](extension/README.md) | search.shopping listing, anything touching extension/ or ext_*.py |
 | Archived Docker setup | [archive/docker/README.md](archive/docker/README.md) | Only if Linux deployment comes back |
 
 `CLAUDE.md` and `server/CLAUDE.md` contain only `@AGENTS.md`: they load the AGENTS.md next to them and add nothing.
 If two docs disagree, DEVELOPMENT_RULES.md wins; fix the other doc in the same commit.
+Each scripts/ topic doc has a skill (`.claude/skills/<name>/SKILL.md`): read the skill first, it links its doc and the related ones.

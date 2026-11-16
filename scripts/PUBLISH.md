@@ -24,7 +24,7 @@ managed metafield the product no longer has is deleted (`shopify_payload.MANAGED
 `--dry-run` writes the payload to `publish/payloads/` and sends nothing. `shopify_payload.VERSION` is in the
 digest: a change of what the builder makes sends every product again. So is the shop's price rule
 (`shop_pricing.Policy.describe()`: every number and the tariff's version): a new rule or tariff sends every
-product again too, so `reprice.py` shows the change first (see The price).
+product again too, so `reprice.py` shows the change first (see PRICE.md, The price).
 
 The owner's rules (`shopify_payload.py`):
 - **Title, vendor**: the translation's (the title prompt makes the store name: brand first, no shop, distributor or
@@ -35,7 +35,7 @@ The owner's rules (`shopify_payload.py`):
   shop's (not the capitals one when the shop has both; a run remembers each new vendor for its next products); the
   title spells the brand as the vendor; a title without its brand gets it in front (not the tenant's name). Handle from the title (ASCII, the brand in front; a taken handle
   gets `-2`, `-3`; an update keeps the shop's handle, `--rehandle` sets the new one with a redirect).
-- **Price**: per variant from `shop_pricing.Policy.quote` (see The price, below). In a shop with the delivery
+- **Price**: per variant from `shop_pricing.Policy.quote` (see PRICE.md, The price). In a shop with the delivery
   rule (fairwardgolf, the owner 2026-11-11) the price holds the purchase, the duty, the delivery and the margin,
   and Shopify's cost per item is the purchase with ShopNShip's commission (the duty is not in it); elsewhere cost = price =
   the Naver KRW at 1 000 KRW = 1 USD rounded UP to a whole dollar. A variant that cannot be priced (no box, a box
@@ -126,8 +126,8 @@ calls) against 4.0 s a file one by one (5 calls a file).
 ## Shopify roadmap
 
 This is a design note, older than the publication above. The code so far: the read-only check of what a store already has (`shopify_catalog.py`),
-the transform to prepared products (see Transform) and the placement into the shop's sections (`placement.py`, see
-Placement) and the translation (`translate.py`, see Translation: `translation/translated.jsonl`, English by text
+the transform to prepared products (see TRANSFORM.md, Transform) and the placement into the shop's sections (`placement.py`, see
+PLACEMENT.md, Placement) and the translation (`translate.py`, see TRANSLATION.md, Translation: `translation/translated.jsonl`, English by text
 id); publication joins them (`publish.py`, see Publication).
 
 The pipeline: collection (example_99) -> kept runs (`keep_run.py`) -> prepared products (`run_transform.py`:
@@ -135,7 +135,7 @@ prices in USD, options, SKUs, attributes, spec rows, text fields, free add-ons, 
 translations by text id -> placement (`placement.py`: the shop's sections, tags, product type) -> publication. Settled in the transform: the currency rule, the variant cap (over it: the
 first combinations, every pair of values, `variants_capped`), the photos (re-uploaded WebP files, not Naver's CDN).
 Settled since: publication through the Admin GraphQL `productSet` (see Publication); delivery, duty and margin
-inside the price of a shop with free delivery (see The price, the owner 2026-11-11).
+inside the price of a shop with free delivery (see PRICE.md, The price, the owner 2026-11-11).
 
 Credentials: a store app's client id + secret file per store, its path in env as `shop_stores.py` names it
 (`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`), next to the store's domain, shop id, API version and namespace there; tokens are

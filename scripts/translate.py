@@ -181,7 +181,7 @@ class AnthropicModel:
             extra: dict[str, Any] = {}
             if self.thinking == "off":
                 # Claude Sonnet 5.5 turns thinking off with between_tools (disabled is a 400 there); thinking tokens
-                # are output tokens, and a translation gains little from them (measured 2026-11-08, see README)
+                # are output tokens, and a translation gains little from them (measured 2026-11-08, see TRANSLATION.md)
                 extra["thinking"] = {"type": "between_tools"}
             if self.name in SERVER_FALLBACK_MODELS:
                 extra.update(betas=["server-side-fallback-2026-07-01"], fallbacks="default")

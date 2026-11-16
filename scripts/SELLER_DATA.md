@@ -3,7 +3,7 @@
 Patterns seen on 139 golf sets of category 50002788 checked against their product pages (2026-11-05..07: 40 + 19 +
 40 new products, the first 40 checked twice). Each line: what the page or the seller writes, an example product id,
 where it is handled. Rules: [server/docs/ENDPOINTS.md](../server/docs/ENDPOINTS.md) (collection),
-[README.md](README.md) "Transform" (the transform). Regression fixtures of these products:
+[TRANSFORM.md](TRANSFORM.md) "Transform" (the transform). Regression fixtures of these products:
 `server/naver_shopping/fixtures/pages/` and `fixtures/collected|prepared/` (server DEVELOPMENT_RULES R-TEST-5).
 
 ## Collection (server)
@@ -223,7 +223,7 @@ Description cleanup -> `description_clean.py`, `shared_images.py`
   (2026-11-07).
 
 ## Open questions (defaults taken, not yet confirmed by the owner)
-- Settled 2026-11-11: delivery, duty and margin are inside the price of a shop with the rule (scripts/README.md,
+- Settled 2026-11-11: delivery, duty and margin are inside the price of a shop with the rule (scripts/PRICE.md,
   "The price").
 - Shared store images: half of a store's listing groups, at the start or end of a description only; does a banner
   linking to the store's own page (PGM-배너.jpg) count as a link banner (today: yes)?

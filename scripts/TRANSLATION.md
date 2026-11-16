@@ -4,7 +4,7 @@ How the translation stage works, the owner's decisions behind it, how to add a s
 how to check the quality, and what is still open. The code: `translate.py` (the stage), `translation_dicts.py`
 (dictionaries), `translation_rules.py` (unit templates), `review_clean.py` (reviews, in the transform),
 `translate_keys.py` (the keys), `translate_eval.py` (the quality check), `prompts/` (system prompt and briefs). Its
-place in the pipeline and the details of each part: [README.md](README.md) "Translation" and "Transform".
+place in the pipeline and the details of each part: "Translation" at the end of this doc and [TRANSFORM.md](TRANSFORM.md) "Transform".
 
 ## Decisions (the owner, 2026-11-08)
 
@@ -12,7 +12,7 @@ place in the pipeline and the details of each part: [README.md](README.md) "Tran
 |---|---|
 | A model API translates. Not the session's agent. | `translate.py` |
 | Claude Sonnet 5.5 at effort low; OpenAI as the fallback; models changed in `.env`, not in code | `settings()`, `.env.example` |
-| The description and the images' text are not translated: `describe.py` reads them in Korean and writes the English description (the owner, 2026-11-10; README "The product's description") | `transform._texts` (not in `texts`), `describe.packet` |
+| The description and the images' text are not translated: `describe.py` reads them in Korean and writes the English description (the owner, 2026-11-10; [DESCRIBE.md](DESCRIBE.md) "The product's description") | `transform._texts` (not in `texts`), `describe.packet` |
 | One dictionary per kind of text, in JSON, growing during runs out of git; backups in git, updated by hand; `status` says when a backup is due | `translation_dicts.py`, `scripts/dictionaries/` |
 | Brands are the shop's (`dictionaries/brand.json`); every other kind is a Naver category's own (`dictionaries/<category id>/<kind>.json`): a new category starts empty and its entries never reach another (2026-11-11: 50002787's entries had changed four products of 50002788) | `translation_dicts.SHARED`, `Dictionaries.scope` |
 | The brand is looked up first; one spelling per brand in the whole shop | brand dictionary, `vendors` in the request |

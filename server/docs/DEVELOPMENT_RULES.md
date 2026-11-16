@@ -171,7 +171,7 @@ Requests are typed on the server, answers on the consumer side.
   `listing`, ...), not raw `get(path)`, and guard every `X | None` field before using it. `get` / `pages` stay for
   routes without a method yet, and for `smoke_endpoints.py`, which checks routes as routes.
 - **R-TYPE-5 (SHOULD)** New or changed scripts pass `mypy --ignore-missing-imports --check-untyped-defs` (command in
-  `scripts/README.md`). Type hints are welcome in `scripts/` (unlike the server, R-STYLE-3).
+  `scripts/COLLECT.md`, "Response types"). Type hints are welcome in `scripts/` (unlike the server, R-STYLE-3).
 - **R-TYPE-6 (MUST)** Fixtures hold real answers, trimmed (lists to 5 items, strings to 300 chars), with no cookies,
   tokens, session ids or personal data. Re-capture them from a running server, never hand-edit their shape.
 

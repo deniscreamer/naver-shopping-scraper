@@ -234,7 +234,7 @@ same
 
 - `images`: the product's gallery in the page's order, main photo first, as links to the original files (no
   `?type=` rendition; the largest real size of every rendition, measured 2026-11-01). Downloading them:
-  `scripts/naver_images.py`, scripts/README.md "Product photos".
+  `scripts/naver_images.py`, scripts/COLLECT.md "Product photos".
 `description.text`: the description's readable text (`pdp.description_text`), one line per block element. Since
 2026-11-06, one empty line separates two top-level SmartEditor ONE components (`.se-component`), so a seller's notice
 block can be ended where its component ends. Bodies without components (editor NONE) have no empty lines. Left out:

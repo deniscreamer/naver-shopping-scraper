@@ -8,7 +8,7 @@ every fixture against them, strictly (missing / unknown keys fail).
 
 `X | None` where the server may send null; NotRequired where it may omit the
 key. Contract in words: server/docs/ENDPOINTS.md. When a response changes,
-refresh its fixture (scripts/README.md) and the type in the same commit.
+refresh its fixture (scripts/COLLECT.md, "Response types") and the type in the same commit.
 """
 from typing import Any, Literal, NotRequired, TypedDict
 

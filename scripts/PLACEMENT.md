@@ -2,8 +2,8 @@
 
 How a shop's sections are chosen at the last stage before Shopify, and how to turn the same mechanism on for
 another shop (tenant) or another category. The code: `attributes.py` (what the seller states), `placement_rules.py`
-(each shop's profile, data), `placement.py` (the stage). Its place in the pipeline: [README.md](README.md)
-"Placement".
+(each shop's profile, data), `placement.py` (the stage). Its place in the pipeline: "Placement" at the end of
+this doc.
 
 ## The idea
 

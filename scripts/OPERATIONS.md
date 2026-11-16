@@ -77,7 +77,7 @@ writes them goes through `shop_files.py`:
 
 - **Typed calls.** Use the typed client methods (`api.search()`, `api.product_details()`, `api.listing()`, ...) and
   the shapes in `naver_types.py`; guard every `X | None` field (`product["reviews"]`, `product["variants"]`, names).
-  Run mypy on what you write (see Response types). Rules: server/docs/DEVELOPMENT_RULES.md R-TYPE.
+  Run mypy on what you write (see COLLECT.md, Response types). Rules: server/docs/DEVELOPMENT_RULES.md R-TYPE.
 - **Sequential by default.** The server keeps one Chrome per proxy
   (`config.NAVER_SHOPPING_BROWSER_SLOTS = 1`), and box calls serialize on that
   Chrome's lock. Parallel calls just queue up inside the server (cheroot has

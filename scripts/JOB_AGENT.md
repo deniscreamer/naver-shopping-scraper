@@ -45,7 +45,7 @@ time left): a watcher can relay those lines to the owner. `run` again after any 
 lost, done products are not read again.
 
 Prepare per product (2026-11-16): the transform still prepares the whole shop after each product, through the
-prepare cache (README.md, Transform): about 5 s at 2,444 products; the `prepared` event carries `cache_miss`, 1 a
+prepare cache (TRANSFORM.md, Transform): about 5 s at 2,444 products; the `prepared` event carries `cache_miss`, 1 a
 product. The whole shop once (about 30 s) after any edit of `scripts/*.py` or the rules: expected. A running job
 keeps the code it loaded: restart it (stop, `run` again) after a code change. `cache_miss` equal to the whole shop
 on every product: another process with other code prepares the same shop; stop it, restart the job. When prepared
@@ -68,7 +68,7 @@ decides, and every other product takes only what costs nothing extra (2026-11-11
 turned the paid variants of 101 published full sets on).
 
 Publication per product (`new --publish`): the done line ends with `published <handle> $<price> <admin link>`
-(`$<min>-<max>` when the variants differ; the shop's price rule: [README.md](README.md) "The price"). A product
+(`$<min>-<max>` when the variants differ; the shop's price rule: [PRICE.md](PRICE.md) "The price"). A product
 Shopify refused (userErrors, a file not ready) is `failed` (stage publish) and tried again; one placement could not
 place, or held, is `not_taken` with the reason (tell the owner); a refused token or a missing scope stops the run.
 A product that cannot be priced (a variant without a box, a box over the tariff's 50 kg) is not sent:
@@ -234,7 +234,7 @@ owner's word only: withdraw the wrong ones (`publish.py <shop> --withdraw <key> 
 | `STOP: 3 products in a row failed unexpectedly (the last: ...)` or `STOP: unexpected: ...` | stopped | a code defect: report it with the traceback; `run` again only after it is fixed |
 | `stop: <shop> is busy: <holder> ...` (`run`, `scroll`, `refresh`, or a hand command) | refused at once, nothing written, exit 2 | another runner holds the shop: `job.py status`; wait for it or stop it, never start a second |
 | `STOP ... LedgerError: <path>:<n>: not a JSON line` (a broken line in the ledger, a job's listing, prepared / translated / placements) | stopped, nothing marked | tell the owner the file and line; a rebuilt file: the command the message names (when no job runs); the ledger or a listing: fixed by hand on the owner's word, then `run` again |
-| `held` codes in status | the product is prepared as held | read the codes ([README.md](README.md) Transform); report |
+| `held` codes in status | the product is prepared as held | read the codes ([TRANSFORM.md](TRANSFORM.md) Transform); report |
 | `review due: N drafts ...` (draft first) | goes on; the drafts are not live | the skill `visual-review` with the printed commands; report; activate only on the owner's word (Draft first) |
 
 A captcha is answered by the owner in Chrome while the read waits; a login page is reset by the server
@@ -316,12 +316,12 @@ The owner's decisions (2026-11-07): one product per iteration (fewer reads in a 
 publication goes straight to ACTIVE, right after translation; no age limit between collection and publication.
 Changed 2026-11-16 (draft first): a category not marked reviewed (`transform_shops.CategoryRules.reviewed`) is
 published DRAFT, for the agent's lens review and the owner's activation (JOB_AGENT.md).
-Changed 2026-11-08: translation is a model API stage (`translate.py`, see Translation), not the session's agent; the
+Changed 2026-11-08: translation is a model API stage (`translate.py`, see TRANSLATION.md, Translation), not the session's agent; the
 description and the images' text are not translated (`describe.py` writes the description from them, 2026-11-10). Not built on purpose (the owner,
 2026-11-08): OCR in parallel with the next collect, an incremental prepare (run_transform.run(shop) rebuilds the
 shop after each product: 1-2 s at 143 products, the pace did not drift over 100), a guard memory across runs.
 2026-11-16: at 2,444 products that rebuild took 30-63 s a product; built since as a per-product prepare cache (see
-Transform, The prepare cache): about 5 s, the steps across products still run over the whole shop.
+TRANSFORM.md, Transform, The prepare cache): about 5 s, the steps across products still run over the whole shop.
 
 Duplicates (the owner, 2026-11-15): `new` / `scroll` `--dedupe log|on` compares each collected product with the
 shop's published and withdrawn ones and the job's own (`dedupe.py`: the same title words, another store, confirmed by

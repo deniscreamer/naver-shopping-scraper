@@ -38,7 +38,7 @@ code. The table's `version` is 2 since the block. A missing field comes from
 approved it and when, the table's version), as `source: category_default`; a seller's value is never overwritten.
 No row for the category: `CategoryDefaultsMissing`, the run stops and asks the operator (values are never made
 up). Every row carries `reliability`; today one level, `estimated_average` (the weakest: an average of estimates,
-not measured); the price rule's coefficient goes by the lowest `confidence` of the box's three sides, not by this (see The price).
+not measured); the price rule's coefficient goes by the lowest `confidence` of the box's three sides, not by this (see PRICE.md, The price).
 50002788 풀세트 is filled (owner, 2026-11-05):
 the median (central) and about the 10th / 90th percentile (low / high) of the naver-harvester's AI estimates on the
 55 fairwardgolf sets in Shopify, sets with and without a bag together (none of their values was seller-stated).
@@ -465,7 +465,7 @@ namespace of the source keys, one shop and one category per run; a product in se
 A run is copied into `<run>.partial` and renamed when complete; only folders with a `manifest.json` are runs.
 
 **Prepared product** (`transform.Prepared`, `format: prepared/5`; 5 since 2026-11-10: package `confidence` is 1-5 (1-3 before) and a field may be `source: composed` with `parts`, `baseline` and `refused`; 4 since 2026-11-08: reviews sanitized; 3 since 2026-11-08: no shop leaves, `product.attributes`
-instead (see Placement); 2 since 2026-11-07: a variant's `package` fields
+instead (see PLACEMENT.md, Placement); 2 since 2026-11-07: a variant's `package` fields
 may carry `how`, `quote`, `flags`, `from` (`description_text`: the quote is typed text, not an image's) and `compared` (the value not kept, see Package weight and size), and `product` has
 `description_images_text` (the images' text flag, see The images' text)): `key`, `shop`, `status` (`ready` / `held`),
 `held` and `notes` (`{code, detail}`), `source` (run, line, link, channel_no, product_id, category_id), `product`
@@ -479,7 +479,7 @@ published, SKUs and prices equal on 201 of 201 variants):
 
 - **Prices**: KRW = the product's price + the variant's `extra_price` (the page's own answer; option names are not
   parsed for money); USD = rounded up to the cent at the shop's rate (kept in the record; Shopify's cost and price
-  are made at publication by the shop's price rule, see The price); no compare-at, not taxable.
+  are made at publication by the shop's price rule, see PRICE.md, The price); no compare-at, not taxable.
 - **Variants**: the category's choice (`transform_shops` `paid_variants`, off by default; on for fairwardgolf
   50002788, owner 2026-11-06), made again from the page's options (`choose_variants`): the line's own choice may
   differ. Left-out paid variants: note `paid_variants_left_out`.
@@ -502,7 +502,7 @@ published, SKUs and prices equal on 201 of 201 variants):
   hidden row (상품번호) is not a fact.
 - **Delivery**: `delivery` from the page (fee as charged, scope international / domestic, customs, lead time);
   notes `shipping_paid` and `overseas_shipping`. In a shop with the price rule the base fee of a PAID or
-  UNIT_QUANTITY_PAID listing goes into the purchase; any other fee type counts as free (see The price). An
+  UNIT_QUANTITY_PAID listing goes into the purchase; any other fee type counts as free (see PRICE.md, The price). An
   `extra_fee_text` that is only the return fee the notice states ("18000" = 반품비용 편도 18000원) is dropped;
   another bare number ("7000" beside a 4,000 area fee) is kept.
 - **Notes for later stages**: `option_name_placeholder` (an axis named 선택 / 선택2 / 옵션 / "옵션+...": name it from
@@ -672,10 +672,10 @@ product of such variants only is held `single_only` (17 one-wedge listings of th
 개별"). A loft written again on a second axis that describes the same club ("Size: 56 Degree" + "Style Name: Black
 56 Degree") counts once; on axes that are club slots (names equal but for a number: 옵션 1 / 옵션 2) each counts
 (two Yamato imports published as sets, 2026-11-15). The shop's
-sections are not decided here (Placement). A shop or a category without rules: `ShopRulesMissing`, the
+sections are not decided here (PLACEMENT.md, Placement). A shop or a category without rules: `ShopRulesMissing`, the
 run stops and asks the operator.
 
-Not here (later stages): the shop's sections, tags and product type (Placement, `placement.py`), English (titles,
+Not here (later stages): the shop's sections, tags and product type (PLACEMENT.md, Placement, `placement.py`), English (titles,
 options, specs, reviews), vendor spelling (every product: the same brand
 is written 캘러웨이 / 캘러웨이골프, PGM / 피지엠, 젝시오 / XXIO; a `brand_fallback` can be checked against its other
 candidates), handle, alt texts, the seller's description prose (images only on the sets checked), publication.
