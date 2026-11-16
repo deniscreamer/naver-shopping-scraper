@@ -5,3 +5,4 @@ onnxruntime                     # rapidocr's engine (CPU)
 anthropic                       # translate.py: Claude API for translation (Sonnet 5.5)
 openai                          # translate.py: the fallback provider for translation
 tenacity                        # job.py: a product tried again with growing waits while the network is down
+zstandard>=0.25                 # state_backup.py: the backup archives (tar + zstd; no zstd CLI or Homebrew on the Mac)
