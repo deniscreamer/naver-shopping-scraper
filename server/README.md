@@ -31,7 +31,7 @@ From the repo root (no `cd` needed: Python puts the script's directory, `server/
 ```
 .venv/bin/python server/run.py                    # http://localhost:8000
 PORT=9000 .venv/bin/python server/run.py
-HOST=0.0.0.0 .venv/bin/python server/run.py      # every interface; default 127.0.0.1 (this machine only)
+API_HOST=0.0.0.0 .venv/bin/python server/run.py      # every interface; default 127.0.0.1 (this machine only)
 NAVER_SHOPPING_PROXY=http://user:pass@host:port .venv/bin/python server/run.py
 ```
 
@@ -73,7 +73,7 @@ Set them in the shell or in the repo-root `.env` (copy [../.env.example](../.env
 | Variable | Read in | Effect |
 |---|---|---|
 | `PORT` | `config.PORT` (import time) | Listen port, default 8000. |
-| `HOST` | `config.HOST` (import time, `config.listen_host`) | Listen address, default `127.0.0.1` (2026-11-15: the routes have no auth and drive a Chrome). `0.0.0.0` = every interface, the old bind. Restart to change. |
+| `API_HOST` | `config.HOST` (import time, `config.listen_host`) | Listen address, default `127.0.0.1` (2026-11-15: the routes have no auth and drive a Chrome). `0.0.0.0` = every interface, the old bind. Restart to change. |
 | `NAVER_SHOPPING_PROXY` | `config.naver_shopping_proxy` (when a per-thread curl session is built, `fetch._session`), `config.naver_shopping_browser_proxy` (when the box mints a Chrome exit, `fetch._EXITS`) | Set before start; restart to change. One proxy URL for both curl and Chrome. Unset = this machine's IP, which Naver normally answers. With it set, Chrome looks up the exit's geo through the proxy (`config.exit_geo`, ip-api.com) and takes its timezone and language from it. Use a sticky proxy. The module constant `config.NAVER_SHOPPING_PROXY` is read but unused. |
 | `PATCHRIGHT_CHANNEL` | `PatchrightDriver._main` | Chrome channel on a host (default `chrome`). Ignored inside a container (`patchright_driver._in_container`), where it is always `chrome`. Empty string opts out of channels (experiments only). |
 | `PATCHRIGHT_EXECUTABLE` | `PatchrightDriver._main`, `patchright_driver.chrome_version` | Browser binary; used for launch only when the channel resolves to empty. |

@@ -293,7 +293,7 @@ what the code is run with today.
 | Variable | Read in | Effect |
 |---|---|---|
 | `PORT` | `config.PORT` (import) | listen port, default 8000 |
-| `HOST` | `config.HOST` (import, `config.listen_host`) | listen address, default `127.0.0.1`; `0.0.0.0` = every interface (before 2026-11-15) |
+| `API_HOST` | `config.HOST` (import, `config.listen_host`) | listen address, default `127.0.0.1`; `0.0.0.0` = every interface (before 2026-11-15) |
 | `NAVER_SHOPPING_PROXY` | `config.naver_shopping_proxy` (when a thread builds its curl session, `fetch._session`), `config.naver_shopping_browser_proxy` (when the box mints or rotates an exit, `fetch._EXITS`) | proxy for curl and Chrome; set before start; also read into `config.NAVER_SHOPPING_PROXY` at import, which nothing uses (K-15) |
 | `PATCHRIGHT_CHANNEL` | `PatchrightDriver._main` | browser channel on a host; ignored in a container (always `"chrome"`, see `patchright_driver._in_container`) |
 | `PATCHRIGHT_EXECUTABLE` | `PatchrightDriver._main` | used only when the channel resolves to `""` |

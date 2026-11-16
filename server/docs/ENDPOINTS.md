@@ -20,7 +20,7 @@ Typed shapes of every answer below: `scripts/naver_types.py` (TypedDicts, checke
   is an alias.
 - `/` and `/health` exist only unprefixed (`routes.health`). `/naver-shopping/health` is a 404.
 - Default base URL: `http://localhost:8000` (`config.PORT`). The server listens on `127.0.0.1` only unless
-  `HOST` is set (`config.HOST`, 2026-11-15); there is no auth.
+  `API_HOST` is set (`config.HOST`, 2026-11-15); there is no auth.
 
 ```
 GET /health  ->  {"status": "ok", "version": "0.6.0", "endpoints": ["/products/details", ..., "/listings", ...],

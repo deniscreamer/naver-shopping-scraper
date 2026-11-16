@@ -57,7 +57,7 @@ def check_local():
     report("OK" if os.path.exists(chrome) else "FAIL", "Google Chrome installed", chrome)
     report("OK" if os.path.exists(ENV_FILE) else "WARN", ".env", ENV_FILE if os.path.exists(ENV_FILE)
            else "missing: defaults in use (cp .env.example .env)")
-    report("OK", "settings", f"PORT={os.environ.get('PORT') or 8000} HOST={os.environ.get('HOST') or '127.0.0.1'} "
+    report("OK", "settings", f"PORT={os.environ.get('PORT') or 8000} API_HOST={os.environ.get('API_HOST') or '127.0.0.1'} "
            f"proxy={masked(os.environ.get('NAVER_SHOPPING_PROXY'))} "
            f"webhook={masked(os.environ.get('NAVER_NOTIFY_WEBHOOK'))} "
            f"captcha_wait={os.environ.get('NAVER_CAPTCHA_WAIT_S') or 600}s")

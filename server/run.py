@@ -2,7 +2,7 @@
 
     python server/run.py            # http://localhost:8000
     PORT=9000 python server/run.py  # another port
-    HOST=0.0.0.0 python server/run.py  # every interface (default 127.0.0.1: this machine only)
+    API_HOST=0.0.0.0 python server/run.py  # every interface (default 127.0.0.1: this machine only)
 
 Then:  curl "http://localhost:8000/products/search?query=raspberry%20pi"
 """
