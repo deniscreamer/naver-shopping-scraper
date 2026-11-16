@@ -17,7 +17,7 @@ files: `scripts/job.py` docstring; the stages' own docs: [README.md](README.md).
   `publish.py` (sending), `describe.py` (with a model), `reprice.py --apply`, `description_images.py` and
   `store_diff.py --adopt`, are refused at once: `stop: <shop> is busy: job.py run <id> (pid N, since T): wait for it
   (job.py status) or stop it`. Free meanwhile: `status`, `new`, the lenses, `review_grid.py`, `dedupe.py --report`,
-  `store_diff.py`, `publish.py --dry-run` / `--withdraw` / `--restore`. The lock goes with the process (kill -9
+  `store_diff.py`, `publish.py --dry-run` / `--withdraw` / `--restore`, `run_transform.py --verify`. The lock goes with the process (kill -9
   too): no stale lock to clear.
 - For translation: `scripts/translate_keys.py check` shows the keys (SETUP.md); `run` stops at once without them.
 

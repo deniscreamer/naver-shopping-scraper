@@ -267,6 +267,8 @@ Changed 2026-11-08: translation is a model API stage (`translate.py`, see Transl
 description and the images' text are not translated (`describe.py` writes the description from them, 2026-11-10). Not built on purpose (the owner,
 2026-11-08): OCR in parallel with the next collect, an incremental prepare (run_transform.run(shop) rebuilds the
 shop after each product: 1-2 s at 143 products, the pace did not drift over 100), a guard memory across runs.
+2026-11-16: at 2,444 products that rebuild took 30-63 s a product; built since as a per-product prepare cache (see
+Transform, The prepare cache): about 5 s, the steps across products still run over the whole shop.
 
 Duplicates (the owner, 2026-11-15): `new` / `scroll` `--dedupe log|on` compares each collected product with the
 shop's published and withdrawn ones and the job's own (`dedupe.py`: the same title words, another store, confirmed by
@@ -868,13 +870,32 @@ network. Korean stays Korean; each prepared product lists the Korean texts the t
 ```sh
 .venv/bin/python scripts/keep_run.py scripts/output/full-50002788    # keep the run before the next collection
 .venv/bin/python scripts/run_transform.py fairwardgolf               # every kept run -> prepared/
+.venv/bin/python scripts/run_transform.py fairwardgolf --full        # the same, every product prepared afresh
+.venv/bin/python scripts/run_transform.py fairwardgolf --verify      # each cache record vs prepare afresh
 ```
 
 ```
 scripts/output/shops/<shop>/collected/<category>-<UTC time>/   products.jsonl, images/, manifest.json (read-only)
 scripts/output/shops/<shop>/prepared/products.jsonl            one prepared product per line, rebuilt each run
 scripts/output/shops/<shop>/prepared/report.txt                ready / held counts, held products and why
+scripts/output/shops/<shop>/prepare_cache/<product id>.json    the prepare cache (below): derived, not backed up
 ```
+
+**The prepare cache** (2026-11-16): `run_transform.py` and `job.py` keep each product's `prepare()` output and its
+images' text read (`image_read`: off / not_read / the blocks) in `prepare_cache/<product id>.json` (line 1 the
+signature, then the record) and use it while the signature holds; `run(..., cache=False)`, the default of the
+function (tests, example_15), and `--full` do not touch it. The signature: the bytes of every non-test
+`scripts/*.py` (taken when `run_transform` is imported: a process keeps the code it loaded), the Python version, the
+base rules and the measures table as loaded (per call), and per product the shop, run id and line number, the bytes
+of the collected line and of the images' sidecar (read once for the hash and the record), and the rules variant of
+its paid choice. `prepare()` reads no other file (`test_prepared_golden.py` pins it). Never from the cache: the
+choice of the newest line, the paid choices, the store-wide banners, the `.ko` files and the images' text flag
+(shared blocks, `en.json`), the brand fallback, the agency hold and the report: the same bytes as a full build. A
+cut-off or broken record is prepared afresh and written again. Any edit of `scripts/*.py` prepares the whole shop
+once (about 35 s at 2,444). `--verify` computes each record that the next run would use afresh and compares:
+`identical`, exit 0; a record that differs (an input missing from the signature) is named with its first differing
+field, exit 1; it writes nothing and runs while a job holds the shop. Records of products no longer chosen stay
+(about 70 MB at 2,444); deleting the folder only costs one full prepare.
 
 example_99 overwrites its `products.jsonl`: a run not kept before the next collection is lost. The shop is the
 namespace of the source keys, one shop and one category per run; a product in several runs comes from the newest.
@@ -1279,8 +1300,9 @@ writes them goes through `shop_files.py`:
 - **The shop's lock**: a command that rewrites a shop's shared files or sends its products takes
   `<shops_root>/.<shop>.lock` (`fcntl.flock`) in its `main()` for its whole life and refuses at once, never waits,
   when another process holds it: `<tool>: stop: <shop> is busy: <holder>: wait for it (job.py status) or stop it`,
-  exit 2. Taken by `job.py run` / `scroll` (before a new job's folder) / `refresh`, `run_transform.py`,
-  `translate.py` (also `--offline`), `placement.py`, `publish.py` when it sends, `describe.py` with a model,
+  exit 2. Taken by `job.py run` / `scroll` (before a new job's folder) / `refresh`, `run_transform.py` (not
+  `--verify`), `translate.py` (also `--offline`), `placement.py`, `publish.py` when it sends, `describe.py` with a
+  model,
   `reprice.py --apply`, `description_images.py`, `store_diff.py --adopt`. Not by the library functions (`run`,
   `publish_one`): a job calls them in its own process under its own lock. Free: `job.py status` / `new`, the lenses,
   reports, `store_diff.py`, `publish.py --dry-run` / `--withdraw` / `--restore`. The kernel frees it when the

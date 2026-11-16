@@ -23,8 +23,10 @@ file (test_prepared_golden pins it). Never from the cache: the choice of the new
 store-wide banners, the .ko files and the flag (shared blocks, en.json), the brand fallback, the agency hold, the
 report.
 
-    .venv/bin/python scripts/run_transform.py fairwardgolf            # every kept run
+    .venv/bin/python scripts/run_transform.py fairwardgolf            # every kept run (through the cache)
     .venv/bin/python scripts/run_transform.py fairwardgolf 50002788-20261105T193000Z
+    .venv/bin/python scripts/run_transform.py fairwardgolf --full     # every product prepared afresh, no cache
+    .venv/bin/python scripts/run_transform.py fairwardgolf --verify   # each record vs a fresh prepare; writes nothing
 """
 import argparse
 import hashlib
@@ -105,22 +107,32 @@ def _read_record(path: str, sig: str) -> dict | None:
     return record if isinstance(record, dict) and "prepared" in record and "image_read" in record else None
 
 
-def _prepared_cached(shop: str, shops_root: str, latest: dict[str, tuple], variant: Any, base: Any, base_sig: str
-                     ) -> tuple[list[Any], dict[str, Any], dict[str, int]]:
-    """prepare() and image_read() of each latest line through its record in <shop>/prepare_cache/
-    -> (prepared, {key: image read}, {hit, miss}).
-    The signature: base_sig (code, base rules, measures table) + shop, run id, line number, the line's bytes, the
-    sidecar's bytes and repr() of the rules variant the product gets (its paid choice); image_read takes the base
-    rules (in base_sig). The sidecar is read once, for the hash and for both (each its own json.loads). A miss writes the record (write_atomic); a hit and a miss both hand on json.loads
-    of the stored text, so a warm and a cold run give the run-level steps the same objects."""
+def _setup(shop: str, shops_root: str, choices: dict[str, str] | None) -> tuple[Any, Any]:
+    """-> (the shop's base rules, product id -> the rules variant of its paid choice)."""
+    choices = paid_choices(shop, shops_root) if choices is None else choices
+    rules = rules_for(shop)
+    by_choice = {PAID: rules, VARIANTS: without_paid_addons(rules)}
+    free = without_paid(rules)
+    return rules, lambda pid: by_choice.get(choices.get(pid, ""), free)
+
+
+def _base_sig(rules: Any) -> str:
+    """The signature's part of one run() call: the code (taken at import), the base rules and the measures table as
+    this process loaded it (transform._measures_table, not the file on disk)."""
+    return hashlib.sha256("\0".join([_CODE_SIG, repr(rules), json.dumps(
+        transform._measures_table(), ensure_ascii=False, sort_keys=True)]).encode()).hexdigest()
+
+
+def _records(shop: str, shops_root: str, latest: dict[str, tuple], variant: Any, base: Any) -> Any:
+    """For each latest line: (key, record path, signature, the stored record or None, a function computing the
+    record's text afresh). The signature: _base_sig + shop, run id, line number, the line's bytes, the sidecar's
+    bytes and repr() of the rules variant the product gets (its paid choice); image_read takes the base rules. The
+    sidecar is read once, for the hash and for the record (each part its own json.loads)."""
+    base_sig = _base_sig(base)
     folder = os.path.join(shops_root, shop, CACHE)
-    os.makedirs(folder, exist_ok=True)
     reprs: dict[int, str] = {}
-    out: list[Any] = []
-    reads: dict[str, Any] = {}
-    count = {"hit": 0, "miss": 0}
-    for run_id, n, line, line_sha in latest.values():
-        pid = line["key"].split(":")[3]
+    for key, (run_id, n, line, line_sha) in latest.items():
+        pid = key.split(":")[3]
         rules = variant(pid)
         try:
             with open(os.path.join(shops_root, shop, "description_images", f"{pid}.json"), "rb") as f:
@@ -132,21 +144,73 @@ def _prepared_cached(shop: str, shops_root: str, latest: dict[str, tuple], varia
             "absent" if side_raw is None else hashlib.sha256(side_raw).hexdigest(),
             reprs.setdefault(id(rules), repr(rules))]).encode()).hexdigest()
         path = os.path.join(folder, f"{pid}.json")
-        record = _read_record(path, sig)
-        if record is None:
+
+        def fresh(line: dict = line, rules: Any = rules, run_id: str = run_id, n: int = n,
+                  side_raw: bytes | None = side_raw) -> str:
             def sidecar() -> Any:
                 return None if side_raw is None else json.loads(side_raw)
-            text = json.dumps({"prepared": prepare(line, rules, run_id, n, sidecar()),
+            return json.dumps({"prepared": prepare(line, rules, run_id, n, sidecar()),
                                "image_read": image_read(line, base, sidecar())},
                               ensure_ascii=False)                       # no sort_keys: .ko.json keeps this order
+        yield key, path, sig, _read_record(path, sig), fresh
+
+
+def _prepared_cached(shop: str, shops_root: str, latest: dict[str, tuple], variant: Any, base: Any
+                     ) -> tuple[list[Any], dict[str, Any], dict[str, int]]:
+    """prepare() and image_read() of each latest line through its record in <shop>/prepare_cache/ (_records)
+    -> (prepared, {key: image read}, {hit, miss}). A miss writes the record (write_atomic); a hit and a miss both
+    hand on json.loads of the stored text, so a warm and a cold run give the run-level steps the same objects."""
+    os.makedirs(os.path.join(shops_root, shop, CACHE), exist_ok=True)
+    out: list[Any] = []
+    reads: dict[str, Any] = {}
+    count = {"hit": 0, "miss": 0}
+    for key, path, sig, record, fresh in _records(shop, shops_root, latest, variant, base):
+        if record is None:
+            text = fresh()
             write_atomic(path, f"{sig}\n{text}\n")
             record = json.loads(text)
             count["miss"] += 1
         else:
             count["hit"] += 1
         out.append(record["prepared"])
-        reads[line["key"]] = record["image_read"]
+        reads[key] = record["image_read"]
     return out, reads, count
+
+
+def _first_diff(a: Any, b: Any, at: str = "") -> str:
+    """Where two JSON values first differ: a dotted path ("(key order)" when only the order differs)."""
+    if isinstance(a, dict) and isinstance(b, dict):
+        for k in list(a) + [k for k in b if k not in a]:
+            if k not in a or k not in b or a[k] != b[k]:
+                return _first_diff(a.get(k), b.get(k), f"{at}.{k}" if at else str(k))
+        return f"{at} (key order)".strip() if list(a) != list(b) else at
+    if isinstance(a, list) and isinstance(b, list) and len(a) == len(b):
+        return next((_first_diff(x, y, f"{at}[{i}]") for i, (x, y) in enumerate(zip(a, b)) if x != y), at)
+    return at
+
+
+def verify(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
+           choices: dict[str, str] | None = None) -> tuple[int, list[str]]:
+    """Each cache record the next cached run would use, against prepare() and image_read() computed afresh (an input
+    missing from the signature shows here). Writes nothing. -> (0 all identical / 1 a record differs, lines)."""
+    rules, variant = _setup(shop, shops_root, choices)
+    latest = _latest(shop, runs, shops_root, True)
+    same, absent, differ = 0, 0, []
+    for key, _, _, record, fresh in _records(shop, shops_root, latest, variant, rules):
+        if record is None:
+            absent += 1
+            continue
+        text = fresh()
+        if json.dumps(record, ensure_ascii=False) == text:
+            same += 1
+        else:
+            differ.append(f"  differs {key}: {_first_diff(record, json.loads(text)) or 'key order'}")
+    lines = [f"verify {shop}: {len(latest)} products: {same} records identical, {len(differ)} differ, {absent} "
+             f"without a current record (prepared afresh at the next run)"] + differ[:20]
+    if len(differ) > 20:
+        lines.append(f"  ... and {len(differ) - 20} more")
+    lines.append("differs: a cache record is stale (an input missing from its signature)" if differ else "identical")
+    return (1 if differ else 0), lines
 
 
 def _write_if_changed(path: str, text: str) -> bool:
@@ -307,20 +371,14 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
     paid_choices(): the jobs' files), every other one with what costs nothing extra (the owner, 2026-11-09).
     cache: each product's prepare through its record in <shop>/prepare_cache/ (_prepared_cached; job.py and the
     CLI); result["cache"] = {hit, miss}. The steps across products below always run over the whole shop."""
-    choices = paid_choices(shop, shops_root) if choices is None else choices
-    rules = rules_for(shop)
-    by_choice = {PAID: rules, VARIANTS: without_paid_addons(rules)}
-    free = without_paid(rules)
+    rules, variant = _setup(shop, shops_root, choices)
     chosen = runs or kept_runs(shop, shops_root)
     latest = _latest(shop, runs, shops_root, cache)
     counts = None
-    if cache:                           # per call: the base rules and the measures table as this process loaded it
-        base_sig = hashlib.sha256("\0".join([_CODE_SIG, repr(rules), json.dumps(
-            transform._measures_table(), ensure_ascii=False, sort_keys=True)]).encode()).hexdigest()
-        prepared, reads, counts = _prepared_cached(shop, shops_root, latest, lambda pid: by_choice.get(
-            choices.get(pid, ""), free), rules, base_sig)
+    if cache:
+        prepared, reads, counts = _prepared_cached(shop, shops_root, latest, variant, rules)
     else:
-        prepared = [prepare(line, by_choice.get(choices.get(line["key"].split(":")[3], ""), free), run_id, n,
+        prepared = [prepare(line, variant(line["key"].split(":")[3]), run_id, n,
                             load_sidecar(shop, line["key"].split(":")[3], shops_root))
                     for run_id, n, line, _ in latest.values()]
         reads = {key: image_read(line, rules, load_sidecar(shop, key.split(":")[3], shops_root))
@@ -376,16 +434,33 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Prepare a shop's kept collection runs for translation.")
     parser.add_argument("shop", help="shop id, e.g. fairwardgolf")
     parser.add_argument("runs", nargs="*", help="kept run ids (default: every kept run)")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--full", action="store_true", help="prepare every product afresh, no cache record read or "
+                                                          "written")
+    mode.add_argument("--verify", action="store_true", help="compare each cache record with prepare computed "
+                                                            "afresh; writes nothing; exit 1 on a difference")
     args = parser.parse_args(argv)
+    if args.verify:                                                     # reads only: allowed while a job runs
+        try:
+            code, lines = verify(args.shop, args.runs or None)
+        except ShopRulesMissing as e:
+            print(f"run_transform: stop: {e}")
+            return 2
+        for line in lines:
+            print(f"run_transform: {line}")
+        return code
 
     def body() -> int:
         try:
-            result = run(args.shop, args.runs or None)
+            result = run(args.shop, args.runs or None, cache=not args.full)
         except ShopRulesMissing as e:
             print(f"run_transform: stop: {e}")
             return 2
         for line in result["report"]:
             print(f"run_transform: {line}")
+        if "cache" in result:
+            print(f"run_transform: cache: {result['cache']['hit']} records used, {result['cache']['miss']} "
+                  f"prepared afresh ({CACHE}/)")
         print(f"run_transform: -> {result['out_dir']}")
         return 0
     return locked(SHOPS_ROOT, args.shop, "run_transform.py", body, "run_transform")   # not while a job runs

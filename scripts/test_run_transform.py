@@ -331,3 +331,29 @@ def test_a_broken_record_is_a_miss_and_is_written_again(tmp_path):
     assert _cached_vs_full(shops)[1] == {"hit": len(ls) - 4, "miss": 4}
     assert _cached_vs_full(shops)[1] == {"hit": len(ls), "miss": 0}
     assert not [n for n in os.listdir(folder) if n.endswith(".part")]
+
+
+def test_verify_finds_a_record_that_differs_from_a_fresh_prepare(tmp_path):
+    ls = collected()[:6]
+    shops = _cached_shop(tmp_path, ls)
+    assert run_transform.verify("fairwardgolf", None, shops, {}) == (0, [
+        "verify fairwardgolf: 6 products: 0 records identical, 0 differ, 6 without a current record (prepared afresh "
+        "at the next run)", "identical"])
+    _cached_vs_full(shops)
+    code, lines = run_transform.verify("fairwardgolf", None, shops, {})
+    assert code == 0 and lines[0].startswith("verify fairwardgolf: 6 products: 6 records identical, 0 differ, 0 ")
+    folder = os.path.join(shops, "fairwardgolf", "prepare_cache")
+    before = {n: open(os.path.join(folder, n), "rb").read() for n in os.listdir(folder)}
+    pid = ls[2]["key"].split(":")[3]
+    path = os.path.join(folder, pid + ".json")
+    with open(path, encoding="utf-8") as f:
+        sig, body = f.read().split("\n", 1)
+    record = json.loads(body)
+    record["prepared"]["product"]["title_ko"] += " (stale)"             # the same signature, another output
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(sig + "\n" + json.dumps(record, ensure_ascii=False) + "\n")
+    code, lines = run_transform.verify("fairwardgolf", None, shops, {})
+    assert code == 1 and lines[1] == f"  differs {ls[2]['key']}: prepared.product.title_ko"
+    assert run_transform.verify("fairwardgolf", None, shops, {})[0] == 1   # verify wrote nothing
+    assert {n for n in os.listdir(folder)} == set(before)
+    assert run_transform._first_diff({"a": 1, "b": 2}, {"b": 2, "a": 1}) == "(key order)"
