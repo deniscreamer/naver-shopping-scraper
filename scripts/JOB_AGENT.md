@@ -25,7 +25,7 @@ TRANSLATE_PROVIDERS=anthropic .venv/bin/python -u scripts/job.py scroll --query 
 | 50002788 full sets | `--paid-variants` | `남성 골프채 풀세트`, then `여성 골프채 풀세트`: two jobs, one after the other |
 | 50002787 junior clubs | `--paid` | `주니어 골프채` |
 | 50002670 women's iron sets | `--paid-variants` (its pilot, 2026-11-15) | `여성 골프 아이언 세트` |
-| 50002783 wedge sets | `--paid-variants` (its pilot, 2026-11-15) | `골프 웨지 세트` |
+| 50002783 wedge sets | `--paid-variants` (its pilots, 2026-11-15/16) | `골프 웨지 세트` |
 
 - N -> `--count N`; no N or "до конца" -> no `--count` (to the listing's end); "без публикации" -> no `--publish`
   and no `--describe`. `--dedupe on` is the default: no flag. Another category: read its latest `job.json` under

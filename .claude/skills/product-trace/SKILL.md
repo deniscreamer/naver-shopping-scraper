@@ -22,7 +22,7 @@ Naver product id, the key is `<shop>:naver:<channel>:<id>`.
 4. **Prepared**: `grep '"key": "<key>"' $S/prepared/products.jsonl`: `status`, `held` codes, `notes`,
    `product.brand_source` / `brand_ko`, the variants' prices (codes: TRANSFORM.md "Transform", Held).
 5. **Translated**: `grep '"key": "<key>"' $S/translation/translated.jsonl`: `status`, `problems`, `missing`.
-6. **Placed**: `grep '"key": "<key>"' $S/placement/placements.jsonl`: `status` (placed / unresolved / no_profile),
+6. **Placed**: `grep '"key": "<key>"' $S/placement/placements.jsonl`: `status` (placed / held / unresolved / no_profile),
    `reason`, `evidence`, `leaves`.
 7. **The store**, still read only: `.venv/bin/python scripts/store_diff.py <shop> --only <key>` (what a publication
    would change); the price breakdown: `.venv/bin/python scripts/publish.py <shop> --dry-run --only <key>`, then

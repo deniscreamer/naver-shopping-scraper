@@ -136,8 +136,7 @@ product's key is `fairwardgolf:naver:<channel>:<product id>`: a lens's `index.ts
   `duplicate_of_withdrawn` (unless the reason is `replaced_by:<key>`: then its replacement is compared). Allowed
   while a job runs (no shop lock).
 - **Hold** (the owner, 2026-11-16): a doubtful copy a lens review found is withdrawn with a reason starting `hold:`
-  (`"hold: copy of live <key>, kept as a draft for a separate decision (owner <date>)"`), not as `replaced_by:`, until
-  the owner decides: [OWNER_RULES.md](OWNER_RULES.md) rule 2.
+  (the exact reason is in OWNER_RULES rule 2), not as `replaced_by:`, until the owner decides: [OWNER_RULES.md](OWNER_RULES.md) rule 2.
 - `--restore <key> --reason "..."`: undoes a withdrawal: ACTIVE again (a product created as a draft comes back a
   draft), its last published row back in the ledger with no digest, so the next `--only <key>` sends today's data.
 - `--activate <key>` (repeatable): a draft live, nothing sent again; `not a draft here` for a key that is not a

@@ -15,7 +15,7 @@ server/            the API and its import root (bare imports, NO server/__init__
 scripts/           HTTP-only consumers of the running API (example_01..15, 99: how to call it; naver_types.py: answer types; shop_types.py: record types)
 extension/         Chrome adapter for the owner's browser (search.shopping listing, product page specs, the scroll tab)
 archive/docker/    retired Docker/Linux setup, not maintained
-pyproject.toml     pytest config only (testpaths = pythonpath = ["server"])
+pyproject.toml     pytest and mypy config only
 ```
 
 ## Branches
