@@ -34,9 +34,8 @@ The lenses, what each catches and when: `scripts/LENSES.md`. Read it first; this
    - each finding with its number, key, title and reason;
    - what you could not settle;
    - the sheets' folder.
-7. **Do not touch the store before the owner's word.** That covers withdrawing, restoring, republishing,
-   repricing and activating drafts (`job.py activate --job <id>`, `publish.py <shop> --activate <key>`; give the
-   command, run it after "yes"; withdraw the wrong ones first) and marking a category `reviewed=True`. Shopify writes
-   go only through `publish.py`.
+7. **Do not touch the store before the owner's word** (`scripts/OWNER_RULES.md`). A copy of a live product the
+   rules missed: list both keys, titles and prices and ask; meanwhile hold it (rule 2). The owner's answer
+   (activate, withdraw, hold, versions) is carried out with the skill `store-actions`.
 
 A new lens: `scripts/LENSES.md`, "Adding a lens".

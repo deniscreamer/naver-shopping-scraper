@@ -34,19 +34,11 @@ Google Chrome (a real window opens). Docker/Linux is archived in
 1. Read the nearest AGENTS.md before editing files in a directory.
 2. [server/docs/DEVELOPMENT_RULES.md](server/docs/DEVELOPMENT_RULES.md) is
    MANDATORY for any change under `server/`.
-3. `scripts/` talks to the server over HTTP only and never imports server modules. Other fetches:
-   photo files the API linked, from Naver's image CDN (`scripts/naver_images.py`); the description images the
-   API linked, from any public HTTPS host the seller uses (`scripts/description_images.py`, the owner
-   2026-11-07); a read of our own Shopify store's catalog (`scripts/shopify_catalog.py`, Admin API, read only; `scripts/store_diff.py`
-   reads the products through it); the publication to
-   that store (`scripts/publish.py` through `scripts/shopify_admin.py`, the owner 2026-11-08: the only code that writes
-   to Shopify);
-   the Anthropic API for translation, OpenAI as its fallback (`scripts/translate.py`, the owner 2026-11-08), and
-   for the products' descriptions through the same client (`scripts/describe.py`, the owner 2026-11-10); and
-   ShopNShip's public shipping calculator, by hand only to capture the delivery tariff, never in the price path
-   (`scripts/shopnship_rates.py`, `scripts/shopnship_explore.py`, the owner 2026-11-11); and a job's stop / done
-   notice to the owner's own webhook `NAVER_NOTIFY_WEBHOOK` when set, else a macOS notification (`scripts/notify.py`,
-   a copy of `server/notify.py`, the owner 2026-11-16; `scripts/check_setup.py --notify` posts one test notice there).
+3. `scripts/` talks to the server over HTTP only and never imports server modules. The only other outside calls
+   (each dated at its code): Naver's image CDN (`naver_images.py`), the sellers' description image hosts
+   (`description_images.py`), our Shopify store, read (`shopify_catalog.py`, `store_diff.py`) and written only by
+   `publish.py` through `shopify_admin.py`, the model APIs (`translate.py`, `describe.py`), ShopNShip's calculator
+   by hand, never in the price path (`shopnship_*.py`), the owner's notice webhook (`notify.py`).
 4. Tests never hit the network (in scripts/, `scripts/conftest.py` fails a test that tries).
    API answer types live in `scripts/naver_types.py`; a shape change updates type + fixture + client method (R-TYPE).
 5. Move or rename tracked files with `git mv` so history follows them.
@@ -75,31 +67,32 @@ Live check (server running, uses the network): `curl http://localhost:8000/healt
 (unprefixed only), then one call per transport, e.g. `/products/search?query=...`
 (HTTP) and `/products/details?product=<smartstore product link>` (Chrome).
 
-## Docs
+## Working with products
 
-| Topic | Doc | When to read |
+What waits for the owner (republishing, activating, withdrawing, holding, the Never list):
+[scripts/OWNER_RULES.md](scripts/OWNER_RULES.md). Read the skill first; it names its doc sections.
+
+| Request | Skill | First command |
 |---|---|---|
-| Setup | [SETUP.md](SETUP.md), [.env.example](.env.example) | A new machine; a new requirement (R-SETUP) |
-| Overview | [README.md](README.md) | First visit |
-| Server pointer | [server/AGENTS.md](server/AGENTS.md) | Before editing under server/ |
-| Rules (MANDATORY) | [server/docs/DEVELOPMENT_RULES.md](server/docs/DEVELOPMENT_RULES.md) | Before ANY change under server/ |
-| Architecture, Naver specifics | [server/docs/ARCHITECTURE.md](server/docs/ARCHITECTURE.md) | Structural changes, transports, browser, debugging blocks or 502s |
-| API contract | [server/docs/ENDPOINTS.md](server/docs/ENDPOINTS.md) | Adding or changing endpoints, writing scripts |
-| Known issues | [server/docs/KNOWN_ISSUES.md](server/docs/KNOWN_ISSUES.md) | Before "fixing" anything that looks wrong, before upgrading deps |
-| Operations | [server/README.md](server/README.md) | Running on macOS, env vars, tests |
-| Consumer scripts: map, collecting | [scripts/README.md](scripts/README.md) (boundary, scripts table, topic map), [scripts/COLLECT.md](scripts/COLLECT.md), skill `collect-api` | Writing scripts against the API: details, options, photos, listing screen, reviews, examples, answer types, harvests |
-| Price, publication, Shopify | [scripts/PRICE.md](scripts/PRICE.md), [scripts/PUBLISH.md](scripts/PUBLISH.md), skills `price`, `publish` | `shop_pricing.py`, the coefficients, the tariff, repricing; `publish.py` (withdraw / restore / activate), the Shopify roadmap |
-| Translation, description | [scripts/TRANSLATION.md](scripts/TRANSLATION.md), [scripts/DESCRIBE.md](scripts/DESCRIBE.md), skills `translation`, `describe` | Running or changing `translate.py`, the dictionaries, the prompts, review cleaning, the quality check; `describe.py` and its model |
-| New category or shop (tenant) | [scripts/ONBOARDING.md](scripts/ONBOARDING.md), skill `new-category-or-shop` | Adding a Naver category or a shop: what to fill where, what fails silently |
-| Shop sections (placement) | [scripts/PLACEMENT.md](scripts/PLACEMENT.md), skill `placement` | A new shop or Naver category, one Naver category holding several shop sections |
-| Running a job (agent) | [scripts/JOB_AGENT.md](scripts/JOB_AGENT.md), skill `run-a-job` | Running or watching `scripts/job.py` (one product per iteration); which mode when (`new` + `run` or `scroll`) |
-| Transform, package size, seller data | [scripts/TRANSFORM.md](scripts/TRANSFORM.md), skill `transform`; [scripts/SELLER_DATA.md](scripts/SELLER_DATA.md) | The transform, the five package fields, the OCR stage, record types; before changing parsers or the transform: what pages and sellers write |
-| Products by eye (lenses) | [scripts/LENSES.md](scripts/LENSES.md), skill `visual-review` | After a run, before withdrawing duplicates, many held products, a price / brand / placement / dedupe rule change |
-| Security | [SECURITY.md](SECURITY.md) | Reporting vulnerabilities |
-| Releases, running the scripts, backup | `VERSION`, skill `release`; [scripts/OPERATIONS.md](scripts/OPERATIONS.md), skill `operations` | Cutting a release (no CHANGELOG entries since 0.18.0, the owner 2026-11-14); a backup after each release (`state_backup.py`); commands, checks, shared files, conventions |
-| Extension transport | [server/docs/EXTENSION.md](server/docs/EXTENSION.md), [extension/README.md](extension/README.md) | search.shopping listing, product page specs, the scroll tab; anything touching extension/ or ext_*.py |
-| Archived Docker setup | [archive/docker/README.md](archive/docker/README.md) | Only if Linux deployment comes back |
+| Start / watch a scroll ("Запусти scroll") | `run-a-job` | `curl -s localhost:8000/health`; `scripts/job.py status` |
+| Review drafts, a section, duplicates | `visual-review` | `scripts/lens.py <lens> <shop> [scope]` |
+| Activate, withdraw, hold, restore | `store-actions` | `scripts/job.py activate --job <id> --dry-run` |
+| Why is a product missing / held / odd | `product-trace` | `grep <id> scripts/output/shops/<shop>/publish/published.jsonl` |
+| Fix a product's brand, title, price, section | `fix-a-product` | `scripts/store_diff.py <shop> --only <key>` |
+| Reprice | `store-actions`, `price` | `scripts/reprice.py <shop>` (a table, sends nothing) |
+| Back up the state | `store-actions`, `operations` | `scripts/state_backup.py --dry-run` |
+| A new category or shop | `new-category-or-shop` | [scripts/ONBOARDING.md](scripts/ONBOARDING.md) |
+
+## Changing code
+
+| Topic | Doc, skill |
+|---|---|
+| Setup, a new requirement (R-SETUP) | [SETUP.md](SETUP.md), [.env.example](.env.example) |
+| server/ (rules MANDATORY, read first) | [server/AGENTS.md](server/AGENTS.md), [DEVELOPMENT_RULES.md](server/docs/DEVELOPMENT_RULES.md), [ARCHITECTURE.md](server/docs/ARCHITECTURE.md), [ENDPOINTS.md](server/docs/ENDPOINTS.md), [KNOWN_ISSUES.md](server/docs/KNOWN_ISSUES.md), [EXTENSION.md](server/docs/EXTENSION.md) |
+| scripts/ stages: collect, job, transform, translation, description, placement, price, publication | [scripts/README.md](scripts/README.md) (the docs map: one doc and one skill per stage), [SELLER_DATA.md](scripts/SELLER_DATA.md) |
+| Running the scripts, check.sh, shared files, conventions | [scripts/OPERATIONS.md](scripts/OPERATIONS.md), skill `operations` |
+| A release (no CHANGELOG entries since 0.18.0, the owner 2026-11-14) | `VERSION`, skill `release` |
+| Overview, security, extension, archived Docker | [README.md](README.md), [SECURITY.md](SECURITY.md), [extension/README.md](extension/README.md), [archive/docker/](archive/docker/README.md) |
 
 `CLAUDE.md` and `server/CLAUDE.md` contain only `@AGENTS.md`: they load the AGENTS.md next to them and add nothing.
 If two docs disagree, DEVELOPMENT_RULES.md wins; fix the other doc in the same commit.
-Each scripts/ topic doc has a skill (`.claude/skills/<name>/SKILL.md`): read the skill first, it links its doc and the related ones.

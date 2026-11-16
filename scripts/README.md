@@ -11,7 +11,18 @@ outside fetches: AGENTS.md rule 3.
 
 ## Docs
 
-The scripts' topics, each in its own doc, each with a skill (`.claude/skills/<name>/SKILL.md`) to read first:
+Working with the shop's products (the operator's tasks), each a skill (`.claude/skills/<name>/SKILL.md`) to read
+first; what waits for the owner: [OWNER_RULES.md](OWNER_RULES.md).
+
+| Task | Skill | Doc |
+|---|---|---|
+| Start or watch a job, the "Запусти scroll" shorthand | `run-a-job` | [JOB_AGENT.md](JOB_AGENT.md) |
+| Review drafts or a section by eye | `visual-review` | [LENSES.md](LENSES.md) |
+| Why is a product missing, held, a draft, withdrawn, odd | `product-trace` | the shop's files (read only) |
+| Activate, withdraw, hold, restore, reprice, back up | `store-actions` | [PUBLISH.md](PUBLISH.md), [PRICE.md](PRICE.md), [OPERATIONS.md](OPERATIONS.md) |
+| Fix one product's brand, title, price, section, description | `fix-a-product` | the stage's doc below |
+
+The scripts' topics, each in its own doc, each with a skill to read first:
 
 | Doc | Skill | When to read |
 |---|---|---|
@@ -22,8 +33,9 @@ The scripts' topics, each in its own doc, each with a skill (`.claude/skills/<na
 | [PLACEMENT.md](PLACEMENT.md) | `placement` | The shop's sections, the last stage before Shopify (`placement.py`) |
 | [DESCRIBE.md](DESCRIBE.md) | `describe` | The English description (`describe.py`) and its model |
 | [PRICE.md](PRICE.md) | `price` | The price rule, the delivery tariff, repricing (`shop_pricing.py`, `reprice.py`) |
-| [PUBLISH.md](PUBLISH.md) | `publish` | Publication to Shopify (`publish.py`), withdraw / restore / activate, the Shopify roadmap |
+| [PUBLISH.md](PUBLISH.md) | `publish` | Publication to Shopify (`publish.py`), the payload, withdraw / hold / restore / activate, the Shopify roadmap |
 | [OPERATIONS.md](OPERATIONS.md) | `operations` | Running the scripts, tests and checks, the backup, shared files, conventions |
+| (none) | `release` | Cutting a release (developer): VERSION, check.sh, tag, push, the state backup |
 
 Also: [ONBOARDING.md](ONBOARDING.md) (a new category or shop, skill `new-category-or-shop`),
 [LENSES.md](LENSES.md) (visual review, skill `visual-review`), [SELLER_DATA.md](SELLER_DATA.md) (what sellers write).
@@ -102,7 +114,7 @@ Also: [ONBOARDING.md](ONBOARDING.md) (a new category or shop, skill `new-categor
 | `placement.py`, `placement_rules.py` | The last stage before Shopify: prepared products -> the shop's sections (leaf tags, product type, `start_variants`) from the shop's profile (data); unknown / conflict held as `unresolved`. How to add a split: [PLACEMENT.md](PLACEMENT.md) |
 | `test_placement.py`, `test_brand_fallback.py` | Offline tests: the gender attribute and placement (the 50 fixtures, the rules case by case), the brand fallback |
 | `test_transform.py` | Offline tests for the transform on real collected lines (`fixtures/collected_fairwardgolf.jsonl`) |
-| `test_prepared_golden.py`, `collected_fixtures.py` | Regression: collected lines of real products (`fixtures/collected/`, from the server's saved-page fixtures) through the transform must equal `fixtures/prepared/`; `UPDATE_GOLDEN=1` rewrites them after a deliberate change, read the diff. Added only when the owner asks (server DEVELOPMENT_RULES R-TEST-5) |
+| `test_prepared_golden.py`, `collected_fixtures.py` | Regression: collected lines of real products (`fixtures/collected/`, from the server's saved-page fixtures) through the transform must equal `fixtures/prepared/`; `UPDATE_GOLDEN=1` rewrites them after a deliberate change, read the diff. Added when the owner asks, or from products checked in test runs without asking (server DEVELOPMENT_RULES R-TEST-5, the owner 2026-11-06) |
 | `test_measures_fixtures.py` | Regression for the five package fields: 17 real golf sets cut down to what the measures code reads (`fixtures/measures/<product id>.json`: title, 상품정보 rows, variants' option words, add-ons, typed lines, the OCR rows with their confidence, the server path's candidates; sellers' phones, addresses and shop names are "x") through `package_measures.variant_measures` and the transform's hook with the real `category_measures.json`, against the fields each variant must get (value, source, confidence 1-5, how, parts), checked by hand against the product's lines (`checked`; where a fixture's `note` says "approximate" the value pinned is the rule's present approximation, not the page's figure). One test per product, one that the set covers every level and source. `UPDATE_GOLDEN=1` rewrites the expected part: read the diff against the products' lines |
 | `smoke_endpoints.py` | Live smoke: `/health` plus 11 endpoints (all but `/products/specs`, `/products/page` and `/products/reviews/selected`), one at a time. Networked. |
 | `example_search_harvest.py` | Template: search, classify the cards, fetch details, write resumable JSONL |

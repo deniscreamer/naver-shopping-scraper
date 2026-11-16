@@ -5,8 +5,7 @@ description: The translation stage (translate.py) of prepared Korean texts to En
 
 # Translation
 
-Read `scripts/TRANSLATION.md` first; this skill is only the map. Its last section, "Translation", is the stage's
-reference.
+Read `scripts/TRANSLATION.md` first; this skill is only the map.
 
 What the doc covers:
 - the owner's decisions (model, fallback, few tokens, what is not translated: the description is `describe`'s);
@@ -20,7 +19,8 @@ Commands (repo root):
 
 Rules:
 - Models and efforts are `.env` settings, not code; never read `.env*` or the key files.
-- A dictionary change can alter published products: run `store_diff.py <shop>` and ask the owner before republishing.
+- A dictionary change can alter published products: `store_diff.py <shop>`, then `scripts/OWNER_RULES.md` rule 1. One product's
+  title or term: skill `fix-a-product`.
 - Model calls cost money: small runs first.
 
 More: the description skill `describe`; the transform skill `transform`; jobs skill `run-a-job`; a new category

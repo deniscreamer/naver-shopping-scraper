@@ -21,8 +21,9 @@ Commands (repo root, offline unless noted):
 
 Rules:
 - Category defaults and baselines are the owner's values, dated; never invent one (`CategoryDefaultsMissing` stops).
-- A change that alters published products: ask the owner before republishing them (default: future products only).
-- Add fixtures and tests from checked products; a behaviour change updates TRANSFORM.md in the same commit.
+- A change that alters published products: `scripts/OWNER_RULES.md` rule 1.
+- Add fixtures and tests from checked products (no need to ask: R-TEST-5); a behaviour change updates TRANSFORM.md
+  in the same commit.
 
 More: what sellers write `scripts/SELLER_DATA.md`; sections skill `placement`; the price skill `price`; a new
 category skill `new-category-or-shop`.

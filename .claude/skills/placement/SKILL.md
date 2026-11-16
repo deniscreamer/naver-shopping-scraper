@@ -5,8 +5,7 @@ description: Placement of prepared products into the shop's sections (placement.
 
 # Placement
 
-Read `scripts/PLACEMENT.md` first; this skill is only the map. Its last section, "Placement", is the stage's
-reference.
+Read `scripts/PLACEMENT.md` first; this skill is only the map.
 
 What the doc covers:
 - the idea: neutral attributes the seller states, a shop profile (data) that maps them to sections;
@@ -14,12 +13,12 @@ What the doc covers:
 - turning a split on for another shop or category.
 
 Commands (repo root, offline):
-- `.venv/bin/python scripts/placement.py <shop>`, then read `shops/<shop>/placement/report.txt`
+- `.venv/bin/python scripts/placement.py <shop>`, then read `scripts/output/shops/<shop>/placement/report.txt`
 - `.venv/bin/python -m pytest scripts/test_placement.py -q`
 
 Rules:
 - The sections and what to do with an unresolved value are the owner's decision; ask, never invent.
-- A rule change moving published products: check with `store_diff.py <shop>` and ask the owner before republishing.
+- A rule change moving published products: `store_diff.py <shop>`, then `scripts/OWNER_RULES.md` rule 1.
 - New attributes are data (`Attribute`), with tests from real fixtures.
 
 More: the transform skill `transform`; publication skill `publish`; a new category or shop skill

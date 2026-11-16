@@ -45,7 +45,8 @@ The checklist and the reasons are in `scripts/ONBOARDING.md`. Read it first; thi
      `shopify_admin.py`.
 8. **Read what the new category did to the rest of the shop** (ONBOARDING.md "Learned", part D step 6):
    `.venv/bin/python scripts/store_diff.py <shop>` (read only) lists the published products a publication would
-   change, field by field, and those that cannot be built now; every new dictionary entry before the backup. Any such product is the owner's to decide: never republish it unasked.
+   change, field by field, and those that cannot be built now; every new dictionary entry before the dictionaries' backup. Any such product is the owner's to decide
+   (`scripts/OWNER_RULES.md` rule 1).
 9. **Finish.**
    - Update the docs of every rule you changed (no CHANGELOG entry: the owner, 2026-11-14; releases: skill `release`).
    - Correct ONBOARDING.md if the code differed from it (it is the map: keep it true).

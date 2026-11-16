@@ -10,7 +10,8 @@ Read `scripts/PUBLISH.md` first; this skill is only the map.
 What the doc covers:
 - what makes a product publishable (ready, translated, placed) and what one publication sends;
 - draft first for a category not marked reviewed; the ledger `publish/published.jsonl`;
-- the owner's payload rules (title, vendor, price, metafields), withdraw / restore / activate;
+- the owner's payload rules (title, vendor, price, metafields); withdraw, hold, restore, activate (the operator's
+  procedure: skill `store-actions`);
 - the Shopify roadmap and what the naver-harvester published.
 
 Commands (repo root):
@@ -21,7 +22,7 @@ Commands (repo root):
 
 Rules:
 - Shopify writes go only through `publish.py` / `shopify_admin.py` (AGENTS.md rule 3).
-- Publish, withdraw, restore, activate only on the owner's word; never republish published products unasked.
+- Publish, withdraw, hold, restore, activate, republish: `scripts/OWNER_RULES.md`.
 - Never read credential files or `.env*`.
 
 More: price skill `price`; placement skill `placement`; description skill `describe`; review by eye skill

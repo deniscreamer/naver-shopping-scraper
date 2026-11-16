@@ -20,7 +20,8 @@ Commands (repo root):
 
 Rules:
 - Model and effort are `.env` settings (`DESCRIBE_EFFORT`); never read `.env*` or key files.
-- Rewriting descriptions of products already in the store: ask the owner first (default: future products only).
+- Products already in the store (`--published`, `--force` on one): `scripts/OWNER_RULES.md` rule 1. One product's fix: skill
+  `fix-a-product`.
 - Model calls cost money: small runs first.
 
 More: translation skill `translation`; publication skill `publish`; the OCR stage skill `transform`.

@@ -19,7 +19,8 @@ Commands (repo root):
 
 Rules:
 - Coefficients, duty and margin are the owner's values, dated; never invent one.
-- `reprice.py --apply` only on the owner's word; a new rule or tariff resends every product at the next publication.
+- `reprice.py --apply` and any resend: `scripts/OWNER_RULES.md` rule 1 (a new rule or tariff resends every product at the next
+  publication); the repricing procedure: skill `store-actions`.
 - ShopNShip's calculator is never in the price path.
 - `UPDATE_GOLDEN=1` on the pricing fixtures only after a deliberate change: read the diff.
 
