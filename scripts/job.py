@@ -709,18 +709,21 @@ def one(job: Job, ctx: dict, key: str, stage_now: str | None, n: int = 0) -> str
         if r["counts"].get("errors"):
             job.log(key, "failed", stage="images", reason="description_images error sidecar")
     t2 = time.monotonic()
+    result = None
     if stage_now != "prepared":
         job.beat(key=key, n=n, stage="prepare", since=_now())
-        try:
-            run_transform.run(job.shop, None, job.shops_root)     # each product with its own job's paid choices
+        try:                                                    # each product with its own job's paid choices;
+            result = run_transform.run(job.shop, None, job.shops_root, cache=True)   # the prepare cache, 2026-11-16
         except Exception as e:                                   # a transform defect: stop, never loop on it
             raise Stop(f"prepare: {type(e).__name__}: {e}") from None
-    done = {p["key"]: p for p in _prepared(job)}
+    # the product from the run just made, not the 65 MB products.jsonl parsed again (2026-11-16: with the cache
+    # that parse was a visible part of prepare_s); the file only when prepare did not run here
+    done = {p["key"]: p for p in (result["prepared"] if result is not None else _prepared(job))}
     p = done.get(key)
     t3 = time.monotonic()
-    if stage_now != "prepared":
+    if result is not None:                                       # cache_miss: the whole shop once after a code change
         job.log(key, "prepared", status=p and p["status"], held=[h["code"] for h in (p or {}).get("held") or []],
-                images_s=round(t2 - t1), prepare_s=round(t3 - t2))
+                images_s=round(t2 - t1), prepare_s=round(t3 - t2), cache_miss=result["cache"]["miss"])
     what = f"prepared: {p and p['status']}" + (f" {[h['code'] for h in p['held']]}" if p and p["held"] else "")
     times = f"collect {round(t1 - t0)} s, images {round(t2 - t1)} s, prepare {round(t3 - t2)} s"
     if job.final in ("translated", "published") and p:

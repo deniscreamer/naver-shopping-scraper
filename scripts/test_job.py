@@ -919,6 +919,24 @@ def test_a_transform_defect_is_still_a_stop_not_a_failed_product(tmp_path, monke
     assert [e["event"] for e in job.events()] == ["stop"]
 
 
+def test_prepare_goes_through_the_cache_and_the_product_comes_from_the_runs_result(tmp_path, monkeypatch):
+    """2026-11-16, the prepare cache: one() asks run() for the cache, logs its misses, and takes the product from
+    the result (prepared/products.jsonl is not read: here it does not even exist)."""
+    import run_transform
+    job = make_job(tmp_path)
+    calls = []
+
+    def run(shop, runs, shops_root, **k):
+        calls.append(k)
+        return {"prepared": [{"key": KEYS[0], "status": "held", "held": [{"code": "x", "detail": "y"}]}],
+                "cache": {"hit": 2443, "miss": 1}}
+    monkeypatch.setattr(run_transform, "run", run)
+    assert J.one(job, {}, KEYS[0], "images").startswith("prepared: held ['x']")
+    assert calls == [{"cache": True}]
+    event = job.events()[-1]
+    assert event["event"] == "prepared" and event["cache_miss"] == 1 and event["held"] == ["x"]
+
+
 def test_a_broken_ledger_at_the_start_is_a_stop_naming_it_without_a_traceback(tmp_path, monkeypatch, capsys):
     import argparse
     job = make_job(tmp_path)

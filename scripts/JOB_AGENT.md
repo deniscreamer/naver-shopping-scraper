@@ -44,6 +44,15 @@ not the logs. The log has one line when a product starts, one when it is done (w
 time left): a watcher can relay those lines to the owner. `run` again after any stop: nothing is
 lost, done products are not read again.
 
+Prepare per product (2026-11-16): the transform still prepares the whole shop after each product, through the
+prepare cache (README.md, Transform): about 5 s at 2,444 products; the `prepared` event carries `cache_miss`, 1 a
+product. The whole shop once (about 35 s) after any edit of `scripts/*.py` or the rules: expected. A running job
+keeps the code it loaded: restart it (stop, `run` again) after a code change. `cache_miss` equal to the whole shop
+on every product: another process with other code prepares the same shop; stop it, restart the job. When prepared
+output looks stale, after a code change that should not change it, or before a release:
+`run_transform.py <shop> --verify` (reads only, allowed while a job runs) must say `identical`; a difference: tell
+the owner the product and field it names.
+
 Translation per product: each done line ends with `translated (N calls, $cost)`. A product the model could not
 translate is `failed` (stage translate, the problems in the event) and is tried again after the fresh ones; every
 provider down: the product is tried again with growing waits (up to 2 h), then the run stops (`run` again
