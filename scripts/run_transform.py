@@ -161,6 +161,16 @@ def paid_choices(shop: str, shops_root: str = SHOPS_ROOT, jobs_root: str = JOBS_
     return out
 
 
+def brand_by_owner(shop: str, shops_root: str = SHOPS_ROOT) -> dict[str, str]:
+    """{key: brand} the owner set by hand where only the photo names the brand (<shop>/brand_by_owner.json: {"entries":
+    {key: {"brand": ..., "why": ..., "at": ...}}}; none when the file is absent)."""
+    path = os.path.join(shops_root, shop, "brand_by_owner.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return {k: v["brand"] for k, v in json.load(f).get("entries", {}).items() if v.get("brand")}
+
+
 def _known_brands(shops_root: str) -> list[str]:
     """The Korean names of the brand dictionary and its Latin spellings (brand_fallback steps 3b, 3c); none for another
     shops root (a test's)."""
@@ -197,7 +207,8 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
         {k: (((line[2].get("specs") or {}).get("facts") or {}).get("origin") or {}).get("value")
          for k, line in latest.items()},
         _texts,
-        _known_brands(shops_root))
+        _known_brands(shops_root),
+        brand_by_owner(shop, shops_root))
     for p in prepared:                                                  # after the brand: needs the fallback's answer
         cat = rules.categories.get(str(p["source"].get("category_id")))
         if cat and cat.agency_needs_brand and p["status"] == "ready" \

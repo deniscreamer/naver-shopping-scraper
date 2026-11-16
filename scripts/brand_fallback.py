@@ -309,17 +309,23 @@ def _description(value: Any) -> str:
 
 def fill(prepared: list[Any], rows_of: Callable[[str], list[str]],
          origins: dict[str, str | None], texts: Callable[[Any], list[dict[str, str]]],
-         known: list[str] | None = None) -> int:
+         known: list[str] | None = None, by_owner: dict[str, str] | None = None) -> int:
     """Give every product without a brand one (steps 3-7), add the note and the brand to its texts. rows_of(key): the
-    images' OCR rows of the product; origins: {key: 원산지 as the page states it}. -> how many were filled."""
+    images' OCR rows of the product; origins: {key: 원산지 as the page states it}; by_owner: {key: brand} the owner
+    read on the photos (source "owner", before every step; 2026-11-15: ALVO stamped on the heads, no text naming it).
+    -> how many were filled."""
     brands = shop_brands(prepared)
+    by_owner = by_owner or {}
     n = 0
     for p in prepared:
         product = p["product"]
-        if product.get("brand_ko"):
+        if product.get("brand_ko") and p["key"] not in by_owner:
             continue
-        brand, source, others = decide(product.get("title_ko"), origins.get(p["key"]), brands, rows_of(p["key"]),
-                                       known, _description(product.get("description_ko")))
+        if p["key"] in by_owner:
+            brand, source, others = by_owner[p["key"]], "owner", []
+        else:
+            brand, source, others = decide(product.get("title_ko"), origins.get(p["key"]), brands, rows_of(p["key"]),
+                                           known, _description(product.get("description_ko")))
         p["product"]["brand_ko"], p["product"]["brand_source"] = brand, source
         p["notes"] = [x for x in p["notes"] if x["code"] != "brand_fallback"] + [
             {"code": "brand_fallback", "detail": f"{source}: {brand}" + (f"; also {', '.join(others)}" if others else "")}]

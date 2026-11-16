@@ -1063,7 +1063,9 @@ link. The report says how many were dropped. The step is pure: same products in,
   images repeat 5+ times (`images_text_latin`: BEN SAYERS on 13425122164), or 노브랜드 (`none`: 13464713764, an
   unbranded putter; its vendor is the shop's name, Fairward Golf, and since 2026-11-15 a purchase agency's import
   with no brand is no longer held: `agency_needs_brand` off, the owner). These add the note `brand_fallback`
-  (source, other candidates). No brand list is kept by hand.
+  (source, other candidates). No brand list is kept by hand; one product whose brand only its photo shows gets the
+  owner's word in `<shop>/brand_by_owner.json` (`{entries: {key: {brand, why, at}}}`, source `owner`, before every
+  step: ALVO and XINGGM stamped on the heads, 2026-11-15).
   A brand row the maker's own name extends, when the title names the maker too, gives way to the maker (혼마 /
   무쯔미혼마, 7186088743, 2026-11-15; a Korean branch's name never). No firm, dropped from a 브랜드 row and never a
   shop brand: the sport (골프, 골프용품, GOLF, 스포츠: one junior row's "골프" made "Golf" the vendor of 55 products,

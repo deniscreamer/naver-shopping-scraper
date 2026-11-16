@@ -297,8 +297,13 @@ def _placeholders(prepared: dict[str, Any]) -> set[str]:
 
 
 def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, str], str],
-         tenant: str) -> tuple[dict[str, str], dict[str, str], list[dict[str, Any]]]:
-    """-> (English by text id, where each came from, the items the model must translate)."""
+         tenant: str, brands: dict[tuple[str, str], str] | None = None
+         ) -> tuple[dict[str, str], dict[str, str], list[dict[str, Any]]]:
+    """-> (English by text id, where each came from, the items the model must translate). A title the model
+    translated under another brand than the product's now (`brands`: the brand_ko a title row was asked with) is
+    asked again, its old English kept until an answer comes (2026-11-15: Generic -> Bermuda, Edis -> Majek, PRECISE ->
+    XINGGM kept the old brand at the head of the title; a row without a brand, a hand correction, is never asked
+    again)."""
     key = prepared["key"]
     product = prepared.get("product") or {}
     placeholders = _placeholders(prepared)
@@ -320,6 +325,10 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
             hit = dicts.get("brand", ko)                 # a 브랜드 / 제조사 row: the shop's vendor spelling
         if hit is not None:
             en[tid], by[tid] = hit, "product" if own else "dictionary"
+            asked_with = (brands or {}).get((key, tid))
+            if kind == "title" and asked_with is not None and asked_with != (product.get("brand_ko") or ""):
+                pending.append({"id": tid, "kind": kind, "source": sanitize(kind, ko, tenant, category),
+                                "context": f"the brand is now {product.get('brand_ko')}, not {asked_with}"})
             continue
         source = sanitize(kind, ko, tenant, category)
         if not has_hangul(source):
@@ -581,13 +590,14 @@ def _back(model_en: dict[str, str], problems: list[dict[str, Any]],
 
 
 def translate_product(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, str], str],
-                      tenant: str, model: "Model | Chain | None", now: str) -> Outcome:
+                      tenant: str, model: "Model | Chain | None", now: str,
+                      brands: dict[tuple[str, str], str] | None = None) -> Outcome:
     key = prepared["key"]
     record: dict[str, Any] = {"format": FORMAT, "key": key, "en": {}, "by": {}, "problems": [], "provider": None}
     usage: dict[str, dict[str, int]] = {}
     if prepared.get("status") != "ready":
         return Outcome({**record, "status": "held"}, [], usage, 0)
-    en, by, pending = plan(prepared, dicts, store, tenant)
+    en, by, pending = plan(prepared, dicts, store, tenant, brands)
     calls = 0
     problems: list[dict[str, Any]] = []
     model_of: dict[str, str] = {}                     # text id -> the model that translated it
@@ -624,8 +634,13 @@ def translate_product(prepared: dict[str, Any], dicts: Dictionaries, store: dict
             continue
         if t["kind"] in PRODUCT_KINDS or (t["kind"] == "option_name" and t["ko"] in placeholders):
             store[(key, t["id"])] = en[t["id"]]
-            new_texts.append({"key": key, "id": t["id"], "kind": t["kind"], "ko": t["ko"], "en": en[t["id"]],
-                              "by": model_of.get(t["id"]), "at": now})
+            row = {"key": key, "id": t["id"], "kind": t["kind"], "ko": t["ko"], "en": en[t["id"]],
+                   "by": model_of.get(t["id"]), "at": now}
+            if t["kind"] == "title":                  # the brand the title was translated under (plan, brands)
+                row["brand_ko"] = (prepared.get("product") or {}).get("brand_ko") or ""
+                if brands is not None:
+                    brands[(key, t["id"])] = row["brand_ko"]
+            new_texts.append(row)
         else:
             dicts.add(t["kind"], t["ko"], en[t["id"]], (prepared.get("source") or {}).get("category_id"))
     missing = [t["id"] for t in prepared.get("texts") or [] if t["id"] not in en]
@@ -644,6 +659,25 @@ def translate_product(prepared: dict[str, Any], dicts: Dictionaries, store: dict
 
 
 # ---- the shop --------------------------------------------------------------------------------------------------
+
+def _load_brands(path: str) -> dict[tuple[str, str], str]:
+    """(key, title id) -> the brand_ko its last row was translated under; a row without one (older, or a hand
+    correction) drops it: never asked again for its brand."""
+    brands: dict[tuple[str, str], str] = {}
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            for line in f:
+                try:
+                    row = json.loads(line)
+                    if row.get("kind") == "title":
+                        if "brand_ko" in row:
+                            brands[(row["key"], row["id"])] = row["brand_ko"]
+                        else:
+                            brands.pop((row["key"], row["id"]), None)
+                except (ValueError, KeyError, TypeError):
+                    continue
+    return brands
+
 
 def _load_store(path: str) -> dict[tuple[str, str], str]:
     store: dict[tuple[str, str], str] = {}
@@ -680,6 +714,7 @@ def run(shop: str, model: "Model | Chain | None", shops_root: str = SHOPS_ROOT, 
     os.makedirs(out_dir, exist_ok=True)
     texts_path = os.path.join(out_dir, "texts.jsonl")
     store = _load_store(texts_path)
+    brands = _load_brands(texts_path)
     now = time.strftime("%Y-%m-%dT%H:%M:%SZ", clock())
     records: list[dict[str, Any]] = []
     usage: dict[str, dict[str, int]] = {}
@@ -688,7 +723,7 @@ def run(shop: str, model: "Model | Chain | None", shops_root: str = SHOPS_ROOT, 
         use = model
         if (only and p["key"] != only) or (limit is not None and asked >= limit):
             use = None                                   # resolved from what is kept, not sent
-        outcome = translate_product(p, dicts, store, tenant, use, now)
+        outcome = translate_product(p, dicts, store, tenant, use, now, brands)
         if outcome.calls:
             asked += 1
         records.append(outcome.record)

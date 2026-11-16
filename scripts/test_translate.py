@@ -1087,3 +1087,28 @@ def test_one_brand_spelling_whatever_its_dots_and_spaces(tmp_path):
     d = dicts(tmp_path, brand={"US키즈골프": "U.S. Kids Golf"})
     assert d.brand_spelling("U.S.KIDSGOLF") == "U.S. Kids Golf" == d.brand_spelling("us kids golf")
     assert d.brand_spelling("Inparo") == "Inparo"
+
+
+def test_a_title_translated_under_another_brand_is_asked_again(tmp_path):
+    """2026-11-15: three published wedge sets kept the old brand at the head of their titles after the brand was fixed
+    (Generic -> 버뮤다, 이디스 -> Majek, PRECISE -> XINGGM): the title is asked again, the old English kept meanwhile; a
+    hand correction (no brand_ko on its row) is never asked again."""
+    p = small(brand="버뮤다")
+    title = next(t["id"] for t in p["texts"] if t["kind"] == "title")
+    d = dicts(tmp_path, brand={"버뮤다": "Bermuda", "캘러웨이": "Callaway"})
+    store = {(p["key"], title): "Generic Bermuda Wedge Set"}
+    en, by, pending = T.plan(p, d, store, TENANT, {(p["key"], title): "Generic"})
+    assert en[title] == "Generic Bermuda Wedge Set" and [i["id"] for i in pending] == [title]
+    assert "now 버뮤다" in pending[0]["context"]
+    assert not T.plan(p, d, store, TENANT, {(p["key"], title): "버뮤다"})[2]               # the same brand
+    assert not T.plan(p, d, store, TENANT, {})[2]                                       # no brand known: kept
+    off = T.translate_product(p, d, dict(store), TENANT, None, "now", {(p["key"], title): "Generic"})
+    assert off.record["en"][title] == "Generic Bermuda Wedge Set"                       # offline: the old English
+    brands = {(p["key"], title): "Generic"}
+    out = T.translate_product(p, d, dict(store), TENANT, FakeModel(), "now", brands)
+    row = next(r for r in out.new_texts if r["id"] == title)
+    assert row["brand_ko"] == "버뮤다" and brands[(p["key"], title)] == "버뮤다"
+    path = tmp_path / "texts.jsonl"
+    path.write_text(json.dumps({**row}) + "\n" + json.dumps({"key": p["key"], "id": title, "kind": "title",
+                                                             "en": "Bermuda Wedge Set", "by": "review"}) + "\n")
+    assert T._load_brands(str(path)) == {}                                              # the hand row wins

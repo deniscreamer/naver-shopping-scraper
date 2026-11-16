@@ -126,3 +126,23 @@ def test_a_shop_may_still_hold_a_no_brand_agency_import(tmp_path, monkeypatch):
     assert [h["code"] for h in by_id["11674983361"]["held"]] == ["agency_no_brand"]
     assert by_id["5396141262"]["status"] == by_id["5140543074"]["status"] == "ready"
     assert "held fairwardgolf:naver:102563157:11674983361: agency_no_brand" in "\n".join(result["report"])
+
+
+def test_a_brand_the_owner_set_by_hand_comes_first(tmp_path):
+    """2026-11-15, the lens review: ALVO stamped on the heads of 13830321960, no text naming it; XINGGM on 13830322401
+    whose images' PRECISE was a slogan. The owner's file wins over every step, the product's own row too."""
+    import json as _json
+    import brand_fallback
+    from run_transform import brand_by_owner
+    shop = tmp_path / "fairwardgolf"
+    shop.mkdir()
+    assert brand_by_owner("fairwardgolf", str(tmp_path)) == {}
+    (shop / "brand_by_owner.json").write_text(_json.dumps({"entries": {
+        "k1": {"brand": "Alvo Golf", "why": "photo", "at": "2026-11-15"}, "k2": {"brand": "", "why": "none"}}}))
+    owner = brand_by_owner("fairwardgolf", str(tmp_path))
+    assert owner == {"k1": "Alvo Golf"}
+    prepared = [{"key": "k1", "notes": [], "texts": [], "product": {"title_ko": "남성 골프 웨지 세트", "brand_ko": None}},
+                {"key": "k3", "notes": [], "texts": [], "product": {"title_ko": "웨지 세트", "brand_ko": None}}]
+    brand_fallback.fill(prepared, lambda k: [], {}, lambda p: [], [], owner)
+    assert (prepared[0]["product"]["brand_ko"], prepared[0]["product"]["brand_source"]) == ("Alvo Golf", "owner")
+    assert prepared[1]["product"]["brand_source"] == "none"
