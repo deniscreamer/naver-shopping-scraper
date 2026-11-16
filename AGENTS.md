@@ -74,7 +74,7 @@ What waits for the owner (republishing, activating, withdrawing, holding, the Ne
 
 | Request | Skill | First command |
 |---|---|---|
-| Start / watch a scroll ("Запусти scroll") | `run-a-job` | `curl -s localhost:8000/health`; `scripts/job.py status` |
+| Start / watch a scroll ("Запусти scroll"), a job stopped or printed an error | `run-a-job`, `api-error-triage` | `curl -s localhost:8000/health`; `scripts/job.py status` |
 | Review drafts, a section, duplicates | `visual-review` | `scripts/lens.py <lens> <shop> [scope]` |
 | Activate, withdraw, hold, restore | `store-actions` | `scripts/job.py activate --job <id> --dry-run` |
 | Why is a product missing / held / odd | `product-trace` | `grep <id> scripts/output/shops/<shop>/publish/published.jsonl` |

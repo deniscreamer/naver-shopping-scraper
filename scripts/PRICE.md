@@ -38,7 +38,8 @@ surplus   = price - 3 % of it - keep                         a reserve, kept by 
 | Commission, duty rate, coefficients, margin, payment share | `shop_pricing.FAIRWARDGOLF` (the owner's numbers, dated in its `decided`) |
 | Grid, inside, fee | `delivery_tariffs.json` through `delivery_tariff.box_cost` (The tariff, below) |
 
-**Commands** (all read-only, nothing sent, no credentials read):
+**Commands** (nothing sent, no state file changes, no credentials read; the dry run writes its payload to
+`publish/payloads/<id>.json`, `reprice.py` its table to `publish/reprice-<UTC stamp>.tsv`):
 
 ```sh
 grep '<product id>' scripts/output/shops/<shop>/publish/published.jsonl | tail -1   # what the store has

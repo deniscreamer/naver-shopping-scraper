@@ -3,7 +3,8 @@
 Before editing anything here, read [docs/DEVELOPMENT_RULES.md](docs/DEVELOPMENT_RULES.md). It is binding: its MUST
 rules win over anything else, including this file.
 
-Docs (read the one that fits the change; each opens with "How to use": what to run, what the answers mean, what to do):
+Docs (read the one that fits the change; ARCHITECTURE, ENDPOINTS, KNOWN_ISSUES and EXTENSION open with "How to use":
+what to run, what the answers mean, what to do; for the rulebook the map is skill `server-change`):
 
 - [docs/DEVELOPMENT_RULES.md](docs/DEVELOPMENT_RULES.md): the rulebook. Every change.
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): layers, the transports (curl / Chrome box / extension, section 12), Naver specifics

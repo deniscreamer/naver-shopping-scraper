@@ -28,7 +28,10 @@ least one curl call and one box call: R-TEST-4; both in
 code is the one observed to fetch Naver data stably; several entries below
 are part of that working setup, so "looks wrong" is not enough to change it.
 A fix moves its entry to [Closed](#closed) in the same commit, with
-**Status: fixed YYYY-MM-DD** and what fixed it; its K-number is never reused.
+**Status: fixed YYYY-MM-DD** and what fixed it; its K-number is never reused
+(2026-11-16, the docs re-lay; before: "A fix removes its entry in the same
+commit"; the statuses open / mitigated / fixed and the index are from the
+same date).
 
 Citations name symbols; `~N` is a line hint only. How the parts fit together
 is in [ARCHITECTURE.md](ARCHITECTURE.md).

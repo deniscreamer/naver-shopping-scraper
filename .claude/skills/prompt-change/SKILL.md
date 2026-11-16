@@ -8,7 +8,7 @@ description: Change a model prompt or brief (developer): the translation prompts
 Where the prompts live, `scripts/prompts/`:
 - translation: `translate_system.md` (the base), `translate_fix.md` (the fix round),
   `tenants/<shop>.md`, `categories/<Naver leaf id>.md`, assembled by `translate.system_prompt`;
-- description: `describe_system.md` (no golf word), `describe/<profile>.md`, the profiles in `describe.PROFILES`;
+- description: `describe_system.md` (no golf rule or term), `describe/<profile>.md`, the profiles in `describe.PROFILES`;
 - the quality judge's prompt is in the code: `translate_eval.JUDGE_SYSTEM`.
 
 | Task | Section |
@@ -19,6 +19,7 @@ Where the prompts live, `scripts/prompts/`:
 | The description's profiles, briefs, checks | `scripts/DESCRIBE.md` "The product's description" |
 | A description model's cost and quality | `scripts/DESCRIBE.md` "Which model writes the descriptions" |
 | A wrong term for every product (not a prompt) | `scripts/TRANSLATION.md` "2. Dictionaries" |
+| A brand name or spelling | `scripts/TRANSLATION.md` "2. Dictionaries" (looked up first; `vendors`), `prompts/translate_system.md` "brand"; which brand a product has: `scripts/TRANSFORM.md` "A brand for every product" |
 
 Steps:
 1. Show the failure on real rows (`translation/texts.jsonl`, `translation/descriptions.jsonl`) and say why a prompt,
@@ -28,11 +29,17 @@ Steps:
    `scripts/check.sh`; `describe.py <shop> --only <key> --packet` prints what the model is given.
 4. Measure, small, on the owner's go-ahead (paid calls): `.venv/bin/python scripts/translate_eval.py <shop>
    --products 12` (a scratch folder, empty dictionaries; the cost per product: its docstring), or
-   `describe.py <shop> --only <key> --force` on a few products not in the store. Compare the flags with the last
-   round in the doc's History.
-5. Same commit: the doc's section, and a dated History line with the round's numbers.
+   `describe.py <shop> --only <key> --force` on a few products not in the store. A translation: compare the
+   judge's flags with the last round in TRANSLATION.md "History". A description has no judge: read the sample
+   against its packet; the checks' counts are `described: {ok, trimmed, fallback}` (DESCRIBE.md "How to use").
+5. Same commit: the doc's section, and a dated line with the round's numbers: TRANSLATION.md "History"; a
+   description under DESCRIBE.md "Which model writes the descriptions" (a model) or the profile's paragraph.
 
-What it reaches: `translate.py` asks only for texts with no answer yet, and `describe.py` keeps a product's row
+What it reaches: `translate.py` asks only for texts with no answer yet; a brand already in the shop's
+`dictionaries/brand.json` never reaches the model (`translate.plan`), and `vendors` is sent only when a brand is
+asked. `translate_eval.py` runs with empty dictionaries, so `vendors` is empty there and the vendor-reuse rule is
+not measured by it: check it with `translate.py <shop> --only <key>` on an unpublished product whose brand has no
+dictionary entry (the packet's `vendors`: `scripts/test_translate.py`). `describe.py` keeps a product's row
 (the stale check hashes the packet, not the prompt). So a new prompt reaches new products; asking again for
 products already in the store resends them: `scripts/OWNER_RULES.md` section 1 (`describe.py --published`).
 

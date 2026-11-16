@@ -5,15 +5,15 @@ description: Answer why one product (a Naver product id, a key, a Shopify handle
 
 # Trace one product
 
-Read only: no command here writes or sends. `S=scripts/output/shops/<shop>`, `J=scripts/output/jobs`; `<id>` is the
+Nothing is sent and no state file changes; step 7's dry run writes its payload to `publish/payloads/<id>.json`. `S=scripts/output/shops/<shop>`, `J=scripts/output/jobs`; `<id>` is the
 Naver product id, the key is `<shop>:naver:<channel>:<id>`.
 
 1. **The key**: `grep -ho '"key": "[^"]*:<id>"' $S/prepared/products.jsonl $S/publish/published.jsonl | head -1`
    (a handle: `grep '"handle": "<handle>"' $S/publish/published.jsonl | tail -1`). No key anywhere: go to step 3.
 2. **The ledger**: `grep '"key": "<key>"' $S/publish/published.jsonl | tail -1` (the last row wins): `status`
    (published / withdrawn), `store_status` (DRAFT = not live), `reason` (`replaced_by:<key>`, `hold: ...`, the
-   owner's why), `activated`, `restored`, `admin_url`.
-3. **The jobs**: `grep -h '<id>' $J/*/events.jsonl`: `not_taken` with its `reason` (`duplicate_of:<key>`,
+   owner's why), `activated`, `restored`, `admin_url`. No row: never published, go on.
+3. **The jobs**: `grep '<id>' $J/*/events.jsonl` (the path names the job; the newest `at` wins): `not_taken` with its `reason` (`duplicate_of:<key>`,
    `duplicate_of_withdrawn:<key>`, `category_mismatch`, `card_not_found`, a placement hold), `failed` (stage,
    reason), `deferred`, `duplicate_seen` / `duplicate_better` / `replaced` / `replace_skipped`. Then the screen:
    `grep -h '"product_id": "<id>"' $J/*/screened.jsonl` (`ad`, `already_published`, `title:<rule>`, `rental`,
@@ -26,7 +26,8 @@ Naver product id, the key is `<shop>:naver:<channel>:<id>`.
    `reason`, `evidence`, `leaves`.
 7. **The store**, still read only: `.venv/bin/python scripts/store_diff.py <shop> --only <key>` (what a publication
    would change); the price breakdown: `.venv/bin/python scripts/publish.py <shop> --dry-run --only <key>`, then
-   `fairwardgolf.price` per variant in `$S/publish/payloads/<id>.json`. Photos: `.venv/bin/python scripts/lens.py
+   `fairwardgolf.price` per variant in `$S/publish/payloads/<id>.json`; the formula and what each result means:
+   `scripts/PRICE.md` "Why is this product priced X (how to use)" (skill `price`). Photos: `.venv/bin/python scripts/lens.py
    products <shop> <id>`.
 
 Report, short and fixed: the key; the stage it stopped at; the evidence (file, field, value); who acts next (nothing,

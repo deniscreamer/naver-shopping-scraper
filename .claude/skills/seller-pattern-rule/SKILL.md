@@ -13,20 +13,29 @@ exception (2026-11-06): fixtures and tests from products checked in test runs ar
    "Transform (scripts)", "Description images", "Not handled yet (known)"). Known and handled: a bug in that code.
 2. **Which side reads it.** The page's parts (상품정보 rows, text fields, options): the server
    (`server/naver_shopping/`, skill `server-change`). What the transform makes of the collected line: `scripts/`
-   (`scripts/TRANSFORM.md`, `scripts/PACKAGE.md` for the five package fields, `scripts/PLACEMENT.md`).
+   (`scripts/TRANSFORM.md`, `scripts/PACKAGE.md` for the five package fields, `scripts/PLACEMENT.md`); text in the
+   description images: `scripts/PACKAGE.md` "Reading the description: the guess" (`description_measures.py`, the
+   profiles in `CATEGORY_PROFILES`).
 3. **The fixture first**, from the real product (offline unless noted):
    - a saved page: `.venv/bin/python scripts/product_page.py <link> [--query "..."]` (the owner's Chrome, live:
      only when the task allows the network, never during a job), then
      `.venv/bin/python server/naver_shopping/page_fixtures.py <saved page folder> <products.jsonl>`;
    - the collected line: `.venv/bin/python scripts/collected_fixtures.py add <products.jsonl> <product id>`;
-   - the package: `.venv/bin/python -I scripts/make_measures_fixture.py <product id> "<covers>" "<checked; ...>"`;
+   - the package: `.venv/bin/python -I scripts/make_measures_fixture.py <product id> "<covers>" "<checked; ...>"`
+     (reads only `scripts/output/shops/fairwardgolf`: the product must be collected there and have its
+     description_images sidecar, made by `description_images.py <shop> --products <id>`: networked, the sellers'
+     image hosts and OCR, only when the task allows);
    - the lenses' cases: `.venv/bin/python -I scripts/make_lens_fixture.py` (after a deliberate change).
    Fixtures hold real data, trimmed, no cookies, tokens or personal data (R-TYPE-6, R-EXT-4).
 4. **The rule**: the narrowest change at the code that handles the pattern, with a dated comment naming the
    product id; a test whose docstring carries the dated observation (R-TEST-2).
-5. **The golden diff**: `UPDATE_GOLDEN=1 .venv/bin/python -m pytest server/naver_shopping/test_pages.py
-   scripts/test_prepared_golden.py` (a server parser change: then `collected_fixtures.py refresh` first, its
-   docstring). Read every changed line: only the intended products and fields may move.
+5. **The golden diff**. A scripts-only rule: `UPDATE_GOLDEN=1 .venv/bin/python -m pytest
+   server/naver_shopping/test_pages.py scripts/test_prepared_golden.py`. A server parser change: three steps in
+   this order (the `scripts/collected_fixtures.py` docstring):
+   `UPDATE_GOLDEN=1 .venv/bin/python -m pytest server/naver_shopping/test_pages.py`, then
+   `.venv/bin/python scripts/collected_fixtures.py refresh`, then
+   `UPDATE_GOLDEN=1 .venv/bin/python -m pytest scripts/test_prepared_golden.py`.
+   Read every changed line: only the intended products and fields may move.
 6. **The docs, same commit**: the SELLER_DATA.md line (pattern, id, where handled; out of "Not handled yet" when it
    was there); the stage doc's section; a new held code's row in `scripts/TRANSFORM.md` "Held codes"
    (`scripts/test_docs_held_codes.py`); an upstream fact: R-NAVER-4.

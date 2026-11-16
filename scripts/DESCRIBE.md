@@ -2,6 +2,18 @@
 
 How `describe.py` writes the English product description and which model writes it; split from scripts/README.md on 2026-11-16 (history: `git log --follow scripts/README.md`).
 
+## How to use
+
+| Task | Run | Then |
+|---|---|---|
+| What the model is given for one product | `.venv/bin/python scripts/describe.py <shop> --only <key> --packet` | compare with the rules below ("Before") |
+| Describe new products (paid calls) | `describe.py <shop> [--limit N]`, or a job with `--publish --describe` | the summary line `N described: {ok, trimmed, fallback}`; each non-`ok` row names what was cut and why |
+| One description reads wrong | read its row in `shops/<shop>/translation/descriptions.jsonl` (`dropped`, `conflicts`, origin) | a rule or prompt: skill `prompt-change`; one product: skill `fix-a-product` |
+| A product already in the store | `--published` or `--only`: the next `publish.py` sends it | the owner's go-ahead first ([OWNER_RULES.md](OWNER_RULES.md) section 1) |
+| A prompt or model change: measure it | a few products not in the store, `--only <key> --force`; read the sample | a dated line under "Which model writes the descriptions" (a model) or in the profile's paragraph (a prompt) |
+
+`ok`: as answered; `trimmed`: something cut by the checks; `fallback`: no intro left, the title as one sentence.
+
 ## The product's description (`describe.py`, the owner 2026-11-10)
 
 ```sh
@@ -55,7 +67,7 @@ intro with the age or height range the seller gives. `iron_set` (50002670, 2026-
 item, the choice of iron count, shaft or flex in a highlight, 정품 / 병행 one highlight. `wedge_set` (50002783,
 2026-11-15): the wedges by loft in one item, the choice of lofts, grind or shaft in a highlight, non-conforming
 grooves (비공인) said as a limitation. A category without a profile gets `default`: the intro and highlights only. The common prompt
-(`prompts/describe_system.md`) holds no golf word.
+(`prompts/describe_system.md`) holds no golf rule or term (one quoted example of filler aside).
 
 The answers are kept in `shops/<shop>/translation/descriptions.jsonl` (append-only; fields, HTML, what was cut
 and why, conflicts, the origin decision, the model, the time; `generated: model` for a later Merchant feed, where

@@ -108,7 +108,8 @@ field."]}}
 
 Client policy: 400 and 404 are final, do not retry. 502 is retryable after a pause. 409 / 503 from
 `/products/specs` and `/listing-tabs` come from the owner's Chrome, where a retry after a wall risks a ban (R-EXT-3): a 503 whose
-error starts with `wall:` (or has no kind, e.g. the extension not connected) is final; one starting with
+error starts with `wall:` (or has no kind, e.g. the extension not connected) is final (scripts/job.py waits for the
+extension up to 15 min, polling `/health`, instead of retrying the call); one starting with
 `naver error page:` or `adapter error:` may be retried after ~120 s, at most twice (scripts/job.py); retry a 409
 once the listing is done. A listing tab's `wall: captcha` may be read again (the tab is kept; scripts/job.py: up to
 6 times); a 410 is final for that tab: open a new one. If a 502 that says

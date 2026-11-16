@@ -11,7 +11,7 @@ anything that looks wrong: `server/docs/KNOWN_ISSUES.md` "How to use".
 
 | Change | Read (DEVELOPMENT_RULES unless named) | Same commit |
 |---|---|---|
-| A new endpoint | "Checklist: adding a new endpoint"; R-ARCH, R-CACHE, R-OUT, R-TYPE | its checklist steps 2-9 |
+| A new endpoint | "Checklist: adding a new endpoint"; R-ARCH, R-CACHE, R-OUT, R-TYPE | its checklist steps 2-9; step 10: add the route to `smoke_endpoints.CALLS` (a hand-written list) and run the live smoke when the network is allowed; ENDPOINTS.md: its section and its row in "How to use"; a surface that needs the owner's Chrome: R-EXT-6, EXTENSION.md, a "Decision log" entry (R-NAVER-1) |
 | A parser, an answer's shape | R-ARCH-2, R-OUT, R-TYPE, R-TEST-2, R-TEST-5 | fixture + test; ENDPOINTS.md (R-OUT-3); type, fixture, client method (R-TYPE-2); golden diff read |
 | A new upstream fact (status, header, param, marker) | R-NAVER-4; ARCHITECTURE.md "13. Naver specifics" | dated comment at the code, one line in that section |
 | Which surface, which transport | R-NAVER-1, R-NAVER-2, R-NAVER-3; ARCHITECTURE.md "5. The two transports" | |
@@ -28,11 +28,20 @@ anything that looks wrong: `server/docs/KNOWN_ISSUES.md` "How to use".
 
 Checks:
 - `scripts/check.sh` (the server suite, the scripts suite, mypy; offline); the test count only goes up (R-TEST-4).
-- The live smoke when R-TEST-4 asks (transport, browser, config, requirements): server running,
+- The live smoke when R-TEST-4 asks (a new endpoint, transport, browser, config, requirements): server running,
   `.venv/bin/python scripts/smoke_endpoints.py`. It uses the network: only when the task allows it, never
   during a job.
 - After a deliberate parser change: `UPDATE_GOLDEN=1 .venv/bin/python -m pytest server/naver_shopping/test_pages.py`,
-  then read the diff (R-TEST-5); the scripts side: skill `seller-pattern-rule`.
+  then read the diff (R-TEST-5); then `scripts/collected_fixtures.py refresh` and the prepared golden: skill
+  `seller-pattern-rule` step 5.
+
+Fixtures (R-TEST-2, R-TYPE-6):
+- a product page in the owner's Chrome: `scripts/product_page.py <link>`, then
+  `server/naver_shopping/page_fixtures.py <saved page folder> <products.jsonl>` (R-TEST-5; `/products/page` in
+  ENDPOINTS.md);
+- a consumer's answer (`scripts/fixtures/`): `scripts/COLLECT.md` "Response types";
+- a raw curl or box answer (`naver_shopping/fixtures/box_*.json`, `datalab_*`, ...): no tool. A one-off probe
+  outside git saves the raw answer, live only when the task allows the network; trim it (R-TYPE-6, R-EXT-4).
 
 Rules:
 - Every behaviour change updates its doc in the same commit (AGENTS.md rule 6). Docs disagree: fix the other doc.

@@ -35,6 +35,9 @@ TRANSLATE_PROVIDERS=anthropic .venv/bin/python -u scripts/job.py scroll --query 
     > scripts/output/jobs/_scroll-logs/<name>-<UTC stamp>.log 2>&1
 ```
 
+`mkdir -p scripts/output/jobs/_scroll-logs` first. `<name>`: a short word for the category or query (e.g.
+`wedge-sets`, `junior`); the stamp: `date -u +%Y%m%dT%H%M%SZ`.
+
 | Category | Paid flag | Narrow query (the last jobs) |
 |---|---|---|
 | 50002788 full sets | `--paid-variants` | `남성 골프채 풀세트`, then `여성 골프채 풀세트`: two jobs, one after the other |
@@ -46,11 +49,15 @@ TRANSLATE_PROVIDERS=anthropic .venv/bin/python -u scripts/job.py scroll --query 
   and no `--describe`. `--dedupe on` is the default: no flag. Another category: read its latest `job.json` under
   `scripts/output/jobs/` for the flags, or ask.
 - `--draft` (2026-11-16) when the owner wants to decide the activation after the lens review (a reviewed
-  category's new products go DRAFT; see Draft first).
+  category's new products go DRAFT; see Draft first). The four categories above are marked `reviewed=True` in
+  `transform_shops.py` (2026-11-16): ACTIVE unless `--draft`. A category not marked reviewed (every new one; check
+  `transform_shops.py`) publishes DRAFT anyway: say so to the owner before the start.
 - Before: `curl -s localhost:8000/health` shows `"extension": "connected"`; `job.py status` shows no running job
   (no other runner of the shop).
 - Run it in the background and watch the log: report to the owner every 20 products published, and at once on a
   `STOP`, a captcha, a listing tab reopen or a long network wait (`network down ... try N in S s` past a few tries).
+  A pending captcha is not in the job's log (it prints only after the wait expired): run
+  `.venv/bin/python scripts/captcha_watch.py` beside the job (or `--once`); see the table's captcha row.
   The table "What stops, and who acts" says what each one means.
 - The old mode (`new` + `run`, below) only when the owner says "старым методом" or the run needs 2+ queries at once.
 
@@ -151,13 +158,14 @@ macOS notification. Nothing for a refusal (2), Ctrl+C (130) or a run cut by `--i
 
 | Seen | What the job did | You |
 |---|---|---|
-| `STOP ... wall:` (ban page, login gate twice, a captcha not answered 6 times) | stopped, nothing marked | tell the owner; `run` again only after they say so |
+| `STOP ... wall:` (ban page, login gate twice, a captcha not answered 6 times), or `STOP ... 502 ... blocked the request` (after the client's two retries, 10 s and 30 s) | stopped, nothing marked | tell the owner; resume only after they say so, with a small count ([4. Stop and resume](#4-stop-and-resume)) |
+| a pending captcha: `captcha_watch: CAPTCHA #<n> at <step>: <question> ...` (`scripts/captcha_watch.py`, `GET /captcha`, or the server log's `ext-listing: CAPTCHA ...`); nothing in the job's log yet | waits `NAVER_CAPTCHA_WAIT_S` (600 s) for the owner to answer it in Chrome | relay the question to the owner at once; never answer it (server/docs/EXTENSION.md, Effects and limits, Captcha) |
 | `a captcha was not answered in time` | reads again: the owner is asked again (up to 6 times) | relay it to the owner |
 | `network down (...): try N in S s` (Shopify or every model provider unreachable) | tries the product again after ~30 s, doubled up to 15 min; after 2 h the run stops | nothing; a `STOP` after it: tell the owner, `run` once the network is back |
 | `waiting up to 15 min for the server and the extension` | waits, then goes on by itself | ask the owner to open Chrome / start the server |
 | `STOP ... for 15 min` (they did not come back) | stopped | once they are back, `run` |
 | `the snapshot is used up ... reading the listings deeper` | reads the listings again with twice the batches, adds new products (`new --all`: every new one, until the listings end; then done) | nothing |
-| `STOP ... RunStopped` (two products partial for one reason) | stopped | a collector defect: investigate, report; do not edit code during the job |
+| `STOP at <key>: two products in a row partial for '<reason>'` (RunStopped) | stopped; both products deferred | a collector defect: investigate, report; do not edit code during the job. `api_500` / `api_502` / `api_400`: the server answered that status (skill `api-error-triage`; the server's terminal prints `api: <status> <path> (<label>): ...`) |
 | `failed` (a 503 `naver error page:` or `adapter error:` still there after 2 retries, 120 s apart) | the next product; tried again at the end | nothing; twice failed: closed |
 | `not_taken` / `deferred` | the next product | nothing; a defer is lifted only by the owner (`deferred_log.py allow`) |
 | scroll: `the listing tab is gone after batch N (...): a new one in S s` (410: tab closed, login gate, server restart, a card that opened in the listing; or the connection lost during `next`) | waits 30-60 s, opens a new tab from the top, done products skipped; event `reopen` | nothing |
@@ -172,14 +180,21 @@ macOS notification. Nothing for a refusal (2), Ctrl+C (130) or a run cut by `--i
 | `held` codes in status | the product is prepared as held | read the codes ([TRANSFORM.md](TRANSFORM.md#held-codes) "Held codes"); report |
 | `review due: N drafts ...` (draft first) | goes on; the drafts are not live | the skill `visual-review` with the printed commands; report; activate only on the owner's word (Draft first) |
 
+`run` in this table means the resume command of the job's mode: `run` (old mode) or `scroll --job <id>` (scroll),
+section 4.
+
 A captcha is answered by the owner in Chrome while the read waits; a login page is reset by the server
-(naver.com again), never waited for.
+(naver.com again), never waited for. The owner learns of it from the notification (`server/notify.py`); you, from
+`scripts/captcha_watch.py`.
 
 ## 4. Stop and resume
 
 - Resume: `job.py run` (old mode) or `job.py scroll --job <id>` (scroll: the listing from the top, done products
   skipped, ~20-40 s a done batch) after any stop: nothing is lost, done products are not read again. After a `STOP`
   the table above says whether the owner must clear it first.
+- After a captcha or a ban in the last 24 h: a small count, up to 50 ([Two ways to run a job](#two-ways-to-run-a-job-which-one-when)).
+  `scroll --job <id>` keeps the job's own count (it reads no other flag): with more than 50 left, ask the owner
+  first. The old mode: `job.py run --items 50`.
 - Stop a runner: its pid is in `job.py status` (`running (pid N)`). A scroll job closes its listing tab (DELETE)
   however the run ends, SIGTERM and Ctrl+C included. The shop's lock goes with the process.
 - A running job keeps the code it loaded: restart it (stop, `run` again) after a code change.

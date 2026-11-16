@@ -14,8 +14,9 @@ the job's side: `job.py` (`dedupe_step`, `replace_step`). What waits for the own
 | Were a job's decisions right? | `.venv/bin/python scripts/dedupe.py --pairs <shop> --job <id>` | look at the sheets, list wrong pairs for the owner |
 | Copies already in the store | `.venv/bin/python scripts/dedupe.py --report <shop> [--category <id>] [--list]` | `lens.py dupes <shop>`, red members first ([LENSES.md](LENSES.md#dupes-one-product-or-versions)) |
 | A copy the rules missed (found in a lens) | nothing automatic | hold it and ask: [OWNER_RULES.md](OWNER_RULES.md) rule 2 |
+| Two given products: copies or versions? | `.venv/bin/python scripts/lens.py products <shop> <id1> <id2>`; `grep '<id>' scripts/output/jobs/*/events.jsonl` for `duplicate_seen` / `duplicate_of` and their signals; `dedupe.py --report <shop> --list` for their group | compare with [The rule](#the-rule) (possible duplicate, confirmed); copies the rule missed: [OWNER_RULES.md](OWNER_RULES.md) rule 2 (list both, ask, hold) |
 
-Both commands are read only and offline. Withdrawing a group's copies, or marking a group versions
+No command judges one given pair: `dedupe.py` has only `--report` and `--pairs`. Both commands are read only and offline. Withdrawing a group's copies, or marking a group versions
 (`lens.py dupes --versions`), is the owner's word.
 
 ### `--dedupe off|log|on` (the owner, 2026-11-15)

@@ -28,7 +28,8 @@ Rules: `scripts/OWNER_RULES.md` (sections 2 and 3). The procedure:
    - Duplicates before a withdrawal: `dupes [--category <id>]`. Groups the owner judged versions:
      `dupes --versions <key>,<key> --note "..."` (on the owner's word only).
    - Too many products held, not taken, failed or deferred: `held --job <id>`.
-   - One doubt, a comparison, a finding to show: `products <id> ...`.
+   - One doubt, a comparison, a finding to show: `products <id> ...` (two products, one or two?: `scripts/DEDUPE.md`
+     "How to use", row "Two given products").
 2. **Run it** from the repo root:
    `.venv/bin/python scripts/lens.py <lens> <shop> [scope]`.
    It prints the card count, the red and blue numbers (the first 30 of each; all in `summary.json` meta), and the
