@@ -826,3 +826,14 @@ def test_written_out_escapes_are_decoded_before_the_title_is_read():
     assert out["details"]["name"] == out["listing"]["name"] == "웨지 – 단조"
     assert out["details"]["description"] == {"text": "a ' b", "html": "x u2013"}            # the html as it is
     assert line["details"]["name"] == "웨지 u2013 단조"                                       # the line not changed
+
+
+def test_the_four_live_categories_are_reviewed_and_a_new_one_is_not():
+    """2026-11-16, draft first: the categories live before it publish ACTIVE as before; a new category is DRAFT
+    until the owner marks it reviewed. The free-only and no-add-on variants of the rules keep the mark."""
+    from transform_shops import CategoryRules, reviewed, rules_for, without_paid, without_paid_addons
+    live = ("50002788", "50002787", "50002670", "50002783")
+    assert all(reviewed("fairwardgolf", c) for c in live) and CategoryRules().reviewed is False
+    for variant in (without_paid, without_paid_addons):
+        assert all(variant(rules_for("fairwardgolf")).category(c).reviewed for c in live)
+    assert not reviewed("fairwardgolf", "999") and not reviewed("nosuchshop", "1") and not reviewed("fairwardgolf", None)

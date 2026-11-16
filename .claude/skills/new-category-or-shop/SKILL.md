@@ -17,6 +17,8 @@ The checklist and the reasons are in `scripts/ONBOARDING.md`. Read it first; thi
    its date:
    - A1: the package averages, and baselines only for a set in a container;
    - A2: paid variants, paid add-ons, OCR of the images;
+     `reviewed` is never asked: a new category stays False (its products go DRAFT first) until the owner's word
+     after the pilot's review and activation;
    - A3: the shop's sections, the split attribute, and what to do with an unresolved value;
    - A5: the coefficients and the duty for this category;
    - for a shop: B1 the domain, shop id and namespace; B2 the credentials variable (never read the file);

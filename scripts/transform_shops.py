@@ -10,6 +10,8 @@ fairwardgolf, checked 2026-11-05 on the 60 products the naver-harvester publishe
     before Shopify (the owner, 2026-11-08);
   * paid variants (a configuration that costs more or less), paid add-on products (추가상품) and the description
     images' OCR per category: off by default, all on for 50002788 (owner 2026-11-06, -07);
+  * `reviewed` per category (2026-11-16, draft first): publish.py creates a new product of a category not marked
+    reviewed as DRAFT, for the agent's lens review and the owner's activation; reviewed() reads it;
 
 A shop or a Naver category with no rules here raises ShopRulesMissing: the run stops and asks the operator,
 like package_measures.CategoryDefaultsMissing.
@@ -39,6 +41,10 @@ class CategoryRules:
     sets_only: bool = False              # the section sells sets only: a variant that sells one club is left out, a
                                          # product of such variants only is held (single_only; transform: wedges,
                                          # 2026-11-15, "웨지 세트 또는 개별" listings of one wedge by loft)
+    reviewed: bool = False               # publish.py creates its new products ACTIVE; False: DRAFT, until the agent's
+                                         # lens review and the owner's activation (2026-11-16: 369 products, 15.7%,
+                                         # of those published were withdrawn later; each new category showed buyers
+                                         # products of another section). Set True on the owner's word, dated.
 
 
 @dataclass(frozen=True)
@@ -73,16 +79,19 @@ RULES = {
                                       # owner 2026-11-07: the images state the parts (club weights and
                                       # lengths, the bag's weight and size); OCR study on the 50 sets
                                       # (its parts profile: description_measures.CATEGORY_PROFILES)
-                                      description_images=True),
+                                      description_images=True,
+                                      reviewed=True),       # 2026-11-16: live before draft first
             "50002787": CategoryRules(
                                       # owner 2026-11-11: junior clubs and sets, the full sets' rules (paid
                                       # configurations and add-ons, the images read); no parts profile
-                                      paid_variants=True, paid_addons=True, description_images=True),
+                                      paid_variants=True, paid_addons=True, description_images=True,
+                                      reviewed=True),       # 2026-11-16: live before draft first
             "50002670": CategoryRules(
                                       # owner 2026-11-14: women's iron sets (아이언), the full sets' rules: paid
                                       # configurations (iron count, shaft) and add-ons, the images read, a
                                       # no parts profile
-                                      paid_variants=True, paid_addons=True, description_images=True),
+                                      paid_variants=True, paid_addons=True, description_images=True,
+                                      reviewed=True),       # 2026-11-16: live before draft first
             # 2026-11-15, the owner: a no-brand agency import is no longer held in any category; its vendor is the
             # shop's name (노브랜드 -> Store.publisher, "Fairward Golf"). agency_needs_brand stays for another shop.
             "50002783": CategoryRules(
@@ -90,7 +99,7 @@ RULES = {
                                       # configurations (lofts, shaft) and add-ons, the images read; no parts profile; sets only (a
                                       # single wedge's variant out, 2026-11-15)
                                       paid_variants=True, paid_addons=True, description_images=True,
-                                      sets_only=True),
+                                      sets_only=True, reviewed=True),   # 2026-11-16: live before draft first
         }),
 }
 
@@ -116,3 +125,13 @@ def rules_for(shop: str | StoreId) -> ShopRules:
     except (KeyError, ValueError):
         raise ShopRulesMissing(f"{shop}: no transform rules for this shop yet (configured: "
                                f"{', '.join(s.value for s in RULES)}); ask the operator") from None
+
+
+def reviewed(shop: str | StoreId, category_id: str | None) -> bool:
+    """Is this Naver category marked reviewed for the shop (publish.py creates its products ACTIVE)? False for a
+    shop or a category with no rules here; never raises."""
+    try:
+        rules = rules_for(shop).categories.get(str(category_id))
+    except ShopRulesMissing:
+        return False
+    return bool(rules and rules.reviewed)
