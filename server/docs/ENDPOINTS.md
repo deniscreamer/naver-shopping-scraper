@@ -11,10 +11,35 @@ this file in the same commit.
 Typed shapes of every answer below: `scripts/naver_types.py` (TypedDicts, checked against real captured answers by
 `scripts/test_naver_types.py`). A change to an answer's shape updates that type and its fixture in the same commit.
 
+How the routes that run in the owner's Chrome work (the adapter, its walk, tabs, captchas, install):
+[EXTENSION.md](EXTENSION.md). This file holds only what a caller sees of them.
+
+## How to use
+
+1. Check the server: `curl -s localhost:8000/health` (`"extension": "connected"` is needed only for the Chrome
+   routes below).
+2. Pick the route:
+
+| You want | Route | Transport |
+|---|---|---|
+| search cards for a keyword (up to 96), or only their count | [`/products/search`](#productssearch), [`/products/count`](#productscount) | curl |
+| the whole search.shopping listing for a query | [listing jobs](#listing-jobs-beta-the-full-search-listing) (`POST /listings`) | the owner's Chrome |
+| a listing read batch by batch, each product by a click (`job.py scroll`) | [held listing tabs](#held-listing-tabs-beta-listing-tabs) (`/listing-tabs`) | the owner's Chrome |
+| a product's prices, stock, description, notice, review summary | [`/products/details`](#productsdetails) | curl + box |
+| a product's 상품정보 rows, options, delivery promise, weights and sizes | [`/products/specs`](#productsspecs-beta-the-owners-chrome) ([two ways](#product-details-two-ways)) | the owner's Chrome |
+| reviews: one page, or the ones worth showing | [`/products/reviews`](#productsreviews-paginated), [`/products/reviews/selected`](#productsreviewsselected) | box |
+| a store, its popular / best products | [`/stores/details`](#storesdetails), [`/stores/products`](#storesproducts) | curl (+ box) |
+| catalog reviews; DataLab keywords and categories | [`/catalogs/reviews`](#catalogsreviews), [DataLab](#datalab-window-params), [`/categories/list`](#categorieslist) | box; curl |
+
+3. Read the status (table: [Errors](#errors-routescall)): 200 use it; 400 / 404 final, fix the call or skip the
+   product; 502 retry after a pause; 409 / 410 / 503 come from the owner's Chrome and follow the client policy
+   under the table (a 503 `wall:` is final). Paginate with `page`, never by following `next`.
+
 ## Basics
 
-- All endpoints are `GET` with query-string params and answer JSON encoded as UTF-8 with Korean text unescaped. The
-  `Content-Type` header is `application/json` with no `charset` parameter (`routes.json_response`).
+- The 14 endpoints (`routes.ENDPOINTS`) and `/captcha` are `GET` with query-string params; the listing job and held
+  listing tab routes add `POST` and `DELETE` (their tables below). Every answer is JSON encoded as UTF-8 with Korean
+  text unescaped. The `Content-Type` header is `application/json` with no `charset` parameter (`routes.json_response`).
 - Each of the 14 endpoints is served at `/<path>` and at `/naver-shopping/<path>` (`routes.mount`). Both forms are
   equivalent; the unprefixed form (`/products/details`) matches the hosted RapidAPI paths, and `/naver-shopping/...`
   is an alias.
@@ -23,7 +48,7 @@ Typed shapes of every answer below: `scripts/naver_types.py` (TypedDicts, checke
   `API_HOST` is set (`config.HOST`, 2026-11-15); there is no auth.
 
 ```
-GET /health  ->  {"status": "ok", "version": "0.6.0", "endpoints": ["/products/details", ..., "/listings", ...],
+GET /health  ->  {"status": "ok", "version": "<the VERSION file, e.g. 0.22.0>", "endpoints": ["/products/details", ..., "/listings", ...],
 "extension": "connected"}
 ```
 
@@ -192,17 +217,16 @@ Two ways to get a product's details:
 | Cost | ~1-10 s, any product, no setup | ~30-60 s a product, one at a time, Chrome open with the adapter, not during a listing job |
 | Flexible | fixed set of backend answers; no attribute rows exist there | anything rendered on the page can be read later the same way (Python parses the page HTML) |
 
-The catch of way 2 is the path. The adapter cannot open a product page directly (Naver redirects that to the
-login page), so a read walks the flow like a person: naver.com -> the shopping home (쇼핑) -> a search -> click the
-product's card -> the product opens in a new tab -> unfold the list. The search tab is kept (2026-11-07): the next
-read types its search into that tab's box and skips naver.com; the product tab is closed after each read. Two ways in:
+The catch of way 2 is the path: a product page cannot be opened directly, so each read walks naver.com -> 쇼핑 -> a
+search -> a click on the product's card, keeping the search tab between reads
+([EXTENSION.md](EXTENSION.md#product-page-specs-productsspecs)). What a caller chooses is the search, `query`. Two
+ways in:
 
 - **A known product**: search its full Korean name (the default `query`) and click the card whose link carries
   its id (`scripts/example_10_known_products_specs.py`, `example_08_product_full.py`).
 - **Products not known yet**: take them from a search (a listing job), then read each with that search as `query`;
   a card not on the search's first page falls back to its name (`scripts/example_09_listing_then_specs.py`).
-  A category page is not used: it needs a signed-in Naver account (probed 2026-11-14, every level of the 카테고리
-  menu lands on nid.naver.com); a listing is a search, the category is the screen's.
+  A category page is not used (it needs a signed-in Naver account: [EXTENSION.md](EXTENSION.md#product-page-specs-productsspecs)).
 
 Use both together: way 1 for prices / reviews / description, way 2 for the attribute rows and the options.
 
@@ -288,12 +312,7 @@ window (`query-pages`), so photo links are originals, product ids are checked an
 | Gives | one page of 20, any sort (`ranking`, `recent`, `score_high`, `score_low`), `media` filter (`all`, `photo_video`, `text`) | up to `count` (20) chosen reviews: 50+ letters + photo + real avatar first, then photo + text, then text; all with text when the product has 20 or fewer; at most 8 photos a review, 100 a product |
 | Cost | ~0.4 s a page after the record | reads only the pages it needs, newest first: photo/video pages, then text-only pages (Honma D1, 202 reviews: 11 pages, ~5 s) |
 
-Why not through the product page (researched 2026-11-01 on the Honma D1 set): the review window opens from the
-"N건 리뷰" link, takes the 최신순 / 포토/동영상 radios, and loads 20 more reviews only on wheel input (~5 wheels and
-~4 s a page) after the whole search -> card -> page walk in the owner's Chrome; its answers are this same
-`query-pages` JSON, and copying them would need an adapter change. The rendered rows carry only thumbnails and no
-product ids. The backend answers the same filter directly (`reviewContentClassTypes`), so the page adds nothing for
-reviews.
+Not through the product page: [History](#reviews-through-the-product-page-researched-2026-11-01).
 
 ### `/products/reviews/selected`
 
@@ -545,7 +564,7 @@ Both prefixes. One job at a time.
 | `GET /listings/<job_id>` | - | job: `{id, query, status, max_batches, batches, kept, ads, total, cursor, has_more, stop, started_at, finished_at}`; `404` unknown |
 | `GET /listings/<job_id>/products` | `page` (1-1000) | rows, 50 a page, the usual pagination shape (works while the job runs: rows so far) |
 
-`status`: `running`; `captcha` (the owner is asked to solve one in Chrome; waits 60 s); `done` (`hasMore=false` or
+`status`: `running`; `captcha` (the owner is asked to solve one in Chrome; waits `NAVER_CAPTCHA_WAIT_S`, 600 s); `done` (`hasMore=false` or
 `max_batches` reached); `stopped` (`stop` says why: a wall, a refused batch, a stall, an adapter error).
 `/health` adds `extension: connected | disconnected | off`.
 
@@ -583,9 +602,8 @@ meanwhile, naming it. Stateful, never cached.
 `<id>` is `YYYYMMDD-HHMMSS-xxxx` (else `400`). ListingTab: `{id, query, batch, has_more, total, results: [row]}`;
 `total` is the first batch's (the listing's size, 2026-11-14: `/products/count` does not predict it), repeated in
 every answer; rows have the listing jobs' row shape (above), unique within a batch only: a repeat across batches is
-the caller's to drop. The current batch's cards are all in the page; older ones leave it (a virtualized list), so a
-product is read right after its batch came. A card is wheeled to the middle of the view and read until steady before
-the click; the opened page must be `/products/<id>`, else it is closed and the card clicked once more (2026-11-14); a
+the caller's to drop. Read a batch's products right after `next` brought it: older cards leave the page (a virtualized
+list; how a card is clicked, steadied and checked: [EXTENSION.md](EXTENSION.md#held-listing-tab-listing-tabs)). A
 click that opened nothing is not repeated (`404 card_opened_nothing`).
 A card that opened in the listing tab itself is answered `200` and the session ends (the next call is `410`).
 No idle timer: a session its caller left open holds the adapter until the next open, a DELETE or a server restart.
@@ -627,3 +645,14 @@ A card's `link` (`parsers.parse_search_card`) is one of three shapes:
   404 for now. When the card's `store.link` is a smartstore / brand store link, building
   `<store.link>/products/<product_id>` and sending that skips the lookup.
 - `store.link` may also be an external mall URL; only smartstore / brand store links are valid for `/stores/*`.
+
+## History
+
+### Reviews through the product page (researched 2026-11-01)
+
+Why not through the product page (researched 2026-11-01 on the Honma D1 set): the review window opens from the
+"N건 리뷰" link, takes the 최신순 / 포토/동영상 radios, and loads 20 more reviews only on wheel input (~5 wheels and
+~4 s a page) after the whole search -> card -> page walk in the owner's Chrome; its answers are this same
+`query-pages` JSON, and copying them would need an adapter change. The rendered rows carry only thumbnails and no
+product ids. The backend answers the same filter directly (`reviewContentClassTypes`), so the page adds nothing for
+reviews.

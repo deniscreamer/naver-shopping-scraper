@@ -1,10 +1,44 @@
 # Translation: Korean product texts to English
 
-How the translation stage works, the owner's decisions behind it, how to add a shop (tenant) or a Naver category,
-how to check the quality, and what is still open. The code: `translate.py` (the stage), `translation_dicts.py`
+How the translation stage works, the owner's decisions behind it, its dictionaries, rules and prompts, the review
+cleaning, how to add a shop (tenant) or a Naver category, how to check the quality, and what is still open; the
+measurements and history are at the end. The code: `translate.py` (the stage), `translation_dicts.py`
 (dictionaries), `translation_rules.py` (unit templates), `review_clean.py` (reviews, in the transform),
-`translate_keys.py` (the keys), `translate_eval.py` (the quality check), `prompts/` (system prompt and briefs). Its
-place in the pipeline and the details of each part: "Translation" at the end of this doc and [TRANSFORM.md](TRANSFORM.md) "Transform".
+`translate_keys.py` (the keys), `translate_eval.py` (the quality check), `prompts/` (system prompt and briefs). The
+transform that writes the texts: [TRANSFORM.md](TRANSFORM.md) "Transform".
+
+## Translation (`translate.py`)
+
+The owner (2026-11-08): the prepared products' `texts` go to English through Claude Sonnet 5.5 (effort low, JSON
+output) before placement and publication. Not translated: `description_ko` and the images' text (a later stage
+writes the description from them; their `to_translate` flag is not this stage's).
+
+```sh
+.venv/bin/python scripts/translate.py fairwardgolf --offline   # no model: what the dictionaries and rules leave
+.venv/bin/python scripts/translate.py fairwardgolf --limit 3   # the model for 3 products
+.venv/bin/python scripts/translate.py fairwardgolf --only <key>  # only this product to the model
+.venv/bin/python scripts/translation_dicts.py status [--json]  # sync helper: dates, what the backup lacks, advice
+.venv/bin/python scripts/translation_dicts.py backup           # by hand: live -> scripts/dictionaries/, then commit
+```
+
+A job made since 2026-11-08 runs this stage per product, right after prepare (`job.py`, `translate_one`, translated;
+`new --no-translate` leaves it out). See [JOB_AGENT.md](JOB_AGENT.md).
+
+Per text, the first that answers: (1) the product's own store, (2) the dictionary of its kind, (3) the rules,
+(4) the model. Each is below.
+
+Out, in `shops/<shop>/translation/`: `translated.jsonl` (per product: status, English by text id, where each came
+from) and `report.txt` (counts, tokens and cost, new dictionary entries). What to do per status:
+
+- `translated`: placement and publication can use it. Publication (`publish.py`, 2026-11-08) reads
+  `translation/translated.jsonl`; a text without English holds the product.
+- `untranslated`: a text failed the checks twice (its `problems` in the record, the reasons in `report.txt`). Fix
+  the brief, the rules or the dictionary entry, then run again (`--only <key>`).
+- `pending`: no provider answered, or the product was not asked (`--offline`, `--limit`). The next run translates it.
+- `held`: the transform held the product; nothing to do here.
+
+When a dictionary backup is due, a `translate.py` run's report (not `--only`) and `job.py run` (done) /
+`job.py status` print one reminder line: run `translation_dicts.py status`, read the changed entries, then `backup`.
 
 ## Decisions (the owner, 2026-11-08)
 
@@ -27,9 +61,109 @@ place in the pipeline and the details of each part: "Translation" at the end of 
 | Few tokens: short ids, compact JSON, the category's terms in the cached system prompt, no thinking tokens | `request`, `system_prompt`, `ANTHROPIC_TRANSLATE_THINKING` |
 | The job translates each product right after it is prepared | `job.py` (`translate_one`) |
 
+## 1. The product's own store
+
+Title, review, a placeholder option name (선택 / 옵션, named from its values), in `translation/texts.jsonl`.
+
+## 2. Dictionaries
+
+Brand, option name / value, spec and fact label / value, add-on group / name, text-field label / placeholder. One
+file per kind: the brand's for the whole shop, every other kind's per Naver category (`<category id>/<kind>.json`,
+2026-11-11: a new category starts empty). The brand dictionary comes first: the model gets the shop's vendor
+spellings and reuses one for the same brand. New brands enter the brand dictionary without the owner's word.
+
+The live copies in `scripts/output/dictionaries/` grow during runs and are out of git. Their backups in
+`scripts/dictionaries/` are in git and seed a missing live copy; they are updated by hand with `backup`, after
+`status`, since runs never commit; a backup stamps each file `backed_up`. The sync only adds: a run takes the
+entries only the backup has (pulled from git, seeded by hand), a backup writes the live entries over the backup's
+and keeps its others. A wrong entry is fixed in the live copy; deleting one for good means both copies.
+
+`status` shows when the live copies were last written and the last backup (every backup file carries
+`backed_up`), the new and changed entries since, the ones only in git, and the advice (`action` none / wait /
+backup / review in `--json`). A backup is due at 20 waiting entries, or 7 days after the last one with any waiting
+(`BACKUP_AT_CHANGES`, `BACKUP_AFTER_DAYS`); changed entries are read first, since the backup writes the live
+English over git's.
+
+## 3. The rules (`translation_rules.py`)
+
+- 10.5도 -> 10.5°, 33인치 -> 33 in, 22호 -> Size 22, 3번 -> #3, 7개 -> 7 / 7 pcs, 12종 -> 12 pcs, 2026년형 -> 2026 model;
+- 노브랜드 alone becomes the tenant's name (`Store.publisher`), and inside a text it is removed;
+- a brand of 기타 ("other") alone becomes the tenant's name as well (2026-11-11);
+- a category's own templates, if its specs glue together like golf's flex runs: `CATEGORY_RULES` (a glued spec run
+  is split after each flex letter);
+- a text with no Hangul left is done; the rest goes to the model already converted.
+
+## 4. The model and its prompts
+
+One request per product, with the system prompt in `prompts/translate_system.md`. Each item is checked:
+- every id is returned once;
+- no Hangul is left;
+- the source's numbers and Latin codes are kept;
+- the text is within its length limit;
+- the option values stay distinct.
+
+What fails goes back in the same conversation (`prompts/translate_fix.md`), at most twice. What still fails
+leaves the product `untranslated`; what passed is kept.
+
+**The system prompt is assembled** (`system_prompt`):
+- the translator's role and rules (`prompts/translate_system.md`);
+- the shop's brief (`prompts/tenants/<shop>.md`: who sells to whom, spelling, tone);
+- the category's brief (`prompts/categories/<Naver category id>.md`: what the products are, their terms, how buyers
+  write about them).
+
+A missing brief is left out, and the base prompt works alone, less precisely.
+
+**Fallback:** OpenAI (the owner, 2026-11-08), through Chat Completions with a strict JSON schema, the same
+prompts and reasoning effort low. Its model is `OPENAI_MODEL` in `translate.py`; `OPENAI_TRANSLATE_MODEL` in
+`.env` overrides it.
+- **When Anthropic is down** (network, 5xx or overload, a rate limit after the SDK's retries, another API error):
+  that batch starts again on OpenAI, and Anthropic rests 10 minutes. A declined or cut batch also goes to OpenAI,
+  without the rest.
+- **A refused key** stops the run.
+- **Every provider down:** the product stays `pending` for the next run.
+- The report says which model answered each product.
+
+**Batches.** A product is never sent whole when it is long. Its short texts go in batches of at most 40 items /
+2 500 characters, its reviews apart in batches of at most 8 / 2 500 (`make_batches`). Each batch is its own
+conversation with its own fix rounds and provider fallback. At the end every pending text must have an answer, or
+the product is `untranslated` (a batch no provider could take: `pending`).
+
+**Tokens** (the owner, 2026-11-08: no overspend):
+- **The request:**
+  - compact JSON;
+  - the batch's short ids (`1`, `2` ...) instead of the text ids, both ways;
+  - the category's terms only in the system prompt, which is cached and read at a tenth of the input price;
+  - the shop's vendor list only when a brand is asked.
+- **No thinking:** `thinking: between_tools`, with effort low. On simple words it gave the same English at fewer
+  output tokens and 20% less time. `ANTHROPIC_TRANSLATE_THINKING=adaptive` turns it back on.
+- **Where the cost goes:** the output, that is the English itself.
+
+**The keys and the models.** `scripts/translate_keys.py install <file>` moves the operator's key file out of the
+repo, makes it 600, and sets `TRANSLATE_KEY_FILE` in `.env` ([SETUP.md](../SETUP.md)). The models, their efforts
+and the chain's order are `.env` settings, not code (`TRANSLATE_PROVIDERS`, `ANTHROPIC_TRANSLATE_MODEL` / `_EFFORT`,
+`OPENAI_TRANSLATE_MODEL` / `_EFFORT`; `translate.settings()`). The server-side refusal fallback is sent only to the
+Claude models that take it.
+
+## Review cleaning (`review_clean.py`)
+
+Runs in the transform, before translation: every review is kept with its score, and its text loses the Korean
+purchase (seller, shipping, customs, won, packing, gifts). The purchase topics (shipping, seller, price ...) are
+the same for every category; what protects a clause is the category's own: the product words (`ASPECTS` and
+`PRODUCT_WORDS`, keyed by the Naver category id) and where the product is used, counted only when it is not a
+purchase reason (`CONTEXT`). After translation, at publication, `cut_english` drops an English sentence about the
+price or value, or naming another platform or a buying agent (Decisions, above).
+
+Its limits:
+- A purchase remark in the middle of a Korean sentence that also names the product stays there: "제품구성이 좋고
+  가격도 저렴해요". Cutting it would break the sentence. When it is about the price, the English sentence goes at
+  publication (`cut_english`), the product words in it too.
+- A rare form the patterns do not know stays in the text, for example "여러가지로 친절하고 ... 처리해 주었으나". Add
+  such forms to `review_clean.py` with a test when they show up.
+
 ## A new shop (tenant) or category
 
-Nothing in the stage's code changes. Per case:
+Nothing in the stage's code changes; it needs short brief files only (the whole checklist, every stage:
+[ONBOARDING.md](ONBOARDING.md)). Per case:
 
 1. **The shop.** Add `prompts/tenants/<shop>.md`: who sells what to whom, the spelling (American or British) and
    the tone, in three lines. 노브랜드 becomes the shop's `Store.publisher` (`shop_stores.py`).
@@ -41,8 +175,6 @@ Nothing in the stage's code changes. Per case:
 3. **Reviews of that category** (`review_clean.py`):
    - the product words that protect a clause: `ASPECTS` and `PRODUCT_WORDS` keyed by the category id;
    - where the product is used, counted only when it is not a purchase reason: `CONTEXT`.
-
-   The purchase topics (shipping, seller, price ...) are the same for every category.
 4. **Templates of that category**, if its specs glue together like golf's flex runs: `CATEGORY_RULES` in
    `translation_rules.py`, with a test.
 5. **Dictionaries.** The category gets its own folder `scripts/dictionaries/<category id>/` with its first entries;
@@ -60,34 +192,11 @@ Nothing in the stage's code changes. Per case:
 `translate_eval.py` takes a varied sample of ready products and translates it in its own folder with empty
 dictionaries. A second model (Opus 5.5) then judges every translated text, and the script writes a side-by-side
 `report.html` with the flagged rows marked. It costs about $0.05 a product and never touches the shop's translation
-files or the live dictionaries.
-
-**Golf sets, 2026-11-08** (12 products, 260 texts): 25 flagged, then 17, then 10 (3.8%) after three rounds of
-fixes:
-- golf terms and model lines in the category brief;
-- flex-letter runs split by a template;
-- review fidelity rules (no "for the price", the subject kept, no upgrade of strength);
-- title words that only some variants have, passed as context.
-
-The 10 left were nuances in reviews (two broken in the source already), a brand spelling (since added) and one
-label.
-
-**Live checks the same day:**
-- a rerun asks nothing;
-- an interrupted run keeps every product it finished;
-- every provider down leaves the products `pending`, and the next run translates them;
-- a 24-value option takes two batches; a 1 700-character review is translated whole;
-- a job of 3 new products went from the listing to translated and placed: about $0.01 and 5-9 s a product for
-  translation, against 66-98 s of collection.
+files or the live dictionaries. The rounds run so far: History, below.
 
 ## Known limits
 
-- **Reviews**:
-  - A purchase remark in the middle of a Korean sentence that also names the product stays there: "제품구성이 좋고
-    가격도 저렴해요". Cutting it would break the sentence. When it is about the price, the English sentence goes at
-    publication (`cut_english`), the product words in it too.
-  - A rare form the patterns do not know stays in the text, for example "여러가지로 친절하고 ... 처리해 주었으나". Add
-    such forms to `review_clean.py` with a test when they show up.
+- **Reviews**: see "Review cleaning" above.
 - **Ambiguous Korean.** The model may give an opinion to the wrong person ("디자인도 맘에 듭니다" after "와이프 ...").
   The judge flags it; the prompt asks to keep the buyer as the subject.
 - **Titles keep every code of the source**, so a model written twice stays ("BG-100L BG100L"). Titles translated
@@ -102,133 +211,43 @@ label.
 
 - **The OpenAI fallback** has never answered live: the account has no credits (429). Until it has, a down Anthropic
   leaves products `pending`.
-- **The dictionaries**: every backup file carries `backed_up`, and `translation_dicts.py status` prints the last one
-  and the entries since. A few model answers there are worth a second look, for
-  example "9도 S4번유틸S ..." -> "9° S4 Hybrid ..." (a flex letter glued to the next club's number, with a space
-  before it). New brands enter the brand dictionary without the owner's word.
-- **Wrong entries deleted** (2026-11-11, the owner: "ошибочные удаляй"): all 1,676 entries were read by a model
-  reviewer and each flag by three more; the 40 that at least two confirmed were deleted from both copies (기타 ->
-  TaylorMade, 브리지스톤골프 -> Bridgestone Golf, Nikent for Nickent, flex letters glued to the next club ("S4
-  Hybrid"), 백미포함 read as "with bag", an added "Driver", a dropped 여성, Glory for Gloire, ...). The next run
-  asks the model for them again. The 23 published products that used them stay as they are in the store until
-  they are published again; until a full `translate.py` run their record is `pending`.
-- **Publication** (`publish.py`, 2026-11-08) reads `translation/translated.jsonl`; a text without English holds
-  the product.
+- **The dictionaries**: a few model answers there are worth a second look, for example "9도 S4번유틸S ..." -> "9° S4
+  Hybrid ..." (a flex letter glued to the next club's number, with a space before it).
 
-## Translation (`translate.py`)
+## History
 
-Decisions, a new shop or category, the quality check (`translate_eval.py`), limits: [TRANSLATION.md](TRANSLATION.md).
+**Checked 2026-11-08, golf sets** (`translate_eval.py`, 12 varied trial products, 260 texts, a second model
+(Opus 5.5) as the judge): 25 flagged, then 17, then 10 (3.8%) after three rounds of fixes:
+- the golf terms and model lines in the category brief;
+- a glued spec run split after each flex letter (`CATEGORY_RULES`);
+- review fidelity in the system prompt: no "for the price", the subject kept, no upgrade of strength;
+- a title's words that only some variants have (the note `title_names_one_variant`) passed as context;
+- text addressed to a model cut from reviews.
 
-The owner (2026-11-08): the prepared products' `texts` go to English through Claude Sonnet 5.5 (effort low, JSON
-output) before placement and publication. Not translated: `description_ko` and the images' text (a later stage
-writes the description from them; their `to_translate` flag is not this stage's).
+The 10 left were nuances in reviews (two broken in the source already), a brand spelling (since added) and one
+label.
 
-```sh
-.venv/bin/python scripts/translate.py fairwardgolf --offline   # no model: what the dictionaries and rules leave
-.venv/bin/python scripts/translate.py fairwardgolf --limit 3   # the model for 3 products
-.venv/bin/python scripts/translation_dicts.py status [--json]  # sync helper: dates, what the backup lacks, advice
-.venv/bin/python scripts/translation_dicts.py backup           # by hand: live -> scripts/dictionaries/, then commit
-```
+**Live checks the same day:**
+- a rerun asks nothing (0 calls);
+- an interrupted run keeps every product it finished; an untranslated item resumes;
+- every provider down leaves the products `pending`, and the next run translates them;
+- a 24-value option takes two batches; a 1 700-character review is translated whole;
+- a job of 3 new products went from the listing to translated and placed: about $0.01 and 5-9 s a product for
+  translation, against 66-98 s of collection.
 
-Per text, the first that answers:
+**Tokens, measured 2026-11-08** on 4 varied trial products (129 texts, empty dictionaries): 11 batches, 12 calls
+(one fix round), all translated, about $0.015 and 8 s a product, $0.0005 a text. With the dictionaries the shop's
+repeated texts cost nothing.
 
-1. **The product's own store:** title, review, a placeholder option name (선택 / 옵션, named from its values), in
-   `translation/texts.jsonl`.
-2. **The dictionary of its kind:** brand, option name / value, spec and fact label / value, add-on group / name,
-   text-field label / placeholder. One file per kind: the brand's for the whole shop, every other kind's per Naver
-   category (`<category id>/<kind>.json`, 2026-11-11: a new category starts empty). The live copies in `scripts/output/dictionaries/` grow during
-   runs and are out of git. Their backups in `scripts/dictionaries/` are in git and seed a missing live copy; they
-   are updated by hand with `backup`, after `status`, since runs never commit; a backup stamps each file
-   `backed_up`. The sync only adds: a run takes the entries only the backup has (pulled from git, seeded by hand),
-   a backup writes the live entries over the backup's and keeps its others. A wrong entry is fixed in the live
-   copy; deleting one for good means both copies. `status` shows when the live copies were last written and the
-   last backup, the new and changed entries, the ones only in git, and the advice (`action` none / wait / backup /
-   review in `--json`). A backup is due at 20 waiting entries, or 7 days after the last one with any waiting
-   (`BACKUP_AT_CHANGES`, `BACKUP_AFTER_DAYS`); changed entries are read first, since the backup writes the live
-   English over git's. When it is due, a `translate.py` run's report (not `--only`) and `job.py run` (done) /
-   `job.py status` print one reminder line. The brand dictionary comes first: the
-   model gets the shop's vendor spellings and reuses one for the same brand.
-3. **The rules** (`translation_rules.py`):
-   - 10.5도 -> 10.5°, 33인치 -> 33 in, 22호 -> Size 22, 3번 -> #3, 7개 -> 7 / 7 pcs, 12종 -> 12 pcs, 2026년형 -> 2026 model;
-   - 노브랜드 alone becomes the tenant's name (`Store.publisher`), and inside a text it is removed;
-   - a brand of 기타 ("other") alone becomes the tenant's name as well (2026-11-11);
-   - a text with no Hangul left is done; the rest goes to the model already converted.
-4. **The model:** one request per product, with the system prompt in `prompts/translate_system.md`. Each item is
-   checked:
-   - every id is returned once;
-   - no Hangul is left;
-   - the source's numbers and Latin codes are kept;
-   - the text is within its length limit;
-   - the option values stay distinct.
-
-   What fails goes back in the same conversation (`prompts/translate_fix.md`), at most twice. What still fails
-   leaves the product `untranslated`; what passed is kept.
-
-   **Fallback:** OpenAI (the owner, 2026-11-08), through Chat Completions with a strict JSON schema, the same
-   prompts and reasoning effort low. Its model is `OPENAI_MODEL` in `translate.py`; `OPENAI_TRANSLATE_MODEL` in
-   `.env` overrides it.
-   - **When Anthropic is down** (network, 5xx or overload, a rate limit after the SDK's retries, another API error):
-     that batch starts again on OpenAI, and Anthropic rests 10 minutes. A declined or cut batch also goes to OpenAI,
-     without the rest.
-   - **A refused key** stops the run.
-   - **Every provider down:** the product stays `pending` for the next run.
-   - The report says which model answered each product.
-
-**Batches.** A product is never sent whole when it is long. Its short texts go in batches of at most 40 items /
-2 500 characters, its reviews apart in batches of at most 8 / 2 500 (`make_batches`). Each batch is its own
-conversation with its own fix rounds and provider fallback. At the end every pending text must have an answer, or
-the product is `untranslated` (a batch no provider could take: `pending`).
-
-**Checked 2026-11-08** on 12 varied trial products with a second model (Opus 5.5) as the judge: 25 of 260 texts
-flagged, then 17, then 10 (3.8%) after three rounds of fixes.
-- **The fixes:**
-  - the golf terms and model lines in the category brief;
-  - a glued spec run split after each flex letter (`CATEGORY_RULES`);
-  - review fidelity in the system prompt: no "for the price", the subject kept, no upgrade of strength;
-  - a title's words that only some variants have (the note `title_names_one_variant`) passed as context;
-  - text addressed to a model cut from reviews.
-- **Live checks also run:** rerun (0 calls), resume of an untranslated item, every provider down (`pending`, then
-  resumed), a 24-value option and a 1 700-character review.
-- **The report:** `translate_eval.py` writes `report.html` (see TRANSLATION.md).
-
-**Tokens** (the owner, 2026-11-08: no overspend):
-- **The request:**
-  - compact JSON;
-  - the batch's short ids (`1`, `2` ...) instead of the text ids, both ways;
-  - the category's terms only in the system prompt, which is cached and read at a tenth of the input price;
-  - the shop's vendor list only when a brand is asked.
-- **No thinking:** `thinking: between_tools`, with effort low. On simple words it gave the same English at fewer
-  output tokens and 20% less time. `ANTHROPIC_TRANSLATE_THINKING=adaptive` turns it back on.
-- **Where the cost goes:** the output, that is the English itself.
-- **Measured 2026-11-08** on 4 varied trial products (129 texts, empty dictionaries): 11 batches, 12 calls (one fix
-  round), all translated, about $0.015 and 8 s a product, $0.0005 a text. With the dictionaries the shop's repeated
-  texts cost nothing.
-
-**The system prompt is assembled** (`system_prompt`):
-- the translator's role and rules (`prompts/translate_system.md`);
-- the shop's brief (`prompts/tenants/<shop>.md`: who sells to whom, spelling, tone);
-- the category's brief (`prompts/categories/<Naver category id>.md`: what the products are, their terms, how buyers
-  write about them).
-
-**A new shop or category** (the whole checklist, every stage: [ONBOARDING.md](ONBOARDING.md)) needs a short brief file only here, no code. Write the file following the 50002788 one; the
-category's review aspects go in `review_clean.ASPECTS` / `CONTEXT`. A missing brief is left out, and the base prompt
-works alone, less precisely.
-
-Out: `translation/translated.jsonl` (per product: status, English by text id, where each came from) and
-`report.txt` (counts, tokens and cost, new dictionary entries).
-
-The keys: `scripts/translate_keys.py install <file>` moves the operator's key file out of the repo, makes it 600,
-and sets `TRANSLATE_KEY_FILE` in `.env` ([SETUP.md](../SETUP.md)). The models, their efforts and the chain's order
-are `.env` settings, not code (`TRANSLATE_PROVIDERS`, `ANTHROPIC_TRANSLATE_MODEL` / `_EFFORT`,
-`OPENAI_TRANSLATE_MODEL` / `_EFFORT`; `translate.settings()`). The server-side refusal fallback is sent only to the
-Claude models that take it.
-
-On the 143 trial sets (2026-11-08):
+**On the 143 trial sets** (2026-11-08):
 - without the model, the dictionaries and rules gave 3 606 of 4 877 texts;
 - the model is left 1 271: titles 143, reviews 442, option values 292, spec values 505 (with repeats across
   products, each asked once per product);
 - the reviews are sanitized but all kept, so 411 review texts are left (the cut text is gone from them).
 
-A job made since 2026-11-08 runs this stage per product, right after prepare (`job.py`, translated; `new --no-translate`
-leaves it out). See [JOB_AGENT.md](JOB_AGENT.md).
-
+**Wrong entries deleted** (2026-11-11, the owner: "ошибочные удаляй"): all 1,676 entries were read by a model
+reviewer and each flag by three more; the 40 that at least two confirmed were deleted from both copies (기타 ->
+TaylorMade, 브리지스톤골프 -> Bridgestone Golf, Nikent for Nickent, flex letters glued to the next club ("S4
+Hybrid"), 백미포함 read as "with bag", an added "Driver", a dropped 여성, Glory for Gloire, ...). The next run
+asks the model for them again. The 23 published products that used them stay as they are in the store until
+they are published again; until a full `translate.py` run their record is `pending`.

@@ -8,6 +8,19 @@ description: Run or watch a collection job (scripts/job.py, one product per iter
 Rules: [scripts/OWNER_RULES.md](../../../scripts/OWNER_RULES.md). The doc: `scripts/JOB_AGENT.md`; read the section
 for the task, the whole doc only for an unusual stop.
 
+| Task | JOB_AGENT.md section |
+|---|---|
+| "Запусти scroll: ..." (flags per category, the query) | "Shorthand and per-category defaults" |
+| Preflight | "1. Before" |
+| Start (scroll; the old mode `new` + `run`) | "2. Start" |
+| Watch: the cadence, the log, a done line | "3. Watch" |
+| A `STOP`, a captcha, a wait, `failed`, `busy` | "What stops, and who acts" |
+| Stop, resume, restart after a code change | "4. Stop and resume" |
+| `review due`, drafts, the look after a run | "5. After", "Draft first" |
+| `duplicate_of`, `replaced`, `replace_skipped`, `--dedupe` | `scripts/DEDUPE.md`, "What a job's events mean" |
+| `--paid`, `--paid-variants`, `--all`, `--draft` | "Flags" |
+| scroll or the old mode; narrow or generic query | "Two ways to run a job", "The query" |
+
 **"Запусти scroll: <запрос>, категория <id>[, N | до конца][, без публикации]"** (the owner, 2026-11-14) is one
 `job.py scroll` with the per-category defaults of JOB_AGENT.md "Shorthand and per-category defaults":
 

@@ -9,6 +9,18 @@ Citations name symbols (`module.function`, `module.CONSTANT`). A `~N` is a
 line hint only and may drift. Dated upstream evidence lives in the code's
 docstrings and comments; this file points at them and does not copy them.
 
+How to use: read the one section your question needs.
+
+| Question | Section |
+|---|---|
+| which module does what; where a request goes | 1 Module map, 2 Layers, 3 Request flow |
+| a block, a 502, a retry that did or did not happen | 5 Transports, 6 Box mechanics, 7 Retry topology; then [KNOWN_ISSUES.md](KNOWN_ISSUES.md) |
+| why a second call was cheap or stale | 8 Cache |
+| a proxy, language or timezone; an env var | 9 Default identity, 10 Config and environment |
+| an import error, a test that cannot find a module | 11 Import model |
+| the owner's Chrome (listings, product pages, held listing tabs) | 12 Extension transport, then [EXTENSION.md](EXTENSION.md) |
+| what Naver does on one surface (search, store, product page, options, reviews, images, DataLab, walls) | 13 Naver specifics, by surface |
+
 ## 1. Module map
 
 All paths are relative to `server/`, which is the import root (section 10).
@@ -349,18 +361,20 @@ Everything about it: [EXTENSION.md](EXTENSION.md); rules R-EXT-*.
 
 Each line is one upstream fact. The code comment or docstring named is the
 primary record, with dates; read it before changing the behaviour.
+A new upstream fact gets a dated comment at the code that handles it and one
+line here, under its surface (R-NAVER-4).
+
+How to use: find the surface the call or page belongs to below, read its
+lines, then the code comment each one names. Walls and blocks on any surface
+are under "Walls and blocking", with pointers to the lines of the other
+surfaces.
+
+### 13.1 Search: the ns-portal widget (curl)
 
 - The ns-portal search widget answers whole pages of 24 only, at most 4: a
   slice matching 45 answers 24 cards, under 24 it answers all. Full listings
   need price slices until cards == `total_count`. -> `api.SEARCH_MAX_CARDS`
   comment; `scripts/harvest_listing.py` docstring.
-- Store backend `brand.naver.com/n/*` answers 429 to any plain HTTP client,
-  even with replayed cookies; it answers inside a real brand page, for any
-  store. -> `browser_client` module docstring; `naver_shopping.fetch` module
-  docstring (BOX).
-- Naver's own shopping pages (search.shopping/ns, catalog pages, smartstore
-  product page, shopping.naver.com) serve WtmCaptcha 405/490, a login
-  redirect or a 429 page. -> `naver_shopping.fetch` module docstring.
 - Search comes from the ns-portal widget backend; it needs the widget's
   `x-ns-*` headers and accepts any page/session id value, but refuses a
   request that carries none; TREND view on mobile gives 4 x 24 = 96 cards.
@@ -375,6 +389,11 @@ primary record, with dates; read it before changing the behaviour.
   comment (probed 2026-10-29).
 - Category filters take a two-digit depth prefix (`04` + id for a level-4 category). -> `api._category_filter`
   docstring (SEARCH); `api._filters`.
+- Search results link products as slug-less `smartstore.naver.com/main/products/<id>`.
+  -> `naver_shopping.refs` module docstring; `api._find_store_for_product`.
+
+### 13.2 Store pages and brand product pages (curl)
+
 - `/<slug>/best` is the server-rendered store page that carries the store
   record without a login redirect. -> `naver_shopping.fetch` module docstring
   (STORE).
@@ -383,25 +402,33 @@ primary record, with dates; read it before changing the behaviour.
 - The brand product page is server-rendered (`__PRELOADED_STATE__`); an
   unknown product has its own title. -> `naver_shopping.fetch` module
   docstring (BRAND PDP), `fetch.NO_PRODUCT_TITLE`.
-- Search results link products as slug-less `smartstore.naver.com/main/products/<id>`.
-  -> `naver_shopping.refs` module docstring; `api._find_store_for_product`.
+
+### 13.3 Store backend `brand.naver.com/n/*` (box): the product record
+
+- Store backend `brand.naver.com/n/*` answers 429 to any plain HTTP client,
+  even with replayed cookies; it answers inside a real brand page, for any
+  store. -> `browser_client` module docstring; `naver_shopping.fetch` module
+  docstring (BOX).
 - The store backend answers an empty or unknown entity with 204, 400, 404 or
   419. -> `fetch._box_answer` docstring.
-- The review backend reads only `reviewSearchSortType`; past the last page it
-  answers 204. -> comments in `api._reviews`.
-- DataLab answers bad parameters with a plain 500; an unknown category is
-  turned into 404. -> `fetch.fetch_datalab` comment; `api._known_category`,
-  `api._categories_list`.
-- DataLab publishes once a day. -> `cache_config.DATALAB_CACHE` comment.
-- Page depth limits: 500 review pages, 25 keyword-rank pages; DataLab data
-  starts 2017-08-01. -> `schemas.MAX_REVIEW_PAGE`, `schemas.MAX_RANK_PAGE`,
-  `schemas.DATALAB_FIRST_DAY` comments.
-- Korean query strings need `getunicode`. -> `routes.query_dict` docstring.
-- curl_cffi 0.17 has its TLS handshake reset by some ISPs. ->
-  `server/requirements.txt` comment. R-DEP-1.
-- CDP locale/timezone emulation is detectable; process-level settings are not
-  (a dated Coupang A/B, not a Naver test). -> `PatchrightDriver.__init__`
-  comment. R-BOX-6.
+- naverShoppingSearchInfo may carry only `manufacturerName` (no `brandName`) while the name carries the brand. ->
+  `parsers.product_facts` docstring.
+- Notice rows often hold a pointer instead of a value ("상품상세참조", "[상세설명참조]", "크기 항목 참조"). ->
+  `parsers._SEE_DESCRIPTION_RE` comment.
+- A seller's regional fee can be text only, `deliveryInfo.differentialFeeByArea` ("제주 도서산간 10,000", "8000"),
+  with `area2ExtraFee` / `area3ExtraFee` empty (seen 2026-11-06, 3 of 40 sets). -> `parsers._delivery` comment.
+
+### 13.4 Walls and blocking
+
+- Naver's own shopping pages (search.shopping/ns, catalog pages, smartstore
+  product page, shopping.naver.com) serve WtmCaptcha 405/490, a login
+  redirect or a 429 page. -> `naver_shopping.fetch` module docstring.
+- Elsewhere: ns-portal's 418 without a naver.com cookie (13.1); the store backend's 429 to plain
+  HTTP and 419 to `validation-products` (13.3, 13.6); a product page opened directly goes to the login page, Naver's
+  internal-error page (K-21) and the login gate reset (13.5); a category page needs a login (13.7). The
+  search.shopping bot defence (token, 418, captcha, ban): [EXTENSION.md](EXTENSION.md#why-an-adapter-at-all).
+
+### 13.5 Product page in the owner's Chrome (extension)
 
 - A product page's seller attribute rows are in no box answer; `/n/v2/channels/{uid}/products/{id}` is 204 for a
   smartstore channel. -> `ext_product` module docstring. Decision log 2026-11-01.
@@ -409,46 +436,23 @@ primary record, with dates; read it before changing the behaviour.
   the search renders it. Its `__PRELOADED_STATE__` holds no product data when read; the rendered 상품정보 list does,
   folded after 9 rows behind "상품정보 펼쳐보기", and can render seconds after load. -> `ext_product` docstring and
   `read_page` comment, `pdp` module docstring.
-- SmartEditor ONE descriptions have a blank `textContent` (`""` or `\u200b` runs); many are images only. ->
-  `parsers.parse_contents` comment.
-- Notice rows often hold a pointer instead of a value ("상품상세참조", "[상세설명참조]", "크기 항목 참조"). ->
-  `parsers._SEE_DESCRIPTION_RE` comment.
-- naverShoppingSearchInfo may carry only `manufacturerName` (no `brandName`) while the name carries the brand. ->
-  `parsers.product_facts` docstring.
-
-- The review backend (`query-pages`) serves at most 20 a page (50 / 100 answer 204; no `pageSize` gives 10) and
-  filters by media with `reviewContentClassTypes` (PHOTO, VIDEO, TEXT; other keys ignored). -> `api.REVIEW_PAGE_SIZE`
-  and `api._reviews` comments.
-- A product page's review window loads reviews only on wheel input, 20 at a time, from the same `query-pages`; the
-  backend answers the same filters directly. -> ENDPOINTS.md "Reviews: two ways".
-- A product with no reviews has no review summary; the base record's count is 0. -> `api.product_reviews_selected`
-  comment.
 - A search card clicked at its centre can open the store instead of the product: the product link is a layer over
   the whole card and the store's name link (`inflow/outlink`, then Naver's login page) lies above it under the photo
   (seen 2026-11-05), so the card's photo is clicked. -> `ext_product._card` docstring.
-- `images` from simple-products are the page's gallery (same files, same count) as original-file links; `?type=`
-  renditions are re-encodes (`m10000_10000_no_rotate`) or 1000 px resizes (`o1000`, upscaling small photos). ->
-  `parsers.parse_simple_product` comment, `scripts/naver_images.py` docstring. A one-photo gallery is the seller's
-  (2026-11-07, 5 of 5 checked): the page's productImages / galleryImages hold 1; the other shop-phinf images in the
-  page are the `similar.pd` block of other products. -> the same comment.
-- A review video attachment is `reviewAttachmentType` "M" with a `video/*` `mimeTypeName`; its URL is a poster
-  frame. -> `parsers._attachment_type` docstring.
-- A review writer without an avatar comes with the placeholder `profile-phinf.pstatic.net/404/default.png`. ->
-  `parsers._DEFAULT_AVATAR_RE` comment.
-
-- Since 2026-11-02 `/n/v1/validation-products/<id>` answers 419 (`SDW-E90419`) to the box; the product page's own
-  product call carries a one-time page token (`x-client-rtk`) and the options come from that answer, read through
-  the adapter. -> `ext_product._product_answer` docstring, `parsers.parse_page_options` docstring.
-- A text the buyer types (CUSTOM option) is an `<input data-tag="textOption" id=<textOptions id> maxlength=...>`
-  with `<label for=id>... (필수)</label>`; the purchase box renders twice (seen 2026-11-02). -> `pdp.text_fields`.
-- A search.shopping listing card carries its store's `channelNo` (seen 2026-11-05); listing rows give it as
-  `store.channel_no`, the store half of our shops' source key. -> `composite.listing_row` comment.
-
-- A SmartEditor ONE description has no snapImages; its photos are `img.se-image-resource` with the real link in
-  `data-src` (seen 2026-11-05; inline ones `se-inline-image-resource`, editor NONE bodies plain `<img>`). ->
-`parsers._body_images` comment.
-- A seller's regional fee can be text only, `deliveryInfo.differentialFeeByArea` ("제주 도서산간 10,000", "8000"),
-  with `area2ExtraFee` / `area3ExtraFee` empty (seen 2026-11-06, 3 of 40 sets). -> `parsers._delivery` comment.
+- 2026-11-06: a long product name can miss its own card on the first search page (13425122164, 8 words); its first 5
+  words found it (`ext_product.search_queries`).
+- The search page's own box (probed 2026-11-07): `input[class*="_searchInput_search_text"]` holds the last query;
+  the visible clear button is `button[class*="_searchInput_button_clear"]` (the `_delete` one is 0 x 0), and typing
+  without clearing inserts at the caret. A login page (nid.naver.com) on the way is reset from naver.com, not waited
+  for (the owner). -> `ext_listing.SEARCH_BOX` / `search_again`, `ext_product` docstring.
+- A product page Naver cannot serve opens `shopv.pstatic.net/web/maintenance/internal-error.html` (seen 2026-11-06/07,
+  about 1 read in 25, any product, gone after 2-15 min). When the tab is readable, `ext_product.read_page` answers 404;
+  mostly the adapter cannot read that host at all and the read fails first, answered 503 ("adapter error: page:
+  Cannot access contents of url .../maintenance/internal-error.html"): K-21.
+- A card clicked right after the page inserted a batch can open another product (2 in 16, 2026-11-14: the layout
+  shifts between the click's scrollIntoView and the click); wheeled to the middle of the view and steady first, 0 in
+  30. One card opened another product of its store at every click (thegolf 8986473641). -> `ext_product.STEADY_*`
+  comment, `_steady` and `_read_card` docstrings.
 - The product page's own answer can state a different delivery fee than the store backend (2026-11-05: 99,000 KRW
   per unit, overseas, where the backend said free); `claimDeliveryInfo.overseasShipping` marks overseas shipping.
   -> `parsers.parse_page_delivery` docstring. Its `averageDeliveryLeadTime` gives the store's average days; the
@@ -457,43 +461,73 @@ primary record, with dates; read it before changing the behaviour.
 - Since 2026-11-06 sets sent the same day show "오늘출발" alone, then "14:00 까지 결제 시 오늘 바로 발송" and a dated
   "11.11.(수) 도착 확률 98%"; the answer's `thisDayDispatchBasisTime` ("05:00:00.000+0000", UTC) is the same cutoff.
   -> `pdp.delivery_promise` comment, `parsers._dispatch_kst`.
-- Description cards (2026-11-06, 86 saved products): Naver's own detailContentText leaves out exactly the SmartEditor
-  ONE components se-oglink, se-placesMap and se-material (12 of 12 with text); we skip them in text and images too
-  (`pdp._SKIP_CLASSES`, `parsers._CARD_CLASSES`).
-- Sellers' weight / size text (seen 2026-11-06 on 40 golf sets and 86 saved pages, `naver_shopping/measures.py`
-  comments): golfzonmarket-style iron-set notices give one reference club's figures ("7번 기준 36인치 , 332g", sometimes in
-  the 크기 row), club spec tables are td-only with a column header row (6774818843, 13049116377), "총중량" in a club spec
-  is one club's total (13777887875), and a notice 중량 may list one weight per club count (6630856593 "약11.5kg / 4.7kg"
-  for the 12- and 4-club variants).
-- Spec rows vs options (seen 2026-11-06, 40 golf sets of 50002788): 상품정보 rows are product-wide, but on a set sold in
-  several versions they often describe one version (아이언샤프트소재 그라파이트/카본 with "남성용 SR스틸", 총클럽개수 12개 with 9종 / 12종, 아이언 구성
-  of the 4-club set, 출시 2026년형 with XR26 / XR 24), and sometimes none (총클럽개수 12개 where every part list counts 11); the
-  transform (scripts/spec_variants.py) reads one fact from row and values and drops or binds the row.
-
 - 2026-11-06: the purchase box says "오늘출발 휴무" (then "지금 결제 시 11.9.(월) 발송 예정") on a seller's no-dispatch day, while the
   page answer still says todayDelivery with thisDayDispatchBasisTime (`pdp.delivery_promise`,
   `parsers.parse_page_delivery`). 네이버 배송 / 내일배송 boxes print "11.11.(수) 도착" / "내일 11.4.(수) 도착" with no probability. The
   "평균 N일 이내 도착 확률 P%" line is the answer's sellerDeliveryLeadTimes (P = cumulative percent at N), not
   productAverageDeliveryLeadTime.
-- 2026-11-06: a long product name can miss its own card on the first search page (13425122164, 8 words); its first 5
-  words found it (`ext_product.search_queries`).
-- SmartEditor image components carry `data-linkdata` JSON (`src`, `originalWidth`, `originalHeight`, `linkUse`,
-  `link`). An outside image the editor did not measure has `originalHeight` "1" (2026-11-06, 8396163567 /
-  12945108653). The JSON can hold `=` escapes and `" : "` spacing. scripts/description_clean.py reads it for link and
-  spacer banners.
+
+### 13.6 Options
+
+- Since 2026-11-02 `/n/v1/validation-products/<id>` answers 419 (`SDW-E90419`) to the box; the product page's own
+  product call carries a one-time page token (`x-client-rtk`) and the options come from that answer, read through
+  the adapter. -> `ext_product._product_answer` docstring, `parsers.parse_page_options` docstring.
+- A text the buyer types (CUSTOM option) is an `<input data-tag="textOption" id=<textOptions id> maxlength=...>`
+  with `<label for=id>... (필수)</label>`; the purchase box renders twice (seen 2026-11-02). -> `pdp.text_fields`.
 - Golf option values write numbers with units in several ways: a driver loft "11.5도" / "11.5" / "10.5R" / "9.5 SR", a
   club number "4번" (part in the axis name, e.g. "유틸리티 선택"), "유틸4" / "4번유틸" / "4U" / "5W". "캐디백 미포함" marks a value
   without the bag. A description may bind a material to a bare flex value in a sentence: "플렉스 R 모델의 아이언에는 카본 샤프트"
   (seen 2026-11-06, pilot of 19 golf sets).
-- SmartEditor se-table (seen 2026-11-07, 8958060680, 13728190518, 7166885441, 13657325637): per-club spec tables of
-  4-11 columns. description_text renders one row per line, cells joined by " | " (pdp._table_lines);
-  measures.table_rows reads the HTML.
-- Seller data patterns of the 139 checked sets (collection and transform):
-  [scripts/SELLER_DATA.md](../../scripts/SELLER_DATA.md).
-- A product page Naver cannot serve opens `shopv.pstatic.net/web/maintenance/internal-error.html` (seen 2026-11-06/07,
-  about 1 read in 25, any product, gone after 2-15 min). When the tab is readable, `ext_product.read_page` answers 404;
-  mostly the adapter cannot read that host at all and the read fails first, answered 503 ("adapter error: page:
-  Cannot access contents of url .../maintenance/internal-error.html"): K-21.
+
+### 13.7 search.shopping listing (extension)
+
+- A search.shopping listing card carries its store's `channelNo` (seen 2026-11-05); listing rows give it as
+  `store.channel_no`, the store half of our shops' source key. -> `composite.listing_row` comment.
+- A long listing (probed 2026-11-08, 남성 골프채 풀세트): 12 batches read by wheel scrolls in 110 s (~9 s a batch),
+  43-50 rows each, 583 unique, all 50002788, no stall; 10 ads, all in the first batches. A job reads deeper by
+  reading from the top again with more batches (no cursor). -> `scripts/job.py` docstring.
+- The search.shopping list is virtualized (probed 2026-11-14 in a held listing tab): older batches leave the DOM
+  (batch 1: 0 of 36 cards after 10 batches, ~800-900 cards held), the current batch is always whole in it. A card
+  click opens the product in a new tab and the listing tab survives it (16 + 30 + 4 clicks). -> `ext_listing_tab`
+  module docstring.
+- The listing's end: the last batch carries `hasMore=false`; a scroll after it brings nothing or a repeat of that
+  batch (probed 2026-11-14, two listings). -> `ext_listing_tab._take` docstring.
+- The first batch's `total` is the listing's size (53 and 122 seen, 2026-11-14); `/products/count` (ns-portal) does
+  not predict it (289 and 1148 for the same queries). -> `ext_listing_tab` module docstring.
+- A category page (`search.shopping.naver.com/ns/category/<display id>`: 10000123 스포츠/레저, 10000404 골프, 10002591 골프클럽;
+  display ids, not the 500xxxxx leaves) sends the owner's Chrome without a Naver login to nid.naver.com, by the menu
+  path with hovers too (probed 2026-11-14). -> scripts/JOB_AGENT.md "The query".
+
+### 13.8 Reviews
+
+- The review backend reads only `reviewSearchSortType`; past the last page it
+  answers 204. -> comments in `api._reviews`.
+- The review backend (`query-pages`) serves at most 20 a page (50 / 100 answer 204; no `pageSize` gives 10) and
+  filters by media with `reviewContentClassTypes` (PHOTO, VIDEO, TEXT; other keys ignored). -> `api.REVIEW_PAGE_SIZE`
+  and `api._reviews` comments.
+- A product page's review window loads reviews only on wheel input, 20 at a time, from the same `query-pages`; the
+  backend answers the same filters directly. -> ENDPOINTS.md "History", reviews through the product page.
+- A product with no reviews has no review summary; the base record's count is 0. -> `api.product_reviews_selected`
+  comment.
+- A review video attachment is `reviewAttachmentType` "M" with a `video/*` `mimeTypeName`; its URL is a poster
+  frame. -> `parsers._attachment_type` docstring.
+- A review writer without an avatar comes with the placeholder `profile-phinf.pstatic.net/404/default.png`. ->
+  `parsers._DEFAULT_AVATAR_RE` comment.
+
+### 13.9 Images: the shop-phinf CDN and description images
+
+- `images` from simple-products are the page's gallery (same files, same count) as original-file links; `?type=`
+  renditions are re-encodes (`m10000_10000_no_rotate`) or 1000 px resizes (`o1000`, upscaling small photos). ->
+  `parsers.parse_simple_product` comment, `scripts/naver_images.py` docstring. A one-photo gallery is the seller's
+  (2026-11-07, 5 of 5 checked): the page's productImages / galleryImages hold 1; the other shop-phinf images in the
+  page are the `similar.pd` block of other products. -> the same comment.
+- A SmartEditor ONE description has no snapImages; its photos are `img.se-image-resource` with the real link in
+  `data-src` (seen 2026-11-05; inline ones `se-inline-image-resource`, editor NONE bodies plain `<img>`). ->
+`parsers._body_images` comment.
+- SmartEditor image components carry `data-linkdata` JSON (`src`, `originalWidth`, `originalHeight`, `linkUse`,
+  `link`). An outside image the editor did not measure has `originalHeight` "1" (2026-11-06, 8396163567 /
+  12945108653). The JSON can hold `=` escapes and `" : "` spacing. scripts/description_clean.py reads it for link and
+  spacer banners.
 - Description images (seen 2026-11-07, 50 + 20 golf sets; scripts/description_images.py): a SmartEditor image link
   `?type=w848` is a rendition, the link without `?type` the original (w1280 / w2000 answer 404). An editor-less body
   is served as 945 x 1134 snap tiles (`/p-<n>-s-<n>-<X>-<n>`), one picture cut up; its HTML still holds the seller's
@@ -504,44 +538,60 @@ primary record, with dates; read it before changing the behaviour.
   target (the same file, the same token in two stores), still answered a day after collection (lifetime unknown);
   without a valid one the proxy answers 302 to `no_img_dotxdot.gif` (a redirect is a failed image). No host needed a
   cookie or a Referer (shop-phinf, esmplus, cafe24, igearmall, rakuten). An animated description GIF is a product video, no text (a one-frame one is read: next item).
-
-- A 제조사 of `M0000000` (page row and naverShoppingSearchInfo.manufacturerName, 2026-11-08, 13464713764) is Naver's
-  code for no manufacturer. A description GIF can be a static one-frame page holding the whole description (9942710033:
-  720 x 11489, spec tables); the animated ones are product videos. -> `transform._PLACEHOLDER_CODE`,
-  `description_images` docstring.
-- A long listing (probed 2026-11-08, 남성 골프채 풀세트): 12 batches read by wheel scrolls in 110 s (~9 s a batch),
-  43-50 rows each, 583 unique, all 50002788, no stall; 10 ads, all in the first batches. A job reads deeper by
-  reading from the top again with more batches (no cursor). -> `scripts/job.py` docstring.
-- The search page's own box (probed 2026-11-07): `input[class*="_searchInput_search_text"]` holds the last query;
-  the visible clear button is `button[class*="_searchInput_button_clear"]` (the `_delete` one is 0 x 0), and typing
-  without clearing inserts at the caret. A login page (nid.naver.com) on the way is reset from naver.com, not waited
-  for (the owner). -> `ext_listing.SEARCH_BOX` / `search_again`, `ext_product` docstring.
-
-- A seller who links no Naver brand leaves no brand anywhere Naver serves (checked 2026-11-08 on 6 of 143 trial sets:
-  product answer, page answer, raw search cards, 상품정보제공고시 rows, ld+json, meta tags). -> `scripts/brand_fallback.py`
-  docstring.
 - A review photo from an iPhone can be served as MPO with an HDR gain map as its second picture, which Pillow cannot
   decode (seen 2026-11-08 on 4 review photos of the 100-run); the first picture is the photo. ->
   `scripts/image_prep._first_frame` docstring.
 
-- The search.shopping list is virtualized (probed 2026-11-14 in a held listing tab): older batches leave the DOM
-  (batch 1: 0 of 36 cards after 10 batches, ~800-900 cards held), the current batch is always whole in it. A card
-  click opens the product in a new tab and the listing tab survives it (16 + 30 + 4 clicks). -> `ext_listing_tab`
-  module docstring.
-- The listing's end: the last batch carries `hasMore=false`; a scroll after it brings nothing or a repeat of that
-  batch (probed 2026-11-14, two listings). -> `ext_listing_tab._take` docstring.
-- The first batch's `total` is the listing's size (53 and 122 seen, 2026-11-14); `/products/count` (ns-portal) does
-  not predict it (289 and 1148 for the same queries). -> `ext_listing_tab` module docstring.
-- A card clicked right after the page inserted a batch can open another product (2 in 16, 2026-11-14: the layout
-  shifts between the click's scrollIntoView and the click); wheeled to the middle of the view and steady first, 0 in
-  30. One card opened another product of its store at every click (thegolf 8986473641). -> `ext_product.STEADY_*`
-  comment, `_steady` and `_read_card` docstrings.
+### 13.10 Descriptions (SmartEditor)
 
-A new upstream fact gets a dated comment at the code that handles it and one
-line here (R-NAVER-4).
+- SmartEditor ONE descriptions have a blank `textContent` (`""` or `\u200b` runs); many are images only. ->
+  `parsers.parse_contents` comment.
+- Description cards (2026-11-06, 86 saved products): Naver's own detailContentText leaves out exactly the SmartEditor
+  ONE components se-oglink, se-placesMap and se-material (12 of 12 with text); we skip them in text and images too
+  (`pdp._SKIP_CLASSES`, `parsers._CARD_CLASSES`).
+- SmartEditor se-table (seen 2026-11-07, 8958060680, 13728190518, 7166885441, 13657325637): per-club spec tables of
+  4-11 columns. description_text renders one row per line, cells joined by " | " (pdp._table_lines);
+  measures.table_rows reads the HTML.
 - Some sellers' names and descriptions carry escapes written out as text ("u2013", "U2019": an import tool lost the
   backslash; 15 products, 2026-11-15). The server returns them as Naver does; scripts decode them
   (description_clean.decode_escapes).
-- A category page (`search.shopping.naver.com/ns/category/<display id>`: 10000123 스포츠/레저, 10000404 골프, 10002591 골프클럽;
-  display ids, not the 500xxxxx leaves) sends the owner's Chrome without a Naver login to nid.naver.com, by the menu
-  path with hovers too (probed 2026-11-14). -> scripts/JOB_AGENT.md "The query".
+
+### 13.11 Seller data patterns
+
+- Sellers' weight / size text (seen 2026-11-06 on 40 golf sets and 86 saved pages, `naver_shopping/measures.py`
+  comments): golfzonmarket-style iron-set notices give one reference club's figures ("7번 기준 36인치 , 332g", sometimes in
+  the 크기 row), club spec tables are td-only with a column header row (6774818843, 13049116377), "총중량" in a club spec
+  is one club's total (13777887875), and a notice 중량 may list one weight per club count (6630856593 "약11.5kg / 4.7kg"
+  for the 12- and 4-club variants).
+- Spec rows vs options (seen 2026-11-06, 40 golf sets of 50002788): 상품정보 rows are product-wide, but on a set sold in
+  several versions they often describe one version (아이언샤프트소재 그라파이트/카본 with "남성용 SR스틸", 총클럽개수 12개 with 9종 / 12종, 아이언 구성
+  of the 4-club set, 출시 2026년형 with XR26 / XR 24), and sometimes none (총클럽개수 12개 where every part list counts 11); the
+  transform (scripts/spec_variants.py) reads one fact from row and values and drops or binds the row.
+- Seller data patterns of the 139 checked sets (collection and transform):
+  [scripts/SELLER_DATA.md](../../scripts/SELLER_DATA.md).
+- A 제조사 of `M0000000` (page row and naverShoppingSearchInfo.manufacturerName, 2026-11-08, 13464713764) is Naver's
+  code for no manufacturer. A description GIF can be a static one-frame page holding the whole description (9942710033:
+  720 x 11489, spec tables); the animated ones are product videos. -> `transform._PLACEHOLDER_CODE`,
+  `description_images` docstring.
+- A seller who links no Naver brand leaves no brand anywhere Naver serves (checked 2026-11-08 on 6 of 143 trial sets:
+  product answer, page answer, raw search cards, 상품정보제공고시 rows, ld+json, meta tags). -> `scripts/brand_fallback.py`
+  docstring.
+
+### 13.12 DataLab and page limits
+
+- DataLab answers bad parameters with a plain 500; an unknown category is
+  turned into 404. -> `fetch.fetch_datalab` comment; `api._known_category`,
+  `api._categories_list`.
+- DataLab publishes once a day. -> `cache_config.DATALAB_CACHE` comment.
+- Page depth limits: 500 review pages, 25 keyword-rank pages; DataLab data
+  starts 2017-08-01. -> `schemas.MAX_REVIEW_PAGE`, `schemas.MAX_RANK_PAGE`,
+  `schemas.DATALAB_FIRST_DAY` comments.
+
+### 13.13 Client and transport
+
+- Korean query strings need `getunicode`. -> `routes.query_dict` docstring.
+- curl_cffi 0.17 has its TLS handshake reset by some ISPs. ->
+  `server/requirements.txt` comment. R-DEP-1.
+- CDP locale/timezone emulation is detectable; process-level settings are not
+  (a dated Coupang A/B, not a Naver test). -> `PatchrightDriver.__init__`
+  comment. R-BOX-6.

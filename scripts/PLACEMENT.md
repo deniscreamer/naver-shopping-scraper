@@ -2,8 +2,23 @@
 
 How a shop's sections are chosen at the last stage before Shopify, and how to turn the same mechanism on for
 another shop (tenant) or another category. The code: `attributes.py` (what the seller states), `placement_rules.py`
-(each shop's profile, data), `placement.py` (the stage). Its place in the pipeline: "Placement" at the end of
-this doc.
+(each shop's profile, data), `placement.py` (the stage). Its place in the pipeline: after the transform and the
+translation, right before publication ([PUBLISH.md](PUBLISH.md)).
+
+## How to run
+
+```sh
+.venv/bin/python scripts/placement.py fairwardgolf [--shops-root DIR]  # -> shops/<shop>/placement/placements.jsonl, report.txt
+```
+
+No network, no Shopify write; `placements.jsonl` is rebuilt each run, sorted by key. Read `report.txt`: counts per
+status and section, and every `unresolved` product with why. Per status:
+
+- `placed`: its sections' tags, `product_type` and `start_variants`; publication reads them.
+- `unresolved`: the attribute is unknown or in conflict (or no variant fits a section); held for the owner, its
+  evidence in the report (5, below).
+- `no_profile`: the Naver category has no placement in the shop's profile; add one (1, below).
+- `held`: the transform held the product; placement does not place it.
 
 ## The idea
 
@@ -18,6 +33,22 @@ this doc.
   collection a start variant.
 - **Only a stated value places.** `unknown` and `conflict` are held (`unresolved`), or go to the profile's
   fallback section. A value is never guessed.
+
+Why at the last stage (the owner, 2026-11-08): a shop is split into its sections there, from its own profile, not
+while a job collects; one Naver category id can be several sections (50002788 풀세트: men's and women's sets), and
+another shop may split other categories by other marks. The profile (`placement_rules.py`, data) maps a Naver
+category id to its parent, the attribute that splits it, each value's section (collection handle, product type,
+tags) and what an unresolved product does: `hold` or a fallback section. An attribute (`attributes.py`, data) is a
+value's words, the 상품정보 rows that state it and what a value implies. A new split is a new attribute and a
+profile entry; no code.
+
+One product, several collections: the product's card, variants and stock are shared, never a second copy. Its
+`tags` are the leaf tags of all its sections (fairwardgolf:leaf:mens-complete-sets and ...:womens-complete-sets),
+shown by both tag collections; its `product_type` is the primary section's (the most variants, then the profile's
+order). The start-variant hint is `start_variants` {leaf: sku}, for a metafield of start variants per collection
+(from the men's collection the men's variant opens), never a removal of the other variants; publication does not
+write it yet ([ONBOARDING.md](ONBOARDING.md) C11). A stated unisex goes to both sections; an unknown gender is not
+unisex and goes nowhere (held).
 
 ## What to change, by case
 
@@ -60,6 +91,14 @@ The values are `mens` / `womens`. `unisex` goes to both, because `GENDER.implies
 every section one of its variants fits. A title naming one gender beats a 남녀공용 (unisex) row: sellers fill the row
 from a template (the owner's pilot, 2026-11-09: a "PGM 여성골프채풀세트" went to the men's section too). A category whose 상품정보 row is not named 성별 needs that label added to
 `GENDER.rows`. A category whose sellers write other words needs those words added to `GENDER.words`. Both are data.
+
+How gender is read (50002788, fairwardgolf): each sold variant's option values first ("여성용-그라파이트": that
+variant is women's; a set with both is `mixed` and goes to both sections, each with its own start variant; when the
+seller marks only one gender's variants beside a unisex row, the unmarked ones are the other), else the 성별 row,
+else the title (여성 / 레이디스 / LADIES, 남성 / MEN'S, 남녀공용 -> both). A row and a title naming opposite genders,
+or every variant the opposite of the row: `conflict`; nothing says it: `unknown`; both are held (`unresolved`) for
+the owner, never guessed from a flex, a colour or a model. The job's listing query is evidence only (flag
+`listing_disagrees`).
 
 ## 3. Another shop (tenant)
 
@@ -136,49 +175,10 @@ When `attributes.py` changes, the prepared golden files change too
 (`UPDATE_GOLDEN=1 .venv/bin/python -m pytest scripts/test_prepared_golden.py`): read the diff before committing
 (R-TEST-5).
 
-## Checked (2026-11-08, fairwardgolf 50002788)
+## History: checked (2026-11-08, fairwardgolf 50002788)
 
 - **Trial sets:** 143 sets placed with no unresolved ones, 73 men's and 72 women's section memberships.
 - **Fixtures:** the 50 fixture sets go to the same sections as before, when the transform still decided leaves.
-- **The one change:** 13425122164, a men's listing with a women's variant, now goes to both sections.
+- **The one change:** 13425122164, a men's listing with a women's variant, now goes to both sections (2 and 1 variants).
 - **GVTOUR 8514409092:** 46 men's and 23 women's variants, each collection opening its own variant, as the
   harvester's live check found on 2026-09-26.
-
-## Placement: the shop's sections, the last stage before Shopify (`placement.py`)
-
-The owner (2026-11-08): a shop is split into its sections at the last stage before Shopify, from its own profile,
-not while a job collects; one Naver category id can be several sections (50002788 풀세트: men's and women's sets),
-and another shop may split other categories by other marks. So the transform only states what the seller says, as
-neutral **attributes** with their evidence (`attributes.py`, data: a value's words, the 상품정보 rows that state it,
-what a value implies), and placement maps them to the shop's sections by **profile** (`placement_rules.py`, data:
-Naver category id -> parent, the attribute that splits it, value -> section (collection handle, product type, tags),
-what an unresolved product does: `hold` or a fallback section). A new split is a new attribute and a profile entry.
-
-One product, several collections: a product in two sections stays ONE Shopify product (card, variants, stock
-shared, never a second copy) carrying the leaf tags of both (`tags`: fairwardgolf:leaf:mens-complete-sets and
-...:womens-complete-sets), shown by both tag collections; `product_type` is the primary section's (the most
-variants). A section showing only part of the card (a set with separate men's and women's variants) gets a
-start-variant hint (`start_variants` {leaf: sku}, for publication's metafield of start variants per collection: from
-the men's collection the men's variant opens), never a removal of the other variants. A stated unisex goes to both;
-an unknown gender is not unisex and goes nowhere (held).
-
-Gender (50002788, fairwardgolf): each sold variant's option values first ("여성용-그라파이트": that variant is
-women's; a set with both is `mixed` and goes to both sections, each with its own start variant; when the seller marks only
-one gender's variants beside a unisex row, the unmarked ones are the other), else the 성별 row, else the title
-(여성 / 레이디스 / LADIES, 남성 / MEN'S, 남녀공용 -> both). A row and a title naming opposite genders, or every
-variant the opposite of the row: `conflict`; nothing says it: `unknown`; both are held (`unresolved`) for the owner,
-never guessed from a flex, a colour or a model. The job's listing query is evidence only (flag `listing_disagrees`).
-Checked on the 143 trial sets and the 50 fixtures (2026-11-08): the same sections as the transform's leaves before
-on all but one (13425122164: a men's listing with a women's variant: both sections, 2 and 1 variants). GVTOUR
-8514409092: 46 men's and 23 women's variants, as the harvester's live check pinned them (2026-09-26).
-
-```sh
-.venv/bin/python scripts/placement.py fairwardgolf      # -> shops/<shop>/placement/placements.jsonl, report.txt
-```
-
-**The same case in another shop or category**, or a split by another mark: step by step in
-[PLACEMENT.md](PLACEMENT.md) (which file for which case, the profile entry, a new attribute, the unresolved policy,
-the tests to add). In short: the category's transform rules (`transform_shops.py`), its profile entry
-(`placement_rules.py`: parent, `split_by`, value -> section, `unresolved`), and for a new mark an `Attribute` in
-`attributes.py`; no code.
-

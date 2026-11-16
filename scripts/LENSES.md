@@ -109,12 +109,13 @@ Catches: a model word taken for a brand ("Generic" in the specs row), a descript
 (images_text "PRECISE"), a model line written as a brand (핀클리 for A11N SPORTS Pinkly), a brand the photo shows.
 
 ### `dupes`: one product or versions?
-Command: `lens.py dupes <shop> [--category <id>]`.
+Command: `lens.py dupes <shop> [--category <id>]`. The duplicate rule, `--report`, `--pairs` and the job's
+`--dedupe`: [DEDUPE.md](DEDUPE.md).
 
 The rows put each group under a banner, the kept copy first. Every member shows 4 photos, grade, reviews, price,
 variants and its first options.
 - **Green:** the kept copy.
-- **Red:** joined by title words alone (`dedupe.title_only`). Red wins, so a title-only kept copy is red too; its line
+- **Red:** joined by title words alone (`dedupe.title_only`, [DEDUPE.md](DEDUPE.md#--report-groups-in-the-store)). Red wins, so a title-only kept copy is red too; its line
   says `keep`.
 - **Grey, "reviewed: versions":** a group the owner judged versions.
 

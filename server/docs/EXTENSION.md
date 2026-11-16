@@ -1,32 +1,51 @@
 # Extension transport (beta): the search.shopping listing through the owner's Chrome
 
-Status: **beta** (2026-11-01). Two jobs: the full search.shopping.naver.com listing for a query, served by
-the HTTP API as listing jobs (`POST /listings`, [ENDPOINTS.md](ENDPOINTS.md#listing-jobs-beta-the-full-search-listing))
-and runnable by hand (`server/ext_listing.py`); and a product page's 상품정보 rows (`GET /products/specs`,
-`server/ext_product.py`, [below](#product-page-specs-products-specs)); since 2026-11-14 a third, a listing tab held
-open between calls whose products are read by a click on their cards (`POST /listing-tabs`, `server/ext_listing_tab.py`,
-[below](#held-listing-tab-listing-tabs)). Rules: [DEVELOPMENT_RULES.md](DEVELOPMENT_RULES.md) R-EXT-*, decision log 2026-11-01.
+Status: **beta** (2026-11-01). This file is the adapter: how it works, how to run and install it, what it does on
+the way (walls, captchas, tabs). The HTTP contract of its routes (params, answers, status codes, client policy) is
+[ENDPOINTS.md](ENDPOINTS.md) and is not repeated here. Rules: [DEVELOPMENT_RULES.md](DEVELOPMENT_RULES.md) R-EXT-*,
+decision log 2026-11-01.
 
-## Why an adapter at all
+Three jobs:
 
-search.shopping.naver.com is protected by Naver's bot defence (WtmCaptcha, `ncpt.naver.com` +
-`wtm.pstatic.net`). What the owner's HAR of 2026-11-01 shows:
+| Job | Route ([ENDPOINTS.md](ENDPOINTS.md)) | Module | Here |
+|---|---|---|---|
+| the full search.shopping.naver.com listing for a query | listing jobs, `POST /listings` ([contract](ENDPOINTS.md#listing-jobs-beta-the-full-search-listing)); also by hand | `server/listing_jobs.py`, `server/ext_listing.py` | [How it works](#how-it-works) |
+| a product page's 상품정보 rows and options | `GET /products/specs`, `GET /products/page` | `server/ext_product.py` | [Product page specs](#product-page-specs-productsspecs) |
+| since 2026-11-14: a listing tab held open between calls, its products read by a click on their cards | `/listing-tabs` ([contract](ENDPOINTS.md#held-listing-tabs-beta-listing-tabs)) | `server/ext_listing_tab.py` | [Held listing tab](#held-listing-tab-listing-tabs) |
 
-- **Before every listing call the page mints a one-time token.** A WebAssembly module from `wtm.pstatic.net`
-  collects browser and behaviour signals into an encrypted `cipherText` (~5.5 KB), the page POSTs it with a
-  `siteKey` and timings to `ncpt.naver.com/v2/tokens`, gets `{tokenId}` and sends it as `x-wtm-ncaptcha-token`
-  on `GET /ns/v1/search/paged-composite-cards`. A new token per batch.
-- **Without that token the call is refused**: HTTP 418 with the page "쇼핑 서비스 접속이 일시적으로 제한되었습니다"
-  ("shopping access temporarily restricted"). Measured: our own in-page `fetch` without it -> 418 at once.
-- **Low-trust clients get a captcha, then a network ban.** A fresh patchright Chrome got a captcha on the shopping
-  home and the search page; after many probes from one IP, the 418 page for the whole network (the owner's own
-  browser included) for a while.
-- **The owner's everyday Chrome passes**: real history and fingerprint, trusted input. A captcha at the entry can
-  still happen and is solved by the owner.
+## How to use
 
-So the listing is read in the owner's own Chrome, and **the page itself makes every listing call with its own
-token**. We never mint, copy or replay a token or a `cipherText`: that would be defeating the bot defence, and it is
-out of scope (R-EXT-1).
+1. Install the adapter once and reload it after any change in `extension/`:
+   [extension/README.md](../../extension/README.md) (its ops table is there too).
+2. Open Chrome with the adapter loaded; start `server/run.py` (it starts the bridge); check
+   `curl -s localhost:8000/health` says `"extension": "connected"`. `disconnected`: Chrome is closed or the adapter
+   is not loaded (it finds a started server within ~30 s); `off`: the bridge did not start.
+3. Call the route (scripts use `NaverApiClient`, never the bridge: R-EXT-6). On an answer:
+   - 409: the adapter is busy (one user at a time, below); retry when the holder is done, or free a left-over held
+     tab with `curl -X DELETE localhost:8000/listing-tabs/<id>`.
+   - 410: the held listing tab is gone; open a new one.
+   - 503 `wall: ...`: stop (a ban, a refused batch, a login gate twice, a captcha not answered). Never retry in a
+     loop: a retry after a wall risks a ban for the owner's whole network. 503 `naver error page:` (K-21) or
+     `adapter error:` may be retried after a pause. The full client policy: [ENDPOINTS.md "Errors"](ENDPOINTS.md#errors-routescall).
+   - a captcha: the run waits; the owner answers it in that Chrome window (see [Captcha](#effects-and-limits)).
+     Watch it with `GET /captcha` or `scripts/captcha_watch.py`.
+
+### Run
+
+Through the API (what scripts use): start `server/run.py`, check `/health` says `"extension": "connected"`, then
+`POST /listings` (or `NaverApiClient.listing(query)`); output under `server/output/listings/<job_id>/`.
+
+By hand (API server stopped):
+
+```
+.venv/bin/python server/ext_listing.py "남성 골프채 풀세트" --max-batches 3    # a short check
+.venv/bin/python server/ext_listing.py "남성 골프채 풀세트" --out golf-mens   # the whole listing
+```
+
+Output: `server/output/ext-listing/<run>/listing.jsonl` + `summary.json` (gitignored; the summary is written on
+every exit). Exit code 0 done or `--max-batches` reached; 1 stalled, layout changed (no search box / no first batch)
+or an adapter error; 2 the extension did not connect; 3 a wall (captcha not solved, login gate, ban page, refused
+batch). Install / reload the adapter: [extension/README.md](../../extension/README.md).
 
 ## How it works
 
@@ -37,6 +56,9 @@ scripts/ ──HTTP──► run.py: /listings ──► listing_jobs.py ──�
 
 `run.py` starts the bridge at startup; the adapter connects to it and stays connected. `ext_listing.py` run by hand
 starts its own bridge on the same port, so stop the API server first (or the port is taken).
+
+The page itself makes every listing call with its own bot-defence token; we never mint, copy or replay a token
+(R-EXT-1; why: [Why an adapter at all](#why-an-adapter-at-all)).
 
 1. **Way in, like a person.** `www.naver.com` -> mouse click on 쇼핑 (opens a new tab) -> click the shopping search
    box, type the query key by key, Enter -> the site routes to `search.shopping.naver.com/ns/search`. Clicks and
@@ -64,16 +86,20 @@ store backend and open to more fields later, since the whole rendered page is in
 full flow in the owner's Chrome.
 
 The seller's attribute rows of a smartstore product (종류, 성별, 총클럽개수, 원산지 ...) are only on its product page
-(decision log 2026-11-01). `ext_product.read_page`, all in Python over the existing ops:
+(decision log 2026-11-01). The adapter cannot open a product page directly (Naver redirects that to the login
+page), so a read walks the flow like a person: naver.com -> the shopping home (쇼핑) -> a search -> click the
+product's card -> the product opens in a new tab -> unfold the list. `ext_product.read_page`, all in Python over the
+existing ops:
 
 1. The search tab (2026-11-07, the owner: one product per iteration of a job): the tab of the previous read is kept and
    searched again by its own box (`ext_listing.search_again`: click `input[class*="_searchInput_search_text"]`,
    click the visible clear button `button[class*="_searchInput_button_clear"]` (typing without it inserts at the
-   caret), type, Enter); only when there is no such tab (first read, gone, another page) `open_search(query)` as
-   for a listing: naver.com -> 쇼핑 -> the search. Two ways in: a known product searches its
+   caret), type, Enter), so the next read skips naver.com; only when there is no such tab (first read, gone, another
+   page) `open_search(query)` as for a listing: naver.com -> 쇼핑 -> the search. Two ways in: a known product searches its
    full Korean name (the default `query`); a product from a listing uses that listing's search as `query` (its card
    is on the first search page only for the first rows; deeper ones fall back to the name). A category entry is not
-   built yet.
+   built: a category page needs a signed-in Naver account (probed 2026-11-14, every level of the 카테고리 menu lands
+   on nid.naver.com); a listing is a search, the category is the screen's.
 2. The card: `a[href*="/products/<id>?"]` on the search page (cards link to
    `smartstore.naver.com/main/products/<id>?nl-query=...`); none -> 404. The card's photo is clicked
    (`img[class*="productCardThumbnail_image"]` in the `product_card` element whose child is that link; the link
@@ -128,11 +154,11 @@ batch; this one 0 in 30). A click that opened nothing is not repeated (the listi
 - **The session lock** (`ext_listing_tab._lock`): `next` and `specs` never wait for it (409), open and close do, so a
   call left running on the server after a client's Ctrl+C (a captcha wait is up to 600 s) cannot close the next
   session's tabs or free the adapter twice.
-- **410 is the one "session gone" signal**: unknown id, a server restart, the listing tab closed or no longer a
-  search page, an adapter error on it, a login gate, a card that opened in the listing tab itself. The caller opens
-  a new tab from the top and skips what it has done. Walls as for a listing (R-EXT-3): a ban, a refused batch or a
-  stall end the session (503 `wall:`); a captcha not answered on a product page closes only that page's tab
-  (`wall: captcha ...`, the session lives).
+- **410 is the one "session gone" signal** (`ext_listing_tab.TabGone`; its causes: [ENDPOINTS.md "Errors"](ENDPOINTS.md#errors-routescall)):
+  the caller opens a new tab from the top and skips what it has done. A card that opened in the listing tab itself
+  loses the tab's position: its product is still answered, the session ends. Walls as for a listing (R-EXT-3): a ban,
+  a refused batch or a stall end the session (503 `wall:`); a captcha not answered on a product page closes only that
+  page's tab (`wall: captcha ...`, the session lives).
 - **No idle timer**: a session whose caller died without DELETE holds the adapter until the next open, a DELETE
   (`curl -X DELETE localhost:8000/listing-tabs/<id>`) or a server restart. `job.py` closes it in a `finally`, SIGTERM
   included.
@@ -147,6 +173,7 @@ batch; this one 0 in 30). A click that opened nothing is not repeated (the listi
   owner's chat) and waits `NAVER_CAPTCHA_WAIT_S` (600 s) while the owner answers it in that Chrome window, at the Mac
   or from a phone through a remote-desktop app. A new captcha after a wrong answer is reported again; when the page
   shows no captcha the run goes on, else it stops. Nothing is ever typed into a captcha by the code (R-EXT-3).
+  The state the run waits on is served as `GET /captcha` ([ENDPOINTS.md](ENDPOINTS.md#get-captcha-the-captcha-the-adapter-waits-on)).
   **Ban page / refused batch**: stop, never retried.
 - Chrome must be open with the adapter loaded; the run drives its own tabs only.
 - Coverage: `total` is the site's count for the query (4385 for 남성 골프채 풀세트, vs ~30k in the ns-portal widget:
@@ -157,23 +184,6 @@ batch; this one 0 in 30). A click that opened nothing is not repeated (the listi
   410 and the next open cannot close that tab, so it stays open in Chrome; the owner closes it.
 - Fragile points: the 쇼핑 shortcut selector, the search box selector, the RSC key name, the card fields.
   The offline tests pin the parsers to trimmed real captures.
-
-## Run
-
-Through the API (what scripts use): start `server/run.py`, check `/health` says `"extension": "connected"`, then
-`POST /listings` (or `NaverApiClient.listing(query)`); output under `server/output/listings/<job_id>/`.
-
-By hand (API server stopped):
-
-```
-.venv/bin/python server/ext_listing.py "남성 골프채 풀세트" --max-batches 3    # a short check
-.venv/bin/python server/ext_listing.py "남성 골프채 풀세트" --out golf-mens   # the whole listing
-```
-
-Output: `server/output/ext-listing/<run>/listing.jsonl` + `summary.json` (gitignored; the summary is written on
-every exit). Exit code 0 done or `--max-batches` reached; 1 stalled, layout changed (no search box / no first batch)
-or an adapter error; 2 the extension did not connect; 3 a wall (captcha not solved, login gate, ban page, refused
-batch). Install / reload the adapter: [extension/README.md](../../extension/README.md).
 
 ## Files
 
@@ -189,3 +199,24 @@ batch). Install / reload the adapter: [extension/README.md](../../extension/READ
 | `server/naver_shopping/composite.py` | pure parsers (first batch, answers, rows) |
 | `server/notify.py` | captcha / stop notifications (webhook or macOS) |
 | tests | `test_ext_bridge.py`, `test_listing_jobs.py`, `test_ext_product.py`, `test_ext_listing_tab.py`, `naver_shopping/test_composite.py`, `naver_shopping/test_pdp.py` (offline) |
+
+## Why an adapter at all
+
+search.shopping.naver.com is protected by Naver's bot defence (WtmCaptcha, `ncpt.naver.com` +
+`wtm.pstatic.net`). What the owner's HAR of 2026-11-01 shows:
+
+- **Before every listing call the page mints a one-time token.** A WebAssembly module from `wtm.pstatic.net`
+  collects browser and behaviour signals into an encrypted `cipherText` (~5.5 KB), the page POSTs it with a
+  `siteKey` and timings to `ncpt.naver.com/v2/tokens`, gets `{tokenId}` and sends it as `x-wtm-ncaptcha-token`
+  on `GET /ns/v1/search/paged-composite-cards`. A new token per batch.
+- **Without that token the call is refused**: HTTP 418 with the page "쇼핑 서비스 접속이 일시적으로 제한되었습니다"
+  ("shopping access temporarily restricted"). Measured: our own in-page `fetch` without it -> 418 at once.
+- **Low-trust clients get a captcha, then a network ban.** A fresh patchright Chrome got a captcha on the shopping
+  home and the search page; after many probes from one IP, the 418 page for the whole network (the owner's own
+  browser included) for a while.
+- **The owner's everyday Chrome passes**: real history and fingerprint, trusted input. A captcha at the entry can
+  still happen and is solved by the owner.
+
+So the listing is read in the owner's own Chrome, and **the page itself makes every listing call with its own
+token**. We never mint, copy or replay a token or a `cipherText`: that would be defeating the bot defence, and it is
+out of scope (R-EXT-1).

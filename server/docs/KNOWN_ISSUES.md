@@ -1,7 +1,24 @@
 # Known issues
 
 Inherited defects, contradictions, stale references and dependency risk in
-`server/`. Each entry was re-checked against the code on 2026-11-01.
+`server/`. Each entry was re-checked against the code on 2026-11-01; the
+statuses on 2026-11-16.
+
+## How to use
+
+1. Something in `server/` looks wrong, a block or 502 needs explaining, or a
+   dependency is upgraded: find it in the index below (or grep the symbol).
+2. Read its **Status**:
+   - **open**: the code still does this. Do not copy the pattern, and do not
+     "fix" it without the evidence the policy below asks for. Entries marked
+     "working setup" (K-01, K-02) are kept on purpose until an A/B says
+     otherwise.
+   - **mitigated (date)**: still in the code, but callers or scripts work
+     around it as the entry says; keep the workaround.
+   - **fixed (date)**: the entry is under [Closed](#closed) at the end, kept
+     for its history.
+3. A **Today:** sentence in [DEVELOPMENT_RULES.md](DEVELOPMENT_RULES.md) with
+   a K-number describes one of these entries; it is not a rule.
 
 **Policy for every entry: do not copy the pattern; fix it only with evidence
 and a live A/B** (A/B against the current code on the same exit: step 3 of
@@ -10,14 +27,41 @@ least one curl call and one box call: R-TEST-4; both in
 [DEVELOPMENT_RULES.md](DEVELOPMENT_RULES.md)). The current
 code is the one observed to fetch Naver data stably; several entries below
 are part of that working setup, so "looks wrong" is not enough to change it.
-A fix removes its entry in the same commit.
+A fix moves its entry to [Closed](#closed) in the same commit, with
+**Status: fixed YYYY-MM-DD** and what fixed it; its K-number is never reused.
 
 Citations name symbols; `~N` is a line hint only. How the parts fit together
 is in [ARCHITECTURE.md](ARCHITECTURE.md).
 
+| K | Issue | Status |
+|---|---|---|
+| K-01 | `no_viewport=True` despite a NEVER comment | open |
+| K-02 | Image/font blocking on an anti-bot target | open |
+| K-03 | 418 is not a refusal inside the browser | open |
+| K-04 | Transport failures counted as refusals | open |
+| K-05 | No retry for box answer errors | open |
+| K-06 | Rotation is a no-op with zero or one proxy | open |
+| K-07 | Idle reaper | open |
+| K-08 | Ignored parameters | open |
+| K-09 | Pid-diff assumes a lock that does not exist | open |
+| K-10 | No backoff on the box path; backoff blocks request threads | open |
+| K-11 | `ValueError` maps to 400, unlogged | open |
+| K-12 | Absolute `next`/`previous` links, uncapped | mitigated |
+| K-13 | Brand store product lists get smartstore links | open |
+| K-14 | `ENV=production` does nothing | open |
+| K-15 | Unused `config.NAVER_SHOPPING_PROXY` | open |
+| K-16 | `PATCHRIGHT_DIRECT_HOSTS` read at import | open |
+| K-17 | Unpinned dependencies | open |
+| K-18 | References to code that is not in this repo | open |
+| K-19 | Driver features Naver never uses | open |
+| K-20 | No shutdown hook: temp profiles survive Ctrl+C | open |
+| K-21 | Naver's internal-error page is answered 503, not 404 | mitigated 2026-11-07 |
+| K-22 | Held listing tab: limits the probes did not cover | open |
+
 ## Browser box
 
 ### K-01 `no_viewport=True` despite a NEVER comment
+- **Status:** open: working setup, kept until an A/B says otherwise.
 - **Where:** `PatchrightDriver._main`, comment ~761 vs the launch kwargs ~860.
 - **Observed:** the comment says "NEVER no_viewport=True: its window geometry
   is a DataDome tell", but every launch with a channel passes
@@ -27,6 +71,7 @@ is in [ARCHITECTURE.md](ARCHITECTURE.md).
   today; whether removing it helps or hurts on Naver is untested.
 
 ### K-02 Image/font blocking on an anti-bot target
+- **Status:** open: working setup, kept until an A/B says otherwise.
 - **Where:** `browser_client.BLOCK_RESOURCES`; `PatchrightDriver.__init__`
   comment ~703-710.
 - **Observed:** the driver comment calls image/font flag blocking
@@ -36,6 +81,7 @@ is in [ARCHITECTURE.md](ARCHITECTURE.md).
   with an A/B.
 
 ### K-03 418 is not a refusal inside the browser
+- **Status:** open.
 - **Where:** `browser_client.REFUSE_STATUSES` = (403, 405, 429, 490);
   `fetch._box_answer`.
 - **Observed:** `_box_answer` treats 418 as `NaverBlocked`, but
@@ -44,6 +90,7 @@ is in [ARCHITECTURE.md](ARCHITECTURE.md).
 - **Impact:** a 418-blocked Chrome stays in use for the next request.
 
 ### K-04 Transport failures counted as refusals
+- **Status:** open.
 - **Where:** `_Browser.fetch_one` (`if not r.status_code and r.error`);
   `_Browser.warm` (goto exception -> `BoxRefused`).
 - **Observed:** an in-page fetch that never completed (status 0: network
@@ -53,6 +100,7 @@ is in [ARCHITECTURE.md](ARCHITECTURE.md).
   if Naver had refused; logs cannot tell the two apart.
 
 ### K-05 No retry for box answer errors
+- **Status:** open; clients retry a 502 (ENDPOINTS.md client policy).
 - **Where:** `fetch._box_call`, `fetch._box_answer`, `fetch.BOX_RETRY_STATUSES`.
 - **Observed:** `_box_call` retries only `BoxRefused`. `BoxUnavailable`
   (including a `CALL_TIMEOUT` wedge) becomes `NaverUpstreamError` at once.
@@ -65,6 +113,7 @@ is in [ARCHITECTURE.md](ARCHITECTURE.md).
 - **Impact:** transient backend errors reach the client as 502.
 
 ### K-06 Rotation is a no-op with zero or one proxy
+- **Status:** open: matters only with a rotating proxy.
 - **Where:** `browser_client.ExitPool.rotate`, `config.naver_shopping_browser_proxy`.
 - **Observed:** `rotate` calls the mint function again, which re-reads the
   same env value. The `ExitPool` docstring says so.
@@ -72,6 +121,7 @@ is in [ARCHITECTURE.md](ARCHITECTURE.md).
   IP. Only a rotating proxy gives a fresh exit.
 
 ### K-07 Idle reaper
+- **Status:** open.
 - **Where:** `browser_client._browser`, `browser_client.fetch`, `BROWSER_IDLE`.
 - **Observed:**
   - the reaper runs only inside `_browser()` and skips the proxy being
@@ -85,12 +135,14 @@ is in [ARCHITECTURE.md](ARCHITECTURE.md).
   lifetime. The race is latent until multiple proxies are used.
 
 ### K-08 Ignored parameters
+- **Status:** open.
 - **Where:** `browser_client.fetch`, `browser_client.fetch_any`.
 - **Observed:** `site`, `variant`, `session` and `timeout` are accepted and
   never used. `fetch_any` uses only the first candidate.
 - **Impact:** callers may believe they set a timeout; they do not.
 
 ### K-09 Pid-diff assumes a lock that does not exist
+- **Status:** open: latent, matters only with several proxies.
 - **Where:** `patchright_driver._children_since` docstring, comment in
   `PatchrightDriver.__init__` ~731, `kill_orphan_browsers` docstring.
 - **Observed:** they rely on launches being serialised by
@@ -100,6 +152,7 @@ is in [ARCHITECTURE.md](ARCHITECTURE.md).
   one driver can record (and later kill) another driver's processes.
 
 ### K-10 No backoff on the box path; backoff blocks request threads
+- **Status:** open.
 - **Where:** `fetch._box_call`, `fetch._retrying`.
 - **Observed:** box retries relaunch Chrome immediately. Curl backoff
   (`time.sleep`, 2 s then 4 s) runs on the cheroot request thread.
@@ -109,6 +162,7 @@ is in [ARCHITECTURE.md](ARCHITECTURE.md).
 ## HTTP layer and output
 
 ### K-11 `ValueError` maps to 400, unlogged
+- **Status:** open; since 2026-11-05 the other failures are logged (below).
 - **Where:** `routes.call`.
 - **Observed:** `except ValueError` -> 400 also catches parser or upstream
   bugs (e.g. `int(store["merchant_id"])` in `api._reviews`), and that path
@@ -119,6 +173,7 @@ is in [ARCHITECTURE.md](ARCHITECTURE.md).
   the server output.
 
 ### K-12 Absolute `next`/`previous` links, uncapped
+- **Status:** mitigated: clients paginate with `page` (ENDPOINTS.md "Pagination", `NaverApiClient`).
 - **Where:** `routes._page_link`, `routes.paginate`.
 - **Observed:** links take scheme and host from `request.urlparts`, which in
   bottle 0.13.4 follows `X-Forwarded-Proto`, `X-Forwarded-Host` and `Host`,
@@ -131,6 +186,7 @@ is in [ARCHITECTURE.md](ARCHITECTURE.md).
 - **Impact:** clients should paginate with `page`, not follow `next`.
 
 ### K-13 Brand store product lists get smartstore links
+- **Status:** open.
 - **Where:** `api._store_products` -> `parsers.parse_store_products(..., is_brand=False)` ~503.
 - **Observed:** `is_brand` is never passed, so products of a brand store are
   linked as `https://smartstore.naver.com/<slug>/products/<id>`.
@@ -141,6 +197,7 @@ is in [ARCHITECTURE.md](ARCHITECTURE.md).
 ## Config and environment
 
 ### K-14 `ENV=production` does nothing
+- **Status:** open: harmless; the Dockerfile is archived (`archive/docker/`).
 - **Where:** `archive/docker/Dockerfile` (`ENV ENV=production`), `hostenv.IS_PRODUCTION`,
   `hostenv.IS_VM`, `hostenv.IS_VM_OR_DOCKER`.
 - **Observed:** `IS_PRODUCTION` is set and never read. Same for `IS_VM`
@@ -148,21 +205,25 @@ is in [ARCHITECTURE.md](ARCHITECTURE.md).
   ("Never open debug prompts/devtools on crash") describes no behaviour here.
 
 ### K-15 Unused `config.NAVER_SHOPPING_PROXY`
-- **Where:** `config.NAVER_SHOPPING_PROXY` ~26.
+- **Status:** open: R-HTTP-6 forbids using the constant.
+- **Where:** `config.NAVER_SHOPPING_PROXY` ~72.
 - **Observed:** read at import, used nowhere. The getters
   `naver_shopping_proxy` and `naver_shopping_browser_proxy` re-read the env
   on each call.
 - **Impact:** a patch of the constant has no effect.
 
 ### K-16 `PATCHRIGHT_DIRECT_HOSTS` read at import
+- **Status:** open.
 - **Where:** `patchright_driver._DEFAULT_DIRECT_HOSTS` ~564.
 - **Impact:** a change needs a process restart. It only matters with a proxy.
 
 ## Dependencies
 
 ### K-17 Unpinned dependencies
+- **Status:** open: a standing risk, re-checked after each upgrade (R-DEP-2).
 - **Where:** `server/requirements.txt`.
-- **Observed:** only `curl_cffi>=0.16,<0.17` is pinned. bottle, cheroot,
+- **Observed:** only `curl_cffi>=0.16,<0.17` is pinned (`websockets>=13`,
+  for the extension bridge, has a lower bound only). bottle, cheroot,
   marshmallow, requests, patchright, psutil, pyvirtualdisplay and pytest float.
   Chrome itself is the Mac's installed Google Chrome and auto-updates.
   `browserforge` is not listed; it is
@@ -199,7 +260,10 @@ either, every sidecar is read again on the next run; check one product's rows by
 | Pillow | 13.0.0 |
 | requests | 2.34.2 |
 
+## Running the server
+
 ### K-20 No shutdown hook: temp profiles survive Ctrl+C
+- **Status:** open: disk litter only.
 - **Where:** `run.main` (catches `KeyboardInterrupt`, stops cheroot only); `PatchrightDriver.close` is the only
   place that removes `_profile_dir`.
 - **Observed (macOS, 2026-11-01):** after Ctrl+C the Chrome processes exit with the patchright driver, but each
@@ -207,7 +271,11 @@ either, every sidecar is read again on the next run; check one product's rows by
 - **Impact:** disk litter only. Clear with `rm -rf "$TMPDIR"/patchright-profile-*` while the server is stopped.
   A fix (an `atexit` close of `browser_client`'s browsers) needs only the live smoke, not an A/B.
 
+
+## Extension transport
+
 ### K-21 Naver's internal-error page is answered 503, not 404
+- **Status:** mitigated 2026-11-07: the 503 says `naver error page:` and `scripts/job.py` waits and retries it.
 - **Where:** `ext_product._land` (the tab-URL check, both product reads), the extension's page read.
 - **Observed (2026-11-06/07, 139 products, ~1 page read in 25):** Naver opens
   `shopv.pstatic.net/web/maintenance/internal-error.html` on any product for 2-15 minutes. The extension cannot read
@@ -219,7 +287,9 @@ either, every sidecar is read again on the next run; check one product's rows by
   error starts with its kind: `naver error page:` for this one (`adapter error:` for another failed read, `wall:`
   for a wall), so `scripts/job.py` waits and retries it and stops only on a wall; the status stays 503.
 
+
 ### K-22 Held listing tab: limits the probes did not cover
+- **Status:** open: limits not yet seen live.
 - **Where:** `ext_listing_tab.py` (`/listing-tabs`), `scripts/job.py scroll`; `scripts/collect_guard.py`
   `CollectGuard.run`.
 - **Observed (2026-11-14, probes 1-3: 11 + 6 + 5 batches, 50 clicks, ~22 min idle at most):**
@@ -240,9 +310,11 @@ either, every sidecar is read again on the next run; check one product's rows by
 - **Impact:** small so far (the pilot: 100 published of 101 taken, the one closed by translation). A scroll job
   runs with the owner near for captchas; a stop says why and `scroll --job` resumes.
 
+
 ## Stale references and unused code
 
 ### K-18 References to code that is not in this repo
+- **Status:** open.
 Do not look for these and do not trust the text around them as a
 description of this repo:
 - `route_glue` (`scraper_errors` docstring; `naver_shopping.fetch` and
@@ -261,6 +333,7 @@ description of this repo:
 - `requirements-worker.txt` (`hostenv` docstring).
 
 ### K-19 Driver features Naver never uses
+- **Status:** open: kept on purpose (R-BOX-14).
 - **Where:** `patchright_driver`.
 - **Observed:** not called by the Naver path: the Cloudflare/Turnstile loop
   (runs but returns None on Naver), `get_many`, `TabbedPatchrightDriver`,
@@ -271,3 +344,9 @@ description of this repo:
 - **Impact:** most of the module is multi-site code. Its comments hold dated
   A/B evidence; do not prune it without evidence (R-BOX-14), and do not
   read its comments as Naver facts.
+
+## Closed
+
+None yet. A fixed entry moves here with its text, **Status: fixed
+YYYY-MM-DD**, and the commit or evidence that fixed it, when it no longer
+guides work.

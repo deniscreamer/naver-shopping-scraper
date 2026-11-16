@@ -1,7 +1,8 @@
 # Publication to Shopify
 
 How prepared, translated and placed products reach the Shopify store (`publish.py`), the store actions (withdraw,
-hold, restore, activate) and the Shopify roadmap; split from scripts/README.md on 2026-11-16 (history: `git log --follow scripts/README.md`).
+hold, restore, activate), the payload and its metafields, and the history (the Shopify roadmap, the harvester's
+products); split from scripts/README.md on 2026-11-16 (history: `git log --follow scripts/README.md`).
 
 ## Publication (`publish.py`, MVP, the owner 2026-11-08)
 
@@ -12,7 +13,7 @@ hold, restore, activate) and the Shopify roadmap; split from scripts/README.md o
 
 A product goes to the store when it is `ready` (transform), `translated` and `placed`; a job made with
 `job.py new --publish` does it for each product right after translation (placement of the whole shop, offline,
-then this one product; with `--describe` its description is written in between, see the next section). Per product: the reviews' photos and avatars to Shopify Files (the files app, once per
+then this one product; with `--describe` its description is written in between, see [DESCRIBE.md](DESCRIBE.md)). Per product: the reviews' photos and avatars to Shopify Files (the files app, once per
 file, named by its hash, `publish/files.jsonl`), the review rows as a JSON feed file there, the gallery photos as
 staged uploads attached in `productSet` (create, or update the product with its source key), ACTIVE, published
 to every sales channel of the store (the owner, 2026-11-09). Draft first (2026-11-16): a create in a Naver category
@@ -27,6 +28,32 @@ managed metafield the product no longer has is deleted (`shopify_payload.MANAGED
 digest: a change of what the builder makes sends every product again. So is the shop's price rule
 (`shop_pricing.Policy.describe()`: every number and the tariff's version): a new rule or tariff sends every
 product again too, so `reprice.py` shows the change first (see PRICE.md, The price).
+
+## Withdraw, hold, restore, activate (store actions)
+
+Each one waits for the owner's word ([OWNER_RULES.md](OWNER_RULES.md)); the procedure: skill `store-actions`. A
+product's key is `fairwardgolf:naver:<channel>:<product id>`: a lens's `index.tsv` gives it by sheet number (column
+`key`), the ledger by product id.
+
+- `publish.py <shop> --withdraw <key> --reason "..."`: the product goes DRAFT in the store (nothing deleted), the
+  ledger row says `withdrawn` with the reason, and it is never sent again; dedupe closes a new copy of it as
+  `duplicate_of_withdrawn` (unless the reason is `replaced_by:<key>`: then its replacement is compared). Allowed
+  while a job runs (no shop lock).
+- **Hold** (the owner, 2026-11-16): a doubtful copy a lens review found is withdrawn with a reason starting `hold:`
+  (the exact reason is in OWNER_RULES rule 2), not as `replaced_by:`, until the owner decides: [OWNER_RULES.md](OWNER_RULES.md) rule 2.
+- `--restore <key> --reason "..."`: undoes a withdrawal: ACTIVE again (a product created as a draft comes back a
+  draft), its last published row back in the ledger with no digest, so the next `--only <key>` sends today's data.
+- `--activate <key>` (repeatable): a draft live, nothing sent again; `not a draft here` for a key that is not a
+  published draft (a withdrawn or held one included). `job.py activate --job <id> [--dry-run]`: every remaining
+  draft of a job, withdrawn ones skipped; it prints the `--withdraw` lines of the old copies a draft did not replace.
+- `--rehandle --only <key>`: the handle its title makes now (the old one redirects); `--force --only <key>`: send
+  even when nothing changed. Both re-send a published product: rule 1 of OWNER_RULES.md.
+- `store_diff.py <shop> [--only <key>] [--category <id>]`: read only, what a publication would change, field by
+  field; `--adopt` (takes the shop's lock) records `output` for products the store already has.
+
+## The payload (`shopify_payload.py`)
+
+What a product becomes in the store; read it when a published product looks wrong.
 
 The owner's rules (`shopify_payload.py`):
 - **Title, vendor**: the translation's (the title prompt makes the store name: brand first, no shop, distributor or
@@ -90,7 +117,9 @@ The owner's rules (`shopify_payload.py`):
   origin codes, Naver's delivery data as such (the seller's fee in Korea and the box are inside the price; the
   box's fields are in `fairwardgolf.package`), facts, gender (placement uses it for the sections), compare-at.
 
-Metafields. Storefront (`custom.*`, the site reads them, the harvester's formats kept): `review` (rating),
+### Metafields
+
+Storefront (`custom.*`, the site reads them, the harvester's formats kept): `review` (rating),
 `rating_count`, `reviews_seo` (up to 20 rows: id, customer {name, avatarUrl}, rating, title "", description,
 images, verified false, source, createdAt), `reviews_feed_url` (the JSON feed, every row, `date` instead of
 `createdAt`), `personalization_fields` (product-personalization/v1; a field without an English label is left out,
@@ -114,6 +143,15 @@ concern with a `schemaVersion`; a new value is a new field there, a new concern 
 The harvester's other keys (`custom.measurements`, `*_confidence_level`, `fairwardgolf.source_variants`,
 `source_pricing`, `catalog_*`, `enrichment_state` ...) are not written; their definitions stay for its 60 products.
 
+### Access and uploads
+
+Credentials: a store app's client id + secret file per store, its path in env as `shop_stores.py` names it
+(`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`), next to the store's domain, shop id, API version and namespace there; tokens are
+minted per run (`shopify_catalog.Credentials`; the writing apps: Publication, Access). They are never committed. A
+product's key, which every `--only`, `--withdraw` and `--activate` takes, is its source key
+(`<namespace>.source_offer_id` = `<namespace>:naver:<channel_no>:<product_id>`, e.g.
+`fairwardgolf:naver:500048270:12154351233`); a lens's `index.tsv` and the ledger give it by number or product id.
+
 Access: `ProductsAdmin` (PRODUCTS_API_*, write_products) and `FilesAdmin` (ADMIN_API_*, write_files), both keys in
 the store's credentials file, tokens minted per run as in the shop check. `ShopCatalog` stays read-only.
 
@@ -122,36 +160,20 @@ names searched 10 a query, one `stagedUploadsCreate` and one `fileCreate` per 50
 staging bucket 6 at a time (each retried on 429 / 5xx), one `nodes()` poll for the whole batch. The GraphQL calls
 stay one at a time: Shopify limits by query cost per app and store (this store: a 2 000-point bucket, 100 points a
 second back; a search of 10 names costs ~5, a mutation ~10), and a THROTTLED answer, a 429 or a 5xx waits what
-Shopify says and repeats (`shopify_catalog._send`). Measured live: 30 photos in 8.3 s (0.28 s a file, 7 GraphQL
-calls) against 4.0 s a file one by one (5 calls a file).
+Shopify says and repeats (`shopify_catalog._send`). The measurement: History, below.
 
-## Withdraw, hold, restore, activate (store actions)
+## History
 
-Each one waits for the owner's word ([OWNER_RULES.md](OWNER_RULES.md)); the procedure: skill `store-actions`. A
-product's key is `fairwardgolf:naver:<channel>:<product id>`: a lens's `index.tsv` gives it by sheet number (column
-`key`), the ledger by product id.
+The design note that came before the publication, the harvester's products it learnt from, and the measurements.
 
-- `publish.py <shop> --withdraw <key> --reason "..."`: the product goes DRAFT in the store (nothing deleted), the
-  ledger row says `withdrawn` with the reason, and it is never sent again; dedupe closes a new copy of it as
-  `duplicate_of_withdrawn` (unless the reason is `replaced_by:<key>`: then its replacement is compared). Allowed
-  while a job runs (no shop lock).
-- **Hold** (the owner, 2026-11-16): a doubtful copy a lens review found is withdrawn with a reason starting `hold:`
-  (the exact reason is in OWNER_RULES rule 2), not as `replaced_by:`, until the owner decides: [OWNER_RULES.md](OWNER_RULES.md) rule 2.
-- `--restore <key> --reason "..."`: undoes a withdrawal: ACTIVE again (a product created as a draft comes back a
-  draft), its last published row back in the ledger with no digest, so the next `--only <key>` sends today's data.
-- `--activate <key>` (repeatable): a draft live, nothing sent again; `not a draft here` for a key that is not a
-  published draft (a withdrawn or held one included). `job.py activate --job <id> [--dry-run]`: every remaining
-  draft of a job, withdrawn ones skipped; it prints the `--withdraw` lines of the old copies a draft did not replace.
-- `--rehandle --only <key>`: the handle its title makes now (the old one redirects); `--force --only <key>`: send
-  even when nothing changed. Both re-send a published product: rule 1 of OWNER_RULES.md.
-- `store_diff.py <shop> [--only <key>] [--category <id>]`: read only, what a publication would change, field by
-  field; `--adopt` (takes the shop's lock) records `output` for products the store already has.
+**Uploads, measured live**: 30 photos in 8.3 s (0.28 s a file, 7 GraphQL calls) against 4.0 s a file
+one by one (5 calls a file).
 
-## Shopify roadmap
+### Shopify roadmap
 
 This is a design note, older than the publication above. The code so far: the read-only check of what a store already has (`shopify_catalog.py`),
 the transform to prepared products (see TRANSFORM.md, Transform) and the placement into the shop's sections (`placement.py`, see
-PLACEMENT.md, Placement) and the translation (`translate.py`, see TRANSLATION.md, Translation: `translation/translated.jsonl`, English by text
+PLACEMENT.md) and the translation (`translate.py`, see TRANSLATION.md, Translation: `translation/translated.jsonl`, English by text
 id); publication joins them (`publish.py`, see Publication).
 
 The pipeline: collection (example_99) -> kept runs (`keep_run.py`) -> prepared products (`run_transform.py`:
@@ -161,13 +183,7 @@ first combinations, every pair of values, `variants_capped`), the photos (re-upl
 Settled since: publication through the Admin GraphQL `productSet` (see Publication); delivery, duty and margin
 inside the price of a shop with free delivery (see PRICE.md, The price, the owner 2026-11-11).
 
-Credentials: a store app's client id + secret file per store, its path in env as `shop_stores.py` names it
-(`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`), next to the store's domain, shop id, API version and namespace there; tokens are
-minted per run (`shopify_catalog.Credentials`; the writing apps: Publication, Access). They are never committed. A
-product's key, which every `--only`, `--withdraw` and `--activate` takes, is its source key
-(`<namespace>.source_offer_id` = `<namespace>:naver:<channel_no>:<product_id>`, e.g.
-`fairwardgolf:naver:500048270:12154351233`); a lens's `index.tsv` and the ledger give it by number or product id.
-Publication is `publish.py` (above); the start variant per collection is not sent (ONBOARDING.md C11).
+Publication is `publish.py` (above; its credentials and the product's key: "Access and uploads"); the start variant per collection is not sent (ONBOARDING.md C11).
 
 ### What the naver-harvester published (reference for publication)
 
@@ -202,4 +218,3 @@ mistakes. A local snapshot of those 60 (not in git): `scripts/output/harvester-s
   6 handles, 45 distinct option names (one of 35 characters, "Color: L"), spec-label drift ("Total club count" /
   "Total number of clubs"), Event rows on 11 of 60 and pointer rows on 7 of 60, 62 of 250 alts duplicated or stale,
   2 products with no review rows though the counts said 3 and 21.
-
