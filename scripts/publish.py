@@ -473,11 +473,17 @@ def main(argv: list[str] | None = None) -> int:
         from shopify_admin import ProductsAdmin
         admin = ProductsAdmin(get_store(args.shop))
         admin.check_shop()
-        for key in args.activate:
-            got = activate(shop, key, admin)
+        failed = 0
+        for key in args.activate:                  # one refused key does not stop the others (as job.py activate)
+            try:
+                got = activate(shop, key, admin)
+            except CatalogError as e:
+                failed += 1
+                print(f"{key}: failed: {e}"[:300])
+                continue
             print(f"{key}: activated ({got['store_status']}) {got.get('admin_url', '')}" if got else
                   f"{key}: not a draft here")
-        return 0
+        return 1 if failed else 0
     if args.restore:
         if not args.reason:
             ap.error("--restore needs --reason")

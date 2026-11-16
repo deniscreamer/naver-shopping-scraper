@@ -1422,7 +1422,7 @@ def cmd_activate(args: argparse.Namespace) -> int:
             failed += 1
             print(f"{key}: failed: {e}"[:300])
             continue
-        done += 1
+        done += row is not None                    # "not a draft here" (the ledger moved meanwhile) is not counted
         print(f"{key}: activated ({row['store_status']}) {row.get('admin_url', '')}" if row else
               f"{key}: not a draft here")
     print(f"activate {job.id}: {len(keys)} drafts" + ("" if args.dry_run else f", {done} activated, {failed} failed"))

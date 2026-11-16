@@ -932,3 +932,24 @@ def test_activate_leaves_a_live_a_withdrawn_or_an_unknown_key(tmp_path, monkeypa
     monkeypatch.setattr(PB, "get_store", lambda shop: None)
     assert PB.main(["fairwardgolf", "--shops-root", str(tmp_path), "--activate", "live"]) == 0
     assert capsys.readouterr().out.strip() == "live: not a draft here"
+
+
+def test_a_refused_activate_key_does_not_stop_the_others(tmp_path, monkeypatch, capsys):
+    """2026-11-16, the phase 4 review: publish.py --activate ended in a traceback on a refused key and skipped the rest."""
+    shop = PB.Shop("fairwardgolf", str(tmp_path))
+    for k in ("bad", "good"):
+        PB._append(shop.ledger_path, {"key": k, "status": "published", "product_id": f"gid://{k}",
+                                      "store_status": "DRAFT"})
+
+    class Picky(StatusAdmin):
+        def set_status(self, product_id, status):
+            if product_id == "gid://bad":
+                raise PB.CatalogError("refused")
+            return super().set_status(product_id, status)
+    admin = Picky()
+    import shopify_admin
+    monkeypatch.setattr(shopify_admin, "ProductsAdmin", lambda store: admin)
+    monkeypatch.setattr(PB, "get_store", lambda shop: None)
+    assert PB.main(["fairwardgolf", "--shops-root", str(tmp_path), "--activate", "bad", "--activate", "good"]) == 1
+    out = capsys.readouterr().out
+    assert "bad: failed: refused" in out and "good: activated (ACTIVE)" in out
