@@ -11,7 +11,8 @@ rules (same input + same rules = the same bytes: sorted by key, no time inside):
     prepared/report.txt       counts, held products with their codes, texts to translate
     translation/<product id>/description_images.ko.txt|.ko.json
                               the description images' Korean text for the translation step, and the flag
-                              product.description_images_text.state on each product (image_texts below)
+                              product.description_images_text.state on each product (image_texts below);
+                              a .ko file is rewritten only when its bytes change
 
     .venv/bin/python scripts/run_transform.py fairwardgolf            # every kept run
     .venv/bin/python scripts/run_transform.py fairwardgolf 50002788-20261105T193000Z
@@ -51,6 +52,20 @@ def latest_lines(shop: str, runs: list[str] | None = None, shops_root: str = SHO
                     line = json.loads(raw)
                     latest[line["key"]] = (run_id, n, line)
     return latest
+
+
+def _write_if_changed(path: str, text: str) -> bool:
+    """Write `text` (write_atomic: a .<pid>.part renamed) only when the file's bytes differ. -> written.
+    2026-11-16: every run rewrote all 4,576 .ko files of the shop; an unchanged one now keeps its mtime (incremental
+    backups) and a reader never sees half of one."""
+    try:
+        with open(path, "rb") as f:
+            if f.read() == text.encode("utf-8"):
+                return False
+    except OSError:
+        pass
+    write_atomic(path, text)
+    return True
 
 
 def image_texts(shop: str, rules: Any, prepared: list[Any], latest: dict[str, tuple], shops_root: str) -> None:
@@ -103,12 +118,11 @@ def image_texts(shop: str, rules: Any, prepared: list[Any], latest: dict[str, tu
             if got["blocks"]:
                 os.makedirs(where, exist_ok=True)
                 glossary = image_text.glossary_for(p["source"].get("category_id"))
-                with open(ko_txt, "w", encoding="utf-8") as f:
-                    f.write(image_text.as_text(product_id, got["blocks"], digest, glossary))
-                with open(ko_json, "w", encoding="utf-8") as f:
-                    json.dump({"format": image_text.FORMAT, "product_id": product_id, "key": p["key"],
-                               "sha256": digest, "instructions": list(image_text.INSTRUCTIONS),
-                               "glossary": glossary, "blocks": got["blocks"]}, f, ensure_ascii=False, indent=1)
+                _write_if_changed(ko_txt, image_text.as_text(product_id, got["blocks"], digest, glossary))
+                _write_if_changed(ko_json, json.dumps(
+                    {"format": image_text.FORMAT, "product_id": product_id, "key": p["key"], "sha256": digest,
+                     "instructions": list(image_text.INSTRUCTIONS), "glossary": glossary, "blocks": got["blocks"]},
+                    ensure_ascii=False, indent=1))
                 flag.update(state="to_translate", ko=f"{rel}.ko.json")
                 try:
                     with open(en_json, encoding="utf-8") as f:

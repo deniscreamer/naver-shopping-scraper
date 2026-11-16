@@ -158,3 +158,15 @@ def test_a_brand_the_owner_set_by_hand_comes_first(tmp_path):
     brand_fallback.fill(prepared, lambda k: [], {}, lambda p: [], [], owner)
     assert (prepared[0]["product"]["brand_ko"], prepared[0]["product"]["brand_source"]) == ("Alvo Golf", "owner")
     assert prepared[1]["product"]["brand_source"] == "none"
+
+
+def test_a_ko_file_is_rewritten_only_when_its_bytes_change(tmp_path):
+    """2026-11-16: every run rewrote all 4,576 .ko files of the shop; an unchanged one keeps its mtime."""
+    path = str(tmp_path / "description_images.ko.json")
+    assert run_transform._write_if_changed(path, "한글 text\n") is True
+    os.utime(path, (1_000_000, 1_000_000))
+    assert run_transform._write_if_changed(path, "한글 text\n") is False
+    assert os.stat(path).st_mtime == 1_000_000
+    assert run_transform._write_if_changed(path, "한글 other\n") is True
+    assert open(path, encoding="utf-8").read() == "한글 other\n" and os.stat(path).st_mtime != 1_000_000
+    assert os.listdir(tmp_path) == ["description_images.ko.json"]                  # no .part left
