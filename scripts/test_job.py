@@ -939,3 +939,45 @@ def test_an_unexpected_error_outside_a_product_is_a_stop_event(tmp_path, monkeyp
     assert J.cmd_run(argparse.Namespace(job=job.folder, items=0)) == 3
     assert job.events()[-1]["reason"].startswith("unexpected: KeyError: 'ctx' @ test_job.py:")
     assert "STOP: unexpected: KeyError" in capsys.readouterr().out
+
+
+# ---- the owner told how a run ended (2026-11-16) ---------------------------------------------------------------
+
+def test_a_stopped_run_tells_the_owner_once_with_the_reason_and_the_resume(tmp_path, monkeypatch, no_sleep,
+                                                                           notified):
+    job = make_job(tmp_path, KEYS4)
+    monkeypatch.setattr(J, "_context", lambda job: ({"store": None}, 0))
+    monkeypatch.setattr(J, "stages", lambda job: {})
+    monkeypatch.setattr(J, "one", lambda *a, **k: {}["x"])
+    assert J.main(["run", "--job", job.folder]) == 3
+    assert len(notified) == 1
+    event, message, details = notified[0]
+    assert event == "job_stop" and message.startswith("j1: 3 products in a row failed unexpectedly")
+    assert details["resume"] == "job.py run --job j1" and details["key"] == KEYS4[2]
+
+
+@pytest.mark.parametrize("code, last, sent", [(0, "done", "job_done"), (0, "failed", None), (2, None, None),
+                                              (130, "stop", None), (3, "stop", "job_stop")])
+def test_only_a_stop_or_a_finished_job_is_told(tmp_path, monkeypatch, notified, code, last, sent):
+    job = make_job(tmp_path)
+
+    def cmd(args):
+        if code != 2:
+            args.ran = job.folder
+        if last:
+            job.log(None, last, reason="r")
+        return code
+    monkeypatch.setattr(J, "cmd_scroll" if code == 130 else "cmd_run", cmd)
+    assert J.main(["scroll" if code == 130 else "run", "--job", job.folder]) == code
+    assert [n[0] for n in notified] == ([sent] if sent else [])
+
+
+def test_a_failed_notice_never_raises(monkeypatch, notified, capsys):
+    import requests
+    monkeypatch.setenv("NAVER_NOTIFY_WEBHOOK", "https://example.invalid/hook")
+
+    def refused(*a, **k):
+        raise requests.exceptions.ConnectionError("no route")
+    monkeypatch.setattr(requests, "post", refused)
+    notified.real("job_stop", "j1: wall")
+    assert "webhook failed: ConnectionError" in capsys.readouterr().out

@@ -44,7 +44,9 @@ Google Chrome (a real window opens). Docker/Linux is archived in
    the Anthropic API for translation, OpenAI as its fallback (`scripts/translate.py`, the owner 2026-11-08), and
    for the products' descriptions through the same client (`scripts/describe.py`, the owner 2026-11-10); and
    ShopNShip's public shipping calculator, by hand only to capture the delivery tariff, never in the price path
-   (`scripts/shopnship_rates.py`, `scripts/shopnship_explore.py`, the owner 2026-11-11).
+   (`scripts/shopnship_rates.py`, `scripts/shopnship_explore.py`, the owner 2026-11-11); and a job's stop / done
+   notice to the owner's own webhook `NAVER_NOTIFY_WEBHOOK` when set, else a macOS notification (`scripts/notify.py`,
+   a copy of `server/notify.py`, the owner 2026-11-16; `scripts/check_setup.py --notify` posts one test notice there).
 4. Tests never hit the network (in scripts/, `scripts/conftest.py` fails a test that tries).
    API answer types live in `scripts/naver_types.py`; a shape change updates type + fixture + client method (R-TYPE).
 5. Move or rename tracked files with `git mv` so history follows them.

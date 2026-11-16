@@ -128,4 +128,5 @@ curl -X POST "http://localhost:8000/listings?query=...&max_batches=3"   # with r
 
 `/health` shows `"extension": "connected"` once the adapter is connected to the running server.
 
-`NAVER_NOTIFY_WEBHOOK=<url>`: where captcha / stop notices are POSTed (JSON); unset = a macOS notification.
+`NAVER_NOTIFY_WEBHOOK=<url>`: where captcha / stop notices are POSTed (JSON); unset = a macOS notification. A job's
+stop / done notices (`scripts/job.py`, through `scripts/notify.py`) use the same variable.

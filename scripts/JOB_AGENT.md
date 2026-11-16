@@ -33,6 +33,10 @@ files: `scripts/job.py` docstring; the stages' own docs: [README.md](README.md).
 `--all` instead of `--count` (the owner, 2026-11-12): no count, the job goes on until the listings have no more
 products (each used-up snapshot: the listings read deeper, no cap of our own: the server takes at most 200 batches a query and rests between batches, EXTENSION.md).
 
+When `run` or `scroll` stops (exit 3) or finishes (`done`), the owner is told (2026-11-16, `scripts/notify.py`):
+`job_stop` with the reason and the command that resumes, or `job_done`, to `NAVER_NOTIFY_WEBHOOK` when set, else a
+macOS notification. Nothing for a refusal (2) or Ctrl+C (130). Still relay a stop yourself.
+
 Start `run` in the background and wait for it; read `status --json` (stages per product, closed ones with why,
 held ones with their codes, the last stop, the next product, `running`: the product and stage of this moment),
 not the logs. The log has one line when a product starts, one when it is done (with its stage times), and a

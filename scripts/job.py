@@ -81,7 +81,8 @@ or Ctrl+C closes the tab before the run ends. `run` and `refresh` refuse a scrol
 The shop's lock (2026-11-16, shop_files.py): `run`, `scroll` (before a new job's folder) and `refresh` hold
 `<shops_root>/.<shop>.lock` for their whole life; another runner of the shop, or a hand command that rewrites the
 shop's files or sends its products, is refused at once (`stop: <shop> is busy: job.py run <id> (pid N, since T)`,
-exit 2). `status` and `new` take no lock.
+exit 2). `status` and `new` take no lock. When `run` / `scroll` stops (3) or finishes (`done`), main() tells the
+owner (tell_owner: scripts/notify.py, NAVER_NOTIFY_WEBHOOK else a macOS notification; the owner, 2026-11-16).
 
 `--dedupe off|log|on` (`new` and `scroll`, the owner 2026-11-15; kept in job.json, read again on resume; off, the
 default, leaves the job as it was and writes no key): right after a product is collected, before its description
@@ -946,6 +947,7 @@ def cmd_run(args: argparse.Namespace) -> int:
     job = open_job(args.job)
     if _scroll_job(job):
         return 2
+    args.ran = job.folder                                      # main() tells the owner how it ended
     return locked(job.shops_root, job.shop, f"job.py run {job.id}",
                   lambda: _guarded(job, "run again", lambda: _run(job, args)))
 
@@ -1314,6 +1316,7 @@ def _scroll(args: argparse.Namespace, job: "Job | None", shop: str, shops_root: 
         print(f"job {job.id}: scroll {job.meta['queries'][0]!r} (target {args.count or 'the listing end'})",
               flush=True)
     sjob = job
+    args.ran = sjob.folder                                     # main() tells the owner how it ended
     return _guarded(sjob, f"scroll --job {sjob.id}", lambda: _scroll_run(sjob))
 
 
@@ -1441,8 +1444,33 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--job")
     s.add_argument("--json", action="store_true")
     args = p.parse_args(argv)
-    return {"new": cmd_new, "run": cmd_run, "status": cmd_status, "refresh": cmd_refresh,
+    code = {"new": cmd_new, "run": cmd_run, "status": cmd_status, "refresh": cmd_refresh,
             "scroll": cmd_scroll}[args.cmd](args)
+    if args.cmd in ("run", "scroll") and getattr(args, "ran", None):
+        tell_owner(args.ran, code)
+    return code
+
+
+def tell_owner(folder: str, code: int) -> None:
+    """How a run ended, to the owner (the owner, 2026-11-16; scripts/notify.py: NAVER_NOTIFY_WEBHOOK, else a macOS
+    notification): 3 -> job_stop with the last stop's reason and the command that resumes; 0 with the job's `done`
+    event last -> job_done. Nothing for 2 (refused), 130 (the owner's own Ctrl+C) or a run cut by --items. Never
+    raises: a failed notice must not turn a stop into a traceback."""
+    import notify
+    try:
+        job = Job(folder)
+        events = job.events()
+        again = f"job.py scroll --job {job.id}" if job.meta.get("mode") == "scroll" else f"job.py run --job {job.id}"
+        if code == 3:
+            stop: dict[str, Any] = next((e for e in reversed(events) if e["event"] == "stop"), {})
+            notify.notify("job_stop", f"{job.id}: {stop.get('reason') or 'stopped'}"[:300], job=job.id,
+                          key=stop.get("key"), resume=again)
+        elif code == 0 and events and events[-1]["event"] == "done":
+            st = summary(job)["stages"]
+            notify.notify("job_done", f"{job.id}: done, {st[job.final]} {job.final}, {st['closed']} closed",
+                          job=job.id, stages=st)
+    except Exception as e:
+        print(f"notify: not sent ({type(e).__name__}: {e})", flush=True)
 
 
 if __name__ == "__main__":                 # description_images spawns workers that import this file again

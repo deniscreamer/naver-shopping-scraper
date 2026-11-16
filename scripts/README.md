@@ -59,7 +59,7 @@ outside fetches: AGENTS.md rule 3.
 | `test_delivery_tariff.py`, `test_shopnship_rates.py`, `test_shopnship_explore.py` | Offline tests for the tariff calculator (the captures and explorations replayed through it) and the calculator's client (a fake calculator, a saved capture) |
 | `fixtures/shopnship/` | The calculator's answers of 2026-11-11: two grid captures (the second is the tariff's source), two explorations and the second round's rows; the backups a new capture is compared with |
 | `test_reprice.py` | Offline tests for the repricing flow |
-| `conftest.py` | The folder's tests never reach the network: a connection attempt fails the test |
+| `conftest.py` | The folder's tests never reach the network: a connection attempt fails the test; no test sends a notice (`notified` stands in for `notify.notify`) |
 | `deferred_log.py` | The shop's journal of deferred products (append-only); CLI `list` / `allow <key> --by` |
 | `collect_guard.py` | The run rules around one product: one retry, then deferred; stop on a wall; stop on a repeated defect |
 | `package_measures.py`, `category_measures.json` | Five shipping fields per variant: the seller's values, else the operator's category averages; the table also holds the operator's `baselines` for the composition; confidence 1-5 |
@@ -72,6 +72,7 @@ outside fetches: AGENTS.md rule 3.
 | `captcha_watch.py` | Reports a Naver captcha the adapter waits on (reads `/captcha`): one line per new captcha / solved / timed out; independent of any collection |
 | `keep_run.py` | Keeps a collection run (example_99 output) per shop, byte for byte, read-only (see Transform) |
 | `shop_files.py`, `test_shop_files.py`, `test_shop_lock.py` | The shop's shared files written and read safely: `write_atomic` (a rewritten file through `<path>.<pid>.part` and a rename), `append_line` (one write of whole lines, a line end first when the file lacks one), `read_jsonl` (a bad line is `LedgerError` naming `<path>:<n>`; a cut-off last line of an append-only file ignored with `tail_ok`), `shop_lock` (see Shared files) |
+| `notify.py` | A job's stop / done notice to the owner (`job.py` main, 2026-11-16): a copy of `server/notify.py` (`NAVER_NOTIFY_WEBHOOK`, else a macOS notification, never raises); `conftest.py` replaces it in every test |
 | `check.sh` | Offline, before a commit: the server suite, the scripts suite and mypy, each in its own process; prints the three results, non-zero exit when any fails |
 | `state_backup.py`, `test_state_backup.py` | Offline, by hand: the backup of `scripts/output`, `server/output` and `research/` (plans outside git, with the state) into tar + zstd archives by phase outside the repository (state, photos, description images in parts, server pages, old runs), `MANIFEST.json` with sha256, `RESTORE.md`; `--dry-run`, `--verify`, `--restore` into an empty folder. Reads the sources only (see Backup) |
 | `transform.py`, `transform_shops.py`, `run_transform.py` | The transform: kept runs -> prepared products per shop (shared rules, per-shop rules as data, the CLI) |
