@@ -1094,3 +1094,78 @@ def test_activate_goes_on_past_a_refused_one_and_exits_1(tmp_path, monkeypatch, 
     assert admin.calls == [("gid://11", "ACTIVE"), ("gid://12", "ACTIVE")]
     out = capsys.readouterr().out
     assert "1 activated, 1 failed" in out and "set reviewed=True in transform_shops.py on the owner's word" in out
+
+
+# ---- draft first: the review hints (2026-11-16) ----------------------------------------------------------------
+
+def _publishing_job(tmp_path, n_drafts, n_rows=None):
+    import publish as PB
+    keys = [f"{SHOP}:naver:100:{i}" for i in range(1, (n_rows or n_drafts) + 1)]
+    job = make_job(tmp_path, keys)
+    job.meta.update(translate=True, publish=True)
+    job.save_meta()
+    shop = PB.Shop(SHOP, str(tmp_path / "shops"))
+    for i, key in enumerate(keys):
+        PB._append(shop.ledger_path, {"key": key, "status": "published", "product_id": f"gid://{i}",
+                                      **({"store_status": "DRAFT"} if i < n_drafts else {})})
+    return job
+
+
+def test_no_review_hint_for_a_job_without_drafts_or_publication(tmp_path, capsys):
+    assert J.review_due(make_job(tmp_path / "a")) is None
+    job = _publishing_job(tmp_path / "b", 0, 3)
+    assert J.review_due(job) is None and J.summary(job)["review"] is None
+    J._review_reminder(job)
+    J._draft_first_line(True, SHOP, "50002788")
+    assert capsys.readouterr().out == ""
+    assert "drafts" not in J.progress(job, 1, 60)
+
+
+def test_the_review_is_due_at_review_after_drafts_or_when_done(tmp_path, capsys):
+    job = _publishing_job(tmp_path / "a", 3)
+    r = J.review_due(job)
+    assert r["drafts"] == 3 and not r["due"] and r["category_reviewed"]
+    assert f"lens.py section {SHOP} --job j1" in r["commands"][0] and "--category 50002788" in r["commands"][1]
+    J._review_reminder(job, due_only=True)                              # the progress line: not yet
+    assert capsys.readouterr().out == "" and "; 3 drafts await the review" in J.progress(job, 1, 60)
+    J._review_reminder(job)                                             # status / done: one line
+    assert "3 drafts await the lens review" in capsys.readouterr().out
+    job.log(None, "done")
+    assert J.review_due(job)["due"]
+    job = _publishing_job(tmp_path / "b", J.REVIEW_AFTER)
+    assert J.review_due(job)["due"]
+    J._review_reminder(job, due_only=True)
+    out = capsys.readouterr().out
+    assert "review due: 20 drafts" in out and "visual-review" in out and "lens.py dupes" in out
+    assert "job.py activate --job j1" in out and "on the owner's word only" in out
+
+
+def test_status_prints_the_review_and_its_json_carries_it(tmp_path, monkeypatch, capsys):
+    job = _publishing_job(tmp_path, J.REVIEW_AFTER)
+    monkeypatch.setattr("transform_shops.reviewed", lambda shop, category: False)
+    J.main(["status", "--job", job.folder])
+    out = capsys.readouterr().out
+    assert "review due: 20 drafts" in out and "reviewed=True in transform_shops.py" in out
+    J.main(["status", "--job", job.folder, "--json"])
+    assert json.loads(capsys.readouterr().out)["review"]["drafts"] == 20
+
+
+def test_the_done_line_marks_a_draft_and_the_creation_line_says_draft_first(tmp_path, monkeypatch, capsys):
+    import publish as PB
+    from test_publish import FakeFiles, FakeProducts
+    job = _publishing_job(tmp_path, 0, 1)
+    key = job.rows()[0]["key"]
+    monkeypatch.setattr(PB, "clients", lambda shop_name: (FakeProducts(), FakeFiles(), {}))
+    monkeypatch.setattr(PB.Shop, "ready", lambda self: [key])
+    monkeypatch.setattr("placement.run", lambda *a, **k: None)
+    status = [None]
+    monkeypatch.setattr(PB, "publish_one", lambda *a, **k: {"key": key, "status": "published", "handle": "h",
+                                                            "prices_usd": [5, 5], "store_status": status[0]})
+    assert J.publish_step(job, {}, key) == "published h $5"
+    status[0] = "DRAFT"
+    assert J.publish_step(job, {}, key) == "published (draft) h $5"
+    monkeypatch.setattr("transform_shops.reviewed", lambda shop, category: False)
+    J._draft_first_line(True, SHOP, "999")
+    assert "draft first: category 999 is not marked reviewed" in capsys.readouterr().out
+    J._draft_first_line(False, SHOP, "999")
+    assert capsys.readouterr().out == ""

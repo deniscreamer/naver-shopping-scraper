@@ -20,6 +20,10 @@ DRAFT with no false withdrawal. Owner: "check it is no error, then DRAFT".
    rule change waits for the owner's word (AGENTS.md, memory "Ask before touching published products").
 4. **Say what was not looked at.** A sheet shows one photo per product in a grid; a doubt the first photo cannot
    settle needs the `products` lens.
+5. **Drafts (draft first, 2026-11-16).** A product of a category not marked reviewed is published DRAFT; the ledger
+   says `published`, so it is in every lens under `--store published`. The scripts only print when the review is due
+   (`job.py` at 20 drafts, at done and in `status`: `review due` with the exact lens commands); the agent runs them,
+   reports, and activation waits for the owner's word (JOB_AGENT.md, Draft first).
 
 ## The tools
 

@@ -1,13 +1,14 @@
 ---
 name: visual-review
-description: Look at a shop's products by eye through contact sheets (scripts/lens.py) and prove each doubt from the data. Use after a pilot or job (is every product the section's?), before withdrawing duplicates (one product or versions?), when many products were prepared but not published (was the hold right?), after a price, brand, placement or dedupe rule change, or when the owner asks to check, compare or review products, a category or a section.
+description: Look at a shop's products by eye through contact sheets (scripts/lens.py) and prove each doubt from the data. Use after a pilot or job (is every product the section's?), before withdrawing duplicates (one product or versions?), when many products were prepared but not published (was the hold right?), after a price, brand, placement or dedupe rule change, when a job or `job.py status` prints `review due` (drafts of a category not marked reviewed), or when the owner asks to check, compare or review products, a category or a section.
 ---
 
 # Visual review of products
 
 The lenses, what each catches and when: `scripts/LENSES.md`. Read it first; this skill is only the procedure.
 
-1. **Pick the lens from the question.**
+1. **Pick the lens from the question.** A job printed a review block (`review due`): run exactly its commands
+   (`job.py status --job <id> --json`, key `review.commands`), then go on from step 3.
    - Section content after a run: `section --leaf <leaf>` (or `--job <id>`).
    - Odd items among sets: `price --category <id>`.
    - Vendor doubts: `brand --category <id> --source none,title_word,description_row` (blue: one brand, several

@@ -99,6 +99,11 @@ no fewer variants (`replaced`, else `replace_skipped`). A title match not confir
 A draft (draft first, 2026-11-16) does not replace a live product (`replace_skipped`, "the new one is a draft"):
 `activate` prints the withdraw line of the old one.
 
+Draft first (2026-11-16): a publishing job in a category not marked reviewed says so when made; a draft's done
+line reads `published (draft) ...`; the progress line adds `N drafts await the review`; from REVIEW_AFTER drafts
+(on the progress line), at done and in `status` (and `--json` key `review`) the block `review due` names the skill
+visual-review and the lens commands, then the owner's word. The scripts never run a lens.
+
 `activate --job ID [--dry-run]` (draft first, 2026-11-16): the job's products the ledger has as drafts
 (store_status DRAFT; a category not marked reviewed in transform_shops) set ACTIVE through publish.activate, on the
 owner's word after the lens review; withdrawn ones are skipped; the store checked as publish.py does
@@ -142,6 +147,7 @@ MAX_BATCHES_ALL = 200                        # `new --all`: the server's cap (sc
                                              # listing's own end (has_more false) comes first (2026-11-12: the junior
                                              # queries ended at 19-31 batches)
 REPORT_EVERY = 10
+REVIEW_AFTER = 20                            # drafts of a job: the lens review is due (the owner, 2026-11-16)
 DRAFT_WHY = "the new one is a draft"         # replace_skipped: the old one stays live until the new one is activated
 # the network down (2026-11-13: Shopify, then both model providers, unreachable for minutes): the product is tried
 # again (tenacity) after 30 s, doubled each time up to 15 min, +-10 s jitter; after 2 h of it the run stops
@@ -424,6 +430,7 @@ def cmd_new(args: argparse.Namespace) -> int:
     write_atomic(os.path.join(folder, "listing.jsonl"), "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
     print(f"job {job_id}: {len(rows)} products ({batches} batches a query; screen: {counts}; known left out: "
           f"{len(known)})")
+    _draft_first_line(args.publish, store.id.value, args.category)
     return 0
 
 
@@ -793,7 +800,8 @@ def publish_step(job: Job, ctx: dict, key: str, n: int = 0) -> str:
             prices_usd=row.get("prices_usd"))
     price = "-".join(dict.fromkeys(str(p) for p in row.get("prices_usd") or []))
     replaced = replace_step(job, ctx, shop, key) if job.meta.get("dedupe") == "on" else ""
-    return (f"{described}published {row.get('handle')} {f'${price} ' if price else ''}"
+    draft = "(draft) " if row.get("store_status") == "DRAFT" else ""
+    return (f"{described}published {draft}{row.get('handle')} {f'${price} ' if price else ''}"
             f"{row.get('admin_url') or ''}".strip() + replaced)
 
 
@@ -934,6 +942,7 @@ def take(job: Job, ctx: dict, key: str, stage_now: str | None, run: dict) -> int
     print(f"[{n}/{len(rows)}] {key.split(':')[3]} {what}", flush=True)
     if run["taken"] % REPORT_EVERY == 0:
         print("== " + progress(job, run["taken"], time.monotonic() - run["started"]), flush=True)
+        _review_reminder(job, due_only=True)                    # from REVIEW_AFTER drafts on
     job.beat(key=None, n=n, stage="pause", since=_now())
     time.sleep(PAUSE_S)
     return None
@@ -1003,6 +1012,7 @@ def _run(job: Job, args: argparse.Namespace) -> int:
             job.log(None, "done")
             print(f"done: every product of the job is {job.final} or closed", flush=True)
             _dictionaries_reminder(job)
+            _review_reminder(job)
             break
         stop = take(job, ctx, key, done.get(key), run)
         if stop:
@@ -1019,7 +1029,8 @@ def progress(job: Job, taken: int, seconds: float) -> str:
     left = max(target - st[job.final], 0)
     return (f"progress: {st[job.final]} of {target} {job.final} (ready {s['ready']}, held {len(s['held'])}), closed "
             f"{st['closed']}, failed once {len(s['failed_once'])}; this run {taken} in {round(seconds / 60)} min, "
-            f"~{round(per)} s a product, ~{round(left * per / 60)} min left")
+            f"~{round(per)} s a product, ~{round(left * per / 60)} min left"
+            + (f"; {s['review']['drafts']} drafts await the review" if s["review"] else ""))
 
 
 # ---- scroll: a held listing tab, its cards clicked (the owner, 2026-11-14) -----------------------------------
@@ -1283,6 +1294,7 @@ def scroll(job: Job, ctx: dict, tab: Tab, screen: Any, known: set[str]) -> int:
           + (f"; {cards} card_not_found" if cards else "")
           + ("; the other mode can take them (new --exclude-known)" if left or cards else ""), flush=True)
     _dictionaries_reminder(job)
+    _review_reminder(job)
     return 0
 
 
@@ -1335,6 +1347,7 @@ def _scroll(args: argparse.Namespace, job: "Job | None", shop: str, shops_root: 
         job = new_scroll_job(args, shop, shops_root)
         print(f"job {job.id}: scroll {job.meta['queries'][0]!r} (target {args.count or 'the listing end'})",
               flush=True)
+        _draft_first_line(args.publish, shop, args.category)
     sjob = job
     args.ran = sjob.folder                                     # main() tells the owner how it ended
     return _guarded(sjob, f"scroll --job {sjob.id}", lambda: _scroll_run(sjob))
@@ -1443,7 +1456,7 @@ def summary(job: Job) -> dict[str, Any]:
             "final": job.final, "not_built": [s for s in STAGES if s not in BUILT], "closed": out, "held": held,
             "failed_once": sorted({e["key"] for e in events if e["event"] == "failed"} - set(out)),
             "last_stop": stops[-1] if stops else None, "next": next_key(job, done),
-            "finished": bool(events) and events[-1]["event"] == "done"}
+            "finished": bool(events) and events[-1]["event"] == "done", "review": review_due(job)}
 
 
 def cmd_status(args: argparse.Namespace) -> int:
@@ -1466,6 +1479,7 @@ def cmd_status(args: argparse.Namespace) -> int:
         print("  no runner")
     print(f"  ready {s['ready']}; next: {s['next']}; finished: {s['finished']}; not built yet: {s['not_built']}")
     _dictionaries_reminder(open_job(args.job))
+    _review_reminder(open_job(args.job))
     return 0
 
 
@@ -1476,6 +1490,60 @@ def _dictionaries_reminder(job: Job) -> None:
         line = reminder()
         if line:
             print("  " + line, flush=True)
+
+
+def review_due(job: Job) -> dict[str, Any] | None:
+    """Draft first (2026-11-16): the job's drafts awaiting the agent's lens review -> {drafts, category_reviewed,
+    due (REVIEW_AFTER drafts, or the job done), commands (the lenses to run), withdraw (publish.py lines of the old
+    copies the drafts did not replace)}; None for a job that does not publish or has no draft. The scripts never
+    run a lens: they say when and which."""
+    if job.final != "published":
+        return None
+    import transform_shops
+    n = len(drafts(job))
+    if not n:
+        return None
+    events = job.events()
+    lens = ".venv/bin/python scripts/lens.py"
+    return {"drafts": n, "category_reviewed": transform_shops.reviewed(job.shop, job.category),
+            "due": n >= REVIEW_AFTER or (bool(events) and events[-1]["event"] == "done"),
+            "commands": [f"{lens} section {job.shop} --job {job.id}",
+                         f"{lens} price {job.shop} --category {job.category}",
+                         f"{lens} held {job.shop} --job {job.id}",
+                         f"{lens} brand {job.shop} --source none --category {job.category}",
+                         f"{lens} dupes {job.shop} --category {job.category}"],
+            "withdraw": withdraw_lines(job)}
+
+
+def _review_reminder(job: Job, due_only: bool = False) -> None:
+    """The review block (draft first): the lenses to run through the skill visual-review, then the owner's word.
+    Printed where the dictionaries' reminder is (done, status) and, `due_only`, on the progress line once due."""
+    r = review_due(job)
+    if not r or (due_only and not r["due"]):
+        return
+    if not r["due"]:
+        print(f"  {r['drafts']} drafts await the lens review (due at {REVIEW_AFTER} drafts or when the job is done)",
+              flush=True)
+        return
+    print(f"  review due: {r['drafts']} drafts of job {job.id} are not live; run the skill visual-review with:",
+          flush=True)
+    for c in r["commands"]:
+        print("    " + c, flush=True)
+    print("  report to the owner; then, on the owner's word only: withdraw the wrong ones (publish.py "
+          f"{job.shop} --withdraw <key> --reason ...), .venv/bin/python scripts/job.py activate --job {job.id}"
+          + ("" if r["category_reviewed"] else
+             f", and mark category {job.category} reviewed=True in transform_shops.py"), flush=True)
+    for line in r["withdraw"]:
+        print("    once the new one is live: " + line, flush=True)
+
+
+def _draft_first_line(publish: bool, shop: str, category: str) -> None:
+    """One line at a job's creation: its products go DRAFT (a category not marked reviewed)."""
+    import transform_shops
+    if publish and not transform_shops.reviewed(shop, category):
+        print(f"draft first: category {category} is not marked reviewed: its products go to the store as DRAFT "
+              f"(--count counts drafts); the lens review is due at {REVIEW_AFTER} drafts (job.py status lists the "
+              "commands), activation is the owner's word", flush=True)
 
 
 def _job_flags(p: argparse.ArgumentParser) -> None:

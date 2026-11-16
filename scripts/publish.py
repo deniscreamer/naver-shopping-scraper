@@ -186,7 +186,8 @@ def restore(shop: Shop, key: str, products: Any, reason: str) -> dict[str, Any]:
             published = row
     if published is None:
         raise SystemExit(f"{key}: no published row to restore")
-    status = products.set_status(before["product_id"], "DRAFT" if published.get("store_status") == "DRAFT" else "ACTIVE")
+    status = products.set_status(before["product_id"],
+                                 "DRAFT" if published.get("store_status") == "DRAFT" else "ACTIVE")
     row = {**published, "digest": "", "at": _now(), "restored": reason, "store_status": status}
     _append(shop.ledger_path, row)
     return row

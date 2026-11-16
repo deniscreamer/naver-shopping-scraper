@@ -195,6 +195,21 @@ copies, all looked at; 54 joined by title words only, 3 of them not one product 
 2025 with or without its bags: the title does not say, colours as kind words split 4 real copies instead); 188
 withdrawn `replaced_by:<kept key>`.
 
+## Draft first (a category not yet reviewed; the owner, 2026-11-16)
+
+A Naver category not marked `reviewed=True` in `transform_shops.py` (every new one) is published DRAFT: on every
+sales channel, but not shown until activated. The ledger says `published` (`store_status: DRAFT`), so dedupe, the
+lenses, `--count` and the job's stages count drafts as published: a pilot of 20 ends with 20 drafts, none live.
+What the job prints: `draft first: ...` when it is made; `published (draft) <handle>` in a product's done line;
+`; N drafts await the review` on the progress line; from 20 drafts (`REVIEW_AFTER`), on the progress line, at done
+and in `status`: the block `review due: ...` with the lens commands (`status --json`: key `review`).
+
+You: run the skill `visual-review` with exactly those commands, report the findings to the owner, and wait. On the
+owner's word only: withdraw the wrong ones (`publish.py <shop> --withdraw <key> --reason ...`), then
+`job.py activate --job <id>` (`--dry-run` first lists them), then run the old copies' `--withdraw` lines it prints.
+`reviewed=True` for the category is a commit on the owner's word after the pilot (a dated comment); a running
+`scroll` read `transform_shops` at its start, so the mark acts after a restart.
+
 ## What stops, and who acts
 
 | Seen | What the job did | You |
@@ -218,11 +233,14 @@ withdrawn `replaced_by:<kept key>`.
 | `stop: <shop> is busy: <holder> ...` (`run`, `scroll`, `refresh`, or a hand command) | refused at once, nothing written, exit 2 | another runner holds the shop: `job.py status`; wait for it or stop it, never start a second |
 | `STOP ... LedgerError: <path>:<n>: not a JSON line` (a broken line in the ledger, a job's listing, prepared / translated / placements) | stopped, nothing marked | tell the owner the file and line; a rebuilt file: the command the message names (when no job runs); the ledger or a listing: fixed by hand on the owner's word, then `run` again |
 | `held` codes in status | the product is prepared as held | read the codes ([README.md](README.md) Transform); report |
+| `review due: N drafts ...` (draft first) | goes on; the drafts are not live | the skill `visual-review` with the printed commands; report; activate only on the owner's word (Draft first) |
 
 A captcha is answered by the owner in Chrome while the read waits; a login page is reset by the server
 (naver.com again), never waited for.
 
 ## After
+
+A job of a category not marked reviewed: `job.py status --job <id>` prints the review block; see Draft first.
 
 `.venv/bin/python scripts/placement.py <shop>`, then read `shops/<shop>/placement/report.txt`: the `unresolved`
 products (the attribute unknown or in conflict) and the `no_profile` ones go to the owner with their evidence; never
