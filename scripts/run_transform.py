@@ -245,19 +245,19 @@ def image_read(line: dict, rules: Any, sidecar: dict | None) -> Any:
 
 
 def image_texts(shop: str, prepared: list[Any], reads: dict[str, Any], shops_root: str) -> None:
-    """The description images' Korean text for the translation step (description_image_text): written to
+    """The description images' Korean text for describe.py (description_image_text): written to
     <shop>/translation/<product id>/description_images.ko.txt (to read) and .ko.json (blocks with ids), and one
     flag on each prepared product, product["description_images_text"]["state"]:
 
       off           the category does not read its images (CategoryRules.description_images)
       not_read      it does, but description_images.py has not read this product's current links
       empty         read, nothing left to translate (photos, the shop's own blocks)
-      to_translate  the .ko files are written; no translation of this text yet
-      translated    description_images.en.json exists with source_sha256 = this text's sha256
+      to_translate  the .ko files are written: the normal final state (describe.py reads the Korean blocks)
+      translated    an old description_images.en.json exists with source_sha256 = this text's sha256
 
-    The translation step reads the flag (not the folder), writes description_images.en.json
-    {format, source_sha256, blocks: [{id, text}]} next to the .ko files; the next run_transform sets translated.
-    A product left with no text loses its .ko files (an .en file is the translator's and is kept).
+    describe.py reads the flag (not the folder) and the .ko blocks; since the owner's decision of 2026-11-10 the
+    images' text is not translated and nothing writes description_images.en.json (one written before is read here
+    only for the state). A product left with no text loses its .ko files (an .en file is kept).
     reads: {key: image_read()} of each product (from its cache record or computed)."""
     folder = os.path.join(shops_root, shop, "translation")
     read: dict[str, tuple[str, dict]] = {}

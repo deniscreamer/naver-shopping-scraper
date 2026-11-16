@@ -4,21 +4,27 @@ Running the scripts, the state backup, the shop's shared files and the conventio
 
 ## Running
 
-Start the server first, in another terminal:
+Start the server first, in another terminal (setup, requirements and the adapter: [SETUP.md](../SETUP.md)):
 
 ```sh
 .venv/bin/python server/run.py          # http://localhost:8000
 ```
 
-Then run the scripts:
+Then the scripts. The entry points, each with its skill:
 
 ```sh
-.venv/bin/pip install -r scripts/requirements.txt    # requests, Pillow
-.venv/bin/python scripts/smoke_endpoints.py          # --delay 5 --base-url http://localhost:8000
-.venv/bin/python scripts/example_search_harvest.py "raspberry pi" --limit 10 --out pi
-.venv/bin/python scripts/harvest_listing.py "남성 골프채 풀세트" --category 50002788 --out golf-mens
-.venv/bin/python -m pytest scripts -q                # offline; not part of the default `pytest` run
+.venv/bin/python scripts/job.py status [--json]               # jobs: scroll / new + run (skill run-a-job)
+.venv/bin/python scripts/lens.py <lens> <shop> [scope]         # products by eye, read only (skill visual-review)
+.venv/bin/python scripts/publish.py <shop> --dry-run           # payloads, nothing sent (skill publish)
+.venv/bin/python scripts/reprice.py <shop>                     # a dry-run price table (skill price)
+.venv/bin/python scripts/state_backup.py --dry-run             # the state backup, below
+.venv/bin/python scripts/smoke_endpoints.py                    # the live smoke of the API (networked)
 ```
+
+**Checks before a commit** (offline): `scripts/check.sh` runs the server suite, the scripts suite
+(`.venv/bin/python -m pytest scripts -q`, not part of the default `pytest` run) and mypy, each in its own process,
+prints the three results and exits non-zero when any fails. It is the authority on "the tests pass"; the docs give
+no test counts.
 
 ## Backup (`state_backup.py`, the owner 2026-11-16)
 
@@ -117,5 +123,5 @@ writes them goes through `shop_files.py`:
   - a module docstring that says why;
   - `# ---- section ----` banners;
   - `print("<script>: ...")` with a prefix;
-  - no type hints.
+  - type hints in new and changed code, checked by mypy (R-TYPE-5; the server stays untyped, R-STYLE-3).
 

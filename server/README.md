@@ -17,8 +17,10 @@ One venv at the repo root:
 
 ```
 python3 -m venv .venv
-.venv/bin/pip install -r server/requirements.txt
+.venv/bin/pip install -r server/requirements.txt -r scripts/requirements.txt
 ```
+
+`scripts/requirements.txt` is for the scripts that call the API (the whole setup: [../SETUP.md](../SETUP.md)).
 
 The supported platform is macOS (see below). `requirements.txt` bounds only `curl_cffi` (`>=0.16,<0.17`); everything else floats. Last versions verified locally:
 patchright 1.64.3, bottle 0.13.4, marshmallow 4.3.1, cheroot 11.1.2, curl_cffi 0.16.3 (Python 3.14 venv; Python
@@ -44,7 +46,7 @@ curl "http://localhost:8000/products/search?query=raspberry%20pi"
 
 ## macOS
 
-The server runs natively on macOS; this is the supported setup (verified on Python 3.14, all 11 endpoints live).
+The server runs natively on macOS; this is the supported setup (verified on Python 3.14 with the endpoints live).
 
 - **Google Chrome in /Applications.** The box calls launch the installed Chrome through patchright's `chrome`
   channel (`PatchrightDriver._main`), not patchright's bundled Chromium, so `patchright install` is not needed.
@@ -95,18 +97,20 @@ Offline (no network, no Chrome), from the repo root; config in `/pyproject.toml`
 `server`):
 
 ```
-.venv/bin/python -m pytest -q                      # 474 tests
+.venv/bin/python -m pytest -q                      # all pass; scripts/check.sh runs it with the scripts suite and mypy
 .venv/bin/python -m pytest server/test_import_smoke.py -q
 cd server && ../.venv/bin/python -m pytest -q      # also works
 ```
 
-`test_import_smoke.py` imports every library module (not `run.py` / `main.py`) by its bare name and checks the 38 mounted routes (14 endpoints, 3 `/listings`
-routes and `/captcha` x 2 prefixes, plus `/` and `/health`).
+`test_import_smoke.py` imports every library module (not `run.py` / `main.py`) by its bare name and checks the mounted
+routes: every `routes.ENDPOINTS` entry, every `routes.LISTING_PATHS` route (`/listings`, `/listing-tabs`) and `/captcha`,
+each at both prefixes, plus `/` and `/health` (the count is asserted there, `test_routes_mounted`).
 
-Live smoke (server running, networked, may launch Chrome); required after any transport or browser change:
+Live smoke (server running, networked, may launch Chrome); required after any transport or browser change. It calls
+every endpoint except `/products/specs`, `/products/page` (the adapter) and `/products/reviews/selected`:
 
 ```
-.venv/bin/python scripts/smoke_endpoints.py        # /health + the 11 Chrome-free endpoints (not /products/specs), sequential
+.venv/bin/python scripts/smoke_endpoints.py        # /health + 11 endpoints (curl and Chrome box), sequential
 .venv/bin/python scripts/smoke_endpoints.py --base-url http://localhost:9000 --delay 10
 ```
 

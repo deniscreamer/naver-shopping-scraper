@@ -119,7 +119,7 @@ ways to run a job; pick by what the run is for:
   and ~13% real sets with no gender: lefty, unisex), 1 non-set published (a club cover). More review after the run.
 - Anything doubtful that was published: `review_suspects.py` lists it (see "After").
 
-## Loop: `scroll` (beta, the owner 2026-11-14)
+## Loop: `scroll` (the owner 2026-11-14)
 
 ```sh
 .venv/bin/python -u scripts/job.py scroll --query "남성 골프채 풀세트" --category 50002788 --count 100 --paid
@@ -326,7 +326,8 @@ TRANSFORM.md, Transform, The prepare cache): about 5 s, the steps across product
 Duplicates (the owner, 2026-11-15): `new` / `scroll` `--dedupe log|on` compares each collected product with the
 shop's published and withdrawn ones and the job's own (`dedupe.py`: the same title words, another store, confirmed by
 the photos or the variants); `on` closes a duplicate that is not strictly better (grade, then reviews) and replaces
-the old product with a better one once it is published. `off`, the default, changes nothing. [JOB_AGENT.md](JOB_AGENT.md), Duplicates.
+the old product with a better one once it is published. `on` is the default (`log` only records, `off` changes nothing):
+Duplicates above.
 
 Checked live (2026-11-08, 50002788, own shops root): 40 sets in 53 min and 100 sets in 146 min, every one prepared
 `ready`, no stop, wait, captcha, login gate or Naver error page; ~80-88 s a product (collect median 52-56 s, page
@@ -334,6 +335,6 @@ read 34-48 s, OCR median 21-22 s, prepare 1-2 s); the search tab reused for ever
 of 12 batches (one query) read in 110 s: 583 unique rows, no stall. Captcha, login reset, Naver's error page and a
 lost extension are covered by offline tests only (none came up live).
 
-The other way to run a job (the owner, 2026-11-14, beta): `job.py scroll`, products clicked from one held listing tab,
+The other way to run a job (the owner, 2026-11-14): `job.py scroll`, products clicked from one held listing tab,
 no search per product; which one when: [JOB_AGENT.md](JOB_AGENT.md#two-ways-to-run-a-job-which-one-when).
 

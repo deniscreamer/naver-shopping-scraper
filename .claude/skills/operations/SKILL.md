@@ -11,7 +11,7 @@ What the doc covers:
 - running: the server, the scripts' requirements, smoke and harvest examples, the offline tests;
 - backup of `scripts/output`, `server/output` and `research/` into archives outside the repo, verify, restore;
 - shared files: atomic writes, appended lines, `read_jsonl`, `shop_lock`;
-- conventions: typed calls, sequential by default, outputs, resumable runs.
+- conventions: typed calls, sequential by default, the server cache, status handling, pagination, naming, style.
 
 Commands (repo root):
 - `scripts/check.sh` (server suite, scripts suite, mypy; offline) before a commit
@@ -23,4 +23,4 @@ Rules:
 - New code that writes a shop's files goes through `shop_files.py` (`write_atomic`, `append_line`, `shop_lock`).
 - A backup after each release; restore only into an empty folder.
 
-More: setup `SETUP.md`; server operations `server/README.md`; API calls skill `collect-api`; jobs skill `run-a-job`.
+More: a release skill `release`; setup `SETUP.md`; server operations `server/README.md`; API calls skill `collect-api`; jobs skill `run-a-job`.

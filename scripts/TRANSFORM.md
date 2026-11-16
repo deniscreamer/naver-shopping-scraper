@@ -98,7 +98,8 @@ read with the images or not at all (no sidecar, or a stale one: neither is read)
 
 Step 3 is not part of the collection on purpose: it is slow (~20 s a product, ~3.5 h per 1000), needs only the
 image hosts (no server, no Chrome) and can be run, stopped and resumed on its own. It reads only the categories
-whose shop rules set `description_images` (transform_shops; off by default, on for 50002788). Skipped, the
+whose shop rules set `description_images` (transform_shops; off by default, on for all four fairwardgolf categories:
+50002788, 50002787, 50002670, 50002783). Skipped, the
 transform still runs: the products get the note `description_images_missing` and today's values.
 `--products <id> ...` reads some products only, `--force` reads again.
 
@@ -373,12 +374,13 @@ field's since 2026-11-10: a product's size, the bag's length, mouth and sides (t
 sidecar; never holds), `description_images_stale` (the sidecar was read from other links, an older collection:
 not used; run the stage again).
 
-### The images' text, ready for the translation step
+### The images' text, read by `describe.py`
 
 Checked by eye against the images (2026-11-07, 20 live sets): prose reads near-exact, spec tables ~95 % (a digit
 lost now and then, a degree sign read as 0), small lettering on photos poorly; the rows as read are not a text yet.
 `run_transform` turns each product's current sidecar into clean Korean blocks (`description_image_text.py`) and
-writes them for the next step, translation (not done here). Fixed after the 100-run check (2026-11-08): a
+writes them for `describe.py`, which reads the Korean blocks itself (the owner, 2026-11-10: the images' text is not
+translated; nothing writes `description_images.en.json` any more, [TRANSLATION.md](TRANSLATION.md) Decisions). Fixed after the 100-run check (2026-11-08): a
 cross-sell cut starts only at a heading (a sentence cut 292-330 rows of three Sterna listings' spec sheets), a table
 heading or row repeated in another table is kept (only a slice overlap is a repeat), short flex rows ("R / D1/296")
 are table rows, and a store banner's address, hours, services and map labels are cut:
@@ -389,20 +391,18 @@ scripts/output/shops/<shop>/translation/<product id>/
                                  table image 3]" and the block; table rows are cells "a | b | c"
     description_images.ko.json   {format: description_image_text/1, product_id, key, sha256, blocks: [{id, kind:
                                  text | table, image, text}]}
-    description_images.en.json   written by the translation step: {format: description_image_translation/1,
-                                 source_sha256: the .ko sha256 it translated, blocks: [{id, text}]}
 ```
 
-**One flag** on every prepared product says where it stands; the translation step (and any checker) reads the flag,
+**One flag** on every prepared product says where it stands; `describe.py` (and any checker) reads the flag,
 never the folder: `product.description_images_text = {state, blocks, chars, sha256, dropped, ko, en}`, `state`:
 
-| state | meaning | the translation step |
+| state | meaning | `describe.py` |
 |---|---|---|
-| `off` | the category does not read its images | nothing to do |
-| `not_read` | it does; description_images.py has not read this product's current links | run the stage first |
-| `empty` | read; nothing left (photos, the shop's own blocks) | nothing to do |
-| `to_translate` | `ko` written; no translation of this exact text | translate `ko`, write `en` with `source_sha256 = sha256` |
-| `translated` | `en` exists with `source_sha256 = sha256` | done (a changed Korean text goes back to `to_translate`) |
+| `off` | the category does not read its images | no images' text |
+| `not_read` | it does; description_images.py has not read this product's current links | no images' text (run the stage first) |
+| `empty` | read; nothing left (photos, the shop's own blocks) | no images' text |
+| `to_translate` | `ko` written: the normal final state (the name is older than the 2026-11-10 decision) | reads the `ko` blocks |
+| `translated` | an old `description_images.en.json` with `source_sha256 = sha256` (written before 2026-11-10) | reads the `ko` blocks, as above |
 
 What is cut (counts per rule in `dropped`): rows repeated in the product (slice overlaps), low OCR confidence (<
 0.6), fragments and photo labels ("B4", "POWER TRAJECTORY"), prices (KRW, yen), contacts (phones, addresses, URLs),
@@ -636,7 +636,9 @@ link. The report says how many were dropped. The step is pure: same products in,
 - **Reviews**: the selected reviews (video posters already photos), rating and count from Naver's summary.
 - **Held**: `collect_incomplete`, `price_unknown`, `no_variants`,
   `options_unaligned` (rows that do not fit the groups), `specs_folded` (the 상품정보 list stayed folded), `axes_over_3`,
-  `no_images`, `images_over_50`.
+  `no_images`, `images_over_50`, `single_only` (a `sets_only` category's listing of single clubs only, below) and
+  `agency_no_brand` (run-level: a purchase agency's import with no brand where `agency_needs_brand` is on; off in
+  fairwardgolf since 2026-11-15).
 - **A brand for every product** (the owner, 2026-11-08: the Shopify vendor is never empty; no brand, at least the
   manufacturer). A seller who links no Naver brand leaves no 브랜드 row and no brandName, and Naver then knows none
   anywhere (6 of 143 sets: not in the product answer, the page's answer, the search cards, the notice, the page's

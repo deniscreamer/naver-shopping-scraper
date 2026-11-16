@@ -1,9 +1,10 @@
 # A new Naver category or a new shop (tenant)
 
 Where to add what, so that a new Naver leaf category in a shop, or a new shop, runs through the whole pipeline
-(collect, transform, OCR, translate, describe, place, price, publish) without silent gaps. Checked against the
-code on 2026-11-11 (then: one shop, `fairwardgolf`, one category, 50002788 golf full sets; since then 50002787 junior
-clubs, 50002670 women's iron sets, 2026-11-14, and 50002783 wedge sets, 2026-11-15). Agents: the
+(collect, transform, OCR, translate, describe, place, price, publish) without silent gaps. Written against the
+code on 2026-11-11 (one shop, `fairwardgolf`, one category, 50002788 golf full sets), kept up with each category
+since: 50002787 junior clubs (2026-11-11), 50002670 women's iron sets (2026-11-14), 50002783 wedge sets (2026-11-15),
+draft first (2026-11-16). Agents: the
 `new-category-or-shop` skill (`.claude/skills/`) walks through this file.
 
 Each row says what happens **without** the step:
@@ -29,7 +30,7 @@ are the owner's decisions. They are never made up. Ask, then write each one down
 | A3 | `scripts/placement_rules.py` `PROFILES[shop].categories` | `CategoryPlacement(parent, leaves, split_by, unresolved)` and its `Leaf(handle, product_type)` constants. How: [PLACEMENT.md](PLACEMENT.md) | **silent**: status `no_profile` (in `placements.jsonl` and the counts of `placement.py`), and `publish.py <shop>` skips the product without a word |
 | A4 | `scripts/attributes.py` `ATTRIBUTES` | Only when the split is by something other than `gender`: a new `Attribute` | **stops**: `KeyError` in `placement.place` |
 | A5 | Price, `scripts/shop_pricing.py` (the shop's `Delivered`) | Check level 1 (2.50) and the duty (12.5%) for this category. The rule is per shop, not per category: a different value needs a category override (new code). [PRICE.md](PRICE.md) "The price" | **silent**: priced with golf's coefficients and duty |
-| A6 | Shopify admin | A smart collection for every new `Leaf` handle, condition tag = `<shop>:leaf:<handle>`. No code creates collections. Read what exists first (read-only: `ShopCatalog(store)._post("{ collections(first: 100) { nodes { handle ruleSet { rules { column condition } } } } }")`): fairwardgolf already has 36, empty ones included, and the `Leaf` handle is the tag's part, without the `fairwardgolf-` of the collection's handle | **silent**: products are ACTIVE but in no section |
+| A6 | Shopify admin | A smart collection for every new `Leaf` handle, condition tag = `<shop>:leaf:<handle>`. No code creates collections. Read what exists first (read-only: `ShopCatalog(store)._post("{ collections(first: 100) { nodes { handle ruleSet { rules { column condition } } } } }")`): fairwardgolf already has 36, empty ones included, and the `Leaf` handle is the tag's part, without the `fairwardgolf-` of the collection's handle | **silent**: products are published (DRAFT first, then ACTIVE) but in no section |
 
 ### Quality: works without these, but worse
 
@@ -41,8 +42,8 @@ are the owner's decisions. They are never made up. Ask, then write each one down
 | A10 | `scripts/describe.py` `PROFILES` and `scripts/prompts/describe/<profile>.md` | A profile with its lists (e.g. "What's included") and its brief. Ship the two together | **weaker**: `default` (highlights only). A profile without its `.md` **stops** with `FileNotFoundError` |
 | A11 | `scripts/description_image_text.py` `GLOSSARIES` | The fixed Korean -> English terms of the images' text | **weaker**: terms are translated inconsistently |
 | A12 | `scripts/description_measures.py` `CATEGORY_PROFILES` | Only a set of like items in a container (its tables of parts); otherwise the core is enough. [TRANSFORM.md](TRANSFORM.md) "More of the page" | **weaker**: no counts, no container, no composition. Unstated fields fall to the flat default (A1) |
-| A14 | `scripts/listing_title_rules.json` | The category's title words for what its section does not sell (toys, gloves, loose heads, another sport), studied on 300-500 listing titles of the category: every rule checked on all of them, none may drop a product that fits (2026-11-11: 46 of 56 misfits of 50002787 with no false hit) | **weaker**: misfits are collected, translated and published; a person has to find them |
 | A13 | Tests | Fixtures from the first checked products: `make_measures_fixture.py` (package), `fixtures/collected` with `test_placement.EXPECTED` (placement), the golden prepared files | regressions go unnoticed |
+| A14 | `scripts/listing_title_rules.json` | The category's title words for what its section does not sell (toys, gloves, loose heads, another sport), studied on 300-500 listing titles of the category: every rule checked on all of them, none may drop a product that fits (2026-11-11: 46 of 56 misfits of 50002787 with no false hit) | **weaker**: misfits are collected, translated and published; a person has to find them |
 
 ## B. A new shop (tenant)
 
@@ -88,13 +89,13 @@ last step.
 | L1 | Every job prepares the **whole shop** (`run_transform.run`). A `--paid` job prepared all 436 products with paid variants and add-ons: 101 published full sets stood untranslated (nothing was sent) | `run_transform.paid_choices`: each product takes its own job's paid choice from the jobs' files, every other one only what is free; a run by hand does the same. Pick the job's `--paid` / `--paid-variants` for its own products only |
 | L2 | Package defaults are written when a product is **collected**, and kept runs are read-only (never edit them): a fixed table row did not reach the products already collected | the transform takes each default from today's table (`package_measures.current_defaults`); prepare again, then publish |
 | L3 | `publish.py --dry-run` did not know the store: it wrote "maruman" for Maruman and the tenant's name before an own-brand title | `publish.offline_ids`: the brand dictionary's spellings and the tenant's name offline |
-| L4 | A new dictionary entry of the new category changed four products of the old one (`구성` -> "Contents"); 8 of its 108 entries were wrong (an age lost, `호수` -> "Club Number") | dictionaries per category (C2); read every new entry before the backup (`translation_dicts.py status`) |
+| L4 | A new dictionary entry of the new category changed four products of the old one (`구성` -> "Contents"); 8 of its 108 entries were wrong (an age lost, `호수` -> "Club Number") | dictionaries per category (C2); read every new entry before the dictionaries' backup (`translation_dicts.py status`) |
 | L5 | A rule fixed earlier (a brand read in "치핑" / "쇼핑") had not reached a product published before the fix | `store_diff.py` (part D, step 6) finds such products |
+| L6 | publish.py's skip compared its inputs: 18 of 20 products whose inputs moved would have sent what the store already had, and hid the two real changes | the ledger keeps `output`, the hash of what productSet sends (`publish.output_digest`): a product is skipped when that did not change |
 | L7 | The first 30 junior products: a shop's or a supplier's name as the brand (세모물상점, 스퀘어홀딩), one brand spelled two ways (U.S.KIDSGOLF / U.S. Kids Golf) and written twice in a title, a bag alone and a toy published, two clubs priced as a set | trading names are no brand, brands compared by letters and digits, `publish.py --withdraw`, the category's `bag_only` rule and `two_clubs` kind. Read the new category's vendors and its cheapest and dearest prices after the first run |
 | L8 | The next 100 junior products: a shop brand of one category is looked for in every category's images (GB in "golf bag" changed two adult sets), the cleaned brand of one product (던롭) took two XXIO sets' titles; ages and lofts after 클럽 read as a count (single clubs priced as sets, $709-729) | Latin brands as whole words, a brand inside a Korean branch's name last, `brand_fallback.clean` for the brand rows, measures out of the package words. After every run, `store_diff.py` over the **whole shop**, not only the new category. Then read the new category's no-brand, agency and dearest products: three no-name agency imports at $1499-1899 and a school pack of ten irons went out; `agency_needs_brand`, the title rule `group_pack` |
 | L9 | The first 100 women's iron sets (50002670, 2026-11-15, a review in six phases): a brand row of "골프" (one junior product) made "Golf" the vendor of 55 published junior and full sets; a used set ([중고]) published as new; a phone number in an option name, a "contact us" variant and add-on; a brand spelled from its sound (제스타임 "Jestime", the maker writes ZESTAIM), a maker's longer brand lost (무쯔미혼마 as 혼마), a model line invented in a title (Prestigio for 로얄); four XXIO 14 and two V300 listings of one model the title-word dedupe does not see | `brand_fallback._NO_FIRM` (the sport, a gender word, a lone letter, a 정품 claim are no firm), the category's `used` title rule (not shared: 50002788 keeps used sets on purpose), a seller's note out of option values, contact notes dropped in the transform, the maker naming a longer brand the title names wins, the category brief's makers and lines. After the first run of a category: `review_grid.py`, then read its new brands against the makers' own Latin spelling |
 | L10 | The first 60 wedge sets (50002783, 2026-11-15): 17 listings titled "웨지 세트 (또는 개별)" sold one wedge per variant (a loft, 1PC) and were published as sets; 16 agency imports held as agency_no_brand, 5 of them with the maker in the title (라즈러스, 야마토, 버뮤다 mid-title, GoSports); the job's dedupe kept 10 sellers out as copies of those held products, so the models reached the store from none | `sets_only` (a one-club variant out, a listing of them held `single_only`), `brand_fallback.as_word` (`title_word`: a dictionary brand as a word of its own, Korean or Latin) and the makers in the brand dictionary, a held job product leaves the dedupe index (`job.held_keys`). After the first run: read the held products' titles, not only their codes. The owner then turned the hold off: a no-brand import is sold under the shop's name (Fairward Golf) |
-| L6 | publish.py's skip compared its inputs: 18 of 20 products whose inputs moved would have sent what the store already had, and hid the two real changes | the ledger keeps `output`, the hash of what productSet sends (`publish.output_digest`): a product is skipped when that did not change |
 
 ## D. The order of a first run
 
@@ -102,7 +103,8 @@ last step.
 2. Add the required rows (A1-A4; B1-B6). Do the quality rows the category needs (A7-A12). Decide on C.
 3. `.venv/bin/python -m pytest scripts -q`, then update the registry tests (A1 `version`, B10).
 4. A small job ([JOB_AGENT.md](JOB_AGENT.md)): `SHOP_STORE=<shop> .venv/bin/python scripts/job.py new --query "..."
-   --category <leaf id> --count 5` reads and screens the listing only. `category_mismatch` in its screen counts means
+   --category <leaf id> --count 5` reads and screens the listing only (a new category is not marked `reviewed`: with
+   `--publish` its products go DRAFT, and `review due` is printed from 20 drafts: JOB_AGENT.md, Draft first). `category_mismatch` in its screen counts means
    a wrong id. Then `job.py run` collects, reads the images and prepares. `stop: prepare: ShopRulesMissing` means
    A2. `Untranslated` means the translation. OCR `off` is the owner's choice (`description_images=False`), not a
    missing rule.
@@ -116,8 +118,8 @@ last step.
    real publish only after the owner says yes.
 6. **What the new category did to the rest of the shop.** `store_diff.py <shop>` (read only): the published products
    whose store data a publication would change, field by field, and those that cannot be built now (an untranslated
-   paid variant, a lost placement: L1). Then `translation_dicts.py status`: read every new entry before the backup
-   (L4). Each product it lists is the owner's to decide; `--adopt` records `output` for the products the store
+   paid variant, a lost placement: L1). Then `translation_dicts.py status`: read every new entry before the
+   dictionaries' backup into git (L4; not the state backup, `state_backup.py`). Each product it lists is the owner's to decide; `--adopt` records `output` for the products the store
    already has, so a moved input alone sends nothing.
-7. Turn the checked products into fixtures (A13) and update [CHANGELOG.md](../CHANGELOG.md) and the docs of each
-   changed rule.
+7. Turn the checked products into fixtures (A13) and update the docs of each changed rule (no CHANGELOG entry: the
+   owner, 2026-11-14; a release is the skill `release`).

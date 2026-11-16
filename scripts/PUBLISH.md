@@ -5,7 +5,8 @@ How prepared, translated and placed products reach the Shopify store (`publish.p
 ## Publication (`publish.py`, MVP, the owner 2026-11-08)
 
 ```sh
-.venv/bin/python scripts/publish.py fairwardgolf [--only <key>] [--force] [--dry-run] [--shops-root DIR]
+.venv/bin/python scripts/publish.py fairwardgolf [--only <key>] [--force] [--dry-run] [--rehandle] [--shops-root DIR]
+.venv/bin/python scripts/publish.py fairwardgolf --withdraw <key> | --restore <key> --reason "..."   # also --activate <key>
 ```
 
 A product goes to the store when it is `ready` (transform), `translated` and `placed`; a job made with
@@ -84,7 +85,7 @@ The owner's rules (`shopify_payload.py`):
   little of what a photo shows, so `publish/gallery_skip.txt` (sha256 per line, "# why") strikes out a photo a
   person saw was wrong (boxes, a shop, people); a photo check by a vision model was offered and declined (the owner,
   2026-11-09).
-- **Not sent**: descriptionHtml for a product without a description (`describe.py`, see its section), HS /
+- **Not sent**: descriptionHtml for a product without a description (`describe.py`, [DESCRIBE.md](DESCRIBE.md)), HS /
   origin codes, Naver's delivery data as such (the seller's fee in Korea and the box are inside the price; the
   box's fields are in `fairwardgolf.package`), facts, gender (placement uses it for the sections), compare-at.
 
@@ -139,14 +140,11 @@ inside the price of a shop with free delivery (see PRICE.md, The price, the owne
 
 Credentials: a store app's client id + secret file per store, its path in env as `shop_stores.py` names it
 (`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`), next to the store's domain, shop id, API version and namespace there; tokens are
-minted per run (`shopify_catalog.Credentials`). Publishing needs write scopes: reuse `Credentials`, keep the read
-check as it is. They are never committed. When publishing,
-write the same source key (`<namespace>.source_offer_id` = `<namespace>:naver:<channel_no>:<product_id>`) and check
-for it once more right before (a product published after the 5-minute snapshot).
-
-When publication starts, add it as a flat module (`publish_shopify.py`) reading the prepared products, the
-translations and `placement/placements.jsonl` (only `placed` products: their tags, product type, and the start
-variant per collection as a metafield), reusing `shopify_catalog.Credentials` and the source-key check.
+minted per run (`shopify_catalog.Credentials`; the writing apps: Publication, Access). They are never committed. A
+product's key, which every `--only`, `--withdraw` and `--activate` takes, is its source key
+(`<namespace>.source_offer_id` = `<namespace>:naver:<channel_no>:<product_id>`, e.g.
+`fairwardgolf:naver:500048270:12154351233`); a lens's `index.tsv` and the ledger give it by number or product id.
+Publication is `publish.py` (above); the start variant per collection is not sent (ONBOARDING.md C11).
 
 ### What the naver-harvester published (reference for publication)
 
@@ -181,7 +179,4 @@ mistakes. A local snapshot of those 60 (not in git): `scripts/output/harvester-s
   6 handles, 45 distinct option names (one of 35 characters, "Color: L"), spec-label drift ("Total club count" /
   "Total number of clubs"), Event rows on 11 of 60 and pointer rows on 7 of 60, 62 of 250 alts duplicated or stale,
   2 products with no review rows though the counts said 3 and 21.
-- Translation plan: `translations.jsonl` append-only `{id, kind, ko, en, by, at}`, the last line per id wins, the
-  English checks (no Hangul, option values of 32 characters at most) there; publication maps every `*_ko` through
-  `text_id` and skips a product with a missing id as `untranslated:<ids>`, results in `shops/<shop>/published.jsonl`.
 

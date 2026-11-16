@@ -31,7 +31,7 @@ this doc.
 | A split by a new kind of mark (function, size, material ...) | data only | `attributes.py` (a new `Attribute`), `placement_rules.py` |
 | A split no word can state (needs a new evidence source) | yes | `attributes.decide` (a new source, its own tests) |
 
-Every case adds tests (below) and a line in CHANGELOG.
+Every case adds tests (below) and updates this doc (no CHANGELOG entry: the owner, 2026-11-14).
 
 ## 1. A category with one section
 

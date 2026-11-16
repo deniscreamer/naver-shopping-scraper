@@ -13,7 +13,7 @@ server/            the API and its import root (bare imports, NO server/__init__
   naver_shopping/  endpoint logic, fetch, parsers, schemas, offline tests, fixtures/
   docs/            DEVELOPMENT_RULES.md, ARCHITECTURE.md, ENDPOINTS.md, KNOWN_ISSUES.md
 scripts/           HTTP-only consumers of the running API (example_01..15, 99: how to call it; naver_types.py: answer types; shop_types.py: record types)
-extension/         Chrome adapter for the owner's browser (beta, search.shopping listing)
+extension/         Chrome adapter for the owner's browser (search.shopping listing, product page specs, the scroll tab)
 archive/docker/    retired Docker/Linux setup, not maintained
 pyproject.toml     pytest config only (testpaths = pythonpath = ["server"])
 ```
@@ -63,7 +63,7 @@ Run from the repo root.
 python -m venv .venv
 .venv/bin/pip install -r server/requirements.txt -r scripts/requirements.txt
 .venv/bin/python server/run.py              # http://localhost:8000, PORT=... to change
-.venv/bin/python -m pytest -q               # offline suite, 474 tests
+.venv/bin/python -m pytest -q               # offline suite, all pass
 .venv/bin/python -m pytest scripts -q       # scripts/ client tests, offline, separate suite
 .venv/bin/python -m mypy                    # static check of scripts/ ([tool.mypy] in pyproject.toml), 0 errors
 scripts/check.sh                            # before a commit: the three above, separate processes, non-zero on a failure
@@ -96,8 +96,8 @@ Live check (server running, uses the network): `curl http://localhost:8000/healt
 | Transform, package size, seller data | [scripts/TRANSFORM.md](scripts/TRANSFORM.md), skill `transform`; [scripts/SELLER_DATA.md](scripts/SELLER_DATA.md) | The transform, the five package fields, the OCR stage, record types; before changing parsers or the transform: what pages and sellers write |
 | Products by eye (lenses) | [scripts/LENSES.md](scripts/LENSES.md), skill `visual-review` | After a run, before withdrawing duplicates, many held products, a price / brand / placement / dedupe rule change |
 | Security | [SECURITY.md](SECURITY.md) | Reporting vulnerabilities |
-| Releases, running the scripts, backup | [CHANGELOG.md](CHANGELOG.md), `VERSION`; [scripts/OPERATIONS.md](scripts/OPERATIONS.md), skill `operations` | Cutting a release, what changed; a backup after each release (`state_backup.py`); commands, checks, shared files, conventions |
-| Extension transport (beta) | [server/docs/EXTENSION.md](server/docs/EXTENSION.md), [extension/README.md](extension/README.md) | search.shopping listing, anything touching extension/ or ext_*.py |
+| Releases, running the scripts, backup | `VERSION`, skill `release`; [scripts/OPERATIONS.md](scripts/OPERATIONS.md), skill `operations` | Cutting a release (no CHANGELOG entries since 0.18.0, the owner 2026-11-14); a backup after each release (`state_backup.py`); commands, checks, shared files, conventions |
+| Extension transport | [server/docs/EXTENSION.md](server/docs/EXTENSION.md), [extension/README.md](extension/README.md) | search.shopping listing, product page specs, the scroll tab; anything touching extension/ or ext_*.py |
 | Archived Docker setup | [archive/docker/README.md](archive/docker/README.md) | Only if Linux deployment comes back |
 
 `CLAUDE.md` and `server/CLAUDE.md` contain only `@AGENTS.md`: they load the AGENTS.md next to them and add nothing.

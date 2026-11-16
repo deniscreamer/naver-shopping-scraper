@@ -170,8 +170,8 @@ Requests are typed on the server, answers on the consumer side.
 - **R-TYPE-4 (MUST)** Scripts call known endpoints through the typed client methods (`search`, `product_details`,
   `listing`, ...), not raw `get(path)`, and guard every `X | None` field before using it. `get` / `pages` stay for
   routes without a method yet, and for `smoke_endpoints.py`, which checks routes as routes.
-- **R-TYPE-5 (SHOULD)** New or changed scripts pass `mypy --ignore-missing-imports --check-untyped-defs` (command in
-  `scripts/COLLECT.md`, "Response types"). Type hints are welcome in `scripts/` (unlike the server, R-STYLE-3).
+- **R-TYPE-5 (SHOULD)** New or changed scripts pass `.venv/bin/python -m mypy` from the repo root (its config, files and
+  flags, is `[tool.mypy]` in `pyproject.toml`; `scripts/check.sh` runs it). Type hints are welcome in `scripts/` (unlike the server, R-STYLE-3).
 - **R-TYPE-6 (MUST)** Fixtures hold real answers, trimmed (lists to 5 items, strings to 300 chars), with no cookies,
   tokens, session ids or personal data. Re-capture them from a running server, never hand-edit their shape.
 
@@ -196,7 +196,7 @@ Requests are typed on the server, answers on the consumer side.
 - **R-TEST-2 (MUST)** Every parser change or new upstream quirk gets a captured fixture and a test. A regression test carries a docstring with the dated observation.
 - **R-TEST-3 (MUST)** Tests monkeypatch module attributes (`F.config`, `A._record`, `A.box_post`), so keep `import config` as a module import and call fetch helpers through module names that tests can patch.
 - **R-TEST-4 (MUST)** Before merge:
-  - `.venv/bin/python -m pytest -q` passes. Baseline: 158 tests (84 parser/schema tests + 8 in `test_pdp.py` + 11 in `test_review_select.py` + 7 in `test_search_filters.py` + 7 in `test_composite.py` + 6 in `test_ext_bridge.py` + 5 in `test_listing_jobs.py` + 5 in `test_ext_product.py` + 25 in `test_import_smoke.py`, which also asserts 34 routes). The count only goes up;
+  - `.venv/bin/python -m pytest -q` passes, every test (`scripts/check.sh` runs it with the scripts suite and mypy and is the authority; `test_import_smoke.test_routes_mounted` asserts the route count). The number of tests only goes up;
   - any change to transport or browser code (`fetch.py`, `browser_client.py`, `patchright_driver.py`, `url_blocking.py`, `egress.py`, `hostenv.py`, `config.py`, requirements) also passes a live smoke with the server running: `.venv/bin/python scripts/smoke_endpoints.py`, which covers at least one curl call and one box call. Record the result in the commit message.
 
 - **R-TEST-5 (SHOULD)** Saved pages as regression fixtures (2026-11-06): `naver_shopping/fixtures/pages/<product id>/`

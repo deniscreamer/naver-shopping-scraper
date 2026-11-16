@@ -47,6 +47,6 @@ The checklist and the reasons are in `scripts/ONBOARDING.md`. Read it first; thi
    `.venv/bin/python scripts/store_diff.py <shop>` (read only) lists the published products a publication would
    change, field by field, and those that cannot be built now; every new dictionary entry before the backup. Any such product is the owner's to decide: never republish it unasked.
 9. **Finish.**
-   - Update the docs of every rule you changed and `CHANGELOG.md`.
+   - Update the docs of every rule you changed (no CHANGELOG entry: the owner, 2026-11-14; releases: skill `release`).
    - Correct ONBOARDING.md if the code differed from it (it is the map: keep it true).
    - Delete the research folder. Commit only when asked.

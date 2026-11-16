@@ -34,7 +34,7 @@ All paths are relative to `server/`, which is the import root (section 10).
 | `naver_shopping/parsers.py` | Pure functions: raw JSON / HTML to output dicts. |
 | `naver_shopping/review_select.py` | Pure: which reviews `/products/reviews/selected` keeps (tiers, caps). |
 | `naver_shopping/cache_config.py` | One TTL per cached namespace, each with its reason. |
-| `test_import_smoke.py`, `naver_shopping/test_*.py` | Offline tests (469 at the time of writing). Fixtures in `naver_shopping/fixtures/`. |
+| `test_import_smoke.py`, `naver_shopping/test_*.py` | Offline tests (all pass: `scripts/check.sh`). Fixtures in `naver_shopping/fixtures/`. |
 
 ## 2. Layers
 
@@ -330,7 +330,7 @@ the above and is harmless. Heavy dependencies are imported lazily
 requests in `config.exit_geo`, egress / config / url_blocking inside
 `PatchrightDriver`). `test_import_smoke.py` imports every library module by
 bare name (`MODULES`; not the `run.py` / `main.py` entry points, `main.py`
-creates `output/` at import) and checks the 38 routes. R-LAYOUT-1, R-LAYOUT-2, R-STYLE-5.
+creates `output/` at import) and checks the mounted routes (`test_routes_mounted` asserts their count). R-LAYOUT-1, R-LAYOUT-2, R-STYLE-5.
 
 ## 12. Extension transport (beta)
 

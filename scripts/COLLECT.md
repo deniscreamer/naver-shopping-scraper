@@ -111,7 +111,8 @@ records the reason of every row left out, in this order: `sponsored` (an ad: onl
 ad cards are kept by default, the owner 2026-11-06, though the harvester file says exclude), `title_unavailable`,
 `rental` (a stop
 word of `listing_exclusions.json`, copied as it is from the naver-harvester: NFKC + lower case, words with
-not-preceded-by / not-followed-by exceptions, latin words whole), `category_mismatch` (only the exact leaf
+not-preceded-by / not-followed-by exceptions, latin words whole), `title:<code>` (a word of `listing_title_rules.json` the run's category does not sell, the owner
+2026-11-11), `category_mismatch` (only the exact leaf
 category), `key_unavailable` (no store number: no shop check possible), `already_published`, `deferred`. Catalog and
 external-mall cards never reach it (the server keeps store products only).
 
@@ -210,15 +211,14 @@ reviews.
 
 ## Examples: start here
 
-Small, runnable scripts, one topic each, in the order to read them. Start `server/run.py` first; examples 7-10 and 99
-also
-needs Chrome open with the adapter (`example_01` shows `extension: connected`).
+Small, runnable scripts, one topic each, in the order to read them. Start `server/run.py` first; examples 7-10, 14, 15
+and 99 also need Chrome open with the adapter (`example_01` shows `extension: connected`).
 
 | Script | Shows |
 |---|---|
 | `example_01_health.py` | `api.health()`: the server is up, the extension status, the endpoint list |
 | `example_02_search.py` | `api.get()` with filters: `/products/count` + `/products/search` (up to 96 cards) |
-| `example_03_product_details.py` | `/products/details`: prices, options, stock, review stats of one product |
+| `example_03_product_details.py` | `/products/details`: prices, stock, review stats of one product (its `variants` are null since 2026-11-02: options come from `/products/specs`, way 2) |
 | `example_04_reviews.py` | `api.pages()`: `/products/reviews` page by page |
 | `example_05_store.py` | `/stores/details` + `/stores/products` (best-sellers) |
 | `example_06_datalab.py` | `/keywords/rank` + `/keywords/trend` (Naver DataLab) |

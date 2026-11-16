@@ -108,12 +108,14 @@ is in [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## HTTP layer and output
 
-### K-11 `ValueError` maps to 400; 5xx are not logged
+### K-11 `ValueError` maps to 400, unlogged
 - **Where:** `routes.call`.
 - **Observed:** `except ValueError` -> 400 also catches parser or upstream
-  bugs (e.g. `int(store["merchant_id"])` in `api._reviews`). The 500 and 502
-  paths print nothing.
-- **Impact:** server bugs look like client errors; failures leave no trace in
+  bugs (e.g. `int(store["merchant_id"])` in `api._reviews`), and that path
+  prints nothing. The other failures (400 from Naver, 404, 409, 410, 500, 502,
+  503) print one `api: <status> ...` line through `routes._failed` since
+  2026-11-05 (R-STYLE-4).
+- **Impact:** such server bugs look like client errors and leave no trace in
   the server output.
 
 ### K-12 Absolute `next`/`previous` links, uncapped

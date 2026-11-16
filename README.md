@@ -33,7 +33,7 @@ If Naver starts refusing your IP (HTTP 418/429), restart with a proxy:
 Offline tests (no network, no Chrome):
 
 ```bash
-.venv/bin/python -m pytest -q             # 474 passed
+.venv/bin/python -m pytest -q             # all pass
 .venv/bin/python -m pytest scripts -q     # scripts/ client tests, separate suite
 ```
 
@@ -47,6 +47,7 @@ Every endpoint is served at `/path` and at `/naver-shopping/path`. `/` and
 |---|---|---|
 | `/products/details` | yes | Price, options with stock, description, legal notice, brand / manufacturer / origin facts, review stats (way 1) |
 | `/products/specs` (beta) | your Chrome | The product page's 상품정보 rows: every seller attribute (way 2: richer, ~30-60 s, walks naver.com -> 쇼핑 -> search -> card) |
+| `/products/page` | your Chrome | The product page itself, read like `/products/specs` (rendered HTML, the page's own answer), never cached: for developing parsers |
 | `/products/search` | no | Up to 96 products per keyword, with filters |
 | `/products/count` | no | Number of products matching a keyword and filters |
 | `/products/reviews` | yes | One page of a product's reviews (paginated; sort, photo/video or text filter) |
@@ -59,6 +60,8 @@ Every endpoint is served at `/path` and at `/naver-shopping/path`. `/` and
 | `/categories/trend` | no | A category's click trend with device, gender and age split |
 | `/categories/list` | no | Child categories of a parent category (0 or omitted = top level), with their IDs |
 | `/listings` (POST, beta) | your Chrome | The whole search listing for a query as a job; poll `/listings/<id>`, rows at `/listings/<id>/products` |
+| `/listing-tabs` (POST, beta) | your Chrome | One listing tab held open, one batch per `POST /listing-tabs/<id>/next`, a card's specs at `GET /listing-tabs/<id>/specs`, closed by `DELETE` (`job.py scroll`) |
+| `/captcha` | no | The captcha the adapter waits on, if any (read by `scripts/captcha_watch.py`) |
 
 Product details come two ways (way 1 the store backend, way 2 the product page through the adapter):
 [ENDPOINTS.md, "Product details: two ways"](server/docs/ENDPOINTS.md#product-details-two-ways).

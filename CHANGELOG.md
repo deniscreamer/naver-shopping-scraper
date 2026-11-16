@@ -1,5 +1,8 @@
 # Changelog
 
+Frozen at 0.18.0 by the owner's decision of 2026-11-14: later releases (see `VERSION`) have no entries here; each is
+its tagged commit `Release X.Y.Z: ...`, and the facts live in the topic docs (skill `release`).
+
 Versions follow `VERSION` at the repo root; `/health` reports it. The browser adapter in `extension/` has its own
 version in `extension/manifest.json`.
 
