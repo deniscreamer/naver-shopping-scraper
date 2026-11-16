@@ -20,6 +20,7 @@ its inputs moved. It writes only the local ledger, never the store.
 """
 import argparse
 import json
+from concurrent.futures import ThreadPoolExecutor
 import os
 import re
 import sys
@@ -36,7 +37,10 @@ QUERY = """query($ids: [ID!]!) { nodes(ids: $ids) { ... on Product {
   variants(first: 100) { nodes { sku price selectedOptions { name value } metafields(first: 10) {
     nodes { namespace key value } } } }
 } } }"""
-BATCH = 20
+# 2026-11-16: a query of 50 products costs what one of 20 does (105 of the bucket's 2,000, 100 back a second) and
+# takes 1.9 s; three at a time read the 2,015 products in about 30 s (20 one by one took minutes)
+BATCH = 50
+PARALLEL = 3
 OURS = ("custom", "fairwardgolf")
 
 
@@ -134,10 +138,14 @@ def main(argv: list[str] | None = None) -> int:
             built[key] = P.publish_one(shop, key, None, None, dict(ids), dry_run=True)
         except Exception as e:                              # Untranslated, PayloadError: it would not be sent
             report["not_buildable"][key] = f"{type(e).__name__}: {e}"
-    for i in range(0, len(built), BATCH):
-        part = list(built)[i:i + BATCH]
+    parts = [list(built)[i:i + BATCH] for i in range(0, len(built), BATCH)]
+
+    def fetch(part: list[str]) -> list[Any]:
         answer = catalog._post(QUERY, {"ids": [ledger[k]["product_id"] for k in part]})
-        nodes = (answer.get("data") or answer)["nodes"]
+        return (answer.get("data") or answer)["nodes"]
+    with ThreadPoolExecutor(PARALLEL) as pool:                 # read only; the answers in the parts' order
+        answers = list(pool.map(fetch, parts))
+    for part, nodes in zip(parts, answers):
         for key, live in zip(part, nodes):
             row = built[key]
             if live is None:

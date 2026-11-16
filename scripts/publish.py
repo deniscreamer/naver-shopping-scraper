@@ -46,8 +46,25 @@ def _now() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def _last(path: str) -> dict[str, dict[str, Any]]:
-    """The last line per key of a JSON-lines file ({} when it does not exist)."""
+# A file read once per process while it does not change (its mtime and size): publish_one read the shop's prepared,
+# translated, placement and description files for every product, 0.6 s each (2026-11-16: store_diff of 2,015
+# products took over 20 minutes, 1.7 million JSON lines parsed per 100 products). An appended ledger is read again.
+_MEMO: dict[str, tuple[tuple[int, int], Any]] = {}
+
+
+def _memo(path: str, load: Any) -> Any:
+    try:
+        st = os.stat(path)
+    except FileNotFoundError:
+        return load(path)
+    stamp = (st.st_mtime_ns, st.st_size)
+    hit = _MEMO.get(path)
+    if hit is None or hit[0] != stamp:
+        hit = _MEMO[path] = (stamp, load(path))
+    return hit[1]
+
+
+def _read_last(path: str) -> dict[str, dict[str, Any]]:
     out: dict[str, dict[str, Any]] = {}
     if os.path.exists(path):
         with open(path, encoding="utf-8") as f:
@@ -56,6 +73,11 @@ def _last(path: str) -> dict[str, dict[str, Any]]:
                     row = json.loads(line)
                     out[row["key"]] = row
     return out
+
+
+def _last(path: str) -> dict[str, dict[str, Any]]:
+    """The last line per key of a JSON-lines file ({} when it does not exist); shared, read only for the callers."""
+    return _memo(path, _read_last)
 
 
 def _sha(path: str) -> str:
@@ -250,7 +272,8 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
     prepared_all, translated_all, placed_all = shop.inputs()
     prepared, translated, placement = prepared_all[key], translated_all.get(key) or {}, placed_all.get(key) or {}
     extra = gallery(shop, prepared)
-    description = (describe.load_store(shop.dir).get(key) or {}).get("html") or ""
+    store = _memo(os.path.join(shop.dir, "translation", describe.STORE), lambda _: describe.load_store(shop.dir))
+    description = (store.get(key) or {}).get("html") or ""
     digest = inputs_digest(prepared, translated, placement, shop.shop, extra, description)
     before = shop.ledger().get(key)
     if before and before.get("digest") == digest and not force and not dry_run and not rehandle:

@@ -744,3 +744,20 @@ def test_an_update_reuses_the_stores_media_found_by_hash():
                                    _media("m3", _C[:16], suffix="_60a81808-e1e5-4b6f-9c1e-1d2f3a4b5c6d")]}}
     images = [{"sha256": _A}, {"sha256": _B}, {"sha256": _C}]
     assert PB._on_store(product, images) == {_B: "m1", _C: "m2"}      # the second putter is dropped; A uploaded
+
+
+def test_a_shop_file_is_read_once_while_it_does_not_change(tmp_path, monkeypatch):
+    """2026-11-16: publish_one read the shop's input files for every product (store_diff of 2,015 products: 20+
+    minutes); a file is now read again only when its mtime or size changes (an appended ledger)."""
+    import publish as P
+    path = tmp_path / "x.jsonl"
+    path.write_text('{"key": "a", "v": 1}\n')
+    reads = []
+    real = P._read_last
+    monkeypatch.setattr(P, "_read_last", lambda p: reads.append(p) or real(p))
+    assert P._last(str(path)) == {"a": {"key": "a", "v": 1}}
+    assert P._last(str(path))["a"]["v"] == 1 and len(reads) == 1                    # unchanged: not read again
+    with open(path, "a") as f:
+        f.write('{"key": "a", "v": 2}\n')
+    assert P._last(str(path))["a"]["v"] == 2 and len(reads) == 2                    # appended: read again
+    assert P._last(str(tmp_path / "none.jsonl")) == {}
