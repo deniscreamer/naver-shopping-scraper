@@ -176,6 +176,12 @@ Code: `transform.options_and_variants`.
 - Iron sets and full sets filed under wedges (2026-11-16, 50002783): "Regular+4-PW" (13370424163), "3456789피칭"
   (13383404156), "5 6 7 8 9 피윙" (13377696273), "아이언 세트 59 PW SW" (13601554331), "7피스 8피스" (13370491895),
   "12 Piece (Strata)" (13163090198); a title "웨지 ... 아이언 세트" by an agency that puts the category first (13382551761).
+  Also with no iron run and under 6 clubs counted: a wood set "우드 ... 3팩 드라이버 페어웨이 12 16 19도" (13469122120),
+  "w드라이버 페어웨이" (13369466277), "드라이 460CC" (13312275044), "컴플리트 골프 세트" (13383629001), "클럽 세트 ... 11개
+  경량 캐디백" (13165737174), a junior set by age ("4-6 years: 4 Piece Set" 13370403487, "Ages 6 to 8" 13163081877), one
+  numbered iron a variant ("우측 22년형 스틸 실버 8번 아이언", MAZEL WM-X 13762637990). Mazek names its wedge sets
+  "컴플리트 웨지 세트" / "완비 웨지 세트" and Olimar a wedge "유틸리티 웨지": wedge sets. Roiko writes "맥스 백스핀용"
+  (13492299567; backspin, not a golf bag) and agencies glue a bag to its colour ("경량 캐디백블랙", 13165737174).
   `transform.not_wedge_set` (held `not_wedge_set`).
 - An agency's spec table in the description (2026-11-16): "- Brand : 69" with "- Manufacturer : 69 Golf"
   (13370257430; the specs' 브랜드 / 제조사 rows say "69" only), "Brand Name | 69" with "Manufacturer | 69 Golf"

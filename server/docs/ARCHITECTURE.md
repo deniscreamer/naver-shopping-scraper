@@ -581,7 +581,8 @@ surfaces.
   product answer, page answer, raw search cards, 상품정보제공고시 rows, ld+json, meta tags). -> `scripts/brand_fallback.py`
   docstring.
 - A leaf category holds what its sellers file there: 웨지 (50002783) lists iron sets and full sets too (2026-11-16: 17 of
-  the shop's 502, e.g. 13370424163 Cleveland ZipCore XL iron set, 13386376196 Callaway Strata 9피스). ->
+  the shop's 502, e.g. 13370424163 Cleveland ZipCore XL iron set, 13386376196 Callaway Strata 9피스), and wood sets,
+  complete sets and junior sets (13469122120 "우드 ... 드라이버 페어웨이", 13370403487 TaylorMade junior). ->
   `scripts/transform.py` `not_wedge_set` comment.
 
 ### 13.12 DataLab and page limits

@@ -3,7 +3,8 @@ cut to what transform.not_wedge_set reads (the title and the variant rows' optio
 sees them: the category's paid_variants, its choice, the delivery-note / contact rows left out) plus its state at the
 time (prepared status, held codes, store state), into fixtures/wedge_sets/50002783.json. test_wedge_sets.py pins which
 of them the rule holds by key: the iron sets and the full sets filed under wedges, and none of the real wedge sets.
-The state columns are a snapshot (first made 2026-11-16, before the rule): the tests read them only to name the
+The state columns are a snapshot (first made 2026-11-16 before the rule, 502 listings; refreshed that night before
+the second pass, the full sets and wood sets, 604): the tests read them only to name the
 listings published then; a regeneration after the rule is live or after a withdrawal changes them and the tests
 still hold (they pin keys, not counts).
 

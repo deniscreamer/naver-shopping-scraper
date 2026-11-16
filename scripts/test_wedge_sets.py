@@ -1,8 +1,10 @@
 """Iron sets and full sets filed under wedge sets (2026-11-16): the overnight wedge scroll (job
 fairwardgolf-50002783-20261116T150134Z) published 9 iron sets into the wedge-sets section; Naver's category 50002783
 lists them because their sellers filed them under 웨지. transform.not_wedge_set holds them (not_wedge_set) where the
-category's wedge_sets is on. The fixture is every 50002783 listing of the shop then (502 on 2026-11-16), title and variant rows
-(make_wedge_sets_fixture.py); its state columns are a snapshot, so the tests pin keys, never counts; offline."""
+category's wedge_sets is on; the same night it published full sets, wood sets and junior sets with no iron run and
+under 6 clubs counted, and a listing of one numbered iron a variant: held too (WOOD_AND_JUNIOR_SETS, ONE_IRON_A_VARIANT).
+The fixture is every 50002783 listing of the shop (502 on 2026-11-16, 604 at its refresh that night), title and variant
+rows (make_wedge_sets_fixture.py); its state columns are a snapshot, so the tests pin keys, never counts; offline."""
 import copy
 import dataclasses
 import json
@@ -41,8 +43,27 @@ FULL_SETS = {
     "13386376196": "9 clubs",                               # Callaway Strata 9피스
     "13388598186": "16 clubs",                              # Callaway Strata 11 / 16 Piece
 }
-# held single_only already (four single wedges by loft, "아이언세트" in the title): single_only stays their code
-SINGLE_ONLY_TOO = {"12911658622", "12634260989"}
+# full sets, wood sets and junior sets with no iron run and under 6 clubs counted, published the same night (and the
+# first fix's missed ones), and listings that sell one numbered iron a variant (2026-11-16)
+WOOD_AND_JUNIOR_SETS = {
+    "13469122120": "'우드'",                   # women's wood set 3팩, driver + fairway 12 16 19도
+    "13369466277": "'드라이버'",               # AGXGOLF XLT Executive, w드라이버 페어웨이
+    "12178193064": "'우드'",                   # 골프클럽세트 우드 아이언 퍼터 웨지
+    "13312275044": "'460CC'",                  # PGM III 18피스, 드라이 460CC
+    "13312309860": "'드라이버'",               # Tivor: 퍼터 ... 아이언 웨지 드라이버 ... 스탠드
+    "13370403487": "'주니어'",                 # TaylorMade junior 4 / 5 Piece Set
+    "13163081877": "'Ages 6'",                 # US Kids, Ages 3 to 5 / 6 to 8 / 9 to 12
+    "13383629001": "'컴플리트'",               # Pro X 컴플리트 골프 세트
+    "13383586259": "'컴플리트'",               # Artist Unknown 컴플리트 골프 세트
+    "12918489634": "'컴플리트'",               # Wilson Profile SGI 컴플리트 골프 클럽 패키지 세트
+    "13165737174": "'캐디백'",                 # World Eagle 클럽 세트 11개 경량 캐디백
+    "13163048070": "'하이브리드'",             # Olimar Stratos 하이브리드 아이언 클럽 세트, a Sand Wedge of it
+    "13390699568": "'하이브리드'",             # Olimar Stratos 하이브리드 아이언, Sand / Gap Wedge of it
+}
+ONE_IRON_A_VARIANT = {"13762637990", "13762667328", "13830308916"}   # MAZEL WM-X "8번 아이언", "피칭 웨지", "아이언 2종"
+# held single_only already (four single wedges by loft, "아이언세트" in the title; wedges by loft, "우드 드라이버" in
+# the title): single_only stays their code
+SINGLE_ONLY_TOO = {"12911658622", "12634260989", "13414645123"}
 
 
 def listings() -> dict[str, dict]:
@@ -52,14 +73,35 @@ def listings() -> dict[str, dict]:
 
 def test_the_fixture_has_every_case():
     rows = listings()
-    assert set(IRON_SETS) | set(FULL_SETS) | SINGLE_ONLY_TOO | set(WEDGE_SETS) <= set(rows)
+    assert set(IRON_SETS) | set(FULL_SETS) | set(WOOD_AND_JUNIOR_SETS) | ONE_IRON_A_VARIANT | SINGLE_ONLY_TOO \
+        | set(WEDGE_SETS) <= set(rows)
+
+
+# collected after the first rule (held by it in the scroll, never published): iron runs, 16 clubs, "아이언세트 8개";
+# the single_only ones keep that code (POSSOT "5 Iron Single", PGM "1 Pcs (5 Iron)")
+HELD_SINCE = {"13365547743", "13371801797", "13377603626", "13385700387", "13390592978", "13601371230",
+              "13204761196", "10273552089"}
+HELD = set(IRON_SETS) | set(FULL_SETS) | set(WOOD_AND_JUNIOR_SETS) | ONE_IRON_A_VARIANT | SINGLE_ONLY_TOO | HELD_SINCE
 
 
 def test_every_iron_set_and_full_set_and_nothing_else_is_held():
     held = {pid: why for pid, r in listings().items() if (why := not_wedge_set(r["title"], r["rows"]))}
-    assert set(held) == set(IRON_SETS) | set(FULL_SETS) | SINGLE_ONLY_TOO
+    assert set(held) == HELD
     for pid, why in {**IRON_SETS, **FULL_SETS}.items():
         assert held[pid].startswith(why), (pid, held[pid])
+    for pid, word in WOOD_AND_JUNIOR_SETS.items():
+        assert held[pid] == f"a full set, a wood set or a junior set ({word})", (pid, held[pid])
+    for pid in ONE_IRON_A_VARIANT:
+        assert held[pid].startswith("one numbered iron a variant"), (pid, held[pid])
+
+
+def test_the_published_wedge_sets_stay():
+    """Every listing the store had (active, draft or withdrawn) when the fixture was made, not named above: a wedge set."""
+    published = {pid: r for pid, r in listings().items() if r["state"] in ("active", "draft", "withdrawn")}
+    assert len(published) > 300
+    for pid, r in published.items():
+        if pid not in HELD:
+            assert not not_wedge_set(r["title"], r["rows"]), (pid, r["title"])
 
 
 WEDGE_SETS = ("13163034573",      # KVV "아이언 세트", variants 6 Iron / 8 Iron / Sand Wedge: one club a variant
@@ -81,7 +123,13 @@ WEDGE_SETS = ("13163034573",      # KVV "아이언 세트", variants 6 Iron / 8 
                 "13164574170",      # 커클랜드 3피스 세트
                 "13566630297",      # 690 3Piece / 4Piece Set
                 "12701006618",      # TaylorMade MG5 SB 세트 3개
-                "13370403487")      # TaylorMade junior 4 / 5 Piece Set ("4-6 years", "7-9 years": ages, not irons)
+                "11252052400",      # 핑 프로디 G 주니어 골프 웨지 2종 세트: a junior wedge set
+                "13017134183",      # 마젝 컴플리트 웨지 세트 52 갭 웨지GW 56
+                "13383624548",      # 마제크 여성 컴플리트 세트 52° 갭 웨지GW 56°
+                "13312219759",      # 마젝 웨지 60 GW 52 56 세트 ... 컴플리트 남성용 LW
+                "13205011329",      # 올리마르 4피스 웨지 세트 (피칭 / 모래 롭 유틸리티 웨지)
+                "13400000051",      # PGM 3 클럽 웨지 세트 ... 어프로치 스탠드
+                "13122106279")      # 버뮤다 웨지 세트 ... 캐비티 백 디자인
 
 
 def test_the_real_wedge_sets_stay():
@@ -128,6 +176,75 @@ def test_not_an_iron_run(text):
     ("Golf Iron Set Right", [["6 Iron"], ["56 Degree"]], False),         # a single loft is one club
     ("Golf Iron Set Right", [["Regular"], ["Stiff"]], True),
     ("Golf Iron Set Right", [["6 Iron"], ["Pitching Wedge"]], False),   # one club a variant: not an iron set
+    # full sets, wood sets, junior sets (2026-11-16) and a putter or a bag as a gift or a case (never held)
+    ("웨지 세트 드라이버", [], True),
+    ("Golf Wedge Set", [["Driver + Fairway Wood"]], True),
+    ("하이브리드 유틸 세트", [], True),
+    ("풀세트 남성용", [], True),
+    ("Complete Golf Set Right", [], True),
+    ("스탠드백 퍼터 포함 클럽 세트", [], True),
+    ("골프 아이언 퍼터 웨지 세트", [], True),
+    ("골프 아이언 웨지 퍼터 세트", [], False),                            # "아이언 웨지": iron-type wedges
+    ("Junior Golf Set", [["Ages 6 to 8"]], True),
+    ("키즈 골프 클럽 세트 3-5세", [], True),
+    ("웨지 세트 + 헤드커버", [], False),
+    ("웨지 세트 52 56 60 웨지 케이스", [], False),
+    ("웨지 세트 퍼터 증정", [], False),
+    ("웨지 3종 세트 캐디백 증정", [], False),
+    ("웨지 세트 52 56 퍼터", [], False),                                 # a putter with no other club family
+    ("Iron-type wedge set with putter cover", [], False),
+    ("아이언형 웨지 세트 퍼터", [], False),
+    ("드라이버 헤드커버 증정 웨지 세트", [], False),
+    ("우드 커버 포함 웨지 3종 세트", [], False),
+    ("웨지 3종 풀세트", [], False),
+    ("컴플리트 웨지 세트 52 56 60", [], False),
+    ("마젝 여성 컴플리트 세트 52° 갭 웨지GW 56°", [], False),
+    ("4피스 웨지 세트 피칭 샌드 롭 유틸리티 웨지", [], False),
+    ("주니어 골프 웨지 2종 세트", [], False),
+    ("주니어 웨지 52 56도 세트", [], False),
+    ("할리우드 웨지 세트", [], False),
+    # review probes (2026-11-16): wedge sets the full-set words must not hold, none in the shop yet
+    ("클리브랜드 RTX 웨지 52-56 세트", [], False),                       # a loft span before 세트, not an age span
+    ("웨지 52~56 세트", [], False),
+    ("웨지 50-54-58 세트 스틸", [], False),
+    ("포틴 웨지 2개 50-56 세트", [], False),
+    ("RTX6 웨지 52-58 세트 다이나믹골드", [], False),
+    ("시니어 50~60세 추천 웨지 클럽 세트", [], False),                   # a grown-up's age
+    ("골프 백스핀 웨지 클럽 세트 52 56 60", [], False),                  # 백스핀, not a golf bag
+    ("골프백스핀 웨지 클럽 세트", [], False),
+    ("남성 골프 백스핀 웨지 세트 퍼터 증정", [], False),
+    ("캐디 백스핀 웨지 클럽 세트", [], False),
+    ("클리브랜드 스마트솔 하이브리드 웨지 2종 세트", [], False),          # hybrid wedges
+    ("하이브리드 웨지 세트 52 56 60", [], False),
+    ("웨지 세트 하이브리드 솔 52 56", [], False),
+    ("페어웨이 벙커 러프 웨지 3종 세트", [], False),                      # where a wedge is used
+    ("Golf Wedge Set for fairway bunker rough 52 56 60", [], False),
+    ("웨지 3종 세트 우드티 증정", [], False),                             # a wood tee
+    ("웨지 세트 우드 티 100개 증정", [], False),
+    ("언더우드 웨지 세트 52 56", [], False),
+    ("유틸리티 샌드 웨지 세트", [], False),
+    ("웨지 세트 유틸리티 솔", [], False),
+    ("웨지 세트 52 56 60 (드라이버 우드 커버 증정)", [], False),          # covers for a list of clubs
+    ("웨지 클럽 세트 퍼터 헤드커버 포함", [], False),                     # the gear of a putter or a bag
+    ("골프 웨지 클럽 세트 3종 퍼터 그립", [], False),
+    ("골프 웨지 클럽 세트 52 56 60 캐디백 수납", [], False),
+    ("Golf Club Set Wedge 52 56 60 with golf bag", [], False),
+    ("무료 캐디백 웨지 클럽 세트", [], False),
+    ("사은품 퍼터 골프 웨지 클럽 세트", [], False),
+    ("풀세트 웨지 3종", [], False),                                       # a full wedge set by its count
+    ("웨지 세트 풀세트 구성 3종", [], False),
+    ("Complete Set of 3 Wedges", [], False),
+    ("마젝 여성 컴플리트 세트 웨지 3종", [], False),
+    ("풀세트 56° 남성용", [], True),                                      # one loft with ° is one loft, not two
+    ("Kids set ages 9-12 yrs", [], True),
+    ("골프 클럽 세트 4-6 years", [], True),
+    ("골프 클럽 세트 경량 캐디백블랙", [], True),                         # a bag word glued to a colour
+    # one numbered iron a variant: three irons or more, every variant one club
+    ("MAZEL 웨지 세트", [["우측 8번 아이언"], ["우측 6번 아이언"], ["우측 4번 아이언"], ["우측 피칭 웨지"],
+                        ["우측 아이언 2종 세트"]], True),
+    ("Golf Wedge Set", [["7 Iron"], ["8 Iron"], ["9 Iron"]], True),
+    ("Golf Wedge Set", [["7 Iron"], ["8 Iron"], ["52 56 Set"]], False),
+    ("Golf Wedge Set", [["6 Iron"], ["8 Iron"], ["Sand Wedge"]], False),  # KVV: two irons
 ])
 def test_counts_and_the_title(title, rows, held):
     assert bool(not_wedge_set(title, rows)) is held

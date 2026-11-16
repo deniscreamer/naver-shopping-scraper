@@ -365,6 +365,114 @@ _ONE_CLUB_RE = re.compile(r"(?i)\s*(?:\d{1,2}\s*(?:번\s*)?(?:iron|아이언)|(?
                           r"(?:샌드|피칭|갭|로브|롭|어프로치)\s*웨지|[psagl]w|\d{2}\s*(?:도|°|degrees?))\s*")
 
 
+# a full set, a wood set or a junior set filed under wedge sets with no iron run and under 6 clubs counted (2026-11-16,
+# published the same night: 13469122120 "우드 골프 클럽 세트 3팩 드라이버 페어웨이", 13369466277 AGXGOLF "w드라이버
+# 페어웨이", 12178193064 "골프클럽세트 우드 아이언 퍼터 웨지", 13312275044 PGM "III 18피스 클럽 드라이 460CC",
+# 13312309860 "퍼터 ... 아이언 웨지 드라이버 ... 스탠드", 13383629001 Pro X "컴플리트 골프 세트", 13370403487 TaylorMade
+# junior "4-6 years: 4 Piece Set", 13163081877 US Kids "Ages 6 to 8"). A club no wedge set holds (a driver, 460cc, a
+# fairway wood, a wood, a hybrid, a utility) or a complete / full set is one in a title or a variant; not a cover or a
+# grip for one ("우드 헤드커버", "드라이버 커버"), a utility wedge ("유틸리티 웨지", Olimar 4피스 웨지 세트), a "컴플리트
+# 웨지 세트" (Mazek's wedge sets) or a "웨지 풀세트". A putter or a bag counts only with another club family or "클럽
+# 세트" (a bag sold with a full set: World Eagle "클럽 세트 ... 11개 경량 캐디백"), never as a gift ("퍼터 증정"). A
+# junior word or an age span with a set word holds unless a wedge set is written ("핑 프로디 G 주니어 골프 웨지 2종
+# 세트"). Measured on the shop's 604 listings of 50002783, then 616 after the review (2026-11-16): 16 published held.
+# Not a cover or a grip, also after a list of clubs ("드라이버 우드 커버 증정"); not a wedge or a sole of that kind
+# ("하이브리드 웨지 세트", "유틸리티 샌드 웨지", "웨지 세트 하이브리드 솔": hybrid wedges exist); not a wood tee ("우드티
+# 증정") nor a name ending in 우드 ("할리우드", "언더우드"). Review 2026-11-16, probe titles: none of them in the shop yet.
+_CLUB_WORDS = r"드라이버|우드|유틸(?:리티)?|하이브리드|페어웨이|퍼터|driver|woods?|fairway|hybrid|utility|putter"
+_GEAR_AFTER = (r"(?!(?:\s*(?:" + _CLUB_WORDS + r"|용|/|,|&|\+))*\s*(?:헤드\s*)?(?:커버|그립|cover|grip|headcover))")
+_WEDGE_AFTER = (r"(?!\s*(?:(?:샌드|갭|롭|로브|피칭|어프로치|sand|gap|lob|pitching|approach)\s*)?"
+                r"(?:웨지|wedges?|솔|soles?)(?![a-z]))")
+_WOOD_RE = re.compile(r"(?i)(?:driver(?![a-z])|드라이버|460\s*cc|(?P<fairway>fairway|페어웨이)(?!\s*(?:우드|woods?))"
+                      r"|fairway|페어웨이|(?<![a-z])woods?(?![a-z])(?!\s*tees?)|(?<!할리)(?<!언더)(?<!하드)(?<!로즈)우드"
+                      r"(?!\s*티)|(?:hybrid|하이브리드|유틸리티|유틸(?!리티)|utility)" + _WEDGE_AFTER + r")" + _GEAR_AFTER)
+# a complete / full set: not right after 웨지 ("웨지 3종 풀세트"), nor where a wedge set is written (_wedge_set_written)
+_COMPLETE_RE = re.compile(r"(?i)complete(?!\s*wedge)|컴플리트(?!\s*웨지)|풀\s*세트|풀셋|full\s*set")
+_WEDGE_RIGHT_BEFORE_RE = re.compile(r"(?i)(?:웨지|wedges?)\s*(?:\d{1,2}\s*(?:개|종|피스|pcs?)\s*)?$")
+_WEDGE_LETTER_RE = re.compile(r"(?i)(?<![a-z])([agsl]w)(?![a-z])")
+_LOFT_DEGREE_RE = re.compile(r"(\d{2})\s*(?:도|°)")
+# a count of wedges written: "웨지 3종", "3 Wedges", "3-Piece Wedges" (Mazek "여성 컴플리트 세트 웨지 3종", probe)
+_WEDGE_COUNT_RE = re.compile(r"(?i)웨지\s*\d{1,2}\s*(?:개|종|피스|pcs?|본)|(?<![\d.])\d{1,2}\s*(?:-?\s*(?:pcs?|pieces?)\s*)?"
+                             r"wedges?(?![a-z])")
+# a putter or a bag ("골프백", not "골프 백스핀": Roiko "맥스 백스핀용"), and the gift or the gear around one ("퍼터 증정",
+# "무료 캐디백", "퍼터 헤드커버 포함", "캐디백 수납"): not a club of a set
+_BAG = r"(?:캐디|스탠드|카트|골프)\s*백(?!\s*스핀)"    # glued words are a seller's: "경량 캐디백블랙" (13165737174)
+_PUTTER_BAG_RE = re.compile(r"(?i)퍼터|putter|" + _BAG + r"|(?:caddie|caddy|stand|cart|golf)\s*bag(?![a-z])")
+_GIFT_AFTER_RE = re.compile(r"(?i)^\s*(?:용\s*)?(?:증정|사은품|서비스|gift|free|케이스|case|(?:헤드\s*)?커버|cover|headcover|"
+                            r"그립|grip|포함|수납|무료)")
+_GIFT_BEFORE_RE = re.compile(r"(?i)(?:증정|사은품|무료|free|bonus|보너스)\s*$")
+_WITH_CLUBS_RE = re.compile(r"(?i)아이언(?!\s*(?:형|타입)?\s*웨지)|iron(?![a-z])(?!\s*-?\s*type)|퍼터|putter|"
+                            r"(?P<set>클럽\s*세트|골프채\s*세트|club\s*set)")
+# a junior word, or an age span of a child ("4-6 years", "3-5세", "Ages 6"): not a loft span before 세트 ("웨지 52-56
+# 세트", "50-54-58 세트") nor a grown-up's ("시니어 50~60세", review 2026-11-16)
+_JUNIOR_RE = re.compile(r"(?i)주니어|junior|키즈|(?<![a-z])kids?(?![a-z])|아동|어린이|유소년|(?<![a-z])ages?\s*\d"
+                        r"|(?<![\d.\-~–])(?:1[0-2]|[1-9])\s*(?:-|~|–|to)\s*(?:1[0-5]|[1-9])(?![\d.])\s*"
+                        r"(?:years?|yrs?|세(?!트)|살)")
+_SET_IN_RE = re.compile(r"(?i)세트|셋트|set(?![a-z])")
+
+
+def _wedge_set_written(texts: list[str], joined: str) -> bool:
+    """A wedge set written: "웨지 (lofts) 세트" / "wedge set", a wedge count ("웨지 3종", "3 Wedges"), or two distinct
+    lofts or wedge letters (a loft with ° counted once: "56°" is one)."""
+    if any(_WEDGE_SET_RE.search(t) for t in texts) or _WEDGE_COUNT_RE.search(joined):
+        return True
+    lofts = set(_LOFT_RE.findall(joined)) | set(_LOFT_DEGREE_RE.findall(joined))
+    letters = {m.lower() for m in _WEDGE_LETTER_RE.findall(joined)}
+    return len(lofts) + len(letters) >= 2
+
+
+def _gift(joined: str, m: re.Match[str]) -> bool:
+    """A gift, a case or the gear of the putter or bag at m ("퍼터 증정", "무료 캐디백", "퍼터 헤드커버"): not a club."""
+    return bool(_GIFT_AFTER_RE.search(joined[m.end():]) or _GIFT_BEFORE_RE.search(joined[:m.start()]))
+
+
+def _full_set(texts: list[str]) -> str | None:
+    """The word that makes a listing of wedge sets a full set, a wood set or a junior set (_WOOD_RE, _COMPLETE_RE,
+    _PUTTER_BAG_RE, _JUNIOR_RE)."""
+    joined = " | ".join(texts)
+    written = _wedge_set_written(texts, joined)
+    for m in _WOOD_RE.finditer(joined):
+        if not (m.group("fairway") and written):     # "페어웨이 벙커 러프 웨지 3종 세트": where a wedge is used
+            return m.group(0)
+    if not written:
+        for text in texts:
+            for m in _COMPLETE_RE.finditer(text):
+                if not _WEDGE_RIGHT_BEFORE_RE.search(text[:m.start()]):
+                    return m.group(0)
+    for m in _PUTTER_BAG_RE.finditer(joined):
+        if _gift(joined, m):
+            continue
+        others = [w for w in _WITH_CLUBS_RE.finditer(joined)
+                  if w.span() != m.span() and not (w.group("set") and written)
+                  and not (_PUTTER_BAG_RE.fullmatch(w.group(0)) and _gift(joined, w))]
+        if others:
+            return m.group(0)
+    if (junior := _JUNIOR_RE.search(joined)) and _SET_IN_RE.search(joined) \
+            and not any(_WEDGE_SET_RE.search(t) for t in texts):
+        return junior.group(0)
+    return None
+
+
+# a variant that is one numbered iron ("우측 22년형 스틸 실버 8번 아이언", "7 Iron"); a variant of one club otherwise:
+# a named wedge ("피칭 웨지", "Sand Wedge") or "아이언 2종 (세트)" (MAZEL WM-X 13762637990, 2026-11-16)
+_NUMBERED_IRON_RE = re.compile(r"(?i)(?<![\d.])(\d)\s*(?:번\s*)?(?:iron|아이언)(?![a-z])")
+_ONE_WEDGE_RE = re.compile(r"(?i)(?:sand|pitching|gap|lob|approach|샌드|피칭|갭|로브|롭|어프로치)\s*(?:wedge|웨지)"
+                           r"|(?<![a-z])[psagl]w(?![a-z])|아이언\s*\d\s*종")
+
+
+def _numbered_irons(rows: list[list[str]]) -> list[int]:
+    """The irons of a listing whose every variant is one club and three or more numbered irons are among them (one iron
+    a variant, MAZEL WM-X "8번 아이언"); [] otherwise (KVV: 6 Iron / 8 Iron / Sand Wedge, two irons, stays)."""
+    irons: set[int] = set()
+    for r in rows:
+        text = " ".join(r)
+        found = {int(n) for n in _NUMBERED_IRON_RE.findall(text)}
+        if len(found) > 1 or (not found and not _ONE_WEDGE_RE.search(text)) or (found and _LOFT_RE.search(text)):
+            return []
+        irons |= found
+    return sorted(irons) if len(irons) >= 3 else []
+
+
 def _iron_run(text: str) -> str | None:
     for m in _IRON_RANGE_RE.finditer(text):
         if m.group("wedge") and m.group("sp1") and m.group("sp2") and not m.group("iron"):
@@ -383,8 +491,10 @@ def _iron_run(text: str) -> str | None:
 
 def not_wedge_set(title: str, rows: list[list[str]]) -> str | None:
     """Why a listing of a wedge-sets category (wedge_sets) sells no wedge set: an iron run in the title or a variant's
-    value, a count of 6 to 16 clubs ("7피스", "12 Piece"), or "아이언 세트" in the title with no "웨지 세트"
-    (unless each variant is one club: KVV). None: a wedge set as far as the words go."""
+    value, a count of 6 to 16 clubs ("7피스", "12 Piece"), a full set, a wood set or a junior set (_full_set: a driver,
+    a wood, a hybrid, a complete set, a putter or a bag with other clubs, an age span), every variant one club with three
+    numbered irons or more (_numbered_irons), or "아이언 세트" in the title with no "웨지 세트" (unless each variant is
+    one club: KVV). None: a wedge set as far as the words go."""
     for text in [title] + [v for r in rows for v in r]:
         if run := _iron_run(text):
             return f"an iron run ({run!r})"
@@ -392,6 +502,10 @@ def not_wedge_set(title: str, rows: list[list[str]]) -> str | None:
                   if not _WEDGE_BEFORE_RE.search(text[:m.start()])]
         if many := [n for n in counts if 6 <= n <= 16]:
             return f"{max(many)} clubs ({text[:40]!r})"
+    if word := _full_set([title] + [v for r in rows for v in r]):
+        return f"a full set, a wood set or a junior set ({word!r})"
+    if irons := _numbered_irons(rows):
+        return f"one numbered iron a variant ({', '.join(map(str, irons))})"
     if _IRON_SET_RE.search(title) and not _WEDGE_SET_RE.search(title) \
             and not (rows and all(any(_ONE_CLUB_RE.fullmatch(v) for v in r) for r in rows)):
         return "an iron set in the title, no wedge set"

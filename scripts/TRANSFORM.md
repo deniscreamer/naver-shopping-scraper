@@ -65,7 +65,7 @@ writes `status: held`, no codes of its own), not placed, not published. Where to
 | `no_images` | transform | no gallery photo saved | collect again; still none: leave it |
 | `images_over_50` | transform | more than 50 gallery photos (`MAX_IMAGES`) | leave it held; tell the owner |
 | `single_only` | transform | a `sets_only` category's listing (wedges, 2026-11-15) that sells one club only: every variant one club, or the title sells one piece ("1개", "1pc") and no variant names a set | right as it is: the section sells sets. A set read as a single: the words in `transform.py` (`single_club`, `_ONE_PIECE_RE`), with a fixture |
-| `not_wedge_set` | transform | a `wedge_sets` category's listing (50002783, 2026-11-16) that sells an iron set or a full set: an iron run in the title or a variant ("4-PW", "5-9", "3456789", "5 6 7 8 9"), a count of 6 to 16 clubs ("7피스", "12 Piece", "12개 세트"), or "아이언 세트" in the title without "웨지 세트" (unless each variant is one club); the detail says which | right as it is: Naver files them under wedges. A wedge set held: the words in `transform.py` (`_iron_run`, `_CLUB_COUNT_RE`, `_WEDGE_SET_RE`), a case in `scripts/test_wedge_sets.py`. One already in the store: withdrawing it is the owner's word ([OWNER_RULES.md](OWNER_RULES.md)) |
+| `not_wedge_set` | transform | a `wedge_sets` category's listing (50002783, 2026-11-16) that sells an iron set or a full set: an iron run in the title or a variant ("4-PW", "5-9", "3456789", "5 6 7 8 9"), a count of 6 to 16 clubs ("7피스", "12 Piece", "12개 세트"), a full set, a wood set or a junior set ("드라이버", "우드", "페어웨이", "460cc", "하이브리드", "유틸", "컴플리트" / "풀세트" with no wedge lofts, a putter or a bag with another club family or "클럽 세트", "주니어" / a child's age span ("Ages 6 to 8", "3-5세") with no "웨지 세트"; never a cover, a grip, a gift, a case or a wedge kind: "드라이버 우드 커버", "퍼터 증정", "무료 캐디백", "캐디백 수납", "하이브리드 웨지", "유틸리티 샌드 웨지", "우드티", "골프 백스핀", "컴플리트 웨지 세트", "풀세트 웨지 3종", a loft span "52-56 세트"), every variant one club with three numbered irons or more ("8번 아이언", "7 Iron": MAZEL WM-X), or "아이언 세트" in the title without "웨지 세트" (unless each variant is one club); the detail says which | right as it is: Naver files them under wedges. A wedge set held: the words in `transform.py` (`_iron_run`, `_CLUB_COUNT_RE`, `_WEDGE_SET_RE`), a case in `scripts/test_wedge_sets.py`. One already in the store: withdrawing it is the owner's word ([OWNER_RULES.md](OWNER_RULES.md)) |
 | `agency_no_brand` | transform (run-level, `run_transform.py`) | a purchase agency's import (note `purchase_agency`) with no brand after the brand fallback (`brand_source: none`) where the category's `agency_needs_brand` is on; off in fairwardgolf since 2026-11-15 | the owner's brand in `<shop>/brand_by_owner.json` (skill `fix-a-product`), then `run_transform.py` |
 | `held` | placement | the transform held it: not placed; `reason` is the transform's codes | the transform code's row |
 | `unresolved` | placement | the category is split by an attribute (gender) and the product's value is unknown or in conflict (`reason`: `<attribute> <value>`), or no variant fits a section; the profile's `unresolved` is `hold` | read `evidence` in `placements.jsonl` / `report.txt`; a wrong attribute: skill `fix-a-product`; else the owner decides ([PLACEMENT.md](PLACEMENT.md), "What an unresolved product does") |
@@ -373,8 +373,22 @@ end followed by a loft ("RTX 6 - SW 56도"), a spaced dash to a wedge with no ir
 lofts), a count of 6 to 16 clubs ("7피스", "9PCS", "12 Piece"; "N개 / N본 / N자루" only before 세트 / 구성, so "골프공
 12개 증정" and "52개 샌드 56개" are not; a count right after 웨지 counts wedges: "웨지 6개 세트"), or "아이언 세트" /
 "iron set" in the title with no "웨지 (아이언) 세트" (lofts, wedge letters or a count may stand between: "웨지 AW SW 2개
-세트") unless each variant is one club or one loft (KVV 13163034573: 6 Iron / 8 Iron / Sand Wedge). Measured on the
-shop's 502 listings: it holds 9 iron sets and 8 full sets, all published before (the fixture
+세트") unless each variant is one club or one loft (KVV 13163034573: 6 Iron / 8 Iron / Sand Wedge). Then (the same
+night, full sets with no iron run and under 6 clubs counted): a club no wedge set holds or a complete set in the title
+or a variant (driver, 460cc, fairway, wood / 우드, hybrid, 유틸; not a cover or a grip, also after a list of clubs:
+"드라이버 우드 커버"; not a hybrid or utility wedge or sole: "하이브리드 웨지", "유틸리티 샌드 웨지"; not a wood tee
+"우드티" nor "언더우드"; 페어웨이 alone, with no wood word next to it, only where no wedge set is written: "페어웨이 벙커
+러프 웨지 3종 세트" stays; 컴플리트 / complete / 풀세트 only where no wedge set is written and not right after 웨지: a
+wedge set written is "웨지 (lofts) 세트", a wedge count "웨지 3종" / "3 Wedges", or two distinct lofts or wedge letters, a
+loft with ° counted once, so Mazek's "컴플리트 웨지 세트 52° 갭 웨지GW" and "풀세트 웨지 3종" stay), a putter or a bag
+(캐디백, 스탠드백, stand bag; not "골프 백스핀") with another club family, or "클럽 세트" where no wedge set is written
+(a putter or a bag as a gift or with its gear counts for neither side: "퍼터 증정", "무료 캐디백", "퍼터 헤드커버 포함",
+"캐디백 수납"; "아이언 웨지" / "iron-type wedge" is no iron), a junior word or a child's age span (both ages 15 or
+under, not "52-56 세트" nor "50~60세") with a set word and no "웨지 세트" ("핑 프로디 G 주니어 골프 웨지 2종 세트"
+stays), and a listing whose every
+variant is one club (a numbered iron, a named wedge, "아이언 2종") with three numbered irons or more (MAZEL WM-X
+"8번 아이언"; KVV's two irons stay). Measured on the shop's 502 listings: it held 9 iron sets and 8 full sets, all
+published before; on the 604 of the same night (616 after its review) the second pass holds 16 more, all published (active), and none of the review's probe wedge sets (`test_counts_and_the_title`) (the fixture
 `fixtures/wedge_sets/50002783.json`, `make_wedge_sets_fixture.py`; `test_wedge_sets.py`). The shop's
 sections are not decided here (PLACEMENT.md). A shop or a category without rules: `ShopRulesMissing`, the
 run stops and asks the operator.
