@@ -52,14 +52,19 @@ WOOD_AND_JUNIOR_SETS = {
     "13312275044": "'460CC'",                  # PGM III 18피스, 드라이 460CC
     "13312309860": "'드라이버'",               # Tivor: 퍼터 ... 아이언 웨지 드라이버 ... 스탠드
     "13370403487": "'주니어'",                 # TaylorMade junior 4 / 5 Piece Set
-    "13163081877": "'Ages 6'",                 # US Kids, Ages 3 to 5 / 6 to 8 / 9 to 12
+    "13163081877": "'클럽 세트'",              # US Kids, Ages 3 to 5 / 6 to 8 / 9 to 12 (its "클럽 세트" first)
     "13383629001": "'컴플리트'",               # Pro X 컴플리트 골프 세트
     "13383586259": "'컴플리트'",               # Artist Unknown 컴플리트 골프 세트
     "12918489634": "'컴플리트'",               # Wilson Profile SGI 컴플리트 골프 클럽 패키지 세트
-    "13165737174": "'캐디백'",                 # World Eagle 클럽 세트 11개 경량 캐디백
+    "13165737174": "'클럽 세트'",               # World Eagle 클럽 세트 11개 경량 캐디백
     "13163048070": "'하이브리드'",             # Olimar Stratos 하이브리드 아이언 클럽 세트, a Sand Wedge of it
     "13390699568": "'하이브리드'",             # Olimar Stratos 하이브리드 아이언, Sand / Gap Wedge of it
+    "13366448074": "'주니어'",                 # Cleveland junior set, Ages 4-6 / 3 Clubs & Bag (published 21:53)
 }
+# a full set the first words missed ("완비", "이그제큐티브 골프 클럽 셋트"), a practice toy or one adjustable club:
+# published as wedge sets by the overnight scroll 2026-11-16, after the 300th
+MISSED_SETS = {"13603361909": "'완비'", "13384214680": "'이그제큐티브'"}
+PRACTICE = {"13163054038": "'조절식'", "13863445070": "'연습 세트'"}
 ONE_IRON_A_VARIANT = {"13762637990", "13762667328", "13830308916"}   # MAZEL WM-X "8번 아이언", "피칭 웨지", "아이언 2종"
 # held single_only already (four single wedges by loft, "아이언세트" in the title; wedges by loft, "우드 드라이버" in
 # the title): single_only stays their code
@@ -73,15 +78,23 @@ def listings() -> dict[str, dict]:
 
 def test_the_fixture_has_every_case():
     rows = listings()
-    assert set(IRON_SETS) | set(FULL_SETS) | set(WOOD_AND_JUNIOR_SETS) | ONE_IRON_A_VARIANT | SINGLE_ONLY_TOO \
+    assert set(IRON_SETS) | set(FULL_SETS) | set(WOOD_AND_JUNIOR_SETS) | set(MISSED_SETS) | set(PRACTICE) \
+        | ONE_IRON_A_VARIANT | SINGLE_ONLY_TOO \
         | set(WEDGE_SETS) <= set(rows)
 
 
 # collected after the first rule (held by it in the scroll, never published): iron runs, 16 clubs, "아이언세트 8개";
+# and those collected after the second rule up to the fixture's refresh after the 300th (737 listings);
 # the single_only ones keep that code (POSSOT "5 Iron Single", PGM "1 Pcs (5 Iron)")
 HELD_SINCE = {"13365547743", "13371801797", "13377603626", "13385700387", "13390592978", "13601371230",
-              "13204761196", "10273552089"}
-HELD = set(IRON_SETS) | set(FULL_SETS) | set(WOOD_AND_JUNIOR_SETS) | ONE_IRON_A_VARIANT | SINGLE_ONLY_TOO | HELD_SINCE
+              "13204761196", "10273552089",
+              "10454438875", "10454495924", "13393745846", "13163051904", "13164524215", "13164578027",
+              "13017346884", "13363829003", "13363833976", "13369513747", "13370375430", "13370550632",
+              "13372009887", "13382172682", "13382899995", "13383279179", "13383675799", "13384486226",
+              "13385326057", "13385600134", "13385675635", "13385973782", "13388599985", "13388851720",
+              "13389314198", "13389378050", "13389676655", "13390089232", "13390573669", "13312215515",
+              "13312250515", "13312276116", "13312283740", "13312287457", "10273623236"}
+HELD = set(IRON_SETS) | set(FULL_SETS) | set(WOOD_AND_JUNIOR_SETS) | set(MISSED_SETS) | set(PRACTICE) | ONE_IRON_A_VARIANT | SINGLE_ONLY_TOO | HELD_SINCE
 
 
 def test_every_iron_set_and_full_set_and_nothing_else_is_held():
@@ -89,7 +102,9 @@ def test_every_iron_set_and_full_set_and_nothing_else_is_held():
     assert set(held) == HELD
     for pid, why in {**IRON_SETS, **FULL_SETS}.items():
         assert held[pid].startswith(why), (pid, held[pid])
-    for pid, word in WOOD_AND_JUNIOR_SETS.items():
+    for pid, word in PRACTICE.items():
+        assert held[pid] == f"a practice set or an adjustable club ({word})", (pid, held[pid])
+    for pid, word in {**WOOD_AND_JUNIOR_SETS, **MISSED_SETS}.items():
         assert held[pid] == f"a full set, a wood set or a junior set ({word})", (pid, held[pid])
     for pid in ONE_IRON_A_VARIANT:
         assert held[pid].startswith("one numbered iron a variant"), (pid, held[pid])

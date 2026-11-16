@@ -386,8 +386,14 @@ _WEDGE_AFTER = (r"(?!\s*(?:(?:샌드|갭|롭|로브|피칭|어프로치|sand|gap
 _WOOD_RE = re.compile(r"(?i)(?:driver(?![a-z])|드라이버|460\s*cc|(?P<fairway>fairway|페어웨이)(?!\s*(?:우드|woods?))"
                       r"|fairway|페어웨이|(?<![a-z])woods?(?![a-z])(?!\s*tees?)|(?<!할리)(?<!언더)(?<!하드)(?<!로즈)우드"
                       r"(?!\s*티)|(?:hybrid|하이브리드|유틸리티|유틸(?!리티)|utility)" + _WEDGE_AFTER + r")" + _GEAR_AFTER)
-# a complete / full set: not right after 웨지 ("웨지 3종 풀세트"), nor where a wedge set is written (_wedge_set_written)
-_COMPLETE_RE = re.compile(r"(?i)complete(?!\s*wedge)|컴플리트(?!\s*웨지)|풀\s*세트|풀셋|full\s*set")
+# a complete / full set: not right after 웨지 ("웨지 3종 풀세트"), nor where a wedge set is written (_wedge_set_written);
+# "완비" (PRECISE M3 "여성용 완비 ... 골프 클럽 세트" 13603361909), "이그제큐티브" / "골프 클럽 셋트" (AGXGOLF XLT
+# Executive 13384214680), both published as wedge sets by the overnight scroll 2026-11-16
+_COMPLETE_RE = re.compile(r"(?i)complete(?!\s*wedge)|컴플리트(?!\s*웨지)|풀\s*[세셋]트|풀셋|full\s*set|완비|이그제큐티브|"
+                          r"executive|(?:클럽|골프채)\s*[세셋]트|club\s*set")
+# a practice toy or one adjustable club, not a set of wedges ("골프 웨지 조절식 피칭 ... 퍼팅 연습 세트 연습용 폼 볼"
+# 13163054038, "스포츠완구 골프 연습 세트" 13863445070, 2026-11-16)
+_PRACTICE_RE = re.compile(r"(?i)조절식|조절\s*가능|adjustable|연습\s*(?:용\s*)?(?:세트|폼|볼)|practice\s*set")
 _WEDGE_RIGHT_BEFORE_RE = re.compile(r"(?i)(?:웨지|wedges?)\s*(?:\d{1,2}\s*(?:개|종|피스|pcs?)\s*)?$")
 _WEDGE_LETTER_RE = re.compile(r"(?i)(?<![a-z])([agsl]w)(?![a-z])")
 _LOFT_DEGREE_RE = re.compile(r"(\d{2})\s*(?:도|°)")
@@ -492,7 +498,8 @@ def _iron_run(text: str) -> str | None:
 def not_wedge_set(title: str, rows: list[list[str]]) -> str | None:
     """Why a listing of a wedge-sets category (wedge_sets) sells no wedge set: an iron run in the title or a variant's
     value, a count of 6 to 16 clubs ("7피스", "12 Piece"), a full set, a wood set or a junior set (_full_set: a driver,
-    a wood, a hybrid, a complete set, a putter or a bag with other clubs, an age span), every variant one club with three
+    a wood, a hybrid, a complete set, a putter or a bag with other clubs, an age span), a practice set or an adjustable
+    club (_PRACTICE_RE), every variant one club with three
     numbered irons or more (_numbered_irons), or "아이언 세트" in the title with no "웨지 세트" (unless each variant is
     one club: KVV). None: a wedge set as far as the words go."""
     for text in [title] + [v for r in rows for v in r]:
@@ -504,6 +511,8 @@ def not_wedge_set(title: str, rows: list[list[str]]) -> str | None:
             return f"{max(many)} clubs ({text[:40]!r})"
     if word := _full_set([title] + [v for r in rows for v in r]):
         return f"a full set, a wood set or a junior set ({word!r})"
+    if m := _PRACTICE_RE.search(" | ".join([title] + [v for r in rows for v in r])):
+        return f"a practice set or an adjustable club ({m.group(0)!r})"
     if irons := _numbered_irons(rows):
         return f"one numbered iron a variant ({', '.join(map(str, irons))})"
     if _IRON_SET_RE.search(title) and not _WEDGE_SET_RE.search(title) \
