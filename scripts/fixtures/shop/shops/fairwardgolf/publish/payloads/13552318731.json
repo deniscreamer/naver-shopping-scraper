@@ -1,0 +1,157 @@
+{
+ "title": "A11N SPORTS Forged Golf Wedge Set db4P",
+ "vendor": "A11N SPORTS",
+ "productType": "Wedge Sets",
+ "tags": [
+  "fairwardgolf:leaf:wedge-sets",
+  "fairwardgolf:parent:clubs",
+  "fairwardgolf:showcase"
+ ],
+ "status": "ACTIVE",
+ "descriptionHtml": "<p>A11N SPORTS Forged Golf Wedge Set db4P is a set of 3 right-handed wedges: a gap wedge, a sand wedge and a lob wedge. The heads are blade type stainless steel.</p>\n<h3>What's included</h3>\n<ul>\n<li>Wedges: gap wedge, sand wedge, lob wedge</li>\n</ul>\n<h3>Highlights</h3>\n<ul>\n<li>Color choice: Bronze or Black.</li>\n<li>Forged blade heads in stainless steel.</li>\n<li>Regular flex stainless steel shafts with standard-size rubber grips.</li>\n</ul>",
+ "seo": {
+  "title": "A11N SPORTS Forged Golf Wedge Set db4P",
+  "description": ""
+ },
+ "productOptions": [
+  {
+   "name": "Color",
+   "values": [
+    {
+     "name": "Bronze"
+    },
+    {
+     "name": "Black"
+    }
+   ]
+  }
+ ],
+ "variants": [
+  {
+   "optionValues": [
+    {
+     "optionName": "Color",
+     "name": "Bronze"
+    }
+   ],
+   "sku": "FW-5349e2533820d3536fdeddef",
+   "price": "529.00",
+   "taxable": false,
+   "inventoryPolicy": "CONTINUE",
+   "inventoryItem": {
+    "tracked": false,
+    "cost": "191.00",
+    "requiresShipping": true,
+    "measurement": {
+     "weight": {
+      "value": 2200,
+      "unit": "GRAMS"
+     }
+    }
+   },
+   "metafields": [
+    {
+     "namespace": "fairwardgolf",
+     "key": "source",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-variant-source/1\",\"naverVariantId\":\"58477608268\",\"sourceId\":\"observed:[\\\"Bronze\\\"]\",\"optionsKo\":[\"Bronze\"],\"priceKrw\":187830,\"costUsd\":191,\"priceUsd\":529,\"available\":true}"
+    },
+    {
+     "namespace": "fairwardgolf",
+     "key": "price",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-variant-price/1\",\"rule\":\"landed/2\",\"krwPerUsd\":1000,\"naverKrw\":187830,\"koreaDeliveryKrw\":0,\"koreaFeeType\":\"FREE\",\"purchaseUsd\":188,\"serviceUsd\":\"3.00\",\"dutyRate\":\"0.125\",\"dutyUsd\":\"23.50\",\"costUsd\":\"191.00\",\"box\":{\"cm\":[\"98\",\"20\",\"10\"],\"grossKg\":\"2.2\",\"billableKg\":\"3.92\",\"stepKg\":\"4\"},\"level\":1,\"coefficient\":\"2.50\",\"tariff\":{\"id\":\"shopnship-fedex-ip-kr-us\",\"checkedAt\":\"2026-11-11\",\"version\":1,\"sha256\":\"b947de75554b9048\"},\"gridUsd\":\"88.05\",\"insideUsd\":\"0.00\",\"deliveryUsd\":\"220.13\",\"fees\":[],\"feeUsd\":\"0.00\",\"baseUsd\":\"434.63\",\"marginUsd\":\"72.81\",\"keepUsd\":\"507.44\",\"paymentRate\":\"0.03\",\"neededUsd\":\"523.13\",\"priceUsd\":529,\"paymentUsd\":\"15.87\",\"surplusUsd\":\"5.69\"}"
+    },
+    {
+     "namespace": "fairwardgolf",
+     "key": "package",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-package/1\",\"fields\":{\"package_height_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":100,\"confidence\":1,\"high\":150,\"low\":80,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_length_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":980,\"confidence\":1,\"high\":1020,\"low\":960,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_weight_g\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":2200,\"confidence\":1,\"high\":3800,\"low\":1500,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_width_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":200,\"confidence\":1,\"high\":280,\"low\":150,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"product_weight_g\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":1400,\"confidence\":1,\"high\":2800,\"low\":900,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6}}}"
+    }
+   ]
+  },
+  {
+   "optionValues": [
+    {
+     "optionName": "Color",
+     "name": "Black"
+    }
+   ],
+   "sku": "FW-7b86917e1b2071ae3eb06742",
+   "price": "549.00",
+   "taxable": false,
+   "inventoryPolicy": "CONTINUE",
+   "inventoryItem": {
+    "tracked": false,
+    "cost": "210.00",
+    "requiresShipping": true,
+    "measurement": {
+     "weight": {
+      "value": 2200,
+      "unit": "GRAMS"
+     }
+    }
+   },
+   "metafields": [
+    {
+     "namespace": "fairwardgolf",
+     "key": "source",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-variant-source/1\",\"naverVariantId\":\"58477608269\",\"sourceId\":\"observed:[\\\"Black\\\"]\",\"optionsKo\":[\"Black\"],\"priceKrw\":206830,\"costUsd\":210,\"priceUsd\":549,\"available\":true}"
+    },
+    {
+     "namespace": "fairwardgolf",
+     "key": "price",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-variant-price/1\",\"rule\":\"landed/2\",\"krwPerUsd\":1000,\"naverKrw\":206830,\"koreaDeliveryKrw\":0,\"koreaFeeType\":\"FREE\",\"purchaseUsd\":207,\"serviceUsd\":\"3.00\",\"dutyRate\":\"0.125\",\"dutyUsd\":\"25.88\",\"costUsd\":\"210.00\",\"box\":{\"cm\":[\"98\",\"20\",\"10\"],\"grossKg\":\"2.2\",\"billableKg\":\"3.92\",\"stepKg\":\"4\"},\"level\":1,\"coefficient\":\"2.50\",\"tariff\":{\"id\":\"shopnship-fedex-ip-kr-us\",\"checkedAt\":\"2026-11-11\",\"version\":1,\"sha256\":\"b947de75554b9048\"},\"gridUsd\":\"88.05\",\"insideUsd\":\"0.00\",\"deliveryUsd\":\"220.13\",\"fees\":[],\"feeUsd\":\"0.00\",\"baseUsd\":\"456.01\",\"marginUsd\":\"75.16\",\"keepUsd\":\"531.17\",\"paymentRate\":\"0.03\",\"neededUsd\":\"547.60\",\"priceUsd\":549,\"paymentUsd\":\"16.47\",\"surplusUsd\":\"1.36\"}"
+    },
+    {
+     "namespace": "fairwardgolf",
+     "key": "package",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-package/1\",\"fields\":{\"package_height_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":100,\"confidence\":1,\"high\":150,\"low\":80,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_length_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":980,\"confidence\":1,\"high\":1020,\"low\":960,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_weight_g\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":2200,\"confidence\":1,\"high\":3800,\"low\":1500,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_width_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":200,\"confidence\":1,\"high\":280,\"low\":150,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"product_weight_g\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":1400,\"confidence\":1,\"high\":2800,\"low\":900,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6}}}"
+    }
+   ]
+  }
+ ],
+ "files": [
+  {
+   "id": "gid://shopify/MediaImage/46796552110147",
+   "alt": "A11N SPORTS Forged Golf Wedge Set db4P - photo 1"
+  },
+  {
+   "id": "gid://shopify/MediaImage/46796552142915",
+   "alt": "A11N SPORTS Forged Golf Wedge Set db4P - photo 2"
+  },
+  {
+   "id": "gid://shopify/MediaImage/46796552175683",
+   "alt": "A11N SPORTS Forged Golf Wedge Set db4P - photo 3"
+  }
+ ],
+ "metafields": [
+  {
+   "namespace": "fairwardgolf",
+   "key": "source_offer_id",
+   "type": "single_line_text_field",
+   "value": "fairwardgolf:naver:102683547:13552318731"
+  },
+  {
+   "namespace": "fairwardgolf",
+   "key": "source_url",
+   "type": "url",
+   "value": "https://smartstore.naver.com/usmegadealshop/products/13552318731"
+  },
+  {
+   "namespace": "fairwardgolf",
+   "key": "source",
+   "type": "json",
+   "value": "{\"schemaVersion\":\"fairwardgolf-source/1\",\"platform\":\"naver\",\"key\":\"fairwardgolf:naver:102683547:13552318731\",\"url\":\"https://smartstore.naver.com/usmegadealshop/products/13552318731\",\"channelNo\":\"102683547\",\"productId\":\"13552318731\",\"categoryId\":\"50002783\",\"run\":\"50002783-20261115T175448Z\",\"titleKo\":\"A11N SPORTS의 위조 골프 웨지 세트 db4P Bronze\",\"brandKo\":\"A11N SPORTS\",\"priceKrw\":187830,\"originalPriceKrw\":208700}"
+  },
+  {
+   "namespace": "fairwardgolf",
+   "key": "pricing",
+   "type": "json",
+   "value": "{\"schemaVersion\":\"fairwardgolf-pricing/2\",\"version\":\"landed/2\",\"krwPerUsd\":1000,\"serviceUsd\":\"3.00\",\"dutyRate\":\"0.125\",\"koreaPaid\":[\"PAID\",\"UNIT_QUANTITY_PAID\"],\"coefficients\":{\"5\":\"1.00\",\"4\":\"1.10\",\"3\":\"1.20\",\"2\":\"1.40\",\"1\":\"2.50\"},\"margin\":{\"fixedUsd\":\"25.00\",\"rate\":\"0.11\",\"minUsd\":\"30.00\"},\"paymentRate\":\"0.03\",\"rounding\":\"up to a whole dollar ending in 9 under 1000, in 99 from 1000\",\"tariff\":{\"id\":\"shopnship-fedex-ip-kr-us\",\"checkedAt\":\"2026-11-11\",\"version\":1,\"sha256\":\"b947de75554b9048\"},\"decided\":{\"rate\":\"2026-11-10\",\"korea_delivery\":\"2026-11-10\",\"service\":\"2026-11-11\",\"duty\":\"2026-11-11\",\"coefficients\":\"2026-11-11\",\"margin\":\"2026-11-11\",\"payment\":\"2026-11-11\",\"rounding\":\"2026-11-11\"}}"
+  }
+ ]
+}

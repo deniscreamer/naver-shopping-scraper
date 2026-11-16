@@ -1,0 +1,441 @@
+{
+ "title": "Yamato Full-Face Forged Wedge Set or Single, 50/52/54/56/58/60 Gap and Sand",
+ "vendor": "Yamato",
+ "productType": "Wedge Sets",
+ "tags": [
+  "fairwardgolf:leaf:wedge-sets",
+  "fairwardgolf:parent:clubs",
+  "fairwardgolf:showcase"
+ ],
+ "status": "ACTIVE",
+ "descriptionHtml": "<p>Yamato Full-Face Forged Wedge Set or Single, 50/52/54/56/58/60 Gap and Sand, is a right-handed forged wedge offering with full-face grooves. It is sold as a combination of 2 or 3 wedges with lofts between 50° and 60°.</p>\n<h3>Highlights</h3>\n<ul>\n<li>Choose a combination: 52°, 56° and 60° (Rainbow, Black or Silver); 50°, 54° and 58° (Black); or two wedges in Black: 52° and 56°, 52° and 60°, or 56° and 60°.</li>\n<li>Full-face grooves.</li>\n<li>Leading edge designed to prevent digging into the ground.</li>\n<li>Stainless steel shaft with rubber grip.</li>\n</ul>",
+ "seo": {
+  "title": "Yamato Full-Face Forged Wedge Set or Single",
+  "description": ""
+ },
+ "productOptions": [
+  {
+   "name": "Size",
+   "values": [
+    {
+     "name": "1 Rainbow 52 56 60 Degree"
+    },
+    {
+     "name": "2 50 54 58 Degree Set"
+    },
+    {
+     "name": "4 52 56 60 Degree Set"
+    },
+    {
+     "name": "5 52 56 Degree"
+    },
+    {
+     "name": "6 52 60 Degree"
+    },
+    {
+     "name": "9 56 60 Degree"
+    },
+    {
+     "name": "14 Sliver 52 56 60 Set"
+    }
+   ]
+  },
+  {
+   "name": "Style Name",
+   "values": [
+    {
+     "name": "1 Rainbow 52 56 60 Degree"
+    },
+    {
+     "name": "3 Black 50 54 58 Degree S"
+    },
+    {
+     "name": "6 Black 52 56 60 Degree S"
+    },
+    {
+     "name": "5 Black 52 56 Degree"
+    },
+    {
+     "name": "8 Black 52 60 Degree"
+    },
+    {
+     "name": "11 Black 56 60 Degree"
+    },
+    {
+     "name": "7 Sliver 52 56 60 Degree"
+    }
+   ]
+  }
+ ],
+ "variants": [
+  {
+   "optionValues": [
+    {
+     "optionName": "Size",
+     "name": "1 Rainbow 52 56 60 Degree"
+    },
+    {
+     "optionName": "Style Name",
+     "name": "1 Rainbow 52 56 60 Degree"
+    }
+   ],
+   "sku": "FW-a7018a4494551c1e0a3f5ec3",
+   "price": "609.00",
+   "taxable": false,
+   "inventoryPolicy": "CONTINUE",
+   "inventoryItem": {
+    "tracked": false,
+    "cost": "253.00",
+    "requiresShipping": true,
+    "measurement": {
+     "weight": {
+      "value": 2200,
+      "unit": "GRAMS"
+     }
+    }
+   },
+   "metafields": [
+    {
+     "namespace": "fairwardgolf",
+     "key": "source",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-variant-source/1\",\"naverVariantId\":\"55518542979\",\"sourceId\":\"observed:[\\\"1 Rainbow 52 56 60 Degree\\\",\\\"1 Rainbow 52 56 60 Degree\\\"]\",\"optionsKo\":[\"1 Rainbow 52 56 60 Degree\",\"1 Rainbow 52 56 60 Degree\"],\"priceKrw\":249570,\"costUsd\":253,\"priceUsd\":609,\"available\":true}"
+    },
+    {
+     "namespace": "fairwardgolf",
+     "key": "price",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-variant-price/1\",\"rule\":\"landed/2\",\"krwPerUsd\":1000,\"naverKrw\":249570,\"koreaDeliveryKrw\":0,\"koreaFeeType\":\"FREE\",\"purchaseUsd\":250,\"serviceUsd\":\"3.00\",\"dutyRate\":\"0.125\",\"dutyUsd\":\"31.25\",\"costUsd\":\"253.00\",\"box\":{\"cm\":[\"98\",\"20\",\"10\"],\"grossKg\":\"2.2\",\"billableKg\":\"3.92\",\"stepKg\":\"4\"},\"level\":1,\"coefficient\":\"2.50\",\"tariff\":{\"id\":\"shopnship-fedex-ip-kr-us\",\"checkedAt\":\"2026-11-11\",\"version\":1,\"sha256\":\"b947de75554b9048\"},\"gridUsd\":\"88.05\",\"insideUsd\":\"0.00\",\"deliveryUsd\":\"220.13\",\"fees\":[],\"feeUsd\":\"0.00\",\"baseUsd\":\"504.38\",\"marginUsd\":\"80.48\",\"keepUsd\":\"584.86\",\"paymentRate\":\"0.03\",\"neededUsd\":\"602.95\",\"priceUsd\":609,\"paymentUsd\":\"18.27\",\"surplusUsd\":\"5.87\"}"
+    },
+    {
+     "namespace": "fairwardgolf",
+     "key": "package",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-package/1\",\"fields\":{\"package_height_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":100,\"confidence\":1,\"high\":150,\"low\":80,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_length_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":980,\"confidence\":1,\"high\":1020,\"low\":960,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_weight_g\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":2200,\"confidence\":1,\"high\":3800,\"low\":1500,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_width_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":200,\"confidence\":1,\"high\":280,\"low\":150,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"product_weight_g\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":1400,\"confidence\":1,\"high\":2800,\"low\":900,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6}}}"
+    }
+   ]
+  },
+  {
+   "optionValues": [
+    {
+     "optionName": "Size",
+     "name": "2 50 54 58 Degree Set"
+    },
+    {
+     "optionName": "Style Name",
+     "name": "3 Black 50 54 58 Degree S"
+    }
+   ],
+   "sku": "FW-776b87f81964e66f2372b71b",
+   "price": "579.00",
+   "taxable": false,
+   "inventoryPolicy": "CONTINUE",
+   "inventoryItem": {
+    "tracked": false,
+    "cost": "233.00",
+    "requiresShipping": true,
+    "measurement": {
+     "weight": {
+      "value": 2200,
+      "unit": "GRAMS"
+     }
+    }
+   },
+   "metafields": [
+    {
+     "namespace": "fairwardgolf",
+     "key": "source",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-variant-source/1\",\"naverVariantId\":\"55518542980\",\"sourceId\":\"observed:[\\\"2 50 54 58 Degree Set\\\",\\\"3 Black 50 54 58 Degree S\\\"]\",\"optionsKo\":[\"2 50 54 58 Degree Set\",\"3 Black 50 54 58 Degree S\"],\"priceKrw\":229870,\"costUsd\":233,\"priceUsd\":579,\"available\":true}"
+    },
+    {
+     "namespace": "fairwardgolf",
+     "key": "price",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-variant-price/1\",\"rule\":\"landed/2\",\"krwPerUsd\":1000,\"naverKrw\":229870,\"koreaDeliveryKrw\":0,\"koreaFeeType\":\"FREE\",\"purchaseUsd\":230,\"serviceUsd\":\"3.00\",\"dutyRate\":\"0.125\",\"dutyUsd\":\"28.75\",\"costUsd\":\"233.00\",\"box\":{\"cm\":[\"98\",\"20\",\"10\"],\"grossKg\":\"2.2\",\"billableKg\":\"3.92\",\"stepKg\":\"4\"},\"level\":1,\"coefficient\":\"2.50\",\"tariff\":{\"id\":\"shopnship-fedex-ip-kr-us\",\"checkedAt\":\"2026-11-11\",\"version\":1,\"sha256\":\"b947de75554b9048\"},\"gridUsd\":\"88.05\",\"insideUsd\":\"0.00\",\"deliveryUsd\":\"220.13\",\"fees\":[],\"feeUsd\":\"0.00\",\"baseUsd\":\"481.88\",\"marginUsd\":\"78.01\",\"keepUsd\":\"559.89\",\"paymentRate\":\"0.03\",\"neededUsd\":\"577.21\",\"priceUsd\":579,\"paymentUsd\":\"17.37\",\"surplusUsd\":\"1.74\"}"
+    },
+    {
+     "namespace": "fairwardgolf",
+     "key": "package",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-package/1\",\"fields\":{\"package_height_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":100,\"confidence\":1,\"high\":150,\"low\":80,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_length_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":980,\"confidence\":1,\"high\":1020,\"low\":960,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_weight_g\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":2200,\"confidence\":1,\"high\":3800,\"low\":1500,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_width_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":200,\"confidence\":1,\"high\":280,\"low\":150,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"product_weight_g\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":1400,\"confidence\":1,\"high\":2800,\"low\":900,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6}}}"
+    }
+   ]
+  },
+  {
+   "optionValues": [
+    {
+     "optionName": "Size",
+     "name": "4 52 56 60 Degree Set"
+    },
+    {
+     "optionName": "Style Name",
+     "name": "6 Black 52 56 60 Degree S"
+    }
+   ],
+   "sku": "FW-5d163cdbd0d967f44d627204",
+   "price": "579.00",
+   "taxable": false,
+   "inventoryPolicy": "CONTINUE",
+   "inventoryItem": {
+    "tracked": false,
+    "cost": "233.00",
+    "requiresShipping": true,
+    "measurement": {
+     "weight": {
+      "value": 2200,
+      "unit": "GRAMS"
+     }
+    }
+   },
+   "metafields": [
+    {
+     "namespace": "fairwardgolf",
+     "key": "source",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-variant-source/1\",\"naverVariantId\":\"55518542982\",\"sourceId\":\"observed:[\\\"4 52 56 60 Degree Set\\\",\\\"6 Black 52 56 60 Degree S\\\"]\",\"optionsKo\":[\"4 52 56 60 Degree Set\",\"6 Black 52 56 60 Degree S\"],\"priceKrw\":229870,\"costUsd\":233,\"priceUsd\":579,\"available\":true}"
+    },
+    {
+     "namespace": "fairwardgolf",
+     "key": "price",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-variant-price/1\",\"rule\":\"landed/2\",\"krwPerUsd\":1000,\"naverKrw\":229870,\"koreaDeliveryKrw\":0,\"koreaFeeType\":\"FREE\",\"purchaseUsd\":230,\"serviceUsd\":\"3.00\",\"dutyRate\":\"0.125\",\"dutyUsd\":\"28.75\",\"costUsd\":\"233.00\",\"box\":{\"cm\":[\"98\",\"20\",\"10\"],\"grossKg\":\"2.2\",\"billableKg\":\"3.92\",\"stepKg\":\"4\"},\"level\":1,\"coefficient\":\"2.50\",\"tariff\":{\"id\":\"shopnship-fedex-ip-kr-us\",\"checkedAt\":\"2026-11-11\",\"version\":1,\"sha256\":\"b947de75554b9048\"},\"gridUsd\":\"88.05\",\"insideUsd\":\"0.00\",\"deliveryUsd\":\"220.13\",\"fees\":[],\"feeUsd\":\"0.00\",\"baseUsd\":\"481.88\",\"marginUsd\":\"78.01\",\"keepUsd\":\"559.89\",\"paymentRate\":\"0.03\",\"neededUsd\":\"577.21\",\"priceUsd\":579,\"paymentUsd\":\"17.37\",\"surplusUsd\":\"1.74\"}"
+    },
+    {
+     "namespace": "fairwardgolf",
+     "key": "package",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-package/1\",\"fields\":{\"package_height_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":100,\"confidence\":1,\"high\":150,\"low\":80,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_length_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":980,\"confidence\":1,\"high\":1020,\"low\":960,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_weight_g\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":2200,\"confidence\":1,\"high\":3800,\"low\":1500,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_width_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":200,\"confidence\":1,\"high\":280,\"low\":150,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"product_weight_g\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":1400,\"confidence\":1,\"high\":2800,\"low\":900,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6}}}"
+    }
+   ]
+  },
+  {
+   "optionValues": [
+    {
+     "optionName": "Size",
+     "name": "5 52 56 Degree"
+    },
+    {
+     "optionName": "Style Name",
+     "name": "5 Black 52 56 Degree"
+    }
+   ],
+   "sku": "FW-723d9e2a625d8670a5bd240d",
+   "price": "519.00",
+   "taxable": false,
+   "inventoryPolicy": "CONTINUE",
+   "inventoryItem": {
+    "tracked": false,
+    "cost": "186.00",
+    "requiresShipping": true,
+    "measurement": {
+     "weight": {
+      "value": 2200,
+      "unit": "GRAMS"
+     }
+    }
+   },
+   "metafields": [
+    {
+     "namespace": "fairwardgolf",
+     "key": "source",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-variant-source/1\",\"naverVariantId\":\"55518542983\",\"sourceId\":\"observed:[\\\"5 52 56 Degree\\\",\\\"5 Black 52 56 Degree\\\"]\",\"optionsKo\":[\"5 52 56 Degree\",\"5 Black 52 56 Degree\"],\"priceKrw\":182370,\"costUsd\":186,\"priceUsd\":519,\"available\":true}"
+    },
+    {
+     "namespace": "fairwardgolf",
+     "key": "price",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-variant-price/1\",\"rule\":\"landed/2\",\"krwPerUsd\":1000,\"naverKrw\":182370,\"koreaDeliveryKrw\":0,\"koreaFeeType\":\"FREE\",\"purchaseUsd\":183,\"serviceUsd\":\"3.00\",\"dutyRate\":\"0.125\",\"dutyUsd\":\"22.88\",\"costUsd\":\"186.00\",\"box\":{\"cm\":[\"98\",\"20\",\"10\"],\"grossKg\":\"2.2\",\"billableKg\":\"3.92\",\"stepKg\":\"4\"},\"level\":1,\"coefficient\":\"2.50\",\"tariff\":{\"id\":\"shopnship-fedex-ip-kr-us\",\"checkedAt\":\"2026-11-11\",\"version\":1,\"sha256\":\"b947de75554b9048\"},\"gridUsd\":\"88.05\",\"insideUsd\":\"0.00\",\"deliveryUsd\":\"220.13\",\"fees\":[],\"feeUsd\":\"0.00\",\"baseUsd\":\"429.01\",\"marginUsd\":\"72.19\",\"keepUsd\":\"501.20\",\"paymentRate\":\"0.03\",\"neededUsd\":\"516.70\",\"priceUsd\":519,\"paymentUsd\":\"15.57\",\"surplusUsd\":\"2.23\"}"
+    },
+    {
+     "namespace": "fairwardgolf",
+     "key": "package",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-package/1\",\"fields\":{\"package_height_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":100,\"confidence\":1,\"high\":150,\"low\":80,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_length_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":980,\"confidence\":1,\"high\":1020,\"low\":960,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_weight_g\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":2200,\"confidence\":1,\"high\":3800,\"low\":1500,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_width_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":200,\"confidence\":1,\"high\":280,\"low\":150,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"product_weight_g\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":1400,\"confidence\":1,\"high\":2800,\"low\":900,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6}}}"
+    }
+   ]
+  },
+  {
+   "optionValues": [
+    {
+     "optionName": "Size",
+     "name": "6 52 60 Degree"
+    },
+    {
+     "optionName": "Style Name",
+     "name": "8 Black 52 60 Degree"
+    }
+   ],
+   "sku": "FW-3a722f4d304ff8759bc111be",
+   "price": "519.00",
+   "taxable": false,
+   "inventoryPolicy": "CONTINUE",
+   "inventoryItem": {
+    "tracked": false,
+    "cost": "186.00",
+    "requiresShipping": true,
+    "measurement": {
+     "weight": {
+      "value": 2200,
+      "unit": "GRAMS"
+     }
+    }
+   },
+   "metafields": [
+    {
+     "namespace": "fairwardgolf",
+     "key": "source",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-variant-source/1\",\"naverVariantId\":\"55518542984\",\"sourceId\":\"observed:[\\\"6 52 60 Degree\\\",\\\"8 Black 52 60 Degree\\\"]\",\"optionsKo\":[\"6 52 60 Degree\",\"8 Black 52 60 Degree\"],\"priceKrw\":182370,\"costUsd\":186,\"priceUsd\":519,\"available\":true}"
+    },
+    {
+     "namespace": "fairwardgolf",
+     "key": "price",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-variant-price/1\",\"rule\":\"landed/2\",\"krwPerUsd\":1000,\"naverKrw\":182370,\"koreaDeliveryKrw\":0,\"koreaFeeType\":\"FREE\",\"purchaseUsd\":183,\"serviceUsd\":\"3.00\",\"dutyRate\":\"0.125\",\"dutyUsd\":\"22.88\",\"costUsd\":\"186.00\",\"box\":{\"cm\":[\"98\",\"20\",\"10\"],\"grossKg\":\"2.2\",\"billableKg\":\"3.92\",\"stepKg\":\"4\"},\"level\":1,\"coefficient\":\"2.50\",\"tariff\":{\"id\":\"shopnship-fedex-ip-kr-us\",\"checkedAt\":\"2026-11-11\",\"version\":1,\"sha256\":\"b947de75554b9048\"},\"gridUsd\":\"88.05\",\"insideUsd\":\"0.00\",\"deliveryUsd\":\"220.13\",\"fees\":[],\"feeUsd\":\"0.00\",\"baseUsd\":\"429.01\",\"marginUsd\":\"72.19\",\"keepUsd\":\"501.20\",\"paymentRate\":\"0.03\",\"neededUsd\":\"516.70\",\"priceUsd\":519,\"paymentUsd\":\"15.57\",\"surplusUsd\":\"2.23\"}"
+    },
+    {
+     "namespace": "fairwardgolf",
+     "key": "package",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-package/1\",\"fields\":{\"package_height_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":100,\"confidence\":1,\"high\":150,\"low\":80,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_length_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":980,\"confidence\":1,\"high\":1020,\"low\":960,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_weight_g\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":2200,\"confidence\":1,\"high\":3800,\"low\":1500,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_width_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":200,\"confidence\":1,\"high\":280,\"low\":150,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"product_weight_g\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":1400,\"confidence\":1,\"high\":2800,\"low\":900,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6}}}"
+    }
+   ]
+  },
+  {
+   "optionValues": [
+    {
+     "optionName": "Size",
+     "name": "9 56 60 Degree"
+    },
+    {
+     "optionName": "Style Name",
+     "name": "11 Black 56 60 Degree"
+    }
+   ],
+   "sku": "FW-fa5c2f4bc23c88b8f772c99d",
+   "price": "519.00",
+   "taxable": false,
+   "inventoryPolicy": "CONTINUE",
+   "inventoryItem": {
+    "tracked": false,
+    "cost": "186.00",
+    "requiresShipping": true,
+    "measurement": {
+     "weight": {
+      "value": 2200,
+      "unit": "GRAMS"
+     }
+    }
+   },
+   "metafields": [
+    {
+     "namespace": "fairwardgolf",
+     "key": "source",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-variant-source/1\",\"naverVariantId\":\"55518542987\",\"sourceId\":\"observed:[\\\"9 56 60 Degree\\\",\\\"11 Black 56 60 Degree\\\"]\",\"optionsKo\":[\"9 56 60 Degree\",\"11 Black 56 60 Degree\"],\"priceKrw\":182370,\"costUsd\":186,\"priceUsd\":519,\"available\":true}"
+    },
+    {
+     "namespace": "fairwardgolf",
+     "key": "price",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-variant-price/1\",\"rule\":\"landed/2\",\"krwPerUsd\":1000,\"naverKrw\":182370,\"koreaDeliveryKrw\":0,\"koreaFeeType\":\"FREE\",\"purchaseUsd\":183,\"serviceUsd\":\"3.00\",\"dutyRate\":\"0.125\",\"dutyUsd\":\"22.88\",\"costUsd\":\"186.00\",\"box\":{\"cm\":[\"98\",\"20\",\"10\"],\"grossKg\":\"2.2\",\"billableKg\":\"3.92\",\"stepKg\":\"4\"},\"level\":1,\"coefficient\":\"2.50\",\"tariff\":{\"id\":\"shopnship-fedex-ip-kr-us\",\"checkedAt\":\"2026-11-11\",\"version\":1,\"sha256\":\"b947de75554b9048\"},\"gridUsd\":\"88.05\",\"insideUsd\":\"0.00\",\"deliveryUsd\":\"220.13\",\"fees\":[],\"feeUsd\":\"0.00\",\"baseUsd\":\"429.01\",\"marginUsd\":\"72.19\",\"keepUsd\":\"501.20\",\"paymentRate\":\"0.03\",\"neededUsd\":\"516.70\",\"priceUsd\":519,\"paymentUsd\":\"15.57\",\"surplusUsd\":\"2.23\"}"
+    },
+    {
+     "namespace": "fairwardgolf",
+     "key": "package",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-package/1\",\"fields\":{\"package_height_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":100,\"confidence\":1,\"high\":150,\"low\":80,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_length_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":980,\"confidence\":1,\"high\":1020,\"low\":960,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_weight_g\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":2200,\"confidence\":1,\"high\":3800,\"low\":1500,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_width_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":200,\"confidence\":1,\"high\":280,\"low\":150,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"product_weight_g\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":1400,\"confidence\":1,\"high\":2800,\"low\":900,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6}}}"
+    }
+   ]
+  },
+  {
+   "optionValues": [
+    {
+     "optionName": "Size",
+     "name": "14 Sliver 52 56 60 Set"
+    },
+    {
+     "optionName": "Style Name",
+     "name": "7 Sliver 52 56 60 Degree"
+    }
+   ],
+   "sku": "FW-164e6fd3f098dc8e528b7150",
+   "price": "609.00",
+   "taxable": false,
+   "inventoryPolicy": "CONTINUE",
+   "inventoryItem": {
+    "tracked": false,
+    "cost": "253.00",
+    "requiresShipping": true,
+    "measurement": {
+     "weight": {
+      "value": 2200,
+      "unit": "GRAMS"
+     }
+    }
+   },
+   "metafields": [
+    {
+     "namespace": "fairwardgolf",
+     "key": "source",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-variant-source/1\",\"naverVariantId\":\"55518542992\",\"sourceId\":\"observed:[\\\"14 Sliver 52 56 60 Set\\\",\\\"7 Sliver 52 56 60 Degree\\\"]\",\"optionsKo\":[\"14 Sliver 52 56 60 Set\",\"7 Sliver 52 56 60 Degree\"],\"priceKrw\":249570,\"costUsd\":253,\"priceUsd\":609,\"available\":true}"
+    },
+    {
+     "namespace": "fairwardgolf",
+     "key": "price",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-variant-price/1\",\"rule\":\"landed/2\",\"krwPerUsd\":1000,\"naverKrw\":249570,\"koreaDeliveryKrw\":0,\"koreaFeeType\":\"FREE\",\"purchaseUsd\":250,\"serviceUsd\":\"3.00\",\"dutyRate\":\"0.125\",\"dutyUsd\":\"31.25\",\"costUsd\":\"253.00\",\"box\":{\"cm\":[\"98\",\"20\",\"10\"],\"grossKg\":\"2.2\",\"billableKg\":\"3.92\",\"stepKg\":\"4\"},\"level\":1,\"coefficient\":\"2.50\",\"tariff\":{\"id\":\"shopnship-fedex-ip-kr-us\",\"checkedAt\":\"2026-11-11\",\"version\":1,\"sha256\":\"b947de75554b9048\"},\"gridUsd\":\"88.05\",\"insideUsd\":\"0.00\",\"deliveryUsd\":\"220.13\",\"fees\":[],\"feeUsd\":\"0.00\",\"baseUsd\":\"504.38\",\"marginUsd\":\"80.48\",\"keepUsd\":\"584.86\",\"paymentRate\":\"0.03\",\"neededUsd\":\"602.95\",\"priceUsd\":609,\"paymentUsd\":\"18.27\",\"surplusUsd\":\"5.87\"}"
+    },
+    {
+     "namespace": "fairwardgolf",
+     "key": "package",
+     "type": "json",
+     "value": "{\"schemaVersion\":\"fairwardgolf-package/1\",\"fields\":{\"package_height_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":100,\"confidence\":1,\"high\":150,\"low\":80,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_length_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":980,\"confidence\":1,\"high\":1020,\"low\":960,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_weight_g\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":2200,\"confidence\":1,\"high\":3800,\"low\":1500,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"package_width_mm\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":200,\"confidence\":1,\"high\":280,\"low\":150,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6},\"product_weight_g\":{\"approved_at\":\"2026-11-15\",\"approved_by\":\"owner\",\"central\":1400,\"confidence\":1,\"high\":2800,\"low\":900,\"reliability\":\"estimated_average\",\"source\":\"category_default\",\"table_version\":6}}}"
+    }
+   ]
+  }
+ ],
+ "files": [
+  {
+   "id": "gid://shopify/MediaImage/46806980427843",
+   "alt": "Yamato Full-Face Forged Wedge Set or Single, 50/52/54/56/58/60 Gap and Sand - photo 1"
+  },
+  {
+   "id": "gid://shopify/MediaImage/46806980460611",
+   "alt": "Yamato Full-Face Forged Wedge Set or Single, 50/52/54/56/58/60 Gap and Sand - photo 2"
+  },
+  {
+   "id": "gid://shopify/MediaImage/46806980493379",
+   "alt": "Yamato Full-Face Forged Wedge Set or Single, 50/52/54/56/58/60 Gap and Sand - photo 3"
+  }
+ ],
+ "metafields": [
+  {
+   "namespace": "fairwardgolf",
+   "key": "source_offer_id",
+   "type": "single_line_text_field",
+   "value": "fairwardgolf:naver:102329146:13016112970"
+  },
+  {
+   "namespace": "fairwardgolf",
+   "key": "source_url",
+   "type": "url",
+   "value": "https://smartstore.naver.com/rooftoppla/products/13016112970"
+  },
+  {
+   "namespace": "fairwardgolf",
+   "key": "source",
+   "type": "json",
+   "value": "{\"schemaVersion\":\"fairwardgolf-source/1\",\"platform\":\"naver\",\"key\":\"fairwardgolf:naver:102329146:13016112970\",\"url\":\"https://smartstore.naver.com/rooftoppla/products/13016112970\",\"channelNo\":\"102329146\",\"productId\":\"13016112970\",\"categoryId\":\"50002783\",\"run\":\"50002783-20261116T084248Z\",\"titleKo\":\"야마토 풀페이스 골프 웨지 세트 또는 개별 50/52/54/56/58/60 단조 갭 샌드\",\"brandKo\":\"야마토\",\"priceKrw\":249570,\"originalPriceKrw\":277300}"
+  },
+  {
+   "namespace": "fairwardgolf",
+   "key": "pricing",
+   "type": "json",
+   "value": "{\"schemaVersion\":\"fairwardgolf-pricing/2\",\"version\":\"landed/2\",\"krwPerUsd\":1000,\"serviceUsd\":\"3.00\",\"dutyRate\":\"0.125\",\"koreaPaid\":[\"PAID\",\"UNIT_QUANTITY_PAID\"],\"coefficients\":{\"5\":\"1.00\",\"4\":\"1.10\",\"3\":\"1.20\",\"2\":\"1.40\",\"1\":\"2.50\"},\"margin\":{\"fixedUsd\":\"25.00\",\"rate\":\"0.11\",\"minUsd\":\"30.00\"},\"paymentRate\":\"0.03\",\"rounding\":\"up to a whole dollar ending in 9 under 1000, in 99 from 1000\",\"tariff\":{\"id\":\"shopnship-fedex-ip-kr-us\",\"checkedAt\":\"2026-11-11\",\"version\":1,\"sha256\":\"b947de75554b9048\"},\"decided\":{\"rate\":\"2026-11-10\",\"korea_delivery\":\"2026-11-10\",\"service\":\"2026-11-11\",\"duty\":\"2026-11-11\",\"coefficients\":\"2026-11-11\",\"margin\":\"2026-11-11\",\"payment\":\"2026-11-11\",\"rounding\":\"2026-11-11\"}}"
+  }
+ ]
+}

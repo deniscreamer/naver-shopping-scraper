@@ -32,18 +32,45 @@ never appear in an error, a repr or a print.
     from shopify_catalog import ShopCatalog
     catalog = ShopCatalog(get_store())
     keys = catalog.keys()            # {"fairwardgolf:naver:100568453:8450665186": "gid://shopify/Product/1", ...}
+    for node in catalog.paged(query, "products"): ...    # any connection, page by page (query takes $cursor)
+
+The CLI (2026-11-16, the owner's five tools): read the store's products by hand. Read only (WRITES = False, the same
+token and checks as above), check_shop() before anything; it writes no file of ours (dump writes only --out).
+
+    .venv/bin/python scripts/shopify_catalog.py <shop> show <ref> [--variants] [--metafields [NS[.KEY]]] [--media] [--json]
+    .venv/bin/python scripts/shopify_catalog.py <shop> dump [--fields F,F ...] [--query 'status:active'] [--limit N] --out F.jsonl
+    .venv/bin/python scripts/shopify_catalog.py <shop> counts [--json]
+    .venv/bin/python scripts/shopify_catalog.py <shop> vendors [--query Q] [--json]
+    .venv/bin/python scripts/shopify_catalog.py <shop> collection <handle> [--count-by vendor,status,type] [--json]
+
+show: <ref> is anything shop_view.resolve takes (a key, a Naver product id, a handle the ledger ever had, a store /
+admin / Naver link) or a gid; the ledger's product_id for that key is read. A handle or number our files never had
+is asked of the store itself (productByIdentifier / the gid). Several of our products match: exit 1 naming them.
+Prints `field<TAB>value` lines, then `variant<TAB>sku<TAB>price<TAB>compare at<TAB>qty<TAB>Name=value; ...`,
+`metafield<TAB>ns.key<TAB>type<TAB>value`, `media<TAB>n<TAB>type<TAB>status<TAB>url<TAB>alt` (shop_view.cell: a
+list comma-joined, every run of whitespace in a value one space; --json for the exact values). dump: one JSON line a product, FIELDS' names (default id handle status vendor title key),
+written to F.jsonl.<pid>.part and moved over F at the end (a failed dump leaves F as it was). counts: `status<TAB>n`
+(active, draft, archived, all; n+ when Shopify only says "at least"). vendors: `vendor<TAB>n`, the most first.
+collection: `handle<TAB>status<TAB>vendor<TAB>key<TAB>title` a product, or with --count-by `v1[<TAB>v2]<TAB>n`.
+Exit codes: 0 done; 1 not found (a ref none or several of ours match, a key never sent, a product or collection the
+store does not have, a broken shop file); 2 usage (argparse: an unknown shop, field or --count-by); 3 the store is
+not configured (ShopNotConfigured: ask the operator); 4 the catalog cannot be trusted (CatalogError: auth, another
+shop, an API error, throttled).
 """
 import http.cookiejar
+import json
 import os
 import re
 import stat
 import subprocess
+import sys
 import time
-from typing import Any, Callable
+from typing import Any, Callable, Iterator
 
 import requests
 
 from naver_api_client import ENV_FILE
+from shop_files import LedgerError, read_jsonl
 from shop_stores import Store
 
 MAX_AGE = 300                    # seconds a catalog snapshot is trusted (the harvester's NAVER_CATALOG_MAX_AGE_MS)
@@ -325,34 +352,47 @@ class ShopCatalog:
             raise CatalogError(f"{self.store.id.value}: the API answered for {shop.get('myshopifyDomain')} "
                                f"({shop.get('id')}), not {self.shop.domain} ({self.shop.shop_id})")
 
+    def paged(self, query: str, path: str, variables: dict[str, Any] | None = None) -> Iterator[dict[str, Any]]:
+        """Every node of one connection, page by page, as the pages come (stop iterating: no more pages are read).
+        `query` takes `$cursor: String` and asks the connection at `path` (dotted: "products",
+        "collection.products") with `pageInfo { hasNextPage endCursor }` and `nodes`. Queries only (a mutation is
+        refused); the caller checks the shop first (check_shop). A missing connection or a next page without a
+        cursor is a CatalogError."""
+        cursor = None
+        while True:
+            page: Any = self._post(query, {**(variables or {}), "cursor": cursor})
+            for name in path.split("."):
+                page = page.get(name) if isinstance(page, dict) else None
+            if not isinstance(page, dict):
+                raise CatalogError(f"{self.shop.domain}: the answer has no {path}")
+            yield from page.get("nodes") or []
+            info = page.get("pageInfo") or {}
+            if not info.get("hasNextPage"):
+                return
+            cursor = info.get("endCursor")
+            if not cursor:
+                raise CatalogError(f"{self.shop.domain}: a next page without a cursor")
+
     def read(self) -> dict[str, str]:
         """Every product's source keys -> {key: product gid}. Checks the shop first."""
         self.check_shop()
         fields = " ".join(f'{key}: metafield(namespace: "{self.shop.namespace}", key: "{key}") {{ value }}'
                           for key in KEYS)
-        query = PRODUCTS_QUERY % (PAGE, fields)
         keys: dict[str, str] = {}
-        cursor = None
-        while True:
-            page = (self._post(query, {"cursor": cursor}).get("products") or {})
-            for node in page.get("nodes") or []:
-                for name in KEYS:
-                    value = ((node.get(name) or {}).get("value") or "").strip()
-                    if not value:
-                        continue
-                    if not self.key_re.match(value):
-                        raise CatalogError(f"{node.get('id')}: {self.shop.namespace}.{name} {value[:80]!r} is not "
-                                           f"{self.shop.namespace}:naver:<channelNo>:<productId>")
-                    other = keys.get(value)
-                    if other and other != node.get("id"):
-                        raise CatalogError(f"source key {value} is on two products: {other}, {node.get('id')}")
-                    keys[value] = node.get("id")
-            info = page.get("pageInfo") or {}
-            if not info.get("hasNextPage"):
-                return keys
-            cursor = info.get("endCursor")
-            if not cursor:
-                raise CatalogError(f"{self.shop.domain}: a next page without a cursor")
+        for node in self.paged(PRODUCTS_QUERY % (PAGE, fields), "products"):
+            for name in KEYS:
+                value = ((node.get(name) or {}).get("value") or "").strip()
+                if not value:
+                    continue
+                if not self.key_re.match(value):
+                    raise CatalogError(f"{node.get('id')}: {self.shop.namespace}.{name} {value[:80]!r} is not "
+                                       f"{self.shop.namespace}:naver:<channelNo>:<productId>")
+                gid: Any = node.get("id")
+                other = keys.get(value)
+                if other and other != gid:
+                    raise CatalogError(f"source key {value} is on two products: {other}, {gid}")
+                keys[value] = gid
+        return keys
 
     def keys(self) -> dict[str, str]:
         """The snapshot, read again when it is older than MAX_AGE."""
@@ -363,3 +403,315 @@ class ShopCatalog:
             self._keys = self.read()
             self._read_at = started
         return self._keys
+
+
+# ---- CLI: read the store's products by hand (2026-11-16, the owner's five tools) ------------------------------------
+
+GID = "gid://shopify/Product/"
+LIGHT_PAGE = 250                 # products a page for scalar fields only (cost ~ 1 a product)
+SHOW = """query Show($id: ID!) { node(id: $id) { ... on Product {
+  id handle title status vendor productType tags createdAt updatedAt publishedAt totalInventory onlineStoreUrl
+  source_offer_id: metafield(namespace: "%(ns)s", key: "source_offer_id") { value }
+  naver_offer_key: metafield(namespace: "%(ns)s", key: "naver_offer_key") { value }
+  collections(first: 20) { nodes { handle } } variantsCount { count } mediaCount { count }
+  %(more)s
+} } }"""
+VARIANTS = ("variants(first: 100) { nodes { id sku title price compareAtPrice inventoryQuantity "
+            "selectedOptions { name value } } }")
+METAFIELDS = "metafields(first: 100) { nodes { namespace key type value } }"
+MEDIA = ("media(first: 100) { nodes { mediaContentType status alt "
+         "... on MediaImage { image { url width height } } } }")
+BY_HANDLE = "query ByHandle($handle: String!) { productByIdentifier(identifier: {handle: $handle}) { id } }"
+COUNTS = "query Counts { %s }" % " ".join(
+    f'{s}: productsCount({"" if s == "all" else f"query: {chr(34)}status:{s}{chr(34)}, "}limit: null) '
+    "{ count precision }" for s in ("active", "draft", "archived", "all"))
+COLLECTION = ("query Collection($handle: String!) { collectionByIdentifier(identifier: {handle: $handle}) "
+              "{ id handle title productsCount { count } } }")
+LIST = """query List($cursor: String%(args)s) {
+  %(open)sproducts(first: %(first)d, after: $cursor%(query)s) {
+    pageInfo { hasNextPage endCursor }
+    nodes { %(fields)s }
+  }%(close)s
+}"""
+def _getter(name: str) -> Callable[[dict[str, Any]], Any]:
+    return lambda node: node.get(name)
+
+
+# dump's fields: name -> (GraphQL, the value from a node); `key` is the source key (the current metafield, else
+# the older one)
+FIELDS: dict[str, tuple[str, Callable[[dict[str, Any]], Any]]] = {
+    **{f: (f, _getter(f)) for f in ("id", "handle", "title", "status", "vendor", "productType",
+                                                    "tags", "createdAt", "updatedAt", "publishedAt", "totalInventory")},
+    "key": ('source_offer_id: metafield(namespace: "%(ns)s", key: "source_offer_id") { value } '
+            'naver_offer_key: metafield(namespace: "%(ns)s", key: "naver_offer_key") { value }',
+            lambda n: _source_key(n)),
+    "variants": ("variantsCount { count }", lambda n: (n.get("variantsCount") or {}).get("count")),
+    "media": ("mediaCount { count }", lambda n: (n.get("mediaCount") or {}).get("count")),
+    "price_min": ("priceRangeV2 { minVariantPrice { amount } maxVariantPrice { amount } }",
+                  lambda n: ((n.get("priceRangeV2") or {}).get("minVariantPrice") or {}).get("amount")),
+    "price_max": ("priceRangeV2 { minVariantPrice { amount } maxVariantPrice { amount } }",
+                  lambda n: ((n.get("priceRangeV2") or {}).get("maxVariantPrice") or {}).get("amount")),
+    "collections": ("collections(first: 10) { nodes { handle } }",
+                    lambda n: [c.get("handle") for c in (n.get("collections") or {}).get("nodes") or []]),
+}
+DUMP_DEFAULT = ("id", "handle", "status", "vendor", "title", "key")
+COUNT_BY = {"vendor": "vendor", "status": "status", "type": "productType"}
+EXIT_FOUND, EXIT_NONE, EXIT_USAGE, EXIT_NOT_CONFIGURED, EXIT_CATALOG = 0, 1, 2, 3, 4
+
+
+class NotFound(Exception):
+    """A ref, product or collection the command cannot name or the store does not have (exit 1)."""
+
+
+def _source_key(node: dict[str, Any]) -> str | None:
+    for name in KEYS:
+        value = ((node.get(name) or {}).get("value") or "").strip()
+        if value:
+            return value
+    return None
+
+
+def _row(*cells: Any) -> str:
+    from shop_view import cell                      # one TSV cell for the read tools: whitespace runs one space
+    return "\t".join(cell(c) for c in cells)
+
+
+def _list_query(catalog: ShopCatalog, fields: str, first: int, query: str | None = None,
+                collection: bool = False) -> tuple[str, str]:
+    """A products listing (of the store, or of one collection: variable $id) and the path of its connection."""
+    text = LIST % {"args": (", $query: String" if query else "") + (", $id: ID!" if collection else ""),
+                   "open": "collection(id: $id) { " if collection else "", "close": " }" if collection else "",
+                   "first": first, "query": ", query: $query" if query else "",
+                   "fields": fields % {"ns": catalog.shop.namespace}}
+    return text, "collection.products" if collection else "products"
+
+
+def product_id(catalog: ShopCatalog, ref: str, shops_root: str) -> str:
+    """The product gid `ref` names: a gid, an admin link, or any ref of shop_view.resolve whose key the ledger sent;
+    a handle or number our files never had is looked up in the store itself. NotFound when none or several."""
+    from shop_view import RefError, RefIndex, is_key, resolve, store_number
+    ref = ref.strip()
+    if not ref:
+        raise NotFound("an empty ref")
+    number = store_number(ref)                              # a gid or an admin link: the store's own number
+    if number:
+        return GID + number
+    shop = catalog.store.id.value
+    index = RefIndex.of_shop(shop, shops_root)
+    found: set[str] = set()
+    try:
+        found = index.matches(ref) if not is_key(ref) and ref not in index.known else {ref}
+        key = resolve(index, ref)
+    except RefError as e:
+        if found:                                           # several of ours: name one, never the first
+            raise NotFound(str(e)) from None
+        if ref.isdigit():                                   # a Shopify product number our ledger never had
+            return GID + ref
+        handle = re.search(r"/products/([^/?#]+)", ref)
+        if "://" in ref and not handle:
+            raise NotFound(str(e)) from None
+        answer = catalog._post(BY_HANDLE, {"handle": handle.group(1) if handle else ref})
+        gid = (answer.get("productByIdentifier") or {}).get("id")
+        if not gid:
+            raise NotFound(f"{ref}: neither our files nor the store have it (a key, a Naver product id, a handle, "
+                           f"a link, a gid)") from None
+        return str(gid)
+    sent = [r for r in read_jsonl(os.path.join(shops_root, shop, "publish", "published.jsonl"), tail_ok=True)
+            if r.get("key") == key and r.get("product_id")]
+    if not sent:
+        raise NotFound(f"{ref}: {key} was never sent to the store (no product_id in the ledger)")
+    return str(sent[-1]["product_id"])
+
+
+def _show(catalog: ShopCatalog, a: Any) -> int:
+    gid = product_id(catalog, a.ref, a.shops_root)
+    more = [x for flag, x in ((a.variants, VARIANTS), (a.metafields is not None, METAFIELDS), (a.media, MEDIA))
+            if flag]
+    node = catalog._post(SHOW % {"ns": catalog.shop.namespace, "more": " ".join(more)}, {"id": gid}).get("node")
+    if not node:
+        raise NotFound(f"{a.ref}: {gid} is not in the store")
+    if a.metafields:                                         # "ns" or "ns.key"
+        ns, _, key = a.metafields.partition(".")
+        node["metafields"]["nodes"] = [m for m in node["metafields"]["nodes"]
+                                       if m.get("namespace") == ns and (not key or m.get("key") == key)]
+    if a.json:
+        print(json.dumps(node, ensure_ascii=False, indent=1))
+        return EXIT_FOUND
+    for name, value in (("id", node.get("id")), ("handle", node.get("handle")), ("title", node.get("title")),
+                        ("status", node.get("status")), ("vendor", node.get("vendor")),
+                        ("type", node.get("productType")), ("tags", node.get("tags")), ("key", _source_key(node)),
+                        ("collections", [c["handle"] for c in (node.get("collections") or {}).get("nodes") or []]),
+                        ("variant_count", (node.get("variantsCount") or {}).get("count")),
+                        ("media_count", (node.get("mediaCount") or {}).get("count")),
+                        ("inventory", node.get("totalInventory")), ("created", node.get("createdAt")),
+                        ("updated", node.get("updatedAt")), ("published", node.get("publishedAt")),
+                        ("url", node.get("onlineStoreUrl"))):
+        print(_row(name, value))
+    for v in (node.get("variants") or {}).get("nodes") or []:
+        print(_row("variant", v.get("sku"), v.get("price"), v.get("compareAtPrice"), v.get("inventoryQuantity"),
+                   "; ".join(f"{o['name']}={o['value']}" for o in v.get("selectedOptions") or [])))
+    for m in (node.get("metafields") or {}).get("nodes") or []:
+        print(_row("metafield", f"{m.get('namespace')}.{m.get('key')}", m.get("type"), m.get("value")))
+    for n, m in enumerate((node.get("media") or {}).get("nodes") or [], 1):
+        print(_row("media", n, m.get("mediaContentType"), m.get("status"), (m.get("image") or {}).get("url"),
+                   m.get("alt")))
+    return EXIT_FOUND
+
+
+def _fields(names: list[str]) -> list[str]:
+    out = [f.strip() for x in names for f in x.split(",") if f.strip()]
+    bad = [f for f in out if f not in FIELDS]
+    if bad:
+        raise SystemExit(f"shopify_catalog: unknown field(s) {', '.join(bad)}; known: {', '.join(FIELDS)}")
+    return list(dict.fromkeys(out))
+
+
+def _dump(catalog: ShopCatalog, a: Any) -> int:
+    names = _fields(a.fields) if a.fields else list(DUMP_DEFAULT)
+    heavy = "collections" in names
+    first = min(a.limit, 50 if heavy else PAGE) if a.limit else (50 if heavy else PAGE)
+    text, path = _list_query(catalog, " ".join(dict.fromkeys(FIELDS[n][0] for n in names)), first, a.query)
+    part, n = f"{a.out}.{os.getpid()}.part", 0
+    try:
+        with open(part, "w", encoding="utf-8") as f:
+            for node in catalog.paged(text, path, {"query": a.query} if a.query else None):
+                f.write(json.dumps({x: FIELDS[x][1](node) for x in names}, ensure_ascii=False) + "\n")
+                n += 1
+                if a.limit and n >= a.limit:
+                    break
+        os.replace(part, a.out)                              # the whole dump or the old file: never half of one
+    finally:
+        if os.path.exists(part):
+            os.remove(part)
+    print(f"dump {catalog.store.id.value}: {n} products -> {a.out}", file=sys.stderr)
+    return EXIT_FOUND
+
+
+def _counts(catalog: ShopCatalog, a: Any) -> int:
+    answer = catalog._post(COUNTS)
+    counts = {s: (answer.get(s) or {}).get("count") for s in ("active", "draft", "archived", "all")}
+    if a.json:
+        print(json.dumps(counts))
+    for s, c in counts.items():
+        if not a.json:
+            print(_row(s, f"{c}{'' if (answer.get(s) or {}).get('precision') in (None, 'EXACT') else '+'}"))
+    return EXIT_FOUND
+
+
+def _count(nodes: Iterator[dict[str, Any]], by: list[str]) -> list[tuple[tuple[str, ...], int]]:
+    counts: dict[tuple[str, ...], int] = {}
+    for node in nodes:
+        k = tuple(str(node.get(COUNT_BY[b]) or "") for b in by)
+        counts[k] = counts.get(k, 0) + 1
+    return sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))
+
+
+def _print_counts(rows: list[tuple[tuple[str, ...], int]], by: list[str], as_json: bool) -> None:
+    if as_json:
+        print(json.dumps([{**dict(zip(by, k)), "count": c} for k, c in rows], ensure_ascii=False))
+        return
+    for k, c in rows:
+        print(_row(*k, c))
+
+
+def _count_by(value: str) -> list[str]:
+    by = [b.strip() for b in value.split(",") if b.strip()]
+    bad = [b for b in by if b not in COUNT_BY]
+    if bad or not by:
+        raise SystemExit(f"shopify_catalog: --count-by takes {', '.join(COUNT_BY)} (comma separated)")
+    return by
+
+
+def _vendors(catalog: ShopCatalog, a: Any) -> int:
+    text, path = _list_query(catalog, "vendor", LIGHT_PAGE, a.query)
+    _print_counts(_count(catalog.paged(text, path, {"query": a.query} if a.query else None), ["vendor"]),
+                  ["vendor"], a.json)
+    return EXIT_FOUND
+
+
+def _collection(catalog: ShopCatalog, a: Any) -> int:
+    found = catalog._post(COLLECTION, {"handle": a.handle}).get("collectionByIdentifier")
+    if not found:
+        raise NotFound(f"{a.handle}: no collection with this handle in the store")
+    by = _count_by(a.count_by) if a.count_by else None
+    fields = "id handle status vendor productType title " + FIELDS["key"][0]
+    text, path = _list_query(catalog, fields, LIGHT_PAGE if by else PAGE, collection=True)
+    nodes = catalog.paged(text, path, {"id": found["id"]})
+    if by:
+        _print_counts(_count(nodes, by), by, a.json)
+    elif a.json:
+        print(json.dumps([{"id": n.get("id"), "handle": n.get("handle"), "status": n.get("status"),
+                           "vendor": n.get("vendor"), "key": _source_key(n), "title": n.get("title")}
+                          for n in nodes], ensure_ascii=False))
+    else:
+        for n in nodes:
+            print(_row(n.get("handle"), n.get("status"), n.get("vendor"), _source_key(n), n.get("title")))
+    print(f"collection {found.get('handle')} ({found.get('title')}): "
+          f"{(found.get('productsCount') or {}).get('count')} products", file=sys.stderr)
+    return EXIT_FOUND
+
+
+def main(argv: list[str] | None = None, catalog: ShopCatalog | None = None) -> int:
+    """The CLI (usage and exit codes: the module docstring). `catalog`: the tests' ShopCatalog on a fake session."""
+    import argparse
+    from shop_stores import get_store
+    from shop_view import SHOPS_ROOT
+    ap = argparse.ArgumentParser(prog="shopify_catalog.py", description="Read a store's products (read only).")
+    ap.add_argument("shop")
+    ap.add_argument("--shops-root", default=SHOPS_ROOT, help="where our files are (show's refs)")
+    sub = ap.add_subparsers(dest="cmd", required=True)
+    p = sub.add_parser("show", help="one product: a key, Naver product id, handle, store / admin link or gid")
+    p.add_argument("ref")
+    p.add_argument("--variants", action="store_true")
+    p.add_argument("--metafields", nargs="?", const="", metavar="NS[.KEY]", help="all, or one namespace / key")
+    p.add_argument("--media", action="store_true")
+    p.add_argument("--json", action="store_true")
+    p = sub.add_parser("dump", help="every product (or --query's) a JSON line")
+    p.add_argument("--fields", nargs="+", metavar="F", help=f"comma or space separated; known: {', '.join(FIELDS)} "
+                   f"(default {','.join(DUMP_DEFAULT)})")
+    p.add_argument("--query", help="Shopify's search syntax, e.g. 'status:active' or 'vendor:Titleist'")
+    p.add_argument("--limit", type=int, help="the first N products only")
+    p.add_argument("--out", required=True, metavar="F.jsonl")
+    p = sub.add_parser("counts", help="products by status (active, draft, archived, all)")
+    p.add_argument("--json", action="store_true")
+    p = sub.add_parser("vendors", help="products a vendor, the most first")
+    p.add_argument("--query")
+    p.add_argument("--json", action="store_true")
+    p = sub.add_parser("collection", help="one collection's products, or their counts")
+    p.add_argument("handle")
+    p.add_argument("--count-by", metavar="F[,F]", help=f"count by {', '.join(COUNT_BY)}")
+    p.add_argument("--json", action="store_true")
+    a = ap.parse_args(argv)
+    if getattr(a, "limit", None) is not None and a.limit < 1:
+        ap.error("--limit must be 1 or more")
+    try:
+        if a.cmd == "dump" and a.fields:
+            _fields(a.fields)                                 # a usage error before any request
+        if a.cmd == "collection" and a.count_by:
+            _count_by(a.count_by)
+    except SystemExit as e:
+        ap.error(str(e).removeprefix("shopify_catalog: "))
+    run = {"show": _show, "dump": _dump, "counts": _counts, "vendors": _vendors, "collection": _collection}[a.cmd]
+    try:
+        store = get_store(a.shop)
+    except ValueError as e:
+        ap.error(str(e))
+    if catalog is not None and catalog.store.id != store.id:
+        ap.error(f"the catalog is {catalog.store.id.value}, not {a.shop}")
+    try:
+        catalog = catalog or ShopCatalog(store)
+        catalog.check_shop()
+        return run(catalog, a)
+    except ShopNotConfigured as e:
+        print(f"shopify_catalog: {e}", file=sys.stderr)
+        return EXIT_NOT_CONFIGURED
+    except CatalogError as e:
+        print(f"shopify_catalog: {e}", file=sys.stderr)
+        return EXIT_CATALOG
+    except (NotFound, ValueError, LedgerError) as e:         # ValueError: a RefError; LedgerError: a broken line
+        print(f"shopify_catalog: {e}", file=sys.stderr)
+        return EXIT_NONE
+
+
+if __name__ == "__main__":
+    sys.exit(main())

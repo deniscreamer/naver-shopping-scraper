@@ -3,6 +3,13 @@
     .venv/bin/python scripts/publish.py fairwardgolf                     # every product ready and not published
     .venv/bin/python scripts/publish.py fairwardgolf --only <key> [--only <key>] [--force] [--dry-run]
     .venv/bin/python scripts/publish.py fairwardgolf --shops-root scripts/output/trial-20261108/shops
+    .venv/bin/python scripts/publish.py fairwardgolf --withdraw <ref> --reason "..." --dry-run   # names the key only
+
+A product is named by its key, Naver product id, handle or link (shop_view.resolve; a full key as it is), in
+--only / --withdraw / --restore / --activate; --keys-file F and --job ID [--event E] add more, to the action given
+(a bare --withdraw / --restore / --activate takes only those). A ref that names no product or several stops the
+command before anything is sent (exit 2, the candidates listed). With --dry-run a withdraw, restore or activate
+prints the keys it would act on and sends nothing (2026-11-16; before, --dry-run did not stop them).
 
 A product is published when it is `ready` (transform), `translated` (translate.py) and `placed` (placement.py). Per
 product, in this order (shopify_payload.py builds, shopify_admin.py sends):
@@ -42,6 +49,7 @@ from shop_files import append_line, locked, read_jsonl
 from shop_pricing import policy
 from shop_stores import get_store
 from shop_types import LedgerPhoto, LedgerRow
+from shop_view import add_ref_flags, keys_from_args, selection_asked
 from shopify_catalog import CatalogError
 
 SCRIPTS = os.path.dirname(os.path.abspath(__file__))
@@ -458,22 +466,39 @@ def clients(shop: str) -> tuple[Any, Any, dict[str, Any]]:
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("shop")
-    ap.add_argument("--only", action="append", default=[], help="a product key (repeat for several)")
+    ap.add_argument("--only", action="append", default=[], help="a product: its key, Naver product id, handle or "
+                    "link (repeat for several)")
     ap.add_argument("--shops-root", default=SHOPS_ROOT, help="the folder holding <shop>/")
     ap.add_argument("--force", action="store_true", help="send even when nothing changed")
     ap.add_argument("--dry-run", action="store_true", help="build and save the payload; send nothing")
-    ap.add_argument("--withdraw", action="append", default=[], help="a published product's key: set it DRAFT and "
-                    "never send it again (with --reason)")
-    ap.add_argument("--restore", action="append", default=[],
+    ap.add_argument("--withdraw", action="append", default=[], nargs="?", const="",
+                    help="a published product's key: set it DRAFT and never send it again (with --reason)")
+    ap.add_argument("--restore", action="append", default=[], nargs="?", const="",
                     help="a withdrawn product's key: ACTIVE again (a draft: DRAFT), sent with today's data by the "
                     "next run (with --reason)")
-    ap.add_argument("--activate", action="append", default=[], help="a draft's key (a category not marked "
-                    "reviewed): ACTIVE, on the owner's word after the lens review (repeat for several)")
+    ap.add_argument("--activate", action="append", default=[], nargs="?", const="",
+                    help="a draft's key (a category not marked reviewed): ACTIVE, on the owner's word after the lens "
+                    "review (repeat for several)")
     ap.add_argument("--reason", help="why a product is withdrawn or restored (kept in the ledger)")
     ap.add_argument("--rehandle", action="store_true", help="give a product already in the shop the handle its "
                     "title makes now (the old one redirects)")
+    add_ref_flags(ap)
     args = ap.parse_args(argv)
     shop = Shop(args.shop, args.shops_root)
+    action = next((a for a in ("activate", "restore", "withdraw") if getattr(args, a)), "only")
+    named = [r for r in getattr(args, action) if r]
+    if action != "only" and not (named or selection_asked(args)):
+        ap.error(f"--{action}: a product (a ref, --keys-file or --job)")
+    if action == "only" and not (named or selection_asked(args)):
+        args.only = []
+    else:                                         # refs -> keys; a full key as it is (known or not, as before)
+        setattr(args, action, keys_from_args(ap, args, args.shop, named, args.shops_root))
+    if action in ("withdraw", "restore") and not args.reason:
+        ap.error(f"--{action} needs --reason")
+    if args.dry_run and action != "only":         # a store action sends at once: --dry-run names what it would do
+        for key in getattr(args, action):
+            print(f"{key}: would {action} (dry run: nothing sent)")
+        return 0
     if args.activate:
         from shopify_admin import ProductsAdmin
         admin = ProductsAdmin(get_store(args.shop))

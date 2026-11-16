@@ -9,13 +9,15 @@ whole dollar) next to what the shop's rule gives now, with the confidence level(
 changes is sent and one whose digest did not change is skipped.
 
     .venv/bin/python scripts/reprice.py fairwardgolf                     # the table only: nothing sent (dry run)
-    .venv/bin/python scripts/reprice.py fairwardgolf --only <key> [--only <key>]
+    .venv/bin/python scripts/reprice.py fairwardgolf --only <ref> [--only <ref>] [--keys-file F] [--job ID]
     .venv/bin/python scripts/reprice.py fairwardgolf --apply             # then send them (Shopify)
     .venv/bin/python scripts/reprice.py fairwardgolf --shops-root scripts/output/trial-20261108/shops
 
 The table is also written as tab-separated text to shops/<shop>/publish/reprice-<UTC time>.tsv. A product whose
 price cannot be made (a variant without a box, a box over the tariff: shop_pricing.PriceError) is held with the
 reason, stays as it is in the store and the run goes on. Without --apply no credentials are read.
+--only takes a key, Naver product id, handle or link (shop_view.resolve; a full key as it is); --keys-file and --job
+[--event] add more; a ref that names no product or several stops the command (exit 2) before the table.
 """
 import argparse
 import os
@@ -28,6 +30,7 @@ import shopify_payload as sp
 from shop_files import locked
 from shop_pricing import Policy, PriceError, policy
 from shop_types import LedgerRow
+from shop_view import add_ref_flags, keys_from_args, selection_asked
 from shopify_catalog import CatalogError
 
 COLUMNS = ("key", "handle", "status", "levels", "coefficients", "old_min", "old_max", "old_from", "new_min",
@@ -168,14 +171,18 @@ def apply(shop: PB.Shop, rows: list[dict[str, Any]]) -> dict[str, int]:
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("shop")
-    ap.add_argument("--only", action="append", default=[], help="a product key (repeat for several)")
+    ap.add_argument("--only", action="append", default=[], help="a product: its key, Naver product id, handle or "
+                    "link (repeat for several)")
     ap.add_argument("--apply", action="store_true", help="send the products to the store (default: the table only)")
     ap.add_argument("--shops-root", default=PB.SHOPS_ROOT, help="the folder holding <shop>/")
+    add_ref_flags(ap)
     args = ap.parse_args(argv)
     shop = PB.Shop(args.shop, args.shops_root)
     if not os.path.isdir(shop.dir):
         print(f"no shop folder {shop.dir}", file=sys.stderr)
         return 1
+    if args.only or selection_asked(args):          # refs -> keys (a full key as it is, as before)
+        args.only = keys_from_args(ap, args, args.shop, args.only, args.shops_root)
     def run() -> int:
         rows = table(shop, args.only)
         for r in rows:

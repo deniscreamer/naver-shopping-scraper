@@ -70,8 +70,8 @@ def test_publish_sending_is_refused_its_dry_run_is_not(busy, capsys, monkeypatch
     assert publish.main([SHOP, "--shops-root", busy]) == 2
     _refused(capsys, "publish: ")
     monkeypatch.setattr(publish, "offline_ids", lambda shop: {"vendors": {}, "tenant": "T"})
-    assert publish.main([SHOP, "--shops-root", busy, "--dry-run", "--only", "nosuchkey"]) == 0
-    assert "publish fairwardgolf: 0 products" in capsys.readouterr().out
+    assert publish.main([SHOP, "--shops-root", busy, "--dry-run", "--only", f"{SHOP}:naver:1:2"]) == 0   # a full
+    assert "publish fairwardgolf: 0 products" in capsys.readouterr().out          # key unknown: as before, not ready
 
 
 def test_publish_withdraw_is_not_locked(busy, monkeypatch):

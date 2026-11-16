@@ -1,6 +1,11 @@
 """The product's description for the shop: one model request per product, checked and rendered to HTML here.
 
-    .venv/bin/python scripts/describe.py <shop> [--only KEY] [--limit N] [--published] [--force] [--packet]
+    .venv/bin/python scripts/describe.py <shop> [--only REF] [--keys-file F] [--job ID [--event E]] [--limit N]
+                                         [--published] [--force] [--packet] [--offline]
+
+--only takes a key, a Naver product id, a handle or a link (shop_view.resolve; a full key as it is); --keys-file and
+--job [--event] name more products (shop_view.selected_keys), each named product counting as --only does (a product
+already in the shop too). A ref that names no product or several stops the command (exit 2) before anything is asked.
 
 The owner, 2026-11-10: a minimalist English description in HTML for Shopify's own description field
 (descriptionHtml), written by the model API from the product's title, the seller's typed text and the text read from
@@ -34,11 +39,12 @@ import os
 import re
 import sys
 import time
-from typing import Any
+from typing import Any, Collection
 
 import shop_stores
 import shopify_payload as sp
 from shop_files import append_line, locked
+from shop_view import add_ref_flags, keys_from_args, selection_asked
 import translate
 from translate import Chain, Model, ProviderDown, TranslateError
 from translation_rules import HANGUL_RE
@@ -511,12 +517,15 @@ def describe_product(prepared: dict[str, Any], translated: dict[str, Any], block
             "by": by, "generated": "model", "at": now}
 
 
-def run(shop: str, model: "Model | Chain | None", shops_root: str = SHOPS_ROOT, only: str | None = None,
+def run(shop: str, model: "Model | Chain | None", shops_root: str = SHOPS_ROOT,
+        only: str | Collection[str] | None = None,
         limit: int | None = None, published: bool = False, force: bool = False,
         clock: Any = time.gmtime) -> dict[str, Any]:
     """Describe the shop's products that are ready and translated and have no description yet. `only`: this key
     (a product already in the shop too: naming it is the go-ahead). Without it, products already in the shop are
-    left alone unless `published`. `model` None: nothing is asked, the report says what would be."""
+    left alone unless `published`. `model` None: nothing is asked, the report says what would be. `only` may be
+    several keys (each named: the go-ahead for it)."""
+    wanted = {only} if isinstance(only, str) else set(only or ())
     import publish
     tenant = shop_stores.STORES[shop_stores.StoreId(shop)].publisher
     shop_dir = os.path.join(shops_root, shop)
@@ -532,7 +541,7 @@ def run(shop: str, model: "Model | Chain | None", shops_root: str = SHOPS_ROOT, 
     waiting: list[str] = []
     for key in sorted(prepared):
         p, t = prepared[key], translated.get(key) or {}
-        if only and key != only:
+        if wanted and key not in wanted:
             continue
         if p.get("status") != "ready" or t.get("status") != "translated":
             continue
@@ -579,16 +588,22 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="Write the shop's product descriptions (one model request a product).")
     ap.add_argument("shop")
     ap.add_argument("--shops-root", default=SHOPS_ROOT)
-    ap.add_argument("--only", help="this product key only (a product already in the shop too)")
+    ap.add_argument("--only", help="this product only (a product already in the shop too): its key, Naver product id, "
+                    "handle or link")
     ap.add_argument("--limit", type=int, help="ask the model for at most N products")
     ap.add_argument("--published", action="store_true", help="products already in the shop too (the next publish.py "
                     "run then sends them: the owner's go-ahead first)")
     ap.add_argument("--force", action="store_true", help="ask again for a product that has a description")
     ap.add_argument("--offline", action="store_true", help="ask nothing: report what would be asked")
     ap.add_argument("--packet", action="store_true", help="with --only: print what the model would be given")
+    add_ref_flags(ap)
     args = ap.parse_args(argv)
     shop_dir = os.path.join(args.shops_root, args.shop)
     prepared = _jsonl(os.path.join(shop_dir, "prepared", "products.jsonl"))
+    only: list[str] | None = None
+    if args.only or selection_asked(args):            # refs -> keys; --only's comes first
+        only = keys_from_args(ap, args, args.shop, [args.only] if args.only else [], args.shops_root)
+        args.only = only[0] if args.only else None
     if args.only and args.only not in prepared:
         ap.error(f"--only {args.only}: no such product key in {args.shop} (the whole key, shop:source:channel:id)")
     if args.packet:
@@ -604,7 +619,7 @@ def main(argv: list[str] | None = None) -> int:
     def body() -> int:
         try:
             model = None if args.offline else build_chain(translate.keys_from_env())
-            r = run(args.shop, model, args.shops_root, only=args.only, limit=args.limit, published=args.published,
+            r = run(args.shop, model, args.shops_root, only=only, limit=args.limit, published=args.published,
                     force=args.force)
         except (TranslateError, NoProvider) as e:
             print(f"describe: {e}", file=sys.stderr)

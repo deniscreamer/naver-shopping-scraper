@@ -1,0 +1,178 @@
+{
+ "format": "description_image_text/1",
+ "product_id": "13016112970",
+ "key": "fairwardgolf:naver:102329146:13016112970",
+ "sha256": "5e6c38af909ea47fca8510149f89a61a35e7d723f5f70e9ebce35799bacd36ae",
+ "instructions": [
+  "This is text read by OCR from the product's description images, cleaned of the shop's own blocks. Translate each block under its [id]; one block may continue the one before it.",
+  "OCR faults to expect: spaces lost between words, a few misread letters (닫힌 -> 달힌, 페이스 -> 레이스), a digit lost in a table. Translate what is meant; do not invent facts, numbers or claims that are not there.",
+  "Keep numbers, units, model names, shaft / club codes and table cells exactly as written; a table row is cells \"a | b | c\": keep the cells and their order; ' / ' joins parts read side by side on one line.",
+  "Leave out a line that is plainly not about the product (a store slogan, a region list, a stray label).",
+  "Some sellers put screenshots of buyers' reviews in the description images (a 'Real Review' / 후기 / 리뷰 banner, masked ids like 'ridb*', dates, a buyer's height and weight, often about other products): this is kept as read for context; never use it as the product's description or its facts.",
+  "A block's `key` (in the .ko.json) is the same in every listing that carries the same text: translate it once."
+ ],
+ "glossary": {
+  "로프트각": "loft",
+  "라이각": "lie angle",
+  "헤드체적": "head volume",
+  "샤프트": "shaft",
+  "강도": "flex",
+  "플렉스": "flex",
+  "토크": "torque",
+  "킥포인트": "kick point",
+  "밸런스": "swing weight",
+  "스윙웨이트": "swing weight",
+  "총중량": "total weight",
+  "클럽 중량": "club weight",
+  "그립": "grip",
+  "드라이버": "driver",
+  "페어웨이우드": "fairway wood",
+  "유틸리티": "hybrid",
+  "아이언": "iron",
+  "웨지": "wedge",
+  "퍼터": "putter",
+  "캐디백": "caddie bag",
+  "스탠드백": "stand bag",
+  "보스턴백": "boston bag",
+  "헤드커버": "head cover",
+  "풀세트": "complete set",
+  "관용성": "forgiveness",
+  "비거리": "distance",
+  "타구감": "feel",
+  "스윗스팟": "sweet spot",
+  "단조": "forged",
+  "주조": "cast",
+  "말렛형": "mallet",
+  "일자형": "blade"
+ },
+ "blocks": [
+  {
+   "id": "b01",
+   "kind": "text",
+   "image": 1,
+   "text": "있으면 / 무조건\n환물보장\n일단사용해보고 / 결정하세요!",
+   "key": "4a72f8f87a9b70bb",
+   "shared": 5
+  },
+  {
+   "id": "b02",
+   "kind": "text",
+   "image": 2,
+   "text": "AS-I2",
+   "key": "289fc807e22cb7a7",
+   "shared": 1
+  },
+  {
+   "id": "b03",
+   "kind": "text",
+   "image": 3,
+   "text": "Designed / With A Leading E / Edge / That Prevents\nDigging Into The Ground, Ensuring / Forgiveness",
+   "key": "4a61c0764cfb43e4",
+   "shared": 1
+  },
+  {
+   "id": "b04",
+   "kind": "text",
+   "image": 5,
+   "text": "AS-10",
+   "key": "135f0cb9747bdb36",
+   "shared": 1
+  },
+  {
+   "id": "b05",
+   "kind": "table",
+   "image": 8,
+   "text": "LOFT | 50 | 52 | 54 | 56 | 58 | 60\nLIE | 64 | 64 | 64 | 64 | 64 | 64\nBOUNCE | 9 | 9 | 10 | 12 | 10 | 10\nSWING WEIGHT | D2 | D2 | D2 | D2 | D3 | D3\nSHAFT WEIGHT(G) | 109 | 109 | 108 | 108 | 107 | 107\nGRIP WEIGHT(G) | 58 | 58 | 58 | 58 | 58 | 58\nLENGTH(INCH) | 35.5 | 35.5 | 35.25 | 35.25 | 35 | 35",
+   "key": "fbaa17689f6e6dfd",
+   "shared": 1
+  },
+  {
+   "id": "b06",
+   "kind": "text",
+   "image": 9,
+   "text": "AS-10\nAS-I2\nAS-9",
+   "key": "08abd20b19116bb5",
+   "shared": 1
+  },
+  {
+   "id": "b07",
+   "kind": "text",
+   "image": 12,
+   "text": "AS-12",
+   "key": "db4013bfac9721bc",
+   "shared": 1
+  },
+  {
+   "id": "b08",
+   "kind": "text",
+   "image": 15,
+   "text": "AS-I2",
+   "key": "289fc807e22cb7a7",
+   "shared": 1
+  },
+  {
+   "id": "b09",
+   "kind": "text",
+   "image": 17,
+   "text": "AS-I0",
+   "key": "086962cdd5605eca",
+   "shared": 1
+  },
+  {
+   "id": "b10",
+   "kind": "text",
+   "image": 19,
+   "text": "AS-9",
+   "key": "d94d48619a1f215b",
+   "shared": 1
+  },
+  {
+   "id": "b11",
+   "kind": "table",
+   "image": 21,
+   "text": "IT | AS-I0",
+   "key": "54b2d93ec0627f31",
+   "shared": 1
+  },
+  {
+   "id": "b12",
+   "kind": "text",
+   "image": 21,
+   "text": "AS-I2",
+   "key": "289fc807e22cb7a7",
+   "shared": 1
+  },
+  {
+   "id": "b13",
+   "kind": "text",
+   "image": 22,
+   "text": "FULL / FACE / GROOVE\nAS-12",
+   "key": "dd374a92ed7dbde1",
+   "shared": 1
+  },
+  {
+   "id": "b14",
+   "kind": "text",
+   "image": 24,
+   "text": "INNOVATIVE / RUBBER / FULL FACE / STAINLESS\nDESIGN / GRIP / GROOVE / STEEL SHAFT",
+   "key": "ea79698d8bf51e94",
+   "shared": 1
+  },
+  {
+   "id": "b15",
+   "kind": "text",
+   "image": 25,
+   "text": "AS-10",
+   "key": "135f0cb9747bdb36",
+   "shared": 1
+  },
+  {
+   "id": "b16",
+   "kind": "table",
+   "image": 28,
+   "text": "LOFT | 50 | 52 | 54 | 56 | 58 | 60\nLIE | 64 | 64 | 64 | 64 | 64 | 64\nBOUNCE | 9 | 9 | 10 | 12 | 10 | 10\nSWING | WEIGHT | D2 | D2 | D2 | D2 | D3 | D3\nSHAFT | WEIGHT(G) | 109 | 109 | 108 | 108 | 107 | 107\nGRIP | WEIGHT(G) | 58 | 58 | 58 | 58 | 58 | 58\nLENGTH(INCH) | 35.5 | 35.5 | 35.25 | 35.25 | 35 | 35",
+   "key": "112d99b89bd69846",
+   "shared": 1
+  }
+ ]
+}

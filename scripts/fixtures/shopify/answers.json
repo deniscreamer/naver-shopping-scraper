@@ -1,0 +1,1101 @@
+{
+ "captured": "2026-11-16",
+ "shop": "fairwardgolf",
+ "note": "GraphQL data answers only, read through ShopCatalog (WRITES=False); no token, header or secret",
+ "cases": {
+  "show_active": {
+   "argv": [
+    "show",
+    "13016112970",
+    "--variants",
+    "--metafields",
+    "--media"
+   ],
+   "exit": 0,
+   "answers": [
+    {
+     "node": {
+      "id": "gid://shopify/Product/15497202729027",
+      "handle": "yamato-full-face-forged-wedge-set-or-single-50-52-54-56-58-60-gap-and-sand",
+      "title": "Yamato Full-Face Forged Wedge Set or Single, 50/52/54/56/58/60 Gap and Sand",
+      "status": "ACTIVE",
+      "vendor": "Yamato",
+      "productType": "Wedge Sets",
+      "tags": [
+       "fairwardgolf:leaf:wedge-sets",
+       "fairwardgolf:parent:clubs",
+       "fairwardgolf:showcase"
+      ],
+      "createdAt": "2026-11-16T08:43:21Z",
+      "updatedAt": "2026-11-16T11:24:49Z",
+      "publishedAt": "2026-11-16T08:52:36Z",
+      "totalInventory": 0,
+      "onlineStoreUrl": null,
+      "source_offer_id": {
+       "value": "fairwardgolf:naver:102329146:13016112970"
+      },
+      "naver_offer_key": null,
+      "collections": {
+       "nodes": [
+        {
+         "handle": "fairwardgolf-clubs"
+        },
+        {
+         "handle": "fairwardgolf-wedge-sets"
+        }
+       ]
+      },
+      "variantsCount": {
+       "count": 7
+      },
+      "mediaCount": {
+       "count": 3
+      },
+      "variants": {
+       "nodes": [
+        {
+         "id": "gid://shopify/ProductVariant/67985040932931",
+         "sku": "FW-a7018a4494551c1e0a3f5ec3",
+         "title": "1 Rainbow 52 56 60 Degree / 1 Rainbow 52 56 60 Degree",
+         "price": "609.00",
+         "compareAtPrice": null,
+         "inventoryQuantity": 0,
+         "selectedOptions": [
+          {
+           "name": "Size",
+           "value": "1 Rainbow 52 56 60 Degree"
+          },
+          {
+           "name": "Style Name",
+           "value": "1 Rainbow 52 56 60 Degree"
+          }
+         ]
+        },
+        {
+         "id": "gid://shopify/ProductVariant/67985040965699",
+         "sku": "FW-776b87f81964e66f2372b71b",
+         "title": "2 50 54 58 Degree Set / 3 Black 50 54 58 Degree S",
+         "price": "579.00",
+         "compareAtPrice": null,
+         "inventoryQuantity": 0,
+         "selectedOptions": [
+          {
+           "name": "Size",
+           "value": "2 50 54 58 Degree Set"
+          },
+          {
+           "name": "Style Name",
+           "value": "3 Black 50 54 58 Degree S"
+          }
+         ]
+        },
+        {
+         "id": "gid://shopify/ProductVariant/67985040998467",
+         "sku": "FW-5d163cdbd0d967f44d627204",
+         "title": "4 52 56 60 Degree Set / 6 Black 52 56 60 Degree S",
+         "price": "579.00",
+         "compareAtPrice": null,
+         "inventoryQuantity": 0,
+         "selectedOptions": [
+          {
+           "name": "Size",
+           "value": "4 52 56 60 Degree Set"
+          },
+          {
+           "name": "Style Name",
+           "value": "6 Black 52 56 60 Degree S"
+          }
+         ]
+        },
+        {
+         "id": "gid://shopify/ProductVariant/67985041031235",
+         "sku": "FW-723d9e2a625d8670a5bd240d",
+         "title": "5 52 56 Degree / 5 Black 52 56 Degree",
+         "price": "519.00",
+         "compareAtPrice": null,
+         "inventoryQuantity": 0,
+         "selectedOptions": [
+          {
+           "name": "Size",
+           "value": "5 52 56 Degree"
+          },
+          {
+           "name": "Style Name",
+           "value": "5 Black 52 56 Degree"
+          }
+         ]
+        },
+        {
+         "id": "gid://shopify/ProductVariant/67985041064003",
+         "sku": "FW-3a722f4d304ff8759bc111be",
+         "title": "6 52 60 Degree / 8 Black 52 60 Degree",
+         "price": "519.00",
+         "compareAtPrice": null,
+         "inventoryQuantity": 0,
+         "selectedOptions": [
+          {
+           "name": "Size",
+           "value": "6 52 60 Degree"
+          },
+          {
+           "name": "Style Name",
+           "value": "8 Black 52 60 Degree"
+          }
+         ]
+        },
+        {
+         "id": "gid://shopify/ProductVariant/67985041096771",
+         "sku": "FW-fa5c2f4bc23c88b8f772c99d",
+         "title": "9 56 60 Degree / 11 Black 56 60 Degree",
+         "price": "519.00",
+         "compareAtPrice": null,
+         "inventoryQuantity": 0,
+         "selectedOptions": [
+          {
+           "name": "Size",
+           "value": "9 56 60 Degree"
+          },
+          {
+           "name": "Style Name",
+           "value": "11 Black 56 60 Degree"
+          }
+         ]
+        },
+        {
+         "id": "gid://shopify/ProductVariant/67985041129539",
+         "sku": "FW-164e6fd3f098dc8e528b7150",
+         "title": "14 Sliver 52 56 60 Set / 7 Sliver 52 56 60 Degree",
+         "price": "609.00",
+         "compareAtPrice": null,
+         "inventoryQuantity": 0,
+         "selectedOptions": [
+          {
+           "name": "Size",
+           "value": "14 Sliver 52 56 60 Set"
+          },
+          {
+           "name": "Style Name",
+           "value": "7 Sliver 52 56 60 Degree"
+          }
+         ]
+        }
+       ]
+      },
+      "metafields": {
+       "nodes": [
+        {
+         "namespace": "fairwardgolf",
+         "key": "source_offer_id",
+         "type": "single_line_text_field",
+         "value": "fairwardgolf:naver:102329146:13016112970"
+        },
+        {
+         "namespace": "fairwardgolf",
+         "key": "source_url",
+         "type": "url",
+         "value": "https://smartstore.naver.com/rooftoppla/products/13016112970"
+        },
+        {
+         "namespace": "fairwardgolf",
+         "key": "source",
+         "type": "json",
+         "value": "{\"schemaVersion\":\"fairwardgolf-source/1\",\"platform\":\"naver\",\"key\":\"fairwardgolf:naver:102329146:13016112970\",\"url\":\"https://smartstore.naver.com/rooftoppla/products/13016112970\",\"channelNo\":\"102329146\",\"productId\":\"13016112970\",\"categoryId\":\"50002783\",\"run\":\"50002783-20261116T084248Z\",\"titleKo\":\"야마토 풀페이스 골프 웨지 세트 또는 개별 50/52/54/56/58/60 단조 갭 샌드\",\"brandKo\":\"야마토\",\"priceKrw\":249570,\"originalPriceKrw\":277300}"
+        },
+        {
+         "namespace": "fairwardgolf",
+         "key": "pricing",
+         "type": "json",
+         "value": "{\"schemaVersion\":\"fairwardgolf-pricing/2\",\"version\":\"landed/2\",\"krwPerUsd\":1000,\"serviceUsd\":\"3.00\",\"dutyRate\":\"0.125\",\"koreaPaid\":[\"PAID\",\"UNIT_QUANTITY_PAID\"],\"coefficients\":{\"5\":\"1.00\",\"4\":\"1.10\",\"3\":\"1.20\",\"2\":\"1.40\",\"1\":\"2.50\"},\"margin\":{\"fixedUsd\":\"25.00\",\"rate\":\"0.11\",\"minUsd\":\"30.00\"},\"paymentRate\":\"0.03\",\"rounding\":\"up to a whole dollar ending in 9 under 1000, in 99 from 1000\",\"tariff\":{\"id\":\"shopnship-fedex-ip-kr-us\",\"checkedAt\":\"2026-11-11\",\"version\":1,\"sha256\":\"b947de75554b9048\"},\"decided\":{\"rate\":\"2026-11-10\",\"korea_delivery\":\"2026-11-10\",\"service\":\"2026-11-11\",\"duty\":\"2026-11-11\",\"coefficients\":\"2026-11-11\",\"margin\":\"2026-11-11\",\"payment\":\"2026-11-11\",\"rounding\":\"2026-11-11\"}}"
+        },
+        {
+         "namespace": "global",
+         "key": "title_tag",
+         "type": "string",
+         "value": "Yamato Full-Face Forged Wedge Set or Single"
+        }
+       ]
+      },
+      "media": {
+       "nodes": [
+        {
+         "mediaContentType": "IMAGE",
+         "status": "READY",
+         "alt": "Yamato Full-Face Forged Wedge Set or Single, 50/52/54/56/58/60 Gap and Sand - photo 1",
+         "image": {
+          "url": "https://cdn.shopify.com/s/files/1/0707/0174/4195/files/fairwardgolf-13016112970-001-b14730cc8cc20996.webp?v=1794818603",
+          "width": 1000,
+          "height": 1000
+         }
+        },
+        {
+         "mediaContentType": "IMAGE",
+         "status": "READY",
+         "alt": "Yamato Full-Face Forged Wedge Set or Single, 50/52/54/56/58/60 Gap and Sand - photo 2",
+         "image": {
+          "url": "https://cdn.shopify.com/s/files/1/0707/0174/4195/files/fairwardgolf-13016112970-002-9b9b553c72c94c87.webp?v=1794818602",
+          "width": 1000,
+          "height": 1000
+         }
+        },
+        {
+         "mediaContentType": "IMAGE",
+         "status": "READY",
+         "alt": "Yamato Full-Face Forged Wedge Set or Single, 50/52/54/56/58/60 Gap and Sand - photo 3",
+         "image": {
+          "url": "https://cdn.shopify.com/s/files/1/0707/0174/4195/files/fairwardgolf-13016112970-003-610ed71447456cda.webp?v=1794818602",
+          "width": 1000,
+          "height": 1000
+         }
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "queries": [
+    "query Show($id: ID!)"
+   ]
+  },
+  "show_draft": {
+   "argv": [
+    "show",
+    "12557420063",
+    "--variants",
+    "--metafields",
+    "--media"
+   ],
+   "exit": 0,
+   "answers": [
+    {
+     "node": {
+      "id": "gid://shopify/Product/15497167011907",
+      "handle": "gosports-illegal-max-spin-mens-right-handed-wedge-set-sand-lob-gap-wedges",
+      "title": "GoSports Illegal Max Spin Men's Right-Handed Wedge Set, Sand, Lob, Gap Wedges",
+      "status": "DRAFT",
+      "vendor": "GoSports",
+      "productType": "Wedge Sets",
+      "tags": [
+       "fairwardgolf:leaf:wedge-sets",
+       "fairwardgolf:parent:clubs",
+       "fairwardgolf:showcase"
+      ],
+      "createdAt": "2026-11-16T08:35:34Z",
+      "updatedAt": "2026-11-16T11:24:38Z",
+      "publishedAt": null,
+      "totalInventory": 0,
+      "onlineStoreUrl": null,
+      "source_offer_id": {
+       "value": "fairwardgolf:naver:102770910:12557420063"
+      },
+      "naver_offer_key": null,
+      "collections": {
+       "nodes": [
+        {
+         "handle": "fairwardgolf-clubs"
+        },
+        {
+         "handle": "fairwardgolf-wedge-sets"
+        }
+       ]
+      },
+      "variantsCount": {
+       "count": 1
+      },
+      "mediaCount": {
+       "count": 3
+      },
+      "variants": {
+       "nodes": [
+        {
+         "id": "gid://shopify/ProductVariant/67984949411907",
+         "sku": "FW-35bfb2a5459a0be562d553bb",
+         "title": "Standard",
+         "price": "539.00",
+         "compareAtPrice": null,
+         "inventoryQuantity": 0,
+         "selectedOptions": [
+          {
+           "name": "Option",
+           "value": "Standard"
+          }
+         ]
+        }
+       ]
+      },
+      "metafields": {
+       "nodes": [
+        {
+         "namespace": "fairwardgolf",
+         "key": "source_offer_id",
+         "type": "single_line_text_field",
+         "value": "fairwardgolf:naver:102770910:12557420063"
+        },
+        {
+         "namespace": "fairwardgolf",
+         "key": "source_url",
+         "type": "url",
+         "value": "https://smartstore.naver.com/loveinmiami/products/12557420063"
+        },
+        {
+         "namespace": "fairwardgolf",
+         "key": "source",
+         "type": "json",
+         "value": "{\"schemaVersion\":\"fairwardgolf-source/1\",\"platform\":\"naver\",\"key\":\"fairwardgolf:naver:102770910:12557420063\",\"url\":\"https://smartstore.naver.com/loveinmiami/products/12557420063\",\"channelNo\":\"102770910\",\"productId\":\"12557420063\",\"categoryId\":\"50002783\",\"run\":\"50002783-20261115T161942Z\",\"titleKo\":\"GoSports 불법 맥스 스핀 골프 웨지 세트 - 남성용 오른손잡이 모래, 롭, 갭 웨지, 브러시드 스테인리스\",\"brandKo\":\"GoSports\",\"priceKrw\":199080,\"originalPriceKrw\":221200}"
+        },
+        {
+         "namespace": "fairwardgolf",
+         "key": "pricing",
+         "type": "json",
+         "value": "{\"schemaVersion\":\"fairwardgolf-pricing/2\",\"version\":\"landed/2\",\"krwPerUsd\":1000,\"serviceUsd\":\"3.00\",\"dutyRate\":\"0.125\",\"koreaPaid\":[\"PAID\",\"UNIT_QUANTITY_PAID\"],\"coefficients\":{\"5\":\"1.00\",\"4\":\"1.10\",\"3\":\"1.20\",\"2\":\"1.40\",\"1\":\"2.50\"},\"margin\":{\"fixedUsd\":\"25.00\",\"rate\":\"0.11\",\"minUsd\":\"30.00\"},\"paymentRate\":\"0.03\",\"rounding\":\"up to a whole dollar ending in 9 under 1000, in 99 from 1000\",\"tariff\":{\"id\":\"shopnship-fedex-ip-kr-us\",\"checkedAt\":\"2026-11-11\",\"version\":1,\"sha256\":\"b947de75554b9048\"},\"decided\":{\"rate\":\"2026-11-10\",\"korea_delivery\":\"2026-11-10\",\"service\":\"2026-11-11\",\"duty\":\"2026-11-11\",\"coefficients\":\"2026-11-11\",\"margin\":\"2026-11-11\",\"payment\":\"2026-11-11\",\"rounding\":\"2026-11-11\"}}"
+        },
+        {
+         "namespace": "global",
+         "key": "title_tag",
+         "type": "string",
+         "value": "GoSports Illegal Max Spin Men's Right-Handed Wedge Set, Sand, Lob"
+        }
+       ]
+      },
+      "media": {
+       "nodes": [
+        {
+         "mediaContentType": "IMAGE",
+         "status": "READY",
+         "alt": "GoSports Illegal Max Spin Men's Right-Handed Wedge Set, Sand, Lob, Gap Wedges - photo 1",
+         "image": {
+          "url": "https://cdn.shopify.com/s/files/1/0707/0174/4195/files/fairwardgolf-12557420063-001-a9bff9dfb1e07478.webp?v=1794818136",
+          "width": 1000,
+          "height": 1000
+         }
+        },
+        {
+         "mediaContentType": "IMAGE",
+         "status": "READY",
+         "alt": "GoSports Illegal Max Spin Men's Right-Handed Wedge Set, Sand, Lob, Gap Wedges - photo 2",
+         "image": {
+          "url": "https://cdn.shopify.com/s/files/1/0707/0174/4195/files/fairwardgolf-12557420063-002-ce3ab98a2571e45d.webp?v=1794818136",
+          "width": 1000,
+          "height": 1000
+         }
+        },
+        {
+         "mediaContentType": "IMAGE",
+         "status": "READY",
+         "alt": "GoSports Illegal Max Spin Men's Right-Handed Wedge Set, Sand, Lob, Gap Wedges - photo 3",
+         "image": {
+          "url": "https://cdn.shopify.com/s/files/1/0707/0174/4195/files/fairwardgolf-12557420063-003-0f8fb5167555e90b.webp?v=1794818136",
+          "width": 1000,
+          "height": 1000
+         }
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "queries": [
+    "query Show($id: ID!)"
+   ]
+  },
+  "show_variants": {
+   "argv": [
+    "show",
+    "13830324906",
+    "--variants",
+    "--metafields",
+    "fairwardgolf"
+   ],
+   "exit": 0,
+   "answers": [
+    {
+     "node": {
+      "id": "gid://shopify/Product/15495241564227",
+      "handle": "mile-high-life-wedge-set-unisex-beginner-right-handed-3-piece-52-56-60",
+      "title": "Mile High Life Wedge Set Unisex Beginner Right-Handed 3-Piece (52°, 56°, 60°)",
+      "status": "ACTIVE",
+      "vendor": "Mile High Life",
+      "productType": "Wedge Sets",
+      "tags": [
+       "fairwardgolf:leaf:wedge-sets",
+       "fairwardgolf:parent:clubs",
+       "fairwardgolf:showcase"
+      ],
+      "createdAt": "2026-11-15T16:53:43Z",
+      "updatedAt": "2026-11-16T11:24:12Z",
+      "publishedAt": "2026-11-15T16:53:47Z",
+      "totalInventory": 0,
+      "onlineStoreUrl": null,
+      "source_offer_id": {
+       "value": "fairwardgolf:naver:1100167681:13830324906"
+      },
+      "naver_offer_key": null,
+      "collections": {
+       "nodes": [
+        {
+         "handle": "fairwardgolf-clubs"
+        },
+        {
+         "handle": "fairwardgolf-wedge-sets"
+        }
+       ]
+      },
+      "variantsCount": {
+       "count": 6
+      },
+      "mediaCount": {
+       "count": 5
+      },
+      "variants": {
+       "nodes": [
+        {
+         "id": "gid://shopify/ProductVariant/67979711119427",
+         "sku": "FW-c115a61a62bb2842e559cfcf",
+         "title": "Satin Chrome 2-Piece Set (50°/56°)",
+         "price": "469.00",
+         "compareAtPrice": null,
+         "inventoryQuantity": 0,
+         "selectedOptions": [
+          {
+           "name": "Set",
+           "value": "Satin Chrome 2-Piece Set (50°/56°)"
+          }
+         ]
+        },
+        {
+         "id": "gid://shopify/ProductVariant/67979711152195",
+         "sku": "FW-87646fc1a23e2e7f7cd14880",
+         "title": "Satin Chrome 2-Piece Set (52°/58°)",
+         "price": "469.00",
+         "compareAtPrice": null,
+         "inventoryQuantity": 0,
+         "selectedOptions": [
+          {
+           "name": "Set",
+           "value": "Satin Chrome 2-Piece Set (52°/58°)"
+          }
+         ]
+        },
+        {
+         "id": "gid://shopify/ProductVariant/67979711184963",
+         "sku": "FW-a5cd3d0855188ea38645d432",
+         "title": "Satin Chrome 2-Piece Set (54°/60°)",
+         "price": "469.00",
+         "compareAtPrice": null,
+         "inventoryQuantity": 0,
+         "selectedOptions": [
+          {
+           "name": "Set",
+           "value": "Satin Chrome 2-Piece Set (54°/60°)"
+          }
+         ]
+        },
+        {
+         "id": "gid://shopify/ProductVariant/67979711217731",
+         "sku": "FW-963ec00dc66aea8ac4e63ce0",
+         "title": "Black Titanium 2-Piece Set (50°/56°)",
+         "price": "479.00",
+         "compareAtPrice": null,
+         "inventoryQuantity": 0,
+         "selectedOptions": [
+          {
+           "name": "Set",
+           "value": "Black Titanium 2-Piece Set (50°/56°)"
+          }
+         ]
+        },
+        {
+         "id": "gid://shopify/ProductVariant/67979711250499",
+         "sku": "FW-4853ee7e7c8a68e001c4bee0",
+         "title": "Satin Chrome 3-Piece Set (50°/54°/58°)",
+         "price": "509.00",
+         "compareAtPrice": null,
+         "inventoryQuantity": 0,
+         "selectedOptions": [
+          {
+           "name": "Set",
+           "value": "Satin Chrome 3-Piece Set (50°/54°/58°)"
+          }
+         ]
+        },
+        {
+         "id": "gid://shopify/ProductVariant/67979711283267",
+         "sku": "FW-44375c4706cce8c01b57611c",
+         "title": "Satin Chrome 3-Piece Set (52°/56°/60°)",
+         "price": "509.00",
+         "compareAtPrice": null,
+         "inventoryQuantity": 0,
+         "selectedOptions": [
+          {
+           "name": "Set",
+           "value": "Satin Chrome 3-Piece Set (52°/56°/60°)"
+          }
+         ]
+        }
+       ]
+      },
+      "metafields": {
+       "nodes": [
+        {
+         "namespace": "fairwardgolf",
+         "key": "source_offer_id",
+         "type": "single_line_text_field",
+         "value": "fairwardgolf:naver:1100167681:13830324906"
+        },
+        {
+         "namespace": "fairwardgolf",
+         "key": "source_url",
+         "type": "url",
+         "value": "https://smartstore.naver.com/gwglb025/products/13830324906"
+        },
+        {
+         "namespace": "fairwardgolf",
+         "key": "source",
+         "type": "json",
+         "value": "{\"schemaVersion\":\"fairwardgolf-source/1\",\"platform\":\"naver\",\"key\":\"fairwardgolf:naver:1100167681:13830324906\",\"url\":\"https://smartstore.naver.com/gwglb025/products/13830324906\",\"channelNo\":\"1100167681\",\"productId\":\"13830324906\",\"categoryId\":\"50002783\",\"run\":\"50002783-20261115T165218Z\",\"titleKo\":\"마일하이라이프 골프 웨지 세트 남녀공용 초보자용 우측 새틴크롬 웨지 3종 세트 (52/56/60도)\",\"brandKo\":\"마일하이라이프\",\"priceKrw\":141100,\"originalPriceKrw\":156780}"
+        },
+        {
+         "namespace": "fairwardgolf",
+         "key": "pricing",
+         "type": "json",
+         "value": "{\"schemaVersion\":\"fairwardgolf-pricing/2\",\"version\":\"landed/2\",\"krwPerUsd\":1000,\"serviceUsd\":\"3.00\",\"dutyRate\":\"0.125\",\"koreaPaid\":[\"PAID\",\"UNIT_QUANTITY_PAID\"],\"coefficients\":{\"5\":\"1.00\",\"4\":\"1.10\",\"3\":\"1.20\",\"2\":\"1.40\",\"1\":\"2.50\"},\"margin\":{\"fixedUsd\":\"25.00\",\"rate\":\"0.11\",\"minUsd\":\"30.00\"},\"paymentRate\":\"0.03\",\"rounding\":\"up to a whole dollar ending in 9 under 1000, in 99 from 1000\",\"tariff\":{\"id\":\"shopnship-fedex-ip-kr-us\",\"checkedAt\":\"2026-11-11\",\"version\":1,\"sha256\":\"b947de75554b9048\"},\"decided\":{\"rate\":\"2026-11-10\",\"korea_delivery\":\"2026-11-10\",\"service\":\"2026-11-11\",\"duty\":\"2026-11-11\",\"coefficients\":\"2026-11-11\",\"margin\":\"2026-11-11\",\"payment\":\"2026-11-11\",\"rounding\":\"2026-11-11\"}}"
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "queries": [
+    "query Show($id: ID!)"
+   ]
+  },
+  "dump_page": {
+   "argv": [
+    "dump",
+    "--limit",
+    "20",
+    "--fields",
+    "id,handle,status,vendor,title,key,variants,price_min,price_max",
+    "--out",
+    "/private/tmp/claude-501/-Users-rentamac-Desktop-naver-shopping-scraper/c9f4766a-d322-4d2a-b5b4-f439940c9bad/scratchpad/cap/dump.jsonl"
+   ],
+   "exit": 0,
+   "answers": [
+    {
+     "products": {
+      "pageInfo": {
+       "hasNextPage": true,
+       "endCursor": "eyJsYXN0X2lkIjoxNTQ2MzM3NTE0Mjk3OSwibGFzdF92YWx1ZSI6IjE1NDYzMzc1MTQyOTc5In0="
+      },
+      "nodes": [
+       {
+        "id": "gid://shopify/Product/15462713884739",
+        "handle": "pgm-mens-steel-complete-golf-set-9-pieces-for-beginner-and-intermediate-golfers",
+        "status": "ACTIVE",
+        "vendor": "PGM",
+        "title": "PGM Men's Complete Golf Club Set, 9-Piece, Steel",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:500042529:8450665186"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 1
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "1399.0"
+         },
+         "maxVariantPrice": {
+          "amount": "1399.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15462737805379",
+        "handle": "callaway-2026-reva-womens-complete-set-10-pieces-with-caddie-bag",
+        "status": "ACTIVE",
+        "vendor": "Callaway",
+        "title": "Callaway 2026 Reva Women's Complete Set 10 Pieces with Caddie Bag",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:100117142:13678396846"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 2
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "2899.0"
+         },
+         "maxVariantPrice": {
+          "amount": "2899.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15462760874051",
+        "handle": "xxio-14-mens-complete-set-driver-carbon-iron-set-mp1400k",
+        "status": "ACTIVE",
+        "vendor": "XXIO",
+        "title": "XXIO 14 Men's Complete Set MP1400K Carbon Iron",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:100568453:12975257923"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 18
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "4799.0"
+         },
+         "maxVariantPrice": {
+          "amount": "4799.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15462783287363",
+        "handle": "taylormade-gloire-27-womens-complete-set-10-pcs-driver-hybrid-irons-spider-tour-x-putter",
+        "status": "ACTIVE",
+        "vendor": "TaylorMade",
+        "title": "TaylorMade Gloire 27 Women's Complete Set with Spider Tour X Putter, 10 Pieces",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:100568453:13747890950"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 24
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "4899.0"
+         },
+         "maxVariantPrice": {
+          "amount": "4899.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15462808617027",
+        "handle": "ping-g440-max-mens-complete-set-11-pieces",
+        "status": "ACTIVE",
+        "vendor": "PING",
+        "title": "PING G440 MAX Men's Complete Set 11 Pcs",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:100568453:13753313321"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 100
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "4099.0"
+         },
+         "maxVariantPrice": {
+          "amount": "4099.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15462834012227",
+        "handle": "prgr-sweep-m15-womens-complete-set-12-pcs-bag-not-included",
+        "status": "ACTIVE",
+        "vendor": "PRGR",
+        "title": "PRGR Sweep M15 Women's Complete Set 12 Pcs Without Bag",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:100342675:13446875008"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 1
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "1299.0"
+         },
+         "maxVariantPrice": {
+          "amount": "1299.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15462855278659",
+        "handle": "pentagon-yamamoto-shogun-complete-set-12-piece-mens-for-screen-golf-and-practice",
+        "status": "ACTIVE",
+        "vendor": "Pentagon Yamamoto",
+        "title": "Pentagon Yamamoto Shogun Men's Complete Set 12-Piece",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:100011995:5684497984"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 2
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "2099.0"
+         },
+         "maxVariantPrice": {
+          "amount": "2099.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15462873858115",
+        "handle": "prgr-sweep-m17-womens-complete-set-11-piece-with-caddie-bag",
+        "status": "ACTIVE",
+        "vendor": "PRGR",
+        "title": "PRGR Sweep M17 Women's Complete Set 11-Piece with Caddie Bag",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:100342675:13627933340"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 1
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "2599.0"
+         },
+         "maxVariantPrice": {
+          "amount": "2599.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15462920781891",
+        "handle": "gv-tour-velocity-bm-13-pcs-mens-womens-complete-set-with-caddie-bag",
+        "status": "ACTIVE",
+        "vendor": "GV Tour",
+        "title": "GV Tour Velocity BM 13 PCS Men's Women's Complete Set with Bag",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:500000592:7583123963"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 9
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "2499.0"
+         },
+         "maxVariantPrice": {
+          "amount": "2499.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15463008567363",
+        "handle": "xxio-13-womens-complete-set-driver-hybrid-7-piece-iron-set",
+        "status": "ACTIVE",
+        "vendor": "XXIO",
+        "title": "XXIO 13 Women's Complete Set 9 Pieces Driver, Hybrid, 7-Piece Iron Set",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:500186740:12945108653"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 1
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "2899.0"
+         },
+         "maxVariantPrice": {
+          "amount": "2899.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15463046053955",
+        "handle": "callaway-xr26-mens-complete-set-12-pcs-with-stand-bag",
+        "status": "ACTIVE",
+        "vendor": "Callaway",
+        "title": "Callaway XR26 Men's Complete Set 12 Pieces with Stand Bag",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:100117142:12736318849"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 1
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "3199.0"
+         },
+         "maxVariantPrice": {
+          "amount": "3199.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15463068598339",
+        "handle": "xxio-13-blue-womens-complete-set-driver-hybrid-7-piece-iron-set",
+        "status": "ACTIVE",
+        "vendor": "XXIO",
+        "title": "XXIO 13 Blue Women's Complete Set with Driver, Hybrid and 7-Piece Iron Set",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:500186740:13771750750"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 1
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "2899.0"
+         },
+         "maxVariantPrice": {
+          "amount": "2899.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15463113424963",
+        "handle": "pgm-mens-complete-golf-club-set-steel-9-piece",
+        "status": "ACTIVE",
+        "vendor": "PGM",
+        "title": "PGM Men's Complete Golf Club Set Steel 9 Pieces",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:100210420:12274419597"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 1
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "1299.0"
+         },
+         "maxVariantPrice": {
+          "amount": "1299.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15463202259011",
+        "handle": "callaway-2026-reva-womens-complete-set-10-pieces-with-golf-bag",
+        "status": "ACTIVE",
+        "vendor": "Callaway",
+        "title": "Callaway 2026 Reva Women's Complete Set 10-Piece with Caddie Bag",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:100117142:13413924099"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 2
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "2899.0"
+         },
+         "maxVariantPrice": {
+          "amount": "2899.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15463244955715",
+        "handle": "callaway-warbird-2019-mens-complete-golf-club-set",
+        "status": "DRAFT",
+        "vendor": "Callaway",
+        "title": "Callaway Warbird Men's Complete Golf Set 2019",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:101343636:6774818843"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 2
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "1999.0"
+         },
+         "maxVariantPrice": {
+          "amount": "1999.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15463271432259",
+        "handle": "taylormade-rbz-sl2-2026-womens-complete-set",
+        "status": "ACTIVE",
+        "vendor": "TaylorMade",
+        "title": "TaylorMade RBZ SL2 2026 Women's Complete Set",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:500014455:13462928946"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 1
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "2799.0"
+         },
+         "maxVariantPrice": {
+          "amount": "2799.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15463289126979",
+        "handle": "taylormade-qi4d-sim2-mixed-mens-complete-golf-club-set-11-pieces",
+        "status": "ACTIVE",
+        "vendor": "TaylorMade",
+        "title": "TaylorMade Qi4D SIM2 Mixed Men's Complete Golf Club Set 11 Pcs",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:500028318:13229257286"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 1
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "2999.0"
+         },
+         "maxVariantPrice": {
+          "amount": "2999.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15463325630531",
+        "handle": "taylormade-2025-all-new-glory-womens-complete-set-11-pieces",
+        "status": "ACTIVE",
+        "vendor": "TaylorMade",
+        "title": "TaylorMade All New Gloire 2025 Women's Complete Set 11 Pcs",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:100568453:10816508198"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 48
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "4699.0"
+         },
+         "maxVariantPrice": {
+          "amount": "4699.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15463344504899",
+        "handle": "maruman-verity-vgr-mens-complete-set-10-clubs-with-caddie-bag",
+        "status": "ACTIVE",
+        "vendor": "Maruman",
+        "title": "Maruman Verity VGR Men's Complete Set 10 Pcs with Caddie Bag",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:100117142:11659201020"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 2
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "1999.0"
+         },
+         "maxVariantPrice": {
+          "amount": "1999.0"
+         }
+        }
+       },
+       {
+        "id": "gid://shopify/Product/15463375142979",
+        "handle": "xxio-14-womens-complete-set-white-driver-fairway-wood-hybrid",
+        "status": "ACTIVE",
+        "vendor": "XXIO",
+        "title": "XXIO 14 Women's Complete Set White",
+        "source_offer_id": {
+         "value": "fairwardgolf:naver:100568453:12966969668"
+        },
+        "naver_offer_key": null,
+        "variantsCount": {
+         "count": 100
+        },
+        "priceRangeV2": {
+         "minVariantPrice": {
+          "amount": "2799.0"
+         },
+         "maxVariantPrice": {
+          "amount": "2799.0"
+         }
+        }
+       }
+      ]
+     }
+    }
+   ],
+   "queries": [
+    "query List($cursor: String)"
+   ]
+  },
+  "counts": {
+   "argv": [
+    "counts"
+   ],
+   "exit": 0,
+   "answers": [
+    {
+     "active": {
+      "count": 2017,
+      "precision": "EXACT"
+     },
+     "draft": {
+      "count": 346,
+      "precision": "EXACT"
+     },
+     "archived": {
+      "count": 0,
+      "precision": "EXACT"
+     },
+     "all": {
+      "count": 2363,
+      "precision": "EXACT"
+     }
+    }
+   ],
+   "queries": [
+    "query Counts"
+   ]
+  },
+  "collection_lookup": {
+   "handle": "fairwardgolf-clubs",
+   "answers": [
+    {
+     "collectionByIdentifier": {
+      "id": "gid://shopify/Collection/310619373635",
+      "handle": "fairwardgolf-clubs",
+      "title": "Golf Clubs",
+      "productsCount": {
+       "count": 2363
+      }
+     }
+    }
+   ]
+  },
+  "by_handle": {
+   "handle": "gosports-illegal-max-spin-mens-right-handed-wedge-set-sand-lob-gap-wedges",
+   "answers": [
+    {
+     "productByIdentifier": {
+      "id": "gid://shopify/Product/15497167011907"
+     }
+    }
+   ]
+  },
+  "by_handle_missing": {
+   "handle": "no-such-handle-xyz",
+   "answers": [
+    {
+     "productByIdentifier": null
+    }
+   ]
+  }
+ }
+}

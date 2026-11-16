@@ -3,7 +3,7 @@ new category: a change for one category touched products of another three times,
 
     .venv/bin/python scripts/store_diff.py fairwardgolf                       # every published product
     .venv/bin/python scripts/store_diff.py fairwardgolf --category 50002788   # one Naver category
-    .venv/bin/python scripts/store_diff.py fairwardgolf --only <key> [--only <key>]
+    .venv/bin/python scripts/store_diff.py fairwardgolf --only <ref> [--only <ref>] [--keys-file F] [--job ID]
     .venv/bin/python scripts/store_diff.py fairwardgolf --adopt               # record `output` where nothing differs
 
 For each product in the ledger (publish/published.jsonl) it builds what publish.py would send (publish_one in dry
@@ -19,6 +19,9 @@ compared; one the store has ACTIVE (activated in the admin by hand) is listed ap
 --adopt: a product whose store data equals what would be sent gets a ledger row with today's `output` (the hash of
 what productSet sends, publish.output_digest), copied from its last row otherwise, so publish.py skips it although
 its inputs moved. It writes only the local ledger, never the store.
+
+--only takes a key, Naver product id, handle or link (shop_view.resolve; a full key as it is); --keys-file and --job
+[--event] add more; a ref that names no product or several stops the command (exit 2) before the store is read.
 """
 import argparse
 import json
@@ -31,6 +34,7 @@ from typing import Any, Mapping
 import publish as P
 from shop_files import locked
 from shop_stores import get_store
+from shop_view import add_ref_flags, keys_from_args, selection_asked
 
 QUERY = """query($ids: [ID!]!) { nodes(ids: $ids) { ... on Product {
   id title vendor productType status tags descriptionHtml seo { title }
@@ -113,11 +117,15 @@ def compare(payload: dict[str, Any], live: dict[str, Any], feed_sha: str | None,
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("shop")
-    ap.add_argument("--only", action="append", default=[])
+    ap.add_argument("--only", action="append", default=[], help="a product: its key, Naver product id, handle or "
+                    "link (repeat for several)")
     ap.add_argument("--category", help="a Naver leaf category id")
     ap.add_argument("--adopt", action="store_true", help="record today's output for products the store already has")
     ap.add_argument("--shops-root", default=P.SHOPS_ROOT)
+    add_ref_flags(ap)
     args = ap.parse_args(argv)
+    if args.only or selection_asked(args):          # refs -> keys (a full key as it is, as before)
+        args.only = keys_from_args(ap, args, args.shop, args.only, args.shops_root)
     if args.adopt:                                  # appends ledger rows read a minute ago: not while a job runs
         return locked(args.shops_root, args.shop, "store_diff.py --adopt", lambda: _diff(args), "store_diff")
     return _diff(args)

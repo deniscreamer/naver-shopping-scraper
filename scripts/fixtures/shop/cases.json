@@ -1,0 +1,30 @@
+{
+ "made": "2026-11-16",
+ "shop": "fairwardgolf",
+ "cases": {
+  "fairwardgolf:naver:102683547:13552318731": "live (published, ACTIVE by the old shape: no store_status); payload; described; published by job A",
+  "fairwardgolf:naver:102454334:13370257430": "live, published by job A, one ledger row",
+  "fairwardgolf:naver:102329146:13016112970": "a draft (DRAFT) activated later (ACTIVE, activated); payload; published by job B",
+  "fairwardgolf:naver:102682314:13127601930": "withdrawn replaced_by: (job A: not_taken, then published)",
+  "fairwardgolf:naver:102770910:12557420063": "withdrawn 'hold: copy of live ...'; in two jobs (A: not_taken duplicate_of, B: published)",
+  "fairwardgolf:naver:102709004:12178430576": "agency_no_brand withdrawal, restored, live again with a second handle",
+  "fairwardgolf:naver:102642513:12080067974": "agency_no_brand withdrawal, restored, withdrawn again (owner lens review)",
+  "fairwardgolf:naver:100416178:5917858699": "restored and activated, 5 ledger rows, no description; in no job here",
+  "fairwardgolf:naver:1100167681:13830324906": "live, rehandled twice (three handles in its history)",
+  "fairwardgolf:naver:1100167681:13830312765": "live, the same channel as the one above (a sibling, another product id)",
+  "fairwardgolf:naver:102750441:13762670577": "prepared held single_only now; was published and withdrawn single_only:",
+  "fairwardgolf:naver:101365130:11097352600": "prepared held single_only, never published; not_taken in both jobs",
+  "fairwardgolf:naver:101812134:13532274688": "placement unresolved (gender unknown), never published, in no job",
+  "fairwardgolf:naver:102697674:13292782760": "not taken: duplicate_of in both jobs; prepared ready, translation pending",
+  "fairwardgolf:naver:102206584:13492376357": "not taken: duplicate_of in both jobs (another match each time)",
+  "fairwardgolf:naver:102783573:13207840596": "withdrawn replaced_by:, its translation pending"
+ },
+ "jobs": {
+  "fairwardgolf-50002783-20261115T150124Z": "job A: wedge sets scroll, stop / waiting / reopen events",
+  "fairwardgolf-50002783-20261116T083154Z": "job B: the same category again, done; duplicate_of_withdrawn"
+ },
+ "payloads": [
+  "13552318731",
+  "13016112970"
+ ]
+}

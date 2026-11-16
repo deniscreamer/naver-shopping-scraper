@@ -531,8 +531,17 @@ def test_a_job_s_one_product_run_leaves_the_shops_report_alone(shop):
 def test_the_cli_refuses_a_key_the_shop_does_not_have(shop, capsys):
     root, _ = shop
     with pytest.raises(SystemExit) as e:
-        D.main(["fairwardgolf", "--shops-root", root, "--only", "13627933340", "--offline"])
+        D.main(["fairwardgolf", "--shops-root", root, "--only", "fairwardgolf:naver:1:13627933340", "--offline"])
     assert e.value.code == 2 and "no such product key" in capsys.readouterr().err
+    with pytest.raises(SystemExit) as e:                    # a product id the shop has not (shop_view.resolve)
+        D.main(["fairwardgolf", "--shops-root", root, "--only", "999", "--offline"])
+    assert e.value.code == 2 and "999: no product of fairwardgolf matches" in capsys.readouterr().err
+
+
+def test_the_cli_takes_a_product_id_for_only(shop, capsys):
+    root, keys = shop
+    assert D.main(["fairwardgolf", "--shops-root", root, "--only", keys[0].split(":")[-1], "--offline"]) == 0
+    assert "waiting 1" in capsys.readouterr().out
 
 
 def test_a_torn_last_line_of_the_store_is_ignored(shop):

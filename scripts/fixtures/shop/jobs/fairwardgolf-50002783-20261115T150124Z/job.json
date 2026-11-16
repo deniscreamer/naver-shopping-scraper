@@ -1,0 +1,36 @@
+{
+ "shop": "fairwardgolf",
+ "category": "50002783",
+ "queries": [
+  "골프 웨지 세트"
+ ],
+ "mode": "scroll",
+ "paid": true,
+ "paid_variants": true,
+ "reviews": 20,
+ "shops_root": "<fixture>",
+ "created_at": "2026-11-15T15:01:24+00:00",
+ "count": 60,
+ "excluded_known": 0,
+ "exclude_known": false,
+ "translate": true,
+ "publish": true,
+ "describe": true,
+ "free_only": true,
+ "total": 29525,
+ "tab": null,
+ "batches": 5,
+ "reopens": [
+  {
+   "at": "2026-11-15T15:52:06+00:00",
+   "t": 1794757926.972826,
+   "batch": 3,
+   "reason": "410 listing tab 20261115-072148-ed32 is gone (closed, replaced by a new one, or the server restarted); open a new one"
+  }
+ ],
+ "screen": {
+  "title:single": 4,
+  "already_published": 85
+ },
+ "dedupe": "on"
+}

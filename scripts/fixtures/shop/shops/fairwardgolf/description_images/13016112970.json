@@ -1,0 +1,1094 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 152952,
+   "height": 860,
+   "host": "seller",
+   "link": "https://cdn.imgdsell.com/file/dsell/lollipops79/notice/ss/top_79.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "있으면 / 무조건",
+       "y": 38
+      },
+      {
+       "conf": 0.98,
+       "text": "제품에 이상이 / 1환불",
+       "y": 51
+      },
+      {
+       "conf": 0.998,
+       "text": "REFUND",
+       "y": 164
+      },
+      {
+       "conf": 0.999,
+       "text": "100%",
+       "y": 176
+      },
+      {
+       "conf": 0.89,
+       "text": "환물보장",
+       "y": 366
+      },
+      {
+       "conf": 0.998,
+       "text": "일단사용해보고 / 결정하세요!",
+       "y": 715
+      }
+     ],
+     "y0": 0,
+     "y1": 860
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 50197,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/615xMuIe-rL._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.797,
+       "text": "55",
+       "y": 19
+      },
+      {
+       "conf": 0.893,
+       "text": "AS-I2",
+       "y": 421
+      },
+      {
+       "conf": 0.97,
+       "text": "CNC MILLED",
+       "y": 552
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 115646,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71KlE2ieb4L._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.501,
+       "text": "9",
+       "y": 43
+      },
+      {
+       "conf": 0.991,
+       "text": "SUPERIOR FORGIVENESS",
+       "y": 656
+      },
+      {
+       "conf": 0.974,
+       "text": "Designed / With A Leading E / Edge / That Prevents",
+       "y": 740
+      },
+      {
+       "conf": 0.975,
+       "text": "Digging Into The Ground, Ensuring / Forgiveness",
+       "y": 778
+      },
+      {
+       "conf": 0.969,
+       "text": "Even On Miss-Hits",
+       "y": 827
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 370014,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/91O5x4k+RUL._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.992,
+       "text": "FULLFACE GROOVE",
+       "y": 893
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 124306,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/81SjQIXRFQL._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.96,
+       "text": "AS-10",
+       "y": 227
+      },
+      {
+       "conf": 0.713,
+       "text": "3.8-30",
+       "y": 719
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 415395,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/A1Ecf1CB7SL._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.891,
+       "text": "VAWATO",
+       "y": 670
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 328028,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/914wYgE1TIL._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "BY",
+       "y": 41
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 124135,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/711bUk3n44L._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.982,
+       "text": "WEDGES SPECIFICATIONS",
+       "y": 5
+      },
+      {
+       "conf": 0.975,
+       "text": "LOFT",
+       "y": 190
+      },
+      {
+       "conf": 0.993,
+       "text": "LIE",
+       "y": 329
+      },
+      {
+       "conf": 0.948,
+       "text": "BOUNCE",
+       "y": 406
+      },
+      {
+       "conf": 0.994,
+       "text": "LOFT / 50 / 52 / 54 / 56 / 58 / 60",
+       "y": 512
+      },
+      {
+       "conf": 0.997,
+       "text": "LIE / 64 / 64 / 64 / 64 / 64 / 64",
+       "y": 580
+      },
+      {
+       "conf": 0.991,
+       "text": "BOUNCE / 9 / 9 / 10 / 12 / 10 / 10",
+       "y": 647
+      },
+      {
+       "conf": 0.985,
+       "text": "SWING WEIGHT / D2 / D2 / D2 / D2 / D3 / D3",
+       "y": 721
+      },
+      {
+       "conf": 0.932,
+       "text": "SHAFT WEIGHT(G) / 109 / 109 / 108 / 108 / 107 / 107",
+       "y": 788
+      },
+      {
+       "conf": 0.98,
+       "text": "GRIP WEIGHT(G) / 58 / 58 / 58 / 58 / 58 / 58",
+       "y": 854
+      },
+      {
+       "conf": 0.96,
+       "text": "LENGTH(INCH) / 35.5 / 35.5 / 35.25 / 35.25 / 35 / 35",
+       "y": 920
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 103476,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71oyj4QvPwL._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.516,
+       "text": "mil",
+       "y": 178
+      },
+      {
+       "conf": 0.85,
+       "text": "AS-10",
+       "y": 227
+      },
+      {
+       "conf": 0.943,
+       "text": "MILLED",
+       "y": 333
+      },
+      {
+       "conf": 0.902,
+       "text": "AS-I2",
+       "y": 472
+      },
+      {
+       "conf": 0.973,
+       "text": "CNC MILLED",
+       "y": 541
+      },
+      {
+       "conf": 0.952,
+       "text": "AS-9",
+       "y": 749
+      },
+      {
+       "conf": 0.976,
+       "text": "ED",
+       "y": 900
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 61458,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61qxKLxx7jL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.964,
+       "text": "58",
+       "y": 7
+      },
+      {
+       "conf": 0.936,
+       "text": "AS-10",
+       "y": 221
+      },
+      {
+       "conf": 0.878,
+       "text": "CNC MILLED",
+       "y": 295
+      },
+      {
+       "conf": 0.9,
+       "text": "AS-10",
+       "y": 460
+      },
+      {
+       "conf": 0.716,
+       "text": "50",
+       "y": 505
+      },
+      {
+       "conf": 0.931,
+       "text": "CNC MILLED",
+       "y": 535
+      },
+      {
+       "conf": 0.923,
+       "text": "AS-9",
+       "y": 722
+      },
+      {
+       "conf": 0.886,
+       "text": "CNC MILLCD",
+       "y": 793
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 50015,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61eWGUbkFGL._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.672,
+       "text": "51",
+       "y": 16
+      },
+      {
+       "conf": 0.994,
+       "text": "AS-9",
+       "y": 424
+      },
+      {
+       "conf": 0.949,
+       "text": "CNC MILLED",
+       "y": 553
+      },
+      {
+       "conf": 0.598,
+       "text": "M",
+       "y": 775
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 61316,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/612lRL39zkL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.952,
+       "text": "AS-10",
+       "y": 225
+      },
+      {
+       "conf": 0.691,
+       "text": "56",
+       "y": 250
+      },
+      {
+       "conf": 0.914,
+       "text": "CNC MILLED",
+       "y": 298
+      },
+      {
+       "conf": 0.768,
+       "text": "AS-12",
+       "y": 463
+      },
+      {
+       "conf": 0.927,
+       "text": "CNC MILLED",
+       "y": 537
+      },
+      {
+       "conf": 0.987,
+       "text": "AS-9",
+       "y": 725
+      },
+      {
+       "conf": 0.938,
+       "text": "CNC MILLED",
+       "y": 799
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 73638,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/717LHpars1L._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.71,
+       "text": "55",
+       "y": 7
+      },
+      {
+       "conf": 0.82,
+       "text": "AS-12",
+       "y": 324
+      },
+      {
+       "conf": 0.987,
+       "text": "52",
+       "y": 395
+      },
+      {
+       "conf": 0.543,
+       "text": "Mn",
+       "y": 603
+      },
+      {
+       "conf": 0.991,
+       "text": "AS-9",
+       "y": 710
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 73459,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71RqvRaBgdL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.71,
+       "text": "55",
+       "y": 7
+      },
+      {
+       "conf": 0.82,
+       "text": "AS-12",
+       "y": 324
+      },
+      {
+       "conf": 0.987,
+       "text": "52",
+       "y": 395
+      },
+      {
+       "conf": 0.543,
+       "text": "Mn",
+       "y": 603
+      },
+      {
+       "conf": 0.991,
+       "text": "AS-9",
+       "y": 710
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 49947,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61pVwaUGXaL._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.797,
+       "text": "55",
+       "y": 19
+      },
+      {
+       "conf": 0.893,
+       "text": "AS-I2",
+       "y": 421
+      },
+      {
+       "conf": 0.97,
+       "text": "CNC MILLED",
+       "y": 552
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 50106,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61jxRFp8-IL._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.797,
+       "text": "55",
+       "y": 19
+      },
+      {
+       "conf": 0.893,
+       "text": "AS-I2",
+       "y": 421
+      },
+      {
+       "conf": 0.97,
+       "text": "CNC MILLED",
+       "y": 552
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 73685,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71i2ymgUKcL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.853,
+       "text": "AS-I0",
+       "y": 324
+      },
+      {
+       "conf": 0.807,
+       "text": "55",
+       "y": 394
+      },
+      {
+       "conf": 0.95,
+       "text": "AS-12",
+       "y": 711
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 50275,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/612dlwNx3kL._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.797,
+       "text": "55",
+       "y": 19
+      },
+      {
+       "conf": 0.893,
+       "text": "AS-I2",
+       "y": 421
+      },
+      {
+       "conf": 0.97,
+       "text": "CNC MILLED",
+       "y": 552
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 50319,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/614qKipKcJL._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.672,
+       "text": "51",
+       "y": 16
+      },
+      {
+       "conf": 0.994,
+       "text": "AS-9",
+       "y": 424
+      },
+      {
+       "conf": 0.949,
+       "text": "CNC MILLED",
+       "y": 553
+      },
+      {
+       "conf": 0.598,
+       "text": "M",
+       "y": 775
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 49185,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61PJroC69NL._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.944,
+       "text": "CNC MILLED",
+       "y": 551
+      },
+      {
+       "conf": 0.712,
+       "text": "M",
+       "y": 773
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 84082,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71TmMR+0cjL._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.627,
+       "text": "IP",
+       "y": 217
+      },
+      {
+       "conf": 0.779,
+       "text": "IT / AS-I0",
+       "y": 224
+      },
+      {
+       "conf": 0.844,
+       "text": "56",
+       "y": 265
+      },
+      {
+       "conf": 0.939,
+       "text": "MILLED",
+       "y": 334
+      },
+      {
+       "conf": 0.618,
+       "text": "IP",
+       "y": 465
+      },
+      {
+       "conf": 0.895,
+       "text": "AS-I2",
+       "y": 475
+      },
+      {
+       "conf": 0.998,
+       "text": "52",
+       "y": 525
+      },
+      {
+       "conf": 0.957,
+       "text": "AS-9",
+       "y": 738
+      },
+      {
+       "conf": 0.95,
+       "text": "MILLED",
+       "y": 850
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 404758,
+   "height": 600,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/cf9059a7-04c7-409d-b995-3e961000756a.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.859,
+       "text": "FULL / FACE / GROOVE",
+       "y": 19
+      },
+      {
+       "conf": 0.897,
+       "text": "WEUGES",
+       "y": 95
+      },
+      {
+       "conf": 0.965,
+       "text": "AS-12",
+       "y": 295
+      },
+      {
+       "conf": 0.528,
+       "text": "ENeMCO",
+       "y": 326
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 432659,
+   "height": 600,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/71abf75a-0687-4b63-a100-c54a2740a240.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 515926,
+   "height": 300,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/706166b8-38e8-4295-a911-cdcd25e7f4a8.__CR0,0,970,300_PT0_SX970_V1___.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.722,
+       "text": "INGT",
+       "y": 64
+      },
+      {
+       "conf": 0.974,
+       "text": ".25",
+       "y": 79
+      },
+      {
+       "conf": 0.993,
+       "text": "OFT",
+       "y": 98
+      },
+      {
+       "conf": 0.8,
+       "text": "54\"",
+       "y": 111
+      },
+      {
+       "conf": 0.989,
+       "text": "LIE",
+       "y": 130
+      },
+      {
+       "conf": 0.913,
+       "text": "INNOVATIVE / RUBBER / FULL FACE / STAINLESS",
+       "y": 239
+      },
+      {
+       "conf": 0.878,
+       "text": "DESIGN / GRIP / GROOVE / STEEL SHAFT",
+       "y": 268
+      }
+     ],
+     "y0": 0,
+     "y1": 300
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 477874,
+   "height": 600,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/71b1c426-3bcc-4b0a-9143-73a32771e354.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.991,
+       "text": "AS-10",
+       "y": 281
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 641661,
+   "height": 600,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/8089fc3f-f5e3-4cb5-96d4-b53aa0f366c6.__CR0,0,970,600_PT0_SX970_V1___.png",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 1014547,
+   "height": 600,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/598838fb-73aa-4da7-b925-0e250573ac4e.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 413325,
+   "height": 600,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/5a7f7de9-72df-41dd-9439-e4fd8aa729db.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.994,
+       "text": "WEDGES / SPECIFICATIONS",
+       "y": 6
+      },
+      {
+       "conf": 0.998,
+       "text": "LOFT",
+       "y": 116
+      },
+      {
+       "conf": 0.806,
+       "text": "1",
+       "y": 131
+      },
+      {
+       "conf": 0.512,
+       "text": "1",
+       "y": 142
+      },
+      {
+       "conf": 0.924,
+       "text": "BOUNCE.",
+       "y": 252
+      },
+      {
+       "conf": 0.998,
+       "text": "LOFT / 50 / 52 / 54 / 56 / 58 / 60",
+       "y": 311
+      },
+      {
+       "conf": 0.998,
+       "text": "LIE / 64 / 64 / 64 / 64 / 64 / 64",
+       "y": 349
+      },
+      {
+       "conf": 0.983,
+       "text": "BOUNCE / 9 / 9 / 10 / 12 / 10 / 10",
+       "y": 390
+      },
+      {
+       "conf": 0.995,
+       "text": "SWING / WEIGHT / D2 / D2 / D2 / D2 / D3 / D3",
+       "y": 430
+      },
+      {
+       "conf": 0.994,
+       "text": "SHAFT / WEIGHT(G) / 109 / 109 / 108 / 108 / 107 / 107",
+       "y": 471
+      },
+      {
+       "conf": 0.995,
+       "text": "GRIP / WEIGHT(G) / 58 / 58 / 58 / 58 / 58 / 58",
+       "y": 511
+      },
+      {
+       "conf": 0.996,
+       "text": "LENGTH(INCH) / 35.5 / 35.5 / 35.25 / 35.25 / 35 / 35",
+       "y": 551
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 1283,
+   "height": 86,
+   "host": "seller",
+   "link": "https://cdn.imgdsell.com/file/dsell/lollipops79/notice/ss/bottom_79.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 86
+    }
+   ],
+   "status": "read",
+   "width": 438
+  }
+ ],
+ "key": "fairwardgolf:naver:102329146:13016112970",
+ "links_sha256": "cb8b9bfd11d118e73f4a83603ed6da76ffc1dc2a9a6ab56fadecf4d945552c95",
+ "product_id": "13016112970",
+ "seconds": 6.3,
+ "skipped": [
+  {
+   "link": "https://cdn.imgdsell.com/visit/set/dsell/lollipops79/XkdUQ15LWiUPDhB%252bB2c%253d/SS",
+   "rule": "tiny"
+  }
+ ]
+}

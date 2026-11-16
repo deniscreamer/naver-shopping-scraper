@@ -1,0 +1,419 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 469054,
+   "height": 1290,
+   "host": "seller",
+   "link": "https://cdn.imgdsell.com/file/dsell/honeyfam99/notice/ss/top_0.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.966,
+       "text": "저희 샴의 소중한",
+       "y": 92
+      },
+      {
+       "conf": 0.953,
+       "text": "고객님들께 약속 드립니대!",
+       "y": 180
+      },
+      {
+       "conf": 0.993,
+       "text": "환불100%",
+       "y": 665
+      },
+      {
+       "conf": 0.998,
+       "text": "약속!",
+       "y": 863
+      },
+      {
+       "conf": 0.929,
+       "text": "(제품의 불량, 하자시)",
+       "y": 1116
+      }
+     ],
+     "y0": 0,
+     "y1": 1290
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 53589,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61ob15i99lL._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.922,
+       "text": "FiNCHLEY",
+       "y": 267
+      },
+      {
+       "conf": 0.946,
+       "text": "FinCHLEY",
+       "y": 341
+      },
+      {
+       "conf": 0.988,
+       "text": "MILLED",
+       "y": 402
+      },
+      {
+       "conf": 0.906,
+       "text": "FiNCHLEY",
+       "y": 445
+      },
+      {
+       "conf": 0.987,
+       "text": "MILLED",
+       "y": 501
+      },
+      {
+       "conf": 0.911,
+       "text": "FORGED",
+       "y": 561
+      },
+      {
+       "conf": 0.969,
+       "text": "FORGED",
+       "y": 619
+      },
+      {
+       "conf": 0.997,
+       "text": "FORGED",
+       "y": 710
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 47198,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61UStkol0nL._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.868,
+       "text": "FINCHLEY",
+       "y": 269
+      },
+      {
+       "conf": 0.933,
+       "text": "FINCHLEY",
+       "y": 345
+      },
+      {
+       "conf": 0.975,
+       "text": "MILLED",
+       "y": 404
+      },
+      {
+       "conf": 0.836,
+       "text": "FinCHLEY",
+       "y": 449
+      },
+      {
+       "conf": 0.983,
+       "text": "MILLED",
+       "y": 502
+      },
+      {
+       "conf": 0.993,
+       "text": "FORGED",
+       "y": 562
+      },
+      {
+       "conf": 0.994,
+       "text": "FORGED",
+       "y": 621
+      },
+      {
+       "conf": 0.994,
+       "text": "FORGED",
+       "y": 711
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 217307,
+   "height": 600,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/f9f23b4c-9379-402a-9eb8-87dd9f8bde86.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.894,
+       "text": "FiNCHLEY",
+       "y": 98
+      },
+      {
+       "conf": 0.662,
+       "text": "RIGHT-HANDED GOLF / O31IN",
+       "y": 137
+      },
+      {
+       "conf": 0.993,
+       "text": "WEDGE SET OF 3",
+       "y": 178
+      },
+      {
+       "conf": 0.821,
+       "text": "520/56%/600",
+       "y": 216
+      },
+      {
+       "conf": 0.82,
+       "text": "FINCHEY",
+       "y": 426
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 103983,
+   "height": 600,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/9459318c-618c-4dbb-8a53-9b148513c245.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.986,
+       "text": "CNC MILLED",
+       "y": 247
+      },
+      {
+       "conf": 0.593,
+       "text": "FACE / __",
+       "y": 315
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 107062,
+   "height": 600,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/4e00f3bf-65f5-4b34-af0e-c72cb85ad9ba.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.989,
+       "text": "FORGED",
+       "y": 67
+      },
+      {
+       "conf": 0.998,
+       "text": "FORGED",
+       "y": 220
+      },
+      {
+       "conf": 0.999,
+       "text": "WORKMANSHIP",
+       "y": 282
+      },
+      {
+       "conf": 0.654,
+       "text": "3/∞",
+       "y": 374
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 383673,
+   "height": 1100,
+   "host": "seller",
+   "link": "https://cdn.imgdsell.com/file/dsell/honeyfam99/notice/ss/bottom_0.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.973,
+       "text": "주문 전 반드시 확인해 주세요!",
+       "y": 16
+      },
+      {
+       "conf": 0.98,
+       "text": "교환 반품 신청 불가 항목 / 초과 부피/무게",
+       "y": 161
+      },
+      {
+       "conf": 0.891,
+       "text": "• / 세변합이16cm이상",
+       "y": 212
+      },
+      {
+       "conf": 0.963,
+       "text": "·라벨이나 상품의 태그가 분리되어 상품의 가치가 훼손된 경우",
+       "y": 210
+      },
+      {
+       "conf": 0.851,
+       "text": "·세트 상품의 경우 상품 구성 일부가 파손되거나 누락된 경우 / •무게가1kg 이상",
+       "y": 231
+      },
+      {
+       "conf": 0.969,
+       "text": "고객님의 귀책사유로 상품이 훼손되거나 분실된 경우 / 한번의 길이가 1M이상인 제품은",
+       "y": 257
+      },
+      {
+       "conf": 0.944,
+       "text": "·상품의 가치가 현저하게 감소한 경우 / 포장상태가 이형화물로 분류되어",
+       "y": 283
+      },
+      {
+       "conf": 0.942,
+       "text": "·반품 가능기간이 초과된 경우 / 추가배송비가 발생 할 수 있습니다.",
+       "y": 307
+      },
+      {
+       "conf": 0.623,
+       "text": "0",
+       "y": 394
+      },
+      {
+       "conf": 0.967,
+       "text": "상표 및 저작권 침해 안내",
+       "y": 439
+      },
+      {
+       "conf": 0.981,
+       "text": "모든 사진 메이커 명의 저작권 상표권은 해외 협력업체의 이미지와 상품명을 제공받아",
+       "y": 482
+      },
+      {
+       "conf": 0.932,
+       "text": "사용하고 있습니다.",
+       "y": 510
+      },
+      {
+       "conf": 0.983,
+       "text": "단,저희 구매대행을 위한 URL링크만 사용하였음을 공지합니다.각종 저작권,상표권,",
+       "y": 534
+      },
+      {
+       "conf": 0.972,
+       "text": "유해상품,불법상품 등 상품에 대한 권리자께서는 메일,문자로 연락주시면 즉각 삭제 처리 하겠습니다.",
+       "y": 559
+      },
+      {
+       "conf": 0.999,
+       "text": "고객센터 이용안내",
+       "y": 681
+      },
+      {
+       "conf": 0.972,
+       "text": "·모든 문의는 카카오톡/문자 메시지를 통해 문의주시면 최대한 빠르게 답변드리겠습니다.",
+       "y": 731
+      },
+      {
+       "conf": 1.0,
+       "text": "안전관리법관련",
+       "y": 803
+      },
+      {
+       "conf": 0.948,
+       "text": "-본 상품은 전기용품 및 생활용품 안전관리법에 따른 안전관리대상제품임을 명시합니다.",
+       "y": 831
+      },
+      {
+       "conf": 0.991,
+       "text": "유아및어린이취급유의사항",
+       "y": 892
+      },
+      {
+       "conf": 0.903,
+       "text": "본상품은 만 14세 이상만 구매가 가능합니다",
+       "y": 911
+      },
+      {
+       "conf": 0.98,
+       "text": "ID:US.MEGADEAL.SHOP",
+       "y": 977
+      },
+      {
+       "conf": 0.989,
+       "text": "TALK",
+       "y": 995
+      },
+      {
+       "conf": 0.984,
+       "text": "010 5816 4656",
+       "y": 1019
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  }
+ ],
+ "key": "fairwardgolf:naver:102683547:13552318731",
+ "links_sha256": "00ed7f193723d84f5466da81f84cab7fce53a594a272b50d89452bbe051432b8",
+ "product_id": "13552318731",
+ "seconds": 1.5,
+ "skipped": [
+  {
+   "link": "https://cdn.imgdsell.com/visit/set/dsell/honeyfam99/NTlfWllHOE5xBQl5CwU%253d/SS",
+   "rule": "tiny"
+  }
+ ]
+}

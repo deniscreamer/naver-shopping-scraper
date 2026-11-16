@@ -1,6 +1,6 @@
 """The lenses on real records (fixtures/lens/cases.json, made by make_lens_fixture.py from the wedge pilot, the junior
 runs and the store's duplicate cleanup, 2026-11-15), and on the unexpected: torn files, missing photos, products a
-file never heard of, one price for all, an id that is two keys, a job with no events.
+file never heard of, one price for all, an id that is two keys (neither shown), a job with no events.
 
     .venv/bin/python -m pytest scripts/test_lens_fixture.py -q
 
@@ -214,14 +214,14 @@ def test_a_job_with_no_events(tmp_path, real):
     assert job_keys("no-such-job", str(tmp_path)) == []
 
 
-def test_a_product_id_of_two_keys_takes_the_first_and_says_so(tmp_path, capsys):
+def test_a_product_id_of_two_keys_shows_neither_and_lists_both(tmp_path, capsys):
     root = tmp_path / "shops"
     rows = [{"key": f"{SHOP}:naver:{ch}:777", "status": "ready", "product": {}} for ch in (1, 2)]
     write_jsonl(str(root / SHOP / "prepared" / "products.jsonl"), rows)
-    plan = L.products(ShopView(SHOP, str(root)), ["777", "nope"])
-    assert [c.key for c in plan.cards] == [f"{SHOP}:naver:1:777"]
+    plan = L.products(ShopView(SHOP, str(root)), ["777", "nope", f"{SHOP}:naver:2:777"])
+    assert [c.key for c in plan.cards] == [f"{SHOP}:naver:2:777"]             # the key chooses (2026-11-16)
     out = capsys.readouterr().out
-    assert "nope" in out and "777" in out                                     # both the miss and the ambiguity
+    assert "nope" in out and f"{SHOP}:naver:1:777" in out and f"{SHOP}:naver:2:777" in out   # the miss, both keys
 
 
 def test_newest_collect_run_gives_the_photos(tmp_path):

@@ -1,0 +1,74 @@
+{
+ "format": "description_image_text/1",
+ "product_id": "13552318731",
+ "key": "fairwardgolf:naver:102683547:13552318731",
+ "sha256": "e82318a1afe5af6d0049010d1013098e94117288070c7e3f0330ce2760ef1dbd",
+ "instructions": [
+  "This is text read by OCR from the product's description images, cleaned of the shop's own blocks. Translate each block under its [id]; one block may continue the one before it.",
+  "OCR faults to expect: spaces lost between words, a few misread letters (닫힌 -> 달힌, 페이스 -> 레이스), a digit lost in a table. Translate what is meant; do not invent facts, numbers or claims that are not there.",
+  "Keep numbers, units, model names, shaft / club codes and table cells exactly as written; a table row is cells \"a | b | c\": keep the cells and their order; ' / ' joins parts read side by side on one line.",
+  "Leave out a line that is plainly not about the product (a store slogan, a region list, a stray label).",
+  "Some sellers put screenshots of buyers' reviews in the description images (a 'Real Review' / 후기 / 리뷰 banner, masked ids like 'ridb*', dates, a buyer's height and weight, often about other products): this is kept as read for context; never use it as the product's description or its facts.",
+  "A block's `key` (in the .ko.json) is the same in every listing that carries the same text: translate it once."
+ ],
+ "glossary": {
+  "로프트각": "loft",
+  "라이각": "lie angle",
+  "헤드체적": "head volume",
+  "샤프트": "shaft",
+  "강도": "flex",
+  "플렉스": "flex",
+  "토크": "torque",
+  "킥포인트": "kick point",
+  "밸런스": "swing weight",
+  "스윙웨이트": "swing weight",
+  "총중량": "total weight",
+  "클럽 중량": "club weight",
+  "그립": "grip",
+  "드라이버": "driver",
+  "페어웨이우드": "fairway wood",
+  "유틸리티": "hybrid",
+  "아이언": "iron",
+  "웨지": "wedge",
+  "퍼터": "putter",
+  "캐디백": "caddie bag",
+  "스탠드백": "stand bag",
+  "보스턴백": "boston bag",
+  "헤드커버": "head cover",
+  "풀세트": "complete set",
+  "관용성": "forgiveness",
+  "비거리": "distance",
+  "타구감": "feel",
+  "스윗스팟": "sweet spot",
+  "단조": "forged",
+  "주조": "cast",
+  "말렛형": "mallet",
+  "일자형": "blade"
+ },
+ "blocks": [
+  {
+   "id": "b01",
+   "kind": "text",
+   "image": 1,
+   "text": "저희 샴의 소중한\n고객님들께 약속 드립니대!\n약속!\n(제품의 불량, 하자시)",
+   "key": "9a4a3a7b3c4e130e",
+   "shared": 2
+  },
+  {
+   "id": "b02",
+   "kind": "text",
+   "image": 4,
+   "text": "RIGHT-HANDED GOLF / O31IN\nWEDGE SET OF 3",
+   "key": "4f558c1b5a8031a2",
+   "shared": 1
+  },
+  {
+   "id": "b03",
+   "kind": "text",
+   "image": 7,
+   "text": "주문 전 반드시 확인해 주세요!\n• / 세변합이16cm이상\n·라벨이나 상품의 태그가 분리되어 상품의 가치가 훼손된 경우\n·세트 상품의 경우 상품 구성 일부가 파손되거나 누락된 경우 / •무게가1kg 이상\n고객님의 귀책사유로 상품이 훼손되거나 분실된 경우 / 한번의 길이가 1M이상인 제품은\n·상품의 가치가 현저하게 감소한 경우 / 포장상태가 이형화물로 분류되어\n사용하고 있습니다.\n유해상품,불법상품 등 상품에 대한 권리자께서는 메일,문자로 연락주시면 즉각 삭제 처리 하겠습니다.\n안전관리법관련\n-본 상품은 전기용품 및 생활용품 안전관리법에 따른 안전관리대상제품임을 명시합니다.\n유아및어린이취급유의사항\n본상품은 만 14세 이상만 구매가 가능합니다",
+   "key": "eb1cb20f39eb56ed",
+   "shared": 2
+  }
+ ]
+}

@@ -13,7 +13,8 @@ rule, republish) stays the owner's word. When to use which lens: scripts/LENSES.
     dupes     the store's duplicate groups (dedupe.py --report), kept copy first, members joined by title words only
               flagged: one product, or versions (colour edition, with or without its bag)?
     held      a job's held and not-taken products by reason, a duplicate beside its match: was the hold right?
-    products  given products side by side, all their photos (keys or product ids): an ad hoc look
+    products  given products side by side, all their photos (keys, product ids, handles or links: shop_view.resolve;
+              a ref of several products is left out with their keys listed): an ad hoc look
 
 Every lens writes <out>/sheet1.jpg ... (numbered cards: red = flagged by the lens's rule, blue = look at it,
 green = the kept copy), <out>/index.tsv and <out>/summary.json (the same cards as text: key, titles, price, brand,
@@ -36,7 +37,7 @@ from typing import Any, Callable
 
 import sheet as S
 from shop_files import append_line
-from shop_view import JOBS_ROOT, SHOPS_ROOT, Product, ShopView, job_events, job_keys
+from shop_view import JOBS_ROOT, SHOPS_ROOT, Product, RefError, ShopView, job_events, job_keys, resolve
 
 WEAK_BRAND = ("none", "title_word", "description_row", "origin", "images_text", "images_text_latin")
 LOW_Z, HIGH_Z = 2.0, 3.0              # robust z of log price (median, MAD) beyond which a card is red: cheap sooner
@@ -320,15 +321,17 @@ def _match_key(reason: str) -> str | None:
 
 def products(view: ShopView, refs: list[str]) -> Plan:
     cards: list[S.Card] = []
-    known = view.keys()
+    known = set(view.keys())
     for ref in refs:
-        found = [ref] if ref.count(":") >= 3 and ref in known else [k for k in known if k.endswith(":" + ref)]
-        if not found:
+        try:                                     # a key, product id, handle or link; several: none shown, the keys
+            key = resolve(view, ref)             # listed to choose from (2026-11-16: no longer "the first")
+        except RefError as e:
+            print(f"   {e}; left out")
+            continue
+        if key not in known:
             print(f"   {ref}: not in the shop's files, left out")
             continue
-        if len(found) > 1:                                  # one product id in two stores' keys: name the key to choose
-            print(f"   {ref}: {len(found)} keys ({', '.join(found)}); shown: {found[0]}")
-        p = view.get(found[0])
+        p = view.get(key)
         lines = [p.title_en, p.title_ko, f"{_won(p.price_krw)} v{p.variants} {p.store or 'not sent'}",
                  f"{p.brand_en or p.brand or '—'} [{p.brand_source or 'none'}]", ", ".join(p.leaves), *p.options[:3]]
         cards.append(_card(len(cards) + 1, p, [x for x in lines if x]))
@@ -370,7 +373,7 @@ def main(argv: list[str] | None = None) -> int:
                                              "(scripts/LENSES.md).")
     ap.add_argument("lens", choices=["section", "price", "brand", "dupes", "held", "products"])
     ap.add_argument("shop")
-    ap.add_argument("refs", nargs="*", help="products: keys or product ids")
+    ap.add_argument("refs", nargs="*", help="products: keys, product ids, handles or links")
     ap.add_argument("--category")
     ap.add_argument("--leaf", help="a section leaf (placement), e.g. wedge-sets")
     ap.add_argument("--job")

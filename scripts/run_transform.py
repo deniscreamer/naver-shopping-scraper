@@ -27,6 +27,11 @@ report.
     .venv/bin/python scripts/run_transform.py fairwardgolf 50002788-20261105T193000Z
     .venv/bin/python scripts/run_transform.py fairwardgolf --full     # every product prepared afresh, no cache
     .venv/bin/python scripts/run_transform.py fairwardgolf --verify   # each record vs a fresh prepare; writes nothing
+    .venv/bin/python scripts/run_transform.py fairwardgolf --diff     # then what changed, product by product
+
+--diff keeps the summaries of prepared/products.jsonl before the run (under the same shop lock) and prints, after the
+report, "run_transform: diff: <counts>" and prepared_diff.py's TSV (key, change, field, old, new); the exit code
+stays the run's. --shops-root DIR: another folder of shops (a copy, a test), default scripts/output/shops.
 """
 import argparse
 import hashlib
@@ -41,7 +46,8 @@ import description_image_text as image_text
 from description_images import current, load_sidecar
 from keep_run import SHOPS_ROOT, kept_run_ids
 import brand_fallback
-from shop_files import locked, read_jsonl, write_atomic
+import prepared_diff
+from shop_files import LedgerError, locked, read_jsonl, write_atomic
 from description_images import image_rows
 from shared_images import RULE as SHARED_RULE, drop_shared_images
 import transform
@@ -440,10 +446,16 @@ def main(argv: list[str] | None = None) -> int:
                                                           "written")
     mode.add_argument("--verify", action="store_true", help="compare each cache record with prepare computed "
                                                             "afresh; writes nothing; exit 1 on a difference")
+    parser.add_argument("--shops-root", default=SHOPS_ROOT, metavar="DIR",
+                        help="the folder holding the shops (default scripts/output/shops)")
+    parser.add_argument("--diff", action="store_true", help="after the run, what changed in prepared/products.jsonl "
+                        "(prepared_diff.py: a summary line, then its TSV); not with --verify")
     args = parser.parse_args(argv)
+    if args.diff and args.verify:
+        parser.error("--diff is not with --verify (it writes nothing to compare)")
     if args.verify:                                                     # reads only: allowed while a job runs
         try:
-            code, lines = verify(args.shop, args.runs or None)
+            code, lines = verify(args.shop, args.runs or None, args.shops_root)
         except ShopRulesMissing as e:
             print(f"run_transform: stop: {e}")
             return 2
@@ -452,8 +464,16 @@ def main(argv: list[str] | None = None) -> int:
         return code
 
     def body() -> int:
+        before = None
+        if args.diff:                       # the snapshot, under the same lock: its summaries (prepared_diff)
+            try:
+                before = prepared_diff.summaries_of(read_jsonl(
+                    os.path.join(args.shops_root, args.shop, "prepared", "products.jsonl")))
+            except LedgerError as e:
+                print(f"run_transform: stop: --diff: {e}")
+                return 2
         try:
-            result = run(args.shop, args.runs or None, cache=not args.full)
+            result = run(args.shop, args.runs or None, shops_root=args.shops_root, cache=not args.full)
         except ShopRulesMissing as e:
             print(f"run_transform: stop: {e}")
             return 2
@@ -463,8 +483,14 @@ def main(argv: list[str] | None = None) -> int:
             print(f"run_transform: cache: {result['cache']['hit']} records used, {result['cache']['miss']} "
                   f"prepared afresh ({CACHE}/)")
         print(f"run_transform: -> {result['out_dir']}")
+        if before is not None:
+            after = prepared_diff.summaries_of(result["prepared"])
+            products = prepared_diff.diff(before, after)
+            print(f"run_transform: diff: {prepared_diff.summary_line(prepared_diff.counts(before, after, products))}")
+            for line in prepared_diff.tsv_lines(products):
+                print(line)
         return 0
-    return locked(SHOPS_ROOT, args.shop, "run_transform.py", body, "run_transform")   # not while a job runs
+    return locked(args.shops_root, args.shop, "run_transform.py", body, "run_transform")   # not while a job runs
 
 
 if __name__ == "__main__":

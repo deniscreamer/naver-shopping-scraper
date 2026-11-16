@@ -1,0 +1,76 @@
+# description images of product 13016112970: Korean text read by OCR, cleaned, to translate
+# format description_image_text/1; sha256 5e6c38af909ea47fca8510149f89a61a35e7d723f5f70e9ebce35799bacd36ae; 16 blocks
+# This is text read by OCR from the product's description images, cleaned of the shop's own blocks. Translate each block under its [id]; one block may continue the one before it.
+# OCR faults to expect: spaces lost between words, a few misread letters (닫힌 -> 달힌, 페이스 -> 레이스), a digit lost in a table. Translate what is meant; do not invent facts, numbers or claims that are not there.
+# Keep numbers, units, model names, shaft / club codes and table cells exactly as written; a table row is cells "a | b | c": keep the cells and their order; ' / ' joins parts read side by side on one line.
+# Leave out a line that is plainly not about the product (a store slogan, a region list, a stray label).
+# Some sellers put screenshots of buyers' reviews in the description images (a 'Real Review' / 후기 / 리뷰 banner, masked ids like 'ridb*', dates, a buyer's height and weight, often about other products): this is kept as read for context; never use it as the product's description or its facts.
+# A block's `key` (in the .ko.json) is the same in every listing that carries the same text: translate it once.
+# glossary: 로프트각 = loft; 라이각 = lie angle; 헤드체적 = head volume; 샤프트 = shaft; 강도 = flex; 플렉스 = flex; 토크 = torque; 킥포인트 = kick point; 밸런스 = swing weight; 스윙웨이트 = swing weight; 총중량 = total weight; 클럽 중량 = club weight; 그립 = grip; 드라이버 = driver; 페어웨이우드 = fairway wood; 유틸리티 = hybrid; 아이언 = iron; 웨지 = wedge; 퍼터 = putter; 캐디백 = caddie bag; 스탠드백 = stand bag; 보스턴백 = boston bag; 헤드커버 = head cover; 풀세트 = complete set; 관용성 = forgiveness; 비거리 = distance; 타구감 = feel; 스윗스팟 = sweet spot; 단조 = forged; 주조 = cast; 말렛형 = mallet; 일자형 = blade
+
+[b01 text image 1]
+있으면 / 무조건
+환물보장
+일단사용해보고 / 결정하세요!
+
+[b02 text image 2]
+AS-I2
+
+[b03 text image 3]
+Designed / With A Leading E / Edge / That Prevents
+Digging Into The Ground, Ensuring / Forgiveness
+
+[b04 text image 5]
+AS-10
+
+[b05 table image 8]
+LOFT | 50 | 52 | 54 | 56 | 58 | 60
+LIE | 64 | 64 | 64 | 64 | 64 | 64
+BOUNCE | 9 | 9 | 10 | 12 | 10 | 10
+SWING WEIGHT | D2 | D2 | D2 | D2 | D3 | D3
+SHAFT WEIGHT(G) | 109 | 109 | 108 | 108 | 107 | 107
+GRIP WEIGHT(G) | 58 | 58 | 58 | 58 | 58 | 58
+LENGTH(INCH) | 35.5 | 35.5 | 35.25 | 35.25 | 35 | 35
+
+[b06 text image 9]
+AS-10
+AS-I2
+AS-9
+
+[b07 text image 12]
+AS-12
+
+[b08 text image 15]
+AS-I2
+
+[b09 text image 17]
+AS-I0
+
+[b10 text image 19]
+AS-9
+
+[b11 table image 21]
+IT | AS-I0
+
+[b12 text image 21]
+AS-I2
+
+[b13 text image 22]
+FULL / FACE / GROOVE
+AS-12
+
+[b14 text image 24]
+INNOVATIVE / RUBBER / FULL FACE / STAINLESS
+DESIGN / GRIP / GROOVE / STEEL SHAFT
+
+[b15 text image 25]
+AS-10
+
+[b16 table image 28]
+LOFT | 50 | 52 | 54 | 56 | 58 | 60
+LIE | 64 | 64 | 64 | 64 | 64 | 64
+BOUNCE | 9 | 9 | 10 | 12 | 10 | 10
+SWING | WEIGHT | D2 | D2 | D2 | D2 | D3 | D3
+SHAFT | WEIGHT(G) | 109 | 109 | 108 | 108 | 107 | 107
+GRIP | WEIGHT(G) | 58 | 58 | 58 | 58 | 58 | 58
+LENGTH(INCH) | 35.5 | 35.5 | 35.25 | 35.25 | 35 | 35

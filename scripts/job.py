@@ -15,6 +15,10 @@ owner as always.
     .venv/bin/python scripts/job.py scroll --job ID          # resume a scroll job (its listing from the top)
     .venv/bin/python scripts/job.py status [--job ID] [--json]
     .venv/bin/python scripts/job.py activate --job ID [--dry-run]   # the job's drafts live, on the owner's word
+    .venv/bin/python scripts/job.py report [--job ID] [--event E] [--since T] [--table out.tsv] [--json]
+    .venv/bin/python scripts/job.py where <ref> [--shop S]          # one product's events across the jobs
+    .venv/bin/python scripts/job.py watch [--job ID] [--every 20] [--timeout S]   # returns when the owner must hear
+                                                                    # (job_report.py: the outputs and exit codes)
 
 Files, scripts/output/jobs/<job id>/:
 
@@ -1532,6 +1536,84 @@ def cmd_status(args: argparse.Namespace) -> int:
     return 0
 
 
+# ---- report, where, watch (job_report.py; read only, no lock) ------------------------------------------------
+
+def _job_folder(job_id: str | None) -> str | None:
+    """The job's folder, or None (said on stderr) when there is no such job."""
+    try:
+        return open_job(job_id).folder
+    except (OSError, ValueError) as e:
+        print(f"job.py: no job {job_id}: {e}", file=sys.stderr)
+    except SystemExit as e:
+        print(f"job.py: {e}", file=sys.stderr)
+    return None
+
+
+def cmd_report(args: argparse.Namespace) -> int:
+    import job_report
+    folder = _job_folder(args.job)
+    if folder is None:
+        return job_report.EXIT_USAGE
+    try:
+        r = job_report.report(folder, args.event, args.since)
+        rows = job_report.table(job_report.kept(job_report.events(folder), args.event, args.since)) \
+            if args.table else []
+    except LedgerError as e:
+        print(f"job.py report: {e}", file=sys.stderr)
+        return job_report.EXIT_BROKEN
+    if args.table == "-":
+        sys.stdout.write(job_report.table_text(rows))
+        return 0
+    if args.table:
+        with open(args.table, "w", encoding="utf-8") as f:
+            f.write(job_report.table_text(rows))
+    if args.json:
+        print(json.dumps(r, ensure_ascii=False, indent=1))
+    else:
+        job_report.print_rows(job_report.report_lines(r))
+    if args.table:
+        print(f"table\t{args.table}\t{len(rows)}", file=sys.stderr)
+    return 0
+
+
+def cmd_where(args: argparse.Namespace) -> int:
+    import job_report
+    folders = job_report.job_folders(args.jobs_root)
+    try:
+        key = job_report.where_key(args.ref, folders, args.shop, args.shops_root)
+        rows = job_report.where(key, folders)
+    except job_report.WhereError as e:
+        print(str(e), file=sys.stderr)
+        return 1
+    except LedgerError as e:
+        print(f"job.py where: {e}", file=sys.stderr)
+        return job_report.EXIT_BROKEN
+    if args.json:
+        print(json.dumps({"ref": args.ref, "key": key, "rows": rows}, ensure_ascii=False, indent=1))
+    else:
+        print(f"key\t{key}")
+        job_report.print_rows(f"{r['job']}\t{r['at']}\t{r['event']}\t{job_report.one_line(r['detail'])}"
+                              for r in rows)
+    if not rows:
+        print(f"{args.ref}: no job touched it", file=sys.stderr)
+    return 0 if rows else 1
+
+
+def cmd_watch(args: argparse.Namespace) -> int:
+    import job_report
+    folder = _job_folder(args.job)
+    if folder is None:
+        return job_report.EXIT_USAGE
+    job = Job(folder)
+    try:
+        r = job_report.watch(folder, job.now, args.every, args.timeout)
+    except LedgerError as e:
+        print(f"job.py watch: {e}", file=sys.stderr)
+        return job_report.EXIT_BROKEN
+    print(json.dumps(r, ensure_ascii=False, indent=1) if args.json else job_report.watch_line(r), flush=True)
+    return int(r["exit"])
+
+
 def _dictionaries_reminder(job: Job) -> None:
     """A job that translates grows the live dictionaries: one line when their backup is due."""
     if job.final in ("translated", "published"):
@@ -1653,9 +1735,29 @@ def main(argv: list[str] | None = None) -> int:
     a = sub.add_parser("activate", help="every draft of the job live (ACTIVE), on the owner's word")
     a.add_argument("--job", required=True)
     a.add_argument("--dry-run", action="store_true", help="list what would be activated; no store call")
+    import job_report
+    since = job_report.iso_time
+    rp = sub.add_parser("report", help="what a job did, from its events (read only)")
+    rp.add_argument("--job")
+    rp.add_argument("--event", help="only this event (published, not_taken, failed, ...)")
+    rp.add_argument("--since", type=since, help="only events at or after this ISO time (a date, or no zone: UTC)")
+    rp.add_argument("--table", metavar="F", help="one row a key to this .tsv (- for stdout)")
+    rp.add_argument("--json", action="store_true")
+    wh = sub.add_parser("where", help="one product's events and screen leave-outs across the jobs (read only)")
+    wh.add_argument("ref", help="a key, a Naver product id, a handle or a link")
+    wh.add_argument("--shop", help="the shop to resolve the ref in (default: the jobs' shops)")
+    wh.add_argument("--jobs-root", default=JOBS_ROOT)
+    wh.add_argument("--shops-root", help="default: each job's own shops root (job.json)")
+    wh.add_argument("--json", action="store_true")
+    wa = sub.add_parser("watch", help="wait until the owner must hear something; distinct exit codes (job_report)")
+    wa.add_argument("--job")
+    wa.add_argument("--every", type=int, default=20, help="return at every Nth published product of the job")
+    wa.add_argument("--timeout", type=float, help="return (exit 9) after this many seconds")
+    wa.add_argument("--json", action="store_true")
     args = p.parse_args(argv)
     code = {"new": cmd_new, "run": cmd_run, "status": cmd_status, "refresh": cmd_refresh,
-            "scroll": cmd_scroll, "activate": cmd_activate}[args.cmd](args)
+            "scroll": cmd_scroll, "activate": cmd_activate, "report": cmd_report, "where": cmd_where,
+            "watch": cmd_watch}[args.cmd](args)
     if args.cmd in ("run", "scroll") and getattr(args, "ran", None):
         tell_owner(args.ran, code)
     return code

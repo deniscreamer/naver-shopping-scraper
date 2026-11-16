@@ -1,0 +1,14 @@
+{
+ "note": "two real versions of a few prepared products (prepared_diff tests); product.reviews lists, texts and variants (the first 8) cut the same way on both sides",
+ "cases": {
+  "fairwardgolf:naver:1100167681:13830308222": "brand Gowolf (title_known) -> (title) and its brand_fallback note: the state backup of 2026-11-15 (release-0.22.0) -> prepared of 2026-11-16 00:45",
+  "fairwardgolf:naver:1100071177:13312194411": "a description_shared_images note added, description_dropped / description_images changed: backup -> 2026-11-16",
+  "fairwardgolf:naver:102206584:13492376357": "the description_shared_images note detail (7 -> 8 listing groups): backup -> 2026-11-16",
+  "fairwardgolf:naver:100416178:5917858699": "the same in both: backup -> 2026-11-16",
+  "fairwardgolf:naver:1100071177:13312174622": "added (held): only in the 2026-11-16 prepared",
+  "fairwardgolf:naver:100342675:13446843026": "package fields: fixtures/prepared/13446843026.json at 23a7060 -> 9a3c89d",
+  "fairwardgolf:naver:101054995:13099257309": "variants (prepared/1, an old format): fixtures/prepared/13099257309.json at ca1e6d9 -> f4cdcb9",
+  "fairwardgolf:naver:100113347:13780241403": "removed: fixtures/prepared/13780241403.json at 2fe40a5, only in old",
+  "fairwardgolf:naver:102750441:13762670577": "status ready -> held single_only: new = the 2026-11-16 line; old = the same line with status ready and no hold (an edit: no real pair has a status change; this product was published while ready, then held single_only)"
+ }
+}

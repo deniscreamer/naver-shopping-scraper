@@ -22,9 +22,13 @@ back in the same conversation (prompts/translate_fix.md) at most FIX_ROUNDS time
 product `untranslated`; what passed is kept (dictionaries, the product's store), so the next run asks only for the
 rest.
 
-    .venv/bin/python scripts/translate.py fairwardgolf [--offline] [--only KEY] [--limit N] [--shops-root DIR]
+    .venv/bin/python scripts/translate.py fairwardgolf [--offline] [--only REF] [--keys-file F] [--job ID [--event E]]
+                                                      [--limit N] [--shops-root DIR]
 
   --offline   no model: resolve from the stores, dictionaries and rules only; say what would be asked
+  --only      the one product the model may be asked for: a key, Naver product id, handle or link (shop_view.resolve)
+  --keys-file, --job [--event]   more products the model may be asked for (shop_view.selected_keys); a ref that
+              names no product or several stops the command (exit 2) before anything is asked
 
 The keys: `.env` names a key file (TRANSLATE_KEY_FILE), mode 0600 and ignored by git, holding ANTHROPIC_API_KEY=...
 and OPENAI_API_KEY=... (either may be missing: no fallback, or OpenAI only). OPENAI_TRANSLATE_MODEL in `.env`
@@ -46,11 +50,12 @@ import stat
 import sys
 import time
 from dataclasses import dataclass, field
-from typing import Any, Protocol
+from typing import Any, Collection, Protocol
 
 import shop_stores
 from keep_run import SHOPS_ROOT
 from shop_files import append_line, locked, write_atomic
+from shop_view import add_ref_flags, keys_from_args, selection_asked
 from shopify_catalog import _git_ignored
 from translation_dicts import KINDS as DICT_KINDS
 from translation_dicts import Dictionaries, reminder
@@ -706,7 +711,10 @@ def cost(usage: dict[str, dict[str, int]]) -> tuple[float, list[str]]:
 
 
 def run(shop: str, model: "Model | Chain | None", shops_root: str = SHOPS_ROOT, dicts: Dictionaries | None = None,
-        only: str | None = None, limit: int | None = None, clock: Any = time.gmtime) -> dict[str, Any]:
+        only: str | Collection[str] | None = None, limit: int | None = None,
+        clock: Any = time.gmtime) -> dict[str, Any]:
+    """`only`: the key (or keys) the model may be asked for; the other products are resolved from what is kept."""
+    wanted = {only} if isinstance(only, str) else set(only or ())
     tenant = shop_stores.STORES[shop_stores.StoreId(shop)].publisher
     dicts = dicts or Dictionaries()
     with open(os.path.join(shops_root, shop, "prepared", "products.jsonl"), encoding="utf-8") as f:
@@ -722,7 +730,7 @@ def run(shop: str, model: "Model | Chain | None", shops_root: str = SHOPS_ROOT, 
     calls = asked = 0
     for p in sorted(prepared, key=lambda x: x["key"]):
         use = model
-        if (only and p["key"] != only) or (limit is not None and asked >= limit):
+        if (wanted and p["key"] not in wanted) or (limit is not None and asked >= limit):
             use = None                                   # resolved from what is kept, not sent
         outcome = translate_product(p, dicts, store, tenant, use, now, brands)
         if outcome.calls:
@@ -781,14 +789,18 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("shop")
     p.add_argument("--shops-root", default=SHOPS_ROOT)
     p.add_argument("--offline", action="store_true", help="no model: stores, dictionaries and rules only")
-    p.add_argument("--only", help="send only this product key to the model")
+    p.add_argument("--only", help="send only this product to the model (its key, Naver product id, handle or link)")
     p.add_argument("--limit", type=int, help="send at most N products to the model")
+    add_ref_flags(p)
     args = p.parse_args(argv)
+    only: list[str] | None = None
+    if args.only or selection_asked(args):            # refs -> keys (a full key as it is, as before)
+        only = keys_from_args(p, args, args.shop, [args.only] if args.only else [], args.shops_root)
 
     def body() -> int:
         try:
             model = None if args.offline else build_chain(keys_from_env())
-            print("\n".join(run(args.shop, model, args.shops_root, only=args.only, limit=args.limit)["report"]))
+            print("\n".join(run(args.shop, model, args.shops_root, only=only, limit=args.limit)["report"]))
         except TranslateError as e:
             print(f"translate: {e}", file=sys.stderr)
             return 2
