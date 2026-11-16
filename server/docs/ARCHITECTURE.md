@@ -15,13 +15,13 @@ All paths are relative to `server/`, which is the import root (section 10).
 
 | Module | Role |
 |---|---|
-| `run.py` | Entry point. cheroot WSGI server on `0.0.0.0:config.PORT`, 16 threads, serving bottle's default app. |
+| `run.py` | Entry point. cheroot WSGI server on `config.HOST:config.PORT` (default `127.0.0.1:8000`), 16 threads, serving bottle's default app. |
 | `main.py` | In-process demo: calls `naver_shopping.api` directly and writes `output/*.json` relative to the CWD. |
 | `routes.py` | Mounts the 14 endpoints (`routes.ENDPOINTS`) at `/path` and `/naver-shopping/path`, plus the listing job and held listing tab routes (`routes.LISTING_PATHS`, both prefixes) and unprefixed `/` and `/health` (with the extension status). `routes.call` validates, runs, maps errors to HTTP. `routes.paginate` flattens pagination. |
 | `schema_fields.py` | marshmallow base schema (`unknown=RAISE`), `load_query`, field types (`RefField`, `Flag`, page fields). |
 | `scraper_errors.py` | Base taxonomy: `UpstreamError`, `Blocked(UpstreamError)`, `BadRequest`, `NotFound`. |
 | `cache.py` | In-process TTL cache, `cached_call`. |
-| `config.py` | `PORT`, retry constants, box constants, proxy getters, `exit_geo`. |
+| `config.py` | `PORT`, `HOST`, retry constants, box constants, proxy getters, `exit_geo`. |
 | `egress.py` | Accept-Language table and exit identity (`accept_language`, `exit_profile`, `TIMEZONE`). No network. |
 | `hostenv.py` | Container / OS detection (`IS_DOCKER`, `IS_IN_KUBERNETES`, `get_os`). |
 | `browser_client.py` | The browser box: one kept Chrome per proxy, warm-up, in-page fetch, refusal detection, `ExitPool`. |
@@ -293,6 +293,7 @@ what the code is run with today.
 | Variable | Read in | Effect |
 |---|---|---|
 | `PORT` | `config.PORT` (import) | listen port, default 8000 |
+| `HOST` | `config.HOST` (import, `config.listen_host`) | listen address, default `127.0.0.1`; `0.0.0.0` = every interface (before 2026-11-15) |
 | `NAVER_SHOPPING_PROXY` | `config.naver_shopping_proxy` (when a thread builds its curl session, `fetch._session`), `config.naver_shopping_browser_proxy` (when the box mints or rotates an exit, `fetch._EXITS`) | proxy for curl and Chrome; set before start; also read into `config.NAVER_SHOPPING_PROXY` at import, which nothing uses (K-15) |
 | `PATCHRIGHT_CHANNEL` | `PatchrightDriver._main` | browser channel on a host; ignored in a container (always `"chrome"`, see `patchright_driver._in_container`) |
 | `PATCHRIGHT_EXECUTABLE` | `PatchrightDriver._main` | used only when the channel resolves to `""` |

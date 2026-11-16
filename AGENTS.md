@@ -61,7 +61,7 @@ Run from the repo root.
 python -m venv .venv
 .venv/bin/pip install -r server/requirements.txt -r scripts/requirements.txt
 .venv/bin/python server/run.py              # http://localhost:8000, PORT=... to change
-.venv/bin/python -m pytest -q               # offline suite, 471 tests
+.venv/bin/python -m pytest -q               # offline suite, 474 tests
 .venv/bin/python -m pytest scripts -q       # scripts/ client tests, offline, separate suite
 .venv/bin/python -m mypy                    # static check of scripts/ ([tool.mypy] in pyproject.toml), 0 errors
 scripts/check.sh                            # before a commit: the three above, separate processes, non-zero on a failure

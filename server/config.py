@@ -2,6 +2,9 @@
 environment variable; the defaults work out of the box.
 
     PORT                  port the API listens on (default 8000)
+    HOST                  address the API listens on (default 127.0.0.1: this
+                          machine only; 0.0.0.0 = every interface, as before
+                          2026-11-15)
     NAVER_SHOPPING_PROXY  proxy URL, e.g. http://user:pass@host:port (default:
                           none — your own IP). Used for every request: the
                           plain-HTTP calls (search, store pages, DataLab) and
@@ -43,6 +46,19 @@ def load_env_file(path=ENV_FILE):
 load_env_file()
 
 PORT = int(os.environ.get("PORT", "8000"))
+
+# The listen address. 127.0.0.1 by default (2026-11-15): the routes have no auth and drive a Chrome that may be
+# logged in, and every client (scripts/naver_api_client.py, the extension's bridge on its own port) is on this
+# machine. HOST=0.0.0.0 restores the old bind on every interface.
+DEFAULT_HOST = "127.0.0.1"
+
+
+def listen_host(env=None):
+    """The address run.main binds: $HOST, else DEFAULT_HOST."""
+    return ((os.environ if env is None else env).get("HOST") or "").strip() or DEFAULT_HOST
+
+
+HOST = listen_host()
 
 # The release version, from /VERSION at the repo root (shown by /health).
 _VERSION_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "VERSION")

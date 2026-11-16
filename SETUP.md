@@ -14,7 +14,8 @@ Done = `scripts/check_setup.py --live` prints `READY`.
 - **Google Chrome in /Applications**, with the operator's everyday, "warm" profile: a profile that has browsed
   naver.com / shopping.naver.com normally (cookies, history). The listing jobs run inside it. A brand-new profile
   gets captchas; if so, ask the operator to browse naver.com -> 쇼핑 and solve any captcha once.
-- Ports free: **8000** (API; another one via `PORT`) and **8765** (browser adapter, fixed).
+- Ports free: **8000** (API; another one via `PORT`) and **8765** (browser adapter, fixed). The API listens on
+  127.0.0.1 only (`HOST`, default; `HOST=0.0.0.0` opens it to the network, with no auth: avoid).
 
 ## 1. Get the code
 
