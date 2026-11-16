@@ -179,6 +179,22 @@ def test_a_known_brand_as_a_word_of_its_own_anywhere_in_the_title():
     assert B.decide("남성용 버뮤다 웨지 세트", None, [], [], known) == ("버뮤다", "title_word", [])
 
 
+def test_the_cached_patterns_answer_each_text_anew():
+    # 2026-11-15: the patterns are compiled once per brand (lru_cache); a second text must not reuse a first match
+    known = ["라즈러스", "GoSports", "PGM"]
+    for _ in range(2):
+        assert B.as_word("남성용 라즈러스 웨지", known) == "라즈러스"
+        assert B.as_word("남성용 웨지 세트", known) is None
+        assert B.as_word("GOSPORTS 웨지", known) == "GoSports"
+        assert B.in_images(["핑 G430", "핑 골프"], ["핑"]) == {"핑": 2}
+        assert B.in_images(["쇼핑골프 치핑"], ["핑"]) == {}
+        assert B.in_images(["golf bag"], ["GB"]) == {}
+        assert B.in_images(["US KIDS GOLF 정품"], ["U.S. Kids Golf"]) == {"U.S. Kids Golf": 1}
+    assert B._word_pattern("핑") is None and B._word_pattern("야마토") is not None
+    assert B._word_pattern("주니어") is None                                    # not a firm
+    assert B._count_pattern("T.M") is not None and B._count_pattern("혼마 코리아") is not None
+
+
 def test_a_brand_row_of_the_description():
     # 2026-11-15: agency imports copy the spec table ("Brand | WENGH", 13468853832) where the images gave "EVEN"
     assert B.described("Golf Club Loft | 56 Degrees\nBrand | WENGH\nBrand Name | WENGH") == ["WENGH"]

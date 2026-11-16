@@ -35,6 +35,7 @@ order, the first that gives a value (`brand_source` says which):
 Steps 3-7 add the note brand_fallback (the source and the other candidates: the vendor step can still choose). The
 vendor's spelling (캘러웨이 / 캘러웨이골프, 젝시오 / XXIO) is decided later for every product.
 """
+import functools
 import re
 from collections import Counter
 from typing import Any, Callable
@@ -179,18 +180,27 @@ _ADDRESS = re.compile(r"https?://[^\s가-힣]+|www\.[A-Za-z0-9.-]+|[A-Za-z0-9-]+
                       r"\.(?:co\.kr|com|net|kr)\b", re.I)
 
 
-def _count(text: str, spaced: str, brand: str) -> int:
+@functools.lru_cache(maxsize=None)
+def _count_pattern(brand: str) -> re.Pattern[str] | None:
+    """The compiled pattern _count looks for (None: a plain substring count). Cached by brand: compiled once a run, not
+    once per product and brand (2026-11-15: ~95 000 compilations, 29 s of a 63 s prepare; 339 brands are more than
+    re's own cache holds)."""
     n = _norm(brand)
     if _HANGUL_BRAND.match(n):
         tail = r"(?:(?![가-힣])|(?=\s*골프))" if len(n) == 1 else ""
-        return len(re.findall(r"(?<![가-힣])" + r"\s*".join(map(re.escape, n)) + tail, spaced))
+        return re.compile(r"(?<![가-힣])" + r"\s*".join(map(re.escape, n)) + tail)
     if _LATIN_BRAND.match(n):
         # a Latin brand is counted as whole words only: 13425122164, 2026-11-12, a junior seller's brand GB was read
         # in "golf bag" (spaces taken out: "golfbag") and a Ben Sayers set became GB. Its own words may be written
         # apart or together ("U.S. Kids Golf", "US KIDS GOLF"); a word of it is never cut.
         words = re.findall(r"[a-z0-9]+", brand.casefold())
-        return len(re.findall(r"(?<![a-z0-9])" + r"[\s.\-&']*".join(map(re.escape, words)) + r"(?![a-z0-9])", spaced))
-    return text.count(n)
+        return re.compile(r"(?<![a-z0-9])" + r"[\s.\-&']*".join(map(re.escape, words)) + r"(?![a-z0-9])")
+    return None
+
+
+def _count(text: str, spaced: str, brand: str) -> int:
+    pattern = _count_pattern(brand)
+    return len(pattern.findall(spaced)) if pattern else text.count(_norm(brand))
 
 
 def _counts(rows: list[str], brands: list[str]) -> dict[str, int]:
@@ -243,18 +253,19 @@ def as_word(title: str | None, known: list[str]) -> str | None:
     titles after 남성용 or before a model). A Hangul brand is not inside a longer Hangul word, a Latin one not inside
     a longer Latin word or number."""
     t = title or ""
-    found = []
-    for b in known:
-        n = _norm(b)
-        if len(n) < 3 or not clean(b):
-            continue
-        if _HANGUL_BRAND.match(n):
-            pattern = r"(?<![가-힣])" + r"\s*".join(map(re.escape, n)) + r"(?![가-힣])"
-        else:
-            pattern = r"(?<![A-Za-z0-9])" + re.escape(b) + r"(?![A-Za-z0-9])"
-        if re.search(pattern, t, re.I):
-            found.append(b)
+    found = [b for b in known if (pattern := _word_pattern(b)) and pattern.search(t)]
     return max(found, key=lambda b: len(_norm(b))) if found else None
+
+
+@functools.lru_cache(maxsize=None)
+def _word_pattern(brand: str) -> re.Pattern[str] | None:
+    """The compiled pattern as_word looks for (None: too short or not a firm). Cached by brand, as _count_pattern."""
+    n = _norm(brand)
+    if len(n) < 3 or not clean(brand):
+        return None
+    if _HANGUL_BRAND.match(n):
+        return re.compile(r"(?<![가-힣])" + r"\s*".join(map(re.escape, n)) + r"(?![가-힣])", re.I)
+    return re.compile(r"(?<![A-Za-z0-9])" + re.escape(brand) + r"(?![A-Za-z0-9])", re.I)
 
 
 _BRAND_ROW = re.compile(r"(?im)^[ \t]*(?:brand(?:[ \t]*name)?|브랜드(?:명)?)[ \t]*[|:：][ \t]*([^\n|]{2,60}?)[ \t]*$")
