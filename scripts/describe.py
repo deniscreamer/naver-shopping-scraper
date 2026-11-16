@@ -38,7 +38,7 @@ from typing import Any
 
 import shop_stores
 import shopify_payload as sp
-from shop_files import append_line
+from shop_files import append_line, locked
 import translate
 from translate import Chain, Model, ProviderDown, TranslateError
 from translation_rules import HANGUL_RE
@@ -600,15 +600,20 @@ def main(argv: list[str] | None = None) -> int:
         tenant = shop_stores.STORES[shop_stores.StoreId(args.shop)].publisher
         print(packet(p, t, load_blocks(shop_dir, p["product"]), publish.vendor_spellings({}), tenant)["message"])
         return 0
-    try:
-        model = None if args.offline else build_chain(translate.keys_from_env())
-        r = run(args.shop, model, args.shops_root, only=args.only, limit=args.limit, published=args.published,
-                force=args.force)
-    except (TranslateError, NoProvider) as e:
-        print(f"describe: {e}", file=sys.stderr)
-        return 2
-    print("\n".join(r["report"]))
-    return 0
+
+    def body() -> int:
+        try:
+            model = None if args.offline else build_chain(translate.keys_from_env())
+            r = run(args.shop, model, args.shops_root, only=args.only, limit=args.limit, published=args.published,
+                    force=args.force)
+        except (TranslateError, NoProvider) as e:
+            print(f"describe: {e}", file=sys.stderr)
+            return 2
+        print("\n".join(r["report"]))
+        return 0
+    if args.offline:                                 # asks nothing, writes nothing but its report: no lock
+        return body()
+    return locked(args.shops_root, args.shop, "describe.py", body, "describe")         # not while a job runs
 
 
 if __name__ == "__main__":

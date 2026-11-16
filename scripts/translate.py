@@ -50,7 +50,7 @@ from typing import Any, Protocol
 
 import shop_stores
 from keep_run import SHOPS_ROOT
-from shop_files import append_line, write_atomic
+from shop_files import append_line, locked, write_atomic
 from shopify_catalog import _git_ignored
 from translation_dicts import KINDS as DICT_KINDS
 from translation_dicts import Dictionaries, reminder
@@ -784,13 +784,17 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--only", help="send only this product key to the model")
     p.add_argument("--limit", type=int, help="send at most N products to the model")
     args = p.parse_args(argv)
-    try:
-        model = None if args.offline else build_chain(keys_from_env())
-        print("\n".join(run(args.shop, model, args.shops_root, only=args.only, limit=args.limit)["report"]))
-    except TranslateError as e:
-        print(f"translate: {e}", file=sys.stderr)
-        return 2
-    return 0
+
+    def body() -> int:
+        try:
+            model = None if args.offline else build_chain(keys_from_env())
+            print("\n".join(run(args.shop, model, args.shops_root, only=args.only, limit=args.limit)["report"]))
+        except TranslateError as e:
+            print(f"translate: {e}", file=sys.stderr)
+            return 2
+        return 0
+    # --offline too: it rewrites translated.jsonl and saves the dictionaries (a job's fresh product dropped otherwise)
+    return locked(args.shops_root, args.shop, "translate.py", body, "translate")
 
 
 if __name__ == "__main__":

@@ -38,7 +38,7 @@ from typing import Any
 import attributes as A
 from keep_run import SHOPS_ROOT
 from placement_rules import CategoryPlacement, PlacementProfile, PlacementRulesMissing, profile_for
-from shop_files import write_atomic
+from shop_files import locked, write_atomic
 
 FORMAT = "placement/1"
 
@@ -136,8 +136,11 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("shop")
     p.add_argument("--shops-root", default=SHOPS_ROOT)
     args = p.parse_args(argv)
-    print("\n".join(run(args.shop, args.shops_root)["report"]))
-    return 0
+
+    def body() -> int:
+        print("\n".join(run(args.shop, args.shops_root)["report"]))
+        return 0
+    return locked(args.shops_root, args.shop, "placement.py", body, "placement")      # not while a job runs
 
 
 if __name__ == "__main__":

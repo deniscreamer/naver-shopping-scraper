@@ -12,6 +12,13 @@ files: `scripts/job.py` docstring; the stages' own docs: [README.md](README.md).
 - Server running (`.venv/bin/python server/run.py`), `/health` shows `extension: connected` (Chrome open with the
   adapter), `SHOP_STORE` set, the category has a row in `category_measures.json` (no row: ask the owner).
 - No other job, listing or description_images run at the same time (one Chrome, one OCR lock per shop).
+- The shop's lock (2026-11-16, `shop_files.py`): `run`, `scroll` and `refresh` hold it for their whole life, so a
+  second runner of the same shop, and by hand `run_transform.py`, `translate.py` (also `--offline`), `placement.py`,
+  `publish.py` (sending), `describe.py` (with a model), `reprice.py --apply`, `description_images.py` and
+  `store_diff.py --adopt`, are refused at once: `stop: <shop> is busy: job.py run <id> (pid N, since T): wait for it
+  (job.py status) or stop it`. Free meanwhile: `status`, `new`, the lenses, `review_grid.py`, `dedupe.py --report`,
+  `store_diff.py`, `publish.py --dry-run` / `--withdraw` / `--restore`. The lock goes with the process (kill -9
+  too): no stale lock to clear.
 - For translation: `scripts/translate_keys.py check` shows the keys (SETUP.md); `run` stops at once without them.
 
 ## Loop
@@ -190,6 +197,7 @@ withdrawn `replaced_by:<kept key>`.
 | scroll: `STOP: listing tab: ... wall: ... stalled` (no batch while `has_more` was true) or `refused` | stopped: a stall is not the listing's end | tell the owner; `scroll --job <id>` only after they say so |
 | scroll: `done (the listing's end)` with `has_more false` | the last batch read; no scroll after it | nothing; `left` products: the other mode, on the owner's word |
 | `adapter busy ... waiting 30 s` with no other job running, or scroll's `the listing tab <id> was not closed` | waits 30 s, 12 times, then stops: a dead scroll job may hold the adapter (no idle timer; the 409 names `listing tab <id>`, so does that job's `job.json` `tab`) | when no `job.py scroll` runs: `curl -X DELETE localhost:8000/listing-tabs/<id>` (or restart the server) |
+| `stop: <shop> is busy: <holder> ...` (`run`, `scroll`, `refresh`, or a hand command) | refused at once, nothing written, exit 2 | another runner holds the shop: `job.py status`; wait for it or stop it, never start a second |
 | `STOP ... LedgerError: <path>:<n>: not a JSON line` (a broken line in the ledger, a job's listing, prepared / translated / placements) | stopped, nothing marked | tell the owner the file and line; a rebuilt file: the command the message names (when no job runs); the ledger or a listing: fixed by hand on the owner's word, then `run` again |
 | `held` codes in status | the product is prepared as held | read the codes ([README.md](README.md) Transform); report |
 

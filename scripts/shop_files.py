@@ -7,6 +7,7 @@
     read_jsonl(path, tail_ok)      rows of a .jsonl; a bad line is LedgerError naming <path>:<n>, except a bad LAST
                                    line of an append-only file with tail_ok (a run killed while appending)
     shop_lock(root, shop, what)    the shop's lock for a command's whole life; held elsewhere -> ShopBusy, no wait
+    locked(root, shop, what, body) a command's main under the lock; refused -> the busy line printed, exit 2
 
 Why each is so:
 - write_atomic: an open(path, "w") cut off by a killed process left a short file (products.jsonl is 68 MB and
@@ -24,13 +25,12 @@ Why each is so:
   the holder written inside. The kernel frees it when the process dies, kill -9 included: no stale lock, no pid
   check. Refused at once, never waited for: a job holds it for hours and a waiting command would hang a shell.
 """
-import contextlib
 import fcntl
 import json
 import os
 import sys
 import time
-from typing import Any, Iterator
+from typing import IO, Any, Callable
 
 REBUILD = {"products.jsonl": "run_transform.py <shop>", "translated.jsonl": "translate.py <shop> --offline",
            "placements.jsonl": "placement.py <shop>"}
@@ -98,19 +98,32 @@ def read_jsonl(path: str, tail_ok: bool = False) -> list[Any]:
     return out
 
 
-@contextlib.contextmanager
-def shop_lock(shops_root: str, shop: str, what: str) -> Iterator[None]:
-    """The shop's lock while the block runs; `what` (e.g. "job.py run <id>") is what a refused command is told."""
+def shop_lock(shops_root: str, shop: str, what: str) -> IO[str]:
+    """The shop's lock, held until the returned file is closed (`with shop_lock(...):`); ShopBusy at once when another
+    process holds it. `what` (e.g. "job.py run <id>") is what a refused command is told."""
     os.makedirs(shops_root, exist_ok=True)
-    with open(os.path.join(shops_root, f".{shop}.lock"), "a+", encoding="utf-8") as f:
-        try:
-            fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        except OSError:
-            f.seek(0)
-            holder = f.read().strip() or "another run"
-            raise ShopBusy(f"{shop} is busy: {holder}: wait for it (job.py status) or stop it") from None
+    f = open(os.path.join(shops_root, f".{shop}.lock"), "a+", encoding="utf-8")
+    try:
+        fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except OSError:
         f.seek(0)
-        f.truncate()
-        f.write(f"{what} (pid {os.getpid()}, since {time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())})")
-        f.flush()
-        yield
+        holder = f.read().strip() or "another run"
+        f.close()
+        raise ShopBusy(f"{shop} is busy: {holder}: wait for it (job.py status) or stop it") from None
+    f.seek(0)
+    f.truncate()
+    f.write(f"{what} (pid {os.getpid()}, since {time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())})")
+    f.flush()
+    return f
+
+
+def locked(shops_root: str, shop: str, what: str, body: Callable[[], int], tool: str = "") -> int:
+    """A command's main: body() under the shop's lock -> its exit code; refused: "<tool>: stop: <shop> is busy: ..."
+    printed and 2 (the message, not the code, is what the agent reads: some tools use 2 for other stops too)."""
+    try:
+        lock = shop_lock(shops_root, shop, what)
+    except ShopBusy as e:
+        print(f"{tool + ': ' if tool else ''}stop: {e}", flush=True)
+        return 2
+    with lock:
+        return body()

@@ -128,3 +128,12 @@ def test_shop_lock_is_free_after_its_holder_is_killed(tmp_path):
             time.sleep(0.1)
     else:
         pytest.fail("the lock stayed after its holder was killed")
+
+
+def test_locked_runs_the_body_or_refuses_with_the_busy_line(tmp_path, capsys):
+    root = str(tmp_path / "shops")
+    assert F.locked(root, "shop", "translate.py", lambda: 0) == 0
+    with F.shop_lock(root, "shop", "job.py run j1"):
+        assert F.locked(root, "shop", "translate.py", lambda: pytest.fail("ran"), "translate") == 2
+    assert capsys.readouterr().out.startswith("translate: stop: shop is busy: job.py run j1 (pid ")
+    assert F.locked(root, "shop", "translate.py", lambda: 5) == 5

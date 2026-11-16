@@ -27,6 +27,7 @@ import sys
 from typing import Any
 
 import publish as P
+from shop_files import locked
 from shop_stores import get_store
 
 QUERY = """query($ids: [ID!]!) { nodes(ids: $ids) { ... on Product {
@@ -113,6 +114,12 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--adopt", action="store_true", help="record today's output for products the store already has")
     ap.add_argument("--shops-root", default=P.SHOPS_ROOT)
     args = ap.parse_args(argv)
+    if args.adopt:                                  # appends ledger rows read a minute ago: not while a job runs
+        return locked(args.shops_root, args.shop, "store_diff.py --adopt", lambda: _diff(args), "store_diff")
+    return _diff(args)
+
+
+def _diff(args: argparse.Namespace) -> int:
     from shopify_admin import ProductsAdmin
     from shopify_catalog import ShopCatalog
     store = get_store(args.shop)

@@ -33,7 +33,7 @@ from typing import Any
 
 import describe
 import shopify_payload as sp
-from shop_files import append_line, read_jsonl
+from shop_files import append_line, locked, read_jsonl
 from shop_pricing import policy
 from shop_stores import get_store
 from shopify_catalog import CatalogError
@@ -456,6 +456,13 @@ def main(argv: list[str] | None = None) -> int:
             row = withdraw(shop, key, admin, args.reason)
             print(f"{key}: withdrawn ({row['store_status']}) {row.get('admin_url', '')}")
         return 0
+    if args.dry_run:                                # sends nothing: no lock (a job may run meanwhile)
+        return _publish(args, shop)
+    # sending: refused while a job of the shop runs (two processes could create one product twice)
+    return locked(args.shops_root, args.shop, "publish.py", lambda: _publish(args, shop), "publish")
+
+
+def _publish(args: argparse.Namespace, shop: Shop) -> int:
     ready = shop.ready()
     keys = [k for k in args.only if k in ready] if args.only else ready
     for k in set(args.only) - set(ready):

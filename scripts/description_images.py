@@ -57,6 +57,7 @@ from urllib.parse import urlsplit
 import description_ocr as ocr
 from description_clean import _IMG_RE, _img_link, _image_key, _linkdata, clean_images
 from keep_run import SHOPS_ROOT
+from shop_files import locked
 from naver_images import RENDITION_HOSTS, CdnRefused, ImageError, allowed, fetch, new_session
 from transform_shops import ShopRulesMissing, rules_for
 
@@ -415,6 +416,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--prune-cache", action="store_true",
                         help="only delete the downloaded images (all, or --products); the sidecars stay")
     args = parser.parse_args(argv)
+    # by hand while a job of the shop runs: refused here first (the job calls run() in its own process; StageBusy,
+    # run()'s own lock, stays for the OCR workers)
+    return locked(SHOPS_ROOT, args.shop, "description_images.py", lambda: _main(args), "description_images")
+
+
+def _main(args: argparse.Namespace) -> int:
     if args.prune_cache:
         folders, n_bytes = prune_cache(args.shop, args.products)
         print(f"description_images: deleted the image cache of {folders} products ({n_bytes / 1e6:.0f} MB)")

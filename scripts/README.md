@@ -71,7 +71,7 @@ outside fetches: AGENTS.md rule 3.
 | `product_page.py` | Saves a product page as the owner's Chrome renders it (`/products/page`): page.html, the page's own answer, meta; for developing parsers and checking collected data |
 | `captcha_watch.py` | Reports a Naver captcha the adapter waits on (reads `/captcha`): one line per new captcha / solved / timed out; independent of any collection |
 | `keep_run.py` | Keeps a collection run (example_99 output) per shop, byte for byte, read-only (see Transform) |
-| `shop_files.py`, `test_shop_files.py` | The shop's shared files written and read safely: `write_atomic` (a rewritten file through `<path>.<pid>.part` and a rename), `append_line` (one write of whole lines, a line end first when the file lacks one), `read_jsonl` (a bad line is `LedgerError` naming `<path>:<n>`; a cut-off last line of an append-only file ignored with `tail_ok`), `shop_lock` (see Shared files) |
+| `shop_files.py`, `test_shop_files.py`, `test_shop_lock.py` | The shop's shared files written and read safely: `write_atomic` (a rewritten file through `<path>.<pid>.part` and a rename), `append_line` (one write of whole lines, a line end first when the file lacks one), `read_jsonl` (a bad line is `LedgerError` naming `<path>:<n>`; a cut-off last line of an append-only file ignored with `tail_ok`), `shop_lock` (see Shared files) |
 | `check.sh` | Offline, before a commit: the server suite, the scripts suite and mypy, each in its own process; prints the three results, non-zero exit when any fails |
 | `state_backup.py`, `test_state_backup.py` | Offline, by hand: the backup of `scripts/output`, `server/output` and `research/` (plans outside git, with the state) into tar + zstd archives by phase outside the repository (state, photos, description images in parts, server pages, old runs), `MANIFEST.json` with sha256, `RESTORE.md`; `--dry-run`, `--verify`, `--restore` into an empty folder. Reads the sources only (see Backup) |
 | `transform.py`, `transform_shops.py`, `run_transform.py` | The transform: kept runs -> prepared products per shop (shared rules, per-shop rules as data, the CLI) |
@@ -1275,6 +1275,16 @@ writes them goes through `shop_files.py`:
   `listing.jsonl` (`Job.rows`, `run_transform.paid_choices`); a job stops on it (`STOP ... LedgerError`). Left
   tolerant on purpose (a lost row costs one retry or one question again): a job's `events.jsonl` (the job, the
   lenses, `review_grid`, `dedupe --pairs`), `texts.jsonl`, `descriptions.jsonl`, the journal.
+- **The shop's lock**: a command that rewrites a shop's shared files or sends its products takes
+  `<shops_root>/.<shop>.lock` (`fcntl.flock`) in its `main()` for its whole life and refuses at once, never waits,
+  when another process holds it: `<tool>: stop: <shop> is busy: <holder>: wait for it (job.py status) or stop it`,
+  exit 2. Taken by `job.py run` / `scroll` (before a new job's folder) / `refresh`, `run_transform.py`,
+  `translate.py` (also `--offline`), `placement.py`, `publish.py` when it sends, `describe.py` with a model,
+  `reprice.py --apply`, `description_images.py`, `store_diff.py --adopt`. Not by the library functions (`run`,
+  `publish_one`): a job calls them in its own process under its own lock. Free: `job.py status` / `new`, the lenses,
+  reports, `store_diff.py`, `publish.py --dry-run` / `--withdraw` / `--restore`. The kernel frees it when the
+  process dies (kill -9 too). The lock is advisory: an editor or a heredoc into a `.jsonl` is not stopped, so a
+  new writer of shared files uses `shop_files` and a new sending command takes the lock.
 
 ## Conventions
 

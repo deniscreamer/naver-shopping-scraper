@@ -25,6 +25,7 @@ from typing import Any
 
 import publish as PB
 import shopify_payload as sp
+from shop_files import locked
 from shop_pricing import Policy, PriceError, policy
 from shopify_catalog import CatalogError
 
@@ -180,7 +181,10 @@ def main(argv: list[str] | None = None) -> int:
     print(f"reprice {args.shop} ({policy(args.shop).describe()['version']}): {summary(rows)}")
     print(f"table: {write_tsv(shop, rows)}")
     if args.apply:
-        print(f"reprice {args.shop} --apply: {len(rows)} products: {apply(shop, rows)}")
+        def send() -> int:
+            print(f"reprice {args.shop} --apply: {len(rows)} products: {apply(shop, rows)}")
+            return 0
+        return locked(args.shops_root, args.shop, "reprice.py --apply", send, "reprice")   # not while a job runs
     else:
         print("dry run: nothing sent (--apply sends them)")
     return 0

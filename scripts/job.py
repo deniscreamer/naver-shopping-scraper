@@ -74,6 +74,11 @@ answered on a product page ("wall: captcha", the tab kept) is read again as abov
 or Ctrl+C closes the tab before the run ends. `run` and `refresh` refuse a scroll job; `scroll --job` resumes it
 (its listing walked from the top again, done products skipped).
 
+The shop's lock (2026-11-16, shop_files.py): `run`, `scroll` (before a new job's folder) and `refresh` hold
+`<shops_root>/.<shop>.lock` for their whole life; another runner of the shop, or a hand command that rewrites the
+shop's files or sends its products, is refused at once (`stop: <shop> is busy: job.py run <id> (pid N, since T)`,
+exit 2). `status` and `new` take no lock.
+
 `--dedupe off|log|on` (`new` and `scroll`, the owner 2026-11-15; kept in job.json, read again on resume; off, the
 default, leaves the job as it was and writes no key): right after a product is collected, before its description
 images, dedupe.py looks it up in an index built at the run's start (the shop's published and owner-withdrawn products
@@ -98,7 +103,7 @@ from collections import Counter
 from datetime import datetime, timezone
 from typing import Any
 
-from shop_files import LedgerError, append_line, read_jsonl, write_atomic
+from shop_files import LedgerError, append_line, locked, read_jsonl, write_atomic
 
 SCRIPTS = os.path.dirname(os.path.abspath(__file__))
 JOBS_ROOT = os.path.join(SCRIPTS, "output", "jobs")
@@ -427,9 +432,12 @@ def cmd_refresh(args: argparse.Namespace) -> int:
     job = open_job(args.job)
     if _scroll_job(job):
         return 2
-    added = refresh(job, NaverApiClient(), get_store(), args.more)
-    print(f"job {job.id}: {added} products added")
-    return 0
+
+    def body() -> int:
+        added = refresh(job, NaverApiClient(), get_store(), args.more)
+        print(f"job {job.id}: {added} products added")
+        return 0
+    return locked(job.shops_root, job.shop, f"job.py refresh {job.id}", body)
 
 
 # ---- run -----------------------------------------------------------------------------------------------------
@@ -891,6 +899,10 @@ def cmd_run(args: argparse.Namespace) -> int:
     job = open_job(args.job)
     if _scroll_job(job):
         return 2
+    return locked(job.shops_root, job.shop, f"job.py run {job.id}", lambda: _run(job, args))
+
+
+def _run(job: Job, args: argparse.Namespace) -> int:
     ctx, code = _context(job)
     if ctx is None:
         return code
@@ -1222,16 +1234,16 @@ def run_scroll(job: Job, ctx: dict, tab: Tab, screen: Any, known: set[str]) -> i
 
 
 def cmd_scroll(args: argparse.Namespace) -> int:
-    from deferred_log import DeferredLog
     from keep_run import SHOPS_ROOT
-    from listing_filter import Screen
     from package_measures import load_table
     from shop_stores import get_store
     if args.job:
-        job = open_job(args.job)
-        if job.meta.get("mode") != "scroll":
-            print(f"stop: job {job.id} is not a scroll job: job.py run --job {job.id}")
+        old = open_job(args.job)
+        if old.meta.get("mode") != "scroll":
+            print(f"stop: job {old.id} is not a scroll job: job.py run --job {old.id}")
             return 2
+        job: Job | None = old
+        shop, shops_root, what = old.shop, old.shops_root, f"job.py scroll --job {old.id}"
     else:
         if not args.query or not args.category:
             print("stop: a new scroll job needs --query and --category (or --job ID to resume one)")
@@ -1242,7 +1254,17 @@ def cmd_scroll(args: argparse.Namespace) -> int:
         if not any(str(r["category_id"]) == args.category for r in load_table()["rows"]):
             print(f"stop: no category_measures.json row for {args.category}: ask the operator")
             return 2
-        job = new_scroll_job(args, get_store().id.value, os.path.abspath(args.shops_root or SHOPS_ROOT))
+        job, shop, shops_root = None, get_store().id.value, os.path.abspath(args.shops_root or SHOPS_ROOT)
+        what = f"job.py scroll (a new job, {args.category} {args.query!r})"
+    # the lock before a new job's folder: a refusal leaves no empty job for latest_job to pick
+    return locked(shops_root, shop, what, lambda: _scroll(args, job, shop, shops_root))
+
+
+def _scroll(args: argparse.Namespace, job: "Job | None", shop: str, shops_root: str) -> int:
+    from deferred_log import DeferredLog
+    from listing_filter import Screen
+    if job is None:
+        job = new_scroll_job(args, shop, shops_root)
         print(f"job {job.id}: scroll {job.meta['queries'][0]!r} (target {args.count or 'the listing end'})",
               flush=True)
     ctx, code = _context(job)

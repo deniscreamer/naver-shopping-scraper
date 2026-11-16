@@ -28,7 +28,7 @@ import description_image_text as image_text
 from description_images import current, load_sidecar
 from keep_run import SHOPS_ROOT, kept_run_ids
 import brand_fallback
-from shop_files import read_jsonl, write_atomic
+from shop_files import locked, read_jsonl, write_atomic
 from description_images import image_rows
 from shared_images import RULE as SHARED_RULE, drop_shared_images
 from transform import _texts, prepare
@@ -248,15 +248,18 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("shop", help="shop id, e.g. fairwardgolf")
     parser.add_argument("runs", nargs="*", help="kept run ids (default: every kept run)")
     args = parser.parse_args(argv)
-    try:
-        result = run(args.shop, args.runs or None)
-    except ShopRulesMissing as e:
-        print(f"run_transform: stop: {e}")
-        return 2
-    for line in result["report"]:
-        print(f"run_transform: {line}")
-    print(f"run_transform: -> {result['out_dir']}")
-    return 0
+
+    def body() -> int:
+        try:
+            result = run(args.shop, args.runs or None)
+        except ShopRulesMissing as e:
+            print(f"run_transform: stop: {e}")
+            return 2
+        for line in result["report"]:
+            print(f"run_transform: {line}")
+        print(f"run_transform: -> {result['out_dir']}")
+        return 0
+    return locked(SHOPS_ROOT, args.shop, "run_transform.py", body, "run_transform")   # not while a job runs
 
 
 if __name__ == "__main__":
