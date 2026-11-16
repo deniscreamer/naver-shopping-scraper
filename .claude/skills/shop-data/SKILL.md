@@ -7,24 +7,25 @@ description: Answer questions about many of a shop's products from its files, it
 
 Nothing here sends or writes but the `--keys-out` / `--table` / `--out` file you name (keep it in the scratchpad).
 The doc: `scripts/OPERATIONS.md` "Reading the shop by hand" (fields, filters, outputs, exit codes); refs (key,
-product id, handle, link): "Naming a product". One product's why: skill `product-trace`. `V=".venv/bin/python
-scripts/shop_view.py"`, repo root.
+product id, handle, link): "Naming a product". One product's why: skill `product-trace`. Run from the repo root, each
+command written out in full (no shell variable for it: zsh does not split one into words, and an agent's commands
+share no shell state).
 
 | Question | Command |
 |---|---|
-| How many products by stage / hold / store state | `$V query <shop> --count-by prepared` (or `held`, `state`, `placement`, `brand_source`, `leaves`) |
-| Which products match (a list, a keys file) | `$V query <shop> --where status=held --where held=single_only [--category C] [--leaf L] [--store draft] [--keys-out F]` |
-| Titles or brands that contain a word | `$V query <shop> --grep '<RE>' [--in title_en,brand_en] [--store published]` |
-| A product's fields, or several as a table | `$V show <shop> <ref...> [--fields key,state,title,price_krw,handle]`; `--keys-file F` for a list |
-| One stage's record as JSON | `$V show <shop> <ref> --raw prepared\|translated\|placement\|ledger\|description\|collected [--path a.b.0]` |
-| What the ledger did (today, by event or reason) | `$V ledger <shop> [--since 2026-11-16] [--status withdrawn] [--count-by event\|reason_code\|day]` |
-| One product's ledger story | `$V history <shop> <ref>` |
-| Did a batch of actions land as planned | a TSV `ref<TAB>state[<TAB>reason prefix]` -> `$V check <shop> plan.tsv` (exit 0: every line ok) |
+| How many products by stage / hold / store state | `.venv/bin/python scripts/shop_view.py query <shop> --count-by prepared` (or `held`, `state`, `placement`, `brand_source`, `leaves`) |
+| Which products match (a list, a keys file) | `.venv/bin/python scripts/shop_view.py query <shop> --where prepared=held --where held=single_only [--category C] [--leaf L] [--store draft] [--keys-out F]` |
+| Titles or brands that contain a word | `.venv/bin/python scripts/shop_view.py query <shop> --grep '<RE>' [--in title_en,brand_en] [--store published]` |
+| A product's fields, or several as a table | `.venv/bin/python scripts/shop_view.py show <shop> <ref...> [--fields key,state,title,price_krw,handle]`; `--keys-file F` for a list |
+| One stage's record as JSON | `.venv/bin/python scripts/shop_view.py show <shop> <ref> --raw prepared\|translated\|placement\|ledger\|description\|collected [--path a.b.0]` |
+| What the ledger did (today, by event or reason) | `.venv/bin/python scripts/shop_view.py ledger <shop> [--since 2026-11-16] [--status withdrawn] [--count-by event\|reason_code\|day]` |
+| One product's ledger story | `.venv/bin/python scripts/shop_view.py history <shop> <ref>` |
+| Did a batch of actions land as planned | a TSV `ref<TAB>state[<TAB>reason prefix]` -> `.venv/bin/python scripts/shop_view.py check <shop> plan.tsv` (exit 0: every line ok) |
 | What a job did; one outcome's products | `.venv/bin/python scripts/job.py report --job <id> [--event not_taken] [--table -]` |
 | Where a product went across the jobs | `.venv/bin/python scripts/job.py where <ref>` |
 | What a prepare / rule change changed, which are in the store | `.venv/bin/python scripts/prepared_diff.py old.jsonl new.jsonl --published-only [--keys-out F]` (skill `transform`) |
 | The store's own counts, vendors, a collection, one product | `.venv/bin/python scripts/shopify_catalog.py <shop> counts \| vendors \| collection <handle> [--count-by vendor,status] \| show <ref>` |
-| A snapshot of the store's products | `shopify_catalog.py <shop> dump [--fields id,handle,status,vendor,key] [--query 'status:active'] --out <scratch>/store.jsonl` |
+| A snapshot of the store's products | `.venv/bin/python scripts/shopify_catalog.py <shop> dump [--fields id,handle,status,vendor,key] [--query 'status:active'] --out <scratch>/store.jsonl` |
 
 Rules:
 - Every row is `TAB`-separated (lists comma-joined); `--json` for anything parsed further. Exit 1 with `N products

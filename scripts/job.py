@@ -1538,12 +1538,15 @@ def cmd_status(args: argparse.Namespace) -> int:
 
 # ---- report, where, watch (job_report.py; read only, no lock) ------------------------------------------------
 
-def _job_folder(job_id: str | None) -> str | None:
-    """The job's folder, or None (said on stderr) when there is no such job."""
+def _open(job_id: str | None) -> Job | None:
+    """The job, or None (said on stderr) when there is no such job or its job.json lacks shop / category /
+    shops_root."""
     try:
-        return open_job(job_id).folder
+        return open_job(job_id)
     except (OSError, ValueError) as e:
         print(f"job.py: no job {job_id}: {e}", file=sys.stderr)
+    except KeyError as e:
+        print(f"job.py: job {job_id}: job.json has no {e}", file=sys.stderr)
     except SystemExit as e:
         print(f"job.py: {e}", file=sys.stderr)
     return None
@@ -1551,9 +1554,10 @@ def _job_folder(job_id: str | None) -> str | None:
 
 def cmd_report(args: argparse.Namespace) -> int:
     import job_report
-    folder = _job_folder(args.job)
-    if folder is None:
+    job = _open(args.job)
+    if job is None:
         return job_report.EXIT_USAGE
+    folder = job.folder
     try:
         r = job_report.report(folder, args.event, args.since)
         rows = job_report.table(job_report.kept(job_report.events(folder), args.event, args.since)) \
@@ -1601,12 +1605,14 @@ def cmd_where(args: argparse.Namespace) -> int:
 
 def cmd_watch(args: argparse.Namespace) -> int:
     import job_report
-    folder = _job_folder(args.job)
-    if folder is None:
+    job = _open(args.job)
+    if job is None:
         return job_report.EXIT_USAGE
-    job = Job(folder)
     try:
-        r = job_report.watch(folder, job.now, args.every, args.timeout)
+        r = job_report.watch(job.folder, job.now, args.every, args.timeout, start=args.start)
+    except ValueError as e:                   # --from past the job's events
+        print(f"job.py watch: {e}", file=sys.stderr)
+        return job_report.EXIT_USAGE
     except LedgerError as e:
         print(f"job.py watch: {e}", file=sys.stderr)
         return job_report.EXIT_BROKEN
@@ -1753,6 +1759,8 @@ def main(argv: list[str] | None = None) -> int:
     wa.add_argument("--job")
     wa.add_argument("--every", type=int, default=20, help="return at every Nth published product of the job")
     wa.add_argument("--timeout", type=float, help="return (exit 9) after this many seconds")
+    wa.add_argument("--from", dest="start", type=int, metavar="N",
+                    help="count the events after the first N (the `next --from` of the last watch), not only new ones")
     wa.add_argument("--json", action="store_true")
     args = p.parse_args(argv)
     code = {"new": cmd_new, "run": cmd_run, "status": cmd_status, "refresh": cmd_refresh,

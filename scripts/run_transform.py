@@ -31,7 +31,11 @@ report.
 
 --diff keeps the summaries of prepared/products.jsonl before the run (under the same shop lock) and prints, after the
 report, "run_transform: diff: <counts>" and prepared_diff.py's TSV (key, change, field, old, new); the exit code
-stays the run's. --shops-root DIR: another folder of shops (a copy, a test), default scripts/output/shops.
+stays the run's. --shops-root DIR: another folder of shops (a copy, a test), default scripts/output/shops. A copy of
+the real shops is prepared as the real one only with --copy-of scripts/output/shops (2026-11-16): the paid choices
+come from the jobs made for that root (job.json's shops_root) and the brand dictionary is loaded for it alone, so
+without --copy-of a copy is prepared with no paid variant and no dictionary brand (a false diff: 752 of 2,451
+"changed"). --jobs-root DIR: the jobs whose paid choices count (default scripts/output/jobs).
 """
 import argparse
 import hashlib
@@ -373,9 +377,10 @@ def _known_brands(shops_root: str) -> list[str]:
 
 
 def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
-        choices: dict[str, str] | None = None, cache: bool = False) -> dict:
+        choices: dict[str, str] | None = None, cache: bool = False, brands: list[str] | None = None) -> dict:
     """Prepare the shop's latest lines. Each product with the paid choices of its job (`choices`, default
     paid_choices(): the jobs' files), every other one with what costs nothing extra (the owner, 2026-11-09).
+    `brands`: the brand dictionary's names for the fallback (default _known_brands(shops_root)).
     cache: each product's prepare through its record in <shop>/prepare_cache/ (_prepared_cached; job.py and the
     CLI); result["cache"] = {hit, miss}. The steps across products below always run over the whole shop."""
     rules, variant = _setup(shop, shops_root, choices)
@@ -399,7 +404,7 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
         {k: (((line[2].get("specs") or {}).get("facts") or {}).get("origin") or {}).get("value")
          for k, line in latest.items()},
         _texts,
-        _known_brands(shops_root),
+        _known_brands(shops_root) if brands is None else brands,
         brand_by_owner(shop, shops_root))
     for p in prepared:                                                  # after the brand: needs the fallback's answer
         cat = rules.categories.get(str(p["source"].get("category_id")))
@@ -448,14 +453,26 @@ def main(argv: list[str] | None = None) -> int:
                                                             "afresh; writes nothing; exit 1 on a difference")
     parser.add_argument("--shops-root", default=SHOPS_ROOT, metavar="DIR",
                         help="the folder holding the shops (default scripts/output/shops)")
+    parser.add_argument("--copy-of", metavar="ROOT", help="--shops-root is a copy of ROOT (scripts/output/shops): "
+                        "take the paid choices of ROOT's jobs and the brand dictionary as for ROOT, so the copy is "
+                        "prepared as ROOT would be")
+    parser.add_argument("--jobs-root", default=JOBS_ROOT, metavar="DIR", help="the folder holding the jobs whose "
+                        "paid choices count (default scripts/output/jobs)")
     parser.add_argument("--diff", action="store_true", help="after the run, what changed in prepared/products.jsonl "
                         "(prepared_diff.py: a summary line, then its TSV); not with --verify")
     args = parser.parse_args(argv)
     if args.diff and args.verify:
         parser.error("--diff is not with --verify (it writes nothing to compare)")
+    as_root = args.copy_of or args.shops_root          # the jobs and the dictionary of the root this one copies
+    try:
+        choices = paid_choices(args.shop, as_root, args.jobs_root)
+    except LedgerError as e:
+        print(f"run_transform: stop: {e}")
+        return 2
+    brands = _known_brands(as_root)
     if args.verify:                                                     # reads only: allowed while a job runs
         try:
-            code, lines = verify(args.shop, args.runs or None, args.shops_root)
+            code, lines = verify(args.shop, args.runs or None, args.shops_root, choices)
         except ShopRulesMissing as e:
             print(f"run_transform: stop: {e}")
             return 2
@@ -473,7 +490,8 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"run_transform: stop: --diff: {e}")
                 return 2
         try:
-            result = run(args.shop, args.runs or None, shops_root=args.shops_root, cache=not args.full)
+            result = run(args.shop, args.runs or None, shops_root=args.shops_root, choices=choices,
+                         cache=not args.full, brands=brands)
         except ShopRulesMissing as e:
             print(f"run_transform: stop: {e}")
             return 2

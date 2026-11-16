@@ -348,8 +348,8 @@ def test_empty_shop_and_missing_files(shop_fixture, capsys, tmp_path):
         assert (code, out) == (0, "")
     code, out, err = run(capsys, fx, "show", "empty", LIVE)
     assert code == 1 and "no product of empty matches" in err
-    code, out, _ = run(capsys, fx, "show", "empty", fx.key(LIVE), "--fields", "key,state,prepared")
-    assert out.splitlines()[1] == f"{fx.key(LIVE)}\tnone\t"            # a full key, known or not: as before
+    code, out, err = run(capsys, fx, "show", "empty", fx.key(LIVE), "--fields", "key,state,prepared")
+    assert code == 1 and out == "key\tstate\tprepared\n" and "in none of empty's files" in err   # not "never sent"
     os.remove(os.path.join(fx.shops, fx.shop, "translation", "descriptions.jsonl"))
     os.remove(os.path.join(fx.shops, fx.shop, "placement", "placements.jsonl"))
     code, rows = run_json(capsys, fx, "show", fx.shop, LIVE, "--fields", "description,placement,leaves,state")
@@ -368,3 +368,52 @@ def test_big_prepared_file(shop_fixture, capsys):
     assert code == 0 and out.splitlines()[0] == "none\t3004" and time.monotonic() - started < 20
     code, out, _ = run(capsys, fx, "show", fx.shop, "9001234", "--fields", "key")
     assert out.splitlines()[1] == f"{fx.shop}:naver:7:9001234"
+
+
+# ---- review fixes (2026-11-16) ---------------------------------------------------------------------------------
+
+def test_an_activation_after_a_restore_is_activated_and_a_restore_after_one_is_restored():
+    restored = {"key": "k", "status": "published", "store_status": "DRAFT", "digest": "", "restored": "back",
+                "at": "2026-11-16T08:00:00Z", "created": True}
+    activated = {**restored, "store_status": "ACTIVE", "activated": "2026-11-16T09:00:00Z"}   # publish.activate()
+    assert V.ledger_event(restored) == "restored"
+    assert V.ledger_event(activated) == "activated" and V.row_time(activated) == "2026-11-16T09:00:00Z"
+    again = {**activated, "digest": "", "restored": "again", "at": "2026-11-16T10:00:00Z"}     # restore() of it
+    assert V.ledger_event(again) == "restored"
+
+
+def test_ledger_counts_an_activation_of_a_restored_draft(shop_fixture, capsys):
+    fx = shop_fixture
+    rows = read_jsonl(ledger_path(fx), tail_ok=True)
+    last = [r for r in rows if r["key"] == fx.key(RESTORED)][-1]
+    with open(ledger_path(fx), "a", encoding="utf-8") as f:
+        for row in ({**last, "digest": "", "restored": "r", "store_status": "DRAFT", "at": "2026-11-16T20:00:00Z"},
+                    {**last, "digest": "", "restored": "r", "store_status": "ACTIVE", "at": "2026-11-16T20:00:00Z",
+                     "activated": "2026-11-16T21:00:00Z"}):
+            f.write(json.dumps(row, ensure_ascii=False) + "\n")
+    code, out, _ = run(capsys, fx, "ledger", fx.shop, "--since", "2026-11-16T20:00Z")
+    assert [line.split("\t")[1] for line in out.splitlines()] == ["restored", "activated"]
+
+
+def test_show_history_check_refuse_a_full_key_no_file_has(shop_fixture, capsys, tmp_path):
+    fx = shop_fixture
+    typo = f"{fx.shop}:naver:9:999"
+    code, out, err = run(capsys, fx, "show", fx.shop, typo, LIVE)
+    assert code == 1 and f"== {fx.key(LIVE)}" in out and typo not in out and "in none of" in err
+    code, out, err = run(capsys, fx, "history", fx.shop, typo)
+    assert code == 1 and "(never sent)" not in out and "in none of" in err
+    plan = tmp_path / "plan.tsv"
+    plan.write_text(f"{typo}\tnone\n{fx.key(SINGLE)}\tnone\n", encoding="utf-8")
+    code, out, _ = run(capsys, fx, "check", fx.shop, str(plan))
+    assert code == 1 and out.splitlines()[0].startswith(f"ERROR\t{typo}\t")
+    assert out.splitlines()[1].startswith(f"ok\t{fx.key(SINGLE)}")       # held, never sent: a real "none"
+
+
+def test_query_aliases_named_and_count_by_total(shop_fixture, capsys):
+    fx = shop_fixture
+    err = usage(capsys, fx, "query", fx.shop, "--where", "nope=1")
+    assert "aliases: status = prepared, note = notes, leaf = leaves" in err
+    code, out, err = run(capsys, fx, "query", fx.shop, "--where", "prepared=held", "--count-by", "state")
+    assert code == 0 and "total\t2" in err and sum(int(x.split("\t")[1]) for x in out.splitlines()) == 2
+    code, out, err = run(capsys, fx, "query", fx.shop, "--where", "prepared=nothing", "--count-by", "state")
+    assert (code, out) == (0, "") and "total\t0" in err

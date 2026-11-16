@@ -33,8 +33,9 @@ open with "How to use".
 
 Commands (repo root, offline unless noted):
 - `.venv/bin/python scripts/keep_run.py scripts/output/<run>` then `.venv/bin/python scripts/run_transform.py <shop>`
-- `.venv/bin/python scripts/run_transform.py <shop> --verify` (cache vs afresh), `--full` (all afresh), `--diff`
-  (then what changed, product by product), `--shops-root <copy>` (a clone of the shop: `cp -cR`)
+- `.venv/bin/python scripts/run_transform.py <shop> --verify` (cache vs afresh), `--full` (all afresh), `--diff` (then
+  what changed, product by product), `--shops-root <copy> --copy-of scripts/output/shops` (a clone of the shop:
+  `cp -cR`; without `--copy-of` a clone is prepared with no paid variant and no dictionary brand, a false diff)
 - `.venv/bin/python scripts/prepared_diff.py old.jsonl new.jsonl [--fields ...] [--published-only] [--keys-out F]`
 - `.venv/bin/python scripts/description_images.py <shop>` (networked OCR stage)
 - `UPDATE_GOLDEN=1 .venv/bin/python -m pytest scripts/test_prepared_golden.py` after a deliberate change: read the diff.

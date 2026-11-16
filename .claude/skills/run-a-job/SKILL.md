@@ -41,12 +41,13 @@ Steps:
    > scripts/output/jobs/_scroll-logs/<name>-<UTC stamp>.log 2>&1` (`<name>`: a short word for the category or
    query, e.g. `wedge-sets`; the stamp `date -u +%Y%m%dT%H%M%SZ`).
 3. Watch with `.venv/bin/python scripts/job.py watch --job <id> --every 20` in the background (no hand-made polling
-   loop; it takes no lock and never restarts the runner). It returns once, with an exit code: 0 the next 20
-   published (report briefly from `job.py report --job <id>`), 3 STOP, 4 waiting / a long network wait, 5 a captcha
-   not answered, 6 a listing tab reopen, 7 done, 8 no runner, 9 `--timeout`; relay its one line, then run it again
-   (not after 7). A pending captcha is not in the job's log until its 600 s wait expired: run
-   `.venv/bin/python scripts/captcha_watch.py` beside the job (or `--once`) and relay its question to the owner.
-   What each stop means and who acts: JOB_AGENT.md "What stops, and who acts" (the log line: `tail` the log).
+   loop; it takes no lock and never restarts the runner). It returns once, with an exit code: 0 the next 20 published
+   (report briefly from `job.py report --job <id>`), 3 STOP, 4 waiting / a long network wait, 5 a captcha not
+   answered, 6 a listing tab reopen, 7 done, 8 no runner, 9 `--timeout`; relay its one line, then run it again with
+   the `--from N` the line ends with (`next --from N`: nothing logged meanwhile is lost; not after 7). A pending
+   captcha is not in the job's log until its 600 s wait expired: run `.venv/bin/python scripts/captcha_watch.py`
+   beside the job (or `--once`) and relay its question to the owner. What each stop means and who acts: JOB_AGENT.md
+   "What stops, and who acts" (the log line: `tail` the log).
 4. Resume: `job.py scroll --job <id>` (`run` for an old-mode job), only after a stop the owner cleared. After a
    captcha or a ban in the last 24 h: a small count (JOB_AGENT.md "4. Stop and resume").
 5. `review due` (drafts): skill `visual-review` with the printed commands; activation: skill `store-actions`.

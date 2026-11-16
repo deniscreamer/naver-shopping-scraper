@@ -17,15 +17,19 @@ A product is compared by a few summary fields (FIELDS), each a short text:
     variants  each variant's options ("a / b", "[sold out]" when not available)
     package   per package field (package.package_weight_g ...): the variants' values, "min-max (source cN)"
     images    the count and a digest of the photos' sha256 in order
-    other     every other part of the record (source, texts, product.reviews, ...): the names of those that differ
+    other     every other part of the record (source, texts, product.reviews, ...): the names of those that differ,
+              once, in the new column (old "-"; a part on one side only: "(old only)" / "(new only)")
 
 Output: a TSV on stdout, `key<TAB>change<TAB>field<TAB>old<TAB>new` a line, sorted by key then field. change is
 added (field status, new = its status), removed (old = its status) or changed (one line a field that differs; for a
-list field old / new hold only the items the other side lacks, joined by " | ", the first 10 then "(+N more)"). Tabs and line ends in a value become
-spaces. One summary line on stderr. --json prints {"old", "new", "counts", "products": [{"key", "change", "fields":
-{field: {"old", "new"}}}]} instead. --keys-out F writes the keys of every listed product, one a line (shop_view's
---keys-file reads it). --published-only keeps the products whose last ledger row (<shops-root>/<shop>/publish/
-published.jsonl) is "published"; the shop is --shop, else the new file's first record's.
+list field old / new hold only the items the other side lacks, joined by " | ", the first 10 then "(+N more)";
+other: see above). Tabs and line ends in a value become spaces. One summary line on stderr. --json prints {"old",
+"new", "counts", "products": [{"key", "change", "fields": {field: {"old", "new"}}}]} instead. --keys-out F writes
+the keys of every listed product, one a line (shop_view's --keys-file reads it). --published-only keeps the products
+whose last ledger row (<shops-root>/<shop>/publish/published.jsonl) is "published"; the shop is --shop, else the
+new file's first record's; the summary line then says "(published only)". The ledger is the real shop's unless
+--shops-root names the clone the two files come from. The keys file starts with a `# prepared_diff.py: N products`
+comment line (`wc -l` counts it).
 
 Both files are read with shop_files.read_jsonl, strict (prepared is written whole: a broken line is an error); a key
 twice in a file: the last line counts. The ledger is read tail_ok, as the other readers do.
@@ -144,8 +148,9 @@ def compare(old: Summary, new: Summary, fields: Iterable[str] = FIELDS) -> dict[
             if a != b:
                 da, db = dict(x.split("=", 1) for x in a or []), dict(x.split("=", 1) for x in b or [])
                 names = sorted(k for k in set(da) | set(db) if da.get(k) != db.get(k))
-                out[f] = {"old": " | ".join(k for k in names if k in da),
-                          "new": " | ".join(k for k in names if k in db)}
+                out[f] = {"old": "", "new": " | ".join(k + ("" if k in da and k in db else
+                                                             " (old only)" if k in da else " (new only)")
+                                                         for k in names)}
         elif f in LIST_FIELDS:
             if a != b:
                 gone, came = _only(a or [], b or []), _only(b or [], a or [])
@@ -218,14 +223,17 @@ def counts(old: dict[str, Summary], new: dict[str, Summary], products: list[dict
                 by_field[name] = by_field.get(name, 0) + 1
     seen = [k for k in set(old) | set(new) if only is None or k in only]
     changes = [p["change"] for p in products]
-    return {"old": len(old), "new": len(new), "compared": len(seen), "added": changes.count("added"),
+    return {"old": len(old), "new": len(new), "compared": len(seen), "published_only": only is not None,
+            "added": changes.count("added"),
             "removed": changes.count("removed"), "changed": changes.count("changed"),
             "same": len(seen) - len(products), "by_field": dict(sorted(by_field.items()))}
 
 
 def summary_line(c: dict[str, Any]) -> str:
     fields = ", ".join(f"{k} {v}" for k, v in c["by_field"].items())
-    return (f"{c['old']} old, {c['new']} new, {c['compared']} compared: {c['added']} added, {c['removed']} removed, "
+    return (f"{c['old']} old, {c['new']} new, {c['compared']} compared"
+            + (" (published only)" if c.get("published_only") else "")
+            + f": {c['added']} added, {c['removed']} removed, "
             f"{c['changed']} changed" + (f" ({fields})" if fields else "") + f", {c['same']} the same")
 
 

@@ -10,7 +10,8 @@ keys, titles, numbers) -> the owner's **yes** -> **run** -> **report** what chan
 ledger row). A number from a lens sheet is a line of that lens's `index.tsv` (column `key`). Every `<key>` below
 also takes a product id, a handle or a link, and `--keys-file F` (the owner's list, one a line) or `--job <id>
 [--event published]` adds more: **show** with the same command and `--dry-run` (`<key>: would withdraw`, nothing
-sent; a ref of two products stops with both keys: ask which). Details: scripts/PUBLISH.md
+sent; `<key>: not published here` / `not withdrawn here` / `not a draft here`: the real call would refuse it, tell
+the owner; a ref of two products stops with both keys: ask which). Details: scripts/PUBLISH.md
 "Withdraw, hold, restore, activate"; refs: scripts/OPERATIONS.md "Naming a product".
 
 A list for the owner (and for `--keys-file`) from the files, read only: `.venv/bin/python scripts/shop_view.py query

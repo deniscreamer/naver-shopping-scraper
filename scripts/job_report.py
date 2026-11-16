@@ -6,7 +6,7 @@ or stops a runner. job.py wires the subcommands:
 
     .venv/bin/python scripts/job.py report [--job ID] [--event E] [--since T] [--table out.tsv | -] [--json]
     .venv/bin/python scripts/job.py where <ref> [--shop S] [--jobs-root DIR] [--shops-root DIR] [--json]
-    .venv/bin/python scripts/job.py watch [--job ID] [--every 20] [--timeout S] [--json]
+    .venv/bin/python scripts/job.py watch [--job ID] [--every 20] [--timeout S] [--from N] [--json]
 
 `--job` left out: the latest job (as `status`). A full path works too.
 
@@ -32,9 +32,12 @@ watch: polls events.jsonl (and the runner through job.py's Job.now) every POLL_S
     8  no runner (gone after it was seen, or none within START_GRACE_S)
     9  --timeout seconds passed         1  a broken events file      2  usage or no such job
 
-Only events written after the watch started count (but `done` as the last event). One line on exit (`--json`: the
-dict). A pending captcha is not in the job's log (scripts/captcha_watch.py reads GET /captcha). Restart the
-watcher after each exit, as the runner goes on by itself (JOB_AGENT.md, 3. Watch).
+Only events written after the watch started count (but `done` as the last event), or with `--from N` the events
+after the first N (2026-11-16): every exit says `next --from N` (`--json`: "seen"), the position just after the event
+that ended it, so a restarted watch reports what was logged meanwhile (a wait in the same read as a published, a
+multiple of --every passed while no watch ran). One line on exit (`--json`: the dict). A pending captcha is not in
+the job's log (scripts/captcha_watch.py reads GET /captcha). Restart the watcher after each exit with that --from,
+as the runner goes on by itself (JOB_AGENT.md, 3. Watch). A --from past the job's events is a usage error (exit 2).
 """
 from __future__ import annotations
 
@@ -96,7 +99,8 @@ def reason_code(reason: str | None) -> str:
     return text[:80] or "-"
 
 
-def kept(evs: Iterable[dict[str, Any]], event: str | None = None, since: datetime | None = None) -> list[dict]:
+def kept(evs: Iterable[dict[str, Any]], event: str | None = None,
+         since: datetime | None = None) -> list[dict[str, Any]]:
     out = []
     for e in evs:
         if event and e.get("event") != event:
@@ -114,9 +118,9 @@ def kept(evs: Iterable[dict[str, Any]], event: str | None = None, since: datetim
 def report(folder: str, event: str | None = None, since: datetime | None = None) -> dict[str, Any]:
     m, all_events = meta(folder), events(folder)
     evs = kept(all_events, event, since)
-    reasons: dict[str, Counter] = {name: Counter() for name in REASONS}
+    reasons: dict[str, Counter[str]] = {name: Counter() for name in REASONS}
     held_last: dict[str, list[str]] = {}
-    cost: Counter = Counter()
+    cost: Counter[str] = Counter()
     for e in evs:
         name = e.get("event")
         if name in reasons:
@@ -126,10 +130,10 @@ def report(folder: str, event: str | None = None, since: datetime | None = None)
         if name in ("translated", "described") and isinstance(e.get("cost"), (int, float)):
             cost[name] += e["cost"]
     held = Counter(code for codes in held_last.values() for code in codes)
-    final = "published" if m.get("publish") else "translated" if m.get("translate") else "prepared"
+    goal = "published" if m.get("publish") else "translated" if m.get("translate") else "prepared"   # a setting
     return {
         "job": os.path.basename(os.path.normpath(folder)), "shop": m.get("shop"), "category": m.get("category"),
-        "mode": m.get("mode") or "listing", "final": final, "created_at": m.get("created_at"),
+        "mode": m.get("mode") or "listing", "goal": goal, "created_at": m.get("created_at"),
         "filter": {"event": event, "since": since.isoformat() if since else None},
         "events": len(evs), "first": evs[0].get("at") if evs else None, "last": evs[-1].get("at") if evs else None,
         "keys": len({e["key"] for e in evs if e.get("key")}),
@@ -146,7 +150,7 @@ def report(folder: str, event: str | None = None, since: datetime | None = None)
 
 
 def report_lines(r: dict[str, Any]) -> list[str]:
-    out = [f"job\t{k}\t{r[k]}" for k in ("job", "shop", "category", "mode", "final", "created_at", "finished")]
+    out = [f"job\t{k}\t{r[k]}" for k in ("job", "shop", "category", "mode", "goal", "created_at", "finished")]
     out += [f"filter\t{k}\t{v}" for k, v in r["filter"].items() if v]
     out += [f"events\t{k}\t{r[k]}" for k in ("events", "keys", "first", "last")]
     out += [f"event\t{k}\t{v}" for k, v in r["counts"].items()]
@@ -272,11 +276,18 @@ def where(key_or_pid: str, folders: list[str]) -> list[dict[str, Any]]:
 
 # ---- watch -----------------------------------------------------------------------------------------------------
 
+def _attempt(e: dict[str, Any]) -> int:
+    try:
+        return int(e.get("attempt") or 0)
+    except (TypeError, ValueError):            # not a number: not a long wait by itself
+        return 0
+
+
 def _trigger(e: dict[str, Any]) -> int | None:
     name = e.get("event")
     if name == "stop":
         return EXIT_STOP
-    if name == "waiting" or (name == "network_wait" and int(e.get("attempt") or 0) >= LONG_TRY):
+    if name == "waiting" or (name == "network_wait" and _attempt(e) >= LONG_TRY):
         return EXIT_WAITING
     if name == "captcha_again":
         return EXIT_CAPTCHA
@@ -293,26 +304,30 @@ WORDS = {EXIT_PUBLISHED: "published", EXIT_STOP: "STOP", EXIT_WAITING: "waiting"
 
 def watch(folder: str, runner: Callable[[], Any], every: int = 20, timeout: float | None = None,
           poll: float = POLL_S, clock: Callable[[], float] = time.monotonic,
-          sleep: Callable[[float], None] = time.sleep) -> dict[str, Any]:
+          sleep: Callable[[float], None] = time.sleep, start: int | None = None) -> dict[str, Any]:
     """Waits for the first thing the owner must hear (the module's docstring) -> {exit, why, job, published (the
-    job's total), new (events since the start, by name), event (the one that ended it)}. `runner` returns the live
-    runner's now.json or None (job.Job.now); `clock` / `sleep` are the test's."""
+    job's total), new (events since the start, by name), event (the one that ended it), seen (the events read up to
+    and with it: the next watch's `start`)}. `start` (--from): the events after the first `start` count, else those
+    written after the call; ValueError when it is past the job's events. `runner` returns the live runner's now.json
+    or None (job.Job.now); `clock` / `sleep` are the test's."""
     every = max(1, every)
     t0 = clock()
     evs = events(folder)
-    seen = len(evs)
-    published = sum(1 for e in evs if e.get("event") == "published")
+    if start is not None and not 0 <= start <= len(evs):
+        raise ValueError(f"--from {start}: the job has {len(evs)} events")
+    seen = len(evs) if start is None else start
+    published = sum(1 for e in evs[:seen] if e.get("event") == "published")
     start_published = published
-    new: Counter = Counter()
+    new: Counter[str] = Counter()
     had_runner = False
 
     def done(code: int, e: dict[str, Any] | None = None) -> dict[str, Any]:
         why = WORDS[code] + (f": {one_line(_detail(e))}" if e and _detail(e) else "")
         return {"exit": code, "why": why, "job": os.path.basename(os.path.normpath(folder)), "published": published,
                 "new_published": published - start_published, "new": dict(sorted(new.items())),
-                "event": e}
+                "event": e, "seen": seen}
 
-    if evs and evs[-1].get("event") == "done":
+    if evs and evs[-1].get("event") == "done" and seen >= len(evs):
         return done(EXIT_DONE, evs[-1])
     while True:
         alive = runner() is not None            # before the read: a runner that logs its stop and exits is seen
@@ -337,7 +352,8 @@ def watch(folder: str, runner: Callable[[], Any], every: int = 20, timeout: floa
 
 def watch_line(r: dict[str, Any]) -> str:
     new = ", ".join(f"{k} {v}" for k, v in r["new"].items()) or "no new event"
-    return f"watch {r['job']}: {r['why']}; published {r['published']} (+{r['new_published']}); since the start: {new}"
+    return (f"watch {r['job']}: {r['why']}; published {r['published']} (+{r['new_published']}); since the start: "
+            f"{new}; next --from {r['seen']}")
 
 
 def print_rows(rows: Iterable[str]) -> None:

@@ -119,11 +119,14 @@ not the logs.
 
 The watcher is `job.py watch` (2026-11-16, the owner's five tools; `job_report.py`): it reads `events.jsonl` every
 10 s, takes no lock, never starts or restarts a runner, and returns with an exit code that says what to tell the
-owner. Run it in the background, relay its one line, run it again; no hand-made polling loop.
+owner. Run it in the background, relay its one line, run it again with the `--from N` its line ends with
+(`next --from N`; `--json`: "seen"), so what was logged after the event that ended it (a wait in the same read as a
+published, a multiple of `--every` passed between two watches) is reported by the next one; no hand-made polling loop.
 
 ```sh
-.venv/bin/python scripts/job.py watch --job <id> --every 20      # one line on exit; --json: the dict
-.venv/bin/python scripts/job.py report --job <id>                # what the job did so far (below), for the report
+.venv/bin/python scripts/job.py watch --job <id> --every 20              # the first watch; one line on exit
+.venv/bin/python scripts/job.py watch --job <id> --every 20 --from <N>   # each next one: N from the last line
+.venv/bin/python scripts/job.py report --job <id>                        # what the job did so far (below)
 ```
 
 | Exit | Seen | You |
@@ -136,15 +139,25 @@ owner. Run it in the background, relay its one line, run it again; no hand-made 
 | 7 | `done` (also: the job was done when the watch started) | section 5 |
 | 8 | no runner (gone after it was seen, or none within 60 s) | `job.py status`: a stop without an event is `recover-state` |
 | 9 | `--timeout S` passed | watch again |
-| 1 / 2 | a broken `events.jsonl` (the file and line named) / usage, no such job | `recover-state` / the command |
+| 1 / 2 | a broken `events.jsonl` (the file and line named) / usage, no such job, a `--from` past the events | `recover-state` / the command |
 
 `job.py report [--job ID] [--event E] [--since T] [--table F|-] [--json]` reads a job's events (`--job` left out: the
 latest): `section<TAB>name<TAB>value` lines: the job, the event counts, the `not_taken` / `deferred` / `failed`
 reasons by code (`duplicate_of`, `placement held: single_only`, ...), the held codes, the model cost, the stops and
-waits. `--table F` writes one row a product (key, last event, status, reason, held, handle, events, first, last; `-`
-to stdout). `job.py where <ref>` lists one product's events across every job (and the screen's leave-outs of its
-product id), oldest first: the ref is a key, a product id, a handle or a link; a product id no shop file knows is
-still found in the events.
+waits. How to read them for the owner:
+
+- `job goal published` is the job's setting (the stage it takes a product to), not an outcome;
+- `event published N` counts publications, drafts and live alike (`shop_view.py query <shop> --job <id> --event
+  published --fields key,state,handle,title` says which, with the titles);
+- `held <code> N`: products this job prepared as held, by their last prepare's code; `not_taken <reason> N`: products
+  the job did not take, by reason (`placement held: single_only` is the placement's hold, not the prepare's), so the
+  two count different products and may differ for one code;
+- a review due is not an event: `job.py status` prints `review due` (section Draft first).
+
+`--table F` writes one row a product (key, last event, status, reason, held, handle, events, first, last; `-` to
+stdout). `job.py where <ref>` lists one product's events across every job (and the screen's leave-outs of its product
+id), oldest first: the ref is a key, a product id, a handle or a link; a product id no shop file knows is still found
+in the events.
 
 What the log says:
 
@@ -265,9 +278,11 @@ A captcha is answered by the owner in Chrome while the read waits; a login page 
    and change nothing in the store: a withdrawal is the owner's (`publish.py --withdraw`). The rows the screen left
    out are in the job's `screened.jsonl`.
 6. Duplicates of the run: `dedupe.py --pairs <shop> --job <id>` ([DEDUPE.md](DEDUPE.md)).
-7. The owner's summary: `job.py report --job <id>` (counts, reasons by code, cost); the products of one outcome as a
-   keys file for the next command: `job.py report --job <id> --event not_taken --table -` or
-   `shop_view.py query <shop> --job <id> --where status=held --keys-out held.txt` (OPERATIONS.md, Reading the shop
+7. The owner's summary: `job.py report --job <id>` (counts, reasons by code, cost; how to read it: 3. Watch); the
+   published list with titles and draft / active: `shop_view.py query <shop> --job <id> --event published --fields
+   key,state,handle,title`; the products of one outcome as a keys file for the next command:
+   `job.py report --job <id> --event not_taken --table -` or
+   `shop_view.py query <shop> --job <id> --where prepared=held --keys-out held.txt` (OPERATIONS.md, Reading the shop
    by hand); an action on them goes through `--keys-file` / `--job ID --event E` (skill `store-actions`).
 
 ### Draft first (a category not yet reviewed; the owner, 2026-11-16)

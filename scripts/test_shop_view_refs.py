@@ -15,6 +15,7 @@ import shop_view as V
 from shop_files import read_jsonl
 
 LIVE, AGENCY, THREE = "13552318731", "12178430576", "13830324906"
+WITHDRAWN = "12080067974"
 
 
 def handles(fx, pid):
@@ -201,12 +202,53 @@ def test_publish_withdraw_by_product_id_dry_run_names_the_key_and_sends_nothing(
     assert publish.main([fx.shop, "--shops-root", fx.shops, "--withdraw", LIVE, "--reason", "r", "--dry-run"]) == 0
     assert capsys.readouterr().out.strip() == f"{fx.key(LIVE)}: would withdraw (dry run: nothing sent)"
     assert publish.main([fx.shop, "--shops-root", fx.shops, "--restore", handles(fx, AGENCY)[0],
-                         "--withdraw", "x", "--reason", "r", "--dry-run"]) == 0       # one action a run: restore first
-    assert capsys.readouterr().out.strip() == f"{fx.key(AGENCY)}: would restore (dry run: nothing sent)"
+                         "--withdraw", "x", "--reason", "r", "--dry-run"]) == 1       # one action a run: restore first
+    # AGENCY was restored already: the real call would stop with "not withdrawn here", and so does the dry run
+    assert capsys.readouterr().out.strip() == f"{fx.key(AGENCY)}: not withdrawn here (dry run)"
+    assert publish.main([fx.shop, "--shops-root", fx.shops, "--restore", WITHDRAWN, "--reason", "r",
+                         "--dry-run"]) == 0
+    assert capsys.readouterr().out.strip() == f"{fx.key(WITHDRAWN)}: would restore (dry run: nothing sent)"
     assert publish.main([fx.shop, "--shops-root", fx.shops, "--activate", "--job", fx.jobs_ids[1], "--event",
                          "published", "--jobs-root", fx.jobs, "--dry-run"]) == 0
-    assert len(capsys.readouterr().out.splitlines()) == 5
+    out = capsys.readouterr().out.splitlines()        # all active by now: as the real call, "not a draft here"
+    assert len(out) == 5 and all(x.endswith(": not a draft here (dry run)") for x in out)
     assert open(ledger, encoding="utf-8").read() == before
+
+
+def test_publish_dry_run_store_action_on_an_unknown_full_key_says_what_the_real_call_would(shop_fixture, no_store,
+                                                                                           capsys):
+    import publish
+    fx = shop_fixture
+    typo = f"{fx.shop}:naver:9:999"
+    for action, said, code in (("--withdraw", "not published here", 1), ("--restore", "not withdrawn here", 1),
+                               ("--activate", "not a draft here", 0)):
+        argv = [fx.shop, "--shops-root", fx.shops, action, typo, "--dry-run"]
+        assert publish.main(argv + (["--reason", "r"] if action != "--activate" else [])) == code
+        assert capsys.readouterr().out.strip() == f"{typo}: {said} (dry run)"
+
+
+@pytest.mark.parametrize("argv", [
+    ["--only", ""], ["--only", " "], ["--only", "", "--only", LIVE], ["--keys-file", ""], ["--event", "published"],
+    ["--job", ""], ["--withdraw", LIVE, "--withdraw", "", "--reason", "r"],
+])
+def test_publish_an_empty_or_lone_selection_never_widens_to_every_product(shop_fixture, no_store, monkeypatch,
+                                                                         capsys, argv):
+    import publish
+    fx = shop_fixture
+    monkeypatch.setattr(publish, "_publish", lambda *a: pytest.fail("built payloads for a selection that is empty"))
+    with pytest.raises(SystemExit) as e:
+        publish.main([fx.shop, "--shops-root", fx.shops, "--dry-run", *argv])
+    assert e.value.code == 2
+    capsys.readouterr()
+
+
+def test_publish_only_an_unknown_ref_is_not_ready_as_before(shop_fixture, no_store, monkeypatch, capsys):
+    import publish
+    fx = shop_fixture
+    monkeypatch.setattr(publish, "offline_ids", lambda shop: {"vendors": {}, "tenant": "Fairward Golf"})
+    assert publish.main([fx.shop, "--shops-root", fx.shops, "--dry-run", "--only", "nosuchkey"]) == 0
+    out = capsys.readouterr()
+    assert "nosuchkey: not ready" in out.err and f"publish {fx.shop}: 0 products" in out.out
 
 
 def test_publish_refuses_an_ambiguous_or_unknown_ref_before_any_store_call(shop_fixture, no_store, capsys):
@@ -217,7 +259,7 @@ def test_publish_refuses_an_ambiguous_or_unknown_ref_before_any_store_call(shop_
         publish.main([fx.shop, "--shops-root", fx.shops, "--withdraw", LIVE, "--reason", "r"])
     err = capsys.readouterr().err
     assert e.value.code == 2 and fx.key(LIVE) in err and twin in err
-    for argv in (["--activate", "nope"], ["--withdraw", "--reason", "r"], ["--only", "nope", "--dry-run"]):
+    for argv in (["--activate", "nope"], ["--withdraw", "--reason", "r"], ["--only", LIVE]):   # a twin: 2
         with pytest.raises(SystemExit) as e:
             publish.main([fx.shop, "--shops-root", fx.shops, *argv])
         assert e.value.code == 2
@@ -304,3 +346,47 @@ def test_lens_products_by_handle_and_an_ambiguous_id(shop_fixture, capsys):
     assert [c.key for c in plan.cards] == [fx.key(AGENCY)]
     out = capsys.readouterr().out
     assert twin in out and fx.key(LIVE) in out and "nope" in out
+
+
+# ---- review fixes (2026-11-16): an empty or lone flag, a broken shop file -------------------------------------
+
+def break_middle_line(path):
+    """A bad line in the middle of a .jsonl (not a cut-off last line): a LedgerError for the strict readers."""
+    with open(path, encoding="utf-8") as f:
+        lines = f.read().splitlines(keepends=True)
+    lines.insert(1, "{not json\n")
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("".join(lines))
+
+
+def test_query_event_alone_or_an_empty_keys_file_path_is_usage_not_every_product(shop_fixture, capsys):
+    fx = shop_fixture
+    for argv in (["--event", "published"], ["--keys-file", ""], ["--job", ""],
+                 ["--job", fx.jobs_ids[1], "--jobs-root", fx.jobs, "--event", ""]):
+        with pytest.raises(SystemExit) as e:
+            V.main(["query", fx.shop, "--shops-root", fx.shops, *argv])
+        assert e.value.code == 2
+    err = capsys.readouterr().err
+    assert "--event needs --job" in err and "--keys-file: an empty path" in err and "--job: an empty id" in err
+    with pytest.raises(SystemExit) as e:
+        V.main(["key", fx.shop, "--shops-root", fx.shops, "--event", "published"])
+    assert e.value.code == 2
+
+
+@pytest.mark.parametrize("rel", ["prepared/products.jsonl", "publish/published.jsonl"])
+def test_an_acting_cli_names_a_broken_shop_file_exit_2_not_a_traceback(shop_fixture, capsys, rel):
+    import reprice
+    fx = shop_fixture
+    break_middle_line(os.path.join(fx.shops, fx.shop, rel))
+    with pytest.raises(SystemExit) as e:
+        reprice.main([fx.shop, "--shops-root", fx.shops, "--only", LIVE])
+    assert e.value.code == 2 and rel.split("/")[-1] in capsys.readouterr().err
+
+
+def test_lens_products_skips_a_bad_middle_ledger_line_as_its_view_does(shop_fixture, capsys):
+    import lens
+    fx = shop_fixture
+    handle = handles(fx, AGENCY)[-1]
+    break_middle_line(os.path.join(fx.shops, fx.shop, "publish", "published.jsonl"))
+    plan = lens.products(V.ShopView(fx.shop, fx.shops), [handle, LIVE])
+    assert [c.key for c in plan.cards] == [fx.key(AGENCY), fx.key(LIVE)]

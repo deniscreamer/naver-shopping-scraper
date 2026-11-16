@@ -37,11 +37,14 @@ The shop's files by hand (2026-11-16), read only (only `query --keys-out F` writ
   --store published = draft or active, any = all (query's default).
 - query: `key<TAB>prepared<TAB>placement<TAB>state<TAB>handle<TAB>title` a product (or --fields), every product the
   files know (prepared first); --where on any field, case ignored (status = prepared, note = notes, leaf = leaves; a
-  list: V among its items; `F=` empty); --count-by: `value<TAB>count`, most first, "(none)" for empty.
+  list: V among its items; `F=` empty); --count-by: `value<TAB>count`, most first, "(none)" for empty, and `total N`
+  (the rows counted) on stderr.
 - ledger: `at<TAB>event<TAB>key<TAB>status<TAB>store_status<TAB>handle<TAB>reason` a row, file order; at = the row's
   time (an activation's `activated`); event = created, sent (an update), withdrawn, restored, activated; --status
   matches the status, the store status or the event, case ignored; --since compares UTC times (2026-11-16[T08:30]).
-- history: `== key (state; prepared S)` then its ledger rows (without key), or `(never sent)`.
+- history: `== key (state; prepared S)` then its ledger rows (without key), or `(never sent)`. show, history and
+  check refuse a full key that no file of the shop has (a typo: "in none of <shop>'s files", exit 1), rather than
+  print it as never sent.
 - check: a plan line is `ref<TAB>status[<TAB>reason]` (# comments, a first line starting `key` is a header); status
   is a state (published, withdrawn, draft, active, none, any) or ready / held (the prepared status); reason, when
   given, must start the ledger's reason (case ignored). Prints `ok|FAIL<TAB>key<TAB>want<TAB>got<TAB>want reason<TAB>
@@ -167,6 +170,7 @@ class ShopView:
         self._cache: dict[str, Product] = {}
         self.shops_root = shops_root
         self._collected: dict[str, Any] | None = None
+        self._refs: RefIndex | None = None                 # resolve()'s index, built on first need
 
     def collected_line(self, key: str) -> dict[str, Any] | None:
         """The product's newest collected line (read once for the shop, on first need: a held product's options)."""
@@ -266,7 +270,12 @@ def job_keys(job: str, jobs_root: str = JOBS_ROOT, event: str | None = None) -> 
 # ==== naming a product: resolve, selected_keys, the shared CLI flags (2026-11-16) ============================
 
 class RefError(ValueError):
-    """A ref that names no product of the shop, or several (the message lists them), or a bad keys file / job."""
+    """A ref that names no product of the shop, or several (the message lists them), or a bad keys file / job.
+    `found`: how many products the ref matched (0 none, 2+ several; None for a bad file, job or flag)."""
+
+    def __init__(self, message: str, found: int | None = None):
+        super().__init__(message)
+        self.found = found
 
 
 def is_key(ref: str) -> bool:
@@ -331,8 +340,9 @@ class RefIndex:
 
     @classmethod
     def of_view(cls, view: "ShopView") -> "RefIndex":
-        ledger = read_jsonl(os.path.join(view.dir, "publish", "published.jsonl"), tail_ok=True)
-        return cls([*view.prepared, *view.translated, *view.placed], ledger, view.shop)
+        """From the rows the view already read, as it read them (a lens's view skips a bad line, a strict one
+        stopped at it): the ledger is not read a second time."""
+        return cls([*view.prepared, *view.translated, *view.placed], view.ledger_rows, view.shop)
 
     def matches(self, ref: str) -> set[str]:
         """The keys `ref` names (a full key is not looked up here: resolve returns it as it is)."""
@@ -347,7 +357,7 @@ class RefIndex:
                 return set(self.by_number.get(admin.group(1), ()))
             m = _PRODUCTS.search(path)
             if not m:
-                raise RefError(f"{ref}: a link without /products/<handle or id>")
+                raise RefError(f"{ref}: a link without /products/<handle or id>", found=0)
             if host.endswith("naver.com"):
                 return set(self.by_pid.get(m.group(1), ()))
             return set(self.by_handle.get(m.group(1), ()))
@@ -363,9 +373,9 @@ def _index(view_or_shop: "ShopView | RefIndex | str", shops_root: str) -> RefInd
     if isinstance(view_or_shop, RefIndex):
         return view_or_shop
     if isinstance(view_or_shop, ShopView):
-        if getattr(view_or_shop, "_refs", None) is None:
-            view_or_shop._refs = RefIndex.of_view(view_or_shop)        # type: ignore[attr-defined]
-        return view_or_shop._refs                                       # type: ignore[attr-defined]
+        if view_or_shop._refs is None:
+            view_or_shop._refs = RefIndex.of_view(view_or_shop)
+        return view_or_shop._refs
     return RefIndex.of_shop(view_or_shop, shops_root)
 
 
@@ -384,9 +394,9 @@ def resolve(view_or_shop: "ShopView | RefIndex | str", ref: str, shops_root: str
         return found[0]
     if not found:
         raise RefError(f"{ref}: no product of {index.shop or 'the shop'} matches (a key, a Naver product id, "
-                       f"a handle, a store / admin / Naver link)")
+                       f"a handle, a store / admin / Naver link)", found=0)
     raise RefError(f"{ref}: {len(found)} products match, name one by its key: "
-                   + "; ".join(index.describe(k) for k in found))
+                   + "; ".join(index.describe(k) for k in found), found=len(found))
 
 
 def write_keys(path: str, keys: Iterable[str], header: str | None = None) -> None:
@@ -404,7 +414,9 @@ def iso_time(text: str) -> datetime:
 
 def read_refs(path: str) -> list[str]:
     """A keys file: one ref a line, its first word (a TSV whose first column is the key works); blank lines and
-    lines starting with # left out."""
+    lines starting with # left out. An empty path (an unset shell variable) is a RefError, not "no file"."""
+    if not path.strip():
+        raise RefError("--keys-file: an empty path")
     try:
         with open(path, encoding="utf-8") as f:
             text = f.read()
@@ -415,12 +427,20 @@ def read_refs(path: str) -> list[str]:
 
 def selected_keys(view_or_shop: "ShopView | RefIndex | str", refs: Iterable[str] = (), keys_file: str | None = None,
                   job: str | None = None, event: str | None = None, shops_root: str = SHOPS_ROOT,
-                  jobs_root: str = JOBS_ROOT) -> list[str]:
+                  jobs_root: str = JOBS_ROOT, unknown_ok: bool = False) -> list[str]:
     """The keys of `refs`, then of the keys file's refs, then the job's keys (with `event`: those with that event),
-    each once, first seen first. Every ref that does not resolve is reported in one RefError (nothing selected)."""
-    if event and not job:
-        raise RefError("--event needs --job")
-    wanted = [*refs, *(read_refs(keys_file) if keys_file else [])]
+    each once, first seen first. Every ref that does not resolve is reported in one RefError (nothing selected);
+    with `unknown_ok` a ref that matches no product is kept as it was given (the caller reports it: publish.py
+    --only's "not ready", as before 2026-11-16), one that matches several is still an error. An empty ref, keys file
+    path, job or event (an unset shell variable) is an error, never "nothing asked"."""
+    if event is not None and not job:
+        raise RefError("--event needs --job" if event.strip() else "--event: an empty event")
+    if job is not None and not job.strip():
+        raise RefError("--job: an empty id")
+    refs = list(refs)
+    if any(not r.strip() for r in refs):
+        raise RefError("an empty ref")
+    wanted = [*refs, *(read_refs(keys_file) if keys_file is not None else [])]
     out, errors = [], []
     index: RefIndex | None = None
     for ref in wanted:
@@ -431,7 +451,10 @@ def selected_keys(view_or_shop: "ShopView | RefIndex | str", refs: Iterable[str]
             index = index or _index(view_or_shop, shops_root)
             out.append(resolve(index, ref))
         except RefError as e:
-            errors.append(str(e))
+            if unknown_ok and e.found == 0:
+                out.append(ref.strip())
+            else:
+                errors.append(str(e))
     if job:
         if not os.path.exists(os.path.join(jobs_root, job, "events.jsonl")):
             errors.append(f"--job {job}: no {os.path.join(jobs_root, job, 'events.jsonl')}")
@@ -457,17 +480,19 @@ def add_ref_flags(ap: argparse.ArgumentParser) -> None:
 
 
 def selection_asked(args: argparse.Namespace) -> bool:
-    return bool(args.keys_file or args.ref_job)
+    """Any of --keys-file / --job / --event given, even empty (an empty one is refused, never "nothing asked")."""
+    return args.keys_file is not None or args.ref_job is not None or args.ref_event is not None
 
 
 def keys_from_args(ap: argparse.ArgumentParser, args: argparse.Namespace, view_or_shop: "ShopView | RefIndex | str",
-                   refs: Iterable[str], shops_root: str = SHOPS_ROOT) -> list[str]:
-    """selected_keys over `refs` and the flags of add_ref_flags; a RefError, or nothing selected, ends the command
-    (argparse's exit 2). Call it only when something was named (refs or selection_asked)."""
+                   refs: Iterable[str], shops_root: str = SHOPS_ROOT, unknown_ok: bool = False) -> list[str]:
+    """selected_keys over `refs` and the flags of add_ref_flags; a RefError (an empty ref among them too), a broken
+    shop file (LedgerError, named), or nothing selected ends the command (argparse's exit 2). Call it only when
+    something was named (refs or selection_asked)."""
     try:
-        keys = selected_keys(view_or_shop, [r for r in refs if r], args.keys_file, args.ref_job, args.ref_event,
-                             shops_root, args.ref_jobs_root)
-    except RefError as e:
+        keys = selected_keys(view_or_shop, refs, args.keys_file, args.ref_job, args.ref_event,
+                             shops_root, args.ref_jobs_root, unknown_ok)
+    except (RefError, LedgerError) as e:
         ap.error(str(e))
     if not keys:                       # an empty keys file must not widen the command to every product
         ap.error("no product selected (the keys file has no ref)")
@@ -498,7 +523,8 @@ def main(argv: list[str] | None = None) -> int:
     q = command("query", "the products whose fields match: key<TAB>fields")
     q.add_argument("--where", action="append", default=[], metavar="F=V",
                    help="F=V or F!=V on a field (repeat: all must hold; a list field: V among its items; "
-                   "F= : empty), e.g. status=held, held=single_only, note=brand_fallback, brand_source=title")
+                   "F= : empty), e.g. prepared=held, held=single_only, notes=brand_fallback, brand_source=title "
+                   f"(aliases: {_alias_text()})")
     q.add_argument("--category", help="the Naver category id")
     q.add_argument("--leaf", help="a section leaf the product is placed in")
     q.add_argument("--store", choices=STORES, default="any",
@@ -544,9 +570,9 @@ def _cmd_key(ap: argparse.ArgumentParser, a: argparse.Namespace) -> int:
     rows: list[dict[str, str]] = []
     index: RefIndex | None = None
     try:
-        refs = [*a.refs, *(read_refs(a.keys_file) if a.keys_file else [])]
+        refs = [*a.refs, *(read_refs(a.keys_file) if a.keys_file is not None else [])]
         extra = selected_keys(a.shop, (), None, a.ref_job, a.ref_event, a.shops_root, a.ref_jobs_root) \
-            if a.ref_job else []
+            if a.ref_job is not None or a.ref_event is not None else []
     except RefError as e:
         ap.error(str(e))
     for ref in refs:
@@ -604,6 +630,12 @@ class ShopFiles:
         return list(dict.fromkeys([*v.prepared, *v.translated, *v.placed,
                                    *(r["key"] for r in v.ledger_rows if r.get("key"))]))
 
+    def knows(self, key: str) -> bool:
+        """A key some file of the shop has: prepared, translated, placed, the ledger, or a collected line."""
+        v = self.view
+        return (key in v.prepared or key in v.translated or key in v.placed or key in v.ledger
+                or v.collected_line(key) is not None)
+
     def raw(self, kind: str, key: str) -> Any:
         v = self.view
         if kind == "collected":
@@ -620,14 +652,15 @@ def row_time(row: dict[str, Any]) -> str:
 
 
 def ledger_event(row: dict[str, Any]) -> str:
-    """What a ledger row records: withdrawn, restored (digest "" and `restored`), activated (`activated` after `at`),
-    created (a new store product) or sent (an update of one)."""
+    """What a ledger row records: withdrawn, activated (`activated` after `at`: an activation copies the row before
+    it, a restored one too), restored (digest "" and `restored`; a restore copied from an activated row keeps an
+    `activated` older than its `at`), created (a new store product) or sent (an update of one)."""
     if row.get("status") == "withdrawn":
         return "withdrawn"
-    if row.get("restored") and row.get("digest") == "":
-        return "restored"
     if row.get("activated") and str(row["activated"]) > str(row.get("at") or ""):
         return "activated"
+    if row.get("restored") and row.get("digest") == "":
+        return "restored"
     return "created" if row.get("created") else "sent"
 
 
@@ -700,8 +733,12 @@ def _field_list(ap: argparse.ArgumentParser, text: str | None, default: Iterable
     names = [ALIASES.get(x.strip(), x.strip()) for x in (text.split(",") if text else default) if x.strip()]
     bad = [x for x in names if x not in allowed]
     if bad:
-        ap.error(f"unknown field {', '.join(bad)} (fields: {', '.join(allowed)})")
+        ap.error(f"unknown field {', '.join(bad)} (fields: {', '.join(allowed)}; aliases: {_alias_text()})")
     return names
+
+
+def _alias_text() -> str:
+    return ", ".join(f"{k} = {v}" for k, v in ALIASES.items())
 
 
 def _where(ap: argparse.ArgumentParser, clauses: list[str]) -> list[tuple[str, bool, str]]:
@@ -732,7 +769,9 @@ def _counts(values: Iterable[Any]) -> list[tuple[str, int]]:
     return sorted(got.items(), key=lambda kv: (-kv[1], kv[0]))
 
 
-def _print_counts(counts: list[tuple[str, int]], as_json: bool) -> None:
+def _print_counts(counts: list[tuple[str, int]], as_json: bool, total: int) -> None:
+    """`value<TAB>count` lines (stdout); the number of rows counted on stderr (`total N`, also when none matched)."""
+    print(f"total\t{total}", file=sys.stderr)
     if as_json:
         print(json.dumps(dict(counts), ensure_ascii=False, indent=1))
     else:
@@ -741,13 +780,20 @@ def _print_counts(counts: list[tuple[str, int]], as_json: bool) -> None:
 
 
 def _named_keys(ap: argparse.ArgumentParser, a: argparse.Namespace, files: ShopFiles) -> tuple[list[str], list[str]]:
-    """The keys of the command's refs (and --keys-file / --job), and the errors of those that did not resolve."""
+    """The keys of the command's refs (and --keys-file / --job), and the errors of those that did not resolve; a full
+    key typed as a ref that no file of the shop has (a typo) is an error too, not a product "never sent"."""
     keys, errors = [], []
     for ref in a.refs:
         try:
-            keys.append(resolve(files.view, ref))
+            key = resolve(files.view, ref)
         except RefError as e:
             errors.append(str(e))
+            continue
+        if not files.knows(key):
+            errors.append(f"{ref}: in none of {files.shop}'s files (prepared, translated, placed, the ledger, "
+                          f"collected)")
+            continue
+        keys.append(key)
     if selection_asked(a):
         keys += keys_from_args(ap, a, files.view, (), files.shops_root)
     return list(dict.fromkeys(keys)), errors
@@ -839,7 +885,7 @@ def _cmd_query(ap: argparse.ArgumentParser, a: argparse.Namespace, files: ShopFi
     if a.keys_out:
         write_keys(a.keys_out, [r["key"] for r in rows], f"shop_view.py query {a.shop}")
     if count_by:
-        _print_counts(_counts(r[count_by] for r in rows), a.json)
+        _print_counts(_counts(r[count_by] for r in rows), a.json, len(rows))
     elif a.json:
         print(json.dumps([{n: r[n] for n in names} for r in rows], ensure_ascii=False, indent=1))
     else:
@@ -884,7 +930,7 @@ def _cmd_ledger(ap: argparse.ArgumentParser, a: argparse.Namespace, files: ShopF
         rows.append(r)
     if a.count_by:
         _print_counts(_counts(r["at"][:10] if a.count_by == "day" else _reason_code(r["reason"])
-                              if a.count_by == "reason_code" else r[a.count_by] for r in rows), a.json)
+                              if a.count_by == "reason_code" else r[a.count_by] for r in rows), a.json, len(rows))
     elif a.json:
         print(json.dumps(rows, ensure_ascii=False, indent=1))
     else:
@@ -940,6 +986,10 @@ def _cmd_check(ap: argparse.ArgumentParser, a: argparse.Namespace, files: ShopFi
             r["key"] = resolve(files.view, ref)
         except RefError as e:
             r.update(result="ERROR", error=f"line {n}: {e}")
+            out.append(r)
+            continue
+        if not files.knows(r["key"]):
+            r.update(result="ERROR", error=f"line {n}: {ref}: in none of {files.shop}'s files")
             out.append(r)
             continue
         row = files.view.ledger.get(r["key"])

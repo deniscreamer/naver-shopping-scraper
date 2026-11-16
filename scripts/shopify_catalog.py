@@ -46,12 +46,15 @@ token and checks as above), check_shop() before anything; it writes no file of o
 show: <ref> is anything shop_view.resolve takes (a key, a Naver product id, a handle the ledger ever had, a store /
 admin / Naver link) or a gid; the ledger's product_id for that key is read. A handle or number our files never had
 is asked of the store itself (productByIdentifier / the gid). Several of our products match: exit 1 naming them.
-Prints `field<TAB>value` lines, then `variant<TAB>sku<TAB>price<TAB>compare at<TAB>qty<TAB>Name=value; ...`,
-`metafield<TAB>ns.key<TAB>type<TAB>value`, `media<TAB>n<TAB>type<TAB>status<TAB>url<TAB>alt` (shop_view.cell: a
-list comma-joined, every run of whitespace in a value one space; --json for the exact values). dump: one JSON line a product, FIELDS' names (default id handle status vendor title key),
-written to F.jsonl.<pid>.part and moved over F at the end (a failed dump leaves F as it was). counts: `status<TAB>n`
-(active, draft, archived, all; n+ when Shopify only says "at least"). vendors: `vendor<TAB>n`, the most first.
-collection: `handle<TAB>status<TAB>vendor<TAB>key<TAB>title` a product, or with --count-by `v1[<TAB>v2]<TAB>n`.
+Prints `field<TAB>value` lines (`price` the variants' min-max and currency, `url` the storefront link: the API's,
+else the store's site + /products/<handle> for an ACTIVE product; 2026-11-16), then
+`variant<TAB>sku<TAB>price<TAB>compare at<TAB>qty<TAB>Name=value; ...`, `metafield<TAB>ns.key<TAB>type<TAB>value`,
+`media<TAB>n<TAB>type<TAB>status<TAB>url<TAB>alt` (shop_view.cell: a list comma-joined, every run of whitespace in a
+value one space; --json for the exact values). dump: one JSON line a product, FIELDS' names (default id handle
+status vendor title key), written to F.jsonl.<pid>.part and moved over F at the end (a failed dump leaves F as it
+was). counts: `status<TAB>n` (active, draft, archived, all; n+ when Shopify only says "at least"). vendors:
+`vendor<TAB>n`, the most first. collection: `handle<TAB>status<TAB>vendor<TAB>key<TAB>title` a product, or with
+--count-by `v1[<TAB>v2]<TAB>n`.
 Exit codes: 0 done; 1 not found (a ref none or several of ours match, a key never sent, a product or collection the
 store does not have, a broken shop file); 2 usage (argparse: an unknown shop, field or --count-by); 3 the store is
 not configured (ShopNotConfigured: ask the operator); 4 the catalog cannot be trusted (CatalogError: auth, another
@@ -411,6 +414,7 @@ GID = "gid://shopify/Product/"
 LIGHT_PAGE = 250                 # products a page for scalar fields only (cost ~ 1 a product)
 SHOW = """query Show($id: ID!) { node(id: $id) { ... on Product {
   id handle title status vendor productType tags createdAt updatedAt publishedAt totalInventory onlineStoreUrl
+  priceRangeV2 { minVariantPrice { amount currencyCode } maxVariantPrice { amount } }
   source_offer_id: metafield(namespace: "%(ns)s", key: "source_offer_id") { value }
   naver_offer_key: metafield(namespace: "%(ns)s", key: "naver_offer_key") { value }
   collections(first: 20) { nodes { handle } } variantsCount { count } mediaCount { count }
@@ -523,6 +527,26 @@ def product_id(catalog: ShopCatalog, ref: str, shops_root: str) -> str:
     return str(sent[-1]["product_id"])
 
 
+def _price_range(node: dict[str, Any]) -> str:
+    """`min-max CUR` (one price: `p CUR`) from priceRangeV2; "" when the answer has none."""
+    r = node.get("priceRangeV2") or {}
+    lo, hi = (r.get("minVariantPrice") or {}), (r.get("maxVariantPrice") or {})
+    if lo.get("amount") is None:
+        return ""
+    span = lo["amount"] if hi.get("amount") in (None, lo["amount"]) else f"{lo['amount']}-{hi['amount']}"
+    return f"{span} {lo.get('currencyCode') or ''}".strip()
+
+
+def _store_url(catalog: ShopCatalog, node: dict[str, Any]) -> str:
+    """The storefront link: onlineStoreUrl, else (null when the app cannot read the Online Store's publication) the
+    store's site + /products/<handle> for an ACTIVE product; "" for a draft or an archived one (not on the store)."""
+    if node.get("onlineStoreUrl"):
+        return str(node["onlineStoreUrl"])
+    if node.get("status") == "ACTIVE" and node.get("handle"):
+        return f"{catalog.store.site.rstrip('/')}/products/{node['handle']}"
+    return ""
+
+
 def _show(catalog: ShopCatalog, a: Any) -> int:
     gid = product_id(catalog, a.ref, a.shops_root)
     more = [x for flag, x in ((a.variants, VARIANTS), (a.metafields is not None, METAFIELDS), (a.media, MEDIA))
@@ -545,7 +569,7 @@ def _show(catalog: ShopCatalog, a: Any) -> int:
                         ("media_count", (node.get("mediaCount") or {}).get("count")),
                         ("inventory", node.get("totalInventory")), ("created", node.get("createdAt")),
                         ("updated", node.get("updatedAt")), ("published", node.get("publishedAt")),
-                        ("url", node.get("onlineStoreUrl"))):
+                        ("price", _price_range(node)), ("url", _store_url(catalog, node))):
         print(_row(name, value))
     for v in (node.get("variants") or {}).get("nodes") or []:
         print(_row("variant", v.get("sku"), v.get("price"), v.get("compareAtPrice"), v.get("inventoryQuantity"),

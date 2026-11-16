@@ -14,7 +14,7 @@ Offline, deterministic, no network (repo root). `job.py` runs the same per produ
 .venv/bin/python scripts/run_transform.py fairwardgolf --full        # the same, every product prepared afresh
 .venv/bin/python scripts/run_transform.py fairwardgolf --verify      # each cache record vs prepare afresh
 .venv/bin/python scripts/run_transform.py fairwardgolf --diff        # then what changed, product by product
-.venv/bin/python scripts/run_transform.py fairwardgolf --shops-root <copy> --diff   # the same on a copy of the shop
+.venv/bin/python scripts/run_transform.py fairwardgolf --shops-root <copy> --copy-of scripts/output/shops --diff
 .venv/bin/python scripts/prepared_diff.py old.jsonl new.jsonl [--fields status,brand,price] [--published-only] [--keys-out F]
 ```
 
@@ -109,17 +109,23 @@ moved, in which field, and which of them are in the store (those wait for the ow
 
 - In place: `run_transform.py <shop> --diff` (the shop's lock: no job running). On a copy, the real shop untouched:
   `cp -cR scripts/output/shops/<shop> <scratch>/` (an APFS clone, seconds for 13 GB), then
-  `run_transform.py <shop> --shops-root <scratch> --diff`, or `prepared_diff.py` on the two `prepared/products.jsonl`.
+  `run_transform.py <shop> --shops-root <scratch> --copy-of scripts/output/shops --diff`, or `prepared_diff.py` on
+  the two `prepared/products.jsonl`. `--copy-of` is required on a copy: the paid choices come from the jobs made for
+  the real root and the brand dictionary is loaded for it alone, so without it the copy is prepared with no paid
+  variant and no dictionary brand, and the diff is false (2026-11-16: 752 of 2,451 "changed", 0 with `--copy-of`).
 - `prepared_diff.py old new [--fields f,g] [--published-only] [--keys-out F] [--json]` compares each product by a
-  short summary a field: `status`, `held` and `notes` ("code: detail"), `brand` ("brand_ko (brand_source)"),
-  `title` (title_ko), `price` (the variants' price_krw, min-max), `variants` (the option labels, `[sold out]`),
+  short summary a field: `status`, `held` and `notes` ("code: detail"), `brand` ("brand_ko (brand_source)"), `title`
+  (title_ko), `price` (the variants' price_krw, min-max), `variants` (the option labels, `[sold out]`),
   `package.<field>` ("min-max (source cN)"), `images` (count and digest), `other` (the names of other parts that
-  differ). A list field shows on each side only what the other lacks. `--published-only`: the keys whose last ledger
-  row is `published` (`--shop`, else the new file's shop). `--keys-out F` -> `--keys-file F` of `store_diff.py`,
-  `publish.py --dry-run`, `lens.py products`. Exit 0 the same, 1 differences listed, 2 a missing or broken file.
-- 2026-11-16, measured on a clone: the prepared file of 00:45 against today's code: 752 of 2,451 products changed
-  (price and variants 603, notes 718, package 179, brand 50, held 41, status 2), 477 of them in the store (price 468,
-  brand 16, status 2): the paid variants rule written after that prepare. Nothing re-sent; the owner's word first.
+  differ, once, in the new column; `(old only)` / `(new only)` for a part on one side). A list field shows on each
+  side only what the other lacks. `--published-only`: the keys whose last ledger row is `published` (`--shop`, else
+  the new file's shop), read from `--shops-root` (default the real shops: give the clone's root with a clone's files);
+  its summary says `(published only)`. The keys file's first line is a `# ...: N products` comment. `--keys-out F` ->
+  `--keys-file F` of `store_diff.py`, `publish.py --dry-run`, `lens.py products`. Exit 0 the same, 1 differences
+  listed, 2 a missing or broken file.
+- 2026-11-16, measured on a clone with `--copy-of`: today's code prepares the shop as its prepared file says, 0 of
+  2,451 changed (an earlier "752 changed, 477 in the store" was the clone prepared without the jobs' paid choices
+  and the brand dictionary, not a rule change).
 
 ### Kept runs
 

@@ -7,9 +7,13 @@
 
 A product is named by its key, Naver product id, handle or link (shop_view.resolve; a full key as it is), in
 --only / --withdraw / --restore / --activate; --keys-file F and --job ID [--event E] add more, to the action given
-(a bare --withdraw / --restore / --activate takes only those). A ref that names no product or several stops the
-command before anything is sent (exit 2, the candidates listed). With --dry-run a withdraw, restore or activate
-prints the keys it would act on and sends nothing (2026-11-16; before, --dry-run did not stop them).
+(a bare --withdraw / --restore / --activate takes only those). A ref that names several products, or none in a
+store action, stops the command before anything is sent (exit 2, the candidates listed); an --only ref that names
+none is "not ready" and skipped, as before. An empty ref (`--only "$KEY"` with KEY unset), keys file path, --job or
+--event is a usage error (exit 2), never "every product". With --dry-run a withdraw, restore or activate prints per
+key what it would do from the ledger ("would withdraw", or "not published here" / "not withdrawn here" / "not a
+draft here"; exit 1 when a withdraw or restore would refuse one) and sends nothing (2026-11-16; before, --dry-run
+did not stop them).
 
 A product is published when it is `ready` (transform), `translated` (translate.py) and `placed` (placement.py). Per
 product, in this order (shopify_payload.py builds, shopify_admin.py sends):
@@ -486,19 +490,23 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
     shop = Shop(args.shop, args.shops_root)
     action = next((a for a in ("activate", "restore", "withdraw") if getattr(args, a)), "only")
-    named = [r for r in getattr(args, action) if r]
+    given = getattr(args, action)
+    named = [r for r in given if r.strip()]
+    if action == "only" and len(named) < len(given):        # `--only "$KEY"` with KEY unset: never "every product"
+        ap.error("--only: an empty ref")
+    if action != "only" and named and len(named) < len(given):
+        ap.error(f"--{action}: an empty ref among the products")   # a bare --{action} goes with --keys-file / --job
     if action != "only" and not (named or selection_asked(args)):
         ap.error(f"--{action}: a product (a ref, --keys-file or --job)")
     if action == "only" and not (named or selection_asked(args)):
         args.only = []
-    else:                                         # refs -> keys; a full key as it is (known or not, as before)
-        setattr(args, action, keys_from_args(ap, args, args.shop, named, args.shops_root))
+    else:            # refs -> keys; a full key as it is (known or not, as before); --only: a ref matching nothing is
+        setattr(args, action, keys_from_args(ap, args, args.shop, named, args.shops_root,   # kept, "not ready"
+                                             unknown_ok=action == "only"))
     if action in ("withdraw", "restore") and not args.reason:
         ap.error(f"--{action} needs --reason")
-    if args.dry_run and action != "only":         # a store action sends at once: --dry-run names what it would do
-        for key in getattr(args, action):
-            print(f"{key}: would {action} (dry run: nothing sent)")
-        return 0
+    if args.dry_run and action != "only":         # a store action sends at once: --dry-run says what it would do
+        return _dry_store_action(shop, action, getattr(args, action))
     if args.activate:
         from shopify_admin import ProductsAdmin
         admin = ProductsAdmin(get_store(args.shop))
@@ -538,6 +546,26 @@ def main(argv: list[str] | None = None) -> int:
         return _publish(args, shop)
     # sending: refused while a job of the shop runs (two processes could create one product twice)
     return locked(args.shops_root, args.shop, "publish.py", lambda: _publish(args, shop), "publish")
+
+
+def _dry_store_action(shop: Shop, action: str, keys: list[str]) -> int:
+    """--dry-run with --withdraw / --restore / --activate: per key what the real call would do, from the ledger (the
+    same tests as withdraw / restore / activate), nothing sent. Exit 1 when a withdraw or restore would refuse a key
+    (the real call stops there), else 0 (activate passes over a key that is not a draft, as the real call does)."""
+    last = _last(shop.ledger_path)
+    drafts = {k for k, r in shop.ledger().items() if r.get("store_status") == "DRAFT"}
+    refused = 0
+    for key in keys:
+        before: dict[str, Any] = last.get(key) or {}
+        if action == "withdraw":
+            ok, no = before.get("status") in ("published", "withdrawn"), "not published here"
+        elif action == "restore":
+            ok, no = before.get("status") == "withdrawn", "not withdrawn here"
+        else:                                       # a published draft (a withdrawn row is DRAFT too: not one)
+            ok, no = key in drafts, "not a draft here"
+        refused += not ok and action != "activate"
+        print(f"{key}: would {action} (dry run: nothing sent)" if ok else f"{key}: {no} (dry run)")
+    return 1 if refused else 0
 
 
 def _publish(args: argparse.Namespace, shop: Shop) -> int:

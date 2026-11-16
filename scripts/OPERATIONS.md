@@ -115,7 +115,7 @@ Every command that takes a product takes a **ref**, not only a key (the owner's 
 
 | A ref | Example | Matches |
 |---|---|---|
-| a full key | `fairwardgolf:naver:102683547:13552318731` | itself, as before: not looked up (an unknown key behaves as it always did) |
+| a full key | `fairwardgolf:naver:102683547:13552318731` | itself, as before: not looked up by the commands that act (an unknown key behaves as it always did); `shop_view.py show` / `history` / `check` say `in none of <shop>'s files` (exit 1) for a key no file has |
 | a Naver product id | `13552318731` | the key ending in it (a Shopify product number, all digits, too) |
 | a handle | `a11n-sports-forged-golf-wedge-set-db4p` | any handle the ledger ever had for it (an older one after a rehandle too) |
 | a link | `https://fairwardgolf.com/products/<handle>`, `https://admin.shopify.com/store/<s>/products/<number>`, `https://smartstore.naver.com/<s>/products/<id>` | the handle, the Shopify number or the Naver id in it |
@@ -124,6 +124,7 @@ Every command that takes a product takes a **ref**, not only a key (the owner's 
 No match, or several (one product id under two channels), stops a command that acts (publish, translate, describe,
 store_diff, reprice) with exit 2 before anything is read from or sent to the store, the candidates listed with their
 status and handle: name the key. Never "the first". The read tools say the same with exit 1 (Reading the shop by hand).
+`publish.py --only <ref>` keeps its old soft path for a ref that names nothing: `<ref>: not ready`, skipped, exit 0.
 
 ```sh
 .venv/bin/python scripts/shop_view.py key <shop> <ref> [<ref> ...]       # ref<TAB>key; exit 1: a ref did not resolve
@@ -136,9 +137,11 @@ Takes refs: `publish.py` (`--only`, `--withdraw`, `--restore`, `--activate`; `--
 commands take **`--keys-file F`** (one ref a line, its first word: a TSV whose first column is the key works; blank
 lines and `#` lines left out) and **`--job ID [--event E]`** (the keys of the job's `events.jsonl`, with `--event`
 only those with it: `published`, `not_taken`, ...). In `publish.py` they join the action given; a bare `--withdraw` /
-`--restore` / `--activate` takes only them. A file that names nothing stops the command (never "every product").
-`publish.py --dry-run` with `--withdraw` / `--restore` / `--activate` prints `<key>: would <action>` and sends nothing
-(before 2026-11-16 the dry run did not stop them). In code: `shop_view.resolve(view_or_shop, ref)`,
+`--restore` / `--activate` takes only them. A file that names nothing stops the command (never "every product"), and
+so does an empty value (an unset shell variable): `--only ""`, `--keys-file ""`, `--job ""`, and `--event` without
+`--job` are exit 2. `publish.py --dry-run` with `--withdraw` / `--restore` / `--activate` prints `<key>: would
+<action>`, or what the real call would refuse (`not published here`, `not withdrawn here`, `not a draft here`), and
+sends nothing (before 2026-11-16 the dry run did not stop them). In code: `shop_view.resolve(view_or_shop, ref)`,
 `selected_keys(...)`, a CLI's flags `add_ref_flags(ap)` + `keys_from_args(ap, args, shop, refs)`.
 
 **The shop fixture** (`scripts/fixtures/shop/`, `make_shop_fixture.py`): 16 real products of `fairwardgolf` in the
@@ -170,14 +173,14 @@ hand-written Python. Each prints a TSV (`shop_view.cell`: a list comma-joined, w
 .venv/bin/python scripts/shopify_catalog.py <shop> counts | vendors [--query Q] | collection <handle> [--count-by vendor,status]
 .venv/bin/python scripts/shopify_catalog.py <shop> dump [--fields ...] [--query 'status:active'] --out F.jsonl
 ```
-
 - **`shop_view.py`**, the shop's files: `show` a block a product (`field<TAB>value`: prepared, held, notes, brand and
   its source, titles, price, placement, leaves, state, handle, admin link, ...); `query` every product whose fields
-  match (`--where status=held`, `held=single_only`, `note=brand_fallback`, `brand_source=title`; `F=` empty; repeated:
-  all hold); `state` is `none` (never sent), `withdrawn`, `draft` or `active`, `--store published` = draft or active.
-  `--keys-out F` writes the matching keys for a `--keys-file F`. `ledger` one row a ledger line with its event
-  (`created`, `sent`, `withdrawn`, `restored`, `activated`); `check` a plan of expected states against the files
-  (after a batch of actions: every line `ok`).
+  match (`--where prepared=held`, `held=single_only`, `notes=brand_fallback`, `brand_source=title`; `F=` empty;
+  repeated: all hold); `state` is `none` (never sent), `withdrawn`, `draft` or `active`, `--store published` = draft
+  or active. `--keys-out F` writes the matching keys for a `--keys-file F`. `ledger` one row a ledger line with its
+  event (`created`, `sent`, `withdrawn`, `restored`, `activated`); `check` a plan of expected states against the files
+  (after a batch of actions: every line `ok`). `--where` aliases: `status` = `prepared`, `note` = `notes`, `leaf` =
+  `leaves`; `--count-by` prints `total N` (the rows counted) on stderr, also when nothing matched.
 - **`prepared_diff.py`**, two prepared files product by product (status, held, notes, brand, title, price, variants,
   package, images, other): `key<TAB>change<TAB>field<TAB>old<TAB>new`. `--published-only`: only products in the
   store, the answer to "which of the changed ones does the owner have to decide on" (OWNER_RULES.md, rule 1).

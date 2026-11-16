@@ -355,3 +355,24 @@ def test_the_fixture_holds_no_secret():
         assert word not in text
     assert {"show_active", "show_draft", "show_variants", "dump_page", "counts"} <= set(REAL)
     assert node_of("show_active")["status"] == "ACTIVE" and node_of("show_draft")["status"] == "DRAFT"
+
+
+# ---- review fixes (2026-11-16): the storefront link and the price in the default block ------------------------
+
+def test_show_fills_the_storefront_link_of_an_active_product_and_prints_its_price(creds, shop_fixture, capsys):
+    answer = data("show_active")
+    node = answer["data"]["node"]
+    assert node["onlineStoreUrl"] is None and node["status"] == "ACTIVE"           # as the store answered
+    node["priceRangeV2"] = {"minVariantPrice": {"amount": "509.0", "currencyCode": "USD"},
+                            "maxVariantPrice": {"amount": "609.0"}}
+    code, out, _, calls = run(creds, shop_fixture, ["show", "13016112970"], [answer], capsys)
+    lines = out.splitlines()
+    assert code == 0 and "priceRangeV2" in calls[0]["query"]
+    assert f"url\thttps://fairwardgolf.com/products/{node['handle']}" in lines and "price\t509.0-609.0 USD" in lines
+
+
+def test_show_a_draft_has_no_storefront_link_and_an_answer_without_price_an_empty_one(creds, shop_fixture, capsys):
+    answer = data("show_draft")
+    code, out, _, _ = run(creds, shop_fixture, ["show", node_of("show_draft")["handle"]], [answer], capsys)
+    lines = out.splitlines()
+    assert code == 0 and "url\t" in lines and "price\t" in lines

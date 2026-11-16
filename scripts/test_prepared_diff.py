@@ -59,8 +59,8 @@ def test_the_real_pairs_show_each_kind_of_change(capsys):
     old_v, new_v = got[("101054995:13099257309", "changed", "variants")]
     assert old_v.split(" | ") == ["10.5도 R+아이언 R / 5번 R / 4번 SR", "10.5도 R+아이언 R / 5번 R / 5번 S"]
     assert new_v.split(" | ") == ["10.5도 R+아이언 R / 4번 R / 4번 R", "10.5도 R+아이언 R / 3번 R / 3번 R"]
-    assert got[("1100071177:13312194411", "changed", "other")] == (
-        "product.description_dropped | product.description_images",) * 2
+    assert got[("1100071177:13312194411", "changed", "other")] == (      # the names once, in the new column
+        "-", "product.description_dropped | product.description_images")
     assert got[("1100071177:13312194411", "changed", "notes")][0] == "-"
     assert "(7 of 7 listing groups)" in got[("102206584:13492376357", "changed", "notes")][0]
     assert got[("1100071177:13312174622", "added", "status")] == ("-", "held")
@@ -270,3 +270,58 @@ def test_run_transform_verify_reads_the_shops_root_given(tmp_path, capsys):
     capsys.readouterr()
     assert run_transform.main(["fairwardgolf", "--shops-root", shops, "--verify"]) == 0
     assert capsys.readouterr().out.startswith("run_transform: ")
+
+
+def test_other_names_a_part_once_and_says_which_side_has_it_alone():
+    import prepared_diff as D
+    old = {"key": "k", "status": "ready", "source": {"a": 1}, "gone": 1, "product": {}}
+    new = {"key": "k", "status": "ready", "source": {"a": 2}, "came": 1, "product": {}}
+    got = D.compare(D.summary(old), D.summary(new), ["other"])
+    assert got == {"other": {"old": "", "new": "came (new only) | gone (old only) | source"}}
+    assert D.tsv_lines([{"key": "k", "change": "changed", "fields": got}]) == [
+        "k\tchanged\tother\t-\tcame (new only) | gone (old only) | source"]
+
+
+def test_published_only_says_so_in_the_summary(capsys, shop_fixture):
+    import prepared_diff as D
+    path = os.path.join(shop_fixture.shops, shop_fixture.shop, "prepared", "products.jsonl")
+    assert D.main([path, path, "--published-only", "--shops-root", shop_fixture.shops]) == 0
+    assert "compared (published only): 0 added" in capsys.readouterr().err
+
+
+def test_a_prepare_of_a_copy_with_copy_of_equals_the_prepare_in_place(shop_fixture, tmp_path, monkeypatch, capsys):
+    """2026-11-16 review: `--shops-root <clone> --diff` prepared the clone with no paid variant (the jobs belong to the
+    real root) and no brand dictionary (loaded for the real root only): a false diff. --copy-of ROOT takes both as
+    for ROOT. The fixture's real products: job B made with paid variants takes 5 of them (a listing.jsonl added)."""
+    import shutil
+    fx = shop_fixture
+    job = os.path.join(fx.jobs, fx.jobs_ids[1])
+    with open(os.path.join(job, "job.json"), encoding="utf-8") as f:
+        meta = json.load(f)
+    meta["free_only"] = False                                       # paid_variants: the paid variants, no add-on
+    with open(os.path.join(job, "job.json"), "w", encoding="utf-8") as f:
+        json.dump(meta, f)
+    pids = ["5917858699", "11097352600", "13016112970", "13552318731", "13830324906"]   # their prepare depends on it
+    with open(os.path.join(job, "listing.jsonl"), "w", encoding="utf-8") as f:
+        f.write("".join(json.dumps({"product_id": p}) + "\n" for p in pids))
+    real = os.path.abspath(fx.shops)
+    seen = []
+    def known_brands(root):
+        seen.append(root)
+        return ["테스트브랜드"] if os.path.abspath(root) == real else []
+    monkeypatch.setattr(run_transform, "_known_brands", known_brands)
+    clone = str(tmp_path / "clone")
+    shutil.copytree(fx.shops, clone)
+
+    def prepared(root, *flags):
+        assert run_transform.main([fx.shop, "--shops-root", root, "--jobs-root", fx.jobs, "--full", *flags]) == 0
+        capsys.readouterr()
+        with open(os.path.join(root, fx.shop, "prepared", "products.jsonl"), encoding="utf-8") as f:
+            return f.read()
+    in_place = prepared(fx.shops)
+    assert run_transform.paid_choices(fx.shop, fx.shops, fx.jobs) == {p: run_transform.VARIANTS for p in pids}
+    assert prepared(clone) != in_place                              # the clone alone: no paid variant (the bug)
+    assert run_transform.paid_choices(fx.shop, clone, fx.jobs) == {}
+    seen.clear()
+    assert prepared(clone, "--copy-of", fx.shops) == in_place
+    assert seen == [fx.shops]                                       # the dictionary loaded as for the real root

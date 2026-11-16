@@ -27,7 +27,8 @@ Commands (repo root):
 - `.venv/bin/python scripts/publish.py <shop> --only <key>` (writes); `--withdraw <key> --reason "..."`,
   `--restore <key> --reason "..."`, `--activate <key>` (each repeatable)
 - each takes a product id, handle or link too, and `--keys-file F` / `--job ID [--event E]`; with `--dry-run` a store
-  action prints `<key>: would <action>` and sends nothing (OPERATIONS.md "Naming a product")
+  action prints `<key>: would <action>` (or `not published here` / `not withdrawn here` / `not a draft here`, what
+  the real call would refuse) and sends nothing (OPERATIONS.md "Naming a product"); an empty ref is exit 2
 
 Rules:
 - Shopify writes go only through `publish.py` / `shopify_admin.py` (AGENTS.md rule 3).

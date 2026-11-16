@@ -69,7 +69,12 @@ Each one waits for the owner's word ([OWNER_RULES.md](OWNER_RULES.md)); the proc
 product's key is `fairwardgolf:naver:<channel>:<product id>`: a lens's `index.tsv` gives it by sheet number (column
 `key`), the ledger by product id; each flag also takes the product id, a handle or a link and resolves it (two
 products for one ref: exit 2, both keys listed), and `--dry-run` with a store action prints `<key>: would <action>`
-and sends nothing: run it first to see the key the action takes.
+and sends nothing: run it first to see the key the action takes. A key the real call would refuse says so from the
+ledger: `not published here` (withdraw), `not withdrawn here` (restore; exit 1 for these two), `not a draft here`
+(activate). Two changes of 2026-11-16, both toward sending less: `--dry-run` used to let a store action through
+(now it only says what it would do), and an empty ref (`--only "$KEY"` with KEY unset, `--keys-file ""`, `--job ""`,
+`--event` without `--job`) stops with exit 2 instead of meaning every product; `--only <ref>` that names no product is
+still `not ready` and skipped (exit 0), as before.
 
 - `publish.py <shop> --withdraw <key> --reason "..."`: the product goes DRAFT in the store (nothing deleted), the
   ledger row says `withdrawn` with the reason, and it is never sent again; dedupe closes a new copy of it as

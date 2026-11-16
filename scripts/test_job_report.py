@@ -57,7 +57,7 @@ def test_iso_time_no_zone_is_utc_and_bad_raises():
 
 def test_report_job_a(shop_fixture):
     r = R.report(folder(shop_fixture, JOB_A))
-    assert (r["job"], r["shop"], r["mode"], r["final"], r["finished"]) == (JOB_A, "fairwardgolf", "scroll",
+    assert (r["job"], r["shop"], r["mode"], r["goal"], r["finished"]) == (JOB_A, "fairwardgolf", "scroll",
                                                                            "published", False)
     assert r["events"] == 434 and r["counts"]["published"] == 62 and r["counts"]["stop"] == 3
     assert r["reasons"]["not_taken"]["duplicate_of"] >= 1
@@ -354,3 +354,57 @@ def test_watch_never_locks_or_writes(shop_fixture, monkeypatch):
     run_watch(shop_fixture, JOB_A, [], timeout=0)
     R.report(f)
     assert {n: os.path.getmtime(os.path.join(f, n)) for n in os.listdir(f)} == before
+
+
+# ---- review fixes (2026-11-16): a watch carries its position, a bad job.json, a bad attempt -------------------
+
+def test_two_watches_in_a_row_lose_nothing_logged_between_them(shop_fixture):
+    path = os.path.join(folder(shop_fixture, JOB_A), "events.jsonl")
+    pub = {"event": "published", "key": "k", "status": "published"}
+    # one read: a published that ends the first watch (every 1), then a wait in the same read
+    r1, _ = run_watch(shop_fixture, JOB_A, [adds(shop_fixture, JOB_A, pub, {"event": "waiting", "reason": "x"})],
+                      every=1)
+    assert r1["exit"] == R.EXIT_PUBLISHED and r1["seen"] == 434 + 1 and "next --from 435" in R.watch_line(r1)
+    append(path, pub, pub)                              # logged while no watch ran
+    r2, clock = run_watch(shop_fixture, JOB_A, [], start=r1["seen"])
+    assert r2["exit"] == R.EXIT_WAITING and clock.slept == [] and r2["seen"] == 436
+    r3, _ = run_watch(shop_fixture, JOB_A, [], start=r2["seen"], every=4)      # 63 -> 65 passed 64 in the gap
+    assert (r3["exit"], r3["published"], r3["new_published"]) == (R.EXIT_PUBLISHED, 64, 1)
+    r4, _ = run_watch(shop_fixture, JOB_A, [], start=r3["seen"], every=4, timeout=0)
+    assert r4["exit"] == R.EXIT_TIMEOUT and r4["published"] == 65 and r4["seen"] == 438
+
+
+def test_watch_from_reaches_a_done_after_a_stop(shop_fixture):
+    path = os.path.join(folder(shop_fixture, JOB_A), "events.jsonl")
+    append(path, {"event": "stop", "reason": "wall"}, {"event": "done", "total": 1})
+    r, _ = run_watch(shop_fixture, JOB_A, [], start=434)
+    assert r["exit"] == R.EXIT_STOP and r["seen"] == 435
+    r, _ = run_watch(shop_fixture, JOB_A, [], start=r["seen"])
+    assert r["exit"] == R.EXIT_DONE
+    with pytest.raises(ValueError):
+        R.watch(folder(shop_fixture, JOB_A), lambda: None, start=10_000)
+
+
+def test_main_watch_from(shop_fixture, monkeypatch, capsys):
+    monkeypatch.setattr(J.Job, "now", lambda self: None)
+    f = folder(shop_fixture, JOB_A)
+    append(os.path.join(f, "events.jsonl"), {"event": "reopen", "batch": 2})
+    assert J.main(["watch", "--job", f, "--from", "434"]) == R.EXIT_REOPEN
+    assert "next --from 435" in capsys.readouterr().out
+    assert J.main(["watch", "--job", f, "--from", "9999"]) == R.EXIT_USAGE
+    assert "the job has 435 events" in capsys.readouterr().err
+
+
+def test_a_job_json_without_shop_is_usage_not_a_traceback(shop_fixture, capsys):
+    f = folder(shop_fixture, JOB_A)
+    with open(os.path.join(f, "job.json"), "w", encoding="utf-8") as out:
+        json.dump({"category": "1"}, out)
+    assert J.main(["watch", "--job", f]) == R.EXIT_USAGE
+    assert J.main(["report", "--job", f]) == R.EXIT_USAGE
+    assert "job.json has no 'shop'" in capsys.readouterr().err
+
+
+def test_a_network_wait_with_a_bad_attempt_is_not_a_crash(shop_fixture):
+    r, _ = run_watch(shop_fixture, JOB_A, [adds(shop_fixture, JOB_A, {"event": "network_wait", "attempt": "x"})],
+                     timeout=15)
+    assert r["exit"] == R.EXIT_TIMEOUT and r["new"] == {"network_wait": 1}
