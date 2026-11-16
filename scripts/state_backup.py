@@ -51,7 +51,8 @@ NUMBER = {"state": "01", "photos": "02", "description-images": "03", "server": "
 ARCHIVE_NAME = {"state": "state", "photos": "photos", "description-images": "description-images",
                 "server": "server-pages", "archive": "archive"}
 LEVEL = {"state": 19, "photos": 3, "description-images": 3, "server": 19, "archive": 19}
-RATIO = {19: 0.25, 3: 1.0}          # a cautious guess of archive / source for the space check (text gave 1/17+)
+RATIO = {19: 1.0, 3: 1.0}           # the space check counts the source size: a "text" phase may hold images
+                                    # (2026-11-15: the archive phase compressed only to 0.89)
 STATE_DIRS = ("jobs", "journal", "dictionaries")     # under scripts/output, besides shops/
 
 SKIP_DIRS = {"prepare_cache", "__pycache__", ".venv"}
@@ -95,6 +96,8 @@ def phase_of(rel: str) -> str:
     parts = rel.split("/")
     if parts[0] == "server":
         return "server"
+    if parts[0] == "research":                 # the plans and reviews kept outside git: small, with the state
+        return "state"
     if len(parts) > 3 and parts[2] == "shops":
         # scripts/output/shops/<shop>/collected/<run>/images/...
         if len(parts) > 7 and parts[4] == "collected" and parts[6] == "images":
@@ -120,10 +123,10 @@ def _root(rel: str) -> str:
 
 
 def scan(root: str) -> tuple[dict[str, list[tuple[str, int]]], list[tuple[str, str]]]:
-    """Every file under scripts/output and server/output -> {phase: [(rel, bytes)]} sorted, and what was left out."""
+    """Every file under scripts/output, server/output and research/ -> {phase: [(rel, bytes)]} sorted, and what was left out."""
     files: dict[str, list[tuple[str, int]]] = {p: [] for p in PHASES}
     excluded: list[tuple[str, str]] = []
-    for top in ("scripts/output", "server/output"):
+    for top in ("scripts/output", "server/output", "research"):     # research/: the plans and reviews outside git
         base = os.path.join(root, top)
         for here, dirs, names in os.walk(base):
             rel_here = os.path.relpath(here, root).replace(os.sep, "/")
@@ -411,6 +414,9 @@ def restore(dest: str, to: str, phases: list[str], root: str = REPO, out: Any = 
         return 1
     for e in chosen:
         path = os.path.join(dest, e["file"])
+        if not os.path.exists(path):
+            print(f"refused: {e['file']}: missing from {dest}", file=out)
+            return 1
         if sha256(path) != e["sha256"]:
             print(f"refused: {e['file']}: sha256 differs from MANIFEST.json", file=out)
             return 1

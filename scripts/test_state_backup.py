@@ -74,6 +74,7 @@ def test_phases_by_path():
     assert sb.phase_of("scripts/output/dictionaries.old/brand.json") == "archive"
     assert sb.phase_of("scripts/output/notes.md") == "archive"
     assert sb.phase_of("server/output/listings/page.html") == "server"
+    assert sb.phase_of("research/hardening-2026-11/PLAN.md") == "state"      # the plans outside git
 
 
 def test_backup_verify_restore_round_trip(repo, tmp_path):
@@ -181,3 +182,21 @@ def test_parse_size():
     assert sb.parse_size("4G") == 4 << 30 and sb.parse_size("500M") == 500 << 20 and sb.parse_size("123") == 123
     with pytest.raises(Exception):
         sb.parse_size("big")
+
+
+def test_research_goes_in_the_state_archive_and_a_missing_archive_refuses_a_restore(repo, tmp_path):
+    """2026-11-16, the phase 0 review: research/ (plans outside git) was in no backup; a restore with an archive
+    gone from the folder ended in a traceback."""
+    plan = os.path.join(repo, "research", "x", "PLAN.md")
+    os.makedirs(os.path.dirname(plan))
+    with open(plan, "w") as f:
+        f.write("plan")
+    dest = tmp_path / "b"
+    run(repo, dest, phases=["state"])
+    to = tmp_path / "r"
+    assert sb.restore(str(dest), str(to), ["state"], root=repo, out=io.StringIO()) == 0
+    assert (to / "research" / "x" / "PLAN.md").read_text() == "plan"
+    (dest / "01-state-2026-11-16.tar.zst").unlink()
+    out = io.StringIO()
+    assert sb.restore(str(dest), str(tmp_path / "r2"), ["state"], root=repo, out=out) == 1
+    assert "missing" in out.getvalue()
