@@ -184,3 +184,11 @@ def test_dupes_draws_the_reports_groups(shop, monkeypatch):
     plan = L.dupes(ShopView(SHOP, root))
     assert [(c.data["role"], c.mark) for c in plan.cards] == [("keep", "ok"), ("copy", "flag")]
     assert plan.cards[0].group.startswith("group 1")
+
+
+def test_a_product_known_only_by_its_key_has_no_variants_and_reads_as_no_single():
+    """2026-11-16, the architecture review (mypy): Product.variant_values was set but never declared; a product with
+    no prepared record and no collected variants made lens.single_looking raise AttributeError."""
+    from shop_view import Product
+    p = Product(key=f"{SHOP}:naver:1:2", pid="2", channel="1", title_ko="드라이버")
+    assert p.variant_values == [] and L.single_looking(p) is False

@@ -37,6 +37,7 @@ class Product:
     price_krw: int | None = None              # the lowest variant price (Naver, KRW)
     variants: int = 0
     options: list[str] = field(default_factory=list)   # "name: v1 / v2 / ..." per option
+    variant_values: list[list[str]] = field(default_factory=list)   # each variant's option values
     leaves: list[str] = field(default_factory=list)
     placement: str | None = None              # placed, held, unresolved ...
     handle: str = ""
