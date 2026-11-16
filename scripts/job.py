@@ -86,8 +86,8 @@ shop's files or sends its products, is refused at once (`stop: <shop> is busy: j
 exit 2). `status` and `new` take no lock. When `run` / `scroll` stops (3) or finishes (`done`), main() tells the
 owner (tell_owner: scripts/notify.py, NAVER_NOTIFY_WEBHOOK else a macOS notification; the owner, 2026-11-16).
 
-`--dedupe off|log|on` (`new` and `scroll`, the owner 2026-11-15; kept in job.json, read again on resume; off, the
-default, leaves the job as it was and writes no key): right after a product is collected, before its description
+`--dedupe off|log|on` (`new` and `scroll`, the owner 2026-11-15; kept in job.json, read again on resume; on is the
+default; off leaves the job as it was and writes no key): right after a product is collected, before its description
 images, dedupe.py looks it up in an index built at the run's start (the shop's published and owner-withdrawn products
 and the job's own collected ones): the same title key, another store, a price within x2, confirmed by the photos or
 the variants. `log`: one event `duplicate_seen` (the would-be decision, the matches and their signals), nothing

@@ -16,9 +16,9 @@ first; what waits for the owner: [OWNER_RULES.md](OWNER_RULES.md).
 
 | Task | Skill | Doc |
 |---|---|---|
-| Start or watch a job, the "Запусти scroll" shorthand | `run-a-job` | [JOB_AGENT.md](JOB_AGENT.md) |
+| Start or watch a job, the "Запусти scroll" shorthand | `run-a-job` | [JOB_AGENT.md](JOB_AGENT.md), [DEDUPE.md](DEDUPE.md) |
 | Review drafts or a section by eye | `visual-review` | [LENSES.md](LENSES.md) |
-| Why is a product missing, held, a draft, withdrawn, odd | `product-trace` | the shop's files (read only) |
+| Why is a product missing, held, a draft, withdrawn, odd | `product-trace` | the shop's files (read only); the codes: [TRANSFORM.md](TRANSFORM.md#held-codes) "Held codes" |
 | Activate, withdraw, hold, restore, reprice, back up | `store-actions` | [PUBLISH.md](PUBLISH.md), [PRICE.md](PRICE.md), [OPERATIONS.md](OPERATIONS.md) |
 | Fix one product's brand, title, price, section, description | `fix-a-product` | the stage's doc below |
 
@@ -27,12 +27,14 @@ The scripts' topics, each in its own doc, each with a skill to read first:
 | Doc | Skill | When to read |
 |---|---|---|
 | [COLLECT.md](COLLECT.md) | `collect-api` | Calling the API: product details, options, photos, the listing screen, reviews, examples, answer types, harvests |
-| [JOB_AGENT.md](JOB_AGENT.md) | `run-a-job` | Running or watching `job.py` (one product per iteration, `new` + `run` or `scroll`) |
-| [TRANSFORM.md](TRANSFORM.md) | `transform` | The transform (collected -> prepared), package weight and size, the description images' OCR, record types |
+| [JOB_AGENT.md](JOB_AGENT.md) | `run-a-job` | Running or watching `job.py` (one product per iteration, `new` + `run` or `scroll`), step by step: before, start, watch, stop, after |
+| [DEDUPE.md](DEDUPE.md) | `run-a-job` | Duplicates (`dedupe.py`, `job.py --dedupe off\|log\|on`): a job's events and what to do, `--pairs`, `--report`, the rule |
+| [TRANSFORM.md](TRANSFORM.md) | `transform` | The transform (collected -> prepared), the held codes and what to do on each, record types |
+| [PACKAGE.md](PACKAGE.md) | `transform` | Package weight and size (the five fields), category defaults, confidence, the description images' OCR, the images' text for `describe.py` |
 | [TRANSLATION.md](TRANSLATION.md) | `translation` | `translate.py`, the dictionaries, the prompts, review cleaning, the quality check |
 | [PLACEMENT.md](PLACEMENT.md) | `placement` | The shop's sections, the last stage before Shopify (`placement.py`) |
 | [DESCRIBE.md](DESCRIBE.md) | `describe` | The English description (`describe.py`) and its model |
-| [PRICE.md](PRICE.md) | `price` | The price rule, the delivery tariff, repricing (`shop_pricing.py`, `reprice.py`) |
+| [PRICE.md](PRICE.md) | `price` | Why a product is priced X, the price rule, the delivery tariff, repricing (`shop_pricing.py`, `reprice.py`) |
 | [PUBLISH.md](PUBLISH.md) | `publish` | Publication to Shopify (`publish.py`), the payload, withdraw / hold / restore / activate, the Shopify roadmap |
 | [OPERATIONS.md](OPERATIONS.md) | `operations` | Running the scripts, tests and checks, the backup, shared files, conventions |
 | (none) | `release` | Cutting a release (developer): VERSION, check.sh, tag, push, the state backup |
@@ -74,13 +76,13 @@ Also: [ONBOARDING.md](ONBOARDING.md) (a new category or shop, skill `new-categor
 | `shopnship_rates.py` | ShopNShip's public calculator (networked, by hand only): `quote` one box, `capture` the grid into a dated file, `compare` a capture with the recorded table. Never in the price path |
 | `shopnship_explore.py` | Research tool (networked, by hand only): wide sets of boxes asked of the calculator and compared with the tariff model (`run`, `report`). Never in the price path |
 | `listing_title_rules.json` | Ours: per Naver category, the title words of what the shop's section does not sell; the screen drops such a row as `title:<code>` (listing_filter) |
-| `review_grid.py` | Read only, offline, by hand: numbered sheets of the published products' first photos and an index (number, key, title, handle, admin link), for a look by eye after a run (JOB_AGENT.md, After); draws through `sheet.py` |
+| `review_grid.py` | Read only, offline, by hand: numbered sheets of the published products' first photos and an index (number, key, title, handle, admin link), for a look by eye after a run (JOB_AGENT.md, 5. After); draws through `sheet.py` |
 | `lens.py` | Read only, offline, by hand: visual lenses, numbered contact sheets for one question each (`section`, `price`, `brand`, `dupes`, `held`, `products`) plus `index.tsv` and `summary.json`, for an agent to look at by eye and prove by number (LENSES.md, skill `visual-review`) |
 | `sheet.py` | The contact sheet drawing under the lenses, `review_grid.py`: cards (number, photos, labels, mark, group), grid and rows layouts, the index |
 | `shop_view.py` | One read-only view of a shop's files joined by key (prepared, translated, placement, the ledger, collected photos) and a job's events, for the lenses |
 | `make_lens_fixture.py` | Offline, by hand: cuts the lenses' real-record fixture (`fixtures/lens/cases.json`) from `scripts/output`, the cases listed with why (LENSES.md, Tests) |
-| `review_suspects.py` | Read only, offline: the published products of a category that may not be what its section sells (one club, 2-3 clubs, used, junior or accessory words), with key, store id, handle, price and reason; a table and a CSV for the owner's review after a lenient run (JOB_AGENT.md, After) |
-| `dedupe.py` | Duplicates (the owner, 2026-11-15): the rule (title key, photo / variant confirmation, grade then reviews) and the index `job.py --dedupe log` / `on` uses after collect; `--report <shop> [--category]` lists the duplicate groups already in the store, best first (members joined by title words only marked), `--pairs <shop> --job <id>` draws a job's pairs side by side with an index.tsv. Read only, offline (JOB_AGENT.md, Duplicates) |
+| `review_suspects.py` | Read only, offline: the published products of a category that may not be what its section sells (one club, 2-3 clubs, used, junior or accessory words), with key, store id, handle, price and reason; a table and a CSV for the owner's review after a lenient run (JOB_AGENT.md, 5. After) |
+| `dedupe.py` | Duplicates (the owner, 2026-11-15): the rule (title key, photo / variant confirmation, grade then reviews) and the index `job.py --dedupe log` / `on` uses after collect; `--report <shop> [--category]` lists the duplicate groups already in the store, best first (members joined by title words only marked), `--pairs <shop> --job <id>` draws a job's pairs side by side with an index.tsv. Read only, offline (DEDUPE.md) |
 | `publish.py --withdraw` | Takes a published product off the store (DRAFT, nothing deleted) and keeps it from being sent again; the ledger keeps why |
 | `publish.py --restore` | Undoes a withdrawal (with `--reason`): ACTIVE again (a draft stays a draft, 2026-11-16), its last published row back in the ledger with no digest, so the next `--only` sends today's data to the same product (2026-11-15: no-brand agency imports back under the shop's name). A title translated under the shop's name ("Fairward Golf ...") takes the brand found later in its place (`shopify_payload.title_vendor`) |
 | `publish.py --activate` | A draft (a category not marked reviewed, draft first 2026-11-16) live: ACTIVE, the ledger row again with `store_status: ACTIVE` and `activated`, nothing sent again; repeatable; only on the owner's word after the lens review. A key that is not a published draft: `not a draft here` |
@@ -96,7 +98,7 @@ Also: [ONBOARDING.md](ONBOARDING.md) (a new category or shop, skill `new-categor
 | `deferred_log.py` | The shop's journal of deferred products (append-only); CLI `list` / `allow <key> --by` |
 | `collect_guard.py` | The run rules around one product: one retry, then deferred; stop on a wall; stop on a repeated defect |
 | `package_measures.py`, `category_measures.json` | Five shipping fields per variant: the seller's values, else the operator's category averages; the table also holds the operator's `baselines` for the composition; confidence 1-5 |
-| `description_images.py`, `description_ocr.py`, `description_measures.py` | Optional stage: OCR of the description images (RapidOCR; Naver's CDN and the seller's HTTPS hosts; a worker process per product) into a sidecar per product; the transform reads size / weight from it and from the typed description text (a core for every category + parts profiles by Naver category id): a stated box / weight takes the place of a category default, and a set's other fields are composed from its parts with the operator's baselines, the flat default last (see TRANSFORM.md, Package weight and size) |
+| `description_images.py`, `description_ocr.py`, `description_measures.py` | Optional stage: OCR of the description images (RapidOCR; Naver's CDN and the seller's HTTPS hosts; a worker process per product) into a sidecar per product; the transform reads size / weight from it and from the typed description text (a core for every category + parts profiles by Naver category id): a stated box / weight takes the place of a category default, and a set's other fields are composed from its parts with the operator's baselines, the flat default last (see PACKAGE.md) |
 | `review_clean.py` | The reviews sanitized in the transform: decoration out, the Korean purchase cut, empty reviews dropped (see TRANSFORM.md, Transform) |
 | `translate.py`, `translation_dicts.py`, `translation_rules.py`, `translate_keys.py`, `translate_eval.py`, `prompts/` | Translation of the prepared texts (see TRANSLATION.md, Translation): the model stage, the per-kind dictionaries (live / backup), the unit rules, the prompts |
 | `description_image_text.py` | The images' OCR rows -> clean Korean blocks (text / table) for `describe.py` (not translated since 2026-11-10); run_transform writes `translation/<product id>/description_images.ko.*` and the flag `product.description_images_text.state` |

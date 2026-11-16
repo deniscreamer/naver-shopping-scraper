@@ -20,7 +20,7 @@ Naver product id, the key is `<shop>:naver:<channel>:<id>`.
    `category_mismatch`, `deferred`) and `.venv/bin/python scripts/deferred_log.py --store <shop> list`.
    Not in any listing, screen or event: never listed by a job (another query or category).
 4. **Prepared**: `grep '"key": "<key>"' $S/prepared/products.jsonl`: `status`, `held` codes, `notes`,
-   `product.brand_source` / `brand_ko`, the variants' prices (codes: TRANSFORM.md "Transform", Held).
+   `product.brand_source` / `brand_ko`, the variants' prices (codes: TRANSFORM.md "Held codes").
 5. **Translated**: `grep '"key": "<key>"' $S/translation/translated.jsonl`: `status`, `problems`, `missing`.
 6. **Placed**: `grep '"key": "<key>"' $S/placement/placements.jsonl`: `status` (placed / held / unresolved / no_profile),
    `reason`, `evidence`, `leaves`.

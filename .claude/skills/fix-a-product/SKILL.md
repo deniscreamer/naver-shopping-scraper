@@ -10,7 +10,7 @@ the stage, the evidence. `S=scripts/output/shops/<shop>`. Hand edits wait for th
 (`job.py status`), except the read-only steps.
 
 1. **Find the source** of the wrong value:
-   - brand: `product.brand_source` / `brand_ko` in `$S/prepared/products.jsonl` (the order: TRANSFORM.md "Transform",
+   - brand: `product.brand_source` / `brand_ko` in `$S/prepared/products.jsonl` (the order: TRANSFORM.md
      "A brand for every product"); `lens.py brand <shop> --category <id>` shows its neighbours;
    - title: its rows in `$S/translation/texts.jsonl` (`kind` title, the last row wins; `by` model or `review-<date>`);
    - price: the breakdown, skill `product-trace` step 7 (box, level, tariff), rule: skill `price`;

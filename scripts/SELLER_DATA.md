@@ -44,7 +44,7 @@ Description -> `parsers.parse_contents`, `pdp.description_text`
 - YouTube oembeds in the body are not collected yet.
 
 Weight and size -> `measures.py`, `package_measures.py`
-- Most sets give weight / size only in images: read by the OCR stage and composed from the parts (TRANSFORM.md, since
+- Most sets give weight / size only in images: read by the OCR stage and composed from the parts (PACKAGE.md, since
   2026-11-07..10); the flat category default (confidence 1) only when nothing is read.
 - Notice 중량 may list one weight per club count ("약11.5kg / 4.7kg", 6630856593) -> bound by club count.
 - Club spec tables (td-only, column headers) and "총중량" under a club heading are one club's, never the set's.

@@ -81,7 +81,7 @@ A composed field says how it was built: `how`, `parts` ([{part, value, from, quo
 total as it was made, "baseline", or the field it is), `baseline` (who approved the operator's amounts in it)
 and, as `compared`, the default it replaced.
 
-More rules (2026-11-11, the 300 sets of the fairwardgolf job; scripts/TRANSFORM.md "More of the page"): core skips
+More rules (2026-11-11, the 300 sets of the fairwardgolf job; scripts/PACKAGE.md "More of the page"): core skips
 (shipping rules, a buyer, a shoe box), "세트 패키지" not a package, "크기,중량" a weight; the profile's bag words
 (machine translation, a composition item, gift bags, container_hint), a closed composition (container_closed:
 no bag, weak), the bag assumed when the count is known and nothing says (container_assumed: the baseline bag,
@@ -291,8 +291,7 @@ GOLF_SET = Profile(
     container_assumed=True,
 )
 # Naver leaf category id -> its parts profile (the core runs for every category; a profile only where the images
-# list parts of a set). Add a category here when its images need its own words / ranges (scripts/TRANSFORM.md,
-# "Package weight and size").
+# list parts of a set). Add a category here when its images need its own words / ranges (scripts/PACKAGE.md).
 CATEGORY_PROFILES: dict[str, Profile] = {
     "50002788": GOLF_SET,                # 스포츠/레저 > 골프 > 골프클럽 > 풀세트
 }

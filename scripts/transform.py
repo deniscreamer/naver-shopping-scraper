@@ -28,7 +28,8 @@ naver-harvester published, and its 60 published products):
   * text fields (a name on a tag) -> personalization; add-ons on sale and in stock: free ones, paid ones too
     with the category's paid_addons (price in KRW and USD); a (필수) group is required.
   * held (not published, kept with codes): collect_incomplete, price_unknown, no_variants,
-    options_unaligned, axes_over_3, specs_folded, no_images, images_over_50. More combinations than the shop's
+    options_unaligned, axes_over_3, specs_folded, no_images, images_over_50, single_only; run_transform adds
+    agency_no_brand (all of them: scripts/TRANSFORM.md "Held codes"). More combinations than the shop's
     cap: the first ones are offered, every option value kept (note variants_capped).
   * notes (never block): shipping_paid, overseas_shipping (a shop with the price rule puts a PAID / UNIT_QUANTITY_PAID
     fee into the purchase: shop_pricing),
