@@ -48,7 +48,7 @@ How the routes that run in the owner's Chrome work (the adapter, its walk, tabs,
   `API_HOST` is set (`config.HOST`, 2026-11-15); there is no auth.
 
 ```
-GET /health  ->  {"status": "ok", "version": "<the VERSION file, e.g. 0.22.0>", "endpoints": ["/products/details", ..., "/listings", ...],
+GET /health  ->  {"status": "ok", "version": "<the VERSION file, e.g. 0.23.0>", "endpoints": ["/products/details", ..., "/listings", ...],
 "extension": "connected"}
 ```
 
