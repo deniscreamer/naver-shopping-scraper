@@ -98,6 +98,8 @@ from collections import Counter
 from datetime import datetime, timezone
 from typing import Any
 
+from shop_files import write_atomic
+
 SCRIPTS = os.path.dirname(os.path.abspath(__file__))
 JOBS_ROOT = os.path.join(SCRIPTS, "output", "jobs")
 STAGES = ("collected", "images", "prepared", "translated", "placed", "published")   # placed: placement.py, run on
@@ -171,8 +173,8 @@ class Job:
 
     def beat(self, **now: Any) -> None:
         """now.json: what the runner does at this moment (status shows it while the runner is alive)."""
-        with open(os.path.join(self.folder, "now.json"), "w", encoding="utf-8") as f:
-            json.dump({"pid": os.getpid(), "at": _now(), **now}, f, ensure_ascii=False)
+        write_atomic(os.path.join(self.folder, "now.json"),
+                     json.dumps({"pid": os.getpid(), "at": _now(), **now}, ensure_ascii=False))
 
     def now(self) -> dict[str, Any] | None:
         try:
@@ -184,8 +186,7 @@ class Job:
             return None
 
     def save_meta(self) -> None:
-        with open(os.path.join(self.folder, "job.json"), "w", encoding="utf-8") as f:
-            json.dump(self.meta, f, ensure_ascii=False, indent=1)
+        write_atomic(os.path.join(self.folder, "job.json"), json.dumps(self.meta, ensure_ascii=False, indent=1))
 
     def log(self, key: str | None, event: str, **detail: Any) -> None:
         with open(os.path.join(self.folder, "events.jsonl"), "a", encoding="utf-8") as f:
@@ -391,10 +392,8 @@ def cmd_new(args: argparse.Namespace) -> int:
                                                           # (--paid-variants: this job's products take paid variants)
     if args.dedupe != "off":                              # 2026-11-15: off writes no key (job.json as before)
         meta["dedupe"] = args.dedupe
-    with open(os.path.join(folder, "job.json"), "w", encoding="utf-8") as f:
-        json.dump(meta, f, ensure_ascii=False, indent=1)
-    with open(os.path.join(folder, "listing.jsonl"), "w", encoding="utf-8") as f:
-        f.write("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
+    write_atomic(os.path.join(folder, "job.json"), json.dumps(meta, ensure_ascii=False, indent=1))
+    write_atomic(os.path.join(folder, "listing.jsonl"), "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
     print(f"job {job_id}: {len(rows)} products ({batches} batches a query; screen: {counts}; known left out: "
           f"{len(known)})")
     return 0
@@ -1042,9 +1041,8 @@ def new_scroll_job(args: argparse.Namespace, shop: str, shops_root: str, root: s
             "free_only": not args.paid, "total": None, "tab": None, "batches": 0, "reopens": [], "screen": {}}
     if getattr(args, "dedupe", "off") != "off":
         meta["dedupe"] = args.dedupe
-    with open(os.path.join(folder, "job.json"), "w", encoding="utf-8") as f:
-        json.dump(meta, f, ensure_ascii=False, indent=1)
-    open(os.path.join(folder, "listing.jsonl"), "w").close()
+    write_atomic(os.path.join(folder, "job.json"), json.dumps(meta, ensure_ascii=False, indent=1))
+    write_atomic(os.path.join(folder, "listing.jsonl"), "")
     return Job(folder)
 
 

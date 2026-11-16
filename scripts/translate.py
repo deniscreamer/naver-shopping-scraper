@@ -50,6 +50,7 @@ from typing import Any, Protocol
 
 import shop_stores
 from keep_run import SHOPS_ROOT
+from shop_files import write_atomic
 from shopify_catalog import _git_ignored
 from translation_dicts import KINDS as DICT_KINDS
 from translation_dicts import Dictionaries, reminder
@@ -736,8 +737,8 @@ def run(shop: str, model: "Model | Chain | None", shops_root: str = SHOPS_ROOT, 
             with open(texts_path, "a", encoding="utf-8") as f:
                 f.write("".join(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n" for r in outcome.new_texts))
         dicts.save()                                     # after each product: a stopped run keeps its answers
-    with open(os.path.join(out_dir, "translated.jsonl"), "w", encoding="utf-8") as f:
-        f.write("".join(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n" for r in records))
+    write_atomic(os.path.join(out_dir, "translated.jsonl"),        # a reader never sees half (shop_files)
+                 "".join(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n" for r in records))
     status: dict[str, int] = {}
     sources: dict[str, int] = {}
     for r in records:

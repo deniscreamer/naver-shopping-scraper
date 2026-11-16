@@ -28,6 +28,7 @@ import description_image_text as image_text
 from description_images import current, load_sidecar
 from keep_run import SHOPS_ROOT, kept_run_ids
 import brand_fallback
+from shop_files import write_atomic
 from description_images import image_rows
 from shared_images import RULE as SHARED_RULE, drop_shared_images
 from transform import _texts, prepare
@@ -218,9 +219,8 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
             p["status"] = "held"
     out_dir = os.path.join(shops_root, shop, "prepared")
     os.makedirs(out_dir, exist_ok=True)
-    with open(os.path.join(out_dir, "products.jsonl"), "w", encoding="utf-8") as f:
-        for p in prepared:
-            f.write(json.dumps(p, ensure_ascii=False, sort_keys=True) + "\n")
+    write_atomic(os.path.join(out_dir, "products.jsonl"),         # a reader never sees half (shop_files)
+                 "".join(json.dumps(p, ensure_ascii=False, sort_keys=True) + "\n" for p in prepared))
     status = Counter(p["status"] for p in prepared)
     codes = Counter(h["code"] for p in prepared for h in p["held"])
     notes = Counter(n["code"] for p in prepared for n in p["notes"])
@@ -239,8 +239,7 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
         lines.append(f"  description image text: {dict(sorted(states.items()))} (translation/<product id>/)")
     lines += [f"  held {p['key']}: " + "; ".join(f"{h['code']} ({h['detail']})" for h in p["held"])
               for p in prepared if p["held"]]
-    with open(os.path.join(out_dir, "report.txt"), "w", encoding="utf-8") as f:
-        f.write("\n".join(lines) + "\n")
+    write_atomic(os.path.join(out_dir, "report.txt"), "\n".join(lines) + "\n")
     return {"prepared": prepared, "report": lines, "out_dir": out_dir}
 
 

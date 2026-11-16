@@ -38,6 +38,7 @@ from typing import Any
 import attributes as A
 from keep_run import SHOPS_ROOT
 from placement_rules import CategoryPlacement, PlacementProfile, PlacementRulesMissing, profile_for
+from shop_files import write_atomic
 
 FORMAT = "placement/1"
 
@@ -114,8 +115,8 @@ def run(shop: str, shops_root: str = SHOPS_ROOT) -> dict[str, Any]:
     placed = sorted((place(p, profile) for p in prepared), key=lambda x: x["key"])
     out_dir = os.path.join(shops_root, shop, "placement")
     os.makedirs(out_dir, exist_ok=True)
-    with open(os.path.join(out_dir, "placements.jsonl"), "w", encoding="utf-8") as f:
-        f.write("".join(json.dumps(x, ensure_ascii=False, sort_keys=True) + "\n" for x in placed))
+    write_atomic(os.path.join(out_dir, "placements.jsonl"),        # a reader never sees half (shop_files)
+                 "".join(json.dumps(x, ensure_ascii=False, sort_keys=True) + "\n" for x in placed))
     status = Counter(x["status"] for x in placed)
     sections = Counter(l["leaf"] for x in placed for l in x["leaves"])
     flags = Counter(fl for x in placed for fl in x["flags"])
