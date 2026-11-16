@@ -340,6 +340,13 @@ def test_a_publishing_job_reads_the_ledger_and_publishes_one(tmp_path, monkeypat
     calls.pop()
     what = J.publish_step(job, {}, KEYS[2])                     # not ready (held): closed, not sent
     assert what.startswith("not ready") and calls == [KEYS[1]] and job.events()[-1]["event"] == "not_taken"
+    seen = []                                                   # --draft (2026-11-16): passed on to publish_one
+    monkeypatch.setattr(PB, "publish_one", lambda shop, key, *a, **k: seen.append(k.get("draft")) or
+                        {"key": key, "status": "published", "handle": "h", "prices_usd": [1]})
+    J.publish_step(job, {}, KEYS[1])
+    job.meta["draft"] = True
+    J.publish_step(job, {}, KEYS[1])
+    assert seen == [False, True]
 
 
 def test_a_describing_job_writes_the_description_before_it_publishes(tmp_path, monkeypatch):

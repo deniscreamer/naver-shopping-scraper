@@ -953,3 +953,16 @@ def test_a_refused_activate_key_does_not_stop_the_others(tmp_path, monkeypatch, 
     assert PB.main(["fairwardgolf", "--shops-root", str(tmp_path), "--activate", "bad", "--activate", "good"]) == 1
     out = capsys.readouterr().out
     assert "bad: failed: refused" in out and "good: activated (ACTIVE)" in out
+
+
+def test_a_draft_job_creates_draft_in_a_reviewed_category_and_activate_puts_it_live(tmp_path):
+    """2026-11-16, the owner: a pilot in a reviewed category goes DRAFT (job.py --draft) for the lens review; the
+    owner activates it. An update keeps the store's status; output does not move."""
+    shop = _shop(tmp_path)
+    products = FakeProducts()
+    row = PB.publish_one(shop, KEY, products, FakeFiles(), IDS, draft=True)
+    assert products.sent[-1][0]["status"] == "DRAFT" and row["store_status"] == "DRAFT"
+    active = PB.publish_one(shop, KEY, products, FakeFiles(), IDS, force=True, draft=True)
+    assert "status" not in products.sent[-1][0] and active["store_status"] == "DRAFT"
+    admin = StatusAdmin()
+    assert PB.activate(shop, KEY, admin)["store_status"] == "ACTIVE" and admin.calls[-1][1] == "ACTIVE"

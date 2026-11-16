@@ -231,6 +231,7 @@ class JobMeta(TypedDict):
     translate: NotRequired[bool]
     publish: NotRequired[bool]
     describe: NotRequired[bool]
+    draft: NotRequired[bool]           # --draft: the job's new products DRAFT in any category
     dedupe: NotRequired[str]           # log | on; absent: off
     refreshes: NotRequired[list[dict[str, Any]]]     # new: each deeper read (at, batches, added, ...)
     total: NotRequired[int | None]     # scroll: the listing's size (the first batch's)

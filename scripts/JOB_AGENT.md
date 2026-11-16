@@ -197,6 +197,8 @@ withdrawn `replaced_by:<kept key>`.
 
 ## Draft first (a category not yet reviewed; the owner, 2026-11-16)
 
+A job with `--draft` (with `--publish`; 2026-11-16, the owner: a pilot in a reviewed category he activates after the
+lens review) creates its new products DRAFT in any category, the rest below the same.
 A Naver category not marked `reviewed=True` in `transform_shops.py` (every new one) is published DRAFT: on every
 sales channel, but not shown until activated. The ledger says `published` (`store_status: DRAFT`), so dedupe, the
 lenses, `--count` and the job's stages count drafts as published: a pilot of 20 ends with 20 drafts, none live.

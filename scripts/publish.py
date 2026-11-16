@@ -293,7 +293,7 @@ def _ledger_photos(images: list[dict[str, Any]], media: list[dict[str, Any]]) ->
 
 
 def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, Any], force: bool = False,
-                dry_run: bool = False, rehandle: bool = False) -> Mapping[str, Any]:
+                dry_run: bool = False, rehandle: bool = False, draft: bool = False) -> Mapping[str, Any]:
     """One product to Shopify -> its ledger row (status published, a LedgerRow), the last one (status skipped), or
     what a dry run built (status dry-run: payload, handle, output, product_id, feed_sha, images)."""
     prepared_all, translated_all, placed_all = shop.inputs()
@@ -375,7 +375,9 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
     # output (built with ACTIVE): the status never moves a digest, nothing is sent again for it
     if (before or {}).get("store_status") == "DRAFT":
         del payload["status"]
-    elif not before and not transform_shops.reviewed(shop.shop, prepared["source"].get("category_id")):
+    # draft: a job's own products created DRAFT in any category (job.py --draft, the owner 2026-11-16: a pilot in a
+    # reviewed category the owner activates after the lens review)
+    elif not before and (draft or not transform_shops.reviewed(shop.shop, prepared["source"].get("category_id"))):
         payload["status"] = "DRAFT"
     if dry_run:
         out = shop.path(os.path.join("publish", "payloads", f"{pid}.json"))

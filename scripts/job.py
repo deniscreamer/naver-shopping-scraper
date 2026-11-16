@@ -441,13 +441,15 @@ def cmd_new(args: argparse.Namespace) -> int:
             "until_end": args.all,                    # 2026-11-12, the owner: no count, to the listings' end
             "free_only": not args.paid}                   # 2026-11-09: no paid variant / add-on in the transform either
                                                           # (--paid-variants: this job's products take paid variants)
+    if getattr(args, "draft", False):                     # 2026-11-16: only when set (job.json as before otherwise)
+        meta["draft"] = True
     if args.dedupe != "off":                              # 2026-11-15: off writes no key (job.json as before)
         meta["dedupe"] = args.dedupe
     write_atomic(os.path.join(folder, "job.json"), json.dumps(meta, ensure_ascii=False, indent=1))
     write_atomic(os.path.join(folder, "listing.jsonl"), "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
     print(f"job {job_id}: {len(rows)} products ({batches} batches a query; screen: {counts}; known left out: "
           f"{len(known)})")
-    _draft_first_line(args.publish, store.id.value, args.category)
+    _draft_first_line(args.publish, store.id.value, args.category, getattr(args, "draft", False))
     return 0
 
 
@@ -800,7 +802,7 @@ def publish_step(job: Job, ctx: Context, key: str, n: int = 0) -> str:
         if "publisher" not in ctx:
             ctx["publisher"] = publish.clients(job.shop)
         products, files, ids = ctx["publisher"]
-        row = publish.publish_one(shop, key, products, files, ids)
+        row = publish.publish_one(shop, key, products, files, ids, draft=bool(job.meta.get("draft")))
     except ShopNotConfigured as e:
         raise Stop(f"publish: {e}") from None
     except (shopify_payload.Untranslated, shopify_payload.PayloadError) as e:
@@ -1151,6 +1153,8 @@ def new_scroll_job(args: argparse.Namespace, shop: str, shops_root: str, root: s
             "excluded_known": 0, "exclude_known": args.exclude_known,
             "translate": not args.no_translate or args.publish, "publish": args.publish, "describe": args.describe,
             "free_only": not args.paid, "total": None, "tab": None, "batches": 0, "reopens": [], "screen": {}}
+    if getattr(args, "draft", False):                     # 2026-11-16: only when set
+        meta["draft"] = True
     if getattr(args, "dedupe", "off") != "off":
         meta["dedupe"] = args.dedupe
     write_atomic(os.path.join(folder, "job.json"), json.dumps(meta, ensure_ascii=False, indent=1))
@@ -1364,7 +1368,7 @@ def _scroll(args: argparse.Namespace, job: "Job | None", shop: str, shops_root: 
         job = new_scroll_job(args, shop, shops_root)
         print(f"job {job.id}: scroll {job.meta['queries'][0]!r} (target {args.count or 'the listing end'})",
               flush=True)
-        _draft_first_line(args.publish, shop, args.category)
+        _draft_first_line(args.publish, shop, args.category, getattr(args, "draft", False))
     sjob = job
     args.ran = sjob.folder                                     # main() tells the owner how it ended
     return _guarded(sjob, f"scroll --job {sjob.id}", lambda: _scroll_run(sjob))
@@ -1554,10 +1558,14 @@ def _review_reminder(job: Job, due_only: bool = False) -> None:
         print("    once the new one is live: " + line, flush=True)
 
 
-def _draft_first_line(publish: bool, shop: str, category: str) -> None:
-    """One line at a job's creation: its products go DRAFT (a category not marked reviewed)."""
+def _draft_first_line(publish: bool, shop: str, category: str, draft: bool = False) -> None:
+    """One line at a job's creation: its products go DRAFT (a category not marked reviewed, or --draft)."""
     import transform_shops
-    if publish and not transform_shops.reviewed(shop, category):
+    if publish and draft and transform_shops.reviewed(shop, category):
+        print(f"draft: this job's new products go to the store as DRAFT (--draft); the lens review is due at "
+              f"{REVIEW_AFTER} drafts or at the end (job.py status lists the commands), activation is the owner's "
+              "word: job.py activate --job <id>", flush=True)
+    elif publish and not transform_shops.reviewed(shop, category):
         print(f"draft first: category {category} is not marked reviewed: its products go to the store as DRAFT "
               f"(--count counts drafts); the lens review is due at {REVIEW_AFTER} drafts (job.py status lists the "
               "commands), activation is the owner's word", flush=True)
@@ -1577,6 +1585,8 @@ def _job_flags(p: argparse.ArgumentParser) -> None:
                    "DRAFT in a category not marked reviewed) after translation: placement, then publish.py")
     p.add_argument("--describe", action="store_true", help="with --publish: write each product's description "
                    "before it is sent (describe.py: one model request a product)")
+    p.add_argument("--draft", action="store_true", help="with --publish: the job's new products go DRAFT even in a "
+                   "reviewed category (a pilot the owner activates after the lens review: job.py activate --job)")
     p.add_argument("--dedupe", choices=("off", "log", "on"), default="on", help="duplicates of a product sold by "
                    "another store (dedupe.py): on (the default, the owner 2026-11-15): skip and replace; log: the "
                    "decisions only; off: none (JOB_AGENT.md)")
