@@ -18,7 +18,7 @@ owner as always.
 
 Files, scripts/output/jobs/<job id>/:
 
-    job.json       shop, category, query(s), settings, the shops root, the listing job(s) read
+    job.json       shop, category, query(s), settings, the shops root, the listing job(s) read (shop_types.JobMeta)
     listing.jsonl  the screened snapshot in listing order (row + key)
     screened.jsonl scroll: every row the screen left out, append-only (at, batch, product_id, name, reason: the
                    Screen's code, or known), once a product a run, for the audit of the leave-outs
@@ -121,9 +121,10 @@ import time
 import traceback
 from collections import Counter
 from datetime import datetime, timezone
-from typing import Any, Mapping
+from typing import Any, Mapping, TypedDict
 
 from shop_files import LedgerError, append_line, locked, read_jsonl, write_atomic
+from shop_types import JobMeta
 
 # run_transform takes the code's signature (its prepare cache key) when imported: import it before any other module of
 # prepare's path is loaded for a job, so a file edited during the job's start is never hashed new while run old
@@ -165,13 +166,29 @@ def _now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
+class Context(TypedDict, total=False):
+    """ctx: what one() and its steps use in a run. _context makes api, store, table, catalog, guard (translator for a
+    job that translates, dedupe and dedupe_records for --dedupe log / on); the rest is added on first use."""
+    api: Any                           # naver_api_client.NaverApiClient
+    store: Any                         # shop_stores.get_store()
+    table: dict[str, Any]              # package_measures.load_table()
+    catalog: Any                       # shopify_catalog.ShopCatalog: the shop's published keys
+    guard: Any                         # collect_guard.CollectGuard
+    translator: Any                    # translate.build_chain
+    dedupe: Any                        # dedupe.Index, built at the run's start
+    dedupe_records: dict[str, Any]     # dedupe.collected: key -> collected line
+    describer: Any                     # describe.build_chain, at the first description
+    publisher: tuple[Any, Any, dict[str, Any]]   # publish.clients, at the first publication
+    specs: Any                         # scroll: the listing tab's specs reader (Tab.specs)
+
+
 # ---- the job folder ------------------------------------------------------------------------------------------
 
 class Job:
     def __init__(self, folder: str):
         self.folder = folder
         with open(os.path.join(folder, "job.json"), encoding="utf-8") as f:
-            self.meta = json.load(f)
+            self.meta: JobMeta = json.load(f)
         self.shop, self.category = self.meta["shop"], self.meta["category"]
         self.shops_root = self.meta["shops_root"]
 
@@ -370,7 +387,7 @@ def more_batches(listings: list[dict], batches: int, cap: int = MAX_BATCHES) -> 
     return min(batches * 2, cap)
 
 
-def batch_cap(meta: dict) -> int:
+def batch_cap(meta: JobMeta) -> int:
     """How deep the job's listings may be read: to their end for a `new --all` job, else MAX_BATCHES."""
     return MAX_BATCHES_ALL if meta.get("until_end") else MAX_BATCHES
 
@@ -415,7 +432,7 @@ def cmd_new(args: argparse.Namespace) -> int:
     job_id = f"{store.id.value}-{args.category}-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}"
     folder = os.path.join(JOBS_ROOT, job_id)
     os.makedirs(folder)
-    meta = {"shop": store.id.value, "category": args.category, "queries": args.query,
+    meta: JobMeta = {"shop": store.id.value, "category": args.category, "queries": args.query,
             "paid": args.paid or args.paid_variants, "paid_variants": args.paid_variants,
             "reviews": args.reviews, "shops_root": shops_root, "created_at": _now(), "count": args.count,
             "batches": batches, "listings": listings, "screen": counts, "excluded_known": len(known),
@@ -447,7 +464,7 @@ def refresh(job: Job, api: Any, store: Any, need: int) -> int:
     if rows:
         append_line(os.path.join(job.folder, "listing.jsonl"),
                     *(json.dumps({**r, "refresh": batches}, ensure_ascii=False) for r in rows))
-    job.meta.update(batches=batches, listings=listings)
+    job.meta.update({"batches": batches, "listings": listings})
     job.meta.setdefault("refreshes", []).append({"at": _now(), "batches": batches, "added": len(rows),
                                                  "screen": counts})
     job.save_meta()
@@ -607,7 +624,7 @@ def keep_line(job: Job, line: dict, tmp: str) -> str:
 DEDUPE_EVENTS = ("duplicate_seen", "duplicate_better")
 
 
-def dedupe_step(job: Job, ctx: dict, key: str, line: dict | None) -> str | None:
+def dedupe_step(job: Job, ctx: Context, key: str, line: dict | None) -> str | None:
     """--dedupe log / on, right after collect: the product against ctx["dedupe"] (dedupe.Index). -> what happened
     when it is not taken (on: a confirmed duplicate not strictly better), else None (go on). A product decided before
     (a resume) is not looked up again."""
@@ -648,7 +665,7 @@ def dedupe_step(job: Job, ctx: dict, key: str, line: dict | None) -> str | None:
     return None
 
 
-def replace_step(job: Job, ctx: dict, shop: Any, key: str) -> str:
+def replace_step(job: Job, ctx: Context, shop: Any, key: str) -> str:
     """--dedupe on, after `key` is published: the product it replaces (its duplicate_better event) withdrawn when it is
     still published and `key` has no fewer variants. -> a note for the printed line ("" when nothing to do)."""
     import dedupe
@@ -679,7 +696,7 @@ def replace_step(job: Job, ctx: dict, shop: Any, key: str) -> str:
     return f"; replaces {old.split(':')[3]} (withdrawn)"
 
 
-def one(job: Job, ctx: dict, key: str, stage_now: str | None, n: int = 0) -> str:
+def one(job: Job, ctx: Context, key: str, stage_now: str | None, n: int = 0) -> str:
     """Take one product from its stage to prepared. -> what happened (for the line printed)."""
     import description_images
     import run_transform
@@ -762,7 +779,7 @@ def one(job: Job, ctx: dict, key: str, stage_now: str | None, n: int = 0) -> str
     return f"{what} ({times})"
 
 
-def publish_step(job: Job, ctx: dict, key: str, n: int = 0) -> str:
+def publish_step(job: Job, ctx: Context, key: str, n: int = 0) -> str:
     """Placement (the whole shop, offline) and then this product to Shopify (publish.py). -> what happened.
     A product placement cannot place or a refused write is `failed` (tried again later); a token or scope problem
     stops the run."""
@@ -805,7 +822,7 @@ def publish_step(job: Job, ctx: dict, key: str, n: int = 0) -> str:
             f"{row.get('admin_url') or ''}".strip() + replaced)
 
 
-def describe_one(job: Job, ctx: dict, key: str) -> str:
+def describe_one(job: Job, ctx: Context, key: str) -> str:
     """The product's description (describe.py: one model request; a product that has one is not asked again).
     -> what happened. A refused key or no provider answering stops the run: a job made with --describe does not
     publish a product without its description. An answer that fails the checks is never a stop: the script cuts
@@ -829,7 +846,7 @@ def describe_one(job: Job, ctx: dict, key: str) -> str:
     return f"described ({row['status']}" + (f", {cut} cut" if cut else "") + ")"
 
 
-def translate_one(job: Job, ctx: dict, key: str) -> str:
+def translate_one(job: Job, ctx: Context, key: str) -> str:
     """The product through translate.py (only it goes to the model). -> what happened. A product the model could not
     translate is `failed` (tried again later); every provider down is a NetworkStop (net_retry)."""
     import translate
@@ -856,7 +873,7 @@ def _prepared(job: Job) -> list[dict]:
         return [json.loads(x) for x in f if x.strip()]
 
 
-def _context(job: Job) -> tuple[dict | None, int]:
+def _context(job: Job) -> tuple[Context | None, int]:
     """What one() needs for the job (the API, the store, the shop's catalog, the guard, the translator): -> (ctx, 0),
     or (None, 2) with the reason printed."""
     from collect_guard import CollectGuard
@@ -869,7 +886,7 @@ def _context(job: Job) -> tuple[dict | None, int]:
     if store.id.value != job.shop:
         print(f"stop: SHOP_STORE is {store.id.value}, the job is for {job.shop}")
         return None, 2
-    ctx: dict[str, Any] = {"api": NaverApiClient(), "store": store, "table": load_table(), "catalog": ShopCatalog(store),
+    ctx: Context = {"api": NaverApiClient(), "store": store, "table": load_table(), "catalog": ShopCatalog(store),
            "guard": CollectGuard(DeferredLog(store.id.value))}
     if job.final in ("translated", "published"):
         import translate
@@ -895,7 +912,7 @@ def _scroll_job(job: Job) -> bool:
     return True
 
 
-def take(job: Job, ctx: dict, key: str, stage_now: str | None, run: dict) -> int | None:
+def take(job: Job, ctx: Context, key: str, stage_now: str | None, run: dict) -> int | None:
     """One product through one() (net_retry: the network down is waited out), with its start and done lines, the
     progress line every REPORT_EVERY and the pause after it. -> None, or 3 when the run stops (logged, printed).
     TabLost goes up: scroll opens a new tab and the product is read again when its card comes."""
@@ -1045,7 +1062,7 @@ class Tab:
 
     def _keep(self, answer: dict) -> dict:
         self.id = answer["id"]
-        self.job.meta.update(tab=self.id, batches=answer["batch"])
+        self.job.meta.update({"tab": self.id, "batches": answer["batch"]})
         self.job.save_meta()
         return answer
 
@@ -1128,7 +1145,7 @@ def new_scroll_job(args: argparse.Namespace, shop: str, shops_root: str, root: s
     job_id = f"{shop}-{args.category}-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}"
     folder = os.path.join(root, job_id)
     os.makedirs(folder)
-    meta = {"shop": shop, "category": args.category, "queries": [args.query], "mode": "scroll",
+    meta: JobMeta = {"shop": shop, "category": args.category, "queries": [args.query], "mode": "scroll",
             "paid": args.paid or args.paid_variants, "paid_variants": args.paid_variants,
             "reviews": args.reviews, "shops_root": shops_root, "created_at": _now(), "count": args.count,
             "excluded_known": 0, "exclude_known": args.exclude_known,
@@ -1149,7 +1166,7 @@ def _reached(job: Job) -> bool:
     return sum(1 for r in job.rows() if done.get(r["key"]) == job.final) >= count
 
 
-def _drain(job: Job, ctx: dict, run: dict) -> int | None:
+def _drain(job: Job, ctx: Context, run: dict) -> int | None:
     """The products with a stage left (collected to translated, and those that failed once), without the tab:
     the same next_key / one() as `run`. -> None, or 3 (a stop)."""
     while True:
@@ -1221,7 +1238,7 @@ def _batch_rows(job: Job, answer: dict, screen: Any, known: set[str], out: dict[
     return keep
 
 
-def scroll(job: Job, ctx: dict, tab: Tab, screen: Any, known: set[str]) -> int:
+def scroll(job: Job, ctx: Context, tab: Tab, screen: Any, known: set[str]) -> int:
     """The scroll loop: the products with a stage first, then the listing batch by batch, each row taken at once,
     until has_more false or --count; then the products with a stage left. -> the exit code."""
     run = {"taken": 0, "started": time.monotonic(), "again": f"scroll --job {job.id}"}
@@ -1298,7 +1315,7 @@ def scroll(job: Job, ctx: dict, tab: Tab, screen: Any, known: set[str]) -> int:
     return 0
 
 
-def run_scroll(job: Job, ctx: dict, tab: Tab, screen: Any, known: set[str]) -> int:
+def run_scroll(job: Job, ctx: Context, tab: Tab, screen: Any, known: set[str]) -> int:
     """scroll() with the tab closed however it ends: SIGTERM is turned into KeyboardInterrupt so the finally runs
     (by default SIGTERM skips it and the tab keeps the adapter: Fable review 4, 2026-11-14)."""
     def term(signum: int, frame: Any) -> None:

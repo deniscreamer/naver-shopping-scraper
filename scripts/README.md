@@ -1250,6 +1250,8 @@ stay plain JSON and nothing is checked when one is read. Each mirrors the one pl
 `transform.Prepared.product` as `prepare` builds it, plus `description_images_text` from run_transform.
 `LedgerRow` is a line of `publish/published.jsonl` (publish.py's published / withdrawn / restored / activated rows,
 store_diff's adopted; `key`, `status`, `at` always there).
+`JobMeta` is a job's `job.json` (job.py `new` / `scroll`; only `shop`, `category`, `shops_root` are in every job, the
+rest is read with `.get()`: older jobs lack newer keys, `mode` is only in scroll jobs).
 `test_shop_types.py` checks the golden prepared products against them (no unknown key, no wrong type, every key of
 a built product). A change of a record's shape updates its type in the same commit.
 

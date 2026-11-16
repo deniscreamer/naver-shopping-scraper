@@ -9,6 +9,7 @@ same commit; test_shop_types.py checks the golden prepared products against Prep
 
     PreparedProduct   transform.prepare's `product` (+ description_images_text, set by run_transform.image_texts)
     LedgerRow         a line of <shop>/publish/published.jsonl (publish.py; store_diff --adopt)
+    JobMeta           scripts/output/jobs/<job id>/job.json (job.py new / scroll; refresh and scroll update it)
 """
 from typing import Any, NotRequired, Required, TypedDict
 
@@ -172,3 +173,37 @@ class LedgerRow(TypedDict, total=False):
     restored: str                      # restore: why
     activated: str                     # activate: when
     adopted: str                       # store_diff --adopt: when
+
+
+# ==== a job's settings (job.py, scripts/output/jobs/<job id>/job.json) ===================================
+
+class JobMeta(TypedDict):
+    """job.json: written by cmd_new (`new`) or new_scroll_job (`scroll`), updated by refresh (batches, listings,
+    refreshes), the scroll tab (tab, batches, total, reopens, screen) and scroll (excluded_known). Only shop,
+    category and shops_root are in every job.json; a job made before a setting existed lacks its key (mode: 8 of
+    the 27 jobs on 2026-11-16, the scroll ones; `new` writes none), so job.py reads the rest with .get()."""
+    shop: str
+    category: str                      # the Naver category id
+    shops_root: str
+    mode: NotRequired[str]             # "scroll"; absent: a `new` job
+    queries: NotRequired[list[str]]
+    created_at: NotRequired[str]
+    paid: NotRequired[bool]
+    paid_variants: NotRequired[bool]
+    free_only: NotRequired[bool]
+    reviews: NotRequired[int]
+    count: NotRequired[int | None]     # --count; None: --all, or scroll to the listing's end
+    until_end: NotRequired[bool]       # new --all
+    batches: NotRequired[int]
+    listings: NotRequired[list[dict[str, Any]]]      # new: the listing jobs read (query, id, status, batches, ...)
+    screen: NotRequired[dict[str, int]]              # listing_filter.Screen counts
+    exclude_known: NotRequired[bool]   # the flag (--exclude-known)
+    excluded_known: NotRequired[int]   # how many products it left out
+    translate: NotRequired[bool]
+    publish: NotRequired[bool]
+    describe: NotRequired[bool]
+    dedupe: NotRequired[str]           # log | on; absent: off
+    refreshes: NotRequired[list[dict[str, Any]]]     # new: each deeper read (at, batches, added, ...)
+    total: NotRequired[int | None]     # scroll: the listing's size (the first batch's)
+    tab: NotRequired[str | None]       # scroll: the open listing tab's id, None when closed
+    reopens: NotRequired[list[dict[str, Any]]]       # scroll: each tab opened again (at, t, batch, reason)
