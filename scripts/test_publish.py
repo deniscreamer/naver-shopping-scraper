@@ -761,3 +761,13 @@ def test_a_shop_file_is_read_once_while_it_does_not_change(tmp_path, monkeypatch
         f.write('{"key": "a", "v": 2}\n')
     assert P._last(str(path))["a"]["v"] == 2 and len(reads) == 2                    # appended: read again
     assert P._last(str(tmp_path / "none.jsonl")) == {}
+
+
+def test_an_append_after_a_ledger_tail_with_no_line_end_keeps_both_rows(tmp_path):
+    """2026-11-16 (shop_files): the new row was glued to a last line without its line end and both were lost."""
+    shop = PB.Shop("fairwardgolf", str(tmp_path))
+    os.makedirs(os.path.dirname(shop.ledger_path))
+    with open(shop.ledger_path, "w") as f:
+        f.write(json.dumps({"key": "k1", "status": "published", "product_id": "gid://1"}))     # a hand edit
+    PB._append(shop.ledger_path, {"key": "k2", "status": "published", "product_id": "gid://2"})
+    assert set(shop.ledger()) == {"k1", "k2"}

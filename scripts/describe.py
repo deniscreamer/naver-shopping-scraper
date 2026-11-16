@@ -38,6 +38,7 @@ from typing import Any
 
 import shop_stores
 import shopify_payload as sp
+from shop_files import append_line
 import translate
 from translate import Chain, Model, ProviderDown, TranslateError
 from translation_rules import HANGUL_RE
@@ -549,8 +550,7 @@ def run(shop: str, model: "Model | Chain | None", shops_root: str = SHOPS_ROOT, 
             continue
         row = describe_product(p, t, blocks, model, tenant, vendors, now, usage)
         os.makedirs(os.path.join(shop_dir, "translation"), exist_ok=True)
-        with open(os.path.join(shop_dir, "translation", STORE), "a", encoding="utf-8") as f:
-            f.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
+        append_line(os.path.join(shop_dir, "translation", STORE), json.dumps(row, ensure_ascii=False, sort_keys=True))
         rows.append(row)
     status: dict[str, int] = {}
     for r in rows:

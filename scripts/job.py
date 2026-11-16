@@ -98,7 +98,7 @@ from collections import Counter
 from datetime import datetime, timezone
 from typing import Any
 
-from shop_files import write_atomic
+from shop_files import append_line, write_atomic
 
 SCRIPTS = os.path.dirname(os.path.abspath(__file__))
 JOBS_ROOT = os.path.join(SCRIPTS, "output", "jobs")
@@ -189,8 +189,8 @@ class Job:
         write_atomic(os.path.join(self.folder, "job.json"), json.dumps(self.meta, ensure_ascii=False, indent=1))
 
     def log(self, key: str | None, event: str, **detail: Any) -> None:
-        with open(os.path.join(self.folder, "events.jsonl"), "a", encoding="utf-8") as f:
-            f.write(json.dumps({"at": _now(), "key": key, "event": event, **detail}, ensure_ascii=False) + "\n")
+        append_line(os.path.join(self.folder, "events.jsonl"),
+                    json.dumps({"at": _now(), "key": key, "event": event, **detail}, ensure_ascii=False))
 
 
 def latest_job(root: str = JOBS_ROOT) -> str:
@@ -409,8 +409,9 @@ def refresh(job: Job, api: Any, store: Any, need: int) -> int:
     known = known_ids() if job.meta.get("exclude_known") else set()
     rows, listings, counts = read_listings(api, store, job.meta["queries"], job.category, batches, have, known)
     rows = rows[:need] if need else rows                  # need 0: every new row (a `--all` job)
-    with open(os.path.join(job.folder, "listing.jsonl"), "a", encoding="utf-8") as f:
-        f.write("".join(json.dumps({**r, "refresh": batches}, ensure_ascii=False) + "\n" for r in rows))
+    if rows:
+        append_line(os.path.join(job.folder, "listing.jsonl"),
+                    *(json.dumps({**r, "refresh": batches}, ensure_ascii=False) for r in rows))
     job.meta.update(batches=batches, listings=listings)
     job.meta.setdefault("refreshes", []).append({"at": _now(), "batches": batches, "added": len(rows),
                                                  "screen": counts})
@@ -1122,8 +1123,7 @@ def _batch_rows(job: Job, answer: dict, screen: Any, known: set[str], out: dict[
             continue
         keep.append({**row, "key": key})
     if left_out:
-        with open(os.path.join(job.folder, "screened.jsonl"), "a", encoding="utf-8") as f:
-            f.writelines(json.dumps(x, ensure_ascii=False) + "\n" for x in left_out)
+        append_line(os.path.join(job.folder, "screened.jsonl"), *(json.dumps(x, ensure_ascii=False) for x in left_out))
     return keep
 
 
@@ -1158,8 +1158,7 @@ def scroll(job: Job, ctx: dict, tab: Tab, screen: Any, known: set[str]) -> int:
                 if _reached(job):
                     break
                 if row["key"] not in have:
-                    with open(os.path.join(job.folder, "listing.jsonl"), "a", encoding="utf-8") as f:
-                        f.write(json.dumps(row, ensure_ascii=False) + "\n")
+                    append_line(os.path.join(job.folder, "listing.jsonl"), json.dumps(row, ensure_ascii=False))
                 taken.add(row["key"])
                 code = take(job, ctx, row["key"], stages(job).get(row["key"]), run)
                 if code:

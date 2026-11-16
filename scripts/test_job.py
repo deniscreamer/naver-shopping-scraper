@@ -809,3 +809,13 @@ def test_collect_reads_specs_its_way_and_a_410_stops_the_source():
     with pytest.raises(SourceStopped) as e:
         collect(Box(), None, {}, {"link": "l"}, "/nowhere", query="q", category="50002788", specs=gone)  # type: ignore
     assert e.value.status == 410 and stopped(ApiError(410)) and not stopped(ApiError(404))
+
+
+def test_a_job_appends_whole_lines_after_a_tail_with_no_line_end(tmp_path):
+    job = make_job(tmp_path)
+    with open(os.path.join(job.folder, "listing.jsonl"), "rb+") as f:            # the last line end lost
+        f.seek(-1, 2)
+        f.truncate()
+    J.append_line(os.path.join(job.folder, "listing.jsonl"), json.dumps({"key": "x", "product_id": "9"}))
+    job.log(KEYS[0], "failed", reason="x")
+    assert [r["key"] for r in job.rows()] == KEYS + ["x"] and job.events()[0]["event"] == "failed"

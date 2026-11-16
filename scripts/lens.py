@@ -35,6 +35,7 @@ from dataclasses import dataclass, field
 from typing import Any, Callable
 
 import sheet as S
+from shop_files import append_line
 from shop_view import JOBS_ROOT, SHOPS_ROOT, Product, ShopView, job_events, job_keys
 
 WEAK_BRAND = ("none", "title_word", "description_row", "origin", "images_text", "images_text_latin")
@@ -188,8 +189,7 @@ def mark_versions(view: ShopView, keys: list[str], note: str, by: str = "owner")
            "at": datetime.date.today().isoformat()}
     path = os.path.join(view.dir, "lens", REVIEWED)
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "a", encoding="utf-8") as f:
-        f.write(json.dumps(row, ensure_ascii=False) + "\n")
+    append_line(path, json.dumps(row, ensure_ascii=False))
     return row
 
 

@@ -23,6 +23,7 @@ import sys
 from datetime import datetime, timezone
 from typing import Any
 
+from shop_files import append_line
 from shop_stores import get_store
 
 JOURNAL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output", "journal")
@@ -50,8 +51,7 @@ class DeferredLog:
     def _append(self, event: dict[str, Any]) -> dict[str, Any]:
         os.makedirs(os.path.dirname(self.path), exist_ok=True)
         event = {**event, "at": _now()}
-        with open(self.path, "a", encoding="utf-8") as f:
-            f.write(json.dumps(event, ensure_ascii=False) + "\n")
+        append_line(self.path, json.dumps(event, ensure_ascii=False))
         return event
 
     def state(self) -> dict[str, dict[str, Any]]:

@@ -33,6 +33,7 @@ from typing import Any
 
 import describe
 import shopify_payload as sp
+from shop_files import append_line
 from shop_pricing import policy
 from shop_stores import get_store
 from shopify_catalog import CatalogError
@@ -106,8 +107,7 @@ def _photo(path: str) -> dict[str, Any]:
 
 def _append(path: str, row: dict[str, Any]) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "a", encoding="utf-8") as f:
-        f.write(json.dumps(row, ensure_ascii=False) + "\n")
+    append_line(path, json.dumps(row, ensure_ascii=False))           # one write, after a line end (shop_files)
 
 
 class Shop:
