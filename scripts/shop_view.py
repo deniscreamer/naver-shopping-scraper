@@ -131,7 +131,7 @@ class ShopView:
             p.prepared, p.held = rec.get("status"), list(rec.get("held") or [])
             p.category = (rec.get("source") or {}).get("category_id")
             p.link = (rec.get("source") or {}).get("link") or ""
-            title = next((t for t in rec.get("texts") or [] if t.get("kind") == "title"), {})
+            title: dict[str, Any] = next((t for t in rec.get("texts") or [] if t.get("kind") == "title"), {})
             p.title_ko = " ".join((title.get("ko") or prod.get("title_ko") or "").split())
             en = (self.translated.get(key) or {}).get("en") or {}
             p.title_en = " ".join((en.get(title.get("id") or "") or "").split())

@@ -691,8 +691,8 @@ def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int,
             or brand_fallback.resellers_own(str(brand.get("value") or ""), raw_maker, shop):
         brand = {}                                  # 기타; the reselling seller's own shop (재팬도코도코, 2026-11-12)
     elif brand.get("value"):                        # a shop's name (세모물상점, 2026-11-11), an age and a club,
-        cleaned = brand_fallback.clean(str(brand["value"]))   # a code, a title (2026-11-12): brand_fallback.clean
-        brand = {**brand, "value": cleaned} if cleaned else {}
+        brand_value = brand_fallback.clean(str(brand["value"]))   # a code, a title (2026-11-12): brand_fallback.clean
+        brand = {**brand, "value": brand_value} if brand_value else {}
     maker = dict(facts.get("manufacturer") or {})
     if maker.get("value"):                          # "X 협력사 / 협력 업체" (X's contract maker) names X (2026-11-11)
         maker["value"] = brand_fallback.clean(str(maker["value"])) or maker["value"]

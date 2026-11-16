@@ -259,7 +259,7 @@ def held(view: ShopView, job: str, jobs_root: str = JOBS_ROOT) -> Plan:
         mark = None
         if match:
             m = view.get(match)
-            photos = photos[:2] + [None] * (2 - len(photos[:2])) + m.photos[:2]
+            photos = [*photos[:2], *[None] * (2 - len(photos[:2])), *m.photos[:2]]
             live = m.store == "published"
             replaced = str(m.reason or "").split("replaced_by:", 1)[1] if "replaced_by:" in str(m.reason or "") else None
             lines.append(f"right: {m.pid} {m.store or 'not in store'}")
@@ -319,7 +319,7 @@ def _match_key(reason: str) -> str | None:
 
 
 def products(view: ShopView, refs: list[str]) -> Plan:
-    cards = []
+    cards: list[S.Card] = []
     known = view.keys()
     for ref in refs:
         found = [ref] if ref.count(":") >= 3 and ref in known else [k for k in known if k.endswith(":" + ref)]

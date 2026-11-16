@@ -53,8 +53,8 @@ def _paste(sheet, pen, font, path: str | None, x: int, y: int, thumb: int) -> No
     from PIL import Image
     if path:
         try:
-            with Image.open(path) as im:
-                im = im.convert("RGB")
+            with Image.open(path) as src:
+                im = src.convert("RGB")
                 im.thumbnail((thumb - 4, thumb - 4))
                 sheet.paste(im, (x + 2 + (thumb - 4 - im.width) // 2, y + 2 + (thumb - 4 - im.height) // 2))
                 return

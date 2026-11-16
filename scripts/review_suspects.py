@@ -42,7 +42,8 @@ _NOT_AFTER = ["용가능", "겸용", "및"]
 # The owner, 2026-11-14: never lose a real product, so no title rule leaves a junior set out; the review lists them.
 JUNIOR = [{"text": t, "notFollowedBy": _NOT_AFTER, "notPrecededBy": []}
           for t in ("주니어", "쥬니어", "어린이", "아동", "유아", "키즈", "초등", "유치원", "청소년", "kids", "junior")]
-BALLS = [{"text": t, "notFollowedBy": [], "notPrecededBy": []} for t in ("골프공", "골프볼")]
+BALLS: list[dict[str, Any]] = [{"text": t, "notFollowedBy": [], "notPrecededBy": []}
+                               for t in ("골프공", "골프볼")]
 
 
 def _lines(path: str) -> Iterable[dict[str, Any]]:
@@ -65,14 +66,14 @@ def published(shop_dir: str) -> dict[str, dict[str, Any]]:
     return {k: r for k, r in last.items() if r.get("status") == "published"}
 
 
-def _kinds(category: str | None = None) -> dict[str, dict[str, Any]]:
+def _kinds(category: str | None = None) -> dict[str, list[dict[str, Any]]]:
     """The transform's club-count kinds (category_measures.json): the category's own when its row has any (50002670:
     an iron sold alone, 2026-11-15: "7아이언" is a 7-piece set there, 16 sets were listed as single clubs), else the
     50002787 row's (single_club, two_clubs)."""
     from package_measures import load_table
     rows = load_table()["rows"]
     own = next((r for r in rows if str(r["category_id"]) == str(category) and r.get("kinds")), None)
-    row = own or next((r for r in rows if str(r["category_id"]) == "50002787"), {})
+    row: dict[str, Any] = own or next((r for r in rows if str(r["category_id"]) == "50002787"), {})
     return {"kinds": [k for k in row.get("kinds") or [] if k["kind"] in ("single_club", "two_clubs")]}
 
 
@@ -86,13 +87,13 @@ def _spec(product: dict[str, Any], label: str) -> str:
 
 
 def reasons(product: dict[str, Any], kinds: dict[str, Any], junior: list[dict], accessory: list[dict],
-            folding: list[dict] = ()) -> list[str]:
+            folding: Iterable[dict] = ()) -> list[str]:
     """The review reasons of one prepared product (REASONS order)."""
     from listing_filter import normalize, term_matches
     from package_measures import default_kind
     title = product.get("title_ko") or ""
     flat = re.sub(r"\s+", "", normalize(title))
-    variants = [" ".join(v.get("options_ko") or []) for v in product.get("variants") or []] or [None]
+    variants: list[str | None] = [" ".join(v.get("options_ko") or []) for v in product.get("variants") or []] or [None]
     found = {(default_kind(kinds, title, v) or {}).get("kind") for v in variants}
     count = re.match(r"\s*(\d+)\s*개", _spec(product, "총클럽개수"))
     out = []

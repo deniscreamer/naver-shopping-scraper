@@ -163,7 +163,7 @@ _MAKING = re.compile(r"(?i)\b(?:oem|odm)\b|^(?:중국|한국|국산|일본|대�
 def distributors(origin: str | None) -> list[str]:
     parts = [p.strip() for x in _BRACKETS.findall(origin or "") for p in re.split(r"[/,]", x)]
     # a bare 협력사 or a word that names no firm is none either (2026-11-13: "(협력사)", "(해외몰)")
-    return [clean(p) for p in parts if p and clean(p) and not trade_name(p) and not _POINTER.search(p)
+    return [c for p in parts if p and (c := clean(p)) and not trade_name(p) and not _POINTER.search(p)
             and not _AGENCY.search(p) and not _MAKING.search(p)]
 
 
@@ -332,6 +332,7 @@ def fill(prepared: list[Any], rows_of: Callable[[str], list[str]],
         product = p["product"]
         if product.get("brand_ko") and p["key"] not in by_owner:
             continue
+        others: list[str]
         if p["key"] in by_owner:
             brand, source, others = by_owner[p["key"]], "owner", []
         else:

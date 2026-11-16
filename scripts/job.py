@@ -825,7 +825,7 @@ def _context(job: Job) -> tuple[dict | None, int]:
     if store.id.value != job.shop:
         print(f"stop: SHOP_STORE is {store.id.value}, the job is for {job.shop}")
         return None, 2
-    ctx = {"api": NaverApiClient(), "store": store, "table": load_table(), "catalog": ShopCatalog(store),
+    ctx: dict[str, Any] = {"api": NaverApiClient(), "store": store, "table": load_table(), "catalog": ShopCatalog(store),
            "guard": CollectGuard(DeferredLog(store.id.value))}
     if job.final in ("translated", "published"):
         import translate

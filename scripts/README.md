@@ -1209,6 +1209,8 @@ fixture against its type strictly (missing or unknown keys fail).
                                                            # ([tool.mypy] in pyproject.toml; mypy is in requirements)
 ```
 
+mypy is clean on scripts/ (0 errors since 2026-11-15): a new error is a finding to fix, not to ignore.
+
 When a server answer changes shape: re-capture its fixture (one call with the client, json.dump, lists trimmed to
 5 items, long strings to 300 chars), update the type, and commit both with the server change.
 

@@ -233,7 +233,12 @@ def _unique(images: list[dict[str, Any]]) -> list[dict[str, Any]]:
     once, the ledger paired the photos with the media by position, and the next update sent every media id one
     place off: the store lost the first photo and showed the putter twice)."""
     seen: set[str] = set()
-    return [img for img in images if not (img["sha256"] in seen or seen.add(img["sha256"]))]
+    out = []
+    for img in images:
+        if img["sha256"] not in seen:
+            seen.add(img["sha256"])
+            out.append(img)
+    return out
 
 
 def _sha16(media: dict[str, Any]) -> str | None:
@@ -256,7 +261,8 @@ def _on_store(product: dict[str, Any], images: list[dict[str, Any]]) -> dict[str
 def _ledger_photos(images: list[dict[str, Any]], media: list[dict[str, Any]]) -> list[dict[str, str]]:
     """The ledger's photos: each media paired with its photo by the hash in its file name, by position when a name
     carries none."""
-    out, by16 = [], {img["sha256"][:16]: img["sha256"] for img in images}
+    out: list[dict[str, str]] = []
+    by16 = {img["sha256"][:16]: img["sha256"] for img in images}
     for i, m in enumerate(media):
         if m["status"] == "FAILED":
             continue

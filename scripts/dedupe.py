@@ -275,7 +275,7 @@ def _jsonl(path: str) -> list[dict[str, Any]]:
 
 def ledger(shop: str, shops_root: str = SHOPS_ROOT) -> dict[str, dict[str, Any]]:
     """key -> the publication ledger's last line."""
-    last: dict[str, dict[str, Any]] = {}
+    last: dict[Any, dict[str, Any]] = {}             # a row with no key (none written) under None
     for row in _jsonl(os.path.join(shops_root, shop, "publish", "published.jsonl")):
         last[row.get("key")] = row
     return last
@@ -395,7 +395,7 @@ PAIR_EVENTS = ("duplicate_seen", "duplicate_better", "not_taken")
 
 def pairs(events: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Every (candidate, match) a job looked at: n, decision, candidate, match and its signals."""
-    out = []
+    out: list[dict[str, Any]] = []
     for e in events:
         if e.get("event") not in PAIR_EVENTS or not e.get("matches"):
             continue
@@ -417,6 +417,7 @@ def draw_pairs(rows: list[dict[str, Any]], shop_dir: str, out: str, per_sheet: i
     """Sheets of numbered pairs (candidate | match, 5 pairs a line) and index.tsv into `out`."""
     from PIL import Image, ImageDraw, ImageFont
     os.makedirs(out, exist_ok=True)
+    font: ImageFont.FreeTypeFont | ImageFont.ImageFont
     try:
         font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", 12)
     except OSError:
@@ -435,8 +436,8 @@ def draw_pairs(rows: list[dict[str, Any]], shop_dir: str, out: str, per_sheet: i
                 try:
                     if not path:
                         raise OSError
-                    with Image.open(path) as im:
-                        im = im.convert("RGB")
+                    with Image.open(path) as src:
+                        im = src.convert("RGB")
                         im.thumbnail((thumb - 4, thumb - 4))
                         sheet.paste(im, (px + 2, y + 2))
                 except OSError:

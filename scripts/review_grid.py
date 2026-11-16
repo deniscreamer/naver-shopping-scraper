@@ -40,7 +40,7 @@ def _jsonl(path: str) -> list[dict[str, Any]]:
 
 def published(shop_dir: str) -> dict[str, dict[str, Any]]:
     """key -> the ledger's last line, for keys whose last line is `published`."""
-    last: dict[str, dict[str, Any]] = {}
+    last: dict[Any, dict[str, Any]] = {}             # a row with no key (none written) under None
     for row in _jsonl(os.path.join(shop_dir, "publish", "published.jsonl")):
         last[row.get("key")] = row
     return {k: r for k, r in last.items() if r.get("status") == "published"}
