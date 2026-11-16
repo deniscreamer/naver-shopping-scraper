@@ -99,6 +99,8 @@ No lock guards the files: edit one by hand when no run is writing (`job.py statu
 only when they are built again: `translate.py <shop> --offline` rewrites `translated.jsonl` (a brand entry:
 `run_transform.py <shop>` first, its brand fallback reads the brand dictionary); then `store_diff.py <shop>` lists
 the published products it changes, and sending them is the owner's word ([OWNER_RULES.md](OWNER_RULES.md) rule 1).
+A title is the product's own text, not rebuilt: a brand fix of case or punctuation follows into it, one of letters
+leaves the old spelling with the new brand in front (`shopify_payload.title_vendor`; skill `dictionaries` step 5).
 The live copies are in the state backup (`state_backup.py`, OPERATIONS.md "Backup"); `scripts/dictionaries/` is git's.
 
 `status` shows when the live copies were last written and the last backup (every backup file carries

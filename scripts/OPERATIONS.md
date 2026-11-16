@@ -81,6 +81,7 @@ writes them goes through `shop_files.py`:
 - **A rewritten file** (`prepared/products.jsonl`, `translation/translated.jsonl`, `placement/placements.jsonl`, a
   job's `job.json` / `now.json`): `write_atomic(path, text)`: `<path>.<pid>.part` beside it, then a rename. A killed
   process leaves the old file whole (and maybe a `.part`, never read: delete it by hand); a reader never sees half.
+  No fsync: a reboot or power cut can leave one empty or short (rebuild it, or the backup; skill `recover-state`).
 - **An append-only file** (the ledger, `files.jsonl`, a job's `events.jsonl` / `listing.jsonl` / `screened.jsonl`,
   `texts.jsonl`, `descriptions.jsonl`, the journal, `lens/reviewed.jsonl`): `append_line(path, *lines)`: one write of
   whole lines; when the file does not end with a line end (a cut-off row, a hand edit), one comes first, so the new

@@ -30,7 +30,9 @@ category `option_name`, `option_value`, `spec_label`, `spec_value`, `fact_label`
    spelling: a lost age or gender word, a flex letter glued to the next club, a sound-spelled brand, a sport or
    "Generic" as a brand (TRANSFORM.md "A brand for every product" lists the no-firm words). A new category: every
    entry before its first backup.
-3. **Fix** a wrong one in the live file's `entries`, after the shop's running job ends (`job.py status`; no lock
+3. **Fix** a wrong one in the live file's `entries`; one English can sit under several Korean keys (a new brand
+   reuses an existing spelling): `grep -n '"<wrong English>"' scripts/output/dictionaries/brand.json
+   scripts/dictionaries/brand.json` (or the kind's file) and fix every key that carries it. After the shop's running job ends (`job.py status`; no lock
    guards the dictionaries). Delete for good: both copies, else the next run pulls the backup's back. Unsure of a
    brand or term: ask the owner, never invent one (OWNER_RULES "3. Never").
 4. **Back up**: `.venv/bin/python scripts/translation_dicts.py backup` (live -> `scripts/dictionaries/`, prints
@@ -41,6 +43,11 @@ category `option_name`, `option_value`, `spec_label`, `spec_value`, `fact_label`
    `.venv/bin/python scripts/store_diff.py <shop>` (read only; `--category <id>` narrows) lists the published
    products and fields a publication would change. Applying it to them is the owner's word each time
    (OWNER_RULES "1. Products already in the store"); the commands: skill `store-actions`.
+   Titles: a title is the product's own (`translation/texts.jsonl`), asked again only when `brand_ko` changes, not
+   the brand's English. `shopify_payload.title_vendor` respells the brand in it only when the letters match (case,
+   dots, spaces); new letters leave the old spelling and get the new brand in front (`<new> <old> ...` in the
+   `store_diff` title). List them: `grep -l` / `grep -c '<old spelling>' $S/translation/translated.jsonl`; the title
+   lever (a correction row or a re-ask: skill `fix-a-product` step 2) is the owner's word.
 
 **`$S/brand_by_owner.json`**: `{entries: {<key>: {brand, why, at}}}`, one product whose brand only its photo shows
 (brand source `owner`, before every other step). An entry only with the owner's brand; then `run_transform.py <shop>`

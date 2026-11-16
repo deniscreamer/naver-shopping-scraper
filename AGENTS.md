@@ -68,6 +68,8 @@ Live check (server running, uses the network): `curl http://localhost:8000/healt
 What waits for the owner (republishing, activating, withdrawing, holding, the Never list):
 [scripts/OWNER_RULES.md](scripts/OWNER_RULES.md). Read the skill first; it names its doc sections.
 
+Every `scripts/*.py` runs as `.venv/bin/python scripts/<name>.py` (none is executable; `scripts/check.sh` is).
+
 | Request | Skill | First command |
 |---|---|---|
 | Start / watch a scroll ("Запусти scroll"), a job stopped or printed an error | `run-a-job`, `api-error-triage` | `curl -s localhost:8000/health`; `scripts/job.py status` |

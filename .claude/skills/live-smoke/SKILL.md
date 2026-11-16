@@ -19,7 +19,8 @@ retried block raises the ban risk: ARCHITECTURE.md "13.4 Walls and blocking"). C
 | A wall, a block | ARCHITECTURE.md "13.4 Walls and blocking"; OWNER_RULES.md "3. Never" |
 
 Procedure (repo root):
-1. No job runs: `scripts/job.py status`. Versions now: `.venv/bin/python --version`, `.venv/bin/python -m pip list`,
+1. No job runs: `.venv/bin/python scripts/job.py status` (`no runner`). After a Chrome update also
+   `curl -s localhost:8000/health`: `extension` `connected` (the adapter's worker restarts; else skill `extension`). Versions now: `.venv/bin/python --version`, `.venv/bin/python -m pip list`,
    `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --version`; diff them against the K-17 tables.
 2. Offline first: `scripts/check.sh` (a failure here is not the network; fix it before any live call).
 3. Restart the server (`.venv/bin/python server/run.py`, in its own terminal) so no cached answer hides the transport.

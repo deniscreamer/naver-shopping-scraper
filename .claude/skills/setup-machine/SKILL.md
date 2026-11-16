@@ -1,6 +1,6 @@
 ---
 name: setup-machine
-description: Bring a new Mac to "ready to work" or find why nothing starts: the venv and requirements, Google Chrome, .env (names only), the adapter in the operator's Chrome, server/run.py, /health, and scripts/check_setup.py (--live prints READY). Use on a fresh machine, after a clone or a Python / Chrome / pip upgrade, when the server will not start, /health says "extension" disconnected or off, check_setup prints FAIL or NOT READY, or the owner says "настрой машину", "новый мак", "ничего не запускается", "сервер не стартует", "расширение не подключается".
+description: Bring a new Mac to "ready to work" or find why nothing starts: the venv and requirements, Google Chrome, .env (names only), the adapter in the operator's Chrome, server/run.py, /health, and scripts/check_setup.py (--live prints READY). Use on a fresh machine, after a clone or a Python / Chrome / pip upgrade, when the server will not start, /health says "extension" disconnected or off, check_setup prints FAIL or NOT READY, or the owner says "настрой машину", "новый мак", "ничего не запускается", "сервер не стартует", "расширение не подключается". After a Chrome or pip update on a machine that otherwise works: skill live-smoke.
 ---
 
 # Set up a machine, or fix "nothing starts"
@@ -11,6 +11,7 @@ restate them. Never read or print `.env*` or a credentials file; name a variable
 | Task | Read |
 |---|---|
 | What the Mac needs (Python 3.11+, Chrome in /Applications, a warm profile, ports 8000 / 8765) | SETUP.md "0. What the machine needs" |
+| Clone, branch `develop`, access to the private repo | SETUP.md "1. Get the code" |
 | The venv, the requirements, the OCR models | SETUP.md "2. Python environment"; server/README.md "Install" |
 | `.env`: which variable does what | SETUP.md "3. Per-machine settings (.env)"; `.env.example`; server/README.md "Environment variables" |
 | The translation keys (`scripts/translate_keys.py install`, `check`) | SETUP.md "3. Per-machine settings (.env)" |
@@ -21,6 +22,7 @@ restate them. Never read or print `.env*` or a credentials file; name a variable
 | A new requirement (env var, package, port, file) | DEVELOPMENT_RULES.md "R-SETUP: environment and setup"; SETUP.md "Keep the checklist current"; skill `server-change` |
 
 Procedure, from the repo root (stop at the first FAIL and fix it):
+0. No checkout yet: SETUP.md "1. Get the code" (the operator gives repo access).
 1. `python3 --version` (3.11+), `ls "/Applications/Google Chrome.app"`, `git branch --show-current` (`develop`).
 2. `python3 -m venv .venv && .venv/bin/pip install -r server/requirements.txt -r scripts/requirements.txt`
    (every install is an upgrade: K-17). `patchright install` is not needed.
@@ -32,7 +34,7 @@ Procedure, from the repo root (stop at the first FAIL and fix it):
 8. `.venv/bin/python scripts/check_setup.py` (adds the server, the adapter, bridge port 8765), then, only when the
    task allows the network, `--live`: one `/products/count` over plain HTTP, one `/products/details` through the
    server's Chrome, and a Shopify token minted per app (read-only checks). `--notify` adds a test POST to
-   `NAVER_NOTIFY_WEBHOOK`. Done = the last line `READY: 0 fail, N warn`; exit code 1 on any FAIL.
+   `NAVER_NOTIFY_WEBHOOK`: only when the operator asks (it sends them a test notice). Done = the last line `READY: 0 fail, N warn`; exit code 1 on any FAIL.
 
 What a row means (`check_setup.py` prints OK / WARN / FAIL; WARNs never block READY):
 - `python >= 3.11` / `packages` FAIL: rebuild the venv with a newer `python3` (step 2). `curl_cffi 0.16.x` WARN: reinstall the pin.

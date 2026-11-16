@@ -14,7 +14,7 @@ rules, then the model), before placement and publication. The doc: `scripts/TRAN
 | What the stage translates and in which order (own store, dictionary, rules, model) | "Translation" |
 | The owner's decisions: model, fallback, few tokens, what is not translated (the description is `describe`'s) | "Decisions" |
 | A product's own title or review | "1. The product's own store" |
-| A term wrong for every product; live / backup dictionaries | "2. Dictionaries" |
+| A term wrong for every product; live / backup dictionaries | "2. Dictionaries" (judge, fix, back up, reach the products: skill `dictionaries`) |
 | Units, sizes, 노브랜드 | "3. The rules" |
 | Prompts, briefs, checks, fix rounds, fallback, batches, tokens, keys | "4. The model and its prompts" (a change: skill `prompt-change`) |
 | Reviews cleaned wrong | "Review cleaning" |

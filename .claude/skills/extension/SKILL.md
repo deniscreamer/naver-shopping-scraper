@@ -19,7 +19,7 @@ It runs as the owner (their IP and cookies): a burst or a retried wall can ban t
 | Any error body | skill `api-error-triage` |
 | Changing the adapter or `ext_*.py` | skill `server-change`; DEVELOPMENT_RULES "R-EXT: the extension transport (beta)" |
 
-## Procedure (read only)
+## Procedure
 
 1. `curl -s localhost:8000/health` -> `extension` (`listing_jobs.extension_status`):
    - `connected`: go on. Which adapter version: the server log's `ext-bridge: extension connected (v<x>)`
@@ -29,8 +29,10 @@ It runs as the owner (their IP and cookies): a burst or a retried wall can ban t
    - `off`: the bridge did not start (log `listing-jobs: extension bridge not started: ...`: port 8765 taken, e.g.
      by `server/ext_listing.py` run by hand); restart `server/run.py`. No answer at all: the server is down.
 2. Who holds the adapter (one user at a time): `.venv/bin/python scripts/job.py status`; a 409 names
-   `listing tab <id>` or a listing job. A tab left by a dead scroll (no `job.py scroll` running; its `job.json` `tab`):
-   `curl -X DELETE localhost:8000/listing-tabs/<id>` (idempotent), or restart the server.
+   `listing tab <id>` or a listing job. Only when status says `no runner` (proven: skill `recover-state` step 1) is
+   a tab left by a dead scroll (its `job.json` `tab`): `curl -X DELETE localhost:8000/listing-tabs/<id>`
+   (idempotent), or restart the server. A job printing `waiting up to 15 min` still runs: never DELETE its tab or
+   restart the server under it unless `extension` is `off` (a reopen costs one of its few allowed reopens).
 3. A pending captcha: `.venv/bin/python scripts/captcha_watch.py --once` (or `GET /captcha`): relay the question to
    the owner at once; never answer, screenshot or type into it (OWNER_RULES "3. Never").
 

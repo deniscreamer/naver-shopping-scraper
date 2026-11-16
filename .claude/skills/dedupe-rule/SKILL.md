@@ -17,6 +17,10 @@ is in `scripts/OWNER_RULES.md`. Read the doc's section for the task; the rules a
 | The fixtures and tests | `test_dedupe.py` (real fairwardgolf cases); `LENSES.md` "Tests and the fixture" (`fixtures/lens/cases.json`) |
 | A copy the rule missed, found by eye | `OWNER_RULES.md` "2. Duplicates the rules missed (the owner, 2026-11-16)" |
 
+A request about colours ("ловило разные цвета") is two things: ask the owner which one first, showing the
+`lens/reviewed.jsonl` rows: the same product under another colour's photos (the known gap below), or colour editions,
+which he marked versions on 2026-11-15 (BG-100 Black Edition and white; LENSES.md "`dupes`: one product or versions?").
+
 Procedure (offline unless noted; no command changes the shop's state: `lens.py` writes only its contact sheets
 under `scripts/output/shops/<shop>/lens/`, `make_lens_fixture.py` the fixture, `--pairs` the job's `pairs/`):
 1. Pin the case: both keys, their titles, signals (`grep '<id>' scripts/output/jobs/*/events.jsonl` for
@@ -40,9 +44,12 @@ under `scripts/output/shops/<shop>/lens/`, `make_lens_fixture.py` the fixture, `
 3. Edit `dedupe.py`. Add a dated comment at the constant or function that names the real case (house style).
 4. Run the same commands into `after.txt`, then `diff`:
    - A group that is new or larger is a possible false merge. Look at it on photos (`lens.py products`) before you
-     keep the change.
+     keep the change; one whose members differ by a colour word or are `title only` goes to the owner on the
+     `lens.py dupes` sheet before the commit.
    - A `versions` row that changed from `apart` to `JOINED` contradicts the owner's word, so the change is wrong.
-     The two BG-100 and REVA rows are `JOINED` today (title words only, by design).
+     The two BG-100 and REVA rows are `JOINED` today (title words only, by design), so this check cannot catch a
+     change to them: for those pairs compare `d.strong(a, b)` and `d.confirm(a, b)` before and after (both must stay
+     False; `a`, `b` are `d.entry(...)` as above).
    - A group that is gone or smaller can mean lost copies. Check that it was meant.
 5. `.venv/bin/python -m pytest scripts/test_dedupe.py scripts/test_lens_fixture.py scripts/test_lens.py -q`, then
    `scripts/check.sh`. If the lens fixture must pin a new case, add a `CASES` line in `make_lens_fixture.py` that says

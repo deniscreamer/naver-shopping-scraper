@@ -20,7 +20,7 @@ the stage, the evidence. `S=scripts/output/shops/<shop>`. Hand edits wait for th
    - a brand only the photo shows: an entry in `$S/brand_by_owner.json` (`{entries: {<key>: {brand, why, at}}}`, the
      owner's word), then `.venv/bin/python scripts/run_transform.py <shop>`; the title is asked again for the new
      brand: `.venv/bin/python scripts/translate.py <shop> --only <key>` (one model call);
-   - a wrong spelling or term: the live dictionary entry (`scripts/output/dictionaries/`, skill `translation`). It
+   - a wrong spelling or term: the live dictionary entry (`scripts/output/dictionaries/`, skill `dictionaries`). It
      changes **every** product that uses it: list them (`store_diff.py <shop>`) before asking;
    - a title: a correction row appended to `$S/translation/texts.jsonl` (`key`, `id`, `kind: title`, `ko` as in the
      last row, `en`, `by: "review-<date>"`, `at`; no `brand_ko`: never asked again; append with

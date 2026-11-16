@@ -196,7 +196,8 @@ A captcha is answered by the owner in Chrome while the read waits; a login page 
 - After a captcha or a ban in the last 24 h: a small count, up to 50 ([Two ways to run a job](#two-ways-to-run-a-job-which-one-when)).
   `scroll --job <id>` keeps the job's own count (it reads no other flag): with more than 50 left, ask the owner
   first. The old mode: `job.py run --items 50`.
-- Stop a runner: its pid is in `job.py status` (`running (pid N)`). A scroll job closes its listing tab (DELETE)
+- Stop a runner: its pid is in `job.py status` (`running (pid N)`: only that the pid is alive; check `ps -p N -o
+  pid,etime,command` shows this job's `job.py`, a reused pid after a reboot does not: skill `recover-state`). A scroll job closes its listing tab (DELETE)
   however the run ends, SIGTERM and Ctrl+C included. The shop's lock goes with the process.
 - A running job keeps the code it loaded: restart it (stop, `run` again) after a code change.
 - Prepared output looks stale, or before a release (a code change that should not change the output: compare the
