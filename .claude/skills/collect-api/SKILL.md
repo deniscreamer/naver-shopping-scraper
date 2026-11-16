@@ -5,13 +5,22 @@ description: Collect from Naver Shopping through the running local API with the 
 
 # Collecting from the API
 
-Read `scripts/COLLECT.md` first; this skill is only the map. The scripts table and the boundary: `scripts/README.md`.
+The stage: scripts call the running local API over HTTP (`NaverApiClient`) and save what it answers. Read the one
+section of `scripts/COLLECT.md` the task needs; the scripts table and the boundary: `scripts/README.md`.
 
-What the doc covers:
-- product details two ways, options (free / paid / sold-out variants), photos (`naver_images.py`, WebP);
-- the listing screen and the "already in the shop" check (`listing_filter.py`, `shopify_catalog.py`);
-- checking a run against product pages, reviews two ways, the examples (start there);
-- the answer types (`naver_types.py`), link semantics, listing harvests (`harvest_listing.py`, `api.listing`).
+| Task | `scripts/COLLECT.md` section |
+|---|---|
+| Which script to start from | "Examples: start here" |
+| Product details: the record or the page (`/products/specs`) | "Product details: two ways" |
+| Options: free / paid / sold-out variants | "Product options" |
+| Photos (`naver_images.py`, WebP) | "Product photos" |
+| The listing screen, "already in the shop" (`listing_filter.py`, `shopify_catalog.py`) | "The listing screen and the shop check" |
+| Check a run against product pages | "Checking a run against product pages" |
+| Reviews: the endpoint or the page | "Reviews: two ways" |
+| The answer types (`naver_types.py`) | "Response types" |
+| Which links to harvest | "Link semantics for harvesting" |
+| A listing harvest (`harvest_listing.py`), the full listing (`api.listing`) | "Listing harvest", "Full search listing through the API" |
+| An error from a call | skill `api-error-triage` |
 
 Commands (repo root, server running for anything networked):
 - `.venv/bin/python scripts/example_01_health.py`, then the example closest to the task.
@@ -22,7 +31,7 @@ Rules:
 - `scripts/` talks to the server over HTTP only (`NaverApiClient`), never imports server modules (AGENTS.md rule 3).
 - Use the typed client methods and guard every `X | None` (R-TYPE in `server/docs/DEVELOPMENT_RULES.md`).
 - A shape change updates the type in `naver_types.py`, its fixture and the client method together (R-TYPE).
-- Tests never hit the network.
+- Tests never hit the network. Never use browser tools on Naver during a job (`scripts/OWNER_RULES.md` section 3).
 
 More: the contract `server/docs/ENDPOINTS.md`; blocks and 502s `server/docs/KNOWN_ISSUES.md`; a whole category as a
 job: skill `run-a-job`; what sellers write: `scripts/SELLER_DATA.md`.

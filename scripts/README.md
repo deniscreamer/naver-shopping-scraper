@@ -40,7 +40,9 @@ The scripts' topics, each in its own doc, each with a skill to read first:
 | (none) | `release` | Cutting a release (developer): VERSION, check.sh, tag, push, the state backup |
 
 Also: [ONBOARDING.md](ONBOARDING.md) (a new category or shop, skill `new-category-or-shop`),
-[LENSES.md](LENSES.md) (visual review, skill `visual-review`), [SELLER_DATA.md](SELLER_DATA.md) (what sellers write).
+[LENSES.md](LENSES.md) (visual review, skill `visual-review`), [SELLER_DATA.md](SELLER_DATA.md) (what sellers write); developers: skills
+`seller-pattern-rule` (a seller pattern -> rule -> test), `prompt-change` (a model prompt), `api-error-triage` (an
+API or job error).
 
 ## Boundary
 

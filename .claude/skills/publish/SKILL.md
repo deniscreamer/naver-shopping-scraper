@@ -5,14 +5,19 @@ description: Publication of prepared, translated and placed products to the Shop
 
 # Publication to Shopify
 
-Read `scripts/PUBLISH.md` first; this skill is only the map.
+The stage: `publish.py` sends prepared, translated and placed products to the Shopify store and keeps the ledger
+`publish/published.jsonl`. The doc: `scripts/PUBLISH.md`.
 
-What the doc covers:
-- what makes a product publishable (ready, translated, placed) and what one publication sends;
-- draft first for a category not marked reviewed; the ledger `publish/published.jsonl`;
-- the owner's payload rules (title, vendor, price, metafields); withdraw, hold, restore, activate (the operator's
-  procedure: skill `store-actions`);
-- the Shopify roadmap and what the naver-harvester published.
+| Task | `scripts/PUBLISH.md` section |
+|---|---|
+| What makes a product publishable (ready, translated, placed), what one publication sends | "Publication" |
+| Draft first for a category not marked reviewed; the ledger | "Publication" |
+| Withdraw, hold, restore, activate (the operator's procedure: skill `store-actions`) | "Withdraw, hold, restore, activate" |
+| The owner's payload rules (title, vendor, price) | "The payload" |
+| Metafields | "Metafields" |
+| Credentials (never read them), tokens, uploads | "Access and uploads" |
+| The Shopify roadmap, what the naver-harvester published | "Shopify roadmap", "What the naver-harvester published" |
+| The store and our files disagree | `store_diff.py` below; skill `product-trace` |
 
 Commands (repo root):
 - `.venv/bin/python scripts/publish.py <shop> --dry-run` (payloads to `publish/payloads/`, nothing sent)

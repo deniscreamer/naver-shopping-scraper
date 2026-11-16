@@ -88,9 +88,11 @@ What waits for the owner (republishing, activating, withdrawing, holding, the Ne
 | Topic | Doc, skill |
 |---|---|
 | Setup, a new requirement (R-SETUP) | [SETUP.md](SETUP.md), [.env.example](.env.example) |
-| server/ (rules MANDATORY, read first) | [server/AGENTS.md](server/AGENTS.md), [DEVELOPMENT_RULES.md](server/docs/DEVELOPMENT_RULES.md), [ARCHITECTURE.md](server/docs/ARCHITECTURE.md), [ENDPOINTS.md](server/docs/ENDPOINTS.md), [KNOWN_ISSUES.md](server/docs/KNOWN_ISSUES.md), [EXTENSION.md](server/docs/EXTENSION.md) |
+| server/ (rules MANDATORY, read first; skill `server-change`) | [server/AGENTS.md](server/AGENTS.md), [DEVELOPMENT_RULES.md](server/docs/DEVELOPMENT_RULES.md), [ARCHITECTURE.md](server/docs/ARCHITECTURE.md), [ENDPOINTS.md](server/docs/ENDPOINTS.md), [KNOWN_ISSUES.md](server/docs/KNOWN_ISSUES.md), [EXTENSION.md](server/docs/EXTENSION.md) |
 | scripts/ stages: collect, job, duplicates, transform, package weight and size, translation, description, placement, price, publication | [scripts/README.md](scripts/README.md) (the docs map: one doc and one skill per stage), [SELLER_DATA.md](scripts/SELLER_DATA.md) |
 | Running the scripts, check.sh, shared files, conventions | [scripts/OPERATIONS.md](scripts/OPERATIONS.md), skill `operations` |
+| An API or job error: what it means, retry or not, what to tell the owner | skill `api-error-triage`, [ENDPOINTS.md](server/docs/ENDPOINTS.md) "Errors" |
+| A seller pattern -> rule -> test; a model prompt (translate, describe) | skills `seller-pattern-rule`, `prompt-change` |
 | A release (no CHANGELOG entries since 0.18.0, the owner 2026-11-14) | `VERSION`, skill `release` |
 | Overview, security, extension, archived Docker | [README.md](README.md), [SECURITY.md](SECURITY.md), [extension/README.md](extension/README.md), [archive/docker/](archive/docker/README.md) |
 

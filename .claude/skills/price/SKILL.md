@@ -5,12 +5,19 @@ description: The price rule per shop (shop_pricing.py: delivery, duty and margin
 
 # The price
 
-Read `scripts/PRICE.md` first; this skill is only the map.
+The stage: `shop_pricing.py` builds each variant's price (base, delivery in Korea, the box's delivery by tariff,
+duty, margin, the coefficients by confidence); `reprice.py` for products already in the store. The doc:
+`scripts/PRICE.md`.
 
-What the doc covers:
-- the rule: base, delivery in Korea, the box's delivery by tariff, duty, margin, the coefficients by confidence;
-- the tariff as data, its version and history, each traced to a dated capture;
-- in the flow and for products already in the store (`reprice.py`).
+| Task | `scripts/PRICE.md` section |
+|---|---|
+| Why is this product priced X | "Why is this product priced X (how to use)" |
+| The rule: base, delivery, duty, margin, the coefficients | "The price: delivery, duty and margin inside it" |
+| The tariff as data, its version and history, each traced to a dated capture | "The tariff" |
+| In the flow, and products already in the store (`reprice.py`) | "In the flow, and products already in the store" |
+| What the owner has not decided yet | "Open, not decided by the owner" |
+| The box (the package fields) behind a price | skill `transform`, `scripts/PACKAGE.md` "How to use" |
+| Repricing on the owner's word | skill `store-actions` |
 
 Commands (repo root):
 - `.venv/bin/python scripts/reprice.py <shop> [--only KEY]` (a dry-run table, offline)

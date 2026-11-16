@@ -5,7 +5,20 @@ description: Add a new Naver leaf category to a shop, or a new shop (tenant), to
 
 # A new category or a new shop
 
-The checklist and the reasons are in `scripts/ONBOARDING.md`. Read it first; this skill is only the procedure.
+The task: a new Naver leaf category in a shop, or a new shop (tenant), through every stage without silent gaps.
+The checklist and the reasons: `scripts/ONBOARDING.md`; this skill is the procedure.
+
+| Task | `scripts/ONBOARDING.md` section |
+|---|---|
+| A category in an existing shop: what stops without it | "A. A new category in an existing shop", "Required" |
+| What works without, but worse | "Quality: works without these, but worse" |
+| A new shop (tenant) | "B. A new shop (tenant)" |
+| Golf or `fairwardgolf` in shared code | "C. Golf or fairwardgolf in shared code" |
+| What the first new category taught | "Learned on the first new category" |
+| The first run, in order | "D. The order of a first run" |
+| Each stage's own part | skills `transform`, `translation`, `describe`, `placement`, `price`, `publish` |
+
+Rules: `scripts/OWNER_RULES.md`; values are the owner's, dated (ONBOARDING.md opening).
 
 1. **Scope.** Say which case it is: a category in an existing shop (part A), a new shop (part B), or both. Find
    the Naver **leaf** id (`/categories/list`, or a product page's `specs.category.id`). Every file uses that one
@@ -48,6 +61,7 @@ The checklist and the reasons are in `scripts/ONBOARDING.md`. Read it first; thi
    change, field by field, and those that cannot be built now; every new dictionary entry before the dictionaries' backup. Any such product is the owner's to decide
    (`scripts/OWNER_RULES.md` rule 1).
 9. **Finish.**
-   - Update the docs of every rule you changed (no CHANGELOG entry: the owner, 2026-11-14; releases: skill `release`).
+   - Update the docs of every rule you changed, in the same commit (AGENTS.md rule 6). CHANGELOG.md is frozen at
+     0.18.0: no entry (the owner, 2026-11-14); releases: skill `release`.
    - Correct ONBOARDING.md if the code differed from it (it is the map: keep it true).
    - Delete the research folder. Commit only when asked.

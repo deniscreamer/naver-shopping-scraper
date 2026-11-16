@@ -5,13 +5,15 @@ description: Running the scripts and their checks, the state backup (state_backu
 
 # Operations
 
-Read `scripts/OPERATIONS.md` first; this skill is only the map.
+Running the scripts and keeping their state safe. The doc: `scripts/OPERATIONS.md`.
 
-What the doc covers:
-- running: the server, the scripts' requirements, smoke and harvest examples, the offline tests;
-- backup of `scripts/output`, `server/output` and `research/` into archives outside the repo, verify, restore;
-- shared files: atomic writes, appended lines, `read_jsonl`, `shop_lock`;
-- conventions: typed calls, sequential by default, the server cache, status handling, pagination, naming, style.
+| Task | `scripts/OPERATIONS.md` section |
+|---|---|
+| The server, the scripts' requirements, the entry points, smoke and harvest examples, the offline checks | "Running" |
+| Back up `scripts/output`, `server/output` and `research/` into archives outside the repo; verify; restore | "Backup" |
+| Code that writes a shop's files: atomic writes, appended lines, `read_jsonl`, `shop_lock` | "Shared files" |
+| Typed calls, sequential by default, the server cache, status handling, pagination, naming, style | "Conventions" |
+| An error from the API or a job | skill `api-error-triage` |
 
 Commands (repo root):
 - `scripts/check.sh` (server suite, scripts suite, mypy; offline) before a commit
@@ -22,5 +24,6 @@ Rules:
 - Tests never hit the network; `scripts/` talks to the server over HTTP only (AGENTS.md rules 3, 4).
 - New code that writes a shop's files goes through `shop_files.py` (`write_atomic`, `append_line`, `shop_lock`).
 - A backup after each release; restore only into an empty folder.
+- What waits for the owner, and Never (no `.env*`, no secrets printed): `scripts/OWNER_RULES.md`.
 
 More: a release skill `release`; setup `SETUP.md`; server operations `server/README.md`; API calls skill `collect-api`; jobs skill `run-a-job`.

@@ -5,12 +5,21 @@ description: The translation stage (translate.py) of prepared Korean texts to En
 
 # Translation
 
-Read `scripts/TRANSLATION.md` first; this skill is only the map.
+The stage: `translate.py` turns a prepared product's Korean texts into English (its own store, a dictionary, the
+rules, then the model), before placement and publication. The doc: `scripts/TRANSLATION.md`.
 
-What the doc covers:
-- the owner's decisions (model, fallback, few tokens, what is not translated: the description is `describe`'s);
-- the per-kind dictionaries (live / backup), unit rules, prompts and briefs;
-- a new shop or Naver category, the quality check, what is still open.
+| Task | `scripts/TRANSLATION.md` section |
+|---|---|
+| Run it, read `translated` / `untranslated` / `pending` / `held`, the dictionary backup reminder | "Translation" |
+| The owner's decisions: model, fallback, few tokens, what is not translated (the description is `describe`'s) | "Decisions" |
+| A product's own title or review | "1. The product's own store" |
+| A term wrong for every product; live / backup dictionaries | "2. Dictionaries" |
+| Units, sizes, 노브랜드 | "3. The rules" |
+| Prompts, briefs, checks, fix rounds, fallback, batches, tokens, keys | "4. The model and its prompts" (a change: skill `prompt-change`) |
+| Reviews cleaned wrong | "Review cleaning" |
+| A new shop (tenant) or Naver category: its terms and briefs | "A new shop (tenant) or category" |
+| The quality check (`translate_eval.py`) | "Quality check" |
+| A known wrong case, what is still open | "Known limits", "Open" |
 
 Commands (repo root):
 - `.venv/bin/python scripts/translate.py <shop> --offline` (no model: what the dictionaries and rules leave)

@@ -5,7 +5,9 @@ description: The transform from collected lines to prepared products per shop (t
 
 # Transform, package weight and size
 
-Two docs; read the one section the task needs, not the whole doc. Both open with "How to use".
+The stage: `run_transform.py` turns a shop's collected lines into prepared products (prices, variants, texts,
+brand, the five package fields), offline. Two docs; read the one section the task needs, not the whole doc. Both
+open with "How to use".
 
 | Task | Section |
 |---|---|
@@ -26,6 +28,7 @@ Two docs; read the one section the task needs, not the whole doc. Both open with
 | The images misread: clubs' tables, count, bag | `scripts/PACKAGE.md` "Reading the description: the guess", "The clubs", "More of the page", "Whether the variant has the container" |
 | A value refused as absurd, a known wrong case | `scripts/PACKAGE.md` "Absurd values", "Known limits" |
 | The images' Korean text for `describe.py` (`description_images_text.state`) | `scripts/PACKAGE.md` "The images' text, read by `describe.py`" |
+| A seller's pattern -> a rule, a fixture, a test | skill `seller-pattern-rule` |
 
 Commands (repo root, offline unless noted):
 - `.venv/bin/python scripts/keep_run.py scripts/output/<run>` then `.venv/bin/python scripts/run_transform.py <shop>`
@@ -35,7 +38,7 @@ Commands (repo root, offline unless noted):
 
 Rules:
 - Category defaults and baselines are the owner's values, dated; never invent one (`CategoryDefaultsMissing` stops).
-- A change that alters published products: `scripts/OWNER_RULES.md` rule 1.
+- A change that alters published products: `store_diff.py <shop>`, then `scripts/OWNER_RULES.md` rule 1.
 - Add fixtures and tests from checked products (no need to ask: R-TEST-5); a behaviour change updates TRANSFORM.md
   or PACKAGE.md in the same commit.
 - A new held code (transform), placement status or dedupe decision gets its row in TRANSFORM.md "Held codes" in the

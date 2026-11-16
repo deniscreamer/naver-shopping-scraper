@@ -5,7 +5,19 @@ description: Look at a shop's products by eye through contact sheets (scripts/le
 
 # Visual review of products
 
-The lenses, what each catches and when: `scripts/LENSES.md`. Read it first; this skill is only the procedure.
+The stage: `lens.py` draws a shop's products as numbered contact sheets for one question; the agent reads them and
+proves each doubt from the data. Read only and offline. The doc: `scripts/LENSES.md`.
+
+| Task | `scripts/LENSES.md` section |
+|---|---|
+| The five rules of use (read only, the text proves, the owner decides, drafts) | "The rule of use" |
+| The files, `index.tsv`, `summary.json` | "The tools" |
+| Which lens for which question | "The lenses and when to use them" (`section`, `price`, `brand`, `dupes`, `held`, `products`) |
+| How to read a sheet | "Reading a sheet (for an agent)" |
+| The lens fixture, a new lens | "Tests and the fixture", "Adding a lens" |
+| Duplicates: what dedupe decided | `scripts/DEDUPE.md` "How to use" |
+
+Rules: `scripts/OWNER_RULES.md` (sections 2 and 3). The procedure:
 
 1. **Pick the lens from the question.** A job printed a review block (`review due`): run exactly its commands
    (`job.py status --job <id> --json`, key `review.commands`), then go on from step 3.
@@ -38,4 +50,4 @@ The lenses, what each catches and when: `scripts/LENSES.md`. Read it first; this
    rules missed: list both keys, titles and prices and ask; meanwhile hold it (rule 2). The owner's answer
    (activate, withdraw, hold, versions) is carried out with the skill `store-actions`.
 
-A new lens: `scripts/LENSES.md`, "Adding a lens".
+More: one product's trace skill `product-trace`; a rule the review points to skill `seller-pattern-rule`.
