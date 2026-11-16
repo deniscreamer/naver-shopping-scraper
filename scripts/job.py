@@ -1331,6 +1331,7 @@ def _scroll_run(job: Job) -> int:
     try:
         published = ctx["catalog"].keys()
     except Exception as e:
+        job.log(None, "stop", reason=f"shop check: {type(e).__name__}: {e}")   # no run ends without an event
         print(f"stop: shop check: {type(e).__name__}: {e}")
         return 3
     screen = Screen(job.category, store.shopify.namespace, published, DeferredLog(store.id.value).blocked())

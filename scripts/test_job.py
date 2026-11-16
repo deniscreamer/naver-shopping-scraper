@@ -981,3 +981,18 @@ def test_a_failed_notice_never_raises(monkeypatch, notified, capsys):
     monkeypatch.setattr(requests, "post", refused)
     notified.real("job_stop", "j1: wall")
     assert "webhook failed: ConnectionError" in capsys.readouterr().out
+
+
+def test_a_scroll_stopped_by_the_shop_check_logs_a_stop_event(tmp_path, monkeypatch):
+    """2026-11-16, the phase 2 review: exit 3 at the shop check left no stop event, so the owner's notice carried an
+    older stop's reason."""
+    job = scroll_job(tmp_path)
+
+    class Broken:
+        def keys(self):
+            raise RuntimeError("catalog down")
+    monkeypatch.setattr(J, "_context", lambda j: ({"store": __import__("shop_stores").get_store(SHOP),
+                                                   "catalog": Broken()}, 0))
+    assert J._scroll_run(job) == 3
+    stops = [e for e in job.events() if e["event"] == "stop"]
+    assert stops and stops[-1]["reason"] == "shop check: RuntimeError: catalog down"

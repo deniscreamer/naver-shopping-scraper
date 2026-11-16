@@ -175,20 +175,20 @@ def main(argv: list[str] | None = None) -> int:
     if not os.path.isdir(shop.dir):
         print(f"no shop folder {shop.dir}", file=sys.stderr)
         return 1
-    rows = table(shop, args.only)
-    for r in rows:
-        print(line(r))
-    print(f"reprice {args.shop} ({policy(args.shop).describe()['version']}): {summary(rows)}")
-    print(f"table: {write_tsv(shop, rows)}")
-    if args.apply:
-        def send() -> int:
+    def run() -> int:
+        rows = table(shop, args.only)
+        for r in rows:
+            print(line(r))
+        print(f"reprice {args.shop} ({policy(args.shop).describe()['version']}): {summary(rows)}")
+        print(f"table: {write_tsv(shop, rows)}")
+        if args.apply:
             print(f"reprice {args.shop} --apply: {len(rows)} products: {apply(shop, rows)}")
-            return 0
-        return locked(args.shops_root, args.shop, "reprice.py --apply", send, "reprice")   # not while a job runs
-    else:
-        print("dry run: nothing sent (--apply sends them)")
-    return 0
-
+        else:
+            print("dry run: nothing sent (--apply sends them)")
+        return 0
+    if args.apply:          # the whole command under the shop's lock: the table is read under it too, refused at once
+        return locked(args.shops_root, args.shop, "reprice.py --apply", run, "reprice")
+    return run()
 
 if __name__ == "__main__":
     sys.exit(main())

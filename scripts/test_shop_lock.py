@@ -133,3 +133,13 @@ def test_a_new_scroll_job_refused_makes_no_job_folder(busy, capsys, monkeypatch)
                               describe=False, dedupe="off")
     assert J.cmd_scroll(args) == 2
     _refused(capsys, "")
+
+
+def test_a_refused_reprice_apply_prints_no_table_and_writes_no_tsv(busy, capsys):
+    """2026-11-16, the phase 2 review: --apply read and printed the whole table and wrote its .tsv before the lock."""
+    import glob
+    import reprice
+    assert reprice.main([SHOP, "--shops-root", busy, "--apply"]) == 2
+    out = capsys.readouterr().out
+    assert "busy" in out and "table:" not in out
+    assert not glob.glob(os.path.join(busy, SHOP, "publish", "reprice-*.tsv"))
