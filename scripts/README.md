@@ -1248,6 +1248,8 @@ TypedDicts of what the pipeline itself writes (2026-11-16), for mypy and the rea
 stay plain JSON and nothing is checked when one is read. Each mirrors the one place that builds the record:
 `PreparedProduct` (+ `PreparedVariant`, `PreparedOption`, `PreparedPricing`, `PreparedImage`, ...) is
 `transform.Prepared.product` as `prepare` builds it, plus `description_images_text` from run_transform.
+`LedgerRow` is a line of `publish/published.jsonl` (publish.py's published / withdrawn / restored / activated rows,
+store_diff's adopted; `key`, `status`, `at` always there).
 `test_shop_types.py` checks the golden prepared products against them (no unknown key, no wrong type, every key of
 a built product). A change of a record's shape updates its type in the same commit.
 

@@ -121,7 +121,7 @@ import time
 import traceback
 from collections import Counter
 from datetime import datetime, timezone
-from typing import Any
+from typing import Any, Mapping
 
 from shop_files import LedgerError, append_line, locked, read_jsonl, write_atomic
 
@@ -1381,7 +1381,7 @@ def drafts(job: Job) -> list[str]:
     """The job's products published as drafts (ledger store_status DRAFT), in listing order; withdrawn ones are not
     published, so they are not here."""
     from publish import Shop
-    ledger = Shop(job.shop, job.shops_root).ledger()
+    ledger: Mapping[str, Mapping[str, Any]] = Shop(job.shop, job.shops_root).ledger()
     return [r["key"] for r in job.rows() if (ledger.get(r["key"]) or {}).get("store_status") == "DRAFT"]
 
 

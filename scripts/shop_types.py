@@ -8,8 +8,9 @@ file is read: the files stay plain JSON, the types only name their shape. A shap
 same commit; test_shop_types.py checks the golden prepared products against PreparedProduct.
 
     PreparedProduct   transform.prepare's `product` (+ description_images_text, set by run_transform.image_texts)
+    LedgerRow         a line of <shop>/publish/published.jsonl (publish.py; store_diff --adopt)
 """
-from typing import Any, NotRequired, TypedDict
+from typing import Any, NotRequired, Required, TypedDict
 
 
 # ==== the prepared product (transform.prepare, prepared/products.jsonl) ===============================
@@ -134,3 +135,40 @@ class PreparedSource(TypedDict):
     channel_no: str
     product_id: str
     category_id: str | None
+
+
+# ==== the publication ledger (publish.py, <shop>/publish/published.jsonl) ===============================
+
+class LedgerPhoto(TypedDict):
+    """LedgerRow.photos[]: a gallery photo on the Shopify product, by its file's hash."""
+    sha256: str
+    media_id: str
+
+
+class LedgerRow(TypedDict, total=False):
+    """One line of the ledger; the last line of a key is its state. Written by publish.publish_one (published),
+    withdraw (withdrawn: format, key, product_id, handle, admin_url, store_status, reason), restore (the last
+    published line again, digest "", restored), activate (the published line again, store_status ACTIVE,
+    activated) and store_diff --adopt (the published line again, output, adopted)."""
+    format: str
+    key: Required[str]
+    status: Required[str]              # published | withdrawn
+    at: Required[str]                  # UTC ISO time of the line
+    digest: str | None                 # publish.inputs_digest; None after a failed photo, "" after a restore
+    output: str | None                 # publish.output_digest of what productSet sent; None after a failed photo
+    product_id: str                    # gid://shopify/Product/...
+    handle: str
+    created: bool
+    photos: list[LedgerPhoto]
+    photos_failed: list[str]
+    reviews: int
+    feed_url: str | None
+    pricing: str                       # shop_pricing's version
+    prices_usd: list[int]              # [lowest, highest]
+    admin_url: str
+    preview_url: str | None
+    store_status: str                  # only when not ACTIVE (a draft, a withdrawal), or after a restore / activation
+    reason: str                        # withdrawn: why
+    restored: str                      # restore: why
+    activated: str                     # activate: when
+    adopted: str                       # store_diff --adopt: when

@@ -33,7 +33,7 @@ import os
 import re
 import sys
 from datetime import datetime, timezone
-from typing import Any
+from typing import Any, Mapping
 
 import describe
 import shopify_payload as sp
@@ -41,6 +41,7 @@ import transform_shops
 from shop_files import append_line, locked, read_jsonl
 from shop_pricing import policy
 from shop_stores import get_store
+from shop_types import LedgerPhoto, LedgerRow
 from shopify_catalog import CatalogError
 
 SCRIPTS = os.path.dirname(os.path.abspath(__file__))
@@ -82,8 +83,9 @@ def _read_last(path: str) -> dict[str, dict[str, Any]]:
     return out
 
 
-def _last(path: str) -> dict[str, dict[str, Any]]:
-    """The last line per key of a JSON-lines file ({} when it does not exist); shared, read only for the callers."""
+def _last(path: str) -> dict[str, Any]:
+    """The last line per key of a JSON-lines file ({} when it does not exist); shared, read only for the callers.
+    The ledger's rows are shop_types.LedgerRow."""
     return _memo(path, _read_last)
 
 
@@ -111,7 +113,7 @@ def _photo(path: str) -> dict[str, Any]:
     return out
 
 
-def _append(path: str, row: dict[str, Any]) -> None:
+def _append(path: str, row: Mapping[str, Any]) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
     append_line(path, json.dumps(row, ensure_ascii=False))           # one write, after a line end (shop_files)
 
@@ -149,7 +151,7 @@ class Shop:
                 and (translated.get(k) or {}).get("status") == "translated"
                 and (placed.get(k) or {}).get("status") == "placed"]
 
-    def ledger(self) -> dict[str, dict[str, Any]]:
+    def ledger(self) -> dict[str, LedgerRow]:
         return {k: r for k, r in _last(self.ledger_path).items() if r.get("status") == "published"}
 
     def file_urls(self) -> dict[str, str]:
@@ -193,7 +195,7 @@ def restore(shop: Shop, key: str, products: Any, reason: str) -> dict[str, Any]:
     return row
 
 
-def activate(shop: Shop, key: str, products: Any) -> dict[str, Any] | None:
+def activate(shop: Shop, key: str, products: Any) -> LedgerRow | None:
     """A draft (store_status DRAFT, draft first) live: ACTIVE, on the owner's word after the lens review (2026-11-16).
     The ledger takes its row again with store_status ACTIVE and `activated`; digest, output and photos stay, so
     nothing is sent again. -> the row, or None for a key that is not a published draft here (no call, no line)."""
@@ -201,7 +203,7 @@ def activate(shop: Shop, key: str, products: Any) -> dict[str, Any] | None:
     if not before or before.get("store_status") != "DRAFT":
         return None
     status = products.set_status(before["product_id"], "ACTIVE")
-    row = {**before, "store_status": status, "activated": _now()}
+    row: LedgerRow = {**before, "store_status": status, "activated": _now()}
     _append(shop.ledger_path, row)
     return row
 
@@ -276,10 +278,10 @@ def _on_store(product: dict[str, Any], images: list[dict[str, Any]]) -> dict[str
     return out
 
 
-def _ledger_photos(images: list[dict[str, Any]], media: list[dict[str, Any]]) -> list[dict[str, str]]:
+def _ledger_photos(images: list[dict[str, Any]], media: list[dict[str, Any]]) -> list[LedgerPhoto]:
     """The ledger's photos: each media paired with its photo by the hash in its file name, by position when a name
     carries none."""
-    out: list[dict[str, str]] = []
+    out: list[LedgerPhoto] = []
     by16 = {img["sha256"][:16]: img["sha256"] for img in images}
     for i, m in enumerate(media):
         if m["status"] == "FAILED":
@@ -291,15 +293,16 @@ def _ledger_photos(images: list[dict[str, Any]], media: list[dict[str, Any]]) ->
 
 
 def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, Any], force: bool = False,
-                dry_run: bool = False, rehandle: bool = False) -> dict[str, Any]:
-    """One product to Shopify -> its ledger row (status published / skipped / dry-run)."""
+                dry_run: bool = False, rehandle: bool = False) -> Mapping[str, Any]:
+    """One product to Shopify -> its ledger row (status published, a LedgerRow), the last one (status skipped), or
+    what a dry run built (status dry-run: payload, handle, output, product_id, feed_sha, images)."""
     prepared_all, translated_all, placed_all = shop.inputs()
     prepared, translated, placement = prepared_all[key], translated_all.get(key) or {}, placed_all.get(key) or {}
     extra = gallery(shop, prepared)
     store = _memo(os.path.join(shop.dir, "translation", describe.STORE), lambda _: describe.load_store(shop.dir))
     description = (store.get(key) or {}).get("html") or ""
     digest = inputs_digest(prepared, translated, placement, shop.shop, extra, description)
-    before = shop.ledger().get(key)
+    before: Mapping[str, Any] | None = shop.ledger().get(key)
     if before and before.get("digest") == digest and not force and not dry_run and not rehandle:
         return {**before, "status": "skipped"}
     pricing, pid = policy(shop.shop), prepared["source"]["product_id"]
@@ -388,7 +391,7 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
     products.publish(product["id"], ids["publications"])
     media = product["media"]["nodes"]
     failed = [m["id"] for m in media if m["status"] == "FAILED"]
-    row = {"format": FORMAT, "key": key, "status": "published", "at": _now(),
+    row: LedgerRow = {"format": FORMAT, "key": key, "status": "published", "at": _now(),
            "digest": None if failed else digest,                  # a failed photo: the next run sends it again
            "output": None if failed else output,
            "product_id": product["id"], "handle": product["handle"], "created": not product_id,

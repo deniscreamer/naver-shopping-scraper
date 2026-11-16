@@ -27,6 +27,7 @@ import publish as PB
 import shopify_payload as sp
 from shop_files import locked
 from shop_pricing import Policy, PriceError, policy
+from shop_types import LedgerRow
 from shopify_catalog import CatalogError
 
 COLUMNS = ("key", "handle", "status", "levels", "coefficients", "old_min", "old_max", "old_from", "new_min",
@@ -49,7 +50,7 @@ def _change(old: list[int], new: list[int]) -> str:
     return f"{low:+d}" if low == high else f"{low:+d}/{high:+d}"
 
 
-def reprice(shop: str, key: str, prepared: dict[str, Any], published: dict[str, Any]) -> dict[str, Any]:
+def reprice(shop: str, key: str, prepared: dict[str, Any], published: LedgerRow) -> dict[str, Any]:
     """One product's row: the old and the new [lowest, highest] variant price in whole dollars, its status
     (changed / same price / held) and, in a shop with the rule, the levels and coefficients of its boxes."""
     product, rule = prepared["product"], policy(shop)
@@ -94,7 +95,7 @@ def table(shop: PB.Shop, only: list[str] | None = None) -> list[dict[str, Any]]:
     return rows
 
 
-def sends(shop: PB.Shop, key: str, published: dict[str, Any]) -> bool:
+def sends(shop: PB.Shop, key: str, published: LedgerRow) -> bool:
     """Whether publish_one would send the product: its digest now differs from the ledger's (a new rule changes the
     cost per item and the breakdown too, so a product whose price stays the same is still sent)."""
     import describe

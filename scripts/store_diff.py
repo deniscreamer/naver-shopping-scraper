@@ -26,7 +26,7 @@ from concurrent.futures import ThreadPoolExecutor
 import os
 import re
 import sys
-from typing import Any
+from typing import Any, Mapping
 
 import publish as P
 from shop_files import locked
@@ -139,7 +139,7 @@ def _diff(args: argparse.Namespace) -> int:
     ids = {"vendors": P.vendor_spellings(admin.vendor_spellings()), "tenant": store.publisher}
     report: dict[str, Any] = {"shop": args.shop, "changes": {}, "same": [], "not_buildable": {}, "adopted": [],
                               "live_drafts": []}
-    built: dict[str, dict[str, Any]] = {}
+    built: dict[str, Mapping[str, Any]] = {}
     for key in keys:
         if key not in ready:
             p = prepared.get(key) or {}
