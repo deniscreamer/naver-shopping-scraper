@@ -17,7 +17,7 @@ DRAFT with no false withdrawal. Owner: "check it is no error, then DRAFT".
 2. **The picture finds, the text proves.** Never act on a photo alone: open the number's line in `index.tsv` /
    `summary.json`, its variants and title, or `lens.py products <id> ...` for all its photos side by side.
 3. **The owner decides.** A finding goes to the owner as numbers, keys and the reason; a withdrawal, a republish or a
-   rule change waits for the owner's word (AGENTS.md, memory "Ask before touching published products").
+   rule change waits for the owner's word ([OWNER_RULES.md](OWNER_RULES.md)).
 4. **Say what was not looked at.** A sheet shows one photo per product in a grid; a doubt the first photo cannot
    settle needs the `products` lens.
 5. **Drafts (draft first, 2026-11-16).** A product of a category not marked reviewed is published DRAFT; the ledger
@@ -128,6 +128,10 @@ When:
 - After a change to `dedupe.py` (words, kinds, thresholds): the new groups, before a job runs with it.
 
 Catches: colour editions (black bag, white bag), a set with or without its bag, sizes or years under one title.
+
+A copy of a live product the rules missed (found here, in `section` or in `products`) is not withdrawn as
+`replaced_by:` unasked: list each copy with both keys, titles and prices, ask, and meanwhile hold it as a draft
+(`--withdraw <key> --reason "hold: copy of live <key>, ..."`): [OWNER_RULES.md](OWNER_RULES.md) rule 2.
 
 ### `held`: was the hold right?
 Command: `lens.py held <shop> --job <id>`.

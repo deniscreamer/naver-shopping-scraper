@@ -216,7 +216,7 @@ coefficients, the old prices min-max, the new min-max, the change), then a summa
 published product no longer ready is named on stderr; the same table goes to
 `<shops_root>/<shop>/publish/reprice-<UTC time>.tsv`. A product that cannot be priced is shown held and the run
 goes on. `--apply` sends the products that are not held through `publish.publish_one` (a product whose digest did
-not change is skipped). The rule "ask the owner before touching published products" (JOB_AGENT.md, Never) holds:
+not change is skipped). The rule "ask the owner before touching published products" ([OWNER_RULES.md](OWNER_RULES.md) rule 1) holds:
 `--apply` runs on the owner's word, after the table was read. Done for the 120 products published before the rule
 on 2026-11-11 under `landed/1` (120 sent, the 5 of the pilot unchanged; the store then held the rule's price and
 cost on all 1 127 variants). The same day the rule became `landed/2` (the margin 25 + 11 %, the duty out of the cost

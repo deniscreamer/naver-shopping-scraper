@@ -206,8 +206,10 @@ Requests are typed on the server, answers on the consumer side.
   the matching collected lines (`scripts/fixtures/collected/`, `scripts/collected_fixtures.py`) and the prepared
   products (`scripts/fixtures/prepared/`, `scripts/test_prepared_golden.py`). A deliberate parser or transform
   change rewrites the expected files with `UPDATE_GOLDEN=1` and its diff is read before the commit. Fixtures are
-  added or refreshed only when the owner asks (it is not a step of every change); they never hit the network and
-  the whole set runs in well under a second.
+  added or refreshed only when the owner asks (it is not a step of every change), with one standing exception (the
+  owner, 2026-11-06): fixtures and unit tests made from products checked in test runs (page, collected, prepared,
+  measures, placement) may be added without asking; a golden refresh is still read before the commit. They never
+  hit the network and the whole set runs in well under a second.
 
 ## Checklist: adding a new endpoint
 

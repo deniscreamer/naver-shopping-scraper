@@ -1,6 +1,7 @@
 # Publication to Shopify
 
-How prepared, translated and placed products reach the Shopify store (`publish.py`) and the Shopify roadmap; split from scripts/README.md on 2026-11-16 (history: `git log --follow scripts/README.md`).
+How prepared, translated and placed products reach the Shopify store (`publish.py`), the store actions (withdraw,
+hold, restore, activate) and the Shopify roadmap; split from scripts/README.md on 2026-11-16 (history: `git log --follow scripts/README.md`).
 
 ## Publication (`publish.py`, MVP, the owner 2026-11-08)
 
@@ -123,6 +124,29 @@ stay one at a time: Shopify limits by query cost per app and store (this store: 
 second back; a search of 10 names costs ~5, a mutation ~10), and a THROTTLED answer, a 429 or a 5xx waits what
 Shopify says and repeats (`shopify_catalog._send`). Measured live: 30 photos in 8.3 s (0.28 s a file, 7 GraphQL
 calls) against 4.0 s a file one by one (5 calls a file).
+
+## Withdraw, hold, restore, activate (store actions)
+
+Each one waits for the owner's word ([OWNER_RULES.md](OWNER_RULES.md)); the procedure: skill `store-actions`. A
+product's key is `fairwardgolf:naver:<channel>:<product id>`: a lens's `index.tsv` gives it by sheet number (column
+`key`), the ledger by product id.
+
+- `publish.py <shop> --withdraw <key> --reason "..."`: the product goes DRAFT in the store (nothing deleted), the
+  ledger row says `withdrawn` with the reason, and it is never sent again; dedupe closes a new copy of it as
+  `duplicate_of_withdrawn` (unless the reason is `replaced_by:<key>`: then its replacement is compared). Allowed
+  while a job runs (no shop lock).
+- **Hold** (the owner, 2026-11-16): a doubtful copy a lens review found is withdrawn with a reason starting `hold:`
+  (`"hold: copy of live <key>, kept as a draft for a separate decision (owner <date>)"`), not as `replaced_by:`, until
+  the owner decides: [OWNER_RULES.md](OWNER_RULES.md) rule 2.
+- `--restore <key> --reason "..."`: undoes a withdrawal: ACTIVE again (a product created as a draft comes back a
+  draft), its last published row back in the ledger with no digest, so the next `--only <key>` sends today's data.
+- `--activate <key>` (repeatable): a draft live, nothing sent again; `not a draft here` for a key that is not a
+  published draft (a withdrawn or held one included). `job.py activate --job <id> [--dry-run]`: every remaining
+  draft of a job, withdrawn ones skipped; it prints the `--withdraw` lines of the old copies a draft did not replace.
+- `--rehandle --only <key>`: the handle its title makes now (the old one redirects); `--force --only <key>`: send
+  even when nothing changed. Both re-send a published product: rule 1 of OWNER_RULES.md.
+- `store_diff.py <shop> [--only <key>] [--category <id>]`: read only, what a publication would change, field by
+  field; `--adopt` (takes the shop's lock) records `output` for products the store already has.
 
 ## Shopify roadmap
 
