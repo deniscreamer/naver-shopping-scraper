@@ -21,6 +21,10 @@ first; what waits for the owner: [OWNER_RULES.md](OWNER_RULES.md).
 | Why is a product missing, held, a draft, withdrawn, odd | `product-trace` | the shop's files (read only); the codes: [TRANSFORM.md](TRANSFORM.md#held-codes) "Held codes" |
 | Activate, withdraw, hold, restore, reprice, back up | `store-actions` | [PUBLISH.md](PUBLISH.md), [PRICE.md](PRICE.md), [OPERATIONS.md](OPERATIONS.md) |
 | Fix one product's brand, title, price, section, description | `fix-a-product` | the stage's doc below |
+| A dictionary backup is due, a term or brand wrong for many products | `dictionaries` | [TRANSLATION.md](TRANSLATION.md#2-dictionaries) "2. Dictionaries" |
+| Something broke in the files: a crash, `LedgerError`, `shop is busy`, a restore | `recover-state` | [OPERATIONS.md](OPERATIONS.md) "Shared files", "Backup"; [JOB_AGENT.md](JOB_AGENT.md) |
+| The extension disconnected, a listing tab hangs | `extension` | [server/docs/EXTENSION.md](../server/docs/EXTENSION.md) |
+| A new Mac, or nothing starts | `setup-machine` | [SETUP.md](../SETUP.md) |
 
 The scripts' topics, each in its own doc, each with a skill to read first:
 
@@ -28,7 +32,7 @@ The scripts' topics, each in its own doc, each with a skill to read first:
 |---|---|---|
 | [COLLECT.md](COLLECT.md) | `collect-api` | Calling the API: product details, options, photos, the listing screen, reviews, examples, answer types, harvests |
 | [JOB_AGENT.md](JOB_AGENT.md) | `run-a-job` | Running or watching `job.py` (one product per iteration, `new` + `run` or `scroll`), step by step: before, start, watch, stop, after |
-| [DEDUPE.md](DEDUPE.md) | `run-a-job` | Duplicates (`dedupe.py`, `job.py --dedupe off\|log\|on`): a job's events and what to do, `--pairs`, `--report`, the rule |
+| [DEDUPE.md](DEDUPE.md) | `run-a-job`, `dedupe-rule` | Duplicates (`dedupe.py`, `job.py --dedupe off\|log\|on`): a job's events and what to do, `--pairs`, `--report`, the rule |
 | [TRANSFORM.md](TRANSFORM.md) | `transform` | The transform (collected -> prepared), the held codes and what to do on each, record types |
 | [PACKAGE.md](PACKAGE.md) | `transform` | Package weight and size (the five fields), category defaults, confidence, the description images' OCR, the images' text for `describe.py` |
 | [TRANSLATION.md](TRANSLATION.md) | `translation` | `translate.py`, the dictionaries, the prompts, review cleaning, the quality check |
@@ -42,7 +46,7 @@ The scripts' topics, each in its own doc, each with a skill to read first:
 Also: [ONBOARDING.md](ONBOARDING.md) (a new category or shop, skill `new-category-or-shop`),
 [LENSES.md](LENSES.md) (visual review, skill `visual-review`), [SELLER_DATA.md](SELLER_DATA.md) (what sellers write); developers: skills
 `seller-pattern-rule` (a seller pattern -> rule -> test), `prompt-change` (a model prompt), `api-error-triage` (an
-API or job error).
+API or job error), `dedupe-rule` (a change to the duplicate rule), `live-smoke` (the live smoke, `smoke_endpoints.py`).
 
 ## Boundary
 

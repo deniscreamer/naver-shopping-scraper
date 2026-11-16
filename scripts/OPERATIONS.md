@@ -24,7 +24,8 @@ Commands (repo root), what they print and what you do:
 | `.venv/bin/python scripts/state_backup.py --verify <folder>` | `ok` / `FAIL: ...` per archive, then `verify: ok` or `verify: N FAILED` (exit 1) | a failure: make the backup again |
 | `.venv/bin/python scripts/state_backup.py --restore <folder> --to <empty folder> [--phase state,...]` | `  <archive>: N files -> <to>` per archive (exit 0); `nothing to restore from <folder> for <phases>` (exit 1); `refused: <to> is not empty` or `refused: <to> is the repository or holds it; ...` (exit 2); `refused: <archive>: missing from <folder>` or `refused: <archive>: sha256 differs from MANIFEST.json` (exit 1) | restore only into an empty (or new) folder outside the repository, never over a working repository; every chosen archive is checked against MANIFEST.json before anything is unpacked; a missing or changed archive: `--verify` the folder, use another copy (the cloud's); then compare and move the folders you need into the repository by hand (stop any job first; the folder's `RESTORE.md`) |
 | A command refused with `<tool>: stop: <shop> is busy: <holder>: ...` (exit 2) | another process holds the shop's lock | wait for it (`job.py status`) or stop it; see [Shared files](#shared-files-shop_filespy-2026-11-16) |
-| `LedgerError: <path>:<n>: ...` (a job: `STOP ... LedgerError`) | a line of a shop's file is not JSON | fix the line by hand; a rebuilt file: the command that rebuilds it |
+| `LedgerError: <path>:<n>: ...` (a job: `STOP ... LedgerError`) | a line of a shop's file is not JSON | tell the owner the file and line; the ledger, `files.jsonl` or a listing: fixed by hand on the owner's word; a rebuilt file: the command the message names (no job running) |
+| `warning: <path>:<n>: a cut-off last line ignored` | an append-only file ends in a cut-off row (a run killed while appending) | harmless now, but the next append makes it a middle line and a `LedgerError`: tell the owner the file and line before the next send (skill `recover-state`) |
 
 ## Running
 
@@ -84,8 +85,8 @@ writes them goes through `shop_files.py`:
   `texts.jsonl`, `descriptions.jsonl`, the journal, `lens/reviewed.jsonl`): `append_line(path, *lines)`: one write of
   whole lines; when the file does not end with a line end (a cut-off row, a hand edit), one comes first, so the new
   row stays readable and the fragment becomes a bad line the reader names.
-- **Reading**: `read_jsonl(path, tail_ok=False)`: a line that is not JSON is `LedgerError: <path>:<n>: ...` (fix the
-  line by hand; a rebuilt file: the command that rebuilds it). Only an append-only file (`tail_ok`) may end in a
+- **Reading**: `read_jsonl(path, tail_ok=False)`: a line that is not JSON is `LedgerError: <path>:<n>: ...` (fixed by
+  hand on the owner's word; a rebuilt file: the command that rebuilds it). Only an append-only file (`tail_ok`) may end in a
   cut-off line: ignored with one warning (the next append turns it into a middle line, named). Strict this way:
   `publish.py`'s reads (the ledger, `files.jsonl`, prepared, translated, placements), `dedupe.ledger`, a job's
   `listing.jsonl` (`Job.rows`, `run_transform.paid_choices`); a job stops on it (`STOP ... LedgerError`). Left
@@ -100,7 +101,8 @@ writes them goes through `shop_files.py`:
   `reprice.py --apply`, `description_images.py`, `store_diff.py --adopt`. Not by the library functions (`run`,
   `publish_one`): a job calls them in its own process under its own lock. Free: `job.py status` / `new`, the lenses,
   reports, `store_diff.py`, `publish.py --dry-run` / `--withdraw` / `--restore` / `--activate`, `job.py activate`. The kernel frees it when the
-  process dies (kill -9 too). The lock is advisory: an editor or a heredoc into a `.jsonl` is not stopped, so a
+  process dies (kill -9 too); the file keeps the last holder's text after that, so `lsof <lock file>` printing
+  nothing (exit 1) is the check that nobody holds it. The lock is advisory: an editor or a heredoc into a `.jsonl` is not stopped, so a
   new writer of shared files uses `shop_files` and a new sending command takes the lock.
 
 ## Conventions

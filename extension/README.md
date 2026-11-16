@@ -12,7 +12,9 @@ Why it exists and how the listing uses it: [server/docs/EXTENSION.md](../server/
    30 s, so a server started later is found within ~30 s); with no bridge running, Chrome logs
    `ERR_CONNECTION_REFUSED`: harmless.
 
-After any change in this folder: **reload** the card (circular arrow) and check the version.
+After any change in this folder: **reload** the card (circular arrow) and check the version: the card shows it, and
+the server log prints `ext-bridge: extension connected (v<version>)` once it connects (`/health` then says
+`"extension": "connected"`; the version should equal `extension/manifest.json`).
 
 ## Ops
 

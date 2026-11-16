@@ -166,7 +166,7 @@ macOS notification. Nothing for a refusal (2), Ctrl+C (130) or a run cut by `--i
 | `STOP ... for 15 min` (they did not come back) | stopped | once they are back, `run` |
 | `the snapshot is used up ... reading the listings deeper` | reads the listings again with twice the batches, adds new products (`new --all`: every new one, until the listings end; then done) | nothing |
 | `STOP at <key>: two products in a row partial for '<reason>'` (RunStopped) | stopped; both products deferred | a collector defect: investigate, report; do not edit code during the job. `api_500` / `api_502` / `api_400`: the server answered that status (skill `api-error-triage`; the server's terminal prints `api: <status> <path> (<label>): ...`) |
-| `failed` (a 503 `naver error page:` or `adapter error:` still there after 2 retries, 120 s apart) | the next product; tried again at the end | nothing; twice failed: closed |
+| `failed` (a 503 `naver error page:` or `adapter error:` still there after 2 retries, 120 s apart; the extension dropping in the middle of a read lands here, not in the 15-min wait) | the next product; tried again at the end | nothing; twice failed: closed |
 | `not_taken` / `deferred` | the next product | nothing; a defer is lifted only by the owner (`deferred_log.py allow`) |
 | scroll: `the listing tab is gone after batch N (...): a new one in S s` (410: tab closed, login gate, server restart, a card that opened in the listing; or the connection lost during `next`) | waits 30-60 s, opens a new tab from the top, done products skipped; event `reopen` | nothing |
 | scroll: `STOP: the listing tab lost 3 times in 60 min` | stopped (at most 2 reopens an hour) | tell the owner; `scroll --job <id>` once they say so |
@@ -191,7 +191,8 @@ A captcha is answered by the owner in Chrome while the read waits; a login page 
 
 - Resume: `job.py run` (old mode) or `job.py scroll --job <id>` (scroll: the listing from the top, done products
   skipped, ~20-40 s a done batch) after any stop: nothing is lost, done products are not read again. After a `STOP`
-  the table above says whether the owner must clear it first.
+  the table above says whether the owner must clear it first. A runner killed without a `STOP` (kill -9, a power
+  cut) shows `no runner`, `finished: False` and no new stop event: resume the same way (skill `recover-state`).
 - After a captcha or a ban in the last 24 h: a small count, up to 50 ([Two ways to run a job](#two-ways-to-run-a-job-which-one-when)).
   `scroll --job <id>` keeps the job's own count (it reads no other flag): with more than 50 left, ask the owner
   first. The old mode: `job.py run --items 50`.

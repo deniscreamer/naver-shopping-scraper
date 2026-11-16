@@ -43,7 +43,8 @@ A product goes to the store when it is `ready` (transform), `translated` and `pl
 `job.py new --publish` does it for each product right after translation (placement of the whole shop, offline,
 then this one product; with `--describe` its description is written in between, see [DESCRIBE.md](DESCRIBE.md)). Per product: the reviews' photos and avatars to Shopify Files (the files app, once per
 file, named by its hash, `publish/files.jsonl`), the review rows as a JSON feed file there, the gallery photos as
-staged uploads attached in `productSet` (create, or update the product with its source key), ACTIVE, published
+staged uploads attached in `productSet` (create, or update the product with its source key; a send cut off after
+`productSet` but before its ledger row finds that product again by its source key or handle, so no second copy), ACTIVE, published
 to every sales channel of the store (the owner, 2026-11-09). Draft first (2026-11-16): a create in a Naver category
 not marked reviewed (`transform_shops.reviewed`) is DRAFT, still published to the channels, so it shows once
 activated; the ledger row stays `published` with `store_status: DRAFT` (only when not ACTIVE), so dedupe, the lenses,

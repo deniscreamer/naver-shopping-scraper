@@ -19,7 +19,8 @@ Three jobs:
    [extension/README.md](../../extension/README.md) (its ops table is there too).
 2. Open Chrome with the adapter loaded; start `server/run.py` (it starts the bridge); check
    `curl -s localhost:8000/health` says `"extension": "connected"`. `disconnected`: Chrome is closed or the adapter
-   is not loaded (it finds a started server within ~30 s); `off`: the bridge did not start.
+   is not loaded (it finds a started server within ~30 s); `off`: the bridge did not start (usually port 8765 taken, e.g. by `server/ext_listing.py`
+   run by hand, or `websockets` missing; the server log says `listing-jobs: extension bridge not started: ...`).
 3. Call the route (scripts use `NaverApiClient`, never the bridge: R-EXT-6). On an answer:
    - 409: the adapter is busy (one user at a time, below); retry when the holder is done, or free a left-over held
      tab with `curl -X DELETE localhost:8000/listing-tabs/<id>`.

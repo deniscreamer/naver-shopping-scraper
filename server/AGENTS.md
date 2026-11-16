@@ -16,7 +16,7 @@ what to run, what the answers mean, what to do; for the rulebook the map is skil
   upgrading dependencies; do not copy patterns listed there.
 - [docs/EXTENSION.md](docs/EXTENSION.md): the extension adapter: the search.shopping listing, product page specs, the
   held listing tab (`/listing-tabs`), what to do on 409 / 410 / 503 and a captcha; rules R-EXT-*. Its HTTP contract is in
-  ENDPOINTS.md.
+  ENDPOINTS.md. Operating the adapter (connected / off, a held tab, a job's wait): skill `extension`.
 - [README.md](README.md): run on macOS, env vars and their real scope, tests.
 
 Import root: `server/` is the import root. Imports are bare (`import config`, `from naver_shopping import api`).
@@ -27,5 +27,5 @@ Verify:
 ```
 .venv/bin/python -m pytest -q                     # from the repo root, offline: all pass (scripts/check.sh runs all three checks)
 .venv/bin/python server/run.py                    # then, in another shell:
-.venv/bin/python scripts/smoke_endpoints.py       # live smoke; when it is required: R-TEST-4
+.venv/bin/python scripts/smoke_endpoints.py       # live smoke; when it is required: R-TEST-4; how to read it: skill `live-smoke`
 ```

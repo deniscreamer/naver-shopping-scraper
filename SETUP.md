@@ -158,7 +158,9 @@ Within ~30 s the adapter connects (an alarm wakes it). Check:
 curl -s http://localhost:8000/health      # "extension": "connected"
 ```
 
-Still `disconnected` after a minute: ask the operator whether Chrome is open and the card shows no error.
+Still `disconnected` after a minute: ask the operator whether Chrome is open and the card shows no error. `off`:
+the bridge did not start (port 8765 taken; server/docs/EXTENSION.md "How to use"). Another `PORT`: the scripts
+call `http://localhost:8000` unless `NAVER_API_URL` names the new one.
 
 ## 7. The checklist
 
@@ -170,7 +172,7 @@ It also checks the OCR of description images (`OCR (description_images.py)`: rap
 Korean models downloaded). A WARN there blocks nothing else: install `scripts/requirements.txt` and fetch the models
 (section 2) before the first run of `scripts/description_images.py`. Verified versions: KNOWN_ISSUES K-17.
 
-`READY` = done. Each FAIL line says what to fix. `--live` makes one plain-HTTP call and one Chrome call to Naver;
+`READY` = done. Each FAIL line says what to fix. `--live` makes one plain-HTTP call and one Chrome call to Naver (and mints a Shopify token per app, read only);
 a 418/429/502 there means this IP is refused (wait, or set `NAVER_SHOPPING_PROXY`). Optional end-to-end: run
 `scripts/example_07_listing_then_details.py` (one listing batch through the adapter + 3 product details).
 

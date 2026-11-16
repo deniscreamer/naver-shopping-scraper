@@ -95,6 +95,11 @@ The live copies in `scripts/output/dictionaries/` grow during runs and are out o
 `status`, since runs never commit; a backup stamps each file `backed_up`. The sync only adds: a run takes the
 entries only the backup has (pulled from git, seeded by hand), a backup writes the live entries over the backup's
 and keeps its others. A wrong entry is fixed in the live copy; deleting one for good means both copies.
+No lock guards the files: edit one by hand when no run is writing (`job.py status`). A fixed entry reaches products
+only when they are built again: `translate.py <shop> --offline` rewrites `translated.jsonl` (a brand entry:
+`run_transform.py <shop>` first, its brand fallback reads the brand dictionary); then `store_diff.py <shop>` lists
+the published products it changes, and sending them is the owner's word ([OWNER_RULES.md](OWNER_RULES.md) rule 1).
+The live copies are in the state backup (`state_backup.py`, OPERATIONS.md "Backup"); `scripts/dictionaries/` is git's.
 
 `status` shows when the live copies were last written and the last backup (every backup file carries
 `backed_up`), the new and changed entries since, the ones only in git, and the advice (`action` none / wait /

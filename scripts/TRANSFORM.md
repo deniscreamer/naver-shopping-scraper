@@ -36,6 +36,7 @@ What it prints, and what to do:
 | `stop: <shop> is busy: ...`, exit 2 | a job or another command holds the shop | wait for it (`job.py status`) |
 | `--verify`: `identical`, exit 0 | every cache record equals a fresh prepare | nothing |
 | `--verify`: `differs <key>: <field>`, exit 1 | a cache record is stale: an input missing from its signature | a code fault: report it; until fixed, `--full` |
+| `--verify`: `nothing compared: no current record (run run_transform.py first)`, exit 0 | no cache record matches the current collected lines | run `run_transform.py <shop>` (no job running), then `--verify` again |
 | a package field or its `confidence` looks wrong | the five fields | [PACKAGE.md](PACKAGE.md), How to use |
 | a note in `notes` | never blocks | its rule below ([Prices, variants and options](#prices-variants-and-options), [Spec rows and the title vs variants](#spec-rows-and-the-title-vs-variants), [Description](#description)) |
 | `test_prepared_golden.py` fails after a deliberate change | the golden prepared products differ | `UPDATE_GOLDEN=1 .venv/bin/python -m pytest scripts/test_prepared_golden.py`, read the diff (R-TEST-5) |

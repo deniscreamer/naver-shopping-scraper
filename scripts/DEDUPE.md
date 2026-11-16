@@ -12,6 +12,7 @@ the job's side: `job.py` (`dedupe_step`, `replace_step`). What waits for the own
 | A job (`new` or `scroll`) | nothing: `--dedupe on` is the default | read the events below in `status --json` / the log |
 | A check run that changes nothing | `--dedupe log` on `new` / `scroll`, only when the owner wants it | `--pairs`, show the owner |
 | Were a job's decisions right? | `.venv/bin/python scripts/dedupe.py --pairs <shop> --job <id>` | look at the sheets, list wrong pairs for the owner |
+| Change the rule (developer): a missed copy or a false merge | the test first (`test_dedupe.py`), measure before and after on the store's groups | skill `dedupe-rule` (the tests, fixture and docs that move with it; the owner's word) |
 | Copies already in the store | `.venv/bin/python scripts/dedupe.py --report <shop> [--category <id>] [--list]` | `lens.py dupes <shop>`, red members first ([LENSES.md](LENSES.md#dupes-one-product-or-versions)) |
 | A copy the rules missed (found in a lens) | nothing automatic | hold it and ask: [OWNER_RULES.md](OWNER_RULES.md) rule 2 |
 | Two given products: copies or versions? | `.venv/bin/python scripts/lens.py products <shop> <id1> <id2>`; `grep '<id>' scripts/output/jobs/*/events.jsonl` for `duplicate_seen` / `duplicate_of` and their signals; `dedupe.py --report <shop> --list` for their group | compare with [The rule](#the-rule) (possible duplicate, confirmed); copies the rule missed: [OWNER_RULES.md](OWNER_RULES.md) rule 2 (list both, ask, hold) |
