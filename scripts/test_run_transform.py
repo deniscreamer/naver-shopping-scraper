@@ -232,6 +232,9 @@ def test_a_warm_cache_writes_the_same_bytes_as_a_full_build(tmp_path):
     warm = run_transform.run("fairwardgolf", None, shops, {}, cache=True)
     assert warm["cache"] == {"hit": len(ls), "miss": 0} and _files(shops) == before
     assert warm["prepared"] == full["prepared"]
+    ko = [k for k in before if k.endswith(".ko.json")]
+    assert len(ko) == len(ls)                                           # the record keeps the blocks' key order
+    assert list(json.loads(before[ko[0]])["blocks"][0]) == ["id", "kind", "image", "text", "key", "shared"]
     records = os.listdir(os.path.join(shops, "fairwardgolf", "prepare_cache"))
     assert sorted(records) == sorted(x["key"].split(":")[3] + ".json" for x in ls)
     assert run_transform.latest_lines("fairwardgolf", None, shops)[ls[0]["key"]][:2] == (

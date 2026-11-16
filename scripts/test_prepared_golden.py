@@ -60,10 +60,12 @@ def _fixture(name):
 def test_prepare_is_json_native_and_reads_only_the_measures_table(monkeypatch):
     """The prepare cache (run_transform._prepared_cached, 2026-11-16) hands on json.loads of a stored record, and
     its key holds only the line, the sidecar, the rules, the measures table and the code: prepare's output must
-    survive a JSON round trip unchanged (no tuple, no non-string key), and prepare must open no other file."""
+    survive a JSON round trip unchanged (no tuple, no non-string key), and prepare must open no other file; the same
+    for image_read, the record's images' text."""
     import builtins
     import io
     import transform
+    from run_transform import image_read
     from transform_shops import without_paid, without_paid_addons
     fixtures = {name: _fixture(name) for name in NAMES}
     transform._measures_table.cache_clear()
@@ -79,6 +81,9 @@ def test_prepare_is_json_native_and_reads_only_the_measures_table(monkeypatch):
         for name, (line, images_text) in fixtures.items():
             got = prepare(line, rules, "50002788-fixtures", 1, images_text)
             assert json.loads(json.dumps(got, ensure_ascii=False)) == got, name
+    for name, (line, images_text) in fixtures.items():                  # the record's other half
+        got = image_read(line, RULES, images_text)
+        assert json.loads(json.dumps(got, ensure_ascii=False)) == got, name
     monkeypatch.undo()
     assert "category_measures.json" in opened and set(opened) <= {"category_measures.json"}, (
         f"prepare opened {sorted(set(opened))}: add it to run_transform's cache signature")

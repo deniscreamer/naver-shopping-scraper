@@ -14,13 +14,14 @@ rules (same input + same rules = the same bytes: sorted by key, no time inside):
                               product.description_images_text.state on each product (image_texts below);
                               a .ko file is rewritten only when its bytes change
 
-The prepare cache (run(cache=True), 2026-11-16): each product's prepare() output is kept in
-<shop>/prepare_cache/<product id>.json (line 1 its signature, then the JSON record; derived data, not backed up) and
+The prepare cache (run(cache=True), 2026-11-16): each product's prepare() output and its images' text (image_read:
+off / not_read / the blocks) are kept in <shop>/prepare_cache/<product id>.json (line 1 its signature, then the JSON record; derived data, not backed up) and
 reused while the signature holds: the code (the bytes of every non-test scripts/*.py, taken at import), the base
 rules and the measures table as loaded, the shop, the run id and line number, the bytes of the collected line and of
-the images' sidecar, and the rules variant of the product's paid choice. prepare() reads no other file
-(test_prepared_golden pins it). Never from the cache: the choice of the newest line, paid_choices, the store-wide
-banners, the images' text files and flag (shared blocks, en.json), the brand fallback, the agency hold, the report.
+the images' sidecar, and the rules variant of the product's paid choice. prepare() and image_read() read no other
+file (test_prepared_golden pins it). Never from the cache: the choice of the newest line, paid_choices, the
+store-wide banners, the .ko files and the flag (shared blocks, en.json), the brand fallback, the agency hold, the
+report.
 
     .venv/bin/python scripts/run_transform.py fairwardgolf            # every kept run
     .venv/bin/python scripts/run_transform.py fairwardgolf 50002788-20261105T193000Z
@@ -101,20 +102,22 @@ def _read_record(path: str, sig: str) -> dict | None:
         record = json.loads(body)
     except (OSError, ValueError):
         return None
-    return record if isinstance(record, dict) and "prepared" in record else None
+    return record if isinstance(record, dict) and "prepared" in record and "image_read" in record else None
 
 
-def _prepared_cached(shop: str, shops_root: str, latest: dict[str, tuple], variant: Any, base_sig: str
-                     ) -> tuple[list[Any], dict[str, int]]:
-    """prepare() of each latest line through its record in <shop>/prepare_cache/ -> (prepared, {hit, miss}).
+def _prepared_cached(shop: str, shops_root: str, latest: dict[str, tuple], variant: Any, base: Any, base_sig: str
+                     ) -> tuple[list[Any], dict[str, Any], dict[str, int]]:
+    """prepare() and image_read() of each latest line through its record in <shop>/prepare_cache/
+    -> (prepared, {key: image read}, {hit, miss}).
     The signature: base_sig (code, base rules, measures table) + shop, run id, line number, the line's bytes, the
-    sidecar's bytes and repr() of the rules variant the product gets (its paid choice). The sidecar is read once,
-    for the hash and for prepare. A miss writes the record (write_atomic); a hit and a miss both hand on json.loads
+    sidecar's bytes and repr() of the rules variant the product gets (its paid choice); image_read takes the base
+    rules (in base_sig). The sidecar is read once, for the hash and for both (each its own json.loads). A miss writes the record (write_atomic); a hit and a miss both hand on json.loads
     of the stored text, so a warm and a cold run give the run-level steps the same objects."""
     folder = os.path.join(shops_root, shop, CACHE)
     os.makedirs(folder, exist_ok=True)
     reprs: dict[int, str] = {}
     out: list[Any] = []
+    reads: dict[str, Any] = {}
     count = {"hit": 0, "miss": 0}
     for run_id, n, line, line_sha in latest.values():
         pid = line["key"].split(":")[3]
@@ -131,16 +134,19 @@ def _prepared_cached(shop: str, shops_root: str, latest: dict[str, tuple], varia
         path = os.path.join(folder, f"{pid}.json")
         record = _read_record(path, sig)
         if record is None:
-            text = json.dumps({"prepared": prepare(line, rules, run_id, n, None if side_raw is None
-                                                   else json.loads(side_raw))},
-                              ensure_ascii=False)                       # no sort_keys: the order is the output's
+            def sidecar() -> Any:
+                return None if side_raw is None else json.loads(side_raw)
+            text = json.dumps({"prepared": prepare(line, rules, run_id, n, sidecar()),
+                               "image_read": image_read(line, base, sidecar())},
+                              ensure_ascii=False)                       # no sort_keys: .ko.json keeps this order
             write_atomic(path, f"{sig}\n{text}\n")
             record = json.loads(text)
             count["miss"] += 1
         else:
             count["hit"] += 1
         out.append(record["prepared"])
-    return out, count
+        reads[line["key"]] = record["image_read"]
+    return out, reads, count
 
 
 def _write_if_changed(path: str, text: str) -> bool:
@@ -157,7 +163,23 @@ def _write_if_changed(path: str, text: str) -> bool:
     return True
 
 
-def image_texts(shop: str, rules: Any, prepared: list[Any], latest: dict[str, tuple], shops_root: str) -> None:
+def image_read(line: dict, rules: Any, sidecar: dict | None) -> Any:
+    """The product's own half of image_texts: "off" (the category does not read its images), "not_read" (the sidecar
+    is not of this line's links) or description_image_text.blocks(); kept in the product's cache record."""
+    category = ((line.get("specs") or {}).get("category") or {})
+    try:
+        on = rules.category(category.get("id"), category.get("name")).description_images
+    except ShopRulesMissing:
+        on = False
+    if not on:
+        return "off"
+    if not current(sidecar, line):
+        return "not_read"
+    details = line.get("details") or {}
+    return image_text.blocks(sidecar, (details.get("store") or {}).get("name"), details.get("brand"))
+
+
+def image_texts(shop: str, prepared: list[Any], reads: dict[str, Any], shops_root: str) -> None:
     """The description images' Korean text for the translation step (description_image_text): written to
     <shop>/translation/<product id>/description_images.ko.txt (to read) and .ko.json (blocks with ids), and one
     flag on each prepared product, product["description_images_text"]["state"]:
@@ -170,27 +192,17 @@ def image_texts(shop: str, rules: Any, prepared: list[Any], latest: dict[str, tu
 
     The translation step reads the flag (not the folder), writes description_images.en.json
     {format, source_sha256, blocks: [{id, text}]} next to the .ko files; the next run_transform sets translated.
-    A product left with no text loses its .ko files (an .en file is the translator's and is kept)."""
+    A product left with no text loses its .ko files (an .en file is the translator's and is kept).
+    reads: {key: image_read()} of each product (from its cache record or computed)."""
     folder = os.path.join(shops_root, shop, "translation")
     read: dict[str, tuple[str, dict]] = {}
     state: dict[str, str] = {}
     for p in prepared:
-        line = latest[p["key"]][2]
-        category = ((line.get("specs") or {}).get("category") or {})
-        try:
-            on = rules.category(category.get("id"), category.get("name")).description_images
-        except ShopRulesMissing:
-            on = False
-        if not on:
-            state[p["key"]] = "off"
-            continue
-        sidecar = load_sidecar(shop, p["source"]["product_id"], shops_root)
-        if not current(sidecar, line):
-            state[p["key"]] = "not_read"
-            continue
-        details = line.get("details") or {}
-        read[p["key"]] = (p["source"]["channel_no"], image_text.blocks(
-            sidecar, (details.get("store") or {}).get("name"), details.get("brand")))
+        got = reads[p["key"]]
+        if isinstance(got, str):
+            state[p["key"]] = got
+        else:
+            read[p["key"]] = (p["source"]["channel_no"], got)
     shared = image_text.mark_shared(read)
     for p in prepared:
         product_id = p["source"]["product_id"]
@@ -305,15 +317,17 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
     if cache:                           # per call: the base rules and the measures table as this process loaded it
         base_sig = hashlib.sha256("\0".join([_CODE_SIG, repr(rules), json.dumps(
             transform._measures_table(), ensure_ascii=False, sort_keys=True)]).encode()).hexdigest()
-        prepared, counts = _prepared_cached(shop, shops_root, latest, lambda pid: by_choice.get(
-            choices.get(pid, ""), free), base_sig)
+        prepared, reads, counts = _prepared_cached(shop, shops_root, latest, lambda pid: by_choice.get(
+            choices.get(pid, ""), free), rules, base_sig)
     else:
         prepared = [prepare(line, by_choice.get(choices.get(line["key"].split(":")[3], ""), free), run_id, n,
                             load_sidecar(shop, line["key"].split(":")[3], shops_root))
                     for run_id, n, line, _ in latest.values()]
+        reads = {key: image_read(line, rules, load_sidecar(shop, key.split(":")[3], shops_root))
+                 for key, (_, _, line, _) in latest.items()}
     prepared.sort(key=lambda p: p["key"])
     prepared = drop_shared_images(prepared)                             # run-level: needs the store's other listings
-    image_texts(shop, rules, prepared, latest, shops_root)              # run-level: blocks a store repeats
+    image_texts(shop, prepared, reads, shops_root)                      # run-level: blocks a store repeats
     brand_fallback.fill(                                                # run-level: the shop's own brands
         prepared,
         lambda key: [r for img in image_rows(load_sidecar(shop, key.split(":")[3], shops_root)) for r in img],
