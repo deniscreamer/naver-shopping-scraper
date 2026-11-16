@@ -56,7 +56,11 @@ timed_out, not a ban): read again, the owner asked again, CAPTCHA_TRIES times. A
 120 s, 2 more tries, then the product is `failed` and the run goes on (a failed product is tried again after the
 fresh ones, at most MAX_FAILS times). Anything else that stops the source (a wall, a refused CDN, the extension not
 connected, the server down) stops the run: `run` again resumes. Two products in a row partial for the same reason
-stop the run (collect_guard).
+stop the run (collect_guard). An unexpected error in a product (a code defect: KeyError, TypeError ...; 2026-11-16)
+is `failed` at stage `unexpected` (the reason with the innermost file:line, the traceback printed), the run goes on;
+UNEXPECTED_STOP (3) in a row, any products, stop it. One outside a product (the run's context, the listing loop)
+is a `stop` event `unexpected: ...`, exit 3; a broken shop file (LedgerError) stops naming <path>:<n>. No run ends
+without an event (but SystemExit and a kill).
 
 `scroll` (the owner, 2026-11-14; the other way to run a job, `new` + `run` unchanged): no snapshot, no search per
 product. The server holds one listing tab open (POST /listing-tabs) and hands it out batch by batch (~50 rows);
@@ -99,6 +103,7 @@ import shutil
 import signal
 import sys
 import time
+import traceback
 from collections import Counter
 from datetime import datetime, timezone
 from typing import Any
@@ -113,6 +118,7 @@ BUILT = ("collected", "images", "prepared", "translated", "published")
 BUSY_WAIT_S, BUSY_TRIES = 30, 12
 ERROR_WAIT_S, ERROR_TRIES = 120, 2
 MAX_FAILS = 2
+UNEXPECTED_STOP = 3                          # products in a row failed by an unexpected error (a code defect): stop
 PAUSE_S = 2
 RECONNECT_WAIT_S, RECONNECT_S = 30, 900      # the extension / server gone: poll /health this long, then stop
 CAPTCHA_TRIES = 6                            # a captcha not answered in time: the read asks the owner again
@@ -886,7 +892,24 @@ def take(job: Job, ctx: dict, key: str, stage_now: str | None, run: dict) -> int
         job.log(key, "stop", reason=f"{type(e).__name__}: {e}"[:300])
         print(f"STOP at {key}: {type(e).__name__}: {e}\n   {run['again']} to resume", flush=True)
         return 3
+    except Exception as e:
+        # 2026-11-16: anything else (a KeyError, a TypeError from dedupe, translate, describe or publish) killed the
+        # run with no event, and resume took the same product again. Now the product is failed (stage unexpected,
+        # closed at MAX_FAILS like any failure) and the run goes on; UNEXPECTED_STOP in a row (any products) stop
+        # it: a code defect must not close a whole listing. SystemExit is not caught (publish.withdraw raises it).
+        traceback.print_exc()
+        reason = _where(e)
+        job.log(key, "failed", stage="unexpected", reason=reason[:300])
+        print(f"[{n}/{len(rows)}] {key.split(':')[3]} failed (unexpected): {reason}"[:400], flush=True)
+        run["unexpected"] = run.get("unexpected", 0) + 1
+        if run["unexpected"] >= UNEXPECTED_STOP:
+            why = f"{UNEXPECTED_STOP} products in a row failed unexpectedly (the last: {reason})"
+            job.log(key, "stop", reason=why[:300])
+            print(f"STOP: {why}"[:400] + f"\n   {run['again']} to resume", flush=True)
+            return 3
+        return None
     run["taken"] += 1
+    run["unexpected"] = 0
     print(f"[{n}/{len(rows)}] {key.split(':')[3]} {what}", flush=True)
     if run["taken"] % REPORT_EVERY == 0:
         print("== " + progress(job, run["taken"], time.monotonic() - run["started"]), flush=True)
@@ -895,11 +918,36 @@ def take(job: Job, ctx: dict, key: str, stage_now: str | None, run: dict) -> int
     return None
 
 
+def _where(e: BaseException) -> str:
+    """'<Type>: <message> @ <file>:<line>' of the innermost frame, for an event's reason."""
+    tb = traceback.extract_tb(e.__traceback__)
+    return f"{type(e).__name__}: {e}" + (f" @ {os.path.basename(tb[-1].filename)}:{tb[-1].lineno}" if tb else "")
+
+
+def _guarded(job: Job, again: str, body: Any) -> int:
+    """A run's body (its context included) -> its exit code; an error nothing else caught is a stop event, the STOP
+    line and 3, so no run ends without an event (a LedgerError: the file and line, no traceback). SystemExit and
+    KeyboardInterrupt go up as before."""
+    try:
+        return body()
+    except LedgerError as e:
+        job.log(None, "stop", reason=f"LedgerError: {e}"[:300])
+        print(f"STOP: LedgerError: {e}\n   {again} to resume", flush=True)
+        return 3
+    except Exception as e:
+        traceback.print_exc()
+        reason = f"unexpected: {_where(e)}"
+        job.log(None, "stop", reason=reason[:300])
+        print(f"STOP: {reason}"[:400] + f"\n   {again} to resume", flush=True)
+        return 3
+
+
 def cmd_run(args: argparse.Namespace) -> int:
     job = open_job(args.job)
     if _scroll_job(job):
         return 2
-    return locked(job.shops_root, job.shop, f"job.py run {job.id}", lambda: _run(job, args))
+    return locked(job.shops_root, job.shop, f"job.py run {job.id}",
+                  lambda: _guarded(job, "run again", lambda: _run(job, args)))
 
 
 def _run(job: Job, args: argparse.Namespace) -> int:
@@ -1261,12 +1309,17 @@ def cmd_scroll(args: argparse.Namespace) -> int:
 
 
 def _scroll(args: argparse.Namespace, job: "Job | None", shop: str, shops_root: str) -> int:
-    from deferred_log import DeferredLog
-    from listing_filter import Screen
     if job is None:
         job = new_scroll_job(args, shop, shops_root)
         print(f"job {job.id}: scroll {job.meta['queries'][0]!r} (target {args.count or 'the listing end'})",
               flush=True)
+    sjob = job
+    return _guarded(sjob, f"scroll --job {sjob.id}", lambda: _scroll_run(sjob))
+
+
+def _scroll_run(job: Job) -> int:
+    from deferred_log import DeferredLog
+    from listing_filter import Screen
     ctx, code = _context(job)
     if ctx is None:
         return code

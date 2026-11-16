@@ -841,3 +841,101 @@ def test_a_broken_shop_file_stops_the_run_naming_it(tmp_path, monkeypatch, no_sl
     assert J.take(job, {}, KEYS[0], None, _run(job)) == 3
     assert job.events()[-1]["event"] == "stop" and "published.jsonl:7" in job.events()[-1]["reason"]
     assert "STOP at" in capsys.readouterr().out
+
+
+# ---- no run dies silently (2026-11-16) -----------------------------------------------------------------------
+
+KEYS4 = KEYS + [f"{SHOP}:naver:100:14"]
+
+
+def _cmd_run(job, monkeypatch, one, items=0):
+    """cmd_run over a stand-in one(): a product it returns for is at the job's final stage."""
+    import argparse
+    state: dict = {}
+
+    def done(job, ctx, key, stage_now, n=0):
+        what = one(job, ctx, key, stage_now, n)
+        state[key] = job.final
+        return what
+    monkeypatch.setattr(J, "_context", lambda job: ({"store": None}, 0))
+    monkeypatch.setattr(J, "stages", lambda job: dict(state))
+    monkeypatch.setattr(J, "wanted", lambda job, done: None)
+    monkeypatch.setattr(J, "one", done)
+    return J.cmd_run(argparse.Namespace(job=job.folder, items=items))
+
+
+def test_an_unexpected_error_fails_the_product_and_the_run_goes_on(tmp_path, monkeypatch, no_sleep, capsys):
+    job = make_job(tmp_path, KEYS4)
+    taken = []
+
+    def one(job, ctx, key, stage_now, n=0):
+        taken.append(key)
+        if key == KEYS4[0]:
+            return {}["missing"]                                                # a code defect in one product
+        return "prepared: ready"
+    assert _cmd_run(job, monkeypatch, one, items=3) == 0
+    assert taken == KEYS4                                                       # the next products taken
+    failed = [e for e in job.events() if e["event"] == "failed"]
+    assert len(failed) == 1 and failed[0]["key"] == KEYS4[0] and failed[0]["stage"] == "unexpected"
+    assert failed[0]["reason"].startswith("KeyError: 'missing' @ test_job.py:")
+    out = capsys.readouterr()
+    assert "11 failed (unexpected): KeyError" in out.out and "Traceback" in out.err
+    assert not any(e["event"] == "stop" for e in job.events())
+
+
+def test_three_unexpected_failures_in_a_row_stop_the_run(tmp_path, monkeypatch, no_sleep, capsys):
+    job = make_job(tmp_path, KEYS4)
+    taken = []
+
+    def one(job, ctx, key, stage_now, n=0):
+        taken.append(key)
+        raise TypeError("bad operand")
+    assert _cmd_run(job, monkeypatch, one) == 3
+    assert taken == KEYS4[:3]                                                   # the fourth not taken
+    events = job.events()
+    assert [e["event"] for e in events] == ["failed", "failed", "failed", "stop"]
+    assert events[-1]["reason"].startswith("3 products in a row failed unexpectedly (the last: TypeError")
+    assert "STOP: 3 products in a row failed unexpectedly" in capsys.readouterr().out
+
+
+def test_a_product_that_ends_otherwise_resets_the_breaker(tmp_path, monkeypatch, no_sleep):
+    job = make_job(tmp_path, KEYS4)
+
+    def one(job, ctx, key, stage_now, n=0):
+        if key == KEYS4[2]:
+            return "not taken: x"
+        raise TypeError("bad operand")
+    assert _cmd_run(job, monkeypatch, one) == 3               # 11, 12 fail, 13 taken, 14, 11 fail, 12: the third
+    assert [e["event"] for e in job.events()] == ["failed"] * 5 + ["stop"]
+
+
+def test_a_transform_defect_is_still_a_stop_not_a_failed_product(tmp_path, monkeypatch, no_sleep):
+    import run_transform
+    job = make_job(tmp_path)
+    monkeypatch.setattr(run_transform, "run", lambda *a, **k: {}["x"])
+    with pytest.raises(J.Stop, match="prepare: KeyError"):
+        J.one(job, {}, KEYS[0], "images")
+    assert J.take(job, {}, KEYS[0], "images", _run(job)) == 3
+    assert [e["event"] for e in job.events()] == ["stop"]
+
+
+def test_a_broken_ledger_at_the_start_is_a_stop_naming_it_without_a_traceback(tmp_path, monkeypatch, capsys):
+    import argparse
+    job = make_job(tmp_path)
+
+    def context(job):
+        raise J.LedgerError("/x/published.jsonl:9: not a JSON line (fix or remove it by hand)")
+    monkeypatch.setattr(J, "_context", context)
+    assert J.cmd_run(argparse.Namespace(job=job.folder, items=0)) == 3
+    out = capsys.readouterr()
+    assert "STOP: LedgerError: /x/published.jsonl:9:" in out.out and "Traceback" not in out.err
+    assert job.events()[-1]["event"] == "stop" and "published.jsonl:9" in job.events()[-1]["reason"]
+
+
+def test_an_unexpected_error_outside_a_product_is_a_stop_event(tmp_path, monkeypatch, capsys):
+    import argparse
+    job = make_job(tmp_path)
+    monkeypatch.setattr(J, "_context", lambda job: {}["ctx"])
+    assert J.cmd_run(argparse.Namespace(job=job.folder, items=0)) == 3
+    assert job.events()[-1]["reason"].startswith("unexpected: KeyError: 'ctx' @ test_job.py:")
+    assert "STOP: unexpected: KeyError" in capsys.readouterr().out
