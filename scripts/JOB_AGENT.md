@@ -190,6 +190,7 @@ withdrawn `replaced_by:<kept key>`.
 | scroll: `STOP: listing tab: ... wall: ... stalled` (no batch while `has_more` was true) or `refused` | stopped: a stall is not the listing's end | tell the owner; `scroll --job <id>` only after they say so |
 | scroll: `done (the listing's end)` with `has_more false` | the last batch read; no scroll after it | nothing; `left` products: the other mode, on the owner's word |
 | `adapter busy ... waiting 30 s` with no other job running, or scroll's `the listing tab <id> was not closed` | waits 30 s, 12 times, then stops: a dead scroll job may hold the adapter (no idle timer; the 409 names `listing tab <id>`, so does that job's `job.json` `tab`) | when no `job.py scroll` runs: `curl -X DELETE localhost:8000/listing-tabs/<id>` (or restart the server) |
+| `STOP ... LedgerError: <path>:<n>: not a JSON line` (a broken line in the ledger, a job's listing, prepared / translated / placements) | stopped, nothing marked | tell the owner the file and line; a rebuilt file: the command the message names (when no job runs); the ledger or a listing: fixed by hand on the owner's word, then `run` again |
 | `held` codes in status | the product is prepared as held | read the codes ([README.md](README.md) Transform); report |
 
 A captcha is answered by the owner in Chrome while the read waits; a login page is reset by the server

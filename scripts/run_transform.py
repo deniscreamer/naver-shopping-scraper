@@ -28,7 +28,7 @@ import description_image_text as image_text
 from description_images import current, load_sidecar
 from keep_run import SHOPS_ROOT, kept_run_ids
 import brand_fallback
-from shop_files import write_atomic
+from shop_files import read_jsonl, write_atomic
 from description_images import image_rows
 from shared_images import RULE as SHARED_RULE, drop_shared_images
 from transform import _texts, prepare
@@ -149,8 +149,8 @@ def paid_choices(shop: str, shops_root: str = SHOPS_ROOT, jobs_root: str = JOBS_
             continue
         choice = VARIANTS if meta.get("paid_variants") else None if meta["free_only"] else PAID
         rows = os.path.join(folder, "listing.jsonl")
-        ids = [str(json.loads(line)["product_id"]) for line in open(rows, encoding="utf-8")] \
-            if os.path.exists(rows) else []
+        # a cut-off last line (a scroll job killed while appending) must not stop the shop's prepare (2026-11-16)
+        ids = [str(r["product_id"]) for r in read_jsonl(rows, tail_ok=True)]
         found.append((meta.get("created_at") or "", choice, ids))
     out: dict[str, str] = {}
     for _, choice, ids in sorted(found, key=lambda f: f[0]):

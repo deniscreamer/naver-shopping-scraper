@@ -275,8 +275,10 @@ def _jsonl(path: str) -> list[dict[str, Any]]:
 
 def ledger(shop: str, shops_root: str = SHOPS_ROOT) -> dict[str, dict[str, Any]]:
     """key -> the publication ledger's last line."""
+    from shop_files import read_jsonl
     last: dict[Any, dict[str, Any]] = {}             # a row with no key (none written) under None
-    for row in _jsonl(os.path.join(shops_root, shop, "publish", "published.jsonl")):
+    # strict (2026-11-16): a bad middle line dropped silently was a published product missing from the index
+    for row in read_jsonl(os.path.join(shops_root, shop, "publish", "published.jsonl"), tail_ok=True):
         last[row.get("key")] = row
     return last
 

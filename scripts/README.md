@@ -1270,7 +1270,11 @@ writes them goes through `shop_files.py`:
   row stays readable and the fragment becomes a bad line the reader names.
 - **Reading**: `read_jsonl(path, tail_ok=False)`: a line that is not JSON is `LedgerError: <path>:<n>: ...` (fix the
   line by hand; a rebuilt file: the command that rebuilds it). Only an append-only file (`tail_ok`) may end in a
-  cut-off line: ignored with one warning.
+  cut-off line: ignored with one warning (the next append turns it into a middle line, named). Strict this way:
+  `publish.py`'s reads (the ledger, `files.jsonl`, prepared, translated, placements), `dedupe.ledger`, a job's
+  `listing.jsonl` (`Job.rows`, `run_transform.paid_choices`); a job stops on it (`STOP ... LedgerError`). Left
+  tolerant on purpose (a lost row costs one retry or one question again): a job's `events.jsonl` (the job, the
+  lenses, `review_grid`, `dedupe --pairs`), `texts.jsonl`, `descriptions.jsonl`, the journal.
 
 ## Conventions
 

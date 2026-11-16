@@ -98,7 +98,7 @@ from collections import Counter
 from datetime import datetime, timezone
 from typing import Any
 
-from shop_files import append_line, write_atomic
+from shop_files import LedgerError, append_line, read_jsonl, write_atomic
 
 SCRIPTS = os.path.dirname(os.path.abspath(__file__))
 JOBS_ROOT = os.path.join(SCRIPTS, "output", "jobs")
@@ -155,8 +155,9 @@ class Job:
         return os.path.basename(self.folder)
 
     def rows(self) -> list[dict[str, Any]]:
-        with open(os.path.join(self.folder, "listing.jsonl"), encoding="utf-8") as f:
-            return [json.loads(x) for x in f if x.strip()]
+        """The listing's rows; a cut-off last line (scroll killed while appending a row) is ignored, a bad middle
+        line is a LedgerError (shop_files)."""
+        return read_jsonl(os.path.join(self.folder, "listing.jsonl"), tail_ok=True)
 
     def events(self) -> list[dict[str, Any]]:
         path = os.path.join(self.folder, "events.jsonl")
@@ -873,7 +874,7 @@ def take(job: Job, ctx: dict, key: str, stage_now: str | None, run: dict) -> int
         job.log(key, "stop", reason=str(e)[:300])
         print(f"STOP at {key}: {e}\n   {run['again']} to resume", flush=True)
         return 3
-    except (OSError, ConnectionError) as e:
+    except (OSError, ConnectionError, LedgerError) as e:         # a broken shop file stops: it names <path>:<n>
         job.log(key, "stop", reason=f"{type(e).__name__}: {e}"[:300])
         print(f"STOP at {key}: {type(e).__name__}: {e}\n   {run['again']} to resume", flush=True)
         return 3
@@ -1174,6 +1175,10 @@ def scroll(job: Job, ctx: dict, tab: Tab, screen: Any, known: set[str]) -> int:
         except Stop as e:
             job.log(None, "stop", reason=str(e)[:300])
             print(f"STOP: {e}\n   {run['again']} to resume", flush=True)
+            return 3
+        except LedgerError as e:
+            job.log(None, "stop", reason=f"{type(e).__name__}: {e}"[:300])
+            print(f"STOP: {type(e).__name__}: {e}\n   {run['again']} to resume", flush=True)
             return 3
         except (OSError, ConnectionError) as e:
             job.log(None, "stop", reason=f"listing tab: {type(e).__name__}: {e}"[:300])

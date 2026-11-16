@@ -90,6 +90,18 @@ def test_each_product_keeps_its_own_jobs_paid_choice(tmp_path):
     assert got == {"3": run_transform.VARIANTS, "4": run_transform.VARIANTS, "5": run_transform.PAID}
 
 
+def test_a_jobs_cut_off_listing_tail_does_not_stop_the_shops_prepare(tmp_path):
+    """2026-11-16 (shop_files): a scroll job killed while appending a row left half a line; paid_choices read every
+    job's listing with a bare json.loads, and every product of the shop stopped at prepare."""
+    jobs, shops = tmp_path / "jobs", tmp_path / "shops"
+    jobs.mkdir()
+    _job(jobs, "a-paid", shops, ["5", "6"], "2026-11-12T05:00:00+00:00", paid=True, free_only=False)
+    with open(jobs / "a-paid" / "listing.jsonl", "a") as f:
+        f.write('{"product_id": "7", "na')
+    got = run_transform.paid_choices("fairwardgolf", str(shops), str(jobs))
+    assert got == {"5": run_transform.PAID, "6": run_transform.PAID}
+
+
 def _junior_agency_imports(tmp_path):
     ls = []
     for name in ("11674983361", "5396141262", "5140543074"):

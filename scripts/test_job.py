@@ -819,3 +819,25 @@ def test_a_job_appends_whole_lines_after_a_tail_with_no_line_end(tmp_path):
     J.append_line(os.path.join(job.folder, "listing.jsonl"), json.dumps({"key": "x", "product_id": "9"}))
     job.log(KEYS[0], "failed", reason="x")
     assert [r["key"] for r in job.rows()] == KEYS + ["x"] and job.events()[0]["event"] == "failed"
+
+
+def test_rows_forgive_a_cut_off_last_line(tmp_path):
+    job = make_job(tmp_path)
+    with open(os.path.join(job.folder, "listing.jsonl"), "a") as f:
+        f.write('{"key": "x", "prod')                                           # scroll killed while appending
+    assert [r["key"] for r in job.rows()] == KEYS
+
+
+def _run(job):
+    return {"taken": 0, "started": 0.0, "again": f"run --job {job.id}"}
+
+
+def test_a_broken_shop_file_stops_the_run_naming_it(tmp_path, monkeypatch, no_sleep, capsys):
+    job = make_job(tmp_path)
+
+    def one(job, ctx, key, stage_now, n=0):
+        raise J.LedgerError("/x/publish/published.jsonl:7: not a JSON line (fix or remove it by hand)")
+    monkeypatch.setattr(J, "one", one)
+    assert J.take(job, {}, KEYS[0], None, _run(job)) == 3
+    assert job.events()[-1]["event"] == "stop" and "published.jsonl:7" in job.events()[-1]["reason"]
+    assert "STOP at" in capsys.readouterr().out

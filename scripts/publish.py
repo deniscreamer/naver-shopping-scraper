@@ -33,7 +33,7 @@ from typing import Any
 
 import describe
 import shopify_payload as sp
-from shop_files import append_line
+from shop_files import append_line, read_jsonl
 from shop_pricing import policy
 from shop_stores import get_store
 from shopify_catalog import CatalogError
@@ -65,14 +65,15 @@ def _memo(path: str, load: Any) -> Any:
     return hit[1]
 
 
+APPENDED = ("published.jsonl", "files.jsonl")      # only an appended file may end in a cut-off line (shop_files)
+
+
 def _read_last(path: str) -> dict[str, dict[str, Any]]:
+    """A bad line is a LedgerError naming <path>:<n> (2026-11-16: the ledger, prepared, translated and placements
+    are read strictly; the ledger and files.jsonl forgive a cut-off last line, a run killed while appending)."""
     out: dict[str, dict[str, Any]] = {}
-    if os.path.exists(path):
-        with open(path, encoding="utf-8") as f:
-            for line in f:
-                if line.strip():
-                    row = json.loads(line)
-                    out[row["key"]] = row
+    for row in read_jsonl(path, tail_ok=os.path.basename(path) in APPENDED):
+        out[row["key"]] = row
     return out
 
 
@@ -174,12 +175,9 @@ def restore(shop: Shop, key: str, products: Any, reason: str) -> dict[str, Any]:
     if not before or before.get("status") != "withdrawn":
         raise SystemExit(f"{key}: not withdrawn here")
     published = None
-    with open(shop.ledger_path, encoding="utf-8") as f:
-        for line in f:
-            if line.strip():
-                row = json.loads(line)
-                if row.get("key") == key and row.get("status") == "published":
-                    published = row
+    for row in read_jsonl(shop.ledger_path, tail_ok=True):
+        if row.get("key") == key and row.get("status") == "published":
+            published = row
     if published is None:
         raise SystemExit(f"{key}: no published row to restore")
     status = products.set_status(before["product_id"], "ACTIVE")

@@ -771,3 +771,53 @@ def test_an_append_after_a_ledger_tail_with_no_line_end_keeps_both_rows(tmp_path
         f.write(json.dumps({"key": "k1", "status": "published", "product_id": "gid://1"}))     # a hand edit
     PB._append(shop.ledger_path, {"key": "k2", "status": "published", "product_id": "gid://2"})
     assert set(shop.ledger()) == {"k1", "k2"}
+
+
+def _ledger_file(tmp_path, text):
+    shop = PB.Shop("fairwardgolf", str(tmp_path))
+    os.makedirs(os.path.dirname(shop.ledger_path))
+    with open(shop.ledger_path, "w") as f:
+        f.write(text)
+    return shop
+
+
+def test_the_ledger_forgives_a_cut_off_last_line_but_not_a_bad_middle_line(tmp_path):
+    """2026-11-16 (shop_files): a killed publication may leave half a row at the end; a bad row in the middle used to
+    stop publish.py with a bare JSONDecodeError and was dropped silently by dedupe (a product published twice)."""
+    from shop_files import LedgerError
+    import dedupe
+    rows = [json.dumps({"key": k, "status": "published", "product_id": f"gid://{k}"}) for k in ("k1", "k2")]
+    shop = _ledger_file(tmp_path / "a", rows[0] + "\n" + rows[1] + "\n" + '{"key": "k3", "sta')
+    assert set(shop.ledger()) == {"k1", "k2"} and set(dedupe.ledger("fairwardgolf", str(tmp_path / "a"))) == {"k1", "k2"}
+    shop = _ledger_file(tmp_path / "b", rows[0] + "\n" + '{"key": "k3", "sta' + "\n" + rows[1] + "\n")
+    with pytest.raises(LedgerError, match=r"published.jsonl:2:"):
+        shop.ledger()
+    with pytest.raises(LedgerError, match=r"published.jsonl:2:"):
+        dedupe.ledger("fairwardgolf", str(tmp_path / "b"))
+
+
+def test_a_rebuilt_input_with_a_cut_off_tail_is_an_error_not_missing_products(tmp_path):
+    """A truncated products.jsonl is not one lost row: every product after the cut would read as not prepared, and a
+    job closes such a product as not_taken for good."""
+    from shop_files import LedgerError
+    shop = PB.Shop("fairwardgolf", str(tmp_path))
+    os.makedirs(os.path.join(shop.dir, "prepared"))
+    with open(os.path.join(shop.dir, "prepared", "products.jsonl"), "w") as f:
+        f.write('{"key": "k1", "status": "ready"}\n{"key": "k2", "sta')
+    with pytest.raises(LedgerError, match=r"products.jsonl:2: .*rebuild it: run_transform.py"):
+        shop.ready()
+
+
+def test_restore_reads_the_ledger_with_a_cut_off_tail(tmp_path):
+    published = {"format": PB.FORMAT, "key": "k1", "status": "published", "product_id": "gid://1", "handle": "h"}
+    withdrawn = {"key": "k1", "status": "withdrawn", "product_id": "gid://1", "reason": "x"}
+    shop = _ledger_file(tmp_path, json.dumps(published) + "\n" + json.dumps(withdrawn) + "\n" + '{"key": "k2"')
+
+    class Products:
+        def set_status(self, product_id, status):
+            return status
+    row = PB.restore(shop, "k1", Products(), "back")
+    assert row["status"] == "published" and row["restored"] == "back" and row["digest"] == ""
+    from shop_files import LedgerError                           # the fragment is a middle line now: named, by hand
+    with pytest.raises(LedgerError, match=r"published.jsonl:3:"):
+        shop.ledger()
