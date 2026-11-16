@@ -14,6 +14,8 @@ The rule:
      the smaller gallery are the same files, or the variants' values agree >= VARIANTS_JACCARD (Jaccard over each
      variant's options, case and spaces ignored; no variants on either side: no signal). Not confirmed: an ordinary
      product (a renamed copy is not caught: a copy, as before).
+  2a. strong: any two products with most photos and variants alike and no clash in the titles, or one listing copied
+     (same_listing, 2026-11-16: the same first photos in order and the same variants sold).
   2b. two purchase-agency imports (구매대행, copies of one foreign listing; 2026-11-15, the wedge pilot) are also
      one product when their titles of LONG_TITLE+ words are alike word for word, or translated apart (alike(): the
      same numbers, club kinds, hand, gender and bag words, WORDS_ALIKE of the words after one spelling each).
@@ -21,10 +23,11 @@ The rule:
      decides (only the x2 guard).
 
 Index: built at a job's start from the publication ledger (published products, drafts awaiting review included
-(draft first, 2026-11-16), and withdrawn ones except those withdrawn as replaced_by:<key>: their replacement is the
-live copy) plus the job's own collected products, each with
-its latest collected record; add() takes in a product the job collected, so a later seller of it in the same job is
-compared with it. decide() gives the decision for a candidate:
+(draft first, 2026-11-16), withdrawn ones, and those withdrawn as replaced_by:<key>, which stand for the live end of
+their chain (2026-11-16): a copy matching only them is a copy of their replacement) plus the job's own collected
+products, each with its latest collected record; add() takes in a product the job collected, so a later seller of it
+in the same job is compared with it; replace(old, new) after a replacement keeps old leading to new. decide() gives
+the decision for a candidate:
   duplicate_of_withdrawn  a confirmed match was withdrawn by the owner: never taken
   duplicate_of            the candidate is not strictly better than the best confirmed match: not taken
   duplicate_better        it is strictly better: taken, and the match is withdrawn once the candidate is published
@@ -34,6 +37,7 @@ compared with it. decide() gives the decision for a candidate:
 from __future__ import annotations
 
 import argparse
+import functools
 import glob
 import json
 import os
@@ -115,7 +119,42 @@ def entry(line: dict[str, Any], status: str = "job") -> dict[str, Any]:
             "variants": len(variants), "status": status, "agency": agency, "words": words,
             "numbers": " ".join(sorted(set(re.findall(r"\d+", unicodedata.normalize("NFKC", name or ""))))),
             # numbers standing alone, not inside a model code (a11n, db4p, g440, lh01, xj2): ages, sizes, counts
-            "free": {m.group(1) for m in _FREE_NUM.finditer(unicodedata.normalize("NFKC", name or "").lower())}}
+            "free": {m.group(1) for m in _FREE_NUM.finditer(unicodedata.normalize("NFKC", name or "").lower())},
+            # the free numbers that count clubs or pieces ("10개", "9종", "14pcs"): a variant spelling them is no excuse
+            "counts": {m.group(1) for m in _COUNT_NUM.finditer(unicodedata.normalize("NFKC", name or "").lower())},
+            # same_listing (2026-11-16): the first photos in order, the variants the shop sells, the variants' numbers
+            "lead": tuple(f["source_sha256"] for f in files[:LEAD_PHOTOS]),
+            "sold": _sold(variants, category, parts[0] if len(parts) > 3 else "", _axes(specs)),
+            "vnums": set(re.findall(r"\d+", unicodedata.normalize("NFKC", " ".join(
+                str(o) for v in variants for o in v.get("options") or [v.get("name") or ""]))))}
+
+
+@functools.lru_cache(maxsize=None)
+def _sets_only(shop: str, category: str) -> bool:
+    """The shop sells this category's sets only (transform_shops sets_only: a single club's variant is left out)."""
+    from transform_shops import ShopRulesMissing, rules_for
+    try:
+        rules = rules_for(shop).categories.get(category)
+    except ShopRulesMissing:                            # no rules for this shop: every variant sold
+        return False
+    return bool(rules and rules.sets_only)
+
+
+def _axes(specs: dict[str, Any]) -> list[str]:
+    """The page's option axes' names, as transform.options_and_variants reads them (club slots count each loft)."""
+    return [g.get("name") or "" for g in ((specs.get("options") or {}).get("option_groups") or [])
+            if g.get("type") not in ("CUSTOM", "SIMPLE")]
+
+
+def _sold(variants: list[dict[str, Any]], category: str, shop: str, axes: list[str] | None = None) -> frozenset[str]:
+    """The variants' values the shop sells: in a sets_only category without the single clubs transform leaves out
+    (Lazrus 13016648376 / 12079160628: 7 collected variants each, 6 alike; the same 3 sets sold). `axes`: the option
+    axes' names, so club-slot axes count as transform counts them."""
+    opts = [[str(o) for o in v.get("options") or [v.get("name") or ""]] for v in variants]
+    if opts and _sets_only(shop, category):
+        from transform import single_club
+        opts = [o for o in opts if not single_club(o, axes or [])]
+    return frozenset("/".join(_norm(o) for o in v) for v in opts)
 
 
 def better(a: dict[str, Any], b: dict[str, Any]) -> bool:
@@ -167,6 +206,7 @@ def alike(a: dict[str, Any], b: dict[str, Any]) -> bool:
 # against a title naming no age), two different sets clashing (Aged 3-5 / Aged 9-12, 9종 / 12종)
 STRONG_PHOTOS = 0.8
 _FREE_NUM = re.compile(r"(?<![a-z0-9])(\d+)")
+_COUNT_NUM = re.compile(r"(?<![a-z0-9.])(\d+)\s*(?:개|종|피스|pcs?\b|pieces?\b)")
 _DIMS = [{"퍼터": "퍼터", "putter": "퍼터", "하이브리드": "하이브리드", "hybrid": "하이브리드", "유틸": "하이브리드",
           "드라이버": "드라이버", "driver": "드라이버", "우드": "우드", "wood": "우드", "아이언": "아이언", "iron": "아이언",
           "웨지": "웨지", "wedge": "웨지", "치퍼": "치퍼"},
@@ -193,17 +233,44 @@ def _clash(x: set, y: set) -> bool:
 
 def strong(a: dict[str, Any], b: dict[str, Any]) -> bool:
     """One product whatever the titles: the same category, photos shared >= STRONG_PHOTOS, variants alike >=
-    VARIANTS_JACCARD, and no clash of club kind, hand, gender, bag or free numbers between the titles."""
+    VARIANTS_JACCARD, and no clash of club kind, hand, gender, bag or free numbers between the titles; or one
+    listing copied (same_listing)."""
     if a.get("category") != b.get("category"):
         return False
     s = signals(a, b)
-    if s["photos"] < STRONG_PHOTOS or s["variants"] < VARIANTS_JACCARD:
+    if s["photos"] < STRONG_PHOTOS:
         return False
     wa, wb = a.get("words") or set(), b.get("words") or set()
     if any(_clash(_dim(d, wa), _dim(d, wb)) for d in _DIMS) \
             or wa & _MODEL_WORDS != wb & _MODEL_WORDS:
         return False
-    return not _clash(a.get("free") or set(), b.get("free") or set())
+    if s["variants"] >= VARIANTS_JACCARD and not _clash(a.get("free") or set(), b.get("free") or set()):
+        return True
+    return same_listing(a, b)
+
+
+# one listing copied by several resellers (2026-11-16, the owner's wedge review: Lazrus 13016648376 / 12079160628 /
+# 12557380462, three stores, the same 3 photos byte for byte, the same 3 sets sold; 6-7 of 7-11 collected variants
+# alike (single wedges by loft, which transform leaves out: 0.64-0.75), titles listing other lofts ("50 52 54 56 58",
+# "52, 56, 60도"). The first LEAD_PHOTOS photos the same files in the same order and the sold variants equal; a title's
+# numbers that the variants spell out (lofts, ages, club numbers) are the listing's, not another product's. Not a
+# colour edition: its variants or its photos differ (BG-100 Black / white, lens/reviewed.jsonl)
+LEAD_PHOTOS = 3
+
+
+def same_listing(a: dict[str, Any], b: dict[str, Any]) -> bool:
+    """The same first LEAD_PHOTOS photos in order, photos shared >= STRONG_PHOTOS, the same variants sold (one at
+    least), and the titles' numbers not spelt out by the variants not clashing (the kinds and model words: strong)."""
+    lead = a.get("lead") or ()
+    if len(lead) < LEAD_PHOTOS or lead != b.get("lead") or signals(a, b)["photos"] < STRONG_PHOTOS:
+        return False
+    if not a.get("sold") or a.get("sold") != b.get("sold"):
+        return False
+    # a count in a title stays the title's own even when a variant writes that number (2026-11-16: Mizuno JPX QII
+    # 13826383159 "골프채 10개" / 13826377851 "9개 세트", variants "7irons(6-9...)" spell 9: not one listing)
+    spelt = ((a.get("vnums") or set()) | (b.get("vnums") or set())) - (a.get("counts") or set()) \
+        - (b.get("counts") or set())
+    return not _clash((a.get("free") or set()) - spelt, (b.get("free") or set()) - spelt)
 
 
 def confirm(candidate: dict[str, Any], existing: dict[str, Any]) -> bool:
@@ -225,10 +292,15 @@ def _brief(e: dict[str, Any]) -> dict[str, Any]:
 
 
 class Index:
-    """The products a candidate is compared with, by title key."""
+    """The products a candidate is compared with, by title key. A product withdrawn as replaced_by:<key> stays in
+    (status "replaced"): a copy that matches only it is a copy of the live end of its chain (2026-11-16, the owner's
+    wedge review: GoSports 12557420063 not taken as a copy of 13619939279 on 2026-11-15, published as new on
+    2026-11-16 once 13619939279 was replaced by 13379851400 and that by 12918511112; A11N 13512885159 the same through
+    13405976594 -> 13552318731)."""
 
     def __init__(self, entries: Iterable[dict[str, Any]] = ()):
         self.by_key: dict[str, dict[str, Any]] = {}
+        self.replaced: dict[str, str] = {}          # a key withdrawn as replaced_by: -> its replacement's key
         for e in entries:
             self.add(e)
 
@@ -239,23 +311,63 @@ class Index:
     def drop(self, key: str) -> None:
         self.by_key.pop(key, None)
 
+    def replace(self, old: str, new: str, e: dict[str, Any] | None = None) -> None:
+        """`old` withdrawn as replaced_by:`new`: it stays in to lead its copies to `new` (`e`: its entry, when it has
+        no entry here yet)."""
+        self.replaced[old] = new
+        e = self.by_key.get(old) or e
+        if e is not None:
+            self.add({**e, "status": "replaced", "replaced_by": new})
+
+    def live(self, key: str) -> tuple[str, dict[str, Any] | None]:
+        """The end of `key`'s replaced_by chain and its entry (None: not in the index; a cycle ends where it closes)."""
+        seen = {key}
+        while key in self.replaced and self.replaced[key] not in seen:
+            key = self.replaced[key]
+            seen.add(key)
+        e = self.by_key.get(key)
+        return key, (e if e is not None and e.get("status") != "replaced" else None)
+
     def matches(self, c: dict[str, Any]) -> list[dict[str, Any]]:
         return [e for e in self.by_key.values() if possible(c, e)]
 
     def decide(self, c: dict[str, Any]) -> dict[str, Any]:
         """{decision, of, matches: [{key, status, grade, reviews, price, variants, first_photo, photos, variants_j,
-        confirmed}]} (decision None: no confirmed match)."""
+        confirmed[, live, live_price]}]} (decision None: no confirmed match). A confirmed match withdrawn as replaced_by:
+        counts as its live replacement (`live` in its row) when the prices are within PRICE_RATIO of the live one
+        (else `live_price` False and no match); one whose chain ends outside the index is never let through."""
         found = [(e, signals(c, e)) for e in self.matches(c)]
-        rows = [{**_brief(e), **{("variants_j" if k == "variants" else k): v for k, v in s.items()}}
-                for e, s in found]
-        confirmed = [e for e, s in found if s["confirmed"]]
+        rows = []
+        confirmed: dict[str, dict[str, Any]] = {}
+        lost: list[str] = []                        # chains ending at a product not in the index
+        for e, s in found:
+            row = {**_brief(e), **{("variants_j" if k == "variants" else k): v for k, v in s.items()}}
+            target: dict[str, Any] | None = e
+            if e["status"] == "replaced":
+                end, target = self.live(e["key"])
+                row["live"] = end
+                # the price guard holds against the live end too, as at step 1 (2026-11-16, the review of the chain:
+                # the match was priced against the replaced product only; the real ones are within it, 13826709716
+                # at 44,000 KRW against its live end 13623397378 at 26,160, x1.68)
+                if target is not None and not price_ok(c, target):
+                    row["live_price"] = False
+                    target = None
+                    rows.append(row)
+                    continue
+                if s["confirmed"] and target is None and end != c["key"]:
+                    lost.append(end)
+            rows.append(row)
+            if s["confirmed"] and target is not None and target["key"] != c["key"]:
+                confirmed.setdefault(target["key"], target)
         out: dict[str, Any] = {"decision": None, "of": None, "matches": rows}
-        withdrawn = [e for e in confirmed if e["status"] == "withdrawn"]
+        withdrawn = [e for e in confirmed.values() if e["status"] == "withdrawn"]
         if withdrawn:
             return {**out, "decision": "duplicate_of_withdrawn", "of": withdrawn[0]["key"]}
+        if lost:                                    # its live copy unknown here: not compared, not taken
+            return {**out, "decision": "duplicate_of", "of": lost[0]}
         if not confirmed:
             return out
-        best = max(confirmed, key=lambda e: (grade_rank(e["grade"]), e["reviews"] or 0))
+        best = max(confirmed.values(), key=lambda e: (grade_rank(e["grade"]), e["reviews"] or 0))
         return {**out, "decision": "duplicate_better" if better(c, best) else "duplicate_of", "of": best["key"]}
 
 
@@ -314,6 +426,9 @@ def load(shop: str, shops_root: str = SHOPS_ROOT, job_keys: Iterable[str] = (), 
         status = ledger_status(row)
         if status and key in records and (withdrawn or status == "published"):
             index.add(entry(records[key], status))
+        elif withdrawn and key and row.get("status") == "withdrawn" and str(row.get("reason") or "").startswith(REPLACED):
+            index.replace(key, str(row["reason"])[len(REPLACED):].strip(),
+                          entry(records[key], "replaced") if key in records else None)
     return index
 
 

@@ -1,5 +1,5 @@
 """Spec rows vs the sold variants, and the title words that name one variant. Pure, offline, no AI: transform.py
-calls check_specs() on the shown spec rows and title_one_variant() on the title.
+calls check_specs() on the shown spec rows, title_one_variant() and title_variant_tail() on the title.
 
 A spec row is shown once for the whole product, but on a product with options it can be true of some variants only
 (아이언샤프트소재 카본 with 스틸 and 카본 sets sold), or of none. A word match cannot see a row that names a fact while
@@ -710,3 +710,28 @@ def title_one_variant(title: str, options: list[dict[str, Any]]) -> list[str]:
     hits = _names_some(lambda w: in_text(w, title), options, both)
     whole = value_spans(title, options)
     return _spans(hits, title, whole) if hits or whole else []
+
+
+def title_variant_tail(title: str, rows: list[dict[str, Any]], kept_ids: set[str]) -> str | None:
+    """The end of an agency title that is a variant's option values in Latin, as the import tool appends the page's
+    first option ("... 골프 클럽 58 Degree Silver RH" with the variant "58 Degree / Silver RH", 13468791008; "...
+    3Piece Set 525660 Right", 13566630297; the owner's wedge review, 2026-11-16): a variant not sold, or one of
+    several sold, so the title must not name it. `rows` are the page's variants (id, options), `kept_ids` the ids
+    sold. The longest such tail, as the title writes it; None when the tail is the only variant sold, has Hangul,
+    ", " or no letter, or is the whole title, or the title before it has no Hangul (not an import title)."""
+    flat = " ".join((title or "").split())
+    best: str | None = None
+    for r in rows:
+        tail = " ".join(" ".join(str(v) for v in r.get("options") or []).split())
+        # a tail with ", " would be cut by the note's own ", " join; a bare number ("52") would exempt that number
+        # everywhere in the title from translate's number check (2026-11-16, the review of this rule)
+        if not tail or re.search(r"[가-힣]", tail) or ", " in tail or not re.search(r"[A-Za-z]", tail) \
+                or not flat.endswith(" " + tail):
+            continue
+        if not re.search(r"[가-힣]", flat[:-len(tail)]):
+            continue
+        if str(r.get("id")) in kept_ids and len(kept_ids) == 1:
+            continue                               # the one variant sold: the title may say what it is
+        if best is None or len(tail) > len(best):
+            best = tail
+    return best

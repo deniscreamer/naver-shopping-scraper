@@ -724,8 +724,8 @@ def replace_step(job: Job, ctx: Context, shop: Any, key: str) -> str:
     except CatalogError as e:                                   # the new one stays; the owner withdraws by hand
         job.log(key, "replace_skipped", replaces=old, why=f"withdraw failed: {e}"[:300])
         return f"; {old.split(':')[3]} not withdrawn: {e}"[:200]
-    if "dedupe" in ctx:
-        ctx["dedupe"].drop(old)
+    if "dedupe" in ctx:                     # old stays in, leading its later copies in this job to key (2026-11-16)
+        ctx["dedupe"].replace(old, key)
     job.log(key, "replaced", replaces=old, variants=[new_n, old_n])
     return f"; replaces {old.split(':')[3]} (withdrawn)"
 

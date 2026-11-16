@@ -310,7 +310,9 @@ def test_held_marks_red_a_duplicate_of_a_withdrawn_match_and_names_the_live_copy
     plan = L.held(ShopView(SHOP, root), WEDGE_JOB, jobs)
     gosports = next(c for c in plan.cards if c.key == key("13261457036"))
     assert gosports.mark == "flag" and gosports.data["match_store"] == "withdrawn"
-    assert gosports.data["match_live"] and "-> live:" in " ".join(gosports.lines)
+    # its match was replaced_by 13379851400, a key this fixture has no ledger row of: not live, so not named live
+    # (2026-11-16: the chain is followed to a published key; the real chain: test_lens_live_copy.py)
+    assert gosports.data["match_live"] is None and "-> no live copy (ends at 13379851400)" in gosports.lines
     assert "duplicate_of:13619939279" in " ".join(gosports.lines)              # the key cut to its product id
     assert gosports.data["signals"] is not None and set(gosports.data["signals"]) == {"first_photo", "photos", "variants"}
     bombtech = next(c for c in plan.cards if c.key == key("13292782760"))

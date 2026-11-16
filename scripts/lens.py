@@ -262,17 +262,41 @@ def held(view: ShopView, job: str, jobs_root: str = JOBS_ROOT) -> Plan:
             m = view.get(match)
             photos = [*photos[:2], *[None] * (2 - len(photos[:2])), *m.photos[:2]]
             live = m.store == "published"
-            replaced = str(m.reason or "").split("replaced_by:", 1)[1] if "replaced_by:" in str(m.reason or "") else None
             lines.append(f"right: {m.pid} {m.store or 'not in store'}")
+            found, path = (match, [match]) if live else live_copy(view, match)
             if not live:
-                lines.append(f"-> live: {replaced.split(':')[-1]}" if replaced else "-> no live copy")
+                pids = [k.split(":")[-1] for k in path]
+                lines.append(f"-> live: {pids[-1]}" + (f" via {','.join(pids[1:-1])}" if len(pids) > 2 else "")
+                             if found else "-> no live copy" + (f" (ends at {pids[-1]})" if len(pids) > 1 else ""))
             lines.extend(f"right {o}" for o in m.options[:1])
             mark = "info" if live else "flag"
-            extra.update(match_store=m.store, match_live=replaced if not live else match, match_options=m.options,
+            extra.update(match_store=m.store, match_live=found, match_path=path, match_options=m.options,
                          signals=_signals(view, key, match))
         cards.append(_card(n, p, lines, mark, group=_reason_group(reason), photos=photos, **extra))
-    return Plan("held", cards, layout="rows", columns=["event", "reason", "match", "match_store", "signals"],
+    return Plan("held", cards, layout="rows", columns=["event", "reason", "match", "match_store", "match_live", "signals"],
                 meta={"job": job, "held": len(cards)})
+
+
+_POINTS_AT = re.compile(r"^(?:replaced_by:|hold: copy of live )([a-z0-9_]+:naver:\d+:\d+)")
+
+
+def live_copy(view: ShopView, key: str, limit: int = 20) -> tuple[str | None, list[str]]:
+    """The live product a withdrawn one points at, and the path walked (the key first): its withdrawal reason
+    "replaced_by:<key>" (dedupe) or "hold: copy of live <key>, ..." (a copy held as a draft, OWNER_RULES rule 2)
+    names the next key, followed until a published one. 2026-11-16, the wedge-set review: 4 held cards named
+    13379851400 as live, itself replaced_by 12918511112; 4 more said "no live copy" for the holds 12557420063 and
+    13512885159 ("hold: copy of live ..."). (None, path) when the chain ends at a key not in the store, a reason
+    that names no key, or a loop."""
+    path = [key]
+    while len(path) <= limit:
+        p = view.get(path[-1])
+        if p.store == "published" and len(path) > 1:     # the first key is the withdrawn match itself
+            return path[-1], path
+        m = _POINTS_AT.match(str(p.reason or "")) if p.store == "withdrawn" else None
+        if not m or m.group(1) in path:
+            return None, path
+        path.append(m.group(1))
+    return None, path
 
 
 def _short(text: str) -> str:

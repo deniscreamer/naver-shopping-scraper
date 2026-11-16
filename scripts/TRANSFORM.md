@@ -240,6 +240,11 @@ published, SKUs and prices equal on 201 of 201 variants):
   title order, and words that touch are one span ("XR26", "9도SR"). A gender word counts only when every value without
   it names the other gender. 백포함 / 백세트포함 / 캐디백포함 are the same thing. A part-list value counts as its club count, so
   "(클럽10개)" names "드라이버 유틸 7아이언 퍼터".
+  An import title's end that is one variant's option values in Latin, the page's first option the import tool appends
+  ("... 골프 클럽 58 Degree Silver RH", 13468791008), is one span of the note too (`spec_variants.title_variant_tail`;
+  2026-11-16) when that variant is not sold or is one of several sold; the words of the note inside it are not repeated.
+  A tail with ", " or no letter (a bare loft "52") is not taken. It fires in every category: measured on the store
+  76 notes change, 26 wedge sets and 50 junior sets ("Left, Putter" becomes "Left Hand Putter").
 * driver loft (R-LOFT): 드라이버 로프트각 is compared with the loft each variant's values name (10.5도 / 9도 SR / 9.5 SR /
   10.5R, 7-14 degrees). The row is dropped (specs_stated_by_variants) when every variant states its own loft, bound
   with for_ko when some are silent, and dropped (specs_fit_no_variant) when it fits none. A row that lists every loft
@@ -326,7 +331,12 @@ link. The report says how many were dropped. The step is pure: same products in,
   products state found in the title (`title`: 4 of the 6; the first one of a combination set), a brand of the
   dictionary starting the title (`title_known`) or standing as a word of its own in it, three letters at least, by
   its Korean name or its Latin spelling (`title_word`: 라즈러스, 버뮤다, GoSports in wedge imports, 2026-11-15), a Brand
-  row of the description, the spec table an agency import copies (`description_row`: "Brand | WENGH", 2026-11-15),
+  row of the description, the spec table an agency import copies (`description_row`: "Brand | WENGH", 2026-11-15;
+  2026-11-16: a bullet "- Brand : X", the label 브랜드 이름 (a machine translation of Brand Name), a bare number
+  "69" takes the Manufacturer / 제조사 row that starts with it ("69 Golf"), none / N/A / others / 다른 사람들 name
+  no firm, and a Latin brand the brand dictionary spells another case takes the dictionary's spelling: pgm ->
+  PGM, WILSON -> Wilson, HATACHI -> Hatachi, also on products whose row brand was read before, so their vendor
+  spelling changes and translate asks the model for the title again),
   the importer in
   원산지's brackets (`origin`), the shop's brand most read in the images (`images_text`), a Latin brand phrase the
   images repeat 5+ times (`images_text_latin`: BEN SAYERS on 13425122164), or 노브랜드 (`none`: 13464713764, an

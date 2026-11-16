@@ -23,7 +23,10 @@ order, the first that gives a value (`brand_source` says which):
   3d. a Brand row of the description                   "description_row": the spec table an agency import copies
                                                         ("Brand | WENGH", "Brand Name | WENGH", "브랜드: MAZEL":
                                                         2026-11-15, about 90 products, where the images gave
-                                                        "CNC MILLED" or "EVEN"); the first that names a firm
+                                                        "CNC MILLED" or "EVEN"); the first that names a firm;
+                                                        "- Brand : X" and "브랜드 이름 | X" too; a bare number
+                                                        ("69") takes the Manufacturer row that starts with it
+                                                        ("69 Golf", 2026-11-16)
   4. the importer / distributor in 원산지's brackets   "origin" ("일본산(혼마코리아)": 혼마코리아)
   5. a brand of the shop in the images' text           "images_text": the one read most often (a Korean
                                                         brand only where a word starts: 쇼핑 is not 핑)
@@ -77,7 +80,10 @@ _NO_FIRM = re.compile(r"(?i)^(?:별도\s*표기|알\s*수\s*없음|미상|불명
                       r"|(?:남성|여성|남자|여자|남녀|공용|남녀\s*공용|유니섹스)(?:\s*용)?|[ㄱ-ㅎㅏ-ㅣ]+|.*정품.*"
                       # Amazon's word for no brand (2026-11-15: two Bermuda wedge sets, 13370440703 and 13099713088,
                       # published under the vendor "Generic" from their 브랜드 rows)
-                      r"|generic|제네릭)$")
+                      r"|generic|제네릭"
+                      # a machine-translated spec table's "none" and "others" (2026-11-16: "브랜드 이름 | NONE" and
+                      # "브랜드 이름 | 다른 사람들" in agency full sets, 13024224352, 13024206977, once the label was read)
+                      r"|none|n/?a|others?|다른\s*사람들?)$")
 _CODE = re.compile(r"\s*\((?:\d+|자체\s*제작[^()]*)\)\s*$")       # 코알라(200874), 지브이골프코리아(자체제작 상품)
 
 
@@ -268,17 +274,29 @@ def _word_pattern(brand: str) -> re.Pattern[str] | None:
     return re.compile(r"(?<![A-Za-z0-9])" + re.escape(brand) + r"(?![A-Za-z0-9])", re.I)
 
 
-_BRAND_ROW = re.compile(r"(?im)^[ \t]*(?:brand(?:[ \t]*name)?|브랜드(?:명)?)[ \t]*[|:：][ \t]*([^\n|]{2,60}?)[ \t]*$")
+# a row may start with a bullet ("- Brand : 69", 13370257430) and the Korean label may be "브랜드 이름" (a machine
+# translation of "Brand Name": "브랜드 이름 | pgm", 12178085899; both 2026-11-16, the wedge-set review)
+_ROW_LEAD = r"(?im)^[ \t]*(?:[-•·*][ \t]*)?"
+_ROW_VALUE = r"[ \t]*[|:：][ \t]*([^\n|]{2,60}?)[ \t]*$"
+_BRAND_ROW = re.compile(_ROW_LEAD + r"(?:brand(?:[ \t]*name)?|브랜드(?:[ \t]*(?:명|이름))?)" + _ROW_VALUE)
+# the maker's row of the same table: a Brand row that is a bare number takes it when it starts with that number
+# ("Brand Name | 69" + "Manufacturer | 69 Golf": 13370257430, 13016152694, 2026-11-16; the specs' 브랜드 and 제조사
+# rows say "69" only, and a bare number is no brand)
+_MAKER_ROW = re.compile(_ROW_LEAD + r"(?:manufacturer(?:[ \t]*name)?|maker|제조(?:사|자|업체|원)(?:\(사\))?)" + _ROW_VALUE)
 _ROW_TAIL = re.compile(r"\s*(?:품목|부품|모델)\s*번호.*$|\s*(?:item|part|model)\s*(?:no|number|#).*$", re.I)
 
 
 def described(description: str | None) -> list[str]:
-    """The firms the description's Brand rows name, in order (a part number after the name cut; a bare number, a
-    slogan of five words or more, no firm: out)."""
+    """The firms the description's Brand rows name, in order (a part number after the name cut; a slogan of five
+    words or more, no firm: out; a bare number: the maker's row that starts with it, else out)."""
     out = []
+    makers = [_ROW_TAIL.sub("", m).strip(" .,-") for m in _MAKER_ROW.findall(description or "")]
     for raw in _BRAND_ROW.findall(description or ""):
         name = _ROW_TAIL.sub("", raw).strip(" .,-")
-        if not name or name.replace(" ", "").isdigit() or len(name.split()) > 4 or not clean(name):
+        if name.replace(" ", "").isdigit():
+            number = name.replace(" ", "")
+            name = next((m for m in makers if re.match(re.escape(number) + r"\s+[^\d\s]", m)), "")
+        if not name or len(name.split()) > 4 or not clean(name):
             continue
         if name not in out:
             out.append(name)
@@ -298,7 +316,10 @@ def decide(title: str | None, origin: str | None, brands: list[str], rows: list[
     word = as_word(title, known or [])
     if word:
         return word, "title_word", []
-    rows_named = described(description)
+    # a row's Latin brand in the dictionary's spelling ("브랜드 이름 | pgm": PGM, as the shop's other PGM products, so
+    # the brand does not change by its case alone; 2026-11-16)
+    rows_named = [next((k for k in known or [] if not _HANGUL_BRAND.match(_norm(k)) and _norm(k) == _norm(n)), n)
+                  for n in described(description)]
     if rows_named:
         return rows_named[0], "description_row", rows_named[1:3]
     dist = distributors(origin)

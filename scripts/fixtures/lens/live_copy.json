@@ -1,0 +1,163 @@
+{
+ "made": "2026-11-16, from scripts/output/shops/fairwardgolf/publish/published.jsonl (every row of the keys, fields cut to at/key/status/store_status/handle/reason) and the duplicate not_taken events of jobs B fairwardgolf-50002783-20261116T083154Z and A fairwardgolf-50002783-20261115T150124Z; by hand for test_lens_live_copy.py",
+ "ledger": [
+  {
+   "at": "2026-11-15T14:04:42Z",
+   "key": "fairwardgolf:naver:102337501:13363811363",
+   "status": "published",
+   "handle": "pgm-mens-and-womens-golf-wedge-set-right-handed-52-56-60"
+  },
+  {
+   "at": "2026-11-15T14:50:26Z",
+   "key": "fairwardgolf:naver:102337501:13363811363",
+   "status": "withdrawn",
+   "store_status": "DRAFT",
+   "handle": "pgm-mens-and-womens-golf-wedge-set-right-handed-52-56-60",
+   "reason": "single_only: each variant one wedge; the section sells wedge sets (owner 2026-11-15)"
+  },
+  {
+   "at": "2026-11-15T14:52:30Z",
+   "key": "fairwardgolf:naver:102781427:12918511112",
+   "status": "published",
+   "handle": "gosports-illegal-max-spin-mens-right-handed-wedge-set-sand-lob-and-gap-wedges-brushed-stainless"
+  },
+  {
+   "at": "2026-11-15T16:17:16Z",
+   "key": "fairwardgolf:naver:102773407:13619939279",
+   "status": "published",
+   "handle": "gosports-non-conforming-max-spin-golf-wedge-set-mens-right-handed-sand-lob-gap-wedges"
+  },
+  {
+   "at": "2026-11-15T16:46:20Z",
+   "key": "fairwardgolf:naver:102683334:13379851400",
+   "status": "published",
+   "handle": "gosports-illegal-max-spin-wedge-set-mens-right-handed-sand-lob-and-gap-wedges-brushed-stainless"
+  },
+  {
+   "at": "2026-11-15T17:46:00Z",
+   "key": "fairwardgolf:naver:1100067303:13405976594",
+   "status": "published",
+   "handle": "a11n-sports-forged-golf-wedge-set"
+  },
+  {
+   "at": "2026-11-15T17:56:13Z",
+   "key": "fairwardgolf:naver:102683547:13552318731",
+   "status": "published",
+   "handle": "a11n-sports-forged-golf-wedge-set-db4p"
+  },
+  {
+   "at": "2026-11-15T18:05:22Z",
+   "key": "fairwardgolf:naver:102773407:13619939279",
+   "status": "withdrawn",
+   "store_status": "DRAFT",
+   "handle": "gosports-non-conforming-max-spin-golf-wedge-set-mens-right-handed-sand-lob-gap-wedges",
+   "reason": "replaced_by:fairwardgolf:naver:102683334:13379851400"
+  },
+  {
+   "at": "2026-11-15T18:05:29Z",
+   "key": "fairwardgolf:naver:102683334:13379851400",
+   "status": "withdrawn",
+   "store_status": "DRAFT",
+   "handle": "gosports-illegal-max-spin-wedge-set-mens-right-handed-sand-lob-and-gap-wedges-brushed-stainless",
+   "reason": "replaced_by:fairwardgolf:naver:102781427:12918511112"
+  },
+  {
+   "at": "2026-11-16T03:15:25Z",
+   "key": "fairwardgolf:naver:1100067303:13405976594",
+   "status": "withdrawn",
+   "store_status": "DRAFT",
+   "handle": "a11n-sports-forged-golf-wedge-set",
+   "reason": "replaced_by:fairwardgolf:naver:102683547:13552318731"
+  },
+  {
+   "at": "2026-11-16T08:35:39Z",
+   "key": "fairwardgolf:naver:102770910:12557420063",
+   "status": "published",
+   "store_status": "DRAFT",
+   "handle": "gosports-illegal-max-spin-mens-right-handed-wedge-set-sand-lob-gap-wedges"
+  },
+  {
+   "at": "2026-11-16T08:38:30Z",
+   "key": "fairwardgolf:naver:1100013105:13512885159",
+   "status": "published",
+   "store_status": "DRAFT",
+   "handle": "a11n-sports-forged-golf-wedge-set-2"
+  },
+  {
+   "at": "2026-11-16T09:10:48Z",
+   "key": "fairwardgolf:naver:102770910:12557420063",
+   "status": "withdrawn",
+   "store_status": "DRAFT",
+   "handle": "gosports-illegal-max-spin-mens-right-handed-wedge-set-sand-lob-gap-wedges",
+   "reason": "hold: copy of live fairwardgolf:naver:102781427:12918511112, kept as a draft for a separate decision (owner 2026-11-16)"
+  },
+  {
+   "at": "2026-11-16T09:10:49Z",
+   "key": "fairwardgolf:naver:1100013105:13512885159",
+   "status": "withdrawn",
+   "store_status": "DRAFT",
+   "handle": "a11n-sports-forged-golf-wedge-set-2",
+   "reason": "hold: copy of live fairwardgolf:naver:102683547:13552318731, kept as a draft for a separate decision (owner 2026-11-16)"
+  }
+ ],
+ "jobs": {
+  "fairwardgolf-50002783-20261116T083154Z": [
+   {
+    "at": "2026-11-16T08:33:32+00:00",
+    "key": "fairwardgolf:naver:102206584:13492293951",
+    "event": "not_taken",
+    "reason": "duplicate_of_withdrawn:fairwardgolf:naver:102337501:13363811363"
+   },
+   {
+    "at": "2026-11-16T08:35:44+00:00",
+    "key": "fairwardgolf:naver:1100051197:12951835156",
+    "event": "not_taken",
+    "reason": "duplicate_of:fairwardgolf:naver:102770910:12557420063"
+   },
+   {
+    "at": "2026-11-16T08:36:21+00:00",
+    "key": "fairwardgolf:naver:102748022:13261457036",
+    "event": "not_taken",
+    "reason": "duplicate_of:fairwardgolf:naver:102770910:12557420063"
+   },
+   {
+    "at": "2026-11-16T08:36:26+00:00",
+    "key": "fairwardgolf:naver:1100067303:13405937552",
+    "event": "not_taken",
+    "reason": "duplicate_of:fairwardgolf:naver:102770910:12557420063"
+   },
+   {
+    "at": "2026-11-16T08:39:02+00:00",
+    "key": "fairwardgolf:naver:102777497:13310170394",
+    "event": "not_taken",
+    "reason": "duplicate_of:fairwardgolf:naver:1100013105:13512885159"
+   }
+  ],
+  "fairwardgolf-50002783-20261115T150124Z": [
+   {
+    "at": "2026-11-15T16:19:42+00:00",
+    "key": "fairwardgolf:naver:102770910:12557420063",
+    "event": "not_taken",
+    "reason": "duplicate_of:fairwardgolf:naver:102773407:13619939279"
+   },
+   {
+    "at": "2026-11-15T16:20:07+00:00",
+    "key": "fairwardgolf:naver:1100051197:12951835156",
+    "event": "not_taken",
+    "reason": "duplicate_of:fairwardgolf:naver:102773407:13619939279"
+   },
+   {
+    "at": "2026-11-15T16:20:31+00:00",
+    "key": "fairwardgolf:naver:102748022:13261457036",
+    "event": "not_taken",
+    "reason": "duplicate_of:fairwardgolf:naver:102773407:13619939279"
+   },
+   {
+    "at": "2026-11-15T16:20:59+00:00",
+    "key": "fairwardgolf:naver:1100067303:13405937552",
+    "event": "not_taken",
+    "reason": "duplicate_of:fairwardgolf:naver:102773407:13619939279"
+   }
+  ]
+ }
+}

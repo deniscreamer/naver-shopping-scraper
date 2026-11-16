@@ -116,6 +116,14 @@ English over git's.
 - a brand of 기타 ("other") alone becomes the tenant's name as well (2026-11-11);
 - a category's own templates, if its specs glue together like golf's flex runs: `CATEGORY_RULES` (a glued spec run
   is split after each flex letter);
+- a category's title rules, titles only: `TITLE_RULES`. Wedge sets (50002783, the owner's review 2026-11-16): the
+  shop sells sets only (`sets_only`), so "세트 또는 개별 / 또는 개인(용) / 및 개별 / 세트 개인용 / or single" is dropped,
+  and a glued run of lofts ("525660도", "5460") becomes "52°/56°/60°" (two digits a loft, 46-72, going up; "or" only as
+  a word, "/" only right after 세트 / 웨지; two lofts only next to 도 / ° or after 세트, a run before a 도 that starts a
+  Korean word stays: "모델 4856", "5256 도매"); every
+  category's titles lose an import tool's marker "db" + two capitals or digits ("db4P", "dbT1"). A title already
+  translated keeps its English: delete its row in `translation/texts.jsonl`, or write a correction (skill
+  `fix-a-product`), to change it;
 - a text with no Hangul left is done; the rest goes to the model already converted.
 
 ## 4. The model and its prompts

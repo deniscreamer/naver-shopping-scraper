@@ -16,6 +16,7 @@ Checks the stage runs on the model's answer use the same helpers: Hangul left, t
 the source.
 """
 import re
+from typing import Any
 
 HANGUL_RE = re.compile(r"[ᄀ-ᇿ㄰-㆏가-힣]")
 NO_BRAND = "노브랜드"
@@ -64,10 +65,56 @@ CATEGORY_RULES["50002670"] = CATEGORY_RULES["50002788"]       # women's iron set
 CATEGORY_RULES["50002783"] = CATEGORY_RULES["50002788"]       # wedge sets write their specs the same way (2026-11-15)
 
 
+def _loft_run(m: re.Match[str]) -> str:
+    """"525660도" -> "52°/56°/60°" when the run is lofts going up (46-72, two digits each), else as written."""
+    run = m.group("run")
+    lofts = [int(run[i:i + 2]) for i in range(0, len(run), 2)]
+    if any(a >= b for a, b in zip(lofts, lofts[1:])):
+        return m.group(0)
+    # two lofts only ("4856") may be a model or a code: a list only next to 도 / ° or right after 세트 ("세트5460",
+    # 13370257430), not "모델 4856" or "6072 스핀" (2026-11-16, the review of this rule)
+    if len(lofts) == 2 and not m.group("deg") and not m.string[:m.start()].rstrip().endswith("세트"):
+        return m.group(0)
+    return " " * (m.group("glued") is not None) + "/".join(f"{x}°" for x in lofts)
+
+
+# Title rules of one Naver category (titles only, before the category's and the general rules). 50002783 (wedge
+# sets, the owner's review 2026-11-16):
+# - the shop sells sets only (transform_shops sets_only: a one-club variant is never kept), so the agency
+#   titles' "세트 또는 개별 / 또는 개인(용) / 및 개별 / 세트 개인용" ("a set or a single", "개인용" is the machine
+#   translation of "single") is dropped: it promised "or Single Wedge" (13016551520, 13016648376, 13016883852,
+#   13372276089);
+# - a glued run of lofts ("525660도", "505458", "48505254565860", "세트5460") is the list "52°/56°/60°": the
+#   model read "5256606468" as "6468" (13566630297) or kept "525660°" (13389307551, 13372006463). Two digits a
+#   loft, 46-72, at least two, going up; next to a letter, a digit, "." or "-" it is a code and stays; a run
+#   followed by a 도 that starts a Korean word stays ("5256 도매", "525660도클럽"); two lofts only need 도 / ° or 세트 next to them.
+_LOFT2 = r"(?:4[6-9]|5\d|6\d|7[0-2])"
+TITLE_RULES: dict[str, list[tuple[re.Pattern[str], Any]]] = {
+    "50002783": [
+        # "or" a word of its own (not the end of "Razor", "Color", "For"); "/" only right after 세트 / 웨지 (not
+        # "스틸/싱글 벤드"; both 2026-11-16, the review of this rule)
+        (re.compile(r"(?:\s*(?:또는|및|(?<![A-Za-z])or(?![A-Za-z]))|(?<=세트|웨지)\s*/)\s*"
+                    r"(?:개별|개인용|개인|싱글|낱개|단품)(?![가-힣])(?:\s*웨지)?"), " "),
+        (re.compile(r"(?<=세트)\s*(?:개인용|개인|개별)(?![가-힣])"), " "),
+        (re.compile(r"(?i)\s*\bor\s+singles?(?:\s+wedges?)?\b"), " "),
+        (re.compile(r"(?<![0-9A-Za-z.\-])(?P<glued>(?<=[가-힣]))?(?P<run>" + _LOFT2 + r"{2,8})(?![0-9.A-Za-z])"
+                    r"(?!\s*도[가-힣])(?P<deg>\s*(?:도|°))?"), _loft_run),
+    ],
+}
+# A seller's marker token in agency titles (2026-11-16, agencies of one import tool: "db4P" 13552318731, "dbQF"
+# 13552339143, "db9N" 13555308677, "dbT1" 13555299850): lower-case "db" and two capitals or digits, a word of its
+# own; no other title of 2,451 writes one (an upper-case "DB6" is Orlimar's model and stays). Every category's titles.
+_SELLER_TOKEN_RE = re.compile(r"(?<![0-9A-Za-z])db[0-9A-Z]{2}(?![0-9A-Za-z])")
+
+
 def sanitize(kind: str, ko: str, tenant: str, category_id: str | None = None) -> str:
     """The text with the templates applied (it may still hold Hangul: the model translates the rest)."""
     if kind in UNTOUCHED_KINDS:
         return ko
+    if kind == "title":
+        for pattern, repl in TITLE_RULES.get(str(category_id or ""), []):
+            ko = pattern.sub(repl, ko)
+        ko = _SELLER_TOKEN_RE.sub(" ", ko)
     for pattern, repl in CATEGORY_RULES.get(str(category_id or ""), []):
         ko = pattern.sub(repl, ko)
     text = ko.strip()

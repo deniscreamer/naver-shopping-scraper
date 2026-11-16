@@ -1,0 +1,1360 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 165643,
+   "height": 1100,
+   "host": "seller",
+   "link": "https://cdn.imgdsell.com/file/dsell/globalswallow25/notice/ss/top_0.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.971,
+       "text": "소중한 고객님께 약속드립니다",
+       "y": 141
+      },
+      {
+       "conf": 0.783,
+       "text": "환불",
+       "y": 223
+      },
+      {
+       "conf": 0.997,
+       "text": "100%보장",
+       "y": 386
+      },
+      {
+       "conf": 0.97,
+       "text": "신뢰~! / 뿌뿐~!",
+       "y": 656
+      },
+      {
+       "conf": 0.698,
+       "text": "*",
+       "y": 789
+      },
+      {
+       "conf": 0.985,
+       "text": "(단,제품의 불량 및 하자시에 한함.)",
+       "y": 1019
+      }
+     ],
+     "y0": 0,
+     "y1": 1100
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 42928,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/714IBLem9qL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.968,
+       "text": "56",
+       "y": 49
+      },
+      {
+       "conf": 0.938,
+       "text": "시",
+       "y": 160
+      },
+      {
+       "conf": 0.887,
+       "text": "XINGGM",
+       "y": 430
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 166292,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/81O7rFxaUjL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.982,
+       "text": "NO-DIGGING SHOT & EXCELLENT / BALANCE",
+       "y": 21
+      },
+      {
+       "conf": 0.984,
+       "text": "XINGGM wedge has an extra-wide sole and beveled leading",
+       "y": 82
+      },
+      {
+       "conf": 0.998,
+       "text": "edge prevent digging, easy to swing through with precision",
+       "y": 116
+      },
+      {
+       "conf": 0.571,
+       "text": "5",
+       "y": 218
+      },
+      {
+       "conf": 0.935,
+       "text": "XINGGm",
+       "y": 352
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 110235,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71vyC-izyXL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.983,
+       "text": "CNC MILLED / GROOVES",
+       "y": 29
+      },
+      {
+       "conf": 0.98,
+       "text": "The hitting face with deep grooves impart",
+       "y": 112
+      },
+      {
+       "conf": 0.992,
+       "text": "terrific spin control and good stopping power",
+       "y": 168
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 120618,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/719EcV+xhzL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.986,
+       "text": "WEAR-RESISTANT / QPQ COATING",
+       "y": 12
+      },
+      {
+       "conf": 0.968,
+       "text": "Forged craft & QPQ technology / maintain high / performance",
+       "y": 75
+      },
+      {
+       "conf": 0.964,
+       "text": "after many hits in the bunker",
+       "y": 109
+      },
+      {
+       "conf": 0.991,
+       "text": "xinggm wedge / other",
+       "y": 838
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 83255,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71zj7jRgw6L._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.993,
+       "text": "HIGH PERFORMANCE",
+       "y": 36
+      },
+      {
+       "conf": 0.986,
+       "text": "GOLF GRIP",
+       "y": 98
+      },
+      {
+       "conf": 0.865,
+       "text": "XINGGm",
+       "y": 578
+      },
+      {
+       "conf": 0.899,
+       "text": "Anti-slip / & shock / absorption",
+       "y": 851
+      },
+      {
+       "conf": 0.943,
+       "text": "Greatly / reducing / vibrations / and / providing / accurate feedback upon impact",
+       "y": 909
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 65316,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/612+-eUl2nL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.516,
+       "text": "8",
+       "y": 317
+      },
+      {
+       "conf": 0.949,
+       "text": "A",
+       "y": 354
+      },
+      {
+       "conf": 0.83,
+       "text": "7",
+       "y": 370
+      },
+      {
+       "conf": 0.863,
+       "text": "XINGGm / XINGGm / XINGGm",
+       "y": 370
+      },
+      {
+       "conf": 0.921,
+       "text": "XINGGm",
+       "y": 405
+      },
+      {
+       "conf": 0.963,
+       "text": "48 Degree Wedge 50 Degree Wedge 52 Degree Wedge 54 Degree Wedge 56 Degree Wedge: / 58 Degree Wedge60 Degree Wedge",
+       "y": 620
+      },
+      {
+       "conf": 0.888,
+       "text": "Loft / 48° / 50° / 52° / 54° / 56° / 58° / 60°",
+       "y": 667
+      },
+      {
+       "conf": 0.855,
+       "text": "Lie / 64° / 64° / 64° / 64° / 64° / 64° / 64°",
+       "y": 716
+      },
+      {
+       "conf": 0.993,
+       "text": "Bounce / 10 / 10 / 10 / 11 / 11 / 8 / 8",
+       "y": 766
+      },
+      {
+       "conf": 0.956,
+       "text": "Swing weight / D4 / D4 / D4 / D4 / D4 / D4 / D4",
+       "y": 811
+      },
+      {
+       "conf": 0.889,
+       "text": "Head weight(g) / 304 / 304 / 304 / 308 / 308 / 312 / 312",
+       "y": 859
+      },
+      {
+       "conf": 0.965,
+       "text": "Length(inch) / 35.5 / 35.5 / 35.5 / 35.25 / 35.25 / 35 / 35",
+       "y": 908
+      },
+      {
+       "conf": 0.953,
+       "text": "Grip material / Rubber",
+       "y": 955
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 149757,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71HkacaoXKL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 28946,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/51en00EaeoL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.766,
+       "text": "58",
+       "y": 152
+      },
+      {
+       "conf": 0.842,
+       "text": "XINGGM",
+       "y": 514
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 27014,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/51tB8cPaBjL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.953,
+       "text": "48",
+       "y": 188
+      },
+      {
+       "conf": 0.935,
+       "text": "XINGGM",
+       "y": 532
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 27889,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/51ix9+f-wnL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.766,
+       "text": "58",
+       "y": 152
+      },
+      {
+       "conf": 0.842,
+       "text": "XINGGM",
+       "y": 514
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 29202,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61SGHzRQncL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.985,
+       "text": "52",
+       "y": 43
+      },
+      {
+       "conf": 0.855,
+       "text": "XINGGm",
+       "y": 411
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 36758,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61zWewv9RoL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.994,
+       "text": "60",
+       "y": 100
+      },
+      {
+       "conf": 0.938,
+       "text": "XINGGm",
+       "y": 315
+      },
+      {
+       "conf": 0.976,
+       "text": "56",
+       "y": 375
+      },
+      {
+       "conf": 0.866,
+       "text": "XINGGm",
+       "y": 571
+      },
+      {
+       "conf": 0.908,
+       "text": "52",
+       "y": 633
+      },
+      {
+       "conf": 0.925,
+       "text": "XINGGM",
+       "y": 797
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 33714,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/51FBcreXsDL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.965,
+       "text": "56",
+       "y": 209
+      },
+      {
+       "conf": 0.925,
+       "text": "52 / XINGGM",
+       "y": 444
+      },
+      {
+       "conf": 0.95,
+       "text": "XINGGM",
+       "y": 694
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 29001,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/51ebV6kxsPL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.766,
+       "text": "58",
+       "y": 152
+      },
+      {
+       "conf": 0.842,
+       "text": "XINGGM",
+       "y": 514
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 33998,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/51qtlIdq+1L._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.99,
+       "text": "60",
+       "y": 196
+      },
+      {
+       "conf": 0.934,
+       "text": "56 / XINGGM",
+       "y": 450
+      },
+      {
+       "conf": 0.926,
+       "text": "XINGGM",
+       "y": 698
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 30054,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61p3FQrrE4L._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.989,
+       "text": "60",
+       "y": 39
+      },
+      {
+       "conf": 0.933,
+       "text": "XINGGM",
+       "y": 420
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 22431,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/51UcUz6fNKL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.698,
+       "text": "59",
+       "y": 86
+      },
+      {
+       "conf": 0.917,
+       "text": "XINGGM",
+       "y": 120
+      },
+      {
+       "conf": 0.785,
+       "text": "77",
+       "y": 313
+      },
+      {
+       "conf": 0.974,
+       "text": "LAST Wedge",
+       "y": 419
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 22469,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/51hklVIoIaL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.698,
+       "text": "59",
+       "y": 86
+      },
+      {
+       "conf": 0.917,
+       "text": "XINGGM",
+       "y": 120
+      },
+      {
+       "conf": 0.785,
+       "text": "77",
+       "y": 313
+      },
+      {
+       "conf": 0.974,
+       "text": "LAST Wedge",
+       "y": 419
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 22236,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/51USQRKZ4-L._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.698,
+       "text": "59",
+       "y": 86
+      },
+      {
+       "conf": 0.917,
+       "text": "XINGGM",
+       "y": 120
+      },
+      {
+       "conf": 0.785,
+       "text": "77",
+       "y": 313
+      },
+      {
+       "conf": 0.974,
+       "text": "LAST Wedge",
+       "y": 419
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 439729,
+   "height": 600,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/3d829a34-13d9-483d-ae89-a54ba6e075c3.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "XINGGM / Forged / Golf / Wedges",
+       "y": 13
+      },
+      {
+       "conf": 0.961,
+       "text": "For / Men / Right  / Handed",
+       "y": 51
+      },
+      {
+       "conf": 0.943,
+       "text": "48/50/52°/54°/58/56°/60°",
+       "y": 94
+      },
+      {
+       "conf": 0.997,
+       "text": "60",
+       "y": 187
+      },
+      {
+       "conf": 0.984,
+       "text": "56",
+       "y": 235
+      },
+      {
+       "conf": 0.778,
+       "text": "J / XINGGm",
+       "y": 266
+      },
+      {
+       "conf": 0.867,
+       "text": "XINGGm",
+       "y": 298
+      },
+      {
+       "conf": 0.969,
+       "text": "58",
+       "y": 325
+      },
+      {
+       "conf": 0.58,
+       "text": "22 / 4",
+       "y": 347
+      },
+      {
+       "conf": 0.808,
+       "text": "XINGGm",
+       "y": 353
+      },
+      {
+       "conf": 0.582,
+       "text": "A",
+       "y": 408
+      },
+      {
+       "conf": 0.658,
+       "text": "6",
+       "y": 417
+      },
+      {
+       "conf": 0.88,
+       "text": "XINGGM",
+       "y": 448
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 273159,
+   "height": 600,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/c58fd701-dfd4-48a7-bda0-5ce63ea7b290.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.955,
+       "text": "Gap / Wedge/Sand / IWedge/Lob / Wedge",
+       "y": 28
+      },
+      {
+       "conf": 0.836,
+       "text": "Choose from a range of loft angles(48°/50 / /52' / /54°/58° / /56° / /60°)",
+       "y": 71
+      },
+      {
+       "conf": 0.978,
+       "text": "to suit your playing style and course conditions.",
+       "y": 99
+      },
+      {
+       "conf": 0.905,
+       "text": "56",
+       "y": 153
+      },
+      {
+       "conf": 0.954,
+       "text": "XINGGm",
+       "y": 252
+      },
+      {
+       "conf": 0.637,
+       "text": "51",
+       "y": 560
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 196056,
+   "height": 600,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/19d03cca-068e-4365-b5a1-6775c1413ae9.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.988,
+       "text": "MICRO",
+       "y": 162
+      },
+      {
+       "conf": 0.987,
+       "text": "CNC MILLED",
+       "y": 229
+      },
+      {
+       "conf": 0.985,
+       "text": "The / micro-milled face of our golf",
+       "y": 316
+      },
+      {
+       "conf": 0.998,
+       "text": "sand / wedges promotes / increased",
+       "y": 339
+      },
+      {
+       "conf": 0.997,
+       "text": "spin / and improved / control.",
+       "y": 364
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 348551,
+   "height": 600,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/7da96efa-b015-48b2-babd-b97063b64448.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.975,
+       "text": "56",
+       "y": 204
+      },
+      {
+       "conf": 0.923,
+       "text": "XINGGm",
+       "y": 366
+      },
+      {
+       "conf": 0.977,
+       "text": "FORGED / CRAFT & QPQ TCHENOLOGY",
+       "y": 488
+      },
+      {
+       "conf": 0.995,
+       "text": "QPQ wear-resistant craftsmanship for long-lasting",
+       "y": 528
+      },
+      {
+       "conf": 0.969,
+       "text": "use in wet bunkers and long grass areas.",
+       "y": 561
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 190902,
+   "height": 600,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/ec6d1e03-2591-4afa-b591-519d3fbed5f9.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.644,
+       "text": "[",
+       "y": 223
+      },
+      {
+       "conf": 0.973,
+       "text": "BEVELED LEADING EDGE",
+       "y": 461
+      },
+      {
+       "conf": 0.969,
+       "text": "The beveled sole allows the golfer to open up the club",
+       "y": 510
+      },
+      {
+       "conf": 0.979,
+       "text": "face further and hit the ball higher with greater accuracy",
+       "y": 541
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 196821,
+   "height": 600,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/ef7275e5-da42-484b-bb5f-5afa6738fb83.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.632,
+       "text": "8",
+       "y": 197
+      },
+      {
+       "conf": 0.938,
+       "text": "XINGGm",
+       "y": 260
+      },
+      {
+       "conf": 0.974,
+       "text": "NON-SLIP GRIP / STEPPED SHAFT / 431 STAINLESS STEEL",
+       "y": 417
+      },
+      {
+       "conf": 0.972,
+       "text": "Greatly reducing vibrations and / with high shock resistance and / Durable 431 stainless steel",
+       "y": 459
+      },
+      {
+       "conf": 0.981,
+       "text": "providing accurate feedback / fault tolerance / design with polished finish",
+       "y": 483
+      },
+      {
+       "conf": 0.975,
+       "text": "upon impact",
+       "y": 508
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 196994,
+   "height": 600,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/96cc5412-74af-44fc-bfca-0d0e02edb779.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.922,
+       "text": "6",
+       "y": 18
+      },
+      {
+       "conf": 0.808,
+       "text": "XINGGm / XINGGm / XINGGm / XINGGm / XINGGm / XINGGm",
+       "y": 57
+      },
+      {
+       "conf": 0.911,
+       "text": "48 Degrce Wedge 50 Degree Wedye 52 Degree Wedge 54 Degree Wedge 56 Degree Wedge  / 58 Degree Wedge60 Degree Wedge",
+       "y": 235
+      },
+      {
+       "conf": 0.948,
+       "text": "Loft / 48° / 50° / 52° / 54° / 56° / 58° / 60°",
+       "y": 279
+      },
+      {
+       "conf": 0.853,
+       "text": "Lie / 64° / 64° / 64° / 64 / 64° / 64° / 64°",
+       "y": 325
+      },
+      {
+       "conf": 0.792,
+       "text": "Bounce / 10 / 10 / 10 / 11 / 11 / 8 / 8",
+       "y": 376
+      },
+      {
+       "conf": 0.971,
+       "text": "Swing weight / D4 / D4 / D4 / D4 / D4 / D4 / D4",
+       "y": 421
+      },
+      {
+       "conf": 0.932,
+       "text": "Head weight(g) / 304 / 304 / 304 / 308 / 308 / 312 / 312",
+       "y": 465
+      },
+      {
+       "conf": 0.944,
+       "text": "Length(inch) / 35.5 / 35.5 / 35.5 / 35.25 / 35.25 / 35 / 35",
+       "y": 515
+      },
+      {
+       "conf": 0.962,
+       "text": "Grip material / Rubber",
+       "y": 560
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 525745,
+   "height": 2200,
+   "host": "seller",
+   "link": "https://cdn.imgdsell.com/file/dsell/globalswallow25/notice/ss/bottom_0.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.876,
+       "text": "주문 전",
+       "y": 101
+      },
+      {
+       "conf": 0.995,
+       "text": "꼭 확인하세요!",
+       "y": 195
+      },
+      {
+       "conf": 0.948,
+       "text": "·일시적으로 재고가 품절 될 경우 발송이 취소될 수",
+       "y": 322
+      },
+      {
+       "conf": 0.914,
+       "text": "있습니다.",
+       "y": 354
+      },
+      {
+       "conf": 0.902,
+       "text": "·주소 오기로 인한 배송 관련 문제는 판매자가 책임지지",
+       "y": 388
+      },
+      {
+       "conf": 0.919,
+       "text": "않습니다.",
+       "y": 419
+      },
+      {
+       "conf": 0.964,
+       "text": "배송 제품에 문제가 생긴 경우 수령 즉시 고객센터로",
+       "y": 453
+      },
+      {
+       "conf": 1.0,
+       "text": "배송관련",
+       "y": 461
+      },
+      {
+       "conf": 0.991,
+       "text": "문자 남겨주시기 바랍니다.",
+       "y": 486
+      },
+      {
+       "conf": 1.0,
+       "text": "안내",
+       "y": 500
+      },
+      {
+       "conf": 0.951,
+       "text": "'초과 부피/무게 제품'은 포장상태가 이형화물로 분류되어",
+       "y": 550
+      },
+      {
+       "conf": 0.942,
+       "text": "추가 배송비가 발생할 수 있습니다.",
+       "y": 584
+      },
+      {
+       "conf": 0.952,
+       "text": "(*초과부피/무게 제품: 세변합이160cm이상/",
+       "y": 615
+      },
+      {
+       "conf": 0.962,
+       "text": "무게가 10kg 이상/ 한변의 길이가 1m 이상인 제품)",
+       "y": 649
+      },
+      {
+       "conf": 0.995,
+       "text": "아래의 경우는 교환 및 반품 신청이 불가합니다.",
+       "y": 716
+      },
+      {
+       "conf": 1.0,
+       "text": "교환/반품",
+       "y": 760
+      },
+      {
+       "conf": 0.945,
+       "text": "·고객님의 부주의로 발생된 파손 및 분실 제품",
+       "y": 783
+      },
+      {
+       "conf": 0.963,
+       "text": "신청 불가 / 현저하게 상품의 가치가 감소하거나 사용된 제품",
+       "y": 802
+      },
+      {
+       "conf": 0.917,
+       "text": "항목 / 반품및 교환 신청기간이 초과된 경우",
+       "y": 849
+      },
+      {
+       "conf": 0.916,
+       "text": "·세트 상품은 상품 구성 일부가 파손되거나 누락된 경우",
+       "y": 882
+      },
+      {
+       "conf": 0.964,
+       "text": "상품의 태그나 라벨이 분리되어 상품의 가치가 웨손된 경우",
+       "y": 916
+      },
+      {
+       "conf": 0.988,
+       "text": "8고객센터 010-8188-0218",
+       "y": 998
+      },
+      {
+       "conf": 0.989,
+       "text": "평일 10:00~17:00(공휴일 휴무)",
+       "y": 1042
+      },
+      {
+       "conf": 0.886,
+       "text": "주문 전",
+       "y": 1202
+      },
+      {
+       "conf": 0.998,
+       "text": "꼭 확인하세요!",
+       "y": 1293
+      },
+      {
+       "conf": 0.943,
+       "text": "·모든 사진 메이커 명의 저작권 상표권은 해외 협력업체의",
+       "y": 1416
+      },
+      {
+       "conf": 0.937,
+       "text": "이미지와 상품명을 제공받아 사용하고 있습니다.",
+       "y": 1446
+      },
+      {
+       "conf": 0.902,
+       "text": "상표 및 / ·단, 저희 구매대행을 위한 URL링크만 사용하였음을 공지",
+       "y": 1482
+      },
+      {
+       "conf": 0.903,
+       "text": "저작권 / 합니다.",
+       "y": 1511
+      },
+      {
+       "conf": 0.94,
+       "text": "·각종 저작권,상표권,유해상품,불법상품 등 상품에 대한",
+       "y": 1544
+      },
+      {
+       "conf": 0.96,
+       "text": "침해 안내",
+       "y": 1555
+      },
+      {
+       "conf": 0.964,
+       "text": "권리자분들께서는 메일, 문자메시지로 연락주시면 즉각",
+       "y": 1578
+      },
+      {
+       "conf": 0.924,
+       "text": "삭제 처리 하겠습니다.",
+       "y": 1611
+      },
+      {
+       "conf": 0.931,
+       "text": "·원활한 상담기록 및 양질의 서비스를 고객님께 제공하기",
+       "y": 1668
+      },
+      {
+       "conf": 0.975,
+       "text": "고객센터 / 위해 유선 상담을 종료하였음을 안내드립니다.",
+       "y": 1701
+      },
+      {
+       "conf": 0.939,
+       "text": "·모든 문의는 아래 고객센터 번호로 문자 메시지를 통해 문",
+       "y": 1732
+      },
+      {
+       "conf": 1.0,
+       "text": "이용안내",
+       "y": 1742
+      },
+      {
+       "conf": 0.972,
+       "text": "의 남겨주시면 최대한 빠르게 답변드리겠습니다.",
+       "y": 1767
+      },
+      {
+       "conf": 0.958,
+       "text": "·메일주소: globalswallow25@gmail.com",
+       "y": 1799
+      },
+      {
+       "conf": 0.973,
+       "text": "본 상품은 현재 구매대행 상품으로 국내에 재고를 보유",
+       "y": 1860
+      }
+     ],
+     "y0": 0,
+     "y1": 1880
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.995,
+       "text": "고객센터",
+       "y": 0
+      },
+      {
+       "conf": 0.967,
+       "text": "·모든 문의는 아래 고객센터 번호로 문자 메시지를 통해 문",
+       "y": 12
+      },
+      {
+       "conf": 0.961,
+       "text": "이용안내 / 의 남겨주시면 최대한 빠르게 답변드리겠습니다.",
+       "y": 26
+      },
+      {
+       "conf": 0.957,
+       "text": "메일주소: globalswallow25@gmail.com",
+       "y": 80
+      },
+      {
+       "conf": 0.975,
+       "text": "·본 상품은 현재 구매대행 상품으로 국내에 재고를 보유",
+       "y": 139
+      },
+      {
+       "conf": 0.963,
+       "text": "하고 있지않습니다.",
+       "y": 172
+      },
+      {
+       "conf": 0.969,
+       "text": "기타사항 / [안전관리법 관련]본 상품은 전기용품 및 생활용품 안전",
+       "y": 204
+      },
+      {
+       "conf": 0.981,
+       "text": "관리법에 따른 안전관리대상제품임을 명시합니다.",
+       "y": 237
+      },
+      {
+       "conf": 0.935,
+       "text": "[유아 및 어린이 취급 유의사항]",
+       "y": 271
+      },
+      {
+       "conf": 0.956,
+       "text": "본 상품은 만 14세 이상만 구매가 가능합니다.",
+       "y": 302
+      },
+      {
+       "conf": 0.97,
+       "text": "8고객센터 010-8188-0218",
+       "y": 376
+      },
+      {
+       "conf": 0.948,
+       "text": "평일 10:00~17:00 (공휴일 휴무)",
+       "y": 421
+      }
+     ],
+     "y0": 1720,
+     "y1": 2200
+    }
+   ],
+   "status": "read",
+   "width": 860
+  }
+ ],
+ "key": "fairwardgolf:naver:102688243:13468791008",
+ "links_sha256": "7a51cadd2396244e8acaa6a7ef1d886ce1edb0c3551863638069f2f7bd41cff5",
+ "product_id": "13468791008",
+ "seconds": 31.9,
+ "skipped": [
+  {
+   "link": "https://cdn.imgdsell.com/visit/set/dsell/globalswallow25/RT5JT0dZVD52ExxnFWk%253d/SS",
+   "rule": "tiny"
+  }
+ ]
+}

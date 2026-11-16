@@ -60,7 +60,7 @@ from description_images import current, image_rows
 from description_measures import composition_count, container_in, container_listed, package_for, profile_for, read_rows
 from naver_variants import choose_variants
 from package_measures import current_defaults, load_table, on_scale
-from spec_variants import check_specs, title_one_variant
+from spec_variants import check_specs, title_one_variant, title_variant_tail
 from review_clean import clean_reviews
 from shop_types import (CollectedLine, PreparedAddon, PreparedImage, PreparedPersonalization, PreparedProduct,
                         PreparedRating, PreparedSource, PreparedVariant)
@@ -732,6 +732,11 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
     if ov["skipped_paid"]:                          # a smaller set than the title may describe is sold
         notes.append({"code": "paid_variants_left_out", "detail": f"{ov['skipped_paid']} variants change the price"})
     one = title_one_variant(details["name"], ov["options"])
+    tail = title_variant_tail(details["name"], (specs.get("options") or {}).get("variants") or [],
+                              {str(v["naver_variant_id"]) for v in ov["variants"] if v.get("naver_variant_id")})
+    if tail:                                        # an import title's appended option: one span, the words in it
+        bare = tail.replace(" ", "")                # are not repeated ("12Black" in "Aged 9-12 Black"; 2026-11-16)
+        one = [w for w in one if w.replace(" ", "") not in bare] + [tail]
     if one:                                         # the translation keeps the title to what every variant is
         notes.append({"code": "title_names_one_variant", "detail": ", ".join(one)})
     desc = details.get("description") or {}

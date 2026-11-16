@@ -46,7 +46,8 @@ read again by `run` / `scroll --job`. A job made before has no key and runs as `
 A draft (draft first, 2026-11-16) never replaces a live product (`replace_skipped`: the new one is a draft):
 `job.py activate --job <id>` prints the old one's `--withdraw` line, run on the owner's word once the new one is
 live ([JOB_AGENT.md](JOB_AGENT.md#draft-first-a-category-not-yet-reviewed-the-owner-2026-11-16)). A product
-withdrawn as `replaced_by:` is not compared again (its replacement is).
+withdrawn as `replaced_by:` stays in the index (status `replaced`, 2026-11-16) and leads a copy that matches only it to
+the live end of its chain (`replace` keeps it after a replacement inside the job as well).
 
 ### `--pairs`: a job's decisions
 
@@ -67,8 +68,8 @@ shared photo, no variants alike; a colour edition, a set with its bag). Look at 
 Right after a product is collected, before its description images, `dedupe.py` looks it up in an index built when
 the run starts:
 
-- **The index:** the shop's published products (drafts awaiting review included, draft first 2026-11-16) and the
-  ones the owner withdrew (not those withdrawn as `replaced_by:<key>`: their replacement is the live copy), plus the
+- **The index:** the shop's published products (drafts awaiting review included, draft first 2026-11-16), the
+  ones the owner withdrew, and those withdrawn as `replaced_by:<key>` (status `replaced`, 2026-11-16), plus the
   job's own collected products. Each product the job takes on joins it, so a later seller in the same job is
   compared too; one of them closed later in the run (not_taken / deferred / failed, or held by the transform or the
   translation: agency_no_brand, single_only, 2026-11-15) leaves it again.
@@ -87,6 +88,24 @@ the run starts:
   photos shared >= 80% (`STRONG_PHOTOS`), variants >= 80%, and the titles not clashing on club kind, hand, gender,
   bag (미포함 wins) or the numbers standing alone (Aged 3-5 / 9-12, 9종 / 12종), a subset passing, and agreeing on a
   model's version word (MAX, LS, TR, PRO, 맥스: 27ZXI-RKT and its LS share a dealer's photo and variants).
+- **`same_listing`** (part of `strong`, 2026-11-16, the owner's wedge review: Lazrus 13016648376 / 12079160628 /
+  12557380462, one photo set byte for byte, the same 3 sets sold, variants 0.64-0.75 alike because each lists other
+  single wedges): the first `LEAD_PHOTOS` (3) photos the same files in the same order, photos shared >= 80%, the same
+  non-empty set of variants sold (in a `sets_only` category without the single clubs transform leaves out, club-slot
+  axes counted as transform counts them), the kinds and model words as `strong`, and the titles' numbers not
+  clashing once those a variant spells out are set aside (lofts, ages: "Aged 9-12" / "Aged 3-5" of one PGM listing).
+  A count stays the title's own even when a variant writes the number ("10개" / "9개": Mizuno JPX QII 13826383159 /
+  13826377851, variants "7irons(6-9...)"). Measured on the store: 4 new pairs of published products, the 3 Lazrus and
+  PGM 13274024476 / 13390550850 (50002787).
+- **A replaced match** (2026-11-16, the owner's wedge review: GoSports 12557420063 was not taken as a copy of
+  13619939279 on 2026-11-15, then published as new once 13619939279 was replaced by 13379851400 and that by
+  12918511112; A11N 13512885159 through 13405976594 -> 13552318731, a hold): a confirmed match withdrawn as
+  `replaced_by:` counts as the live end of its chain (`Index.live`, `live` in the match row): a withdrawn end
+  (`hold:` or any owner's withdrawal) gives `duplicate_of_withdrawn`, a published or job end the usual better / not
+  better (`duplicate_better` names the live end: that is what `replace_step` withdraws), an end not in the index
+  `duplicate_of` (never let through). The price guard holds against the live end (`live_price` false: not followed).
+  Measured on the store: 6 published junior sets (50002787) now read as copies of a live product through a replaced
+  one: 13064095798, 13826709716, 13790999652, 13253313396, 13261691142, 13401593453 (for the owner: hold or keep).
 - A title's written-out escapes ("u2013") are decoded before its words and numbers are read.
 - A product is looked up at whatever stage the job takes it on (a resumed one too: 2026-11-15, 13 copies went from
   "prepared" to the store).

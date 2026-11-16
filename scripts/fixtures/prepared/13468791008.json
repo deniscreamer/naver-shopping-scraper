@@ -1,0 +1,356 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102688243:13468791008",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "title_names_one_variant",
+   "detail": "58 Degree Silver RH"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/wisemall01/products/13468791008",
+  "channel_no": "102688243",
+  "product_id": "13468791008",
+  "category_id": "50002783"
+ },
+ "product": {
+  "title_ko": "XINGGM 단조 골프 웨지 세트 48-72도 오른손용 샌드 갭 롭 스핀 강화 벙커 탈출 용이 골프 클럽 58 Degree Silver RH",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {},
+  "options": [
+   {
+    "name_ko": "Size",
+    "values_ko": [
+     "52 60 Degree Set",
+     "56 60 Degree Set"
+    ]
+   }
+  ],
+  "facts": [
+   {
+    "label_ko": "Style Name",
+    "value_ko": "Black RH"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "observed:[\"52 60 Degree Set\",\"Black RH\"]",
+    "naver_variant_id": "58033737080",
+    "options_ko": [
+     "52 60 Degree Set"
+    ],
+    "price_krw": 194730,
+    "price_usd": "194.73",
+    "sku": "FW-82922dd335b0e2027fc80495",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"56 60 Degree Set\",\"Black RH\"]",
+    "naver_variant_id": "58033737086",
+    "options_ko": [
+     "56 60 Degree Set"
+    ],
+    "price_krw": 194730,
+    "price_usd": "194.73",
+    "sku": "FW-da58d650b50a3b7c0c08ca03",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 128430,
+   "original_krw": 142700,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "원산지",
+    "value_ko": "기타/해외"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13468791008/fairwardgolf-13468791008-001-f1baf89aac53bfd1.webp",
+    "sha256": "f1baf89aac53bfd1b37cc21ef18e61e1e519efbb4e82e04e3f0518b7050140ca",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13468791008/fairwardgolf-13468791008-002-801804974474874f.webp",
+    "sha256": "801804974474874f7f893aed549959ad4d605db5394c85b94d39411559790458",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13468791008/fairwardgolf-13468791008-003-68f75cda102c40c9.webp",
+    "sha256": "68f75cda102c40c9aacc5ed84cfef589bff607901564f47d2e57b83425efbd14",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/13468791008/fairwardgolf-13468791008-004-32b2761d25aaeb1a.webp",
+    "sha256": "32b2761d25aaeb1a9c312b17b370855bbeb18dfc3f48e56ca0432118e11aae0d",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/13468791008/fairwardgolf-13468791008-005-bca7bce77ec9ab49.webp",
+    "sha256": "bca7bce77ec9ab49f80213041c3689ed54d975c5da5dfe6664e28817b512350f",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/13468791008/fairwardgolf-13468791008-006-ada3344c5e7bcd97.webp",
+    "sha256": "ada3344c5e7bcd9795debfae9b8f6f2ee85e4ab9d2f92b4187e596b1dff219d8",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/13468791008/fairwardgolf-13468791008-007-7b3d861dc4c16dbb.webp",
+    "sha256": "7b3d861dc4c16dbbb0e5743115df663085aa12bdbdf950b89c42c7bd94aa832f",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": 7000,
+   "policy_text": "제주 추가 4,000원, 제주 외 도서지역 추가 7,000원",
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": "08:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "XINGGM 단조 골프 웨지 세트 48-72도 오른손용 샌드 갭 롭 스핀 강화 벙커 탈출 용이 골프 클럽\n\n상품 이미지\n\n옵션 이미지\n\nSize : 58 Degree | Size : 48 Degree\nSize : 50 Degree | Size : 52 Degree\nSize : 52 56 60 Degree Set | Size : 52 60 Degree Set\nSize : 54 Degree | Size : 56 Degree\nSize : 56 60 Degree Set | Size : 60 Degree\nSize : 68 Degree | Size : 70 Degree\nSize : 72 Degree |\n\nSize | 56 Degree\nGolf Club Flex | Stiff\nColor | Black\nHand Orientation | Right\nGolf Club Loft | 56 Degrees\nMaterial | Stainless Steel\nBrand | XINGGM\nShaft Material | Stainless Steel\nItem Weight | 0.9 Pounds\nGrip Material | Synthetic Rubber or Rubber\n\nAbout this item\n【NO-DIGGING SHOT】The beveled sole allows the golfer to open up the club face further and hit the ball higher with greater accuracy, resulting in improved scores. High polish ensures smoothness in bunkers\n【SUPERIOR DURABILITY】Forged craft & QPQ appearance technology increase the durability of the clubhead,make it It has a higher abrasion strength compared to other wedges.It can be used for a long time even in wet sand bunkers and grassy areas\n【MICRO CNC MILLED】Precisely CNC-machined with minimal tolerances, the micro grooves on the clubface generate exceptional backspin performance. The spiral pattern also helps to eliminate water and debris from the clubface\n【EXCELLENT FEEL】XINGGM golf wedge features a step-shaped shaft design combined with an anti-slip grip, greatly reducing vibrations and providing accurate feedback upon impact. This ensures that you have full confidence in every swing\n【VALUE FOR MONEY】This right-handed sand wedge is crafted using top-quality manufacturing techniques.Why not give this high-quality sand wedge a try at its affordable price\n›\nProduct Description\nThis right-handed sand wedge is crafted using top-quality manufacturing techniques\n\nProduct description\n\n세부 사항\n\n항목 | 설명\nFlex | Stiff\nHand Orientation | Right\nLoft | 56 Degrees\nGrip Type | Textured Rubber\nHead Type | wedge\nSize | 56 Degree\nItem Weight | 0.9 Pounds\nGrip Size | Standard\nItem Dimensions L x W x H | 36.6\"L x 3.7\"W x 2.87\"H\nMaterial Type | Stainless Steel\nShaft Material | Stainless Steel\nGrip Material | Synthetic Rubber or Rubber\nBrand Name | XINGGM\nStyle Name | Black,RH\nGolf Club Type | Wedge Golf Club\nIncluded Components | SAND WEDGE\nManufacturer | XINGGM\nModel Number | 56 Degree golf sand wedge\nManufacturer Part Number | 56 Degree golf sand wedge\nWarranty Description | 2 months\nColor | Black",
+  "description_images": [
+   "https://cdn.imgdsell.com/visit/set/dsell/globalswallow25/RT5JT0dZVD52ExxnFWk%253d/SS",
+   "https://cdn.imgdsell.com/file/dsell/globalswallow25/notice/ss/top_0.jpg",
+   "https://m.media-amazon.com/images/I/714IBLem9qL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/81O7rFxaUjL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71vyC-izyXL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/719EcV+xhzL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71zj7jRgw6L._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/612+-eUl2nL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71HkacaoXKL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/51en00EaeoL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/51tB8cPaBjL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/51ix9+f-wnL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61SGHzRQncL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61zWewv9RoL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/51FBcreXsDL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/51ebV6kxsPL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/51qtlIdq+1L._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61p3FQrrE4L._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/51UcUz6fNKL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/51hklVIoIaL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/51USQRKZ4-L._US1000_.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/3d829a34-13d9-483d-ae89-a54ba6e075c3.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/c58fd701-dfd4-48a7-bda0-5ce63ea7b290.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/19d03cca-068e-4365-b5a1-6775c1413ae9.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/7da96efa-b015-48b2-babd-b97063b64448.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/ec6d1e03-2591-4afa-b591-519d3fbed5f9.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/ef7275e5-da42-484b-bb5f-5afa6738fb83.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/96cc5412-74af-44fc-bfca-0d0e02edb779.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://cdn.imgdsell.com/file/dsell/globalswallow25/notice/ss/bottom_0.jpg"
+  ],
+  "description_dropped": [
+   {
+    "rule": "label",
+    "text": "상세 설명"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:5702722bb850cbfd",
+   "kind": "title",
+   "ko": "XINGGM 단조 골프 웨지 세트 48-72도 오른손용 샌드 갭 롭 스핀 강화 벙커 탈출 용이 골프 클럽 58 Degree Silver RH"
+  },
+  {
+   "id": "option_name:1af851907331c0ed",
+   "kind": "option_name",
+   "ko": "Size"
+  },
+  {
+   "id": "option_value:d6c321d323b06103",
+   "kind": "option_value",
+   "ko": "52 60 Degree Set"
+  },
+  {
+   "id": "option_value:509f655ab0a0ace4",
+   "kind": "option_value",
+   "ko": "56 60 Degree Set"
+  },
+  {
+   "id": "fact_label:827cae3c57ce1088",
+   "kind": "fact_label",
+   "ko": "Style Name"
+  },
+  {
+   "id": "fact_value:63d8db5e4aa8f811",
+   "kind": "fact_value",
+   "ko": "Black RH"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:40bc309fd6cb0a8a",
+   "kind": "spec_value",
+   "ko": "기타/해외"
+  }
+ ]
+}

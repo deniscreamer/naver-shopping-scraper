@@ -166,6 +166,15 @@ Code: `transform.options_and_variants`.
 - Configurators of 128-497 combinations at one price (an XXIO 14 set: 6 x 9 x 9): offered up to the shop's cap,
   covering every pair of values first, shared over the first axis (variants_capped).
 - A "write a delivery message" row and a review-discount axis are not versions of the product.
+- Agency imports (2026-11-16, wedge sets): the title ends with the page's first option in Latin ("... 골프 클럽 58
+  Degree Silver RH", 13468791008; "... 3Piece Set 525660 Right", 13566630297), often a variant not sold
+  (`title_variant_tail`, note title_names_one_variant); lofts glued ("525660도", 13389307551); "세트 또는 개별 /
+  또는 개인용" (a set or a single, 13016551520); a marker "db4P" / "dbQF" / "db9N" / "dbT1" (13552318731, 13555308677).
+  The last three: `translation_rules.TITLE_RULES`, `_SELLER_TOKEN_RE`, before the model.
+- An agency's spec table in the description (2026-11-16): "- Brand : 69" with "- Manufacturer : 69 Golf"
+  (13370257430; the specs' 브랜드 / 제조사 rows say "69" only), "Brand Name | 69" with "Manufacturer | 69 Golf"
+  (13016152694), a machine-translated label "브랜드 이름 | pgm" (12178085899) and values "NONE" / "다른 사람들"
+  (13024224352, 13024206977). `brand_fallback.described`, `_NO_FIRM`.
 
 ### Spec rows vs variants
 

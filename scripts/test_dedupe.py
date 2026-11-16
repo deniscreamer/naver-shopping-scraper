@@ -132,7 +132,7 @@ def test_better_worse_and_equal_against_the_best_match(grade, reviews, decision)
     assert d["decision"] == decision and d["of"] == D.entry(record(1, 1, WILSON))["key"]
 
 
-def test_load_reads_the_ledger_and_leaves_out_what_was_replaced(tmp_path):
+def test_load_reads_the_ledger_and_keeps_what_was_replaced_leading_to_its_replacement(tmp_path):
     recs = {r["key"]: r for r in (record(1, 1, WILSON), record(2, 2, WILSON), record(3, 3, WILSON),
                                   record(4, 4, WILSON), record(5, 5, WILSON))}
     keys = list(recs)
@@ -144,8 +144,9 @@ def test_load_reads_the_ledger_and_leaves_out_what_was_replaced(tmp_path):
         {"key": f"{SHOP}:naver:9:9", "status": "published"}]))                  # no collected record: left out
     index = D.load(SHOP, str(tmp_path), job_keys=[keys[4]], records=recs)
     assert {k: e["status"] for k, e in index.by_key.items()} == {keys[0]: "published", keys[1]: "withdrawn",
-                                                                 keys[4]: "job"}
-    assert set(D.load(SHOP, str(tmp_path), withdrawn=False, records=recs).by_key) == {keys[0]}
+                                                                 keys[2]: "replaced", keys[4]: "job"}
+    assert index.replaced == {keys[2]: keys[0]} and index.live(keys[2]) == (keys[0], index.by_key[keys[0]])
+    assert set(D.load(SHOP, str(tmp_path), withdrawn=False, records=recs).by_key) == {keys[0]}   # --report: the store
 
 
 def test_report_groups_confirmed_copies_best_first():
@@ -394,10 +395,25 @@ def test_the_old_product_is_withdrawn_once_the_better_one_is_published(tmp_path)
     index = D.Index([E(1, 11, WILSON)])
     what = J.replace_step(job, {"publisher": (admin, None, {}), "dedupe": index}, shop, new)
     assert what == "; replaces 11 (withdrawn)" and admin.calls == [("gid://old", "DRAFT")]
-    assert shop.withdrawn() == {old} and old not in index.by_key
+    assert shop.withdrawn() == {old} and index.by_key[old]["status"] == "replaced" and index.live(old)[0] == new
     assert D.ledger(SHOP, str(tmp_path / "shops"))[old]["reason"] == f"replaced_by:{new}"
     assert job.events()[-1]["event"] == "replaced"
     assert J.replace_step(job, {"publisher": (admin, None, {})}, shop, new) == "" and len(admin.calls) == 1
+
+
+def test_a_later_copy_of_the_product_just_replaced_in_the_same_job_is_a_copy_of_its_replacement(tmp_path):
+    """The reviewer's gap inside one job (2026-11-16): A (old title, old photos) replaced by B; a later seller C that
+    matches A only (B has its own photos and another title) must not come out as new."""
+    shop, old, new = _published_shop(tmp_path, 4, 4)
+    later = record(3, 33, WILSON, photos=("a", "b", "c"))
+    job = dedupe_job(tmp_path, "on", [record(2, 22, WILSON), later])
+    job.log(new, "duplicate_better", replaces=old, matches=[])
+    index = D.Index([E(1, 11, WILSON), E(2, 22, "윌슨 프로필 JGI 주니어 세트 다른 이름", photos=("n1", "n2"),
+                                         values=[["x"]], grade="POWER")])
+    assert J.replace_step(job, {"publisher": (Admin(), None, {}), "dedupe": index}, shop, new).startswith("; replaces")
+    assert J.dedupe_step(job, {"dedupe": index}, later["key"], later) == f"not taken: duplicate_of:{new}"
+    plain = D.Index([E(2, 22, "윌슨 프로필 JGI 주니어 세트 다른 이름", photos=("n1", "n2"), values=[["x"]])])
+    assert plain.decide(D.entry(later))["decision"] is None                    # the gap with drop(old)
 
 
 def test_fewer_variants_keep_the_old_product(tmp_path):
@@ -577,3 +593,239 @@ def test_a_draft_is_in_the_duplicates_index_as_published(tmp_path):
     PB._append(shop.ledger_path, {"format": PB.FORMAT, "key": old, "status": "published", "product_id": "gid://old",
                                   "store_status": "DRAFT"})
     assert D.ledger_status(D.ledger(SHOP, str(tmp_path / "shops"))[old]) == "published"
+
+
+# ---- a copy of a replaced product (2026-11-16, the owner's wedge review) ---------------------------------------
+
+GOSPORTS = "GoSports 불법 맥스 스핀 골프 웨지 세트 - 남성용 오른손잡이 모래, 롭, 갭 웨지, 브러시드 스테인리스"
+GOSPORTS_LIVE = "GoSports Illegal Max Spin 골프 웨지 세트 - 남성용 오른손잡이용 샌드, 롭, 갭 웨지, 브러시드 스테인리스"
+
+
+def _gosports():
+    """The real chain: 13619939279 replaced by 13379851400, replaced by 12918511112 (live); 12557420063 matches the
+    first two (one title, one photo) and not the live one (its own photos, another translation)."""
+    w = dict(photos=("2e53b0", "f09d35", "431100"), values=[], price=205470, category="50002783")
+    first = E(102773407, 13619939279, GOSPORTS, status="replaced", **w)
+    second = E(102683334, 13379851400, GOSPORTS, grade="SPROUT", status="replaced", **{**w, "price": 212040})
+    live = E(102781427, 12918511112, GOSPORTS_LIVE, photos=("live1", "live2"), values=[], price=192870,
+             category="50002783")
+    copy = E(102770910, 12557420063, GOSPORTS, status="job", **{**w, "price": 199080})
+    index = D.Index([live])
+    index.replace(first["key"], second["key"], first)
+    index.replace(second["key"], live["key"], second)
+    return index, first, second, live, copy
+
+
+def test_a_copy_of_a_replaced_product_is_a_copy_of_its_live_replacement():
+    """Job fairwardgolf-50002783-20261116T083154Z published 12557420063 as new: its match 13619939279 (not taken
+    against it the day before) had been withdrawn as replaced_by: and dropped out of the index."""
+    index, first, second, live, copy = _gosports()
+    assert D.Index([live]).decide(copy)["decision"] is None                     # the gap: the live one alone
+    d = index.decide(copy)
+    assert d["decision"] == "duplicate_of" and d["of"] == live["key"]
+    assert {(m["key"], m["status"], m["live"]) for m in d["matches"] if m["confirmed"]} == {
+        (first["key"], "replaced", live["key"]), (second["key"], "replaced", live["key"])}
+
+
+def test_a_better_copy_of_a_replaced_product_replaces_the_live_one():
+    index, first, second, live, copy = _gosports()
+    d = index.decide({**copy, "grade": "POWER"})
+    assert d["decision"] == "duplicate_better" and d["of"] == live["key"]     # job.py withdraws the live one
+
+
+def test_a_copy_of_a_replaced_product_held_by_the_owner_is_never_taken():
+    """A11N 13512885159 matched 13405976594, replaced by 13552318731; a chain ending at a hold: (or any owner's
+    withdrawal) blocks its copies as the held product itself does."""
+    same = dict(values=[["Black"], ["Bronze"]], price=199350, category="50002783")
+    old = E(1100067303, 13405976594, "A11N SPORTS의 위조 골프 웨지 세트 Black", status="replaced",
+            photos=("85a6d8", "de2b09", "b59c45"), **same)
+    held = E(102683547, 13552318731, "A11N SPORTS의 위조 골프 웨지 세트 db4P Bronze", status="withdrawn",
+             photos=("85a6d8", "de2b09", "b59c45"), **{**same, "price": 187830})
+    copy = E(1100013105, 13512885159, "A11N SPORTS의 위조 골프 웨지 세트 Black", status="job",
+             photos=("e0a554", "3d2479", "9679ef"), **{**same, "price": 211330})
+    index = D.Index([held])
+    index.replace(old["key"], held["key"], old)
+    for c in (copy, {**copy, "grade": "PLATINUM", "reviews": 900}):
+        d = index.decide(c)
+        assert d["decision"] == "duplicate_of_withdrawn" and d["of"] == held["key"]
+
+
+def test_a_chain_ending_outside_the_index_never_lets_a_copy_through():
+    index, first, second, live, copy = _gosports()
+    index.drop(live["key"])                                   # published with no collected record, or dropped
+    d = index.decide({**copy, "grade": "PLATINUM"})
+    assert d["decision"] == "duplicate_of" and d["of"] == live["key"]
+
+
+def test_the_live_product_is_no_copy_of_its_own_replaced_copies_and_a_cycle_ends():
+    index, first, second, live, copy = _gosports()
+    same_as_first = {**live, "first": first["first"], "shas": first["shas"], "tkey": first["tkey"],
+                     "words": first["words"], "numbers": first["numbers"]}
+    assert index.decide(same_as_first)["decision"] is None                   # re-collected live one: itself
+    loop = D.Index()
+    loop.replace("a", "b")
+    loop.replace("b", "a")
+    assert loop.live("a") == ("b", None)
+
+
+def test_a_replaced_product_that_only_shares_the_title_is_not_followed():
+    """Not confirmed (an ordinary product, other photos and variants): listed, no decision."""
+    index, first, second, live, copy = _gosports()
+    other = {**copy, "agency": False, "first": "zz", "shas": {"zz"}, "key": f"{SHOP}:naver:7:7", "channel": "7"}
+    d = index.decide(other)
+    assert d["decision"] is None and d["matches"] and not any(m["confirmed"] for m in d["matches"])
+
+
+def test_index_replace_after_a_job_replacement_keeps_the_old_one_leading_to_the_new():
+    old, new = E(1, 1, WILSON), E(2, 2, WILSON, photos=("n1", "n2"), values=[["x"]], grade="POWER")
+    index = D.Index([old, new])
+    index.replace(old["key"], new["key"])
+    assert index.by_key[old["key"]]["status"] == "replaced"
+    d = index.decide(E(3, 3, WILSON, status="job"))                      # matches only old: a copy of new
+    assert d["decision"] == "duplicate_of" and d["of"] == new["key"]
+
+
+# ---- one listing copied by resellers (same_listing, 2026-11-16) --------------------------------------------------
+
+LAZRUS_PHOTOS = ("ce3147", "f694c5", "72bc4c")
+LAZRUS_SETS = [["Black Right Handed", "RH Black 50 54 58 Set"], ["Black Right Handed", "RH Black 52 56 60 Set"],
+               ["Silver Right Handed", "RH Silver 52 56 60 Set"]]
+
+
+def _lazrus(channel, pid, name, singles, **k):
+    return E(channel, pid, name, photos=LAZRUS_PHOTOS, values=LAZRUS_SETS + singles, category="50002783", **k)
+
+
+def lazrus():
+    """The real three (2026-11-16): one photo set byte for byte, the same 3 sets sold, other single wedges listed."""
+    return (
+        _lazrus(102329146, 13016648376, "남성 또는 개인용 라즈러스 프리미엄 단조 골프 웨지 세트 - 50 52 54 56 58",
+                [["Black Right Handed", "RH Black 52 Degree"], ["Silver Right Handed", "RH Silver 52 Degree"],
+                 ["Silver Right Handed", "RH Silver 56 Degree"], ["Silver Right Handed", "RH Silver 60 Degree"]],
+                price=312930),
+        _lazrus(102651580, 12079160628, "남성용 LAZRUS 프리미엄 단조 골프 웨지 세트 - 52, 56, 60도 웨지 + 더 많은 스핀을 위한 "
+                "밀링 페이스 - 훌륭한 골프 선물",
+                [["Black Left Handed", "LH Black 52 Degree"], ["Black Right Handed", "RH Black 52 Degree"],
+                 ["Silver Right Handed", "RH Silver 52 Degree"], ["Silver Right Handed", "RH Silver 56 Degree"]],
+                price=299880),
+        _lazrus(102770910, 12557380462, "남성 또는 개인용 라즈러스 프리미엄 단조 골프 웨지 세트 - 50 52 54 56 58 60 64 72도 + "
+                "더 많은 스핀을 위한 밀드 페이스 훌륭한 선물",
+                [["Black Left Handed", "LH Black 52 Degree"], ["Black Right Handed", "RH Black 52 Degree"],
+                 ["Black Right Handed", "RH Black 56 Degree"], ["Black Right Handed", "RH Black 64 Degree"],
+                 ["Black Right Handed", "RH Black 72 Degree"], ["Silver Right Handed", "RH Silver 52 Degree"],
+                 ["Silver Right Handed", "RH Silver 56 Degree"], ["Silver Right Handed", "RH Silver 60 Degree"]],
+                price=290070))
+
+
+def test_resellers_of_one_listing_are_one_product_whatever_their_titles_list():
+    a, b, c = lazrus()
+    assert a["sold"] == b["sold"] == c["sold"] and len(a["sold"]) == 3        # the single wedges are not sold
+    for x, y in ((a, b), (a, c), (b, c)):
+        assert D.signals(x, y)["variants"] < D.VARIANTS_JACCARD and not D.alike(x, y)   # the gap before
+        assert D.same_listing(x, y) and D.strong(x, y) and D.possible(x, y) and D.confirm(x, y)
+    assert [len(g) for g in D.groups([a, b, c])] == [3]
+    assert D.title_only(D.groups([a, b, c])[0]) == []
+
+
+def test_the_sold_variants_keep_single_clubs_outside_a_sets_only_category():
+    a = E(1, 1, "x", values=LAZRUS_SETS + [["Black Right Handed", "RH Black 52 Degree"]], category="50002787")
+    assert len(a["sold"]) == 4
+    other_shop = D.entry({**record(1, 1, "x", values=LAZRUS_SETS + [["Black", "52 Degree"]], category="50002783"),
+                          "key": "othershop:naver:1:1"})
+    assert len(other_shop["sold"]) == 4                                         # no rules for that shop: all sold
+
+
+@pytest.mark.parametrize("change", ["order", "one_photo", "two_photos", "sold", "no_variants", "colour"])
+def test_one_listing_needs_its_lead_photos_in_order_and_the_same_variants_sold(change):
+    a, b, _ = lazrus()
+    if change == "order":
+        b = {**b, "lead": (LAZRUS_PHOTOS[1], LAZRUS_PHOTOS[0], LAZRUS_PHOTOS[2])}
+    elif change == "one_photo":
+        b = {**b, "lead": LAZRUS_PHOTOS[:2] + ("other",), "shas": set(LAZRUS_PHOTOS[:2]) | {"other"}}
+    elif change == "two_photos":
+        a, b = ({**e, "lead": LAZRUS_PHOTOS[:2], "shas": set(LAZRUS_PHOTOS[:2])} for e in (a, b))
+    elif change == "sold":                                                     # Wilson JGI sizes: another size set
+        b = {**b, "sold": b["sold"] - {sorted(b["sold"])[0]}}
+    elif change == "no_variants":
+        a, b = ({**e, "sold": frozenset()} for e in (a, b))
+    else:                                                                       # a colour edition: its own variants
+        b = {**b, "sold": frozenset({"blackedition/rhblack525660set"})}
+    assert not D.same_listing(a, b) and not D.strong(a, b)
+
+
+@pytest.mark.parametrize("x, y", [
+    # one listing's photos and variants, and the titles still name another product: kind, hand, numbers the
+    # variants do not spell out, a model word
+    ("올리마르 ATS 주니어 라임 블루 시리즈 Right Hand Putter", "올리마르 ATS 주니어 라임 블루 시리즈 Right Hand Hybrid"),
+    ("BombTech 골프 웨지 세트 52 56 60도 왼손잡이", "BombTech 골프 웨지 세트 52 56 60도 오른손잡이"),
+    ("PGM 주니어 골프 클럽 완비 세트 Aged 3-5", "PGM 주니어 골프 클럽 완비 세트 Aged 9-12"),
+    ("PGM 여성 골프채 풀세트 9종", "PGM 여성 골프채 풀세트 12종"),
+    ("[던롭코리아정품] 스릭슨 27ZXI-RKT 남성 풀세트 GF", "[던롭코리아정품] 스릭슨 27ZXI-RKT MAX 남성 풀세트 GF"),
+])
+def test_one_listing_with_another_version_in_the_title_is_not_strong(x, y):
+    same = dict(photos=("p1", "p2", "p3"), values=[["a"], ["b"]], price=300000, category="50002787")
+    a, b = E(1, 1, x, **same), E(2, 2, y, **same)
+    assert a["lead"] == b["lead"] and a["sold"] == b["sold"]
+    assert not D.strong(a, b), (x, y)
+
+
+def test_a_title_naming_the_listing_first_variant_is_the_same_listing():
+    """PGM 13274024476 "Aged 9-12" and 13390550850 "Aged 3-5" (2026-11-16): the same 9 variants list every age, the
+    same photos; the numbers are the variants'."""
+    values = [[f"Aged {a}", c] for a in ("3-5", "6-8", "9-12") for c in ("Black", "Pink", "Yellow")]
+    same = dict(photos=("p1", "p2", "p3"), values=values, category="50002787")
+    a = E(102783573, 13274024476, "어린이용 PGM 주니어 골프 클럽 완비 세트, 스탠드 백이 있는 5개, 소년 및 소녀용 헤드 커버 "
+          "2개, 오른손 Aged 9-12 Black", price=330210, **same)
+    b = E(102682315, 13390550850, "eAj 용 PGM 주니어 골프 클럽 완비 세트, 스탠드 백이 있는 골프 클럽 5개, 소년 및 소녀용 "
+          "헤드 커버 2개, 오른손 Aged 3-5 Black", price=318870, **same)
+    assert D.same_listing(a, b) and D.strong(a, b)
+    a0, b0 = ({**e, "vnums": set()} for e in (a, b))
+    assert not D.same_listing(a0, b0)                       # numbers no variant spells out: Aged 9-12 / Aged 3-5
+
+
+@pytest.mark.parametrize("x, y", [
+    # the real pair (2026-11-16, 50002788): the variants "7irons(6-9.pw...)" spell 9 and 7, the titles count 10 and 9
+    ("미즈노 JPX QII 풀세트 여성 조합 골프채 10개 드라이버 유틸리티 7아이언", "미즈노 여성 풀세트 JPX QII 카본 골프채 9개 세트 미즈노코리아"),
+    ("PGM 여성 골프채 풀세트 9종", "PGM 여성 골프채 풀세트 12종"),
+    ("PGM 여성 골프채 9pcs 세트", "PGM 여성 골프채 12 pcs 세트"),
+])
+def test_a_count_in_the_title_is_its_own_even_when_a_variant_writes_the_number(x, y):
+    values = [["11.5도L", "4번22도L", "7irons(6-9.PW.PS.PS)카본L"], ["11.5도L", "5번25도L", "7irons(6-9.PW.PS.PS)카본L"],
+              ["12종 풀세트"]]
+    same = dict(photos=("p1", "p2", "p3"), values=values, price=1450000, category="50002788")
+    a, b = E(500004615, 13826383159, x, **same), E(500020721, 13826377851, y, **same)
+    assert a["lead"] == b["lead"] and a["sold"] == b["sold"]
+    assert not D.same_listing(a, b) and not D.strong(a, b), (x, y)
+
+
+def test_a_count_both_titles_share_does_not_part_one_listing():
+    """PGM 13274024476 / 13390550850 both write "5개" and "2개": the same counts, one listing still."""
+    values = [[f"Aged {a}", c] for a in ("3-5", "6-8", "9-12") for c in ("Black", "Pink")]
+    same = dict(photos=("p1", "p2", "p3"), values=values, category="50002787", price=330210)
+    a = E(1, 1, "PGM 주니어 골프 클럽 완비 세트, 골프 클럽 5개, 헤드 커버 2개, 오른손 Aged 9-12 Black", **same)
+    b = E(2, 2, "PGM 주니어 골프 클럽 완비 세트, 골프 클럽 5개, 헤드 커버 2개, 오른손 Aged 3-5 Black", **same)
+    assert a["counts"] == b["counts"] == {"5", "2"} and D.same_listing(a, b)
+
+
+def test_a_copy_of_a_replaced_product_priced_apart_from_the_live_end_is_not_followed():
+    """The price guard holds against the live end as at step 1: a copy priced like the replaced product but x2.5 the
+    live one is not its copy; x1.5 is (13826709716 at 44,000 KRW and its live end 13623397378 at 26,160: x1.68)."""
+    index, first, second, live, copy = _gosports()
+    far = {**copy, "price": int(live["price"] * 2.5)}
+    first_far = {**first, "price": far["price"]}
+    index.add(first_far)                                       # the replaced one priced near the copy
+    d = index.decide(far)
+    assert d["decision"] is None
+    assert any(m.get("live_price") is False for m in d["matches"] if m["key"] == first["key"])
+    near = {**copy, "price": int(live["price"] * 1.5)}
+    assert index.decide(near)["decision"] == "duplicate_of"
+
+
+def test_club_slot_axes_count_each_loft_as_transform_does():
+    """TaylorMade MG5 "52.09 SB" on 옵션 1 and 옵션 2 (club slots): the variant is two clubs, sold in a sets_only
+    category; on other axes the same loft twice is one club (left out)."""
+    line = record(1, 1, "테일러메이드 MG5 웨지 세트", values=[["52.09 SB", "56.12 SB"], ["52.09 SB", "52.09 SB"]],
+                  category="50002783")
+    slots = {**line, "specs": {"options": {"option_groups": [{"name": "옵션 1"}, {"name": "옵션 2"}]}}}
+    other = {**line, "specs": {"options": {"option_groups": [{"name": "Size"}, {"name": "Style Name"}]}}}
+    assert len(D.entry(slots)["sold"]) == 2 and len(D.entry(other)["sold"]) == 1

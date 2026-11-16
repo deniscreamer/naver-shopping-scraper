@@ -185,8 +185,11 @@ reason.
 A duplicate also shows its match's 2 photos on the right, the match's options, and the pair's dedupe signals in the
 index:
 - **Blue:** the match is live.
-- **Red:** the match is no longer in the store. The card names the live copy when the withdrawal says
-  `replaced_by:`, else it says "no live copy".
+- **Red:** the match is no longer in the store. The card follows the withdrawal reasons to the live copy
+  (`lens.live_copy`, 2026-11-16): `replaced_by:<key>` and `hold: copy of live <key>, ...`, each only at the start of
+  the reason, hop by hop until a published product: `-> live: <pid>`, with ` via <pid>,...` when the chain passed
+  other withdrawn products. Else `-> no live copy`, with ` (ends at <pid>)` when a successor was named but is not
+  live (never sent, another reason, a loop). `index.tsv` has the column `match_live`.
 
 When: after a job whose prepared-but-not-published count is high (the wedge pilot: "why so many prepared but not
 added?"), and before changing a rule to let more in.
