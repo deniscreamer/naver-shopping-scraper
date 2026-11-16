@@ -1,15 +1,15 @@
 # scripts/
 
-Client-side consumers of the Naver Shopping API. Everything here talks to a
-running server over HTTP only, plus a few other fetches (the full list: AGENTS.md rule 3): the photo files the API
-linked, from Naver's image CDN (`naver_images.py`, see COLLECT.md, Product photos), and a
-read-only look at our own Shopify store's catalog (`shopify_catalog.py`, see
-COLLECT.md, The listing screen and the shop check), and the publication to that store (`publish.py`, see PUBLISH.md, Publication).
-ShopNShip's public shipping calculator is asked by hand only, to capture the delivery tariff
-(`shopnship_rates.py`, `shopnship_explore.py`, see PRICE.md, The price), never in the price path. The full list of
-outside fetches: AGENTS.md rule 3.
+Client-side consumers of the Naver Shopping API. Everything here talks to a running server over HTTP only, plus a
+few other outside calls, each dated at its code (the full list: AGENTS.md rule 3): the photo files the API linked, from
+Naver's image CDN (`naver_images.py`, see COLLECT.md, Product photos); the sellers' description image hosts
+(`description_images.py`); a read-only look at our own Shopify store's catalog (`shopify_catalog.py`, see COLLECT.md,
+The listing screen and the shop check; `store_diff.py`), and the publication to that store (`publish.py` through
+`shopify_admin.py`, see PUBLISH.md, Publication); the model APIs (`translate.py`, `describe.py`); the owner's notice
+webhook (`notify.py`). ShopNShip's public shipping calculator is asked by hand only, to capture the delivery tariff
+(`shopnship_rates.py`, `shopnship_explore.py`, see PRICE.md, The price), never in the price path.
 
-## Docs
+## How to use
 
 Working with the shop's products (the operator's tasks), each a skill (`.claude/skills/<name>/SKILL.md`) to read
 first; what waits for the owner: [OWNER_RULES.md](OWNER_RULES.md).
@@ -141,7 +141,7 @@ Every `scripts/*.py`, by stage; a test of one module is in the pattern row at th
 | `state_backup.py` | Offline, by hand: the backup of `scripts/output`, `server/output` and `research/` (plans outside git, with the state) into tar + zstd archives by phase outside the repository (state, photos, description images in parts, server pages, old runs), `MANIFEST.json` with sha256, `RESTORE.md`; `--dry-run`, `--verify`, `--restore` into an empty folder. Reads the sources only (see OPERATIONS.md, Backup) |
 | `output/` | Run output (`output/<run>/products.jsonl`, `listing.jsonl`), gitignored |
 | **Tests** (offline: `conftest.py` fails a network attempt) | |
-| `test_<module>.py` | Offline tests of `<module>.py`, every outside service faked (a fake CDN, Admin API, GraphQL and staging bucket, calculator, model, API client); `<module>` is one of brand_fallback, captcha_watch, dedupe, deferred_log, delivery_tariff, describe, description_clean, description_image_text, description_images, description_measures, description_ocr, harvest_listing, image_prep, job, listing_filter, naver_images, naver_variants, package_measures, placement, product_page, publish, reprice, review_clean, review_grid, review_pick, review_suspects, run_transform, shared_images, shop_files, shop_pricing, shop_stores (every `StoreId` has a profile, `SHOP_STORE`), shopify_admin, shopify_catalog, shopify_payload, shopnship_explore, shopnship_rates (a fake calculator, a saved capture), spec_variants, state_backup, store_diff, transform, translate, translate_eval. The description images' tests: the stage (fake fetcher and engine), the slicer / rows, the guess and the merge (real OCR rows). Also `test_shop_lock.py` (`shop_files.shop_lock`), `test_deferred_log.py` (with the `collect_guard` run rules), `test_dedupe.py` (with `job.py --dedupe`), `test_publish.py` (the payload's variant prices and metafields too), `test_run_transform.py` (the run-level steps; the per-product prepare is `test_transform.py`) |
+| `test_<module>.py` | Offline tests of `<module>.py`, every outside service faked (a fake CDN, Admin API, GraphQL and staging bucket, calculator, model, API client); `<module>` is one of brand_fallback, captcha_watch, dedupe, deferred_log, delivery_tariff, describe, description_clean, description_image_text, description_images, description_measures, description_ocr, harvest_listing, image_prep (the WebP preparation), job, listing_filter (the screen), naver_images, naver_variants, package_measures (the shipping fields), placement, product_page, publish, reprice (the repricing flow), review_clean, review_grid, review_pick, review_suspects, run_transform, shared_images, shop_files, shop_pricing, shop_stores (every `StoreId` has a profile, `SHOP_STORE`), shopify_admin, shopify_catalog (the shop check), shopify_payload, shopnship_explore, shopnship_rates (a fake calculator, a saved capture), spec_variants, state_backup, store_diff, transform, translate, translate_eval. The description images' tests: the stage (fake fetcher and engine), the slicer / rows, the guess and the merge (real OCR rows). Also `test_shop_lock.py` (`shop_files.shop_lock`), `test_deferred_log.py` (the journal, with the `collect_guard` run rules), `test_dedupe.py` (with `job.py --dedupe`), `test_publish.py` (the payload's variant prices and metafields too), `test_run_transform.py` (the run-level steps; the per-product prepare is `test_transform.py`) |
 | Tests on real data | Real rows, quotes or links, product ids beside them: `test_naver_variants.py` (a product with paid and sold-out variants), `test_transform.py` (`fixtures/collected_fairwardgolf.jsonl`), `test_placement.py` (the gender attribute and placement: the 50 fixtures, the rules case by case), `test_description_clean.py`, `test_spec_variants.py` (40 golf sets, 2026-11-06, run 40b; must-not-match cases too), `test_shared_images.py`, `test_run_transform.py` (store 100568453's banners), `test_description_measures.py` (real OCR rows), `test_dedupe.py` (fairwardgolf patterns, 2026-11-15), `test_describe.py` (six real products, `fixtures/describe/`), `test_delivery_tariff.py` (the captures and explorations replayed); Pillow-made photos in `test_naver_images.py`, `test_image_prep.py` |
 | `conftest.py` | The folder's tests never reach the network: a connection attempt fails the test; no test sends a notice (`notified` stands in for `notify.notify`) |
 | `test_naver_api_client.py` | The client and the harvest classifier, against the server's limits and search fixture (the one borrow of server modules, Boundary above) |

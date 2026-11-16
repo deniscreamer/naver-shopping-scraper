@@ -2,7 +2,7 @@
 
 How the translation stage works, the owner's decisions behind it, its dictionaries, rules and prompts, the review
 cleaning, how to add a shop (tenant) or a Naver category, how to check the quality, and what is still open; the
-measurements and history are at the end. The code: `translate.py` (the stage), `translation_dicts.py`
+history (with the measurements) is at the end. The code: `translate.py` (the stage), `translation_dicts.py`
 (dictionaries), `translation_rules.py` (unit templates), `review_clean.py` (reviews, in the transform),
 `translate_keys.py` (the keys), `translate_eval.py` (the quality check), `prompts/` (system prompt and briefs). The
 transform that writes the texts: [TRANSFORM.md](TRANSFORM.md) "Transform".
@@ -38,6 +38,7 @@ When a dictionary backup is due, a `translate.py` run's report (not `--only`) an
 
 | Task | Section |
 |---|---|
+| What the stage translates and in which order (own store, dictionary, rules, model) | [Translation](#translation-translatepy) |
 | Why the stage works as it does (model, fallback, tokens, what is not translated) | [Decisions](#decisions-the-owner-2026-11-08) |
 | A product's own title or review | [1. The product's own store](#1-the-products-own-store) |
 | A term wrong for every product; live and backup dictionaries | [2. Dictionaries](#2-dictionaries) |

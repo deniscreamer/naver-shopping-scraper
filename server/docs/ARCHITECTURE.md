@@ -15,15 +15,15 @@ Read the one section your question needs.
 
 | Question | Section |
 |---|---|
-| which module does what; where a request goes | 1 Module map, 2 Layers, 3 Request flow |
-| a block, a 502, a retry that did or did not happen | 5 Transports, 6 Box mechanics, 7 Retry topology; then [KNOWN_ISSUES.md](KNOWN_ISSUES.md) |
-| threads, slots, locks; why calls wait for each other | 4 Threading model |
-| why a second call was cheap or stale | 8 Cache |
-| a proxy, language or timezone; an env var | 9 Default identity, 10 Config and environment |
-| an import error, a test that cannot find a module | 11 Import model |
-| the owner's Chrome (listings, product pages, held listing tabs) | 12 Extension transport, then [EXTENSION.md](EXTENSION.md) |
-| what Naver does on one surface (search, store, product page, options, reviews, images, DataLab, walls) | 13 Naver specifics, by surface |
-| where a new upstream fact goes | 13 Naver specifics (one line under its surface, R-NAVER-4) |
+| which module does what; where a request goes | [1 Module map](#1-module-map), [2 Layers](#2-layers), [3 Request flow](#3-request-flow-end-to-end) |
+| a block, a 502, a retry that did or did not happen | [5 Transports](#5-the-two-transports), [6 Box mechanics](#6-box-mechanics-step-by-step), [7 Retry topology](#7-retry-topology); then [KNOWN_ISSUES.md](KNOWN_ISSUES.md) |
+| threads, slots, locks; why calls wait for each other | [4 Threading model](#4-threading-model) |
+| why a second call was cheap or stale | [8 Cache](#8-cache) |
+| a proxy, language or timezone; an env var | [9 Default identity](#9-default-identity-with-and-without-a-proxy), [10 Config and environment](#10-config-and-environment) |
+| an import error, a test that cannot find a module | [11 Import model](#11-import-model) |
+| the owner's Chrome (listings, product pages, held listing tabs) | [12 Extension transport](#12-extension-transport-beta), then [EXTENSION.md](EXTENSION.md) |
+| what Naver does on one surface (search, store, product page, options, reviews, images, DataLab, walls) | [13 Naver specifics](#13-naver-specifics), by surface |
+| where a new upstream fact goes | [13 Naver specifics](#13-naver-specifics) (one line under its surface, R-NAVER-4) |
 
 ## 1. Module map
 

@@ -17,10 +17,10 @@ Read the section the task names; the steps and commands are there, not here.
 | The rule, its dated comment and test | same, step 4 |
 | The golden diff (scripts-only rule, or a server parser change: three steps in order) | same, step 5 |
 | The docs in the same commit, the checks | same, steps 6-7 |
-| Products already in the store; a value the seller does not state | same, "Rules" |
+| Products already in the store; a value the seller does not state | same section, the "Rules:" list at its end |
 | A gap known but not handled; an owner question | "Not handled yet (known)", "Open questions" |
 
-Standing rules (the doc's "Rules", kept here too):
+Standing rules (kept here too; in the doc: the section's opening line for the fixtures exception, its "Rules:" list for the rest):
 - Fixtures and tests from products checked in test runs are added without asking (the owner, 2026-11-06;
   `server/docs/DEVELOPMENT_RULES.md` R-TEST-5).
 - Applying a rule to products already in the store is the owner's word (`scripts/OWNER_RULES.md` section 1);

@@ -22,6 +22,7 @@ Commands (repo root), what they print and what you do:
 | `.venv/bin/python scripts/state_backup.py --dry-run` | the files left out (and why), `plan -> <folder>`, each archive's files and sizes, the estimate and the free space; `WARNING: a job is running` | a warning: back up between jobs; then run it without `--dry-run` |
 | `.venv/bin/python scripts/state_backup.py` | `writing <archive> ...` per archive, then `for the cloud:` and the files | upload that folder to the cloud by hand; `refused: ...` (exit 2): not enough space, a folder inside the repository, or an archive already there (another `--dest`, or delete it yourself) |
 | `.venv/bin/python scripts/state_backup.py --verify <folder>` | `ok` / `FAIL: ...` per archive, then `verify: ok` or `verify: N FAILED` (exit 1) | a failure: make the backup again |
+| `.venv/bin/python scripts/state_backup.py --restore <folder> --to <empty folder> [--phase state,...]` | `  <archive>: N files -> <to>` per archive (exit 0); `nothing to restore from <folder> for <phases>` (exit 1); `refused: <to> is not empty` or `refused: <to> is the repository or holds it; ...` (exit 2); `refused: <archive>: missing from <folder>` or `refused: <archive>: sha256 differs from MANIFEST.json` (exit 1) | restore only into an empty (or new) folder outside the repository, never over a working repository; every chosen archive is checked against MANIFEST.json before anything is unpacked; a missing or changed archive: `--verify` the folder, use another copy (the cloud's); then compare and move the folders you need into the repository by hand (stop any job first; the folder's `RESTORE.md`) |
 | A command refused with `<tool>: stop: <shop> is busy: <holder>: ...` (exit 2) | another process holds the shop's lock | wait for it (`job.py status`) or stop it; see [Shared files](#shared-files-shop_filespy-2026-11-16) |
 | `LedgerError: <path>:<n>: ...` (a job: `STOP ... LedgerError`) | a line of a shop's file is not JSON | fix the line by hand; a rebuilt file: the command that rebuilds it |
 
@@ -98,7 +99,7 @@ writes them goes through `shop_files.py`:
   model,
   `reprice.py --apply`, `description_images.py`, `store_diff.py --adopt`. Not by the library functions (`run`,
   `publish_one`): a job calls them in its own process under its own lock. Free: `job.py status` / `new`, the lenses,
-  reports, `store_diff.py`, `publish.py --dry-run` / `--withdraw` / `--restore`. The kernel frees it when the
+  reports, `store_diff.py`, `publish.py --dry-run` / `--withdraw` / `--restore` / `--activate`, `job.py activate`. The kernel frees it when the
   process dies (kill -9 too). The lock is advisory: an editor or a heredoc into a `.jsonl` is not stopped, so a
   new writer of shared files uses `shop_files` and a new sending command takes the lock.
 

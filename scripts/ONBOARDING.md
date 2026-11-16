@@ -24,7 +24,7 @@ First, ask the owner for the values (A1, A2, A3, A5; for a shop B1, B2, B6), nev
 | `SHOP_STORE=<shop> .venv/bin/python scripts/job.py new --query "..." --category <leaf id> --count 5` | `stop: no category_measures.json row for <id>: ask the operator` (exit 2) | A1 |
 | the same | `category_mismatch` in the screen counts | a wrong id: use the leaf id (below) |
 | `job.py run` | `stop: prepare: ShopRulesMissing` | A2 (a new shop: B4) |
-| `job.py run` | `Untranslated` | the translation (skill `translation`) |
+| `job.py run` (a job made with `--publish`) or `publish.py <shop>` | a product `failed` at stage publish / `held` with `Untranslated: ...` (a text the product needs has no English) | the translation (skill `translation`): [TRANSLATION.md](TRANSLATION.md#how-to-use), status `untranslated`: fix the brief, rule or dictionary entry, then `translate.py <shop> --only <key>` |
 | `.venv/bin/python scripts/placement.py <shop>` | `no_profile` or `unresolved` in the counts; a new shop without a profile: `PlacementRulesMissing` | A3; B5 |
 | `.venv/bin/python scripts/publish.py <shop> --dry-run` | builds only what is ready, translated and placed; payloads in `shops/<shop>/publish/payloads/<id>.json` | read the price breakdown (D step 5); the real publish only after the owner says yes |
 | `.venv/bin/python scripts/store_diff.py <shop>`, then `translation_dicts.py status` | the published products a publication would change, those that cannot be built now; the new dictionary entries | each product is the owner's to decide; read every new entry before the dictionaries' backup (D step 6) |

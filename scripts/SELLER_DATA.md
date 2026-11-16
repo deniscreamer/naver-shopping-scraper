@@ -74,6 +74,8 @@ tests from products checked in test runs are added without asking.
    `UPDATE_GOLDEN=1 .venv/bin/python -m pytest server/naver_shopping/test_pages.py`, then
    `.venv/bin/python scripts/collected_fixtures.py refresh`, then
    `UPDATE_GOLDEN=1 .venv/bin/python -m pytest scripts/test_prepared_golden.py`.
+   A new or changed measures fixture (step 3): `UPDATE_GOLDEN=1 .venv/bin/python -m pytest
+   scripts/test_measures_fixtures.py` (the `make_measures_fixture.py` docstring).
    Read every changed line: only the intended products and fields may move.
 6. **The docs, same commit**: the line here (pattern, id, where handled; out of "Not handled yet" when it was
    there); the stage doc's section; a new held code's row in [TRANSFORM.md](TRANSFORM.md) "Held codes"

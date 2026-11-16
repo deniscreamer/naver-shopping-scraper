@@ -42,10 +42,12 @@ What a call can answer, and what to do (`ApiError(status, error, errors)`; full 
 | 200 (202 for a started listing job) | the answer, typed in `naver_types.py` | guard every `X \| None` field |
 | `ApiError` 400 | the input is wrong (e.g. a store link without a real slug) | fix the call ([Link semantics](#link-semantics-for-harvesting)); a harvest logs it, counts it failed and goes on |
 | `ApiError` 404 | details: a bare id or slug-less link (since 2026-11-02); specs: the card was not on that search page | skip, or read specs again with another `query` (the name first, the listing's query on a 404) |
-| `ApiError` 409 | the adapter is busy: a listing job, a `/products/specs` read, another listing (one at a time) | wait and retry (the check run: every 30 s, up to 12 times) |
+| `ApiError` 409 | the adapter is busy: a listing job, a `/products/specs` read, another listing (one at a time) | wait and retry once the other call is done (the check run: every 30 s, up to 12 times) |
 | `ApiError` 500 | a server parser bug | report it (skill `api-error-triage`) |
 | `ApiError` 502 | blocked / upstream failure; the client already retried twice (10 s, then 30 s) | KNOWN_ISSUES.md; skill `api-error-triage` |
-| `ApiError` 503 | the extension is not connected, a wall, the page did not render, or Naver's internal-error page (K-21) | `example_01`; K-21: wait 120 s, twice, then skip and read it again at the end |
+| `ApiError` 410 | a held listing tab is gone (`/listing-tabs/<id>/next` or `/specs`: closed, replaced, the server restarted, ...) | final for that tab: never retry it, open a new one |
+| `ApiError` 503, error `wall: ...` or no kind (the extension not connected) | a wall in the owner's Chrome (captcha, login gate, ban page, a refused batch or stall), or no adapter | final: stop, never retry (a retry after a wall risks a ban, R-EXT-3; [ENDPOINTS.md](../server/docs/ENDPOINTS.md#errors-routescall) "Errors" client policy); not connected: `example_01`, tell the owner; a listing tab's `wall: captcha ...` only: the tab is kept and may be read again |
+| `ApiError` 503, error `naver error page: ...` or `adapter error: ...` | Naver's internal-error page (K-21, passes in minutes) or a failed read (e.g. the page did not render) | wait ~120 s and retry, at most twice, then skip and read it again at the end |
 | `harvest_listing.py` exit 0 / 3 | done / paused with ranges pending | 3: run again with the same `--out` |
 | `ShopNotConfigured`, `CatalogError` | the shop check cannot answer (no store values or credentials; another shop, a bad or doubled key) | ask the operator; never treat it as "not there" |
 | a product `deferred` | partial twice | not taken again; only the owner allows one retry (`deferred_log.py allow`) |

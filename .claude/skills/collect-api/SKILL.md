@@ -11,7 +11,7 @@ section of `scripts/COLLECT.md` the task needs (it opens with "How to use"); the
 
 | Task | `scripts/COLLECT.md` section |
 |---|---|
-| The commands, what a call can answer (400 / 404 / 409 / 500 / 502 / 503, harvest exit codes) and what to do | "How to use" |
+| The commands, what a call can answer (400 / 404 / 409 / 410 / 500 / 502 / 503 by its kind: a `wall:` is final, harvest exit codes) and what to do | "How to use" |
 | Which script or client method to start from | "Examples: start here" |
 | Product details: the record or the page (`/products/specs`) | "Product details: two ways" |
 | Options: free / paid / sold-out variants | "Product options" |
