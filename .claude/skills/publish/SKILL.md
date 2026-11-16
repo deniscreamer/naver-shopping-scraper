@@ -16,7 +16,8 @@ What the doc covers:
 Commands (repo root):
 - `.venv/bin/python scripts/publish.py <shop> --dry-run` (payloads to `publish/payloads/`, nothing sent)
 - `.venv/bin/python scripts/store_diff.py <shop>` (read only: what a publication would change)
-- `.venv/bin/python scripts/publish.py <shop> --only <key>` / `--withdraw` / `--restore` / `--activate` (writes)
+- `.venv/bin/python scripts/publish.py <shop> --only <key>` (writes); `--withdraw <key> --reason "..."`,
+  `--restore <key> --reason "..."`, `--activate <key>` (each repeatable)
 
 Rules:
 - Shopify writes go only through `publish.py` / `shopify_admin.py` (AGENTS.md rule 3).

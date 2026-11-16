@@ -13,7 +13,8 @@ What the doc covers:
 - the comparison of models (2026-11-10): quality, cost, time.
 
 Commands (repo root):
-- `.venv/bin/python scripts/describe.py <shop> --offline` / `--packet` (no model)
+- `.venv/bin/python scripts/describe.py <shop> --offline` (no model); `--only <key> --packet` prints what the model
+  would be given
 - `.venv/bin/python scripts/describe.py <shop> --only <key>` / `--limit N` (the model, paid calls)
 - `.venv/bin/python scripts/job.py new ... --publish --describe` (each product described before it is sent)
 
