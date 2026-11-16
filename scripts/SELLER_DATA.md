@@ -64,7 +64,9 @@ tests from products checked in test runs are added without asking.
      (reads only `scripts/output/shops/fairwardgolf`: the product must be collected there and have its
      description_images sidecar, made by `description_images.py <shop> --products <id>`: networked, the sellers'
      image hosts and OCR, only when the task allows);
-   - the lenses' cases: `.venv/bin/python -I scripts/make_lens_fixture.py` (after a deliberate change).
+   - the lenses' cases: `.venv/bin/python -I scripts/make_lens_fixture.py` (after a deliberate change);
+   - the shop fixture (a real slice of the shop's files and two jobs, for the tools that read them):
+     `.venv/bin/python -I scripts/make_shop_fixture.py` (a new case: a `CASES` line; OPERATIONS.md "The shop fixture").
    Fixtures hold real data, trimmed, no cookies, tokens or personal data (R-TYPE-6, R-EXT-4).
 4. **The rule**: the narrowest change at the code that handles the pattern, with a dated comment naming the
    product id; a test whose docstring carries the dated observation (R-TEST-2).

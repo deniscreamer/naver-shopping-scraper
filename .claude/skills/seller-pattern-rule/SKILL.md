@@ -13,7 +13,7 @@ Read the section the task names; the steps and commands are there, not here.
 | Is the pattern known? (grep the product id, then the Korean words) | "How to use" (what each result means) |
 | Which code reads a part of the page | "How to use" (the part -> section table), then that section |
 | Which side reads it: server or scripts | "A new pattern: from the page to a rule" step 2 |
-| A fixture: saved page, collected line (also placement: `test_placement.py` `EXPECTED`), package (measures), lens cases | same, step 3 (offline unless noted; the saved page and the description images sidecar are live, only when the task allows the network, never during a job) |
+| A fixture: saved page, collected line (also placement: `test_placement.py` `EXPECTED`), package (measures), lens cases, the shop fixture (`make_shop_fixture.py`) | same, step 3 (offline unless noted; the saved page and the description images sidecar are live, only when the task allows the network, never during a job) |
 | The rule, its dated comment and test | same, step 4 |
 | The golden diff (scripts-only rule, or a server parser change: three steps in order) | same, step 5 |
 | The docs in the same commit, the checks | same, steps 6-7 |

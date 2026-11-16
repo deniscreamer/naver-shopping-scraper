@@ -13,6 +13,9 @@ Running the scripts and keeping their state safe. The doc: `scripts/OPERATIONS.m
 | The server, the scripts' requirements, the entry points with their skills, the live smoke (harvest examples: skill `collect-api`), the offline checks | "Running" |
 | Back up `scripts/output`, `server/output` and `research/` into archives outside the repo; verify; restore | "Backup" |
 | Code that writes a shop's files: atomic writes, appended lines, `read_jsonl`, `shop_lock` | "Shared files" |
+| A product by its id, handle or link (`shop_view.resolve`); `--keys-file`, `--job [--event]`; a CLI that takes products | "Naming a product" |
+| A test on real products: the shop fixture (`fixtures/shop/`, `make_shop_fixture.py`, pytest `shop_fixture`) | "Naming a product", "The shop fixture" |
+| The shop's files, the jobs and the store read by hand (`shop_view.py` show / query / ledger / history / check, `prepared_diff.py`, `shopify_catalog.py`'s CLI); their exit codes | "Reading the shop by hand" (questions: skill `shop-data`) |
 | Typed calls, sequential by default, the server cache, status handling, pagination, naming, style | "Conventions" |
 | When the doc was split out | "History" |
 | An error from the API or a job | skill `api-error-triage` |
@@ -21,10 +24,14 @@ Commands (repo root):
 - `scripts/check.sh` (server suite, scripts suite, mypy; offline) before a commit
 - `.venv/bin/python scripts/state_backup.py --dry-run`, then without it; `--verify <folder>`
 - `.venv/bin/python scripts/smoke_endpoints.py` (live, server running)
+- `.venv/bin/python scripts/shop_view.py key <shop> <ref> ...` (a ref's key, read only)
+- `.venv/bin/python -I scripts/make_shop_fixture.py` (rebuild the shop fixture after a deliberate change; read the diff)
 
 Rules:
 - Tests never hit the network; `scripts/` talks to the server over HTTP only (AGENTS.md rules 3, 4).
 - New code that writes a shop's files goes through `shop_files.py` (`write_atomic`, `append_line`, `shop_lock`).
+- A new CLI that takes products: `shop_view.add_ref_flags` + `keys_from_args` (a ref of 0 or 2+ products stops it;
+  never "the first"); a full key passes as it is.
 - A backup after each release; restore only into an empty folder.
 - What waits for the owner, and Never (no `.env*`, no secrets printed): `scripts/OWNER_RULES.md`.
 

@@ -235,6 +235,10 @@ on two products stops the check (`CatalogError`) instead of answering "not there
 older than 5 minutes (before the run and before each product). The store's values live in `shop_stores.py`
 (`Shopify`: domain, shop id, API version, credentials variable, namespace); a store without them raises
 `ShopNotConfigured`: ask the operator.
+By hand, the same read-only access (2026-11-16): `shopify_catalog.py <shop> show <ref> | counts | vendors |
+collection <handle> | dump --out F.jsonl` ([OPERATIONS.md](OPERATIONS.md#reading-the-shop-by-hand-2026-11-16)
+"Reading the shop by hand"); in code, `ShopCatalog.paged(query, path)` pages any connection (the query takes
+`$cursor`).
 
 **Access**: there is no lasting token (fairwardgolf, 2026-11-05). `.env` holds only the path of the store app's
 credentials file (`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`; `PRODUCTS_API_CLIENT_ID` / `PRODUCTS_API_CLIENT_SECRET`, the

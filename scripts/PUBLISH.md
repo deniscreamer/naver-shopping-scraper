@@ -14,13 +14,18 @@ procedure for store actions: skill `store-actions`. Commands from the repo root:
 .venv/bin/python scripts/publish.py fairwardgolf [--only <key>] [--force] [--dry-run] [--rehandle] [--shops-root DIR]
 .venv/bin/python scripts/publish.py fairwardgolf --withdraw <key> | --restore <key> --reason "..."   # also --activate <key>
 .venv/bin/python scripts/store_diff.py fairwardgolf [--only <key>] [--category <id>]                 # read only
+.venv/bin/python scripts/publish.py fairwardgolf --withdraw <ref> --reason "..." --dry-run          # the key, nothing sent
 ```
+
+Wherever a `<key>` is asked, a product id, a handle or a link works too, and `--keys-file F` / `--job ID [--event E]`
+add more (2026-11-16): [OPERATIONS.md](OPERATIONS.md#naming-a-product-shop_viewresolve-2026-11-16) "Naming a product".
 
 | Task | Run | Section |
 |---|---|---|
 | See what a product would become, send nothing | `publish.py <shop> --dry-run [--only <key>]` (payloads in `publish/payloads/`) | [Publication](#publication-publishpy-mvp-the-owner-2026-11-08), [The payload](#the-payload-shopify_payloadpy) |
 | Publish what is ready (a job with `--publish` does it per product) | `publish.py <shop> [--only <key>]` | [Publication](#publication-publishpy-mvp-the-owner-2026-11-08) |
 | The store and our files disagree | `store_diff.py <shop> [--only <key>]`; skill `product-trace` | [Store actions](#withdraw-hold-restore-activate-store-actions) |
+| What the store holds now (one product, counts, a collection, a dump) | `shopify_catalog.py <shop> show <ref>`, `counts`, `collection <handle>` (read only) | [After an action](#after-an-action-check-it) |
 | Withdraw, hold, restore, activate, rehandle, force | the flags above, on the owner's word | [Store actions](#withdraw-hold-restore-activate-store-actions) |
 | A published product looks wrong (title, vendor, price, options, reviews, photos) | `--dry-run --only <key>`, read the payload | [The payload](#the-payload-shopify_payloadpy), [Metafields](#metafields) |
 | Credentials, tokens, uploads | never read the credential files | [Access and uploads](#access-and-uploads) |
@@ -62,7 +67,9 @@ product again too, so `reprice.py` shows the change first (see PRICE.md, The pri
 
 Each one waits for the owner's word ([OWNER_RULES.md](OWNER_RULES.md)); the procedure: skill `store-actions`. A
 product's key is `fairwardgolf:naver:<channel>:<product id>`: a lens's `index.tsv` gives it by sheet number (column
-`key`), the ledger by product id.
+`key`), the ledger by product id; each flag also takes the product id, a handle or a link and resolves it (two
+products for one ref: exit 2, both keys listed), and `--dry-run` with a store action prints `<key>: would <action>`
+and sends nothing: run it first to see the key the action takes.
 
 - `publish.py <shop> --withdraw <key> --reason "..."`: the product goes DRAFT in the store (nothing deleted), the
   ledger row says `withdrawn` with the reason, and it is never sent again; dedupe closes a new copy of it as
@@ -79,6 +86,23 @@ product's key is `fairwardgolf:naver:<channel>:<product id>`: a lens's `index.ts
   even when nothing changed. Both re-send a published product: rule 1 of OWNER_RULES.md.
 - `store_diff.py <shop> [--only <key>] [--category <id>]`: read only, what a publication would change, field by
   field; `--adopt` (takes the shop's lock) records `output` for products the store already has.
+
+### After an action: check it
+
+Read only, after the owner's word was carried out (2026-11-16, the owner's five tools):
+
+```sh
+.venv/bin/python scripts/shop_view.py history <shop> <ref>             # the ledger rows the action wrote
+.venv/bin/python scripts/shop_view.py check <shop> plan.tsv            # every planned key<TAB>state<TAB>reason: ok
+.venv/bin/python scripts/shopify_catalog.py <shop> show <ref>          # the store's status, handle, vendor, collections
+.venv/bin/python scripts/shopify_catalog.py <shop> counts              # active / draft / archived / all
+```
+
+`shopify_catalog.py show` finds the product by the ledger's `product_id` (a ref as everywhere; a handle or a number
+our files never had is asked of the store), `--variants`, `--metafields [NS[.KEY]]` and `--media` add their lines,
+`--json` the store's answer. `counts`' active and draft should equal `shop_view.py query <shop> --count-by state`'s
+active and withdrawn + draft (2026-11-16: 2017 and 346, the same on both sides). The whole tool:
+[OPERATIONS.md](OPERATIONS.md#reading-the-shop-by-hand-2026-11-16) "Reading the shop by hand".
 
 ## The payload (`shopify_payload.py`)
 

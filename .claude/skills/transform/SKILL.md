@@ -14,6 +14,7 @@ open with "How to use".
 | Run the transform, read its output and exit codes | `scripts/TRANSFORM.md` "How to use" |
 | A product is held / not placed / not taken: what the code means, what to do | `scripts/TRANSFORM.md` "Held codes" |
 | The prepare cache: slow, or `--verify` says `differs` | `scripts/TRANSFORM.md` "The prepare cache" |
+| What a rule or code change changed, which of those are in the store (`--diff`, `prepared_diff.py`) | `scripts/TRANSFORM.md` "What a rule change changed" |
 | The prepared record's fields | `scripts/TRANSFORM.md` "Prepared product", "Record types" |
 | A price in KRW / USD, variants, options, SKU, delivery, a note in `notes` | `scripts/TRANSFORM.md` "Prices, variants and options" |
 | Reviews cleaned wrong | `scripts/TRANSFORM.md` "Reviews" |
@@ -32,13 +33,17 @@ open with "How to use".
 
 Commands (repo root, offline unless noted):
 - `.venv/bin/python scripts/keep_run.py scripts/output/<run>` then `.venv/bin/python scripts/run_transform.py <shop>`
-- `.venv/bin/python scripts/run_transform.py <shop> --verify` (cache vs afresh), `--full` (all afresh)
+- `.venv/bin/python scripts/run_transform.py <shop> --verify` (cache vs afresh), `--full` (all afresh), `--diff`
+  (then what changed, product by product), `--shops-root <copy>` (a clone of the shop: `cp -cR`)
+- `.venv/bin/python scripts/prepared_diff.py old.jsonl new.jsonl [--fields ...] [--published-only] [--keys-out F]`
 - `.venv/bin/python scripts/description_images.py <shop>` (networked OCR stage)
 - `UPDATE_GOLDEN=1 .venv/bin/python -m pytest scripts/test_prepared_golden.py` after a deliberate change: read the diff.
 
 Rules:
 - Category defaults and baselines are the owner's values, dated; never invent one (`CategoryDefaultsMissing` stops).
-- A change that alters published products: `store_diff.py <shop>`, then `scripts/OWNER_RULES.md` rule 1.
+- A change that alters published products: `run_transform.py <shop> --diff` (or `prepared_diff.py
+  --published-only`) for which ones and how, `store_diff.py <shop> --keys-file F` for what the store would get,
+  then `scripts/OWNER_RULES.md` rule 1.
 - Add fixtures and tests from checked products (no need to ask: R-TEST-5); a behaviour change updates TRANSFORM.md
   or PACKAGE.md in the same commit.
 - A new held code (transform), placement status or dedupe decision gets its row in TRANSFORM.md "Held codes" in the

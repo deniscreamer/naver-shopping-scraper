@@ -13,6 +13,9 @@ Offline, deterministic, no network (repo root). `job.py` runs the same per produ
 .venv/bin/python scripts/run_transform.py fairwardgolf               # every kept run -> prepared/
 .venv/bin/python scripts/run_transform.py fairwardgolf --full        # the same, every product prepared afresh
 .venv/bin/python scripts/run_transform.py fairwardgolf --verify      # each cache record vs prepare afresh
+.venv/bin/python scripts/run_transform.py fairwardgolf --diff        # then what changed, product by product
+.venv/bin/python scripts/run_transform.py fairwardgolf --shops-root <copy> --diff   # the same on a copy of the shop
+.venv/bin/python scripts/prepared_diff.py old.jsonl new.jsonl [--fields status,brand,price] [--published-only] [--keys-out F]
 ```
 
 `run_transform.py` takes the shop's lock (not while a job runs: `stop: <shop> is busy`, exit 2); `--verify` only
@@ -40,6 +43,8 @@ What it prints, and what to do:
 | a package field or its `confidence` looks wrong | the five fields | [PACKAGE.md](PACKAGE.md), How to use |
 | a note in `notes` | never blocks | its rule below ([Prices, variants and options](#prices-variants-and-options), [Spec rows and the title vs variants](#spec-rows-and-the-title-vs-variants), [Description](#description)) |
 | `test_prepared_golden.py` fails after a deliberate change | the golden prepared products differ | `UPDATE_GOLDEN=1 .venv/bin/python -m pytest scripts/test_prepared_golden.py`, read the diff (R-TEST-5) |
+| `--diff`: `run_transform: diff: O old, N new, C compared: A added, R removed, X changed (field n, ...), S the same`, then `key<TAB>change<TAB>field<TAB>old<TAB>new` lines | what this prepare changed (the snapshot is taken under the same lock, before the run; the exit code stays the run's) | read it; the changed products already in the store: [What changed](#what-a-rule-change-changed-prepared_diffpy) |
+| `--diff`: `stop: --diff: <path>:<n>: not a JSON line`, exit 2 | the old prepared file has a broken line: nothing written | rebuild without `--diff` (it rewrites the file) |
 
 ## Held codes
 
@@ -96,6 +101,25 @@ once (about 30 s at 2,444). `--verify` computes each record that the next run wo
 `identical`, exit 0; a record that differs (an input missing from the signature) is named with its first differing
 field, exit 1; it writes nothing and runs while a job holds the shop. Records of products no longer chosen stay
 (about 85 MB at 2,444); deleting the folder only costs one full prepare.
+
+### What a rule change changed (`prepared_diff.py`)
+
+After a change of a rule, a dictionary of brands or the code (2026-11-16, the owner's five tools): which products
+moved, in which field, and which of them are in the store (those wait for the owner: OWNER_RULES.md rule 1).
+
+- In place: `run_transform.py <shop> --diff` (the shop's lock: no job running). On a copy, the real shop untouched:
+  `cp -cR scripts/output/shops/<shop> <scratch>/` (an APFS clone, seconds for 13 GB), then
+  `run_transform.py <shop> --shops-root <scratch> --diff`, or `prepared_diff.py` on the two `prepared/products.jsonl`.
+- `prepared_diff.py old new [--fields f,g] [--published-only] [--keys-out F] [--json]` compares each product by a
+  short summary a field: `status`, `held` and `notes` ("code: detail"), `brand` ("brand_ko (brand_source)"),
+  `title` (title_ko), `price` (the variants' price_krw, min-max), `variants` (the option labels, `[sold out]`),
+  `package.<field>` ("min-max (source cN)"), `images` (count and digest), `other` (the names of other parts that
+  differ). A list field shows on each side only what the other lacks. `--published-only`: the keys whose last ledger
+  row is `published` (`--shop`, else the new file's shop). `--keys-out F` -> `--keys-file F` of `store_diff.py`,
+  `publish.py --dry-run`, `lens.py products`. Exit 0 the same, 1 differences listed, 2 a missing or broken file.
+- 2026-11-16, measured on a clone: the prepared file of 00:45 against today's code: 752 of 2,451 products changed
+  (price and variants 603, notes 718, package 179, brand 50, held 41, status 2), 477 of them in the store (price 468,
+  brand 16, status 2): the paid variants rule written after that prepare. Nothing re-sent; the owner's word first.
 
 ### Kept runs
 
@@ -358,3 +382,5 @@ The prepared format's versions: 5 since 2026-11-10: package `confidence` is 1-5 
 instead (see PLACEMENT.md, The idea); 2 since 2026-11-07: a variant's `package` fields
 may carry `how`, `quote`, `flags`, `from` (`description_text`: the quote is typed text, not an image's) and `compared` (the value not kept, see [PACKAGE.md](PACKAGE.md)), and `product` has
 `description_images_text` (the images' text flag, see PACKAGE.md, The images' text).
+
+2026-11-16: `run_transform.py --diff` and `--shops-root`, `prepared_diff.py` (the owner's five tools).

@@ -19,12 +19,15 @@ The stage: `publish.py` sends prepared, translated and placed products to the Sh
 | Credentials (never read them), tokens, uploads | "Access and uploads" |
 | The Shopify roadmap, what the naver-harvester published, the upload measurement | "History": "Shopify roadmap", "What the naver-harvester published" |
 | The store and our files disagree | `store_diff.py` below; skill `product-trace` |
+| What the store holds now, after an action (one product, counts) | "After an action: check it" (`shopify_catalog.py <shop> show <ref>`, `counts`) |
 
 Commands (repo root):
 - `.venv/bin/python scripts/publish.py <shop> --dry-run` (payloads to `publish/payloads/`, nothing sent)
 - `.venv/bin/python scripts/store_diff.py <shop>` (read only: what a publication would change)
 - `.venv/bin/python scripts/publish.py <shop> --only <key>` (writes); `--withdraw <key> --reason "..."`,
   `--restore <key> --reason "..."`, `--activate <key>` (each repeatable)
+- each takes a product id, handle or link too, and `--keys-file F` / `--job ID [--event E]`; with `--dry-run` a store
+  action prints `<key>: would <action>` and sends nothing (OPERATIONS.md "Naming a product")
 
 Rules:
 - Shopify writes go only through `publish.py` / `shopify_admin.py` (AGENTS.md rule 3).

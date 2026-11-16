@@ -19,7 +19,7 @@ Run from the repo root: `.venv/bin/python scripts/lens.py <lens> <shop> [scope]`
 | Is the vendor right (after a brand rule or dictionary change)? | `lens.py brand <shop> --category <id> --source none,title_word,description_row` | [`brand`](#brand-is-the-vendor-right) |
 | The store's duplicate groups: one product or versions? | `lens.py dupes <shop> [--category <id>]` | [`dupes`](#dupes-one-product-or-versions); the rule: [DEDUPE.md](DEDUPE.md) |
 | Many prepared but not published: was the hold right? | `lens.py held <shop> --job <id>` | [`held`](#held-was-the-hold-right) |
-| One doubt, two listings to compare, a finding to show | `lens.py products <shop> <id or key> ...` | [`products`](#products-these-side-by-side) |
+| One doubt, two listings to compare, a finding to show | `lens.py products <shop> <id, key, handle or link> ...` | [`products`](#products-these-side-by-side) |
 
 What it prints: `<lens>: N cards, F flagged (red) <numbers>; M marked to look at (blue) <numbers>` (the first 30 of
 each; all in `summary.json` `meta.flagged` / `meta.marked`), then the meta lines it has (`note`, `published`,
@@ -34,8 +34,9 @@ What to do on each result:
 - **A usage error** (exit 2, nothing drawn): `section` needs `--category`, `--leaf` or `--job`; `price` needs
   `--category` or `--leaf`; `held` needs `--job`; `products` needs one or more keys or ids; `dupes --versions` needs
   two or more keys and `--note` (whose word, why).
-- **`<ref>: not in the shop's files, left out`** / **`<ref>: N keys (...); shown: <key>`** (`products`): the id is
-  unknown, or found under several stores' keys (the first is shown).
+- **`<ref>: not in the shop's files, left out`** / **`<ref>: N products match, name one by its key: ...; left out`**
+  (`products`): the ref is unknown, or names several products (an id under two stores' keys): none of them is shown
+  (2026-11-16, `shop_view.resolve`); give the key you mean.
 - **A finding:** report it to the owner (numbers, keys, titles, reason, what was not looked at, the sheets' folder).
   A withdrawal, a hold, a republish or a rule change waits for the owner's word (skill `store-actions`); a copy of a
   live product the rules missed is held as a draft and asked about ([`dupes`](#dupes-one-product-or-versions)).
@@ -194,8 +195,9 @@ Catches: a real set held as single, a wrong duplicate match, a duplicate of a wi
 failure.
 
 ### `products`: these side by side
-Command: `lens.py products <shop> <id or key> ...`. An id found under two stores' keys shows the first and prints all
-of them.
+Command: `lens.py products <shop> <ref> ...`: a key, a product id, a handle or a link
+([OPERATIONS.md](OPERATIONS.md#naming-a-product-shop_viewresolve-2026-11-16) "Naming a product"). A ref of several
+products (an id under two stores' keys) shows none and prints their keys: name one.
 
 The rows show up to 6 photos each (one image once), both titles, price, variants, store status, brand and source,
 section, and the first 3 options. Labels wrap into the room the photos leave.

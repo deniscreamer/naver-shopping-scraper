@@ -11,6 +11,9 @@ the Never list: [OWNER_RULES.md](OWNER_RULES.md).
 | Before a commit: the offline checks | [Running](#running) (`scripts/check.sh`) |
 | Back up the state (before a risky change, after each release), verify, restore | [Backup](#backup-state_backuppy-the-owner-2026-11-16) |
 | Code that writes or reads a shop's files; a `busy` refusal; a `LedgerError` | [Shared files](#shared-files-shop_filespy-2026-11-16) |
+| Name a product by its id, handle or link; a list of products from a file or a job | [Naming a product](#naming-a-product-shop_viewresolve-2026-11-16) |
+| A test on real products (the shop fixture) | [Naming a product](#naming-a-product-shop_viewresolve-2026-11-16), "The shop fixture" |
+| A product's fields, a list or count of products, the ledger, a plan checked; the store's side; what a prepare changed | [Reading the shop by hand](#reading-the-shop-by-hand-2026-11-16), skill `shop-data` |
 | Code that calls the API: typed calls, sequential, cache, status codes, pagination, env, naming, style | [Conventions](#conventions) |
 | An error from the API or a job | skill `api-error-triage` |
 
@@ -106,6 +109,87 @@ writes them goes through `shop_files.py`:
   nothing (exit 1) is the check that nobody holds it. The lock is advisory: an editor or a heredoc into a `.jsonl` is not stopped, so a
   new writer of shared files uses `shop_files` and a new sending command takes the lock.
 
+## Naming a product (`shop_view.resolve`, 2026-11-16)
+
+Every command that takes a product takes a **ref**, not only a key (the owner's five tools, 2026-11-16):
+
+| A ref | Example | Matches |
+|---|---|---|
+| a full key | `fairwardgolf:naver:102683547:13552318731` | itself, as before: not looked up (an unknown key behaves as it always did) |
+| a Naver product id | `13552318731` | the key ending in it (a Shopify product number, all digits, too) |
+| a handle | `a11n-sports-forged-golf-wedge-set-db4p` | any handle the ledger ever had for it (an older one after a rehandle too) |
+| a link | `https://fairwardgolf.com/products/<handle>`, `https://admin.shopify.com/store/<s>/products/<number>`, `https://smartstore.naver.com/<s>/products/<id>` | the handle, the Shopify number or the Naver id in it |
+| a gid | `gid://shopify/Product/<number>` | the ledger's `product_id` |
+
+No match, or several (one product id under two channels), stops a command that acts (publish, translate, describe,
+store_diff, reprice) with exit 2 before anything is read from or sent to the store, the candidates listed with their
+status and handle: name the key. Never "the first". The read tools say the same with exit 1 (Reading the shop by hand).
+
+```sh
+.venv/bin/python scripts/shop_view.py key <shop> <ref> [<ref> ...]       # ref<TAB>key; exit 1: a ref did not resolve
+.venv/bin/python scripts/publish.py <shop> --withdraw <ref> --reason "..." --dry-run   # the key it would act on, nothing sent
+.venv/bin/python scripts/publish.py <shop> --activate --job <id> --event published --dry-run
+```
+
+Takes refs: `publish.py` (`--only`, `--withdraw`, `--restore`, `--activate`; `--rehandle` acts on `--only`'s),
+`translate.py --only`, `describe.py --only`, `store_diff.py --only`, `reprice.py --only`, `lens.py products`. The same
+commands take **`--keys-file F`** (one ref a line, its first word: a TSV whose first column is the key works; blank
+lines and `#` lines left out) and **`--job ID [--event E]`** (the keys of the job's `events.jsonl`, with `--event`
+only those with it: `published`, `not_taken`, ...). In `publish.py` they join the action given; a bare `--withdraw` /
+`--restore` / `--activate` takes only them. A file that names nothing stops the command (never "every product").
+`publish.py --dry-run` with `--withdraw` / `--restore` / `--activate` prints `<key>: would <action>` and sends nothing
+(before 2026-11-16 the dry run did not stop them). In code: `shop_view.resolve(view_or_shop, ref)`,
+`selected_keys(...)`, a CLI's flags `add_ref_flags(ap)` + `keys_from_args(ap, args, shop, refs)`.
+
+**The shop fixture** (`scripts/fixtures/shop/`, `make_shop_fixture.py`): 16 real products of `fairwardgolf` in the
+real layout (prepared, translated, texts, descriptions, placements, the ledger with every history row, two payloads,
+each product's newest collected line cut short) and two of its jobs (`job.json`, `events.jsonl`, `screened.jsonl`,
+`now.json`); `cases.json` says which key stands for which case (live, draft activated, withdrawn `replaced_by:` /
+`hold:`, agency withdrawal restored, rehandled, held `single_only`, placement unresolved, `duplicate_of`, in two jobs).
+A test takes the pytest fixture `shop_fixture` (scripts/conftest.py): a tmp copy, `.shops`, `.jobs`, `.key(pid)`.
+Rebuild it after a deliberate change, then read the diff: `.venv/bin/python -I scripts/make_shop_fixture.py` (offline;
+a case gone from the shop stops it: change `CASES`). Paths are made relative and draft preview keys removed.
+
+## Reading the shop by hand (2026-11-16)
+
+Read-only tools over the shop's files, the jobs and the store (the owner's five tools), in place of `grep` and
+hand-written Python. Each prints a TSV (`shop_view.cell`: a list comma-joined, whitespace one space) or, with
+`--json`, the same as JSON; each takes refs as in [Naming a product](#naming-a-product-shop_viewresolve-2026-11-16).
+
+```sh
+.venv/bin/python scripts/shop_view.py show <shop> <ref...> [--fields f,g] [--raw prepared|translated|placement|ledger|description|collected [--path a.b.0]]
+.venv/bin/python scripts/shop_view.py query <shop> [--where F=V|F!=V ...] [--category C] [--leaf L] [--store published|withdrawn|draft|active|none|any]
+                                     [--grep RE [--in f,g]] [--fields f,g] [--count-by F] [--keys-out F] [--keys-file F | --job ID [--event E]]
+.venv/bin/python scripts/shop_view.py ledger <shop> [--status S] [--since ISO] [--count-by event|status|store_status|key|day|reason_code]
+.venv/bin/python scripts/shop_view.py history <shop> <ref...>      # one product's ledger rows, oldest first
+.venv/bin/python scripts/shop_view.py check <shop> plan.tsv        # ref<TAB>status[<TAB>reason] a line -> ok / FAIL
+.venv/bin/python scripts/job.py report|where|watch ...             # a job's events: JOB_AGENT.md, 3. Watch
+.venv/bin/python scripts/prepared_diff.py old.jsonl new.jsonl [--fields ...] [--published-only] [--keys-out F]
+.venv/bin/python scripts/run_transform.py <shop> --diff            # a prepare, then what it changed (TRANSFORM.md)
+.venv/bin/python scripts/shopify_catalog.py <shop> show <ref> [--variants] [--metafields [NS[.KEY]]] [--media]
+.venv/bin/python scripts/shopify_catalog.py <shop> counts | vendors [--query Q] | collection <handle> [--count-by vendor,status]
+.venv/bin/python scripts/shopify_catalog.py <shop> dump [--fields ...] [--query 'status:active'] --out F.jsonl
+```
+
+- **`shop_view.py`**, the shop's files: `show` a block a product (`field<TAB>value`: prepared, held, notes, brand and
+  its source, titles, price, placement, leaves, state, handle, admin link, ...); `query` every product whose fields
+  match (`--where status=held`, `held=single_only`, `note=brand_fallback`, `brand_source=title`; `F=` empty; repeated:
+  all hold); `state` is `none` (never sent), `withdrawn`, `draft` or `active`, `--store published` = draft or active.
+  `--keys-out F` writes the matching keys for a `--keys-file F`. `ledger` one row a ledger line with its event
+  (`created`, `sent`, `withdrawn`, `restored`, `activated`); `check` a plan of expected states against the files
+  (after a batch of actions: every line `ok`).
+- **`prepared_diff.py`**, two prepared files product by product (status, held, notes, brand, title, price, variants,
+  package, images, other): `key<TAB>change<TAB>field<TAB>old<TAB>new`. `--published-only`: only products in the
+  store, the answer to "which of the changed ones does the owner have to decide on" (OWNER_RULES.md, rule 1).
+- **`shopify_catalog.py`**, the store itself (Admin API, read only, `WRITES = False`; one query a command, a page of
+  100): what the store holds now, after an action or when our ledger and the store may disagree (`store_diff.py`
+  compares every field).
+
+Exit codes, the same for these read tools: 0 done; 1 a ref that names no product or several (named on stderr,
+never "the first"), a broken shop or job file (`LedgerError`, the file and line named), `check`: a line not ok;
+2 usage. Their own after 2: `job.py watch` 3-9 (JOB_AGENT.md), `shopify_catalog.py` 3 the store not configured,
+4 the catalog cannot be trusted. `prepared_diff.py` keeps diff's: 1 differences listed, 2 a missing or broken file.
+
 ## Conventions
 
 - **Typed calls.** Use the typed client methods (`api.search()`, `api.product_details()`, `api.listing()`, ...) and
@@ -155,4 +239,6 @@ writes them goes through `shop_files.py`:
 ## History
 
 - 2026-11-16: split from scripts/README.md (history: `git log --follow scripts/README.md`); the backup
-  (`state_backup.py`, the owner) and the shared files (`shop_files.py`) added the same day.
+  (`state_backup.py`, the owner) and the shared files (`shop_files.py`) added the same day; then naming a product
+  by a ref and the shop fixture (the owner's five tools), and Reading the shop by hand (`shop_view.py` show / query /
+  ledger / history / check, `prepared_diff.py`, `shopify_catalog.py`'s CLI).

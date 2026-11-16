@@ -13,7 +13,7 @@ for the task, the whole doc only for an unusual stop.
 | "Запусти scroll: ..." (flags per category, the query) | "Shorthand and per-category defaults" |
 | Preflight | "1. Before" |
 | Start (scroll; the old mode `new` + `run`) | "2. Start" |
-| Watch: the cadence, the log, a done line | "3. Watch" |
+| Watch: the cadence, `job.py watch` and its exit codes, `job.py report`, a done line | "3. Watch" |
 | A `STOP`, a captcha, a wait, `failed`, `busy` | "What stops, and who acts" |
 | Stop, resume, restart after a code change | "4. Stop and resume" |
 | `review due`, drafts, the look after a run | "5. After", "Draft first" |
@@ -40,15 +40,19 @@ Steps:
    `TRANSLATE_PROVIDERS=anthropic .venv/bin/python -u scripts/job.py scroll --query "<q>" --category <id> <flags>
    > scripts/output/jobs/_scroll-logs/<name>-<UTC stamp>.log 2>&1` (`<name>`: a short word for the category or
    query, e.g. `wedge-sets`; the stamp `date -u +%Y%m%dT%H%M%SZ`).
-3. Watch the log: report every 20 products published, and at once on `STOP`, a captcha, a listing tab reopen or a
-   long network wait. A pending captcha is not in the job's log until its 600 s wait expired: run
+3. Watch with `.venv/bin/python scripts/job.py watch --job <id> --every 20` in the background (no hand-made polling
+   loop; it takes no lock and never restarts the runner). It returns once, with an exit code: 0 the next 20
+   published (report briefly from `job.py report --job <id>`), 3 STOP, 4 waiting / a long network wait, 5 a captcha
+   not answered, 6 a listing tab reopen, 7 done, 8 no runner, 9 `--timeout`; relay its one line, then run it again
+   (not after 7). A pending captcha is not in the job's log until its 600 s wait expired: run
    `.venv/bin/python scripts/captcha_watch.py` beside the job (or `--once`) and relay its question to the owner.
-   What each line means and who acts: JOB_AGENT.md "What stops, and who acts".
+   What each stop means and who acts: JOB_AGENT.md "What stops, and who acts" (the log line: `tail` the log).
 4. Resume: `job.py scroll --job <id>` (`run` for an old-mode job), only after a stop the owner cleared. After a
    captcha or a ban in the last 24 h: a small count (JOB_AGENT.md "4. Stop and resume").
 5. `review due` (drafts): skill `visual-review` with the printed commands; activation: skill `store-actions`.
 
-Read: `.venv/bin/python scripts/job.py status [--job <id>] [--json]`. Old mode: `job.py new --query "<q>"
+Read: `.venv/bin/python scripts/job.py status [--job <id>] [--json]` (now), `job.py report [--job <id>] [--event E]
+[--table -]` (what it did: counts, reasons by code, held, cost), `job.py where <ref>` (one product across the jobs). Old mode: `job.py new --query "<q>"
 --category <id> [--count N | --all] <flags>`, then `job.py run`; `job.py refresh --more N` reads the listing deeper.
 
 More: after a run skill `visual-review`; why one product is missing skill `product-trace`; a new category first

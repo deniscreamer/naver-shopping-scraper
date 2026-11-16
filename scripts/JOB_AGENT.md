@@ -117,6 +117,35 @@ detail hunting in the reports. Read `status --json` (stages per product, closed 
 codes, the last stop, the next product, `running`: the product and stage of this moment, with the runner's pid),
 not the logs.
 
+The watcher is `job.py watch` (2026-11-16, the owner's five tools; `job_report.py`): it reads `events.jsonl` every
+10 s, takes no lock, never starts or restarts a runner, and returns with an exit code that says what to tell the
+owner. Run it in the background, relay its one line, run it again; no hand-made polling loop.
+
+```sh
+.venv/bin/python scripts/job.py watch --job <id> --every 20      # one line on exit; --json: the dict
+.venv/bin/python scripts/job.py report --job <id>                # what the job did so far (below), for the report
+```
+
+| Exit | Seen | You |
+|---|---|---|
+| 0 | the job's published count crossed a multiple of `--every` | the brief report (`job.py report`), watch again |
+| 3 | a `stop` event | the table below; tell the owner |
+| 4 | `waiting` (server, extension) or a network wait at try 3+ | tell the owner (the table below) |
+| 5 | `captcha_again` | relay it at once; a pending captcha is `captcha_watch.py`'s, not in the log |
+| 6 | `reopen` (scroll: the listing tab reopened) | a brief line; watch again |
+| 7 | `done` (also: the job was done when the watch started) | section 5 |
+| 8 | no runner (gone after it was seen, or none within 60 s) | `job.py status`: a stop without an event is `recover-state` |
+| 9 | `--timeout S` passed | watch again |
+| 1 / 2 | a broken `events.jsonl` (the file and line named) / usage, no such job | `recover-state` / the command |
+
+`job.py report [--job ID] [--event E] [--since T] [--table F|-] [--json]` reads a job's events (`--job` left out: the
+latest): `section<TAB>name<TAB>value` lines: the job, the event counts, the `not_taken` / `deferred` / `failed`
+reasons by code (`duplicate_of`, `placement held: single_only`, ...), the held codes, the model cost, the stops and
+waits. `--table F` writes one row a product (key, last event, status, reason, held, handle, events, first, last; `-`
+to stdout). `job.py where <ref>` lists one product's events across every job (and the screen's leave-outs of its
+product id), oldest first: the ref is a key, a product id, a handle or a link; a product id no shop file knows is
+still found in the events.
+
 What the log says:
 
 - a line when a product starts, one when it is done (with its stage times);
@@ -236,6 +265,10 @@ A captcha is answered by the owner in Chrome while the read waits; a login page 
    and change nothing in the store: a withdrawal is the owner's (`publish.py --withdraw`). The rows the screen left
    out are in the job's `screened.jsonl`.
 6. Duplicates of the run: `dedupe.py --pairs <shop> --job <id>` ([DEDUPE.md](DEDUPE.md)).
+7. The owner's summary: `job.py report --job <id>` (counts, reasons by code, cost); the products of one outcome as a
+   keys file for the next command: `job.py report --job <id> --event not_taken --table -` or
+   `shop_view.py query <shop> --job <id> --where status=held --keys-out held.txt` (OPERATIONS.md, Reading the shop
+   by hand); an action on them goes through `--keys-file` / `--job ID --event E` (skill `store-actions`).
 
 ### Draft first (a category not yet reviewed; the owner, 2026-11-16)
 
@@ -353,3 +386,5 @@ The list is in [OWNER_RULES.md](OWNER_RULES.md), "Never", with the other rules t
   2026-11-16: draft first (a category not marked reviewed, `transform_shops.CategoryRules.reviewed`, is published
   DRAFT, for the agent's lens review and the owner's activation), the shop's lock, the owner's notice, the prepare
   cache.
+- 2026-11-16 (the owner's five tools): `job.py watch` (exit codes for what the owner must hear) in place of hand-made
+  watchers, `job.py report` and `job.py where` (`job_report.py`).

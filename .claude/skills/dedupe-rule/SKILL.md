@@ -43,8 +43,9 @@ under `scripts/output/shops/<shop>/lens/`, `make_lens_fixture.py` the fixture, `
    ```
 3. Edit `dedupe.py`. Add a dated comment at the constant or function that names the real case (house style).
 4. Run the same commands into `after.txt`, then `diff`:
-   - A group that is new or larger is a possible false merge. Look at it on photos (`lens.py products`) before you
-     keep the change; one whose members differ by a colour word or are `title only` goes to the owner on the
+   - A group that is new or larger is a possible false merge. Look at it on photos (`lens.py products`) and as text
+     (`.venv/bin/python scripts/shop_view.py show fairwardgolf <k1> <k2> --fields key,state,title,price_krw,variants,handle`)
+     before you keep the change; one whose members differ by a colour word or are `title only` goes to the owner on the
      `lens.py dupes` sheet before the commit.
    - A `versions` row that changed from `apart` to `JOINED` contradicts the owner's word, so the change is wrong.
      The two BG-100 and REVA rows are `JOINED` today (title words only, by design), so this check cannot catch a
@@ -56,7 +57,8 @@ under `scripts/output/shops/<shop>/lens/`, `make_lens_fixture.py` the fixture, `
    why. Then run `.venv/bin/python -I scripts/make_lens_fixture.py` and read the diff.
 6. The pilot runs on the owner's word, through the run-a-job skill: `job.py new|scroll ... --dedupe log`. It changes
    nothing but `duplicate_seen` events. Then run `dedupe.py --pairs <shop> --job <id>`, which writes the sheets in the
-   job's `pairs/`, and show the owner the pairs. Only after his yes does the rule run under `on`, which is the default.
+   job's `pairs/`, and show the owner the pairs; their count and keys: `.venv/bin/python scripts/job.py report --job
+   <id> --event duplicate_seen [--table -]`; one product across the pilots: `job.py where <ref>`. Only after his yes does the rule run under `on`, which is the default.
 
 Same commit (AGENTS.md rule 6): `dedupe.py` and its docstring; `test_dedupe.py`; `DEDUPE.md` "The rule" and a
 "History" line; the lens fixture if a case was added. A new or renamed decision also changes the `TRANSFORM.md`

@@ -40,8 +40,13 @@ Rules: `scripts/OWNER_RULES.md` (sections 2 and 3). The procedure:
    It is read only and offline.
 3. **Look at every sheet yourself** with the Read tool. Note the doubtful numbers and why, red and blue first, then
    anything else that looks wrong.
-4. **Prove each doubt from the text.** Use its `index.tsv` line (title, price, variants, options, links). Run `lens.py products <shop> <ids>` when one photo cannot settle it. A photo alone is
-   never the reason.
+4. **Prove each doubt from the text.** Use its `index.tsv` line (title, price, variants, options, links), and
+   `.venv/bin/python scripts/shop_view.py show <shop> <refs> [--raw prepared --path product.variants]` for the
+   record. Run `lens.py products <shop> <refs>` (keys, product ids, handles or links; a ref of two products is left
+   out with both keys listed: name the key) when one photo cannot settle it. A photo alone is never the reason.
+   The siblings of a finding (same hold, brand source, seller): `shop_view.py query <shop> --where held=<code>`,
+   `--where brand_source=none`, `--grep <channel> --in key`, with `--keys-out F` for `lens.py products <shop>
+   $(grep -v '^#' F)` or the owner's list.
 5. **If the doubt points to a rule** (a word missing from `listing_title_rules.json`, a dedupe kind, a brand source),
    say which rule and show the numbers. Fix it with a test only when the task is yours to fix (AGENTS.md rules).
 6. **Report to the owner:**

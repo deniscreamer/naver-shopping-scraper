@@ -75,7 +75,7 @@ Every `scripts/*.py` runs as `.venv/bin/python scripts/<name>.py` (none is execu
 | Start / watch a scroll ("Запусти scroll"), a job stopped or printed an error | `run-a-job`, `api-error-triage` | `curl -s localhost:8000/health`; `scripts/job.py status` |
 | Review drafts, a section, duplicates | `visual-review` | `scripts/lens.py <lens> <shop> [scope]` |
 | Activate, withdraw, hold, restore | `store-actions` | `scripts/job.py activate --job <id> --dry-run` |
-| Why is a product missing / held / odd | `product-trace` | `grep <id> scripts/output/shops/<shop>/publish/published.jsonl` |
+| Why is a product missing / held / odd; how many or which products | `product-trace`, `shop-data` | `scripts/shop_view.py show <shop> <id>` |
 | Fix a product's brand, title, price, section | `fix-a-product` | `scripts/store_diff.py <shop> --only <key>` |
 | Reprice; back up the state | `store-actions`, `price`, `operations` | `scripts/reprice.py <shop>` (a table, sends nothing); `scripts/state_backup.py --dry-run` |
 | A dictionary backup due, a term or brand wrong for many products | `dictionaries` | `scripts/translation_dicts.py status` |
