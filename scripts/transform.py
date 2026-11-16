@@ -28,8 +28,8 @@ naver-harvester published, and its 60 published products):
   * text fields (a name on a tag) -> personalization; add-ons on sale and in stock: free ones, paid ones too
     with the category's paid_addons (price in KRW and USD); a (필수) group is required.
   * held (not published, kept with codes): collect_incomplete, price_unknown, no_variants,
-    options_unaligned, axes_over_3, specs_folded, no_images, images_over_50, single_only; run_transform adds
-    agency_no_brand (all of them: scripts/TRANSFORM.md "Held codes"). More combinations than the shop's
+    options_unaligned, axes_over_3, specs_folded, no_images, images_over_50, single_only, not_wedge_set;
+    run_transform adds agency_no_brand (all of them: scripts/TRANSFORM.md "Held codes"). More combinations than the shop's
     cap: the first ones are offered, every option value kept (note variants_capped).
   * notes (never block): shipping_paid, overseas_shipping (a shop with the price rule puts a PAID / UNIT_QUANTITY_PAID
     fee into the purchase: shop_pricing),
@@ -330,6 +330,74 @@ def single_club(values: list[str], names: list[str] | tuple[str, ...] = ()) -> b
     return bool(_SINGLE_WORD_RE.search(text)) or len(lofts) == 1
 
 
+# a listing filed under wedge sets that sells an iron set or a full set (wedge_sets: 50002783, 2026-11-16, the
+# overnight wedge scroll published 9 iron sets into the wedge-sets section: 13370424163 Cleveland ZipCore XL
+# "Regular+4-PW", 13383002675 Callaway Apex "Regular+3 Iron- PW", 13385696985 TaylorMade Stealth "Stiff+5-P/A",
+# 13370491895 Acer XV "( 5-9/ PW/ GW)" and "7피스 8피스", 13383404156 MAZEL "3456789피칭", 13603085795 MAZEL
+# "123456789", 13377696273 Yamato "5 6 7 8 9 피윙", 13601554331 PGM "아이언 세트 59 PW SW"). Measured on the shop's 502
+# listings of 50002783: no wedge set writes an iron run, a count of 6 to 16 clubs, or "아이언 세트" without "웨지 세트".
+# An iron run: a start iron 3-7 ("#5", "5번", "4i", "4 Iron") to 9 / P / PW / AW / GW / SW, or a run of single
+# digits ending at 9 written together ("3456789", "123456789") or apart ("5 6 7 8 9"). Not one (review 2026-11-16,
+# wedge titles that could come): a day or age span ("7-9일", "3~9 days", "7-9 years"), a numbered option or a model
+# number before a wedge and its loft ("1-AW 52도", "타입 2 - SW 56도", "RTX 6 - SW 56도": no start iron 1-2, no loft
+# after the end), a spaced dash to a wedge with no iron word ("CBX 4 - AW/SW"); two-digit lofts ("52-56-60",
+# "48-60도", "505254565860") never.
+_IRON_RANGE_RE = re.compile(r"(?i)(?<![\d.a-z#])#?[3-7](?:\s*(?P<iron>번|iron|i|아이언))?(?P<sp1>\s*)[-~–](?P<sp2>\s*)"
+                            r"(?:9(?![\d.])(?!\s*(?:years?|yrs?|세|살|일|days?|주|weeks?|개월|months?|시))"
+                            r"|(?:pw?|피칭)(?![a-z])(?!\s*\d{2})|(?P<wedge>[ags]w)(?![a-z])(?!\s*\d{2}))")
+_DIGIT_RUN_RE = re.compile(r"(?<![\d.])\d{4,9}(?![\d.])")
+_SPACED_RUN_RE = re.compile(r"(?<![\d.])[1-7](?:\s*[ ,/]\s*\d(?![\d.])){3,}")
+# a count of 6 to 16 clubs (a wedge set's is 2-4 in the 502 listings): "7피스", "9PCS", "11 PIECE", "12pcs" as they
+# stand; "N개 / N본 / N자루" only before a set word ("10개 세트", "14본 구성"): "골프공 12개 증정", "헤드커버 10개",
+# "10본 한정", "52개 샌드 56개" (a loft read as a count) and "6개월" are not one (review 2026-11-16). A count right after
+# 웨지 counts wedges ("웨지 6개 세트 48 50 52 54 56 58", "웨지 6피스 세트"): a wedge set, not held.
+_CLUB_COUNT_RE = re.compile(r"(?i)(?<![\d.])(\d{1,2})\s*(?:(?:피스|pcs?|pieces?)(?![a-z])"
+                            r"|(?:개|본|자루)(?=\s*(?:풀\s*)?(?:세트|구성|set(?![a-z]))))")
+_WEDGE_BEFORE_RE = re.compile(r"(?i)(?:웨지|wedges?)\s*$")
+_IRON_SET_RE = re.compile(r"(?i)아이언\s*세트|iron\s*set")
+# "웨지 (아이언) 세트" (iron-type wedges), also with lofts, wedge letters or a count between: "웨지 AW SW 2개 세트",
+# "웨지 50 56 2종 세트" (a wedge pair sold to match an iron set, review 2026-11-16)
+_WEDGE_SET_RE = re.compile(r"(?i)웨지(?:\s*(?:\d{2}\s*(?:도|°)?|[agpsl]w(?![a-z])))*\s*(?:아이언\s*)?"
+                           r"(?:\d{1,2}\s*(?:개|종|피스|pcs?)\s*)?세트|wedge\s*set")
+# a value that is one club: KVV 13163034573 "골프 웨지 KVV 아이언 세트", variants 6 Iron / 8 Iron / Sand Wedge, one
+# club a variant: not an iron set (left as it is, 2026-11-16); a single loft ("56 Degree", "56도") is one club too
+_ONE_CLUB_RE = re.compile(r"(?i)\s*(?:\d{1,2}\s*(?:번\s*)?(?:iron|아이언)|(?:sand|pitching|gap|lob|approach)\s*wedge|"
+                          r"(?:샌드|피칭|갭|로브|롭|어프로치)\s*웨지|[psagl]w|\d{2}\s*(?:도|°|degrees?))\s*")
+
+
+def _iron_run(text: str) -> str | None:
+    for m in _IRON_RANGE_RE.finditer(text):
+        if m.group("wedge") and m.group("sp1") and m.group("sp2") and not m.group("iron"):
+            continue                                    # "CBX 4 - AW/SW": a model number before the wedges
+        return m.group(0)
+    for m in _DIGIT_RUN_RE.finditer(text):
+        d = m.group(0)
+        if d.endswith("9") and all(int(b) - int(a) == 1 for a, b in zip(d, d[1:])):
+            return d
+    for m in _SPACED_RUN_RE.finditer(text):
+        n = [int(x) for x in re.findall(r"\d", m.group(0))]
+        if all(b - a == 1 for a, b in zip(n, n[1:])):
+            return m.group(0)
+    return None
+
+
+def not_wedge_set(title: str, rows: list[list[str]]) -> str | None:
+    """Why a listing of a wedge-sets category (wedge_sets) sells no wedge set: an iron run in the title or a variant's
+    value, a count of 6 to 16 clubs ("7피스", "12 Piece"), or "아이언 세트" in the title with no "웨지 세트"
+    (unless each variant is one club: KVV). None: a wedge set as far as the words go."""
+    for text in [title] + [v for r in rows for v in r]:
+        if run := _iron_run(text):
+            return f"an iron run ({run!r})"
+        counts = [int(m.group(1)) for m in _CLUB_COUNT_RE.finditer(text)
+                  if not _WEDGE_BEFORE_RE.search(text[:m.start()])]
+        if many := [n for n in counts if 6 <= n <= 16]:
+            return f"{max(many)} clubs ({text[:40]!r})"
+    if _IRON_SET_RE.search(title) and not _WEDGE_SET_RE.search(title) \
+            and not (rows and all(any(_ONE_CLUB_RE.fullmatch(v) for v in r) for r in rows)):
+        return "an iron set in the title, no wedge set"
+    return None
+
+
 def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: CategoryRules) -> dict[str, Any]:
     """-> {options, facts, variants, held, skipped_paid, duplicate_values, capped} in Korean. The variant choice is the category's
     (cat.paid_variants), made again from the page's options: the collected line's own choice may differ."""
@@ -344,6 +412,10 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
     # 배송메세지기입 on a TaylorMade set); a product of only such rows keeps them (nothing else to sell)
     real = [r for r in rows if not any(_DELIVERY_NOTE_RE.search(v) or _contact_only(v) for v in r["options"])]
     rows = real or rows
+    # an iron set or a full set filed under wedge sets (2026-11-16, the overnight wedge scroll), read on every row;
+    # held after single_only, which stays the code of a listing of single wedges (12911658622 "아이언세트", by loft)
+    why = not_wedge_set(re.sub(r"\s+", " ", line["details"].get("name") or ""), [r["options"] for r in rows]) \
+        if cat.wedge_sets else None
     if cat.sets_only and _ONE_PIECE_RE.search(re.sub(r"\s+", " ", line["details"].get("name") or "")) \
             and not any(_SET_WORD_RE.search(" ".join(r["options"])) for r in rows):
         # "웨지 세트 52 56 60도 ... 실버 1개": the title sells one piece of the set (2026-11-15, the wedge pilot)
@@ -355,6 +427,9 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
             return {"options": [], "facts": [], "variants": [], "held": [{"code": "single_only", "detail":
                     f"{len(rows)} variants, each one club"}], "skipped_paid": 0, "duplicate_values": [], "capped": None}
         rows = sets
+    if why:
+        return {"options": [], "facts": [], "variants": [], "held": [{"code": "not_wedge_set", "detail": why}],
+                "skipped_paid": 0, "duplicate_values": [], "capped": None}
     if rows and any(len(r["options"]) != len(names) for r in rows):           # rows that do not fit the groups:
         return {"options": [], "facts": [], "variants": [], "held": [{             # never publish one of them alone
             "code": "options_unaligned", "detail": f"{len(names)} option groups, rows of "

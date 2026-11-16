@@ -65,6 +65,8 @@ tests from products checked in test runs are added without asking.
      description_images sidecar, made by `description_images.py <shop> --products <id>`: networked, the sellers'
      image hosts and OCR, only when the task allows);
    - the lenses' cases: `.venv/bin/python -I scripts/make_lens_fixture.py` (after a deliberate change);
+   - the wedge-sets listings (every 50002783 title and variant rows, for `not_wedge_set`):
+     `.venv/bin/python -I scripts/make_wedge_sets_fixture.py`;
    - the shop fixture (a real slice of the shop's files and two jobs, for the tools that read them):
      `.venv/bin/python -I scripts/make_shop_fixture.py` (a new case: a `CASES` line; OPERATIONS.md "The shop fixture").
    Fixtures hold real data, trimmed, no cookies, tokens or personal data (R-TYPE-6, R-EXT-4).
@@ -171,6 +173,10 @@ Code: `transform.options_and_variants`.
   (`title_variant_tail`, note title_names_one_variant); lofts glued ("525660도", 13389307551); "세트 또는 개별 /
   또는 개인용" (a set or a single, 13016551520); a marker "db4P" / "dbQF" / "db9N" / "dbT1" (13552318731, 13555308677).
   The last three: `translation_rules.TITLE_RULES`, `_SELLER_TOKEN_RE`, before the model.
+- Iron sets and full sets filed under wedges (2026-11-16, 50002783): "Regular+4-PW" (13370424163), "3456789피칭"
+  (13383404156), "5 6 7 8 9 피윙" (13377696273), "아이언 세트 59 PW SW" (13601554331), "7피스 8피스" (13370491895),
+  "12 Piece (Strata)" (13163090198); a title "웨지 ... 아이언 세트" by an agency that puts the category first (13382551761).
+  `transform.not_wedge_set` (held `not_wedge_set`).
 - An agency's spec table in the description (2026-11-16): "- Brand : 69" with "- Manufacturer : 69 Golf"
   (13370257430; the specs' 브랜드 / 제조사 rows say "69" only), "Brand Name | 69" with "Manufacturer | 69 Golf"
   (13016152694), a machine-translated label "브랜드 이름 | pgm" (12178085899) and values "NONE" / "다른 사람들"

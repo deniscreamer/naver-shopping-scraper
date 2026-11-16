@@ -65,6 +65,7 @@ writes `status: held`, no codes of its own), not placed, not published. Where to
 | `no_images` | transform | no gallery photo saved | collect again; still none: leave it |
 | `images_over_50` | transform | more than 50 gallery photos (`MAX_IMAGES`) | leave it held; tell the owner |
 | `single_only` | transform | a `sets_only` category's listing (wedges, 2026-11-15) that sells one club only: every variant one club, or the title sells one piece ("1개", "1pc") and no variant names a set | right as it is: the section sells sets. A set read as a single: the words in `transform.py` (`single_club`, `_ONE_PIECE_RE`), with a fixture |
+| `not_wedge_set` | transform | a `wedge_sets` category's listing (50002783, 2026-11-16) that sells an iron set or a full set: an iron run in the title or a variant ("4-PW", "5-9", "3456789", "5 6 7 8 9"), a count of 6 to 16 clubs ("7피스", "12 Piece", "12개 세트"), or "아이언 세트" in the title without "웨지 세트" (unless each variant is one club); the detail says which | right as it is: Naver files them under wedges. A wedge set held: the words in `transform.py` (`_iron_run`, `_CLUB_COUNT_RE`, `_WEDGE_SET_RE`), a case in `scripts/test_wedge_sets.py`. One already in the store: withdrawing it is the owner's word ([OWNER_RULES.md](OWNER_RULES.md)) |
 | `agency_no_brand` | transform (run-level, `run_transform.py`) | a purchase agency's import (note `purchase_agency`) with no brand after the brand fallback (`brand_source: none`) where the category's `agency_needs_brand` is on; off in fairwardgolf since 2026-11-15 | the owner's brand in `<shop>/brand_by_owner.json` (skill `fix-a-product`), then `run_transform.py` |
 | `held` | placement | the transform held it: not placed; `reason` is the transform's codes | the transform code's row |
 | `unresolved` | placement | the category is split by an attribute (gender) and the product's value is unknown or in conflict (`reason`: `<attribute> <value>`), or no variant fits a section; the profile's `unresolved` is `hold` | read `evidence` in `placements.jsonl` / `report.txt`; a wrong attribute: skill `fix-a-product`; else the owner decides ([PLACEMENT.md](PLACEMENT.md), "What an unresolved product does") |
@@ -364,7 +365,17 @@ sell one club (1PC, 단품, 개별, 싱글, or one loft 44-72 with no set word o
 product of such variants only is held `single_only` (17 one-wedge listings of the pilot filed as "웨지 세트 또는
 개별"). A loft written again on a second axis that describes the same club ("Size: 56 Degree" + "Style Name: Black
 56 Degree") counts once; on axes that are club slots (names equal but for a number: 옵션 1 / 옵션 2) each counts
-(two Yamato imports published as sets, 2026-11-15). The shop's
+(two Yamato imports published as sets, 2026-11-15). `wedge_sets` (50002783, 2026-11-16): an iron set or a full set
+that sellers file under wedges is held `not_wedge_set` (`transform.not_wedge_set`, after `single_only`): an iron run in
+the title or a variant's value (a start iron 3-7 to 9 / P / PW / AW / GW / SW, "#5", "5번", "4 Iron- PW"; single digits
+ending at 9 together or apart: "3456789", "5 6 7 8 9"; not a run: "7-9 years" / "7-9일" (an age, a day span), a wedge
+end followed by a loft ("RTX 6 - SW 56도"), a spaced dash to a wedge with no iron word ("CBX 4 - AW/SW"), two-digit
+lofts), a count of 6 to 16 clubs ("7피스", "9PCS", "12 Piece"; "N개 / N본 / N자루" only before 세트 / 구성, so "골프공
+12개 증정" and "52개 샌드 56개" are not; a count right after 웨지 counts wedges: "웨지 6개 세트"), or "아이언 세트" /
+"iron set" in the title with no "웨지 (아이언) 세트" (lofts, wedge letters or a count may stand between: "웨지 AW SW 2개
+세트") unless each variant is one club or one loft (KVV 13163034573: 6 Iron / 8 Iron / Sand Wedge). Measured on the
+shop's 502 listings: it holds 9 iron sets and 8 full sets, all published before (the fixture
+`fixtures/wedge_sets/50002783.json`, `make_wedge_sets_fixture.py`; `test_wedge_sets.py`). The shop's
 sections are not decided here (PLACEMENT.md). A shop or a category without rules: `ShopRulesMissing`, the
 run stops and asks the operator.
 

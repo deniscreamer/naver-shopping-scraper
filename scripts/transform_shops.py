@@ -42,6 +42,10 @@ class CategoryRules:
     sets_only: bool = False              # the section sells sets only: a variant that sells one club is left out, a
                                          # product of such variants only is held (single_only; transform: wedges,
                                          # 2026-11-15, "웨지 세트 또는 개별" listings of one wedge by loft)
+    wedge_sets: bool = False             # the section sells wedge sets: a listing of an iron set or a full set filed
+                                         # under it (an iron run "4-PW" / "3456789", 6 to 16 clubs, "아이언
+                                         # 세트" without "웨지 세트") is held not_wedge_set (transform.not_wedge_set;
+                                         # 2026-11-16, 9 iron sets published into wedge sets by the overnight scroll)
     reviewed: bool = False               # publish.py creates its new products ACTIVE; False: DRAFT, until the agent's
                                          # lens review and the owner's activation (2026-11-16: 369 products, 15.7%,
                                          # of those published were withdrawn later; each new category showed buyers
@@ -100,7 +104,10 @@ RULES = {
                                       # configurations (lofts, shaft) and add-ons, the images read; no parts profile; sets only (a
                                       # single wedge's variant out, 2026-11-15)
                                       paid_variants=True, paid_addons=True, description_images=True,
-                                      sets_only=True, reviewed=True),   # 2026-11-16: live before draft first
+                                      sets_only=True, reviewed=True,    # 2026-11-16: live before draft first
+                                      # 2026-11-16: Naver files iron sets and full sets under wedges too (13370424163
+                                      # Cleveland ZipCore XL iron set published as a wedge set): held not_wedge_set
+                                      wedge_sets=True),
         }),
 }
 
