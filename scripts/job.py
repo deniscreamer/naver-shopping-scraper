@@ -111,6 +111,11 @@ from typing import Any
 
 from shop_files import LedgerError, append_line, locked, read_jsonl, write_atomic
 
+# run_transform takes the code's signature (its prepare cache key) when imported: import it before any other module of
+# prepare's path is loaded for a job, so a file edited during the job's start is never hashed new while run old
+# (2026-11-16, the phase 3 review)
+import run_transform  # noqa: E402,F401
+
 SCRIPTS = os.path.dirname(os.path.abspath(__file__))
 JOBS_ROOT = os.path.join(SCRIPTS, "output", "jobs")
 STAGES = ("collected", "images", "prepared", "translated", "placed", "published")   # placed: placement.py, run on

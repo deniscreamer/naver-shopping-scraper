@@ -892,10 +892,10 @@ its paid choice. `prepare()` reads no other file (`test_prepared_golden.py` pins
 choice of the newest line, the paid choices, the store-wide banners, the `.ko` files and the images' text flag
 (shared blocks, `en.json`), the brand fallback, the agency hold and the report: the same bytes as a full build. A
 cut-off or broken record is prepared afresh and written again. Any edit of `scripts/*.py` prepares the whole shop
-once (about 35 s at 2,444). `--verify` computes each record that the next run would use afresh and compares:
+once (about 30 s at 2,444). `--verify` computes each record that the next run would use afresh and compares:
 `identical`, exit 0; a record that differs (an input missing from the signature) is named with its first differing
 field, exit 1; it writes nothing and runs while a job holds the shop. Records of products no longer chosen stay
-(about 70 MB at 2,444); deleting the folder only costs one full prepare.
+(about 85 MB at 2,444); deleting the folder only costs one full prepare.
 
 example_99 overwrites its `products.jsonl`: a run not kept before the next collection is lost. The shop is the
 namespace of the source keys, one shop and one category per run; a product in several runs comes from the newest.

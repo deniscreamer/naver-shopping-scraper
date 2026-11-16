@@ -1014,3 +1014,13 @@ def test_a_scroll_stopped_by_the_shop_check_logs_a_stop_event(tmp_path, monkeypa
     assert J._scroll_run(job) == 3
     stops = [e for e in job.events() if e["event"] == "stop"]
     assert stops and stops[-1]["reason"] == "shop check: RuntimeError: catalog down"
+
+
+def test_job_imports_run_transform_first_so_the_code_signature_is_taken_at_start():
+    """2026-11-16, the phase 3 review: the prepare cache's code signature is taken when run_transform is imported;
+    job.py imports it at its top, before _context loads other modules of prepare's path."""
+    import importlib
+    import sys
+    src = open(J.__file__, encoding="utf-8").read()
+    assert src.index("import run_transform") < src.index("def _context")
+    assert "run_transform" in sys.modules and importlib.import_module("run_transform")._CODE_SIG

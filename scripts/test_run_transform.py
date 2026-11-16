@@ -338,7 +338,7 @@ def test_verify_finds_a_record_that_differs_from_a_fresh_prepare(tmp_path):
     shops = _cached_shop(tmp_path, ls)
     assert run_transform.verify("fairwardgolf", None, shops, {}) == (0, [
         "verify fairwardgolf: 6 products: 0 records identical, 0 differ, 6 without a current record (prepared afresh "
-        "at the next run)", "identical"])
+        "at the next run)", "nothing compared: no current record (run run_transform.py first)"])   # not "identical"
     _cached_vs_full(shops)
     code, lines = run_transform.verify("fairwardgolf", None, shops, {})
     assert code == 0 and lines[0].startswith("verify fairwardgolf: 6 products: 6 records identical, 0 differ, 0 ")

@@ -209,7 +209,8 @@ def verify(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROO
              f"without a current record (prepared afresh at the next run)"] + differ[:20]
     if len(differ) > 20:
         lines.append(f"  ... and {len(differ) - 20} more")
-    lines.append("differs: a cache record is stale (an input missing from its signature)" if differ else "identical")
+    lines.append("differs: a cache record is stale (an input missing from its signature)" if differ else
+                 "identical" if same else "nothing compared: no current record (run run_transform.py first)")
     return (1 if differ else 0), lines
 
 

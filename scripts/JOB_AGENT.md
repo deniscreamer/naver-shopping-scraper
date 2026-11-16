@@ -46,10 +46,11 @@ lost, done products are not read again.
 
 Prepare per product (2026-11-16): the transform still prepares the whole shop after each product, through the
 prepare cache (README.md, Transform): about 5 s at 2,444 products; the `prepared` event carries `cache_miss`, 1 a
-product. The whole shop once (about 35 s) after any edit of `scripts/*.py` or the rules: expected. A running job
+product. The whole shop once (about 30 s) after any edit of `scripts/*.py` or the rules: expected. A running job
 keeps the code it loaded: restart it (stop, `run` again) after a code change. `cache_miss` equal to the whole shop
 on every product: another process with other code prepares the same shop; stop it, restart the job. When prepared
-output looks stale, after a code change that should not change it, or before a release:
+output looks stale or before a release (a code change that should not change the output: compare the sha256 of
+`prepared/products.jsonl` before and after, or `store_diff.py`; `--verify` checks the records against the code they were made with):
 `run_transform.py <shop> --verify` (reads only, allowed while a job runs) must say `identical`; a difference: tell
 the owner the product and field it names.
 
