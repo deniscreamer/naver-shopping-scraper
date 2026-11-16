@@ -18,10 +18,11 @@ Find what the crash left, say it, and touch nothing. A state file is deleted, ed
 | A backup: verify, restore | scripts/OPERATIONS.md "Backup (`state_backup.py`, the owner 2026-11-16)"; the backup folder's `RESTORE.md` |
 
 1. **Who runs**: `.venv/bin/python scripts/job.py status [--job <id>]` (no `--job`: the newest job). `running (pid N)`
-   only means some process has the pid in `now.json` (`Job.now`: `os.kill(pid, 0)`, not which program). Prove it:
-   `ps -p <N> -o pid,etime,command` must show `job.py` for this job, started after the last boot (`sysctl -n
-   kern.boottime`), and `lsof scripts/output/shops/.<shop>.lock` must name it. Proven: a runner is alive, wait or stop
-   it (JOB_AGENT "4. Stop and resume"). Not proven (after a reboot, always): the job is dead; never kill that pid.
+   means the pid in `now.json` is alive and is that runner: `Job.now` compares the pid's start time (`ps -o lstart`)
+   with the one the runner wrote (`started`; a `now.json` without it: the pid must run `job.py`), so a pid the system
+   gave to another program after a reboot reads `no runner` (2026-11-16). Before stopping it, still check `ps -p <N>
+   -o pid,etime,command` and `lsof scripts/output/shops/.<shop>.lock`. A runner: wait or stop it (JOB_AGENT "4. Stop
+   and resume"). Never kill a pid that is not this job's `job.py`.
    `no runner`, `finished: False`: it died. A `last stop:` with a reason: an ordinary STOP (the JOB_AGENT table);
    no new stop event after the last product line: killed (kill -9, a power cut), no STOP was written.
 2. **The lock** (`<tool>: stop: <shop> is busy: <holder> (pid N, since T)`, exit 2). `fcntl.flock` goes with its

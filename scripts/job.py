@@ -116,6 +116,7 @@ import os
 import random
 import shutil
 import signal
+import subprocess
 import sys
 import time
 import traceback
@@ -225,16 +226,23 @@ class Job:
     def beat(self, **now: Any) -> None:
         """now.json: what the runner does at this moment (status shows it while the runner is alive)."""
         write_atomic(os.path.join(self.folder, "now.json"),
-                     json.dumps({"pid": os.getpid(), "at": _now(), **now}, ensure_ascii=False))
+                     json.dumps({"pid": os.getpid(), "started": _my_start(), "at": _now(), **now}, ensure_ascii=False))
 
     def now(self) -> dict[str, Any] | None:
+        """now.json while its runner lives, else None. A live pid alone is not proof: after a reboot or a long pause
+        the system may give the dead runner's pid to another program (2026-11-16), so the pid's start time must be
+        the one the runner wrote ("started"); a now.json written before that field: the pid must run job.py."""
         try:
             with open(os.path.join(self.folder, "now.json"), encoding="utf-8") as f:
                 now = json.load(f)
-            os.kill(now["pid"], 0)                       # the runner is still there
-            return now
-        except (OSError, ValueError, KeyError):
+            pid = int(now["pid"])
+            os.kill(pid, 0)                              # some process has the pid
+        except (OSError, ValueError, KeyError, TypeError):
             return None
+        if now.get("started"):
+            return now if _proc(pid, "lstart") == now["started"] else None
+        args = (_proc(pid, "command") or "").split()
+        return now if any(os.path.basename(x) == "job.py" for x in args) else None
 
     def save_meta(self) -> None:
         write_atomic(os.path.join(self.folder, "job.json"), json.dumps(self.meta, ensure_ascii=False, indent=1))
@@ -242,6 +250,26 @@ class Job:
     def log(self, key: str | None, event: str, **detail: Any) -> None:
         append_line(os.path.join(self.folder, "events.jsonl"),
                     json.dumps({"at": _now(), "key": key, "event": event, **detail}, ensure_ascii=False))
+
+
+def _proc(pid: int, field: str) -> str | None:
+    """One `ps -o <field>=` value of a process (macOS / BSD and Linux ps), None when it cannot be read."""
+    try:
+        out = subprocess.run(["ps", "-o", f"{field}=", "-p", str(pid)], capture_output=True, text=True, timeout=10)
+    except (OSError, subprocess.SubprocessError):
+        return None
+    value = out.stdout.strip()
+    return value if out.returncode == 0 and value else None
+
+
+_START: list[str | None] = []
+
+
+def _my_start() -> str | None:
+    """This process's start time as ps prints it, read once (Job.now compares it with the pid's)."""
+    if not _START:
+        _START.append(_proc(os.getpid(), "lstart"))
+    return _START[0]
 
 
 def latest_job(root: str = JOBS_ROOT) -> str:

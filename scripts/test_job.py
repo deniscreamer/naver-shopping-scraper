@@ -231,6 +231,22 @@ def test_heartbeat_is_shown_only_while_the_runner_lives(tmp_path):
     assert job.now() is None
 
 
+def test_heartbeat_of_a_reused_pid_is_not_a_live_runner(tmp_path):
+    job = make_job(tmp_path)
+    job.beat(key=KEYS[0], n=1, stage="collect", since="t")
+    with open(os.path.join(job.folder, "now.json"), encoding="utf-8") as f:
+        now = json.load(f)
+    assert now["started"]                                                       # the runner's start time is written
+    now["started"] = "Thu Jan  1 00:00:00 1970"                                 # the pid now belongs to another start
+    with open(os.path.join(job.folder, "now.json"), "w") as f:
+        json.dump(now, f)
+    assert job.now() is None
+    del now["started"]                                                          # a now.json from before the field:
+    with open(os.path.join(job.folder, "now.json"), "w") as f:                  # the live pid runs pytest, not job.py
+        json.dump(now, f)
+    assert job.now() is None
+
+
 # ---- the translate stage (offline: a fake model) --------------------------------------------------------------
 
 def _translating_job(tmp_path, statuses=None):
