@@ -5,7 +5,8 @@ One product is built in two steps, because the reviews' files must be on Shopify
   1. `review_files(prepared)`: the local review photos and avatars to upload (publish.py gets their CDN links);
   2. `reviews(prepared, en, urls)`: the review rows with those links (the JSON feed file and `custom.reviews_seo`);
   3. `product_input(prepared, en, placement, ...)`: the `productSet` input (title, vendor, handle, type, tags,
-     options, variants, photos, metafields), status ACTIVE.
+     options, variants, photos, metafields), status ACTIVE (publish.publish_one sends DRAFT, or no status, for a
+     category not marked reviewed; the digest is built with ACTIVE).
 
 The owner's rules:
 - English everywhere from the translation (by text id); a text without English stops the product (`Untranslated`).
@@ -716,7 +717,8 @@ def product_input(prepared: dict[str, Any], translated: dict[str, Any], placemen
         metafields.append({"namespace": "fairwardgolf", "key": "addons", "type": "json", "value": _json(extra_all)})
     return {
         "title": title, "handle": handle_override or handle(title, brand), "vendor": brand,
-        "productType": product_type, "tags": tags, "status": "ACTIVE",
+        "productType": product_type, "tags": tags, "status": "ACTIVE",    # 2026-11-16: publish_one sets the
+                                                                    # status it sends (draft first); output with ACTIVE
         "descriptionHtml": description_html,
         "seo": {"title": fit_title(title, SEO_TITLE_MAX), "description": ""},            # the site's <title> (2026-11-09: "Fairward Golf |
                                                                      # Fairward Golf" on every product page)

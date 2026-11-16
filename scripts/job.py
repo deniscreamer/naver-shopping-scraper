@@ -32,7 +32,8 @@ nothing to translate) in translation/translated.jsonl. A job created with transl
 translate.py (only that product goes to the model; the chain and its fallback as there). A product the model could
 not translate is `failed` (tried again after the fresh ones, MAX_FAILS times); every provider down: tried again with growing waits, then the run stops
 (`run` again resumes). A job made with `--publish` takes each translated product on: placement.py over the
-whole shop (offline), then publish.py for this product (Shopify, ACTIVE); published = its key in
+whole shop (offline), then publish.py for this product (Shopify, ACTIVE, or DRAFT for a category not marked reviewed:
+transform_shops.reviewed, 2026-11-16); published = its key in
 publish/published.jsonl. A product not ready to publish (held, not placed) is `not_taken`; a refused write is
 `failed` (tried again); a refused token or scope stops the run. With `--describe` too (the owner, 2026-11-10) the
 product's description is written right before it is sent (describe.py, one model request; the answer is checked
@@ -1413,8 +1414,8 @@ def _job_flags(p: argparse.ArgumentParser) -> None:
     p.add_argument("--exclude-known", action="store_true", help="leave out products collected before anywhere")
     p.add_argument("--shops-root", help="the shops folder (default scripts/output/shops)")
     p.add_argument("--no-translate", action="store_true", help="stop each product at prepared (no model API)")
-    p.add_argument("--publish", action="store_true", help="take each product on to Shopify (ACTIVE) after "
-                   "translation: placement, then publish.py")
+    p.add_argument("--publish", action="store_true", help="take each product on to Shopify (ACTIVE, "
+                   "DRAFT in a category not marked reviewed) after translation: placement, then publish.py")
     p.add_argument("--describe", action="store_true", help="with --publish: write each product's description "
                    "before it is sent (describe.py: one model request a product)")
     p.add_argument("--dedupe", choices=("off", "log", "on"), default="on", help="duplicates of a product sold by "

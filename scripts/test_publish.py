@@ -821,3 +821,68 @@ def test_restore_reads_the_ledger_with_a_cut_off_tail(tmp_path):
     from shop_files import LedgerError                           # the fragment is a middle line now: named, by hand
     with pytest.raises(LedgerError, match=r"published.jsonl:3:"):
         shop.ledger()
+
+
+# ---- draft first (2026-11-16) -----------------------------------------------------------------------------------
+
+def _unreviewed(monkeypatch):
+    monkeypatch.setattr(PB.transform_shops, "reviewed", lambda shop, category: False)
+
+
+def test_a_reviewed_category_is_created_active_and_its_ledger_row_has_no_store_status(tmp_path):
+    shop = _shop(tmp_path)
+    products = FakeProducts()
+    row = PB.publish_one(shop, KEY, products, FakeFiles(), IDS)
+    assert products.sent[0][0]["status"] == "ACTIVE" and "store_status" not in row
+    PB.publish_one(shop, KEY, products, FakeFiles(), IDS, force=True)
+    assert products.sent[1][0]["status"] == "ACTIVE"                     # an update of a live product as before
+
+
+def test_an_unreviewed_category_is_created_draft_on_every_channel_with_the_same_output(tmp_path, monkeypatch):
+    live = PB.publish_one(_shop(tmp_path / "live"), KEY, FakeProducts(), FakeFiles(), IDS)
+    _unreviewed(monkeypatch)
+    shop = _shop(tmp_path)
+    products = FakeProducts()
+    row = PB.publish_one(shop, KEY, products, FakeFiles(), IDS)
+    assert products.sent[0][0]["status"] == "DRAFT" and products.published      # channels set: shows once active
+    assert row["status"] == "published" and row["store_status"] == "DRAFT"
+    assert (row["output"], row["digest"]) == (live["output"], live["digest"])   # the status moves no digest
+    assert KEY in shop.ledger()
+    assert PB.publish_one(shop, KEY, products, FakeFiles(), IDS)["status"] == "skipped"
+
+
+def test_an_update_of_a_draft_sends_no_status_and_follows_the_stores(tmp_path, monkeypatch):
+    """A draft activated by hand in the admin must not go back to DRAFT on the next re-send."""
+    _unreviewed(monkeypatch)
+    shop = _shop(tmp_path)
+    products = FakeProducts()
+    PB.publish_one(shop, KEY, products, FakeFiles(), IDS)
+    row = PB.publish_one(shop, KEY, products, FakeFiles(), IDS, force=True)
+    assert "status" not in products.sent[1][0] and row["store_status"] == "DRAFT"   # the store's, as it was
+    dry = PB.publish_one(shop, KEY, None, None, {}, dry_run=True)
+    assert "status" not in json.load(open(dry["payload"], encoding="utf-8"))
+    products.product_set = lambda payload, pid=None: {"id": pid, "handle": "h", "status": "ACTIVE"}
+    row = PB.publish_one(shop, KEY, products, FakeFiles(), IDS, force=True)
+    assert "store_status" not in row and "store_status" not in shop.ledger()[KEY]   # the store says live
+    products.sent.clear()
+    products.product_set = FakeProducts.product_set.__get__(products)
+    PB.publish_one(shop, KEY, products, FakeFiles(), IDS, force=True)
+    assert products.sent[0][0]["status"] == "ACTIVE"                    # live now, even while not reviewed
+
+
+def test_a_withdrawn_draft_is_restored_a_draft(tmp_path):
+    shop = PB.Shop("fairwardgolf", str(tmp_path))
+    PB._append(shop.ledger_path, {"format": PB.FORMAT, "key": "k1", "status": "published", "product_id": "gid://1",
+                                  "handle": "h", "admin_url": "a", "digest": "d1", "store_status": "DRAFT"})
+
+    class Admin:
+        calls: list = []
+
+        def set_status(self, pid, status):
+            self.calls.append((pid, status))
+            return status
+    admin = Admin()
+    PB.withdraw(shop, "k1", admin, "wrong section")
+    row = PB.restore(shop, "k1", admin, "right after all")
+    assert admin.calls[-1] == ("gid://1", "DRAFT") and row["store_status"] == "DRAFT"
+    assert shop.ledger()["k1"]["store_status"] == "DRAFT"

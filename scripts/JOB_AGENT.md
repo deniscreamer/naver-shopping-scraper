@@ -3,7 +3,7 @@
 A job takes one listing and works product by product: collect -> description images (OCR) -> prepare (reviews
 sanitized) -> translate (the model API, `translate.py`; a job made with `new --no-translate`, or before 2026-11-08,
 stops at prepare) -> with `new --publish`: placement (the whole shop, offline) and publication of this product
-(`publish.py`: Shopify, ACTIVE, every sales channel), then the next product. It resumes where it stopped. Without
+(`publish.py`: Shopify, ACTIVE, or DRAFT for a category not marked reviewed, every sales channel), then the next product. It resumes where it stopped. Without
 `--publish`, placement (`placement.py <shop>`) and `publish.py <shop>` run on the whole shop after the job. Code and
 files: `scripts/job.py` docstring; the stages' own docs: [README.md](README.md).
 

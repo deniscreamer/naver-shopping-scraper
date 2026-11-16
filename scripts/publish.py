@@ -11,15 +11,18 @@ product, in this order (shopify_payload.py builds, shopify_admin.py sends):
   3. the gallery photos -> staged uploads, attached to the product in productSet (alt "<brand> <title> - photo N");
      a product with fewer than 2 photos of its own gets buyers' photos after them, 5 in all at most
      (shopify_payload.review_gallery, ranked by review_rank);
-  4. productSet: create, or update the product that has its source key (fairwardgolf.source_offer_id); ACTIVE;
+  4. productSet: create, or update the product that has its source key (fairwardgolf.source_offer_id); a create is
+     ACTIVE, or DRAFT when its Naver category is not marked reviewed (transform_shops.reviewed; draft first,
+     2026-11-16); an update of a draft sends no status (the store keeps its own);
      the body (descriptionHtml) is the product's description when describe.py wrote one, empty otherwise;
   5. published to every sales channel of the store (the owner, 2026-11-09); one line in
-     shops/<shop>/publish/published.jsonl.
+     shops/<shop>/publish/published.jsonl (a draft: `published` with store_status DRAFT).
 
 A product whose inputs did not change since its last publication is skipped (`--force` sends it again), and so is
 one whose productSet would send what it sent last time (`output` in the ledger, output_digest; 2026-11-11). On an update
 photos already on the product are kept by their hash (no new upload). `--withdraw <key> --reason "..."` takes a
-published product off the store (DRAFT, nothing deleted) and keeps it from being sent again. --dry-run builds and writes the payload to
+published product off the store (DRAFT, nothing deleted) and keeps it from being sent again; `--restore` puts it back
+as it was (ACTIVE, or DRAFT for a draft). --dry-run builds and writes the payload to
 shops/<shop>/publish/payloads/<id>.json and sends nothing (no upload, no write).
 """
 import argparse
@@ -33,6 +36,7 @@ from typing import Any
 
 import describe
 import shopify_payload as sp
+import transform_shops
 from shop_files import append_line, locked, read_jsonl
 from shop_pricing import policy
 from shop_stores import get_store
@@ -170,7 +174,8 @@ def inputs_digest(prepared: dict, translated: dict, placement: dict, shop: str, 
 def restore(shop: Shop, key: str, products: Any, reason: str) -> dict[str, Any]:
     """Undo a withdrawal (the owner, 2026-11-15: the no-brand agency imports withdrawn on 2026-11-12/14 go back under
     the shop's name): the product is ACTIVE again and the ledger takes its last published row once more, with no
-    digest, so the next publication sends it with today's data (the same product, its photos kept)."""
+    digest, so the next publication sends it with today's data (the same product, its photos kept). A draft that was
+    withdrawn is restored a draft (2026-11-16: restore never puts a product not yet reviewed live)."""
     before = _last(shop.ledger_path).get(key)
     if not before or before.get("status") != "withdrawn":
         raise SystemExit(f"{key}: not withdrawn here")
@@ -180,7 +185,7 @@ def restore(shop: Shop, key: str, products: Any, reason: str) -> dict[str, Any]:
             published = row
     if published is None:
         raise SystemExit(f"{key}: no published row to restore")
-    status = products.set_status(before["product_id"], "ACTIVE")
+    status = products.set_status(before["product_id"], "DRAFT" if published.get("store_status") == "DRAFT" else "ACTIVE")
     row = {**published, "digest": "", "at": _now(), "restored": reason, "store_status": status}
     _append(shop.ledger_path, row)
     return row
@@ -347,6 +352,13 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
         del payload["handle"]
     elif product_id:
         payload["redirectNewHandle"] = True             # the old address keeps working
+    # draft first (2026-11-16): a product of a category not marked reviewed is created DRAFT, for the lens review and
+    # the owner's activation; an update of a draft sends no status, so one activated in the admin stays live. After
+    # output (built with ACTIVE): the status never moves a digest, nothing is sent again for it
+    if (before or {}).get("store_status") == "DRAFT":
+        del payload["status"]
+    elif not before and not transform_shops.reviewed(shop.shop, prepared["source"].get("category_id")):
+        payload["status"] = "DRAFT"
     if dry_run:
         out = shop.path(os.path.join("publish", "payloads", f"{pid}.json"))
         os.makedirs(os.path.dirname(out), exist_ok=True)
@@ -371,6 +383,9 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
            "admin_url": f"https://admin.shopify.com/store/{products.shop.domain.split('.')[0]}/products/"
                         f"{product['id'].rsplit('/', 1)[-1]}",
            "preview_url": product.get("onlineStorePreviewUrl")}
+    status = product.get("status") or payload.get("status") or (before or {}).get("store_status")
+    if status and status != "ACTIVE":                    # the ledger's shape as before for a live product
+        row["store_status"] = status
     _append(shop.ledger_path, row)
     if ids.get("vendors") is not None and payload.get("vendor"):    # the next products of this run spell it so
         ids["vendors"].setdefault(sp.brand_key(payload["vendor"]), payload["vendor"])
@@ -430,7 +445,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--withdraw", action="append", default=[], help="a published product's key: set it DRAFT and "
                     "never send it again (with --reason)")
     ap.add_argument("--restore", action="append", default=[],
-                    help="a withdrawn product's key: ACTIVE again, sent with today's data by the next run (with --reason)")
+                    help="a withdrawn product's key: ACTIVE again (a draft: DRAFT), sent with today's data by the "
+                    "next run (with --reason)")
     ap.add_argument("--reason", help="why a product is withdrawn or restored (kept in the ledger)")
     ap.add_argument("--rehandle", action="store_true", help="give a product already in the shop the handle its "
                     "title makes now (the old one redirects)")

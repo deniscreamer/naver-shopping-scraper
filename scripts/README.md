@@ -37,7 +37,7 @@ outside fetches: AGENTS.md rule 3.
 | `shop_stores.py` | Our Shopify stores (`StoreId` enum + publisher / site + Shopify values), picked by `SHOP_STORE` |
 | `listing_filter.py`, `listing_exclusions.json` | The listing screen: which rows to open, a reason code for each left out (rental stop words from the naver-harvester) |
 | `shopify_catalog.py` | The "already in the shop" check: every product's source key from the store's Admin API (read only) |
-| `publish.py`, `shopify_payload.py`, `shopify_admin.py` | Publication: prepared + translated + placed -> the store (productSet, photos, reviews' files, ACTIVE, the website); the payload built offline; the two writing apps. See Publication |
+| `publish.py`, `shopify_payload.py`, `shopify_admin.py` | Publication: prepared + translated + placed -> the store (productSet, photos, reviews' files, ACTIVE, or DRAFT first for a category not marked reviewed, the website); the payload built offline; the two writing apps. See Publication |
 | `shop_pricing.py` | The price rule per shop: a variant's cost per item, price and how they were made (`Policy.quote`). fairwardgolf: `landed/2`, delivery, duty and margin inside the price; a shop without the rule: `krw-cost/1`, 1 000 KRW = 1 USD up to a dollar, price = cost. See The price |
 | `delivery_tariff.py`, `delivery_tariffs.json` | The delivery cost of one packed box by a recorded tariff, offline (billable weight, step, fees once per box); the tariffs as data, each traced to a dated capture, with `version` and `history`. See The price |
 | `shopnship_rates.py` | ShopNShip's public calculator (networked, by hand only): `quote` one box, `capture` the grid into a dated file, `compare` a capture with the recorded table. Never in the price path |
@@ -51,7 +51,7 @@ outside fetches: AGENTS.md rule 3.
 | `review_suspects.py` | Read only, offline: the published products of a category that may not be what its section sells (one club, 2-3 clubs, used, junior or accessory words), with key, store id, handle, price and reason; a table and a CSV for the owner's review after a lenient run (JOB_AGENT.md, After) |
 | `dedupe.py` | Duplicates (the owner, 2026-11-15): the rule (title key, photo / variant confirmation, grade then reviews) and the index `job.py --dedupe log` / `on` uses after collect; `--report <shop> [--category]` lists the duplicate groups already in the store, best first (members joined by title words only marked), `--pairs <shop> --job <id>` draws a job's pairs side by side with an index.tsv. Read only, offline (JOB_AGENT.md, Duplicates) |
 | `publish.py --withdraw` | Takes a published product off the store (DRAFT, nothing deleted) and keeps it from being sent again; the ledger keeps why |
-| `publish.py --restore` | Undoes a withdrawal (with `--reason`): ACTIVE again, its last published row back in the ledger with no digest, so the next `--only` sends today's data to the same product (2026-11-15: no-brand agency imports back under the shop's name). A title translated under the shop's name ("Fairward Golf ...") takes the brand found later in its place (`shopify_payload.title_vendor`) |
+| `publish.py --restore` | Undoes a withdrawal (with `--reason`): ACTIVE again (a draft stays a draft, 2026-11-16), its last published row back in the ledger with no digest, so the next `--only` sends today's data to the same product (2026-11-15: no-brand agency imports back under the shop's name). A title translated under the shop's name ("Fairward Golf ...") takes the brand found later in its place (`shopify_payload.title_vendor`) |
 | `store_diff.py` | Read only: what a publication would change in the store, field by field, per published product; the published products that cannot be built now; `--adopt` records `output` for those the store already has. Run it after any change of rules, dictionaries or a new category (ONBOARDING.md part D). About a minute for 2,015 products (2026-11-16: 20+ minutes before; publish.py reads the shop's files once while they do not change, the store is read 50 products a query, 3 queries at a time) |
 | `reprice.py` | Products already in the store: old -> new prices under the shop's rule (a dry-run table, also a TSV under `publish/`); `--apply` sends them, on the owner's word. See The price |
 | `test_publish.py` | Offline tests for the payload (the variants' prices and metafields included) and publish.py (fake Shopify clients) |
@@ -263,6 +263,8 @@ the collected line, `reviews.picked`.
 
 The owner's decisions (2026-11-07): one product per iteration (fewer reads in a burst: less risk of a block);
 publication goes straight to ACTIVE, right after translation; no age limit between collection and publication.
+Changed 2026-11-16 (draft first): a category not marked reviewed (`transform_shops.CategoryRules.reviewed`) is
+published DRAFT, for the agent's lens review and the owner's activation (JOB_AGENT.md).
 Changed 2026-11-08: translation is a model API stage (`translate.py`, see Translation), not the session's agent; the
 description and the images' text are not translated (`describe.py` writes the description from them, 2026-11-10). Not built on purpose (the owner,
 2026-11-08): OCR in parallel with the next collect, an incremental prepare (run_transform.run(shop) rebuilds the
@@ -1430,7 +1432,11 @@ A product goes to the store when it is `ready` (transform), `translated` and `pl
 then this one product; with `--describe` its description is written in between, see the next section). Per product: the reviews' photos and avatars to Shopify Files (the files app, once per
 file, named by its hash, `publish/files.jsonl`), the review rows as a JSON feed file there, the gallery photos as
 staged uploads attached in `productSet` (create, or update the product with its source key), ACTIVE, published
-to every sales channel of the store (the owner, 2026-11-09); one line in `shops/<shop>/publish/published.jsonl` (product id, handle,
+to every sales channel of the store (the owner, 2026-11-09). Draft first (2026-11-16): a create in a Naver category
+not marked reviewed (`transform_shops.reviewed`) is DRAFT, still published to the channels, so it shows once
+activated; the ledger row stays `published` with `store_status: DRAFT` (only when not ACTIVE), so dedupe, the lenses,
+store_diff and the job's stages see it as published; an update of a draft sends no `status` (one activated in the
+admin stays live); the status is outside `output` and the digest, so nothing is sent again for it; one line in `shops/<shop>/publish/published.jsonl` (product id, handle,
 photos by hash, admin link, `pricing`: the rule's version, `prices_usd`: the lowest and the highest variant price; rows
 from before 2026-11-11 have neither). Unchanged inputs: skipped; on an update photos already there are kept by hash, and a
 managed metafield the product no longer has is deleted (`shopify_payload.MANAGED`; productSet never removes one).
