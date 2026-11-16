@@ -36,6 +36,9 @@ class CategoryRules:
     agency_needs_brand: bool = False     # a purchase agency's import with no brand anywhere is held (run_transform):
                                          # junior clubs, 2026-11-12, three no-name US sets resold at 631-689,000
                                          # KRW ($1499-1899), titles cut ("부 주니어 골프 세트 클럽 Ages 4-8 (44-49 )")
+    sets_only: bool = False              # the section sells sets only: a variant that sells one club is left out, a
+                                         # product of such variants only is held (single_only; transform: wedges,
+                                         # 2026-11-15, "웨지 세트 또는 개별" listings of one wedge by loft)
 
 
 @dataclass(frozen=True)
@@ -74,14 +77,20 @@ RULES = {
             "50002787": CategoryRules(
                                       # owner 2026-11-11: junior clubs and sets, the full sets' rules (paid
                                       # configurations and add-ons, the images read); no parts profile
-                                      paid_variants=True, paid_addons=True, description_images=True,
-                                      agency_needs_brand=True),
+                                      paid_variants=True, paid_addons=True, description_images=True),
             "50002670": CategoryRules(
                                       # owner 2026-11-14: women's iron sets (아이언), the full sets' rules: paid
                                       # configurations (iron count, shaft) and add-ons, the images read, a
-                                      # no-brand agency import held; no parts profile
+                                      # no parts profile
+                                      paid_variants=True, paid_addons=True, description_images=True),
+            # 2026-11-15, the owner: a no-brand agency import is no longer held in any category; its vendor is the
+            # shop's name (노브랜드 -> Store.publisher, "Fairward Golf"). agency_needs_brand stays for another shop.
+            "50002783": CategoryRules(
+                                      # owner 2026-11-15: wedge sets (웨지), the iron sets' rules: paid
+                                      # configurations (lofts, shaft) and add-ons, the images read; no parts profile; sets only (a
+                                      # single wedge's variant out, 2026-11-15)
                                       paid_variants=True, paid_addons=True, description_images=True,
-                                      agency_needs_brand=True),
+                                      sets_only=True),
         }),
 }
 

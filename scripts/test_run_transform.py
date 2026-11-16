@@ -90,9 +90,7 @@ def test_each_product_keeps_its_own_jobs_paid_choice(tmp_path):
     assert got == {"3": run_transform.VARIANTS, "4": run_transform.VARIANTS, "5": run_transform.PAID}
 
 
-def test_a_junior_agency_import_with_no_brand_is_held(tmp_path):
-    """2026-11-12: three no-name US sets resold by purchase agencies at $1499-1899 were published; 50002787 holds
-    such an import (CategoryRules.agency_needs_brand) once the brand fallback found nothing."""
+def _junior_agency_imports(tmp_path):
     ls = []
     for name in ("11674983361", "5396141262", "5140543074"):
         with open(os.path.join(FX, name + ".json"), encoding="utf-8") as f:
@@ -103,7 +101,26 @@ def test_a_junior_agency_import_with_no_brand_is_held(tmp_path):
                                         encoding="utf-8")
     shops = tmp_path / "shops"
     keep_run.keep(str(src), str(shops))
-    result = run_transform.run("fairwardgolf", None, str(shops), choices={})
+    return str(shops)
+
+
+def test_a_no_brand_agency_import_goes_on_under_the_shops_name(tmp_path):
+    """2026-11-15, the owner: a purchase agency's import with no brand is no longer held; 노브랜드 becomes the shop's
+    name as its vendor (translation_rules: Store.publisher)."""
+    result = run_transform.run("fairwardgolf", None, _junior_agency_imports(tmp_path), choices={})
+    by_id = {p["key"].split(":")[3]: p for p in result["prepared"]}
+    assert by_id["11674983361"]["status"] == "ready" and by_id["11674983361"]["product"]["brand_source"] == "none"
+
+
+def test_a_shop_may_still_hold_a_no_brand_agency_import(tmp_path, monkeypatch):
+    """CategoryRules.agency_needs_brand (2026-11-12, three no-name US sets at $1499-1899): kept for a shop that wants
+    it; held once the brand fallback found nothing."""
+    import dataclasses
+    from transform_shops import rules_for
+    rules = rules_for("fairwardgolf")
+    cats = {k: dataclasses.replace(v, agency_needs_brand=True) for k, v in rules.categories.items()}
+    monkeypatch.setattr(run_transform, "rules_for", lambda shop: dataclasses.replace(rules, categories=cats))
+    result = run_transform.run("fairwardgolf", None, _junior_agency_imports(tmp_path), choices={})
     by_id = {p["key"].split(":")[3]: p for p in result["prepared"]}
     assert by_id["11674983361"]["status"] == "held"
     assert [h["code"] for h in by_id["11674983361"]["held"]] == ["agency_no_brand"]

@@ -43,10 +43,15 @@ outside fetches: AGENTS.md rule 3.
 | `shopnship_rates.py` | ShopNShip's public calculator (networked, by hand only): `quote` one box, `capture` the grid into a dated file, `compare` a capture with the recorded table. Never in the price path |
 | `shopnship_explore.py` | Research tool (networked, by hand only): wide sets of boxes asked of the calculator and compared with the tariff model (`run`, `report`). Never in the price path |
 | `listing_title_rules.json` | Ours: per Naver category, the title words of what the shop's section does not sell; the screen drops such a row as `title:<code>` (listing_filter) |
-| `review_grid.py` | Read only, offline, by hand: numbered sheets of the published products' first photos and an index (number, key, title, handle, admin link), for a look by eye after a run (JOB_AGENT.md, After) |
+| `review_grid.py` | Read only, offline, by hand: numbered sheets of the published products' first photos and an index (number, key, title, handle, admin link), for a look by eye after a run (JOB_AGENT.md, After); draws through `sheet.py` |
+| `lens.py` | Read only, offline, by hand: visual lenses, numbered contact sheets for one question each (`section`, `price`, `brand`, `dupes`, `held`, `products`) plus `index.tsv` and `summary.json`, for an agent to look at by eye and prove by number (LENSES.md, skill `visual-review`) |
+| `sheet.py` | The contact sheet drawing under the lenses, `review_grid.py`: cards (number, photos, labels, mark, group), grid and rows layouts, the index |
+| `shop_view.py` | One read-only view of a shop's files joined by key (prepared, translated, placement, the ledger, collected photos) and a job's events, for the lenses |
+| `make_lens_fixture.py` | Offline, by hand: cuts the lenses' real-record fixture (`fixtures/lens/cases.json`) from `scripts/output`, the cases listed with why (LENSES.md, Tests) |
 | `review_suspects.py` | Read only, offline: the published products of a category that may not be what its section sells (one club, 2-3 clubs, used, junior or accessory words), with key, store id, handle, price and reason; a table and a CSV for the owner's review after a lenient run (JOB_AGENT.md, After) |
-| `dedupe.py` | Duplicates (the owner, 2026-11-15): the rule (title key, photo / variant confirmation, grade then reviews) and the index `job.py --dedupe log` / `on` uses after collect; `--report <shop> [--category]` lists the duplicate groups already in the store, best first, `--pairs <shop> --job <id>` draws a job's pairs side by side with an index.tsv. Read only, offline (JOB_AGENT.md, Duplicates) |
+| `dedupe.py` | Duplicates (the owner, 2026-11-15): the rule (title key, photo / variant confirmation, grade then reviews) and the index `job.py --dedupe log` / `on` uses after collect; `--report <shop> [--category]` lists the duplicate groups already in the store, best first (members joined by title words only marked), `--pairs <shop> --job <id>` draws a job's pairs side by side with an index.tsv. Read only, offline (JOB_AGENT.md, Duplicates) |
 | `publish.py --withdraw` | Takes a published product off the store (DRAFT, nothing deleted) and keeps it from being sent again; the ledger keeps why |
+| `publish.py --restore` | Undoes a withdrawal (with `--reason`): ACTIVE again, its last published row back in the ledger with no digest, so the next `--only` sends today's data to the same product (2026-11-15: no-brand agency imports back under the shop's name). A title translated under the shop's name ("Fairward Golf ...") takes the brand found later in its place (`shopify_payload.title_vendor`) |
 | `store_diff.py` | Read only: what a publication would change in the store, field by field, per published product; the published products that cannot be built now; `--adopt` records `output` for those the store already has. Run it after any change of rules, dictionaries or a new category (ONBOARDING.md part D) |
 | `reprice.py` | Products already in the store: old -> new prices under the shop's rule (a dry-run table, also a TSV under `publish/`); `--apply` sends them, on the owner's word. See The price |
 | `test_publish.py` | Offline tests for the payload (the variants' prices and metafields included) and publish.py (fake Shopify clients) |
@@ -68,7 +73,7 @@ outside fetches: AGENTS.md rule 3.
 | `keep_run.py` | Keeps a collection run (example_99 output) per shop, byte for byte, read-only (see Transform) |
 | `transform.py`, `transform_shops.py`, `run_transform.py` | The transform: kept runs -> prepared products per shop (shared rules, per-shop rules as data, the CLI) |
 | `attributes.py` | Neutral attributes the transform writes to `product.attributes` (gender with its evidence: the variants, the 성별 row, the title; the listing query only flags `listing_disagrees`). A new kind of split is a new `Attribute` (data) |
-| `brand_fallback.py` | Run-level: a brand for every prepared product that states none (a brand of the shop in the title, 원산지's importer, the images' text, else 노브랜드; note `brand_fallback`) |
+| `brand_fallback.py` | Run-level: a brand for every prepared product that states none (a brand of the shop in the title, a dictionary brand in the title, 원산지's importer, the images' text, else 노브랜드; note `brand_fallback`) |
 | `placement.py`, `placement_rules.py` | The last stage before Shopify: prepared products -> the shop's sections (leaf tags, product type, `start_variants`) from the shop's profile (data); unknown / conflict held as `unresolved`. How to add a split: [PLACEMENT.md](PLACEMENT.md) |
 | `test_placement.py`, `test_brand_fallback.py` | Offline tests: the gender attribute and placement (the 50 fixtures, the rules case by case), the brand fallback |
 | `test_transform.py` | Offline tests for the transform on real collected lines (`fixtures/collected_fairwardgolf.jsonl`) |
@@ -480,6 +485,10 @@ reaches the product when it is prepared again; a default already today's stays a
 50002670 아이언 (owner, 2026-11-14), sold as women's iron sets: a set of 5-8 irons in a carton, no bag (100 x 25 x
 12 cm, 3.5 kg central), and a `single_club` kind (98 x 11 x 8 cm, 1 kg) for an iron sold alone (단품 with no set word
 or count); singles are left out by the title screen, so the kind is for one that slips through. Version 5 since.
+50002783 웨지 (owner, 2026-11-15), sold as wedge sets: a set of 2-3 wedges in a carton, no bag (98 x 20 x 10 cm,
+2.2 kg central), and a `single_club` kind (96 x 11 x 8 cm, 1 kg) for a variant that sells one wedge of a set-or-single
+listing (단품, 개별, 싱글, 낱개 in the variant) or 단품 in a title with no set word; single-wedge titles are left out by
+the title screen. Version 6 since.
 Product sizes (not the package: kind product or unknown) are kept apart, optional.
 Every field carries `confidence`, **1 to 5** (the owner, 2026-11-10):
 
@@ -1045,20 +1054,34 @@ link. The report says how many were dropped. The step is pure: same products in,
   anywhere (6 of 143 sets: not in the product answer, the page's answer, the search cards, the notice, the page's
   ld+json). `brand_source` says where it came from: the row / brandName; else the manufacturer
   (`manufacturer:<source>`, never Naver's M0000000); else, run-level (`brand_fallback.py`), a brand the shop's other
-  products state found in the title (`title`: 4 of the 6; the first one of a combination set), the importer in
+  products state found in the title (`title`: 4 of the 6; the first one of a combination set), a brand of the
+  dictionary starting the title (`title_known`) or standing as a word of its own in it, three letters at least, by
+  its Korean name or its Latin spelling (`title_word`: 라즈러스, 버뮤다, GoSports in wedge imports, 2026-11-15), a Brand
+  row of the description, the spec table an agency import copies (`description_row`: "Brand | WENGH", 2026-11-15),
+  the importer in
   원산지's brackets (`origin`), the shop's brand most read in the images (`images_text`), a Latin brand phrase the
   images repeat 5+ times (`images_text_latin`: BEN SAYERS on 13425122164), or 노브랜드 (`none`: 13464713764, an
-  unbranded putter). These add the note `brand_fallback` (source, other candidates). No brand list is kept by hand.
+  unbranded putter; its vendor is the shop's name, Fairward Golf, and since 2026-11-15 a purchase agency's import
+  with no brand is no longer held: `agency_needs_brand` off, the owner). These add the note `brand_fallback`
+  (source, other candidates). No brand list is kept by hand.
   A brand row the maker's own name extends, when the title names the maker too, gives way to the maker (혼마 /
   무쯔미혼마, 7186088743, 2026-11-15; a Korean branch's name never). No firm, dropped from a 브랜드 row and never a
   shop brand: the sport (골프, 골프용품, GOLF, 스포츠: one junior row's "골프" made "Golf" the vendor of 55 products,
   2026-11-14), who it is for (남성용, 여성용, 남녀공용: 32 titles got "Yoshino" through a dictionary guess), a lone letter
-  (ㅊ) and an authenticity claim (정품).
+  (ㅊ) and an authenticity claim (정품), and Amazon's "Generic" / 제네릭 (two Bermuda wedge sets, 2026-11-15). A Korean
+  shop brand counts in the title only where a word starts, as in the images (이디스 was read in 레이디스, 2026-11-15), and
+  a Latin brand read once in the images, inside an all-Latin phrase of 3+ words, is a slogan ("PRECISE AIMING
+  FEEDBACK" on a XINGGM set, 2026-11-15).
 
 **Per-shop rules** (`transform_shops.py`, data): SKU prefix, KRW per USD, variant cap, and per Naver leaf category
 `paid_variants` / `paid_addons` / `description_images`, off by default, all on for fairwardgolf 50002788 and
-50002787 (junior clubs, 2026-11-11) and 50002670 (women's iron sets, 2026-11-14; no parts profile: the core
-reading only). The shop's
+50002787 (junior clubs, 2026-11-11), 50002670 (women's iron sets, 2026-11-14) and 50002783 (wedge sets,
+2026-11-15; no parts profile: the core reading only). `sets_only` (wedges, 2026-11-15): a variant whose own words
+sell one club (1PC, 단품, 개별, 싱글, or one loft 44-72 with no set word or count; "i60R" is a shaft) is left out, and a
+product of such variants only is held `single_only` (17 one-wedge listings of the pilot filed as "웨지 세트 또는
+개별"). A loft written again on a second axis that describes the same club ("Size: 56 Degree" + "Style Name: Black
+56 Degree") counts once; on axes that are club slots (names equal but for a number: 옵션 1 / 옵션 2) each counts
+(two Yamato imports published as sets, 2026-11-15). The shop's
 sections are not decided here (Placement). A shop or a category without rules: `ShopRulesMissing`, the
 run stops and asks the operator.
 
@@ -1503,8 +1526,8 @@ Level 1 is 2.50 so the margin stays whole when the set does have a bag: the cate
 x 23 cm) is 232-259 USD by the grid, a set with a bag 523-546, and under 2.33 the difference would come out of the
 margin; without a bag the price carries 444-511 USD the delivery does not need, kept for the risks. 2.50 was derived
 for 50002788: a new category in the shop needs its own check of level 1 (the coefficients are one table per shop,
-`shop_pricing.FAIRWARDGOLF`). 50002787 junior clubs (the owner, 2026-11-11) and 50002670 women's iron sets
-(2026-11-14) keep them as they are, to be measured
+`shop_pricing.FAIRWARDGOLF`). 50002787 junior clubs (the owner, 2026-11-11), 50002670 women's iron sets
+(2026-11-14) and 50002783 wedge sets (2026-11-15) keep them as they are, to be measured
 on its first shipments like the sets. All five are starting estimates: no set had shipped yet. After the first 10-20 sets
 shipped, compare each invoice with the variant's `fairwardgolf.price` (the box FedEx measured, the billable kg,
 every fee line) and replace them with measured ones; check the first invoice of a set without a bag for FedEx's
@@ -1717,7 +1740,9 @@ must be told). `golf_set` (50002788): "What's included" and "Highlights"; no bag
 non-conforming driver gets one fixed sentence; a version for the Asian or Japanese market is one highlight, joined
 with the origin. `junior_clubs` (50002787, 2026-11-11): the same two lists, a single club or a set said in the
 intro with the age or height range the seller gives. `iron_set` (50002670, 2026-11-14): the set's irons in one
-item, the choice of iron count, shaft or flex in a highlight, 정품 / 병행 one highlight. A category without a profile gets `default`: the intro and highlights only. The common prompt
+item, the choice of iron count, shaft or flex in a highlight, 정품 / 병행 one highlight. `wedge_set` (50002783,
+2026-11-15): the wedges by loft in one item, the choice of lofts, grind or shaft in a highlight, non-conforming
+grooves (비공인) said as a limitation. A category without a profile gets `default`: the intro and highlights only. The common prompt
 (`prompts/describe_system.md`) holds no golf word.
 
 The answers are kept in `shops/<shop>/translation/descriptions.jsonl` (append-only; fields, HTML, what was cut

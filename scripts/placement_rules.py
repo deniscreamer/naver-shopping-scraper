@@ -16,6 +16,9 @@ both; a set whose variants carry both genders goes to both, each section with it
 there, and a mixed set too (one product, all its variants sold), a men's set and a set whose gender nothing states
 are held (`unresolved`), never placed by the listing's query.
 
+50002783 웨지 (2026-11-15): wedge sets, one section wedge-sets with no split (wedges are mostly unisex); single wedges
+are left out by the title screen, not here.
+
     from placement_rules import profile_for
     profile = profile_for("fairwardgolf")
 """
@@ -63,6 +66,7 @@ JUNIOR = Leaf("junior-clubs-sets", "Junior Golf Clubs & Sets")    # owner 2026-1
                                                                    # section; age, height and club count not checked
 WOMENS_IRONS = Leaf("womens-iron-sets", "Women’s Iron Sets")    # owner 2026-11-14: women's iron sets only; a men's
                                                                    # or an unknown-gender set is held (unresolved)
+WEDGES = Leaf("wedge-sets", "Wedge Sets")                          # owner 2026-11-15: wedge sets, no gender split
 
 PROFILES = {
     StoreId.FAIRWARDGOLF: PlacementProfile(
@@ -73,6 +77,7 @@ PROFILES = {
             "50002787": CategoryPlacement(parent="clubs", leaves={None: JUNIOR}),     # 주니어용클럽
             "50002670": CategoryPlacement(parent="clubs", split_by="gender",           # 아이언
                                           leaves={"womens": WOMENS_IRONS}),
+            "50002783": CategoryPlacement(parent="clubs", leaves={None: WEDGES}),     # 웨지
         }),
 }
 

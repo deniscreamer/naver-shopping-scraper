@@ -199,6 +199,15 @@ def test_junior_clubs_go_to_their_one_section_whatever_the_gender():
                                "fairwardgolf:showcase"]
 
 
+def test_wedge_sets_go_to_one_section_whatever_the_gender():
+    """50002783 (the owner, 2026-11-15): wedge sets, one collection fairwardgolf-wedge-sets (tag rule
+    fairwardgolf:leaf:wedge-sets, read 2026-11-15), no gender split."""
+    for value in ("womens", "mens", "unisex", "unknown"):
+        got = PL.place(product(value, category="50002783"), PROFILE)
+        assert got["status"] == "placed" and got["product_type"] == "Wedge Sets"
+        assert got["tags"] == ["fairwardgolf:leaf:wedge-sets", "fairwardgolf:parent:clubs", "fairwardgolf:showcase"]
+
+
 def test_iron_sets_go_to_the_womens_section_and_a_mens_or_unknown_set_is_held():
     """50002670 (the owner, 2026-11-14): women's iron sets only, the store's collection fairwardgolf-womens-iron-sets
     (tag rule fairwardgolf:leaf:womens-iron-sets, read 2026-11-14); unisex and mixed go there too."""

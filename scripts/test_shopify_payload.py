@@ -19,3 +19,16 @@ def test_a_brand_with_its_letters_swapped_is_the_brand():
     en = sp.English({"en": {sp.text_id("title", "t"): "PMG Kids' Junior Golf Club Set",
                             sp.text_id("brand", "b"): "PGM"}})
     assert sp.title_vendor(product, en)[0] == "PGM Kids' Junior Golf Club Set"
+
+
+def test_a_title_made_under_the_shops_name_takes_the_brand_found_later():
+    """2026-11-15: a title translated while the product was 노브랜드 began "Fairward Golf"; the description's Brand row
+    later gave PGM: "PGM Men's ...", never "PGM Fairward Golf Men's ..."; with no brand the shop's name stays."""
+    import shopify_payload as sp
+    product = {"title_ko": "t", "brand_ko": "b"}
+    en = sp.English({"en": {sp.text_id("title", "t"): "Fairward Golf Men's Complete Golf Club Set",
+                            sp.text_id("brand", "b"): "PGM"}})
+    assert sp.title_vendor(product, en, tenant="Fairward Golf") == ("PGM Men's Complete Golf Club Set", "PGM")
+    en = sp.English({"en": {sp.text_id("title", "t"): "Fairward Golf Men's Complete Golf Club Set",
+                            sp.text_id("brand", "b"): "Fairward Golf"}})
+    assert sp.title_vendor(product, en, tenant="Fairward Golf")[0] == "Fairward Golf Men's Complete Golf Club Set"

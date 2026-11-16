@@ -747,3 +747,82 @@ def test_a_sellers_note_leaves_an_option_value():
     assert _without_notes(["A(주문전문의)", "L(주문전문의)"]) == ["A", "L"]
     assert _without_notes(["L", "L 당일출고"]) is None                  # two values would be one: kept
     assert _without_notes(["7아이언세트 L", "8아이언세트 L"]) is None      # no note
+
+
+def test_sets_only_leaves_a_single_clubs_variant_out_and_holds_a_product_of_them():
+    """Wedges (sets_only, the owner 2026-11-15): of a set-or-single listing only the set variants are sold
+    (12710842654 "50도+56도 세트" kept, "50도" out); a listing whose every variant is one wedge is held."""
+    from transform import single_club
+    for single in (["60 Degree-1PC", "1 TARNISH 60 Degree"], ["Black Left Handed", "LH Black 52 Degree"],
+                   ["GRF539-52 degrees"], ["52도 웨지 블랙 1개"], ["56도"], ["48 (Y그라인드)", "DG S200"]):
+        assert single_club(single), single
+    for kept in (["50/54/58 Degree-3PCS"], ["RH Black 52 56 60 Set"], ["52+56+60"], ["black"], ["Left"],
+                 ["스틸파이버 i60R"], ["NS PRO 950 R"], ["50도+56도 세트", "NS PRO 950 R"]):   # i60R is a shaft
+        assert not single_club(kept), kept
+    cat = dataclasses.replace(RULES.categories["50002788"], sets_only=True)
+    rules = dataclasses.replace(RULES, categories={"50002788": cat})
+
+    def wedges(values):
+        def edit(line):
+            line["specs"]["options"]["option_groups"] = [{"id": "1", "name": "로프트", "type": "COMBINATION"}]
+            base = line["specs"]["options"]["variants"][0]
+            line["specs"]["options"]["variants"] = [{**base, "id": str(i), "options": [v], "extra_price": 0}
+                                                    for i, v in enumerate(values)]
+        return edit
+    p = prep("12945108653", wedges(["50도+56도 세트", "50도", "56도"]), rules=rules)
+    assert len(p["product"]["variants"]) == 1 and "세트" in p["product"]["variants"][0]["source_id"]
+    held = prep("12945108653", wedges(["52도", "56도", "60도"]), rules=rules)
+    assert held["status"] == "held" and "single_only" in {h["code"] for h in held["held"]}
+
+
+def test_sets_only_holds_a_title_that_sells_one_piece():
+    """2026-11-15, the wedge pilot: "골프 웨지 세트 52 56 60도 갭 샌드 로브 60도 웨지 실버 1개" sells one wedge."""
+    from transform import _ONE_PIECE_RE
+    for title in ("골프 웨지 세트 52 56 60도 갭 샌드 로브 60도 웨지 실버 1개", "BombTech 골프 웨지 세트 52 56 60도 실버 1개",
+                  "남성용 단조 풀페이스 골프 웨지 세트 52 56 60도 CNC 밀링 블랙. 56° 1개"):
+        assert _ONE_PIECE_RE.search(title), title
+    for title in ("테일러메이드 MG5 웨지 SB 세트 3개", "웨지 3종 세트 11개", "골프 웨지 세트 1개 구성", "USC U-21 웨지 2개 세트"):
+        assert not _ONE_PIECE_RE.search(title), title
+    cat = dataclasses.replace(RULES.categories["50002788"], sets_only=True)
+    rules = dataclasses.replace(RULES, categories={"50002788": cat})
+
+    def one(line):
+        line["details"]["name"] = "골프 웨지 세트 52 56 60도 갭 샌드 로브 60도 웨지 실버 1개"
+        line["specs"]["options"]["option_groups"] = [{"id": "1", "name": "색상", "type": "COMBINATION"}]
+        base = line["specs"]["options"]["variants"][0]
+        line["specs"]["options"]["variants"] = [{**base, "id": "a", "options": ["실버"], "extra_price": 0}]
+    held = prep("12945108653", one, rules=rules)
+    assert held["status"] == "held" and "single_only" in {h["code"] for h in held["held"]}
+
+
+def test_a_loft_restated_on_a_second_axis_is_one_club_but_two_club_slots_are_two_clubs():
+    """2026-11-15, the lenses: two Yamato 'set or single' imports published as sets (12951827729, 12921931106), every
+    variant one wedge written on two axes ("Size: 56 Degree" + "Style Name: Black 56 Degree"); the TaylorMade MG5
+    sets (12701183962, 13646379989) pick one club per axis and may pick one loft twice: kept."""
+    from transform import _club_slots, single_club
+    yamato = ["Size", "Style Name"]
+    for values in (["1 56 Degree", "1 Black 56 Degree"], ["56 Degree", "Black 56 Degree"], ["60 Degree", "60 Degree"]):
+        assert single_club(values, yamato), values
+    for names, values in ((["옵션 1", "옵션 2"], ["52.09 SB", "52.09 SB"]),
+                          (["웨지 로프트 바운스 선택-1", "웨지 로프트 바운스 선택-2", "웨지 로프트 바운스 선택-3"],
+                           ["48도 09 바운스", "48도 09 바운스", "48도 09 바운스"]),
+                          (["SB웨지1", "SB웨지2"], ["크롬56도(12도)", "크롬56도(12도)"])):
+        assert _club_slots(names) and not single_club(values, names), (names, values)
+    assert not _club_slots(["Size", "Style Name"]) and not _club_slots(["로프트"])
+    assert not single_club(["52 Degree", "56 Degree"], yamato)                          # two lofts: two clubs
+
+
+def test_written_out_escapes_are_decoded_before_the_title_is_read():
+    """2026-11-15: 15 products carried "u2013" / "u2019" as text (13016883852 "개별 u2013 단조", 13209544038 "세트 u2013
+    소년 u2019 & 소녀"); it reached the titles, the handles and dedupe's numbers."""
+    from description_clean import decode_escapes, decode_line
+    assert decode_escapes("세트 u2013 소년 u2019 & 소녀") == "세트 – 소년 ' & 소녀"
+    assert decode_escapes("PGM 남성 u2019s 컴플리트 U2013 티타늄") == "PGM 남성 's 컴플리트 – 티타늄"
+    for kept in ("clubface scuffed", "U2000X", "A11N db4P LH01-52", "u20", "abcu2013", "", None):
+        assert decode_escapes(kept) == kept
+    line = {"key": "k", "details": {"name": "웨지 u2013 단조", "description": {"text": "a u2019 b", "html": "x u2013"}},
+            "listing": {"name": "웨지 u2013 단조"}, "specs": {}}
+    out = decode_line(line)
+    assert out["details"]["name"] == out["listing"]["name"] == "웨지 – 단조"
+    assert out["details"]["description"] == {"text": "a ' b", "html": "x u2013"}            # the html as it is
+    assert line["details"]["name"] == "웨지 u2013 단조"                                       # the line not changed

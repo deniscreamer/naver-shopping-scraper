@@ -144,6 +144,28 @@ def inputs_digest(prepared: dict, translated: dict, placement: dict, shop: str, 
     return sp.digest(inputs)
 
 
+def restore(shop: Shop, key: str, products: Any, reason: str) -> dict[str, Any]:
+    """Undo a withdrawal (the owner, 2026-11-15: the no-brand agency imports withdrawn on 2026-11-12/14 go back under
+    the shop's name): the product is ACTIVE again and the ledger takes its last published row once more, with no
+    digest, so the next publication sends it with today's data (the same product, its photos kept)."""
+    before = _last(shop.ledger_path).get(key)
+    if not before or before.get("status") != "withdrawn":
+        raise SystemExit(f"{key}: not withdrawn here")
+    published = None
+    with open(shop.ledger_path, encoding="utf-8") as f:
+        for line in f:
+            if line.strip():
+                row = json.loads(line)
+                if row.get("key") == key and row.get("status") == "published":
+                    published = row
+    if published is None:
+        raise SystemExit(f"{key}: no published row to restore")
+    status = products.set_status(before["product_id"], "ACTIVE")
+    row = {**published, "digest": "", "at": _now(), "restored": reason, "store_status": status}
+    _append(shop.ledger_path, row)
+    return row
+
+
 def withdraw(shop: Shop, key: str, products: Any, reason: str) -> dict[str, Any]:
     """Take a published product off the store: DRAFT (off every sales channel, nothing deleted; the owner,
     2026-11-11: a bag alone and a toy in the junior clubs). The ledger row `withdrawn` keeps publish.py from sending
@@ -380,11 +402,23 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--dry-run", action="store_true", help="build and save the payload; send nothing")
     ap.add_argument("--withdraw", action="append", default=[], help="a published product's key: set it DRAFT and "
                     "never send it again (with --reason)")
-    ap.add_argument("--reason", help="why a product is withdrawn (kept in the ledger)")
+    ap.add_argument("--restore", action="append", default=[],
+                    help="a withdrawn product's key: ACTIVE again, sent with today's data by the next run (with --reason)")
+    ap.add_argument("--reason", help="why a product is withdrawn or restored (kept in the ledger)")
     ap.add_argument("--rehandle", action="store_true", help="give a product already in the shop the handle its "
                     "title makes now (the old one redirects)")
     args = ap.parse_args(argv)
     shop = Shop(args.shop, args.shops_root)
+    if args.restore:
+        if not args.reason:
+            ap.error("--restore needs --reason")
+        from shopify_admin import ProductsAdmin
+        admin = ProductsAdmin(get_store(args.shop))
+        admin.check_shop()
+        for key in args.restore:
+            row = restore(shop, key, admin, args.reason)
+            print(f"{key}: restored ({row['store_status']}) {row.get('admin_url', '')}")
+        return 0
     if args.withdraw:
         if not args.reason:
             ap.error("--withdraw needs --reason")

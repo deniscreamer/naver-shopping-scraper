@@ -212,7 +212,7 @@ def test_baselines_block_is_optional_and_the_operators():
     table = load_table()
     block = table["rows"][0]["baselines"]
     assert {k: block[k] for k in BASE if k != "basis"} == {k: v for k, v in BASE.items() if k != "basis"}
-    assert table["version"] == 5 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
+    assert table["version"] == 6 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
     check_row(ROW)                                                    # a row without the block: no composition
     check_row({**ROW, "baselines": BASE})
 
@@ -329,3 +329,17 @@ def test_iron_sets_take_the_sets_box_and_a_single_iron_its_own():
     assert default_kind(row, "젝시오 13 여성 아이언", "5번 단품")["kind"] == "single_club"
     for title in ("7아이언세트 단품 여성", "던롭 젝시오 13 레이디스 아이언 7개 세트", "포틴 TB5 6-P 단품"):
         assert default_kind(row, title, None) is None
+
+
+def test_wedge_sets_take_the_sets_box_and_a_single_wedge_its_own():
+    """50002783 (the owner, 2026-11-15): a set of 2-3 wedges 98 x 20 x 10 cm, 2.2 kg; one wedge 96 x 11 x 8 cm, 1 kg: a
+    variant that sells one wedge of a set-or-single listing (단품, 개별, 싱글), or 단품 in a title with no set word."""
+    from package_measures import default_kind
+    row = next(r for r in load_table()["rows"] if r["category_id"] == "50002783")
+    assert row["fields"]["package_width_mm"]["central"] == 200 and row["fields"]["package_weight_g"]["central"] == 2200
+    assert default_kind(row, "미즈노 JPX925 핫메탈 프로 웨지 단품", None)["kind"] == "single_club"
+    assert default_kind(row, "BYBOMYA 단조 골프 웨지 개별 또는 세트", "개별 52도")["kind"] == "single_club"
+    assert default_kind(row, "ALVO GOLF 웨지 세트 및 싱글", "싱글 56")["kind"] == "single_club"
+    for title, variant in (("테일러메이드 MG5 웨지 SB 세트 3개", "52+56+60"), ("프로기아 웨지세트 단품", None),
+                           ("BYBOMYA 단조 골프 웨지 개별 또는 세트", "세트 52/56/60"), ("웨지 3종 세트", "52도")):
+        assert default_kind(row, title, variant) is None

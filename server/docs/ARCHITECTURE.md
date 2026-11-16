@@ -538,6 +538,9 @@ primary record, with dates; read it before changing the behaviour.
 
 A new upstream fact gets a dated comment at the code that handles it and one
 line here (R-NAVER-4).
+- Some sellers' names and descriptions carry escapes written out as text ("u2013", "U2019": an import tool lost the
+  backslash; 15 products, 2026-11-15). The server returns them as Naver does; scripts decode them
+  (description_clean.decode_escapes).
 - A category page (`search.shopping.naver.com/ns/category/<display id>`: 10000123 스포츠/레저, 10000404 골프, 10002591 골프클럽;
   display ids, not the 500xxxxx leaves) sends the owner's Chrome without a Naver login to nid.naver.com, by the menu
   path with hovers too (probed 2026-11-14). -> scripts/JOB_AGENT.md "The query".

@@ -1,0 +1,5273 @@
+{
+ "made": "2026-11-15",
+ "shop": "fairwardgolf",
+ "cases": {
+  "fairwardgolf:naver:102682314:13127601930": "wedge set published, brand from the specs (Bermuda)",
+  "fairwardgolf:naver:102329146:13016152694": "wedge set published under the shop's name (brand none)",
+  "fairwardgolf:naver:101431661:12731471202": "the cheapest wedge 'set' at ₩89,000: price lens flags the foot",
+  "fairwardgolf:naver:1100051197:12951827729": "a wedge set or a single (Yamato 'or individual'), brand title_known",
+  "fairwardgolf:naver:100263073:5305572105": "MacGregor NV201 two wedges at ₩99,000",
+  "fairwardgolf:naver:101365130:11097352600": "prepared but held single_only (mirai MW-25)",
+  "fairwardgolf:naver:102709004:12178049211": "not taken: placement held single_only, never published",
+  "fairwardgolf:naver:102697674:13292782760": "not taken: duplicate_of a published BombTech (prepared on an earlier run)",
+  "fairwardgolf:naver:1100142898:13619604371": "the published BombTech the duplicate matched",
+  "fairwardgolf:naver:102773407:13619939279": "GoSports kept copy, later withdrawn: a duplicate_of a withdrawn product",
+  "fairwardgolf:naver:101921971:8958060680": "BG-100 white, PREMIUM 98 reviews: the kept copy",
+  "fairwardgolf:naver:100020225:12215613033": "BG-100 copy withdrawn replaced_by the kept one",
+  "fairwardgolf:naver:101921971:13785630702": "BG-100 Black Edition, same seller as the kept one: left live on purpose",
+  "fairwardgolf:naver:101435422:13809756465": "BG-100 black of another seller, grouped by title words only with a white set",
+  "fairwardgolf:naver:102583137:13827555559": "BG-100 white, the other half of that title-only pair",
+  "fairwardgolf:naver:1100056746:13325799991": "REVA 2025 clubs only, PREMIUM: kept",
+  "fairwardgolf:naver:101435422:11989527841": "REVA 2025 'clubs only' copy, withdrawn replaced_by",
+  "fairwardgolf:naver:101435422:11989518458": "REVA 2025 with its bags: same title words, another product",
+  "fairwardgolf:naver:102748022:13261457036": "not taken: duplicate_of GoSports 13619939279, a match withdrawn since (held lens: red)",
+  "fairwardgolf:naver:102317872:12921931106": "the second Yamato 'set or single' import: every variant one wedge on two axes (Size, Style Name)",
+  "fairwardgolf:naver:1100067303:13405976594": "A11N SPORTS wedge set, a copy by every photo and variant (dedupe strong route)",
+  "fairwardgolf:naver:102683547:13552318731": "A11N SPORTS wedge set, the kept copy of the three (SPROUT)",
+  "fairwardgolf:naver:102783573:13207840596": "the same A11N set under its model line 핀클리 (vendor Finchley, title with u2013)",
+  "fairwardgolf:naver:100006312:4385835200": "junior set with age options, paid shipping",
+  "fairwardgolf:naver:101731755:13770121877": "a woodwork bar clamp live among junior sets (brand none): section lens must show it",
+  "fairwardgolf:naver:1100080439:13475342948": "junior set, brand title_word (Elevon)",
+  "fairwardgolf:naver:102524282:13324729995": "junior set, brand description_row"
+ },
+ "prepared": [
+  {
+   "key": "fairwardgolf:naver:102682314:13127601930",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002783",
+    "channel_no": "102682314",
+    "product_id": "13127601930",
+    "link": "https://smartstore.naver.com/moriaj/products/13127601930"
+   },
+   "texts": [
+    {
+     "id": "title:7a3b3d50fe5ac500",
+     "kind": "title",
+     "ko": "남성용 버뮤다 프리미엄 골프 웨지 세트 - 52 56 60도 골프 웨지 - 더 많은 스핀과 컨트롤을 위한 풀 페이스 밀링이 적용된 캐비티 백 디자인"
+    }
+   ],
+   "product": {
+    "title_ko": "남성용 버뮤다 프리미엄 골프 웨지 세트 - 52 56 60도 골프 웨지 - 더 많은 스핀과 컨트롤을 위한 풀 페이스 밀링이 적용된 캐비티 백 디자인",
+    "brand_ko": "버뮤다",
+    "brand_source": "title_word",
+    "pricing": {
+     "base_krw": 340650
+    },
+    "options": [],
+    "variants": [
+     {
+      "options_ko": [],
+      "price_krw": 340650
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002783-20261115T131333Z/images/13127601930/fairwardgolf-13127601930-001-59904ec1aea818f1.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002783-20261115T131333Z/images/13127601930/fairwardgolf-13127601930-002-60be6229ed8794cf.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002783-20261115T131333Z/images/13127601930/fairwardgolf-13127601930-003-cd3aa4459bf94cb4.webp",
+      "position": 2
+     },
+     {
+      "file": "collected/50002783-20261115T131333Z/images/13127601930/fairwardgolf-13127601930-004-bd9737260b685040.webp",
+      "position": 3
+     },
+     {
+      "file": "collected/50002783-20261115T131333Z/images/13127601930/fairwardgolf-13127601930-005-e8a81b9395e7f7fe.webp",
+      "position": 4
+     },
+     {
+      "file": "collected/50002783-20261115T131333Z/images/13127601930/fairwardgolf-13127601930-006-b05aee4944571916.webp",
+      "position": 5
+     },
+     {
+      "file": "collected/50002783-20261115T131333Z/images/13127601930/fairwardgolf-13127601930-007-a1393485881a6de2.webp",
+      "position": 6
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102329146:13016152694",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002783",
+    "channel_no": "102329146",
+    "product_id": "13016152694",
+    "link": "https://smartstore.naver.com/rooftoppla/products/13016152694"
+   },
+   "texts": [
+    {
+     "id": "title:0d73a098a52fcb7a",
+     "kind": "title",
+     "ko": "69도 골프의 남녀 골프 웨지 세트54/60/69 세트 로브 샌드 피칭 길이 35인치 Left"
+    }
+   ],
+   "product": {
+    "title_ko": "69도 골프의 남녀 골프 웨지 세트54/60/69 세트 로브 샌드 피칭 길이 35인치 Left",
+    "brand_ko": "노브랜드",
+    "brand_source": "none",
+    "pricing": {
+     "base_krw": 408960
+    },
+    "options": [
+     {
+      "name_ko": "Hand Orientation",
+      "values_ko": [
+       "Left",
+       "Right"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "options_ko": [
+       "Left"
+      ],
+      "price_krw": 408960
+     },
+     {
+      "options_ko": [
+       "Right"
+      ],
+      "price_krw": 408960
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002783-20261115T131643Z/images/13016152694/fairwardgolf-13016152694-001-b1cc57cfe2f42a67.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002783-20261115T131643Z/images/13016152694/fairwardgolf-13016152694-002-5f14414d4662c048.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002783-20261115T131643Z/images/13016152694/fairwardgolf-13016152694-003-8338f7b40f513a9c.webp",
+      "position": 2
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101431661:12731471202",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002783",
+    "channel_no": "101431661",
+    "product_id": "12731471202",
+    "link": "https://smartstore.naver.com/japanjepae/products/12731471202"
+   },
+   "texts": [
+    {
+     "id": "title:a9fc2ea836b922f0",
+     "kind": "title",
+     "ko": "야마하 RMX 포지드 웨지 2개 세트 NSPRO 950GH"
+    }
+   ],
+   "product": {
+    "title_ko": "야마하 RMX 포지드 웨지 2개 세트 NSPRO 950GH",
+    "brand_ko": "야마하",
+    "brand_source": "specs:브랜드",
+    "pricing": {
+     "base_krw": 89000
+    },
+    "options": [],
+    "variants": [
+     {
+      "options_ko": [],
+      "price_krw": 89000
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002783-20261115T130026Z/images/12731471202/fairwardgolf-12731471202-001-a1aff92ca9f32e7d.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002783-20261115T130026Z/images/12731471202/fairwardgolf-12731471202-002-d9ea45646e7395ec.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002783-20261115T130026Z/images/12731471202/fairwardgolf-12731471202-003-f75db807bf9bd944.webp",
+      "position": 2
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:1100051197:12951827729",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002783",
+    "channel_no": "1100051197",
+    "product_id": "12951827729",
+    "link": "https://smartstore.naver.com/sudambuk/products/12951827729"
+   },
+   "texts": [
+    {
+     "id": "title:34f1d64cf3a11436",
+     "kind": "title",
+     "ko": "야마토 풀페이스 골프 웨지 세트 또는 개별 50/52/54/56/58/60 단조 갭 샌드 롭 클럽 밀링"
+    }
+   ],
+   "product": {
+    "title_ko": "야마토 풀페이스 골프 웨지 세트 또는 개별 50/52/54/56/58/60 단조 갭 샌드 롭 클럽 밀링",
+    "brand_ko": "야마토",
+    "brand_source": "title_known",
+    "pricing": {
+     "base_krw": 96210
+    },
+    "options": [
+     {
+      "name_ko": "Size",
+      "values_ko": [
+       "1 56 Degree",
+       "2 50 Degree",
+       "3 52 Degree",
+       "6 54 Degree",
+       "7 58 Degree",
+       "8 60 Degree",
+       "9 72 Degree"
+      ]
+     },
+     {
+      "name_ko": "Style Name",
+      "values_ko": [
+       "1 Black 56 Degree",
+       "2 Black 50 Degree",
+       "3 Black 52 Degree",
+       "6 Black 54 Degree",
+       "9 Black 58 Degree",
+       "10 Black 60 Degree",
+       "11 Black 72 Degree"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "options_ko": [
+       "1 56 Degree",
+       "1 Black 56 Degree"
+      ],
+      "price_krw": 96210
+     },
+     {
+      "options_ko": [
+       "2 50 Degree",
+       "2 Black 50 Degree"
+      ],
+      "price_krw": 111310
+     },
+     {
+      "options_ko": [
+       "3 52 Degree",
+       "3 Black 52 Degree"
+      ],
+      "price_krw": 103810
+     },
+     {
+      "options_ko": [
+       "6 54 Degree",
+       "6 Black 54 Degree"
+      ],
+      "price_krw": 99510
+     },
+     {
+      "options_ko": [
+       "7 58 Degree",
+       "9 Black 58 Degree"
+      ],
+      "price_krw": 96210
+     },
+     {
+      "options_ko": [
+       "8 60 Degree",
+       "10 Black 60 Degree"
+      ],
+      "price_krw": 96210
+     },
+     {
+      "options_ko": [
+       "9 72 Degree",
+       "11 Black 72 Degree"
+      ],
+      "price_krw": 124510
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002783-20261115T170812Z/images/12951827729/fairwardgolf-12951827729-001-b14730cc8cc20996.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002783-20261115T170812Z/images/12951827729/fairwardgolf-12951827729-002-9b9b553c72c94c87.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002783-20261115T170812Z/images/12951827729/fairwardgolf-12951827729-003-610ed71447456cda.webp",
+      "position": 2
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:100263073:5305572105",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002783",
+    "channel_no": "100263073",
+    "product_id": "5305572105",
+    "link": "https://smartstore.naver.com/verygoodgolf/products/5305572105"
+   },
+   "texts": [
+    {
+     "id": "title:da1d062b0191a17a",
+     "kind": "title",
+     "ko": "[Macgregor] 신품 맥그리거 NV201 50도 56도 웨지세트 [Aw,Sw]"
+    }
+   ],
+   "product": {
+    "title_ko": "[Macgregor] 신품 맥그리거 NV201 50도 56도 웨지세트 [Aw,Sw]",
+    "brand_ko": "맥그리거",
+    "brand_source": "specs:브랜드",
+    "pricing": {
+     "base_krw": 99000
+    },
+    "options": [],
+    "variants": [
+     {
+      "options_ko": [],
+      "price_krw": 99000
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002783-20261115T124551Z/images/5305572105/fairwardgolf-5305572105-001-997992708671781a.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002783-20261115T124551Z/images/5305572105/fairwardgolf-5305572105-002-223431892fab0f4b.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002783-20261115T124551Z/images/5305572105/fairwardgolf-5305572105-003-5b6e8c340766d298.webp",
+      "position": 2
+     },
+     {
+      "file": "collected/50002783-20261115T124551Z/images/5305572105/fairwardgolf-5305572105-004-a037b6eb9c013e54.webp",
+      "position": 3
+     },
+     {
+      "file": "collected/50002783-20261115T124551Z/images/5305572105/fairwardgolf-5305572105-005-0f7ea0eb7917e3ce.webp",
+      "position": 4
+     },
+     {
+      "file": "collected/50002783-20261115T124551Z/images/5305572105/fairwardgolf-5305572105-006-a3851ad472a17a4d.webp",
+      "position": 5
+     },
+     {
+      "file": "collected/50002783-20261115T124551Z/images/5305572105/fairwardgolf-5305572105-007-e81edd8a7bcd5c15.webp",
+      "position": 6
+     },
+     {
+      "file": "collected/50002783-20261115T124551Z/images/5305572105/fairwardgolf-5305572105-008-0e0dd15a02e3d630.webp",
+      "position": 7
+     },
+     {
+      "file": "collected/50002783-20261115T124551Z/images/5305572105/fairwardgolf-5305572105-009-32a67a2af5c8c0c7.webp",
+      "position": 8
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101365130:11097352600",
+   "status": "held",
+   "held": [
+    {
+     "code": "single_only",
+     "detail": "3 variants, each one club"
+    }
+   ],
+   "source": {
+    "category_id": "50002783",
+    "channel_no": "101365130",
+    "product_id": "11097352600",
+    "link": "https://smartstore.naver.com/yujingolf/products/11097352600"
+   },
+   "texts": [
+    {
+     "id": "title:74bf72ad9f6e4ab8",
+     "kind": "title",
+     "ko": "mirai 미라이골프 MW-25 블랙 웨지 다이나믹골드 S200 샤프트 피팅 세트"
+    }
+   ],
+   "product": {
+    "title_ko": "mirai 미라이골프 MW-25 블랙 웨지 다이나믹골드 S200 샤프트 피팅 세트",
+    "brand_ko": "미라이골프",
+    "brand_source": "specs:브랜드",
+    "pricing": {
+     "base_krw": 280000
+    },
+    "options": [],
+    "variants": [],
+    "images": [
+     {
+      "file": "collected/50002783-20261115T150326Z/images/11097352600/fairwardgolf-11097352600-001-1f2909bd9dbabe70.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002783-20261115T150326Z/images/11097352600/fairwardgolf-11097352600-002-9d54286d7475f631.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002783-20261115T150326Z/images/11097352600/fairwardgolf-11097352600-003-eb00b367a19be493.webp",
+      "position": 2
+     },
+     {
+      "file": "collected/50002783-20261115T150326Z/images/11097352600/fairwardgolf-11097352600-004-fa0a209f741d322e.webp",
+      "position": 3
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102709004:12178049211",
+   "status": "held",
+   "held": [
+    {
+     "code": "single_only",
+     "detail": "7 variants, each one club"
+    }
+   ],
+   "source": {
+    "category_id": "50002783",
+    "channel_no": "102709004",
+    "product_id": "12178049211",
+    "link": "https://smartstore.naver.com/bri_sense_global/products/12178049211"
+   },
+   "texts": [
+    {
+     "id": "title:fb519c64035d20a9",
+     "kind": "title",
+     "ko": "골프 웨지 세트 52-60도 녹방지 마감 샌드 로브 연습용 클럽"
+    }
+   ],
+   "product": {
+    "title_ko": "골프 웨지 세트 52-60도 녹방지 마감 샌드 로브 연습용 클럽",
+    "brand_ko": "노브랜드",
+    "brand_source": "none",
+    "pricing": {
+     "base_krw": 170300
+    },
+    "options": [],
+    "variants": [],
+    "images": [
+     {
+      "file": "collected/50002783-20261115T131356Z/images/12178049211/fairwardgolf-12178049211-001-17cb918281ed9acb.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002783-20261115T131356Z/images/12178049211/fairwardgolf-12178049211-002-ff9353d9696b623b.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002783-20261115T131356Z/images/12178049211/fairwardgolf-12178049211-003-c634ed775e02685d.webp",
+      "position": 2
+     },
+     {
+      "file": "collected/50002783-20261115T131356Z/images/12178049211/fairwardgolf-12178049211-004-9def7a3fb0e44cc3.webp",
+      "position": 3
+     },
+     {
+      "file": "collected/50002783-20261115T131356Z/images/12178049211/fairwardgolf-12178049211-005-59f0e6b79244bd84.webp",
+      "position": 4
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102697674:13292782760",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002783",
+    "channel_no": "102697674",
+    "product_id": "13292782760",
+    "link": "https://smartstore.naver.com/armonghagudajeunju/products/13292782760"
+   },
+   "texts": [
+    {
+     "id": "title:15066ad95e51beca",
+     "kind": "title",
+     "ko": "BombTech - 프리미엄 골프 웨지 세트 52 56 60도 왼손잡이"
+    }
+   ],
+   "product": {
+    "title_ko": "BombTech - 프리미엄 골프 웨지 세트 52 56 60도 왼손잡이",
+    "brand_ko": "Bombtech Golf",
+    "brand_source": "specs:브랜드",
+    "pricing": {
+     "base_krw": 411530
+    },
+    "options": [],
+    "variants": [
+     {
+      "options_ko": [],
+      "price_krw": 411530
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002783-20261115T150602Z/images/13292782760/fairwardgolf-13292782760-001-95700e7f60b3efe3.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002783-20261115T150602Z/images/13292782760/fairwardgolf-13292782760-002-52feca4e5f8cd7c3.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002783-20261115T150602Z/images/13292782760/fairwardgolf-13292782760-003-60a892b80237059d.webp",
+      "position": 2
+     },
+     {
+      "file": "collected/50002783-20261115T150602Z/images/13292782760/fairwardgolf-13292782760-004-d26bfd922832dee1.webp",
+      "position": 3
+     },
+     {
+      "file": "collected/50002783-20261115T150602Z/images/13292782760/fairwardgolf-13292782760-005-9df902cd5e80b20c.webp",
+      "position": 4
+     },
+     {
+      "file": "collected/50002783-20261115T150602Z/images/13292782760/fairwardgolf-13292782760-006-0e5b921a0e718094.webp",
+      "position": 5
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:1100142898:13619604371",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002783",
+    "channel_no": "1100142898",
+    "product_id": "13619604371",
+    "link": "https://smartstore.naver.com/nswbondi/products/13619604371"
+   },
+   "texts": [
+    {
+     "id": "title:15066ad95e51beca",
+     "kind": "title",
+     "ko": "BombTech - 프리미엄 골프 웨지 세트 52 56 60도 왼손잡이"
+    }
+   ],
+   "product": {
+    "title_ko": "BombTech - 프리미엄 골프 웨지 세트 52 56 60도 왼손잡이",
+    "brand_ko": "Bombtech Golf",
+    "brand_source": "specs:브랜드",
+    "pricing": {
+     "base_krw": 377930
+    },
+    "options": [],
+    "variants": [
+     {
+      "options_ko": [],
+      "price_krw": 377930
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002783-20261115T131715Z/images/13619604371/fairwardgolf-13619604371-001-95700e7f60b3efe3.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002783-20261115T131715Z/images/13619604371/fairwardgolf-13619604371-002-52feca4e5f8cd7c3.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002783-20261115T131715Z/images/13619604371/fairwardgolf-13619604371-003-60a892b80237059d.webp",
+      "position": 2
+     },
+     {
+      "file": "collected/50002783-20261115T131715Z/images/13619604371/fairwardgolf-13619604371-004-d26bfd922832dee1.webp",
+      "position": 3
+     },
+     {
+      "file": "collected/50002783-20261115T131715Z/images/13619604371/fairwardgolf-13619604371-005-9df902cd5e80b20c.webp",
+      "position": 4
+     },
+     {
+      "file": "collected/50002783-20261115T131715Z/images/13619604371/fairwardgolf-13619604371-006-0e5b921a0e718094.webp",
+      "position": 5
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102773407:13619939279",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002783",
+    "channel_no": "102773407",
+    "product_id": "13619939279",
+    "link": "https://smartstore.naver.com/codeavon/products/13619939279"
+   },
+   "texts": [
+    {
+     "id": "title:8baa24d5a059490e",
+     "kind": "title",
+     "ko": "GoSports 불법 맥스 스핀 골프 웨지 세트 - 남성용 오른손잡이 모래, 롭, 갭 웨지, 브러시드 스테인리스"
+    }
+   ],
+   "product": {
+    "title_ko": "GoSports 불법 맥스 스핀 골프 웨지 세트 - 남성용 오른손잡이 모래, 롭, 갭 웨지, 브러시드 스테인리스",
+    "brand_ko": "GoSports",
+    "brand_source": "title",
+    "pricing": {
+     "base_krw": 205470
+    },
+    "options": [],
+    "variants": [
+     {
+      "options_ko": [],
+      "price_krw": 205470
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002783-20261115T161439Z/images/13619939279/fairwardgolf-13619939279-001-a9bff9dfb1e07478.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002783-20261115T161439Z/images/13619939279/fairwardgolf-13619939279-002-ce3ab98a2571e45d.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002783-20261115T161439Z/images/13619939279/fairwardgolf-13619939279-003-0f8fb5167555e90b.webp",
+      "position": 2
+     },
+     {
+      "file": "collected/50002783-20261115T161439Z/images/13619939279/fairwardgolf-13619939279-004-c3123de1fd9bc227.webp",
+      "position": 3
+     },
+     {
+      "file": "collected/50002783-20261115T161439Z/images/13619939279/fairwardgolf-13619939279-005-4b31f3979c110664.webp",
+      "position": 4
+     },
+     {
+      "file": "collected/50002783-20261115T161439Z/images/13619939279/fairwardgolf-13619939279-006-08b0435e8f453ec9.webp",
+      "position": 5
+     },
+     {
+      "file": "collected/50002783-20261115T161439Z/images/13619939279/fairwardgolf-13619939279-007-a13fd6155ca092c9.webp",
+      "position": 6
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101921971:8958060680",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002788",
+    "channel_no": "101921971",
+    "product_id": "8958060680",
+    "link": "https://smartstore.naver.com/happymarojp/products/8958060680"
+   },
+   "texts": [
+    {
+     "id": "title:e9fdce4e89dcc681",
+     "kind": "title",
+     "ko": "브리지스톤 BG-100 BG100 남성용 골프채 풀세트 11개 캐디백 포함 화이트"
+    }
+   ],
+   "product": {
+    "title_ko": "브리지스톤 BG-100 BG100 남성용 골프채 풀세트 11개 캐디백 포함 화이트",
+    "brand_ko": "브리지스톤",
+    "brand_source": "specs:브랜드",
+    "pricing": {
+     "base_krw": 674700
+    },
+    "options": [
+     {
+      "name_ko": "브리지스톤 BG100 화이트 풀세트 캐디백포함",
+      "values_ko": [
+       "스틸 샤프트 (S) SPEC",
+       "카본 샤프트 (R) SPEC"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "options_ko": [
+       "스틸 샤프트 (S) SPEC"
+      ],
+      "price_krw": 674700
+     },
+     {
+      "options_ko": [
+       "카본 샤프트 (R) SPEC"
+      ],
+      "price_krw": 674700
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002788-20261109T084251Z/images/8958060680/fairwardgolf-8958060680-001-1c44937792baac82.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002788-20261109T084251Z/images/8958060680/fairwardgolf-8958060680-002-0f2d2196ac37ace0.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002788-20261109T084251Z/images/8958060680/fairwardgolf-8958060680-003-b13ef5c1c4920897.webp",
+      "position": 2
+     },
+     {
+      "file": "collected/50002788-20261109T084251Z/images/8958060680/fairwardgolf-8958060680-004-fc3af57785b0507f.webp",
+      "position": 3
+     },
+     {
+      "file": "collected/50002788-20261109T084251Z/images/8958060680/fairwardgolf-8958060680-005-374276cbcbcc75c1.webp",
+      "position": 4
+     },
+     {
+      "file": "collected/50002788-20261109T084251Z/images/8958060680/fairwardgolf-8958060680-006-ace6349236142e73.webp",
+      "position": 5
+     },
+     {
+      "file": "collected/50002788-20261109T084251Z/images/8958060680/fairwardgolf-8958060680-007-82a5a1da24d8f880.webp",
+      "position": 6
+     },
+     {
+      "file": "collected/50002788-20261109T084251Z/images/8958060680/fairwardgolf-8958060680-008-8a87eec6a9188858.webp",
+      "position": 7
+     },
+     {
+      "file": "collected/50002788-20261109T084251Z/images/8958060680/fairwardgolf-8958060680-009-6be4bdbcacfb1bd1.webp",
+      "position": 8
+     },
+     {
+      "file": "collected/50002788-20261109T084251Z/images/8958060680/fairwardgolf-8958060680-010-19fcdbc3c616ec8a.webp",
+      "position": 9
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:100020225:12215613033",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002788",
+    "channel_no": "100020225",
+    "product_id": "12215613033",
+    "link": "https://smartstore.naver.com/tokyotimes/products/12215613033"
+   },
+   "texts": [
+    {
+     "id": "title:9f94783d2f8effb9",
+     "kind": "title",
+     "ko": "브리지스톤 골프 BG-100 골프채 풀세트 11개 캐디백 남성용"
+    }
+   ],
+   "product": {
+    "title_ko": "브리지스톤 골프 BG-100 골프채 풀세트 11개 캐디백 남성용",
+    "brand_ko": "브리지스톤",
+    "brand_source": "specs:브랜드",
+    "pricing": {
+     "base_krw": 710000
+    },
+    "options": [
+     {
+      "name_ko": "플렉스",
+      "values_ko": [
+       "S(스틸)",
+       "R(카본)"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "options_ko": [
+       "S(스틸)"
+      ],
+      "price_krw": 710000
+     },
+     {
+      "options_ko": [
+       "R(카본)"
+      ],
+      "price_krw": 710000
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002788-20261114T163558Z/images/12215613033/fairwardgolf-12215613033-001-c4f5ec58d9adc3ac.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002788-20261114T163558Z/images/12215613033/fairwardgolf-12215613033-002-a232829cb706a63b.webp",
+      "position": 1
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101921971:13785630702",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002788",
+    "channel_no": "101921971",
+    "product_id": "13785630702",
+    "link": "https://smartstore.naver.com/happymarojp/products/13785630702"
+   },
+   "texts": [
+    {
+     "id": "title:ffad7504a45951ed",
+     "kind": "title",
+     "ko": "브리지스톤 BG-100 BG100 남성용 골프채 풀세트 11개 캐디백 포함 블랙"
+    }
+   ],
+   "product": {
+    "title_ko": "브리지스톤 BG-100 BG100 남성용 골프채 풀세트 11개 캐디백 포함 블랙",
+    "brand_ko": "브리지스톤",
+    "brand_source": "specs:브랜드",
+    "pricing": {
+     "base_krw": 724700
+    },
+    "options": [
+     {
+      "name_ko": "브리지스톤 BG-100 블랙 풀세트 캐디백포함",
+      "values_ko": [
+       "블랙 에디션 스틸 샤프트 (S) SPEC",
+       "블랙 에디션 카본 샤프트 (R) SPEC"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "options_ko": [
+       "블랙 에디션 스틸 샤프트 (S) SPEC"
+      ],
+      "price_krw": 724700
+     },
+     {
+      "options_ko": [
+       "블랙 에디션 카본 샤프트 (R) SPEC"
+      ],
+      "price_krw": 724700
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002788-20261114T090929Z/images/13785630702/fairwardgolf-13785630702-001-4f50b5f546907181.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002788-20261114T090929Z/images/13785630702/fairwardgolf-13785630702-002-db3c9bedb7d34c6c.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002788-20261114T090929Z/images/13785630702/fairwardgolf-13785630702-003-12fc224ca418da06.webp",
+      "position": 2
+     },
+     {
+      "file": "collected/50002788-20261114T090929Z/images/13785630702/fairwardgolf-13785630702-004-93a97cb7c16d8649.webp",
+      "position": 3
+     },
+     {
+      "file": "collected/50002788-20261114T090929Z/images/13785630702/fairwardgolf-13785630702-005-afa627f2fb4cd2f9.webp",
+      "position": 4
+     },
+     {
+      "file": "collected/50002788-20261114T090929Z/images/13785630702/fairwardgolf-13785630702-006-9534e8f6ee137fda.webp",
+      "position": 5
+     },
+     {
+      "file": "collected/50002788-20261114T090929Z/images/13785630702/fairwardgolf-13785630702-007-ad807e044777cb65.webp",
+      "position": 6
+     },
+     {
+      "file": "collected/50002788-20261114T090929Z/images/13785630702/fairwardgolf-13785630702-008-6c0ff173bcf8d3b6.webp",
+      "position": 7
+     },
+     {
+      "file": "collected/50002788-20261114T090929Z/images/13785630702/fairwardgolf-13785630702-009-0469e87fdb6143d8.webp",
+      "position": 8
+     },
+     {
+      "file": "collected/50002788-20261114T090929Z/images/13785630702/fairwardgolf-13785630702-010-45a922758fb92eef.webp",
+      "position": 9
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101435422:13809756465",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002788",
+    "channel_no": "101435422",
+    "product_id": "13809756465",
+    "link": "https://smartstore.naver.com/irugi/products/13809756465"
+   },
+   "texts": [
+    {
+     "id": "title:b71fdec4d9d06cae",
+     "kind": "title",
+     "ko": "브리지스톤 BG-100 블랙 클럽 11개 남성 풀세트 2026"
+    }
+   ],
+   "product": {
+    "title_ko": "브리지스톤 BG-100 블랙 클럽 11개 남성 풀세트 2026",
+    "brand_ko": "브리지스톤",
+    "brand_source": "specs:브랜드",
+    "pricing": {
+     "base_krw": 669900
+    },
+    "options": [
+     {
+      "name_ko": "아이언",
+      "values_ko": [
+       "카본R",
+       "스틸S"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "options_ko": [
+       "카본R"
+      ],
+      "price_krw": 669900
+     },
+     {
+      "options_ko": [
+       "스틸S"
+      ],
+      "price_krw": 669900
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002788-20261113T085920Z/images/13809756465/fairwardgolf-13809756465-001-58c5e3df15476596.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002788-20261113T085920Z/images/13809756465/fairwardgolf-13809756465-002-d2a3752fed09b13a.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002788-20261113T085920Z/images/13809756465/fairwardgolf-13809756465-003-fd5ae0ec98ae0a65.webp",
+      "position": 2
+     },
+     {
+      "file": "collected/50002788-20261113T085920Z/images/13809756465/fairwardgolf-13809756465-004-9ed95915ec46a1d3.webp",
+      "position": 3
+     },
+     {
+      "file": "collected/50002788-20261113T085920Z/images/13809756465/fairwardgolf-13809756465-005-0393485377c74286.webp",
+      "position": 4
+     },
+     {
+      "file": "collected/50002788-20261113T085920Z/images/13809756465/fairwardgolf-13809756465-006-581803e8490b41b4.webp",
+      "position": 5
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102583137:13827555559",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002788",
+    "channel_no": "102583137",
+    "product_id": "13827555559",
+    "link": "https://smartstore.naver.com/limeorangetree/products/13827555559"
+   },
+   "texts": [
+    {
+     "id": "title:15d127aafb4d13c9",
+     "kind": "title",
+     "ko": "브리지스톤 BG-100 클럽 11개 남성 풀세트 2026"
+    }
+   ],
+   "product": {
+    "title_ko": "브리지스톤 BG-100 클럽 11개 남성 풀세트 2026",
+    "brand_ko": "브리지스톤",
+    "brand_source": "specs:브랜드",
+    "pricing": {
+     "base_krw": 667900
+    },
+    "options": [],
+    "variants": [
+     {
+      "options_ko": [],
+      "price_krw": 667900
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002788-20261113T114619Z/images/13827555559/fairwardgolf-13827555559-001-fc8dc99c70f86a65.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002788-20261113T114619Z/images/13827555559/fairwardgolf-13827555559-002-aaf27b6bc02ccaf6.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002788-20261113T114619Z/images/13827555559/fairwardgolf-13827555559-003-8363723386c4eba8.webp",
+      "position": 2
+     },
+     {
+      "file": "collected/50002788-20261113T114619Z/images/13827555559/fairwardgolf-13827555559-004-4506076013a2412e.webp",
+      "position": 3
+     },
+     {
+      "file": "collected/50002788-20261113T114619Z/images/13827555559/fairwardgolf-13827555559-005-3e26ed7a2971ae6e.webp",
+      "position": 4
+     },
+     {
+      "file": "collected/50002788-20261113T114619Z/images/13827555559/fairwardgolf-13827555559-006-ffa620bd5664ca4d.webp",
+      "position": 5
+     },
+     {
+      "file": "collected/50002788-20261113T114619Z/images/13827555559/fairwardgolf-13827555559-007-58f0f1a02f347f4b.webp",
+      "position": 6
+     },
+     {
+      "file": "collected/50002788-20261113T114619Z/images/13827555559/fairwardgolf-13827555559-008-14a101bfe23ced85.webp",
+      "position": 7
+     },
+     {
+      "file": "collected/50002788-20261113T114619Z/images/13827555559/fairwardgolf-13827555559-009-59cd63c2d94eeccf.webp",
+      "position": 8
+     },
+     {
+      "file": "collected/50002788-20261113T114619Z/images/13827555559/fairwardgolf-13827555559-010-a1caab6a129e4de1.webp",
+      "position": 9
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:1100056746:13325799991",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002788",
+    "channel_no": "1100056746",
+    "product_id": "13325799991",
+    "link": "https://smartstore.naver.com/shinjukusister/products/13325799991"
+   },
+   "texts": [
+    {
+     "id": "title:99acc4ac2f7f9946",
+     "kind": "title",
+     "ko": "캘러웨이 레바 REVA 여성 풀세트 2025년 골프채 9개"
+    }
+   ],
+   "product": {
+    "title_ko": "캘러웨이 레바 REVA 여성 풀세트 2025년 골프채 9개",
+    "brand_ko": "캘러웨이",
+    "brand_source": "specs:브랜드",
+    "pricing": {
+     "base_krw": 890000
+    },
+    "options": [
+     {
+      "name_ko": "색상",
+      "values_ko": [
+       "블랙/L",
+       "핑크/L"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "options_ko": [
+       "블랙/L"
+      ],
+      "price_krw": 890000
+     },
+     {
+      "options_ko": [
+       "핑크/L"
+      ],
+      "price_krw": 890000
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002788-20261109T092155Z/images/13325799991/fairwardgolf-13325799991-001-f8036e9f9a5e07a0.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002788-20261109T092155Z/images/13325799991/fairwardgolf-13325799991-002-438403d25ae9fcc4.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002788-20261109T092155Z/images/13325799991/fairwardgolf-13325799991-003-72e3a21361707032.webp",
+      "position": 2
+     },
+     {
+      "file": "collected/50002788-20261109T092155Z/images/13325799991/fairwardgolf-13325799991-004-17b7e71a6f150f6f.webp",
+      "position": 3
+     },
+     {
+      "file": "collected/50002788-20261109T092155Z/images/13325799991/fairwardgolf-13325799991-005-77edcdcefa642dfc.webp",
+      "position": 4
+     },
+     {
+      "file": "collected/50002788-20261109T092155Z/images/13325799991/fairwardgolf-13325799991-006-c5710b019dc45ad6.webp",
+      "position": 5
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101435422:11989527841",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002788",
+    "channel_no": "101435422",
+    "product_id": "11989527841",
+    "link": "https://smartstore.naver.com/irugi/products/11989527841"
+   },
+   "texts": [
+    {
+     "id": "title:7ffc41762dae674a",
+     "kind": "title",
+     "ko": "캘러웨이 여성 풀세트 레바 REVA 2025년 골프채 9개 클럽만"
+    }
+   ],
+   "product": {
+    "title_ko": "캘러웨이 여성 풀세트 레바 REVA 2025년 골프채 9개 클럽만",
+    "brand_ko": "캘러웨이",
+    "brand_source": "specs:브랜드",
+    "pricing": {
+     "base_krw": 885000
+    },
+    "options": [
+     {
+      "name_ko": "색상",
+      "values_ko": [
+       "블랙",
+       "핑크"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "options_ko": [
+       "블랙"
+      ],
+      "price_krw": 885000
+     },
+     {
+      "options_ko": [
+       "핑크"
+      ],
+      "price_krw": 885000
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002788-20261111T134802Z/images/11989527841/fairwardgolf-11989527841-001-7deb013415ce0ddd.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002788-20261111T134802Z/images/11989527841/fairwardgolf-11989527841-002-8bdc5c4ef9dd5b02.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002788-20261111T134802Z/images/11989527841/fairwardgolf-11989527841-003-0120f032a0c287e4.webp",
+      "position": 2
+     },
+     {
+      "file": "collected/50002788-20261111T134802Z/images/11989527841/fairwardgolf-11989527841-004-a89a839eb2f88629.webp",
+      "position": 3
+     },
+     {
+      "file": "collected/50002788-20261111T134802Z/images/11989527841/fairwardgolf-11989527841-005-0c309fb03f182d5a.webp",
+      "position": 4
+     },
+     {
+      "file": "collected/50002788-20261111T134802Z/images/11989527841/fairwardgolf-11989527841-006-976afc37ff4ca84c.webp",
+      "position": 5
+     },
+     {
+      "file": "collected/50002788-20261111T134802Z/images/11989527841/fairwardgolf-11989527841-007-3eebd141810e7486.webp",
+      "position": 6
+     },
+     {
+      "file": "collected/50002788-20261111T134802Z/images/11989527841/fairwardgolf-11989527841-008-66e280ec220bcc58.webp",
+      "position": 7
+     },
+     {
+      "file": "collected/50002788-20261111T134802Z/images/11989527841/fairwardgolf-11989527841-009-d0748564ff5497e0.webp",
+      "position": 8
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101435422:11989518458",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002788",
+    "channel_no": "101435422",
+    "product_id": "11989518458",
+    "link": "https://smartstore.naver.com/irugi/products/11989518458"
+   },
+   "texts": [
+    {
+     "id": "title:f6e722905d91d3c6",
+     "kind": "title",
+     "ko": "캘러웨이 여성 풀세트 레바 REVA 2025년 골프채 9개"
+    }
+   ],
+   "product": {
+    "title_ko": "캘러웨이 여성 풀세트 레바 REVA 2025년 골프채 9개",
+    "brand_ko": "캘러웨이",
+    "brand_source": "specs:브랜드",
+    "pricing": {
+     "base_krw": 940000
+    },
+    "options": [
+     {
+      "name_ko": "색상",
+      "values_ko": [
+       "블랙",
+       "핑크"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "options_ko": [
+       "블랙"
+      ],
+      "price_krw": 940000
+     },
+     {
+      "options_ko": [
+       "핑크"
+      ],
+      "price_krw": 940000
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002788-20261114T165909Z/images/11989518458/fairwardgolf-11989518458-001-888ee0e87b0c6695.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002788-20261114T165909Z/images/11989518458/fairwardgolf-11989518458-002-2372e58ffb287b21.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002788-20261114T165909Z/images/11989518458/fairwardgolf-11989518458-003-759cb2a978dbb075.webp",
+      "position": 2
+     },
+     {
+      "file": "collected/50002788-20261114T165909Z/images/11989518458/fairwardgolf-11989518458-004-8bdc5c4ef9dd5b02.webp",
+      "position": 3
+     },
+     {
+      "file": "collected/50002788-20261114T165909Z/images/11989518458/fairwardgolf-11989518458-005-0120f032a0c287e4.webp",
+      "position": 4
+     },
+     {
+      "file": "collected/50002788-20261114T165909Z/images/11989518458/fairwardgolf-11989518458-006-a89a839eb2f88629.webp",
+      "position": 5
+     },
+     {
+      "file": "collected/50002788-20261114T165909Z/images/11989518458/fairwardgolf-11989518458-007-0c309fb03f182d5a.webp",
+      "position": 6
+     },
+     {
+      "file": "collected/50002788-20261114T165909Z/images/11989518458/fairwardgolf-11989518458-008-976afc37ff4ca84c.webp",
+      "position": 7
+     },
+     {
+      "file": "collected/50002788-20261114T165909Z/images/11989518458/fairwardgolf-11989518458-009-3eebd141810e7486.webp",
+      "position": 8
+     },
+     {
+      "file": "collected/50002788-20261114T165909Z/images/11989518458/fairwardgolf-11989518458-010-66e280ec220bcc58.webp",
+      "position": 9
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102748022:13261457036",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002783",
+    "channel_no": "102748022",
+    "product_id": "13261457036",
+    "link": "https://smartstore.naver.com/delightdodo/products/13261457036"
+   },
+   "texts": [
+    {
+     "id": "title:8baa24d5a059490e",
+     "kind": "title",
+     "ko": "GoSports 불법 맥스 스핀 골프 웨지 세트 - 남성용 오른손잡이 모래, 롭, 갭 웨지, 브러시드 스테인리스"
+    }
+   ],
+   "product": {
+    "title_ko": "GoSports 불법 맥스 스핀 골프 웨지 세트 - 남성용 오른손잡이 모래, 롭, 갭 웨지, 브러시드 스테인리스",
+    "brand_ko": "GoSports",
+    "brand_source": "title",
+    "pricing": {
+     "base_krw": 205560
+    },
+    "options": [],
+    "variants": [
+     {
+      "options_ko": [],
+      "price_krw": 205560
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002783-20261115T162031Z/images/13261457036/fairwardgolf-13261457036-001-a9bff9dfb1e07478.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002783-20261115T162031Z/images/13261457036/fairwardgolf-13261457036-002-ce3ab98a2571e45d.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002783-20261115T162031Z/images/13261457036/fairwardgolf-13261457036-003-0f8fb5167555e90b.webp",
+      "position": 2
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102317872:12921931106",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002783",
+    "channel_no": "102317872",
+    "product_id": "12921931106",
+    "link": "https://smartstore.naver.com/connect_buying/products/12921931106"
+   },
+   "texts": [
+    {
+     "id": "title:34f1d64cf3a11436",
+     "kind": "title",
+     "ko": "야마토 풀페이스 골프 웨지 세트 또는 개별 50/52/54/56/58/60 단조 갭 샌드 롭 클럽 밀링"
+    }
+   ],
+   "product": {
+    "title_ko": "야마토 풀페이스 골프 웨지 세트 또는 개별 50/52/54/56/58/60 단조 갭 샌드 롭 클럽 밀링",
+    "brand_ko": "yamato golf",
+    "brand_source": "manufacturer:specs:제조사",
+    "pricing": {
+     "base_krw": 142520
+    },
+    "options": [
+     {
+      "name_ko": "Size",
+      "values_ko": [
+       "56 Degree",
+       "60 Degree",
+       "54 Degree",
+       "50 Degree",
+       "72 Degree"
+      ]
+     },
+     {
+      "name_ko": "Style Name",
+      "values_ko": [
+       "Black 56 Degree",
+       "Black 60 Degree",
+       "Black 54 Degree",
+       "Black 50 Degree",
+       "Black 72 Degree"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "options_ko": [
+       "56 Degree",
+       "Black 56 Degree"
+      ],
+      "price_krw": 142520
+     },
+     {
+      "options_ko": [
+       "60 Degree",
+       "Black 60 Degree"
+      ],
+      "price_krw": 142520
+     },
+     {
+      "options_ko": [
+       "54 Degree",
+       "Black 54 Degree"
+      ],
+      "price_krw": 150820
+     },
+     {
+      "options_ko": [
+       "50 Degree",
+       "Black 50 Degree"
+      ],
+      "price_krw": 181320
+     },
+     {
+      "options_ko": [
+       "72 Degree",
+       "Black 72 Degree"
+      ],
+      "price_krw": 215320
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002783-20261115T171059Z/images/12921931106/fairwardgolf-12921931106-001-e8e8fa9a0ea1728b.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002783-20261115T171059Z/images/12921931106/fairwardgolf-12921931106-002-9bbbb6df03613255.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002783-20261115T171059Z/images/12921931106/fairwardgolf-12921931106-003-9160b06903a7f69e.webp",
+      "position": 2
+     },
+     {
+      "file": "collected/50002783-20261115T171059Z/images/12921931106/fairwardgolf-12921931106-004-6afdd69e39c5c9c2.webp",
+      "position": 3
+     },
+     {
+      "file": "collected/50002783-20261115T171059Z/images/12921931106/fairwardgolf-12921931106-005-9ff8c275266c282f.webp",
+      "position": 4
+     },
+     {
+      "file": "collected/50002783-20261115T171059Z/images/12921931106/fairwardgolf-12921931106-006-a5a87fdfa165ddb0.webp",
+      "position": 5
+     },
+     {
+      "file": "collected/50002783-20261115T171059Z/images/12921931106/fairwardgolf-12921931106-007-a9b58879eb7515ee.webp",
+      "position": 6
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:1100067303:13405976594",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002783",
+    "channel_no": "1100067303",
+    "product_id": "13405976594",
+    "link": "https://smartstore.naver.com/urbantrust/products/13405976594"
+   },
+   "texts": [
+    {
+     "id": "title:45383df4f07bc53e",
+     "kind": "title",
+     "ko": "A11N SPORTS의 위조 골프 웨지 세트 Black"
+    }
+   ],
+   "product": {
+    "title_ko": "A11N SPORTS의 위조 골프 웨지 세트 Black",
+    "brand_ko": "A11N SPORTS",
+    "brand_source": "title",
+    "pricing": {
+     "base_krw": 199350
+    },
+    "options": [
+     {
+      "name_ko": "Color",
+      "values_ko": [
+       "Black",
+       "Bronze"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "options_ko": [
+       "Black"
+      ],
+      "price_krw": 199350
+     },
+     {
+      "options_ko": [
+       "Bronze"
+      ],
+      "price_krw": 219650
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002783-20261115T174420Z/images/13405976594/fairwardgolf-13405976594-001-3fb7c143755248d2.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002783-20261115T174420Z/images/13405976594/fairwardgolf-13405976594-002-7b8c03a113aca262.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002783-20261115T174420Z/images/13405976594/fairwardgolf-13405976594-003-3cffa1ce016159b6.webp",
+      "position": 2
+     },
+     {
+      "file": "collected/50002783-20261115T174420Z/images/13405976594/fairwardgolf-13405976594-004-641de089b7bd769b.webp",
+      "position": 3
+     },
+     {
+      "file": "collected/50002783-20261115T174420Z/images/13405976594/fairwardgolf-13405976594-005-01cf6eb82c3d16bf.webp",
+      "position": 4
+     },
+     {
+      "file": "collected/50002783-20261115T174420Z/images/13405976594/fairwardgolf-13405976594-006-565df074b106f99b.webp",
+      "position": 5
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102683547:13552318731",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002783",
+    "channel_no": "102683547",
+    "product_id": "13552318731",
+    "link": "https://smartstore.naver.com/usmegadealshop/products/13552318731"
+   },
+   "texts": [
+    {
+     "id": "title:af1c79d172dc210c",
+     "kind": "title",
+     "ko": "A11N SPORTS의 위조 골프 웨지 세트 db4P Bronze"
+    }
+   ],
+   "product": {
+    "title_ko": "A11N SPORTS의 위조 골프 웨지 세트 db4P Bronze",
+    "brand_ko": "A11N SPORTS",
+    "brand_source": "title",
+    "pricing": {
+     "base_krw": 187830
+    },
+    "options": [
+     {
+      "name_ko": "Color",
+      "values_ko": [
+       "Bronze",
+       "Black"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "options_ko": [
+       "Bronze"
+      ],
+      "price_krw": 187830
+     },
+     {
+      "options_ko": [
+       "Black"
+      ],
+      "price_krw": 206830
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002783-20261115T175448Z/images/13552318731/fairwardgolf-13552318731-001-3fb7c143755248d2.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002783-20261115T175448Z/images/13552318731/fairwardgolf-13552318731-002-7b8c03a113aca262.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002783-20261115T175448Z/images/13552318731/fairwardgolf-13552318731-003-3cffa1ce016159b6.webp",
+      "position": 2
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102783573:13207840596",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002783",
+    "channel_no": "102783573",
+    "product_id": "13207840596",
+    "link": "https://smartstore.naver.com/globepickmall/products/13207840596"
+   },
+   "texts": [
+    {
+     "id": "title:419f3efe376001fc",
+     "kind": "title",
+     "ko": "핀클리 위조 골프 웨지 세트 3 u2013 52, 56, 60도, 밀드 페이스로 최대 스핀, 오른손"
+    }
+   ],
+   "product": {
+    "title_ko": "핀클리 위조 골프 웨지 세트 3 u2013 52, 56, 60도, 밀드 페이스로 최대 스핀, 오른손",
+    "brand_ko": "핀클리",
+    "brand_source": "title_known",
+    "pricing": {
+     "base_krw": 205560
+    },
+    "options": [
+     {
+      "name_ko": "Color",
+      "values_ko": [
+       "Black",
+       "Bronze"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "options_ko": [
+       "Black"
+      ],
+      "price_krw": 205560
+     },
+     {
+      "options_ko": [
+       "Bronze"
+      ],
+      "price_krw": 205560
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002783-20261115T162701Z/images/13207840596/fairwardgolf-13207840596-001-3fb7c143755248d2.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002783-20261115T162701Z/images/13207840596/fairwardgolf-13207840596-002-7b8c03a113aca262.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002783-20261115T162701Z/images/13207840596/fairwardgolf-13207840596-003-3cffa1ce016159b6.webp",
+      "position": 2
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:100006312:4385835200",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002787",
+    "channel_no": "100006312",
+    "product_id": "4385835200",
+    "link": "https://smartstore.naver.com/littlemania/products/4385835200"
+   },
+   "texts": [
+    {
+     "id": "title:e6245ee892112096",
+     "kind": "title",
+     "ko": "멋진 주니어 골프 클럽 골프채 어린이 퍼터 드라이버 아이언"
+    }
+   ],
+   "product": {
+    "title_ko": "멋진 주니어 골프 클럽 골프채 어린이 퍼터 드라이버 아이언",
+    "brand_ko": "매니아",
+    "brand_source": "specs:브랜드",
+    "pricing": {
+     "base_krw": 44700
+    },
+    "options": [
+     {
+      "name_ko": "선택해 주세요",
+      "values_ko": [
+       "6~8세 드라이버",
+       "6~8세 아이언 6/7번",
+       "6~8세 퍼터",
+       "9~12세 드라이버",
+       "9~12세 아이언 6/7번",
+       "9~12세 퍼터"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "options_ko": [
+       "6~8세 드라이버"
+      ],
+      "price_krw": 50900
+     },
+     {
+      "options_ko": [
+       "6~8세 아이언 6/7번"
+      ],
+      "price_krw": 44700
+     },
+     {
+      "options_ko": [
+       "6~8세 퍼터"
+      ],
+      "price_krw": 44700
+     },
+     {
+      "options_ko": [
+       "9~12세 드라이버"
+      ],
+      "price_krw": 50900
+     },
+     {
+      "options_ko": [
+       "9~12세 아이언 6/7번"
+      ],
+      "price_krw": 44700
+     },
+     {
+      "options_ko": [
+       "9~12세 퍼터"
+      ],
+      "price_krw": 44700
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002787-20261112T180206Z/images/4385835200/fairwardgolf-4385835200-001-f4d08d4f381fa15d.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002787-20261112T180206Z/images/4385835200/fairwardgolf-4385835200-002-1534c4f46c94ef6b.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002787-20261112T180206Z/images/4385835200/fairwardgolf-4385835200-003-50b50e070765b88a.webp",
+      "position": 2
+     },
+     {
+      "file": "collected/50002787-20261112T180206Z/images/4385835200/fairwardgolf-4385835200-004-e3a9f42aee9ceee0.webp",
+      "position": 3
+     },
+     {
+      "file": "collected/50002787-20261112T180206Z/images/4385835200/fairwardgolf-4385835200-005-c8f94cd65755ba86.webp",
+      "position": 4
+     },
+     {
+      "file": "collected/50002787-20261112T180206Z/images/4385835200/fairwardgolf-4385835200-006-115847e4d0e71ac9.webp",
+      "position": 5
+     },
+     {
+      "file": "collected/50002787-20261112T180206Z/images/4385835200/fairwardgolf-4385835200-007-a2e7d180ec0d8c27.webp",
+      "position": 6
+     },
+     {
+      "file": "collected/50002787-20261112T180206Z/images/4385835200/fairwardgolf-4385835200-008-5385e8a6c8b28d66.webp",
+      "position": 7
+     },
+     {
+      "file": "collected/50002787-20261112T180206Z/images/4385835200/fairwardgolf-4385835200-009-8d0402aba1a9e625.webp",
+      "position": 8
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101731755:13770121877",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002787",
+    "channel_no": "101731755",
+    "product_id": "13770121877",
+    "link": "https://smartstore.naver.com/globalgaia/products/13770121877"
+   },
+   "texts": [
+    {
+     "id": "title:516bd317791de188",
+     "kind": "title",
+     "ko": "F형 바 클램프 목공 고정 공구 DIY 작업 목재 접합 장비 바이스 12in 12인치"
+    }
+   ],
+   "product": {
+    "title_ko": "F형 바 클램프 목공 고정 공구 DIY 작업 목재 접합 장비 바이스 12in 12인치",
+    "brand_ko": "노브랜드",
+    "brand_source": "none",
+    "pricing": {
+     "base_krw": 34850
+    },
+    "options": [],
+    "variants": [
+     {
+      "options_ko": [],
+      "price_krw": 34850
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002787-20261113T003342Z/images/13770121877/fairwardgolf-13770121877-001-3a07b2b638fe4553.webp",
+      "position": 0
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:1100080439:13475342948",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002787",
+    "channel_no": "1100080439",
+    "product_id": "13475342948",
+    "link": "https://smartstore.naver.com/linkworld1/products/13475342948"
+   },
+   "texts": [
+    {
+     "id": "title:dea787c3ced89de5",
+     "kind": "title",
+     "ko": "1016세 어린이를 위한 엘레본 주니어 골프 클럽 세트 드라이버 페어웨이 우드 하이브리드"
+    }
+   ],
+   "product": {
+    "title_ko": "1016세 어린이를 위한 엘레본 주니어 골프 클럽 세트 드라이버 페어웨이 우드 하이브리드",
+    "brand_ko": "엘레본",
+    "brand_source": "title_word",
+    "pricing": {
+     "base_krw": 303520
+    },
+    "options": [],
+    "variants": [
+     {
+      "options_ko": [],
+      "price_krw": 303520
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002787-20261112T192426Z/images/13475342948/fairwardgolf-13475342948-001-c0c4ebeb720a17b0.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002787-20261112T192426Z/images/13475342948/fairwardgolf-13475342948-002-ee663a56613ffd9d.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002787-20261112T192426Z/images/13475342948/fairwardgolf-13475342948-003-f4d8c50bf56c85e6.webp",
+      "position": 2
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102524282:13324729995",
+   "status": "ready",
+   "held": [],
+   "source": {
+    "category_id": "50002787",
+    "channel_no": "102524282",
+    "product_id": "13324729995",
+    "link": "https://smartstore.naver.com/smartshoppersss/products/13324729995"
+   },
+   "texts": [
+    {
+     "id": "title:6bb87d57870a4929",
+     "kind": "title",
+     "ko": "XDriveMax 5/6피스 골프 클럽 세트 연령대에는 스탠드 백 1 드라이브 5 하이브"
+    }
+   ],
+   "product": {
+    "title_ko": "XDriveMax 5/6피스 골프 클럽 세트 연령대에는 스탠드 백 1 드라이브 5 하이브",
+    "brand_ko": "XDriveMax",
+    "brand_source": "description_row",
+    "pricing": {
+     "base_krw": 244960
+    },
+    "options": [
+     {
+      "name_ko": "Color",
+      "values_ko": [
+       "Orange",
+       "Blue",
+       "Gray",
+       "Green",
+       "Magenta",
+       "Pink",
+       "Red",
+       "Yellow"
+      ]
+     },
+     {
+      "name_ko": "Size",
+      "values_ko": [
+       "39 48 inches(4 8 Ages)",
+       "45 54 inches(6 10 Ages)",
+       "50 60 inches(8 12 Ages)"
+      ]
+     }
+    ],
+    "variants": [
+     {
+      "options_ko": [
+       "Orange",
+       "39 48 inches(4 8 Ages)"
+      ],
+      "price_krw": 244960
+     },
+     {
+      "options_ko": [
+       "Orange",
+       "45 54 inches(6 10 Ages)"
+      ],
+      "price_krw": 283560
+     },
+     {
+      "options_ko": [
+       "Orange",
+       "50 60 inches(8 12 Ages)"
+      ],
+      "price_krw": 283560
+     },
+     {
+      "options_ko": [
+       "Blue",
+       "39 48 inches(4 8 Ages)"
+      ],
+      "price_krw": 263760
+     },
+     {
+      "options_ko": [
+       "Blue",
+       "45 54 inches(6 10 Ages)"
+      ],
+      "price_krw": 283560
+     },
+     {
+      "options_ko": [
+       "Blue",
+       "50 60 inches(8 12 Ages)"
+      ],
+      "price_krw": 283560
+     },
+     {
+      "options_ko": [
+       "Gray",
+       "39 48 inches(4 8 Ages)"
+      ],
+      "price_krw": 263760
+     },
+     {
+      "options_ko": [
+       "Gray",
+       "45 54 inches(6 10 Ages)"
+      ],
+      "price_krw": 283560
+     },
+     {
+      "options_ko": [
+       "Gray",
+       "50 60 inches(8 12 Ages)"
+      ],
+      "price_krw": 283560
+     },
+     {
+      "options_ko": [
+       "Green",
+       "39 48 inches(4 8 Ages)"
+      ],
+      "price_krw": 263760
+     },
+     {
+      "options_ko": [
+       "Green",
+       "45 54 inches(6 10 Ages)"
+      ],
+      "price_krw": 283560
+     },
+     {
+      "options_ko": [
+       "Green",
+       "50 60 inches(8 12 Ages)"
+      ],
+      "price_krw": 283560
+     },
+     {
+      "options_ko": [
+       "Magenta",
+       "39 48 inches(4 8 Ages)"
+      ],
+      "price_krw": 263760
+     },
+     {
+      "options_ko": [
+       "Magenta",
+       "45 54 inches(6 10 Ages)"
+      ],
+      "price_krw": 283560
+     },
+     {
+      "options_ko": [
+       "Magenta",
+       "50 60 inches(8 12 Ages)"
+      ],
+      "price_krw": 283560
+     },
+     {
+      "options_ko": [
+       "Pink",
+       "39 48 inches(4 8 Ages)"
+      ],
+      "price_krw": 263760
+     },
+     {
+      "options_ko": [
+       "Pink",
+       "45 54 inches(6 10 Ages)"
+      ],
+      "price_krw": 283560
+     },
+     {
+      "options_ko": [
+       "Pink",
+       "50 60 inches(8 12 Ages)"
+      ],
+      "price_krw": 283560
+     },
+     {
+      "options_ko": [
+       "Red",
+       "39 48 inches(4 8 Ages)"
+      ],
+      "price_krw": 263760
+     },
+     {
+      "options_ko": [
+       "Red",
+       "45 54 inches(6 10 Ages)"
+      ],
+      "price_krw": 283560
+     },
+     {
+      "options_ko": [
+       "Red",
+       "50 60 inches(8 12 Ages)"
+      ],
+      "price_krw": 283560
+     },
+     {
+      "options_ko": [
+       "Yellow",
+       "39 48 inches(4 8 Ages)"
+      ],
+      "price_krw": 263760
+     },
+     {
+      "options_ko": [
+       "Yellow",
+       "45 54 inches(6 10 Ages)"
+      ],
+      "price_krw": 283560
+     },
+     {
+      "options_ko": [
+       "Yellow",
+       "50 60 inches(8 12 Ages)"
+      ],
+      "price_krw": 283560
+     }
+    ],
+    "images": [
+     {
+      "file": "collected/50002787-20261115T033420Z/images/13324729995/fairwardgolf-13324729995-001-c582f11dc41e5d27.webp",
+      "position": 0
+     },
+     {
+      "file": "collected/50002787-20261115T033420Z/images/13324729995/fairwardgolf-13324729995-002-ad24532793fe6949.webp",
+      "position": 1
+     },
+     {
+      "file": "collected/50002787-20261115T033420Z/images/13324729995/fairwardgolf-13324729995-003-a2fb677798d97c2d.webp",
+      "position": 2
+     }
+    ]
+   }
+  }
+ ],
+ "translated": [
+  {
+   "key": "fairwardgolf:naver:102682314:13127601930",
+   "status": "translated",
+   "en": {
+    "brand:8863fd2181524da4": "Bermuda",
+    "title:7a3b3d50fe5ac500": "Bermuda Premium Men's Golf Wedge Set 3-Piece 52° 56° 60° Cavity Back Full-Face Milled"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102329146:13016152694",
+   "status": "translated",
+   "en": {
+    "brand:232dec38cdfd10c8": "Fairward Golf",
+    "title:0d73a098a52fcb7a": "Fairward Golf Unisex Wedge Set 3-Piece 54°, 60°, 69° Lob, Sand, Pitching Wedges 35 in"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101431661:12731471202",
+   "status": "translated",
+   "en": {
+    "brand:ac5e0e1b100d0308": "Yamaha",
+    "title:a9fc2ea836b922f0": "Yamaha RMX Forged Wedge Set, 2-Piece, NSPRO 950GH"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:1100051197:12951827729",
+   "status": "translated",
+   "en": {
+    "brand:fcd3e20b5744e119": "Yamato",
+    "title:34f1d64cf3a11436": "Yamato Full-Face Forged Milled Golf Wedge Set or Single Wedge 50/52/54/56/58/60 Gap Sand Lob"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:100263073:5305572105",
+   "status": "translated",
+   "en": {
+    "brand:d2267859223749ed": "MacGregor",
+    "title:da1d062b0191a17a": "MacGregor NV201 50° 56° 2-Piece Wedge Set"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101365130:11097352600",
+   "status": "held",
+   "en": {}
+  },
+  {
+   "key": "fairwardgolf:naver:102709004:12178049211",
+   "status": "held",
+   "en": {}
+  },
+  {
+   "key": "fairwardgolf:naver:102697674:13292782760",
+   "status": "pending",
+   "en": {
+    "brand:c9b58f67b0acbef0": "Bombtech Golf"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:1100142898:13619604371",
+   "status": "translated",
+   "en": {
+    "brand:c9b58f67b0acbef0": "Bombtech Golf",
+    "title:15066ad95e51beca": "Bombtech Golf Premium Left-Handed Wedge Set 52° 56° 60°"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102773407:13619939279",
+   "status": "translated",
+   "en": {
+    "brand:094add81b5395048": "GoSports",
+    "title:8baa24d5a059490e": "GoSports Non-Conforming Max Spin Golf Wedge Set Men's Right-Handed Sand, Lob, Gap Wedges"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101921971:8958060680",
+   "status": "translated",
+   "en": {
+    "brand:0c694ec4f85b0c79": "Bridgestone",
+    "title:e9fdce4e89dcc681": "Bridgestone BG-100 BG100 Men's Complete Golf Set 11 Pcs with Caddie Bag White"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:100020225:12215613033",
+   "status": "translated",
+   "en": {
+    "brand:0c694ec4f85b0c79": "Bridgestone",
+    "title:9f94783d2f8effb9": "Bridgestone Golf BG-100 Men's Complete Golf Club Set 11 Pcs with Caddie Bag"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101921971:13785630702",
+   "status": "translated",
+   "en": {
+    "brand:0c694ec4f85b0c79": "Bridgestone",
+    "title:ffad7504a45951ed": "Bridgestone BG-100 BG100 Men's Complete Golf Club Set 11 Pcs with Caddie Bag Black"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101435422:13809756465",
+   "status": "translated",
+   "en": {
+    "brand:0c694ec4f85b0c79": "Bridgestone",
+    "title:b71fdec4d9d06cae": "Bridgestone BG-100 Black Men's Complete Golf Club Set 2026, 11 Pieces"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102583137:13827555559",
+   "status": "translated",
+   "en": {
+    "brand:0c694ec4f85b0c79": "Bridgestone",
+    "title:15d127aafb4d13c9": "Bridgestone BG-100 Men's Complete Golf Club Set 2026, 11 Pieces"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:1100056746:13325799991",
+   "status": "translated",
+   "en": {
+    "brand:752b9a8b36b892c4": "Callaway",
+    "title:99acc4ac2f7f9946": "Callaway Reva Women's Complete Set 2025 9-Piece"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101435422:11989527841",
+   "status": "translated",
+   "en": {
+    "brand:752b9a8b36b892c4": "Callaway",
+    "title:7ffc41762dae674a": "Callaway Reva 2025 Women's Complete Golf Club Set, 9 Pieces, Clubs Only"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101435422:11989518458",
+   "status": "translated",
+   "en": {
+    "brand:752b9a8b36b892c4": "Callaway",
+    "title:f6e722905d91d3c6": "Callaway Reva Women's Complete Golf Club Set 2025, 9 Pieces"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102748022:13261457036",
+   "status": "pending",
+   "en": {
+    "brand:094add81b5395048": "GoSports"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102317872:12921931106",
+   "status": "translated",
+   "en": {
+    "brand:483268a53e50a8e2": "yamato golf",
+    "title:34f1d64cf3a11436": "Yamato Golf Full-Face Forged Milled Wedge Set or Single, 50/52/54/56/58/60"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:1100067303:13405976594",
+   "status": "translated",
+   "en": {
+    "brand:deee67524357b87c": "A11N SPORTS",
+    "title:45383df4f07bc53e": "A11N SPORTS Forged Golf Wedge Set"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102683547:13552318731",
+   "status": "translated",
+   "en": {
+    "brand:deee67524357b87c": "A11N SPORTS",
+    "title:af1c79d172dc210c": "A11N SPORTS Forged Golf Wedge Set db4P"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102783573:13207840596",
+   "status": "translated",
+   "en": {
+    "brand:d6f138ba8d2852a3": "Finchley",
+    "title:419f3efe376001fc": "A11N SPORTS Pinkly Golf Wedge Set 3 u2013 52°, 56°, 60°, Milled Face, Right-Handed"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:100006312:4385835200",
+   "status": "translated",
+   "en": {
+    "brand:fbb353e910e9b0da": "Mania",
+    "title:e6245ee892112096": "Junior Golf Club Set for Kids with Putter, Driver and Iron"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101731755:13770121877",
+   "status": "translated",
+   "en": {
+    "brand:232dec38cdfd10c8": "Fairward Golf",
+    "title:516bd317791de188": "F-Style Bar Clamp 12in Woodworking Clamp for DIY Wood Joining"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:1100080439:13475342948",
+   "status": "translated",
+   "en": {
+    "brand:4a73505bf082ad36": "Elevon",
+    "title:dea787c3ced89de5": "Junior Golf Club Set 1016 for Kids with Driver, Fairway Wood and Hybrid"
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102524282:13324729995",
+   "status": "translated",
+   "en": {
+    "brand:062dea271733503c": "XDriveMax",
+    "title:6bb87d57870a4929": "XDriveMax Junior Golf Club Set, 5/6 Pieces with Stand Bag, 1 Driver and 5 Hybrids"
+   }
+  }
+ ],
+ "placements": [
+  {
+   "key": "fairwardgolf:naver:102682314:13127601930",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-ff2b463a895120abacc060fb"
+     ],
+     "leaf": "wedge-sets",
+     "product_type": "Wedge Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:wedge-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Wedge Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:102329146:13016152694",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-e6c24b84b69b0b9775374b8a",
+      "FW-85ec3e3f56e9221a57fa251f"
+     ],
+     "leaf": "wedge-sets",
+     "product_type": "Wedge Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:wedge-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Wedge Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:101431661:12731471202",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-67db50404a17281d74beb14d"
+     ],
+     "leaf": "wedge-sets",
+     "product_type": "Wedge Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:wedge-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Wedge Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:1100051197:12951827729",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-12111de49ab34a8af889827c",
+      "FW-2b7cb1f4dd247e7cd9a156a8",
+      "FW-a08eac7a2731986102d1e242",
+      "FW-ebfa14bfb914bead2eadb286",
+      "FW-bcb8db261406817c8e99264f",
+      "FW-8f512ec56963f6fb294d4ccb",
+      "FW-60036377e526fcfa3d78b1b5"
+     ],
+     "leaf": "wedge-sets",
+     "product_type": "Wedge Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:wedge-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Wedge Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:100263073:5305572105",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-ae8ac6b56ff1f388a3f6f052"
+     ],
+     "leaf": "wedge-sets",
+     "product_type": "Wedge Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:wedge-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Wedge Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:101365130:11097352600",
+   "status": "held",
+   "leaves": [],
+   "product_type": null
+  },
+  {
+   "key": "fairwardgolf:naver:102709004:12178049211",
+   "status": "held",
+   "leaves": [],
+   "product_type": null
+  },
+  {
+   "key": "fairwardgolf:naver:102697674:13292782760",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-82fae53af75273608ec8d2dc"
+     ],
+     "leaf": "wedge-sets",
+     "product_type": "Wedge Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:wedge-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Wedge Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:1100142898:13619604371",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-c4c68a4a487fc24cfbb6badd"
+     ],
+     "leaf": "wedge-sets",
+     "product_type": "Wedge Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:wedge-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Wedge Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:102773407:13619939279",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-96c1c803c6aa2a98939a7cbb"
+     ],
+     "leaf": "wedge-sets",
+     "product_type": "Wedge Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:wedge-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Wedge Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:101921971:8958060680",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-f9650f7965b268b4b69fe9d5",
+      "FW-4eab248fc609ddc8ab72e4f5"
+     ],
+     "leaf": "mens-complete-sets",
+     "product_type": "Men’s Complete Golf Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:mens-complete-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Men’s Complete Golf Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:100020225:12215613033",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-8b81b0a93e436a4554af691f",
+      "FW-1acc1ef546e6e29d51876892"
+     ],
+     "leaf": "mens-complete-sets",
+     "product_type": "Men’s Complete Golf Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:mens-complete-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Men’s Complete Golf Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:101921971:13785630702",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-a488c1f58ce24454365ce979",
+      "FW-3c25f7e9095ea758dc1137fc"
+     ],
+     "leaf": "mens-complete-sets",
+     "product_type": "Men’s Complete Golf Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:mens-complete-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Men’s Complete Golf Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:101435422:13809756465",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-eaace0bfc4e04d9bb71da6bf",
+      "FW-b5b0a0c7efd5f68fc644f16b"
+     ],
+     "leaf": "mens-complete-sets",
+     "product_type": "Men’s Complete Golf Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:mens-complete-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Men’s Complete Golf Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:102583137:13827555559",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-cf8551ee8effa1e43cb2bf8f"
+     ],
+     "leaf": "mens-complete-sets",
+     "product_type": "Men’s Complete Golf Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:mens-complete-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Men’s Complete Golf Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:1100056746:13325799991",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-d86f5c3b89a61d1e70648d5b",
+      "FW-b1a2c45f7bf0f7ef90af3e43"
+     ],
+     "leaf": "womens-complete-sets",
+     "product_type": "Women’s Complete Golf Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:womens-complete-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Women’s Complete Golf Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:101435422:11989527841",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-c5632bbe81ffc6961db69517",
+      "FW-2fc87fb2b291444b95916ada"
+     ],
+     "leaf": "womens-complete-sets",
+     "product_type": "Women’s Complete Golf Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:womens-complete-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Women’s Complete Golf Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:101435422:11989518458",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-07813b67ef65e7f0bb0338cb",
+      "FW-292dd3f32635faa17b3ccc52"
+     ],
+     "leaf": "womens-complete-sets",
+     "product_type": "Women’s Complete Golf Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:womens-complete-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Women’s Complete Golf Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:102748022:13261457036",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-e5824dc3d1de4ed5b58f3d30"
+     ],
+     "leaf": "wedge-sets",
+     "product_type": "Wedge Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:wedge-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Wedge Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:102317872:12921931106",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-af9024afb2d9d09ab92fc289",
+      "FW-a8752ffeb7e0c003ef19e308",
+      "FW-899b02f496317502f34de71c",
+      "FW-c308fc00bb0d116ae4315416",
+      "FW-3e278f76613d46f9c819549d"
+     ],
+     "leaf": "wedge-sets",
+     "product_type": "Wedge Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:wedge-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Wedge Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:1100067303:13405976594",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-9310927262bd02d183348db9",
+      "FW-33234cc700b5bec4e6d5c477"
+     ],
+     "leaf": "wedge-sets",
+     "product_type": "Wedge Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:wedge-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Wedge Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:102683547:13552318731",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-5349e2533820d3536fdeddef",
+      "FW-7b86917e1b2071ae3eb06742"
+     ],
+     "leaf": "wedge-sets",
+     "product_type": "Wedge Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:wedge-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Wedge Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:102783573:13207840596",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-88bd6816ccbdb9f8e68bc430",
+      "FW-d7fb16f6b4c75f58240be7ce"
+     ],
+     "leaf": "wedge-sets",
+     "product_type": "Wedge Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:wedge-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Wedge Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:100006312:4385835200",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-def92804ddae53a24e65536d",
+      "FW-546c00a0c5e9d19e8684e06f",
+      "FW-4b088c46e0b98b83eae82e37",
+      "FW-db611d4d3ead9bad14ab13f9",
+      "FW-bbaa5bc2e86dc67ee087471d",
+      "FW-c6b9331eb82629317133cbd3"
+     ],
+     "leaf": "junior-clubs-sets",
+     "product_type": "Junior Golf Clubs & Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:junior-clubs-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Junior Golf Clubs & Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:101731755:13770121877",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-e4a5548e19683ce8a599ac14"
+     ],
+     "leaf": "junior-clubs-sets",
+     "product_type": "Junior Golf Clubs & Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:junior-clubs-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Junior Golf Clubs & Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:1100080439:13475342948",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-f143291b3e553e1a3721bc3e"
+     ],
+     "leaf": "junior-clubs-sets",
+     "product_type": "Junior Golf Clubs & Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:junior-clubs-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Junior Golf Clubs & Sets"
+  },
+  {
+   "key": "fairwardgolf:naver:102524282:13324729995",
+   "status": "placed",
+   "leaves": [
+    {
+     "fit_skus": [
+      "FW-f5a059c4c1fd02e2f2f75983",
+      "FW-d896e69081c3439fd7a88486",
+      "FW-ba1d69af555f6ae34f9c5e84",
+      "FW-5c574c340cdff91f514166a8",
+      "FW-e8b714fcc3ce2c0a128b00d4",
+      "FW-1e96d37899544556f107a075",
+      "FW-5365dcbd92967179566936be",
+      "FW-f00d4d165035d671c3c64c2b",
+      "FW-17c326c267d44d84b85959c7",
+      "FW-6473eb0ae3a840533f01305d",
+      "FW-95f0fb7cac45326c77395e89",
+      "FW-e17b9b57e0963e73bb2a5d15",
+      "FW-78523d23e17a251b1b099086",
+      "FW-be1df87c1cf331bf3fb5d9a8",
+      "FW-5708c296386ca232fd4d5574",
+      "FW-2b462b0f7205beef3d7fd77b",
+      "FW-a3acf64579e648789ae76f70",
+      "FW-b53b52627b00dd34057859f9",
+      "FW-ccea3037c0970f504721c5f1",
+      "FW-f3c36bca16b8e115885a9e21",
+      "FW-19c8d8bb1a01dc90a93e8dc0",
+      "FW-011af341b3b005c66bf4c878",
+      "FW-72d3d7e6deed1b25d1923a48",
+      "FW-6b42ccb546f0a2adc2aa914c"
+     ],
+     "leaf": "junior-clubs-sets",
+     "product_type": "Junior Golf Clubs & Sets",
+     "start_sku": null,
+     "tags": [
+      "fairwardgolf:leaf:junior-clubs-sets",
+      "fairwardgolf:parent:clubs",
+      "fairwardgolf:showcase"
+     ]
+    }
+   ],
+   "product_type": "Junior Golf Clubs & Sets"
+  }
+ ],
+ "ledger": [
+  {
+   "key": "fairwardgolf:naver:101921971:8958060680",
+   "status": "published",
+   "reason": null,
+   "handle": "bridgestone-bg-100-bg100-mens-complete-golf-set-11-pcs-with-caddie-bag-white",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15463751974979",
+   "at": "2026-11-09T08:45:17Z"
+  },
+  {
+   "key": "fairwardgolf:naver:1100056746:13325799991",
+   "status": "published",
+   "reason": null,
+   "handle": "callaway-reva-womens-complete-set-2025-9-pcs",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15464202010691",
+   "at": "2026-11-09T09:22:27Z"
+  },
+  {
+   "key": "fairwardgolf:naver:101921971:8958060680",
+   "status": "published",
+   "reason": null,
+   "handle": "bridgestone-bg-100-bg100-mens-complete-golf-set-11-pcs-with-caddie-bag-white",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15463751974979",
+   "at": "2026-11-09T11:36:32Z"
+  },
+  {
+   "key": "fairwardgolf:naver:1100056746:13325799991",
+   "status": "published",
+   "reason": null,
+   "handle": "callaway-reva-womens-complete-set-2025-9-pcs",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15464202010691",
+   "at": "2026-11-09T11:37:03Z"
+  },
+  {
+   "key": "fairwardgolf:naver:101921971:8958060680",
+   "status": "published",
+   "reason": null,
+   "handle": "bridgestone-bg-100-bg100-mens-complete-golf-set-11-pcs-with-caddie-bag-white",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15463751974979",
+   "at": "2026-11-10T02:11:07Z"
+  },
+  {
+   "key": "fairwardgolf:naver:1100056746:13325799991",
+   "status": "published",
+   "reason": null,
+   "handle": "callaway-reva-womens-complete-set-2025-9-pcs",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15464202010691",
+   "at": "2026-11-10T02:11:46Z"
+  },
+  {
+   "key": "fairwardgolf:naver:101921971:8958060680",
+   "status": "published",
+   "reason": null,
+   "handle": "bridgestone-bg-100-bg100-mens-complete-golf-set-11-pcs-with-caddie-bag-white",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15463751974979",
+   "at": "2026-11-10T05:30:13Z"
+  },
+  {
+   "key": "fairwardgolf:naver:1100056746:13325799991",
+   "status": "published",
+   "reason": null,
+   "handle": "callaway-reva-womens-complete-set-2025-9-pcs",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15464202010691",
+   "at": "2026-11-10T05:30:30Z"
+  },
+  {
+   "key": "fairwardgolf:naver:101921971:8958060680",
+   "status": "published",
+   "reason": null,
+   "handle": "bridgestone-bg-100-bg100-mens-complete-golf-set-11-pcs-with-caddie-bag-white",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15463751974979",
+   "at": "2026-11-10T08:37:16Z"
+  },
+  {
+   "key": "fairwardgolf:naver:1100056746:13325799991",
+   "status": "published",
+   "reason": null,
+   "handle": "callaway-reva-womens-complete-set-2025-9-pcs",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15464202010691",
+   "at": "2026-11-10T09:37:44Z"
+  },
+  {
+   "key": "fairwardgolf:naver:101921971:8958060680",
+   "status": "published",
+   "reason": null,
+   "handle": "bridgestone-bg-100-bg100-mens-complete-golf-set-11-pcs-with-caddie-bag-white",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15463751974979",
+   "at": "2026-11-10T14:23:48Z"
+  },
+  {
+   "key": "fairwardgolf:naver:1100056746:13325799991",
+   "status": "published",
+   "reason": null,
+   "handle": "callaway-reva-womens-complete-set-2025-9-pcs",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15464202010691",
+   "at": "2026-11-10T14:24:09Z"
+  },
+  {
+   "key": "fairwardgolf:naver:101921971:8958060680",
+   "status": "published",
+   "reason": null,
+   "handle": "bridgestone-bg-100-bg100-mens-complete-golf-set-11-pcs-with-caddie-bag-white",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15463751974979",
+   "at": "2026-11-11T10:21:32Z"
+  },
+  {
+   "key": "fairwardgolf:naver:1100056746:13325799991",
+   "status": "published",
+   "reason": null,
+   "handle": "callaway-reva-womens-complete-set-2025-9-pcs",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15464202010691",
+   "at": "2026-11-11T10:21:55Z"
+  },
+  {
+   "key": "fairwardgolf:naver:101921971:8958060680",
+   "status": "published",
+   "reason": null,
+   "handle": "bridgestone-bg-100-bg100-mens-complete-golf-set-11-pcs-with-caddie-bag-white",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15463751974979",
+   "at": "2026-11-11T11:29:15Z"
+  },
+  {
+   "key": "fairwardgolf:naver:1100056746:13325799991",
+   "status": "published",
+   "reason": null,
+   "handle": "callaway-reva-womens-complete-set-2025-9-pcs",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15464202010691",
+   "at": "2026-11-11T11:29:41Z"
+  },
+  {
+   "key": "fairwardgolf:naver:101435422:11989527841",
+   "status": "published",
+   "reason": null,
+   "handle": "callaway-reva-2025-womens-complete-golf-club-set-9-pieces-clubs-only",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15483842068547",
+   "at": "2026-11-11T13:49:49Z"
+  },
+  {
+   "key": "fairwardgolf:naver:101435422:11989527841",
+   "status": "published",
+   "reason": null,
+   "handle": "callaway-reva-2025-womens-complete-golf-club-set-9-pieces-clubs-only",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15483842068547",
+   "at": "2026-11-12T03:02:43Z"
+  },
+  {
+   "key": "fairwardgolf:naver:1100056746:13325799991",
+   "status": "published",
+   "reason": null,
+   "handle": "callaway-reva-womens-complete-set-2025-9-pcs",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15464202010691",
+   "at": "2026-11-12T03:04:05Z"
+  },
+  {
+   "key": "fairwardgolf:naver:101435422:11989527841",
+   "status": "published",
+   "reason": null,
+   "handle": "callaway-reva-2025-womens-complete-golf-club-set-9-pieces-clubs-only",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15483842068547",
+   "at": "2026-11-12T03:02:43Z"
+  },
+  {
+   "key": "fairwardgolf:naver:101921971:8958060680",
+   "status": "published",
+   "reason": null,
+   "handle": "bridgestone-bg-100-bg100-mens-complete-golf-set-11-pcs-with-caddie-bag-white",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15463751974979",
+   "at": "2026-11-11T11:29:15Z"
+  },
+  {
+   "key": "fairwardgolf:naver:1100056746:13325799991",
+   "status": "published",
+   "reason": null,
+   "handle": "callaway-reva-womens-complete-set-2025-9-pcs",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15464202010691",
+   "at": "2026-11-12T03:04:05Z"
+  },
+  {
+   "key": "fairwardgolf:naver:100006312:4385835200",
+   "status": "published",
+   "reason": null,
+   "handle": "mania-junior-golf-club-set-for-kids-with-putter-driver-and-iron",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15488443613251",
+   "at": "2026-11-12T18:02:59Z"
+  },
+  {
+   "key": "fairwardgolf:naver:101731755:13770121877",
+   "status": "published",
+   "reason": null,
+   "handle": "fairward-golf-f-style-bar-clamp-12in-woodworking-clamp-for-diy-wood-joining",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15488833224771",
+   "at": "2026-11-13T00:34:25Z"
+  },
+  {
+   "key": "fairwardgolf:naver:101435422:13809756465",
+   "status": "published",
+   "reason": null,
+   "handle": "bridgestone-bg-100-black-mens-complete-golf-club-set-2026-11-pieces",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15489696333891",
+   "at": "2026-11-13T09:00:09Z"
+  },
+  {
+   "key": "fairwardgolf:naver:102583137:13827555559",
+   "status": "published",
+   "reason": null,
+   "handle": "bridgestone-bg-100-mens-complete-golf-club-set-2026-11-pieces",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15490277048387",
+   "at": "2026-11-13T11:47:25Z"
+  },
+  {
+   "key": "fairwardgolf:naver:101921971:13785630702",
+   "status": "published",
+   "reason": null,
+   "handle": "bridgestone-bg-100-mens-complete-golf-club-set-11-pcs-with-caddie-bag-black",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15492328030275",
+   "at": "2026-11-14T09:10:31Z"
+  },
+  {
+   "key": "fairwardgolf:naver:100020225:12215613033",
+   "status": "published",
+   "reason": null,
+   "handle": "bridgestone-golf-bg-100-mens-complete-golf-club-set-11-pcs-with-caddie-bag",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15493401739331",
+   "at": "2026-11-14T16:37:09Z"
+  },
+  {
+   "key": "fairwardgolf:naver:101435422:11989518458",
+   "status": "published",
+   "reason": null,
+   "handle": "callaway-reva-womens-complete-golf-club-set-2025-9-pieces",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15493418418243",
+   "at": "2026-11-14T17:00:24Z"
+  },
+  {
+   "key": "fairwardgolf:naver:1100080439:13475342948",
+   "status": "published",
+   "reason": null,
+   "handle": "golf-elebon-junior-golf-club-set-1016-for-kids-with-driver-fairway-wood-and-hybrid",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15494032064579",
+   "at": "2026-11-15T02:24:13Z"
+  },
+  {
+   "key": "fairwardgolf:naver:102524282:13324729995",
+   "status": "published",
+   "reason": null,
+   "handle": "golf-xdrivemax-junior-golf-club-set-5-6-pieces-with-stand-bag-1-driver-and-5-hybrids",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15494097174595",
+   "at": "2026-11-15T03:35:34Z"
+  },
+  {
+   "key": "fairwardgolf:naver:1100080439:13475342948",
+   "status": "withdrawn",
+   "reason": "a purchase agency's import with no brand (agency_needs_brand): published only because '골프' was taken as its brand; 2026-11-15",
+   "handle": "golf-elebon-junior-golf-club-set-1016-for-kids-with-driver-fairway-wood-and-hybrid",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15494032064579",
+   "at": "2026-11-15T11:07:26Z"
+  },
+  {
+   "key": "fairwardgolf:naver:102524282:13324729995",
+   "status": "withdrawn",
+   "reason": "a purchase agency's import with no brand (agency_needs_brand): published only because '골프' was taken as its brand; 2026-11-15",
+   "handle": "golf-xdrivemax-junior-golf-club-set-5-6-pieces-with-stand-bag-1-driver-and-5-hybrids",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15494097174595",
+   "at": "2026-11-15T11:07:47Z"
+  },
+  {
+   "key": "fairwardgolf:naver:100263073:5305572105",
+   "status": "published",
+   "reason": null,
+   "handle": "macgregor-nv201-50-56-2-piece-wedge-set",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15494916309059",
+   "at": "2026-11-15T12:47:25Z"
+  },
+  {
+   "key": "fairwardgolf:naver:101431661:12731471202",
+   "status": "published",
+   "reason": null,
+   "handle": "yamaha-rmx-forged-wedge-set-2-piece-nspro-950gh",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15494948913219",
+   "at": "2026-11-15T13:01:43Z"
+  },
+  {
+   "key": "fairwardgolf:naver:1100142898:13619604371",
+   "status": "published",
+   "reason": null,
+   "handle": "bombtech-golf-premium-left-handed-wedge-set-52-56-60",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15494976110659",
+   "at": "2026-11-15T13:18:18Z"
+  },
+  {
+   "key": "fairwardgolf:naver:102682314:13127601930",
+   "status": "published",
+   "reason": null,
+   "handle": "bermuda-premium-mens-golf-wedge-set-3-piece-52-56-60-cavity-back-full-face-milled",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15495140180035",
+   "at": "2026-11-15T15:02:49Z"
+  },
+  {
+   "key": "fairwardgolf:naver:102329146:13016152694",
+   "status": "published",
+   "reason": null,
+   "handle": "fairward-golf-unisex-wedge-set-3-piece-54-60-69-lob-sand-pitching-wedges-35-in",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15495146831939",
+   "at": "2026-11-15T15:05:34Z"
+  },
+  {
+   "key": "fairwardgolf:naver:102524282:13324729995",
+   "status": "published",
+   "reason": null,
+   "handle": "golf-xdrivemax-junior-golf-club-set-5-6-pieces-with-stand-bag-1-driver-and-5-hybrids",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15494097174595",
+   "at": "2026-11-15T15:17:27Z"
+  },
+  {
+   "key": "fairwardgolf:naver:1100080439:13475342948",
+   "status": "published",
+   "reason": null,
+   "handle": "golf-elebon-junior-golf-club-set-1016-for-kids-with-driver-fairway-wood-and-hybrid",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15494032064579",
+   "at": "2026-11-15T15:17:47Z"
+  },
+  {
+   "key": "fairwardgolf:naver:102524282:13324729995",
+   "status": "published",
+   "reason": null,
+   "handle": "xdrivemax-junior-golf-club-set-5-6-pieces-with-stand-bag-1-driver-and-5-hybrids",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15494097174595",
+   "at": "2026-11-15T15:19:01Z"
+  },
+  {
+   "key": "fairwardgolf:naver:1100080439:13475342948",
+   "status": "published",
+   "reason": null,
+   "handle": "elevon-junior-golf-club-set-1016-for-kids-with-driver-fairway-wood-and-hybrid",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15494032064579",
+   "at": "2026-11-15T15:20:27Z"
+  },
+  {
+   "key": "fairwardgolf:naver:102329146:13016152694",
+   "status": "withdrawn",
+   "reason": "replaced_by:fairwardgolf:naver:1100140742:13480790720",
+   "handle": "fairward-golf-unisex-wedge-set-3-piece-54-60-69-lob-sand-pitching-wedges-35-in",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15495146831939",
+   "at": "2026-11-15T15:53:41Z"
+  },
+  {
+   "key": "fairwardgolf:naver:102682314:13127601930",
+   "status": "withdrawn",
+   "reason": "replaced_by:fairwardgolf:naver:102600084:13122106279",
+   "handle": "bermuda-premium-mens-golf-wedge-set-3-piece-52-56-60-cavity-back-full-face-milled",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15495140180035",
+   "at": "2026-11-15T15:54:10Z"
+  },
+  {
+   "key": "fairwardgolf:naver:102773407:13619939279",
+   "status": "published",
+   "reason": null,
+   "handle": "gosports-non-conforming-max-spin-golf-wedge-set-mens-right-handed-sand-lob-gap-wedges",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15495236681795",
+   "at": "2026-11-15T16:17:16Z"
+  },
+  {
+   "key": "fairwardgolf:naver:102783573:13207840596",
+   "status": "published",
+   "reason": null,
+   "handle": "a11n-sports-pinkly-golf-wedge-set-3-u2013-52-56-60-milled-face-right-handed",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15495238778947",
+   "at": "2026-11-15T16:28:48Z"
+  },
+  {
+   "key": "fairwardgolf:naver:1100051197:12951827729",
+   "status": "published",
+   "reason": null,
+   "handle": "yamato-full-face-forged-milled-golf-wedge-set-or-single-wedge-50-52-54-56-58-60-gap-sand-lob",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15495242776643",
+   "at": "2026-11-15T17:10:25Z"
+  },
+  {
+   "key": "fairwardgolf:naver:102317872:12921931106",
+   "status": "published",
+   "reason": null,
+   "handle": "yamato-golf-full-face-forged-milled-wedge-set-or-single-50-52-54-56-58-60",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15495243071555",
+   "at": "2026-11-15T17:12:45Z"
+  },
+  {
+   "key": "fairwardgolf:naver:1100067303:13405976594",
+   "status": "published",
+   "reason": null,
+   "handle": "a11n-sports-forged-golf-wedge-set",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15495246643267",
+   "at": "2026-11-15T17:46:00Z"
+  },
+  {
+   "key": "fairwardgolf:naver:102683547:13552318731",
+   "status": "published",
+   "reason": null,
+   "handle": "a11n-sports-forged-golf-wedge-set-db4p",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15495248347203",
+   "at": "2026-11-15T17:56:13Z"
+  },
+  {
+   "key": "fairwardgolf:naver:102773407:13619939279",
+   "status": "withdrawn",
+   "reason": "replaced_by:fairwardgolf:naver:102683334:13379851400",
+   "handle": "gosports-non-conforming-max-spin-golf-wedge-set-mens-right-handed-sand-lob-gap-wedges",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15495236681795",
+   "at": "2026-11-15T18:05:22Z"
+  },
+  {
+   "key": "fairwardgolf:naver:100020225:12215613033",
+   "status": "withdrawn",
+   "reason": "replaced_by:fairwardgolf:naver:101921971:8958060680",
+   "handle": "bridgestone-golf-bg-100-mens-complete-golf-club-set-11-pcs-with-caddie-bag",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15493401739331",
+   "at": "2026-11-16T02:11:37Z"
+  },
+  {
+   "key": "fairwardgolf:naver:101435422:11989527841",
+   "status": "withdrawn",
+   "reason": "replaced_by:fairwardgolf:naver:1100056746:13325799991",
+   "handle": "callaway-reva-2025-womens-complete-golf-club-set-9-pieces-clubs-only",
+   "admin_url": "https://admin.shopify.com/store/93r1y5-tt/products/15483842068547",
+   "at": "2026-11-16T02:13:52Z"
+  }
+ ],
+ "collected": [
+  {
+   "key": "fairwardgolf:naver:100020225:12215613033",
+   "listing": {
+    "key": "fairwardgolf:naver:100020225:12215613033",
+    "product_id": "12215613033",
+    "name": "브리지스톤 골프 BG-100 골프채 풀세트 11개 캐디백 남성용",
+    "category_id": "50002788",
+    "pricing": {
+     "sale_price": 710000,
+     "discounted_price": 710000,
+     "discount_ratio": 0,
+     "currency": "KRW"
+    },
+    "store": {
+     "name": "TOKYOTIMES",
+     "slug": "tokyotimes",
+     "link": "https://smartstore.naver.com/tokyotimes",
+     "channel_no": "100020225",
+     "grade": "PREMIUM",
+     "is_brand_store": false
+    },
+    "reviews": {
+     "count": 0,
+     "average_score": 0
+    }
+   },
+   "specs": {
+    "specs": [
+     {
+      "label": "원산지",
+      "value": "상세설명에 표시"
+     },
+     {
+      "label": "인증정보",
+      "value": "이 제품은 구매대행을 통하여 유통되는 제품이며 '전기용품 및 생활용품 안전관리법'에 따른 안전관리대상 제품입니다.판매자가 등록한 것으로 등록 정보에 대한 일체 책임은 판매자에게 있습니다."
+     }
+    ]
+   },
+   "photos": {
+    "files": [
+     {
+      "position": 0,
+      "source_sha256": "9e4b38021e9487f0bea435cdc0178b22bd01199aee59b736ecec692929abc8f0"
+     },
+     {
+      "position": 1,
+      "source_sha256": "a0e1ee628852e3bac782bce085fcf81877812756e2b617836ecaef5b45c38334"
+     }
+    ]
+   },
+   "variants": {
+    "variants": [
+     {
+      "options": [
+       "S(스틸)"
+      ],
+      "name": "S(스틸)"
+     },
+     {
+      "options": [
+       "R(카본)"
+      ],
+      "name": "R(카본)"
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101365130:11097352600",
+   "listing": {
+    "key": "fairwardgolf:naver:101365130:11097352600",
+    "product_id": "11097352600",
+    "name": "mirai 미라이골프 MW-25 블랙 웨지 다이나믹골드 S200 샤프트 피팅 세트",
+    "category_id": "50002783",
+    "pricing": {
+     "sale_price": 340000,
+     "discounted_price": 280000,
+     "discount_ratio": 17,
+     "currency": "KRW"
+    },
+    "store": {
+     "name": "유진GOLF",
+     "slug": "yujingolf",
+     "link": "https://smartstore.naver.com/yujingolf",
+     "channel_no": "101365130",
+     "grade": "PREMIUM",
+     "is_brand_store": false
+    },
+    "reviews": {
+     "count": 1,
+     "average_score": 5
+    }
+   },
+   "specs": {
+    "specs": [
+     {
+      "label": "원산지",
+      "value": "상세설명에 표시"
+     }
+    ]
+   },
+   "photos": {
+    "files": [
+     {
+      "position": 0,
+      "source_sha256": "335899a973d4d7f1f8aed7d3143256fb59ccd74ea0b74ba88acae3d7fb290279"
+     },
+     {
+      "position": 1,
+      "source_sha256": "0b8b2f7b90788dc05e0779f460d5946f998e287a1d55c8a384d9b08732e48ebb"
+     },
+     {
+      "position": 2,
+      "source_sha256": "b94901d9de6c543bda4d1fd96f3256b7953c9a1687db4991d3faeb7adac1cb91"
+     },
+     {
+      "position": 3,
+      "source_sha256": "deff49f1c76f49433b64b16eb23a2de9cfec2305338d5e4050e5d6b58315424d"
+     }
+    ]
+   },
+   "variants": {
+    "variants": [
+     {
+      "options": [
+       "MW-25 블랙 웨지 (DG S200)",
+       "48"
+      ],
+      "name": "MW-25 블랙 웨지 (DG S200) / 48"
+     },
+     {
+      "options": [
+       "MW-25 블랙 웨지 (DG S200)",
+       "52"
+      ],
+      "name": "MW-25 블랙 웨지 (DG S200) / 52"
+     },
+     {
+      "options": [
+       "MW-25 블랙 웨지 (DG S200)",
+       "56"
+      ],
+      "name": "MW-25 블랙 웨지 (DG S200) / 56"
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101435422:11989518458",
+   "listing": {
+    "key": "fairwardgolf:naver:101435422:11989518458",
+    "product_id": "11989518458",
+    "name": "캘러웨이 여성 풀세트 레바 REVA 2025년 골프채 9개",
+    "category_id": "50002788",
+    "pricing": {
+     "sale_price": 940000,
+     "discounted_price": 940000,
+     "discount_ratio": 0,
+     "currency": "KRW"
+    },
+    "store": {
+     "name": "이루기상사",
+     "slug": "irugi",
+     "link": "https://smartstore.naver.com/irugi",
+     "channel_no": "101435422",
+     "grade": "SEED",
+     "is_brand_store": false
+    },
+    "reviews": {
+     "count": 0,
+     "average_score": 0
+    }
+   },
+   "specs": {
+    "specs": [
+     {
+      "label": "원산지",
+      "value": "기타(IRUGI SHOJI)"
+     },
+     {
+      "label": "인증정보",
+      "value": "이 제품은 구매대행을 통하여 유통되는 제품이며 '전기용품 및 생활용품 안전관리법'에 따른 안전관리대상 제품입니다.판매자가 등록한 것으로 등록 정보에 대한 일체 책임은 판매자에게 있습니다."
+     }
+    ]
+   },
+   "photos": {
+    "files": [
+     {
+      "position": 0,
+      "source_sha256": "b56e3694e226c8c4ba0fbcb2767d423403c349b297c9ae1bdbc5e73fa13b7be3"
+     },
+     {
+      "position": 1,
+      "source_sha256": "7a19336e5f4facd49d7bf734a099af842b345e801f3fb9f68eb99696761096c7"
+     },
+     {
+      "position": 2,
+      "source_sha256": "fd68f0824361e2826129e1d78913987107cffd060becc1aed620c482a940ce32"
+     },
+     {
+      "position": 3,
+      "source_sha256": "7a22fbfef220a2639d17b68390181f1cf683609aa48c5a102e214d069641d1de"
+     },
+     {
+      "position": 4,
+      "source_sha256": "2365a41e393662a672a82117c9cc70ef9f515476d9ddfcfd70a76d2cfd126717"
+     },
+     {
+      "position": 5,
+      "source_sha256": "e15f260332adbde56ffd663c585fd21c79667443c25836b799205ae5a1897569"
+     },
+     {
+      "position": 6,
+      "source_sha256": "c2530f4e539e27fb131c050be724678a097e164332b7ce5998ce2e66d2281468"
+     },
+     {
+      "position": 7,
+      "source_sha256": "e9fcd1f0a55227afca546ac2dbb18c131fa95efbf0ed460427c4bbfdca96cb1b"
+     },
+     {
+      "position": 8,
+      "source_sha256": "59d9a066ccbc8077c307aa73fcfc04ef4bd028e3acfb5ff386250f029f6ed0f8"
+     },
+     {
+      "position": 9,
+      "source_sha256": "418b6d35b373a6395475a953dbdfce76e8654bfe319d402235ddc959cad0f66e"
+     }
+    ]
+   },
+   "variants": {
+    "variants": [
+     {
+      "options": [
+       "세금미포함",
+       "블랙"
+      ],
+      "name": "세금미포함 / 블랙"
+     },
+     {
+      "options": [
+       "세금미포함",
+       "핑크"
+      ],
+      "name": "세금미포함 / 핑크"
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101435422:11989527841",
+   "listing": {
+    "key": "fairwardgolf:naver:101435422:11989527841",
+    "product_id": "11989527841",
+    "name": "캘러웨이 여성 풀세트 레바 REVA 2025년 골프채 9개 클럽만",
+    "category_id": "50002788",
+    "pricing": {
+     "sale_price": 885000,
+     "discounted_price": 885000,
+     "discount_ratio": 0,
+     "currency": "KRW"
+    },
+    "store": {
+     "name": "이루기상사",
+     "slug": "irugi",
+     "link": "https://smartstore.naver.com/irugi",
+     "channel_no": "101435422",
+     "grade": "SEED",
+     "is_brand_store": false
+    },
+    "reviews": {
+     "count": 2,
+     "average_score": 5
+    }
+   },
+   "specs": {
+    "specs": [
+     {
+      "label": "원산지",
+      "value": "기타(IRUGI SHOJI)"
+     },
+     {
+      "label": "인증정보",
+      "value": "이 제품은 구매대행을 통하여 유통되는 제품이며 '전기용품 및 생활용품 안전관리법'에 따른 안전관리대상 제품입니다.판매자가 등록한 것으로 등록 정보에 대한 일체 책임은 판매자에게 있습니다."
+     }
+    ]
+   },
+   "photos": {
+    "files": [
+     {
+      "position": 0,
+      "source_sha256": "a7ec085e99c8e467e4f61fb06b1932900a20d8f0f15c9e3206b3279a2b000b74"
+     },
+     {
+      "position": 1,
+      "source_sha256": "7a22fbfef220a2639d17b68390181f1cf683609aa48c5a102e214d069641d1de"
+     },
+     {
+      "position": 2,
+      "source_sha256": "2365a41e393662a672a82117c9cc70ef9f515476d9ddfcfd70a76d2cfd126717"
+     },
+     {
+      "position": 3,
+      "source_sha256": "e15f260332adbde56ffd663c585fd21c79667443c25836b799205ae5a1897569"
+     },
+     {
+      "position": 4,
+      "source_sha256": "c2530f4e539e27fb131c050be724678a097e164332b7ce5998ce2e66d2281468"
+     },
+     {
+      "position": 5,
+      "source_sha256": "e9fcd1f0a55227afca546ac2dbb18c131fa95efbf0ed460427c4bbfdca96cb1b"
+     },
+     {
+      "position": 6,
+      "source_sha256": "59d9a066ccbc8077c307aa73fcfc04ef4bd028e3acfb5ff386250f029f6ed0f8"
+     },
+     {
+      "position": 7,
+      "source_sha256": "418b6d35b373a6395475a953dbdfce76e8654bfe319d402235ddc959cad0f66e"
+     },
+     {
+      "position": 8,
+      "source_sha256": "cd72c862c56725393fdff7ab65dda656ba557236faccb9204e64b2f589012313"
+     }
+    ]
+   },
+   "variants": {
+    "variants": [
+     {
+      "options": [
+       "세금미포함",
+       "블랙"
+      ],
+      "name": "세금미포함 / 블랙"
+     },
+     {
+      "options": [
+       "세금미포함",
+       "핑크"
+      ],
+      "name": "세금미포함 / 핑크"
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101435422:13809756465",
+   "listing": {
+    "key": "fairwardgolf:naver:101435422:13809756465",
+    "product_id": "13809756465",
+    "name": "브리지스톤 BG-100 블랙 클럽 11개 남성 풀세트 2026",
+    "category_id": "50002788",
+    "pricing": {
+     "sale_price": 669900,
+     "discounted_price": 669900,
+     "discount_ratio": 0,
+     "currency": "KRW"
+    },
+    "store": {
+     "name": "이루기상사",
+     "slug": "irugi",
+     "link": "https://smartstore.naver.com/irugi",
+     "channel_no": "101435422",
+     "grade": "SEED",
+     "is_brand_store": false
+    },
+    "reviews": {
+     "count": 0,
+     "average_score": 0
+    }
+   },
+   "specs": {
+    "specs": [
+     {
+      "label": "원산지",
+      "value": "기타(IRUGI SHOJI)"
+     },
+     {
+      "label": "인증정보",
+      "value": "이 제품은 구매대행을 통하여 유통되는 제품이며 '전기용품 및 생활용품 안전관리법'에 따른 안전관리대상 제품입니다.판매자가 등록한 것으로 등록 정보에 대한 일체 책임은 판매자에게 있습니다."
+     }
+    ]
+   },
+   "photos": {
+    "files": [
+     {
+      "position": 0,
+      "source_sha256": "089f9788f33f4207579872b452adb35a5b75f313347afb2af13507173ccd9e6c"
+     },
+     {
+      "position": 1,
+      "source_sha256": "aefb450c66665187c78b1508cd9820f35716f022c5297fdc2b76f83d53dd71f2"
+     },
+     {
+      "position": 2,
+      "source_sha256": "1c2779c27ac5fcd0df4dbc6a6d353773493ad538a71b18759edee39a6eab0197"
+     },
+     {
+      "position": 3,
+      "source_sha256": "4c30237409940a878a0a4662a07dedcbabd263fe2da89f98c4303726cc07a981"
+     },
+     {
+      "position": 4,
+      "source_sha256": "c8557b329394c70089a72d9c6a4fd31f9338b87550c065ccf48fe0027299efd0"
+     },
+     {
+      "position": 5,
+      "source_sha256": "5f790dee96077d5f09d726f4dc8b157452e13a1101ace212e4a698150a5c2827"
+     }
+    ]
+   },
+   "variants": {
+    "variants": [
+     {
+      "options": [
+       "카본R"
+      ],
+      "name": "카본R"
+     },
+     {
+      "options": [
+       "스틸S"
+      ],
+      "name": "스틸S"
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101921971:13785630702",
+   "listing": {
+    "key": "fairwardgolf:naver:101921971:13785630702",
+    "product_id": "13785630702",
+    "name": "브리지스톤 BG-100 BG100 남성용 골프채 풀세트 11개 캐디백 포함 블랙",
+    "category_id": "50002788",
+    "pricing": {
+     "sale_price": 865000,
+     "discounted_price": 724700,
+     "discount_ratio": 16,
+     "currency": "KRW"
+    },
+    "store": {
+     "name": "일본 구매대행 해피마로",
+     "slug": "happymarojp",
+     "link": "https://smartstore.naver.com/happymarojp",
+     "channel_no": "101921971",
+     "grade": "PREMIUM",
+     "is_brand_store": false
+    },
+    "reviews": {
+     "count": 0,
+     "average_score": 0
+    }
+   },
+   "specs": {
+    "specs": [
+     {
+      "label": "원산지",
+      "value": "상세설명에 표시"
+     },
+     {
+      "label": "인증정보",
+      "value": "이 제품은 구매대행을 통하여 유통되는 제품이며 '전기용품 및 생활용품 안전관리법'에 따른 안전관리대상 제품입니다.판매자가 등록한 것으로 등록 정보에 대한 일체 책임은 판매자에게 있습니다."
+     }
+    ]
+   },
+   "photos": {
+    "files": [
+     {
+      "position": 0,
+      "source_sha256": "23831eaaefd213b54e32b8e986d0fb83b93220f921b74e0d90fabfd6756ae226"
+     },
+     {
+      "position": 1,
+      "source_sha256": "af48fb2e62a550b464bc7c3b7862fd5535e35d451c9f7d971160530d334ee492"
+     },
+     {
+      "position": 2,
+      "source_sha256": "28903f960fa02e3a98bdd1d3d7bef1d80cf54565817ae2e6999cf1c16795e2c5"
+     },
+     {
+      "position": 3,
+      "source_sha256": "273249026fa473fd3de267402669c5d795fdd28ba04e9133546139a11b3104ad"
+     },
+     {
+      "position": 4,
+      "source_sha256": "b9a8201e96bcff6655a24a7fd518bbc231d9490bfb9b98f0a9c6d5407d872efa"
+     },
+     {
+      "position": 5,
+      "source_sha256": "510d5fe39b35f1acb15934bc20752ee5541426fee10439d27e3c04e0bbb729e8"
+     },
+     {
+      "position": 6,
+      "source_sha256": "6007dcb2814a18a6d8f069ba1069f78723713661564ab66b01f8c9f465a5a0cc"
+     },
+     {
+      "position": 7,
+      "source_sha256": "c66c8a6b44e44b9de7972ed02b5c797df8e97bfb71c969f0c4e1198a37fe2d11"
+     },
+     {
+      "position": 8,
+      "source_sha256": "91b39e9457efd5d4a913618099b180b79715511befb5148a8f684906f6b14ce7"
+     },
+     {
+      "position": 9,
+      "source_sha256": "f8aed9dfe471f8614f4b855c31d81e2997068b02b0d9aa395240d675e1ca4f30"
+     }
+    ]
+   },
+   "variants": {
+    "variants": [
+     {
+      "options": [
+       "블랙 에디션 스틸 샤프트 (S) SPEC"
+      ],
+      "name": "블랙 에디션 스틸 샤프트 (S) SPEC"
+     },
+     {
+      "options": [
+       "블랙 에디션 카본 샤프트 (R) SPEC"
+      ],
+      "name": "블랙 에디션 카본 샤프트 (R) SPEC"
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:101921971:8958060680",
+   "listing": {
+    "key": "fairwardgolf:naver:101921971:8958060680",
+    "product_id": "8958060680",
+    "name": "브리지스톤 BG-100 BG100 남성용 골프채 풀세트 11개 캐디백 포함 화이트",
+    "category_id": "50002788",
+    "pricing": {
+     "sale_price": 865000,
+     "discounted_price": 674700,
+     "discount_ratio": 22,
+     "currency": "KRW"
+    },
+    "store": {
+     "name": "일본 구매대행 해피마로",
+     "slug": "happymarojp",
+     "link": "https://smartstore.naver.com/happymarojp",
+     "channel_no": "101921971",
+     "grade": "PREMIUM",
+     "is_brand_store": false
+    },
+    "reviews": {
+     "count": 98,
+     "average_score": 4.83
+    }
+   },
+   "specs": {
+    "specs": [
+     {
+      "label": "원산지",
+      "value": "상세설명에 표시"
+     },
+     {
+      "label": "인증정보",
+      "value": "이 제품은 구매대행을 통하여 유통되는 제품이며 '전기용품 및 생활용품 안전관리법'에 따른 안전관리대상 제품입니다.판매자가 등록한 것으로 등록 정보에 대한 일체 책임은 판매자에게 있습니다."
+     }
+    ]
+   },
+   "photos": {
+    "files": [
+     {
+      "position": 0,
+      "source_sha256": "f1858bdcffeb295a58e41fea3f77e4c9ca63fcf3308d8064884dbd83fe21fbe4"
+     },
+     {
+      "position": 1,
+      "source_sha256": "aeb45206d65c1a5d21f5be54a9c5413de3df0d5b4adebeb08b0244760f1e0cae"
+     },
+     {
+      "position": 2,
+      "source_sha256": "b145d8e91a04cde71302fe33e5b3daf27abf6750967324a80a74f084fb04f8a6"
+     },
+     {
+      "position": 3,
+      "source_sha256": "468d655a59c48098443fe9287897e087249e33c196677fdf947a139b0bbb2af6"
+     },
+     {
+      "position": 4,
+      "source_sha256": "ed8e3a79532d37634914ff2e4c6dc346fd859dffff42026d0d395e7848482f2b"
+     },
+     {
+      "position": 5,
+      "source_sha256": "f8d5273f973f3f9ca980896f66ecba39cdeb208867a56a91712a730e0676dd34"
+     },
+     {
+      "position": 6,
+      "source_sha256": "79c220b22d78841a3a32c0ae7ff1a46df0bd9004a50fb1088ec01d68ec0b04d4"
+     },
+     {
+      "position": 7,
+      "source_sha256": "808ae954aa648178567916f84eb7aa38989a85b63a796b37a39a18a27b4e4533"
+     },
+     {
+      "position": 8,
+      "source_sha256": "13845a147f84c5b1b6d70214cc3dc9b4522b7834f8e0dd8856d9588ff18534ae"
+     },
+     {
+      "position": 9,
+      "source_sha256": "764f427d58699e00edd45596531eab60d38c9cd728368ce2c4ec7a375bb0b256"
+     }
+    ]
+   },
+   "variants": {
+    "variants": [
+     {
+      "options": [
+       "[당일출고] 스틸 샤프트 (S) SPEC"
+      ],
+      "name": "[당일출고] 스틸 샤프트 (S) SPEC"
+     },
+     {
+      "options": [
+       "[당일출고] 카본 샤프트 (R) SPEC"
+      ],
+      "name": "[당일출고] 카본 샤프트 (R) SPEC"
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102583137:13827555559",
+   "listing": {
+    "key": "fairwardgolf:naver:102583137:13827555559",
+    "product_id": "13827555559",
+    "name": "브리지스톤 BG-100 클럽 11개 남성 풀세트 2026",
+    "category_id": "50002788",
+    "pricing": {
+     "sale_price": 954150,
+     "discounted_price": 667900,
+     "discount_ratio": 30,
+     "currency": "KRW"
+    },
+    "store": {
+     "name": "사쿠라쿠텐",
+     "slug": "limeorangetree",
+     "link": "https://smartstore.naver.com/limeorangetree",
+     "channel_no": "102583137",
+     "grade": "SEED",
+     "is_brand_store": false
+    },
+    "reviews": {
+     "count": 0,
+     "average_score": 0
+    }
+   },
+   "specs": {
+    "specs": [
+     {
+      "label": "원산지",
+      "value": "상세설명에 표시"
+     },
+     {
+      "label": "인증정보",
+      "value": "이 제품은 구매대행을 통하여 유통되는 제품이며 '전기용품 및 생활용품 안전관리법'에 따른 안전관리대상 제품입니다.판매자가 등록한 것으로 등록 정보에 대한 일체 책임은 판매자에게 있습니다."
+     }
+    ]
+   },
+   "photos": {
+    "files": [
+     {
+      "position": 0,
+      "source_sha256": "c5f12f0d11ffb503f2eac0c1709e2d6fb1b4527a9ee1f9910c8795ef328c0714"
+     },
+     {
+      "position": 1,
+      "source_sha256": "b47683d0d396b74a760f0a6f6024d1a3d9029b19047c3c9146b296c2f567a29d"
+     },
+     {
+      "position": 2,
+      "source_sha256": "4530fd922aa8cc87ee7eb6d69a048a41a6e8209b180cb3b910230b67cf43d77b"
+     },
+     {
+      "position": 3,
+      "source_sha256": "8b246a1b485973336847b16736fa9ea0e393be12f2e14417dbe78fcf319a9e73"
+     },
+     {
+      "position": 4,
+      "source_sha256": "7ba3e89575b9826ddebfb305e07eca79f5d75673eeaeab0e55b832aba1908894"
+     },
+     {
+      "position": 5,
+      "source_sha256": "a1485db0012a4df047daf65d6394e01b409c0b66b802a70a55cef5263392ed19"
+     },
+     {
+      "position": 6,
+      "source_sha256": "f38cda8646ec4007ff6ae7fe05a72d36175515a1c24d72b43b5662758f4fa23d"
+     },
+     {
+      "position": 7,
+      "source_sha256": "740ad93379fa205a87327af042c545851f077e5074d310b45c6b285ff340ba63"
+     },
+     {
+      "position": 8,
+      "source_sha256": "71a64c515bc9322c34d90141074502fd4842b1747d0fe62e0e21ffa624b8b792"
+     },
+     {
+      "position": 9,
+      "source_sha256": "eba14040e83ee4302262cba1f858d56f92f20e980c867ceef41a39c693a79b37"
+     }
+    ]
+   },
+   "variants": {
+    "variants": [
+     {
+      "options": [
+       "S"
+      ],
+      "name": "S"
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102683547:13552318731",
+   "listing": {
+    "key": "fairwardgolf:naver:102683547:13552318731",
+    "product_id": "13552318731",
+    "name": "A11N SPORTS의 위조 골프 웨지 세트 db4P Bronze",
+    "category_id": "50002783",
+    "pricing": {
+     "sale_price": 208700,
+     "discounted_price": 187830,
+     "discount_ratio": 10,
+     "currency": "KRW"
+    },
+    "store": {
+     "name": "유에스메가딜샵",
+     "slug": "usmegadealshop",
+     "link": "https://smartstore.naver.com/usmegadealshop",
+     "channel_no": "102683547",
+     "grade": "SPROUT",
+     "is_brand_store": false
+    },
+    "reviews": {
+     "count": 0,
+     "average_score": 0
+    }
+   },
+   "specs": {
+    "specs": [
+     {
+      "label": "원산지",
+      "value": "기타/해외"
+     },
+     {
+      "label": "인증정보",
+      "value": "이 제품은 구매대행을 통하여 유통되는 제품이며 '전기용품 및 생활용품 안전관리법'에 따른 안전관리대상 제품입니다.판매자가 등록한 것으로 등록 정보에 대한 일체 책임은 판매자에게 있습니다."
+     }
+    ]
+   },
+   "photos": {
+    "files": [
+     {
+      "position": 0,
+      "source_sha256": "85a6d8903ec9cabb1d6109928c97ae475b779113558f80926ebb4fe38908f04f"
+     },
+     {
+      "position": 1,
+      "source_sha256": "de2b09fbe7365ad6b1a80b01d633363805296129bfe8aaae07bf8826e5816922"
+     },
+     {
+      "position": 2,
+      "source_sha256": "b59c45a75e1c736ba89a6c49b67363c97ab99f699e3306354ead1db96f3fe11a"
+     }
+    ]
+   },
+   "variants": {
+    "variants": [
+     {
+      "options": [
+       "Bronze"
+      ],
+      "name": "Bronze"
+     },
+     {
+      "options": [
+       "Black"
+      ],
+      "name": "Black"
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102748022:13261457036",
+   "listing": {
+    "key": "fairwardgolf:naver:102748022:13261457036",
+    "product_id": "13261457036",
+    "name": "GoSports 불법 맥스 스핀 골프 웨지 세트 - 남성용 오른손잡이 모래, 롭, 갭 웨지, 브러시드 스테인리스",
+    "category_id": "50002783",
+    "pricing": {
+     "sale_price": 228400,
+     "discounted_price": 205560,
+     "discount_ratio": 10,
+     "currency": "KRW"
+    },
+    "store": {
+     "name": "딜라이트도도",
+     "slug": "delightdodo",
+     "link": "https://smartstore.naver.com/delightdodo",
+     "channel_no": "102748022",
+     "grade": "SEED",
+     "is_brand_store": false
+    },
+    "reviews": {
+     "count": 0,
+     "average_score": 0
+    }
+   },
+   "specs": {
+    "specs": [
+     {
+      "label": "원산지",
+      "value": "기타/해외"
+     },
+     {
+      "label": "인증정보",
+      "value": "이 제품은 구매대행을 통하여 유통되는 제품이며 '전기용품 및 생활용품 안전관리법'에 따른 안전관리대상 제품입니다.판매자가 등록한 것으로 등록 정보에 대한 일체 책임은 판매자에게 있습니다."
+     }
+    ]
+   },
+   "photos": {
+    "files": [
+     {
+      "position": 0,
+      "source_sha256": "2e53b061dfe33176e761bbd8666a7b2489b9e77e9dd3cc8a0c17436907419842"
+     },
+     {
+      "position": 1,
+      "source_sha256": "f09d35681582473cef7447b7ea4bc7d62dff10c92535a71ed29117478ee5e673"
+     },
+     {
+      "position": 2,
+      "source_sha256": "43110031c52b43cf84512e9d80ff7a3ac6648ae62d7ae9d90e6c2138fc22e1b1"
+     }
+    ]
+   },
+   "variants": {
+    "variants": []
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102773407:13619939279",
+   "listing": {
+    "key": "fairwardgolf:naver:102773407:13619939279",
+    "product_id": "13619939279",
+    "name": "GoSports 불법 맥스 스핀 골프 웨지 세트 - 남성용 오른손잡이 모래, 롭, 갭 웨지, 브러시드 스테인리스",
+    "category_id": "50002783",
+    "pricing": {
+     "sale_price": 228300,
+     "discounted_price": 205470,
+     "discount_ratio": 10,
+     "currency": "KRW"
+    },
+    "store": {
+     "name": "코드에이본",
+     "slug": "codeavon",
+     "link": "https://smartstore.naver.com/codeavon",
+     "channel_no": "102773407",
+     "grade": "SEED",
+     "is_brand_store": false
+    },
+    "reviews": {
+     "count": 0,
+     "average_score": 0
+    }
+   },
+   "specs": {
+    "specs": [
+     {
+      "label": "원산지",
+      "value": "기타/해외"
+     },
+     {
+      "label": "인증정보",
+      "value": "이 제품은 구매대행을 통하여 유통되는 제품이며 '전기용품 및 생활용품 안전관리법'에 따른 안전관리대상 제품입니다.판매자가 등록한 것으로 등록 정보에 대한 일체 책임은 판매자에게 있습니다."
+     }
+    ]
+   },
+   "photos": {
+    "files": [
+     {
+      "position": 0,
+      "source_sha256": "2e53b061dfe33176e761bbd8666a7b2489b9e77e9dd3cc8a0c17436907419842"
+     },
+     {
+      "position": 1,
+      "source_sha256": "f09d35681582473cef7447b7ea4bc7d62dff10c92535a71ed29117478ee5e673"
+     },
+     {
+      "position": 2,
+      "source_sha256": "43110031c52b43cf84512e9d80ff7a3ac6648ae62d7ae9d90e6c2138fc22e1b1"
+     },
+     {
+      "position": 3,
+      "source_sha256": "cc9dcc7474e6305497191363332b1ad920604dd0c1c3525d87670805acff2ffb"
+     },
+     {
+      "position": 4,
+      "source_sha256": "bc62639100e4bdf3a04172fc4032b58525f0dfdd92812d9ab72c8aef00140d22"
+     },
+     {
+      "position": 5,
+      "source_sha256": "5c57d142bb011d8366578c6102f19a6e4e1dc7adb2d8efcfd47b88411ce6c0c9"
+     },
+     {
+      "position": 6,
+      "source_sha256": "fed84482072f62c0f2f23da5dda018d19ff9a2228005ce89b149a7a9db2feb2f"
+     }
+    ]
+   },
+   "variants": {
+    "variants": []
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:102783573:13207840596",
+   "listing": {
+    "key": "fairwardgolf:naver:102783573:13207840596",
+    "product_id": "13207840596",
+    "name": "핀클리 위조 골프 웨지 세트 3 u2013 52, 56, 60도, 밀드 페이스로 최대 스핀, 오른손",
+    "category_id": "50002783",
+    "pricing": {
+     "sale_price": 228400,
+     "discounted_price": 205560,
+     "discount_ratio": 10,
+     "currency": "KRW"
+    },
+    "store": {
+     "name": "글로브픽몰",
+     "slug": "globepickmall",
+     "link": "https://smartstore.naver.com/globepickmall",
+     "channel_no": "102783573",
+     "grade": "SEED",
+     "is_brand_store": false
+    },
+    "reviews": {
+     "count": 0,
+     "average_score": 0
+    }
+   },
+   "specs": {
+    "specs": [
+     {
+      "label": "원산지",
+      "value": "기타/해외"
+     },
+     {
+      "label": "인증정보",
+      "value": "이 제품은 구매대행을 통하여 유통되는 제품이며 '전기용품 및 생활용품 안전관리법'에 따른 안전관리대상 제품입니다.판매자가 등록한 것으로 등록 정보에 대한 일체 책임은 판매자에게 있습니다."
+     }
+    ]
+   },
+   "photos": {
+    "files": [
+     {
+      "position": 0,
+      "source_sha256": "85a6d8903ec9cabb1d6109928c97ae475b779113558f80926ebb4fe38908f04f"
+     },
+     {
+      "position": 1,
+      "source_sha256": "de2b09fbe7365ad6b1a80b01d633363805296129bfe8aaae07bf8826e5816922"
+     },
+     {
+      "position": 2,
+      "source_sha256": "b59c45a75e1c736ba89a6c49b67363c97ab99f699e3306354ead1db96f3fe11a"
+     }
+    ]
+   },
+   "variants": {
+    "variants": [
+     {
+      "options": [
+       "Black"
+      ],
+      "name": "Black"
+     },
+     {
+      "options": [
+       "Bronze"
+      ],
+      "name": "Bronze"
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:1100056746:13325799991",
+   "listing": {
+    "key": "fairwardgolf:naver:1100056746:13325799991",
+    "product_id": "13325799991",
+    "name": "캘러웨이 레바 REVA 여성 풀세트 2025년 골프채 9개",
+    "category_id": "50002788",
+    "pricing": {
+     "sale_price": 890000,
+     "discounted_price": 890000,
+     "discount_ratio": 0,
+     "currency": "KRW"
+    },
+    "store": {
+     "name": "신주쿠언니",
+     "slug": "shinjukusister",
+     "link": "https://smartstore.naver.com/shinjukusister",
+     "channel_no": "1100056746",
+     "grade": "PREMIUM",
+     "is_brand_store": false
+    },
+    "reviews": {
+     "count": 2,
+     "average_score": 4.5
+    }
+   },
+   "specs": {
+    "specs": [
+     {
+      "label": "원산지",
+      "value": "상세페이지 참조"
+     },
+     {
+      "label": "인증정보",
+      "value": "이 제품은 구매대행을 통하여 유통되는 제품이며 '전기용품 및 생활용품 안전관리법'에 따른 안전관리대상 제품입니다.판매자가 등록한 것으로 등록 정보에 대한 일체 책임은 판매자에게 있습니다."
+     }
+    ]
+   },
+   "photos": {
+    "files": [
+     {
+      "position": 0,
+      "source_sha256": "aee1e0126796b10967ddafcbb79ec9539851b115a53cec1a52f134ab415a81b4"
+     },
+     {
+      "position": 1,
+      "source_sha256": "86033cc9d41edbdbf24d20df8d03d047d705ed9192d1ac954e47620b2ccefc53"
+     },
+     {
+      "position": 2,
+      "source_sha256": "fb4136f3ab1218f0d745349e93ae6987671b88abf0b05bb45bbe2fe326714d23"
+     },
+     {
+      "position": 3,
+      "source_sha256": "85cd2a2a7901a2912d4084c93b1ed2e06410f7c20780c98e8d0403069ebf5cf4"
+     },
+     {
+      "position": 4,
+      "source_sha256": "017ec90ce3f39ae2cbfc39c15438ef593d0aba5d31f125f68e1f834283f57cf7"
+     },
+     {
+      "position": 5,
+      "source_sha256": "e0700f83728ed193ee21ba4c97978fb911826dac998205c20ebe8ee9cc15320a"
+     }
+    ]
+   },
+   "variants": {
+    "variants": [
+     {
+      "options": [
+       "세금미포함",
+       "블랙/L"
+      ],
+      "name": "세금미포함 / 블랙/L"
+     },
+     {
+      "options": [
+       "세금미포함",
+       "핑크/L"
+      ],
+      "name": "세금미포함 / 핑크/L"
+     }
+    ]
+   }
+  },
+  {
+   "key": "fairwardgolf:naver:1100067303:13405976594",
+   "listing": {
+    "key": "fairwardgolf:naver:1100067303:13405976594",
+    "product_id": "13405976594",
+    "name": "A11N SPORTS의 위조 골프 웨지 세트 Black",
+    "category_id": "50002783",
+    "pricing": {
+     "sale_price": 221500,
+     "discounted_price": 199350,
+     "discount_ratio": 10,
+     "currency": "KRW"
+    },
+    "store": {
+     "name": "어반트러스트",
+     "slug": "urbantrust",
+     "link": "https://smartstore.naver.com/urbantrust",
+     "channel_no": "1100067303",
+     "grade": "SEED",
+     "is_brand_store": false
+    },
+    "reviews": {
+     "count": 0,
+     "average_score": 0
+    }
+   },
+   "specs": {
+    "specs": [
+     {
+      "label": "원산지",
+      "value": "기타/해외"
+     },
+     {
+      "label": "인증정보",
+      "value": "이 제품은 구매대행을 통하여 유통되는 제품이며 '전기용품 및 생활용품 안전관리법'에 따른 안전관리대상 제품입니다.판매자가 등록한 것으로 등록 정보에 대한 일체 책임은 판매자에게 있습니다."
+     }
+    ]
+   },
+   "photos": {
+    "files": [
+     {
+      "position": 0,
+      "source_sha256": "85a6d8903ec9cabb1d6109928c97ae475b779113558f80926ebb4fe38908f04f"
+     },
+     {
+      "position": 1,
+      "source_sha256": "de2b09fbe7365ad6b1a80b01d633363805296129bfe8aaae07bf8826e5816922"
+     },
+     {
+      "position": 2,
+      "source_sha256": "b59c45a75e1c736ba89a6c49b67363c97ab99f699e3306354ead1db96f3fe11a"
+     },
+     {
+      "position": 3,
+      "source_sha256": "a0da9ae40d36d1563cce2f1b069a923585a85cd4e8e4fcb8a5426af402773e96"
+     },
+     {
+      "position": 4,
+      "source_sha256": "b00645826c031f3ff6a8b5b3e950aa04c5a1fbedd9aaa15070bf3ad3ff150f8e"
+     },
+     {
+      "position": 5,
+      "source_sha256": "902c99f9c0a0d00a11327e46c636035746eba7e7281d68e6b0e3efe400c642b3"
+     }
+    ]
+   },
+   "variants": {
+    "variants": [
+     {
+      "options": [
+       "Black"
+      ],
+      "name": "Black"
+     },
+     {
+      "options": [
+       "Bronze"
+      ],
+      "name": "Bronze"
+     }
+    ]
+   }
+  }
+ ],
+ "events": {
+  "fairwardgolf-50002783-20261115T150124Z": [
+   {
+    "at": "2026-11-15T15:02:14+00:00",
+    "key": "fairwardgolf:naver:102682314:13127601930",
+    "event": "translated",
+    "status": "translated",
+    "calls": 1,
+    "provider": "claude-sonnet-5-5",
+    "cost": 0.0019
+   },
+   {
+    "at": "2026-11-15T15:02:30+00:00",
+    "key": "fairwardgolf:naver:102682314:13127601930",
+    "event": "described",
+    "status": "ok",
+    "cut": 0,
+    "origin": null,
+    "origin_note": "origin not stated (hedged)",
+    "conflicts": 1,
+    "cost": 0.0086
+   },
+   {
+    "at": "2026-11-15T15:02:49+00:00",
+    "key": "fairwardgolf:naver:102682314:13127601930",
+    "event": "published",
+    "product_id": "gid://shopify/Product/15495140180035",
+    "handle": "bermuda-premium-mens-golf-wedge-set-3-piece-52-56-60-cavity-back-full-face-milled",
+    "status": "published",
+    "prices_usd": [
+     729,
+     729
+    ]
+   },
+   {
+    "at": "2026-11-15T15:02:56+00:00",
+    "key": "fairwardgolf:naver:102709004:12178049211",
+    "event": "not_taken",
+    "reason": "not ready to publish (placement held: single_only)"
+   },
+   {
+    "at": "2026-11-15T15:03:26+00:00",
+    "key": "fairwardgolf:naver:101365130:11097352600",
+    "event": "collected",
+    "run": "50002783-20261115T150326Z",
+    "seconds": 26
+   },
+   {
+    "at": "2026-11-15T15:05:06+00:00",
+    "key": "fairwardgolf:naver:101365130:11097352600",
+    "event": "prepared",
+    "status": "held",
+    "held": [
+     "single_only"
+    ],
+    "images_s": 24,
+    "prepare_s": 77
+   },
+   {
+    "at": "2026-11-15T15:05:07+00:00",
+    "key": "fairwardgolf:naver:101365130:11097352600",
+    "event": "translated",
+    "status": "held",
+    "calls": 0,
+    "provider": null,
+    "cost": 0.0
+   },
+   {
+    "at": "2026-11-15T15:05:16+00:00",
+    "key": "fairwardgolf:naver:102329146:13016152694",
+    "event": "translated",
+    "status": "translated",
+    "calls": 1,
+    "provider": "claude-sonnet-5-5",
+    "cost": 0.0019
+   },
+   {
+    "at": "2026-11-15T15:05:28+00:00",
+    "key": "fairwardgolf:naver:102329146:13016152694",
+    "event": "described",
+    "status": "trimmed",
+    "cut": 1,
+    "origin": null,
+    "origin_note": "origin not stated (hedged)",
+    "conflicts": 0,
+    "cost": 0.0143
+   },
+   {
+    "at": "2026-11-15T15:05:34+00:00",
+    "key": "fairwardgolf:naver:102329146:13016152694",
+    "event": "published",
+    "product_id": "gid://shopify/Product/15495146831939",
+    "handle": "fairward-golf-unisex-wedge-set-3-piece-54-60-69-lob-sand-pitching-wedges-35-in",
+    "status": "published",
+    "prices_usd": [
+     809,
+     809
+    ]
+   },
+   {
+    "at": "2026-11-15T15:06:03+00:00",
+    "key": "fairwardgolf:naver:102697674:13292782760",
+    "event": "collected",
+    "run": "50002783-20261115T150602Z",
+    "seconds": 23
+   },
+   {
+    "at": "2026-11-15T15:06:03+00:00",
+    "key": "fairwardgolf:naver:102697674:13292782760",
+    "event": "not_taken",
+    "reason": "duplicate_of:fairwardgolf:naver:1100142898:13619604371",
+    "grade": "SEED",
+    "reviews": 0,
+    "price": 411530
+   },
+   {
+    "at": "2026-11-15T15:21:12+00:00",
+    "key": "fairwardgolf:naver:101365130:11097352600",
+    "event": "not_taken",
+    "reason": "not ready to publish (placement held: single_only)"
+   },
+   {
+    "at": "2026-11-15T15:55:02+00:00",
+    "key": "fairwardgolf:naver:102682314:13127601930",
+    "event": "not_taken",
+    "reason": "not ready to publish (placement placed: None)"
+   },
+   {
+    "at": "2026-11-15T15:55:07+00:00",
+    "key": "fairwardgolf:naver:102329146:13016152694",
+    "event": "not_taken",
+    "reason": "not ready to publish (placement placed: None)"
+   },
+   {
+    "at": "2026-11-15T16:14:39+00:00",
+    "key": "fairwardgolf:naver:102773407:13619939279",
+    "event": "collected",
+    "run": "50002783-20261115T161439Z",
+    "seconds": 24
+   },
+   {
+    "at": "2026-11-15T16:16:44+00:00",
+    "key": "fairwardgolf:naver:102773407:13619939279",
+    "event": "prepared",
+    "status": "ready",
+    "held": [],
+    "images_s": 64,
+    "prepare_s": 61
+   },
+   {
+    "at": "2026-11-15T16:16:47+00:00",
+    "key": "fairwardgolf:naver:102773407:13619939279",
+    "event": "translated",
+    "status": "translated",
+    "calls": 1,
+    "provider": "claude-sonnet-5-5",
+    "cost": 0.0018
+   },
+   {
+    "at": "2026-11-15T16:16:56+00:00",
+    "key": "fairwardgolf:naver:102773407:13619939279",
+    "event": "described",
+    "status": "ok",
+    "cut": 0,
+    "origin": null,
+    "origin_note": "origin not stated (hedged)",
+    "conflicts": 1,
+    "cost": 0.0109
+   },
+   {
+    "at": "2026-11-15T16:17:16+00:00",
+    "key": "fairwardgolf:naver:102773407:13619939279",
+    "event": "published",
+    "product_id": "gid://shopify/Product/15495236681795",
+    "handle": "gosports-non-conforming-max-spin-golf-wedge-set-mens-right-handed-sand-lob-gap-wedges",
+    "status": "published",
+    "prices_usd": [
+     549,
+     549
+    ]
+   },
+   {
+    "at": "2026-11-15T16:20:31+00:00",
+    "key": "fairwardgolf:naver:102748022:13261457036",
+    "event": "collected",
+    "run": "50002783-20261115T162031Z",
+    "seconds": 20
+   },
+   {
+    "at": "2026-11-15T16:20:31+00:00",
+    "key": "fairwardgolf:naver:102748022:13261457036",
+    "event": "not_taken",
+    "reason": "duplicate_of:fairwardgolf:naver:102773407:13619939279",
+    "grade": "SEED",
+    "reviews": 0,
+    "price": 205560
+   },
+   {
+    "at": "2026-11-15T16:27:01+00:00",
+    "key": "fairwardgolf:naver:102783573:13207840596",
+    "event": "collected",
+    "run": "50002783-20261115T162701Z",
+    "seconds": 21
+   },
+   {
+    "at": "2026-11-15T16:28:17+00:00",
+    "key": "fairwardgolf:naver:102783573:13207840596",
+    "event": "prepared",
+    "status": "ready",
+    "held": [],
+    "images_s": 14,
+    "prepare_s": 61
+   },
+   {
+    "at": "2026-11-15T16:28:23+00:00",
+    "key": "fairwardgolf:naver:102783573:13207840596",
+    "event": "translated",
+    "status": "translated",
+    "calls": 3,
+    "provider": "claude-sonnet-5-5",
+    "cost": 0.0084
+   },
+   {
+    "at": "2026-11-15T16:28:35+00:00",
+    "key": "fairwardgolf:naver:102783573:13207840596",
+    "event": "described",
+    "status": "ok",
+    "cut": 0,
+    "origin": null,
+    "origin_note": "origin not stated (hedged)",
+    "conflicts": 2,
+    "cost": 0.0138
+   },
+   {
+    "at": "2026-11-15T16:28:48+00:00",
+    "key": "fairwardgolf:naver:102783573:13207840596",
+    "event": "published",
+    "product_id": "gid://shopify/Product/15495238778947",
+    "handle": "a11n-sports-pinkly-golf-wedge-set-3-u2013-52-56-60-milled-face-right-handed",
+    "status": "published",
+    "prices_usd": [
+     549,
+     549
+    ]
+   },
+   {
+    "at": "2026-11-15T17:08:12+00:00",
+    "key": "fairwardgolf:naver:1100051197:12951827729",
+    "event": "collected",
+    "run": "50002783-20261115T170812Z",
+    "seconds": 16
+   },
+   {
+    "at": "2026-11-15T17:09:55+00:00",
+    "key": "fairwardgolf:naver:1100051197:12951827729",
+    "event": "prepared",
+    "status": "ready",
+    "held": [],
+    "images_s": 40,
+    "prepare_s": 62
+   },
+   {
+    "at": "2026-11-15T17:09:58+00:00",
+    "key": "fairwardgolf:naver:1100051197:12951827729",
+    "event": "translated",
+    "status": "translated",
+    "calls": 1,
+    "provider": "claude-sonnet-5-5",
+    "cost": 0.0019
+   },
+   {
+    "at": "2026-11-15T17:10:11+00:00",
+    "key": "fairwardgolf:naver:1100051197:12951827729",
+    "event": "described",
+    "status": "ok",
+    "cut": 0,
+    "origin": null,
+    "origin_note": "origin not stated (hedged)",
+    "conflicts": 1,
+    "cost": 0.0168
+   },
+   {
+    "at": "2026-11-15T17:10:25+00:00",
+    "key": "fairwardgolf:naver:1100051197:12951827729",
+    "event": "published",
+    "product_id": "gid://shopify/Product/15495242776643",
+    "handle": "yamato-full-face-forged-milled-golf-wedge-set-or-single-wedge-50-52-54-56-58-60-gap-sand-lob",
+    "status": "published",
+    "prices_usd": [
+     409,
+     449
+    ]
+   },
+   {
+    "at": "2026-11-15T17:10:59+00:00",
+    "key": "fairwardgolf:naver:102317872:12921931106",
+    "event": "collected",
+    "run": "50002783-20261115T171059Z",
+    "seconds": 29
+   },
+   {
+    "at": "2026-11-15T17:10:59+00:00",
+    "key": "fairwardgolf:naver:102317872:12921931106",
+    "event": "duplicate_seen",
+    "decision": "not_confirmed",
+    "grade": "SEED",
+    "reviews": 0,
+    "price": 142520
+   },
+   {
+    "at": "2026-11-15T17:12:22+00:00",
+    "key": "fairwardgolf:naver:102317872:12921931106",
+    "event": "prepared",
+    "status": "ready",
+    "held": [],
+    "images_s": 20,
+    "prepare_s": 63
+   },
+   {
+    "at": "2026-11-15T17:12:26+00:00",
+    "key": "fairwardgolf:naver:102317872:12921931106",
+    "event": "translated",
+    "status": "translated",
+    "calls": 2,
+    "provider": "claude-sonnet-5-5",
+    "cost": 0.0043
+   },
+   {
+    "at": "2026-11-15T17:12:38+00:00",
+    "key": "fairwardgolf:naver:102317872:12921931106",
+    "event": "described",
+    "status": "ok",
+    "cut": 0,
+    "origin": null,
+    "origin_note": null,
+    "conflicts": 3,
+    "cost": 0.019
+   },
+   {
+    "at": "2026-11-15T17:12:45+00:00",
+    "key": "fairwardgolf:naver:102317872:12921931106",
+    "event": "published",
+    "product_id": "gid://shopify/Product/15495243071555",
+    "handle": "yamato-golf-full-face-forged-milled-wedge-set-or-single-50-52-54-56-58-60",
+    "status": "published",
+    "prices_usd": [
+     469,
+     569
+    ]
+   },
+   {
+    "at": "2026-11-15T17:44:20+00:00",
+    "key": "fairwardgolf:naver:1100067303:13405976594",
+    "event": "collected",
+    "run": "50002783-20261115T174420Z",
+    "seconds": 25
+   },
+   {
+    "at": "2026-11-15T17:45:25+00:00",
+    "key": "fairwardgolf:naver:1100067303:13405976594",
+    "event": "prepared",
+    "status": "ready",
+    "held": [],
+    "images_s": 4,
+    "prepare_s": 62
+   },
+   {
+    "at": "2026-11-15T17:45:29+00:00",
+    "key": "fairwardgolf:naver:1100067303:13405976594",
+    "event": "translated",
+    "status": "translated",
+    "calls": 1,
+    "provider": "claude-sonnet-5-5",
+    "cost": 0.0105
+   },
+   {
+    "at": "2026-11-15T17:45:46+00:00",
+    "key": "fairwardgolf:naver:1100067303:13405976594",
+    "event": "described",
+    "status": "ok",
+    "cut": 0,
+    "origin": null,
+    "origin_note": "origin not stated (hedged)",
+    "conflicts": 0,
+    "cost": 0.0252
+   },
+   {
+    "at": "2026-11-15T17:46:00+00:00",
+    "key": "fairwardgolf:naver:1100067303:13405976594",
+    "event": "published",
+    "product_id": "gid://shopify/Product/15495246643267",
+    "handle": "a11n-sports-forged-golf-wedge-set",
+    "status": "published",
+    "prices_usd": [
+     539,
+     569
+    ]
+   },
+   {
+    "at": "2026-11-15T17:54:48+00:00",
+    "key": "fairwardgolf:naver:102683547:13552318731",
+    "event": "collected",
+    "run": "50002783-20261115T175448Z",
+    "seconds": 20
+   },
+   {
+    "at": "2026-11-15T17:55:53+00:00",
+    "key": "fairwardgolf:naver:102683547:13552318731",
+    "event": "prepared",
+    "status": "ready",
+    "held": [],
+    "images_s": 4,
+    "prepare_s": 62
+   },
+   {
+    "at": "2026-11-15T17:55:57+00:00",
+    "key": "fairwardgolf:naver:102683547:13552318731",
+    "event": "translated",
+    "status": "translated",
+    "calls": 1,
+    "provider": "claude-sonnet-5-5",
+    "cost": 0.0015
+   },
+   {
+    "at": "2026-11-15T17:56:07+00:00",
+    "key": "fairwardgolf:naver:102683547:13552318731",
+    "event": "described",
+    "status": "ok",
+    "cut": 0,
+    "origin": null,
+    "origin_note": "origin not stated (hedged)",
+    "conflicts": 3,
+    "cost": 0.0125
+   },
+   {
+    "at": "2026-11-15T17:56:13+00:00",
+    "key": "fairwardgolf:naver:102683547:13552318731",
+    "event": "published",
+    "product_id": "gid://shopify/Product/15495248347203",
+    "handle": "a11n-sports-forged-golf-wedge-set-db4p",
+    "status": "published",
+    "prices_usd": [
+     529,
+     549
+    ]
+   }
+  ],
+  "fairwardgolf-50002787-20261112T155753Z": [
+   {
+    "at": "2026-11-12T18:02:06+00:00",
+    "key": "fairwardgolf:naver:100006312:4385835200",
+    "event": "collected",
+    "run": "50002787-20261112T180206Z",
+    "seconds": 66
+   },
+   {
+    "at": "2026-11-12T18:02:38+00:00",
+    "key": "fairwardgolf:naver:100006312:4385835200",
+    "event": "prepared",
+    "status": "ready",
+    "held": [],
+    "images_s": 23,
+    "prepare_s": 9
+   },
+   {
+    "at": "2026-11-12T18:02:41+00:00",
+    "key": "fairwardgolf:naver:100006312:4385835200",
+    "event": "translated",
+    "status": "translated",
+    "calls": 1,
+    "provider": "claude-sonnet-5-5",
+    "cost": 0.0048
+   },
+   {
+    "at": "2026-11-12T18:02:52+00:00",
+    "key": "fairwardgolf:naver:100006312:4385835200",
+    "event": "described",
+    "status": "ok",
+    "cut": 0,
+    "origin": "China",
+    "origin_note": null,
+    "conflicts": 2,
+    "cost": 0.0168
+   },
+   {
+    "at": "2026-11-12T18:02:59+00:00",
+    "key": "fairwardgolf:naver:100006312:4385835200",
+    "event": "published",
+    "product_id": "gid://shopify/Product/15488443613251",
+    "handle": "mania-junior-golf-club-set-for-kids-with-putter-driver-and-iron",
+    "status": "published",
+    "prices_usd": [
+     289,
+     299
+    ]
+   },
+   {
+    "at": "2026-11-12T19:24:26+00:00",
+    "key": "fairwardgolf:naver:1100080439:13475342948",
+    "event": "collected",
+    "run": "50002787-20261112T192426Z",
+    "seconds": 45
+   },
+   {
+    "at": "2026-11-12T19:24:52+00:00",
+    "key": "fairwardgolf:naver:1100080439:13475342948",
+    "event": "prepared",
+    "status": "held",
+    "held": [
+     "agency_no_brand"
+    ],
+    "images_s": 17,
+    "prepare_s": 9
+   },
+   {
+    "at": "2026-11-12T19:24:52+00:00",
+    "key": "fairwardgolf:naver:1100080439:13475342948",
+    "event": "translated",
+    "status": "held",
+    "calls": 0,
+    "provider": null,
+    "cost": 0.0
+   },
+   {
+    "at": "2026-11-12T19:24:55+00:00",
+    "key": "fairwardgolf:naver:1100080439:13475342948",
+    "event": "not_taken",
+    "reason": "not ready to publish (placement held: agency_no_brand)"
+   },
+   {
+    "at": "2026-11-12T22:47:47+00:00",
+    "key": "fairwardgolf:naver:1100031592:12814122019",
+    "event": "collected",
+    "run": "50002787-20261112T224747Z",
+    "seconds": 51
+   },
+   {
+    "at": "2026-11-12T22:47:52+00:00",
+    "key": "fairwardgolf:naver:1100031592:12814122019",
+    "event": "failed",
+    "stage": "images",
+    "reason": "description_images error sidecar"
+   },
+   {
+    "at": "2026-11-12T22:48:02+00:00",
+    "key": "fairwardgolf:naver:1100031592:12814122019",
+    "event": "prepared",
+    "status": "ready",
+    "held": [],
+    "images_s": 5,
+    "prepare_s": 10
+   },
+   {
+    "at": "2026-11-12T22:48:07+00:00",
+    "key": "fairwardgolf:naver:1100031592:12814122019",
+    "event": "translated",
+    "status": "translated",
+    "calls": 2,
+    "provider": "claude-sonnet-5-5",
+    "cost": 0.004
+   },
+   {
+    "at": "2026-11-12T22:48:16+00:00",
+    "key": "fairwardgolf:naver:1100031592:12814122019",
+    "event": "described",
+    "status": "ok",
+    "cut": 0,
+    "origin": "China",
+    "origin_note": null,
+    "conflicts": 1,
+    "cost": 0.0139
+   },
+   {
+    "at": "2026-11-12T22:48:22+00:00",
+    "key": "fairwardgolf:naver:1100031592:12814122019",
+    "event": "published",
+    "product_id": "gid://shopify/Product/15488760086595",
+    "handle": "u-s-kids-golf-ul7-51-kids-junior-golf-club-set-7-clubs-with-bag",
+    "status": "published",
+    "prices_usd": [
+     1599,
+     1599
+    ]
+   },
+   {
+    "at": "2026-11-13T00:33:42+00:00",
+    "key": "fairwardgolf:naver:101731755:13770121877",
+    "event": "collected",
+    "run": "50002787-20261113T003342Z",
+    "seconds": 45
+   },
+   {
+    "at": "2026-11-13T00:34:06+00:00",
+    "key": "fairwardgolf:naver:101731755:13770121877",
+    "event": "prepared",
+    "status": "ready",
+    "held": [],
+    "images_s": 14,
+    "prepare_s": 10
+   },
+   {
+    "at": "2026-11-13T00:34:11+00:00",
+    "key": "fairwardgolf:naver:101731755:13770121877",
+    "event": "translated",
+    "status": "translated",
+    "calls": 2,
+    "provider": "claude-sonnet-5-5",
+    "cost": 0.0038
+   },
+   {
+    "at": "2026-11-13T00:34:19+00:00",
+    "key": "fairwardgolf:naver:101731755:13770121877",
+    "event": "described",
+    "status": "trimmed",
+    "cut": 1,
+    "origin": null,
+    "origin_note": null,
+    "conflicts": 2,
+    "cost": 0.0115
+   },
+   {
+    "at": "2026-11-13T00:34:25+00:00",
+    "key": "fairwardgolf:naver:101731755:13770121877",
+    "event": "published",
+    "product_id": "gid://shopify/Product/15488833224771",
+    "handle": "fairward-golf-f-style-bar-clamp-12in-woodworking-clamp-for-diy-wood-joining",
+    "status": "published",
+    "prices_usd": [
+     719,
+     719
+    ]
+   },
+   {
+    "at": "2026-11-12T16:06:49+00:00",
+    "key": "fairwardgolf:naver:100568453:13238723639",
+    "event": "not_taken",
+    "reason": "card_not_found"
+   },
+   {
+    "at": "2026-11-12T15:58:28+00:00",
+    "key": "fairwardgolf:naver:101764781:13753814944",
+    "event": "not_taken",
+    "reason": "title:not_golf (a cable-pulling grip; the rule added after the snapshot)"
+   },
+   {
+    "at": "2026-11-13T01:53:14+00:00",
+    "key": "fairwardgolf:naver:102620918:12803282342",
+    "event": "not_taken",
+    "reason": "category_mismatch"
+   }
+  ],
+  "fairwardgolf-50002670-20261115T045151Z": [
+   {
+    "at": "2026-11-15T08:25:33+00:00",
+    "key": "fairwardgolf:naver:101503852:11126390772",
+    "event": "deferred",
+    "reason": "api_500"
+   }
+  ],
+  "fairwardgolf-50002788-20261113T043522Z": [
+   {
+    "at": "2026-11-13T04:39:13+00:00",
+    "key": "fairwardgolf:naver:100416178:5917858699",
+    "event": "collected",
+    "run": "50002788-20261113T043912Z",
+    "seconds": 95
+   },
+   {
+    "at": "2026-11-13T04:39:32+00:00",
+    "key": "fairwardgolf:naver:100416178:5917858699",
+    "event": "prepared",
+    "status": "ready",
+    "held": [],
+    "images_s": 9,
+    "prepare_s": 10
+   },
+   {
+    "at": "2026-11-13T04:39:48+00:00",
+    "key": "fairwardgolf:naver:100416178:5917858699",
+    "event": "failed",
+    "stage": "translate",
+    "reason": "option_value:e17a604ac3d9ef71: too long: 66 characters, at most 64"
+   },
+   {
+    "at": "2026-11-13T08:59:20+00:00",
+    "key": "fairwardgolf:naver:101435422:13809756465",
+    "event": "collected",
+    "run": "50002788-20261113T085920Z",
+    "seconds": 51
+   },
+   {
+    "at": "2026-11-13T08:59:47+00:00",
+    "key": "fairwardgolf:naver:101435422:13809756465",
+    "event": "prepared",
+    "status": "ready",
+    "held": [],
+    "images_s": 15,
+    "prepare_s": 12
+   },
+   {
+    "at": "2026-11-13T08:59:49+00:00",
+    "key": "fairwardgolf:naver:101435422:13809756465",
+    "event": "translated",
+    "status": "translated",
+    "calls": 1,
+    "provider": "claude-sonnet-5-5",
+    "cost": 0.0015
+   },
+   {
+    "at": "2026-11-13T09:00:02+00:00",
+    "key": "fairwardgolf:naver:101435422:13809756465",
+    "event": "described",
+    "status": "ok",
+    "cut": 0,
+    "origin": null,
+    "origin_note": "origin not stated (hedged)",
+    "conflicts": 2,
+    "cost": 0.021
+   },
+   {
+    "at": "2026-11-13T09:00:09+00:00",
+    "key": "fairwardgolf:naver:101435422:13809756465",
+    "event": "published",
+    "product_id": "gid://shopify/Product/15489696333891",
+    "handle": "bridgestone-bg-100-black-mens-complete-golf-club-set-2026-11-pieces",
+    "status": "published",
+    "prices_usd": [
+     1899,
+     1899
+    ]
+   },
+   {
+    "at": "2026-11-13T11:46:19+00:00",
+    "key": "fairwardgolf:naver:102583137:13827555559",
+    "event": "collected",
+    "run": "50002788-20261113T114619Z",
+    "seconds": 58
+   },
+   {
+    "at": "2026-11-13T11:47:01+00:00",
+    "key": "fairwardgolf:naver:102583137:13827555559",
+    "event": "prepared",
+    "status": "ready",
+    "held": [],
+    "images_s": 28,
+    "prepare_s": 13
+   },
+   {
+    "at": "2026-11-13T11:47:03+00:00",
+    "key": "fairwardgolf:naver:102583137:13827555559",
+    "event": "translated",
+    "status": "translated",
+    "calls": 1,
+    "provider": "claude-sonnet-5-5",
+    "cost": 0.0015
+   },
+   {
+    "at": "2026-11-13T11:47:18+00:00",
+    "key": "fairwardgolf:naver:102583137:13827555559",
+    "event": "described",
+    "status": "ok",
+    "cut": 0,
+    "origin": null,
+    "origin_note": null,
+    "conflicts": 2,
+    "cost": 0.0246
+   },
+   {
+    "at": "2026-11-13T11:47:25+00:00",
+    "key": "fairwardgolf:naver:102583137:13827555559",
+    "event": "published",
+    "product_id": "gid://shopify/Product/15490277048387",
+    "handle": "bridgestone-bg-100-mens-complete-golf-club-set-2026-11-pieces",
+    "status": "published",
+    "prices_usd": [
+     1899,
+     1899
+    ]
+   },
+   {
+    "at": "2026-11-13T07:47:20+00:00",
+    "key": "fairwardgolf:naver:102252815:13862144839",
+    "event": "not_taken",
+    "reason": "card_not_found"
+   }
+  ]
+ }
+}

@@ -126,12 +126,25 @@ One product is often sold by several stores (Wilson Profile JGI: 9 copies in the
 `run` / `scroll --job`; a job made before has no key and runs as `off`; `off` writes no key. Right after a product is collected, before its description images, `dedupe.py`
 looks it up in an index built when the run starts (the shop's published products and the ones the owner withdrew,
 plus the job's own collected products; each product the job takes on joins it, so a later seller in the same job
-is compared too, and one of them closed later in the run, not_taken / deferred / failed, leaves it again):
+is compared too, and one of them closed later in the run, not_taken / deferred / failed, or held by the transform or
+the translation (agency_no_brand, single_only: 2026-11-15), leaves it again):
 
 - a possible duplicate: the same category and the same set of title words (case, signs and order ignored, what is
   in brackets kept: `27ZXI-RKT LS` is not `27ZXI-RKT`, `Qi4D MAX` is not `Qi4D`), another store, prices within x2;
 - confirmed when the first photo is the same file, or half the photos are, or the variants agree >= 80%; not
   confirmed: an ordinary product (event `duplicate_seen`, decision `not_confirmed`);
+- two purchase-agency imports (구매대행: a copy of one foreign listing, 2026-11-15) are also one product with a title of
+  12+ words alike word for word, or with titles translated apart (`alike`: the same numbers, club kinds, hand, gender
+  and bag words, 6+ words, 70% of them alike after one spelling per word: 모래 / 샌드, 남성용 / 남성, eAj dropped).
+  The first photo alone is never a match: an agency lists each version of one listing apart under its one photo;
+- any two products are also one with every photo and variant alike (`strong`, 2026-11-15: three A11N SPORTS sets,
+  one under the model line 핀클리; six sellers of one challenger junior set): the same category, photos shared >= 80%,
+  variants >= 80%, and the titles not clashing on club kind, hand, gender, bag (미포함 wins) or the numbers standing
+  alone (Aged 3-5 / 9-12, 9종 / 12종), a subset passing, and agreeing on a model's version word (MAX, LS, TR, PRO,
+  맥스: 27ZXI-RKT and its LS share a dealer's photo and variants);
+- a title's written-out escapes ("u2013") are decoded before its words and numbers are read;
+- a product is looked up at whatever stage the job takes it on (a resumed one too: 2026-11-15, 13 copies went from
+  "prepared" to the store);
 - better = a higher store grade (PLATINUM > PREMIUM > BIG_POWER > POWER > SPROUT > SEED), then more reviews; price
   never decides.
 
@@ -151,7 +164,13 @@ no false merge, no better seller (equal grades); 5 of 7 matched products of the 
 To check a run's decisions: `.venv/bin/python scripts/dedupe.py --pairs <shop>
 --job <id>` (sheets `pairs1.jpg` ... of candidate | match photos, numbered, `dup` on the confirmed ones, and
 `index.tsv`: decision, signals, both keys and titles, in the job's `pairs/`) for the owner to check the decisions. `.venv/bin/python scripts/dedupe.py --report <shop> [--category <id>] [--list]`
-counts the duplicate groups already in the store, best first (read only; withdrawing them is the owner's word).
+counts the duplicate groups already in the store, best first (a tie: more variants), and marks `title only` the
+members joined by title words alone: look at their photos before a withdrawal (`lens.py dupes <shop>`: the groups as
+rows, those members red). Read only; withdrawing them is the
+owner's word. The store's cleanup (2026-11-15, the owner: "check it is no error, then DRAFT"): 106 groups, 191 extra
+copies, all looked at; 54 joined by title words only, 3 of them not one product (BG-100 Black Edition and white, REVA
+2025 with or without its bags: the title does not say, colours as kind words split 4 real copies instead); 188
+withdrawn `replaced_by:<kept key>`.
 
 ## What stops, and who acts
 
@@ -187,6 +206,10 @@ A look by eye (the owner, 2026-11-15; run by hand, never by itself): `.venv/bin/
 60 a sheet) and `index.tsv` (number, key, product id, title, handle, admin link) into the job's `grid/`. Read the
 sheets in one go (they are small JPGs), list what is not the section's product by number, show the owner; the
 owner decides what is withdrawn (`publish.py <shop> --withdraw <key> --reason ...`). Read only, offline.
+Then the lenses (scripts/LENSES.md, skill `visual-review`): `lens.py price <shop> --category <id>` (singles and
+accessories at the cheap end), `lens.py held <shop> --job <id>` when many were prepared but not published (each hold
+beside its reason, a duplicate beside its match), `lens.py brand <shop> --source none [--category <id>]` for the
+products under the shop's own name.
 
 `.venv/bin/python scripts/review_suspects.py <shop> [--job <id>]` (read only, offline; the owner, 2026-11-14: the
 screen of 50002788 is lenient in both ways to run a job, so what is doubtful is published and reviewed afterwards) lists the published products

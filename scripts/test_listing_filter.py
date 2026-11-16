@@ -230,3 +230,63 @@ def test_iron_sets_leave_heads_singles_and_mens_out(title, code):
     screen = Screen("50002670", namespace="fairwardgolf")
     assert screen.check({"name": title, "category_id": "50002670", "product_id": "1",
                          "store": {"channel_no": "2"}}) == code
+
+
+@pytest.mark.parametrize("title, code", [
+    # 50002783 wedges, sold as wedge sets (the owner, 2026-11-15): 670 titles of 골프 웨지 세트 that day, 187 out
+    ("[본사] 미라이골프 SUMMIT 웨지헤드 48도 52도 56도 60도", "title:parts"),
+    ("단조 골프 웨지 세트 50 52 54 56 58 60도 헤드만", "title:parts"),
+    ("발도 코르사 골프 웨지 세트 50 58도 단조 실버 샌드 (샤프트 미포함)", "title:parts"),
+    ("골프웨지커버 웨지보호캡 골프가방 낱개골프채커버 골프채보호커버 쓱템", "title:accessory"),
+    ("남녀공용 웨지 그루브 샤프너 골프 클럽 Blue", "title:accessory"),
+    ("PGM 골프 클럽 세트 및 리그리핑 키트 웨지 Silver", "title:accessory"),
+    ("골프 웨지 세트 초보자용 스키 팁 커넥터, 귀여운 감성 클립 훈련 보조기, 겨울 웨지", "title:accessory"),
+    ("마쓰이 치퍼 701C 골프웨지 골프클럽", "title:chipper"),
+    ("중고미즈노 JPX850 포지드 GS번 카본55R 웨지세트 (50088.85)", "title:used"),
+    ("GUTE 에어 웨지 백 펌프 3팩 상업용 팽창식 도구", "title:not_golf"),
+    ("스틸 해머 웨지 세트 목공용 클로 10개입", "title:not_golf"),
+    ("미즈노 JPX925 핫메탈 프로 웨지 단품", "title:single"),
+    ("타이틀리스트 보키 SM10 그라인드 골프 웨지 52도 12도 BV105 5212F", "title:single"),
+    ("윅스 웨지 백스핀 잘먹는 비공인웨지 남성용", "title:single"),                 # 웨지백스핀 is no air wedge bag
+    ("요이치 스틸 115S 525660도 웨지세트 커버없음", None),                         # 커버없음 is a set's word
+    ("테일러메이드 MG5 웨지 SB 세트 3개 NS PRO 950 NEO S", None),
+    ("1+1 [테일러메이드코리아] 밀드그라인드4 웨지 MG4 세트 (52도+56도) 남성 여성", None),
+    ("커클랜드 시그니처 3피스 웨지 골프 세트", None),
+    ("BYBOMYA 단조 골프 웨지 50 52 54 56 58 60 개별 또는 세트", None),
+    ("미즈노골프 세트 왼손 미즈노 52도 56도 웨지 골프채 좌타 왼손잡이 단조헤드 샌드 갭", None),
+])
+def test_wedge_sets_leave_heads_accessories_and_singles_out(title, code):
+    screen = Screen("50002783", namespace="fairwardgolf")
+    assert screen.check({"name": title, "category_id": "50002783", "product_id": "1",
+                         "store": {"channel_no": "2"}}) == code
+
+
+@pytest.mark.parametrize("title, code", [
+    # 2026-11-15, the visual lenses on 661 published junior sets: real titles of published misfits (left out now) ...
+    ("F형 바 클램프 목공 고정 공구 DIY 작업 목재 접합 장비 바이스 12in", "title:not_golf"),
+    ("집소 골프채 세트 놀이쿠션 유치원블록 어린이집블럭", "title:not_golf"),
+    ("PGM 골프 주니어 플라스틱 교육용 연습용 클럽 골프채 조기 7번", "title:toy"),
+    ("SDR - 골프채 어린이 소프트골프/안전한 실리콘", "title:toy"),
+    ("SDR - 골프채 주니어용 드라이버/탄성, 반발력우수", "title:toy"),
+    ("스포츠게임 어린이용 미니골프 클럽 골프채 체육시설 주니어용 체육센터 체육놀이", "title:toy"),
+    ("키드짐 초등용 골프채 70cm 아이언 3번 클럽 어린이용", "title:toy"),
+    ("어린이 골프채 초등용 70cm 퍼터1 공2개", "title:toy"),
+    ("초등 아동 골프 59cm 유아 어린이 골프채 학생 어린이 골프 아동 골프채", "title:toy"),
+    ("여성 골프클럽 풀세트 주니어겸용 경량 아이언 우드 드라이버 맞춤로고 가방포함", "title:adult"),
+    ("골프 클럽 남성 풀세트 티타늄 합금 주니어 조합 중급자 골프채", "title:adult"),
+    ("PGF 랩스 골드 TP BG77 남녀 골프 클럽 패키지 세트 14피스 플렉스 레귤러", "title:adult"),
+    ("아스파이어 X1 여성용 완비 오른손잡이 골프 클럽 세트 일반 및 쁘띠 여성 Petite", "title:adult"),
+    ("클리블랜드 골프 T 프레임 USA 70 퍼터 Right 35 Inches", "title:adult"),
+    ("클리블랜드 골프 HB 소프트 밀드 퍼터", "title:adult"),
+    ("Q 2세대 조절식 골프 클럽스틸 샤프트 - 내구성이 뛰어난 2부 여행 4 퍼터에서 60 Right", "title:adult"),
+    # ... and real junior clubs the new words must not touch (the near misses measured that day)
+    ("PGM 골프 클럽 어린이 아동 주니어 교육용 훈련용 연습용 입문용 조기 학습", None),
+    ("여성용 핑크 세트 골프채 7번아이언 주니어골프채 연습용 카본 클럽 샤프트", None),
+    ("주니어 골프클럽 세트 유치원 초등학생 입문용", None),
+    ("스탠다드 주니어 골프 클럽 세트 3-5세", None),                 # sdr only as its own latin word
+])
+def test_junior_toys_adult_sets_and_not_golf_seen_on_the_sheets_are_left_out(title, code):
+    screen = Screen("50002787", namespace="fairwardgolf")
+    got = screen.check({"name": title, "category_id": "50002787", "product_id": "1",
+                        "store": {"channel_no": "1"}})
+    assert (got if got and got.startswith("title:") else None) == code

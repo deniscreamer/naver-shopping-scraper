@@ -152,6 +152,42 @@ _STORE_PREFIX_RE = re.compile(r"^(?:(?:일본|미국|중국|독일|영국|유럽
 _WORD_RE = re.compile(r"[가-힣]{2,}|[A-Za-z]{2,}")
 
 
+# a seller's character escape written out as text, its backslash lost by an import tool ("세트 u2013 소년 u2019 &
+# 소녀", 13209544038; "개별 u2013 단조", 13016883852; 2026-11-15: 126 in 15 products, all u2013 / u2019 / U2013 /
+# U2019). Only General Punctuation (U+2000-202F) and Latin-1 (U+00A0-00FF), not after a letter or digit, no hex digit
+# after: "clubface", "scuffed" and model codes stay as written. It reached the titles, the handles and dedupe's
+# numbers (2013), splitting two copies of one listing.
+_ESCAPE_RE = re.compile(r"(?<![0-9A-Za-z\\])\\?[uU](20[01][0-9a-fA-F]|202[0-9a-fA-F]|00[a-fA-F][0-9a-fA-F])(?![0-9a-fA-F])")
+_ESCAPE_CHAR = {"2013": "–", "2014": "—", "2018": "'", "2019": "'", "201c": '"', "201d": '"'}
+
+
+def decode_escapes(text: str | None) -> str | None:
+    """The text with its written-out escapes (u2013, U2019, \\u2013) as the characters they stand for."""
+    if not text:
+        return text
+    def one(m: re.Match) -> str:
+        code = m.group(1).lower()
+        if code in _ESCAPE_CHAR:
+            return _ESCAPE_CHAR[code]
+        after = m.string[m.end():m.end() + 1]
+        return m.group(0) if after.isalnum() else chr(int(code, 16))   # "U2000X": a model code, kept
+    return _ESCAPE_RE.sub(one, text)
+
+
+def decode_line(line: dict) -> dict:
+    """A collected line whose names and description text are decoded (decode_escapes); the rest shared as it is."""
+    details, listing = line.get("details"), line.get("listing")
+    out = dict(line)
+    if isinstance(details, dict):
+        desc = details.get("description")
+        out["details"] = {**details, "name": decode_escapes(details.get("name"))}
+        if isinstance(desc, dict):
+            out["details"]["description"] = {**desc, "text": decode_escapes(desc.get("text"))}
+    if isinstance(listing, dict):
+        out["listing"] = {**listing, "name": decode_escapes(listing.get("name"))}
+    return out
+
+
 def sentences(lines: Iterable[str]) -> Iterator[list[str]]:
     """Visual lines -> sentences (lists of lines): a line ending on a connective goes on in the next one."""
     buf: list[str] = []

@@ -54,7 +54,7 @@ from typing import Any, TypedDict
 
 import attributes
 import brand_fallback
-from description_clean import body_notes, clean, clean_images
+from description_clean import body_notes, clean, clean_images, decode_line
 from description_images import current, image_rows
 from description_measures import composition_count, container_in, container_listed, package_for, profile_for, read_rows
 from naver_variants import choose_variants
@@ -298,6 +298,35 @@ def simple_choices(specs: dict[str, Any]) -> tuple[list[dict[str, str]], list[st
     return facts, left
 
 
+# a variant that sells one club of a set-or-single listing (sets_only, wedges 2026-11-15, the pilot's variants: "60
+# Degree-1PC", "RH Black 52 Degree", "GRF539-52 degrees", "52 Degree Wedge / Silver"): a single word, or exactly one
+# loft (44-72, a number of its own: "i60R" is a shaft) with no set word or count of two or more
+_SINGLE_WORD_RE = re.compile(r"(?i)(?<![0-9])1\s*(?:pcs?|개|ea)(?![a-z])|단품|개별|싱글|single|낱개")
+_SET_WORD_RE = re.compile(r"(?i)set|세트|셋트|(?<![0-9])[2-9]\s*(?:pcs?|개|종|피스|p)(?![a-z])")
+_ONE_PIECE_RE = re.compile(r"(?i)(?<![0-9])1\s*(?:개|pcs?|ea)(?![a-z0-9])\s*[)\]]?\s*$")   # the title's end: one piece
+_LOFT_RE = re.compile(r"(?<![0-9A-Za-z])(?:4[4-9]|5[0-9]|6[0-9]|7[0-2])(?![0-9A-Za-z])")   # "i60R" is a shaft
+
+
+def _club_slots(names: list[str]) -> bool:
+    """Option axes that each pick one club of the set: names equal but for a number ("옵션 1" / "옵션 2", "웨지 로프트
+    바운스 선택-1" / "-2" / "-3", "SB웨지1" / "SB웨지2"): the same loft on two of them is two clubs."""
+    return len(names) > 1 and len({re.sub(r"[\d\s\-_/.#]+$", "", re.sub(r"\d+", "#", n)).strip() for n in names}) == 1
+
+
+def single_club(values: list[str], names: list[str] | tuple[str, ...] = ()) -> bool:
+    """The variant's own words say it sells one club (sets_only). A loft repeated on axes that describe one club
+    ("Size: 56 Degree" + "Style Name: Black 56 Degree", Yamato 12951827729 / 12921931106, 2026-11-15: published as
+    sets, every variant one wedge) counts once; on axes that are club slots (_club_slots: TaylorMade MG5 "52.09 SB" on
+    옵션 1 and 옵션 2) each counts."""
+    text = " ".join(values)
+    if _SET_WORD_RE.search(text):
+        return False
+    lofts = _LOFT_RE.findall(text)
+    if not _club_slots(list(names)):
+        lofts = list(set(lofts))
+    return bool(_SINGLE_WORD_RE.search(text)) or len(lofts) == 1
+
+
 def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: CategoryRules) -> dict[str, Any]:
     """-> {options, facts, variants, held, skipped_paid, duplicate_values, capped} in Korean. The variant choice is the category's
     (cat.paid_variants), made again from the page's options: the collected line's own choice may differ."""
@@ -312,6 +341,17 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
     # 배송메세지기입 on a TaylorMade set); a product of only such rows keeps them (nothing else to sell)
     real = [r for r in rows if not any(_DELIVERY_NOTE_RE.search(v) or _contact_only(v) for v in r["options"])]
     rows = real or rows
+    if cat.sets_only and _ONE_PIECE_RE.search(re.sub(r"\s+", " ", line["details"].get("name") or "")) \
+            and not any(_SET_WORD_RE.search(" ".join(r["options"])) for r in rows):
+        # "웨지 세트 52 56 60도 ... 실버 1개": the title sells one piece of the set (2026-11-15, the wedge pilot)
+        return {"options": [], "facts": [], "variants": [], "held": [{"code": "single_only", "detail":
+                "the title sells one piece (1개, 1pc)"}], "skipped_paid": 0, "duplicate_values": [], "capped": None}
+    if cat.sets_only and rows:                     # a single club's variant is not sold; only such: held
+        sets = [r for r in rows if not single_club(r["options"], names)]
+        if not sets:
+            return {"options": [], "facts": [], "variants": [], "held": [{"code": "single_only", "detail":
+                    f"{len(rows)} variants, each one club"}], "skipped_paid": 0, "duplicate_values": [], "capped": None}
+        rows = sets
     if rows and any(len(r["options"]) != len(names) for r in rows):           # rows that do not fit the groups:
         return {"options": [], "facts": [], "variants": [], "held": [{             # never publish one of them alone
             "code": "options_unaligned", "detail": f"{len(names)} option groups, rows of "
@@ -617,6 +657,7 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
 def prepare(line: dict[str, Any], rules: ShopRules, run: str, line_no: int,
             images_text: dict[str, Any] | None = None) -> Prepared:
     key = line["key"]
+    line = decode_line(line)                       # "u2013" written out by the seller: the character (2026-11-15)
     details, specs = line.get("details"), line.get("specs")
     held: list[dict[str, str]] = []
     notes: list[dict[str, str]] = []

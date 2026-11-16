@@ -90,6 +90,7 @@ Live check (server running, uses the network): `curl http://localhost:8000/healt
 | Shop sections (placement) | [scripts/PLACEMENT.md](scripts/PLACEMENT.md) | A new shop or Naver category, one Naver category holding several shop sections |
 | Running a job (agent) | [scripts/JOB_AGENT.md](scripts/JOB_AGENT.md) | Running or watching `scripts/job.py` (one product per iteration); which mode when (`new` + `run` or `scroll`) |
 | Seller data patterns | [scripts/SELLER_DATA.md](scripts/SELLER_DATA.md) | Before changing parsers or the transform: what pages and sellers write |
+| Products by eye (lenses) | [scripts/LENSES.md](scripts/LENSES.md), skill `visual-review` | After a run, before withdrawing duplicates, many held products, a price / brand / placement / dedupe rule change |
 | Security | [SECURITY.md](SECURITY.md) | Reporting vulnerabilities |
 | Releases | [CHANGELOG.md](CHANGELOG.md), `VERSION` | Cutting a release, what changed |
 | Extension transport (beta) | [server/docs/EXTENSION.md](server/docs/EXTENSION.md), [extension/README.md](extension/README.md) | search.shopping listing, anything touching extension/ or ext_*.py |

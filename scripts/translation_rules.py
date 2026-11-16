@@ -61,6 +61,7 @@ CATEGORY_RULES: dict[str, list[tuple[re.Pattern[str], str]]] = {
 }
 CATEGORY_RULES["50002787"] = CATEGORY_RULES["50002788"]       # junior clubs write their specs the same way (2026-11-11)
 CATEGORY_RULES["50002670"] = CATEGORY_RULES["50002788"]       # women's iron sets write their specs the same way (2026-11-14)
+CATEGORY_RULES["50002783"] = CATEGORY_RULES["50002788"]       # wedge sets write their specs the same way (2026-11-15)
 
 
 def sanitize(kind: str, ko: str, tenant: str, category_id: str | None = None) -> str:

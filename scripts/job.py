@@ -263,6 +263,16 @@ def closed(job: Job) -> dict[str, str]:
     return out
 
 
+def held_keys(job: Job) -> set[str]:
+    """This job's products its last `prepared` or `translated` event left held (the transform's or the translation's
+    hold: agency_no_brand, ...): not published by this job, so a duplicate of one is no reason to skip a seller."""
+    last: dict[str, str] = {}
+    for e in job.events():
+        if e["event"] in ("prepared", "translated"):
+            last[e["key"]] = e.get("status") or ""
+    return {k for k, status in last.items() if status == "held"}
+
+
 def next_key(job: Job, done: dict[str, str], staged: bool = False) -> str | None:
     """The first snapshot key not at the job's final stage and not closed; fresh ones before those that failed.
     `staged`: only keys with a stage (collected on; scroll takes them on without its listing tab)."""
@@ -567,7 +577,9 @@ def dedupe_step(job: Job, ctx: dict, key: str, line: dict | None) -> str | None:
     index = ctx["dedupe"]
     if any(e.get("key") == key and e["event"] in DEDUPE_EVENTS for e in job.events()):
         return None
-    for k in closed(job):                                   # this job's own products closed meanwhile block nothing
+    # this job's own products closed or held meanwhile block nothing (2026-11-15, the wedge pilot: 10 sellers of
+    # 5 models skipped as duplicates of a product held as agency_no_brand: the model reached the store from none)
+    for k in {*closed(job), *held_keys(job)}:
         if (index.by_key.get(k) or {}).get("status") == "job":
             index.drop(k)
     if line is None:
@@ -658,7 +670,11 @@ def one(job: Job, ctx: dict, key: str, stage_now: str | None, n: int = 0) -> str
         kept = keep_line(job, line, tmp)
         shutil.rmtree(tmp, ignore_errors=True)
         job.log(key, "collected", run=os.path.basename(kept), seconds=round(time.monotonic() - t0))
-    if stage_now in (None, "collected") and ctx.get("dedupe") is not None:
+    # every product the job takes on, whatever stage it resumes at (2026-11-15, the wedge pilot: products a first
+    # job had collected and the transform had held came back ready and went from "prepared" to the store without a
+    # look: 13 copies of 5 models); one published by this job already is not looked up again
+    if ctx.get("dedupe") is not None and not any(e.get("key") == key and e["event"] == "published"
+                                                 for e in job.events()):
         dropped = dedupe_step(job, ctx, key, line)
         if dropped:
             return dropped

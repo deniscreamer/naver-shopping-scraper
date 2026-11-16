@@ -8,6 +8,8 @@ Read only: local files, nothing is sent anywhere. Run by hand after a job, then 
         [--out DIR] [--per-sheet 60] [--thumb 150]
 
 Writes <out>/sheet1.jpg ... and <out>/index.tsv (default out: the job folder's grid/, or the shop's grid-<category>/).
+The drawing is sheet.py's; `lens.py section` is the general form (a section leaf, prices and titles on the cards,
+summary.json): scripts/LENSES.md.
 """
 from __future__ import annotations
 
@@ -66,35 +68,11 @@ def items(shop: str, shops_root: str, keys: list[str] | None, category: str | No
 
 
 def draw(rows: list[dict[str, Any]], out: str, per_sheet: int = 60, thumb: int = 150) -> list[str]:
-    """Sheets of numbered thumbnails and index.tsv into `out`. -> the sheet paths."""
-    from PIL import Image, ImageDraw, ImageFont
-    os.makedirs(out, exist_ok=True)
-    try:
-        font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", 12)
-    except OSError:
-        font = ImageFont.load_default()
-    sheets = []
-    for start in range(0, len(rows), per_sheet):
-        chunk = rows[start:start + per_sheet]
-        lines = (len(chunk) + COLUMNS - 1) // COLUMNS
-        sheet = Image.new("RGB", (COLUMNS * thumb, lines * (thumb + 16)), "white")
-        pen = ImageDraw.Draw(sheet)
-        for i, row in enumerate(chunk):
-            x, y = (i % COLUMNS) * thumb, (i // COLUMNS) * (thumb + 16)
-            if row["photo"]:
-                try:
-                    with Image.open(row["photo"]) as im:
-                        im = im.convert("RGB")
-                        im.thumbnail((thumb - 4, thumb - 4))
-                        sheet.paste(im, (x + 2, y + 2))
-                except OSError:
-                    pen.text((x + 4, y + 4), "no photo", fill="gray", font=font)
-            else:
-                pen.text((x + 4, y + 4), "no photo", fill="gray", font=font)
-            pen.text((x + 3, y + thumb), str(start + i + 1), fill="red", font=font)
-        path = os.path.join(out, f"sheet{start // per_sheet + 1}.jpg")
-        sheet.save(path, quality=70)
-        sheets.append(path)
+    """Sheets of numbered thumbnails (sheet.grid) and index.tsv into `out`. -> the sheet paths."""
+    import sheet as S
+    cards = [S.Card(n=n, key=row["key"], photos=[row["photo"]], mark=None if row["photo"] else "flag")
+             for n, row in enumerate(rows, 1)]
+    sheets = S.grid(cards, out, per_sheet=per_sheet, columns=COLUMNS, thumb=thumb, label_lines=0)
     with open(os.path.join(out, "index.tsv"), "w", encoding="utf-8") as f:
         f.write("n\tkey\tproduct_id\ttitle\thandle\tadmin\n")
         for n, row in enumerate(rows, 1):

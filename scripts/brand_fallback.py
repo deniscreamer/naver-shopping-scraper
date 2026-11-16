@@ -16,6 +16,14 @@ order, the first that gives a value (`brand_source` says which):
                                                         another way (피지엠 / PGM, 캘러웨이골프 / 캘러웨이); a
                                                         combination set (조합, 32 titles) names several: the first
   3b. a brand the dictionary knows starting the title "title_known" ("프랭클린 스포츠 ...", 2026-11-12)
+  3c. a brand the dictionary knows as a word of its own  "title_word": three letters at least, the whole word
+      anywhere in the title                               ("남성 또는 개인용 라즈러스 ...", "GoSports Illegal Max
+                                                        Spin ...": 2026-11-15, the wedge pilot); a Latin one by its
+                                                        dictionary spelling, any case
+  3d. a Brand row of the description                   "description_row": the spec table an agency import copies
+                                                        ("Brand | WENGH", "Brand Name | WENGH", "브랜드: MAZEL":
+                                                        2026-11-15, about 90 products, where the images gave
+                                                        "CNC MILLED" or "EVEN"); the first that names a firm
   4. the importer / distributor in 원산지's brackets   "origin" ("일본산(혼마코리아)": 혼마코리아)
   5. a brand of the shop in the images' text           "images_text": the one read most often (a Korean
                                                         brand only where a word starts: 쇼핑 is not 핑)
@@ -65,7 +73,10 @@ _NO_FIRM = re.compile(r"(?i)^(?:별도\s*표기|알\s*수\s*없음|미상|불명
                       # who it is for, a lone letter, an authenticity claim (2026-11-15: 남성용 / 여성용 in two brand
                       # rows became the brand of 32 titles that say 남성용 / 여성용, vendor "Yoshino" on a TaylorMade
                       # set; "ㅊ" on a Callaway set; "정식수입정품 또는 정식제조정품" as a maker)
-                      r"|(?:남성|여성|남자|여자|남녀|공용|남녀\s*공용|유니섹스)(?:\s*용)?|[ㄱ-ㅎㅏ-ㅣ]+|.*정품.*)$")
+                      r"|(?:남성|여성|남자|여자|남녀|공용|남녀\s*공용|유니섹스)(?:\s*용)?|[ㄱ-ㅎㅏ-ㅣ]+|.*정품.*"
+                      # Amazon's word for no brand (2026-11-15: two Bermuda wedge sets, 13370440703 and 13099713088,
+                      # published under the vendor "Generic" from their 브랜드 rows)
+                      r"|generic|제네릭)$")
 _CODE = re.compile(r"\s*\((?:\d+|자체\s*제작[^()]*)\)\s*$")       # 코알라(200874), 지브이골프코리아(자체제작 상품)
 
 
@@ -122,6 +133,10 @@ def in_title(title: str | None, brands: list[str]) -> list[str]:
     taken: list[tuple[int, int]] = []
     for b in brands:
         n = _norm(b)
+        # a Korean brand only where a word starts, as in the images (_count): 2026-11-15, 이디스 (Edis) was read in
+        # "시니어 레이디스" (ladies) and a Majek K5 set (13469043292) was published as Edis; 기가 in "성장기 가슴패드"
+        if n and _HANGUL_BRAND.match(n) and not re.search(r"(?<![가-힣])" + r"\s*".join(map(re.escape, n)), title or ""):
+            continue
         at = t.find(n) if n else -1
         while at >= 0:
             if not any(s <= at < e for s, e in taken):
@@ -178,10 +193,29 @@ def _count(text: str, spaced: str, brand: str) -> int:
     return text.count(n)
 
 
-def in_images(rows: list[str], brands: list[str]) -> Counter:
+def _counts(rows: list[str], brands: list[str]) -> dict[str, int]:
     spaced = _ADDRESS.sub(" ", " ".join(rows)).casefold()
     text = _norm(spaced)
-    counts = {b: _count(text, spaced, b) for b in brands if _norm(b)}
+    return {b: _count(text, spaced, b) for b in brands if _norm(b)}
+
+
+# a Latin brand read once, inside a Latin phrase of three or more words, is a slogan: 2026-11-15, "PRECISE AIMING
+# FEEDBACK" in a description image made PRECISE (a real shop brand) the vendor of a XINGGM wedge set (13830322401)
+_SLOGAN_WORD = re.compile(r"[A-Za-z]{2,}")
+
+
+def _slogan(row: str) -> bool:
+    row = _ADDRESS.sub(" ", row)
+    return len(_SLOGAN_WORD.findall(row)) >= 3 and not re.search(r"[가-힣]", row)
+
+
+def in_images(rows: list[str], brands: list[str]) -> Counter:
+    counts = _counts(rows, brands)
+    for b, c in list(counts.items()):
+        if c == 1 and _LATIN_BRAND.match(_norm(b)):
+            hit = [r for r in rows if _counts([r], [b]).get(b)]
+            if hit and all(_slogan(r) for r in hit):
+                counts[b] = 0
     return Counter({b: c for b, c in counts.items() if c})
 
 
@@ -203,8 +237,45 @@ def leading(title: str | None, known: list[str]) -> str | None:
     return max(found, key=lambda b: len(_norm(b))) if found else None
 
 
+def as_word(title: str | None, known: list[str]) -> str | None:
+    """A brand the dictionary knows (its Korean name, or its Latin spelling) standing as a word of its own anywhere in
+    the title, the longest; three letters at least (2026-11-15: 라즈러스, 야마토, 버뮤다, GoSports in agency imports'
+    titles after 남성용 or before a model). A Hangul brand is not inside a longer Hangul word, a Latin one not inside
+    a longer Latin word or number."""
+    t = title or ""
+    found = []
+    for b in known:
+        n = _norm(b)
+        if len(n) < 3 or not clean(b):
+            continue
+        if _HANGUL_BRAND.match(n):
+            pattern = r"(?<![가-힣])" + r"\s*".join(map(re.escape, n)) + r"(?![가-힣])"
+        else:
+            pattern = r"(?<![A-Za-z0-9])" + re.escape(b) + r"(?![A-Za-z0-9])"
+        if re.search(pattern, t, re.I):
+            found.append(b)
+    return max(found, key=lambda b: len(_norm(b))) if found else None
+
+
+_BRAND_ROW = re.compile(r"(?im)^[ \t]*(?:brand(?:[ \t]*name)?|브랜드(?:명)?)[ \t]*[|:：][ \t]*([^\n|]{2,60}?)[ \t]*$")
+_ROW_TAIL = re.compile(r"\s*(?:품목|부품|모델)\s*번호.*$|\s*(?:item|part|model)\s*(?:no|number|#).*$", re.I)
+
+
+def described(description: str | None) -> list[str]:
+    """The firms the description's Brand rows name, in order (a part number after the name cut; a bare number, a
+    slogan of five words or more, no firm: out)."""
+    out = []
+    for raw in _BRAND_ROW.findall(description or ""):
+        name = _ROW_TAIL.sub("", raw).strip(" .,-")
+        if not name or name.replace(" ", "").isdigit() or len(name.split()) > 4 or not clean(name):
+            continue
+        if name not in out:
+            out.append(name)
+    return out
+
+
 def decide(title: str | None, origin: str | None, brands: list[str], rows: list[str],
-           known: list[str] | None = None) -> tuple[str, str, list[str]]:
+           known: list[str] | None = None, description: str | None = None) -> tuple[str, str, list[str]]:
     """-> (brand, source, other candidates) for a product with no brand of its own (steps 3-7; known: the brand
     dictionary's Korean names, for a title that starts with one)."""
     titled = in_title(title, brands)
@@ -213,6 +284,12 @@ def decide(title: str | None, origin: str | None, brands: list[str], rows: list[
     first = leading(title, known or [])
     if first:
         return first, "title_known", []
+    word = as_word(title, known or [])
+    if word:
+        return word, "title_word", []
+    rows_named = described(description)
+    if rows_named:
+        return rows_named[0], "description_row", rows_named[1:3]
     dist = distributors(origin)
     if dist:
         return dist[0], "origin", dist[1:]
@@ -224,6 +301,10 @@ def decide(title: str | None, origin: str | None, brands: list[str], rows: list[
     if latin:
         return latin[0][0], "images_text_latin", [p for p, _ in latin[1:3]]
     return NO_BRAND, "none", []
+
+
+def _description(value: Any) -> str:
+    return "\n".join(map(str, value)) if isinstance(value, list) else str(value or "")
 
 
 def fill(prepared: list[Any], rows_of: Callable[[str], list[str]],
@@ -238,7 +319,7 @@ def fill(prepared: list[Any], rows_of: Callable[[str], list[str]],
         if product.get("brand_ko"):
             continue
         brand, source, others = decide(product.get("title_ko"), origins.get(p["key"]), brands, rows_of(p["key"]),
-                                       known)
+                                       known, _description(product.get("description_ko")))
         p["product"]["brand_ko"], p["product"]["brand_source"] = brand, source
         p["notes"] = [x for x in p["notes"] if x["code"] != "brand_fallback"] + [
             {"code": "brand_fallback", "detail": f"{source}: {brand}" + (f"; also {', '.join(others)}" if others else "")}]

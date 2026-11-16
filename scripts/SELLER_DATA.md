@@ -53,6 +53,11 @@ Weight and size -> `measures.py`, `package_measures.py`
 
 ## Transform (scripts)
 
+Written-out escapes -> `description_clean.decode_escapes`, `decode_line` (transform.prepare, dedupe.entry)
+- A seller's en dash or apostrophe as text, its backslash lost by an import tool ("세트 u2013 소년 u2019 & 소녀",
+  13209544038; 126 in 15 products, 2026-11-15): decoded in the names and the description text before anything reads
+  them (it had reached titles, handles and dedupe's numbers as 2013).
+
 Options and variants -> `transform.options_and_variants`
 - Sellers number values ("선택1 9도SR", "선택3)", "택1 ..."), tag them ("[당일출고] ..."), decorate axis names
   ("(선택)샤프트/드라이버/아이언"): shown without, the SKU keeps the raw tuple; values equal once unnumbered stay

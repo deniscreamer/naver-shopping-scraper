@@ -150,7 +150,7 @@ def test_load_reads_the_ledger_and_leaves_out_what_was_replaced(tmp_path):
 
 def test_report_groups_confirmed_copies_best_first():
     wilson = [E(1, 1, WILSON), E(2, 2, WILSON, grade="POWER"), E(3, 3, WILSON, photos=("n",), values=[["x"]])]
-    srixon = [E(4, 4, "스릭슨 27ZXI-RKT 풀세트"), E(5, 5, "스릭슨 27ZXI-RKT LS 풀세트")]
+    srixon = [E(4, 4, "스릭슨 27ZXI-RKT 풀세트", photos=("s",)), E(5, 5, "스릭슨 27ZXI-RKT LS 풀세트", photos=("s",))]
     found = D.groups(wilson + srixon)
     assert [[e["key"].split(":")[3] for e in g] for g in found] == [["2", "1"]]   # 3: not confirmed; Srixon: two titles
 
@@ -256,7 +256,7 @@ def test_on_mode_a_better_seller_goes_on_and_a_later_worse_one_in_the_same_job_i
 def test_a_job_product_closed_later_in_the_run_no_longer_blocks_a_copy(tmp_path, collect_to_images):
     first, later = record(2, 22, WILSON), record(3, 33, WILSON)
     job = dedupe_job(tmp_path, "on", [first, later])
-    ctx = _ctx(job, E(9, 99, "다른 상품", status="published"))
+    ctx = _ctx(job, E(9, 99, "다른 상품", status="published", photos=("z",), values=[["z"]]))
     collect_to_images["line"] = first
     with pytest.raises(ImagesReached):
         J.one(job, ctx, first["key"], None)                                  # joins the index as "job"
@@ -265,6 +265,34 @@ def test_a_job_product_closed_later_in_the_run_no_longer_blocks_a_copy(tmp_path,
     with pytest.raises(ImagesReached):                                       # goes on: nothing left to copy
         J.one(job, ctx, later["key"], None)
     assert first["key"] not in ctx["dedupe"].by_key and f"{SHOP}:naver:9:99" in ctx["dedupe"].by_key
+
+
+def test_a_job_product_held_by_the_transform_no_longer_blocks_a_copy(tmp_path, collect_to_images):
+    """2026-11-15, the wedge pilot: a seller held as agency_no_brand kept 10 sellers of its models out of the store."""
+    first, later = record(2, 22, WILSON), record(3, 33, WILSON)
+    job = dedupe_job(tmp_path, "on", [first, later])
+    ctx = _ctx(job, E(9, 99, "다른 상품", status="published", photos=("z",), values=[["z"]]))
+    collect_to_images["line"] = first
+    with pytest.raises(ImagesReached):
+        J.one(job, ctx, first["key"], None)
+    job.log(first["key"], "prepared", status="held", held=["agency_no_brand"])
+    job.log(first["key"], "translated", status="held")
+    assert J.held_keys(job) == {first["key"]}
+    collect_to_images["line"] = later
+    with pytest.raises(ImagesReached):
+        J.one(job, ctx, later["key"], None)
+    assert first["key"] not in ctx["dedupe"].by_key
+
+
+def test_a_product_resumed_past_collect_is_still_looked_up(tmp_path, monkeypatch):
+    """2026-11-15, the wedge pilot: products held by a rule at their collection came back ready and went from
+    "translated" to the store; the dedupe step now runs at any stage the job takes a product on."""
+    new = record(2, 22, WILSON)
+    job = dedupe_job(tmp_path, "on", [new])
+    ctx = _ctx(job, E(1, 11, WILSON))
+    ctx["dedupe_records"] = {new["key"]: new}
+    monkeypatch.setattr(J, "publish_step", lambda *a, **k: pytest.fail("published without the dedupe step"))
+    assert J.one(job, ctx, new["key"], "translated") == f"not taken: duplicate_of:{SHOP}:naver:1:11"
 
 
 def test_a_closed_published_product_stays_in_the_index(tmp_path):
@@ -408,3 +436,107 @@ def test_publish_step_replaces_only_in_on_mode(tmp_path, monkeypatch):
         admin = Admin()
         J.publish_step(job, {"publisher": (admin, None, {})}, new)
         assert len(admin.calls) == calls
+
+
+def test_two_agency_imports_with_one_long_title_are_one_product():
+    """2026-11-15, the wedge pilot: sellers of one Lazrus set (19 title words alike, photos re-encoded, variants 0.64
+    alike). Only two purchase agencies' imports; Korean sellers' titles alike stay unconfirmed (Wilson JGI sizes)."""
+    title = "남성 또는 개인용 라즈러스 프리미엄 단조 골프 웨지 세트 - 50 52 54 56 58 60 64 72도 더 많은 스핀을 위한 밀드 페이스"
+
+    def agency(rec):
+        rec["specs"] = {"specs": [{"label": "원산지", "value": "미국(구매대행)"}]}
+        return rec
+    a = agency(record(1, 11, title, photos=("x",), values=[["52"], ["56"], ["60"]], category="50002783"))
+    b = agency(record(2, 22, title, photos=("y",), values=[["50"], ["52"], ["54"]], category="50002783"))
+    assert D.entry(a)["agency"] and D.confirm(D.entry(a), D.entry(b))
+    plain_a = record(1, 11, title, photos=("x",), values=[["52"]], category="50002783")
+    plain_b = record(2, 22, title, photos=("y",), values=[["50"]], category="50002783")
+    assert not D.confirm(D.entry(plain_a), D.entry(plain_b))
+    short = "라즈러스 웨지 세트"
+    assert not D.confirm(D.entry(agency(record(1, 11, short, photos=("x",), values=[["52"]]))),
+                         D.entry(agency(record(2, 22, short, photos=("y",), values=[["50"]]))))
+
+
+def test_two_agency_imports_translated_apart_are_one_product():
+    """2026-11-15, the wedge pilot: GoSports in five stores, the English title translated apart ("모래" / "샌드",
+    "남성용" / "남성", "eAj" before it). The numbers, club kinds, hand, gender and bag keep versions apart."""
+    def agency(name, channel):
+        rec = record(channel, channel * 11, name, photos=(str(channel),), values=[[str(channel)]], category="50002783")
+        rec["specs"] = {"specs": [{"label": "원산지", "value": "미국(구매대행)"}]}
+        return D.entry(rec)
+    a = agency("GoSports 불법 맥스 스핀 골프 웨지 세트 - 남성용 오른손잡이 모래, 롭, 갭 웨지", 1)
+    b = agency("eAj GoSports 고스포츠 불법 맥스 스핀 골프 웨지 세트 - 남성 오른손 샌드 롭 갭", 2)
+    assert D.possible(a, b) and D.confirm(a, b)
+    for x, y in (("올리마르 ATS 주니어 남자 라임 블루 시리즈 개인 골프 클럽(3~5세) Right Hand Putter",
+                  "올리마르 ATS 주니어 남자 라임 블루 시리즈 개인 골프 클럽(3~5세) Right Hand Hybrid"),
+                 ("올리마르 ATS 주니어 남자 라임 블루 시리즈 개인 골프 클럽(3~5세) Right Hand Putter",
+                  "올리마르 ATS 주니어 남자 라임 블루 시리즈 개인 골프 클럽(5~8세) Right Hand Putter"),
+                 ("GoSports 불법 맥스 스핀 골프 웨지 세트 - 남성용 오른손잡이 모래, 롭, 갭 웨지",
+                  "GoSports 불법 맥스 스핀 골프 웨지 세트 - 남성용 왼손잡이 모래, 롭, 갭 웨지"),
+                 ("캘러웨이 워버드 남성용 골프채 풀세트 10개 캐디백 포함 일본 직구",
+                  "캘러웨이 워버드 남성용 골프채 풀세트 10개 일본 직구 입문")):
+        assert not D.alike(agency(x, 1), agency(y, 2)), (x, y)
+    korean = record(2, 22, "eAj GoSports 고스포츠 불법 맥스 스핀 골프 웨지 세트 - 남성 오른손 샌드 롭 갭",
+                    photos=("z",), values=[["z"]], category="50002783")
+    assert not D.alike(a, D.entry(korean))                           # a Korean seller's title: never by words
+
+
+def test_report_marks_the_members_joined_by_title_words_only_and_a_tie_keeps_more_variants():
+    """2026-11-15, the store's old groups: BG-100 Black Edition joined the white sets by title words alone (no photo,
+    no variant shared); the report marks such members to be looked at on their photos. A tie of grade and reviews
+    keeps the copy with more variants (TaylorMade QI4D: 15 or 84 variants of one dealer's set)."""
+    def agency(channel, name, photos, values):
+        rec = record(channel, channel * 11, name, photos=photos, values=values, category="50002788")
+        rec["specs"] = {"specs": [{"label": "원산지", "value": "일본(구매대행)"}]}
+        return D.entry(rec, "published")
+    white = agency(1, "브리지스톤 BG-100 남성용 골프채 풀세트 11개 캐디백", ("w",), [["S"], ["R"]])
+    copy = agency(2, "브리지스톤 BG-100 남성용 골프채 풀세트 11개 캐디백", ("w",), [["S"], ["R"]])
+    black = agency(3, "브리지스톤 남성용 BG-100 골프채 풀세트 11개 캐디백", ("k",), [["블랙S"], ["블랙R"]])
+    [group] = D.groups([white, copy, black])
+    assert len(group) == 3 and D.title_only(group) == [black["key"]]
+    few = E(4, 44, "테일러메이드 QI4D 남성용 풀세트 (D+W+I) GF", values=[["a"]], photos=("q",))
+    many = E(5, 55, "테일러메이드 QI4D 남성용 풀세트 (D+W+I) GF", values=[["a"], ["b"]], photos=("q",))
+    assert [e["key"] for e in D.groups([few, many])[0]] == [many["key"], few["key"]]
+
+
+def test_a_written_out_escape_is_no_number_of_the_title():
+    """2026-11-15: Yamato LH01 13016883852 ("개별 u2013 단조") had the numbers 01 2013 52 56 60 and its copy
+    13370261145 01 52 56 60: alike() never compared them."""
+    a = E(1, 13016883852, "야마토 왼손잡이 골프 웨지 세트 52 56 60 및 개별 u2013 단조 CNC 밀드 LH01-52 56 60 Degree")
+    assert a["numbers"] == "01 52 56 60" and "u2013" not in a["tkey"]
+
+
+def test_every_photo_and_variant_alike_is_one_product_whatever_the_titles():
+    """2026-11-15, the lenses: three published A11N SPORTS wedge sets, one under its model line 핀클리 (13405976594,
+    13552318731, 13207840596): photos 1.0, variants black / bronze 1.0, titles too far apart for alike()."""
+    same = dict(photos=("p1", "p2", "p3"), values=[["Black"], ["Bronze"]], price=205000, category="50002783")
+    a = E(1100067303, 13405976594, "A11N SPORTS의 위조 골프 웨지 세트 Black", **same)
+    b = E(102683547, 13552318731, "A11N SPORTS의 위조 골프 웨지 세트 db4P Bronze", **same)
+    c = E(102783573, 13207840596, "핀클리 위조 골프 웨지 세트 3 u2013 52, 56, 60도, 밀드 페이스로 최대 스핀, 오른손", **same)
+    assert D.strong(a, b) and D.strong(a, c) and D.possible(b, c) and D.confirm(b, c)
+    assert [len(g) for g in D.groups([a, b, c])] == [3]
+
+
+@pytest.mark.parametrize("x, y", [
+    # versions of one photo and one variant list the titles keep apart: club kind, hand, gender, bag, numbers, model
+    ("올리마르 ATS 주니어 라임 블루 시리즈 Right Hand Putter", "올리마르 ATS 주니어 라임 블루 시리즈 Right Hand Hybrid"),
+    ("BombTech 골프 웨지 세트 52 56 60도 왼손잡이", "BombTech 골프 웨지 세트 52 56 60도 오른손잡이"),
+    ("PGM 주니어 골프 클럽 완비 세트 Aged 3-5", "PGM 주니어 골프 클럽 완비 세트 Aged 9-12"),
+    ("PGM 여성 골프채 풀세트 9종", "PGM 여성 골프채 풀세트 12종"),
+    ("브리지스톤 BG-100 풀세트 캐디백 포함", "브리지스톤 BG-100 풀세트 캐디백 미포함"),
+    ("[던롭코리아정품] 스릭슨 27ZXI-RKT 남성 풀세트 GF", "[던롭코리아정품] 스릭슨 27ZXI-RKT MAX 남성 풀세트 GF"),
+    ("핑 G440 남성 풀세트", "핑 G440 여성 풀세트"),
+])
+def test_one_photo_and_variant_list_with_another_version_in_the_title_is_not_strong(x, y):
+    same = dict(photos=("p",), values=[["a"], ["b"]], price=300000, category="50002787")
+    assert not D.strong(E(1, 1, x, **same), E(2, 2, y, **same)), (x, y)
+
+
+def test_strong_needs_the_category_most_photos_and_the_variants():
+    a = E(1, 1, "주니어 골프채 6-8세", photos=("p", "q"), values=[["6-8세 퍼터"], ["6-8세 아이언"]])
+    assert D.strong(a, E(2, 2, "어린이 골프 클럽 초등 6-8세", photos=("p", "q"), values=[["6-8세 퍼터"], ["6-8세 아이언"]]))
+    assert D.strong(a, E(2, 2, "어린이 골프 클럽 초등", photos=("p", "q"), values=[["6-8세 퍼터"], ["6-8세 아이언"]]))
+    assert not D.strong(a, E(2, 2, "어린이 골프 클럽", photos=("p", "z", "y"), values=[["6-8세 퍼터"], ["6-8세 아이언"]]))
+    assert not D.strong(a, E(2, 2, "어린이 골프 클럽", photos=("p", "q"), values=[["9-12세 퍼터"], ["9-12세 아이언"]]))
+    assert not D.strong(a, E(2, 2, "어린이 골프 클럽", photos=("p", "q"), values=[["6-8세 퍼터"], ["6-8세 아이언"]],
+                             category="50002788"))

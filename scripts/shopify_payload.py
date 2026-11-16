@@ -153,6 +153,10 @@ def title_vendor(product: dict[str, Any], en: "English", vendors: dict[str, str]
     brand out (a maker's name; not the tenant's own name for 노브랜드)."""
     title = clean_title(en("title", product["title_ko"]))
     brand = vendor_name(en("brand", product.get("brand_ko")).strip(), vendors)
+    if tenant and brand and brand != tenant and title.lower().startswith(tenant.lower() + " "):
+        # a title translated while the product had no brand starts with the shop's name (2026-11-15: 24 products
+        # got their brand from the description later: "PGM Fairward Golf Men's ..."): the brand takes its place
+        title = title[len(tenant) + 1:].lstrip()
     first = title.split(" ", 1)
     if brand and brand_key(brand) not in brand_key(title) and len(brand_key(brand)) >= 3 \
             and sorted(brand_key(first[0])) == sorted(brand_key(brand)):

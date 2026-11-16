@@ -162,12 +162,15 @@ def paid_choices(shop: str, shops_root: str = SHOPS_ROOT, jobs_root: str = JOBS_
 
 
 def _known_brands(shops_root: str) -> list[str]:
-    """The Korean names of the brand dictionary (brand_fallback step 3b); none for another shops root (a test's)."""
+    """The Korean names of the brand dictionary and its Latin spellings (brand_fallback steps 3b, 3c); none for another
+    shops root (a test's)."""
     if os.path.abspath(shops_root) != os.path.abspath(SHOPS_ROOT):
         return []
     try:
         from translation_dicts import Dictionaries
-        return sorted(k for k in Dictionaries().entries["brand"] if re.search(r"[가-힣]", k))
+        entries = Dictionaries().entries["brand"]
+        return sorted({k for k in entries if re.search(r"[가-힣]", k)}
+                      | {v for v in entries.values() if re.fullmatch(r"[A-Za-z][A-Za-z0-9 .&'-]{2,}", v or "")})
     except Exception:                                                   # a test's shops root: no dictionary
         return []
 

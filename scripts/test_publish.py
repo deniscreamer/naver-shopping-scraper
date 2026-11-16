@@ -688,6 +688,27 @@ def test_a_withdrawn_product_is_drafted_and_never_sent_again(tmp_path):
     assert shop.withdrawn() == {"k1"} and "k1" not in shop.ledger()
 
 
+def test_a_withdrawn_product_is_restored_active_and_sent_again(tmp_path):
+    """2026-11-15, the owner: no-brand agency imports withdrawn before go back under the shop's name."""
+    shop = PB.Shop("fairwardgolf", str(tmp_path))
+    PB._append(shop.ledger_path, {"format": PB.FORMAT, "key": "k1", "status": "published", "product_id": "gid://1",
+                                  "handle": "h", "admin_url": "a", "digest": "d1", "photos": [{"sha256": "s"}]})
+
+    class Admin:
+        calls: list = []
+
+        def set_status(self, pid, status):
+            self.calls.append((pid, status))
+            return status
+    admin = Admin()
+    PB.withdraw(shop, "k1", admin, "no brand")
+    row = PB.restore(shop, "k1", admin, "no brand: under the shop's name")
+    assert admin.calls[-1] == ("gid://1", "ACTIVE") and row["status"] == "published" and row["digest"] == ""
+    assert shop.withdrawn() == set() and shop.ledger()["k1"]["photos"] == [{"sha256": "s"}]
+    with pytest.raises(SystemExit):
+        PB.restore(shop, "k1", admin, "twice")
+
+
 def test_vendor_spellings_join_one_brand_whatever_its_dots(monkeypatch):
     """12552413383 / 12813088660 (2026-11-12): the store had U.S.KIDSGOLF and U.S. Kids Golf as two vendors."""
     store = {"u.s. kids golf": "U.S. Kids Golf", "u.s.kidsgolf": "U.S.KIDSGOLF"}       # the store's order
