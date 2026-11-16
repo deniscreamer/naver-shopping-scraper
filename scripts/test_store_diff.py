@@ -63,3 +63,12 @@ def test_photos_are_compared_in_order_by_their_hashes():
     assert compare(payload, live, None, ["a", "b"], ["a", "b"]) == []
     assert compare(payload, live, None, ["a", "b"], ["b", "b"]) == ["photos: 2 -> 2 (order or content)"]
     assert compare(payload, live, None, ["a"], ["a", "a"]) == ["photos: 2 -> 1"]
+
+
+def test_a_drafts_payload_without_status_never_compares_it_and_a_draft_create_does():
+    """Draft first, 2026-11-16: an update of a draft sends no status (the store keeps its own, an activation in the
+    admin included); a create of a category not marked reviewed sends DRAFT."""
+    draft = {k: v for k, v in PAYLOAD.items() if k != "status"}
+    assert compare(draft, live(status="DRAFT"), FEED, ["s1"], ["s1"]) == []
+    assert compare(draft, live(status="ACTIVE"), FEED, ["s1"], ["s1"]) == []
+    assert compare({**PAYLOAD, "status": "DRAFT"}, live(), FEED, ["s1"], ["s1"]) == ["status: 'ACTIVE' -> 'DRAFT'"]

@@ -13,6 +13,8 @@ price, option values, its metafields), the product's metafields (the reviews' fe
 photos (the store's media by the hash in their file names, in order). Out: one line per product that would
 change, with the fields, and shops/<shop>/publish/store_diff.json. A published product that cannot be built now (no longer ready, translated
 or placed: an untranslated paid variant, a placement lost) is listed apart: publish.py would leave it as it is.
+A draft (draft first, 2026-11-16: the ledger's store_status DRAFT) is sent with no status, so its status is not
+compared; one the store has ACTIVE (activated in the admin by hand) is listed apart with the command that records it.
 
 --adopt: a product whose store data equals what would be sent gets a ledger row with today's `output` (the hash of
 what productSet sends, publish.output_digest), copied from its last row otherwise, so publish.py skips it although
@@ -62,6 +64,8 @@ def compare(payload: dict[str, Any], live: dict[str, Any], feed_sha: str | None,
     """The fields of `live` that `payload` would change (empty: the store has what would be sent)."""
     out: list[str] = []
     for f in ("title", "vendor", "productType", "status"):
+        if f == "status" and "status" not in payload:    # a draft's update sends none: the store keeps its own
+            continue
         if (live.get(f) or "") != (payload.get(f) or ""):
             out.append(f"{f}: {live.get(f)!r} -> {payload.get(f)!r}")
     if (live.get("descriptionHtml") or "") != (payload.get("descriptionHtml") or ""):
@@ -133,7 +137,8 @@ def _diff(args: argparse.Namespace) -> int:
     admin = ProductsAdmin(store)                         # read only here: the store's vendor spellings
     admin.check_shop()
     ids = {"vendors": P.vendor_spellings(admin.vendor_spellings()), "tenant": store.publisher}
-    report: dict[str, Any] = {"shop": args.shop, "changes": {}, "same": [], "not_buildable": {}, "adopted": []}
+    report: dict[str, Any] = {"shop": args.shop, "changes": {}, "same": [], "not_buildable": {}, "adopted": [],
+                              "live_drafts": []}
     built: dict[str, dict[str, Any]] = {}
     for key in keys:
         if key not in ready:
@@ -164,6 +169,8 @@ def _diff(args: argparse.Namespace) -> int:
             # 6 of its 7 photos; the store had lost the first and showed the putter twice)
             photos = [P._sha16(m) or "?" for m in (live.get("media") or {}).get("nodes") or []]
             diff = compare(payload, live, row["feed_sha"], [s[:16] for s in row["images"]], photos)
+            if ledger[key].get("store_status") == "DRAFT" and live.get("status") == "ACTIVE":
+                report["live_drafts"].append(key)
             if diff:
                 report["changes"][key] = diff
                 continue
@@ -178,6 +185,9 @@ def _diff(args: argparse.Namespace) -> int:
         print(f"{key}: would change: {'; '.join(diff)}")
     for key, why in report["not_buildable"].items():
         print(f"{key}: would not be sent: {why}")
+    for key in report["live_drafts"]:
+        print(f"{key}: ACTIVE in the store, a draft in the ledger (activated by hand): "
+              f"publish.py {args.shop} --activate {key} records it")
     print(f"store_diff {args.shop}: {len(keys)} published; {len(report['changes'])} would change, "
           f"{len(report['same'])} as in the store, {len(report['not_buildable'])} not buildable"
           + (f"; output recorded for {len(report['adopted'])}" if args.adopt else "") + f" -> {out}")

@@ -20,8 +20,9 @@ The rule:
   3. who is better (better(a, b), strict): the store's grade (GRADES), then the product's review count. Price never
      decides (only the x2 guard).
 
-Index: built at a job's start from the publication ledger (published products, and withdrawn ones except those
-withdrawn as replaced_by:<key>: their replacement is the live copy) plus the job's own collected products, each with
+Index: built at a job's start from the publication ledger (published products, drafts awaiting review included
+(draft first, 2026-11-16), and withdrawn ones except those withdrawn as replaced_by:<key>: their replacement is the
+live copy) plus the job's own collected products, each with
 its latest collected record; add() takes in a product the job collected, so a later seller of it in the same job is
 compared with it. decide() gives the decision for a candidate:
   duplicate_of_withdrawn  a confirmed match was withdrawn by the owner: never taken
