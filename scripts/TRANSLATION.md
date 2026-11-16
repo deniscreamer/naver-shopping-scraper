@@ -114,3 +114,121 @@ label.
   they are published again; until a full `translate.py` run their record is `pending`.
 - **Publication** (`publish.py`, 2026-11-08) reads `translation/translated.jsonl`; a text without English holds
   the product.
+
+## Translation (`translate.py`)
+
+Decisions, a new shop or category, the quality check (`translate_eval.py`), limits: [TRANSLATION.md](TRANSLATION.md).
+
+The owner (2026-11-08): the prepared products' `texts` go to English through Claude Sonnet 5.5 (effort low, JSON
+output) before placement and publication. Not translated: `description_ko` and the images' text (a later stage
+writes the description from them; their `to_translate` flag is not this stage's).
+
+```sh
+.venv/bin/python scripts/translate.py fairwardgolf --offline   # no model: what the dictionaries and rules leave
+.venv/bin/python scripts/translate.py fairwardgolf --limit 3   # the model for 3 products
+.venv/bin/python scripts/translation_dicts.py status [--json]  # sync helper: dates, what the backup lacks, advice
+.venv/bin/python scripts/translation_dicts.py backup           # by hand: live -> scripts/dictionaries/, then commit
+```
+
+Per text, the first that answers:
+
+1. **The product's own store:** title, review, a placeholder option name (선택 / 옵션, named from its values), in
+   `translation/texts.jsonl`.
+2. **The dictionary of its kind:** brand, option name / value, spec and fact label / value, add-on group / name,
+   text-field label / placeholder. One file per kind: the brand's for the whole shop, every other kind's per Naver
+   category (`<category id>/<kind>.json`, 2026-11-11: a new category starts empty). The live copies in `scripts/output/dictionaries/` grow during
+   runs and are out of git. Their backups in `scripts/dictionaries/` are in git and seed a missing live copy; they
+   are updated by hand with `backup`, after `status`, since runs never commit; a backup stamps each file
+   `backed_up`. The sync only adds: a run takes the entries only the backup has (pulled from git, seeded by hand),
+   a backup writes the live entries over the backup's and keeps its others. A wrong entry is fixed in the live
+   copy; deleting one for good means both copies. `status` shows when the live copies were last written and the
+   last backup, the new and changed entries, the ones only in git, and the advice (`action` none / wait / backup /
+   review in `--json`). A backup is due at 20 waiting entries, or 7 days after the last one with any waiting
+   (`BACKUP_AT_CHANGES`, `BACKUP_AFTER_DAYS`); changed entries are read first, since the backup writes the live
+   English over git's. When it is due, a `translate.py` run's report (not `--only`) and `job.py run` (done) /
+   `job.py status` print one reminder line. The brand dictionary comes first: the
+   model gets the shop's vendor spellings and reuses one for the same brand.
+3. **The rules** (`translation_rules.py`):
+   - 10.5도 -> 10.5°, 33인치 -> 33 in, 22호 -> Size 22, 3번 -> #3, 7개 -> 7 / 7 pcs, 12종 -> 12 pcs, 2026년형 -> 2026 model;
+   - 노브랜드 alone becomes the tenant's name (`Store.publisher`), and inside a text it is removed;
+   - a brand of 기타 ("other") alone becomes the tenant's name as well (2026-11-11);
+   - a text with no Hangul left is done; the rest goes to the model already converted.
+4. **The model:** one request per product, with the system prompt in `prompts/translate_system.md`. Each item is
+   checked:
+   - every id is returned once;
+   - no Hangul is left;
+   - the source's numbers and Latin codes are kept;
+   - the text is within its length limit;
+   - the option values stay distinct.
+
+   What fails goes back in the same conversation (`prompts/translate_fix.md`), at most twice. What still fails
+   leaves the product `untranslated`; what passed is kept.
+
+   **Fallback:** OpenAI (the owner, 2026-11-08), through Chat Completions with a strict JSON schema, the same
+   prompts and reasoning effort low. Its model is `OPENAI_MODEL` in `translate.py`; `OPENAI_TRANSLATE_MODEL` in
+   `.env` overrides it.
+   - **When Anthropic is down** (network, 5xx or overload, a rate limit after the SDK's retries, another API error):
+     that batch starts again on OpenAI, and Anthropic rests 10 minutes. A declined or cut batch also goes to OpenAI,
+     without the rest.
+   - **A refused key** stops the run.
+   - **Every provider down:** the product stays `pending` for the next run.
+   - The report says which model answered each product.
+
+**Batches.** A product is never sent whole when it is long. Its short texts go in batches of at most 40 items /
+2 500 characters, its reviews apart in batches of at most 8 / 2 500 (`make_batches`). Each batch is its own
+conversation with its own fix rounds and provider fallback. At the end every pending text must have an answer, or
+the product is `untranslated` (a batch no provider could take: `pending`).
+
+**Checked 2026-11-08** on 12 varied trial products with a second model (Opus 5.5) as the judge: 25 of 260 texts
+flagged, then 17, then 10 (3.8%) after three rounds of fixes.
+- **The fixes:**
+  - the golf terms and model lines in the category brief;
+  - a glued spec run split after each flex letter (`CATEGORY_RULES`);
+  - review fidelity in the system prompt: no "for the price", the subject kept, no upgrade of strength;
+  - a title's words that only some variants have (the note `title_names_one_variant`) passed as context;
+  - text addressed to a model cut from reviews.
+- **Live checks also run:** rerun (0 calls), resume of an untranslated item, every provider down (`pending`, then
+  resumed), a 24-value option and a 1 700-character review.
+- **The report:** `translate_eval.py` writes `report.html` (see TRANSLATION.md).
+
+**Tokens** (the owner, 2026-11-08: no overspend):
+- **The request:**
+  - compact JSON;
+  - the batch's short ids (`1`, `2` ...) instead of the text ids, both ways;
+  - the category's terms only in the system prompt, which is cached and read at a tenth of the input price;
+  - the shop's vendor list only when a brand is asked.
+- **No thinking:** `thinking: between_tools`, with effort low. On simple words it gave the same English at fewer
+  output tokens and 20% less time. `ANTHROPIC_TRANSLATE_THINKING=adaptive` turns it back on.
+- **Where the cost goes:** the output, that is the English itself.
+- **Measured 2026-11-08** on 4 varied trial products (129 texts, empty dictionaries): 11 batches, 12 calls (one fix
+  round), all translated, about $0.015 and 8 s a product, $0.0005 a text. With the dictionaries the shop's repeated
+  texts cost nothing.
+
+**The system prompt is assembled** (`system_prompt`):
+- the translator's role and rules (`prompts/translate_system.md`);
+- the shop's brief (`prompts/tenants/<shop>.md`: who sells to whom, spelling, tone);
+- the category's brief (`prompts/categories/<Naver category id>.md`: what the products are, their terms, how buyers
+  write about them).
+
+**A new shop or category** (the whole checklist, every stage: [ONBOARDING.md](ONBOARDING.md)) needs a short brief file only here, no code. Write the file following the 50002788 one; the
+category's review aspects go in `review_clean.ASPECTS` / `CONTEXT`. A missing brief is left out, and the base prompt
+works alone, less precisely.
+
+Out: `translation/translated.jsonl` (per product: status, English by text id, where each came from) and
+`report.txt` (counts, tokens and cost, new dictionary entries).
+
+The keys: `scripts/translate_keys.py install <file>` moves the operator's key file out of the repo, makes it 600,
+and sets `TRANSLATE_KEY_FILE` in `.env` ([SETUP.md](../SETUP.md)). The models, their efforts and the chain's order
+are `.env` settings, not code (`TRANSLATE_PROVIDERS`, `ANTHROPIC_TRANSLATE_MODEL` / `_EFFORT`,
+`OPENAI_TRANSLATE_MODEL` / `_EFFORT`; `translate.settings()`). The server-side refusal fallback is sent only to the
+Claude models that take it.
+
+On the 143 trial sets (2026-11-08):
+- without the model, the dictionaries and rules gave 3 606 of 4 877 texts;
+- the model is left 1 271: titles 143, reviews 442, option values 292, spec values 505 (with repeats across
+  products, each asked once per product);
+- the reviews are sanitized but all kept, so 411 review texts are left (the cut text is gone from them).
+
+A job made since 2026-11-08 runs this stage per product, right after prepare (`job.py`, translated; `new --no-translate`
+leaves it out). See [JOB_AGENT.md](JOB_AGENT.md).
+

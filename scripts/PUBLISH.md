@@ -1,0 +1,187 @@
+# Publication to Shopify
+
+How prepared, translated and placed products reach the Shopify store (`publish.py`) and the Shopify roadmap; split from scripts/README.md on 2026-11-16 (history: `git log --follow scripts/README.md`).
+
+## Publication (`publish.py`, MVP, the owner 2026-11-08)
+
+```sh
+.venv/bin/python scripts/publish.py fairwardgolf [--only <key>] [--force] [--dry-run] [--shops-root DIR]
+```
+
+A product goes to the store when it is `ready` (transform), `translated` and `placed`; a job made with
+`job.py new --publish` does it for each product right after translation (placement of the whole shop, offline,
+then this one product; with `--describe` its description is written in between, see the next section). Per product: the reviews' photos and avatars to Shopify Files (the files app, once per
+file, named by its hash, `publish/files.jsonl`), the review rows as a JSON feed file there, the gallery photos as
+staged uploads attached in `productSet` (create, or update the product with its source key), ACTIVE, published
+to every sales channel of the store (the owner, 2026-11-09). Draft first (2026-11-16): a create in a Naver category
+not marked reviewed (`transform_shops.reviewed`) is DRAFT, still published to the channels, so it shows once
+activated; the ledger row stays `published` with `store_status: DRAFT` (only when not ACTIVE), so dedupe, the lenses,
+store_diff and the job's stages see it as published; an update of a draft sends no `status` (one activated in the
+admin stays live); the status is outside `output` and the digest, so nothing is sent again for it; one line in `shops/<shop>/publish/published.jsonl` (product id, handle,
+photos by hash, admin link, `pricing`: the rule's version, `prices_usd`: the lowest and the highest variant price; rows
+from before 2026-11-11 have neither). Unchanged inputs: skipped; on an update photos already there are kept by hash, and a
+managed metafield the product no longer has is deleted (`shopify_payload.MANAGED`; productSet never removes one).
+`--dry-run` writes the payload to `publish/payloads/` and sends nothing. `shopify_payload.VERSION` is in the
+digest: a change of what the builder makes sends every product again. So is the shop's price rule
+(`shop_pricing.Policy.describe()`: every number and the tariff's version): a new rule or tariff sends every
+product again too, so `reprice.py` shows the change first (see The price).
+
+The owner's rules (`shopify_payload.py`):
+- **Title, vendor**: the translation's (the title prompt makes the store name: brand first, no shop, distributor or
+  after-sales words, no loft / flex / shaft codes, no club list, no usage or gift words). The vendor loses a
+  maker's company form and a second brand ("Prokenex / SJG Co., Ltd." -> "Prokenex", "Mizuno, Hillcreek" ->
+  "Mizuno") and takes the brand dictionary's spelling, compared without case (the owner, 2026-11-09: PING stays
+  PING, Yonex stays Yonex, whatever the case it came in; the dictionary keeps one spelling per brand), else the
+  shop's (not the capitals one when the shop has both; a run remembers each new vendor for its next products); the
+  title spells the brand as the vendor; a title without its brand gets it in front (not the tenant's name). Handle from the title (ASCII, the brand in front; a taken handle
+  gets `-2`, `-3`; an update keeps the shop's handle, `--rehandle` sets the new one with a redirect).
+- **Price**: per variant from `shop_pricing.Policy.quote` (see The price, below). In a shop with the delivery
+  rule (fairwardgolf, the owner 2026-11-11) the price holds the purchase, the duty, the delivery and the margin,
+  and Shopify's cost per item is the purchase with ShopNShip's commission (the duty is not in it); elsewhere cost = price =
+  the Naver KRW at 1 000 KRW = 1 USD rounded UP to a whole dollar. A variant that cannot be priced (no box, a box
+  over the tariff's 50 kg) holds the product (`PayloadError`). No compare-at price. Add-ons: the KRW at the same
+  rate only, no delivery, duty or margin.
+- **Buyable**: every variant is untracked and sold without limit (CONTINUE), one sold out on Naver too (the owner,
+  2026-11-09: buying opens on the site later); the variant's `fairwardgolf.source.available` keeps Naver's state.
+  Weight: the package's central weight in grams.
+- **"1+1" options**: an option with the same English name and values as an earlier one, which no price depends on,
+  is dropped (one variant per choice of the others, the one whose repeat equals the option); a repeat that changes
+  the price stays an option of its own ("Flex", "Flex 2").
+- **Options**: the translation's, without a leading "Select" and with " / " made "/" (Shopify refuses it in a name),
+  values without a seller's numbering ("01.", "SPEC"); two values with one English get "(2)". A product with one
+  variant is named by the seller's one remaining choice (a constant option axis the transform keeps as a fact:
+  "Set: 12 Pcs + Caddie Bag"), else `Option: Standard` (`FALLBACK_OPTION`); a gift line is not a choice.
+- **Title clean-up** (`clean_title`): "(Parallel Import)", a word written twice in a row, a model code written
+  twice. SEO title = the title (the site's page `<title>`), cut at a whole word within 70 characters.
+- **Title length** (`fit_title`): at most 150 characters, Google Merchant Center's limit for `title` (a longer one
+  is an item issue there; Shopify itself takes 255). The translation already asks the model again for a title over
+  100 (TRANSLATION.md); this is the last guard, with the brand put in front counted: the facts after a comma go
+  first, from the end, when that keeps 60% of the limit, else whole words from the end; nothing is left dangling (a
+  joining word, a comma, a count without its unit: "Set 13" of "13 Pieces", an open bracket), and a brand that
+  stood only in the part cut off goes in front. Google truncates a longer title itself and warns ("Text too
+  long"); it shows about the first 70 characters, which is why the title's order is brand, model, who, what.
+- **Add-ons**: gift words out of the English labels ("Free", "Gift", "Default Selection"); a required free group
+  of a one-variant product goes to `custom.required_selections` (product-required-selections/v1, the site's field
+  for a choice the buyer must make; "do not add" is no value there). A required choice of a product with several
+  variants stays in `custom.optional_addons`: the site's contract allows `required_selections` on one-variant
+  products only, so showing it as required is the site's change (the owner, 2026-11-09).
+- **Reviews**: a review the cleaning cut mid-sentence and the English ends on "and" is closed ("Lightweight.").
+  Text-field labels take one wording ("(e.g., John Doe)").
+- **Reviews**: a sentence of the English about the price or the value, or naming another platform or a buying
+  agent, goes (`review_clean.cut_english`, the owner 2026-11-09); a review with no text left and no photo is not a
+  row (its score is in the rating); one with photos only gets a short neutral line (`PHOTO_ONLY_TEXTS`, picked by
+  the review's id); a row Naver gave without an id, score or date is left out (one bad row empties the site's
+  whole feed).
+- **Photos**: alt "<brand> <title> - photo N" (the brand once when the title starts with it). A product with fewer
+  than 2 photos of its own gets buyers' photos after them, 5 photos in all at most (the owner 2026-11-09, a fuller
+  gallery for Google Merchant; never from the description images). `review_rank` orders the reviews rated 4-5:
+  the review's usefulness (`text_quality`, Naver's "helpful" votes `likes`, a full text over a short one), several
+  photos first (the owner), lower for a review that told of the purchase (seller, packing, shipping: its photo is
+  often the box); a review with one photo and no product words, or about the purchase only, is passed over.
+  `review_gallery` takes one photo per review a round (the review's first photo the gallery may show), two rounds;
+  never a photo shown already (same hash), one under 400 px, a strip (over 2.2:1) or one mostly grass-green (over
+  15%: a course, a range, a screen-golf room). Measured on the pilot (judging agents on 80 picks): the text tells
+  little of what a photo shows, so `publish/gallery_skip.txt` (sha256 per line, "# why") strikes out a photo a
+  person saw was wrong (boxes, a shop, people); a photo check by a vision model was offered and declined (the owner,
+  2026-11-09).
+- **Not sent**: descriptionHtml for a product without a description (`describe.py`, see its section), HS /
+  origin codes, Naver's delivery data as such (the seller's fee in Korea and the box are inside the price; the
+  box's fields are in `fairwardgolf.package`), facts, gender (placement uses it for the sections), compare-at.
+
+Metafields. Storefront (`custom.*`, the site reads them, the harvester's formats kept): `review` (rating),
+`rating_count`, `reviews_seo` (up to 20 rows: id, customer {name, avatarUrl}, rating, title "", description,
+images, verified false, source, createdAt), `reviews_feed_url` (the JSON feed, every row, `date` instead of
+`createdAt`), `personalization_fields` (product-personalization/v1; a field without an English label is left out,
+`maxLength` only when the seller set one), `optional_addons` (product-optional-addons/v1: complimentary choices
+only, `{key, label, priceKrw: 0}` and nothing more). The site reads these through strict schemas (naver-harvester
+`store-scripts/shared/src/product-*.ts`, `shared/product-configuration/limits.ts`, `shared/reviews/`): an extra key
+or a paid choice hides the whole block (seen on the site 2026-11-08). Ours (`fairwardgolf.*`, not on the storefront, one JSON per
+concern with a `schemaVersion`; a new value is a new field there, a new concern a new key):
+
+| Owner | Key | What |
+|---|---|---|
+| product | `source_offer_id` | The source key (the shop check and the update find the product by it) |
+| product | `source_url` | The Naver page, without its query |
+| product | `source` (json) | platform, key, url, channel / product / category ids, run, Korean title and brand, `priceKrw`, `originalPriceKrw` |
+| product | `pricing` (json) | How the prices were made. A shop without the rule: `fairwardgolf-pricing/1`, version `krw-cost/1`, `krwPerUsd`, rounding, margin null. With it: `fairwardgolf-pricing/2`, version `landed/2` and every number of the rule (`krwPerUsd`, `serviceUsd`, `dutyRate`, `koreaPaid`, `coefficients`, `margin` (`fixedUsd`, `rate`, `minUsd`), `paymentRate`, rounding), the tariff (`id`, `checkedAt`, `version`, `sha256`), the dates of the owner's decisions (`decided`) |
+| product | `addons` (json) | Every add-on, paid ones too: group (`required`), choices with `priceKrw`, `costUsd`, `priceUsd` (the rate only: no delivery, duty or margin), `free`; ready for the day the site sells paid add-ons |
+| variant | `source` (json) | Naver variant id, source id, Korean options, `priceKrw`, `costUsd` (Shopify's cost per item: with the rule the purchase + commission, no duty), `priceUsd`, `available` |
+| variant | `price` (json) | With the rule only: `fairwardgolf-variant-price/1`, how the price was made: `naverKrw`, `koreaDeliveryKrw` and `koreaFeeType`, `purchaseUsd`, `serviceUsd`, `dutyRate` / `dutyUsd`, `costUsd`, `box` (cm, gross, billable, step kg), `rule`, `krwPerUsd`, `level`, `coefficient`, `tariff` (id, checkedAt, version, sha256), `gridUsd`, `insideUsd`, `deliveryUsd`, `fees` (id, usd, because), `feeUsd`, `baseUsd`, `marginUsd`, `keepUsd`, `paymentRate`, `neededUsd`, `priceUsd`, `paymentUsd`, `surplusUsd` |
+| variant | `package` (json) | The five shipping fields as the transform made them (value range, `confidence`, source, reliability) |
+
+The harvester's other keys (`custom.measurements`, `*_confidence_level`, `fairwardgolf.source_variants`,
+`source_pricing`, `catalog_*`, `enrichment_state` ...) are not written; their definitions stay for its 60 products.
+
+Access: `ProductsAdmin` (PRODUCTS_API_*, write_products) and `FilesAdmin` (ADMIN_API_*, write_files), both keys in
+the store's credentials file, tokens minted per run as in the shop check. `ShopCatalog` stays read-only.
+
+Uploads in batches (2026-11-09): a product's new review photos and avatars, and its new gallery photos, go at once:
+names searched 10 a query, one `stagedUploadsCreate` and one `fileCreate` per 50 files, the files sent to the
+staging bucket 6 at a time (each retried on 429 / 5xx), one `nodes()` poll for the whole batch. The GraphQL calls
+stay one at a time: Shopify limits by query cost per app and store (this store: a 2 000-point bucket, 100 points a
+second back; a search of 10 names costs ~5, a mutation ~10), and a THROTTLED answer, a 429 or a 5xx waits what
+Shopify says and repeats (`shopify_catalog._send`). Measured live: 30 photos in 8.3 s (0.28 s a file, 7 GraphQL
+calls) against 4.0 s a file one by one (5 calls a file).
+
+## Shopify roadmap
+
+This is a design note, older than the publication above. The code so far: the read-only check of what a store already has (`shopify_catalog.py`),
+the transform to prepared products (see Transform) and the placement into the shop's sections (`placement.py`, see
+Placement) and the translation (`translate.py`, see Translation: `translation/translated.jsonl`, English by text
+id); publication joins them (`publish.py`, see Publication).
+
+The pipeline: collection (example_99) -> kept runs (`keep_run.py`) -> prepared products (`run_transform.py`:
+prices in USD, options, SKUs, attributes, spec rows, text fields, free add-ons, reviews, photo files) ->
+translations by text id -> placement (`placement.py`: the shop's sections, tags, product type) -> publication. Settled in the transform: the currency rule, the variant cap (over it: the
+first combinations, every pair of values, `variants_capped`), the photos (re-uploaded WebP files, not Naver's CDN).
+Settled since: publication through the Admin GraphQL `productSet` (see Publication); delivery, duty and margin
+inside the price of a shop with free delivery (see The price, the owner 2026-11-11).
+
+Credentials: a store app's client id + secret file per store, its path in env as `shop_stores.py` names it
+(`SHOPIFY_CREDENTIALS_FAIRWARDGOLF`), next to the store's domain, shop id, API version and namespace there; tokens are
+minted per run (`shopify_catalog.Credentials`). Publishing needs write scopes: reuse `Credentials`, keep the read
+check as it is. They are never committed. When publishing,
+write the same source key (`<namespace>.source_offer_id` = `<namespace>:naver:<channel_no>:<product_id>`) and check
+for it once more right before (a product published after the 5-minute snapshot).
+
+When publication starts, add it as a flat module (`publish_shopify.py`) reading the prepared products, the
+translations and `placement/placements.jsonl` (only `placed` products: their tags, product type, and the start
+variant per collection as a metafield), reusing `shopify_catalog.Credentials` and the source-key check.
+
+### What the naver-harvester published (reference for publication)
+
+Read from 60 of its products in the shop (391 variants, all metafields; 2026-11-05). Repeat what works, not its
+mistakes. A local snapshot of those 60 (not in git): `scripts/output/harvester-shopify-products-2026-11-05.json`.
+- Body: `descriptionHtml` empty on 60 of 60; the text is in `custom.description_html`: optional prose `<p>` blocks,
+  then one `<p>` of `<strong>Label:</strong> value<br>` rows (at most 60000 characters; 37 of 60 had spec rows
+  only). Hidden labels: product number and date of manufacture (the label NFKC-lowercased, `\s:._-` stripped:
+  productnumber, productno, 상품번호, manufacturedate, manufacturingdate, dateofmanufacture, 제조일자, 제조년월, 제조연월).
+- Reviews: `custom.review` `{"scale_min":"1.0","scale_max":"5.0","value":"4.9"}` and `custom.rating_count` from
+  Naver's summary, only with a count above 0; `custom.reviews_seo` holds the rows, and the same rows go to a Shopify
+  File linked from `custom.reviews_feed_url`. A row: `id = int(sha256("naver:" + reviewId)[:12], 16) + 1`,
+  `customer.name` the masked id, `title ""`, `verified false`, `source {platform: naver, language: ko, translated:
+  true, reviewId}`, `createdAt`, images as Shopify Files links.
+- Text fields: `custom.personalization_fields` (product-personalization/v1: key, label, required, placeholder, hint,
+  maxLength; the seller's maxLength less the operator's suffix). Add-ons: `custom.optional_addons`
+  (product-optional-addons/v1: groups `{key addon_<24hex>, label, choices [{key choice_<24hex>, label, priceKrw}]}`).
+  `custom.required_selections` (a fold), `custom.category_start_variants`.
+- Private `fairwardgolf.*` metafields (no storefront access): `source_offer_id`, `source_url` (no query or
+  fragment), `naver_offer_key` (legacy), `catalog_fingerprint`, `catalog_stage` `showcase-cost-priced/v1`,
+  `source_variants` v2 `{offerKey, translationHash, variants [{sourceId, variantId, optionValues, sku}]}`,
+  `source_pricing` `{source {url, observedAt, basePriceKrw, originalPriceKrw}, policy, excluded, variants}`.
+- Tags: leaf, parent and showcase tags plus `fairwardgolf:naver` (dropped once the public handle is set). Products are
+  created DRAFT, then activated; `inventoryQuantity` 0 on all 391 variants.
+- Handle: strip ™®© and apostrophes, NFKD without combining marks, refuse any non-ASCII left, lower case, join
+  `[^a-z0-9]+` with "-"; refuse an empty one, over 255 characters, the word "naver" or a source id; the brand in front
+  unless the name starts with it; a collision holds the product until a person writes a seoName.
+- Brand: a Latin brand is its own English name, else a 23-entry dictionary (`mappings/brands.en.json`), then a
+  reviewed spelling; distributors dropped (테일러메이드코리아 -> TaylorMade, 던롭코리아 -> XXIO).
+- Images: `<handle>-NNN-<hash16>.webp`, alt = the title (at most 125 characters).
+- Its mistakes: vendor drift (HONMA / Honma / Mutsumi Honma, PING / PING Golf) and doubled-brand handles, "korea" in
+  6 handles, 45 distinct option names (one of 35 characters, "Color: L"), spec-label drift ("Total club count" /
+  "Total number of clubs"), Event rows on 11 of 60 and pointer rows on 7 of 60, 62 of 250 alts duplicated or stale,
+  2 products with no review rows though the counts said 3 and 21.
+- Translation plan: `translations.jsonl` append-only `{id, kind, ko, en, by, at}`, the last line per id wins, the
+  English checks (no Hangul, option values of 32 characters at most) there; publication maps every `*_ko` through
+  `text_id` and skips a product with a missing id as `untranslated:<ids>`, results in `shops/<shop>/published.jsonl`.
+
