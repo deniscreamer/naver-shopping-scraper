@@ -350,7 +350,8 @@ link. The report says how many were dropped. The step is pure: same products in,
   무쯔미혼마, 7186088743, 2026-11-15; a Korean branch's name never). No firm, dropped from a 브랜드 row and never a
   shop brand: the sport (골프, 골프용품, GOLF, 스포츠: one junior row's "골프" made "Golf" the vendor of 55 products,
   2026-11-14), who it is for (남성용, 여성용, 남녀공용: 32 titles got "Yoshino" through a dictionary guess), a lone letter
-  (ㅊ) and an authenticity claim (정품), and Amazon's "Generic" / 제네릭 (two Bermuda wedge sets, 2026-11-15). A Korean
+  (ㅊ) and an authenticity claim (정품), Amazon's "Generic" / 제네릭 (two Bermuda wedge sets, 2026-11-15), and Naver's 기타 BRAND ("Other BRAND" on 3 agency
+  wedge sets) and 상표 / 브랜드 (the word "brand": "Brand" on 5 live sets, 2026-11-17). A Korean
   shop brand counts in the title only where a word starts, as in the images (이디스 was read in 레이디스, 2026-11-15), and
   a Latin brand read once in the images, inside an all-Latin phrase of 3+ words, is a slogan ("PRECISE AIMING
   FEEDBACK" on a XINGGM set, 2026-11-15).

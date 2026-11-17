@@ -1,13 +1,30 @@
 {
  "format": "dictionary/1",
  "kind": "fact_value",
- "backed_up": "2026-11-16T03:13:45Z",
+ "backed_up": "2026-11-17T05:17:27Z",
  "entries": {
+  "2개 세트(50도 56도)": "2-Piece Set (50°/56°)",
+  "2개세트(50.56도)": "2-Piece Set (50°/56°)",
+  "3종세트": "3-Piece Set",
+  "48도 52도 56도 3개 세트": "48°/52°/56° 3-Piece Set",
+  "50도+56도 2개세트": "50°/56° 2-Piece Set",
   "50도+56도 세트": "50° + 56° Set",
   "50도+56도 웨지세트": "50° + 56° Wedge Set",
+  "52/56/60도 세트": "52°/56°/60° Set",
+  "588 투어 액션 웨지 세트": "588 Tour Action Wedge Set",
+  "5개 세트(#7 #8 #9 PW AW)": "5-Piece Set (#7 #8 #9 PW AW)",
+  "Mcc 팀스 플러스4": "MCC Teams Plus4",
+  "NEW RS 포지드 DG120 52도 S200": "New RS Forged DG120 52° S200",
+  "TYPE-C(42°) 치퍼": "Type C (42°) Chipper",
+  "다골미드투어이슈X100": "Dynamic Gold Mid Tour Issue X100",
   "다이나믹 골드 S200": "Dynamic Gold S200",
   "도마뱀웨지+N.S PRO 950": "Lizard Wedge + N.S.PRO 950",
   "미우라 포지드 웨지": "Miura Forged Wedge",
-  "웨지 세트": "Wedge Set"
+  "발도25신형 50 55 59": "Baldo 2025 New Model 50 55 59",
+  "순차발송": "Shipped in Order of Purchase",
+  "실버 - 단조 프로토 웨지 세트": "Silver - Forged Proto Wedge Set",
+  "왼손 52 56 60 세트": "Left-Handed 52/56/60 Set",
+  "웨지 세트": "Wedge Set",
+  "웨지54도S+웨지58도H": "54° S Wedge + 58° H Wedge"
  }
 }

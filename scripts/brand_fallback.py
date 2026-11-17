@@ -83,7 +83,11 @@ _NO_FIRM = re.compile(r"(?i)^(?:별도\s*표기|알\s*수\s*없음|미상|불명
                       r"|generic|제네릭"
                       # a machine-translated spec table's "none" and "others" (2026-11-16: "브랜드 이름 | NONE" and
                       # "브랜드 이름 | 다른 사람들" in agency full sets, 13024224352, 13024206977, once the label was read)
-                      r"|none|n/?a|others?|다른\s*사람들?)$")
+                      r"|none|n/?a|others?|다른\s*사람들?"
+                      # Naver's "other brand" and the word "brand" itself (2026-11-17, the wedge sets' dictionary
+                      # review: "기타 BRAND" in 3 agency rows went out as the vendor "Other BRAND", 12789751830; "상표"
+                      # (trademark) in a 브랜드 / 제조사 row as "Brand" on 5 live sets, 12619693409)
+                      r"|기타(?:\s*(?:brand|브랜드))?|상표|브랜드)$")
 _CODE = re.compile(r"\s*\((?:\d+|자체\s*제작[^()]*)\)\s*$")       # 코알라(200874), 지브이골프코리아(자체제작 상품)
 
 

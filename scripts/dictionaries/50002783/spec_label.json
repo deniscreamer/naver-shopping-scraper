@@ -1,7 +1,7 @@
 {
  "format": "dictionary/1",
  "kind": "spec_label",
- "backed_up": "2026-11-16T03:13:45Z",
+ "backed_up": "2026-11-17T05:17:27Z",
  "entries": {
   "라이각": "Lie Angle",
   "모델명": "Model Name",
@@ -20,6 +20,7 @@
   "출시": "Release",
   "클럽길이": "Club Length",
   "킥포인트": "Kick Point",
+  "품번": "Item Number",
   "헤드형태": "Head Shape"
  }
 }

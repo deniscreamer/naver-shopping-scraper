@@ -246,6 +246,14 @@ def test_generic_is_no_brand():
     assert bf.clean("Generic Golf Co") == "Generic Golf Co"                   # only the whole value
 
 
+def test_other_brand_and_the_word_brand_are_no_brand():
+    """2026-11-17: "기타 BRAND" went out as the vendor "Other BRAND" (12789751830) and "상표" as "Brand" (12619693409)."""
+    import brand_fallback as bf
+    for word in ("기타 BRAND", "기타 brand", "기타브랜드", "기타", "상표", "브랜드"):
+        assert bf.clean(word) is None, word
+    assert bf.clean("상표골프") == "상표골프" and bf.clean("기타스") == "기타스"         # only the whole value
+
+
 def test_a_korean_brand_inside_a_longer_word_is_no_brand_of_the_title():
     """2026-11-15: 이디스 (Edis) was read in "시니어 레이디스" (ladies), a Majek K5 set (13469043292) went out as Edis;
     기가 in "성장기 가슴패드". A Korean brand counts where a word starts, as in the images."""

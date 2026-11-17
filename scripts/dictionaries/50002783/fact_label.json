@@ -1,15 +1,32 @@
 {
  "format": "dictionary/1",
  "kind": "fact_label",
- "backed_up": "2026-11-16T03:13:45Z",
+ "backed_up": "2026-11-17T05:17:27Z",
  "entries": {
+  "P8CB 웨지 구성": "P8CB Wedge Set",
+  "구성": "Set Includes",
+  "그립": "Grip",
   "라제스타임 웨지(공인)": "ZESTAIM Wedge (Conforming)",
+  "로프트": "Loft",
+  "로프트 각": "Loft",
   "로프트각": "Loft",
+  "모델 (로프트 각)": "Model (Loft)",
+  "배송안내": "Shipping Info",
   "상품": "Product",
+  "색상": "Color",
   "샤프트": "Shaft",
+  "샤프트 종류/경도": "Shaft Type/Flex",
+  "세트 내용": "Set Contents",
   "스펙": "Specs",
   "웨지": "Wedge",
   "웨지선택": "Wedge Selection",
+  "출고가능": "Available to Ship",
+  "컬러": "Color",
+  "컬러 / 세트": "Color / Set",
+  "크기": "Size",
+  "클럽 선택": "Club Selection",
+  "품명": "Product Name",
+  "플렉스": "Flex",
   "헤드": "Head"
  }
 }
