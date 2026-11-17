@@ -50,7 +50,7 @@ def measured(given: dict[str, Any]) -> list[dict[str, Any]]:
              "options": {"variants": [{"id": v["id"], "name": " / ".join(v["options_ko"])}  # a kind's words
                                       for v in given["variants"] if v["id"]]}}
     package = {p["variant_id"]: on_scale(p["fields"]) for p in variant_measures(specs, load_table())}
-    ov = {"facts": given["facts"],
+    ov = {"facts": given["facts"], "held": [],         # held products are not fixtures (compose_by_count reads it)
           "variants": [{"options_ko": v["options_ko"], "package": package[v["id"]]} for v in given["variants"]]}
     blank = {"text": "", "conf": 1.0}                   # a cut row keeps its place: the rows' numbers stay the page's
     sidecar = {"images": [{"status": "read", "slices": [{"rows": [

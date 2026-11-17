@@ -99,6 +99,27 @@ def test_slot_rows_keep_another_axis_and_the_first_buyable_order():
     assert transform._slot_rows(["Size", "Style Name"], [0, 1], rows) == (rows, 0, 0, [])     # not slots
 
 
+def test_slot_rows_keep_the_ascending_order_when_buyable_at_the_same_price():
+    """D3 (2026-11-17, the resend review): the merged MG5 rows kept Naver's first buyable order, often not ascending
+    ("Chrome 52° / Chrome 58° / Chrome 48°", 12742304001); a buyer picking the slots in ascending order met
+    "unavailable". The ascending row wins when buyable at the first buyable row's price; else the first buyable."""
+    names = ["옵션 1", "옵션 2"]
+    rows = [{"options": ["Chrome 52°", "Chrome 48°"], "price": 100},
+            {"options": ["Chrome 48°", "Chrome 52°"], "price": 100},
+            {"options": ["56", "50"], "price": 100}, {"options": ["50", "56"], "price": 100, "is_available": False},
+            {"options": ["60", "54"], "price": 100}, {"options": ["54", "60"], "price": 120}]
+    out, _, orders, _ = transform._slot_rows(names, [0, 1], rows)
+    assert orders == 3
+    assert [r["options"] for r in out] == [["Chrome 48°", "Chrome 52°"], ["56", "50"], ["60", "54"]]
+
+
+def test_mg5_slots_ascending_and_as_many():
+    """D3: every kept set of the MG5 picker reads its slots by ascending loft; 35 rows still, each a page row."""
+    p = prep("12742411646")
+    lofts = [[int(transform._LOFT_RE.search(o).group(0)) for o in v["options_ko"]] for v in p["product"]["variants"]]
+    assert len(lofts) == 35 and all(x == sorted(x) for x in lofts)
+
+
 # ---- C56: two axes saying one thing ----------------------------------------------------------------------------
 
 def test_amazon_axes_that_echo_keep_the_rows_where_they_agree():

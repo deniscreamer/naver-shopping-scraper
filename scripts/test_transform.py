@@ -622,12 +622,21 @@ def test_image_measures_an_addon_boston_bag_is_not_the_package():
 def test_image_measures_a_collected_sellers_value_on_todays_scale():
     """6630856593 was collected with the 1-3 scale: its "중량: 약11.5kg / 4.7kg" (bound by club count) carries 2 in
     the line and 4 in the prepared record, with or without the description stage. The package, a default of
-    7000 g below the 11.5 kg, is that weight + the carton: 3, the seller's own figure."""
+    7000 g below the 11.5 kg, is that weight + the carton: 3, the seller's own figure. Without the description
+    stage no product weight stays above the package either (D2, 2026-11-17): the bare "중량" 11.5 kg over the
+    default box is read as the box, the product weight is the default."""
     pid = "6630856593"
     assert {p["fields"]["product_weight_g"]["confidence"] for p in _fixture(pid)["package"]} == {2}
-    for rules in (RULES, RULES_ON):
-        p = prepare(_fixture(pid), rules, "r", 1, _images(pid))
-        assert {v["package"]["product_weight_g"]["confidence"] for v in p["product"]["variants"]} == {4}
+    p = prepare(_fixture(pid), RULES, "r", 1, _images(pid))
+    for v in p["product"]["variants"]:
+        weight, packed = v["package"]["product_weight_g"], v["package"]["package_weight_g"]
+        if weight["source"] == "source_stated":
+            assert (weight["value"]["max"], weight["confidence"], packed["source"]) == (4700, 4, "category_default")
+        else:
+            assert (weight["compared"]["value"], weight["compared"]["rejected"]) == (11500, "above_package")
+            assert (packed["value"]["max"], packed["flags"]) == (11500, ["item_weight_as_packed"])
+    p = prepare(_fixture(pid), RULES_ON, "r", 1, _images(pid))
+    assert {v["package"]["product_weight_g"]["confidence"] for v in p["product"]["variants"]} == {4}
     for v in p["product"]["variants"]:
         weight, packed = v["package"]["product_weight_g"], v["package"]["package_weight_g"]
         assert weight["source"] == "source_stated" and weight["value"]["max"] in (4700, 11500)
@@ -837,3 +846,19 @@ def test_the_four_live_categories_are_reviewed_and_a_new_one_is_not():
     for variant in (without_paid, without_paid_addons):
         assert all(variant(rules_for("fairwardgolf")).category(c).reviewed for c in live)
     assert not reviewed("fairwardgolf", "999") and not reviewed("nosuchshop", "1") and not reviewed("fairwardgolf", None)
+
+
+def test_stated_weights_checked_without_the_description_images():
+    """D2 (2026-11-17) for every product, not only one with a current sidecar: 6630856593's server "중량: 약11.5kg"
+    of the 12-club sets over the 7000 g default box, with no sidecar and with a stale one, never goes out as a
+    product weight above the package."""
+    pid = "6630856593"
+    stale = {**_images(pid), "links_sha256": "0" * 64}
+    for images in (None, stale):
+        p = prepare(_fixture(pid), RULES_ON, "r", 1, images)
+        codes = {n["code"] for n in p["notes"]}
+        assert codes & {"description_images_missing", "description_images_stale"}
+        for v in p["product"]["variants"]:
+            weight, packed = v["package"]["product_weight_g"], v["package"]["package_weight_g"]
+            assert (weight.get("value") or {}).get("max", weight.get("central")) <= \
+                (packed.get("value") or {}).get("max", packed.get("central"))

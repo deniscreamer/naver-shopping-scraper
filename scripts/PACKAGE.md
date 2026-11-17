@@ -30,7 +30,9 @@ Flags and notes that ask for a look:
 | seen | means | do |
 |---|---|---|
 | flag `below_stated_product` | a default package weight under the seller's product weight | nothing; with the row's `baselines` the transform makes it the product weight + the carton |
-| flag `below_contents` | a stated packed weight under the seller's own product weight | the owner decides (two statements of the seller) |
+| flag `below_contents` | a stated packed weight under the seller's own product weight (left only where the product weight is not sent above it: [No product weight above the package](#no-product-weight-above-the-package)) | the owner decides (two statements of the seller) |
+| `compared.rejected: implausible_for_count` | the listing's one weight is another count's (a pair's on a 3-wedge set) | nothing: [A weight against the variant's count](#a-weight-against-the-variants-count) |
+| `compared.rejected: above_package`, flags `item_weight_as_packed`, `capped_to_package` | a product weight above the package's | nothing: [No product weight above the package](#no-product-weight-above-the-package) |
 | flag `container_assumed` | nothing says whether the bag ships: the baseline bag is counted | nothing: the heavy side, on purpose (the owner 2026-11-11) |
 | `compared.rejected`, `refused` | a value outside the band, or over 3x today's (`far_above_today`) | nothing: [Absurd values](#absurd-values) |
 | note `description_images_missing` | the category reads its images, this product has no sidecar | run `description_images.py <shop>`, then `run_transform.py <shop>` |
@@ -443,6 +445,48 @@ lofts than any variant, a held product, a single club's variant. The field: `sou
 `compared` (the default). No price moves (no `baselines` in the row). Measured on a shop copy 2026-11-17: 8 products
 (6 in the store); MG5 13699940318 (men's and women's weights) is skipped.
 
+### A weight against the variant's count
+
+50002783 only (a row with count kinds `lofts` and `compose_by_count`; 2026-11-17, the resend review D1). A weight
+the listing states once (a product-scope row of the server, a statement of the description) is one count's figure:
+Yamato 13164555233's "Package Weight : 1.13 Kilograms" is a pair's, Mile High Life 12178280377's 1610 g a 3-wedge
+set's. For a variant whose count is known, its product and package weight must lie from n x 380 g (the block's
+`item_g.min`: 760 for two, 1140 for three, 1520 for four) to the count's kind's high (two_wedges 1100 / 2200, the
+base row 2800 / 3800, four_plus 2800 / 3600), or up to n + 1 clubs' lowest when that is more (Yamato's 2-packs state
+1.11 and 1.13 kg: the pairs' product band is 760-1140). Outside: `compared.rejected: implausible_for_count`, the
+field the variant's default (`package_measures.count_band`, `off_count` for the server's product-scope weight, also
+with no current description sidecar, `merge_fields(counted=...)` for the description's; then `compose_by_count` may fill the product weight). The count:
+the variant's kind (`two_wedges`, `four_plus`; the variant's own count inside it), or for the base row a variant
+naming three lofts or one count word of 3. Never the title's: agency titles are cut (13383747280 "... 52° 갭
+웨지GW 56° 샌드" is the 3-piece of UPC 792713116504, with 13312228253 / 13468925033: its 1814 g is right) or list a
+menu (13372037781 "52 56 60 72도 세트"). A weight bound to the variant stays. Measured on a shop copy 2026-11-17:
+4 products, 20 product weights and 3 package weights (13164555233's 3-wedge sets: $429 -> $439, $459 -> $469);
+no other price moves.
+
+### No product weight above the package
+
+Every category and every product (2026-11-17, the resend review D2; `description_measures.product_over_package`, in
+the transform after `compose_by_count`; with no current description sidecar, `description_images_missing` /
+`_stale`, or in a category that reads no images, the server's statements alone are checked, the count check of
+[A weight against the variant's count](#a-weight-against-the-variants-count) with them: `transform._stated_weights`).
+A box weighs at least what is in it. The seller's product weight (the server's or the description's) above the
+variant's package weight:
+- A label that says neither product nor box, Amazon's "Item Weight" / "Product Weight" / "품목 무게" or a bare "무게" /
+  "중량" / "Weight" ("무게 : 약 5kg", 13024454637), over a default package, inside the package's band (the row's
+  `plausible` and the count's): read as the package's weight (`flags: ["item_weight_as_packed"]`, confidence 4: its
+  kind is open). A labelled product weight ("제품 무게") is not. These imports' Item Weight is the shipping weight: 69 Golf 13480790720 "Item Weight | 2.84
+  Kilograms", its siblings 13370257430 / 13164548371 state 2.84 / 2.79 kg as "Package Weight"; Detroit 13370268119
+  "Item Weight : 3.2 Pounds" (1451 g) beside "Package Weight : 1.45 Kilograms".
+- The product weight then, or else, the variant's category default (`compared.rejected: above_package`); when the
+  default is above the box too, the box's own weight (`flags: ["capped_to_package"]`, 13388597147: 363 g over 360 g).
+  The package's `below_contents` / `below_stated_product` flags go with it.
+- A default product weight above a stated box is not the seller's and stays (13372006463, the owner's decision).
+Measured on a shop copy 2026-11-17: 8 products, 20 product weights (13370268119, 13372131108, 13389498451,
+13468741368, 13480790720; 13388597147 and 13024454637 in 50002787, 13024231444 in 50002788), 3 package
+weights read (13480790720, 13468741368: under the volumetric weight, no price moves); with the bare label 4
+(13024454637: 5000 g in place of the 4500 g default box, under its 11.5 kg volumetric weight). The check without a
+sidecar moved nothing that day (145 products without one, none with a stated weight above its box).
+
 ## Absurd values
 
 Absurd values are never taken (`compared.rejected`; `refused` on the composition that stood in): a statement
@@ -451,7 +495,8 @@ core's: weight 10 g - 200 kg, a side up to 3 m), any value above the band or mor
 (`far_above_today`: a misread "45.5kg", another product). The band's lower side is for statements only: a
 composition under it is a small set, not a misread (three clubs). A stated packed weight under the product's
 weight is taken all the same; when that product weight is the seller's own (4-5) the field carries `flags:
-["below_contents"]` (a box weighs at least what is in it: two statements of the seller, the operator decides).
+["below_contents"]` (a box weighs at least what is in it: two statements of the seller, the operator decides); since
+2026-11-17 the transform then puts the product weight back ([No product weight above the package](#no-product-weight-above-the-package)).
 
 ## Known limits
 
@@ -563,3 +608,8 @@ $309 -> $209, through "패키지 치수" / "100*12.5*12.5cm"; widening waits for
 whose numbers did not change keeps its collected `table_version`; one that did (a two-wedge variant) is stamped 7
 when prepared again (`current_defaults`). The server's own reading (`measures`: bullets, flex rows, split lines,
 colour-only variants, a package weight under a club heading) reaches a product only when it is collected again.
+
+**The count and the box (2026-11-17, the resend review D1 / D2).** A weight the listing states once is checked
+against each variant's count of wedges (50002783: [A weight against the variant's count](#a-weight-against-the-variants-count));
+no product weight is kept above the package (every category: [No product weight above the package](#no-product-weight-above-the-package)).
+The `below_contents` flag stays only where the product weight is not the seller's. No table change (version 7).

@@ -1,0 +1,110 @@
+{
+ "product_id": "13480790720",
+ "covers": "D2 (2026-11-17, resend review): Amazon's 'Item Weight | 2.84 Kilograms' above the default package read as the package's weight (siblings 13370257430 / 13164548371 state 2.84 / 2.79 as Package Weight), the product weight the default",
+ "checked": ["Left: product 1400 default, package 2840 item_weight_as_packed"],
+ "input": {
+  "title": "69도 골프의 남녀 골프 웨지 세트54/60/69 세트 로브 샌드 피칭 길이 35인치 Left",
+  "category": {"id": "50002783", "name": "웨지"},
+  "spec_rows": [
+   {"label": "상품번호", "value": "13480790720"},
+   {"label": "원산지", "value": "기타/해외"},
+   {"label": "인증정보", "value": "이 제품은 구매대행을 통하여 유통되는 제품이며 '전기용품 및 생활용품 안전관리법'에 따른 안전관리대상 제품입니다.판매자가 등록한 것으로 등록 정보에 대한 일체 책임은 판매자에게 있습니다."}
+  ],
+  "facts": [],
+  "variants": [{"id": "58102061321", "options_ko": ["Left"]}, {"id": "58102061322", "options_ko": ["Right"]}],
+  "supplements": [],
+  "typed": [
+   "69도 골프의 남녀 골프 웨지 세트54/60/69 세트 로브 샌드 피칭 길이 35인치",
+   "상품 이미지",
+   "옵션 이미지",
+   "Hand Orientation : Left",
+   "Hand Orientation : Right",
+   "세부 사항",
+   "항목 | 설명",
+   "Brand Name | 69",
+   "x",
+   "Golf Club Type | Wedge Golf Club",
+   "Included Components | Wedge Set",
+   "Manufacturer | 69 Golf",
+   "Material Type | Alloy Steel",
+   "Shaft Material | Stepped Steel",
+   "Grip Material | Synthetic Rubber",
+   "Flex | Stepped Steel",
+   "Hand Orientation | Right",
+   "Loft | 69 Degrees",
+   "Grip Type | Standard",
+   "Golf Club Bounce Angle | 10 Degrees",
+   "Head Type | blade or cavity back",
+   "Size | 54/60/69 Set",
+   "Item Weight | 2.84 Kilograms",
+   "Grip Size | Standard",
+   "Color | Silver"
+  ],
+  "images": [
+   [1, ["제품에 이상이 / 1환불", 0.98], 1, ["100%", 0.999], 2],
+   [["THE WEDGE SET / 4", 0.68], 4, ["54 / 4", 0.714], 1],
+   [3],
+   [
+    ["69°", 0.878],
+    ["54/60/69 / Degree Set", 0.949],
+    ["Featuring / our signature 69 Wedge a / :accompanied by a 54", 0.949],
+    ["and 6 / 60. Are all the / wedges you need.", 0.746]
+   ],
+   [7, ["60", 0.999]],
+   [1, ["Precision / Engineering", 0.998], 6],
+   [1],
+   [["THE WEDGE SET / 4", 0.68], 4, ["54 / 4", 0.714], 1],
+   []
+  ],
+  "measures": {
+   "is_set": true,
+   "weights": [
+    {
+     "value": {"min": 2840.0, "max": 2840.0},
+     "unit": "Kilograms",
+     "matched": "2.84 Kilograms",
+     "kind": "unknown",
+     "scope": "set",
+     "approximate": false,
+     "count": null,
+     "flags": [],
+     "quote": "Item Weight: 2.84 Kilograms",
+     "source": "description_table",
+     "locator": {"block": "html", "row": 16, "cell": "tr"},
+     "binding": {"scope": "context", "variant_ids": []},
+     "origin": "source_stated"
+    }
+   ],
+   "dimensions": [
+    {
+     "values": [889.0],
+     "axes": ["length"],
+     "unit": "인치",
+     "matched": "35인치",
+     "kind": "unknown",
+     "state": null,
+     "flags": [],
+     "quote": "69도 골프의 남녀 골프 웨지 세트54/60/69 세트 로브 샌드 피칭 길이 35인치",
+     "source": "description",
+     "locator": {"block": "text", "row": 0},
+     "binding": {"scope": "context", "variant_ids": []},
+     "origin": "source_stated"
+    }
+   ],
+   "references": [],
+   "review": []
+  }
+ },
+ "expected": [
+  {
+   "variants": [["Left"], ["Right"]],
+   "fields": {
+    "product_weight_g": {"value": 1400, "source": "category_default", "confidence": 1},
+    "package_weight_g": {"value": 2840, "source": "description_image", "confidence": 4, "how": "stated weight read as packed (Item Weight above the package)", "from": "description_text", "quote": "Item Weight | 2.84 Kilograms"},
+    "package_length_mm": {"value": 980, "source": "category_default", "confidence": 1},
+    "package_width_mm": {"value": 200, "source": "category_default", "confidence": 1},
+    "package_height_mm": {"value": 100, "source": "category_default", "confidence": 1}
+   }
+  }
+ ]
+}

@@ -20,7 +20,8 @@ replaced by it.)
 
 A field the seller does not give is filled from the category table (low / central / high, its version, who approved
 it and its reliability level), `source: category_default`; a seller's value is never overwritten. A default package
-weight below the seller's own product weight is flagged `below_stated_product` (kept: the operator decides). A row
+weight below the seller's own product weight is flagged `below_stated_product` (the transform then keeps no product
+weight above the package: description_measures.product_over_package, 2026-11-17). A row
 may carry `plausible: {field: {min, max}}`, the operator's band: a stated value outside it is not taken
 (contradiction, reason implausible_for_category) and the default fills the field; a box is one statement, so a
 side out of its band refuses the other two as well (box_not_whole, 2026-11-17). No band is made up here: without
@@ -36,7 +37,8 @@ default_kind() from the title and the variant's words; its defaults carry `kind`
 50002783 two_wedges / four_plus): a count kind, by the variant's own count or that many distinct lofts in its
 value, else by the title's count when every variant names as many lofts. A row may also carry `compose_by_count`
 (50002783, 2026-11-17; checked by _check_compose, read by description_measures.compose_by_count): a set's product
-weight from its clubs' labelled weights. `reliability` today
+weight from its clubs' labelled weights; with it a stated weight is checked against the variant's count of clubs
+(count_kind, count_band, off_count: 2026-11-17, the resend review D1). `reliability` today
 has one level, `estimated_average` (the weakest: an average of estimates, not measured); delivery will apply its
 own coefficient per level.
 
@@ -59,7 +61,7 @@ The evidence (source, quote, kind, scope, binding, flags, contradiction) travels
 import json
 import os
 import re
-from collections.abc import Mapping
+from collections.abc import Mapping, Sequence
 from typing import Any
 
 TABLE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "category_measures.json")
@@ -223,7 +225,7 @@ def lofts(text: str | None) -> int:
 
 
 def default_kind(row: Mapping[str, Any], title: str | None, variant_name: str | None,
-                 siblings: list[str | None] | None = None) -> dict[str, Any] | None:
+                 siblings: Sequence[str | None] | None = None) -> dict[str, Any] | None:
     """The row's kind of product (`kinds`) a variant is, for its defaults; None: the row's own fields. The title and
     the variant's words are read apart (glued, "...클럽" + "6~8세" read as "클럽 6", a count). A kind is taken when
 `always` is in the variant's own words (단품: sold alone, whatever the title says); when
@@ -284,6 +286,95 @@ def current_defaults(fields: dict[str, Any], specs: Mapping[str, Any], variant_i
                      **({"kind": kind["kind"]} if kind else {}), "table_version": table["version"],
                      "approved_by": row["approved_by"], "approved_at": row["approved_at"]}
     return out
+
+
+# ---- a weight the listing states once, against the variant's count of clubs (2026-11-17, the resend review D1) ----
+# A weight written once for the whole listing (a product-scope row of the server, a line of the description) lands
+# on every variant; on a set-or-pair listing it is one count's figure: Yamato 13164555233's "Package Weight : 1.13
+# Kilograms" (a pair's) on its 3-wedge sets, Mile High Life 12178280377's 1610 g (its 3-wedge set's) on its pairs,
+# Majek 13383747280's "Item Weight : 4 Pounds" (1814 g, its 3-piece's: 13312228253, 13468925033) on a 2-piece. On a
+# row with count kinds (`lofts`) and `compose_by_count`, a stated weight of n clubs is plausible from n x the club's
+# lowest weight (item_g.min, 380 g: 760 for two, 1140 for three) to the count's kind's high (the base row's for the
+# count no kind spans, 3: two_wedges 1100 / 2200, base 2800 / 3800, four_plus 2800 / 3600), or up to n + 1 clubs'
+# lowest when that is more (Yamato's 2-packs state 1.11 and 1.13 kg: 13406052242, 13372272290; two_wedges' product
+# band 760-1140). The count: the kind's
+# (`lofts` [min, ...]; the variant's own when inside it); for the base row the variant's own (that many lofts, one
+# count word); not known: no band. Never the title's: agency titles are cut ("마제크 ... 컴플리트 세트 52° 갭
+# 웨지GW 56° 샌드", 13383747280, is the 3-piece of UPC 792713116504 with 13312228253 / 13468925033, its 1814 g right;
+# Ram 13386317152 "스핀3 웨지세트 - 52° 간격 56° 모래 6") or list a menu ("52 56 60 72도 세트", 13372037781).
+WEIGHTS = ("product_weight_g", "package_weight_g")
+_COUNT_WORD = re.compile(r"(?i)(?<![0-9])([2-9])\s*(?:개|종|pcs?|p(?![a-z])|피스|자루|본|piece|wedges?)")
+
+
+def _own_count(text: str | None) -> int:
+    """The clubs a text counts: its distinct lofts when two or more, else its one count word ("3PCS", "2개"); 0."""
+    n = lofts(text)
+    words = {int(m.group(1)) for m in _COUNT_WORD.finditer(_measure_words(text))}
+    return n if n >= 2 else words.pop() if len(words) == 1 else 0
+
+
+def package_kind(row: Mapping[str, Any], fields: Mapping[str, Any], title: str | None, variant_name: str | None,
+                 siblings: Sequence[str | None] | None = None) -> dict[str, Any] | None:
+    """The kind whose defaults the variant's package carries (a category default's `kind`; none: the base row),
+    else default_kind() when no field is a default."""
+    named = [f.get("kind") for f in fields.values() if isinstance(f, dict) and f.get("source") == "category_default"]
+    if named:
+        return next((dict(k) for k in row.get("kinds") or [] if k["kind"] == named[0]), None)
+    return default_kind(row, title, variant_name, siblings)
+
+
+def count_kind(row: Mapping[str, Any], kind: Mapping[str, Any] | None,
+               variant_name: str | None) -> tuple[int, dict[str, Any] | None] | None:
+    """(n clubs, the variant's kind: None for the base row) of a variant of `kind` (package_kind), for count_band;
+    None: the row counts no clubs, the kind is no count (single_club) or the base row's count is not named."""
+    spans = [k for k in row.get("kinds") or [] if k.get("lofts")]
+    if not spans or not row.get("compose_by_count"):
+        return None
+    own = _own_count(variant_name)
+    if kind is not None:
+        if not kind.get("lofts"):
+            return None
+        return (own if kind["lofts"][0] <= own <= kind["lofts"][1] else kind["lofts"][0]), dict(kind)
+    covered = {c for k in spans for c in range(k["lofts"][0], k["lofts"][1] + 1)}
+    base = {c for c in range(2, max(k["lofts"][1] for k in spans) + 1) if c not in covered}     # {3}
+    return (own, None) if own in base else None
+
+
+def count_band(row: Mapping[str, Any], counted: tuple[int, dict[str, Any] | None] | None
+               ) -> dict[str, tuple[float, float]]:
+    """{weight field: (low, high)} plausible for that many clubs (the comment above); {}: no count."""
+    if not counted:
+        return {}
+    n, kind = counted
+    fields = (kind or row)["fields"]
+    club = row["compose_by_count"]["item_g"]["min"]
+    return {name: (n * club, max(fields[name]["high"], (n + 1) * club)) for name in WEIGHTS if name in fields}
+
+
+def default_field(row: Mapping[str, Any], kind: Mapping[str, Any] | None, version: Any, name: str) -> dict[str, Any]:
+    """One field's category default as variant_measures writes it (the kind's numbers when a kind is given)."""
+    defaults = kind["fields"] if kind else row["fields"]
+    return {**defaults[name], "source": "category_default", "confidence": 1, **({"kind": kind["kind"]} if kind else {}),
+            "reliability": row["reliability"], "table_version": version,
+            "approved_by": row["approved_by"], "approved_at": row["approved_at"]}
+
+
+def off_count(fields: dict[str, Any], band: Mapping[str, tuple[float, float]], row: Mapping[str, Any],
+              kind: Mapping[str, Any] | None, version: Any) -> tuple[dict[str, Any], list[str]]:
+    """The seller's product-scope weights (binding `product`: the listing's one statement) outside the count's band
+    put back to the category default (`compared` the refused one, `rejected: implausible_for_count`) -> (fields,
+    the names put back). A weight bound to the variant stays."""
+    out, back = dict(fields), []
+    for name, (low, high) in band.items():
+        f = fields.get(name) or {}
+        if f.get("source") != "source_stated" or (f.get("binding") or {}).get("scope") != "product" \
+                or low <= f["value"]["max"] <= high:
+            continue
+        brief = {k: f[k] for k in ("source", "confidence", "from", "quote") if k in f}
+        out[name] = {**default_field(row, kind, version, name),
+                     "compared": {**brief, "value": f["value"]["max"], "rejected": "implausible_for_count"}}
+        back.append(name)
+    return out, back
 
 
 def _belongs(candidate: dict[str, Any], variant_id: str | None) -> bool:
@@ -364,7 +455,6 @@ def variant_measures(specs: Mapping[str, Any], table: dict[str, Any]) -> list[di
     names = {v.get("id"): v.get("name") for v in ((specs.get("options") or {}).get("variants") or [])}
     for variant_id in variants:
         kind = default_kind(row, specs.get("name"), names.get(variant_id), list(names.values())) if row else None
-        defaults: dict[str, Any] = kind["fields"] if kind else (row or {}).get("fields") or {}
         fields: dict[str, Any] = stated(measures, variant_id)
         for name, band in ((row or {}).get("plausible") or {}).items():
             f = fields.get(name)
@@ -384,11 +474,7 @@ def variant_measures(specs: Mapping[str, Any], table: dict[str, Any]) -> list[di
                 continue
             if row is None:
                 raise CategoryDefaultsMissing(category.get("id"), category.get("name"))
-            fields[name] = {**defaults[name], "source": "category_default", "confidence": 1,
-                            **({"kind": kind["kind"]} if kind else {}),
-                            "reliability": row["reliability"],
-                            "table_version": table["version"],
-                            "approved_by": row["approved_by"], "approved_at": row["approved_at"],
+            fields[name] = {**default_field(row, kind, table["version"], name),
                             **({k: fields[name][k] for k in ("contradiction", "reason") if k in fields[name]}
                                if name in fields else {})}
         product, package = fields["product_weight_g"], fields["package_weight_g"]

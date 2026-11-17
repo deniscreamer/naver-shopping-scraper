@@ -209,7 +209,8 @@ published, SKUs and prices equal on 201 of 201 variants):
 - **The wedge-set review, variants and options (2026-11-17, W5)**:
   - a picker's club slots (axes named alike but for a number, "옵션 1/2/3", "SB웨지1/2/3"; wedge-sets categories only):
     a row with one value on two slots ("56+56", the owner's value: not sold) is left out, and an order of a set
-    already offered is that set (the first buyable row kept), before the cap: MG5 343 -> 35 rows; note
+    already offered is that set (its ascending-loft row kept when buyable at the first buyable row's price, else
+    the first buyable: D3, 2026-11-17, `_slot_row`; the SKU is that row's), before the cap: MG5 343 -> 35 rows; note
     `slot_rows_merged` ("343 -> 35 rows (133 with a value repeated on two slots, 175 reordered)"); the merged slots
     are left out of the word match of `title_names_one_variant` and `specs_name_one_variant` (a slot that lost "60도"
     names no one variant; the title's lofts vs the sets sold is `title_lofts_not_sold`); C01;

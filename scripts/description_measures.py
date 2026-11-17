@@ -960,12 +960,14 @@ def _items_total(weights: list[dict[str, Any]], count: int | None, profile: Prof
 
 def package_for(fields: dict[str, Any], facts: dict[str, Any], item_count: int | None, container: bool | None,
                 plausible: dict[str, dict[str, float]] | None = None, profile: Profile | None = None,
-                baselines: dict[str, Any] | None = None, ladies: bool = False) -> tuple[dict[str, Any], list[str]]:
+                baselines: dict[str, Any] | None = None, ladies: bool = False,
+                counted: dict[str, tuple[float, float]] | None = None) -> tuple[dict[str, Any], list[str]]:
     """One variant's five fields with the description's statements and the composition merged in -> (fields,
     names no longer today's). plausible, baselines: the blocks of the category's row in the operator's table,
-    when it has them; no composition without the block or without a profile."""
+    when it has them; no composition without the block or without a profile. counted: the weights plausible for
+    the variant's count of clubs (package_measures.count_band)."""
     made = compose(facts, item_count, container, profile, baselines, ladies) if profile and baselines else {}
-    return merge_fields(fields, guess(facts, profile), plausible, profile, made, baselines)
+    return merge_fields(fields, guess(facts, profile), plausible, profile, made, baselines, counted)
 
 
 def bands(plausible: dict[str, dict[str, float]] | None, profile: Profile | None) -> dict[str, tuple[float, float]]:
@@ -1004,7 +1006,8 @@ def _boxed(product: dict[str, Any], baselines: dict[str, Any]) -> dict[str, Any]
 def merge_fields(fields: dict[str, Any], stated: dict[str, dict[str, Any]],
                  plausible: dict[str, dict[str, float]] | None = None, profile: Profile | None = None,
                  composed: dict[str, dict[str, Any]] | None = None,
-                 baselines: dict[str, Any] | None = None) -> tuple[dict[str, Any], list[str]]:
+                 baselines: dict[str, Any] | None = None,
+                 counted: dict[str, tuple[float, float]] | None = None) -> tuple[dict[str, Any], list[str]]:
     """-> (fields, names no longer today's). Per field, the first of (the owner, 2026-11-10):
 
       the seller's value of the server path (source_stated)   kept, whatever the description says
@@ -1021,7 +1024,9 @@ def merge_fields(fields: dict[str, Any], stated: dict[str, dict[str, Any]],
     the count and the bag's state are known (13302492097 stayed at the flat 5700 / 7000 g). A stated packed
     weight stands also under the product's weight: over a composition it is the seller's word against an
     estimate; under the seller's own product weight (4-5) it is taken with `flags: ["below_contents"]` (a box
-    weighs at least what is in it: the operator decides)."""
+    weighs at least what is in it: the operator decides; transform then keeps no product weight above the package:
+    product_over_package, 2026-11-17). `counted` (package_measures.count_band, 2026-11-17): a statement outside the
+    band of the variant's count of clubs is refused too (`implausible_for_count`)."""
     out, taken = dict(fields), []
     limits = bands(plausible, profile)
 
@@ -1029,6 +1034,8 @@ def merge_fields(fields: dict[str, Any], stated: dict[str, dict[str, Any]],
         v, base = g["value"]["max"], today_value(fields[name])
         if v > limits[name][1] or stated and v < limits[name][0]:
             return "implausible_for_category"
+        if stated and counted and name in counted and not counted[name][0] <= v <= counted[name][1]:
+            return "implausible_for_count"               # one count's figure on another count's variant (D1)
         return "far_above_today" if base and v > base * MAX_RATIO else None
 
     no = {name: absurd(name, g) for name, g in stated.items() if name in fields}
@@ -1060,6 +1067,54 @@ def merge_fields(fields: dict[str, Any], stated: dict[str, dict[str, Any]],
             continue
         taken.append(name)
     return out, taken
+
+
+# ---- a product weight above the package's (2026-11-17, the resend review D2) ----------------------------------
+# Never sent: a box weighs at least what is in it. Amazon's "Item Weight" in these imports is the shipping weight:
+# 69 Golf 13480790720 "Item Weight | 2.84 Kilograms" beside its siblings' "Package Weight" 2.84 / 2.79 kg
+# (13370257430, 13164548371); Detroit 13370268119 / LAZRUS 13389498451 "Item Weight : 3.2 Pounds" (1451 g) beside
+# "Package Weight : 1.45 Kilograms"; Yamato 13372131108 1.68 kg beside 1.63 kg. Over a default package it is read as
+# the package's weight (its kind left open: confidence 4), when the package's band takes it; any other seller's
+# product weight above the package gives way to the category default (the variant's count's, see transform).
+# The label: _UNBOXED_UNSAID, Amazon's (_AMAZON_WEIGHT, below) or a bare "무게" / "중량" / "Weight" that says neither
+# product nor box: a junior set's "무게 : 약 5kg" (13024454637, bag and clubs) over the 4500 g default box.
+_UNBOXED_UNSAID = re.compile(r"item\s*weight|product\s*weight|품목\s*무게|^\W*(?:무게|중량|weight)\s*[:：|]", re.I)
+ABOVE_FLAGS = ("below_contents", "below_stated_product")
+
+
+def product_over_package(fields: dict[str, Any], default: dict[str, Any],
+                         package_band: tuple[float, float]) -> tuple[dict[str, Any], list[str]]:
+    """-> (fields, names changed). The seller's product weight (the server's or the description's) above the
+    package's: the package's own weight when the package is a default, the quote's label says no more than "weight"
+    (Amazon's Item Weight, a bare 무게) and the package's band (package_band) takes it; the product weight then, or else, the category default `default`
+    (`compared` the refused one, `rejected: above_package`), or the box's own weight when the default is above it
+    too (`flags: ["capped_to_package"]`). A default product weight above a stated box is not the seller's: left (the
+    owner's 13372006463). The package's below_contents / below_stated_product flags go with the refused weight."""
+    product, package = fields.get(FIELDS[0]) or {}, fields.get(FIELDS[1]) or {}
+    box = today_value(package) if package else None
+    if product.get("source") not in ("source_stated", SOURCE) or "value" not in product or box is None \
+            or product["value"]["max"] <= box:
+        return fields, []
+    weight, out, names = product["value"]["max"], dict(fields), [FIELDS[0]]
+    if package.get("source") == "category_default" and _UNBOXED_UNSAID.search(product.get("quote") or "") \
+            and package_band[0] <= weight <= package_band[1]:
+        kept = {k: v for k, v in product.items() if k not in ("compared", "flags", "also")}
+        out[FIELDS[1]] = {**kept, "confidence": 4, "flags": ["item_weight_as_packed"], "compared": _brief(package),
+                          **({"how": "stated weight read as packed (Item Weight above the package)"}
+                             if product.get("source") == SOURCE else {})}
+        names.append(FIELDS[1])
+        box = weight
+    refused = {**_brief(product), "rejected": "above_package"}
+    if default.get("central", 0) <= box:
+        out[FIELDS[0]] = {**default, "compared": refused}
+    else:                                            # the default above the box too (a junior club's 363 g over
+        kept = {k: v for k, v in product.items() if k not in ("compared", "also", "flags")}     # 360 g, 13388597147)
+        out[FIELDS[0]] = {**kept, "value": {"min": box, "max": box}, "compared": refused,
+                          "flags": [*(product.get("flags") or []), "capped_to_package"]}
+    if set(package.get("flags") or []) & set(ABOVE_FLAGS) and FIELDS[1] not in names:
+        flags = [f for f in package["flags"] if f not in ABOVE_FLAGS]
+        out[FIELDS[1]] = {**{k: v for k, v in package.items() if k != "flags"}, **({"flags": flags} if flags else {})}
+    return out, names
 
 
 # ---- a wedge set's weight from its clubs' (compose_by_count, 50002783, 2026-11-17) ------------------------------

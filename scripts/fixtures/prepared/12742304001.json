@@ -1,0 +1,3729 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:500101251:12742304001",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "title_names_one_variant",
+   "detail": "NS PRO 950NEO"
+  },
+  {
+   "code": "specs_name_one_variant",
+   "detail": "킥포인트 MID: MID"
+  },
+  {
+   "code": "slot_rows_merged",
+   "detail": "84 -> 42 rows (0 with a value repeated on two slots, 42 reordered)"
+  },
+  {
+   "code": "description_images_missing",
+   "detail": "no sidecar: run description_images.py"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/golferngolf/products/12742304001",
+  "channel_no": "500101251",
+  "product_id": "12742304001",
+  "category_id": "50002783"
+ },
+ "product": {
+  "title_ko": "테일러메이드 MG5 웨지 2개 세트 SB (52도 56도) NS PRO 950 NEO S",
+  "brand_ko": "테일러메이드",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 웨지 세트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "SB웨지1/로프트(바운스)",
+    "values_ko": [
+     "크롬52도(09도)",
+     "크롬48도(09도)",
+     "크롬50도(09도)",
+     "크롬54도(12도)",
+     "크롬56도(12도)",
+     "크롬58도(10도)"
+    ]
+   },
+   {
+    "name_ko": "SB웨지2/로프트(바운스)",
+    "values_ko": [
+     "크롬56도(12도)",
+     "크롬58도(10도)",
+     "크롬60도(10도)",
+     "크롬52도(09도)",
+     "크롬54도(12도)",
+     "크롬50도(09도)"
+    ]
+   },
+   {
+    "name_ko": "샤프트(오늘출발)",
+    "values_ko": [
+     "NS PRO 950 NEO-S",
+     "DG MID 115-S200"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"크롬52도(09도)\",\"크롬56도(12도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831395",
+    "options_ko": [
+     "크롬52도(09도)",
+     "크롬56도(12도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-f366534c7a7fd75186d52b13",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬52도(09도)\",\"크롬56도(12도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831397",
+    "options_ko": [
+     "크롬52도(09도)",
+     "크롬56도(12도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-bb641c2162c97866c3174bee",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬52도(09도)\",\"크롬58도(10도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831398",
+    "options_ko": [
+     "크롬52도(09도)",
+     "크롬58도(10도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-8880c7cff9a49431b47f1764",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬52도(09도)\",\"크롬58도(10도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831400",
+    "options_ko": [
+     "크롬52도(09도)",
+     "크롬58도(10도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-4936f73e4fa9a449ca16bfd5",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬52도(09도)\",\"크롬60도(10도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831402",
+    "options_ko": [
+     "크롬52도(09도)",
+     "크롬60도(10도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-e92c3c1ebe2bb9ea85596dea",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬52도(09도)\",\"크롬60도(10도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831403",
+    "options_ko": [
+     "크롬52도(09도)",
+     "크롬60도(10도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-a89430d625358b8908afe5bf",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬52도(09도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831424",
+    "options_ko": [
+     "크롬48도(09도)",
+     "크롬52도(09도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-0419aae57587690cbc1767ff",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬52도(09도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831425",
+    "options_ko": [
+     "크롬48도(09도)",
+     "크롬52도(09도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-2d0bd39983e9ba1be9a4c2bd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬50도(09도)\",\"크롬52도(09도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831443",
+    "options_ko": [
+     "크롬50도(09도)",
+     "크롬52도(09도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-1fc80bd8d0a5b677d8dc4dae",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬50도(09도)\",\"크롬52도(09도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831444",
+    "options_ko": [
+     "크롬50도(09도)",
+     "크롬52도(09도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-ce0e6151a2688b923c77f3f3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬52도(09도)\",\"크롬54도(12도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831411",
+    "options_ko": [
+     "크롬52도(09도)",
+     "크롬54도(12도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-5aaf3aee2162e47ab01fe7ae",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬52도(09도)\",\"크롬54도(12도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831412",
+    "options_ko": [
+     "크롬52도(09도)",
+     "크롬54도(12도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-61c43750a5e5d26351d7168b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬56도(12도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831414",
+    "options_ko": [
+     "크롬48도(09도)",
+     "크롬56도(12도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-162d10253d7459396877445d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬56도(12도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831415",
+    "options_ko": [
+     "크롬48도(09도)",
+     "크롬56도(12도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-e2e6095361a411889cec0096",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬58도(10도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831416",
+    "options_ko": [
+     "크롬48도(09도)",
+     "크롬58도(10도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-9452b8390fde2178354c26b3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬58도(10도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831417",
+    "options_ko": [
+     "크롬48도(09도)",
+     "크롬58도(10도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-4beeabb87b557b9b6ba963ab",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬60도(10도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831418",
+    "options_ko": [
+     "크롬48도(09도)",
+     "크롬60도(10도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-4a2b816837d010440bc96702",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬60도(10도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831419",
+    "options_ko": [
+     "크롬48도(09도)",
+     "크롬60도(10도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-8ed04f495034619abc21dc2e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬50도(09도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831422",
+    "options_ko": [
+     "크롬48도(09도)",
+     "크롬50도(09도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-c363e87099b335b1ea29072e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬50도(09도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831423",
+    "options_ko": [
+     "크롬48도(09도)",
+     "크롬50도(09도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-07513ebcc26395fe66b66294",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬54도(12도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831426",
+    "options_ko": [
+     "크롬48도(09도)",
+     "크롬54도(12도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-8b201fd19e880b0664bb1d28",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬54도(12도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831427",
+    "options_ko": [
+     "크롬48도(09도)",
+     "크롬54도(12도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-242ff3e20fad1120ec0c8e63",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬50도(09도)\",\"크롬56도(12도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831428",
+    "options_ko": [
+     "크롬50도(09도)",
+     "크롬56도(12도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-dade0ad66ed17dde96186b02",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬50도(09도)\",\"크롬56도(12도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831429",
+    "options_ko": [
+     "크롬50도(09도)",
+     "크롬56도(12도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-235b9a1d6a197a8474a89a57",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬50도(09도)\",\"크롬58도(10도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831430",
+    "options_ko": [
+     "크롬50도(09도)",
+     "크롬58도(10도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-0f71ef714e7da520caf52caa",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬50도(09도)\",\"크롬58도(10도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831433",
+    "options_ko": [
+     "크롬50도(09도)",
+     "크롬58도(10도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-aac22122efd6b60444ae5c13",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬50도(09도)\",\"크롬60도(10도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831435",
+    "options_ko": [
+     "크롬50도(09도)",
+     "크롬60도(10도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-9539c1f07f31c58856d8b489",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬50도(09도)\",\"크롬60도(10도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831437",
+    "options_ko": [
+     "크롬50도(09도)",
+     "크롬60도(10도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-80d1a3d3c6e593964e0f7f34",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬50도(09도)\",\"크롬54도(12도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831445",
+    "options_ko": [
+     "크롬50도(09도)",
+     "크롬54도(12도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-5d0ebca6c9e28aa60f563730",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬50도(09도)\",\"크롬54도(12도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831446",
+    "options_ko": [
+     "크롬50도(09도)",
+     "크롬54도(12도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-8af70d2d89532f9a0be2a471",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬54도(12도)\",\"크롬56도(12도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831447",
+    "options_ko": [
+     "크롬54도(12도)",
+     "크롬56도(12도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-0915a7384bf171fba0a40a74",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬54도(12도)\",\"크롬56도(12도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831448",
+    "options_ko": [
+     "크롬54도(12도)",
+     "크롬56도(12도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-92495ffd9d9184b8b050f454",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬54도(12도)\",\"크롬58도(10도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831449",
+    "options_ko": [
+     "크롬54도(12도)",
+     "크롬58도(10도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-840d47495a8db63f0e846976",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬54도(12도)\",\"크롬58도(10도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831450",
+    "options_ko": [
+     "크롬54도(12도)",
+     "크롬58도(10도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-441d191db23fa4afd2c0fc40",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬54도(12도)\",\"크롬60도(10도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831451",
+    "options_ko": [
+     "크롬54도(12도)",
+     "크롬60도(10도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-e7a7c76cae8b8b8e6a80681a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬54도(12도)\",\"크롬60도(10도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831452",
+    "options_ko": [
+     "크롬54도(12도)",
+     "크롬60도(10도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-75563d40c77a50fad84232ea",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬56도(12도)\",\"크롬58도(10도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831463",
+    "options_ko": [
+     "크롬56도(12도)",
+     "크롬58도(10도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-f3fc7e57d1bbcc52abb5ea1f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬56도(12도)\",\"크롬58도(10도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831464",
+    "options_ko": [
+     "크롬56도(12도)",
+     "크롬58도(10도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-e296f59220870bc44afeb0cc",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬56도(12도)\",\"크롬60도(10도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831465",
+    "options_ko": [
+     "크롬56도(12도)",
+     "크롬60도(10도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-637566df0cc604a5b5fdaab7",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬56도(12도)\",\"크롬60도(10도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831466",
+    "options_ko": [
+     "크롬56도(12도)",
+     "크롬60도(10도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-2b3229920ddea8e3fb67b659",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬58도(10도)\",\"크롬60도(10도)\",\"NS PRO 950 NEO-S\"]",
+    "naver_variant_id": "53938831479",
+    "options_ko": [
+     "크롬58도(10도)",
+     "크롬60도(10도)",
+     "NS PRO 950 NEO-S"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-751ad464745be16c0980cffd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬58도(10도)\",\"크롬60도(10도)\",\"DG MID 115-S200\"]",
+    "naver_variant_id": "53938831480",
+    "options_ko": [
+     "크롬58도(10도)",
+     "크롬60도(10도)",
+     "DG MID 115-S200"
+    ],
+    "price_krw": 400000,
+    "price_usd": "400.00",
+    "sku": "FW-b146089c4eccdde98dde9659",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 400000,
+   "original_krw": 440000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "테일러메이드"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "테일러메이드"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   },
+   {
+    "label_ko": "제조공법",
+    "value_ko": "단조"
+   },
+   {
+    "label_ko": "샤프트소재",
+    "value_ko": "스틸, 경량스틸"
+   },
+   {
+    "label_ko": "샤프트 강도",
+    "value_ko": "S"
+   },
+   {
+    "label_ko": "킥포인트",
+    "value_ko": "MID"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "헤드형태",
+    "value_ko": "머슬백"
+   },
+   {
+    "label_ko": "웨지 로프트각",
+    "value_ko": "52도, 54도, 56도, 58도, 60도"
+   },
+   {
+    "label_ko": "라이각",
+    "value_ko": "64도"
+   },
+   {
+    "label_ko": "바운스각",
+    "value_ko": "9도, 10도, 12도"
+   },
+   {
+    "label_ko": "스윙웨이트",
+    "value_ko": "D2, D4, D3.5, D5.5, D3, D5"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2025년형"
+   },
+   {
+    "label_ko": "수입원",
+    "value_ko": "정품"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/12742304001/fairwardgolf-12742304001-001-bc59469b74d7b78c.webp",
+    "sha256": "bc59469b74d7b78c29facbfb99a8a8c18da3d55051302a5268e5a7a1ffef918f",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/12742304001/fairwardgolf-12742304001-002-08e8073da8984347.webp",
+    "sha256": "08e8073da8984347ab60cde002560a8092e5ba8312765583652c8cd47226a298",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/12742304001/fairwardgolf-12742304001-003-866003ffad38d1ee.webp",
+    "sha256": "866003ffad38d1eec9105bbc82d02b59e926461c4af170200cb31f054a78f7cf",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/12742304001/fairwardgolf-12742304001-004-8b3998c07479e763.webp",
+    "sha256": "8b3998c07479e7639dda9adc8e4fd8a75bfd73c365f777c194024cfbbcd15b67",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/12742304001/fairwardgolf-12742304001-005-98a4dbe776cc0b3e.webp",
+    "sha256": "98a4dbe776cc0b3eae45539b53f25e8b221ac265be2c5f0e3ba840428a84ee8d",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/12742304001/fairwardgolf-12742304001-006-952d3f753a61c13f.webp",
+    "sha256": "952d3f753a61c13f6d6840c3a65fdbe68bbc5d51908d56c8ad2034eb1dc3ed44",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/12742304001/fairwardgolf-12742304001-007-aaf3f1a2415e4fd7.webp",
+    "sha256": "aaf3f1a2415e4fd7cefba6fb6b945e1017258571ac7abbf66bbe44174f55b59e",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/12742304001/fairwardgolf-12742304001-008-0dcd2dcab9c5eb0c.webp",
+    "sha256": "0dcd2dcab9c5eb0c0bd62932698940eccaaec80a05ed7f29ee7cb7e328f41ba1",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/12742304001/fairwardgolf-12742304001-009-90abf1dc78ecdcfd.webp",
+    "sha256": "90abf1dc78ecdcfdfb95b792e15c4f522e186f86a18718b8f9c235efe2d0af55",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/12742304001/fairwardgolf-12742304001-010-20a78e18626cf8cf.webp",
+    "sha256": "20a78e18626cf8cffac3cf48cc3e4b2e67c62d40fcd9cc5586fe8a80ba07b942",
+    "width": 800,
+    "height": 800
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.3684211,
+    "product_average_days": null,
+    "today_cutoff": "17:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": "11.18.(수)",
+    "arrival_probability": 95,
+    "ship_date_text": null
+   },
+   "extra_fee_text": "7000"
+  },
+  "description_ko": "[테일러메이드 MG5 웨지 2개 세트]\n- 스탠다드 그라인드(SB) 크롬웨지 2개\n\n[샤프트 안내]",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20250827_73/1756266820307ojAq8_JPEG/sub_01.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251127_115/1764215109141xRdBL_JPEG/000-25.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_262/1756266820474nweCT_JPEG/sub_02.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_95/1756266843965RIPuD_JPEG/sub_02-1.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_181/1756266858862L9C5E_JPEG/001.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_124/1756266859098uNkcM_JPEG/003.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_200/1756266859065UGlLz_JPEG/004.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_16/1756266859392AnNpQ_JPEG/005.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_47/1756266884070R4VYc_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_120630.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_269/1756266884149lz4qD_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_121351.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_261/1756266884364rUPYW_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_121417.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_56/1756266884182WgMBT_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_121431.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250828_200/175635148965091WSM_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-27_120442.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_55/1756266901865fkVaq_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-27_121134.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_206/1756266901840nUKdP_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-27_121146.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20251127_258/1764216714203BpgCP_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-27_121210.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250828_17/1756350192310o57wv_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_120339.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250828_262/1756350192275O4Lwm_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_120344.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250828_274/17563501567778OE6x_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_120451.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_179/1756267124215y74Lv_JPEG/sub_01.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_104/17562671584658cw1e_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_115947.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_292/1756267158767qMO9n_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_115954.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_38/1756267158439YCrHo_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_120017.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_53/17562671585308jgh8_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_120024.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_257/1756267158546FQ0kE_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_120034.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_205/1756267159236BMbG0_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_120041.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_194/1756267158988u3xJW_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_120051.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250828_171/1756350254220bTUgn_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_120153.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250828_64/1756350254066cXuD2_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_120209.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250828_40/1756350253922k99S8_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_120219.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250828_127/1756350253934QGmde_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_120255.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_81/1756267158980nMLGi_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_120057.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_266/1756267159470ovWb1_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_120127.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_10/17562671591491RqMI_JPEG/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-08-13_120115.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_233/17562671817008DO4Y_JPEG/TM25WDG-TC647-Milled-Grind-5-Chrome-OnCourse-BMB-00631-v1-1280x1280W1200_H900_M.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_283/175626718224176rTG_JPEG/TM25WDG-TC647-Milled-Grind-5-Chrome-OnCourse-BMB-02296-v1-1280x1280W1200_H900_M.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_244/1756267182126JwdyC_JPEG/TM25WDG-TC647-Milled-Grind-5-Chrome-OnCourse-BMB-02715-v1-1280x1280W1200_H900_M.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_72/1756267182503UHdxQ_JPEG/TM25WDG-TC647-Milled-Grind-5-Chrome-OnCourse-BMB-08795-v1-1280x1280_2025-08-05-2.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20250827_183/1756267181872M0YyR_JPEG/TM25WDG-TC647-Milled-Grind-5-Chrome-OnCourse-BMB-09930-v1-1280x1280W1200_H900_M.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20250827_21/1756267193730nO9sN_JPEG/%ED%95%98%EB%8B%A8%EC%95%88%EB%82%B4%EB%B0%8F%EC%A7%80%EC%A0%90%EC%95%88%EB%82%B4_%EC%9A%A9%EC%82%B0%EC%A0%90.jpg?type=w848"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:09f1fc5fbc331afb",
+   "kind": "title",
+   "ko": "테일러메이드 MG5 웨지 2개 세트 SB (52도 56도) NS PRO 950 NEO S"
+  },
+  {
+   "id": "brand:18d4028e5665dc1d",
+   "kind": "brand",
+   "ko": "테일러메이드"
+  },
+  {
+   "id": "option_name:a3c73c554e8bdf34",
+   "kind": "option_name",
+   "ko": "SB웨지1/로프트(바운스)"
+  },
+  {
+   "id": "option_value:6adb6d4767f90ae3",
+   "kind": "option_value",
+   "ko": "크롬52도(09도)"
+  },
+  {
+   "id": "option_value:24e0b534f0262c6e",
+   "kind": "option_value",
+   "ko": "크롬48도(09도)"
+  },
+  {
+   "id": "option_value:7e8ef6ab5b05de52",
+   "kind": "option_value",
+   "ko": "크롬50도(09도)"
+  },
+  {
+   "id": "option_value:87510ca6475d04fe",
+   "kind": "option_value",
+   "ko": "크롬54도(12도)"
+  },
+  {
+   "id": "option_value:f028419005d5408d",
+   "kind": "option_value",
+   "ko": "크롬56도(12도)"
+  },
+  {
+   "id": "option_value:d5662b66bba62a08",
+   "kind": "option_value",
+   "ko": "크롬58도(10도)"
+  },
+  {
+   "id": "option_name:89aeb0ff82daa5ee",
+   "kind": "option_name",
+   "ko": "SB웨지2/로프트(바운스)"
+  },
+  {
+   "id": "option_value:93a629a177cc2ba4",
+   "kind": "option_value",
+   "ko": "크롬60도(10도)"
+  },
+  {
+   "id": "option_name:085bd9ef2f0d0a3d",
+   "kind": "option_name",
+   "ko": "샤프트(오늘출발)"
+  },
+  {
+   "id": "option_value:2e742007d26797a7",
+   "kind": "option_value",
+   "ko": "NS PRO 950 NEO-S"
+  },
+  {
+   "id": "option_value:0f247b2ba8df4236",
+   "kind": "option_value",
+   "ko": "DG MID 115-S200"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:18d4028e5665dc1d",
+   "kind": "spec_value",
+   "ko": "테일러메이드"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "spec_label:f7e69d69247069a1",
+   "kind": "spec_label",
+   "ko": "제조공법"
+  },
+  {
+   "id": "spec_value:36a1c06422a97623",
+   "kind": "spec_value",
+   "ko": "단조"
+  },
+  {
+   "id": "spec_label:bba112f05a71deaa",
+   "kind": "spec_label",
+   "ko": "샤프트소재"
+  },
+  {
+   "id": "spec_value:f69f0ea9b639f606",
+   "kind": "spec_value",
+   "ko": "스틸, 경량스틸"
+  },
+  {
+   "id": "spec_label:eb57c3164e2a24de",
+   "kind": "spec_label",
+   "ko": "샤프트 강도"
+  },
+  {
+   "id": "spec_value:8de0b3c47f112c59",
+   "kind": "spec_value",
+   "ko": "S"
+  },
+  {
+   "id": "spec_label:71eb413f1d194069",
+   "kind": "spec_label",
+   "ko": "킥포인트"
+  },
+  {
+   "id": "spec_value:f78628ad511eefec",
+   "kind": "spec_value",
+   "ko": "MID"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:1530626fcdbc4b23",
+   "kind": "spec_label",
+   "ko": "헤드형태"
+  },
+  {
+   "id": "spec_value:4639b370defa5600",
+   "kind": "spec_value",
+   "ko": "머슬백"
+  },
+  {
+   "id": "spec_label:e05405a34cd61ca2",
+   "kind": "spec_label",
+   "ko": "웨지 로프트각"
+  },
+  {
+   "id": "spec_value:febce7f14dc54c91",
+   "kind": "spec_value",
+   "ko": "52도, 54도, 56도, 58도, 60도"
+  },
+  {
+   "id": "spec_label:6b9f5f606ec606fe",
+   "kind": "spec_label",
+   "ko": "라이각"
+  },
+  {
+   "id": "spec_value:f69751cc4504564e",
+   "kind": "spec_value",
+   "ko": "64도"
+  },
+  {
+   "id": "spec_label:bd8c94a6ef14bc79",
+   "kind": "spec_label",
+   "ko": "바운스각"
+  },
+  {
+   "id": "spec_value:4dc4a917327092a5",
+   "kind": "spec_value",
+   "ko": "9도, 10도, 12도"
+  },
+  {
+   "id": "spec_label:82e77522c71ce93a",
+   "kind": "spec_label",
+   "ko": "스윙웨이트"
+  },
+  {
+   "id": "spec_value:fa52de6835115f4c",
+   "kind": "spec_value",
+   "ko": "D2, D4, D3.5, D5.5, D3, D5"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:6aea4c4b3fb65e70",
+   "kind": "spec_value",
+   "ko": "2025년형"
+  },
+  {
+   "id": "spec_label:1cf649b343d942e0",
+   "kind": "spec_label",
+   "ko": "수입원"
+  },
+  {
+   "id": "spec_value:3577faebb93b61e1",
+   "kind": "spec_value",
+   "ko": "정품"
+  }
+ ]
+}

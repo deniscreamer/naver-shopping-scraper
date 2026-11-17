@@ -163,6 +163,18 @@ Code: `server/naver_shopping/measures.py`, `scripts/package_measures.py`.
   13830318407, 12918989466; "50/56세트", 10361963641), lofts after a model code's dash ("LH01-52 56 60 Degree",
   12178264810), and a shaft's weight or flex as a bare number beside one loft ("52도 / 스틸파이버 / i70 A",
   "60 normal / 48°/52°/56°" 13826807592, "DIAMANA TM50"). -> `package_measures.lofts`; PACKAGE.md "kinds".
+- One weight for a set-or-pair listing (2026-11-17, the resend review D1, 50002783): a weight written once lands on
+  every variant, though it is one count's: Yamato 13164555233 "Package Weight : 1.13 Kilograms" (a pair's) on its
+  3-wedge sets, Mile High Life 12178280377 / Yamato 12557447454 / 13127536208 the 3-wedge set's 1610 / 1340 g on their
+  pairs. Agency titles are cut, so a title's lofts name no count ("... 컴플리트 세트 52° 갭 웨지GW 56° 샌드",
+  13383747280: the 3-piece of UPC 792713116504, its 1814 g right). -> `package_measures.count_kind`, `count_band`,
+  `off_count`, `description_measures.merge_fields` (`counted`); PACKAGE.md "A weight against the variant's count".
+- Amazon's "Item Weight" above the package (2026-11-17, the resend review D2): the shipping weight of these imports
+  (69 Golf 13480790720 "Item Weight | 2.84 Kilograms", its siblings 13370257430 / 13164548371 "Package Weight" 2.84 /
+  2.79 kg; Detroit 13370268119, LAZRUS 13389498451 "Item Weight : 3.2 Pounds" beside "Package Weight : 1.45
+  Kilograms"; Tour Edge 13468741368 "Item Weight: 5 Pounds"). A bare "무게" / "중량" label says no more: a junior
+  set's "무게 : 약 5kg" with its bag (13024454637) over the 4500 g default box is read as the box too.
+  -> `description_measures.product_over_package` (`_UNBOXED_UNSAID`); PACKAGE.md "No product weight above the package".
 
 ## Transform (scripts)
 
@@ -229,6 +241,9 @@ Code: `transform.options_and_variants`.
   - TaylorMade MG5 pickers ("옵션 1/2/3", "SB웨지1/2/3", "웨지 로프트 바운스 선택-1/-2/-3", 13 listings): every product
     of the slots, "56+56" and every order of one set included (343 rows for 35 sets); no repeat was ever sold, two
     orders of one set were (12742411646). `transform._slot_rows`, wedge-sets categories only (note slot_rows_merged; C01).
+    The order kept: the ascending one ("Chrome 48° / 52° / 58°") when buyable at the first buyable row's price, else
+    Naver's first buyable ("52 / 58 / 48" of 12742304001 sent a buyer picking upward to "unavailable"; the resend
+    review D3, 2026-11-17). `transform._slot_row`.
   - Amazon imports: two axes saying one thing (Size "52 56 Degree" x Style Name "Black 52 56 Degree", Yamato
     13754846756: 266 rows for 14; `_echo_axes`, note axes_repeated; C56); values cut at 25 characters, whole in the
     description's option list ("옵션 이미지": "1 52 56 60 Degree Set Tar" = "... Set Tarnish", "Black Titanium

@@ -60,10 +60,12 @@ import attributes
 import brand_fallback
 from description_clean import body_notes, clean, clean_images, decode_line, picked_switches
 from description_images import current, image_rows
-from description_measures import (LONG_UNITS, NUMBER_CONF, compose_by_count, composition_count, container_in,
-                                  container_listed, joined_lines, package_for, profile_for, read_rows)
+from description_measures import (COMPOSED, FIELDS, LONG_UNITS, NUMBER_CONF, SOURCE, bands, compose_by_count,
+                                  composition_count, container_in, container_listed, joined_lines, package_for,
+                                  product_over_package, profile_for, read_rows)
 from naver_variants import choose_variants
-from package_measures import current_defaults, load_table, lofts, on_scale
+from package_measures import (count_band, count_kind, current_defaults, default_field, load_table, lofts, off_count,
+                              on_scale, package_kind)
 from spec_variants import (check_specs, hide_title_model_rows, title_cut, title_lofts_not_sold, title_one_variant,
                            title_variant_tail, title_word_unproven)
 from review_clean import clean_reviews
@@ -443,8 +445,23 @@ def _slot_rows(names: list[str], keep: list[int],
             repeats += 1
             continue
         sets.setdefault((tuple(sorted(ids)), tuple(_tidy(r["options"][i]) for i in others)), []).append(r)
-    out = [next((r for r in same if r.get("is_available") is not False), same[0]) for same in sets.values()]
+    out = [_slot_row(same, slots) for same in sets.values()]
     return out, repeats, len(rows) - repeats - len(out), slots
+
+
+def _slot_row(same: list[dict[str, Any]], slots: list[int]) -> dict[str, Any]:
+    """The row kept of one set's orders: the one whose slots go up by loft ("Chrome 48° / Chrome 52° / Chrome 58°")
+    when it is buyable at the first buyable row's price, else the first buyable in Naver's order, else the first
+    (2026-11-17, the resend review D3: a buyer picking the slots in ascending order met "unavailable" on the kept
+    "52 / 58 / 48" of MG5 12742304001)."""
+    first = next((r for r in same if r.get("is_available") is not False), same[0])
+
+    def up(r: dict[str, Any]) -> bool:
+        found = [_LOFT_RE.search(_tidy(r["options"][i])) for i in slots]
+        degrees = [int(m.group(0)) for m in found if m]
+        return len(degrees) == len(slots) and degrees == sorted(degrees)
+    return next((r for r in same if up(r) and r.get("is_available") is not False and r.get("price") ==
+                 first.get("price")), first)
 
 
 def simple_choices(specs: dict[str, Any]) -> tuple[list[dict[str, str]], list[str]]:
@@ -1113,6 +1130,50 @@ def _model_pieces(title: str, spec_rows_raw: list[dict[str, Any]]) -> tuple[str,
     return model, _PIECES_RE.search(f"{title} {model}")
 
 
+def _measures_row(category_id: str | None) -> dict[str, Any]:
+    """The category's row of the operator's table; {}: none."""
+    return next((r for r in _measures_table().get("rows", []) if str(r["category_id"]) == str(category_id)), {})
+
+
+def _off_count(ov: dict[str, Any], row: dict[str, Any], title: str,
+               texts: list[str]) -> dict[int, tuple[int, dict[str, Any] | None] | None]:
+    """A weight the listing states once (the server's product-scope row), against the variant's count of clubs (D1,
+    package_measures.count_kind / count_band / off_count): put back to the count's default when out of its band.
+    -> {id(variant): its count} for the description's statements (merge_fields' `counted`) and _over_package."""
+    counts = {id(v): count_kind(row, package_kind(row, v["package"], title, t, texts), t)
+              for v, t in zip(ov["variants"], texts) if row and v.get("package")}
+    for v in ov["variants"]:
+        if clubs := counts.get(id(v)):
+            v["package"], _ = off_count(v["package"], count_band(row, clubs), row, clubs[1],
+                                        _measures_table()["version"])
+    return counts
+
+
+def _over_package(ov: dict[str, Any], row: dict[str, Any], profile: Any, title: str, texts: list[str],
+                  counts: dict[int, tuple[int, dict[str, Any] | None] | None]) -> None:
+    """No product weight above the package's (D2, description_measures.product_over_package), every variant."""
+    if not row:
+        return
+    limit = bands(row.get("plausible"), profile)["package_weight_g"]
+    for v, t in zip(ov["variants"], texts):
+        if not v.get("package") or "product_weight_g" not in v["package"]:
+            continue
+        clubs = counts.get(id(v))
+        kind = clubs[1] if clubs else package_kind(row, v["package"], title, t, texts)
+        boxed = count_band(row, clubs).get("package_weight_g", limit)
+        v["package"], _ = product_over_package(
+            v["package"], default_field(row, kind, _measures_table()["version"], "product_weight_g"),
+            (max(limit[0], boxed[0]), min(limit[1], boxed[1])))
+
+
+def _stated_weights(ov: dict[str, Any], title: str, category_id: str | None) -> None:
+    """The count check and the package check of the stated weights without the description's images (no sidecar,
+    a stale one, a category that reads none): the server's statements are checked all the same (2026-11-17)."""
+    row = _measures_row(category_id)
+    texts = [" / ".join(v.get("options_ko") or []) for v in ov["variants"]]
+    _over_package(ov, row, profile_for(category_id), title, texts, _off_count(ov, row, title, texts))
+
+
 def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: str, model: str,
                     pieces: re.Match | None, spec_rows_raw: list[dict[str, Any]], category_id: str | None,
                     typed: str | None = None, supplements: list[dict[str, Any]] | None = None) -> list[dict[str, str]]:
@@ -1129,13 +1190,13 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
     상품정보 row (골프백포함여부), else a container sold as a paid add-on (the set has none), else the typed text's
     sentences, else the images'."""
     if sidecar is None:
+        _stated_weights(ov, title, category_id)
         return [{"code": "description_images_missing", "detail": "no sidecar: run description_images.py"}]
     profile = profile_for(category_id)               # by the Naver leaf category id; None: the core only
     images = image_rows(sidecar, with_conf=True)
     typed_lines = [t.strip() for t in (typed or "").split("\n") if t.strip()]
     facts = read_rows(images, profile, typed_lines, long_units=str(category_id) in LONG_UNITS)
-    row: dict[str, Any] = next((r for r in _measures_table().get("rows", [])
-                                if str(r["category_id"]) == str(category_id)), {})
+    row = _measures_row(category_id)
     band = profile.count if profile else (0, 0)
     counted = [int(pieces.group(1))] if pieces else []
     if profile and profile.count_title:              # "야마하 cs HM+ 씨즈 10개 풀세트" with a 총클럽개수 row of
@@ -1177,9 +1238,12 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
         listed = False       # "[드라이버+우드+유틸리티]", "(드라이버+아이언세트)": the title lists the clubs, no bag
                              # (13068838282, 6767889105; 2026-11-11)
     taken: dict[str, int] = {}
+    texts = [" / ".join(v.get("options_ko") or []) for v in ov["variants"]]
+    counts = _off_count(ov, row, title, texts)
     for v in ov["variants"]:
         if not v.get("package"):
             continue
+        weight_band = count_band(row, counts.get(id(v)))
         text = " ".join(v["options_ko"])
         own = [int(m.group(1)) for m in _PIECES_RE.finditer(text) if band[0] <= int(m.group(1)) <= band[1]]
         # "4개 스틸 건백", "12+볼백" (2026-11-11): an option value that names no club kind; "아이언 9개", "8개구성
@@ -1194,7 +1258,7 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
         ladies = bool(_SOFT_FLEX_RE.search(text) or _LADIES_RE.search(text)) and not _HARD_FLEX_RE.search(text)
         v["package"], names = package_for(v["package"], facts, 1 if single else max(own) if own else product_count,
                                           has if has is not None else listed,
-                                          row.get("plausible"), profile, row.get("baselines"), ladies)
+                                          row.get("plausible"), profile, row.get("baselines"), ladies, weight_band)
         for name in names:
             taken[name] = taken.get(name, 0) + 1
     block = row.get("compose_by_count")
@@ -1202,7 +1266,6 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
         lines = joined_lines(typed_lines) + [f"{r.get('label') or ''} {r.get('value') or ''}" for r in spec_rows_raw] \
             + [r if isinstance(r, str) else r[0] for rows in images for r in rows
                if isinstance(r, str) or r[1] >= NUMBER_CONF]
-        texts = [" / ".join(v.get("options_ko") or []) for v in ov["variants"]]
         counted_lofts = [lofts(t) for t in texts]
         for v, text, n in zip(ov["variants"], texts, counted_lofts):
             if not v.get("package") or "product_weight_g" not in v["package"]:
@@ -1212,6 +1275,10 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
             if made:
                 v["package"] = {**v["package"], "product_weight_g": made}
                 taken["product_weight_g"] = taken.get("product_weight_g", 0) + 1
+    _over_package(ov, row, profile, title, texts, counts)
+    # the note counts the fields as they now stand: a statement refused for the count or above the package is back
+    taken = {name: n for name in FIELDS if (n := sum((v.get("package") or {}).get(name, {}).get("source")
+                                                     in (SOURCE, COMPOSED) for v in ov["variants"]))}
     if not taken:
         return []
     return [{"code": "measures_from_images", "detail": ", ".join(
@@ -1334,11 +1401,14 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
         if images_text is not None and not current(images_text, line):
             notes.append({"code": "description_images_stale", "detail": "sidecar read from other links: run "
                           "description_images.py again"})
+            _stated_weights(ov, details["name"], category.get("id"))
         else:
             notes += _image_measures(ov, images_text, details["name"], model, pieces, specs.get("specs") or [],
                                      category.get("id"), desc.get("text"),
                                      (specs.get("options") or {}).get("supplements"))
             notes += _images_unread(images_text)
+    else:                                           # no description images read: the server's statements alone
+        _stated_weights(ov, details["name"], category.get("id"))
     vague = [o["name_ko"] for o in ov["options"] if _PLACEHOLDER_NAME_RE.match(o["name_ko"])
              or _COLOUR_AXIS_RE.match(o["name_ko"]) and not any(_COLOUR_WORD_RE.search(v) for v in o["values_ko"])]
     if vague:                                       # the translation names such an axis from its values

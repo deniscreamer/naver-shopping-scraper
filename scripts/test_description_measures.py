@@ -1291,3 +1291,75 @@ def test_compose_by_count_skips(over):
     args = {"lines": ["중량 448g"], "variant": "52 58", "vl": 2, **over}
     lines = args.pop("lines")
     assert by_count(lines, **args) is None
+
+
+# ---- D2 (2026-11-17, the resend review): no product weight above the package's ------------------------------------
+
+def _said(grams, quote, source="description_image"):
+    return {"value": {"min": grams, "max": grams}, "source": source, "confidence": 4, "quote": quote,
+            "from": "description_text", "how": "stated set weight"}
+
+
+_DEFAULT_PRODUCT = {"low": 900, "central": 1400, "high": 2800, "source": "category_default", "confidence": 1}
+_DEFAULT_PACKAGE = {"low": 1500, "central": 2200, "high": 3800, "source": "category_default", "confidence": 1}
+
+
+def test_item_weight_over_a_default_package_is_the_package():
+    """69 Golf 13480790720: "Item Weight | 2.84 Kilograms" above the 2200 g default; its siblings 13370257430 /
+    13164548371 state 2.84 / 2.79 kg as "Package Weight": read as the package's weight, the product the default."""
+    from description_measures import product_over_package
+    fields = {"product_weight_g": _said(2840, "Item Weight | 2.84 Kilograms"), "package_weight_g": _DEFAULT_PACKAGE}
+    out, names = product_over_package(fields, _DEFAULT_PRODUCT, (1140, 3800))
+    assert names == ["product_weight_g", "package_weight_g"]
+    assert out["package_weight_g"]["value"]["max"] == 2840 and out["package_weight_g"]["confidence"] == 4
+    assert out["package_weight_g"]["flags"] == ["item_weight_as_packed"]
+    assert out["product_weight_g"]["central"] == 1400
+    assert out["product_weight_g"]["compared"]["rejected"] == "above_package"
+    # out of the package's band: not the package; the product the default all the same
+    out, names = product_over_package(fields, _DEFAULT_PRODUCT, (1140, 2500))
+    assert names == ["product_weight_g"] and out["package_weight_g"] is _DEFAULT_PACKAGE
+
+
+def test_a_bare_weight_label_over_a_default_package_is_the_package():
+    """13024454637 (50002787 junior set with its bag): "무게 : 약 5kg" says neither product nor box, above the 4500 g
+    default box and inside its band (2500-8000): read as the package's weight; a labelled product weight
+    ("제품 무게") is not, it gives way to the default."""
+    from description_measures import product_over_package
+    box = {"low": 2500, "central": 4500, "high": 8000, "source": "category_default", "confidence": 1}
+    junior = {"low": 1500, "central": 3500, "high": 6500, "source": "category_default", "confidence": 1}
+    out, names = product_over_package({"product_weight_g": _said(5000, "무게 : 약 5kg"), "package_weight_g": box},
+                                      junior, (2500, 8000))
+    assert names == ["product_weight_g", "package_weight_g"]
+    assert (out["package_weight_g"]["value"]["max"], out["package_weight_g"]["flags"]) == (5000, ["item_weight_as_packed"])
+    assert out["product_weight_g"]["central"] == 3500
+    out, names = product_over_package({"product_weight_g": _said(5000, "제품 무게 : 약 5kg"), "package_weight_g": box},
+                                      junior, (2500, 8000))
+    assert names == ["product_weight_g"] and out["package_weight_g"] is box
+
+
+def test_product_above_a_stated_package_gives_way():
+    """Detroit 13370268119: "Item Weight : 3.2 Pounds" (1451 g) beside "Package Weight : 1.45 Kilograms": the
+    product the default (1400), the package's below_contents flag goes with it; a weight not above stays."""
+    from description_measures import product_over_package
+    package = {**_said(1450, "- Package Weight : 1.45 Kilograms"), "how": "stated packed weight", "confidence": 5,
+               "flags": ["below_contents"]}
+    out, names = product_over_package({"product_weight_g": _said(1451, "- Item Weight : 3.2 Pounds"),
+                                       "package_weight_g": package}, _DEFAULT_PRODUCT, (1140, 3800))
+    assert names == ["product_weight_g"] and out["product_weight_g"]["central"] == 1400
+    assert "flags" not in out["package_weight_g"] and out["package_weight_g"]["value"]["max"] == 1450
+    same = {"product_weight_g": _said(1400, "x"), "package_weight_g": package}
+    assert product_over_package(same, _DEFAULT_PRODUCT, (1140, 3800)) == (same, [])
+    # a default product above a stated box is not the seller's: left (13372006463, the owner's decision)
+    left = {"product_weight_g": _DEFAULT_PRODUCT, "package_weight_g": {**package, "value": {"min": 1290, "max": 1290}}}
+    assert product_over_package(left, _DEFAULT_PRODUCT, (1140, 3800)) == (left, [])
+
+
+def test_product_capped_when_the_default_is_above_the_box_too():
+    """Fingerprints F38 13388597147 (50002787, one junior club): 363 g stated over a stated 360 g box; the default
+    (3500 g) is above it too: the product the box's own weight, flagged capped_to_package."""
+    from description_measures import product_over_package
+    package = {**_said(360, "Package Weight: 360 g", "source_stated"), "kind": "packed"}
+    out, _ = product_over_package({"product_weight_g": _said(363, "Item Weight: 363 g", "source_stated"),
+                                   "package_weight_g": package}, {**_DEFAULT_PRODUCT, "central": 3500}, (10, 200000))
+    assert out["product_weight_g"]["value"] == {"min": 360, "max": 360}
+    assert out["product_weight_g"]["flags"] == ["capped_to_package"]

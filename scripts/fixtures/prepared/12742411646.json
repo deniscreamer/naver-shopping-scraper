@@ -58,8 +58,8 @@
     "name_ko": "SB웨지1/로프트(바운스)",
     "values_ko": [
      "크롬52도(09도)",
-     "크롬48도(09도)",
      "크롬50도(09도)",
+     "크롬48도(09도)",
      "크롬54도(12도)",
      "크롬56도(12도)"
     ]
@@ -68,9 +68,9 @@
     "name_ko": "SB웨지2/로프트(바운스)",
     "values_ko": [
      "크롬56도(12도)",
+     "크롬54도(12도)",
+     "크롬52도(09도)",
      "크롬58도(10도)",
-     "크롬60도(10도)",
-     "크롬48도(09도)",
      "크롬50도(09도)"
     ]
    },
@@ -79,9 +79,9 @@
     "values_ko": [
      "크롬60도(10도)",
      "크롬58도(10도)",
+     "크롬56도(12도)",
      "크롬54도(12도)",
-     "크롬50도(09도)",
-     "크롬48도(09도)"
+     "크롬52도(09도)"
     ]
    }
   ],
@@ -230,16 +230,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"크롬52도(09도)\",\"크롬56도(12도)\",\"크롬54도(12도)\"]",
-    "naver_variant_id": "53939484213",
+    "source_id": "observed:[\"크롬52도(09도)\",\"크롬54도(12도)\",\"크롬56도(12도)\"]",
+    "naver_variant_id": "53939484255",
     "options_ko": [
      "크롬52도(09도)",
-     "크롬56도(12도)",
-     "크롬54도(12도)"
+     "크롬54도(12도)",
+     "크롬56도(12도)"
     ],
     "price_krw": 600000,
     "price_usd": "600.00",
-    "sku": "FW-b2f5190baacfb3bbfe3f9da2",
+    "sku": "FW-c0ac853e4e77f04ab7d2cff6",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -301,16 +301,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"크롬52도(09도)\",\"크롬56도(12도)\",\"크롬50도(09도)\"]",
-    "naver_variant_id": "53939484215",
+    "source_id": "observed:[\"크롬50도(09도)\",\"크롬52도(09도)\",\"크롬56도(12도)\"]",
+    "naver_variant_id": "53939484361",
     "options_ko": [
+     "크롬50도(09도)",
      "크롬52도(09도)",
-     "크롬56도(12도)",
-     "크롬50도(09도)"
+     "크롬56도(12도)"
     ],
     "price_krw": 600000,
     "price_usd": "600.00",
-    "sku": "FW-a837e7161932d16a5bf302b4",
+    "sku": "FW-f2b352b106797b5d62ac6232",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -372,16 +372,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"크롬52도(09도)\",\"크롬56도(12도)\",\"크롬48도(09도)\"]",
-    "naver_variant_id": "53939484216",
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬52도(09도)\",\"크롬56도(12도)\"]",
+    "naver_variant_id": "53939484301",
     "options_ko": [
+     "크롬48도(09도)",
      "크롬52도(09도)",
-     "크롬56도(12도)",
-     "크롬48도(09도)"
+     "크롬56도(12도)"
     ],
     "price_krw": 600000,
     "price_usd": "600.00",
-    "sku": "FW-e92e5efdba7ef56294f9cc0f",
+    "sku": "FW-2699ebd952480ac29c79b2d0",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -514,16 +514,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"크롬52도(09도)\",\"크롬58도(10도)\",\"크롬54도(12도)\"]",
-    "naver_variant_id": "53939484220",
+    "source_id": "observed:[\"크롬52도(09도)\",\"크롬54도(12도)\",\"크롬58도(10도)\"]",
+    "naver_variant_id": "53939484254",
     "options_ko": [
      "크롬52도(09도)",
-     "크롬58도(10도)",
-     "크롬54도(12도)"
+     "크롬54도(12도)",
+     "크롬58도(10도)"
     ],
     "price_krw": 600000,
     "price_usd": "600.00",
-    "sku": "FW-684c3d1a6dc177f0db271b25",
+    "sku": "FW-45e94e8549d23494eb3a4895",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -585,513 +585,513 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"크롬52도(09도)\",\"크롬58도(10도)\",\"크롬50도(09도)\"]",
-    "naver_variant_id": "53939484222",
+    "source_id": "observed:[\"크롬50도(09도)\",\"크롬52도(09도)\",\"크롬58도(10도)\"]",
+    "naver_variant_id": "53939484360",
     "options_ko": [
-     "크롬52도(09도)",
-     "크롬58도(10도)",
-     "크롬50도(09도)"
-    ],
-    "price_krw": 600000,
-    "price_usd": "600.00",
-    "sku": "FW-cd857c2fc23372769366841c",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 900,
-      "central": 1400,
-      "high": 2800,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_weight_g": {
-      "low": 1500,
-      "central": 2200,
-      "high": 3800,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_length_mm": {
-      "low": 960,
-      "central": 980,
-      "high": 1020,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_width_mm": {
-      "low": 150,
-      "central": 200,
-      "high": 280,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_height_mm": {
-      "low": 80,
-      "central": 100,
-      "high": 150,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"크롬52도(09도)\",\"크롬58도(10도)\",\"크롬48도(09도)\"]",
-    "naver_variant_id": "53939484223",
-    "options_ko": [
-     "크롬52도(09도)",
-     "크롬58도(10도)",
-     "크롬48도(09도)"
-    ],
-    "price_krw": 600000,
-    "price_usd": "600.00",
-    "sku": "FW-1cbe26a83c62f2a44272bdf6",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 900,
-      "central": 1400,
-      "high": 2800,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_weight_g": {
-      "low": 1500,
-      "central": 2200,
-      "high": 3800,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_length_mm": {
-      "low": 960,
-      "central": 980,
-      "high": 1020,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_width_mm": {
-      "low": 150,
-      "central": 200,
-      "high": 280,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_height_mm": {
-      "low": 80,
-      "central": 100,
-      "high": 150,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"크롬52도(09도)\",\"크롬60도(10도)\",\"크롬54도(12도)\"]",
-    "naver_variant_id": "53939484227",
-    "options_ko": [
-     "크롬52도(09도)",
-     "크롬60도(10도)",
-     "크롬54도(12도)"
-    ],
-    "price_krw": 600000,
-    "price_usd": "600.00",
-    "sku": "FW-a1af9f9c840e968b1836020c",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 900,
-      "central": 1400,
-      "high": 2800,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_weight_g": {
-      "low": 1500,
-      "central": 2200,
-      "high": 3800,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_length_mm": {
-      "low": 960,
-      "central": 980,
-      "high": 1020,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_width_mm": {
-      "low": 150,
-      "central": 200,
-      "high": 280,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_height_mm": {
-      "low": 80,
-      "central": 100,
-      "high": 150,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"크롬52도(09도)\",\"크롬60도(10도)\",\"크롬50도(09도)\"]",
-    "naver_variant_id": "53939484229",
-    "options_ko": [
-     "크롬52도(09도)",
-     "크롬60도(10도)",
-     "크롬50도(09도)"
-    ],
-    "price_krw": 600000,
-    "price_usd": "600.00",
-    "sku": "FW-47066d4484e4e1e841007340",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 900,
-      "central": 1400,
-      "high": 2800,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_weight_g": {
-      "low": 1500,
-      "central": 2200,
-      "high": 3800,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_length_mm": {
-      "low": 960,
-      "central": 980,
-      "high": 1020,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_width_mm": {
-      "low": 150,
-      "central": 200,
-      "high": 280,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_height_mm": {
-      "low": 80,
-      "central": 100,
-      "high": 150,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"크롬52도(09도)\",\"크롬60도(10도)\",\"크롬48도(09도)\"]",
-    "naver_variant_id": "53939484230",
-    "options_ko": [
-     "크롬52도(09도)",
-     "크롬60도(10도)",
-     "크롬48도(09도)"
-    ],
-    "price_krw": 600000,
-    "price_usd": "600.00",
-    "sku": "FW-eae37d0ed04fee766d58b14f",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 900,
-      "central": 1400,
-      "high": 2800,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_weight_g": {
-      "low": 1500,
-      "central": 2200,
-      "high": 3800,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_length_mm": {
-      "low": 960,
-      "central": 980,
-      "high": 1020,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_width_mm": {
-      "low": 150,
-      "central": 200,
-      "high": 280,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_height_mm": {
-      "low": 80,
-      "central": 100,
-      "high": 150,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"크롬52도(09도)\",\"크롬48도(09도)\",\"크롬54도(12도)\"]",
-    "naver_variant_id": "53939484235",
-    "options_ko": [
-     "크롬52도(09도)",
-     "크롬48도(09도)",
-     "크롬54도(12도)"
-    ],
-    "price_krw": 600000,
-    "price_usd": "600.00",
-    "sku": "FW-42a3bc0077ce7a8f8b9351b2",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 900,
-      "central": 1400,
-      "high": 2800,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_weight_g": {
-      "low": 1500,
-      "central": 2200,
-      "high": 3800,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_length_mm": {
-      "low": 960,
-      "central": 980,
-      "high": 1020,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_width_mm": {
-      "low": 150,
-      "central": 200,
-      "high": 280,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_height_mm": {
-      "low": 80,
-      "central": 100,
-      "high": 150,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"크롬52도(09도)\",\"크롬48도(09도)\",\"크롬50도(09도)\"]",
-    "naver_variant_id": "53939484237",
-    "options_ko": [
-     "크롬52도(09도)",
-     "크롬48도(09도)",
-     "크롬50도(09도)"
-    ],
-    "price_krw": 600000,
-    "price_usd": "600.00",
-    "sku": "FW-9e018043c02fb92a718721b4",
-    "available": true,
-    "package": {
-     "product_weight_g": {
-      "low": 900,
-      "central": 1400,
-      "high": 2800,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_weight_g": {
-      "low": 1500,
-      "central": 2200,
-      "high": 3800,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_length_mm": {
-      "low": 960,
-      "central": 980,
-      "high": 1020,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_width_mm": {
-      "low": 150,
-      "central": 200,
-      "high": 280,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     },
-     "package_height_mm": {
-      "low": 80,
-      "central": 100,
-      "high": 150,
-      "source": "category_default",
-      "confidence": 1,
-      "reliability": "estimated_average",
-      "table_version": 6,
-      "approved_by": "owner",
-      "approved_at": "2026-11-15"
-     }
-    },
-    "today_dispatch": true
-   },
-   {
-    "source_id": "observed:[\"크롬52도(09도)\",\"크롬50도(09도)\",\"크롬54도(12도)\"]",
-    "naver_variant_id": "53939484242",
-    "options_ko": [
-     "크롬52도(09도)",
      "크롬50도(09도)",
+     "크롬52도(09도)",
+     "크롬58도(10도)"
+    ],
+    "price_krw": 600000,
+    "price_usd": "600.00",
+    "sku": "FW-39a473bdb081abfe034d9df8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬52도(09도)\",\"크롬58도(10도)\"]",
+    "naver_variant_id": "53939484300",
+    "options_ko": [
+     "크롬48도(09도)",
+     "크롬52도(09도)",
+     "크롬58도(10도)"
+    ],
+    "price_krw": 600000,
+    "price_usd": "600.00",
+    "sku": "FW-3135029cbe10d02f27004a1c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬52도(09도)\",\"크롬54도(12도)\",\"크롬60도(10도)\"]",
+    "naver_variant_id": "53939484253",
+    "options_ko": [
+     "크롬52도(09도)",
+     "크롬54도(12도)",
+     "크롬60도(10도)"
+    ],
+    "price_krw": 600000,
+    "price_usd": "600.00",
+    "sku": "FW-1a327b9564ebbc5d256409cd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬50도(09도)\",\"크롬52도(09도)\",\"크롬60도(10도)\"]",
+    "naver_variant_id": "53939484359",
+    "options_ko": [
+     "크롬50도(09도)",
+     "크롬52도(09도)",
+     "크롬60도(10도)"
+    ],
+    "price_krw": 600000,
+    "price_usd": "600.00",
+    "sku": "FW-e2b6a0ea82ead8866d60d945",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬52도(09도)\",\"크롬60도(10도)\"]",
+    "naver_variant_id": "53939484299",
+    "options_ko": [
+     "크롬48도(09도)",
+     "크롬52도(09도)",
+     "크롬60도(10도)"
+    ],
+    "price_krw": 600000,
+    "price_usd": "600.00",
+    "sku": "FW-060916421063cdb9b22f0d69",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬52도(09도)\",\"크롬54도(12도)\"]",
+    "naver_variant_id": "53939484303",
+    "options_ko": [
+     "크롬48도(09도)",
+     "크롬52도(09도)",
      "크롬54도(12도)"
     ],
     "price_krw": 600000,
     "price_usd": "600.00",
-    "sku": "FW-09144f46debc56fec26746a6",
+    "sku": "FW-34978a14a5affcfe29eb2fc2",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬50도(09도)\",\"크롬52도(09도)\"]",
+    "naver_variant_id": "53939484296",
+    "options_ko": [
+     "크롬48도(09도)",
+     "크롬50도(09도)",
+     "크롬52도(09도)"
+    ],
+    "price_krw": 600000,
+    "price_usd": "600.00",
+    "sku": "FW-be6e17b2d9daff8b48558056",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"크롬50도(09도)\",\"크롬52도(09도)\",\"크롬54도(12도)\"]",
+    "naver_variant_id": "53939484362",
+    "options_ko": [
+     "크롬50도(09도)",
+     "크롬52도(09도)",
+     "크롬54도(12도)"
+    ],
+    "price_krw": 600000,
+    "price_usd": "600.00",
+    "sku": "FW-2629af48c0635aaf275a47bf",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -1295,16 +1295,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"크롬48도(09도)\",\"크롬56도(12도)\",\"크롬54도(12도)\"]",
-    "naver_variant_id": "53939484263",
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬54도(12도)\",\"크롬56도(12도)\"]",
+    "naver_variant_id": "53939484313",
     "options_ko": [
      "크롬48도(09도)",
-     "크롬56도(12도)",
-     "크롬54도(12도)"
+     "크롬54도(12도)",
+     "크롬56도(12도)"
     ],
     "price_krw": 600000,
     "price_usd": "600.00",
-    "sku": "FW-af5852a562d148d27046dc68",
+    "sku": "FW-013643fe0f25699398dbb88b",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -1366,16 +1366,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"크롬48도(09도)\",\"크롬56도(12도)\",\"크롬50도(09도)\"]",
-    "naver_variant_id": "53939484265",
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬50도(09도)\",\"크롬56도(12도)\"]",
+    "naver_variant_id": "53939484294",
     "options_ko": [
      "크롬48도(09도)",
-     "크롬56도(12도)",
-     "크롬50도(09도)"
+     "크롬50도(09도)",
+     "크롬56도(12도)"
     ],
     "price_krw": 600000,
     "price_usd": "600.00",
-    "sku": "FW-6c447422716ca786555bb863",
+    "sku": "FW-4de8fbb747873fd4f523681d",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -1508,16 +1508,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"크롬48도(09도)\",\"크롬58도(10도)\",\"크롬54도(12도)\"]",
-    "naver_variant_id": "53939484270",
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬54도(12도)\",\"크롬58도(10도)\"]",
+    "naver_variant_id": "53939484311",
     "options_ko": [
      "크롬48도(09도)",
-     "크롬58도(10도)",
-     "크롬54도(12도)"
+     "크롬54도(12도)",
+     "크롬58도(10도)"
     ],
     "price_krw": 600000,
     "price_usd": "600.00",
-    "sku": "FW-567f610f63e0de41ab5d3e44",
+    "sku": "FW-636a4c0973ec118c99f7ab5e",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -1579,16 +1579,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"크롬48도(09도)\",\"크롬58도(10도)\",\"크롬50도(09도)\"]",
-    "naver_variant_id": "53939484272",
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬50도(09도)\",\"크롬58도(10도)\"]",
+    "naver_variant_id": "53939484293",
     "options_ko": [
      "크롬48도(09도)",
-     "크롬58도(10도)",
-     "크롬50도(09도)"
+     "크롬50도(09도)",
+     "크롬58도(10도)"
     ],
     "price_krw": 600000,
     "price_usd": "600.00",
-    "sku": "FW-20d3b83816ec6cc1c41f3df5",
+    "sku": "FW-a512f4a2cdedebaaa7ff697e",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -1650,16 +1650,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"크롬48도(09도)\",\"크롬60도(10도)\",\"크롬54도(12도)\"]",
-    "naver_variant_id": "53939484277",
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬54도(12도)\",\"크롬60도(10도)\"]",
+    "naver_variant_id": "53939484310",
     "options_ko": [
      "크롬48도(09도)",
-     "크롬60도(10도)",
-     "크롬54도(12도)"
+     "크롬54도(12도)",
+     "크롬60도(10도)"
     ],
     "price_krw": 600000,
     "price_usd": "600.00",
-    "sku": "FW-ca9be30b7d83f37323243e61",
+    "sku": "FW-0580a25555ee85df065e175c",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -1721,16 +1721,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"크롬48도(09도)\",\"크롬60도(10도)\",\"크롬50도(09도)\"]",
-    "naver_variant_id": "53939484282",
+    "source_id": "observed:[\"크롬48도(09도)\",\"크롬50도(09도)\",\"크롬60도(10도)\"]",
+    "naver_variant_id": "53939484292",
     "options_ko": [
      "크롬48도(09도)",
-     "크롬60도(10도)",
-     "크롬50도(09도)"
+     "크롬50도(09도)",
+     "크롬60도(10도)"
     ],
     "price_krw": 600000,
     "price_usd": "600.00",
-    "sku": "FW-e7273334a537498779c62250",
+    "sku": "FW-b8ba8acc455384b9c3fc1db5",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -2005,16 +2005,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"크롬50도(09도)\",\"크롬56도(12도)\",\"크롬54도(12도)\"]",
-    "naver_variant_id": "53939484326",
+    "source_id": "observed:[\"크롬50도(09도)\",\"크롬54도(12도)\",\"크롬56도(12도)\"]",
+    "naver_variant_id": "53939484368",
     "options_ko": [
      "크롬50도(09도)",
-     "크롬56도(12도)",
-     "크롬54도(12도)"
+     "크롬54도(12도)",
+     "크롬56도(12도)"
     ],
     "price_krw": 600000,
     "price_usd": "600.00",
-    "sku": "FW-f21fcc53e699782b19e687d5",
+    "sku": "FW-8732317c137e164074872366",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -2147,16 +2147,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"크롬50도(09도)\",\"크롬58도(10도)\",\"크롬54도(12도)\"]",
-    "naver_variant_id": "53939484334",
+    "source_id": "observed:[\"크롬50도(09도)\",\"크롬54도(12도)\",\"크롬58도(10도)\"]",
+    "naver_variant_id": "53939484367",
     "options_ko": [
      "크롬50도(09도)",
-     "크롬58도(10도)",
-     "크롬54도(12도)"
+     "크롬54도(12도)",
+     "크롬58도(10도)"
     ],
     "price_krw": 600000,
     "price_usd": "600.00",
-    "sku": "FW-b544e6d2cf09ec08efafac44",
+    "sku": "FW-ff64089e5ddba5dbb6f264ab",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -2218,16 +2218,16 @@
     "today_dispatch": true
    },
    {
-    "source_id": "observed:[\"크롬50도(09도)\",\"크롬60도(10도)\",\"크롬54도(12도)\"]",
-    "naver_variant_id": "53939484341",
+    "source_id": "observed:[\"크롬50도(09도)\",\"크롬54도(12도)\",\"크롬60도(10도)\"]",
+    "naver_variant_id": "53939484366",
     "options_ko": [
      "크롬50도(09도)",
-     "크롬60도(10도)",
-     "크롬54도(12도)"
+     "크롬54도(12도)",
+     "크롬60도(10도)"
     ],
     "price_krw": 600000,
     "price_usd": "600.00",
-    "sku": "FW-41e170728077b557712dfd3c",
+    "sku": "FW-4905112587edb7b08d8c9a63",
     "available": true,
     "package": {
      "product_weight_g": {
@@ -2902,14 +2902,14 @@
    "ko": "크롬52도(09도)"
   },
   {
-   "id": "option_value:24e0b534f0262c6e",
-   "kind": "option_value",
-   "ko": "크롬48도(09도)"
-  },
-  {
    "id": "option_value:7e8ef6ab5b05de52",
    "kind": "option_value",
    "ko": "크롬50도(09도)"
+  },
+  {
+   "id": "option_value:24e0b534f0262c6e",
+   "kind": "option_value",
+   "ko": "크롬48도(09도)"
   },
   {
    "id": "option_value:87510ca6475d04fe",
@@ -2932,14 +2932,14 @@
    "ko": "크롬58도(10도)"
   },
   {
-   "id": "option_value:93a629a177cc2ba4",
-   "kind": "option_value",
-   "ko": "크롬60도(10도)"
-  },
-  {
    "id": "option_name:6fb8062af8902ee6",
    "kind": "option_name",
    "ko": "SB웨지3/로프트(바운스)"
+  },
+  {
+   "id": "option_value:93a629a177cc2ba4",
+   "kind": "option_value",
+   "ko": "크롬60도(10도)"
   },
   {
    "id": "spec_label:3ecc0ce552283c4e",

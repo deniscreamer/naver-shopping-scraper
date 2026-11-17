@@ -1,0 +1,210 @@
+{
+ "product_id": "13370268119",
+ "covers": "D2 (2026-11-17, resend review): 'Item Weight : 3.2 Pounds' (1451 g) above the stated 'Package Weight : 1.45 Kilograms': the product weight the default, the package stays",
+ "checked": ["product 1400 default rejected above_package", "package 1450 stated, below_contents gone"],
+ "input": {
+  "title": "Detroit Golf Co. 프리미엄 단조 웨지 세트 – 52 56 60도 밀링 페이스",
+  "category": {"id": "50002783", "name": "웨지"},
+  "spec_rows": [
+   {"label": "상품번호", "value": "13370268119"},
+   {"label": "제조사", "value": "Detroit Golf Co."},
+   {"label": "브랜드", "value": "Detroit Golf Co."},
+   {"label": "모델명", "value": "Detroit Golf Co."},
+   {"label": "원산지", "value": "기타해외"},
+   {"label": "인증정보", "value": "이 제품은 구매대행을 통하여 유통되는 제품이며 '전기용품 및 생활용품 안전관리법'에 따른 안전관리대상 제품입니다.판매자가 등록한 것으로 등록 정보에 대한 일체 책임은 판매자에게 있습니다."}
+  ],
+  "facts": [{"label_ko": "Size", "value_ko": "52/ 56/ 60"}, {"label_ko": "", "value_ko": "Wedge Set"}],
+  "variants": [{"id": "57515958674", "options_ko": []}],
+  "supplements": [],
+  "typed": [
+   "Detroit Golf Co. 프리미엄 단조 웨지 세트 – 52 56 60도 밀링 페이스",
+   "GOODS SPECIFICS",
+   "- Size : 52, 56, 60",
+   "- Color : Wedge Set",
+   "- Golf Club Flex : Regular",
+   "- Hand Orientation : Right",
+   "- Golf Club Loft : 56 Degrees",
+   "- Material : Carbon Steel",
+   "- Brand : Detroit Golf Co.",
+   "- Shaft Material : Alloy Steel",
+   "- Item Weight : 3.2 Pounds",
+   "- Grip Material : Rubber\" or \"Synthetic Rubber",
+   "- Grip Size : Standard",
+   "- Grip Type : Wrap",
+   "- Product Dimensions : 4\"L x 35.5\"W x 4\"H",
+   "x",
+   "- Golf Club Type : Wedge Golf Club",
+   "- Manufacturer : Detroit Golf Co.",
+   "- Item Package Dimensions L x W x H : 41 x 3.9 x 1.9 inches",
+   "- Package Weight : 1.45 Kilograms",
+   "- Item Dimensions LxWxH : 4 x 35.5 x 4 inches",
+   "- Brand Name : Detroit Golf Co.",
+   "- Suggested Users : mens",
+   "Feature",
+   "- Set includes 52, 56, and 60-degree lofts with 10 and 14 bounces for maximum forgivness. Right-handed clubs forged with a milled face for superior spin and control. Perfect for all skill levels.",
+   "- Crafted from premium forged 1020 carbon steel for exceptional durability and performance. Finished with a matte chrome plating for a sleek, professional appearance and enhanced protection.",
+   "- Premium pro-quality golf clubs designed for all golfers, offering exceptional performance at a fraction of the cost. Experience stunning craftsmanship that helps shave strokes and improve your game.",
+   "- BITE Tech Milled Face for superior spin, control, and consistency. Perfect for precise shots from the fairway, fringe, or rough, helping you maintain accuracy and improve performance.",
+   "- Proudly represented by a 100% American company. Enjoy a risk-free purchase with our satisfaction guarantee if youre not completely satisfied, simply return it within 30 days!"
+  ],
+  "images": [
+   [
+    ["Detroit Golf Co.프리미엄 단조 웨지 세트-525660도 밀링", 0.974],
+    4,
+    ["B620 CS FORGED", 0.917],
+    1,
+    ["- Size : 52, 56, 60", 0.948],
+    3,
+    ["- Golf Club Loft : 56 Degrees", 0.973],
+    2,
+    ["- Shaft Material : Alloy Steel", 0.967],
+    ["- Item Weight : 3.2 Pounds", 0.934],
+    ["Grip Material : Rubber\" or \"Synthetic Rubber", 0.954],
+    ["- Grip Size : Standard", 0.953],
+    ["- Grip Type : Wrap", 0.939],
+    ["-Product Dimensions : 4\"L × 35.5\"W × 4\"H", 0.941],
+    3,
+    ["- Item Package Dimensions L x W × H : 41 × 3.9 × 1.9 inches", 0.916],
+    ["-Package Weight : 1.45 Kilograms", 0.97],
+    ["- Item Dimensions LxWxH : 4 × 35.5 × 4 inches", 0.918],
+    3,
+    ["- Set includes 52, 56, and 60-degree lofts with 10 and 14 bounces for maximum forgivness. Right-handed clubs forged", 0.98],
+    1,
+    ["- Crafted from premium forged 1020 carbon steel for exceptional durability and performance. Finished with a matte", 0.969],
+    ["chrome plating for a sleek, professional appearance and enhanced protection.", 0.993],
+    ["-Premium pro-quality golf clubs designed for all golfers, offering exceptional performance at a fraction of the cost.", 0.954],
+    ["Experience stunning craftsmanship that helps shave strokes and improve your game.", 0.993],
+    1,
+    ["rough, helping you maintain accuracy and improve performance.", 0.986],
+    ["-Proudly represented by a 10o% American company. Enjoy a risk-free purchase with our satisfaction guarantee if youre", 0.978],
+    ["not completely satisfied, simply return it within 30 days!", 0.98],
+    ["개인통관고유부호 입력 의무화", 0.971],
+    ["개연통관고유번호를잘못입력할경우", 0.943],
+    ["→관비용2,200원이고객님께청구됩니다", 0.92],
+    ["아래사이트또는네이버에개인통관고유번호'", 0.963],
+    2,
+    ["구매자가 아닌 수취인의개인통관 고유번호를", 0.933],
+    ["입력해주세요 (P12345678900)", 0.974],
+    5,
+    ["해외직구상품은 일별$150이내는 면세이나", 0.919],
+    4,
+    ["(개인사용이아닌사업목적사용인경우에도관부가세가", 0.975],
+    1,
+    ["상품포장의가로,세로높이를합산한총길이가", 0.935],
+    ["150cm초과또는중량20kg 초과", 0.956],
+    ["최장변의길이가100cm를초과하는경우", 0.979],
+    8,
+    ["통리정에서 오리지널박스가개봉될수 있으며", 0.875],
+    1,
+    ["해외배송으로배송기간은평균 14일정도소요되나", 0.942],
+    3,
+    ["구매금액에는관부가세가 포함되어있지않습니다", 0.962],
+    ["구매금액$150달러이상구매시해당품목관세율에따라", 0.969],
+    2,
+    ["배송원료후7일이내반품신청이가능합니다", 0.947],
+    23
+   ]
+  ],
+  "measures": {
+   "is_set": true,
+   "weights": [
+    {
+     "value": {"min": 1451.496, "max": 1451.496},
+     "unit": "Pounds",
+     "matched": "3.2 Pounds",
+     "kind": "unknown",
+     "scope": "unknown",
+     "approximate": false,
+     "count": null,
+     "flags": [],
+     "quote": "- Item Weight : 3.2 Pounds",
+     "source": "description",
+     "locator": {"block": "text", "row": 10},
+     "binding": {"scope": "product", "variant_ids": ["57515958674"]},
+     "origin": "source_stated"
+    }
+   ],
+   "dimensions": [
+    {
+     "values": [101.6, 901.7, 101.6],
+     "axes": ["length", "width", "height"],
+     "unit": "\"",
+     "matched": "4\"L x 35.5\"W x 4\"H",
+     "kind": "product",
+     "state": null,
+     "flags": ["not_confirmed_packed"],
+     "quote": "- Product Dimensions : 4\"L x 35.5\"W x 4\"H",
+     "source": "description",
+     "locator": {"block": "text", "row": 14},
+     "binding": {"scope": "product", "variant_ids": ["57515958674"]},
+     "origin": "source_stated"
+    },
+    {
+     "values": [1041.4, 99.06, 48.26],
+     "axes": null,
+     "unit": "inches",
+     "matched": "H : 41 x 3.9 x 1.9 inches",
+     "kind": "packed",
+     "state": null,
+     "flags": ["axis_order_unresolved"],
+     "quote": "- Item Package Dimensions L x W x H : 41 x 3.9 x 1.9 inches",
+     "source": "description",
+     "locator": {"block": "text", "row": 18},
+     "binding": {"scope": "product", "variant_ids": ["57515958674"]},
+     "origin": "source_stated"
+    },
+    {
+     "values": [101.6, 901.7, 101.6],
+     "axes": null,
+     "unit": "inches",
+     "matched": "H : 4 x 35.5 x 4 inches",
+     "kind": "component",
+     "state": null,
+     "flags": ["axis_order_unresolved", "not_confirmed_packed"],
+     "quote": "- Item Dimensions LxWxH : 4 x 35.5 x 4 inches",
+     "source": "description",
+     "locator": {"block": "text", "row": 20},
+     "binding": {"scope": "product", "variant_ids": ["57515958674"]},
+     "origin": "source_stated"
+    }
+   ],
+   "references": [
+    {
+     "quote": "크기: 상품상세페이지 참조",
+     "source": "notice",
+     "locator": {"block": "items", "row": 2},
+     "measure": "size",
+     "reason": "description_reference"
+    },
+    {
+     "quote": "중량: 상품상세페이지 참조",
+     "source": "notice",
+     "locator": {"block": "items", "row": 3},
+     "measure": "weight",
+     "reason": "description_reference"
+    }
+   ],
+   "review": [
+    {
+     "quote": "- Package Weight : 1.45 Kilograms",
+     "source": "description",
+     "locator": {"block": "text", "row": 19},
+     "measure": "weight",
+     "reason": "kind_conflict"
+    }
+   ]
+  }
+ },
+ "expected": [
+  {
+   "variants": [[]],
+   "fields": {
+    "product_weight_g": {"value": 1400, "source": "category_default", "confidence": 1},
+    "package_weight_g": {"value": 1450, "source": "description_image", "confidence": 5, "how": "stated packed weight", "from": "description_text", "quote": "- Package Weight : 1.45 Kilograms"},
+    "package_length_mm": {"value": 1041.4, "source": "source_stated", "confidence": 5, "from": "description", "quote": "- Item Package Dimensions L x W x H : 41 x 3.9 x 1.9 inches"},
+    "package_width_mm": {"value": 99.06, "source": "source_stated", "confidence": 5, "from": "description", "quote": "- Item Package Dimensions L x W x H : 41 x 3.9 x 1.9 inches"},
+    "package_height_mm": {"value": 48.26, "source": "source_stated", "confidence": 5, "from": "description", "quote": "- Item Package Dimensions L x W x H : 41 x 3.9 x 1.9 inches"}
+   }
+  }
+ ]
+}

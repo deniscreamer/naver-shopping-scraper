@@ -447,3 +447,41 @@ def test_server_box_out_of_band_is_refused_whole():
     [v] = variant_measures(specs, load_table())
     assert [(v["fields"][n]["central"], v["fields"][n]["reason"]) for n in FIELDS[2:]] == \
         [(980, "box_not_whole"), (200, "box_not_whole"), (100, "implausible_for_category")]
+
+
+# ---- D1 (2026-11-17, the resend review): a weight the listing states once, against the variant's count ----------
+
+def test_count_kind_and_band():
+    """A stated weight of n wedges is plausible from n x 380 g (compose_by_count item_g.min) to the count kind's
+    high, or n + 1 clubs' lowest when more: two 760-1140 / 760-2200 (Yamato's 2-packs state 1.11 and 1.13 kg),
+    three (the base row) 1140-2800 / 1140-3800, four+ 1520-2800 / 1520-3600."""
+    from package_measures import count_band, count_kind
+    two, four, single = (next(k for k in WEDGES["kinds"] if k["kind"] == n)
+                         for n in ("two_wedges", "four_plus", "single_club"))
+    assert count_band(WEDGES, count_kind(WEDGES, two, "50 56 Degree")) == {
+        "product_weight_g": (760, 1140), "package_weight_g": (760, 2200)}
+    assert count_band(WEDGES, count_kind(WEDGES, None, "50 54 58 Degree Set")) == {
+        "product_weight_g": (1140, 2800), "package_weight_g": (1140, 3800)}
+    assert count_kind(WEDGES, four, "4개 세트")[0] == 4 and count_kind(WEDGES, four, "48 52 56 60 64")[0] == 5
+    assert count_kind(WEDGES, None, "3PCS") == (3, None)
+    # the base row's count not named (a colour, a shaft, a title's lofts): no band; a single club: none
+    assert count_kind(WEDGES, None, "Black") is None and count_kind(WEDGES, None, "") is None
+    assert count_kind(WEDGES, single, "52도 단품") is None
+    other = next(r for r in load_table()["rows"] if r["category_id"] == "50002788")
+    assert count_kind(other, None, "52 56 60") is None
+
+
+def test_off_count_puts_a_product_scope_weight_back():
+    """The server's product-scope weight outside the count's band goes back to the default; one bound to the variant
+    stays (13312228253's "Item Weight: 4 Pounds" is the 3-piece's 1814 g: on a pair it would be refused)."""
+    from package_measures import off_count
+    stated = {"value": {"min": 1814, "max": 1814}, "source": "source_stated", "confidence": 4, "kind": "unknown",
+              "quote": "Item Weight: 4 Pounds", "from": "description_table", "binding": {"scope": "product"}}
+    two = next(k for k in WEDGES["kinds"] if k["kind"] == "two_wedges")
+    band = {"product_weight_g": (760, 1140)}
+    out, back = off_count({"product_weight_g": stated}, band, WEDGES, two, 7)
+    assert back == ["product_weight_g"] and out["product_weight_g"]["central"] == 920
+    assert out["product_weight_g"]["kind"] == "two_wedges"
+    assert out["product_weight_g"]["compared"]["rejected"] == "implausible_for_count"
+    bound = {**stated, "binding": {"scope": "variants", "variant_ids": ["1"]}}
+    assert off_count({"product_weight_g": bound}, band, WEDGES, two, 7) == ({"product_weight_g": bound}, [])
