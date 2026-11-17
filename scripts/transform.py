@@ -394,7 +394,11 @@ _COMPLETE_RE = re.compile(r"(?i)complete(?!\s*wedge)|컴플리트(?!\s*웨지)|�
                           r"executive|(?:클럽|골프채)\s*[세셋]트|club\s*set")
 # a practice toy or one adjustable club, not a set of wedges ("골프 웨지 조절식 피칭 ... 퍼팅 연습 세트 연습용 폼 볼"
 # 13163054038, "스포츠완구 골프 연습 세트" 13863445070, 2026-11-16)
-_PRACTICE_RE = re.compile(r"(?i)조절식|조절\s*가능|adjustable|연습\s*(?:용\s*)?(?:세트|폼|볼)|practice\s*set")
+_PRACTICE_RE = re.compile(r"(?i)조절식|조절\s*가능|adjustable|연습\s*(?:용\s*)?(?:세트|폼|볼)|practice\s*set|플라스틱|plastic")
+# the listing's tail (after the 330th, 2026-11-17) holds what is not a wedge at all (stone splitters, golf pants, a
+# putting ring, a chipping game, "Qi10") and single clubs (one wedge or iron, "단품"): a wedge-sets listing names a
+# wedge (a word, a letter, a loft in degrees, "AS": PRGR egg M-40 AS 13063514605) and a set or two lofts in its title
+_A_WEDGE_RE = re.compile(r"(?i)웨지|웻지|wedge|(?<![a-z])[agslp]w(?![a-z])|\d{2}\s*(?:도|°|degree)|(?-i:(?<![A-Za-z])AS(?![A-Za-z]))")
 _WEDGE_RIGHT_BEFORE_RE = re.compile(r"(?i)(?:웨지|wedges?)\s*(?:\d{1,2}\s*(?:개|종|피스|pcs?)\s*)?$")
 _WEDGE_LETTER_RE = re.compile(r"(?i)(?<![a-z])([agsl]w)(?![a-z])")
 _LOFT_DEGREE_RE = re.compile(r"(\d{2})\s*(?:도|°)")
@@ -518,6 +522,10 @@ def not_wedge_set(title: str, rows: list[list[str]]) -> str | None:
         return f"a full set, a wood set or a junior set ({word!r})"
     if m := _PRACTICE_RE.search(" | ".join([title] + [v for r in rows for v in r])):
         return f"a practice set or an adjustable club ({m.group(0)!r})"
+    if not _A_WEDGE_RE.search(" | ".join([title] + [v for r in rows for v in r])):
+        return "no wedge named"
+    if not (_SET_WORD_RE.search(title) or _wedge_set_written([title], title)):
+        return "one club: no set and no two lofts in the title"
     if irons := _numbered_irons(rows):
         return f"one numbered iron a variant ({', '.join(map(str, irons))})"
     if _IRON_SET_RE.search(title) and not _WEDGE_SET_RE.search(title) \

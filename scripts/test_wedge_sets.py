@@ -68,6 +68,23 @@ WOOD_AND_JUNIOR_SETS = {
 MISSED_SETS = {"13603361909": "'완비'", "13384214680": "'이그제큐티브'",
                "13370640792": "'카트백'", "13312284857": "'카트백'"}   # Wilson Profile "카트백 골프 세트", after the 330th
 PRACTICE = {"13163054038": "'조절식'", "13863445070": "'연습 세트'"}
+# the listing's tail after the 330th (2026-11-17): no wedge at all, a plastic toy, or one club with no set in the title
+TAIL = {
+    "13621417627": 'one club: no set and no two lofts in the title',
+    "12539223424": 'no wedge named',
+    "13017276948": 'no wedge named',
+    "11687969116": 'no wedge named',
+    "13367831333": "a practice set or an adjustable club ('플라스틱')",
+    "13384629323": 'no wedge named',
+    "13110012279": 'one club: no set and no two lofts in the title',
+    "13521216154": 'no wedge named',
+    "12890200633": 'no wedge named',
+    "13204672024": 'no wedge named',
+    "12980298167": 'no wedge named',
+    "13837017295": 'one club: no set and no two lofts in the title',
+    "13799199015": 'one club: no set and no two lofts in the title',
+    "7825655039": 'one club: no set and no two lofts in the title',
+}
 ONE_IRON_A_VARIANT = {"13762637990", "13762667328", "13830308916"}   # MAZEL WM-X "8번 아이언", "피칭 웨지", "아이언 2종"
 # held single_only already (four single wedges by loft, "아이언세트" in the title; wedges by loft, "우드 드라이버" in
 # the title): single_only stays their code
@@ -81,7 +98,7 @@ def listings() -> dict[str, dict]:
 
 def test_the_fixture_has_every_case():
     rows = listings()
-    assert set(IRON_SETS) | set(FULL_SETS) | set(WOOD_AND_JUNIOR_SETS) | set(MISSED_SETS) | set(PRACTICE) \
+    assert set(IRON_SETS) | set(FULL_SETS) | set(WOOD_AND_JUNIOR_SETS) | set(MISSED_SETS) | set(PRACTICE) | set(TAIL) \
         | ONE_IRON_A_VARIANT | SINGLE_ONLY_TOO \
         | set(WEDGE_SETS) <= set(rows)
 
@@ -98,8 +115,13 @@ HELD_SINCE = {"13365547743", "13371801797", "13377603626", "13385700387", "13390
               "13389314198", "13389378050", "13389676655", "13390089232", "13390573669", "13312215515",
               "13312250515", "13312276116", "13312283740", "13312287457", "10273623236",
               "13163086031", "13164550927", "13366156250", "13369476018", "13369497856", "13371087777", "13382791917", "13383263087",
-              "13390539810", "13122159152", "13127564080", "13468917512", "13204957265", "13207752721", "13400292221", "13312273976"}
-HELD = set(IRON_SETS) | set(FULL_SETS) | set(WOOD_AND_JUNIOR_SETS) | set(MISSED_SETS) | set(PRACTICE) | ONE_IRON_A_VARIANT | SINGLE_ONLY_TOO | HELD_SINCE
+              "13390539810", "13122159152", "13127564080", "13468917512", "13204957265", "13207752721", "13400292221", "13312273976",
+              "11368559816", "9915142632", "10277536572", "13772575847", "13163079091", "13163085239", "13164570483", "11891765963",
+              "13365502762", "13367215167", "13370542277", "13370591930", "13370657186", "13377534401", "13383281785", "13383398815",
+              "13383793589", "13384520627", "13385269148", "13385553390", "13385684651", "13385945341", "13386161009", "13386664678",
+              "13389318754", "13389349742", "13389485564", "13389674378", "13389736387", "13389997243", "13390701503", "13590272087",
+              "13590416670", "13209378848", "13209387734", "13209552781", "12592963046", "12592973343", "13251646952", "13642238497"}
+HELD = set(IRON_SETS) | set(FULL_SETS) | set(WOOD_AND_JUNIOR_SETS) | set(MISSED_SETS) | set(PRACTICE) | set(TAIL) | ONE_IRON_A_VARIANT | SINGLE_ONLY_TOO | HELD_SINCE
 
 
 def test_every_iron_set_and_full_set_and_nothing_else_is_held():
@@ -111,6 +133,8 @@ def test_every_iron_set_and_full_set_and_nothing_else_is_held():
         assert held[pid] == f"a practice set or an adjustable club ({word})", (pid, held[pid])
     for pid, word in {**WOOD_AND_JUNIOR_SETS, **MISSED_SETS}.items():
         assert held[pid] == f"a full set, a wood set or a junior set ({word})", (pid, held[pid])
+    for pid, why in TAIL.items():
+        assert held[pid] == why, (pid, held[pid])
     for pid in ONE_IRON_A_VARIANT:
         assert held[pid].startswith("one numbered iron a variant"), (pid, held[pid])
 
