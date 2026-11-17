@@ -354,7 +354,8 @@ _SPACED_RUN_RE = re.compile(r"(?<![\d.])[1-7](?:\s*[ ,/]\s*\d(?![\d.])){3,}")
 _CLUB_COUNT_RE = re.compile(r"(?i)(?<![\d.])(\d{1,2})\s*(?:(?:피스|pcs?|pieces?)(?![a-z])"
                             r"|(?:개|본|자루)(?=\s*(?:풀\s*)?(?:세트|구성|set(?![a-z]))))")
 _WEDGE_BEFORE_RE = re.compile(r"(?i)(?:웨지|wedges?)\s*$")
-_IRON_SET_RE = re.compile(r"(?i)아이언\s*세트|iron\s*set")
+# also with a count between: "프로기어 04 아이언 5개 세트" (#7 #8 #9 PW AW, 10774881312, the overnight scroll 2026-11-16)
+_IRON_SET_RE = re.compile(r"(?i)아이언\s*(?:\d{1,2}\s*(?:개|종|피스|pcs?|본)\s*)?세트|iron\s*set")
 # "웨지 (아이언) 세트" (iron-type wedges), also with lofts, wedge letters or a count between: "웨지 AW SW 2개 세트",
 # "웨지 50 56 2종 세트" (a wedge pair sold to match an iron set, review 2026-11-16)
 _WEDGE_SET_RE = re.compile(r"(?i)웨지(?:\s*(?:\d{2}\s*(?:도|°)?|[agpsl]w(?![a-z])))*\s*(?:아이언\s*)?"
@@ -453,6 +454,10 @@ def _full_set(texts: list[str]) -> str | None:
                   and not (_PUTTER_BAG_RE.fullmatch(w.group(0)) and _gift(joined, w))]
         if others:
             return m.group(0)
+    if not written:     # a bag with no wedge set written: "윌슨 여성 프로필 카트백 골프 세트" (13370640792, 2026-11-16)
+        for m in _PUTTER_BAG_RE.finditer(joined):
+            if not re.fullmatch(r"(?i)퍼터|putter", m.group(0)) and not _gift(joined, m):
+                return m.group(0)
     if (junior := _JUNIOR_RE.search(joined)) and _SET_IN_RE.search(joined) \
             and not any(_WEDGE_SET_RE.search(t) for t in texts):
         return junior.group(0)

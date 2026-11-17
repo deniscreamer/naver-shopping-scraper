@@ -31,6 +31,8 @@ IRON_SETS = {
     "13385696985": "an iron run ('5-P')",                   # TaylorMade Stealth, Stiff+5-P/A
     "13601554331": "an iron set in the title, no wedge set",  # PGM NSR V "아이언 세트 59 PW SW", no variants
     "13603085795": "an iron run ('123456789')",             # MAZEL DS-VH 9PCS 123456789
+    "10774881312": "an iron set in the title, no wedge set",  # PRGR 04 "아이언 5개 세트" (#7 #8 #9 PW AW), after the 300th
+    "10774926547": "an iron set in the title, no wedge set",  # PRGR 04 "아이언 5개 세트 MCI"
 }
 # full sets (and one junior set) with more clubs than a wedge set, also published as wedge sets
 FULL_SETS = {
@@ -63,7 +65,8 @@ WOOD_AND_JUNIOR_SETS = {
 }
 # a full set the first words missed ("완비", "이그제큐티브 골프 클럽 셋트"), a practice toy or one adjustable club:
 # published as wedge sets by the overnight scroll 2026-11-16, after the 300th
-MISSED_SETS = {"13603361909": "'완비'", "13384214680": "'이그제큐티브'"}
+MISSED_SETS = {"13603361909": "'완비'", "13384214680": "'이그제큐티브'",
+               "13370640792": "'카트백'", "13312284857": "'카트백'"}   # Wilson Profile "카트백 골프 세트", after the 330th
 PRACTICE = {"13163054038": "'조절식'", "13863445070": "'연습 세트'"}
 ONE_IRON_A_VARIANT = {"13762637990", "13762667328", "13830308916"}   # MAZEL WM-X "8번 아이언", "피칭 웨지", "아이언 2종"
 # held single_only already (four single wedges by loft, "아이언세트" in the title; wedges by loft, "우드 드라이버" in
@@ -93,7 +96,9 @@ HELD_SINCE = {"13365547743", "13371801797", "13377603626", "13385700387", "13390
               "13372009887", "13382172682", "13382899995", "13383279179", "13383675799", "13384486226",
               "13385326057", "13385600134", "13385675635", "13385973782", "13388599985", "13388851720",
               "13389314198", "13389378050", "13389676655", "13390089232", "13390573669", "13312215515",
-              "13312250515", "13312276116", "13312283740", "13312287457", "10273623236"}
+              "13312250515", "13312276116", "13312283740", "13312287457", "10273623236",
+              "13163086031", "13164550927", "13366156250", "13369476018", "13369497856", "13371087777", "13382791917", "13383263087",
+              "13390539810", "13122159152", "13127564080", "13468917512", "13204957265", "13207752721", "13400292221", "13312273976"}
 HELD = set(IRON_SETS) | set(FULL_SETS) | set(WOOD_AND_JUNIOR_SETS) | set(MISSED_SETS) | set(PRACTICE) | ONE_IRON_A_VARIANT | SINGLE_ONLY_TOO | HELD_SINCE
 
 
