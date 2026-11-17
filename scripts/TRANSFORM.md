@@ -246,6 +246,30 @@ published, SKUs and prices equal on 201 of 201 variants):
   2026-11-16) when that variant is not sold or is one of several sold; the words of the note inside it are not repeated.
   A tail with ", " or no letter (a bare loft "52") is not taken. It fires in every category: measured on the store
   76 notes change, 26 wedge sets and 50 junior sets ("Left, Putter" becomes "Left Hand Putter").
+  A placeholder value appended ("… 오른손 옵션 1", "Option 2") is a tail too, with its Hangul and even as the one variant
+  sold (2026-11-17, C53: 13566627679, 13566628089). A colour counts in either script, the value "Black" and the title's
+  블랙 (not when 및 / 와 / / / , / & joins it to another colour: the title lists the choice), and a Hangul value inside
+  the product's brand as the title writes it is not one ("블랙" of the brand 블랙티) (2026-11-17, C47: 10 BombTech
+  "Black" notes in, 2 블랙티 notes out, 1 "SILVER" on a QI35 driver set (50002788)).
+- `title_lofts_not_sold` (wedge_sets categories, `spec_variants.title_lofts_not_sold`; 2026-11-17, C46): the title's
+  wedge lofts (two digits, 44-72; not with a unit: "45인치", "58인치+", "50대", "60 kg", 개 / 종 / 피스 / cm / mm; a
+  range's ends "48-72도" do count) that no set sold has, or a run of them that no one set sold holds (the union of
+  several sets written as one list: "50/52/54/56/58/60" over 50/54/58 and 52/56/60; a 64 or 72 no set has). The sets
+  sold are the kept variants' values when each names two lofts or more with 도 / ° / degree / a set word, else the one
+  fact value that does; sets written one after another, each closed by 도 ("52/56도 50/56도"), are each a run. Detail:
+  "50/52/54/56/58/60 (sold: 50/54/58 | 52/56/60)"; the translation writes only a set sold. Measured on the shop: 66
+  products (34 in the store), all 50002783.
+- `title_cut` (wedge_sets, a purchase agency's title; `spec_variants.title_cut`; 2026-11-17, C48): Naver cuts an
+  agency title at 50 characters, inside its loft list ("… 52° 갭 웨지GW 56° 샌드 웨지S"): 46-50 characters, the loft run its
+  last words and all the title's lofts, then a cut word or a lone letter / digit, or two lofts at most. Detail
+  "'S' cut, 2 lofts written[; a count written]"; the translation drops the cut word and writes no count the title does
+  not state. Measured: 34 products (26 in the store). The lofts the description or the images state are not used.
+- A 모델명 row that is the title again, or 80% of it at least (letters and digits, any case: "[혼마골프] 3스타 부가티 …"
+  with the row "3스타 부가티 …"), is not shown (`spec_variants.model_repeats_title`; a row bound with `for_ko` stays;
+  2026-11-17, C71: 167 products, 135 in the store, the specs only; no new note). The row's specs_name_one_variant entry
+  ("모델명 <the row>: 12종") goes with it: it asked for a check by hand of a row no longer shown, and
+  title_names_one_variant covers the title's words (`spec_variants.hide_title_model_rows`; the review of C71: 20
+  products, 18 in the store, 16 of them 50002788, 3 50002787, 1 50002783, the notes only).
 * driver loft (R-LOFT): 드라이버 로프트각 is compared with the loft each variant's values name (10.5도 / 9도 SR / 9.5 SR /
   10.5R, 7-14 degrees). The row is dropped (specs_stated_by_variants) when every variant states its own loft, bound
   with for_ko when some are silent, and dropped (specs_fit_no_variant) when it fits none. A row that lists every loft
@@ -331,16 +355,22 @@ link. The report says how many were dropped. The step is pure: same products in,
   (`manufacturer:<source>`, never Naver's M0000000); else, run-level (`brand_fallback.py`), a brand the shop's other
   products state found in the title (`title`: 4 of the 6; the first one of a combination set), a brand of the
   dictionary starting the title (`title_known`) or standing as a word of its own in it, three letters at least, by
-  its Korean name or its Latin spelling (`title_word`: 라즈러스, 버뮤다, GoSports in wedge imports, 2026-11-15), a Brand
+  its Korean name or its Latin spelling (`title_word`: 라즈러스, 버뮤다, GoSports in wedge imports, 2026-11-15), the stem
+  of a shop's or the dictionary's brand that ends in Golf / 골프 starting the title, three Hangul letters or four Latin
+  at least (`title_stem`: "Vice Boost Plus …" is Vice Golf, "미스테리 R라인 …" 미스테리 골프; 2026-11-17, C27), a Brand
   row of the description, the spec table an agency import copies (`description_row`: "Brand | WENGH", 2026-11-15;
   2026-11-16: a bullet "- Brand : X", the label 브랜드 이름 (a machine translation of Brand Name), a bare number
   "69" takes the Manufacturer / 제조사 row that starts with it ("69 Golf"), none / N/A / others / 다른 사람들 name
   no firm, and a Latin brand the brand dictionary spells another case takes the dictionary's spelling: pgm ->
   PGM, WILSON -> Wilson, HATACHI -> Hatachi, also on products whose row brand was read before, so their vendor
-  spelling changes and translate asks the model for the title again),
+  spelling changes and translate asks the model for the title again; 2026-11-17, C31: when every Brand row names no
+  firm, "Brand | Generic", the Manufacturer row as written, "Alpha Golf" on 13382512411, not a factory or a trader
+  "Shenzhen … Technology Co., Ltd."),
   the importer in
   원산지's brackets (`origin`), the shop's brand most read in the images (`images_text`), a Latin brand phrase the
-  images repeat 5+ times (`images_text_latin`: BEN SAYERS on 13425122164), or 노브랜드 (`none`: 13464713764, an
+  images repeat 5+ times (`images_text_latin`: BEN SAYERS on 13425122164), the notice's 동일 모델의 출시연월 row when it
+  is a firm and the title's first word, no date or page pointer (`release_row`: agency 100217952 writes "USPA" there;
+  2026-11-17, C03), or 노브랜드 (`none`: 13464713764, an
   unbranded putter; its vendor is the shop's name, Fairward Golf, and since 2026-11-15 a purchase agency's import
   with no brand is no longer held: `agency_needs_brand` off, the owner). These add the note `brand_fallback`
   (source, other candidates). No brand list is kept by hand; one product whose brand only its photo shows gets the
@@ -351,7 +381,12 @@ link. The report says how many were dropped. The step is pure: same products in,
   shop brand: the sport (골프, 골프용품, GOLF, 스포츠: one junior row's "골프" made "Golf" the vendor of 55 products,
   2026-11-14), who it is for (남성용, 여성용, 남녀공용: 32 titles got "Yoshino" through a dictionary guess), a lone letter
   (ㅊ) and an authenticity claim (정품), Amazon's "Generic" / 제네릭 (two Bermuda wedge sets, 2026-11-15), and Naver's 기타 BRAND ("Other BRAND" on 3 agency
-  wedge sets) and 상표 / 브랜드 (the word "brand": "Brand" on 5 live sets, 2026-11-17). A Korean
+  wedge sets) and 상표 / 브랜드 (the word "brand": "Brand" on 5 live sets, 2026-11-17), and Naver's placeholder
+  "UnKnown_<katakana>" (13104702775 went out as the vendor "UnKnown_ピン", 2026-11-17, C23). A brand row or a maker
+  that is exactly the seller's shop name or legal name, while the title names another brand of the dictionary (not a
+  shaft's or a grip's maker) and no 조합, gives way to the steps above (`brand_fallback.store_named`; the note says
+  "not the seller's shop X"; 메가스피어 on a PGM set, 13245513614; 2026-11-17, C02); a shop that writes its own name in
+  the title sells its brand and keeps it. A Korean
   shop brand counts in the title only where a word starts, as in the images (이디스 was read in 레이디스, 2026-11-15), and
   a Latin brand read once in the images, inside an all-Latin phrase of 3+ words, is a slogan ("PRECISE AIMING
   FEEDBACK" on a XINGGM set, 2026-11-15).

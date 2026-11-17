@@ -215,7 +215,8 @@ def test_a_generic_word_is_never_a_shop_brand():
 
 
 @pytest.mark.parametrize("word", ["골프", "골프 용품", "골프클럽", "GOLF", "Golf", "스포츠", "남성용", "여성용", "남녀공용",
-                                  "ㅊ", "정식수입정품 또는 정식제조정품", "브랜드없음", "제조자 미상"])
+                                  "ㅊ", "정식수입정품 또는 정식제조정품", "브랜드없음", "제조자 미상",
+                                  "UnKnown_ピン", "UnKnown_ヨネックス"])
 def test_the_sport_is_no_brand(word):
     # 10979283479, 2026-11-14: "골프" in the 브랜드 row became a shop brand, then the brand of every title saying 골프
     # (55 products published with the vendor "Golf"); a record prepared before, and the dictionary's "골프" -> "Golf"
@@ -225,6 +226,7 @@ def test_the_sport_is_no_brand(word):
     assert B.shop_brands(prepared) == ["인파로"]
     assert B.leading("골프 주니어 세트 인파로", [word, "인파로"]) is None
     assert B.clean("아화골프") == "아화골프" and B.clean("골프존") == "골프존"     # a name with the word stays
+    assert B.clean("Artist Unknown") == "Artist Unknown"                    # C23: only Naver's "UnKnown_…" placeholder
 
 
 def test_the_origin_names_no_partner_or_mall():
@@ -274,3 +276,73 @@ def test_a_latin_brand_read_once_in_a_slogan_is_no_brand_of_the_images():
     assert bf.in_images(["PRECISE", "로프트 52"], brands) == {"PRECISE": 1}
     assert bf.in_images(["PRECISE 정밀 웨지 세트"], brands) == {"PRECISE": 1}                 # Hangul in the row
     assert bf.in_images(["PRECISE AIMING FEEDBACK", "PRECISE GOLF"], brands) == {"PRECISE": 2}
+
+
+def test_a_title_that_starts_with_a_golf_brands_stem():
+    """C27 (2026-11-17, the wedge-set review): "Vice Golf" / "미스테리 골프" whose stem starts the title (13830312401
+    "Vice Boost Plus 남성 골프 웨지 세트", 13000456333 "미스테리 R라인 웨지 세트") was not found: the shop brand is
+    not in the title whole, the dictionary's name does not start it."""
+    assert B.decide("Vice Boost Plus 남성 골프 웨지 세트", None, ["Vice Golf"], []) == ("Vice Golf", "title_stem", [])
+    assert B.decide("미스테리 R라인 웨지 세트 52도,57도 골프채", None, [], [], ["미스테리 골프"]) == (
+        "미스테리 골프", "title_stem", [])
+    assert B.decide("VICE 프로 웨지", None, ["Vice Golf"], [])[1] == "title_stem"          # any case
+    # a stem too short (Latin under four letters, Hangul under three), not at the start, inside a longer word
+    assert B.decide("AGX 웨지 세트", None, ["AGXGOLF"], [])[1] == "none"
+    assert B.decide("기가 웨지 세트", None, [], [], ["기가골프"])[1] == "none"
+    assert B.decide("웨지 세트 Vice Boost", None, ["Vice Golf"], [])[1] == "none"
+    assert B.decide("Vicex 웨지 세트", None, ["Vice Golf"], [])[1] == "none"
+    assert B.decide("미스테리아 웨지 세트", None, [], [], ["미스테리 골프"])[1] == "none"
+    # a step before it wins: the shop brand whole in the title
+    assert B.decide("Vice Golf 웨지 세트", None, ["Vice Golf"], [])[:2] == ("Vice Golf", "title")
+
+
+def test_a_generic_brand_row_takes_the_makers_row():
+    """C31 (2026-11-17, the wedge-set review): Amazon's "Brand | Generic" with "Manufacturer | Alpha Golf" (13382512411)
+    went out with no brand; the maker is taken as written when every Brand row names no firm."""
+    desc = "Brand | Generic\nManufacturer | Alpha Golf\nBrand | Generic"
+    assert B.described(desc) == ["Alpha Golf"]
+    assert B.decide("골프 웨지 세트", None, [], [], [], desc) == ("Alpha Golf", "description_row", [])
+    assert B.described("Brand Name | Generic\nManufacturer | Bermuda Golf Company") == ["Bermuda Golf Company"]
+    # a factory or a trader is no brand; a real Brand row wins over the maker; no Brand row: the maker is not read
+    assert B.described("Brand | Generic\nManufacturer | Shenzhen Golf Technology Co., Ltd.") == []
+    assert B.described("Brand | Generic\nManufacturer | Xiamen Sports Trading") == []
+    assert B.described("Brand | WENGH\nManufacturer | Alpha Golf") == ["WENGH"]
+    assert B.described("Manufacturer | Alpha Golf") == []
+    assert B.described("Brand | Generic\nManufacturer | Generic") == []
+
+
+def test_the_release_row_names_the_brand_the_title_starts_with():
+    """C03 (2026-11-17, the wedge-set review): agency 100217952 writes the brand in the notice's 동일 모델의 출시연월
+    row ("USPA" for "(병행) USPA P200T 웨지세트", 13582215582); the last step before 노브랜드."""
+    title = "(병행) USPA P200T 웨지세트 (Aw Sw) R WA3640999"
+    assert B.decide(title, None, [], [], [], None, "USPA") == ("USPA", "release_row", [])
+    assert B.decide("(병행) 페스트니스 웨지세트 50도 56도", None, [], [], [], None, "페스트니스")[:2] == (
+        "페스트니스", "release_row")
+    # a date, a page pointer, no firm, a word the title does not start with: no brand
+    for value in ("2024.03", "상세설명참조", "매월생산", "BridgeStone", "골프", ""):
+        assert B.decide("(병행) USPA P200T 웨지세트", None, [], [], [], None, value)[1] == "none", value
+    assert B.release_brand("BridgeStone", "(병행) 브리지스톤 투어B 웨지세트") is None
+    # a step before it wins: the description's Brand row
+    assert B.decide(title, None, [], [], [], "Brand | Mystery", "USPA")[:2] == ("Mystery", "description_row")
+
+
+def test_a_brand_that_is_the_sellers_shop_gives_way_to_the_titles_brand():
+    """C02 (2026-11-17, the wedge-set review): the brand row 메가스피어 is the seller's shop (13245513614, "PGM 왼손 웨지
+    골프채세트 …"); 제우스골프, the shop, as the maker of a 팀요시무라 set (10149539327). Exact equality with the shop's
+    name, another brand in the title, no 조합 and no part's maker."""
+    stores = {"m": {"메가스피어"}}
+    assert B.store_named("메가스피어", "PGM 왼손 웨지 골프채세트 56도 60도", {"메가스피어"}, ["PGM"])
+    assert not B.store_named("아화골프", "아화골프 주니어 세트", {"아화골프"}, ["아화골프", "PGM"])   # its own brand
+    assert not B.store_named("US키즈골프", "주니어 골프 세트 7세", {"us키즈골프"}, ["PGM"])           # no other brand
+    assert not B.store_named("메가스피어", "야마하 핑 조합 골프채", {"메가스피어"}, ["야마하"])        # a combination
+    assert not B.store_named("메가스피어", "웨지 세트 다이나믹골드 S200", {"메가스피어"}, ["다이나믹골드"])  # a shaft
+    assert not B.store_named("메가", "PGM 웨지 세트", {"메가스피어"}, ["PGM"])                      # not exact
+    product = {"title_ko": "PGM 왼손 웨지 골프채세트 56도 60도", "brand_ko": "메가스피어", "brand_source": "specs:브랜드",
+               "options": [], "facts": [], "specs": [], "personalization": [], "addons": [], "reviews": []}
+    p = {"key": "m", "notes": [], "product": product, "texts": []}
+    assert B.fill([p], lambda k: [], {}, _texts, ["PGM"], stores=stores) == 1
+    assert (product["brand_ko"], product["brand_source"]) == ("PGM", "title_known")
+    assert p["notes"][-1]["detail"] == "title_known: PGM; not the seller's shop 메가스피어"
+    kept = {"key": "m", "notes": [], "product": {**product, "brand_ko": "메가스피어", "brand_source": "specs:브랜드"}}
+    assert B.fill([kept], lambda k: [], {}, _texts, ["PGM"], {"m": "Megasphere"}, stores=stores) == 1   # the owner's
+    assert kept["product"]["brand_ko"] == "Megasphere"

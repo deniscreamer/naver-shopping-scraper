@@ -60,7 +60,8 @@ from description_images import current, image_rows
 from description_measures import composition_count, container_in, container_listed, package_for, profile_for, read_rows
 from naver_variants import choose_variants
 from package_measures import current_defaults, load_table, on_scale
-from spec_variants import check_specs, title_one_variant, title_variant_tail
+from spec_variants import (check_specs, hide_title_model_rows, title_cut, title_lofts_not_sold, title_one_variant,
+                           title_variant_tail)
 from review_clean import clean_reviews
 from shop_types import (CollectedLine, PreparedAddon, PreparedImage, PreparedPersonalization, PreparedProduct,
                         PreparedRating, PreparedSource, PreparedVariant)
@@ -1040,7 +1041,7 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
         notes.append({"code": "price_name_mismatch", "detail": ",".join(line["variants"]["name_mismatches"])})
     if ov["skipped_paid"]:                          # a smaller set than the title may describe is sold
         notes.append({"code": "paid_variants_left_out", "detail": f"{ov['skipped_paid']} variants change the price"})
-    one = title_one_variant(details["name"], ov["options"])
+    one = title_one_variant(details["name"], ov["options"], str(brand.get("value") or ""))
     tail = title_variant_tail(details["name"], (specs.get("options") or {}).get("variants") or [],
                               {str(v["naver_variant_id"]) for v in ov["variants"] if v.get("naver_variant_id")})
     if tail:                                        # an import title's appended option: one span, the words in it
@@ -1050,6 +1051,8 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
         notes.append({"code": "title_names_one_variant", "detail": ", ".join(one)})
     desc = details.get("description") or {}
     checked = check_specs(spec_rows(specs), ov["options"], ov["variants"], desc.get("text"), details["name"])
+    # a 모델명 row that only repeats the title goes, with its specs_name_one_variant entry (C71, 2026-11-17)
+    checked = hide_title_model_rows(checked, details["name"])
     shown_specs = checked["specs"]                  # rows true of part of the variants: bound (for_ko) or dropped
     notes += checked["notes"]
     if ov["capped"]:                                # combinations past the shop's cap are not offered
@@ -1115,6 +1118,14 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
     agency = json.dumps([specs.get("specs"), details.get("notice"), delivery.get("policy_text")], ensure_ascii=False)
     if _AGENCY_WORD_RE.search(agency):              # bought abroad for the buyer: returns / customs differ
         notes.append({"code": "purchase_agency", "detail": "구매대행 in the specs / notice / delivery policy"})
+    if cat.wedge_sets:                              # the title vs the lofts sold (C46), Naver's cut (C48); 2026-11-17
+        not_sold = title_lofts_not_sold(details["name"], ov["variants"], ov["facts"])
+        if not_sold:
+            notes.append({"code": "title_lofts_not_sold", "detail": not_sold})
+        cut = title_cut(details["name"]) if any(n["code"] == "purchase_agency" for n in notes) else None
+        if cut:
+            notes.append({"code": "title_cut", "detail": f"'{cut['partial']}' cut, {cut['lofts']} lofts written"
+                                                         + ("; a count written" if cut["count"] else "")})
     if not (line.get("photos") or {}).get("is_complete", True):
         notes.append({"code": "photos_incomplete", "detail": f"{len(imgs)} of {line['photos'].get('total')}"})
     product: PreparedProduct = {

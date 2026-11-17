@@ -71,7 +71,7 @@ Per text, the first that answers: (1) the product's own store, (2) the dictionar
 | No brand (노브랜드): the tenant's name; inside a text the word is removed. A brand of 기타 ("other", the owner 2026-11-11): the tenant's name too (transform already leaves it out: the fallback decides) | `translation_rules.sanitize`, `transform.NOT_A_BRAND` |
 | Units and sizes by templates (10.5도, 33인치, 22호, 3번, 7개, 2026년형); the model only for the rest | `translation_rules.py` |
 | Titles are the store's names (the owner, 2026-11-08, as the harvester's): brand first, then model, year, who it is for, the kind of set, pieces, what is included; no shop, dispatch, distributor or after-sales ("AS가능") words, no loft / flex / shaft codes or club list, no usage or gift words (the 100-product pilot, 2026-11-09). The model, not templates: nobody can foresee every title | `prompts/translate_system.md` |
-| A title's length: the prompt asks for about 90 characters; over 100 the title goes back to the model with "too long" (it drops the least important facts from the end: materials, colours, the club list, "for beginners"), up to 2 times; a title that never gets under keeps its shortest answer that passed the other checks and does not hold the product (nor does a refusal, a cut answer or the provider going down in a round asked only to shorten); a title already in `translation/texts.jsonl` is not asked again (delete its row to translate it again), unless the product's brand changed since: a title row keeps the `brand_ko` it was asked with, and a title asked under another brand is asked again, its old English kept until the answer (2026-11-15: Generic, Edis, PRECISE stayed at the head of fixed titles; a hand correction row has no brand and is never asked again); the publication cuts to Google Merchant Center's 150 (`shopify_payload.fit_title`) | `translate.ASK_SHORTER`, `prompts/translate_fix.md` |
+| A title's length: the prompt asks for about 90 characters; over 100 the title goes back to the model with "too long" (it drops the least important facts from the end: materials, colours, the club list, "for beginners"), up to 2 times; a title that never gets under keeps its shortest answer that passed the other checks and does not hold the product (nor does a refusal, a cut answer or the provider going down in a round asked only to shorten); a title already in `translation/texts.jsonl` is not asked again (delete its row to translate it again), unless the product's brand changed since: a title row keeps the `brand_ko` it was asked with, and a title asked under another brand is asked again, its old English kept until the answer (2026-11-15: Generic, Edis, PRECISE stayed at the head of fixed titles; a hand correction row has no brand and is never asked again; 2026-11-17, C06: an older model row with no brand that starts with the shop's name, "Fairward Golf …", counts as asked under 노브랜드, so 24 titles whose products have a brand now are asked again; a title waits until its new brand has its English, 13625754692); the publication cuts to Google Merchant Center's 150 (`shopify_payload.fit_title`) | `translate.ASK_SHORTER`, `prompts/translate_fix.md` |
 | Reviews as an American buyer would write them: the meaning and the strength kept, casual allowed, no machine phrasing; a sentence the cleaning cut on a joining word ends as a full sentence, a meaningless fragment is dropped | `prompts/translate_system.md` |
 | Reviews kept with their score; their text loses the Korean purchase (seller, shipping, customs, won, packing, gifts) | `review_clean.py` |
 | After translation, at publication: an English sentence about the price or value, or naming another platform or a buying agent, goes (the owner, 2026-11-09; complaints about the seller stay) | `review_clean.cut_english` |
@@ -121,7 +121,10 @@ English over git's.
   and a glued run of lofts ("525660도", "5460") becomes "52°/56°/60°" (two digits a loft, 46-72, going up; "or" only as
   a word, "/" only right after 세트 / 웨지; two lofts only next to 도 / ° or after 세트, a run before a 도 that starts a
   Korean word stays: "모델 4856", "5256 도매"); every
-  category's titles lose an import tool's marker "db" + two capitals or digits ("db4P", "dbT1"). A title already
+  category's titles lose an import tool's marker "db" + two capitals or digits ("db4P", "dbT1"). 2026-11-17 (the
+  wedge-set review): a glued run of up to ten lofts ("48505254565860687072°", C24), and every category's titles lose
+  a seller's product code at their end ("WA3817568", "SA3882511", "품번 1116": the description's 상품코드, C07; inside
+  the title a code stays). A title already
   translated keeps its English: delete its row in `translation/texts.jsonl`, or write a correction (skill
   `fix-a-product`), to change it;
 - a text with no Hangul left is done; the rest goes to the model already converted.
@@ -137,6 +140,13 @@ One request per product, with the system prompt in `prompts/translate_system.md`
 
 What fails goes back in the same conversation (`prompts/translate_fix.md`), at most twice. What still fails
 leaves the product `untranslated`; what passed is kept.
+
+**A title's context from the transform's notes** (`plan`): `title_names_one_variant` (words only some variants have:
+drop them; their numbers and codes need not survive, matched spacing aside, "13 PCS" = "13PCS", 2026-11-17 C47);
+wedge sets, 2026-11-17: `title_lofts_not_sold` (C46: the title's lofts that are not one set sold, with the sets sold:
+write only a set sold; those lofts need not survive the number check, or the corrected title would be refused) and
+`title_cut` (C48: Naver cut the title at 50 characters; its loft list may be incomplete, no piece count it does not
+state; the cut word at its very end, "S" / "샌", is left out and is not checked, only at the end).
 
 **The system prompt is assembled** (`system_prompt`):
 - the translator's role and rules (`prompts/translate_system.md`);
@@ -284,3 +294,13 @@ TaylorMade, 브리지스톤골프 -> Bridgestone Golf, Nikent for Nickent, flex 
 Hybrid"), 백미포함 read as "with bag", an added "Driver", a dropped 여성, Glory for Gloire, ...). The next run
 asks the model for them again. The 23 published products that used them stay as they are in the store until
 they are published again; until a full `translate.py` run their record is `pending`.
+
+**Checked 2026-11-17, wedge-set prompt lines** (`translate_eval.py --shops-root <sample>`, 15 products of the
+wedge-set review, reviews left out, empty dictionaries; $0.07 translation + $0.15 judge): the base prompt's gender line
+(C66: men's / women's / unisex only from 남성 / 남자 / 남, 여성 / 여자 / 여, 남녀; a hand is not a gender) and the
+50002783 brief's 핀클리 / 핀칠리 Finchley, 리믹스 RMX, 제로 투어 Zero Tour (C68), 프로니즈 Pron (C29). "Men's" left the 8
+titles that had it with no source (12079168386, 13017295953, 13372272290, 13382512411, 13384608635, 13406052242,
+13312109978, 13830312687); 남 kept "Men's" (5414445973), 남녀 gave "Unisex" (13492459923, was "Men's Women's");
+Pinkley / Pinchilly -> Finchley, Remix -> RMX, 0 Tour -> Zero Tour, Pro-Knees gone. One "Men's" came from the
+spec row 성별 남성용 (12425620541). 9 of 104 texts flagged by the judge (a dropped flex "S", a spin claim, a leftover
+"Legal", 노브랜드 as the shop's name: none from these lines).

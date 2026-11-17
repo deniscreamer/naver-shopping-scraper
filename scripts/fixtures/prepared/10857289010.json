@@ -581,10 +581,6 @@
     "value_ko": "PGM"
    },
    {
-    "label_ko": "모델명",
-    "value_ko": "PGM 리오 골프채세트 남성 입문용 골프채 4종"
-   },
-   {
     "label_ko": "원산지",
     "value_ko": "중국산(중국, 홍콩) 등"
    },
@@ -783,16 +779,6 @@
    "id": "spec_value:58db3c0debb8c723",
    "kind": "spec_value",
    "ko": "PGM"
-  },
-  {
-   "id": "spec_label:45ecef3c70c3d0be",
-   "kind": "spec_label",
-   "ko": "모델명"
-  },
-  {
-   "id": "spec_value:933a36c8fa536afc",
-   "kind": "spec_value",
-   "ko": "PGM 리오 골프채세트 남성 입문용 골프채 4종"
   },
   {
    "id": "spec_label:765723acfadff305",

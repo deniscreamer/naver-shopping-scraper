@@ -15916,10 +15916,6 @@
     "value_ko": "젝시오"
    },
    {
-    "label_ko": "모델명",
-    "value_ko": "[던롭코리아] 젝시오14 남성 카본 풀세트 드라이버+우드+유틸+8개 아이언"
-   },
-   {
     "label_ko": "원산지",
     "value_ko": "일본"
    },
@@ -16191,16 +16187,6 @@
    "id": "spec_value:7668ef8e4a03d668",
    "kind": "spec_value",
    "ko": "젝시오"
-  },
-  {
-   "id": "spec_label:45ecef3c70c3d0be",
-   "kind": "spec_label",
-   "ko": "모델명"
-  },
-  {
-   "id": "spec_value:cc10c3202b526de3",
-   "kind": "spec_value",
-   "ko": "[던롭코리아] 젝시오14 남성 카본 풀세트 드라이버+우드+유틸+8개 아이언"
   },
   {
    "id": "spec_label:765723acfadff305",

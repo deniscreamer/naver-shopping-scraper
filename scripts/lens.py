@@ -39,7 +39,8 @@ import sheet as S
 from shop_files import append_line
 from shop_view import JOBS_ROOT, SHOPS_ROOT, Product, RefError, ShopView, job_events, job_keys, resolve
 
-WEAK_BRAND = ("none", "title_word", "description_row", "origin", "images_text", "images_text_latin")
+WEAK_BRAND = ("none", "title_word", "title_stem", "description_row", "origin", "images_text", "images_text_latin",
+              "release_row")
 LOW_Z, HIGH_Z = 2.0, 3.0              # robust z of log price (median, MAD) beyond which a card is red: cheap sooner
 MAD_FLOOR = 0.05                      # log units: most prices equal (MAD 0) must not make a 1% step an outlier
 FAR_LOW, FAR_HIGH = 0.1, 25.0         # red under x0.1 or beyond x25 of the median whatever the z (a two-humped category:

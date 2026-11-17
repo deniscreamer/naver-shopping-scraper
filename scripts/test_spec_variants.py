@@ -667,3 +667,48 @@ def test_title_multi_word_value_merges_its_words_12999388634():
 ])
 def test_title_multi_word_value_must_not_match(title, options):
     assert title_one_variant(title, options) == []
+
+
+def test_a_model_row_that_repeats_the_title():
+    """C71 (2026-11-17, the wedge-set review): the 모델명 row equal to the title, or 80% of it, is not shown."""
+    from spec_variants import model_repeats_title
+    title = "[혼마골프] 3스타 부가티 프리미엄 컬렉션 남성 풀세트"                                    # 13715182548's kind
+    assert model_repeats_title("3스타 부가티 프리미엄 컬렉션 남성 풀세트", title)
+    assert model_repeats_title("초등생 주니어 어린이 골프클럽 아이언 퍼터 드라이버 골프채",            # 6781377566
+                               "초등생 주니어 어린이 골프클럽  아이언 퍼터 드라이버 골프채")
+    assert not model_repeats_title("MG5", "테일러메이드 MG5 웨지 세트")                              # a model
+    assert not model_repeats_title("부가티 풀세트", title)                                           # under 80%
+    assert not model_repeats_title("초등학생 어린이 키즈 아동 주니어 7번 아이언 퍼터 골프채 세트 입니다.",  # longer
+                                   "초등학생 어린이 키즈 아동 주니어 7번 아이언 퍼터 골프채 세트")
+    assert not model_repeats_title("", title) and not model_repeats_title("MG5", None)
+
+
+def test_a_hidden_model_row_takes_its_word_match_note_along():
+    """C71, the review (2026-11-17): the 모델명 row that repeats the title goes with its specs_name_one_variant entry
+    (10605400654's kind: "모델명 PGM 남성 골프채 풀세트 … 12종: 12종"); another row's entry stays."""
+    from spec_variants import hide_title_model_rows
+    title = "PGM 골프채 풀세트 남성 입문용 골프채세트 9종"
+    opts = [_opt("옵션", "9종 스틸+골프백", "9종 카본+골프백", "12종 스틸+골프백")]
+    specs = [_spec("모델명", title)]
+    got = hide_title_model_rows(check_specs(specs, opts, [], None), title)
+    assert got == {"specs": [], "notes": []}
+    specs = [_spec("모델명", title), _spec("구성", "9종 스틸")]
+    got = hide_title_model_rows(check_specs(specs, opts, [], None), title)
+    assert got["specs"] == [specs[1]]
+    assert _codes(got) == {"specs_name_one_variant": "구성 9종 스틸: 9종, 스틸"}
+    # a model row that is not the title stays, and so does its note
+    got = hide_title_model_rows(check_specs([_spec("모델명", "PGM 9종")], opts, [], None), title)
+    assert _codes(got) == {"specs_name_one_variant": "모델명 PGM 9종: 9종"}
+
+
+def test_a_colour_in_the_other_script_and_a_value_inside_the_brand():
+    """C47 (2026-11-17, the wedge-set review): BombTech's value "Black" and the title's 블랙 (12888420222); "블랙" of
+    the brand 블랙티 is no value (12826584649); colours joined by 및 / , list the choice."""
+    colour = [_opt("색상", "Black", "Silver")]
+    assert title_one_variant("봄베테크 - 프리미엄 골프 웨지 세트 52, 56, 60도 맥스 그루브 블랙 웨지", colour) == ["Black"]
+    assert title_one_variant("골프 웨지 세트 Black", [_opt("색상", "블랙", "실버")]) == ["블랙"]
+    assert title_one_variant("골프 웨지 세트 블랙 및 실버", colour) == []
+    assert title_one_variant("골프 웨지 세트 블랙, 실버", colour) == []
+    korean = [_opt("색상", "블랙", "화이트")]
+    assert title_one_variant("허석프로 블랙티 골프 웨지 세트(48도,52도,56도)", korean, "블랙티") == []
+    assert title_one_variant("허석프로 블랙티 골프 웨지 세트 블랙", korean, "블랙티") == ["블랙"]

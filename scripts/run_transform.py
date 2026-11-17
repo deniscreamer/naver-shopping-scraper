@@ -376,6 +376,19 @@ def _known_brands(shops_root: str) -> list[str]:
         return []
 
 
+def _store_names(line: dict) -> set[str]:
+    """The seller's shop name and legal name, normalized (a brand row naming the shop: brand_fallback.store_named)."""
+    store = (line.get("details") or {}).get("store") or {}
+    return {re.sub(r"\s+", "", str(x or "")).casefold()
+            for x in (store.get("name"), (store.get("business") or {}).get("legal_name"))} - {""}
+
+
+def _release_row(line: dict) -> str | None:
+    """The notice's 동일 모델의 출시연월 value (a seller may write the brand there: brand_fallback.release_brand)."""
+    return next((str(r.get("value") or "") for r in ((line.get("details") or {}).get("notice") or {}).get("items") or []
+                 if isinstance(r, dict) and r.get("label") == "동일 모델의 출시연월"), None)
+
+
 def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
         choices: dict[str, str] | None = None, cache: bool = False, brands: list[str] | None = None) -> dict:
     """Prepare the shop's latest lines. Each product with the paid choices of its job (`choices`, default
@@ -405,7 +418,9 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
          for k, line in latest.items()},
         _texts,
         _known_brands(shops_root) if brands is None else brands,
-        brand_by_owner(shop, shops_root))
+        brand_by_owner(shop, shops_root),
+        {k: _release_row(line[2]) for k, line in latest.items()},
+        {k: _store_names(line[2]) for k, line in latest.items()})
     for p in prepared:                                                  # after the brand: needs the fallback's answer
         cat = rules.categories.get(str(p["source"].get("category_id")))
         if cat and cat.agency_needs_brand and p["status"] == "ready" \

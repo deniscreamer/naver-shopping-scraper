@@ -408,6 +408,36 @@ def _contradictions(rows: dict[str, str], names: list[str], title: str | None) -
     return {}
 
 
+def model_repeats_title(value: str | None, title: str | None) -> bool:
+    """The 모델명 row is the title again, or 80% of it at least ("[혼마골프] 3스타 부가티 …" with the row "3스타 부가티
+    …"; 2026-11-17, the wedge-set review C71): it says nothing the title does not, so it is not shown. Letters and digits
+    only, any case."""
+    m, t = (re.sub(r"[\W_]+", "", x or "").casefold() for x in (value, title))
+    return bool(m and t) and (m == t or (m in t and len(m) >= 0.8 * len(t)))
+
+
+def hide_title_model_rows(checked: dict[str, Any], title: str | None) -> dict[str, Any]:
+    """check_specs' answer without the 모델명 rows that repeat the title (model_repeats_title; a row bound with
+    "for_ko" stays), and without the specs_name_one_variant entry about each such row ("모델명 <value>: 12종"): it
+    asks for a check by hand of a row no longer shown, and title_names_one_variant already covers the title's words
+    (2026-11-17, the review of C71: 20 products kept such a note)."""
+    gone = [r["value_ko"] for r in checked["specs"]
+            if r["label_ko"] == "모델명" and not r.get("for_ko") and model_repeats_title(r["value_ko"], title)]
+    if not gone:
+        return checked
+    prefixes = tuple(f"{_row('모델명', v)}: " for v in gone)
+    notes = []
+    for n in checked["notes"]:
+        if n["code"] == "specs_name_one_variant":
+            left = [e for e in n["detail"].split("; ") if not e.startswith(prefixes)]
+            if not left:
+                continue
+            n = {**n, "detail": "; ".join(left)}
+        notes.append(n)
+    return {"specs": [r for r in checked["specs"] if not (r["label_ko"] == "모델명" and r["value_ko"] in gone
+                                                           and not r.get("for_ko"))], "notes": notes}
+
+
 def check_specs(spec_rows: list[dict[str, str]], options: list[dict[str, Any]], variants: list[dict[str, Any]],
                 description_text: str | None, title: str | None = None) -> dict[str, Any]:
     """Spec rows vs the sold variants -> {"specs": the rows kept, in order, a bound one with "for_ko",
@@ -699,17 +729,50 @@ def value_spans(title: str, options: list[dict[str, Any]]) -> list[tuple[int, in
     return out
 
 
-def title_one_variant(title: str, options: list[dict[str, Any]]) -> list[str]:
+# a colour value written in the other script in the title (2026-11-17, the wedge-set review C47: BombTech's value "Black"
+# and the title's "… 맥스 그루브 블랙 웨지", 11 sets that sell Black and Silver; a colour joined to another one by 및 / 와 /
+# / / , / & lists the choice)
+_COLOURS = {"블랙": ("Black",), "실버": ("Silver",), "화이트": ("White",), "네이비": ("Navy",), "그레이": ("Grey", "Gray"),
+            "골드": ("Gold",)}
+_COLOUR_KO = {latin.casefold(): ko for ko, latins in _COLOURS.items() for latin in latins}
+_JOIN = r"(?:및|과|와|또는|/|,|&)"
+
+
+def title_one_variant(title: str, options: list[dict[str, Any]], brand: str | None = None) -> list[str]:
     """Words of the title that fit part of the values only, while the product sells others too ("12종" in the
     title, values 12종 / 9종; "10.5R" with 10.5 / 9 and R / S), as the title writes them, touching ones as one span
     ("XR26"): the translation must not promise that one. A title naming words of two values (여성용 / 남성용)
     names the choice; "선택1" numbering is not a word; a title count can name a part list ("(클럽10개)" with
-    "드라이버 유틸 7아이언 퍼터" = 10 / "드라이버 우드 유틸 7아이언 퍼터" = 11: 5182294301)."""
+    "드라이버 유틸 7아이언 퍼터" = 10 / "드라이버 우드 유틸 7아이언 퍼터" = 11: 5182294301). A colour counts in
+    either script (블랙 / Black); a Hangul value inside the `brand` as the title writes it is not the value ("블랙"
+    in the brand 블랙티, 12826584649; both 2026-11-17, C47)."""
     title = re.sub(r"(\d)\s+(?=[A-Za-z]{2,}\b)", r"\1", title or "")         # "13 PCS" -> "13PCS"
     both = bool(re.search(r"여성|여자", title)) and bool(re.search(r"남성|남자", title))
-    hits = _names_some(lambda w: in_text(w, title), options, both)
+    in_brand = [(m.start(), m.end()) for m in re.finditer(re.escape(brand), title)] if brand and len(brand) >= 2 else []
+
+    def outside(spans: list[tuple[int, int]]) -> list[tuple[int, int]]:
+        return [x for x in spans if not any(a <= x[0] and x[1] <= b and b - a > x[1] - x[0] for a, b in in_brand)]
+
+    def found(w: str) -> bool:
+        if in_text(w, title):
+            if re.fullmatch(r"[가-힣]+", w) and in_brand and w != brand:
+                return bool(outside([m.span() for m in re.finditer(_word_pattern(w), title)]))
+            return True
+        if w in _COLOURS:
+            pattern = r"(?<![A-Za-z])(?:" + "|".join(_COLOURS[w]) + r")(?![A-Za-z])"
+        elif w.casefold() in _COLOUR_KO:
+            pattern = re.escape(_COLOUR_KO[w.casefold()])
+        else:
+            return False
+        return any(not re.match(r"\s*" + _JOIN, title[b:]) and not re.search(_JOIN + r"\s*$", title[:a])
+                   for a, b in outside([m.span() for m in re.finditer(pattern, title, re.I)]))
+
+    hits = _names_some(found, options, both)
     whole = value_spans(title, options)
     return _spans(hits, title, whole) if hits or whole else []
+
+
+_PLACEHOLDER_TAIL = re.compile(r"^(?:옵션|선택|option)\s*\d+$", re.I)
 
 
 def title_variant_tail(title: str, rows: list[dict[str, Any]], kept_ids: set[str]) -> str | None:
@@ -718,11 +781,18 @@ def title_variant_tail(title: str, rows: list[dict[str, Any]], kept_ids: set[str
     3Piece Set 525660 Right", 13566630297; the owner's wedge review, 2026-11-16): a variant not sold, or one of
     several sold, so the title must not name it. `rows` are the page's variants (id, options), `kept_ids` the ids
     sold. The longest such tail, as the title writes it; None when the tail is the only variant sold, has Hangul,
-    ", " or no letter, or is the whole title, or the title before it has no Hangul (not an import title)."""
+    ", " or no letter, or is the whole title, or the title before it has no Hangul (not an import title). A
+    placeholder value ("옵션 1", "Option 2") is a tail even with Hangul or as the one variant sold."""
     flat = " ".join((title or "").split())
     best: str | None = None
     for r in rows:
         tail = " ".join(" ".join(str(v) for v in r.get("options") or []).split())
+        if _PLACEHOLDER_TAIL.match(tail) and flat.endswith(" " + tail) and re.search(r"[가-힣]", flat[:-len(tail)]):
+            # the page's placeholder value appended ("… 오른손 옵션 1", 13566627679, 13566628089; 2026-11-17, the
+            # wedge-set review C53): never what the product is, even when it is the one variant sold
+            if best is None or len(tail) > len(best):
+                best = tail
+            continue
         # a tail with ", " would be cut by the note's own ", " join; a bare number ("52") would exempt that number
         # everywhere in the title from translate's number check (2026-11-16, the review of this rule)
         if not tail or re.search(r"[가-힣]", tail) or ", " in tail or not re.search(r"[A-Za-z]", tail) \
@@ -735,3 +805,101 @@ def title_variant_tail(title: str, rows: list[dict[str, Any]], kept_ids: set[str
         if best is None or len(tail) > len(best):
             best = tail
     return best
+
+
+# ---- wedge-set titles vs the lofts sold (wedge_sets categories; the wedge-set review, 2026-11-17) ---------------
+# A wedge loft is two digits, 44-72; a run is two or more written one after the other ("52 56 60도", "52도/56도/60도",
+# "52, 56, 60", "525660도"), a range ("50-62도") is not a run. A sold set: a kept variant's values naming two lofts or
+# more with 도 / ° / degree / a set word; when no variant is kept, the one fact value that does. A range's ends
+# ("48-72도") still count as single lofts: the advice to write only a set sold is harmless there (13468791008).
+# A number with a unit is no loft ("45인치", "58인치+", "50대", "60 kg"; the review of C46, 2026-11-17: else the
+# number guard lets the model drop a length or an age), as _CUT_LOFT below; "세트" after a loft is a set word, and
+# "개별" / "개인용" after one are words ("… 58 60 개별 또는 세트", 13603807427).
+_WEDGE_LOFT = r"(?:4[4-9]|5\d|6\d|7[0-2])"
+_WEDGE_UNIT = r"(?!\s*(?:인치|cm|mm|피스|개(?!별|인)|종|대|세(?!트)|kg|g\b|in\b))"
+_WEDGE_LOFT_RE = re.compile(r"(?<![0-9A-Za-z.#+])" + _WEDGE_LOFT + r"(?![0-9A-Za-z.])" + _WEDGE_UNIT, re.I)
+_WEDGE_GLUED_RE = re.compile(r"(?<![0-9A-Za-z.])((?:" + _WEDGE_LOFT + r"){2,10})(?=\s*(?:도|°|degree)|\s|$)", re.I)
+_WEDGE_RUN_RE = re.compile(r"(?<![0-9A-Za-z.#+\-~])" + _WEDGE_LOFT + _WEDGE_UNIT + r"(?:\s*(?:도|°))?"
+                           r"(?:\s*[/,&+·]?\s*" + _WEDGE_LOFT + _WEDGE_UNIT + r"(?:\s*(?:도|°))?)+"
+                           r"(?![0-9A-Za-z.\-~])", re.I)
+_WEDGE_SET_WORD_RE = re.compile(r"(?i)°|도|degree|deg\b|º|set|세트|셋트|(?<![0-9])[2-9]\s*(?:pcs?|개|종|피스|p)(?![a-z])")
+
+
+def _wedge_lofts(text: str) -> set[str]:
+    out = set(_WEDGE_LOFT_RE.findall(text))
+    for g in _WEDGE_GLUED_RE.findall(text):
+        pairs = [g[i:i + 2] for i in range(0, len(g), 2)]
+        if len(pairs) >= 2 and all(a < b for a, b in zip(pairs, pairs[1:])):
+            out |= set(pairs)
+    return out
+
+
+def _sold_loft_sets(variants: list[dict[str, Any]], facts: list[dict[str, Any]]) -> list[frozenset[str]]:
+    values = [" ".join(v.get("options_ko") or []).strip() for v in variants]
+    values = [v for v in values if v]
+    named = lambda v: bool(_WEDGE_SET_WORD_RE.search(v)) and len(_wedge_lofts(v)) >= 2     # noqa: E731
+    if values:
+        return list(dict.fromkeys(frozenset(_wedge_lofts(v)) for v in values)) if all(map(named, values)) else []
+    sets = list(dict.fromkeys(frozenset(_wedge_lofts(str(f.get("value_ko") or ""))) for f in facts
+                              if named(str(f.get("value_ko") or ""))))
+    return sets if len(sets) == 1 else []
+
+
+def title_lofts_not_sold(title: str, variants: list[dict[str, Any]], facts: list[dict[str, Any]]) -> str | None:
+    """The title's wedge lofts no set sold has, or a run of them no one set sold holds (2026-11-17, the wedge-set
+    review C46: "50/52/54/56/58/60" over the sets 52/56/60 and 50/54/58, a 64 no set has; 44 English titles listed
+    lofts not sold): "<the lofts> (sold: 52/56/60 | 50/54/58)", for the translation to write only a set sold.
+    None when every run is part of one sold set, or the sold sets are not known (a variant names no lofts)."""
+    sets = _sold_loft_sets(variants, facts)
+    if not sets:
+        return None
+    union = set().union(*sets)
+    flat = " ".join((title or "").split())
+    bad: set[str] = _wedge_lofts(flat) - union
+    for m in _WEDGE_RUN_RE.finditer(flat):
+        # sets written one after another, each closed by 도 ("52/56도 50/56도 세트", 10361963641): each its own run
+        pieces = [_wedge_lofts(x) for x in re.split(r"(?<=도|°)\s+", m.group(0))]
+        for run in pieces if all(len(x) >= 2 for x in pieces) else [_wedge_lofts(m.group(0))]:
+            if len(run) >= 2 and not any(run <= s for s in sets):
+                bad |= run
+    for g in _WEDGE_GLUED_RE.findall(flat):
+        run = _wedge_lofts(g)
+        if len(run) >= 2 and not any(run <= s for s in sets):
+            bad |= run
+    if not bad:
+        return None
+    key = lambda x: int(x)                                                                     # noqa: E731
+    sold = " | ".join("/".join(sorted(s, key=key)) for s in sorted(sets, key=lambda s: sorted(map(int, s))))
+    return f"{'/'.join(sorted(bad, key=key))} (sold: {sold})"
+
+
+# A purchase agency's wedge title cut by Naver at 50 characters (2026-11-17, the wedge-set review C48: "… 52 56 S",
+# "… 50 54 샌"): 46-50 characters, its loft run the last words and every loft of the title, then a cut word or a
+# lone letter / digit, or two lofts at most. The model writes the cut list as the set ("2-Piece 52°/56°") or keeps
+# the cut word ("S"); the note tells it the list may be incomplete and the cut word is none.
+_CUT_LOFT = r"(?<![\dA-Za-z#.+])(?:4[6-9]|5\d|6[0-4])(?!\d|\s*(?:인치|cm|mm|피스|개|종|in\b))(?:\s*°|\s*도)?"
+_CUT_NAME = r"(?:갭|샌드|로브|롭|피치|피칭|어프로치|모래|간격|Gap|Sand|Lob|Pitch|Wedge|웨지|GW|SW|LW|AW|PW)"
+_CUT_FRAG = r"(?:샌|로|피|울트|울|웨|어프|[A-Za-z]|(?<=\s)\d)"
+_CUT_SEP = r"[\s/,+\-·]*"
+_CUT_TAIL_RE = re.compile(r"((?:" + _CUT_LOFT + _CUT_SEP + r"(?:" + _CUT_NAME + _CUT_SEP + r")*)+)(" + _CUT_FRAG
+                          + r")?\s*$")
+_CUT_COUNT_RE = re.compile(r"\d\s*(?:PCS|pcs|피스|P\b|개|종|Piece|piece|클럽)")
+
+
+def title_cut(title: str) -> dict[str, Any] | None:
+    """-> {"partial": the cut word at the end ("" none), "lofts": how many the cut list writes, "count": a piece
+    count written} for a title Naver cut inside its loft list (see above); None otherwise."""
+    t = (title or "").strip()
+    if not 46 <= len(t) <= 50:
+        return None
+    m = _CUT_TAIL_RE.search(t)
+    if not m or re.search(_CUT_LOFT, t[:m.start()]):             # lofts earlier: a word salad, not a cut list
+        return None
+    run, frag = m.group(1), m.group(2) or ""
+    n = len(re.findall(_CUT_LOFT, run))
+    glued = re.search(r"(?:4[6-9]|5\d|6[0-4]){2,}", run)
+    if glued:
+        n = max(n, len(glued.group(0)) // 2)
+    if not frag and n > 2:
+        return None
+    return {"partial": frag, "lofts": n, "count": bool(_CUT_COUNT_RE.search(t))}

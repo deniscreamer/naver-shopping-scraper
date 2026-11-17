@@ -59,7 +59,7 @@ from shop_view import add_ref_flags, keys_from_args, selection_asked
 from shopify_catalog import _git_ignored
 from translation_dicts import KINDS as DICT_KINDS
 from translation_dicts import Dictionaries, reminder
-from translation_rules import codes, has_hangul, numbers, sanitize
+from translation_rules import NO_BRAND, codes, has_hangul, numbers, sanitize
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PROMPTS = os.path.join(HERE, "prompts")
@@ -317,12 +317,20 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
     one_variant = [w.strip() for n in prepared.get("notes") or []                # the transform joins spans with ", "
                    if isinstance(n, dict) and n.get("code") == "title_names_one_variant" and n.get("detail")
                    for w in str(n["detail"]).split(", ") if w.strip()]
+    lofts_not_sold = next((str(n["detail"]) for n in prepared.get("notes") or []
+                           if isinstance(n, dict) and n.get("code") == "title_lofts_not_sold" and n.get("detail")), None)
+    cut = next((str(n["detail"]).split(" cut,")[0] for n in prepared.get("notes") or []
+                if isinstance(n, dict) and n.get("code") == "title_cut" and n.get("detail")), None)
     options = product.get("options") or []
     option_of = {v: o["name_ko"] for o in options for v in o["values_ko"]}
     values_of = {o["name_ko"]: o["values_ko"] for o in options}
     en: dict[str, str] = {}
     by: dict[str, str] = {}
     pending: list[dict[str, Any]] = []
+    # a title is asked again for its new brand only once the brand has its English (13625754692: 디맥스프로 not
+    # translated yet; the title would be asked with no brand_en, 2026-11-17)
+    brand_known = all(dicts.get("brand", t["ko"]) is not None or not has_hangul(sanitize("brand", t["ko"], tenant))
+                      for t in prepared.get("texts") or [] if t["kind"] == "brand")
     for t in prepared.get("texts") or []:
         tid, kind, ko = t["id"], t["kind"], t["ko"]
         own = kind in PRODUCT_KINDS or (kind == "option_name" and ko in placeholders)
@@ -332,7 +340,8 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
         if hit is not None:
             en[tid], by[tid] = hit, "product" if own else "dictionary"
             asked_with = (brands or {}).get((key, tid))
-            if kind == "title" and asked_with is not None and asked_with != (product.get("brand_ko") or ""):
+            if kind == "title" and asked_with is not None and asked_with != (product.get("brand_ko") or "") \
+                    and brand_known:
                 pending.append({"id": tid, "kind": kind, "source": sanitize(kind, ko, tenant, category),
                                 "context": f"the brand is now {product.get('brand_ko')}, not {asked_with}"})
             continue
@@ -346,6 +355,21 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
             # every variant is); the check does not ask for their numbers / codes
             item["context"] = "drop from the title, only some variants have it: " + " | ".join(one_variant)
             item["drop"] = [sanitize("title", w, tenant, category) for w in one_variant]
+        if kind == "title" and (lofts_not_sold or cut):
+            # the transform's notes title_lofts_not_sold (C46) and title_cut (C48), 2026-11-17: the wedge title's
+            # lofts no set sold has, a list Naver cut at 50 characters; their numbers / the cut word need not survive
+            said = [item["context"]] if item.get("context") else []
+            if lofts_not_sold:
+                said.append(f"lofts the title lists that are not one set sold: {lofts_not_sold}; write only the "
+                            "lofts of a set sold (several sets joined by 'or'), never the list as one set")
+                item["free_numbers"] = re.findall(r"\d+", lofts_not_sold.split(" (sold:")[0])
+            if cut:
+                said.append("Naver cut this title at 50 characters: its loft list may be incomplete; write no "
+                            "piece count it does not state" + (f"; {cut} at its end is a cut word: leave it out"
+                                                               if cut != "''" else ""))
+                if cut != "''":
+                    item["cut"] = sanitize("title", cut.strip("'"), tenant, category)
+            item["context"] = "; ".join(said)
         if kind == "option_name" and ko in placeholders:
             item["context"] = "values: " + " | ".join(values_of.get(ko, [])[:12])
             item["placeholder"] = True           # named from its values: its own digits (선택2) need not survive
@@ -441,8 +465,12 @@ def _checked_source(item: dict[str, Any]) -> str:
     if item["kind"] != "title":
         return item["source"]
     text = _BRACKETS_RE.sub(" ", item["source"])
-    for word in item.get("drop") or []:
-        text = text.replace(word, " ")
+    if item.get("cut"):                             # Naver's cut word, at the end only (C48)
+        text = re.sub(r"\s*" + re.escape(item["cut"]) + r"\s*$", " ", text)
+    for word in item.get("drop") or []:             # spacing aside: the note joins "13 PCS" as "13PCS" (C47)
+        bare = "".join(word.split())
+        if bare:
+            text = re.sub(r"\s*".join(map(re.escape, bare)), " ", text)
     return text
 
 
@@ -476,7 +504,7 @@ def verify(items: list[dict[str, Any]], text: str) -> tuple[dict[str, str], list
         if has_hangul(out):
             problems.append("korean left")
         checked = _checked_source(item)
-        lost = [n for n in numbers(checked) if n not in out]
+        lost = [n for n in numbers(checked) if n not in out and n not in (item.get("free_numbers") or ())]
         if lost:
             problems.append("numbers changed: missing " + ", ".join(lost))
         lost_codes = sorted(c for c in codes(checked) if c not in out.upper())
@@ -666,9 +694,11 @@ def translate_product(prepared: dict[str, Any], dicts: Dictionaries, store: dict
 
 # ---- the shop --------------------------------------------------------------------------------------------------
 
-def _load_brands(path: str) -> dict[tuple[str, str], str]:
+def _load_brands(path: str, tenant: str | None = None) -> dict[tuple[str, str], str]:
     """(key, title id) -> the brand_ko its last row was translated under; a row without one (older, or a hand
-    correction) drops it: never asked again for its brand."""
+    correction) drops it: never asked again for its brand. An older row the model wrote (no "review" writer) that
+    starts with the shop's own name (`tenant`) was translated as 노브랜드 (2026-11-17, the wedge-set review C06:
+    "Fairward Golf …" kept at the head of 25 titles whose products have a brand now: PGM, 69 Golf, Vice Golf …)."""
     brands: dict[tuple[str, str], str] = {}
     if os.path.exists(path):
         with open(path, encoding="utf-8") as f:
@@ -678,6 +708,9 @@ def _load_brands(path: str) -> dict[tuple[str, str], str]:
                     if row.get("kind") == "title":
                         if "brand_ko" in row:
                             brands[(row["key"], row["id"])] = row["brand_ko"]
+                        elif tenant and not str(row.get("by") or "").startswith("review") \
+                                and str(row.get("en") or "").startswith(tenant):
+                            brands[(row["key"], row["id"])] = NO_BRAND
                         else:
                             brands.pop((row["key"], row["id"]), None)
                 except (ValueError, KeyError, TypeError):
@@ -723,7 +756,7 @@ def run(shop: str, model: "Model | Chain | None", shops_root: str = SHOPS_ROOT, 
     os.makedirs(out_dir, exist_ok=True)
     texts_path = os.path.join(out_dir, "texts.jsonl")
     store = _load_store(texts_path)
-    brands = _load_brands(texts_path)
+    brands = _load_brands(texts_path, tenant)
     now = time.strftime("%Y-%m-%dT%H:%M:%SZ", clock())
     records: list[dict[str, Any]] = []
     usage: dict[str, dict[str, int]] = {}

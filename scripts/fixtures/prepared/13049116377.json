@@ -230,10 +230,6 @@
     "value_ko": "캘러웨이"
    },
    {
-    "label_ko": "모델명",
-    "value_ko": "2026년 캘러웨이 XR26 남성 골프채 12개 풀세트 한국캘러웨이골프"
-   },
-   {
     "label_ko": "원산지",
     "value_ko": "베트남산"
    },
@@ -445,16 +441,6 @@
    "id": "spec_label:559380a1cea8a17c",
    "kind": "spec_label",
    "ko": "브랜드"
-  },
-  {
-   "id": "spec_label:45ecef3c70c3d0be",
-   "kind": "spec_label",
-   "ko": "모델명"
-  },
-  {
-   "id": "spec_value:8d8fb786f39b7822",
-   "kind": "spec_value",
-   "ko": "2026년 캘러웨이 XR26 남성 골프채 12개 풀세트 한국캘러웨이골프"
   },
   {
    "id": "spec_label:765723acfadff305",

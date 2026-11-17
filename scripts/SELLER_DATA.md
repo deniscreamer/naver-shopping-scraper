@@ -173,6 +173,13 @@ Code: `transform.options_and_variants`.
   (`title_variant_tail`, note title_names_one_variant); lofts glued ("525660도", 13389307551); "세트 또는 개별 /
   또는 개인용" (a set or a single, 13016551520); a marker "db4P" / "dbQF" / "db9N" / "dbT1" (13552318731, 13555308677).
   The last three: `translation_rules.TITLE_RULES`, `_SELLER_TOKEN_RE`, before the model.
+- The wedge-set review (2026-11-17), titles: agency 100217952 ends its titles with its product code "WA3817568" /
+  "SA3882511", shops 100646003 / 102108469 with "품번 1116" (each the description's 상품코드; `_SELLER_CODE_RE`, C07);
+  glued runs of nine and ten lofts ("48505254565860687072°", 13163033790; C24); the page's placeholder value
+  appended ("… 오른손 옵션 1", 13566627679, 13566628089; C53); BombTech's value "Black" written 블랙 in the title (C47);
+  agency titles listing the union of the sets sold ("50/52/54/56/58/60" for 50/54/58 and 52/56/60, Yamato, AM20XX,
+  XINGGM) or lofts no set has ("52 56 60 72도", C46); Mazek's agency titles cut by Naver at 50 characters inside the
+  loft list ("… 56° 샌드 웨지S", 13370558777; C48); a 모델명 row that repeats the title (167 products, C71).
 - Iron sets and full sets filed under wedges (2026-11-16, 50002783): "Regular+4-PW" (13370424163), "3456789피칭"
   (13383404156), "5 6 7 8 9 피윙" (13377696273), "아이언 세트 59 PW SW" (13601554331), "7피스 8피스" (13370491895),
   "12 Piece (Strata)" (13163090198); a title "웨지 ... 아이언 세트" by an agency that puts the category first (13382551761).
@@ -265,6 +272,12 @@ Code: `transform.prepare`, `brand_fallback.py` (2026-11-08).
   inside such a name comes last.
 - A number after 클럽 is mostly not a count: an age ("골프클럽 6~8세 드라이버"), a loft ("클럽 56도웨지"), a height:
   ages, heights, lofts, sizes and years are taken out before the package kind is read (5396141262, 6849582078).
+- The wedge-set review (2026-11-17): Naver's placeholder "UnKnown_ピン" / "UnKnown_ヨネックス" in the 브랜드 row of an
+  import (13104702775, 13110012279) names no firm (C23); Amazon's "Brand | Generic" table beside "Manufacturer | Alpha
+  Golf" (13382512411) names the maker (C31); agency 100217952 writes the brand in the notice's 동일 모델의 출시연월 row
+  ("USPA", "페스트니스", "PMJ": 13582215582, 12872703429), dates elsewhere (C03); a seller's shop name as the brand of
+  another brand's set (메가스피어 on PGM 13245513614, 제우스골프 as the maker of a 팀요시무라 set 10149539327, C02); a
+  shop brand "Vice Golf" / "미스테리 골프" whose stem alone starts the title ("Vice Boost Plus …", 13830312401, C27).
 
 ### Origin, gifts, add-ons
 

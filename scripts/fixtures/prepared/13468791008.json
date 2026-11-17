@@ -12,6 +12,10 @@
   {
    "code": "purchase_agency",
    "detail": "구매대행 in the specs / notice / delivery policy"
+  },
+  {
+   "code": "title_lofts_not_sold",
+   "detail": "48/58/72 (sold: 52/60 | 56/60)"
   }
  ],
  "source": {

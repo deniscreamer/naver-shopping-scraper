@@ -87,7 +87,11 @@ _NO_FIRM = re.compile(r"(?i)^(?:별도\s*표기|알\s*수\s*없음|미상|불명
                       # Naver's "other brand" and the word "brand" itself (2026-11-17, the wedge sets' dictionary
                       # review: "기타 BRAND" in 3 agency rows went out as the vendor "Other BRAND", 12789751830; "상표"
                       # (trademark) in a 브랜드 / 제조사 row as "Brand" on 5 live sets, 12619693409)
-                      r"|기타(?:\s*(?:brand|브랜드))?|상표|브랜드)$")
+                      r"|기타(?:\s*(?:brand|브랜드))?|상표|브랜드"
+                      # Naver's placeholder for a brand it could not name, "UnKnown_" and a katakana name (2026-11-17,
+                      # the wedge-set review C23: 13104702775 went out with the vendor "UnKnown_ピン" and the title
+                      # "UnKnown_ピン Yonex …"; "Artist Unknown" is a name and stays)
+                      r"|unknown_.*)$")
 _CODE = re.compile(r"\s*\((?:\d+|자체\s*제작[^()]*)\)\s*$")       # 코알라(200874), 지브이골프코리아(자체제작 상품)
 
 
@@ -278,6 +282,36 @@ def _word_pattern(brand: str) -> re.Pattern[str] | None:
     return re.compile(r"(?<![A-Za-z0-9])" + re.escape(brand) + r"(?![A-Za-z0-9])", re.I)
 
 
+_GOLF_END = re.compile(r"\s*(?:golf|골프)\s*$", re.I)
+
+
+def title_stem(title: str | None, brands: list[str], known: list[str]) -> str | None:
+    """A shop's or the dictionary's brand that ends in Golf / 골프 whose stem starts the title ("Vice Golf" for
+    "VICE 프로 웨지 세트", "미스테리골프" for "미스테리 R라인 …"; 2026-11-17, the wedge-set review C27: 13830312401,
+    13000456333 went out under a description row's or no brand). The stem is a firm of its own (clean), three Hangul
+    letters or four Latin at least, a whole word at the start of the title; the longest wins."""
+    found: list[tuple[int, str]] = []
+    for b in [*brands, *known]:
+        if not _GOLF_END.search(b):
+            continue
+        stem = _GOLF_END.sub("", b).strip()
+        n = _norm(stem)
+        if not clean(stem) or (len(n) < 3 if _HANGUL_BRAND.match(n) else len(re.sub(r"[^a-z]", "", n)) < 4):
+            continue
+        pattern = _stem_pattern(stem)
+        if pattern.search(title or ""):
+            found.append((len(n), b))
+    return max(found)[1] if found else None
+
+
+@functools.lru_cache(maxsize=None)
+def _stem_pattern(stem: str) -> re.Pattern[str]:
+    n = _norm(stem)
+    if _HANGUL_BRAND.match(n):
+        return re.compile(r"^\s*" + r"\s*".join(map(re.escape, n)) + r"(?![가-힣])")
+    return re.compile(r"^\s*" + re.escape(stem) + r"(?![A-Za-z0-9])", re.I)
+
+
 # a row may start with a bullet ("- Brand : 69", 13370257430) and the Korean label may be "브랜드 이름" (a machine
 # translation of "Brand Name": "브랜드 이름 | pgm", 12178085899; both 2026-11-16, the wedge-set review)
 _ROW_LEAD = r"(?im)^[ \t]*(?:[-•·*][ \t]*)?"
@@ -287,6 +321,9 @@ _BRAND_ROW = re.compile(_ROW_LEAD + r"(?:brand(?:[ \t]*name)?|브랜드(?:[ \t]*
 # ("Brand Name | 69" + "Manufacturer | 69 Golf": 13370257430, 13016152694, 2026-11-16; the specs' 브랜드 and 제조사
 # rows say "69" only, and a bare number is no brand)
 _MAKER_ROW = re.compile(_ROW_LEAD + r"(?:manufacturer(?:[ \t]*name)?|maker|제조(?:사|자|업체|원)(?:\(사\))?)" + _ROW_VALUE)
+# a factory's or a trader's name in a Manufacturer row (Amazon imports: "Shenzhen … Technology Co., Ltd."), not a brand
+_FACTORY = re.compile(r"(?i)trading|shenzhen|guangzhou|dongguan|xiamen|ningbo|technology|\btech\b|industr|manufactur"
+                      r"|factory|import|export|e-?commerce|international|group|enterprise|co\.,|有限|公司|china|중국")
 _ROW_TAIL = re.compile(r"\s*(?:품목|부품|모델)\s*번호.*$|\s*(?:item|part|model)\s*(?:no|number|#).*$", re.I)
 
 
@@ -295,7 +332,8 @@ def described(description: str | None) -> list[str]:
     words or more, no firm: out; a bare number: the maker's row that starts with it, else out)."""
     out = []
     makers = [_ROW_TAIL.sub("", m).strip(" .,-") for m in _MAKER_ROW.findall(description or "")]
-    for raw in _BRAND_ROW.findall(description or ""):
+    brand_rows = _BRAND_ROW.findall(description or "")
+    for raw in brand_rows:
         name = _ROW_TAIL.sub("", raw).strip(" .,-")
         if name.replace(" ", "").isdigit():
             number = name.replace(" ", "")
@@ -304,13 +342,36 @@ def described(description: str | None) -> list[str]:
             continue
         if name not in out:
             out.append(name)
+    if not out and brand_rows and all(_NO_FIRM.search(_ROW_TAIL.sub("", r).strip(" .,-")) for r in brand_rows):
+        # every Brand row names no firm ("Brand | Generic"): the maker's row, as written ("Manufacturer | Alpha Golf",
+        # 13382512411; "Bermuda Golf Company", 12178263465; 2026-11-17, the wedge-set review C31). A factory or a
+        # trading firm ("Shenzhen … Technology Co., Ltd.") is not the brand; Co. / Company stay (the dictionary's).
+        out = [m for m in makers if m and len(m.split()) <= 4 and not _FACTORY.search(m) and clean(m)][:1]
     return out
 
 
+# a page pointer, not a value ("상세설명참조", "별도표기", "문의")
+_POINTER = re.compile(r"참조|참고|상세|표기|페이지|설명|별도|문의|확인")
+_LEAD_TAGS = re.compile(r"^\s*(?:[(\[][^)\]]*[)\]]\s*)*")
+
+
+def release_brand(value: str | None, title: str | None) -> str | None:
+    """The brand a seller wrote in the notice's 동일 모델의 출시연월 row (the model's release month) when it is the
+    title's first word (2026-11-17, the wedge-set review C03: agency 100217952 writes "USPA" / "페스트니스" there,
+    13582215582, 12872703429). No digit (a date), no page pointer, a firm (clean), the title's first word after its
+    bracket tags ("(병행)")."""
+    if not value or re.search(r"\d", value) or _POINTER.search(value):
+        return None
+    name = clean(value)
+    words = _LEAD_TAGS.sub("", title or "").split()
+    return name if name and words and _norm(words[0]) == _norm(name) else None
+
+
 def decide(title: str | None, origin: str | None, brands: list[str], rows: list[str],
-           known: list[str] | None = None, description: str | None = None) -> tuple[str, str, list[str]]:
+           known: list[str] | None = None, description: str | None = None,
+           release: str | None = None) -> tuple[str, str, list[str]]:
     """-> (brand, source, other candidates) for a product with no brand of its own (steps 3-7; known: the brand
-    dictionary's Korean names, for a title that starts with one)."""
+    dictionary's Korean names, for a title that starts with one; release: the notice's 동일 모델의 출시연월 row)."""
     titled = in_title(title, brands)
     if titled:
         return titled[0], "title", titled[1:]
@@ -320,6 +381,9 @@ def decide(title: str | None, origin: str | None, brands: list[str], rows: list[
     word = as_word(title, known or [])
     if word:
         return word, "title_word", []
+    stem = title_stem(title, brands, known or [])
+    if stem:
+        return stem, "title_stem", []
     # a row's Latin brand in the dictionary's spelling ("브랜드 이름 | pgm": PGM, as the shop's other PGM products, so
     # the brand does not change by its case alone; 2026-11-16)
     rows_named = [next((k for k in known or [] if not _HANGUL_BRAND.match(_norm(k)) and _norm(k) == _norm(n)), n)
@@ -336,6 +400,9 @@ def decide(title: str | None, origin: str | None, brands: list[str], rows: list[
     latin = [(p, n) for p, n in latin_phrases(rows).most_common() if n >= MIN_LATIN]
     if latin:
         return latin[0][0], "images_text_latin", [p for p, _ in latin[1:3]]
+    released = release_brand(release, title)
+    if released:
+        return released, "release_row", []
     return NO_BRAND, "none", []
 
 
@@ -343,15 +410,44 @@ def _description(value: Any) -> str:
     return "\n".join(map(str, value)) if isinstance(value, list) else str(value or "")
 
 
+# the parts' makers a title names beside the club's brand (shafts, grips): never the brand of the set
+_COMPONENT = re.compile(r"(?i)다이나믹\s*골드|다골|트루\s*템퍼|엔에스\s*프로|n\.?s\.?\s*pro|모듀스|modus|kbs|프로젝트\s*x"
+                        r"|project\s*x|후지쿠라|fujikura|미쯔비시|mitsubishi|그라파이트\s*디자인|투어\s*ad|골프\s*프라이드"
+                        r"|golf\s*pride|dynamic\s*gold|true\s*temper|aldila|\bust\b")
+
+
+def store_named(brand: str | None, title: str | None, store_names: set[str], known: list[str]) -> bool:
+    """The brand row (or the maker) is the seller's own shop name while the title names another brand: the shop, not
+    the brand (2026-11-17, the wedge-set review C02: 제우스골프, the shop, as the maker of a 팀요시무라 wedge set,
+    10149539327; 메가스피어 on a PGM set, 13245513614). Exact equality with the shop's name or its legal name only; a
+    shop that writes its own name in the title sells its brand (아화골프, US키즈골프, 스컬독: stays); a combination set
+    (조합) and a part's maker in the title (a shaft, a grip) are not another brand."""
+    n = _norm(brand)
+    if not n or n not in store_names or n in _norm(title) or "조합" in (title or ""):
+        return False
+    other = leading(title, known) or as_word(title, known)
+    return bool(other) and _norm(other) != n and not _COMPONENT.search(other or "")
+
+
 def fill(prepared: list[Any], rows_of: Callable[[str], list[str]],
          origins: dict[str, str | None], texts: Callable[[Any], list[dict[str, str]]],
-         known: list[str] | None = None, by_owner: dict[str, str] | None = None) -> int:
+         known: list[str] | None = None, by_owner: dict[str, str] | None = None,
+         releases: dict[str, str | None] | None = None, stores: dict[str, set[str]] | None = None) -> int:
     """Give every product without a brand one (steps 3-7), add the note and the brand to its texts. rows_of(key): the
     images' OCR rows of the product; origins: {key: 원산지 as the page states it}; by_owner: {key: brand} the owner
-    read on the photos (source "owner", before every step; 2026-11-15: ALVO stamped on the heads, no text naming it).
-    -> how many were filled."""
-    brands = shop_brands(prepared)
+    read on the photos (source "owner", before every step; 2026-11-15: ALVO stamped on the heads, no text naming it);
+    releases: {key: the notice's 동일 모델의 출시연월 value} (the last step before 노브랜드); stores: {key: the seller's
+    shop name and legal name, normalized} (a brand that is the shop's name: store_named). -> how many were filled."""
     by_owner = by_owner or {}
+    shop_named: dict[str, str] = {}
+    for p in prepared:                                  # before the shop's brands: the shop's name is none of them
+        product = p["product"]
+        if p["key"] not in by_owner and str(product.get("brand_source") or "").startswith(("specs:", "manufacturer:")) \
+                and store_named(product.get("brand_ko"), product.get("title_ko"), (stores or {}).get(p["key"], set()),
+                                known or []):
+            shop_named[p["key"]] = product["brand_ko"]
+            product["brand_ko"] = product["brand_source"] = None
+    brands = shop_brands(prepared)
     n = 0
     for p in prepared:
         product = p["product"]
@@ -362,10 +458,12 @@ def fill(prepared: list[Any], rows_of: Callable[[str], list[str]],
             brand, source, others = by_owner[p["key"]], "owner", []
         else:
             brand, source, others = decide(product.get("title_ko"), origins.get(p["key"]), brands, rows_of(p["key"]),
-                                           known, _description(product.get("description_ko")))
+                                           known, _description(product.get("description_ko")),
+                                           (releases or {}).get(p["key"]))
         p["product"]["brand_ko"], p["product"]["brand_source"] = brand, source
         p["notes"] = [x for x in p["notes"] if x["code"] != "brand_fallback"] + [
-            {"code": "brand_fallback", "detail": f"{source}: {brand}" + (f"; also {', '.join(others)}" if others else "")}]
+            {"code": "brand_fallback", "detail": f"{source}: {brand}" + (f"; also {', '.join(others)}" if others else "")
+             + (f"; not the seller's shop {shop_named[p['key']]}" if p["key"] in shop_named else "")}]
         p["texts"] = texts(p["product"])
         n += 1
     return n

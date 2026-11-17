@@ -128,7 +128,8 @@ Command: `lens.py brand <shop> [--category <id>] [--source none,title_word,descr
 every product of the scope is shown.
 
 The grid puts weak sources first, then sorts by brand. Each card shows `brand [source]`.
-- **Red:** a weak source (none, title_word, description_row, origin, images_text, images_text_latin).
+- **Red:** a weak source (none, title_word, title_stem, description_row, origin, images_text, images_text_latin,
+  release_row; the last two 2026-11-17).
 - **Blue:** one brand written several ways among the products shown (yamato, yamato golf, 야마토, 'Yamato'). That is
   one vendor in the store under several names. `meta.spellings` lists them.
 

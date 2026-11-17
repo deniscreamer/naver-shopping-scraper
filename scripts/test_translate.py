@@ -1082,6 +1082,57 @@ def test_a_category_reads_and_learns_only_its_own_entries(tmp_path):
     assert rows["50002787/option_name"]["new"] == {"구성": "Contents", "호수": "Size"}
 
 
+def _rows(path, *rows):
+    path.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
+    return str(path)
+
+
+def test_an_old_title_headed_by_the_shops_name_counts_as_no_brand(tmp_path):
+    """C06 (2026-11-17, the wedge-set review): 25 titles the model wrote before rows kept their brand start with
+    "Fairward Golf" (translated as 노브랜드) while their products have a brand now (PGM, 69 Golf, Vice Golf ...)."""
+    p = small(brand="PGM")
+    title = next(t["id"] for t in p["texts"] if t["kind"] == "title")
+    row = {"key": p["key"], "id": title, "kind": "title", "en": "Fairward Golf Men's Complete Golf Club Set",
+           "by": "claude-sonnet-5-5"}
+    brands = T._load_brands(_rows(tmp_path / "a.jsonl", row), TENANT)
+    assert brands == {(p["key"], title): "노브랜드"}
+    store = {(p["key"], title): row["en"]}
+    en, _, pending = T.plan(p, dicts(tmp_path), store, TENANT, brands)
+    assert en[title] == row["en"] and [i["id"] for i in pending] == [title]
+    assert pending[0]["context"] == "the brand is now PGM, not 노브랜드"
+
+
+def test_a_shops_name_title_stays_when_written_by_hand_or_under_no_brand(tmp_path):
+    p = small(brand="PGM")
+    title = next(t["id"] for t in p["texts"] if t["kind"] == "title")
+    model = {"key": p["key"], "id": title, "kind": "title", "en": "Fairward Golf Set", "by": "claude-sonnet-5-5"}
+    hand = {**model, "by": "review-2026-11-15"}
+    assert T._load_brands(_rows(tmp_path / "a.jsonl", hand), TENANT) == {}                      # a hand correction
+    assert T._load_brands(_rows(tmp_path / "b.jsonl", {**model, "en": "PGM Set"}), TENANT) == {}  # not the shop's
+    assert T._load_brands(_rows(tmp_path / "c.jsonl", model)) == {}                             # no tenant given
+    assert T._load_brands(_rows(tmp_path / "d.jsonl", model, hand), TENANT) == {}               # the last row wins
+    nobrand = small(brand="노브랜드")
+    t2 = next(t["id"] for t in nobrand["texts"] if t["kind"] == "title")
+    store = {(nobrand["key"], t2): "Fairward Golf Set"}
+    assert not T.plan(nobrand, dicts(tmp_path), store, TENANT, {(nobrand["key"], t2): "노브랜드"})[2]   # still none
+
+
+def test_a_title_waits_for_its_brands_english(tmp_path):
+    """13625754692 (2026-11-17): the brand 디맥스프로 has no English yet; its title is not asked again before it."""
+    p = small(brand="디맥스프로")
+    title = next(t["id"] for t in p["texts"] if t["kind"] == "title")
+    store = {(p["key"], title): "Fairward Golf Beginner Men's Complete Golf Club Set"}
+    brands = {(p["key"], title): "노브랜드"}
+    _, _, pending = T.plan(p, dicts(tmp_path), store, TENANT, brands)
+    assert [i["kind"] for i in pending] == ["brand"]                                    # the brand alone is asked
+    _, _, pending = T.plan(p, dicts(tmp_path, brand={"디맥스프로": "Dmaxpro"}), store, TENANT, brands)
+    assert [i["id"] for i in pending] == [title]                                        # then the title
+    latin = small(brand="PGM")                                                          # a Latin brand: known
+    t2 = next(t["id"] for t in latin["texts"] if t["kind"] == "title")
+    assert T.plan(latin, dicts(tmp_path), {(latin["key"], t2): "Fairward Golf Set"}, TENANT,
+                  {(latin["key"], t2): "노브랜드"})[2]
+
+
 def test_one_brand_spelling_whatever_its_dots_and_spaces(tmp_path):
     """12552413383 (2026-11-12): "U.S.KIDSGOLF" is the dictionary's U.S. Kids Golf."""
     d = dicts(tmp_path, brand={"US키즈골프": "U.S. Kids Golf"})

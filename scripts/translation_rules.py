@@ -88,6 +88,8 @@ def _loft_run(m: re.Match[str]) -> str:
 #   model read "5256606468" as "6468" (13566630297) or kept "525660°" (13389307551, 13372006463). Two digits a
 #   loft, 46-72, at least two, going up; next to a letter, a digit, "." or "-" it is a code and stays; a run
 #   followed by a 도 that starts a Korean word stays ("5256 도매", "525660도클럽"); two lofts only need 도 / ° or 세트 next to them.
+#   Up to ten lofts (2026-11-17, the wedge-set review C24: "48505254565860687072°" of 13163033790, 13377515123 and
+#   "485052545860687072°" of 13364055281 have nine and ten; a run of seven or more is still read, 13372276089).
 _LOFT2 = r"(?:4[6-9]|5\d|6\d|7[0-2])"
 TITLE_RULES: dict[str, list[tuple[re.Pattern[str], Any]]] = {
     "50002783": [
@@ -97,7 +99,7 @@ TITLE_RULES: dict[str, list[tuple[re.Pattern[str], Any]]] = {
                     r"(?:개별|개인용|개인|싱글|낱개|단품)(?![가-힣])(?:\s*웨지)?"), " "),
         (re.compile(r"(?<=세트)\s*(?:개인용|개인|개별)(?![가-힣])"), " "),
         (re.compile(r"(?i)\s*\bor\s+singles?(?:\s+wedges?)?\b"), " "),
-        (re.compile(r"(?<![0-9A-Za-z.\-])(?P<glued>(?<=[가-힣]))?(?P<run>" + _LOFT2 + r"{2,8})(?![0-9.A-Za-z])"
+        (re.compile(r"(?<![0-9A-Za-z.\-])(?P<glued>(?<=[가-힣]))?(?P<run>" + _LOFT2 + r"{2,10})(?![0-9.A-Za-z])"
                     r"(?!\s*도[가-힣])(?P<deg>\s*(?:도|°))?"), _loft_run),
     ],
 }
@@ -105,6 +107,11 @@ TITLE_RULES: dict[str, list[tuple[re.Pattern[str], Any]]] = {
 # 13552339143, "db9N" 13555308677, "dbT1" 13555299850): lower-case "db" and two capitals or digits, a word of its
 # own; no other title of 2,451 writes one (an upper-case "DB6" is Orlimar's model and stays). Every category's titles.
 _SELLER_TOKEN_RE = re.compile(r"(?<![0-9A-Za-z])db[0-9A-Z]{2}(?![0-9A-Za-z])")
+# A seller's product code at the end of a title (2026-11-17, the wedge-set review C07): agency 100217952 ends its titles
+# with "WA3817562" / "SA…" (W or S, A, seven digits), shops 100646003 / 102108469 with "품번 4567"; each code is the
+# 상품코드 of the product's description, never the model's name. Only at the end of the title (a model code inside
+# the title stays); 19 titles of the shop (16 wedge sets, 3 of other categories), no false hit. Every category's titles.
+_SELLER_CODE_RE = re.compile(r"\s*(?:(?<![0-9A-Za-z])[WS]A\d{7}|(?<![가-힣A-Za-z])품번\s*\d{3,5})\s*$")
 
 
 def sanitize(kind: str, ko: str, tenant: str, category_id: str | None = None) -> str:
@@ -115,6 +122,7 @@ def sanitize(kind: str, ko: str, tenant: str, category_id: str | None = None) ->
         for pattern, repl in TITLE_RULES.get(str(category_id or ""), []):
             ko = pattern.sub(repl, ko)
         ko = _SELLER_TOKEN_RE.sub(" ", ko)
+        ko = _SELLER_CODE_RE.sub("", ko)
     for pattern, repl in CATEGORY_RULES.get(str(category_id or ""), []):
         ko = pattern.sub(repl, ko)
     text = ko.strip()

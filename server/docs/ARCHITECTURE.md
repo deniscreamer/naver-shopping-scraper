@@ -584,6 +584,9 @@ surfaces.
   the shop's 502, e.g. 13370424163 Cleveland ZipCore XL iron set, 13386376196 Callaway Strata 9피스), and wood sets,
   complete sets and junior sets (13469122120 "우드 ... 드라이버 페어웨이", 13370403487 TaylorMade junior). ->
   `scripts/transform.py` `not_wedge_set` comment.
+- Naver writes "UnKnown_<katakana>" ("UnKnown_ピン") as the brand of an import it could not name (seen 2026-11-17,
+  13104702775): no firm. Naver cuts a purchase agency's long title at 50 characters, inside its loft list ("… 56°
+  샌드 웨지S", 13370558777). -> `scripts/brand_fallback.py` `_NO_FIRM`, `scripts/spec_variants.py` `title_cut` comments.
 
 ### 13.12 DataLab and page limits
 

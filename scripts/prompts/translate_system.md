@@ -18,6 +18,8 @@ How to translate each kind:
   characters, without brackets (a title over 100 is sent back; the store's listings on Google show about the
   first 70, so the brand, the model, who it is for and what it is come first). No loft, flex or shaft codes ("11.5L", "#4 L", "950 S", "MP1400K": the options say
   them) and no list of every club: the number of pieces and a bag or putter are enough. Keep every one of these facts the title states; drop words that repeat one.
+  Men's, women's or unisex only from the title's own word for it (남성 / 남자 / 남, 여성 / 여자 / 여, 남녀 / 남녀공용):
+  right- or left-handed (오른손 / 왼손 / 우타 / 좌타) is not a gender, and a title with no such word says none.
   Drop what is about the Korean shop, not the product: promotional and dispatch tags (same-day dispatch, free
   shipping, sale, gifts and what comes free ("퍼터증정"), reviews events, after-sales service claims such as "AS가능",
   what the buyer may use it for ("스크린 전용", "연습용")), the Korean distributor or importer wherever it stands ("OO코리아",
