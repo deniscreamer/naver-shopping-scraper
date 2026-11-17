@@ -266,6 +266,94 @@ def test_the_clubs_inside_a_range_are_the_models_to_name():
     assert "13" not in D.allowed_numbers("6-4 Ti, 2020-2026")                          # not a range of clubs
 
 
+def test_a_wedge_sets_count_passes_only_in_a_count_phrase():
+    """C65 (2026-11-17): the distinct lofts / wedge names of the title or a fixed fact are a count the model may
+    write in "set of 3", "3-piece", "3 wedges"; nowhere else, and never a number of the buyer's picks."""
+    msg = "Title: Bermuda Premium Men's Golf Wedge Set 52°/56°/60°\nBrand: Bermuda"           # 12919039491
+    counts, numbers = D.set_counts(msg), D.allowed_numbers(msg)
+    assert counts == {"3"}
+    for text in ("Bermuda Premium Men's Golf Wedge Set is a set of 3 wedges with lofts of 52°, 56° and 60°.",
+                 "Set of 3 wedges: 52°, 56° and 60°.", "A 3-piece set.", "3 wedges: 52°, 56° and 60°."):
+        assert D.problems(text, numbers, None, counts) == [], text
+        assert D.problems(text, numbers, None) == ["numbers not in the source: 3"]       # without the counts
+    assert D.problems("Set of 2 wedges: 52° and 56°.", numbers, None, counts) == ["numbers not in the source: 2"]
+    assert D.problems("The head weighs 3 kg.", numbers, None, counts) == ["numbers not in the source: 3"]
+    names = "Title: ZESTAIM Ponytail AW SW Wedge Set Laboum 40L 1167"                           # 12748958315
+    assert D.set_counts(names) == {"2"}
+    assert D.set_counts("Title: X Wedge Set\nFixed: Loft: 50° | 54°") == {"2"}
+    both = "Title: Majek Golf Men's Wedge Set 52°/56°/60° GW SW"                                  # 13312222110
+    assert D.set_counts(both) == {"3"}                                                  # the lofts win over 2 names
+    assert D.set_counts("Title: ZESTAIM Ponytail AW SW Wedge Set MI45 Magic Shaft Item No. 1106") == {"2"}  # 12748958116
+    assert D.problems("Set of 2 wedges: GW and SW.", D.allowed_numbers(both), None, D.set_counts(both)) \
+        == ["numbers not in the source: 2"]
+    assert D.set_counts("Title: X Wedge\nThe buyer picks: Loft: 52° | 56° | 60°") == set()      # a choice, no set
+    sixty_nine = ("Title: 69 Golf Unisex 3-Piece Wedge Set 54°/60°/69° 35 in Steel Shafts\n"
+                  "Title in Korean: 골프 웨지 69도 골프의 남녀 세트546069 세트 로브 샌드 피칭")               # 13164548371
+    assert D.set_counts(sixty_nine) == set()                                            # 69° is not counted: no 2
+    assert D.problems("A set of 2 wedges.", D.allowed_numbers(sixty_nine), None, D.set_counts(sixty_nine))
+    yamato = ("Title: Yamato Forged Left-Handed Wedge Set 52° 56° 60° 72° Gap Sand Lob\n"
+              "Title in Korean: 야마토 왼손 골프 52도 56도 60도 72도 세트 52 60 degree (2PCS)")             # 13381114047
+    assert D.set_counts(yamato) == set()
+    assert D.problems("A set of 3 wedges.", D.allowed_numbers(yamato), None, D.set_counts(yamato))
+    junior = "Title: PING Prodi G Junior Iron\nThe buyer picks: Height: Height 122 cm | Height 157 cm"  # 11228451487
+    assert D.set_counts(junior) == set()
+    assert D.problems("Size is chosen by height, in steps of 2 to 3 cm.", D.allowed_numbers(junior), None,
+                      D.set_counts(junior)) == ["numbers not in the source: 2, 3"]
+
+
+def _packet(product_id: str) -> str:
+    with open(os.path.join(os.path.dirname(FIXTURES), "describe_packets", f"{product_id}.txt"), encoding="utf-8") as f:
+        return f.read()
+
+
+def test_a_set_or_single_menu_is_no_count():
+    """The review of C65 (2026-11-17): a 'set or single' title lists the picker's menu of lofts, not the set.
+    The real packets (describe.py --packet) of 13488668518 and 13016433540 gave {'6'} and let 'a set of 6' through;
+    a Fixed line's lofts are the count, the menu none."""
+    for pid in ("13488668518", "13016433540"):
+        msg = _packet(pid)
+        counts, numbers = D.set_counts(msg), D.allowed_numbers(msg)
+        assert counts == {"3"}, pid                                           # "50 54 58 Degree Set", "52/56/60 …-3PCS"
+        assert D.problems("It is a set of 6 wedges.", numbers, None, counts) == ["numbers not in the source: 6"], pid
+        assert D.problems("It is a set of 3 wedges.", numbers, None, counts) == [], pid
+    # the title and the Fixed line alone (no D3, no buyer's "3"): the 3 passes only through the Fixed lofts
+    head = "\n".join(x for x in _packet("13488668518").split("\n") if x.startswith(("Title", "Fixed:")))
+    for fixed, want in ((True, []), (False, ["numbers not in the source: 3"])):
+        msg = head if fixed else "\n".join(x for x in head.split("\n") if not x.startswith("Fixed:"))
+        assert D.problems("It is a set of 3 wedges.", D.allowed_numbers(msg), None, D.set_counts(msg)) == want
+    menu = "Title: Yamato Milled Wedge Set or Single, Unisex, 50/52/54/56/58/60 Gap Sand"     # 13363853270
+    assert D.set_counts(menu) == set()
+    assert D.set_counts("Title: X Wedge Set 50/52/54/56/58/60\nTitle in Korean: X 웨지 세트 또는 개별") == set()
+    assert D.set_counts("Title: BYBOMYA Wedge Set 50 52 54 56 58 60") == set()               # 5 lofts and more
+    assert D.set_counts("Title: Mirai Skull Wedge Set 48°/52°/56° or 50°/54°/58°") == set()   # 10504295292
+    assert D.set_counts("Title: PGM Black Forged Wedge Set 48°-60° Steel Shaft") == set()     # a range, 12178085899
+    assert D.set_counts("Title: Majek Women's 3-Piece Wedge Set 52°/56°/60°\n"
+                        "Title in Korean: 52-56-60도 여성용 웨지세트") == {"3"}                # a list, not a range
+    assert D.set_counts("Title: Heo Seok Pro Wedge Set 48°/52°/56°, Single Length\n"
+                        "Title in Korean: 허석프로 웨지 세트(48도,52도,56도) 싱글랭스") == {"3"}  # 12826584649
+    assert D.set_counts("Title: Full Choice Wedge Set, 50-70° Gap Sand Lob\n"
+                        "Fixed: Color: 52°/56°/60° Set") == {"3"}                             # 12178241251
+
+
+def test_the_count_phrase_is_the_wedge_profiles_only():
+    pkt = {"message": "Title: WENGH Golf Wedge Set 52°/56°/60°", "title": "WENGH Golf Wedge Set 52°/56°/60°",
+           "origin": None}
+    answer = {"intro": "WENGH Golf Wedge Set 52°/56°/60° is a set of 3 right-handed wedges.",
+              "included": ["Wedges: 52°, 56°, 60°"], "highlights": []}
+    done = D.settle(answer, D.PROFILES["wedge_set"], pkt)                                         # 13566627679
+    assert done["status"] == "ok" and done["fields"]["intro"] == answer["intro"]
+    done = D.settle(answer, GOLF, pkt)
+    assert done["status"] == "fallback" and "numbers not in the source: 3" in done["dropped"][0]["why"]
+
+
+def test_a_company_or_a_number_sign_does_not_end_a_sentence():
+    """C65: "Detroit Golf Co. Premium ..." was cut after "Co." (13370268119), "No. 1112" after "No." (12748958768)."""
+    split = [s for s in D._SENTENCE_RE.split("Detroit Golf Co. Premium Forged Wedge Set is a set of 3 wedges. "
+                                             "Geotech No. 1112 is a set. Kirkland Ltd. Wedges. 2 wedges in all.") if s]
+    assert split == ["Detroit Golf Co. Premium Forged Wedge Set is a set of 3 wedges.", "Geotech No. 1112 is a set.",
+                     "Kirkland Ltd. Wedges.", "2 wedges in all."]
+
+
 def test_the_stage_asks_at_its_own_effort_with_thinking_on():
     chain = D.build_chain({translate.ANTHROPIC_KEY: "k", translate.OPENAI_KEY: "o"}, {})
     assert [(m.name, m.effort) for m in chain.models] == [(translate.MODEL, "high"), (translate.OPENAI_MODEL, "high")]

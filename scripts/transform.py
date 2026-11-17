@@ -37,6 +37,7 @@ naver-harvester published, and its 60 published products):
     title, the origin's importer, the images' text, or 노브랜드; brand_fallback.py),
     option_name_placeholder (선택 / 선택2 / 옵션: named from the values in translation),
     paid_addons_left_out, paid_variants_left_out, title_names_one_variant, purchase_agency, price_name_mismatch,
+    title_word_unproven (a seller's word on every title its page never backs: 단조 of 102454334; spec_variants),
     axes_repeated / slot_rows_merged (rows left out: an echoed axis, a picker's repeats and orders; 2026-11-17),
     hand_from_description (Amazon's "Hand Orientation: Left": spec row 사용방향 왼손용),
     photos_incomplete, reviews_none_chosen, reviews_cleaned (review_clean.py: kept, by grade, trimmed), measures_from_images / description_images_missing / _stale / _failed / _partial (the category's
@@ -63,7 +64,7 @@ from description_measures import composition_count, container_in, container_list
 from naver_variants import choose_variants
 from package_measures import current_defaults, load_table, on_scale
 from spec_variants import (check_specs, hide_title_model_rows, title_cut, title_lofts_not_sold, title_one_variant,
-                           title_variant_tail)
+                           title_variant_tail, title_word_unproven)
 from review_clean import clean_reviews
 from shop_types import (CollectedLine, PreparedAddon, PreparedImage, PreparedPersonalization, PreparedProduct,
                         PreparedRating, PreparedSource, PreparedVariant)
@@ -1368,6 +1369,11 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
     agency = json.dumps([specs.get("specs"), details.get("notice"), delivery.get("policy_text")], ensure_ascii=False)
     if _AGENCY_WORD_RE.search(agency):              # bought abroad for the buyer: returns / customs differ
         notes.append({"code": "purchase_agency", "detail": "구매대행 in the specs / notice / delivery policy"})
+    unproven = title_word_unproven(details["name"], key.split(":")[2], [
+        cleaned["text"] or "", "\n".join(r.get("value") or "" for r in specs.get("specs") or []),
+        "\n".join(r for rows in image_rows(images_text if current(images_text, line) else None) for r in rows)])
+    if unproven:                                    # a seller's 단조 on every title, its page silent (C67, 2026-11-17)
+        notes.append({"code": "title_word_unproven", "detail": ", ".join(unproven)})
     if cat.wedge_sets:                              # the title vs the lofts sold (C46), Naver's cut (C48); 2026-11-17
         not_sold = title_lofts_not_sold(details["name"], ov["variants"], ov["facts"])
         if not_sold:

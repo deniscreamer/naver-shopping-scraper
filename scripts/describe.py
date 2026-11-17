@@ -76,7 +76,8 @@ PROFILES: dict[str, dict[str, Any]] = {
     "iron_set": {"categories": ("50002670",),             # women's iron sets (2026-11-14)
                  "lists": (("included", "What's included", 6), ("highlights", "Highlights", 4))},
     "wedge_set": {"categories": ("50002783",),            # wedge sets (2026-11-15)
-                  "lists": (("included", "What's included", 6), ("highlights", "Highlights", 4))},
+                  "lists": (("included", "What's included", 6), ("highlights", "Highlights", 4)),
+                  "set_count": True},                    # "a set of 3 wedges" from the title's lofts (C65)
     "default": {"categories": (), "lists": (("highlights", "Highlights", 4),)},
 }
 
@@ -330,7 +331,29 @@ _NAMED_RE = {c: re.compile(rf"\b(?:{re.escape(c)}|{_ADJECTIVES.get(c, c)})\b(?![
 _NUMBER_RE = re.compile(r"\d+(?:\.\d+)?")
 _RANGE_RE = re.compile(r"(?<![\d.])#?(\d{1,2})\s*[-~–]\s*#?(\d{1,2})(?![\d.])")
 _YEAR2_RE = re.compile(r"(?<!\d)(\d{2})\s*년")                         # 23년 -> 2023 is the same year
-_SENTENCE_RE = re.compile(r"(?<=[.!?])\s+(?=[A-Z0-9\"“'])")
+# a sentence ends at . ! ? before a capital, a quote or a digit; not after "Co." / "Inc." / "Ltd." / "Jr." (Detroit
+# Golf Co. was cut off its own sentence, 13370268119) nor between "No." and its number ("No. 1112", 12748958768):
+# 2026-11-17, the wedge-set review C65
+_SENTENCE_RE = re.compile(r"(?<!\bCo\.)(?<!\bInc\.)(?<!\bLtd\.)(?<!\bJr\.)(?<=[.!?])\s+"
+                          r"(?=[A-Z\"“']|(?<!\bNo\.\s)\d)")
+# The count of a wedge set the title or a fixed fact names: its distinct lofts (52° 56° 60°) or wedge names (AW SW).
+# 2026-11-17, the wedge-set review C65: "a set of 3 wedges" for a title of 52°/56°/60° was cut as "numbers not in the
+# source: 3" (about 25 wedge sets). The count passes only inside a count phrase ("set of 3", "3-piece", "3 wedges");
+# it is never one of the allowed numbers: that let "steps of 2 to 3 cm" through (11228451487)
+_LOFT_RE = re.compile(r"(?<![\d.])(4[4-9]|5\d|6[0-4])(?:\s*(?:°|도|deg))?(?![\d.])")
+# A wedge loft above 64 named in a title (69 Golf 54/60/69, Yamato 52/56/60/72, Alvo 52/56/60/70: 15 of the 906
+# wedge-set packets, 2026-11-17): _LOFT_RE does not count it, so a title naming one gives no count (C65).
+_HIGH_LOFT_RE = re.compile(r"(?<![\d.])(?:6[5-9]|7[0-4])\s*(?:°|도|deg)")
+_WEDGE_NAME_RE = re.compile(r"\b(PW|AW|GW|SW|LW|UW)\b")
+# A title that offers a set or a single club names the picker's menu of lofts, not the set: "세트 또는 개별
+# 50/52/54/56/58/60" is sold as 3 wedges (13488668518 "Fixed: Size: 50 54 58 Degree Set", 13016433540 "52/56/60
+# Degree-3PCS"), and counting the menu let "a set of 6 wedges" through on about 55 listings. 2026-11-17, the review
+# of C65: a Fixed line's lofts are the count; else a menu word, a loft range ("50-70도", not "52-56-60도") or 5 and
+# more lofts in the titles give no count
+_MENU_RE = re.compile(r"\b(?:set|single|individual)\s+or\b|\bor\s+(?:set|single|individual)\b"
+                      r"|\d\s*°?\s+or\s+\d|개별|개인|싱글\s*(?:또는|및)|(?:또는|및)\s*싱글", re.I)   # not 싱글랭스 (single length)
+_LOFT_CHAIN_RE = re.compile(r"(?<![\d.])(?:4[4-9]|[56]\d|70)(?:\s*(?:°|도))?(?:\s*[-~–]\s*(?:4[4-9]|[56]\d|70)(?![\d.])"
+                            r"(?:\s*(?:°|도))?)+")
 _SPACES_RE = re.compile(r"\s+")
 
 
@@ -348,13 +371,42 @@ def allowed_numbers(message: str) -> set[str]:
     return out | {f"20{yy}" for yy in _YEAR2_RE.findall(message)}
 
 
+def set_counts(message: str) -> set[str]:
+    """The piece count of a wedge set its title / fixed facts name, kept when 2 to 6 (C65): the distinct lofts of the
+    Fixed lines when 2 or more ("50 54 58 Degree Set" under a menu title is 3, 13488668518); else none when a title
+    offers a set or a single club or a loft range, names 5 lofts or more (a picker's menu, not the set) or a loft
+    above 64 (69°, 72°: not counted, so the count would be low); else the distinct lofts of the title and the Fixed
+    lines when 2 or more, else of the wedge names. The lofts win when both
+    are written: "52°/56°/60° GW SW" is 3, not 2 (13312222110); one loft is no count ("MI45 … AW SW" is 2,
+    12748958116). 2026-11-17."""
+    lines = [x for x in message.split("\n") if x.startswith(("Title:", "Fixed:"))]
+    fixed = {m for x in lines if x.startswith("Fixed:") for m in _LOFT_RE.findall(x)}
+    if len(fixed) >= 2:
+        return {str(len(fixed))} if len(fixed) <= 6 else set()
+    titles = [x for x in message.split("\n") if x.startswith(("Title:", "Title in Korean:"))]
+    ranges = [m.group(0) for x in titles for m in _LOFT_CHAIN_RE.finditer(x)]
+    if any(_MENU_RE.search(x) or _HIGH_LOFT_RE.search(x) for x in titles) \
+            or any(len(re.split(r"[-~–]", r)) == 2 for r in ranges) \
+            or len({m for x in titles for m in _LOFT_RE.findall(x)}) >= 5:
+        return set()
+    lofts = {m for x in lines for m in _LOFT_RE.findall(x)}
+    names = {m for x in lines for m in _WEDGE_NAME_RE.findall(x)}
+    n = len(lofts) if len(lofts) >= 2 else len(names)
+    return {str(n)} if 2 <= n <= 6 else set()
+
+
+def _count_phrase(n: str) -> re.Pattern[str]:
+    return re.compile(rf"\b(?:set|pack) of {n}\b|\b{n}[- ](?:piece|wedges?|clubs?|lofts?)\b")
+
+
 def _given(number: str, numbers: set[str]) -> bool:
     """The number is one the model was given, or the end of a run OCR glued together ("#418°" is #4, 18°)."""
     return number in numbers or (len(number) >= 2 and any(n.endswith(number) for n in numbers if "." not in n))
 
 
-def problems(text: str, numbers: set[str], country: str | None) -> list[str]:
-    """Why this sentence or list item cannot be shown ([]: it can)."""
+def problems(text: str, numbers: set[str], country: str | None, counts: set[str] | None = None) -> list[str]:
+    """Why this sentence or list item cannot be shown ([]: it can). `counts` (set_counts): a set's piece count,
+    given only inside a count phrase."""
     out = []
     if HANGUL_RE.search(text) or _CJK_RE.search(text):
         out.append("not English")
@@ -365,7 +417,10 @@ def problems(text: str, numbers: set[str], country: str | None) -> list[str]:
     meta = _META_RE.search(text)
     if meta:
         out.append(f"about the listing: {meta.group(0)}")
-    strange = sorted({n for n in _NUMBER_RE.findall(text) if not _given(_norm(n), numbers)})
+    counted = text
+    for n in counts or ():
+        counted = _count_phrase(n).sub(" ", counted)
+    strange = sorted({n for n in _NUMBER_RE.findall(counted) if not _given(_norm(n), numbers)})
     if strange:
         out.append("numbers not in the source: " + ", ".join(strange))
     for m in _MADE_RE.finditer(text):
@@ -386,10 +441,11 @@ def settle(answer: Any, profile: dict[str, Any], pkt: dict[str, Any]) -> dict[st
     status: ok (as answered) | trimmed (something cut) | fallback (the intro is the title)."""
     answer = answer if isinstance(answer, dict) else {}
     numbers, country = allowed_numbers(pkt["message"]), pkt["origin"]
+    counts = set_counts(pkt["message"]) if profile.get("set_count") else set()
     dropped: list[dict[str, Any]] = []
 
     def bad(where: str, text: str) -> bool:
-        why = problems(text, numbers, country) or (["too long"] if len(text) > (
+        why = problems(text, numbers, country, counts) or (["too long"] if len(text) > (
             INTRO_MAX if where == "intro" else ITEM_MAX) else [])
         if why:
             dropped.append({"where": where, "text": text[:200], "why": why})

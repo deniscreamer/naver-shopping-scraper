@@ -42,6 +42,7 @@ The decision per row (Shopify has no per-variant spec rows; the option values ar
     product["specs"], notes = checked["specs"], notes + checked["notes"]
 """
 import re
+from difflib import SequenceMatcher
 from itertools import product as cartesian
 from typing import Any, Callable
 
@@ -938,3 +939,42 @@ def title_cut(title: str) -> dict[str, Any] | None:
     if not frag and n > 2:
         return None
     return {"partial": frag, "lofts": n, "count": bool(_CUT_COUNT_RE.search(t))}
+
+
+# ---- a seller's word on every title that its page never backs (the wedge-set review C67, 2026-11-17) -----------
+# The purchase agency 102454334 (Amazon imports) writes 단조 / 포지드 (forged) into its Korean titles; the translation
+# writes "Forged". On 22 of its 49 titles with the word nothing outside the title (its typed text, its spec rows, its
+# images' text) says forged (13383523012, a junior club; 13385062112, a junior full set), while Lazrus (13389498451)
+# and the Yamato LH listing 13370261145 say "Forged" in their bullets (its copy 13386091656 says "Stainless Steel"
+# only). A prompt cannot help: the title's model sees the title only. A seller's habit, so the rule is this
+# seller's: other sellers' 단조 is left alone.
+TITLE_WORD_HABITS: dict[str, tuple[str, ...]] = {"102454334": ("단조", "포지드")}
+_FORGED_RE = re.compile(r"forg(?!iv)|단조|포지드|연철|mild steel|soft iron", re.I)
+
+
+def _alnum(text: str) -> str:
+    return re.sub(r"[^0-9a-z가-힣]", "", text.lower())
+
+
+def _ocr_copy(bare: str, head: str) -> bool:
+    """The line is the title's start as OCR read it, one syllable off: 13383752241's image row "마제크 우타 단조 웨지
+    골프용 마적골프 …" for the title's "… 마젝골프 …" (2026-11-17)."""
+    return SequenceMatcher(None, bare, head[:len(bare)], autojunk=False).ratio() >= 0.85
+
+
+def title_word_unproven(title: str, channel: str, texts: list[str]) -> list[str]:
+    """The words of TITLE_WORD_HABITS[channel] the title writes when no line of `texts` (the typed description, the
+    spec values, the images' rows) says forged; a line that copies the title (or its start, as OCR misread it) is
+    not a source. [] otherwise."""
+    words = [w for w in TITLE_WORD_HABITS.get(channel, ()) if w in (title or "")]
+    if not words:
+        return []
+    head = _alnum(title)
+    for text in texts:
+        for line in (text or "").split("\n"):
+            bare = _alnum(line)
+            if not bare or len(bare) >= 8 and (bare in head or head[:16] in bare or _ocr_copy(bare, head)):
+                continue
+            if _FORGED_RE.search(line):
+                return []
+    return words

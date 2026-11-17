@@ -287,6 +287,14 @@ published, SKUs and prices equal on 201 of 201 variants):
   last words and all the title's lofts, then a cut word or a lone letter / digit, or two lofts at most. Detail
   "'S' cut, 2 lofts written[; a count written]"; the translation drops the cut word and writes no count the title does
   not state. Measured: 34 products (26 in the store). The lofts the description or the images state are not used.
+- `title_word_unproven` (any category, a seller of `spec_variants.TITLE_WORD_HABITS`; 2026-11-17, C67): the agency
+  102454334 writes 단조 / 포지드 (forged) into its titles; the note names the word when no line outside the title says
+  forged (forg- but not forgiv-, 단조, 포지드, 연철, mild steel, soft iron) in the typed description, the spec values or
+  the images' rows of a current sidecar (a line copying the title is no source, nor one copying its start with an
+  OCR slip: similarity 0.85 or more). Detail "단조"; the translation leaves
+  the word out (the title's model sees the title only, a prompt cannot help). Measured on the shop: 22 products (6 in
+  the store), 20 of 50002783 and 2 of 50002787 (13383523012, 13385062112); 3 more titles of the seller with the
+  images' stamp "FORGED" (A11N SPORTS 13385305765, 13389329777; Lazrus 52 13385614482) keep the word.
 - A 모델명 row that is the title again, or 80% of it at least (letters and digits, any case: "[혼마골프] 3스타 부가티 …"
   with the row "3스타 부가티 …"), is not shown (`spec_variants.model_repeats_title`; a row bound with `for_ko` stays;
   2026-11-17, C71: 167 products, 135 in the store, the specs only; no new note). The row's specs_name_one_variant entry

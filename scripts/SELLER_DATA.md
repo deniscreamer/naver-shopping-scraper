@@ -178,8 +178,16 @@ Code: `transform.options_and_variants`.
   glued runs of nine and ten lofts ("48505254565860687072°", 13163033790; C24); the page's placeholder value
   appended ("… 오른손 옵션 1", 13566627679, 13566628089; C53); BombTech's value "Black" written 블랙 in the title (C47);
   agency titles listing the union of the sets sold ("50/52/54/56/58/60" for 50/54/58 and 52/56/60, Yamato, AM20XX,
-  XINGGM) or lofts no set has ("52 56 60 72도", C46); Mazek's agency titles cut by Naver at 50 characters inside the
+  XINGGM) or lofts no set has ("52 56 60 72도", C46); that menu is no piece count for the description, the Fixed
+  row's lofts are ("세트 또는 개별 50/52/54/56/58/60" with "Size: 50 54 58 Degree Set" is 3, 13488668518;
+  `describe.set_counts`, the review of C65); Mazek's agency titles cut by Naver at 50 characters inside the
   loft list ("… 56° 샌드 웨지S", 13370558777; C48); a 모델명 row that repeats the title (167 products, C71).
+  Agency 102454334 writes 단조 / 포지드 (forged) into its titles; on 22 of them nothing outside the title says forged
+  (a junior club 13383523012, a junior full set 13385062112, Majek 13383747280; Majek 13383752241, whose only other
+  단조 is the title copied into an image as "… 마적골프 …"; Yamato LH 13386091656, "Material : Stainless Steel"),
+  while Lazrus 13389498451 and the Yamato LH listing 13370261145 ("Each wedge is forged") say it in their bullets,
+  and A11N SPORTS / Lazrus 52 in the images' stamp "FORGED" (note title_word_unproven, `spec_variants.title_word_unproven`,
+  this seller only; C67).
 - Iron sets and full sets filed under wedges (2026-11-16, 50002783): "Regular+4-PW" (13370424163), "3456789피칭"
   (13383404156), "5 6 7 8 9 피윙" (13377696273), "아이언 세트 59 PW SW" (13601554331), "7피스 8피스" (13370491895),
   "12 Piece (Strata)" (13163090198); a title "웨지 ... 아이언 세트" by an agency that puts the category first (13382551761).

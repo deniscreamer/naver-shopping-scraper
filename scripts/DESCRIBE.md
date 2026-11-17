@@ -47,10 +47,21 @@ the answer needs the sources compared and the clubs added up ("Which model" belo
   sentence; "Japan-market model" is not an origin.
 - **The answer**: JSON fields, not HTML: `conflicts` (points the sources disagree on: asked first, kept out of the
   text, shown in the report), `intro`, and the lists of the product's profile.
-- **After** (`settle`): each intro sentence and each list item is checked alone: English only, no link, phone,
+- **After** (`settle`): each intro sentence and each list item is checked alone (a sentence does not end after
+  "Co." / "Inc." / "Ltd." / "Jr." nor between "No." and its number: "Detroit Golf Co. Premium …", 2026-11-17 C65): English only, no link, phone,
   price or markup, no shop talk (warranty, shipping, gifts, reviews, authenticity, parallel import), no talk about
   the listing ("per the specifications", "depending on the option", a seller's disclaimer "specs may differ"), every number is one the model was given or a club inside
-  a range it was given (a tripwire, not a proof: a wrong number that stands elsewhere in the packet passes), no country but the decided
+  a range it was given (a tripwire, not a proof: a wrong number that stands elsewhere in the packet passes); in
+  `wedge_set` (2026-11-17, C65) also the set's count, but only inside a count phrase ("set of 3", "3-piece",
+  "3 wedges"): "a set of 3 wedges" was cut on about 25 wedge sets; a count added to the given numbers let a made-up
+  "steps of 2 to 3 cm" through (11228451487). The count (`set_counts`, 2 to 6, never the buyer's picks): the
+  distinct lofts (44-64) of the fixed facts when two or more ("Fixed: Size: 50 54 58 Degree Set" is 3); else none
+  when a title offers a set or a single club ("Set or Single", 세트 또는 개별 / 개인, 싱글 또는), a loft range
+  ("50-70도", not the list "52-56-60도") or names 5 lofts or more: that is the picker's menu, not the set (it let
+  "a set of 6 wedges" through on 13488668518 and 13016433540; a wrong count of 4 to 6 on 29 of the shop's 906
+  wedge-set packets), or a title names a loft above 64 ("69°", "72도": not counted, so the count came out low on 15
+  packets, "set of 2" for 69 Golf 54°/60°/69°); else the distinct lofts of the title and the fixed facts when two or more ("52°/56°/60° GW SW"
+  is 3, 13312222110), else the wedge names (PW AW GW SW LW UW). No country but the decided
   one. A failing highlight or intro sentence is dropped; a failing item of another list drops that list (half a
   list of the box's contents misleads; so does a clean list over its cap of 12). No intro left: the title as one
   sentence (`fallback`). Caps: intro 400 characters, an item 220, the whole text 1 500. The HTML is built by the script (`p`, `h3`, `ul`, `li`, text

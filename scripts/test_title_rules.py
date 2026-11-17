@@ -264,6 +264,54 @@ def test_the_wedge_notes_reach_the_model(tmp_path):
     assert T._checked_source({"kind": "title", "source": "웨지 S 세트 52 S", "cut": "S"}).split() == ["웨지", "S", "세트", "52"]
 
 
+def test_a_sellers_forged_on_every_title_with_a_silent_page():
+    """C67 (2026-11-17): the agency 102454334 writes 단조 into its titles; with nothing outside the title saying
+    forged, the word is the seller's habit. A line copying the title is no source; other sellers are left alone."""
+    from spec_variants import title_word_unproven
+    junior = "올리마르 우타 웨지 단조 골프채 ATS 주니어 보이즈 블루라임 시리즈 개별 골프클럽 5세 Right Hand"   # 13383523012
+    typed = "올리마르 우타 웨지 단조 골프채 ATS 주니어 보이즈 블루라임 시리즈 개별 골프클럽 5세\n- Ages 5 and up"
+    assert title_word_unproven(junior, "102454334", [typed, "Alloy Steel\nGraphite", ""]) == ["단조"]
+    lazrus = "LAZRUS GOLF 라즈루스 프리미엄 단조 골프 웨지 남성용 세트 - 5256 60도 Silver Right Handed"  # 13389498451
+    bullets = ("LAZRUS GOLF 라즈루스 프리미엄 단조 골프 웨지 남성용 세트 - 5256 60도\n"
+               "- ENHANCED SPIN AND CONTROL: The micro milled face of Lazarus Premium Quality Forged Golf Wedge Set")
+    assert title_word_unproven(lazrus, "102454334", [bullets]) == []
+    assert title_word_unproven(junior, "102454334", ["", "", "B620 CS FORGED"]) == []     # the images' text
+    assert title_word_unproven(junior, "102454334", ["", "연철 단조 헤드", ""]) == []       # a spec value
+    assert title_word_unproven("야마토 포지드 웨지 세트 52 56 60", "102454334", []) == ["포지드"]
+    assert title_word_unproven(junior, "1100167681", []) == []                         # another seller's 단조
+    assert title_word_unproven("마제크 웨지 세트 52 56", "102454334", []) == []
+    assert title_word_unproven(junior, "102454334", ["Forgiving sole for beginners"]) == ["단조"]   # not "forged"
+    majek = "마제크 우타 단조 웨지 골프용 마젝골프 시니어 남자 컴플리트 세트 52° 갭 웨지GW 5"            # 13383752241
+    ocr = "마제크 우타 단조 웨지 골프용 마적골프 시니어 남자 컴플리트 세\n트 52'캡웨지GW 5\nMore Forgiving"
+    assert title_word_unproven(majek, "102454334", ["", "", ocr]) == ["단조"]   # the title as OCR misread it
+    assert title_word_unproven(majek, "102454334", ["", "", "마제크 웨지 헤드는 연철 단조 공법으로 만든 제품"]) == []
+
+
+def test_the_unproven_word_reaches_the_model(tmp_path):
+    """C67: the note title_word_unproven becomes the title's context, joined to the other notes' context."""
+    import translation_dicts as D
+    path = os.path.join(os.path.dirname(__file__), "fixtures", "prepared", "13468791008.json")
+    with open(path, encoding="utf-8") as f:
+        prepared = json.load(f)
+    prepared["product"]["title_ko"] = title_ko = "마제크 단조 웨지 우타 골프채 골프 남자 컴플리트 세트 52° 갭 웨지GW 56° 샌드"
+    prepared["texts"] = [{**t, "ko": title_ko} if t["kind"] == "title" else t for t in prepared["texts"]]
+    prepared["notes"] = [n for n in prepared["notes"] if n["code"] not in ("title_names_one_variant", "title_lofts_not_sold")] + [
+        {"code": "title_cut", "detail": "'샌' cut, 2 lofts written"},
+        {"code": "title_word_unproven", "detail": "단조"}]
+    dicts = D.Dictionaries(str(tmp_path / "live"), str(tmp_path / "none"))
+    _, _, pending = T.plan(prepared, dicts, {}, TENANT)
+    title = next(i for i in pending if i["kind"] == "title")
+    assert "Naver cut this title" in title["context"]
+    assert "단조 (forged): the seller writes it on its titles" in title["context"]
+    assert title["drop"] == ["단조"]
+    ok, failed = T.verify([title], json.dumps({"items": [{"id": title["id"], "en":
+                                                          "Majek Men's Wedge Set, 52° Gap Wedge GW and 56° Sand"}]}))
+    assert ok and not failed
+    prepared["notes"] = [n for n in prepared["notes"] if n["code"] != "title_word_unproven"]
+    _, _, pending = T.plan(prepared, dicts, {}, TENANT)
+    assert "forged" not in next(i for i in pending if i["kind"] == "title")["context"]
+
+
 def test_every_shop_selling_a_category_with_title_rules_sells_it_as_sets_only():
     """TITLE_RULES["50002783"] drops "or single" because the shop keeps no one-club variant (sets_only); a shop that
     takes 50002783 without sets_only would sell the single its title no longer names (2026-11-16)."""

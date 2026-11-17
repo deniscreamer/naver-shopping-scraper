@@ -321,6 +321,9 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
                            if isinstance(n, dict) and n.get("code") == "title_lofts_not_sold" and n.get("detail")), None)
     cut = next((str(n["detail"]).split(" cut,")[0] for n in prepared.get("notes") or []
                 if isinstance(n, dict) and n.get("code") == "title_cut" and n.get("detail")), None)
+    unproven = [w.strip() for n in prepared.get("notes") or []
+                if isinstance(n, dict) and n.get("code") == "title_word_unproven" and n.get("detail")
+                for w in str(n["detail"]).split(", ") if w.strip()]
     options = product.get("options") or []
     option_of = {v: o["name_ko"] for o in options for v in o["values_ko"]}
     values_of = {o["name_ko"]: o["values_ko"] for o in options}
@@ -376,6 +379,14 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
                 if cut != "''":
                     item["cut"] = sanitize("title", cut.strip("'"), tenant, category)
             item["context"] = "; ".join(said)
+        if kind == "title" and unproven:
+            # the transform's note title_word_unproven (C67, 2026-11-17): 단조 the seller writes on every title, its
+            # page never saying the club is forged; the model sees the title only, so the note tells it
+            said = [item["context"]] if item.get("context") else []
+            said.append(" / ".join(unproven) + " (forged): the seller writes it on its titles and nothing on "
+                        "this product's page says forged: leave it out of the title")
+            item["context"] = "; ".join(said)
+            item["drop"] = (item.get("drop") or []) + [sanitize("title", w, tenant, category) for w in unproven]
         if kind == "option_name" and ko in placeholders:
             item["context"] = "values: " + " | ".join(values_of.get(ko, [])[:12])
             item["placeholder"] = True           # named from its values: its own digits (선택2) need not survive

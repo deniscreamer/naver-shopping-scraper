@@ -156,7 +156,9 @@ drop them; their numbers and codes need not survive, matched spacing aside, "13 
 wedge sets, 2026-11-17: `title_lofts_not_sold` (C46: the title's lofts that are not one set sold, with the sets sold:
 write only a set sold; those lofts need not survive the number check, or the corrected title would be refused) and
 `title_cut` (C48: Naver cut the title at 50 characters; its loft list may be incomplete, no piece count it does not
-state; the cut word at its very end, "S" / "샌", is left out and is not checked, only at the end).
+state; the cut word at its very end, "S" / "샌", is left out and is not checked, only at the end);
+`title_word_unproven` (C67, 2026-11-17, any category: 단조 the agency 102454334 writes on its titles, its page never
+saying forged: leave it out; a title already translated keeps its "Forged" until it is asked again).
 
 **The system prompt is assembled** (`system_prompt`):
 - the translator's role and rules (`prompts/translate_system.md`);

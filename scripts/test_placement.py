@@ -45,6 +45,8 @@ EXPECTED = {
     "12742411646": ("wedge-sets",), "13754846756": ("wedge-sets",), "11585678496": ("wedge-sets",),
     "12872703429": ("wedge-sets",), "13017295953": ("wedge-sets",), "12482367407": ("wedge-sets",),
     "13370297764": ("wedge-sets",), "13377524996": ("wedge-sets",), "13422541936": ("wedge-sets",),
+    # (2026-11-17, C67: an agency's 단조 on the title, its page silent: note title_word_unproven)
+    "13383747280": ("wedge-sets",),
 }
 SPLIT = {"13369469193": ("unisex", {M: 3, W: 3}),        # 성별 남녀공용: each section every variant
          "7583123963": ("mixed", {M: 6, W: 3}),          # variants of both genders: each section its own
