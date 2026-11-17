@@ -28,7 +28,7 @@ naver-harvester published, and its 60 published products):
   * text fields (a name on a tag) -> personalization; add-ons on sale and in stock: free ones, paid ones too
     with the category's paid_addons (price in KRW and USD); a (필수) group is required.
   * held (not published, kept with codes): collect_incomplete, price_unknown, no_variants,
-    options_unaligned, axes_over_3, specs_folded, no_images, images_over_50, single_only, not_wedge_set;
+    options_unaligned, axes_over_3, specs_folded, no_images, images_over_50, single_only, not_wedge_set, heads_only;
     run_transform adds agency_no_brand (all of them: scripts/TRANSFORM.md "Held codes"). More combinations than the shop's
     cap: the first ones are offered, every option value kept (note variants_capped).
   * notes (never block): shipping_paid, overseas_shipping (a shop with the price rule puts a PAID / UNIT_QUANTITY_PAID
@@ -37,6 +37,8 @@ naver-harvester published, and its 60 published products):
     title, the origin's importer, the images' text, or 노브랜드; brand_fallback.py),
     option_name_placeholder (선택 / 선택2 / 옵션: named from the values in translation),
     paid_addons_left_out, paid_variants_left_out, title_names_one_variant, purchase_agency, price_name_mismatch,
+    axes_repeated / slot_rows_merged (rows left out: an echoed axis, a picker's repeats and orders; 2026-11-17),
+    hand_from_description (Amazon's "Hand Orientation: Left": spec row 사용방향 왼손용),
     photos_incomplete, reviews_none_chosen, reviews_cleaned (review_clean.py: kept, by grade, trimmed), measures_from_images / description_images_missing / _stale / _failed / _partial (the category's
     description_images switch: the package fields the description states or its parts compose, in place of the
     category default; description_measures.py).
@@ -55,7 +57,7 @@ from typing import Any, Mapping, TypedDict
 
 import attributes
 import brand_fallback
-from description_clean import body_notes, clean, clean_images, decode_line
+from description_clean import body_notes, clean, clean_images, decode_line, picked_switches
 from description_images import current, image_rows
 from description_measures import composition_count, container_in, container_listed, package_for, profile_for, read_rows
 from naver_variants import choose_variants
@@ -108,8 +110,12 @@ _CHOOSE_TAG_RE = re.compile(r"^\s*[\[(]\s*(?:선택|필수|옵션)\s*[\])]\s*")
 _COUNT_ROW_RE = re.compile(r"^\s*(\d{1,2})\s*개")                    # 총클럽개수 "3개"
 _POINTS_RE = re.compile(r"포인트|적립|쿠폰|할인|페이|마일리지|캐시")     # a promotion, not a thing in the box
 _AREA_WORD_RE = re.compile(r"제주|도서|산간|지역|섬")
-# a club count in the title / 모델명: "[3PCS]", "(3종)", "하프세트(5P)", "12pc"; not the "1pcs" of "10+1pcs"
-_PIECES_RE = re.compile(r"(?<![\d.+])(\d{1,2})\s*(?:PCS|Pcs|pcs|PC|pc|피스|종|P)(?![A-Za-z0-9])")
+# a club count in the title / 모델명: "[3PCS]", "(3종)", "하프세트(5P)", "12pc"; not the "1pcs" of "10+1pcs". A bare "P"
+# glued to a model word is no count (2026-11-17, the wedge-set review C37: Yamato "D3P", Maruman "NX-1 P/A", the
+# agency marker "db4P", "#8P", "J1P-S00"): a bare P after a Latin letter, "#" or "-" is not read ("NX-1 P/A"
+# by its "-"); the other units are as before ("Degree-3PCS", "[11PCS/클럽만]", "[3P/클럽만]" stay counts)
+_PIECES_RE = re.compile(r"(?<![\d.+])(?!(?<=[A-Za-z#\-])\d{1,2}\s*P(?![A-Za-z0-9]))"
+                        r"(\d{1,2})\s*(?:PCS|Pcs|pcs|PC|pc|피스|종|P)(?![A-Za-z0-9])")
 _HALF_SET_RE = re.compile(r"하프\s*세트")
 # 2026-11-11 (300 sets): a club count in an option value ("4개 스틸 건백", "12개세트 카본 R", "10클럽", "12+볼백"), a
 # typed numbered composition ("1> 드라이버"), set words that keep a listing a set, a women's set (its driver row)
@@ -284,6 +290,161 @@ def _capped(rows: list[dict[str, Any]], axes: list[int], cap: int) -> list[dict[
     return [rows[i] for i in sorted(picked)]
 
 
+# a one-value colour axis whose value is a set, not a colour ("Color: Wedge Set", "색상: 52/56/60도 세트", "컬러: 3종세트";
+# 2026-11-17, the wedge-set review C51: 27 products of the shop): the fact stays, its label goes (as a placeholder
+# name's). Not where a colour is written ("Orange/ 52 56 60 Degree S", "로열 블루 ... 8피스 세트", "54 58 Degree Tarnish")
+_SET_FACT_RE = re.compile(r"(?i)세트|셋트|(?<![a-z])set(?![a-z])|(?<![0-9])\d{1,2}\s*(?:종|pcs?|pc|개|피스)(?![a-z])|"
+                          r"(?<![0-9])(?:4[4-9]|5[0-9]|6[0-9]|7[0-2])\s*(?:°|도|degrees?)(?![a-z])")
+_FACT_COLOUR_RE = re.compile(_COLOUR_WORD_RE.pattern + r"|orange|bronze|tarnish|chrome|rainbow|turquoise|purple|yellow|"
+                             r"피치|크롬", re.I)
+
+
+def _fact_label(label: str, value: str) -> str:
+    """A one-value axis's label as a fact shows it: none for a placeholder name (선택, 옵션) or a colour name over a set
+    (_SET_FACT_RE)."""
+    if _PLACEHOLDER_NAME_RE.match(label) or _COLOUR_AXIS_RE.match(label) and _SET_FACT_RE.search(value) \
+            and not _FACT_COLOUR_RE.search(value):
+        return ""
+    return label
+
+
+# Amazon's two axes that say one thing twice (2026-11-17, the wedge-set review C56: Yamato 13754846756, Size "52 56
+# Degree" x Style Name "Black 52 56 Degree": 266 rows, every pair of the two axes, 14 of them the same set; capped to
+# 100 with 3 buyable): the second axis is the first with a leading word (a colour), "Set" aside. Only the rows where the
+# two agree are kept (note axes_repeated); on the shop's 3,243 listings no other one changes.
+_LEAD_WORD_RE = re.compile(r"^([^\d\s]+)\s+(.*\d.*)$")
+_SET_TAIL_RE = re.compile(r"\s*(?:set|세트)$")
+
+
+def _echo_axes(rows: list[dict[str, Any]], n: int) -> tuple[int, int] | None:
+    """(a, b): axis b's values are axis a's with a leading word, both with two values or more; None else."""
+    norm = [[re.sub(r"\s+", " ", (v or "").strip()).lower() for v in r["options"]] for r in rows]
+    for a in range(n):
+        for b in range(n):
+            if a == b:
+                continue
+            first, second = {x[a] for x in norm}, {x[b] for x in norm}
+            if len(first) < 2 or len(second) < 2:
+                continue
+            stems = {_SET_TAIL_RE.sub("", x) for x in first}
+            if all(_echo_stem(x) in stems for x in second):
+                return a, b
+    return None
+
+
+def _echo_stem(value: str) -> str | None:
+    """"black 52 56 degree set" -> "52 56 degree" (lower-cased, spaces single): the value without its leading word
+    and its "set"; None without a leading word."""
+    m = _LEAD_WORD_RE.match(value)
+    return _SET_TAIL_RE.sub("", m.group(2)) if m else None
+
+
+def _echoes_agree(r: dict[str, Any], a: int, b: int) -> bool:
+    stem = _echo_stem(re.sub(r"\s+", " ", (r["options"][b] or "").strip()).lower())
+    first = re.sub(r"\s+", " ", (r["options"][a] or "").strip()).lower()
+    return stem is not None and stem == _SET_TAIL_RE.sub("", first)
+
+
+# Option values Naver cut at 25 characters (2026-11-17, the wedge-set review C52: Amazon imports "1 52 56 60 Degree Set
+# Tar", "Black Titanium Layer-50/5", "CADET LENGTH (MINUS 1 INC"): the description's option list ("옵션 이미지" ...
+# "상세 이미지", "Color : 1 52 56 60 Degree Set Tarnish") has the whole value. A value of exactly 25 characters is made
+# whole where exactly one entry is longer and starts with it, and the rest of that entry holds no other value of the
+# row. 48 values of 16 listings (13 wedge sets, 3 junior sets): 13391329066 is left with its singles held, 13377524996
+# sells its two sets again. A shorter prefix is never read (the rejected "3 characters" form). The SKU keeps the raw
+# tuple.
+NAVER_VALUE_CUT = 25
+_OPTION_LIST_SPLIT_RE = re.compile(r"\s+\|\s+|\s+/\s+|\n")
+_OPTION_ENTRY_RE = re.compile(r"^\s*([A-Za-z][A-Za-z ]{1,20}?)\s*:\s*(.+?)\s*$")
+
+
+def _option_list(line: dict[str, Any]) -> list[str]:
+    """The entries of the description's option list (Amazon imports), or []."""
+    text = ((line.get("details") or {}).get("description") or {}).get("text") or ""
+    i = text.find("옵션 이미지")
+    if i < 0:
+        return []
+    block = text[i + len("옵션 이미지"):]
+    j = block.find("상세 이미지")
+    block = block[:j] if j >= 0 else block
+    out = []
+    for part in _OPTION_LIST_SPLIT_RE.split(block):
+        m = _OPTION_ENTRY_RE.match(part)
+        entry = (m.group(2) if m else part).strip()
+        if entry:
+            out.append(entry)
+    return out
+
+
+def _uncut(rows: list[dict[str, Any]], entries: list[str]) -> list[dict[str, Any]]:
+    """The rows with each value Naver cut at 25 characters made whole from the description's option list (the raw
+    tuple kept as `raw_options` for the SKU)."""
+    if not entries:
+        return rows
+
+    def whole(v: str, row: list[str]) -> str:
+        if len(v) != NAVER_VALUE_CUT or v in entries:
+            return v
+        cut = _tidy(v)
+        found = {e for e in entries if _tidy(e).startswith(cut) and len(_tidy(e)) > len(cut)}
+        if len(found) != 1:
+            return v
+        new = found.pop()
+        rest = _tidy(new)[len(cut):]
+        return v if any(o != v and _tidy(o) and _tidy(o) in rest for o in row) else new
+    out = []
+    for r in rows:
+        new = [whole(v, r["options"]) for v in r["options"]]
+        out.append({**r, "options": new, "raw_options": r["options"]} if new != r["options"] else r)
+    return out
+
+
+# Amazon's index in front of every value of an axis ("1 52 56 60 Degree Set Tarnish", "2 56 60 Degree Tarnish", "15
+# Black Titanium Layer-50/56 Degrees"; the wedge-set review C52, 2026-11-17): shown without it in a wedge-sets category,
+# once the cut values are whole, when every value of the axis has one and they stay different. Not a count or a club
+# ("3 Wedges", "3 PCS", "2 Set", "7 Iron", "3 Wood"). The SKU keeps the raw tuple.
+_AMAZON_INDEX_RE = re.compile(r"(?i)^(?:[1-9]|[12]\d) (?=(?:4[4-9]|[56]\d|7[0-2])(?!\d)|\[|(?!(?:pcs?|pieces?|sets?|wedges?|"
+                              r"clubs?|packs?|pk|ea|degrees?|deg|inch|in|years?|ages?|irons?|woods?|hybrids?|utility|"
+                              r"drivers?|putters?)(?![a-z]))[a-z])")
+
+
+def _unindexed(values: list[str]) -> list[str] | None:
+    if len(values) < 2 or not all(_AMAZON_INDEX_RE.match(v) for v in values):
+        return None
+    out = [_AMAZON_INDEX_RE.sub("", v, count=1).strip() for v in values]
+    return out if all(out) and len(set(out)) == len(out) else None
+
+
+# Club slots of a picker (2026-11-17, the wedge-set review C01; the owner's value, decisions.md: "56+56" is not sold):
+# TaylorMade MG5 pickers ("옵션 1/2/3", "SB웨지1/2/3", "웨지 로프트 바운스 선택-1/-2/-3") are Naver's every product
+# of the slots, a loft on two slots included ("56+56", "48도+48도+48도") and every order of one set. In 15 rows sold
+# (stock below the template's) no repeat and two orders of one set ("48/56/52" and "48/52/56" of 12742411646): a row
+# with a value repeated on two slots is no set, an order of a set already offered is that set. Only axes named alike
+# but for a number (two slots or more; a shaft axis beside them stays: "샤프트(오늘출발)") and only a wedge-sets
+# category: "axes that share lofts" would take full sets of 50002788 apart. 13 MG5 listings: 343 -> 35 rows, 216 ->
+# 20, 84 -> 42 (98 raw rows), 49 -> 21, 36 -> 15. The merged slots are left out of the title / row word match
+# (title_names_one_variant, specs_name_one_variant): a slot lacking a loft after the merge names no one variant.
+def _slot_rows(names: list[str], keep: list[int],
+               rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], int, int, list[int]]:
+    """(the rows without a repeated value on the slots and with one row per set, repeats, reorderings, the slots)."""
+    groups: dict[str, list[int]] = {}
+    for i in keep:
+        groups.setdefault(re.sub(r"[\d\s\-_/.#]+$", "", re.sub(r"\d+", "#", names[i])).strip(), []).append(i)
+    slots = next((g for g in groups.values() if len(g) > 1), None)
+    if not slots:
+        return rows, 0, 0, []
+    others = [i for i in keep if i not in slots]
+    sets: dict[tuple[Any, ...], list[dict[str, Any]]] = {}
+    repeats = 0
+    for r in rows:
+        ids = [_tidy(r["options"][i]) for i in slots]
+        if len(set(ids)) < len(ids):
+            repeats += 1
+            continue
+        sets.setdefault((tuple(sorted(ids)), tuple(_tidy(r["options"][i]) for i in others)), []).append(r)
+    out = [next((r for r in same if r.get("is_available") is not False), same[0]) for same in sets.values()]
+    return out, repeats, len(rows) - repeats - len(out), slots
+
+
 def simple_choices(specs: dict[str, Any]) -> tuple[list[dict[str, str]], list[str]]:
     """SIMPLE option groups (a choice that is not a variant): one value -> a fact like a one-value axis
     ("선택: 드라이버+우드+하이브리드/SR", the set's only option, 9168175809, 2026-11-07); several -> their names, for a
@@ -295,8 +456,7 @@ def simple_choices(specs: dict[str, Any]) -> tuple[list[dict[str, str]], list[st
     for name, values in groups.items():
         values = [v for v in dict.fromkeys(values) if v]
         if len(values) == 1:
-            label = _axis_name(name)
-            facts.append({"label_ko": "" if _PLACEHOLDER_NAME_RE.match(label) else label, "value_ko": values[0]})
+            facts.append({"label_ko": _fact_label(_axis_name(name), values[0]), "value_ko": values[0]})
         elif values:
             left.append(name)
     return facts, left
@@ -641,6 +801,13 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
     # 배송메세지기입 on a TaylorMade set); a product of only such rows keeps them (nothing else to sell)
     real = [r for r in rows if not any(_DELIVERY_NOTE_RE.search(v) or _contact_only(v) for v in r["options"])]
     rows = real or rows
+    rows = _uncut(rows, _option_list(line))        # values Naver cut at 25 characters, whole again (C52)
+    repeated = None
+    if rows and all(len(r["options"]) == len(names) for r in rows) and (echo := _echo_axes(rows, len(names))):
+        agreeing = [r for r in rows if _echoes_agree(r, *echo)]
+        if agreeing and len(agreeing) < len(rows):  # two axes saying one thing: the rows where they agree (C56)
+            repeated = f"{_tidy(names[echo[1]])} repeats {_tidy(names[echo[0]])}: {len(rows)} -> {len(agreeing)} rows"
+            rows = agreeing
     # an iron set or a full set filed under wedge sets (2026-11-16, the overnight wedge scroll), read on every row;
     # held after single_only, which stays the code of a listing of single wedges (12911658622 "아이언세트", by loft)
     why = not_wedge_set(re.sub(r"\s+", " ", line["details"].get("name") or ""), [r["options"] for r in rows]) \
@@ -682,6 +849,15 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
                 "variants": [_variant(rules, key, product_id, [], base, None, True, package.get(None))],
                 "skipped_paid": skipped, "duplicate_values": [], "capped": None}
     keep, rows = _drop_promo_axes(names, rows)
+    slots: str | None = None
+    slot_axes: list[int] = []
+    if cat.wedge_sets:                             # a picker's slots: no repeated loft, one row per set (C01)
+        before = len(rows)
+        rows, repeats, orders, slot_axes = _slot_rows(names, keep, rows)
+        if repeats or orders:
+            slots = f"{before} -> {len(rows)} rows ({repeats} with a value repeated on two slots, {orders} reordered)"
+        else:
+            slot_axes = []
     capped = None
     page_order = {i: list(dict.fromkeys(_tidy(r["options"][i]) for r in rows)) for i in keep}
     if len(rows) > rules.variant_cap:              # more than the shop sells: the first ones, every value kept
@@ -703,15 +879,19 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
         if bare:
             shown[i] = {raw: dict(zip(values[i], bare))[v] for raw, v in shown[i].items()}
             values[i] = bare
+        plain = _unindexed(values[i]) if cat.wedge_sets else None     # "1 52 56 60 Degree Set" (C52)
+        if plain:
+            shown[i] = {raw: dict(zip(values[i], plain))[v] for raw, v in shown[i].items()}
+            values[i] = plain
     for i in keep:
         if i not in axes and names[i] not in HIDDEN_ROWS:      # a one-value 상품번호 axis is a seller code
             label = _tidy(names[i])                            # "선택: 남성풀세트": the value says it all
             label = _axis_name(label)
-            facts.append({"label_ko": "" if _PLACEHOLDER_NAME_RE.match(label) else label, "value_ko": values[i][0]})
+            facts.append({"label_ko": _fact_label(label, values[i][0]), "value_ko": values[i][0]})
     today = {v.get("id"): v.get("is_today_dispatch") for v in (specs["options"] or {}).get("variants") or []}
-    variants = [_variant(rules, key, product_id, r["options"], r["price"], r.get("id"), r.get("is_available"),
-                         package.get(r.get("id")), [shown[i][_tidy(r["options"][i])] for i in axes],
-                         today.get(r.get("id"))) for r in rows]
+    variants = [_variant(rules, key, product_id, r.get("raw_options") or r["options"], r["price"], r.get("id"),
+                         r.get("is_available"), package.get(r.get("id")),
+                         [shown[i][_tidy(r["options"][i])] for i in axes], today.get(r.get("id"))) for r in rows]
     if not axes:
         variants = variants[:1]                    # one row (or only constant axes): the default variant
     held = []
@@ -719,7 +899,8 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
         held.append({"code": "axes_over_3", "detail": f"{len(axes)} option axes"})
     return {"options": [{"name_ko": _axis_name(names[i]), "values_ko": values[i]} for i in axes], "facts": facts,
             "variants": variants, "held": held, "skipped_paid": skipped, "duplicate_values": duplicate,
-            "capped": capped}
+            "capped": capped, "axes_repeated": repeated, "slot_rows": slots,
+            "slot_axes": [k for k, i in enumerate(axes) if i in slot_axes]}
 
 
 def _variant(rules: ShopRules, key: str, product_id: str, tuple_ko: list[str], krw: int | None,
@@ -814,14 +995,66 @@ def _plain(text: str) -> str:
     return _NUMBERING_RE.sub("", _ADDON_CODE_RE.sub("", _tidy(text))).strip() or _tidy(text)
 
 
+# A group of paid add-ons with free entries framed ▣◈■◆ (2026-11-17, the wedge-set review C57: Miura 11585678496,
+# 11277694183, 11585620683, 6593061432, 11277707794, "웨지 샤프트": "▣ KBS ▣", "▣ PROJECT X ▣" free, the shafts
+# themselves paid, and "◈ 헤드만 구매 ◈"): a framed free entry is the heading of the paid ones below it, not an add-on;
+# "헤드만 / head only" there is the product itself sold without a shaft (heads_only). On the shop's 3,244 lines no other
+# group has them; ★ and 【】 frame gifts and stay.
+_FRAMED_RE = re.compile(r"^\s*[▣◈■◆].*[▣◈■◆]\s*$")
+_HEADS_ONLY_RE = re.compile(r"(?i)헤드\s*만|head\s*only|헤드\s*단품")
+
+
+def _paid_groups(supplements: list[dict[str, Any]]) -> set[str]:
+    return {s.get("group") or "" for s in supplements if (s.get("price") or 0) > 0}
+
+
+def heads_only(specs: dict[str, Any]) -> str | None:
+    """"<group>: <the head-only entry>" when a group of paid add-ons offers the heads only (the price is the heads';
+    a shaft is a paid add-on), else None."""
+    supplements = (specs.get("options") or {}).get("supplements") or []
+    paid = _paid_groups(supplements)
+    return next((f"{_tidy(s.get('group') or '')}: {_tidy(s.get('name') or '')}" for s in supplements
+                 if (s.get("group") or "") in paid and not (s.get("price") or 0)
+                 and _HEADS_ONLY_RE.search(s.get("name") or "")), None)
+
+
+# Amazon's "Hand Orientation: Left" in the description and nothing else saying which hand (2026-11-17, the wedge-set
+# review C70: BombTech 13370297764, Orlimar 13312264217, left-handed sets published with no word of it): the spec row
+# Naver's own pages use, 사용방향 왼손용. Left only (Right is the default a buyer assumes; and 17% of Amazon's tables
+# disagree with the page), one variant or none, and no hand in the title, the options, the facts or the spec rows.
+_HAND_ROW_RE = re.compile(r"(?im)^\s*[-*•·]?\s*hand(?:\s*orientation)?\s*[|:]\s*(left|right)\b")
+_HAND_WORD_RE = re.compile(r"(?i)왼손|오른손|좌타|우타|좌손|우손|left|right|\bLH\b|\bRH\b|레프티|lefty")
+_HAND_LABEL_RE = re.compile(r"(?i)사용방향|사용손|hand")
+
+
+def _hand_from_description(text: str | None, title: str, ov: dict[str, Any],
+                           specs: list[dict[str, Any]]) -> dict[str, str] | None:
+    """{"label_ko": "사용방향", "value_ko": "왼손용"} when the description's table says Left only (_HAND_ROW_RE)."""
+    said = {h.lower() for h in _HAND_ROW_RE.findall(text or "")}
+    if said != {"left"} or len(ov["variants"]) > 1:
+        return None
+    named = " ".join([title, json.dumps(ov["options"], ensure_ascii=False), json.dumps(ov["variants"], ensure_ascii=False)]
+                     + [f["value_ko"] for f in ov["facts"]])
+    if _HAND_WORD_RE.search(named) or any(_HAND_LABEL_RE.search(s.get("label_ko") or "")
+                                          or _HAND_WORD_RE.search(s.get("value_ko") or "") for s in specs):
+        return None
+    return {"label_ko": "사용방향", "value_ko": "왼손용"}
+
+
 def addons(specs: dict[str, Any], krw_per_usd: int, paid: bool = False) -> list[PreparedAddon]:
     """Add-ons on sale and in stock: free ones only, paid ones too with the category's `paid_addons`. A group
-    named (필수) / (필수선택) must be chosen: `required`, the decoration dropped."""
+    named (필수) / (필수선택) must be chosen: `required`, the decoration dropped. In a group of paid ones a free entry
+    framed ▣◈■◆ (a heading) or "헤드만" (the product itself: heads_only) is no add-on."""
     out: list[PreparedAddon] = []
-    for s in (specs.get("options") or {}).get("supplements") or []:
+    supplements = (specs.get("options") or {}).get("supplements") or []
+    paid_groups = _paid_groups(supplements)
+    for s in supplements:
         price = s.get("price") or 0
         if _contact_only(s.get("name") or ""):     # "특주주문시 연락주세요(02-...)": a note, not an add-on
             continue
+        if not price and (s.get("group") or "") in paid_groups \
+                and (_FRAMED_RE.match(s.get("name") or "") or _HEADS_ONLY_RE.search(s.get("name") or "")):
+            continue                                # "▣ KBS ▣" over paid KBS shafts, "◈ 헤드만 구매 ◈" (C57)
         if (price == 0 or paid) and s.get("status") in (None, "SALE") and (s.get("stock_quantity") or 0) > 0:
             group = s.get("group") or ""
             out.append({"group_ko": _plain(_LABEL_DECOR_RE.sub("", group)), "name_ko": _plain(s.get("name") or ""),
@@ -1041,7 +1274,10 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
         notes.append({"code": "price_name_mismatch", "detail": ",".join(line["variants"]["name_mismatches"])})
     if ov["skipped_paid"]:                          # a smaller set than the title may describe is sold
         notes.append({"code": "paid_variants_left_out", "detail": f"{ov['skipped_paid']} variants change the price"})
-    one = title_one_variant(details["name"], ov["options"], str(brand.get("value") or ""))
+    # a merged picker's slots (C01) each pick one club: fewer values per slot is no title word naming one variant
+    # ("52+56+60도" over slots without 60 in the first); the title's lofts vs the sets sold is title_lofts_not_sold's
+    word_options = [o for k, o in enumerate(ov["options"]) if k not in set(ov.get("slot_axes") or [])]
+    one = title_one_variant(details["name"], word_options, str(brand.get("value") or ""))
     tail = title_variant_tail(details["name"], (specs.get("options") or {}).get("variants") or [],
                               {str(v["naver_variant_id"]) for v in ov["variants"] if v.get("naver_variant_id")})
     if tail:                                        # an import title's appended option: one span, the words in it
@@ -1050,11 +1286,16 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
     if one:                                         # the translation keeps the title to what every variant is
         notes.append({"code": "title_names_one_variant", "detail": ", ".join(one)})
     desc = details.get("description") or {}
-    checked = check_specs(spec_rows(specs), ov["options"], ov["variants"], desc.get("text"), details["name"])
+    checked = check_specs(spec_rows(specs), ov["options"], ov["variants"], desc.get("text"), details["name"],
+                          word_options)
     # a 모델명 row that only repeats the title goes, with its specs_name_one_variant entry (C71, 2026-11-17)
     checked = hide_title_model_rows(checked, details["name"])
     shown_specs = checked["specs"]                  # rows true of part of the variants: bound (for_ko) or dropped
     notes += checked["notes"]
+    if ov.get("axes_repeated"):                     # Amazon's two axes saying one thing: the agreeing rows (C56)
+        notes.append({"code": "axes_repeated", "detail": ov["axes_repeated"]})
+    if ov.get("slot_rows"):                         # a picker's "56+56" and reorderings left out (C01)
+        notes.append({"code": "slot_rows_merged", "detail": ov["slot_rows"]})
     if ov["capped"]:                                # combinations past the shop's cap are not offered
         notes.append({"code": "variants_capped", "detail": ov["capped"]})
     if ov["duplicate_values"]:                      # "선택3 S" / "선택6 S": the numbering is the only difference
@@ -1087,6 +1328,11 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
     paid_addons = [s for s in (specs.get("options") or {}).get("supplements") or [] if (s.get("price") or 0) > 0]
     if paid_addons and not cat.paid_addons:
         notes.append({"code": "paid_addons_left_out", "detail": f"{len(paid_addons)} paid add-ons"})
+    heads = heads_only(specs)                       # the price is the heads'; a shaft costs extra (C57, 2026-11-17)
+    if heads and cat.paid_addons:                   # the shafts are offered: a note
+        notes.append({"code": "heads_only", "detail": heads})
+    elif heads:                                     # no shaft offered: the heads alone would be sold as the set
+        held.append({"code": "heads_only", "detail": heads})
     if not specs.get("is_complete", True):
         held.append({"code": "specs_folded", "detail": f"상품정보 left folded: {len(specs.get('specs') or [])} rows"})
     delivery = specs.get("delivery") or details.get("delivery") or {}
@@ -1103,10 +1349,14 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
     if hidden_promo and _GIFT_RE.search(raw):       # the rows are hidden as Naver's promotions; the text still
         notes.append({"code": "description_mentions_gifts", "detail": ", ".join(        # promises them
             sorted({m.group(0) for m in _GIFT_RE.finditer(raw)}))})
-    cleaned = clean(desc.get("text"), store_name=(details.get("store") or {}).get("name"),
+    cleaned = clean(picked_switches(desc.get("text"), desc.get("html")),    # "헤드 커버 | 있음없음": the picked one
+                    store_name=(details.get("store") or {}).get("name"),    # (C08, 2026-11-17)
                     promo_hidden=bool(hidden_promo), brand=details.get("brand"))
     notes += [{"code": n["code"], "detail": n["detail"]}
               for n in cleaned["notes"] + body_notes(desc.get("html"), desc.get("images"))]
+    if hand := _hand_from_description(cleaned["text"], details["name"], ov, shown_specs):
+        shown_specs = shown_specs + [hand]          # Amazon's "Hand Orientation: Left", said nowhere else (C70)
+        notes.append({"code": "hand_from_description", "detail": f"{hand['label_ko']} {hand['value_ko']}"})
     pictures = clean_images(desc.get("images"), desc.get("html"))
     extra_text = delivery.get("extra_fee_text")
     number = re.sub(r"[,\s원]", "", extra_text or "")

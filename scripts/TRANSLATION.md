@@ -81,7 +81,10 @@ Per text, the first that answers: (1) the product's own store, (2) the dictionar
 
 ## 1. The product's own store
 
-Title, review, a placeholder option name (선택 / 옵션, named from its values), in `translation/texts.jsonl`.
+Title, review, a placeholder option name (선택 / 옵션, named from its values), in `translation/texts.jsonl`. A
+placeholder name with no Hangul ("Color" over "52 56 Degree Tarnish", Amazon imports; 2026-11-17, the wedge-set review
+C50) is asked of the model too; until it answers the rule's English ("Color") stands. A rule never names it ("Lofts"
+would rename the heights of 50002787).
 
 ## 2. Dictionaries
 
@@ -127,6 +130,13 @@ English over git's.
   the title a code stays). A title already
   translated keeps its English: delete its row in `translation/texts.jsonl`, or write a correction (skill
   `fix-a-product`), to change it;
+- a category's option-value rules, option values only, after the general ones: `OPTION_VALUE_RULES`. Wedge sets
+  (50002783, the wedge-set review C54, 2026-11-17): raw lofts become the list the titles use: a whole value of two or
+  three glued even lofts going up ("5056" -> "50°/56°"), a whole "loft.bounce" ("56.12 SB" -> "56° (Bounce 12°) SB"),
+  lofts glued by their degree signs ("50°56°" -> "50°/56°"), a run going up before Degree / ° ("52 56 60 Degree Set" ->
+  "52°/56°/60° Set"), an import's " 1 pcs" tail right after a set's "(2 pcs )" or "Set" (also from the Korean "… (2개) 1개":
+  the value is trimmed before these rules; any other value keeps its count, "블랙 1개" -> "블랙 1 pcs"); a dictionary hit is taken as it is;
+- "Sliver" / "sliver" as a word of its own -> "Silver" / "silver" (a seller's typo, every category; C55);
 - a text with no Hangul left is done; the rest goes to the model already converted.
 
 ## 4. The model and its prompts

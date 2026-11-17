@@ -1,0 +1,306 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102454334:13370297764",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "description_images_missing",
+   "detail": "no sidecar: run description_images.py"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "INCLUDED"
+  },
+  {
+   "code": "hand_from_description",
+   "detail": "사용방향 왼손용"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/35tnfjg/products/13370297764",
+  "channel_no": "102454334",
+  "product_id": "13370297764",
+  "category_id": "50002783"
+ },
+ "product": {
+  "title_ko": "Bombtech Golf BombTech - 프리미엄 골프 웨지 세트 52 56 60도",
+  "brand_ko": "Bombtech Golf",
+  "brand_source": "specs:브랜드",
+  "attributes": {},
+  "options": [],
+  "facts": [
+   {
+    "label_ko": "Color",
+    "value_ko": "Black"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "observed:[\"Black\"]",
+    "naver_variant_id": "57516125174",
+    "options_ko": [],
+    "price_krw": 389830,
+    "price_usd": "389.83",
+    "sku": "FW-0bb04feb30b41cf1f85243d2",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 939.8,
+       "max": 939.8
+      },
+      "source": "source_stated",
+      "confidence": 5,
+      "quote": "- Item Package Dimensions L x W x H : 37 x 4 x 3 inches",
+      "from": "description",
+      "locator": {
+       "block": "text",
+       "row": 21
+      },
+      "kind": "packed",
+      "scope": null,
+      "approximate": false,
+      "flags": [
+       "axis_order_unresolved"
+      ],
+      "binding": {
+       "scope": "product",
+       "variant_ids": [
+        "57516125174"
+       ]
+      },
+      "also": 0
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 101.6,
+       "max": 101.6
+      },
+      "source": "source_stated",
+      "confidence": 5,
+      "quote": "- Item Package Dimensions L x W x H : 37 x 4 x 3 inches",
+      "from": "description",
+      "locator": {
+       "block": "text",
+       "row": 21
+      },
+      "kind": "packed",
+      "scope": null,
+      "approximate": false,
+      "flags": [
+       "axis_order_unresolved"
+      ],
+      "binding": {
+       "scope": "product",
+       "variant_ids": [
+        "57516125174"
+       ]
+      },
+      "also": 0
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 76.2,
+       "max": 76.2
+      },
+      "source": "source_stated",
+      "confidence": 5,
+      "quote": "- Item Package Dimensions L x W x H : 37 x 4 x 3 inches",
+      "from": "description",
+      "locator": {
+       "block": "text",
+       "row": 21
+      },
+      "kind": "packed",
+      "scope": null,
+      "approximate": false,
+      "flags": [
+       "axis_order_unresolved"
+      ],
+      "binding": {
+       "scope": "product",
+       "variant_ids": [
+        "57516125174"
+       ]
+      },
+      "also": 0
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 389830,
+   "original_krw": 556900,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "Bombtech Golf"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "Bombtech Golf"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "Bombtech Golf"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "기타해외"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "왼손용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13370297764/fairwardgolf-13370297764-001-4de17bdb0bbc2c6a.webp",
+    "sha256": "4de17bdb0bbc2c6aefe04a632e28d90f16b9e39ef3a09ee193df4c49ec1d46eb",
+    "width": 600,
+    "height": 600
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": true,
+   "customs_tax_type": "INCLUDED",
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "Bombtech Golf BombTech - 프리미엄 골프 웨지 세트 52 56 60도\n옵션 이미지\nBlack\nBlack |\nGOODS SPECIFICS\n- Size : 35 1/4\"\n- Color : Black\n- Golf Club Flex : Uniflex\n- Hand Orientation : Left\n- Golf Club Loft : 52 Degrees\n- Material : Steel\n- Brand : Bombtech Golf\n- Shaft Material : Steel\n- Item Weight : 1.43 Kilograms\n- Grip Size : Oversize\n- Grip Type : Standard\n- UPC : 850064238174\n- Golf Club Bounce Angle : 10 Degrees\n- Golf Club Type : Wedge Golf Club\n- Included Components : 52, 56, 60 Wedge\n- Manufacturer : BombTech Golf\n- Item Package Dimensions L x W x H : 37 x 4 x 3 inches\n- Package Weight : 1.43 Kilograms\n- Brand Name : Bombtech Golf\n- Warranty Description : 1.5 Years\n- Model Name : BombTech 52, 56, 60 Wedge Set - Left Handed\n- Suggested Users : mens\nFeature\n- PREMIUM QUALITY AT FRACTION OF THE PRICE: No retail and no pros means you get more for your money.\n- COMPLETE SET OF THREE WEDGES: Includes 52, 56 and 60 degree lofts with 12, 10 and 8 bounces.\n- MAX FORGIVENESS: Heavier weights for max control and feel provides for max forgiveness. The BombTech black golf wedges are slightly oversized to make even your bad shots look pretty freaking good.\n- OPTIMAL SPIN: Max legal groove depth for increased spin.\n- EASY TO HIT FROM ANYWHERE: Wedges that are easy to hit from anywhere. The micro-milled face provides for great spin, control and consistency from the fairway or rough.",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260408_90/17756284278629mvaA_JPEG/p-13311485319-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20260408_119/1775628427862tA7cK_JPEG/p-13311485319-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20260408_74/1775628427864aSNSP_JPEG/p-13311485319-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20260408_123/1775628427864wxoc5_JPEG/p-13311485319-s-1-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20260408_104/1775628427859UfXE6_JPEG/p-13311485319-s-1-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20260408_18/1775628427863mXvaT_JPEG/p-13311485319-s-1-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20260408_111/1775628427862P5dDX_JPEG/p-13311485319-s-1-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20260408_161/1775628427966WrjVI_JPEG/p-13311485319-s-1-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20260408_212/1775628427861giK9F_JPEG/p-13311485319-s-1-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20260408_52/1775628427862Vm1uf_JPEG/p-13311485319-s-1-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20260408_131/1775628427952X9ieQ_JPEG/p-13311485319-s-1-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20260408_230/1775628427949icabC_JPEG/p-13311485319-s-1-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20260408_124/1775628427854fH5cT_JPEG/p-13311485319-s-1-A-12.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:c0eb52f91b0e59bf",
+   "kind": "title",
+   "ko": "Bombtech Golf BombTech - 프리미엄 골프 웨지 세트 52 56 60도"
+  },
+  {
+   "id": "brand:c9b58f67b0acbef0",
+   "kind": "brand",
+   "ko": "Bombtech Golf"
+  },
+  {
+   "id": "fact_label:6b73191a0a4b6742",
+   "kind": "fact_label",
+   "ko": "Color"
+  },
+  {
+   "id": "fact_value:c6cfe6e4f129a346",
+   "kind": "fact_value",
+   "ko": "Black"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:c9b58f67b0acbef0",
+   "kind": "spec_value",
+   "ko": "Bombtech Golf"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:86bc555023ef98c1",
+   "kind": "spec_value",
+   "ko": "기타해외"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:9c68b4648cbe18e2",
+   "kind": "spec_value",
+   "ko": "왼손용"
+  }
+ ]
+}

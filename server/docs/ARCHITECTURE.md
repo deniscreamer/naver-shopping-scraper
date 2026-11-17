@@ -482,6 +482,10 @@ surfaces.
   club number "4번" (part in the axis name, e.g. "유틸리티 선택"), "유틸4" / "4번유틸" / "4U" / "5W". "캐디백 미포함" marks a value
   without the bag. A description may bind a material to a bare flex value in a sentence: "플렉스 R 모델의 아이언에는 카본 샤프트"
   (seen 2026-11-06, pilot of 19 golf sets).
+- An option value is cut at 25 characters ("1 52 56 60 Degree Set Tar"; Amazon imports, 48 values of 16 listings, seen
+  2026-11-17); the import's description lists the whole values. A combination option of club slots ("옵션 1/2/3",
+  TaylorMade MG5) holds every product of the slots, the same loft on two slots and every order of one set (343 rows
+  for 35 sets, one stock template). -> `scripts/transform.py` `_uncut`, `_slot_rows` comments.
 
 ### 13.7 search.shopping listing (extension)
 

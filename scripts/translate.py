@@ -348,6 +348,12 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
         source = sanitize(kind, ko, tenant, category)
         if not has_hangul(source):
             en[tid], by[tid] = source, "rule"
+            if kind == "option_name" and ko in placeholders:
+                # a Latin placeholder name ("Color" over "52 56 Degree Tarnish", Amazon imports; 2026-11-17, the
+                # wedge-set review C50: 21 axes, 18 of them not colours): the model names it from its values, the
+                # rule's English kept until it answers. Never named by a rule: "Lofts" would rename heights (50002787)
+                pending.append({"id": tid, "kind": kind, "source": source, "placeholder": True,
+                                "context": "values: " + " | ".join(values_of.get(ko, [])[:12])})
             continue
         item: dict[str, Any] = {"id": tid, "kind": kind, "source": source}
         if kind == "title" and one_variant:

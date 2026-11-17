@@ -188,6 +188,37 @@ def decode_line(line: Mapping[str, Any]) -> dict[str, Any]:
     return out
 
 
+# A table cell that is a switch (2026-11-17, the wedge-set review C08: agency 100217952 / 102108469, the pricegolf
+# template, 12 products of 50002783 and 50002788): every choice is a <span>, the ones not picked dimmed with
+# "opacity: 0.5" ("AS 여부 | 가능불가", "헤드 커버 | 있음없음", "샤프트 종류 | 그라파이트NS PRO다이나믹골드커스텀 샤프트"
+# with 그라파이트 picked); the text joins them all. Its row is read with the picked one only ("헤드 커버 | 없음" of
+# 12872703429 is a true "no head cover": the row is not dropped). A cell with no picked span or more than one stays.
+_SWITCH_CELL_RE = re.compile(r"<th[^>]*>\s*([^<]{1,40}?)\s*</th>\s*<td[^>]*>((?:\s*<span[^>]*>[^<]*</span>){2,})\s*</td>",
+                             re.S | re.I)
+_SPAN_RE = re.compile(r"<span([^>]*)>([^<]*)</span>", re.I)
+_DIMMED_RE = re.compile(r"opacity\s*:\s*0?\.\d", re.I)
+
+
+def picked_switches(text: str | None, html: str | None) -> str | None:
+    """The description text with each switch row ("헤드 커버 | 있음없음") holding only the picked choice."""
+    if not text or not html or "opacity" not in html:
+        return text
+    picked: dict[tuple[str, str], str] = {}
+    for label, cell in _SWITCH_CELL_RE.findall(html):
+        spans = _SPAN_RE.findall(cell)
+        lit = [t.strip() for a, t in spans if not _DIMMED_RE.search(a)]
+        if len(lit) == 1 and lit[0] and len(lit) < len(spans):
+            picked[(re.sub(r"\s+", " ", label).strip(), "".join("".join(t.split()) for _, t in spans))] = lit[0]
+    if not picked:
+        return text
+    out = []
+    for line in text.split("\n"):
+        label, sep, value = line.partition(" | ")
+        choice = picked.get((label.strip(), "".join(value.split()))) if sep else None
+        out.append(f"{label} | {choice}" if choice else line)
+    return "\n".join(out)
+
+
 def sentences(lines: Iterable[str]) -> Iterator[list[str]]:
     """Visual lines -> sentences (lists of lines): a line ending on a connective goes on in the next one."""
     buf: list[str] = []

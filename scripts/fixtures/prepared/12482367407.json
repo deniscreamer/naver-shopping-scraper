@@ -1,0 +1,337 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:100677985:12482367407",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "specs_contradict",
+   "detail": "웨지 로프트각 50도, 60도: the title says 52/56; 바운스각 8도, 10도: the bounces of those lofts"
+  },
+  {
+   "code": "description_images_missing",
+   "detail": "no sidecar: run description_images.py"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/monstergolf/products/12482367407",
+  "channel_no": "100677985",
+  "product_id": "12482367407",
+  "category_id": "50002783"
+ },
+ "product": {
+  "title_ko": "PRGR 프로기아 23년 제로 투어 52도,56도 웨지세트 MODUS115 S",
+  "brand_ko": "PRGR",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 웨지 세트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "12482367407",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 320000,
+    "price_usd": "320.00",
+    "sku": "FW-7c6fc0aa4849583774d2aad5",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 320000,
+   "original_krw": 500000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "PRGR"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "PRGR"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "일본산"
+   },
+   {
+    "label_ko": "제조공법",
+    "value_ko": "단조"
+   },
+   {
+    "label_ko": "샤프트소재",
+    "value_ko": "스틸"
+   },
+   {
+    "label_ko": "샤프트 강도",
+    "value_ko": "S"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "라이각",
+    "value_ko": "63.5도"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2023년형"
+   },
+   {
+    "label_ko": "수입원",
+    "value_ko": "정품"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/12482367407/fairwardgolf-12482367407-001-18a97d03341976d3.webp",
+    "sha256": "18a97d03341976d3dd547982ee7f796efcf869c38234d83976cd60992a6068a0",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 8000,
+   "extra_fee_area3": 8000,
+   "policy_text": "제주 추가 8,000원, 제주 외 도서지역 추가 8,000원",
+   "lead_time": {
+    "seller_average_days": 1.7142857,
+    "product_average_days": null,
+    "today_cutoff": "14:00",
+    "today_off": false,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 94,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20250930_282/1759210094340Is0pK_JPEG/p-12425901023-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20250930_219/1759210094316giaxX_JPEG/p-12425901023-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20250930_260/1759210094317GKbE8_JPEG/p-12425901023-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20250930_202/1759210094317UDLNl_JPEG/p-12425901023-s-1-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20250930_263/1759210094317jxkJX_JPEG/p-12425901023-s-1-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20250930_106/1759210094328YRxcy_JPEG/p-12425901023-s-1-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20250930_210/1759210094317PaM41_JPEG/p-12425901023-s-1-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20250930_150/1759210094317cuNPf_JPEG/p-12425901023-s-1-A-7.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:88747268d6573deb",
+   "kind": "title",
+   "ko": "PRGR 프로기아 23년 제로 투어 52도,56도 웨지세트 MODUS115 S"
+  },
+  {
+   "id": "brand:d0fdfd92351be067",
+   "kind": "brand",
+   "ko": "PRGR"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:d0fdfd92351be067",
+   "kind": "spec_value",
+   "ko": "PRGR"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2d5ea77cf8032c99",
+   "kind": "spec_value",
+   "ko": "일본산"
+  },
+  {
+   "id": "spec_label:f7e69d69247069a1",
+   "kind": "spec_label",
+   "ko": "제조공법"
+  },
+  {
+   "id": "spec_value:36a1c06422a97623",
+   "kind": "spec_value",
+   "ko": "단조"
+  },
+  {
+   "id": "spec_label:bba112f05a71deaa",
+   "kind": "spec_label",
+   "ko": "샤프트소재"
+  },
+  {
+   "id": "spec_value:76d45c1471b5954b",
+   "kind": "spec_value",
+   "ko": "스틸"
+  },
+  {
+   "id": "spec_label:eb57c3164e2a24de",
+   "kind": "spec_label",
+   "ko": "샤프트 강도"
+  },
+  {
+   "id": "spec_value:8de0b3c47f112c59",
+   "kind": "spec_value",
+   "ko": "S"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:6b9f5f606ec606fe",
+   "kind": "spec_label",
+   "ko": "라이각"
+  },
+  {
+   "id": "spec_value:f017ee3d2661a99b",
+   "kind": "spec_value",
+   "ko": "63.5도"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:bed47e98ee4bbea0",
+   "kind": "spec_value",
+   "ko": "2023년형"
+  },
+  {
+   "id": "spec_label:1cf649b343d942e0",
+   "kind": "spec_label",
+   "ko": "수입원"
+  },
+  {
+   "id": "spec_value:3577faebb93b61e1",
+   "kind": "spec_value",
+   "ko": "정품"
+  }
+ ]
+}

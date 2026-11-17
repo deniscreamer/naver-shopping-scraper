@@ -1,0 +1,309 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102329146:13017295953",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "title_names_one_variant",
+   "detail": "1 52 56 60 Degree Set Tar"
+  },
+  {
+   "code": "description_images_missing",
+   "detail": "no sidecar: run description_images.py"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "Color"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/rooftoppla/products/13017295953",
+  "channel_no": "102329146",
+  "product_id": "13017295953",
+  "category_id": "50002783"
+ },
+ "product": {
+  "title_ko": "야마토 단조 골프 웨지 CNC 밀링 오른손잡이 샌드 피칭 롭 하이 스핀 세트 정밀 클럽페 1 52 56 60 Degree Set Tar",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {},
+  "options": [
+   {
+    "name_ko": "Color",
+    "values_ko": [
+     "52 56 60 Degree Set Tarnish",
+     "56 60 Degree Tarnish"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"1 52 56 60 Degree Set Tar\"]",
+    "naver_variant_id": "55526522342",
+    "options_ko": [
+     "52 56 60 Degree Set Tarnish"
+    ],
+    "price_krw": 249570,
+    "price_usd": "249.57",
+    "sku": "FW-4317cb6ba77f9533a4426119",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"2 56 60 Degree Tarnish\"]",
+    "naver_variant_id": "55526522343",
+    "options_ko": [
+     "56 60 Degree Tarnish"
+    ],
+    "price_krw": 150770,
+    "price_usd": "150.77",
+    "sku": "FW-4cf4547023920502cb8dc001",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 249570,
+   "original_krw": 277300,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "원산지",
+    "value_ko": "기타/해외"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13017295953/fairwardgolf-13017295953-001-b7f1bde5d4fb92e4.webp",
+    "sha256": "b7f1bde5d4fb92e464cd9ca32da711eef87f78ddb1b60ab4d1e5c6eca8fb976e",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13017295953/fairwardgolf-13017295953-002-8d8e3b6debdcce3f.webp",
+    "sha256": "8d8e3b6debdcce3f98bc0f3eb177b5c274352c295604e72cb1aa987e0dc99321",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13017295953/fairwardgolf-13017295953-003-619453dfd0badf71.webp",
+    "sha256": "619453dfd0badf71a1d880e1db6d385859497fe5e53a9689610d9b1aa933afcb",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": 7000,
+   "policy_text": "제주 추가 4,000원, 제주 외 도서지역 추가 7,000원",
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": "13:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "야마토 단조 골프 웨지 CNC 밀링 오른손잡이 샌드 피칭 롭 하이 스핀 세트 정밀 클럽페\n\n상품 이미지\n\n옵션 이미지\n\nColor : 1 52 56 60 Degree Set Tarnish | Color : 2 56 60 Degree Tarnish\nColor : 3 56 Degree Tarnish | Color : 4 58 Degree Tarnish\n\n세부 사항\n\n항목 | 설명\nFlex | Regular\nHand Orientation | Right\nLoft | 505254565860 Degrees\nGrip Type | Standard\nItem Weight | 1 Pounds\nGrip Size | Standard\nMaterial Type | Stainless Steel\nShaft Material | Stainless Steel\nGrip Material | Synthetic Rubber\nBrand Name | yamato\nGolf Club Type | Wedge Golf Club\nManufacturer | yamato\nIncluded Components | golf wedge\nWarranty Description | GOLF WEDGES\nColor | 56 Degree Tarnish",
+  "description_images": [
+   "https://cdn.imgdsell.com/visit/set/dsell/lollipops79/Rj9fOD40Rz13BWseeH0%253d/SS",
+   "https://cdn.imgdsell.com/file/dsell/lollipops79/notice/ss/top_79.jpg",
+   "https://m.media-amazon.com/images/I/91ARy-oNh4L._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71RuiiM7zVL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/8162RUQH-hL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71Y6PFmmKbL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71MqvPueQHL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71W2BOj5VHL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/81j+x7ZhnrL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/91-AoxbX09L._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/81kYC-5UISL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/91mwk3OnueL._US1000_.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/10471db6-73df-4a24-97ee-fc8b7c6d16be.__CR0,0,1464,600_PT0_SX1464_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/f33786fa-ab0b-42b1-ae0f-2c1b2a52510b.__CR0,0,1464,600_PT0_SX1464_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/76ee6706-6aed-4e22-a354-38799dfdd3df.__CR0,2,1464,600_PT0_SX1464_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/3988dc0a-e5af-4e86-894f-5410d46ca0d8.__CR0,1,1464,600_PT0_SX1464_V1___.jpg",
+   "https://cdn.imgdsell.com/file/dsell/lollipops79/notice/ss/bottom_79.jpg"
+  ],
+  "description_dropped": [
+   {
+    "rule": "label",
+    "text": "상세 이미지"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:b452682ff54e336f",
+   "kind": "title",
+   "ko": "야마토 단조 골프 웨지 CNC 밀링 오른손잡이 샌드 피칭 롭 하이 스핀 세트 정밀 클럽페 1 52 56 60 Degree Set Tar"
+  },
+  {
+   "id": "option_name:6b73191a0a4b6742",
+   "kind": "option_name",
+   "ko": "Color"
+  },
+  {
+   "id": "option_value:bcf58b215cb6dd72",
+   "kind": "option_value",
+   "ko": "52 56 60 Degree Set Tarnish"
+  },
+  {
+   "id": "option_value:970a0ddd18114ccb",
+   "kind": "option_value",
+   "ko": "56 60 Degree Tarnish"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:40bc309fd6cb0a8a",
+   "kind": "spec_value",
+   "ko": "기타/해외"
+  }
+ ]
+}

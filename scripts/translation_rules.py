@@ -37,6 +37,9 @@ _RULES: list[tuple[re.Pattern[str], str]] = [
     (re.compile(r"(\d{4})\s*년형" + _FREE), r"\1 model"),
     (re.compile(r"(\d+)\s*종" + _FREE), r"\1 pcs "),
     (re.compile(r"(\d+)\s*개" + _FREE), r"\1 pcs "),
+    # a seller's typo for silver, a word of its own (2026-11-17, the wedge-set review C55: "7 Sliver 52 56 60 Degree",
+    # 14 texts of the shop): every category's texts, its case kept
+    (re.compile(r"(?<![A-Za-z])([Ss])liver(?![A-Za-z])"), r"\1ilver"),
 ]
 _WHOLE_COUNT_RE = re.compile(r"^\s*(\d+)\s*개\s*$")
 _WHOLE_YEAR_RE = re.compile(r"^\s*(\d{4})\s*년형\s*$")             # the whole value (출시 2018년형): the year
@@ -103,6 +106,52 @@ TITLE_RULES: dict[str, list[tuple[re.Pattern[str], Any]]] = {
                     r"(?!\s*도[가-힣])(?P<deg>\s*(?:도|°))?"), _loft_run),
     ],
 }
+# Option values of one Naver category, after the general rules (option_value only). 50002783 (wedge sets, the
+# wedge-set review C54, 2026-11-17): raw lofts as sellers and Amazon write them, as the list the titles use; 204
+# values of 49 products, no two values of an axis made the same:
+# - a whole value of two or three glued lofts going up, even ones ("5056", "525660" -> "50°/56°", 619693409 19);
+# - a whole value "loft.bounce" with a grind letter (TaylorMade MG5 "56.12 SB" -> "56° (Bounce 12°) SB");
+# - lofts glued with their degree signs ("50°56°" -> "50°/56°");
+# - a run of lofts going up before Degree / ° ("52 56 60 Degree Set" -> "52°/56°/60° Set", "56 60° (2 pcs )");
+# - an import's " 1 pcs" tail after a set, that is right after "(2 pcs )" or "Set" ("52 56° (2 pcs ) 1 pcs" ->
+#   "52°/56° (2 pcs )"); any other value keeps its count ("블랙 1개" -> "블랙 1 pcs", as in other categories).
+# A dictionary hit is not sanitized (6 dictionary values still say "1 pcs": fixed by hand in the dictionary).
+_OV_LOFT = r"(?:4[4-9]|5\d|6[0-4])"
+
+
+def _rising(xs: list[int]) -> bool:
+    return all(a < b for a, b in zip(xs, xs[1:]))
+
+
+def _glued_lofts(text: str) -> str:
+    if not re.fullmatch(r"(?:%s){2,3}" % _OV_LOFT, text):
+        return text
+    xs = [int(text[i:i + 2]) for i in range(0, len(text), 2)]
+    return "/".join(f"{x}°" for x in xs) if _rising(xs) and all(x % 2 == 0 for x in xs) else text
+
+
+def _loft_bounce(text: str) -> str:
+    m = re.fullmatch(r"(%s)\.(0[4-9]|1\d)( [A-Z]{1,2})?" % _OV_LOFT, text)
+    return f"{m.group(1)}° (Bounce {int(m.group(2))}°)" + (m.group(3) or "") if m else text
+
+
+def _loft_list(m: re.Match[str]) -> str:
+    xs = [int(x) for x in re.findall(r"\d+", m.group("run"))]
+    return "/".join(f"{x}°" for x in xs) + (" " if m.group("tail") else "") if _rising(xs) else m.group(0)
+
+
+OPTION_VALUE_RULES: dict[str, list[tuple[Any, Any]]] = {
+    "50002783": [
+        (None, _glued_lofts),
+        (None, _loft_bounce),
+        (re.compile(r"(?<!\d)(%s)°(?=(%s)°)" % (_OV_LOFT, _OV_LOFT)), r"\1°/"),
+        (re.compile(r"(?<![\d.])(?P<run>%s(?:[ ]+%s){1,4})\s*(?:°|[Dd]egrees?)(?![A-Za-z])(?P<tail>/\s*)?"
+                    % (_OV_LOFT, _OV_LOFT)), _loft_list),
+        (re.compile(r"(?:(?<=pcs \))|(?<=pcs\))|(?<=\bSet))\s+1\s*pcs\s*$"), ""),  # only after "(2 pcs )" or the word Set
+    ],
+}
+
+
 # A seller's marker token in agency titles (2026-11-16, agencies of one import tool: "db4P" 13552318731, "dbQF"
 # 13552339143, "db9N" 13555308677, "dbT1" 13555299850): lower-case "db" and two capitals or digits, a word of its
 # own; no other title of 2,451 writes one (an upper-case "DB6" is Orlimar's model and stays). Every category's titles.
@@ -134,6 +183,12 @@ def sanitize(kind: str, ko: str, tenant: str, category_id: str | None = None) ->
         return whole.group(1)
     for pattern, repl in _RULES:
         text = pattern.sub(repl, text)
+    if kind == "option_value":
+        # the general rules leave "1개" as "1 pcs " (a trailing space): strip first, so the anchored rules match
+        text = _SPACES_RE.sub(" ", text).strip()
+        for value_rule, repl in OPTION_VALUE_RULES.get(str(category_id or ""), []):
+            text = repl(text) if value_rule is None else value_rule.sub(repl, text)
+        text = _SPACES_RE.sub(" ", text).strip()
     return _tidy(text)
 
 

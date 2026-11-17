@@ -1,0 +1,829 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:1100156689:13754846756",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "axes_repeated",
+   "detail": "Style Name repeats Size: 266 -> 14 rows"
+  },
+  {
+   "code": "description_images_missing",
+   "detail": "no sidecar: run description_images.py"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "NOT_APPLICABLE"
+  },
+  {
+   "code": "title_lofts_not_sold",
+   "detail": "50/52/54/56/58/60 (sold: 50/56 | 52/56 | 52/60 | 54/58 | 54/60 | 56/60)"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/auroracom/products/13754846756",
+  "channel_no": "1100156689",
+  "product_id": "13754846756",
+  "category_id": "50002783"
+ },
+ "product": {
+  "title_ko": "야마토 풀페이스 골프 웨지 세트 또는 개별 50/52/54/56/58/60 단조 갭 샌드 롭 클럽 밀드",
+  "brand_ko": "yamato",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "unisex",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "unisex",
+      "text": "남녀공용"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 웨지 세트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "Size",
+    "values_ko": [
+     "54 58 Degree",
+     "54 60 Degree",
+     "50 56 Degree",
+     "52 56 Degree",
+     "52 60 Degree",
+     "56 60 Degree"
+    ]
+   },
+   {
+    "name_ko": "Style Name",
+    "values_ko": [
+     "Black 54 58 Degree",
+     "Black 54 60 Degree",
+     "Black 50 56 Degree",
+     "Black 52 56 Degree",
+     "Black 52 60 Degree",
+     "Black 56 60 Degree"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"54 58 Degree\",\"Black 54 58 Degree\"]",
+    "naver_variant_id": "60007827952",
+    "options_ko": [
+     "54 58 Degree",
+     "Black 54 58 Degree"
+    ],
+    "price_krw": 139930,
+    "price_usd": "139.93",
+    "sku": "FW-f8dad720425d6863d079ab7e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"54 60 Degree\",\"Black 54 60 Degree\"]",
+    "naver_variant_id": "60007827953",
+    "options_ko": [
+     "54 60 Degree",
+     "Black 54 60 Degree"
+    ],
+    "price_krw": 148230,
+    "price_usd": "148.23",
+    "sku": "FW-728438e0e6d909b6924ef242",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"50 56 Degree\",\"Black 50 56 Degree\"]",
+    "naver_variant_id": "60721666265",
+    "options_ko": [
+     "50 56 Degree",
+     "Black 50 56 Degree"
+    ],
+    "price_krw": 170630,
+    "price_usd": "170.63",
+    "sku": "FW-3c2575a83f9c3d57cdf3177b",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"52 56 Degree\",\"Black 52 56 Degree\"]",
+    "naver_variant_id": "60721666320",
+    "options_ko": [
+     "52 56 Degree",
+     "Black 52 56 Degree"
+    ],
+    "price_krw": 170630,
+    "price_usd": "170.63",
+    "sku": "FW-8d2b7cfc37888de430011a51",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"52 60 Degree\",\"Black 52 60 Degree\"]",
+    "naver_variant_id": "60721666339",
+    "options_ko": [
+     "52 60 Degree",
+     "Black 52 60 Degree"
+    ],
+    "price_krw": 170630,
+    "price_usd": "170.63",
+    "sku": "FW-219fc06c345a521f018ab74e",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"56 60 Degree\",\"Black 56 60 Degree\"]",
+    "naver_variant_id": "60721666464",
+    "options_ko": [
+     "56 60 Degree",
+     "Black 56 60 Degree"
+    ],
+    "price_krw": 170630,
+    "price_usd": "170.63",
+    "sku": "FW-8a8eb8c564f768adbccade18",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 104230,
+   "original_krw": 148900,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "yamato golf"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "yamato"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남녀공용"
+   },
+   {
+    "label_ko": "제조공법",
+    "value_ko": "단조"
+   },
+   {
+    "label_ko": "웨지 로프트각",
+    "value_ko": "52도"
+   },
+   {
+    "label_ko": "라이각",
+    "value_ko": "64도"
+   },
+   {
+    "label_ko": "바운스각",
+    "value_ko": "9도"
+   },
+   {
+    "label_ko": "샤프트소재",
+    "value_ko": "스틸"
+   },
+   {
+    "label_ko": "샤프트 강도",
+    "value_ko": "R"
+   },
+   {
+    "label_ko": "스윙웨이트",
+    "value_ko": "D2"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "양손용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13754846756/fairwardgolf-13754846756-001-a51c1cdb119dc861.webp",
+    "sha256": "a51c1cdb119dc861d5dadf659b132803b9cafefc0ffae66d1bc245f21988d7ed",
+    "width": 1266,
+    "height": 1500
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13754846756/fairwardgolf-13754846756-002-bf3ef4a611eebc27.webp",
+    "sha256": "bf3ef4a611eebc2796f23806d71623bfbe6f0a4a45e6f0b998ab2986332d24f3",
+    "width": 1500,
+    "height": 1500
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13754846756/fairwardgolf-13754846756-003-608db4681ca066fb.webp",
+    "sha256": "608db4681ca066fb5c322111cefb4777ba7bd29bccc6b0c53ec4e2280da10fa2",
+    "width": 1500,
+    "height": 1500
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/13754846756/fairwardgolf-13754846756-004-d13ade5816c721fd.webp",
+    "sha256": "d13ade5816c721fd157f7b1437c92e6d2fb4ab30210504bf1d2117db13f4a0dc",
+    "width": 1500,
+    "height": 1500
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/13754846756/fairwardgolf-13754846756-005-604e2e08b27f2b00.webp",
+    "sha256": "604e2e08b27f2b007cf19e97a1c702ac859a3348e115557531db7ceacb880808",
+    "width": 1500,
+    "height": 1500
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/13754846756/fairwardgolf-13754846756-006-21ae6d00bef0d049.webp",
+    "sha256": "21ae6d00bef0d04930b969b5b294d82ea81a62cf92de3170120c93a0a1e2404f",
+    "width": 1500,
+    "height": 1500
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/13754846756/fairwardgolf-13754846756-007-456a00389ded602c.webp",
+    "sha256": "456a00389ded602cc03d3fbe47175cceeabbd7592655ef94df8b0e6af56dd4b1",
+    "width": 1500,
+    "height": 1500
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": true,
+   "customs_tax_type": "NOT_APPLICABLE",
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "policy_text": null,
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": "18:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "Options\n52 Degree+Black 52 Degree\n50 Degree+Black 50 Degree\n56 Degree+Black 56 Degree\n54 Degree+Black 54 Degree\n60 Degree+Black 60 Degree\n58 Degree+Black 58 Degree\n72 Degree+Black 72 Degree\n60 Degree+Silver 60 Degree\n54 58 Degree+Black 54 58 Degree\n54 60 Degree+Black 54 60 Degree\n50 56 Degree+Black 50 56 Degree\n52 56 Degree+Black 52 56 Degree\n52 60 Degree+Black 52 60 Degree\n56 60 Degree+Black 56 60 Degree\n크기\n52도\n색상\n검은색\n골프 클럽 플렉스\n정규\n손 방향\n맞아\n골프 클럽 로프트\n50도\n재료\n스테인리스 스틸\n브랜드\n야마토\n샤프트 재질\n스테인리스 스틸\n품목 무게\n0.48 kg\n그립 재질\n합성 고무\n플렉스\n정규\n로프트\n50도\n그립 유형\n표준\n골프 클럽 바운스 앵글\n10도\n그립 크기\n표준\n재료 유형\n스테인리스 스틸\n브랜드명\n야마토\n스타일 이름\n블랙 52 디쉬\n세트 이름\n야마토 풀 페이스 골프 웨지 세트\n구성\n52도\n모델 시리즈\n풀페이스\n골프 클럽 종류\n웨지 골프 클럽\n포함된 구성 요소\n골프 웨지\n제조사\n야마토 골프\nSize\n52 Degree\nColor\nblack\nGolf Club Flex\nRegular\nHand Orientation\nRight\nGolf Club Loft\n50 degrees\nMaterial\nStainless Steel\nBrand\nyamato\nShaft Material\nStainless Steel\nItem Weight\n0.48 kg\nGrip Material\nSynthetic Rubber\nAbout this item\nSuperior Forgiveness: Our golf wedges are designed with a leading edge that prevents digging into the ground, ensuring forgiveness even on miss-hits. This feature helps eliminate fat shots and allows for more consistent and accurate swings\nFull Face Groove Wedge: Our golf wedges feature an innovative design that sets them apart from traditional wedges. With the most aggressive groove in golf, these wedges extend across the entire face, offering maximum spin and control on every shot. This unique design not only boosts confidence at address, but also ensures optimal groove-to-ball contact, even if hit on the toe\nOptimal Distance Control: Achieve precise distance control with our golf wedges. The strategic placement of the full face grooves provides consistent spin and trajectory, giving you the ability to hit shots with pinpoint accuracy. Whether you need to hit a high flop shot or a low punch shot, these wedges will help you dial in your distances effortlessly\nForged Premium Wedges : Made from premium materials, our golf wedges offer enhanced performance and longevity. The high-quality construction ensures that these wedges can withstand rigorous use, making them a reliable choice for golf enthusiasts of all skill levels\nComplete Set: This golf wedges set includes a range of lofts to cover all your needs on the course. From gap wedges to sand wedges, you'll have the right club for every situation. Take your game to the next level with this comprehensive set of golf wedges designed to improve your scoring opportunities\n›\nProduct Description\nElevate your golf game with the Yamato Full Face Golf Wedge Set, a precision-forged collection designed for experienced players seeking versatility and control. This ambidextrous set includes wedges in 50, 52, 54, 56, 58, and 60 lofts, crafted from durable steel for optimal performance. Each wedge features a milled face for enhanced spin and control, and a standard synthetic rubber grip for a secure hold. The set is available in a sleek black finish, making it a stylish addition to your golf bag.\nProduct description",
+  "description_images": [],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:9ed1614e4375757d",
+   "kind": "title",
+   "ko": "야마토 풀페이스 골프 웨지 세트 또는 개별 50/52/54/56/58/60 단조 갭 샌드 롭 클럽 밀드"
+  },
+  {
+   "id": "brand:2baaceefd9fdd5fb",
+   "kind": "brand",
+   "ko": "yamato"
+  },
+  {
+   "id": "option_name:1af851907331c0ed",
+   "kind": "option_name",
+   "ko": "Size"
+  },
+  {
+   "id": "option_value:0c9fccc88edcb0c9",
+   "kind": "option_value",
+   "ko": "54 58 Degree"
+  },
+  {
+   "id": "option_value:0cd0e21ba0fec33f",
+   "kind": "option_value",
+   "ko": "54 60 Degree"
+  },
+  {
+   "id": "option_value:26c49a562b44d713",
+   "kind": "option_value",
+   "ko": "50 56 Degree"
+  },
+  {
+   "id": "option_value:e16c004d96afaa0a",
+   "kind": "option_value",
+   "ko": "52 56 Degree"
+  },
+  {
+   "id": "option_value:cf8f72d652dbfc14",
+   "kind": "option_value",
+   "ko": "52 60 Degree"
+  },
+  {
+   "id": "option_value:f204a1bd4e81c548",
+   "kind": "option_value",
+   "ko": "56 60 Degree"
+  },
+  {
+   "id": "option_name:827cae3c57ce1088",
+   "kind": "option_name",
+   "ko": "Style Name"
+  },
+  {
+   "id": "option_value:8a93dcbced36f81c",
+   "kind": "option_value",
+   "ko": "Black 54 58 Degree"
+  },
+  {
+   "id": "option_value:a2740be4fb5d8f48",
+   "kind": "option_value",
+   "ko": "Black 54 60 Degree"
+  },
+  {
+   "id": "option_value:da9b08e005cb9b06",
+   "kind": "option_value",
+   "ko": "Black 50 56 Degree"
+  },
+  {
+   "id": "option_value:dff45b970649f6e8",
+   "kind": "option_value",
+   "ko": "Black 52 56 Degree"
+  },
+  {
+   "id": "option_value:ed08507ce5cea4b6",
+   "kind": "option_value",
+   "ko": "Black 52 60 Degree"
+  },
+  {
+   "id": "option_value:2beb2b45a600771a",
+   "kind": "option_value",
+   "ko": "Black 56 60 Degree"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:483268a53e50a8e2",
+   "kind": "spec_value",
+   "ko": "yamato golf"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:2baaceefd9fdd5fb",
+   "kind": "spec_value",
+   "ko": "yamato"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:e012efbcc2aa417e",
+   "kind": "spec_value",
+   "ko": "남녀공용"
+  },
+  {
+   "id": "spec_label:f7e69d69247069a1",
+   "kind": "spec_label",
+   "ko": "제조공법"
+  },
+  {
+   "id": "spec_value:36a1c06422a97623",
+   "kind": "spec_value",
+   "ko": "단조"
+  },
+  {
+   "id": "spec_label:e05405a34cd61ca2",
+   "kind": "spec_label",
+   "ko": "웨지 로프트각"
+  },
+  {
+   "id": "spec_value:d26bcdf90f2cc5e1",
+   "kind": "spec_value",
+   "ko": "52도"
+  },
+  {
+   "id": "spec_label:6b9f5f606ec606fe",
+   "kind": "spec_label",
+   "ko": "라이각"
+  },
+  {
+   "id": "spec_value:f69751cc4504564e",
+   "kind": "spec_value",
+   "ko": "64도"
+  },
+  {
+   "id": "spec_label:bd8c94a6ef14bc79",
+   "kind": "spec_label",
+   "ko": "바운스각"
+  },
+  {
+   "id": "spec_value:55a8421e068efb83",
+   "kind": "spec_value",
+   "ko": "9도"
+  },
+  {
+   "id": "spec_label:bba112f05a71deaa",
+   "kind": "spec_label",
+   "ko": "샤프트소재"
+  },
+  {
+   "id": "spec_value:76d45c1471b5954b",
+   "kind": "spec_value",
+   "ko": "스틸"
+  },
+  {
+   "id": "spec_label:eb57c3164e2a24de",
+   "kind": "spec_label",
+   "ko": "샤프트 강도"
+  },
+  {
+   "id": "spec_value:8c2574892063f995",
+   "kind": "spec_value",
+   "ko": "R"
+  },
+  {
+   "id": "spec_label:82e77522c71ce93a",
+   "kind": "spec_label",
+   "ko": "스윙웨이트"
+  },
+  {
+   "id": "spec_value:2265f5336d7b6037",
+   "kind": "spec_value",
+   "ko": "D2"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:bafab94dd3bdea90",
+   "kind": "spec_value",
+   "ko": "양손용"
+  }
+ ]
+}

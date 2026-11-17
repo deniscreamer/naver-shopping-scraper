@@ -1,0 +1,186 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:100217952:12872703429",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "description_images_missing",
+   "detail": "no sidecar: run description_images.py"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/pricegolf/products/12872703429",
+  "channel_no": "100217952",
+  "product_id": "12872703429",
+  "category_id": "50002783"
+ },
+ "product": {
+  "title_ko": "(병행) 페스트니스 웨지세트 50도 56도 WA2356700",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {},
+  "options": [],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "12872703429",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 161920,
+    "price_usd": "161.92",
+    "sku": "FW-061c6cfe269864b665f3010e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 161920,
+   "original_krw": 184000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/12872703429/fairwardgolf-12872703429-001-af5083b90dbc2623.webp",
+    "sha256": "af5083b90dbc2623747a18756ed7d95483c558e765555753f87c2a1282fe64bc",
+    "width": 720,
+    "height": 720
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/12872703429/fairwardgolf-12872703429-002-a75f14f8dff1bb11.webp",
+    "sha256": "a75f14f8dff1bb1110fb95392b6f2f702e8986f8ec46673f50785da66bd3cf91",
+    "width": 720,
+    "height": 720
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 2.0,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": "11.19.(목)",
+    "arrival_probability": 93,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "상품 기본정보\n상품코드 | WA2356700\nAS 여부 | 불가\n브랜드 | 기타 BRAND\n상품분류 | 웨지/치퍼 > 남성용\n상품명 | (병행) 페스트니스 웨지세트 50도 56도\n모델명 | 모델명 미지정\n로프트 각도 | 50,56\n샤프트 종류 | 스틸\n샤프트 강도 | S\n헤드 커버 | 없음\n상품문의 | 전화/문자 문의 : 0503-6987-0140; ※ 본 상품은 pricegolf.co.kr을 통해 일반 판매자가 등록한 상품으로 묶음배송이 불가합니다.\n상품구매방법 | 본 제품은 온라인 전용상품입니다. 오프라인 매장 구매 불가 상품입니다.; 반드시 온라인 주문/결제로만 구매 가능합니다.; 오프라인 매장 방문 구매/수령 불가 상품입니다.\n추가배송비 | 제주 등 도서산간지역의 경우 5,000원 이상의 추가배송비가 발생합니다.; 추가 배송비는 상품 주문 후 판매자에게 직접 문의해 주셔야 합니다.\n상품 문의\n판매자 | (주)골프보스\n반품 주소지 | (31135) 충남 천안시 서북구 서부5길 16 (성정동) K2타워 1층 GOLF BOSS\n구매/취소/반품 문의 | 0503-6987-0140 (문자메세지 가능)",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20251224_191/1766540748242Ov9G9_JPEG/p-12815217453-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20251224_157/1766540748240YweX0_JPEG/p-12815217453-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20251224_264/1766540748240nPyHw_JPEG/p-12815217453-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20251224_59/1766540748243IOyYN_JPEG/p-12815217453-s-1-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20251224_34/17665407482489JTAH_JPEG/p-12815217453-s-1-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20251224_30/17665407482439XXnN_JPEG/p-12815217453-s-1-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20251224_100/1766540748242DB5Tw_JPEG/p-12815217453-s-1-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20251224_69/1766540748247yPHt2_JPEG/p-12815217453-s-1-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20251224_141/1766540748253Arm9S_JPEG/p-12815217453-s-1-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20251224_241/1766540748443LUqql_JPEG/p-12815217453-s-1-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20251224_136/1766540748258r4zyj_JPEG/p-12815217453-s-1-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20251224_264/1766540748326fQjjc_JPEG/p-12815217453-s-1-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20251224_184/1766540748464obvFs_JPEG/p-12815217453-s-1-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20251224_202/1766540748436I7x36_JPEG/p-12815217453-s-1-A-13.jpg"
+  ],
+  "description_dropped": [
+   {
+    "rule": "store_claim",
+    "text": "정품여부 | 아시안스펙 직수입(병행수입)"
+   },
+   {
+    "rule": "label",
+    "text": "상품 상세설명"
+   },
+   {
+    "rule": "policy",
+    "text": "배송/반품/교환 안내\n구매 전 꼭! 확인해주세요\n배송 안내 | 1. 상품 재고 유무 및 판매자, 배송사 사정에 따라 구매 후 1~3일 내 발송됩니다.; 2. 도서산간/제주 지역의 경우 추가 배송비 5,000원이 발생하며 판매자에게 직접 문의해야 합니다.\n반품 및 교환 안내 | 반품 및 교환이 가능한 경우1. 단순 변심, 주소 오류, 사이즈 교환 등 고객 귀책사유에 의한 반품/교환은 제품 수령 후 은행 영업일 기준 5일 이내에만 가능합니다.; 2. 단순 변심, 주소 오류, 사이즈 교환 등 고객 귀책사유에 의한 반품/교환 시 발생되는 왕복 택배비는 고객 부담입니다.; 3. 구매 시 제공받은 사은품은 반품/교환 시 함께 반품해 주셔야 합니다.; 4. 전자상거래 소비자보호법에 의거 상품 초기 불량 및 오배송 등에 대한 배송 비용은 판매자가 부담합니다.\n반품 및 교환이 불가한 경우1. 제품 수령 후 은행 영업일 기준 6일 이상 경과한 경우; 2. 공정거래 표준약관 제15조 2항에 의거 구매자의 1회 이상 사용 또는 일부 소비에 의해 상품의 가치가 현저히 감소한 경우; 3. 비닐포장 제거 및 사용, 의류 세탁 및 착용 등으로 상품이 훼손된 경우; 4. 정품 포장 박스 훼손 및 분실, 의류/신발 등의 오염 및 라벨을 제거한 경우; 5. 피팅, 커스텀 오더 등 주문 확인 후 제작에 들어가는 맞춤 주문 제작 상품의 경우; 6. 해외 중고 상품과 같이 현지 셀러가 따로 있는 경우; 헤드 및 그립 포장 비닐(랩핑) 제거 시 교환 환불 불가하니; 포장 비닐 제거 전 꼼꼼히 확인 부탁 드립니다.; 반품/교환 가능; 클럽헤드, 그립비닐 미 제거시; 반품/교환 불가; 클럽헤드, 그립비닐 제거시; 반품/교환 불가; 골프클럽 사용시(시타포함); 반품/교환 불가; - 용품, 신발 정품 박스 훼손; - 라벨텍 제거 및 훼손; - 실외 착화후 오염된 경우"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:63ec97a95ae95a8e",
+   "kind": "title",
+   "ko": "(병행) 페스트니스 웨지세트 50도 56도 WA2356700"
+  }
+ ]
+}

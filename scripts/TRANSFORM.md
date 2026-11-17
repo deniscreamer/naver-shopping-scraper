@@ -66,6 +66,7 @@ writes `status: held`, no codes of its own), not placed, not published. Where to
 | `images_over_50` | transform | more than 50 gallery photos (`MAX_IMAGES`) | leave it held; tell the owner |
 | `single_only` | transform | a `sets_only` category's listing (wedges, 2026-11-15) that sells one club only: every variant one club (a loft glued to letters "LH0160 Degree" counts; a bare club name "Sand Wedge" / "6 Iron" where `not_wedge_set` has no reason, 2026-11-17), the title sells one piece ("1개", "1pc") and no variant names a set, or the title says set or single ("또는", "개별", "싱글", "or single") with no option and no set named in the spec rows, the notice or the description (2026-11-17) | right as it is: the section sells sets. A set read as a single: the words in `transform.py` (`single_club`, `_ONE_PIECE_RE`), with a fixture |
 | `not_wedge_set` | transform | a `wedge_sets` category's listing (50002783, 2026-11-16) that sells an iron set or a full set: an iron run in the title or a variant ("4-PW", "5-9", "3456789", "5 6 7 8 9"), a count of 6 to 16 clubs ("7피스", "12 Piece", "12개 세트"), a full set, a wood set or a junior set ("드라이버", "우드", "페어웨이", "460cc", "하이브리드", "유틸", "컴플리트" / "풀세트" / "완비" / "이그제큐티브" / "클럽 세트" with no wedge lofts, a putter or a bag with another club family or "클럽 세트", a bag with no wedge lofts ("카트백 골프 세트"), "주니어" / a child's age span ("Ages 6 to 8", "3-5세") with no "웨지 세트"; never a cover, a grip, a gift, a case or a wedge kind: "드라이버 우드 커버", "퍼터 증정", "무료 캐디백", "캐디백 수납", "하이브리드 웨지", "유틸리티 샌드 웨지", "우드티", "골프 백스핀", "컴플리트 웨지 세트", "풀세트 웨지 3종", a loft span "52-56 세트"), a practice set, a plastic toy or one adjustable club ("연습 세트", "연습용 폼 볼", "조절식", "플라스틱"), no wedge named at all (no 웨지 / wedge / AW-type letter / loft in degrees: stone splitters, golf pants, "Qi10"), one club (no set word and no two lofts in the title: "미라이 MW-25 ... 48도", "아이언 단품"; or one loft and one wedge letter with no set word: "아이언 AW 로프트 49도", 2026-11-17), a set of shafts with no wedge named after the agency's "골프 웨지" and no two lofts ("샤프트 플렉스 선택 - 3개 세트", "샤프트 세트 3개"; not "웨지 전용 샤프트 3개 세트", nor a wedge set or a set word written before the shaft set: "골프 웨지 세트 3종 (샤프트 세트 포함)", "... 3피스 세트 KBS 샤프트 세트") or a pack of tees of a material with no wedge set in the title and not a gift ("대나무 티 ... 1000개 세트"; not "+ 대나무 티 50개 증정"), 2026-11-17, every variant one club with three numbered irons or more ("8번 아이언", "7 Iron": MAZEL WM-X), or "아이언 세트" / "아이언 5개 세트" in the title without "웨지 세트" (unless each variant is one club); the detail says which | right as it is: Naver files them under wedges. A wedge set held: the words in `transform.py` (`_iron_run`, `_CLUB_COUNT_RE`, `_WEDGE_SET_RE`), a case in `scripts/test_wedge_sets.py`. One already in the store: withdrawing it is the owner's word ([OWNER_RULES.md](OWNER_RULES.md)) |
+| `heads_only` | transform | a group of paid add-ons offers "헤드만 / head only" for free (2026-11-17, Miura's "웨지 샤프트": "◈ 헤드만 구매 ◈", the shafts paid): the price is the heads', a shaft costs extra, and the category's `paid_addons` is off, so the heads alone would be sold as the set (with `paid_addons` on: a note of the same code) | right as it is; to sell it, the owner turns `paid_addons` on for the category (`transform_shops.py`) |
 | `agency_no_brand` | transform (run-level, `run_transform.py`) | a purchase agency's import (note `purchase_agency`) with no brand after the brand fallback (`brand_source: none`) where the category's `agency_needs_brand` is on; off in fairwardgolf since 2026-11-15 | the owner's brand in `<shop>/brand_by_owner.json` (skill `fix-a-product`), then `run_transform.py` |
 | `held` | placement | the transform held it: not placed; `reason` is the transform's codes | the transform code's row |
 | `unresolved` | placement | the category is split by an attribute (gender) and the product's value is unknown or in conflict (`reason`: `<attribute> <value>`), or no variant fits a section; the profile's `unresolved` is `hold` | read `evidence` in `placements.jsonl` / `report.txt`; a wrong attribute: skill `fix-a-product`; else the owner decides ([PLACEMENT.md](PLACEMENT.md), "What an unresolved product does") |
@@ -205,6 +206,28 @@ published, SKUs and prices equal on 201 of 201 variants):
   on sale and in stock: free ones, paid ones too with the category's `paid_addons` (`price_krw`, `price_usd`);
   a group named (필수) / (필수선택) is `required`. Why per category: a set's photos often show the extras (bag,
   covers, utility clubs); sold without them, a buyer takes them as part of the set (owner 2026-11-06).
+- **The wedge-set review, variants and options (2026-11-17, W5)**:
+  - a picker's club slots (axes named alike but for a number, "옵션 1/2/3", "SB웨지1/2/3"; wedge-sets categories only):
+    a row with one value on two slots ("56+56", the owner's value: not sold) is left out, and an order of a set
+    already offered is that set (the first buyable row kept), before the cap: MG5 343 -> 35 rows; note
+    `slot_rows_merged` ("343 -> 35 rows (133 with a value repeated on two slots, 175 reordered)"); the merged slots
+    are left out of the word match of `title_names_one_variant` and `specs_name_one_variant` (a slot that lost "60도"
+    names no one variant; the title's lofts vs the sets sold is `title_lofts_not_sold`); C01;
+  - two axes saying one thing (the second is the first with a leading word, "Black 52 56 Degree" for "52 56 Degree",
+    "Set" aside): only the rows where they agree, note `axes_repeated` (Yamato 13754846756: 266 -> 14 rows, 6 sets;
+    C56);
+  - a value of exactly 25 characters (Naver's cut) is whole again from the description's option list ("옵션 이미지"
+    ... "상세 이미지") where exactly one entry is longer and starts with it and the rest of it holds no other value of
+    the row; in a wedge-sets category Amazon's index in front of every value of an axis ("1 52 56 60 Degree Set
+    Tarnish") is not shown when the values stay different (not a count or a club: "3 Wedges", "7 Iron"); the SKU
+    keeps the raw tuple (C52);
+  - a one-value colour axis whose value is a set and names no colour ("Color: Wedge Set", "색상: 52/56/60도 세트") is a
+    fact with no label, as a placeholder name's (C51);
+  - add-ons: in a group with paid ones, a free entry framed ▣◈■◆ is a heading ("▣ KBS ▣") and "헤드만 / head only" is
+    the product itself: neither is an add-on, and the product is held `heads_only` where paid add-ons are off (a note
+    `heads_only` where they are on; Miura, C57);
+  - `few_pieces`: a bare "P" after a Latin letter, "#" or "-" is no count ("D3P", "NX-1 P/A", "db4P";
+    "3PCS", "5P" stay; C37).
 
 ### Reviews
 
@@ -294,6 +317,12 @@ Spec rows vs variants, run 40b additions (2026-11-07):
 - specs_loft_near_miss: a sold driver loft half a degree from the row's (row 9.5도, values 9도). The row is kept as
   written, noted for a check by hand.
 - specs_lists_unsold: a 드라이버 로프트각 row listing several lofts on a product of one variant. The row is kept and noted.
+- Wedge sets (2026-11-17, the wedge-set review C72): a 웨지 로프트각 row that shares no loft with the title's two or more
+  (with 도 / °, or a list "52/56") is dropped with its 바운스각 row, specs_contradict ("웨지 로프트각 50도, 60도: the
+  title says 52/56"); a row sharing a loft stays.
+- The hand (2026-11-17, C70): Amazon's "Hand Orientation : Left" in the description (its row only Left), on a product
+  of one variant or none whose title, options, facts and spec rows say no hand, adds the spec row 사용방향 왼손용
+  (note `hand_from_description`).
 - Title check: an option value of two words or more that the title writes whole names that value, ignoring spacing,
   brackets and case ("NS PRO950GH NEO R" = "NS PRO950GH NEO(R)"). A value starting with a club number must follow its
   axis' part word ("우드3번55S", not the "3번65S" after 유틸). A value followed by "/" is a list of choices. Word hits
@@ -315,6 +344,9 @@ Spec rows vs variants, run 40b additions (2026-11-07):
   proxy-smartstore links decoded); snap tiles are never cut. Notes: `description_all_boilerplate`,
   `description_covers_several_products` (2+ in-page sections, a 모음전 page), `description_tiles_include_banners`
   (banners baked into Naver's tiles).
+- **A switch cell** (`picked_switches`, 2026-11-17, C08): a table cell whose choices are spans, the ones not picked
+  dimmed ("opacity: 0.5"), is read with the picked one ("AS 여부 | 가능불가" -> "AS 여부 | 불가", "헤드 커버 | 없음"),
+  before the cleanup.
 - **Description cleanup** (`description_clean.py`, pilot 20, 2026-11-06): also drops KRW price promotions
   (`price_krw`: "정상가 865,000원", "190,300원 할인", "22% 할인"; our prices are USD), lines about a product card the parser
   left out (`cross_sell`: "아래 링크에서 구매"), and contact closings ("여쭤봐주세요", "답변드리겠습니다"). A sentence goes on across lines

@@ -1,0 +1,436 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:101377496:13422541936",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "description_images_missing",
+   "detail": "no sidecar: run description_images.py"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/ahagolf/products/13422541936",
+  "channel_no": "101377496",
+  "product_id": "13422541936",
+  "category_id": "50002783"
+ },
+ "product": {
+  "title_ko": "마제스티 마루망 MARUMAN SHUTTLE NX-1 P/A,AW,SW 웨지세트 ZELOS7 R 스틸",
+  "brand_ko": "마제스티",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 웨지 세트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "13422541936",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 295000,
+    "price_usd": "295.00",
+    "sku": "FW-25d0ec2adbb9be9633d376d1",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 6,
+      "approved_by": "owner",
+      "approved_at": "2026-11-15"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 295000,
+   "original_krw": 295000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "마루망"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "마제스티"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "마제스티 마루망 MARUMAN SHUTTLE NX-1 P/A,AW,SW 웨지세트"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "일본산"
+   },
+   {
+    "label_ko": "클럽길이",
+    "value_ko": "\"36\\\"(91.44cm)\", 35.5(90.17cm)"
+   },
+   {
+    "label_ko": "샤프트소재",
+    "value_ko": "경량스틸"
+   },
+   {
+    "label_ko": "샤프트 강도",
+    "value_ko": "R"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "헤드형태",
+    "value_ko": "캐비티백"
+   },
+   {
+    "label_ko": "웨지 로프트각",
+    "value_ko": "44도, 49도, 56도"
+   },
+   {
+    "label_ko": "라이각",
+    "value_ko": "63도, 63.5도"
+   },
+   {
+    "label_ko": "바운스각",
+    "value_ko": "6도, 7.5도, 11도"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2019년형"
+   },
+   {
+    "label_ko": "수입원",
+    "value_ko": "병행"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13422541936/fairwardgolf-13422541936-001-4cc7910085e36d9a.webp",
+    "sha256": "4cc7910085e36d9a882fd6cb957fb2a1d69e2cb5bf98367f7995825b2ff494c7",
+    "width": 1058,
+    "height": 1411
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13422541936/fairwardgolf-13422541936-002-484e65d50e29603b.webp",
+    "sha256": "484e65d50e29603b110e8d42314aff13af4e28f855f32e81d9dc8284afc26d3b",
+    "width": 1058,
+    "height": 1411
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13422541936/fairwardgolf-13422541936-003-759ee247a69c18ad.webp",
+    "sha256": "759ee247a69c18ad6326c67cd7a938159088de9273bfd8c2ce3b125a8f34ebd7",
+    "width": 1058,
+    "height": 1411
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/13422541936/fairwardgolf-13422541936-004-43775e110d5c1943.webp",
+    "sha256": "43775e110d5c19433a8c5fcdae9534ef1568b4f9112244dd85cbe107270a61cf",
+    "width": 1058,
+    "height": 1411
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/13422541936/fairwardgolf-13422541936-005-baa6f94d0641a348.webp",
+    "sha256": "baa6f94d0641a3489cfb32362d1ec78eed2a8b78c87ac5907bef78edc03afa43",
+    "width": 1058,
+    "height": 1411
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/13422541936/fairwardgolf-13422541936-006-dd2b579f1f69d8fe.webp",
+    "sha256": "dd2b579f1f69d8fe43aadd9148476a0d092216bf9a51a55c0ab8283de5c67389",
+    "width": 1058,
+    "height": 1411
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "마루망(Maruman) 셔틀 NX-1 웨지는 아마추어 골퍼들이 편안하게 높은 탄도와 비거리를 낼 수 있도록 설계된 초/중급자용 클럽입니다.\n1. 주요 특징\n슬랜트 그루브(Slant Groove) 기술: 솔(바닥) 내부에 비스듬한 그루브를 적용하여 미스 샷 시에도 지면을 쉽게 빠져나가며 헤드 스피드를 유지합니다.\n낮은 중심 설계: 17.6mm의 낮은 스윗스팟 높이와 짧은 넥 구조로 설계되어 공을 쉽게 띄우고 스트롱 로프트임에도 높은 발사각을 제공합니다.\n스파이더웹 구조 페이스: 페이스의 반발 영역을 극대화하여 미스 히트 시에도 거리 손실을 최소화합니다.\n편안한 스윙: 가벼운 중량으로 골퍼가 편안하게 사용할 수 있는 캐비티백 구조입니다.",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20220209_250/1644392117527Y9kHD_JPEG/%EC%83%81%EB%8B%A8_%EC%95%88%EB%82%B4_001.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260419_62/17765938673828NmSI_JPEG/KakaoTalk_20260419_105539925.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260419_281/1776593867372MmBIF_JPEG/KakaoTalk_20260419_105539925_01.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260419_25/1776593867379utxxP_JPEG/KakaoTalk_20260419_105539925_02.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260419_269/1776593867372k4v8r_JPEG/KakaoTalk_20260419_105539925_03.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260419_278/1776593867377qu6tF_JPEG/KakaoTalk_20260419_105539925_04.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20260419_41/1776593867370Gpk7T_JPEG/KakaoTalk_20260419_105539925_05.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241123_101/1732373293926AJUj9_JPEG/%EA%B5%AC%EB%A7%A4%EC%A0%84%ED%95%84%EB%8F%85.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220209_36/16443921175311LV9v_JPEG/%EC%83%81%EB%8B%A8_%EC%95%88%EB%82%B4_001_(1).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220301_82/16461403641415Mk4G_PNG/KakaoTalk_20220301_194113184.png?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "store_name",
+    "text": "<아하골프>"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:778653686b4ef621",
+   "kind": "title",
+   "ko": "마제스티 마루망 MARUMAN SHUTTLE NX-1 P/A,AW,SW 웨지세트 ZELOS7 R 스틸"
+  },
+  {
+   "id": "brand:c6e2221f8524a588",
+   "kind": "brand",
+   "ko": "마제스티"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:c4841c27d555b0dc",
+   "kind": "spec_value",
+   "ko": "마루망"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:c6e2221f8524a588",
+   "kind": "spec_value",
+   "ko": "마제스티"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:93772b6583f7d9cf",
+   "kind": "spec_value",
+   "ko": "마제스티 마루망 MARUMAN SHUTTLE NX-1 P/A,AW,SW 웨지세트"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2d5ea77cf8032c99",
+   "kind": "spec_value",
+   "ko": "일본산"
+  },
+  {
+   "id": "spec_label:e1056078279e07f0",
+   "kind": "spec_label",
+   "ko": "클럽길이"
+  },
+  {
+   "id": "spec_value:6e58ef4e6bdbd618",
+   "kind": "spec_value",
+   "ko": "\"36\\\"(91.44cm)\", 35.5(90.17cm)"
+  },
+  {
+   "id": "spec_label:bba112f05a71deaa",
+   "kind": "spec_label",
+   "ko": "샤프트소재"
+  },
+  {
+   "id": "spec_value:6ed197f5a449c360",
+   "kind": "spec_value",
+   "ko": "경량스틸"
+  },
+  {
+   "id": "spec_label:eb57c3164e2a24de",
+   "kind": "spec_label",
+   "ko": "샤프트 강도"
+  },
+  {
+   "id": "spec_value:8c2574892063f995",
+   "kind": "spec_value",
+   "ko": "R"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:1530626fcdbc4b23",
+   "kind": "spec_label",
+   "ko": "헤드형태"
+  },
+  {
+   "id": "spec_value:8a6d2f4eaded5858",
+   "kind": "spec_value",
+   "ko": "캐비티백"
+  },
+  {
+   "id": "spec_label:e05405a34cd61ca2",
+   "kind": "spec_label",
+   "ko": "웨지 로프트각"
+  },
+  {
+   "id": "spec_value:77ea123a830d28d8",
+   "kind": "spec_value",
+   "ko": "44도, 49도, 56도"
+  },
+  {
+   "id": "spec_label:6b9f5f606ec606fe",
+   "kind": "spec_label",
+   "ko": "라이각"
+  },
+  {
+   "id": "spec_value:a784027ec1bde076",
+   "kind": "spec_value",
+   "ko": "63도, 63.5도"
+  },
+  {
+   "id": "spec_label:bd8c94a6ef14bc79",
+   "kind": "spec_label",
+   "ko": "바운스각"
+  },
+  {
+   "id": "spec_value:1c08fe6ec01987d4",
+   "kind": "spec_value",
+   "ko": "6도, 7.5도, 11도"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:516a92a512ee113c",
+   "kind": "spec_value",
+   "ko": "2019년형"
+  },
+  {
+   "id": "spec_label:1cf649b343d942e0",
+   "kind": "spec_label",
+   "ko": "수입원"
+  },
+  {
+   "id": "spec_value:f74dce75397eea11",
+   "kind": "spec_value",
+   "ko": "병행"
+  }
+ ]
+}

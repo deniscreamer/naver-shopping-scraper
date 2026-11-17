@@ -367,6 +367,36 @@ def _row(label: str, value: str) -> str:
 _TITLE_IRONS_RE = re.compile(r"(?<![\d.])(\d{1,2})\s*(?:i(?![A-Za-z])|아이언(?!\s*세트)|개\s*아이언)")
 
 
+# A wedge set's 웨지 로프트각 row with none of the title's lofts (2026-11-17, the wedge-set review C72: PRGR 12482367407
+# "제로 투어 52도,56도 웨지세트" with the row "50도, 60도" and 바운스각 "8도, 10도", a row of another listing): both rows
+# go (specs_contradict). The title must write two lofts or more (with 도 / °, or a list "52/56"); a row that shares a
+# loft with the title stays (42 subsets and 6 overlaps of the shop: a picker's own lofts).
+WEDGE_LOFT_ROW = "웨지 로프트각"
+WEDGE_BOUNCE_ROW = "바운스각"
+_W_LOFT = r"(?:4[4-9]|5\d|6\d|7[0-2])"
+_TITLE_DEG_RE = re.compile(r"(?<![\d.#])(" + _W_LOFT + r")(?:\.\d)?\s*(?:도|°|º|˚)")
+_TITLE_LIST_RE = re.compile(r"(?<![\d.#])(" + _W_LOFT + r"(?:\s*[/,\-~·]\s*" + _W_LOFT + r")+)(?![\d.])")
+_ROW_LOFT_RE = re.compile(r"(?<![\d.#])(" + _W_LOFT + r")(?!\d)")
+
+
+def _wedge_lofts_contradict(rows: dict[str, str], title: str | None) -> dict[str, str]:
+    """{label: detail} for 웨지 로프트각 (and 바운스각) when the row shares no loft with the title's two or more."""
+    value = rows.get(WEDGE_LOFT_ROW)
+    if value is None or not title:
+        return {}
+    said = {int(x) for x in _TITLE_DEG_RE.findall(title)}
+    for m in _TITLE_LIST_RE.finditer(title):
+        said |= {int(x) for x in re.findall(r"\d+", m.group(1))}
+    row = {int(x) for x in _ROW_LOFT_RE.findall(value)}
+    if len(said) < 2 or not row or said & row:
+        return {}
+    title_lofts = "/".join(map(str, sorted(said)))
+    out = {WEDGE_LOFT_ROW: f"{_row(WEDGE_LOFT_ROW, value)}: the title says {title_lofts}"}
+    if WEDGE_BOUNCE_ROW in rows:
+        out[WEDGE_BOUNCE_ROW] = f"{_row(WEDGE_BOUNCE_ROW, rows[WEDGE_BOUNCE_ROW])}: the bounces of those lofts"
+    return out
+
+
 def _contradictions(rows: dict[str, str], names: list[str], title: str | None) -> dict[str, str]:
     """{label: detail} of the count rows the product's own rows and title prove wrong. 총클럽개수 N while 아이언개수 /
     아이언 구성 give N irons or more on a set with other clubs: the title's total decides (12pc: the total row is wrong;
@@ -439,13 +469,17 @@ def hide_title_model_rows(checked: dict[str, Any], title: str | None) -> dict[st
 
 
 def check_specs(spec_rows: list[dict[str, str]], options: list[dict[str, Any]], variants: list[dict[str, Any]],
-                description_text: str | None, title: str | None = None) -> dict[str, Any]:
+                description_text: str | None, title: str | None = None,
+                word_options: list[dict[str, Any]] | None = None) -> dict[str, Any]:
     """Spec rows vs the sold variants -> {"specs": the rows kept, in order, a bound one with "for_ko",
     "notes": [{code, detail}]}. Count rows the product's own rows and `title` prove wrong are dropped
     (specs_contradict; no title: not checked); a driver loft row listing several lofts on a product of one variant
-    is noted (specs_lists_unsold). Otherwise a product without two sold combinations is never touched."""
+    is noted (specs_lists_unsold). Otherwise a product without two sold combinations is never touched.
+    `word_options` (default `options`): the axes the word match of other rows (specs_name_one_variant) reads; a
+    merged picker's slots are left out of it (C01, 2026-11-17)."""
     names = [o["name_ko"] for o in options]
-    contra = _contradictions({r["label_ko"]: r["value_ko"] for r in spec_rows}, names, title)
+    by_label = {r["label_ko"]: r["value_ko"] for r in spec_rows}
+    contra = {**_contradictions(by_label, names, title), **_wedge_lofts_contradict(by_label, title)}
     combos = _combos(options, variants)
     if len(combos) < 2:
         kept = [dict(r) for r in spec_rows if r["label_ko"] not in contra]
@@ -546,7 +580,8 @@ def check_specs(spec_rows: list[dict[str, str]], options: list[dict[str, Any]], 
         if r["label_ko"] in handled:
             continue
         row_words, value = words(r["value_ko"]), r["value_ko"]
-        hits = _names_some(lambda w: w in row_words or _has_unit(w) and in_text(w, value), options, False)
+        hits = _names_some(lambda w: w in row_words or _has_unit(w) and in_text(w, value),
+                           options if word_options is None else word_options, False)
         if hits:
             named_rows.append(f"{_row(r['label_ko'], r['value_ko'])}: {', '.join(_spans(hits, r['value_ko']))}")
 

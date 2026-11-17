@@ -201,6 +201,21 @@ Code: `transform.options_and_variants`.
   no set named in the spec rows or the description ("남성용 또는 52 웨지 세트 싱글", 13312300055,
   `_set_or_single_unchosen`). A chipper written "칩퍼" / "Chipper" (KVV 13162968497): left out by the title
   (`chipper`, `listing_title_rules.json`).
+- The wedge-set review (2026-11-17), variants and options (wave W5):
+  - TaylorMade MG5 pickers ("옵션 1/2/3", "SB웨지1/2/3", "웨지 로프트 바운스 선택-1/-2/-3", 13 listings): every product
+    of the slots, "56+56" and every order of one set included (343 rows for 35 sets); no repeat was ever sold, two
+    orders of one set were (12742411646). `transform._slot_rows`, wedge-sets categories only (note slot_rows_merged; C01).
+  - Amazon imports: two axes saying one thing (Size "52 56 Degree" x Style Name "Black 52 56 Degree", Yamato
+    13754846756: 266 rows for 14; `_echo_axes`, note axes_repeated; C56); values cut at 25 characters, whole in the
+    description's option list ("옵션 이미지": "1 52 56 60 Degree Set Tar" = "... Set Tarnish", "Black Titanium
+    Layer-50/5" = "...-50/56 Degrees" of 13377524996; `_uncut`, C52) and an index in front of every value ("1 ...",
+    "2 ..."; `_unindexed`, wedge sets); "Color" as the name of an axis of lofts (C50) and of a one-value set ("Color:
+    Wedge Set", `_fact_label`, C51); the raw lofts "5056", "56.12 SB", "50°56°", "52 56 60 Degree Set" (C54) and a
+    " 1 pcs" tail after a set ("(2 pcs ) 1 pcs", "Set 1 pcs"; any other value keeps its count); "Hand Orientation : Left" in the description's table while the title says nothing (BombTech
+    13370297764, Orlimar 13312264217; `_hand_from_description`, spec row 사용방향 왼손용, C70); "Sliver" (C55).
+  - A bare "P" glued to a model ("야마토 D3P", "NX-1 P/A", "db4P") is no club count (`_PIECES_RE`, C37).
+  - PRGR 12482367407: a 웨지 로프트각 row "50도, 60도" (with its 바운스각) on a "52도,56도" set, a row of another
+    listing (`spec_variants._wedge_lofts_contradict`, specs_contradict, C72).
 - An agency's spec table in the description (2026-11-16): "- Brand : 69" with "- Manufacturer : 69 Golf"
   (13370257430; the specs' 브랜드 / 제조사 rows say "69" only), "Brand Name | 69" with "Manufacturer | 69 Golf"
   (13016152694), a machine-translated label "브랜드 이름 | pgm" (12178085899) and values "NONE" / "다른 사람들"
@@ -291,6 +306,9 @@ Code: `transform.prepare`, `brand_fallback.py` (2026-11-08).
   ("미국산(핑(미국) 미즈노(일본) 웨지퍼터(중국))") -> kept.
 - A hidden 사은품 row can name a thing in the box ("오리지널커버 증정") -> gift_hidden.
 - Add-on names carry the seller's codes and numbering ("[G192]01_미즈노 클럽 렌치", "1-1.남성 장갑") -> left out.
+- Miura (2026-11-17, C57; 11585678496, 11277694183, 11585620683, 6593061432, 11277707794): a group of paid shafts
+  "웨지 샤프트" headed by free entries framed ▣ ("▣ KBS ▣", "▣ PROJECT X ▣") and "◈ 헤드만 구매 ◈": the headings are no
+  add-ons, the price is the heads' (heads_only: held where paid add-ons are off, else a note). ★ and 【】 frame gifts.
 
 ### Description cleanup
 
@@ -305,6 +323,10 @@ Code: `description_clean.py`, `shared_images.py`.
   by link (TalkTalk, Band, blog, Instagram), by size (spacers, 1x1 tracking pixels), and run-level by repetition
   across one store's listings (numeric names, re-uploaded per batch of listings).
 - A description that is only "o" is junk (13741767690).
+- A switch cell (2026-11-17, C08; agencies 100217952 / 102108469, the pricegolf template, 12 products): every choice a
+  <span>, the ones not picked dimmed ("opacity: 0.5"); the text joins them ("AS 여부 | 가능불가", "헤드 커버 |
+  있음없음", "정품여부 | 아시안스펙 정품...미국스펙 직수입"). Read with the picked one only (`picked_switches`); "헤드 커버
+  | 없음" of 12872703429 is true.
 
 ## Description images (OCR)
 
