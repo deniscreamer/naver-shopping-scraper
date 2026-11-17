@@ -961,10 +961,23 @@
    },
    {
     "code": "chipper",
-    "why": "A chipper (치퍼), a chipping club, not a wedge (the owner, 2026-11-15).",
+    "why": "A chipper (치퍼), a chipping club, not a wedge (the owner, 2026-11-15). Also written 칩퍼 / Chipper (KVV 13162968497 '피칭 및 칩퍼 ... 3-Chipper Set', review 2026-11-17); 칩 퍼터 / 칩 퍼팅 are another word.",
     "tokens": [
      {
       "text": "치퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "칩퍼",
+      "notFollowedBy": [
+       "터",
+       "팅"
+      ],
+      "notPrecededBy": []
+     },
+     {
+      "text": "chipper",
       "notFollowedBy": [],
       "notPrecededBy": []
      }

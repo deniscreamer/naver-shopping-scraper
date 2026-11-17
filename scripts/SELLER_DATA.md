@@ -183,6 +183,17 @@ Code: `transform.options_and_variants`.
   "컴플리트 웨지 세트" / "완비 웨지 세트" and Olimar a wedge "유틸리티 웨지": wedge sets. Roiko writes "맥스 백스핀용"
   (13492299567; backspin, not a golf bag) and agencies glue a bag to its colour ("경량 캐디백블랙", 13165737174).
   `transform.not_wedge_set` (held `not_wedge_set`).
+- Not wedge sets nor sets, filed under wedge sets (review 2026-11-17, 50002783): the agency that puts "골프 웨지"
+  first sells shafts ("... 샤프트 플렉스 선택 - 3개 세트" 13163052613, "... 스피너 샤프트 세트 3개" 13163054725) and
+  tees ("골프 웨지 가이즈 대나무 티 ... 1000개 세트" 13163078346); a single club is written with one wedge letter and
+  one loft ("아이언 AW 로프트 49도", Yonex 13104702775): `transform.not_wedge_set`. Zodia's "웨지 전용 샤프트 3개 세트"
+  (13826837511) names its wedges and lofts: left as it is; so does the same agency's wedge set with a set word before
+  "샤프트 세트" ("골프 웨지 세트 52 56 60도 ...", "골프 웨지 커클랜드 시그니처 ... 3피스 세트"). One club a variant, read by prepare (`single_club`, held
+  `single_only`): a loft glued to letters ("LH0160 Degree", "left hand60 degree": Yamato 13312155382, 13312109978),
+  a bare club name ("Sand Wedge" / "6 Iron" / "8 Iron", KVV 13163034573); a title "set or single" with no option and
+  no set named in the spec rows or the description ("남성용 또는 52 웨지 세트 싱글", 13312300055,
+  `_set_or_single_unchosen`). A chipper written "칩퍼" / "Chipper" (KVV 13162968497): left out by the title
+  (`chipper`, `listing_title_rules.json`).
 - An agency's spec table in the description (2026-11-16): "- Brand : 69" with "- Manufacturer : 69 Golf"
   (13370257430; the specs' 브랜드 / 제조사 rows say "69" only), "Brand Name | 69" with "Manufacturer | 69 Golf"
   (13016152694), a machine-translated label "브랜드 이름 | pgm" (12178085899) and values "NONE" / "다른 사람들"

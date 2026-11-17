@@ -316,18 +316,36 @@ def _club_slots(names: list[str]) -> bool:
     return len(names) > 1 and len({re.sub(r"[\d\s\-_/.#]+$", "", re.sub(r"\d+", "#", n)).strip() for n in names}) == 1
 
 
-def single_club(values: list[str], names: list[str] | tuple[str, ...] = ()) -> bool:
+# a loft glued to the letters before it, then a degree word: "LH0160 Degree" (13312155382), "left hand60 degree"
+# (13312109978), Yamato left-hand wedges one loft a variant, published as sets (review 2026-11-17); read only where no
+# loft of its own is written. The digits must follow a letter: "1056도", "SW56-10 Degree" stay unread. Over every
+# collected line of the shop (2026-11-17) it reads those 2 listings and "PW50도" of a junior iron set (50002787, its
+# other variants "7번36도": not every variant one club, no change).
+_GLUED_LOFT_RE = re.compile(r"(?i)(?<=[a-z])\d{0,3}?(4[4-9]|5\d|6\d|7[0-2])(?=\s*(?:degrees?|deg|도|°))")
+# a value that is one bare club name, "Sand Wedge" / "6 Iron" / "8 Iron" (KVV 13163034573, review 2026-11-17: one
+# club a variant, published as a set): read only where the listing is no iron set or full set (bare=True)
+_BARE_CLUB_RE = re.compile(r"(?i)\s*(?:(?:[3-9]|1[01])\s*(?:번\s*)?(?:iron|아이언)|(?:sand|gap|lob|pitching|approach)\s*wedge"
+                           r"|(?:샌드|갭|로브|롭|피칭|어프로치)\s*웨지|[pagsl]w)\s*")
+_A_CLUB_RE = re.compile(r"(?i)(?<![\d.])(?:[1-9]|1[01])\s*(?:번\s*)?(?:iron|아이언)(?![a-z])|(?:sand|gap|lob|pitching"
+                        r"|approach|샌드|갭|로브|롭|피칭|어프로치)\s*(?:wedge|웨지)|(?<![a-z])[pagsl]w(?![a-z])")
+
+
+def single_club(values: list[str], names: list[str] | tuple[str, ...] = (), bare: bool = False) -> bool:
     """The variant's own words say it sells one club (sets_only). A loft repeated on axes that describe one club
     ("Size: 56 Degree" + "Style Name: Black 56 Degree", Yamato 12951827729 / 12921931106, 2026-11-15: published as
     sets, every variant one wedge) counts once; on axes that are club slots (_club_slots: TaylorMade MG5 "52.09 SB" on
-    옵션 1 and 옵션 2) each counts."""
+    옵션 1 and 옵션 2) each counts. A loft glued to letters ("LH0160 Degree") counts where no other is written; with
+    bare, a value that is one bare club name ("Sand Wedge", "6 Iron") is one club too."""
     text = " ".join(values)
     if _SET_WORD_RE.search(text):
         return False
-    lofts = _LOFT_RE.findall(text)
+    lofts = _LOFT_RE.findall(text) or _GLUED_LOFT_RE.findall(text)
     if not _club_slots(list(names)):
         lofts = list(set(lofts))
-    return bool(_SINGLE_WORD_RE.search(text)) or len(lofts) == 1
+    if bool(_SINGLE_WORD_RE.search(text)) or len(lofts) == 1:
+        return True
+    return bare and not _club_slots(list(names)) and len(lofts) <= 1 \
+        and any(_BARE_CLUB_RE.fullmatch(v) for v in values) and len(_A_CLUB_RE.findall(text)) == 1
 
 
 # a listing filed under wedge sets that sells an iron set or a full set (wedge_sets: 50002783, 2026-11-16, the
@@ -361,7 +379,8 @@ _IRON_SET_RE = re.compile(r"(?i)아이언\s*(?:\d{1,2}\s*(?:개|종|피스|pcs?|
 _WEDGE_SET_RE = re.compile(r"(?i)웨지(?:\s*(?:\d{2}\s*(?:도|°)?|[agpsl]w(?![a-z])))*\s*(?:아이언\s*)?"
                            r"(?:\d{1,2}\s*(?:개|종|피스|pcs?)\s*)?세트|wedge\s*set")
 # a value that is one club: KVV 13163034573 "골프 웨지 KVV 아이언 세트", variants 6 Iron / 8 Iron / Sand Wedge, one
-# club a variant: not an iron set (left as it is, 2026-11-16); a single loft ("56 Degree", "56도") is one club too
+# club a variant: not an iron set (2026-11-16; since 2026-11-17 held single_only, each value a bare club name:
+# single_club bare); a single loft ("56 Degree", "56도") is one club too
 _ONE_CLUB_RE = re.compile(r"(?i)\s*(?:\d{1,2}\s*(?:번\s*)?(?:iron|아이언)|(?:sand|pitching|gap|lob|approach)\s*wedge|"
                           r"(?:샌드|피칭|갭|로브|롭|어프로치)\s*웨지|[psagl]w|\d{2}\s*(?:도|°|degrees?))\s*")
 
@@ -420,6 +439,23 @@ _JUNIOR_RE = re.compile(r"(?i)주니어|junior|키즈|(?<![a-z])kids?(?![a-z])|�
                         r"|(?<![\d.\-~–])(?:1[0-2]|[1-9])\s*(?:-|~|–|to)\s*(?:1[0-5]|[1-9])(?![\d.])\s*"
                         r"(?:years?|yrs?|세(?!트)|살)")
 _SET_IN_RE = re.compile(r"(?i)세트|셋트|set(?![a-z])")
+# a set of shafts filed under wedge sets by an agency that puts "골프 웨지" first ("골프 웨지 일본 N S 프로 모더스
+# 샤프트 플렉스 선택 - 3개 세트" 13163052613, "골프 웨지 ... 스피너 샤프트 세트 3개" 13163054725, review 2026-11-17):
+# held only where no wedge is named after that prefix and no two lofts are written ("조디아 WMS2 웨지 & ZNE 웨지 전용
+# 샤프트 3개 세트" 13826837511, shafts for its wedges with 48°/52°/56° rows, is not touched)
+_SHAFT_SET_RE = re.compile(r"샤프트\s*(?:플렉스\s*선택\s*[-–]?\s*)?(?:[2-9]\s*(?:개|종|피스|pcs?)\s*)?세트"
+                           r"|(?i:shafts?\s*set|set\s*of\s*\d+\s*shafts)")
+_AGENCY_WEDGE_PREFIX_RE = re.compile(r"^\s*골프\s*웨지\s+")
+_WEDGE_WORD_RE = re.compile(r"(?i)웨지|wedge")
+# tees of a material ("골프 웨지 가이즈 대나무 티 3-14인치 100개 250개 또는 1000개 세트" 13163078346, review
+# 2026-11-17): a tee word with 대나무 / 목재 / bamboo / wooden, not a gift ("대나무 티 50개 증정", "+ bamboo tees") and
+# not where the title writes a wedge set (bonus tees of a real set); "우드티", "블랙티" and "목재 티보다" are no tee pack
+_TEES_RE = re.compile(r"(?i)(?:대나무|목재|bamboo|wooden?)\s*(?:골프\s*)?티(?![가-힣])"
+                      r"|(?<![a-z])(?:bamboo|wooden?)\s+(?:golf\s+)?tees?(?![a-z])")
+_TEE_GIFT_AFTER_RE = re.compile(r"(?i)^\s*(?:\d{1,4}\s*(?:개|pcs?|ea|p)\s*)?(?:용\s*)?(?:증정|사은품|서비스|gift|free|포함|"
+                                r"무료|included)")
+_TEE_GIFT_BEFORE_RE = re.compile(r"(?i)(?:증정|사은품|무료|free|bonus|보너스|\+|&|with|포함)\s*[:：]?\s*"
+                                 r"(?:\d{1,4}\s*(?:개|pcs?)\s*)?$")
 
 
 def _wedge_set_written(texts: list[str], joined: str) -> bool:
@@ -430,6 +466,28 @@ def _wedge_set_written(texts: list[str], joined: str) -> bool:
     lofts = set(_LOFT_RE.findall(joined)) | set(_LOFT_DEGREE_RE.findall(joined))
     letters = {m.lower() for m in _WEDGE_LETTER_RE.findall(joined)}
     return len(lofts) + len(letters) >= 2
+
+
+def _shaft_set(title: str, values: list[str]) -> str | None:
+    """A set of shafts, no wedge (_SHAFT_SET_RE): the words, or None."""
+    m = _SHAFT_SET_RE.search(title)
+    if not m or _WEDGE_SET_RE.search(title) or _SET_WORD_RE.search(title[:m.start()]):
+        return None   # the agency's wedge sets: "골프 웨지 세트 52 56 60도", "골프 웨지 ... 3피스 세트 KBS 샤프트 세트"
+    rest = _AGENCY_WEDGE_PREFIX_RE.sub("", title)
+    if _WEDGE_WORD_RE.search(rest) or _wedge_set_written([rest] + values, " | ".join([rest] + values)):
+        return None
+    return m.group(0)
+
+
+def _tees(title: str, values: list[str]) -> str | None:
+    """A pack of tees, no wedge set (_TEES_RE): the words, or None."""
+    if _wedge_set_written([title], title):
+        return None
+    joined = " | ".join([title] + values)
+    for m in _TEES_RE.finditer(joined):
+        if not (_TEE_GIFT_AFTER_RE.search(joined[m.end():]) or _TEE_GIFT_BEFORE_RE.search(joined[:m.start()])):
+            return m.group(0)
+    return None
 
 
 def _gift(joined: str, m: re.Match[str]) -> bool:
@@ -508,7 +566,8 @@ def not_wedge_set(title: str, rows: list[list[str]]) -> str | None:
     """Why a listing of a wedge-sets category (wedge_sets) sells no wedge set: an iron run in the title or a variant's
     value, a count of 6 to 16 clubs ("7피스", "12 Piece"), a full set, a wood set or a junior set (_full_set: a driver,
     a wood, a hybrid, a complete set, a putter or a bag with other clubs, an age span), a practice set or an adjustable
-    club (_PRACTICE_RE), every variant one club with three
+    club (_PRACTICE_RE), a set of shafts (_shaft_set) or a pack of tees (_tees) with no wedge set, no wedge named, one
+    club (no set and no two lofts in the title, or one loft and one wedge letter), every variant one club with three
     numbered irons or more (_numbered_irons), or "아이언 세트" in the title with no "웨지 세트" (unless each variant is
     one club: KVV). None: a wedge set as far as the words go."""
     for text in [title] + [v for r in rows for v in r]:
@@ -522,16 +581,49 @@ def not_wedge_set(title: str, rows: list[list[str]]) -> str | None:
         return f"a full set, a wood set or a junior set ({word!r})"
     if m := _PRACTICE_RE.search(" | ".join([title] + [v for r in rows for v in r])):
         return f"a practice set or an adjustable club ({m.group(0)!r})"
+    if words := _shaft_set(title, [v for r in rows for v in r]):
+        return f"a shaft set, no wedge ({words!r})"
+    if words := _tees(title, [v for r in rows for v in r]):
+        return f"tees, no wedge set ({words!r})"
     if not _A_WEDGE_RE.search(" | ".join([title] + [v for r in rows for v in r])):
         return "no wedge named"
     if not (_SET_WORD_RE.search(title) or _wedge_set_written([title], title)):
         return "one club: no set and no two lofts in the title"
+    # one wedge letter and one loft are one club, not two ("요넥스 ... 로얄 이존 아이언 AW 로프트 49도" 13104702775,
+    # review 2026-11-17: published as a set): no set word, no "웨지 세트" and no wedge count in the title
+    if not _SET_WORD_RE.search(title) and not _WEDGE_SET_RE.search(title) and not _WEDGE_COUNT_RE.search(title) \
+            and len(set(_LOFT_RE.findall(title)) | set(_LOFT_DEGREE_RE.findall(title))) == 1 \
+            and len({m.lower() for m in _WEDGE_LETTER_RE.findall(title)}) == 1:
+        return "one club: one loft and one letter"
     if irons := _numbered_irons(rows):
         return f"one numbered iron a variant ({', '.join(map(str, irons))})"
     if _IRON_SET_RE.search(title) and not _WEDGE_SET_RE.search(title) \
             and not (rows and all(any(_ONE_CLUB_RE.fullmatch(v) for v in r) for r in rows)):
         return "an iron set in the title, no wedge set"
     return None
+
+
+# a title that sells a set or a single ("AS PREMIUM 남성용 또는 52 웨지 세트 싱글 페이스 웨지 CM 골프 밀드 50"
+# 13312300055, review 2026-11-17: no option, published as a set) with no option to choose and no set named in the spec
+# rows, the notice or the description (the title cut out of it): what is sold is not known (sets_only). Measured on
+# the shop's collected lines 2026-11-17: 154 titles of 50002783 match the words, 1 of them with no option and no set
+# named; the 50002787 junior "개인 클럽" titles match too but that category sells no sets only.
+_SET_OR_SINGLE_RE = re.compile(r"(?i)세트\s*또는|또는\s*싱글|개별|개인|또는.*싱글|싱글.*또는|set\s*or\s*single|or\s*single")
+_SET_NAMED_RE = re.compile(r"(?i)(?<![a-z])set(?![a-z])|세트|셋트|\b\d\s*/\s*\d\b|pcs|(?<![0-9])[2-9]\s*(?:개|종|피스|p)(?![a-z])")
+
+
+def _set_or_single_unchosen(line: dict[str, Any]) -> bool:
+    """The title says set or single (_SET_OR_SINGLE_RE), the page has no option group, and no spec row, notice row or
+    description text (without the title) names a set (_SET_NAMED_RE)."""
+    details, specs = line["details"], line.get("specs") or {}
+    title = re.sub(r"\s+", " ", details.get("name") or "")
+    groups = ((specs.get("options") or {}).get("option_groups")) or details.get("option_groups") or []
+    if groups or not _SET_OR_SINGLE_RE.search(title):
+        return False
+    rows = [f"{r.get('label')} | {r.get('value')}" for r in specs.get("specs") or []]
+    rows += [f"{r.get('label')} | {r.get('value')}" for r in (details.get("notice") or {}).get("items") or []]
+    text = ((details.get("description") or {}).get("text") or "").replace(details.get("name") or "", "")
+    return not (_SET_NAMED_RE.search(" ".join(rows)) or _SET_NAMED_RE.search(text))
 
 
 def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: CategoryRules) -> dict[str, Any]:
@@ -557,8 +649,14 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
         # "웨지 세트 52 56 60도 ... 실버 1개": the title sells one piece of the set (2026-11-15, the wedge pilot)
         return {"options": [], "facts": [], "variants": [], "held": [{"code": "single_only", "detail":
                 "the title sells one piece (1개, 1pc)"}], "skipped_paid": 0, "duplicate_values": [], "capped": None}
-    if cat.sets_only and rows:                     # a single club's variant is not sold; only such: held
-        sets = [r for r in rows if not single_club(r["options"], names)]
+    if cat.sets_only and not rows and _set_or_single_unchosen(line):
+        return {"options": [], "facts": [], "variants": [], "held": [{"code": "single_only", "detail":
+                "the title sells a set or a single, no option chooses it"}], "skipped_paid": 0,
+                "duplicate_values": [], "capped": None}
+    if cat.sets_only and rows:                   # a single club's variant is not sold; only such: held
+        # a bare club name ("Sand Wedge", "6 Iron") is one club only where the listing is no iron set or full set:
+        # those keep their not_wedge_set code (MAZEL WM-X "8번 아이언", review 2026-11-17)
+        sets = [r for r in rows if not single_club(r["options"], names, bare=why is None)]
         if not sets:
             return {"options": [], "facts": [], "variants": [], "held": [{"code": "single_only", "detail":
                     f"{len(rows)} variants, each one club"}], "skipped_paid": 0, "duplicate_values": [], "capped": None}

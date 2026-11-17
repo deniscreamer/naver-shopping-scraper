@@ -3,8 +3,11 @@ fairwardgolf-50002783-20261116T150134Z) published 9 iron sets into the wedge-set
 lists them because their sellers filed them under 웨지. transform.not_wedge_set holds them (not_wedge_set) where the
 category's wedge_sets is on; the same night it published full sets, wood sets and junior sets with no iron run and
 under 6 clubs counted, and a listing of one numbered iron a variant: held too (WOOD_AND_JUNIOR_SETS, ONE_IRON_A_VARIANT).
-The fixture is every 50002783 listing of the shop (502 on 2026-11-16, 604 at its refresh that night), title and variant
-rows (make_wedge_sets_fixture.py); its state columns are a snapshot, so the tests pin keys, never counts; offline."""
+The fixture is every 50002783 listing of the shop (502 on 2026-11-16, 604 at its refresh that night, 906 at the review
+of 2026-11-17), title and variant rows (make_wedge_sets_fixture.py); its state columns are a snapshot, so the tests pin
+keys, never counts; offline. The review of 2026-11-17 added shaft sets, tees and one loft with one wedge letter
+(not_wedge_set), and the single clubs that only prepare reads (single_club: a loft glued to letters, a bare club name;
+a title "set or single" with no option): test_single_clubs_of_the_review_are_held_single_only."""
 import copy
 import dataclasses
 import json
@@ -84,6 +87,11 @@ TAIL = {
     "13837017295": 'one club: no set and no two lofts in the title',
     "13799199015": 'one club: no set and no two lofts in the title',
     "7825655039": 'one club: no set and no two lofts in the title',
+    # the review of 2026-11-17 (all published as wedge sets, withdrawn on the owner's word the same day)
+    "13163052613": "a shaft set, no wedge ('샤프트 플렉스 선택 - 3개 세트')",   # Nippon N.S. Pro Modus, 3 shafts
+    "13163054725": "a shaft set, no wedge ('샤프트 세트')",                    # True Temper Dynamic Gold, 3 shafts
+    "13163078346": "tees, no wedge set ('대나무 티')",                         # Wedge Guys bamboo tees, 1000
+    "13104702775": "one club: one loft and one letter",                       # Yonex Royal EZONE AW 49도
 }
 ONE_IRON_A_VARIANT = {"13762637990", "13762667328", "13830308916"}   # MAZEL WM-X "8번 아이언", "피칭 웨지", "아이언 2종"
 # held single_only already (four single wedges by loft, "아이언세트" in the title; wedges by loft, "우드 드라이버" in
@@ -120,7 +128,11 @@ HELD_SINCE = {"13365547743", "13371801797", "13377603626", "13385700387", "13390
               "13365502762", "13367215167", "13370542277", "13370591930", "13370657186", "13377534401", "13383281785", "13383398815",
               "13383793589", "13384520627", "13385269148", "13385553390", "13385684651", "13385945341", "13386161009", "13386664678",
               "13389318754", "13389349742", "13389485564", "13389674378", "13389736387", "13389997243", "13390701503", "13590272087",
-              "13590416670", "13209378848", "13209387734", "13209552781", "12592963046", "12592973343", "13251646952", "13642238497"}
+              "13590416670", "13209378848", "13209387734", "13209552781", "12592963046", "12592973343", "13251646952", "13642238497",
+              # collected after the refresh of the 330th, held before the review of 2026-11-17 (its refresh: 906)
+              "13620800318", "13621409117", "13621410927", "13621412222", "13621413572", "13621414098",
+              "12888330067", "13253060062", "13204497320", "13204959337", "13569960403", "13526583050",
+              "13526752787", "13548176584", "13685984034"}
 HELD = set(IRON_SETS) | set(FULL_SETS) | set(WOOD_AND_JUNIOR_SETS) | set(MISSED_SETS) | set(PRACTICE) | set(TAIL) | ONE_IRON_A_VARIANT | SINGLE_ONLY_TOO | HELD_SINCE
 
 
@@ -148,7 +160,8 @@ def test_the_published_wedge_sets_stay():
             assert not not_wedge_set(r["title"], r["rows"]), (pid, r["title"])
 
 
-WEDGE_SETS = ("13163034573",      # KVV "아이언 세트", variants 6 Iron / 8 Iron / Sand Wedge: one club a variant
+WEDGE_SETS = ("13163034573",      # KVV "아이언 세트", variants 6 Iron / 8 Iron / Sand Wedge: one club a variant, no iron
+                                  # set (prepare holds it single_only since 2026-11-17: each value a bare club name)
                 "10800343815",      # 혼마 베레스 NX 아이언 SW AW 웨지세트
                 "11006400319",      # 혼마 투어월드 GS 11번(47도)/SW(56도) 웨지세트
                 "13850694032",      # 테일러메이드 P8CB 웨지 세트 50도+56도 아이언 2개
@@ -289,6 +302,29 @@ def test_not_an_iron_run(text):
     ("Golf Wedge Set", [["7 Iron"], ["8 Iron"], ["9 Iron"]], True),
     ("Golf Wedge Set", [["7 Iron"], ["8 Iron"], ["52 56 Set"]], False),
     ("Golf Wedge Set", [["6 Iron"], ["8 Iron"], ["Sand Wedge"]], False),  # KVV: two irons
+    # the review of 2026-11-17: a set of shafts (no wedge after the agency's "골프 웨지", no two lofts), not a wedge
+    # set with its shafts; tees of a material, not a gift nor bonus tees of a written wedge set; one loft and one
+    # letter are one club
+    ("골프 웨지 일본 N S 프로 모더스 샤프트 플렉스 선택 - 3개 세트 레귤러 105g", [], True),
+    ("골프 웨지 트루 템퍼 다이내믹 골드 투어 이슈 스피너 샤프트 세트 3개", [], True),
+    ("골프 웨지 Golf Shaft Set of 3", [], True),
+    ("Golf Wedge Shaft Set of 3", [], False),                           # a wedge named outside the agency's prefix
+    ("조디아 WMS2 웨지 & ZNE 웨지 전용 샤프트 3개 세트", [["90", "48°/52°/56°"]], False),   # 13826837511
+    ("골프 웨지 52 56 60 샤프트 세트", [], False),                        # lofts: wedges with their shafts
+    ("웨지 3종 세트 샤프트 선택", [], False),
+    ("골프 웨지 세트 3종 (샤프트 세트 포함)", [], False),                # the agency's wedge set (review of W3)
+    ("골프 웨지 커클랜드 시그니처 3피스 세트 KBS 샤프트 세트", [], False),     # a set word before the shaft set
+    ("골프 웨지 가이즈 대나무 티 3-14인치 100개 250개 또는 1000개 세트 초강력 내구성 및 목재 티보다 강함", [["1000"]], True),
+    ("Bamboo Golf Tees 1000 pcs set 웨지", [], True),
+    ("웨지 세트 + 대나무 티 50개 증정", [], False),
+    ("웨지 3종 세트 52 56 60 bamboo tees", [], False),                   # a wedge set written: bonus tees
+    ("웨지세트 52/56 블랙티 에디션", [], False),
+    ("웨지 2종 세트 (나무티 포함)", [], False),
+    ("웨지 세트 골프 티셔츠 증정", [], False),
+    ("요넥스 YONEX 남성 로얄 이존 아이언 AW 로프트 49도 RX06RE 497 204293", [["R"], ["SR"]], True),
+    ("웨지 AW 52도 SW 56도", [], False),                                  # two lofts, two letters
+    ("혼마 웨지 AW SW 52 56", [], False),
+    ("AW 52도 웨지 세트", [], False),                                     # a set word
 ])
 def test_counts_and_the_title(title, rows, held):
     assert bool(not_wedge_set(title, rows)) is held
@@ -336,3 +372,66 @@ def test_only_wedge_sets_categories_hold_iron_sets():
     """The iron sets' own category (50002670) and the full sets' (50002788, 50002787) never hold their own products."""
     rules = rules_for("fairwardgolf")
     assert [c for c, r in rules.categories.items() if r.wedge_sets] == [WEDGES]
+
+
+@pytest.mark.parametrize("values, single", [
+    # a loft glued to the letters before it (Yamato left-hand wedges 13312155382 / 13312109978, review 2026-11-17)
+    (["LH0160 Degree"], True), (["LH0156 Degree"], True), (["left hand60 degree"], True), (["RH52도"], True),
+    (["SW56-10 Degree"], False), (["1056도"], False), (["i60R"], False), (["LH01-52 56 60 Degree"], False),
+    (["Loft 10 Degree"], False), (["LH0152 56 Degree Set"], False),
+])
+def test_a_loft_glued_to_letters_is_one_club(values, single):
+    assert transform.single_club(values) is single
+
+
+@pytest.mark.parametrize("values, bare, single", [
+    # a bare club name is one club only with bare (where not_wedge_set has no reason: KVV 13163034573)
+    (["Sand Wedge"], True, True), (["6 Iron"], True, True), (["8번 아이언"], True, True), (["PW"], True, True),
+    (["Sand Wedge"], False, False), (["6 Iron"], False, False),
+    (["Sand Wedge", "Steel"], True, True),
+    (["Sand Wedge + Gap Wedge"], True, False), (["PW AW SW"], True, False), (["52 56 Sand Wedge Set"], True, False),
+    (["Sand Wedge 52 56"], True, False), (["우측 8번 아이언"], True, False),
+])
+def test_a_bare_club_name_is_one_club(values, bare, single):
+    assert transform.single_club(values, (), bare=bare) is single
+
+
+def _line(title: str, values: list[str]) -> dict:
+    """The XINGGM line (13468791008) with another title and one value a variant on its first axis."""
+    with open(os.path.join(HERE, "fixtures", "collected", "13468791008.json"), encoding="utf-8") as f:
+        line = json.load(f)
+    line["details"]["name"] = title
+    groups = line["specs"]["options"]["option_groups"]
+    base = line["specs"]["options"]["variants"][0]
+    line["specs"]["options"]["variants"] = [
+        {**base, "id": str(i), "options": [v] + [base["options"][1]] * (len(groups) - 1), "extra_price": 0}
+        for i, v in enumerate(values)]
+    return line
+
+
+def test_single_clubs_of_the_review_are_held_single_only():
+    """Review 2026-11-17: Yamato's glued lofts (13312155382), KVV's bare club names (13163034573) and a title "set or
+    single" with no option (13312300055) are held single_only; MAZEL's numbered irons keep not_wedge_set."""
+    rules = rules_for("fairwardgolf")
+
+    def held(line):
+        return [(h["code"], h["detail"]) for h in prepare(copy.deepcopy(line), rules, "50002783-fixtures", 1)["held"]]
+
+    assert held(_line("야마토 왼손잡이 세트 개별 CNC 골프 단조 – 52 샌드 56 웨지 밀드 60 LH0160 Degree",
+                      ["LH0160 Degree", "LH0156 Degree"])) == [("single_only", "2 variants, each one club")]
+    assert held(_line("골프 웨지 KVV 아이언 세트 남성용 강철 샤프트 오른손용 Sand Wedge",
+                      ["Sand Wedge", "6 Iron", "8 Iron"])) == [("single_only", "3 variants, each one club")]
+    assert [c for c, _ in held(_line("MAZEL 웨지 세트", ["7 Iron", "8 Iron", "9 Iron"]))] == ["not_wedge_set"]
+    kept = _line("골프 웨지 KVV 세트 남성용", ["Sand Wedge", "52 56 Set"])
+    assert prepare(copy.deepcopy(kept), rules, "50002783-fixtures", 1)["status"] == "ready"
+
+    line = _line("AS PREMIUM 남성용 또는 52 웨지 세트 싱글 페이스 웨지 CM 골프 밀드 50", [])
+    line["specs"]["options"] = {**line["specs"]["options"], "has_options": False, "option_groups": [], "variants": []}
+    line["details"]["description"]["text"] = "AS PREMIUM 밀드 웨지"
+    assert held(line) == [("single_only", "the title sells a set or a single, no option chooses it")]
+    named = copy.deepcopy(line)                     # a spec row that names the set: sold as written
+    named["specs"]["specs"].append({"label": "구성", "value": "웨지 2개 세트"})
+    assert held(named) == []
+    plain = copy.deepcopy(line)                     # no "or single" in the title: not this hold
+    plain["details"]["name"] = "AS PREMIUM 남성용 52 웨지 세트 페이스 웨지 CM 골프 밀드 50"
+    assert held(plain) == []

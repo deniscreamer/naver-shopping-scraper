@@ -242,6 +242,12 @@ def test_iron_sets_leave_heads_singles_and_mens_out(title, code):
     ("PGM 골프 클럽 세트 및 리그리핑 키트 웨지 Silver", "title:accessory"),
     ("골프 웨지 세트 초보자용 스키 팁 커넥터, 귀여운 감성 클립 훈련 보조기, 겨울 웨지", "title:accessory"),
     ("마쓰이 치퍼 701C 골프웨지 골프클럽", "title:chipper"),
+    # 칩퍼 / Chipper (KVV 13162968497, review 2026-11-17); 칩 퍼터 / 칩 퍼팅 are other words
+    ("골프 웨지 KVV 프리미엄 샌드 남녀용 455560도 피칭 및 칩퍼 - 토너먼트 경기 적합 숏게임 향상 3-Chipper Set",
+     "title:chipper"),
+    ("Golf Chipper Wedge 35 Degree", "title:chipper"),
+    ("칩 퍼터 겸용 골프 웨지 세트 52 56", None),
+    ("칩퍼팅 연습 웨지 세트 52 56 60", None),
     ("중고미즈노 JPX850 포지드 GS번 카본55R 웨지세트 (50088.85)", "title:used"),
     ("GUTE 에어 웨지 백 펌프 3팩 상업용 팽창식 도구", "title:not_golf"),
     ("스틸 해머 웨지 세트 목공용 클로 10개입", "title:not_golf"),
