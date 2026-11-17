@@ -1,0 +1,318 @@
+{
+ "id": "13276406356",
+ "channelServiceType": "STOREFARM",
+ "channelProductType": "SINGLE",
+ "channelProductSupplyType": "OWNER",
+ "channelProductStatusType": "NORMAL",
+ "channelProductDisplayStatusType": "ON",
+ "category": {
+  "categoryId": "50002783",
+  "categoryName": "웨지",
+  "category1Id": "50000007",
+  "category2Id": "50000029",
+  "category3Id": "50001102",
+  "category4Id": "50002783",
+  "category1Name": "스포츠/레저",
+  "category2Name": "골프",
+  "category3Name": "골프클럽",
+  "category4Name": "웨지",
+  "wholeCategoryId": "50000007>50000029>50001102>50002783",
+  "wholeCategoryName": "스포츠/레저>골프>골프클럽>웨지",
+  "categoryLevel": 4,
+  "lastLevel": true,
+  "sortOrder": 5,
+  "validCategory": true,
+  "receiptIssue": true,
+  "exceptionalCategoryTypes": [
+   "FREE_RETURN_INSURANCE",
+   "GROUP_PRODUCT_MAX",
+   "RENTAL_SUBSCRIPTION",
+   "REGULAR_SUBSCRIPTION",
+   "MANUFACTURE_DEFINE_NO"
+  ],
+  "pointAccumulationYn": false
+ },
+ "name": "BombTech - 프리미엄 골프 웨지 세트 52 56 60도 왼손잡이",
+ "productUrl": "https://smartstore.naver.com/main/products/13276406356",
+ "mobileProductUrl": "https://m.smartstore.naver.com/main/products/13276406356",
+ "storeKeepExclusiveProduct": false,
+ "best": false,
+ "orderRequestUsable": false,
+ "channelProductAttributes": [],
+ "productNo": "13217870074",
+ "salePrice": 587900,
+ "dispSalePrice": 587900,
+ "stockQuantity": 100,
+ "saleType": "NEW",
+ "excludeAdminDiscount": false,
+ "payExposure": true,
+ "productStatusType": "SALE",
+ "statusType": "SALE",
+ "authenticationType": "NORMAL",
+ "itselfProductionProductYn": false,
+ "afterServiceInfo": {
+  "afterServiceTelephoneNumber": "********",
+  "afterServiceGuideContent": "********"
+ },
+ "originAreaInfo": {
+  "originAreaType": "INCLUDE_IN_DETAILS",
+  "content": "상세설명에 표시",
+  "originAreaCode": "03",
+  "wholeOriginAreaName": "상세설명에 표시",
+  "plural": false
+ },
+ "sellerCodeInfo": {
+  "sellerManagementCode": "69ba4cfa8890c1d44b9864c6"
+ },
+ "optionUsable": true,
+ "options": [
+  {
+   "id": 11491665289,
+   "optionType": "COMBINATION",
+   "groupName": "Color"
+  }
+ ],
+ "optionCombinations": [
+  {
+   "id": 56988937249,
+   "optionName1": "Black",
+   "stockQuantity": 100,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2026-03-19T15:46:01.459+00:00",
+   "todayDispatch": true
+  }
+ ],
+ "optionStandards": [],
+ "supplementProductUsable": false,
+ "supplementProducts": [],
+ "customMadeInfo": {
+  "customMade": false
+ },
+ "taxType": "TAX",
+ "certification": false,
+ "certificationTargetExcludeContent": {
+  "kcCertifiedProductExclusionYn": true,
+  "kcCertifiedProductExclusionType": "TRUE",
+  "greenCertifiedProductExclusionYn": true
+ },
+ "minorPurchasable": true,
+ "productInfoProvidedNoticeView": {
+  "basic": {
+   "품명 / 모델명": "상세설명참조 / 상세설명참조",
+   "법에 의한 인증, 허가 등을 받았음을 확인할 수 있는 경우 그에 대한 사항": "해당사항 없음",
+   "제조자(사)": "상세설명참조",
+   "제조국": "상세설명에 표시",
+   "A/S 책임자": "상세설명참조",
+   "A/S 전화번호": "********"
+  },
+  "additional": {
+   "재화등의 배송방법에 관한 정보": "택배",
+   "주문 이후 예상되는 배송기간": "대금 지급일로부터 3일 이내에 발송",
+   "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 제품의 하자 또는 오배송 등으로 인한 청약철회의 경우에는 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있으며, 반품 비용은 통신판매업자가 부담합니다.",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보": "편도 9000원 (최초 배송비 무료인 경우 18000원 부과)",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거": "전자상거래 등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.",
+   "재화등의 교환·반품·보증 조건 및 품질보증기준": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "재화등의 A/S 관련 전화번호": "********",
+   "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차": "주문취소 및 대금의 환불은 네이버페이 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에 관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에 지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 15%의 지연배상금을 판매자에게 청구할 수 있습니다.",
+   "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항": "소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다.",
+   "거래에 관한 약관의 내용 또는 확인할 수 있는 방법": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다."
+  }
+ },
+ "productDeliveryInfo": {
+  "deliveryFeeType": "FREE",
+  "deliveryMethodTypes": [
+   "DELIVERY"
+  ],
+  "baseFee": 0,
+  "installationFee": false,
+  "deliveryAttributeType": "TODAY",
+  "todayStockQuantity": 100,
+  "todayDelivery": true,
+  "thisDayDispatchBasisTime": "09:00:00.000+0000",
+  "deliveryCompany": {
+   "id": "CJGLS",
+   "name": "CJ 대한통운(오네)"
+  }
+ },
+ "claimDeliveryInfo": {
+  "returnDeliveryCompanyPriority": "PRIMARY",
+  "deliveryCompanyName": "한진택배",
+  "deliveryCompanyCode": "HANJIN",
+  "naverPayAppointment": true,
+  "returnDeliveryFee": 9000,
+  "exchangeDeliveryFee": 18000,
+  "shippingAddressId": 200005019,
+  "returnAddressId": 200005020,
+  "shippingAddress": "경상남도 진주시 중앙시장길 11 3층 2호 3층 3-2호(중앙동, 자유시장) (우 : 52754) ",
+  "returnAddress": "서울특별시 강서구 방화대로48길 40 (도시개발공사아파트) 217동 504호 (우 : 07519) ",
+  "overseasShipping": false,
+  "freeReturnInsurance": false
+ },
+ "isCultureCostIncomeDeduction": false,
+ "isRestrictCart": false,
+ "naverGuaranteed": false,
+ "newShoppingExposureYn": true,
+ "benefitsView": {
+  "discountedSalePrice": 411530,
+  "dispDiscountedSalePrice": 411530,
+  "sellerImmediateDiscountAmount": 176370,
+  "managerImmediateDiscountAmount": 0,
+  "specialDiscountAmount": {},
+  "discountedRatio": 30,
+  "dispDiscountedRatio": 30,
+  "sellerPurchasePoint": 0,
+  "sellerCustomerManagementPoint": 0,
+  "managerPurchasePoint": 4115,
+  "managerPurchaseExtraPoint": 0,
+  "managerPaymoneyAccumulatePoint": 6172,
+  "managerBankbookAccumulatePoint": 2057,
+  "managerArrivalGuaranteePoint": 0,
+  "managerMembershipArrivalGuaranteePoint": 0,
+  "generalPurchaseReviewPoint": 0,
+  "premiumPurchaseReviewPoint": 0,
+  "managerGeneralPurchaseReviewPoint": 50,
+  "managerPremiumPurchaseReviewPoint": 150,
+  "textReviewPoint": 0,
+  "photoVideoReviewPoint": 0,
+  "afterUseTextReviewPoint": 0,
+  "afterUsePhotoVideoReviewPoint": 0,
+  "storeMemberReviewPoint": 0,
+  "managerTextReviewPoint": 50,
+  "managerPhotoVideoReviewPoint": 150,
+  "managerAfterUseTextReviewPoint": 50,
+  "managerAfterUsePhotoVideoReviewPoint": 150,
+  "givePresent": false
+ },
+ "averageDeliveryLeadTime": {
+  "productAverageDeliveryLeadTime": 0,
+  "sellerAverageDeliveryLeadTime": 0
+ },
+ "detailContents": {
+  "detailContentText": "OptionsBlack크기35 1/4\"색상검정골프 클럽 플렉스유니플렉스손 방향왼쪽골프 클럽 로프트52도재료강철브랜드봄텍 골프샤프트 재료강철품목 무게1.43킬로그램그립 소재합성 고무브랜드 이름봄텍 골프골프 클럽 유형웨지 골프 클럽제조업체봄테크 골프아이템 유형 이름골프 클럽포함된 구성 요소52, 56, 60 웨지플렉스유니플렉스로프트52도그립 유형표준골프 클럽 바운스 각도10도그립 크기오버사이즈재료 유형강철Size35 1/4\"ColorBlackGolf Club FlexUniflexHand OrientationLeftGolf Club Loft52 DegreesMaterialSteelBrandBombtech GolfShaft MaterialSteelItem Weight1.43 KilogramsGrip MaterialSynthetic RubberAbout this item✓ PREMIUM QUALITY AT FRACTION OF THE PRICE: No retail and no pros means you get more for your money.✓ COMPLETE SET OF THREE WEDGES: Includes 52, 56 and 60 degree lofts with 12, 10 and 8 bounces.✓ MAX FORGIVENESS: Heavier weights for max control and feel provides for max forgiveness. The BombTech black golf wedges are slightly oversized to make even your bad shots look pretty freaking good.✓ OPTIMAL SPIN: Max legal groove depth for increased spin.✓ EASY TO HIT FROM ANYWHERE: Wedges that are easy to hit from anywhere. The micro-milled face provides for great spin, control and consistency from the fairway or rough.›Product description",
+  "excessDetailContentText": false,
+  "editorType": "NONE"
+ },
+ "useExternalStock": false,
+ "dispName": "BombTech - 프리미엄 골프 웨지 세트 52 56 60도 왼손잡이",
+ "adultAuthorizationType": "NOT_LOGIN",
+ "authorizationDisplay": "NORMAL",
+ "galleryImages": [
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20260320_15/1773935158784EtBho_JPEG/38657582610826055_1661027137.jpeg",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "REPRESENTATIVE"
+  },
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20260320_10/1773935159032AgJQW_JPEG/38657582857504663_508548434.jpeg",
+   "width": 1000,
+   "height": 898,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 2,
+   "url": "https://shop-phinf.pstatic.net/20260320_282/1773935159289bVlTy_JPEG/38657583112665546_1388688021.jpeg",
+   "width": 954,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 3,
+   "url": "https://shop-phinf.pstatic.net/20260320_216/1773935159554VvTme_JPEG/38657583380417966_724393337.jpeg",
+   "width": 1000,
+   "height": 901,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 4,
+   "url": "https://shop-phinf.pstatic.net/20260320_10/1773935159807TEB4k_JPEG/38657583631241904_1503211075.jpeg",
+   "width": 1000,
+   "height": 1000,
+   "imageType": "OPTIONAL"
+  },
+  {
+   "order": 5,
+   "url": "https://shop-phinf.pstatic.net/20260320_129/1773935160192bzsHt_JPEG/38657584019163967_148429405.jpeg",
+   "width": 791,
+   "height": 903,
+   "imageType": "OPTIONAL"
+  }
+ ],
+ "soldout": false,
+ "viewAttributes": {
+  "상품상태": "신상품",
+  "상품번호": "13276406356",
+  "제조사": "BombTech Golf",
+  "브랜드": "Bombtech Golf",
+  "원산지": "상세설명에 표시"
+ },
+ "additionalAttributes": {
+  "영수증발급": "신용카드전표, 현금영수증발급",
+  "A/S 안내": [
+   "********",
+   "********"
+  ]
+ },
+ "eCouponCategory": false,
+ "cultureCategory": false,
+ "textOptions": [],
+ "simpleOptions": [],
+ "combinationOptions": [
+  {
+   "groupName": "Color",
+   "options": [
+    {
+     "id": 56988937249,
+     "optionName1": "Black",
+     "stockQuantity": 100,
+     "price": 0,
+     "regOrder": 0,
+     "registerDate": "2026-03-19T15:46:01.459+00:00",
+     "todayDispatch": true
+    }
+   ],
+   "checkedName": null,
+   "checkedIds": null,
+   "price": 0,
+   "isLastDepth": true
+  }
+ ],
+ "standardOptions": [],
+ "standardCombinations": [
+  {
+   "id": 56988937249,
+   "optionName1": "Black",
+   "stockQuantity": 100,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2026-03-19T15:46:01.459+00:00",
+   "todayDispatch": true,
+   "title": "_Black____"
+  }
+ ],
+ "supplements": [],
+ "deliveryText": null,
+ "deliveryMethodType": {
+  "code": 1,
+  "name": "택배",
+  "description": "택배",
+  "etc": null,
+  "naverPayCode": "DELIVERY"
+ },
+ "discountedSalePrice": 411530,
+ "mobileDiscountRatio": 30,
+ "derived": {
+  "productType": "DEFAULT"
+ },
+ "hopeDelivery": null,
+ "commentCount": 0,
+ "isPayMember": false,
+ "arrivalGuarantee": false,
+ "groupId": null,
+ "groupEpId": null,
+ "simpleProductAffiliateYn": false,
+ "disableAdditionalApi": false
+}

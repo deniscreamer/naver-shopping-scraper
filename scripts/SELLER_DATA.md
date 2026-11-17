@@ -147,6 +147,22 @@ Code: `server/naver_shopping/measures.py`, `scripts/package_measures.py`.
 - "7번 기준 36인치, 332g" is one reference club; "6아이언" is a set of six irons.
 - A plain 중량 row of a set is the set as sold, but with or without the box is not said: confidence 4 (2 on the
   1-3 scale used until 2026-11-10).
+- The wedge-set review (2026-11-17, wave W8), agency imports of Amazon pages (102301688, 102454334 and others):
+  the spec list typed as dash bullets ("- Item Weight : 1.2 Kilograms": a plain row, C12), "- Package Weight : 1.45
+  Kilograms" under a club heading ("샌드 웨지": the box, not the club, C09), two-cell `display:flex` divs ("Item
+  Weight | 1.43 Kilograms", C14), a label line with its value on the next line ("Item Package Dimensions" / "38 x 4.5
+  x 4 inches", C15: 13309962714, 13605472374, 13866792640); colour-only variants (Black / Silver) whose lines name no
+  colour (the line is the product's, C13: 13312219526); units Kilograms / Pounds / 파운드 (C10, 50002783 only).
+  A set's page often shows one club's Amazon weight or box (0.45 kg, 1.04 lb, "36.5 x 4 x 0.5 inches": 13377524996,
+  13390828643, 13162968497, 13372006463): refused by the row's band. Korean sellers label each club's weight (USPA
+  "414g / 412g", PRGR 448 g, Toho 460 g): the set's weight from them (C17); a #7 / #5 reference (Yamaha RMX, FITTAS
+  "#5번 기준") and Amazon's Item Weight (GoSports 424 g for a 3-wedge set) are not. -> `measures.py` `BULLET_ROW`,
+  `flex_rows`, `label_value_lines`, `_colour_only`; `description_measures.py` `LONG_UNITS`, `joined_lines`,
+  `compose_by_count`; PACKAGE.md.
+- Wedge-set variant values (2026-11-17, the W8 review, 50002783): lofts before 세트 ("왼손 52 56 60 세트",
+  13830318407, 12918989466; "50/56세트", 10361963641), lofts after a model code's dash ("LH01-52 56 60 Degree",
+  12178264810), and a shaft's weight or flex as a bare number beside one loft ("52도 / 스틸파이버 / i70 A",
+  "60 normal / 48°/52°/56°" 13826807592, "DIAMANA TM50"). -> `package_measures.lofts`; PACKAGE.md "kinds".
 
 ## Transform (scripts)
 

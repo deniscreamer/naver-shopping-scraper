@@ -571,6 +571,10 @@ surfaces.
   the 크기 row), club spec tables are td-only with a column header row (6774818843, 13049116377), "총중량" in a club spec
   is one club's total (13777887875), and a notice 중량 may list one weight per club count (6630856593 "약11.5kg / 4.7kg"
   for the 12- and 4-club variants).
+- Agency imports of Amazon pages (wedge sets, seen 2026-11-17): the spec list is typed as dash bullets ("- Item Weight :
+  1.2 Kilograms", "- Package Weight : 1.45 Kilograms" under a club heading), drawn as two-cell `display:flex` divs, or
+  flattened to a label line with its value on the next line; colour-only variants rarely name their colour in the
+  line. -> `naver_shopping/measures.py` `BULLET_ROW`, `flex_rows`, `label_value_lines`, `_colour_only` comments.
 - Spec rows vs options (seen 2026-11-06, 40 golf sets of 50002788): 상품정보 rows are product-wide, but on a set sold in
   several versions they often describe one version (아이언샤프트소재 그라파이트/카본 with "남성용 SR스틸", 총클럽개수 12개 with 9종 / 12종, 아이언 구성
   of the 4-club set, 출시 2026년형 with XR26 / XR 24), and sometimes none (총클럽개수 12개 where every part list counts 11); the

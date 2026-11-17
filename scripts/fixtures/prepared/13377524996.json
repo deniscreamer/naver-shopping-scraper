@@ -59,26 +59,28 @@
     "available": true,
     "package": {
      "product_weight_g": {
-      "low": 900,
-      "central": 1400,
-      "high": 2800,
+      "low": 760,
+      "central": 920,
+      "high": 1100,
       "source": "category_default",
       "confidence": 1,
       "reliability": "estimated_average",
-      "table_version": 6,
+      "table_version": 7,
       "approved_by": "owner",
-      "approved_at": "2026-11-15"
+      "approved_at": "2026-11-17",
+      "kind": "two_wedges"
      },
      "package_weight_g": {
-      "low": 1500,
-      "central": 2200,
-      "high": 3800,
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
       "source": "category_default",
       "confidence": 1,
       "reliability": "estimated_average",
-      "table_version": 6,
+      "table_version": 7,
       "approved_by": "owner",
-      "approved_at": "2026-11-15"
+      "approved_at": "2026-11-17",
+      "kind": "two_wedges"
      },
      "package_length_mm": {
       "low": 960,
@@ -87,31 +89,34 @@
       "source": "category_default",
       "confidence": 1,
       "reliability": "estimated_average",
-      "table_version": 6,
+      "table_version": 7,
       "approved_by": "owner",
-      "approved_at": "2026-11-15"
+      "approved_at": "2026-11-17",
+      "kind": "two_wedges"
      },
      "package_width_mm": {
-      "low": 150,
-      "central": 200,
-      "high": 280,
+      "low": 110,
+      "central": 150,
+      "high": 200,
       "source": "category_default",
       "confidence": 1,
       "reliability": "estimated_average",
-      "table_version": 6,
+      "table_version": 7,
       "approved_by": "owner",
-      "approved_at": "2026-11-15"
+      "approved_at": "2026-11-17",
+      "kind": "two_wedges"
      },
      "package_height_mm": {
-      "low": 80,
+      "low": 60,
       "central": 100,
-      "high": 150,
+      "high": 120,
       "source": "category_default",
       "confidence": 1,
       "reliability": "estimated_average",
-      "table_version": 6,
+      "table_version": 7,
       "approved_by": "owner",
-      "approved_at": "2026-11-15"
+      "approved_at": "2026-11-17",
+      "kind": "two_wedges"
      }
     },
     "today_dispatch": null

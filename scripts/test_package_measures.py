@@ -212,7 +212,7 @@ def test_baselines_block_is_optional_and_the_operators():
     table = load_table()
     block = table["rows"][0]["baselines"]
     assert {k: block[k] for k in BASE if k != "basis"} == {k: v for k, v in BASE.items() if k != "basis"}
-    assert table["version"] == 6 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
+    assert table["version"] == 7 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
     check_row(ROW)                                                    # a row without the block: no composition
     check_row({**ROW, "baselines": BASE})
 
@@ -343,3 +343,107 @@ def test_wedge_sets_take_the_sets_box_and_a_single_wedge_its_own():
     for title, variant in (("테일러메이드 MG5 웨지 SB 세트 3개", "52+56+60"), ("프로기아 웨지세트 단품", None),
                            ("BYBOMYA 단조 골프 웨지 개별 또는 세트", "세트 52/56/60"), ("웨지 3종 세트", "52도")):
         assert default_kind(row, title, variant) is None
+
+
+WEDGES = next(r for r in load_table()["rows"] if r["category_id"] == "50002783")
+
+
+@pytest.mark.parametrize("title, variant, siblings, kind", [
+    ("미우라 포지드 웨지 2개세트", "2개 (52Y 56Y)", None, "two_wedges"),        # the variant's own count (11585678496)
+    ("야마토 웨지 세트", "56 60 Degree Tarnish", None, "two_wedges"),          # two lofts in the value (13017295953)
+    ("Mile High Life 웨지 세트", "Black Titanium Layer-50/56 Degrees", None, "two_wedges"),
+    ("토호 웨지 2개 세트", "블랙", ["블랙", "실버"], "two_wedges"),              # the title's count, colours only
+    ("웨지 4종 세트", "Black", None, "four_plus"),
+    ("웨지 세트", "50/54/58/62", None, "four_plus"),
+    ("웨지 세트", "G 52도 + S 56도 + L 60도", None, None),                       # three: the base box
+    ("웨지 2개 세트", "52/56/60", ["52/56/60"], None),                         # the variant's own count first
+    ("웨지 2개 세트", "블랙", ["52 56", "50 54 58"], None),                     # variants of other counts: in doubt
+    ("PGM 웨지 48 50 52 54 56 58 60 62", "52 56 60 Set", None, None),          # never the title's lofts
+    ("웨지 세트", "52-56", None, None),                                        # a range is no count
+    ("웨지 52개 56개", "블랙", None, None),                                     # a loft read as a count
+    ("웨지 2개 3개 세트", "블랙", None, None),                                  # 3+ anywhere
+    ("웨지 2개 세트 캐디백", "블랙", None, None),
+    ("BYBOMYA 웨지 개별 또는 세트", "개별 52도", None, "single_club"),          # single_club stays first
+    # the W8 review (2026-11-17): three lofts before 세트 or after a model code's dash are three wedges, not two
+    # (13830318407, 12918989466, 12178264810 took the two-wedge box); a lone shaft weight is no second loft
+    ("밀리언 웨지 세트", "왼손 52 56 60 세트 1개", None, None),
+    ("웨지 세트", "52 56 60세트", None, None),
+    ("Mile High Life 웨지 세트", "LH01-52 56 60 Degree", None, None),
+    ("웨지 세트", "50/56세트 / NSPRO 950 R", None, "two_wedges"),              # 10361963641
+    ("웨지 세트", "50도 / Diamana 60 S", ["50도 / Diamana 60 S", "52도 / Diamana 60 S"], None),
+    ("웨지 세트", "52도 Steelfiber 70", None, None),
+    ("웨지 세트", "60 normal / 48°/52°/56°", None, None),                      # 13826807592: three, not four
+])
+def test_wedge_set_count_kinds(title, variant, siblings, kind):
+    """C16 (decisions.md 2026-11-17): two wedges 98 x 15 x 10 cm, 1.7 kg; four to six the base box, 2.65 kg."""
+    assert (default_kind(WEDGES, title, variant, siblings) or {}).get("kind") == kind
+
+
+def test_wedge_count_kinds_values():
+    two, four = (next(k for k in WEDGES["kinds"] if k["kind"] == n) for n in ("two_wedges", "four_plus"))
+    assert [two["fields"][n]["central"] for n in FIELDS] == [920, 1700, 980, 150, 100] and two["lofts"] == [2, 2]
+    assert [four["fields"][n]["central"] for n in FIELDS] == [1840, 2650, 980, 200, 100] and four["lofts"] == [4, 6]
+    assert [k["kind"] for k in WEDGES["kinds"]] == ["single_club", "two_wedges", "four_plus"]
+
+
+def test_loft_count():
+    from package_measures import lofts
+    assert [lofts(t) for t in ("52 56 degree (2PCS)", "Black Set (52 56 60)", "52-56", "50~54", "5256", "56cm 60g",
+                               "LH01-56 Degree", "Silver / RH/50/54/58 Degrees Set")] == [2, 3, 0, 0, 0, 0, 1, 3]
+
+
+@pytest.mark.parametrize("text, n", [
+    # the W8 review (2026-11-17, 50002783 variant values): 세트 after a loft is no age, a model code's dash no range
+    ("왼손 52 56 60 세트", 3), ("52 56 60세트", 3), ("52/56/60 세트", 3), ("50/56세트 / NSPRO 950 R", 2),
+    ("LH01-52 56 60 Degree", 3), ("50 54 60세", 2), ("2개 (52Y 56Y)", 2),
+    # a lone bare number is a shaft's weight or flex, not a loft
+    ("50도 / Diamana 60 S", 1), ("52도 Steelfiber 70", 1), ("52도 / 스틸파이버 / i70 A", 1),
+    ("60 normal / 48°/52°/56°", 3), ("크롬 / 52도09바운스+56도12바운스 (2개세트) / DIAMANA TM50 (L)", 2),
+])
+def test_loft_count_review(text, n):
+    from package_measures import lofts
+    assert lofts(text) == n
+
+
+@pytest.mark.parametrize("lofts", [[1, 2], [3, 2], "2", [2.0, 2], [2]])
+def test_kind_lofts_must_be_a_span(lofts):
+    row = copy.deepcopy(WEDGES)
+    row["kinds"][1]["lofts"] = lofts
+    with pytest.raises(CategoryDefaultsInvalid):
+        check_row(row)
+
+
+@pytest.mark.parametrize("change", [
+    lambda b: b.pop("basis"), lambda b: b.update(writes=["package_weight_g"]), lambda b: b.update(extra=1),
+    lambda b: b.update(item_g={"min": 520, "max": 380}), lambda b: b.update(skip=["anything"]),
+    lambda b: b.update(confidence={"labelled_sum": 4, "one_weight_times_count": 2}),
+    lambda b: b.update(count_from=[]),
+])
+def test_compose_by_count_block_is_checked(change):
+    row = copy.deepcopy(WEDGES)
+    change(row["compose_by_count"])
+    with pytest.raises(CategoryDefaultsInvalid):
+        check_row(row)
+
+
+def test_wedge_band_refuses_a_one_club_server_weight():
+    """The band on the server path (variant_measures): a set page's 0.45 kg box is one wedge's; the default fills."""
+    specs = {"category": {"id": "50002783"}, "name": "웨지 세트 52 56 60", "options": {"variants": []},
+             "measures": {"is_set": True, "dimensions": [], "weights": [
+                 {"value": {"min": 450, "max": 450}, "kind": "packed", "scope": "unknown", "quote": "Package Weight 0.45 kg",
+                  "source": "description", "locator": {}, "binding": PRODUCT, "flags": []}]}}
+    [v] = variant_measures(specs, load_table())
+    f = v["fields"]["package_weight_g"]
+    assert (f["source"], f["central"], f["reason"]) == ("category_default", 2200, "implausible_for_category")
+
+
+def test_server_box_out_of_band_is_refused_whole():
+    """C11 on the server path: 13372006463's one-wedge box 37.2 x 2 x 1 in (25 mm high) on a set's page; the three
+    sides go to the default together (box_not_whole), never 945 x 51 mm beside a default height."""
+    specs = {"category": {"id": "50002783"}, "name": "웨지 세트 52 56 60", "options": {"variants": []},
+             "measures": {"is_set": True, "weights": [], "dimensions": [
+                 {"values": [944.88, 50.8, 25.4], "kind": "packed", "quote": "- Item Package Dimensions L x W x H : "
+                  "37.2 x 2 x 1 inches", "source": "description", "locator": {}, "binding": PRODUCT, "flags": []}]}}
+    [v] = variant_measures(specs, load_table())
+    assert [(v["fields"][n]["central"], v["fields"][n]["reason"]) for n in FIELDS[2:]] == \
+        [(980, "box_not_whole"), (200, "box_not_whole"), (100, "implausible_for_category")]

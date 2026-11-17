@@ -1,0 +1,292 @@
+{
+ "id": "13164549378",
+ "channelServiceType": "STOREFARM",
+ "channelProductType": "SINGLE",
+ "channelProductSupplyType": "OWNER",
+ "channelProductStatusType": "NORMAL",
+ "channelProductDisplayStatusType": "ON",
+ "category": {
+  "categoryId": "50002783",
+  "categoryName": "웨지",
+  "category1Id": "50000007",
+  "category2Id": "50000029",
+  "category3Id": "50001102",
+  "category4Id": "50002783",
+  "category1Name": "스포츠/레저",
+  "category2Name": "골프",
+  "category3Name": "골프클럽",
+  "category4Name": "웨지",
+  "wholeCategoryId": "50000007>50000029>50001102>50002783",
+  "wholeCategoryName": "스포츠/레저>골프>골프클럽>웨지",
+  "categoryLevel": 4,
+  "lastLevel": true,
+  "sortOrder": 5,
+  "validCategory": true,
+  "receiptIssue": true,
+  "exceptionalCategoryTypes": [
+   "FREE_RETURN_INSURANCE",
+   "MANUFACTURE_DEFINE_NO",
+   "GROUP_PRODUCT_MAX",
+   "RENTAL_SUBSCRIPTION",
+   "REGULAR_SUBSCRIPTION"
+  ],
+  "pointAccumulationYn": false
+ },
+ "name": "골프 웨지 봄베테크 - 프리미엄 세트 52 56 60도 스핀 증가를 위한 맥스 그루브 블랙",
+ "productUrl": "https://smartstore.naver.com/main/products/13164549378",
+ "mobileProductUrl": "https://m.smartstore.naver.com/main/products/13164549378",
+ "storeKeepExclusiveProduct": false,
+ "best": false,
+ "orderRequestUsable": false,
+ "channelProductAttributes": [],
+ "productNo": "13106324705",
+ "salePrice": 420300,
+ "dispSalePrice": 420300,
+ "stockQuantity": 100,
+ "saleType": "NEW",
+ "excludeAdminDiscount": false,
+ "payExposure": true,
+ "productStatusType": "SALE",
+ "statusType": "SALE",
+ "authenticationType": "NORMAL",
+ "itselfProductionProductYn": false,
+ "afterServiceInfo": {
+  "afterServiceTelephoneNumber": "********",
+  "afterServiceGuideContent": "********"
+ },
+ "originAreaInfo": {
+  "originAreaType": "DIRECT_INPUT",
+  "content": "상세페이지참고",
+  "originAreaCode": "04",
+  "wholeOriginAreaName": "직접입력",
+  "plural": false
+ },
+ "sellerCodeInfo": {
+  "sellerManagementCode": "TMG.1469842(159)"
+ },
+ "optionUsable": true,
+ "options": [
+  {
+   "id": 11398722848,
+   "optionType": "COMBINATION",
+   "groupName": "Color"
+  }
+ ],
+ "optionCombinations": [
+  {
+   "id": 56359723809,
+   "optionName1": "Black",
+   "stockQuantity": 100,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2026-02-24T21:52:35.261+00:00"
+  }
+ ],
+ "optionStandards": [],
+ "supplementProductUsable": false,
+ "supplementProducts": [],
+ "customMadeInfo": {
+  "customMade": false
+ },
+ "taxType": "DUTYFREE",
+ "customsTaxType": "NOT_APPLICABLE",
+ "certification": false,
+ "certificationTargetExcludeContent": {
+  "kcCertifiedProductExclusionYn": true,
+  "kcCertifiedProductExclusionType": "KC_EXEMPTION_OBJECT",
+  "kcExemptionType": "OVERSEAS"
+ },
+ "minorPurchasable": true,
+ "productInfoProvidedNoticeView": {
+  "basic": {
+   "품명 / 모델명": "상품상세페이지 참조 / 상품상세페이지 참조",
+   "KC 인증정보": "상품상세페이지 참조",
+   "크기": "상품상세페이지 참조",
+   "중량": "상품상세페이지 참조",
+   "색상": "상품상세페이지 참조",
+   "재질": "상품상세페이지 참조",
+   "제품구성": "상품상세페이지 참조",
+   "동일 모델의 출시연월": "상품상세페이지 참조",
+   "제조자(사)": "상품상세페이지 참조",
+   "제조국": "상세페이지참고",
+   "상품별 세부사양": "상품상세페이지 참조",
+   "품질보증기준": "상품상세페이지 참조",
+   "A/S 책임자와 전화번호": "********"
+  },
+  "additional": {
+   "재화등의 배송방법에 관한 정보": "택배",
+   "주문 이후 예상되는 배송기간": "대금 지급일로부터 3일 이내에 발송",
+   "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보": "상품상세 참조",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보": "편도 30000원 (최초 배송비 무료인 경우 60000원 부과)",
+   "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거": "상품상세 참조",
+   "재화등의 교환·반품·보증 조건 및 품질보증기준": "상품상세 참조",
+   "재화등의 A/S 관련 전화번호": "********",
+   "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차": "상품상세 참조",
+   "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항": "상품상세 참조",
+   "거래에 관한 약관의 내용 또는 확인할 수 있는 방법": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다."
+  }
+ },
+ "productDeliveryInfo": {
+  "deliveryFeeType": "FREE",
+  "deliveryMethodTypes": [
+   "DELIVERY"
+  ],
+  "baseFee": 0,
+  "deliveryAreaType": "AREA_3",
+  "area2ExtraFee": 3000,
+  "area3ExtraFee": 5000,
+  "installationFee": false,
+  "deliveryFeePolicyText": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+  "deliveryAttributeType": "NORMAL",
+  "todayDelivery": false,
+  "deliveryCompany": {
+   "id": "CJGLS",
+   "name": "CJ 대한통운(오네)"
+  }
+ },
+ "claimDeliveryInfo": {
+  "returnDeliveryCompanyPriority": "PRIMARY",
+  "deliveryCompanyName": "한진택배",
+  "deliveryCompanyCode": "HANJIN",
+  "naverPayAppointment": true,
+  "returnDeliveryFee": 30000,
+  "exchangeDeliveryFee": 60000,
+  "shippingAddressId": 106724935,
+  "returnAddressId": 200196765,
+  "shippingAddress": "972234335 10130 SW Nimbus Ave STE D6, ZIC-61443, Portland, OR, United States",
+  "returnAddress": "97223 10130 SW Nimbus Ave STE D6, ZIC-61443, Portland, OR, United States",
+  "overseasShipping": true,
+  "individualCustomUniqueCodeUsable": true,
+  "freeReturnInsurance": false
+ },
+ "isCultureCostIncomeDeduction": false,
+ "isRestrictCart": false,
+ "naverGuaranteed": false,
+ "newShoppingExposureYn": true,
+ "benefitsView": {
+  "discountedSalePrice": 336240,
+  "dispDiscountedSalePrice": 336240,
+  "sellerImmediateDiscountAmount": 84060,
+  "managerImmediateDiscountAmount": 0,
+  "specialDiscountAmount": {},
+  "discountedRatio": 20,
+  "dispDiscountedRatio": 20,
+  "sellerPurchasePoint": 0,
+  "sellerCustomerManagementPoint": 0,
+  "managerPurchasePoint": 3362,
+  "managerPurchaseExtraPoint": 0,
+  "managerPaymoneyAccumulatePoint": 5043,
+  "managerBankbookAccumulatePoint": 1681,
+  "managerArrivalGuaranteePoint": 0,
+  "managerMembershipArrivalGuaranteePoint": 0,
+  "generalPurchaseReviewPoint": 0,
+  "premiumPurchaseReviewPoint": 0,
+  "managerGeneralPurchaseReviewPoint": 50,
+  "managerPremiumPurchaseReviewPoint": 150,
+  "textReviewPoint": 0,
+  "photoVideoReviewPoint": 0,
+  "afterUseTextReviewPoint": 0,
+  "afterUsePhotoVideoReviewPoint": 0,
+  "storeMemberReviewPoint": 0,
+  "managerTextReviewPoint": 50,
+  "managerPhotoVideoReviewPoint": 150,
+  "managerAfterUseTextReviewPoint": 50,
+  "managerAfterUsePhotoVideoReviewPoint": 150,
+  "givePresent": false
+ },
+ "averageDeliveryLeadTime": {
+  "productAverageDeliveryLeadTime": 0,
+  "sellerAverageDeliveryLeadTime": 0
+ },
+ "detailContents": {
+  "detailContentText": "골프 웨지 봄베테크 - 프리미엄 세트 52 56 60도 스핀 증가를 위한 맥스 그루브 블랙 BlackDescription The Original BombTech wedge set includes a 52 Degree Gap Wedge, 56 Degree Sand Wedge and 60 Degree Lob Wedge.The BombTech Wedges are slightly oversized to make even your bad shots look pretty freaking good.The forgiving shape combined with heavier head weight gives you the feel and control that you would expect out of a premium set.Stick it close and make your golf buddies jealous. GOODS SPECIFICS- Size : One Size- Color : Black- Golf Club Flex : Regular- Hand Orientation : Right- Golf Club Loft : 525 Degrees- Material : Alloy Steel- Brand : Bombtech Golf- Shaft Material : Stepped Steel- Item Weight : 1.45 Kilograms- Golf Putter Lie Angle : 60- Grip Material : Rubber- Grip Size : Standard- Grip Type : Rubber- UPC : 850064238167- Golf Club Type : Wedge Golf Club- Included Components : Golf Club- Manufacturer : Bombtech Golf- Item Package Dimensions L x W x H : 38 x 5 x 3 inches- Package Weight : 1.45 Kilograms- Brand Name : Bombtech Golf- Model Name : Bombtech 52, 56, 60 Wedge Set- Suggested Users : mens- Number of Items : 3- Sport Type : Golf Feature - PREMIUM QUALITY AT FRACTION OF THE PRICE: No retail and no pros means you get more for your money. - COMPLETE SET OF THREE WEDGES: Includes 52, 56 and 60 degree lofts with 12, 10 and 8 bounces. - MAX FORGIVENESS: Heavier weights for max control and feel provides for max forgiveness. The BombTech black golf wedges are slightly oversized to make even your bad shots look pretty freaking good. - OPTIMAL SPIN: Max legal groove depth for increased spin. - EASY TO HIT FROM ANYWHERE: Wedges that are easy to hit from anywhere. The micro-milled face provides for great spin, control and consistency from the fairway or rough.",
+  "excessDetailContentText": false,
+  "editorType": "NONE"
+ },
+ "useExternalStock": false,
+ "dispName": "골프 웨지 봄베테크 - 프리미엄 세트 52 56 60도 스핀 증가를 위한 맥스 그루브 블랙",
+ "adultAuthorizationType": "NOT_LOGIN",
+ "authorizationDisplay": "NORMAL",
+ "galleryImages": [
+  {
+   "order": 1,
+   "url": "https://shop-phinf.pstatic.net/20260225_115/1771969954238IovV7_JPEG/101061125502064002_249737303.jpg",
+   "width": 600,
+   "height": 600,
+   "imageType": "REPRESENTATIVE"
+  }
+ ],
+ "soldout": false,
+ "viewAttributes": {
+  "상품상태": "신상품",
+  "상품번호": "13164549378",
+  "제조사": "Bombtech Golf",
+  "브랜드": "Bombtech Golf",
+  "모델명": "Bombtech Golf",
+  "원산지": "상세페이지참고"
+ },
+ "additionalAttributes": {
+  "영수증발급": "신용카드전표, 현금영수증발급",
+  "A/S 안내": [
+   "********",
+   "********"
+  ]
+ },
+ "eCouponCategory": false,
+ "cultureCategory": false,
+ "textOptions": [],
+ "simpleOptions": [],
+ "combinationOptions": [
+  {
+   "groupName": "Color",
+   "options": [
+    {
+     "id": 56359723809,
+     "optionName1": "Black",
+     "stockQuantity": 100,
+     "price": 0,
+     "regOrder": 0,
+     "registerDate": "2026-02-24T21:52:35.261+00:00"
+    }
+   ],
+   "checkedName": null,
+   "checkedIds": null,
+   "price": 0,
+   "isLastDepth": true
+  }
+ ],
+ "standardOptions": [],
+ "standardCombinations": [
+  {
+   "id": 56359723809,
+   "optionName1": "Black",
+   "stockQuantity": 100,
+   "price": 0,
+   "regOrder": 0,
+   "registerDate": "2026-02-24T21:52:35.261+00:00",
+   "title": "_Black____"
+  }
+ ],
+ "supplements": [],
+ "deliveryText": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+ "deliveryMethodType": {
+  "code": 1,
+  "name": "택배",
+  "description": "택배",
+  "etc": null,
+  "naverPayCode": "DELIVERY"
+ },
+ "discountedSalePrice": 336240,
+ "mobileDiscountRatio": 20,
+ "derived": {
+  "productType": "DEFAULT"
+ },
+ "hopeDelivery": null,
+ "commentCount": 0,
+ "isPayMember": false,
+ "arrivalGuarantee": false,
+ "groupId": null,
+ "groupEpId": null,
+ "simpleProductAffiliateYn": false,
+ "disableAdditionalApi": false
+}

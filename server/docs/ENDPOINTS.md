@@ -503,7 +503,9 @@ source `specs:<label>` (브랜드, 제조사 / 제조자, 모델명, 원산지 /
 `measures` (`naver_shopping/measures.py`): weight and size candidates, as the seller wrote them; collection only (no
 value is chosen, no category average filled in, no OCR), the rows and `facts` unchanged. Sources in order: the
 상품정보 rows, the notice, the description text, the page's JSON-LD `Product` (only when its `productID` or `mpn` is
-this product's id), the description HTML's label / value pairs (`li > strong + div`, `dt + dd`, table rows).
+this product's id), the description HTML's label / value pairs (`li > strong + div`, `dt + dd`, table rows, and since
+2026-11-17 two-cell `display:flex` rows: `locator.cell` `flex`). A description label line with its value alone on the
+next line ("무게" / "9kg", "포장 박스 크기" / "38 x 4.5 x 4 inches") is read as one line labelled by the first.
 `{is_set, weights, dimensions, references, review}`:
 
 - `weights[]`: `{value {min, max} (grams), unit, matched, kind (net | packed | component | unknown), scope (unit | set
@@ -520,7 +522,9 @@ this product's id), the description HTML's label / value pairs (`li > strong + d
   5i, #7, PW, 7번), a part before the line's ':', a club heading line above it in the description ("1. 드라이버 (1W)"), or
   a reference club ("7번 기준"; for any product). A bare 총중량 is a club's total; a set total says 세트 or is in kg / lb. A
   plain weight row (중량, 무게, 제품 무게, Item Weight) in the 상품정보 rows, the notice, a description table or the JSON-LD of a
-  set is the product as sold: scope `set` from 1 kg, else `component` + `part_scale`. A weight unit in a size row is
+  set is the product as sold: scope `set` from 1 kg, else `component` + `part_scale`; so is a description bullet
+  "- Item Weight : 1.2 Kilograms" (a dash, spaces round the colon, a plain weight label whole; 2026-11-17). A packed
+  weight under a club heading ("- Package Weight : 1.45 Kilograms") stays `packed`. A weight unit in a size row is
   read too ("크기: 7번 기준 93cm / 7번 기준 328g", "Package Dimensions: ...; 2.27 kg").
 - `dimensions[]`: `{values (mm), axes (width, depth, height, length, thickness, diameter; null when the order is not
   written), unit, matched, kind (packed | component | product | unknown), state (unfolded | folded | null), flags
@@ -531,7 +535,9 @@ this product's id), the description HTML's label / value pairs (`li > strong + d
   line without a size label. In a set a club's length is `component`.
 - `binding`: `{scope: product | variants | context, variant_ids}`. One variant or none: `product`. Several: `variants`
   only when the line names option values of exactly one composition (variants that differ only in a colour / design
-  group count as one); else `context`. A value list on one line ("중량: 약11.5kg / 4.7kg") binds each value by the option
+  group count as one); else `context`. When every option group is a colour / design one and no value holds a number,
+  a loft or a set word, a line naming no option is `product` (2026-11-17), except on a full set or a bag (풀세트,
+  캐디백, 가방, bag in the name or category). A value list on one line ("중량: 약11.5kg / 4.7kg") binds each value by the option
   names or club count in its own segment, else heaviest to the most clubs when the variants carry exactly that many
   club counts ("4스틸", "12카본": flag `bound_by_count_rank`).
 - `references[]`: a pointer instead of a value ("상세페이지 참조"): `{quote, source, locator, measure (weight | size),

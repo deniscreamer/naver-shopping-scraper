@@ -61,8 +61,12 @@ kg on the 4-club ones). Parts' weights (club spec tables) are never added up int
 bag and covers. A default package weight below the seller's product weight is kept but flagged `flags:
 ["below_stated_product"]` (at collection; in the transform, with the row's `baselines`, that package weight becomes
 the seller's product weight + the carton). A table row may carry `plausible: {field: {min, max}}`, the operator's band: a stated value
-outside it is not taken (`contradiction`, `reason: implausible_for_category`) and the default fills the field; no row
-has a band yet, and none is made up. A row may also carry **`baselines`** (the owner, 2026-11-10), the operator's
+outside it is not taken (`contradiction`, `reason: implausible_for_category`) and the default fills the field; a box
+is one statement, so one side out of its band refuses the other two (`box_not_whole`, 2026-11-17). Two rows have a
+band since 2026-11-17 (table version 7; the agent from the data on the owner's delegation,
+`research/wedge-fix-plan/decisions.md`): 50002783 웨지, product 800-3500 g, package 1000-4000 g, box height
+40-400 mm (a set of 2-6 wedges: a one-club weight or box on a set's page, 0.45 kg, 1.04 lb, 13 mm, is refused);
+50002787 주니어용클럽, product 150-8000 g, package 300-10000 g (13586027489's "529 Pounds"). None is made up. A row may also carry **`baselines`** (the owner, 2026-11-10), the operator's
 amounts for the parts of a set of like items in a container; all of them or no block (`check_row`):
 
 | key | what | 50002788 (the owner, 2026-11-10) | basis |
@@ -107,7 +111,22 @@ or count); singles are left out by the title screen, so the kind is for one that
 50002783 웨지 (owner, 2026-11-15), sold as wedge sets: a set of 2-3 wedges in a carton, no bag (98 x 20 x 10 cm,
 2.2 kg central), and a `single_club` kind (96 x 11 x 8 cm, 1 kg) for a variant that sells one wedge of a set-or-single
 listing (단품, 개별, 싱글, 낱개 in the variant) or 단품 in a title with no set word; single-wedge titles are left out by
-the title screen. Version 6 since.
+the title screen. Version 6 since. Version 7 (2026-11-17, the agent from the data on the owner's delegation,
+decisions.md C16): the count kinds `two_wedges` (98 x 15 x 10 cm, 1.7 kg, wedges 920 g: the variable box, -$30 to
+-$40 a variant at level 1) and `four_plus` (the base box, 2.65 kg, wedges 1840 g: no price change), after
+`single_club`. A count kind carries `lofts` [min, max]: the variant's own count (2개 / 2종 / 2P / 2pcs / 2피스 / 2자루 /
+2본; 4-6 for four_plus) or that many distinct lofts in its value ("56 60 Degree Tarnish", not a range "52-56", not
+"52개"), else the title's count when the listing has one variant or every variant names as many lofts; never the
+title's own list of lofts, never with a larger count, 단품 / 개별 / 싱글 / 낱개 or a bag anywhere. In doubt the base
+3-wedge box. A variant value Naver cut at 25 characters ("Black Titanium Layer-50/5") counts as one loft: base box.
+A loft counts when it carries 도 / ° / degree or stands in a run of lofts ("52/56/60", "52Y 56Y"): a lone bare number
+is a shaft's weight or flex ("50도 / Diamana 60 S" is one loft); 세트 after a loft is no age ("왼손 52 56 60 세트" is
+three) and a model code's dash no range ("LH01-52 56 60 Degree" is three) (the W8 review, 2026-11-17).
+Known limit: a listing whose title states a count ("웨지세트(4종)") and whose variants each name one loft ("50도",
+"52도", ...) gives every variant the title's count (decisions.md, word for word), though a variant may sell one
+wedge; seen on 394381329 (held, no live effect).
+The row's `compose_by_count` block (C17, 2026-11-17): a set's `product_weight_g` the seller does not state, from its
+clubs' labelled weights, see [The clubs' weights of a wedge set](#the-clubs-weights-of-a-wedge-set).
 Product sizes (not the package: kind product or unknown) are kept apart, optional.
 
 ## Confidence
@@ -219,7 +238,11 @@ The guess (`description_measures.py`, offline, in the transform) has two layers:
 * the **core**, for every category: what a seller writes of the product itself: a packed weight / box (박스 / 포장 /
   택배 / 패키지), a set / product weight (세트 / 본품 / 제품 / 상품 무게; a row labelled 무게 / 중량 / weight with kg,
   even when OCR split the label: "무 / 0.6kg"), a product size triple (크기 / 사이즈 / 규격 / size, or with a unit:
-  "W53 x D38 x H62.5 cm"; read as a fact and, since 2026-11-10, no field's: a product is not its box). Live check
+  "W53 x D38 x H62.5 cm"; read as a fact and, since 2026-11-10, no field's: a product is not its box). Since
+  2026-11-17: in a category of `description_measures.LONG_UNITS` (50002783, whose row has a band) also kilograms,
+  pounds and 파운드 ("- Package Weight : 1.45 Kilograms", "Item Weight: 3.2 Pounds"; not "0.454 Kilograms"); and a
+  typed label line with its value alone on the next line is one row ("포장 박스 크기" / "38 x 4.5 x 4 inches"), except
+  Item Weight / 품목 무게 (often one club's weight on a set's page). Live check
   2026-11-07 on other categories: a camping chair (625 x 530 x 380 mm), a kettle (0.6 kg, 170 x 170 x 100 mm); a
   kettle and desks whose images give sizes only as photo callouts: nothing;
 * a **parts profile**, only where the category is sold as a set of like items in a container. Profiles are data
@@ -404,6 +427,22 @@ stated 3.8 kg = 7692 g (3), + the carton = 9692 g (3), the 45.25 in driver + 100
 골프공 패키지 사이즈 30 x 20 x 10cm" the 300 mm length is refused, and 200 x 100 must not stay as the width and
 height of a 1250 mm package (2026-11-10; before, the sides were merged field by field).
 
+### The clubs' weights of a wedge set
+
+50002783 only, by the row's `compose_by_count` block (`description_measures.compose_by_count`, in the transform after
+the merge; 2026-11-17, decisions.md C17). In place of the flat default of `product_weight_g` only (the package and
+its sides stay: PGM's 8 lofts x 462 g would have raised a box): the lines of the typed text, the 상품정보 rows and the
+images' rows read at NUMBER_CONF that carry a weight label, no part word (head, shaft, grip) and 3-digit weights in
+380-520 g (the value may stand on the next line). As many weights as the set's clubs: their sum, confidence 3 (USPA
+414 + 412 = 826 g, Maruman 380 + 385); one weight: it x the count, confidence 2 (PRGR 448 g, Toho 460 g). The count:
+the variant's own (a count word or its lofts), else the title's when it states one. Not on a #7 / #5 reference or 기준
+/ 추정 / 상정 (Yamaha RMX, FITTAS), Amazon's Item Weight / Product weight / 품목 무게 (GoSports 424 g), more weights
+than clubs (the MG5 / RMX / Honma shaft tables), men's and women's weights in one listing, a title listing more
+lofts than any variant, a held product, a single club's variant. The field: `source: composed`, `how`, `parts`
+(each club's weight and its line), `count_from` (variant | title), the block's `approved_by` / `approved_at`,
+`compared` (the default). No price moves (no `baselines` in the row). Measured on a shop copy 2026-11-17: 8 products
+(6 in the store); MG5 13699940318 (men's and women's weights) is skipped.
+
 ## Absurd values
 
 Absurd values are never taken (`compared.rejected`; `refused` on the composition that stood in): a statement
@@ -515,3 +554,12 @@ lines (`package` is computed at collection), prepared records of `format: prepar
 published from them; `prepared/5` is on the new scale. The transform puts a collected line's seller values on
 today's scale from their own evidence (`package_measures.on_scale`: the old 3 is 5, the old 2 is 4), so one prepared
 record never mixes the two.
+
+**Table version 7 (2026-11-17, the wedge-set review W8).** The first `plausible` bands (50002783, 50002787), the
+50002783 count kinds `two_wedges` / `four_plus` (`lofts`) and its `compose_by_count` block; a box refused whole on
+the server path too; kilograms / pounds in the description for 50002783; the typed label / value lines (50002783
+only: in 50002787 they would have moved two published junior PGM clubs, 10259486834 $749 -> $219 and 10259500908
+$309 -> $209, through "패키지 치수" / "100*12.5*12.5cm"; widening waits for the owner). A default
+whose numbers did not change keeps its collected `table_version`; one that did (a two-wedge variant) is stamped 7
+when prepared again (`current_defaults`). The server's own reading (`measures`: bullets, flex rows, split lines,
+colour-only variants, a package weight under a club heading) reaches a product only when it is collected again.

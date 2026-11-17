@@ -583,3 +583,154 @@ def test_load_only_skips_its_own_segment():
 def test_flags_and_count_on_every_weight():
     c = one(weights("무게", "9kg"))
     assert (c["flags"], c["count"]) == ([], None)
+
+
+# ---- wedge sets review, 2026-11-17 (C09, C12, C13, C14, C15) --------------------------------------------------
+
+WEDGES = "골프 웨지 세트 52 56 60도"
+COLOURS = {"option_groups": [{"name": "색상", "type": "COMBINATION"}],
+           "variants": [{"id": "1", "options": ["Black"]}, {"id": "2", "options": ["Silver"]}]}
+
+
+def text(lines, **kw):
+    return M.measures(description={"text": "\n".join(lines), "html": None}, **kw)
+
+
+def test_package_weight_under_a_club_heading_is_the_box():
+    """2026-11-17 (C09, 13164549378): "- Package Weight" below a club heading ("샌드 웨지") was kind_conflict and the
+    set kept the default; a packed weight is the box whatever heading it stands under."""
+    out = text(["샌드 웨지", "- Package Weight : 1.45 Kilograms"], name=WEDGES)
+    c = one(out)
+    assert (c["kind"], c["value"]["min"]) == ("packed", 1450) and not out["review"]
+    out = text(["샌드 웨지", "- Item Weight : 1.2 Kilograms"], name=WEDGES)
+    assert one(out)["kind"] == "component"          # a plain weight under the heading stays the club's
+
+
+@pytest.mark.parametrize("line, kind, scope, flags", [
+    ("- Item Weight : 1.2 Kilograms", "unknown", "set", []),               # 13163008264: the set as sold
+    ("- Item Weight : 305 Grams", "component", "unknown", ["part_scale"]),  # 13370440703: under 1 kg, one club's
+    ("- 무게 : 1.5kg", "unknown", "set", []),
+])
+def test_bullet_weight_row_is_a_plain_row(line, kind, scope, flags):
+    """2026-11-17 (C12, 13163008264): a dash bullet "- Item Weight : 1.2 Kilograms" (an Amazon import's list) was a
+    free text weight; with a plain weight label it is read as a spec row."""
+    c = one(text([line], name=WEDGES))
+    assert (c["kind"], c["scope"], c["flags"]) == (kind, scope, flags)
+
+
+@pytest.mark.parametrize("line", ["무게: 약 3.3kg", "-Item Weight:1.2 Kilograms", "- Shaft Weight : 1.2 Kilograms",
+                                  "배송 시 무게 : 1.2kg 입니다"])
+def test_not_a_bullet_weight_row(line):
+    """2026-11-17 (C12): the free form broke 12754533993; a part's label, no spaces round the colon: not a row."""
+    assert all(c["scope"] != "set" for c in text([line], name=WEDGES)["weights"])
+
+
+def test_colour_variants_share_an_unnamed_line():
+    """2026-11-17 (C13, 13312219526 "Item Weight: 1.29 Kilograms"): variants that differ by colour alone are one
+    product, so an unnamed weight line is the product's, not context."""
+    out = weights("Item Weight", "1.29 Kilograms", name=WEDGES, options=COLOURS)
+    assert one(out)["binding"] == {"scope": "product", "variant_ids": []}
+
+
+@pytest.mark.parametrize("options, name", [
+    ({"option_groups": [{"name": "색상", "type": "COMBINATION"}],
+      "variants": [{"id": "1", "options": ["블랙 52/56"]}, {"id": "2", "options": ["실버 50/54/58"]}]}, WEDGES),
+    ({"option_groups": [{"name": "로프트", "type": "COMBINATION"}],
+      "variants": [{"id": "1", "options": ["Black"]}, {"id": "2", "options": ["Silver"]}]}, WEDGES),
+    (COLOURS, "혼마 D1 골프채 풀세트 10개 캐디백"),          # 11877384012: the bag's 2.9 kg, not the set's
+])
+def test_unnamed_line_stays_context(options, name):
+    out = weights("무게", "2.9kg", name=name, options=options)
+    assert one(out)["binding"]["scope"] == "context"
+
+
+def test_colour_rule_skips_a_full_set_category():
+    out = weights("무게", "2.9kg", name="브리지스톤 여성 골프클럽 8개", options=COLOURS,
+                  category={"name": "풀세트", "path": ["스포츠/레저", "골프", "골프클럽", "풀세트"]})
+    assert one(out)["binding"]["scope"] == "context"            # 6826673633
+
+
+FLEX = ('<div style="display: flex"><div>{}</div><div>{}</div></div>')
+
+
+def test_flex_rows_are_read():
+    """2026-11-17 (C14, 13276406356 "Item Weight | 1.43 Kilograms"): a spec table drawn as two div cells inside a
+    display:flex div, no <table>; each such pair is a row."""
+    html = "<div>" + FLEX.format("Item Weight", "1.43 Kilograms") + FLEX.format("Grip Size", "Standard") + "</div>"
+    assert ("Item Weight", "1.43 Kilograms", "flex") in M.table_rows(html)
+    c = one(M.measures(description={"text": "", "html": html}, name=WEDGES))
+    assert (c["source"], c["value"]["min"], c["scope"]) == ("description_table", 1430, "set")
+
+
+@pytest.mark.parametrize("html", [
+    "<div><div>Item Weight</div><div>1.43 Kilograms</div></div>",              # no flex: not a row
+    '<div style="display:flex"><p>Item Weight</p><p>1.43 Kilograms</p></div>',  # not div / span cells
+])
+def test_not_flex_rows(html):
+    assert not [r for r in M.table_rows(html) if r[2] == "flex" and r[0] == "Item Weight"]
+
+
+def test_a_wrapper_of_flex_rows_is_not_a_row():
+    html = '<div style="display:flex"><div>' + FLEX.format("Item Weight", "1.43 Kilograms") + "</div><div>x</div></div>"
+    assert [r for r in M.table_rows(html) if r[2] == "flex"] == [("Item Weight", "1.43 Kilograms", "flex")]
+
+
+def test_label_and_value_on_neighbouring_lines():
+    """2026-11-17 (C15, 13309962714, 13605472374, 13866792640): a label line ("무게", "품목 무게") with its value
+    alone on the next line ("9kg"), or a triple under its label, is one row."""
+    c = one(text(["무게", "", "9kg"]))
+    assert (c["quote"], c["value"]["min"]) == ("무게: 9kg", 9000)
+    d = one(text(["포장 박스 크기", "38 x 4.5 x 4 inches"]), "dimensions")
+    assert d["kind"] == "packed" and d["values"] == [965.2, 114.3, 101.6]
+
+
+@pytest.mark.parametrize("lines", [["무게 2개", "9kg"], ["무게", "9kg 입니다"], ["상품 설명", "9kg"],
+                                   ["이 제품은 가볍고 튼튼한 저중심 설계로 누구나 쉽게 칠 수 있는 무게", "9kg"]])
+def test_neighbouring_lines_not_joined(lines):
+    assert M.label_value_lines(lines) == {}
+
+
+PAGES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures", "pages")
+
+
+def page_contents(product_id):
+    with open(os.path.join(PAGES, product_id, "contents.json"), encoding="utf-8") as f:
+        return P.parse_contents(json.load(f))
+
+
+def page_measures(product_id):
+    with open(os.path.join(PAGES, product_id, "expected.json"), encoding="utf-8") as f:
+        return json.load(f)["specs"]["measures"]
+
+
+def test_saved_page_package_weight_under_a_club_heading():
+    """2026-11-17 (C09, saved page 13164549378, a 50002783 wedge set's Amazon-import list): "- Package Weight : 1.45
+    Kilograms" under a club heading is the set's box, and "- Item Weight : 1.45 Kilograms" a set row (C12)."""
+    w = page_measures("13164549378")["weights"]
+    assert [(c["kind"], c["scope"], c["value"]["min"]) for c in w] == [("unknown", "set", 1450), ("packed", "unknown", 1450)]
+
+
+def test_saved_page_bullet_weight_row():
+    """2026-11-17 (C12, saved page 13163008264): the dash bullet "- Item Weight : 1.2 Kilograms" is a set's row."""
+    w = page_measures("13163008264")["weights"]
+    assert ("- Item Weight : 1.2 Kilograms", "set") in [(c["quote"], c["scope"]) for c in w]
+
+
+def test_saved_page_colour_only_variants():
+    """2026-11-17 (C13, saved page 13312219526): variants that differ by colour alone; the table's "Item Weight:
+    1.29 Kilograms" binds to the product (it was context, so the set kept the default)."""
+    [c] = page_measures("13312219526")["weights"]
+    assert (c["value"]["min"], c["binding"]["scope"]) == (1290, "product")
+
+
+@pytest.mark.parametrize("product_id, grams", [("13276406356", 1430), ("13309962714", 1570)])
+def test_saved_page_flex_rows_and_neighbouring_lines(product_id, grams):
+    """2026-11-17 (C14, C15, saved pages 13276406356 and 13309962714): the spec table is drawn with display:flex
+    div pairs, and its text flattens to "품목 무게" / "1.43킬로그램" on neighbouring lines. Both readers find the
+    weight (it was not read at all before); the answer carries it once per label."""
+    contents = page_contents(product_id)
+    flex = [r for r in M.table_rows(contents["html"]) if r[2] == "flex"]
+    assert any(r[0] == "Item Weight" for r in flex) and any(r[0] == "품목 무게" for r in flex)
+    lines = contents["text"].split("\n")
+    assert "품목 무게" in [lines[a].strip() for a in M.label_value_lines(lines)]
+    assert {c["value"]["min"] for c in page_measures(product_id)["weights"]} == {grams}

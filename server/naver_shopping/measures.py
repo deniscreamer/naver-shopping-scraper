@@ -14,7 +14,10 @@ Sources, in this order (`source`):
                      additionalProperty), only when its productID or mpn is this product's id
   description_table  label / value pairs in the description HTML: li > strong + div, dt + dd, table rows (a row of
                      th cells is the header of the rows under it; so is a first row of 3+ td cells that are names,
-                     "번호 | 드라이버 | 5i", for the weight / size rows under it, labelled "<row label> <column>")
+                     "번호 | 드라이버 | 5i", for the weight / size rows under it, labelled "<row label> <column>"),
+                     two-cell display:flex rows (flex_rows, 2026-11-17)
+A description line that is only a weight / size label, with its value alone on the next line, is read as one
+labelled line (label_value_lines, 2026-11-17).
 The same quote with the same value is kept once, from the first source.
 
 A line counts for weight only with a weight label (무게, 중량, weight, mass), or a weight unit in a size line
@@ -31,7 +34,8 @@ Per candidate:
            not_confirmed_packed, two_sides
   binding  {scope: product | variants | context, variant_ids}: one variant or none -> product; several -> variants
            only when the line names option values of exactly one composition (variants that differ only in a
-           colour / design group count as one); otherwise context
+           colour / design group count as one); otherwise context. Variants that differ in colour alone (no number,
+           loft or set word in a value): a line naming none is the product's, not on a full set or a bag (2026-11-17)
 The words that decide kind and scope are the label and the value's segment holding the number (between '/', ',',
 ';', '|', ' 및 ' and the neighbouring numbers, plus a bracket right after it: "약 1.2kg(포장 포함)").
 
@@ -41,7 +45,8 @@ code (드라이버, 캐디백, 1W, 5i, #7, PW, 7번), a part named before the li
 heading line above it in the description ("1. 드라이버 (1W)"), a reference club ("7번 기준", any "...기준" in a set).
 A bare 총중량 is a club's total, not the set's. A plain weight row (중량, 무게, 제품 무게, Item Weight) in a structured
 source (specs, notice, description_table, json_ld) is the product as sold: scope set from 1 kg, else component
-(part_scale). Two or more such weights on one line are bound to variants by their own option names or club counts,
+(part_scale); a description bullet "- Item Weight : 1.2 Kilograms" counts as such a row (BULLET_ROW, 2026-11-17).
+Two or more such weights on one line are bound to variants by their own option names or club counts,
 else heaviest to the most clubs (bound_by_count_rank) when the variants carry exactly that many counts.
 
 A line whose words say two kinds at once, a unit in the label that differs from the value's, one line naming two
@@ -106,6 +111,10 @@ TOLERANCE = re.compile(r"(?:±|\+\s*/?\s*-)\s*$|오차")
 PLAIN_WEIGHT_LABEL = re.compile(r"(?:(?:크기|치수|규격)\s*[,/·및]\s*)?(?:(?:제품|상품|본품|item|product)\s*)?(?:총\s*)?"
                                 r"(?:무게|중량|weight)(?:\s*[,/·및]\s*(?:크기|치수|규격))?", re.I)
 STRUCTURED = ("specs", "notice", "description_table", "json_ld")
+# A typed bullet of a spec list is a row too: "- Item Weight : 1.2 Kilograms" (agency imports of Amazon pages, wedge
+# sets 2026-11-17: 36 weights left at the default). Only a dash bullet with spaces around the colon and a label that
+# is a plain weight label whole; the free "무게: 약 3.3kg" in a sentence stays unknown (12754533993).
+BULLET_ROW = re.compile(r"^\s*-\s*(?P<label>[^:：]{2,40}?)\s+[:：]\s+\S")
 SET_NAME = re.compile(r"세트|(?<![a-z])sets?(?![a-z])|"                       # not "Offset", "Headset"
                       r"(?<![#\d.])\d{1,2}아이언(?!\s*(?:기준|단품))|"           # 6아이언 = six irons; 7번 아이언 = one
                       r"(?<![\d.])(?:[2-9]|1\d|20)\s*(?:pcs?|피스|pieces?)(?![a-z])|"
@@ -212,13 +221,39 @@ def _lines(rows, notice, description, page_html, product_id):
     for part in ("items", "terms"):
         for i, r in enumerate((notice or {}).get(part) or []):
             yield "notice", {"block": part, "row": i}, r.get("label") or "", r.get("value") or ""
-    for i, line in enumerate(((description or {}).get("text") or "").split("\n")):
-        if line.strip() and " | " not in line:      # a table row "a | b | c" (pdp.description_text, 2026-11-07):
+    text = ((description or {}).get("text") or "").split("\n")
+    joined = label_value_lines(text)
+    for i, line in enumerate(text):
+        if i in joined.values():
+            continue                                 # read with its label above
+        if i in joined:
+            yield "description", {"block": "text", "row": i}, line, text[joined[i]]
+        elif line.strip() and " | " not in line:    # a table row "a | b | c" (pdp.description_text, 2026-11-07):
             yield "description", {"block": "text", "row": i}, "", line     # read cell by cell from the HTML below
     for i, (label, value) in enumerate(json_ld_rows(page_html, product_id)):
         yield "json_ld", {"block": "Product", "row": i}, label, value
     for i, (label, value, cell) in enumerate(table_rows((description or {}).get("html"))):
         yield "description_table", {"block": "html", "row": i, "cell": cell}, label, value
+
+
+def _label_only(line):
+    t = _norm(line)
+    return bool(t) and len(t) <= 30 and not re.search(r"\d", t) and \
+        bool(WEIGHT_LABEL.search(t) or SIZE_LABEL.search(t))
+
+
+def _value_only(line):
+    t = _norm(line)
+    return bool(WEIGHT_RE.fullmatch(t) or TRIPLE_RE.fullmatch(t))
+
+
+def label_value_lines(lines):
+    """{label row: value row} of a description whose label and value are on neighbouring lines ("무게" then "9kg",
+    "Item Package Dimensions L x W x H" then "38 x 4.5 x 4 inches": a two-cell layout flattened, seen 2026-11-17 on
+    13309962714, 13605472374, 13866792640). The label: up to 30 characters, no digit, a weight or size word; the next
+    non-empty line: one weight or one size triple and nothing else."""
+    rows = [i for i, line in enumerate(lines) if line.strip()]
+    return {a: b for a, b in zip(rows, rows[1:]) if _label_only(lines[a]) and _value_only(lines[b])}
 
 
 def json_ld_rows(page_html, product_id):
@@ -296,7 +331,29 @@ def table_rows(html_text):
                     out.extend((h, t, "tr") for h, t in zip(header, texts) if h and t)
                 elif len(texts) >= 2 and (cells[0].tag == "th" or len(texts) == 2):
                     out.append((texts[0], " ".join(texts[1:]), "tr"))
-    return [(label, value, cell) for label, value, cell in out if label or value]
+    return [(label, value, cell) for label, value, cell in out + flex_rows(root) if label or value]
+
+
+def _flex(node):
+    return "display:flex" in re.sub(r"\s", "", node.attrs.get("style", "")).lower()
+
+
+def flex_rows(root):
+    """(label, value, "flex") of two-cell rows drawn with CSS: <div style="display:flex"><div>Item Weight</div>
+    <div>1.43 Kilograms</div></div> (agency copies of Amazon tables, seen 2026-11-17 on wedge sets: 13 weights).
+    Only an inline display:flex row of two div / span cells, neither holding another flex row (an outer wrapper of
+    rows is not a row), its label under 40 characters. Any two-cell div pair (no flex) read 3 boxes wrong."""
+    out = []
+    for node in root.descendants():
+        kids = node.elements()
+        if len(kids) != 2 or any(k.tag not in ("div", "span") for k in kids) or not _flex(node):
+            continue
+        if any(_flex(d) for k in kids for d in k.descendants()):
+            continue
+        label, value = pdp._flat(kids[0]), pdp._flat(kids[1])
+        if label and value and len(label) < 40:
+            out.append((label, value, "flex"))
+    return out
 
 
 # ---- variant binding ----------------------------------------------------------------------
@@ -462,7 +519,10 @@ def _weights(label, value, is_set, context_part=None, plain=False, size_row=Fals
         if is_set and "component" not in kinds and "set" not in scopes and \
                 (SET_PARTS.search(label) or SET_PARTS.search(segment) and not NOT_A_PART.search(segment)):
             kinds.add("component")
-        if line_part and not re.search(r"세트|(?<![a-z])set(?![a-z])", segment, re.I):
+        # A package weight under a club heading is the box's, not the club's: "- Package Weight : 1.45 Kilograms"
+        # below "샌드 웨지 ..." went to kind_conflict and the set took the default (wedge sets, 2026-11-17: 23 sets,
+        # 1430-2160 g; scripts/category_measures.json `plausible` refuses a one-club box under 1 kg)
+        if line_part and "packed" not in kinds and not re.search(r"세트|(?<![a-z])set(?![a-z])", segment, re.I):
             kinds.add("component")                     # under a club heading / after a club prefix: one club's
             scopes = [s for s in scopes if s != "set"]
         if len(kinds) > 1:
@@ -675,6 +735,8 @@ def measures(rows=(), notice=None, description=None, page_html="", product_id=No
         found = []
         if has_weight:
             plain = source in STRUCTURED and bool(PLAIN_WEIGHT_LABEL.fullmatch(LABEL_UNIT.sub("", label).strip()))
+            bullet = BULLET_ROW.match(value) if source == "description" and not label else None
+            plain = plain or bool(bullet and PLAIN_WEIGHT_LABEL.fullmatch(LABEL_UNIT.sub("", bullet["label"]).strip()))
             weights, review = _weights(label, value, is_set, part, plain, size_row)
             out["review"] += [{**place, "measure": "weight", "reason": r} for r in review]
             weights = _bind_values(value, weights, binding, options, out["review"], place)
@@ -694,7 +756,30 @@ def measures(rows=(), notice=None, description=None, page_html="", product_id=No
                 continue
             seen.add(key)
             out[bucket].append({**fields, **place, "binding": own or binding, "origin": "source_stated"})
+    if _colour_only(options) and not WHOLE_KIT.search(f"{name or ''} {category_name}"):
+        for bucket in ("weights", "dimensions"):
+            for c in out[bucket]:
+                if c["binding"]["scope"] == "context":
+                    c["binding"] = {"scope": "product", "variant_ids": []}
     return out
+
+
+# Variants that differ only in colour are one product: a line that names no option is all of theirs, not `context`
+# ("Item Weight: 1.29 Kilograms" on a wedge set sold in Black / Silver stayed at the default; wedge sets 2026-11-17,
+# 12 weights). Not on a full set or a bag: there an unnamed "무게: 2.9kg" is the bag's or one model's, and the
+# composition from the clubs is better (50002788: 6826673633, 11877384012). A value with a number, a loft or a set
+# word is a composition, not a colour.
+NOT_A_COLOUR = re.compile(r"\d|°|도(?![가-힣])|pcs?|피스|세트|(?<![a-z])sets?(?![a-z])", re.I)
+WHOLE_KIT = re.compile(r"풀\s*세트|full\s*set|캐디\s*백|골프\s*백|스탠드\s*백|보스턴\s*백|가방|(?<![a-z])bags?(?![a-z])",
+                       re.I)
+
+
+def _colour_only(options):
+    groups = [g for g in (options or {}).get("option_groups") or [] if g.get("type") not in ("CUSTOM", "SIMPLE")]
+    variants = [v for v in (options or {}).get("variants") or [] if v.get("options")]
+    if len(variants) < 2 or not groups or not all(COSMETIC_GROUP.search(g.get("name") or "") for g in groups):
+        return False
+    return not any(NOT_A_COLOUR.search(o) for v in variants for o in v["options"])
 
 
 def _bind_values(value, weights, binding, options, review, place):

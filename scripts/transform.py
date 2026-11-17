@@ -60,9 +60,10 @@ import attributes
 import brand_fallback
 from description_clean import body_notes, clean, clean_images, decode_line, picked_switches
 from description_images import current, image_rows
-from description_measures import composition_count, container_in, container_listed, package_for, profile_for, read_rows
+from description_measures import (LONG_UNITS, NUMBER_CONF, compose_by_count, composition_count, container_in,
+                                  container_listed, joined_lines, package_for, profile_for, read_rows)
 from naver_variants import choose_variants
-from package_measures import current_defaults, load_table, on_scale
+from package_measures import current_defaults, load_table, lofts, on_scale
 from spec_variants import (check_specs, hide_title_model_rows, title_cut, title_lofts_not_sold, title_one_variant,
                            title_variant_tail, title_word_unproven)
 from review_clean import clean_reviews
@@ -1130,8 +1131,9 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
     if sidecar is None:
         return [{"code": "description_images_missing", "detail": "no sidecar: run description_images.py"}]
     profile = profile_for(category_id)               # by the Naver leaf category id; None: the core only
-    facts = read_rows(image_rows(sidecar, with_conf=True), profile,
-                      [t.strip() for t in (typed or "").split("\n") if t.strip()])
+    images = image_rows(sidecar, with_conf=True)
+    typed_lines = [t.strip() for t in (typed or "").split("\n") if t.strip()]
+    facts = read_rows(images, profile, typed_lines, long_units=str(category_id) in LONG_UNITS)
     row: dict[str, Any] = next((r for r in _measures_table().get("rows", [])
                                 if str(r["category_id"]) == str(category_id)), {})
     band = profile.count if profile else (0, 0)
@@ -1195,6 +1197,21 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
                                           row.get("plausible"), profile, row.get("baselines"), ladies)
         for name in names:
             taken[name] = taken.get(name, 0) + 1
+    block = row.get("compose_by_count")
+    if block:                                        # a wedge set's weight from its clubs' (C17, 2026-11-17)
+        lines = joined_lines(typed_lines) + [f"{r.get('label') or ''} {r.get('value') or ''}" for r in spec_rows_raw] \
+            + [r if isinstance(r, str) else r[0] for rows in images for r in rows
+               if isinstance(r, str) or r[1] >= NUMBER_CONF]
+        texts = [" / ".join(v.get("options_ko") or []) for v in ov["variants"]]
+        counted_lofts = [lofts(t) for t in texts]
+        for v, text, n in zip(ov["variants"], texts, counted_lofts):
+            if not v.get("package") or "product_weight_g" not in v["package"]:
+                continue
+            made = compose_by_count(block, v["package"]["product_weight_g"], lines, title, text, n, lofts(title),
+                                    counted_lofts, texts, bool(ov["held"]))
+            if made:
+                v["package"] = {**v["package"], "product_weight_g": made}
+                taken["product_weight_g"] = taken.get("product_weight_g", 0) + 1
     if not taken:
         return []
     return [{"code": "measures_from_images", "detail": ", ".join(

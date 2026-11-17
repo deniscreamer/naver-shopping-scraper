@@ -22,7 +22,8 @@ A field the seller does not give is filled from the category table (low / centra
 it and its reliability level), `source: category_default`; a seller's value is never overwritten. A default package
 weight below the seller's own product weight is flagged `below_stated_product` (kept: the operator decides). A row
 may carry `plausible: {field: {min, max}}`, the operator's band: a stated value outside it is not taken
-(contradiction, reason implausible_for_category) and the default fills the field. No band is made up here: without
+(contradiction, reason implausible_for_category) and the default fills the field; a box is one statement, so a
+side out of its band refuses the other two as well (box_not_whole, 2026-11-17). No band is made up here: without
 one, every stated value is taken. A row may also carry `baselines`, the operator's amounts for the parts of a set
 of like items in a container (BASELINES: one item, the container, the carton, the longest item, the box's length
 over it; BASELINE_SIDES: the box's width and height without the container and with it; approved_by, approved_at,
@@ -30,8 +31,12 @@ basis). With them description_measures.py composes a field the seller does not s
 part from the product's own data when it is there and from the baseline when it is not; the flat default is then
 the last resort. No amount is made up in code; a row without the block gets no composition. A row may also carry
 `kinds` (the owner, 2026-11-11, 50002787 junior clubs: single clubs and sets in one category): [{kind, match,
-alone, always, unless, strong, fields, basis}], a kind of product with its own low / central / high, taken by
-default_kind() from the title and the variant's words; its defaults carry `kind`. `reliability` today
+alone, always, unless, strong, lofts, fields, basis}], a kind of product with its own low / central / high, taken by
+default_kind() from the title and the variant's words; its defaults carry `kind`. `lofts` [min, max] (2026-11-17,
+50002783 two_wedges / four_plus): a count kind, by the variant's own count or that many distinct lofts in its
+value, else by the title's count when every variant names as many lofts. A row may also carry `compose_by_count`
+(50002783, 2026-11-17; checked by _check_compose, read by description_measures.compose_by_count): a set's product
+weight from its clubs' labelled weights. `reliability` today
 has one level, `estimated_average` (the weakest: an average of estimates, not measured); delivery will apply its
 own coefficient per level.
 
@@ -116,12 +121,18 @@ def check_row(row: dict[str, Any]) -> None:
                 f"{where}: baselines needs {', '.join(BASELINES)} (numbers > 0), {', '.join(BASELINE_SIDES)} "
                 "([width, height], width >= height > 0), approved_by, approved_at and basis, and nothing else")
     _check_fields(where, row.get("fields"))
+    _check_compose(where, row.get("compose_by_count"))
     for kind in row.get("kinds") or []:
         named = f"{where} kind {kind.get('kind')}"
         if not kind.get("kind") or not kind.get("basis") or set(kind) - {"kind", "match", "alone", "unless",
-                                                                          "strong", "always", "fields", "basis"}:
+                                                                          "strong", "always", "lofts", "fields",
+                                                                          "basis"}:
             raise CategoryDefaultsInvalid(f"{named}: needs kind, match, fields and basis (alone, unless, strong, "
-                                          "always optional)")
+                                          "always, lofts optional)")
+        span = kind.get("lofts")
+        if span is not None and not (isinstance(span, list) and len(span) == 2
+                                     and all(type(n) is int for n in span) and 2 <= span[0] <= span[1]):
+            raise CategoryDefaultsInvalid(f"{named}: lofts must be [min, max], whole numbers, 2 <= min <= max")
         try:
             for key in ("match", "alone", "unless", "strong", "always"):
                 if kind.get(key) is not None:
@@ -131,6 +142,35 @@ def check_row(row: dict[str, Any]) -> None:
             raise CategoryDefaultsInvalid(f"{named}: match / alone / unless must be regular expressions: {e}") \
                 from None
         _check_fields(named, kind.get("fields"))
+
+
+# the optional `compose_by_count` block (50002783, 2026-11-17; description_measures.compose_by_count reads it)
+COMPOSE_KEYS = {"item_g", "writes", "confidence", "count_from", "skip", "approved_by", "approved_at", "basis"}
+COMPOSE_CONFIDENCE = ("labelled_sum", "one_weight_times_count")
+COMPOSE_COUNT_FROM = ("variant", "title_if_one_count")
+COMPOSE_SKIPS = ("reference_club", "amazon_item_weight", "more_values_than_count", "mixed_gender",
+                 "title_lofts_over_variant", "held", "single_club")
+
+
+def _check_compose(where: str, block: Any) -> None:
+    """The composition of a set's weight from its clubs' weights: the listed keys only, approved and explained; an
+    item band 0 < min < max; it writes product_weight_g only (a box is never raised by it: PGM's 8 lofts x 462 g)."""
+    if block is None:
+        return
+    try:
+        good = set(block) == COMPOSE_KEYS and all(block[k] for k in ("approved_by", "approved_at", "basis")) \
+            and 0 < block["item_g"]["min"] < block["item_g"]["max"] and block["writes"] == ["product_weight_g"] \
+            and set(block["confidence"]) == set(COMPOSE_CONFIDENCE) \
+            and all(type(c) is int and 1 <= c <= 3 for c in block["confidence"].values()) \
+            and block["count_from"] and set(block["count_from"]) <= set(COMPOSE_COUNT_FROM) \
+            and set(block["skip"]) <= set(COMPOSE_SKIPS)
+    except (KeyError, TypeError):
+        good = False
+    if not good:
+        raise CategoryDefaultsInvalid(
+            f"{where}: compose_by_count needs {', '.join(sorted(COMPOSE_KEYS))} and nothing else: item_g {{min, max}} "
+            f"(0 < min < max), writes [product_weight_g], confidence {{{', '.join(COMPOSE_CONFIDENCE)}}} (1-3), "
+            f"count_from of {', '.join(COMPOSE_COUNT_FROM)}, skip of {', '.join(COMPOSE_SKIPS)}")
 
 
 def _check_fields(where: str, fields: Any) -> None:
@@ -154,22 +194,67 @@ def _measure_words(text: str | None) -> str:
     return _MEASURE.sub(" ", text or "")
 
 
-def default_kind(row: Mapping[str, Any], title: str | None, variant_name: str | None) -> dict[str, Any] | None:
+# A wedge's loft in a variant's value (44-72): "52 56 degree (2PCS)", "G 52도 + S 56도 + L 60도", "Black Set (52 56
+# 60)", "Layer-50/56". Not a range ("52-56", "50~54": no count), a count or a size ("52개", "56cm", "60g"), nor
+# glued ("5256"). 2026-11-17 (the W8 review, 50002783): "세" is an age ("6~8세"), never "세트" ("왼손 52 56 60 세트",
+# "52/56세트" read 2 and 1); a dash after a model code is no range ("LH01-52 56 60 Degree" read 2): the range guard
+# wants a number of one or two digits with no letter before it. A loft counts when it carries 도 / ° / degree or
+# stands in a run of lofts (only separators and a letter or two between them, "52Y 56Y"): a lone bare number is a
+# shaft's weight or flex ("50도 / Diamana 60 S", "52도 / 스틸파이버 / i70 A", "60 normal / 48°/52°/56°").
+_LOFT = re.compile(r"(?<![\d.])(?<!(?<![A-Za-z])\d\d[~\-])(?<!(?<![A-Za-z\d])\d[~\-])(?<!\d\s[~\-])"
+                   r"(4[4-9]|[56]\d|7[0-2])(?![\d.])(?!\s*[~\-]\s*\d)"
+                   r"(?!\s*(?:g(?![a-z])|그램|개|종|cm|mm|kg|세(?!트)|%|원|만|p(?![a-z])|pcs|피스|자루|본|인치|inch|\"))", re.I)
+_LOFT_MARK = re.compile(r"\s*(?:도|°|˚|deg)", re.I)
+_LOFT_GAP = re.compile(r"[A-Za-z]{0,2}\s*(?:도|°|˚|deg(?:ree)?s?)?\s*[/,+&\-·\s]*\s*[A-Za-z]{0,2}\s*", re.I)
+
+
+def lofts(text: str | None) -> int:
+    """How many distinct lofts a variant's value names (read before _measure_words, which drops "52도"): a number
+    marked as a loft, or a bare one next to another loft (_LOFT's comment)."""
+    text = text or ""
+    found = list(_LOFT.finditer(text))
+    out: set[str] = set()
+    for i, m in enumerate(found):
+        gaps = ([text[found[i - 1].end():m.start()]] if i else []) + \
+               ([text[m.end():found[i + 1].start()]] if i + 1 < len(found) else [])
+        if _LOFT_MARK.match(text, m.end()) or any(_LOFT_GAP.fullmatch(g) for g in gaps):
+            out.add(m.group(1))
+    return len(out)
+
+
+def default_kind(row: Mapping[str, Any], title: str | None, variant_name: str | None,
+                 siblings: list[str | None] | None = None) -> dict[str, Any] | None:
     """The row's kind of product (`kinds`) a variant is, for its defaults; None: the row's own fields. The title and
     the variant's words are read apart (glued, "...클럽" + "6~8세" read as "클럽 6", a count). A kind is taken when
 `always` is in the variant's own words (단품: sold alone, whatever the title says); when
     `alone` is in the variant's own words, `unless` is not, and the title has no `strong` word (a variant that names
     one club of a "퍼터 클럽 세트" listing is that club; of a 풀세트 it is the set's choice); or when `match` is in the
     title or the variant and `unless` in neither (the owner, 2026-11-11: a single junior club gets a single club's
-    box, a set the set's; in doubt the set's, the larger, box)."""
+    box, a set the set's; in doubt the set's, the larger, box).
+    A kind with `lofts` [min, max] counts a set (50002783 two_wedges / four_plus, 2026-11-17): the variant's own
+    count first, its `match` or that many distinct lofts in its value (lofts()); a variant naming two or more lofts
+    of another count is never the title's. Else the title's `match`, only when the listing has one variant or every
+    variant (`siblings`: all the variants' values; None: not known) names as many lofts. `unless` in either blocks."""
     t, v = _measure_words(title), _measure_words(variant_name)
+    own_lofts = lofts(variant_name)
 
     def has(key: str, text: str) -> bool:
         return bool(kind.get(key)) and re.search(kind[key], text) is not None
     for kind in row.get("kinds") or []:
         if has("always", v) or has("alone", v) and not has("unless", v) and not has("strong", t):
             return dict(kind)
-        if (has("match", t) or has("match", v)) and not has("unless", t) and not has("unless", v):
+        blocked = has("unless", t) or has("unless", v)
+        span = kind.get("lofts")
+        if span:
+            if blocked:
+                continue
+            if has("match", v) or span[0] <= own_lofts <= span[1]:
+                return dict(kind)
+            alike = siblings is None or len(siblings) <= 1 or len({lofts(s) for s in siblings}) == 1
+            if has("match", t) and own_lofts < 2 and alike:
+                return dict(kind)
+            continue
+        if (has("match", t) or has("match", v)) and not blocked:
             return dict(kind)
     return None
 
@@ -186,7 +271,7 @@ def current_defaults(fields: dict[str, Any], specs: Mapping[str, Any], variant_i
     if row is None:
         return fields
     name_of = {v.get("id"): v.get("name") for v in ((specs.get("options") or {}).get("variants") or [])}
-    kind = default_kind(row, specs.get("name"), name_of.get(variant_id))
+    kind = default_kind(row, specs.get("name"), name_of.get(variant_id), list(name_of.values()))
     defaults = kind["fields"] if kind else row["fields"]
     out = dict(fields)
     for name, f in fields.items():
@@ -278,7 +363,7 @@ def variant_measures(specs: Mapping[str, Any], table: dict[str, Any]) -> list[di
     out = []
     names = {v.get("id"): v.get("name") for v in ((specs.get("options") or {}).get("variants") or [])}
     for variant_id in variants:
-        kind = default_kind(row, specs.get("name"), names.get(variant_id)) if row else None
+        kind = default_kind(row, specs.get("name"), names.get(variant_id), list(names.values())) if row else None
         defaults: dict[str, Any] = kind["fields"] if kind else (row or {}).get("fields") or {}
         fields: dict[str, Any] = stated(measures, variant_id)
         for name, band in ((row or {}).get("plausible") or {}).items():
@@ -286,6 +371,14 @@ def variant_measures(specs: Mapping[str, Any], table: dict[str, Any]) -> list[di
             if f and "value" in f and not band["min"] <= f["value"]["min"] <= f["value"]["max"] <= band["max"]:
                 fields[name] = {"contradiction": [{k: v for k, v in f.items() if k != "also"}],
                                 "reason": "implausible_for_category"}
+        # a box is one statement: one side out of its band refuses the three (as description_measures.merge_fields;
+        # 13372006463's one-wedge box 37.2 x 2 x 1 in on a set's page must not leave 945 x 51 mm beside a default)
+        if any(fields.get(name, {}).get("reason") == "implausible_for_category" for name in SIDES):
+            for name in SIDES:
+                f = fields.get(name)
+                if f and "value" in f:
+                    fields[name] = {"contradiction": [{k: v for k, v in f.items() if k != "also"}],
+                                    "reason": "box_not_whole"}
         for name in FIELDS:
             if name in fields and "contradiction" not in fields[name]:
                 continue

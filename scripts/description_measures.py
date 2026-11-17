@@ -436,16 +436,72 @@ def _column_lengths(cells: list[str], j: int, n: int, p: Profile) -> list[int]:
     return left or right if not (left and right) else []
 
 
+# 2026-11-17 (wedge sets, agency imports of Amazon pages): "- Package Weight : 1.45 Kilograms", "Item Weight: 3.2
+# Pounds", "2.5 파운드". Read only where a category's row bands them (category_measures.json `plausible`): a set's
+# page often shows one club's Amazon weight (0.45 kg, 1.04 lb; 25 of 72 readings of 50002783), which only the band
+# refuses. The guard before the number is two lookbehinds: "(?<![\d.,])" also refused "cm,10.8kg".
+LONG_UNITS = frozenset({"50002783"})
+_KG_LONG_RE = re.compile(r"(?<!\d)(?<!\d[.,])" + _NUM + r"\s*\(?\s*(?:kgs?|㎏|킬로(?:그램)?|kilograms?|kilos?)(?![a-z])"
+                         r"(?!\s*(?:경량화|가벼))", re.I)
+_LB_RE = re.compile(r"(?<!\d)(?<!\d[.,])" + _NUM + r"\s*(?:pounds?|lbs?\b|파운드)", re.I)
+LB_G = 453.59237
+
+
+def _kilograms(row: str, long_units: bool) -> list[float]:
+    """The weights of a row in grams, from kg (and, with long_units, kilograms / pounds), in the row's order."""
+    if not long_units:
+        return [_num(m.group(1)) * 1000 for m in _KG_RE.finditer(row)]
+    found = [(m.start(), _num(m.group(1)) * 1000) for m in _KG_LONG_RE.finditer(row)] + \
+        [(m.start(), _num(m.group(1)) * LB_G) for m in _LB_RE.finditer(row)]
+    return [g for _, g in sorted(found)]
+
+
+# A typed label line with its value alone on the next line ("Item Package Dimensions L x W x H" / "38 x 4.5 x 4
+# inches", 2026-11-17: a two-cell layout flattened) is one row "label | value". Not Amazon's Item Weight / 품목 무게:
+# on a set's page it is often one club's weight (with C10 about 33 sets would take a club's weight). Only with
+# long_units (LONG_UNITS, 50002783): the W8 review (2026-11-17) found it moved two published 50002787 junior PGM
+# clubs (10259486834 $749 -> $219, 10259500908 $309 -> $209, "패키지 치수" / "100*12.5*12.5cm") outside the
+# decision; widening it to another category waits for the owner.
+_LABEL_LINE = re.compile(r"무게|중량|weight|mass|크기|치수|사이즈|길이|높이|가로|세로|폭(?![가-힣])|넓이|깊이|지름|직경|"
+                         r"length|width|height|depth|diameter|dimensions?|size", re.I)
+_NOT_JOINED = re.compile(r"item\s*weight|품목\s*무게", re.I)
+_VALUE_LINE = re.compile(r"\s*(?:약\s*)?\d+(?:[.,]\d+)?\s*(?:kgs?|㎏|킬로(?:그램)?|kilograms?|kilos?|g|그램|grams?|"
+                         r"lbs?|pounds?|파운드|oz|ounces?)\s*", re.I)
+
+
+def joined_lines(lines: list[str]) -> list[str]:
+    """The typed lines with each label line joined to the value line under it (see _LABEL_LINE)."""
+    out: list[str] = []
+    skip = False
+    for i, line in enumerate(lines):
+        if skip:
+            skip = False
+            continue
+        nxt = lines[i + 1].strip() if i + 1 < len(lines) else ""
+        t = line.strip()
+        triple = _TRIPLE_RE.match(nxt)
+        value = bool(_VALUE_LINE.fullmatch(nxt) or triple and re.fullmatch(r"(?:es)?\s*", nxt[triple.end():]))
+        if t and len(t) <= 30 and not re.search(r"\d", t) and _LABEL_LINE.search(t) and not _NOT_JOINED.search(t) \
+                and value:
+            out.append(f"{t} | {nxt}")
+            skip = True
+        else:
+            out.append(line)
+    return out
+
+
 def read_rows(images: list[list[Any]], profile: Profile | None = None,
-              typed: list[str] | None = None) -> dict[str, Any]:
+              typed: list[str] | None = None, long_units: bool = False) -> dict[str, Any]:
     """Facts from the OCR rows of each image (the core's, plus the profile's parts when one is given). A row is its
     text, or (text, OCR confidence): a row read below NUMBER_CONF gives no single value (a box, a set / product
     weight or size, the container's), only its words and the items' weights and lengths (an item's value is held
     by its band, and a set's by the band of its longest item).
     typed: the lines of the seller's typed description, read as one more block of rows (no OCR doubt; its table
     cells are joined by " | ", an image's by " / "). Every value carries its row as the quote, and `image` (its
-    number) or `from` TYPED."""
+    number) or `from` TYPED. long_units: read kilograms and pounds too and join a typed label line to its value line
+    (joined_lines) (LONG_UNITS: a banded category only)."""
     facts: dict[str, Any] = {k: [] for k in KEYS}
+    typed = joined_lines(typed) if typed and long_units else typed
     p = profile
     blocks: list[tuple[int | None, str, list[Any]]] = [(n, " / ", raw) for n, raw in enumerate(images)]
     for n, sep, raw in blocks + ([(None, " | ", typed)] if typed else []):
@@ -462,7 +518,7 @@ def read_rows(images: list[list[Any]], profile: Profile | None = None,
             where = {"from": TYPED, "row": i, "quote": row[:200]} if n is None else \
                 {"image": n, "row": i, "quote": row[:200]}
             sure = confs[i] >= NUMBER_CONF                 # a statement stands in for a default: a misread would too
-            kgs = [_num(m.group(1)) * 1000 for m in _KG_RE.finditer(row)] if sure else []
+            kgs = _kilograms(row, long_units) if sure else []
             triple = _TRIPLE_RE.search(row) if sure else None
             head = row.split(sep, 1)[0]
             about = _about(rows, i, p) if p else None
@@ -1004,3 +1060,95 @@ def merge_fields(fields: dict[str, Any], stated: dict[str, dict[str, Any]],
             continue
         taken.append(name)
     return out, taken
+
+
+# ---- a wedge set's weight from its clubs' (compose_by_count, 50002783, 2026-11-17) ------------------------------
+# The block of the category's row (category_measures.json, checked by package_measures._check_compose) says how; the
+# numbers are the operator's, none is made up here. A wedge set weighs its clubs, about 460 g each, no constant part.
+_CLUB_LABEL = re.compile(r"(?:클럽|총|club|クラブ)?\s*(?:중량|무게|weight|重量|総重量)", re.I)
+_CLUB_PART = re.compile(r"헤드|head|샤프트|shaft|그립|grip|ヘッド|シャフト|グリップ|바운스|bounce|스윙\s*웨이트|swing", re.I)
+_CLUB_G = re.compile(r"(?<![\d.])(\d{3})(?:\.\d)?\s*(?:g(?![a-z])|그램)?(?![\d.%])(?!\s*(?:stainless|스테인|steel|sus))",
+                     re.I)                       # "431 Stainless Steel" is a steel (13163057497), not 431 g
+_REFERENCE = re.compile(r"기준|추정|상정|[#＃]\s*[57](?!\d)|(?<![\d.])[57]\s*번|(?<![\d.])7i(?![a-z])|[\[(]\s*[57]\s*[\])]",
+                        re.I)                    # "[7]약413g" (Yamaha RMX 13414959468)
+_AMAZON_WEIGHT = re.compile(r"item\s*weight|product\s*weight|품목\s*무게", re.I)   # GoSports 424 g for a set
+_SET_COUNT = re.compile(r"(?<!\d)([2-6])\s*(?:개|종|pcs?|피스|자루|본|p(?![a-z])|-?\s*piece)", re.I)
+_LOFT_RUN = re.compile(r"(?<!\d)((?:4[4-9]|5\d|6[0-4])(?:\s*(?:°|도)?\s*[+,/&]\s*(?:4[4-9]|5\d|6[0-4]))+)")
+_MEN = re.compile(r"남성|남자|(?<![a-z])men'?s?(?![a-z])|맨즈", re.I)
+_WOMEN = re.compile(r"여성|여자|레이디|ladies|women'?s?|우먼", re.I)
+
+
+def club_weights(lines: list[str], band: dict[str, float]) -> list[tuple[list[int], str]]:
+    """(grams, quote) of each line with a weight label, no part word (head, shaft, grip) and 3-digit weights in the
+    club band; the value may stand on the next line when that one has no label."""
+    out = []
+    for i, line in enumerate(lines):
+        if not _CLUB_LABEL.search(line) or _CLUB_PART.search(line):
+            continue
+        nxt = lines[i + 1] if i + 1 < len(lines) and not _CLUB_LABEL.search(lines[i + 1]) else ""
+        quote = f"{line} {nxt}".strip()
+        grams = [int(m.group(1)) for m in _CLUB_G.finditer(quote) if band["min"] <= int(m.group(1)) <= band["max"]]
+        if grams:
+            out.append((grams, quote[:200]))
+    return out
+
+
+def _counts(text: str) -> set[int]:
+    found = {int(m.group(1)) for m in _SET_COUNT.finditer(text or "")}
+    run = _LOFT_RUN.search(text or "")
+    if run:
+        found.add(len(re.findall(r"4[4-9]|5\d|6[0-4]", run.group(1))))
+    return found
+
+
+def compose_by_count(block: dict[str, Any], field: dict[str, Any], lines: list[str], title: str, variant: str,
+                     variant_lofts: int, title_lofts: int, all_lofts: list[int], all_texts: list[str],
+                     held: bool) -> dict[str, Any] | None:
+    """A set's product_weight_g from its clubs' labelled weights (the row's `compose_by_count`), in place of the flat
+    category default only: the weights summed when there are as many as the set's clubs (`labelled_sum`), else one
+    weight x the count (`one_weight_times_count`); None when a `skip` rule holds or nothing fits. The count: the
+    variant's own (a count word or its lofts), else the title's when it states one (`title_if_one_count`)."""
+    if field.get("source") != "category_default":
+        return None
+    skip = set(block["skip"])
+    if "held" in skip and held or "single_club" in skip and field.get("kind") == "single_club":
+        return None
+    if "title_lofts_over_variant" in skip and max(all_lofts, default=0) >= 2 and title_lofts > max(all_lofts):
+        return None
+    found = club_weights(lines, block["item_g"])
+    if "amazon_item_weight" in skip:
+        found = [(g, q) for g, q in found if not _AMAZON_WEIGHT.search(q)]
+    if not found or "reference_club" in skip and any(_REFERENCE.search(q) for _, q in found):
+        return None
+    # men's and women's clubs in one listing (13699940318: 468 g the men's, 395 / 403 g the women's; its women's
+    # variants say "(여성용)", the men's nothing): variants that differ by a gender word, or a weight line naming both;
+    # not a unisex title ("남성 및 여성용", PGM 13261483119)
+    genders = {"m" if _MEN.search(t) and not _WOMEN.search(t) else "w" if _WOMEN.search(t) and not _MEN.search(t)
+               else "-" for t in all_texts}
+    if "mixed_gender" in skip and (len(genders) > 1 and genders != {"-"}
+                                   or any(_MEN.search(q) and _WOMEN.search(q) for _, q in found)):
+        return None
+    own = _counts(variant) | ({variant_lofts} if variant_lofts >= 2 else set())
+    count, source = None, None
+    if "variant" in block["count_from"] and len(own) == 1:
+        count, source = own.pop(), "variant"
+    elif not own and "title_if_one_count" in block["count_from"] and len(said := _counts(title)) == 1:
+        count, source = said.pop(), "title"
+    if count is None:
+        return None
+    grams = sorted({g for gs, _ in found for g in gs})
+    quotes = {g: q for gs, q in found for g in gs}
+    if len(grams) > count and "more_values_than_count" in skip:
+        return None
+    if len(grams) == count:
+        level, how, parts = block["confidence"]["labelled_sum"], f"{count} clubs: labelled weights summed", \
+            [_part("club", g, "stated", {"quote": quotes[g]}) for g in grams]
+    elif len(grams) == 1:
+        level, how = block["confidence"]["one_weight_times_count"], f"{count} clubs x one labelled weight"
+        parts = [_part("club", grams[0], "stated", {"quote": quotes[grams[0]]}, count=count)]
+    else:
+        return None
+    total = sum(grams) if len(grams) == count else grams[0] * count
+    return {"value": {"min": total, "max": total}, "source": COMPOSED, "confidence": level, "how": how,
+            "parts": parts, "count_from": source, "approved_by": block["approved_by"],
+            "approved_at": block["approved_at"], "compared": _brief(field)}

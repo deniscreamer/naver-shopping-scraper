@@ -9,6 +9,8 @@ The baselines are the operator's own (category_measures.json, row 50002788).
 
     .venv/bin/python -m pytest scripts/test_description_measures.py -q
 """
+import pytest
+
 import description_measures as D
 from package_measures import load_table
 
@@ -1149,3 +1151,143 @@ def test_review_cases_2026_11_11():
     assert D.image_count(f) is None
     f = D.read_rows([["(구경 60/중량27g)", "무게 / 3.5kg"]], GOLF)
     assert f["container_weights"] == []
+
+
+# ---- wedge sets, 2026-11-17 (C10, C11, C15 typed half, C17): category 50002783 ---------------------------------
+
+WEDGE_ROW = next(r for r in load_table()["rows"] if r["category_id"] == "50002783")
+WEDGE_FIELDS = {name: {**WEDGE_ROW["fields"][name], "source": "category_default", "confidence": 1}
+                for name in D.FIELDS}
+
+
+def wedge(rows, long_units=True):
+    """One wedge set's fields merged with the typed rows, under the row's plausible band."""
+    facts = D.read_rows([], None, rows, long_units=long_units)
+    return D.package_for(dict(WEDGE_FIELDS), facts, None, None, WEDGE_ROW["plausible"])
+
+
+def test_wedge_rows_band_is_the_owners_choice():
+    # decisions.md 2026-11-17: product 800-3500 g, package 1000-4000 g, box height 40-400 mm
+    assert WEDGE_ROW["plausible"] == {"product_weight_g": {"min": 800, "max": 3500},
+                                      "package_weight_g": {"min": 1000, "max": 4000},
+                                      "package_height_mm": {"min": 40, "max": 400}}
+    junior = next(r for r in load_table()["rows"] if r["category_id"] == "50002787")
+    assert junior["plausible"] == {"product_weight_g": {"min": 150, "max": 8000},
+                                   "package_weight_g": {"min": 300, "max": 10000}}
+
+
+@pytest.mark.parametrize("row, grams", [
+    ("- Package Weight : 1.45 Kilograms", [1450]),           # BombTech 13370297764
+    ("Item Weight: 3.2 Pounds", [1451.5]),
+    ("포장 무게 2.5 파운드", [1134.0]),
+    ("크기 30 x 20cm,10.8kg", [10800]),                     # the old guard "(?<![\\d.,])" lost this one
+    ("Item Weight : 0.454 Kilograms", []),                   # not 454 kg: no number glued after a dot
+    ("4.5 lbs / 2.04 kg", [2041.2, 2040]),
+])
+def test_long_units_reader(row, grams):
+    assert [round(g, 1) for g in D._kilograms(row, True)] == grams
+
+
+def test_long_units_only_where_asked():
+    assert D._kilograms("- Package Weight : 1.45 Kilograms", False) == []
+    facts = D.read_rows([], None, ["- Package Weight : 1.45 Kilograms"])
+    assert facts["packed_weights"] == []
+
+
+def test_wedge_package_weight_read_and_banded():
+    out, taken = wedge(["- Package Weight : 1.45 Kilograms"])
+    assert out["package_weight_g"]["value"]["max"] == 1450 and taken == ["package_weight_g"]
+    # one club's box on a set's page (13377524996: 0.45 kg; 13162968497: 1.04 lb): refused, the default stays
+    out, taken = wedge(["- Package Weight : 0.45 Kilograms", "- Item Weight : 1.04 Pounds"])
+    assert not taken
+    assert out["package_weight_g"]["compared"]["rejected"] == "implausible_for_category"
+    assert out["product_weight_g"]["compared"]["rejected"] == "implausible_for_category"
+
+
+def test_wedge_box_height_band():
+    # C11: a single wedge's box on a set's page, 36.5 x 4 x 0.5 inches (13377524996): 13 mm high, the whole box
+    # refused; a real 3-wedge box 1.8 in high (46 mm, 13372276089) stands
+    out, taken = wedge(["Package Dimensions : 36.5 x 4 x 0.5 inches"])
+    assert not taken and [out[n]["compared"]["rejected"] for n in D.SIDES] == \
+        ["box_not_whole", "box_not_whole", "implausible_for_category"]
+    out, taken = wedge(["Package Dimensions : 39.4 x 4.5 x 1.8 inches"])
+    assert sorted(taken) == sorted(D.SIDES) and out["package_height_mm"]["value"]["max"] == 46
+
+
+@pytest.mark.parametrize("lines, joined", [
+    (["무게", "1.4kg"], ["무게 | 1.4kg"]),
+    (["포장 박스 크기", "38 x 4.5 x 4 inches"], ["포장 박스 크기 | 38 x 4.5 x 4 inches"]),
+    (["Item Weight", "0.45 Kilograms"], ["Item Weight", "0.45 Kilograms"]),     # one club's, often: not joined
+    (["품목 무게", "1.43킬로그램"], ["품목 무게", "1.43킬로그램"]),
+    (["무게 2개", "1.4kg"], ["무게 2개", "1.4kg"]),                             # a digit in the label
+    (["무게", "1.4kg 입니다"], ["무게", "1.4kg 입니다"]),                       # more than a value
+])
+def test_typed_label_and_value_lines(lines, joined):
+    assert D.joined_lines(lines) == joined
+
+
+def test_typed_label_line_gives_the_box():
+    out, taken = wedge(["포장 박스 크기", "38 x 4.5 x 4 inches"])
+    assert sorted(taken) == sorted(D.SIDES) and out["package_length_mm"]["value"]["max"] == 965
+
+
+def test_typed_label_lines_joined_only_with_long_units():
+    """The W8 review (2026-11-17): the join is 50002783's (LONG_UNITS); in 50002787 it gave two published junior PGM
+    clubs (10259486834, 10259500908) the box "패키지 치수" / "100*12.5*12.5cm", a price change outside the decision."""
+    lines = ["패키지 치수", "100*12.5*12.5cm"]
+    assert not D.read_rows([], None, lines)["packed_boxes"]
+    assert D.read_rows([], None, lines, long_units=True)["packed_boxes"]
+
+
+# C17: a set's weight from its clubs' labelled weights (the row's compose_by_count block)
+BLOCK = WEDGE_ROW["compose_by_count"]
+PW = {**WEDGE_ROW["fields"]["product_weight_g"], "source": "category_default", "confidence": 1}
+
+
+def by_count(lines, title="PRGR 웨지 세트", variant="", vl=0, tl=0, all_lofts=None, texts=None, held=False,
+             field=None):
+    return D.compose_by_count(BLOCK, field or PW, lines, title, variant, vl, tl, all_lofts or [vl],
+                              texts or [variant], held)
+
+
+def test_labelled_weights_summed_when_they_count_the_set():
+    # USPA 414 + 412 (13582215582): confidence 3
+    got = by_count(["클럽 중량 AW 414g / SW 412g"], variant="52도+58도", vl=2)
+    assert (got["value"]["max"], got["confidence"], got["count_from"]) == (826, 3, "variant")
+    assert got["source"] == "composed" and got["compared"]["value"] == 1400
+
+
+def test_one_labelled_weight_times_the_count():
+    # PRGR 448 g (12482346595), two in the variant; Toho 460 g x 2 from the title
+    got = by_count(["중량", "448g"], variant="2개 (52 58)", vl=2)
+    assert (got["value"]["max"], got["confidence"]) == (896, 2)
+    got = by_count(["무게 460g"], title="토호 장인 웨지 2개 세트", variant="블랙")
+    assert (got["value"]["max"], got["count_from"]) == (920, "title")
+
+
+def test_unisex_title_is_not_mixed_gender():
+    # PGM 13261483119 "남성 및 여성용 ... 52/56/60도", 462 g a club
+    got = by_count(["클럽 무게 462g"], title="남성 및 여성용 PGM 골프 웨지 세트 - 52/56/60도", variant="Black 52 56 60 Set",
+                   vl=3)
+    assert (got["value"]["max"], got["confidence"]) == (1386, 2)
+
+
+@pytest.mark.parametrize("over", [
+    {"lines": ["무게 #7 기준 448g"]},                                   # a reference club (Yamaha RMX)
+    {"lines": ["클럼무게 / [7]약413g"]},                                # 13414959468
+    {"lines": ["중량 460g"], "texts": ["남성 52 58", "여성 52 58"]},       # men's and women's variants
+    {"lines": ["클럽중량(g) / 약395 / 약403"], "texts": ["크롬 52+56 (2개세트)", "크롬 (여성용) 50+56 (2개세트)"]},
+    {"lines": ["Item Weight : 424 Grams"]},                            # Amazon's Item Weight (GoSports)
+    {"lines": ["중량 441g 449g 455g 467g"]},                            # more weights than clubs (MG5 table)
+    {"lines": ["중량 남성 468g 여성 395g"], "texts": ["남성 52 58", "여성 52 58"]},    # mixed gender
+    {"title": "PGM 웨지 48 50 52 54 56 58 60 62", "tl": 8},             # the title lists more lofts (13017332771)
+    {"held": True},
+    {"field": {**PW, "kind": "single_club"}},
+    {"field": {"value": {"min": 1500, "max": 1500}, "source": "source_stated", "confidence": 4}},
+    {"lines": ["431 Stainless Steel 무게"]},                           # a steel, not 431 g (13163057497)
+    {"variant": "블랙", "vl": 0, "title": "웨지 세트"},                  # no count
+])
+def test_compose_by_count_skips(over):
+    args = {"lines": ["중량 448g"], "variant": "52 58", "vl": 2, **over}
+    lines = args.pop("lines")
+    assert by_count(lines, **args) is None
