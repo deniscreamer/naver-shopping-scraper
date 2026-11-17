@@ -100,6 +100,9 @@ else changes. `on`: a confirmed match withdrawn by the owner, or one the candida
 translation); strictly better: `duplicate_better {replaces}` and on, and once it is published the old product is
 withdrawn (publish.withdraw, DRAFT, reason replaced_by:<new key>) if it is still published and the new product has
 no fewer variants (`replaced`, else `replace_skipped`). A title match not confirmed is `duplicate_seen` (not_confirmed).
+No confirmed match but the same UPC as a product under dedupe.upc_suspect (2026-11-17): `duplicate_seen` decision
+`same_upc:<key>`, taken as usual; under `on` it is published as a draft and held at once (`held_same_upc`: withdrawn,
+reason `hold: copy of live <key>, same UPC ...`, OWNER_RULES rule 2), the owner decides; under `log` the event only.
 A draft (draft first, 2026-11-16) does not replace a live product (`replace_skipped`, "the new one is a draft"):
 `activate` prints the withdraw line of the old one.
 
@@ -678,6 +681,12 @@ def dedupe_step(job: Job, ctx: Context, key: str, line: dict | None) -> str | No
         line = latest_lines(job.shop, None, job.shops_root)[key][2]
     cand = dedupe.entry(line)
     d = index.decide(cand)
+    if d["decision"] is None and d.get("same_upc"):         # a hold candidate, never a decision (2026-11-17)
+        job.log(key, "duplicate_seen", decision=f"same_upc:{d['same_upc'][0]}", same_upc=d["same_upc"],
+                upc=d.get("upc"), grade=cand["grade"], reviews=cand["reviews"], price=cand["price"],
+                matches=d["matches"])
+        index.add(cand)
+        return None
     if not d["matches"]:
         index.add(cand)
         return None
@@ -728,6 +737,40 @@ def replace_step(job: Job, ctx: Context, shop: Any, key: str) -> str:
         ctx["dedupe"].replace(old, key)
     job.log(key, "replaced", replaces=old, variants=[new_n, old_n])
     return f"; replaces {old.split(':')[3]} (withdrawn)"
+
+
+def same_upc_of(job: Job, key: str) -> tuple[str, list[str]] | None:
+    """(the key, the UPCs) of `key`'s last `duplicate_seen` same_upc event, None without one."""
+    for e in reversed(job.events()):
+        if e.get("key") == key and e["event"] == "duplicate_seen":
+            decision = str(e.get("decision") or "")
+            return (decision.split(":", 1)[1], list(e.get("upc") or [])) if decision.startswith("same_upc:") else None
+    return None
+
+
+def upc_hold_step(job: Job, ctx: Context, shop: Any, key: str) -> str:
+    """--dedupe on, after `key` is published: a product sharing a live product's UPC (dedupe.upc_suspect, no confirmed
+    match) held at once as a draft for the owner (2026-11-17, the wedge review: 14 groups of copies with one UPC, titles
+    shuffled apart; OWNER_RULES rule 2). -> a note for the printed line ("" when nothing to do)."""
+    import publish
+    from shopify_catalog import CatalogError
+    flag = same_upc_of(job, key)
+    if flag is None or any(e.get("key") == key and e["event"] == "held_same_upc" for e in job.events()):
+        return ""
+    of, upc = flag
+    ledger = shop.ledger()
+    if key not in ledger or ledger[key].get("status") != "published":
+        return ""
+    live = (ledger.get(of) or {}).get("status") == "published"
+    reason = (f"hold: {'copy of live' if live else 'same UPC as'} {of}, same UPC {' '.join(upc)}, kept as a draft for "
+              f"a separate decision (dedupe same_upc)")
+    try:
+        publish.withdraw(shop, key, ctx["publisher"][0], reason=reason)
+    except CatalogError as e:
+        job.log(key, "held_same_upc", of=of, why=f"withdraw failed: {e}"[:300])
+        return f"; same UPC as {of.split(':')[3]}, not held: {e}"[:200]
+    job.log(key, "held_same_upc", of=of, reason=reason)
+    return f"; held (same UPC as {of.split(':')[3]})"
 
 
 def one(job: Job, ctx: Context, key: str, stage_now: str | None, n: int = 0) -> str:
@@ -834,7 +877,8 @@ def publish_step(job: Job, ctx: Context, key: str, n: int = 0) -> str:
         if "publisher" not in ctx:
             ctx["publisher"] = publish.clients(job.shop)
         products, files, ids = ctx["publisher"]
-        row = publish.publish_one(shop, key, products, files, ids, draft=bool(job.meta.get("draft")))
+        held = job.meta.get("dedupe") == "on" and same_upc_of(job, key) is not None    # never live, even a moment
+        row = publish.publish_one(shop, key, products, files, ids, draft=bool(job.meta.get("draft")) or held)
     except ShopNotConfigured as e:
         raise Stop(f"publish: {e}") from None
     except (shopify_payload.Untranslated, shopify_payload.PayloadError) as e:
@@ -850,7 +894,8 @@ def publish_step(job: Job, ctx: Context, key: str, n: int = 0) -> str:
     job.log(key, "published", product_id=row.get("product_id"), handle=row.get("handle"), status=row["status"],
             prices_usd=row.get("prices_usd"))
     price = "-".join(dict.fromkeys(str(p) for p in row.get("prices_usd") or []))
-    replaced = replace_step(job, ctx, shop, key) if job.meta.get("dedupe") == "on" else ""
+    replaced = replace_step(job, ctx, shop, key) + upc_hold_step(job, ctx, shop, key) \
+        if job.meta.get("dedupe") == "on" else ""
     draft = "(draft) " if row.get("store_status") == "DRAFT" else ""
     return (f"{described}published {draft}{row.get('handle')} {f'${price} ' if price else ''}"
             f"{row.get('admin_url') or ''}".strip() + replaced)
@@ -1704,8 +1749,8 @@ def _job_flags(p: argparse.ArgumentParser) -> None:
     p.add_argument("--draft", action="store_true", help="with --publish: the job's new products go DRAFT even in a "
                    "reviewed category (a pilot the owner activates after the lens review: job.py activate --job)")
     p.add_argument("--dedupe", choices=("off", "log", "on"), default="on", help="duplicates of a product sold by "
-                   "another store (dedupe.py): on (the default, the owner 2026-11-15): skip and replace; log: the "
-                   "decisions only; off: none (JOB_AGENT.md)")
+                   "another store (dedupe.py): on (the default, the owner 2026-11-15): skip and replace, hold a "
+                   "same-UPC copy as a draft; log: the decisions only; off: none (JOB_AGENT.md)")
 
 
 def main(argv: list[str] | None = None) -> int:

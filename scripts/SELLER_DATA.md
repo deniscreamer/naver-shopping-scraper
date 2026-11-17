@@ -205,6 +205,12 @@ Code: `transform.options_and_variants`.
   (13370257430; the specs' 브랜드 / 제조사 rows say "69" only), "Brand Name | 69" with "Manufacturer | 69 Golf"
   (13016152694), a machine-translated label "브랜드 이름 | pgm" (12178085899) and values "NONE" / "다른 사람들"
   (13024224352, 13024206977). `brand_fallback.described`, `_NO_FIRM`.
+- The same Amazon table carries the listing's UPC (2026-11-17, the wedge review): "UPC | 792713117044", "UPC :
+  ...", several codes in one row, "Global Trade Identification Number | 00792713117044" (a GTIN-14: its UPC with
+  zeros before it), once "UPC 코드 | ..." (not read); 420 of 3173 records. Agencies copy the parent listing's UPC onto
+  its colour, hand, count and club editions (Olimar ATS Iron / Putter 810022120200, Hireko 4-piece / 3-piece
+  810022123058, BombTech Silver / Black 850064238204), so it is a duplicate signal only with the title guards
+  (`dedupe.upcs`, `upc_suspect`, `same_upc_listing`; [DEDUPE.md](DEDUPE.md), C39 / C40).
 
 ### Spec rows vs variants
 

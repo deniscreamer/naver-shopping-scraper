@@ -77,7 +77,8 @@ def test_a_subset_of_the_variants_is_confirmed_by_the_first_photo_only():
 def test_half_the_photos_shared_confirm():
     old = E(1, 1, WILSON, photos=("f1", "s1", "s2", "o1"), values=[])
     new = E(2, 2, WILSON, photos=("f2", "s1", "s2", "n1"), values=[], status="job")
-    assert D.signals(new, old) == {"first_photo": False, "photos": 0.5, "variants": 0.0, "confirmed": True}
+    assert D.signals(new, old) == {"first_photo": False, "photos": 0.5, "variants": 0.0, "sold_equal": False,
+                                   "confirmed": True}
     assert D.signals(E(3, 3, WILSON, values=[]), E(4, 4, WILSON, photos=("q",), values=[]))["variants"] == 0.0
 
 
@@ -166,6 +167,18 @@ def test_pairs_lists_every_match_a_job_looked_at():
     assert [(r["n"], r["candidate"], r["key"], r["decision"]) for r in rows] == [
         (1, "k1", "k-old", "duplicate_of:k-old"), (2, "k2", "k-old", "duplicate_of:k-old"),
         (3, "k3", "k-old", "duplicate_better:k-old"), (4, "k3", "k-o2", "duplicate_better:k-old")]
+
+
+def test_pairs_lists_same_upc_hold_candidates_without_a_title_match():
+    # 2026-11-17, the W7 review: a same-UPC hold candidate has no title match, yet the pilot's sheets must show it
+    m = {"key": "k-t", "status": "published", "confirmed": False}
+    events = [{"key": "k1", "event": "duplicate_seen", "decision": "same_upc:k-a", "same_upc": ["k-a", "k-b"],
+               "upc": ["792713116504"], "matches": []},
+              {"key": "k2", "event": "duplicate_seen", "decision": "same_upc:k-t", "same_upc": ["k-t"], "matches": [m]}]
+    rows = D.pairs(events)
+    assert [(r["n"], r["candidate"], r["key"], r["decision"], r["status"], r["confirmed"]) for r in rows] == [
+        (1, "k1", "k-a", "same_upc:k-a", "", False), (2, "k1", "k-b", "same_upc:k-b", "", False),
+        (3, "k2", "k-t", "same_upc:k-t", "published", False)]   # a title match sharing the UPC: one row
 
 
 def test_draw_pairs_writes_a_sheet_and_the_index(tmp_path):
@@ -829,3 +842,236 @@ def test_club_slot_axes_count_each_loft_as_transform_does():
     slots = {**line, "specs": {"options": {"option_groups": [{"name": "옵션 1"}, {"name": "옵션 2"}]}}}
     other = {**line, "specs": {"options": {"option_groups": [{"name": "Size"}, {"name": "Style Name"}]}}}
     assert len(D.entry(slots)["sold"]) == 2 and len(D.entry(other)["sold"]) == 1
+
+
+# ---- 2026-11-17, the wedge review (W7): the spaced key, sold sets of agency imports, UPC ------------------------
+
+def _agency(rec, upc=None):
+    """A purchase-agency import (구매대행) whose description copies the Amazon table's UPC row."""
+    rec["specs"] = {"specs": [{"label": "원산지", "value": "미국(구매대행)"}]}
+    if upc:
+        rec["details"] = {"description": {"text": f"Brand Name | Majek\nUPC | {upc}\nGolf Club Type | Wedge"}}
+    return rec
+
+
+MIURA_VALUES = [["2개(52Y,56Y)"], ["3개(50Y,54Y,58C)"], ["3개(52Y,56Y,60C)"]]
+
+
+def test_hangul_words_spaced_apart_and_an_importer_word_keep_no_copy_apart():
+    """C43: Miura Forged Black QPQ 11585620683 / 11585678496 (variants 1.0, photos 0.75, both 1,360,000 KRW): the titles
+    differ only by '샤프트 선택' / '샤프트선택' and '미우라코리아' (its brand 미우라 is in the title)."""
+    a = E(101434385, 11585620683, "미우라 포지드 웨지 블랙 QPQ (2개세트) + 샤프트선택 미우라코리아", grade="PREMIUM",
+          price=1360000, photos=("m1", "m2", "m3", "m4"), values=MIURA_VALUES, category="50002783")
+    b = E(100246487, 11585678496, "미우라 포지드 웨지 블랙 QPQ 2개세트 샤프트 선택", grade="POWER", price=1360000,
+          photos=("m1", "m2", "m3", "x4"), values=MIURA_VALUES, category="50002783", status="job")
+    assert a["tkey"] != b["tkey"] and a["skey"] == b["skey"]
+    assert D.possible(b, a) and D.confirm(b, a) and not D.strong(b, a)
+    assert D.Index([a]).decide(b)["decision"] == "duplicate_of"
+    assert [len(g) for g in D.groups([a, b])] == [2]
+
+
+@pytest.mark.parametrize("x, y", [
+    # joined across a digit '(3~5세)' would be '35세': Olimar ATS left-hand putters of two ages
+    ("올리마르 ATS 주니어 남자 라임 / 블루 시리즈 개인 골프 클럽35세 Left Hand Putter",
+     "올리마르 ATS 주니어 남자 라임 / 블루 시리즈 개인 골프 클럽(3~5세) Left Hand Putter"),
+    # 던롭코리아 without 던롭 in the title stays a word (Cleveland 588 13622282055 / 13523037432)
+    ("[던롭코리아] 클리브랜드 리미티드 에디션 588 투어 액션 웨지 세트", "클리브랜드 리미티드 에디션 588 투어 액션 웨지 세트"),
+])
+def test_the_spaced_key_never_joins_across_a_digit_nor_drops_an_importer_without_its_brand(x, y):
+    assert D.spaced_key(x, "1") != D.spaced_key(y, "1")
+
+
+def test_the_spaced_key_joins_hangul_neighbours_only():
+    assert D.spaced_key("샤프트 선택 2개세트", "1") == D.spaced_key("샤프트선택 2개세트", "1") == "1|2개세트 샤프트선택"
+    assert D.spaced_key("미우라 웨지 미우라코리아", "1") == "1|미우라웨지"
+    assert D.spaced_key("!!!", "1") is None
+
+
+PRON_TITLES = ("일본 프로니즈 웨지 세트 또는 싱글 남성 골프 클럽", "일본 프로니즈 웨지 세트 싱글 남성 골프 클럽")
+PRON_A = [["50 54 58 Degree Legal", "2 Pearl 3 Club Pro Steel"], ["50 Degree Legal", "3 Sliver Traditional Stee"],
+          ["52 56 60 Degree Legal", "2 Pearl 3 Club Pro Steel"], ["54 Degree Legal", "1 Black Professional Stee"],
+          ["56 Degree Legal", "1 Black Professional Stee"], ["58 Degree Legal", "1 Black Professional Stee"]]
+PRON_B = [["50 54 58 Degree Legal", "2 Pearl 3 Club Pro Steel"], ["52 56 60 Degree Legal", "2 Pearl 3 Club Pro Steel"],
+          ["54 Degree Legal", "1 Professional Steel Shaf"], ["56 Degree Legal", "1 Professional Steel Shaf"],
+          ["58 Degree Legal", "1 Professional Steel Shaf"]]
+
+
+def _pron():
+    a = _agency(record(1100067303, 13408226321, PRON_TITLES[0], price=298530, photos=("p1", "p2", "p3", "p4"),
+                       values=PRON_A, category="50002783"))
+    b = _agency(record(102786034, 13566632407, PRON_TITLES[1], price=336870, photos=("q1", "q2", "q3"),
+                       values=PRON_B, category="50002783"))
+    return a, b
+
+
+def test_two_agency_imports_selling_the_same_sets_are_confirmed_in_a_job():
+    """C41 part 1: pron 13408226321 / 13566632407, duplicate_seen not_confirmed before (variants 0.22 over the page
+    list), the sets sold equal ('50 54 58 Degree Legal', '52 56 60 Degree Legal'): one product in the job as in --report."""
+    a, b = (D.entry(r) for r in _pron())
+    old = {**a, "status": "published"}
+    s = D.signals(b, old)
+    assert s["variants"] < D.VARIANTS_JACCARD and not s["first_photo"] and s["sold_equal"] and s["confirmed"]
+    assert D.Index([old]).decide(b)["decision"] == "duplicate_of"
+    korean = [D.entry(record(*r["key"].split(":")[2:], PRON_TITLES[i], values=PRON_A if i == 0 else PRON_B,
+                             category="50002783")) for i, r in enumerate(_pron())]
+    assert not D.signals(*korean)["sold_equal"]                        # Korean sellers: never by the sets sold
+    other = D.entry({**_pron()[1], "key": "othershop:naver:102786034:13566632407"})
+    assert not D.sold_equal(a, other)                                  # no sets_only rules for that shop
+
+
+def test_the_sets_sold_set_aside_the_numbers_they_spell_in_alike():
+    """C41 part 2: AM20XX 13016628843 / 13363498942, titles '50/52/54/56/58' / '50/52/54/56/58/60도', the same two sets
+    sold ('50 54 58 Degree Set', '52 56 60 Degree Set'): alike once the numbers the sets spell out are set aside."""
+    values = [["50 54 58 Degree Set"], ["50 Degree"], ["52 56 60 Degree Set"], ["52 Degree"], ["54 Degree"],
+              ["56 Degree"], ["58 Degree"], ["60 Degree"]]
+    a = D.entry(_agency(record(102329146, 13016628843, "더 많은 스핀을 위한 골프 샌드 웨지 프리미엄 세트 또는 개별 "
+                               "50/52/54/56/58 50 54 58 Degree Set", photos=("a1", "a2", "a3"), values=values,
+                               category="50002783", price=190350)))
+    b = D.entry(_agency(record(102683334, 13363498942, "eAj 더 많은 스핀을 위한 골프 샌드 웨지 프리미엄 골프 웨지 세트 "
+                               "또는 개별 50/52/54/56/58/60도 밀링 페이스 50 54 58 Degree Set",
+                               photos=("b1", "b2", "b3"), values=values, category="50002783", price=233820)))
+    assert a["numbers"] != b["numbers"] and a["sold"] == b["sold"]
+    assert D.alike(a, b) and D.possible(a, b) and D.confirm(a, b)
+    other = {**b, "sold": frozenset({"505458degreeset"})}             # another set sold: the numbers count again
+    assert not D.alike(a, other)
+
+
+def test_one_agency_family_selling_other_sets_stays_apart():
+    """C41 part 2's limit: Pinkley 13566628089 '... 옵션 1' (Color: 옵션 1 / Bronze) and 13261529837 '... Black'
+    (Black / Bronze): sold 0.33 alike, the numbers are not set aside."""
+    a = D.entry(_agency(record(102786034, 13566628089, "핀클리 위조 골프 웨지 세트 3 52 56 60도 밀드 페이스로 스핀 "
+                               "오른손 옵션 1", values=[["옵션 1"], ["Bronze"]], category="50002783")))
+    b = D.entry(_agency(record(102748022, 13261529837, "핀클리 위조 골프 웨지 세트 3 – 52, 56, 60도, 밀드 페이스로 최대 "
+                               "스핀, 오른손 Black", values=[["Black"], ["Bronze"]], category="50002783")))
+    assert not D.alike(a, b) and not D.sold_equal(a, b) and not D.upc_suspect(a, b)
+
+
+MAJEK_SENIOR = ("마젝 골프 시니어 남자 완비 웨지 세트 52 갭 웨지GW 56 샌드 웨지SW 60",
+                "마젝 골프 샌드 52 GW LW 60 시니어 오른손잡이 세트 남자 웨지 SW 56 완비")
+
+
+def _majek(upc_b="792713117044", photos_b=("j1", "j2", "j3"), values_b=(), title_b=MAJEK_SENIOR[1]):
+    a = D.entry(_agency(record(102329146, 13018098465, MAJEK_SENIOR[0], price=194130, photos=("j1", "j2", "j3"),
+                               values=[], category="50002783"), "792713117044"), "published")
+    b = D.entry(_agency(record(1100071177, 13312218924, title_b, price=186660, photos=photos_b,
+                               values=list(values_b), category="50002783"), upc_b), "job")
+    return a, b
+
+
+def test_no_variants_every_photo_and_one_upc_is_one_listing():
+    """C40: Majek Senior 13018098465 / 13312218924, the title shuffled by seller 1100071177, no variants, the same 3
+    photos, UPC 792713117044 in the description's Amazon table: strong (no variants, so neither the variants path nor
+    same_listing could say it)."""
+    a, b = _majek()
+    assert a["upc"] == {"792713117044"} and a["tkey"] != b["tkey"] and not D.alike(a, b)
+    assert D.same_upc_listing(a, b) and D.strong(a, b) and D.possible(b, a) and D.confirm(b, a)
+    assert D.Index([a]).decide(b)["decision"] == "duplicate_of"
+
+
+@pytest.mark.parametrize("change", ["other_upc", "kind", "variants", "two_photos", "photo"])
+def test_no_variants_and_one_photo_set_without_one_upc_is_no_listing(change):
+    """C40's limits: Majek women 792713116382 / senior 792713117044 share one photo set (the title's lofts 52/56/60 do
+    not tell them apart); Olimar ATS Iron / Putter 810022120200 (the agency copied the parent's UPC); variants on one
+    side; fewer than LEAD_PHOTOS photos; one photo not shared."""
+    if change == "other_upc":
+        a, b = _majek(upc_b="792713116382", title_b="여성용 골프 웨지 세트 52 56 60도 갭 샌드 롭 웨지 구성 오른손잡이용")
+    elif change == "kind":                                             # the kinds are strong()'s own check
+        a, b = _majek(title_b="마젝 골프 샌드 52 GW LW 60 시니어 오른손잡이 세트 남자 퍼터 SW 56 완비 Putter")
+        a = {**a, "words": a["words"] | {"iron"}}
+        assert D.same_upc_listing(a, b) and not D.strong(a, b)
+        return
+    elif change == "variants":
+        a, b = _majek(values_b=[["52 56 60"]])
+    elif change == "two_photos":
+        a, b = _majek(photos_b=("j1", "j2"))
+        a = {**a, "shas": {"j1", "j2"}}
+    else:
+        a, b = _majek(photos_b=("j1", "j2", "zz"))
+    assert not D.same_upc_listing(a, b) and not D.strong(a, b)
+
+
+def test_one_upc_under_titles_that_agree_is_a_hold_candidate_never_a_decision():
+    """C39: one UPC, the photos not all shared (so not strong), no title match: decide() gives no decision and names
+    the product for a hold (same_upc); the report lists it apart from the groups."""
+    a, b = _majek(photos_b=("j1", "z2", "z3", "z4"))
+    assert not D.possible(b, a) and D.upc_suspect(b, a)
+    d = D.Index([a]).decide(b)
+    assert d["decision"] is None and d["same_upc"] == [a["key"]] and d["upc"] == ["792713117044"]
+    assert D.same_upc_groups([a, b], []) and not D.groups([a, b])
+    first = _majek(photos_b=("j1", "z2", "z3", "z4"))[1]               # first photo shared: confirmed, not possible
+    assert D.signals(first, a)["confirmed"] and D.Index([a]).decide(first)["decision"] is None
+    assert D.Index([a]).decide({**b, "upc": set()}) == {"decision": None, "of": None, "matches": []}
+
+
+@pytest.mark.parametrize("x, y, upc", [
+    # Hireko / Professional Open 690: a 4-piece set and a 3-piece set share the parent's UPC
+    ("Hireko 웨지 프로페셔널 오픈 690 골프 시리즈 세트 개별 5256606468 4-Piece Set 52/56/60/64",
+     "프로페셔널 오픈 690 골프 웨지 세트 5256606468 3Piece Set 525660 Right", "810022123058"),
+    # BombTech Silver / Black share 850064238204
+    ("BombTech - 프리미엄 골프 웨지 세트 52 56 60도 스핀 증가를 위한 Max Silver",
+     "골프 웨지 BombTech - 프리미엄 세트 52도 56도 60도 최대 그루브로 스핀 증가 블랙", "850064238204"),
+    # Olimar ATS junior Iron / Putter share 810022120200; a title naming no club is no kind
+    ("올리마르 주니어 옐로우 시리즈 개인 골프 클럽 세 이하 Iron", "올리마르 ATS 주니어 옐로우 시리즈 개인 골프 클럽(3세 이하) Putter",
+     "810022120200"),
+    ("올리마르 ATS 주니어 옐로우 시리즈 개인 골프 클럽 Putter", "올리마르 ATS 주니어 옐로우 시리즈 개인 골프 클럽",
+     "810022120521"),
+])
+def test_one_upc_on_another_edition_is_no_hold_candidate(x, y, upc):
+    a = D.entry(_agency(record(1, 11, x, values=[], category="50002783"), upc), "published")
+    b = D.entry(_agency(record(2, 22, y, values=[], category="50002783"), upc), "job")
+    assert a["upc"] & b["upc"] and not D.upc_suspect(a, b) and "same_upc" not in D.Index([a]).decide(b)
+
+
+def test_upc_reads_every_code_of_the_row_and_a_gtin_as_its_upc():
+    text = ("UPC | 815898026403 815898029947\nGlobal Trade Identification Number : 00792713117044\n"
+            "UPC | ‎091966124145\nModel | 52 56 60")
+    assert D.upcs(text) == {"815898026403", "815898029947", "792713117044", "91966124145"}
+    assert D.upcs("UPC 코드 | 792713117044") == set() and D.upcs("") == set()
+
+
+def test_same_brand_and_sets_sold_is_a_report_row_never_a_decision():
+    """C41 part 3, report only: MAZEL 'DS-VH 4 Iron' 13603085795 / '7 Iron' 13312250515 sell the same iron numbers;
+    equal sold sets coincide across products, so the pair is listed for the owner and never matched."""
+    values = [[f"{n} Iron"] for n in range(1, 10)] + [["PW"], ["SW"]]
+    a = D.entry(_agency(record(102617717, 13603085795, "MAZEL 남성 골프 아이언 세트9PCS 또는 위한 오른손잡이 골퍼를 "
+                               "123456789 DS-VH 4 Iron", values=values, category="50002783", price=102400,
+                               photos=("m1", "m2", "m3"))), "published")
+    b = D.entry(_agency(record(1100071177, 13312250515, "MAZEL 남성 또는 스틸 아이언 위한 9PCS 샤프트가 세트 오른손잡이 "
+                               "골퍼를 골프 7 Iron", values=values, category="50002783", price=85680,
+                               photos=("m1", "m2", "x3"))), "job")
+    brands = {a["key"]: "MAZEL", b["key"]: "mazel"}
+    assert D.brand_sold_pairs([a, b], brands, []) == ([(a, b)] if a["key"] < b["key"] else [(b, a)])
+    assert D.Index([a]).decide(b)["decision"] is None and not D.groups([a, b])
+    assert D.brand_sold_pairs([a, b], {a["key"]: "MAZEL", b["key"]: "PGM"}, []) == []
+
+
+def test_on_mode_holds_a_same_upc_copy_as_a_draft_and_log_mode_only_says_so(tmp_path, monkeypatch):
+    """C39 in a job: decision same_upc:<key> (taken); under on it is published as a draft and withdrawn at once with a
+    'hold: copy of live <key>' reason (OWNER_RULES rule 2); under log the event only."""
+    import publish as PB
+    shop, old, new = _published_shop(tmp_path, 0, 0)
+    monkeypatch.setattr("placement.run", lambda *a, **k: None)
+    monkeypatch.setattr(PB.Shop, "ready", lambda self: [new])
+    drafts = []
+
+    def publish_one(shop_, key, *a, draft=False, **k):
+        drafts.append(draft)
+        return {"key": key, "status": "published", "handle": "h"}
+    monkeypatch.setattr(PB, "publish_one", publish_one)
+    a, _ = _majek(photos_b=("j1", "z2", "z3", "z4"))
+    a = {**a, "key": old}
+    line = _agency(record(2, 22, MAJEK_SENIOR[1], values=[], photos=("j1", "z2", "z3", "z4"), category="50002783"),
+                   "792713117044")
+    for mode, calls in (("log", 0), ("on", 1)):
+        job = dedupe_job(tmp_path / mode, mode, [line])
+        job.meta["shops_root"] = str(tmp_path / "shops")
+        job.shops_root = job.meta["shops_root"]
+        assert J.dedupe_step(job, {"dedupe": D.Index([a])}, new, line) is None
+        ev = job.events()[-1]
+        assert ev["event"] == "duplicate_seen" and ev["decision"] == f"same_upc:{old}" and ev["upc"] == ["792713117044"]
+        admin = Admin()
+        what = J.publish_step(job, {"publisher": (admin, None, {})}, new)
+        assert len(admin.calls) == calls and drafts[-1] is (mode == "on")
+    assert what.endswith("; held (same UPC as 11)") and job.events()[-1]["event"] == "held_same_upc"
+    assert D.ledger(SHOP, str(tmp_path / "shops"))[new]["reason"].startswith(f"hold: copy of live {old}, same UPC 7927")
+    assert J.upc_hold_step(job, {"publisher": (Admin(), None, {})}, shop, new) == ""      # once

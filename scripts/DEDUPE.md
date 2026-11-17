@@ -36,6 +36,8 @@ read again by `run` / `scroll --job`. A job made before has no key and runs as `
 | Event / status | Means | You |
 |---|---|---|
 | `duplicate_seen`, decision `not_confirmed` | a title match, not confirmed by photos or variants: an ordinary product, taken | nothing |
+| `duplicate_seen`, decision `same_upc:<key>` (2026-11-17) | no confirmed match, but the UPC of `<key>` under `upc_suspect` (`same_upc`: every such key, `upc`: the codes): taken | `log`: nothing; `on`: see `held_same_upc` |
+| `held_same_upc` (`on`) | that product was published as a draft and withdrawn at once, reason `hold: copy of live <key>, same UPC ...` (`same UPC as <key>` when `<key>` is not live) | list it for the owner: copy or version ([OWNER_RULES.md](OWNER_RULES.md) rule 2); a failed withdraw (`why`): hold it by hand on his word |
 | `duplicate_seen`, a would-be decision (`log` only) | what `on` would have done | nothing; `--pairs` after the run |
 | `not_taken: duplicate_of_withdrawn:<key>` | a confirmed match the owner withdrew: never taken | nothing |
 | `not_taken: duplicate_of:<key>` | not strictly better than the best confirmed match: closed (no images, no translation) | nothing |
@@ -55,6 +57,9 @@ the live end of its chain (`replace` keeps it after a replacement inside the job
 `not_taken`) and writes, in the job's `pairs/`: sheets `pairs1.jpg` ... of candidate | match photos, numbered,
 `dup` on the confirmed ones, and `index.tsv` (decision, signals, both keys and titles), for the owner to check the
 decisions.
+Same-UPC hold candidates (`duplicate_seen` with `same_upc:<key>`, 2026-11-17) appear there as well, usually with no
+title match: one row per product sharing the UPC (a title match sharing it keeps its one row), decision
+`same_upc:<that key>`, never `dup`; the pilot shows them to the owner before `on`.
 
 ### `--report`: groups in the store
 
@@ -62,6 +67,12 @@ decisions.
 (a tie: more variants), and marks `title only` the members joined by title words alone (`dedupe.title_only`: no
 shared photo, no variants alike; a colour edition, a set with its bag). Look at their photos before a withdrawal:
 `lens.py dupes <shop>` shows the groups as rows, those members red.
+
+Two lists of hold candidates follow the groups (2026-11-17), never groups themselves and never withdrawn by a
+script: `same UPC <code>` (published products joined by `upc_suspect`, no group holding them together already) and
+`same brand and sets sold` (pairs of agency imports in a `sets_only` category with the same prepared `brand_ko` and
+the same sold sets of 2+ values with a digit, no kind / hand / gender / bag clash: equal sets can coincide, MAZEL
+'4 Iron' / '7 Iron'). The summary line counts them; each is the owner's word ([OWNER_RULES.md](OWNER_RULES.md) rule 2).
 
 ## The rule
 
@@ -75,7 +86,10 @@ the run starts:
   translation: agency_no_brand, single_only, 2026-11-15) leaves it again.
 - **A possible duplicate:** the same category and the same set of title words (case, signs and order ignored, what
   is in brackets kept: `27ZXI-RKT LS` is not `27ZXI-RKT`, `Qi4D MAX` is not `Qi4D`), another store, prices within x2
-  (`PRICE_RATIO`).
+  (`PRICE_RATIO`). The same **spaced key** counts too (2026-11-17, C43: `spaced_key`, Miura Forged Black QPQ
+  11585620683 / 11585678496): adjacent Hangul words joined ('샤프트 선택' = '샤프트선택'), never across a digit or a
+  Latin word ('(3~5세)' is not '35세'), and a brand+코리아 word dropped when the brand itself is a title word
+  (미우라코리아 with 미우라; 던롭코리아정품 stays).
 - **Confirmed** when the first photo is the same file, or half the photos of the smaller gallery are
   (`PHOTOS_SHARED`), or the variants agree >= 80% (`VARIANTS_JACCARD`); not confirmed: an ordinary product (event
   `duplicate_seen`, decision `not_confirmed`).
@@ -83,7 +97,13 @@ the run starts:
   with a title of 12+ words (`LONG_TITLE`) alike word for word (`long_title`), or with titles translated apart
   (`alike`: the same numbers, club kinds, hand, gender and bag words, 6+ words (`ALIKE_MIN_WORDS`), 70% of them
   alike (`WORDS_ALIKE`) after one spelling per word: 모래 / 샌드, 남성용 / 남성, eAj dropped). The first photo alone is
-  never a match: an agency lists each version of one listing apart under its one photo.
+  never a match: an agency lists each version of one listing apart under its one photo. With the same non-empty
+  sets sold, the numbers those sets spell out (counts kept) are set aside before the numbers are compared (2026-11-17,
+  C41: AM20XX 13016628843 / 13363498942 '50/52/54/56/58' / '.../60도'); sets sold apart keep every number (one agency
+  family's Pinkley '옵션 1' / Black).
+- **`sold_equal`** (2026-11-17, C41): in a `sets_only` category two agency imports with the same title key or
+  `alike` that sell the same non-empty sets are confirmed, in the job as in `--report` (pron 13408226321 /
+  13566632407: variants 0.22 over the page list, `not_confirmed` before; MAZEL 13391641875 / 13204525652, Yamato LH01).
 - **`strong`** (2026-11-15): any two products are also one with every photo and variant alike: the same category,
   photos shared >= 80% (`STRONG_PHOTOS`), variants >= 80%, and the titles not clashing on club kind, hand, gender,
   bag (미포함 wins) or the numbers standing alone (Aged 3-5 / 9-12, 9종 / 12종), a subset passing, and agreeing on a
@@ -97,6 +117,18 @@ the run starts:
   A count stays the title's own even when a variant writes the number ("10개" / "9개": Mizuno JPX QII 13826383159 /
   13826377851, variants "7irons(6-9...)"). Measured on the store: 4 new pairs of published products, the 3 Lazrus and
   PGM 13274024476 / 13390550850 (50002787).
+- **`strong` by UPC** (`same_upc_listing`, 2026-11-17, C40): two listings with no variants, the same first photo,
+  every photo shared (`LEAD_PHOTOS`+), no clash of the free numbers and a UPC in common (the description's Amazon
+  table: `upcs`, [SELLER_DATA.md](SELLER_DATA.md)), the kinds and model words as `strong`. Titles shuffled apart by
+  agencies (Majek per UPC, GoSports, STIX, Pinemeadow, Bermuda, Pro Open 690 LH): 25 pairs of the shop's records, all
+  copies. Not the title's lofts (52/56/60 is in nearly every title; one Majek photo set serves its women's, senior
+  and men's sets) and not under 3 photos (one generic photo is common).
+- **Same UPC, no confirmed match** (2026-11-17, C39): a hold candidate only, never a match or a decision
+  (`upc_suspect`, `Index.same_upc`): the same category, another store, the price guard, the same club kinds named in
+  both titles (never read from the description: its Style Name row lists every edition), the same piece count, the
+  same colour when both titles name one, no hand / gender / bag clash, the same model words, the lofts and ages (free
+  numbers of 1-2 digits) not clashing unless the same sets are sold, one sold set inside the other. In `possible()`
+  it would withdraw versions automatically (Olimar ATS junior clubs share their parent's UPC).
 - **A replaced match** (2026-11-16, the owner's wedge review: GoSports 12557420063 was not taken as a copy of
   13619939279 on 2026-11-15, then published as new once 13619939279 was replaced by 13379851400 and that by
   12918511112; A11N 13512885159 through 13405976594 -> 13552318731, a hold): a confirmed match withdrawn as
@@ -130,3 +162,11 @@ the run starts:
   withdrawn `replaced_by:<kept key>`. The lens `dupes` was born from it ([LENSES.md](LENSES.md)).
 - **Copies the rules missed** (the owner, 2026-11-16): held as drafts with a `hold:` reason, the owner decides each
   ([OWNER_RULES.md](OWNER_RULES.md) rule 2).
+- **The wedge-set review** (2026-11-17, W7: C39, C40, C41, C43 in their narrow forms; research/
+  wedge-improvements-2026-11-17.md): measured on the store's old groups (the ledger's published and withdrawn
+  products), 8 groups new or larger, all copies: Miura QPQ (spaced key), Majek x5 / STIX / Pinemeadow / Bermuda / Pro
+  Open 690 (UPC, no variants), AM20XX and PGM junior (sets sold), none lost; the owner's reviewed versions unchanged.
+  `--report` of the published: 5 -> 8 groups, plus 7 same-UPC groups (8 extra copies) and 6 same-brand-and-sets
+  pairs to hold on the owner's word. Rejected: the UPC in `possible()`, the title's lofts in `strong`, `same_listing`
+  under 3 photos, the subset-of-options path (about 2045 pairs). Not piloted yet: the pilot is `--dedupe log` on the
+  owner's word (skill `dedupe-rule` step 6).

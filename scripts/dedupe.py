@@ -10,6 +10,8 @@ The rule:
      kept, order ignored). A possible duplicate has the same title key, another store (channel_no) and a price
      within PRICE_RATIO (x2) of it. Products are matched by name only here: the screen (listing_filter) and the
      shop check (shopify_catalog) still match by the source key.
+  1a. the spaced key (2026-11-17): the title key with adjacent Hangul words joined ('샤프트 선택' = '샤프트선택') and a
+     brand+코리아 word dropped when the brand is in the title; the same spaced key is a possible duplicate as well.
   2. confirmed by the collected records: the first photo is the same file (source_sha256), or >= PHOTOS_SHARED of
      the smaller gallery are the same files, or the variants' values agree >= VARIANTS_JACCARD (Jaccard over each
      variant's options, case and spaces ignored; no variants on either side: no signal). Not confirmed: an ordinary
@@ -18,9 +20,14 @@ The rule:
      (same_listing, 2026-11-16: the same first photos in order and the same variants sold).
   2b. two purchase-agency imports (구매대행, copies of one foreign listing; 2026-11-15, the wedge pilot) are also
      one product when their titles of LONG_TITLE+ words are alike word for word, or translated apart (alike(): the
-     same numbers, club kinds, hand, gender and bag words, WORDS_ALIKE of the words after one spelling each).
+     same numbers, club kinds, hand, gender and bag words, WORDS_ALIKE of the words after one spelling each; with the
+     same sets sold, the numbers those sets spell out set aside, 2026-11-17). In a sets_only category two agency
+     imports matched by title that sell the same sets are confirmed (sold_equal, 2026-11-17).
+  2c. strong by UPC (2026-11-17): two listings with no variants, every photo shared (LEAD_PHOTOS+) and one UPC.
   3. who is better (better(a, b), strict): the store's grade (GRADES), then the product's review count. Price never
      decides (only the x2 guard).
+  4. same UPC, no confirmed match (2026-11-17): a hold candidate only (upc_suspect, decide()'s `same_upc`); never a
+     duplicate_of / duplicate_better: the job holds the product as a draft for the owner (--dedupe on).
 
 Index: built at a job's start from the publication ledger (published products, drafts awaiting review included
 (draft first, 2026-11-16), withdrawn ones, and those withdrawn as replaced_by:<key>, which stand for the live end of
@@ -32,7 +39,8 @@ the decision for a candidate:
   duplicate_of            the candidate is not strictly better than the best confirmed match: not taken
   duplicate_better        it is strictly better: taken, and the match is withdrawn once the candidate is published
                           (job.py: still published, and the new product has no fewer variants)
-  None                    no confirmed match (`matches` still lists the title matches and their signals)
+  None                    no confirmed match (`matches` still lists the title matches and their signals;
+                          `same_upc` the products sharing its UPC under upc_suspect: a hold candidate)
 """
 from __future__ import annotations
 
@@ -126,7 +134,54 @@ def entry(line: dict[str, Any], status: str = "job") -> dict[str, Any]:
             "lead": tuple(f["source_sha256"] for f in files[:LEAD_PHOTOS]),
             "sold": _sold(variants, category, parts[0] if len(parts) > 3 else "", _axes(specs)),
             "vnums": set(re.findall(r"\d+", unicodedata.normalize("NFKC", " ".join(
-                str(o) for v in variants for o in v.get("options") or [v.get("name") or ""]))))}
+                str(o) for v in variants for o in v.get("options") or [v.get("name") or ""])))),
+            "skey": spaced_key(name, category),
+            "upc": upcs(((details.get("description") or {}).get("text")) or "")}
+
+
+# an agency import copies its Amazon spec table into the description ("UPC | 792713117044", "Global Trade
+# Identification Number | 00792713117044", several codes in one row; 2026-11-17, the wedge review: 420 of 3173 records)
+_UPC = re.compile(r"(?:UPC|Global Trade Identification Number|GTIN)[\s\u200e]*[:|][\s\u200e]*((?:\d{8,14}[ ,/\u200e]*)+)",
+                  re.I)
+
+
+def upcs(text: str) -> set[str]:
+    """The UPC / GTIN codes a description's spec rows name, leading zeros stripped (a GTIN-14 is its UPC)."""
+    out = set()
+    for m in _UPC.finditer(text or ""):
+        for n in re.findall(r"\d{8,14}", m.group(1)):
+            n = n.lstrip("0")
+            if 8 <= len(n) <= 13:
+                out.add(n)
+    return out
+
+
+# the spaced key (2026-11-17, the wedge review: Miura Forged Black QPQ 11585620683 / 11585678496, variants 1.0, both
+# 1,360,000 KRW, titles apart only by '샤프트 선택' / '샤프트선택' and '미우라코리아'). Only Hangul words next to each
+# other are joined: across a digit '(3~5세)' would become '35세' (Olimar ATS 13363834375 / 13420006081 stay apart); a
+# brand+코리아 word goes only when the brand itself is in the title (던롭코리아정품 stays)
+_IMPORTER = re.compile(r"^([가-힣]{2,})코리아$")
+_HANGUL = re.compile(r"^[가-힣]+$")
+
+
+def spaced_key(name: str | None, category: str | None) -> str | None:
+    """'<category>|<sorted tokens>' with runs of adjacent Hangul tokens joined and a brand+코리아 token whose brand is
+    a token of the title dropped (None without a token)."""
+    toks = TOKEN.findall(unicodedata.normalize("NFKC", name or "").lower())
+    toks = [t for t in toks if not ((m := _IMPORTER.match(t)) and m.group(1) in toks)]
+    out: list[str] = []
+    run = ""
+    for t in toks:
+        if _HANGUL.match(t):
+            run += t
+            continue
+        if run:
+            out.append(run)
+            run = ""
+        out.append(t)
+    if run:
+        out.append(run)
+    return f"{category or ''}|{' '.join(sorted(set(out)))}" if out else None
 
 
 @functools.lru_cache(maxsize=None)
@@ -182,8 +237,25 @@ def signals(a: dict[str, Any], b: dict[str, Any]) -> dict[str, Any]:
     # sellers' long titles alike stay unconfirmed (Wilson JGI sizes, the junior sets of one photo)
     long_title = a.get("agency") and b.get("agency") and bool(a["tkey"]) and a["tkey"] == b["tkey"] \
         and len(a["tkey"].split("|", 1)[1].split()) >= LONG_TITLE
-    return {"first_photo": first, "photos": photos, "variants": variants,
-            "confirmed": first or photos >= PHOTOS_SHARED or variants >= VARIANTS_JACCARD or bool(long_title)}
+    sold = sold_equal(a, b)
+    return {"first_photo": first, "photos": photos, "variants": variants, "sold_equal": sold,
+            "confirmed": first or photos >= PHOTOS_SHARED or variants >= VARIANTS_JACCARD or bool(long_title) or sold}
+
+
+# two agency imports matched by title that sell the same sets in a sets_only category (2026-11-17, the wedge review:
+# pron 13408226321 / 13566632407 variants 0.22 over the page list, the sets sold '50 54 58 Degree Legal' and '52 56 60
+# Degree Legal' equal; MAZEL 13391641875 / 13204525652, Yamato LH01 13370261145 / 13016883852). Equal, not >= 0.8 (the
+# store's data gives the same 3 pairs); a match by photos or variants alone (strong) is not enough here
+def sold_equal(a: dict[str, Any], b: dict[str, Any]) -> bool:
+    """Two agency imports of one category, the same title key or alike(), the same non-empty sold sets, and the
+    shop sells that category's sets only."""
+    if not (a.get("agency") and b.get("agency")) or a.get("category") != b.get("category"):
+        return False
+    if not a.get("sold") or a.get("sold") != b.get("sold"):
+        return False
+    if not (bool(a.get("tkey")) and a.get("tkey") == b.get("tkey")) and not alike(a, b):
+        return False
+    return _sets_only(str(a.get("key") or "").split(":")[0], str(a.get("category") or ""))
 
 
 def alike(a: dict[str, Any], b: dict[str, Any]) -> bool:
@@ -193,8 +265,15 @@ def alike(a: dict[str, Any], b: dict[str, Any]) -> bool:
     if not (a.get("agency") and b.get("agency")) or a.get("category") != b.get("category"):
         return False
     wa, wb = a.get("words") or set(), b.get("words") or set()
-    if min(len(wa), len(wb)) < ALIKE_MIN_WORDS or a.get("numbers") != b.get("numbers") \
-            or wa & _KINDS != wb & _KINDS:
+    na, nb = set((a.get("numbers") or "").split()), set((b.get("numbers") or "").split())
+    # the same sets sold: a title's numbers that those sets spell out are the listing's (2026-11-17, the wedge review:
+    # AM20XX 13016628843 / 13363498942, Yamato LH01 13204919973 / 13261508936, PGM junior 12556346985 / 13209604493).
+    # Only when the sold sets are equal: one agency family selling other sets stays apart (Pinkley '옵션 1' / Black)
+    if a.get("sold") and a.get("sold") == b.get("sold"):
+        spelt = ((a.get("vnums") or set()) | (b.get("vnums") or set())) - (a.get("counts") or set()) \
+            - (b.get("counts") or set())
+        na, nb = na - spelt, nb - spelt
+    if min(len(wa), len(wb)) < ALIKE_MIN_WORDS or na != nb or wa & _KINDS != wb & _KINDS:
         return False
     return len(wa & wb) / len(wa | wb) >= WORDS_ALIKE
 
@@ -246,7 +325,22 @@ def strong(a: dict[str, Any], b: dict[str, Any]) -> bool:
         return False
     if s["variants"] >= VARIANTS_JACCARD and not _clash(a.get("free") or set(), b.get("free") or set()):
         return True
-    return same_listing(a, b)
+    return same_listing(a, b) or same_upc_listing(a, b)
+
+
+# listings with no variants, every photo shared and one UPC (2026-11-17, the wedge review: agency copies of one Amazon
+# listing under titles shuffled apart, GoSports 815898026403, STIX 840244361587, Pinemeadow 091966124145, Majek per
+# UPC: 25 pairs, all copies). Not the title's lofts: 52/56/60 is in almost every title and one Majek photo set serves
+# its women's, senior and men's sets (UPCs 792713116382 / 792713117044 / 792713116504). Not under LEAD_PHOTOS photos
+def same_upc_listing(a: dict[str, Any], b: dict[str, Any]) -> bool:
+    """No variants on either side, the same first photo, every photo shared (LEAD_PHOTOS at least), no clash of the
+    free numbers, a UPC in common (the kinds and model words: strong)."""
+    if a.get("variants") or b.get("variants") or not (a.get("upc") or set()) & (b.get("upc") or set()):
+        return False
+    if min(len(a.get("shas") or ()), len(b.get("shas") or ())) < LEAD_PHOTOS:
+        return False
+    s = signals(a, b)
+    return s["first_photo"] and s["photos"] == 1.0 and not _clash(a.get("free") or set(), b.get("free") or set())
 
 
 # one listing copied by several resellers (2026-11-16, the owner's wedge review: Lazrus 13016648376 / 12079160628 /
@@ -282,8 +376,59 @@ def possible(a: dict[str, Any], b: dict[str, Any]) -> bool:
     store; the price guard. The first photo alone is no match (2026-11-15:
     an agency lists each version of one foreign listing apart under its one photo: Olimar's left-hand putter and
     right-hand hybrid, junior sets of several sizes)."""
-    same = bool(a["tkey"]) and a["tkey"] == b["tkey"] or alike(a, b) or strong(a, b)
+    same = bool(a["tkey"]) and a["tkey"] == b["tkey"] or bool(a.get("skey")) and a.get("skey") == b.get("skey") \
+        or alike(a, b) or strong(a, b)
     return same and a["channel"] != b["channel"] and a["key"] != b["key"] and price_ok(a, b)
+
+
+# one UPC under titles that agree (2026-11-17, the wedge review: 14 groups of published wedge sets, 25 extra copies,
+# Majek / Pinemeadow / Bermuda / STIX / BombTech / Orlimar; their titles shuffled apart, no variants). Never a match
+# of step 1: an agency copies the parent listing's UPC onto its versions (Olimar ATS Iron / Putter 810022120200,
+# Hireko 4-piece / 3-piece 810022123058, BombTech Silver / Black 850064238204). Only a hold candidate for the owner
+# (OWNER_RULES rule 2). The kinds are read from the title only (a description's 'Style Name' row lists every edition)
+_UPC_KINDS = (("퍼터", "putter"), ("putter", "putter"), ("드라이버", "driver"), ("driver", "driver"),
+              ("하이브리드", "hybrid"), ("hybrid", "hybrid"), ("유틸", "hybrid"), ("아이언", "iron"), ("iron", "iron"),
+              ("우드", "wood"), ("wood", "wood"), ("웨지", "wedge"), ("wedge", "wedge"), ("치퍼", "chipper"))
+_UPC_PIECES = re.compile(r"(?<![a-z0-9.])(\d)\s*-?\s*(?:개|종|피스|piece|pc|pcs|팩)(?![a-z])")
+_COLOURS = {"black": "black", "블랙": "black", "silver": "silver", "실버": "silver", "chrome": "chrome", "크롬": "chrome",
+            "satin": "satin", "새틴": "satin", "bronze": "bronze", "브론즈": "bronze", "gold": "gold", "골드": "gold",
+            "blue": "blue", "블루": "blue", "red": "red", "레드": "red", "white": "white", "화이트": "white",
+            "raw": "raw", "로우": "raw", "copper": "copper", "nickel": "nickel", "gunmetal": "gunmetal",
+            "건메탈": "gunmetal"}
+
+
+def _title_kinds(name: str) -> set[str]:
+    t = unicodedata.normalize("NFKC", name or "").lower().replace("유틸리티 웨지", "웨지")
+    return {v for k, v in _UPC_KINDS if k in t}
+
+
+def upc_suspect(a: dict[str, Any], b: dict[str, Any]) -> bool:
+    """A UPC in common, the same category, another store, the price guard, the same club kinds named in both titles,
+    the same piece count (none is one), the same colour when both titles name one, no clash of hand, gender or bag,
+    the same model words, the lofts and ages not clashing (unless the same sets are sold), one sold set inside the
+    other."""
+    if not (a.get("upc") or set()) & (b.get("upc") or set()) or a.get("category") != b.get("category"):
+        return False
+    if a.get("channel") == b.get("channel") or a.get("key") == b.get("key") or not price_ok(a, b):
+        return False
+    ta, tb = a.get("name") or "", b.get("name") or ""
+    ka, kb = _title_kinds(ta), _title_kinds(tb)
+    if not ka or ka != kb:
+        return False
+    pieces = [set(_UPC_PIECES.findall(unicodedata.normalize("NFKC", t).lower())) for t in (ta, tb)]
+    if pieces[0] != pieces[1]:
+        return False
+    wa, wb = a.get("words") or set(), b.get("words") or set()
+    ca, cb = {_COLOURS[w] for w in wa if w in _COLOURS}, {_COLOURS[w] for w in wb if w in _COLOURS}
+    if ca and cb and ca != cb:
+        return False
+    if any(_clash(_dim(d, wa), _dim(d, wb)) for d in _DIMS[1:]) or wa & _MODEL_WORDS != wb & _MODEL_WORDS:
+        return False
+    sa, sb = a.get("sold") or frozenset(), b.get("sold") or frozenset()
+    short = [{n for n in e.get("free") or set() if len(n) <= 2} for e in (a, b)]
+    if _clash(short[0], short[1]) and not (sa and sa == sb):
+        return False
+    return not (sa and sb and not (sa <= sb or sb <= sa))
 
 
 def _brief(e: dict[str, Any]) -> dict[str, Any]:
@@ -331,6 +476,28 @@ class Index:
     def matches(self, c: dict[str, Any]) -> list[dict[str, Any]]:
         return [e for e in self.by_key.values() if possible(c, e)]
 
+    def same_upc(self, c: dict[str, Any]) -> dict[str, Any]:
+        """{same_upc: [keys], upc: [codes]} of the products sharing c's UPC under upc_suspect, published ones first
+        (a replaced one stands for its live end), {} when none: a hold candidate, never a decision (2026-11-17)."""
+        if not c.get("upc"):
+            return {}
+        found: dict[str, dict[str, Any]] = {}
+        codes: set[str] = set()
+        for e in self.by_key.values():
+            if not upc_suspect(c, e):
+                continue
+            target: dict[str, Any] | None = e
+            if e["status"] == "replaced":
+                target = self.live(e["key"])[1]
+            if target is not None and target["key"] != c["key"]:
+                found.setdefault(target["key"], target)
+                codes |= c["upc"] & e["upc"]
+        if not found:
+            return {}
+        order = {"published": 0, "job": 1, "withdrawn": 2}
+        keys = sorted(found, key=lambda k: (order.get(found[k]["status"], 3), k))
+        return {"same_upc": keys, "upc": sorted(codes)}
+
     def decide(self, c: dict[str, Any]) -> dict[str, Any]:
         """{decision, of, matches: [{key, status, grade, reviews, price, variants, first_photo, photos, variants_j,
         confirmed[, live, live_price]}]} (decision None: no confirmed match). A confirmed match withdrawn as replaced_by:
@@ -366,7 +533,7 @@ class Index:
         if lost:                                    # its live copy unknown here: not compared, not taken
             return {**out, "decision": "duplicate_of", "of": lost[0]}
         if not confirmed:
-            return out
+            return {**out, **self.same_upc(c)}
         best = max(confirmed.values(), key=lambda e: (grade_rank(e["grade"]), e["reviews"] or 0))
         return {**out, "decision": "duplicate_better" if better(c, best) else "duplicate_of", "of": best["key"]}
 
@@ -449,8 +616,12 @@ def groups(entries: list[dict[str, Any]]) -> list[list[dict[str, Any]]]:
     for i, e in enumerate(entries):
         if e["tkey"]:
             buckets.setdefault("t:" + e["tkey"], []).append(i)
+        if e.get("skey"):
+            buckets.setdefault("k:" + e["skey"], []).append(i)
         if e.get("agency"):                    # alike() needs the same numbers: one bucket per category and numbers
             buckets.setdefault(f"a:{e.get('category')}:{e.get('numbers')}", []).append(i)
+            if e.get("sold"):                  # or the same sets sold, their numbers set aside (2026-11-17)
+                buckets.setdefault(f"s:{e.get('category')}:{sorted(e['sold'])}", []).append(i)
         for sha in e.get("shas") or ():        # strong() needs a shared photo: one bucket per category and photo
             buckets.setdefault(f"p:{e.get('category')}:{sha}", []).append(i)
     parent = list(range(len(entries)))
@@ -488,10 +659,89 @@ def title_only(group: list[dict[str, Any]]) -> list[str]:
     return [e["key"] for e in group if e["key"] not in strong]
 
 
+def _union(n: int, pairs: Iterable[tuple[int, int]]) -> list[list[int]]:
+    parent = list(range(n))
+
+    def root(i: int) -> int:
+        while parent[i] != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+    for i, j in pairs:
+        parent[root(i)] = root(j)
+    joined: dict[int, list[int]] = {}
+    for i in range(n):
+        joined.setdefault(root(i), []).append(i)
+    return [g for g in joined.values() if len(g) > 1]
+
+
+def same_upc_groups(entries: list[dict[str, Any]], found: list[list[dict[str, Any]]]) -> list[list[dict[str, Any]]]:
+    """Hold candidates in the store (2026-11-17): products joined by upc_suspect pairs that no duplicate group holds
+    together already; each group best first. Only listed: holding a copy is the owner's word (OWNER_RULES rule 2)."""
+    group_of = {e["key"]: n for n, g in enumerate(found) for e in g}
+    by_upc: dict[str, list[int]] = {}
+    for i, e in enumerate(entries):
+        for u in e.get("upc") or ():
+            by_upc.setdefault(u, []).append(i)
+    pairs = set()
+    for idx in by_upc.values():
+        for x, i in enumerate(idx):
+            for j in idx[x + 1:]:
+                a, b = entries[i], entries[j]
+                same = a["key"] in group_of and group_of.get(a["key"]) == group_of.get(b["key"])
+                if not same and upc_suspect(a, b):
+                    pairs.add((i, j))
+    out = [sorted((entries[i] for i in g), key=lambda e: (-grade_rank(e["grade"]), -(e["reviews"] or 0),
+                                                         -(e["variants"] or 0), e["key"]))
+           for g in _union(len(entries), pairs)]
+    return sorted(out, key=lambda g: (g[0]["category"], g[0]["key"]))
+
+
+# a report-only list (2026-11-17, the wedge review, C41 part 3): two agency imports in a sets_only category, the same
+# Korean brand and the same sold sets of 2+ values with digits, no clash of kind, hand, gender or bag: 32 pairs of the
+# store's records, 31 copies (PGM, POSSOT, AM20XX, Alvo, XINGGM, Lazrus) and 1 not (MAZEL 'DS-VH 4 Iron' / '7 Iron',
+# both held). Never a match nor a confirmation: equal sold sets can coincide, so the owner looks at each
+def brand_sold_pairs(entries: list[dict[str, Any]], brands: dict[str, str],
+                     found: list[list[dict[str, Any]]]) -> list[tuple[dict[str, Any], dict[str, Any]]]:
+    """Pairs of products no duplicate group holds together: both agency imports, another store, the price guard, a
+    sets_only category, the same brand_ko (`brands`: key -> the prepared brand_ko), the same sold sets with >= 2
+    values holding a digit, no _DIMS clash."""
+    group_of = {e["key"]: n for n, g in enumerate(found) for e in g}
+    buckets: dict[tuple[str, str, frozenset[str]], list[dict[str, Any]]] = {}
+    for e in entries:
+        brand = (brands.get(e["key"]) or "").strip().casefold()
+        if e.get("agency") and brand and sum(1 for v in e.get("sold") or () if re.search(r"\d", v)) >= 2 \
+                and _sets_only(e["key"].split(":")[0], e["category"]):
+            buckets.setdefault((e["category"], brand, e["sold"]), []).append(e)
+    out = []
+    for es in buckets.values():
+        for x, a in enumerate(es):
+            for b in es[x + 1:]:
+                if a["channel"] == b["channel"] or not price_ok(a, b) \
+                        or (a["key"] in group_of and group_of.get(a["key"]) == group_of.get(b["key"])):
+                    continue
+                if any(_clash(_dim(d, a.get("words") or set()), _dim(d, b.get("words") or set())) for d in _DIMS):
+                    continue
+                out.append((a, b) if a["key"] < b["key"] else (b, a))
+    return sorted(out, key=lambda p: (p[0]["category"], p[0]["key"], p[1]["key"]))
+
+
+def _brands(shop: str, shops_root: str) -> dict[str, str]:
+    """key -> the prepared product's brand_ko."""
+    out = {}
+    for p in _jsonl(os.path.join(shops_root, shop, "prepared", "products.jsonl")):
+        brand = (p.get("product") or {}).get("brand_ko")
+        if p.get("key") and brand:
+            out[p["key"]] = str(brand)
+    return out
+
+
 def report(shop: str, shops_root: str = SHOPS_ROOT, category: str | None = None) -> dict[str, Any]:
     index = load(shop, shops_root, withdrawn=False)
     entries = [e for e in index.by_key.values() if category is None or e["category"] == category]
     found = groups(entries)
+    upc = same_upc_groups(entries, found)
+    brand_sold = brand_sold_pairs(entries, _brands(shop, shops_root), found)
     by_cat: dict[str, dict[str, int]] = {}
     for g in found:
         c = by_cat.setdefault(g[0]["category"], {"groups": 0, "products": 0})
@@ -503,7 +753,8 @@ def report(shop: str, shops_root: str = SHOPS_ROOT, category: str | None = None)
     same_title = sum(1 for s in stores.values() if len(s) > 1)
     return {"published": len(entries), "groups": len(found), "products": sum(len(g) for g in found),
             "extra_copies": sum(len(g) - 1 for g in found), "same_title_groups": same_title,
-            "by_category": by_cat, "list": found, "title_only": sum(len(title_only(g)) for g in found)}
+            "by_category": by_cat, "list": found, "title_only": sum(len(title_only(g)) for g in found),
+            "same_upc": upc, "same_upc_extra": sum(len(g) - 1 for g in upc), "brand_sold": brand_sold}
 
 
 # ---- --pairs -------------------------------------------------------------------------------------------------
@@ -512,15 +763,23 @@ PAIR_EVENTS = ("duplicate_seen", "duplicate_better", "not_taken")
 
 
 def pairs(events: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Every (candidate, match) a job looked at: n, decision, candidate, match and its signals."""
+    """Every (candidate, match) a job looked at: n, decision, candidate, match and its signals. A same-UPC hold
+    candidate (`same_upc`, usually no title match) gives one row per product sharing its UPC, decision
+    `same_upc:<that key>`, never confirmed (2026-11-17, the W7 review: the pilot shows these pairs too)."""
     out: list[dict[str, Any]] = []
     for e in events:
-        if e.get("event") not in PAIR_EVENTS or not e.get("matches"):
+        if e.get("event") not in PAIR_EVENTS or not (e.get("matches") or e.get("same_upc")):
             continue
         decision = e.get("decision") or (e.get("reason") if e["event"] == "not_taken" else
                                          f"duplicate_better:{e.get('replaces')}")
-        for m in e["matches"]:
+        matches = e.get("matches") or []
+        for m in matches:
             out.append({"n": len(out) + 1, "event": e["event"], "decision": decision, "candidate": e["key"], **m})
+        seen = {m.get("key") for m in matches}      # a title match sharing the UPC has its row already
+        for k in e.get("same_upc") or []:
+            if k not in seen:
+                out.append({"n": len(out) + 1, "event": e["event"], "decision": f"same_upc:{k}", "candidate": e["key"],
+                            "key": k, "status": "", "confirmed": False, "upc": e.get("upc")})
     return out
 
 
@@ -594,13 +853,24 @@ def main(argv: list[str] | None = None) -> int:
               f"joined by title words only (check their photos): {r['title_only']}")
         for cat, c in sorted(r["by_category"].items()):
             print(f"  {cat}: {c['groups']} groups, {c['products']} products")
+        print(f"hold candidates, not groups (the owner decides each): same UPC {len(r['same_upc'])} groups "
+              f"({r['same_upc_extra']} extra copies); same brand and sets sold {len(r['brand_sold'])} pairs")
         if a.list:
+            def line(i: int, e: dict[str, Any], weak: set[str] = set()) -> str:
+                return (f"  {'best' if i == 0 else '    '} {e['key']}\t{e['grade']}\t{e['reviews']} reviews\t"
+                        f"{e['price']} KRW\t{e['variants']} variants{'  title only' if e['key'] in weak else ''}")
             for g in r["list"]:
                 weak = set(title_only(g))
                 print(f"{g[0]['category']}\t{g[0]['name']}")
                 for i, e in enumerate(g):
-                    print(f"  {'best' if i == 0 else '    '} {e['key']}\t{e['grade']}\t{e['reviews']} reviews\t"
-                          f"{e['price']} KRW\t{e['variants']} variants{'  title only' if e['key'] in weak else ''}")
+                    print(line(i, e, weak))
+            for g in r["same_upc"]:
+                print(f"same UPC {' '.join(sorted(set.intersection(*(set(e['upc']) for e in g)) or g[0]['upc']))}"
+                      f"\t{g[0]['category']}\t{g[0]['name']}")
+                for i, e in enumerate(g):
+                    print(line(i, e))
+            for x, y in r["brand_sold"]:
+                print(f"same brand and sets sold\t{x['category']}\t{x['key']}\t{y['key']}\t{x['name']} | {y['name']}")
         return 0
     if a.pairs:
         if not a.job:
