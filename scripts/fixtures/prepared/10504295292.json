@@ -1,0 +1,268 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:100547132:10504295292",
+ "shop": "fairwardgolf",
+ "status": "held",
+ "held": [
+  {
+   "code": "choice_in_text_only",
+   "detail": "two loft sets offered in the text (48/52/56 | 50/54/58), no option chooses one"
+  }
+ ],
+ "notes": [],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/777golfshop/products/10504295292",
+  "channel_no": "100547132",
+  "product_id": "10504295292",
+  "category_id": "50002783"
+ },
+ "product": {
+  "title_ko": "미라이 스컬 MW-23 (48도 52도 56도) (50도 54도 58도) 웨지 세트",
+  "brand_ko": "미라이",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 웨지 세트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [],
+  "facts": [],
+  "variants": [],
+  "pricing": {
+   "base_krw": 840000,
+   "original_krw": 840000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "미라이스포츠"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "미라이"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "일본산"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/10504295292/fairwardgolf-10504295292-001-bdda5fb4c17d0e79.webp",
+    "sha256": "bdda5fb4c17d0e79e94ef9f23b2c8bb117abd25e92588618b965b5f64a6cac9d",
+    "width": 1280,
+    "height": 960
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/10504295292/fairwardgolf-10504295292-002-4bb45c00924ca8b0.webp",
+    "sha256": "4bb45c00924ca8b005e44ff08baf124727b7a5f5fe9cba39ae68972d50b7a63d",
+    "width": 1280,
+    "height": 960
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/10504295292/fairwardgolf-10504295292-003-c3fd98c041f5233f.webp",
+    "sha256": "c3fd98c041f5233f27f168b4b113cea43b9f4bd2ed88f3f8f7440238e1d29c84",
+    "width": 1707,
+    "height": 1279
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/10504295292/fairwardgolf-10504295292-004-2a2565792e38a2c2.webp",
+    "sha256": "2a2565792e38a2c29528a0f6e5b0f1ee045bea786bd1803074b2cad65a3db025",
+    "width": 1280,
+    "height": 960
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/10504295292/fairwardgolf-10504295292-005-c51382dfa9b2760a.webp",
+    "sha256": "c51382dfa9b2760a50481bfdeb1cd5189ea090d4dd4115a953150116639e1096",
+    "width": 1280,
+    "height": 960
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/10504295292/fairwardgolf-10504295292-006-2e75fb03639e8593.webp",
+    "sha256": "2e75fb03639e85934da4109243e447f12b8be9784ee053fdf3309d7aaf4e65c9",
+    "width": 1280,
+    "height": 960
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/10504295292/fairwardgolf-10504295292-007-aa7ea2ed2640b474.webp",
+    "sha256": "aa7ea2ed2640b474f34af67d3b7c0001fd89b8daaa33ca2d2c359f04f43ced1b",
+    "width": 1280,
+    "height": 960
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/10504295292/fairwardgolf-10504295292-008-86e5725fca7341cf.webp",
+    "sha256": "86e5725fca7341cf2496848805934ff44dc155704844647ee90ffcbfa66d6655",
+    "width": 1280,
+    "height": 960
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/10504295292/fairwardgolf-10504295292-009-0d03b00b7a2ec1b0.webp",
+    "sha256": "0d03b00b7a2ec1b0e3cf6ccb4c45c2552966d6a25d7afbf8c3d29fc8f6dde569",
+    "width": 1707,
+    "height": 1279
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/10504295292/fairwardgolf-10504295292-010-e73af7e3f9579efb.webp",
+    "sha256": "e73af7e3f9579efb90f4e3dddadfa2b32724cac66a1b6e9c697e81d56b94e086",
+    "width": 1707,
+    "height": 1279
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "policy_text": null,
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "제품명: 미라이 SKULL MW-23 <48도 52도 56도> <50도 54도 58도> 웨지 세트\n\n상세 설명 및 이미지\n미라이 스컬 SKULL MW-23 웨지입니다.\n(미라이 코리아 정품)\n<48도 ,52도,56도>\n<50도 54도 58도> 선택가능\n램킨 크로스라인 그립\n샤프트는 KBS 샤프트중 가장 웨지와 밸런스를 조화롭게 만들어 주는 FST 샤프트 장착되었습니다.\n스펙은 FST 125 S 웨지 전용 샤프트입니다.\n120g 무게에 강도는 묵직하게 나오는 통 샤프트입니다.\n좀 더 방향성을 개선하고 컨트롤이 용이하도록 설계되어 웨지 퍼포먼스를 한층 더 끌어올릴 수 있는 웨지 전용 샤프트입니다.\n미라이 헤드 디자인도 무척 간지나고요.연철 단조를 통해 제작되어 마일드한 타구감까지\n골프의 즐거움을 배가 시켜주는 명품 웨지입니다.\n페이스도 풀그루브라 스핀량도 좋고 잘 떨어집니다.\n제작 공법 자체도 굉장히 까다롭기 때문에 제작 시간에도 다른 클럽에 비해\n더 많은 시간과 공을 들여야 탄생되는 클럽입니다.\n현재 클럽당 28만원의 가격으로 판매 중입니다!\n무라타 스컬 페롤 장착입니다.\n실물로 보시면 정말 이쁩니다.\n연락주세요~^^",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20240626_291/1719391931054YCcbA_JPEG/20240620%EF%BC%BF174733.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240626_1/17193919310490uBea_JPEG/20240620%EF%BC%BF174746.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240626_225/1719391931081hkLaw_JPEG/20240620%EF%BC%BF174825.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240626_78/1719391931076ATRFn_JPEG/20240620%EF%BC%BF174912.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240626_271/1719391931055Ox2nI_JPEG/20240620%EF%BC%BF174313.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240626_129/1719391931039dkrq4_JPEG/20240620%EF%BC%BF182128.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240626_159/1719391931308wQy0s_JPEG/20240620%EF%BC%BF174348.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240626_85/1719391931360ePF2A_JPEG/20240620%EF%BC%BF175159.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240626_212/1719391931409soXyb_JPEG/20240620%EF%BC%BF175234.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240626_232/1719391931495LGpWR_JPEG/20240620%EF%BC%BF175055.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240626_29/1719391931553dQBnA_JPEG/20240620%EF%BC%BF174227.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240626_34/17193919316726ITEY_JPEG/20240620%EF%BC%BF175342.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240626_10/1719391931791u7hF9_JPEG/20240620%EF%BC%BF175358.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240626_233/17193919318187N161_JPEG/20240620%EF%BC%BF175504.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240626_127/1719391931800YV4MP_JPEG/20240620%EF%BC%BF175501.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240626_283/17193919318305YWiq_JPEG/20240620%EF%BC%BF175519.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240626_100/171939193187271q0P_JPEG/20240620%EF%BC%BF175525.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20240626_23/1719391950745wWlSz_JPEG/1.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "phone",
+    "text": "가격 및 기타 문의: 010-8548-7761"
+   },
+   {
+    "rule": "contact",
+    "text": "샤프트는 원하시는 샤프트로 교체 가능합니다. 문의주세요!!!"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:05504a5b2e0c8696",
+   "kind": "title",
+   "ko": "미라이 스컬 MW-23 (48도 52도 56도) (50도 54도 58도) 웨지 세트"
+  },
+  {
+   "id": "brand:f05bf59636c225c1",
+   "kind": "brand",
+   "ko": "미라이"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:10bbcc90e625297c",
+   "kind": "spec_value",
+   "ko": "미라이스포츠"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:f05bf59636c225c1",
+   "kind": "spec_value",
+   "ko": "미라이"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2d5ea77cf8032c99",
+   "kind": "spec_value",
+   "ko": "일본산"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  }
+ ]
+}

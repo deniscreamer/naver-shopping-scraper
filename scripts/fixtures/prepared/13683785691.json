@@ -1,0 +1,176 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102682994:13683785691",
+ "shop": "fairwardgolf",
+ "status": "held",
+ "held": [
+  {
+   "code": "single_only",
+   "detail": "1 variants, each one club"
+  }
+ ],
+ "notes": [
+  {
+   "code": "few_pieces",
+   "detail": "2종"
+  },
+  {
+   "code": "description_images_partial",
+   "detail": "4 of 5 images not read (gone 4)"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "UNIT_QUANTITY_PAID 9900 KRW"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "NOT_APPLICABLE"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/creartpower/products/13683785691",
+  "channel_no": "102682994",
+  "product_id": "13683785691",
+  "category_id": "50002783"
+ },
+ "product": {
+  "title_ko": "야마하 YAMAHA RMX FORGED 웨지2종세트 스틸샤프트",
+  "brand_ko": "야마하",
+  "brand_source": "specs:브랜드",
+  "attributes": {},
+  "options": [],
+  "facts": [],
+  "variants": [],
+  "pricing": {
+   "base_krw": 167200,
+   "original_krw": 172400,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "야마하"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "야마하"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "일본산"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13683785691/fairwardgolf-13683785691-001-8fa6fc5364039758.webp",
+    "sha256": "8fa6fc53640397581f0342b1e9224fa674990e44d3076e863ce685638bdde45d",
+    "width": 720,
+    "height": 720
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13683785691/fairwardgolf-13683785691-002-a14ced420ca3fe49.webp",
+    "sha256": "a14ced420ca3fe49cc2994fe2399e9498f458bbc69eee8b6e6f8afa1b6537146",
+    "width": 720,
+    "height": 720
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13683785691/fairwardgolf-13683785691-003-fd5e4888b6a965f7.webp",
+    "sha256": "fd5e4888b6a965f71bae453bd27d4af6baa19a815e326510e9a3ceca94992620",
+    "width": 889,
+    "height": 500
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "UNIT_QUANTITY_PAID",
+   "base_fee": 9900,
+   "is_overseas": true,
+   "customs_tax_type": "NOT_APPLICABLE",
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "policy_text": "1개마다 부과",
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "야마하 YAMAHA RMX FORGED 웨지2종세트 스틸샤프트\n\n일본 대표 골프 브랜치 야마하(YAMAHA)의 프리미엄 퍼포먼스 라인업 — \"RMX FORGED(연철 단조) 웨지 2종 세트\"입니다. 부드러운 타구감과 정밀한 백스핀 제어력을 갖춘 단조 웨지로, 핀을 직접 공략하는 숏게임에 최적화된 스틸 샤프트 사양의 전문 웨지 패키지입니다.\n50° / 56° 조합: 피칭웨지(PW)가 44~45°로 가파르게 출시되는 현대 아이언 세트와의 거리를 메우기 가장 적절한 표준 갭(Gap) 구성입니다.\n52° / 56° 조합: 전통적인 47~48° PW 구성의 아이언을 사용 중인 골퍼에게 권장하는 클래식 갭 구성입니다.\n헤드 공법 & 재질: 연철 단조(Forged) 정밀 단조 공법 적용으로 부드럽고 묵직한 타구감 제공\n구성 세트 옵션 (로프트 조합):\n대표적 2종 조합: 50° / 56° 또는 52° / 56° 등 그린 주변과 100m 안팎 거리 커버용 조합\n페이스 & 그루브 테크놀로지:\nCNC 밀링 페이스 처리로 임팩트 시 마찰력을 극대화하여 높은 백스핀 양 확보\n젖은 잔디나 러프에서도 안정적인 스핀량을 유지하는 정밀 그루브 설계\n샤프트 구성: N.S.PRO 950GH / N.S.PRO MODUS3 / Dynamic Gold 등 스틸 샤프트 장착 (높은 방향 안정성 제공)\n솔(Sole) 디자인: 캠버 솔 설계로 어드레스 시 편안함과 다양한 라이(Lie) 상태에서 빠져나가는 길목 개척",
+  "description_images": [
+   "https://a.sellerpick.shop/upload/images/counter.jpg?spNo=18550011&mprNo=73096510&apiNo=&regNo=13081",
+   "https://image.rakuten.co.jp/full-shot/cabinet/wedge1/rmxforgedwedgens_a.jpg",
+   "https://tshop.r10s.jp/full-shot/cabinet/wedge1/rmxforgedwedgens56.jpg",
+   "https://tshop.r10s.jp/full-shot/cabinet/wedge1/rmxforgedwedgens_1.jpg",
+   "https://tshop.r10s.jp/full-shot/cabinet/ir1/2507rmxforged-spec.jpg"
+  ],
+  "description_dropped": [
+   {
+    "rule": "banner_image",
+    "text": "https://proxy-smartstore.naver.net/img/aW1nLnNlbGxlcnBpY2suc2hvcC91cGxvYWQvbWFya2V0SW1hZ2UvMTkzNjVfbm90aWNlX3RvcC5wbmc=?token=afe5f5a3934d6e8fee77c8d13f634eb8"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://proxy-smartstore.naver.net/img/aW1nLnNlbGxlcnBpY2suc2hvcC91cGxvYWQvbWFya2V0SW1hZ2UvMTkzNjZfbm90aWNlX2JvdHRvbS5wbmc=?token=08c221e8678cc36bc8e366bf76c19d82"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:e92243a879f2c9b3",
+   "kind": "title",
+   "ko": "야마하 YAMAHA RMX FORGED 웨지2종세트 스틸샤프트"
+  },
+  {
+   "id": "brand:ac5e0e1b100d0308",
+   "kind": "brand",
+   "ko": "야마하"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:ac5e0e1b100d0308",
+   "kind": "spec_value",
+   "ko": "야마하"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2d5ea77cf8032c99",
+   "kind": "spec_value",
+   "ko": "일본산"
+  }
+ ]
+}

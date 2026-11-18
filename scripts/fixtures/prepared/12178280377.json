@@ -1,0 +1,1399 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102709004:12178280377",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "measures_from_images",
+   "detail": "product_weight_g 5/14"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "NOT_APPLICABLE"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/bri_sense_global/products/12178280377",
+  "channel_no": "102709004",
+  "product_id": "12178280377",
+  "category_id": "50002783"
+ },
+ "product": {
+  "title_ko": "50-60도 입문용 웨지세트 남녀공용 쉬운스윙 초보자추천 연습 갭 로브 웨지",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {
+   "gender": {
+    "value": "unisex",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "title",
+      "value": "unisex",
+      "text": "50-60도 입문용 웨지세트 남녀공용 쉬운스윙 초보자추천 연습 갭 로브 웨지"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 웨지 세트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "색상",
+    "values_ko": [
+     "50/54/58도 세트",
+     "50/56도 세트",
+     "52/56/60도 세트",
+     "52/58도 세트",
+     "54/60도 세트",
+     "56/62도 세트",
+     "블랙 티타늄 레이어-50/54/58도",
+     "블랙 티타늄 레이어-50/56도",
+     "블랙 티타늄 레이어-52/58도",
+     "블랙 티타늄 레이어-54/58/62도",
+     "블랙 티타늄 레이어-54/60도",
+     "블랙 티타늄 레이어-56/60/64도",
+     "블랙 티타늄 레이어-56/62도",
+     "블랙 티타늄 레이어-58/64도"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"50/54/58도 세트\"]",
+    "naver_variant_id": "50597406036",
+    "options_ko": [
+     "50/54/58도 세트"
+    ],
+    "price_krw": 205900,
+    "price_usd": "205.90",
+    "sku": "FW-f02496d7830f7364a11d2116",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "value": {
+       "min": 1610,
+       "max": 1610
+      },
+      "source": "description_image",
+      "confidence": 4,
+      "how": "stated set weight",
+      "quote": "상품 무게 | 1.61 Kilograms",
+      "from": "description_text",
+      "compared": {
+       "value": 1400,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"50/56도 세트\"]",
+    "naver_variant_id": "50597406037",
+    "options_ko": [
+     "50/56도 세트"
+    ],
+    "price_krw": 167300,
+    "price_usd": "167.30",
+    "sku": "FW-c0b75a7a98f023767580478a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17",
+      "compared": {
+       "value": 1610,
+       "source": "description_image",
+       "confidence": 4,
+       "how": "stated set weight",
+       "from": "description_text",
+       "rejected": "implausible_for_count"
+      }
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"52/56/60도 세트\"]",
+    "naver_variant_id": "50597406039",
+    "options_ko": [
+     "52/56/60도 세트"
+    ],
+    "price_krw": 205900,
+    "price_usd": "205.90",
+    "sku": "FW-8f90774886f9c5806b51ae6a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "value": {
+       "min": 1610,
+       "max": 1610
+      },
+      "source": "description_image",
+      "confidence": 4,
+      "how": "stated set weight",
+      "quote": "상품 무게 | 1.61 Kilograms",
+      "from": "description_text",
+      "compared": {
+       "value": 1400,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"52/58도 세트\"]",
+    "naver_variant_id": "50597406040",
+    "options_ko": [
+     "52/58도 세트"
+    ],
+    "price_krw": 167300,
+    "price_usd": "167.30",
+    "sku": "FW-beda4ad033f22a88c76a40ba",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17",
+      "compared": {
+       "value": 1610,
+       "source": "description_image",
+       "confidence": 4,
+       "how": "stated set weight",
+       "from": "description_text",
+       "rejected": "implausible_for_count"
+      }
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"54/60도 세트\"]",
+    "naver_variant_id": "50597406042",
+    "options_ko": [
+     "54/60도 세트"
+    ],
+    "price_krw": 167300,
+    "price_usd": "167.30",
+    "sku": "FW-b3da06eff8d13bf35288c66c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17",
+      "compared": {
+       "value": 1610,
+       "source": "description_image",
+       "confidence": 4,
+       "how": "stated set weight",
+       "from": "description_text",
+       "rejected": "implausible_for_count"
+      }
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"56/62도 세트\"]",
+    "naver_variant_id": "50597406045",
+    "options_ko": [
+     "56/62도 세트"
+    ],
+    "price_krw": 167300,
+    "price_usd": "167.30",
+    "sku": "FW-e8d263852b4f85e7a3d25ae9",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17",
+      "compared": {
+       "value": 1610,
+       "source": "description_image",
+       "confidence": 4,
+       "how": "stated set weight",
+       "from": "description_text",
+       "rejected": "implausible_for_count"
+      }
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"블랙 티타늄 레이어-50/54/58도\"]",
+    "naver_variant_id": "50597406050",
+    "options_ko": [
+     "블랙 티타늄 레이어-50/54/58도"
+    ],
+    "price_krw": 218800,
+    "price_usd": "218.80",
+    "sku": "FW-ac66a49a0cb133cb4c7b2eeb",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "value": {
+       "min": 1610,
+       "max": 1610
+      },
+      "source": "description_image",
+      "confidence": 4,
+      "how": "stated set weight",
+      "quote": "상품 무게 | 1.61 Kilograms",
+      "from": "description_text",
+      "compared": {
+       "value": 1400,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"블랙 티타늄 레이어-50/56도\"]",
+    "naver_variant_id": "50597406051",
+    "options_ko": [
+     "블랙 티타늄 레이어-50/56도"
+    ],
+    "price_krw": 180200,
+    "price_usd": "180.20",
+    "sku": "FW-c0a2e5fda25f1c01317c0bdd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17",
+      "compared": {
+       "value": 1610,
+       "source": "description_image",
+       "confidence": 4,
+       "how": "stated set weight",
+       "from": "description_text",
+       "rejected": "implausible_for_count"
+      }
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"블랙 티타늄 레이어-52/58도\"]",
+    "naver_variant_id": "50597406053",
+    "options_ko": [
+     "블랙 티타늄 레이어-52/58도"
+    ],
+    "price_krw": 180200,
+    "price_usd": "180.20",
+    "sku": "FW-79ca3b47e3271c60ced5b675",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17",
+      "compared": {
+       "value": 1610,
+       "source": "description_image",
+       "confidence": 4,
+       "how": "stated set weight",
+       "from": "description_text",
+       "rejected": "implausible_for_count"
+      }
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"블랙 티타늄 레이어-54/58/62도\"]",
+    "naver_variant_id": "50597406055",
+    "options_ko": [
+     "블랙 티타늄 레이어-54/58/62도"
+    ],
+    "price_krw": 203600,
+    "price_usd": "203.60",
+    "sku": "FW-994ae3d22865d1dec19194b0",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "value": {
+       "min": 1610,
+       "max": 1610
+      },
+      "source": "description_image",
+      "confidence": 4,
+      "how": "stated set weight",
+      "quote": "상품 무게 | 1.61 Kilograms",
+      "from": "description_text",
+      "compared": {
+       "value": 1400,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"블랙 티타늄 레이어-54/60도\"]",
+    "naver_variant_id": "50597406056",
+    "options_ko": [
+     "블랙 티타늄 레이어-54/60도"
+    ],
+    "price_krw": 141500,
+    "price_usd": "141.50",
+    "sku": "FW-21b230369c4df90a9e7d6ad1",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17",
+      "compared": {
+       "value": 1610,
+       "source": "description_image",
+       "confidence": 4,
+       "how": "stated set weight",
+       "from": "description_text",
+       "rejected": "implausible_for_count"
+      }
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"블랙 티타늄 레이어-56/60/64도\"]",
+    "naver_variant_id": "50597406058",
+    "options_ko": [
+     "블랙 티타늄 레이어-56/60/64도"
+    ],
+    "price_krw": 218800,
+    "price_usd": "218.80",
+    "sku": "FW-f2a5998214c03b2a1641e9bd",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "value": {
+       "min": 1610,
+       "max": 1610
+      },
+      "source": "description_image",
+      "confidence": 4,
+      "how": "stated set weight",
+      "quote": "상품 무게 | 1.61 Kilograms",
+      "from": "description_text",
+      "compared": {
+       "value": 1400,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"블랙 티타늄 레이어-56/62도\"]",
+    "naver_variant_id": "50597406059",
+    "options_ko": [
+     "블랙 티타늄 레이어-56/62도"
+    ],
+    "price_krw": 180200,
+    "price_usd": "180.20",
+    "sku": "FW-c366b5577a2cd9106a91015f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17",
+      "compared": {
+       "value": 1610,
+       "source": "description_image",
+       "confidence": 4,
+       "how": "stated set weight",
+       "from": "description_text",
+       "rejected": "implausible_for_count"
+      }
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"블랙 티타늄 레이어-58/64도\"]",
+    "naver_variant_id": "50597406061",
+    "options_ko": [
+     "블랙 티타늄 레이어-58/64도"
+    ],
+    "price_krw": 180200,
+    "price_usd": "180.20",
+    "sku": "FW-8b553043d169a0859200b307",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 760,
+      "central": 920,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17",
+      "compared": {
+       "value": 1610,
+       "source": "description_image",
+       "confidence": 4,
+       "how": "stated set weight",
+       "from": "description_text",
+       "rejected": "implausible_for_count"
+      }
+     },
+     "package_weight_g": {
+      "low": 1300,
+      "central": 1700,
+      "high": 2200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 110,
+      "central": 150,
+      "high": 200,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "two_wedges",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 115600,
+   "original_krw": 231200,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "원산지",
+    "value_ko": "기타/해외"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/12178280377/fairwardgolf-12178280377-001-55ba4cb378b55b30.webp",
+    "sha256": "55ba4cb378b55b30c0c7f4b9c315130accb401bddf37c94afb3be0b6a19d31ae",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/12178280377/fairwardgolf-12178280377-002-6f99ed895b7d8686.webp",
+    "sha256": "6f99ed895b7d868682d66ea6244ab1d20c61823c9cafe800217f9c6da33124e4",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/12178280377/fairwardgolf-12178280377-003-99bbdec49f69b4fc.webp",
+    "sha256": "99bbdec49f69b4fc9830c088ee0ee33d452fe6a474d059d98b89fc54bb35334c",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/12178280377/fairwardgolf-12178280377-004-af3dfe2d0c79bfb3.webp",
+    "sha256": "af3dfe2d0c79bfb36812e9bb00485d56b40c41b6d8020afce1e1f9745c17e7fe",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/12178280377/fairwardgolf-12178280377-005-4f3db629b3f60185.webp",
+    "sha256": "4f3db629b3f601852290014ac521fd4ffedb920665d51d504ae199aa02dd79e9",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": true,
+   "customs_tax_type": "NOT_APPLICABLE",
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": 8000,
+   "policy_text": "제주 추가 5,000원, 제주 외 도서지역 추가 8,000원",
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "50-60도 입문용 웨지세트 남녀공용 쉬운스윙 초보자추천 연습 갭 로브 웨지\n\n옵션 이미지\n\n색상 : 블랙 티타늄 레이어 - 60도 | 색상 : 50도\n색상 : 50/54/58도 세트 | 색상 : 50/56도 세트\n색상 : 52도 | 색상 : 52/56/60도 세트\n색상 : 52/58도 세트 | 색상 : 54도\n색상 : 54/60도 세트 | 색상 : 56도\n색상 : 56/62도 세트 | 색상 : 58도\n색상 : 60도 | 색상 : 62도\n색상 : 블랙 티타늄 레이어 - 50도 | 색상 : 블랙 티타늄 레이어-50/54/58도\n색상 : 블랙 티타늄 레이어-50/56도 | 색상 : 블랙 티타늄 레이어 - 52도\n색상 : 블랙 티타늄 레이어-52/56/60도 | 색상 : 블랙 티타늄 레이어-52/58도\n색상 : 블랙 티타늄 레이어 - 54도 | 색상 : 블랙 티타늄 레이어-54/58/62도\n색상 : 블랙 티타늄 레이어-54/60도 | 색상 : 블랙 티타늄 레이어 - 56도\n색상 : 블랙 티타늄 레이어-56/60/64도 | 색상 : 블랙 티타늄 레이어-56/62도\n색상 : 블랙 티타늄 레이어 - 58도 | 색상 : 블랙 티타늄 레이어-58/64도\n색상 : 블랙 티타늄 레이어 - 62도 | 색상 : 블랙 티타늄 레이어 - 64도\n\n색상 | 50/54/58도 세트\n골프 클럽 플렉스 | 일반\n손 방향 | 오른쪽\n골프 클럽 로프트 | 50 Degrees\n재료 | 철\n브랜드 | Mile High Life\n샤프트 재료 | 스틸\n상품 무게 | 1.61 Kilograms\n골프 퍼터 라이각 | 64 Degrees\n그립 재료 | 합성 고무 또는 고무\n\n이 품목 정보\n간단한 쇼트 게임 접근 방식: 초보자이든 노련한 골퍼이든, 그린 주변에서 같은 샷에 집중하고 연습하는 것이 더 쉬우며, 가방의 다양한 웨지가 당신을 위해 일할 수 있습니다.\n합리적인 가격의 웨지 세트: 유명 브랜드 웨지 세트를 유지하는 데 비용이 많이 들 수 있습니다. 저희 웨지 세트는 매우 저렴한 가격으로 다양한 선택을 제공합니다.\n클래식 품질 디자인: 고광택 마감과 단조 프리미엄 아이언 세트 소재로 클래식한 블레이드 모양.\n풀 스펙트럼 로프트: 10도 바운스로 50, 52, 54, 56, 58, 60 로프트에서 선택.\n밸류 번들 세트 구매 가능: (50/54/58), (52/56/60), (50/56), (52/58), (54/60)\n›\n\n상품 설명\n\n고객 리뷰 | 별 5개 중 4.8 19 | 별 5개 중 4.3 150 | 별 5개 중 4.3 150 | 별 5개 중 3.9 23\n가격 | US$38.99US$38.99 | US$38.99US$38.99 | US$38.99US$38.99 | US$49.99US$49.99\nSport | GOLF | GOLF | GOLF | GOLF\nBrand | MILE HIGH LIFE | MILE HIGH LIFE | MILE HIGH LIFE | MILE HIGH LIFE\nNewest Products | ✓ | ✓ | ✓ | ✓\nWith Grip | ✓ | ✓ | ✓ | no data\n\n세부 사항\n\n항목 | 설명\n골프 클럽 플렉스 | 일반\n손 방향 | 오른쪽\n골프 클럽 로프트 | 50 Degrees\n골프 클럽 퍼터 라이 앵글 | 64 Degrees\n그립 유형 | 표준\n골프 클럽 바운스 앵글 | 10 Degrees\n품목 중량 | 1.61 Kilograms\n색상 | 50/54/58도 세트\n브랜드 이름 | Mile High Life\n골프 클럽 유형 | Wedge Golf Club\n제조업체 | Universal Promotions\n고객 리뷰 | 4.4 별 5개 중 4.4 (508) 별 5개 중 4.4\n최다 판매 순위 | 에서 #36,306스포츠 및 야외 활동 (스포츠 및 야외 활동 에서 상위 100개 보기) 에서 #26골프 샌드 웨지\n재료 | 철\n샤프트 소재 | 스틸\n그립 소재 | 합성 고무 또는 고무",
+  "description_images": [
+   "https://cdn.imgdsell.com/visit/set/dsell/tnqkr1223/VEY%252bNEpOTi8OZGdqAgg%253d/SS",
+   "https://cdn.imgdsell.com/file/dsell/tnqkr1223/notice/ss/top_11.jpg",
+   "https://m.media-amazon.com/images/I/61xkILnfKhL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71KosQsTBbL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71G-DDQSL-L._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71ocwRsj--L._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71MtAl2DF7L._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71IJ4ZopN5L._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71IdczGWkZL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71uIglNl1QL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/719afjDT7QL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71fZgu8WjVL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/610KTVTGSPL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71nhgKqnXyL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71WTD5mTqzL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61KH-9nsNqL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71pavrg8ubL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61OljkpdMqL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61CjEe58ExL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/715wbWQqLjL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/719ZDuiJTmL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/6188H37MetL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71QccWZ7SnL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71ahtA7tsZL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61SyO10adnL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61IVsk4kCfL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71SP1ZhJtQL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61JWzCKE9EL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61WhhMmmlnL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61BK6A0lf1L._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61S1qboURdL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61b2ou0B0JL._US1000_.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/cd24a6c8-db9c-4af7-bc2e-467108446010.__CR0,0,600,180_PT0_SX600_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/51ac33df-f647-406e-8dd3-0277beee1e35.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/b5b19992-76f0-494b-808c-e4dc12706409.__CR0,0,970,300_PT0_SX970_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/3dd46ff7-ff61-4526-9739-c29b574ffda0.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://cdn.imgdsell.com/file/dsell/tnqkr1223/notice/ss/bottom_11.jpg"
+  ],
+  "description_dropped": [
+   {
+    "rule": "label",
+    "text": "상세 설명"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:5907efdf4cf8b1b8",
+   "kind": "title",
+   "ko": "50-60도 입문용 웨지세트 남녀공용 쉬운스윙 초보자추천 연습 갭 로브 웨지"
+  },
+  {
+   "id": "option_name:d1b87acb2d2239e7",
+   "kind": "option_name",
+   "ko": "색상"
+  },
+  {
+   "id": "option_value:156cbf1d0b7c9f39",
+   "kind": "option_value",
+   "ko": "50/54/58도 세트"
+  },
+  {
+   "id": "option_value:e7af28830a6f2cc2",
+   "kind": "option_value",
+   "ko": "50/56도 세트"
+  },
+  {
+   "id": "option_value:1659cd877a52e9dc",
+   "kind": "option_value",
+   "ko": "52/56/60도 세트"
+  },
+  {
+   "id": "option_value:8d4c354cd15ca8f1",
+   "kind": "option_value",
+   "ko": "52/58도 세트"
+  },
+  {
+   "id": "option_value:e4e9ea13ae3a01db",
+   "kind": "option_value",
+   "ko": "54/60도 세트"
+  },
+  {
+   "id": "option_value:089c6856d5b8a7b7",
+   "kind": "option_value",
+   "ko": "56/62도 세트"
+  },
+  {
+   "id": "option_value:6355509162160184",
+   "kind": "option_value",
+   "ko": "블랙 티타늄 레이어-50/54/58도"
+  },
+  {
+   "id": "option_value:95521cb95f620ae3",
+   "kind": "option_value",
+   "ko": "블랙 티타늄 레이어-50/56도"
+  },
+  {
+   "id": "option_value:7591784152bf32b0",
+   "kind": "option_value",
+   "ko": "블랙 티타늄 레이어-52/58도"
+  },
+  {
+   "id": "option_value:ffda9437ebcfb35f",
+   "kind": "option_value",
+   "ko": "블랙 티타늄 레이어-54/58/62도"
+  },
+  {
+   "id": "option_value:46d11de8e9988412",
+   "kind": "option_value",
+   "ko": "블랙 티타늄 레이어-54/60도"
+  },
+  {
+   "id": "option_value:a78d3812c5a97539",
+   "kind": "option_value",
+   "ko": "블랙 티타늄 레이어-56/60/64도"
+  },
+  {
+   "id": "option_value:6f5088be7de6d66f",
+   "kind": "option_value",
+   "ko": "블랙 티타늄 레이어-56/62도"
+  },
+  {
+   "id": "option_value:fdff210273aeb233",
+   "kind": "option_value",
+   "ko": "블랙 티타늄 레이어-58/64도"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:40bc309fd6cb0a8a",
+   "kind": "spec_value",
+   "ko": "기타/해외"
+  }
+ ]
+}

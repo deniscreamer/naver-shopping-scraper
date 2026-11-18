@@ -52,6 +52,11 @@ EXPECTED = {
     # Latin "Hand Orientation")
     "13390487313": ("wedge-sets",), "12079165169": ("wedge-sets",), "13164548371": ("wedge-sets",),
     "9703030793": (M,),
+    # (2026-11-18, a choice of two loft sets written only in the text: Mirai 10504295292 held choice_in_text_only, the
+    # look-alikes kept: one set with a stray second group, bundle groups with options, loft ranges, single lofts;
+    # () = held by the transform, placement holds it with the transform's code)
+    "10504295292": (), "10482586862": ("wedge-sets",), "12178280377": ("wedge-sets",),
+    "13683785691": (), "13278647591": ("wedge-sets",), "11006400319": ("wedge-sets",),
 }
 SPLIT = {"13369469193": ("unisex", {M: 3, W: 3}),        # 성별 남녀공용: each section every variant
          "7583123963": ("mixed", {M: 6, W: 3}),          # variants of both genders: each section its own
@@ -69,6 +74,9 @@ def prepared(name):
 @pytest.mark.parametrize("name", sorted(EXPECTED))
 def test_fixture_sets_go_to_their_sections(name):
     got = PL.place(prepared(name), PROFILE)
+    if not EXPECTED[name]:                                 # held by the transform: nothing to place
+        assert got["status"] == "held" and got["leaves"] == [] and got["reason"] == prepared(name)["held"][0]["code"]
+        return
     assert got["status"] == "placed" and tuple(sorted(x["leaf"] for x in got["leaves"])) == EXPECTED[name]
     if name in SPLIT:
         value, counts = SPLIT[name]

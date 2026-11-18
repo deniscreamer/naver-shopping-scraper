@@ -239,7 +239,12 @@ Code: `transform.options_and_variants`.
   `single_only`): a loft glued to letters ("LH0160 Degree", "left hand60 degree": Yamato 13312155382, 13312109978),
   a bare club name ("Sand Wedge" / "6 Iron" / "8 Iron", KVV 13163034573); a title "set or single" with no option and
   no set named in the spec rows or the description ("남성용 또는 52 웨지 세트 싱글", 13312300055,
-  `_set_or_single_unchosen`). A chipper written "칩퍼" / "Chipper" (KVV 13162968497): left out by the title
+  `_set_or_single_unchosen`). A choice of two loft sets written only in the text, with no option group
+  (Mirai 10504295292, title "(48도 52도 56도) (50도 54도 58도)", description "<48도 ,52도,56도>" / "<50도 54도 58도>
+  선택가능"; review 2026-11-17): held `choice_in_text_only` (`transform._choice_in_text`, wedge_sets, after
+  not_wedge_set). Not a choice: one group with a stray copy of another and no choice word (10482586862), loft ranges
+  "(46도~52도)" (13278647591), single lofts "(47도)" (11006400319), bundle groups beside an option group (12178280377,
+  13683785691). A chipper written "칩퍼" / "Chipper" (KVV 13162968497): left out by the title
   (`chipper`, `listing_title_rules.json`).
 - The wedge-set review (2026-11-17), variants and options (wave W5):
   - TaylorMade MG5 pickers ("옵션 1/2/3", "SB웨지1/2/3", "웨지 로프트 바운스 선택-1/-2/-3", 13 listings): every product
@@ -452,8 +457,11 @@ Research 2026-11-07 on the 50 fixture products, then the runs dated below. Code:
 - Wedge sets (the wedge-set review, 2026-11-17): the brand "N" taken from 제조자 on 6 agency products (C02); a
   라이각 row holding club lengths (13866792640); a 웨지 로프트각 row out of order and short (11139638174); a value cut
   at 25 characters whose full form is not unique in the description (13164569476, 13372131108).
-- A choice written only in the text with no option group ("48°/52°/56° or 50°/54°/58° 선택가능", 10504295292): no axis
-  and no hold note (2026-11-17).
+- A choice written only in the text that names no two loft sets (2026-11-18): a flex on a full set with no option,
+  "S / R 선택 가능" (Bridgestone V562 13332402827, 50002788, live), a colour, or a choice written only in the
+  description images: no hold, no note (`_choice_in_text` reads loft sets only).
+- Mirai's sibling 10482586862 (live): its description's lofts "<48도 ,52도,56도>" contradict its title "(50도 54도
+  58도)", with no choice word: sold as the title says, no note (2026-11-18).
 - Amazon's "Item Dimensions L x W x H" (48"L x 6"W x 6"H on 13468741368) is not read as the package's sides: the
   length stays the category default 980 mm, which can understate a volumetric price (2026-11-17).
 - Reviews: the summary's photo_count can be lower than the files a selection downloads, and selected_reviews took 6
@@ -471,6 +479,10 @@ Research 2026-11-07 on the 50 fixture products, then the runs dated below. Code:
   totals ("500g x 2개") taken as stated? 1 kg as the boundary between a part and a set? A club length a component?
 - A description that is all boilerplate becomes null (8978750961): accept (today) or hold?
 - Should the translator get a bare flex letter (R / S) as an option value?
+- A choice of two loft sets written only in the text (2026-11-18): held `choice_in_text_only` (today) or kept live
+  with a note? Is the code's name final? The live Mirai 10504295292: withdrawn as a hold or left live (the owner's
+  word; default: future products only). A bracketed bundle menu in English ("Value Bundle Sets Available: (...),
+  (...)") with no option group: a choice too (no such listing today)?
 
 ## History
 

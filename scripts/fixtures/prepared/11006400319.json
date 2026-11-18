@@ -1,0 +1,411 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:101377496:11006400319",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/ahagolf/products/11006400319",
+  "channel_no": "101377496",
+  "product_id": "11006400319",
+  "category_id": "50002783"
+ },
+ "product": {
+  "title_ko": "혼마 투어월드 GS 11번(47도)/SW(56도) 웨지세트 NS프로 950GH S 샤프트",
+  "brand_ko": "혼마",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 웨지 세트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "11006400319",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 245000,
+    "price_usd": "245.00",
+    "sku": "FW-f32f793d7473bc1ce491d61f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 245000,
+   "original_krw": 245000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "혼마"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "혼마"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "혼마 GS 웨지"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "일본산"
+   },
+   {
+    "label_ko": "샤프트소재",
+    "value_ko": "스틸"
+   },
+   {
+    "label_ko": "샤프트 강도",
+    "value_ko": "S"
+   },
+   {
+    "label_ko": "킥포인트",
+    "value_ko": "LOW, MID"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "웨지 로프트각",
+    "value_ko": "47도, 56도"
+   },
+   {
+    "label_ko": "바운스각",
+    "value_ko": "12도, 13도, 11도"
+   },
+   {
+    "label_ko": "스윙웨이트",
+    "value_ko": "D2, D3, D2.5"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "출시",
+    "value_ko": "2020년형"
+   },
+   {
+    "label_ko": "수입원",
+    "value_ko": "병행"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/11006400319/fairwardgolf-11006400319-001-cb017b24dedf67d0.webp",
+    "sha256": "cb017b24dedf67d02cc3286a566a31ad276f2e1e06a00a4bb1a7ceb5f5ca0134",
+    "width": 1058,
+    "height": 1411
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/11006400319/fairwardgolf-11006400319-002-01ab6fc5cddd12fb.webp",
+    "sha256": "01ab6fc5cddd12fb9e1d9cd0dafd69562b52ef6c7c02fe262143412496a54f9c",
+    "width": 1058,
+    "height": 1411
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/11006400319/fairwardgolf-11006400319-003-2fcf2c903b785dad.webp",
+    "sha256": "2fcf2c903b785daddb35625769cdbaed9b68548e4aa366619b34c30550ac6569",
+    "width": 1058,
+    "height": 1411
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/11006400319/fairwardgolf-11006400319-004-83c92250ddbe67c6.webp",
+    "sha256": "83c92250ddbe67c6c8271ac35ba618a9f4a61f25cac2d166451b5d0b0afb2dd4",
+    "width": 1058,
+    "height": 1411
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/11006400319/fairwardgolf-11006400319-005-984df534db4677e1.webp",
+    "sha256": "984df534db4677e18f9c76c21e0fa263b5cbfd9efa6a3b27a7ac5e4dfb1bf798",
+    "width": 1058,
+    "height": 1411
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/11006400319/fairwardgolf-11006400319-006-e9640b3abfa2305f.webp",
+    "sha256": "e9640b3abfa2305fe55bedb6d95fd1e3709733f2393932435b91a8257fb8045f",
+    "width": 1058,
+    "height": 1411
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "혼마 투어월드 GS 11번 47도 스펙\n1. 클럽 종류: 11번 아이언 (47도 로프트)\n- 일반적인 아이언 세트에서 웨지와 롱아이언 사이의 역할을 수행하여 정확한 거리와 제어력 제공.\n- 주로 그린 근처의 숏게임이나 정교한 어프로치 샷에 사용.\n2. 로프트: 47도\n- 이 로프트 각도는 일반적으로 피칭 웨지와 유사한 성능을 제공하여 어프로치와 숏게임에서 활용도가 높음.\n3. 헤드 디자인:\n- 관용성을 높인 대형 헤드 디자인으로, 타격 시 안정적인 느낌을 제공.\n- 저중심 설계로 높은 탄도를 지원하며, 비거리 손실을 줄여줌.\n4. 소재 및 구조:\n- 고반발 소재를 사용한 페이스 설계로, 타구 시 높은 반발력과 빠른 볼 스피드를 제공.\n- 페이스의 얇은 구조로 인해 일관된 비거리와 타구감 제공.\n혼마 투어월드 GS SW (56도) 웨지 스펙\n1. 로프트: 56도 (Sand Wedge – 벙커 탈출 및 정교한 숏게임 샷에 적합)\n2. 바운스 각도: 약 12~14도 (벙커 샷이나 부드러운 잔디 접지력 제공)\n3. 헤드 소재: 고급 연철 또는 스테인리스 스틸\n4. 헤드 디자인:\n- CNC 밀링 페이스와 정밀한 그루브 설계로 높은 스핀과 뛰어난 제어력 제공\n- 넓은 페이스와 안정적인 헤드 디자인으로 관용성을 강화하여 미스샷을 줄임\n5. 기타 특징:\n- 높은 바운스 각도 덕분에 벙커 샷에서 헤드가 모래에 빠지지 않고 미끄러져 나가는 느낌 제공\n- 그린 주변에서 안정적인 컨트롤과 일관된 스핀 양을 제공\nNS 프로 950GH S 샤프트 스펙\n1. 모델명: NS 프로 950GH S (Stiff) 샤프트\n2. 무게: 약 98g (가벼운 스틸 샤프트로 피로를 줄여줌)\n3. 플렉스: S (Stiff) – 스윙 스피드가 빠른 골퍼에게 적합\n4. 킥 포인트: 미드 킥 포인트 – 컨트롤과 정확성을 중시하며 샷의 일관성 제공\n5. 특징:\n- 스틸 샤프트로 타구감이 부드러우면서도 정교한 거리 조절에 유리\n- 견고한 스틸 소재가 스윙 중 안정적인 임팩트를 지원하여 일관된 퍼포먼스 제공\n이 혼마 투어월드 GS 11번 47도 / SW 56도 웨지세트는 높은 스핀과 뛰어난 제어력을 제공하여 다양한 상황에서 신뢰할 수 있으며, NS 프로 950GH S 샤프트는 컨트롤을 중시하는 중급 이상 골퍼들에게 적합한 선택입니다.",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20220209_36/16443921175311LV9v_JPEG/%EC%83%81%EB%8B%A8_%EC%95%88%EB%82%B4_001_(1).jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241016_259/1729039332315NDdSK_JPEG/KakaoTalk_20240930_154827741.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241016_30/1729039332270C8c7s_JPEG/KakaoTalk_20240930_154827741_01.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241016_95/1729039332283YfJGL_JPEG/KakaoTalk_20240930_154827741_02.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241016_43/1729039332287h48UB_JPEG/KakaoTalk_20240930_154827741_03.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241016_163/17290393322446DQ6z_JPEG/KakaoTalk_20240930_154827741_04.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20241016_208/1729039332234so4CQ_JPEG/KakaoTalk_20240930_154827741_05.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220108_266/16416171245688JbsD_JPEG/%EA%B5%AC%EB%A7%A4%EC%A0%84%ED%95%84%EB%8F%85.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220301_82/16461403641415Mk4G_PNG/KakaoTalk_20220301_194113184.png?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "store_name",
+    "text": "<아하골프>"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:7502b90ce1b9325b",
+   "kind": "title",
+   "ko": "혼마 투어월드 GS 11번(47도)/SW(56도) 웨지세트 NS프로 950GH S 샤프트"
+  },
+  {
+   "id": "brand:69b4ccbc4e8ab73a",
+   "kind": "brand",
+   "ko": "혼마"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:69b4ccbc4e8ab73a",
+   "kind": "spec_value",
+   "ko": "혼마"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:ce58e6474037bd3a",
+   "kind": "spec_value",
+   "ko": "혼마 GS 웨지"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2d5ea77cf8032c99",
+   "kind": "spec_value",
+   "ko": "일본산"
+  },
+  {
+   "id": "spec_label:bba112f05a71deaa",
+   "kind": "spec_label",
+   "ko": "샤프트소재"
+  },
+  {
+   "id": "spec_value:76d45c1471b5954b",
+   "kind": "spec_value",
+   "ko": "스틸"
+  },
+  {
+   "id": "spec_label:eb57c3164e2a24de",
+   "kind": "spec_label",
+   "ko": "샤프트 강도"
+  },
+  {
+   "id": "spec_value:8de0b3c47f112c59",
+   "kind": "spec_value",
+   "ko": "S"
+  },
+  {
+   "id": "spec_label:71eb413f1d194069",
+   "kind": "spec_label",
+   "ko": "킥포인트"
+  },
+  {
+   "id": "spec_value:15c1def25b5ae66f",
+   "kind": "spec_value",
+   "ko": "LOW, MID"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:e05405a34cd61ca2",
+   "kind": "spec_label",
+   "ko": "웨지 로프트각"
+  },
+  {
+   "id": "spec_value:cd3e2fe54a6c8014",
+   "kind": "spec_value",
+   "ko": "47도, 56도"
+  },
+  {
+   "id": "spec_label:bd8c94a6ef14bc79",
+   "kind": "spec_label",
+   "ko": "바운스각"
+  },
+  {
+   "id": "spec_value:08fd5d28eea4828b",
+   "kind": "spec_value",
+   "ko": "12도, 13도, 11도"
+  },
+  {
+   "id": "spec_label:82e77522c71ce93a",
+   "kind": "spec_label",
+   "ko": "스윙웨이트"
+  },
+  {
+   "id": "spec_value:1b62646ff2ec87f2",
+   "kind": "spec_value",
+   "ko": "D2, D3, D2.5"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:84af996296131844",
+   "kind": "spec_label",
+   "ko": "출시"
+  },
+  {
+   "id": "spec_value:bd8c63f1284e3e15",
+   "kind": "spec_value",
+   "ko": "2020년형"
+  },
+  {
+   "id": "spec_label:1cf649b343d942e0",
+   "kind": "spec_label",
+   "ko": "수입원"
+  },
+  {
+   "id": "spec_value:f74dce75397eea11",
+   "kind": "spec_value",
+   "ko": "병행"
+  }
+ ]
+}

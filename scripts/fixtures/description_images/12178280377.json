@@ -1,0 +1,1021 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 79186,
+   "height": 5500,
+   "host": "seller",
+   "link": "https://cdn.imgdsell.com/file/dsell/tnqkr1223/notice/ss/top_11.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1799
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.982,
+       "text": "I",
+       "y": 969
+      }
+     ],
+     "y0": 1799,
+     "y1": 3598
+    },
+    {
+     "rows": [],
+     "y0": 3598,
+     "y1": 5500
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 50964,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61xkILnfKhL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.865,
+       "text": "Mile High ife",
+       "y": 200
+      },
+      {
+       "conf": 0.993,
+       "text": "M-TC",
+       "y": 342
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 30524,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71KosQsTBbL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.895,
+       "text": "Nile HighLite",
+       "y": 197
+      },
+      {
+       "conf": 0.979,
+       "text": "M-TC",
+       "y": 336
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 39912,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71G-DDQSL-L._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.549,
+       "text": "8S",
+       "y": 95
+      },
+      {
+       "conf": 0.943,
+       "text": "Nile HighLite",
+       "y": 170
+      },
+      {
+       "conf": 0.979,
+       "text": "M-TC",
+       "y": 288
+      },
+      {
+       "conf": 0.825,
+       "text": "Mile HighLite",
+       "y": 314
+      },
+      {
+       "conf": 0.587,
+       "text": "05",
+       "y": 386
+      },
+      {
+       "conf": 0.976,
+       "text": "M-TC",
+       "y": 432
+      },
+      {
+       "conf": 0.932,
+       "text": "Nile HighLite",
+       "y": 460
+      },
+      {
+       "conf": 0.99,
+       "text": "M-TC",
+       "y": 577
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 38761,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71ocwRsj--L._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.577,
+       "text": "05 / Mile HighLite",
+       "y": 170
+      },
+      {
+       "conf": 0.973,
+       "text": "M-TC",
+       "y": 314
+      },
+      {
+       "conf": 0.932,
+       "text": "Nile HighLite",
+       "y": 331
+      },
+      {
+       "conf": 0.992,
+       "text": "M-TC",
+       "y": 479
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 30098,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71MtAl2DF7L._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.883,
+       "text": "Nile HighLifte",
+       "y": 197
+      },
+      {
+       "conf": 0.988,
+       "text": "M-TC",
+       "y": 336
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 40038,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71IJ4ZopN5L._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.549,
+       "text": "8S",
+       "y": 95
+      },
+      {
+       "conf": 0.943,
+       "text": "Nile HighLite",
+       "y": 170
+      },
+      {
+       "conf": 0.979,
+       "text": "M-TC",
+       "y": 288
+      },
+      {
+       "conf": 0.825,
+       "text": "Mile HighLite",
+       "y": 314
+      },
+      {
+       "conf": 0.587,
+       "text": "05",
+       "y": 386
+      },
+      {
+       "conf": 0.976,
+       "text": "M-TC",
+       "y": 432
+      },
+      {
+       "conf": 0.932,
+       "text": "Nile HighLite",
+       "y": 460
+      },
+      {
+       "conf": 0.99,
+       "text": "M-TC",
+       "y": 577
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 38569,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71IdczGWkZL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.933,
+       "text": "Nile HighLite",
+       "y": 149
+      },
+      {
+       "conf": 0.976,
+       "text": "M-TC",
+       "y": 291
+      },
+      {
+       "conf": 0.96,
+       "text": "Nile HighLite",
+       "y": 360
+      },
+      {
+       "conf": 0.98,
+       "text": "M-TC",
+       "y": 503
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 30980,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71uIglNl1QL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.909,
+       "text": "Nile HighLite",
+       "y": 206
+      },
+      {
+       "conf": 0.992,
+       "text": "M-TC",
+       "y": 348
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 38459,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/719afjDT7QL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.918,
+       "text": "09",
+       "y": 73
+      },
+      {
+       "conf": 0.9,
+       "text": "Mile HighLite",
+       "y": 164
+      },
+      {
+       "conf": 0.981,
+       "text": "M-TC",
+       "y": 306
+      },
+      {
+       "conf": 0.862,
+       "text": "Mile HighLitte",
+       "y": 343
+      },
+      {
+       "conf": 0.882,
+       "text": "M-TC",
+       "y": 487
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 30880,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71fZgu8WjVL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.888,
+       "text": "Mile High Lite",
+       "y": 195
+      },
+      {
+       "conf": 0.986,
+       "text": "M-TC",
+       "y": 338
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 34308,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/610KTVTGSPL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.718,
+       "text": "9",
+       "y": 94
+      },
+      {
+       "conf": 0.911,
+       "text": "Mile HighLite",
+       "y": 170
+      },
+      {
+       "conf": 0.983,
+       "text": "M-TC",
+       "y": 312
+      },
+      {
+       "conf": 0.922,
+       "text": "Mile HighLife",
+       "y": 347
+      },
+      {
+       "conf": 0.986,
+       "text": "M-TC",
+       "y": 487
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 31235,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71nhgKqnXyL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.905,
+       "text": "Mile High Lite",
+       "y": 210
+      },
+      {
+       "conf": 0.991,
+       "text": "M-TC",
+       "y": 348
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 30391,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71WTD5mTqzL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.924,
+       "text": "Mile HighLite",
+       "y": 206
+      },
+      {
+       "conf": 0.986,
+       "text": "M-TC",
+       "y": 348
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 31570,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61KH-9nsNqL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.984,
+       "text": "9",
+       "y": 97
+      },
+      {
+       "conf": 0.885,
+       "text": "Mile HighLite",
+       "y": 206
+      },
+      {
+       "conf": 0.991,
+       "text": "M-TC",
+       "y": 347
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 61522,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71pavrg8ubL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.835,
+       "text": "Mil High Llife",
+       "y": 212
+      },
+      {
+       "conf": 0.988,
+       "text": "M-TC",
+       "y": 366
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 50340,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61OljkpdMqL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 44231,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61CjEe58ExL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 56021,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/715wbWQqLjL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.914,
+       "text": "Mile High Life",
+       "y": 221
+      },
+      {
+       "conf": 0.998,
+       "text": "M-TC",
+       "y": 368
+      },
+      {
+       "conf": 0.52,
+       "text": "-",
+       "y": 474
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 53520,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/719ZDuiJTmL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.785,
+       "text": "2",
+       "y": 469
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 44166,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/6188H37MetL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 57996,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71QccWZ7SnL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.877,
+       "text": "Mile High life",
+       "y": 196
+      },
+      {
+       "conf": 0.993,
+       "text": "M-TC",
+       "y": 351
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 52404,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71ahtA7tsZL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 43915,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61SyO10adnL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.632,
+       "text": "√",
+       "y": 541
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 46942,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61IVsk4kCfL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.871,
+       "text": "Mile High Lfe",
+       "y": 195
+      },
+      {
+       "conf": 0.994,
+       "text": "M-TC",
+       "y": 337
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 53363,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71SP1ZhJtQL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 39914,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61JWzCKE9EL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 46970,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61WhhMmmlnL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.871,
+       "text": "Mile High Lfe",
+       "y": 195
+      },
+      {
+       "conf": 0.994,
+       "text": "M-TC",
+       "y": 337
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 39768,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61BK6A0lf1L._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 48900,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61S1qboURdL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.855,
+       "text": "Mile High L if",
+       "y": 197
+      },
+      {
+       "conf": 0.993,
+       "text": "M-TC",
+       "y": 336
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 53470,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/61b2ou0B0JL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.92,
+       "text": "Mile High Life",
+       "y": 218
+      },
+      {
+       "conf": 0.959,
+       "text": "M-TC",
+       "y": 356
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 31692,
+   "height": 180,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/cd24a6c8-db9c-4af7-bc2e-467108446010.__CR0,0,600,180_PT0_SX600_V1___.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.918,
+       "text": "EXPERIENcE LIFE WITH MILE HIGA STYLE",
+       "y": 132
+      }
+     ],
+     "y0": 0,
+     "y1": 180
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 394042,
+   "height": 600,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/51ac33df-f647-406e-8dd3-0277beee1e35.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.968,
+       "text": "Mile High Life / Golf",
+       "y": 37
+      },
+      {
+       "conf": 0.698,
+       "text": "GT",
+       "y": 121
+      },
+      {
+       "conf": 0.516,
+       "text": "0S",
+       "y": 267
+      },
+      {
+       "conf": 0.986,
+       "text": "M-TC",
+       "y": 350
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 31225,
+   "height": 300,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/b5b19992-76f0-494b-808c-e4dc12706409.__CR0,0,970,300_PT0_SX970_V1___.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.622,
+       "text": "MR",
+       "y": 31
+      },
+      {
+       "conf": 0.997,
+       "text": "Highly polished",
+       "y": 55
+      },
+      {
+       "conf": 0.722,
+       "text": "4.7C / finish",
+       "y": 73
+      },
+      {
+       "conf": 0.996,
+       "text": "Comfortable / Classic blade",
+       "y": 199
+      },
+      {
+       "conf": 0.864,
+       "text": "Grip / Mile HighLile / shape",
+       "y": 204
+      }
+     ],
+     "y0": 0,
+     "y1": 300
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 325970,
+   "height": 600,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/3dd46ff7-ff61-4526-9739-c29b574ffda0.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.957,
+       "text": "Mile High Life / solf",
+       "y": 36
+      },
+      {
+       "conf": 0.996,
+       "text": "Full Spectrum Lofts",
+       "y": 509
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 970
+  },
+  {
+   "bytes": 49617,
+   "height": 3300,
+   "host": "seller",
+   "link": "https://cdn.imgdsell.com/file/dsell/tnqkr1223/notice/ss/bottom_11.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.974,
+       "text": "×",
+       "y": 1605
+      }
+     ],
+     "y0": 0,
+     "y1": 1963
+    },
+    {
+     "rows": [],
+     "y0": 1963,
+     "y1": 3300
+    }
+   ],
+   "status": "read",
+   "width": 860
+  }
+ ],
+ "key": "fairwardgolf:naver:102709004:12178280377",
+ "links_sha256": "2219769966b0ab525f70694030a44eb11a0b1604f304cb4eaa8ab3d38ad01a2b",
+ "product_id": "12178280377",
+ "seconds": 39.2,
+ "skipped": [
+  {
+   "link": "https://cdn.imgdsell.com/visit/set/dsell/tnqkr1223/VEY%252bNEpOTi8OZGdqAgg%253d/SS",
+   "rule": "tiny"
+  }
+ ]
+}

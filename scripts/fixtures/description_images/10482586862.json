@@ -1,0 +1,392 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 675249,
+   "height": 960,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240621_6/1718959997481YdtJv_JPEG/20240620%EF%BC%BF181424_(1).jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.642,
+       "text": "IOJIW",
+       "y": 379
+      },
+      {
+       "conf": 0.614,
+       "text": "IOIW",
+       "y": 574
+      }
+     ],
+     "y0": 0,
+     "y1": 960
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 520682,
+   "height": 960,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240621_86/1718959996907QLbCi_JPEG/20240620%EF%BC%BF181530.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.518,
+       "text": "IOIW",
+       "y": 325
+      },
+      {
+       "conf": 0.592,
+       "text": "IOJW",
+       "y": 589
+      }
+     ],
+     "y0": 0,
+     "y1": 960
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1882291,
+   "height": 959,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240621_38/1718959997428sH2VM_JPEG/20240620%EF%BC%BF183858.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.935,
+       "text": "mirai",
+       "y": 472
+      },
+      {
+       "conf": 0.874,
+       "text": "miral",
+       "y": 547
+      }
+     ],
+     "y0": 0,
+     "y1": 959
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1578938,
+   "height": 959,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240621_75/1718959996933KR12B_JPEG/SE-fbffd5b2-2ef4-11ef-9e52-8dd319289645.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.882,
+       "text": "mirai",
+       "y": 346
+      },
+      {
+       "conf": 0.945,
+       "text": "mirai",
+       "y": 488
+      }
+     ],
+     "y0": 0,
+     "y1": 959
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1440811,
+   "height": 960,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240621_283/1718959997212SRk7u_JPEG/20240620%EF%BC%BF184103.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.503,
+       "text": "O",
+       "y": 336
+      },
+      {
+       "conf": 0.769,
+       "text": "n",
+       "y": 412
+      },
+      {
+       "conf": 0.993,
+       "text": "mirai",
+       "y": 510
+      }
+     ],
+     "y0": 0,
+     "y1": 960
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1287563,
+   "height": 960,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240621_263/1718959997752mJnU7_JPEG/20240620%EF%BC%BF184155.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 960
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1237975,
+   "height": 960,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240621_211/1718959997719hCmwY_JPEG/20240620%EF%BC%BF184210.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 960
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 509615,
+   "height": 960,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240621_10/1718959996924l0sXb_JPEG/20240620%EF%BC%BF181717.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.581,
+       "text": "o",
+       "y": 282
+      }
+     ],
+     "y0": 0,
+     "y1": 960
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1640849,
+   "height": 960,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240621_111/1718959997257UJhDI_JPEG/20240620%EF%BC%BF184402.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.946,
+       "text": "DESIGN BY JAPAN / FORGED",
+       "y": 412
+      },
+      {
+       "conf": 0.545,
+       "text": "NVCRT AE NPEED",
+       "y": 625
+      }
+     ],
+     "y0": 0,
+     "y1": 960
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 993361,
+   "height": 959,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240621_48/1718960181599fA2hx_JPEG/SE-fbff878c-2ef4-11ef-9e52-418ee364b1aa_(1).jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.503,
+       "text": "O9 / 54",
+       "y": 230
+      },
+      {
+       "conf": 0.762,
+       "text": "89",
+       "y": 241
+      }
+     ],
+     "y0": 0,
+     "y1": 959
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 675377,
+   "height": 960,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240621_5/171896015097525uah_JPEG/20240620%EF%BC%BF181135.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.989,
+       "text": "mirai",
+       "y": 543
+      }
+     ],
+     "y0": 0,
+     "y1": 960
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1925845,
+   "height": 959,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240621_260/1718959997532b0uWE_JPEG/20240620%EF%BC%BF184245.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.994,
+       "text": "AMKIN",
+       "y": 423
+      },
+      {
+       "conf": 0.605,
+       "text": "5",
+       "y": 652
+      }
+     ],
+     "y0": 0,
+     "y1": 959
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 1213666,
+   "height": 960,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240621_216/1718959997796CBEyU_JPEG/20240620%EF%BC%BF184324.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.841,
+       "text": "1-55",
+       "y": 358
+      },
+      {
+       "conf": 0.786,
+       "text": "1",
+       "y": 482
+      }
+     ],
+     "y0": 0,
+     "y1": 960
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 76071,
+   "height": 538,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20240621_228/1718960202687qRIVL_JPEG/1.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "777",
+       "y": 42
+      },
+      {
+       "conf": 0.997,
+       "text": "GOLF",
+       "y": 101
+      },
+      {
+       "conf": 0.961,
+       "text": "100% 정품만을 판매합니다",
+       "y": 221
+      },
+      {
+       "conf": 0.898,
+       "text": "20년경력의 피터가 직접 상담, 작업까지 완료!",
+       "y": 260
+      },
+      {
+       "conf": 0.987,
+       "text": " 다양한 클럽헤드,샤프트,그립보유 피팅전문매장!",
+       "y": 298
+      },
+      {
+       "conf": 0.917,
+       "text": " 방문하셔서 시타 및 피팅 가능합니다.(주차가능)",
+       "y": 341
+      },
+      {
+       "conf": 0.992,
+       "text": "Customer Service",
+       "y": 430
+      },
+      {
+       "conf": 0.994,
+       "text": "클럽상담및피팅관련",
+       "y": 457
+      },
+      {
+       "conf": 0.972,
+       "text": "고객센터 / 상담전화 / 031-911-7731, 010-8548-7761",
+       "y": 479
+      }
+     ],
+     "y0": 0,
+     "y1": 538
+    }
+   ],
+   "status": "read",
+   "width": 465
+  }
+ ],
+ "key": "fairwardgolf:naver:100547132:10482586862",
+ "links_sha256": "0459867fdb190241c2fe35261847340f40709cb4d01ed48e87b28bf852772f8e",
+ "product_id": "10482586862",
+ "seconds": 23.4,
+ "skipped": []
+}

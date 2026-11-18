@@ -1,0 +1,109 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "error": "as_given: HTTP 302",
+   "host": "seller",
+   "link": "https://a.sellerpick.shop/upload/images/counter.jpg?spNo=18550011&mprNo=73096510&apiNo=&regNo=13081",
+   "status": "gone"
+  },
+  {
+   "bytes": 88999,
+   "height": 880,
+   "host": "seller",
+   "link": "https://image.rakuten.co.jp/full-shot/cabinet/wedge1/rmxforgedwedgens_a.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.632,
+       "text": "YAMAHARIXBR / ----",
+       "y": 20
+      },
+      {
+       "conf": 0.583,
+       "text": "□7 / 7",
+       "y": 247
+      },
+      {
+       "conf": 0.894,
+       "text": "5056",
+       "y": 286
+      },
+      {
+       "conf": 0.756,
+       "text": "CYAMAKA",
+       "y": 387
+      },
+      {
+       "conf": 0.609,
+       "text": "MaM",
+       "y": 396
+      },
+      {
+       "conf": 0.97,
+       "text": "5",
+       "y": 422
+      },
+      {
+       "conf": 0.818,
+       "text": "RIIK FORGEO",
+       "y": 771
+      },
+      {
+       "conf": 0.844,
+       "text": "RMX()B",
+       "y": 831
+      }
+     ],
+     "y0": 0,
+     "y1": 880
+    }
+   ],
+   "status": "read",
+   "width": 720
+  },
+  {
+   "error": "as_given: HTTP 302",
+   "host": "seller",
+   "link": "https://tshop.r10s.jp/full-shot/cabinet/wedge1/rmxforgedwedgens56.jpg",
+   "status": "gone"
+  },
+  {
+   "error": "as_given: HTTP 302",
+   "host": "seller",
+   "link": "https://tshop.r10s.jp/full-shot/cabinet/wedge1/rmxforgedwedgens_1.jpg",
+   "status": "gone"
+  },
+  {
+   "error": "as_given: HTTP 302",
+   "host": "seller",
+   "link": "https://tshop.r10s.jp/full-shot/cabinet/ir1/2507rmxforged-spec.jpg",
+   "status": "gone"
+  }
+ ],
+ "key": "fairwardgolf:naver:102682994:13683785691",
+ "links_sha256": "dbe5d983ab777d4b9f40d4b494245a3d01f57b3db2f9169461617022f5517958",
+ "product_id": "13683785691",
+ "seconds": 8.6,
+ "skipped": [
+  {
+   "link": "https://proxy-smartstore.naver.net/img/aW1nLnNlbGxlcnBpY2suc2hvcC91cGxvYWQvbWFya2V0SW1hZ2UvMTkzNjVfbm90aWNlX3RvcC5wbmc=?token=afe5f5a3934d6e8fee77c8d13f634eb8",
+   "rule": "boilerplate_name"
+  },
+  {
+   "link": "https://proxy-smartstore.naver.net/img/aW1nLnNlbGxlcnBpY2suc2hvcC91cGxvYWQvbWFya2V0SW1hZ2UvMTkzNjZfbm90aWNlX2JvdHRvbS5wbmc=?token=08c221e8678cc36bc8e366bf76c19d82",
+   "rule": "boilerplate_name"
+  }
+ ]
+}

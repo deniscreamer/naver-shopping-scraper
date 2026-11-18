@@ -173,6 +173,8 @@ def fixture(name):
 
 
 FIXTURES = sorted(n[:-5] for n in os.listdir(os.path.join(FX, "collected")) if n.endswith(".json"))
+# held by the transform (nothing to translate into a product): 10504295292 choice_in_text_only, 13683785691 single_only
+HELD = {"10504295292", "13683785691"}
 
 
 @pytest.mark.parametrize("name", FIXTURES[:12])
@@ -189,7 +191,7 @@ def test_every_text_is_resolved_or_asked(name, tmp_path):
 
 def test_fixtures_translate_with_the_fake_model(tmp_path):
     d = D.Dictionaries(str(tmp_path / "live"))
-    for name in FIXTURES[:8]:
+    for name in [n for n in FIXTURES if n not in HELD][:8]:
         p = fixture(name)
         batches = T.make_batches(T.plan(p, d, {}, TENANT)[2])
         out = T.translate_product(p, d, {}, TENANT, FakeModel(), "2026-11-08T00:00:00Z")

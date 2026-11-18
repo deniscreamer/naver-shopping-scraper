@@ -1,0 +1,227 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:101729269:13278647591",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/golfdealshop/products/13278647591",
+  "channel_no": "101729269",
+  "product_id": "13278647591",
+  "category_id": "50002783"
+ },
+ "product": {
+  "title_ko": "캘러웨이 JAWS 죠스 포지드 23 단조 52도,56도웨지세트 다골S200",
+  "brand_ko": "캘러웨이",
+  "brand_source": "specs:브랜드",
+  "attributes": {},
+  "options": [],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "13278647591",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 290000,
+    "price_usd": "290.00",
+    "sku": "FW-d64bfc5ec71208b4b5e3a4cc",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 290000,
+   "original_krw": 290000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "캘러웨이"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "캘러웨이"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13278647591/fairwardgolf-13278647591-001-f56764cc76c89d41.webp",
+    "sha256": "f56764cc76c89d4142173da76f07641359a080cd14c77b5c508aba6322b589db",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13278647591/fairwardgolf-13278647591-002-07f8667f2b63b268.webp",
+    "sha256": "07f8667f2b63b2689b76af15923e06c410a4a2b05e84773ef949c142be15e9fe",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13278647591/fairwardgolf-13278647591-003-fef11b7645c7e071.webp",
+    "sha256": "fef11b7645c7e071598c4401acb6fc87a24c14346f92031199e2d80de09b3867",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/13278647591/fairwardgolf-13278647591-004-dd319bef2729070a.webp",
+    "sha256": "dd319bef2729070a7f116b87025de5bfba4ca8ca1071405b63124a9f8019e170",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/13278647591/fairwardgolf-13278647591-005-961addeffb72a9cf.webp",
+    "sha256": "961addeffb72a9cf2a337e1a98624b161dd8b3acdc93573ae85c8f55f7dc9c3a",
+    "width": 700,
+    "height": 700
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/13278647591/fairwardgolf-13278647591-006-5c63500e4e3bdcc9.webp",
+    "sha256": "5c63500e4e3bdcc9fb414a98afeb5e91bfe09f00d95e3ece0fdcdbba611916fb",
+    "width": 700,
+    "height": 700
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.6666666,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": "11.19.(목)",
+    "arrival_probability": 96,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "monster\n상품문의 : 050-7872-4665 (문자수신가능)\n브랜드 & 카테고리\nCallaway 웨지/치퍼\n상품 스펙\n✓아시안스펙 / 미국스펙 / 모름\n✓정품 / 병행수입 / 모름\n성별 & 기타\n✓남성용 / 여성용 / 왼손용 / 어린이용\n로프트 각\n52° , 56°\n샤프트\n다이나믹골드\n샤프트 강도\nR\nAS 가능 여부\n✓불가능 / 가능\n( AS 가능 여부는 해당 제품의 브랜드사 혹은 유통사에서 가능여부 입니다 )\n제품 설명\n골프딜 상품번호\n# 1138120\n캘러웨이 JAWS 죠스 포지드 23 단조 웨지\nC 그라인드(46도~52도)\n--------------------------------\n클럽을 오픈 시켜 어드레스 해도\n(리딩에지가 지명과 붙어 있도록) 안정감을 제공합니다.\nZ 그라인드(54도~60도)\n--------------------------------\n리딩에지를 그라인드 처리하여 클럽이 잔디에\n박히지 않고 부드럽게 빠져나가도록 합니다.\n페이스 면은 도금되지 않은\nRAW FACE 마감 처리로 향상된 스핀량을 제공합니다.\n궁금하신점 있으시면 050-7872-4665 (문자수신가능)으로 연락주세요\n서울 마포구 합정동 독막로56, 1층 몬스터골프\n중고채 전문 몬스터골프\n네이버에서 몬스터골프 검색하세요!\n서울 마포구 합정동 354-32 1층 몬스터 골프\n몬스터 골프 전화번호\n050-7872-4665 (문자수신가능)\n판매처 : monster\n상품문의 : 050-7872-4665 (문자수신가능)\n반품 주소지 : 서울 마포구 독막로 56 1층 골프샵 몬스터골프 (우편번호:04073)\n※ 주의 : 반품시에는 반드시 수령하신 택배사를 이용하여 해당 반품 주소지로 반송해 주세요. 반품배송지 미확인으로 인해 잘못 반송되면 추가 반송비를 요청드립니다.",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260320_232/177397767905203voK_JPEG/p-13220108043-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20260320_64/1773977679048TydUq_JPEG/p-13220108043-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20260320_153/1773977679067g0fjp_JPEG/p-13220108043-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20260320_251/1773977679054jwd4V_JPEG/p-13220108043-s-1-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20260320_185/1773977679029zpQyc_JPEG/p-13220108043-s-1-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20260320_221/1773977679029wGw3s_JPEG/p-13220108043-s-1-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20260320_265/1773977679020ImWCD_JPEG/p-13220108043-s-1-A-6.jpg"
+  ],
+  "description_dropped": [
+   {
+    "rule": "store_claim",
+    "text": "정품 여부"
+   },
+   {
+    "rule": "phone",
+    "text": "02-337-1872"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:ab5bf212502839fb",
+   "kind": "title",
+   "ko": "캘러웨이 JAWS 죠스 포지드 23 단조 52도,56도웨지세트 다골S200"
+  },
+  {
+   "id": "brand:752b9a8b36b892c4",
+   "kind": "brand",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:752b9a8b36b892c4",
+   "kind": "spec_value",
+   "ko": "캘러웨이"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  }
+ ]
+}

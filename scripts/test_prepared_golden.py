@@ -8,7 +8,9 @@ five junior clubs of 50002787 for the brand, bag and two-club rules: a shop's na
 the origin, U.S.KIDSGOLF, two clubs, a club and a glove; five more of the 100-run for the brand rows and the
 package kind: a reselling shop's own name, a code, a title as the brand, an age after 클럽). 2026-11-18: an Amazon
 axis named for another kind (13390487313 "Shaft Material" over lengths) and its look-alikes kept (12079165169,
-9703030793, 13164548371 "Hand Orientation"), each with its description-images sidecar.
+9703030793, 13164548371 "Hand Orientation"), each with its description-images sidecar; two loft sets offered only in
+the text (10504295292, held choice_in_text_only) and its look-alikes kept (10482586862, 12178280377, 13683785691,
+13278647591, 11006400319), with their sidecars.
 
 fixtures/description_images/<product id>.json: the description images' OCR sidecars of the same products
 (description_images.py with RapidOCR on the images downloaded 2026-11-07), read by the transform as

@@ -873,6 +873,51 @@ def _set_or_single_unchosen(line: dict[str, Any]) -> bool:
     return not (_SET_NAMED_RE.search(" ".join(rows)) or _SET_NAMED_RE.search(text))
 
 
+# a choice of two loft sets written only in the text, no option group to pick one (Mirai Skull MW-23 10504295292,
+# review 2026-11-17: title "(48도 52도 56도) (50도 54도 58도)", description "<48도 ,52도,56도>" / "<50도 54도 58도>
+# 선택가능", one variant, published as one set at 3 x 280,000; the set is the buyer's message to the seller, which we
+# cannot send). A group is (), <>, [], 【】 or ［］ holding only a run of 2+ lofts 44-72 (도 / ° optional, spaces,
+# commas, "/" or "·" between); two runs joined by "or" / "또는" / "혹은" count too. Not a group: a loft range
+# "(46도~52도)" (13278647591), one loft "(47도)" (11006400319). Measured read-only 2026-11-18 on the shop's 3,173
+# latest lines: 1 hit (10504295292); a bare choice-word scan hits 306 boilerplate texts, so two groups are needed.
+_LOFT_NUM = r"(?:4[4-9]|5\d|6\d|7[0-2])(?![0-9.])(?:\s*(?:도|°))?"
+_LOFT_RUN = rf"{_LOFT_NUM}(?:\s*[,/·]\s*{_LOFT_NUM}|\s+{_LOFT_NUM})+"
+_LOFT_GROUP_RE = re.compile(rf"[(<\[【［]\s*({_LOFT_RUN})\s*[)>\]】］]")
+_LOFT_OR_RE = re.compile(rf"(?i)(?<![0-9A-Za-z.])({_LOFT_RUN})\s*(?:(?<![a-z])or(?![a-z])|또는|혹은)\s*({_LOFT_RUN})")
+_CHOICE_WORD_RE = re.compile(r"선택\s*가능|택\s*1|중(?:에서)?\s*(?:택|선택)|골라")
+
+
+def _loft_sets(text: str) -> list[tuple[int, ...]]:
+    """The distinct loft sets of the bracketed groups and or-joined runs in text, in first-seen order (a set written
+    twice, the "제품명:" line repeating the title, counts once)."""
+    found: list[tuple[int, tuple[int, ...]]] = [(m.start(1), tuple(int(n) for n in re.findall(r"\d+", m.group(1))))
+                                                 for m in _LOFT_GROUP_RE.finditer(text)]
+    found += [(m.start(i), tuple(int(n) for n in re.findall(r"\d+", m.group(i))))
+              for m in _LOFT_OR_RE.finditer(text) for i in (1, 2)]
+    sets: list[tuple[int, ...]] = []
+    for _, lofts in sorted(found):
+        if not any(set(lofts) == set(s) for s in sets):
+            sets.append(lofts)
+    return sets
+
+
+def _choice_in_text(title: str, description: str) -> str | None:
+    """Two or more loft sets offered as alternatives in the title (bracketed groups or or-joined runs), or in a
+    description line holding a choice word (선택가능, 택1, 중 택, 골라) together with the two lines before it -> the
+    held detail, the sets in first-seen order; else None."""
+    sets = _loft_sets(title)
+    if len(sets) < 2:
+        lines = description.splitlines()
+        for i, text in enumerate(lines):
+            if _CHOICE_WORD_RE.search(text) and len(sets := _loft_sets("\n".join(lines[max(0, i - 2):i + 1]))) > 1:
+                break
+        else:
+            return None
+    count = {2: "two", 3: "three"}.get(len(sets), str(len(sets)))
+    return f"{count} loft sets offered in the text ({' | '.join('/'.join(map(str, s)) for s in sets)}), no option " \
+           "chooses one"
+
+
 def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: CategoryRules) -> dict[str, Any]:
     """-> {options, facts, variants, held, skipped_paid, duplicate_values, capped} in Korean. The variant choice is the category's
     (cat.paid_variants), made again from the page's options: the collected line's own choice may differ."""
@@ -918,6 +963,13 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
     if why:
         return {"options": [], "facts": [], "variants": [], "held": [{"code": "not_wedge_set", "detail": why}],
                 "skipped_paid": 0, "duplicate_values": [], "capped": None}
+    # two loft sets offered only in the text, no option group (Mirai 10504295292, 2026-11-18): after not_wedge_set
+    if cat.wedge_sets and not rows and not ((specs["options"] or {}).get("option_groups")
+                                            or line["details"].get("option_groups")) \
+            and (offered := _choice_in_text(re.sub(r"\s+", " ", line["details"].get("name") or ""),
+                                            (line["details"].get("description") or {}).get("text") or "")):
+        return {"options": [], "facts": [], "variants": [], "held": [{"code": "choice_in_text_only",
+                "detail": offered}], "skipped_paid": 0, "duplicate_values": [], "capped": None}
     if rows and any(len(r["options"]) != len(names) for r in rows):           # rows that do not fit the groups:
         return {"options": [], "facts": [], "variants": [], "held": [{             # never publish one of them alone
             "code": "options_unaligned", "detail": f"{len(names)} option groups, rows of "

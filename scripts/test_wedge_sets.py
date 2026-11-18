@@ -7,7 +7,9 @@ The fixture is every 50002783 listing of the shop (502 on 2026-11-16, 604 at its
 of 2026-11-17), title and variant rows (make_wedge_sets_fixture.py); its state columns are a snapshot, so the tests pin
 keys, never counts; offline. The review of 2026-11-17 added shaft sets, tees and one loft with one wedge letter
 (not_wedge_set), and the single clubs that only prepare reads (single_club: a loft glued to letters, a bare club name;
-a title "set or single" with no option): test_single_clubs_of_the_review_are_held_single_only."""
+a title "set or single" with no option): test_single_clubs_of_the_review_are_held_single_only. 2026-11-18: two loft
+sets offered only in the text, no option group (Mirai 10504295292, held choice_in_text_only), its look-alikes kept
+and the description window: test_a_choice_written_only_in_the_text_is_held and the tests after it."""
 import copy
 import dataclasses
 import json
@@ -435,3 +437,93 @@ def test_single_clubs_of_the_review_are_held_single_only():
     plain = copy.deepcopy(line)                     # no "or single" in the title: not this hold
     plain["details"]["name"] = "AS PREMIUM 남성용 52 웨지 세트 페이스 웨지 CM 골프 밀드 50"
     assert held(plain) == []
+
+
+MIRAI_HELD = [("choice_in_text_only", "two loft sets offered in the text (48/52/56 | 50/54/58), no option chooses one")]
+
+
+def _collected(pid):
+    with open(os.path.join(HERE, "fixtures", "collected", pid + ".json"), encoding="utf-8") as f:
+        return json.load(f)
+
+
+def test_a_choice_written_only_in_the_text_is_held():
+    """Mirai Skull MW-23 10504295292 (review 2026-11-17, live at 840,000 = 3 x 280,000): title "(48도 52도 56도) (50도
+    54도 58도)", description "<48도 ,52도,56도>" / "<50도 54도 58도> 선택가능", no option group: which set the buyer gets
+    is a message to the seller. Held choice_in_text_only on either signal; one group, an option group or another
+    category: not."""
+    rules = rules_for("fairwardgolf")
+
+    def prepared(line, r=rules):
+        p = prepare(copy.deepcopy(line), r, "50002783-fixtures", 1)
+        return p["status"], [(h["code"], h["detail"]) for h in p["held"]]
+
+    line = _collected("10504295292")
+    assert prepared(line) == ("held", MIRAI_HELD)
+    one_title = copy.deepcopy(line)                 # the title one group, the description's choice kept: signal (b)
+    one_title["details"]["name"] = "미라이 스컬 MW-23 (50도 54도 58도) 웨지 세트"
+    assert prepared(one_title) == ("held", MIRAI_HELD)
+    no_word = copy.deepcopy(line)                   # the title kept, "선택가능" gone: signal (a)
+    text = no_word["details"]["description"]["text"]
+    assert "<50도 54도 58도> 선택가능" in text
+    no_word["details"]["description"]["text"] = text.replace(" 선택가능", "")
+    assert prepared(no_word) == ("held", MIRAI_HELD)
+    one_set = copy.deepcopy(no_word)                # one group and no choice word (the 10482586862 shape): sold
+    one_set["details"]["name"] = one_title["details"]["name"]
+    assert prepared(one_set) == ("ready", [])
+    picked = copy.deepcopy(line)                    # an option group: the option chooses, not this hold
+    picked["specs"]["options"] = _collected("13468791008")["specs"]["options"]
+    assert "choice_in_text_only" not in {c for c, _ in prepared(picked)[1]}
+    off = dataclasses.replace(rules, categories={**rules.categories,
+                                                 WEDGES: dataclasses.replace(rules.categories[WEDGES],
+                                                                             wedge_sets=False)})
+    assert "choice_in_text_only" not in {c for c, _ in prepared(line, off)[1]}
+
+
+def test_the_look_alikes_of_a_choice_in_the_text_stay():
+    """Real 50002783 lines that write loft groups but offer no unchosen choice (2026-11-18): the same seller's one set
+    with a stray second group in its description (10482586862), Mile High Life's bundle groups with an option group
+    (12178280377), Yamaha's "50° / 56° 또는 52° / 56°" with option groups, held single_only only (13683785691), JAWS
+    loft ranges (13278647591), Honma's single lofts "11번(47도)/SW(56도)" (11006400319)."""
+    rules = rules_for("fairwardgolf")
+    for pid, held in [("10482586862", []), ("12178280377", []), ("13683785691", ["single_only"]),
+                      ("13278647591", []), ("11006400319", [])]:
+        assert [h["code"] for h in prepare(_collected(pid), rules, "50002783-fixtures", 1)["held"]] == held, pid
+
+
+MIRAI_TEXT = _collected("10504295292")["details"]["description"]["text"]
+SETS = "two loft sets offered in the text (48/52/56 | 50/54/58), no option chooses one"
+
+
+@pytest.mark.parametrize("title, description, detail", [
+    ("미라이 스컬 MW-23 (48도 52도 56도) (50도 54도 58도) 웨지 세트", "", SETS),            # 10504295292's title
+    ("", MIRAI_TEXT, SETS),                                                                  # its description
+    ("Mirai Golf Skull MW-23 Wedge Set 48°/52°/56° or 50°/54°/58°", "", SETS),               # its English title
+    ("(52 56) (52 56 60)", "", "two loft sets offered in the text (52/56 | 52/56/60), no option chooses one"),
+    # one group in the title, a stray second in the description, no choice word (10482586862)
+    ("미라이 스컬 SKULL (50도 54도 58도) 웨지 세트", "(미라이 코리아 정품)\n<48도 ,52도,56도>\nKBS FST 125 S", None),
+    ("", "C 그라인드(46도~52도) / Z 그라인드(54도~60도) 선택가능", None),                      # ranges (13278647591)
+    ("혼마 투어월드 GS 11번(47도)/SW(56도) 웨지세트", "연철 또는 스테인리스", None),          # single lofts (11006400319)
+    ("", "밸류 번들 세트 구매 가능: (50/54/58), (52/56/60), (50/56), (52/58), (54/60)", None),  # no choice word (12178280377)
+    ("", "대표적 2종 조합: 50° / 56° 또는 52° / 56° 등", None),                                # or-runs, no choice word (13683785691)
+    ("", "로프트 각도(50, 52, 54, 56, 58, 60, 70) 중에서 선택하여", None),                     # one group (12178241251)
+    ("남성용 단조 골프 웨지 세트 또는 개인용 48/50/52/54/56/58/60도 간격", "", None),         # 또는 between words (13016551520)
+    ("", "✔️ 플렉스 : S / R 선택 가능", None),                                                  # no lofts (13332402827)
+])
+def test_choice_in_text(title, description, detail):
+    assert transform._choice_in_text(title, description) == detail
+
+
+def test_the_choice_word_reads_its_line_and_the_two_before():
+    """The description window, on 10504295292's own lines: the groups within the "선택가능" line and the two before it
+    count; one more line between them and the choice word, or the "제품명:" line's two groups far above it, do not."""
+    lines = MIRAI_TEXT.splitlines()
+    first, second = lines.index("<48도 ,52도,56도>"), lines.index("<50도 54도 58도> 선택가능")
+    assert second == first + 1 and lines[0].startswith("제품명:") and "<48도 52도 56도> <50도 54도 58도>" in lines[0]
+    assert transform._choice_in_text("", "\n".join(lines[first:second + 1])) == SETS
+    in_window = [lines[first], "램킨 크로스라인 그립", lines[second]]              # the first group 2 lines up: in
+    assert transform._choice_in_text("", "\n".join(in_window)) == SETS
+    out_of_window = [lines[first], "램킨 크로스라인 그립", "KBS FST 125 S", lines[second]]  # 3 lines up: out
+    assert transform._choice_in_text("", "\n".join(out_of_window)) is None
+    far = [lines[0], *lines[1:first], "선택가능"]                                    # the 제품명 line 7 lines up
+    assert len(far) > 3 and transform._choice_in_text("", "\n".join(far)) is None

@@ -1,0 +1,325 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 347484,
+   "height": 1411,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241016_259/1729039332315NDdSK_JPEG/KakaoTalk_20240930_154827741.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.655,
+       "text": "VWNCH",
+       "y": 798
+      },
+      {
+       "conf": 0.692,
+       "text": "VWNEH",
+       "y": 1033
+      }
+     ],
+     "y0": 0,
+     "y1": 1411
+    }
+   ],
+   "status": "read",
+   "width": 1058
+  },
+  {
+   "bytes": 324080,
+   "height": 1411,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241016_30/1729039332270C8c7s_JPEG/KakaoTalk_20240930_154827741_01.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.626,
+       "text": "SW / HQNMA",
+       "y": 721
+      },
+      {
+       "conf": 0.54,
+       "text": "AWNCA",
+       "y": 870
+      },
+      {
+       "conf": 1.0,
+       "text": "1",
+       "y": 992
+      }
+     ],
+     "y0": 0,
+     "y1": 1411
+    }
+   ],
+   "status": "read",
+   "width": 1058
+  },
+  {
+   "bytes": 288788,
+   "height": 1411,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241016_95/1729039332283YfJGL_JPEG/KakaoTalk_20240930_154827741_02.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.755,
+       "text": "ME",
+       "y": 740
+      }
+     ],
+     "y0": 0,
+     "y1": 1411
+    }
+   ],
+   "status": "read",
+   "width": 1058
+  },
+  {
+   "bytes": 295062,
+   "height": 1411,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241016_43/1729039332287h48UB_JPEG/KakaoTalk_20240930_154827741_03.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.546,
+       "text": "592822 / 588025",
+       "y": 1046
+      }
+     ],
+     "y0": 0,
+     "y1": 1411
+    }
+   ],
+   "status": "read",
+   "width": 1058
+  },
+  {
+   "bytes": 321636,
+   "height": 1411,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241016_163/17290393322446DQ6z_JPEG/KakaoTalk_20240930_154827741_04.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.575,
+       "text": "S",
+       "y": 1173
+      }
+     ],
+     "y0": 0,
+     "y1": 1411
+    }
+   ],
+   "status": "read",
+   "width": 1058
+  },
+  {
+   "bytes": 302220,
+   "height": 1411,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20241016_208/1729039332234so4CQ_JPEG/KakaoTalk_20240930_154827741_05.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.843,
+       "text": "HQNMA / DNMA",
+       "y": 894
+      }
+     ],
+     "y0": 0,
+     "y1": 1411
+    }
+   ],
+   "status": "read",
+   "width": 1058
+  },
+  {
+   "bytes": 157659,
+   "height": 920,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220108_266/16416171245688JbsD_JPEG/%EA%B5%AC%EB%A7%A4%EC%A0%84%ED%95%84%EB%8F%85.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.958,
+       "text": "일본에서 직수입된100%정품만을 판매합니다",
+       "y": 46
+      },
+      {
+       "conf": 0.987,
+       "text": "1구매전필독",
+       "y": 140
+      },
+      {
+       "conf": 0.99,
+       "text": "배송",
+       "y": 232
+      },
+      {
+       "conf": 0.981,
+       "text": "당일출고",
+       "y": 271
+      },
+      {
+       "conf": 0.996,
+       "text": "-배송택배사 / 로젠택배",
+       "y": 300
+      },
+      {
+       "conf": 0.973,
+       "text": "-배송지역 / 전국(도서산간/제주도는 추가비용발생)",
+       "y": 324
+      },
+      {
+       "conf": 0.97,
+       "text": "-배송기간 / 1~3일(배송기간은택배사의 사정에따라달라질수있습니다)",
+       "y": 352
+      },
+      {
+       "conf": 0.985,
+       "text": "반품및교환",
+       "y": 412
+      },
+      {
+       "conf": 0.92,
+       "text": "반품및 교환안내(제품 수령일이후7일 이내 가능)",
+       "y": 451
+      },
+      {
+       "conf": 0.974,
+       "text": "-출고시배송상태와동일한경우만가능",
+       "y": 480
+      },
+      {
+       "conf": 0.879,
+       "text": "(시타 방지용비닐이 벗겨져 있거나, 사용 흔적이 있는경우 반품 및 교환불가)",
+       "y": 506
+      },
+      {
+       "conf": 0.917,
+       "text": "-중고상품의경우제품 특성상 시타를지원하지 않으며, 상품 포장을 개봉하시면",
+       "y": 531
+      },
+      {
+       "conf": 0.941,
+       "text": "사용한제품으로간주되어 상품등의가치가상실되므로교환/반품이 불가합니다",
+       "y": 557
+      },
+      {
+       "conf": 0.995,
+       "text": "상담문의",
+       "y": 613
+      },
+      {
+       "conf": 0.969,
+       "text": "031-292-0729(문자가능)",
+       "y": 650
+      },
+      {
+       "conf": 0.969,
+       "text": "아하골프에서는100%정품만을판매하며구매하신제품에 문제가생겼을경우",
+       "y": 681
+      },
+      {
+       "conf": 0.956,
+       "text": "고객센터로 연락 주시면 도움드리겠습니다",
+       "y": 705
+      },
+      {
+       "conf": 0.909,
+       "text": "-직수입제품은본사 A/S가 불가하며, 그외 국내 구매제품은본사 A/S가 가능합니다.",
+       "y": 735
+      },
+      {
+       "conf": 0.931,
+       "text": "상품상세페이지의 모든 사진은 아하골프에서 직접 촬영한",
+       "y": 825
+      },
+      {
+       "conf": 0.951,
+       "text": "실제 판매 제품이며,사진상 커버가 있는 제품만 커버를 보내드립니다.",
+       "y": 856
+      }
+     ],
+     "y0": 0,
+     "y1": 920
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 57276,
+   "height": 354,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20220301_82/16461403641415Mk4G_PNG/KakaoTalk_20220301_194113184.png",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.998,
+       "text": "LF",
+       "y": 25
+      },
+      {
+       "conf": 1.0,
+       "text": "아하골프에서 / 판매하는 / 용품의 / 일본에서의 / 구입과 / 현지의 / 용품정보는 / 아래의",
+       "y": 128
+      },
+      {
+       "conf": 0.977,
+       "text": "사이트에서 / 더많이 / 확인하실수 / 있습니다.",
+       "y": 160
+      },
+      {
+       "conf": 0.995,
+       "text": "http://www.ahagolf.com",
+       "y": 223
+      },
+      {
+       "conf": 0.966,
+       "text": "(클릭하시면 / 아하골프 / 사이트로 이동합니다)",
+       "y": 293
+      }
+     ],
+     "y0": 0,
+     "y1": 354
+    }
+   ],
+   "status": "read",
+   "width": 860
+  }
+ ],
+ "key": "fairwardgolf:naver:101377496:11006400319",
+ "links_sha256": "fc6863b7ca6ca5c10e78f0be080573ff95abfc6ba981bf84e475a22bb12e21f3",
+ "product_id": "11006400319",
+ "seconds": 7.5,
+ "skipped": [
+  {
+   "link": "https://shop-phinf.pstatic.net/20220209_36/16443921175311LV9v_JPEG/%EC%83%81%EB%8B%A8_%EC%95%88%EB%82%B4_001_(1).jpg?type=w848",
+   "rule": "first_header"
+  }
+ ]
+}
