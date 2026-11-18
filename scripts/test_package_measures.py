@@ -8,8 +8,8 @@ import copy
 import pytest
 
 from package_measures import (BASELINE_SIDES, BASELINES, FIELDS, CategoryDefaultsInvalid, CategoryDefaultsMissing,
-                              check_row, current_bands, current_defaults, default_kind, load_table, on_scale, row_version,
-                              variant_measures)
+                              check_row, current_bands, current_defaults, default_kind, load_table, on_scale,
+                              row_version, variant_measures)
 
 ROW = {"category_id": "50002788", "category_name": "풀세트", "approved_by": "test", "approved_at": "2026-11-05",
        "reliability": "estimated_average",

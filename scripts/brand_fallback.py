@@ -63,9 +63,10 @@ _PARTNER = re.compile(r"\s*(?:협력\s*(?:사|업체)|제휴(?:\s*(?:사|업체)
 # 퍼터 드라이버") keeps the words before them; one that is only an age and a club ("6~8세 퍼터", 4194532081) is none
 # ... and the chipper itself (2026-11-18, the chipper review: 11158899277's 브랜드 / 제조사 rows say 치퍼, it became a shop
 # brand, then the brand of every title with 치퍼: vendor "Chipper" on MAZEL 10179980640, Pinemeadow 13478213249, TTY / PGM
-# 7518807949, CHIPPER Lab 11664750138); "CHIPPER Lab" is a maker and stays
-_WORDS = (r"(?:어린이|유아|아동|주니어|키즈|골프\s*클럽|골프채|클럽|퍼터|아이언|드라이버|우드|웨지|유틸|세트|치퍼|칩퍼"
-          r"|(?i:chipper)(?!\s*(?i:lab)))")
+# 7518807949, CHIPPER Lab 11664750138); "CHIPPER Lab" is a maker and stays, as 치퍼랩 / 치퍼 랩: the chipper words end
+# there (치퍼용, 칩퍼터 still go; the review of 569b77f: "XYZ 치퍼랩" was cut to "XYZ", "치퍼 랩" read as no brand)
+_WORDS = (r"(?:어린이|유아|아동|주니어|키즈|골프\s*클럽|골프채|클럽|퍼터|아이언|드라이버|우드|웨지|유틸|세트"
+          r"|(?:치퍼|칩퍼)(?:용|터)?(?![가-힣]|\s*랩)|(?i:chipper)(?!\s*(?i:lab)))")
 # ... and one that starts with them as a word of its own ("주니어", "주니어 어린이용 골프채": 2026-11-13) is none;
 # a brand that only starts like one (키즈짐) stays
 _PRODUCT_WORD = re.compile(r"\s" + _WORDS + r"|^" + _WORDS + r"(?:용)?(?=\s|$)")

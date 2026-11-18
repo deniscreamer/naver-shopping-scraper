@@ -378,6 +378,9 @@ def test_the_word_brand_and_the_chipper_are_no_brand(word):
 def test_a_name_with_the_word_stays():
     assert B.clean("CHIPPER Lab") == "CHIPPER Lab" and B.clean("치퍼랩") == "치퍼랩"   # the maker of 11664750138
     assert B.clean("MAZEL 치퍼") == "MAZEL" and B.clean("Brandon") == "Brandon" and B.clean("브랜드명") == "브랜드명"
+    # the chipper words end at a word (the review of 569b77f): a maker's 치퍼랩 is not cut mid-word, nor "치퍼 랩" lost
+    assert B.clean("XYZ 치퍼랩") == "XYZ 치퍼랩" and B.clean("치퍼 랩") == "치퍼 랩"
+    assert B.clean("XYZ 치퍼용") == "XYZ" and B.clean("XYZ 칩퍼터") == "XYZ" and B.clean("칩퍼터") is None
 
 
 @pytest.mark.parametrize("pid", ["9991649397", "11158899277"])

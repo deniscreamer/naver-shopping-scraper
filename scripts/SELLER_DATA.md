@@ -356,7 +356,10 @@ Code: `transform.prepare`, `brand_fallback.py` (2026-11-08).
 - The chipper review (2026-11-18): rakuraku00 writes the English word "brand" in both 브랜드 and 제조사 (9991649397,
   9993129226, 9993149923: the vendor "brand"); a seller writes the category word 치퍼 there (11158899277), and as a
   shop brand it named 4 more titles (MAZEL 10179980640, Pinemeadow 13478213249, 7518807949, CHIPPER Lab 11664750138).
-  `brand_fallback._NO_FIRM` / `_WORDS`: neither is a brand.
+  `brand_fallback._NO_FIRM` / `_WORDS`: neither is a brand. After the rule 7518807949 (01_TTY 치퍼 / 02_PGM 치퍼,
+  the reseller's 원에스티 rows refused) takes 지아이엘 (GIL), the importer in its 원산지 brackets (the origin step), as
+  its copy 6414820248 states in its 브랜드 row: kept (an importer when no maker is named, the owner 2026-11-08), a
+  doubtful vendor for the lens review with the TTY / PGM copies.
 
 ### Origin, gifts, add-ons
 
@@ -480,7 +483,8 @@ Research 2026-11-07 on the 50 fixture products, then the runs dated below. Code:
   the buyer picks (증정용 키와미 4스타 클럽 선택, 8324398313), a glove's size (10068982959): kept as variants; leaving it
   out there changes live products, the owner's word (`CategoryRules.gift_axis_out`).
 - A maker's Latin name only at the head of a title, not in the dictionary ("CHIPPER Lab 골프 치퍼 ...", 11664750138,
-  2026-11-18): no step takes it, 노브랜드 (the owner's brand: `brand_by_owner.json`).
+  2026-11-18): no step takes it, 노브랜드; 11664750138 itself has the owner's brand CHIPPER Lab (`brand_by_owner.json`,
+  delegated, the review of 569b77f).
 - Amazon's "Item Dimensions L x W x H" (48"L x 6"W x 6"H on 13468741368) is not read as the package's sides: the
   length stays the category default 980 mm, which can understate a volumetric price (2026-11-17).
 - Reviews: the summary's photo_count can be lower than the files a selection downloads, and selected_reviews took 6

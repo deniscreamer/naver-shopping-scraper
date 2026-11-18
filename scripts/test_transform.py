@@ -878,7 +878,7 @@ def _chipper(pid):
 def test_a_free_gifts_sizes_are_not_versions_of_the_chipper():
     """Missile Black Eagle 10421264752 (2026-11-18): the club has no option; its 7 variants were the free FILA glove's
     sizes ("휠라 양피장갑 왼손 19호 ... 25호 1장", axis 사은품, extra_price 0). Chippers (gift_axis_out): one variant,
-    the first row's SKU kept, a note; another category's rules keep the 7 (its sets' gifts are a bag set, a putter,
+    the first row's SKU kept (in stock or not), a note; another category's rules keep the 7 (its sets' gifts are a bag set, a putter,
     a club the buyer picks: the owner's word)."""
     line = _chipper("10421264752")
     p = json.loads(json.dumps(prepare(copy.deepcopy(line), RULES_ON, "50002784-test", 1)))
@@ -903,7 +903,7 @@ def test_a_free_gifts_sizes_are_not_versions_of_the_chipper():
     (["옵션"], [("흑백95-115cm클럽커버증정", 100), ("흑황95-115cm클럽커버증정", 100)], ([0], 2)),
     # every value is the gift ("[사은품] 장갑 22호"): goes
     (["선택"], [("[사은품] 장갑 22호", 100), ("[사은품] 장갑 23호", 100)], ([], 1)),
-    # a gift beside the club's own axis: one row per loft, the first in stock
+    # a gift beside the club's own axis: one row per loft, its first row (in stock when any row is)
     (["로프트", "증정 장갑"], [("35도", "S", 100, False), ("35도", "M", 100), ("45도", "S", 110), ("45도", "M", 110)],
      ([0], 2)),
 ])
@@ -913,4 +913,24 @@ def test_which_gift_axes_go(names, rows, kept):
     keep, left, said = transform._drop_gift_axes(names, list(range(len(names))), rows)
     assert (keep, len(left)) == kept and (said is None) == (len(left) == len(rows))
     if names[0] == "로프트":
-        assert [r["options"] for r in left] == [["35도", "M"], ["45도", "S"]]
+        assert [(r["options"], r["is_available"]) for r in left] == [(["35도", "S"], True), (["45도", "S"], True)]
+
+
+def test_a_gift_size_sold_out_keeps_the_variant():
+    """The review of 569b77f: the row kept for a dropped gift axis is the tuple's first, not its first in stock, so a
+    glove size selling out moves no source_id / SKU / variant id of a published chipper (10421264752: 19호 first)."""
+    line = _chipper("10421264752")
+    before = prepare(copy.deepcopy(line), RULES_ON, "50002784-test", 1)["product"]["variants"]
+    sold = copy.deepcopy(line)
+    sold["specs"]["options"]["variants"][0].update(stock_quantity=0, is_available=False)    # the page's row: 19호 out
+    after = prepare(sold, RULES_ON, "50002784-test", 1)["product"]["variants"]
+    assert [(v["source_id"], v["sku"], v["naver_variant_id"]) for v in after] \
+        == [(v["source_id"], v["sku"], v["naver_variant_id"]) for v in before]
+    assert "19호" in after[0]["source_id"] and after[0]["available"] is True
+
+
+def test_a_dropped_gifts_tuple_is_out_only_when_every_row_is():
+    rows = [{"options": ["35도", g], "price": 100, "is_available": a} for g, a in (("S", False), ("M", False))]
+    assert [r["is_available"] for r in transform._drop_gift_axes(["로프트", "사은품"], [0, 1], rows)[1]] == [False]
+    rows[1]["is_available"] = None
+    assert [r["is_available"] for r in transform._drop_gift_axes(["로프트", "사은품"], [0, 1], rows)[1]] == [None]

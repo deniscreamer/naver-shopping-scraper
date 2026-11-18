@@ -178,9 +178,19 @@ def _category(name):
 
 
 # the fixtures of a category whose dictionaries have a backup in git (the labels resolve offline): the chippers'
-# (50002784, 2026-11-18) have none yet, their spec labels are asked of the model
-FIXTURES = sorted(n[:-5] for n in os.listdir(os.path.join(FX, "collected")) if n.endswith(".json")
-                  if os.path.isdir(os.path.join(os.path.dirname(FX), "dictionaries", _category(n[:-5]))))
+# (50002784, 2026-11-18) have none yet, their spec labels are asked of the model. Named, not inferred (the review of
+# 569b77f): a new category's fixtures without a backup fail test_no_fixture_left_out_unnamed instead of dropping out
+NO_DICT_BACKUP = {"50002784"}
+DICTS = os.path.join(os.path.dirname(FX), "dictionaries")
+ALL_FIXTURES = sorted(n[:-5] for n in os.listdir(os.path.join(FX, "collected")) if n.endswith(".json"))
+FIXTURES = [n for n in ALL_FIXTURES if _category(n) not in NO_DICT_BACKUP]
+
+
+def test_no_fixture_left_out_unnamed():
+    """Every fixture's category has a dictionary backup or is named in NO_DICT_BACKUP; a named one has none yet
+    (its first backup: take it out of the set, its fixtures join the offline-resolution tests)."""
+    assert sorted({_category(n) for n in ALL_FIXTURES if not os.path.isdir(os.path.join(DICTS, _category(n)))}) \
+        == sorted(NO_DICT_BACKUP)
 # held by the transform (nothing to translate into a product): 10504295292 choice_in_text_only, 13683785691 single_only
 HELD = {"10504295292", "13683785691"}
 

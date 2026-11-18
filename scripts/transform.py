@@ -66,8 +66,8 @@ from description_measures import (COMPOSED, FIELDS, LONG_UNITS, NUMBER_CONF, SOU
                                   composition_count, container_in, container_listed, joined_lines, package_for,
                                   product_over_package, profile_for, read_rows)
 from naver_variants import choose_variants
-from package_measures import (count_band, count_kind, current_bands, current_defaults, default_field, load_table, lofts, off_count,
-                              on_scale, package_kind, row_version)
+from package_measures import (count_band, count_kind, current_bands, current_defaults, default_field, load_table, lofts,
+                              off_count, on_scale, package_kind, row_version)
 from spec_variants import (check_specs, hide_title_model_rows, title_cut, title_lofts_not_sold, title_one_variant,
                            title_variant_tail, title_word_unproven)
 from review_clean import clean_reviews
@@ -251,10 +251,11 @@ def _drop_promo_axes(names: list[str], rows: list[dict[str, Any]]) -> tuple[list
     return keep, list(best.values())
 
 
-# a free gift chosen by the buyer, not a version of the product (2026-11-18, the chipper review: Missile 10421264752 sold
-# as 7 variants "휠라 양피장갑 왼손 19호 ... 25호 1장" under the axis 사은품, one price): where the category says so
-# (CategoryRules.gift_axis_out: chippers) the axis is left out, one row per remaining tuple. The axis's name says gift (사은품 / 증정) and names no product choice (옵션 / 구성: "옵션+사은품
-# 하프백" offers the set itself), or every value starts with the gift word; a gift priced apart is a choice and stays.
+# a free gift chosen by the buyer, not a version of the product (2026-11-18, the chipper review: Missile 10421264752
+# sold as 7 variants "휠라 양피장갑 왼손 19호 ... 25호 1장" under the axis 사은품, one price): where the category says so
+# (CategoryRules.gift_axis_out: chippers) the axis is left out, one row per remaining tuple. The axis's name says gift
+# (사은품 / 증정) and names no product choice (옵션 / 구성: "옵션+사은품 하프백" offers the set itself), or every value
+# starts with the gift word; a gift priced apart is a choice and stays.
 _GIFT_AXIS_RE = re.compile(r"사은품|증정")
 _GIFT_VALUE_RE = re.compile(r"^\W*(?:\d+\s*[.)]\s*)?(?:사은품|증정)")
 _PRODUCT_AXIS_RE = re.compile(r"옵션|구성")
@@ -262,8 +263,10 @@ _PRODUCT_AXIS_RE = re.compile(r"옵션|구성")
 
 def _drop_gift_axes(names: list[str], keep: list[int], rows: list[dict[str, Any]]) \
         -> tuple[list[int], list[dict[str, Any]], str | None]:
-    """Axis indexes to keep, the rows left once a free-gift axis is gone (per remaining tuple, the first row in stock,
-    else the first; every row of a tuple at one price, else nothing goes) and what went (note gift_axis_dropped)."""
+    """Axis indexes to keep, the rows left once a free-gift axis is gone (per remaining tuple its first row, whatever
+    is in stock, so its source_id / SKU / variant id stay when one gift size sells out (the review of 569b77f);
+    available when any row of the tuple is; every row of a tuple at one price, else nothing goes) and what went
+    (note gift_axis_dropped)."""
     gift = [i for i in keep if len({r["options"][i] for r in rows}) > 1 and (
         _GIFT_AXIS_RE.search(names[i]) and not _PRODUCT_AXIS_RE.search(names[i])
         or all(_GIFT_VALUE_RE.search(r["options"][i]) for r in rows))]
@@ -275,9 +278,15 @@ def _drop_gift_axes(names: list[str], keep: list[int], rows: list[dict[str, Any]
         groups.setdefault(tuple(r["options"][i] for i in rest), []).append(r)
     if any(len({r["price"] for r in g}) > 1 for g in groups.values()):
         return keep, rows, None
-    kept = [next((r for r in g if r.get("is_available") is not False), g[0]) for g in groups.values()]
+    kept = [{**g[0], "is_available": _any_in_stock(g)} for g in groups.values()]
     said = "; ".join(f"{_tidy(names[i])} ({len({r['options'][i] for r in rows})} values)" for i in gift)
     return rest, kept, f"{said}: a free gift, not a version; {len(rows)} -> {len(kept)} rows"
+
+
+def _any_in_stock(rows: list[dict[str, Any]]) -> bool | None:
+    """True when a row is in stock, False when every row is out, else None (unknown)."""
+    states = [r.get("is_available") for r in rows]
+    return True if True in states else False if all(x is False for x in states) else None
 
 
 def _tidy(text: str) -> str:

@@ -163,8 +163,9 @@ published, SKUs and prices equal on 201 of 201 variants):
   with one value becomes a fact; one row -> one default variant; an axis about writing a review / a coupon
   (리뷰, 후기, 쿠폰, 적립) is dropped with its discounted rows. Where the category says so (`gift_axis_out`: chippers,
   2026-11-18) an axis that is the buyer's free gift (사은품 / 증정 in its name and no 옵션 / 구성, or every value starting
-  with the gift word) is dropped too, one row per remaining tuple (the first in stock), the kept row's SKU unchanged,
-  note `gift_axis_dropped`; a gift priced apart stays a choice (Missile 10421264752: 7 variants that were the free
+  with the gift word) is dropped too, one row per remaining tuple: its first row, in stock or not (its source_id, SKU
+  and variant id do not move when one gift size sells out), available when any row of the tuple is, note
+  `gift_axis_dropped`; a gift priced apart stays a choice (Missile 10421264752: 7 variants that were the free
   glove's sizes, now one). Over 3 axes: held; over the shop's variant cap:
   the first ones are offered (`variants_capped`, below).
 - **SKU**: the shop's prefix + 24 hex of sha256({schemaVersion, sourceId, tenantOfferKey}) (the harvester's recipe).
@@ -457,7 +458,8 @@ link. The report says how many were dropped. The step is pure: same products in,
   wedge sets) and 상표 / 브랜드 (the word "brand": "Brand" on 5 live sets, 2026-11-17) and "brand" itself in any case
   (rakuraku00's 브랜드 / 제조사 rows: the vendor "brand" on 3 chipper drafts, 2026-11-18), the chipper (치퍼 / 칩퍼 /
   chipper, as a value or ending one: "MAZEL 치퍼" is MAZEL; 11158899277's 치퍼 row made "Chipper" the vendor of 4
-  chipper titles, 2026-11-18; "CHIPPER Lab", a maker, stays), and Naver's placeholder
+  chipper titles, 2026-11-18; "CHIPPER Lab", a maker, stays, as 치퍼랩 / 치퍼 랩: the chipper words end at a word,
+  치퍼용 / 칩퍼터 still go), and Naver's placeholder
   "UnKnown_<katakana>" (13104702775 went out as the vendor "UnKnown_ピン", 2026-11-17, C23). A brand row or a maker
   that is exactly the seller's shop name or legal name, while the title names another brand of the dictionary (not a
   shaft's or a grip's maker) and no 조합, gives way to the steps above (`brand_fallback.store_named`; the note says
