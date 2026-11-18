@@ -9,7 +9,7 @@ the job's side: `job.py` (`dedupe_step`, `replace_step`). What waits for the own
 
 | Task | Run | Then |
 |---|---|---|
-| A job (`new` or `scroll`) | `--dedupe log` until the owner's yes on the W7 pilot (2026-11-17; then nothing: `on` is the default) | read the events below in `status --json` / the log |
+| A job (`new` or `scroll`) | nothing: `--dedupe on` is the default (the owner's yes after the W7 pilot, 2026-11-17) | read the events below in `status --json` / the log |
 | A check run that changes nothing | `--dedupe log` on `new` / `scroll`, only when the owner wants it | `--pairs`, show the owner |
 | Were a job's decisions right? | `.venv/bin/python scripts/dedupe.py --pairs <shop> --job <id>` | look at the sheets, list wrong pairs for the owner |
 | Change the rule (developer): a missed copy or a false merge | the test first (`test_dedupe.py`), measure before and after on the store's groups | skill `dedupe-rule` (the tests, fixture and docs that move with it; the owner's word) |
@@ -24,8 +24,10 @@ No command judges one given pair: `dedupe.py` has only `--report` and `--pairs`.
 
 `new` and `scroll` take it, `on` by default (the owner, 2026-11-15, after the log pilot). It is kept in job.json and
 read again by `run` / `scroll --job`. A job made before has no key and runs as `off`; `off` writes no key.
-**Until the owner's yes on the W7 pilot (2026-11-17)** every job runs with `--dedupe log`: under `on` the wedge-set
-review's new confirmations (C40, C41-1, C43) and the `held_same_upc` hold (a store write) would act unpiloted.
+The W7 pilot (2026-11-17, job fairwardgolf-50002783-20261118T061139Z, `--dedupe log --draft`, 20 published drafts):
+all 20 were copies of live products, each with a closing decision (`duplicate_of` 6, `duplicate_of_withdrawn` 14:
+a confirmed withdrawn match is looked at first, by design); the owner said yes: `on` is the default again, with the
+wedge-set review's confirmations (C40, C41-1, C43) and the `held_same_upc` hold.
 
 - `off`: nothing is looked up.
 - `log`: one event `duplicate_seen` per product with a title match (the would-be decision `duplicate_of:<key>` /
@@ -170,8 +172,8 @@ the run starts:
   `--report` of the published: 5 -> 8 groups, plus 7 same-UPC groups (8 extra copies) and 6 same-brand-and-sets
   pairs to hold on the owner's word. Rejected: the UPC in `possible()`, the title's lofts in `strong`, `same_listing`
   under 3 photos, the subset-of-options path (about 2045 pairs), copies matched within one shop (C42: it merged 7 of
-  24 different editions, steel / carbon, R / SR, XJ / XJ 2). Not piloted yet: the pilot is `--dedupe log` on the
-  owner's word (skill `dedupe-rule` step 6); until then jobs run with `log` (see `--dedupe` above). Open: 5 pairs
+  24 different editions, steel / carbon, R / SR, XJ / XJ 2). Piloted 2026-11-17 (`--dedupe log`, 20 of 20 drafts
+  copies of live products, every one closed under `on`); the owner's yes the same day: `on` the default. Open: 5 pairs
   inside `--report` groups carry different UPCs, possible false merges for the owner's look at the photos; the one
   named, pron 13408226321 / 13566632407 (754003448245 / 754003447477), was withdrawn `replaced_by:` 13207564502 on
   2026-11-17, the other 4 were never listed.

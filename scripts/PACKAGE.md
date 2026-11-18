@@ -500,9 +500,9 @@ variant's package weight:
   default is above the box too, the box's own weight (`flags: ["capped_to_package"]`, 13388597147: 363 g over 360 g).
   The package's `below_contents` / `below_stated_product` flags go with it.
 - A default product weight above a stated box is not the seller's and stays (13372006463, the owner's decision).
-- Open for the owner (2026-11-17): every category or 50002783 only (it moves 13388597147, 13024454637 in 50002787 and
-  13024231444 in 50002788, no price), and a refused weight falls to the default, not an assembly estimate (13024231444:
-  5700 g, not 7540 g): [SELLER_DATA.md Open questions](SELLER_DATA.md#open-questions-defaults-taken-not-yet-confirmed-by-the-owner).
+- Kept (owner delegated, 2026-11-17): every category, not 50002783 only (it moves 13388597147, 13024454637 in
+  50002787 and 13024231444 in 50002788, no price), and a refused weight falls to the default, not an assembly
+  estimate (13024231444: 5700 g, not 7540 g).
 Measured on a shop copy 2026-11-17: 8 products, 20 product weights (13370268119, 13372131108, 13389498451,
 13468741368, 13480790720; 13388597147 and 13024454637 in 50002787, 13024231444 in 50002788), 3 package
 weights read (13480790720, 13468741368: under the volumetric weight, no price moves); with the bare label 4
@@ -624,7 +624,8 @@ record never mixes the two.
 
 **Table version 7 (2026-11-17, the wedge-set review W8).** The first `plausible` bands (50002783, 50002787), the
 50002783 count kinds `two_wedges` / `four_plus` (`lofts`) and its `compose_by_count` block; a box refused whole on
-the server path too; kilograms / pounds in the description for 50002783; the typed label / value lines (50002783
+the server path too (C11, kept (owner delegated, 2026-11-17): 13372006463's 945 x 51 x 25 mm box refused, sent at
+$639 by the 50002783 default box); kilograms / pounds in the description for 50002783; the typed label / value lines (50002783
 only: in 50002787 they would have moved two published junior PGM clubs, 10259486834 $749 -> $219 and 10259500908
 $309 -> $209, through "패키지 치수" / "100*12.5*12.5cm"; widening waits for the owner). A default
 whose numbers did not change keeps its collected `table_version`; one that did (a two-wedge variant) is stamped 7

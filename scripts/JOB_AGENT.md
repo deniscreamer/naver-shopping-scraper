@@ -46,8 +46,8 @@ TRANSLATE_PROVIDERS=anthropic .venv/bin/python -u scripts/job.py scroll --query 
 | 50002783 wedge sets | `--paid-variants` (its pilots, 2026-11-15/16) | `골프 웨지 세트` |
 
 - N -> `--count N`; no N or "до конца" -> no `--count` (to the listing's end); "без публикации" -> no `--publish`
-  and no `--describe`. `--dedupe log` until the owner's yes on the W7 dedupe pilot (2026-11-17; then no flag,
-  `on` is the default: [Duplicates](#duplicates)). Another category: read its latest `job.json` under
+  and no `--describe`. `--dedupe on` is the default: no flag (the owner's yes after
+  the W7 pilot, 2026-11-17: [Duplicates](#duplicates)). Another category: read its latest `job.json` under
   `scripts/output/jobs/` for the flags, or ask.
 - `--draft` (2026-11-16) when the owner wants to decide the activation after the lens review (a reviewed
   category's new products go DRAFT; see Draft first). The four categories above are marked `reviewed=True` in
@@ -312,9 +312,8 @@ owner's word only: withdraw the wrong ones (`publish.py <shop> --withdraw <key> 
 product sold by another store too is closed (`not_taken: duplicate_of:<key>`) unless it is strictly better (store
 grade, then reviews), and a better one replaces the old product once published. One sharing a live product's UPC
 with no confirmed match (2026-11-17) is published as a draft and held (`held_same_upc`, `hold: copy of live <key>`):
-list it for the owner. **Until the owner's yes on the W7 pilot (2026-11-17)** pass `--dedupe log` to every job:
-under `on` the wedge-set review's new confirmations (C40, C41-1, C43) and the `held_same_upc` hold (a store write)
-would act unpiloted. The rule, the events, `--pairs`, `--report` and the pilots: [DEDUPE.md](DEDUPE.md).
+list it for the owner. The W7 pilot (2026-11-17, `--dedupe log`, 20 wedge sets published as drafts): every one was a
+copy of a live product and `on` would have closed all 20; the owner said yes, `on` stays the default. The rule, the events, `--pairs`, `--report` and the pilots: [DEDUPE.md](DEDUPE.md).
 
 ## Flags
 
