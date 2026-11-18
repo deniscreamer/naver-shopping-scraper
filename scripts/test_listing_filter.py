@@ -334,6 +334,11 @@ def test_wedge_sets_leave_heads_accessories_and_singles_out(title, code):
     ("랙앤본 여성 파이퍼 울 스커트 Piper Wool Skirt 5999619 161005363", "title:apparel"),
     ("(중고) 지브이골프코리아 치퍼 GV-60Y", "title:used"),
     ("초중고 골프 치퍼 35도", None),                                                  # 초중고 is no condition
+    # the review of the 100-chipper scroll (2026-11-18): a loose head, as 50002670's parts
+    ("Acer XK Chipper Head 골프 치퍼 헤드만 오른손", "title:parts"),                    # 12409532747
+    ("골프 치퍼헤드 35도 단조 오른손", "title:parts"),
+    ("PGM 골프치퍼 골프채 샤프트 치퍼 헤드 35도 양면형 TUG006", None),                 # 9291749263: a whole club
+    ("마쓰이 치퍼 골프채 헤드커버 포함 어퍼로치 칩샷 치핑 피칭샷 런닝 어프로치 chipper", None),
 ])
 def test_chippers_leave_not_golf_clothes_putters_wedges_and_other_clubs_out(title, code):
     screen = Screen("50002784", namespace="fairwardgolf")

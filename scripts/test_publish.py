@@ -299,6 +299,29 @@ IDS = {"publications": ["gid://shopify/Publication/9", "gid://shopify/Publicatio
        "location": "gid://shopify/Location/1"}
 
 
+def test_not_ready_names_the_gate_that_failed(tmp_path):
+    """2026-11-18, the chipper scroll: a job's not-ready line said "placement placed: None" for a product replaced
+    and withdrawn; not_ready names the gate of ready() it fails, in ready()'s order."""
+    shop = _shop(tmp_path)
+    assert shop.not_ready(KEY) is None and shop.ready() == [KEY]
+    d = tmp_path / "fairwardgolf"
+
+    def put(sub, **change):
+        rows = [json.loads(x) for x in (d / sub).read_text().splitlines()]
+        (d / sub).write_text(json.dumps({**rows[-1], **change}, ensure_ascii=False) + "\n")
+        PB._MEMO.clear()                      # same size and mtime in one second: read again
+    put("placement/placements.jsonl", status="unresolved", reason="no_profile")
+    assert shop.not_ready(KEY) == "placement unresolved: no_profile"
+    put("translation/translated.jsonl", status="held")
+    assert shop.not_ready(KEY) == "translation held"
+    put("prepared/products.jsonl", status="held", held=[{"code": "single_only"}])
+    assert shop.not_ready(KEY) == "prepared held ['single_only']"
+    PB._append(shop.ledger_path, {"key": KEY, "status": "withdrawn", "reason": "replaced_by:fairwardgolf:naver:1:2"})
+    assert shop.not_ready(KEY) == "withdrawn (replaced_by:fairwardgolf:naver:1:2)"
+    assert shop.ready() == []
+    assert shop.not_ready("fairwardgolf:naver:9:9") == "prepared None"         # never prepared
+
+
 def test_publish_creates_then_skips_then_updates_keeping_photos(tmp_path):
     shop = _shop(tmp_path)
     assert shop.ready() == [KEY]

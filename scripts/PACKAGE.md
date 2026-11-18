@@ -71,7 +71,9 @@ band since 2026-11-17 (table version 7; the agent from the data on the owner's d
 review, commit 2f2262f): 50002783 웨지, product 800-3500 g, package 1000-4000 g, box height
 40-400 mm (a set of 2-6 wedges: a one-club weight or box on a set's page, 0.45 kg, 1.04 lb, 13 mm, is refused);
 50002787 주니어용클럽, product 150-8000 g, package 300-10000 g (13586027489's "529 Pounds"); since 2026-11-18 (table
-version 9) 50002784 치퍼, product 300-650 g (7004743758's 962 g, a shipping weight). None is made up.
+version 9) 50002784 치퍼, product 300-650 g (7004743758's 962 g, a shipping weight); since table version 10
+(2026-11-18) product 350-600 g, package 350-5000 g, length 850-1500 mm (a head's 330 g, a parcel too small for the
+club). None is made up.
 Why these (2026-11-17): the 800 g low is 2 x the single club's 400 and sits in the data's gap (726-1090 g: 25
 one-club readings refused, 47 sets taken; 900-2800 would refuse 13480790720's 2840 g while its twins pass); the
 package low is 1000, not 1500 (1500 refuses 16 real boxes of 1110-1470 g, Yamato 2PCS, BombTech / Detroit / XINGGM
@@ -624,6 +626,20 @@ lines (`package` is computed at collection), prepared records of `format: prepar
 published from them; `prepared/5` is on the new scale. The transform puts a collected line's seller values on
 today's scale from their own evidence (`package_measures.on_scale`: the old 3 is 5, the old 2 is 4), so one prepared
 record never mixes the two.
+
+**Table version 10 (2026-11-18, the review of the 100-chipper scroll; the agent on the owner's delegation).** Bands
+only, row 50002784: `product_weight_g` 300-650 -> 350-600 (the 51 club totals the 217 collected chippers state are
+358-582.5 g; MYKUJA's Amazon "Item Weight 330 Grams" is the head, as MAZEL 11775287147 types "헤드 무게 330g";
+13492844017's "Item Weight 0.64 kg" a shipping weight), `package_weight_g` min 350 and `package_length_mm` min 850
+(the lightest stated club 358 g, the shortest 32 in = 813 mm: rockible 13261416672's Amazon "Item Package Dimensions
+13.77 x 5.9 x 2.75 inches" / "Package Weight 0.3 Pounds", 350 mm and 136 g, cannot hold its 90 cm club; its box is
+refused whole, `box_not_whole`). The maxima 5000 g and 1500 mm only close the band (the stated boxes are 960-1000
+mm). `defaults_version` stays 9: no default is restamped. Measured read only (`run_transform.run(cache=False)`, every
+write suppressed, 3,390 latest lines, against the same run on version 9): 6 products move, all 50002784, nothing
+elsewhere: 13261416672 (withdrawn, `hold:`) its four package fields to the defaults ($139 -> $259 on the default
+box); the product weight of 13551983071 and 13492844017 (published drafts, 2 variants), 13325891959, 13037712071 and
+13037712605 (never sent) to the 470 g default. No published price moves (the price reads the package weight and the
+box only); the two drafts are sent again only on the owner's word. Fixtures 13261416672, 13551983071.
 
 **Table version 9 (2026-11-18, the chipper review; the agent on the owner's delegation).** Row 50002784 measured: 33 of
 the 59 collected chippers state the club's total (notice, spec rows, description, the images' OCR), one median per

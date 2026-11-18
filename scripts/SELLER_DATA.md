@@ -175,6 +175,11 @@ Code: `server/naver_shopping/measures.py`, `scripts/package_measures.py`.
   Kilograms"; Tour Edge 13468741368 "Item Weight: 5 Pounds"). A bare "무게" / "중량" label says no more: a junior
   set's "무게 : 약 5kg" with its bag (13024454637) over the 4500 g default box is read as the box too.
   -> `description_measures.product_over_package` (`_UNBOXED_UNSAID`); PACKAGE.md "No product weight above the package".
+- Chippers' Amazon tables (2026-11-18, the review of the 100-chipper scroll): MYKUJA "Item Weight | 330 Grams"
+  (13551983071, 13325891959, 13037712071, 13037712605) is the head's weight (MAZEL 11775287147 types "헤드 무게
+  330g"), 13492844017's "Item Weight | 0.64 kg" a shipping weight; rockible 13261416672's "Item Package Dimensions 13.77
+  x 5.9 x 2.75 inches" / "Package Weight 0.3 Pounds" no box a 90 cm club fits. -> the 50002784 bands (table version
+  10: product 350-600 g, package from 350 g, length from 850 mm); PACKAGE.md "Table version 10".
 
 ## Transform (scripts)
 
@@ -246,6 +251,10 @@ Code: `transform.options_and_variants`.
   "(46도~52도)" (13278647591), single lofts "(47도)" (11006400319), bundle groups beside an option group (12178280377,
   13683785691). A chipper written "칩퍼" / "Chipper" (KVV 13162968497): left out by the title
   (`chipper`, `listing_title_rules.json`).
+- A loose chipper head sold as a chipper ("Acer XK Chipper Head 골프 치퍼 헤드만 오른손", 12409532747, the chipper review
+  2026-11-18: the buyer fits his own shaft, published at the full-club package): left out by the title (`parts` of
+  50002784: 헤드만, 헤드단품, 치퍼헤드 not before 커버 nor after 샤프트, 샤프트단품). "샤프트 치퍼 헤드 35도" (PGM
+  9291749263) lists a whole club's parts and stays.
 - The wedge-set review (2026-11-17), variants and options (wave W5):
   - TaylorMade MG5 pickers ("옵션 1/2/3", "SB웨지1/2/3", "웨지 로프트 바운스 선택-1/-2/-3", 13 listings): every product
     of the slots, "56+56" and every order of one set included (343 rows for 35 sets); no repeat was ever sold, two

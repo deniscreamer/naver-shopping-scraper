@@ -454,7 +454,7 @@ def test_publish_step_replaces_only_in_on_mode(tmp_path, monkeypatch):
     import publish as PB
     shop, old, new = _published_shop(tmp_path, 4, 4)
     monkeypatch.setattr("placement.run", lambda *a, **k: None)
-    monkeypatch.setattr(PB.Shop, "ready", lambda self: [new])
+    monkeypatch.setattr(PB.Shop, "not_ready", lambda self, k: None if k in [new] else "translation held")
     monkeypatch.setattr(PB, "publish_one", lambda shop, key, *a, **k: {"key": key, "status": "published",
                                                                        "handle": "h"})
     for mode, calls in (("log", 0), ("on", 1)):
@@ -1051,7 +1051,7 @@ def test_on_mode_holds_a_same_upc_copy_as_a_draft_and_log_mode_only_says_so(tmp_
     import publish as PB
     shop, old, new = _published_shop(tmp_path, 0, 0)
     monkeypatch.setattr("placement.run", lambda *a, **k: None)
-    monkeypatch.setattr(PB.Shop, "ready", lambda self: [new])
+    monkeypatch.setattr(PB.Shop, "not_ready", lambda self, k: None if k in [new] else "translation held")
     drafts = []
 
     def publish_one(shop_, key, *a, draft=False, **k):

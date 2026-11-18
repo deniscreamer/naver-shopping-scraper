@@ -212,7 +212,7 @@ def test_baselines_block_is_optional_and_the_operators():
     table = load_table()
     block = table["rows"][0]["baselines"]
     assert {k: block[k] for k in BASE if k != "basis"} == {k: v for k, v in BASE.items() if k != "basis"}
-    assert table["version"] == 9 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
+    assert table["version"] == 10 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
     check_row(ROW)                                                    # a row without the block: no composition
     check_row({**ROW, "baselines": BASE})
 
@@ -311,9 +311,10 @@ def test_the_transform_takes_todays_default_and_keeps_the_rest():
 def test_a_restamped_default_carries_its_rows_version_not_the_tables():
     """2026-11-18: the row of 50002784 raised the table to 8; a default of another row restamped by the transform keeps
     its row's defaults_version (7), so a new row moves no other product; a row without one takes the table's. The same
-    day the chipper row was measured (version 9): only its own defaults_version rose."""
+    day the chipper row was measured (version 9): only its own defaults_version rose; its bands of version 10 kept
+    defaults_version 9 (a band moves no default)."""
     table = load_table()
-    assert table["version"] == 9 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
+    assert table["version"] == 10 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
         "50002788": 7, "50002787": 7, "50002670": 7, "50002783": 7, "50002784": 9}
     assert row_version(table, JUNIOR) == 7 and row_version({"version": 9}, {k: v for k, v in JUNIOR.items()
                                                                             if k != "defaults_version"}) == 9
@@ -458,7 +459,7 @@ def test_chipper_row_measured_and_its_band_refuses_a_shipping_weight():
     [row] = [r for r in load_table()["rows"] if r["category_id"] == "50002784"]
     assert [row["fields"]["product_weight_g"][k] for k in ("low", "central", "high")] == [380, 470, 560]
     assert row["fields"]["package_length_mm"]["low"] == 920 and row["defaults_version"] == 9
-    assert row["plausible"] == {"product_weight_g": {"min": 300, "max": 650}}
+    assert row["plausible"]["product_weight_g"] == {"min": 350, "max": 600}                  # version 10, below
 
     def chipper(grams):
         s = specs([{**weight(grams), "unit": "g", "quote": f"중량: {grams}g", "source": "notice"}])
@@ -468,6 +469,47 @@ def test_chipper_row_measured_and_its_band_refuses_a_shipping_weight():
         ("category_default", 470, "implausible_for_category", 9)
     f = chipper(457)["product_weight_g"]
     assert (f["source"], f["value"]) == ("source_stated", {"min": 457, "max": 457})
+
+
+def test_chipper_bands_refuse_a_small_parcel_and_a_head_weight():
+    """2026-11-18, the review of the 100-chipper scroll (bands only, table version 10, defaults_version 9): the
+    shortest stated club is 32 in (813 mm), the lightest 358 g, the 51 stated club totals 358-582.5 g. rockible
+    13261416672's Amazon "Item Package Dimensions 13.77 x 5.9 x 2.75 inches" / "Package Weight 0.3 Pounds" (350 x 150
+    x 70 mm, 136 g) cannot hold its 90 cm club: the box is refused whole and the weight, the defaults fill ($139 -> $259
+    on the default box). MYKUJA 13551983071's "Item Weight 330 Grams" is the head (MAZEL 11775287147 types 헤드 무게
+    330g): refused, the 470 g default."""
+    import json
+    import os
+    here = os.path.dirname(os.path.abspath(__file__))
+    table = load_table()
+    [row] = [r for r in table["rows"] if r["category_id"] == "50002784"]
+    assert row["plausible"] == {"product_weight_g": {"min": 350, "max": 600}, "package_weight_g": {"min": 350,
+                                "max": 5000}, "package_length_mm": {"min": 850, "max": 1500}}
+    assert row["defaults_version"] == 9 and table["version"] == 10
+    before = copy.deepcopy(table)
+    for r in before["rows"]:
+        if r["category_id"] == "50002784":
+            r["plausible"] = {"product_weight_g": {"min": 300, "max": 650}}      # version 9's band
+
+    def collected(pid):
+        with open(os.path.join(here, "fixtures", "collected", f"{pid}.json"), encoding="utf-8") as f:
+            return json.load(f)["specs"]
+    specs_r = collected("13261416672")
+    [old] = variant_measures(specs_r, before)
+    assert [round(old["fields"][n]["value"]["max"]) for n in FIELDS[1:]] == [136, 350, 150, 70]
+    got = current_bands(on_scale(old["fields"]), specs_r, old["variant_id"], table)
+    assert [(n, got[n]["source"], got[n]["central"], got[n]["reason"], got[n]["table_version"]) for n in FIELDS[1:]] \
+        == [("package_weight_g", "category_default", 1000, "implausible_for_category", 9),
+            ("package_length_mm", "category_default", 960, "implausible_for_category", 9),
+            ("package_width_mm", "category_default", 110, "box_not_whole", 9),
+            ("package_height_mm", "category_default", 80, "box_not_whole", 9)]
+    assert [v["fields"]["package_length_mm"]["reason"] for v in variant_measures(specs_r, table)] == \
+        ["implausible_for_category"]                                       # collected today: the same
+    specs_m = collected("13551983071")
+    for v in variant_measures(specs_m, before):
+        assert v["fields"]["product_weight_g"]["value"]["max"] == 330
+        f = current_bands(on_scale(v["fields"]), specs_m, v["variant_id"], table)["product_weight_g"]
+        assert (f["source"], f["central"], f["reason"]) == ("category_default", 470, "implausible_for_category")
 
 
 def test_server_box_out_of_band_is_refused_whole():

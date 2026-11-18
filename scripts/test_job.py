@@ -365,7 +365,7 @@ def test_a_publishing_job_reads_the_ledger_and_publishes_one(tmp_path, monkeypat
     assert J.next_key(job, got) == KEYS[1]
     calls = []
     monkeypatch.setattr(PB, "clients", lambda shop_name: (FakeProducts(), FakeFiles(), {}))
-    monkeypatch.setattr(PB.Shop, "ready", lambda self: [KEYS[1]])
+    monkeypatch.setattr(PB.Shop, "not_ready", lambda self, k: None if k == KEYS[1] else "translation held")
     prices = [[819, 829]]
     monkeypatch.setattr(PB, "publish_one", lambda shop, key, *a, **k: calls.append(key) or
                         {"key": key, "status": "published", "handle": "h", "product_id": "gid://shopify/Product/1",
@@ -387,6 +387,36 @@ def test_a_publishing_job_reads_the_ledger_and_publishes_one(tmp_path, monkeypat
     assert seen == [False, True]
 
 
+def test_a_product_the_shop_withdrew_is_done_for_the_job_but_not_counted(tmp_path, monkeypatch):
+    """2026-11-18, the chipper scroll: 5 products replaced by a better copy (replaced_by, withdrawn) fell back to
+    "translated", and the end-of-run drain sent each to publish_step again ("not ready to publish (placement placed:
+    None)"). A withdrawn product (replaced_by, a hold, the owner) is done; --count counts the live and draft ones, as
+    before; publish_step names the gate a product fails."""
+    import publish as PB
+    job = _translating_job(tmp_path, {KEYS[0]: "translated", KEYS[1]: "translated", KEYS[2]: "translated"})
+    job.meta.update(publish=True, count=2)
+    job.save_meta()
+    shop = tmp_path / "shops" / SHOP
+    (shop / "collected").mkdir()
+    monkeypatch.setattr("run_transform.latest_lines", lambda *a, **k: {k: (None, None, {}) for k in KEYS})
+    (shop / "publish").mkdir()
+    (shop / "publish" / "published.jsonl").write_text("".join(json.dumps(r) + "\n" for r in (
+        {"key": KEYS[0], "status": "published"}, {"key": KEYS[1], "status": "published"},
+        {"key": KEYS[1], "status": "withdrawn", "reason": f"replaced_by:{KEYS[2]}"},
+        {"key": KEYS[2], "status": "published"})))
+    got = J.stages(job)
+    assert got == {KEYS[0]: "published", KEYS[1]: "published", KEYS[2]: "published"}
+    assert J.next_key(job, got, staged=True) is None                           # the drain has nothing left
+    assert J.counted(job, got) == 2 and J.wanted(job, got) is None and J._reached(job)
+    job.meta["count"] = 3
+    assert J.wanted(job, got) == 1                                              # the withdrawn one is not counted
+    monkeypatch.setattr("placement.run", lambda *a, **k: None)
+    what = J.publish_step(job, {}, KEYS[1])
+    assert what == f"not ready to publish (withdrawn (replaced_by:{KEYS[2]}))"
+    assert job.events()[-1] == {**job.events()[-1], "event": "not_taken", "reason": what}
+    assert PB.Shop(SHOP, str(tmp_path / "shops")).not_ready(KEYS[1]).startswith("withdrawn")
+
+
 def test_a_describing_job_writes_the_description_before_it_publishes(tmp_path, monkeypatch):
     import describe as D
     import publish as PB
@@ -405,7 +435,7 @@ def test_a_describing_job_writes_the_description_before_it_publishes(tmp_path, m
         return answers.pop(0)
     monkeypatch.setattr(D, "run", described)
     monkeypatch.setattr(PB, "clients", lambda shop_name: (FakeProducts(), FakeFiles(), {}))
-    monkeypatch.setattr(PB.Shop, "ready", lambda self: [KEYS[0], KEYS[1]])
+    monkeypatch.setattr(PB.Shop, "not_ready", lambda self, k: None if k in KEYS[:2] else "translation held")
     monkeypatch.setattr(PB, "publish_one", lambda shop, key, *a, **k: order.append(("publish", key)) or
                         {"key": key, "status": "published", "handle": "h", "product_id": "gid://shopify/Product/1"})
     monkeypatch.setattr("placement.run", lambda *a, **k: None)
@@ -1201,7 +1231,7 @@ def test_the_done_line_marks_a_draft_and_the_creation_line_says_draft_first(tmp_
     job = _publishing_job(tmp_path, 0, 1)
     key = job.rows()[0]["key"]
     monkeypatch.setattr(PB, "clients", lambda shop_name: (FakeProducts(), FakeFiles(), {}))
-    monkeypatch.setattr(PB.Shop, "ready", lambda self: [key])
+    monkeypatch.setattr(PB.Shop, "not_ready", lambda self, k: None if k in [key] else "translation held")
     monkeypatch.setattr("placement.run", lambda *a, **k: None)
     status = [None]
     monkeypatch.setattr(PB, "publish_one", lambda *a, **k: {"key": key, "status": "published", "handle": "h",

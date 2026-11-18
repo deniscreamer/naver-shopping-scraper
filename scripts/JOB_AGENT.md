@@ -193,7 +193,10 @@ macOS notification. Nothing for a refusal (2), Ctrl+C (130) or a run cut by `--i
 - **Publication** (`new --publish`): the line ends with `published <handle> $<price> <admin link>` (`$<min>-<max>`
   when the variants differ; the shop's price rule: [PRICE.md](PRICE.md) "The price"), or `published (draft)
   <handle>` (Draft first). A product Shopify refused (userErrors, a file not ready) is `failed` (stage publish) and
-  tried again; one placement could not place, or held, is `not_taken` with the reason (tell the owner); a refused
+  tried again; one placement could not place, or held, is `not_taken` `not ready to publish (<gate>)`, the gate it
+  failed: `withdrawn (<ledger reason>)`, `prepared <status> [codes]`, `translation <status>` or `placement <status>:
+  <reason>` (`publish.Shop.not_ready`, 2026-11-18; tell the owner). A product the shop withdrew (`replaced_by:`, a
+  `hold:`, the owner) is done for the job: never taken again by the drain, not counted toward `--count`; a refused
   token or a missing scope stops the run. A product that cannot be priced (a variant without a box, a box over the
   tariff's 50 kg) is not sent: `publish held: variant <sku>: <why>` (`failed`, stage publish); tell the owner.
 - **Duplicates**: `duplicate_of`, `replaces ...`, `kept: <why>`: [DEDUPE.md](DEDUPE.md#what-a-jobs-events-mean-and-what-you-do).

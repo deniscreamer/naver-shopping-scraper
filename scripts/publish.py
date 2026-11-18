@@ -163,6 +163,25 @@ class Shop:
                 and (translated.get(k) or {}).get("status") == "translated"
                 and (placed.get(k) or {}).get("status") == "placed"]
 
+    def not_ready(self, key: str) -> str | None:
+        """The gate of `ready` that `key` fails, in its order (withdrawn, prepared, translation, placement), None for
+        a ready product (2026-11-18, the chipper scroll: a job's "placement placed: None" said nothing of the real
+        gate, a product replaced and withdrawn)."""
+        prepared, translated, placed = self.inputs()
+        if key in self.withdrawn():
+            return f"withdrawn ({_last(self.ledger_path)[key].get('reason') or 'no reason'})"
+        p = prepared.get(key) or {}
+        if p.get("status") != "ready":
+            held = [h.get("code") for h in p.get("held") or []]
+            return f"prepared {p.get('status')}" + (f" {held}" if held else "")
+        t = translated.get(key) or {}
+        if t.get("status") != "translated":
+            return f"translation {t.get('status')}"
+        pl = placed.get(key) or {}
+        if pl.get("status") != "placed":
+            return f"placement {pl.get('status')}: {pl.get('reason')}"
+        return None
+
     def ledger(self) -> dict[str, LedgerRow]:
         return {k: r for k, r in _last(self.ledger_path).items() if r.get("status") == "published"}
 

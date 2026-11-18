@@ -40,7 +40,9 @@ not translate is `failed` (tried again after the fresh ones, MAX_FAILS times); e
 (`run` again resumes). A job made with `--publish` takes each translated product on: placement.py over the
 whole shop (offline), then publish.py for this product (Shopify, ACTIVE, or DRAFT for a category not marked reviewed:
 transform_shops.reviewed, 2026-11-16); published = its key in
-publish/published.jsonl. A product not ready to publish (held, not placed) is `not_taken`; a refused write is
+publish/published.jsonl, or withdrawn there (replaced_by, a hold, the owner: done, not counted toward --count;
+2026-11-18). A product not ready to publish (withdrawn, held, not placed) is `not_taken` with the gate it failed
+(publish.Shop.not_ready); a refused write is
 `failed` (tried again); a refused token or scope stops the run. With `--describe` too (the owner, 2026-11-10) the
 product's description is written right before it is sent (describe.py, one model request; the answer is checked
 and cut by the script, never a reason to hold the product); no provider answering stops the run.
@@ -312,9 +314,10 @@ def stages(job: Job) -> dict[str, str]:
             rows = [json.loads(x) for x in f if x.strip()]
         translated = {r["key"] for r in rows if r.get("status") in ("translated", "held")}
     published = set()
-    if job.final == "published":
-        from publish import Shop
-        published = set(Shop(job.shop, job.shops_root).ledger())
+    if job.final == "published":                # a product the shop withdrew (replaced_by, a hold, the owner) is done
+        from publish import Shop                # too: the end-of-run drain sent replaced ones to publish_step again,
+        shop = Shop(job.shop, job.shops_root)   # "not ready to publish (placement placed: None)" (2026-11-18, chippers)
+        published = set(shop.ledger()) | shop.withdrawn()
     rules = rules_for(job.shop)
 
     def images_read(key: str, line: dict[str, Any]) -> bool:
@@ -435,14 +438,24 @@ def batch_cap(meta: JobMeta) -> int:
     return MAX_BATCHES_ALL if meta.get("until_end") else MAX_BATCHES
 
 
+def counted(job: "Job", done: dict[str, str]) -> int:
+    """The job's products at its final stage toward `--count`: a withdrawn one is done (stages) but not counted, its
+    replacement is (as before 2026-11-18)."""
+    gone: set[str] = set()
+    if job.final == "published":
+        from publish import Shop
+        gone = Shop(job.shop, job.shops_root).withdrawn()
+    return sum(1 for r in job.rows() if done.get(r["key"]) == job.final and r["key"] not in gone)
+
+
 def wanted(job: "Job", done: dict[str, str]) -> int | None:
     """The snapshot is used up: how many more products to read the listings deeper for (None: the job is done).
     A `--count N` job wants what is missing to N; a `--all` job wants every new row, while the listings have more."""
     if job.meta.get("until_end"):
         return 0
     target = job.meta.get("count") or 0
-    have = sum(1 for r in job.rows() if done.get(r["key"]) == job.final)
-    return target - have if target and have < target else None
+    n = counted(job, done)
+    return target - n if target and n < target else None
 
 
 def cmd_new(args: argparse.Namespace) -> int:
@@ -875,10 +888,10 @@ def publish_step(job: Job, ctx: Context, key: str, n: int = 0) -> str:
     job.beat(key=key, n=n, stage="publish", since=_now())
     placement.run(job.shop, job.shops_root)
     shop = publish.Shop(job.shop, job.shops_root)
-    if key not in shop.ready():                                 # held by the transform or the translation, or
-        placed = publish._last(os.path.join(shop.dir, "placement", "placements.jsonl")).get(key) or {}
-        reason = f"not ready to publish (placement {placed.get('status')}: {placed.get('reason')})"
-        job.log(key, "not_taken", reason=reason[:300])          # not placed: closed, the owner decides
+    gate = shop.not_ready(key)                                  # withdrawn, held by the transform or the
+    if gate is not None:                                        # translation, or not placed: closed, the owner decides
+        reason = f"not ready to publish ({gate})"
+        job.log(key, "not_taken", reason=reason[:300])
         return reason
     described = describe_one(job, ctx, key) + "; " if job.meta.get("describe") else ""
     try:
@@ -1100,9 +1113,8 @@ def _run(job: Job, args: argparse.Namespace) -> int:
         if key is None:
             need = wanted(job, done)
             if need is not None:
-                have = sum(1 for r in job.rows() if done.get(r["key"]) == job.final)
-                print(f"the snapshot is used up with {have} {job.final} (target {goal}): reading the listings "
-                      f"deeper", flush=True)
+                print(f"the snapshot is used up with {counted(job, done)} {job.final} (target {goal}): reading the "
+                      "listings deeper", flush=True)
                 try:
                     added = refresh(job, ctx["api"], store, need)
                 except Exception as e:
@@ -1251,8 +1263,7 @@ def _reached(job: Job) -> bool:
     count = job.meta.get("count") or 0
     if not count:
         return False
-    done = stages(job)
-    return sum(1 for r in job.rows() if done.get(r["key"]) == job.final) >= count
+    return counted(job, stages(job)) >= count
 
 
 def _drain(job: Job, ctx: Context, run: dict) -> int | None:

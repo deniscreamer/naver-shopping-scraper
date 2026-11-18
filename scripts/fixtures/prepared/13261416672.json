@@ -1,0 +1,299 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102748022:13261416672",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "description_images_missing",
+   "detail": "no sidecar: run description_images.py"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/delightdodo/products/13261416672",
+  "channel_no": "102748022",
+  "product_id": "13261416672",
+  "category_id": "50002784"
+ },
+ "product": {
+  "title_ko": "로키블 골프 치퍼 웨지 휴대용 경량 금속 샤프트 오른손잡이 치핑 연습 클럽 샌드 초보자 부모 자녀,",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {},
+  "options": [],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "13261416672",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 36450,
+    "price_usd": "36.45",
+    "sku": "FW-0d8dca34f691202e0b38b0a4",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 380,
+      "central": 470,
+      "high": 560,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1000,
+      "high": 1300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18",
+      "contradiction": [
+       {
+        "value": {
+         "min": 136.078,
+         "max": 136.078
+        },
+        "source": "source_stated",
+        "confidence": 5,
+        "quote": "Package Weight: 0.3 Pounds",
+        "from": "description_table",
+        "locator": {
+         "block": "html",
+         "row": 2,
+         "cell": "tr"
+        },
+        "kind": "packed",
+        "scope": "unknown",
+        "approximate": false,
+        "flags": [],
+        "binding": {
+         "scope": "product",
+         "variant_ids": []
+        }
+       }
+      ],
+      "reason": "implausible_for_category"
+     },
+     "package_length_mm": {
+      "low": 920,
+      "central": 960,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18",
+      "contradiction": [
+       {
+        "value": {
+         "min": 349.758,
+         "max": 349.758
+        },
+        "source": "source_stated",
+        "confidence": 5,
+        "quote": "Item Package Dimensions L x W x H: 13.77 x 5.9 x 2.75 inches",
+        "from": "description_table",
+        "locator": {
+         "block": "html",
+         "row": 1,
+         "cell": "tr"
+        },
+        "kind": "packed",
+        "scope": null,
+        "approximate": false,
+        "flags": [],
+        "binding": {
+         "scope": "product",
+         "variant_ids": []
+        }
+       }
+      ],
+      "reason": "implausible_for_category"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 110,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18",
+      "contradiction": [
+       {
+        "value": {
+         "min": 149.86,
+         "max": 149.86
+        },
+        "source": "source_stated",
+        "confidence": 5,
+        "quote": "Item Package Dimensions L x W x H: 13.77 x 5.9 x 2.75 inches",
+        "from": "description_table",
+        "locator": {
+         "block": "html",
+         "row": 1,
+         "cell": "tr"
+        },
+        "kind": "packed",
+        "scope": null,
+        "approximate": false,
+        "flags": [],
+        "binding": {
+         "scope": "product",
+         "variant_ids": []
+        }
+       }
+      ],
+      "reason": "box_not_whole"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 80,
+      "high": 110,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18",
+      "contradiction": [
+       {
+        "value": {
+         "min": 69.85,
+         "max": 69.85
+        },
+        "source": "source_stated",
+        "confidence": 5,
+        "quote": "Item Package Dimensions L x W x H: 13.77 x 5.9 x 2.75 inches",
+        "from": "description_table",
+        "locator": {
+         "block": "html",
+         "row": 1,
+         "cell": "tr"
+        },
+        "kind": "packed",
+        "scope": null,
+        "approximate": false,
+        "flags": [],
+        "binding": {
+         "scope": "product",
+         "variant_ids": []
+        }
+       }
+      ],
+      "reason": "box_not_whole"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 36450,
+   "original_krw": 40500,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "원산지",
+    "value_ko": "기타/해외"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13261416672/fairwardgolf-13261416672-001-3cc682bba2c90da9.webp",
+    "sha256": "3cc682bba2c90da97a5d4beec24d63155e71d94287360dc7fbe807a5fafd1c6d",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13261416672/fairwardgolf-13261416672-002-2a6f8ea03d02559a.webp",
+    "sha256": "2a6f8ea03d02559ad5c29d716e90ff4ca0a81fbef3be9b027a65ad4cbe35102b",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13261416672/fairwardgolf-13261416672-003-1f8e135a70c26c25.webp",
+    "sha256": "1f8e135a70c26c251ef134de80613726aef8d18884e31afb5206ac15b5381cc4",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": 7000,
+   "policy_text": "제주 추가 4,000원, 제주 외 도서지역 추가 7,000원",
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": "18:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "로키블 골프 치퍼 웨지 휴대용 경량 금속 샤프트 오른손잡이 치핑 연습 클럽 샌드 초보자 부모 자녀,\n\n상품 이미지\n\n세부 사항\n\n항목 | 설명\nItem Package Dimensions L x W x H | 13.77 x 5.9 x 2.75 inches\nPackage Weight | 0.3 Pounds\nBrand Name | rockible\nMaterial | Metal\nNumber of Items | 1\nManufacturer | rockible\nPart Number | 5408616681993013\nSize | Adults\nHand Orientation | Right\nDate First Available | September 14, 2023",
+  "description_images": [
+   "https://cdn.imgdsell.com/visit/set/dsell/fly_fly0808/Rz41PD5OXDx2b28eAmE%253d/SS",
+   "https://cdn.imgdsell.com/file/dsell/fly_fly0808/notice/ss/top_8.jpg",
+   "https://m.media-amazon.com/images/I/41G6F7GcEDL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61yoe2O9cZL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/711HpbLsHEL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/41L2UDa9o7L._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/41Sfin6E4DL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/418ioPPXJJL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/41O+XMLERPL._US1000_.jpg",
+   "https://cdn.imgdsell.com/file/dsell/fly_fly0808/notice/ss/bottom_8.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:7f9bf7bb02733115",
+   "kind": "title",
+   "ko": "로키블 골프 치퍼 웨지 휴대용 경량 금속 샤프트 오른손잡이 치핑 연습 클럽 샌드 초보자 부모 자녀,"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:40bc309fd6cb0a8a",
+   "kind": "spec_value",
+   "ko": "기타/해외"
+  }
+ ]
+}
