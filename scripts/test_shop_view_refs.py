@@ -298,7 +298,7 @@ def test_translate_and_describe_take_refs_a_file_and_a_job(shop_fixture, monkeyp
     import translate
     fx = shop_fixture
     seen = []
-    monkeypatch.setattr(translate, "run", lambda shop, model, root, only=None, limit=None: seen.append(only) or
+    monkeypatch.setattr(translate, "run", lambda shop, model, root, only=None, limit=None, **k: seen.append(only) or
                         {"report": []})
     assert translate.main([fx.shop, "--shops-root", fx.shops, "--offline", "--only", LIVE]) == 0
     assert translate.main([fx.shop, "--shops-root", fx.shops, "--offline", "--job", fx.jobs_ids[1], "--event",

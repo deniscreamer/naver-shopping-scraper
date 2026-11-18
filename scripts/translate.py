@@ -23,12 +23,14 @@ product `untranslated`; what passed is kept (dictionaries, the product's store),
 rest.
 
     .venv/bin/python scripts/translate.py fairwardgolf [--offline] [--only REF] [--keys-file F] [--job ID [--event E]]
-                                                      [--limit N] [--shops-root DIR]
+                                                      [--limit N] [--reask] [--shops-root DIR]
 
   --offline   no model: resolve from the stores, dictionaries and rules only; say what would be asked
   --only      the one product the model may be asked for: a key, Naver product id, handle or link (shop_view.resolve)
   --keys-file, --job [--event]   more products the model may be asked for (shop_view.selected_keys); a ref that
               names no product or several stops the command (exit 2) before anything is asked
+  --reask     with named products only: their own titles and placeholder option names asked again with today's
+              notes, the old English kept until a checked answer; a hand correction (by review-...) never
 
 The keys: `.env` names a key file (TRANSLATE_KEY_FILE), mode 0600 and ignored by git, holding ANTHROPIC_API_KEY=...
 and OPENAI_API_KEY=... (either may be missing: no fallback, or OpenAI only). OPENAI_TRANSLATE_MODEL in `.env`
@@ -303,13 +305,17 @@ def _placeholders(prepared: dict[str, Any]) -> set[str]:
 
 
 def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, str], str],
-         tenant: str, brands: dict[tuple[str, str], str] | None = None
+         tenant: str, brands: dict[tuple[str, str], str] | None = None, reask: bool = False,
+         fixed: Collection[tuple[str, str]] = ()
          ) -> tuple[dict[str, str], dict[str, str], list[dict[str, Any]]]:
     """-> (English by text id, where each came from, the items the model must translate). A title the model
     translated under another brand than the product's now (`brands`: the brand_ko a title row was asked with) is
     asked again, its old English kept until an answer comes (2026-11-15: Generic -> Bermuda, Edis -> Majek, PRECISE ->
     XINGGM kept the old brand at the head of the title; a row without a brand, a hand correction, is never asked
-    again)."""
+    again). `reask` (translate.py --reask, 2026-11-17, the wedge-set review W10: 75 live titles kept the English
+    asked before the notes title_lofts_not_sold / title_cut / title_word_unproven existed): the product's own title
+    and placeholder option names are asked again with today's notes, the old English kept until a checked answer
+    comes; a hand correction (`fixed`: its last row written by a review) is never asked again."""
     key = prepared["key"]
     product = prepared.get("product") or {}
     placeholders = _placeholders(prepared)
@@ -340,8 +346,10 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
         hit = store.get((key, tid)) if own else dicts.get(kind, ko, category)
         if hit is None and kind in ("spec_value", "fact_value"):
             hit = dicts.get("brand", ko)                 # a 브랜드 / 제조사 row: the shop's vendor spelling
+        again = reask and own and kind in ("title", "option_name") and (key, tid) not in fixed
         if hit is not None:
             en[tid], by[tid] = hit, "product" if own else "dictionary"
+        if hit is not None and not again:
             asked_with = (brands or {}).get((key, tid))
             if kind == "title" and asked_with is not None and asked_with != (product.get("brand_ko") or "") \
                     and brand_known:
@@ -350,7 +358,8 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
             continue
         source = sanitize(kind, ko, tenant, category)
         if not has_hangul(source):
-            en[tid], by[tid] = source, "rule"
+            if hit is None:                                # a re-asked name keeps its English until an answer
+                en[tid], by[tid] = source, "rule"
             if kind == "option_name" and ko in placeholders:
                 # a Latin placeholder name ("Color" over "52 56 Degree Tarnish", Amazon imports; 2026-11-17, the
                 # wedge-set review C50: 21 axes, 18 of them not colours): the model names it from its values, the
@@ -642,13 +651,14 @@ def _back(model_en: dict[str, str], problems: list[dict[str, Any]],
 
 def translate_product(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, str], str],
                       tenant: str, model: "Model | Chain | None", now: str,
-                      brands: dict[tuple[str, str], str] | None = None) -> Outcome:
+                      brands: dict[tuple[str, str], str] | None = None, reask: bool = False,
+                      fixed: Collection[tuple[str, str]] = ()) -> Outcome:
     key = prepared["key"]
     record: dict[str, Any] = {"format": FORMAT, "key": key, "en": {}, "by": {}, "problems": [], "provider": None}
     usage: dict[str, dict[str, int]] = {}
     if prepared.get("status") != "ready":
         return Outcome({**record, "status": "held"}, [], usage, 0)
-    en, by, pending = plan(prepared, dicts, store, tenant, brands)
+    en, by, pending = plan(prepared, dicts, store, tenant, brands, reask and model is not None, fixed)
     calls = 0
     problems: list[dict[str, Any]] = []
     model_of: dict[str, str] = {}                     # text id -> the model that translated it
@@ -735,6 +745,21 @@ def _load_brands(path: str, tenant: str | None = None) -> dict[tuple[str, str], 
     return brands
 
 
+def _load_fixed(path: str) -> set[tuple[str, str]]:
+    """(key, text id) whose last row a review wrote (a hand correction, by "review-..."): never asked again."""
+    fixed: set[tuple[str, str]] = set()
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            for line in f:
+                try:
+                    row = json.loads(line)
+                    (fixed.add if str(row.get("by") or "").startswith("review") else fixed.discard)(
+                        (row["key"], row["id"]))
+                except (ValueError, KeyError, TypeError):
+                    continue
+    return fixed
+
+
 def _load_store(path: str) -> dict[tuple[str, str], str]:
     store: dict[tuple[str, str], str] = {}
     if os.path.exists(path):
@@ -762,8 +787,11 @@ def cost(usage: dict[str, dict[str, int]]) -> tuple[float, list[str]]:
 
 def run(shop: str, model: "Model | Chain | None", shops_root: str = SHOPS_ROOT, dicts: Dictionaries | None = None,
         only: str | Collection[str] | None = None, limit: int | None = None,
-        clock: Any = time.gmtime) -> dict[str, Any]:
-    """`only`: the key (or keys) the model may be asked for; the other products are resolved from what is kept."""
+        clock: Any = time.gmtime, reask: bool = False) -> dict[str, Any]:
+    """`only`: the key (or keys) the model may be asked for; the other products are resolved from what is kept.
+    `reask`: their own titles and placeholder names asked again (plan); only with `only`."""
+    if reask and not only:
+        raise TranslateError("--reask needs the products named (--only, --keys-file, --job)")
     wanted = {only} if isinstance(only, str) else set(only or ())
     tenant = shop_stores.STORES[shop_stores.StoreId(shop)].publisher
     dicts = dicts or Dictionaries()
@@ -774,6 +802,7 @@ def run(shop: str, model: "Model | Chain | None", shops_root: str = SHOPS_ROOT, 
     texts_path = os.path.join(out_dir, "texts.jsonl")
     store = _load_store(texts_path)
     brands = _load_brands(texts_path, tenant)
+    fixed = _load_fixed(texts_path)
     now = time.strftime("%Y-%m-%dT%H:%M:%SZ", clock())
     records: list[dict[str, Any]] = []
     usage: dict[str, dict[str, int]] = {}
@@ -782,7 +811,7 @@ def run(shop: str, model: "Model | Chain | None", shops_root: str = SHOPS_ROOT, 
         use = model
         if (wanted and p["key"] not in wanted) or (limit is not None and asked >= limit):
             use = None                                   # resolved from what is kept, not sent
-        outcome = translate_product(p, dicts, store, tenant, use, now, brands)
+        outcome = translate_product(p, dicts, store, tenant, use, now, brands, reask and use is not None, fixed)
         if outcome.calls:
             asked += 1
         records.append(outcome.record)
@@ -841,6 +870,9 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--offline", action="store_true", help="no model: stores, dictionaries and rules only")
     p.add_argument("--only", help="send only this product to the model (its key, Naver product id, handle or link)")
     p.add_argument("--limit", type=int, help="send at most N products to the model")
+    p.add_argument("--reask", action="store_true",
+                   help="ask the named products' own titles and placeholder option names again with today's notes "
+                        "(the old English kept until a checked answer; hand corrections never)")
     add_ref_flags(p)
     args = p.parse_args(argv)
     only: list[str] | None = None
@@ -850,7 +882,8 @@ def main(argv: list[str] | None = None) -> int:
     def body() -> int:
         try:
             model = None if args.offline else build_chain(keys_from_env())
-            print("\n".join(run(args.shop, model, args.shops_root, only=only, limit=args.limit)["report"]))
+            print("\n".join(run(args.shop, model, args.shops_root, only=only, limit=args.limit,
+                                      reask=args.reask)["report"]))
         except TranslateError as e:
             print(f"translate: {e}", file=sys.stderr)
             return 2

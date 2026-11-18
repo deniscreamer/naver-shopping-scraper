@@ -1163,3 +1163,38 @@ def test_a_title_translated_under_another_brand_is_asked_again(tmp_path):
     path.write_text(json.dumps({**row}) + "\n" + json.dumps({"key": p["key"], "id": title, "kind": "title",
                                                              "en": "Bermuda Wedge Set", "by": "review"}) + "\n")
     assert T._load_brands(str(path)) == {}                                              # the hand row wins
+
+
+def test_reask_asks_a_kept_title_again_with_todays_notes(tmp_path):
+    """--reask (2026-11-17, W10): 12628336532's 'PowerBilt X-Grind 5-Piece …' was asked before title_lofts_not_sold
+    existed; asked again it gets the note's context, the old English kept until a checked answer comes."""
+    note = {"code": "title_lofts_not_sold", "detail": "48 52 56 60 64 (sold: 48/52/56, 52/56/60, 56/60/64)"}
+    p = small(title="파워빌트 X-Grind 웨지세트 48도 52도 56도 60도 64도", brand="PGM", notes=[note])
+    title = next(t["id"] for t in p["texts"] if t["kind"] == "title")
+    store = {(p["key"], title): "PowerBilt X-Grind 5-Piece Wedge Set 48° 52° 56° 60° 64°"}
+    assert not [i for i in T.plan(p, dicts(tmp_path), store, TENANT)[2] if i["id"] == title]    # kept as before
+    en, _, pending = T.plan(p, dicts(tmp_path), store, TENANT, None, True)
+    item = next(i for i in pending if i["id"] == title)
+    assert en[title] == store[(p["key"], title)] and "not one set sold" in item["context"]
+    assert not [i for i in T.plan(p, dicts(tmp_path), store, TENANT, None, True, {(p["key"], title)})[2]
+                if i["id"] == title]                                                        # a hand correction
+
+
+def test_reask_keeps_a_placeholder_names_english_until_an_answer(tmp_path):
+    o = {"name_ko": "Color", "values_ko": ["52 56 60 Degree Set Tarnish", "56 60 Degree Tarnish"]}
+    p = small(options=[o], notes=[{"code": "option_name_placeholder", "detail": "Color"}])
+    name = next(t["id"] for t in p["texts"] if t["kind"] == "option_name")
+    store = {(p["key"], name): "Color"}
+    en, _, pending = T.plan(p, dicts(tmp_path), store, TENANT, None, True)
+    assert en[name] == "Color" and [i for i in pending if i["id"] == name][0]["placeholder"]
+
+
+def test_reask_needs_named_products(tmp_path):
+    with pytest.raises(T.TranslateError):
+        T.run("fairwardgolf", None, str(tmp_path), reask=True)
+
+
+def test_load_fixed_follows_the_last_row(tmp_path):
+    a = {"key": "k", "id": "t", "kind": "title", "en": "A", "by": "review-2026-11-17"}
+    assert T._load_fixed(_rows(tmp_path / "a.jsonl", a)) == {("k", "t")}
+    assert T._load_fixed(_rows(tmp_path / "b.jsonl", a, {**a, "by": "claude-sonnet-5-5"})) == set()
