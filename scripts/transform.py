@@ -40,6 +40,8 @@ naver-harvester published, and its 60 published products):
     title_word_unproven (a seller's word on every title its page never backs: 단조 of 102454334; spec_variants),
     axes_repeated / slot_rows_merged (rows left out: an echoed axis, a picker's repeats and orders; 2026-11-17),
     hand_from_description (Amazon's "Hand Orientation: Left": spec row 사용방향 왼손용),
+    specs_by_owner / specs_by_owner_unused (run-level, run_transform.apply_specs_by_owner: the owner's row of one
+    product from <shop>/specs_by_owner.json, 2026-11-18),
     photos_incomplete, reviews_none_chosen, reviews_cleaned (review_clean.py: kept, by grade, trimmed), measures_from_images / description_images_missing / _stale / _failed / _partial (the category's
     description_images switch: the package fields the description states or its parts compose, in place of the
     category default; description_measures.py).

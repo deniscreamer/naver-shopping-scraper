@@ -1,0 +1,723 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:101435422:12497168529",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "measures_from_images",
+   "detail": "package_height_mm 2/2, package_length_mm 2/2, package_weight_g 2/2, package_width_mm 2/2, product_weight_g 2/2"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "UNIT_QUANTITY_PAID 99800 KRW"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "EXCLUDED"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/irugi/products/12497168529",
+  "channel_no": "101435422",
+  "product_id": "12497168529",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "브리지스톤 여성 풀세트 BG-100L 골프채 8개",
+  "brand_ko": "브리지스톤",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "conflict",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "title",
+      "value": "womens",
+      "text": "브리지스톤 여성 풀세트 BG-100L 골프채 8개"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "칼라",
+    "values_ko": [
+     "핑크",
+     "네이비"
+    ]
+   }
+  ],
+  "facts": [
+   {
+    "label_ko": "필독",
+    "value_ko": "세금미포함"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "observed:[\"세금미포함\",\"핑크\"]",
+    "naver_variant_id": "52435877055",
+    "options_ko": [
+     "핑크"
+    ],
+    "price_krw": 510000,
+    "price_usd": "510.00",
+    "sku": "FW-970429a9b259544ad43598b5",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "value": {
+       "min": 2803,
+       "max": 2803
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "clubs, no bag",
+      "parts": [
+       {
+        "part": "clubs",
+        "value": 2803,
+        "from": "4 club weights + reference club weight x 4",
+        "quote": "무게(g) / 273 / 290 / 328 / 346 (#7) / 528",
+        "count_from": "listing"
+       },
+       {
+        "part": "bag",
+        "value": 0,
+        "from": "not in the set",
+        "said_by": "listing"
+       }
+      ],
+      "compared": {
+       "value": 5700,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 4803,
+       "max": 4803
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "product weight + carton",
+      "parts": [
+       {
+        "part": "product",
+        "value": 2803,
+        "from": "product_weight_g"
+       },
+       {
+        "part": "carton",
+        "value": 2000,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 7000,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 1205,
+       "max": 1205
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1105,
+        "from": "stated",
+        "quote": "길이(인치) / 43.5 / 41 / 37 / 35.5 / 35 / 34.5 / 34 / 33"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 200,
+       "max": 200
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "box side, no bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 200,
+        "from": "baseline",
+        "said_by": "listing"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 160,
+       "max": 160
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "box side, no bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 160,
+        "from": "baseline",
+        "said_by": "listing"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 230,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"세금미포함\",\"네이비\"]",
+    "naver_variant_id": "52435877057",
+    "options_ko": [
+     "네이비"
+    ],
+    "price_krw": 510000,
+    "price_usd": "510.00",
+    "sku": "FW-8e3080cf0b04c4ba29f721a9",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "value": {
+       "min": 2803,
+       "max": 2803
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "clubs, no bag",
+      "parts": [
+       {
+        "part": "clubs",
+        "value": 2803,
+        "from": "4 club weights + reference club weight x 4",
+        "quote": "무게(g) / 273 / 290 / 328 / 346 (#7) / 528",
+        "count_from": "listing"
+       },
+       {
+        "part": "bag",
+        "value": 0,
+        "from": "not in the set",
+        "said_by": "listing"
+       }
+      ],
+      "compared": {
+       "value": 5700,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 4803,
+       "max": 4803
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "product weight + carton",
+      "parts": [
+       {
+        "part": "product",
+        "value": 2803,
+        "from": "product_weight_g"
+       },
+       {
+        "part": "carton",
+        "value": 2000,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 7000,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 1205,
+       "max": 1205
+      },
+      "source": "composed",
+      "confidence": 3,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1105,
+        "from": "stated",
+        "quote": "길이(인치) / 43.5 / 41 / 37 / 35.5 / 35 / 34.5 / 34 / 33"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 200,
+       "max": 200
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "box side, no bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 200,
+        "from": "baseline",
+        "said_by": "listing"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 160,
+       "max": 160
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "box side, no bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 160,
+        "from": "baseline",
+        "said_by": "listing"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 230,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 510000,
+   "original_krw": 510000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "브리지스톤"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "브리지스톤"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "기타"
+   },
+   {
+    "label_ko": "아이언 구성",
+    "value_ko": "#7, #9, 피칭웨지(PW), 샌드웨지(SW)"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "풀세트"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   },
+   {
+    "label_ko": "총클럽개수",
+    "value_ko": "8개"
+   },
+   {
+    "label_ko": "풀세트구성",
+    "value_ko": "퍼터, 드라이버, 4아이언세트, 유틸리티, 페어웨이"
+   },
+   {
+    "label_ko": "아이언샤프트소재",
+    "value_ko": "스틸"
+   },
+   {
+    "label_ko": "아이언개수",
+    "value_ko": "4개"
+   },
+   {
+    "label_ko": "퍼터형태",
+    "value_ko": "말렛(반달형)"
+   },
+   {
+    "label_ko": "골프백포함여부",
+    "value_ko": "미포함"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/12497168529/fairwardgolf-12497168529-001-c2432cd251fe1274.webp",
+    "sha256": "c2432cd251fe1274337b0a17c87aca68527dd4dd2df43ae8dc31de2457b31299",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/12497168529/fairwardgolf-12497168529-002-082385275a023d92.webp",
+    "sha256": "082385275a023d92901af0558b8bbb29c44162eb96479b4429f8bd680ac2485d",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/12497168529/fairwardgolf-12497168529-003-7d6ec70ee6e96731.webp",
+    "sha256": "7d6ec70ee6e96731dcff37b0c5f486d4bbef0dfe2c4a92c31c9cd614a460bff7",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/12497168529/fairwardgolf-12497168529-004-8360645d4ec45af8.webp",
+    "sha256": "8360645d4ec45af8c3bc0abfafa7fa680e8019431c05c4bf84171eba59b44bf4",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/12497168529/fairwardgolf-12497168529-005-eb636d82e8844682.webp",
+    "sha256": "eb636d82e88446824bfd4a434fb6ee77c669b60ad1c5f072a407f80b67d56e95",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/12497168529/fairwardgolf-12497168529-006-e5967890480e028e.webp",
+    "sha256": "e5967890480e028edf431cd2a47e3ad60e2d37dab4d13550e2bc73579f676f13",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/12497168529/fairwardgolf-12497168529-007-f3c6df4ada0bf4a6.webp",
+    "sha256": "f3c6df4ada0bf4a60f313feaabe534474cae1760a7a88cb5caacfd6561d732fc",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/12497168529/fairwardgolf-12497168529-008-4d23a445e64f9da4.webp",
+    "sha256": "4d23a445e64f9da451fb098ecb0d8ce57c592c5e1a80241bb60aa82119bfb481",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/12497168529/fairwardgolf-12497168529-009-28d35c90d9f49bb0.webp",
+    "sha256": "28d35c90d9f49bb0c81ae3eff5958e1389312dbeb61248688eae80d21d0dc86c",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/12497168529/fairwardgolf-12497168529-010-453bc2afd449f874.webp",
+    "sha256": "453bc2afd449f87496bd06b472b08f37c828c63dde2400f7bae4d873416a9716",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "UNIT_QUANTITY_PAID",
+   "base_fee": 99800,
+   "is_overseas": true,
+   "customs_tax_type": "EXCLUDED",
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "policy_text": "1개마다 부과 / 제주,도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 7.5,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "스펙\n헤드 소재 | [1W] 페이스:6Al-4V 티타늄 합금, 솔: 순수 티타늄, 크라운: 341 티타늄 합금; 호젤 : 3Al-2V 티타늄합금; [FW,UT] 바디: SUS630 스테인리스, 크라운: SUS430 스테인리스; [아이언] SUS630 스테인리스; [퍼터] SUS431 스테인레스\n번수 | 1W | 5W | U6 | 7I | 9I | PW | SW | 퍼터\n로프트각/반스각(°) | 13.5 | 21 | 29 | 32 | 40 | 45 | 56/14 | 3\n라이각(°) | 60 | 60.5 | 61 | 62 | 63 | 64 | 71\n페이스프로그래션(mm) | - | - | - | 1.5 | 2 | 2.25 | 2.75 | -\n헤드부피(cm3) | 440 | 1508 | 100 | - | - | - | - | -\n길이(인치) | 43.5 | 41 | 37 | 35.5 | 35 | 34.5 | 34 | 33\n무게(g) | 273 | 290 | 328 | 346（#7) | 528\n밸런스 | C0 | B9 | C0 | C1 | -\n그립 | 브리지스톤 골프 오리지널 러버 그립 (백 라인 없음/그레이); 드라이버, FW, UT, IRON용 : GCB2D (구경60/34.5g); 브리지스톤 골프 오리지널 러버 퍼터 그립 (그레이) GCB2T (구경 58/69g)\n부속품 | 헤드 커버\n축 이름 | BG-100Lw | BG-100Li\n플렉스 | L | L\n무게(g) | 44 | 47\n토크 | 6.7 | 5.4\n가락 | 중\n발매일 : 2022년\n원산지 : 기타(IRUGI SHOJI)",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20251003_262/1759473143165y9ba2_JPEG/p-12440658335-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20251003_237/1759473143166Apd4M_JPEG/p-12440658335-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20251003_170/1759473143168NBV1o_JPEG/p-12440658335-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20251003_268/1759473143166yyA7t_JPEG/p-12440658335-s-1-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20251003_112/1759473143162E6OKk_JPEG/p-12440658335-s-1-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20251003_132/1759473143163dKSEw_JPEG/p-12440658335-s-1-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20251003_89/1759473143171w9NuN_JPEG/p-12440658335-s-1-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20251003_66/1759473143164n58JW_JPEG/p-12440658335-s-1-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20251003_176/1759473143170kAH6g_JPEG/p-12440658335-s-1-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20251003_131/1759473143166d3Tc1_JPEG/p-12440658335-s-1-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20251003_235/1759473143270UNgwb_JPEG/p-12440658335-s-1-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20251003_54/1759473143260d0vP4_JPEG/p-12440658335-s-1-A-11.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:f693f4c17aaa8403",
+   "kind": "title",
+   "ko": "브리지스톤 여성 풀세트 BG-100L 골프채 8개"
+  },
+  {
+   "id": "brand:0c694ec4f85b0c79",
+   "kind": "brand",
+   "ko": "브리지스톤"
+  },
+  {
+   "id": "option_name:d26b0e826cc3a8c9",
+   "kind": "option_name",
+   "ko": "칼라"
+  },
+  {
+   "id": "option_value:5c94888b2e8d96b6",
+   "kind": "option_value",
+   "ko": "핑크"
+  },
+  {
+   "id": "option_value:efa51b9f23b93146",
+   "kind": "option_value",
+   "ko": "네이비"
+  },
+  {
+   "id": "fact_label:598ebdd9b636ba81",
+   "kind": "fact_label",
+   "ko": "필독"
+  },
+  {
+   "id": "fact_value:6bf19df99c192abe",
+   "kind": "fact_value",
+   "ko": "세금미포함"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:0c694ec4f85b0c79",
+   "kind": "spec_value",
+   "ko": "브리지스톤"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2991f61ced07a61e",
+   "kind": "spec_value",
+   "ko": "기타"
+  },
+  {
+   "id": "spec_label:27a9b13cf3b83049",
+   "kind": "spec_label",
+   "ko": "아이언 구성"
+  },
+  {
+   "id": "spec_value:1803ec2200182f6b",
+   "kind": "spec_value",
+   "ko": "#7, #9, 피칭웨지(PW), 샌드웨지(SW)"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:a633376d7e319617",
+   "kind": "spec_value",
+   "ko": "풀세트"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "spec_label:218ed002882e4623",
+   "kind": "spec_label",
+   "ko": "총클럽개수"
+  },
+  {
+   "id": "spec_value:77e34e31f3da3e43",
+   "kind": "spec_value",
+   "ko": "8개"
+  },
+  {
+   "id": "spec_label:ed8bec519f97c9d9",
+   "kind": "spec_label",
+   "ko": "풀세트구성"
+  },
+  {
+   "id": "spec_value:7fa09e460dc51e53",
+   "kind": "spec_value",
+   "ko": "퍼터, 드라이버, 4아이언세트, 유틸리티, 페어웨이"
+  },
+  {
+   "id": "spec_label:5a12089f44ae3f65",
+   "kind": "spec_label",
+   "ko": "아이언샤프트소재"
+  },
+  {
+   "id": "spec_value:76d45c1471b5954b",
+   "kind": "spec_value",
+   "ko": "스틸"
+  },
+  {
+   "id": "spec_label:cf77915a2f3ab5d8",
+   "kind": "spec_label",
+   "ko": "아이언개수"
+  },
+  {
+   "id": "spec_value:c0750b12402c91dc",
+   "kind": "spec_value",
+   "ko": "4개"
+  },
+  {
+   "id": "spec_label:04c52e5b47f70047",
+   "kind": "spec_label",
+   "ko": "퍼터형태"
+  },
+  {
+   "id": "spec_value:92917baf006633bb",
+   "kind": "spec_value",
+   "ko": "말렛(반달형)"
+  },
+  {
+   "id": "spec_label:e4aabb2e41b870bd",
+   "kind": "spec_label",
+   "ko": "골프백포함여부"
+  },
+  {
+   "id": "spec_value:96f0fed466f17e8e",
+   "kind": "spec_value",
+   "ko": "미포함"
+  }
+ ]
+}

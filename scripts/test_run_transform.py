@@ -308,12 +308,18 @@ def test_the_steps_across_products_never_come_from_the_cache(tmp_path):
     key = by_id["13058280430"]["key"]
     with open(os.path.join(shops, "fairwardgolf", "brand_by_owner.json"), "w", encoding="utf-8") as f:
         json.dump({"entries": {key: {"brand": "Alvo Golf", "why": "photo", "at": "2026-11-16"}}}, f)
+    owner_key = by_id["12950788305"]["key"]                             # 50002788, 성별 남성용 (2026-11-18)
+    with open(os.path.join(shops, "fairwardgolf", "specs_by_owner.json"), "w", encoding="utf-8") as f:
+        json.dump({"entries": {owner_key: {"rows": {"성별": "여성용"}, "why": "test", "at": "2026-11-18"}}}, f)
     got, count = _cached_vs_full(shops)
     assert count == {"hit": len(ls), "miss": 0}
     by_id = {p["key"].split(":")[3]: p for p in got["prepared"]}
     assert by_id["13785630702"]["product"]["description_images_text"]["state"] == "translated"
     assert (by_id["13058280430"]["product"]["brand_ko"], by_id["13058280430"]["product"]["brand_source"]) == (
         "Alvo Golf", "owner")
+    owned = by_id["12950788305"]["product"]                             # the owner's row, through the cache
+    assert {"label_ko": "성별", "value_ko": "여성용"} in owned["specs"] and owned["attributes"]["gender"]["value"] == "womens"
+    assert "  specs_by_owner: 1 entries, 1 applied, 0 unused, 0 keys not prepared" in got["report"]
 
 
 def test_a_broken_record_is_a_miss_and_is_written_again(tmp_path):
@@ -362,3 +368,127 @@ def test_verify_finds_a_record_that_differs_from_a_fresh_prepare(tmp_path):
     assert run_transform.verify("fairwardgolf", None, shops, {})[0] == 1   # verify wrote nothing
     assert {n for n in os.listdir(folder)} == set(before)
     assert run_transform._first_diff({"a": 1, "b": 2}, {"b": 2, "a": 1}) == "(key order)"
+
+
+# ---- the owner's spec rows (specs_by_owner.json, 2026-11-18) ------------------------------------------------------
+
+def _fixture_prepared(pid):
+    """A collected fixture through prepare with its description images sidecar, as run() does."""
+    from transform import prepare
+    with open(os.path.join(FX, pid + ".json"), encoding="utf-8") as f:
+        line = json.load(f)
+    side = os.path.join(SIDECARS, pid + ".json")
+    images = json.load(open(side, encoding="utf-8")) if os.path.isfile(side) else None
+    return line, prepare(line, run_transform.rules_for("fairwardgolf"), "fixtures", 1, images)
+
+
+def test_the_owner_corrects_a_spec_row(tmp_path):
+    """2026-11-18: a string replaces the row's value (order and for_ko kept), None drops it, a row is never added;
+    a label the product does not show, or a value equal to the row's, changes nothing (the latter adds no note)."""
+    import copy
+    from transform import _texts, text_id
+    shop = tmp_path / "fairwardgolf"
+    shop.mkdir()
+    assert run_transform.specs_by_owner("fairwardgolf", str(tmp_path)) == {}
+    (shop / "specs_by_owner.json").write_text(json.dumps({"entries": {
+        "k1": {"rows": {"성별": "여성용", "없는라벨": "x"}, "why": "photo", "at": "2026-11-18"},
+        "k2": {"rows": {"성별": None}, "why": "photo"}, "k3": {"rows": {"성별": "남성용"}}, "k4": {"why": "no rows"},
+        "k9": {"rows": {"성별": "여성용"}}}}, ensure_ascii=False), encoding="utf-8")
+    owner = run_transform.specs_by_owner("fairwardgolf", str(tmp_path))
+    assert owner == {"k1": {"성별": "여성용", "없는라벨": "x"}, "k2": {"성별": None}, "k3": {"성별": "남성용"},
+                     "k9": {"성별": "여성용"}}
+
+    def product(key):
+        p = {"title_ko": "웨지 세트", "brand_ko": None, "options": [], "facts": [], "personalization": [], "addons": [],
+             "reviews": [], "variants": [], "attributes": {},
+             "specs": [{"label_ko": "제조사", "value_ko": "A"}, {"label_ko": "성별", "value_ko": "남성용", "for_ko": ["A"]},
+                       {"label_ko": "사용방향", "value_ko": "오른손용"}]}
+        return {"key": key, "notes": [], "texts": _texts(p), "product": p}
+
+    prepared = [product("k1"), product("k2"), product("k3"), product("k5")]
+    untouched = copy.deepcopy(prepared[2:])
+    lines = {k: {"specs": {"specs": [{"label": "성별", "value": "남성용"}]}, "details": {"name": "웨지 세트"},
+                 "listing": {"query": "골프 웨지 세트"}} for k in ("k1", "k2", "k3", "k5")}
+    counts = run_transform.apply_specs_by_owner(prepared, owner, lines)
+    assert counts == {"entries": 4, "applied": 2, "unused": 1, "not_prepared": 1}
+    p1, p2 = prepared[0], prepared[1]
+    assert p1["product"]["specs"] == [{"label_ko": "제조사", "value_ko": "A"},
+                                      {"label_ko": "성별", "value_ko": "여성용", "for_ko": ["A"]},
+                                      {"label_ko": "사용방향", "value_ko": "오른손용"}]
+    assert p1["notes"] == [{"code": "specs_by_owner", "detail": "성별: 남성용 -> 여성용"},
+                           {"code": "specs_by_owner_unused", "detail": "없는라벨"}]
+    ids = {t["id"] for t in p1["texts"]}
+    assert text_id("spec_value", "여성용") in ids and text_id("spec_value", "남성용") not in ids
+    assert p1["product"]["attributes"]["gender"]["value"] == "womens"
+    assert p1["product"]["attributes"]["gender"]["evidence"][0] == {"source": "owner:성별", "value": "womens",
+                                                                    "text": "여성용"}
+    assert [r["label_ko"] for r in p2["product"]["specs"]] == ["제조사", "사용방향"]
+    assert p2["notes"] == [{"code": "specs_by_owner", "detail": "성별: 남성용 -> dropped"}]
+    assert "gender" not in p2["product"]["attributes"]          # the row was the only word: unknown, not stated
+    assert prepared[2:] == untouched                            # the same value (no-op, no note); no entry
+
+
+def test_the_owners_spec_row_on_the_ponytail_template():
+    """2026-11-18, the wedge review: golfup's ZESTAIM Ponytail listings all carry the template row 성별 남성용; LABOUM
+    12748958315 is a women's build by its photos (L-flex 40 g LABOUM shaft, pink ferrules) and its title row already
+    says Women's, while the describe packet said "Gender: Men's". The owner's entry corrects that product only:
+    12748958200 (same seller, same template, no entry) stays as the seller wrote it; placement is unchanged
+    (50002783 is not split by gender)."""
+    import copy
+    import placement as PL
+    from transform import text_id
+    from placement_rules import profile_for
+    line315, p315 = _fixture_prepared("12748958315")
+    line200, p200 = _fixture_prepared("12748958200")
+    for p in (p315, p200):
+        assert {"label_ko": "성별", "value_ko": "남성용"} in p["product"]["specs"]
+        assert p["product"]["attributes"]["gender"]["value"] == "mens"
+    lines = {p315["key"]: line315, p200["key"]: line200}
+    before315, before200 = copy.deepcopy(p315), copy.deepcopy(p200)
+    prepared = [p315, p200]
+    run_transform.apply_specs_by_owner(prepared, {p315["key"]: {"성별": "여성용"}}, lines)
+    assert {"label_ko": "성별", "value_ko": "여성용"} in p315["product"]["specs"]
+    assert [r["label_ko"] for r in p315["product"]["specs"]] == [r["label_ko"] for r in before315["product"]["specs"]]
+    gender = p315["product"]["attributes"]["gender"]
+    assert gender["value"] == "womens"
+    assert {"source": "owner:성별", "value": "womens", "text": "여성용"} in gender["evidence"]
+    assert {"source": "listing", "value": "-", "text": "골프 웨지 세트"} in gender["evidence"]
+    gone, new = ({t["id"] for t in a["texts"]} - {t["id"] for t in b["texts"]} for a, b in
+                 ((before315, p315), (p315, before315)))
+    assert (gone, new) == ({text_id("spec_value", "남성용")}, {text_id("spec_value", "여성용")})
+    assert p315["notes"][len(before315["notes"]):] == [{"code": "specs_by_owner", "detail": "성별: 남성용 -> 여성용"}]
+    assert p200 == before200
+    profile = profile_for("fairwardgolf")
+    got = PL.place(p315, profile)
+    assert got["status"] == "placed" and [x["leaf"] for x in got["leaves"]] == ["wedge-sets"]
+    _, dropped = _fixture_prepared("12748958315")
+    run_transform.apply_specs_by_owner([dropped], {p315["key"]: {"성별": None}}, lines)
+    assert "성별" not in [r["label_ko"] for r in dropped["product"]["specs"]]
+    assert "gender" not in dropped["product"]["attributes"]
+    got = PL.place(dropped, profile)
+    assert got["status"] == "placed" and [x["leaf"] for x in got["leaves"]] == ["wedge-sets"]
+
+
+def test_the_owners_gender_row_keeps_the_listing_evidence_of_a_conflict():
+    """2026-11-18: Bridgestone 12497168529 (50002788, split by gender) writes 성별 남성용 against a 여성 title: gender
+    conflict, unresolved, no listing evidence today. Without an entry it stays so; with the owner's 여성용 the gender is
+    extracted again from the line, as prepare does, so the listing's query comes back as evidence."""
+    import copy
+    import placement as PL
+    from placement_rules import profile_for
+    line, p = _fixture_prepared("12497168529")
+    gender = p["product"]["attributes"]["gender"]
+    assert gender["value"] == "conflict" and not [e for e in gender["evidence"] if e["source"] == "listing"]
+    before = copy.deepcopy(p)
+    run_transform.apply_specs_by_owner([p], {}, {p["key"]: line})
+    assert p == before
+    profile = profile_for("fairwardgolf")
+    assert PL.place(p, profile)["status"] == "unresolved"
+    run_transform.apply_specs_by_owner([p], {p["key"]: {"성별": "여성용"}}, {p["key"]: line})
+    gender = p["product"]["attributes"]["gender"]
+    assert gender["value"] == "womens" and gender["flags"] == []
+    assert gender["evidence"] == [{"source": "owner:성별", "value": "womens", "text": "여성용"},
+                                  {"source": "title", "value": "womens", "text": line["details"]["name"][:80]},
+                                  {"source": "listing", "value": "womens", "text": "여성 골프채 풀세트"}]
+    got = PL.place(p, profile)
+    assert got["status"] == "placed" and [x["leaf"] for x in got["leaves"]] == ["womens-complete-sets"]

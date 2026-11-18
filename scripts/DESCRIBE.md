@@ -31,7 +31,9 @@ the answer needs the sources compared and the clubs added up ("Which model" belo
 
 - **Before** (`packet`): what is sold goes first (the facts and the options of the variants we publish, the free
   required choices), then the English the shop already shows (title, brand, spec rows, option values: the
-  description names the product as its title does), then the seller's typed text and the OCR blocks of the
+  description names the product as its title does; the spec rows are the prepared ones, the seller's after the
+  owner's corrections in `<shop>/specs_by_owner.json`, so run `translate.py <shop> --offline` before; a template row
+  the owner has not corrected reaches the description: 12748958200 / 12748958492 say men's, 2026-11-18), then the seller's typed text and the OCR blocks of the
   description images in Korean, and, in a section of their own, the tables read from those images (digits are
   lost in them, so a figure only a table gives is not stated; but the seller lists the set's clubs there, and the
   Naver spec rows are often wrong about them; one or two rows of mostly Korean words are text in columns, e.g.

@@ -4,7 +4,9 @@ A product in several runs is taken from the newest run. After the per-product pr
 products: store-wide description banners (the same image opening or closing most listings of one store) move to
 description_dropped (shared_images.py); the images' Korean text is written for translation (image_texts); a product
 with no brand stated gets one from the shop's own brands in its title, 원산지's importer, the images' text, or
-노브랜드 (brand_fallback.py). The shop's sections are not here: placement.py reads prepared/ afterwards. The output is rebuilt each time from the kept runs and the
+노브랜드 (brand_fallback.py); the owner's spec rows of one product replace or drop a row the photo contradicts
+(<shop>/specs_by_owner.json: apply_specs_by_owner, notes specs_by_owner / specs_by_owner_unused). The shop's
+sections are not here: placement.py reads prepared/ afterwards. The output is rebuilt each time from the kept runs and the
 rules (same input + same rules = the same bytes: sorted by key, no time inside):
 
     prepared/products.jsonl   one prepared product per line (transform.Prepared, ready or held)
@@ -20,8 +22,8 @@ reused while the signature holds: the code (the bytes of every non-test scripts/
 rules and the measures table as loaded, the shop, the run id and line number, the bytes of the collected line and of
 the images' sidecar, and the rules variant of the product's paid choice. prepare() and image_read() read no other
 file (test_prepared_golden pins it). Never from the cache: the choice of the newest line, paid_choices, the
-store-wide banners, the .ko files and the flag (shared blocks, en.json), the brand fallback, the agency hold, the
-report.
+store-wide banners, the .ko files and the flag (shared blocks, en.json), the brand fallback, the owner's spec rows,
+the agency hold, the report.
 
     .venv/bin/python scripts/run_transform.py fairwardgolf            # every kept run (through the cache)
     .venv/bin/python scripts/run_transform.py fairwardgolf 50002788-20261105T193000Z
@@ -46,6 +48,7 @@ import sys
 from collections import Counter
 from typing import Any
 
+import attributes
 import description_image_text as image_text
 from description_images import current, load_sidecar
 from keep_run import SHOPS_ROOT, kept_run_ids
@@ -362,6 +365,81 @@ def brand_by_owner(shop: str, shops_root: str = SHOPS_ROOT) -> dict[str, str]:
         return {k: v["brand"] for k, v in json.load(f).get("entries", {}).items() if v.get("brand")}
 
 
+def specs_by_owner(shop: str, shops_root: str = SHOPS_ROOT) -> dict[str, dict[str, str | None]]:
+    """{key: {label_ko: value_ko | None}} the owner set by hand where only the photo contradicts a spec row
+    (<shop>/specs_by_owner.json: {"entries": {key: {"rows": {label_ko: value_ko | null}, "why": ..., "at": ...}}};
+    none when the file is absent; an entry without rows is skipped). 2026-11-18, LABOUM 12748958315: the golfup
+    ZESTAIM Ponytail template's 성별 남성용 on a women's build (L-flex 40 g LABOUM shaft, pink ferrules)."""
+    path = os.path.join(shops_root, shop, "specs_by_owner.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return {k: dict(v["rows"]) for k, v in json.load(f).get("entries", {}).items() if v.get("rows")}
+
+
+def apply_specs_by_owner(prepared: list[Any], by_owner: dict[str, dict[str, str | None]],
+                         lines: dict[str, dict]) -> dict[str, int]:
+    """The owner's spec rows (specs_by_owner) on the prepared products, run-level after the brand fallback (never in
+    the prepare cache). Per row the product shows (product.specs, after check_specs and the title-model rows): a
+    string replaces value_ko (order and for_ko kept), None drops the row; a row is never added. Notes specs_by_owner
+    "<label>: <old> -> <new | dropped>" and specs_by_owner_unused "<label>" (a label the product does not show); a
+    value equal to the row's changes nothing and adds no note. Then the texts are rebuilt and, when a changed label
+    is one an attribute reads (attributes.GENDER: 성별), product.attributes is extracted again exactly as prepare
+    does (the line's raw rows with the owner's values, its title and listing query: the listing evidence kept),
+    the changed row's evidence named "owner:<label>". `lines`: {key: the collected line} (the run's latest).
+    Returns {entries, applied, unused, not_prepared}."""
+    counts = {"entries": len(by_owner), "applied": 0, "unused": 0, "not_prepared": 0}
+    by_key = {p["key"]: p for p in prepared}
+    counts["not_prepared"] = sum(1 for k in by_owner if k not in by_key or not by_key[k].get("product"))
+    attr_rows = {label for a in attributes.ATTRIBUTES.values() for label in a.rows}
+    for key, rows in by_owner.items():
+        p = by_key.get(key)
+        if not p or not p.get("product"):
+            continue
+        specs = p["product"].get("specs") or []
+        shown = {r.get("label_ko") for r in specs}
+        changed: dict[str, str | None] = {}
+        kept = []
+        for r in specs:
+            label = r.get("label_ko")
+            if label not in rows or rows[label] == r.get("value_ko"):
+                kept.append(r)
+                continue
+            new = rows[label]
+            changed[label] = new
+            p["notes"].append({"code": "specs_by_owner",
+                               "detail": f"{label}: {r.get('value_ko')} -> {new if new is not None else 'dropped'}"})
+            if new is not None:
+                kept.append({**r, "value_ko": new})
+        for label in rows:
+            if label not in shown:
+                p["notes"].append({"code": "specs_by_owner_unused", "detail": label})
+                counts["unused"] += 1
+        if not changed:
+            continue
+        counts["applied"] += 1
+        p["product"]["specs"] = kept
+        p["texts"] = _texts(p["product"])
+        if set(changed) & attr_rows:
+            line = lines.get(key) or {}
+            raw = []
+            for r in ((line.get("specs") or {}).get("specs") or []):
+                if r.get("label") in changed:
+                    if changed[r["label"]] is None:
+                        continue
+                    r = {**r, "value": changed[r["label"]]}
+                raw.append(r)
+            stated = attributes.extract(
+                [(v["sku"], list(v.get("options_ko") or [])) for v in p["product"].get("variants") or []],
+                raw, (line.get("details") or {}).get("name"), (line.get("listing") or {}).get("query"))
+            for got in stated.values():
+                for e in got["evidence"]:
+                    if e["source"].startswith("row:") and e["source"][4:] in changed:
+                        e["source"] = "owner:" + e["source"][4:]
+            p["product"]["attributes"] = stated
+    return counts
+
+
 def _known_brands(shops_root: str) -> list[str]:
     """The Korean names of the brand dictionary and its Latin spellings (brand_fallback steps 3b, 3c); none for another
     shops root (a test's)."""
@@ -421,7 +499,9 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
         brand_by_owner(shop, shops_root),
         {k: _release_row(line[2]) for k, line in latest.items()},
         {k: _store_names(line[2]) for k, line in latest.items()})
-    for p in prepared:                                                  # after the brand: needs the fallback's answer
+    owner_specs = apply_specs_by_owner(                                 # run-level: the owner's word, never cached
+        prepared, specs_by_owner(shop, shops_root), {k: line[2] for k, line in latest.items()})
+    for p in prepared:                                                 # after the brand: needs the fallback's answer
         cat = rules.categories.get(str(p["source"].get("category_id")))
         if cat and cat.agency_needs_brand and p["status"] == "ready" \
                 and p["product"].get("brand_source") == "none" \
@@ -445,6 +525,9 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
     if any(n for _, n in shared):
         lines.append(f"  shared store images: {sum(n for _, n in shared)} dropped from "
                      f"{sum(1 for _, n in shared if n)} products of {len({c for c, n in shared if n})} store(s)")
+    if owner_specs["entries"]:
+        lines.append(f"  specs_by_owner: {owner_specs['entries']} entries, {owner_specs['applied']} applied, "
+                     f"{owner_specs['unused']} unused, {owner_specs['not_prepared']} keys not prepared")
     states = Counter(p["product"].get("description_images_text", {}).get("state") for p in prepared)
     if set(states) - {"off"}:
         lines.append(f"  description image text: {dict(sorted(states.items()))} (translation/<product id>/)")

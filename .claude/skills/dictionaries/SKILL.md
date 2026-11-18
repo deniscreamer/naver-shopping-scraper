@@ -16,7 +16,7 @@ One Korean text -> one English per kind, read before the model is asked (`transl
 | How a brand is chosen; the owner's brand for one product | `scripts/TRANSFORM.md` "A brand for every product"; skill `fix-a-product` |
 | The vendor's spelling from the brand dictionary | `scripts/PUBLISH.md` "The payload (`shopify_payload.py`)" |
 | Why a brand's spelling was chosen, keys left out on purpose (do not add them back unasked) | `scripts/TRANSLATION.md` "2. Dictionaries", "Brand spellings chosen in the wedge-set review" |
-| The disk state backup (live dictionaries, `brand_by_owner.json`) | `scripts/OPERATIONS.md` "Backup (`state_backup.py`, the owner 2026-11-16)" |
+| The disk state backup (live dictionaries, `brand_by_owner.json`, `specs_by_owner.json`) | `scripts/OPERATIONS.md` "Backup (`state_backup.py`, the owner 2026-11-16)" |
 
 Where: live `scripts/output/dictionaries/brand.json` and `<category id>/<kind>.json` (out of git, grown by runs);
 backup `scripts/dictionaries/` (same layout, in git, stamped `backed_up`). Kinds: `brand` (the shop's) and per
@@ -53,6 +53,9 @@ category `option_name`, `option_value`, `spec_label`, `spec_value`, `fact_label`
 **`$S/brand_by_owner.json`**: `{entries: {<key>: {brand, why, at}}}`, one product whose brand only its photo shows
 (brand source `owner`, before every other step). An entry only with the owner's brand; then `run_transform.py <shop>`
 and `translate.py <shop> --only <key>` (the title asked again, one model call): skill `fix-a-product` step 2.
+Its sibling **`$S/specs_by_owner.json`** (`{entries: {<key>: {rows: {<label_ko>: <value_ko> | null}, why, at}}}`,
+2026-11-18): one product's spec row only its photos contradict; the new value is translated from the spec_value
+dictionary (`translate.py <shop> --offline`), a value missing there is one model call and a new entry to review.
 
-Needs the owner: a brand or term not on the page or maker (ask), any `brand_by_owner.json` entry, re-sending
+Needs the owner: a brand or term not on the page or maker (ask), any `brand_by_owner.json` or `specs_by_owner.json` entry, re-sending
 published products. Free: `status`, reading, `store_diff.py` without `--adopt`, new brands entering by runs.

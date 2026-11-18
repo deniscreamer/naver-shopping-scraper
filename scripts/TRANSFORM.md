@@ -70,7 +70,7 @@ writes `status: held`, no codes of its own), not placed, not published. Where to
 | `heads_only` | transform | a group of paid add-ons offers "헤드만 / head only" for free (2026-11-17, Miura's "웨지 샤프트": "◈ 헤드만 구매 ◈", the shafts paid): the price is the heads', a shaft costs extra, and the category's `paid_addons` is off, so the heads alone would be sold as the set (with `paid_addons` on: a note of the same code) | right as it is; to sell it, the owner turns `paid_addons` on for the category (`transform_shops.py`) |
 | `agency_no_brand` | transform (run-level, `run_transform.py`) | a purchase agency's import (note `purchase_agency`) with no brand after the brand fallback (`brand_source: none`) where the category's `agency_needs_brand` is on; off in fairwardgolf since 2026-11-15 | the owner's brand in `<shop>/brand_by_owner.json` (skill `fix-a-product`), then `run_transform.py` |
 | `held` | placement | the transform held it: not placed; `reason` is the transform's codes | the transform code's row |
-| `unresolved` | placement | the category is split by an attribute (gender) and the product's value is unknown or in conflict (`reason`: `<attribute> <value>`), or no variant fits a section; the profile's `unresolved` is `hold` | read `evidence` in `placements.jsonl` / `report.txt`; a wrong attribute: skill `fix-a-product`; else the owner decides ([PLACEMENT.md](PLACEMENT.md), "What an unresolved product does") |
+| `unresolved` | placement | the category is split by an attribute (gender) and the product's value is unknown or in conflict (`reason`: `<attribute> <value>`), or no variant fits a section; the profile's `unresolved` is `hold` | read `evidence` in `placements.jsonl` / `report.txt`; a wrong attribute: skill `fix-a-product` (a template 성별 row the photos contradict: `<shop>/specs_by_owner.json`, below); else the owner decides ([PLACEMENT.md](PLACEMENT.md), "What an unresolved product does") |
 | `no_profile` | placement | the product's Naver category has no placement in `placement_rules.py`; `publish.py` skips it without a word | add the category's placement: skill `new-category-or-shop` ([ONBOARDING.md](ONBOARDING.md) A3) |
 | `duplicate_of_withdrawn` | dedupe (job `--dedupe on`) | a confirmed copy of a product the owner withdrew: never taken (`not_taken duplicate_of_withdrawn:<key>`) | nothing; a copy held for the owner: [OWNER_RULES.md](OWNER_RULES.md) rule 2 |
 | `duplicate_of` | dedupe | a confirmed copy that is not strictly better (store grade, then reviews) than the one kept: not taken (`not_taken duplicate_of:<key>`) | nothing; `dedupe.py --pairs <shop> --job <id>` shows the pairs side by side |
@@ -164,6 +164,17 @@ published, SKUs and prices equal on 201 of 201 variants):
   (리뷰, 후기, 쿠폰, 적립) is dropped with its discounted rows. Over 3 axes: held; over the shop's variant cap:
   the first ones are offered (`variants_capped`, below).
 - **SKU**: the shop's prefix + 24 hex of sha256({schemaVersion, sourceId, tenantOfferKey}) (the harvester's recipe).
+- **The owner's spec row** (run-level, `run_transform.apply_specs_by_owner`, after the brand fallback; never in the
+  prepare cache; 2026-11-18, LABOUM 12748958315): `<shop>/specs_by_owner.json` (`{entries: {key: {rows: {label_ko:
+  value_ko | null}, why, at}}}`) corrects one product's shown row where only the photos contradict it: a string
+  replaces the value (order and `for_ko` kept), null drops the row, a row is never added. Notes `specs_by_owner`
+  ("성별: 남성용 -> 여성용" / "-> dropped") and `specs_by_owner_unused` (a label the product does not show); a value
+  equal to the row's changes nothing and adds no note. The texts are rebuilt; a changed 성별 extracts
+  `attributes` again as prepare does (the listing's evidence kept, the row's evidence source `owner:성별`); null on
+  성별 in a category split by gender (50002788, 50002670) leaves the gender unknown: placement holds it `unresolved`.
+  The report adds "specs_by_owner: N entries, N applied, N unused, N keys not prepared". The rows are the
+  description's input only (`describe.py` packet; [PUBLISH.md](PUBLISH.md) "Not sent"): after `run_transform.py`,
+  `translate.py <shop> --offline` (the new value from the spec_value dictionary), then `describe.py --only <key>`.
 - **Specs shown**: all 상품정보 rows but 상품번호, 제조일자, 이벤트, 사은품, 인증정보 (purchase-agency / KC legal text)
   and pointers ("상세페이지 참조"); "(구매대행)" / "해외구매대행" and a bracketed importer ("일본(IRUGI SHOJI)") are
   taken out of 원산지 (brackets inside brackets too: "중국산((주)위스트OEM)" -> "중국산"). Option names and values are
@@ -431,7 +442,8 @@ link. The report says how many were dropped. The step is pure: same products in,
   with no brand is no longer held: `agency_needs_brand` off, the owner). These add the note `brand_fallback`
   (source, other candidates). No brand list is kept by hand; one product whose brand only its photo shows gets the
   owner's word in `<shop>/brand_by_owner.json` (`{entries: {key: {brand, why, at}}}`, source `owner`, before every
-  step: ALVO and XINGGM stamped on the heads, 2026-11-15).
+  step: ALVO and XINGGM stamped on the heads, 2026-11-15); its sibling for a spec row only the photo contradicts is
+  `<shop>/specs_by_owner.json` (12748958315, 2026-11-18; "The owner's spec row" above).
   A brand row the maker's own name extends, when the title names the maker too, gives way to the maker (혼마 /
   무쯔미혼마, 7186088743, 2026-11-15; a Korean branch's name never). No firm, dropped from a 브랜드 row and never a
   shop brand: the sport (골프, 골프용품, GOLF, 스포츠: one junior row's "골프" made "Golf" the vendor of 55 products,

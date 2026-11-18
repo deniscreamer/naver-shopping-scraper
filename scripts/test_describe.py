@@ -674,3 +674,33 @@ def test_publish_sends_the_stored_description_and_a_new_one_sends_the_product_ag
     assert PB.publish_one(shop, KEY, products, files, IDS)["status"] == "published"
     assert products.sent[1][0]["descriptionHtml"] == "<p>A set.</p>"
     assert PB.publish_one(shop, KEY, products, files, IDS)["status"] == "skipped"
+
+
+def test_packet_carries_the_owners_spec_row():
+    """2026-11-18, LABOUM 12748958315: the golfup template's 성별 남성용 put "Gender: Men's" into the packet beside a
+    Women's title. After the owner's row (run_transform.apply_specs_by_owner, then translate --offline: 여성용 is in
+    the spec_value dictionary) the packet says Women's; the other rows stay in their order."""
+    import run_transform
+    from transform import prepare
+    fx = os.path.join(os.path.dirname(FIXTURES), "collected", "12748958315.json")
+    with open(fx, encoding="utf-8") as f:
+        line = json.load(f)
+    with open(os.path.join(os.path.dirname(FIXTURES), "description_images", "12748958315.json"), encoding="utf-8") as f:
+        sidecar = json.load(f)
+    p = prepare(line, run_transform.rules_for("fairwardgolf"), "fixtures", 1, sidecar)
+    english = {("spec_label", "성별"): "Gender", ("spec_value", "남성용"): "Men's", ("spec_value", "여성용"): "Women's"}
+
+    def specs_block(prepared):
+        en = {t["id"]: english.get((t["kind"], t["ko"]), t["ko"]) for t in prepared["texts"]}
+        m = D.packet(prepared, {"key": prepared["key"], "status": "translated", "en": en}, [], None,
+                     "Fairward Golf")["message"]
+        block = m.split("# Specifications (rows typed by the seller)\n", 1)[1].split("\n\n", 1)[0]
+        return block.split("\n")
+
+    before = specs_block(p)
+    assert "Gender: Men's" in before
+    run_transform.apply_specs_by_owner([p], {p["key"]: {"성별": "여성용"}}, {p["key"]: line})
+    after = specs_block(p)
+    assert "Gender: Women's" in after and "Gender: Men's" not in after
+    assert [x for x in after if not x.startswith("Gender")] == [x for x in before if not x.startswith("Gender")]
+    assert len(after) == len(before)

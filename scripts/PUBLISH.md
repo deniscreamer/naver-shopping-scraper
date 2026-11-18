@@ -175,7 +175,9 @@ The owner's rules (`shopify_payload.py`):
   2026-11-09).
 - **Not sent**: descriptionHtml for a product without a description (`describe.py`, [DESCRIBE.md](DESCRIBE.md)), HS /
   origin codes, Naver's delivery data as such (the seller's fee in Korea and the box are inside the price; the
-  box's fields are in `fairwardgolf.package`), facts, gender (placement uses it for the sections), compare-at.
+  box's fields are in `fairwardgolf.package`), facts, spec rows (`product.specs`: the description's input only,
+  `describe.py`; the owner's corrections in `<shop>/specs_by_owner.json`, 2026-11-18), gender (placement uses it
+  for the sections), compare-at.
 
 ### Metafields
 

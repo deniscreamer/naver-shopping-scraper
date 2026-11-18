@@ -69,7 +69,7 @@ cloud by hand (the script uploads nothing).
 ```
 
 Five archives, paths inside relative to the repository root: `01-state` (shops without photos, description images
-and `prepare_cache/`; jobs, journal, live dictionaries, `research/`; zstd-19), `02-photos` (`collected/<run>/images/`, zstd-3),
+and `prepare_cache/`, so with the owner's files `brand_by_owner.json` and `specs_by_owner.json`; jobs, journal, live dictionaries, `research/`; zstd-19), `02-photos` (`collected/<run>/images/`, zstd-3),
 `03-description-images-partNN` (`description_images/cache/<id>/`, parts of at most 4 GB uncompressed, a product never
 split, zstd-3), `04-server-pages` (`server/output/`, zstd-19), `05-archive` (the rest of `scripts/output/`, zstd-19).
 Text compresses 17-37x at level 19; images are compressed already, so level 3. Left out by name: `.env*`, secret-like

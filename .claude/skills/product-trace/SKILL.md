@@ -13,7 +13,8 @@ matches` or `N products match` (the candidates listed: trace each, never the fir
 
 1. **Everything at once**: `.venv/bin/python scripts/shop_view.py show <shop> <ref>`: the key, `prepared` with `held`
    and `notes`, `brand` and `brand_source`, the titles, `price_krw`, `translation`, `description`, `placement` and
-   `leaves`, `state` (none = never sent, withdrawn, draft, active), `store_status`, `reason` (`replaced_by:<key>`,
+   `leaves` (an odd spec row or gender: a note `specs_by_owner` is the owner's row from
+   `scripts/output/shops/<shop>/specs_by_owner.json`), `state` (none = never sent, withdrawn, draft, active), `store_status`, `reason` (`replaced_by:<key>`,
    `hold: ...`, the owner's why), `handle`, `admin`. No product: not in the shop's files, go to step 3.
 2. **The ledger's story**: `.venv/bin/python scripts/shop_view.py history <shop> <ref>`: every row with its event
    (created, sent, withdrawn, restored, activated), oldest first; `(never sent)` when none. A full key no file has is

@@ -57,7 +57,12 @@ EXPECTED = {
     # () = held by the transform, placement holds it with the transform's code)
     "10504295292": (), "10482586862": ("wedge-sets",), "12178280377": ("wedge-sets",),
     "13683785691": (), "13278647591": ("wedge-sets",), "11006400319": ("wedge-sets",),
+    # (2026-11-18, the owner's spec row: the golfup ZESTAIM Ponytail template's 성별 남성용 on every listing, LABOUM
+    # 12748958315 a women's build by its photos, 12748958200 left as the seller wrote it; a 성별 남성용 row against a
+    # 여성 title, unresolved without an owner entry: UNRESOLVED)
+    "12748958315": ("wedge-sets",), "12748958200": ("wedge-sets",), "12497168529": (),
 }
+UNRESOLVED = {"12497168529": "gender conflict"}           # ready, placement holds it: the reason
 SPLIT = {"13369469193": ("unisex", {M: 3, W: 3}),        # 성별 남녀공용: each section every variant
          "7583123963": ("mixed", {M: 6, W: 3}),          # variants of both genders: each section its own
          "9868413561": ("mixed", {M: 1, W: 1})}
@@ -74,6 +79,9 @@ def prepared(name):
 @pytest.mark.parametrize("name", sorted(EXPECTED))
 def test_fixture_sets_go_to_their_sections(name):
     got = PL.place(prepared(name), PROFILE)
+    if name in UNRESOLVED:
+        assert got["status"] == "unresolved" and got["leaves"] == [] and got["reason"] == UNRESOLVED[name]
+        return
     if not EXPECTED[name]:                                 # held by the transform: nothing to place
         assert got["status"] == "held" and got["leaves"] == [] and got["reason"] == prepared(name)["held"][0]["code"]
         return

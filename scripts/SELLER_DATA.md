@@ -303,6 +303,12 @@ Code: `attributes.py` (read by `placement.py`; 2026-11-08 on the 143 trial sets)
   are men's (8514409092 GVTOUR: 46 men's, 23 women's).
 - A row and a title naming opposite genders: `conflict`; nothing says it: `unknown`; both held, never guessed from a
   flex, a colour or a model.
+- A seller's template 성별 row on every listing of a line (golfup's ZESTAIM Ponytail: 남성용 on 4 listings; LABOUM
+  12748958315 a women's build by its photos, L-flex 40 g LABOUM shaft, pink ferrules, and the describe packet said
+  "Gender: Men's" beside a Women's title): no rule (the Korean title names no gender); the owner's word per product
+  in `<shop>/specs_by_owner.json` (`run_transform.apply_specs_by_owner`, [TRANSFORM.md](TRANSFORM.md) "The owner's
+  spec row"; 2026-11-18). 12748958200 and 12748958492 (same template, live descriptions say men's) wait for the
+  owner's look at their photos.
 
 ### Brand
 
