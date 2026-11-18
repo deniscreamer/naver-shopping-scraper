@@ -91,6 +91,10 @@ def build_chain(keys: dict[str, str], env: Any = os.environ) -> Chain:
     thinking on. DESCRIBE_EFFORT in .env changes the effort (low | medium | high | xhigh | max)."""
     effort = (env.get(EFFORT_ENV) or EFFORT).strip().lower()
     models: list[Model] = []
+    # the descriptions keep Claude first unless TRANSLATE_PROVIDERS says otherwise (2026-11-18: the owner moved the
+    # translation to gpt-6.1-terra first after a first-pass comparison of titles and reviews; no description was compared)
+    if not env.get(translate.PROVIDERS_ENV):
+        env = {**env, translate.PROVIDERS_ENV: "anthropic,openai"}
     for provider, name, _ in translate.settings(env):
         if provider == "anthropic" and keys.get(translate.ANTHROPIC_KEY):
             models.append(translate.AnthropicModel(keys[translate.ANTHROPIC_KEY], name, effort, thinking="adaptive"))

@@ -30,7 +30,7 @@ list): [OWNER_RULES.md](OWNER_RULES.md). A job's own publication of its new prod
 "Запусти scroll: <запрос>, категория <id>[, N | до конца][, без публикации]" means one `job.py scroll`:
 
 ```sh
-TRANSLATE_PROVIDERS=anthropic .venv/bin/python -u scripts/job.py scroll --query "<запрос>" --category <id> \
+TRANSLATE_PROVIDERS=openai,anthropic .venv/bin/python -u scripts/job.py scroll --query "<запрос>" --category <id> \
     <paid flag> --publish --describe [--count N] \
     > scripts/output/jobs/_scroll-logs/<name>-<UTC stamp>.log 2>&1
 ```

@@ -24,7 +24,7 @@ for the task, the whole doc only for an unusual stop.
 **"Запусти scroll: <запрос>, категория <id>[, N | до конца][, без публикации]"** (the owner, 2026-11-14) is one
 `job.py scroll` with the per-category defaults of JOB_AGENT.md "Shorthand and per-category defaults":
 
-- `TRANSLATE_PROVIDERS=anthropic`; 50002788: `--paid-variants`; 50002787: `--paid`; 50002670 and 50002783:
+- `TRANSLATE_PROVIDERS=openai,anthropic` (the owner, 2026-11-18: gpt-6.1-terra first, Claude the fallback); 50002788: `--paid-variants`; 50002787: `--paid`; 50002670 and 50002783:
   `--paid-variants` (their pilots' job.json); then `--publish --describe`; another category: its latest job.json.
 - N -> `--count N`; none or "до конца" -> no `--count`; "без публикации" -> no `--publish --describe`;
   `--dedupe on` is the default, no flag (the owner's yes after the W7 pilot, 2026-11-17;
@@ -38,7 +38,7 @@ Steps:
 1. Preflight: `curl -s localhost:8000/health` shows `"extension": "connected"`; `.venv/bin/python scripts/job.py
    status` shows no running job (never a second runner).
 2. Start it in the background, the log in `scripts/output/jobs/_scroll-logs/` (`mkdir -p` it):
-   `TRANSLATE_PROVIDERS=anthropic .venv/bin/python -u scripts/job.py scroll --query "<q>" --category <id> <flags>
+   `TRANSLATE_PROVIDERS=openai,anthropic .venv/bin/python -u scripts/job.py scroll --query "<q>" --category <id> <flags>
    > scripts/output/jobs/_scroll-logs/<name>-<UTC stamp>.log 2>&1` (`<name>`: a short word for the category or
    query, e.g. `wedge-sets`; the stamp `date -u +%Y%m%dT%H%M%SZ`).
 3. Watch with `.venv/bin/python scripts/job.py watch --job <id> --every 20` in the background (no hand-made polling

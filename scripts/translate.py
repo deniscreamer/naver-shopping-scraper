@@ -70,6 +70,8 @@ MODEL = "claude-sonnet-5-5"              # the defaults; .env changes them with 
 OPENAI_MODEL = "gpt-6.1-terra"
 EFFORT = "low"
 PROVIDERS_ENV = "TRANSLATE_PROVIDERS"    # the order of the chain, e.g. "anthropic,openai" or "openai"
+DEFAULT_ORDER = "openai,anthropic"       # the owner, 2026-11-18: gpt-6.1-terra first, Claude the fallback (was
+                                         # "anthropic,openai" while OpenAI had no credits)
 MODEL_ENV = {"anthropic": "ANTHROPIC_TRANSLATE_MODEL", "openai": "OPENAI_TRANSLATE_MODEL"}
 EFFORT_ENV = {"anthropic": "ANTHROPIC_TRANSLATE_EFFORT", "openai": "OPENAI_TRANSLATE_EFFORT"}
 THINKING_ENV = "ANTHROPIC_TRANSLATE_THINKING"   # off (default: no thinking tokens for a translation) | adaptive
@@ -266,7 +268,7 @@ class Chain:
 def settings(env: Any = os.environ) -> list[tuple[str, str, str | None]]:
     """[(provider, model, effort)] in the chain's order, from .env (the owner, 2026-11-08: a model is changed without
     a code change). Unset: the defaults. An effort "off" is not sent (a model that takes none)."""
-    order = [p.strip().lower() for p in (env.get(PROVIDERS_ENV) or "anthropic,openai").split(",") if p.strip()]
+    order = [p.strip().lower() for p in (env.get(PROVIDERS_ENV) or DEFAULT_ORDER).split(",") if p.strip()]
     unknown = [p for p in order if p not in MODEL_ENV]
     if unknown or not order:
         raise TranslateError(f"{PROVIDERS_ENV}: {', '.join(unknown) or 'empty'}: use anthropic and / or openai")

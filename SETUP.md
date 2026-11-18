@@ -107,7 +107,8 @@ The stage refuses a key file readable by others or one git does not ignore. The 
 not into the environment and not into logs. `translate.py <shop> --offline` needs no key.
 
 **The models are set in `.env`, not in the code** (`.env.example` lists them):
-- `TRANSLATE_PROVIDERS`: the order of the chain, `anthropic,openai` by default;
+- `TRANSLATE_PROVIDERS`: the order of the chain, `openai,anthropic` by default (the owner, 2026-11-18: gpt-6.1-terra
+  first, Claude the fallback);
 - `ANTHROPIC_TRANSLATE_MODEL` / `ANTHROPIC_TRANSLATE_EFFORT`: default `claude-sonnet-5-5` / `low`;
 - `OPENAI_TRANSLATE_MODEL` / `OPENAI_TRANSLATE_EFFORT`: default `gpt-6.1-terra` / `low`.
 

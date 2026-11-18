@@ -22,8 +22,9 @@ How `describe.py` writes the English product description and which model writes 
 ```
 
 A minimalist English description in HTML for Shopify's own body (`descriptionHtml`; no metafield, no SEO
-description). One model request and one answer per product, through translate.py's client (the same key, models
-and fallback order) at this stage's own effort: `high` with thinking on (`DESCRIBE_EFFORT` in .env changes it);
+description). One model request and one answer per product, through translate.py's client (the same key and models;
+the order Claude first unless `TRANSLATE_PROVIDERS` is set: 2026-11-18, the translation moved to gpt-6.1-terra first,
+the descriptions were not compared) at this stage's own effort: `high` with thinking on (`DESCRIBE_EFFORT` in .env changes it);
 no fix rounds. Why not the translation's `low` without thinking: checked 2026-11-10 on 35 descriptions against
 their sources, 15 had a wrong club list or count, a fact of one choice told of all, or a lost "no bag" sentence;
 the answer needs the sources compared and the clubs added up ("Which model" below). The script works before and after the request:

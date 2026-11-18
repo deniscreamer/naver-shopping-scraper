@@ -211,7 +211,8 @@ the product is `untranslated` (a batch no provider could take: `pending`).
 **The keys and the models.** `scripts/translate_keys.py install <file>` moves the operator's key file out of the
 repo, makes it 600, and sets `TRANSLATE_KEY_FILE` in `.env` ([SETUP.md](../SETUP.md)). The models, their efforts
 and the chain's order are `.env` settings, not code (`TRANSLATE_PROVIDERS`, `ANTHROPIC_TRANSLATE_MODEL` / `_EFFORT`,
-`OPENAI_TRANSLATE_MODEL` / `_EFFORT`; `translate.settings()`). The server-side refusal fallback is sent only to the
+`OPENAI_TRANSLATE_MODEL` / `_EFFORT`; `translate.settings()`); unset, the order is `openai,anthropic` (the owner,
+2026-11-18: gpt-6.1-terra first, `translate.DEFAULT_ORDER`). The server-side refusal fallback is sent only to the
 Claude models that take it.
 
 ## Review cleaning (`review_clean.py`)

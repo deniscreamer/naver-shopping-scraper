@@ -377,7 +377,7 @@ def test_the_key_file_variable(monkeypatch):
 def test_the_chain_from_the_keys():
     env = {"OPENAI_TRANSLATE_MODEL": "gpt-test"}
     chain = T.build_chain({"ANTHROPIC_API_KEY": "a", "OPENAI_API_KEY": "o"}, env)
-    assert [m.name for m in chain.models] == ["claude-sonnet-5-5", "gpt-test"]
+    assert [m.name for m in chain.models] == ["gpt-test", "claude-sonnet-5-5"]       # OpenAI first (2026-11-18)
     assert [m.name for m in T.build_chain({"OPENAI_API_KEY": "o"}, env).models] == ["gpt-test"]
     with pytest.raises(T.TranslateError, match="no key"):
         T.build_chain({"OPENAI_API_KEY": "o"}, {"TRANSLATE_PROVIDERS": "anthropic"})
@@ -385,7 +385,7 @@ def test_the_chain_from_the_keys():
 
 def test_models_efforts_and_order_come_from_the_env():
     """The owner, 2026-11-08: a model is changed in .env, not in the code."""
-    assert T.settings({}) == [("anthropic", "claude-sonnet-5-5", "low"), ("openai", "gpt-6.1-terra", "low")]
+    assert T.settings({}) == [("openai", "gpt-6.1-terra", "low"), ("anthropic", "claude-sonnet-5-5", "low")]
     env = {"TRANSLATE_PROVIDERS": "openai, anthropic", "ANTHROPIC_TRANSLATE_MODEL": "claude-haiku-5-5",
            "ANTHROPIC_TRANSLATE_EFFORT": "medium", "OPENAI_TRANSLATE_MODEL": "gpt-5.4-mini",
            "OPENAI_TRANSLATE_EFFORT": "off"}
