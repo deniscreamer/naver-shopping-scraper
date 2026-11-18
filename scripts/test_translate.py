@@ -180,7 +180,7 @@ def _category(name):
 # the fixtures of a category whose dictionaries have a backup in git (the labels resolve offline): the chippers'
 # (50002784, 2026-11-18) have none yet, their spec labels are asked of the model. Named, not inferred (the review of
 # 569b77f): a new category's fixtures without a backup fail test_no_fixture_left_out_unnamed instead of dropping out
-NO_DICT_BACKUP = {"50002784"}
+NO_DICT_BACKUP: set[str] = set()   # 50002784 got its first backup 2026-11-18
 DICTS = os.path.join(os.path.dirname(FX), "dictionaries")
 ALL_FIXTURES = sorted(n[:-5] for n in os.listdir(os.path.join(FX, "collected")) if n.endswith(".json"))
 FIXTURES = [n for n in ALL_FIXTURES if _category(n) not in NO_DICT_BACKUP]
