@@ -94,6 +94,11 @@ the run starts:
   11585620683 / 11585678496): adjacent Hangul words joined ('샤프트 선택' = '샤프트선택'), never across a digit or a
   Latin word ('(3~5세)' is not '35세'), and a brand+코리아 word dropped when the brand itself is a title word
   (미우라코리아 with 미우라; 던롭코리아정품 stays).
+  The same **tail key** counts too (2026-11-18, the chipper scroll: `tail_key`, the double-sided TTY / PGM chipper
+  11360733287 / 6414820248, titles apart only by the store's name in front, 홈스월드 / 지아이엘): the title key without
+  the title's first word, when that word is no version word (no digit, no club kind, hand, gender, bag or model word:
+  퍼터 / 웨지, 왼손 / 오른손, MAX / LS, 2025 / 2024 stay apart) and 6+ words (`ALIKE_MIN_WORDS`) are left (DR / YR
+  여자골프채 여성골프채풀세트 stay apart). It is a match only: a confirmation is still needed.
 - **Confirmed** when the first photo is the same file, or half the photos of the smaller gallery are
   (`PHOTOS_SHARED`), or the variants agree >= 80% (`VARIANTS_JACCARD`); not confirmed: an ordinary product (event
   `duplicate_seen`, decision `not_confirmed`).
@@ -177,3 +182,14 @@ the run starts:
   inside `--report` groups carry different UPCs, possible false merges for the owner's look at the photos; the one
   named, pron 13408226321 / 13566632407 (754003448245 / 754003447477), was withdrawn `replaced_by:` 13207564502 on
   2026-11-17, the other 4 were never listed.
+- **The chipper scroll** (2026-11-18, fairwardgolf-50002784-20261118T130246Z, `--dedupe on`): the dupes lens found 7
+  copy groups among its drafts that the rule let through. Why each was missed: Odyssey 2025 women's chipper x6, PING
+  Chip W, PRGR R35, World Eagle CH809 LH and Cleveland 10077017895: titles worded apart, every photo the seller's own
+  (shared 0), the variants written apart (the known gap: other variant text, other photos); Cleveland 10103838449 /
+  10068993288 one title, but men's and women's against women's only (variants 0); GV Tour ES 9968111930 / 2552593690
+  one store (never compared: C42), 11847041779 apart; TTY 7518807949 titles apart. The tail key catches TTY / PGM
+  11360733287 / 6414820248 (variants 1.0, the store's name in front). Measured on the store's old groups: 2 groups
+  new, both copies on their photos (TTY, 50002784; Gold Bunker junior set 13193526523 / 13293885011 아동 / 유아,
+  50002787), none lost or larger, the owner's reviewed versions unchanged; `--report` of the published 3 -> 5 groups.
+  Rejected: a fuzzy title or variant text match for the rest (no photo or variant signal tells their versions apart:
+  33.5 / 34.5 in, men's / women's, steel / carbon).

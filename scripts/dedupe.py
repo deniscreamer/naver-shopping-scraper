@@ -12,6 +12,8 @@ The rule:
      shop check (shopify_catalog) still match by the source key.
   1a. the spaced key (2026-11-17): the title key with adjacent Hangul words joined ('샤프트 선택' = '샤프트선택') and a
      brand+코리아 word dropped when the brand is in the title; the same spaced key is a possible duplicate as well.
+  1b. the tail key (2026-11-18): the title key without the title's first word (a store's name in front), when that
+     word is no version word and ALIKE_MIN_WORDS words are left; the same tail key is a possible duplicate as well.
   2. confirmed by the collected records: the first photo is the same file (source_sha256), or >= PHOTOS_SHARED of
      the smaller gallery are the same files, or the variants' values agree >= VARIANTS_JACCARD (Jaccard over each
      variant's options, case and spaces ignored; no variants on either side: no signal). Not confirmed: an ordinary
@@ -136,6 +138,7 @@ def entry(line: dict[str, Any], status: str = "job") -> dict[str, Any]:
             "vnums": set(re.findall(r"\d+", unicodedata.normalize("NFKC", " ".join(
                 str(o) for v in variants for o in v.get("options") or [v.get("name") or ""])))),
             "skey": spaced_key(name, category),
+            "tail": tail_key(name, category),
             "upc": upcs(((details.get("description") or {}).get("text")) or "")}
 
 
@@ -182,6 +185,30 @@ def spaced_key(name: str | None, category: str | None) -> str | None:
     if run:
         out.append(run)
     return f"{category or ''}|{' '.join(sorted(set(out)))}" if out else None
+
+
+# the tail key (2026-11-18, the chipper scroll: the double-sided TTY / PGM chipper 11360733287 / 6414820248, one
+# photo each, re-encoded, the same two variants '01.TTY 치퍼' / '02.PGM 치퍼', titles apart only by the store's name in
+# front: 홈스월드 / 지아이엘; the store's Gold Bunker junior set 13193526523 / 13293885011 아동 / 유아, Finchley /
+# 핀클리 wedges 13830310368 / 13764351072). The first word only, never a version word (a club kind, hand, gender,
+# bag, model word, a number: 퍼터 / 웨지, 왼손 / 오른손, MAX / LS, 2025 / 2024), and ALIKE_MIN_WORDS words left (DR / YR /
+# BF / SW 여자골프채 여성골프채풀세트 are four lines under one generic title). A match still needs a confirmation
+def tail_key(name: str | None, category: str | None) -> str | None:
+    """'<category>|<sorted tokens after the first>' when the first token is no version word and ALIKE_MIN_WORDS
+    distinct tokens are left (else None)."""
+    toks = TOKEN.findall(unicodedata.normalize("NFKC", name or "").lower())
+    if len(toks) < 2 or _version_word(toks[0]):
+        return None
+    rest = set(toks[1:])
+    return f"{category or ''}|{' '.join(sorted(rest))}" if len(rest) >= ALIKE_MIN_WORDS else None
+
+
+def _version_word(token: str) -> bool:
+    """A token that names a version, not a seller: a digit in it, a club kind, a hand, gender or bag word, a model's
+    version word (or one of their spellings)."""
+    word = _SAME.get(token, token)
+    return any(c.isdigit() for c in token) or word in _KINDS or word in _MODEL_WORDS \
+        or any(word in d for d in _DIMS)
 
 
 @functools.lru_cache(maxsize=None)
@@ -377,7 +404,7 @@ def possible(a: dict[str, Any], b: dict[str, Any]) -> bool:
     an agency lists each version of one foreign listing apart under its one photo: Olimar's left-hand putter and
     right-hand hybrid, junior sets of several sizes)."""
     same = bool(a["tkey"]) and a["tkey"] == b["tkey"] or bool(a.get("skey")) and a.get("skey") == b.get("skey") \
-        or alike(a, b) or strong(a, b)
+        or bool(a.get("tail")) and a.get("tail") == b.get("tail") or alike(a, b) or strong(a, b)
     return same and a["channel"] != b["channel"] and a["key"] != b["key"] and price_ok(a, b)
 
 
@@ -618,6 +645,8 @@ def groups(entries: list[dict[str, Any]]) -> list[list[dict[str, Any]]]:
             buckets.setdefault("t:" + e["tkey"], []).append(i)
         if e.get("skey"):
             buckets.setdefault("k:" + e["skey"], []).append(i)
+        if e.get("tail"):
+            buckets.setdefault("h:" + e["tail"], []).append(i)
         if e.get("agency"):                    # alike() needs the same numbers: one bucket per category and numbers
             buckets.setdefault(f"a:{e.get('category')}:{e.get('numbers')}", []).append(i)
             if e.get("sold"):                  # or the same sets sold, their numbers set aside (2026-11-17)

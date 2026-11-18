@@ -1075,3 +1075,43 @@ def test_on_mode_holds_a_same_upc_copy_as_a_draft_and_log_mode_only_says_so(tmp_
     assert what.endswith("; held (same UPC as 11)") and job.events()[-1]["event"] == "held_same_upc"
     assert D.ledger(SHOP, str(tmp_path / "shops"))[new]["reason"].startswith(f"hold: copy of live {old}, same UPC 7927")
     assert J.upc_hold_step(job, {"publisher": (Admin(), None, {})}, shop, new) == ""      # once
+
+
+# ---- the tail key: a title with one word of its own in front (2026-11-18, the chipper scroll) -------------------
+
+TTY_TAIL = "양면형 TTY 골프 치퍼 칩퍼 어프로치 양손 오른손 왼손"
+TTY_VALUES = [["01.TTY 치퍼"], ["02.PGM 치퍼"]]
+
+
+def test_a_store_name_in_front_of_one_title_keeps_no_copy_apart():
+    """The double-sided TTY / PGM chipper 11360733287 (홈스월드) / 6414820248 (지아이엘): one photo each, re-encoded
+    (shared 0), the same two variants (1.0), the titles apart only by the store's name in front."""
+    a = E(500022481, 6414820248, "지아이엘 " + TTY_TAIL, grade="SPROUT", reviews=67, price=30900, photos=("g1",),
+          values=TTY_VALUES, category="50002784")
+    b = E(101301413, 11360733287, "홈스월드 " + TTY_TAIL, grade="BIG_POWER", reviews=1, price=23500, photos=("h1",),
+          values=TTY_VALUES, category="50002784", status="job")
+    assert a["tkey"] != b["tkey"] and a["skey"] != b["skey"] and a["tail"] == b["tail"]
+    assert D.possible(b, a) and D.confirm(b, a) and not D.strong(b, a)
+    assert D.Index([a]).decide(b)["decision"] == "duplicate_better"
+    assert [len(g) for g in D.groups([a, b])] == [2]
+
+
+@pytest.mark.parametrize("x, y", [
+    # a version word in front is no store's name: a kind, a hand, a model word, a number
+    ("퍼터 " + TTY_TAIL, "웨지 " + TTY_TAIL),
+    ("왼손 양면형 TTY 골프 치퍼 칩퍼 어프로치 양손 남성", "오른손 양면형 TTY 골프 치퍼 칩퍼 어프로치 양손 남성"),
+    ("MAX 스릭슨 27ZXI 남성 풀세트 정품 2026", "LS 스릭슨 27ZXI 남성 풀세트 정품 2026"),
+    ("2025 오디세이 치퍼 여성 33.5인치 정품 핑크", "2024 오디세이 치퍼 여성 33.5인치 정품 핑크"),
+    # too few words left (DR / YR 여자골프채 여성골프채풀세트: four lines under one generic title)
+    ("DR 여자골프채 여성골프채풀세트", "YR 여자골프채 여성골프채풀세트"),
+])
+def test_the_tail_key_never_drops_a_version_word_nor_leaves_a_short_title(x, y):
+    a = D.entry(record(1, 1, x, photos=("p1",), values=TTY_VALUES))
+    b = D.entry(record(2, 2, y, photos=("q1",), values=TTY_VALUES))
+    assert not (a["tail"] and a["tail"] == b["tail"]) and not D.possible(a, b)
+
+
+def test_the_tail_key_still_needs_a_confirmation():
+    a = E(1, 1, "지아이엘 " + TTY_TAIL, photos=("g1",), values=TTY_VALUES, category="50002784")
+    b = E(2, 2, "홈스월드 " + TTY_TAIL, photos=("h1",), values=[["01.TTY 치퍼"]], category="50002784", status="job")
+    assert D.possible(b, a) and not D.confirm(b, a) and D.Index([a]).decide(b)["decision"] is None
