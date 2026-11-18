@@ -476,7 +476,7 @@ Research 2026-11-07 on the 50 fixture products, then the runs dated below. Code:
     (box 945 x 51 x 25 refused) waits: $469 -> $639 by the default box. Proposal: keep the rule, ask before sending.
   - 13625754692: brand D-Max Pro (brand.json 디맥스프로) unproven; live "Fairward Golf Beginner ...". Proposal: the
     photo.
-  - 13754846756: 100 -> 6 variants, 3 of them sold out, waits. Proposal: send.
+  - 13754846756: 100 -> 6 variants, 3 of them sold out: sent on the owner's word 2026-11-17 (one axis, "Lofts").
   - 13024139837, 13024217033, 13024241901, 13024234681 (50002788): not sent, the re-asked title no better, churn, or
     loses the hand (13024234681). Proposal: keep the live titles (a correction row each, skill `fix-a-product`).
   - 13537242519: live Yamaha, title "Yamaha Yoichi Steel 115S ...". Proposal: Yoichi, as the seller's twin listings,
