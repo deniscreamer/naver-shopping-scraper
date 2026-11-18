@@ -97,8 +97,18 @@ def load_table(path: str = TABLE) -> dict[str, Any]:
     return table
 
 
+def row_version(table: Mapping[str, Any], row: Mapping[str, Any]) -> Any:
+    """The version a default of this row carries (`table_version`): the row's `defaults_version`, else the table's.
+    2026-11-18: a new row (50002784) raised the table to 8 and would have restamped 92 products of other rows from 7
+    to 8 with no number changed (current_defaults stamps a default whose numbers moved since its collection); each row
+    now names the version of its own defaults, raised only with its own fields or kinds."""
+    return row.get("defaults_version") or table["version"]
+
+
 def check_row(row: dict[str, Any]) -> None:
     where = f"category {row.get('category_id')}"
+    if "defaults_version" in row and not (type(row["defaults_version"]) is int and row["defaults_version"] >= 1):
+        raise CategoryDefaultsInvalid(f"{where}: defaults_version must be a whole number >= 1")
     if not row.get("category_id") or not row.get("approved_by") or not row.get("approved_at"):
         raise CategoryDefaultsInvalid(f"{where}: category_id, approved_by and approved_at are required")
     if row.get("reliability") not in RELIABILITY:
@@ -283,7 +293,7 @@ def current_defaults(fields: dict[str, Any], specs: Mapping[str, Any], variant_i
         if all(f.get(k) == today[k] for k in ("low", "central", "high")) and f.get("kind") == (kind or {}).get("kind"):
             continue
         out[name] = {**{k: v for k, v in f.items() if k != "kind"}, **today,
-                     **({"kind": kind["kind"]} if kind else {}), "table_version": table["version"],
+                     **({"kind": kind["kind"]} if kind else {}), "table_version": row_version(table, row),
                      "approved_by": row["approved_by"], "approved_at": row["approved_at"]}
     return out
 
@@ -474,7 +484,7 @@ def variant_measures(specs: Mapping[str, Any], table: dict[str, Any]) -> list[di
                 continue
             if row is None:
                 raise CategoryDefaultsMissing(category.get("id"), category.get("name"))
-            fields[name] = {**default_field(row, kind, table["version"], name),
+            fields[name] = {**default_field(row, kind, row_version(table, row), name),
                             **({k: fields[name][k] for k in ("contradiction", "reason") if k in fields[name]}
                                if name in fields else {})}
         product, package = fields["product_weight_g"], fields["package_weight_g"]

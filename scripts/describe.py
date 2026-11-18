@@ -78,6 +78,8 @@ PROFILES: dict[str, dict[str, Any]] = {
     "wedge_set": {"categories": ("50002783",),            # wedge sets (2026-11-15)
                   "lists": (("included", "What's included", 6), ("highlights", "Highlights", 4)),
                   "set_count": True},                    # "a set of 3 wedges" from the title's lofts (C65)
+    "chipper": {"categories": ("50002784",),             # chippers, one club (2026-11-18): no set profile fits
+                "lists": (("included", "What's included", 3), ("highlights", "Highlights", 4))},
     "default": {"categories": (), "lists": (("highlights", "Highlights", 4),)},
 }
 

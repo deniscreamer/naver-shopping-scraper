@@ -184,8 +184,8 @@ The operator's (or an agent's) order of commands, after each collection:
 
 Step 3 is not part of the collection on purpose: it is slow (~20 s a product, ~3.5 h per 1000), needs only the
 image hosts (no server, no Chrome) and can be run, stopped and resumed on its own. It reads only the categories
-whose shop rules set `description_images` (transform_shops; off by default, on for all four fairwardgolf categories:
-50002788, 50002787, 50002670, 50002783). Skipped, the
+whose shop rules set `description_images` (transform_shops; off by default, on for all five fairwardgolf categories:
+50002788, 50002787, 50002670, 50002783, 50002784). Skipped, the
 transform still runs: the products get the note `description_images_missing` and today's values.
 `--products <id> ...` reads some products only, `--force` reads again.
 
@@ -621,6 +621,18 @@ lines (`package` is computed at collection), prepared records of `format: prepar
 published from them; `prepared/5` is on the new scale. The transform puts a collected line's seller values on
 today's scale from their own evidence (`package_measures.on_scale`: the old 3 is 5, the old 2 is 4), so one prepared
 record never mixes the two.
+
+**Table version 8 (2026-11-18).** The row of 50002784 치퍼 (the owner, sold as single chippers, one club of 34-35 in):
+one chipper in a club box, no bag, 96 x 11 x 8 cm and 1000 g central, the product about 500 g (low / high the
+agent's range: product 430-600 g, package 800-1300 g, length 90-100 cm, sides as 50002783's `single_club`). One
+default, no kinds, no plausible band, no baselines (one club, no set). At level 1 (x2.50) the box prices a 35,000 KRW
+chipper at $259, 90,000 KRW at $329, 250,000 KRW at $539 (`shop_pricing` quote, billable 1.69 kg). Every row now
+carries `defaults_version`, the version its defaults stamp (`table_version`, `package_measures.row_version`), raised
+only with that row's own fields or kinds: the version alone would have restamped 92 prepared products of the other
+rows from 7 to 8 with no number changed (`current_defaults` stamps a default whose numbers moved since its
+collection). The four rows before carry 7, what their restamped defaults had; 50002784 carries 8. Measured
+2026-11-18 (read only, all 3,173 latest lines prepared afresh with their sidecars against `prepared/products.jsonl`):
+all identical.
 
 **Table version 7 (2026-11-17, the wedge-set review W8).** The first `plausible` bands (50002783, 50002787), the
 50002783 count kinds `two_wedges` / `four_plus` (`lofts`) and its `compose_by_count` block; a box refused whole on

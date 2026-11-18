@@ -81,7 +81,9 @@ with the origin. `junior_clubs` (50002787, 2026-11-11): the same two lists, a si
 intro with the age or height range the seller gives. `iron_set` (50002670, 2026-11-14): the set's irons in one
 item, the choice of iron count, shaft or flex in a highlight, 정품 / 병행 one highlight. `wedge_set` (50002783,
 2026-11-15): the wedges by loft in one item, the choice of lofts, grind or shaft in a highlight, non-conforming
-grooves (비공인) said as a limitation. A category without a profile gets `default`: the intro and highlights only. The common prompt
+grooves (비공인) said as a limitation. `chipper` (50002784, 2026-11-18): one club, "What's included" of at most
+3 items (the chipper with its loft and length, a cover the seller includes) and "Highlights"; double-sided said in
+the intro, a chipper-putter never a putter included. A category without a profile gets `default`: the intro and highlights only. The common prompt
 (`prompts/describe_system.md`) holds no golf rule or term (one quoted example of filler aside).
 
 The answers are kept in `shops/<shop>/translation/descriptions.jsonl` (append-only; fields, HTML, what was cut

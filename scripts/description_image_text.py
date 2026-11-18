@@ -237,6 +237,7 @@ GLOSSARIES: dict[str, dict[str, str]] = {
 GLOSSARIES["50002787"] = GLOSSARIES["50002788"]               # junior clubs: the same terms (2026-11-11)
 GLOSSARIES["50002670"] = GLOSSARIES["50002788"]               # women's iron sets: the same terms (2026-11-14)
 GLOSSARIES["50002783"] = GLOSSARIES["50002788"]               # wedge sets: the same terms (2026-11-15)
+GLOSSARIES["50002784"] = GLOSSARIES["50002788"]               # chippers: the same terms (2026-11-18)
 
 
 def glossary_for(category_id: str | None) -> dict[str, str]:

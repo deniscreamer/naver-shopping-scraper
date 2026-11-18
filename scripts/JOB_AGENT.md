@@ -44,6 +44,7 @@ TRANSLATE_PROVIDERS=openai,anthropic .venv/bin/python -u scripts/job.py scroll -
 | 50002787 junior clubs | `--paid` | `주니어 골프채` |
 | 50002670 women's iron sets | `--paid-variants` (its pilot, 2026-11-15) | `여성 골프 아이언 세트` |
 | 50002783 wedge sets | `--paid-variants` (its pilots, 2026-11-15/16) | `골프 웨지 세트` |
+| 50002784 chippers | `--paid-variants` (the owner, 2026-11-18: paid add-ons off for the category) | `골프 치퍼` |
 
 - N -> `--count N`; no N or "до конца" -> no `--count` (to the listing's end); "без публикации" -> no `--publish`
   and no `--describe`. `--dedupe on` is the default: no flag (the owner's yes after

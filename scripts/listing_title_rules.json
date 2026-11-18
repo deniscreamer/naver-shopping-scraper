@@ -1,6 +1,6 @@
 {
  "format": "listing-title-rules/1",
- "about": "Per Naver leaf category, title words that leave a listing row out before its page is read (listing_filter.Screen; the owner, 2026-11-11: what the shop's section does not sell). Matched on the title NFKC-normalized, lower case and without spaces; notFollowedBy / notPrecededBy as in listing_exclusions.json. Studied on the listings of 2026-11-11: 515 titles of 50002787 (46 of 56 that do not fit, none that fits), 351 of 50002788 (3 of 23 beside the rentals the shared file already drops). A rule may list `unless` words: any of them in the title and the rule does not apply. A rule names its code, which is the row's reason (title:<code>). 50002788 since 2026-11-14 is lenient (the owner: never lose a real product): only what is certainly not a set is left out (1,817 past titles: 5 left out, 3 published, the folding one-club products, no set; junior sets are not left out: no other job collects them, review_suspects.py lists them); the doubtful ones are published and listed by review_suspects.py. 50002670 (2026-11-14, women's iron sets): loose heads and shafts, a single iron (단품 with no set word) and a men's set (남성 with no women's word); a set whose gender no word states is left to placement (held).; a used or refurbished set (중고, 리퍼; 2026-11-15). 50002783 (2026-11-15, wedge sets; 670 titles of 골프 웨지 세트): loose heads and a wedge without its shaft, accessories (covers, grips, training aids, sharpeners), chippers, a used set, and a single wedge (웨지 with no set word or count; the owner: sets only). 2026-11-15, the visual lenses on 661 published junior sets (scripts/LENSES.md): toys, adult sets and two not-golf products added to 50002787's words (each measured on all 796 collected rows of the category, no real junior club hit); photo-only misfits stay for the lenses.",
+ "about": "Per Naver leaf category, title words that leave a listing row out before its page is read (listing_filter.Screen; the owner, 2026-11-11: what the shop's section does not sell). Matched on the title NFKC-normalized, lower case and without spaces; notFollowedBy / notPrecededBy as in listing_exclusions.json. Studied on the listings of 2026-11-11: 515 titles of 50002787 (46 of 56 that do not fit, none that fits), 351 of 50002788 (3 of 23 beside the rentals the shared file already drops). A rule may list `unless` words: any of them in the title and the rule does not apply. A rule names its code, which is the row's reason (title:<code>). 50002788 since 2026-11-14 is lenient (the owner: never lose a real product): only what is certainly not a set is left out (1,817 past titles: 5 left out, 3 published, the folding one-club products, no set; junior sets are not left out: no other job collects them, review_suspects.py lists them); the doubtful ones are published and listed by review_suspects.py. 50002670 (2026-11-14, women's iron sets): loose heads and shafts, a single iron (단품 with no set word) and a men's set (남성 with no women's word); a set whose gender no word states is left to placement (held).; a used or refurbished set (중고, 리퍼; 2026-11-15). 50002783 (2026-11-15, wedge sets; 670 titles of 골프 웨지 세트): loose heads and a wedge without its shaft, accessories (covers, grips, training aids, sharpeners), chippers, a used set, and a single wedge (웨지 with no set word or count; the owner: sets only). 2026-11-15, the visual lenses on 661 published junior sets (scripts/LENSES.md): toys, adult sets and two not-golf products added to 50002787's words (each measured on all 796 collected rows of the category, no real junior club hit); photo-only misfits stay for the lenses. 50002784 (2026-11-18, chippers; 1,260 titles of 골프 치퍼 and 치퍼 by price slices, 482 out): not-golf goods filed under chippers (garden wood chippers and their blades, air chisels, kitchen choppers, poker chips, bags), clothes and shoes, accessories and training aids, a putter with no chipper word (the owner: a double-sided chipper-putter stays), a wedge with no chipper or chipping word, and other clubs (irons, an agency's putters and hybrids keyworded 치퍼); every word checked on all 1,260 titles, no chipper hit.",
  "categories": {
   "50002787": [
    {
@@ -1042,6 +1042,871 @@
      "단조웨지2",
      "2자루",
      "3자루"
+    ]
+   }
+  ],
+  "50002784": [
+   {
+    "code": "not_golf",
+    "why": "Not golf, filed under chippers (2026-11-18, 1,260 titles of 골프 치퍼 and 치퍼): garden wood chippers and their knives and blades (정원, 분쇄기, 파쇄기, 슈레더, 목재, 우드치퍼; DAVID 우디치퍼 is a golf chipper and stays), air chisels and tools (치즐, 다가네, 에어치퍼, 플럭스), kitchen and ice choppers, plates, insoles, poker chips, scratch art, bags and pouches, zip pulls (지퍼, not after 웨 / 웻: 웨지퍼터 is a wedge-putter), a baseball card (치퍼 존스), a toy figure. Each word measured on all 1,260 titles: no golf chipper hit.",
+    "tokens": [
+     {
+      "text": "정원",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "분쇄기",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "파쇄기",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "슈레더",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "나뭇가지",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "목재",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "우드치퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "치퍼나이프",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "치퍼블레이드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "나무치퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "치즐",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "치셀",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "다가네",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "에어치퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "에어미니치퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "플럭스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "후렉스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "유압",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "공구",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "드릴",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "브레카",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "주방",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "야채",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "감자",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "아이스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "얼음",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "플레이트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "치퍼팬",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "핸들팬",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "소파",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "깔창",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "굴따기",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "굴잡기",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "전복",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "포커",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "카지노",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "홀덤",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스크래치퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스크레치퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "발포매트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "베이스볼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "헤어밴드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "퍼밴드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "키링",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스크래퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스크랩퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스크레이퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스크래이퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스티커",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "빠찌링",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "와인",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "케이크",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스툴",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "가발",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "테이프",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스크루",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "웨딩",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "파우치",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "지퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": [
+       "웨",
+       "웻"
+      ]
+     },
+     {
+      "text": "체인톱",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "복조리",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "털가방",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "토트백",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "숄더백",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "미니백",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "수납",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "보관함",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "보관케이스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "벌채",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "쵸퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "초퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "블리스터",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "퍼펜",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "태퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "조드퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "구매하지마",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스크레퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "호비니퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "따닥이",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "축구",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "보호캡",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "팬시",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "파티용품",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스냅퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "옷수선",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "손잡이퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "퍼글러",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "퍼그리",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "플라켓",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "가면라이더",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "pouch",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "apparel",
+    "why": "Clothes and shoes (the owner, 2026-11-18): CHIPPER knitwear, a 치퍼 vest, skirt, clogs, T-shirts, trousers, shirts, cardigans, loafers. 탑 not before 핑 (탑핑NO is a chipper's claim), 니트 not in 니트로 (the NITRO chipper) or 인피니트.",
+    "tokens": [
+     {
+      "text": "조끼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "티셔츠",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "반팔",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "치마",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "바지",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "팬츠",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "셔츠",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "남방",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "클로그",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "패딩",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "가디건",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스웨터",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "맨투맨",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "후드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스니커즈",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "로퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "구두",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "슈즈",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "탑",
+      "notFollowedBy": [
+       "핑"
+      ],
+      "notPrecededBy": []
+     },
+     {
+      "text": "니트",
+      "notFollowedBy": [
+       "로"
+      ],
+      "notPrecededBy": [
+       "피"
+      ]
+     }
+    ]
+   },
+   {
+    "code": "accessory",
+    "why": "Not a club (2026-11-18): a chipper head cover, a club stand, an alignment or swing trainer, a practice net or mat, a chipping game, a cornhole set, a toy, a mini-golf kit, a shipping box, a glove rack, a ball retriever, a club rack, the RYP Butter Blade training club, a Kasco Tough Fit glove.",
+    "tokens": [
+     {
+      "text": "치퍼헤드커버",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스탠드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "지시기",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "훈련도구",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "훈련장비",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "훈련기",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "연습도구",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "네트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "타격및연습",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "콘홀",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "게임세트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "치핑게임",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "택배상자",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "장갑걸이",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "회수기",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "거치대",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "버터블레이드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "터프피트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "장난감",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "미니골프",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "putter",
+    "why": "A putter with no chipper word (the owner, 2026-11-18): 퍼터 / putter and none of 치퍼, 칩퍼, chipper. A double-sided chipper-putter (양면 / 겸용 with 치퍼) stays, and so does a club with a loft of 25-60° or a ° (a putter has 2-4°: SiMSPEC '37도 골프 컷 퍼터 컷과 퍼팅 모두 가능' is a chipper). 양면 퍼터 without 치퍼 is a two-sided putter and is left out.",
+    "tokens": [
+     {
+      "text": "퍼터",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "putter",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ],
+    "unless": [
+     "치퍼",
+     "칩퍼",
+     "chipper",
+     "25도",
+     "26도",
+     "27도",
+     "28도",
+     "29도",
+     "30도",
+     "31도",
+     "32도",
+     "33도",
+     "34도",
+     "35도",
+     "36도",
+     "37도",
+     "38도",
+     "39도",
+     "40도",
+     "41도",
+     "42도",
+     "43도",
+     "44도",
+     "45도",
+     "46도",
+     "47도",
+     "48도",
+     "49도",
+     "50도",
+     "51도",
+     "52도",
+     "53도",
+     "54도",
+     "55도",
+     "56도",
+     "57도",
+     "58도",
+     "59도",
+     "60도",
+     "°"
+    ]
+   },
+   {
+    "code": "wedge",
+    "why": "A wedge with no chipper or chipping word (2026-11-18): CBZ, Mizuno Pro T-1, Kasco Dolphin, Yojimoto, sand and lob wedges filed under chippers. Stays with 치퍼 / 칩퍼 / chipper, 치핑 / 칩핑 (a chipping wedge), Ping Chip W (칩W, CHIP W), Cleveland Smart Sole (스마트), 러닝 / 런닝 어프로치, 칩샷, or PRGR's R35 / R45 / R50 / R55 wedge-chippers.",
+    "tokens": [
+     {
+      "text": "웨지",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "웻지",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "wedge",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ],
+    "unless": [
+     "치퍼",
+     "칩퍼",
+     "chipper",
+     "치핑",
+     "칩핑",
+     "칩w",
+     "chipw",
+     "스마트",
+     "러닝어프로치",
+     "런닝어프로치",
+     "칩샷",
+     "r35",
+     "r45",
+     "r50",
+     "r55"
+    ]
+   },
+   {
+    "code": "other_club",
+    "why": "Another club (2026-11-18): an iron (아이언, not 아이언형 nor before 골프채 / 클럽: the iron-type and practice-iron chippers stay), and an agency's titles that put 치퍼 after a hand word on every club of its shop (오른손 치퍼 잡이 ... 일레븐 퍼터, 패러덤 개별 아이언, 넘버5 하이브리드, Fairway Wood): their model words (Odyssey Eleven / White Hot / Tri-Hot / DFX, Spider, HB Soft Milled, MT22, Infinite, hybrids, a partial set).",
+    "tokens": [
+     {
+      "text": "아이언",
+      "notFollowedBy": [
+       "형",
+       "골프채",
+       "클럽"
+      ],
+      "notPrecededBy": []
+     },
+     {
+      "text": "넘버5하이브리드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "넘버6하이브리드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "올하이브리드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "부분세트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "hybrids",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "fairwaywood",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "일레븐퍼터",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "화이트핫",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "트라이핫",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "dfx퍼터",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스파이더",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "소프트밀드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "mt22",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "인피니트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
     ]
    }
   ]

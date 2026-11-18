@@ -67,7 +67,7 @@ from description_measures import (COMPOSED, FIELDS, LONG_UNITS, NUMBER_CONF, SOU
                                   product_over_package, profile_for, read_rows)
 from naver_variants import choose_variants
 from package_measures import (count_band, count_kind, current_defaults, default_field, load_table, lofts, off_count,
-                              on_scale, package_kind)
+                              on_scale, package_kind, row_version)
 from spec_variants import (check_specs, hide_title_model_rows, title_cut, title_lofts_not_sold, title_one_variant,
                            title_variant_tail, title_word_unproven)
 from review_clean import clean_reviews
@@ -1275,7 +1275,7 @@ def _off_count(ov: dict[str, Any], row: dict[str, Any], title: str,
     for v in ov["variants"]:
         if clubs := counts.get(id(v)):
             v["package"], _ = off_count(v["package"], count_band(row, clubs), row, clubs[1],
-                                        _measures_table()["version"])
+                                        row_version(_measures_table(), row))
     return counts
 
 
@@ -1292,7 +1292,7 @@ def _over_package(ov: dict[str, Any], row: dict[str, Any], profile: Any, title: 
         kind = clubs[1] if clubs else package_kind(row, v["package"], title, t, texts)
         boxed = count_band(row, clubs).get("package_weight_g", limit)
         v["package"], _ = product_over_package(
-            v["package"], default_field(row, kind, _measures_table()["version"], "product_weight_g"),
+            v["package"], default_field(row, kind, row_version(_measures_table(), row), "product_weight_g"),
             (max(limit[0], boxed[0]), min(limit[1], boxed[1])))
 
 

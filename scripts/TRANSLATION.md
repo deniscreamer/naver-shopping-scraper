@@ -278,7 +278,9 @@ files or the live dictionaries. The rounds run so far: History, below.
 - **Category scope.** 50002788, 50002787 (junior clubs, 2026-11-11: its own brief; the sets' glued-flex rule, review
   aspects with a parent's words and glossary) and 50002670 (women's iron sets, 2026-11-14: its own brief; the sets'
   rule, aspects, product words and glossary) and 50002783 (wedge sets, 2026-11-15: its own brief, the sets' rule,
-  aspects, product words and glossary) have a category brief, aspects and rules. Another category gets the
+  aspects, product words and glossary) and 50002784 (chippers, 2026-11-18: its own brief with the listing's makers
+  and lines, the clubs' rule and glossary, the clubs' aspects plus the short game's, product words plus 치퍼 / 칩퍼)
+  have a category brief, aspects and rules. Another category gets the
   base prompt and the general aspects until it has its own.
 
 ## Open (2026-11-08)

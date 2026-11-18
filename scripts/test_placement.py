@@ -238,6 +238,15 @@ def test_wedge_sets_go_to_one_section_whatever_the_gender():
         assert got["tags"] == ["fairwardgolf:leaf:wedge-sets", "fairwardgolf:parent:clubs", "fairwardgolf:showcase"]
 
 
+def test_chippers_go_to_one_section_whatever_the_gender():
+    """50002784 (the owner, 2026-11-18): chippers, the store's collection fairwardgolf-chippers (tag rule
+    fairwardgolf:leaf:chippers, existing and empty that day), no split."""
+    for value in ("womens", "mens", "unisex", "unknown"):
+        got = PL.place(product(value, category="50002784"), PROFILE)
+        assert got["status"] == "placed" and got["product_type"] == "Chippers"
+        assert got["tags"] == ["fairwardgolf:leaf:chippers", "fairwardgolf:parent:clubs", "fairwardgolf:showcase"]
+
+
 def test_iron_sets_go_to_the_womens_section_and_a_mens_or_unknown_set_is_held():
     """50002670 (the owner, 2026-11-14): women's iron sets only, the store's collection fairwardgolf-womens-iron-sets
     (tag rule fairwardgolf:leaf:womens-iron-sets, read 2026-11-14); unisex and mixed go there too."""

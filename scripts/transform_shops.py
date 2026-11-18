@@ -10,7 +10,7 @@ fairwardgolf, checked 2026-11-05 on the 60 products the naver-harvester publishe
     before Shopify (the owner, 2026-11-08);
   * paid variants (a configuration that costs more or less), paid add-on products (추가상품) and the description
     images' OCR per category: off by default; all on for 50002788 (owner 2026-11-06, -07), and since for every
-    fairwardgolf category below (50002787, 50002670, 50002783);
+    fairwardgolf category below (50002787, 50002670, 50002783; 50002784 without paid add-ons, the owner 2026-11-18);
   * `reviewed` per category (2026-11-16, draft first): publish.py creates a new product of a category not marked
     reviewed as DRAFT, for the agent's lens review and the owner's activation; reviewed() reads it;
 
@@ -108,6 +108,13 @@ RULES = {
                                       # 2026-11-16: Naver files iron sets and full sets under wedges too (13370424163
                                       # Cleveland ZipCore XL iron set published as a wedge set): held not_wedge_set
                                       wedge_sets=True),
+            "50002784": CategoryRules(
+                                      # owner 2026-11-18: chippers (치퍼), one club each: paid variants (a loft,
+                                      # a length, a shaft that changes the price) sold, paid add-ons not (a cover or
+                                      # a glove offered for money stays off), the images read; no parts profile; not a
+                                      # set section (no sets_only, no wedge_sets)
+                                      paid_variants=True, paid_addons=False, description_images=True,
+                                      reviewed=False),      # a new category: its products go DRAFT first
         }),
 }
 

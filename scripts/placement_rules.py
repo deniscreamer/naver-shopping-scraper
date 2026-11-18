@@ -19,6 +19,9 @@ are held (`unresolved`), never placed by the listing's query.
 50002783 웨지 (2026-11-15): wedge sets, one section wedge-sets with no split (wedges are mostly unisex); single wedges
 are left out by the title screen, not here.
 
+50002784 치퍼 (2026-11-18): chippers, one section chippers with no split (like wedge sets); putters, wedges and other
+clubs filed under it are left out by the title screen, not here.
+
     from placement_rules import profile_for
     profile = profile_for("fairwardgolf")
 """
@@ -67,6 +70,9 @@ JUNIOR = Leaf("junior-clubs-sets", "Junior Golf Clubs & Sets")    # owner 2026-1
 WOMENS_IRONS = Leaf("womens-iron-sets", "Women’s Iron Sets")    # owner 2026-11-14: women's iron sets only; a men's
                                                                    # or an unknown-gender set is held (unresolved)
 WEDGES = Leaf("wedge-sets", "Wedge Sets")                          # owner 2026-11-15: wedge sets, no gender split
+CHIPPERS = Leaf("chippers", "Chippers")                            # owner 2026-11-18: chippers, no split; the store's
+                                                                   # collection fairwardgolf-chippers (tag rule
+                                                                   # fairwardgolf:leaf:chippers) existed, empty
 
 PROFILES = {
     StoreId.FAIRWARDGOLF: PlacementProfile(
@@ -78,6 +84,7 @@ PROFILES = {
             "50002670": CategoryPlacement(parent="clubs", split_by="gender",           # 아이언
                                           leaves={"womens": WOMENS_IRONS}),
             "50002783": CategoryPlacement(parent="clubs", leaves={None: WEDGES}),     # 웨지
+            "50002784": CategoryPlacement(parent="clubs", leaves={None: CHIPPERS}),   # 치퍼
         }),
 }
 

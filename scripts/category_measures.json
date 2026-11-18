@@ -1,6 +1,6 @@
 {
- "about": "Package weight and size averages per leaf category, given by the operator (never made up). A row: category_id, category_name, fields (low / central / high of product_weight_g, package_weight_g, package_length_mm, package_width_mm, package_height_mm), approved_by, approved_at (YYYY-MM-DD), reliability (estimated_average: the weakest level), basis. Optional per row: plausible ({field: {min, max}}: a value outside is not taken); baselines, the operator's amounts for the parts of a set of like items in a container, all of them or no block: item_g (one item), container_g (the container), carton_g (the box and its packing), longest_item_mm (the longest item), length_margin_mm (the box's length over the longest item), sides_mm and sides_with_container_mm (the box's [width, height] without the container and with it), approved_by, approved_at, basis (where each amount comes from). With the block a field the seller does not state is composed from the set's parts, each part from the product's own data when it is there and from the baseline when it is not (product weight = items + container; package weight = product weight + carton_g; package length = longest item + length_margin_mm; width and height = the sides), and the fields' flat averages are the last resort, used when the number of items or the container's state cannot be told; without the block a field is the seller's statement or the flat average. A new or changed row raises version. Optional too: kinds ([{kind, match, alone, always, unless, strong, lofts, fields, basis}]: a kind of product with its own low / central / high, package_measures.default_kind; lofts [min, max]: the variant's own value names that many distinct lofts); compose_by_count (50002783, 2026-11-17: a set's product weight = the clubs' labelled weights summed, or one labelled club weight x the set's count; item_g, writes, confidence, count_from, skip, approved_by, approved_at, basis; description_measures.compose_by_count). Version 7 (2026-11-17): plausible bands of 50002783 and 50002787, kinds two_wedges and four_plus and compose_by_count of 50002783.",
- "version": 7,
+ "about": "Package weight and size averages per leaf category, given by the operator (never made up). A row: category_id, category_name, fields (low / central / high of product_weight_g, package_weight_g, package_length_mm, package_width_mm, package_height_mm), approved_by, approved_at (YYYY-MM-DD), reliability (estimated_average: the weakest level), basis. Optional per row: plausible ({field: {min, max}}: a value outside is not taken); baselines, the operator's amounts for the parts of a set of like items in a container, all of them or no block: item_g (one item), container_g (the container), carton_g (the box and its packing), longest_item_mm (the longest item), length_margin_mm (the box's length over the longest item), sides_mm and sides_with_container_mm (the box's [width, height] without the container and with it), approved_by, approved_at, basis (where each amount comes from). With the block a field the seller does not state is composed from the set's parts, each part from the product's own data when it is there and from the baseline when it is not (product weight = items + container; package weight = product weight + carton_g; package length = longest item + length_margin_mm; width and height = the sides), and the fields' flat averages are the last resort, used when the number of items or the container's state cannot be told; without the block a field is the seller's statement or the flat average. A new or changed row raises version. Optional too: kinds ([{kind, match, alone, always, unless, strong, lofts, fields, basis}]: a kind of product with its own low / central / high, package_measures.default_kind; lofts [min, max]: the variant's own value names that many distinct lofts); compose_by_count (50002783, 2026-11-17: a set's product weight = the clubs' labelled weights summed, or one labelled club weight x the set's count; item_g, writes, confidence, count_from, skip, approved_by, approved_at, basis; description_measures.compose_by_count). Version 7 (2026-11-17): plausible bands of 50002783 and 50002787, kinds two_wedges and four_plus and compose_by_count of 50002783. Version 8 (2026-11-18): the row of 50002784 (chippers, one club in a box), and defaults_version on every row: the version a default of the row carries (table_version, package_measures.row_version), raised only with the row's own fields or kinds; the four rows before carry 7, the version their restamped defaults had, so a new row moves no other product.",
+ "version": 8,
  "rows": [
   {
    "category_id": "50002788",
@@ -60,6 +60,7 @@
     "approved_at": "2026-11-10"
    },
    "reliability": "estimated_average",
+   "defaults_version": 7,
    "basis": "Median (central) and about the 10th / 90th percentile (low / high) of the naver-harvester's AI estimates on the 55 fairwardgolf full sets that have one in Shopify (read 2026-11-05; none seller-stated; sets with and without a bag together).",
    "approved_by": "owner",
    "approved_at": "2026-11-05"
@@ -166,6 +167,7 @@
     }
    ],
    "reliability": "estimated_average",
+   "defaults_version": 7,
    "basis": "A junior set, often with a stand bag. Central 105 x 28 x 25 cm, 4.5 kg: the agent's estimate from the listing of 2026-11-11 (sets of 3-7 clubs, with and without a bag, 95,000-660,000 KRW), approved by the owner as the second of two defaults; low / high the agent's range. Nothing measured. plausible: the agent from the data 2026-11-17 (the wedge-set review, commit 2f2262f; the evidence and the rejected bands in PACKAGE.md \"The five fields\"), on the owner's delegation.",
    "approved_by": "owner",
    "approved_at": "2026-11-11",
@@ -246,6 +248,7 @@
     }
    ],
    "reliability": "estimated_average",
+   "defaults_version": 7,
    "basis": "A women's iron set of 5-8 irons in a carton, no bag. Central 100 x 25 x 12 cm, 3.5 kg (irons about 340 g each: 7 x 340 = 2.4 kg): the agent's estimate from the listing of 2026-11-14 (여성 골프 아이언 세트, 96 cards, 5-8 iron sets, median 1,500,000 KRW), approved by the owner (at 300,000 KRW and level 1 the box prices $759); low / high the agent's range. Nothing measured.",
    "approved_by": "owner",
    "approved_at": "2026-11-14"
@@ -391,6 +394,7 @@
     }
    ],
    "reliability": "estimated_average",
+   "defaults_version": 7,
    "basis": "A set of 2-3 wedges in a carton, no bag. Central 98 x 20 x 10 cm, 2.2 kg (wedges about 460 g each: 3 x 460 = 1.4 kg): the agent's estimate from the listing of 2026-11-15 (골프 웨지 세트, 670 titles, sets of 2-6 wedges, median 226,000 KRW, many agency imports), approved by the owner (at level 1: $419 for 100,000 KRW, $579 for 225,000 KRW); low / high the agent's range. Nothing measured. plausible: the agent from the data 2026-11-17 (the wedge-set review, commit 2f2262f; the evidence and the rejected bands in PACKAGE.md \"The five fields\"), on the owner's delegation. Kinds two_wedges and four_plus and compose_by_count: 2026-11-17, the same delegation.",
    "approved_by": "owner",
    "approved_at": "2026-11-17",
@@ -437,6 +441,42 @@
     "approved_at": "2026-11-17",
     "basis": "A wedge set weighs its clubs, about 460 g each, no constant part: the labelled 2-wedge sets 765-920 g (median 895), the 3-wedge 1344-1440 g (median 1385); BombTech 3 x 480 = 1440 g against the stated 1430 / 1450 g. A product weight the seller does not state: the clubs' labelled weights (380-520 g each, a weight label and no part word) summed when there are as many as the set's clubs (confidence 3: USPA 414 + 412, Maruman 380 + 385), else one labelled weight x the count (2: PRGR 448, Toho 460, PGM 462). The count: the variant's own, else the title's when it states one. Not on a #7 / #5 reference or 기준 / 추정 / 상정 (Yamaha RMX, FITTAS), Amazon's Item Weight / Product weight (GoSports 424 g for a set), more weights than clubs (MG5, RMX 2021 and Honma NX tables), men's and women's weights in one listing, a title listing more lofts than any variant, a held product or a single club's variant. Only product_weight_g: the package and its sides stay (PGM 8 lofts x 462 g would have raised a box). The agent from the data 2026-11-17 (the wedge-set review C17, commit 2f2262f; PACKAGE.md \"The clubs' weights of a wedge set\"), on the owner's delegation."
    }
+  },
+  {
+   "category_id": "50002784",
+   "category_name": "스포츠/레저 > 골프 > 골프클럽 > 치퍼",
+   "fields": {
+    "product_weight_g": {
+     "low": 430,
+     "central": 500,
+     "high": 600
+    },
+    "package_weight_g": {
+     "low": 800,
+     "central": 1000,
+     "high": 1300
+    },
+    "package_length_mm": {
+     "low": 900,
+     "central": 960,
+     "high": 1000
+    },
+    "package_width_mm": {
+     "low": 80,
+     "central": 110,
+     "high": 150
+    },
+    "package_height_mm": {
+     "low": 60,
+     "central": 80,
+     "high": 110
+    }
+   },
+   "reliability": "estimated_average",
+   "defaults_version": 8,
+   "basis": "One chipper (one club, 34-35 in: 86-89 cm) in a club box, no bag. Central 96 x 11 x 8 cm, package 1000 g, product about 500 g: the owner's values (2026-11-18, the agent's questions), the box of 50002783's single_club kind. Low / high the agent's range: the product 430-600 g (a chipper head is heavier than a wedge's; the single wedge's 400-520 g moved up), the package and its sides as 50002783's single_club, the length 90-100 cm (a 33-35.5 in club). Nothing measured.",
+   "approved_by": "owner",
+   "approved_at": "2026-11-18"
   }
  ]
 }

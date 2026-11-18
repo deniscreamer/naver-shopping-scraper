@@ -105,7 +105,8 @@ x 23 cm) is 232-259 USD by the grid, a set with a bag 523-546, and under 2.33 th
 margin; without a bag the price carries 444-511 USD the delivery does not need, kept for the risks. 2.50 was derived
 for 50002788: a new category in the shop needs its own check of level 1 (the coefficients are one table per shop,
 `shop_pricing.FAIRWARDGOLF`). 50002787 junior clubs (the owner, 2026-11-11), 50002670 women's iron sets
-(2026-11-14) and 50002783 wedge sets (2026-11-15) keep them as they are, to be measured
+(2026-11-14), 50002783 wedge sets (2026-11-15) and 50002784 chippers (the owner, 2026-11-18: the shop's general rule,
+no override; one chipper's box, $259 for a 35,000 KRW chipper) keep them as they are, to be measured
 on its first shipments like the sets. All five are starting estimates: no set had shipped yet. After the first 10-20 sets
 shipped, compare each invoice with the variant's `fairwardgolf.price` (the box FedEx measured, the billable kg,
 every fee line) and replace them with measured ones; check the first invoice of a set without a bag for FedEx's

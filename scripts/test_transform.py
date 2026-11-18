@@ -846,6 +846,10 @@ def test_the_four_live_categories_are_reviewed_and_a_new_one_is_not():
     for variant in (without_paid, without_paid_addons):
         assert all(variant(rules_for("fairwardgolf")).category(c).reviewed for c in live)
     assert not reviewed("fairwardgolf", "999") and not reviewed("nosuchshop", "1") and not reviewed("fairwardgolf", None)
+    # 50002784 chippers (the owner, 2026-11-18): a new category, DRAFT first; paid variants yes, paid add-ons no
+    chippers = rules_for("fairwardgolf").category("50002784")
+    assert not reviewed("fairwardgolf", "50002784") and chippers.paid_variants and not chippers.paid_addons
+    assert chippers.description_images and not chippers.sets_only and not chippers.wedge_sets
 
 
 def test_stated_weights_checked_without_the_description_images():

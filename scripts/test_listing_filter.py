@@ -268,6 +268,52 @@ def test_wedge_sets_leave_heads_accessories_and_singles_out(title, code):
 
 
 @pytest.mark.parametrize("title, code", [
+    # 50002784 chippers (the owner, 2026-11-18): 1,260 titles of 골프 치퍼 and 치퍼 that day (price slices), 482 out,
+    # every word measured on all of them with no chipper hit
+    ("정원 분쇄기 치퍼 나이프 교체품 부품용", "title:not_golf"),
+    ("포레스트 마스터 나뭇가지 파쇄기 FM6DD 우드치퍼 엔진작동", "title:not_golf"),
+    ("NKS 후렉스치퍼 12mm F-2 31310221 Air Flux Chipper", "title:not_golf"),
+    ("프라이 커터 다기능 야채 치퍼 스테인레스 스틸 감자 25/49 홀 블레이드 주방 도구", "title:not_golf"),
+    ("포커칩 100개 19mm 포커 칩 카운트 빙고 게임 카드 게임용 플라스틱", "title:not_golf"),
+    ("여성용 3cm 실리콘 키높이 깔창 쿠션 아치깔창 치퍼 실리콘깔창 뒤꿈치깔창", "title:not_golf"),
+    ("g6662 CHIPPER 니트 WOMEN(M)", "title:apparel"),
+    ("남성 가을 겨울 다운 패딩 치퍼 조끼 남자 빅사이즈 5XL 민소매 자켓 간절기 아우터", "title:apparel"),
+    ("쟈크뮈스 드 님 플리퍼 데님 탑 SHW00577AD00072 TP460796065", "title:apparel"),
+    ("스릭슨 아담스ADAMS 드라이빙 아이언 치퍼 헤드커버", "title:accessory"),
+    ("골프 치퍼 페이스 방향 지시기 숏게임 훈련 도구", "title:accessory"),
+    ("HD 제품 골프 치퍼 및 퍼터 스탠드 힌지 클럽 샤프트가 지면에 닿지 않도록", "title:accessory"),
+    ("PGM 말렛 골프 퍼터 86.4cm 34인치 남녀공용 오른손용", "title:putter"),
+    ("골프 양면 퍼터 남녀공용 양손잡이용 탄소강 스테인리스 스틸 샤프트 양손퍼터", "title:putter"),
+    ("미즈노 프로 T-1 웨지 [DYNAMIC GOLD HT]", "title:wedge"),
+    ("클리블랜드 골프 여자 CBZ 풀페이스 웨지", "title:wedge"),
+    ("윌슨 다이나파워 남자 골프 아이언", "title:other_club"),
+    ("오딧세이 우타 치퍼 오른손 오디세이 골프 화이트 핫 OG 퍼터 Left", "title:other_club"),
+    ("캘러웨이 오른손 치퍼 잡이 캘러웨이골프 패러덤X개별 아이언 Right", "title:other_club"),
+    # ... and the chippers the words must not touch (the near misses of that day)
+    ("골프 치퍼 양면 왼손잡이 겸용 퍼터 뒤땅 방지 PGM 골프채 칩샷", None),           # a chipper-putter
+    ("PGM 웨지 퍼터 결합 골프클럽 치퍼 Chipper 스텐샤프트 35도 양면형 TUG006", None),   # 웨지퍼터 is no zip
+    ("SiMSPEC 37도 골프 컷 퍼터 컷과 퍼팅 모두 가능 리거스 클럽 순펑 택배", None),       # 37°: no putter
+    ("데이비드 2세대 우디치퍼 치기쉬운 골프채 골프치퍼 칩퍼 어프로치 + 자석티", None),   # 우디치퍼 is no wood chipper
+    ("NITRO 왼손잡이 치퍼 왼손 니트로골프 LH 익스트림40", None),                     # 니트로 is no knit
+    ("치퍼 플립퍼 뒷땅NO 탑핑NO 완벽한 어프로치", None),                              # 탑핑 is no top
+    ("골프치퍼 양면형 연습용 아이언 골프채", None),
+    ("남 여 용 좌타 왼손 오른손 양방향 듀얼 양면 퍼팅 골프 채 아이언 클럽 롱 치퍼 칩퍼", None),
+    ("무츠미혼마 골프 치퍼 러닝 어프로치 피치 앤 런 아이언형 카본 샤프트", None),
+    ("마쓰이 골프채 치퍼 CHIPPER 어프로치 칩샷 웨지 숏게임 헤드커버 701C 34 35", None),  # a cover included
+    ("핑 런닝 어프로치 칩W 스틸 치핑 웨지 남성용 Z-Z115", None),                      # a chipping wedge
+    ("핑 CHIP W 스틸 웨지 [Z-Z115]", None),
+    ("클리블랜드 골프 여자 스마트 솔 풀페이스 웨지", None),
+    ("프로기어 R55 여성 웨지 카본 샤프트 55도", None),
+    ("오디세이 골프 치퍼 퍼터 웨지 우측 37도 스틸 34.5인치 블랙", None),
+    ("클리브랜드 우타 치퍼 오른손 Wmn 스마트솔 풀페이스 S58 GRRH", None),
+])
+def test_chippers_leave_not_golf_clothes_putters_wedges_and_other_clubs_out(title, code):
+    screen = Screen("50002784", namespace="fairwardgolf")
+    assert screen.check({"name": title, "category_id": "50002784", "product_id": "1",
+                         "store": {"channel_no": "2"}}) == code
+
+
+@pytest.mark.parametrize("title, code", [
     # 2026-11-15, the visual lenses on 661 published junior sets: real titles of published misfits (left out now) ...
     ("F형 바 클램프 목공 고정 공구 DIY 작업 목재 접합 장비 바이스 12in", "title:not_golf"),
     ("집소 골프채 세트 놀이쿠션 유치원블록 어린이집블럭", "title:not_golf"),

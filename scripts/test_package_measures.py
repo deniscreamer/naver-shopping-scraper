@@ -8,7 +8,7 @@ import copy
 import pytest
 
 from package_measures import (BASELINE_SIDES, BASELINES, FIELDS, CategoryDefaultsInvalid, CategoryDefaultsMissing,
-                              check_row, current_defaults, default_kind, load_table, on_scale,
+                              check_row, current_defaults, default_kind, load_table, on_scale, row_version,
                               variant_measures)
 
 ROW = {"category_id": "50002788", "category_name": "풀세트", "approved_by": "test", "approved_at": "2026-11-05",
@@ -212,7 +212,7 @@ def test_baselines_block_is_optional_and_the_operators():
     table = load_table()
     block = table["rows"][0]["baselines"]
     assert {k: block[k] for k in BASE if k != "basis"} == {k: v for k, v in BASE.items() if k != "basis"}
-    assert table["version"] == 7 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
+    assert table["version"] == 8 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
     check_row(ROW)                                                    # a row without the block: no composition
     check_row({**ROW, "baselines": BASE})
 
@@ -302,10 +302,23 @@ def test_the_transform_takes_todays_default_and_keeps_the_rest():
     seller = {"value": {"min": 1300, "max": 1300}, "source": "source_stated", "confidence": 5}
     got = current_defaults({"package_length_mm": old, "package_weight_g": seller}, s, "1", table)
     assert got["package_length_mm"]["central"] == 900 and got["package_length_mm"]["kind"] == "single_club"
-    assert got["package_length_mm"]["table_version"] == table["version"] and got["package_weight_g"] == seller
+    assert got["package_length_mm"]["table_version"] == JUNIOR["defaults_version"] and got["package_weight_g"] == seller
     same = {**JUNIOR["kinds"][0]["fields"]["package_length_mm"], "source": "category_default", "kind": "single_club",
             "table_version": 1}
     assert current_defaults({"package_length_mm": same}, s, "1", table)["package_length_mm"] == same
+
+
+def test_a_restamped_default_carries_its_rows_version_not_the_tables():
+    """2026-11-18: the row of 50002784 raised the table to 8; a default of another row restamped by the transform keeps
+    its row's defaults_version (7), so a new row moves no other product; a row without one takes the table's."""
+    table = load_table()
+    assert table["version"] == 8 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
+        "50002788": 7, "50002787": 7, "50002670": 7, "50002783": 7, "50002784": 8}
+    assert row_version(table, JUNIOR) == 7 and row_version({"version": 9}, {k: v for k, v in JUNIOR.items()
+                                                                            if k != "defaults_version"}) == 9
+    for bad in (0, "7", 7.0, True):
+        with pytest.raises(CategoryDefaultsInvalid, match="defaults_version"):
+            check_row({**ROW, "defaults_version": bad})
 
 
 @pytest.mark.parametrize("title, kind", [

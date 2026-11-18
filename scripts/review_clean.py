@@ -65,6 +65,8 @@ ASPECTS: dict[str, tuple[str, ...]] = {
 ASPECTS["50002787"] = ASPECTS["50002788"] + (r"아이(?:가|도|는|랑)|아들|딸|애가|애들|초등|어린이|키에\s?맞|잘\s?(?:치|쳐)",)
 ASPECTS["50002670"] = ASPECTS["50002788"]                     # women's iron sets: the clubs' aspects (2026-11-14)
 ASPECTS["50002783"] = ASPECTS["50002788"]                     # wedge sets: the clubs' aspects (2026-11-15)
+# 50002784 chippers (2026-11-18): the clubs' aspects, and the short game a chipper is bought for (fat and thin shots, roll)
+ASPECTS["50002784"] = ASPECTS["50002788"] + (r"치퍼|칩퍼|어프로치|칩샷|뒤땅|뒷땅|탑핑|굴러|굴리|런닝|러닝",)
 # product words a cut never crosses (the guard of a clause's body)
 PRODUCT_WORDS_ALL = ("디자인", "색상", "무게", "품질", "실물", "예쁘", "이쁘", "예뻐", "이뻐", "제품", "상품",
                      # a defect report is about the product even inside a shipping clause ("박스 열어보니 스크래치")
@@ -76,6 +78,7 @@ PRODUCT_WORDS: dict[str, tuple[str, ...]] = {
 PRODUCT_WORDS["50002787"] = PRODUCT_WORDS["50002788"]         # junior clubs: the same clubs (2026-11-11)
 PRODUCT_WORDS["50002670"] = PRODUCT_WORDS["50002788"]         # women's iron sets: the same clubs (2026-11-14)
 PRODUCT_WORDS["50002783"] = PRODUCT_WORDS["50002788"]         # wedge sets: the same clubs (2026-11-15)
+PRODUCT_WORDS["50002784"] = PRODUCT_WORDS["50002788"] + ("치퍼", "칩퍼")    # chippers: the clubs, and the chipper (2026-11-18)
 OPINION_RE = re.compile(
     r"좋아|좋습|좋네|좋음|좋다|좋고|좋은|괜찮|만족|(?:마음|맘)에\s?(?:들|드|쏙)|최고|굿|짱|강추|추천|아쉽|아쉬|별로|실망|불편"
     r"|편해|편하|딱\s?(?:이|입|맞)|훌륭|멋지|멋져|대박|감동|기대")

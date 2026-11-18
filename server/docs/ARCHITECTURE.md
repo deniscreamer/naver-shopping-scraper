@@ -592,6 +592,9 @@ surfaces.
   the shop's 502, e.g. 13370424163 Cleveland ZipCore XL iron set, 13386376196 Callaway Strata 9피스), and wood sets,
   complete sets and junior sets (13469122120 "우드 ... 드라이버 페어웨이", 13370403487 TaylorMade junior). ->
   `scripts/transform.py` `not_wedge_set` comment.
+- 치퍼 (50002784) holds every "chipper" of Korean: garden wood chippers and their blades, air chisels (에어치퍼), kitchen
+  choppers, insoles, poker chips, clothes, and putters, wedges and irons (seen 2026-11-18: 482 of 1,260 titles of
+  골프 치퍼 / 치퍼). -> `scripts/listing_title_rules.json` 50002784.
 - Naver writes "UnKnown_<katakana>" ("UnKnown_ピン") as the brand of an import it could not name (seen 2026-11-17,
   13104702775): no firm. Naver cuts a purchase agency's long title at 50 characters, inside its loft list ("… 56°
   샌드 웨지S", 13370558777). -> `scripts/brand_fallback.py` `_NO_FIRM`, `scripts/spec_variants.py` `title_cut` comments.
