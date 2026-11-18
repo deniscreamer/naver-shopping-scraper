@@ -61,6 +61,10 @@ EXPECTED = {
     # 12748958315 a women's build by its photos, 12748958200 left as the seller wrote it; a 성별 남성용 row against a
     # 여성 title, unresolved without an owner entry: UNRESOLVED)
     "12748958315": ("wedge-sets",), "12748958200": ("wedge-sets",), "12497168529": (),
+    # 50002784 chippers (2026-11-18, the chipper review: rakuraku00's 브랜드 / 제조사 "brand", 치퍼 as a brand row and
+    # in the title, a notice's 962 g out of the row's band, a free glove's sizes as the only axis)
+    "9991649397": ("chippers",), "10179980640": ("chippers",), "11158899277": ("chippers",),
+    "7004743758": ("chippers",), "10421264752": ("chippers",),
 }
 UNRESOLVED = {"12497168529": "gender conflict"}           # ready, placement holds it: the reason
 SPLIT = {"13369469193": ("unisex", {M: 3, W: 3}),        # 성별 남녀공용: each section every variant

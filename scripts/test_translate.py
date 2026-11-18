@@ -172,7 +172,15 @@ def fixture(name):
     return prepare(line, rules_for("fairwardgolf"), "50002788-fixtures", 1, images)
 
 
-FIXTURES = sorted(n[:-5] for n in os.listdir(os.path.join(FX, "collected")) if n.endswith(".json"))
+def _category(name):
+    with open(os.path.join(FX, "collected", name + ".json"), encoding="utf-8") as f:
+        return str(json.load(f)["details"]["category"]["id"])
+
+
+# the fixtures of a category whose dictionaries have a backup in git (the labels resolve offline): the chippers'
+# (50002784, 2026-11-18) have none yet, their spec labels are asked of the model
+FIXTURES = sorted(n[:-5] for n in os.listdir(os.path.join(FX, "collected")) if n.endswith(".json")
+                  if os.path.isdir(os.path.join(os.path.dirname(FX), "dictionaries", _category(n[:-5]))))
 # held by the transform (nothing to translate into a product): 10504295292 choice_in_text_only, 13683785691 single_only
 HELD = {"10504295292", "13683785691"}
 
@@ -626,6 +634,23 @@ def test_the_system_prompt_has_the_shop_and_the_category():
     assert "## The shop" in full and "Fairward Golf" in full
     assert "## The product category" in full and "골린이 beginner golfer" in full
     assert T.system_prompt("nosuchshop", "1") == T._prompt("translate_system.md")   # no brief: the base alone
+
+
+def test_a_chippers_loft_stays_in_its_title():
+    """2026-11-18, the chipper review: gpt-6.1-terra wrote "PGM Chipper" for "pgm 37° 칩퍼 치퍼" (12181419107) through
+    both fix rounds, and left out the loft option's values listed in 11664750138's title, against the number check
+    (no note frees them). The chipper brief says a title's loft in degrees stays, a listed loft option's values too;
+    the base prompt's "no loft codes" is unchanged. The check accepts the briefed answers and refuses the dropped."""
+    brief = T.system_prompt("fairwardgolf", "50002784")
+    assert '"pgm 37° 칩퍼 치퍼" = "PGM 37° Chipper"' in brief and '"Chipper 52° / 56° / 60° Wide Sole"' in brief
+    assert "No loft, flex or shaft codes" in T._prompt("translate_system.md")
+    pgm = {"id": "x", "kind": "title", "source": "pgm 37° 칩퍼 치퍼"}
+    assert T.verify([pgm], json.dumps({"items": [{"id": "x", "en": "PGM 37° Chipper"}]}))[0] == {"x": "PGM 37° Chipper"}
+    assert T.verify([pgm], json.dumps({"items": [{"id": "x", "en": "PGM Chipper"}]}))[1][0]["problems"] == [
+        "numbers changed: missing 37"]
+    lab = {"id": "y", "kind": "title", "source": "CHIPPER Lab 골프 치퍼 52도 56도 60도 와이드솔 스틸 샤프트"}
+    en = "CHIPPER Lab Golf Chipper 52° / 56° / 60° Wide Sole Steel Shaft"
+    assert T.verify([lab], json.dumps({"items": [{"id": "y", "en": en}]})) == ({"y": en}, [])
 
 
 def test_the_request_uses_the_category_system_prompt(tmp_path):

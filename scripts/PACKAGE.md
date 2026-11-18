@@ -64,11 +64,14 @@ bag and covers. A default package weight below the seller's product weight is ke
 ["below_stated_product"]` (at collection; in the transform, with the row's `baselines`, that package weight becomes
 the seller's product weight + the carton). A table row may carry `plausible: {field: {min, max}}`, the operator's band: a stated value
 outside it is not taken (`contradiction`, `reason: implausible_for_category`) and the default fills the field; a box
-is one statement, so one side out of its band refuses the other two (`box_not_whole`, 2026-11-17). Two rows have a
+is one statement, so one side out of its band refuses the other two (`box_not_whole`, 2026-11-17). A band given after
+a line's collection reaches it when it is prepared again (`package_measures.current_bands`, before `current_defaults`;
+2026-11-18, the chipper row's band and 7004743758's notice 962 g). Two rows have a
 band since 2026-11-17 (table version 7; the agent from the data on the owner's delegation, the wedge-set
 review, commit 2f2262f): 50002783 웨지, product 800-3500 g, package 1000-4000 g, box height
 40-400 mm (a set of 2-6 wedges: a one-club weight or box on a set's page, 0.45 kg, 1.04 lb, 13 mm, is refused);
-50002787 주니어용클럽, product 150-8000 g, package 300-10000 g (13586027489's "529 Pounds"). None is made up.
+50002787 주니어용클럽, product 150-8000 g, package 300-10000 g (13586027489's "529 Pounds"); since 2026-11-18 (table
+version 9) 50002784 치퍼, product 300-650 g (7004743758's 962 g, a shipping weight). None is made up.
 Why these (2026-11-17): the 800 g low is 2 x the single club's 400 and sits in the data's gap (726-1090 g: 25
 one-club readings refused, 47 sets taken; 900-2800 would refuse 13480790720's 2840 g while its twins pass); the
 package low is 1000, not 1500 (1500 refuses 16 real boxes of 1110-1470 g, Yamato 2PCS, BombTech / Detroit / XINGGM
@@ -622,6 +625,22 @@ published from them; `prepared/5` is on the new scale. The transform puts a coll
 today's scale from their own evidence (`package_measures.on_scale`: the old 3 is 5, the old 2 is 4), so one prepared
 record never mixes the two.
 
+**Table version 9 (2026-11-18, the chipper review; the agent on the owner's delegation).** Row 50002784 measured: 33 of
+the 59 collected chippers state the club's total (notice, spec rows, description, the images' OCR), one median per
+product: min 358, p10 395, median 465, mean 472, p90 545.5, max 548 g; the product weight 430 / 500 / 600 -> 380 /
+470 / 560 (5 of the 33 were under 430). Stated club lengths: median 34.75 in, longest 35.75 in (908 mm): the length's
+low 900 -> 920 (central 960 and high 1000 kept). `plausible: product_weight_g 300-650`: 7004743758's notice "중량:
+962g" (a UK import's shipping weight) and 13478213249's Amazon "Item Weight 0.68 Kilograms" (the shipping weight in
+these imports) are no longer the club's. The package weight 800 / 1000 / 1300 and the box sides stay the owner's (one
+stated box only, 12181419107's 12.5 x 12.5 x 100 cm); the price reads only the package weight and the box, so no
+price moves (the lever is the box sides' confidence: one box measured by the owner would take about $100 off each
+chipper). The row's `defaults_version` 9, the others keep 7; the band reaches the lines collected before it
+(`current_bands`). Measured read only (`run_transform.run(cache=False)`, every write suppressed, against
+`prepared/products.jsonl`, 3,232 lines): all 59 chippers' defaults restamped (product weight, the length's low,
+`table_version` 9), the two stated weights above refused; outside 50002784 one product moves, 13595174592 (50002787,
+withdrawn) whose "Item Weight: 4.54 g" falls out of the junior row's band of 2026-11-17 and takes its 3500 g default.
+No price, SKU or status changes.
+
 **Table version 8 (2026-11-18).** The row of 50002784 치퍼 (the owner, sold as single chippers, one club of 34-35 in):
 one chipper in a club box, no bag, 96 x 11 x 8 cm and 1000 g central, the product about 500 g (low / high the
 agent's range: product 430-600 g, package 800-1300 g, length 90-100 cm, sides as 50002783's `single_club`). One
@@ -630,7 +649,8 @@ chipper at $259, 90,000 KRW at $329, 250,000 KRW at $539 (`shop_pricing` quote, 
 carries `defaults_version`, the version its defaults stamp (`table_version`, `package_measures.row_version`), raised
 only with that row's own fields or kinds: the version alone would have restamped 92 prepared products of the other
 rows from 7 to 8 with no number changed (`current_defaults` stamps a default whose numbers moved since its
-collection). The four rows before carry 7, what their restamped defaults had; 50002784 carries 8. Measured
+collection). The four rows before carry 7, what their restamped defaults had; 50002784 carries 8 (9 since its measured
+row, version 9 above). Measured
 2026-11-18 (read only, all 3,173 latest lines prepared afresh with their sidecars against `prepared/products.jsonl`):
 all identical.
 

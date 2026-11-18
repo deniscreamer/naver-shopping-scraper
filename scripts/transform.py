@@ -66,7 +66,7 @@ from description_measures import (COMPOSED, FIELDS, LONG_UNITS, NUMBER_CONF, SOU
                                   composition_count, container_in, container_listed, joined_lines, package_for,
                                   product_over_package, profile_for, read_rows)
 from naver_variants import choose_variants
-from package_measures import (count_band, count_kind, current_defaults, default_field, load_table, lofts, off_count,
+from package_measures import (count_band, count_kind, current_bands, current_defaults, default_field, load_table, lofts, off_count,
                               on_scale, package_kind, row_version)
 from spec_variants import (check_specs, hide_title_model_rows, title_cut, title_lofts_not_sold, title_one_variant,
                            title_variant_tail, title_word_unproven)
@@ -249,6 +249,35 @@ def _drop_promo_axes(names: list[str], rows: list[dict[str, Any]]) -> tuple[list
         if k not in best or (r["price"] or 0) > (best[k]["price"] or 0):
             best[k] = r
     return keep, list(best.values())
+
+
+# a free gift chosen by the buyer, not a version of the product (2026-11-18, the chipper review: Missile 10421264752 sold
+# as 7 variants "휠라 양피장갑 왼손 19호 ... 25호 1장" under the axis 사은품, one price): where the category says so
+# (CategoryRules.gift_axis_out: chippers) the axis is left out, one row per remaining tuple. The axis's name says gift (사은품 / 증정) and names no product choice (옵션 / 구성: "옵션+사은품
+# 하프백" offers the set itself), or every value starts with the gift word; a gift priced apart is a choice and stays.
+_GIFT_AXIS_RE = re.compile(r"사은품|증정")
+_GIFT_VALUE_RE = re.compile(r"^\W*(?:\d+\s*[.)]\s*)?(?:사은품|증정)")
+_PRODUCT_AXIS_RE = re.compile(r"옵션|구성")
+
+
+def _drop_gift_axes(names: list[str], keep: list[int], rows: list[dict[str, Any]]) \
+        -> tuple[list[int], list[dict[str, Any]], str | None]:
+    """Axis indexes to keep, the rows left once a free-gift axis is gone (per remaining tuple, the first row in stock,
+    else the first; every row of a tuple at one price, else nothing goes) and what went (note gift_axis_dropped)."""
+    gift = [i for i in keep if len({r["options"][i] for r in rows}) > 1 and (
+        _GIFT_AXIS_RE.search(names[i]) and not _PRODUCT_AXIS_RE.search(names[i])
+        or all(_GIFT_VALUE_RE.search(r["options"][i]) for r in rows))]
+    if not gift:
+        return keep, rows, None
+    rest = [i for i in keep if i not in gift]
+    groups: dict[tuple[str, ...], list[dict[str, Any]]] = {}
+    for r in rows:
+        groups.setdefault(tuple(r["options"][i] for i in rest), []).append(r)
+    if any(len({r["price"] for r in g}) > 1 for g in groups.values()):
+        return keep, rows, None
+    kept = [next((r for r in g if r.get("is_available") is not False), g[0]) for g in groups.values()]
+    said = "; ".join(f"{_tidy(names[i])} ({len({r['options'][i] for r in rows})} values)" for i in gift)
+    return rest, kept, f"{said}: a free gift, not a version; {len(rows)} -> {len(kept)} rows"
 
 
 def _tidy(text: str) -> str:
@@ -977,9 +1006,9 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
             "code": "options_unaligned", "detail": f"{len(names)} option groups, rows of "
             f"{sorted({len(r['options']) for r in rows})} values"}], "skipped_paid": 0, "duplicate_values": [],
             "capped": None}
-    package = {p.get("variant_id"): p.get("fields") and current_defaults(on_scale(p["fields"]), line.get("specs") or {},
-                                                                         p.get("variant_id"), _measures_table())
-               for p in line.get("package") or []}
+    package = {p.get("variant_id"): p.get("fields") and current_defaults(
+        current_bands(on_scale(p["fields"]), line.get("specs") or {}, p.get("variant_id"), _measures_table()),
+        line.get("specs") or {}, p.get("variant_id"), _measures_table()) for p in line.get("package") or []}
     product_id = line["details"]["id"]
     skipped = choice.get("skipped_paid") or 0
     facts: list[dict[str, str]] = []
@@ -989,6 +1018,7 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
                 "variants": [_variant(rules, key, product_id, [], base, None, True, package.get(None))],
                 "skipped_paid": skipped, "duplicate_values": [], "capped": None}
     keep, rows = _drop_promo_axes(names, rows)
+    keep, rows, gifts = _drop_gift_axes(names, keep, rows) if cat.gift_axis_out else (keep, rows, None)
     slots: str | None = None
     slot_axes: list[int] = []
     if cat.wedge_sets:                             # a picker's slots: no repeated loft, one row per set (C01)
@@ -1048,7 +1078,7 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
         held.append({"code": "axes_over_3", "detail": f"{len(axes)} option axes"})
     return {"options": [{"name_ko": _axis_name(names[i]), "values_ko": values[i]} for i in axes], "facts": facts,
             "variants": variants, "held": held, "skipped_paid": skipped, "duplicate_values": duplicate,
-            "capped": capped, "axes_repeated": repeated, "slot_rows": slots,
+            "capped": capped, "axes_repeated": repeated, "slot_rows": slots, "gift_axes": gifts,
             "slot_axes": [k for k, i in enumerate(axes) if i in slot_axes]}
 
 
@@ -1509,6 +1539,8 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
     notes += checked["notes"]
     if ov.get("axes_repeated"):                     # Amazon's two axes saying one thing: the agreeing rows (C56)
         notes.append({"code": "axes_repeated", "detail": ov["axes_repeated"]})
+    if ov.get("gift_axes"):                         # a buyer's free gift was an axis: left out (10421264752)
+        notes.append({"code": "gift_axis_dropped", "detail": ov["gift_axes"]})
     if ov.get("slot_rows"):                         # a picker's "56+56" and reorderings left out (C01)
         notes.append({"code": "slot_rows_merged", "detail": ov["slot_rows"]})
     if ov["capped"]:                                # combinations past the shop's cap are not offered

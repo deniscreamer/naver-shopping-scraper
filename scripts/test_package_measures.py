@@ -8,7 +8,7 @@ import copy
 import pytest
 
 from package_measures import (BASELINE_SIDES, BASELINES, FIELDS, CategoryDefaultsInvalid, CategoryDefaultsMissing,
-                              check_row, current_defaults, default_kind, load_table, on_scale, row_version,
+                              check_row, current_bands, current_defaults, default_kind, load_table, on_scale, row_version,
                               variant_measures)
 
 ROW = {"category_id": "50002788", "category_name": "풀세트", "approved_by": "test", "approved_at": "2026-11-05",
@@ -212,7 +212,7 @@ def test_baselines_block_is_optional_and_the_operators():
     table = load_table()
     block = table["rows"][0]["baselines"]
     assert {k: block[k] for k in BASE if k != "basis"} == {k: v for k, v in BASE.items() if k != "basis"}
-    assert table["version"] == 8 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
+    assert table["version"] == 9 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
     check_row(ROW)                                                    # a row without the block: no composition
     check_row({**ROW, "baselines": BASE})
 
@@ -310,10 +310,11 @@ def test_the_transform_takes_todays_default_and_keeps_the_rest():
 
 def test_a_restamped_default_carries_its_rows_version_not_the_tables():
     """2026-11-18: the row of 50002784 raised the table to 8; a default of another row restamped by the transform keeps
-    its row's defaults_version (7), so a new row moves no other product; a row without one takes the table's."""
+    its row's defaults_version (7), so a new row moves no other product; a row without one takes the table's. The same
+    day the chipper row was measured (version 9): only its own defaults_version rose."""
     table = load_table()
-    assert table["version"] == 8 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
-        "50002788": 7, "50002787": 7, "50002670": 7, "50002783": 7, "50002784": 8}
+    assert table["version"] == 9 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
+        "50002788": 7, "50002787": 7, "50002670": 7, "50002783": 7, "50002784": 9}
     assert row_version(table, JUNIOR) == 7 and row_version({"version": 9}, {k: v for k, v in JUNIOR.items()
                                                                             if k != "defaults_version"}) == 9
     for bad in (0, "7", 7.0, True):
@@ -450,6 +451,25 @@ def test_wedge_band_refuses_a_one_club_server_weight():
     assert (f["source"], f["central"], f["reason"]) == ("category_default", 2200, "implausible_for_category")
 
 
+def test_chipper_row_measured_and_its_band_refuses_a_shipping_weight():
+    """2026-11-18, the chipper review: 33 of 59 chippers state the club's total, median 465 g, 358-548 g: the row's
+    product weight is 380 / 470 / 560 and a stated weight outside 300-650 g is not the club (7004743758's notice
+    "중량: 962g", an import's shipping weight); 12798869426's "중량: 457G" is still taken."""
+    [row] = [r for r in load_table()["rows"] if r["category_id"] == "50002784"]
+    assert [row["fields"]["product_weight_g"][k] for k in ("low", "central", "high")] == [380, 470, 560]
+    assert row["fields"]["package_length_mm"]["low"] == 920 and row["defaults_version"] == 9
+    assert row["plausible"] == {"product_weight_g": {"min": 300, "max": 650}}
+
+    def chipper(grams):
+        s = specs([{**weight(grams), "unit": "g", "quote": f"중량: {grams}g", "source": "notice"}])
+        return variant_measures({**s, "category": {"id": "50002784", "name": "치퍼"}}, load_table())[0]["fields"]
+    f = chipper(962)["product_weight_g"]
+    assert (f["source"], f["central"], f["reason"], f["table_version"]) == \
+        ("category_default", 470, "implausible_for_category", 9)
+    f = chipper(457)["product_weight_g"]
+    assert (f["source"], f["value"]) == ("source_stated", {"min": 457, "max": 457})
+
+
 def test_server_box_out_of_band_is_refused_whole():
     """C11 on the server path: 13372006463's one-wedge box 37.2 x 2 x 1 in (25 mm high) on a set's page; the three
     sides go to the default together (box_not_whole), never 945 x 51 mm beside a default height."""
@@ -498,3 +518,48 @@ def test_off_count_puts_a_product_scope_weight_back():
     assert out["product_weight_g"]["compared"]["rejected"] == "implausible_for_count"
     bound = {**stated, "binding": {"scope": "variants", "variant_ids": ["1"]}}
     assert off_count({"product_weight_g": bound}, band, WEDGES, two, 7) == ({"product_weight_g": bound}, [])
+
+
+def test_a_band_added_after_the_collection_reaches_the_product():
+    """7004743758 (Ben Sayers XF, an import), 2026-11-18: collected before the chipper row had a band, its notice's
+    "중량: 962g" (the shipping weight) was the product weight. Prepared again, today's band refuses it as collection
+    would now (current_bands), the default fills; a value inside the band and a row without one stay."""
+    import json
+    import os
+    here = os.path.dirname(os.path.abspath(__file__))
+    with open(os.path.join(here, "fixtures", "collected", "7004743758.json"), encoding="utf-8") as f:
+        specs = json.load(f)["specs"]
+    table = load_table()
+    before = copy.deepcopy(table)
+    for r in before["rows"]:
+        r.pop("plausible", None) if r["category_id"] == "50002784" else None
+    [old] = variant_measures(specs, before)                               # as collected that day
+    assert old["fields"]["product_weight_g"]["quote"] == "중량: 962g"
+    got = current_bands(on_scale(old["fields"]), specs, old["variant_id"], table)
+    f = got["product_weight_g"]
+    assert (f["source"], f["central"], f["reason"], f["table_version"]) == \
+        ("category_default", 470, "implausible_for_category", 9)
+    assert [c["value"]["max"] for c in f["contradiction"]] == [962]
+    assert got == current_defaults(got, specs, old["variant_id"], table)   # today's default: nothing restamped
+    assert {n: got[n] for n in FIELDS[1:]} == {n: on_scale(old["fields"])[n] for n in FIELDS[1:]}
+    assert current_bands(on_scale(old["fields"]), specs, old["variant_id"], before) == on_scale(old["fields"])
+    inside = {**old["fields"], "product_weight_g": {**old["fields"]["product_weight_g"],
+                                                    "value": {"min": 457.0, "max": 457.0}}}
+    assert current_bands(inside, specs, old["variant_id"], table) == inside
+
+
+def test_a_band_added_later_refuses_a_whole_box():
+    """current_bands as variant_measures: one side of a stated box out of the row's band refuses the three (C11's
+    13372006463, 37.2 x 2 x 1 in on a wedge set's page, had it been collected before 50002783's band)."""
+    table = load_table()
+    before = copy.deepcopy(table)
+    for r in before["rows"]:
+        r.pop("plausible", None)
+    s = {**specs(dimensions=[box([94.488, 5.08, 2.54])], is_set=True), "category": {"id": "50002783"},
+         "name": "웨지 세트 52 56 60"}
+    [old] = variant_measures(s, before)
+    assert old["fields"]["package_height_mm"]["source"] == "source_stated"
+    got = current_bands(on_scale(old["fields"]), s, None, table)
+    assert [(got[n]["source"], got[n]["reason"]) for n in FIELDS[2:]] == [
+        ("category_default", "box_not_whole"), ("category_default", "box_not_whole"),
+        ("category_default", "implausible_for_category")]

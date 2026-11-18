@@ -346,3 +346,47 @@ def test_a_brand_that_is_the_sellers_shop_gives_way_to_the_titles_brand():
     kept = {"key": "m", "notes": [], "product": {**product, "brand_ko": "메가스피어", "brand_source": "specs:브랜드"}}
     assert B.fill([kept], lambda k: [], {}, _texts, ["PGM"], {"m": "Megasphere"}, stores=stores) == 1   # the owner's
     assert kept["product"]["brand_ko"] == "Megasphere"
+
+
+def _prepared_fixture(pid):
+    """A real collected chipper (fixtures/collected/<pid>.json) through transform.prepare, as run_transform does."""
+    import json
+    import os
+
+    from transform import prepare
+    from transform_shops import rules_for
+    here = os.path.dirname(os.path.abspath(__file__))
+    with open(os.path.join(here, "fixtures", "collected", pid + ".json"), encoding="utf-8") as f:
+        return json.loads(json.dumps(prepare(json.load(f), rules_for("fairwardgolf"), "50002784-fixtures", 1),
+                                     ensure_ascii=False))
+
+
+@pytest.mark.parametrize("word", ["brand", "Brand", "BRAND", "치퍼", "칩퍼", "Chipper", "CHIPPER", "치퍼 CEAF"])
+def test_the_word_brand_and_the_chipper_are_no_brand(word):
+    """2026-11-18, the chipper review: rakuraku00 writes 브랜드=brand and 제조사=brand (9991649397, 9993129226,
+    9993149923 went out as the vendor "brand", "brand CH809 Left-Handed Chipper"); 11158899277's rows say 치퍼, which
+    became a shop brand and then the vendor "Chipper" of every title saying 치퍼 (MAZEL 10179980640, Pinemeadow
+    13478213249, 7518807949, CHIPPER Lab 11664750138)."""
+    assert B.clean(word) is None
+    prepared = [{"product": {"brand_ko": word, "brand_source": "specs:브랜드"}},
+                {"product": {"brand_ko": "월드이글", "brand_source": "specs:브랜드"}}]
+    assert B.shop_brands(prepared) == ["월드이글"]                    # a record prepared before the rule
+    assert B.decide("치퍼 칩퍼 어프로치웨지 시니어 칩퍼터 37도 CHIPPER", None, B.shop_brands(prepared), [],
+                    [word])[1] == "none"                             # nor the dictionary's 치퍼 -> Chipper
+
+
+def test_a_name_with_the_word_stays():
+    assert B.clean("CHIPPER Lab") == "CHIPPER Lab" and B.clean("치퍼랩") == "치퍼랩"   # the maker of 11664750138
+    assert B.clean("MAZEL 치퍼") == "MAZEL" and B.clean("Brandon") == "Brandon" and B.clean("브랜드명") == "브랜드명"
+
+
+@pytest.mark.parametrize("pid", ["9991649397", "11158899277"])
+def test_a_placeholder_row_leaves_the_brand_to_the_fallback(pid):
+    """The real lines: neither the 브랜드 nor the 제조사 row ("brand" / "치퍼") is the brand or a spec row; the fallback
+    takes the title's maker (월드 이글 CH809, as the shop's World Eagle) or none (일본 골프 치퍼: 노브랜드)."""
+    p = _prepared_fixture(pid)
+    assert p["product"]["brand_ko"] is None
+    assert not [r for r in p["product"]["specs"] or [] if r["label_ko"] in ("브랜드", "제조사")]
+    B.fill([p], lambda key: [], {}, _texts, known=["월드이글"])
+    want = {"9991649397": ("월드이글", "title_known"), "11158899277": (B.NO_BRAND, "none")}[pid]
+    assert (p["product"]["brand_ko"], p["product"]["brand_source"]) == want

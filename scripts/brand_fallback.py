@@ -61,7 +61,11 @@ _TRADE_NAME = re.compile(r"(?:상점|상사|상회|만물상|홀딩스?|무역|�
 _PARTNER = re.compile(r"\s*(?:협력\s*(?:사|업체)|제휴(?:\s*(?:사|업체))?)\s*$")   # 빅토르몰 제휴 (2026-11-13)
 # a brand row that goes on into the product's words (5140543074, 2026-11-12: "진월드스타 어린이용 주니어 골프 클럽 아이언
 # 퍼터 드라이버") keeps the words before them; one that is only an age and a club ("6~8세 퍼터", 4194532081) is none
-_WORDS = r"(?:어린이|유아|아동|주니어|키즈|골프\s*클럽|골프채|클럽|퍼터|아이언|드라이버|우드|웨지|유틸|세트)"
+# ... and the chipper itself (2026-11-18, the chipper review: 11158899277's 브랜드 / 제조사 rows say 치퍼, it became a shop
+# brand, then the brand of every title with 치퍼: vendor "Chipper" on MAZEL 10179980640, Pinemeadow 13478213249, TTY / PGM
+# 7518807949, CHIPPER Lab 11664750138); "CHIPPER Lab" is a maker and stays
+_WORDS = (r"(?:어린이|유아|아동|주니어|키즈|골프\s*클럽|골프채|클럽|퍼터|아이언|드라이버|우드|웨지|유틸|세트|치퍼|칩퍼"
+          r"|(?i:chipper)(?!\s*(?i:lab)))")
 # ... and one that starts with them as a word of its own ("주니어", "주니어 어린이용 골프채": 2026-11-13) is none;
 # a brand that only starts like one (키즈짐) stays
 _PRODUCT_WORD = re.compile(r"\s" + _WORDS + r"|^" + _WORDS + r"(?:용)?(?=\s|$)")
@@ -88,6 +92,10 @@ _NO_FIRM = re.compile(r"(?i)^(?:별도\s*표기|알\s*수\s*없음|미상|불명
                       # review: "기타 BRAND" in 3 agency rows went out as the vendor "Other BRAND", 12789751830; "상표"
                       # (trademark) in a 브랜드 / 제조사 row as "Brand" on 5 live sets, 12619693409)
                       r"|기타(?:\s*(?:brand|브랜드))?|상표|브랜드"
+                      # ... and the English word alone, any case (2026-11-18, the chipper review: rakuraku00 writes
+                      # 브랜드=brand and 제조사=brand, 9991649397 / 9993129226 / 9993149923 went out as the vendor "brand",
+                      # "brand CH809 Left-Handed Chipper")
+                      r"|brand"
                       # Naver's placeholder for a brand it could not name, "UnKnown_" and a katakana name (2026-11-17,
                       # the wedge-set review C23: 13104702775 went out with the vendor "UnKnown_ピン" and the title
                       # "UnKnown_ピン Yonex …"; "Artist Unknown" is a name and stays)

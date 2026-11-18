@@ -866,3 +866,51 @@ def test_stated_weights_checked_without_the_description_images():
             weight, packed = v["package"]["product_weight_g"], v["package"]["package_weight_g"]
             assert (weight.get("value") or {}).get("max", weight.get("central")) <= \
                 (packed.get("value") or {}).get("max", packed.get("central"))
+
+
+# ---- a free gift as an option axis (2026-11-18, the chipper review) ------------------------------------------------
+
+def _chipper(pid):
+    with open(os.path.join(os.path.dirname(FX), "collected", pid + ".json"), encoding="utf-8") as f:
+        return json.load(f)
+
+
+def test_a_free_gifts_sizes_are_not_versions_of_the_chipper():
+    """Missile Black Eagle 10421264752 (2026-11-18): the club has no option; its 7 variants were the free FILA glove's
+    sizes ("휠라 양피장갑 왼손 19호 ... 25호 1장", axis 사은품, extra_price 0). Chippers (gift_axis_out): one variant,
+    the first row's SKU kept, a note; another category's rules keep the 7 (its sets' gifts are a bag set, a putter,
+    a club the buyer picks: the owner's word)."""
+    line = _chipper("10421264752")
+    p = json.loads(json.dumps(prepare(copy.deepcopy(line), RULES_ON, "50002784-test", 1)))
+    [v] = p["product"]["variants"]
+    assert p["product"]["options"] == [] and v["options_ko"] == [] and v["price_krw"] == 89000
+    assert v["source_id"] == 'observed:["35인치","휠라 양피장갑 왼손 19호 1장"]'
+    assert {"code": "gift_axis_dropped", "detail": "사은품 (7 values): a free gift, not a version; 7 -> 1 rows"} \
+        in p["notes"]
+    assert not [t for t in p["texts"] if "양피장갑" in t["ko"]]           # nothing of the gift left to translate
+    off = dataclasses.replace(RULES_ON, categories={**RULES_ON.categories, "50002784": dataclasses.replace(
+        RULES_ON.categories["50002784"], gift_axis_out=False)})
+    kept = prepare(copy.deepcopy(line), off, "50002784-test", 1)
+    assert len(kept["product"]["variants"]) == 7 and kept["product"]["options"][0]["name_ko"] == "사은품"
+
+
+@pytest.mark.parametrize("names, rows, kept", [
+    # a gift priced apart is a choice: stays
+    (["사은품"], [("장갑 S", 100), ("장갑 L", 120)], ([0], 2)),
+    # the set itself with a gift ("옵션+사은품 하프백", 13457270622): a product choice, stays
+    (["옵션+사은품 아이언커버"], [("레바26 민트", 100), ("레바26 블랙", 100)], ([0], 2)),
+    # every value only adds a gift to a product choice ("3세대흑백95-115cm클럽커버증정", 13824501696): stays
+    (["옵션"], [("흑백95-115cm클럽커버증정", 100), ("흑황95-115cm클럽커버증정", 100)], ([0], 2)),
+    # every value is the gift ("[사은품] 장갑 22호"): goes
+    (["선택"], [("[사은품] 장갑 22호", 100), ("[사은품] 장갑 23호", 100)], ([], 1)),
+    # a gift beside the club's own axis: one row per loft, the first in stock
+    (["로프트", "증정 장갑"], [("35도", "S", 100, False), ("35도", "M", 100), ("45도", "S", 110), ("45도", "M", 110)],
+     ([0], 2)),
+])
+def test_which_gift_axes_go(names, rows, kept):
+    rows = [{"options": list(r[:len(names)]), "price": r[len(names)],
+             "is_available": r[len(names) + 1] if len(r) > len(names) + 1 else True} for r in rows]
+    keep, left, said = transform._drop_gift_axes(names, list(range(len(names))), rows)
+    assert (keep, len(left)) == kept and (said is None) == (len(left) == len(rows))
+    if names[0] == "로프트":
+        assert [r["options"] for r in left] == [["35도", "M"], ["45도", "S"]]

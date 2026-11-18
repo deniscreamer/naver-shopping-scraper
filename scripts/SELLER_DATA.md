@@ -353,12 +353,19 @@ Code: `transform.prepare`, `brand_fallback.py` (2026-11-08).
   ("USPA", "페스트니스", "PMJ": 13582215582, 12872703429), dates elsewhere (C03); a seller's shop name as the brand of
   another brand's set (메가스피어 on PGM 13245513614, 제우스골프 as the maker of a 팀요시무라 set 10149539327, C02); a
   shop brand "Vice Golf" / "미스테리 골프" whose stem alone starts the title ("Vice Boost Plus …", 13830312401, C27).
+- The chipper review (2026-11-18): rakuraku00 writes the English word "brand" in both 브랜드 and 제조사 (9991649397,
+  9993129226, 9993149923: the vendor "brand"); a seller writes the category word 치퍼 there (11158899277), and as a
+  shop brand it named 4 more titles (MAZEL 10179980640, Pinemeadow 13478213249, 7518807949, CHIPPER Lab 11664750138).
+  `brand_fallback._NO_FIRM` / `_WORDS`: neither is a brand.
 
 ### Origin, gifts, add-ons
 
 - 원산지 brackets name an importer ("일본(IRUGI SHOJI)", "중국산((주)위스트OEM)") -> cut; or the parts' countries
   ("미국산(핑(미국) 미즈노(일본) 웨지퍼터(중국))") -> kept.
 - A hidden 사은품 row can name a thing in the box ("오리지널커버 증정") -> gift_hidden.
+- A free gift as an option axis (2026-11-18, the chipper review): Missile 10421264752 lists one club as 7 variants
+  "휠라 양피장갑 왼손 19호 ... 25호 1장" under 사은품, one price -> dropped in chippers (`gift_axis_out`,
+  `transform._drop_gift_axes`, note `gift_axis_dropped`).
 - Add-on names carry the seller's codes and numbering ("[G192]01_미즈노 클럽 렌치", "1-1.남성 장갑") -> left out.
 - Miura (2026-11-17, C57; 11585678496, 11277694183, 11585620683, 6593061432, 11277707794): a group of paid shafts
   "웨지 샤프트" headed by free entries framed ▣ ("▣ KBS ▣", "▣ PROJECT X ▣") and "◈ 헤드만 구매 ◈": the headings are no
@@ -468,6 +475,12 @@ Research 2026-11-07 on the 50 fixture products, then the runs dated below. Code:
   description images: no hold, no note (`_choice_in_text` reads loft sets only).
 - Mirai's sibling 10482586862 (live): its description's lofts "<48도 ,52도,56도>" contradict its title "(50도 54도
   58도)", with no choice word: sold as the title says, no note (2026-11-18).
+- A free gift as an option axis outside chippers (2026-11-18, measured on the shop: 11 listings of 50002788, 50002787,
+  50002670, 9 live): the gift is a bag set's colour (13563926927, 11704555384), a putter's length (13392631303), a club
+  the buyer picks (증정용 키와미 4스타 클럽 선택, 8324398313), a glove's size (10068982959): kept as variants; leaving it
+  out there changes live products, the owner's word (`CategoryRules.gift_axis_out`).
+- A maker's Latin name only at the head of a title, not in the dictionary ("CHIPPER Lab 골프 치퍼 ...", 11664750138,
+  2026-11-18): no step takes it, 노브랜드 (the owner's brand: `brand_by_owner.json`).
 - Amazon's "Item Dimensions L x W x H" (48"L x 6"W x 6"H on 13468741368) is not read as the package's sides: the
   length stays the category default 980 mm, which can understate a volumetric price (2026-11-17).
 - Reviews: the summary's photo_count can be lower than the files a selection downloads, and selected_reviews took 6

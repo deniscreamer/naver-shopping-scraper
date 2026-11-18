@@ -279,7 +279,8 @@ files or the live dictionaries. The rounds run so far: History, below.
   aspects with a parent's words and glossary) and 50002670 (women's iron sets, 2026-11-14: its own brief; the sets'
   rule, aspects, product words and glossary) and 50002783 (wedge sets, 2026-11-15: its own brief, the sets' rule,
   aspects, product words and glossary) and 50002784 (chippers, 2026-11-18: its own brief with the listing's makers
-  and lines, the clubs' rule and glossary, the clubs' aspects plus the short game's, product words plus 치퍼 / 칩퍼)
+  and lines, the clubs' rule and glossary, the clubs' aspects plus the short game's, product words plus 치퍼 / 칩퍼;
+  its brief keeps a title's loft in degrees, 2026-11-18: History)
   have a category brief, aspects and rules. Another category gets the
   base prompt and the general aspects until it has its own.
 
@@ -337,3 +338,18 @@ titles that had it with no source (12079168386, 13017295953, 13372272290, 133825
 Pinkley / Pinchilly -> Finchley, Remix -> RMX, 0 Tour -> Zero Tour, Pro-Knees gone. One "Men's" came from the
 spec row 성별 남성용 (12425620541). 9 of 104 texts flagged by the judge (a dropped flex "S", a spin claim, a leftover
 "Legal", 노브랜드 as the shop's name: none from these lines).
+
+**2026-11-18, the chipper brief's loft line** (not measured with a model: the owner delegated the decision, no paid call
+was made). Two chippers stayed `untranslated` on "numbers changed": gpt-6.1-terra wrote "PGM Chipper" for "pgm 37° 칩퍼
+치퍼" (12181419107) in all three calls of both job attempts, and left out "52도 56도 60도", the loft option's values, of
+"CHIPPER Lab 골프 치퍼 52도 56도 60도 ..." (11664750138), while the same model kept the loft on about ten other chipper
+titles ("PGM TUG019 35° Chipper-Putter" 6934029230, "Giga Golf RIC Chipper 35°" 4906542106, "... 35° 45°" 9993149923).
+The likely trigger is the base prompt's title rule "No loft, flex or shaft codes (... the options say them)", meant for
+joined codes ("11.5L", "#4 L") but read as covering a bare "37°"; the check is right (no note frees those numbers).
+The base prompt is unchanged (its loft-code rule is right for the sets); `prompts/categories/50002784.md` says a
+title's loft in degrees is a fact of the chipper and stays, a listed loft option's values too, with the two products
+as the examples ("PGM 37° Chipper", "Chipper 52° / 56° / 60° Wide Sole"). Offline: `test_a_chippers_loft_stays_in_its_title`
+(the brief reaches the prompt; the check accepts those answers and refuses "PGM Chipper"). It reaches the two products
+when they are translated again (`translate.py fairwardgolf --only <id>`, the owner's word); a published title is not
+asked again. A listed loft that is sold out (56° / 60° on 11664750138) stays in the title, as on the store's other
+chipper drafts (9993149923's 45°): not handled.

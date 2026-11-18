@@ -1,0 +1,368 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102276974:11158899277",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "2 of 2 kept (full 1, short 1); 0 trimmed"
+  },
+  {
+   "code": "description_images_missing",
+   "detail": "no sidecar: run description_images.py"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "NOT_APPLICABLE"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/jlinewoodybudy/products/11158899277",
+  "channel_no": "102276974",
+  "product_id": "11158899277",
+  "category_id": "50002784"
+ },
+ "product": {
+  "title_ko": "일본 골프 치퍼 일본 직배송",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {},
+  "options": [
+   {
+    "name_ko": "로프트",
+    "values_ko": [
+     "39도",
+     "48도"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"39도\"]",
+    "naver_variant_id": "45483356331",
+    "options_ko": [
+     "39도"
+    ],
+    "price_krw": 99100,
+    "price_usd": "99.10",
+    "sku": "FW-8ed244b2a0821bbf7522a38d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 380,
+      "central": 470,
+      "high": 560,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1000,
+      "high": 1300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_length_mm": {
+      "low": 920,
+      "central": 960,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 110,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 80,
+      "high": 110,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"48도\"]",
+    "naver_variant_id": "45483356333",
+    "options_ko": [
+     "48도"
+    ],
+    "price_krw": 99100,
+    "price_usd": "99.10",
+    "sku": "FW-59564f87874508b6cc6e234e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 380,
+      "central": 470,
+      "high": 560,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1000,
+      "high": 1300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_length_mm": {
+      "low": 920,
+      "central": 960,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 110,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 80,
+      "high": 110,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 99100,
+   "original_krw": 151000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 2
+  },
+  "reviews": [
+   {
+    "id": "4819598420",
+    "score": 5,
+    "text_ko": "좋습니다 좋아요",
+    "created_at": "2025-10-12T23:38:40Z",
+    "writer": "lsh8******",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "short",
+    "text_quality": 1,
+    "text_original_ko": "좋습니다 좋아요 ㅎㅎ"
+   },
+   {
+    "id": "4802304890",
+    "score": 5,
+    "text_ko": "마감이 우수합니다!",
+    "created_at": "2025-09-12T05:47:57Z",
+    "writer": "lsh8******",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 22,
+    "text_original_ko": "마감이 우수합니다!."
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/11158899277/fairwardgolf-11158899277-001-d12458f4e42aef61.webp",
+    "sha256": "d12458f4e42aef61c55149f7f4ba4a43cd0019d852e691f537eed8dbc3726646",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/11158899277/fairwardgolf-11158899277-002-975359afb32e88e5.webp",
+    "sha256": "975359afb32e88e5776cf68b1977402de5258e9e3064cecf2e8a72af5020cfd0",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/11158899277/fairwardgolf-11158899277-003-81488a7e87729155.webp",
+    "sha256": "81488a7e8772915527ad545e8849c8087a0e6958abbe59f8b0d18515842c5363",
+    "width": 800,
+    "height": 800
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/11158899277/fairwardgolf-11158899277-004-8e1c3c418febb6f7.webp",
+    "sha256": "8e1c3c418febb6f70db714a7338391191ff8401a083ea19628b7b5154e372ff0",
+    "width": 800,
+    "height": 1056
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/11158899277/fairwardgolf-11158899277-005-388f03a249274b5b.webp",
+    "sha256": "388f03a249274b5bc4ac795e06d159df79c64ab0fa3db07ff5cac78f82759b59",
+    "width": 800,
+    "height": 1242
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/11158899277/fairwardgolf-11158899277-006-73566efab20b8db0.webp",
+    "sha256": "73566efab20b8db010c46e8e0735e91f86791e52e46166ab54e8aa06c3f77a7c",
+    "width": 1000,
+    "height": 1157
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/11158899277/fairwardgolf-11158899277-007-d2ca0c089e251d4b.webp",
+    "sha256": "d2ca0c089e251d4b6e65a0c257b2c771890768720920aacac92ea47c20985297",
+    "width": 1000,
+    "height": 1322
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/11158899277/fairwardgolf-11158899277-008-71873c92e20d3367.webp",
+    "sha256": "71873c92e20d3367cd4cf531b5950072fa0f41799c1cc8091d38c9fb0b2b6203",
+    "width": 1000,
+    "height": 1346
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/11158899277/fairwardgolf-11158899277-009-80044f5c313a50e8.webp",
+    "sha256": "80044f5c313a50e8b57c6120a38fed68978049ef49dff19f3db2171c4cb82df2",
+    "width": 800,
+    "height": 800
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": true,
+   "customs_tax_type": "NOT_APPLICABLE",
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "policy_text": null,
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": "제주/도서산간 지역"
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20241122_51/1732221382318RVQPd_JPEG/p-11106337050-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20241122_274/1732221382322Mi8RP_JPEG/p-11106337050-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20241122_124/1732221382398NMUvG_JPEG/p-11106337050-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20241122_262/1732221382366B4Ag5_JPEG/p-11106337050-s-1-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20241122_257/1732221382319SDPAj_JPEG/p-11106337050-s-1-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20241122_212/1732221382413OnsOy_JPEG/p-11106337050-s-1-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20241122_257/17322213823460AXV6_JPEG/p-11106337050-s-1-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20241122_68/1732221382324vf6W7_JPEG/p-11106337050-s-1-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20241122_171/1732221382386DtSV5_JPEG/p-11106337050-s-1-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20241122_242/1732221382386v5poL_JPEG/p-11106337050-s-1-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20241122_4/17322213823185aWnD_JPEG/p-11106337050-s-1-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20241122_80/1732221382318j7zwS_JPEG/p-11106337050-s-1-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20241122_34/1732221382391NTMvk_JPEG/p-11106337050-s-1-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20241122_188/1732221382369IvalW_JPEG/p-11106337050-s-1-A-13.jpg",
+   "https://shop-phinf.pstatic.net/20241122_180/173222138240935lX7_JPEG/p-11106337050-s-1-A-14.jpg",
+   "https://shop-phinf.pstatic.net/20241122_187/1732221382316GlkJa_JPEG/p-11106337050-s-1-A-15.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:03c3b6697e9d0020",
+   "kind": "title",
+   "ko": "일본 골프 치퍼 일본 직배송"
+  },
+  {
+   "id": "option_name:296c73d58bb65046",
+   "kind": "option_name",
+   "ko": "로프트"
+  },
+  {
+   "id": "option_value:af7cd593be860349",
+   "kind": "option_value",
+   "ko": "39도"
+  },
+  {
+   "id": "option_value:23101775dc45dc3c",
+   "kind": "option_value",
+   "ko": "48도"
+  },
+  {
+   "id": "review:a8bcf872cb89c715",
+   "kind": "review",
+   "ko": "좋습니다 좋아요"
+  },
+  {
+   "id": "review:9d591566e363f1ff",
+   "kind": "review",
+   "ko": "마감이 우수합니다!"
+  }
+ ]
+}

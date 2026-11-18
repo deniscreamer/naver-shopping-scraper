@@ -1,0 +1,756 @@
+{
+ "key": "fairwardgolf:naver:101643725:10179980640",
+ "listing": {
+  "product_id": "10179980640",
+  "nv_mid": "87724484051",
+  "link": "https://smartstore.naver.com/dittomall/products/10179980640",
+  "name": "치퍼 칩퍼 어프로치웨지 시니어 칩퍼터 치기쉬운 37도 로브 벙커웨지 CHIPPER 칩샷",
+  "store": {
+   "name": "Dittomall",
+   "slug": "dittomall",
+   "link": "https://smartstore.naver.com/dittomall",
+   "channel_no": "101643725",
+   "grade": "POWER",
+   "is_brand_store": false
+  },
+  "pricing": {
+   "sale_price": 78000,
+   "discounted_price": 62400,
+   "discount_ratio": 20,
+   "currency": "KRW"
+  },
+  "category_id": "50002784",
+  "reviews": {
+   "count": 1,
+   "average_score": 5
+  },
+  "stock_quantity": 9992,
+  "image": "https://shopping-phinf.pstatic.net/main_8772448/87724484051.1.jpg",
+  "is_ad": true,
+  "query": "골프 치퍼",
+  "batch": 1,
+  "seen_at": "2026-11-18T11:43:25+00:00",
+  "key": "fairwardgolf:naver:101643725:10179980640"
+ },
+ "details": {
+  "id": "10179980640",
+  "origin_product_id": "10130944912",
+  "name": "치퍼 칩퍼 어프로치웨지 시니어 칩퍼터 치기쉬운 37도 로브 벙커웨지 CHIPPER 칩샷",
+  "link": "https://smartstore.naver.com/dittomall/products/10179980640",
+  "catalog_id": "87724484051",
+  "catalog_link": "https://search.shopping.naver.com/catalog/87724484051",
+  "status": "SALE",
+  "sale_type": "NEW",
+  "is_displayed": true,
+  "pricing": {
+   "sale_price": 78000,
+   "discounted_price": 62400,
+   "discount_ratio": 20,
+   "seller_discount": 15600,
+   "manager_discount": 0,
+   "currency": "KRW",
+   "points": {
+    "purchase": 624,
+    "text_review": 0,
+    "photo_video_review": 0,
+    "after_use_text_review": 0,
+    "after_use_photo_video_review": 0,
+    "store_member_review": 0
+   }
+  },
+  "stock_quantity": 9992,
+  "has_options": false,
+  "has_supplements": false,
+  "images": [
+   "https://shop-phinf.pstatic.net/20260705_154/1783232451079iORhq_JPEG/53740488218780308_1204763849.jpg",
+   "https://shop-phinf.pstatic.net/20260705_265/1783232457089X4HcH_JPEG/117365385201951588_541520898.jpg",
+   "https://shop-phinf.pstatic.net/20260705_27/1783232463089bqdaP_JPEG/117240183146991772_378605823.jpg"
+  ],
+  "category": {
+   "id": "50002784",
+   "name": "치퍼",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "치퍼"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002784"
+   ]
+  },
+  "brand": null,
+  "brand_id": null,
+  "manufacturer": null,
+  "model_name": null,
+  "tags": [
+   "퍼터용품",
+   "어르신"
+  ],
+  "page_title": null,
+  "reviews": {
+   "count": 1,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 1
+   },
+   "text_count": 0,
+   "photo_count": 1,
+   "video_count": 0,
+   "after_use_count": 0,
+   "best_count": 0,
+   "recent": null,
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "최고예요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "정확도가 개선되었나요?",
+     "answers": [
+      {
+       "name": "잘 모르겠어요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "조금 있었어요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "개선되었어요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "사용이 편리한가요?",
+     "answers": [
+      {
+       "name": "어려워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "조작이 쉬워요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    }
+   ],
+   "representative_reviews": null
+  },
+  "delivery": {
+   "fee_type": "PAID",
+   "base_fee": 3000,
+   "is_free": false,
+   "policy_text": null,
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "TODAY",
+   "is_today_delivery": null,
+   "company": "CJ대한통운",
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "extra_fee_text": null
+  },
+  "is_free_delivery": false,
+  "is_today_delivery": true,
+  "has_arrival_guarantee": false,
+  "has_regular_subscription": false,
+  "has_free_return_insurance": false,
+  "is_minor_purchasable": true,
+  "is_adult_restricted": false,
+  "is_in_naver_shopping": true,
+  "option_groups": null,
+  "variants": null,
+  "supplements": null,
+  "description": {
+   "html": "<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://store.img11.co.kr/71297609/230912ce-8187-410b-85a1-9622039613d3_1712216474858.jpg\"  /><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=' data-src=\"https://ai.esmplus.com/ditto2022/Notice/notice.jpg\"  />\n<!-- company=\"esellers\" enc=\"한글\" section=\"register items\" service=\"z4itemsmgr\" time=\"2024-04-08 07:34:41\" -->",
+   "text": null,
+   "editor_type": "NONE",
+   "images": [
+    "https://shop-phinf.pstatic.net/20240408_32/1712554639947qHwGW_JPEG/p-10130944912-s-1-A-0.jpg",
+    "https://shop-phinf.pstatic.net/20240408_128/171255463995210U0J_JPEG/p-10130944912-s-1-A-1.jpg",
+    "https://shop-phinf.pstatic.net/20240408_173/1712554639948SFMEP_JPEG/p-10130944912-s-1-A-2.jpg",
+    "https://shop-phinf.pstatic.net/20240408_48/1712554639946m6WGL_JPEG/p-10130944912-s-1-A-3.jpg"
+   ]
+  },
+  "notice": {
+   "type": "ETC",
+   "items": [
+    {
+     "label": "품명 / 모델명",
+     "value": "상품상세설명 참조 / 상품상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "법에 의한 인증, 허가 등을 받았음을 확인할 수 있는 경우 그에 대한 사항",
+     "value": "상품상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조자(사)",
+     "value": "상품상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제조국",
+     "value": "중국산(알수없음)",
+     "is_see_description": false
+    },
+    {
+     "label": "A/S 책임자",
+     "value": "상품상세설명 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "A/S 전화번호",
+     "value": null,
+     "is_see_description": false
+    }
+   ],
+   "terms": [
+    {
+     "label": "재화등의 배송방법에 관한 정보",
+     "value": "택배",
+     "is_see_description": false
+    },
+    {
+     "label": "주문 이후 예상되는 배송기간",
+     "value": "대금 지급일로부터 3일 이내에 발송",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자·오배송 등에 따른 청약철회 등의 경우 청약철회 등의 기한 및 통신판매업자가 부담하는 반품비용 등에 관한 정보",
+     "value": "상품상세 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회 시 소비자가 부담하는 반품비용 등에 관한 정보",
+     "value": "편도 3000원 (최초 배송비 무료인 경우 6000원 부과)",
+     "is_see_description": false
+    },
+    {
+     "label": "제품하자가 아닌 소비자의 단순변심에 따른 청약철회가 불가능한 경우 그 구체적 사유와 근거",
+     "value": "상품상세 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "재화등의 교환·반품·보증 조건 및 품질보증기준",
+     "value": "상품상세 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "재화등의 A/S 관련 전화번호",
+     "value": null,
+     "is_see_description": false
+    },
+    {
+     "label": "대금을 환불받기 위한 방법과 환불이 지연될 경우 지연배상금을 지급받을 수 있다는 지연배상금 지급의 구체적인 조건·절차",
+     "value": "상품상세 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "소비자피해보상의 처리, 재화등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항",
+     "value": "상품상세 참조",
+     "is_see_description": true
+    },
+    {
+     "label": "거래에 관한 약관의 내용 또는 확인할 수 있는 방법",
+     "value": "상품상세 페이지 및 페이지 하단의 이용약관 링크를 통해 확인할 수 있습니다.",
+     "is_see_description": false
+    }
+   ]
+  },
+  "facts": {
+   "brand": null,
+   "manufacturer": null,
+   "model_name": null,
+   "origin": {
+    "value": "중국산(알수없음)",
+    "source": "notice:제조국"
+   }
+  },
+  "store": {
+   "id": "101643725",
+   "uid": "2sWE1Ytojx1AMfsVgo0f7",
+   "name": "Dittomall",
+   "slug": "dittomall",
+   "link": "https://smartstore.naver.com/dittomall",
+   "type": "smart_store",
+   "grade": "THIRD",
+   "sale_count": 139,
+   "merchant_id": "511562354",
+   "business": {
+    "legal_name": "디토",
+    "representative": "정은혜",
+    "type": "PRIVATE",
+    "is_business": true,
+    "is_overseas": false,
+    "phone": null,
+    "email": null,
+    "address": null
+   }
+  }
+ },
+ "specs": {
+  "id": "10179980640",
+  "name": "치퍼 칩퍼 어프로치웨지 시니어 칩퍼터 치기쉬운 37도 로브 벙커웨지 CHIPPER 칩샷",
+  "link": "https://smartstore.naver.com/dittomall/products/10179980640",
+  "query": "치퍼 칩퍼 어프로치웨지 시니어 칩퍼터 치기쉬운 37도 로브 벙커웨지 CHIPPER 칩샷",
+  "category": {
+   "id": "50002784",
+   "name": "치퍼",
+   "path": [
+    "스포츠/레저",
+    "골프",
+    "골프클럽",
+    "치퍼"
+   ],
+   "path_ids": [
+    "50000007",
+    "50000029",
+    "50001102",
+    "50002784"
+   ]
+  },
+  "specs": [
+   {
+    "label": "상품번호",
+    "value": "10179980640"
+   },
+   {
+    "label": "원산지",
+    "value": "중국산(알수없음)"
+   },
+   {
+    "label": "샤프트소재",
+    "value": "스틸"
+   },
+   {
+    "label": "성별",
+    "value": "남녀공용"
+   },
+   {
+    "label": "치퍼 로프트각",
+    "value": "37도"
+   },
+   {
+    "label": "사용방향",
+    "value": "오른손용"
+   }
+  ],
+  "is_complete": true,
+  "facts": {
+   "brand": null,
+   "manufacturer": null,
+   "model_name": null,
+   "origin": {
+    "value": "중국산(알수없음)",
+    "source": "specs:원산지"
+   }
+  },
+  "options": {
+   "has_options": false,
+   "status": "SALE",
+   "is_sold_out": false,
+   "stock_quantity": 9992,
+   "option_groups": [],
+   "variants": [],
+   "simple_options": [],
+   "text_options": [],
+   "supplements": []
+  },
+  "delivery": {
+   "fee_type": "PAID",
+   "base_fee": 3000,
+   "is_free": false,
+   "policy_text": "제주 추가 5,000원, 제주 외 도서지역 추가 5,000원",
+   "method_types": [
+    "DELIVERY"
+   ],
+   "attribute": "TODAY",
+   "is_today_delivery": true,
+   "company": "CJ 대한통운(오네)",
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": 5000,
+   "extra_fee_text": null,
+   "is_overseas": false,
+   "scope": "domestic",
+   "customs_tax_type": null,
+   "lead_time": {
+    "seller_average_days": 1.6923077,
+    "product_average_days": null,
+    "today_cutoff": "11:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   }
+  },
+  "measures": {
+   "is_set": false,
+   "weights": [],
+   "dimensions": [],
+   "references": [],
+   "review": []
+  },
+  "read_at": "2026-11-18T11:53:27Z"
+ },
+ "variants": {
+  "paid": true,
+  "base_price": 62400,
+  "variants": [],
+  "available": 0,
+  "sold_out": 0,
+  "skipped_paid": 0,
+  "name_mismatches": [],
+  "simple_options": [],
+  "text_options": [],
+  "supplements": []
+ },
+ "package": [
+  {
+   "variant_id": null,
+   "fields": {
+    "product_weight_g": {
+     "low": 380,
+     "central": 470,
+     "high": 560,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 9,
+     "approved_by": "owner",
+     "approved_at": "2026-11-18"
+    },
+    "package_weight_g": {
+     "low": 800,
+     "central": 1000,
+     "high": 1300,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 9,
+     "approved_by": "owner",
+     "approved_at": "2026-11-18"
+    },
+    "package_length_mm": {
+     "low": 920,
+     "central": 960,
+     "high": 1000,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 9,
+     "approved_by": "owner",
+     "approved_at": "2026-11-18"
+    },
+    "package_width_mm": {
+     "low": 80,
+     "central": 110,
+     "high": 150,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 9,
+     "approved_by": "owner",
+     "approved_at": "2026-11-18"
+    },
+    "package_height_mm": {
+     "low": 60,
+     "central": 80,
+     "high": 110,
+     "source": "category_default",
+     "confidence": 1,
+     "reliability": "estimated_average",
+     "table_version": 9,
+     "approved_by": "owner",
+     "approved_at": "2026-11-18"
+    }
+   },
+   "product_size": []
+  }
+ ],
+ "reviews": {
+  "product": {
+   "id": "10179980640",
+   "name": "치퍼 칩퍼 어프로치웨지 시니어 칩퍼터 치기쉬운 37도 로브 벙커웨지 CHIPPER 칩샷",
+   "link": "https://smartstore.naver.com/dittomall/products/10179980640"
+  },
+  "summary": {
+   "count": 1,
+   "average_score": 5.0,
+   "score_counts": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 1
+   },
+   "text_count": 0,
+   "photo_count": 1,
+   "video_count": 0,
+   "after_use_count": 0,
+   "best_count": 0,
+   "recent": null,
+   "evaluations": [
+    {
+     "question": "가성비는 어떤가요?",
+     "answers": [
+      {
+       "name": "별로에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "괜찮아요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "최고예요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "정확도가 개선되었나요?",
+     "answers": [
+      {
+       "name": "잘 모르겠어요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "조금 있었어요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "개선되었어요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    },
+    {
+     "question": "사용이 편리한가요?",
+     "answers": [
+      {
+       "name": "어려워요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "보통이에요",
+       "count": 0,
+       "percent": 0
+      },
+      {
+       "name": "조작이 쉬워요",
+       "count": 1,
+       "percent": 100
+      }
+     ]
+    }
+   ],
+   "representative_reviews": null
+  },
+  "mode": "small_source",
+  "count": 1,
+  "scanned": 1,
+  "passes": [
+   {
+    "media": "all",
+    "pages": 1,
+    "total_count": 1,
+    "is_exhausted": true
+   }
+  ],
+  "is_complete": true,
+  "results": [
+   {
+    "id": "4956299038",
+    "score": 5,
+    "text": "싸게잘샀네요 가성비갑 감사합니다",
+    "created_at": "2026-04-17T11:17:33Z",
+    "type": "NORMAL",
+    "content_type": "PHOTO",
+    "option": null,
+    "is_repurchase": false,
+    "is_free_trial": false,
+    "event_title": null,
+    "writer": {
+     "masked_id": "ys****",
+     "profile_image": "https://phinf.pstatic.net/contact/20190405_67/155446527704959TA5_JPEG/image.jpg"
+    },
+    "attachments": [
+     {
+      "type": "image",
+      "link": "https://phinf.pstatic.net/checkout.phinf/20260417_36/1776424645706jgUBV_JPEG/1000022489.jpg",
+      "width": 1848,
+      "height": 4000
+     }
+    ],
+    "product": {
+     "id": "10179980640",
+     "origin_product_id": "10130944912",
+     "name": "골프치퍼 칩퍼 어프로치웨지 칩퍼터 37도 로브 벙커웨지"
+    },
+    "likes": null,
+    "tier": "small"
+   }
+  ]
+ },
+ "photos": {
+  "store": "fairwardgolf",
+  "total": 3,
+  "files": [
+   {
+    "position": 0,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20260705_154/1783232451079iORhq_JPEG/53740488218780308_1204763849.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20260705_154/1783232451079iORhq_JPEG/53740488218780308_1204763849.jpg",
+    "source_sha256": "7198910889ba57ff259c1dfd60dbc8c57b20e7203defe4974e6f086d6bad149e",
+    "source_bytes": 170707,
+    "source_format": "JPEG",
+    "source_width": 1000,
+    "source_height": 1000,
+    "first_frame_of": null,
+    "file": "images/10179980640/fairwardgolf-10179980640-001-bda5aa1a66d5d640.webp",
+    "sha256": "bda5aa1a66d5d64049f9cf17fcd18cf4354d9013a36627fa761a82fec4a1f273",
+    "bytes": 20072,
+    "width": 1000,
+    "height": 1000,
+    "quality": 85
+   },
+   {
+    "position": 1,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20260705_265/1783232457089X4HcH_JPEG/117365385201951588_541520898.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20260705_265/1783232457089X4HcH_JPEG/117365385201951588_541520898.jpg",
+    "source_sha256": "a530f1e5210bc585ef352d9f0bb932b351b7729e7f99f7224687977e4d49109a",
+    "source_bytes": 197366,
+    "source_format": "JPEG",
+    "source_width": 1000,
+    "source_height": 1000,
+    "first_frame_of": null,
+    "file": "images/10179980640/fairwardgolf-10179980640-002-b8421dbb5169703f.webp",
+    "sha256": "b8421dbb5169703fe1223eecf87a40d898e923363ebb38c3b7a29459e66d6d71",
+    "bytes": 25378,
+    "width": 1000,
+    "height": 1000,
+    "quality": 85
+   },
+   {
+    "position": 2,
+    "alt": null,
+    "url": "https://shop-phinf.pstatic.net/20260705_27/1783232463089bqdaP_JPEG/117240183146991772_378605823.jpg",
+    "rendition": "original",
+    "source": "https://shop-phinf.pstatic.net/20260705_27/1783232463089bqdaP_JPEG/117240183146991772_378605823.jpg",
+    "source_sha256": "8c261d0b93225d76d30ec3a6e7d1ebc22cc04820fc8e865a49a4296b792acff9",
+    "source_bytes": 223446,
+    "source_format": "JPEG",
+    "source_width": 1000,
+    "source_height": 1000,
+    "first_frame_of": null,
+    "file": "images/10179980640/fairwardgolf-10179980640-003-3b37f5e34373d9b2.webp",
+    "sha256": "3b37f5e34373d9b26f9454993d9f0bfb82abc19f193c8948d5dd531b96f109a1",
+    "bytes": 29204,
+    "width": 1000,
+    "height": 1000,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true,
+  "originals": 3
+ },
+ "review_media": {
+  "store": "fairwardgolf",
+  "files": [
+   {
+    "review_id": "4956299038",
+    "kind": "review-image",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/checkout.phinf/20260417_36/1776424645706jgUBV_JPEG/1000022489.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/checkout.phinf/20260417_36/1776424645706jgUBV_JPEG/1000022489.jpg",
+    "source_sha256": "c9c7ebe19b8d800b808b52581cced2607627a6736cefc307e1037cbf3fde1c22",
+    "source_bytes": 3120824,
+    "source_format": "JPEG",
+    "source_width": 1848,
+    "source_height": 4000,
+    "first_frame_of": null,
+    "file": "images/10179980640/fairwardgolf-review-image-fd2cde6c90c04f16.webp",
+    "sha256": "fd2cde6c90c04f16d5ac5988d7119fe0da5d9140870087cbc241996bd11a5bb1",
+    "bytes": 75276,
+    "width": 473,
+    "height": 1024,
+    "quality": 85
+   },
+   {
+    "review_id": "4956299038",
+    "kind": "review-avatar",
+    "from_video": false,
+    "url": "https://phinf.pstatic.net/contact/20190405_67/155446527704959TA5_JPEG/image.jpg",
+    "rendition": "as_given",
+    "source": "https://phinf.pstatic.net/contact/20190405_67/155446527704959TA5_JPEG/image.jpg",
+    "source_sha256": "f48d80c319dd4933d6cf5d753178d5d2e035ab79403dacc61886595314fac7a1",
+    "source_bytes": 4884347,
+    "source_format": "JPEG",
+    "source_width": 5312,
+    "source_height": 2988,
+    "first_frame_of": null,
+    "file": "images/10179980640/fairwardgolf-review-avatar-cc0aec9ffe3b6893.webp",
+    "sha256": "cc0aec9ffe3b68933b723f3d459655e315542ea01a6232d76fedca36c7f3f2f9",
+    "bytes": 119144,
+    "width": 1024,
+    "height": 576,
+    "quality": 85
+   }
+  ],
+  "failed": [],
+  "stopped": null,
+  "is_complete": true
+ }
+}

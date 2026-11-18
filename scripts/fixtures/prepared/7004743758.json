@@ -1,0 +1,379 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:500202071:7004743758",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "2 of 2 kept (full 2); 0 trimmed"
+  },
+  {
+   "code": "description_images_missing",
+   "detail": "no sidecar: run description_images.py"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "PAID 27000 KRW"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "NOT_APPLICABLE"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/kgolfsports/products/7004743758",
+  "channel_no": "500202071",
+  "product_id": "7004743758",
+  "category_id": "50002784"
+ },
+ "product": {
+  "title_ko": "벤세이어스 XF 프로 쌩크방지 치퍼 골프클럽 왼손(영국)",
+  "brand_ko": "벤세이어스",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "mens",
+      "text": "남성용"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 치퍼"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "7004743758",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 92950,
+    "price_usd": "92.95",
+    "sku": "FW-0bcaab14b86ef90903654796",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 380,
+      "central": 470,
+      "high": 560,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18",
+      "contradiction": [
+       {
+        "value": {
+         "min": 962.0,
+         "max": 962.0
+        },
+        "source": "source_stated",
+        "confidence": 4,
+        "quote": "중량: 962g",
+        "from": "notice",
+        "locator": {
+         "block": "items",
+         "row": 3
+        },
+        "kind": "unknown",
+        "scope": "unknown",
+        "approximate": false,
+        "flags": [],
+        "binding": {
+         "scope": "product",
+         "variant_ids": []
+        }
+       }
+      ],
+      "reason": "implausible_for_category"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1000,
+      "high": 1300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_length_mm": {
+      "low": 920,
+      "central": 960,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 110,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 80,
+      "high": 110,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 92950,
+   "original_krw": 92950,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "벤세이어스"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "벤세이어스"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "영국"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남성용"
+   },
+   {
+    "label_ko": "치퍼 로프트각",
+    "value_ko": "37도"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "왼손용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.0,
+   "count": 2
+  },
+  "reviews": [
+   {
+    "id": "4145354098",
+    "score": 4,
+    "text_ko": "그린주변 어프로치에 좋아요",
+    "created_at": "2022-12-12T13:05:19Z",
+    "writer": "8210****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 23
+   },
+   {
+    "id": "4088164243",
+    "score": 4,
+    "text_ko": "연습장에서는 만족합니다. 방향성이개선될듯 합니다. 필드나가서 확인해보겠 습니다.",
+    "created_at": "2022-09-21T07:44:56Z",
+    "writer": "8210****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 28,
+    "text_original_ko": "연습장에서는  만족합니다. 방향성이개선될듯 합니다. 필드나가서  확인해보겠 습니다."
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/7004743758/fairwardgolf-7004743758-001-320927cd5c8303ff.webp",
+    "sha256": "320927cd5c8303ff18e7d53f4bddc5d7d5ea383527004da0448bd95a3529b67a",
+    "width": 990,
+    "height": 1600
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/7004743758/fairwardgolf-7004743758-002-abe1e40e1f3b7445.webp",
+    "sha256": "abe1e40e1f3b7445296abd8a63f43a5921d6e8115e42ce4de2d4c10adbd0e747",
+    "width": 1202,
+    "height": 1280
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/7004743758/fairwardgolf-7004743758-003-5e847bb70cbd598c.webp",
+    "sha256": "5e847bb70cbd598cfecda96612d45d628e180d4881c250cdbd980da7b6b81a56",
+    "width": 1000,
+    "height": 1471
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/7004743758/fairwardgolf-7004743758-004-a587281b83fbe370.webp",
+    "sha256": "a587281b83fbe370c310d3626a8558481196518a20f4f3559cf7cf7bc0a6c3a8",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "PAID",
+   "base_fee": 27000,
+   "is_overseas": true,
+   "customs_tax_type": "NOT_APPLICABLE",
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 6.5,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "영국 판매 1위 치퍼\nBen Sayers\n벤 세이어스 쌩크방지 치퍼 골프클럽 왼손잡이(영국)\nBEN SAYERS XF PRO ANTI SHANK GOLF CHIPPER+ FREE HEADCOVER\n가성비 \"갑\" 쌩크방지 치핑클럽+해드커버를 만나보세요\n\n벤 세이어스 쌩크방지 치퍼 골프클럽 왼손잡이(영국)\nBEN SAYERS XF PRO ANTI SHANK GOLF CHIPPER+ FREE HEADCOVER\n\n★★ 품질, 가성비 \"갑\" 영국판매 1위 치퍼 ★★\n\n벤 세이어 쌩크방지 치핑클럽(영국) ★★\n\n브랜드 : Ben Sayers(영국)\n모델 : XF Pro\n클럽 타입 : 치퍼(왼손)\n로프트 : 37도\n사옹자 : 왼손잡이 골퍼\n☆ 클럽의 힐(heel)쪽 타격으로 발생하는 쌩크 방지에 도움\n☆ 쌩크 방지를 위하여 헤드 중앙 안쪽에 여분의 무게를 배치함\n☆ 에나멜 화이트 소울 + 스텔스 블랙 디자인\n☆ 중앙의 타겟 원형 + 스핀을 위한 그루브 페이스\n☆ 강조된 주황색 상단 라인으로 정렬에 도움\n☆ 로프트 37도 -> 쉽게 볼을 띄우거나 굴리는 컨트롤 가능\n☆ 독특한 디자인 + 무료 헤드커버\n\n행복한 골프여행의 시작 !\n가성비, 품질, 골프 종주국 영국에서 인기 짱 쌩크방지 치퍼 !!\nAnti shank design removes the heel of the club from play.\nThe hands forward design encourages a successful technique.\nCentral channel weighting offers optimum control and feel.\nBUY WITH COMPLETE CONFIDENCE\n신사의 나라 ★영국★에서 날라왔습니다 ~~~~~",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20220805_184/1659686853663T6RJs_JPEG/l3.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220805_167/16596869434624fWrV_JPEG/l1.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220805_124/1659686950928dxnNm_JPEG/l3.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220805_1/1659686964848mI0fF_JPEG/l4.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220805_222/1659686972441G61Ql_JPEG/l5.jpg?type=w848",
+   "https://shop-phinf.pstatic.net/20220805_94/1659687004536283yK_GIF/s-l1600_(1).gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20200213_177/1581593962785R2gPd_GIF/s-l1600_%283%29.gif?type=wg848",
+   "https://shop-phinf.pstatic.net/20191202_30/1575263685408XjhuJ_JPEG/Untitled-2.jpg?type=w848"
+  ],
+  "description_dropped": [
+   {
+    "rule": "lead_time",
+    "text": "☆ 예상 배송기간 : 9~15일 (영국-->한국 )"
+   },
+   {
+    "rule": "phone",
+    "text": "해외구매대행은 구매를 대행해주는 성격상 실재고가 없습니다. 따라서 구매대행 상품의 상표,이미지...등은 해외사이트 정보로 해외 사이트 판매자가 그 권리를 가지고 있습니다. 국내 판매자분의 상표권,저작권...등을 침해할 경우 아래의 메일로 연락주시면 빠른 조치를 진행할 수 있도록 하겠습니다. seller@example.com, 전화 02-000-0000"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://shop-phinf.pstatic.net/20220805_126/1659684458268SE6Pl_JPEG/%ED%95%B4%EC%99%B8%EA%B5%AC%EB%A7%A4%EB%8C%80%ED%96%89%EC%95%88%EB%82%B41(%EC%9D%BC%EB%B0%98).jpg?type=w848"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:230e5a98ea1f9a97",
+   "kind": "title",
+   "ko": "벤세이어스 XF 프로 쌩크방지 치퍼 골프클럽 왼손(영국)"
+  },
+  {
+   "id": "brand:2289742b6212fae0",
+   "kind": "brand",
+   "ko": "벤세이어스"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:2289742b6212fae0",
+   "kind": "spec_value",
+   "ko": "벤세이어스"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:dd41f7b7d700294c",
+   "kind": "spec_value",
+   "ko": "영국"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:8c96d3352f0a5446",
+   "kind": "spec_value",
+   "ko": "남성용"
+  },
+  {
+   "id": "spec_label:41c7d59c0ca2aa7a",
+   "kind": "spec_label",
+   "ko": "치퍼 로프트각"
+  },
+  {
+   "id": "spec_value:abda802d0843dd55",
+   "kind": "spec_value",
+   "ko": "37도"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:9c68b4648cbe18e2",
+   "kind": "spec_value",
+   "ko": "왼손용"
+  },
+  {
+   "id": "review:dc16c8c599cd6e79",
+   "kind": "review",
+   "ko": "그린주변 어프로치에 좋아요"
+  },
+  {
+   "id": "review:40dc3d7f98a98505",
+   "kind": "review",
+   "ko": "연습장에서는 만족합니다. 방향성이개선될듯 합니다. 필드나가서 확인해보겠 습니다."
+  }
+ ]
+}

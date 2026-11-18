@@ -298,6 +298,34 @@ def current_defaults(fields: dict[str, Any], specs: Mapping[str, Any], variant_i
     return out
 
 
+def current_bands(fields: dict[str, Any], specs: Mapping[str, Any], variant_id: str | None,
+                  table: dict[str, Any]) -> dict[str, Any]:
+    """A collected variant's seller values against today's band of its row (`plausible`), as variant_measures checks
+    them at collection: a value outside is not taken (`contradiction`, `reason: implausible_for_category`; one side of
+    a box out refuses the three, `box_not_whole`) and today's default fills the field. 2026-11-18, the chipper row's
+    band came after its 59 collections: 7004743758's notice "중량: 962g" (an import's shipping weight) stayed the
+    product weight; a band, like a default (current_defaults), reaches the product when it is prepared again. A value
+    inside the band, a row without one: unchanged."""
+    category = specs.get("category") or {}
+    row = next((r for r in table.get("rows", []) if str(r["category_id"]) == str(category.get("id"))), None)
+    bands = (row or {}).get("plausible") or {}
+    out_of = [name for name, band in bands.items() if (f := fields.get(name)) and f.get("source") == "source_stated"
+              and "value" in f and not band["min"] <= f["value"]["min"] <= f["value"]["max"] <= band["max"]]
+    if not out_of or row is None:
+        return fields
+    reasons = {name: "implausible_for_category" for name in out_of}
+    if any(name in SIDES for name in out_of):
+        reasons.update({name: "box_not_whole" for name in SIDES if name not in reasons
+                        and (fields.get(name) or {}).get("source") == "source_stated"})
+    name_of = {v.get("id"): v.get("name") for v in ((specs.get("options") or {}).get("variants") or [])}
+    kind = default_kind(row, specs.get("name"), name_of.get(variant_id), list(name_of.values()))
+    out = dict(fields)
+    for name, reason in reasons.items():
+        out[name] = {**default_field(row, kind, row_version(table, row), name),
+                     "contradiction": [{k: v for k, v in fields[name].items() if k != "also"}], "reason": reason}
+    return out
+
+
 # ---- a weight the listing states once, against the variant's count of clubs (2026-11-17, the resend review D1) ----
 # A weight written once for the whole listing (a product-scope row of the server, a line of the description) lands
 # on every variant; on a set-or-pair listing it is one count's figure: Yamato 13164555233's "Package Weight : 1.13

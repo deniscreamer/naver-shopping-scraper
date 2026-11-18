@@ -1,0 +1,430 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102327338:10421264752",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "8 of 8 kept (full 7, short 1); 1 trimmed"
+  },
+  {
+   "code": "gift_axis_dropped",
+   "detail": "사은품 (7 values): a free gift, not a version; 7 -> 1 rows"
+  },
+  {
+   "code": "description_images_missing",
+   "detail": "no sidecar: run description_images.py"
+  },
+  {
+   "code": "description_tiles_include_banners",
+   "detail": "delivery_2.jpg"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/pp_golf/products/10421264752",
+  "channel_no": "102327338",
+  "product_id": "10421264752",
+  "category_id": "50002784"
+ },
+ "product": {
+  "title_ko": "미사일 골프 BLACK EAGLE 블랙이글 치퍼 FEMCO샤프트",
+  "brand_ko": "미사일골프",
+  "brand_source": "manufacturer:specs:제조사",
+  "attributes": {},
+  "options": [],
+  "facts": [
+   {
+    "label_ko": "",
+    "value_ko": "35인치"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "observed:[\"35인치\",\"휠라 양피장갑 왼손 19호 1장\"]",
+    "naver_variant_id": "48486526905",
+    "options_ko": [],
+    "price_krw": 89000,
+    "price_usd": "89.00",
+    "sku": "FW-241a0a44a2721fcf2e121324",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 380,
+      "central": 470,
+      "high": 560,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1000,
+      "high": 1300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_length_mm": {
+      "low": 920,
+      "central": 960,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 110,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 80,
+      "high": 110,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 89000,
+   "original_krw": 89000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "미사일골프"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "미사일"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "블랙이글 치퍼"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "국산"
+   },
+   {
+    "label_ko": "치퍼 로프트각",
+    "value_ko": "35도"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 4.35,
+   "count": 17
+  },
+  "reviews": [
+   {
+    "id": "4952488045",
+    "score": 4,
+    "text_ko": "짧은 거리 어프로치에 장점이고 실수가 많이 줄었어요",
+    "created_at": "2026-04-12T23:51:21Z",
+    "writer": "tamu***",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 25
+   },
+   {
+    "id": "4933380889",
+    "score": 5,
+    "text_ko": "모서리가 날카로운 편인데 이게 더 유리한지는 처봐야할듯합니다. 우선 20미터 이내 안정적으로 접근할 수 있을것 같네요. 특히 10미터 정도 어프로치 실수가 잦았는데 해결이 될듯합니다. GDT 연습장에선 감이 안와서 필드에 나가서 굴려봐야할 것 같습니다. 연습이 필요합니다.",
+    "created_at": "2026-03-18T13:49:07Z",
+    "writer": "taew****",
+    "photos": [
+     "collected/50002788-fixtures/images/10421264752/fairwardgolf-review-image-6e3ad62851804f4c.webp",
+     "collected/50002788-fixtures/images/10421264752/fairwardgolf-review-image-d1672160525a32ed.webp",
+     "collected/50002788-fixtures/images/10421264752/fairwardgolf-review-image-ca89047c2bb31e62.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 60
+   },
+   {
+    "id": "4915130838",
+    "score": 5,
+    "text_ko": "어프로치 입스 왔는데\n몇번치고보니 좋아요\n조금더 연습해서 탈출합니다",
+    "created_at": "2026-02-23T12:28:40Z",
+    "writer": "dj****",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 27,
+    "text_original_ko": "어프로치 입스 왔는데 \n몇번치고보니 좋아요\n조금더 연습해서 탈출합니다"
+   },
+   {
+    "id": "4889793604",
+    "score": 5,
+    "text_ko": "확실히 어프로치 효과 좋네요.\n아이템 빨 쥑이네요",
+    "created_at": "2026-01-20T07:59:39Z",
+    "writer": "init***",
+    "photos": [
+     "collected/50002788-fixtures/images/10421264752/fairwardgolf-review-image-24d16102078de208.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 40,
+    "text_original_ko": "확실히 어프로치 효과 좋네요 ㅎㅎ\n아이템 빨 쥑이네요"
+   },
+   {
+    "id": "4886261443",
+    "score": 5,
+    "text_ko": "그린 옆 20m 안쪽의 라이 안좋은 러프 또는 그린 옆 잔디 까진 페어웨이에서 딱입니다. 저런 곳에서 샌드로 생크나면 2~3타 올라가는데, 자신감 뿜뿜입니다.",
+    "created_at": "2026-01-15T12:50:26Z",
+    "writer": "novr****",
+    "photos": [
+     "collected/50002788-fixtures/images/10421264752/fairwardgolf-review-image-5f5c6a85ca58f8e4.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "short",
+    "text_quality": 29
+   },
+   {
+    "id": "4863920915",
+    "score": 4,
+    "text_ko": "장점 : 그린 앞 어프로치에 자신감이 생김\n단점 : 헤드커버가 제품 설명에 있는 커버가 아님",
+    "created_at": "2025-12-16T08:48:38Z",
+    "writer": "novr****",
+    "photos": [
+     "collected/50002788-fixtures/images/10421264752/fairwardgolf-review-image-c1ce923c25857307.webp",
+     "collected/50002788-fixtures/images/10421264752/fairwardgolf-review-image-5f5c6a85ca58f8e4.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 83
+   },
+   {
+    "id": "4859964073",
+    "score": 3,
+    "text_ko": "기대가 커요. 치퍼를 첨 쳐서",
+    "created_at": "2025-12-11T00:22:30Z",
+    "writer": "mrjj***",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 22,
+    "text_original_ko": "기대가 커요... 치퍼를 첨 쳐서"
+   },
+   {
+    "id": "4847472357",
+    "score": 3,
+    "text_ko": "동일한 제품을 (치퍼)비슷한 가격에 나왔는데\n그곳 판매처는 치퍼 커버가 오리지널인데\n보내준것은 잘맞지않는 그냥커버입니다.\n오리지널 블랙이글 커버로 주세요\n사진이10M넘는다고 안들어가네요\nemail주소보내주면 첨부할께요",
+    "created_at": "2025-11-23T00:53:02Z",
+    "writer": "drag*******",
+    "photos": [],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "full",
+    "text_quality": 83,
+    "text_original_ko": "동일한 제품을 (치퍼)비슷한 가격에 나왔는데\n그곳 판매처는 치퍼 커버가 오리지널인데\n 보내준것은 잘맞지않는 그냥커버입니다.ㅣ\n오리지널 블랙이글 커버로 주세요\n사진이10M넘는다고 안들어가네요\nemail주소보내주면 첨부할께요\n네이버스토어에 켭가 나옵니다.",
+    "text_cut": [
+     "platform"
+    ]
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/10421264752/fairwardgolf-10421264752-001-57908ea00131e40a.webp",
+    "sha256": "57908ea00131e40afebb6ee0eb88a1e7aec45a41de7262d75ac98917e7265022",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.1595745,
+    "product_average_days": 3.0,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": 2,
+    "arrival_date_text": null,
+    "arrival_probability": 92,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260810_42/1786322916223pmq6v_JPEG/p-10371009140-s-5-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20260810_54/1786322916227H2jM3_JPEG/p-10371009140-s-5-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20260810_238/1786322916226VhpI7_JPEG/p-10371009140-s-5-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20260810_243/178632291623513OOj_JPEG/p-10371009140-s-5-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20260810_295/1786322916243JJnEH_JPEG/p-10371009140-s-5-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20260810_106/1786322916242geooA_JPEG/p-10371009140-s-5-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20260810_62/1786322916243FTtPN_JPEG/p-10371009140-s-5-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20260810_71/1786322916300P8hvv_JPEG/p-10371009140-s-5-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20260810_299/1786322916314kzk1k_JPEG/p-10371009140-s-5-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20260810_90/1786322916305qs3NA_JPEG/p-10371009140-s-5-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20260810_107/1786322916327eY3pF_JPEG/p-10371009140-s-5-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20260810_155/17863229163244i42b_JPEG/p-10371009140-s-5-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20260810_287/1786322916336gd21g_JPEG/p-10371009140-s-5-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20260810_213/1786322916332xUmq9_JPEG/p-10371009140-s-5-A-13.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:caa90601befe84ac",
+   "kind": "title",
+   "ko": "미사일 골프 BLACK EAGLE 블랙이글 치퍼 FEMCO샤프트"
+  },
+  {
+   "id": "brand:ccbe13e4460df416",
+   "kind": "brand",
+   "ko": "미사일골프"
+  },
+  {
+   "id": "fact_value:11825d8b2f888551",
+   "kind": "fact_value",
+   "ko": "35인치"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:ccbe13e4460df416",
+   "kind": "spec_value",
+   "ko": "미사일골프"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:57dbff2898415dad",
+   "kind": "spec_value",
+   "ko": "미사일"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:63d919a34b875bb4",
+   "kind": "spec_value",
+   "ko": "블랙이글 치퍼"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2c9897140d6cbb96",
+   "kind": "spec_value",
+   "ko": "국산"
+  },
+  {
+   "id": "spec_label:41c7d59c0ca2aa7a",
+   "kind": "spec_label",
+   "ko": "치퍼 로프트각"
+  },
+  {
+   "id": "spec_value:2a64f0c5105a6f52",
+   "kind": "spec_value",
+   "ko": "35도"
+  },
+  {
+   "id": "review:e2105c03636ba1fa",
+   "kind": "review",
+   "ko": "짧은 거리 어프로치에 장점이고 실수가 많이 줄었어요"
+  },
+  {
+   "id": "review:740e6bde98b13ed4",
+   "kind": "review",
+   "ko": "모서리가 날카로운 편인데 이게 더 유리한지는 처봐야할듯합니다. 우선 20미터 이내 안정적으로 접근할 수 있을것 같네요. 특히 10미터 정도 어프로치 실수가 잦았는데 해결이 될듯합니다. GDT 연습장에선 감이 안와서 필드에 나가서 굴려봐야할 것 같습니다. 연습이 필요합니다."
+  },
+  {
+   "id": "review:37e2e3779060cb9c",
+   "kind": "review",
+   "ko": "어프로치 입스 왔는데\n몇번치고보니 좋아요\n조금더 연습해서 탈출합니다"
+  },
+  {
+   "id": "review:5fc7edb162b779ba",
+   "kind": "review",
+   "ko": "확실히 어프로치 효과 좋네요.\n아이템 빨 쥑이네요"
+  },
+  {
+   "id": "review:03cea493d4cd35f0",
+   "kind": "review",
+   "ko": "그린 옆 20m 안쪽의 라이 안좋은 러프 또는 그린 옆 잔디 까진 페어웨이에서 딱입니다. 저런 곳에서 샌드로 생크나면 2~3타 올라가는데, 자신감 뿜뿜입니다."
+  },
+  {
+   "id": "review:063ffcd6299f74fa",
+   "kind": "review",
+   "ko": "장점 : 그린 앞 어프로치에 자신감이 생김\n단점 : 헤드커버가 제품 설명에 있는 커버가 아님"
+  },
+  {
+   "id": "review:41824c4761d5dea6",
+   "kind": "review",
+   "ko": "기대가 커요. 치퍼를 첨 쳐서"
+  },
+  {
+   "id": "review:eea56d6ff85ababf",
+   "kind": "review",
+   "ko": "동일한 제품을 (치퍼)비슷한 가격에 나왔는데\n그곳 판매처는 치퍼 커버가 오리지널인데\n보내준것은 잘맞지않는 그냥커버입니다.\n오리지널 블랙이글 커버로 주세요\n사진이10M넘는다고 안들어가네요\nemail주소보내주면 첨부할께요"
+  }
+ ]
+}

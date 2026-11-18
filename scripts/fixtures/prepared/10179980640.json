@@ -1,0 +1,299 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:101643725:10179980640",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "1 of 1 kept (short 1); 1 trimmed"
+  },
+  {
+   "code": "description_images_missing",
+   "detail": "no sidecar: run description_images.py"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "PAID 3000 KRW"
+  },
+  {
+   "code": "description_tiles_include_banners",
+   "detail": "notice.jpg"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/dittomall/products/10179980640",
+  "channel_no": "101643725",
+  "product_id": "10179980640",
+  "category_id": "50002784"
+ },
+ "product": {
+  "title_ko": "치퍼 칩퍼 어프로치웨지 시니어 칩퍼터 치기쉬운 37도 로브 벙커웨지 CHIPPER 칩샷",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {
+   "gender": {
+    "value": "unisex",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "row:성별",
+      "value": "unisex",
+      "text": "남녀공용"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 치퍼"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "10179980640",
+    "naver_variant_id": null,
+    "options_ko": [],
+    "price_krw": 62400,
+    "price_usd": "62.40",
+    "sku": "FW-61dbeb8e3fb76aa8424cbad3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 380,
+      "central": 470,
+      "high": 560,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1000,
+      "high": 1300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_length_mm": {
+      "low": 920,
+      "central": 960,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 110,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 80,
+      "high": 110,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 62400,
+   "original_krw": 78000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   },
+   {
+    "label_ko": "샤프트소재",
+    "value_ko": "스틸"
+   },
+   {
+    "label_ko": "성별",
+    "value_ko": "남녀공용"
+   },
+   {
+    "label_ko": "치퍼 로프트각",
+    "value_ko": "37도"
+   },
+   {
+    "label_ko": "사용방향",
+    "value_ko": "오른손용"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 1
+  },
+  "reviews": [
+   {
+    "id": "4956299038",
+    "score": 5,
+    "text_ko": "잘샀네요 감사합니다",
+    "created_at": "2026-04-17T11:17:33Z",
+    "writer": "ys****",
+    "photos": [
+     "collected/50002788-fixtures/images/10179980640/fairwardgolf-review-image-fd2cde6c90c04f16.webp"
+    ],
+    "avatar": "collected/50002788-fixtures/images/10179980640/fairwardgolf-review-avatar-cc0aec9ffe3b6893.webp",
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "short",
+    "text_quality": 17,
+    "text_original_ko": "싸게잘샀네요 가성비갑 감사합니다",
+    "text_cut": [
+     "price"
+    ]
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/10179980640/fairwardgolf-10179980640-001-bda5aa1a66d5d640.webp",
+    "sha256": "bda5aa1a66d5d64049f9cf17fcd18cf4354d9013a36627fa761a82fec4a1f273",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/10179980640/fairwardgolf-10179980640-002-b8421dbb5169703f.webp",
+    "sha256": "b8421dbb5169703fe1223eecf87a40d898e923363ebb38c3b7a29459e66d6d71",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/10179980640/fairwardgolf-10179980640-003-3b37f5e34373d9b2.webp",
+    "sha256": "3b37f5e34373d9b26f9454993d9f0bfb82abc19f193c8948d5dd531b96f109a1",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "PAID",
+   "base_fee": 3000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": 5000,
+   "policy_text": "제주 추가 5,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.6923077,
+    "product_average_days": null,
+    "today_cutoff": "11:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20240408_32/1712554639947qHwGW_JPEG/p-10130944912-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20240408_128/171255463995210U0J_JPEG/p-10130944912-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20240408_173/1712554639948SFMEP_JPEG/p-10130944912-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20240408_48/1712554639946m6WGL_JPEG/p-10130944912-s-1-A-3.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:836db7465abd35c6",
+   "kind": "title",
+   "ko": "치퍼 칩퍼 어프로치웨지 시니어 칩퍼터 치기쉬운 37도 로브 벙커웨지 CHIPPER 칩샷"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  },
+  {
+   "id": "spec_label:bba112f05a71deaa",
+   "kind": "spec_label",
+   "ko": "샤프트소재"
+  },
+  {
+   "id": "spec_value:76d45c1471b5954b",
+   "kind": "spec_value",
+   "ko": "스틸"
+  },
+  {
+   "id": "spec_label:b6eec4943f7543e8",
+   "kind": "spec_label",
+   "ko": "성별"
+  },
+  {
+   "id": "spec_value:e012efbcc2aa417e",
+   "kind": "spec_value",
+   "ko": "남녀공용"
+  },
+  {
+   "id": "spec_label:41c7d59c0ca2aa7a",
+   "kind": "spec_label",
+   "ko": "치퍼 로프트각"
+  },
+  {
+   "id": "spec_value:abda802d0843dd55",
+   "kind": "spec_value",
+   "ko": "37도"
+  },
+  {
+   "id": "spec_label:edb42073f8735b63",
+   "kind": "spec_label",
+   "ko": "사용방향"
+  },
+  {
+   "id": "spec_value:14dc0bae76e6f933",
+   "kind": "spec_value",
+   "ko": "오른손용"
+  },
+  {
+   "id": "review:819b09180f073f4b",
+   "kind": "review",
+   "ko": "잘샀네요 감사합니다"
+  }
+ ]
+}

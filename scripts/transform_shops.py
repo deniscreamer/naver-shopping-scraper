@@ -46,6 +46,11 @@ class CategoryRules:
                                          # under it (an iron run "4-PW" / "3456789", 6 to 16 clubs, "아이언
                                          # 세트" without "웨지 세트") is held not_wedge_set (transform.not_wedge_set;
                                          # 2026-11-16, 9 iron sets published into wedge sets by the overnight scroll)
+    gift_axis_out: bool = False          # an option axis that is the buyer's free gift (사은품 / 증정: a glove's size)
+                                         # is left out, one variant per remaining choice (transform._drop_gift_axes;
+                                         # chippers, 2026-11-18: Missile 10421264752 was 7 variants of one club). Off
+                                         # elsewhere: on the sets' 11 such listings (9 live) the gift is a bag set, a
+                                         # putter or a club the buyer picks; leaving it out there is the owner's word
     reviewed: bool = False               # publish.py creates its new products ACTIVE; False: DRAFT, until the agent's
                                          # lens review and the owner's activation (2026-11-16: 369 products, 15.7%,
                                          # of those published were withdrawn later; each new category showed buyers
@@ -114,6 +119,9 @@ RULES = {
                                       # a glove offered for money stays off), the images read; no parts profile; not a
                                       # set section (no sets_only, no wedge_sets)
                                       paid_variants=True, paid_addons=False, description_images=True,
+                                      # 2026-11-18, the chipper review (the owner's delegation): a free gift's
+                                      # sizes are not versions of the club
+                                      gift_axis_out=True,
                                       reviewed=False),      # a new category: its products go DRAFT first
         }),
 }

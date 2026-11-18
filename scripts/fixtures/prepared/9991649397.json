@@ -1,0 +1,244 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102205404:9991649397",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "reviews_cleaned",
+   "detail": "1 of 1 kept (short 1); 1 trimmed"
+  },
+  {
+   "code": "description_images_missing",
+   "detail": "no sidecar: run description_images.py"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "PAID 15800 KRW"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "NOT_APPLICABLE"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/rakuraku00/products/9991649397",
+  "channel_no": "102205404",
+  "product_id": "9991649397",
+  "category_id": "50002784"
+ },
+ "product": {
+  "title_ko": "월드 이글 CH809 치퍼 왼손잡이 좌타용",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {},
+  "options": [],
+  "facts": [
+   {
+    "label_ko": "단일 상품",
+    "value_ko": "단일 옵션"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "observed:[\"단일 옵션\"]",
+    "naver_variant_id": "39143612840",
+    "options_ko": [],
+    "price_krw": 61000,
+    "price_usd": "61.00",
+    "sku": "FW-2576d047ccf09ab1f25d13e1",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 380,
+      "central": 470,
+      "high": 560,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1000,
+      "high": 1300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_length_mm": {
+      "low": 920,
+      "central": 960,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 110,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 80,
+      "high": 110,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 61000,
+   "original_krw": 261900,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [],
+  "personalization": [],
+  "addons": [],
+  "rating": {
+   "value": 5.0,
+   "count": 1
+  },
+  "reviews": [
+   {
+    "id": "4787591254",
+    "score": 5,
+    "text_ko": "잘 샀어요. 추천드립니다.",
+    "created_at": "2025-08-21T01:09:56Z",
+    "writer": "nadu******",
+    "photos": [
+     "collected/50002788-fixtures/images/9991649397/fairwardgolf-review-image-d24e6c6cff05714b.webp"
+    ],
+    "avatar": null,
+    "tier": "small",
+    "likes": 0,
+    "text_grade": "short",
+    "text_quality": 17,
+    "text_original_ko": "배송이 정확히 1주일 걸렸고요. 저렴한 가격에 잘 샀어요. 추천드립니다.",
+    "text_cut": [
+     "price",
+     "shipping"
+    ]
+   }
+  ],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/9991649397/fairwardgolf-9991649397-001-6d89b44acdaa9e5a.webp",
+    "sha256": "6d89b44acdaa9e5a31a5a37d8d94111040730eab417134981222cd72a6bce715",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/9991649397/fairwardgolf-9991649397-002-ac18938059254029.webp",
+    "sha256": "ac1893805925402934288013c7ff51f80c442eb11ec6517665d432a660f26580",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/9991649397/fairwardgolf-9991649397-003-64ab17f664145f4f.webp",
+    "sha256": "64ab17f664145f4f31b5556e9f9249fc0d0811ffd283201da8d65c690a71fb95",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/9991649397/fairwardgolf-9991649397-004-e16df29727cb0a23.webp",
+    "sha256": "e16df29727cb0a23f262c3c867f49b1d0a7b3fc10937bdc7cb894180d74f8a5e",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/9991649397/fairwardgolf-9991649397-005-351b482da43867f6.webp",
+    "sha256": "351b482da43867f65347cb2bdd99db25756eb4ade3af3104fa000f2b2252fb83",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "PAID",
+   "base_fee": 15800,
+   "is_overseas": true,
+   "customs_tax_type": "NOT_APPLICABLE",
+   "extra_fee_area2": null,
+   "extra_fee_area3": null,
+   "policy_text": null,
+   "lead_time": {
+    "seller_average_days": 5.75,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20240224_29/1708737440736nefaB_JPEG/p-9943727129-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20240224_47/1708737440752tWx2A_JPEG/p-9943727129-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20240224_95/1708737440733cC5vH_JPEG/p-9943727129-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20240224_169/1708737440741Xu8HA_JPEG/p-9943727129-s-1-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20240224_275/1708737440745qxQ1C_JPEG/p-9943727129-s-1-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20240224_22/1708737440737wmndk_JPEG/p-9943727129-s-1-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20240224_175/1708737440798Gspv0_JPEG/p-9943727129-s-1-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20240224_237/1708737440722yxWMU_JPEG/p-9943727129-s-1-A-7.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:858e8cb7e90b9da3",
+   "kind": "title",
+   "ko": "월드 이글 CH809 치퍼 왼손잡이 좌타용"
+  },
+  {
+   "id": "fact_label:acd6a89d619af338",
+   "kind": "fact_label",
+   "ko": "단일 상품"
+  },
+  {
+   "id": "fact_value:6b917747a85b8a62",
+   "kind": "fact_value",
+   "ko": "단일 옵션"
+  },
+  {
+   "id": "review:fc634da4178275c5",
+   "kind": "review",
+   "ko": "잘 샀어요. 추천드립니다."
+  }
+ ]
+}

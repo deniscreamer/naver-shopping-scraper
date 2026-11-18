@@ -161,7 +161,11 @@ published, SKUs and prices equal on 201 of 201 variants):
 - **Options**: the option groups but CUSTOM / SIMPLE, the observed rows only, sold-out rows kept (`available: false`);
   an axis
   with one value becomes a fact; one row -> one default variant; an axis about writing a review / a coupon
-  (리뷰, 후기, 쿠폰, 적립) is dropped with its discounted rows. Over 3 axes: held; over the shop's variant cap:
+  (리뷰, 후기, 쿠폰, 적립) is dropped with its discounted rows. Where the category says so (`gift_axis_out`: chippers,
+  2026-11-18) an axis that is the buyer's free gift (사은품 / 증정 in its name and no 옵션 / 구성, or every value starting
+  with the gift word) is dropped too, one row per remaining tuple (the first in stock), the kept row's SKU unchanged,
+  note `gift_axis_dropped`; a gift priced apart stays a choice (Missile 10421264752: 7 variants that were the free
+  glove's sizes, now one). Over 3 axes: held; over the shop's variant cap:
   the first ones are offered (`variants_capped`, below).
 - **SKU**: the shop's prefix + 24 hex of sha256({schemaVersion, sourceId, tenantOfferKey}) (the harvester's recipe).
 - **The owner's spec row** (run-level, `run_transform.apply_specs_by_owner`, after the brand fallback; never in the
@@ -450,7 +454,10 @@ link. The report says how many were dropped. The step is pure: same products in,
   shop brand: the sport (골프, 골프용품, GOLF, 스포츠: one junior row's "골프" made "Golf" the vendor of 55 products,
   2026-11-14), who it is for (남성용, 여성용, 남녀공용: 32 titles got "Yoshino" through a dictionary guess), a lone letter
   (ㅊ) and an authenticity claim (정품), Amazon's "Generic" / 제네릭 (two Bermuda wedge sets, 2026-11-15), and Naver's 기타 BRAND ("Other BRAND" on 3 agency
-  wedge sets) and 상표 / 브랜드 (the word "brand": "Brand" on 5 live sets, 2026-11-17), and Naver's placeholder
+  wedge sets) and 상표 / 브랜드 (the word "brand": "Brand" on 5 live sets, 2026-11-17) and "brand" itself in any case
+  (rakuraku00's 브랜드 / 제조사 rows: the vendor "brand" on 3 chipper drafts, 2026-11-18), the chipper (치퍼 / 칩퍼 /
+  chipper, as a value or ending one: "MAZEL 치퍼" is MAZEL; 11158899277's 치퍼 row made "Chipper" the vendor of 4
+  chipper titles, 2026-11-18; "CHIPPER Lab", a maker, stays), and Naver's placeholder
   "UnKnown_<katakana>" (13104702775 went out as the vendor "UnKnown_ピン", 2026-11-17, C23). A brand row or a maker
   that is exactly the seller's shop name or legal name, while the title names another brand of the dictionary (not a
   shaft's or a grip's maker) and no 조합, gives way to the steps above (`brand_fallback.store_named`; the note says
@@ -465,7 +472,8 @@ link. The report says how many were dropped. The step is pure: same products in,
 **Per-shop rules** (`transform_shops.py`, data): SKU prefix, KRW per USD, variant cap, and per Naver leaf category
 `paid_variants` / `paid_addons` / `description_images`, off by default, all on for fairwardgolf 50002788 and
 50002787 (junior clubs, 2026-11-11), 50002670 (women's iron sets, 2026-11-14) and 50002783 (wedge sets,
-2026-11-15; no parts profile: the core reading only). `sets_only` (wedges, 2026-11-15): a variant whose own words
+2026-11-15; no parts profile: the core reading only). `gift_axis_out` (chippers 50002784, 2026-11-18): a free
+gift's option axis is left out ("Options" above); off elsewhere. `sets_only` (wedges, 2026-11-15): a variant whose own words
 sell one club (1PC, 단품, 개별, 싱글, or one loft 44-72 with no set word or count; "i60R" is a shaft) is left out, and a
 product of such variants only is held `single_only` (17 one-wedge listings of the pilot filed as "웨지 세트 또는
 개별"). A loft written again on a second axis that describes the same club ("Size: 56 Degree" + "Style Name: Black
