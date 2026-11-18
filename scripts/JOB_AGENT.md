@@ -232,6 +232,9 @@ A captcha is answered by the owner in Chrome while the read waits; a login page 
 
 ## 4. Stop and resume
 
+- A product an earlier job prepared, of a category that reads description images, with no sidecar of its current
+  collection goes through the images before it is published (2026-11-17, the wedge pilot: 20 such products went
+  out with the category's default package, note `description_images_missing`); one in the store is never sent back.
 - Resume: `job.py run` (old mode) or `job.py scroll --job <id>` (scroll: the listing from the top, done products
   skipped, ~20-40 s a done batch) after any stop: nothing is lost, done products are not read again. After a `STOP`
   the table above says whether the owner must clear it first. A runner killed without a `STOP` (kill -9, a power

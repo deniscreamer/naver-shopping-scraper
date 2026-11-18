@@ -7,11 +7,15 @@
  "notes": [
   {
    "code": "axes_repeated",
-   "detail": "Style Name repeats Size: 266 -> 14 rows"
+   "detail": "Style Name repeats Size: 266 -> 14 rows; Size said by Style Name: one axis"
   },
   {
    "code": "description_images_missing",
    "detail": "no sidecar: run description_images.py"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "Style Name"
   },
   {
    "code": "overseas_shipping",
@@ -55,17 +59,6 @@
   },
   "options": [
    {
-    "name_ko": "Size",
-    "values_ko": [
-     "54 58 Degree",
-     "54 60 Degree",
-     "50 56 Degree",
-     "52 56 Degree",
-     "52 60 Degree",
-     "56 60 Degree"
-    ]
-   },
-   {
     "name_ko": "Style Name",
     "values_ko": [
      "Black 54 58 Degree",
@@ -83,7 +76,6 @@
     "source_id": "observed:[\"54 58 Degree\",\"Black 54 58 Degree\"]",
     "naver_variant_id": "60007827952",
     "options_ko": [
-     "54 58 Degree",
      "Black 54 58 Degree"
     ],
     "price_krw": 139930,
@@ -153,7 +145,6 @@
     "source_id": "observed:[\"54 60 Degree\",\"Black 54 60 Degree\"]",
     "naver_variant_id": "60007827953",
     "options_ko": [
-     "54 60 Degree",
      "Black 54 60 Degree"
     ],
     "price_krw": 148230,
@@ -223,7 +214,6 @@
     "source_id": "observed:[\"50 56 Degree\",\"Black 50 56 Degree\"]",
     "naver_variant_id": "60721666265",
     "options_ko": [
-     "50 56 Degree",
      "Black 50 56 Degree"
     ],
     "price_krw": 170630,
@@ -293,7 +283,6 @@
     "source_id": "observed:[\"52 56 Degree\",\"Black 52 56 Degree\"]",
     "naver_variant_id": "60721666320",
     "options_ko": [
-     "52 56 Degree",
      "Black 52 56 Degree"
     ],
     "price_krw": 170630,
@@ -363,7 +352,6 @@
     "source_id": "observed:[\"52 60 Degree\",\"Black 52 60 Degree\"]",
     "naver_variant_id": "60721666339",
     "options_ko": [
-     "52 60 Degree",
      "Black 52 60 Degree"
     ],
     "price_krw": 170630,
@@ -433,7 +421,6 @@
     "source_id": "observed:[\"56 60 Degree\",\"Black 56 60 Degree\"]",
     "naver_variant_id": "60721666464",
     "options_ko": [
-     "56 60 Degree",
      "Black 56 60 Degree"
     ],
     "price_krw": 170630,
@@ -644,41 +631,6 @@
    "id": "brand:2baaceefd9fdd5fb",
    "kind": "brand",
    "ko": "yamato"
-  },
-  {
-   "id": "option_name:1af851907331c0ed",
-   "kind": "option_name",
-   "ko": "Size"
-  },
-  {
-   "id": "option_value:0c9fccc88edcb0c9",
-   "kind": "option_value",
-   "ko": "54 58 Degree"
-  },
-  {
-   "id": "option_value:0cd0e21ba0fec33f",
-   "kind": "option_value",
-   "ko": "54 60 Degree"
-  },
-  {
-   "id": "option_value:26c49a562b44d713",
-   "kind": "option_value",
-   "ko": "50 56 Degree"
-  },
-  {
-   "id": "option_value:e16c004d96afaa0a",
-   "kind": "option_value",
-   "ko": "52 56 Degree"
-  },
-  {
-   "id": "option_value:cf8f72d652dbfc14",
-   "kind": "option_value",
-   "ko": "52 60 Degree"
-  },
-  {
-   "id": "option_value:f204a1bd4e81c548",
-   "kind": "option_value",
-   "ko": "56 60 Degree"
   },
   {
    "id": "option_name:827cae3c57ce1088",

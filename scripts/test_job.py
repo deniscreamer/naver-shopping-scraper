@@ -316,6 +316,28 @@ def test_stages_read_the_translation(tmp_path, monkeypatch):
     assert got == {KEYS[0]: "translated", KEYS[1]: "prepared", KEYS[2]: "translated"}   # held: nothing to translate
 
 
+def test_a_product_prepared_before_with_no_sidecar_reads_its_images_first(tmp_path, monkeypatch):
+    """2026-11-17, the wedge pilot: 20 products an earlier job had prepared, never read for their description
+    images, went to the store with the category's default package (description_images_missing). A prepared
+    product of a category that reads images, with no sidecar of this collection, goes back to "collected"; one
+    with its sidecar stays prepared; one in the store already is never sent back."""
+    import description_images as DI
+    job = _translating_job(tmp_path, {KEYS[0]: "translated", KEYS[1]: "untranslated", KEYS[2]: "translated"})
+    job.meta["publish"] = True
+    job.save_meta()
+    shop = tmp_path / "shops" / SHOP
+    (shop / "collected").mkdir()
+    line = {"specs": {"category": {"id": "50002783"}}, "details": {"description": {}}}
+    monkeypatch.setattr("run_transform.latest_lines", lambda *a, **k: {k: (None, None, line) for k in KEYS})
+    (shop / "publish").mkdir()
+    (shop / "publish" / "published.jsonl").write_text(json.dumps({"key": KEYS[2], "status": "published"}) + "\n")
+    read = {KEYS[1].split(":")[3]}
+    monkeypatch.setattr(DI, "load_sidecar", lambda s, pid, root=None: {"pid": pid} if pid in read else None)
+    monkeypatch.setattr(DI, "current", lambda sidecar, ln: sidecar is not None)
+    got = J.stages(job)
+    assert got == {KEYS[0]: "collected", KEYS[1]: "prepared", KEYS[2]: "published"}
+
+
 def test_a_job_without_translation_never_reads_translated(tmp_path, monkeypatch):
     job = _translating_job(tmp_path, {KEYS[0]: "translated"})
     job.meta["translate"] = False

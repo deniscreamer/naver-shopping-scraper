@@ -124,11 +124,31 @@ def test_mg5_slots_ascending_and_as_many():
 
 def test_amazon_axes_that_echo_keep_the_rows_where_they_agree():
     p = prep("13754846756")                         # Size "52 56 Degree" x Style Name "Black 52 56 Degree", 266 rows
-    assert notes(p)["axes_repeated"] == "Style Name repeats Size: 266 -> 14 rows"
+    assert notes(p)["axes_repeated"] == "Style Name repeats Size: 266 -> 14 rows; Size said by Style Name: one axis"
     assert "variants_capped" not in notes(p)
     assert [tuple(v["options_ko"]) for v in p["product"]["variants"]][:2] == [
-        ("54 58 Degree", "Black 54 58 Degree"), ("54 60 Degree", "Black 54 60 Degree")]
+        ("Black 54 58 Degree",), ("Black 54 60 Degree",)]
     assert len(p["product"]["variants"]) == 6 and sum(v["available"] for v in p["product"]["variants"]) == 3
+
+
+def test_one_axis_repeating_the_other_goes_and_the_sku_stays():
+    """2026-11-17, the wedge pilot: Size "50/54/58 Degree-3PCS" x Style Name "SILVER 50/54/58 Degree" (Yamato
+    13391457160) and Size "Black Right Handed" x Style Name "Black 52 56 60 Set" (PGM 13401325702): Style Name
+    decides Size and says its changing words; one axis, named from its values in translation, the SKU the raw pair."""
+    p = prep("13391457160")
+    assert options(p) == {"Style Name": ["SILVER 50/54/58 Degree", "RAINBOW 52/56/60 Degree", "TARNISH 52/56/60 Degree"]}
+    assert notes(p)["axes_repeated"] == "Size said by Style Name: one axis"
+    assert notes(p)["option_name_placeholder"] == "Style Name"
+    v = p["product"]["variants"][0]
+    assert v["options_ko"] == ["SILVER 50/54/58 Degree"] and v["source_id"].startswith('observed:["50/54/58 Degree-3PCS",')
+    assert options(prep("13401325702")) == {"Style Name": ["Black 52 56 60 Set", "Sliver 52 56 60 Set"]}
+    # both choose (a colour and a loft set sold in every pairing): both stay
+    assert transform._repeated_axis([("Black", "52 56 60 Set"), ("Black", "50 54 58 Set"), ("Silver", "52 56 60 Set")]) \
+        is None
+    # the other decides it but its words are not in the other's value: both stay
+    assert transform._repeated_axis([("Steel", "Black 52 56 60 Set"), ("Graphite", "Silver 52 56 60 Set")]) is None
+    assert transform._repeated_axis([("Black Right Handed", "Black 52 56 60 Set"),
+                                     ("Silver Right Handed", "Silver 52 56 60 Set")]) == 0
 
 
 def test_axes_that_do_not_echo_stay():

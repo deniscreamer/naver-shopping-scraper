@@ -1,0 +1,408 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102730904:13391457160",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "axes_repeated",
+   "detail": "Size said by Style Name: one axis"
+  },
+  {
+   "code": "description_images_missing",
+   "detail": "no sidecar: run description_images.py"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "Style Name"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  },
+  {
+   "code": "title_lofts_not_sold",
+   "detail": "50/52/54/56/58/60 (sold: 50/54/58 | 52/56/60)"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/worldpickshopmall/products/13391457160",
+  "channel_no": "102730904",
+  "product_id": "13391457160",
+  "category_id": "50002783"
+ },
+ "product": {
+  "title_ko": "야마토 골프 웨지 세트 또는 개인 50/52/54/56/58/60 갭 샌드 | 남녀 밀링",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {
+   "gender": {
+    "value": "unisex",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "title",
+      "value": "unisex",
+      "text": "야마토 골프 웨지 세트 또는 개인 50/52/54/56/58/60 갭 샌드 | 남녀 밀링"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 웨지 세트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "Style Name",
+    "values_ko": [
+     "SILVER 50/54/58 Degree",
+     "RAINBOW 52/56/60 Degree",
+     "TARNISH 52/56/60 Degree"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"50/54/58 Degree-3PCS\",\"2 SILVER 50/54/58 Degree\"]",
+    "naver_variant_id": "57629718417",
+    "options_ko": [
+     "SILVER 50/54/58 Degree"
+    ],
+    "price_krw": 300800,
+    "price_usd": "300.80",
+    "sku": "FW-4f90e1aab3556f9c1e73667d",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"52/56/60 Degree-3PCS\",\"3 RAINBOW 52/56/60 Degree\"]",
+    "naver_variant_id": "57629718418",
+    "options_ko": [
+     "RAINBOW 52/56/60 Degree"
+    ],
+    "price_krw": 321600,
+    "price_usd": "321.60",
+    "sku": "FW-7bf14bea2743dcd677249080",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"52/56/60 Degree-3PCS\",\"4 TARNISH 52/56/60 Degree\"]",
+    "naver_variant_id": "57629718419",
+    "options_ko": [
+     "TARNISH 52/56/60 Degree"
+    ],
+    "price_krw": 280000,
+    "price_usd": "280.00",
+    "sku": "FW-fc443aa9155d36b4bd38f6b7",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 280000,
+   "original_krw": 509100,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "원산지",
+    "value_ko": "기타/해외"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13391457160/fairwardgolf-13391457160-001-1913648d453f09c5.webp",
+    "sha256": "1913648d453f09c5f00f43df0e93aa318000c15681ca4eea8f40b930404c9682",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13391457160/fairwardgolf-13391457160-002-7474c7763689410c.webp",
+    "sha256": "7474c7763689410c5f96a7dba40998aa53d412dd5431bdf6ac67ab71871cfe6e",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13391457160/fairwardgolf-13391457160-003-9816610ab87087a3.webp",
+    "sha256": "9816610ab87087a377d02daf7853e045793881c87ed9723252170fffba5af253",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": 7000,
+   "policy_text": "제주 추가 4,000원, 제주 외 도서지역 추가 7,000원",
+   "lead_time": {
+    "seller_average_days": 5.0,
+    "product_average_days": null,
+    "today_cutoff": "18:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "야마토 골프 웨지 세트 또는 개인 50/52/54/56/58/60 갭 샌드 | 남녀 밀링\n\n상품 이미지\n\n옵션 이미지\n\nSize : 50 Degree-1PC | Size : 50/54/58 Degree-3PCS\nSize : 52/56/60 Degree-3PCS | Size : 56 Degree-1PC\nSize : 60 Degree-1PC |\n\n세부 사항\n\n항목 | 설명\nFlex | Regular\nHand Orientation | Right\nLoft | 52 Degrees\nGrip Type | Standard\nSize | 52/56/60 Degree-3PCS\nGrip Size | Standard\nMaterial Type | Alloy Steel\nShaft Material | Alloy Steel\nGrip Material | Rubber\nBrand Name | yamato\nGolf Club Type | Wedge Golf Club\nManufacturer | yamato\nColor | TARNISH",
+  "description_images": [
+   "https://cdn.imgdsell.com/visit/set/dsell/vnfdlvsh/P0lZNVRfS0QBA2Z0E3c%253d/SS",
+   "https://cdn.imgdsell.com/file/dsell/vnfdlvsh/notice/ss/top_286.jpg",
+   "https://m.media-amazon.com/images/I/91os6-ZE85L._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/81c2kC0zLHL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71eesmQVv5L._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/815za3jNgxL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71DEFqmk1yL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/81+hMpi9SkL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/81oMFVnyMnL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/917rG6Qf6qL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71HvQuEtjTL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71gCab5SF3L._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61weZzYTt+L._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/91ZROmucvnL._US1000_.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/92b21571-43d5-4ad3-8e51-06b6134ae4ba.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/6ba9eabb-15ac-4a6a-88ee-76723db3798f.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/d2f14c2f-f082-473b-abb5-b311c3ab243e.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/35c52b40-3b8d-4420-9a05-688816fef04f.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://cdn.imgdsell.com/file/dsell/vnfdlvsh/notice/ss/bottom_286.jpg"
+  ],
+  "description_dropped": [
+   {
+    "rule": "label",
+    "text": "상세 이미지"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:e1bd7e2603ddfbc8",
+   "kind": "title",
+   "ko": "야마토 골프 웨지 세트 또는 개인 50/52/54/56/58/60 갭 샌드 | 남녀 밀링"
+  },
+  {
+   "id": "option_name:827cae3c57ce1088",
+   "kind": "option_name",
+   "ko": "Style Name"
+  },
+  {
+   "id": "option_value:6775536f7fe26047",
+   "kind": "option_value",
+   "ko": "SILVER 50/54/58 Degree"
+  },
+  {
+   "id": "option_value:3d6f884f75af5f42",
+   "kind": "option_value",
+   "ko": "RAINBOW 52/56/60 Degree"
+  },
+  {
+   "id": "option_value:50513c37fe29feca",
+   "kind": "option_value",
+   "ko": "TARNISH 52/56/60 Degree"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:40bc309fd6cb0a8a",
+   "kind": "spec_value",
+   "ko": "기타/해외"
+  }
+ ]
+}

@@ -217,7 +217,13 @@ published, SKUs and prices equal on 201 of 201 variants):
     names no one variant; the title's lofts vs the sets sold is `title_lofts_not_sold`); C01;
   - two axes saying one thing (the second is the first with a leading word, "Black 52 56 Degree" for "52 56 Degree",
     "Set" aside): only the rows where they agree, note `axes_repeated` (Yamato 13754846756: 266 -> 14 rows, 6 sets;
-    C56);
+    C56); then (2026-11-17, the wedge pilot) one of two axes that the other decides on every row and whose changing
+    words are in the other's value ("50/54/58 Degree-3PCS" under "SILVER 50/54/58 Degree", "Black Right Handed"
+    under "Black 52 56 60 Set"; its words the same on every row are the listing's facts) is left out: one axis, the
+    SKU the raw pair (no new variant rows on a resend), the note `axes_repeated` "... said by ...: one axis"
+    (`_repeated_axis`; wedge sets only: a full set's iron axis repeating the driver's flex names the set's parts).
+    Amazon's "Style Name" / "Pattern Name" is a placeholder name, named from its values in translation; on the shop:
+    28 wedge sets, 5 live (12557380462, 13261483119, 13754846756, 13164555233, 13383025767) on a resend only;
   - a value of exactly 25 characters (Naver's cut) is whole again from the description's option list ("옵션 이미지"
     ... "상세 이미지") where exactly one entry is longer and starts with it and the rest of it holds no other value of
     the row; in a wedge-sets category Amazon's index in front of every value of an axis ("1 52 56 60 Degree Set

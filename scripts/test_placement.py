@@ -42,7 +42,8 @@ EXPECTED = {
     "13468791008": ("wedge-sets",),
     # (2026-11-17, the wedge-set review's variants and options: MG5 slots, Amazon's echoed axes and cut values, Miura
     # heads only, a description switch, a loft row against the title, the hand, a bare P)
-    "12742411646": ("wedge-sets",), "13754846756": ("wedge-sets",), "11585678496": ("wedge-sets",),
+    "12742411646": ("wedge-sets",), "13754846756": ("wedge-sets",), "13391457160": ("wedge-sets",),
+    "13401325702": ("wedge-sets",), "11585678496": ("wedge-sets",),
     "12872703429": ("wedge-sets",), "13017295953": ("wedge-sets",), "12482367407": ("wedge-sets",),
     "13370297764": ("wedge-sets",), "13377524996": ("wedge-sets",), "13422541936": ("wedge-sets",),
     # (2026-11-17, C67: an agency's 단조 on the title, its page silent: note title_word_unproven)

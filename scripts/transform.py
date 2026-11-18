@@ -152,6 +152,9 @@ _COUNTRY_RE = re.compile(r"미국|일본|중국|한국|국산|대만|베트남|�
                          re.I)
 # add-on codes of a seller's catalogue: "[G192]01_미즈노 클럽 렌치" (13462927626)
 _ADDON_CODE_RE = re.compile(r"^\s*\[[A-Za-z]{0,3}\d{2,6}\]\s*(?:\d{1,3}[_.)]\s*)?")
+# Amazon's own axis labels that name nothing ("Style Name" over "SILVER 50/54/58 Degree", 2026-11-17, the wedge
+# pilot): named from the values in translation, as 선택 / 옵션
+_AMAZON_AXIS_RE = re.compile(r"^(?:style|style name|pattern|pattern name)$", re.I)
 _COLOUR_AXIS_RE = re.compile(r"^(?:색상|컬러|칼라|color|colour)$", re.I)
 _COLOUR_WORD_RE = re.compile(r"블랙|화이트|레드|블루|그레이|네이비|실버|골드|핑크|그린|옐로|오렌지|퍼플|브라운|베이지|민트|"
                              r"아이보리|카키|와인|black|white|red|blue|gray|grey|navy|silver|gold|pink|green", re.I)
@@ -347,6 +350,37 @@ def _echoes_agree(r: dict[str, Any], a: int, b: int) -> bool:
     stem = _echo_stem(re.sub(r"\s+", " ", (r["options"][b] or "").strip()).lower())
     first = re.sub(r"\s+", " ", (r["options"][a] or "").strip()).lower()
     return stem is not None and stem == _SET_TAIL_RE.sub("", first)
+
+
+# One of two axes that only repeats the other (2026-11-17, the wedge pilot: Yamato 13391457160 Size "50/54/58
+# Degree-3PCS" x Style Name "SILVER 50/54/58 Degree"; PGM 13401325702 Size "Black Right Handed" x Style Name "Black
+# 52 56 60 Set"): the other axis decides its value on every row, and its words that change are in the other's value
+# (its words the same on every row, "Right Handed", "Degree-3PCS", are the listing's facts, the title's). It is no
+# choice: left out (the SKU keeps the raw tuple: no new variant rows on a resend). Of two such, the one with fewer words.
+_TOKEN_RE = re.compile(r"[0-9a-z가-힣]+")
+_NOISE_TOKEN_RE = re.compile(r"^(?:\d*(?:pcs?|pieces?|개|종)|degrees?|deg|도|set|세트|the|and|or)$")
+
+
+def _tokens(value: str) -> set[str]:
+    return {w for w in _TOKEN_RE.findall((value or "").lower()) if not _NOISE_TOKEN_RE.match(w)}
+
+
+def _repeated_axis(cells: list[tuple[str, str]]) -> int | None:
+    """Of two axes' values per row [(a, b)]: 0 or 1, the axis the other repeats; None when both choose."""
+    found = []
+    for x, y in ((0, 1), (1, 0)):
+        decides: dict[str, set[str]] = {}
+        for c in cells:
+            decides.setdefault(c[y], set()).add(c[x])
+        if any(len(v) > 1 for v in decides.values()):
+            continue                                   # the other axis does not decide this one
+        values = {c[x] for c in cells}
+        same = set.intersection(*(_tokens(v) for v in values))
+        if all((_tokens(c[x]) - same) and (_tokens(c[x]) - same) <= _tokens(c[y]) for c in cells):
+            found.append(x)
+    if not found:
+        return None
+    return min(found, key=lambda x: sum(len(_tokens(c[x])) for c in cells))
 
 
 # Option values Naver cut at 25 characters (2026-11-17, the wedge-set review C52: Amazon imports "1 52 56 60 Degree Set
@@ -902,8 +936,17 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
         if plain:
             shown[i] = {raw: dict(zip(values[i], plain))[v] for raw, v in shown[i].items()}
             values[i] = plain
+    if cat.wedge_sets and len(axes) == 2:          # one axis repeating the other: one axis (the wedge pilot; a full
+        # set's iron axis repeating the driver's flex, 13318598728 / 11054109357, names the set's parts: both kept)
+        drop = _repeated_axis([(shown[axes[0]][_tidy(r["options"][axes[0]])],
+                                shown[axes[1]][_tidy(r["options"][axes[1]])]) for r in rows])
+        if drop is not None:
+            gone, kept = axes[drop], axes[1 - drop]
+            said = f"{_tidy(names[gone])} said by {_tidy(names[kept])}: one axis"
+            repeated = f"{repeated}; {said}" if repeated else said
+            axes = [kept]
     for i in keep:
-        if i not in axes and names[i] not in HIDDEN_ROWS:      # a one-value 상품번호 axis is a seller code
+        if len(values[i]) == 1 and names[i] not in HIDDEN_ROWS:   # a one-value axis (not one left out above)
             label = _tidy(names[i])                            # "선택: 남성풀세트": the value says it all
             label = _axis_name(label)
             facts.append({"label_ko": _fact_label(label, values[i][0]), "value_ko": values[i][0]})
@@ -1410,6 +1453,7 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
     else:                                           # no description images read: the server's statements alone
         _stated_weights(ov, details["name"], category.get("id"))
     vague = [o["name_ko"] for o in ov["options"] if _PLACEHOLDER_NAME_RE.match(o["name_ko"])
+             or _AMAZON_AXIS_RE.match(o["name_ko"])
              or _COLOUR_AXIS_RE.match(o["name_ko"]) and not any(_COLOUR_WORD_RE.search(v) for v in o["values_ko"])]
     if vague:                                       # the translation names such an axis from its values
         notes.append({"code": "option_name_placeholder", "detail": ", ".join(vague)})

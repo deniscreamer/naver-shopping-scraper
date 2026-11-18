@@ -1,0 +1,359 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:1100067303:13401325702",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "axes_repeated",
+   "detail": "Size said by Style Name: one axis"
+  },
+  {
+   "code": "description_images_missing",
+   "detail": "no sidecar: run description_images.py"
+  },
+  {
+   "code": "option_name_placeholder",
+   "detail": "Style Name"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/urbantrust/products/13401325702",
+  "channel_no": "1100067303",
+  "product_id": "13401325702",
+  "category_id": "50002783"
+ },
+ "product": {
+  "title_ko": "남성 및 여성용 PGM 골프 웨지 세트 - 52/56/60도 간격 샌드 롭 오른손 더 많은 스핀을 위한 밀드 페이스 벙커에서 쉽게 탈출하기",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {
+   "gender": {
+    "value": "unisex",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "title",
+      "value": "unisex",
+      "text": "남성 및 여성용 PGM 골프 웨지 세트 - 52/56/60도 간격 샌드 롭 오른손 더 많은 스핀을 위한 밀드 페이스 벙커에서 쉽게 탈출하기"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 웨지 세트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "Style Name",
+    "values_ko": [
+     "Black 52 56 60 Set",
+     "Sliver 52 56 60 Set"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"Black Right Handed\",\"Black 52 56 60 Set\"]",
+    "naver_variant_id": "57685503843",
+    "options_ko": [
+     "Black 52 56 60 Set"
+    ],
+    "price_krw": 219600,
+    "price_usd": "219.60",
+    "sku": "FW-15d8c1ab944c982e142ec7b7",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"Sliver Right Handed\",\"Sliver 52 56 60 Set\"]",
+    "naver_variant_id": "57685503848",
+    "options_ko": [
+     "Sliver 52 56 60 Set"
+    ],
+    "price_krw": 219600,
+    "price_usd": "219.60",
+    "sku": "FW-3220f240b7b81046e14ae858",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 219600,
+   "original_krw": 244000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "원산지",
+    "value_ko": "기타/해외"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13401325702/fairwardgolf-13401325702-001-b94c7015089cef06.webp",
+    "sha256": "b94c7015089cef061da525acfba4e7a9b0e071ad321f0f9690121b4dbb0885b1",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13401325702/fairwardgolf-13401325702-002-2e30a2756e28795b.webp",
+    "sha256": "2e30a2756e28795bfbcd0298318f284782a74981360a6919cdb9fdb2237db929",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/13401325702/fairwardgolf-13401325702-003-446bc657650ae601.webp",
+    "sha256": "446bc657650ae60147f975ec664715a259086fb499f778f8f1cadb98094bea24",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/13401325702/fairwardgolf-13401325702-004-a3536ceb9311e90b.webp",
+    "sha256": "a3536ceb9311e90ba15bec4bf1cfcd4bf637357df7dcd0d949047ff24f8c5d7e",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/13401325702/fairwardgolf-13401325702-005-abf4825f9217d4d5.webp",
+    "sha256": "abf4825f9217d4d59ee4ee548a5e601ef13ff5f5473b53c110cc88cfc3bd3342",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/13401325702/fairwardgolf-13401325702-006-9ab9cb8f42ba09e9.webp",
+    "sha256": "9ab9cb8f42ba09e998e7b9a171f177e1211bfc3381c512521f6c3237a0483452",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/13401325702/fairwardgolf-13401325702-007-a2f392a73d03e656.webp",
+    "sha256": "a2f392a73d03e65639f80d7e268013f9b9ba3945569d344155ba4cb315e77bc7",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": 7000,
+   "policy_text": "제주 추가 4,000원, 제주 외 도서지역 추가 7,000원",
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": "17:00",
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "남성 및 여성용 PGM 골프 웨지 세트 - 52/56/60도 간격 샌드 롭 오른손 더 많은 스핀을 위한 밀드 페이스 벙커에서 쉽게 탈출하기\n\n상품 이미지\n\n옵션 이미지\n\nSize : Black Left Handed | Size : Black Right Handed\nSize : Sliver Left Handed | Size : Sliver Right Handed\n\n세부 사항\n\n항목 | 설명\nFlex | Uniflex\nHand Orientation | Right\nLoft | 60 Degrees\nGrip Type | Standard\nSize | Black Left Handed\nItem Weight | 1.01 Pounds\nGrip Size | Standard\nColor | 60°- Black\nBrand Name | PGM\nGolf Club Type | Wedge Golf Club\nManufacturer | PGM\nMaterial Type | Steel\nShaft Material | Steel\nGrip Material | Synthetic Rubber",
+  "description_images": [
+   "https://cdn.imgdsell.com/visit/set/dsell/greenforests0512/PkVPQDxVXEUNFRMcGWE%253d/SS",
+   "https://cdn.imgdsell.com/file/dsell/greenforests0512/notice/ss/top_7.jpg",
+   "https://m.media-amazon.com/images/I/61f9jbdUhQL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/81Pb66LgInL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/411gDbhQ0AL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/71NCOtF0vOL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/714iM-b5cSL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/8152o1i2gML._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/818x3tF-swL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61yIDFFtmwL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61No11qZy+L._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61EHMwf0pTL._US1000_.jpg",
+   "https://m.media-amazon.com/images/I/61HZ6Ynv8NL._US1000_.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/841fdba0-b436-485d-b2ee-2848ffd23422.__CR0,0,600,180_PT0_SX600_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/ae1ecca6-ea33-46af-a3ca-193c3b642a8a.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/c5166f26-0505-42a9-a6a5-b41163c7b461.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/7b1f8ae6-9353-4c12-a293-43c5038893db.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/9c97dafb-4429-4c3d-aa53-ee9e60ae6fa6.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/3e0c17fa-1c76-4d5b-8391-5b3715a61030.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://m.media-amazon.com/images/S/aplus-media-library-service-media/e906d6e8-abe1-4423-ab64-c4396052c84b.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+   "https://cdn.imgdsell.com/file/dsell/greenforests0512/notice/ss/bottom_7.jpg"
+  ],
+  "description_dropped": [
+   {
+    "rule": "label",
+    "text": "상세 이미지"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:411170715367750b",
+   "kind": "title",
+   "ko": "남성 및 여성용 PGM 골프 웨지 세트 - 52/56/60도 간격 샌드 롭 오른손 더 많은 스핀을 위한 밀드 페이스 벙커에서 쉽게 탈출하기"
+  },
+  {
+   "id": "option_name:827cae3c57ce1088",
+   "kind": "option_name",
+   "ko": "Style Name"
+  },
+  {
+   "id": "option_value:561ebeab81892d52",
+   "kind": "option_value",
+   "ko": "Black 52 56 60 Set"
+  },
+  {
+   "id": "option_value:090b300c22872bb3",
+   "kind": "option_value",
+   "ko": "Sliver 52 56 60 Set"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:40bc309fd6cb0a8a",
+   "kind": "spec_value",
+   "ko": "기타/해외"
+  }
+ ]
+}

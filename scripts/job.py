@@ -31,7 +31,8 @@ Files, scripts/output/jobs/<job id>/:
 
 A product's stage is read from the files, not from the log: collected = its key in the shop's kept runs
 (run_transform.latest_lines); images = the category's switch off, or a current sidecar (description_images.current);
-prepared = its key in prepared/products.jsonl; translated = its key `translated` (or `held`: the transform held it,
+prepared = its key in prepared/products.jsonl, and its images read as above unless it is in the store (2026-11-17:
+an earlier job's prepared product with no sidecar went out with the default package); translated = its key `translated` (or `held`: the transform held it,
 nothing to translate) in translation/translated.jsonl. A job created with translation (`new`, the default since
 2026-11-08; `--no-translate` leaves it out) takes each product to translated: right after it is prepared, through
 translate.py (only that product goes to the model; the chain and its fallback as there). A product the model could
@@ -315,24 +316,31 @@ def stages(job: Job) -> dict[str, str]:
         from publish import Shop
         published = set(Shop(job.shop, job.shops_root).ledger())
     rules = rules_for(job.shop)
-    out = {}
-    for row in job.rows():
-        key = row["key"]
-        if key not in latest:
-            continue
-        if key in prepared:                         # prepared also with the images' note (failed / partial)
-            out[key] = ("published" if key in published else "translated") if key in translated and \
-                job.final in ("translated", "published") else "prepared"
-            continue
-        out[key] = "collected"
-        line = latest[key][2]
+
+    def images_read(key: str, line: dict[str, Any]) -> bool:
+        """The category reads no images, or this collection's are read (a sidecar of its links)."""
         cat = (line.get("specs") or {}).get("category") or {}
         try:
             off = not rules.category(cat.get("id"), cat.get("name")).description_images
         except ShopRulesMissing:
             off = True
-        if off or current(load_sidecar(job.shop, key.split(":")[3], job.shops_root), line):
-            out[key] = "images"
+        return off or current(load_sidecar(job.shop, key.split(":")[3], job.shops_root), line)
+
+    out = {}
+    for row in job.rows():
+        key = row["key"]
+        if key not in latest:
+            continue
+        line = latest[key][2]
+        # prepared also with the images' note (failed / partial: the sidecar is there, current); but one prepared
+        # by an earlier job with no sidecar of this collection goes through the images first (2026-11-17, the
+        # wedge pilot: 20 products prepared before got the category's default package, description_images_missing);
+        # one in the store already is never sent back (its next publication reads the images through a new run)
+        if key in prepared and (key in published or images_read(key, line)):
+            out[key] = ("published" if key in published else "translated") if key in translated and \
+                job.final in ("translated", "published") else "prepared"
+            continue
+        out[key] = "images" if images_read(key, line) else "collected"
     return out
 
 
