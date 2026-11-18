@@ -1,6 +1,6 @@
 {
  "format": "listing-title-rules/1",
- "about": "Per Naver leaf category, title words that leave a listing row out before its page is read (listing_filter.Screen; the owner, 2026-11-11: what the shop's section does not sell). Matched on the title NFKC-normalized, lower case and without spaces; notFollowedBy / notPrecededBy as in listing_exclusions.json. Studied on the listings of 2026-11-11: 515 titles of 50002787 (46 of 56 that do not fit, none that fits), 351 of 50002788 (3 of 23 beside the rentals the shared file already drops). A rule may list `unless` words: any of them in the title and the rule does not apply. A rule names its code, which is the row's reason (title:<code>). 50002788 since 2026-11-14 is lenient (the owner: never lose a real product): only what is certainly not a set is left out (1,817 past titles: 5 left out, 3 published, the folding one-club products, no set; junior sets are not left out: no other job collects them, review_suspects.py lists them); the doubtful ones are published and listed by review_suspects.py. 50002670 (2026-11-14, women's iron sets): loose heads and shafts, a single iron (단품 with no set word) and a men's set (남성 with no women's word); a set whose gender no word states is left to placement (held).; a used or refurbished set (중고, 리퍼; 2026-11-15). 50002783 (2026-11-15, wedge sets; 670 titles of 골프 웨지 세트): loose heads and a wedge without its shaft, accessories (covers, grips, training aids, sharpeners), chippers, a used set, and a single wedge (웨지 with no set word or count; the owner: sets only). 2026-11-15, the visual lenses on 661 published junior sets (scripts/LENSES.md): toys, adult sets and two not-golf products added to 50002787's words (each measured on all 796 collected rows of the category, no real junior club hit); photo-only misfits stay for the lenses. 50002784 (2026-11-18, chippers; 1,260 titles of 골프 치퍼 and 치퍼 by price slices, 482 out): not-golf goods filed under chippers (garden wood chippers and their blades, air chisels, kitchen choppers, poker chips, bags), clothes and shoes, accessories and training aids, a putter with no chipper word (the owner: a double-sided chipper-putter stays), a wedge with no chipper or chipping word, and other clubs (irons, an agency's putters and hybrids keyworded 치퍼); every word checked on all 1,260 titles, no chipper hit.",
+ "about": "Per Naver leaf category, title words that leave a listing row out before its page is read (listing_filter.Screen; the owner, 2026-11-11: what the shop's section does not sell). Matched on the title NFKC-normalized, lower case and without spaces; notFollowedBy / notPrecededBy as in listing_exclusions.json. Studied on the listings of 2026-11-11: 515 titles of 50002787 (46 of 56 that do not fit, none that fits), 351 of 50002788 (3 of 23 beside the rentals the shared file already drops). A rule may list `unless` words: any of them in the title and the rule does not apply. A rule names its code, which is the row's reason (title:<code>). 50002788 since 2026-11-14 is lenient (the owner: never lose a real product): only what is certainly not a set is left out (1,817 past titles: 5 left out, 3 published, the folding one-club products, no set; junior sets are not left out: no other job collects them, review_suspects.py lists them); the doubtful ones are published and listed by review_suspects.py. 50002670 (2026-11-14, women's iron sets): loose heads and shafts, a single iron (단품 with no set word) and a men's set (남성 with no women's word); a set whose gender no word states is left to placement (held).; a used or refurbished set (중고, 리퍼; 2026-11-15). 50002783 (2026-11-15, wedge sets; 670 titles of 골프 웨지 세트): loose heads and a wedge without its shaft, accessories (covers, grips, training aids, sharpeners), chippers, a used set, and a single wedge (웨지 with no set word or count; the owner: sets only). 2026-11-15, the visual lenses on 661 published junior sets (scripts/LENSES.md): toys, adult sets and two not-golf products added to 50002787's words (each measured on all 796 collected rows of the category, no real junior club hit); photo-only misfits stay for the lenses. 50002784 (2026-11-18, chippers; 1,260 titles of 골프 치퍼 and 치퍼 by price slices, 482 out): not-golf goods filed under chippers (garden wood chippers and their blades, air chisels, kitchen choppers, poker chips, bags), clothes and shoes, accessories and training aids, a putter with no chipper word (the owner: a double-sided chipper-putter stays), a wedge with no chipper or chipping word, and other clubs (irons, an agency's putters and hybrids keyworded 치퍼); every word checked on all 1,260 titles, no chipper hit; the review of 2026-11-18 (2,558 distinct titles of 18 queries by price slices) found 13 chipper listings wrongly out (아이언그레이, TUG019 / TUG071 keyword titles, a chipping putter, CH809 38°) and misfits kept: the escapes now take 칩퍼 / 치핑 / the PGM and World Eagle chipper codes / a 25-45° loft, and new rules leave out a club with no chipper word (drivers, woods, hybrids), an agency's hand-치퍼 titles without chipper evidence (agency_club) and a used club (used); every changed row read, no chipper lost.",
  "categories": {
   "50002787": [
    {
@@ -1048,7 +1048,7 @@
   "50002784": [
    {
     "code": "not_golf",
-    "why": "Not golf, filed under chippers (2026-11-18, 1,260 titles of 골프 치퍼 and 치퍼): garden wood chippers and their knives and blades (정원, 분쇄기, 파쇄기, 슈레더, 목재, 우드치퍼; DAVID 우디치퍼 is a golf chipper and stays), air chisels and tools (치즐, 다가네, 에어치퍼, 플럭스), kitchen and ice choppers, plates, insoles, poker chips, scratch art, bags and pouches, zip pulls (지퍼, not after 웨 / 웻: 웨지퍼터 is a wedge-putter), a baseball card (치퍼 존스), a toy figure. Each word measured on all 1,260 titles: no golf chipper hit.",
+    "why": "Not golf, filed under chippers (2026-11-18, 1,260 titles of 골프 치퍼 and 치퍼): garden wood chippers and their knives and blades (정원, 분쇄기, 파쇄기, 슈레더, 목재, 우드치퍼; DAVID 우디치퍼 is a golf chipper and stays), air chisels and tools (치즐, 다가네, 에어치퍼, 플럭스), kitchen and ice choppers, plates, insoles, poker chips, scratch art, bags and pouches, zip pulls (지퍼, not after 웨 / 웻: 웨지퍼터 is a wedge-putter), a baseball card (치퍼 존스), a toy figure. Each word measured on all 1,260 titles: no golf chipper hit. 2026-11-18 review (2,558 distinct titles, 3,576 cards of 18 queries x 6 price slices): a wood chipper's blades and vacuum bag (우드블레이드, OEM Vac), car and generator parts (스로틀, 발전기, 센서), cosmetics, bags of plastic (봉투), score cards, watches, purses.",
     "tokens": [
      {
       "text": "정원",
@@ -1507,12 +1507,62 @@
       "text": "pouch",
       "notFollowedBy": [],
       "notPrecededBy": []
+     },
+     {
+      "text": "우드블레이드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "oemvac",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스로틀",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "발전기",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "센서",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "코스메틱",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "봉투",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "점수카드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "시계",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "지갑",
+      "notFollowedBy": [],
+      "notPrecededBy": []
      }
     ]
    },
    {
     "code": "apparel",
-    "why": "Clothes and shoes (the owner, 2026-11-18): CHIPPER knitwear, a 치퍼 vest, skirt, clogs, T-shirts, trousers, shirts, cardigans, loafers. 탑 not before 핑 (탑핑NO is a chipper's claim), 니트 not in 니트로 (the NITRO chipper) or 인피니트.",
+    "why": "Clothes and shoes (the owner, 2026-11-18): CHIPPER knitwear, a 치퍼 vest, skirt, clogs, T-shirts, trousers, shirts, cardigans, loafers. 탑 not before 핑 (탑핑NO is a chipper's claim), 니트 not in 니트로 (the NITRO chipper) or 인피니트. 2026-11-18 review (2,558 distinct titles, 3,576 cards of 18 queries x 6 price slices): the broad 남성 / 여성 치퍼 queries bring blouses, skirts, jackets, coats, dresses, parkas, flats, sandals, slippers, sneakers, pumps, denim and handbags (핸드백, 크로스백, 퍼백, 버켓백, 뉴스페이퍼백, 스윙백; not 가방 alone: Ben Sayers M5 chippers are sold with a 골프가방).",
     "tokens": [
      {
       "text": "조끼",
@@ -1619,12 +1669,122 @@
       "notPrecededBy": [
        "피"
       ]
+     },
+     {
+      "text": "블라우스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스커트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "자켓",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "재킷",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "코트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "드레스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "파카",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "점퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "플랫",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "샌들",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "슬리퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "슬러퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "운동화",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "펌프스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "데님",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "핸드백",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "크로스백",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "퍼백",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "버켓백",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "버킷백",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "뉴스페이퍼백",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스윙백",
+      "notFollowedBy": [],
+      "notPrecededBy": []
      }
     ]
    },
    {
     "code": "accessory",
-    "why": "Not a club (2026-11-18): a chipper head cover, a club stand, an alignment or swing trainer, a practice net or mat, a chipping game, a cornhole set, a toy, a mini-golf kit, a shipping box, a glove rack, a ball retriever, a club rack, the RYP Butter Blade training club, a Kasco Tough Fit glove.",
+    "why": "Not a club (2026-11-18): a chipper head cover, a club stand, an alignment or swing trainer, a practice net or mat, a chipping game, a cornhole set, a toy, a mini-golf kit, a shipping box, a glove rack, a ball retriever, a club rack, the RYP Butter Blade training club, a Kasco Tough Fit glove. 2026-11-18 review (2,558 distinct titles, 3,576 cards of 18 queries x 6 price slices): grips (골프그립, 여성그립, 그립및; not 그립 alone: chippers write 미드 그립, 교정그립), gloves (그립감), a putter cover (퍼터커버), ball retrievers (리트리버), backyard plastic-ball games (뒷마당, 플라스틱치핑).",
     "tokens": [
      {
       "text": "치퍼헤드커버",
@@ -1725,12 +1885,52 @@
       "text": "미니골프",
       "notFollowedBy": [],
       "notPrecededBy": []
+     },
+     {
+      "text": "퍼터커버",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "골프그립",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "여성그립",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "그립및",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "그립감",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "리트리버",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "뒷마당",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "플라스틱치핑",
+      "notFollowedBy": [],
+      "notPrecededBy": []
      }
     ]
    },
    {
     "code": "putter",
-    "why": "A putter with no chipper word (the owner, 2026-11-18): 퍼터 / putter and none of 치퍼, 칩퍼, chipper. A double-sided chipper-putter (양면 / 겸용 with 치퍼) stays, and so does a club with a loft of 25-60° or a ° (a putter has 2-4°: SiMSPEC '37도 골프 컷 퍼터 컷과 퍼팅 모두 가능' is a chipper). 양면 퍼터 without 치퍼 is a two-sided putter and is left out.",
+    "why": "A putter with no chipper word (the owner, 2026-11-18): 퍼터 / putter and none of 치퍼, 칩퍼, chipper. A double-sided chipper-putter (양면 / 겸용 with 치퍼) stays, and so does a club with a loft of 25-60° or a ° (a putter has 2-4°: SiMSPEC '37도 골프 컷 퍼터 컷과 퍼팅 모두 가능' is a chipper). 양면 퍼터 without 치퍼 is a two-sided putter and is left out. 2026-11-18 review: 치핑 / 칩핑 (a chipping putter is a chipper-putter: PGM TUG069 '골프 칩핑 퍼터') and the PGM / World Eagle chipper codes (TUG006 / 019 / 042 / 069 / 070 / 071, CH809) also keep the row.",
     "tokens": [
      {
       "text": "퍼터",
@@ -1747,6 +1947,15 @@
      "치퍼",
      "칩퍼",
      "chipper",
+     "치핑",
+     "칩핑",
+     "tug006",
+     "tug019",
+     "tug042",
+     "tug069",
+     "tug070",
+     "tug071",
+     "ch809",
      "25도",
      "26도",
      "27도",
@@ -1788,7 +1997,7 @@
    },
    {
     "code": "wedge",
-    "why": "A wedge with no chipper or chipping word (2026-11-18): CBZ, Mizuno Pro T-1, Kasco Dolphin, Yojimoto, sand and lob wedges filed under chippers. Stays with 치퍼 / 칩퍼 / chipper, 치핑 / 칩핑 (a chipping wedge), Ping Chip W (칩W, CHIP W), Cleveland Smart Sole (스마트), 러닝 / 런닝 어프로치, 칩샷, or PRGR's R35 / R45 / R50 / R55 wedge-chippers.",
+    "why": "A wedge with no chipper or chipping word (2026-11-18): CBZ, Mizuno Pro T-1, Kasco Dolphin, Yojimoto, sand and lob wedges filed under chippers. Stays with 치퍼 / 칩퍼 / chipper, 치핑 / 칩핑 (a chipping wedge), Ping Chip W (칩W, CHIP W), Cleveland Smart Sole (스마트), 러닝 / 런닝 어프로치, 칩샷, or PRGR's R35 / R45 / R50 / R55 wedge-chippers. 2026-11-18 review: a loft of 25-45° (월드이글 CH809 '웨지 골프 38도' is a chipper; a wedge starts at 46°) and the chipper codes keep the row.",
     "tokens": [
      {
       "text": "웨지",
@@ -1821,19 +2030,48 @@
      "r35",
      "r45",
      "r50",
-     "r55"
+     "r55",
+     "tug006",
+     "tug019",
+     "tug042",
+     "tug069",
+     "tug070",
+     "tug071",
+     "ch809",
+     "25도",
+     "26도",
+     "27도",
+     "28도",
+     "29도",
+     "30도",
+     "31도",
+     "32도",
+     "33도",
+     "34도",
+     "35도",
+     "36도",
+     "37도",
+     "38도",
+     "39도",
+     "40도",
+     "41도",
+     "42도",
+     "43도",
+     "44도",
+     "45도"
     ]
    },
    {
     "code": "other_club",
-    "why": "Another club (2026-11-18): an iron (아이언, not 아이언형 nor before 골프채 / 클럽: the iron-type and practice-iron chippers stay), and an agency's titles that put 치퍼 after a hand word on every club of its shop (오른손 치퍼 잡이 ... 일레븐 퍼터, 패러덤 개별 아이언, 넘버5 하이브리드, Fairway Wood): their model words (Odyssey Eleven / White Hot / Tri-Hot / DFX, Spider, HB Soft Milled, MT22, Infinite, hybrids, a partial set).",
+    "why": "Another club (2026-11-18): an iron (아이언, not 아이언형 nor before 골프채 / 클럽: the iron-type and practice-iron chippers stay), and an agency's titles that put 치퍼 after a hand word on every club of its shop (오른손 치퍼 잡이 ... 일레븐 퍼터, 패러덤 개별 아이언, 넘버5 하이브리드, Fairway Wood): their model words (Odyssey Eleven / White Hot / Tri-Hot / DFX, Spider, HB Soft Milled, MT22, Infinite, hybrids, a partial set). 2026-11-18 review: 아이언 not before 그레이 (PGM TUG071 in 아이언그레이 is a chipper), and the rule does not apply with 칩퍼, 치핑 / 칩핑 or a chipper code (MAZEL '칩퍼 36도 개별 5번 아이언', '무각인 치퍼 아이언 미드 그립 치핑웨지', PGM TUG019's keyword-stuffed '... 피칭 치퍼 아이언 TUG019' are chippers; the agency never writes them).",
     "tokens": [
      {
       "text": "아이언",
       "notFollowedBy": [
        "형",
        "골프채",
-       "클럽"
+       "클럽",
+       "그레이"
       ],
       "notPrecededBy": []
      },
@@ -1907,7 +2145,206 @@
       "notFollowedBy": [],
       "notPrecededBy": []
      }
+    ],
+    "unless": [
+     "칩퍼",
+     "치핑",
+     "칩핑",
+     "tug006",
+     "tug019",
+     "tug042",
+     "tug069",
+     "tug070",
+     "tug071",
+     "ch809"
     ]
+   },
+   {
+    "code": "other_club",
+    "tokens": [
+     {
+      "text": "드라이버",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "드라이빙",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "하이브리드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "우드",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "460cc",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "집코어",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "헤일로",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "말렛",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ],
+    "unless": [
+     "치퍼",
+     "칩퍼",
+     "chipper",
+     "치핑",
+     "칩핑",
+     "tug006",
+     "tug019",
+     "tug042",
+     "tug069",
+     "tug070",
+     "tug071",
+     "ch809",
+     "25도",
+     "26도",
+     "27도",
+     "28도",
+     "29도",
+     "30도",
+     "31도",
+     "32도",
+     "33도",
+     "34도",
+     "35도",
+     "36도",
+     "37도",
+     "38도",
+     "39도",
+     "40도",
+     "41도",
+     "42도",
+     "43도",
+     "44도",
+     "45도"
+    ],
+    "why": "A club with no chipper word (2026-11-18 review): drivers, driving irons, woods, hybrids, Cleveland's ZipCore / Halo irons, a mallet putter that writes 말렛 but not 퍼터 (Juggernaut 드라이버, PGM 드라이버 우드 하이브리드, Wilson Dynapower 하이브리드, PRGR 드라이빙 스푼, TF-3 말렛퍼). Not with 치퍼 / 칩퍼 / chipper / 치핑 / 칩핑, a chipper code or a 25-45° loft: chippers write 하이브리드 치퍼 (GobbleMonster) and keyword-stuff 드라이버 (PGM TUG019); not 유틸리티 at all (the Odyssey Chipper's 유틸리티 넥, Extreme 5's 유틸리티 웨지)."
+   },
+   {
+    "code": "agency_club",
+    "tokens": [
+     {
+      "text": "오른손치퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "왼손치퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "우타치퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "좌타치퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "잡이치퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ],
+    "unless": [
+     "칩퍼",
+     "치핑",
+     "칩핑",
+     "chipper",
+     "양면",
+     "양방향",
+     "투웨이",
+     "겸용",
+     "스마트",
+     "intechez",
+     "니트로",
+     "nitro",
+     "익스트림",
+     "extreme",
+     "핫런치",
+     "핫런칭",
+     "squarestrike",
+     "스퀘어스트라이크",
+     "컷팅",
+     "커팅",
+     "tug006",
+     "tug019",
+     "tug042",
+     "tug069",
+     "tug070",
+     "tug071",
+     "ch809",
+     "25도",
+     "26도",
+     "27도",
+     "28도",
+     "29도",
+     "30도",
+     "31도",
+     "32도",
+     "33도",
+     "34도",
+     "35도",
+     "36도",
+     "37도",
+     "38도",
+     "39도",
+     "40도",
+     "41도",
+     "42도",
+     "43도",
+     "44도",
+     "45도"
+    ],
+    "why": "An agency's title that puts 치퍼 after a hand word on every club of its shop ('<hand> 치퍼 (잡이)': ACHETE / Biggold / Intech / Tour Edge putters, ACHETE and PGM 525660° / 72° sand and lob wedges, Tangkula / World Eagle / ZJDYDY full sets, Majek and Pinemeadow hybrids; 2026-11-18 review, 34 of 2,558 titles) with no other chipper evidence. The real chippers of that pattern stay: 칩퍼, 치핑 / 칩핑, CHIPPER (Extreme 5 Chipper), 양면 / 양방향 / 투웨이 / 겸용, 스마트 (Smart Sole), Intech EZ, NITRO / 니트로, 익스트림, Tour Edge 핫 런치 / 런칭, Square Strike, 컷팅 / 커팅, a chipper code or a 25-45° loft (Rife RX5 37도, Acer XK 37도)."
+   },
+   {
+    "code": "used",
+    "tokens": [
+     {
+      "text": "중고",
+      "notFollowedBy": [
+       "급",
+       "생",
+       "등",
+       "수"
+      ],
+      "notPrecededBy": [
+       "초"
+      ]
+     },
+     {
+      "text": "리퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": [
+       "그"
+      ]
+     }
+    ],
+    "why": "A used or refurbished club (2026-11-18 review: 362 of 2,558 titles, 290 of them used chippers, the query 중고 치퍼 included, '(중고) 지브이골프코리아 치퍼 GV-60Y'), as the shop's other categories (50002670, 50002783: the owner, 2026-11-15, a used set published as new and withdrawn). 초중고 / 중고급 / 중고생 are no condition."
    }
   ]
  }

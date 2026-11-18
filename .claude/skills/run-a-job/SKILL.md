@@ -25,7 +25,7 @@ for the task, the whole doc only for an unusual stop.
 `job.py scroll` with the per-category defaults of JOB_AGENT.md "Shorthand and per-category defaults":
 
 - `TRANSLATE_PROVIDERS=openai,anthropic` (the owner, 2026-11-18: gpt-6.1-terra first, Claude the fallback); 50002788: `--paid-variants`; 50002787: `--paid`; 50002670 and 50002783:
-  `--paid-variants` (their pilots' job.json); then `--publish --describe`; another category: its latest job.json.
+  `--paid-variants` (their pilots' job.json); 50002784 (chippers, 2026-11-18, no pilot yet): `--paid-variants`; then `--publish --describe`; another category: its latest job.json.
 - N -> `--count N`; none or "до конца" -> no `--count`; "без публикации" -> no `--publish --describe`;
   `--dedupe on` is the default, no flag (the owner's yes after the W7 pilot, 2026-11-17;
   JOB_AGENT.md "Duplicates"); `--draft` (2026-11-16) when the owner will decide the activation after the review

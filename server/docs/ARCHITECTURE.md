@@ -594,7 +594,9 @@ surfaces.
   `scripts/transform.py` `not_wedge_set` comment.
 - 치퍼 (50002784) holds every "chipper" of Korean: garden wood chippers and their blades, air chisels (에어치퍼), kitchen
   choppers, insoles, poker chips, clothes, and putters, wedges and irons (seen 2026-11-18: 482 of 1,260 titles of
-  골프 치퍼 / 치퍼). -> `scripts/listing_title_rules.json` 50002784.
+  골프 치퍼 / 치퍼; the review of the same day, 2,558 titles of 18 queries: handbags and clothes on 남성 / 여성 치퍼, used
+  clubs, and a purchase agency's '<hand> 치퍼 (잡이)' on its putters, hybrids, wedges and full sets).
+  -> `scripts/listing_title_rules.json` 50002784.
 - Naver writes "UnKnown_<katakana>" ("UnKnown_ピン") as the brand of an import it could not name (seen 2026-11-17,
   13104702775): no firm. Naver cuts a purchase agency's long title at 50 characters, inside its loft list ("… 56°
   샌드 웨지S", 13370558777). -> `scripts/brand_fallback.py` `_NO_FIRM`, `scripts/spec_variants.py` `title_cut` comments.

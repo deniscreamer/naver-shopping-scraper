@@ -306,6 +306,34 @@ def test_wedge_sets_leave_heads_accessories_and_singles_out(title, code):
     ("프로기어 R55 여성 웨지 카본 샤프트 55도", None),
     ("오디세이 골프 치퍼 퍼터 웨지 우측 37도 스틸 34.5인치 블랙", None),
     ("클리브랜드 우타 치퍼 오른손 Wmn 스마트솔 풀페이스 S58 GRRH", None),
+    # 2026-11-18 review (2,558 titles of 18 queries): chippers the first words dropped ...
+    ("PGM 골프채 35도 치퍼 어프로치 칩퍼터 A.TUG071-아이언그레이36", None),            # 아이언그레이 is a colour
+    ("PGM 골프채 35도 치퍼 어프로치 칩퍼터 벙커 클럽 TUG071 - 아이언 그레이 양면 컷", None),
+    ("PGM 남녀공용 골프 퍼터 950 스틸 클럽 샌드 웨지 큐 드라이버 피칭 치퍼 아이언 TUG019", None),
+    ("무각인 치퍼 아이언 미드 그립 치핑웨지 일본 직배송", None),
+    ("MAZEL 마젤 골프 칩퍼 36도 개별 5번 아이언 2개 묶음", None),
+    ("월드이글 CH809 남성용 웨지 골프 38도 오른손 왼손", None),                       # 38°: no wedge
+    ("PGM 골프 칩핑 퍼터 남녀 공용, 거리 및 방향을 제어할 수 있는 짧은 커팅 도구 TUG069", None),
+    ("[아화골프]하이브리드 치퍼 GM 고블몬스터 양면 칩퍼 아화", None),                   # 하이브리드 치퍼
+    ("오디세이 치퍼 남성 골프 유틸리티 그린 주변 어프로치용 ODYSSEY CHIPPER 2025", None),
+    ("Extreme 5 Chipper 우타 치퍼 오른손 잡이 오른손잡이 쁘띠 여성용 410~5", None),     # the agency's own chipper
+    ("Intech EZ 왼손잡이 치퍼 왼손 왼손잡이인텍 EZ롤 쁘띠여성용 410인치~53인치", None),
+    ("Rife 우타 치퍼 오른손 잡이 RIFE RX5 여성 쁘띠 길이 37도 오른손잡이 뉴 레", None),
+    ("투어 엣지 핫 런칭 4 남성 왼손 치퍼 33 Left", None),
+    ("골프가방 벤세이어스 M5 치퍼 실버 골프채", None),                                   # a chipper with a bag
+    # ... and the misfits it kept
+    ("Tangkula 우타 치퍼 오른손 잡이 탕쿨라 910피스 남성 완전 골프채 세트 460c", "title:agency_club"),
+    ("ACHETE 오른손 치퍼 잡이 525660도 골프 웨지 골프채 폴 오른손잡이 스틸 전문", "title:agency_club"),
+    ("ACHETE 우타 치퍼 오른손 골프채 남여공용 퍼터 알로이 스틸 로드 실리콘 그립 5인치", "title:agency_club"),
+    ("마제크 왼손잡이 치퍼 왼손 좌타 Golf 남성 SW 하이브리드 레귤러 플렉스 뉴 유틸리티", "title:agency_club"),
+    ("Juggernaut Non Conforming Hi COR cc 티타늄 골프 드라이버 남성용 RO8RB", "title:other_club"),
+    ("22735144 ODYSSEY 오디세이 CHIPPER 25 여성 그립 5720425 제조 업체 정품", "title:accessory"),
+    ("빅티스 말렛 퍼터 커버 가죽 마그네틱 트 핫 #5 로시 투어 엣지 치퍼 호환", "title:accessory"),
+    ("SquEqu 골프공 리트리버 클립 그래버, 골프 끝을 위한 퍼터 그립 피커 픽업 도구", "title:accessory"),
+    ("리얼스프링 뒷마당 골프 클럽 세트 게임용 조절 가능한 플라스틱 치핑 공 야외 실내 훈련", "title:accessory"),
+    ("랙앤본 여성 파이퍼 울 스커트 Piper Wool Skirt 5999619 161005363", "title:apparel"),
+    ("(중고) 지브이골프코리아 치퍼 GV-60Y", "title:used"),
+    ("초중고 골프 치퍼 35도", None),                                                  # 초중고 is no condition
 ])
 def test_chippers_leave_not_golf_clothes_putters_wedges_and_other_clubs_out(title, code):
     screen = Screen("50002784", namespace="fairwardgolf")
