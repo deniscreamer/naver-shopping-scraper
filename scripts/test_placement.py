@@ -65,6 +65,8 @@ EXPECTED = {
     # in the title, a notice's 962 g out of the row's band, a free glove's sizes as the only axis)
     "9991649397": ("chippers",), "10179980640": ("chippers",), "11158899277": ("chippers",),
     "7004743758": ("chippers",), "10421264752": ("chippers",),
+    # the chipper brands (2026-11-18): the shop 수수's own "수수협력사 co." as the 브랜드 / 제조사 rows (a Ben Sayers M5)
+    "13800679830": ("chippers",),
 }
 UNRESOLVED = {"12497168529": "gender conflict"}           # ready, placement holds it: the reason
 SPLIT = {"13369469193": ("unisex", {M: 3, W: 3}),        # 성별 남녀공용: each section every variant

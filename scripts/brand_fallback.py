@@ -39,6 +39,7 @@ Steps 3-7 add the note brand_fallback (the source and the other candidates: the 
 vendor's spelling (캘러웨이 / 캘러웨이골프, 젝시오 / XXIO) is decided later for every product.
 """
 import functools
+import itertools
 import re
 from collections import Counter
 from typing import Any, Callable
@@ -58,7 +59,9 @@ _TRADE_NAME = re.compile(r"(?:상점|상사|상회|만물상|홀딩스?|무역|�
                          r"|쇼핑|^[가-힣]{1,3}네(?:\s|$)"
                          # 2026-11-13, the junior pilot: 막팔아스토어, 보라잡화점 (the seller's shop in the 브랜드 row)
                          r"|스토어\s*$|잡화점?\s*$|몰\s*$")             # 해외몰 (an overseas mall, origin brackets)
-_PARTNER = re.compile(r"\s*(?:협력\s*(?:사|업체)|제휴(?:\s*(?:사|업체))?)\s*$")   # 빅토르몰 제휴 (2026-11-13)
+# ... and a trailing "co." / ".co." after it ("수수협력사 co.", "수수랜드협력사.co.": 2026-11-18, the chipper review,
+# 13800679830 went out as the vendor "Susu Partner Co.", a Ben Sayers M5 by the shop 수수)
+_PARTNER = re.compile(r"\s*(?:협력\s*(?:사|업체)|제휴(?:\s*(?:사|업체))?)(?:\s*\.?\s*co\.?)?\s*$", re.I)   # 빅토르몰 제휴 (2026-11-13)
 # a brand row that goes on into the product's words (5140543074, 2026-11-12: "진월드스타 어린이용 주니어 골프 클럽 아이언
 # 퍼터 드라이버") keeps the words before them; one that is only an age and a club ("6~8세 퍼터", 4194532081) is none
 # ... and the chipper itself (2026-11-18, the chipper review: 11158899277's 브랜드 / 제조사 rows say 치퍼, it became a shop
@@ -118,7 +121,8 @@ def resellers_own(name: str | None, maker: str | None, store: dict[str, Any] | N
     store = store or {}
     own = {_norm(store.get("name")), _norm((store.get("business") or {}).get("legal_name"))} - {""}
     partner = _PARTNER.search(maker or "")
-    return bool(partner and _norm(_PARTNER.sub("", maker or "")) in own and _norm(name) in own)
+    # the brand row may be the partner phrase itself ("수수협력사 co." by the shop 수수, 2026-11-18): the shop's own
+    return bool(partner and _norm(_PARTNER.sub("", maker or "")) in own and _norm(_PARTNER.sub("", name or "")) in own)
 
 
 def clean(name: str | None) -> str | None:
@@ -132,7 +136,8 @@ def clean(name: str | None) -> str | None:
         value = value[:cut.start()].strip()
     words = value.split(" ")
     value = " ".join(w for i, w in enumerate(words) if i == 0 or w != words[i - 1])
-    if not value or _NOT_A_NAME.search(value) or _NO_FIRM.search(value) or trade_name(value):
+    bare = value.strip(" .,;:·-")              # "브랜드." is no brand (2026-11-18, the chipper scroll 10029117508);
+    if not value or _NOT_A_NAME.search(value) or _NO_FIRM.search(bare) or trade_name(value):   # "Golf Co." stays
         return None
     return value
 
@@ -157,17 +162,27 @@ def in_title(title: str | None, brands: list[str]) -> list[str]:
     taken: list[tuple[int, int]] = []
     for b in brands:
         n = _norm(b)
-        # a Korean brand only where a word starts, as in the images (_count): 2026-11-15, 이디스 (Edis) was read in
-        # "시니어 레이디스" (ladies) and a Majek K5 set (13469043292) was published as Edis; 기가 in "성장기 가슴패드"
-        if n and _HANGUL_BRAND.match(n) and not re.search(r"(?<![가-힣])" + r"\s*".join(map(re.escape, n)), title or ""):
+        if not n:
             continue
-        at = t.find(n) if n else -1
-        while at >= 0:
+        if _HANGUL_BRAND.match(n):
+            # a Korean brand only where a word starts, as in the images (_count): 2026-11-15, 이디스 (Edis) was read
+            # in "시니어 레이디스" (ladies) and a Majek K5 set (13469043292) was published as Edis; 기가 in "성장기
+            # 가슴패드". One of one syllable also ends its word or goes on with 골프 (_count_pattern): 2026-11-18, the
+            # chipper review: 핑 (PING) was read in 핑크 (pink) on 15 Intech EZ Roll / Extreme 5 chippers and the
+            # junior set 13848307900 (published as PING); 핑골프, 핑 치퍼, 핑(골프) still match
+            pattern = _count_pattern(b)
+            raw = title or ""
+            starts = [len(_norm(raw[:m.start()])) for m in pattern.finditer(raw)] if pattern else []
+        else:
+            starts, at = [], t.find(n)
+            while at >= 0:
+                starts.append(at)
+                at = t.find(n, at + 1)
+        for at in starts:
             if not any(s <= at < e for s, e in taken):
                 hits.append((at, b))
                 taken.append((at, at + len(n)))
                 break
-            at = t.find(n, at + 1)
     # a brand inside a Korean distributor's name comes last: "던롭스포츠코리아 젝시오 12" (7202588289, 2026-11-12) is
     # an XXIO set Dunlop's Korean branch imports, not a Dunlop one
     return [b for at, b in sorted(hits, key=lambda h: (_in_distributor(t[h[0]:], _norm(h[1])), h[0]))]
@@ -252,9 +267,11 @@ def in_images(rows: list[str], brands: list[str]) -> Counter:
     return Counter({b: c for b, c in counts.items() if c})
 
 
-# a spec table's headings, not a brand (13024208178, 2026-11-13: "DEGREE LOFT")
+# a spec table's headings, not a brand (13024208178, 2026-11-13: "DEGREE LOFT"); a page's section headings too
+# (13848307900, 2026-11-18: "DETAILED DESIGN" read 10 times on a junior set once 핑크 no longer gave it PING)
 _SPEC_WORDS = {"DEGREE", "LOFT", "LIE", "ANGLE", "LENGTH", "SHAFT", "FLEX", "GRIP", "WEIGHT", "HEAD", "CLUB", "IRON",
-               "DRIVER", "PUTTER", "WEDGE", "WOOD", "SIZE", "AGE", "HEIGHT", "TOTAL", "MODEL", "TYPE", "COLOR", "SPEC"}
+               "DRIVER", "PUTTER", "WEDGE", "WOOD", "SIZE", "AGE", "HEIGHT", "TOTAL", "MODEL", "TYPE", "COLOR", "SPEC",
+               "DETAIL", "DETAILED", "DESIGN", "PRODUCT", "PARAMETER", "PARAMETERS"}
 
 
 def latin_phrases(rows: list[str]) -> Counter:
@@ -347,8 +364,13 @@ def described(description: str | None) -> list[str]:
         if name.replace(" ", "").isdigit():
             number = name.replace(" ", "")
             name = next((m for m in makers if re.match(re.escape(number) + r"\s+[^\d\s]", m)), "")
-        if not name or len(name.split()) > 4 or not clean(name):
+        if not name or len(name.split()) > 4 or not (kept := clean(name)):
             continue
+        # the name as clean() keeps it: "Brand Name | Money Club Chipper" names Money Club (2026-11-18, the chipper
+        # review: 18 chippers went out as the vendor "Money Club Chipper", 2 as "Money Club"); a Korean name the cut
+        # would shorten at another word stays whole ("머니 클럽" is not "머니")
+        if not re.search(r"[가-힣]", re.sub(r"치퍼|칩퍼", "", name[len(kept):])):
+            name = kept
         if name not in out:
             out.append(name)
     if not out and brand_rows and all(_NO_FIRM.search(_ROW_TAIL.sub("", r).strip(" .,-")) for r in brand_rows):
@@ -376,9 +398,14 @@ def release_brand(value: str | None, title: str | None) -> str | None:
     return name if name and words and _norm(words[0]) == _norm(name) else None
 
 
+def _own_shop(name: str, store: set[str]) -> bool:
+    words = name.split()
+    return len(words) <= 3 and any(_norm("".join(w)) in store for w in itertools.permutations(words))
+
+
 def decide(title: str | None, origin: str | None, brands: list[str], rows: list[str],
            known: list[str] | None = None, description: str | None = None,
-           release: str | None = None) -> tuple[str, str, list[str]]:
+           release: str | None = None, store: set[str] | None = None) -> tuple[str, str, list[str]]:
     """-> (brand, source, other candidates) for a product with no brand of its own (steps 3-7; known: the brand
     dictionary's Korean names, for a title that starts with one; release: the notice's 동일 모델의 출시연월 row)."""
     titled = in_title(title, brands)
@@ -399,7 +426,10 @@ def decide(title: str | None, origin: str | None, brands: list[str], rows: list[
                   for n in described(description)]
     if rows_named:
         return rows_named[0], "description_row", rows_named[1:3]
-    dist = distributors(origin)
+    # the seller's own shop in the brackets is no importer ("중국산(수수협력사 co.)" by the shop 수수: 2026-11-18, once
+    # resellers_own dropped the same phrase from the brand row; store: the shop's name and legal name, normalized), its
+    # words in any order too ("중국산(프롬 조이 협력사)" by the shop 조이프롬, 12657977112)
+    dist = [d for d in distributors(origin) if not _own_shop(d, store or set())]
     if dist:
         return dist[0], "origin", dist[1:]
     seen = in_images(rows, brands)
@@ -434,7 +464,10 @@ def store_named(brand: str | None, title: str | None, store_names: set[str], kno
     n = _norm(brand)
     if not n or n not in store_names or n in _norm(title) or "조합" in (title or ""):
         return False
-    other = leading(title, known) or as_word(title, known)
+    # ... or a Korean one glued to the next word ("SW 마젤치퍼": 2026-11-18, the chipper review, 13861214656, 12896056499,
+    # 13393153836, MAZEL C9 went out as the shops Swan Goods, Yellow Swan, Yellow Rabbit): in_title, word start
+    other = leading(title, known) or as_word(title, known) \
+        or next(iter(in_title(title, [k for k in known if _HANGUL_BRAND.match(_norm(k))])), None)
     return bool(other) and _norm(other) != n and not _COMPONENT.search(other or "")
 
 
@@ -468,7 +501,7 @@ def fill(prepared: list[Any], rows_of: Callable[[str], list[str]],
         else:
             brand, source, others = decide(product.get("title_ko"), origins.get(p["key"]), brands, rows_of(p["key"]),
                                            known, _description(product.get("description_ko")),
-                                           (releases or {}).get(p["key"]))
+                                           (releases or {}).get(p["key"]), (stores or {}).get(p["key"]))
         p["product"]["brand_ko"], p["product"]["brand_source"] = brand, source
         p["notes"] = [x for x in p["notes"] if x["code"] != "brand_fallback"] + [
             {"code": "brand_fallback", "detail": f"{source}: {brand}" + (f"; also {', '.join(others)}" if others else "")

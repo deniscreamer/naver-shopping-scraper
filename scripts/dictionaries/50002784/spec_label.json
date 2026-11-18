@@ -1,7 +1,7 @@
 {
  "format": "dictionary/1",
  "kind": "spec_label",
- "backed_up": "2026-11-18T16:33:41Z",
+ "backed_up": "2026-11-18T20:20:50Z",
  "entries": {
   "라이각": "Lie Angle",
   "모델명": "Model",
@@ -13,6 +13,7 @@
   "제조사": "Manufacturer",
   "출시": "Release Date",
   "치퍼 로프트각": "Chipper Loft",
-  "클럽길이": "Club Length"
+  "클럽길이": "Club Length",
+  "품번": "Model Number"
  }
 }

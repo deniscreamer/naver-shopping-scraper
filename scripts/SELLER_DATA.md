@@ -360,6 +360,16 @@ Code: `transform.prepare`, `brand_fallback.py` (2026-11-08).
   the reseller's 원에스티 rows refused) takes 지아이엘 (GIL), the importer in its 원산지 brackets (the origin step), as
   its copy 6414820248 states in its 브랜드 row: kept (an importer when no maker is named, the owner 2026-11-08), a
   doubtful vendor for the lens review with the TTY / PGM copies.
+- The chipper brands (2026-11-18, the review of the 100-chipper scroll): rakuraku00 writes "브랜드." with a dot
+  (10029117508, the vendor "Brand.": `clean` tests the no-firm words on the value stripped of dots); the shop brand 핑
+  (PING) was read inside 핑크 "pink" (15 Intech EZ Roll / Extreme 5 chippers, the live junior set 13848307900: a
+  one-syllable brand ends its word in the title too, `in_title`); "Brand Name | Money Club Chipper" (18 chippers: the
+  row's name as `clean` keeps it, `described`); MAZEL glued to 치퍼 under the sellers' shop names ("SW 마젤치퍼",
+  13861214656, 12896056499, 13393153836: `store_named` finds a Korean brand where a word starts); the shop 수수 writes
+  "수수협력사 co." in 브랜드, 제조사 and 원산지 (13800679830, a Ben Sayers M5: `_PARTNER` takes a trailing co. / .co.,
+  `resellers_own` the phrase as the brand row, the origin step skips the seller's own shop, its words in any order:
+  "프롬 조이 협력사" by 조이프롬, 12657977112); a page's section heading "DETAILED DESIGN" read 10 times (13848307900:
+  a spec word, no Latin brand).
 
 ### Origin, gifts, add-ons
 

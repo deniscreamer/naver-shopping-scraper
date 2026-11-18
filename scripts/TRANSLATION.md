@@ -119,10 +119,16 @@ BALDO (`vendor_spellings` ignores case). Since f44ae7d the store's first spellin
 has (PUBLISH.md "The payload"): Kirkland 9951345559 went out as "Kirkland", the spelling of the older "Kirkland
 Signature 2nd Generation". Not added on purpose: 핀클리 stays A11N SPORTS (9 products read it; Finchley is the brief's);
 no 토호 골프 nor a bare TEAM (C05); no 프로니즈 (the 50002783 brief's "프로니즈 = Pron" only, C29); 피네모 / 파인메도우 /
-피네메도우 -> Pinemeadow Golf put off (C33: 5 correct products would change `brand_ko` and be asked again; 12079167962
-has its brand_by_owner entry, a new 피네모 product may read "Pinemo"); no "Mystery Golf", no general "drop Golf" rule
+피네메도우 -> Pinemeadow Golf put off (C33), then added with 피네모도 in the chipper review (2026-11-18: the chippers
+write 피네모도 / 파인메도우; 5 wedge sets read before by their Brand row change `brand_ko` only, the vendor stays
+Pinemeadow Golf, 2 active ones' titles reach the store on the owner's word); no "Mystery Golf", no general "drop Golf" rule
 (C28); T WINSOLOGY not made TWINSOLOGY. Disagreeing across dictionaries, open: brand.json 다우리 -> Dauri against
 50002787/spec_value Dawoori, 로마로 -> Romaro against 50002670/spec_value and its brief's RomaRo (C34).
+
+**The chipper review** (2026-11-18): 넥스젠 NEXGEN, 마이쿠자 MYKUJA (the store's first spelling), 머니 클럽 / 머니클럽 Money
+Club, 치퍼랩 CHIPPER Lab, 무츠미혼마 Mutsumi Honma (beside 무쯔미혼마) added; 캘러웨이 오디세이 -> Odyssey (the brief:
+Odyssey is the maker of the Odyssey chippers, Callaway's putter line); 브랜드. -> Brand. and the shop 수수's partner
+phrases 수수협력사 co. / 수수랜드협력사.co. deleted (no brand: `brand_fallback.clean` / `resellers_own`).
 
 `status` shows when the live copies were last written and the last backup (every backup file carries
 `backed_up`), the new and changed entries since, the ones only in git, and the advice (`action` none / wait /

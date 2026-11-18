@@ -361,7 +361,7 @@ def _prepared_fixture(pid):
                                      ensure_ascii=False))
 
 
-@pytest.mark.parametrize("word", ["brand", "Brand", "BRAND", "치퍼", "칩퍼", "Chipper", "CHIPPER", "치퍼 CEAF"])
+@pytest.mark.parametrize("word", ["brand", "Brand", "BRAND", "브랜드.", "brand.", "치퍼", "칩퍼", "Chipper", "CHIPPER", "치퍼 CEAF"])
 def test_the_word_brand_and_the_chipper_are_no_brand(word):
     """2026-11-18, the chipper review: rakuraku00 writes 브랜드=brand and 제조사=brand (9991649397, 9993129226,
     9993149923 went out as the vendor "brand", "brand CH809 Left-Handed Chipper"); 11158899277's rows say 치퍼, which
@@ -393,3 +393,75 @@ def test_a_placeholder_row_leaves_the_brand_to_the_fallback(pid):
     B.fill([p], lambda key: [], {}, _texts, known=["월드이글"])
     want = {"9991649397": ("월드이글", "title_known"), "11158899277": (B.NO_BRAND, "none")}[pid]
     assert (p["product"]["brand_ko"], p["product"]["brand_source"]) == want
+
+
+def test_a_one_syllable_brand_ends_its_word_in_the_title():
+    """2026-11-18, the chipper review: the shop brand 핑 (PING) was read in 핑크 (pink): 15 Intech EZ Roll / Extreme 5
+    chippers (13241334423, 13762752610, ...) and the junior set 13848307900, published as PING. The real titles."""
+    shop = ["무쯔미혼마", "마젤", "온오프", "핑"]
+    for title in ["여성용 핑크 세트 골프채 7번아이언 주니어골프채 연습용 카본 클럽 샤프트",
+                  "인텍 이지 롤 시니어 여성 오른손 핑크 골프 치퍼 - 33 인치",
+                  "여성용 익스트림 5 골프 치퍼 36도 유틸리티 웨지 핑크 그래파이트 샤프트"]:
+        assert B.in_title(title, shop) == []
+    assert B.in_title("핑 PING 여성 G LE 3 골프채", shop) == ["핑"]             # 13110012279, a real PING
+    assert B.in_title("핑골프 치퍼", shop) == ["핑"] and B.in_title("핑(골프) 치퍼", shop) == ["핑"]
+    assert B.in_title("핑크 그립 핑 치퍼", shop) == ["핑"]                          # the word, not the colour
+    assert B.in_title("SW 마젤치퍼 골프치퍼", shop) == ["마젤"]                     # two syllables: a word start only
+    assert B.in_title("시니어 레이디스 세트", ["이디스"]) == []                       # as before (13469043292)
+    assert B.in_title("핑크 무쯔미혼마 치퍼", ["무쯔미혼마", "혼마", "핑"]) == ["무쯔미혼마"]   # 혼마 not inside it
+
+
+def test_a_brand_row_keeps_the_name_without_the_chipper():
+    """2026-11-18, the chipper review: "Brand Name | Money Club Chipper" made 18 chippers the vendor "Money Club
+    Chipper" (13551974523, 13552012620), 2 others "Money Club"; a Korean name the cut would shorten stays whole."""
+    assert B.described("Brand Name | Money Club Chipper\nManufacturer | Money Club") == ["Money Club"]
+    assert B.described("브랜드 | 머니 클럽") == ["머니 클럽"]
+    assert B.described("Brand | MAZEL 치퍼") == ["MAZEL"]
+    assert B.described("Brand | CHIPPER Lab") == ["CHIPPER Lab"]
+
+
+def test_a_sellers_shop_glued_to_the_chipper_gives_way():
+    """2026-11-18, the chipper review: MAZEL C9 went out as the sellers' shops 스완굿즈 / 옐로스완 / 옐로래빗
+    (13861214656, 12896056499, 13393153836): the title glues the maker to 치퍼 ("SW 마젤치퍼 골프치퍼")."""
+    known = ["마젤", "MAZEL", "스완굿즈"]
+    assert B.store_named("스완굿즈", "SW 마젤치퍼 골프치퍼", {"스완굿즈", "블랙스완"}, known)
+    assert B.store_named("옐로스완", "YS 마젤치퍼 골프치퍼 골프용품 남성골프채", {"옐로스완"}, known)
+    assert not B.store_named("옐로스완", "YS 골프치퍼 골프용품", {"옐로스완"}, known)        # no other brand
+    assert not B.store_named("옐로스완", "YS 치마젤 치퍼", {"옐로스완"}, known)              # not a word start
+
+
+@pytest.mark.parametrize("name", ["수수협력사 co.", "수수랜드협력사.co.", "수수 협력사 Co", "수수협력사"])
+def test_a_partner_phrase_with_co(name):
+    """2026-11-18, the chipper review: the shop 수수 writes "수수협력사 co." in 브랜드, 제조사 and 원산지's brackets
+    (13800679830 went out as the vendor "Susu Partner Co."; 13841633023 "수수랜드협력사.co.")."""
+    store = {"name": "글로벌수수", "business": {"legal_name": "수수"}}
+    assert B.clean(name) in ("수수", "수수랜드")
+    assert B.resellers_own(name, name, store) is (B.clean(name) == "수수")
+    assert B.clean("Golf Co.") == "Golf Co."                                          # a firm's Co. stays
+
+
+def test_the_sellers_own_shop_is_no_importer():
+    """2026-11-18: 원산지 "중국산(수수협력사 co.)" by the shop 수수, "중국산(프롬 조이 협력사)" by the shop 조이프롬
+    (12657977112): the images' maker comes next (벤세이어스, read 9 times on 13800679830's images)."""
+    rows = ["벤세이어스M5치퍼", "벤세이어스 정품", "BEN SAYERS"]
+    assert B.decide("M5 골프 치퍼 라운딩 주변 어프로치 연습 골프채 그린 실버", "중국산(수수협력사 co.)", ["벤세이어스"],
+                    rows, store={"글로벌수수", "수수"})[:2] == ("벤세이어스", "images_text")
+    assert B.decide("주니어아이언", "중국산(프롬 조이 협력사)", [], [], store={"조이프롬"})[:2] == (B.NO_BRAND, "none")
+    assert B.decide("주니어아이언", "일본산(혼마코리아)", [], [], store={"조이프롬"})[:2] == ("혼마코리아", "origin")
+
+
+def test_a_pages_section_heading_is_no_latin_brand():
+    # 13848307900, 2026-11-18: "DETAILED DESIGN" read 10 times once 핑크 no longer gave the junior set PING
+    assert B.decide("여성용 핑크 세트 골프채 7번아이언", "기타/해외", ["핑"], ["DETAILED DESIGN"] * 10)[:2] == (
+        B.NO_BRAND, "none")
+
+
+def test_a_reselling_shops_partner_phrase_on_the_real_line():
+    """13800679830 (the real line): 브랜드 and 제조사 "수수협력사 co." by the shop 수수 name no brand; the fallback
+    reads the images (here: a few of its OCR rows)."""
+    p = _prepared_fixture("13800679830")
+    assert p["product"]["brand_ko"] is None
+    other = {"key": "b", "notes": [], "product": {"brand_ko": "벤세이어스", "brand_source": "specs:브랜드"}}
+    B.fill([p, other], lambda key: ["벤세이어스M5치퍼", "BEN SAYERS"], {p["key"]: "중국산(수수협력사 co.)"}, _texts,
+           stores={p["key"]: {"글로벌수수", "수수"}})
+    assert (p["product"]["brand_ko"], p["product"]["brand_source"]) == ("벤세이어스", "images_text")

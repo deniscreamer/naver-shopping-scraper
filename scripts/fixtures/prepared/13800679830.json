@@ -1,0 +1,228 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:101651968:13800679830",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "description_images_missing",
+   "detail": "no sidecar: run description_images.py"
+  },
+  {
+   "code": "description_all_boilerplate",
+   "detail": "2 dropped"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/smrt/products/13800679830",
+  "channel_no": "101651968",
+  "product_id": "13800679830",
+  "category_id": "50002784"
+ },
+ "product": {
+  "title_ko": "M5 골프 치퍼 라운딩 주변 어프로치 연습 골프채 그린 실버",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {},
+  "options": [],
+  "facts": [
+   {
+    "label_ko": "",
+    "value_ko": "M5 실버 치퍼+커버"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "observed:[\"M5 실버 치퍼+커버\"]",
+    "naver_variant_id": "60323499902",
+    "options_ko": [],
+    "price_krw": 59200,
+    "price_usd": "59.20",
+    "sku": "FW-eded526f4b7de460d90f4d6a",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 380,
+      "central": 470,
+      "high": 560,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_weight_g": {
+      "low": 800,
+      "central": 1000,
+      "high": 1300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_length_mm": {
+      "low": 920,
+      "central": 960,
+      "high": 1000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 110,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 80,
+      "high": 110,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 9,
+      "approved_by": "owner",
+      "approved_at": "2026-11-18"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 59200,
+   "original_krw": 60410,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "수수협력사 co."
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "수수"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13800679830/fairwardgolf-13800679830-001-7e5380cc6aac609b.webp",
+    "sha256": "7e5380cc6aac609b1b44d3fc836e2b96377653ef2af7f7c4ab6969ff47b1c993",
+    "width": 1024,
+    "height": 1024
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": 1.7333333,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": null,
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20261009_211/1791544242906DVjFB_JPEG/p-13739528413-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20261009_91/17915442429092AuLn_JPEG/p-13739528413-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20261009_76/1791544242912OBo3C_JPEG/p-13739528413-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20261009_67/1791544242904kyXI4_JPEG/p-13739528413-s-1-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20261009_16/1791544242901CvViu_JPEG/p-13739528413-s-1-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20261009_132/1791544242900alhn7_JPEG/p-13739528413-s-1-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20261009_173/1791544242904X3ykI_JPEG/p-13739528413-s-1-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20261009_203/1791544242903nCa70_JPEG/p-13739528413-s-1-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20261009_24/1791544242902Hxdk7_JPEG/p-13739528413-s-1-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20261009_272/1791544242895gbiQ3_JPEG/p-13739528413-s-1-A-9.jpg"
+  ],
+  "description_dropped": [
+   {
+    "rule": "phone",
+    "text": "상품문의 및 대량구매 할인상담 (070-4571-5753, 010-6714-2025) 1009"
+   },
+   {
+    "rule": "phone",
+    "text": "상품문의 및 대량구매 할인상담 (070-4571-5753, 010-6714-2025) 1009"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:35160e82dc967351",
+   "kind": "title",
+   "ko": "M5 골프 치퍼 라운딩 주변 어프로치 연습 골프채 그린 실버"
+  },
+  {
+   "id": "fact_value:d25cb5f914b5a040",
+   "kind": "fact_value",
+   "ko": "M5 실버 치퍼+커버"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:d8e4292dd9d23450",
+   "kind": "spec_value",
+   "ko": "수수협력사 co."
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:a268d0c3ad5141ce",
+   "kind": "spec_value",
+   "ko": "수수"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  }
+ ]
+}

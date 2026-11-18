@@ -12,7 +12,7 @@ axis named for another kind (13390487313 "Shaft Material" over lengths) and its 
 the text (10504295292, held choice_in_text_only) and its look-alikes kept (10482586862, 12178280377, 13683785691,
 13278647591, 11006400319), with their sidecars. 2026-11-18, the chipper review (50002784, no sidecars): the word "brand"
 and 치퍼 as the 브랜드 / 제조사 rows (9991649397, 11158899277), 치퍼 as the title's shop brand (10179980640), a notice's
-962 g out of the row's band (7004743758), a free glove's sizes as the only axis (10421264752).
+962 g out of the row's band (7004743758), a free glove's sizes as the only axis (10421264752); the shop's own "<shop>협력사 co." as both rows (13800679830).
 
 fixtures/description_images/<product id>.json: the description images' OCR sidecars of the same products
 (description_images.py with RapidOCR on the images downloaded 2026-11-07), read by the transform as

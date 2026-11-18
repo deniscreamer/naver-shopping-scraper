@@ -464,10 +464,17 @@ link. The report says how many were dropped. The step is pure: same products in,
   that is exactly the seller's shop name or legal name, while the title names another brand of the dictionary (not a
   shaft's or a grip's maker) and no 조합, gives way to the steps above (`brand_fallback.store_named`; the note says
   "not the seller's shop X"; 메가스피어 on a PGM set, 13245513614; 2026-11-17, C02); a shop that writes its own name in
-  the title sells its brand and keeps it. A Korean
-  shop brand counts in the title only where a word starts, as in the images (이디스 was read in 레이디스, 2026-11-15), and
-  a Latin brand read once in the images, inside an all-Latin phrase of 3+ words, is a slogan ("PRECISE AIMING
-  FEEDBACK" on a XINGGM set, 2026-11-15).
+  the title sells its brand and keeps it; the other brand may be a Korean one glued to the next word where a word
+  starts ("SW 마젤치퍼": MAZEL, not the shops 스완굿즈 / 옐로스완 / 옐로래빗, 2026-11-18). A Korean
+  shop brand counts in the title only where a word starts, as in the images (이디스 was read in 레이디스, 2026-11-15),
+  and one of one syllable also ends its word or goes on with 골프 (핑 was read in 핑크 "pink": 15 chippers and the junior
+  set 13848307900 as PING, 2026-11-18; 핑골프, 핑 치퍼, 핑(골프) still match); a Latin brand read once in the images,
+  inside an all-Latin phrase of 3+ words, is a slogan ("PRECISE AIMING FEEDBACK" on a XINGGM set, 2026-11-15), and a
+  page's section heading is no Latin brand phrase ("DETAILED DESIGN", 2026-11-18). A description Brand row gives the
+  name as `clean` keeps it ("Money Club Chipper" is Money Club; a Korean name it would shorten at another word stays
+  whole, 2026-11-18). "<shop>협력사" with a trailing "co." / ".co." is a partner phrase too, and as the brand row of
+  that shop it is the reseller's own (`resellers_own`); the origin step skips the seller's own shop in 원산지's brackets,
+  its words in any order ("중국산(수수협력사 co.)" by 수수: Ben Sayers from the images, 13800679830; 2026-11-18).
 
 ### Per-shop rules
 
