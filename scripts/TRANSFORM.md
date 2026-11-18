@@ -210,7 +210,8 @@ published, SKUs and prices equal on 201 of 201 variants):
   - a picker's club slots (axes named alike but for a number, "옵션 1/2/3", "SB웨지1/2/3"; wedge-sets categories only):
     a row with one value on two slots ("56+56", the owner's value: not sold) is left out, and an order of a set
     already offered is that set (its ascending-loft row kept when buyable at the first buyable row's price, else
-    the first buyable: D3, 2026-11-17, `_slot_row`; the SKU is that row's), before the cap: MG5 343 -> 35 rows; note
+    the first buyable: D3, 2026-11-17, `_slot_row`; the SKU is that row's: a resend of the 10 published MG5 changes
+    146 variants' SKUs, so Shopify makes new variant rows, counts, prices and KRW unchanged), before the cap: MG5 343 -> 35 rows; note
     `slot_rows_merged` ("343 -> 35 rows (133 with a value repeated on two slots, 175 reordered)"); the merged slots
     are left out of the word match of `title_names_one_variant` and `specs_name_one_variant` (a slot that lost "60도"
     names no one variant; the title's lofts vs the sets sold is `title_lofts_not_sold`); C01;
@@ -470,7 +471,12 @@ stays), and a listing whose every
 variant is one club (a numbered iron, a named wedge, "아이언 2종") with three numbered irons or more (MAZEL WM-X
 "8번 아이언"; KVV's two irons stay). Measured on the shop's 502 listings: it held 9 iron sets and 8 full sets, all
 published before; on the 604 of the same night (616 after its review) the second pass holds 16 more, all published (active), and none of the review's probe wedge sets (`test_counts_and_the_title`) (the fixture
-`fixtures/wedge_sets/50002783.json`, `make_wedge_sets_fixture.py`; `test_wedge_sets.py`). The shop's
+`fixtures/wedge_sets/50002783.json`, `make_wedge_sets_fixture.py`; `test_wedge_sets.py`). Rejected in the wedge-set
+review (2026-11-17): a "no Set word / lost lofts" title check (C49: its one hit was a correct single wedge, and it
+would bring back lofts dropped on purpose); releasing "컴플리트 세트 52°" from its hold (C64: the 4th copy of UPC
+792713116573, and the form releases singles too). Set aside by name (the owner, 2026-11-17): 12584340779
+(Professional Series 690) stays as it is: no count kind, no weight composition, left out of the paid translate, not
+resent (its `store_diff` changes, vendor "Brand" -> "Fairward Golf" and the source, wait). The shop's
 sections are not decided here (PLACEMENT.md). A shop or a category without rules: `ShopRulesMissing`, the
 run stops and asks the operator.
 

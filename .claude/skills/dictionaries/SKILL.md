@@ -15,6 +15,7 @@ One Korean text -> one English per kind, read before the model is asked (`transl
 | A new category's first entries | `scripts/TRANSLATION.md` "A new shop (tenant) or category" (5); `scripts/ONBOARDING.md` "D. The order of a first run" (6), L4 and L8 in "Learned on the first new category (50002787, 2026-11-11)" |
 | How a brand is chosen; the owner's brand for one product | `scripts/TRANSFORM.md` "A brand for every product"; skill `fix-a-product` |
 | The vendor's spelling from the brand dictionary | `scripts/PUBLISH.md` "The payload (`shopify_payload.py`)" |
+| Why a brand's spelling was chosen, keys left out on purpose (do not add them back unasked) | `scripts/TRANSLATION.md` "2. Dictionaries", "Brand spellings chosen in the wedge-set review" |
 | The disk state backup (live dictionaries, `brand_by_owner.json`) | `scripts/OPERATIONS.md` "Backup (`state_backup.py`, the owner 2026-11-16)" |
 
 Where: live `scripts/output/dictionaries/brand.json` and `<category id>/<kind>.json` (out of git, grown by runs);

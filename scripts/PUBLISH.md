@@ -90,7 +90,8 @@ still `not ready` and skipped (exit 0), as before.
 - `--rehandle --only <key>`: the handle its title makes now (the old one redirects); `--force --only <key>`: send
   even when nothing changed. Both re-send a published product: rule 1 of OWNER_RULES.md.
 - `store_diff.py <shop> [--only <key>] [--category <id>]`: read only, what a publication would change, field by
-  field; `--adopt` (takes the shop's lock) records `output` for products the store already has.
+  field (it rewrites `publish/store_diff.json`: after `--only` that file holds one key, 2026-11-17; run it in full
+  before building batches from it); `--adopt` (takes the shop's lock) records `output` for products the store already has.
 
 ### After an action: check it
 

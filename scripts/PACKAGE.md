@@ -65,10 +65,17 @@ bag and covers. A default package weight below the seller's product weight is ke
 the seller's product weight + the carton). A table row may carry `plausible: {field: {min, max}}`, the operator's band: a stated value
 outside it is not taken (`contradiction`, `reason: implausible_for_category`) and the default fills the field; a box
 is one statement, so one side out of its band refuses the other two (`box_not_whole`, 2026-11-17). Two rows have a
-band since 2026-11-17 (table version 7; the agent from the data on the owner's delegation,
-`research/wedge-fix-plan/decisions.md`): 50002783 웨지, product 800-3500 g, package 1000-4000 g, box height
+band since 2026-11-17 (table version 7; the agent from the data on the owner's delegation, the wedge-set
+review, commit 2f2262f): 50002783 웨지, product 800-3500 g, package 1000-4000 g, box height
 40-400 mm (a set of 2-6 wedges: a one-club weight or box on a set's page, 0.45 kg, 1.04 lb, 13 mm, is refused);
-50002787 주니어용클럽, product 150-8000 g, package 300-10000 g (13586027489's "529 Pounds"). None is made up. A row may also carry **`baselines`** (the owner, 2026-11-10), the operator's
+50002787 주니어용클럽, product 150-8000 g, package 300-10000 g (13586027489's "529 Pounds"). None is made up.
+Why these (2026-11-17): the 800 g low is 2 x the single club's 400 and sits in the data's gap (726-1090 g: 25
+one-club readings refused, 47 sets taken; 900-2800 would refuse 13480790720's 2840 g while its twins pass); the
+package low is 1000, not 1500 (1500 refuses 16 real boxes of 1110-1470 g, Yamato 2PCS, BombTech / Detroit / XINGGM
+52/56/60, and the C09 and C10 paths would disagree; with 1000, 33 live prices fall, none rises); the height low is 40,
+not 50 mm (real boxes of 46 mm, 13372276089, and 48 mm, 13370268119); 50002787 has no height band (real junior
+single-club boxes are 12.7-20 mm: 13388597147, 13369106775, 13381488170); no length or width band (not delegated;
+13163078346's 407 mm was tees, held `not_wedge_set`). A row may also carry **`baselines`** (the owner, 2026-11-10), the operator's
 amounts for the parts of a set of like items in a container; all of them or no block (`check_row`):
 
 | key | what | 50002788 (the owner, 2026-11-10) | basis |
@@ -114,9 +121,14 @@ or count); singles are left out by the title screen, so the kind is for one that
 2.2 kg central), and a `single_club` kind (96 x 11 x 8 cm, 1 kg) for a variant that sells one wedge of a set-or-single
 listing (단품, 개별, 싱글, 낱개 in the variant) or 단품 in a title with no set word; single-wedge titles are left out by
 the title screen. Version 6 since. Version 7 (2026-11-17, the agent from the data on the owner's delegation,
-decisions.md C16): the count kinds `two_wedges` (98 x 15 x 10 cm, 1.7 kg, wedges 920 g: the variable box, -$30 to
+the wedge-set review C16, commit 2f2262f): the count kinds `two_wedges` (98 x 15 x 10 cm, 1.7 kg, wedges 920 g: the variable box, -$30 to
 -$40 a variant at level 1) and `four_plus` (the base box, 2.65 kg, wedges 1840 g: no price change), after
-`single_club`. A count kind carries `lofts` [min, max]: the variant's own count (2개 / 2종 / 2P / 2pcs / 2피스 / 2자루 /
+`single_club`. The base 3-wedge row was kept on purpose (C16-a): the measured Amazon boxes (median 99 x 11.5 x 6.3 cm,
+p90 107 x 17.8 x 10.2, at most 3.86 kg, Kirkland) are imports' only, no Korean seller's, and lowering it would cut
+about 364 live prices. Rejected: two_wedges at Yamato's 99 x 11.4 x 5.3 (one box; a level-1 default covers the p90),
+98 x 17 x 10 (-$10, a 3-wedge width), four_plus at 102 x 22 x 12 (+$50; both measured 4-wedge boxes fit the base), a
+general "package = stated product + carton" (C16-d: it moves every category; the owner's 2026-11-05 flag
+`below_stated_product` stands); Hireko's 122.6 cm box is an outlier (it would cross FedEx's 121 cm length line). A count kind carries `lofts` [min, max]: the variant's own count (2개 / 2종 / 2P / 2pcs / 2피스 / 2자루 /
 2본; 4-6 for four_plus) or that many distinct lofts in its value ("56 60 Degree Tarnish", not a range "52-56", not
 "52개"), else the title's count when the listing has one variant or every variant names as many lofts; never the
 title's own list of lofts, never with a larger count, 단품 / 개별 / 싱글 / 낱개 or a bag anywhere. In doubt the base
@@ -125,7 +137,7 @@ A loft counts when it carries 도 / ° / degree or stands in a run of lofts ("52
 is a shaft's weight or flex ("50도 / Diamana 60 S" is one loft); 세트 after a loft is no age ("왼손 52 56 60 세트" is
 three) and a model code's dash no range ("LH01-52 56 60 Degree" is three) (the W8 review, 2026-11-17).
 Known limit: a listing whose title states a count ("웨지세트(4종)") and whose variants each name one loft ("50도",
-"52도", ...) gives every variant the title's count (decisions.md, word for word), though a variant may sell one
+"52도", ...) gives every variant the title's count (the review's decision C16, word for word), though a variant may sell one
 wedge; seen on 394381329 (held, no live effect).
 The row's `compose_by_count` block (C17, 2026-11-17): a set's `product_weight_g` the seller does not state, from its
 clubs' labelled weights, see [The clubs' weights of a wedge set](#the-clubs-weights-of-a-wedge-set).
@@ -156,7 +168,9 @@ what the seller states of the five fields and, for a set, composes the rest from
 sources" below; until 2026-11-10 the larger of the guess and today's value won). The same reader also gets
 the lines of the seller's typed description (`details.description.text`, 2026-11-10) as one more block of rows:
 no OCR doubt, table cells joined by " | " ("패키지 무게 : 10.8kg", "클럽 무게(g) | R: 294 / S: 297 | ... | 528"). A
-value read there says so in its evidence (`from: description_text`; `source` stays `description_image`). It is
+value read there says so in its evidence (`from: description_text`; `source` stays `description_image`: renaming it
+`description_text` was rejected 2026-11-17, the wedge-set review C18, as the metafield of 70 published products would
+drift). It is
 read with the images or not at all (no sidecar, or a stale one: neither is read).
 
 The operator's (or an agent's) order of commands, after each collection:
@@ -432,7 +446,7 @@ height of a 1250 mm package (2026-11-10; before, the sides were merged field by 
 ### The clubs' weights of a wedge set
 
 50002783 only, by the row's `compose_by_count` block (`description_measures.compose_by_count`, in the transform after
-the merge; 2026-11-17, decisions.md C17). In place of the flat default of `product_weight_g` only (the package and
+the merge; 2026-11-17, the wedge-set review C17, commit 2f2262f). In place of the flat default of `product_weight_g` only (the package and
 its sides stay: PGM's 8 lofts x 462 g would have raised a box): the lines of the typed text, the 상품정보 rows and the
 images' rows read at NUMBER_CONF that carry a weight label, no part word (head, shaft, grip) and 3-digit weights in
 380-520 g (the value may stand on the next line). As many weights as the set's clubs: their sum, confidence 3 (USPA
@@ -443,7 +457,12 @@ than clubs (the MG5 / RMX / Honma shaft tables), men's and women's weights in on
 lofts than any variant, a held product, a single club's variant. The field: `source: composed`, `how`, `parts`
 (each club's weight and its line), `count_from` (variant | title), the block's `approved_by` / `approved_at`,
 `compared` (the default). No price moves (no `baselines` in the row). Measured on a shop copy 2026-11-17: 8 products
-(6 in the store); MG5 13699940318 (men's and women's weights) is skipped.
+(6 in the store); MG5 13699940318 (men's and women's weights) is skipped. Not firing, on purpose: PGM
+13261483119's "Product weight: 462G" (the Amazon skip wins, the cautious side), USPA 13582215582's "(Aw Sw)" (no
+count). Rejected: the median x count for the shaft tables (MG5, RMX); a `baselines` block (`check_row` needs a
+container, wedges have none); a CATEGORY_PROFILES entry (`guess()` drops plain product weights: 3 description_image
+weights of golden 13468791008 would move); Amazon's Item Weight x count (GoSports: 424 g on one listing, 1590 g on a
+sibling).
 
 ### A weight against the variant's count
 
@@ -481,6 +500,9 @@ variant's package weight:
   default is above the box too, the box's own weight (`flags: ["capped_to_package"]`, 13388597147: 363 g over 360 g).
   The package's `below_contents` / `below_stated_product` flags go with it.
 - A default product weight above a stated box is not the seller's and stays (13372006463, the owner's decision).
+- Open for the owner (2026-11-17): every category or 50002783 only (it moves 13388597147, 13024454637 in 50002787 and
+  13024231444 in 50002788, no price), and a refused weight falls to the default, not an assembly estimate (13024231444:
+  5700 g, not 7540 g): [SELLER_DATA.md Open questions](SELLER_DATA.md#open-questions-defaults-taken-not-yet-confirmed-by-the-owner).
 Measured on a shop copy 2026-11-17: 8 products, 20 product weights (13370268119, 13372131108, 13389498451,
 13468741368, 13480790720; 13388597147 and 13024454637 in 50002787, 13024231444 in 50002788), 3 package
 weights read (13480790720, 13468741368: under the volumetric weight, no price moves); with the bare label 4
@@ -607,7 +629,10 @@ only: in 50002787 they would have moved two published junior PGM clubs, 10259486
 $309 -> $209, through "패키지 치수" / "100*12.5*12.5cm"; widening waits for the owner). A default
 whose numbers did not change keeps its collected `table_version`; one that did (a two-wedge variant) is stamped 7
 when prepared again (`current_defaults`). The server's own reading (`measures`: bullets, flex rows, split lines,
-colour-only variants, a package weight under a club heading) reaches a product only when it is collected again.
+colour-only variants, a package weight under a club heading) reaches a product only when it is collected again;
+measured 2026-11-17, outside 50002783 that will move 3 published 50002788 full sets' package 7000 -> 10165 g (composed,
+dearer), 5 50002788 sets' product to 5.85-9.07 kg, 4 published 50002787 products' to 4082-4990 g, and give 5 junior
+50002787 products a stated package of 3175-4990 g in place of the 4500 g default.
 
 **The count and the box (2026-11-17, the resend review D1 / D2).** A weight the listing states once is checked
 against each variant's count of wedges (50002783: [A weight against the variant's count](#a-weight-against-the-variants-count));

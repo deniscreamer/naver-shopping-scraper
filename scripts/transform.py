@@ -418,7 +418,7 @@ def _unindexed(values: list[str]) -> list[str] | None:
     return out if all(out) and len(set(out)) == len(out) else None
 
 
-# Club slots of a picker (2026-11-17, the wedge-set review C01; the owner's value, decisions.md: "56+56" is not sold):
+# Club slots of a picker (2026-11-17, the wedge-set review C01, commit 23616ac; the owner's value: "56+56" is not sold):
 # TaylorMade MG5 pickers ("옵션 1/2/3", "SB웨지1/2/3", "웨지 로프트 바운스 선택-1/-2/-3") are Naver's every product
 # of the slots, a loft on two slots included ("56+56", "48도+48도+48도") and every order of one set. In 15 rows sold
 # (stock below the template's) no repeat and two orders of one set ("48/56/52" and "48/52/56" of 12742411646): a row

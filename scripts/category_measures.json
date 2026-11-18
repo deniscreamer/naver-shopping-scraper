@@ -166,7 +166,7 @@
     }
    ],
    "reliability": "estimated_average",
-   "basis": "A junior set, often with a stand bag. Central 105 x 28 x 25 cm, 4.5 kg: the agent's estimate from the listing of 2026-11-11 (sets of 3-7 clubs, with and without a bag, 95,000-660,000 KRW), approved by the owner as the second of two defaults; low / high the agent's range. Nothing measured. plausible: the agent from the data 2026-11-17 (research/wedge-fix-plan decisions.md), on the owner's delegation.",
+   "basis": "A junior set, often with a stand bag. Central 105 x 28 x 25 cm, 4.5 kg: the agent's estimate from the listing of 2026-11-11 (sets of 3-7 clubs, with and without a bag, 95,000-660,000 KRW), approved by the owner as the second of two defaults; low / high the agent's range. Nothing measured. plausible: the agent from the data 2026-11-17 (the wedge-set review, commit 2f2262f; the evidence and the rejected bands in PACKAGE.md \"The five fields\"), on the owner's delegation.",
    "approved_by": "owner",
    "approved_at": "2026-11-11",
    "plausible": {
@@ -350,7 +350,7 @@
        "high": 120
       }
      },
-     "basis": "Two wedges in a carton. Central 98 x 15 x 10 cm, 1.7 kg (2 x 460 g = 920 g + the base row's 800 g carton): the agent from the data 2026-11-17 (research/wedge-fix-plan decisions.md C16-b), on the owner's delegation. 920: the median of the labelled 2-wedge sets is 895 g; low 760 Maruman AW + SW 765 g; high 1100 Yamato 2-pack 1.11 kg (13406052242). Width 15 cm: the p90 width of the measured 3-wedge boxes (17.8) less one head; height 10 cm the base row's (p90 10.2). The variant's own count (2개 / 2종 / 2P / 2pcs / 2피스 / 2자루 / 2본) or exactly two distinct lofts in its value; else the title's count when the listing has one variant or every variant names as many lofts; never with a count of 3 or more, 단품 / 개별 / 싱글 / 낱개 or a bag. In doubt the base row's 3-wedge box (the owner, 2026-11-11: the larger box)."
+     "basis": "Two wedges in a carton. Central 98 x 15 x 10 cm, 1.7 kg (2 x 460 g = 920 g + the base row's 800 g carton): the agent from the data 2026-11-17 (the wedge-set review C16-b, commit 2f2262f), on the owner's delegation. 920: the median of the labelled 2-wedge sets is 895 g; low 760 Maruman AW + SW 765 g; high 1100 Yamato 2-pack 1.11 kg (13406052242). Width 15 cm: the p90 width of the measured 3-wedge boxes (17.8) less one head; height 10 cm the base row's (p90 10.2). The variant's own count (2개 / 2종 / 2P / 2pcs / 2피스 / 2자루 / 2본) or exactly two distinct lofts in its value; else the title's count when the listing has one variant or every variant names as many lofts; never with a count of 3 or more, 단품 / 개별 / 싱글 / 낱개 or a bag. In doubt the base row's 3-wedge box (the owner, 2026-11-11: the larger box)."
     },
     {
      "kind": "four_plus",
@@ -387,11 +387,11 @@
        "high": 150
       }
      },
-     "basis": "Four to six wedges in the base row's carton (98 x 20 x 10 cm: the two measured 4-wedge boxes, 3.02 and 3.12 kg volumetric, fit it), 2.65 kg (4 x 460 g = 1840 g + 800 g carton; high 6 x 460): the agent from the data 2026-11-17 (research/wedge-fix-plan decisions.md C16-c), on the owner's delegation. The variant's own count (4-6개 / 종 / pcs / piece / wedges) or 4-6 distinct lofts in its value; else the title's count as for two_wedges; never the title's list of lofts (PGM 13017332771: 8 lofts in the title, variants of 3). The price does not move: 2.65 kg is under the box's 3.92 kg volumetric weight."
+     "basis": "Four to six wedges in the base row's carton (98 x 20 x 10 cm: the two measured 4-wedge boxes, 3.02 and 3.12 kg volumetric, fit it), 2.65 kg (4 x 460 g = 1840 g + 800 g carton; high 6 x 460): the agent from the data 2026-11-17 (the wedge-set review C16-c, commit 2f2262f), on the owner's delegation. The variant's own count (4-6개 / 종 / pcs / piece / wedges) or 4-6 distinct lofts in its value; else the title's count as for two_wedges; never the title's list of lofts (PGM 13017332771: 8 lofts in the title, variants of 3). The price does not move: 2.65 kg is under the box's 3.92 kg volumetric weight."
     }
    ],
    "reliability": "estimated_average",
-   "basis": "A set of 2-3 wedges in a carton, no bag. Central 98 x 20 x 10 cm, 2.2 kg (wedges about 460 g each: 3 x 460 = 1.4 kg): the agent's estimate from the listing of 2026-11-15 (골프 웨지 세트, 670 titles, sets of 2-6 wedges, median 226,000 KRW, many agency imports), approved by the owner (at level 1: $419 for 100,000 KRW, $579 for 225,000 KRW); low / high the agent's range. Nothing measured. plausible: the agent from the data 2026-11-17 (research/wedge-fix-plan decisions.md), on the owner's delegation. Kinds two_wedges and four_plus and compose_by_count: 2026-11-17, the same delegation.",
+   "basis": "A set of 2-3 wedges in a carton, no bag. Central 98 x 20 x 10 cm, 2.2 kg (wedges about 460 g each: 3 x 460 = 1.4 kg): the agent's estimate from the listing of 2026-11-15 (골프 웨지 세트, 670 titles, sets of 2-6 wedges, median 226,000 KRW, many agency imports), approved by the owner (at level 1: $419 for 100,000 KRW, $579 for 225,000 KRW); low / high the agent's range. Nothing measured. plausible: the agent from the data 2026-11-17 (the wedge-set review, commit 2f2262f; the evidence and the rejected bands in PACKAGE.md \"The five fields\"), on the owner's delegation. Kinds two_wedges and four_plus and compose_by_count: 2026-11-17, the same delegation.",
    "approved_by": "owner",
    "approved_at": "2026-11-17",
    "plausible": {
@@ -435,7 +435,7 @@
     ],
     "approved_by": "owner",
     "approved_at": "2026-11-17",
-    "basis": "A wedge set weighs its clubs, about 460 g each, no constant part: the labelled 2-wedge sets 765-920 g (median 895), the 3-wedge 1344-1440 g (median 1385); BombTech 3 x 480 = 1440 g against the stated 1430 / 1450 g. A product weight the seller does not state: the clubs' labelled weights (380-520 g each, a weight label and no part word) summed when there are as many as the set's clubs (confidence 3: USPA 414 + 412, Maruman 380 + 385), else one labelled weight x the count (2: PRGR 448, Toho 460, PGM 462). The count: the variant's own, else the title's when it states one. Not on a #7 / #5 reference or 기준 / 추정 / 상정 (Yamaha RMX, FITTAS), Amazon's Item Weight / Product weight (GoSports 424 g for a set), more weights than clubs (MG5, RMX 2021 and Honma NX tables), men's and women's weights in one listing, a title listing more lofts than any variant, a held product or a single club's variant. Only product_weight_g: the package and its sides stay (PGM 8 lofts x 462 g would have raised a box). The agent from the data 2026-11-17 (research/wedge-fix-plan decisions.md C17), on the owner's delegation."
+    "basis": "A wedge set weighs its clubs, about 460 g each, no constant part: the labelled 2-wedge sets 765-920 g (median 895), the 3-wedge 1344-1440 g (median 1385); BombTech 3 x 480 = 1440 g against the stated 1430 / 1450 g. A product weight the seller does not state: the clubs' labelled weights (380-520 g each, a weight label and no part word) summed when there are as many as the set's clubs (confidence 3: USPA 414 + 412, Maruman 380 + 385), else one labelled weight x the count (2: PRGR 448, Toho 460, PGM 462). The count: the variant's own, else the title's when it states one. Not on a #7 / #5 reference or 기준 / 추정 / 상정 (Yamaha RMX, FITTAS), Amazon's Item Weight / Product weight (GoSports 424 g for a set), more weights than clubs (MG5, RMX 2021 and Honma NX tables), men's and women's weights in one listing, a title listing more lofts than any variant, a held product or a single club's variant. Only product_weight_g: the package and its sides stay (PGM 8 lofts x 462 g would have raised a box). The agent from the data 2026-11-17 (the wedge-set review C17, commit 2f2262f; PACKAGE.md \"The clubs' weights of a wedge set\"), on the owner's delegation."
    }
   }
  ]

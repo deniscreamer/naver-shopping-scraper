@@ -9,7 +9,7 @@ the job's side: `job.py` (`dedupe_step`, `replace_step`). What waits for the own
 
 | Task | Run | Then |
 |---|---|---|
-| A job (`new` or `scroll`) | nothing: `--dedupe on` is the default | read the events below in `status --json` / the log |
+| A job (`new` or `scroll`) | `--dedupe log` until the owner's yes on the W7 pilot (2026-11-17; then nothing: `on` is the default) | read the events below in `status --json` / the log |
 | A check run that changes nothing | `--dedupe log` on `new` / `scroll`, only when the owner wants it | `--pairs`, show the owner |
 | Were a job's decisions right? | `.venv/bin/python scripts/dedupe.py --pairs <shop> --job <id>` | look at the sheets, list wrong pairs for the owner |
 | Change the rule (developer): a missed copy or a false merge | the test first (`test_dedupe.py`), measure before and after on the store's groups | skill `dedupe-rule` (the tests, fixture and docs that move with it; the owner's word) |
@@ -24,6 +24,8 @@ No command judges one given pair: `dedupe.py` has only `--report` and `--pairs`.
 
 `new` and `scroll` take it, `on` by default (the owner, 2026-11-15, after the log pilot). It is kept in job.json and
 read again by `run` / `scroll --job`. A job made before has no key and runs as `off`; `off` writes no key.
+**Until the owner's yes on the W7 pilot (2026-11-17)** every job runs with `--dedupe log`: under `on` the wedge-set
+review's new confirmations (C40, C41-1, C43) and the `held_same_upc` hold (a store write) would act unpiloted.
 
 - `off`: nothing is looked up.
 - `log`: one event `duplicate_seen` per product with a title match (the would-be decision `duplicate_of:<key>` /
@@ -162,11 +164,14 @@ the run starts:
   withdrawn `replaced_by:<kept key>`. The lens `dupes` was born from it ([LENSES.md](LENSES.md)).
 - **Copies the rules missed** (the owner, 2026-11-16): held as drafts with a `hold:` reason, the owner decides each
   ([OWNER_RULES.md](OWNER_RULES.md) rule 2).
-- **The wedge-set review** (2026-11-17, W7: C39, C40, C41, C43 in their narrow forms; research/
-  wedge-improvements-2026-11-17.md): measured on the store's old groups (the ledger's published and withdrawn
-  products), 8 groups new or larger, all copies: Miura QPQ (spaced key), Majek x5 / STIX / Pinemeadow / Bermuda / Pro
+- **The wedge-set review** (2026-11-17, W7: C39, C40, C41, C43 in their narrow forms; commit 0bc3834): measured on the
+  store's old groups (the ledger's published and withdrawn products), 8 groups new or larger, all copies: Miura QPQ (spaced key), Majek x5 / STIX / Pinemeadow / Bermuda / Pro
   Open 690 (UPC, no variants), AM20XX and PGM junior (sets sold), none lost; the owner's reviewed versions unchanged.
   `--report` of the published: 5 -> 8 groups, plus 7 same-UPC groups (8 extra copies) and 6 same-brand-and-sets
   pairs to hold on the owner's word. Rejected: the UPC in `possible()`, the title's lofts in `strong`, `same_listing`
-  under 3 photos, the subset-of-options path (about 2045 pairs). Not piloted yet: the pilot is `--dedupe log` on the
-  owner's word (skill `dedupe-rule` step 6).
+  under 3 photos, the subset-of-options path (about 2045 pairs), copies matched within one shop (C42: it merged 7 of
+  24 different editions, steel / carbon, R / SR, XJ / XJ 2). Not piloted yet: the pilot is `--dedupe log` on the
+  owner's word (skill `dedupe-rule` step 6); until then jobs run with `log` (see `--dedupe` above). Open: 5 pairs
+  inside `--report` groups carry different UPCs, possible false merges for the owner's look at the photos; the one
+  named, pron 13408226321 / 13566632407 (754003448245 / 754003447477), was withdrawn `replaced_by:` 13207564502 on
+  2026-11-17, the other 4 were never listed.

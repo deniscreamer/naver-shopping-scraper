@@ -27,7 +27,8 @@ for the task, the whole doc only for an unusual stop.
 - `TRANSLATE_PROVIDERS=anthropic`; 50002788: `--paid-variants`; 50002787: `--paid`; 50002670 and 50002783:
   `--paid-variants` (their pilots' job.json); then `--publish --describe`; another category: its latest job.json.
 - N -> `--count N`; none or "до конца" -> no `--count`; "без публикации" -> no `--publish --describe`;
-  `--dedupe on` is the default; `--draft` (2026-11-16) when the owner will decide the activation after the review
+  `--dedupe log` until the owner's yes on the W7 dedupe pilot (2026-11-17; then none, `on` is the default:
+  JOB_AGENT.md "Duplicates"); `--draft` (2026-11-16) when the owner will decide the activation after the review
   (the four categories above are marked reviewed; a category not marked reviewed publishes DRAFT anyway: tell the
   owner before the start).
 - Narrow queries: full sets `남성 골프채 풀세트`, then `여성 골프채 풀세트` (two jobs); junior `주니어 골프채`.

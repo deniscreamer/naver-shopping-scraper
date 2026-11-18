@@ -375,7 +375,7 @@ WEDGES = next(r for r in load_table()["rows"] if r["category_id"] == "50002783")
     ("웨지 세트", "60 normal / 48°/52°/56°", None, None),                      # 13826807592: three, not four
 ])
 def test_wedge_set_count_kinds(title, variant, siblings, kind):
-    """C16 (decisions.md 2026-11-17): two wedges 98 x 15 x 10 cm, 1.7 kg; four to six the base box, 2.65 kg."""
+    """C16 (the wedge-set review 2026-11-17, PACKAGE.md "Category defaults"): two wedges 98 x 15 x 10 cm, 1.7 kg; four to six the base box, 2.65 kg."""
     assert (default_kind(WEDGES, title, variant, siblings) or {}).get("kind") == kind
 
 

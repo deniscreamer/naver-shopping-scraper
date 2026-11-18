@@ -1167,7 +1167,7 @@ def wedge(rows, long_units=True):
 
 
 def test_wedge_rows_band_is_the_owners_choice():
-    # decisions.md 2026-11-17: product 800-3500 g, package 1000-4000 g, box height 40-400 mm
+    # the wedge-set review 2026-11-17 (PACKAGE.md "The five fields"): product 800-3500 g, package 1000-4000 g, box height 40-400 mm
     assert WEDGE_ROW["plausible"] == {"product_weight_g": {"min": 800, "max": 3500},
                                       "package_weight_g": {"min": 1000, "max": 4000},
                                       "package_height_mm": {"min": 40, "max": 400}}

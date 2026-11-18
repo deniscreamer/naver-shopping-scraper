@@ -115,7 +115,8 @@ TITLE_RULES: dict[str, list[tuple[re.Pattern[str], Any]]] = {
 # - a run of lofts going up before Degree / ° ("52 56 60 Degree Set" -> "52°/56°/60° Set", "56 60° (2 pcs )");
 # - an import's " 1 pcs" tail after a set, that is right after "(2 pcs )" or "Set" ("52 56° (2 pcs ) 1 pcs" ->
 #   "52°/56° (2 pcs )"); any other value keeps its count ("블랙 1개" -> "블랙 1 pcs", as in other categories).
-# A dictionary hit is not sanitized (6 dictionary values still say "1 pcs": fixed by hand in the dictionary).
+# A dictionary hit is not sanitized (2026-11-17: the 5 live values with "1 pcs" are single wedges, "52도 웨지 블랙 1개",
+# and keep their count, as the rule does: no hand fix due).
 _OV_LOFT = r"(?:4[4-9]|5\d|6[0-4])"
 
 

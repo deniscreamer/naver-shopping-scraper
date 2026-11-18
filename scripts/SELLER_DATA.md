@@ -212,7 +212,8 @@ Code: `transform.options_and_variants`.
   loft list ("… 56° 샌드 웨지S", 13370558777; C48); a 모델명 row that repeats the title (167 products, C71).
   Agency 102454334 writes 단조 / 포지드 (forged) into its titles; on 22 of them nothing outside the title says forged
   (a junior club 13383523012, a junior full set 13385062112, Majek 13383747280; Majek 13383752241, whose only other
-  단조 is the title copied into an image as "… 마적골프 …"; Yamato LH 13386091656, "Material : Stainless Steel"),
+  단조 is the title copied into an image as "… 마적골프 …"; Yamato LH 13386091656, "Material : Stainless Steel", whose
+  hand title still says Forged: moot while it is a held copy of 13207613743, 2026-11-17),
   while Lazrus 13389498451 and the Yamato LH listing 13370261145 ("Each wedge is forged") say it in their bullets,
   and A11N SPORTS / Lazrus 52 in the images' stamp "FORGED" (note title_word_unproven, `spec_variants.title_word_unproven`,
   this seller only; C67).
@@ -445,6 +446,9 @@ Research 2026-11-07 on the 50 fixture products, then the runs dated below. Code:
 - Images that contradict the spec rows or the name on the set's contents (13026991307: images 6 irons + 2 wedges,
   rows 8 irons; 13741767690: name 10 counting a separately sold wood, images 9; 13099257309: the name's 8 counts
   irons only, images 11): no note flags it (2026-11-07).
+- Wedge sets (the wedge-set review, 2026-11-17): the brand "N" taken from 제조자 on 6 agency products (C02); a
+  라이각 row holding club lengths (13866792640); a 웨지 로프트각 row out of order and short (11139638174); a value cut
+  at 25 characters whose full form is not unique in the description (13164569476, 13372131108).
 - Reviews: the summary's photo_count can be lower than the files a selection downloads, and selected_reviews took 6
   of 35 and 2 of 36 reviews on two ktksports sets (7202588289, 7632306067) under a cap of 20: not looked into
   (2026-11-07).
@@ -460,6 +464,43 @@ Research 2026-11-07 on the 50 fixture products, then the runs dated below. Code:
   totals ("500g x 2개") taken as stated? 1 kg as the boundary between a part and a set? A club length a component?
 - A description that is all boilerplate becomes null (8978750961): accept (today) or hold?
 - Should the translator get a bare flex letter (R / S) as an option value?
+- The wedge-set review (2026-11-17), the owner's word wanted; set-aside keys stay out of `--only` / `--keys-file`
+  batches (a full publish would send them):
+  - 12239388996: brand PMJ or Mystery, and left-handed? (title "Mystery Golf PMJ S15C ...", `store_diff` vendor ->
+    Mystery waits). Proposal: the photo, then a brand_by_owner.json entry.
+  - 13054169115 (Orlimar ATS junior, 50002787): live vendor "Hireko Golf -- Dropship" with a U+200E in front (the
+    Manufacturer row's tail). Proposal: `shopify_payload.vendor_name` strips format characters and " -- Dropship",
+    then a resend.
+  - C11 on the server path (a server box with one side out of band refused whole, `package_measures.variant_measures`)
+    was the agent's addition: keep? Else drop it and `test_server_box_out_of_band_is_refused_whole`. 13372006463
+    (box 945 x 51 x 25 refused) waits: $469 -> $639 by the default box. Proposal: keep the rule, ask before sending.
+  - 13625754692: brand D-Max Pro (brand.json 디맥스프로) unproven; live "Fairward Golf Beginner ...". Proposal: the
+    photo.
+  - 13754846756: 100 -> 6 variants, 3 of them sold out, waits. Proposal: send.
+  - 13024139837, 13024217033, 13024241901, 13024234681 (50002788): not sent, the re-asked title no better, churn, or
+    loses the hand (13024234681). Proposal: keep the live titles (a correction row each, skill `fix-a-product`).
+  - 13537242519: live Yamaha, title "Yamaha Yoichi Steel 115S ...". Proposal: Yoichi, as the seller's twin listings,
+    after the logo is checked. 13422541936: live Majesty, or Maruman?
+  - Copies both live, no hold or versions verdict (OWNER_RULES rule 2): 69 Golf 13164548371 / 13480790720 (UPC
+    850049834292), Bermuda 13122106279 / 13370440703 (UPC 195893277520), Majek 13312228253 / 13468925033 / 13383747280
+    (UPC 792713116504), PGM 13480729993 / 13400000051, Mirai MW-23 10997462815 / 12972408573, Team Yoshimura Lizard
+    4660293861 / 4742083778, Mystery R-Line 12789828190 / 12789874438 (shaft only), T Winsology 13163008264 /
+    13017116043, POSSOT 13492459923 / 13016426814 / 13261515188 / 13163057497, Detroit 13605472374 / 13830315357,
+    Cleveland 588 13685621165 / 13622282055. Proposal: `lens.py products`, then a `hold: copy of live` or `--versions`.
+  - Hand fixes (skill `fix-a-product`): specs 13866792640 라이각 "35.5도, 35.25도" (lengths: delete),
+    11139638174 웨지 로프트각 "55도, 50도" (-> 50°, 55°, 59°), 13659984460 Shaft Flex S (its option was R; one variant
+    now); package 13468741368 2268 g -> about 2600-2800 g with the carton (no price change); options 13390487313 "Shaft Material" -> Length,
+    12826584649 "Shaft Flex" -> Shaft, 12178242657 "ZS-01", 13566630297 "3Piece Set 525660", cut values on 13164569476
+    and 13372131108. Proposal: each as listed.
+  - Not checked by photo: one wedge or a set (13367768834; 13382512411, live Alpha Golf "PF-2"); 10482586862 50/54/58
+    or 48/52/56; 12748958315 Laboum 40L a women's build; 13278647591 the shop's used-goods template on a NEW sale;
+    "PRE" on 12079167962. Proposal: the owner's look.
+  - D2 ([PACKAGE.md](PACKAGE.md#no-product-weight-above-the-package)): every category (today) or 50002783 only? It
+    moves 13388597147, 13024454637 (50002787) and 13024231444 (50002788), no price. A refused weight takes the default
+    (13024231444: 5700 g), not the assembly estimate (7540 g): a change of its own. Proposal: keep both as they are.
+  - A new collection outside 50002783 raises prices (PACKAGE.md "Table version 7"): 3 published 50002788 full sets
+    package 7000 -> 10165 g; 5 junior 50002787 a stated 3175-4990 g box. Proposal: list them for the owner before
+    that collection.
 
 ## History
 

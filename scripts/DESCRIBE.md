@@ -59,7 +59,8 @@ the answer needs the sources compared and the clubs added up ("Which model" belo
   when a title offers a set or a single club ("Set or Single", 세트 또는 개별 / 개인, 싱글 또는), a loft range
   ("50-70도", not the list "52-56-60도") or names 5 lofts or more: that is the picker's menu, not the set (it let
   "a set of 6 wedges" through on 13488668518 and 13016433540; a wrong count of 4 to 6 on 29 of the shop's 906
-  wedge-set packets), or a title names a loft above 64 ("69°", "72도": not counted, so the count came out low on 15
+  wedge-set packets; the accepted cost, 2026-11-17: a set of 5 or more stated as such gets no count
+  either, Powerbilt X-Grind 12627651139, 12628336532 "5-Piece"), or a title names a loft above 64 ("69°", "72도": not counted, so the count came out low on 15
   packets, "set of 2" for 69 Golf 54°/60°/69°); else the distinct lofts of the title and the fixed facts when two or more ("52°/56°/60° GW SW"
   is 3, 13312222110), else the wedge names (PW AW GW SW LW UW). No country but the decided
   one. A failing highlight or intro sentence is dropped; a failing item of another list drops that list (half a

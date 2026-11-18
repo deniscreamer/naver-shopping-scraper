@@ -107,6 +107,20 @@ A title is the product's own text, not rebuilt: a brand fix of case or punctuati
 leaves the old spelling with the new brand in front (`shopify_payload.title_vendor`; skill `dictionaries` step 5).
 The live copies are in the state backup (`state_backup.py`, OPERATIONS.md "Backup"); `scripts/dictionaries/` is git's.
 
+**Brand spellings chosen in the wedge-set review** (2026-11-17, commit 6897a05): the maker's own spelling in its
+description text over the case of Amazon's Brand Name field (stix -> Stix, pron -> Pron, KIRKLAND -> Kirkland,
+Bombtech Golf -> BombTech), never a spelling whose `brand_key` the titles lack (`title_vendor` would put it in front:
+"Mystery Golf Mystery R-Line", "Kirkland Signature Kirkland"); Detroit Golf Co without the dot (`_LEGAL_RE` cuts "Co."
+to "Detroit Golf"); Professional Open Series -> Hireko (a Hireko line, not a maker); none for YAMAHA / BridgeStone /
+BALDO (`vendor_spellings` ignores case). Since f44ae7d the store's first spelling beats the dictionary for a brand it
+has (PUBLISH.md "The payload"): Kirkland 9951345559 went out as "Kirkland", the spelling of the older "Kirkland
+Signature 2nd Generation". Not added on purpose: 핀클리 stays A11N SPORTS (9 products read it; Finchley is the brief's);
+no 토호 골프 nor a bare TEAM (C05); no 프로니즈 (the 50002783 brief's "프로니즈 = Pron" only, C29); 피네모 / 파인메도우 /
+피네메도우 -> Pinemeadow Golf put off (C33: 5 correct products would change `brand_ko` and be asked again; 12079167962
+has its brand_by_owner entry, a new 피네모 product may read "Pinemo"); no "Mystery Golf", no general "drop Golf" rule
+(C28); T WINSOLOGY not made TWINSOLOGY. Disagreeing across dictionaries, open: brand.json 다우리 -> Dauri against
+50002787/spec_value Dawoori, 로마로 -> Romaro against 50002670/spec_value and its brief's RomaRo (C34).
+
 `status` shows when the live copies were last written and the last backup (every backup file carries
 `backed_up`), the new and changed entries since, the ones only in git, and the advice (`action` none / wait /
 backup / review in `--json`). A backup is due at 20 waiting entries, or 7 days after the last one with any waiting
