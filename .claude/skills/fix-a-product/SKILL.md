@@ -27,7 +27,8 @@ the stage, the evidence. `S=scripts/output/shops/<shop>`. Hand edits wait for th
      12748958315): an entry in `$S/specs_by_owner.json` (`{entries: {<key>: {rows: {<label_ko>: <value_ko> | null},
      why, at}}}`, the owner's word; a string replaces the row, null drops it, a row is never added), then
      `.venv/bin/python scripts/run_transform.py <shop> --diff` (notes `specs_by_owner` / `specs_by_owner_unused`; a
-     changed 성별 moves the gender, null on it in a gender-split category holds the product `unresolved`), then
+     changed 성별 moves the gender; null on it only removes the row's evidence, the gender falls back to the title,
+     listing and variants, and only when none states one is the product held `unresolved` in a gender-split category), then
      `.venv/bin/python scripts/translate.py <shop> --offline` (the new value from the dictionary: before describe),
      then `describe.py <shop> --only <key> --packet` and `--only <key> --force`; the rows are not sent to the store
      as such (PUBLISH.md "Not sent"), only the description changes;

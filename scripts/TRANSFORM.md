@@ -171,7 +171,8 @@ published, SKUs and prices equal on 201 of 201 variants):
   ("성별: 남성용 -> 여성용" / "-> dropped") and `specs_by_owner_unused` (a label the product does not show); a value
   equal to the row's changes nothing and adds no note. The texts are rebuilt; a changed 성별 extracts
   `attributes` again as prepare does (the listing's evidence kept, the row's evidence source `owner:성별`); null on
-  성별 in a category split by gender (50002788, 50002670) leaves the gender unknown: placement holds it `unresolved`.
+  성별 only removes the row's evidence: the gender falls back to the title, the listing and the variants, and only
+  when none of them states one is it unknown, held `unresolved` in a category split by gender (50002788, 50002670).
   The report adds "specs_by_owner: N entries, N applied, N unused, N keys not prepared". The rows are the
   description's input only (`describe.py` packet; [PUBLISH.md](PUBLISH.md) "Not sent"): after `run_transform.py`,
   `translate.py <shop> --offline` (the new value from the spec_value dictionary), then `describe.py --only <key>`.
