@@ -384,6 +384,7 @@ def test_an_axis_whose_values_say_its_kind_keeps_its_name():
     ("Shaft Material", [], False),
     ("Flex", ["Regular", "Senior", "Stiff"], False),
     ("Hand Orientation", ["Left", "Right"], False),
+    ("Hand Orientation", ["L", "R"], False),                       # a bare L / R is a hand here, not a flex
     ("Size", ["Left Hand", "Right Hand"], False),                  # names no kind
     ("샤프트 재질", ["TALL LENGTH"], False),                         # a Hangul name: the model and the dictionary
     ("Length", ["Steel", "Graphite"], False),                      # length and loft judge values only

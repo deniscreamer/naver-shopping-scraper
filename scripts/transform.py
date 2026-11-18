@@ -175,7 +175,7 @@ _AXIS_VALUE_KINDS = {
     "length": re.compile(r"\blength\b|\binch(?:es)?\b|인치|\d\s*cm\b", re.I),
     "flex": re.compile(r"(?<![A-Za-z])(?-i:L|A|R|SR|S|X|TX)(?![A-Za-z])|\b(?:regular|stiff|senior|ladies|lady)\b|강도",
                        re.I),
-    "hand": re.compile(r"\b(?:left|right)\b|\b[LR]H\b|왼손|오른손", re.I),
+    "hand": re.compile(r"\b(?:left|right)\b|\b[LR]H\b|왼손|오른손|^\s*(?-i:[LR])\s*$", re.I),   # a bare L / R under a hand name
     "loft": re.compile(r"\d\s*(?:°|도|deg(?:ree)?s?\b)", re.I),
     "colour": re.compile(r"블랙|화이트|레드|블루|그레이|네이비|실버|골드|핑크|그린|옐로|오렌지|퍼플|브라운|베이지|민트|아이보리|카키|"
                          r"와인|\b(?:black|white|red|blue|gray|grey|navy|silver|gold|pink|green)\b", re.I),

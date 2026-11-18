@@ -192,9 +192,9 @@ published, SKUs and prices equal on 201 of 201 variants):
   UNIT_QUANTITY_PAID listing goes into the purchase; any other fee type counts as free (see PRICE.md, The price). An
   `extra_fee_text` that is only the return fee the notice states ("18000" = 반품비용 편도 18000원) is dropped;
   another bare number ("7000" beside a 4,000 area fee) is kept.
-- **Notes for later stages**: `option_name_placeholder` (an axis named 선택 / 선택2 / 옵션 / "옵션+...", or an Amazon
-  label of another kind than its values: name it from its values in translation; a fact with such a label gets an
-  empty label), `paid_addons_left_out` (how many paid add-ons were not offered), `title_names_one_variant` (a
+- **Notes for later stages**: `option_name_placeholder` (an axis named 선택 / 선택2 / 옵션 / "옵션+..." (a fact with such a
+  label gets an empty label), or an Amazon label of another kind than its values: name it from its values in
+  translation), `paid_addons_left_out` (how many paid add-ons were not offered), `title_names_one_variant` (a
   word of one option value is in the title, "12종", while others are sold too: the translation keeps the title to
   what every variant is; words that together point at part of the values count, "12종" with 12종 / 9종 x 스틸 /
   카본, "10.5R"; 여성 / 남성 do not when the title names both),
