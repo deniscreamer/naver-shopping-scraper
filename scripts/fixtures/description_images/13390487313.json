@@ -1,0 +1,555 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 238067,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260412_284/1775997132639WnHmt_JPEG/p-13331611466-s-1-A-0.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.968,
+       "text": "AGXGOLF 남성용 오른손 TCI 투어 에디션 웨지 세트 앱 샌드 로",
+       "y": 39
+      },
+      {
+       "conf": 0.991,
+       "text": "브 소프트면 선택",
+       "y": 83
+      },
+      {
+       "conf": 0.655,
+       "text": "M7",
+       "y": 292
+      },
+      {
+       "conf": 0.989,
+       "text": "AGXGOLF / AGXGOLF / AGXGOLF",
+       "y": 298
+      },
+      {
+       "conf": 0.964,
+       "text": "TCI TOURMODEL",
+       "y": 367
+      },
+      {
+       "conf": 0.866,
+       "text": "TOURMODEL",
+       "y": 400
+      },
+      {
+       "conf": 0.967,
+       "text": "옵션이미지",
+       "y": 673
+      },
+      {
+       "conf": 0.964,
+       "text": "2X-TALL LENGTH (PLUS 2.0 INCH) / CADET LENGTH (MINUS 1 INCH)",
+       "y": 978
+      },
+      {
+       "conf": 0.977,
+       "text": "EXTRA TALL LENGTH (PLUS 1.5 INCH) / REGULAR LENGTH",
+       "y": 1337
+      },
+      {
+       "conf": 0.9,
+       "text": "TALL LENGTH (PLUS 1 INCH)",
+       "y": 1695
+      }
+     ],
+     "y0": 0,
+     "y1": 1762
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.997,
+       "text": "GOODS SPECIFICS",
+       "y": 94
+      },
+      {
+       "conf": 0.958,
+       "text": "Brand Name : AGXGOLF",
+       "y": 138
+      },
+      {
+       "conf": 0.965,
+       "text": "- Manufacturer : AGXGOLF",
+       "y": 164
+      },
+      {
+       "conf": 0.978,
+       "text": "- Part Number : wgs-tci-rhGSL_S-XTALL+1.5",
+       "y": 191
+      },
+      {
+       "conf": 0.947,
+       "text": "- Sport Type : Golf",
+       "y": 218
+      },
+      {
+       "conf": 0.962,
+       "text": "- Hand Orientation : Right",
+       "y": 243
+      },
+      {
+       "conf": 0.961,
+       "text": "- Grip Type : Tour-Low Taper",
+       "y": 271
+      },
+      {
+       "conf": 0.957,
+       "text": "- Golf Club Flex : Stiff",
+       "y": 299
+      },
+      {
+       "conf": 0.93,
+       "text": "- Brand : AGXGOLF",
+       "y": 327
+      },
+      {
+       "conf": 0.97,
+       "text": "- Shaft Material : EXTRA TALL LENGTH (PLUS 1.5 INCH)",
+       "y": 352
+      },
+      {
+       "conf": 0.999,
+       "text": "Feature",
+       "y": 379
+      },
+      {
+       "conf": 0.949,
+       "text": "- We are the Factory! All AGXGOLF Brand Golf Clubs are Crafted in our Howell, MI facility from the Individual",
+       "y": 404
+      },
+      {
+       "conf": 0.986,
+       "text": "Components by our Experienced Club Smiths. Features Strong 306 Tour Grade STAINLESS STEEL construction to provide",
+       "y": 425
+      },
+      {
+       "conf": 0.963,
+       "text": "excellent feel and durability. The 306 SS",
+       "y": 448
+      },
+      {
+       "conf": 0.963,
+       "text": "- The \"SOFT FACE\" puts more backspin on the ballfor those \"drop and stop\" landings",
+       "y": 468
+      },
+      {
+       "conf": 0.962,
+       "text": "- Mens Cadet -1 inch (34.5 inch): for Heights of 52\" to 57\" / Mens Regular (35.5 inch): for Heights of 56\" to 61\" /Mens",
+       "y": 489
+      },
+      {
+       "conf": 0.964,
+       "text": "Tall +1 inch (36.5 inch): for Heights of 60\" to 64\" / Mens Extra Tall +1.5 inch (37.0 inch): for Heights of 63\" to 66\"/",
+       "y": 513
+      },
+      {
+       "conf": 0.962,
+       "text": "Mens 2X-Tall+2 inch (37.5 inch): for Heights of 65\" to 69",
+       "y": 533
+      },
+      {
+       "conf": 0.98,
+       "text": "- Leading edge makes chip shots from around the greens easier and more accurate",
+       "y": 556
+      },
+      {
+       "conf": 0.976,
+       "text": "- AGXGOLF Magnum Series Stainless Steel shafts: Provide Optimum Accuracy!",
+       "y": 579
+      },
+      {
+       "conf": 0.988,
+       "text": "개인통관고유부호 입력 의무화",
+       "y": 708
+      },
+      {
+       "conf": 0.934,
+       "text": "개연통관고유번호를잘못입력할경우",
+       "y": 776
+      },
+      {
+       "conf": 0.963,
+       "text": "관비용2,200원이고객님께청구됩니다",
+       "y": 791
+      },
+      {
+       "conf": 0.939,
+       "text": "아래사이트또는 네이버에개인통관고유번호'",
+       "y": 846
+      },
+      {
+       "conf": 0.993,
+       "text": "를검색하여발급해주세요",
+       "y": 865
+      },
+      {
+       "conf": 0.968,
+       "text": "https://unipass,customs.go.kr/",
+       "y": 885
+      },
+      {
+       "conf": 0.967,
+       "text": "구매자가 아닌수취인의개인통관고유번호를",
+       "y": 941
+      },
+      {
+       "conf": 0.971,
+       "text": "입력해주세요 (P12345678900)",
+       "y": 959
+      },
+      {
+       "conf": 0.549,
+       "text": "'< / 휴대폰 인증을통해손쉽게발급이가능합니다",
+       "y": 1023
+      },
+      {
+       "conf": 0.967,
+       "text": "주문 전 확인사항",
+       "y": 1180
+      },
+      {
+       "conf": 0.945,
+       "text": "발주확인이후에는 주문취소가불가하며",
+       "y": 1226
+      },
+      {
+       "conf": 0.973,
+       "text": "발송후취소는반품으로진행되며",
+       "y": 1247
+      },
+      {
+       "conf": 0.96,
+       "text": "해외왕복배송비가 부과됩니다",
+       "y": 1264
+      },
+      {
+       "conf": 0.91,
+       "text": "해외직구상품은 일별$150이내는 면세이나",
+       "y": 1302
+      },
+      {
+       "conf": 0.927,
+       "text": "초과시합산과세되므로주의해주시고",
+       "y": 1323
+      },
+      {
+       "conf": 0.945,
+       "text": "만일,다른상품도같이주문시에는통관일이겹치지",
+       "y": 1342
+      },
+      {
+       "conf": 0.914,
+       "text": "않도록 해주세요",
+       "y": 1359
+      },
+      {
+       "conf": 0.956,
+       "text": "※합산과세시고객님께서직접관부가세를납부하세야합니다",
+       "y": 1384
+      },
+      {
+       "conf": 0.987,
+       "text": "(개인사용이아닌사업목적사용인경우에도관부가세가",
+       "y": 1404
+      },
+      {
+       "conf": 0.915,
+       "text": "부과되므로주의하시기바랍니다)",
+       "y": 1421
+      },
+      {
+       "conf": 0.928,
+       "text": "상품포장의가로,세로높이를합산한총길이가",
+       "y": 1461
+      },
+      {
+       "conf": 0.972,
+       "text": "150cm초과또는중량20kg초과",
+       "y": 1479
+      },
+      {
+       "conf": 0.966,
+       "text": "최장변의길이가100cm를초과하는경우",
+       "y": 1495
+      },
+      {
+       "conf": 0.933,
+       "text": "착불택배비가 추가됩니다",
+       "y": 1515
+      },
+      {
+       "conf": 0.964,
+       "text": "AS 확인사항",
+       "y": 1567
+      },
+      {
+       "conf": 0.969,
+       "text": "해외배송상품특성상최초불량건을제외한",
+       "y": 1613
+      },
+      {
+       "conf": 0.944,
+       "text": "모든상품A/S는불가합니다",
+       "y": 1632
+      }
+     ],
+     "y0": 1762,
+     "y1": 3425
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.976,
+       "text": "배송 확인사항",
+       "y": 28
+      },
+      {
+       "conf": 0.947,
+       "text": "상품이세관에서국내택배사에인계되는 시점부터",
+       "y": 88
+      },
+      {
+       "conf": 0.952,
+       "text": "배송조회가 가능합니다",
+       "y": 107
+      },
+      {
+       "conf": 0.897,
+       "text": "통리정에서오리지널박스가개봉될수 있으며",
+       "y": 150
+      },
+      {
+       "conf": 0.893,
+       "text": "이는 무사반품사유가 되지 않습니다.",
+       "y": 173
+      },
+      {
+       "conf": 0.976,
+       "text": "해외배송으로배송기간은평균14일정도소요되나",
+       "y": 221
+      },
+      {
+       "conf": 0.974,
+       "text": "간혹천재지변및통관사정으로인해배송기간이",
+       "y": 238
+      },
+      {
+       "conf": 0.901,
+       "text": "더 소요될수 있는 점양해부탁드립니다.",
+       "y": 255
+      },
+      {
+       "conf": 0.954,
+       "text": "관부가세 확인사항",
+       "y": 334
+      },
+      {
+       "conf": 0.933,
+       "text": "구매금액에는관부가세가 포함되어있지 않습니다",
+       "y": 381
+      },
+      {
+       "conf": 0.972,
+       "text": "구매금액$150달러이상구매시해당품목관세율에따라",
+       "y": 399
+      },
+      {
+       "conf": 0.983,
+       "text": "관부가세가부가됩니다",
+       "y": 415
+      },
+      {
+       "conf": 0.977,
+       "text": "반품 확인사항",
+       "y": 552
+      },
+      {
+       "conf": 0.969,
+       "text": "배송완료후7일이내반품신청이가능합니다",
+       "y": 623
+      },
+      {
+       "conf": 0.906,
+       "text": "단,제품을사용하거나포장이 훼손된경우반품이불가합니다",
+       "y": 641
+      },
+      {
+       "conf": 0.982,
+       "text": "단순변심의경우반품비용이발생합니다",
+       "y": 661
+      },
+      {
+       "conf": 0.96,
+       "text": "반품시고객센터의안내에따라접수해주셔야하며",
+       "y": 705
+      },
+      {
+       "conf": 0.623,
+       "text": "\" / 임의로제품을발송할경우",
+       "y": 711
+      },
+      {
+       "conf": 0.947,
+       "text": "당사는일체의책임을지지않습니다",
+       "y": 734
+      },
+      {
+       "conf": 0.931,
+       "text": "단순변심,판단착오,약간의디자인및색상차이를사유로한",
+       "y": 786
+      },
+      {
+       "conf": 0.959,
+       "text": "반품의경우 고객님께서발생하는",
+       "y": 806
+      },
+      {
+       "conf": 0.919,
+       "text": "모든반품비용을 부담하셔야합니다.",
+       "y": 823
+      },
+      {
+       "conf": 0.951,
+       "text": "교환/환불시저희업체에서반드시상품수령및검수후",
+       "y": 874
+      },
+      {
+       "conf": 0.986,
+       "text": "진행가능합니다",
+       "y": 893
+      },
+      {
+       "conf": 0.921,
+       "text": "주문후 품절",
+       "y": 1061
+      },
+      {
+       "conf": 0.966,
+       "text": "주문후현지해외사이트의품절등의원인으로취소될경우",
+       "y": 1111
+      },
+      {
+       "conf": 0.918,
+       "text": "전액환불처리해드립니다.",
+       "y": 1124
+      },
+      {
+       "conf": 0.944,
+       "text": "권리권 침해",
+       "y": 1202
+      },
+      {
+       "conf": 0.936,
+       "text": "상품의이미지혹은제목이상표권및이미지저작권,초상권을",
+       "y": 1256
+      },
+      {
+       "conf": 0.976,
+       "text": "침해한경우네이버톡톡및고객센터로연락주시면",
+       "y": 1275
+      },
+      {
+       "conf": 0.975,
+       "text": "해당상품을즉각시정조치하도록하겠습니다",
+       "y": 1291
+      },
+      {
+       "conf": 1.0,
+       "text": "고객센터",
+       "y": 1366
+      },
+      {
+       "conf": 0.907,
+       "text": "상품문의,배송문의,반품문의시아래번호로연락주시기바랍니다.",
+       "y": 1415
+      },
+      {
+       "conf": 0.999,
+       "text": "010-4835-3489",
+       "y": 1434
+      },
+      {
+       "conf": 0.963,
+       "text": "전화문의보다문자로주시면더 빠른상담이가능합니다",
+       "y": 1451
+      }
+     ],
+     "y0": 3425,
+     "y1": 4945
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.927,
+       "text": "이제품은 전기용품 및생활용품 안전관리법’에따른 안전관리대상제품입니다",
+       "y": 111
+      }
+     ],
+     "y0": 4945,
+     "y1": 5556
+    }
+   ],
+   "status": "read",
+   "width": 945
+  },
+  {
+   "bytes": 252769,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260412_126/1775997132640oSBRo_JPEG/p-13331611466-s-1-A-1.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 269206,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260412_109/1775997132642lrG4P_JPEG/p-13331611466-s-1-A-2.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 224655,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260412_68/1775997132641k7LiW_JPEG/p-13331611466-s-1-A-3.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 122879,
+   "height": 1020,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260412_34/1775997132639sgCHw_JPEG/p-13331611466-s-1-A-4.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  }
+ ],
+ "key": "fairwardgolf:naver:102454334:13390487313",
+ "links_sha256": "72e0b92700a0db25b06709055dc797aebbf62fa39d501e41cfd32a495c9b9964",
+ "product_id": "13390487313",
+ "seconds": 7.2,
+ "skipped": []
+}

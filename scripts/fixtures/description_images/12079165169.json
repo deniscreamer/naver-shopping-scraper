@@ -1,0 +1,759 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 367185,
+   "height": 2715,
+   "host": "seller",
+   "link": "https://cdn.imgdsell.com/file/dsell/soseven/notice/ss/top_22.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.988,
+       "text": "one click!",
+       "y": 128
+      },
+      {
+       "conf": 0.952,
+       "text": "온라인으로 손쉽게 구매해 보세요",
+       "y": 914
+      },
+      {
+       "conf": 0.998,
+       "text": "저희 스토어는 미국 구매대행 쇼핑몰로",
+       "y": 1046
+      },
+      {
+       "conf": 0.965,
+       "text": "100% 정품만을 판매합니다",
+       "y": 1086
+      },
+      {
+       "conf": 0.972,
+       "text": "해외 배송 절차 안내",
+       "y": 1451
+      },
+      {
+       "conf": 0.92,
+       "text": "배송일은 약 7~20 영업일이 소요되며",
+       "y": 1531
+      },
+      {
+       "conf": 0.881,
+       "text": "현지 업체사정에 따라달라질 수 있습니다.",
+       "y": 1571
+      }
+     ],
+     "y0": 0,
+     "y1": 1647
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.907,
+       "text": "상품 주문 / 현지 물류창고 / 항공 운송",
+       "y": 226
+      },
+      {
+       "conf": 1.0,
+       "text": "수입통관 / 국내배송 / 배송완료",
+       "y": 445
+      },
+      {
+       "conf": 0.925,
+       "text": "결제시 상품 수령인의 개인통관부호를 반드시기재 바랍니다",
+       "y": 632
+      },
+      {
+       "conf": 0.951,
+       "text": "01 / 미입력시통관지연, 출고가불가능할수있으며반송되는경우",
+       "y": 651
+      },
+      {
+       "conf": 0.939,
+       "text": "추가 비용이발생할 수있습니다",
+       "y": 700
+      },
+      {
+       "conf": 0.929,
+       "text": "(안심번호사용금지,구매자가 아닌 수취인 정보입력)",
+       "y": 727
+      },
+      {
+       "conf": 0.948,
+       "text": "상품가격에는관세/부가세가 포함되어 있지않습니다.",
+       "y": 860
+      },
+      {
+       "conf": 0.999,
+       "text": "02",
+       "y": 874
+      },
+      {
+       "conf": 0.988,
+       "text": "미화기준150불을초과하는상품의경우관세/부가세가별도로",
+       "y": 907
+      },
+      {
+       "conf": 0.926,
+       "text": "발생됩니다. (수취인 부담)",
+       "y": 933
+      }
+     ],
+     "y0": 1647,
+     "y1": 2715
+    }
+   ],
+   "status": "read",
+   "width": 860
+  },
+  {
+   "bytes": 60788,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/51kgW+gkpZL._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "09",
+       "y": 24
+      },
+      {
+       "conf": 0.89,
+       "text": "AM",
+       "y": 161
+      },
+      {
+       "conf": 0.874,
+       "text": "R",
+       "y": 392
+      },
+      {
+       "conf": 0.687,
+       "text": "ATI",
+       "y": 405
+      },
+      {
+       "conf": 0.902,
+       "text": "S",
+       "y": 519
+      },
+      {
+       "conf": 0.731,
+       "text": "AT",
+       "y": 663
+      },
+      {
+       "conf": 0.535,
+       "text": "SPIN",
+       "y": 697
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 41533,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/51D4fWpR3fL._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.863,
+       "text": "S",
+       "y": 38
+      },
+      {
+       "conf": 0.7,
+       "text": "ATI",
+       "y": 251
+      },
+      {
+       "conf": 0.773,
+       "text": "SPIN",
+       "y": 301
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 41526,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/51YW-sYys-L._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.51,
+       "text": "67",
+       "y": 59
+      },
+      {
+       "conf": 0.72,
+       "text": "ATI",
+       "y": 266
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 43048,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/51ipm3pdBuL._US1000_.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.613,
+       "text": "SPIN / AMI",
+       "y": 238
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 41978,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/41w2Bxob9tL._US1000_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.962,
+       "text": "WARNING: This product can expose you",
+       "y": 354
+      },
+      {
+       "conf": 0.976,
+       "text": "to Di(2-ethylhexyl)phthalate (DEHP), which is known to",
+       "y": 437
+      },
+      {
+       "conf": 0.971,
+       "text": "the State of California to cause cancer or birth defects",
+       "y": 492
+      },
+      {
+       "conf": 0.978,
+       "text": "or other reproductive harm. For more information,",
+       "y": 544
+      },
+      {
+       "conf": 0.99,
+       "text": "visit www.P65Warnings.ca.gov",
+       "y": 598
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 1000
+  },
+  {
+   "bytes": 12983,
+   "height": 180,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media/sc/89318ff0-8723-4b54-b996-1efd17953da4.__CR0,71,963,289_PT0_SX600_V1___.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.751,
+       "text": "R) / ATYI / RA TYI",
+       "y": 3
+      },
+      {
+       "conf": 0.739,
+       "text": "RAIYI / RATYI.",
+       "y": 104
+      },
+      {
+       "conf": 0.701,
+       "text": "3",
+       "y": 159
+      }
+     ],
+     "y0": 0,
+     "y1": 180
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 7107,
+   "height": 300,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/c20560c8-b681-4513-affb-3d17abbe3321.__CR0,300,1200,1200_PT0_SX300_V1___.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.8,
+       "text": "BAM",
+       "y": 39
+      },
+      {
+       "conf": 0.587,
+       "text": "K3",
+       "y": 143
+      }
+     ],
+     "y0": 0,
+     "y1": 300
+    }
+   ],
+   "status": "read",
+   "width": 300
+  },
+  {
+   "bytes": 8321,
+   "height": 300,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/1244a1b5-b7fd-4892-b047-f68a4589c371.__CR0,0,1200,1200_PT0_SX300_V1___.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.78,
+       "text": "RAIVI",
+       "y": 16
+      },
+      {
+       "conf": 0.964,
+       "text": "52 Degree Gap Wedge",
+       "y": 57
+      },
+      {
+       "conf": 0.942,
+       "text": "GAP Wodge",
+       "y": 86
+      },
+      {
+       "conf": 0.94,
+       "text": "Also known as an Approach Wedge",
+       "y": 100
+      },
+      {
+       "conf": 0.923,
+       "text": "Filis siot betwean the Pitching Wedge and Sand Wedge",
+       "y": 111
+      },
+      {
+       "conf": 0.956,
+       "text": "52 Degrees",
+       "y": 125
+      },
+      {
+       "conf": 0.863,
+       "text": "-8 Degres of Bounce",
+       "y": 136
+      },
+      {
+       "conf": 0.647,
+       "text": "SPINC",
+       "y": 208
+      }
+     ],
+     "y0": 0,
+     "y1": 300
+    }
+   ],
+   "status": "read",
+   "width": 300
+  },
+  {
+   "bytes": 8471,
+   "height": 300,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/fcde520b-558a-4920-8a18-46760be47094.__CR0,0,1200,1200_PT0_SX300_V1___.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.765,
+       "text": "RAIVI",
+       "y": 16
+      },
+      {
+       "conf": 0.991,
+       "text": "56 Degree Sand Wedge",
+       "y": 57
+      },
+      {
+       "conf": 0.95,
+       "text": "SAND Wedge",
+       "y": 85
+      },
+      {
+       "conf": 0.975,
+       "text": "Great out of Bunkers/Sand Traps",
+       "y": 100
+      },
+      {
+       "conf": 0.943,
+       "text": "Great for most shots around the Putting Groon",
+       "y": 112
+      },
+      {
+       "conf": 0.971,
+       "text": "56 Degrees",
+       "y": 125
+      },
+      {
+       "conf": 0.887,
+       "text": "10 Degraes of Bpunce",
+       "y": 137
+      },
+      {
+       "conf": 0.68,
+       "text": "SPIN",
+       "y": 202
+      }
+     ],
+     "y0": 0,
+     "y1": 300
+    }
+   ],
+   "status": "read",
+   "width": 300
+  },
+  {
+   "bytes": 8703,
+   "height": 300,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/abf18639-4616-4721-bc26-ddba1d7078b1.__CR0,0,1200,1200_PT0_SX300_V1___.png",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.848,
+       "text": "R / AIVI",
+       "y": 17
+      },
+      {
+       "conf": 0.994,
+       "text": "60 Degree Lob Wedge",
+       "y": 58
+      },
+      {
+       "conf": 0.891,
+       "text": "LOB Wedge",
+       "y": 86
+      },
+      {
+       "conf": 0.916,
+       "text": "•The Shortest Club (besides a puter) in most players goit beg",
+       "y": 99
+      },
+      {
+       "conf": 0.888,
+       "text": "-Usod mostly from 50 yards and in",
+       "y": 112
+      },
+      {
+       "conf": 0.939,
+       "text": "-Great tor Flop Shots",
+       "y": 124
+      },
+      {
+       "conf": 0.943,
+       "text": "60 Degraes",
+       "y": 137
+      },
+      {
+       "conf": 0.948,
+       "text": "•8 Degrees of Bounce",
+       "y": 149
+      },
+      {
+       "conf": 0.654,
+       "text": "SPIN / BAM",
+       "y": 176
+      }
+     ],
+     "y0": 0,
+     "y1": 300
+    }
+   ],
+   "status": "read",
+   "width": 300
+  },
+  {
+   "bytes": 411619,
+   "height": 1950,
+   "host": "seller",
+   "link": "https://cdn.imgdsell.com/file/dsell/soseven/notice/ss/bottom_22.jpg",
+   "reused": true,
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.891,
+       "text": "-",
+       "y": 23
+      },
+      {
+       "conf": 0.928,
+       "text": "구매 전 필독",
+       "y": 256
+      },
+      {
+       "conf": 0.904,
+       "text": "1.해외직구 상품은 일별 $150이내는 면세. 초과시 합산 과세됩니다.",
+       "y": 333
+      },
+      {
+       "conf": 0.916,
+       "text": "타 해외직구 주문 건이 같은 날 통관 진행 시.합산 금액으로 계산 되므로 주의하셔야 합니다.",
+       "y": 362
+      },
+      {
+       "conf": 0.939,
+       "text": "2.해당 상품은 해외 배송 상품으로 해외 공급사의 가격 및 배송 상황에 따라 가격 상승이 있을",
+       "y": 392
+      },
+      {
+       "conf": 0.925,
+       "text": "수 있습니다.이 경우 발주 전 유선 안내를 통해서 고객님의 동의를 받고 진행합니다.",
+       "y": 422
+      },
+      {
+       "conf": 0.912,
+       "text": "(취소시 전액환불)",
+       "y": 449
+      },
+      {
+       "conf": 0.939,
+       "text": "3.주문후해외현지 품절로인한 취소시전액환불해드립니다이때,상품금액 외별도의 보상",
+       "y": 478
+      },
+      {
+       "conf": 0.994,
+       "text": "정책은없습니다",
+       "y": 506
+      },
+      {
+       "conf": 0.908,
+       "text": "4.제품리뉴얼 등의 사유로예고 없이 디자인이 변경될수있으며. 이는 반품/교환사유에",
+       "y": 534
+      },
+      {
+       "conf": 0.958,
+       "text": "해당하지 않습니다",
+       "y": 564
+      },
+      {
+       "conf": 0.978,
+       "text": "5.미국 내수용 제품을 구매대행 하시는 경우 사이즈 체계가 상이하며,전자 제품의 경우",
+       "y": 595
+      },
+      {
+       "conf": 0.929,
+       "text": "콘센트(일자형). 전압(110v~220v)이 달라 프리 볼트가 아닌 경우, 변압기가 필요합니다.",
+       "y": 622
+      },
+      {
+       "conf": 0.89,
+       "text": "6.이 제품은 구매 대행을 통하여 유통되는 제품이며, 전기 용품 및생활 용품 안전 관리법'에 따른",
+       "y": 650
+      },
+      {
+       "conf": 0.941,
+       "text": "안전관리 대상 제품입니다",
+       "y": 680
+      },
+      {
+       "conf": 0.965,
+       "text": "7.해당상품은 해외구매대행 상품으로 해외에서 상품을 발송합니다.",
+       "y": 711
+      },
+      {
+       "conf": 0.938,
+       "text": "원활한 엄무처리를 위해서부득이하게 제3자에게 주문과관련된 개인정보(성함, 전화번호,",
+       "y": 739
+      },
+      {
+       "conf": 0.884,
+       "text": "주소, 구매상품 등)을 제공할 수 있음을 사전에 고지합니다.",
+       "y": 769
+      },
+      {
+       "conf": 0.922,
+       "text": "본 상품을 주문하신 경우는 이에 동의한것으로 간주되며,원치 않으실 경우에는다른 상품을",
+       "y": 796
+      },
+      {
+       "conf": 0.93,
+       "text": "구매해주시기 바랍니다.",
+       "y": 824
+      },
+      {
+       "conf": 0.953,
+       "text": "8.공지사항 미숙지로 인한 불이익은 당사에서 책임지지 않습니다.",
+       "y": 856
+      },
+      {
+       "conf": 0.96,
+       "text": "관부가세 & 배송비 / G",
+       "y": 1010
+      },
+      {
+       "conf": 0.924,
+       "text": "1.구매금액 $150달러 이상 구매 시 해당 품목 관세율에 따라 관부가세가 부과됩니다.",
+       "y": 1107
+      },
+      {
+       "conf": 0.973,
+       "text": "관부가세 대상 상품의 경우 주문 시 별도 안내드리고 있습니다.",
+       "y": 1135
+      },
+      {
+       "conf": 0.971,
+       "text": "2.항공배송이나공급사의 배송비가 추가로발생할경우발주전안내를통해서동의를받고",
+       "y": 1164
+      },
+      {
+       "conf": 0.984,
+       "text": "진행합니다",
+       "y": 1192
+      },
+      {
+       "conf": 0.915,
+       "text": "3.다음세 가지 경우 중 하나라도 해당 시 일반택배사가 아닌 경동 화물택배사로 이관되며,",
+       "y": 1222
+      },
+      {
+       "conf": 0.964,
+       "text": "부피와 무게에 따른 착불택배비가 부과됩니다.",
+       "y": 1254
+      },
+      {
+       "conf": 0.933,
+       "text": "상품포장의 가로+세로+높이를 합산한총길이가150cm 초과중량20kg 및최장면길이100cm초과",
+       "y": 1281
+      },
+      {
+       "conf": 1.0,
+       "text": "반품/교환/취소",
+       "y": 1432
+      },
+      {
+       "conf": 0.912,
+       "text": "1.주문 즉시1:1입고가 진형 되므로'발송 대기/배송 준비 중/상품 준비 중'",
+       "y": 1504
+      },
+      {
+       "conf": 0.929,
+       "text": "단계에서 취소및 변경이 어렵습니다",
+       "y": 1534
+      },
+      {
+       "conf": 0.93,
+       "text": "2.교환이나 환불은 제품 수령일 기준 7일 이내 요청해 주셔야 합니다.",
+       "y": 1565
+      },
+      {
+       "conf": 0.945,
+       "text": "3.단순 변심으로인한교환/반품의경우해외 왕복배송비가 청구됩니다.",
+       "y": 1592
+      },
+      {
+       "conf": 0.908,
+       "text": "4.개봉또는 사용한 제품은교환/반품이 어렵습니다.",
+       "y": 1620
+      },
+      {
+       "conf": 0.953,
+       "text": "5.케이스 찌그러짐/스크레치 등의 오염은 교환 반품이 불가합니다.",
+       "y": 1652
+      },
+      {
+       "conf": 0.949,
+       "text": "6.반품 시 고객센터의 안내에 따라 접수해 주셔야 하며 임의로 제품을 발송 할 경우 당사는 일체",
+       "y": 1681
+      },
+      {
+       "conf": 0.969,
+       "text": "책임지지 않습니다",
+       "y": 1708
+      },
+      {
+       "conf": 0.93,
+       "text": "7.단순변심,판단 착오,약간의디자인/색상차이 사유로인한 반품의경우반품 비용 전액",
+       "y": 1737
+      },
+      {
+       "conf": 0.942,
+       "text": "구매자 부담입니다",
+       "y": 1766
+      },
+      {
+       "conf": 0.963,
+       "text": "8.상품 설명에 기재된 주의사항을 지키지 않은 경우는 책임지지 않습니다.",
+       "y": 1797
+      }
+     ],
+     "y0": 0,
+     "y1": 1950
+    }
+   ],
+   "status": "read",
+   "width": 860
+  }
+ ],
+ "key": "fairwardgolf:naver:102651580:12079165169",
+ "links_sha256": "b5b4b24638188c77842e5211eb89021dcc32f705fee2cda5275c9cdbac3c3281",
+ "product_id": "12079165169",
+ "seconds": 8.3,
+ "skipped": [
+  {
+   "link": "https://cdn.imgdsell.com/visit/set/dsell/soseven/QTRbRUZaPDp8ARZmFnU%253d/SS",
+   "rule": "tiny"
+  }
+ ]
+}

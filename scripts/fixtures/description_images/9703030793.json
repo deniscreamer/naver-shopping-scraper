@@ -1,0 +1,1192 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 127154,
+   "height": 1199,
+   "host": "seller",
+   "link": "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/profile/70ee85f2-2704-4ee9-adcd-fc4ce5dc0674.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "마르컴퍼니",
+       "y": 98
+      },
+      {
+       "conf": 1.0,
+       "text": "해외배송안내",
+       "y": 172
+      },
+      {
+       "conf": 0.994,
+       "text": "저희 쇼핑몰은 구매대행 쇼핑몰입니다",
+       "y": 218
+      },
+      {
+       "conf": 0.945,
+       "text": "저희는 재고를 보유하지 않고, 해외사이트에서 구매를 도와드리고 있습니다.",
+       "y": 249
+      },
+      {
+       "conf": 0.938,
+       "text": "그 이유로 가격변동, 품절 등이 생길 수 있으며,",
+       "y": 278
+      },
+      {
+       "conf": 0.964,
+       "text": "이때 저희가 따로 연락을 드리고 있습니다.",
+       "y": 309
+      },
+      {
+       "conf": 0.919,
+       "text": "1.개인통관부호: 해냥 구매는 구매대행으로 자가사용목석으로 수입을 하는 설자가 있는바,",
+       "y": 356
+      },
+      {
+       "conf": 0.929,
+       "text": "구매 시꼭 개인통관부호(수령인)를 기재해주시기바랍니다.",
+       "y": 383
+      },
+      {
+       "conf": 0.905,
+       "text": "* 수령인 이름 또한 실명으로 꼭 기입해주시기 바랍니다.",
+       "y": 411
+      },
+      {
+       "conf": 0.904,
+       "text": "* 상품가격에 관부가세는 포함되어 있지 않으며 미화기준 150불이 넘는 상품의 경우 별도로발생됩니다",
+       "y": 441
+      },
+      {
+       "conf": 0.947,
+       "text": "2.배송비 규정 : 배송비는 상품의 무게가 2kg까지는 15,900원의 기본 배송비가 책정이 됩니다.",
+       "y": 468
+      },
+      {
+       "conf": 0.973,
+       "text": "2kg초과시1kg당 4천원 별도로청구/20kg초과시1kg당8천원별도로청구",
+       "y": 498
+      },
+      {
+       "conf": 0.898,
+       "text": "위와 같은경우 셀러측에서 구매하신 회원님께 직접 안내드리고 있습니다. 이 점 양해 부탁드립니다.",
+       "y": 529
+      },
+      {
+       "conf": 0.937,
+       "text": "해당 안내를 받으시고 원치 않으실 경우 취소요청을 해주시면 바로 환불해드리도록 하겠습니다.",
+       "y": 556
+      },
+      {
+       "conf": 0.888,
+       "text": "3.배송기간은 주문 후영업일 기분 7일 내외로 받아보실 수 있습니다.",
+       "y": 584
+      },
+      {
+       "conf": 0.913,
+       "text": "4.일본은전압이 우리나라와 다르며 전압을 문제로 반품할 경우 유료 반품으로처리됩니다",
+       "y": 614
+      },
+      {
+       "conf": 0.976,
+       "text": "일본구매대행절차",
+       "y": 698
+      },
+      {
+       "conf": 0.998,
+       "text": "오픈마켓의",
+       "y": 823
+      },
+      {
+       "conf": 0.999,
+       "text": "배송상태",
+       "y": 855
+      },
+      {
+       "conf": 0.808,
+       "text": "입금 / 상품 / 상품 / 백송",
+       "y": 890
+      },
+      {
+       "conf": 0.999,
+       "text": "확인 / 준비중 / 배송중 / 완료",
+       "y": 908
+      },
+      {
+       "conf": 1.0,
+       "text": "실제",
+       "y": 988
+      },
+      {
+       "conf": 0.999,
+       "text": "구매대행",
+       "y": 1019
+      },
+      {
+       "conf": 1.0,
+       "text": "배송상태",
+       "y": 1051
+      },
+      {
+       "conf": 0.851,
+       "text": "입금 / 해외 / 해외 / 항공 / 세관 / 국내 / 배송",
+       "y": 1070
+      },
+      {
+       "conf": 0.991,
+       "text": "확인 / 주문 / 현지배송 / 운송 / 통관 / 배송 / 완료",
+       "y": 1091
+      }
+     ],
+     "y0": 0,
+     "y1": 1199
+    }
+   ],
+   "status": "read",
+   "width": 859
+  },
+  {
+   "bytes": 100206,
+   "height": 1500,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71-5lJOVr1L._AC_SL1500_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.535,
+       "text": "O",
+       "y": 587
+      },
+      {
+       "conf": 0.92,
+       "text": "TaylorMade",
+       "y": 685
+      },
+      {
+       "conf": 0.907,
+       "text": "0",
+       "y": 735
+      }
+     ],
+     "y0": 0,
+     "y1": 1500
+    }
+   ],
+   "status": "read",
+   "width": 595
+  },
+  {
+   "bytes": 127979,
+   "height": 1500,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71rUFzlyhoL._AC_SL1500_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.945,
+       "text": "PEEDLITE",
+       "y": 385
+      },
+      {
+       "conf": 0.674,
+       "text": "SL",
+       "y": 370
+      }
+     ],
+     "y0": 0,
+     "y1": 1500
+    }
+   ],
+   "status": "read",
+   "width": 943
+  },
+  {
+   "bytes": 96646,
+   "height": 1500,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71dUKrrbhnL._AC_SL1500_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.728,
+       "text": "HGH MOI",
+       "y": 419
+      },
+      {
+       "conf": 0.761,
+       "text": "AERO",
+       "y": 503
+      }
+     ],
+     "y0": 0,
+     "y1": 1500
+    }
+   ],
+   "status": "read",
+   "width": 766
+  },
+  {
+   "bytes": 79931,
+   "height": 1500,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71rMbhlnoVL._AC_SL1500_.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1500
+    }
+   ],
+   "status": "read",
+   "width": 653
+  },
+  {
+   "bytes": 88252,
+   "height": 1500,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71Yh7rWCEUL._AC_SL1500_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.889,
+       "text": "TaylorMade",
+       "y": 298
+      },
+      {
+       "conf": 0.801,
+       "text": "-RBZ",
+       "y": 440
+      },
+      {
+       "conf": 0.994,
+       "text": "SPEEDLITE",
+       "y": 501
+      }
+     ],
+     "y0": 0,
+     "y1": 1500
+    }
+   ],
+   "status": "read",
+   "width": 1054
+  },
+  {
+   "bytes": 56559,
+   "height": 1388,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/51qum6DhESL._AC_SL1500_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.932,
+       "text": "aylorMade",
+       "y": 163
+      },
+      {
+       "conf": 0.837,
+       "text": "-REZ",
+       "y": 270
+      },
+      {
+       "conf": 0.988,
+       "text": "SPEEDLITE",
+       "y": 420
+      }
+     ],
+     "y0": 0,
+     "y1": 1388
+    }
+   ],
+   "status": "read",
+   "width": 953
+  },
+  {
+   "bytes": 139583,
+   "height": 1447,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71Gh7eiMsoL._AC_SL1500_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.983,
+       "text": "TaylorMade",
+       "y": 997
+      }
+     ],
+     "y0": 0,
+     "y1": 1447
+    }
+   ],
+   "status": "read",
+   "width": 1280
+  },
+  {
+   "bytes": 159985,
+   "height": 1500,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/71k62ZVDfSL._AC_SL1500_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.869,
+       "text": "TjaylorMade'",
+       "y": 354
+      },
+      {
+       "conf": 0.897,
+       "text": "TaylorMade",
+       "y": 259
+      },
+      {
+       "conf": 0.934,
+       "text": "99",
+       "y": 855
+      }
+     ],
+     "y0": 0,
+     "y1": 1500
+    }
+   ],
+   "status": "read",
+   "width": 643
+  },
+  {
+   "bytes": 72832,
+   "height": 927,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/619E7ovDI9L._AC_SL1018_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.897,
+       "text": "SPEEDLITE / REZ",
+       "y": 114
+      },
+      {
+       "conf": 0.996,
+       "text": "ylorMade",
+       "y": 618
+      }
+     ],
+     "y0": 0,
+     "y1": 927
+    }
+   ],
+   "status": "read",
+   "width": 431
+  },
+  {
+   "bytes": 19138,
+   "height": 453,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/41l7wAUGUPL._AC_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.702,
+       "text": "SPREDL / EZ",
+       "y": 109
+      },
+      {
+       "conf": 0.991,
+       "text": "jaylorMade",
+       "y": 293
+      }
+     ],
+     "y0": 0,
+     "y1": 453
+    }
+   ],
+   "status": "read",
+   "width": 200
+  },
+  {
+   "bytes": 12206,
+   "height": 473,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/418WWy5rJJL._AC_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.573,
+       "text": "SPEEDLITE / BZ / S)",
+       "y": 82
+      },
+      {
+       "conf": 0.985,
+       "text": "aylorMade",
+       "y": 127
+      }
+     ],
+     "y0": 0,
+     "y1": 473
+    }
+   ],
+   "status": "read",
+   "width": 139
+  },
+  {
+   "bytes": 27203,
+   "height": 369,
+   "host": "seller",
+   "link": "https://m.media-amazon.com/images/I/41OTDaK+KPL._AC_.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.957,
+       "text": "PUREROLL",
+       "y": 9
+      },
+      {
+       "conf": 0.943,
+       "text": "yaylorMade",
+       "y": 63
+      }
+     ],
+     "y0": 0,
+     "y1": 369
+    }
+   ],
+   "status": "read",
+   "width": 476
+  },
+  {
+   "bytes": 115713,
+   "height": 1512,
+   "host": "seller",
+   "link": "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/8c877d40-0243-4099-bfa9-dead5c1dd0fb.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.938,
+       "text": "aylorMade",
+       "y": 689
+      },
+      {
+       "conf": 0.814,
+       "text": "8",
+       "y": 746
+      }
+     ],
+     "y0": 0,
+     "y1": 1512
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 77530,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/8605c95f-41ab-47ea-a56e-21af0831c4df.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.986,
+       "text": "SPEEDLITE",
+       "y": 246
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 628
+  },
+  {
+   "bytes": 57328,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/e746302c-f110-4340-9767-92200c2647c7.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 51884,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/a40dd444-169c-4f56-a1a0-d75a3190db66.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 57391,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/f00b5ad5-2abe-403e-933d-d473325c1183.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.983,
+       "text": "TaylorMade",
+       "y": 205
+      },
+      {
+       "conf": 0.605,
+       "text": "-RBZ",
+       "y": 297
+      },
+      {
+       "conf": 0.959,
+       "text": "SPEEDLITE",
+       "y": 333
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 702
+  },
+  {
+   "bytes": 48398,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/2e3c7d12-7688-4969-a51d-e9b1ebf65e40.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.723,
+       "text": "rvade",
+       "y": 158
+      },
+      {
+       "conf": 0.782,
+       "text": "-REZ",
+       "y": 193
+      },
+      {
+       "conf": 0.959,
+       "text": "SPEEDLITE",
+       "y": 299
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 686
+  },
+  {
+   "bytes": 79185,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/54ddb0e7-2218-4fe9-8659-c833fe1a4012.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.897,
+       "text": "TaylorMade",
+       "y": 686
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 884
+  },
+  {
+   "bytes": 91105,
+   "height": 1000,
+   "host": "seller",
+   "link": "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/d36baa32-d038-4049-ba00-26424ddab369.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.841,
+       "text": "jaylorMade",
+       "y": 233
+      },
+      {
+       "conf": 0.926,
+       "text": "JaylorMade",
+       "y": 172
+      }
+     ],
+     "y0": 0,
+     "y1": 1000
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 143378,
+   "height": 1290,
+   "host": "seller",
+   "link": "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/63abdba2-2b6a-4c65-8511-3caaf1ac26c8.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.81,
+       "text": "SPEEDLITE / REZ",
+       "y": 163
+      },
+      {
+       "conf": 0.943,
+       "text": "jaylorMade",
+       "y": 831
+      }
+     ],
+     "y0": 0,
+     "y1": 1290
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 123064,
+   "height": 1359,
+   "host": "seller",
+   "link": "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/ccb338b4-5c81-41bb-8849-a5cd2dd1e345.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.681,
+       "text": "REZ",
+       "y": 164
+      },
+      {
+       "conf": 0.745,
+       "text": "PEED",
+       "y": 445
+      },
+      {
+       "conf": 0.968,
+       "text": "jaylorMade",
+       "y": 884
+      }
+     ],
+     "y0": 0,
+     "y1": 1359
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 138900,
+   "height": 2041,
+   "host": "seller",
+   "link": "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/974c8649-e33a-4983-8409-ec72dcb78d27.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.561,
+       "text": "=Z",
+       "y": 392
+      },
+      {
+       "conf": 0.701,
+       "text": "LTE",
+       "y": 580
+      },
+      {
+       "conf": 0.934,
+       "text": "aylorMade",
+       "y": 562
+      }
+     ],
+     "y0": 0,
+     "y1": 2041
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 67555,
+   "height": 600,
+   "host": "seller",
+   "link": "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/d66a4288-b1f8-4e51-9386-4784e2c92652.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.924,
+       "text": "PUREROLL",
+       "y": 16
+      },
+      {
+       "conf": 0.938,
+       "text": "jaylorMade",
+       "y": 108
+      }
+     ],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 773
+  },
+  {
+   "bytes": 23135,
+   "height": 600,
+   "host": "seller",
+   "link": "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/e478ec0f-dd74-46e2-b78c-d3cfbf714378.jpg",
+   "slices": [
+    {
+     "rows": [],
+     "y0": 0,
+     "y1": 600
+    }
+   ],
+   "status": "read",
+   "width": 600
+  },
+  {
+   "bytes": 332298,
+   "height": 2700,
+   "host": "seller",
+   "link": "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/profile/de10104c-1b44-4d22-8c07-22f6cb14d2b9.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.978,
+       "text": "배송 및 교환 안내",
+       "y": 11
+      },
+      {
+       "conf": 0.96,
+       "text": "Shipping information",
+       "y": 54
+      },
+      {
+       "conf": 0.999,
+       "text": "상품구매",
+       "y": 159
+      },
+      {
+       "conf": 0.932,
+       "text": "1.마르컴퍼니는 해외구매대행으로 재고를 보유하고 있지 않습니다.",
+       "y": 221
+      },
+      {
+       "conf": 0.953,
+       "text": "2.구매대행의 특성상 실제 재고는 가지고 있지 않으며 일본 각 브랜드사 마다 재고를 보유하고 있기 때문에",
+       "y": 244
+      },
+      {
+       "conf": 0.917,
+       "text": "재고는 실시간으로 변동되며 주문 후 품절이 있을 수 있습니다.",
+       "y": 267
+      },
+      {
+       "conf": 0.902,
+       "text": "(이 경우 고객님께 가격인상 내용에 대해서 개별연락을 드립니다.)",
+       "y": 292
+      },
+      {
+       "conf": 0.917,
+       "text": "3.가격인상, 환율인상 등으로인한 차액 발생시 정상 주문이 불가능하며 이 경우 주문한 상품이 취소될 수 있",
+       "y": 314
+      },
+      {
+       "conf": 0.922,
+       "text": "는 점 양해 부탁드립니다. 단,차액 입금시 주문 가능합니다.(개별 안내)",
+       "y": 341
+      },
+      {
+       "conf": 0.907,
+       "text": "4.모든 제품의 설명서는 일본어 및 영어로 되어 있습니다. (일부상품제외)",
+       "y": 364
+      },
+      {
+       "conf": 0.929,
+       "text": "5.판매되는 상품은 일본 내수용 상품으로 제작된 상품입니다.전자제품의 경우 전압이100~110V입니다.",
+       "y": 388
+      },
+      {
+       "conf": 0.922,
+       "text": "6.본 페이지의 상품상세설명은 번역된 것으로 일부 번역이 잘못되어 있거나 누락되어 있을 수 있습니다.",
+       "y": 412
+      },
+      {
+       "conf": 0.926,
+       "text": "7.일본 구매대행 상품의 경우 일본 현지사이트에서 주문이 이루어지나, 일본이 아닌 다른 국가에서 상품이 제",
+       "y": 437
+      },
+      {
+       "conf": 0.963,
+       "text": "조될 수 있습니다.",
+       "y": 460
+      },
+      {
+       "conf": 0.948,
+       "text": "8.마르컴퍼니 외 추가로 타 사이트에서 일본 구매대행을 하셨을 경우 국내 도착 시 합산과세가 발생할 수 있습",
+       "y": 483
+      },
+      {
+       "conf": 0.93,
+       "text": "니다.",
+       "y": 507
+      },
+      {
+       "conf": 0.897,
+       "text": "(합산과세 발생 시 고객님께서 직접 부담해 주셔야 진행이 가능하시며, 통관진행 중에는 취소가 불가능합니다.)",
+       "y": 530
+      },
+      {
+       "conf": 1.0,
+       "text": "배송관련",
+       "y": 617
+      },
+      {
+       "conf": 0.905,
+       "text": "1.배송순비 상태에서는 일본 현지 사이트에서 수문이 완료된 상태이므로 취소 시에는 일론 현지 반품비용이",
+       "y": 685
+      },
+      {
+       "conf": 0.942,
+       "text": "발생할 수 있습니다",
+       "y": 703
+      },
+      {
+       "conf": 0.886,
+       "text": "배송중(출고완료)>취소불가능(단, 아래 반품비 유료로 부담 후 반품가능)",
+       "y": 728
+      },
+      {
+       "conf": 0.931,
+       "text": "-일본 내리턴비용:2만원",
+       "y": 755
+      },
+      {
+       "conf": 0.897,
+       "text": "-한국 도착 후 리턴 비용:5만원 (단,상품가액만 환불,배송비는 환불 대상에서 제외)",
+       "y": 777
+      },
+      {
+       "conf": 0.905,
+       "text": "2.일부 품목은일본 내 현지 배송비가발생할 수 있습니다.(현지 로컬비용에 대한 개별안내)",
+       "y": 827
+      },
+      {
+       "conf": 0.97,
+       "text": "3.상품의무게가초과할경우",
+       "y": 873
+      },
+      {
+       "conf": 0.944,
+       "text": "2kg초과시1kg당 4천원별도로청구 (ex. 2.1kg = 4000원)",
+       "y": 896
+      },
+      {
+       "conf": 0.952,
+       "text": "20kg초과시 1kg당 8천원별도로청구",
+       "y": 921
+      },
+      {
+       "conf": 0.935,
+       "text": "교환 및 반품",
+       "y": 1012
+      },
+      {
+       "conf": 0.889,
+       "text": "1.구매대행 특성상 상품의 교환은 물가능하며, 환물 후 새구매만 가능합니다.",
+       "y": 1090
+      },
+      {
+       "conf": 0.936,
+       "text": "2.해당상품은해외구매대행상품으로 마르컴퍼니 또는 국내에서의 유/무상A/S가 불가능합니다",
+       "y": 1134
+      },
+      {
+       "conf": 0.916,
+       "text": "3.전자제품의 경우,개봉 후 교환 및 반품이 불가능하오니 신중한 구매 부탁드립니다",
+       "y": 1182
+      },
+      {
+       "conf": 0.918,
+       "text": "또한일본의 전압은한국과 달리100~110V입니다.변압기를사용해야 할 수도있으므로정확하게 확인 후",
+       "y": 1208
+      },
+      {
+       "conf": 0.895,
+       "text": "구매 부탁드리며, 시중에 판매되는변환플러그(돼지코)를 사용하여 전자제품 고장시교환 및 반품은 절대",
+       "y": 1231
+      },
+      {
+       "conf": 0.997,
+       "text": "불가능합니다",
+       "y": 1255
+      },
+      {
+       "conf": 0.893,
+       "text": "4.게임기 및 장난감,전자제품등의 경우 국내에서 프로그램 호환이 안될수있고 이로인한 교환및 반품은",
+       "y": 1303
+      },
+      {
+       "conf": 0.895,
+       "text": "불가능한 점양해부탁드립니다.또한, 구매 전 마르컴퍼니를 통하여 확인이 불가능한 점도양해 부탁드립니다",
+       "y": 1329
+      },
+      {
+       "conf": 0.9,
+       "text": "5.전파시계의 경우국내에 전파가 제대로 수신이 되지 않을 수 있습니다.",
+       "y": 1375
+      },
+      {
+       "conf": 0.952,
+       "text": "이로인한AS및 교환은불가능하오니확인하시고구매 부탁드립니다",
+       "y": 1401
+      },
+      {
+       "conf": 0.912,
+       "text": "6.반품 시 일본으로다시 발송하여야 하기 때문에반품은수령 후 7일이내에만처리 가능합니다",
+       "y": 1449
+      },
+      {
+       "conf": 0.889,
+       "text": "(단. 구매시부터 반품이 불가능한 상품은 적용제외)",
+       "y": 1471
+      },
+      {
+       "conf": 0.923,
+       "text": "7.구매자 단순변심의 경우 유료 반품비용이 발생합니다",
+       "y": 1521
+      },
+      {
+       "conf": 0.902,
+       "text": "8.반품 기간이 지난 후에는 반품 관련하여 책임을 지지 않습니다",
+       "y": 1567
+      }
+     ],
+     "y0": 0,
+     "y1": 1663
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.925,
+       "text": "반품에 대한 규정",
+       "y": 32
+      },
+      {
+       "conf": 0.917,
+       "text": "일본의 경우 반품기간이 상당히 짧아 반품이 안되는 경우가 많습니다. 이 섬 반드시 유의해수셔야 합니다.",
+       "y": 96
+      },
+      {
+       "conf": 0.886,
+       "text": "무료반품의 경우(상품가 및 배송비 전액환불)",
+       "y": 145
+      },
+      {
+       "conf": 0.924,
+       "text": "1)주문한 상품과 판이하게다른상품(상품 본래 이미지에서리뉴얼제외)",
+       "y": 170
+      },
+      {
+       "conf": 0.893,
+       "text": "2)상품의 심각한 파손(단 검수시 육안으로구분하기 어려운 부분 제외, 기능적 하자는 제외)",
+       "y": 192
+      },
+      {
+       "conf": 0.989,
+       "text": "3)사이즈오배송의경우",
+       "y": 217
+      },
+      {
+       "conf": 0.922,
+       "text": "무료반품 사유과 되지 않는 경우",
+       "y": 263
+      },
+      {
+       "conf": 0.949,
+       "text": "1)로고의자수가엉성할경우",
+       "y": 288
+      },
+      {
+       "conf": 0.972,
+       "text": "2)로고의색상이틀릴경우",
+       "y": 313
+      },
+      {
+       "conf": 0.95,
+       "text": "3)재질이틀려보일경우",
+       "y": 336
+      },
+      {
+       "conf": 0.983,
+       "text": "4)색상이모니터해상도로인해사진과다를경우",
+       "y": 359
+      },
+      {
+       "conf": 0.9,
+       "text": "5) 제품에 얼룩및 스크래치가있는경우",
+       "y": 386
+      },
+      {
+       "conf": 0.912,
+       "text": "6)실밥이 나와 있거나 올이 약간 나가있는 경우",
+       "y": 410
+      },
+      {
+       "conf": 0.888,
+       "text": "7) 약간의 본드 자국이있는경우",
+       "y": 432
+      },
+      {
+       "conf": 0.966,
+       "text": "8)단추등액세서리의이미지가다를경우",
+       "y": 458
+      },
+      {
+       "conf": 0.916,
+       "text": "9) 제품에는이상이 없으나 상품박스가 망가진 경우",
+       "y": 482
+      },
+      {
+       "conf": 0.914,
+       "text": "10) 사이즈(SIZE)문제의 경우",
+       "y": 507
+      },
+      {
+       "conf": 0.892,
+       "text": "11) 해당 밴더사쇼핑몰사이트의 반품 사유에 맞지 않는 경우(tag 제거 및 상품박스가 없는 경우 등)",
+       "y": 528
+      },
+      {
+       "conf": 0.902,
+       "text": "12) 그 외검품검수시 확인할 수없는부분",
+       "y": 553
+      },
+      {
+       "conf": 0.903,
+       "text": "*검품 검수 가능한 부분:사이즈,색상, 심각한 오염여부, 상품명 확인 유무",
+       "y": 576
+      },
+      {
+       "conf": 0.864,
+       "text": "(리뉴얼제외, 고객 등의 시 제외)",
+       "y": 600
+      },
+      {
+       "conf": 0.916,
+       "text": "13) 전자제품의 전압 여부로 인한 반품, 상품의 기능적인 작동여부(전자제품의 작동여부는 검수 불가)",
+       "y": 624
+      },
+      {
+       "conf": 0.993,
+       "text": "사이즈 정보",
+       "y": 683
+      },
+      {
+       "conf": 0.9,
+       "text": "1.상품의 사이스는 판매하고 있는 일론 판매 사이트에 기재되어 있는 성보를 제공하나, 상품마다 약간의 사이스",
+       "y": 751
+      },
+      {
+       "conf": 0.95,
+       "text": "오차가 있을 수 있습니다.",
+       "y": 772
+      },
+      {
+       "conf": 0.986,
+       "text": "2.사이즈로 인한 반품의 경우에는 예외없이 유료반품으로 진행되는 점 양해부탁드립니다.",
+       "y": 821
+      },
+      {
+       "conf": 0.994,
+       "text": "검품검수 정보",
+       "y": 845
+      },
+      {
+       "conf": 0.967,
+       "text": "1)가능범위:배송대행지에 도착한상품의 사이즈/색상/외관상 하자여부",
+       "y": 893
+      },
+      {
+       "conf": 0.953,
+       "text": "2)불가능범위:외관상 검품검수가 불가능한 부분",
+       "y": 914
+      },
+      {
+       "conf": 0.954,
+       "text": "상기 말씀드린 부분 이외에 해당하는 상품하자 건에 대해서는 유료로 반품이 진행됩니다.",
+       "y": 964
+      }
+     ],
+     "y0": 1663,
+     "y1": 2700
+    }
+   ],
+   "status": "read",
+   "width": 860
+  }
+ ],
+ "key": "fairwardgolf:naver:102165276:9703030793",
+ "links_sha256": "1e607d12c083cb3afca5f6f28554ef2ccf9f2584024c5a8727600a310a28edfd",
+ "product_id": "9703030793",
+ "seconds": 37.2,
+ "skipped": [
+  {
+   "link": "https://p.tcdn.co.kr/wejrljelwkrw/ss/658ac7c32f64a038818211b3",
+   "rule": "pixel"
+  },
+  {
+   "link": "https://m.media-amazon.com/images/I/31LUxf6NgXL._AC_SL1500_.jpg",
+   "rule": "spacer"
+  },
+  {
+   "link": "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/1fca54e5-7c20-443e-a24d-8c34a4bc0d22.jpg",
+   "rule": "spacer"
+  }
+ ]
+}

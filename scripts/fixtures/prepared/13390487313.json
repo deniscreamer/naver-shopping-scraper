@@ -1,0 +1,1147 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102454334:13390487313",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "option_name_placeholder",
+   "detail": "Shaft Material"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "INCLUDED"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/35tnfjg/products/13390487313",
+  "channel_no": "102454334",
+  "product_id": "13390487313",
+  "category_id": "50002783"
+ },
+ "product": {
+  "title_ko": "AGXGOLF 남성용 오른손 TCI 투어 에디션 웨지 세트 갭 샌드 로브 소프트면 선택",
+  "brand_ko": "AGXGOLF",
+  "brand_source": "specs:브랜드",
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "title",
+      "value": "mens",
+      "text": "AGXGOLF 남성용 오른손 TCI 투어 에디션 웨지 세트 갭 샌드 로브 소프트면 선택"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 웨지 세트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "Shaft Material",
+    "values_ko": [
+     "2X-TALL LENGTH (PLUS 2.0",
+     "CADET LENGTH (MINUS 1 INCH)",
+     "EXTRA TALL LENGTH (PLUS 1.5 INCH)",
+     "REGULAR LENGTH",
+     "TALL LENGTH (PLUS 1 INCH)"
+    ]
+   },
+   {
+    "name_ko": "Flex",
+    "values_ko": [
+     "Regular",
+     "Senior",
+     "Stiff"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"2X-TALL LENGTH (PLUS 2.0\",\"Regular\"]",
+    "naver_variant_id": "57624833959",
+    "options_ko": [
+     "2X-TALL LENGTH (PLUS 2.0",
+     "Regular"
+    ],
+    "price_krw": 384860,
+    "price_usd": "384.86",
+    "sku": "FW-3913f26a8e27f764222dc26c",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"2X-TALL LENGTH (PLUS 2.0\",\"Senior\"]",
+    "naver_variant_id": "57624833960",
+    "options_ko": [
+     "2X-TALL LENGTH (PLUS 2.0",
+     "Senior"
+    ],
+    "price_krw": 384860,
+    "price_usd": "384.86",
+    "sku": "FW-7ab66df5cce8446f61065ef3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"2X-TALL LENGTH (PLUS 2.0\",\"Stiff\"]",
+    "naver_variant_id": "57624833961",
+    "options_ko": [
+     "2X-TALL LENGTH (PLUS 2.0",
+     "Stiff"
+    ],
+    "price_krw": 384860,
+    "price_usd": "384.86",
+    "sku": "FW-83efe34c9bf5c668ef021596",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"CADET LENGTH (MINUS 1 INC\",\"Regular\"]",
+    "naver_variant_id": "57624833962",
+    "options_ko": [
+     "CADET LENGTH (MINUS 1 INCH)",
+     "Regular"
+    ],
+    "price_krw": 384860,
+    "price_usd": "384.86",
+    "sku": "FW-2fcc09468fb4005f6a541c8e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"EXTRA TALL LENGTH (PLUS 1\",\"Regular\"]",
+    "naver_variant_id": "57624833963",
+    "options_ko": [
+     "EXTRA TALL LENGTH (PLUS 1.5 INCH)",
+     "Regular"
+    ],
+    "price_krw": 384860,
+    "price_usd": "384.86",
+    "sku": "FW-fa88e32092b3e318ebe6aa58",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"EXTRA TALL LENGTH (PLUS 1\",\"Senior\"]",
+    "naver_variant_id": "57624833964",
+    "options_ko": [
+     "EXTRA TALL LENGTH (PLUS 1.5 INCH)",
+     "Senior"
+    ],
+    "price_krw": 384860,
+    "price_usd": "384.86",
+    "sku": "FW-5fee6ea0966c04459ed2277f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"EXTRA TALL LENGTH (PLUS 1\",\"Stiff\"]",
+    "naver_variant_id": "57624833965",
+    "options_ko": [
+     "EXTRA TALL LENGTH (PLUS 1.5 INCH)",
+     "Stiff"
+    ],
+    "price_krw": 384860,
+    "price_usd": "384.86",
+    "sku": "FW-7c523019d8ab4a2a547dfc42",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"REGULAR LENGTH\",\"Regular\"]",
+    "naver_variant_id": "57624833966",
+    "options_ko": [
+     "REGULAR LENGTH",
+     "Regular"
+    ],
+    "price_krw": 384860,
+    "price_usd": "384.86",
+    "sku": "FW-c5e1c1147fe45bed93b44f05",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"REGULAR LENGTH\",\"Senior\"]",
+    "naver_variant_id": "57624833967",
+    "options_ko": [
+     "REGULAR LENGTH",
+     "Senior"
+    ],
+    "price_krw": 384860,
+    "price_usd": "384.86",
+    "sku": "FW-aa4c72dc41fb7a743a98c183",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"REGULAR LENGTH\",\"Stiff\"]",
+    "naver_variant_id": "57624833968",
+    "options_ko": [
+     "REGULAR LENGTH",
+     "Stiff"
+    ],
+    "price_krw": 384860,
+    "price_usd": "384.86",
+    "sku": "FW-766bc742dc682603fa9dc1b8",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"TALL LENGTH (PLUS 1 INCH)\",\"Regular\"]",
+    "naver_variant_id": "57624833969",
+    "options_ko": [
+     "TALL LENGTH (PLUS 1 INCH)",
+     "Regular"
+    ],
+    "price_krw": 384860,
+    "price_usd": "384.86",
+    "sku": "FW-8092d0a94d50f4151deb2a79",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"TALL LENGTH (PLUS 1 INCH)\",\"Senior\"]",
+    "naver_variant_id": "57624833970",
+    "options_ko": [
+     "TALL LENGTH (PLUS 1 INCH)",
+     "Senior"
+    ],
+    "price_krw": 384860,
+    "price_usd": "384.86",
+    "sku": "FW-fd2a211af8ddf7eb6ff2f8ca",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"TALL LENGTH (PLUS 1 INCH)\",\"Stiff\"]",
+    "naver_variant_id": "57624833971",
+    "options_ko": [
+     "TALL LENGTH (PLUS 1 INCH)",
+     "Stiff"
+    ],
+    "price_krw": 384860,
+    "price_usd": "384.86",
+    "sku": "FW-27cf5cf278a6a648b8fbd4e3",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "low": 1500,
+      "central": 2200,
+      "high": 3800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_length_mm": {
+      "low": 960,
+      "central": 980,
+      "high": 1020,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 200,
+      "high": 280,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_height_mm": {
+      "low": 80,
+      "central": 100,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 384860,
+   "original_krw": 549800,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "AGXGOLF"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "AGXGOLF"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "AGXGOLF"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "기타해외"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13390487313/fairwardgolf-13390487313-001-3a67cb1353d3177b.webp",
+    "sha256": "3a67cb1353d3177b89b9ec71fd7f5625abe9df8c199846ca6078e1e114f33408",
+    "width": 600,
+    "height": 600
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": true,
+   "customs_tax_type": "INCLUDED",
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "AGXGOLF 남성용 오른손 TCI 투어 에디션 웨지 세트 갭 샌드 로브 소프트면 선택\n옵션 이미지\n2X-TALL LENGTH (PLUS 2.0 INCH) | CADET LENGTH (MINUS 1 INCH)\nEXTRA TALL LENGTH (PLUS 1.5 INCH) | REGULAR LENGTH\nTALL LENGTH (PLUS 1 INCH) |\nGOODS SPECIFICS\n- Brand Name : AGXGOLF\n- Manufacturer : AGXGOLF\n- Part Number : wgs-tci-rhGSL_S-XTALL+1.5\n- Sport Type : Golf\n- Hand Orientation : Right\n- Grip Type : Tour-Low Taper\n- Golf Club Flex : Stiff\n- Brand : AGXGOLF\n- Shaft Material : EXTRA TALL LENGTH (PLUS 1.5 INCH)\nFeature\n- We are the Factory! All AGXGOLF Brand Golf Clubs are Crafted in our Howell, MI facility from the Individual Components by our Experienced Club Smiths. Features Strong 306 Tour Grade STAINLESS STEEL construction to provide excellent feel and durability. The 306 SS\n- The \"SOFT FACE\" puts more backspin on the ball for those \"drop and stop\" landings\n- Mens Cadet -1 inch (34.5 inch): for Heights of 52\" to 57\" / Mens Regular (35.5 inch): for Heights of 56\" to 61\" /Mens Tall +1 inch (36.5 inch): for Heights of 60\" to 64\" / Mens Extra Tall +1.5 inch (37.0 inch): for Heights of 63\" to 66\" / Mens 2X-Tall +2 inch (37.5 inch): for Heights of 65\" to 69\n- Leading edge makes chip shots from around the greens easier and more accurate\n- AGXGOLF Magnum Series Stainless Steel shafts: Provide Optimum Accuracy!",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260412_284/1775997132639WnHmt_JPEG/p-13331611466-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20260412_126/1775997132640oSBRo_JPEG/p-13331611466-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20260412_109/1775997132642lrG4P_JPEG/p-13331611466-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20260412_68/1775997132641k7LiW_JPEG/p-13331611466-s-1-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20260412_34/1775997132639sgCHw_JPEG/p-13331611466-s-1-A-4.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:4c50f7f5f7168462",
+   "kind": "title",
+   "ko": "AGXGOLF 남성용 오른손 TCI 투어 에디션 웨지 세트 갭 샌드 로브 소프트면 선택"
+  },
+  {
+   "id": "brand:dd921532c987d987",
+   "kind": "brand",
+   "ko": "AGXGOLF"
+  },
+  {
+   "id": "option_name:c3f95b28087be55a",
+   "kind": "option_name",
+   "ko": "Shaft Material"
+  },
+  {
+   "id": "option_value:1c709d46b3e43dfb",
+   "kind": "option_value",
+   "ko": "2X-TALL LENGTH (PLUS 2.0"
+  },
+  {
+   "id": "option_value:89612c88dfd152a4",
+   "kind": "option_value",
+   "ko": "CADET LENGTH (MINUS 1 INCH)"
+  },
+  {
+   "id": "option_value:9c0cca8160232711",
+   "kind": "option_value",
+   "ko": "EXTRA TALL LENGTH (PLUS 1.5 INCH)"
+  },
+  {
+   "id": "option_value:b3ddfa4d7b08625c",
+   "kind": "option_value",
+   "ko": "REGULAR LENGTH"
+  },
+  {
+   "id": "option_value:a7cb49c06c3be0e9",
+   "kind": "option_value",
+   "ko": "TALL LENGTH (PLUS 1 INCH)"
+  },
+  {
+   "id": "option_name:c2a520b84ceea67c",
+   "kind": "option_name",
+   "ko": "Flex"
+  },
+  {
+   "id": "option_value:b455784ab5307277",
+   "kind": "option_value",
+   "ko": "Regular"
+  },
+  {
+   "id": "option_value:92613a8f434050ae",
+   "kind": "option_value",
+   "ko": "Senior"
+  },
+  {
+   "id": "option_value:105a0e6c02906f66",
+   "kind": "option_value",
+   "ko": "Stiff"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:dd921532c987d987",
+   "kind": "spec_value",
+   "ko": "AGXGOLF"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:86bc555023ef98c1",
+   "kind": "spec_value",
+   "ko": "기타해외"
+  }
+ ]
+}

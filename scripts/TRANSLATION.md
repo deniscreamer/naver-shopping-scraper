@@ -85,7 +85,10 @@ Per text, the first that answers: (1) the product's own store, (2) the dictionar
 Title, review, a placeholder option name (선택 / 옵션, named from its values), in `translation/texts.jsonl`. A
 placeholder name with no Hangul ("Color" over "52 56 Degree Tarnish", Amazon imports; 2026-11-17, the wedge-set review
 C50) is asked of the model too; until it answers the rule's English ("Color") stands. A rule never names it ("Lofts"
-would rename the heights of 50002787).
+would rename the heights of 50002787). The same for an Amazon label of another kind than its values ("Shaft Material"
+over "... LENGTH", 13390487313, 2026-11-18): the answer is that product's own row. A dictionary entry is never the
+lever: the text id is shared, and "Shaft Material" -> "Length" would rename 12079165169 and 9703030793, whose values
+are materials.
 
 ## 2. Dictionaries
 

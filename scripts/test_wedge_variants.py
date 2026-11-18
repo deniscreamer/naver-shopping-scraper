@@ -7,6 +7,7 @@ the rows and texts they carry; offline.
   C08  a switch cell of the description ("헤드 커버 | 있음없음"): the picked choice
   C37  a bare "P" glued to a model word ("D3P", "NX-1 P/A", "db4P") is no club count
   C50  a Latin placeholder option name ("Color" over lofts): asked of the model, the rule's English until it answers
+       (2026-11-18: an Amazon label of another kind than its values, "Shaft Material" over lengths, 13390487313)
   C51  a one-value colour axis whose value is a set ("Color: Wedge Set"): the fact without its label
   C52  values Naver cut at 25 characters, whole again from the description's option list; Amazon's index left out
   C54  raw lofts in 50002783's option values ("5056", "56.12 SB", "50°56°", "52 56 60 Degree") as a loft list
@@ -343,6 +344,71 @@ def test_a_latin_name_that_is_no_placeholder_is_not_asked(tmp_path):
     _, by, pending = T.plan(p, D.Dictionaries(str(tmp_path / "live"), str(tmp_path / "none")), {}, TENANT)
     assert by[transform.text_id("option_name", "Color")] == "rule"
     assert transform.text_id("option_name", "Color") not in {i["id"] for i in pending}
+
+
+SHAFT_LENGTHS = ["2X-TALL LENGTH (PLUS 2.0", "CADET LENGTH (MINUS 1 INCH)", "EXTRA TALL LENGTH (PLUS 1.5 INCH)",
+                 "REGULAR LENGTH", "TALL LENGTH (PLUS 1 INCH)"]
+
+
+def test_an_amazon_axis_named_for_another_kind_is_a_placeholder():
+    """2026-11-18, AGXGOLF TCI 13390487313 (live): Amazon's "Shaft Material" over five lengths (one cut by Naver, no
+    INCH) went out under that name; it is a placeholder now, named from its values. Its "Flex" axis (Regular / Senior
+    / Stiff, the shop's one Latin flex axis) keeps its name; values and rows untouched."""
+    p = prep("13390487313")
+    assert notes(p)["option_name_placeholder"] == "Shaft Material"
+    assert options(p) == {"Shaft Material": SHAFT_LENGTHS, "Flex": ["Regular", "Senior", "Stiff"]}
+    assert p["status"] == "ready"
+
+
+def test_an_axis_whose_values_say_its_kind_keeps_its_name():
+    """2026-11-18, the look-alikes: Ram 12079165169 "Shaft Material" over "Steel - 1 Inch Shorter" / "Alloy Steel" (a
+    value with a length word, but a material); TaylorMade 9703030793 (50002788) over "합금(Alloy Steel)" /
+    "탄소(Graphite)" (its other axis 골프클럽플렉스 is Hangul: never judged); 69 Golf 13164548371 "Hand Orientation" over
+    Left / Right (31 such axes in the shop)."""
+    assert "option_name_placeholder" not in notes(prep("12079165169"))
+    assert "option_name_placeholder" not in notes(prepare(line("9703030793"), RULES, "50002788-fixtures", 1))
+    hand = prep("13164548371")
+    assert options(hand) == {"Hand Orientation": ["Left", "Right"]}
+    assert "option_name_placeholder" not in notes(hand)
+
+
+@pytest.mark.parametrize("name, values, out", [
+    ("Shaft Material", SHAFT_LENGTHS, True),
+    ("Shaft Material", ["TALL LENGTH (PLUS 1 INCH)", "REGULAR LENGTH"], True),
+    ("Shaft Material", ["Black", "Blue"], True),
+    ("Shaft Material", ["Preferred", "Golden"], False),            # colour words whole: no "red" in "Preferred"
+    ("Shaft Material", ["Steel - 1 Inch Shorter", "Alloy Steel"], False),
+    ("Shaft Material", ["합금(Alloy Steel)", "탄소(Graphite)"], False),
+    ("Shaft Material", ["TALL LENGTH", "Graphite"], False),        # one value says a material
+    ("Shaft Material", ["Option 1", "Option 2"], False),           # no other kind proven
+    ("Shaft Material", [], False),
+    ("Flex", ["Regular", "Senior", "Stiff"], False),
+    ("Hand Orientation", ["Left", "Right"], False),
+    ("Size", ["Left Hand", "Right Hand"], False),                  # names no kind
+    ("샤프트 재질", ["TALL LENGTH"], False),                         # a Hangul name: the model and the dictionary
+    ("Length", ["Steel", "Graphite"], False),                      # length and loft judge values only
+])
+def test_axis_misnamed(name, values, out):
+    assert transform._axis_misnamed(name, values) is out
+
+
+def test_the_misnamed_axis_is_asked_only_for_its_product(tmp_path):
+    """The text id of "Shaft Material" is one for the three products: the model's answer is 13390487313's own row,
+    never a dictionary entry, so the look-alike 12079165169 keeps the rule's English."""
+    import translation_dicts as D
+    d = D.Dictionaries(str(tmp_path / "live"), str(tmp_path / "none"))
+    tid = transform.text_id("option_name", "Shaft Material")
+    p = prep("13390487313")
+    en, by, pending = T.plan(p, d, {}, TENANT)
+    assert en[tid] == "Shaft Material" and by[tid] == "rule"
+    item = next(i for i in pending if i["id"] == tid)
+    assert item["placeholder"] and item["context"].startswith("values: 2X-TALL LENGTH (PLUS 2.0 | CADET LENGTH")
+    store = {(p["key"], tid): "Length"}
+    en, by, pending = T.plan(p, d, store, TENANT)
+    assert en[tid] == "Length" and by[tid] == "product" and tid not in {i["id"] for i in pending}
+    other = prep("12079165169")
+    en, by, pending = T.plan(other, d, store, TENANT)
+    assert en[tid] == "Shaft Material" and by[tid] == "rule" and tid not in {i["id"] for i in pending}
 
 
 # ---- C54 / C55: option values ------------------------------------------------------------------------------------

@@ -158,6 +158,39 @@ _AMAZON_AXIS_RE = re.compile(r"^(?:style|style name|pattern|pattern name)$", re.
 _COLOUR_AXIS_RE = re.compile(r"^(?:색상|컬러|칼라|color|colour)$", re.I)
 _COLOUR_WORD_RE = re.compile(r"블랙|화이트|레드|블루|그레이|네이비|실버|골드|핑크|그린|옐로|오렌지|퍼플|브라운|베이지|민트|"
                              r"아이보리|카키|와인|black|white|red|blue|gray|grey|navy|silver|gold|pink|green", re.I)
+# An Amazon axis label of one kind over values of another ("Shaft Material" over "TALL LENGTH (PLUS 1 INCH)",
+# AGXGOLF 13390487313, 2026-11-18): a placeholder named from its values in translation. One value saying the name's
+# kind keeps it ("Steel - 1 Inch Shorter", Ram 12079165169; "합금(Alloy Steel)", TaylorMade 9703030793; "Left" under
+# "Hand Orientation", 13164548371). Name kinds only where the shop has a real Latin axis of that name (material,
+# flex, hand); length and loft judge values only. The colour words whole words here: "red" is no colour in "Preferred".
+_AXIS_NAME_KINDS = {
+    "material": re.compile(r"\bmaterial\b", re.I),
+    "flex": re.compile(r"^(?:club |shaft )?flex$", re.I),
+    "hand": re.compile(r"\bhand(?:edness| orientation)?\b", re.I),
+}
+_AXIS_VALUE_KINDS = {
+    "material": re.compile(r"\b(?:steel|graphite|carbon|alloy|titanium)\b|스틸|카본|탄소|합금|그라파이트|티타늄", re.I),
+    "length": re.compile(r"\blength\b|\binch(?:es)?\b|인치|\d\s*cm\b", re.I),
+    "flex": re.compile(r"(?<![A-Za-z])(?-i:L|A|R|SR|S|X|TX)(?![A-Za-z])|\b(?:regular|stiff|senior|ladies|lady)\b|강도",
+                       re.I),
+    "hand": re.compile(r"\b(?:left|right)\b|\b[LR]H\b|왼손|오른손", re.I),
+    "loft": re.compile(r"\d\s*(?:°|도|deg(?:ree)?s?\b)", re.I),
+    "colour": re.compile(r"블랙|화이트|레드|블루|그레이|네이비|실버|골드|핑크|그린|옐로|오렌지|퍼플|브라운|베이지|민트|아이보리|카키|"
+                         r"와인|\b(?:black|white|red|blue|gray|grey|navy|silver|gold|pink|green)\b", re.I),
+}
+
+
+def _axis_misnamed(name: str, values: list[str]) -> bool:
+    """A Latin axis name of exactly one kind (_AXIS_NAME_KINDS) that no value says, while every value says one same
+    other kind (_AXIS_VALUE_KINDS). A Hangul name is never judged (the model and the dictionary name it)."""
+    if not values or re.search(r"[가-힣]", name):
+        return False
+    named = [k for k, rx in _AXIS_NAME_KINDS.items() if rx.search(name.strip())]
+    if len(named) != 1 or any(_AXIS_VALUE_KINDS[named[0]].search(v) for v in values):
+        return False
+    return any(all(rx.search(v) for v in values) for k, rx in _AXIS_VALUE_KINDS.items() if k != named[0])
+
+
 _GIFT_RE = re.compile(r"사은품|증정")
 # a value that only points to the description (server/naver_shopping/parsers.py _SEE_DESCRIPTION_RE, 2026-11-01)
 _POINTER_RE = re.compile(
@@ -1453,7 +1486,7 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
     else:                                           # no description images read: the server's statements alone
         _stated_weights(ov, details["name"], category.get("id"))
     vague = [o["name_ko"] for o in ov["options"] if _PLACEHOLDER_NAME_RE.match(o["name_ko"])
-             or _AMAZON_AXIS_RE.match(o["name_ko"])
+             or _AMAZON_AXIS_RE.match(o["name_ko"]) or _axis_misnamed(o["name_ko"], o["values_ko"])
              or _COLOUR_AXIS_RE.match(o["name_ko"]) and not any(_COLOUR_WORD_RE.search(v) for v in o["values_ko"])]
     if vague:                                       # the translation names such an axis from its values
         notes.append({"code": "option_name_placeholder", "detail": ", ".join(vague)})

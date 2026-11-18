@@ -1,0 +1,343 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102301688:13164548371",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "measures_from_images",
+   "detail": "package_height_mm 2/2, package_length_mm 2/2, package_weight_g 2/2, package_width_mm 2/2"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "NOT_APPLICABLE"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/epep0724/products/13164548371",
+  "channel_no": "102301688",
+  "product_id": "13164548371",
+  "category_id": "50002783"
+ },
+ "product": {
+  "title_ko": "골프 웨지 69도 골프의 남녀 세트546069 세트 로브 샌드 피칭 길이 35인치 스틸 샤프트",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {
+   "gender": {
+    "value": "unisex",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "title",
+      "value": "unisex",
+      "text": "골프 웨지 69도 골프의 남녀 세트546069 세트 로브 샌드 피칭 길이 35인치 스틸 샤프트"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "골프 웨지 세트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "Hand Orientation",
+    "values_ko": [
+     "Left",
+     "Right"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"Left\"]",
+    "naver_variant_id": "56359717880",
+    "options_ko": [
+     "Left"
+    ],
+    "price_krw": 423760,
+    "price_usd": "423.76",
+    "sku": "FW-c696b4696baefac30367c713",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 2790,
+       "max": 2790
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "- Package Weight : 2.79 Kilograms",
+      "from": "description_text",
+      "compared": {
+       "value": 2200,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 1060,
+       "max": 1060
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "- Item Package Dimensions L x W x H : 41.75 x 7.25 x 3 inches",
+      "from": "description_text",
+      "compared": {
+       "value": 980,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 184,
+       "max": 184
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "- Item Package Dimensions L x W x H : 41.75 x 7.25 x 3 inches",
+      "from": "description_text",
+      "compared": {
+       "value": 200,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 76,
+       "max": 76
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "- Item Package Dimensions L x W x H : 41.75 x 7.25 x 3 inches",
+      "from": "description_text",
+      "compared": {
+       "value": 100,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"Right\"]",
+    "naver_variant_id": "56359717881",
+    "options_ko": [
+     "Right"
+    ],
+    "price_krw": 423760,
+    "price_usd": "423.76",
+    "sku": "FW-29a7b886c1903d457a977ff6",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 900,
+      "central": 1400,
+      "high": 2800,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-17"
+     },
+     "package_weight_g": {
+      "value": {
+       "min": 2790,
+       "max": 2790
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated packed weight",
+      "quote": "- Package Weight : 2.79 Kilograms",
+      "from": "description_text",
+      "compared": {
+       "value": 2200,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 1060,
+       "max": 1060
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "- Item Package Dimensions L x W x H : 41.75 x 7.25 x 3 inches",
+      "from": "description_text",
+      "compared": {
+       "value": 980,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 184,
+       "max": 184
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "- Item Package Dimensions L x W x H : 41.75 x 7.25 x 3 inches",
+      "from": "description_text",
+      "compared": {
+       "value": 200,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 76,
+       "max": 76
+      },
+      "source": "description_image",
+      "confidence": 5,
+      "how": "stated box size",
+      "quote": "- Item Package Dimensions L x W x H : 41.75 x 7.25 x 3 inches",
+      "from": "description_text",
+      "compared": {
+       "value": 100,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 423760,
+   "original_krw": 529700,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "모델명",
+    "value_ko": "69"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13164548371/fairwardgolf-13164548371-001-c8f1f646aff88b55.webp",
+    "sha256": "c8f1f646aff88b55153e0fc37cbec8069ec0c7e36028d5d241ddce00dd901348",
+    "width": 600,
+    "height": 600
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": true,
+   "customs_tax_type": "NOT_APPLICABLE",
+   "extra_fee_area2": 3000,
+   "extra_fee_area3": 5000,
+   "policy_text": "제주 추가 3,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "골프 웨지 69도 골프의 남녀 세트546069 세트 로브 샌드 피칭 길이 35인치 스틸 샤프트\nLeft\nRight\nDescription\n69 Golf Wedge Set – Precision and Performance in One Bundle Bundle and save with our 69Golf Wedge Set, featuring the signature 69 Wedge alongside a 54° and 60° wedge.\nEach wedge is meticulously milled to the highest standards and is fully tournament legal, offering exceptional control, spin, and versatility on any course.\nThis set is designed for golfers seeking the ultimate in precision, allowing you to tackle every shot with confidence.\nSpecifications: 69 Wedge Loft: 69°, Bounce: 10°, Lie: 64°, Head Weight: 309g, Shaft: Stepped Steel, Length: 35”, Grind: Heel & Toe 60 Wedge Loft: 60°, Bounce: 10°, Lie: 64°, Head Weight: 304g, Shaft: Stepped Steel, Length: 35”, Grind: Heel & Toe 54 Wedge Loft: 54°, Bounce: 10°, Lie: 63°, Head Weight: 302g, Shaft: Stepped Steel, Length: 35”, Grind: Heel & Toe Each club in this set is crafted for superior performance, from the high-quality stepped steel shaft to the heel and toe grind, ensuring a responsive feel and maximum versatility around the greens.\nElevate your short game with the 69 Golf Wedge Set—engineered for precision, designed for winning.\nGOODS SPECIFICS\n- Size : 54/60/69 Set\n- Color : Silver\n- Golf Club Flex : Stepped Steel\n- Hand Orientation : Right\n- Golf Club Loft : 69 Degrees\n- Material : Alloy Steel\n- Brand : 69\n- Shaft Material : Stepped Steel\n- UPC : 850049834292\n- Golf Club Type : Wedge Golf Club\n- Included Components : Wedge Set\n- Manufacturer : 69 Golf\n- Item Package Dimensions L x W x H : 41.75 x 7.25 x 3 inches\n- Package Weight : 2.79 Kilograms\n- Brand Name : 69\n- Model Name : WEDGE-SET-R WEDGE-SET-L\n- Suggested Users : mens\nFeature\n- Complete Wedge Set Bundle: The 69 Golf Wedge Set offers three precision-crafted wedges—54°, 60°, and our signature 69°—for versatile performance on approach shots and around the greens, giving you more control and accuracy.\n- Tournament-Approved Precision: Each wedge is milled to the highest standards and is tournament legal, designed for golfers seeking consistency, quality, and professional-level craftsmanship in every shot.\n- Durable Stepped Steel Shaft: Built with a stepped steel shaft across all wedges, this set provides a solid feel and consistent responsiveness, letting you strike with confidence on any course.\n- Optimal Spin with Heel & Toe Grind: Featuring a heel & toe grind on each wedge, this set enhances spin and control, allowing for better versatility in open-face shots and softer landings on the green.\n- Balanced Specifications for Precision Shots: Each wedge is crafted with tailored specifications—54° (Head Weight 302g, Lie 63°), 60° (Head Weight 304g, Lie 64°), and 69° (Head Weight 309g, Lie 64°)—offering targeted precision for all short-game needs.\n- Consistent Performance Across the Set: With uniform 10° bounce and 35” length for all wedges, this set is engineered for reliable, consistent performance, helping you master challenging shots with ease.",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260225_104/1771969951627VuQr4_JPEG/p-13106323697-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20260225_89/1771969951623E01WC_JPEG/p-13106323697-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20260225_128/1771969951622ummzz_JPEG/p-13106323697-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20260225_39/1771969951626CKgv5_JPEG/p-13106323697-s-1-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20260225_4/17719699516323TTTi_JPEG/p-13106323697-s-1-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20260225_155/1771969951621NWtb0_JPEG/p-13106323697-s-1-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20260225_91/1771969951625ChPiO_JPEG/p-13106323697-s-1-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20260225_2/1771969951627wBeH7_JPEG/p-13106323697-s-1-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20260225_250/1771969951632aE1MK_JPEG/p-13106323697-s-1-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20260225_105/1771969951618qFMhV_JPEG/p-13106323697-s-1-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20260225_269/1771969951721zHlTF_JPEG/p-13106323697-s-1-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20260225_280/1771969951723iJWel_JPEG/p-13106323697-s-1-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20260225_46/17719699517213YbCS_JPEG/p-13106323697-s-1-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20260225_109/1771969951721buN3V_JPEG/p-13106323697-s-1-A-13.jpg",
+   "https://shop-phinf.pstatic.net/20260225_95/1771969951730u1fFW_JPEG/p-13106323697-s-1-A-14.jpg",
+   "https://shop-phinf.pstatic.net/20260225_194/1771969951730n5fdc_JPEG/p-13106323697-s-1-A-15.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:a9527993c11366d4",
+   "kind": "title",
+   "ko": "골프 웨지 69도 골프의 남녀 세트546069 세트 로브 샌드 피칭 길이 35인치 스틸 샤프트"
+  },
+  {
+   "id": "option_name:85316000c5dc2627",
+   "kind": "option_name",
+   "ko": "Hand Orientation"
+  },
+  {
+   "id": "option_value:58eb9032e3bb83f0",
+   "kind": "option_value",
+   "ko": "Left"
+  },
+  {
+   "id": "option_value:883361d5d682a157",
+   "kind": "option_value",
+   "ko": "Right"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:c75cb66ae28d8ebc",
+   "kind": "spec_value",
+   "ko": "69"
+  }
+ ]
+}

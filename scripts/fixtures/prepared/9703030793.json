@@ -1,0 +1,531 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102165276:9703030793",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "measures_from_images",
+   "detail": "package_height_mm 2/2, package_length_mm 2/2, package_width_mm 2/2"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "PAID 15900 KRW"
+  },
+  {
+   "code": "overseas_shipping",
+   "detail": "NOT_APPLICABLE"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/marrcompanyplus/products/9703030793",
+  "channel_no": "102165276",
+  "product_id": "9703030793",
+  "category_id": "50002788"
+ },
+ "product": {
+  "title_ko": "TAYLORMADE 테일러메이드풀세트 RBZSPEEDLITE 남성골프채풀세트",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {
+   "gender": {
+    "value": "mens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "title",
+      "value": "mens",
+      "text": "TAYLORMADE 테일러메이드풀세트 RBZSPEEDLITE 남성골프채풀세트"
+     },
+     {
+      "source": "listing",
+      "value": "mens",
+      "text": "남성 골프채 풀세트"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "Shaft Material",
+    "values_ko": [
+     "합금(Alloy Steel)",
+     "탄소(Graphite)"
+    ]
+   },
+   {
+    "name_ko": "골프클럽플렉스",
+    "values_ko": [
+     "Stiff",
+     "Regular"
+    ]
+   }
+  ],
+  "facts": [
+   {
+    "label_ko": "손 방향",
+    "value_ko": "오른쪽"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "observed:[\"오른쪽\",\"합금(Alloy Steel)\",\"Stiff\"]",
+    "naver_variant_id": "54980083263",
+    "options_ko": [
+     "합금(Alloy Steel)",
+     "Stiff"
+    ],
+    "price_krw": 1895700,
+    "price_usd": "1895.70",
+    "sku": "FW-470cb8e101dbac36312447d4",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 1240,
+       "max": 1240
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1140,
+        "from": "baseline"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 400,
+       "max": 400
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "box side, with bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 400,
+        "from": "baseline",
+        "said_by": "description_text"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 320,
+       "max": 320
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "box side, with bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 320,
+        "from": "baseline",
+        "said_by": "description_text"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 230,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"오른쪽\",\"탄소(Graphite)\",\"Regular\"]",
+    "naver_variant_id": "54980083264",
+    "options_ko": [
+     "탄소(Graphite)",
+     "Regular"
+    ],
+    "price_krw": 1895700,
+    "price_usd": "1895.70",
+    "sku": "FW-2af562debc9d445ce1759114",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 3500,
+      "central": 5700,
+      "high": 9500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_weight_g": {
+      "low": 4500,
+      "central": 7000,
+      "high": 11000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-05"
+     },
+     "package_length_mm": {
+      "value": {
+       "min": 1240,
+       "max": 1240
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "longest club + margin",
+      "parts": [
+       {
+        "part": "longest club",
+        "value": 1140,
+        "from": "baseline"
+       },
+       {
+        "part": "margin",
+        "value": 100,
+        "from": "baseline"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 1250,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_width_mm": {
+      "value": {
+       "min": 400,
+       "max": 400
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "box side, with bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 400,
+        "from": "baseline",
+        "said_by": "description_text"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 280,
+       "source": "category_default",
+       "confidence": 1
+      }
+     },
+     "package_height_mm": {
+      "value": {
+       "min": 320,
+       "max": 320
+      },
+      "source": "composed",
+      "confidence": 2,
+      "how": "box side, with bag",
+      "parts": [
+       {
+        "part": "box side",
+        "value": 320,
+        "from": "baseline",
+        "said_by": "description_text"
+       }
+      ],
+      "baseline": {
+       "approved_by": "owner",
+       "approved_at": "2026-11-10"
+      },
+      "compared": {
+       "value": 230,
+       "source": "category_default",
+       "confidence": 1
+      }
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 1895700,
+   "original_krw": 2369600,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "원산지",
+    "value_ko": "일본산"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/9703030793/fairwardgolf-9703030793-001-a4b45aec1daa715c.webp",
+    "sha256": "a4b45aec1daa715c64f80a9fa0d43b44591eaded8b4a446236772f284a3a6c30",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/9703030793/fairwardgolf-9703030793-002-4a12231cfd1d5d88.webp",
+    "sha256": "4a12231cfd1d5d8856b664566b48100b74ce1bcfbe44c82be92f7f3789174262",
+    "width": 628,
+    "height": 1000
+   },
+   {
+    "position": 2,
+    "file": "collected/50002788-fixtures/images/9703030793/fairwardgolf-9703030793-003-f65f56aa0fb66dbe.webp",
+    "sha256": "f65f56aa0fb66dbe978f86073bdddae1503830e6cc10a9831378045853aa2e88",
+    "width": 600,
+    "height": 1000
+   },
+   {
+    "position": 3,
+    "file": "collected/50002788-fixtures/images/9703030793/fairwardgolf-9703030793-004-306a205a7f1e546f.webp",
+    "sha256": "306a205a7f1e546f3fbce24d6a4489ce88343f44844d27d6431dde49eb8694e0",
+    "width": 600,
+    "height": 1000
+   },
+   {
+    "position": 4,
+    "file": "collected/50002788-fixtures/images/9703030793/fairwardgolf-9703030793-005-d3554f764771fd02.webp",
+    "sha256": "d3554f764771fd02f4c894467b82546da8ba447fedc748f8c091133f86b0488c",
+    "width": 702,
+    "height": 1000
+   },
+   {
+    "position": 5,
+    "file": "collected/50002788-fixtures/images/9703030793/fairwardgolf-9703030793-006-74bdf72511abc73b.webp",
+    "sha256": "74bdf72511abc73bf21fe90d1e149dba1bdb916c9a4bddccfb553c6cc30762fe",
+    "width": 686,
+    "height": 1000
+   },
+   {
+    "position": 6,
+    "file": "collected/50002788-fixtures/images/9703030793/fairwardgolf-9703030793-007-3578ddff1f3c42d4.webp",
+    "sha256": "3578ddff1f3c42d47a3451ba6417a43236f531625164a0a0e9f04958c6a25ddd",
+    "width": 884,
+    "height": 1000
+   },
+   {
+    "position": 7,
+    "file": "collected/50002788-fixtures/images/9703030793/fairwardgolf-9703030793-008-fe232b237f25077a.webp",
+    "sha256": "fe232b237f25077a917ff99f8ce2ab2057e36d8ad03969ec7a50c00fd89b03f3",
+    "width": 600,
+    "height": 1000
+   },
+   {
+    "position": 8,
+    "file": "collected/50002788-fixtures/images/9703030793/fairwardgolf-9703030793-009-66a4f694c42c0925.webp",
+    "sha256": "66a4f694c42c0925874eb93d221c38a11d9a6a17f9b36dd6570375e193a09533",
+    "width": 600,
+    "height": 1290
+   },
+   {
+    "position": 9,
+    "file": "collected/50002788-fixtures/images/9703030793/fairwardgolf-9703030793-010-558e2231249e9028.webp",
+    "sha256": "558e2231249e9028adc7d94e3a52803b6e3c7038cbe776dbdddf650c723f56a5",
+    "width": 600,
+    "height": 1359
+   }
+  ],
+  "delivery": {
+   "scope": "international",
+   "fee_type": "PAID",
+   "base_fee": 15900,
+   "is_overseas": true,
+   "customs_tax_type": "NOT_APPLICABLE",
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": 5000,
+   "policy_text": "제주 추가 5,000원, 제주 외 도서지역 추가 5,000원",
+   "lead_time": {
+    "seller_average_days": null,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "1. Alloy Steel (Stiff)\n\n2. Graphite (Regular)\n\n캐디백 포함 10개 세트\n사이즈 : ‎125 x 37 x 25cm\n\n옵 션\n\n오른쪽",
+  "description_images": [
+   "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/profile/70ee85f2-2704-4ee9-adcd-fc4ce5dc0674.jpg",
+   "https://m.media-amazon.com/images/I/71-5lJOVr1L._AC_SL1500_.jpg",
+   "https://m.media-amazon.com/images/I/71rUFzlyhoL._AC_SL1500_.jpg",
+   "https://m.media-amazon.com/images/I/71dUKrrbhnL._AC_SL1500_.jpg",
+   "https://m.media-amazon.com/images/I/71rMbhlnoVL._AC_SL1500_.jpg",
+   "https://m.media-amazon.com/images/I/71Yh7rWCEUL._AC_SL1500_.jpg",
+   "https://m.media-amazon.com/images/I/51qum6DhESL._AC_SL1500_.jpg",
+   "https://m.media-amazon.com/images/I/71Gh7eiMsoL._AC_SL1500_.jpg",
+   "https://m.media-amazon.com/images/I/71k62ZVDfSL._AC_SL1500_.jpg",
+   "https://m.media-amazon.com/images/I/619E7ovDI9L._AC_SL1018_.jpg",
+   "https://m.media-amazon.com/images/I/41l7wAUGUPL._AC_.jpg",
+   "https://m.media-amazon.com/images/I/418WWy5rJJL._AC_.jpg",
+   "https://m.media-amazon.com/images/I/41OTDaK+KPL._AC_.jpg",
+   "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/8c877d40-0243-4099-bfa9-dead5c1dd0fb.jpg",
+   "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/8605c95f-41ab-47ea-a56e-21af0831c4df.jpg",
+   "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/e746302c-f110-4340-9767-92200c2647c7.jpg",
+   "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/a40dd444-169c-4f56-a1a0-d75a3190db66.jpg",
+   "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/f00b5ad5-2abe-403e-933d-d473325c1183.jpg",
+   "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/2e3c7d12-7688-4969-a51d-e9b1ebf65e40.jpg",
+   "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/54ddb0e7-2218-4fe9-8659-c833fe1a4012.jpg",
+   "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/d36baa32-d038-4049-ba00-26424ddab369.jpg",
+   "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/63abdba2-2b6a-4c65-8511-3caaf1ac26c8.jpg",
+   "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/ccb338b4-5c81-41bb-8849-a5cd2dd1e345.jpg",
+   "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/974c8649-e33a-4983-8409-ec72dcb78d27.jpg",
+   "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/d66a4288-b1f8-4e51-9386-4784e2c92652.jpg",
+   "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/e478ec0f-dd74-46e2-b78c-d3cfbf714378.jpg",
+   "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/profile/de10104c-1b44-4d22-8c07-22f6cb14d2b9.jpg"
+  ],
+  "description_dropped": [
+   {
+    "rule": "banner_image",
+    "text": "https://p.tcdn.co.kr/wejrljelwkrw/ss/658ac7c32f64a038818211b3"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://m.media-amazon.com/images/I/31LUxf6NgXL._AC_SL1500_.jpg"
+   },
+   {
+    "rule": "banner_image",
+    "text": "https://file.percenty.co.kr/public/658a1f7a2f64a03881818fef/products/658ac7c32f64a038818211b3/1fca54e5-7c20-443e-a24d-8c34a4bc0d22.jpg"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:db0da6e037e0ece9",
+   "kind": "title",
+   "ko": "TAYLORMADE 테일러메이드풀세트 RBZSPEEDLITE 남성골프채풀세트"
+  },
+  {
+   "id": "option_name:c3f95b28087be55a",
+   "kind": "option_name",
+   "ko": "Shaft Material"
+  },
+  {
+   "id": "option_value:1ef12058760515f8",
+   "kind": "option_value",
+   "ko": "합금(Alloy Steel)"
+  },
+  {
+   "id": "option_value:9ce81f4f984ff677",
+   "kind": "option_value",
+   "ko": "탄소(Graphite)"
+  },
+  {
+   "id": "option_name:ea8f76ee87d14ccd",
+   "kind": "option_name",
+   "ko": "골프클럽플렉스"
+  },
+  {
+   "id": "option_value:105a0e6c02906f66",
+   "kind": "option_value",
+   "ko": "Stiff"
+  },
+  {
+   "id": "option_value:b455784ab5307277",
+   "kind": "option_value",
+   "ko": "Regular"
+  },
+  {
+   "id": "fact_label:bf9c0c347d33c2f0",
+   "kind": "fact_label",
+   "ko": "손 방향"
+  },
+  {
+   "id": "fact_value:f594aa6a15b9381c",
+   "kind": "fact_value",
+   "ko": "오른쪽"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:2d5ea77cf8032c99",
+   "kind": "spec_value",
+   "ko": "일본산"
+  }
+ ]
+}

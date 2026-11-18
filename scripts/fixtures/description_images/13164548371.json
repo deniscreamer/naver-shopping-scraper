@@ -1,0 +1,1270 @@
+{
+ "engine": {
+  "name": "rapidocr PP-OCRv5 korean mobile",
+  "onnxruntime": "1.31.1",
+  "params": {
+   "Global.log_level": "warning",
+   "Global.max_side_len": 10000,
+   "Global.use_cls": false
+  },
+  "version": "3.10.0"
+ },
+ "format": "description_images/1",
+ "images": [
+  {
+   "bytes": 337383,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260225_104/1771969951627VuQr4_JPEG/p-13106323697-s-1-A-0.jpg",
+   "slices": [
+    {
+     "rows": [
+      {
+       "conf": 0.952,
+       "text": "해외 직구 상품",
+       "y": 140
+      },
+      {
+       "conf": 0.98,
+       "text": "쓸데없는 마진구조를 모두 빼고 합리적인",
+       "y": 711
+      },
+      {
+       "conf": 0.955,
+       "text": "넘치는 가성비",
+       "y": 718
+      },
+      {
+       "conf": 0.956,
+       "text": "가격으로 판매하고 있습니다.",
+       "y": 743
+      },
+      {
+       "conf": 0.998,
+       "text": "현지 물류센터에서 검수 후 한국발송을 하",
+       "y": 825
+      },
+      {
+       "conf": 0.96,
+       "text": "꼼꼼한 검수 / 고 있습니다.",
+       "y": 832
+      },
+      {
+       "conf": 0.945,
+       "text": "평균 배송 기간 / 일본 상품 영업일 기준 5일~ 14일",
+       "y": 936
+      },
+      {
+       "conf": 0.958,
+       "text": "미국 상품 영업일 기준 7일~21일",
+       "y": 968
+      },
+      {
+       "conf": 0.981,
+       "text": "본 마켓은 오직 정품만을 취급하고 있습니",
+       "y": 1051
+      },
+      {
+       "conf": 0.932,
+       "text": "100% 정품",
+       "y": 1059
+      },
+      {
+       "conf": 0.964,
+       "text": "다.가품일시 200%를 보상해드립니다.",
+       "y": 1083
+      },
+      {
+       "conf": 1.0,
+       "text": "배송안내",
+       "y": 1375
+      },
+      {
+       "conf": 0.996,
+       "text": "수취인 성함,전화번호,통관부호번호 모두 일치하여야합니다.",
+       "y": 1493
+      },
+      {
+       "conf": 0.962,
+       "text": "•상품주문 / 미국 현지 배송",
+       "y": 1814
+      },
+      {
+       "conf": 0.772,
+       "text": "영업일 기중 주문 당일 / 배송완료 후 검수까지",
+       "y": 1860
+      }
+     ],
+     "y0": 0,
+     "y1": 1880
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.999,
+       "text": "상품주문 / 미국 현지 배송",
+       "y": 96
+      },
+      {
+       "conf": 0.948,
+       "text": "영업일 기준 주문 당일 / 배송완료 후 검수까지",
+       "y": 141
+      },
+      {
+       "conf": 0.993,
+       "text": "주문생성을 해드립니다. / 1일~7일 정도 소요됩니다.",
+       "y": 171
+      },
+      {
+       "conf": 1.0,
+       "text": "통관진행 / 국내배송",
+       "y": 504
+      },
+      {
+       "conf": 0.997,
+       "text": "세관에서의 통관은 / 통관 후 국내배송은",
+       "y": 551
+      },
+      {
+       "conf": 0.979,
+       "text": "보통 3일~7일 정도 소요됩니다. / 1일~3일 정도 소요됩니다.",
+       "y": 581
+      },
+      {
+       "conf": 0.992,
+       "text": "골프 웨지 69도 골프의 남녀 세트546069 세트 로브 샌드 피칭",
+       "y": 783
+      },
+      {
+       "conf": 0.968,
+       "text": "길이 35인치 스틸 샤프트",
+       "y": 827
+      },
+      {
+       "conf": 0.973,
+       "text": "THE WEDGE SET / 9",
+       "y": 993
+      },
+      {
+       "conf": 0.993,
+       "text": "SIXTYNINE",
+       "y": 1176
+      },
+      {
+       "conf": 1.0,
+       "text": "60",
+       "y": 1235
+      },
+      {
+       "conf": 0.994,
+       "text": "SIXTYNINE",
+       "y": 1277
+      },
+      {
+       "conf": 0.788,
+       "text": "S",
+       "y": 1335
+      },
+      {
+       "conf": 0.925,
+       "text": "9",
+       "y": 1342
+      },
+      {
+       "conf": 0.994,
+       "text": "SIXTYNINE",
+       "y": 1372
+      }
+     ],
+     "y0": 1720,
+     "y1": 3322
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.994,
+       "text": "The Wedge Set",
+       "y": 470
+      },
+      {
+       "conf": 0.967,
+       "text": "Improve your short game with our custom-molded",
+       "y": 561
+      },
+      {
+       "conf": 0.947,
+       "text": "wedge set!",
+       "y": 597
+      },
+      {
+       "conf": 0.692,
+       "text": "60",
+       "y": 746
+      },
+      {
+       "conf": 0.988,
+       "text": "60",
+       "y": 774
+      },
+      {
+       "conf": 0.982,
+       "text": "54/60/69 Degree Set",
+       "y": 1135
+      },
+      {
+       "conf": 0.98,
+       "text": "Featuring our signature 69 Wedge accompanied by a 54",
+       "y": 1230
+      },
+      {
+       "conf": 0.939,
+       "text": "and 60. Are all the wedges you need.",
+       "y": 1265
+      },
+      {
+       "conf": 0.928,
+       "text": "Designed / with / Every",
+       "y": 1453
+      },
+      {
+       "conf": 0.981,
+       "text": "Golfer in Mind",
+       "y": 1499
+      },
+      {
+       "conf": 0.965,
+       "text": "Whether / you're a",
+       "y": 1571
+      },
+      {
+       "conf": 0.995,
+       "text": "beginner or a seasoned",
+       "y": 1601
+      },
+      {
+       "conf": 0.972,
+       "text": "player, these wedges",
+       "y": 1628
+      },
+      {
+       "conf": 0.977,
+       "text": "adapt to your playstyle.",
+       "y": 1661
+      },
+      {
+       "conf": 0.991,
+       "text": "SIXTYNINE",
+       "y": 1694
+      },
+      {
+       "conf": 0.999,
+       "text": "60",
+       "y": 1811
+      }
+     ],
+     "y0": 3322,
+     "y1": 5380
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.94,
+       "text": "Elevate / eYour  / Game with",
+       "y": 50
+      },
+      {
+       "conf": 0.978,
+       "text": "Precision / Engineering",
+       "y": 112
+      },
+      {
+       "conf": 0.982,
+       "text": "USGA Approved",
+       "y": 173
+      },
+      {
+       "conf": 0.976,
+       "text": "Milled to the highest standards and tournament legal.",
+       "y": 207
+      },
+      {
+       "conf": 0.997,
+       "text": "69",
+       "y": 299
+      },
+      {
+       "conf": 0.994,
+       "text": "SIXTYNINE",
+       "y": 335
+      },
+      {
+       "conf": 0.826,
+       "text": "O",
+       "y": 402
+      },
+      {
+       "conf": 0.981,
+       "text": "SIXTYNINE",
+       "y": 434
+      },
+      {
+       "conf": 1.0,
+       "text": "54",
+       "y": 482
+      },
+      {
+       "conf": 0.987,
+       "text": "SIXTYNINE",
+       "y": 527
+      },
+      {
+       "conf": 0.992,
+       "text": "SIXTYNINE",
+       "y": 916
+      },
+      {
+       "conf": 0.999,
+       "text": "Left",
+       "y": 1310
+      },
+      {
+       "conf": 0.933,
+       "text": "THE WEDGE SET / 9",
+       "y": 1375
+      },
+      {
+       "conf": 0.969,
+       "text": "9",
+       "y": 1535
+      },
+      {
+       "conf": 0.991,
+       "text": "SIXTYNINE",
+       "y": 1558
+      },
+      {
+       "conf": 0.997,
+       "text": "60",
+       "y": 1614
+      },
+      {
+       "conf": 0.984,
+       "text": "SIXTYNINE",
+       "y": 1659
+      },
+      {
+       "conf": 1.0,
+       "text": "54",
+       "y": 1707
+      },
+      {
+       "conf": 0.98,
+       "text": "SIXTYNINE",
+       "y": 1753
+      }
+     ],
+     "y0": 5380,
+     "y1": 7364
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.996,
+       "text": "SIXTYNINE",
+       "y": 257
+      },
+      {
+       "conf": 0.978,
+       "text": "SIGNATURE 69 WEDGE",
+       "y": 1195
+      },
+      {
+       "conf": 0.953,
+       "text": "ACCOMPANIED BY A 54 AND 60",
+       "y": 1246
+      },
+      {
+       "conf": 0.998,
+       "text": "69",
+       "y": 1433
+      },
+      {
+       "conf": 0.925,
+       "text": "60°",
+       "y": 1467
+      },
+      {
+       "conf": 0.989,
+       "text": "Sleek Matte Black Design",
+       "y": 1839
+      },
+      {
+       "conf": 0.981,
+       "text": "Command attention on the course with a stunning",
+       "y": 1910
+      },
+      {
+       "conf": 0.988,
+       "text": "matte black finish that combines performance and style.",
+       "y": 1941
+      }
+     ],
+     "y0": 7364,
+     "y1": 9428
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.979,
+       "text": "69 Specs-",
+       "y": 61
+      },
+      {
+       "conf": 0.889,
+       "text": "Loft | 69°",
+       "y": 95
+      },
+      {
+       "conf": 0.903,
+       "text": "Bounce | 10°",
+       "y": 116
+      },
+      {
+       "conf": 0.845,
+       "text": "Lie | 64",
+       "y": 138
+      },
+      {
+       "conf": 0.993,
+       "text": "Head Weight 309g",
+       "y": 161
+      },
+      {
+       "conf": 0.974,
+       "text": "Shaft | Stepped Steel",
+       "y": 186
+      },
+      {
+       "conf": 0.952,
+       "text": "Length | 35\"",
+       "y": 208
+      },
+      {
+       "conf": 0.927,
+       "text": "Grind | Heel & Toe",
+       "y": 228
+      },
+      {
+       "conf": 0.995,
+       "text": "60 Specs-",
+       "y": 264
+      },
+      {
+       "conf": 0.898,
+       "text": "Loft | 60o",
+       "y": 299
+      },
+      {
+       "conf": 0.883,
+       "text": "Bounce | 10°",
+       "y": 321
+      },
+      {
+       "conf": 0.815,
+       "text": "Lie | 64",
+       "y": 343
+      },
+      {
+       "conf": 0.961,
+       "text": "Head Weight | 304g",
+       "y": 366
+      },
+      {
+       "conf": 0.97,
+       "text": "Shaft | Stepped Steel",
+       "y": 392
+      },
+      {
+       "conf": 0.985,
+       "text": "Length |35\"",
+       "y": 411
+      },
+      {
+       "conf": 0.91,
+       "text": "Grind | Heel & Toe",
+       "y": 434
+      },
+      {
+       "conf": 0.99,
+       "text": "54 Specs-",
+       "y": 470
+      },
+      {
+       "conf": 0.96,
+       "text": "Loft | 54",
+       "y": 507
+      },
+      {
+       "conf": 0.929,
+       "text": "Bounce | 10",
+       "y": 527
+      },
+      {
+       "conf": 0.931,
+       "text": "Lie | 63",
+       "y": 550
+      },
+      {
+       "conf": 0.971,
+       "text": "Head Weight | 302g",
+       "y": 574
+      },
+      {
+       "conf": 0.968,
+       "text": "Shaft | Stepped Steel",
+       "y": 598
+      },
+      {
+       "conf": 0.923,
+       "text": "Length | 35\"",
+       "y": 619
+      },
+      {
+       "conf": 0.993,
+       "text": "SIXTYNINE",
+       "y": 956
+      },
+      {
+       "conf": 0.664,
+       "text": "m",
+       "y": 1096
+      },
+      {
+       "conf": 0.919,
+       "text": "6 9 G O L F",
+       "y": 1721
+      }
+     ],
+     "y0": 9428,
+     "y1": 11299
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.997,
+       "text": "Right",
+       "y": 25
+      },
+      {
+       "conf": 0.678,
+       "text": "THE WEDGE SET / 9",
+       "y": 89
+      },
+      {
+       "conf": 0.994,
+       "text": "SIXTYNINE",
+       "y": 273
+      },
+      {
+       "conf": 0.981,
+       "text": "60 / G",
+       "y": 329
+      },
+      {
+       "conf": 0.995,
+       "text": "SIXTYNINE",
+       "y": 373
+      },
+      {
+       "conf": 0.676,
+       "text": "4",
+       "y": 445
+      },
+      {
+       "conf": 0.993,
+       "text": "SIXTYNINE",
+       "y": 468
+      },
+      {
+       "conf": 0.967,
+       "text": "The Wedge Set",
+       "y": 1168
+      },
+      {
+       "conf": 0.972,
+       "text": "Improve your short game with our custom-molded",
+       "y": 1259
+      },
+      {
+       "conf": 0.948,
+       "text": "wedge set!",
+       "y": 1296
+      },
+      {
+       "conf": 0.992,
+       "text": "60",
+       "y": 1476
+      },
+      {
+       "conf": 0.966,
+       "text": "54/60/69 Degree Set",
+       "y": 1833
+      },
+      {
+       "conf": 0.971,
+       "text": "Featuring our signature 69 Wedge accompanied by a 54",
+       "y": 1929
+      },
+      {
+       "conf": 0.943,
+       "text": "and 60. Are all the wedges you need.",
+       "y": 1966
+      }
+     ],
+     "y0": 11299,
+     "y1": 13368
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.953,
+       "text": "Designed with Every",
+       "y": 74
+      },
+      {
+       "conf": 0.988,
+       "text": "Golfer in Mind",
+       "y": 130
+      },
+      {
+       "conf": 0.984,
+       "text": "Whether you're a",
+       "y": 198
+      },
+      {
+       "conf": 0.996,
+       "text": "beginner or a seasoned",
+       "y": 230
+      },
+      {
+       "conf": 0.974,
+       "text": "player, these wedges",
+       "y": 258
+      },
+      {
+       "conf": 0.972,
+       "text": "adapt to your playstyle.",
+       "y": 290
+      },
+      {
+       "conf": 0.989,
+       "text": "SIXTYNINE",
+       "y": 324
+      },
+      {
+       "conf": 0.999,
+       "text": "60",
+       "y": 438
+      },
+      {
+       "conf": 0.971,
+       "text": "Elevate Your Game with",
+       "y": 741
+      },
+      {
+       "conf": 0.976,
+       "text": "Precision / Engineering",
+       "y": 800
+      },
+      {
+       "conf": 0.976,
+       "text": "USGA Approved",
+       "y": 860
+      },
+      {
+       "conf": 0.972,
+       "text": "Milled to the highest standards and tournament legal.",
+       "y": 898
+      },
+      {
+       "conf": 0.998,
+       "text": "69",
+       "y": 987
+      },
+      {
+       "conf": 0.993,
+       "text": "SIXTYNINE",
+       "y": 1022
+      },
+      {
+       "conf": 0.99,
+       "text": "SIXTYNINE",
+       "y": 1121
+      },
+      {
+       "conf": 1.0,
+       "text": "54",
+       "y": 1169
+      },
+      {
+       "conf": 0.984,
+       "text": "SIXTYNINE",
+       "y": 1215
+      },
+      {
+       "conf": 0.993,
+       "text": "SIXTYNINE",
+       "y": 1604
+      }
+     ],
+     "y0": 13368,
+     "y1": 15328
+    },
+    {
+     "rows": [
+      {
+       "conf": 1.0,
+       "text": "Description",
+       "y": 12
+      },
+      {
+       "conf": 0.96,
+       "text": "69 Golf Wedge Set - Precision and Performance in One Bundle Bundle and save with our 69Golf Wedge Set, featuring t",
+       "y": 54
+      },
+      {
+       "conf": 0.953,
+       "text": "he signature 69 Wedge alongside a 54° and 60' wedge.",
+       "y": 80
+      },
+      {
+       "conf": 0.983,
+       "text": "Each wedge is meticulously milled to the highest standards and is fully tournament legal, offering exceptional control, s",
+       "y": 100
+      },
+      {
+       "conf": 0.97,
+       "text": "pin, and versatility on any course.",
+       "y": 122
+      },
+      {
+       "conf": 0.978,
+       "text": "This set is designed for golfers seeking the ultimate in precision, allowing you to tackle every shot with confidence.",
+       "y": 142
+      },
+      {
+       "conf": 0.978,
+       "text": "Specifications: 69 Wedge Loft: 69°, Bounce: 10°, Lie: 64', Head Weight: 309g, Shaft: Stepped Steel, Length: 35\", Grind:",
+       "y": 166
+      },
+      {
+       "conf": 0.974,
+       "text": "Heel & Toe 60 Wedge Loft: 60', Bounce: 10°, Lie: 64°, Head Weight: 304g, Shaft: Stepped Steel, Length: 35\", Grind: He",
+       "y": 189
+      },
+      {
+       "conf": 0.975,
+       "text": "el & Toe 54 Wedge Loft: 54°, Bounce: 10°, Lie: 63°, Head Weight: 302g, Shaft: Stepped Steel, Length: 35\", Grind: Heel",
+       "y": 208
+      },
+      {
+       "conf": 0.967,
+       "text": "& Toe Each club in this set is crafted for superior performance, from the high-quality stepped steel shaft to the heel and",
+       "y": 232
+      },
+      {
+       "conf": 0.971,
+       "text": "toe grind, ensuring a responsive feel and maximum versatility around the greens.",
+       "y": 256
+      },
+      {
+       "conf": 0.99,
+       "text": "Elevate your short game with the 69 Golf Wedge Set—engineered for precision, designed for winning.",
+       "y": 275
+      },
+      {
+       "conf": 0.983,
+       "text": "GOODS SPECIFICS",
+       "y": 367
+      },
+      {
+       "conf": 0.966,
+       "text": "- Size : 54/60/69 Set",
+       "y": 409
+      },
+      {
+       "conf": 0.955,
+       "text": "- Color : Silver",
+       "y": 435
+      },
+      {
+       "conf": 0.932,
+       "text": "- Golf Club Flex : Stepped Steel",
+       "y": 463
+      },
+      {
+       "conf": 0.966,
+       "text": "- Hand Orientation : Right",
+       "y": 490
+      },
+      {
+       "conf": 0.968,
+       "text": "- Golf Club Loft : 69 Degrees",
+       "y": 519
+      },
+      {
+       "conf": 0.949,
+       "text": "- Material : Alloy Steel",
+       "y": 544
+      },
+      {
+       "conf": 0.959,
+       "text": "- Brand : 69",
+       "y": 572
+      },
+      {
+       "conf": 0.968,
+       "text": "- Shaft Material : Stepped Steel",
+       "y": 598
+      },
+      {
+       "conf": 0.976,
+       "text": "- UPC: 850049834292",
+       "y": 625
+      },
+      {
+       "conf": 0.918,
+       "text": "- Golf Club Type : Wedge Golf Club",
+       "y": 652
+      },
+      {
+       "conf": 0.976,
+       "text": "- Included Components : Wedge Set",
+       "y": 679
+      },
+      {
+       "conf": 0.968,
+       "text": "- Manufacturer : 69 Golf",
+       "y": 707
+      },
+      {
+       "conf": 0.944,
+       "text": "– Item Package Dimensions L x W × H : 41.75 × 7.25 × 3 inches",
+       "y": 736
+      },
+      {
+       "conf": 0.975,
+       "text": "-Package Weight : 2.79 Kilograms",
+       "y": 760
+      },
+      {
+       "conf": 0.955,
+       "text": "- Brand Name : 69",
+       "y": 788
+      },
+      {
+       "conf": 0.974,
+       "text": "- Model Name : WEDGE-SET-R WEDGE-SET-L",
+       "y": 817
+      },
+      {
+       "conf": 0.977,
+       "text": "- Suggested Users : mens",
+       "y": 840
+      },
+      {
+       "conf": 0.964,
+       "text": "Feature",
+       "y": 871
+      },
+      {
+       "conf": 0.96,
+       "text": "- Complete Wedge Set Bundle: The 69 Golf Wedge Set offers three precision-crafted wedges—54°, 60°, and our",
+       "y": 889
+      },
+      {
+       "conf": 0.972,
+       "text": "signature 69°—for versatile performance on approach shots and around the greens, giving you more control and",
+       "y": 913
+      },
+      {
+       "conf": 0.993,
+       "text": "accuracy.",
+       "y": 937
+      },
+      {
+       "conf": 0.966,
+       "text": "- Tournament-Approved Precision: Each wedge is miled to the highest standards and is tournament legal, designed for",
+       "y": 957
+      },
+      {
+       "conf": 0.984,
+       "text": "golfers seeking consistency, quality, and professional-level craftsmanship in every shot.",
+       "y": 979
+      },
+      {
+       "conf": 0.976,
+       "text": "- Durable Stepped Steel Shaft: Built with a stepped steel shaft across all wedges, this set provides a solid feel and",
+       "y": 1002
+      },
+      {
+       "conf": 0.995,
+       "text": "consistent responsiveness, letting you strike with confidence on any course.",
+       "y": 1026
+      },
+      {
+       "conf": 0.965,
+       "text": "- Optimal Spin with Heel & Toe Grind: Featuring a heel & toe grind on each wedge, this set enhances spin and control,",
+       "y": 1046
+      },
+      {
+       "conf": 0.968,
+       "text": "allowing for better versatility in open-face shots and softer landings on the green.",
+       "y": 1067
+      },
+      {
+       "conf": 0.95,
+       "text": "- Balanced Specifications for Precision Shots: Each wedge is crafted with tailored specifications—54 (Head Weight",
+       "y": 1088
+      },
+      {
+       "conf": 0.971,
+       "text": "302g, Lie 63°), 60° (Head Weight 304g, Lie 64°), and 69° (Head Weight 309g, Lie 64°)—offering targeted precision for",
+       "y": 1110
+      },
+      {
+       "conf": 0.988,
+       "text": "all short-game needs.",
+       "y": 1135
+      },
+      {
+       "conf": 0.947,
+       "text": "- Consistent Performance Across the Set: With uniform 10° bounce and 35\" length for all wedges, this set is engineered",
+       "y": 1156
+      },
+      {
+       "conf": 0.975,
+       "text": "for reliable, consistent performance, helping you master challenging shots with ease.",
+       "y": 1177
+      },
+      {
+       "conf": 0.996,
+       "text": "관부가세 취소 및 환불",
+       "y": 1284
+      },
+      {
+       "conf": 0.967,
+       "text": "해외직구 제품은 일별 $150 이내는 면세이나,이후 초과이면 합산과세 됩니다.",
+       "y": 1382
+      },
+      {
+       "conf": 0.986,
+       "text": "만약 다른 상품도 같이 주문하시면 통관일이 겹치지 않도록 하고,",
+       "y": 1415
+      },
+      {
+       "conf": 0.985,
+       "text": "합산 과세시 고객님이 직접 관부가세를 납부하셔야합니다.",
+       "y": 1448
+      },
+      {
+       "conf": 0.973,
+       "text": "(이는 판매자가 받는 금액이 아니며 나라에 부과하는 세금입니다.)",
+       "y": 1479
+      },
+      {
+       "conf": 0.999,
+       "text": "주문취소",
+       "y": 1539
+      },
+      {
+       "conf": 0.995,
+       "text": "주문 후 변경 및 취소는 현지 주문서 생성 전 까지만 가능합니다.",
+       "y": 1575
+      },
+      {
+       "conf": 0.949,
+       "text": "(해외주문 접수 이후에는 취소는 반품으로 처리되며 현지 배송비가 청구됩니다.)",
+       "y": 1606
+      },
+      {
+       "conf": 0.958,
+       "text": "배송지연으로 인한 주문취소는 주문일로부터 45일 초과시에 가능합니다.",
+       "y": 1640
+      },
+      {
+       "conf": 0.993,
+       "text": "해외직배송 특성상 구매결정 혹은 구매확인 후 구매취소가 불가능합니다.",
+       "y": 1673
+      },
+      {
+       "conf": 0.972,
+       "text": "해외직배송 상품은 재고를 보유하고 있지 않아 해외 현지 사정에 따라 품절 혹은 배송지연이 발생",
+       "y": 1706
+      },
+      {
+       "conf": 0.945,
+       "text": "할 수있습니다",
+       "y": 1739
+      },
+      {
+       "conf": 0.977,
+       "text": "환불",
+       "y": 1801
+      },
+      {
+       "conf": 0.904,
+       "text": "제품 출고 이후 취소 시, 출고로 인한 배송비와 물류 수수료가 발생할 수 있습니다.",
+       "y": 1835
+      },
+      {
+       "conf": 0.59,
+       "text": "ㅁHHT / CILTT",
+       "y": 1871
+      }
+     ],
+     "y0": 15328,
+     "y1": 17208
+    },
+    {
+     "rows": [
+      {
+       "conf": 0.649,
+       "text": "에되적매능경품는 제고들 모유이고 있지 않이 에되 연지 지상에 띠다 품말 독는 매능지인이 말상",
+       "y": 0
+      },
+      {
+       "conf": 0.872,
+       "text": "할 수 있습니다.",
+       "y": 19
+      },
+      {
+       "conf": 0.982,
+       "text": "환불",
+       "y": 80
+      },
+      {
+       "conf": 0.928,
+       "text": "제품 출고 이후 취소 시, 출고로 인한 배송비와 물류 수수료가 발생할 수 있습니다.",
+       "y": 115
+      },
+      {
+       "conf": 0.935,
+       "text": "오배송 및 변질 혹은 하자 제품은 제품 수령 이후 7일 이내 무상으로 환불이 가능합니다.",
+       "y": 150
+      },
+      {
+       "conf": 0.927,
+       "text": "그러나 구매자의 단순 변심으로 인한 반품시 해외 왕복 배송 비용 및 수수료가 부과될 수 있습니다.",
+       "y": 181
+      },
+      {
+       "conf": 0.997,
+       "text": "구매관련문의사항",
+       "y": 248
+      },
+      {
+       "conf": 0.974,
+       "text": "본 업체는 해외 브랜드를 연결해주는 중간 서비스 업체로서 최종적인 선택은 구매자의 권한/책임",
+       "y": 277
+      },
+      {
+       "conf": 0.876,
+       "text": "입니다.",
+       "y": 310
+      },
+      {
+       "conf": 0.958,
+       "text": "안심번호 서비스 이용 시,일정 기간 후 번호가 소멸되어 연락이 부재하면 배송 및 통관에 문제가",
+       "y": 344
+      },
+      {
+       "conf": 0.874,
+       "text": "발생할 수 있습니다.",
+       "y": 375
+      },
+      {
+       "conf": 0.949,
+       "text": "고객센터 이용은 각 플랫폼의 Q&A게시판을 활용하시면 가장 빠르게 답변을 받으실 수 있습니다.",
+       "y": 411
+      },
+      {
+       "conf": 0.908,
+       "text": "전기제품 사용 및 전압 안내",
+       "y": 476
+      },
+      {
+       "conf": 0.982,
+       "text": "해외 전기제품의 경우 국가별 전압 및 플러그 규격이 상이할 수 있습니다.",
+       "y": 509
+      },
+      {
+       "conf": 0.937,
+       "text": "구매 전 반드시 제품 상세페이지 내 전압(SPEC) 및 사용 환경을 확인해 주시기 바랍니다.",
+       "y": 541
+      },
+      {
+       "conf": 0.903,
+       "text": "전압이 상이한 국가에서 사용 시 변압기 사용이 필요할 수 있으며, 변압기 미사용 또는 부적합한 사",
+       "y": 573
+      },
+      {
+       "conf": 0.933,
+       "text": "용으로 인한 제품 손상, 작동 불량 등은 제품 불량에 해당하지 않을 수 있습니다.",
+       "y": 606
+      },
+      {
+       "conf": 0.945,
+       "text": "※ 플러그 변환 어답터(일명'돼지코')는 전압을 변환하지 않습니다.",
+       "y": 640
+      }
+     ],
+     "y0": 17048,
+     "y1": 17898
+    }
+   ],
+   "status": "read",
+   "width": 945
+  },
+  {
+   "bytes": 227139,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260225_89/1771969951623E01WC_JPEG/p-13106323697-s-1-A-1.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 220655,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260225_128/1771969951622ummzz_JPEG/p-13106323697-s-1-A-2.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 357866,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260225_39/1771969951626CKgv5_JPEG/p-13106323697-s-1-A-3.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 333236,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260225_4/17719699516323TTTi_JPEG/p-13106323697-s-1-A-4.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 139028,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260225_155/1771969951621NWtb0_JPEG/p-13106323697-s-1-A-5.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 181195,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260225_91/1771969951625ChPiO_JPEG/p-13106323697-s-1-A-6.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 316072,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260225_2/1771969951627wBeH7_JPEG/p-13106323697-s-1-A-7.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 318706,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260225_250/1771969951632aE1MK_JPEG/p-13106323697-s-1-A-8.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 85458,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260225_105/1771969951618qFMhV_JPEG/p-13106323697-s-1-A-9.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 341212,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260225_269/1771969951721zHlTF_JPEG/p-13106323697-s-1-A-10.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 294641,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260225_280/1771969951723iJWel_JPEG/p-13106323697-s-1-A-11.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 278449,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260225_46/17719699517213YbCS_JPEG/p-13106323697-s-1-A-12.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 222683,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260225_109/1771969951721buN3V_JPEG/p-13106323697-s-1-A-13.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 383758,
+   "height": 1134,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260225_95/1771969951730u1fFW_JPEG/p-13106323697-s-1-A-14.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  },
+  {
+   "bytes": 287503,
+   "height": 888,
+   "host": "naver",
+   "link": "https://shop-phinf.pstatic.net/20260225_194/1771969951730n5fdc_JPEG/p-13106323697-s-1-A-15.jpg",
+   "slices": [],
+   "status": "stitched",
+   "width": 945
+  }
+ ],
+ "key": "fairwardgolf:naver:102301688:13164548371",
+ "links_sha256": "cc7a867629fa9fc0ffad1af6e62b6e8949c00c2140a0259b7fc5993fe84af10f",
+ "product_id": "13164548371",
+ "seconds": 22.7,
+ "skipped": []
+}

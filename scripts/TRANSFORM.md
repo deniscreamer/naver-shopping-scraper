@@ -179,11 +179,12 @@ published, SKUs and prices equal on 201 of 201 variants):
   UNIT_QUANTITY_PAID listing goes into the purchase; any other fee type counts as free (see PRICE.md, The price). An
   `extra_fee_text` that is only the return fee the notice states ("18000" = 반품비용 편도 18000원) is dropped;
   another bare number ("7000" beside a 4,000 area fee) is kept.
-- **Notes for later stages**: `option_name_placeholder` (an axis named 선택 / 선택2 / 옵션 / "옵션+...": name it from
-  its values in translation; a fact with such a label gets an empty label), `paid_addons_left_out` (how many paid
-  add-ons were not offered), `title_names_one_variant` (a word of one option value is in the title, "12종", while
-  others are sold too: the translation keeps the title to what every variant is; words that together point at part
-  of the values count, "12종" with 12종 / 9종 x 스틸 / 카본, "10.5R"; 여성 / 남성 do not when the title names both),
+- **Notes for later stages**: `option_name_placeholder` (an axis named 선택 / 선택2 / 옵션 / "옵션+...", or an Amazon
+  label of another kind than its values: name it from its values in translation; a fact with such a label gets an
+  empty label), `paid_addons_left_out` (how many paid add-ons were not offered), `title_names_one_variant` (a
+  word of one option value is in the title, "12종", while others are sold too: the translation keeps the title to
+  what every variant is; words that together point at part of the values count, "12종" with 12종 / 9종 x 스틸 /
+  카본, "10.5R"; 여성 / 남성 do not when the title names both),
   `few_pieces` ("[3PCS]" in the title or 모델명: a few clubs, not a full set), `purchase_agency`
   (구매대행 in the specs / notice / delivery policy), `description_mentions_gifts` (이벤트 / 사은품 rows are hidden,
   the description still promises 사은품 / 증정), `variants_capped` ("486 -> 100": more combinations than the
@@ -224,6 +225,12 @@ published, SKUs and prices equal on 201 of 201 variants):
     (`_repeated_axis`; wedge sets only: a full set's iron axis repeating the driver's flex names the set's parts).
     Amazon's "Style Name" / "Pattern Name" is a placeholder name, named from its values in translation; on the shop:
     28 wedge sets, 5 live (12557380462, 13261483119, 13754846756, 13164555233, 13383025767) on a resend only;
+    an Amazon label of one kind over values of another ("Shaft Material" over "TALL LENGTH (PLUS 1 INCH)", AGXGOLF
+    13390487313, 2026-11-18) is a placeholder too: a Latin name of exactly one kind (material, flex, hand) that no
+    value says, while every value says one same other kind (length, material, flex, hand, loft, colour as whole
+    words); one value saying the name's kind keeps it ("Steel - 1 Inch Shorter", 12079165169; "합금(Alloy Steel)",
+    9703030793; "Left" / "Right" under "Hand Orientation"), and a Hangul name is never judged (`_axis_misnamed`;
+    on the shop: 1 of 3,173, live, on a resend only);
   - a value of exactly 25 characters (Naver's cut) is whole again from the description's option list ("옵션 이미지"
     ... "상세 이미지") where exactly one entry is longer and starts with it and the rest of it holds no other value of
     the row; in a wedge-sets category Amazon's index in front of every value of an axis ("1 52 56 60 Degree Set

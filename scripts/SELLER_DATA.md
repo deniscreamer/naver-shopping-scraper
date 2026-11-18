@@ -192,6 +192,9 @@ Code: `transform.options_and_variants`.
   ("(선택)샤프트/드라이버/아이언"): shown without, the SKU keeps the raw tuple; values equal once unnumbered stay
   numbered (option_values_duplicate, 9496523995).
 - Axes named 선택 / 옵션 / 색상 whose values are not colours ("세트 R / 세트 S", 13462927626): option_name_placeholder.
+- An Amazon axis label of one kind over values of another ("Shaft Material" over "TALL LENGTH (PLUS 1 INCH)", AGXGOLF
+  13390487313, 2026-11-18): option_name_placeholder, named from its values (`transform._axis_misnamed`); look-alikes
+  kept: 12079165169 ("Steel - 1 Inch Shorter"), 9703030793 ("합금(Alloy Steel)"), 13164548371 ("Hand Orientation").
 - A SIMPLE option of one value can be the set's only option ("드라이버+우드+하이브리드/SR", 9168175809): a fact.
 - Configurators of 128-497 combinations at one price (an XXIO 14 set: 6 x 9 x 9): offered up to the shop's cap,
   covering every pair of values first, shared over the first axis (variants_capped).
@@ -449,9 +452,6 @@ Research 2026-11-07 on the 50 fixture products, then the runs dated below. Code:
 - Wedge sets (the wedge-set review, 2026-11-17): the brand "N" taken from 제조자 on 6 agency products (C02); a
   라이각 row holding club lengths (13866792640); a 웨지 로프트각 row out of order and short (11139638174); a value cut
   at 25 characters whose full form is not unique in the description (13164569476, 13372131108).
-- An option name whose every value names another fact: AGXGOLF 13390487313 "Shaft Material" with values "... LENGTH"
-  (Length); no narrow lever (an option_name dictionary entry would rename 12079165169 and 9703030793 too), the C50
-  placeholder rule would need widening (2026-11-17).
 - A choice written only in the text with no option group ("48°/52°/56° or 50°/54°/58° 선택가능", 10504295292): no axis
   and no hold note (2026-11-17).
 - Amazon's "Item Dimensions L x W x H" (48"L x 6"W x 6"H on 13468741368) is not read as the package's sides: the
