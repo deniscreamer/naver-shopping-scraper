@@ -492,12 +492,16 @@ def test_brand_spelled_as_the_vendor_whatever_the_case_in_the_title():
     assert out["vendor"] == "CALLAWAY" and out["title"] == "CALLAWAY REVA Complete Set"
 
 
-def test_vendor_spellings_take_the_dictionarys_case(monkeypatch):
+def test_vendor_spellings_keep_the_stores_first_then_the_dictionarys(monkeypatch):
+    """The owner, 2026-11-17: the first spelling known stays, whatever its case: the store's oldest (9951345559:
+    a dictionary entry written later as "Kirkland" no longer turns a live KIRKLAND), the dictionary's for a brand the
+    store does not have yet (PING, Yonex, 2026-11-09), the shop's own for one the dictionary lacks."""
     import translation_dicts
     monkeypatch.setattr(translation_dicts.Dictionaries, "__init__", lambda self: setattr(
-        self, "entries", {"brand": {"핑": "PING", "요넥스": "Yonex"}}))
-    out = PB.vendor_spellings({"ping": "Ping", "yonex": "YONEX", "acme": "ACME"})
-    assert out == {"ping": "PING", "yonex": "Yonex", "acme": "ACME"}
+        self, "entries", {"brand": {"핑": "PING", "요넥스": "Yonex", "커클랜드": "Kirkland"}}))
+    out = PB.vendor_spellings({"kirkland": "KIRKLAND", "acme": "ACME"})
+    assert out == {"kirkland": "KIRKLAND", "acme": "ACME", "ping": "PING", "yonex": "Yonex"}
+    assert PB.sp.vendor_name("kirkland", out) == "KIRKLAND" and PB.sp.vendor_name("YONEX", out) == "Yonex"
 
 
 def test_price_and_platform_sentences_out_and_photo_only_rows_get_a_line():

@@ -116,3 +116,20 @@ def test_stage_many_keeps_the_order(photos):
     p._post, p._upload, p._sleep = FakeGraphQL(), Bucket(), (lambda s: None)
     out = p.stage_many([(path, "IMAGE", None) for path, _, _ in photos])
     assert out == [f"staged:r{i}.webp" for i in range(12)]
+
+
+def test_vendor_spellings_keep_the_oldest_whatever_its_case():
+    """The owner, 2026-11-17: the first spelling a brand was published with stays (Kirkland 2nd generation came
+    before 9951345559 KIRKLAND; Stix before stix), not the most used and not the one in lower case."""
+    pages = [[{"vendor": "Kirkland"}, {"vendor": "PING"}, {"vendor": "stix"}],
+             [{"vendor": "KIRKLAND"}, {"vendor": "Ping"}, {"vendor": "Stix"}, {"vendor": "Stix"}, {"vendor": None}]]
+    seen = []
+
+    def graphql(query, variables=None, token=None):
+        seen.append(query)
+        i = 0 if variables["c"] is None else 1
+        return {"products": {"nodes": pages[i], "pageInfo": {"hasNextPage": i == 0, "endCursor": "c1"}}}
+    p = SA.ProductsAdmin.__new__(SA.ProductsAdmin)
+    p._post = graphql
+    assert p.vendor_spellings() == {"kirkland": "Kirkland", "ping": "PING", "stix": "stix"}
+    assert all("sortKey: CREATED_AT" in q for q in seen)

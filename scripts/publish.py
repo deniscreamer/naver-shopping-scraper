@@ -432,19 +432,22 @@ def prices_of(payload: dict[str, Any]) -> list[int]:
 
 
 def vendor_spellings(store: dict[str, str]) -> dict[str, str]:
-    """{lower case: spelling}: the brand dictionary's spelling first, whatever the case of the shop's or the model's
-    (the owner, 2026-11-09: PING stays PING, Yonex stays Yonex), then the shop's for a brand the dictionary does not
-    have (2026-11-09: the run's map was read once from an empty shop)."""
+    """{brand_key: spelling}: the first spelling a brand was known by stays, compared without case, dots or spaces
+    (the owner, 2026-11-17: "whichever came first stays, upper or lower case"): the store's oldest spelling
+    (shopify_admin's order), then the brand dictionary's for a brand the store does not have yet (its first value:
+    translation_dicts.brand_spelling), then the model's (a run remembers each new vendor for its next products).
+    Before 2026-11-17 the dictionary came first and a dictionary entry written later in another case changed a live
+    vendor (9951345559 KIRKLAND -> Kirkland)."""
     from translation_dicts import Dictionaries
     out: dict[str, str] = {}
+    for v in store.values():                         # the store's first spelling of a brand (oldest product first)
+        out.setdefault(sp.brand_key(v), v)
     try:
         brands = list(Dictionaries().entries.get("brand", {}).values())
     except Exception:                                       # no dictionary: the shop's spellings only
         brands = []
     for v in brands:
         out.setdefault(sp.brand_key(sp.vendor_name(v)), sp.vendor_name(v))
-    for v in store.values():                         # the store's first spelling of a brand (shopify_admin's order)
-        out.setdefault(sp.brand_key(v), v)
     return out
 
 

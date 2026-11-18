@@ -117,9 +117,10 @@ The owner's rules (`shopify_payload.py`):
 - **Title, vendor**: the translation's (the title prompt makes the store name: brand first, no shop, distributor or
   after-sales words, no loft / flex / shaft codes, no club list, no usage or gift words). The vendor loses a
   maker's company form and a second brand ("Prokenex / SJG Co., Ltd." -> "Prokenex", "Mizuno, Hillcreek" ->
-  "Mizuno") and takes the brand dictionary's spelling, compared without case (the owner, 2026-11-09: PING stays
-  PING, Yonex stays Yonex, whatever the case it came in; the dictionary keeps one spelling per brand), else the
-  shop's (not the capitals one when the shop has both; a run remembers each new vendor for its next products); the
+  "Mizuno") and keeps the first spelling the brand was known by, compared without case, dots or spaces (the owner,
+  2026-11-17: "whichever came first stays"): the store's oldest product's spelling, else the brand dictionary's
+  (the dictionary keeps a brand's first spelling too: `translation_dicts.brand_spelling`; PING stays PING, Yonex
+  stays Yonex, 2026-11-09), else the model's (a run remembers each new vendor for its next products); the
   title spells the brand as the vendor; a title without its brand gets it in front (not the tenant's name). Handle from the title (ASCII, the brand in front; a taken handle
   gets `-2`, `-3`; an update keeps the shop's handle, `--rehandle` sets the new one with a redirect).
 - **Price**: per variant from `shop_pricing.Policy.quote` (see PRICE.md, The price). In a shop with the delivery

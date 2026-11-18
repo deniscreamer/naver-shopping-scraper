@@ -133,20 +133,23 @@ class ProductsAdmin(_Writer):
         return active[0]["id"]
 
     def vendor_spellings(self) -> dict[str, str]:
-        """{lower case: the shop's spelling}: one not in capitals when the shop has one ("CALLAWAY", "Callaway" ->
-        "Callaway"; PING stays PING), else the most used (vendor search ignores case, so every product is read)."""
-        from collections import Counter
-        counts: Counter = Counter()
-        cursor = None
+        """{lower case: the shop's spelling}, the oldest first: a brand keeps the spelling it was first published
+        with, whatever case came later (the owner, 2026-11-17: KIRKLAND 9951345559 stays KIRKLAND; "case does not
+        matter much, the first one known stays"). Every product is read, oldest first (vendor search ignores case)."""
+        first: dict[str, int] = {}
+        cursor, n = None, 0
         while True:
-            page = self._post("""query($c: String) { products(first: 250, after: $c) { pageInfo { hasNextPage endCursor }
-                nodes { vendor } } }""", {"c": cursor})["products"]
-            counts.update(n["vendor"] for n in page["nodes"] if n["vendor"])
+            page = self._post("""query($c: String) { products(first: 250, after: $c, sortKey: CREATED_AT) {
+                pageInfo { hasNextPage endCursor } nodes { vendor } } }""", {"c": cursor})["products"]
+            for node in page["nodes"]:
+                if node["vendor"]:
+                    first.setdefault(node["vendor"], n)
+                    n += 1
             if not page["pageInfo"]["hasNextPage"]:
                 break
             cursor = page["pageInfo"]["endCursor"]
         out: dict[str, str] = {}
-        for name in sorted(counts, key=lambda n: (n.isupper(), -counts[n], n)):
+        for name in sorted(first, key=first.__getitem__):
             out.setdefault(name.lower(), name)
         return out
 
