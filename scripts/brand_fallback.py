@@ -105,6 +105,11 @@ _NO_FIRM = re.compile(r"(?i)^(?:별도\s*표기|알\s*수\s*없음|미상|불명
                       # "UnKnown_ピン Yonex …"; "Artist Unknown" is a name and stays)
                       r"|unknown_.*)$")
 _CODE = re.compile(r"\s*\((?:\d+|자체\s*제작[^()]*)\)\s*$")       # 코알라(200874), 지브이골프코리아(자체제작 상품)
+# a wholesaler or a store many sellers name in their 브랜드 / 제조사 rows, never a maker (2026-11-19, the seller-vendor
+# review: (주)감씨 is the "공급사정보 (주식회사 감씨)" of dozens of shops reselling Inparo, whose images say "인파로만의
+# 유니크한 컬러로 생산" and "인파로 제품은 … PL 보험"; 골드벙커 a store ("골드벙커 다른 상품 보기에서 구매 가능"); 40 live
+# junior products went out as the vendors Gamssi and Gold Bunker): no brand there, the fallback goes on (the images: 인파로)
+_SUPPLIERS = re.compile(r"^(?:감씨|gamssi|골[드프]\s*벙커|gold\s*bunker)$", re.I)          # 골프벙커: a seller's typo
 
 
 def trade_name(name: str | None) -> bool:
@@ -137,7 +142,8 @@ def clean(name: str | None) -> str | None:
     words = value.split(" ")
     value = " ".join(w for i, w in enumerate(words) if i == 0 or w != words[i - 1])
     bare = value.strip(" .,;:·-")              # "브랜드." is no brand (2026-11-18, the chipper scroll 10029117508);
-    if not value or _NOT_A_NAME.search(value) or _NO_FIRM.search(bare) or trade_name(value):   # "Golf Co." stays
+    if not value or _NOT_A_NAME.search(value) or _NO_FIRM.search(bare) or trade_name(value) \
+            or _SUPPLIERS.search(bare):                                                     # "Golf Co." stays
         return None
     return value
 
@@ -199,7 +205,9 @@ _MAKING = re.compile(r"(?i)\b(?:oem|odm)\b|^(?:중국|한국|국산|일본|대�
 
 
 def distributors(origin: str | None) -> list[str]:
-    parts = [p.strip() for x in _BRACKETS.findall(origin or "") for p in re.split(r"[/,]", x)]
+    # a company mark inside the brackets is no bracket of its own ("중국산((주)감씨)" read as the brand "주": 2026-11-19)
+    origin = re.sub(r"\(주\)|㈜", "", origin or "")
+    parts = [p.strip() for x in _BRACKETS.findall(origin) for p in re.split(r"[/,]", x)]
     # a bare 협력사 or a word that names no firm is none either (2026-11-13: "(협력사)", "(해외몰)")
     return [c for p in parts if p and (c := clean(p)) and not trade_name(p) and not _POINTER.search(p)
             and not _AGENCY.search(p) and not _MAKING.search(p)]

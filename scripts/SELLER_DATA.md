@@ -379,6 +379,13 @@ Code: `transform.prepare`, `brand_fallback.py` (2026-11-08).
   `resellers_own` the phrase as the brand row, the origin step skips the seller's own shop, its words in any order:
   "프롬 조이 협력사" by 조이프롬, 12657977112); a page's section heading "DETAILED DESIGN" read 10 times (13848307900:
   a spec word, no Latin brand).
+- The seller-vendor review (2026-11-19): (주)감씨, the 공급사 ("공급사정보 (주식회사 감씨)") of dozens of shops reselling
+  Inparo, and the store 골드벙커 (also 골프벙커) in the 브랜드 / 제조사 rows: 40 live junior products went out as the
+  vendors Gamssi and Gold Bunker while their images say "인파로만의 유니크한 컬러로 생산" and "인파로 제품은 … PL 보험"
+  (13826709716). `clean` names no brand there (`_SUPPLIERS`), the fallback reads 인파로 in the images (59 products) or
+  leaves 노브랜드; "(주)" inside the origin's brackets is no firm ("중국산((주)감씨)" was the brand "주"). The general
+  form (a maker row the images never name while they name another shop brand) was measured and not taken: 125
+  products, among them real makers beside their lines and rivals (Honma / HOUMA, Callaway / Strata, PING / TaylorMade).
 
 ### Origin, gifts, add-ons
 

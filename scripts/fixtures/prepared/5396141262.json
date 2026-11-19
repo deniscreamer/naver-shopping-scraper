@@ -113,10 +113,6 @@
   },
   "specs": [
    {
-    "label_ko": "제조사",
-    "value_ko": "감씨"
-   },
-   {
     "label_ko": "브랜드",
     "value_ko": "GB"
    },
@@ -223,16 +219,6 @@
    "id": "brand:b4043b0b8297e379",
    "kind": "brand",
    "ko": "GB"
-  },
-  {
-   "id": "spec_label:3ecc0ce552283c4e",
-   "kind": "spec_label",
-   "ko": "제조사"
-  },
-  {
-   "id": "spec_value:bd513d1e6e911d56",
-   "kind": "spec_value",
-   "ko": "감씨"
   },
   {
    "id": "spec_label:559380a1cea8a17c",

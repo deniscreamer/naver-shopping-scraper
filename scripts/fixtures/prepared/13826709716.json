@@ -1,0 +1,382 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:100084414:13826709716",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "shipping_paid",
+   "detail": "PAID 3000 KRW"
+  },
+  {
+   "code": "description_tiles_include_banners",
+   "detail": "notice_info_top_1px.jpg, order_notice_text.png, notice_info_bottom_1px.jpg, 해당제품 반품배송비시작=, 해당제품 반품배송비끝=, Bottom 주문배송정보안내="
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/superbox/products/13826709716",
+  "channel_no": "100084414",
+  "product_id": "13826709716",
+  "category_id": "50002787"
+ },
+ "product": {
+  "title_ko": "Inparo JR. 주니어 골프 클럽 9-12세 - 아이언/퍼터/드라이버 [W72B0A4]",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {},
+  "options": [
+   {
+    "name_ko": "클럽 선택",
+    "values_ko": [
+     "9-12세 아이언",
+     "9-12세 퍼터",
+     "9-12세 드라이버"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"01. 9-12세 아이언\"]",
+    "naver_variant_id": "60476819402",
+    "options_ko": [
+     "9-12세 아이언"
+    ],
+    "price_krw": 49060,
+    "price_usd": "49.06",
+    "sku": "FW-c30b3c92b314ee1182751b7e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"02. 9-12세 퍼터\"]",
+    "naver_variant_id": "60476819403",
+    "options_ko": [
+     "9-12세 퍼터"
+    ],
+    "price_krw": 44000,
+    "price_usd": "44.00",
+    "sku": "FW-5ba57eb3aa31d11f15784f39",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"03. 9-12세 드라이버\"]",
+    "naver_variant_id": "60476819404",
+    "options_ko": [
+     "9-12세 드라이버"
+    ],
+    "price_krw": 62040,
+    "price_usd": "62.04",
+    "sku": "FW-3be8e45378b43686b3be3669",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 44000,
+   "original_krw": 44000,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "원산지",
+    "value_ko": "중국산"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13826709716/fairwardgolf-13826709716-001-d4a0f3ac094fef58.webp",
+    "sha256": "d4a0f3ac094fef58580706e4010a82eedb4360d82e2d32595da58fe02e7880fe",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "PAID",
+   "base_fee": 3000,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 5000,
+   "extra_fee_area3": 8000,
+   "policy_text": "제주 추가 5,000원, 제주 외 도서지역 추가 8,000원",
+   "lead_time": {
+    "seller_average_days": 2.0,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "!\n주문전 신중히 결정하신 후 주문해 주시기 바랍니다.\n반품.교환시 왕복택배비 13,000원 부과 됩니다.\n해당상품은 원배송비가 6,500원인 제품으로, 반품/교환시 왕복 13,000원이 부과되는 제품입니다.\n마켓에서 반품비용 6,000원 결제하셔도 추가택배비는 별도로 지불해주셔야 하는점 안내해 드립니다.\n묶음배송 가능수량 5개 N 입니다.\n※무료배송 상품이 아니며, 건당 N개씩 배송비 부과되는 상품입니다.\n① 묶음배송 수량 초과시 편도배송비 3,000원+추가배송비α를 수량별 N건당 추가입금해 주셔야 합니다.\n② 배송비 계산법 : 주문수량 ÷ 묶음가능수량 N개×배송비 3,000원+추가배송비α＝배송비\n③ 배송비 예제 : 주문수량 20개 ÷ 묶음가능수량 5개 N×배송비 3,000원+추가배송비α 1,000원＝배송비 16,000원\n'전자상거래 등에서의 소비자보호에 관한 법률' 등 관계법령이 정하는 교환/반품 제한사유에 해당되는 경우에 청약철회 불가합니다.\n오배송 및 불량/파손 건의 경우 제품과 포장박스를 포함한 사진 확인이 반드시 필요하오니 보내주셔야 됩니다.\n주문을 하신후 2~3일정도의 여유를 가지시고 기다려주시기를 바랍니다.\n일부 도서 및 산간지역은 추가 배송비가 있을 수 있으며, 지역에 따라 배송이 불가 할 수도 있습니다.",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20261022_269/17926459071220iNE4_JPEG/p-13765395402-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20261022_291/17926459071229kSme_JPEG/p-13765395402-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20261022_214/1792645907123osdAS_JPEG/p-13765395402-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20261022_159/1792645907120opOll_JPEG/p-13765395402-s-1-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20261022_217/1792645907120Yreyf_JPEG/p-13765395402-s-1-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20261022_91/1792645907117cidVN_JPEG/p-13765395402-s-1-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20261022_135/17926459071205AzJS_JPEG/p-13765395402-s-1-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20261022_133/17926459071184dqoe_JPEG/p-13765395402-s-1-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20261022_135/17926459072113OAqO_JPEG/p-13765395402-s-1-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20261022_153/17926459071277ExTg_JPEG/p-13765395402-s-1-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20261022_265/1792645907120bjOEg_JPEG/p-13765395402-s-1-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20261022_275/1792645907195t5uvk_JPEG/p-13765395402-s-1-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20261022_88/1792645907216NPV7g_JPEG/p-13765395402-s-1-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20261022_196/1792645907220bjvAE_JPEG/p-13765395402-s-1-A-13.jpg",
+   "https://shop-phinf.pstatic.net/20261022_123/1792645907218OtWrv_JPEG/p-13765395402-s-1-A-14.jpg",
+   "https://shop-phinf.pstatic.net/20261022_53/1792645907221qBeCi_JPEG/p-13765395402-s-1-A-15.jpg",
+   "https://shop-phinf.pstatic.net/20261022_276/17926459072165UM19_JPEG/p-13765395402-s-1-A-16.jpg",
+   "https://shop-phinf.pstatic.net/20261022_10/1792645907289I2prH_JPEG/p-13765395402-s-1-A-17.jpg",
+   "https://shop-phinf.pstatic.net/20261022_148/1792645907233W1eEK_JPEG/p-13765395402-s-1-A-18.jpg",
+   "https://shop-phinf.pstatic.net/20261022_80/1792645907295M2uxQ_JPEG/p-13765395402-s-1-A-19.jpg",
+   "https://shop-phinf.pstatic.net/20261022_243/1792645907295iUzA3_JPEG/p-13765395402-s-1-A-20.jpg",
+   "https://shop-phinf.pstatic.net/20261022_74/17926459073065Atez_JPEG/p-13765395402-s-1-A-21.jpg",
+   "https://shop-phinf.pstatic.net/20261022_135/1792645907320Frqyk_JPEG/p-13765395402-s-1-A-22.jpg",
+   "https://shop-phinf.pstatic.net/20261022_246/1792645907318qFbLg_JPEG/p-13765395402-s-1-A-23.jpg",
+   "https://shop-phinf.pstatic.net/20261022_128/1792645907328LC2I5_JPEG/p-13765395402-s-1-A-24.jpg",
+   "https://shop-phinf.pstatic.net/20261022_116/1792645907341sAUys_JPEG/p-13765395402-s-1-A-25.jpg",
+   "https://shop-phinf.pstatic.net/20261022_75/17926459073760yncs_JPEG/p-13765395402-s-1-A-26.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:68829588c0cedb49",
+   "kind": "title",
+   "ko": "Inparo JR. 주니어 골프 클럽 9-12세 - 아이언/퍼터/드라이버 [W72B0A4]"
+  },
+  {
+   "id": "option_name:ac964aa9d579bdb3",
+   "kind": "option_name",
+   "ko": "클럽 선택"
+  },
+  {
+   "id": "option_value:d17fdd6a8012fe06",
+   "kind": "option_value",
+   "ko": "9-12세 아이언"
+  },
+  {
+   "id": "option_value:b600032f70ae885c",
+   "kind": "option_value",
+   "ko": "9-12세 퍼터"
+  },
+  {
+   "id": "option_value:891f00ed8b5df7c1",
+   "kind": "option_value",
+   "ko": "9-12세 드라이버"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f6e28ba7ee26a02e",
+   "kind": "spec_value",
+   "ko": "중국산"
+  }
+ ]
+}

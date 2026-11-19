@@ -28,8 +28,8 @@
  },
  "product": {
   "title_ko": "막팔아스토어 주니어 골프채 어린이퍼터 주니어퍼터 어린이드라이버",
-  "brand_ko": "골드벙커",
-  "brand_source": "manufacturer:specs:제조사",
+  "brand_ko": null,
+  "brand_source": null,
   "attributes": {},
   "options": [
    {
@@ -201,10 +201,6 @@
   },
   "specs": [
    {
-    "label_ko": "제조사",
-    "value_ko": "골드벙커"
-   },
-   {
     "label_ko": "원산지",
     "value_ko": "해외|아시아|중국"
    }
@@ -258,11 +254,6 @@
    "ko": "막팔아스토어 주니어 골프채 어린이퍼터 주니어퍼터 어린이드라이버"
   },
   {
-   "id": "brand:17433b517596640a",
-   "kind": "brand",
-   "ko": "골드벙커"
-  },
-  {
    "id": "option_name:cb076d9796f531e2",
    "kind": "option_name",
    "ko": "옵션"
@@ -276,16 +267,6 @@
    "id": "option_value:891f00ed8b5df7c1",
    "kind": "option_value",
    "ko": "9-12세 드라이버"
-  },
-  {
-   "id": "spec_label:3ecc0ce552283c4e",
-   "kind": "spec_label",
-   "ko": "제조사"
-  },
-  {
-   "id": "spec_value:17433b517596640a",
-   "kind": "spec_value",
-   "ko": "골드벙커"
   },
   {
    "id": "spec_label:765723acfadff305",

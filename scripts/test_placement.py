@@ -71,6 +71,8 @@ EXPECTED = {
     "13261416672": ("chippers",), "13551983071": ("chippers",),
     # the two-brand scan (2026-11-19): titles the model wrote under an older brand ("Pongdang Swim", "PING" from 핑크)
     "13510579139": (J,), "13848307900": (J,),
+    # the seller-vendor review (2026-11-19): 골드벙커, a store, as the maker of an Inparo set
+    "13826709716": (J,),
 }
 UNRESOLVED = {"12497168529": "gender conflict"}           # ready, placement holds it: the reason
 SPLIT = {"13369469193": ("unisex", {M: 3, W: 3}),        # 성별 남녀공용: each section every variant

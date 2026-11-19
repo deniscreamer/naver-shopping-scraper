@@ -105,7 +105,7 @@ def test_the_images_name_the_maker_when_the_seller_names_a_trader(name, title, o
 @pytest.mark.parametrize("name, brand", [
     # 2026-11-12, junior clubs: what sellers write in the 브랜드 / 제조사 rows
     ("코알라(200874)", "코알라"), ("지브이골프코리아(자체제작 상품)", "지브이골프코리아"), ("던롭 던롭", "던롭"),
-    ("(주)감씨", "감씨"), ("진월드스타 어린이용 주니어 골프 클럽 아이언 퍼터 드라이버", "진월드스타"),
+    ("(주)감씨", None), ("진월드스타 어린이용 주니어 골프 클럽 아이언 퍼터 드라이버", "진월드스타"),
     ("6~8세 퍼터", None), ("우리쇼핑하자 협력 업체", None), ("유무상회", None), ("건이네 만물상", None),
     ("상아네", None), ("세모물상점", None), ("유니코스 협력사", "유니코스"),
     ("GB", "GB"), ("핑", "핑"), ("아화골프", "아화골프"), ("U.S. Kids Golf", "U.S. Kids Golf"),
@@ -118,6 +118,20 @@ def test_the_images_name_the_maker_when_the_seller_names_a_trader(name, title, o
 ])
 def test_a_sellers_brand_row_cleaned(name, brand):
     assert B.clean(name) == brand
+
+
+def test_a_wholesaler_or_a_store_in_the_rows_is_no_brand():
+    """2026-11-19, the seller-vendor review: (주)감씨, the 공급사 of dozens of shops reselling Inparo, and 골드벙커, a
+    store, in the 브랜드 / 제조사 rows: 40 live junior products went out as the vendors Gamssi and Gold Bunker. No brand
+    there; the images name the maker (13826709716: "인파로만의 유니크한 컬러", "인파로 제품은 … PL 보험"). (주) inside the
+    origin's brackets is no firm of its own ("중국산((주)감씨)" was read as the brand 주)."""
+    for name in ("(주)감씨", "감씨", "㈜감씨", "골드벙커", "골드 벙커", "골프벙커", "Gold Bunker", "GAMSSI"):
+        assert B.clean(name) is None, name
+    assert B.distributors("중국산((주)감씨)") == [] and B.distributors("중국산(골드벙커)") == []
+    assert B.distributors("일본산((주)혼마코리아)") == ["혼마코리아"]
+    got, source, _ = B.decide("주니어 골프 클럽 9-12세 - 아이언/퍼터/드라이버", "중국산(골드벙커)",
+                              ["인파로", "PGM", "GB"], _rows("13826709716"))      # the title without its Inparo JR.
+    assert (got, source) == ("인파로", "images_text")
 
 
 def test_a_latin_brand_is_read_as_whole_words_only():
