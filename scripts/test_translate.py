@@ -1257,6 +1257,84 @@ def test_reask_needs_named_products(tmp_path):
         T.run("fairwardgolf", None, str(tmp_path), reask=True)
 
 
+SET_SINGLE = "only one club is sold, the buyer picks its type: do not call it a set; name it as a single junior golf club"
+
+
+def test_reask_context_reaches_the_models_title_item(tmp_path):
+    """--reask --context (2026-11-19, sweep's title.set_single: 13693475187's title promised a set of driver, irons
+    and putter while the buyer picks one club): the text joins the re-asked title's context, after any note's; the
+    model's request carries it; a title not re-asked, an option name, a hand row and a run without --reask never get it."""
+    note = {"code": "title_word_unproven", "detail": "단조"}
+    p = small(title="키즈 주니어 골프채 세트 드라이버 아이언 퍼터 단조", notes=[note])
+    title = next(t["id"] for t in p["texts"] if t["kind"] == "title")
+    old = "Kids' Junior Golf Club Set with Driver, Iron and Putter"
+    store = {(p["key"], title): old}
+    en, _, pending = T.plan(p, dicts(tmp_path), store, TENANT, None, True, (), SET_SINGLE)
+    item = next(i for i in pending if i["id"] == title)
+    assert en[title] == old and item["context"].endswith("; " + SET_SINGLE) and "(forged)" in item["context"]
+    assert not [i for i in T.plan(p, dicts(tmp_path), store, TENANT, None, False, (), SET_SINGLE)[2]
+                if i["id"] == title]                                             # not re-asked: kept, no context
+    assert not [i for i in T.plan(p, dicts(tmp_path), store, TENANT, None, True, {(p["key"], title)}, SET_SINGLE)[2]
+                if i["id"] == title]                                             # a hand row: never asked
+    plain = small(title="키즈 주니어 골프채 세트 드라이버 아이언 퍼터")             # no note: the context is the text alone
+    tid = next(t["id"] for t in plain["texts"] if t["kind"] == "title")
+    _, _, pending = T.plan(plain, dicts(tmp_path), {(plain["key"], tid): old}, TENANT, None, True, (), SET_SINGLE)
+    assert next(i for i in pending if i["id"] == tid)["context"] == SET_SINGLE
+    model = FakeModel()
+    out = T.translate_product(plain, dicts(tmp_path), {(plain["key"], tid): old}, TENANT, model, "t", None, True,
+                              (), SET_SINGLE)
+    sent = json.loads(model.calls[0][0]["content"])["items"]
+    assert next(i for i in sent if i["kind"] == "title")["context"] == SET_SINGLE        # the batch's short ids
+    assert out.record["en"][tid] != old and out.record["status"] == "translated"
+    off = T.translate_product(plain, dicts(tmp_path), {(plain["key"], tid): old}, TENANT, None, "t", None, True,
+                              (), SET_SINGLE)
+    assert off.record["en"][tid] == old                                          # offline: nothing asked, kept
+    # a placeholder option name asked again: its own "values: ..." context, never the title's text
+    o = {"name_ko": "Color", "values_ko": ["Iron", "Putter", "Driver"]}
+    named = small(options=[o], title="키즈 주니어 골프채 세트 드라이버 아이언 퍼터",
+                  notes=[{"code": "option_name_placeholder", "detail": "Color"}])
+    nid = next(t["id"] for t in named["texts"] if t["kind"] == "option_name")
+    _, _, pending = T.plan(named, dicts(tmp_path), {(named["key"], nid): "Color"}, TENANT, None, True, (), SET_SINGLE)
+    ctx = next(i for i in pending if i["id"] == nid)["context"]
+    assert ctx.startswith("values: ") and SET_SINGLE not in ctx
+
+
+def test_reask_context_only_for_the_products_named(tmp_path):
+    """run(only=[A], reask, context): A's title goes to the model with the context; B, not named, is resolved from
+    what is kept: its stored English, nothing sent for it."""
+    a = small(title="키즈 주니어 골프채 세트 드라이버 아이언 퍼터")
+    b = {**small(title="주니어 골프채 세트 아이언 퍼터"), "key": "fairwardgolf:naver:2:2"}
+    shop = tmp_path / "shops" / "fairwardgolf"
+    (shop / "prepared").mkdir(parents=True)
+    (shop / "translation").mkdir()
+    (shop / "prepared" / "products.jsonl").write_text(
+        "".join(json.dumps(p, ensure_ascii=False) + "\n" for p in (a, b)), encoding="utf-8")
+    title = {p["key"]: next(t["id"] for t in p["texts"] if t["kind"] == "title") for p in (a, b)}
+    old = {a["key"]: "Kids' Junior Golf Club Set", b["key"]: "Junior Golf Club Set with Iron and Putter"}
+    (shop / "translation" / "texts.jsonl").write_text("".join(
+        json.dumps({"key": k, "id": title[k], "kind": "title", "ko": "x", "en": old[k], "by": "fake"},
+                   ensure_ascii=False) + "\n" for k in old), encoding="utf-8")
+    model = FakeModel()
+    got = T.run("fairwardgolf", model, str(tmp_path / "shops"), dicts=dicts(tmp_path), only=[a["key"]],
+                reask=True, context="  " + SET_SINGLE + " ")
+    sent = [i for c in model.calls for i in json.loads(c[0]["content"])["items"]]
+    assert [i["context"] for i in sent if i["kind"] == "title"] == [SET_SINGLE]   # A's title only, the text stripped
+    rec = {r["key"]: r for r in got["records"]}
+    assert rec[b["key"]]["model_calls"] == 0 and rec[b["key"]]["en"][title[b["key"]]] == old[b["key"]]
+    assert rec[a["key"]]["en"][title[a["key"]]] != old[a["key"]]
+
+
+def test_context_needs_reask(tmp_path, capsys):
+    with pytest.raises(T.TranslateError):
+        T.run("fairwardgolf", None, str(tmp_path), only=["fairwardgolf:naver:1:1"], context=SET_SINGLE)
+    with pytest.raises(T.TranslateError):                                       # with --reask, but blank
+        T.run("fairwardgolf", None, str(tmp_path), only=["fairwardgolf:naver:1:1"], reask=True, context="  ")
+    with pytest.raises(SystemExit) as e:
+        T.main(["fairwardgolf", "--offline", "--only", "fairwardgolf:naver:1:1", "--context", SET_SINGLE,
+                "--shops-root", str(tmp_path)])
+    assert e.value.code == 2 and "--context goes with --reask" in capsys.readouterr().err
+
+
 def test_load_fixed_follows_the_last_row(tmp_path):
     a = {"key": "k", "id": "t", "kind": "title", "en": "A", "by": "review-2026-11-17"}
     assert T._load_fixed(_rows(tmp_path / "a.jsonl", a)) == {("k", "t")}

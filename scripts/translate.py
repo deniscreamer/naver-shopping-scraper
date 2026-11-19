@@ -23,7 +23,7 @@ product `untranslated`; what passed is kept (dictionaries, the product's store),
 rest.
 
     .venv/bin/python scripts/translate.py fairwardgolf [--offline] [--only REF] [--keys-file F] [--job ID [--event E]]
-                                                      [--limit N] [--reask] [--shops-root DIR]
+                                                      [--limit N] [--reask [--context TEXT]] [--shops-root DIR]
 
   --offline   no model: resolve from the stores, dictionaries and rules only; say what would be asked
   --only      the one product the model may be asked for: a key, Naver product id, handle or link (shop_view.resolve)
@@ -31,6 +31,8 @@ rest.
               names no product or several stops the command (exit 2) before anything is asked
   --reask     with named products only: their own titles and placeholder option names asked again with today's
               notes, the old English kept until a checked answer; a hand correction (by review-...) never
+  --context   with --reask only: a text added to each re-asked title's context (joined with any note's), e.g. "only
+              one club is sold, the buyer picks its type: do not call it a set" (sweep's title.set_single, 2026-11-19)
 
 The keys: `.env` names a key file (TRANSLATE_KEY_FILE), mode 0600 and ignored by git, holding ANTHROPIC_API_KEY=...
 and OPENAI_API_KEY=... (either may be missing: no fallback, or OpenAI only). OPENAI_TRANSLATE_MODEL in `.env`
@@ -344,7 +346,7 @@ def same_brand_line(brand: str, vendor: str) -> bool:
 
 def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, str], str],
          tenant: str, brands: dict[tuple[str, str], str] | None = None, reask: bool = False,
-         fixed: Collection[tuple[str, str]] = ()
+         fixed: Collection[tuple[str, str]] = (), context: str | None = None
          ) -> tuple[dict[str, str], dict[str, str], list[dict[str, Any]]]:
     """-> (English by text id, where each came from, the items the model must translate). A title the model
     translated under another brand than the product's now (`brands`: the brand_ko a title row was asked with) is
@@ -353,7 +355,9 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
     again). `reask` (translate.py --reask, 2026-11-17, the wedge-set review W10: 75 live titles kept the English
     asked before the notes title_lofts_not_sold / title_cut / title_word_unproven existed): the product's own title
     and placeholder option names are asked again with today's notes, the old English kept until a checked answer
-    comes; a hand correction (`fixed`: its last row written by a review) is never asked again."""
+    comes; a hand correction (`fixed`: its last row written by a review) is never asked again. `context`
+    (translate.py --reask --context, 2026-11-19, sweep's title.set_single: 92 live titles promising a set where one
+    club is sold): with `reask`, added to each re-asked title item's context, after any note's."""
     key = prepared["key"]
     product = prepared.get("product") or {}
     placeholders = _placeholders(prepared)
@@ -441,6 +445,8 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
                         "this product's page says forged: leave it out of the title")
             item["context"] = "; ".join(said)
             item["drop"] = (item.get("drop") or []) + [sanitize("title", w, tenant, category) for w in unproven]
+        if kind == "title" and again and context:
+            item["context"] = "; ".join([*([item["context"]] if item.get("context") else []), context])
         if kind == "option_name" and ko in placeholders:
             item["context"] = "values: " + " | ".join(values_of.get(ko, [])[:12])
             item["placeholder"] = True           # named from its values: its own digits (선택2) need not survive
@@ -697,13 +703,13 @@ def _back(model_en: dict[str, str], problems: list[dict[str, Any]],
 def translate_product(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, str], str],
                       tenant: str, model: "Model | Chain | None", now: str,
                       brands: dict[tuple[str, str], str] | None = None, reask: bool = False,
-                      fixed: Collection[tuple[str, str]] = ()) -> Outcome:
+                      fixed: Collection[tuple[str, str]] = (), context: str | None = None) -> Outcome:
     key = prepared["key"]
     record: dict[str, Any] = {"format": FORMAT, "key": key, "en": {}, "by": {}, "problems": [], "provider": None}
     usage: dict[str, dict[str, int]] = {}
     if prepared.get("status") != "ready":
         return Outcome({**record, "status": "held"}, [], usage, 0)
-    en, by, pending = plan(prepared, dicts, store, tenant, brands, reask and model is not None, fixed)
+    en, by, pending = plan(prepared, dicts, store, tenant, brands, reask and model is not None, fixed, context)
     calls = 0
     problems: list[dict[str, Any]] = []
     model_of: dict[str, str] = {}                     # text id -> the model that translated it
@@ -832,9 +838,13 @@ def cost(usage: dict[str, dict[str, int]]) -> tuple[float, list[str]]:
 
 def run(shop: str, model: "Model | Chain | None", shops_root: str = SHOPS_ROOT, dicts: Dictionaries | None = None,
         only: str | Collection[str] | None = None, limit: int | None = None,
-        clock: Any = time.gmtime, reask: bool = False) -> dict[str, Any]:
+        clock: Any = time.gmtime, reask: bool = False, context: str | None = None) -> dict[str, Any]:
     """`only`: the key (or keys) the model may be asked for; the other products are resolved from what is kept.
-    `reask`: their own titles and placeholder names asked again (plan); only with `only`."""
+    `reask`: their own titles and placeholder names asked again (plan); only with `only`. `context`: added to each
+    re-asked title's context (plan); only with `reask`."""
+    if context is not None and (not reask or not context.strip()):
+        raise TranslateError("--context goes with --reask (and the products named), and says something")
+    context = context.strip() if context is not None else None
     if reask and not only:
         raise TranslateError("--reask needs the products named (--only, --keys-file, --job)")
     wanted = {only} if isinstance(only, str) else set(only or ())
@@ -856,7 +866,8 @@ def run(shop: str, model: "Model | Chain | None", shops_root: str = SHOPS_ROOT, 
         use = model
         if (wanted and p["key"] not in wanted) or (limit is not None and asked >= limit):
             use = None                                   # resolved from what is kept, not sent
-        outcome = translate_product(p, dicts, store, tenant, use, now, brands, reask and use is not None, fixed)
+        outcome = translate_product(p, dicts, store, tenant, use, now, brands, reask and use is not None, fixed,
+                                    context)
         if outcome.calls:
             asked += 1
         records.append(outcome.record)
@@ -918,8 +929,13 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--reask", action="store_true",
                    help="ask the named products' own titles and placeholder option names again with today's notes "
                         "(the old English kept until a checked answer; hand corrections never)")
+    p.add_argument("--context", help="with --reask: a text added to each re-asked title's context (joined with any "
+                                     "note's), e.g. \"only one club is sold, the buyer picks its type: do not call it "
+                                     "a set\"")
     add_ref_flags(p)
     args = p.parse_args(argv)
+    if args.context is not None and (not args.reask or not args.context.strip()):
+        p.error("--context goes with --reask (and the products named), and says something")
     only: list[str] | None = None
     if args.only or selection_asked(args):            # refs -> keys (a full key as it is, as before)
         only = keys_from_args(p, args, args.shop, [args.only] if args.only else [], args.shops_root)
@@ -928,7 +944,7 @@ def main(argv: list[str] | None = None) -> int:
         try:
             model = None if args.offline else build_chain(keys_from_env())
             print("\n".join(run(args.shop, model, args.shops_root, only=only, limit=args.limit,
-                                      reask=args.reask)["report"]))
+                                      reask=args.reask, context=args.context)["report"]))
         except TranslateError as e:
             print(f"translate: {e}", file=sys.stderr)
             return 2

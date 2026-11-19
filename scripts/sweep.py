@@ -40,6 +40,7 @@ worse (GUARDS) in none and printed first, the keys with no baseline one line by 
 gone since the run before. --json: {"answers", "store"} (one part: its file's shape). Files in
 shops/<shop>/sweep/latest/ (shop_files.write_atomic; a part's previous files moved to sweep/prev/ first):
 answers.json (every finding), <check>.live.keys / <check>.draft.keys (one key a line, for a --keys-file),
+title.set_single/ (its keys per store and Naver category, and the hand titles that match: set_single_files),
 store.json and groups/<group id>.keys. A selection writes the same files to sweep/selection/ instead, compared with
 nothing (latest/ and prev/ stay the whole shop's). Nothing else is written, the dictionaries
 included (Dictionaries(write=False): the default one syncs the live copies). Refused while the shop's lock is held (a job
@@ -78,6 +79,8 @@ CHECKS = (
                             "run with the product named asks it again)"),
     ("title.other_brand", "the English title names a dictionary brand that is not the vendor and that the Korean "
                           "title and spec values do not name"),
+    ("title.set_single", "the description row's conflicts (describe.py's model) say the title promises a set while "
+                         "one club or item is sold, and the English title still says set"),
     ("text.hangul", "Hangul left in the English title, an option name or value, or the description"),
     ("description.old_brand", "the description's first sentence (where it names the product) names a dictionary "
                               "brand that is not the vendor and that the Korean title and spec values do not name"),
@@ -100,6 +103,33 @@ BRAND_ROWS = ("브랜드", "제조사", "원산지", "수입원")
 # Looked for in the Korean title and the spec values (korean_texts): the review of the first sweep, 9275189943 says it
 # only in its 종류 row ("조합풀세트"; "PXG/ 테일러메이드/ 골프채 풀세트", a Callaway wood in it)
 MIXED_RE = re.compile(r"조합")
+# title.set_single (2026-11-19): describe.py's model writes "conflicts" on a description row when the seller's data
+# disagree; on 92 live products (70 junior 50002787, 12 wedge sets 50002783, 10 full sets 50002788) one says the
+# title promises a set while one club is sold: "The Title describes a set with driver, irons and putter, but the
+# buyer picks one club type: iron, putter or driver" (13693475187), "The title calls it a set, but the seller's texts
+# describe a single #7 iron" (13848307900). Kept tight: the clause before "but" / "while" / "whereas" names the title
+# and a set (and no single item: "set or a single wedge" is the title offering both), the clause after it one item.
+# Quiet the other way round ("a single 60° wedge in the specification rows, while the title ... gives a set of 3":
+# the set may be what is sold) and with no title named ("The set composition row lists 3 fairway woods, but the
+# buyer picks a single fairway wood")
+# The review of the check (2026-11-19): "single", "only one", "one of" alone fired on gaps and mixed option lists
+# ("only one loft (52°) is given and the number of wedges is not stated" 13312227353, "the size options are single
+# wedges, pairs and three-wedge sets" 13754846756, "single-length shafts", "one of the irons has no loft"): the one
+# thing must be a club or an item (single / one / only one + a club noun, a few words between at most, not "of" /
+# "the"), or a buyer's pick of one (picks / chooses / sells one loft, size, style, type); quiet when the clause after
+# also names sets (plural), pairs or N-piece / N-wedge choices, or the clause before says the count is unclear (13389324355
+# "Number of wedges in the set is not clear: the title says set but names a single 52° AW wedge")
+SET_SINGLE_SPLIT = re.compile(r",?\s+(?:but|while|whereas)\s+", re.I)
+SET_SINGLE_TITLE = re.compile(r"\btitle\b", re.I)
+SET_SINGLE_SET = re.compile(r"\bsets?\b", re.I)
+_ITEM = r"(?:clubs?|irons?|wedges?|drivers?|putters?|woods?|hybrids?|chippers?|items?|products?)"
+_FILL = r"(?:(?!(?:of|the|and|or)\b)[\w#°'’./-]+\s+){0,4}?"
+SET_SINGLE_ONE = re.compile(
+    rf"\b(?:(?:single|one)\s+{_FILL}{_ITEM}\b"
+    rf"|(?:picks?|chooses?|selects?|sells?|sold\s+as|offers?)\s+(?:only\s+)?(?:one|a\s+single)\s+{_FILL}"
+    rf"(?:{_ITEM}|lofts?|sizes?|styles?|types?)\b)", re.I)
+SET_SINGLE_MANY = re.compile(r"\b(?:sets|pairs?|\d+-(?:piece|wedge|club)s?|[2-9]\s+pieces)\b", re.I)
+SET_SINGLE_GAP = re.compile(r"\b(?:not clear|unclear|not stated|not given)\b", re.I)
 BRAND_MIN = 3                                   # letters and digits of a brand looked for (brand_key): "GB" never
 DICTS_LIVE = D.LIVE_ROOT                        # the live dictionaries read (a test points it at a copy)
 _TAG_RE = re.compile(r"<[^>]+>")
@@ -197,6 +227,27 @@ def other_brand(english: str, vendor: str, prepared: dict[str, Any], brands: Bra
     if MIXED_RE.search(korean):
         return []
     return brands.other(english, vendor, korean)
+
+
+def set_single(conflict: str) -> bool:
+    """A describe.py conflict saying the title promises a set while one club or item is sold (SET_SINGLE_*)."""
+    parts = SET_SINGLE_SPLIT.split(conflict or "", maxsplit=1)
+    if len(parts) != 2:
+        return False
+    before, after = parts
+    return (bool(SET_SINGLE_TITLE.search(before)) and bool(SET_SINGLE_SET.search(before))
+            and not SET_SINGLE_ONE.search(before) and not SET_SINGLE_GAP.search(before)
+            and bool(SET_SINGLE_ONE.search(after)) and not SET_SINGLE_MANY.search(after))
+
+
+def set_single_conflict(row: Mapping[str, Any] | None, title: str) -> str | None:
+    """The first conflict of the description row that set_single() flags, while the English title still says set
+    (a title asked again since names no set: the stale conflict is no finding); None otherwise."""
+    if not title or not SET_SINGLE_SET.search(title):
+        return None
+    conflicts = (row or {}).get("conflicts")
+    return next((str(c) for c in conflicts if isinstance(c, str) and set_single(c)), None) \
+        if isinstance(conflicts, list) else None
 
 
 def first_sentence(texts: list[str]) -> str:
@@ -348,9 +399,13 @@ def run(shop: str, shops_root: str = P.SHOPS_ROOT, keys: Iterable[str] | None = 
     where = {k: store_of(ledger[k]) for k in scope}
     findings: dict[str, list[dict[str, Any]]] = {c: [] for c in CODES}
 
-    def hit(code: str, key: str, text: str) -> None:
+    def hit(code: str, key: str, text: str, **extra: str) -> None:
         findings[code].append({"key": key, "store": where[key], "handle": ledger[key].get("handle"),
-                               "text": _clip(text)})
+                               "text": _clip(text), **extra})
+
+    # title.set_single on a hand title row: never a finding (no --reask reaches it), counted apart for the owner
+    # (the review of the check, 2026-11-19: 29 live hand rows from brand fixes still promise a set)
+    set_single_hand: list[dict[str, Any]] = []
 
     not_checked: dict[str, str] = {}
     for key in scope:
@@ -373,13 +428,23 @@ def run(shop: str, shops_root: str = P.SHOPS_ROOT, keys: Iterable[str] | None = 
             other = other_brand(title, vendor, p, brands)
             if other:
                 hit("title.other_brand", key, f"{', '.join(other)} (vendor {vendor or 'none'}): {title}")
+        # 2b. the title promises a set while one club is sold (describe.py's conflicts); its Naver category kept, so
+        # the keys split per category (a re-ask's --context is a category's)
+        row = descriptions.get(key)
+        conflict = set_single_conflict(row, title) if tid is not None else None
+        if conflict:
+            category = str((p.get("source") or {}).get("category_id") or "?")
+            if title_by_model:
+                hit("title.set_single", key, conflict, category=category)
+            else:
+                set_single_hand.append({"key": key, "store": where[key], "handle": ledger[key].get("handle"),
+                                        "category": category, "text": _clip(conflict)})
         # 3. Hangul in the English (the title, the options), then the description's
         english: dict[str, str] = {}
         for x in p.get("texts") or []:
             if x["kind"] in ("title", "option_name", "option_value") and (key, x["id"]) not in fixed \
                     and en.get(x["id"]):
                 english["title" if x["kind"] == "title" else f"{x['kind']} {x['ko']}"] = en[x["id"]]
-        row = descriptions.get(key)
         body = (row or {}).get("html") or ""
         by_model = bool(row) and not is_review(row) and bool(body)
         parts = text_of(body) if by_model else []
@@ -438,7 +503,7 @@ def run(shop: str, shops_root: str = P.SHOPS_ROOT, keys: Iterable[str] | None = 
             "checks": {c: {"live": sum(1 for f in findings[c] if f["store"] == "live"),
                            "draft": sum(1 for f in findings[c] if f["store"] == "draft"),
                            "findings": findings[c]} for c in CODES},
-            "declined": hidden, "ocr_errors": errors}
+            "declined": hidden, "set_single_hand": set_single_hand, "ocr_errors": errors}
 
 
 # ---- the store's "before" (stage 2) -------------------------------------------------------------------------
@@ -861,8 +926,23 @@ def _clip_to(text: str, most: int) -> str:
 
 # ---- latest/ and prev/: what is new and gone since the last run ------------------------------------------------
 
+SET_SINGLE_DIR = "title.set_single"             # <live|draft>.<category>.keys and hand.<live|draft>.keys
+
+
 def answer_files() -> list[str]:
-    return ["answers.json"] + [f"{c}.{s}.keys" for c in CODES for s in ("live", "draft")]
+    return ["answers.json", SET_SINGLE_DIR] + [f"{c}.{s}.keys" for c in CODES for s in ("live", "draft")]
+
+
+def set_single_files(answers: Mapping[str, Any]) -> dict[str, list[str]]:
+    """title.set_single/'s files -> their keys: the findings per store and Naver category (a re-ask's --context is
+    a category's: a junior's "single junior golf club" never for a wedge set), and the hand title rows that match
+    (hand.<store>.keys: no finding, the owner's new hand row)."""
+    out: dict[str, list[str]] = {}
+    for f in answers["checks"].get("title.set_single", {}).get("findings", []):
+        out.setdefault(f"{f['store']}.{f.get('category') or '?'}.keys", []).append(f["key"])
+    for h in answers.get("set_single_hand") or []:
+        out.setdefault(f"hand.{h['store']}.keys", []).append(h["key"])
+    return out
 
 
 STORE_FILES = ["store.json", "groups", "declined.keys"]
@@ -960,6 +1040,9 @@ def write(answers: dict[str, Any], shops_root: str) -> str:
         for store in ("live", "draft"):
             keys = [f["key"] for f in check["findings"] if f["store"] == store]
             write_atomic(os.path.join(out, f"{code}.{store}.keys"), "".join(k + "\n" for k in keys))
+    os.makedirs(os.path.join(out, SET_SINGLE_DIR), exist_ok=True)
+    for name, keys in set_single_files(answers).items():
+        write_atomic(os.path.join(out, SET_SINGLE_DIR, name), "".join(k + "\n" for k in keys))
     return out
 
 
@@ -980,6 +1063,25 @@ def write_store(result: dict[str, Any], shops_root: str) -> str:
     return out
 
 
+def set_single_lines(answers: Mapping[str, Any]) -> list[str]:
+    """title.set_single's split per category, and the hand title rows that match (never a finding)."""
+    per: dict[tuple[str, str], int] = {}
+    for f in answers["checks"]["title.set_single"]["findings"]:
+        per[(f["store"], f.get("category") or "?")] = per.get((f["store"], f.get("category") or "?"), 0) + 1
+    lines = []
+    if per:
+        lines.append(f"    by category ({SET_SINGLE_DIR}/<store>.<category>.keys): "
+                     + ", ".join(f"{s} {c} {n}" for (s, c), n in sorted(per.items())))
+    hand = answers.get("set_single_hand") or []
+    if hand:
+        live = sum(1 for h in hand if h["store"] == "live")
+        lines.append(f"    hand titles that also match, not findings (no --reask reaches them; the owner: a new hand "
+                     f"row): {live} live, {len(hand) - live} drafts ({SET_SINGLE_DIR}/hand.<store>.keys): "
+                     + ", ".join(h["key"].rsplit(":", 1)[-1] for h in hand[:EXAMPLES])
+                     + (" ..." if len(hand) > EXAMPLES else ""))
+    return lines
+
+
 def table(answers: dict[str, Any], out: str) -> list[str]:
     s = answers["scope"]
     lines = [f"sweep {answers['shop']}: {s['live']} live, {s['draft']} drafts checked"
@@ -995,6 +1097,8 @@ def table(answers: dict[str, Any], out: str) -> list[str]:
         lines.append(f"{code:<24}{c['live']:>6}{c['draft']:>7}")
         for f in c["findings"][:EXAMPLES]:
             lines.append(f"    {f['key']}  {f['handle']}  {f['text']}")
+        if code == "title.set_single":
+            lines.extend(set_single_lines(answers))
     hidden = answers.get("declined") or {}
     if hidden:
         lines.append(f"declined by the owner, hidden: {sum(map(len, hidden.values()))} ("

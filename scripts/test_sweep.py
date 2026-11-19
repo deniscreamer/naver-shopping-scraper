@@ -229,6 +229,87 @@ def test_option_texts_hangul_and_their_review_row(fx):
     assert key not in found(answers(fx), "text.hangul")
 
 
+# ---- 2b. title.set_single -------------------------------------------------------------------------------------
+
+# describe.py's conflicts on live products (2026-11-19), the title promising a set while one club is sold
+SET_PICKS_ONE = ("The Title describes a set with driver, irons and putter, but the buyer picks one club type: iron, "
+                 "putter or driver")                                                   # 13693475187
+SET_SINGLE_IRON = "The title calls it a set, but the seller's texts describe a single #7 iron"   # 13848307900
+
+
+def test_set_single_on_real_conflicts():
+    assert S.set_single(SET_PICKS_ONE) and S.set_single(SET_SINGLE_IRON)
+    assert S.set_single("The Korean title says complete set, while the product sold is a single 52° gap wedge.")
+    # near misses: no single item sold; no title named (the set composition row); the title offering both; the other
+    # way round (a spec row single, the title's set may be what is sold)
+    assert not S.set_single("The iron count is given as 7 pieces, but the listed irons (5, 6, 7, 8, 9, PW, SW) add "
+                            "up to 7")
+    assert not S.set_single("The set composition row lists 3 fairway woods, but the buyer picks a single fairway wood")
+    assert not S.set_single("The Korean title offers a set or a single wedge, but the buyer's choices are only two "
+                            "3-wedge sets.")
+    assert not S.set_single("Specifications list a single loft of 60 degrees, while the title gives a set of 52°, "
+                            "56° and 60°.")
+    assert not S.set_single("The title says set or single, but only 3-piece sets are offered as choices.")
+    # the review of the check (2026-11-19): the one thing must be a club or an item, not a gap or a mixed option list
+    assert S.set_single("The Title calls the product a golf club set, but the seller's texts describe a single RED "
+                        "LINE driving iron (hybrid) and give no club count or set contents.")         # 13793333309
+    assert S.set_single("The title describes a complete golf club set, but only one M5 Silver Chipper with head "
+                        "cover is sold.")                                                            # 13376918792
+    assert S.set_single("Title says a 3-piece set of 52/56/60°, but the buyer picks one size: 56, 52 or 60.")
+    assert not S.set_single("Title and description give a six-wedge set (50/52/54/56/58/60), but the size options "
+                            "are single wedges, pairs and three-wedge sets.")                         # 13754846756
+    assert not S.set_single("The title calls it a wedge set, but only one loft (52°) is given and the number of "
+                            "wedges is not stated.")                                                 # 13312227353
+    assert not S.set_single("Number of wedges in the set is not clear: the title says set but names a single 52° AW "
+                            "wedge, and the Korean title ends with an unexplained 5.")                # 13389324355
+    for probe in ("the specs give single-length shafts", "the specs give single length shafts",
+                  "one of the irons has no loft given", "the buyer picks a single shaft flex"):
+        assert not S.set_single(f"The title calls it a set, but {probe}."), probe
+    row = {"conflicts": ["The origin is unclear.", SET_SINGLE_IRON]}
+    assert S.set_single_conflict(row, "Kids' Junior Golf Club Set") == SET_SINGLE_IRON
+    assert S.set_single_conflict(row, "Kids' Junior #7 Iron") is None              # asked again since: no finding
+    assert S.set_single_conflict({"conflicts": "x"}, "Set") is None and S.set_single_conflict(None, "Set") is None
+
+
+def test_set_single_in_the_shop_a_review_title_never(fx, capsys):
+    """13552318731's description row (live, "A11N SPORTS Forged Golf Wedge Set db4P") with the conflict: flagged live with the conflict as its text; the owner's no
+    (--decline --check) hides it; a hand title row (by review-...) is never flagged."""
+    seeded(fx)
+    shop = os.path.join(fx.shops, SHOP)
+    key = fx.key(A11N)
+    row = describe.load_store(shop)[key]
+    append(os.path.join(shop, "translation", "descriptions.jsonl"), {**row, "conflicts": [SET_PICKS_ONE]})
+    P._MEMO.clear()
+    first = whole(fx, capsys)["answers"]
+    f = next(f for f in first["checks"]["title.set_single"]["findings"] if f["key"] == key)
+    assert f["store"] == "live" and f["text"] == S._clip(SET_PICKS_ONE)
+    assert found(first, "title.set_single") == {key}
+    keys = open(os.path.join(shop, "sweep", "latest", "title.set_single.live.keys"), encoding="utf-8").read()
+    assert keys == key + "\n"
+    category = P.Shop(SHOP, fx.shops).inputs()[0][key]["source"]["category_id"]
+    assert f["category"] == str(category)
+    split = os.path.join(shop, "sweep", "latest", S.SET_SINGLE_DIR)
+    assert os.listdir(split) == [f"live.{category}.keys"]
+    assert open(os.path.join(split, f"live.{category}.keys"), encoding="utf-8").read() == key + "\n"
+    assert S.main([SHOP, "--shops-root", fx.shops, "--decline", "--check", "title.set_single", "--only", A11N,
+                   "--reason", "the owner holds it for its category (owner 2026-11-19)"]) == 0
+    capsys.readouterr()
+    second = whole(fx, capsys)["answers"]
+    assert key not in found(second, "title.set_single") and second["declined"] == {"title.set_single": [key]}
+    p = P.Shop(SHOP, fx.shops).inputs()[0][key]
+    append(os.path.join(shop, "translation", "texts.jsonl"),
+           {"key": key, "id": title_of(p), "kind": "title", "ko": "x", "en": "A11N SPORTS Forged Golf Wedge Set db4P",
+            "by": "review-2026-11-19-set"})
+    open(S.decisions_path(fx.shops, SHOP), "w").close()                            # no decline: the hand row alone
+    third = whole(fx, capsys)
+    assert key not in found(third["answers"], "title.set_single")
+    hand = third["answers"]["set_single_hand"]                                    # counted apart, never a finding
+    assert [(h["key"], h["store"], h["text"]) for h in hand] == [(key, "live", S._clip(SET_PICKS_ONE))]
+    assert open(os.path.join(split, "hand.live.keys"), encoding="utf-8").read() == key + "\n"
+    assert os.listdir(split) == ["hand.live.keys"]
+    assert any("hand titles that also match" in x and "1 live" in x for x in S.table(third["answers"], "out"))
+
+
 # ---- 3. text.hangul --------------------------------------------------------------------------------------------
 
 def test_hangul_left_in_an_english_text():
@@ -311,9 +392,11 @@ def test_the_run_writes_only_under_sweep(fx, tmp_path, capsys):
     assert new and all(k.startswith(os.path.join("shops", SHOP, "sweep", "latest") + os.sep) for k in new)
     assert set(before) <= set(after) and not os.path.exists(tmp_path / "live")     # no dictionary written either
     out = os.path.join(fx.shops, SHOP, "sweep", "latest")
-    assert sorted(os.listdir(out)) == sorted(["answers.json", "store.json", "groups", "declined.keys"]
+    assert sorted(os.listdir(out)) == sorted(["answers.json", "store.json", "groups", "declined.keys",
+                                              S.SET_SINGLE_DIR]
                                              + [f"{c}.{s}.keys" for c in S.CODES for s in ("live", "draft")])
     assert os.listdir(os.path.join(out, "groups")) == []                           # no baseline in the fixture
+    assert os.listdir(os.path.join(out, S.SET_SINGLE_DIR)) == []                   # no set_single in the fixture
     keys = open(os.path.join(out, "description.stale.live.keys"), encoding="utf-8").read().split()
     assert fx.key("12178430576") in keys
     printed = capsys.readouterr().out
