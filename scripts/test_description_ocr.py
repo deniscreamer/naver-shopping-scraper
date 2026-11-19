@@ -101,3 +101,21 @@ def test_alpha_and_16_bit_images():
 
 def test_norm_keeps_a_table_pipe():
     assert O.norm("300|310") == "300|310" and O.norm("1l0") == "110"
+
+
+def test_the_engine_gets_a_contiguous_bgr_array():
+    """2026-11-19: 12814122019's first slice crashed the OCR worker (SIGSEGV in RapidOCR's detector preprocessing) when
+    it got the reversed view np.asarray(image)[:, :, ::-1]; a contiguous copy reads (4 boxes). No model is loaded here."""
+    import numpy as np
+    from PIL import Image
+    seen = []
+
+    class Result:
+        txts = None
+
+    engine = O.Engine.__new__(O.Engine)
+    engine._ocr = lambda arr: seen.append(arr) or Result()
+    image = Image.new("RGB", (40, 20), (10, 20, 30))
+    assert engine(image) == []
+    arr = seen[0]
+    assert arr.flags["C_CONTIGUOUS"] and arr.shape == (20, 40, 3) and tuple(arr[0, 0]) == (30, 20, 10)

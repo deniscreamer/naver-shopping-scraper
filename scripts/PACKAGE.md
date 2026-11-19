@@ -217,7 +217,7 @@ PRODUCT_TIMEOUT (900 s) is that product's error: one more try, then an error sid
 `description_images_failed`; `--force` reads it again); the run goes on. Ctrl+C stops cleanly (exit 130). One run
 per shop at a time (a lock; a second run stops with exit 4). A script that calls `description_images.run()` keeps its
 work under `if __name__ == "__main__":`: the spawned worker imports the calling script again (example_15 hung once
-without it, its worker collecting a second product).
+without it, its worker collecting a second product). A worker that died with exit -11 (SIGSEGV) on every try was a Pillow 13 array taken on a crop of a tall image (2026-11-19, 12814122019's 1000 x 10295 PNG): `description_ocr.Engine` copies each slice before the array; the rows of products read before are the same.
 
 ### Files
 

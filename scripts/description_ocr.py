@@ -199,7 +199,10 @@ class Engine:
 
     def __call__(self, image: Image.Image) -> list[tuple[str, float, float, float, float, float]]:
         import numpy as np
-        r: Any = self._ocr(np.asarray(image)[:, :, ::-1])    # RapidOCR takes BGR like OpenCV
+        # RapidOCR takes BGR like OpenCV. The slice is copied first and the array made contiguous (2026-11-19, Pillow
+        # 13: np.asarray on a crop of a tall image, 12814122019's 1000 x 10295 PNG, left the worker to die with
+        # SIGSEGV in OpenCV's resize; with image.copy() all 7 slices read)
+        r: Any = self._ocr(np.ascontiguousarray(np.asarray(image.copy())[:, :, ::-1]))
         if r.txts is None:
             return []
         out = []
