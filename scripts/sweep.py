@@ -4,6 +4,11 @@ translation/texts.jsonl keeps a title until translate.plan asks it again and des
 
     .venv/bin/python scripts/sweep.py fairwardgolf [--json]                    # every published product
     .venv/bin/python scripts/sweep.py fairwardgolf --only <ref> [--keys-file F] [--job ID [--event E]]
+    .venv/bin/python scripts/sweep.py fairwardgolf --seed-sent [--json]        # the store's "before", stage 2
+
+--seed-sent (stage 2, 2026-11-19) runs no check: it writes publish/sent/<id>.json for each published product whose
+offline build (publish.build) gives the ledger's `output` (seed_sent) and counts the others as no_baseline by reason;
+it writes nothing else; it takes the shop's lock while it writes (a job or send refused meanwhile; busy: exit 2).
 
 Scope: every product the ledger (publish/published.jsonl) has as published, live (ACTIVE, or an old row with no
 store_status) and drafts (store_status DRAFT) apart; withdrawn products (holds among them) are left out; the ready
@@ -18,7 +23,7 @@ JSON; files in shops/<shop>/sweep/latest/ (shop_files.write_atomic): answers.jso
 <check>.live.keys / <check>.draft.keys (one key a line, for a --keys-file). Nothing else is written, the dictionaries
 included (Dictionaries(write=False): the default one syncs the live copies). Refused while the shop's lock is held (a job
 rewrites the files read here; shop_files.ensure_free: exit 2, the busy line); the lock is not taken, so a job may
-start while it reads (a few seconds).
+start while it reads (a few seconds); --seed-sent takes it (it writes).
 
 Exit codes, as the other read tools: 0 done; 1 a shop file with a broken line (LedgerError, the file and line named);
 2 usage (an unknown shop, an empty selection, none of it published) or the shop busy.
@@ -39,7 +44,7 @@ import shopify_payload as sp
 import translate
 import translation_dicts as D
 from brand_fallback import in_title
-from shop_files import LedgerError, ShopBusy, ensure_free, write_atomic
+from shop_files import LedgerError, ShopBusy, ensure_free, locked, write_atomic
 from shop_view import add_ref_flags, keys_from_args, selection_asked
 from translation_rules import HANGUL_RE
 
@@ -333,6 +338,65 @@ def run(shop: str, shops_root: str = P.SHOPS_ROOT, keys: Iterable[str] | None = 
             "ocr_errors": errors}
 
 
+# ---- the store's "before" (stage 2) -------------------------------------------------------------------------
+
+def seed_sent(shop: str, shops_root: str = P.SHOPS_ROOT, keys: Iterable[str] | None = None,
+              dicts: D.Dictionaries | None = None) -> dict[str, Any]:
+    """publish/sent/<id>.json for every published, not withdrawn product (or `keys` among them) whose offline build
+    (publish.build) gives the ledger's `output`: today's build is then what the store has (the retro-sweep plan,
+    stage 2, 2026-11-19: no Shopify read; stage 0 measured 2,263 of 2,265 equal). The others are no_baseline with
+    the reason. Writes publish/sent/ only, a file only when its text changes (run again: nothing written). The
+    vendor spellings are the dictionary's (read only), as the dry run's: a vendor the store spells otherwise is a
+    differing output, no baseline (10476142508 LAROUGE, stage 0). main() runs it under the shop's lock: the ledger
+    read once at the start stays the ledger while it writes."""
+    started = time.monotonic()
+    tenant = shop_stores.STORES[shop_stores.StoreId(shop)].publisher
+    dicts = dicts or read_dictionaries(DICTS_LIVE)
+    ids = {"vendors": P.vendor_spellings({}, list(dicts.entries.get("brand", {}).values())), "tenant": tenant}
+    shop_obj = P.Shop(shop, shops_root)
+    ledger = shop_obj.ledger()
+    wanted = list(keys) if keys is not None else None
+    scope = sorted(k for k in (wanted if wanted is not None else ledger) if k in ledger)
+    seeded: list[str] = []
+    kept: list[str] = []
+    no_baseline: dict[str, list[str]] = {}
+    for key in scope:
+        expected = ledger[key].get("output")
+        if not expected:
+            no_baseline.setdefault("the ledger row has no output", []).append(key)
+            continue
+        try:
+            built = P.build(shop_obj, key, ids)
+        except LedgerError:                         # a broken shop file: exit 1, not a product's reason
+            raise
+        except Exception as e:                      # a missing file or record, Untranslated, PayloadError
+            no_baseline.setdefault(f"not buildable: {type(e).__name__}", []).append(key)
+            continue
+        if built["output"] != expected:
+            no_baseline.setdefault("today's build differs from the ledger", []).append(key)
+            continue
+        (seeded if P.write_sent(shop_obj, key, built["product_input"]) else kept).append(key)
+    folder = shop_obj.path(P.SENT)
+    files = [os.path.join(folder, n) for n in os.listdir(folder)] if os.path.isdir(folder) else []
+    return {"shop": shop, "seconds": round(time.monotonic() - started, 2), "selection": wanted,
+            "published": len(scope), "named_not_published": sorted(set(wanted or ()) - set(ledger)),
+            "seeded": len(seeded), "kept": len(kept),
+            "no_baseline": {why: {"count": len(ks), "keys": ks} for why, ks in sorted(no_baseline.items())},
+            "sent_files": len(files), "sent_bytes": sum(os.path.getsize(f) for f in files)}
+
+
+def seed_lines(result: dict[str, Any]) -> list[str]:
+    nb = result["no_baseline"]
+    lines = [f"seed-sent {result['shop']}: {result['published']} published (withdrawn left out): "
+             f"{result['seeded']} written, {result['kept']} already there, "
+             f"{sum(v['count'] for v in nb.values())} no_baseline"]
+    for why, v in nb.items():
+        lines.append(f"    {why}: {v['count']} ({', '.join(v['keys'][:EXAMPLES])})")
+    lines.append(f"-> publish/sent/: {result['sent_files']} files, {result['sent_bytes'] / 1e6:.1f} MB "
+                 f"({result['seconds']} s)")
+    return lines
+
+
 def write(answers: dict[str, Any], shops_root: str) -> str:
     """answers.json and the keys files in shops/<shop>/sweep/latest/ -> that folder."""
     out = os.path.join(shops_root, answers["shop"], "sweep", "latest")
@@ -373,6 +437,8 @@ def main(argv: list[str] | None = None) -> int:
                     "link (repeat for several)")
     ap.add_argument("--json", action="store_true", help="the answers as JSON")
     ap.add_argument("--shops-root", default=P.SHOPS_ROOT)
+    ap.add_argument("--seed-sent", action="store_true", help="write publish/sent/<id>.json where today's offline "
+                    "build gives the ledger's output (no checks run, nothing else written)")
     add_ref_flags(ap)
     args = ap.parse_args(argv)
     if args.shop not in {s.value for s in shop_stores.StoreId}:
@@ -380,6 +446,19 @@ def main(argv: list[str] | None = None) -> int:
     keys: list[str] | None = None
     if args.only or selection_asked(args):            # refs -> keys; an empty selection is exit 2 there
         keys = keys_from_args(ap, args, args.shop, args.only, args.shops_root)
+    if args.seed_sent:                              # it writes: under the shop's lock for its ~14 s (2026-11-19), so
+        def seed() -> int:                          # no send can write a newer file it would then overwrite
+            try:
+                seeded = seed_sent(args.shop, args.shops_root, keys)
+            except LedgerError as e:
+                print(f"sweep: {e}", file=sys.stderr)
+                return 1
+            if keys is not None and not seeded["published"]:
+                print(f"sweep: none of the {len(keys)} named products is published here", file=sys.stderr)
+                return 2
+            print(json.dumps(seeded, ensure_ascii=False, indent=1) if args.json else "\n".join(seed_lines(seeded)))
+            return 0
+        return locked(args.shops_root, args.shop, "sweep.py --seed-sent", seed, "sweep")
     try:
         ensure_free(args.shops_root, args.shop)
     except ShopBusy as e:

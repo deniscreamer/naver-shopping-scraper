@@ -63,6 +63,31 @@ digest: a change of what the builder makes sends every product again. So is the 
 (`shop_pricing.Policy.describe()`: every number and the tariff's version): a new rule or tariff sends every
 product again too, so `reprice.py` shows the change first (see PRICE.md, The price).
 
+### The store's "before": `publish/sent/` and the build (2026-11-19, the retro-sweep plan, stage 2)
+
+What a product's `productSet` sends is hashed as `output` in its ledger row; the dict hashed is kept beside it, so a
+later step can show the owner field by field old -> new without reading Shopify:
+
+- `publish.build(shop, key, ids)` builds what `publish_one` would send and writes nothing (no payload, no feed file,
+  no `files.jsonl`, no ledger row): `{key, output, product_input, feed_sha, images, handle, digest}`.
+  `product_input` is the dict `output_digest` hashes (each photo as its file's sha256, the reviews' feed as
+  `sha:<its hash>`, no handle; `publish.normalized`), so `sha256` of its canonical JSON (`shopify_payload.digest`)
+  is `output`. The dry run, the real run and `build` compute `output` in one place (`publish._built`).
+  `build`'s `output` is the real run's only when every review file is in `files.jsonl` already (one not uploaded
+  yet is hashed as `dry-run:<file>`); `new_files` counts those.
+- A real send (not a dry run, not skipped, not failed) whose row has an `output` writes
+  `publish/sent/<Naver product id>.json` (`shop_files.write_atomic`, that dict as canonical JSON: one line) after
+  its ledger row. A failed photo (`failed`, so `output` None), a refused send (CatalogError, no row), a skip
+  and a dry run write none. A disk error on the file is a warning line, not a stop: the send and its row stand,
+  the product has no baseline until its next send (2026-11-19).
+- `publish.load_sent(shop, key)` -> the dict, or None when the file is missing or not JSON, or its sha256 is not the
+  ledger's `output` (a send cut off between its row and its file, a file from an older send, a hand edit, a
+  withdrawn key): no baseline. The file proves itself; never trust one `load_sent` refuses.
+- Products published before stage 2 get theirs from `sweep.py <shop> --seed-sent` (today's offline build where it
+  equals the ledger's `output`; [SWEEP.md](SWEEP.md)). About 37 KB a product (fairwardgolf, 2026-11-19: 2,263 files,
+  84.7 MB); in the state backup
+  ([OPERATIONS.md](OPERATIONS.md), Backup).
+
 ## Withdraw, hold, restore, activate (store actions)
 
 Each one waits for the owner's word ([OWNER_RULES.md](OWNER_RULES.md)); the procedure: skill `store-actions`. A

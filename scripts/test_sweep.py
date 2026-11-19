@@ -16,6 +16,7 @@ import pytest
 import describe
 import publish as P
 import shop_files
+import shopify_payload as sp
 import sweep as S
 import translation_dicts as D
 
@@ -369,6 +370,85 @@ def test_ocr_sidecars_with_an_error_one_line(fx):
         json.dump({"format": "description_images/1", "key": key, "product_id": "12814122019", "engine": "dict",
                    "images": [], "skipped": [], "error": "worker died (exit -11)", "seconds": 4.2}, f)
     assert answers(fx)["ocr_errors"] == [key]
+
+
+# ---- --seed-sent: the store's "before" (stage 2) ----------------------------------------------------------------
+
+UNBUILDABLE = "5917858699"                       # a photo the fixture lacks (stage 0: 6 of its 7 build, equal)
+
+
+def test_seed_sent_writes_where_the_offline_build_is_the_ledgers_and_nothing_else(fx, tmp_path, capsys):
+    shop = P.Shop(SHOP, fx.shops)
+    ledger = shop.ledger()
+    before = _tree(fx.root)
+    assert S.main([SHOP, "--shops-root", fx.shops, "--seed-sent", "--json"]) == 0
+    r = json.loads(capsys.readouterr().out)
+    after = _tree(fx.root)
+    new = {k for k in after if k not in before or after[k] != before[k]}
+    sent = os.path.join("shops", SHOP, "publish", "sent")
+    lock = os.path.join("shops", f".{SHOP}.lock")                                 # the holder's line (shop_lock)
+    assert set(before) <= set(after) and all(k.startswith(sent + os.sep) or k == lock for k in new)
+    assert not os.path.exists(tmp_path / "live")                                   # no dictionary written
+    assert (r["published"], r["seeded"], r["kept"]) == (7, 6, 0) and len(new - {lock}) == 6 == r["sent_files"]
+    assert r["no_baseline"] == {"not buildable: FileNotFoundError": {"count": 1, "keys": [fx.key(UNBUILDABLE)]}}
+    for key in ledger:
+        if not key.endswith(UNBUILDABLE):
+            assert P.load_sent(shop, key) is not None and sp.digest(P.load_sent(shop, key)) == ledger[key]["output"]
+    for key in shop.withdrawn():                                                   # never a withdrawn product
+        assert not os.path.exists(P.sent_path(shop, key))
+    assert S.main([SHOP, "--shops-root", fx.shops, "--seed-sent", "--json"]) == 0  # again: nothing written
+    r = json.loads(capsys.readouterr().out)
+    again = {k: v for k, v in _tree(fx.root).items() if k != lock}                # the lock line names its time
+    assert (r["seeded"], r["kept"]) == (0, 6) and again == {k: v for k, v in after.items() if k != lock}
+
+
+def test_seed_sent_counts_a_differing_build_and_a_row_without_output(fx, capsys):
+    ledger = os.path.join(fx.shops, SHOP, "publish", "published.jsonl")
+    rows = {}
+    for line in open(ledger, encoding="utf-8"):
+        rows[json.loads(line)["key"]] = json.loads(line)
+    a, b = fx.key("13552318731"), fx.key("13370257430")
+    append(ledger, {**rows[a], "output": "0" * 64}, {**rows[b], "output": None})
+    assert S.main([SHOP, "--shops-root", fx.shops, "--seed-sent"]) == 0
+    out = capsys.readouterr().out
+    assert out.startswith(f"seed-sent {SHOP}: 7 published (withdrawn left out): 4 written, 0 already there, "
+                          "3 no_baseline")
+    assert f"today's build differs from the ledger: 1 ({a})" in out
+    assert f"the ledger row has no output: 1 ({b})" in out
+    shop = P.Shop(SHOP, fx.shops)
+    assert not os.path.exists(P.sent_path(shop, a)) and not os.path.exists(P.sent_path(shop, b))
+    assert not os.path.exists(os.path.join(fx.shops, SHOP, "sweep"))              # no checks run, no report
+
+
+def test_seed_sent_refused_while_the_shop_is_busy_and_a_selection(fx, capsys):
+    with shop_files.shop_lock(fx.shops, SHOP, "job.py run j1"):
+        assert S.main([SHOP, "--shops-root", fx.shops, "--seed-sent"]) == 2
+    assert capsys.readouterr().out.startswith(f"sweep: stop: {SHOP} is busy: job.py run j1")
+    assert not os.path.exists(os.path.join(fx.shops, SHOP, "publish", "sent"))
+    assert S.main([SHOP, "--shops-root", fx.shops, "--seed-sent", "--only", fx.key("12080067974")]) == 2  # withdrawn
+    assert S.main([SHOP, "--shops-root", fx.shops, "--seed-sent", "--only", "12178430576", "--json"]) == 0
+    r = json.loads(capsys.readouterr().out)
+    assert (r["published"], r["seeded"], r["sent_files"]) == (1, 1, 1)
+
+
+def test_seed_sent_holds_the_shops_lock_while_it_writes(fx, monkeypatch, capsys):
+    """2026-11-19: the ledger is read once; a send started meanwhile could write a newer file seed then overwrites
+    with the older build, so no job or send may start while it writes."""
+    tried = []
+    write = P.write_sent
+
+    def write_while_a_job_tries(*a):
+        try:
+            with shop_files.shop_lock(fx.shops, SHOP, "job.py run j2"):
+                tried.append("got the lock")
+        except shop_files.ShopBusy:
+            tried.append("busy")
+        return write(*a)
+    monkeypatch.setattr(P, "write_sent", write_while_a_job_tries)
+    assert S.main([SHOP, "--shops-root", fx.shops, "--seed-sent", "--only", "12178430576"]) == 0
+    assert tried == ["busy"]
+    with shop_files.shop_lock(fx.shops, SHOP, "job.py run j3"):                  # released after
+        pass
 
 
 # ---- the doc ---------------------------------------------------------------------------------------------------

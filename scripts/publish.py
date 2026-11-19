@@ -36,6 +36,12 @@ published product off the store (DRAFT, nothing deleted) and keeps it from being
 as it was (ACTIVE, or DRAFT for a draft). `--activate <key>` puts a draft live (ACTIVE) on the owner's word after the
 lens review (job.py activate --job does a job's drafts). --dry-run builds and writes the payload to
 shops/<shop>/publish/payloads/<id>.json and sends nothing (no upload, no write).
+
+The store's "before" (the retro-sweep plan, stage 2, 2026-11-19): a real send whose ledger row has an `output` then
+writes publish/sent/<Naver product id>.json, the dict that `output` hashes (the product_input with each photo as its
+hash, the feed as its hash, no handle), so sha256 of its canonical JSON is the row's output (load_sent checks it;
+a file that fails is no baseline). build() returns that dict and writes nothing; the dry run, the real run and
+sweep.py --seed-sent compute `output` in one place (_built).
 """
 import argparse
 import hashlib
@@ -44,12 +50,12 @@ import os
 import re
 import sys
 from datetime import datetime, timezone
-from typing import Any, Mapping
+from typing import Any, Mapping, NamedTuple
 
 import describe
 import shopify_payload as sp
 import transform_shops
-from shop_files import append_line, locked, read_jsonl
+from shop_files import append_line, locked, read_jsonl, write_atomic
 from shop_pricing import policy
 from shop_stores import get_store
 from shop_types import LedgerPhoto, LedgerRow
@@ -259,7 +265,12 @@ def output_digest(payload: dict[str, Any]) -> str:
     feed as its content's hash (no upload, no link, no handle: an update keeps the handle it has). Two runs that
     would send the same agree on it, whatever else changed in the inputs (2026-11-11: inputs_digest moved on 18 of
     20 products whose Shopify data stood still, and hid the two that did change)."""
-    return sp.digest({k: v for k, v in payload.items() if k != "handle"})
+    return sp.digest(normalized(payload))
+
+
+def normalized(payload: Mapping[str, Any]) -> dict[str, Any]:
+    """The payload as output_digest hashes it: without its handle (publish/sent/ keeps this dict)."""
+    return {k: v for k, v in payload.items() if k != "handle"}
 
 
 def gallery(shop: "Shop", prepared: dict[str, Any]) -> list[dict[str, Any]]:
@@ -323,22 +334,135 @@ def _ledger_photos(images: list[dict[str, Any]], media: list[dict[str, Any]]) ->
     return out
 
 
-def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, Any], force: bool = False,
-                dry_run: bool = False, rehandle: bool = False, draft: bool = False) -> Mapping[str, Any]:
-    """One product to Shopify -> its ledger row (status published, a LedgerRow), the last one (status skipped), or
-    what a dry run built (status dry-run: payload, handle, output, product_id, feed_sha, images)."""
+class Sources(NamedTuple):
+    """A product's inputs as publish_one reads them (shop.inputs, the buyers' gallery photos, the description) and
+    their inputs_digest."""
+    prepared: dict[str, Any]
+    translated: dict[str, Any]
+    placement: dict[str, Any]
+    extra: list[dict[str, Any]]
+    description: str
+    digest: str
+
+
+def sources(shop: Shop, key: str) -> Sources:
     prepared_all, translated_all, placed_all = shop.inputs()
     prepared, translated, placement = prepared_all[key], translated_all.get(key) or {}, placed_all.get(key) or {}
     extra = gallery(shop, prepared)
     store = _memo(os.path.join(shop.dir, "translation", describe.STORE), lambda _: describe.load_store(shop.dir))
     description = (store.get(key) or {}).get("html") or ""
-    digest = inputs_digest(prepared, translated, placement, shop.shop, extra, description)
+    return Sources(prepared, translated, placement, extra, description,
+                   inputs_digest(prepared, translated, placement, shop.shop, extra, description))
+
+
+def _check(src: Sources, pricing: Any) -> None:
+    """The product builds (Untranslated / PayloadError otherwise): nothing is sent before."""
+    sp.product_input(src.prepared, src.translated, src.placement, pricing, "check", [], None, None, "check")
+
+
+def _built(shop: Shop, src: Sources, ids: Mapping[str, Any], known: Mapping[str, str],
+           shas: Mapping[str, str] | None = None) -> dict[str, Any]:
+    """The one place `output` is computed (2026-11-19, the retro-sweep plan, stage 2: publish_one's dry run, its real
+    run, build() and sweep.py --seed-sent agree on it by construction). `known`: {file sha256: its link} (the
+    review files sent; one not sent yet is "dry-run:<file>"); `shas`: {review file: its sha256} when the caller
+    read them already. -> rows, body, feed_sha, images, product_input (the
+    dict output_digest hashes: each photo as its hash, the feed as "sha:<its hash>", no handle) and output."""
+    pricing = policy(shop.shop)
+    if shas is None:
+        shas = {rel: _sha(shop.path(rel)) for rel in sp.review_files(src.prepared)}
+    urls = {rel: known.get(sha, f"dry-run:{rel}") for rel, sha in shas.items()}
+    en = sp.English(src.translated)
+    rows = sp.reviews(src.prepared, en, urls)
+    body = json.dumps(rows, ensure_ascii=False, separators=(",", ":")).encode()
+    feed_sha = hashlib.sha256(body).hexdigest()[:24] if rows else None
+    images = _unique(list(src.prepared["product"].get("images") or []) + src.extra)
+    full = sp.product_input(
+        src.prepared, src.translated, src.placement, pricing, "check", [{"id": img["sha256"]} for img in images],
+        f"sha:{feed_sha}" if feed_sha else None, rows, handle_override="check", vendors=ids.get("vendors"),
+        tenant=ids.get("tenant"), description_html=src.description)
+    return {"en": en, "rows": rows, "body": body, "feed_sha": feed_sha, "images": images, "urls": urls,
+            "product_input": normalized(full), "output": output_digest(full)}
+
+
+def build(shop: Shop, key: str, ids: Mapping[str, Any]) -> dict[str, Any]:
+    """What publish_one would send for `key`, built and returned, nothing written (no payload, no feed file, no
+    files.jsonl, no ledger row; the retro-sweep plan, stage 2, 2026-11-19: sweep.py reads today's build without the
+    dry run's files). Its output is the real run's only when every review file is in files.jsonl already: one not
+    uploaded yet is hashed as "dry-run:<file>" (as the dry run), and `new_files` counts them. `ids`: offline_ids or
+    what clients() gives; not changed. Untranslated / PayloadError as
+    publish_one. -> {key, output, product_input (sha256 of its canonical JSON, shopify_payload.digest, is output),
+    feed_sha, images (their sha256), handle (the ledger's, else the one a create would try first), digest,
+    new_files}."""
+    src = sources(shop, key)
+    pricing = policy(shop.shop)
+    _check(src, pricing)
+    b = _built(shop, src, ids, shop.file_urls())
+    title, vendor = sp.title_vendor(src.prepared["product"], b["en"], ids.get("vendors"), ids.get("tenant"))
+    before: Mapping[str, Any] = shop.ledger().get(key) or {}
+    return {"key": key, "output": b["output"], "product_input": b["product_input"], "feed_sha": b["feed_sha"],
+            "images": [img["sha256"] for img in b["images"]],
+            "handle": before.get("handle") or sp.handle(title, vendor), "digest": src.digest,
+            "new_files": sum(1 for url in b["urls"].values() if url.startswith("dry-run:"))}
+
+
+SENT = os.path.join("publish", "sent")
+
+
+def sent_rel(key: str) -> str:
+    """publish/sent/<Naver product id>.json (the key's last part, as publish/payloads/), relative to the shop."""
+    return os.path.join(SENT, f"{key.rsplit(':', 1)[-1]}.json")
+
+
+def sent_path(shop: Shop, key: str) -> str:
+    """sent_rel in the shop's folder."""
+    return shop.path(sent_rel(key))
+
+
+def write_sent(shop: Shop, key: str, product_input: Mapping[str, Any]) -> bool:
+    """`product_input` (build's normalized dict) as publish/sent/<id>.json, its canonical JSON (shopify_payload's:
+    sha256 of the file's text but the line end is the output). -> False when the file holds it already (not
+    rewritten)."""
+    path, text = sent_path(shop, key), sp._json(product_input) + "\n"
+    try:
+        with open(path, encoding="utf-8") as f:
+            if f.read() == text:
+                return False
+    except FileNotFoundError:
+        pass
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    write_atomic(path, text)
+    return True
+
+
+def load_sent(shop: Shop, key: str) -> dict[str, Any] | None:
+    """The normalized product_input the store last got for `key` (publish/sent/<id>.json), or None: no file, not
+    JSON, or its canonical sha256 is not the ledger's `output` for the key (a send cut off between the ledger row and
+    the file, a file from an older send, a hand edit, a withdrawn or unknown key, a row with no output): no
+    baseline."""
+    row = shop.ledger().get(key)
+    expected = row.get("output") if row else None
+    if not expected:
+        return None
+    try:
+        with open(sent_path(shop, key), encoding="utf-8") as f:
+            got = json.load(f)
+    except (OSError, ValueError):
+        return None
+    return got if isinstance(got, dict) and sp.digest(got) == expected else None
+
+
+def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, Any], force: bool = False,
+                dry_run: bool = False, rehandle: bool = False, draft: bool = False) -> Mapping[str, Any]:
+    """One product to Shopify -> its ledger row (status published, a LedgerRow), the last one (status skipped), or
+    what a dry run built (status dry-run: payload, handle, output, product_id, feed_sha, images). A real send whose
+    row has an output writes publish/sent/<id>.json after the row (write_sent; load_sent checks it against the row)."""
+    src = sources(shop, key)
+    prepared, translated, placement, extra, description, digest = src
     before: Mapping[str, Any] | None = shop.ledger().get(key)
     if before and before.get("digest") == digest and not force and not dry_run and not rehandle:
         return {**before, "status": "skipped"}
     pricing, pid = policy(shop.shop), prepared["source"]["product_id"]
-    sp.product_input(prepared, translated, placement, pricing, "check", [], None, None, "check")   # nothing sent
-                                                    # before the product builds (Untranslated / PayloadError)
+    _check(src, pricing)                            # nothing sent before the product builds
 
     # 1-2. the reviews' files and feed (the files app)
     known = shop.file_urls()
@@ -351,16 +475,8 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
             known[new[rel]] = created[name]
             _append(shop.files_path, {"key": new[rel], "sha256": new[rel], "file": rel, "url": created[name],
                                       "at": _now()})
-    urls = {rel: known.get(sha, f"dry-run:{rel}") for rel, sha in shas.items()}
-    en = sp.English(translated)
-    rows = sp.reviews(prepared, en, urls)
-    body = json.dumps(rows, ensure_ascii=False, separators=(",", ":")).encode()
-    feed_sha = hashlib.sha256(body).hexdigest()[:24] if rows else None
-    images = _unique(list(prepared["product"].get("images") or []) + extra)
-    output = output_digest(sp.product_input(
-        prepared, translated, placement, pricing, "check", [{"id": img["sha256"]} for img in images],
-        f"sha:{feed_sha}" if feed_sha else None, rows, handle_override="check", vendors=ids.get("vendors"),
-        tenant=ids.get("tenant"), description_html=description))
+    b = _built(shop, src, ids, known, shas)
+    en, rows, body, feed_sha, images, output = b["en"], b["rows"], b["body"], b["feed_sha"], b["images"], b["output"]
     if before and before.get("output") == output and not new and not force and not dry_run and not rehandle:
         return {**before, "status": "skipped"}             # what Shopify would get is what it has
     feed_url = None
@@ -440,6 +556,12 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
     _append(shop.ledger_path, row)
     if ids.get("vendors") is not None and payload.get("vendor"):    # the next products of this run spell it so
         ids["vendors"].setdefault(sp.brand_key(payload["vendor"]), payload["vendor"])
+    if output and not failed:                       # the store's "before", after its row: a cut between the two
+        try:                                        # leaves a file load_sent refuses (stage 2, 2026-11-19)
+            write_sent(shop, key, b["product_input"])
+        except OSError as e:                        # sent and in the ledger: a lost file is only no baseline
+            print(f"publish: warning: {key}: publish/sent/ not written ({e}): no baseline until its next send",
+                  flush=True)
     return row
 
 

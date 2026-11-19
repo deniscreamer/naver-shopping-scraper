@@ -13,6 +13,8 @@ Writes scripts/fixtures/shop/ (everything under it is replaced):
     shops/fairwardgolf/placement/placements.jsonl
     shops/fairwardgolf/publish/published.jsonl
     shops/fairwardgolf/publish/payloads/<id>.json         PAYLOADS only (a dry run's payload)
+    shops/fairwardgolf/publish/sent/<id>.json             each case's that the shop has (publish.load_sent: the
+                                          store's "before", stage 2, 2026-11-19), whole: its sha256 is the ledger's
     shops/fairwardgolf/translation/<id>/, description_images/<id>.json    PAYLOADS only (describe's blocks)
     shops/fairwardgolf/collected/<run>/products.jsonl + manifest.json   each case's newest collected line, its long
                                           strings and lists cut (TRIM): the keys and types stay; manifest's sha256 is
@@ -35,6 +37,7 @@ from typing import Any
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+import publish  # noqa: E402
 import run_transform  # noqa: E402
 from shop_files import read_jsonl  # noqa: E402
 
@@ -132,6 +135,11 @@ def main() -> int:
             shutil.copyfile(os.path.join(src, rel), os.path.join(dst, rel))
         if os.path.isdir(os.path.join(src, "translation", pid)):
             shutil.copytree(os.path.join(src, "translation", pid), os.path.join(dst, "translation", pid))
+    for key in sorted(want):                        # the store's "before" as sent, byte for byte (no path in it)
+        rel = publish.sent_rel(key)
+        if os.path.exists(os.path.join(src, rel)):
+            os.makedirs(os.path.dirname(os.path.join(dst, rel)), exist_ok=True)
+            shutil.copyfile(os.path.join(src, rel), os.path.join(dst, rel))
     for key in sorted(want):
         if key not in lines:
             continue

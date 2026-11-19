@@ -3,7 +3,8 @@
 `sweep.py` finds products already in the store whose cached model answers (the English title, option names, the
 description) a rule, dictionary or prompt improvement would now judge wrong. Re-preparing never reaches them:
 `translation/texts.jsonl` keeps a title until `translate.plan` asks it again, and `describe.py` keeps a description.
-Read only: local files, no network, no credentials; it writes only `shops/<shop>/sweep/latest/`.
+Read only: local files, no network, no credentials; it writes only `shops/<shop>/sweep/latest/`, or with
+`--seed-sent` only `publish/sent/<id>.json` (and no `sweep/latest/` report).
 
 ## How to use
 
@@ -11,6 +12,7 @@ Read only: local files, no network, no credentials; it writes only `shops/<shop>
 .venv/bin/python scripts/sweep.py <shop>                         # every published product, a table
 .venv/bin/python scripts/sweep.py <shop> --json                  # the same as JSON (answers.json's shape)
 .venv/bin/python scripts/sweep.py <shop> --only <ref> [--only <ref>] [--keys-file F] [--job ID [--event E]]
+.venv/bin/python scripts/sweep.py <shop> --seed-sent [--json] [a selection]   # the store's "before" (stage 2)
 ```
 
 When: after a commit that changes what products are built from (a rule, a dictionary entry, a prompt), between jobs,
@@ -26,13 +28,14 @@ the selection).
 | Result | What it means | What to do |
 |---|---|---|
 | a check's count is 0 | nothing an improvement now judges wrong | nothing |
-| `title.pending_reask` | `translate.plan` already wants these titles again (another brand than when it was asked) | paid: ask the owner ("ask again N titles, about $0.01-0.02 each?"), then `translate.py <shop> --keys-file shops/<shop>/sweep/latest/title.pending_reask.live.keys`; a republish is a second question (OWNER_RULES.md, rule 1) |
+| `title.pending_reask` | `translate.plan` already wants these titles again (another brand than when it was asked) | paid: ask the owner ("ask again N titles, about $0.01-0.02 each?"), then `translate.py <shop> --keys-file shops/<shop>/sweep/latest/title.pending_reask.live.keys`; a republish is a second question (OWNER_RULES.md, rule 1); a Korean title that names both brands (a maker and its line, a mixed set) only gets them reordered (2026-11-19: 4 live titles, PRGR / Yonex, Koara / Mazel, ONOFF / Daiwa, Stardom / Katana): on the owner's word keep the old English as a hand row (`by: review-...`), never asked again |
 | `title.other_brand` | the English title names another dictionary brand than the vendor, the Korean does not | read the examples (known false positives below); a real error: the owner decides `translate.py --reask` on the keys file, or a hand row (`by: review-...`) per product (skill `fix-a-product`) |
 | `text.hangul` | Korean left in an English text the store shows | fix at the source (a dictionary entry: skill `dictionaries`; a description: `describe.py --force --keys-file F` on the owner's word) |
 | `description.old_brand` | the description names the product under another brand (an old vendor, a seller's shop) | the owner's word, then `describe.py <shop> --force --keys-file .../description.old_brand.live.keys`; then the republish question |
 | `description.patterns` | a stored description trips a check `describe.py` has now (shop talk, talk about the listing, a link) | as `description.old_brand` |
 | `description.stale` | the description was written from another packet than today's | nothing by default: one number, a keys file; the owner, 2026-11-19: only descriptions with an explicit error get rewritten |
 | `OCR sidecars with an error (whole shop)` | `description_images.py` failed on these products | by hand only: `.venv/bin/python scripts/description_images.py <shop> --products <product id> --force` (the Naver product id, the key's last part; ~20 s a product, under the lock) |
+| `seed-sent <shop>: N published (withdrawn left out): A written, B already there, C no_baseline` (`--seed-sent`) | `publish/sent/<id>.json` written for each published product whose offline build gives the ledger's `output` (B: the file holds it already, not rewritten); the C others have no baseline, a line a reason with up to 3 keys: `today's build differs from the ledger` (the store has something today's files no longer build: a vendor the store spells otherwise, a rule changed since), `the ledger row has no output` (a failed photo, a row from before `output` existed), `not buildable: <error>` (a missing file or record) | nothing: their "before" comes with their next real send (`publish.py` writes it); stage 3 shows them as no baseline |
 | exit 1, `sweep: <path>:<n>: not a JSON line ...` | a shop file has a broken line | skill `recover-state` |
 | `sweep: stop: <shop> is busy: ...` (exit 2) | a job or a command holds the shop's lock and rewrites the files read here | wait for it (`job.py status`), run again |
 | exit 2, `no product selected` / `none of the N named products is published here` / `unknown shop` | a selection that names no published product, or a shop `shop_stores.py` does not have | name published products (it never widens to every product), or a known shop |
@@ -70,6 +73,26 @@ Not checks yet (the plan's later stages): what the store would get from today's 
 (worse), groups and the owner's declines. The dictionaries are read as translate.py reads them, without their sync
 writes (`Dictionaries(write=False)`; test_sweep.py compares the two).
 
+## The store's "before" (`--seed-sent`, stage 2, 2026-11-19)
+
+`publish.py` keeps, for each real send, the dict its `output` hashes in `publish/sent/<Naver product id>.json`
+([PUBLISH.md](PUBLISH.md), "The store's before"), so a later stage diffs it against today's build field by field
+without reading Shopify. `--seed-sent` gives the products published before that their file: for every published,
+not withdrawn product (or a selection), `publish.build` offline (the brand dictionary's vendor spellings, read only,
+as the dry run; no Shopify, no model) and, when its `output` equals the ledger's, today's build is what the store has
+and is written (`write_atomic`; a file already holding it is left alone, so a second run writes nothing). The others
+are counted `no_baseline` by reason and get no file. It runs no check and writes nothing but `publish/sent/` files (and the lock's holder line, `shops/.<shop>.lock`);
+refused while the shop is busy, and unlike the checks it holds the shop's lock while it runs (about 14 s; a job or
+`publish.py` started meanwhile is refused as busy): the ledger it read at the start stays the ledger it compares
+with, so it never overwrites a newer send's file with an older build. A reader trusts only
+`publish.load_sent` (the file's sha256 against the ledger's `output`).
+
+For stage 3 (2026-11-19): the offline build takes vendor spellings from the brand dictionary, a real send from the
+store (`publish.clients`: the store's spelling first). The "new" a later stage compares with `sent/` must be built
+with the real send's vendor source (a cached vendor list from the store), or a vendor-only change from the
+dictionary's spelling is flagged as not real; otherwise every product the store spells otherwise shows a false
+vendor change (10476142508 LAROUGE is one).
+
 ## Files
 
 `shops/<shop>/sweep/latest/` (`shop_files.write_atomic`, rewritten each run):
@@ -96,3 +119,6 @@ neither made nor written); not held while it reads, so a job may start meanwhile
 - 2026-11-19, the review of the first run: a mixed set is also one whose spec value says 조합 (9275189943 only in
   its 종류 row "조합풀세트"): `description.old_brand` 105 -> 104; the other counts unchanged (2.1 s). Known false
   positives listed under How to use.
+- 2026-11-19, stage 2, the first `--seed-sent` on fairwardgolf (13.3 s): 2,265 published, 2,263 written (84.7 MB),
+  2 no_baseline, both `today's build differs from the ledger` as stage 0 measured: 10476142508 (LAROUGE, the
+  dictionary's vendor spelling against the store's) and 12584340779 (the owner keeps it). A second run wrote nothing.

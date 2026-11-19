@@ -3,7 +3,8 @@ repository, for the owner to upload to the cloud himself. Reads the sources only
 
 Phases (archive names carry the date; paths inside are relative to the repository root):
 
-    01-state        scripts/output/shops/<shop>/ without photos, description images and prepare_cache/,
+    01-state        scripts/output/shops/<shop>/ without photos, description images and prepare_cache/
+                    (publish/sent/ in it: the store's "before", 2026-11-19),
                     scripts/output/jobs, journal, dictionaries (the live ones)                      zstd-19
     02-photos       scripts/output/shops/<shop>/collected/<run>/images/                             zstd-3
     03-description-images-partNN

@@ -3,6 +3,7 @@ No network.
 
     .venv/bin/python -m pytest scripts/test_publish.py -q
 """
+import hashlib
 import json
 import os
 import re
@@ -993,3 +994,113 @@ def test_a_draft_job_creates_draft_in_a_reviewed_category_and_activate_puts_it_l
     assert "status" not in products.sent[-1][0] and active["store_status"] == "DRAFT"
     admin = StatusAdmin()
     assert PB.activate(shop, KEY, admin)["store_status"] == "ACTIVE" and admin.calls[-1][1] == "ACTIVE"
+
+
+# ---- the store's "before": build() and publish/sent/ (the retro-sweep plan, stage 2, 2026-11-19) -----------------
+
+def _files(root):
+    out = {}
+    for d, _, names in os.walk(root):
+        for n in names:
+            with open(os.path.join(d, n), "rb") as f:
+                out[os.path.relpath(os.path.join(d, n), root)] = f.read()
+    return out
+
+
+def test_build_writes_nothing_and_gives_the_dry_runs_and_the_real_runs_output(tmp_path):
+    shop = _shop(tmp_path)
+    before = _files(tmp_path)
+    built = PB.build(shop, KEY, IDS)
+    assert _files(tmp_path) == before                          # no payload, feed, files.jsonl, ledger, sent/
+    assert sp.digest(built["product_input"]) == built["output"] and "handle" not in built["product_input"]
+    assert built["handle"] == "callaway-reva-complete-set" and built["images"] == ["a" * 64, "b" * 64]
+    dry = PB.publish_one(shop, KEY, None, None, IDS, dry_run=True)
+    assert (dry["output"], dry["feed_sha"], dry["images"]) == (built["output"], built["feed_sha"], built["images"])
+    row = PB.publish_one(shop, KEY, FakeProducts(), FakeFiles(), IDS)
+    again = PB.build(shop, KEY, IDS)                           # the review files known now (files.jsonl)
+    assert row["output"] == again["output"] and again["digest"] == row["digest"]
+    assert again["handle"] == row["handle"]                    # the ledger's
+
+
+def test_a_real_send_writes_sent_whose_canonical_sha_is_the_ledger_output(tmp_path):
+    shop = _shop(tmp_path)
+    row = PB.publish_one(shop, KEY, FakeProducts(), FakeFiles(), IDS)
+    path = PB.sent_path(shop, KEY)
+    assert path.endswith(os.path.join("publish", "sent", "555.json"))
+    text = open(path, encoding="utf-8").read()
+    assert hashlib.sha256(text.rstrip("\n").encode()).hexdigest() == row["output"]
+    assert sp.digest(json.loads(text)) == row["output"] == shop.ledger()[KEY]["output"]
+    assert PB.load_sent(shop, KEY) == PB.build(shop, KEY, IDS)["product_input"]
+
+
+def test_skipped_dry_run_and_failed_sends_write_no_sent(tmp_path):
+    shop = _shop(tmp_path)
+    PB.publish_one(shop, KEY, None, None, IDS, dry_run=True)
+    assert not os.path.exists(PB.sent_path(shop, KEY))
+    products = FakeProducts()
+    products.failed_media = (2,)                               # a failed photo: no output in the row, no file
+    assert PB.publish_one(shop, KEY, products, FakeFiles(), IDS)["output"] is None
+    assert not os.path.exists(PB.sent_path(shop, KEY))
+
+    class Refused(FakeProducts):
+        def product_set(self, payload, product_id=None):
+            raise PB.CatalogError("userErrors")
+    with pytest.raises(PB.CatalogError):
+        PB.publish_one(shop, KEY, Refused(), FakeFiles(), IDS, force=True)
+    assert not os.path.exists(PB.sent_path(shop, KEY))
+    PB.publish_one(shop, KEY, FakeProducts(), FakeFiles(), IDS)            # sent: the file
+    os.remove(PB.sent_path(shop, KEY))
+    assert PB.publish_one(shop, KEY, FakeProducts(), FakeFiles(), IDS)["status"] == "skipped"
+    assert not os.path.exists(PB.sent_path(shop, KEY))
+
+
+def test_load_sent_refuses_a_tampered_file_an_old_send_and_an_unknown_key(tmp_path, monkeypatch):
+    shop = _shop(tmp_path)
+    assert PB.load_sent(shop, KEY) is None                     # never sent
+    PB.publish_one(shop, KEY, FakeProducts(), FakeFiles(), IDS)
+    path = PB.sent_path(shop, KEY)
+    good = open(path, encoding="utf-8").read()
+    assert PB.load_sent(shop, KEY)
+    open(path, "w", encoding="utf-8").write(good.replace("Callaway REVA", "Callaway REVO"))
+    assert PB.load_sent(shop, KEY) is None                     # a hand edit
+    open(path, "w", encoding="utf-8").write(good[:-20])
+    assert PB.load_sent(shop, KEY) is None                     # cut off
+    open(path, "w", encoding="utf-8").write(good)
+    # a send cut off between its ledger row and its file: the row is new, the file the last send's
+    d = tmp_path / "fairwardgolf" / "translation" / "translated.jsonl"
+    t = json.loads(d.read_text())
+    t["en"][text_id("title", "[오늘출고] 캘러웨이 레바 풀세트")] = "Callaway REVA Complete Golf Set"
+    d.write_text(json.dumps(t, ensure_ascii=False) + "\n")
+    PB._MEMO.clear()
+    monkeypatch.setattr(PB, "write_sent", lambda *a: (_ for _ in ()).throw(KeyboardInterrupt()))
+    with pytest.raises(KeyboardInterrupt):
+        PB.publish_one(shop, KEY, FakeProducts(), FakeFiles(), IDS)
+    assert open(path, encoding="utf-8").read() == good and PB.load_sent(shop, KEY) is None
+    assert PB.load_sent(shop, "fairwardgolf:naver:1:1") is None
+
+
+def test_load_sent_refuses_a_withdrawn_key_whose_file_is_still_there(tmp_path):
+    shop = _shop(tmp_path)
+    PB.publish_one(shop, KEY, FakeProducts(), FakeFiles(), IDS)
+    assert PB.load_sent(shop, KEY)
+
+    class Admin:
+        def set_status(self, pid, status):
+            return status
+    PB.withdraw(shop, KEY, Admin(), "a bag alone")
+    assert os.path.exists(PB.sent_path(shop, KEY)) and PB.load_sent(shop, KEY) is None
+
+
+def test_a_sent_file_not_written_is_a_warning_the_send_stands(tmp_path, monkeypatch, capsys):
+    """2026-11-19: the product is in the store and its row in the ledger; a disk error on publish/sent/ must not
+    stop the job (job.py catches only the send's own errors)."""
+    shop = _shop(tmp_path)
+    monkeypatch.setattr(PB, "write_sent", lambda *a: (_ for _ in ()).throw(OSError(28, "No space left on device")))
+    ids = {**IDS, "vendors": {}}
+    row = PB.publish_one(shop, KEY, FakeProducts(), FakeFiles(), ids)
+    assert row["status"] == "published" and row["output"]
+    rows = [json.loads(x) for x in open(shop.ledger_path, encoding="utf-8")]
+    assert [r["key"] for r in rows] == [KEY] and shop.ledger()[KEY]["output"] == row["output"]
+    assert ids["vendors"]                                      # the run's spelling memory still updated
+    assert f"publish: warning: {KEY}: publish/sent/ not written" in capsys.readouterr().out
+    assert PB.load_sent(shop, KEY) is None                     # no baseline, never a wrong one

@@ -69,6 +69,7 @@ def test_phases_by_path():
     assert sb.phase_of(f"{SHOP}/collected/run1/products.jsonl") == "state"
     assert sb.phase_of(f"{SHOP}/description_images/cache/1/a.bin") == "description-images"
     assert sb.phase_of(f"{SHOP}/description_images/1.json") == "state"
+    assert sb.phase_of(f"{SHOP}/publish/sent/13552318731.json") == "state"      # the store's "before" (2026-11-19)
     assert sb.phase_of("scripts/output/jobs/job1/job.json") == "state"
     assert sb.phase_of("scripts/output/dictionaries/brand.json") == "state"
     assert sb.phase_of("scripts/output/dictionaries.old/brand.json") == "archive"
