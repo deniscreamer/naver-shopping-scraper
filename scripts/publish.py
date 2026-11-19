@@ -450,21 +450,23 @@ def prices_of(payload: dict[str, Any]) -> list[int]:
     return [min(prices), max(prices)]
 
 
-def vendor_spellings(store: dict[str, str]) -> dict[str, str]:
+def vendor_spellings(store: dict[str, str], brands: list[str] | None = None) -> dict[str, str]:
     """{brand_key: spelling}: the first spelling a brand was known by stays, compared without case, dots or spaces
     (the owner, 2026-11-17: "whichever came first stays, upper or lower case"): the store's oldest spelling
     (shopify_admin's order), then the brand dictionary's for a brand the store does not have yet (its first value:
     translation_dicts.brand_spelling), then the model's (a run remembers each new vendor for its next products).
     Before 2026-11-17 the dictionary came first and a dictionary entry written later in another case changed a live
-    vendor (9951345559 KIRKLAND -> Kirkland)."""
+    vendor (9951345559 KIRKLAND -> Kirkland). `brands`: the brand dictionary's values when the caller has them
+    loaded (sweep.py's read-only copy; Dictionaries() may write the live file)."""
     from translation_dicts import Dictionaries
     out: dict[str, str] = {}
     for v in store.values():                         # the store's first spelling of a brand (oldest product first)
         out.setdefault(sp.brand_key(v), v)
-    try:
-        brands = list(Dictionaries().entries.get("brand", {}).values())
-    except Exception:                                       # no dictionary: the shop's spellings only
-        brands = []
+    if brands is None:
+        try:
+            brands = list(Dictionaries().entries.get("brand", {}).values())
+        except Exception:                                   # no dictionary: the shop's spellings only
+            brands = []
     for v in brands:
         out.setdefault(sp.brand_key(sp.vendor_name(v)), sp.vendor_name(v))
     return out

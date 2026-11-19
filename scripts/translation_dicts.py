@@ -101,25 +101,30 @@ class Dictionaries:
     """The live dictionaries of every kind, seeded from the backups; entries a backup has and a live copy lacks are
     added to it (a newer backup from git), never the other way round."""
 
-    def __init__(self, live_root: str = LIVE_ROOT, backup_root: str = BACKUP_ROOT, kinds: tuple[str, ...] = SHARED):
-        self.live_root, self.backup_root, self.kinds = live_root, backup_root, kinds
+    def __init__(self, live_root: str = LIVE_ROOT, backup_root: str = BACKUP_ROOT, kinds: tuple[str, ...] = SHARED,
+                 write: bool = True):
+        """`write=False`: the same entries, nothing written (no live copy seeded, no pulled entries written, save()
+        refused): a read-only tool's view (sweep.py, 2026-11-19)."""
+        self.live_root, self.backup_root, self.kinds, self.write = live_root, backup_root, kinds, write
         self.entries: dict[str, dict[str, str]] = {k: {} for k in KINDS}
         self.added: dict[str, dict[str, str]] = {k: {} for k in KINDS}      # this run's new entries
         self._scopes: dict[str, "Dictionaries"] = {}
         for kind in kinds:
             live = self.path(kind)
-            if not os.path.exists(live):
-                backup = os.path.join(backup_root, f"{kind}.json")
-                if os.path.exists(backup):
-                    os.makedirs(live_root, exist_ok=True)
-                    shutil.copyfile(backup, live)
-            self.entries[kind] = _read(live, kind) if os.path.exists(live) else {}
             backup = os.path.join(backup_root, f"{kind}.json")
+            if not os.path.exists(live) and os.path.exists(backup):
+                if not write:                           # what the seeded copy would hold
+                    self.entries[kind] = _read(backup, kind)
+                    continue
+                os.makedirs(live_root, exist_ok=True)
+                shutil.copyfile(backup, live)
+            self.entries[kind] = _read(live, kind) if os.path.exists(live) else {}
             if os.path.exists(live) and os.path.exists(backup):
                 pulled = {k: v for k, v in _read(backup, kind).items() if k not in self.entries[kind]}
                 if pulled:
                     self.entries[kind] = {**_read(live, kind), **pulled}
-                    _write(live, kind, self.entries[kind])
+                    if write:
+                        _write(live, kind, self.entries[kind])
 
     def path(self, kind: str) -> str:
         return os.path.join(self.live_root, f"{kind}.json")
@@ -129,7 +134,7 @@ class Dictionaries:
         name = str(category or "none")
         if name not in self._scopes:
             self._scopes[name] = Dictionaries(os.path.join(self.live_root, name), os.path.join(self.backup_root, name),
-                                              tuple(k for k in KINDS if k not in SHARED))
+                                              tuple(k for k in KINDS if k not in SHARED), self.write)
         return self._scopes[name]
 
     def get(self, kind: str, ko: str, category: str | None = None) -> str | None:
@@ -151,6 +156,8 @@ class Dictionaries:
 
     def save(self) -> None:
         """This run's new entries over the file as it is now (another run may have added its own meanwhile)."""
+        if not self.write:
+            raise RuntimeError("these dictionaries are read only (write=False)")
         for scoped in self._scopes.values():
             scoped.save()
         for kind in self.kinds:

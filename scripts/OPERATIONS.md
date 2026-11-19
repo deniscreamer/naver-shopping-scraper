@@ -108,6 +108,9 @@ writes them goes through `shop_files.py`:
   process dies (kill -9 too); the file keeps the last holder's text after that, so `lsof <lock file>` printing
   nothing (exit 1) is the check that nobody holds it. The lock is advisory: an editor or a heredoc into a `.jsonl` is not stopped, so a
   new writer of shared files uses `shop_files` and a new sending command takes the lock.
+  Refused while it is held, never taking it: `sweep.py` (`ensure_free`: a shared lock tried and dropped, the lock
+  file neither made nor written; 2026-11-19: its findings would be false while a job rewrites the files; a command
+  that takes the lock in that microsecond window is refused as busy, run it again).
 
 ## Naming a product (`shop_view.resolve`, 2026-11-16)
 
@@ -169,6 +172,7 @@ hand-written Python. Each prints a TSV (`shop_view.cell`: a list comma-joined, w
 .venv/bin/python scripts/job.py report|where|watch ...             # a job's events: JOB_AGENT.md, 3. Watch
 .venv/bin/python scripts/prepared_diff.py old.jsonl new.jsonl [--fields ...] [--published-only] [--keys-out F]
 .venv/bin/python scripts/run_transform.py <shop> --diff            # a prepare, then what it changed (TRANSFORM.md)
+.venv/bin/python scripts/sweep.py <shop> [--json] [--only <ref> | --keys-file F | --job ID]   # old answers a rule now judges wrong
 .venv/bin/python scripts/shopify_catalog.py <shop> show <ref> [--variants] [--metafields [NS[.KEY]]] [--media]
 .venv/bin/python scripts/shopify_catalog.py <shop> counts | vendors [--query Q] | collection <handle> [--count-by vendor,status]
 .venv/bin/python scripts/shopify_catalog.py <shop> dump [--fields ...] [--query 'status:active'] --out F.jsonl
@@ -184,6 +188,10 @@ hand-written Python. Each prints a TSV (`shop_view.cell`: a list comma-joined, w
 - **`prepared_diff.py`**, two prepared files product by product (status, held, notes, brand, title, price, variants,
   package, images, other): `key<TAB>change<TAB>field<TAB>old<TAB>new`. `--published-only`: only products in the
   store, the answer to "which of the changed ones does the owner have to decide on" (OWNER_RULES.md, rule 1).
+- **`sweep.py`**, the published products' cached model answers (titles, option names, descriptions) that a rule,
+  dictionary or prompt improvement now judges wrong, check by check, live and drafts apart; it writes only
+  `shops/<shop>/sweep/latest/` (answers.json, `<check>.live.keys` / `.draft.keys`) and refuses while the shop is
+  busy (exit 2) without taking the lock. What each result means and what to do: [SWEEP.md](SWEEP.md).
 - **`shopify_catalog.py`**, the store itself (Admin API, read only, `WRITES = False`; one query a command, a page of
   100): what the store holds now, after an action or when our ledger and the store may disagree (`store_diff.py`
   compares every field).

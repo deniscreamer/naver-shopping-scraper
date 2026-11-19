@@ -94,6 +94,11 @@ into the publish digest only when the product has a row, so a product without on
 already in the shop are skipped unless `--published` or `--only` names them: a new description changes the digest,
 and the next `publish.py` run sends the product (the owner's go-ahead first, JOB_AGENT.md).
 
+**Hand rows** (2026-11-19, none written yet): a description written or corrected by hand is a row appended to
+`descriptions.jsonl` like a model row, with `by: review-<date>-<why>` (as a hand title row in `texts.jsonl`).
+`sweep.py` never flags a product whose last row is one (SWEEP.md). `describe.py` does not know the convention:
+`--force` on that key replaces the hand row with a model answer.
+
 ### Which model writes the descriptions (compared 2026-11-10)
 
 The default is **claude-sonnet-5-5 at effort `high`** (the owner, 2026-11-10: fewer errors; `medium` was the

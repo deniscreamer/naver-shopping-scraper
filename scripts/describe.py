@@ -410,9 +410,9 @@ def _given(number: str, numbers: set[str]) -> bool:
     return number in numbers or (len(number) >= 2 and any(n.endswith(number) for n in numbers if "." not in n))
 
 
-def problems(text: str, numbers: set[str], country: str | None, counts: set[str] | None = None) -> list[str]:
-    """Why this sentence or list item cannot be shown ([]: it can). `counts` (set_counts): a set's piece count,
-    given only inside a count phrase."""
+def packet_free_problems(text: str) -> list[str]:
+    """The part of problems() that needs nothing the model was given: not English, a link / phone / price / markup
+    shape, shop talk, talk about the listing (sweep.py runs it on stored descriptions, 2026-11-19)."""
     out = []
     if HANGUL_RE.search(text) or _CJK_RE.search(text):
         out.append("not English")
@@ -423,6 +423,13 @@ def problems(text: str, numbers: set[str], country: str | None, counts: set[str]
     meta = _META_RE.search(text)
     if meta:
         out.append(f"about the listing: {meta.group(0)}")
+    return out
+
+
+def problems(text: str, numbers: set[str], country: str | None, counts: set[str] | None = None) -> list[str]:
+    """Why this sentence or list item cannot be shown ([]: it can). `counts` (set_counts): a set's piece count,
+    given only inside a count phrase."""
+    out = packet_free_problems(text)
     counted = text
     for n in counts or ():
         counted = _count_phrase(n).sub(" ", counted)
@@ -562,6 +569,12 @@ def _jsonl(path: str) -> dict[str, dict[str, Any]]:
     return out
 
 
+def source_sha256(prepared: dict[str, Any], translated: dict[str, Any], blocks: list[dict[str, Any]],
+                  vendors: dict[str, str] | None, tenant: str | None) -> str:
+    """The hash of the packet a description is written from (a row's `source_sha256`; another one now: stale)."""
+    return hashlib.sha256(packet(prepared, translated, blocks, vendors, tenant)["message"].encode()).hexdigest()
+
+
 def describe_product(prepared: dict[str, Any], translated: dict[str, Any], blocks: list[dict[str, Any]],
                      model: "Model | Chain", tenant: str | None, vendors: dict[str, str] | None, now: str,
                      usage: dict[str, dict[str, int]]) -> dict[str, Any]:
@@ -612,8 +625,7 @@ def run(shop: str, model: "Model | Chain | None", shops_root: str = SHOPS_ROOT,
         blocks = load_blocks(shop_dir, p["product"])
         have = store.get(key)
         if have and not force:
-            sha = hashlib.sha256(packet(p, t, blocks, vendors, tenant)["message"].encode()).hexdigest()
-            if have.get("source_sha256") != sha:
+            if have.get("source_sha256") != source_sha256(p, t, blocks, vendors, tenant):
                 stale.append(key)
             continue
         if model is None or (limit is not None and len(rows) >= limit):

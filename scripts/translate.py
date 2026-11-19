@@ -331,8 +331,15 @@ def _stale_lead(english: str, vendor: str, dicts: Dictionaries) -> str | None:
     for b in sorted((v for v in dicts.vendors() if len(v) >= 3), key=len, reverse=True):
         bl = b.lower()
         if low.startswith(bl) and (len(low) == len(bl) or not low[len(bl)].isalnum()):
-            return None if own.startswith(bl) or bl.startswith(own) else b
+            return None if same_brand_line(b, vendor) else b
     return None
+
+
+def same_brand_line(brand: str, vendor: str) -> bool:
+    """`brand` is the vendor, a longer name of it or it of the vendor (Maruman Majesty; Majesty Maruman), compared
+    without case: not another brand (_stale_lead; sweep.py's brand checks, 2026-11-19)."""
+    b, v = brand.lower(), vendor.lower()
+    return bool(b) and bool(v) and (v.startswith(b) or b.startswith(v))
 
 
 def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, str], str],

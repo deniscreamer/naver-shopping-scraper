@@ -8,6 +8,8 @@
                                    line of an append-only file with tail_ok (a run killed while appending)
     shop_lock(root, shop, what)    the shop's lock for a command's whole life; held elsewhere -> ShopBusy, no wait
     locked(root, shop, what, body) a command's main under the lock; refused -> the busy line printed, exit 2
+    ensure_free(root, shop)        a read tool that must not read files a run is rewriting (sweep.py): ShopBusy
+                                   while another process holds the lock; takes no lock, writes nothing
 
 Why each is so:
 - write_atomic: an open(path, "w") cut off by a killed process left a short file (products.jsonl is 68 MB and
@@ -98,6 +100,11 @@ def read_jsonl(path: str, tail_ok: bool = False) -> list[Any]:
     return out
 
 
+def _busy(shop: str, holder: str) -> ShopBusy:
+    """The refusal every busy check gives (shop_lock, ensure_free): the holder's line, what to do."""
+    return ShopBusy(f"{shop} is busy: {holder}: wait for it (job.py status) or stop it")
+
+
 def shop_lock(shops_root: str, shop: str, what: str) -> IO[str]:
     """The shop's lock, held until the returned file is closed (`with shop_lock(...):`); ShopBusy at once when another
     process holds it. `what` (e.g. "job.py run <id>") is what a refused command is told."""
@@ -109,12 +116,33 @@ def shop_lock(shops_root: str, shop: str, what: str) -> IO[str]:
         f.seek(0)
         holder = f.read().strip() or "another run"
         f.close()
-        raise ShopBusy(f"{shop} is busy: {holder}: wait for it (job.py status) or stop it") from None
+        raise _busy(shop, holder) from None
     f.seek(0)
     f.truncate()
     f.write(f"{what} (pid {os.getpid()}, since {time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())})")
     f.flush()
     return f
+
+
+def ensure_free(shops_root: str, shop: str) -> None:
+    """ShopBusy (the message shop_lock gives) while another process holds the shop's lock; returns when it is free.
+    It takes no lock and writes nothing, the lock file included (2026-11-19, sweep.py: a read of the shop's files
+    taken while a job rewrites three of them would report false findings, and a lock held for the whole read
+    would refuse a job started meanwhile). A shared lock tried and dropped at once: it fails while an exclusive one
+    is held. A shop_lock tried inside that window (microseconds) is refused as busy too, naming the last holder's
+    leftover line: run the command again."""
+    path = os.path.join(shops_root, f".{shop}.lock")
+    try:
+        f = open(path, encoding="utf-8")
+    except FileNotFoundError:                       # never locked: free
+        return
+    with f:
+        try:
+            fcntl.flock(f, fcntl.LOCK_SH | fcntl.LOCK_NB)
+        except OSError:
+            holder = f.read().strip() or "another run"
+            raise _busy(shop, holder) from None
+        fcntl.flock(f, fcntl.LOCK_UN)
 
 
 def locked(shops_root: str, shop: str, what: str, body: Callable[[], int], tool: str = "") -> int:
