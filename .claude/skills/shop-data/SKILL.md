@@ -23,7 +23,7 @@ share no shell state).
 | Did a batch of actions land as planned | a TSV `ref<TAB>state[<TAB>reason prefix]` -> `.venv/bin/python scripts/shop_view.py check <shop> plan.tsv` (exit 0: every line ok) |
 | What a job did; one outcome's products | `.venv/bin/python scripts/job.py report --job <id> [--event not_taken] [--table -]` |
 | Where a product went across the jobs | `.venv/bin/python scripts/job.py where <ref>` |
-| Old model answers (titles, option names, descriptions) a new rule, dictionary or prompt judges wrong | `.venv/bin/python scripts/sweep.py <shop> [--json] [--only <ref> \| --keys-file F]` (writes only `sweep/latest/`, its keys files; what each check means and what to do: `scripts/SWEEP.md`) |
+| Old model answers (titles, option names, descriptions) a new rule, dictionary or prompt judges wrong; what a resend would change for products in the store (groups, worse) | `.venv/bin/python scripts/sweep.py <shop> [--answers \| --store] [--json] [--only <ref> \| --keys-file F]` (writes only `sweep/`, its keys files and `groups/<id>.keys`; what each check, group and guard means and what to do: `scripts/SWEEP.md`) |
 | What a prepare / rule change changed, which are in the store | `.venv/bin/python scripts/prepared_diff.py old.jsonl new.jsonl --published-only [--keys-out F]` (skill `transform`) |
 | The store's own counts, vendors, a collection, one product | `.venv/bin/python scripts/shopify_catalog.py <shop> counts \| vendors \| collection <handle> [--count-by vendor,status] \| show <ref>` |
 | A snapshot of the store's products | `.venv/bin/python scripts/shopify_catalog.py <shop> dump [--fields id,handle,status,vendor,key] [--query 'status:active'] --out <scratch>/store.jsonl` |

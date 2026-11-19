@@ -311,8 +311,9 @@ def test_the_run_writes_only_under_sweep(fx, tmp_path, capsys):
     assert new and all(k.startswith(os.path.join("shops", SHOP, "sweep", "latest") + os.sep) for k in new)
     assert set(before) <= set(after) and not os.path.exists(tmp_path / "live")     # no dictionary written either
     out = os.path.join(fx.shops, SHOP, "sweep", "latest")
-    assert sorted(os.listdir(out)) == sorted(["answers.json"] + [f"{c}.{s}.keys" for c in S.CODES
-                                                                 for s in ("live", "draft")])
+    assert sorted(os.listdir(out)) == sorted(["answers.json", "store.json", "groups"]
+                                             + [f"{c}.{s}.keys" for c in S.CODES for s in ("live", "draft")])
+    assert os.listdir(os.path.join(out, "groups")) == []                           # no baseline in the fixture
     keys = open(os.path.join(out, "description.stale.live.keys"), encoding="utf-8").read().split()
     assert fx.key("12178430576") in keys
     printed = capsys.readouterr().out
@@ -326,7 +327,9 @@ def test_drafts_apart_and_withdrawn_left_out(fx, capsys):
     last = [json.loads(x) for x in open(ledger, encoding="utf-8") if json.loads(x)["key"] == key][-1]
     append(ledger, {**last, "store_status": "DRAFT"})
     assert S.main([SHOP, "--shops-root", fx.shops, "--json"]) == 0
-    a = json.loads(capsys.readouterr().out)
+    both = json.loads(capsys.readouterr().out)
+    a = both["answers"]
+    assert (both["store"]["scope"]["live"], both["store"]["scope"]["draft"]) == (6, 1)
     assert a["scope"]["live"] == 6 and a["scope"]["draft"] == 1
     assert [f["key"] for f in a["checks"]["description.stale"]["findings"] if f["store"] == "draft"] == [key]
     out = os.path.join(fx.shops, SHOP, "sweep", "latest")
@@ -357,8 +360,8 @@ def test_a_selection_naming_nothing_is_exit_2_never_all(fx, tmp_path, capsys):
     assert e.value.code == 2
     assert S.main([SHOP, "--shops-root", fx.shops, "--only", fx.key("12080067974")]) == 2    # withdrawn: none
     assert not os.path.exists(os.path.join(fx.shops, SHOP, "sweep"))
-    assert S.main([SHOP, "--shops-root", fx.shops, "--only", "12178430576", "--json"]) == 0
-    a = json.loads(capsys.readouterr().out)
+    assert S.main([SHOP, "--shops-root", fx.shops, "--only", "12178430576", "--json", "--answers"]) == 0
+    a = json.loads(capsys.readouterr().out)                                       # --answers: answers.json's shape
     assert a["scope"]["live"] == 1 and a["selection"] == [fx.key("12178430576")]
 
 
@@ -451,6 +454,479 @@ def test_seed_sent_holds_the_shops_lock_while_it_writes(fx, monkeypatch, capsys)
         pass
 
 
+
+# ---- the store lagging (stage 3): today's build against publish/sent/ --------------------------------------------
+
+A11N, YAMATO_LEFT, YAMATO_FULL = "13552318731", "13830312765", "13016112970"     # live; live; live (activated)
+MILE_HIGH, OWN, RESTORED = "13830324906", "13370257430", "12178430576"            # live; the shop's brand; restored
+
+
+def seeded(fx):
+    """The fixture with its baselines (sweep.py --seed-sent: 6 of its 7 published build to the ledger's output)."""
+    assert S.seed_sent(SHOP, fx.shops, None, S.read_dictionaries(S.DICTS_LIVE))["seeded"] == 6
+    return P.Shop(SHOP, fx.shops)
+
+
+def rewrite(fx, rel, key, change):
+    """The last row of `key` in the shop file `rel` changed in place (change(row)), the file rewritten whole."""
+    path = os.path.join(fx.shops, SHOP, rel)
+    rows = [json.loads(x) for x in open(path, encoding="utf-8")]
+    change(next(r for r in reversed(rows) if r["key"] == key))
+    shop_files.write_atomic(path, "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
+    P._MEMO.clear()
+
+
+def retitle(fx, pid, change):
+    """Today's English title of the product (translated.jsonl), change(old) -> new."""
+    key = fx.key(pid)
+    p = P.Shop(SHOP, fx.shops).inputs()[0][key]
+
+    def edit(r):
+        r["en"][title_of(p)] = change(r["en"][title_of(p)])
+    rewrite(fx, os.path.join("translation", "translated.jsonl"), key, edit)
+
+
+def rebase(fx, pid, change):
+    """The store's "before" edited (change(baseline)): the file and the ledger's output follow, as a real send of it
+    would have left them (load_sent trusts it)."""
+    shop = P.Shop(SHOP, fx.shops)
+    key = fx.key(pid)
+    base = P.load_sent(shop, key)
+    change(base)
+    P.write_sent(shop, key, base)
+    append(shop.ledger_path, {**shop.ledger()[key], "output": sp.digest(base)})
+    P._MEMO.clear()
+
+
+def describe_row(fx, pid, **row):
+    append(os.path.join(fx.shops, SHOP, "translation", "descriptions.jsonl"),
+           {"key": fx.key(pid), "generated": "model", "by": "claude-sonnet-5-5", "status": "ok", **row})
+    P._MEMO.clear()
+
+
+def lag(fx, keys=None, dicts=None):
+    return S.store_run(SHOP, fx.shops, keys, dicts or S.read_dictionaries(S.DICTS_LIVE))
+
+
+def grouped(r):
+    """{key: its group} over every group (a key in two groups fails here)."""
+    out = {}
+    for g in r["groups"]:
+        for k in g["keys"]:
+            assert k not in out, f"{k} in {out.get(k)} and {g['id']}"
+            out[k] = g
+    return out
+
+
+def test_store_all_same_after_the_seed_and_no_baseline_one_line(fx, capsys):
+    r = lag(fx)
+    assert r["same"] == [] and r["groups"] == [] and r["worse"] == []              # no publish/sent/ yet
+    assert r["no_baseline"] == {S.NO_FILE: {"count": 7, "keys": sorted(P.Shop(SHOP, fx.shops).ledger())}}
+    seeded(fx)
+    r = lag(fx)
+    assert len(r["same"]) == 6 and r["groups"] == [] and r["worse"] == []
+    assert r["no_baseline"] == {S.NO_FILE: {"count": 1, "keys": [fx.key(UNBUILDABLE)]}}
+    assert S.main([SHOP, "--shops-root", fx.shops, "--store"]) == 0
+    out = capsys.readouterr().out
+    assert out.startswith(f"store lagging {SHOP}: 7 live, 0 drafts; 6 with a baseline: 6 same, 0 changed "
+                          f"(improvement 0, eyeball 0; needing --force 0), 0 worse; no baseline 1 ({S.NO_FILE}: 1, "
+                          f"{fx.key(UNBUILDABLE)})")
+
+
+def real_send_ids(shop):
+    """publish.clients' ids on a fake store holding the baselines: shopify_admin.vendor_spellings ({lower case:
+    the first spelling}, products oldest first: the ledger's order), then publish.vendor_spellings, not sweep's."""
+    first = {}
+    for key in shop.ledger():
+        b = P.load_sent(shop, key)
+        if b and b.get("vendor"):
+            first.setdefault(b["vendor"], len(first))
+    store = {}
+    for name in sorted(first, key=first.__getitem__):
+        store.setdefault(name.lower(), name)
+    return {"publications": ["gid://shopify/Publication/9"], "location": "gid://shopify/Location/1",
+            "vendors": P.vendor_spellings(store), "tenant": TENANT}
+
+
+def send_all(shop, keys, force=False):
+    """publish_one on a fake Admin for each key, the real send's ids -> ({key: status}, products)."""
+    from test_publish import FakeFiles, FakeProducts
+    ids, products = real_send_ids(shop), FakeProducts()
+    return {k: P.publish_one(shop, k, products, FakeFiles(), {**ids, "vendors": dict(ids["vendors"])},
+                             force=force)["status"] for k in keys}, products
+
+
+def test_changed_is_what_publish_one_sends_and_same_is_skipped(fx):
+    """Equivalence with the real path: each key sweep calls changed (not .force), publish_one on a fake Admin sends;
+    each same one it skips; a .force one (the output moved, the inputs digest did not: a vendor the store spells
+    otherwise) it skips unforced and sends forced."""
+    shop = seeded(fx)
+    retitle(fx, A11N, lambda t: t.replace("Wedge Set", "Wedge Pair"))
+    old = describe.load_store(shop.dir)[fx.key(MILE_HIGH)]["html"]
+    describe_row(fx, MILE_HIGH, html=old.replace("</p>", " It suits a beginner.</p>", 1))
+    rebase(fx, YAMATO_FULL, lambda b: b.update(vendor="YAMATO"))     # the store's other spelling; YAMATO_LEFT, older,
+    r = lag(fx)                                                      # has "Yamato": the send spells it so
+    g = grouped(r)
+    changed = set(g) | {w["key"] for w in r["worse"]}
+    assert changed == {fx.key(A11N), fx.key(MILE_HIGH), fx.key(YAMATO_FULL)} and not r["worse"]
+    forced = {k for k, x in g.items() if x["force"]}
+    assert forced == {fx.key(YAMATO_FULL)} and r["needs_force"] == 1
+    assert g[fx.key(YAMATO_FULL)]["cost"] == S.COST_FORCE and ".force." in g[fx.key(YAMATO_FULL)]["id"]
+    assert {g[fx.key(p)]["cost"] for p in (A11N, MILE_HIGH)} == {S.COST_FREE}
+    assert set(r["same"]) == set(shop.ledger()) - changed - {fx.key(UNBUILDABLE)}
+    status, products = send_all(shop, [*r["same"], *changed])
+    assert {k for k, v in status.items() if v == "published"} == changed - forced
+    assert {k for k, v in status.items() if v == "skipped"} == set(r["same"]) | forced
+    assert len(products.sent) == 2
+    r = lag(fx)
+    assert set(grouped(r)) == forced and len(r["same"]) == 5                        # sent: the same now
+    status, products = send_all(shop, sorted(forced), force=True)
+    assert set(status.values()) == {"published"} and products.sent[0][0]["vendor"] == "Yamato"
+    assert lag(fx)["groups"] == [] and len(lag(fx)["same"]) == 6
+
+
+def test_a_payload_change_without_a_version_needs_force(fx, monkeypatch):
+    """A shopify_payload change made without sp.VERSION moves every output and no inputs digest: every key is
+    .force, none in a plain resend group (publish_one would skip each)."""
+    shop = seeded(fx)
+    real = sp.fit_title
+    monkeypatch.setattr(sp, "fit_title", lambda *a, **k: real(*a, **k) + " X")
+    r = lag(fx)
+    assert len(grouped(r)) == 6 and r["needs_force"] == 6
+    assert all(g["force"] and g["cost"] == S.COST_FORCE for g in r["groups"])
+    big = r["groups"][0]
+    assert (big["count"], len(big["examples"])) == (5, S.EXAMPLES)                # 5 keys, 3 examples
+    status, _ = send_all(shop, sorted(grouped(r)))
+    assert set(status.values()) == {"skipped"}
+
+
+def test_a_vendor_the_store_spells_otherwise_is_no_change(fx):
+    """10476142508 LAROUGE (stage 0): the dictionary spells a brand otherwise than the store; the build takes the
+    store's spelling from the baselines as a real send takes it from the store."""
+    shop = seeded(fx)
+    dicts = S.read_dictionaries(S.DICTS_LIVE)
+    for ko, en in list(dicts.entries["brand"].items()):
+        if en == "Yamato":
+            dicts.entries["brand"][ko] = "YAMATO"                                    # a later entry in capitals
+    r = lag(fx, dicts=dicts)
+    assert {fx.key(YAMATO_LEFT), fx.key(YAMATO_FULL)} <= set(r["same"]) and r["groups"] == []
+    alone = {"vendors": P.vendor_spellings({}, list(dicts.entries["brand"].values())), "tenant": TENANT}
+    built = P.build(shop, fx.key(YAMATO_LEFT), alone)                             # the dictionary alone: a false
+    assert built["output"] != shop.ledger()[fx.key(YAMATO_LEFT)]["output"]         # vendor change
+    assert built["product_input"]["vendor"] == "YAMATO"
+
+
+def test_the_guards_on_real_pairs(fx, capsys):
+    seeded(fx)
+    rebase(fx, RESTORED, lambda b: b.update(vendor="PGM"))     # it was PGM's; restored under the shop's name
+    rebase(fx, MILE_HIGH, lambda b: b["variants"].append({**b["variants"][0], "sku": "FW-gone"}))
+    rebase(fx, YAMATO_LEFT, lambda b: b["files"].append({"id": "0" * 64, "alt": "photo"}))
+    describe_row(fx, A11N, html="")                                                # the description gone
+    describe_row(fx, OWN, html="<p>Fairward Golf Unisex Wedge Set 5460.</p>", status="fallback")
+    rewrite(fx, os.path.join("placement", "placements.jsonl"), fx.key(YAMATO_FULL),
+            lambda r: r.update(status="unresolved", reason="no_profile"))
+    r = lag(fx)
+    worse = {w["key"]: w["guards"] for w in r["worse"]}
+    assert {k: [g.split(":")[0] for g in v] for k, v in worse.items()} == {
+        fx.key(RESTORED): ["vendor_lost"], fx.key(MILE_HIGH): ["fewer_variants"],
+        fx.key(YAMATO_LEFT): ["fewer_photos"], fx.key(A11N): ["description_lost"],
+        fx.key(OWN): ["description_lost"], fx.key(YAMATO_FULL): ["not_buildable"]}
+    assert worse[fx.key(RESTORED)] == ["vendor_lost: 'PGM' -> 'Fairward Golf'"]
+    assert worse[fx.key(OWN)] == ["description_lost: a fallback now (its intro only the title)"]
+    assert worse[fx.key(YAMATO_FULL)] == ["not_buildable: placement unresolved: no_profile"]
+    assert r["groups"] == [] and r["same"] == []                                    # in no group
+    assert S.main([SHOP, "--shops-root", fx.shops]) == 1
+    out = capsys.readouterr().out
+    assert out.startswith("WORSE 6 (a guard tripped")
+    written = json.load(open(os.path.join(fx.shops, SHOP, "sweep", "latest", "store.json"), encoding="utf-8"))
+    assert len(written["worse"]) == 6 and written["groups"] == []
+
+
+def test_a_good_change_trips_no_guard(fx):
+    """The guards' good cases: a variant, a photo and a description kept, the shop's own brand kept as it was."""
+    seeded(fx)
+    rebase(fx, MILE_HIGH, lambda b: b["variants"].pop())                           # today has more: not worse
+    rebase(fx, YAMATO_LEFT, lambda b: b["files"].pop())
+    rebase(fx, OWN, lambda b: b.update(descriptionHtml=""))                        # a description added
+    r = lag(fx)
+    assert r["worse"] == [] and set(grouped(r)) == {fx.key(MILE_HIGH), fx.key(YAMATO_LEFT), fx.key(OWN)}
+    assert S.guards({"vendor": TENANT}, {"vendor": TENANT}, None, TENANT) == []    # the shop's brand all along
+
+
+def test_an_improvement_on_a_real_pair(fx):
+    """The store's title carries Pongdang Swim (the two-brand scan's class), today's does not: title.other_brand
+    fires on the store's and not on today's."""
+    seeded(fx)
+    rebase(fx, A11N, lambda b: b.update(title=b["title"].replace("A11N SPORTS", "Pongdang Swim")))
+    retitle(fx, MILE_HIGH, lambda t: t + " Kit")                                  # a change no check judges
+    r = lag(fx)
+    g = grouped(r)
+    a = g[fx.key(A11N)]
+    assert (a["verdict"], a["fields"]) == ("improvement", ["title"])
+    assert a["examples"][0]["improved"] == ["title.other_brand"]
+    assert a["examples"][0]["changes"][0].startswith("title: 'Pongdang Swim Forged")
+    assert g[fx.key(MILE_HIGH)]["verdict"] == "eyeball"
+    assert r["changed"] == {"improvement": 1, "eyeball": 1}
+
+
+def test_each_text_check_an_improvement_and_one_now_tripped(fx):
+    """The other three TEXT_CHECKS on real pairs (the store's text bad, today's not), and a key whose build clears
+    one check but trips another: eyeball, flagged."""
+    seeded(fx)
+
+    def korean_option(b):
+        name = b["productOptions"][0]["name"]
+        b["productOptions"][0]["name"] = name + " 색상"
+        for v in b["variants"]:
+            for o in v["optionValues"]:
+                if o.get("optionName") == name:
+                    o["optionName"] = name + " 색상"
+    rebase(fx, MILE_HIGH, korean_option)                                            # an option name's Hangul
+    lead_other = "<p>Pongdang Swim Kids' Junior Golf Club is a junior club.</p>"   # another brand in the lead
+    rebase(fx, OWN, lambda b: b.update(descriptionHtml=lead_other + b["descriptionHtml"]))
+    link = "<p>Visit www.golf.co.kr for more.</p>"                                  # a link: description.patterns
+    rebase(fx, YAMATO_FULL, lambda b: b.update(descriptionHtml=b["descriptionHtml"] + link))
+    rebase(fx, A11N, lambda b: b.update(descriptionHtml=b["descriptionHtml"] + link))
+    retitle(fx, A11N, lambda t: "Pongdang Swim " + t)                              # today's title: another brand
+    r = lag(fx)
+    assert not r["worse"]
+    rows = {e["key"]: (g["verdict"], e) for g in r["groups"] for e in g["examples"]}
+    assert {k: (v, e["improved"]) for k, (v, e) in rows.items()} == {
+        fx.key(MILE_HIGH): ("improvement", ["text.hangul"]),
+        fx.key(OWN): ("improvement", ["description.old_brand"]),
+        fx.key(YAMATO_FULL): ("improvement", ["description.patterns"]),
+        fx.key(A11N): ("eyeball", ["description.patterns"])}
+    assert "now trips title.other_brand" in rows[fx.key(A11N)][1]["flags"]
+
+
+def test_not_buildable_when_the_build_raises_and_a_broken_file_is_exit_1(fx, monkeypatch):
+    seeded(fx)
+    real = P.build
+
+    def build(shop, key, ids):
+        if key == fx.key(MILE_HIGH):
+            raise sp.PayloadError("no price for SKU FW-1")
+        return real(shop, key, ids)
+    monkeypatch.setattr(P, "build", build)
+    r = lag(fx)
+    assert [(w["key"], w["guards"]) for w in r["worse"]] == [
+        (fx.key(MILE_HIGH), ["not_buildable: PayloadError: no price for SKU FW-1"])]
+    assert fx.key(MILE_HIGH) not in r["same"] + list(grouped(r)) and len(r["same"]) == 5
+
+    def broken(shop, key, ids):
+        raise S.LedgerError("translated.jsonl:3: not a JSON line")
+    monkeypatch.setattr(P, "build", broken)
+    with pytest.raises(S.LedgerError):                                             # never a product's verdict
+        lag(fx)
+
+
+def test_the_guards_edges():
+    """vendor_lost when the vendor becomes empty; a fallback that was a fallback in the store too is not lost."""
+    assert S.guards({"vendor": "PGM"}, {"vendor": ""}, None, TENANT) == ["vendor_lost: 'PGM' -> ''"]
+    assert S.guards({"vendor": ""}, {"vendor": TENANT}, None, TENANT) == []
+    old = {"title": "PGM Junior Putter", "descriptionHtml": "<p>PGM Junior Putter.</p><ul><li>34 in</li></ul>"}
+    new = {"title": "PGM Junior Putter", "descriptionHtml": "<p>PGM Junior Putter.</p><ul><li>35 in</li></ul>"}
+    fallback = {"status": "fallback"}
+    assert S.guards(old, new, fallback, TENANT) == []                              # fallback -> fallback
+    ok = {**old, "descriptionHtml": "<p>A junior putter with a soft grip.</p>"}
+    assert S.guards(ok, new, fallback, TENANT) == ["description_lost: a fallback now (its intro only the title)"]
+    assert S.guards(ok, ok, fallback, TENANT) == []                                # the body as the store has it
+
+
+def test_withdrawn_and_no_baseline_keys_in_no_group(fx):
+    shop = seeded(fx)
+    for pid in (A11N, MILE_HIGH, YAMATO_LEFT, OWN):
+        retitle(fx, pid, lambda t: t + " Kit")
+    ledger = shop.ledger()
+    append(shop.ledger_path, {**{k: ledger[fx.key(A11N)][k] for k in ("format", "key", "product_id", "handle")},
+                              "status": "withdrawn", "reason": "hold: test", "at": "2026-11-19T00:00:00Z"})
+    os.remove(P.sent_path(shop, fx.key(MILE_HIGH)))                                # no file
+    tampered = P.load_sent(shop, fx.key(YAMATO_LEFT))
+    tampered["title"] += " (edited)"
+    with open(P.sent_path(shop, fx.key(YAMATO_LEFT)), "w", encoding="utf-8") as f:
+        json.dump(tampered, f)                                                     # not the ledger's output
+    append(shop.ledger_path, {**ledger[fx.key(YAMATO_FULL)], "output": None})       # a failed photo's row
+    P._MEMO.clear()
+    r = lag(fx)
+    assert set(grouped(r)) == {fx.key(OWN)}
+    assert r["no_baseline"] == {S.NO_FILE: {"count": 2, "keys": sorted([fx.key(MILE_HIGH), fx.key(UNBUILDABLE)])},
+                                S.NOT_LEDGER: {"count": 1, "keys": [fx.key(YAMATO_LEFT)]},
+                                S.NO_OUTPUT: {"count": 1, "keys": [fx.key(YAMATO_FULL)]}}
+    assert fx.key(A11N) not in r["same"] + [w["key"] for w in r["worse"]] and r["scope"]["live"] == 6
+
+
+def test_one_key_one_group_and_drafts_apart(fx):
+    shop = seeded(fx)
+    last = shop.ledger()[fx.key(YAMATO_LEFT)]
+    append(shop.ledger_path, {**last, "store_status": "DRAFT"})                    # the same output: still same
+    for pid in (YAMATO_LEFT, YAMATO_FULL, MILE_HIGH, RESTORED):
+        retitle(fx, pid, lambda t: t + " Kit")
+    r = lag(fx)
+    g = grouped(r)
+    assert set(g) == {fx.key(YAMATO_LEFT), fx.key(YAMATO_FULL), fx.key(MILE_HIGH), fx.key(RESTORED)}
+    # the Naver category apart: the same change, the same verdict, two categories, two groups
+    a, b = g[fx.key(MILE_HIGH)], g[fx.key(RESTORED)]
+    assert (a["category"], b["category"]) == ("50002783", "50002787") and a["fields"] == b["fields"]
+    assert a["id"] != b["id"] and ".50002783." in a["id"] and ".50002787." in b["id"]
+    assert g[fx.key(YAMATO_FULL)] is a
+    draft = g[fx.key(YAMATO_LEFT)]
+    assert draft["store"] == "draft" and draft["keys"] == [fx.key(YAMATO_LEFT)]
+    assert {g[fx.key(p)]["store"] for p in (YAMATO_FULL, MILE_HIGH)} == {"live"}
+    assert [x["store"] for x in r["groups"]][-1] == "draft"                        # live first
+    assert sum(x["count"] for x in r["groups"]) == sum(r["changed"].values()) == 4
+    append(shop.ledger_path, {**last, "store_status": "ACTIVE"})                   # live again: its fields, its
+    live = grouped(lag(fx))[fx.key(YAMATO_LEFT)]                                   # category, its verdict alike
+    assert live["id"] == "live" + draft["id"][len("draft"):] and live["store"] == "live"
+
+
+def test_latest_to_prev_and_new_gone(fx, capsys):
+    seeded(fx)
+    sweep_dir = os.path.join(fx.shops, SHOP, "sweep")
+
+    def go(*flags):
+        assert S.main([SHOP, "--shops-root", fx.shops, "--json", *flags]) == 0
+        return json.loads(capsys.readouterr().out)
+    first = go()
+    assert first["store"]["since_prev"] is None and first["answers"]["since_prev"] is None
+    retitle(fx, A11N, lambda t: t + " Kit")
+    both = go()
+    second = both["store"]
+    prev_answers = json.load(open(os.path.join(sweep_dir, "prev", "answers.json"), encoding="utf-8"))
+    assert prev_answers == first["answers"]                                       # the answers rotated too
+    assert both["answers"]["since_prev"]["description.stale"]["new"] == 1          # the retitled one's packet
+    gid = second["groups"][0]["id"]
+    assert second["since_prev"][gid] == {"now": 1, "new": 1, "gone": 0}
+    assert json.load(open(os.path.join(sweep_dir, "prev", "store.json"), encoding="utf-8"))["groups"] == []
+    retitle(fx, MILE_HIGH, lambda t: t + " Kit")
+    third = go("--store")                                                          # the store part alone
+    other = next(x["id"] for x in third["groups"] if fx.key(MILE_HIGH) in x["keys"])
+    assert third["since_prev"][gid] == {"now": 1, "new": 0, "gone": 0}
+    assert third["since_prev"][other] == {"now": 1, "new": 1, "gone": 0} and other != gid
+    keys = open(os.path.join(sweep_dir, "latest", "groups", f"{other}.keys"), encoding="utf-8").read()
+    assert keys == fx.key(MILE_HIGH) + "\n"
+    assert os.listdir(os.path.join(sweep_dir, "prev", "groups")) == [f"{gid}.keys"]
+    retitle(fx, A11N, lambda t: t.removesuffix(" Kit"))                            # back as the store has it
+    fourth = go()
+    assert fourth["store"]["since_prev"][gid] == {"now": 0, "new": 0, "gone": 1}
+    assert not os.path.exists(os.path.join(sweep_dir, "latest", "groups", f"{gid}.keys"))
+    checks = fourth["answers"]["since_prev"]          # against the last checks run (the second: --store kept it)
+    assert set(checks) == set(S.CODES) and checks["description.stale"]["gone"] == 1    # A11N's title back: its
+    assert all(d["new"] == 0 for d in checks.values())                                 # packet is today's again
+    assert all(d["gone"] == 0 for c, d in checks.items() if c != "description.stale")
+    rebase(fx, YAMATO_LEFT, lambda b: b["files"].append({"id": "0" * 64, "alt": "photo"}))     # a guard trips
+    assert S.main([SHOP, "--shops-root", fx.shops, "--json", "--store"]) == 1
+    assert json.loads(capsys.readouterr().out)["since_prev"]["worse"] == {"now": 1, "new": 1, "gone": 0}
+
+
+def test_a_selection_writes_apart_and_compares_with_nothing(fx, capsys):
+    """--only (or --keys-file, --job) narrows the store part to its keys and writes sweep/selection/: latest/ and
+    prev/ stay the whole shop's, so the next whole run finds nothing new or gone."""
+    seeded(fx)
+    sweep_dir = os.path.join(fx.shops, SHOP, "sweep")
+    for pid in (A11N, MILE_HIGH):
+        retitle(fx, pid, lambda t: t + " Kit")
+    assert S.main([SHOP, "--shops-root", fx.shops, "--json"]) == 0
+    whole = json.loads(capsys.readouterr().out)["store"]
+    assert set(grouped(whole)) == {fx.key(A11N), fx.key(MILE_HIGH)}
+    kept = {k: v for k, v in _tree(sweep_dir).items() if not k.startswith("selection")}
+    assert S.main([SHOP, "--shops-root", fx.shops, "--store", "--json", "--only", MILE_HIGH]) == 0
+    sel = json.loads(capsys.readouterr().out)
+    assert sel["scope"]["live"] == 1 and sel["selection"] == [fx.key(MILE_HIGH)] and sel["since_prev"] is None
+    assert set(grouped(sel)) == {fx.key(MILE_HIGH)}
+    files = os.listdir(os.path.join(sweep_dir, "selection", "groups"))
+    assert [open(os.path.join(sweep_dir, "selection", "groups", f), encoding="utf-8").read() for f in files] == [
+        fx.key(MILE_HIGH) + "\n"]
+    assert {k: v for k, v in _tree(sweep_dir).items() if not k.startswith("selection")} == kept
+    assert S.main([SHOP, "--shops-root", fx.shops, "--only", A11N]) == 0           # both parts, the text
+    out = capsys.readouterr().out
+    assert "since prev (checks): a selection, not compared" in out and "since prev (groups): a selection" in out
+    assert sorted(os.listdir(os.path.join(sweep_dir, "selection", "groups"))) != files    # its own, the last one's gone
+    assert os.path.exists(os.path.join(sweep_dir, "selection", "answers.json"))
+    assert {k: v for k, v in _tree(sweep_dir).items() if not k.startswith("selection")} == kept
+    assert S.main([SHOP, "--shops-root", fx.shops, "--json"]) == 0
+    again = json.loads(capsys.readouterr().out)
+    for part in ("answers", "store"):
+        assert all(d["new"] == 0 and d["gone"] == 0 for d in again[part]["since_prev"].values())
+
+
+def test_each_part_alone_writes_its_own_files(fx, capsys):
+    seeded(fx)
+    latest = os.path.join(fx.shops, SHOP, "sweep", "latest")
+    assert S.main([SHOP, "--shops-root", fx.shops, "--store"]) == 0
+    assert sorted(os.listdir(latest)) == ["groups", "store.json"]
+    assert S.main([SHOP, "--shops-root", fx.shops, "--answers"]) == 0
+    assert "store.json" in os.listdir(latest) and "answers.json" in os.listdir(latest)
+    assert not os.path.exists(os.path.join(fx.shops, SHOP, "sweep", "prev", "store.json"))   # store's kept
+    capsys.readouterr()
+
+
+def test_the_store_part_writes_only_under_sweep_and_exit_codes(fx, capsys):
+    seeded(fx)
+    rebase(fx, YAMATO_LEFT, lambda b: b["files"].append({"id": "0" * 64, "alt": "photo"}))
+    retitle(fx, A11N, lambda t: t + " Kit")
+    before = _tree(fx.root)
+    assert S.main([SHOP, "--shops-root", fx.shops, "--store"]) == 1                 # worse: 1
+    after = _tree(fx.root)
+    new = {k for k in after if k not in before or after[k] != before[k]}
+    assert new and all(k.startswith(os.path.join("shops", SHOP, "sweep", "latest") + os.sep) for k in new)
+    with shop_files.shop_lock(fx.shops, SHOP, "job.py run j1"):
+        assert S.main([SHOP, "--shops-root", fx.shops, "--store"]) == 2             # busy: 2
+    rebase(fx, YAMATO_LEFT, lambda b: b["files"].pop())
+    assert S.main([SHOP, "--shops-root", fx.shops, "--store"]) == 0                 # changed, none worse: 0
+    with pytest.raises(SystemExit) as e:
+        S.main([SHOP, "--shops-root", fx.shops, "--seed-sent", "--store"])          # usage: 2
+    assert e.value.code == 2
+    capsys.readouterr()
+
+
+def test_changes_names_what_store_diff_does_not_read():
+    """The weight, the cost, the SEO description and any other key: a change the output hashes is never "same"."""
+    base = {"title": "T", "vendor": "V", "productType": "P", "status": "ACTIVE", "tags": ["a"], "descriptionHtml": "",
+            "seo": {"title": "T", "description": ""}, "productOptions": [], "files": [{"id": "1" * 64, "alt": "T"}],
+            "metafields": [], "variants": [{"sku": "S", "price": "10.00", "optionValues": [], "metafields": [],
+                                            "inventoryItem": {"cost": "5.00", "measurement": {"weight": {
+                                                "value": 1000, "unit": "GRAMS"}}}}]}
+    assert S.changes(base, copy.deepcopy(base)) == []
+    heavier = copy.deepcopy(base)
+    heavier["variants"][0]["inventoryItem"]["measurement"]["weight"]["value"] = 1200
+    heavier["variants"][0]["price"] = "12.00"
+    assert S.changes(base, heavier) == ["price S: 10.00 -> 12.00", "weight S: 1000 -> 1200 g"]
+    assert sorted({S.field_of(c) for c in S.changes(base, heavier)}) == ["price", "weight"]
+    assert S.flags(base, heavier) == ["price $10-10 -> $12-12"]                    # the weight: changes()' line
+    other = copy.deepcopy(base)
+    other["seo"]["description"], other["giftCard"] = "x", True
+    assert S.changes(base, other) == ["seo.description", "giftCard"]
+    alt = copy.deepcopy(base)
+    alt["files"][0]["alt"] = "T - photo 1"
+    assert S.changes(base, alt) == ["photo alt"]
+    alt["title"] = "T2"                                         # the alt follows the title: the title's line only
+    assert [S.field_of(c) for c in S.changes(base, alt)] == ["title"]
+    inv = copy.deepcopy(base)
+    v = inv["variants"][0]
+    v["inventoryItem"].update(cost="6.00", tracked=True)
+    v["taxable"] = False
+    assert S.changes(base, inv) == ["cost S: 5.00 -> 6.00", "variant inventoryItem.tracked", "variant taxable"]
+    assert [S.field_of(c) for c in S.changes(base, inv)] == ["cost", "variant inventoryItem.tracked",
+                                                             "variant taxable"]
+    feed = copy.deepcopy(base)
+    feed["metafields"] = [{"namespace": "custom", "key": "reviews_feed_url", "type": "url", "value": "sha:abc"}]
+    assert S.changes(feed, copy.deepcopy(feed)) == []
+    feed2 = copy.deepcopy(feed)
+    feed2["metafields"][0]["value"] = "sha:def"
+    assert S.changes(feed, feed2) == ["reviews feed"]
+    assert S.changes(feed, dict(feed, title="T2")) == ["title: 'T' -> 'T2'"]       # the same feed: not named
+    gone = [S.field_of(c) for c in S.changes(feed, base)]
+    assert gone and "other" not in gone
+    body = dict(base, descriptionHtml="<p>One.</p><p>Two.</p>")
+    assert S.changes(body, dict(base, descriptionHtml="<p>One.</p><p>Three.</p>")) == [
+        "descriptionHtml: 'Two.' -> 'Three.'"]
+    typed = copy.deepcopy(base)
+    typed["files"][0]["contentType"] = "IMAGE"
+    assert S.changes(base, typed) == ["other"]                                     # nothing names it: "other"
+    long = S.group_id("live", "50002783", [f"variant inventoryItem.field{i}" for i in range(9)], "eyeball")
+    assert len(long) == S.GROUP_ID_MAX and long.startswith("live.50002783.eyeball.variant_inventoryItem.field0")
+    assert long != S.group_id("live", "50002783", [f"variant inventoryItem.field{i}" for i in range(10)], "eyeball")
+
 # ---- the doc ---------------------------------------------------------------------------------------------------
 
 def test_sweep_md_checks_table_is_the_code():
@@ -464,6 +940,15 @@ def test_sweep_md_checks_table_is_the_code():
     use = text[text.index("\n## How to use\n"):start]
     said = re.findall(r"^\|\s*`([a-z_]+\.[a-z_]+)`\s*\|", use, re.M)
     assert sorted(said) == sorted(S.CODES), f"SWEEP.md 'How to use' codes {said} != sweep.CODES {list(S.CODES)}"
+
+
+def test_sweep_md_guards_table_is_the_code():
+    with open(os.path.join(SCRIPTS, "SWEEP.md"), encoding="utf-8") as f:
+        text = f.read()
+    start = text.index("\n## Guards\n")
+    end = text.find("\n## ", start + 1)
+    rows = re.findall(r"^\|\s*`([a-z_]+)`\s*\|", text[start:end if end != -1 else None], re.M)
+    assert rows == list(S.GUARD_CODES), f"SWEEP.md 'Guards' rows {rows} != sweep.GUARD_CODES {list(S.GUARD_CODES)}"
 
 
 def test_an_unknown_shop_is_usage_and_a_broken_line_exit_1(fx, capsys):

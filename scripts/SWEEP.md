@@ -1,29 +1,38 @@
-# Sweep: old model answers a new rule judges wrong
+# Sweep: what an improvement changes for products already in the store
 
-`sweep.py` finds products already in the store whose cached model answers (the English title, option names, the
-description) a rule, dictionary or prompt improvement would now judge wrong. Re-preparing never reaches them:
-`translation/texts.jsonl` keeps a title until `translate.plan` asks it again, and `describe.py` keeps a description.
-Read only: local files, no network, no credentials; it writes only `shops/<shop>/sweep/latest/`, or with
-`--seed-sent` only `publish/sent/<id>.json` (and no `sweep/latest/` report).
+`sweep.py` answers, for the products already in the store, two questions in one run (2026-11-19):
+- **old answers** (stage 1, `--answers` alone): whose cached model answers (the English title, option names, the
+  description) a rule, dictionary or prompt improvement would now judge wrong. Re-preparing never reaches them:
+  `translation/texts.jsonl` keeps a title until `translate.plan` asks it again, and `describe.py` keeps a description.
+- **the store lagging** (stage 3, `--store` alone): what a resend would change, today's offline build
+  (`publish.build`) against what the store last got (`publish/sent/<id>.json`, `publish.load_sent`), field by field;
+  a verdict per changed product (worse, improvement, eyeball) and groups for the owner's decision.
+
+Read only: local files, no network, no credentials, no model; it writes only `shops/<shop>/sweep/` (`latest/`, `prev/` the run
+before, `selection/` a run narrowed by a selection), or with `--seed-sent` only `publish/sent/<id>.json` (and no report).
 
 ## How to use
 
 ```sh
-.venv/bin/python scripts/sweep.py <shop>                         # every published product, a table
-.venv/bin/python scripts/sweep.py <shop> --json                  # the same as JSON (answers.json's shape)
+.venv/bin/python scripts/sweep.py <shop>                         # every published product: both parts, a table
+.venv/bin/python scripts/sweep.py <shop> --answers | --store     # one part alone (its files only)
+.venv/bin/python scripts/sweep.py <shop> --json                  # {"answers": ..., "store": ...}; one part: its file's shape
 .venv/bin/python scripts/sweep.py <shop> --only <ref> [--only <ref>] [--keys-file F] [--job ID [--event E]]
 .venv/bin/python scripts/sweep.py <shop> --seed-sent [--json] [a selection]   # the store's "before" (stage 2)
 ```
 
 When: after a commit that changes what products are built from (a rule, a dictionary entry, a prompt), between jobs,
 after `run_transform.py <shop> --diff`, `translate.py <shop> --offline` and `placement.py <shop>`; after a scroll or
-job (it adds brands and terms); before a release. It takes about 2 seconds for the whole shop (2,265 published).
+job (it adds brands and terms); before a release. It takes about 17 seconds for the whole shop (2,265 published:
+the checks about 2 s, the store part about 14 s, nearly all of it `publish.build`).
 
 The first line is the scope: live (ACTIVE, or an old ledger row with no `store_status`) and drafts (`DRAFT`) are
 counted apart; withdrawn products (holds among them) are left out; ready products never published are counted, not
 checked. Then the input files' times, then a row a check (live, draft) with up to 3 examples (key, handle, the
 offending text), and one line: the description images' OCR sidecars that carry an error (the whole shop's, whatever
-the selection).
+the selection). Then the store part: one line of counts (with a baseline: same, changed by verdict, worse; no
+baseline by reason), a row a group with up to 3 examples, then per part what is new and gone since the run before.
+Worse products, when there are any, are printed first of all.
 
 | Result | What it means | What to do |
 |---|---|---|
@@ -36,12 +45,17 @@ the selection).
 | `description.stale` | the description was written from another packet than today's | nothing by default: one number, a keys file; the owner, 2026-11-19: only descriptions with an explicit error get rewritten |
 | `OCR sidecars with an error (whole shop)` | `description_images.py` failed on these products | by hand only: `.venv/bin/python scripts/description_images.py <shop> --products <product id> --force` (the Naver product id, the key's last part; ~20 s a product, under the lock) |
 | `seed-sent <shop>: N published (withdrawn left out): A written, B already there, C no_baseline` (`--seed-sent`) | `publish/sent/<id>.json` written for each published product whose offline build gives the ledger's `output` (B: the file holds it already, not rewritten); the C others have no baseline, a line a reason with up to 3 keys: `today's build differs from the ledger` (the store has something today's files no longer build: a vendor the store spells otherwise, a rule changed since), `the ledger row has no output` (a failed photo, a row from before `output` existed), `not buildable: <error>` (a missing file or record) | nothing: their "before" comes with their next real send (`publish.py` writes it); stage 3 shows them as no baseline |
+| `store lagging <shop>: L live, D drafts; B with a baseline: S same, C changed (improvement I, eyeball E; needing --force F), W worse; no baseline N (...)` | the store part's counts: B products have a trusted "before" (`load_sent`); S of them build today exactly to what the store has (a resend would be skipped); the C others would change, F of them only with `--force` (`.force` groups, below); no baseline N, by reason (`no publish/sent file`: published before stage 2 and not seeded, or a failed photo; `the ledger row has no output`; `the publish/sent file is not the ledger's output`: a send cut off, a hand edit) | nothing for S; the groups for C; the no-baseline keys get their "before" with their next real send (or `--seed-sent`) |
+| a group row: `<live\|draft>.<category>.<verdict>[.force].<fields>  N  <verdict>  [fields]  free: a resend only ...`, 3 examples `key handle old -> new` | N products of one Naver category, live or drafts, whose resend changes exactly these fields; one product is in exactly one group (the whole payload is sent, so a yes covers everything shown); `groups/<group id>.keys` holds its keys. `.force`: today's output differs but the inputs digest is the ledger's (a vendor the store spells otherwise, a `shopify_payload` change made without `sp.VERSION`, a review file's new URL), so `publish.py` skips these keys unforced: the cost line says `publish.py --keys-file F --force`, and a whole shop of them after a code change means `sp.VERSION` was forgotten (bump it, sweep again). Verdict `improvement`: a check (`title.other_brand`, `text.hangul`, `description.old_brand`, `description.patterns`) fires on the store's text and not on today's; `eyeball`: anything else (a weight, a section's tags, a price, a vendor). Flags after the changes, not verdicts: `price $a-b -> $c-d` (each SKU's `weight S: a -> b g` is a change line), `now trips <check>` (an eyeball group: today's text trips a check the store's does not), `review files not uploaded yet: N` | the owner decides each group as shown (live and drafts apart). Before any resend, always: `state_backup.py`, then `store_diff.py <shop> --keys-file shops/<shop>/sweep/latest/groups/<id>.keys` (a hand edit in the admin drops that product), then `publish.py <shop> --keys-file F` (a `.force` group: `--force` too) on his yes (OWNER_RULES.md, rule 1); after: `shop_view.py check`, sweep again (the group empty) |
+| `WORSE N (a guard tripped: ...)` first, then `key  live\|draft  handle  <guard>: <why>` (exit 1) | today's build would send something worse than the store has (Guards below); these products are in no group | read each: a product no longer ready or buildable is left as the store has it by `publish.py` too; another guard is a regression of the rule just changed (fix it, sweep again) or a seller's change (skill `product-trace`); never resend one unasked |
+| `since prev (checks\|groups): name: N now, A new, G gone` (`nothing new, nothing gone`, `no previous run`) | per check and per group (and `worse`), against the run before (`sweep/prev/`): a part run alone compares with that part's last run; a run with a selection prints `a selection, not compared` and writes `sweep/selection/` (latest/ and prev/ stay the whole shop's) | after a rule change, "new" should be exactly what the change meant to do; anything else new is a regression to read before telling the owner |
 | exit 1, `sweep: <path>:<n>: not a JSON line ...` | a shop file has a broken line | skill `recover-state` |
 | `sweep: stop: <shop> is busy: ...` (exit 2) | a job or a command holds the shop's lock and rewrites the files read here | wait for it (`job.py status`), run again |
 | exit 2, `no product selected` / `none of the N named products is published here` / `unknown shop` | a selection that names no published product, or a shop `shop_stores.py` does not have | name published products (it never widens to every product), or a known shop |
 
-Live and drafts are listed apart in every count and keys file (`<check>.live.keys`, `<check>.draft.keys`): the
-owner decides them apart (2026-11-19). A keys file feeds any command's `--keys-file`. Nothing is sent: what reaches
+Live and drafts are listed apart in every count and keys file (`<check>.live.keys`, `<check>.draft.keys`, the
+groups' first word): the owner decides them apart (2026-11-19). Exit codes: 0 done; 1 a worse product (the store
+part), or a shop file with a broken line; 2 usage or busy. A keys file feeds any command's `--keys-file`. Nothing is sent: what reaches
 the store is a later, separate step on the owner's word.
 
 Known false positives (read before asking the owner about a finding):
@@ -69,9 +83,43 @@ have no exemption in practice).
 | `description.patterns` | a stored description `describe.py` would cut today | `describe.packet_free_problems` (the part of `problems()` that needs no packet: shop talk, the listing, kana / han, link, phone, price, markup) on each paragraph, heading and item; Hangul alone is `text.hangul`'s |
 | `description.stale` | the packet changed since the description was written | `describe.source_sha256` against the row's `source_sha256`, as `describe.py --offline --published` counts stale (ready and translated products) |
 
-Not checks yet (the plan's later stages): what the store would get from today's build (`store_diff.py`), guards
-(worse), groups and the owner's declines. The dictionaries are read as translate.py reads them, without their sync
+Not yet (the plan's stage 4): the owner's declines (`--decline`, `decisions.jsonl`) and `--confirm <group>`. The dictionaries are read as translate.py reads them, without their sync
 writes (`Dictionaries(write=False)`; test_sweep.py compares the two).
+
+## The store lagging (stage 3, 2026-11-19)
+
+For each published, not withdrawn product (or a selection) with a baseline (`publish.load_sent`: the file's sha256
+is the ledger's `output`), `publish.build` offline gives today's normalized `product_input`; equal to the ledger's
+`output` it is `same` (`publish_one` would skip it), otherwise `changed`. A changed product whose inputs digest is
+still the ledger's `digest` is `.force`: `publish_one` skips a key by its digest before it builds, so only
+`publish.py --force` sends it (the review of stage 3, 2026-11-19); the others `publish_one` sends unforced.
+test_sweep.py proves all three on a fake Admin with a real send's vendor spellings. The fields: `store_diff.compare` over the baseline in the store's read shape
+(`as_live`: title, vendor, type, tags, body, SEO title, options, variants by SKU: price, option values, metafields;
+the product's metafields, the reviews feed, the photos by hash), then what store_diff does not read (a variant's
+`weight` and `cost`, other variant fields, `seo.description`, `photo alt` when the title did not change, any other
+key); `other` when none of these names a difference the output hashes.
+
+Vendor spellings as a real send has them (`send_ids`): the store's first, read from the baselines' vendors in the
+ledger's order, then the brand dictionary's (read only). A brand the dictionary spells otherwise than the store
+(10476142508 LAROUGE, stage 0) is no change. The store may hold spellings only withdrawn products carry, or
+products with no baseline (10476142508 LAROUGE itself): those are not read, so a later product of such a brand alone
+would show a vendor change a real send would not make (a known gap; it shows as an eyeball `vendor` group, read it
+against `shopify_catalog.py vendors`).
+
+## Guards
+
+A changed product that trips one is worse: left out of every group, printed first, exit 1 (sweep.py `GUARDS`;
+test_sweep.py compares this table with the code and trips each on a real fixture pair).
+
+| Code | What it catches | How |
+|---|---|---|
+| `not_buildable` | today the product is not ready (prepared, translated, placed) or does not build | `Shop.ready()` / `not_ready()`, then `publish.build` raising (a missing file, Untranslated, PayloadError); `publish.py` leaves such a product as the store has it |
+| `vendor_lost` | the vendor became empty or the shop's own name where the store has a brand | `brand_key` of the vendor against the tenant's |
+| `fewer_variants` | fewer variants than the store has | the counts |
+| `fewer_photos` | fewer photos than the store has | the counts of `files` |
+| `description_lost` | a description the store has is gone, or today's is a fallback | the body empty now; or changed and today's `descriptions.jsonl` row is `status: fallback` (its intro only the title), unless the store's was a fallback too (`was_fallback`: its first text the store's title or today's fallback intro; a heuristic, nothing records the store's description status) |
+
+A falling confidence and a price move are flags, not guards: a weight fixed moves a price lawfully.
 
 ## The store's "before" (`--seed-sent`, stage 2, 2026-11-19)
 
@@ -87,18 +135,24 @@ refused while the shop is busy, and unlike the checks it holds the shop's lock w
 with, so it never overwrites a newer send's file with an older build. A reader trusts only
 `publish.load_sent` (the file's sha256 against the ledger's `output`).
 
-For stage 3 (2026-11-19): the offline build takes vendor spellings from the brand dictionary, a real send from the
-store (`publish.clients`: the store's spelling first). The "new" a later stage compares with `sent/` must be built
-with the real send's vendor source (a cached vendor list from the store), or a vendor-only change from the
-dictionary's spelling is flagged as not real; otherwise every product the store spells otherwise shows a false
-vendor change (10476142508 LAROUGE is one).
+The seed takes vendor spellings from the brand dictionary (as the dry run), so a product the store spells otherwise
+gets no baseline (10476142508 LAROUGE); the store part builds with the store's spellings (`send_ids`, above).
 
 ## Files
 
-`shops/<shop>/sweep/latest/` (`shop_files.write_atomic`, rewritten each run):
-- `answers.json`: shop, at, seconds, the input files' times, the selection, the scope, per check its live and
-  draft counts and every finding `{key, store, handle, text}`, the OCR error keys.
+`shops/<shop>/sweep/latest/` (`shop_files.write_atomic`, rewritten each run; a part's previous files moved to
+`sweep/prev/` first, only that part's, so `--answers` or `--store` alone keeps the other's). A run with a selection
+(`--only`, `--keys-file`, `--job`) writes the same files to `sweep/selection/` instead (its own previous ones
+removed, `since_prev` null) and leaves `latest/` and `prev/` alone: a part of the shop against the whole would call
+every other group gone, then new.
+- `answers.json` (the checks): shop, at, seconds, the input files' times, the selection, the scope, per check its
+  live and draft counts and every finding `{key, store, handle, text}`, the OCR error keys, `since_prev`.
 - `<check>.live.keys`, `<check>.draft.keys`: one key a line (empty when none).
+- `store.json` (the store part): shop, at, seconds, the selection, the scope (live, draft, baselines), `same` (keys),
+  `worse` (`{key, store, handle, category, guards, changes}`), `changed` (a count a verdict), `needs_force` (a count), `no_baseline` (a reason:
+  count, keys), `groups` (`{id, store, category, fields, verdict, force, cost, keys, count, examples}`), `since_prev`
+  (`{group or worse: {now, new, gone}}`, null on the first run).
+- `groups/<group id>.keys`: one key a line, for a `--keys-file`.
 
 The shop's lock: refused while it is held (`shop_files.ensure_free`: a shared lock tried and dropped, the lock file
 neither made nor written); not held while it reads, so a job may start meanwhile (a few seconds).
@@ -122,3 +176,12 @@ neither made nor written); not held while it reads, so a job may start meanwhile
 - 2026-11-19, stage 2, the first `--seed-sent` on fairwardgolf (13.3 s): 2,265 published, 2,263 written (84.7 MB),
   2 no_baseline, both `today's build differs from the ledger` as stage 0 measured: 10476142508 (LAROUGE, the
   dictionary's vendor spelling against the store's) and 12584340779 (the owner keeps it). A second run wrote nothing.
+- 2026-11-19, stage 3, the store part (`store_run`, guards, groups, `latest/` -> `prev/`), the first full run on
+  fairwardgolf: 17.5 s wall (checks 2.9 s, store part 13.9 s); 2,265 published (2,175 live, 90 drafts), 2,263 with
+  a baseline, all 2,263 same, 0 changed, 0 worse, no groups; no baseline 2 (no publish/sent file: 10476142508
+  LAROUGE, 12584340779). The checks against the run before: `title.pending_reask` 4 gone (the four titles settled).
+- 2026-11-19, the review of stage 3: a changed key whose inputs digest is still the ledger's is `.force` (publish
+  skips it unforced: a store spelling, a payload change without `sp.VERSION`), its own groups and cost; a run with
+  a selection writes `sweep/selection/` and compares with nothing; `description_lost` quiet on a fallback the store
+  had too; the weight is a change line, no longer a flag too. The live run: 17.3 s, all 2,263 same, 0 changed,
+  0 needing --force, 0 worse, no groups; nothing new or gone since the run before.
