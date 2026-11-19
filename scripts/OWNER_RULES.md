@@ -20,10 +20,15 @@ only), for:
 - `publish.py --only <key>`, `--force` or `--rehandle` on a product already in the store;
 - a `shopify_payload.VERSION` bump, a new price rule or tariff (every product's digest moves: the next whole-shop
   publication re-sends everything; `reprice.py --apply` is the same);
-- `describe.py <shop> --published`, or `--only` / `--force` on a published product (its next publication sends it).
+- `describe.py <shop> --published`, or `--only` / `--force` on a published product (its next publication sends it);
+  `translate.py --reask` / `describe.py --force` on published products are paid re-asks: his word and the cost first;
+- the resend of a `sweep.py` group: his yes covers that one group as the report showed it (the procedure:
+  [SWEEP.md](SWEEP.md), "The owner's decisions"); his no is `sweep.py --decline`, run only on his word.
 
 Needs no question: a job's own publication of its new products (`job.py ... --publish`), and every read-only
-command (`--dry-run`, `store_diff.py` without `--adopt`, the lenses, `reprice.py` without `--apply`).
+command (`--dry-run`, `store_diff.py` without `--adopt`, the lenses, `reprice.py` without `--apply`, `sweep.py`
+and `sweep.py --confirm`: they cost nothing and change nothing in the store; not `--decline`, which is his no).
+`sweep.py --seed-sent` is the agent's own tool: it writes only the local baselines `publish/sent/`, sends nothing.
 
 ## 2. Duplicates the rules missed (the owner, 2026-11-16)
 

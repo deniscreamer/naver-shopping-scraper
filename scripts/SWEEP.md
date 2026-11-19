@@ -9,7 +9,8 @@
   a verdict per changed product (worse, improvement, eyeball) and groups for the owner's decision.
 
 Read only: local files, no network, no credentials, no model; it writes only `shops/<shop>/sweep/` (`latest/`, `prev/` the run
-before, `selection/` a run narrowed by a selection), or with `--seed-sent` only `publish/sent/<id>.json` (and no report).
+before, `selection/` a run narrowed by a selection), or with `--seed-sent` only `publish/sent/<id>.json` (and no report),
+with `--decline` only `sweep/decisions.jsonl`, with `--confirm` only the group's `.confirmed.keys` and `.plan.tsv`.
 
 ## How to use
 
@@ -19,7 +20,12 @@ before, `selection/` a run narrowed by a selection), or with `--seed-sent` only 
 .venv/bin/python scripts/sweep.py <shop> --json                  # {"answers": ..., "store": ...}; one part: its file's shape
 .venv/bin/python scripts/sweep.py <shop> --only <ref> [--only <ref>] [--keys-file F] [--job ID [--event E]]
 .venv/bin/python scripts/sweep.py <shop> --seed-sent [--json] [a selection]   # the store's "before" (stage 2)
+.venv/bin/python scripts/sweep.py <shop> --decline --keys-file F [--check <code>] --reason "<why> (owner <date>)"
+.venv/bin/python scripts/sweep.py <shop> --confirm <group id> [--json]      # before a group's resend (stage 4)
 ```
+
+The owner decides each group (and each paid re-ask) as the report shows it; his yes or no and the resend are
+"The owner's decisions" below (skill `sweep`).
 
 When: after a commit that changes what products are built from (a rule, a dictionary entry, a prompt), between jobs,
 after `run_transform.py <shop> --diff`, `translate.py <shop> --offline` and `placement.py <shop>`; after a scroll or
@@ -46,10 +52,15 @@ Worse products, when there are any, are printed first of all.
 | `OCR sidecars with an error (whole shop)` | `description_images.py` failed on these products | by hand only: `.venv/bin/python scripts/description_images.py <shop> --products <product id> --force` (the Naver product id, the key's last part; ~20 s a product, under the lock) |
 | `seed-sent <shop>: N published (withdrawn left out): A written, B already there, C no_baseline` (`--seed-sent`) | `publish/sent/<id>.json` written for each published product whose offline build gives the ledger's `output` (B: the file holds it already, not rewritten); the C others have no baseline, a line a reason with up to 3 keys: `today's build differs from the ledger` (the store has something today's files no longer build: a vendor the store spells otherwise, a rule changed since), `the ledger row has no output` (a failed photo, a row from before `output` existed), `not buildable: <error>` (a missing file or record) | nothing: their "before" comes with their next real send (`publish.py` writes it); stage 3 shows them as no baseline |
 | `store lagging <shop>: L live, D drafts; B with a baseline: S same, C changed (improvement I, eyeball E; needing --force F), W worse; no baseline N (...)` | the store part's counts: B products have a trusted "before" (`load_sent`); S of them build today exactly to what the store has (a resend would be skipped); the C others would change, F of them only with `--force` (`.force` groups, below); no baseline N, by reason (`no publish/sent file`: published before stage 2 and not seeded, or a failed photo; `the ledger row has no output`; `the publish/sent file is not the ledger's output`: a send cut off, a hand edit) | nothing for S; the groups for C; the no-baseline keys get their "before" with their next real send (or `--seed-sent`) |
-| a group row: `<live\|draft>.<category>.<verdict>[.force].<fields>  N  <verdict>  [fields]  free: a resend only ...`, 3 examples `key handle old -> new` | N products of one Naver category, live or drafts, whose resend changes exactly these fields; one product is in exactly one group (the whole payload is sent, so a yes covers everything shown); `groups/<group id>.keys` holds its keys. `.force`: today's output differs but the inputs digest is the ledger's (a vendor the store spells otherwise, a `shopify_payload` change made without `sp.VERSION`, a review file's new URL), so `publish.py` skips these keys unforced: the cost line says `publish.py --keys-file F --force`, and a whole shop of them after a code change means `sp.VERSION` was forgotten (bump it, sweep again). Verdict `improvement`: a check (`title.other_brand`, `text.hangul`, `description.old_brand`, `description.patterns`) fires on the store's text and not on today's; `eyeball`: anything else (a weight, a section's tags, a price, a vendor). Flags after the changes, not verdicts: `price $a-b -> $c-d` (each SKU's `weight S: a -> b g` is a change line), `now trips <check>` (an eyeball group: today's text trips a check the store's does not), `review files not uploaded yet: N` | the owner decides each group as shown (live and drafts apart). Before any resend, always: `state_backup.py`, then `store_diff.py <shop> --keys-file shops/<shop>/sweep/latest/groups/<id>.keys` (a hand edit in the admin drops that product), then `publish.py <shop> --keys-file F` (a `.force` group: `--force` too) on his yes (OWNER_RULES.md, rule 1); after: `shop_view.py check`, sweep again (the group empty) |
+| a group row: `<live\|draft>.<category>.<verdict>[.force].<fields>  N  <verdict>  [fields]  free: a resend only ...`, 3 examples `key handle old -> new` | N products of one Naver category, live or drafts, whose resend changes exactly these fields; one product is in exactly one group (the whole payload is sent, so a yes covers everything shown); `groups/<group id>.keys` holds its keys. `.force`: today's output differs but the inputs digest is the ledger's (a vendor the store spells otherwise, a `shopify_payload` change made without `sp.VERSION`, a review file's new URL), so `publish.py` skips these keys unforced: the cost line says `publish.py --keys-file F --force`, and a whole shop of them after a code change means `sp.VERSION` was forgotten (bump it, sweep again). Verdict `improvement`: a check (`title.other_brand`, `text.hangul`, `description.old_brand`, `description.patterns`) fires on the store's text and not on today's; `eyeball`: anything else (a weight, a section's tags, a price, a vendor). Flags after the changes, not verdicts: `price $a-b -> $c-d` (each SKU's `weight S: a -> b g` is a change line), `now trips <check>` (an eyeball group: today's text trips a check the store's does not), `review files not uploaded yet: N` | the owner decides each group as shown (live and drafts apart); his yes or no and the resend: "The owner's decisions" below |
 | `WORSE N (a guard tripped: ...)` first, then `key  live\|draft  handle  <guard>: <why>` (exit 1) | today's build would send something worse than the store has (Guards below); these products are in no group | read each: a product no longer ready or buildable is left as the store has it by `publish.py` too; another guard is a regression of the rule just changed (fix it, sweep again) or a seller's change (skill `product-trace`); never resend one unasked |
 | `since prev (checks\|groups): name: N now, A new, G gone` (`nothing new, nothing gone`, `no previous run`) | per check and per group (and `worse`), against the run before (`sweep/prev/`): a part run alone compares with that part's last run; a run with a selection prints `a selection, not compared` and writes `sweep/selection/` (latest/ and prev/ stay the whole shop's) | after a rule change, "new" should be exactly what the change meant to do; anything else new is a regression to read before telling the owner |
-| exit 1, `sweep: <path>:<n>: not a JSON line ...` | a shop file has a broken line | skill `recover-state` |
+| `declined by the owner, hidden: N (...)` (the store part: `...; a later send of them carries the declined change anyway ...: <keys> (declined.keys)`; the checks: `(<check> n, ...)`) | N keys the owner said no to (`--decline`) still build to exactly what he declined: left out of every group (or that check's findings and keys file); one comes back by itself when its build moves | nothing; never resend them unasked. A later send of such a key (`publish.py` on it, `--force` for a `.force` one, `reprice.py --apply`) still carries the declined change: his no is not a block, say so when that send is asked for |
+| `declined N (<group or check>) -> .../sweep/decisions.jsonl` (`--decline`) | one line a key appended: `{key, group, output, reason, at}` | the report's next run shows them hidden |
+| exit 2, `sweep: nothing declined: <key>: in no group of the last whole run ...` / `its build moved since the run ...` / `not a <check> finding ...` / `does not build today` / `no sweep/latest/...: run ... first` / `the last run kept no outputs (before stage 4)` (`--decline`, `--confirm`) | the key (or group) is not what the last whole run showed; nothing written | run `sweep.py <shop>` (whole), read it, decline what it shows; a check's finding: `--check <code>` |
+| `confirm <group id>: K of N kept; <why> n: <keys>` then the publish command (`--confirm`) | the group's keys re-built: dropped those `its build moved since the run`, `sent since the run`, `withdrawn since the run`, `declined`, `does not build today`; `groups/<id>.confirmed.keys` and `<id>.plan.tsv` written | send exactly the printed command on the owner's yes (the dropped keys were not what he saw: a new sweep shows them); `nothing left to send`: tell him |
+| exit 1, `sweep: <path>:<n>: not a JSON line ...` | a shop file has a broken line (`sweep/decisions.jsonl` too: a cut-off last line is ignored with a warning, and `--decline` cuts it off before
+appending) | skill `recover-state` |
 | `sweep: stop: <shop> is busy: ...` (exit 2) | a job or a command holds the shop's lock and rewrites the files read here | wait for it (`job.py status`), run again |
 | exit 2, `no product selected` / `none of the N named products is published here` / `unknown shop` | a selection that names no published product, or a shop `shop_stores.py` does not have | name published products (it never widens to every product), or a known shop |
 
@@ -83,7 +94,8 @@ have no exemption in practice).
 | `description.patterns` | a stored description `describe.py` would cut today | `describe.packet_free_problems` (the part of `problems()` that needs no packet: shop talk, the listing, kana / han, link, phone, price, markup) on each paragraph, heading and item; Hangul alone is `text.hangul`'s |
 | `description.stale` | the packet changed since the description was written | `describe.source_sha256` against the row's `source_sha256`, as `describe.py --offline --published` counts stale (ready and translated products) |
 
-Not yet (the plan's stage 4): the owner's declines (`--decline`, `decisions.jsonl`) and `--confirm <group>`. The dictionaries are read as translate.py reads them, without their sync
+The owner's declines of a check's finding (`--decline --check`) hide it from that check: "The owner's decisions"
+below. The dictionaries are read as translate.py reads them, without their sync
 writes (`Dictionaries(write=False)`; test_sweep.py compares the two).
 
 ## The store lagging (stage 3, 2026-11-19)
@@ -138,6 +150,49 @@ with, so it never overwrites a newer send's file with an older build. A reader t
 The seed takes vendor spellings from the brand dictionary (as the dry run), so a product the store spells otherwise
 gets no baseline (10476142508 LAROUGE); the store part builds with the store's spellings (`send_ids`, above).
 
+## The owner's decisions (stage 4, 2026-11-19)
+
+The owner decides per group (live and drafts apart), as the whole run showed it: a yes covers that group's keys and
+everything shown for them, nothing else ([OWNER_RULES.md](OWNER_RULES.md), rule 1). Running sweep, `--decline` and
+`--confirm` costs nothing and sends nothing; `--confirm` is a step of a resend he already approved (no question of
+its own), `--decline` is run only on his no.
+
+**His no** (`--decline`): `sweep.py <shop> --decline --keys-file shops/<shop>/sweep/latest/groups/<id>.keys --reason
+"<his why> (owner <date>)"` appends one line a key to `shops/<shop>/sweep/decisions.jsonl`: `{key, group (the
+group's id), output (the build output the run showed), reason, at}`. A declined key is left out of every group while
+today's build gives that same output, counted on one `declined by the owner, hidden` line and listed in
+`declined.keys`; a rule, dictionary or answer that moves its build brings it back to a group by itself (he declined
+what he saw, not the key). Worse keys are never hidden. A check's finding (`--check <code>`, its keys file
+`<code>.live.keys`): the line's group is the check code, the output today's build of the key; it is hidden from that
+check's findings, count and keys file (never from a group, nor a group's decline from a check) while the key builds
+the same. Every output declined for a key stays declined: a build that later returns to one of them is hidden
+again. Each key must be what the last whole run showed (in a group, or that check's finding; a group's key must
+still build to the output shown: a build moved since is refused, run sweep again and show him the new change), else
+the whole command is refused, nothing written (exit 2). `--reason` ends in `(owner YYYY-MM-DD)` (else exit 2). A torn
+last line of `decisions.jsonl` (a run killed while appending) is cut off before the append, named on stderr, so it
+never becomes a broken middle line. It runs under the shop's lock (busy: exit 2) and writes only
+`decisions.jsonl` (and the lock's holder line). The no is not a block: any later send of the key (`publish.py`
+naming it, `--force` for a `.force` one, `reprice.py --apply`, a whole-shop run after a version bump) carries the
+declined change with the rest of the payload; the report lists them for that question.
+
+**His yes, the resend of one group** (the one procedure; skill `sweep`):
+1. A paid group first gets its own question: "spend about $N on new answers?" (`translate.py <shop> --reask
+   --keys-file F`, `describe.py <shop> --force --keys-file F`); only local files change. Read old -> new on a sample,
+   sweep again, then ask about the send.
+2. The state backup as the owner decides it: `state_backup.py` (about 15 GB with the photos); for a group that only
+   changes descriptions or titles the agent may propose to skip it, the owner decides.
+3. `sweep.py <shop> --confirm <id>`: re-builds the group's keys, drops those whose output moved since the run or that
+   were sent, withdrawn or declined since; writes `groups/<id>.confirmed.keys` and `<id>.plan.tsv`; prints the send.
+4. `store_diff.py <shop> --keys-file shops/<shop>/sweep/latest/groups/<id>.confirmed.keys`: always (the owner,
+   2026-11-19); a product with a field the owner was not shown (a hand edit in the admin) is left out of the send:
+   remove its line from both `<id>.confirmed.keys` and `<id>.plan.tsv` and tell him; do not run `--confirm` again
+   afterwards (it would put the key back).
+5. `publish.py <shop> --keys-file shops/<shop>/sweep/latest/groups/<id>.confirmed.keys` (`--force` for a `.force`
+   group), exactly as printed. A send cut off is resumed by running it again (sent keys are skipped as same).
+6. `sweep.py <shop>`: the group gone, worse 0 (the proof the send landed); `shop_view.py check <shop>
+   shops/<shop>/sweep/latest/groups/<id>.plan.tsv` (every line ok) confirms the store states only (the keys were
+   already active or draft). Report to the owner the keys, handles and admin links.
+
 ## Files
 
 `shops/<shop>/sweep/latest/` (`shop_files.write_atomic`, rewritten each run; a part's previous files moved to
@@ -146,13 +201,19 @@ gets no baseline (10476142508 LAROUGE); the store part builds with the store's s
 removed, `since_prev` null) and leaves `latest/` and `prev/` alone: a part of the shop against the whole would call
 every other group gone, then new.
 - `answers.json` (the checks): shop, at, seconds, the input files' times, the selection, the scope, per check its
-  live and draft counts and every finding `{key, store, handle, text}`, the OCR error keys, `since_prev`.
+  live and draft counts and every finding `{key, store, handle, text}`, `declined` (`{check: keys hidden}`), the OCR
+  error keys, `since_prev`.
 - `<check>.live.keys`, `<check>.draft.keys`: one key a line (empty when none).
 - `store.json` (the store part): shop, at, seconds, the selection, the scope (live, draft, baselines), `same` (keys),
   `worse` (`{key, store, handle, category, guards, changes}`), `changed` (a count a verdict), `needs_force` (a count), `no_baseline` (a reason:
-  count, keys), `groups` (`{id, store, category, fields, verdict, force, cost, keys, count, examples}`), `since_prev`
-  (`{group or worse: {now, new, gone}}`, null on the first run).
-- `groups/<group id>.keys`: one key a line, for a `--keys-file`.
+  count, keys), `declined` (`{key, store, handle, group, force}`: hidden by the owner's no), `groups` (`{id, store,
+  category, fields, verdict, force, cost, keys, count, examples, outputs, ledger}`: `outputs` each key's build output
+  shown, `ledger` its ledger output then, what `--decline` records and `--confirm` checks), `since_prev` (`{group,
+  worse or declined: {now, new, gone}}`, null on the first run).
+- `groups/<group id>.keys`: one key a line, for a `--keys-file`; `declined.keys` the hidden ones.
+- `groups/<group id>.confirmed.keys`, `<group id>.plan.tsv` (`key<TAB>active|draft`): written by `--confirm`.
+- `shops/<shop>/sweep/decisions.jsonl` (append-only, never rotated; in the state backup's `01-state`): the owner's
+  declines.
 
 The shop's lock: refused while it is held (`shop_files.ensure_free`: a shared lock tried and dropped, the lock file
 neither made nor written); not held while it reads, so a job may start meanwhile (a few seconds).
@@ -185,3 +246,8 @@ neither made nor written); not held while it reads, so a job may start meanwhile
   a selection writes `sweep/selection/` and compares with nothing; `description_lost` quiet on a fallback the store
   had too; the weight is a change line, no longer a flag too. The live run: 17.3 s, all 2,263 same, 0 changed,
   0 needing --force, 0 worse, no groups; nothing new or gone since the run before.
+- 2026-11-19, stage 4: the owner's decisions (`--decline`, `sweep/decisions.jsonl`: a key hidden while it builds to
+  what he declined, a check's finding with `--check`) and `--confirm <group>` before a resend (a key moved, sent,
+  withdrawn or declined since the run dropped; the printed `publish.py --keys-file [--force]`); the resend procedure
+  above; skill `sweep`. The live run (read only, nothing declined): 17.2 s, all 2,263 same, 0 changed, 0 worse, no
+  groups; nothing new or gone since the run before.

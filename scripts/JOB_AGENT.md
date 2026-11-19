@@ -286,6 +286,8 @@ A captcha is answered by the owner in Chrome while the read waits; a login page 
    and change nothing in the store: a withdrawal is the owner's (`publish.py --withdraw`). The rows the screen left
    out are in the job's `screened.jsonl`.
 6. Duplicates of the run: `dedupe.py --pairs <shop> --job <id>` ([DEDUPE.md](DEDUPE.md)).
+   Then `.venv/bin/python scripts/sweep.py <shop>`: the job's new brands and terms reach old products; its groups go
+   to the owner, nothing is resent unasked ([SWEEP.md](SWEEP.md), skill `sweep`).
 7. The owner's summary: `job.py report --job <id>` (counts, reasons by code, cost; how to read it: 3. Watch); the
    published list with titles and draft / active: `shop_view.py query <shop> --job <id> --event published --fields
    key,state,handle,title`; the products of one outcome as a keys file for the next command:

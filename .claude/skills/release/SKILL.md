@@ -14,7 +14,10 @@ release is VERSION + docs + a commit and a tag. The owner asking for the release
    own version (`extension/manifest.json`) changes only when `extension/` changed.
 3. **Docs**: every behaviour change of the release already updated its doc (AGENTS.md rule 6); read the commit
    list against the docs map (AGENTS.md) and fix what is missing. No test counts in docs.
-4. **Checks**: `scripts/check.sh` must end with server, scripts and mypy `ok`. A failure stops the release.
+4. **Checks**: `scripts/check.sh` must end with server, scripts and mypy `ok`. A failure stops the release. Then
+   `.venv/bin/python scripts/sweep.py <shop>` for each shop: worse 0; its counts and groups go in the report
+   (skill `sweep`; nothing resent with the release). A `WORSE` line (exit 1) stops the release like a check failure:
+   fix, sweep again.
 5. **Commit and tag**:
    - `git commit -am "Release X.Y.Z: <the main changes, comma-separated>"` (the trailer the session gives);
    - `git checkout master && git merge --ff-only develop` (never a merge commit; not fast-forward: stop, tell the owner);

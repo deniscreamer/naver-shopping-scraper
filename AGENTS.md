@@ -77,7 +77,7 @@ Every `scripts/*.py` runs as `.venv/bin/python scripts/<name>.py` (none is execu
 | Activate, withdraw, hold, restore | `store-actions` | `scripts/job.py activate --job <id> --dry-run` |
 | Why is a product missing / held / odd; how many or which products | `product-trace`, `shop-data` | `scripts/shop_view.py show <shop> <id>` |
 | Fix a product's brand, title, price, section | `fix-a-product` | `scripts/store_diff.py <shop> --only <key>` |
-| Reprice; back up the state | `store-actions`, `price`, `operations` | `scripts/reprice.py <shop>` (a table, sends nothing); `scripts/state_backup.py --dry-run` |
+| Reprice; old products after a rule change (sweep); back up the state | `store-actions`, `price`, `sweep`, `operations` | `scripts/reprice.py <shop>` (a table, sends nothing); `scripts/sweep.py <shop>`; `scripts/state_backup.py --dry-run` |
 | A dictionary backup due, a term or brand wrong for many products | `dictionaries` | `scripts/translation_dicts.py status` |
 | A crash, `LedgerError`, `shop is busy`, a job died, restore a backup | `recover-state` | `scripts/job.py status` |
 | A new Mac, nothing starts, the extension disconnected, a listing tab hangs | `setup-machine`, `extension` | `curl -s localhost:8000/health`; `scripts/check_setup.py` |

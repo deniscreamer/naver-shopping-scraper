@@ -34,6 +34,9 @@ show: `shop_view.py show <shop> --keys-file drafts.txt --fields key,title,handle
 - **Rehandle / force** (re-send, OWNER_RULES rule 1: say what changes and how many): first
   `.venv/bin/python scripts/store_diff.py <shop> --only <key>`, then `publish.py <shop> --only <key> --rehandle` or
   `--force`.
+- **Resend a sweep group** (the owner's yes to one group of `sweep.py <shop>`): skill `sweep`, the steps in
+  scripts/SWEEP.md "The owner's decisions" (`sweep.py --confirm <id>`, `store_diff.py --keys-file` on its keys,
+  the printed `publish.py --keys-file`); his no: `sweep.py <shop> --decline --keys-file F --reason "..."`.
 - **Reprice**: `.venv/bin/python scripts/reprice.py <shop> [--only <key>]` (table + TSV under `publish/`, offline):
   without `--only` it prints the whole shop's table, enough to show one category's rows; then `--apply` with the
   same scope. A category: its keys from `lens.py section <shop>

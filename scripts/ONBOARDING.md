@@ -127,7 +127,9 @@ before a different kind of product or a second shop is published.
    ready, translated and placed. Read the price breakdown in `shops/<shop>/publish/payloads/<id>.json`: the
    variant's `fairwardgolf.price` and the product's `fairwardgolf.pricing`; the namespace is literal, see C1. Do the
    real publish only after the owner says yes.
-6. **What the new category did to the rest of the shop.** `store_diff.py <shop>` (read only): the published products
+6. **What the new category did to the rest of the shop.** First `sweep.py <shop>` (offline, seconds: the old
+   products' answers and groups a resend would send, worse 0; [SWEEP.md](SWEEP.md)), then
+   `store_diff.py <shop>` (read only): the published products
    whose store data a publication would change, field by field, and those that cannot be built now (an untranslated
    paid variant, a lost placement: L1). Then `translation_dicts.py status`: read every new entry before the
    dictionaries' backup into git (L4; not the state backup, `state_backup.py`). Each product it lists is the owner's to decide; `--adopt` records `output` for the products the store

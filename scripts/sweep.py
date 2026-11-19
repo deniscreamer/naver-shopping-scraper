@@ -8,6 +8,17 @@ build against what the store last got (publish/sent/), guards, verdicts and grou
     .venv/bin/python scripts/sweep.py fairwardgolf --answers | --store         # one part alone
     .venv/bin/python scripts/sweep.py fairwardgolf --only <ref> [--keys-file F] [--job ID [--event E]]
     .venv/bin/python scripts/sweep.py fairwardgolf --seed-sent [--json]        # the store's "before", stage 2
+    .venv/bin/python scripts/sweep.py fairwardgolf --decline --keys-file F [--check CODE] --reason "... (owner <date>)"
+    .venv/bin/python scripts/sweep.py fairwardgolf --confirm <group id>        # before a group's resend, stage 4
+
+--decline (stage 4, 2026-11-19) records the owner's "no" to what the last whole run showed: one line a key in
+shops/<shop>/sweep/decisions.jsonl ({key, group, output, reason, at}; under the shop's lock); the key is then hidden
+from that group (or, with --check, from that check) while its build output stays the one declined, and comes back
+when it moves (every output declined for a key stays declined). Nothing else is written; a key in no group of the
+last run (or not that check's finding), or whose build moved since, refuses the whole command (exit 2, nothing
+written); a torn last line of decisions.jsonl is cut off before the append (named on stderr). --confirm re-builds a group's keys and drops those whose output moved since
+the run, or that were sent, withdrawn or declined since: groups/<id>.confirmed.keys and <id>.plan.tsv, the publish
+command printed (--force for a .force group); read only otherwise.
 
 --seed-sent (stage 2, 2026-11-19) runs no check: it writes publish/sent/<id>.json for each published product whose
 offline build (publish.build) gives the ledger's `output` (seed_sent) and counts the others as no_baseline by reason;
@@ -37,7 +48,7 @@ start while it reads (a few seconds); --seed-sent takes it (it writes).
 
 Exit codes, as the other read tools: 0 done; 1 a worse product (a guard tripped) or a shop file with a broken line
 (LedgerError, the file and line named); 2 usage (an unknown shop, an empty selection, none of it published,
---seed-sent with a part flag) or the shop busy.
+--seed-sent with a part flag, a decline or confirm naming what the last run did not show) or the shop busy.
 """
 import argparse
 import hashlib
@@ -58,7 +69,7 @@ import store_diff
 import translate
 import translation_dicts as D
 from brand_fallback import in_title
-from shop_files import LedgerError, ShopBusy, ensure_free, locked, write_atomic
+from shop_files import LedgerError, ShopBusy, append_line, ensure_free, locked, read_jsonl, write_atomic
 from shop_view import add_ref_flags, keys_from_args, selection_asked
 from translation_rules import HANGUL_RE
 
@@ -254,6 +265,65 @@ def store_of(row: Mapping[str, Any]) -> str:
     return "draft" if row.get("store_status") == "DRAFT" else "live"
 
 
+# ---- the owner's declines (stage 4) -----------------------------------------------------------------------------
+
+DECISIONS = "decisions.jsonl"                   # shops/<shop>/sweep/decisions.jsonl, append-only
+REASON = re.compile(r"\S.*\(owner \d{4}-\d{2}-\d{2}\)\s*$")   # --reason: the owner's why, then his date
+STORE_KIND = "store"                            # a decline of a group (its id is no check code)
+
+
+def decisions_path(shops_root: str, shop: str) -> str:
+    return os.path.join(shops_root, shop, "sweep", DECISIONS)
+
+
+def declines(shops_root: str, shop: str) -> dict[tuple[str, str], set[str]]:
+    """{(key, "store" or a check code): the outputs the owner declined} from decisions.jsonl (a torn last line
+    ignored, a broken middle line LedgerError). A key stays hidden there while today's build output is one of them
+    (the retro-sweep plan, stage 4, 2026-11-19: a no to what was shown, not to the key). Every output declined for
+    a key stays declined: a build that comes back to an earlier declined output is hidden again."""
+    out: dict[tuple[str, str], set[str]] = {}
+    for r in read_jsonl(decisions_path(shops_root, shop), tail_ok=True):
+        if isinstance(r, dict) and r.get("key") and r.get("output"):
+            kind = r.get("group") if r.get("group") in CODES else STORE_KIND
+            out.setdefault((str(r["key"]), str(kind)), set()).add(str(r["output"]))
+    return out
+
+
+def drop_torn_tail(path: str) -> bytes:
+    """Cut a torn last line (no line end after it, not JSON: a run killed while appending) off `path` before an
+    append, which would otherwise end it with a line end and make it a broken middle line (LedgerError on every later
+    read). The caller holds the shop's lock. -> the bytes dropped (b"" when the file is whole), named on stderr."""
+    if not os.path.exists(path):
+        return b""
+    with open(path, "rb+") as f:
+        data = f.read()
+        if not data or data.endswith(b"\n"):
+            return b""
+        cut = data.rfind(b"\n") + 1
+        tail = data[cut:]
+        try:
+            json.loads(tail)
+            return b""                              # a whole line missing only its line end: append_line adds it
+        except ValueError:
+            pass
+        f.truncate(cut)
+    print(f"warning: {path}: a cut-off last line dropped before the append: {tail[:80]!r}", file=sys.stderr)
+    return tail
+
+
+def today_output(shop_obj: P.Shop, key: str, ids: Mapping[str, Any], ready: set[str]) -> str | None:
+    """The output today's offline build gives `key` (publish.build with `ids`), None when it is not ready or does
+    not build (a broken shop file still raises)."""
+    if key not in ready:
+        return None
+    try:
+        return str(P.build(shop_obj, key, ids)["output"])
+    except LedgerError:
+        raise
+    except Exception:
+        return None
+
+
 def run(shop: str, shops_root: str = P.SHOPS_ROOT, keys: Iterable[str] | None = None,
         dicts: D.Dictionaries | None = None) -> dict[str, Any]:
     """The checks over the shop's published products (or `keys` among them) -> the answers (answers.json's shape).
@@ -335,6 +405,20 @@ def run(shop: str, shops_root: str = P.SHOPS_ROOT, keys: Iterable[str] | None = 
                 if row.get("source_sha256") != describe.source_sha256(p, t, blocks, vendors, tenant):
                     hit("description.stale", key, "source changed")
 
+    # the owner's declines of a check's finding (--decline --check): hidden while the key builds to what he declined
+    said = {k: v for k, v in declines(shops_root, shop).items() if k[1] != STORE_KIND and k[0] in where}
+    hidden: dict[str, list[str]] = {}
+    if said:
+        ids = send_ids(store_baselines(shop_obj, ledger)[0], dicts, tenant)
+        ready = set(shop_obj.ready())
+        today = {k: today_output(shop_obj, k, ids, ready) for k in {k for k, _ in said}}
+        for code in CODES:
+            gone = {f["key"] for f in findings[code]
+                    if (f["key"], code) in said and today.get(f["key"]) in said[(f["key"], code)]}
+            if gone:
+                hidden[code] = sorted(gone)
+                findings[code] = [f for f in findings[code] if f["key"] not in gone]
+
     ready_unpublished = len(set(shop_obj.ready()) - set(ledger)) if wanted is None else None
     errors = ocr_errors(shop_obj.dir)
     inputs = {}
@@ -354,7 +438,7 @@ def run(shop: str, shops_root: str = P.SHOPS_ROOT, keys: Iterable[str] | None = 
             "checks": {c: {"live": sum(1 for f in findings[c] if f["store"] == "live"),
                            "draft": sum(1 for f in findings[c] if f["store"] == "draft"),
                            "findings": findings[c]} for c in CODES},
-            "ocr_errors": errors}
+            "declined": hidden, "ocr_errors": errors}
 
 
 # ---- the store's "before" (stage 2) -------------------------------------------------------------------------
@@ -645,6 +729,8 @@ def store_run(shop: str, shops_root: str = P.SHOPS_ROOT, keys: Iterable[str] | N
     brands = Brands(dicts, tenant)
     baselines, no_baseline_why = store_baselines(shop_obj, ledger)
     ids = send_ids(baselines, dicts, tenant)
+    said = declines(shops_root, shop)
+    hidden: list[dict[str, Any]] = []
 
     wanted = list(keys) if keys is not None else None
     scope = sorted(k for k in (wanted if wanted is not None else ledger) if k in ledger)
@@ -675,6 +761,7 @@ def store_run(shop: str, shops_root: str = P.SHOPS_ROOT, keys: Iterable[str] | N
             same.append(key)
             continue
         row["force"] = built["digest"] == ledger[key].get("digest")     # publish_one would skip it unforced
+        row["output"], row["ledger"] = built["output"], ledger[key]["output"]     # what --confirm checks again
         new = built["product_input"]
         lines = changes(old, new)
         row["fields"] = sorted({field_of(c) for c in lines})
@@ -691,15 +778,21 @@ def store_run(shop: str, shops_root: str = P.SHOPS_ROOT, keys: Iterable[str] | N
         row["now_trips"] = sorted(after - before)
         row["flags"] += [f"now trips {c}" for c in row["now_trips"]]
         row["verdict"] = "improvement" if row["improved"] and not row["now_trips"] else "eyeball"
+        row["group"] = group_id(row["store"], row["category"], row["fields"], row["verdict"], row["force"])
+        if built["output"] in said.get((key, STORE_KIND), ()):     # the owner's no to this very build: hidden
+            hidden.append({k: row[k] for k in ("key", "store", "handle", "group", "force")})
+            continue
         changed.append(row)
 
     groups: dict[str, dict[str, Any]] = {}
     for row in changed:
-        gid = group_id(row["store"], row["category"], row["fields"], row["verdict"], row["force"])
+        gid = row["group"]
         g = groups.setdefault(gid, {"id": gid, "store": row["store"], "category": row["category"],
                                     "fields": row["fields"], "verdict": row["verdict"], "force": row["force"],
-                                    "cost": COST_FORCE if row["force"] else COST_FREE, "keys": [], "examples": []})
+                                    "cost": COST_FORCE if row["force"] else COST_FREE, "keys": [], "examples": [],
+                                    "outputs": {}, "ledger": {}})
         g["keys"].append(row["key"])
+        g["outputs"][row["key"]], g["ledger"][row["key"]] = row["output"], row["ledger"]
         if len(g["examples"]) < EXAMPLES:
             g["examples"].append({k: row[k] for k in ("key", "handle", "changes", "flags", "improved")})
     ordered = sorted(groups.values(), key=lambda g: (g["store"] != "live", VERDICTS.index(g["verdict"]), g["force"],
@@ -716,7 +809,7 @@ def store_run(shop: str, shops_root: str = P.SHOPS_ROOT, keys: Iterable[str] | N
             "changed": {v: sum(1 for r in changed if r["verdict"] == v) for v in VERDICTS},
             "needs_force": sum(1 for r in changed if r["force"]),
             "no_baseline": {why: {"count": len(ks), "keys": ks} for why, ks in sorted(no_baseline.items())},
-            "groups": ordered}
+            "declined": hidden, "groups": ordered}
 
 
 def store_lines(result: dict[str, Any], out: str | None) -> list[str]:
@@ -730,6 +823,14 @@ def store_lines(result: dict[str, Any], out: str | None) -> list[str]:
              f"no baseline {sum(v['count'] for v in nb.values())}"
              + ("" if not nb else " (" + "; ".join(f"{why}: {v['count']}, {', '.join(v['keys'][:EXAMPLES])}"
                                                     for why, v in nb.items()) + ")")]
+    hidden = result.get("declined") or []
+    if hidden:
+        forced = sum(1 for h in hidden if h["force"])
+        lines.append(f"declined by the owner, hidden: {len(hidden)} (back when a key's build moves: "
+                     f"sweep/decisions.jsonl); a later send of them carries the declined change anyway, the owner's "
+                     f"no is not a block (publish.py{f', --force for {forced} of them' if forced else ''}, "
+                     f"reprice.py --apply): {', '.join(h['key'] for h in hidden[:EXAMPLES])}"
+                     + (" ..." if len(hidden) > EXAMPLES else "") + " (declined.keys)")
     if result["groups"]:
         lines.append(f"{'group':<64}{'count':>6}  verdict")
     for g in result["groups"]:
@@ -764,7 +865,7 @@ def answer_files() -> list[str]:
     return ["answers.json"] + [f"{c}.{s}.keys" for c in CODES for s in ("live", "draft")]
 
 
-STORE_FILES = ["store.json", "groups"]
+STORE_FILES = ["store.json", "groups", "declined.keys"]
 
 
 def _sets_answers(answers: Mapping[str, Any]) -> dict[str, set[str]]:
@@ -774,6 +875,7 @@ def _sets_answers(answers: Mapping[str, Any]) -> dict[str, set[str]]:
 def _sets_store(result: Mapping[str, Any]) -> dict[str, set[str]]:
     out = {g["id"]: set(g["keys"]) for g in result["groups"]}
     out["worse"] = {w["key"] for w in result["worse"]}
+    out["declined"] = {h["key"] for h in result.get("declined") or []}
     return out
 
 
@@ -874,6 +976,7 @@ def write_store(result: dict[str, Any], shops_root: str) -> str:
     write_atomic(os.path.join(out, "store.json"), json.dumps(result, ensure_ascii=False, indent=1) + "\n")
     for g in result["groups"]:
         write_atomic(os.path.join(out, "groups", f"{g['id']}.keys"), "".join(k + "\n" for k in g["keys"]))
+    write_atomic(os.path.join(out, "declined.keys"), "".join(h["key"] + "\n" for h in result["declined"]))
     return out
 
 
@@ -892,10 +995,150 @@ def table(answers: dict[str, Any], out: str) -> list[str]:
         lines.append(f"{code:<24}{c['live']:>6}{c['draft']:>7}")
         for f in c["findings"][:EXAMPLES]:
             lines.append(f"    {f['key']}  {f['handle']}  {f['text']}")
+    hidden = answers.get("declined") or {}
+    if hidden:
+        lines.append(f"declined by the owner, hidden: {sum(map(len, hidden.values()))} ("
+                     + ", ".join(f"{c} {len(ks)}" for c, ks in hidden.items())
+                     + "; back when a key's build moves: sweep/decisions.jsonl)")
     lines.append(f"OCR sidecars with an error (whole shop): {len(answers['ocr_errors'])}"
                  + (f" ({', '.join(answers['ocr_errors'][:5])})" if answers["ocr_errors"] else ""))
     lines.append(f"-> {out} ({answers['seconds']} s)")
     return lines
+
+
+# ---- --decline and --confirm (stage 4) --------------------------------------------------------------------------
+
+class Refused(Exception):
+    """A decline or confirm naming what the last whole run did not show (exit 2, nothing written)."""
+
+
+def _latest(shops_root: str, shop: str, name: str) -> dict[str, Any]:
+    got = _read_json(os.path.join(shops_root, shop, "sweep", "latest", name))
+    if got is None:
+        raise Refused(f"no sweep/latest/{name}: run `sweep.py {shop}` first (the owner decides what a whole run "
+                      f"showed)")
+    return got
+
+
+def decline(shop: str, shops_root: str, keys: list[str], reason: str, check: str | None = None,
+            dicts: D.Dictionaries | None = None) -> list[dict[str, Any]]:
+    """The owner's no, one decisions.jsonl line a key: {key, group, output, reason, at}. Without `check`: each key
+    must be in a group of the last whole run (latest/store.json) and still build today to the output that run showed
+    (what he saw; a build moved since is refused: run sweep again and show him the new change). With `check`: each
+    key must be that check's finding in the last whole run (latest/answers.json); the output is today's build (the
+    checks build nothing). Any key that does not qualify refuses the whole command (Refused, nothing written). A
+    torn last line of decisions.jsonl is cut off first (drop_torn_tail), so the append never makes it a broken
+    middle line. The caller holds the shop's lock. -> the rows written."""
+    at = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    rows: list[dict[str, Any]] = []
+    bad: list[str] = []
+    tenant = shop_stores.STORES[shop_stores.StoreId(shop)].publisher
+    shop_obj = P.Shop(shop, shops_root)
+    if check is None:
+        groups = _latest(shops_root, shop, "store.json").get("groups") or []
+        if any("outputs" not in g for g in groups):
+            raise Refused(f"the last run kept no outputs (before stage 4): run `sweep.py {shop}` again")
+    found: set[str] = set()
+    if check is not None:
+        found = {f["key"] for f in ((_latest(shops_root, shop, "answers.json").get("checks") or {}).get(check) or {})
+                 .get("findings") or []}
+    ids = send_ids(store_baselines(shop_obj, shop_obj.ledger())[0], dicts or read_dictionaries(DICTS_LIVE), tenant)
+    ready = set(shop_obj.ready())
+    if check is None:
+        where = {k: g for g in groups for k in g["keys"]}
+        for key in keys:
+            g = where.get(key)
+            if g is None or not (g.get("outputs") or {}).get(key):
+                bad.append(f"{key}: in no group of the last whole run (a check's finding: --check <code>)")
+                continue
+            if today_output(shop_obj, key, ids, ready) != g["outputs"][key]:
+                bad.append(f"{key}: its build moved since the run: run `sweep.py {shop}` again and show the owner "
+                           f"the new change")
+                continue
+            rows.append({"key": key, "group": g["id"], "output": g["outputs"][key], "reason": reason, "at": at})
+    else:
+        for key in keys:
+            if key not in found:
+                bad.append(f"{key}: not a {check} finding of the last whole run")
+                continue
+            out = today_output(shop_obj, key, ids, ready)
+            if out is None:
+                bad.append(f"{key}: does not build today ({shop_obj.not_ready(key) or 'the build raises'})")
+                continue
+            rows.append({"key": key, "group": check, "output": out, "reason": reason, "at": at})
+    if bad:
+        raise Refused("nothing declined: " + "; ".join(bad))
+    path = decisions_path(shops_root, shop)
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    drop_torn_tail(path)
+    append_line(path, *(json.dumps(r, ensure_ascii=False) for r in rows))
+    return rows
+
+
+def confirm(shop: str, shops_root: str, gid: str, dicts: D.Dictionaries | None = None) -> dict[str, Any]:
+    """A group of the last whole run checked again before its resend: each key re-built, kept only when it is still
+    published with the ledger's output of the run (not sent or withdrawn since), not declined, and builds today to
+    the output the run showed (what the owner said yes to). Writes groups/<id>.confirmed.keys and <id>.plan.tsv
+    (key, active or draft: for shop_view.py check after the send) beside the group's keys; nothing else."""
+    g = next((x for x in _latest(shops_root, shop, "store.json").get("groups") or [] if x["id"] == gid), None)
+    if g is None:
+        raise Refused(f"no group {gid!r} in the last whole run (sweep/latest/store.json)")
+    if "outputs" not in g:
+        raise Refused(f"the last run kept no outputs (before stage 4): run `sweep.py {shop}` again")
+    tenant = shop_stores.STORES[shop_stores.StoreId(shop)].publisher
+    shop_obj = P.Shop(shop, shops_root)
+    ledger = shop_obj.ledger()
+    withdrawn = shop_obj.withdrawn()
+    ids = send_ids(store_baselines(shop_obj, ledger)[0], dicts or read_dictionaries(DICTS_LIVE), tenant)
+    ready = set(shop_obj.ready())
+    said = declines(shops_root, shop)
+    kept: list[str] = []
+    dropped: dict[str, list[str]] = {}
+    for key in g["keys"]:
+        shown = g["outputs"].get(key)
+        if key not in ledger:
+            why = "withdrawn since the run" if key in withdrawn else "not published"
+        elif ledger[key].get("output") != g["ledger"].get(key):
+            why = "sent since the run"
+        elif shown in said.get((key, STORE_KIND), ()):
+            why = "declined"
+        else:
+            now = today_output(shop_obj, key, ids, ready)
+            why = "" if now == shown else ("does not build today" if now is None else "its build moved since the run")
+        if why:
+            dropped.setdefault(why, []).append(key)
+        else:
+            kept.append(key)
+    folder = os.path.join(shops_root, shop, "sweep", "latest", "groups")
+    keys_file = os.path.join(folder, f"{gid}.confirmed.keys")
+    plan_file = os.path.join(folder, f"{gid}.plan.tsv")
+    write_atomic(keys_file, "".join(k + "\n" for k in kept))
+    state = "draft" if g["store"] == "draft" else "active"
+    write_atomic(plan_file, "".join(f"{k}\t{state}\n" for k in kept))
+    return {"shop": shop, "group": gid, "force": bool(g.get("force")), "shown": len(g["keys"]), "kept": kept,
+            "dropped": dropped, "keys_file": keys_file, "plan_file": plan_file}
+
+
+def _shown(path: str) -> str:
+    """`path` relative to the working folder (the repo root), absolute when outside it."""
+    rel = os.path.relpath(path)
+    return path if rel.startswith("..") else rel
+
+
+def confirm_lines(result: dict[str, Any]) -> list[str]:
+    shop, rel = result["shop"], _shown(result["keys_file"])
+    lines = [f"confirm {result['group']}: {len(result['kept'])} of {result['shown']} kept"
+             + "".join(f"; {why} {len(ks)}: {', '.join(ks[:EXAMPLES])}" for why, ks in result["dropped"].items())]
+    if not result["kept"]:
+        return lines + ["nothing left to send"]
+    return lines + [
+        f"-> {rel}",
+        f"on the owner's yes for this group, after state_backup.py as he decided and "
+        f".venv/bin/python scripts/store_diff.py {shop} --keys-file {rel} (a key it flags: out of {rel} and the "
+        f"plan, told; no --confirm again):",
+        f"    .venv/bin/python scripts/publish.py {shop} --keys-file {rel}{' --force' if result['force'] else ''}",
+        f"then: .venv/bin/python scripts/sweep.py {shop} (the proof: the group gone, worse 0) and "
+        f".venv/bin/python scripts/shop_view.py check {shop} {_shown(result['plan_file'])} (the store states only)"]
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -910,15 +1153,62 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--shops-root", default=P.SHOPS_ROOT)
     ap.add_argument("--seed-sent", action="store_true", help="write publish/sent/<id>.json where today's offline "
                     "build gives the ledger's output (no checks run, nothing else written)")
+    ap.add_argument("--decline", action="store_true", help="the owner's no to the named keys as the last whole run "
+                    "showed them (their group, or --check's finding): one line a key in sweep/decisions.jsonl, "
+                    "with --reason")
+    ap.add_argument("--check", choices=CODES, help="with --decline: the check whose finding is declined")
+    ap.add_argument("--reason", help="with --decline: the owner's why and the date, \"... (owner <date>)\"")
+    ap.add_argument("--confirm", metavar="GROUP", help="a group of the last whole run re-built before its resend: "
+                    "groups/<id>.confirmed.keys (and .plan.tsv), the publish command printed")
     add_ref_flags(ap)
     args = ap.parse_args(argv)
     if args.shop not in {s.value for s in shop_stores.StoreId}:
         ap.error(f"unknown shop {args.shop!r} (known: {', '.join(s.value for s in shop_stores.StoreId)})")
-    if args.seed_sent and (args.answers or args.store):
-        ap.error("--seed-sent runs alone (no --answers / --store)")
+    modes = [m for m in ("seed_sent", "decline", "confirm") if getattr(args, m)]
+    if len(modes) > 1 or (modes and (args.answers or args.store)):
+        ap.error("--seed-sent, --decline and --confirm each run alone (no --answers / --store)")
+    if (args.check or args.reason is not None) and not args.decline:
+        ap.error("--check and --reason go with --decline")
+    if args.decline and not REASON.search(args.reason or ""):
+        ap.error("--decline needs --reason \"<the owner's why> (owner YYYY-MM-DD)\"")
+    if args.decline and not (args.only or selection_asked(args)):
+        ap.error("--decline needs the keys (--keys-file F, --only <ref>, --job ID)")
+    if args.confirm and (args.only or selection_asked(args)):
+        ap.error("--confirm takes the group's keys itself (no selection)")
     keys: list[str] | None = None
     if args.only or selection_asked(args):            # refs -> keys; an empty selection is exit 2 there
         keys = keys_from_args(ap, args, args.shop, args.only, args.shops_root)
+    if args.decline:                                # it writes decisions.jsonl: under the shop's lock
+        def say_no() -> int:
+            try:
+                rows = decline(args.shop, args.shops_root, keys or [], args.reason.strip(), args.check)
+            except LedgerError as e:
+                print(f"sweep: {e}", file=sys.stderr)
+                return 1
+            except Refused as e:
+                print(f"sweep: {e}", file=sys.stderr)
+                return 2
+            groups = sorted({r["group"] for r in rows})
+            print(f"declined {len(rows)} ({', '.join(groups)}) -> {_shown(decisions_path(args.shops_root, args.shop))}"
+                  f": hidden while each builds to what was shown; any later send of them still carries the change")
+            return 0
+        return locked(args.shops_root, args.shop, "sweep.py --decline", say_no, "sweep")
+    if args.confirm:
+        try:
+            ensure_free(args.shops_root, args.shop)
+        except ShopBusy as e:
+            print(f"sweep: stop: {e}", flush=True)
+            return 2
+        try:
+            confirmed = confirm(args.shop, args.shops_root, args.confirm)
+        except LedgerError as e:
+            print(f"sweep: {e}", file=sys.stderr)
+            return 1
+        except Refused as e:
+            print(f"sweep: {e}", file=sys.stderr)
+            return 2
+        print(json.dumps(confirmed, ensure_ascii=False, indent=1) if args.json else "\n".join(confirm_lines(confirmed)))
+        return 0
     if args.seed_sent:                              # it writes: under the shop's lock for its ~14 s (2026-11-19), so
         def seed() -> int:                          # no send can write a newer file it would then overwrite
             try:

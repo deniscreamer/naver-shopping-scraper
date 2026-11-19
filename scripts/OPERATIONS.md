@@ -110,7 +110,8 @@ writes them goes through `shop_files.py`:
   new writer of shared files uses `shop_files` and a new sending command takes the lock.
   Refused while it is held, never taking it: `sweep.py` (`ensure_free`: a shared lock tried and dropped, the lock
   file neither made nor written; 2026-11-19: its findings would be false while a job rewrites the files; a command
-  that takes the lock in that microsecond window is refused as busy, run it again).
+  that takes the lock in that microsecond window is refused as busy, run it again); `sweep.py --confirm` the same.
+  Taken by `sweep.py --seed-sent` and `--decline` (they write).
 
 ## Naming a product (`shop_view.resolve`, 2026-11-16)
 
@@ -194,7 +195,8 @@ hand-written Python. Each prints a TSV (`shop_view.cell`: a list comma-joined, w
   drafts apart; it writes only `shops/<shop>/sweep/` (`latest/`: answers.json, `<check>.live.keys` / `.draft.keys`,
   store.json, `groups/<id>.keys`; `prev/` the run before; `selection/` a run with a selection, compared with
   nothing) and refuses while the shop is busy (exit 2) without
-  taking the lock. What each result means and what to do: [SWEEP.md](SWEEP.md).
+  taking the lock. `--decline` (the owner's no, `sweep/decisions.jsonl`) is run only on his no; `--confirm <group>` is a step
+  of a resend he already approved, no question of its own (it sends nothing). What each result means and what to do: [SWEEP.md](SWEEP.md), skill `sweep`.
 - **`shopify_catalog.py`**, the store itself (Admin API, read only, `WRITES = False`; one query a command, a page of
   100): what the store holds now, after an action or when our ledger and the store may disagree (`store_diff.py`
   compares every field).

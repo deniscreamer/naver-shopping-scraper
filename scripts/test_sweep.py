@@ -311,7 +311,7 @@ def test_the_run_writes_only_under_sweep(fx, tmp_path, capsys):
     assert new and all(k.startswith(os.path.join("shops", SHOP, "sweep", "latest") + os.sep) for k in new)
     assert set(before) <= set(after) and not os.path.exists(tmp_path / "live")     # no dictionary written either
     out = os.path.join(fx.shops, SHOP, "sweep", "latest")
-    assert sorted(os.listdir(out)) == sorted(["answers.json", "store.json", "groups"]
+    assert sorted(os.listdir(out)) == sorted(["answers.json", "store.json", "groups", "declined.keys"]
                                              + [f"{c}.{s}.keys" for c in S.CODES for s in ("live", "draft")])
     assert os.listdir(os.path.join(out, "groups")) == []                           # no baseline in the fixture
     keys = open(os.path.join(out, "description.stale.live.keys"), encoding="utf-8").read().split()
@@ -853,7 +853,7 @@ def test_each_part_alone_writes_its_own_files(fx, capsys):
     seeded(fx)
     latest = os.path.join(fx.shops, SHOP, "sweep", "latest")
     assert S.main([SHOP, "--shops-root", fx.shops, "--store"]) == 0
-    assert sorted(os.listdir(latest)) == ["groups", "store.json"]
+    assert sorted(os.listdir(latest)) == ["declined.keys", "groups", "store.json"]
     assert S.main([SHOP, "--shops-root", fx.shops, "--answers"]) == 0
     assert "store.json" in os.listdir(latest) and "answers.json" in os.listdir(latest)
     assert not os.path.exists(os.path.join(fx.shops, SHOP, "sweep", "prev", "store.json"))   # store's kept
@@ -962,3 +962,279 @@ def test_an_unknown_shop_is_usage_and_a_broken_line_exit_1(fx, capsys):
     assert S.main([SHOP, "--shops-root", fx.shops]) == 1
     assert re.search(r"^sweep: .*published\.jsonl:\d+: not a JSON line", capsys.readouterr().err, re.M)
     assert not os.path.exists(os.path.join(fx.shops, SHOP, "sweep"))
+
+
+# ---- the owner's declines and --confirm (stage 4) ----------------------------------------------------------------
+
+def whole(fx, capsys, *flags, code=0):
+    """A whole run (--json) -> its output; the exit code checked."""
+    assert S.main([SHOP, "--shops-root", fx.shops, "--json", *flags]) == code
+    return json.loads(capsys.readouterr().out)
+
+
+def keys_file(tmp_path, *keys, name="keys.txt"):
+    path = tmp_path / name
+    path.write_text("".join(k + "\n" for k in keys))
+    return str(path)
+
+
+def group_of(result, key):
+    return next(g for g in result["groups"] if key in g["keys"])
+
+
+REASON = "the old title reads fine (owner 2026-11-19)"
+
+
+def test_decline_hides_a_key_and_it_returns_when_its_output_moves(fx, tmp_path, capsys):
+    seeded(fx)
+    for pid in (A11N, MILE_HIGH):
+        retitle(fx, pid, lambda t: t + " Kit")
+    first = whole(fx, capsys)["store"]
+    gid = group_of(first, fx.key(A11N))["id"]
+    shown = group_of(first, fx.key(A11N))["outputs"][fx.key(A11N)]
+    assert S.main([SHOP, "--shops-root", fx.shops, "--decline", "--keys-file", keys_file(tmp_path, A11N),
+                   "--reason", REASON]) == 0
+    assert capsys.readouterr().out.startswith(f"declined 1 ({gid}) -> ")
+    rows = shop_files.read_jsonl(S.decisions_path(fx.shops, SHOP))
+    assert [{k: r[k] for k in ("key", "group", "output", "reason")} for r in rows] == [
+        {"key": fx.key(A11N), "group": gid, "output": shown, "reason": REASON}] and rows[0]["at"]
+    second = whole(fx, capsys)["store"]
+    assert fx.key(A11N) not in grouped(second) and fx.key(MILE_HIGH) in grouped(second)
+    handle = P.Shop(SHOP, fx.shops).ledger()[fx.key(A11N)]["handle"]
+    assert second["declined"] == [{"key": fx.key(A11N), "store": "live", "handle": handle, "group": gid,
+                                   "force": False}]
+    assert sum(second["changed"].values()) == 1 and second["since_prev"]["declined"] == {"now": 1, "new": 1, "gone": 0}
+    latest = os.path.join(fx.shops, SHOP, "sweep", "latest")
+    assert open(os.path.join(latest, "declined.keys"), encoding="utf-8").read() == fx.key(A11N) + "\n"
+    assert gid != group_of(second, fx.key(MILE_HIGH))["id"]                     # two categories: its own group
+    assert not os.path.exists(os.path.join(latest, "groups", f"{gid}.keys"))
+    assert S.main([SHOP, "--shops-root", fx.shops, "--store"]) == 0
+    out = capsys.readouterr().out
+    assert re.search(r"^declined by the owner, hidden: 1 \(back when a key's build moves: sweep/decisions\.jsonl\); "
+                     r"a later send of them carries the declined change anyway.*reprice\.py --apply\): "
+                     + re.escape(fx.key(A11N)), out, re.M)
+    retitle(fx, A11N, lambda t: t + " Pro")                                        # another build: back
+    third = whole(fx, capsys)["store"]
+    assert fx.key(A11N) in grouped(third) and third["declined"] == []
+
+
+def test_decline_writes_only_decisions_and_the_lock_file_and_refuses(fx, tmp_path, capsys):
+    seeded(fx)
+    retitle(fx, A11N, lambda t: t + " Kit")
+    whole(fx, capsys)
+    before = _tree(fx.root)
+    assert S.main([SHOP, "--shops-root", fx.shops, "--decline", "--only", MILE_HIGH, "--reason", REASON]) == 2
+    assert "in no group of the last whole run" in capsys.readouterr().err         # same: nothing to decline
+    assert S.main([SHOP, "--shops-root", fx.shops, "--decline", "--only", MILE_HIGH, "--only", A11N,
+                   "--reason", REASON]) == 2                                       # one bad key: nothing written
+    capsys.readouterr()
+    lock = os.path.join("shops", f".{SHOP}.lock")
+    assert {k for k, v in _tree(fx.root).items() if before.get(k) != v} <= {lock}
+    assert not os.path.exists(S.decisions_path(fx.shops, SHOP))
+    assert S.main([SHOP, "--shops-root", fx.shops, "--decline", "--only", A11N, "--reason", REASON]) == 0
+    after = _tree(fx.root)
+    assert {k for k in after if before.get(k) != after[k]} == {
+        lock, os.path.join("shops", SHOP, "sweep", S.DECISIONS)}
+    with shop_files.shop_lock(fx.shops, SHOP, "job.py run j1"):
+        assert S.main([SHOP, "--shops-root", fx.shops, "--decline", "--only", A11N, "--reason", REASON]) == 2
+    assert capsys.readouterr().out.splitlines()[-1].startswith(f"sweep: stop: {SHOP} is busy: job.py run j1")
+    for flags in (["--decline", "--only", A11N], ["--decline", "--only", A11N, "--reason", " "],
+                  ["--decline", "--only", A11N, "--reason", "x"], ["--decline", "--only", A11N, "--reason", "(owner)"],
+                  ["--decline", "--reason", REASON], ["--reason", REASON], ["--decline", "--confirm", "x"],
+                  ["--confirm", "x", "--only", A11N], ["--decline", "--store", "--only", A11N, "--reason", REASON]):
+        with pytest.raises(SystemExit) as e:
+            S.main([SHOP, "--shops-root", fx.shops, *flags])
+        assert e.value.code == 2, flags
+    capsys.readouterr()
+    assert len(shop_files.read_jsonl(S.decisions_path(fx.shops, SHOP))) == 1
+
+
+def test_decline_with_no_run_before_is_refused(fx, capsys):
+    seeded(fx)
+    assert S.main([SHOP, "--shops-root", fx.shops, "--decline", "--only", A11N, "--reason", REASON]) == 2
+    assert "no sweep/latest/store.json: run `sweep.py fairwardgolf` first" in capsys.readouterr().err
+
+
+def test_decline_a_checks_finding(fx, tmp_path, capsys):
+    """description.old_brand on 13830324906 ("Black Tee Mile High Life Wedge Set ...": the fixture's live
+    description) declined: hidden from that check only while the product builds the same; a new description back."""
+    shop = seeded(fx)
+    first = whole(fx, capsys)["answers"]
+    assert fx.key(MILE_HIGH) in found(first, "description.old_brand")
+    assert S.main([SHOP, "--shops-root", fx.shops, "--decline", "--check", "description.old_brand", "--only",
+                   MILE_HIGH, "--reason", "Black Tee is the maker's line (owner 2026-11-19)"]) == 0
+    capsys.readouterr()
+    row = shop_files.read_jsonl(S.decisions_path(fx.shops, SHOP))[-1]
+    assert row["group"] == "description.old_brand" and row["output"] == shop.ledger()[fx.key(MILE_HIGH)]["output"]
+    second = whole(fx, capsys)
+    a = second["answers"]
+    assert fx.key(MILE_HIGH) not in found(a, "description.old_brand")
+    assert a["declined"] == {"description.old_brand": [fx.key(MILE_HIGH)]}
+    assert a["checks"]["description.old_brand"]["live"] == first["checks"]["description.old_brand"]["live"] - 1
+    assert fx.key(MILE_HIGH) not in open(os.path.join(fx.shops, SHOP, "sweep", "latest",
+                                                      "description.old_brand.live.keys"), encoding="utf-8").read()
+    assert second["store"]["declined"] == []                                       # a check's no is not a group's
+    assert S.main([SHOP, "--shops-root", fx.shops, "--answers"]) == 0
+    assert "declined by the owner, hidden: 1 (description.old_brand 1;" in capsys.readouterr().out
+    assert S.main([SHOP, "--shops-root", fx.shops, "--decline", "--check", "title.other_brand", "--only", MILE_HIGH,
+                   "--reason", REASON]) == 2                                       # not that check's finding
+    assert "not a title.other_brand finding" in capsys.readouterr().err
+    old = describe.load_store(shop.dir)[fx.key(MILE_HIGH)]["html"]
+    describe_row(fx, MILE_HIGH, html=old.replace("</p>", " It suits a beginner.</p>", 1))
+    third = whole(fx, capsys)["answers"]
+    assert fx.key(MILE_HIGH) in found(third, "description.old_brand") and third["declined"] == {}
+
+
+def test_decisions_a_torn_last_line_tolerated_a_broken_middle_one_exit_1(fx, tmp_path, capsys):
+    seeded(fx)
+    retitle(fx, A11N, lambda t: t + " Kit")
+    whole(fx, capsys)
+    assert S.main([SHOP, "--shops-root", fx.shops, "--decline", "--only", A11N, "--reason", REASON]) == 0
+    capsys.readouterr()
+    path = S.decisions_path(fx.shops, SHOP)
+    good = open(path, encoding="utf-8").read()
+    with open(path, "a", encoding="utf-8") as f:
+        f.write('{"key": "fairwardgolf:naver:1:2", "gro')                         # a run killed while appending
+    r = whole(fx, capsys)["store"]
+    assert [h["key"] for h in r["declined"]] == [fx.key(A11N)] and fx.key(A11N) not in grouped(r)
+    retitle(fx, MILE_HIGH, lambda t: t + " Kit")                                   # the owner's next no, torn tail
+    whole(fx, capsys)
+    assert S.main([SHOP, "--shops-root", fx.shops, "--decline", "--only", MILE_HIGH, "--reason", REASON]) == 0
+    assert "a cut-off last line dropped before the append" in capsys.readouterr().err
+    assert [x["key"] for x in shop_files.read_jsonl(path)] == [fx.key(A11N), fx.key(MILE_HIGH)]
+    r = whole(fx, capsys)["store"]                                                 # exit 0: both still honoured
+    assert {h["key"] for h in r["declined"]} == {fx.key(A11N), fx.key(MILE_HIGH)}
+    good = open(path, encoding="utf-8").read()
+    with open(path, "w", encoding="utf-8") as f:
+        f.write('{"key": "torn\n' + good)                                          # a broken line, then a whole one
+    assert S.main([SHOP, "--shops-root", fx.shops]) == 1
+    assert re.search(r"^sweep: .*decisions\.jsonl:1: not a JSON line", capsys.readouterr().err, re.M)
+
+
+def test_decline_of_a_build_moved_since_the_run_is_refused(fx, capsys):
+    """He said no to what the run showed: a build moved since is not that, so nothing is written (run sweep again)."""
+    seeded(fx)
+    retitle(fx, A11N, lambda t: t + " Kit")
+    whole(fx, capsys)
+    retitle(fx, A11N, lambda t: t + " Pro")
+    assert S.main([SHOP, "--shops-root", fx.shops, "--decline", "--only", A11N, "--reason", REASON]) == 2
+    assert "its build moved since the run: run `sweep.py fairwardgolf` again" in capsys.readouterr().err
+    assert not os.path.exists(S.decisions_path(fx.shops, SHOP))
+
+
+def test_a_declined_key_that_trips_a_guard_is_worse_not_hidden(fx, monkeypatch, capsys):
+    seeded(fx)
+    retitle(fx, A11N, lambda t: t + " Kit")
+    whole(fx, capsys)
+    assert S.main([SHOP, "--shops-root", fx.shops, "--decline", "--only", A11N, "--reason", REASON]) == 0
+    capsys.readouterr()
+    real = S.guards
+    monkeypatch.setattr(S, "guards", lambda old, new, *a: real(old, new, *a)
+                        + (["vendor_lost: test"] if str(new.get("title", "")).endswith("Kit") else []))
+    r = whole(fx, capsys, code=1)["store"]                                        # same output, now worse: shown
+    assert fx.key(A11N) in [w["key"] for w in r["worse"]] and r["declined"] == []
+
+
+def test_confirm_and_decline_refuse_a_run_from_before_stage_4(fx, capsys):
+    seeded(fx)
+    retitle(fx, A11N, lambda t: t + " Kit")
+    gid = group_of(whole(fx, capsys)["store"], fx.key(A11N))["id"]
+    path = os.path.join(fx.shops, SHOP, "sweep", "latest", "store.json")
+    data = json.load(open(path, encoding="utf-8"))
+    for g in data["groups"]:
+        del g["outputs"]
+    open(path, "w", encoding="utf-8").write(json.dumps(data))
+    assert S.main([SHOP, "--shops-root", fx.shops, "--confirm", gid]) == 2
+    assert "kept no outputs" in capsys.readouterr().err
+    assert S.main([SHOP, "--shops-root", fx.shops, "--decline", "--only", A11N, "--reason", REASON]) == 2
+    assert "kept no outputs" in capsys.readouterr().err
+    assert not os.path.exists(S.decisions_path(fx.shops, SHOP))
+
+
+def test_confirm_drops_what_moved_was_sent_withdrawn_or_declined_and_prints_force(fx, monkeypatch, capsys):
+    """A .force group of 5 (a payload change without its version): one key's build moves after the run, one is
+    sent (its ledger output and sent file follow), one withdrawn, one declined: one is kept, the command --force."""
+    shop = seeded(fx)
+    real = sp.fit_title
+    monkeypatch.setattr(sp, "fit_title", lambda *a, **k: real(*a, **k) + " X")
+    first = whole(fx, capsys)["store"]
+    big = first["groups"][0]
+    assert big["force"] and big["count"] == 5
+    moved, sent, gone, said, kept = big["keys"]
+    retitle(fx, moved.rsplit(":", 1)[1], lambda t: t + " Kit")
+    rebase(fx, sent.rsplit(":", 1)[1], lambda b: b.update(title=b["title"] + " (sent)"))
+    row = shop.ledger()[gone]
+    append(shop.ledger_path, {**{k: row[k] for k in ("format", "key", "product_id", "handle")},
+                              "status": "withdrawn", "reason": "hold: test", "at": "2026-11-19T00:00:00Z"})
+    P._MEMO.clear()
+    S.decline(SHOP, fx.shops, [said], REASON)
+    before = _tree(fx.root)
+    assert S.main([SHOP, "--shops-root", fx.shops, "--confirm", big["id"]]) == 0
+    out = capsys.readouterr().out.splitlines()
+    assert out[0] == (f"confirm {big['id']}: 1 of 5 kept; its build moved since the run 1: {moved}; sent since the "
+                      f"run 1: {sent}; withdrawn since the run 1: {gone}; declined 1: {said}")
+    folder = os.path.join(fx.shops, SHOP, "sweep", "latest", "groups")
+    assert open(os.path.join(folder, f"{big['id']}.confirmed.keys"), encoding="utf-8").read() == kept + "\n"
+    assert open(os.path.join(folder, f"{big['id']}.plan.tsv"), encoding="utf-8").read() == kept + "\tactive\n"
+    assert any(x.strip().startswith(".venv/bin/python scripts/publish.py fairwardgolf --keys-file ")
+               and x.endswith(f"{big['id']}.confirmed.keys --force") for x in out)
+    after = _tree(fx.root)
+    assert {k for k in after if before.get(k) != after[k]} == {
+        os.path.join("shops", SHOP, "sweep", "latest", "groups", f"{big['id']}.{x}")
+        for x in ("confirmed.keys", "plan.tsv")}
+
+
+def test_confirm_a_plain_group_then_the_send_empties_it(fx, capsys):
+    shop = seeded(fx)
+    for pid in (YAMATO_FULL, MILE_HIGH):
+        retitle(fx, pid, lambda t: t + " Kit")
+    g = group_of(whole(fx, capsys)["store"], fx.key(MILE_HIGH))
+    assert set(g["keys"]) == {fx.key(YAMATO_FULL), fx.key(MILE_HIGH)} and not g["force"]
+    assert S.main([SHOP, "--shops-root", fx.shops, "--confirm", g["id"]]) == 0
+    out = capsys.readouterr().out
+    assert out.startswith(f"confirm {g['id']}: 2 of 2 kept\n")
+    line = next(x for x in out.splitlines() if "scripts/publish.py" in x)
+    assert line.endswith(f"{g['id']}.confirmed.keys") and "--force" not in line
+    assert "shop_view.py check fairwardgolf " in out and "(the proof: the group gone, worse 0)" in out
+    confirmed = open(os.path.join(fx.shops, SHOP, "sweep", "latest", "groups", f"{g['id']}.confirmed.keys"),
+                     encoding="utf-8").read().split()
+    status, _ = send_all(shop, confirmed)
+    assert set(status.values()) == {"published"}
+    after = whole(fx, capsys)["store"]
+    assert after["groups"] == [] and after["worse"] == [] and after["since_prev"][g["id"]]["gone"] == 2
+    assert S.main([SHOP, "--shops-root", fx.shops, "--confirm", g["id"]]) == 2     # gone from the last run
+    assert f"no group {g['id']!r} in the last whole run" in capsys.readouterr().err
+    with shop_files.shop_lock(fx.shops, SHOP, "job.py run j1"):
+        assert S.main([SHOP, "--shops-root", fx.shops, "--confirm", g["id"]]) == 2
+    assert capsys.readouterr().out.startswith(f"sweep: stop: {SHOP} is busy: job.py run j1")
+
+
+def test_confirm_a_draft_group_plans_draft(fx, capsys):
+    shop = seeded(fx)
+    last = shop.ledger()[fx.key(YAMATO_LEFT)]
+    append(shop.ledger_path, {**last, "store_status": "DRAFT"})
+    retitle(fx, YAMATO_LEFT, lambda t: t + " Kit")
+    g = group_of(whole(fx, capsys)["store"], fx.key(YAMATO_LEFT))
+    assert g["store"] == "draft"
+    assert S.main([SHOP, "--shops-root", fx.shops, "--confirm", g["id"]]) == 0
+    capsys.readouterr()
+    plan = os.path.join(fx.shops, SHOP, "sweep", "latest", "groups", f"{g['id']}.plan.tsv")
+    assert open(plan, encoding="utf-8").read() == fx.key(YAMATO_LEFT) + "\tdraft\n"
+
+
+def test_sweep_md_names_every_flag_and_the_skill_points_there():
+    """Each of sweep.py's own flags is in SWEEP.md's How to use; the skill names SWEEP.md sections that exist."""
+    with open(os.path.join(SCRIPTS, "sweep.py"), encoding="utf-8") as f:
+        flags = set(re.findall(r'ap\.add_argument\("(--[a-z-]+)"', f.read())) - {"--shops-root"}
+    with open(os.path.join(SCRIPTS, "SWEEP.md"), encoding="utf-8") as f:
+        text = f.read()
+    use = text[text.index("\n## How to use\n"):text.index("\n## Checks\n")]
+    assert {"--decline", "--confirm", "--check", "--reason"} <= flags
+    assert not {x for x in flags if x not in use}, "flags missing from SWEEP.md How to use"
+    skill = os.path.join(os.path.dirname(SCRIPTS), ".claude", "skills", "sweep", "SKILL.md")
+    with open(skill, encoding="utf-8") as f:
+        body = f.read()
+    assert 30 <= body.count("\n") <= 60
+    sections = {m.split(" (")[0].replace('"', "").strip() for m in re.findall(r"^## (.+)$", text, re.M)}
+    named = re.findall(r'^\| [^|]+ \| "([^"]+)"', body, re.M)
+    assert len(named) >= 6 and not [n for n in named if n not in sections], (named, sections)
