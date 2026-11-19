@@ -226,6 +226,7 @@ macOS notification. Nothing for a refusal (2), Ctrl+C (130) or a run cut by `--i
 | `STOP ... LedgerError: <path>:<n>: not a JSON line` (a broken line in the ledger, a job's listing, prepared / translated / placements) | stopped, nothing marked | tell the owner the file and line; a rebuilt file: the command the message names (when no job runs); the ledger or a listing: fixed by hand on the owner's word, then `run` again |
 | `held` codes in status | the product is prepared as held | read the codes ([TRANSFORM.md](TRANSFORM.md#held-codes) "Held codes"); report |
 | `review due: N drafts ...` (draft first) | goes on; the drafts are not live | the skill `visual-review` with the printed commands; report; activate only on the owner's word (Draft first) |
+| `sweep due: since the last sweep (<time>): a commit to the build code <time>, the live dictionaries <time>, job <id> done <time> (skill sweep)` or `sweep due: no sweep run yet (skill sweep)` / `no store part yet` (status only; `--json` key `sweep_due`; not printed while a runner holds the shop) | nothing: a hint, read only | after the job, once the shop is free: the skill `sweep`, read the report, tell the owner ([SWEEP.md](SWEEP.md), "When") |
 
 `run` in this table means the resume command of the job's mode: `run` (old mode) or `scroll --job <id>` (scroll),
 section 4.

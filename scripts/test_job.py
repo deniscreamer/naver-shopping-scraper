@@ -1244,3 +1244,83 @@ def test_the_done_line_marks_a_draft_and_the_creation_line_says_draft_first(tmp_
     assert "draft first: category 999 is not marked reviewed" in capsys.readouterr().out
     J._draft_first_line(False, SHOP, "999")
     assert capsys.readouterr().out == ""
+
+
+def test_status_says_a_sweep_is_due_when_its_last_run_is_older(tmp_path, monkeypatch, capsys):
+    """sweep due (2026-11-19): a commit to the build code, the live dictionaries or the job's finish newer than
+    sweep/latest/'s older part; a part missing is due; nothing when latest/ is newer, the shop has no publish ledger
+    or a runner holds the shop. The git call is faked."""
+    import shop_files
+    import translation_dicts
+    dicts = tmp_path / "dicts"
+    dicts.mkdir()
+    monkeypatch.setattr(translation_dicts, "LIVE_ROOT", str(dicts))
+    when = {"code": None}
+    monkeypatch.setattr(J, "code_changed_at", lambda: when["code"])
+    assert J.sweep_due(make_job(tmp_path / "none")) is None                 # no publish ledger: nothing
+    job = _publishing_job(tmp_path, 0, 1)
+    assert J.sweep_due(job) == "no sweep run yet"
+    latest = tmp_path / "shops" / SHOP / "sweep" / "latest"
+    latest.mkdir(parents=True)
+    t = 1_790_000_000
+    (latest / "answers.json").write_text("{}")
+    os.utime(latest / "answers.json", (t, t))
+    assert J.sweep_due(job) == "no store part yet"                           # --answers alone: the store part due
+    (latest / "store.json").write_text("{}")
+    os.utime(latest / "store.json", (t + 600, t + 600))                     # the newer part: not the sweep's time
+    J.main(["status", "--job", job.folder])
+    assert "sweep due" not in capsys.readouterr().out                        # nothing newer
+    when["code"] = t + 60
+    (dicts / "brand.json").write_text("{}")
+    os.utime(dicts / "brand.json", (t - 60, t - 60))                         # older: not a reason
+    (dicts / ".brand.x.tmp").write_text("{}")                                # a writer's temp file: not a dictionary
+    os.utime(dicts / ".brand.x.tmp", (t + 900, t + 900))
+    J.main(["status", "--job", job.folder])
+    line = [x for x in capsys.readouterr().out.splitlines() if "sweep due" in x]
+    assert line == ["  sweep due: since the last sweep (2026-09-21 14:13Z): a commit to the build code "
+                    "2026-09-21 14:14Z (skill sweep)"]
+    with shop_files.shop_lock(str(tmp_path / "shops"), SHOP, "job.py run j2"):  # a runner holds the shop
+        J.main(["status", "--job", job.folder, "--json"])
+        assert json.loads(capsys.readouterr().out)["sweep_due"] is None
+    when["code"] = t - 60
+    os.utime(dicts / "brand.json", (t + 120, t + 120))
+    job.log(None, "done")                                                    # now: newer than t
+    J.main(["status", "--job", job.folder, "--json"])
+    due = json.loads(capsys.readouterr().out)["sweep_due"]
+    assert "the live dictionaries 2026-09-21 14:15Z" in due and "job j1 done" in due and "build code" not in due
+    for n in ("answers.json", "store.json"):
+        os.utime(latest / n, None)                                           # a sweep just now: newer than all
+    os.utime(dicts / "brand.json", (t, t))
+    J.main(["status", "--job", job.folder, "--json"])
+    assert json.loads(capsys.readouterr().out)["sweep_due"] is None
+    monkeypatch.setattr(J, "sweep_due", lambda job: 1 / 0)                   # a hint never breaks status
+    assert J.main(["status", "--job", job.folder]) == 0
+    assert "sweep due" not in capsys.readouterr().out
+
+
+def test_code_changed_at_asks_git_for_the_build_paths_only(monkeypatch):
+    """code_changed_at: `git log -1 --format=%ct -- <SWEEP_PATHS>` at the repo root, the tests excluded; no git, a
+    failure or no commit: None (the reason is skipped quietly)."""
+    import subprocess
+    seen = {}
+
+    def run(argv, **kw):
+        seen.update(argv=argv, cwd=kw.get("cwd"))
+        return subprocess.CompletedProcess(argv, 0, "1790000000\n", "")
+    monkeypatch.setattr(J.subprocess, "run", run)
+    assert J.code_changed_at() == 1_790_000_000.0
+    argv = seen["argv"]
+    assert argv[:4] == ["git", "log", "-1", "--format=%ct"] and argv[4] == "--"
+    assert set(argv[5:]) >= {":(glob)scripts/*.py", ":(glob,exclude)scripts/test_*.py",
+                             ":(glob,exclude)scripts/conftest.py", ":(glob)scripts/*.json", "scripts/prompts",
+                             "scripts/dictionaries"}
+    assert os.path.samefile(seen["cwd"], os.path.dirname(J.SCRIPTS))
+    for result in (subprocess.CompletedProcess([], 128, "", "not a git repository"),
+                   subprocess.CompletedProcess([], 0, "", "")):
+        monkeypatch.setattr(J.subprocess, "run", lambda argv, r=result, **kw: r)
+        assert J.code_changed_at() is None
+
+    def no_git(argv, **kw):
+        raise FileNotFoundError("git")
+    monkeypatch.setattr(J.subprocess, "run", no_git)
+    assert J.code_changed_at() is None

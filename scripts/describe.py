@@ -253,7 +253,7 @@ def load_blocks(shop_dir: str, product: dict[str, Any]) -> list[dict[str, Any]]:
 
 def packet(prepared: dict[str, Any], translated: dict[str, Any], blocks: list[dict[str, Any]],
            vendors: dict[str, str] | None = None, tenant: str | None = None) -> dict[str, Any]:
-    """What the model is given: {message, title, brand, origin, origin_note, dropped}. The English comes from the
+    """What the model is given: {message, title, brand, origin, origin_note, dropped, parts}. The English comes from the
     translation the shop already shows, so the description names the product as its title does."""
     en = sp.English(translated)
     product = sp._twins(prepared["product"], en)
@@ -281,29 +281,57 @@ def packet(prepared: dict[str, Any], translated: dict[str, Any], blocks: list[di
              for s in product.get("specs") or [] if s["label_ko"] != ORIGIN_LABEL]
     images, tables, dropped = image_text(blocks)
 
-    parts = ["# Product", f"Title: {title}", f"Brand: {brand}", f"Title in Korean: {product['title_ko']}",
-             "", "# What is sold"]
-    parts += [f"Fixed: {x}" for x in sold]
-    parts += [f"The buyer picks: {x}" for x in picks]
+    lines: list[str] = []
+    parts: dict[str, list[str]] = {}            # the packet's parts by name (a row's "parts": why it went stale)
+
+    def add(part: str | None, *xs: str) -> None:
+        lines.extend(xs)
+        if part:
+            parts.setdefault(part, []).extend(xs)
+
+    add(None, "# Product")
+    add("title", f"Title: {title}")
+    add("brand", f"Brand: {brand}")
+    add("title", f"Title in Korean: {product['title_ko']}")
+    add(None, "", "# What is sold")
+    add("sold", *[f"Fixed: {x}" for x in sold])
+    add("options", *[f"The buyer picks: {x}" for x in picks])
     if not sold and not picks:
-        parts.append("One configuration, as the title says.")
-    parts.append(f"Origin: made in {country}" if country else "Origin: do not state")
-    parts += [HINTS[c] for c in HINTS if c in notes]
+        add("sold", "One configuration, as the title says.")
+    add("origin", f"Origin: made in {country}" if country else "Origin: do not state")
+    add("hints", *[HINTS[c] for c in HINTS if c in notes])
     if free:
-        parts += ["", "# Gifts of the seller: the buyer gets these free. Never list or describe them, and never "
-                  "write that the product has no such item"] + free
+        add(None, "", "# Gifts of the seller: the buyer gets these free. Never list or describe them, and never "
+            "write that the product has no such item")
+        add("gifts", *free)
     if specs:
-        parts += ["", "# Specifications (rows typed by the seller)"] + specs
+        add(None, "", "# Specifications (rows typed by the seller)")
+        add("specs", *specs)
     seller = _lines_kept(seller)
     if seller:
-        parts += ["", "# Seller's text (Korean)", seller]
+        add(None, "", "# Seller's text (Korean)")
+        add("seller_text", seller)
     if images:
-        parts += ["", "# Text read from the seller's images (Korean, OCR: letters and digits may be wrong)", images]
+        add(None, "", "# Text read from the seller's images (Korean, OCR: letters and digits may be wrong)")
+        add("images_text", images)
     if tables:
-        parts += ["", "# Tables read from the seller's images (OCR: a digit or a cell may be lost; rows are cells "
-                  "\"a | b | c\")", tables]
-    return {"message": "\n".join(parts), "title": title, "brand": brand, "origin": country,
-            "origin_note": origin_note, "dropped": dropped}
+        add(None, "", "# Tables read from the seller's images (OCR: a digit or a cell may be lost; rows are cells "
+            "\"a | b | c\")")
+        add("image_tables", tables)
+    return {"message": "\n".join(lines), "title": title, "brand": brand, "origin": country,
+            "origin_note": origin_note, "dropped": dropped,
+            "parts": {k: "\n".join(v) for k, v in parts.items() if v}}
+
+
+def part_hashes(pkt: dict[str, Any]) -> dict[str, str]:
+    """{part: sha256 of its text} of a packet (a description row's "parts", 2026-11-19: sweep.py splits a stale
+    count by the parts that differ; the row's source_sha256 stays the hash of the whole message)."""
+    return {k: hashlib.sha256(v.encode()).hexdigest() for k, v in pkt["parts"].items()}
+
+
+def message_sha256(pkt: dict[str, Any]) -> str:
+    """The hash of a packet's whole message: a row's `source_sha256` (describe_product, source_sha256, sweep.py)."""
+    return hashlib.sha256(pkt["message"].encode()).hexdigest()
 
 
 # ---- after the answer: checks, trimming, the HTML ----------------------------------------------------------------
@@ -572,7 +600,7 @@ def _jsonl(path: str) -> dict[str, dict[str, Any]]:
 def source_sha256(prepared: dict[str, Any], translated: dict[str, Any], blocks: list[dict[str, Any]],
                   vendors: dict[str, str] | None, tenant: str | None) -> str:
     """The hash of the packet a description is written from (a row's `source_sha256`; another one now: stale)."""
-    return hashlib.sha256(packet(prepared, translated, blocks, vendors, tenant)["message"].encode()).hexdigest()
+    return message_sha256(packet(prepared, translated, blocks, vendors, tenant))
 
 
 def describe_product(prepared: dict[str, Any], translated: dict[str, Any], blocks: list[dict[str, Any]],
@@ -586,7 +614,8 @@ def describe_product(prepared: dict[str, Any], translated: dict[str, Any], block
     if answer is None:
         done["dropped"].append({"where": "answer", "text": "", "why": ["no usable answer"]})
     return {"format": FORMAT, "key": prepared["key"], "status": done["status"], "profile": name,
-            "source_sha256": hashlib.sha256(pkt["message"].encode()).hexdigest(), "fields": done["fields"],
+            "source_sha256": message_sha256(pkt), "parts": part_hashes(pkt),
+            "fields": done["fields"],
             "html": done["html"], "dropped": done["dropped"], "conflicts": done["conflicts"],
             "origin": pkt["origin"], "origin_note": pkt["origin_note"], "left_out": pkt["dropped"],
             "by": by, "generated": "model", "at": now}

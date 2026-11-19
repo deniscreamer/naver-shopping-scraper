@@ -280,6 +280,39 @@ def description_patterns(texts: list[str]) -> list[str]:
     return out
 
 
+def stale_parts(row: Mapping[str, Any], pkt: dict[str, Any]) -> list[str] | None:
+    """The packet's parts whose text differs from what a stale description was written from (a part gone or new
+    counts too); None for a row from before describe.py wrote "parts" (2026-11-19)."""
+    then = row.get("parts")
+    if not isinstance(then, dict):
+        return None
+    now = describe.part_hashes(pkt)
+    return sorted(k for k in set(then) | set(now) if then.get(k) != now.get(k))
+
+
+def stale_lines(answers: Mapping[str, Any]) -> list[str]:
+    """description.stale's count split by the parts that differ (one product counts under each of its parts), live
+    and drafts apart; the older rows without parts as one number. A report only."""
+    lines = []
+    for store in ("live", "draft"):
+        per: dict[str, int] = {}
+        older = 0
+        for f in answers["checks"]["description.stale"]["findings"]:
+            if f["store"] != store:
+                continue
+            parts = f.get("parts")
+            if parts is None:
+                older += 1
+                continue
+            for part in parts or ["headings"]:          # no part differs: a heading or the order changed
+                per[part] = per.get(part, 0) + 1
+        if per or older:
+            lines.append(f"    by part, {store}: "
+                         + ", ".join(f"{k} {n}" for k, n in sorted(per.items(), key=lambda x: (-x[1], x[0])))
+                         + ("; " if per and older else "") + (f"no parts (older rows) {older}" if older else ""))
+    return lines
+
+
 def is_review(row: dict[str, Any] | None) -> bool:
     """A description row written by hand: `by: review-<date>-<why>`, as a hand title row (DESCRIBE.md, "Hand rows";
     none exists yet, 2026-11-19)."""
@@ -399,7 +432,7 @@ def run(shop: str, shops_root: str = P.SHOPS_ROOT, keys: Iterable[str] | None = 
     where = {k: store_of(ledger[k]) for k in scope}
     findings: dict[str, list[dict[str, Any]]] = {c: [] for c in CODES}
 
-    def hit(code: str, key: str, text: str, **extra: str) -> None:
+    def hit(code: str, key: str, text: str, **extra: Any) -> None:
         findings[code].append({"key": key, "store": where[key], "handle": ledger[key].get("handle"),
                                "text": _clip(text), **extra})
 
@@ -467,8 +500,9 @@ def run(shop: str, shops_root: str = P.SHOPS_ROOT, keys: Iterable[str] | None = 
             # 6. the packet changed since (what describe.py --offline --published counts as stale)
             if p.get("status") == "ready" and t.get("status") == "translated":
                 blocks = describe.load_blocks(shop_obj.dir, p["product"])
-                if row.get("source_sha256") != describe.source_sha256(p, t, blocks, vendors, tenant):
-                    hit("description.stale", key, "source changed")
+                pkt = describe.packet(p, t, blocks, vendors, tenant)
+                if row.get("source_sha256") != describe.message_sha256(pkt):
+                    hit("description.stale", key, "source changed", parts=stale_parts(row, pkt))
 
     # the owner's declines of a check's finding (--decline --check): hidden while the key builds to what he declined
     said = {k: v for k, v in declines(shops_root, shop).items() if k[1] != STORE_KIND and k[0] in where}
@@ -1099,6 +1133,8 @@ def table(answers: dict[str, Any], out: str) -> list[str]:
             lines.append(f"    {f['key']}  {f['handle']}  {f['text']}")
         if code == "title.set_single":
             lines.extend(set_single_lines(answers))
+        if code == "description.stale":
+            lines.extend(stale_lines(answers))
     hidden = answers.get("declined") or {}
     if hidden:
         lines.append(f"declined by the owner, hidden: {sum(map(len, hidden.values()))} ("

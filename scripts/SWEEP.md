@@ -29,7 +29,16 @@ The owner decides each group (and each paid re-ask) as the report shows it; his 
 
 When: after a commit that changes what products are built from (a rule, a dictionary entry, a prompt), between jobs,
 after `run_transform.py <shop> --diff`, `translate.py <shop> --offline` and `placement.py <shop>`; after a scroll or
-job (it adds brands and terms); before a release. It takes about 17 seconds for the whole shop (2,265 published:
+job (it adds brands and terms); before a release. `job.py status` says when (2026-11-19): one line
+`sweep due: since the last sweep (<time>): <reasons> (skill sweep)` (`--json`: key `sweep_due`) when
+`sweep/latest/` (its older part of `answers.json` and `store.json`: `--answers` or `--store` alone refresh one) is
+older than a commit to the build code (`git log -1` over `scripts/*.py` but `test_*` and `conftest.py`,
+`scripts/*.json`, `scripts/prompts/`, `scripts/dictionaries/`; no git: not judged; a commit to a read-only tool such
+as `lens.py` or `sweep.py` counts too: the line can name one that changes no product), the live dictionaries (their
+newest file under `scripts/output/dictionaries/`) or the `done` of the job shown (not another job's);
+`no answers part yet` / `no store part yet` when one part is missing; `no sweep run yet` when the shop has a publish
+ledger and no sweep; nothing for a shop without a ledger, and nothing while a runner holds the shop's lock (a sweep
+waits for it; a scroll's translations keep the dictionaries newer, so the line comes after the job). It takes about 17 seconds for the whole shop (2,265 published:
 the checks about 2 s, the store part about 14 s, nearly all of it `publish.build`).
 
 The first line is the scope: live (ACTIVE, or an old ledger row with no `store_status`) and drafts (`DRAFT`) are
@@ -49,7 +58,7 @@ Worse products, when there are any, are printed first of all.
 | `text.hangul` | Korean left in an English text the store shows | fix at the source (a dictionary entry: skill `dictionaries`; a description: `describe.py --force --keys-file F` on the owner's word) |
 | `description.old_brand` | the description names the product under another brand (an old vendor, a seller's shop) | the owner's word, then `describe.py <shop> --force --keys-file .../description.old_brand.live.keys`; then the republish question |
 | `description.patterns` | a stored description trips a check `describe.py` has now (shop talk, talk about the listing, a link) | as `description.old_brand` |
-| `description.stale` | the description was written from another packet than today's | nothing by default: one number, a keys file; the owner, 2026-11-19: only descriptions with an explicit error get rewritten |
+| `description.stale` | the description was written from another packet than today's; the line `by part, <live\|draft>: title 30, images_text 12, ...; no parts (older rows) N` says which parts of the packet differ (a product under each of its parts; `headings`: no part differs, a heading or the order did; the rows written before 2026-11-19 carry no parts: one number) | nothing by default: one number, a keys file; the owner, 2026-11-19: only descriptions with an explicit error get rewritten. The split is a report only: a part such as `images_text` (a new OCR) or `specs` tells why, not what to do |
 | `OCR sidecars with an error (whole shop)` | `description_images.py` failed on these products | by hand only: `.venv/bin/python scripts/description_images.py <shop> --products <product id> --force` (the Naver product id, the key's last part; ~20 s a product, under the lock) |
 | `seed-sent <shop>: N published (withdrawn left out): A written, B already there, C no_baseline` (`--seed-sent`) | `publish/sent/<id>.json` written for each published product whose offline build gives the ledger's `output` (B: the file holds it already, not rewritten); the C others have no baseline, a line a reason with up to 3 keys: `today's build differs from the ledger` (the store has something today's files no longer build: a vendor the store spells otherwise, a rule changed since), `the ledger row has no output` (a failed photo, a row from before `output` existed), `not buildable: <error>` (a missing file or record) | nothing: their "before" comes with their next real send (`publish.py` writes it); stage 3 shows them as no baseline |
 | `store lagging <shop>: L live, D drafts; B with a baseline: S same, C changed (improvement I, eyeball E; needing --force F), W worse; no baseline N (...)` | the store part's counts: B products have a trusted "before" (`load_sent`); S of them build today exactly to what the store has (a resend would be skipped); the C others would change, F of them only with `--force` (`.force` groups, below); no baseline N, by reason (`no publish/sent file`: published before stage 2 and not seeded, or a failed photo; `the ledger row has no output`; `the publish/sent file is not the ledger's output`: a send cut off, a hand edit) | nothing for S; the groups for C; the no-baseline keys get their "before" with their next real send (or `--seed-sent`) |
@@ -94,7 +103,7 @@ have no exemption in practice).
 | `text.hangul` | Hangul in the English title, an option name or value, or the description | `translation_rules.HANGUL_RE` |
 | `description.old_brand` | the description's first sentence names a brand that is not the vendor | the test of `title.other_brand` on the first sentence (where the description names the product) |
 | `description.patterns` | a stored description `describe.py` would cut today | `describe.packet_free_problems` (the part of `problems()` that needs no packet: shop talk, the listing, kana / han, link, phone, price, markup) on each paragraph, heading and item; Hangul alone is `text.hangul`'s |
-| `description.stale` | the packet changed since the description was written | `describe.source_sha256` against the row's `source_sha256`, as `describe.py --offline --published` counts stale (ready and translated products) |
+| `description.stale` | the packet changed since the description was written | `describe.message_sha256` of today's packet (what `describe.source_sha256` gives) against the row's `source_sha256`, as `describe.py --offline --published` counts stale (ready and translated products); the finding's `parts`: the names whose hash in the row's `parts` (describe.py writes it on new rows since 2026-11-19, `describe.part_hashes`) differs from today's packet, a part gone or new included; `None` for an older row |
 
 The owner's declines of a check's finding (`--decline --check`) hide it from that check: "The owner's decisions"
 below. The dictionaries are read as translate.py reads them, without their sync

@@ -12,6 +12,7 @@ cut to what the packet reads, the English the shop shows, the cleaned OCR blocks
 
     .venv/bin/python -m pytest scripts/test_describe.py -q
 """
+import hashlib
 import json
 import os
 
@@ -706,3 +707,44 @@ def test_packet_carries_the_owners_spec_row():
     assert "Gender: Women's" in after and "Gender: Men's" not in after
     assert [x for x in after if not x.startswith("Gender")] == [x for x in before if not x.startswith("Gender")]
     assert len(after) == len(before)
+
+
+# ---- the packet's parts (2026-11-19): why a description went stale -------------------------------------------------
+
+# the hash of the whole message as describe.py computed it before the parts existed: a row written then is not stale
+SHA_BEFORE_PARTS = {"13627933340": "c565ddf7e52cfe1bd8916a137731009b49cd698e7ac3bf67813f969060ca3aef",
+                    "7595182520": "e9875750f3900c615a5296d6928c9996266069efe6e4ccd05393a100d5263026"}
+
+
+def test_the_parts_leave_the_message_and_its_hash_as_they_were():
+    for pid, sha in SHA_BEFORE_PARTS.items():
+        fx = load(pid)
+        p = packet(pid)
+        assert D.source_sha256(fx["prepared"], fx["translated"], fx["blocks"], None, "Fairward Golf") == sha
+        lines = p["message"].split("\n")
+        for name, text in p["parts"].items():              # each part is lines of the message, none empty
+            assert text and all(x in lines for x in text.split("\n")), (pid, name)
+    assert set(packet("13627933340")["parts"]) == {"title", "brand", "sold", "origin", "specs", "images_text",
+                                                   "image_tables"}
+    assert "gifts" not in packet("8974646004")["parts"] and "seller_text" in packet("8974646004")["parts"]
+    parts = packet("13627933340")["parts"]                  # each line in its own part, pinned on one fixture
+    assert parts["title"].split("\n") == [
+        "Title: PRGR Sweep M17 Women's Complete Set 11-Piece with Caddie Bag",
+        "Title in Korean: PRGR 스위프 SWEEP M17 여성 풀세트 11PC 백세트포함 피알지알 한국프로기아"]
+    assert parts["brand"] == "Brand: PRGR" and parts["origin"] == "Origin: made in Japan"
+    assert "Driver Loft: 11.5°" in parts["specs"].split("\n")
+    assert all("Driver Loft" not in v for k, v in parts.items() if k != "specs")
+    assert parts["image_tables"].startswith("PRGR | M-17") and "PRGR | M-17" not in parts["images_text"]
+
+
+def test_a_new_row_carries_the_hash_of_each_part(shop):
+    root, keys = shop
+    D.run("fairwardgolf", Fake([THIN, GOOD]), root)
+    shop_dir = os.path.join(root, "fairwardgolf")
+    for key in keys:
+        row = D.load_store(shop_dir)[key]
+        p = D._jsonl(os.path.join(shop_dir, "prepared", "products.jsonl"))[key]
+        t = D._jsonl(os.path.join(shop_dir, "translation", "translated.jsonl"))[key]
+        pkt = D.packet(p, t, D.load_blocks(shop_dir, p["product"]), {}, "Fairward Golf")
+        assert row["parts"] == D.part_hashes(pkt) and set(row["parts"]) == set(pkt["parts"])
+        assert row["source_sha256"] == hashlib.sha256(pkt["message"].encode()).hexdigest() == D.message_sha256(pkt)

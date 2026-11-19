@@ -88,7 +88,9 @@ the intro, a chipper-putter never a putter included. A category without a profil
 
 The answers are kept in `shops/<shop>/translation/descriptions.jsonl` (append-only; fields, HTML, what was cut
 and why, conflicts, the origin decision, the model, the time; `generated: model` for a later Merchant feed, where
-Google asks for AI-written text to be declared). A product with a row is not asked again; a row whose source
+Google asks for AI-written text to be declared; `source_sha256`, the hash of the whole packet, and since 2026-11-19
+`parts`, `{part: sha256}` of the packet's parts that exist: title, brand, sold, options, origin, hints, gifts, specs,
+seller_text, images_text, image_tables, so `sweep.py` can say which part made a row stale). A product with a row is not asked again; a row whose source
 changed is reported `stale` and kept (`--force` asks again). `publish.py` puts the row's HTML into the payload and
 into the publish digest only when the product has a row, so a product without one keeps its digest. Products
 already in the shop are skipped unless `--published` or `--only` names them: a new description changes the digest,

@@ -134,7 +134,7 @@ from collections import Counter
 from datetime import datetime, timezone
 from typing import Any, Mapping, TypedDict
 
-from shop_files import LedgerError, append_line, locked, read_jsonl, write_atomic
+from shop_files import LedgerError, ShopBusy, append_line, ensure_free, locked, read_jsonl, write_atomic
 from shop_types import JobMeta
 
 # run_transform takes the code's signature (its prepare cache key) when imported: import it before any other module of
@@ -1578,6 +1578,10 @@ def summary(job: Job) -> dict[str, Any]:
 
 def cmd_status(args: argparse.Namespace) -> int:
     s = summary(open_job(args.job))
+    try:                                            # a hint never breaks status
+        s["sweep_due"] = sweep_due(open_job(args.job))
+    except Exception:                               # noqa: BLE001
+        s["sweep_due"] = None
     if args.json:
         print(json.dumps(s, ensure_ascii=False, indent=1))
         return 0
@@ -1597,7 +1601,72 @@ def cmd_status(args: argparse.Namespace) -> int:
     print(f"  ready {s['ready']}; next: {s['next']}; finished: {s['finished']}; not built yet: {s['not_built']}")
     _dictionaries_reminder(open_job(args.job))
     _review_reminder(open_job(args.job))
+    if s["sweep_due"]:
+        print(f"  sweep due: {s['sweep_due']} (skill sweep)")
     return 0
+
+
+# what builds a product, in git (sweep's "When", 2026-11-19): the scripts but their tests, the rule tables, the
+# prompts and the dictionaries' backups
+SWEEP_PATHS = (":(glob)scripts/*.py", ":(glob,exclude)scripts/test_*.py", ":(glob,exclude)scripts/conftest.py",
+               ":(glob)scripts/*.json", "scripts/prompts", "scripts/dictionaries")
+
+
+def code_changed_at() -> float | None:
+    """The newest commit time of SWEEP_PATHS (git log, read only); None without git or a commit."""
+    try:
+        out = subprocess.run(["git", "log", "-1", "--format=%ct", "--", *SWEEP_PATHS], cwd=os.path.dirname(SCRIPTS),
+                             capture_output=True, text=True, timeout=10)
+        return float(out.stdout.strip()) if out.returncode == 0 and out.stdout.strip() else None
+    except (OSError, ValueError, subprocess.SubprocessError):
+        return None
+
+
+def _dicts_updated() -> float | None:
+    """The newest mtime of the live dictionary files (translation_dicts' own list: a writer's .tmp file is not one of
+    them); a file replaced or gone meanwhile is skipped."""
+    import translation_dicts
+    times = []
+    for f in translation_dicts._files(translation_dicts.LIVE_ROOT, translation_dicts.BACKUP_ROOT):
+        try:
+            times.append(os.path.getmtime(f[2]))
+        except OSError:
+            continue
+    return max(times) if times else None
+
+
+def _utc(t: float) -> str:
+    return time.strftime("%Y-%m-%d %H:%MZ", time.gmtime(t))
+
+
+def sweep_due(job: Job) -> str | None:
+    """Why the shop's sweep (sweep.py) is older than what it judges: a commit to the build code (SWEEP_PATHS), the
+    live dictionaries, this job's finish. The sweep's time is its older part (answers.json, store.json: --answers or
+    --store alone refresh one); a part missing is due too. None when sweep/latest/ is newer, the shop has no publish
+    ledger, or a runner holds the shop's lock (a sweep waits for it: no line while a job runs)."""
+    shop_dir = os.path.join(job.shops_root, job.shop)
+    if not os.path.exists(os.path.join(shop_dir, "publish", "published.jsonl")):
+        return None
+    try:
+        ensure_free(job.shops_root, job.shop)
+    except ShopBusy:
+        return None
+    runs = {n: os.path.getmtime(p) for n, p in ((n, os.path.join(shop_dir, "sweep", "latest", f"{n}.json"))
+                                                 for n in ("answers", "store")) if os.path.exists(p)}
+    if not runs:
+        return "no sweep run yet"
+    missing = [f"no {n} part yet" for n in ("answers", "store") if n not in runs]
+    since = min(runs.values())
+    events = job.events()
+    done = (datetime.fromisoformat(events[-1]["at"]).timestamp()
+            if events and events[-1]["event"] == "done" and events[-1].get("at") else None)
+    newer = [f"{what} {_utc(t)}" for what, t in (("a commit to the build code", code_changed_at()),
+                                                 ("the live dictionaries", _dicts_updated()),
+                                                 (f"job {job.id} done", done))
+             if t is not None and t > since]
+    if not newer and not missing:
+        return None
+    return ", ".join(missing + ([f"since the last sweep ({_utc(since)}): " + ", ".join(newer)] if newer else []))
 
 
 # ---- report, where, watch (job_report.py; read only, no lock) ------------------------------------------------

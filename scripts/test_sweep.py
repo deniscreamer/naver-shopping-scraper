@@ -373,6 +373,32 @@ def test_stale_is_what_describe_offline_published_counts(fx):
     assert fx.key("12178430576") in stale and fx.key("13552318731") not in stale   # real both ways
 
 
+def test_stale_is_split_by_the_parts_that_differ(fx, monkeypatch, capsys):
+    """describe.py's rows carry "parts" since 2026-11-19: a stale count splits by the parts that differ (one gone
+    counts too); an older row without them is one number. A report only: the keys file is the same."""
+    seen = {}
+    real = describe.packet
+    monkeypatch.setattr(describe, "packet", lambda p, *a: seen.setdefault(p["key"], real(p, *a)))
+    before = answers(fx)
+    older = found(before, "description.stale")
+    assert older and all(f["parts"] is None for f in before["checks"]["description.stale"]["findings"])
+    key = fx.key("13552318731")
+    assert key not in older
+    path = os.path.join(fx.shops, SHOP, "translation", "descriptions.jsonl")
+    last = [json.loads(x) for x in open(path, encoding="utf-8") if json.loads(x)["key"] == key][-1]
+    then = {**describe.part_hashes(seen[key]), "title": "0" * 64, "gifts": "1" * 64}
+    append(path, {**last, "source_sha256": "written from another packet", "parts": then})
+    a = answers(fx)
+    assert found(a, "description.stale") == older | {key}
+    assert next(f for f in a["checks"]["description.stale"]["findings"] if f["key"] == key)["parts"] == \
+        ["gifts", "title"]
+    assert S.stale_lines(a) == [f"    by part, live: gifts 1, title 1; no parts (older rows) {len(older)}"]
+    assert S.main([SHOP, "--shops-root", fx.shops, "--answers"]) == 0
+    assert S.stale_lines(a)[0] in capsys.readouterr().out
+    assert S.stale_parts({"parts": describe.part_hashes(seen[key])}, seen[key]) == []     # same parts: none
+    assert S.stale_parts({}, seen[key]) is None
+
+
 # ---- the run: scope, files, lock, selection --------------------------------------------------------------------
 
 def _tree(root):
