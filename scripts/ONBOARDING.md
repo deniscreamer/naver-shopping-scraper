@@ -145,7 +145,7 @@ wedge sets (2026-11-15), draft first (2026-11-16), 50002784 chippers (2026-11-18
 without paid add-ons; one section `chippers`; the shop's general price rule; title rules from 1,260 listing titles,
 the listing full of garden wood chippers, air chisels and poker chips; a `chipper` describe profile; A12 not
 needed for one club, A13 left until the first products are checked: nothing collected yet; the same day's review on
-2,558 titles: the escapes widened, an agency's hand-치퍼 titles and used clubs left out).
+2,558 titles: the escapes widened, an agency's hand-치퍼 titles and used clubs left out; reviewed=True on the owner's word 2026-11-19, after pilots of 5, 50 and 100 and the lens review: the 90 drafts activated).
 
 ### Learned on the first new category (50002787, 2026-11-11)
 

@@ -122,7 +122,7 @@ RULES = {
                                       # 2026-11-18, the chipper review (the owner's delegation): a free gift's
                                       # sizes are not versions of the club
                                       gift_axis_out=True,
-                                      reviewed=False),      # a new category: its products go DRAFT first
+                                      reviewed=True),       # the owner 2026-11-19: 90 drafts activated after the lens review
         }),
 }
 
