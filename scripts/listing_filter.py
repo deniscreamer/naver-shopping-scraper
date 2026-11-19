@@ -11,7 +11,8 @@ this order:
   rental             a rental offer: a stop word of listing_exclusions.json in the name
   title:<code>       a word the run's category does not sell (listing_title_rules.json, ours, per Naver leaf
                      category; the owner, 2026-11-11: toys, gloves, loose heads in junior clubs, park golf in
-                     full sets): matched on the name without spaces
+                     full sets), or no word of a group the category requires (`requires`, 2026-11-19: a women's
+                     word and a cardigan word for knit cardigans): matched on the name without spaces
   category_mismatch  the row's category is not exactly the leaf category of the run (no parent matches)
   key_unavailable    no store number or product id: the shop check cannot be done, so the row is not taken
   already_published  the source key is in the shop's catalog snapshot (shopify_catalog), any product status
@@ -56,13 +57,21 @@ def title_rules(category_id: str, path: str = TITLE_RULES) -> list[dict[str, Any
         return json.load(f).get("categories", {}).get(str(category_id), [])
 
 
+def _bare(word: str | None) -> str:
+    return re.sub(r"\s+", "", normalize(word))
+
+
 def title_rule(name: str | None, rules: Iterable[dict[str, Any]]) -> str | None:
-    """`title:<code>` of the first category rule whose term is in the name without spaces, or None."""
-    text = re.sub(r"\s+", "", normalize(name))
+    """`title:<code>` of the first category rule whose term is in the name without spaces, or that `requires` a
+    group of words none of which is in it (all of the groups, any word of each; 2026-11-19, knit cardigans: a women's
+    word and a cardigan word), or None."""
+    text = _bare(name)
     for rule in rules:
-        if any(re.sub(r"\s+", "", normalize(u)) in text for u in rule.get("unless", ())):
+        if any(_bare(u) in text for u in rule.get("unless", ())):
             continue                                # a word that says the row is what the section sells
-        if any(term_matches(text, {**t, "text": re.sub(r"\s+", "", t["text"])}) for t in rule["tokens"]):
+        if any(not any(_bare(w) in text for w in group) for group in rule.get("requires", ())):
+            return f"title:{rule['code']}"
+        if any(term_matches(text, {**t, "text": re.sub(r"\s+", "", t["text"])}) for t in rule.get("tokens", ())):
             return f"title:{rule['code']}"
     return None
 

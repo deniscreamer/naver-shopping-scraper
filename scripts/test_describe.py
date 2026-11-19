@@ -748,3 +748,62 @@ def test_a_new_row_carries_the_hash_of_each_part(shop):
         pkt = D.packet(p, t, D.load_blocks(shop_dir, p["product"]), {}, "Fairward Golf")
         assert row["parts"] == D.part_hashes(pkt) and set(row["parts"]) == set(pkt["parts"])
         assert row["source_sha256"] == hashlib.sha256(pkt["message"].encode()).hexdigest() == D.message_sha256(pkt)
+
+
+# ---- women's knit cardigans (knit_cardigan, the owner 2026-11-19) -----------------------------------------------
+
+KNIT = D.PROFILES["knit_cardigan"]
+
+
+def knit_packet():
+    """A golf fixture dressed as a knit cardigan of 50002797: its fibre rows in the notice (transform.composition_rows)."""
+    fx = load("7595182520")
+    fx["prepared"]["source"]["category_id"] = "50002797"
+    fx["prepared"]["product"]["composition_ko"] = [
+        {"label_ko": "섬유의 조성 또는 혼용률", "value_ko": "아크릴 50%, 울 30%, 나일론 20%", "source": "notice"},
+        {"label_ko": "소재", "value_ko": "울혼방", "source": "spec"}]
+    return D.packet(fx["prepared"], fx["translated"], fx["blocks"], None, "Fairward Golf")
+
+
+def test_the_knit_profile_has_materials_and_highlights_and_its_brief():
+    assert D.profile_of("50002797")[0] == "knit_cardigan"
+    assert D.schema(KNIT)["required"] == ["conflicts", "intro", "materials", "highlights"]
+    brief = D.system_prompt("knit_cardigan")
+    assert "Never state a size" in brief and "Imported." in brief and "혼용률" in brief
+
+
+def test_the_notices_fibre_rows_reach_the_packet_and_their_numbers_are_allowed():
+    pkt = knit_packet()
+    assert "# Fiber content (Korean, the product notice's rows)\n섬유의 조성 또는 혼용률: 아크릴 50%, 울 30%, 나일론 20%" \
+        in pkt["message"] and "울혼방" not in pkt["parts"]["composition"]    # a spec row is among the specs already
+    answer = {"intro": "A women's knit cardigan for golf.", "conflicts": [],
+              "materials": ["50% acrylic, 30% wool, 20% nylon", "Imported."], "highlights": ["Full zip"]}
+    done = D.settle(answer, KNIT, pkt)
+    assert done["fields"]["materials"] == ["50% acrylic, 30% wool, 20% nylon", "Imported."]
+    assert "<h3>Materials &amp; care</h3>" in done["html"]
+
+
+@pytest.mark.parametrize("text", ["Chest 52 cm, length 60 cm.", "Available in size 66.", "Sizes S to XL.",
+                                  "One size fits most.", "Fits 55 (S) to 77 (L).", "Length 24 in."])
+def test_a_size_or_a_measurement_never_reaches_a_knits_page(text):
+    pkt = knit_packet()
+    pkt = {**pkt, "message": pkt["message"] + "\n52 60 66 55 77 24"}       # numbers given: the measure rule alone
+    answer = {"intro": "A women's knit cardigan.", "conflicts": [], "materials": [], "highlights": [text, "Full zip"]}
+    done = D.settle(answer, KNIT, pkt)
+    assert done["fields"]["highlights"] == ["Full zip"]
+    assert any(d["why"][0].startswith("a size or a measurement") for d in done["dropped"])
+
+
+@pytest.mark.parametrize("text", ["Choice of colors and sizes.", "Available in several sizes.",
+                                  "A 2 in 1 layering piece.", "Fits true to size."])
+def test_a_word_about_sizes_is_no_size(text):
+    """The knit brief asks for "Choice of colors and sizes"; the measure rule cuts a size, not the word (2026-11-19)."""
+    answer = {"intro": "A women's knit cardigan.", "conflicts": [], "materials": [], "highlights": [text, "Full zip"]}
+    done = D.settle(answer, KNIT, knit_packet())
+    assert done["fields"]["highlights"] == [text, "Full zip"], done["dropped"]
+
+
+def test_the_clubs_profiles_keep_their_sizes():
+    pkt = packet("13627933340")
+    done = D.settle({**GOOD, "highlights": ["Driver, 11.5°"]}, GOLF, pkt)
+    assert done["fields"]["highlights"] == ["Driver, 11.5°"]

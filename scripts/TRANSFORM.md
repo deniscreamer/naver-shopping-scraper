@@ -166,7 +166,10 @@ published, SKUs and prices equal on 201 of 201 variants):
   with the gift word) is dropped too, one row per remaining tuple: its first row, in stock or not (its source_id, SKU
   and variant id do not move when one gift size sells out), available when any row of the tuple is, note
   `gift_axis_dropped`; a gift priced apart stays a choice (Missile 10421264752: 7 variants that were the free
-  glove's sizes, now one). Over 3 axes: held; over the shop's variant cap:
+  glove's sizes, now one). Where the category says so (`no_choice_out`: knit cardigans 50002797, the owner
+  2026-11-19) a value that says "no choice" (선택안함, 선택 안함, 없음, 필요없음, 선택없음, the whole value) is no
+  version: the rows that carry it go, and an axis whose every value says so goes whole (one row per remaining tuple),
+  note `no_choice_dropped`; off for the clubs (their golden products unchanged). Over 3 axes: held; over the shop's variant cap:
   the first ones are offered (`variants_capped`, below).
 - **SKU**: the shop's prefix + 24 hex of sha256({schemaVersion, sourceId, tenantOfferKey}) (the harvester's recipe).
 - **The owner's spec row** (run-level, `run_transform.apply_specs_by_owner`, after the brand fallback; never in the
@@ -482,7 +485,12 @@ link. The report says how many were dropped. The step is pure: same products in,
 `paid_variants` / `paid_addons` / `description_images`, off by default, all on for fairwardgolf 50002788 and
 50002787 (junior clubs, 2026-11-11), 50002670 (women's iron sets, 2026-11-14) and 50002783 (wedge sets,
 2026-11-15; no parts profile: the core reading only). `gift_axis_out` (chippers 50002784, 2026-11-18): a free
-gift's option axis is left out ("Options" above); off elsewhere. `sets_only` (wedges, 2026-11-15): a variant whose own words
+gift's option axis is left out ("Options" above); off elsewhere. 50002797 (women's knit cardigans, the owner
+2026-11-19): paid variants (a plus size at +5,000 KRW), no paid add-ons, the images read (the size charts),
+`gift_axis_out`, `no_choice_out`, and `composition`: the fibre rows (spec rows, then the notice's rows 소재 / 혼용률 /
+재질 / 섬유의 조성; one marked "see the description" left out) kept as `product.composition_ko` [{label_ko, value_ko,
+source}], read by the price's duty by fibre (PRICE.md "A category's own rule") and the description's materials;
+the key exists only where the category asks for it. `sets_only` (wedges, 2026-11-15): a variant whose own words
 sell one club (1PC, 단품, 개별, 싱글, or one loft 44-72 with no set word or count; "i60R" is a shaft) is left out, and a
 product of such variants only is held `single_only` (17 one-wedge listings of the pilot filed as "웨지 세트 또는
 개별"). A loft written again on a second axis that describes the same club ("Size: 56 Degree" + "Style Name: Black

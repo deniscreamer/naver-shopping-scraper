@@ -504,7 +504,7 @@ def _variants(prepared: dict[str, Any], options: list[dict[str, Any]], values_en
         seen.add(combo)
         krw = int(v["price_krw"])
         try:
-            quote = pricing.quote(v, product)
+            quote = pricing.quote(v, product, (prepared.get("source") or {}).get("category_id"))
         except PriceError as e:
             raise PayloadError(f"variant {v.get('sku')}: {e}") from None
         cost, price = quote.cost, quote.price
@@ -693,7 +693,7 @@ def product_input(prepared: dict[str, Any], translated: dict[str, Any], placemen
             "priceKrw": base.get("base_krw"), "originalPriceKrw": base.get("original_krw")})},
         {"namespace": "fairwardgolf", "key": "pricing", "type": "json", "value": _json({
             "schemaVersion": "fairwardgolf-pricing/2" if pricing.delivered else "fairwardgolf-pricing/1",
-            **pricing.describe()})},
+            **pricing.describe(source.get("category_id"))})},
     ]
     rating = product.get("rating") or {}
     if rating.get("count"):

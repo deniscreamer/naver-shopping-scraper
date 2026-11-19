@@ -212,7 +212,7 @@ def test_baselines_block_is_optional_and_the_operators():
     table = load_table()
     block = table["rows"][0]["baselines"]
     assert {k: block[k] for k in BASE if k != "basis"} == {k: v for k, v in BASE.items() if k != "basis"}
-    assert table["version"] == 10 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
+    assert table["version"] == 11 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
     check_row(ROW)                                                    # a row without the block: no composition
     check_row({**ROW, "baselines": BASE})
 
@@ -312,10 +312,11 @@ def test_a_restamped_default_carries_its_rows_version_not_the_tables():
     """2026-11-18: the row of 50002784 raised the table to 8; a default of another row restamped by the transform keeps
     its row's defaults_version (7), so a new row moves no other product; a row without one takes the table's. The same
     day the chipper row was measured (version 9): only its own defaults_version rose; its bands of version 10 kept
-    defaults_version 9 (a band moves no default)."""
+    defaults_version 9 (a band moves no default). 2026-11-19: the row of 50002797 (knit cardigans) raised it to 11, its
+    own defaults_version 11; no other row moved."""
     table = load_table()
-    assert table["version"] == 10 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
-        "50002788": 7, "50002787": 7, "50002670": 7, "50002783": 7, "50002784": 9}
+    assert table["version"] == 11 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
+        "50002788": 7, "50002787": 7, "50002670": 7, "50002783": 7, "50002784": 9, "50002797": 11}
     assert row_version(table, JUNIOR) == 7 and row_version({"version": 9}, {k: v for k, v in JUNIOR.items()
                                                                             if k != "defaults_version"}) == 9
     for bad in (0, "7", 7.0, True):
@@ -485,7 +486,7 @@ def test_chipper_bands_refuse_a_small_parcel_and_a_head_weight():
     [row] = [r for r in table["rows"] if r["category_id"] == "50002784"]
     assert row["plausible"] == {"product_weight_g": {"min": 350, "max": 600}, "package_weight_g": {"min": 350,
                                 "max": 5000}, "package_length_mm": {"min": 850, "max": 1500}}
-    assert row["defaults_version"] == 9 and table["version"] == 10
+    assert row["defaults_version"] == 9 and table["version"] >= 10
     before = copy.deepcopy(table)
     for r in before["rows"]:
         if r["category_id"] == "50002784":
@@ -605,3 +606,18 @@ def test_a_band_added_later_refuses_a_whole_box():
     assert [(got[n]["source"], got[n]["reason"]) for n in FIELDS[2:]] == [
         ("category_default", "box_not_whole"), ("category_default", "box_not_whole"),
         ("category_default", "implausible_for_category")]
+
+
+def test_the_knit_cardigan_row_is_the_owners():
+    """50002797 (the owner, 2026-11-19): a folded knit in a mailer; the parcel never under 300 g (plausible min), the
+    central box 28 x 22 x 4 cm (0.49 kg volumetric: the tariff's 0.5 kg step)."""
+    row = next(r for r in load_table()["rows"] if r["category_id"] == "50002797")
+    check_row(row)
+    got = {f: (v["low"], v["central"], v["high"]) for f, v in row["fields"].items()}
+    assert got == {"product_weight_g": (250, 400, 800), "package_weight_g": (300, 400, 900),
+                   "package_length_mm": (250, 280, 350), "package_width_mm": (200, 220, 250),
+                   "package_height_mm": (30, 40, 80)}
+    assert row["plausible"] == {"package_weight_g": {"min": 300, "max": 1500}}
+    assert (row["approved_by"], row["approved_at"], row["defaults_version"]) == ("owner", "2026-11-19", 11)
+    assert "baselines" not in row and "kinds" not in row
+    assert load_table()["rows"][-1]["category_id"] == "50002797"         # appended last (ONBOARDING A1)

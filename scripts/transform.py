@@ -39,6 +39,7 @@ naver-harvester published, and its 60 published products):
     paid_addons_left_out, paid_variants_left_out, title_names_one_variant, purchase_agency, price_name_mismatch,
     title_word_unproven (a seller's word on every title its page never backs: 단조 of 102454334; spec_variants),
     axes_repeated / slot_rows_merged (rows left out: an echoed axis, a picker's repeats and orders; 2026-11-17),
+    no_choice_dropped (a "선택안함" / "없음" value is no version: CategoryRules.no_choice_out, 2026-11-19),
     hand_from_description (Amazon's "Hand Orientation: Left": spec row 사용방향 왼손용),
     specs_by_owner / specs_by_owner_unused (run-level, run_transform.apply_specs_by_owner: the owner's row of one
     product from <shop>/specs_by_owner.json, 2026-11-18),
@@ -281,6 +282,38 @@ def _drop_gift_axes(names: list[str], keep: list[int], rows: list[dict[str, Any]
     kept = [{**g[0], "is_available": _any_in_stock(g)} for g in groups.values()]
     said = "; ".join(f"{_tidy(names[i])} ({len({r['options'][i] for r in rows})} values)" for i in gift)
     return rest, kept, f"{said}: a free gift, not a version; {len(rows)} -> {len(kept)} rows"
+
+
+# a value that says "no choice" is not a version (the owner, 2026-11-19, knit cardigans: "선택안함" / "없음" next to
+# the colours or sizes, CategoryRules.no_choice_out): its rows go; an axis whose every value says so goes, one row per
+# remaining tuple. Off for the clubs (their published products and golden files stay as they are).
+_NO_CHOICE_RE = re.compile(r"^\W*(?:\d+\s*[.)]\s*)?(?:선택\s*안\s*함|선택\s*없음|필요\s*없음|없음)\W*$")
+
+
+def _drop_no_choice(names: list[str], keep: list[int], rows: list[dict[str, Any]]) \
+        -> tuple[list[int], list[dict[str, Any]], str | None]:
+    """Axis indexes to keep, the rows left once the "no choice" values are gone, and what went (note
+    no_choice_dropped). An axis of such values only goes whole (per remaining tuple its first row, available when any
+    row of the tuple is); otherwise the rows that carry one go."""
+    said: list[str] = []
+    before = len(rows)
+    for i in list(keep):
+        empty = [r for r in rows if _NO_CHOICE_RE.match(r["options"][i] or "")]
+        if not empty:
+            continue
+        if len(empty) == len(rows):
+            keep = [k for k in keep if k != i]
+            groups: dict[tuple[str, ...], list[dict[str, Any]]] = {}
+            for r in rows:
+                groups.setdefault(tuple(r["options"][k] for k in keep), []).append(r)
+            rows = [{**g[0], "is_available": _any_in_stock(g)} if len(g) > 1 else g[0] for g in groups.values()]
+            said.append(f"{_tidy(names[i])}: no choice on every row, the axis")
+        else:
+            rows = [r for r in rows if r not in empty]
+            said.append(f"{_tidy(names[i])}: {', '.join(sorted({_tidy(r['options'][i]) for r in empty}))}")
+    if not said:
+        return keep, rows, None
+    return keep, rows, f"{'; '.join(said)}; {before} -> {len(rows)} rows"
 
 
 def _any_in_stock(rows: list[dict[str, Any]]) -> bool | None:
@@ -1028,6 +1061,7 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
                 "skipped_paid": skipped, "duplicate_values": [], "capped": None}
     keep, rows = _drop_promo_axes(names, rows)
     keep, rows, gifts = _drop_gift_axes(names, keep, rows) if cat.gift_axis_out else (keep, rows, None)
+    keep, rows, no_choice = _drop_no_choice(names, keep, rows) if cat.no_choice_out else (keep, rows, None)
     slots: str | None = None
     slot_axes: list[int] = []
     if cat.wedge_sets:                             # a picker's slots: no repeated loft, one row per set (C01)
@@ -1087,7 +1121,7 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
         held.append({"code": "axes_over_3", "detail": f"{len(axes)} option axes"})
     return {"options": [{"name_ko": _axis_name(names[i]), "values_ko": values[i]} for i in axes], "facts": facts,
             "variants": variants, "held": held, "skipped_paid": skipped, "duplicate_values": duplicate,
-            "capped": capped, "axes_repeated": repeated, "slot_rows": slots, "gift_axes": gifts,
+            "capped": capped, "axes_repeated": repeated, "slot_rows": slots, "gift_axes": gifts, "no_choice": no_choice,
             "slot_axes": [k for k, i in enumerate(axes) if i in slot_axes]}
 
 
@@ -1134,6 +1168,24 @@ def spec_rows(specs: dict[str, Any]) -> list[dict[str, str]]:
             value = brand_fallback.clean(value) or value          # 코알라(200874), 던롭 던롭 (2026-11-12)
         if label not in HIDDEN_ROWS and value and not _pointer(value) and not _PLACEHOLDER_CODE.match(value.strip()):
             out.append({"label_ko": label, "value_ko": value})
+    return out
+
+
+# the rows that state a garment's fibres (2026-11-19, knit cardigans): the spec rows and the 상품정보제공고시 rows
+# Naver shows ("소재", "혼용률", "재질", "섬유의 조성 또는 혼용률", "소재(혼용률)", "제품소재")
+_COMPOSITION_LABEL_RE = re.compile(r"소재|혼용\s*[률율]|재질|섬유|조성|material|fabric|composition", re.I)
+
+
+def composition_rows(specs: dict[str, Any], details: dict[str, Any]) -> list[dict[str, str]]:
+    """The fibre composition rows, spec rows first, then the notice's: [{label_ko, value_ko, source}] (CategoryRules.
+    composition: shop_pricing's duty by the chief fibre and describe.py's materials read them)."""
+    out: list[dict[str, str]] = []
+    for source, rows in (("spec", specs.get("specs") or []), ("notice", (details.get("notice") or {}).get("items") or [])):
+        for r in rows:
+            label, value = _tidy(str(r.get("label") or "")), _tidy(str(r.get("value") or ""))
+            if label and value and _COMPOSITION_LABEL_RE.search(label) and not _pointer(value) \
+                    and not r.get("is_see_description"):                   # "상세페이지 참조": states nothing
+                out.append({"label_ko": label, "value_ko": value, "source": source})
     return out
 
 
@@ -1550,6 +1602,8 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
         notes.append({"code": "axes_repeated", "detail": ov["axes_repeated"]})
     if ov.get("gift_axes"):                         # a buyer's free gift was an axis: left out (10421264752)
         notes.append({"code": "gift_axis_dropped", "detail": ov["gift_axes"]})
+    if ov.get("no_choice"):                         # "선택안함" / "없음" values were not versions (2026-11-19)
+        notes.append({"code": "no_choice_dropped", "detail": ov["no_choice"]})
     if ov.get("slot_rows"):                         # a picker's "56+56" and reorderings left out (C01)
         notes.append({"code": "slot_rows_merged", "detail": ov["slot_rows"]})
     if ov["capped"]:                                # combinations past the shop's cap are not offered
@@ -1660,5 +1714,7 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
         "description_dropped": [dict(d) for d in cleaned["dropped"]] + [            # the seller's boilerplate,
             {"rule": "banner_image", "text": d["link"]} for d in pictures["dropped"]],  # for audit
     }
+    if cat.composition:                             # the fibre rows: the duty and the description (2026-11-19)
+        product["composition_ko"] = composition_rows(specs, details)
     return {"format": FORMAT, "key": key, "shop": rules.shop.value, "status": "held" if held else "ready",
             "held": held, "notes": notes, "source": source, "product": product, "texts": _texts(product)}

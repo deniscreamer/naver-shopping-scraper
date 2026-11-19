@@ -935,3 +935,83 @@ def test_a_dropped_gifts_tuple_is_out_only_when_every_row_is():
     assert [r["is_available"] for r in transform._drop_gift_axes(["로프트", "사은품"], [0, 1], rows)[1]] == [False]
     rows[1]["is_available"] = None
     assert [r["is_available"] for r in transform._drop_gift_axes(["로프트", "사은품"], [0, 1], rows)[1]] == [None]
+
+
+# ---- women's knit cardigans 50002797 (the owner, 2026-11-19) ------------------------------------------------------
+
+def _knit(groups, variants, notice=(), specs=()):
+    """The chipper fixture as a knit cardigan of 50002797: its options, notice and spec rows replaced."""
+    line = copy.deepcopy(_chipper("10421264752"))
+    line["specs"]["category"] = {"id": "50002797", "name": "니트",
+                                 "path": ["스포츠/레저", "골프", "골프의류", "니트"]}
+    line["details"]["name"] = "[현대백화점] 레노마골프 여성 조직감 방풍 집업 니트 가디건 RWSCN8208"
+    line["specs"]["options"]["option_groups"] = [{"id": str(i), "name": n, "type": "COMBINATION"}
+                                                 for i, n in enumerate(groups)]
+    line["specs"]["options"]["variants"] = [
+        {"id": str(900 + i), "name": " / ".join(v), "options": list(v), "extra_price": extra, "stock_quantity": 9,
+         "is_available": True, "is_today_dispatch": None} for i, (v, extra) in enumerate(variants)]
+    line["details"]["notice"] = {"type": "WEAR", "items": [
+        {"label": label, "value": value, "is_see_description": see} for label, value, see in notice]}
+    line["specs"]["specs"] = [{"label": label, "value": value} for label, value in specs]
+    return line
+
+
+def test_the_knit_rules_are_the_owners():
+    knit = rules_for("fairwardgolf").category("50002797")
+    assert knit.paid_variants and not knit.paid_addons and knit.description_images and knit.gift_axis_out
+    assert knit.no_choice_out and knit.composition and not knit.reviewed
+    assert not knit.sets_only and not knit.wedge_sets and not knit.agency_needs_brand
+    assert not any(c.no_choice_out or c.composition for k, c in rules_for("fairwardgolf").categories.items()
+                   if k != "50002797")                       # the clubs' products stay as published
+
+
+def test_no_choice_values_are_not_versions_of_the_cardigan():
+    """"선택안함" on the 사이즈 axis is a row of nothing: it goes; an axis of nothing but "없음" goes whole; a plus size
+    at +5,000 KRW stays (paid variants)."""
+    rows = [(("블랙", "55", "없음"), 0), (("블랙", "66", "없음"), 0), (("블랙", "선택안함", "없음"), 0),
+            (("아이보리", "55", "없음"), 0), (("아이보리", "88", "없음"), 5000), (("아이보리", "선택 안함", "없음"), 0)]
+    p = prepare(_knit(["색상", "사이즈", "추가"], rows), RULES_ON, "50002797-test", 1)
+    assert [(o["name_ko"], o["values_ko"]) for o in p["product"]["options"]] == [
+        ("색상", ["블랙", "아이보리"]), ("사이즈", ["55", "66", "88"])]
+    assert sorted(v["price_krw"] for v in p["product"]["variants"]) == [89000, 89000, 89000, 94000]
+    note = next(n for n in p["notes"] if n["code"] == "no_choice_dropped")
+    assert note["detail"] == "사이즈: 선택 안함, 선택안함; 추가: no choice on every row, the axis; 6 -> 4 rows"
+
+
+@pytest.mark.parametrize("names, rows, kept, said", [
+    (["색상"], ["블랙", "선택안함"], ([0], 1), True),
+    (["색상"], ["블랙", "그레이"], ([0], 2), False),
+    (["색상", "옵션"], [("블랙", "필요없음"), ("그레이", "필요 없음")], ([0], 2), True),
+    (["색상"], ["1. 선택없음", "블랙"], ([0], 1), True),
+    (["색상"], ["없음 표시 블랙"], ([0], 1), False),                       # a word inside a value is no "no choice"
+])
+def test_which_no_choice_values_go(names, rows, kept, said):
+    rows = [{"options": list(r) if isinstance(r, tuple) else [r], "price": 100, "is_available": True} for r in rows]
+    keep, left, note = transform._drop_no_choice(names, list(range(len(names))), rows)
+    assert (keep, len(left)) == kept and (note is not None) == said
+
+
+def test_the_clubs_keep_a_no_choice_value():
+    rows = [(("35인치", "선택안함"), 0), (("35인치", "헤드커버"), 0)]
+    line = _knit(["길이", "추가"], rows)
+    line["specs"]["category"] = {"id": "50002784", "name": "치퍼"}
+    p = prepare(line, RULES_ON, "50002784-test", 1)
+    assert p["product"]["options"][0]["values_ko"] == ["선택안함", "헤드커버"] and "composition_ko" not in p["product"]
+
+
+def test_the_composition_rows_are_kept_for_the_duty_and_the_description():
+    line = _knit(["색상"], [(("블랙",), 0), (("그레이",), 0)],
+                 notice=[("제품소재", "상세페이지 참조", True), ("섬유의 조성 또는 혼용률", "아크릴 50%, 울 30%, 나일론 20%", False),
+                         ("색상", "블랙, 그레이", False)],
+                 specs=[("소재", "울혼방"), ("브랜드", "레노마골프")])
+    p = prepare(line, RULES_ON, "50002797-test", 1)
+    assert p["product"]["composition_ko"] == [
+        {"label_ko": "소재", "value_ko": "울혼방", "source": "spec"},
+        {"label_ko": "섬유의 조성 또는 혼용률", "value_ko": "아크릴 50%, 울 30%, 나일론 20%", "source": "notice"}]
+    from shop_pricing import policy
+    box = {f: {"central": n, "confidence": 1} for f, n in (("package_length_mm", 280), ("package_width_mm", 220),
+                                                           ("package_height_mm", 40), ("package_weight_g", 400))}
+    variant = {**p["product"]["variants"][0], "package": box}       # the fixture's package rows are the chipper's
+    b = policy("fairwardgolf").quote(variant, p["product"], "50002797").breakdown
+    assert b is not None and b["dutyRate"] == "0.32" and b["dutyBasis"]["fibre"] == "man-made" \
+        and b["dutyBasis"]["source"] == "notice" and b["coefficient"] == "1.10"

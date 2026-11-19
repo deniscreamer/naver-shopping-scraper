@@ -83,7 +83,11 @@ item, the choice of iron count, shaft or flex in a highlight, 정품 / 병행 on
 2026-11-15): the wedges by loft in one item, the choice of lofts, grind or shaft in a highlight, non-conforming
 grooves (비공인) said as a limitation. `chipper` (50002784, 2026-11-18): one club, "What's included" of at most
 3 items (the chipper with its loft and length, a cover the seller includes) and "Highlights"; double-sided said in
-the intro, a chipper-putter never a putter included. A category without a profile gets `default`: the intro and highlights only. The common prompt
+the intro, a chipper-putter never a putter included. `knit_cardigan` (50002797, the owner 2026-11-19): "Materials
+& care" (the fiber content from the composition rows, the notice's ones sent as "# Fiber content", the care, the
+origin or "Imported." when none is decided: the profile's `imported` lets that one item past the shop-talk check)
+and "Highlights"; never a size or a measurement (the profile's `no_measures`: an item or sentence with cm / in / a
+size word with a size after it or a Korean size is cut; "Choice of colors and sizes" and "2 in 1" pass, 2026-11-19). A category without a profile gets `default`: the intro and highlights only. The common prompt
 (`prompts/describe_system.md`) holds no golf rule or term (one quoted example of filler aside).
 
 The answers are kept in `shops/<shop>/translation/descriptions.jsonl` (append-only; fields, HTML, what was cut

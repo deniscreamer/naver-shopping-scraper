@@ -74,6 +74,7 @@ unisex and goes nowhere (held).
 | A category of a configured shop that sells one side of a split only, like 50002670 irons (2026-11-14: `split_by="gender"`, the one leaf `womens`; men's and unknown are held) | no | `placement_rules.py` |
 | A category of a configured shop with one section and no split, like 50002783 wedges (2026-11-15: `leaves={None: WEDGES}`, every gender to wedge-sets; singles are left out by the title screen) | no | `placement_rules.py` |
 | The same, like 50002784 chippers (2026-11-18: `leaves={None: CHIPPERS}`, Leaf("chippers", "Chippers") under clubs, the store's collection fairwardgolf-chippers existed empty; putters, wedges and other clubs filed under it are left out by the title screen) | no | `placement_rules.py` |
+| The same under another parent, like 50002797 women's knit cardigans (2026-11-19: `parent="apparel"`, `split_by="gender"`, the one leaf `womens` = Leaf("womens-knit-cardigans", "Women’s Golf Cardigans"); tags fairwardgolf:leaf:womens-knit-cardigans, fairwardgolf:parent:apparel, fairwardgolf:showcase; men's and unknown held; titles without a women's or a cardigan word are left out by the title screen) | no | `placement_rules.py` |
 | A category split by gender, like 50002788 | no | `placement_rules.py` |
 | The same in another shop (tenant) | no | `shop_stores.py` (the shop), `transform_shops.py`, `placement_rules.py` |
 | A split by a new kind of mark (function, size, material ...) | data only | `attributes.py` (a new `Attribute`), `placement_rules.py` |

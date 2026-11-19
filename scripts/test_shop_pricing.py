@@ -424,3 +424,139 @@ def test_a_tariff_edit_moves_the_record_and_the_digest(monkeypatch):
     after = policy("fairwardgolf").describe()
     assert after["tariff"]["version"] == before["tariff"]["version"] and after != before
     assert after["tariff"]["sha256"] != before["tariff"]["sha256"]
+
+
+# ---- a category's own rule: women's knit cardigans 50002797 (the owner, 2026-11-19) ----------------------------
+
+KNIT = "50002797"
+CLUBS = ("50002788", "50002787", "50002670", "50002783", "50002784")
+
+
+def knit_box() -> dict[str, Any]:
+    """The category's default mailer (category_measures.json, 2026-11-19): 28 x 22 x 4 cm, 400 g, confidence 1."""
+    return {"sku": "FW-knit", "price_krw": 0, "package": {
+        name: {"central": n, "confidence": 1, "source": "category_default"}
+        for name, n in zip(SIDES + ("package_weight_g",), (280, 220, 40, 400))}}
+
+
+def knit(krw: int, *rows: tuple[str, str, str]) -> Quote:
+    product = {**FREE, "specs": [], "composition_ko": [{"label_ko": label, "value_ko": value, "source": source}
+                                                      for label, value, source in rows]}
+    return SHOP.quote({**knit_box(), "price_krw": krw}, product, KNIT)
+
+
+@pytest.mark.parametrize("text, kinds, top", [
+    # the owner's example and the shapes Naver's notice rows (섬유의 조성 또는 혼용률) and sellers' 소재 rows take
+    ("아크릴 50%, 울 30%, 나일론 20%", ["man-made"], "70"),
+    ("울 70% 캐시미어 30%", ["wool"], "70"),
+    ("캐시미어 100%", ["cashmere"], "100"),
+    ("겉감: 면 100% / 안감: 폴리에스터 100%", ["cotton"], "100"),           # the shell's, not the lining's
+    ("[몸판] 레이온 35% 폴리에스터 35% 나일론 30% [배색] 폴리에스터 100%", ["man-made"], "100"),
+    ("WOOL 60% / ACRYLIC 40%", ["wool"], "60"),
+    ("30% wool, 70% acrylic", ["man-made"], "70"),
+    ("울30% 캐시미어10% 나일론60%", ["man-made"], "60"),
+    ("메리노울 100%", ["wool"], "100"),
+    ("모 50% 아크릴 50%", ["man-made", "wool"], "50"),                       # a tie: both, the dearer duty wins
+    ("레이온 45 나일론 30 폴리에스터 25", ["man-made"], "100"),               # no %: counted when they make 100
+    ("알파카 60% 울 40%", ["other"], "60"),
+    ("아크릴", ["man-made"], "100"),                                          # one fibre named alone
+    # sellers' spellings (review 2026-11-19)
+    ("순모 100%", ["wool"], "100"),
+    ("나이론 100%", ["man-made"], "100"),
+    ("카시미어 100%", ["cashmere"], "100"),
+    ("아크릴릭 50% 울 50%", ["man-made", "wool"], "50"),                     # both read: a tie, the dearer duty
+    ("아크릴섬유 70% 울 30%", ["man-made"], "70"),
+    ("폴리에스테르 섬유 60%, 울 40%", ["man-made"], "60"),
+    ("아크릴 33.3% 울 33.3% 나일론 33.4%", ["man-made"], "66.7"),
+    ("울 40% 아크릴 30% 나일론 30%", ["man-made"], "60"),                   # man-made summed: one material
+])
+def test_the_chief_fibre_is_the_largest_share_of_the_first_composition(text, kinds, top):
+    found = shop_pricing.chief_fibre([{"label_ko": "소재", "value_ko": text}])
+    assert found is not None and found["kinds"] == kinds and format(found["top"].normalize(), "f") == top
+
+
+@pytest.mark.parametrize("text", ["상세페이지 참조", "상품 상세페이지에 표기", "겨울용 두꺼운 니트", "앞면 100%", ""])
+def test_no_composition_is_read_where_none_is_stated(text):
+    assert shop_pricing.chief_fibre([{"label_ko": "섬유의 조성 또는 혼용률", "value_ko": text}]) is None
+
+
+@pytest.mark.parametrize("text", [
+    "캐시미어 10% 함유",               # a minor fibre named alone: the chief one is unread
+    "울 30%, 기타 70%",
+    "울 20% 캐시미어 5% 외 아크릴",
+    "100% 울 터치감 아크릴 소재",       # how it feels, not what it is
+    "울 혼방",
+])
+def test_a_partial_composition_is_none_and_pays_the_unknown_rate(text):
+    assert shop_pricing.composition(text) == []
+    assert shop_pricing.chief_fibre([{"label_ko": "소재", "value_ko": text}]) is None
+    b = knit(139_000, ("소재", text, "spec")).breakdown
+    assert b is not None and b["dutyRate"] == "0.32" and b["dutyBasis"]["fibre"] == "unknown"
+
+
+def test_a_partial_spec_row_gives_way_to_the_full_notice_row():
+    found = shop_pricing.chief_fibre([{"label_ko": "소재", "value_ko": "캐시미어 10% 함유"},
+                                      {"label_ko": "섬유의 조성 또는 혼용률", "value_ko": "울 60% 아크릴 30% 캐시미어 10%",
+                                       "source": "notice"}])
+    assert found is not None and found["kinds"] == ["wool"] and found["source"] == "notice"
+
+
+@pytest.mark.parametrize("krw, rows, price, rate, fibre", [
+    (46_900, [("소재", "울 100%", "spec")], 149, "0.16", "wool"),
+    (46_900, [("섬유의 조성 또는 혼용률", "아크릴 50%, 울 30%, 나일론 20%", "notice")], 159, "0.32", "man-made"),
+    (46_900, [("섬유의 조성 또는 혼용률", "상세페이지 참조", "notice")], 159, "0.32", "unknown"),
+    (139_000, [("소재", "면 100%", "spec")], 269, "0.165", "cotton"),
+    (139_000, [("소재", "울 100%", "spec")], 269, "0.16", "wool"),
+    (139_000, [], 299, "0.32", "unknown"),
+    (498_000, [("소재(혼용률)", "캐시미어 100%", "spec")], 679, "0.04", "cashmere"),
+    (498_000, [("소재", "울 100%", "spec")], 749, "0.16", "wool"),
+    (498_000, [("소재", "모 50% 아크릴 50%", "spec")], 839, "0.32", "man-made"),
+])
+def test_knit_cardigans_pay_delivery_at_110_and_the_duty_of_their_chief_fibre(krw, rows, price, rate, fibre):
+    q = knit(krw, *rows)
+    b = q.breakdown
+    assert b is not None and q.price == price and b["dutyRate"] == rate and b["dutyBasis"]["fibre"] == fibre
+    assert (b["level"], b["coefficient"], b["gridUsd"], b["deliveryUsd"], b["box"]["billableKg"]) == (
+        1, "1.10", "42.49", "46.74", "0.49")                  # the 0.5 kg step, x1.10 although the box is a default
+    assert b["category"] == KNIT and b["dutyBasis"]["hts"] == "6110"
+    assert b["dutyUsd"] == shop_pricing._usd((Decimal(b["purchaseUsd"]) * Decimal(rate)).quantize(
+        Decimal("0.01"), rounding="ROUND_CEILING"))
+
+
+def test_the_notice_row_names_where_the_fibre_was_read():
+    b = knit(139_000, ("섬유의 조성 또는 혼용률", "상세페이지 참조", "notice"),
+             ("소재", "아크릴 50%, 울 30%, 나일론 20%", "spec")).breakdown
+    assert b is not None and b["dutyBasis"] == {"hts": "6110", "fibre": "man-made", "percent": "70", "row": "소재",
+                                                "source": "spec", "text": "아크릴 50%, 울 30%, 나일론 20%"}
+
+
+def test_a_product_without_composition_ko_reads_its_spec_rows():
+    product = {**FREE, "specs": [{"label_ko": "브랜드", "value_ko": "울시"}, {"label_ko": "소재", "value_ko": "울 100%"}]}
+    b = SHOP.quote({**knit_box(), "price_krw": 46_900}, product, KNIT).breakdown
+    assert b is not None and b["dutyBasis"]["fibre"] == "wool" and b["dutyRate"] == "0.16"
+
+
+@pytest.mark.parametrize("name", NAMES)
+def test_the_clubs_are_priced_byte_for_byte_as_before(name):
+    """The category rule is the knit's only: a club category, or none, gets the same quote and the same breakdown
+    (no category, no dutyBasis), and describe() is the shop's, byte for byte (no club product is sent again)."""
+    fixture = load(name)
+    for v in fixture["variants"]:
+        plain = SHOP.quote(v, fixture["product"])
+        for cat in (*CLUBS, None):
+            q = SHOP.quote(v, fixture["product"], cat)
+            assert (q.cost, q.price) == (plain.cost, plain.price)
+            assert json.dumps(q.breakdown, default=str) == json.dumps(plain.breakdown, default=str)
+    for cat in (*CLUBS, None):
+        assert json.dumps(SHOP.describe(cat)) == json.dumps(SHOP.describe())
+
+
+def test_describe_of_the_knit_adds_its_rule_and_leaves_the_shops():
+    shop, knits = SHOP.describe(), SHOP.describe(KNIT)
+    assert {k: v for k, v in knits.items() if k != "category"} == shop and "category" not in shop
+    assert knits["category"]["id"] == KNIT and knits["category"]["hts"] == "6110"
+    assert knits["category"]["coefficients"] == {str(n): "1.10" for n in (5, 4, 3, 2, 1)}
+    assert knits["category"]["dutyByFibre"] == {"wool": "0.16", "cotton": "0.165", "cashmere": "0.04",
+                                                "man-made": "0.32", "other": "0.32", "unknown": "0.32"}
+    assert knits["category"]["decided"] == {"coefficients": "2026-11-19", "duty": "2026-11-19"}
+    assert json.loads(json.dumps(knits)) == knits

@@ -320,3 +320,36 @@ def test_every_shop_selling_a_category_with_title_rules_sells_it_as_sets_only():
     sellers = [(shop, rules.categories[cat]) for shop, rules in RULES.items() for cat in TITLE_RULES
                if cat in rules.categories]
     assert sellers and all(cat.sets_only for _, cat in sellers), [s for s, c in sellers if not c.sets_only]
+
+
+def test_a_knit_titles_size_run_may_be_left_out(tmp_path):
+    """50002797 (the owner, 2026-11-19): the brief keeps sizes out of a knit cardigan's English title; the size run's
+    numbers need not survive, the model code's still must."""
+    import translation_dicts as D
+    path = os.path.join(os.path.dirname(__file__), "fixtures", "prepared", "13468791008.json")
+    with open(path, encoding="utf-8") as f:
+        prepared = json.load(f)
+    title_ko = "[현대백화점] PXG 여성 바시티 브이넥 가디건 PHFPW520 55 66 77 울 100%"
+    prepared["source"]["category_id"] = "50002797"
+    prepared["notes"] = []
+    prepared["product"]["title_ko"] = title_ko
+    prepared["texts"] = [{**t, "ko": title_ko} if t["kind"] == "title" else t for t in prepared["texts"]]
+    dicts = D.Dictionaries(str(tmp_path / "live"), str(tmp_path / "none"))
+    _, _, pending = T.plan(prepared, dicts, {}, TENANT)
+    title = next(i for i in pending if i["kind"] == "title")
+    assert title["free_numbers"] == ["55", "66", "77"]
+    ok, failed = T.verify([title], json.dumps({"items": [{"id": title["id"], "en":
+                                                          "PXG Women's Varsity V-Neck Cardigan PHFPW520, 100% Wool"}]}))
+    assert ok and not failed
+    _, failed = T.verify([title], json.dumps({"items": [{"id": title["id"], "en": "PXG Women's Varsity Cardigan"}]}))
+    assert failed and failed[0]["problems"] == ["numbers changed: missing 100, 520", "codes lost: missing PHFPW520"]
+    prepared["source"]["category_id"] = "50002784"                       # a club title keeps its numbers
+    _, _, pending = T.plan(prepared, dicts, {}, TENANT)
+    assert "free_numbers" not in next(i for i in pending if i["kind"] == "title")
+
+
+def test_a_model_codes_tail_is_no_size():
+    """A code ending in a size number (K90, C100) keeps its number: only free-standing sizes are freed (review
+    2026-11-19)."""
+    sizes = T.TITLE_SIZES["50002797"]
+    assert sizes.findall("WWW24K90 여성 가디건 C100 55 66 77 90 울 100%") == ["55", "66", "77", "90"]

@@ -627,6 +627,12 @@ published from them; `prepared/5` is on the new scale. The transform puts a coll
 today's scale from their own evidence (`package_measures.on_scale`: the old 3 is 5, the old 2 is 4), so one prepared
 record never mixes the two.
 
+**Table version 11 (2026-11-19, the owner).** The row of 50002797 니트 (women's golf knit cardigans, a folded garment in
+a mailer): product 250 / 400 / 800 g, package 300 / 400 / 900 g with a plausible band 300-1500 g (the owner: a parcel
+is never under about 0.3-0.4 kg; a stated value outside is not taken), box low 25 x 20 x 3, central 28 x 22 x 4
+(0.49 kg volumetric: the tariff's 0.5 kg step, 42.49 USD), high 35 x 25 x 8 cm. Its `defaults_version` 11; the other
+rows keep theirs, so no other product moves. No kinds, no baselines (sizes and 2-piece sets are not told apart yet).
+
 **Table version 10 (2026-11-18, the review of the 100-chipper scroll; the agent on the owner's delegation).** Bands
 only, row 50002784: `product_weight_g` 300-650 -> 350-600 (the 51 club totals the 217 collected chippers state are
 358-582.5 g; MYKUJA's Amazon "Item Weight 330 Grams" is the head, as MAZEL 11775287147 types "헤드 무게 330g";

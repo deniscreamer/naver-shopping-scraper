@@ -204,8 +204,10 @@ def inputs_digest(prepared: dict, translated: dict, placement: dict, shop: str, 
     `description`: the product's description HTML (describe.py). It enters the digest only when the product has
     one, so a product without a description keeps the digest it was published with (2026-11-10: adding the key
     for every product would send the whole shop again)."""
+    category = (prepared.get("source") or {}).get("category_id")   # a category's own price rule (2026-11-19)
     inputs = {"prepared": prepared, "en": translated.get("en"), "placement": placement,
-              "pricing": policy(shop).describe(), "format": FORMAT, "payload": sp.VERSION, "gallery": gallery or []}
+              "pricing": policy(shop).describe(category), "format": FORMAT, "payload": sp.VERSION,
+              "gallery": gallery or []}
     if description:
         inputs["description"] = description
     return sp.digest(inputs)

@@ -102,6 +102,9 @@ LIMITS = {"option_name": 32, "option_value": 64, "addon_name": 64, "fact_value":
 # holds a product: shopify_payload.fit_title cuts it to Google's 150 at publication). 2026-11-10: a GV Tour set
 # came out at 137 characters; Google Merchant Center takes at most 150 and shows about the first 70.
 ASK_SHORTER = {"title": 100}
+# a garment title's size run ("55 66 77", "90 95 100"): the category brief keeps sizes out of the English title, so
+# its numbers need not survive (knit cardigans 50002797, the owner 2026-11-19); a fibre's share ("100%") is no size
+TITLE_SIZES = {"50002797": re.compile(r"(?<![\d.A-Za-z])(?:44|55|66|77|88|99|85|90|95|100|105|110)(?![\d.%])")}
 SCHEMA = {"type": "object", "additionalProperties": False, "required": ["items"],
           "properties": {"items": {"type": "array", "items": {
               "type": "object", "additionalProperties": False, "required": ["id", "en"],
@@ -445,6 +448,10 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
                         "this product's page says forged: leave it out of the title")
             item["context"] = "; ".join(said)
             item["drop"] = (item.get("drop") or []) + [sanitize("title", w, tenant, category) for w in unproven]
+        if kind == "title" and str(category) in TITLE_SIZES:
+            sizes = TITLE_SIZES[str(category)].findall(item["source"])
+            if sizes:
+                item["free_numbers"] = [*(item.get("free_numbers") or []), *sizes]
         if kind == "title" and again and context:
             item["context"] = "; ".join([*([item["context"]] if item.get("context") else []), context])
         if kind == "option_name" and ko in placeholders:

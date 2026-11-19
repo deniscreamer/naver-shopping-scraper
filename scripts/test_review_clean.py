@@ -218,3 +218,12 @@ def test_english_sentences_about_the_price_or_another_platform_go():
                                    "It's the real deal. They asked for extra money for the swap. Won't be buying again.")
     assert R.english_cut("Bought through a Japan buying agent.") == "platform"
     assert R.english_cut("Cheap-looking bag.") is None and R.english_cut("It's cheap and the lineup is decent.") == "price"
+
+
+@pytest.mark.parametrize("text", ["정사이즈로 잘 맞아요", "두께감이 있어서 따뜻해요", "보풀이 안 생겨서 좋아요",
+                                  "기장이 딱 좋아요", "가디건 핏이 예뻐요", "세탁해도 늘어나지 않아요"])
+def test_knit_cardigan_reviews_name_the_garment(text):
+    """50002797 (2026-11-19): a knit buyer's aspects (fit, size, length, thickness, pilling, washing) grade full; the
+    clubs' aspects do not."""
+    assert R.clean(text, category_id="50002797").grade == "full"
+    assert R.clean("타구감이 너무 좋아요", category_id="50002797").grade == "short"

@@ -57,6 +57,7 @@ def reprice(shop: str, key: str, prepared: dict[str, Any], published: LedgerRow)
     """One product's row: the old and the new [lowest, highest] variant price in whole dollars, its status
     (changed / same price / held) and, in a shop with the rule, the levels and coefficients of its boxes."""
     product, rule = prepared["product"], policy(shop)
+    category = (prepared.get("source") or {}).get("category_id")
     variants = product.get("variants") or []
     old, old_from = published.get("prices_usd"), "ledger"
     if not old and variants:
@@ -67,7 +68,7 @@ def reprice(shop: str, key: str, prepared: dict[str, Any], published: LedgerRow)
     try:
         if not variants:
             raise PriceError("no variant")
-        quotes = [rule.quote(v, product) for v in variants]
+        quotes = [rule.quote(v, product, category) for v in variants]
     except (PriceError, KeyError, TypeError, ValueError) as e:     # one product never stops the table
         return {**row, "status": "held", "reason": str(e) if isinstance(e, PriceError) else f"{type(e).__name__}: {e}"}
     breakdowns = [q.breakdown for q in quotes if q.breakdown]

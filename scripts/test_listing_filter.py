@@ -8,7 +8,7 @@ import os
 
 import pytest
 
-from listing_filter import REASONS, Screen, load_exclusions, normalize, source_key, stop_word
+from listing_filter import REASONS, Screen, load_exclusions, normalize, source_key, stop_word, title_rule
 
 FX = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures")
 RULES = load_exclusions()["universal"]["rules"]
@@ -375,3 +375,40 @@ def test_junior_toys_adult_sets_and_not_golf_seen_on_the_sheets_are_left_out(tit
     got = screen.check({"name": title, "category_id": "50002787", "product_id": "1",
                         "store": {"channel_no": "1"}})
     assert (got if got and got.startswith("title:") else None) == code
+
+
+@pytest.mark.parametrize("title, code", [
+    # 50002797, women's golf knit cardigans (the owner, 2026-11-19): a women's word and a cardigan word required;
+    # real titles of the listing 여성 골프 니트 가디건 (category 50002797, the scouts' sample of 2026-11-19)
+    ("여자 골프 방풍 니트 가디건 자켓", None),
+    ("레노마골프 여성 조직감 방풍 집업 니트 가디건 RWSCN8208", None),
+    ("PXG 여성골프웨어 바시티 브이넥 스웨터 니트 가디건", None),              # 스웨터 with a cardigan word stays
+    ("캘러웨이 여성 가을 V넥 방풍 가디건", None),                              # no 니트: 가디건 is the knit word
+    ("[AK수원점] 테일러메이드  여성 방풍 집업 니트 가디건 TWSCM8131-199", None),
+    ("가이거 여성 캐시미어 가디건", None),
+    ("울시 여성 UV차단 브이넥 가디건", None),
+    ("카멜브리즈 GQ 배색가디건 여성 골프가디건 골프웨어", None),
+    ("왁 Cashmere Whole Garment Cardigan WWWAW25731", "title:not_womens"),   # no women's word
+    ("캘러웨이 방풍 집업 가디건 CWSC25F401", "title:not_womens"),
+    ("엠유스포츠 아이코닉 듀오 니트 가디건 2종", "title:not_womens"),
+    ("까스텔바작 구스 숏패딩 점퍼 BGBWSJ704", "title:not_womens"),
+    ("울시 여성 후드집업+풀오버 니트 2종", "title:not_cardigan"),              # a 2-piece set, no cardigan word
+    ("[울시] 여성 소프트터치 컴포트 후드집업+니트 2종 세트", "title:not_cardigan"),
+    ("그린퀸 루네스 여성골프 니트집업", "title:not_cardigan"),
+    # made up from the owner's words: a women's top that is no knit, a vest, a pullover
+    ("여성 골프 구스 다운 점퍼", "title:not_knit"),
+    ("여성 골프 니트 조끼 베스트", "title:not_cardigan"),
+    ("LADIES golf knit pullover", "title:not_cardigan"),
+    ("Women's Golf Cable Cardigan", None),
+])
+def test_knit_cardigans_need_a_womens_word_and_a_cardigan_word(title, code):
+    screen = Screen("50002797", namespace="fairwardgolf")
+    assert screen.check({"name": title, "category_id": "50002797", "product_id": "1",
+                         "store": {"channel_no": "2"}}) == code
+
+
+def test_requires_is_all_of_the_groups_any_word_of_each_and_unless_still_wins():
+    rules = [{"code": "x", "requires": [["a", "b"], ["c"]], "unless": ["zz"]}]
+    assert title_rule("a c", rules) is None and title_rule("B C", rules) is None
+    assert title_rule("a", rules) == "title:x" and title_rule("c", rules) == "title:x"
+    assert title_rule("zz", rules) is None                                  # an unless word: the rule is off

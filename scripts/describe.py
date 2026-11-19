@@ -80,6 +80,10 @@ PROFILES: dict[str, dict[str, Any]] = {
                   "set_count": True},                    # "a set of 3 wedges" from the title's lofts (C65)
     "chipper": {"categories": ("50002784",),             # chippers, one club (2026-11-18): no set profile fits
                 "lists": (("included", "What's included", 3), ("highlights", "Highlights", 4))},
+    "knit_cardigan": {"categories": ("50002797",),       # women's knit cardigans (the owner, 2026-11-19)
+                      "lists": (("materials", "Materials & care", 4), ("highlights", "Highlights", 4)),
+                      "no_measures": True,               # never a size or a measurement (the size chart is apart)
+                      "imported": True},                 # "Imported." when no origin is decided (US textile rules)
     "default": {"categories": (), "lists": (("highlights", "Highlights", 4),)},
 }
 
@@ -279,6 +283,10 @@ def packet(prepared: dict[str, Any], translated: dict[str, Any], blocks: list[di
         (free if gift else picks).append(f"{g or 'Selection'}: " + " | ".join(names))
     specs = [f"{en('spec_label', s['label_ko'])}: {en('spec_value', s['value_ko'])}"
              for s in product.get("specs") or [] if s["label_ko"] != ORIGIN_LABEL]
+    # the fibre rows of the notice (transform.composition_rows, a category with CategoryRules.composition): the spec
+    # rows are among the specs already (2026-11-19, knit cardigans)
+    fibres = [f"{c['label_ko']}: {c['value_ko']}" for c in product.get("composition_ko") or []
+              if c.get("source") == "notice"]
     images, tables, dropped = image_text(blocks)
 
     lines: list[str] = []
@@ -307,6 +315,9 @@ def packet(prepared: dict[str, Any], translated: dict[str, Any], blocks: list[di
     if specs:
         add(None, "", "# Specifications (rows typed by the seller)")
         add("specs", *specs)
+    if fibres:
+        add(None, "", "# Fiber content (Korean, the product notice's rows)")
+        add("composition", *fibres)
     seller = _lines_kept(seller)
     if seller:
         add(None, "", "# Seller's text (Korean)")
@@ -363,6 +374,13 @@ _ADJECTIVES = {"Japan": "Japanese", "China": "Chinese", "Korea": "Korean", "Viet
 _NAMED_RE = {c: re.compile(rf"\b(?:{re.escape(c)}|{_ADJECTIVES.get(c, c)})\b(?![- ](?:market|spec))")
              for c in sorted(set(COUNTRIES.values()))}
 _NUMBER_RE = re.compile(r"\d+(?:\.\d+)?")
+# a size or a measurement in a garment's description (profile no_measures, knit cardigans 2026-11-19: the size chart
+# is built apart, and a Korean size read as a US one misleads): "66 cm", "26 in", "size 55", "XL", "one size"
+# "Choice of colors and sizes" and "2 in 1" are no measure: a size word needs a size after it, "in" no number after
+# it (review 2026-11-19)
+_MEASURE_RE = re.compile(r"\b\d+(?:\.\d+)?\s*(?:cm|mm|in(?!\s*\d)|inch(?:es)?|kg|g|lbs?|oz)\b|\d\s*(?:\"|”|′′)"
+                         r"|\bsizes?\s*\d+\b|\bsizes?\s+(?:xs|s|m|l|xl|free)\b|\b(?:xs|xl|xxl|[2-4]xl)\b|\b(?:one|free)[- ]size\b"
+                         r"|\b(?:44|55|66|77|88|99)\s*\(", re.I)
 _RANGE_RE = re.compile(r"(?<![\d.])#?(\d{1,2})\s*[-~–]\s*#?(\d{1,2})(?![\d.])")
 _YEAR2_RE = re.compile(r"(?<!\d)(\d{2})\s*년")                         # 23년 -> 2023 is the same year
 # a sentence ends at . ! ? before a capital, a quote or a digit; not after "Co." / "Inc." / "Ltd." / "Jr." (Detroit
@@ -486,8 +504,12 @@ def settle(answer: Any, profile: dict[str, Any], pkt: dict[str, Any]) -> dict[st
     dropped: list[dict[str, Any]] = []
 
     def bad(where: str, text: str) -> bool:
+        if profile.get("imported") and not country and text.strip().rstrip(".").lower() == "imported":
+            return False                            # the origin line of a garment whose country is not decided
         why = problems(text, numbers, country, counts) or (["too long"] if len(text) > (
             INTRO_MAX if where == "intro" else ITEM_MAX) else [])
+        if not why and profile.get("no_measures") and (m := _MEASURE_RE.search(text)):
+            why = [f"a size or a measurement: {m.group(0)}"]
         if why:
             dropped.append({"where": where, "text": text[:200], "why": why})
         return bool(why)

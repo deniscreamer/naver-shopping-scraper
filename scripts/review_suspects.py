@@ -114,13 +114,13 @@ def reasons(product: dict[str, Any], kinds: dict[str, Any], junior: list[dict], 
     return out
 
 
-def price(shop: str, product: dict[str, Any]) -> str:
+def price(shop: str, product: dict[str, Any], category_id: str | None = None) -> str:
     """The variants' prices by today's price rule (shop_pricing, offline: what publish.py sends), USD; a product
     the rule cannot price: its Naver price in KRW."""
     from shop_pricing import policy
     rule = policy(shop)
     try:
-        values = sorted({float(rule.quote(v, product).price) for v in product.get("variants") or []})
+        values = sorted({float(rule.quote(v, product, category_id).price) for v in product.get("variants") or []})
     except Exception:                                     # PriceError, a variant without a price: shown in KRW
         values = []
     if values:
@@ -147,7 +147,7 @@ def suspects(shop_dir: str, category: str, keys: set[str] | None = None) -> list
         pub = live[key]
         out.append({"key": key, "product_id": str(pub.get("product_id") or "").rsplit("/", 1)[-1],
                     "handle": pub.get("handle") or "", "admin_url": pub.get("admin_url") or "",
-                    "price": price(os.path.basename(shop_dir), r["product"]),
+                    "price": price(os.path.basename(shop_dir), r["product"], category),
                     "reasons": ";".join(why), "title": r["product"].get("title_ko") or ""})
     return out
 

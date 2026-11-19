@@ -18,6 +18,7 @@ FX = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures")
 PREPARED, COLLECTED = os.path.join(FX, "prepared"), os.path.join(FX, "collected")
 NAMES = sorted(n for n in os.listdir(PREPARED) if n.endswith(".json"))
 RUN_TRANSFORM_ADDS = {"description_images_text"}
+CATEGORY_ADDS = {"composition_ko"}                 # CategoryRules.composition only (knit cardigans, 2026-11-19)
 
 
 def test_there_are_golden_products():
@@ -36,7 +37,7 @@ def test_golden_prepared_matches_the_types(name):
     with open(os.path.join(PREPARED, name), encoding="utf-8") as f:
         prepared = json.load(f)
     assert mismatches(prepared, Prepared) == []
-    assert set(prepared["product"]) == set(PreparedProduct.__annotations__) - RUN_TRANSFORM_ADDS
+    assert set(prepared["product"]) == set(PreparedProduct.__annotations__) - RUN_TRANSFORM_ADDS - CATEGORY_ADDS
 
 
 def test_an_image_text_flag_and_an_empty_product_match():

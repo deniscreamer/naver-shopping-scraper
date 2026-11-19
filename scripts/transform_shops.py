@@ -10,7 +10,8 @@ fairwardgolf, checked 2026-11-05 on the 60 products the naver-harvester publishe
     before Shopify (the owner, 2026-11-08);
   * paid variants (a configuration that costs more or less), paid add-on products (추가상품) and the description
     images' OCR per category: off by default; all on for 50002788 (owner 2026-11-06, -07), and since for every
-    fairwardgolf category below (50002787, 50002670, 50002783; 50002784 without paid add-ons, the owner 2026-11-18);
+    fairwardgolf category below (50002787, 50002670, 50002783; 50002784 and 50002797 without paid add-ons, the owner
+    2026-11-18, 2026-11-19);
   * `reviewed` per category (2026-11-16, draft first): publish.py creates a new product of a category not marked
     reviewed as DRAFT, for the agent's lens review and the owner's activation; reviewed() reads it;
 
@@ -51,6 +52,14 @@ class CategoryRules:
                                          # chippers, 2026-11-18: Missile 10421264752 was 7 variants of one club). Off
                                          # elsewhere: on the sets' 11 such listings (9 live) the gift is a bag set, a
                                          # putter or a club the buyer picks; leaving it out there is the owner's word
+    no_choice_out: bool = False          # an option value that says "no choice" (선택안함, 선택 안함, 없음, 필요없음,
+                                         # 선택없음) is not a version: its rows go, an axis of nothing else goes
+                                         # (transform._drop_no_choice; knit cardigans, the owner 2026-11-19). Off for
+                                         # the clubs: their golden products stay as published
+    composition: bool = False            # the fibre composition rows (spec and notice rows 소재 / 혼용률 / 재질 /
+                                         # 섬유의 조성) kept as product.composition_ko: the price's duty by the chief
+                                         # fibre (shop_pricing) and the description's materials (knit cardigans,
+                                         # the owner 2026-11-19)
     reviewed: bool = False               # publish.py creates its new products ACTIVE; False: DRAFT, until the agent's
                                          # lens review and the owner's activation (2026-11-16: 369 products, 15.7%,
                                          # of those published were withdrawn later; each new category showed buyers
@@ -123,6 +132,18 @@ RULES = {
                                       # sizes are not versions of the club
                                       gift_axis_out=True,
                                       reviewed=True),       # the owner 2026-11-19: 90 drafts activated after the lens review
+            "50002797": CategoryRules(
+                                      # owner 2026-11-19: women's golf knit cardigans (니트), the first apparel:
+                                      # paid variants sold (a plus size, 88 / XL, often costs 5,000 KRW more and
+                                      # would vanish), paid add-ons not (gift wrap, a shopping bag, a matching hat
+                                      # are not the product), the images read (the owner wants the size charts
+                                      # for the analysis); not a set section (no sets_only, no wedge_sets)
+                                      paid_variants=True, paid_addons=False, description_images=True,
+                                      gift_axis_out=True,   # a free gift's sizes are not versions of the cardigan
+                                      no_choice_out=True,   # "선택안함" / "없음" values are not versions
+                                      composition=True,     # the duty by the chief fibre (shop_pricing)
+                                      reviewed=False),      # a new category: DRAFT until the lens review and the
+                                                            # owner's activation
         }),
 }
 

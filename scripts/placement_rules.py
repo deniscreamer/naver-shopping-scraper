@@ -22,6 +22,11 @@ are left out by the title screen, not here.
 50002784 치퍼 (2026-11-18): chippers, one section chippers with no split (like wedge sets); putters, wedges and other
 clubs filed under it are left out by the title screen, not here.
 
+50002797 니트 (2026-11-19, the owner): women's golf knit cardigans, one section womens-knit-cardigans under the parent
+apparel, split by gender as 50002670: unisex goes there, a mixed product too, a men's knit and a knit whose gender
+nothing states are held (`unresolved`). Pullovers, vests and sets without a cardigan word, and titles without a
+women's word, are left out by the title screen, not here.
+
     from placement_rules import profile_for
     profile = profile_for("fairwardgolf")
 """
@@ -73,6 +78,9 @@ WEDGES = Leaf("wedge-sets", "Wedge Sets")                          # owner 2026-
 CHIPPERS = Leaf("chippers", "Chippers")                            # owner 2026-11-18: chippers, no split; the store's
                                                                    # collection fairwardgolf-chippers (tag rule
                                                                    # fairwardgolf:leaf:chippers) existed, empty
+WOMENS_KNIT_CARDIGANS = Leaf("womens-knit-cardigans", "Women’s Golf Cardigans")   # owner 2026-11-19: women's knit
+                                                                   # cardigans, parent apparel; the store's collection
+                                                                   # fairwardgolf-womens-knit-cardigans: to check (A6)
 
 PROFILES = {
     StoreId.FAIRWARDGOLF: PlacementProfile(
@@ -85,6 +93,8 @@ PROFILES = {
                                           leaves={"womens": WOMENS_IRONS}),
             "50002783": CategoryPlacement(parent="clubs", leaves={None: WEDGES}),     # 웨지
             "50002784": CategoryPlacement(parent="clubs", leaves={None: CHIPPERS}),   # 치퍼
+            "50002797": CategoryPlacement(parent="apparel", split_by="gender",         # 니트 (2026-11-19)
+                                          leaves={"womens": WOMENS_KNIT_CARDIGANS}),
         }),
 }
 

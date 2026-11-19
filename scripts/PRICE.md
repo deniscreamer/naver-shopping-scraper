@@ -107,12 +107,42 @@ for 50002788: a new category in the shop needs its own check of level 1 (the coe
 `shop_pricing.FAIRWARDGOLF`). 50002787 junior clubs (the owner, 2026-11-11), 50002670 women's iron sets
 (2026-11-14), 50002783 wedge sets (2026-11-15) and 50002784 chippers (the owner, 2026-11-18: the shop's general rule,
 no override; one chipper's box, $259 for a 35,000 KRW chipper) keep them as they are, to be measured
-on its first shipments like the sets. All five are starting estimates: no set had shipped yet. After the first 10-20 sets
+on its first shipments like the sets; 50002797 has its own rule (below). All five club categories on the shop's coefficients are starting estimates: no
+set had shipped yet. After the first 10-20 sets
 shipped, compare each invoice with the variant's `fairwardgolf.price` (the box FedEx measured, the billable kg,
 every fee line) and replace them with measured ones; check the first invoice of a set without a bag for FedEx's
 18 kg minimum (the switch below). Where they come from: 1-6 cm more on the two short sides raises the grid's price
 by up to x1.12-1.60 without a bag and x1.06-1.34 with one; the one real check, the Callaway Edge box the seller
 states (121 x 20 x 16 cm, 10.8 kg, 183.30 USD), is passed by 1.40 with a step to spare (1.35 by 0.46 USD).
+
+**A category's own rule** (`Delivered.categories`, keyed by the Naver leaf id; the owner, 2026-11-19, women's golf
+knit cardigans 50002797, the first apparel). The coefficients and the duty are the category's; everything else
+(service, margin, payment share, tariff, rounding) stays the shop's. A category without one is priced and described
+byte for byte as before (`test_shop_pricing.test_the_clubs_are_priced_byte_for_byte_as_before`), so no club product
+is sent again.
+- Delivery x1.10 at every level: a garment's mailer is predictable, and the clubs' 2.50 for a default box (a bag or
+  none) does not apply. The category's default box, 28 x 22 x 4 cm and 400 g (`category_measures.json`), is 0.49 kg
+  volumetric: the 0.5 kg step, 42.49 x 1.10 = 46.74 USD.
+- The duty by the chief fibre (US HTS 6110, knitted cardigans): wool 16 %, cotton 16.5 %, cashmere 4 % (when it is
+  the chief fibre), man-made fibres (acrylic, polyester, nylon, polyamide, rayon / viscose, spandex / polyurethane,
+  modal, lyocell, acetate) 32 %, another fibre (alpaca, mohair, silk, linen) or a composition not read 32 %.
+  `shop_pricing.chief_fibre`: the first row that states a composition among the product's `composition_ko`
+  (`transform.composition_rows`: the spec rows, then the notice's rows 소재 / 혼용률 / 재질 / 섬유의 조성; "상세페이지
+  참조" states none), its pairs in order until they make 100 % (the shell before the lining; 99-101 for a seller's
+  rounding), the largest share summed by kind ("아크릴 50%, 울 30%, 나일론 20%" is man-made 70); a tie takes the
+  dearer duty. A row naming only some fibres ("캐시미어 10% 함유", "울 30%, 기타 70%") or how the knit feels ("100% 울
+  터치감 아크릴") states no composition: the next row is read, else the unknown 32 % (review 2026-11-19). Sellers'
+  spellings 순모, 나이론, 카시미어, 아크릴릭 and a 섬유 suffix ("아크릴섬유") are read.
+  Open for the owner (2026-11-19): man-made fibres are summed as one material, as customs does ("울 40% 아크릴 30%
+  나일론 30%" is man-made 60, 32 %; his "the largest percentage" read literally is wool 40, 16 %), wool and cashmere
+  are not summed with each other, and fine animal hair (alpaca, mohair, angora: HTS 6110.19, 16 %) takes the unknown
+  32 %; each is the dearer reading until he decides. The breakdown carries
+  `category`, `dutyRate` and `dutyBasis` {hts, fibre, percent, row, source, text}; `describe(category)` adds the
+  category's coefficients and rates under `category` in the `fairwardgolf.pricing` metafield and the publish digest.
+- Examples (the default box, free delivery in Korea; USD): 46,900 KRW: wool 149, acrylic-led or unknown 159;
+  139,000 KRW: wool 269, cotton 269, acrylic-led or unknown 299; 498,000 KRW: cashmere 679, wool 749, acrylic-led or
+  unknown 839. With the shop's rule (x2.50, 12.5 %) they would have been 219, 339 and 799 (at 498,000 KRW the new rule is dearer
+for a man-made knit: its 32 % duty outweighs the cheaper delivery).
 
 **The fee, once per box.** FedEx's Additional Handling Surcharge - Dimension (its 2026 rates for Korea; the owner,
 2026-11-10): KRW 35,600 on a box whose longest side is over 121 cm, or the second over 76 cm, or length + girth

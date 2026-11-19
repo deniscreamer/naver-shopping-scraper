@@ -67,6 +67,14 @@ ASPECTS["50002670"] = ASPECTS["50002788"]                     # women's iron set
 ASPECTS["50002783"] = ASPECTS["50002788"]                     # wedge sets: the clubs' aspects (2026-11-15)
 # 50002784 chippers (2026-11-18): the clubs' aspects, and the short game a chipper is bought for (fat and thin shots, roll)
 ASPECTS["50002784"] = ASPECTS["50002788"] + (r"치퍼|칩퍼|어프로치|칩샷|뒤땅|뒷땅|탑핑|굴러|굴리|런닝|러닝",)
+# 50002797 women's knit cardigans (2026-11-19, the first apparel): fit and size, length, thickness and warmth, pilling,
+# stretch, washing; not the clubs' aspects
+ASPECTS["50002797"] = (
+    r"(?<![가-힣])핏(?:이|은|도|감|$|\s)|정사이즈|사이즈|(?<![가-힣])크게|작게|넉넉|타이트|기장|소매|어깨",
+    r"두께|두껍|두툼|얇|따뜻|따듯|포근|보온|바람(?:막|이\s?안)|방풍",
+    r"보풀|신축|늘어나|늘어남|부드럽|부드러|까슬|까끌|촉감|착용감|세탁|빨래|물빠짐",
+    r"니트|가디건|카디건|스웨터|집업|단추|지퍼",
+)
 # product words a cut never crosses (the guard of a clause's body)
 PRODUCT_WORDS_ALL = ("디자인", "색상", "무게", "품질", "실물", "예쁘", "이쁘", "예뻐", "이뻐", "제품", "상품",
                      # a defect report is about the product even inside a shipping clause ("박스 열어보니 스크래치")
@@ -79,6 +87,8 @@ PRODUCT_WORDS["50002787"] = PRODUCT_WORDS["50002788"]         # junior clubs: th
 PRODUCT_WORDS["50002670"] = PRODUCT_WORDS["50002788"]         # women's iron sets: the same clubs (2026-11-14)
 PRODUCT_WORDS["50002783"] = PRODUCT_WORDS["50002788"]         # wedge sets: the same clubs (2026-11-15)
 PRODUCT_WORDS["50002784"] = PRODUCT_WORDS["50002788"] + ("치퍼", "칩퍼")    # chippers: the clubs, and the chipper (2026-11-18)
+PRODUCT_WORDS["50002797"] = ("니트", "가디건", "카디건", "스웨터", "사이즈", "핏", "기장", "정사이즈", "보풀", "두께",  # knit
+                              "따뜻", "신축", "세탁", "소재", "촉감")                               # cardigans (2026-11-19)
 OPINION_RE = re.compile(
     r"좋아|좋습|좋네|좋음|좋다|좋고|좋은|괜찮|만족|(?:마음|맘)에\s?(?:들|드|쏙)|최고|굿|짱|강추|추천|아쉽|아쉬|별로|실망|불편"
     r"|편해|편하|딱\s?(?:이|입|맞)|훌륭|멋지|멋져|대박|감동|기대")
