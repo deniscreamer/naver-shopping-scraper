@@ -69,6 +69,8 @@ EXPECTED = {
     "13800679830": ("chippers",),
     # the chipper bands (2026-11-18): rockible's Amazon package 13.77 x 5.9 x 2.75 in / 0.3 lb, MYKUJA's 330 g head
     "13261416672": ("chippers",), "13551983071": ("chippers",),
+    # the two-brand scan (2026-11-19): titles the model wrote under an older brand ("Pongdang Swim", "PING" from 핑크)
+    "13510579139": (J,), "13848307900": (J,),
 }
 UNRESOLVED = {"12497168529": "gender conflict"}           # ready, placement holds it: the reason
 SPLIT = {"13369469193": ("unisex", {M: 3, W: 3}),        # 성별 남녀공용: each section every variant

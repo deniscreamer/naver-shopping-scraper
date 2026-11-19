@@ -1202,6 +1202,32 @@ def test_a_title_translated_under_another_brand_is_asked_again(tmp_path):
     assert T._load_brands(str(path)) == {}                                              # the hand row wins
 
 
+def test_an_old_title_led_by_another_brand_is_asked_again(tmp_path):
+    """2026-11-19, the two-brand scan: titles the model wrote before 2026-11-15 carry no brand_ko, so a brand change
+    never asked them again. Real products: 13510579139 kept "Pongdang Swim Kids' …" (the store showed "Inparo
+    Pongdang Swim …"), 13848307900 "PING Women's Junior …" (핑크 is pink). A title led by a dictionary brand other than
+    the vendor is asked again, its English kept until an answer; one led by the vendor or a line of it (Maruman
+    Majesty), a hand row, or a row with its brand_ko is not."""
+    d = D.Dictionaries(str(tmp_path / "live"))                      # seeded from the backups in git
+    for name, old in (("13510579139", "Pongdang Swim Kids' Junior Golf Club Putter and Iron"),
+                      ("13848307900", "PING Women's Junior Golf Club Set, #7 Iron, Graphite Shaft")):
+        p = fixture(name)
+        title = next(t["id"] for t in p["texts"] if t["kind"] == "title")
+        store = {(p["key"], title): old}
+        en, _, pending = T.plan(p, d, store, TENANT)
+        item = next(i for i in pending if i["id"] == title)
+        assert en[title] == old and old.split(" Kids")[0].split(" Women")[0] in item["context"]
+        assert not [i for i in T.plan(p, d, store, TENANT, fixed={(p["key"], title)})[2] if i["id"] == title]
+        led = {(p["key"], title): f"{TENANT} Kids' Junior Golf Club"}                # led by the vendor
+        assert not [i for i in T.plan(p, d, led, TENANT)[2] if i["id"] == title]
+        off = T.translate_product(p, d, dict(store), TENANT, None, "now")
+        assert off.record["en"][title] == old                                       # offline: kept
+    assert T._stale_lead("Maruman Majesty Prestigio 12", "Maruman", d) is None
+    assert T._stale_lead("Majesty Maruman 2W Women's Set", "Majesty", d) is None
+    assert T._stale_lead("Majesty Prestigio 12", "Maruman", d) == "Majesty"
+    assert T._stale_lead("PINGPONG Set", "Inparo", d) is None                        # a brand ends at a word
+
+
 def test_reask_asks_a_kept_title_again_with_todays_notes(tmp_path):
     """--reask (2026-11-17, W10): 12628336532's 'PowerBilt X-Grind 5-Piece …' was asked before title_lofts_not_sold
     existed; asked again it gets the note's context, the old English kept until a checked answer comes."""

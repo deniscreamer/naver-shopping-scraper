@@ -1,0 +1,686 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:1100207861:13848307900",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "title_names_one_variant",
+   "detail": "핑크"
+  },
+  {
+   "code": "description_images_missing",
+   "detail": "no sidecar: run description_images.py"
+  },
+  {
+   "code": "description_policy_block_unbounded",
+   "detail": "배송 안내"
+  },
+  {
+   "code": "purchase_agency",
+   "detail": "구매대행 in the specs / notice / delivery policy"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/olligo1000/products/13848307900",
+  "channel_no": "1100207861",
+  "product_id": "13848307900",
+  "category_id": "50002787"
+ },
+ "product": {
+  "title_ko": "여성용 핑크 세트 골프채 7번아이언 주니어골프채 연습용 카본 클럽 샤프트",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {
+   "gender": {
+    "value": "womens",
+    "variants": {},
+    "evidence": [
+     {
+      "source": "title",
+      "value": "womens",
+      "text": "여성용 핑크 세트 골프채 7번아이언 주니어골프채 연습용 카본 클럽 샤프트"
+     },
+     {
+      "source": "listing",
+      "value": "-",
+      "text": "주니어 골프채"
+     }
+    ],
+    "flags": []
+   }
+  },
+  "options": [
+   {
+    "name_ko": "색상·키",
+    "values_ko": [
+     "핑크 90~110cm",
+     "핑크 110~130cm",
+     "핑크 130~150cm",
+     "블루 90~110cm",
+     "블루 110~130cm",
+     "블루 130~150cm"
+    ]
+   }
+  ],
+  "facts": [],
+  "variants": [
+   {
+    "source_id": "observed:[\"핑크 90~110cm\"]",
+    "naver_variant_id": "60609765914",
+    "options_ko": [
+     "핑크 90~110cm"
+    ],
+    "price_krw": 83580,
+    "price_usd": "83.58",
+    "sku": "FW-ac53fc636571de7aeeb57c73",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 1500,
+      "central": 3500,
+      "high": 6500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 2500,
+      "central": 4500,
+      "high": 8000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 800,
+      "central": 1050,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 120,
+      "central": 250,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"핑크 110~130cm\"]",
+    "naver_variant_id": "60609765915",
+    "options_ko": [
+     "핑크 110~130cm"
+    ],
+    "price_krw": 95970,
+    "price_usd": "95.97",
+    "sku": "FW-14650e91b5a9a1ef20724dac",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 1500,
+      "central": 3500,
+      "high": 6500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 2500,
+      "central": 4500,
+      "high": 8000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 800,
+      "central": 1050,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 120,
+      "central": 250,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"핑크 130~150cm\"]",
+    "naver_variant_id": "60609765916",
+    "options_ko": [
+     "핑크 130~150cm"
+    ],
+    "price_krw": 110530,
+    "price_usd": "110.53",
+    "sku": "FW-44e0497e53844fde70bd5dd9",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 1500,
+      "central": 3500,
+      "high": 6500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 2500,
+      "central": 4500,
+      "high": 8000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 800,
+      "central": 1050,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 120,
+      "central": 250,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블루 90~110cm\"]",
+    "naver_variant_id": "60609765917",
+    "options_ko": [
+     "블루 90~110cm"
+    ],
+    "price_krw": 83580,
+    "price_usd": "83.58",
+    "sku": "FW-1b30b1429b58dbe58ef71726",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 1500,
+      "central": 3500,
+      "high": 6500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 2500,
+      "central": 4500,
+      "high": 8000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 800,
+      "central": 1050,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 120,
+      "central": 250,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블루 110~130cm\"]",
+    "naver_variant_id": "60609765918",
+    "options_ko": [
+     "블루 110~130cm"
+    ],
+    "price_krw": 95970,
+    "price_usd": "95.97",
+    "sku": "FW-39e6f9dbd8d2d6599bbdda9f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 1500,
+      "central": 3500,
+      "high": 6500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 2500,
+      "central": 4500,
+      "high": 8000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 800,
+      "central": 1050,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 120,
+      "central": 250,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   },
+   {
+    "source_id": "observed:[\"블루 130~150cm\"]",
+    "naver_variant_id": "60609765919",
+    "options_ko": [
+     "블루 130~150cm"
+    ],
+    "price_krw": 110530,
+    "price_usd": "110.53",
+    "sku": "FW-652261888861e7944847f2d6",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 1500,
+      "central": 3500,
+      "high": 6500,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 2500,
+      "central": 4500,
+      "high": 8000,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 800,
+      "central": 1050,
+      "high": 1200,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 150,
+      "central": 280,
+      "high": 350,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 120,
+      "central": 250,
+      "high": 300,
+      "source": "category_default",
+      "confidence": 1,
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": true
+   }
+  ],
+  "pricing": {
+   "base_krw": 83580,
+   "original_krw": 83580,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "올리고 협력사"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "기타/해외"
+   },
+   {
+    "label_ko": "종류",
+    "value_ko": "아이언"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13848307900/fairwardgolf-13848307900-001-6809be99ab2b4602.webp",
+    "sha256": "6809be99ab2b460233cda67c4700f3134ab0bf45788ac1ae5bd1a01e7d69f2c9",
+    "width": 1000,
+    "height": 1000
+   },
+   {
+    "position": 1,
+    "file": "collected/50002788-fixtures/images/13848307900/fairwardgolf-13848307900-002-3b1bf4756a418ff2.webp",
+    "sha256": "3b1bf4756a418ff22bf50e0adef239265ce268751cd8aa283f8da0857c32b4d6",
+    "width": 1440,
+    "height": 1920
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "FREE",
+   "base_fee": 0,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 4000,
+   "extra_fee_area3": null,
+   "policy_text": "제주,도서지역 추가 4,000원",
+   "lead_time": {
+    "seller_average_days": 1.0,
+    "product_average_days": null,
+    "today_cutoff": "18:00",
+    "today_off": false,
+    "arrival_days": 1,
+    "arrival_date_text": null,
+    "arrival_probability": 100,
+    "ship_date_text": null
+   },
+   "extra_fee_text": "7000"
+  },
+  "description_ko": "자세히 보기\n옵션\n옵션 고르기\n옵션별 사진 보고 바로 고르세요!\n01\n핑크 90~110cm\n02\n핑크 110~130cm\n03\n핑크 130~150cm\n04\n블루 90~110cm\n05\n블루 110~130cm\n06\n블루 130~150cm\n문자 상담 · 평일 10:00 – 17:00\n■취소·반품\n해외 출고 뒤 취소는 회수·반송이 필요할 수 있어요. 단순 변심은 받은 날부터 7일 안에 접수! 반송비는 고객님, 불량·오배송은 저희 부담이에요.\n■반품 불가\n고객님 사정의 훼손·분실, 사용으로 가치 하락, 반품 기간 지남, 구성품 누락·태그 제거\n■대형 화물\n세 변 합 160cm 이상, 10kg 이상, 한 변 1m 이상 이형 화물은 배송비가 추가될 수 있어요.\n■사진 출처\n해외 판매처 자료예요. 권리 문의는 문자로 주세요.",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20261103_272/1793679781288sHgHX_JPEG/82644835117057182_496430225.jpg",
+   "https://shop-phinf.pstatic.net/20261102_167/1793620667417gWGCQ_JPEG/24539186708623041_1484180512.jpg",
+   "https://shop-phinf.pstatic.net/20261102_72/1793620667668foNPz_JPEG/24539186959534578_1934782491.jpg",
+   "https://shop-phinf.pstatic.net/20261109_39/1794194771514pzD1j_JPEG/14188329553160876_1411629904.jpg",
+   "https://shop-phinf.pstatic.net/20261103_98/1793679781564rklIl_JPEG/82644835393498523_589244961.jpg",
+   "https://shop-phinf.pstatic.net/20261103_283/1793679781787zcbkW_JPEG/82644835613789649_1864011636.jpg",
+   "https://shop-phinf.pstatic.net/20261102_192/1793620698460nkPlw_JPEG/13090098437720885_1718671450.jpg",
+   "https://shop-phinf.pstatic.net/20261103_247/1793679782042W2PvD_JPEG/82644835867799221_363491912.jpg",
+   "https://shop-phinf.pstatic.net/20261103_78/1793679768856THOAF_JPEG/6888027992410612_1671798583.jpg",
+   "https://shop-phinf.pstatic.net/20261103_176/1793679769160VrnWJ_JPEG/6888028299030502_459657737.jpg",
+   "https://shop-phinf.pstatic.net/20261103_30/1793679769495GHelA_JPEG/6888028632174544_175947670.jpg",
+   "https://shop-phinf.pstatic.net/20261103_261/1793679769776DcEfX_JPEG/6888028916300368_719552122.jpg",
+   "https://shop-phinf.pstatic.net/20261103_22/1793679770050KyPzM_JPEG/6888029187073327_1519580016.jpg",
+   "https://shop-phinf.pstatic.net/20261103_175/1793679770405xpLB0_JPEG/6888029543853627_1962770927.jpg",
+   "https://shop-phinf.pstatic.net/20261103_89/1793679770688f3xMv_JPEG/6888029822298549_1489791274.jpg",
+   "https://shop-phinf.pstatic.net/20261103_240/1793679771001dnVRv_JPEG/6888030140172061_220878002.jpg",
+   "https://shop-phinf.pstatic.net/20261103_8/1793679771311JkEdn_JPEG/6888030447531281_1614817022.jpg",
+   "https://shop-phinf.pstatic.net/20261103_129/1793679771654gsu7V_JPEG/6888030793169173_1841895423.jpg",
+   "https://shop-phinf.pstatic.net/20261103_199/1793679794853ImaKS_JPEG/76111865972658218_1533729185.jpg",
+   "https://shop-phinf.pstatic.net/20261103_3/17936797952130LbNU_JPEG/76111866332636939_1255305001.jpg",
+   "https://shop-phinf.pstatic.net/20261103_142/1793679795501uvtzA_JPEG/76111866613625728_379625328.jpg",
+   "https://shop-phinf.pstatic.net/20261103_294/1793679795995oyNEu_JPEG/76111867114665751_1241736861.jpg",
+   "https://shop-phinf.pstatic.net/20261103_156/1793679796273UM2dY_JPEG/76111867391383118_833982876.jpg",
+   "https://shop-phinf.pstatic.net/20261103_229/17936797965437oHVx_JPEG/76111867648447105_688928152.jpg",
+   "https://shop-phinf.pstatic.net/20261103_217/1793679796750qOTJR_JPEG/76111867868315309_902635462.jpg",
+   "https://shop-phinf.pstatic.net/20261103_65/1793679797088ba8a8_JPEG/76111868197552747_12763171.jpg",
+   "https://shop-phinf.pstatic.net/20261103_32/17936797973797oYAh_JPEG/76111868488461095_1300224768.jpg",
+   "https://shop-phinf.pstatic.net/20261103_126/1793679797707TheDz_JPEG/76111868808992212_1370833672.jpg",
+   "https://shop-phinf.pstatic.net/20261103_30/1793679792235TXMHv_JPEG/13149192167632757_59266765.jpg",
+   "https://shop-phinf.pstatic.net/20261103_164/1793679792572vFPbl_JPEG/13149192539231753_817403549.jpg",
+   "https://shop-phinf.pstatic.net/20261103_111/1793679792984Y0cSp_JPEG/13149192948889528_505707625.jpg",
+   "https://shop-phinf.pstatic.net/20261103_277/1793679793334QPlDM_JPEG/13149193271101318_959445394.jpg",
+   "https://shop-phinf.pstatic.net/20261103_244/1793679793749zdnED_JPEG/13149193717935273_1500474600.jpg",
+   "https://shop-phinf.pstatic.net/20261103_217/17936797940576aF6i_JPEG/13149194011212199_2021465304.jpg",
+   "https://shop-phinf.pstatic.net/20261103_11/1793679794402Y52Oi_JPEG/13149194376980566_479814075.jpg",
+   "https://shop-phinf.pstatic.net/20261103_52/1793679794777TcHHj_JPEG/13149194747828227_445352297.jpg",
+   "https://shop-phinf.pstatic.net/20261103_86/1793679795366txh9F_JPEG/13149195344727686_598497219.jpg",
+   "https://shop-phinf.pstatic.net/20261103_67/17936797957469y3MM_JPEG/13149195728119681_636635254.jpg",
+   "https://shop-phinf.pstatic.net/20261103_117/1793679805026wzagJ_JPEG/118307648850073241_340272507.jpg",
+   "https://shop-phinf.pstatic.net/20261103_282/17936798053120LOfI_JPEG/118307649136444821_399913561.jpg",
+   "https://shop-phinf.pstatic.net/20261103_188/1793679805572uY3Rq_JPEG/118307649394478721_1258712543.jpg",
+   "https://shop-phinf.pstatic.net/20261103_286/1793679805843gH4Ib_JPEG/118307649666803504_962042609.jpg",
+   "https://shop-phinf.pstatic.net/20261103_146/1793679806108n7qLL_JPEG/118307649923444885_1482829665.jpg"
+  ],
+  "description_dropped": [
+   {
+    "rule": "label",
+    "text": "상품 상세"
+   },
+   {
+    "rule": "contact",
+    "text": "올리고 고객센터"
+   },
+   {
+    "rule": "phone",
+    "text": "070-7575-2228"
+   },
+   {
+    "rule": "policy",
+    "text": "배송 안내\n해외 판매처에서 출발해 국제 배송·통관을 거쳐 도착해요. 배송 문의는 주문번호와 받는 분 성함을 문자로!\n상담 안내\n상담은 문자로만 받아요. 순서대로 빠르게 답해 드려요!\n주문 전 확인\n주문 전 체크!\n■통관부호\n받는 분 명의의 개인통관고유부호 꼭 넣어 주세요. 명의가 다르면 통관이 늦어져요.\n■세금\n물품가격이 미화 150달러(미국 출발 200달러)를 넘으면 관세·부가세가 붙을 수 있어요.\n■구매대행\n주문받고 해외 판매처에서 구매해요. 품절·가격 변동 시 먼저 연락드려요."
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "title:00a8137c9a16fe4a",
+   "kind": "title",
+   "ko": "여성용 핑크 세트 골프채 7번아이언 주니어골프채 연습용 카본 클럽 샤프트"
+  },
+  {
+   "id": "option_name:469240c63bcc90fb",
+   "kind": "option_name",
+   "ko": "색상·키"
+  },
+  {
+   "id": "option_value:e34e142a746930a3",
+   "kind": "option_value",
+   "ko": "핑크 90~110cm"
+  },
+  {
+   "id": "option_value:9f9fcfb725b5a3ba",
+   "kind": "option_value",
+   "ko": "핑크 110~130cm"
+  },
+  {
+   "id": "option_value:1802bf6bacb9e15f",
+   "kind": "option_value",
+   "ko": "핑크 130~150cm"
+  },
+  {
+   "id": "option_value:2fb443d50d690feb",
+   "kind": "option_value",
+   "ko": "블루 90~110cm"
+  },
+  {
+   "id": "option_value:0a2dbeac80831964",
+   "kind": "option_value",
+   "ko": "블루 110~130cm"
+  },
+  {
+   "id": "option_value:2265f786e57464b4",
+   "kind": "option_value",
+   "ko": "블루 130~150cm"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:3b7d38bbdf3d639a",
+   "kind": "spec_value",
+   "ko": "올리고 협력사"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:40bc309fd6cb0a8a",
+   "kind": "spec_value",
+   "ko": "기타/해외"
+  },
+  {
+   "id": "spec_label:2e6adf4ec98d6823",
+   "kind": "spec_label",
+   "ko": "종류"
+  },
+  {
+   "id": "spec_value:765d9fbf8f69c5c7",
+   "kind": "spec_value",
+   "ko": "아이언"
+  }
+ ]
+}

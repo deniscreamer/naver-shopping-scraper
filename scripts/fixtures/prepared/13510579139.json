@@ -1,0 +1,518 @@
+{
+ "format": "prepared/5",
+ "key": "fairwardgolf:naver:102536927:13510579139",
+ "shop": "fairwardgolf",
+ "status": "ready",
+ "held": [],
+ "notes": [
+  {
+   "code": "description_images_missing",
+   "detail": "no sidecar: run description_images.py"
+  },
+  {
+   "code": "shipping_paid",
+   "detail": "UNIT_QUANTITY_PAID 5500 KRW"
+  }
+ ],
+ "source": {
+  "run": "50002788-fixtures",
+  "line": 1,
+  "link": "https://smartstore.naver.com/pongdangswim/products/13510579139",
+  "channel_no": "102536927",
+  "product_id": "13510579139",
+  "category_id": "50002787"
+ },
+ "product": {
+  "title_ko": "어린이골프채 골프 클럽 클럽 키즈 주니어 퍼터 아이언",
+  "brand_ko": null,
+  "brand_source": null,
+  "attributes": {},
+  "options": [
+   {
+    "name_ko": "클럽 선택",
+    "values_ko": [
+     "9-12세 드라이버",
+     "9-12세 퍼터",
+     "주니어 샌드 웨지",
+     "9-12세 아이언"
+    ]
+   }
+  ],
+  "facts": [
+   {
+    "label_ko": "개인정보제공 동의",
+    "value_ko": "배송을 위한 제3자 제공에 동의합니다(YES)"
+   }
+  ],
+  "variants": [
+   {
+    "source_id": "observed:[\"배송을 위한 제3자 제공에 동의합니다(YES)\",\"9-12세 드라이버\"]",
+    "naver_variant_id": "58260931885",
+    "options_ko": [
+     "9-12세 드라이버"
+    ],
+    "price_krw": 31060,
+    "price_usd": "31.06",
+    "sku": "FW-41585c3457c5ec8099c38f2e",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자 제공에 동의합니다(YES)\",\"9-12세 퍼터\"]",
+    "naver_variant_id": "58260931886",
+    "options_ko": [
+     "9-12세 퍼터"
+    ],
+    "price_krw": 31060,
+    "price_usd": "31.06",
+    "sku": "FW-e41bb6ca5df21987b40d3f3f",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자 제공에 동의합니다(YES)\",\"주니어 샌드 웨지\"]",
+    "naver_variant_id": "58260931887",
+    "options_ko": [
+     "주니어 샌드 웨지"
+    ],
+    "price_krw": 31060,
+    "price_usd": "31.06",
+    "sku": "FW-700c6c817384ebfcb6b33db8",
+    "available": false,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   },
+   {
+    "source_id": "observed:[\"배송을 위한 제3자 제공에 동의합니다(YES)\",\"9-12세 아이언\"]",
+    "naver_variant_id": "58260931888",
+    "options_ko": [
+     "9-12세 아이언"
+    ],
+    "price_krw": 36660,
+    "price_usd": "36.66",
+    "sku": "FW-9f97b1a6b99a5fe3c0ca592e",
+    "available": true,
+    "package": {
+     "product_weight_g": {
+      "low": 200,
+      "central": 350,
+      "high": 600,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_weight_g": {
+      "low": 500,
+      "central": 1000,
+      "high": 1500,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_length_mm": {
+      "low": 700,
+      "central": 900,
+      "high": 1100,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_width_mm": {
+      "low": 80,
+      "central": 120,
+      "high": 150,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     },
+     "package_height_mm": {
+      "low": 60,
+      "central": 100,
+      "high": 120,
+      "source": "category_default",
+      "confidence": 1,
+      "kind": "single_club",
+      "reliability": "estimated_average",
+      "table_version": 7,
+      "approved_by": "owner",
+      "approved_at": "2026-11-11"
+     }
+    },
+    "today_dispatch": null
+   }
+  ],
+  "pricing": {
+   "base_krw": 31060,
+   "original_krw": 32020,
+   "krw_per_usd": 1000,
+   "rounding": "ceil-cent",
+   "taxable": false,
+   "compare_at": null
+  },
+  "specs": [
+   {
+    "label_ko": "제조사",
+    "value_ko": "퐁당스윔 협력사"
+   },
+   {
+    "label_ko": "브랜드",
+    "value_ko": "퐁당스윔"
+   },
+   {
+    "label_ko": "모델명",
+    "value_ko": "해당없음"
+   },
+   {
+    "label_ko": "원산지",
+    "value_ko": "수입산_아시아_중국"
+   }
+  ],
+  "personalization": [],
+  "addons": [],
+  "rating": null,
+  "reviews": [],
+  "images": [
+   {
+    "position": 0,
+    "file": "collected/50002788-fixtures/images/13510579139/fairwardgolf-13510579139-001-f673e732528513f8.webp",
+    "sha256": "f673e732528513f87cd460fd9e27f31af9a1df8fcd31a9eb1faccb15537ab4a6",
+    "width": 1000,
+    "height": 1000
+   }
+  ],
+  "delivery": {
+   "scope": "domestic",
+   "fee_type": "UNIT_QUANTITY_PAID",
+   "base_fee": 5500,
+   "is_overseas": false,
+   "customs_tax_type": null,
+   "extra_fee_area2": 6000,
+   "extra_fee_area3": 10000,
+   "policy_text": "10개마다 부과 / 제주 추가 6,000원, 제주 외 도서지역 추가 10,000원",
+   "lead_time": {
+    "seller_average_days": 2.0,
+    "product_average_days": null,
+    "today_cutoff": null,
+    "today_off": false,
+    "arrival_days": null,
+    "arrival_date_text": null,
+    "arrival_probability": null,
+    "ship_date_text": null
+   },
+   "extra_fee_text": null
+  },
+  "description_ko": "개인정보 제공 동의(위탁판매)\n본 상품은 위탁판매 상품으로 원활한 서비스 제공을 위해 고객님의 개인정보가 아래와 같이 제공됩니다.\n제공받는 자\n공급사정보 (주식회사 감씨)\n제공받는 자의 이용목적\n상품 보관, 포장 및 배송, 교환·반품 처리, 고객 상담\n제공하는 개인정보\n성명, 연락처, 주소, 구매·배송 정보\n제공받는 자의 개인정보 보유 및 이용기간\n이용 목적 달성 시까지 (관련 법령에 따른 보존 필요 시\n해당 기간 동안 보관 후 파기)\n※ 주문 확인, 주문 안내, 서비스 계약·이행, 배송상품 발송처리를 위하여 필요한 최소한의 개인정보이므로 동의해주셔야\n상품 구매가 가능하며, 배송은 상기 [제공받는 자]가 지정한 택배사를 통해 진행됩니다.\n개인정보 보호책임자\n고객님의 개인정보 처리에 관한 업무를 총괄하여 책임지고, 개인정보 처리와 관련한 고객님의 민원을 처리하기 위하여 아래와 같이\n개인정보 보호책임자를 지정하고 있습니다.\n성명\n김은선\n이메일\nwaang0616@naver.com",
+  "description_images": [
+   "https://shop-phinf.pstatic.net/20260510_81/1778406759606f2sUL_JPEG/p-13451332202-s-1-A-0.jpg",
+   "https://shop-phinf.pstatic.net/20260510_56/1778406759607orDsY_JPEG/p-13451332202-s-1-A-1.jpg",
+   "https://shop-phinf.pstatic.net/20260510_59/1778406759609VIY4C_JPEG/p-13451332202-s-1-A-2.jpg",
+   "https://shop-phinf.pstatic.net/20260510_291/1778406759605mVBMo_JPEG/p-13451332202-s-1-A-3.jpg",
+   "https://shop-phinf.pstatic.net/20260510_119/1778406759607xDdQ2_JPEG/p-13451332202-s-1-A-4.jpg",
+   "https://shop-phinf.pstatic.net/20260510_24/1778406759613AEw4J_JPEG/p-13451332202-s-1-A-5.jpg",
+   "https://shop-phinf.pstatic.net/20260510_27/1778406759608tBuTH_JPEG/p-13451332202-s-1-A-6.jpg",
+   "https://shop-phinf.pstatic.net/20260510_212/17784067596145kqwx_JPEG/p-13451332202-s-1-A-7.jpg",
+   "https://shop-phinf.pstatic.net/20260510_77/1778406759607zBFb0_JPEG/p-13451332202-s-1-A-8.jpg",
+   "https://shop-phinf.pstatic.net/20260510_69/1778406759609pDWUW_JPEG/p-13451332202-s-1-A-9.jpg",
+   "https://shop-phinf.pstatic.net/20260510_93/1778406759689A3Rem_JPEG/p-13451332202-s-1-A-10.jpg",
+   "https://shop-phinf.pstatic.net/20260510_14/17784067596937UWVf_JPEG/p-13451332202-s-1-A-11.jpg",
+   "https://shop-phinf.pstatic.net/20260510_139/1778406759701QlBcX_JPEG/p-13451332202-s-1-A-12.jpg",
+   "https://shop-phinf.pstatic.net/20260510_283/1778406759700knnzg_JPEG/p-13451332202-s-1-A-13.jpg",
+   "https://shop-phinf.pstatic.net/20260510_202/1778406759701MNxtK_JPEG/p-13451332202-s-1-A-14.jpg",
+   "https://shop-phinf.pstatic.net/20260510_100/1778406759704NjSre_JPEG/p-13451332202-s-1-A-15.jpg",
+   "https://shop-phinf.pstatic.net/20260510_98/1778406759715QP7B6_JPEG/p-13451332202-s-1-A-16.jpg",
+   "https://shop-phinf.pstatic.net/20260510_131/17784067597067UhHT_JPEG/p-13451332202-s-1-A-17.jpg",
+   "https://shop-phinf.pstatic.net/20260510_202/1778406759706h1vRz_JPEG/p-13451332202-s-1-A-18.jpg",
+   "https://shop-phinf.pstatic.net/20260510_235/1778406759724DUiSr_JPEG/p-13451332202-s-1-A-19.jpg",
+   "https://shop-phinf.pstatic.net/20260510_234/1778406759800bYvAb_JPEG/p-13451332202-s-1-A-20.jpg",
+   "https://shop-phinf.pstatic.net/20260510_88/1778406759776ojebL_JPEG/p-13451332202-s-1-A-21.jpg",
+   "https://shop-phinf.pstatic.net/20260510_49/1778406759807a5FSb_JPEG/p-13451332202-s-1-A-22.jpg",
+   "https://shop-phinf.pstatic.net/20260510_101/1778406759912kMc24_JPEG/p-13451332202-s-1-A-23.jpg",
+   "https://shop-phinf.pstatic.net/20260510_204/1778406759796vONvp_JPEG/p-13451332202-s-1-A-24.jpg",
+   "https://shop-phinf.pstatic.net/20260510_257/1778406759797itbuN_JPEG/p-13451332202-s-1-A-25.jpg"
+  ],
+  "description_dropped": []
+ },
+ "texts": [
+  {
+   "id": "title:f33c933df1ed986a",
+   "kind": "title",
+   "ko": "어린이골프채 골프 클럽 클럽 키즈 주니어 퍼터 아이언"
+  },
+  {
+   "id": "option_name:ac964aa9d579bdb3",
+   "kind": "option_name",
+   "ko": "클럽 선택"
+  },
+  {
+   "id": "option_value:891f00ed8b5df7c1",
+   "kind": "option_value",
+   "ko": "9-12세 드라이버"
+  },
+  {
+   "id": "option_value:b600032f70ae885c",
+   "kind": "option_value",
+   "ko": "9-12세 퍼터"
+  },
+  {
+   "id": "option_value:749746e6db31cb83",
+   "kind": "option_value",
+   "ko": "주니어 샌드 웨지"
+  },
+  {
+   "id": "option_value:d17fdd6a8012fe06",
+   "kind": "option_value",
+   "ko": "9-12세 아이언"
+  },
+  {
+   "id": "fact_label:f760b3afbc6b1484",
+   "kind": "fact_label",
+   "ko": "개인정보제공 동의"
+  },
+  {
+   "id": "fact_value:6c85e03fcaca7fb7",
+   "kind": "fact_value",
+   "ko": "배송을 위한 제3자 제공에 동의합니다(YES)"
+  },
+  {
+   "id": "spec_label:3ecc0ce552283c4e",
+   "kind": "spec_label",
+   "ko": "제조사"
+  },
+  {
+   "id": "spec_value:79b259069c8915a5",
+   "kind": "spec_value",
+   "ko": "퐁당스윔 협력사"
+  },
+  {
+   "id": "spec_label:559380a1cea8a17c",
+   "kind": "spec_label",
+   "ko": "브랜드"
+  },
+  {
+   "id": "spec_value:6ff57dd34e0c24bf",
+   "kind": "spec_value",
+   "ko": "퐁당스윔"
+  },
+  {
+   "id": "spec_label:45ecef3c70c3d0be",
+   "kind": "spec_label",
+   "ko": "모델명"
+  },
+  {
+   "id": "spec_value:864e6bcf445fc0ba",
+   "kind": "spec_value",
+   "ko": "해당없음"
+  },
+  {
+   "id": "spec_label:765723acfadff305",
+   "kind": "spec_label",
+   "ko": "원산지"
+  },
+  {
+   "id": "spec_value:f7e1c5ca2fa7cdeb",
+   "kind": "spec_value",
+   "ko": "수입산_아시아_중국"
+  }
+ ]
+}

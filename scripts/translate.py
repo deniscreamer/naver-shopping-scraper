@@ -306,6 +306,35 @@ def _placeholders(prepared: dict[str, Any]) -> set[str]:
     return out
 
 
+def _brand_en(prepared: dict[str, Any], dicts: Dictionaries, tenant: str) -> str:
+    """The English the store shows as this product's vendor: its brand text's dictionary spelling (a Latin name as it
+    is), the shop's own name when it has none."""
+    for t in prepared.get("texts") or []:
+        if t["kind"] == "brand":
+            source = sanitize("brand", t["ko"], tenant)
+            return dicts.get("brand", t["ko"]) or ("" if has_hangul(source) else dicts.brand_spelling(source))
+    return tenant
+
+
+def _stale_lead(english: str, vendor: str, dicts: Dictionaries) -> str | None:
+    """The dictionary brand an English title starts with when it is not the product's vendor (`vendor`): the title
+    was written under another brand. 2026-11-19, the two-brand scan: titles the model wrote before 2026-11-15 carry no
+    brand_ko, so a brand change never asked them again: "Pongdang Swim Kids' …" under Inparo (the vendor in front:
+    "Inparo Pongdang Swim …"), "PING Women's Junior …" (핑크, pink) under no brand; 98 live titles held two brands.
+    None when the title starts with the vendor, the vendor is a longer name of it or it of the vendor (Maruman
+    Majesty; Majesty Maruman), or the vendor is unknown."""
+    if not vendor or not english:
+        return None
+    low, own = english.lower(), vendor.lower()
+    if low.startswith(own):
+        return None
+    for b in sorted((v for v in dicts.vendors() if len(v) >= 3), key=len, reverse=True):
+        bl = b.lower()
+        if low.startswith(bl) and (len(low) == len(bl) or not low[len(bl)].isalnum()):
+            return None if own.startswith(bl) or bl.startswith(own) else b
+    return None
+
+
 def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, str], str],
          tenant: str, brands: dict[tuple[str, str], str] | None = None, reask: bool = False,
          fixed: Collection[tuple[str, str]] = ()
@@ -357,6 +386,13 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
                     and brand_known:
                 pending.append({"id": tid, "kind": kind, "source": sanitize(kind, ko, tenant, category),
                                 "context": f"the brand is now {product.get('brand_ko')}, not {asked_with}"})
+            elif kind == "title" and asked_with is None and (key, tid) not in fixed and brand_known:
+                stale = _stale_lead(hit, _brand_en(prepared, dicts, tenant), dicts)
+                if stale:
+                    pending.append({"id": tid, "kind": kind, "source": sanitize(kind, ko, tenant, category),
+                                    "context": f"the brand is now {product.get('brand_ko') or 'none'}; the title "
+                                               f"was written as {stale}'s: name {stale} only if this Korean title "
+                                               "names it"})
             continue
         source = sanitize(kind, ko, tenant, category)
         if not has_hangul(source):
