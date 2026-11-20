@@ -959,7 +959,7 @@ def _knit(groups, variants, notice=(), specs=()):
 def test_the_knit_rules_are_the_owners():
     knit = rules_for("fairwardgolf").category("50002797")
     assert knit.paid_variants and not knit.paid_addons and knit.description_images and knit.gift_axis_out
-    assert knit.no_choice_out and knit.composition and not knit.reviewed
+    assert knit.no_choice_out and knit.composition and knit.reviewed   # the owner 2026-11-20: live after wave 1
     assert not knit.sets_only and not knit.wedge_sets and not knit.agency_needs_brand
     assert not any(c.no_choice_out or c.composition for k, c in rules_for("fairwardgolf").categories.items()
                    if k != "50002797")                       # the clubs' products stay as published

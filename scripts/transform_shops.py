@@ -156,8 +156,8 @@ RULES = {
                                       composition=True,     # the fibre rows: the description's materials
                                       sizes="womens_tops",  # US sizes and the size chart (the owner 2026-11-19)
                                       own_brand_wordmark=True,   # the shop's own brand (Grehip, Tee And Golf)
-                                      reviewed=False),      # a new category: DRAFT until the lens review and the
-                                                            # owner's activation
+                                      reviewed=True),       # the owner 2026-11-20: 52 drafts activated after the
+                                                            # lens review of wave 1
         }),
 }
 
