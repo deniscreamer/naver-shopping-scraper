@@ -30,6 +30,11 @@ The rule:
      decides (only the x2 guard).
   4. same UPC, no confirmed match (2026-11-17): a hold candidate only (upc_suspect, decide()'s `same_upc`); never a
      duplicate_of / duplicate_better: the job holds the product as a draft for the owner (--dedupe on).
+  5. the same Naver catalog or style code, no confirmed match and no same UPC (2026-11-20): a hold candidate only
+     (same_item, decide()'s `same_item` / `why`): the page answer's catalog (specs.catalog, else the shop's
+     catalog_ids.json backfill; a catalog of more than CATALOG_LOOSE published products ignored) or a maker's style
+     code with the same brand (a store-name brand counts as none); no combo set, no clash of kind, bag, hand, gender,
+     length, ages or piece counts; held like 4.
 
 Index: built at a job's start from the publication ledger (published products, drafts awaiting review included
 (draft first, 2026-11-16), withdrawn ones, and those withdrawn as replaced_by:<key>, which stand for the live end of
@@ -101,9 +106,10 @@ def _norm(value: str) -> str:
     return "".join(unicodedata.normalize("NFKC", str(value)).lower().split())
 
 
-def entry(line: dict[str, Any], status: str = "job") -> dict[str, Any]:
+def entry(line: dict[str, Any], status: str = "job", catalogs: dict[str, str | None] | None = None) -> dict[str, Any]:
     """What the rule needs of a collected record (job.py's kept line): key, store, category, title key, price, grade,
-    review count, photos' source hashes (the first one apart), variant values, variant count."""
+    review count, photos' source hashes (the first one apart), variant values, variant count; the Naver catalog
+    (/products/specs `catalog.id`, else `catalogs`: the shop's backfill by product id) and the style codes."""
     listing = line.get("listing") or {}
     details = line.get("details") or {}
     key = line.get("key") or listing.get("key") or ""
@@ -139,7 +145,114 @@ def entry(line: dict[str, Any], status: str = "job") -> dict[str, Any]:
                 str(o) for v in variants for o in v.get("options") or [v.get("name") or ""])))),
             "skey": spaced_key(name, category),
             "tail": tail_key(name, category),
-            "upc": upcs(((details.get("description") or {}).get("text")) or "")}
+            "upc": upcs(((details.get("description") or {}).get("text")) or ""),
+            "catalog": ((specs.get("catalog") or {}).get("id")) or (catalogs or {}).get(parts[3] if len(parts) > 3
+                                                                                       else ""),
+            "codes": style_codes(((specs.get("facts") or details.get("facts") or {}).get("model_name") or {})
+                                 .get("value") or details.get("model_name"), name),
+            "brand": _own_brand(((specs.get("facts") or details.get("facts") or {}).get("brand") or {}).get("value")
+                                or details.get("brand") or "", (listing.get("store") or details.get("store") or {})
+                                .get("name"))}
+
+
+# ---- one item, by Naver's catalog or the maker's style code (2026-11-20) -------------------------------------
+#
+# The two exact keys a seller cannot reword (the owner, 2026-11-20: strong flags, no complicated rule). Checked on the
+# store's records the same day: the catalog (the page's epInfo.matchingModelId, /products/specs `catalog`) joined 30
+# groups of our products across stores; without the loose ones (37 junior sets of every age in one catalog), 196 pairs,
+# of the live pairs about 23 of 31 one item the title rule had missed (Yamaha Femina 6 times live, Mutsumi Honma 2-star
+# 3, Yamaha CS 3, TaylorMade Glory, Honma Kiwami5, Kolon VWX), the rest versions Naver files together (left / right
+# hand, men / women, standard / petite length, junior ages). The style code (521F4SD304, MR322LSJ92_BRWN: the maker's,
+# brand apparel; 4 club groups, all one item) joins what Naver files under two catalogs. So a match is a hold
+# candidate, never a decision: the job publishes it as a draft held for the owner (OWNER_RULES rule 2).
+_COMBO = re.compile(r"조합|\+")
+CATALOG_LOOSE = 6                               # more of our products in one catalog: Naver's loose filing, ignored
+_CODE_TOKEN = re.compile(r"[A-Za-z0-9]+")
+# a shaft's model, not the club's (2026-11-20 review: Cleveland chippers of two heads on KBS MAX105)
+_SHAFT_CODE = re.compile(r"^(?:MAX|MODUS|NSPRO|ZELOS|KBS|DG|TOUR|SPEEDER|VENTUS|TENSEI)\d")
+_CODE_CUT = re.compile(r"[_\s,/]")              # "MR322LSJ92_BRWN", "GWKW08445 0000", "RWSCN8208,N8208": the code first
+# the versions a catalog files together (the 2026-11-20 check): hand, gender, length, beside _DIMS' kinds and bag
+_ITEM_DIMS = [{"오른손": "오른손", "right": "오른손", "우타": "오른손", "왼손": "왼손", "left": "왼손", "좌타": "왼손"},
+              {"남성": "남성", "남자": "남성", "men": "남성", "여성": "여성", "여자": "여성", "레이디스": "여성",
+               "women": "여성", "ladies": "여성"},
+              {"쇼트": "쇼트", "short": "쇼트", "쁘띠": "쇼트", "petite": "쇼트", "스탠다드": "표준", "standard": "표준",
+               "표준": "표준"}]
+
+
+def _own_brand(brand: str, store: str | None) -> str:
+    """The brand as compared, empty when it is the seller's own store name (resellers write their store as the brand:
+    SNGR15702 under 대량가성비추천할인몰, 브론즈폭스, 스완굿즈, 2026-11-20 review)."""
+    b, s = _norm(brand), _norm(store or "")
+    return "" if not b or (s and (b in s or s in b)) else b
+
+
+def loose_catalogs(entries: Iterable[dict[str, Any]]) -> set[str]:
+    """The catalogs holding more than CATALOG_LOOSE of the published products (status "published"): Naver's loose
+    filing (one held 37 junior sets of every age), ignored by same_item."""
+    counts: dict[str, int] = {}
+    for e in entries:
+        if e.get("catalog") and e.get("status") == "published":
+            counts[e["catalog"]] = counts.get(e["catalog"], 0) + 1
+    return {k for k, n in counts.items() if n > CATALOG_LOOSE}
+
+
+def style_codes(model_name: Any, title: str | None) -> set[str]:
+    """The maker's style codes of a listing: its model name's first part and the title's tokens, upper case, 6+
+    characters with 3+ digits and a letter, no Hangul (a model name that copies the title gives its codes only)."""
+    out = set()
+    model = str(model_name or "")
+    if model and not re.search(r"[가-힣]", model):
+        model = _CODE_CUT.split(model.strip())[0]
+    for text in (model, str(title or "")):
+        for t in _CODE_TOKEN.findall(unicodedata.normalize("NFKC", text)):
+            t = t.upper()
+            if len(t) >= 6 and len(re.findall(r"\d", t)) >= 3 and re.search(r"[A-Z]", t) and not _SHAFT_CODE.match(t):
+                out.add(t)
+    return out
+
+
+_AGE_RE = re.compile(r"(\d{1,2})\s*(?:[~\-]|\s)\s*(\d{1,2})\s*세|(\d{1,2})\s*세\s*(이하|이상)?")
+
+
+def _ages(title: str) -> set[str]:
+    """A junior title's ages, one string per range ("3-5", "3-", "12+"): Naver files one line's ages together."""
+    out = set()
+    for m in _AGE_RE.finditer(title):
+        if m.group(1):
+            out.add(f"{int(m.group(1))}-{int(m.group(2))}")
+        else:
+            out.add(m.group(3) + {"이하": "-", "이상": "+"}.get(m.group(4) or "", ""))
+    return out
+
+
+def same_item(a: dict[str, Any], b: dict[str, Any], loose: set[str] | frozenset[str] = frozenset()) -> str | None:
+    """Why a and b look like one item ("catalog <id>", "code <code>"), None when they do not: the same category,
+    another store, the price guard, the same catalog (not a `loose` one) or a style code in common (the same brand when
+    both name one), and no clash of club kind, hand, gender, length or bag between the titles."""
+    if a.get("category") != b.get("category") or a.get("channel") == b.get("channel") or a.get("key") == b.get("key"):
+        return None
+    if not price_ok(a, b):
+        return None
+    why = None
+    if a.get("catalog") and a.get("catalog") == b.get("catalog") and a["catalog"] not in loose:
+        why = f"catalog {a['catalog']}"
+    else:
+        common = (a.get("codes") or set()) & (b.get("codes") or set())
+        if common and (not a.get("brand") or not b.get("brand") or a["brand"] == b["brand"]):
+            why = f"code {sorted(common)[0]}"
+    if why is None:
+        return None
+    if why.startswith("code") and (_COMBO.search(a.get("name") or "") or _COMBO.search(b.get("name") or "")):
+        return None                             # "퀀텀 맥스 / 미즈노 JPX925 조합": the code is one part's model
+    ta, tb = (unicodedata.normalize("NFKC", x.get("name") or "").lower() for x in (a, b))
+    for d in (_DIMS[0], _DIMS[3], *_ITEM_DIMS):  # read inside words too: "남성골프채풀세트", "유틸리티"
+        if _clash({v for k, v in d.items() if k in ta}, {v for k, v in d.items() if k in tb}):
+            return None
+    if _clash(_ages(ta), _ages(tb)):
+        return None                             # "3세 이하" / "3-5세": a junior version of another age
+    if _clash(a.get("counts") or set(), b.get("counts") or set()):
+        return None                             # "4종" / "12종", "5개" / "7개": another set of one line
+    return why
 
 
 # an agency import copies its Amazon spec table into the description ("UPC | 792713117044", "Global Trade
@@ -473,6 +586,7 @@ class Index:
     def __init__(self, entries: Iterable[dict[str, Any]] = ()):
         self.by_key: dict[str, dict[str, Any]] = {}
         self.replaced: dict[str, str] = {}          # a key withdrawn as replaced_by: -> its replacement's key
+        self.loose: set[str] | None = None          # the loose catalogs, fixed once (loose_catalogs, first use)
         for e in entries:
             self.add(e)
 
@@ -525,6 +639,31 @@ class Index:
         keys = sorted(found, key=lambda k: (order.get(found[k]["status"], 3), k))
         return {"same_upc": keys, "upc": sorted(codes)}
 
+    def same_items(self, c: dict[str, Any]) -> dict[str, Any]:
+        """{same_item: [keys], why: [reasons]} of the products that look like c's item (same_item), published ones
+        first (a replaced one stands for its live end), {} when none: a hold candidate, never a decision (2026-11-20)."""
+        if not c.get("catalog") and not c.get("codes"):
+            return {}
+        if self.loose is None:                      # once, from the published products: a job's own holds and
+            self.loose = loose_catalogs(self.by_key.values())   # takes never turn a catalog loose mid-run
+        found: dict[str, tuple[dict[str, Any], str]] = {}
+        for e in self.by_key.values():
+            why = same_item(c, e, self.loose)
+            if why is None:
+                continue
+            target: dict[str, Any] | None = e
+            if e["status"] == "replaced":           # the live end must pass the guards itself (as decide(), 11-16)
+                target = self.live(e["key"])[1]
+                if target is not None and (not price_ok(c, target) or target.get("channel") == c.get("channel")):
+                    target = None
+            if target is not None and target["key"] != c["key"]:
+                found.setdefault(target["key"], (target, why))
+        if not found:
+            return {}
+        order = {"published": 0, "job": 1, "withdrawn": 2}
+        keys = sorted(found, key=lambda k: (order.get(found[k][0]["status"], 3), k))
+        return {"same_item": keys, "why": [found[k][1] for k in keys]}
+
     def decide(self, c: dict[str, Any]) -> dict[str, Any]:
         """{decision, of, matches: [{key, status, grade, reviews, price, variants, first_photo, photos, variants_j,
         confirmed[, live, live_price]}]} (decision None: no confirmed match). A confirmed match withdrawn as replaced_by:
@@ -560,7 +699,7 @@ class Index:
         if lost:                                    # its live copy unknown here: not compared, not taken
             return {**out, "decision": "duplicate_of", "of": lost[0]}
         if not confirmed:
-            return {**out, **self.same_upc(c)}
+            return {**out, **(self.same_upc(c) or self.same_items(c))}
         best = max(confirmed.values(), key=lambda e: (grade_rank(e["grade"]), e["reviews"] or 0))
         return {**out, "decision": "duplicate_better" if better(c, best) else "duplicate_of", "of": best["key"]}
 
@@ -612,18 +751,32 @@ def load(shop: str, shops_root: str = SHOPS_ROOT, job_keys: Iterable[str] = (), 
     """The index of a shop: its published (and, with `withdrawn`, owner-withdrawn) products, plus `job_keys` (a job's
     own collected products), each from its latest collected record; a key without one is left out."""
     records = collected(shop, shops_root) if records is None else records
+    cats = catalogs(shop, shops_root)
     index = Index()
     for key in job_keys:
         if key in records:
-            index.add(entry(records[key], "job"))
+            index.add(entry(records[key], "job", cats))
     for key, row in ledger(shop, shops_root).items():
         status = ledger_status(row)
         if status and key in records and (withdrawn or status == "published"):
-            index.add(entry(records[key], status))
+            index.add(entry(records[key], status, cats))
         elif withdrawn and key and row.get("status") == "withdrawn" and str(row.get("reason") or "").startswith(REPLACED):
             index.replace(key, str(row["reason"])[len(REPLACED):].strip(),
-                          entry(records[key], "replaced") if key in records else None)
+                          entry(records[key], "replaced", cats) if key in records else None)
     return index
+
+
+CATALOGS_FILE = "catalog_ids.json"               # <shop>/catalog_ids.json: {"ids": {product id: catalog id | null}}
+
+
+def catalogs(shop: str, shops_root: str = SHOPS_ROOT) -> dict[str, str | None]:
+    """The catalog of products collected before /products/specs gave it (2026-11-20): the backfill read once from the
+    page answers the server had saved (DEDUPE.md "The catalog backfill"); {} without the file."""
+    try:
+        with open(os.path.join(shops_root, shop, CATALOGS_FILE), encoding="utf-8") as f:
+            return dict(json.load(f).get("ids") or {})
+    except (OSError, ValueError):
+        return {}
 
 
 def variant_count(shop: str, key: str, shops_root: str = SHOPS_ROOT) -> int | None:
@@ -726,6 +879,35 @@ def same_upc_groups(entries: list[dict[str, Any]], found: list[list[dict[str, An
     return sorted(out, key=lambda g: (g[0]["category"], g[0]["key"]))
 
 
+def same_item_groups(entries: list[dict[str, Any]], found: list[list[dict[str, Any]]]) -> list[list[dict[str, Any]]]:
+    """Hold candidates in the store (2026-11-20): products joined by same_item pairs (the same Naver catalog, not a
+    loose one, or a style code) that no duplicate group holds together already; each group best first. Only listed:
+    holding a copy is the owner's word (OWNER_RULES rule 2)."""
+    group_of = {e["key"]: n for n, g in enumerate(found) for e in g}
+    loose = loose_catalogs(entries)
+    pairs = set()
+    for i, a in enumerate(entries):
+        for j in range(i + 1, len(entries)):
+            b = entries[j]
+            if a["key"] in group_of and group_of.get(a["key"]) == group_of.get(b["key"]):
+                continue
+            if same_item(a, b, loose):
+                pairs.add((i, j))
+    out = []
+    for g in _union(len(entries), pairs):           # no chaining: a member pairs with every other of its group
+        ranked = sorted((entries[i] for i in g), key=lambda e: (-grade_rank(e["grade"]), -(e["reviews"] or 0),
+                                                               -(e["variants"] or 0), e["key"]))
+        cliques: list[list[dict[str, Any]]] = []
+        for e in ranked:
+            home = next((c for c in cliques if all(same_item(e, m, loose) for m in c)), None)
+            if home is None:
+                cliques.append([e])
+            else:
+                home.append(e)
+        out += [c for c in cliques if len(c) > 1]
+    return sorted(out, key=lambda g: (g[0]["category"], g[0]["key"]))
+
+
 # a report-only list (2026-11-17, the wedge review, C41 part 3): two agency imports in a sets_only category, the same
 # Korean brand and the same sold sets of 2+ values with digits, no clash of kind, hand, gender or bag: 32 pairs of the
 # store's records, 31 copies (PGM, POSSOT, AM20XX, Alvo, XINGGM, Lazrus) and 1 not (MAZEL 'DS-VH 4 Iron' / '7 Iron',
@@ -770,6 +952,7 @@ def report(shop: str, shops_root: str = SHOPS_ROOT, category: str | None = None)
     entries = [e for e in index.by_key.values() if category is None or e["category"] == category]
     found = groups(entries)
     upc = same_upc_groups(entries, found)
+    item = same_item_groups(entries, found)
     brand_sold = brand_sold_pairs(entries, _brands(shop, shops_root), found)
     by_cat: dict[str, dict[str, int]] = {}
     for g in found:
@@ -783,7 +966,8 @@ def report(shop: str, shops_root: str = SHOPS_ROOT, category: str | None = None)
     return {"published": len(entries), "groups": len(found), "products": sum(len(g) for g in found),
             "extra_copies": sum(len(g) - 1 for g in found), "same_title_groups": same_title,
             "by_category": by_cat, "list": found, "title_only": sum(len(title_only(g)) for g in found),
-            "same_upc": upc, "same_upc_extra": sum(len(g) - 1 for g in upc), "brand_sold": brand_sold}
+            "same_upc": upc, "same_upc_extra": sum(len(g) - 1 for g in upc), "brand_sold": brand_sold,
+            "same_item": item, "same_item_extra": sum(len(g) - 1 for g in item)}
 
 
 # ---- --pairs -------------------------------------------------------------------------------------------------
@@ -794,10 +978,11 @@ PAIR_EVENTS = ("duplicate_seen", "duplicate_better", "not_taken")
 def pairs(events: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Every (candidate, match) a job looked at: n, decision, candidate, match and its signals. A same-UPC hold
     candidate (`same_upc`, usually no title match) gives one row per product sharing its UPC, decision
-    `same_upc:<that key>`, never confirmed (2026-11-17, the W7 review: the pilot shows these pairs too)."""
+    `same_upc:<that key>`, never confirmed (2026-11-17, the W7 review: the pilot shows these pairs too); a same-item
+    one (`same_item`, 2026-11-20) one row per product of its catalog or style code, decision `same_item:<key>`."""
     out: list[dict[str, Any]] = []
     for e in events:
-        if e.get("event") not in PAIR_EVENTS or not (e.get("matches") or e.get("same_upc")):
+        if e.get("event") not in PAIR_EVENTS or not (e.get("matches") or e.get("same_upc") or e.get("same_item")):
             continue
         decision = e.get("decision") or (e.get("reason") if e["event"] == "not_taken" else
                                          f"duplicate_better:{e.get('replaces')}")
@@ -809,6 +994,12 @@ def pairs(events: list[dict[str, Any]]) -> list[dict[str, Any]]:
             if k not in seen:
                 out.append({"n": len(out) + 1, "event": e["event"], "decision": f"same_upc:{k}", "candidate": e["key"],
                             "key": k, "status": "", "confirmed": False, "upc": e.get("upc")})
+                seen.add(k)
+        for k, why in zip(e.get("same_item") or [], e.get("why") or []):    # the same catalog or code (2026-11-20)
+            if k not in seen:
+                out.append({"n": len(out) + 1, "event": e["event"], "decision": f"same_item:{k}", "candidate": e["key"],
+                            "key": k, "status": "", "confirmed": False, "why": why})
+                seen.add(k)
     return out
 
 
@@ -883,7 +1074,8 @@ def main(argv: list[str] | None = None) -> int:
         for cat, c in sorted(r["by_category"].items()):
             print(f"  {cat}: {c['groups']} groups, {c['products']} products")
         print(f"hold candidates, not groups (the owner decides each): same UPC {len(r['same_upc'])} groups "
-              f"({r['same_upc_extra']} extra copies); same brand and sets sold {len(r['brand_sold'])} pairs")
+              f"({r['same_upc_extra']} extra copies); same Naver catalog or style code {len(r['same_item'])} groups "
+              f"({r['same_item_extra']} extra copies); same brand and sets sold {len(r['brand_sold'])} pairs")
         if a.list:
             def line(i: int, e: dict[str, Any], weak: set[str] = set()) -> str:
                 return (f"  {'best' if i == 0 else '    '} {e['key']}\t{e['grade']}\t{e['reviews']} reviews\t"
@@ -895,6 +1087,11 @@ def main(argv: list[str] | None = None) -> int:
                     print(line(i, e, weak))
             for g in r["same_upc"]:
                 print(f"same UPC {' '.join(sorted(set.intersection(*(set(e['upc']) for e in g)) or g[0]['upc']))}"
+                      f"\t{g[0]['category']}\t{g[0]['name']}")
+                for i, e in enumerate(g):
+                    print(line(i, e))
+            for g in r["same_item"]:
+                print(f"same item ({'catalog ' + g[0]['catalog'] if g[0].get('catalog') else 'style code'})"
                       f"\t{g[0]['category']}\t{g[0]['name']}")
                 for i, e in enumerate(g):
                     print(line(i, e))

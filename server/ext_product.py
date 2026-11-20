@@ -417,6 +417,7 @@ def specs_from_page(details, page_html, product_answer, query=None):
         "options": options,
         "delivery": parsers.parse_page_delivery(product_answer, pdp.delivery_promise(page_html))
         if product_answer else None,
+        "catalog": parsers.parse_page_catalog(product_answer) if product_answer else None,   # 2026-11-20: dedupe
         "measures": measures.measures(rows, details["notice"], details.get("description"), page_html, product_id,
                                       options, details["name"], details["category"]),
         "read_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),

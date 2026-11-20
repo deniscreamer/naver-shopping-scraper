@@ -395,3 +395,17 @@ def test_the_chart_is_built_as_shopify_stores_it():
     assert "Fits bust" not in one and "<p>The garment measurements are the maker's" in one
     many = A.chart_html(_run(_pilot("9717223659")))
     assert '<table class="size-chart">\n<thead><tr>\n<th>Size</th>\n' in many and "</tr>\n</tbody>\n</table>" in many
+
+
+def test_apparel_option_values_lose_colour_codes_and_model_notes():
+    """2026-11-20: "C5: Gray", "Z1: Black", "Vanilla (Worn by Model)" and an option named "Windproof Cardigan Color"
+    on the storefront; the rule reads only apparel (a product with sizes), the clubs' values stay."""
+    product = {"options": [{"name_ko": "방풍 가디건 컬러", "values_ko": ["C5:그레이", "바닐라 (모델착용)"]}],
+               "sizes": {"profile": "womens_tops", "option": None, "values": []}}
+    en = _en([("option_name", "방풍 가디건 컬러", "Windproof Cardigan Color"), ("option_value", "C5:그레이", "C5: Gray"),
+              ("option_value", "바닐라 (모델착용)", "Vanilla (Worn by Model)")])
+    options, values = SP._options(product, en)
+    assert options[0]["name"] == "Color" and values[0] == ["Gray", "Vanilla"]
+    club = {"options": [{"name_ko": "샤프트", "values_ko": ["R2:레귤러"]}]}
+    options, values = SP._options(club, _en([("option_name", "샤프트", "Shaft Color"), ("option_value", "R2:레귤러", "R2: Regular")]))
+    assert options[0]["name"] == "Shaft Color" and values[0] == ["R2: Regular"]

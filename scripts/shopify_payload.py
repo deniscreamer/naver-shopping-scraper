@@ -401,6 +401,13 @@ _NUMBERED_RE = re.compile(r"^\s*(?:\d{1,2}[.)](?!\d)\s*|SPEC\s+)", re.I)   # "01
                                                                              # a decimal ("10.5°": 2026-11-09, "5°")
 
 
+# apparel option values (2026-11-20, the knit pilot): a seller's colour code before the colour ("C5: Gray", "Z1:
+# Black", "S2 - Dark Green") and a note on the photo ("Vanilla (Worn by Model)"); the owner orders by optionsKo
+_COLOUR_CODE_RE = re.compile(r"^[A-Z]{1,3}\d{1,3}\s*[:\-]\s*(?=[A-Za-z])")
+_APPAREL_NOTE_RE = re.compile(r"\s*\((?:worn by (?:the )?model|model(?:'s)? (?:wears|pick|color)|as worn|modeled)\)$", re.I)
+_COLOUR_NAME_EN_RE = re.compile(r"\b(?:colou?r)\b", re.I)
+
+
 def _value(text: str) -> str:
     return _NUMBERED_RE.sub("", text or "").strip()
 
@@ -478,7 +485,12 @@ def _options(product: dict[str, Any], en: English) -> tuple[list[dict[str, Any]]
             continue
         name = _OPTION_NAME_RE.sub("/", en("option_name", o["name_ko"])).strip()
         name = _SELECT_RE.sub("", name).strip() or FALLBACK_OPTION[0]
-        names = _unique([_value(en("option_value", v)) for v in o["values_ko"]])
+        values = [_value(en("option_value", v)) for v in o["values_ko"]]
+        if "sizes" in product:                         # apparel (CategoryRules.sizes): the seller's colour codes and
+            values = [_APPAREL_NOTE_RE.sub("", _COLOUR_CODE_RE.sub("", v)).strip() or v for v in values]   # notes go
+            if _COLOUR_NAME_EN_RE.search(name):        # "Windproof Cardigan Color": Color (2026-11-20)
+                name = "Color"
+        names = _unique(values)
         out.append({"name": name[:OPTION_VALUE_MAX], "values": [{"name": v} for v in names]})
         values_en.append(names)
     seen: set[str] = set()                             # two options with one English name: Shopify refuses it

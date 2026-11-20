@@ -318,7 +318,8 @@ owner's word only: withdraw the wrong ones (`publish.py <shop> --withdraw <key> 
 `new` and `scroll` take `--dedupe on|log|off`, `on` by default (the owner, 2026-11-15): right after collect, a
 product sold by another store too is closed (`not_taken: duplicate_of:<key>`) unless it is strictly better (store
 grade, then reviews), and a better one replaces the old product once published. One sharing a live product's UPC
-with no confirmed match (2026-11-17) is published as a draft and held (`held_same_upc`, `hold: copy of live <key>`):
+with no confirmed match (2026-11-17), or its Naver catalog or style code (2026-11-20, `same_item`), is published as
+a draft and held (`held_same_upc`, `hold: copy of live <key>`):
 list it for the owner. The W7 pilot (2026-11-17, `--dedupe log`, 20 wedge sets published as drafts): every one was a
 copy of a live product and `on` would have closed all 20; the owner said yes, `on` stays the default. The rule, the events, `--pairs`, `--report` and the pilots: [DEDUPE.md](DEDUPE.md).
 

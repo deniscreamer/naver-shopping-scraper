@@ -627,6 +627,12 @@ published from them; `prepared/5` is on the new scale. The transform puts a coll
 today's scale from their own evidence (`package_measures.on_scale`: the old 3 is 5, the old 2 is 4), so one prepared
 record never mixes the two.
 
+**Table version 12 (2026-11-20, the owner's word on the pilot report).** Row 50002797 gets the kind `insulated`
+(`match` 방풍 / 다운 / 구스 / 덕다운 / 패딩 / 충전재 / 솜털 / 웰론 / 하이브리드 in the title or the variant): a
+windproof-lined, down or padded knit, product 450 / 600 / 1000 g, package 500 / 700 / 1200 g, box central 30 x 24 x 6
+cm (0.864 kg volumetric: the tariff's 1 kg step, about +10 USD); 10 of the 30 pilot products are such (9717223659
+states 673 g). Its `defaults_version` 12; the other rows keep theirs.
+
 **Table version 11 (2026-11-19, the owner).** The row of 50002797 니트 (women's golf knit cardigans, a folded garment in
 a mailer): product 250 / 400 / 800 g, package 300 / 400 / 900 g with a plausible band 300-1500 g (the owner: a parcel
 is never under about 0.3-0.4 kg; a stated value outside is not taken), box low 25 x 20 x 3, central 28 x 22 x 4

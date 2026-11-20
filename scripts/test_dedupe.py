@@ -1115,3 +1115,127 @@ def test_the_tail_key_still_needs_a_confirmation():
     a = E(1, 1, "지아이엘 " + TTY_TAIL, photos=("g1",), values=TTY_VALUES, category="50002784")
     b = E(2, 2, "홈스월드 " + TTY_TAIL, photos=("h1",), values=[["01.TTY 치퍼"]], category="50002784", status="job")
     assert D.possible(b, a) and not D.confirm(b, a) and D.Index([a]).decide(b)["decision"] is None
+
+
+# ---- one item by Naver's catalog or the style code (2026-11-20) -------------------------------------------------
+
+def item(channel, pid, name, catalog=None, model=None, brand=None, price=1_890_000, category="50002788"):
+    """A collected record with a catalog (/products/specs `catalog`) and a model name, other photos and variants."""
+    r = record(channel, pid, name, price=price, photos=(f"p{pid}",), values=[[f"v{pid}"]], category=category)
+    r["specs"] = {"catalog": {"id": catalog, "nsin": None},
+                  "facts": {"model_name": {"value": model}, "brand": {"value": brand}}}
+    return D.entry(r, "published")
+
+
+@pytest.mark.parametrize("model, title, codes", [
+    ("MR322LSJ92_BRWN", "먼싱웨어 여성 펭귄 JQD 가디건 브라운 MR322LSJ92", {"MR322LSJ92"}),
+    ("521F4SD304", "[파리게이츠] 26FW 여성 눈꽃 패턴 후드 집업 방풍 니트 가디건 521F4SD304 BK", {"521F4SD304"}),
+    ("GWKW08445 0000", "제이린드버그 골프웨어 여성 가디건 GWKW08445 0000", {"GWKW08445"}),
+    ("여성골프가디건 삼선 니트 여성골프웨어 봉선댁", "여자 가을 삼선 니트 가디건", set()),          # the title copied: no code
+    (None, "PGM 골프채 풀세트 12PCS 2024 N.S.PRO 950GH", set()),                               # counts, years, shafts
+])
+def test_style_codes(model, title, codes):
+    assert D.style_codes(model, title) == codes
+
+
+def test_the_same_catalog_is_one_item_the_title_rule_missed():
+    """Yamaha Femina, 6 times live (2026-11-20): titles reworded, other photos, one catalog."""
+    a = item(101, 5917858699, "23년 오리엔트골프 야하마 페미나 여성골프채풀세트 12개", catalog="35750553619")
+    b = item(102, 8900225130, "야마하 페미나 여성 풀세트", catalog="35750553619")
+    assert not D.signals(a, b)["confirmed"] and D.same_item(a, b) == "catalog 35750553619"
+    assert D.same_item(a, b, loose={"35750553619"}) is None                      # a loose catalog says nothing
+
+
+@pytest.mark.parametrize("x, y", [
+    ("무쯔미 혼마 스페셜 2스타 고반발 남성골프채풀세트", "무쯔미 혼마 스페셜 2스타 여성 고반발 풀세트"),          # gender, glued
+    ("인텍 이지 롤 시니어 여성 오른손 핑크 골프 치퍼", "왼손잡이 인텍 이지 롤 레이디스 핑크 골프 치퍼"),          # hand
+    ("마젝 K5 치퍼 37도 오른손잡이 여자 스탠다드 골프 클럽", "마젝 K5 치퍼 37도 오른손잡이 울트라 쁘띠 여성 골프 클럽"),  # length
+    ("브리지스톤 TYPE150 B-Jr 주니어 퍼터", "브리지스톤 24B-JR UT TYPE150 주니어 골프채 유틸리티"),             # kind
+    ("젝시오 13 여성 아이언 세트 5개", "젝시오 13 여성 아이언 세트 7개"),                                  # count
+])
+def test_versions_naver_files_together_are_no_item(x, y):
+    a, b = item(101, 1, x, catalog="58540658777"), item(102, 2, y, catalog="58540658777")
+    assert D.same_item(a, b) is None
+
+
+def test_a_style_code_joins_two_catalogs_but_not_a_combo_or_another_brand():
+    a = item(101, 1, "헤지스골프 울혼방 니트 방풍 집업 HWSW5D719", catalog="1", brand="헤지스골프", price=200_000,
+             category="50002797")
+    b = item(102, 2, "헤지스 골프 여성 니트 집업 HWSW5D719", catalog="2", brand="헤지스골프", price=210_000,
+             category="50002797")
+    assert D.same_item(a, b) == "code HWSW5D719"
+    c = item(103, 3, "울혼방 니트 HWSW5D719", catalog="3", brand="다른브랜드", price=210_000, category="50002797")
+    assert D.same_item(a, c) is None
+    d = item(104, 4, "캘러웨이 퀀텀 + JPX925 조합 클럽세트 남성", brand="캘러웨이", price=2_000_000)
+    e = item(105, 5, "미즈노 JPX925 포지드 스틸 남성 풀세트", brand="캘러웨이", price=2_000_000)
+    assert D.same_item(d, e) is None
+
+
+def test_the_index_holds_a_same_item_candidate_and_never_decides():
+    live = item(101, 5917858699, "23년 오리엔트골프 야하마 페미나 여성골프채풀세트", catalog="35750553619")
+    index = D.Index([live])
+    c = {**item(102, 8900225130, "야마하 페미나 여성 풀세트", catalog="35750553619"), "status": "job"}
+    d = index.decide(c)
+    assert d["decision"] is None and d["same_item"] == [live["key"]] and d["why"] == ["catalog 35750553619"]
+
+
+def test_the_catalog_backfill(tmp_path):
+    (tmp_path / SHOP).mkdir()
+    (tmp_path / SHOP / D.CATALOGS_FILE).write_text(json.dumps({"ids": {"8900225130": "35750553619"}}))
+    assert D.catalogs(SHOP, str(tmp_path)) == {"8900225130": "35750553619"} and D.catalogs("other", str(tmp_path)) == {}
+    r = record(102, 8900225130, "야마하 페미나 여성 풀세트")
+    assert D.entry(r, "published", D.catalogs(SHOP, str(tmp_path)))["catalog"] == "35750553619"
+
+
+def test_a_jobs_own_takes_never_turn_a_catalog_loose_mid_run():
+    """The 2026-11-20 review: the count ran over the growing job index; the 8th seller of Femina went out unflagged."""
+    live = [item(100 + n, 5000 + n, "야마하 페미나 여성 풀세트", catalog="35750553619") for n in range(6)]
+    index = D.Index(live)
+    for n in range(4):                                  # the 7th, 8th ... sellers, each added once seen
+        c = {**item(200 + n, 6000 + n, "야마하 페미나 여성 풀세트", catalog="35750553619"), "status": "job"}
+        assert index.decide(c).get("same_item"), n
+        index.add(c)
+    seven = [item(300 + n, 7000 + n, "x 풀세트", catalog="1") for n in range(7)]
+    assert D.loose_catalogs(seven) == {"1"} and D.loose_catalogs(live) == set()
+
+
+def test_ages_shafts_and_store_brands():
+    a = item(101, 1, "올리마르 ATS 주니어 옐로우 시리즈 골프 클럽(3세 이하) Putter", catalog="59898694511", price=70_000)
+    b = item(102, 2, "올리마르 ATS 주니어 라임 / 블루 시리즈 골프 클럽 3 5세", catalog="59898694511", price=80_000)
+    assert D.same_item(a, b) is None
+    assert D.style_codes(None, "클리블랜드 스마트솔 풀페이스 치퍼 KBS MAX105") == set()
+    r = record(101, 1, "골프풀세트 여성골프채세트 SNGR15702")
+    r["listing"]["store"]["name"] = "대량가성비추천할인몰"
+    r["specs"] = {"facts": {"model_name": {"value": "SNGR15702"}, "brand": {"value": "대량가성비추천할인몰"}}}
+    assert D.entry(r)["brand"] == "" and D.entry(r)["codes"] == {"SNGR15702"}
+
+
+def test_a_report_group_never_chains_through_a_third():
+    """A ~ B and B ~ C, but A and C are one store: two groups of two, never one of three."""
+    a = item(101, 1, "야마하 페미나 여성 풀세트", catalog="9")
+    b = item(102, 2, "야마하 페미나 여성 풀세트", catalog="9")
+    c = item(101, 3, "야마하 페미나 여성 풀세트", catalog="9")
+    groups = D.same_item_groups([a, b, c], [])
+    assert all(len({e["channel"] for e in g}) == len(g) for g in groups) and groups
+
+
+def test_pairs_lists_same_item_hold_candidates():
+    events = [{"event": "duplicate_seen", "key": "k", "decision": "same_item:a", "same_item": ["a", "b"],
+               "why": ["catalog 9", "code X123456"], "matches": []}]
+    rows = D.pairs(events)
+    assert [(r["decision"], r["why"]) for r in rows] == [("same_item:a", "catalog 9"), ("same_item:b", "code X123456")]
+
+
+def test_the_jobs_hold_flag_reads_both_kinds():
+    import job
+
+    class FakeJob:
+        def __init__(self, events):
+            self._e = events
+
+        def events(self):
+            return self._e
+    item_event = {"key": "k", "event": "duplicate_seen", "decision": "same_item:a", "why": ["code 521F4SD304"]}
+    upc_event = {"key": "k", "event": "duplicate_seen", "decision": "same_upc:b", "upc": ["0123456789012"]}
+    assert job.same_upc_of(FakeJob([item_event]), "k") == ("a", ["code 521F4SD304"])
+    assert job.same_upc_of(FakeJob([upc_event]), "k") == ("b", ["0123456789012"])

@@ -7114,6 +7114,10 @@
     "ship_date_text": null
    }
   },
+  "catalog": {
+   "id": null,
+   "nsin": null
+  },
   "measures": {
    "is_set": true,
    "weights": [],

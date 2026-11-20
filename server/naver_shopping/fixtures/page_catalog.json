@@ -1,0 +1,31 @@
+{
+ "_doc": "epInfo of real product answers (ext_product._product_answer), 2026-11-20: 11107936517 (봉선댁 knit cardigan) matched to catalog 51781439155 (10 malls in search); an unmatched one has no matchingModelId. 7583123963 (GV Tour BM set) matched to 26935350523 with matchingNsin.",
+ "matched": {
+  "epInfo": {
+   "matchingModelId": 51781439155,
+   "naverShoppingRegistration": true,
+   "naverShoppingExposure": true,
+   "enuriRegistration": false,
+   "danawaRegistration": false,
+   "syncNvMid": 88652446839
+  }
+ },
+ "unmatched": {
+  "epInfo": {
+   "naverShoppingRegistration": true,
+   "naverShoppingExposure": true,
+   "syncNvMid": 91369015918
+  }
+ },
+ "with_nsin": {
+  "epInfo": {
+   "matchingModelId": 26935350523,
+   "naverShoppingRegistration": true,
+   "naverShoppingExposure": true,
+   "enuriRegistration": false,
+   "danawaRegistration": false,
+   "syncNvMid": 85127624285,
+   "matchingNsin": "N000017147093"
+  }
+ }
+}

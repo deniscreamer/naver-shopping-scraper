@@ -463,8 +463,11 @@ missing card answers 404.
 
 Transport: box for the product record (as `/products/details`), then the extension (one page read, ~30-60 s, one
 at a time; a running listing job or a held listing tab answers 409). Cache: 24 h per `product` + `query` (`PRODUCT_SPECS_CACHE`).
-Output: `{id, name, link, query, category, specs: [{label, value}], is_complete, facts, options, delivery, measures,
-read_at}`. `delivery` (`parsers.parse_page_delivery`, null without the page's product answer): the fee as the page
+Output: `{id, name, link, query, category, specs: [{label, value}], is_complete, facts, options, delivery, catalog,
+measures, read_at}`. `catalog` (`parsers.parse_page_catalog`, null without the page's product answer): `{id, nsin}`,
+the Naver price-comparison catalog the listing is matched to (`search.shopping.naver.com/catalog/<id>`, the card that
+groups the sellers of one item; not the `catalog_id` of `/products/details`, the listing's own nvMid), both null
+when it is not matched (2026-11-20; scripts' dedupe holds two of our products of one catalog). `delivery` (`parsers.parse_page_delivery`, null without the page's product answer): the fee as the page
 charges it (`/products/details` `delivery` fields) plus `is_overseas`, `scope` (`international` / `domestic`),
 `customs_tax_type` and `lead_time` `{seller_average_days, product_average_days, today_cutoff ("16:00"),
 today_off, arrival_days, arrival_date_text ("11.11.(수)"), arrival_probability, ship_date_text ("11.6.(금)")}` (the

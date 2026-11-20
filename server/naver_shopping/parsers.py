@@ -272,6 +272,19 @@ def _delivery(info):
     } if d else None
 
 
+def parse_page_catalog(p):
+    """The product page's own product answer -> the Naver price-comparison catalog the listing is matched to:
+    {id, nsin}, both None when it is not matched. probed 2026-11-20 over 4275 saved answers
+    (server/output/ext-product/*/product.json): epInfo.matchingModelId is the catalog's id (the
+    search.shopping.naver.com/catalog/<id> card that groups the sellers of one item; 11107936517 -> 51781439155, the
+    card with 10 malls) on 368 of them, beside syncNvMid (the listing's own nvMid, our details.catalog_id);
+    epInfo.matchingNsin ("N000017104670") sometimes with it. Box simple-products carries neither."""
+    ep = _dict(_dict(p).get("epInfo"))
+    model_id = _clean(str(ep.get("matchingModelId") or "")) or None
+    nsin = _clean(str(ep.get("matchingNsin") or "")) or None
+    return {"id": model_id if model_id and model_id.isdigit() and model_id != "0" else None, "nsin": nsin}
+
+
 def parse_page_delivery(p, promise=None):
     """Delivery as the product page states it: the fee as charged (its own answer, ext_product._product_answer),
     international or domestic, and how fast. Seen 2026-11-05: 99,000 KRW per unit from Japan on a set whose

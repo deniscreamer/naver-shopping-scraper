@@ -106,6 +106,9 @@ no fewer variants (`replaced`, else `replace_skipped`). A title match not confir
 No confirmed match but the same UPC as a product under dedupe.upc_suspect (2026-11-17): `duplicate_seen` decision
 `same_upc:<key>`, taken as usual; under `on` it is published as a draft and held at once (`held_same_upc`: withdrawn,
 reason `hold: copy of live <key>, same UPC ...`, OWNER_RULES rule 2), the owner decides; under `log` the event only.
+The same Naver catalog or style code (dedupe.same_item, 2026-11-20) is a hold candidate too: decision
+`same_item:<key>`, `why` ["catalog <id>" / "code <code>"], held the same way (reason `hold: copy of live <key>, same
+Naver catalog <id>, ... (dedupe same_item)`, or `... same style code <code> ...`).
 A draft (draft first, 2026-11-16) does not replace a live product (`replace_skipped`, "the new one is a draft"):
 `activate` prints the withdraw line of the old one.
 
@@ -188,6 +191,7 @@ class Context(TypedDict, total=False):
     translator: Any                    # translate.build_chain
     dedupe: Any                        # dedupe.Index, built at the run's start
     dedupe_records: dict[str, Any]     # dedupe.collected: key -> collected line
+    dedupe_catalogs: dict[str, Any]    # dedupe.catalogs: the catalog backfill by product id (2026-11-20)
     describer: Any                     # describe.build_chain, at the first description
     publisher: tuple[Any, Any, dict[str, Any]]   # publish.clients, at the first publication
     specs: Any                         # scroll: the listing tab's specs reader (Tab.specs)
@@ -700,11 +704,17 @@ def dedupe_step(job: Job, ctx: Context, key: str, line: dict | None) -> str | No
     if line is None:
         from run_transform import latest_lines
         line = latest_lines(job.shop, None, job.shops_root)[key][2]
-    cand = dedupe.entry(line)
+    cand = dedupe.entry(line, "job", ctx.get("dedupe_catalogs"))   # an old record's catalog from the backfill
     d = index.decide(cand)
     if d["decision"] is None and d.get("same_upc"):         # a hold candidate, never a decision (2026-11-17)
         job.log(key, "duplicate_seen", decision=f"same_upc:{d['same_upc'][0]}", same_upc=d["same_upc"],
                 upc=d.get("upc"), grade=cand["grade"], reviews=cand["reviews"], price=cand["price"],
+                matches=d["matches"])
+        index.add(cand)
+        return None
+    if d["decision"] is None and d.get("same_item"):        # the same Naver catalog or style code (2026-11-20)
+        job.log(key, "duplicate_seen", decision=f"same_item:{d['same_item'][0]}", same_item=d["same_item"],
+                why=d.get("why"), grade=cand["grade"], reviews=cand["reviews"], price=cand["price"],
                 matches=d["matches"])
         index.add(cand)
         return None
@@ -761,11 +771,16 @@ def replace_step(job: Job, ctx: Context, shop: Any, key: str) -> str:
 
 
 def same_upc_of(job: Job, key: str) -> tuple[str, list[str]] | None:
-    """(the key, the UPCs) of `key`'s last `duplicate_seen` same_upc event, None without one."""
+    """(the key, the reasons) of `key`'s last `duplicate_seen` hold candidate, None without one: a same_upc event
+    (the UPCs) or a same_item one (2026-11-20: "catalog <id>" / "code <code>")."""
     for e in reversed(job.events()):
         if e.get("key") == key and e["event"] == "duplicate_seen":
             decision = str(e.get("decision") or "")
-            return (decision.split(":", 1)[1], list(e.get("upc") or [])) if decision.startswith("same_upc:") else None
+            if decision.startswith("same_upc:"):
+                return decision.split(":", 1)[1], list(e.get("upc") or [])
+            if decision.startswith("same_item:"):
+                return decision.split(":", 1)[1], [str((e.get("why") or ["same item"])[0])]
+            return None
     return None
 
 
@@ -779,19 +794,23 @@ def upc_hold_step(job: Job, ctx: Context, shop: Any, key: str) -> str:
     if flag is None or any(e.get("key") == key and e["event"] == "held_same_upc" for e in job.events()):
         return ""
     of, upc = flag
+    item = bool(upc) and upc[0].startswith(("catalog ", "code "))    # same_item: the Naver catalog or style code
     ledger = shop.ledger()
     if key not in ledger or ledger[key].get("status") != "published":
         return ""
     live = (ledger.get(of) or {}).get("status") == "published"
-    reason = (f"hold: {'copy of live' if live else 'same UPC as'} {of}, same UPC {' '.join(upc)}, kept as a draft for "
-              f"a separate decision (dedupe same_upc)")
+    source = (f"Naver {upc[0]}" if upc[0].startswith("catalog ") else f"style {upc[0]}") if item else ""
+    reason = (f"hold: {'copy of live' if live else 'same item as'} {of}, same {source}, kept as a draft for "
+              f"a separate decision (dedupe same_item)") if item else \
+        (f"hold: {'copy of live' if live else 'same UPC as'} {of}, same UPC {' '.join(upc)}, kept as a draft for "
+         f"a separate decision (dedupe same_upc)")
     try:
         publish.withdraw(shop, key, ctx["publisher"][0], reason=reason)
     except CatalogError as e:
         job.log(key, "held_same_upc", of=of, why=f"withdraw failed: {e}"[:300])
-        return f"; same UPC as {of.split(':')[3]}, not held: {e}"[:200]
+        return f"; {'same ' + source if item else 'same UPC'} as {of.split(':')[3]}, not held: {e}"[:200]
     job.log(key, "held_same_upc", of=of, reason=reason)
-    return f"; held (same UPC as {of.split(':')[3]})"
+    return f"; held ({'same ' + source if item else 'same UPC'} as {of.split(':')[3]})"
 
 
 def one(job: Job, ctx: Context, key: str, stage_now: str | None, n: int = 0) -> str:
@@ -999,6 +1018,7 @@ def _context(job: Job) -> tuple[Context | None, int]:
         import dedupe
         gone = closed(job)
         ctx["dedupe_records"] = dedupe.collected(job.shop, job.shops_root)
+        ctx["dedupe_catalogs"] = dedupe.catalogs(job.shop, job.shops_root)
         ctx["dedupe"] = dedupe.load(job.shop, job.shops_root, [r["key"] for r in job.rows() if r["key"] not in gone],
                                     records=ctx["dedupe_records"])
     return ctx, 0

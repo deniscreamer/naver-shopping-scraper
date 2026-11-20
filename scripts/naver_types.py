@@ -505,6 +505,12 @@ class Measures(TypedDict):
     review: list[MeasureNote]
 
 
+class SpecsCatalog(TypedDict):
+    """products/specs catalog (parsers.parse_page_catalog): the price-comparison catalog the listing is matched to."""
+    id: str | None                    # search.shopping.naver.com/catalog/<id>; null: not matched
+    nsin: str | None
+
+
 class ProductSpecs(TypedDict):
     """products/specs response (ext_product._specs): the product page's rows, read in the owner's Chrome."""
     id: str | None
@@ -517,6 +523,8 @@ class ProductSpecs(TypedDict):
     facts: ProductFacts
     options: PageOptions | None       # null: the page gave no product answer
     delivery: PageDelivery | None     # null: the page gave no product answer
+    # null: the page gave no product answer; absent from records collected before 2026-11-20 (the key is new)
+    catalog: NotRequired[SpecsCatalog | None]
     measures: Measures
     read_at: str
 

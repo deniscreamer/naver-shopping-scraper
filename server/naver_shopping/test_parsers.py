@@ -467,3 +467,14 @@ def test_description_cards_fixture_images():
     assert c["images"] == ["https://shop-phinf.pstatic.net/20260201_192/17699187726654ipjH_PNG/"
                            "20019506300428036_252033136.png?type=w848"]
     assert "굿바이골프" not in c["text"] and "따봉몰" not in c["text"]
+
+
+def test_page_catalog():
+    """2026-11-20: the price-comparison catalog a listing is matched to, from the page's product answer (dedupe)."""
+    f = fixture("page_catalog.json")
+    assert P.parse_page_catalog(f["matched"]) == {"id": "51781439155", "nsin": None}
+    assert P.parse_page_catalog(f["unmatched"]) == {"id": None, "nsin": None}
+    assert P.parse_page_catalog(f["with_nsin"]) == {"id": "26935350523", "nsin": "N000017147093"}
+    assert P.parse_page_catalog({"epInfo": {"matchingModelId": 0}}) == {"id": None, "nsin": None}
+    assert P.parse_page_catalog(None) == {"id": None, "nsin": None}
+    assert P.parse_page_catalog({"epInfo": "x"}) == {"id": None, "nsin": None}

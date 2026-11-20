@@ -171,6 +171,8 @@ The owner's rules (`shopify_payload.py`):
   `sizeKo` / `sizeUs`) and the product's `fairwardgolf.sizes` (`fairwardgolf-sizes/1`: the map US -> Korean with the
   chest in cm and how it was read, the merged spellings, the seller's chart in cm). The description ends with the
   size chart block (`apparel_sizes.chart_html`, inches), built here, not by the model. [SIZES.md](SIZES.md).
+  Its other options lose a seller's colour code ("C5: Gray" -> Gray) and a photo note ("(Worn by Model)"), and an
+  option named for its colour is "Color" ("Windproof Cardigan Color"; 2026-11-20); the clubs' options are untouched.
 - **Title clean-up** (`clean_title`): "(Parallel Import)", a word written twice in a row, a model code written
   twice. SEO title = the title (the site's page `<title>`), cut at a whole word within 70 characters.
 - **Title length** (`fit_title`): at most 150 characters, Google Merchant Center's limit for `title` (a longer one

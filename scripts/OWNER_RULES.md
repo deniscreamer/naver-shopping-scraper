@@ -47,8 +47,9 @@ copy of it closes as `not_taken: duplicate_of_withdrawn:<key>`. `publish.py <sho
 brings it back (a product created as a draft comes back a draft). A withdrawal of a copy as `replaced_by:<key>`, or
 a group marked versions (`lens.py dupes --versions`), is the owner's word as well. A job under `--dedupe on` holds one
 kind of such copy itself (2026-11-17): a product sharing a live product's UPC with titles that agree
-(`held_same_upc`, the same `hold: copy of live <key>` reason); list it for him like the others. `dedupe.py --report`
-lists the same-UPC and same-brand-and-sets candidates already in the store: held only on his word.
+(`held_same_upc`, the same `hold: copy of live <key>` reason), and since 2026-11-20 one of a live product's Naver
+catalog or style code (`... same Naver catalog <id>` / `... same style code <code>`); list it for him like the others. `dedupe.py --report` lists
+the same-UPC, same-item and same-brand-and-sets candidates already in the store: held only on his word.
 
 ## 3. Never
 

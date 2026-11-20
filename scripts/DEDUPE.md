@@ -41,6 +41,7 @@ wedge-set review's confirmations (C40, C41-1, C43) and the `held_same_upc` hold.
 |---|---|---|
 | `duplicate_seen`, decision `not_confirmed` | a title match, not confirmed by photos or variants: an ordinary product, taken | nothing |
 | `duplicate_seen`, decision `same_upc:<key>` (2026-11-17) | no confirmed match, but the UPC of `<key>` under `upc_suspect` (`same_upc`: every such key, `upc`: the codes): taken | `log`: nothing; `on`: see `held_same_upc` |
+| `duplicate_seen`, decision `same_item:<key>` (2026-11-20) | no confirmed match, but the same Naver catalog or style code as `<key>` (`same_item`: every such key, `why`: `catalog <id>` / `code <code>`): taken | `log`: nothing; `on`: held as `held_same_upc`, reason `hold: copy of live <key>, same Naver catalog <id> ... (dedupe same_item)` or `... same style code <code> ...` (`same item as <key>` when `<key>` is not live); `--pairs` shows one row per such key |
 | `held_same_upc` (`on`) | that product was published as a draft and withdrawn at once, reason `hold: copy of live <key>, same UPC ...` (`same UPC as <key>` when `<key>` is not live) | list it for the owner: copy or version ([OWNER_RULES.md](OWNER_RULES.md) rule 2); a failed withdraw (`why`): hold it by hand on his word |
 | `duplicate_seen`, a would-be decision (`log` only) | what `on` would have done | nothing; `--pairs` after the run |
 | `not_taken: duplicate_of_withdrawn:<key>` | a confirmed match the owner withdrew: never taken | nothing |
@@ -73,7 +74,9 @@ shared photo, no variants alike; a colour edition, a set with its bag). Look at 
 `lens.py dupes <shop>` shows the groups as rows, those members red.
 
 Two lists of hold candidates follow the groups (2026-11-17), never groups themselves and never withdrawn by a
-script: `same UPC <code>` (published products joined by `upc_suspect`, no group holding them together already) and
+script: `same UPC <code>` (published products joined by `upc_suspect`, no group holding them together already),
+`same item (catalog <id> | style code)` (joined by `same_item`, 2026-11-20; a group only of members that each pair
+with every other, never chained through a third) and
 `same brand and sets sold` (pairs of agency imports in a `sets_only` category with the same prepared `brand_ko` and
 the same sold sets of 2+ values with a digit, no kind / hand / gender / bag clash: equal sets can coincide, MAZEL
 '4 Iron' / '7 Iron'). The summary line counts them; each is the owner's word ([OWNER_RULES.md](OWNER_RULES.md) rule 2).
@@ -138,6 +141,27 @@ the run starts:
   same colour when both titles name one, no hand / gender / bag clash, the same model words, the lofts and ages (free
   numbers of 1-2 digits) not clashing unless the same sets are sold, one sold set inside the other. In `possible()`
   it would withdraw versions automatically (Olimar ATS junior clubs share their parent's UPC).
+- **The same Naver catalog or style code, no confirmed match** (2026-11-20, the owner: strong flags, no complicated
+  rule): a hold candidate only (`same_item`, `Index.same_items`). The catalog: the page answer's
+  `epInfo.matchingModelId` (`/products/specs` `catalog.id`; products collected before it from `<shop>/catalog_ids.json`,
+  the backfill below), a catalog holding more than `CATALOG_LOOSE` (6) of our products ignored (one held 37 junior sets
+  of every age). The style code (`style_codes`): the model name's first part and the title's tokens of 6+ characters
+  with 3+ digits and a letter (521F4SD304, MR322LSJ92), the same brand when both name one, never across a combo set
+  (조합, +), never a shaft's model (KBS MAX105, MODUS115), a brand that is the seller's store name counting as none
+  (SNGR15702 under 대량가성비추천할인몰). Both: the same category, another store, the price guard, no clash of club
+  kind, bag, hand, gender or length read inside the words ("남성골프채풀세트"), of junior ages ("3세 이하" / "3-5세") or
+  of piece counts. The loose catalogs are counted once over the published products (`loose_catalogs`), never over a
+  job's growing index; a replaced match's live end must pass the price and store guards itself. Measured on the store the same day:
+  the catalog joined 30 groups across stores; without the loose ones about 23 of the 31 live pairs were one item the
+  title rule had missed (Yamaha Femina 6 times live, Mutsumi Honma 3, Yamaha CS 3, TaylorMade Glory, Honma Kiwami5,
+  Kolon VWX), the rest versions Naver files together, most of them stopped by the clashes; the code: 4 club groups,
+  all one item. Rejected the same day: `details.catalog_id` (the listing's own nvMid, never shared), a perceptual
+  photo hash (Pearly Gates "matched" Wolsey; a real pair re-shot matched nothing), the catalog's seller list (a
+  catalog page: R-NAVER-1, and our own products are all we compare).
+- **The catalog backfill** (`<shop>/catalog_ids.json`, `{"ids": {product id: catalog id | null}}`, 2026-11-20): the
+  catalog of the products collected before `/products/specs` gave it, read once from the page answers the server had
+  saved (`server/output/ext-product/*/product.json`, `parsers.parse_page_catalog`, the latest per product); 3622
+  products, 310 matched. A product collected since carries its own; the file is not grown.
 - **A replaced match** (2026-11-16, the owner's wedge review: GoSports 12557420063 was not taken as a copy of
   13619939279 on 2026-11-15, then published as new once 13619939279 was replaced by 13379851400 and that by
   12918511112; A11N 13512885159 through 13405976594 -> 13552318731, a hold): a confirmed match withdrawn as

@@ -440,6 +440,9 @@ surfaces.
   the search renders it. Its `__PRELOADED_STATE__` holds no product data when read; the rendered 상품정보 list does,
   folded after 9 rows behind "상품정보 펼쳐보기", and can render seconds after load. -> `ext_product` docstring and
   `read_page` comment, `pdp` module docstring.
+- 2026-11-20: the page's own product answer names the price-comparison catalog the listing is matched to,
+  `epInfo.matchingModelId` (sometimes `matchingNsin`), beside `syncNvMid` (the listing's own nvMid, our `catalog_id`);
+  box simple-products has neither; the page HTML's simpleCatalogs lists are empty. -> `parsers.parse_page_catalog`.
 - A search card clicked at its centre can open the store instead of the product: the product link is a layer over
   the whole card and the store's name link (`inflow/outlink`, then Naver's login page) lies above it under the photo
   (seen 2026-11-05), so the card's photo is clicked. -> `ext_product._card` docstring.
