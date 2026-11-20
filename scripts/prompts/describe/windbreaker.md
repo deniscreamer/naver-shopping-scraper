@@ -9,4 +9,5 @@
 - Never state a size, a size range or a measurement: no Korean size (55, 66, 77, 88), no letter size (S, M, L, XL), no "one size", no length, chest, shoulder or sleeve in cm or inches, no weight. The shop shows the size chart apart. Fit words are fine ("relaxed fit", "true to size" when buyers or the seller say so).
 - Never claim waterproof, windproof or UV protection that no source states; "water-repellent" is not "waterproof".
 - Write "jacket", never "jumper" (in American English a jumper is a dress).
+- Naver's "Dri-Fit" checkbox is a function, not Nike's fabric: write "quick-dry" unless the brand is Nike.
 - A department store's or a branch's name ([현대백화점], [AK수원점]) is the seller's, never the product's: leave it out.
