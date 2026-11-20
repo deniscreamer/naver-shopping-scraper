@@ -111,6 +111,13 @@ A title is the product's own text, not rebuilt: a brand fix of case or punctuati
 leaves the old spelling with the new brand in front (`shopify_payload.title_vendor`; skill `dictionaries` step 5).
 The live copies are in the state backup (`state_backup.py`, OPERATIONS.md "Backup"); `scripts/dictionaries/` is git's.
 
+**Terms chosen for the knit cardigans' first backup** (50002797, 2026-11-20): colour values without the seller's
+colour code or model note ("C5:그레이" -> Gray, "바닐라 (모델착용)" -> Vanilla: the owner orders by `optionsKo`), an
+option named for its colour is "Color" ("방풍 가디건 컬러"), Naver's feature checkbox "Dri-Fit" (Nike's trademark) is
+"Quick-Dry", "국산" is "Made in Korea" (as 중국산 / 베트남산), one size fact "FREE(44-66반)" is "One Size" (no
+Korean size on the storefront), fibre lists title-cased and "Rayon" without "/Viscose". Brands as their makers spell
+them (PEARLY GATES, WAAC, J.Lindeberg, Benjefe, Grehip, Tee And Golf, Today Golf).
+
 **Brand spellings chosen in the wedge-set review** (2026-11-17, commit 6897a05): the maker's own spelling in its
 description text over the case of Amazon's Brand Name field (stix -> Stix, pron -> Pron, KIRKLAND -> Kirkland,
 Bombtech Golf -> BombTech), never a spelling whose `brand_key` the titles lack (`title_vendor` would put it in front:

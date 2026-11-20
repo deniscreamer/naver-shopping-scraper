@@ -1,0 +1,21 @@
+{
+ "format": "dictionary/1",
+ "kind": "spec_label",
+ "backed_up": "2026-11-20T07:20:54Z",
+ "entries": {
+  "네크라인": "Neckline",
+  "모델명": "Model Name",
+  "브랜드": "Brand",
+  "사용계절": "Season",
+  "성별": "Gender",
+  "소매기장": "Sleeve Length",
+  "소재": "Material",
+  "원산지": "Country of Origin",
+  "제조사": "Manufacturer",
+  "총기장": "Length",
+  "출시": "Release",
+  "특징": "Features",
+  "패턴": "Pattern",
+  "품번": "Item Number"
+ }
+}
