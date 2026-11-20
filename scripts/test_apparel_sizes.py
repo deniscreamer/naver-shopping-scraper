@@ -409,3 +409,13 @@ def test_apparel_option_values_lose_colour_codes_and_model_notes():
     club = {"options": [{"name_ko": "샤프트", "values_ko": ["R2:레귤러"]}]}
     options, values = SP._options(club, _en([("option_name", "샤프트", "Shaft Color"), ("option_value", "R2:레귤러", "R2: Regular")]))
     assert options[0]["name"] == "Shaft Color" and values[0] == ["R2: Regular"]
+
+
+def test_the_first_waves_labels():
+    """2026-11-20, the first knit wave: PXG 5429994082 "XS (33~44)" and "2XS", 5932679597 "FREE[55~66]"."""
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": ["XS (33~44)", "S (55)", "M (66)", "2XS"]}], [], "PXG",
+                  "PXG 여성골프웨어 바시티 브이넥 스웨터 니트 가디건", "womens_tops")
+    assert not r["held"] and [v["us"] for v in r["values"]] == ["XXS (US 00)", "XS (US 0-2)", "S (US 4-6)",
+                                                                "M (US 8-10)"]
+    label = A.parse_label("FREE[55~66]")
+    assert label is not None and label.free and label.women == (55, 66)

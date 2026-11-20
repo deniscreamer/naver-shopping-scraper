@@ -9,6 +9,7 @@ fairwardgolf-50002797-20261119T151233Z).
 
 | KR chest | KR women | US | US numeric | fits bust (in) |
 |---|---|---|---|---|
+| 80 | 33 | XXS | 00 | 30.5-31.5 |
 | 85 | 44 | XS | 0-2 | 32-33.5 |
 | 90 | 55 | S | 4-6 | 34-35.5 |
 | 95 | 66 | M | 8-10 | 36-37.5 |
@@ -23,7 +24,7 @@ Size 85..100" over XS..L). Public conversion pages disagree with each other by a
 inches are what the buyer can check. A half size (55반, 66반) is not in `kr_women`: it holds the product until the
 owner names it.
 
-Letters with no number: XS 85, S 90, M 95, L 100, XL / LL 105, XXL / 3L 110, XXXL 115.
+Letters with no number: XXS / 2XS 80 (added 2026-11-20: PXG 5429994082 sells "XS (33~44)" and "2XS"), XS 85, S 90, M 95, L 100, XL / LL 105, XXL / 3L 110, XXXL 115.
 
 ## Brand rows (`brands`)
 

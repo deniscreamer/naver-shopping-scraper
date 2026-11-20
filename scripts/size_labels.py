@@ -9,18 +9,18 @@ beside these, chosen by the profile's "labels" kind, never by changing these.
 import re
 from dataclasses import dataclass
 
-_LETTERS = {"XS": "XS", "S": "S", "M": "M", "L": "L", "XL": "XL", "LL": "LL", "XXL": "XXL", "2XL": "XXL",
+_LETTERS = {"XS": "XS", "S": "S", "M": "M", "L": "L", "XL": "XL", "LL": "LL", "XXL": "XXL", "2XL": "XXL", "2XS": "XXS",
             "3L": "3L", "XXXL": "XXXL", "3XL": "XXXL", "XXS": "XXS"}
 _FREE_RE = re.compile(r"^(?:FREE|F|프리|ONE\s*SIZE|원사이즈|FREESIZE|프리사이즈)$", re.I)
 _FREE_RANGE_RE = re.compile(r"^(?:FREE|F|프리|ONESIZE|원사이즈)(?:SIZE|사이즈)?\(([^)]*)\)$")   # "FREE SIZE(44-77)"
 _LETTER_RANGE_RE = re.compile(r"^(XXXL|3XL|XXL|2XL|XS|XL|LL|S|M|L)[/\-~](XXXL|3XL|XXL|2XL|XS|XL|LL|S|M|L)$")  # "S/M"
 _SIZE_NAME_RE = re.compile(r"사이즈|치수|size", re.I)        # an option's name that says it holds the sizes
-_LETTER_RE = re.compile(r"^(XXXL|3XL|XXL|2XL|XXS|XS|XL|LL|3L|S|M|L)$", re.I)
+_LETTER_RE = re.compile(r"^(XXXL|3XL|XXL|2XL|XXS|2XS|XS|XL|LL|3L|S|M|L)$", re.I)
 _NUM = r"\d{1,3}(?:\.\d)?(?:반)?"
 _RANGE_RE = re.compile(rf"^({_NUM})\s*[-~]\s*({_NUM})$")
 _OPEN_RE = re.compile(rf"^~?\s*({_NUM})\s*~?$")              # "77~", "~55": one end of a fit range, that number
 _PAREN_RE = re.compile(r"[(\[]([^)\]]*)[)\]]")
-_WOMEN = {44, 55, 66, 77, 88, 99}
+_WOMEN = {33, 44, 55, 66, 77, 88, 99}            # 33: below 44 ("XS (33~44)", PXG 5429994082, 2026-11-20)
 
 
 def _num(text: str) -> float:
@@ -71,6 +71,7 @@ def _numbers(part: str, letter: str | None, jp: int | None) -> tuple[list[float]
 def parse_label(text: str) -> Label | None:
     """A size label, or None when the text is not one (a colour, a type)."""
     t = re.sub(r"\s+", "", str(text or "")).upper().replace("（", "(").replace("）", ")")
+    t = t.replace("[", "(").replace("]", ")")       # "FREE[55~66]" (5932679597, 2026-11-20) is "FREE(55~66)"
     if _FREE_RE.match(t):                       # "ONE SIZE", "원사이즈": before the 사이즈 / SIZE suffix goes
         return Label(free=True)
     t = re.sub(r"사이즈$|SIZE$", "", t)
