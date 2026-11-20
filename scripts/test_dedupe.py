@@ -1195,8 +1195,8 @@ def test_a_jobs_own_takes_never_turn_a_catalog_loose_mid_run():
         c = {**item(200 + n, 6000 + n, "야마하 페미나 여성 풀세트", catalog="35750553619"), "status": "job"}
         assert index.decide(c).get("same_item"), n
         index.add(c)
-    seven = [item(300 + n, 7000 + n, "x 풀세트", catalog="1") for n in range(7)]
-    assert D.loose_catalogs(seven) == {"1"} and D.loose_catalogs(live) == set()
+    many = [item(300 + n, 7000 + n, "x 풀세트", catalog="1") for n in range(D.CATALOG_LOOSE + 1)]
+    assert D.loose_catalogs(many) == {"1"} and D.loose_catalogs(live) == set()
 
 
 def test_ages_shafts_and_store_brands():
@@ -1226,16 +1226,33 @@ def test_pairs_lists_same_item_hold_candidates():
     assert [(r["decision"], r["why"]) for r in rows] == [("same_item:a", "catalog 9"), ("same_item:b", "code X123456")]
 
 
-def test_the_jobs_hold_flag_reads_both_kinds():
+def test_a_same_item_candidate_is_a_flag_never_a_hold(tmp_path):
+    """The owner, 2026-11-20: the catalog / style code is not certain: no hold, the job lists the open pairs; a pair
+    the owner judged versions (lens/reviewed.jsonl) or one whose side left the store never comes back."""
     import job
 
     class FakeJob:
+        shop, shops_root, id = SHOP, str(tmp_path), "j"
+
         def __init__(self, events):
             self._e = events
 
         def events(self):
             return self._e
-    item_event = {"key": "k", "event": "duplicate_seen", "decision": "same_item:a", "why": ["code 521F4SD304"]}
-    upc_event = {"key": "k", "event": "duplicate_seen", "decision": "same_upc:b", "upc": ["0123456789012"]}
-    assert job.same_upc_of(FakeJob([item_event]), "k") == ("a", ["code 521F4SD304"])
-    assert job.same_upc_of(FakeJob([upc_event]), "k") == ("b", ["0123456789012"])
+    k, a, b, gone = (f"{SHOP}:naver:{c}:{p}" for c, p in ((1, 11), (2, 22), (3, 33), (4, 44)))
+    item_event = {"key": k, "event": "duplicate_seen", "decision": f"same_item:{a}", "same_item": [a, b, gone],
+                  "why": ["catalog 9", "code X123456", "catalog 9"]}
+    assert job.same_upc_of(FakeJob([item_event]), k) is None                     # never held
+    upc_event = {"key": k, "event": "duplicate_seen", "decision": "same_upc:x", "upc": ["0123456789012"]}
+    assert job.same_upc_of(FakeJob([upc_event]), k) == ("x", ["0123456789012"])
+    pub = tmp_path / SHOP / "publish"
+    pub.mkdir(parents=True)
+    (pub / "published.jsonl").write_text("".join(json.dumps({"key": x, "status": "published"}) + "\n"
+                                                 for x in (k, a, b)))
+    assert [(p["of"], p["why"]) for p in job.same_item_open(FakeJob([item_event]))] == [(a, "catalog 9"),
+                                                                                      (b, "code X123456")]
+    lens_dir = tmp_path / SHOP / "lens"
+    lens_dir.mkdir()
+    (lens_dir / "reviewed.jsonl").write_text(json.dumps({"keys": [k, a], "verdict": "versions"}) + "\n")
+    assert [p["of"] for p in job.same_item_open(FakeJob([item_event]))] == [b]
+    assert D.is_judged(a, k, D.judged(SHOP, str(tmp_path))) and not D.is_judged(a, b, D.judged(SHOP, str(tmp_path)))

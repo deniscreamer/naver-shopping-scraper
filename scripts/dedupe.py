@@ -166,7 +166,7 @@ def entry(line: dict[str, Any], status: str = "job", catalogs: dict[str, str | N
 # brand apparel; 4 club groups, all one item) joins what Naver files under two catalogs. So a match is a hold
 # candidate, never a decision: the job publishes it as a draft held for the owner (OWNER_RULES rule 2).
 _COMBO = re.compile(r"조합|\+")
-CATALOG_LOOSE = 6                               # more of our products in one catalog: Naver's loose filing, ignored
+CATALOG_LOOSE = 15                              # more of our products in one catalog: Naver's loose filing, ignored
 _CODE_TOKEN = re.compile(r"[A-Za-z0-9]+")
 # a shaft's model, not the club's (2026-11-20 review: Cleveland chippers of two heads on KBS MAX105)
 _SHAFT_CODE = re.compile(r"^(?:MAX|MODUS|NSPRO|ZELOS|KBS|DG|TOUR|SPEEDER|VENTUS|TENSEI)\d")
@@ -184,6 +184,20 @@ def _own_brand(brand: str, store: str | None) -> str:
     SNGR15702 under 대량가성비추천할인몰, 브론즈폭스, 스완굿즈, 2026-11-20 review)."""
     b, s = _norm(brand), _norm(store or "")
     return "" if not b or (s and (b in s or s in b)) else b
+
+
+def judged(shop: str, shops_root: str = SHOPS_ROOT) -> list[set[str]]:
+    """The groups the owner judged versions, not copies (<shop>/lens/reviewed.jsonl, `lens.py dupes --versions`):
+    a same-item pair inside one never comes back (2026-11-20)."""
+    out = []
+    for row in _jsonl(os.path.join(shops_root, shop, "lens", "reviewed.jsonl")):
+        if row.get("verdict") == "versions" and row.get("keys"):
+            out.append(set(row["keys"]))
+    return out
+
+
+def is_judged(a: str, b: str, groups: list[set[str]]) -> bool:
+    return any(a in g and b in g for g in groups)
 
 
 def loose_catalogs(entries: Iterable[dict[str, Any]]) -> set[str]:
@@ -879,7 +893,8 @@ def same_upc_groups(entries: list[dict[str, Any]], found: list[list[dict[str, An
     return sorted(out, key=lambda g: (g[0]["category"], g[0]["key"]))
 
 
-def same_item_groups(entries: list[dict[str, Any]], found: list[list[dict[str, Any]]]) -> list[list[dict[str, Any]]]:
+def same_item_groups(entries: list[dict[str, Any]], found: list[list[dict[str, Any]]],
+                     judged_groups: list[set[str]] | None = None) -> list[list[dict[str, Any]]]:
     """Hold candidates in the store (2026-11-20): products joined by same_item pairs (the same Naver catalog, not a
     loose one, or a style code) that no duplicate group holds together already; each group best first. Only listed:
     holding a copy is the owner's word (OWNER_RULES rule 2)."""
@@ -891,7 +906,7 @@ def same_item_groups(entries: list[dict[str, Any]], found: list[list[dict[str, A
             b = entries[j]
             if a["key"] in group_of and group_of.get(a["key"]) == group_of.get(b["key"]):
                 continue
-            if same_item(a, b, loose):
+            if same_item(a, b, loose) and not is_judged(a["key"], b["key"], judged_groups or []):
                 pairs.add((i, j))
     out = []
     for g in _union(len(entries), pairs):           # no chaining: a member pairs with every other of its group
@@ -899,7 +914,9 @@ def same_item_groups(entries: list[dict[str, Any]], found: list[list[dict[str, A
                                                                -(e["variants"] or 0), e["key"]))
         cliques: list[list[dict[str, Any]]] = []
         for e in ranked:
-            home = next((c for c in cliques if all(same_item(e, m, loose) for m in c)), None)
+            home = next((c for c in cliques if all(same_item(e, m, loose)
+                                                   and not is_judged(e["key"], m["key"], judged_groups or [])
+                                                   for m in c)), None)
             if home is None:
                 cliques.append([e])
             else:
@@ -952,7 +969,7 @@ def report(shop: str, shops_root: str = SHOPS_ROOT, category: str | None = None)
     entries = [e for e in index.by_key.values() if category is None or e["category"] == category]
     found = groups(entries)
     upc = same_upc_groups(entries, found)
-    item = same_item_groups(entries, found)
+    item = same_item_groups(entries, found, judged(shop, shops_root))
     brand_sold = brand_sold_pairs(entries, _brands(shop, shops_root), found)
     by_cat: dict[str, dict[str, int]] = {}
     for g in found:
@@ -1074,8 +1091,9 @@ def main(argv: list[str] | None = None) -> int:
         for cat, c in sorted(r["by_category"].items()):
             print(f"  {cat}: {c['groups']} groups, {c['products']} products")
         print(f"hold candidates, not groups (the owner decides each): same UPC {len(r['same_upc'])} groups "
-              f"({r['same_upc_extra']} extra copies); same Naver catalog or style code {len(r['same_item'])} groups "
-              f"({r['same_item_extra']} extra copies); same brand and sets sold {len(r['brand_sold'])} pairs")
+              f"({r['same_upc_extra']} extra copies); same brand and sets sold {len(r['brand_sold'])} pairs")
+        print(f"same-item candidates, a flag for the agent's review (same Naver catalog or style code, never held): "
+              f"{len(r['same_item'])} groups ({r['same_item_extra']} extra copies)")
         if a.list:
             def line(i: int, e: dict[str, Any], weak: set[str] = set()) -> str:
                 return (f"  {'best' if i == 0 else '    '} {e['key']}\t{e['grade']}\t{e['reviews']} reviews\t"

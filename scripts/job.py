@@ -106,9 +106,10 @@ no fewer variants (`replaced`, else `replace_skipped`). A title match not confir
 No confirmed match but the same UPC as a product under dedupe.upc_suspect (2026-11-17): `duplicate_seen` decision
 `same_upc:<key>`, taken as usual; under `on` it is published as a draft and held at once (`held_same_upc`: withdrawn,
 reason `hold: copy of live <key>, same UPC ...`, OWNER_RULES rule 2), the owner decides; under `log` the event only.
-The same Naver catalog or style code (dedupe.same_item, 2026-11-20) is a hold candidate too: decision
-`same_item:<key>`, `why` ["catalog <id>" / "code <code>"], held the same way (reason `hold: copy of live <key>, same
-Naver catalog <id>, ... (dedupe same_item)`, or `... same style code <code> ...`).
+The same Naver catalog or style code (dedupe.same_item, 2026-11-20) is a flag only, never acted on (the owner: not
+certain enough): decision `same_item:<key>`, `why` ["catalog <id>" / "code <code>"], the product goes on as usual;
+status, the done line and the progress line print the open pairs (same_item_open) for the agent's review, and
+`activate` leaves those drafts alone.
 A draft (draft first, 2026-11-16) does not replace a live product (`replace_skipped`, "the new one is a draft"):
 `activate` prints the withdraw line of the old one.
 
@@ -771,17 +772,35 @@ def replace_step(job: Job, ctx: Context, shop: Any, key: str) -> str:
 
 
 def same_upc_of(job: Job, key: str) -> tuple[str, list[str]] | None:
-    """(the key, the reasons) of `key`'s last `duplicate_seen` hold candidate, None without one: a same_upc event
-    (the UPCs) or a same_item one (2026-11-20: "catalog <id>" / "code <code>")."""
+    """(the key, the UPCs) of `key`'s last `duplicate_seen` same_upc event, None without one. A same_item event (the
+    Naver catalog or style code, 2026-11-20) is a flag only, never a hold: same_item_open."""
     for e in reversed(job.events()):
         if e.get("key") == key and e["event"] == "duplicate_seen":
             decision = str(e.get("decision") or "")
-            if decision.startswith("same_upc:"):
-                return decision.split(":", 1)[1], list(e.get("upc") or [])
-            if decision.startswith("same_item:"):
-                return decision.split(":", 1)[1], [str((e.get("why") or ["same item"])[0])]
-            return None
+            return (decision.split(":", 1)[1], list(e.get("upc") or [])) if decision.startswith("same_upc:") else None
     return None
+
+
+def same_item_open(job: Job) -> list[dict[str, Any]]:
+    """The job's same-item candidates still to review (the owner, 2026-11-20: a flag, never an automatic hold):
+    [{key, of, why}] per pair from the last `duplicate_seen` same_item event of each key, both products still
+    published (draft or live), the pair not judged versions (lens/reviewed.jsonl, `lens.py dupes --versions`)."""
+    import dedupe
+    from publish import Shop
+    ledger = Shop(job.shop, job.shops_root).ledger()
+    judged = dedupe.judged(job.shop, job.shops_root)
+    last: dict[str, dict[str, Any]] = {}
+    for e in job.events():
+        if e["event"] == "duplicate_seen":
+            last[e["key"]] = e
+    out = []
+    for key, e in last.items():
+        if not str(e.get("decision") or "").startswith("same_item:") or key not in ledger:   # ledger(): published
+            continue
+        for of, why in zip(e.get("same_item") or [], e.get("why") or []):
+            if of in ledger and not dedupe.is_judged(key, of, judged):
+                out.append({"key": key, "of": of, "why": why})
+    return out
 
 
 def upc_hold_step(job: Job, ctx: Context, shop: Any, key: str) -> str:
@@ -794,23 +813,19 @@ def upc_hold_step(job: Job, ctx: Context, shop: Any, key: str) -> str:
     if flag is None or any(e.get("key") == key and e["event"] == "held_same_upc" for e in job.events()):
         return ""
     of, upc = flag
-    item = bool(upc) and upc[0].startswith(("catalog ", "code "))    # same_item: the Naver catalog or style code
     ledger = shop.ledger()
     if key not in ledger or ledger[key].get("status") != "published":
         return ""
     live = (ledger.get(of) or {}).get("status") == "published"
-    source = (f"Naver {upc[0]}" if upc[0].startswith("catalog ") else f"style {upc[0]}") if item else ""
-    reason = (f"hold: {'copy of live' if live else 'same item as'} {of}, same {source}, kept as a draft for "
-              f"a separate decision (dedupe same_item)") if item else \
-        (f"hold: {'copy of live' if live else 'same UPC as'} {of}, same UPC {' '.join(upc)}, kept as a draft for "
-         f"a separate decision (dedupe same_upc)")
+    reason = (f"hold: {'copy of live' if live else 'same UPC as'} {of}, same UPC {' '.join(upc)}, kept as a draft for "
+              f"a separate decision (dedupe same_upc)")
     try:
         publish.withdraw(shop, key, ctx["publisher"][0], reason=reason)
     except CatalogError as e:
         job.log(key, "held_same_upc", of=of, why=f"withdraw failed: {e}"[:300])
-        return f"; {'same ' + source if item else 'same UPC'} as {of.split(':')[3]}, not held: {e}"[:200]
+        return f"; same UPC as {of.split(':')[3]}, not held: {e}"[:200]
     job.log(key, "held_same_upc", of=of, reason=reason)
-    return f"; held ({'same ' + source if item else 'same UPC'} as {of.split(':')[3]})"
+    return f"; held (same UPC as {of.split(':')[3]})"
 
 
 def one(job: Job, ctx: Context, key: str, stage_now: str | None, n: int = 0) -> str:
@@ -1080,6 +1095,7 @@ def take(job: Job, ctx: Context, key: str, stage_now: str | None, run: dict) -> 
     if run["taken"] % REPORT_EVERY == 0:
         print("== " + progress(job, run["taken"], time.monotonic() - run["started"]), flush=True)
         _review_reminder(job, due_only=True)                    # from REVIEW_AFTER drafts on
+        _same_item_reminder(job)
     job.beat(key=None, n=n, stage="pause", since=_now())
     time.sleep(PAUSE_S)
     return None
@@ -1149,6 +1165,7 @@ def _run(job: Job, args: argparse.Namespace) -> int:
             print(f"done: every product of the job is {job.final} or closed", flush=True)
             _dictionaries_reminder(job)
             _review_reminder(job)
+            _same_item_reminder(job)
             break
         stop = take(job, ctx, key, done.get(key), run)
         if stop:
@@ -1432,6 +1449,7 @@ def scroll(job: Job, ctx: Context, tab: Tab, screen: Any, known: set[str]) -> in
           + ("; the other mode can take them (new --exclude-known)" if left or cards else ""), flush=True)
     _dictionaries_reminder(job)
     _review_reminder(job)
+    _same_item_reminder(job)
     return 0
 
 
@@ -1541,7 +1559,8 @@ def cmd_activate(args: argparse.Namespace) -> int:
     import transform_shops
     from shopify_catalog import CatalogError
     job = open_job(args.job)
-    keys = drafts(job)
+    flagged = {p["key"] for p in same_item_open(job)}     # not activated before the review (2026-11-20)
+    keys = [k for k in drafts(job) if k not in flagged]
     admin = None
     if keys and not args.dry_run:
         from shop_stores import get_store
@@ -1563,6 +1582,9 @@ def cmd_activate(args: argparse.Namespace) -> int:
         print(f"{key}: activated ({row['store_status']}) {row.get('admin_url', '')}" if row else
               f"{key}: not a draft here")
     print(f"activate {job.id}: {len(keys)} drafts" + ("" if args.dry_run else f", {done} activated, {failed} failed"))
+    for key in sorted(flagged & set(drafts(job))):
+        print(f"{key}: left a draft: a same-item candidate not reviewed (job.py status --job {job.id}); "
+              f"publish.py {job.shop} --activate {key} on the owner's word after the review")
     lines = withdraw_lines(job)
     if lines:
         print("the old copies the drafts were to replace, still live (withdraw them on the owner's word once the new "
@@ -1602,6 +1624,10 @@ def cmd_status(args: argparse.Namespace) -> int:
         s["sweep_due"] = sweep_due(open_job(args.job))
     except Exception:                               # noqa: BLE001
         s["sweep_due"] = None
+    try:
+        s["same_item"] = same_item_open(open_job(args.job))
+    except Exception:                               # noqa: BLE001
+        s["same_item"] = None
     if args.json:
         print(json.dumps(s, ensure_ascii=False, indent=1))
         return 0
@@ -1621,6 +1647,7 @@ def cmd_status(args: argparse.Namespace) -> int:
     print(f"  ready {s['ready']}; next: {s['next']}; finished: {s['finished']}; not built yet: {s['not_built']}")
     _dictionaries_reminder(open_job(args.job))
     _review_reminder(open_job(args.job))
+    _same_item_reminder(open_job(args.job))
     if s["sweep_due"]:
         print(f"  sweep due: {s['sweep_due']} (skill sweep)")
     return 0
@@ -1803,6 +1830,25 @@ def review_due(job: Job) -> dict[str, Any] | None:
                          f"{lens} brand {job.shop} --source none --category {job.category}",
                          f"{lens} dupes {job.shop} --category {job.category}"],
             "withdraw": withdraw_lines(job)}
+
+
+def _same_item_reminder(job: Job) -> None:
+    """The open same-item pairs (the Naver catalog or style code, 2026-11-20): never held, the product may be live;
+    printed beside the review block (done, status, progress), independent of drafts."""
+    try:                                            # a hint never breaks a run
+        pairs = same_item_open(job)
+    except Exception:                               # noqa: BLE001
+        return
+    if not pairs:
+        return
+    print(f"  same-item candidates: {len(pairs)} pairs of job {job.id} not reviewed (same Naver catalog or style "
+          f"code; not held, live in a reviewed category): the agent checks each pair (skill visual-review: "
+          f".venv/bin/python scripts/dedupe.py --pairs {job.shop} --job {job.id}), the owner decides", flush=True)
+    for p in pairs[:10]:
+        print(f"    {p['key'].split(':')[3]} ~ {p['of'].split(':')[3]} ({p['why']}): .venv/bin/python scripts/lens.py "
+              f"products {job.shop} {p['key']} {p['of']}", flush=True)
+    if len(pairs) > 10:
+        print(f"    ... {len(pairs) - 10} more: job.py status --job {job.id} --json, key same_item", flush=True)
 
 
 def _review_reminder(job: Job, due_only: bool = False) -> None:
