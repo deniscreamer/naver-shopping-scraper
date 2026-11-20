@@ -48,9 +48,9 @@ brings it back (a product created as a draft comes back a draft). A withdrawal o
 a group marked versions (`lens.py dupes --versions`), is the owner's word as well. A job under `--dedupe on` holds one
 kind of such copy itself (2026-11-17): a product sharing a live product's UPC with titles that agree
 (`held_same_upc`, the same `hold: copy of live <key>` reason); list it for him like the others. A product of a
-published one's Naver catalog or style code (2026-11-20) is only flagged, never held: it goes on as usual (live in
-a reviewed category), the agent reviews the open pairs `job.py status` prints and brings him copy / versions /
-doubtful; versions he confirms are recorded (`lens.py dupes --versions`) and never come back. `dedupe.py --report`
+published one's Naver catalog or style code (2026-11-20) is parked: collected only, never translated or published;
+the agent reviews the parked pairs `job.py status` prints and brings him copy / versions / doubtful; a version is
+released (`job.py release`) and goes on, and versions he confirms are recorded (`lens.py dupes --versions`). `dedupe.py --report`
 lists the same-UPC, same-brand-and-sets and same-item candidates already in the store: acted on only on his word.
 
 ## 3. Never

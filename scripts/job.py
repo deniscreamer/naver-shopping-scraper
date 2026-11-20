@@ -106,10 +106,11 @@ no fewer variants (`replaced`, else `replace_skipped`). A title match not confir
 No confirmed match but the same UPC as a product under dedupe.upc_suspect (2026-11-17): `duplicate_seen` decision
 `same_upc:<key>`, taken as usual; under `on` it is published as a draft and held at once (`held_same_upc`: withdrawn,
 reason `hold: copy of live <key>, same UPC ...`, OWNER_RULES rule 2), the owner decides; under `log` the event only.
-The same Naver catalog or style code (dedupe.same_item, 2026-11-20) is a flag only, never acted on (the owner: not
-certain enough): decision `same_item:<key>`, `why` ["catalog <id>" / "code <code>"], the product goes on as usual;
-status, the done line and the progress line print the open pairs (same_item_open) for the agent's review, and
-`activate` leaves those drafts alone.
+The same Naver catalog or style code (dedupe.same_item, 2026-11-20) is never held nor published (the owner: not
+certain enough): under `on` the product is parked once collected, `not_taken` `parked_same_item:<key>` (with
+`same_item`, `why`), its raw record kept for the review; status, the done line and the progress line print the parked
+pairs (same_item_open); the agent checks them, and `job.py release --job <id> <key>` lets one go on (images,
+translation, description, publication, at the next scroll / run of the job). Under `log`: `duplicate_seen` only.
 A draft (draft first, 2026-11-16) does not replace a live product (`replace_skipped`, "the new one is a draft"):
 `activate` prints the withdraw line of the old one.
 
@@ -359,6 +360,8 @@ def closed(job: Job) -> dict[str, str]:
     for e in job.events():
         if e["event"] in ("not_taken", "deferred"):
             out[e["key"]] = f"{e['event']}: {e.get('reason')}"
+        elif e["event"] == "released":              # a parked same-item candidate the agent let go on (2026-11-20)
+            out.pop(e["key"], None)
         elif e["event"] == "failed":
             fails[e["key"]] += 1
             if fails[e["key"]] >= MAX_FAILS:
@@ -685,6 +688,7 @@ def keep_line(job: Job, line: dict, tmp: str) -> str:
 
 
 DEDUPE_EVENTS = ("duplicate_seen", "duplicate_better")
+PARKED = "parked_same_item:"                    # not_taken reason prefix: a same-item candidate collected only
 
 
 def dedupe_step(job: Job, ctx: Context, key: str, line: dict | None) -> str | None:
@@ -693,7 +697,7 @@ def dedupe_step(job: Job, ctx: Context, key: str, line: dict | None) -> str | No
     (a resume) is not looked up again."""
     import dedupe
     index = ctx["dedupe"]
-    if any(e.get("key") == key and e["event"] in DEDUPE_EVENTS for e in job.events()):
+    if any(e.get("key") == key and (e["event"] in DEDUPE_EVENTS or e["event"] == "released") for e in job.events()):
         return None
     # this job's own products closed or held meanwhile block nothing (2026-11-15, the wedge pilot: 10 sellers of
     # 5 models skipped as duplicates of a product held as agency_no_brand: the model reached the store from none)
@@ -714,6 +718,11 @@ def dedupe_step(job: Job, ctx: Context, key: str, line: dict | None) -> str | No
         index.add(cand)
         return None
     if d["decision"] is None and d.get("same_item"):        # the same Naver catalog or style code (2026-11-20)
+        if job.meta.get("dedupe") == "on":                  # parked: collected only, the agent reviews the pair
+            reason = f"{PARKED}{d['same_item'][0]}"         # and releases it (job.py release), the owner's choice
+            job.log(key, "not_taken", reason=reason, same_item=d["same_item"], why=d.get("why"),
+                    grade=cand["grade"], reviews=cand["reviews"], price=cand["price"], matches=d["matches"])
+            return f"parked: same {d['why'][0]} as {d['same_item'][0].split(':')[3]} (collected only)"
         job.log(key, "duplicate_seen", decision=f"same_item:{d['same_item'][0]}", same_item=d["same_item"],
                 why=d.get("why"), grade=cand["grade"], reviews=cand["reviews"], price=cand["price"],
                 matches=d["matches"])
@@ -782,25 +791,46 @@ def same_upc_of(job: Job, key: str) -> tuple[str, list[str]] | None:
 
 
 def same_item_open(job: Job) -> list[dict[str, Any]]:
-    """The job's same-item candidates still to review (the owner, 2026-11-20: a flag, never an automatic hold):
-    [{key, of, why}] per pair from the last `duplicate_seen` same_item event of each key, both products still
-    published (draft or live), the pair not judged versions (lens/reviewed.jsonl, `lens.py dupes --versions`)."""
+    """The job's parked same-item candidates still to review (the owner, 2026-11-20: the Naver catalog or style code
+    is not certain; such a product is collected only, never translated or published until released): [{key, of,
+    why}] per pair, the candidate not released, its partner still published, the pair not judged versions
+    (lens/reviewed.jsonl, `lens.py dupes --versions`)."""
     import dedupe
     from publish import Shop
     ledger = Shop(job.shop, job.shops_root).ledger()
     judged = dedupe.judged(job.shop, job.shops_root)
-    last: dict[str, dict[str, Any]] = {}
+    parked: dict[str, dict[str, Any]] = {}
     for e in job.events():
-        if e["event"] == "duplicate_seen":
-            last[e["key"]] = e
+        if e["event"] == "not_taken" and str(e.get("reason") or "").startswith(PARKED):
+            parked[e["key"]] = e
+        elif e["event"] == "released":
+            parked.pop(e["key"], None)
     out = []
-    for key, e in last.items():
-        if not str(e.get("decision") or "").startswith("same_item:") or key not in ledger:   # ledger(): published
-            continue
+    for key, e in parked.items():
         for of, why in zip(e.get("same_item") or [], e.get("why") or []):
-            if of in ledger and not dedupe.is_judged(key, of, judged):
+            if of in ledger and not dedupe.is_judged(key, of, judged):      # ledger(): published products
                 out.append({"key": key, "of": of, "why": why})
     return out
+
+
+def cmd_release(args: argparse.Namespace) -> int:
+    """Let parked same-item candidates go on (the agent's review, the owner's choice): `scroll --job` / `run --job`
+    takes them through images, translation, description and publication first. A key not parked here is refused."""
+    job = open_job(args.job)
+    parked = {e["key"] for e in job.events() if e["event"] == "not_taken"
+              and str(e.get("reason") or "").startswith(PARKED)}
+    released = {e["key"] for e in job.events() if e["event"] == "released"}
+    rows = {r["key"]: r for r in job.rows()}
+    code = 0
+    for ref in args.keys:
+        key = ref if ref in rows else next((k for k in rows if k.split(":")[3] == ref), ref)
+        if key not in parked or key in released:
+            print(f"{ref}: not a parked same-item candidate of job {job.id}")
+            code = 1
+            continue
+        job.log(key, "released", note=args.note or "")
+        print(f"{key}: released; {'scroll' if _scroll_mode(job) else 'run'} --job {job.id} takes it on")
+    return code
 
 
 def upc_hold_step(job: Job, ctx: Context, shop: Any, key: str) -> str:
@@ -1037,6 +1067,10 @@ def _context(job: Job) -> tuple[Context | None, int]:
         ctx["dedupe"] = dedupe.load(job.shop, job.shops_root, [r["key"] for r in job.rows() if r["key"] not in gone],
                                     records=ctx["dedupe_records"])
     return ctx, 0
+
+
+def _scroll_mode(job: Job) -> bool:
+    return job.meta.get("mode") == "scroll"
 
 
 def _scroll_job(job: Job) -> bool:
@@ -1559,8 +1593,7 @@ def cmd_activate(args: argparse.Namespace) -> int:
     import transform_shops
     from shopify_catalog import CatalogError
     job = open_job(args.job)
-    flagged = {p["key"] for p in same_item_open(job)}     # not activated before the review (2026-11-20)
-    keys = [k for k in drafts(job) if k not in flagged]
+    keys = drafts(job)
     admin = None
     if keys and not args.dry_run:
         from shop_stores import get_store
@@ -1582,9 +1615,6 @@ def cmd_activate(args: argparse.Namespace) -> int:
         print(f"{key}: activated ({row['store_status']}) {row.get('admin_url', '')}" if row else
               f"{key}: not a draft here")
     print(f"activate {job.id}: {len(keys)} drafts" + ("" if args.dry_run else f", {done} activated, {failed} failed"))
-    for key in sorted(flagged & set(drafts(job))):
-        print(f"{key}: left a draft: a same-item candidate not reviewed (job.py status --job {job.id}); "
-              f"publish.py {job.shop} --activate {key} on the owner's word after the review")
     lines = withdraw_lines(job)
     if lines:
         print("the old copies the drafts were to replace, still live (withdraw them on the owner's word once the new "
@@ -1833,17 +1863,18 @@ def review_due(job: Job) -> dict[str, Any] | None:
 
 
 def _same_item_reminder(job: Job) -> None:
-    """The open same-item pairs (the Naver catalog or style code, 2026-11-20): never held, the product may be live;
-    printed beside the review block (done, status, progress), independent of drafts."""
+    """The parked same-item pairs (the Naver catalog or style code, 2026-11-20): collected only; printed beside the
+    review block (done, status, progress), independent of drafts."""
     try:                                            # a hint never breaks a run
         pairs = same_item_open(job)
     except Exception:                               # noqa: BLE001
         return
     if not pairs:
         return
-    print(f"  same-item candidates: {len(pairs)} pairs of job {job.id} not reviewed (same Naver catalog or style "
-          f"code; not held, live in a reviewed category): the agent checks each pair (skill visual-review: "
-          f".venv/bin/python scripts/dedupe.py --pairs {job.shop} --job {job.id}), the owner decides", flush=True)
+    print(f"  parked same-item candidates: {len(pairs)} pairs of job {job.id} (same Naver catalog or style code; "
+          f"collected only, not translated or published): the agent checks each pair (skill visual-review; "
+          f".venv/bin/python scripts/dedupe.py --pairs {job.shop} --job {job.id}) and releases the versions: "
+          f"job.py release --job {job.id} <key> ...", flush=True)
     for p in pairs[:10]:
         print(f"    {p['key'].split(':')[3]} ~ {p['of'].split(':')[3]} ({p['why']}): .venv/bin/python scripts/lens.py "
               f"products {job.shop} {p['key']} {p['of']}", flush=True)
@@ -1937,6 +1968,10 @@ def main(argv: list[str] | None = None) -> int:
     s = sub.add_parser("status")
     s.add_argument("--job")
     s.add_argument("--json", action="store_true")
+    rl = sub.add_parser("release", help="let parked same-item candidates go on (after the agent's review)")
+    rl.add_argument("--job", required=True)
+    rl.add_argument("keys", nargs="+", help="keys or product ids parked as parked_same_item:<key>")
+    rl.add_argument("--note", help="why (the review's verdict)")
     a = sub.add_parser("activate", help="every draft of the job live (ACTIVE), on the owner's word")
     a.add_argument("--job", required=True)
     a.add_argument("--dry-run", action="store_true", help="list what would be activated; no store call")
@@ -1963,7 +1998,8 @@ def main(argv: list[str] | None = None) -> int:
     wa.add_argument("--json", action="store_true")
     args = p.parse_args(argv)
     code = {"new": cmd_new, "run": cmd_run, "status": cmd_status, "refresh": cmd_refresh,
-            "scroll": cmd_scroll, "activate": cmd_activate, "report": cmd_report, "where": cmd_where,
+            "scroll": cmd_scroll, "activate": cmd_activate, "release": cmd_release, "report": cmd_report,
+            "where": cmd_where,
             "watch": cmd_watch}[args.cmd](args)
     if args.cmd in ("run", "scroll") and getattr(args, "ran", None):
         tell_owner(args.ran, code)

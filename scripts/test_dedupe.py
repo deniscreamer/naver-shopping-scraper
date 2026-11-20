@@ -1226,9 +1226,10 @@ def test_pairs_lists_same_item_hold_candidates():
     assert [(r["decision"], r["why"]) for r in rows] == [("same_item:a", "catalog 9"), ("same_item:b", "code X123456")]
 
 
-def test_a_same_item_candidate_is_a_flag_never_a_hold(tmp_path):
-    """The owner, 2026-11-20: the catalog / style code is not certain: no hold, the job lists the open pairs; a pair
-    the owner judged versions (lens/reviewed.jsonl) or one whose side left the store never comes back."""
+def test_a_same_item_candidate_is_parked_never_held(tmp_path):
+    """The owner, 2026-11-20: the catalog / style code is not certain: the product is collected only (parked, not
+    taken), never held or published; the job lists the parked pairs; a pair judged versions or whose partner left the
+    store drops out, and a released one goes on."""
     import job
 
     class FakeJob:
@@ -1240,19 +1241,18 @@ def test_a_same_item_candidate_is_a_flag_never_a_hold(tmp_path):
         def events(self):
             return self._e
     k, a, b, gone = (f"{SHOP}:naver:{c}:{p}" for c, p in ((1, 11), (2, 22), (3, 33), (4, 44)))
-    item_event = {"key": k, "event": "duplicate_seen", "decision": f"same_item:{a}", "same_item": [a, b, gone],
-                  "why": ["catalog 9", "code X123456", "catalog 9"]}
-    assert job.same_upc_of(FakeJob([item_event]), k) is None                     # never held
-    upc_event = {"key": k, "event": "duplicate_seen", "decision": "same_upc:x", "upc": ["0123456789012"]}
-    assert job.same_upc_of(FakeJob([upc_event]), k) == ("x", ["0123456789012"])
+    parked = {"key": k, "event": "not_taken", "reason": f"{job.PARKED}{a}", "same_item": [a, b, gone],
+              "why": ["catalog 9", "code X123456", "catalog 9"]}
+    assert job.same_upc_of(FakeJob([parked]), k) is None                         # never held
+    assert job.closed(FakeJob([parked]))[k].startswith("not_taken: parked_same_item:")
     pub = tmp_path / SHOP / "publish"
     pub.mkdir(parents=True)
-    (pub / "published.jsonl").write_text("".join(json.dumps({"key": x, "status": "published"}) + "\n"
-                                                 for x in (k, a, b)))
-    assert [(p["of"], p["why"]) for p in job.same_item_open(FakeJob([item_event]))] == [(a, "catalog 9"),
-                                                                                      (b, "code X123456")]
+    (pub / "published.jsonl").write_text("".join(json.dumps({"key": x, "status": "published"}) + "\n" for x in (a, b)))
+    assert [(p["of"], p["why"]) for p in job.same_item_open(FakeJob([parked]))] == [(a, "catalog 9"),
+                                                                                (b, "code X123456")]
     lens_dir = tmp_path / SHOP / "lens"
     lens_dir.mkdir()
     (lens_dir / "reviewed.jsonl").write_text(json.dumps({"keys": [k, a], "verdict": "versions"}) + "\n")
-    assert [p["of"] for p in job.same_item_open(FakeJob([item_event]))] == [b]
-    assert D.is_judged(a, k, D.judged(SHOP, str(tmp_path))) and not D.is_judged(a, b, D.judged(SHOP, str(tmp_path)))
+    assert [p["of"] for p in job.same_item_open(FakeJob([parked]))] == [b]
+    released = [parked, {"key": k, "event": "released"}]
+    assert job.same_item_open(FakeJob(released)) == [] and k not in job.closed(FakeJob(released))

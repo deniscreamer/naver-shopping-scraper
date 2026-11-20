@@ -319,9 +319,10 @@ owner's word only: withdraw the wrong ones (`publish.py <shop> --withdraw <key> 
 product sold by another store too is closed (`not_taken: duplicate_of:<key>`) unless it is strictly better (store
 grade, then reviews), and a better one replaces the old product once published. One sharing a live product's UPC
 with no confirmed match (2026-11-17) is published as a draft and held (`held_same_upc`, `hold: copy of live <key>`):
-list it for the owner. One of its Naver catalog or style code (2026-11-20, `same_item`) is only flagged: status and
-the done line print `same-item candidates: N`, review each pair (skill visual-review) and report copy / versions /
-doubtful; `activate` leaves those drafts. The W7 pilot (2026-11-17, `--dedupe log`, 20 wedge sets published as drafts): every one was a
+list it for the owner. One of its Naver catalog or style code (2026-11-20, `same_item`) is parked once collected
+(`not_taken: parked_same_item:<key>`, raw data only): status and the done line print `parked same-item candidates:
+N`, review each pair (skill visual-review), report copy / versions / doubtful, and on the owner's word
+`job.py release --job <id> <key>` the versions (the next `scroll --job` takes them on). The W7 pilot (2026-11-17, `--dedupe log`, 20 wedge sets published as drafts): every one was a
 copy of a live product and `on` would have closed all 20; the owner said yes, `on` stays the default. The rule, the events, `--pairs`, `--report` and the pilots: [DEDUPE.md](DEDUPE.md).
 
 ## Flags
