@@ -1256,3 +1256,17 @@ def test_a_same_item_candidate_is_parked_never_held(tmp_path):
     assert [p["of"] for p in job.same_item_open(FakeJob([parked]))] == [b]
     released = [parked, {"key": k, "event": "released"}]
     assert job.same_item_open(FakeJob(released)) == [] and k not in job.closed(FakeJob(released))
+
+
+def test_a_reopened_product_is_no_longer_closed():
+    import job
+
+    class FakeJob:
+        def __init__(self, events):
+            self._e = events
+
+        def events(self):
+            return self._e
+    k = f"{SHOP}:naver:1:11"
+    closed = {"key": k, "event": "not_taken", "reason": "card_not_found"}
+    assert k in job.closed(FakeJob([closed])) and k not in job.closed(FakeJob([closed, {"key": k, "event": "reopened"}]))

@@ -231,6 +231,27 @@ def next_batch(sid):
         _lock.release()
 
 
+# 2026-11-20 (the knit scroll resumed after a stop, and the chipper scroll of 2026-11-19): when a resumed job skips
+# the first batches (their products known), the tab is wheeled through them at once and the current batch's cards
+# are not in the DOM when its first product is asked (25 + 6 "no card in the listing tab", batch 2-3); the same
+# products were read by a click in the first run, after the page had moved through batch 1 card by card. The list is
+# virtualized: a card renders near the viewport. So the tab is wheeled up, then down, a step at a time, looking again.
+SEEK_UP, SEEK_DOWN, SEEK_DY = 6, 10, 700
+
+
+def _seek_card(bridge, tab, product_id):
+    """The card's selector after wheeling the listing tab up, then down, one step at a time; None when it never
+    showed (the caller answers CardMissing as before)."""
+    for dy in [-SEEK_DY] * SEEK_UP + [SEEK_DY] * (SEEK_UP + SEEK_DOWN):
+        bridge.call("scroll", tabId=tab, dy=dy)
+        ext_listing.pause(0.4, 0.8)
+        selector = ext_product._card(bridge, tab, product_id)
+        if selector:
+            ext_listing.log(f"listing tab: card of {product_id} found after wheeling ({dy:+d})")
+            return selector
+    return None
+
+
 def specs(sid, product):
     """The /products/specs answer for `product`, its card clicked in the session's listing tab (no search)."""
     _turn(sid)
@@ -246,7 +267,7 @@ def specs(sid, product):
         opened = {}
         try:
             try:
-                selector = ext_product._card(bridge, tab, product_id)
+                selector = ext_product._card(bridge, tab, product_id) or _seek_card(bridge, tab, product_id)
             except ExtError as e:
                 raise _gone(sid, f"the adapter failed on the listing tab ({e})")
             if not selector:

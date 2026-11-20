@@ -440,6 +440,10 @@ surfaces.
   the search renders it. Its `__PRELOADED_STATE__` holds no product data when read; the rendered 상품정보 list does,
   folded after 9 rows behind "상품정보 펼쳐보기", and can render seconds after load. -> `ext_product` docstring and
   `read_page` comment, `pdp` module docstring.
+- 2026-11-20: a resumed scroll that skips its first batches (products known) wheels through them at once, and the
+  current batch's cards are not yet in the virtualized list when its first product is asked ("no card in the
+  listing tab", 25 in a row); the tab is wheeled up then down looking again before CardMissing.
+  -> `ext_listing_tab._seek_card`.
 - 2026-11-20: the page's own product answer names the price-comparison catalog the listing is matched to,
   `epInfo.matchingModelId` (sometimes `matchingNsin`), beside `syncNvMid` (the listing's own nvMid, our `catalog_id`);
   box simple-products has neither; the page HTML's simpleCatalogs lists are empty. -> `parsers.parse_page_catalog`.

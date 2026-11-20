@@ -417,3 +417,27 @@ def test_read_page_still_keeps_its_search_tab(chrome, tmp_path, monkeypatch):
 def test_specs_tail_needs_the_list(tmp_path):
     with pytest.raises(ext_product.AdapterError, match="^adapter error:"):
         ext_product._specs_tail(details(link("42")), {"url": "u", "html": "<html></html>"}, "q", str(tmp_path))
+
+
+def test_a_card_not_rendered_yet_is_found_by_wheeling(chrome):
+    """2026-11-20: a resumed scroll wheels through its known batches at once; the current batch's card renders only
+    after the tab is wheeled near it (25 'no card' in a row). The tab is wheeled up, then down, before CardMissing."""
+    tab = opened(chrome)
+    chrome.cards.discard(FIRST[0])
+    base = chrome.call
+
+    def later(op, **a):
+        if op == "scroll" and a.get("dy", 0) > 0 and chrome.count("scroll") >= 7:
+            chrome.cards.add(FIRST[0])                       # rendered once wheeled back down past it
+        return base(op, **a)
+    chrome.call = later
+    assert call("GET", f"/listing-tabs/{tab['id']}/specs", product=link(FIRST[0]))[0] == 200
+    wheels = [dy for op, _, dy in chrome.ops if op == "scroll"]
+    assert wheels[:6] == [-ext_listing_tab.SEEK_DY] * 6 and wheels[6] == ext_listing_tab.SEEK_DY
+
+
+def test_card_missing_after_wheeling_still_keeps_the_session(chrome):
+    tab = opened(chrome)
+    chrome.cards.discard(FIRST[0])
+    assert call("GET", f"/listing-tabs/{tab['id']}/specs", product=link(FIRST[0]))[0] == 404
+    assert chrome.count("scroll") == 2 * ext_listing_tab.SEEK_UP + ext_listing_tab.SEEK_DOWN

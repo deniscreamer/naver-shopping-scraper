@@ -26,7 +26,9 @@ Files, scripts/output/jobs/<job id>/:
     listing.jsonl  the screened snapshot in listing order (row + key)
     screened.jsonl scroll: every row the screen left out, append-only (at, batch, product_id, name, reason: the
                    Screen's code, or known), once a product a run, for the audit of the leave-outs
-    events.jsonl   what no other file records, append-only: not_taken / deferred / failed / stop / done, with time
+    events.jsonl   what no other file records, append-only: not_taken / deferred / failed / stop / done, with time;
+                   `released` (a parked same-item candidate let go on) and `reopened` (a product closed by a fault
+                   fixed since, 2026-11-20: card_not_found after a fast resume) undo a key's closing
     tmp/           a product's line and photos until they are kept (keep_run), then removed
 
 A product's stage is read from the files, not from the log: collected = its key in the shop's kept runs
@@ -360,8 +362,8 @@ def closed(job: Job) -> dict[str, str]:
     for e in job.events():
         if e["event"] in ("not_taken", "deferred"):
             out[e["key"]] = f"{e['event']}: {e.get('reason')}"
-        elif e["event"] == "released":              # a parked same-item candidate the agent let go on (2026-11-20)
-            out.pop(e["key"], None)
+        elif e["event"] in ("released", "reopened"):   # a parked same-item candidate the agent let go on, or a
+            out.pop(e["key"], None)                   # product closed by a fault fixed since (2026-11-20)
         elif e["event"] == "failed":
             fails[e["key"]] += 1
             if fails[e["key"]] >= MAX_FAILS:
