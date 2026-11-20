@@ -18,7 +18,7 @@ FX = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures")
 PREPARED, COLLECTED = os.path.join(FX, "prepared"), os.path.join(FX, "collected")
 NAMES = sorted(n for n in os.listdir(PREPARED) if n.endswith(".json"))
 RUN_TRANSFORM_ADDS = {"description_images_text"}
-CATEGORY_ADDS = {"composition_ko"}                 # CategoryRules.composition only (knit cardigans, 2026-11-19)
+CATEGORY_ADDS = {"composition_ko", "sizes"}               # CategoryRules.composition only (knit cardigans, 2026-11-19)
 
 
 def test_there_are_golden_products():

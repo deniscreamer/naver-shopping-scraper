@@ -30,6 +30,10 @@ order, the first that gives a value (`brand_source` says which):
   4. the importer / distributor in 원산지's brackets   "origin" ("일본산(혼마코리아)": 혼마코리아)
   5. a brand of the shop in the images' text           "images_text": the one read most often (a Korean
                                                         brand only where a word starts: 쇼핑 is not 핑)
+  5b. the shop's own brand: the shop's name           "shop_wordmark" (own_brand_shown: its slug read 3 times in its
+                                                        texts, or "브랜드 <name>", "<name>의 상표권"; Tee And Golf,
+                                                        2026-11-19); transform.prepare keeps a brand row the reseller
+                                                        rule dropped the same way (Grehip)
   6. a Latin brand phrase the images repeat            "images_text_latin": two words or more, read MIN_LATIN times
                                                         or more (13425122164: "BEN SAYERS" 24 times)
   7. 노브랜드 (no brand)                                "none": an unbranded product (13464713764: an indoor putter
@@ -128,6 +132,42 @@ def resellers_own(name: str | None, maker: str | None, store: dict[str, Any] | N
     partner = _PARTNER.search(maker or "")
     # the brand row may be the partner phrase itself ("수수협력사 co." by the shop 수수, 2026-11-18): the shop's own
     return bool(partner and _norm(_PARTNER.sub("", maker or "")) in own and _norm(_PARTNER.sub("", name or "")) in own)
+
+
+# the shop sells its own brand (2026-11-19, the knit cardigan pilot): 그레힙 wrote "그레힙 협력업체" as the maker (so
+# resellers_own dropped its brand row) while its images say "GREHIP OFFICIAL SHOP", "그레힙의 상표권" and "grehip" 9
+# times (13759750310, 9992270463); 티앤드 골프 gave no brand row and its images "골프웨어 브랜드 티앤드입니다", so the
+# slogan "EVER YDAY" embroidered on the cardigan became the vendor (11519647149). The shop's Latin address (its slug)
+# read as a word MIN_WORDMARK times in its own texts, or its name next to 브랜드 / 상표권 / 공식 판매처, is a brand.
+MIN_WORDMARK = 3
+_SLUG_FILLER = {"golf", "shop", "store", "mall", "outlet", "official", "korea", "kr", "co", "the", "www"}
+_OWN_WORDS = re.compile(r"상표권|상표\s*등록|공식\s*(?:정품\s*)?판매처|공식\s*(?:스토어|몰)|official\s*(?:shop|store)", re.I)
+
+
+def own_brand_shown(store: dict[str, Any] | None, texts: list[str]) -> str | None:
+    """The shop's name when its own texts (description, images) show it as a brand; None otherwise. The slug counts
+    as a word of its own, not inside a web or mail address (www.x.com, x@gmail.com, x16); a slug of filler words only
+    (golf, shop, outlet ...) or under 4 letters says nothing. The Korean name counts next to the words that make it
+    the brand ("브랜드 티앤드", "그레힙의 상표권", "그레힙 공식 스토어"), never "<name>는 X 공식 판매처"."""
+    store = store or {}
+    name = clean(str(store.get("name") or ""))
+    if not name:
+        return None
+    words = [w for w in re.split(r"[^a-z]+", str(store.get("slug") or "").lower()) if w]
+    if sum(len(w) for w in words if w not in _SLUG_FILLER) >= 4:
+        mark = re.compile(r"(?<![a-z0-9./@_-])" + r"[\s_-]*".join(map(re.escape, words)) + r"(?![a-z0-9@_-]|\.[a-z])",
+                          re.I)
+        if sum(len(mark.findall(t)) for t in texts) >= MIN_WORDMARK:
+            return name
+    names = {_norm(name)} | ({_norm(re.sub(r"\s*골프\s*$", "", name))} - {""})
+    for t in texts:
+        row = _norm(t)
+        for n in names:
+            if len(n) >= 2 and (f"브랜드{n}" in row or f"{n}브랜드" in row
+                                or re.search(re.escape(n) + r"(?:의)?(?:상표권|상표등록|공식(?:스토어|몰|쇼핑몰|정품판매처|판매처))",
+                                             row)):
+                return name
+    return None
 
 
 def clean(name: str | None) -> str | None:
@@ -413,7 +453,8 @@ def _own_shop(name: str, store: set[str]) -> bool:
 
 def decide(title: str | None, origin: str | None, brands: list[str], rows: list[str],
            known: list[str] | None = None, description: str | None = None,
-           release: str | None = None, store: set[str] | None = None) -> tuple[str, str, list[str]]:
+           release: str | None = None, store: set[str] | None = None,
+           shop: dict[str, Any] | None = None) -> tuple[str, str, list[str]]:
     """-> (brand, source, other candidates) for a product with no brand of its own (steps 3-7; known: the brand
     dictionary's Korean names, for a title that starts with one; release: the notice's 동일 모델의 출시연월 row)."""
     titled = in_title(title, brands)
@@ -444,6 +485,9 @@ def decide(title: str | None, origin: str | None, brands: list[str], rows: list[
     if seen:
         top = [b for b, _ in seen.most_common()]
         return top[0], "images_text", top[1:3]
+    own = own_brand_shown(shop, rows + (description or "").splitlines())   # before a slogan the images repeat
+    if own:                                                                  # ("EVER YDAY": 11519647149, 2026-11-19)
+        return own, "shop_wordmark", []
     latin = [(p, n) for p, n in latin_phrases(rows).most_common() if n >= MIN_LATIN]
     if latin:
         return latin[0][0], "images_text_latin", [p for p, _ in latin[1:3]]
@@ -482,7 +526,8 @@ def store_named(brand: str | None, title: str | None, store_names: set[str], kno
 def fill(prepared: list[Any], rows_of: Callable[[str], list[str]],
          origins: dict[str, str | None], texts: Callable[[Any], list[dict[str, str]]],
          known: list[str] | None = None, by_owner: dict[str, str] | None = None,
-         releases: dict[str, str | None] | None = None, stores: dict[str, set[str]] | None = None) -> int:
+         releases: dict[str, str | None] | None = None, stores: dict[str, set[str]] | None = None,
+         shops: dict[str, dict[str, Any]] | None = None) -> int:
     """Give every product without a brand one (steps 3-7), add the note and the brand to its texts. rows_of(key): the
     images' OCR rows of the product; origins: {key: 원산지 as the page states it}; by_owner: {key: brand} the owner
     read on the photos (source "owner", before every step; 2026-11-15: ALVO stamped on the heads, no text naming it);
@@ -509,7 +554,8 @@ def fill(prepared: list[Any], rows_of: Callable[[str], list[str]],
         else:
             brand, source, others = decide(product.get("title_ko"), origins.get(p["key"]), brands, rows_of(p["key"]),
                                            known, _description(product.get("description_ko")),
-                                           (releases or {}).get(p["key"]), (stores or {}).get(p["key"]))
+                                           (releases or {}).get(p["key"]), (stores or {}).get(p["key"]),
+                                           (shops or {}).get(p["key"]))
         p["product"]["brand_ko"], p["product"]["brand_source"] = brand, source
         p["notes"] = [x for x in p["notes"] if x["code"] != "brand_fallback"] + [
             {"code": "brand_fallback", "detail": f"{source}: {brand}" + (f"; also {', '.join(others)}" if others else "")

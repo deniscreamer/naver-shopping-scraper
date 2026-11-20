@@ -138,7 +138,14 @@ COUNTRIES = {"일본": "Japan", "중국": "China", "미국": "USA", "베트남":
              "말레이시아": "Malaysia", "홍콩": "Hong Kong", "japan": "Japan", "china": "China", "usa": "USA",
              "u.s.a": "USA", "vietnam": "Vietnam", "taiwan": "Taiwan", "korea": "Korea", "thailand": "Thailand",
              "indonesia": "Indonesia", "mexico": "Mexico", "malaysia": "Malaysia"}
-_COUNTRY_RE = re.compile("|".join(sorted(map(re.escape, COUNTRIES), key=len, reverse=True)), re.I)
+# "국산" / "국내산" / "국내생산" / "국내제조" (made in this country: Korea) only as a word's start, and never of a material
+# ("국산원단 수입완제품": Korean fabric, an imported garment): 중국산, 외국산 and 수입국산 are not (the owner, 2026-11-19:
+# 106 products with a 국산 origin row, 52 of them published, had lost "Made in Korea")
+DOMESTIC = {"국산": "Korea", "국내산": "Korea", "국내생산": "Korea", "국내제조": "Korea"}
+COUNTRIES.update(DOMESTIC)
+_COUNTRY_RE = re.compile("(?<![가-힣])(?:" + "|".join(map(re.escape, DOMESTIC)) + r")(?!\s*(?:원단|원사|소재|부자재|자재|원료))|"
+                         + "|".join(
+    sorted(map(re.escape, set(COUNTRIES) - set(DOMESTIC)), key=len, reverse=True)), re.I)
 _ORIGIN_RE = re.compile(r"제조국|원산지|원산국|생산국|made\s+in", re.I)
 _UNSURE_RE = re.compile(r"아닌|아님|아닙|변동|변경|상이|다를|기타|제3국|조립|등")   # "not Japan", "may change", "and others"
 _PRODUCED_RE = re.compile(r"에서\s*생산")                                   # "베트남, 타이완, 중국에서생산됩니다"

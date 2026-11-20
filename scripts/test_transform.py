@@ -1013,5 +1013,5 @@ def test_the_composition_rows_are_kept_for_the_duty_and_the_description():
                                                            ("package_height_mm", 40), ("package_weight_g", 400))}
     variant = {**p["product"]["variants"][0], "package": box}       # the fixture's package rows are the chipper's
     b = policy("fairwardgolf").quote(variant, p["product"], "50002797").breakdown
-    assert b is not None and b["dutyRate"] == "0.32" and b["dutyBasis"]["fibre"] == "man-made" \
+    assert b is not None and b["dutyRate"] == "0.125" and b["dutyBasis"]["byFibre"] == "0.32" and b["dutyBasis"]["fibre"] == "man-made" \
         and b["dutyBasis"]["source"] == "notice" and b["coefficient"] == "1.10"

@@ -60,6 +60,16 @@ class CategoryRules:
                                          # 섬유의 조성) kept as product.composition_ko: the price's duty by the chief
                                          # fibre (shop_pricing) and the description's materials (knit cardigans,
                                          # the owner 2026-11-19)
+    sizes: str | None = None             # apparel: the size option's Korean values -> US sizes, the seller's garment
+                                         # measurements for the size chart (apparel_sizes.py, a size_profiles/<name>.json
+                                         # profile; knit cardigans "womens_tops", the owner 2026-11-19); a value it
+                                         # cannot read holds the product size_unmapped. None: the clubs, untouched
+    own_brand_wordmark: bool = False     # a shop that shows its own brand (its Latin address read 3 times in its
+                                         # texts, "브랜드 <name>", "<name>의 상표권") gives its name as the brand: the
+                                         # fallback's step 5b, and a brand row the reseller rule dropped kept
+                                         # (brand_fallback.own_brand_shown; knit cardigans, 2026-11-19: Grehip, Tee
+                                         # And Golf). Off for the clubs: 56 club resellers' banners and URLs repeat
+                                         # their slugs (도쿄피아, 렉스골프 ...), their brands are Mizuno, Yamaha
     reviewed: bool = False               # publish.py creates its new products ACTIVE; False: DRAFT, until the agent's
                                          # lens review and the owner's activation (2026-11-16: 369 products, 15.7%,
                                          # of those published were withdrawn later; each new category showed buyers
@@ -141,7 +151,9 @@ RULES = {
                                       paid_variants=True, paid_addons=False, description_images=True,
                                       gift_axis_out=True,   # a free gift's sizes are not versions of the cardigan
                                       no_choice_out=True,   # "선택안함" / "없음" values are not versions
-                                      composition=True,     # the duty by the chief fibre (shop_pricing)
+                                      composition=True,     # the fibre rows: the description's materials
+                                      sizes="womens_tops",  # US sizes and the size chart (the owner 2026-11-19)
+                                      own_brand_wordmark=True,   # the shop's own brand (Grehip, Tee And Golf)
                                       reviewed=False),      # a new category: DRAFT until the lens review and the
                                                             # owner's activation
         }),

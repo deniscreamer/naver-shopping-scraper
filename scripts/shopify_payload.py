@@ -37,6 +37,7 @@ import re
 import unicodedata
 from typing import Any
 
+import apparel_sizes
 from review_clean import cut_english
 from shop_pricing import Policy, PriceError, money
 from transform import text_id
@@ -410,6 +411,9 @@ def _single(product: dict[str, Any], en: English) -> tuple[str, str]:
     extra), else the universal FALLBACK_OPTION. A gift line is not a choice."""
     facts = [f for f in product.get("facts") or [] if f.get("value_ko") and not _GIFT_RE.search(
         (f.get("label_ko") or "") + f["value_ko"])]
+    fact = (product.get("sizes") or {}).get("fact")
+    if len(facts) == 1 and fact and facts[0].get("value_ko") == fact["ko"]:   # apparel: the US size, never Korean
+        return "Size", fact["us"]
     if len(facts) == 1:
         value = _value(en("fact_value", facts[0]["value_ko"]))
         name = en("fact_label", facts[0]["label_ko"]).strip() if facts[0].get("label_ko") else ""
@@ -417,6 +421,16 @@ def _single(product: dict[str, Any], en: English) -> tuple[str, str]:
         if value:
             return (name or FALLBACK_OPTION[0])[:OPTION_VALUE_MAX], value[:OPTION_VALUE_MAX]
     return FALLBACK_OPTION
+
+
+def _sizes_after_twins(before: dict[str, Any], after: dict[str, Any]) -> dict[str, Any]:
+    """product.sizes' option index after _twins made a repeated option one (the index may move or the repeat go)."""
+    sizes = before.get("sizes")
+    if not sizes or sizes.get("option") is None or after is before:
+        return after
+    values = before["options"][sizes["option"]]["values_ko"]
+    left = [i for i, o in enumerate(after.get("options") or []) if o["values_ko"] == values]
+    return {**after, "sizes": {**sizes, "option": left[0] if left else None, **({} if left else {"values": []})}}
 
 
 def _twins(product: dict[str, Any], en: English) -> dict[str, Any]:
@@ -454,14 +468,25 @@ def _options(product: dict[str, Any], en: English) -> tuple[list[dict[str, Any]]
         return [{"name": name, "values": [{"name": value}]}], []
     out: list[dict[str, Any]] = []
     values_en: list[list[str]] = []
-    for o in options:
+    sizes = product.get("sizes") or {}
+    us = {v["ko"]: v["us"] for v in sizes.get("values") or []}
+    for n, o in enumerate(options):
+        if n == sizes.get("option") and us:          # apparel: the US sizes, never the Korean (apparel_sizes.py)
+            names = [us[v] for v in o["values_ko"]]
+            out.append({"name": "Size", "values": [{"name": v} for v in names]})
+            values_en.append(names)
+            continue
         name = _OPTION_NAME_RE.sub("/", en("option_name", o["name_ko"])).strip()
         name = _SELECT_RE.sub("", name).strip() or FALLBACK_OPTION[0]
         names = _unique([_value(en("option_value", v)) for v in o["values_ko"]])
         out.append({"name": name[:OPTION_VALUE_MAX], "values": [{"name": v} for v in names]})
         values_en.append(names)
     seen: set[str] = set()                             # two options with one English name: Shopify refuses it
+    if us and sizes.get("option") is not None:         # "Size" is the US sizes' (another option says "Size 2")
+        seen.add("Size")
     for i, o in enumerate(out):
+        if us and i == sizes.get("option"):
+            continue
         while o["name"] in seen:
             o["name"] = f"{o['name'][:OPTION_VALUE_MAX - 4]} {i + 1}"
         seen.add(o["name"])
@@ -522,6 +547,23 @@ def _variants(prepared: dict[str, Any], options: list[dict[str, Any]], values_en
                 "costUsd": float(cost) if cost != int(cost) else int(cost), "priceUsd": price,
                 "available": available})}],
         }
+        sizes = product.get("sizes") or {}
+        picked_ko = v.get("options_ko") or []
+        size_pair = None                                # which Naver size to order (the owner, 2026-11-19)
+        if sizes.get("values") and sizes.get("option") is not None:
+            if sizes["option"] >= len(picked_ko):
+                raise PayloadError(f"variant {v.get('sku')}: no value of the size option")
+            ko = picked_ko[sizes["option"]]
+            us = next((x["us"] for x in sizes["values"] if x["ko"] == ko), None)
+            if us is None:
+                raise PayloadError(f"variant {v.get('sku')}: size {ko!r} has no US size")
+            size_pair = (ko, us)
+        elif sizes.get("fact"):
+            size_pair = (sizes["fact"]["ko"], sizes["fact"]["us"])
+        if size_pair:
+            source = json.loads(variant["metafields"][0]["value"])
+            source.update(sizeKo=size_pair[0], sizeUs=size_pair[1])
+            variant["metafields"][0]["value"] = _json(source)
         if quote.breakdown:
             variant["metafields"].append({"namespace": "fairwardgolf", "key": "price", "type": "json", "value": _json({
                 "schemaVersion": "fairwardgolf-variant-price/1", **quote.breakdown})})
@@ -663,7 +705,7 @@ def product_input(prepared: dict[str, Any], translated: dict[str, Any], placemen
     product) per gallery photo, in order; alt is set here. `rows`: the review rows (reviews()).
     `description_html`: the product's description (describe.py); a product without one keeps an empty body."""
     en = English(translated)
-    prepared = {**prepared, "product": _twins(prepared["product"], en)}
+    prepared = {**prepared, "product": _sizes_after_twins(prepared["product"], _twins(prepared["product"], en))}
     product, source = prepared["product"], prepared["source"]
     title, brand = title_vendor(product, en, vendors, tenant)
     options, values_en = _options(product, en)
@@ -715,6 +757,18 @@ def product_input(prepared: dict[str, Any], translated: dict[str, Any], placemen
         metafields.append({"namespace": "custom", "key": "required_selections", "type": "json", "value": _json(must)})
     if extra_all:
         metafields.append({"namespace": "fairwardgolf", "key": "addons", "type": "json", "value": _json(extra_all)})
+    sizes = product.get("sizes")
+    if sizes and (sizes.get("values") or sizes.get("chart") or sizes.get("fact")):   # apparel: US -> the Korean value
+                                                                                       # on Naver, and the chart
+        metafields.append({"namespace": "fairwardgolf", "key": "sizes", "type": "json", "value": _json({   # chart
+            "schemaVersion": "fairwardgolf-sizes/1", "rules": sizes.get("version"), "profile": sizes.get("profile"),
+            "brandRow": sizes.get("brand_row"),
+            "map": [{"us": v["us"], "ko": v["ko"], "chestCm": v.get("chest_cm"), "basis": v["basis"]}
+                    for v in sizes.get("values") or []] + ([{"us": sizes["fact"]["us"], "ko": sizes["fact"]["ko"],
+                                                             "chestCm": None, "basis": "fact"}]
+                                                           if sizes.get("fact") else []),
+            "mergedKo": sizes.get("merged") or {}, "chartCm": (sizes.get("chart") or {}).get("rows") or []})})
+        description_html += apparel_sizes.chart_html(sizes, section_en=lambda ko: _value(en("option_value", ko)))
     return {
         "title": title, "handle": handle_override or handle(title, brand), "vendor": brand,
         "productType": product_type, "tags": tags, "status": "ACTIVE",    # 2026-11-16: publish_one sets the
@@ -730,7 +784,7 @@ def product_input(prepared: dict[str, Any], translated: dict[str, Any], placemen
 # deleted (productSet adds and updates metafields, it never removes one).
 MANAGED = (("custom", "review"), ("custom", "rating_count"), ("custom", "reviews_seo"), ("custom", "reviews_feed_url"),
            ("custom", "personalization_fields"), ("custom", "optional_addons"), ("custom", "required_selections"),
-           ("fairwardgolf", "addons"))
+           ("fairwardgolf", "addons"), ("fairwardgolf", "sizes"))
 
 
 def stale(payload: dict[str, Any]) -> list[tuple[str, str]]:

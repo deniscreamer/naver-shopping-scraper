@@ -123,6 +123,10 @@ is sent again.
 - Delivery x1.10 at every level: a garment's mailer is predictable, and the clubs' 2.50 for a default box (a bag or
   none) does not apply. The category's default box, 28 x 22 x 4 cm and 400 g (`category_measures.json`), is 0.49 kg
   volumetric: the 0.5 kg step, 42.49 x 1.10 = 46.74 USD.
+- **For now a flat 12.5 %** (the owner, 2026-11-19, second word: his wish, not the customs rate;
+  `CategoryPrice.duty_flat`, a TODO in `shop_pricing.py` to switch on the rule below once the composition is read from
+  the description and the OCR). The fibre is still read: the breakdown's `dutyBasis` carries it, with `flat: true`
+  and `byFibre` (the rate the rule below would take). The rule kept for that day:
 - The duty by the chief fibre (US HTS 6110, knitted cardigans): wool 16 %, cotton 16.5 %, cashmere 4 % (when it is
   the chief fibre), man-made fibres (acrylic, polyester, nylon, polyamide, rayon / viscose, spandex / polyurethane,
   modal, lyocell, acetate) 32 %, another fibre (alpaca, mohair, silk, linen) or a composition not read 32 %.
@@ -139,10 +143,11 @@ is sent again.
   32 %; each is the dearer reading until he decides. The breakdown carries
   `category`, `dutyRate` and `dutyBasis` {hts, fibre, percent, row, source, text}; `describe(category)` adds the
   category's coefficients and rates under `category` in the `fairwardgolf.pricing` metafield and the publish digest.
-- Examples (the default box, free delivery in Korea; USD): 46,900 KRW: wool 149, acrylic-led or unknown 159;
-  139,000 KRW: wool 269, cotton 269, acrylic-led or unknown 299; 498,000 KRW: cashmere 679, wool 749, acrylic-led or
-  unknown 839. With the shop's rule (x2.50, 12.5 %) they would have been 219, 339 and 799 (at 498,000 KRW the new rule is dearer
-for a man-made knit: its 32 % duty outweighs the cheaper delivery).
+- Examples (the default box, free delivery in Korea; USD), **today, at the flat 12.5 %**, every fibre: 46,900 KRW 149,
+  139,000 KRW 269, 498,000 KRW 729; the shop's rule (x2.50, 12.5 %) would give 219, 339 and 799.
+  With the rule by fibre switched on (the TODO): 46,900 KRW: wool 149, acrylic-led or unknown 159; 139,000 KRW: wool
+  269, cotton 269, acrylic-led or unknown 299; 498,000 KRW: cashmere 679, wool 749, acrylic-led or unknown 839 (dearer
+  than the shop's rule for a man-made knit: its 32 % duty outweighs the cheaper delivery).
 
 **The fee, once per box.** FedEx's Additional Handling Surcharge - Dimension (its 2026 rates for Korea; the owner,
 2026-11-10): KRW 35,600 on a box whose longest side is over 121 cm, or the second over 76 cm, or length + girth

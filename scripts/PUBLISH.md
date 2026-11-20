@@ -165,6 +165,12 @@ The owner's rules (`shopify_payload.py`):
   values without a seller's numbering ("01.", "SPEC"); two values with one English get "(2)". A product with one
   variant is named by the seller's one remaining choice (a constant option axis the transform keeps as a fact:
   "Set: 12 Pcs + Caddie Bag"), else `Option: Standard` (`FALLBACK_OPTION`); a gift line is not a choice.
+- **Apparel sizes** (a category with `CategoryRules.sizes`, knit cardigans 50002797; the owner 2026-11-19): the size
+  option is named `Size` and holds the US sizes only ("S (US 4-6)", "One Size"), never the Korean; the Korean value of
+  each is kept for the owner's orders on Naver in the variant's `fairwardgolf.source` (`optionsKo` as always, plus
+  `sizeKo` / `sizeUs`) and the product's `fairwardgolf.sizes` (`fairwardgolf-sizes/1`: the map US -> Korean with the
+  chest in cm and how it was read, the merged spellings, the seller's chart in cm). The description ends with the
+  size chart block (`apparel_sizes.chart_html`, inches), built here, not by the model. [SIZES.md](SIZES.md).
 - **Title clean-up** (`clean_title`): "(Parallel Import)", a word written twice in a row, a model code written
   twice. SEO title = the title (the site's page `<title>`), cut at a whole word within 70 characters.
 - **Title length** (`fit_title`): at most 150 characters, Google Merchant Center's limit for `title` (a longer one

@@ -59,6 +59,7 @@ import re
 from collections import Counter
 from typing import Any, Mapping, TypedDict
 
+import apparel_sizes
 import attributes
 import brand_fallback
 from description_clean import body_notes, clean, clean_images, decode_line, picked_switches
@@ -1506,6 +1507,52 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
         f"{n} {c}/{len(ov['variants'])}" for n, c in sorted(taken.items()))}]
 
 
+def _sizes(ov: dict[str, Any], profile: str, text: str | None, ocr: list[list[str]], brand: str | None,
+           title: str) -> dict[str, Any]:
+    """apparel_sizes.resolve on the product; the size option rewritten in place: one Korean size written twice
+    ("M (66)", "M(66)": 11107936517) made one value (its rows merged: the buyable row kept; two prices hold the
+    product), the values in size order. A size the transform kept as a fact (one value, "사이즈: FREE(44-66반)",
+    5891366586) is resolved too: product.sizes.fact {ko, us} (2026-11-19 review: it reached the store in Korean)."""
+    texts = (text or "").splitlines() + [r for rows in ocr for r in rows]
+    out = apparel_sizes.resolve(ov["options"], texts, brand, title, profile)
+    if out["held"]:
+        return out
+    facts = [f for f in ov.get("facts") or [] if apparel_sizes.is_size_name(f.get("label_ko"))]
+    if out["option"] is None and facts:
+        one = apparel_sizes.resolve([{"name_ko": facts[0]["label_ko"], "values_ko": [facts[0]["value_ko"]]}], texts,
+                                    brand, title, profile)
+        if one["held"] or not one["values"]:
+            out["held"] = one["held"] or f"{facts[0]['value_ko']!r}: not read as a size"
+            return out
+        out["fact"] = {"label_ko": facts[0]["label_ko"], "ko": facts[0]["value_ko"], "us": one["values"][0]["us"]}
+        out["chart"] = out["chart"] or one["chart"]
+        return out
+    i = out["option"]
+    if i is None:
+        return out
+    merged, order = out["merged"], [v["ko"] for v in out["values"]]
+    option = ov["options"][i]
+    ov["options"][i] = {**option, "values_ko": order}
+    rows: dict[tuple[str, ...], dict[str, Any]] = {}
+    for v in ov["variants"]:
+        picked = list(v.get("options_ko") or [])
+        if len(picked) > i:
+            picked[i] = merged.get(picked[i], picked[i])
+        combo = tuple(picked)
+        kept = rows.get(combo)
+        if kept is None:
+            rows[combo] = {**v, "options_ko": picked}
+            continue
+        if kept.get("price_krw") != v.get("price_krw"):
+            out["held"] = (f"{'/'.join(combo)} written twice at two prices ({kept.get('price_krw')}, "
+                           f"{v.get('price_krw')} KRW)")
+            return out
+        if v.get("available") and not kept.get("available"):     # the buyable row is the one to order
+            rows[combo] = {**v, "options_ko": picked}
+    ov["variants"] = list(rows.values())
+    return out
+
+
 def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
             images_text: dict[str, Any] | None = None) -> Prepared:
     key = collected["key"]
@@ -1539,8 +1586,11 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
     brand = facts.get("brand") or {}
     raw_maker = str((facts.get("manufacturer") or {}).get("value") or "")
     shop = details.get("store")
-    if str(brand.get("value") or "").strip() in NOT_A_BRAND \
-            or brand_fallback.resellers_own(str(brand.get("value") or ""), raw_maker, shop):
+    own_row = None
+    if str(brand.get("value") or "").strip() not in NOT_A_BRAND \
+            and brand_fallback.resellers_own(str(brand.get("value") or ""), raw_maker, shop):
+        own_row = str(brand.get("value"))
+    if str(brand.get("value") or "").strip() in NOT_A_BRAND or own_row:
         brand = {}                                  # 기타; the reselling seller's own shop (재팬도코도코, 2026-11-12)
     elif brand.get("value"):                        # a shop's name (세모물상점, 2026-11-11), an age and a club,
         brand_value = brand_fallback.clean(str(brand["value"]))   # a code, a title (2026-11-12): brand_fallback.clean
@@ -1563,6 +1613,13 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
             and not brand_fallback.trade_name(str(maker["value"])):
         # no brand: the manufacturer (the owner, 2026-11-08); still none: brand_fallback.py, run-level
         brand = {"value": maker["value"], "source": f"manufacturer:{maker.get('source')}"}
+    if not brand.get("value") and own_row and cat.own_brand_wordmark:   # the reseller's rule dropped a brand its
+                                                    # shop shows as its own:
+        own = brand_fallback.own_brand_shown(shop, str(((details.get("description") or {}).get("text")) or "")
+                                             .splitlines() + [r for rows in image_rows(   # "GREHIP OFFICIAL SHOP",
+                                                 images_text if current(images_text, line) else None) for r in rows])
+        if own:                                     # "그레힙의 상표권" (13759750310, 2026-11-19)
+            brand = {"value": brand_fallback.clean(own_row) or own, "source": "shop_wordmark"}
     imgs = images(line, run)
     if not imgs:
         held.append({"code": "no_images", "detail": "no gallery photo saved"})
@@ -1697,6 +1754,15 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
                                                          + ("; a count written" if cut["count"] else "")})
     if not (line.get("photos") or {}).get("is_complete", True):
         notes.append({"code": "photos_incomplete", "detail": f"{len(imgs)} of {line['photos'].get('total')}"})
+    sizes = None
+    if cat.sizes:                                   # apparel: US sizes from the product's own labels and chart
+        sizes = _sizes(ov, cat.sizes, cleaned["text"], image_rows(images_text if current(images_text, line) else None),
+                       brand.get("value"), details["name"])
+        if sizes["held"]:
+            held.append({"code": "size_unmapped", "detail": sizes["held"][:200]})
+        elif sizes["merged"]:
+            notes.append({"code": "size_values_merged", "detail": ", ".join(f"{k} = {v}"
+                                                                            for k, v in sizes["merged"].items())})
     product: PreparedProduct = {
         "title_ko": details["name"], "brand_ko": brand.get("value"), "brand_source": brand.get("source"),
         "attributes": stated, "options": ov["options"], "facts": ov["facts"], "variants": ov["variants"],
@@ -1716,5 +1782,7 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
     }
     if cat.composition:                             # the fibre rows: the duty and the description (2026-11-19)
         product["composition_ko"] = composition_rows(specs, details)
+    if sizes is not None:
+        product["sizes"] = sizes
     return {"format": FORMAT, "key": key, "shop": rules.shop.value, "status": "held" if held else "ready",
             "held": held, "notes": notes, "source": source, "product": product, "texts": _texts(product)}

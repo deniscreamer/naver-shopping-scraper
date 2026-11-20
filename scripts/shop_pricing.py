@@ -26,7 +26,8 @@ A shop that sells with free delivery (fairwardgolf) carries everything in the pr
 
 A Naver category may carry its own coefficients and duty (`Delivered.categories`, keyed by the leaf id; the owner,
 2026-11-19, women's knit cardigans 50002797): every level at 1.10 (a garment's mailer is predictable; the clubs' 2.50
-for a default box does not apply), and the duty by the chief fibre of the composition (US HTS 6110): wool 16 %,
+for a default box does not apply), and the duty (the owner, 2026-11-19, second word: a flat 12.5 % for now, `CategoryPrice.duty_flat`, a TODO to switch
+on the rate) by the chief fibre of the composition (US HTS 6110): wool 16 %,
 cotton 16.5 %, cashmere 4 %, man-made fibres 32 %, another fibre or an unread composition 32 % (`chief_fibre`: the
 largest share, man-made fibres summed, of the first composition adding up to 100 that the product's 소재 / 혼용률 /
 재질 / 섬유의 조성 rows state; a partial one is none). The breakdown
@@ -167,9 +168,17 @@ class CategoryPrice:
     duty_by_fibre: dict[str, Decimal]           # "wool", "cotton", "cashmere", "man-made", "other", "unknown"
     hts: str
     decided: dict[str, str] = field(default_factory=dict)
+    duty_flat: Decimal | None = None            # the owner's flat rate in place of the rate by fibre (the fibre read
+                                                # stays in the basis, for the day the rule by fibre is switched on)
 
     def duty(self, product: dict[str, Any]) -> tuple[Decimal, dict[str, Any]]:
-        """(the duty rate, its basis) from the chief fibre of the product's composition."""
+        """(the duty rate, its basis): the flat rate when the category has one, else the chief fibre's rate."""
+        rate, basis = self._by_fibre(product)
+        if self.duty_flat is not None:
+            return self.duty_flat, {**basis, "flat": True, "byFibre": str(rate)}
+        return rate, basis
+
+    def _by_fibre(self, product: dict[str, Any]) -> tuple[Decimal, dict[str, Any]]:
         found = chief_fibre(composition_rows(product))
         if not found:
             return self.duty_by_fibre["unknown"], {"hts": self.hts, "fibre": "unknown",
@@ -181,6 +190,7 @@ class CategoryPrice:
 
     def describe(self) -> dict[str, Any]:
         return {"coefficients": {str(k): str(v) for k, v in sorted(self.coefficients.items(), reverse=True)},
+                **({"dutyFlat": str(self.duty_flat)} if self.duty_flat is not None else {}),
                 "dutyByFibre": {k: str(v) for k, v in self.duty_by_fibre.items()}, "hts": self.hts,
                 "chiefFibre": "the largest share of the first full composition of the 소재 / 혼용률 / 재질 / 섬유의 조성 "
                               "rows; another fibre or none read: the unknown rate",
@@ -365,7 +375,11 @@ FAIRWARDGOLF = Delivered(
             duty_by_fibre={"wool": Decimal("0.16"), "cotton": Decimal("0.165"), "cashmere": Decimal("0.04"),
                            "man-made": Decimal("0.32"), "other": Decimal("0.32"), "unknown": Decimal("0.32")},
             hts="6110",
-            decided={"coefficients": "2026-11-19", "duty": "2026-11-19"}),
+            # the owner, 2026-11-19 (second word): a flat 12.5 % for now, by his wish and not the real customs rate
+            # TODO(duty): switch to the rate by fibre (duty_flat=None) once the composition is read from the
+            #             description and the OCR (22 of the 30 pilot products have no readable composition row)
+            duty_flat=Decimal("0.125"),
+            decided={"coefficients": "2026-11-19", "duty": "2026-11-19 flat 12.5 %"}),
     })
 
 POLICIES = {"fairwardgolf": Policy(delivered=FAIRWARDGOLF)}   # which shops carry delivery in the price: this map

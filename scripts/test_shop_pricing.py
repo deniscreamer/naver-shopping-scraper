@@ -17,6 +17,7 @@ failure that names the product, the variant and the part. Rewrite the expected p
     UPDATE_GOLDEN=1 .venv/bin/python -m pytest scripts/test_shop_pricing.py
 and read the diff of fixtures/pricing/ before committing (R-TEST-5). A new product: write(name, cut(its prepared
 line, why)), then the same command."""
+import dataclasses
 import json
 import os
 from dataclasses import replace
@@ -439,10 +440,32 @@ def knit_box() -> dict[str, Any]:
         for name, n in zip(SIDES + ("package_weight_g",), (280, 220, 40, 400))}}
 
 
-def knit(krw: int, *rows: tuple[str, str, str]) -> Quote:
+def by_fibre_shop() -> shop_pricing.Policy:
+    """The shop with the knit's rule by fibre switched on (duty_flat None): the rule kept for the TODO."""
+    rule = SHOP.delivered
+    assert rule is not None
+    own = dataclasses.replace(rule.categories[KNIT], duty_flat=None)
+    return dataclasses.replace(SHOP, delivered=dataclasses.replace(rule, categories={**rule.categories, KNIT: own}))
+
+
+def knit(krw: int, *rows: tuple[str, str, str], shop: shop_pricing.Policy | None = None) -> Quote:
     product = {**FREE, "specs": [], "composition_ko": [{"label_ko": label, "value_ko": value, "source": source}
                                                       for label, value, source in rows]}
-    return SHOP.quote({**knit_box(), "price_krw": krw}, product, KNIT)
+    return (shop or by_fibre_shop()).quote({**knit_box(), "price_krw": krw}, product, KNIT)
+
+
+@pytest.mark.parametrize("krw, rows, price, fibre, by_fibre", [
+    (46_900, [("소재", "울 100%", "spec")], 149, "wool", "0.16"),
+    (46_900, [("섬유의 조성 또는 혼용률", "상세페이지 참조", "notice")], 149, "unknown", "0.32"),
+    (139_000, [("소재", "면 100%", "spec")], 269, "cotton", "0.165"),
+    (498_000, [("소재", "모 50% 아크릴 50%", "spec")], 729, "man-made", "0.32"),
+])
+def test_knit_cardigans_pay_the_owners_flat_duty_and_keep_the_fibre_read(krw, rows, price, fibre, by_fibre):
+    """The owner, 2026-11-19 (second word): 12.5 % flat for now; the fibre read stays in the basis (the TODO)."""
+    b = knit(krw, *rows, shop=SHOP).breakdown
+    assert b is not None and b["dutyRate"] == "0.125" and b["dutyBasis"]["flat"] is True
+    assert b["dutyBasis"]["fibre"] == fibre and b["dutyBasis"]["byFibre"] == by_fibre
+    assert knit(krw, *rows, shop=SHOP).price == price
 
 
 @pytest.mark.parametrize("text, kinds, top", [
@@ -532,7 +555,7 @@ def test_the_notice_row_names_where_the_fibre_was_read():
 
 def test_a_product_without_composition_ko_reads_its_spec_rows():
     product = {**FREE, "specs": [{"label_ko": "브랜드", "value_ko": "울시"}, {"label_ko": "소재", "value_ko": "울 100%"}]}
-    b = SHOP.quote({**knit_box(), "price_krw": 46_900}, product, KNIT).breakdown
+    b = by_fibre_shop().quote({**knit_box(), "price_krw": 46_900}, product, KNIT).breakdown
     assert b is not None and b["dutyBasis"]["fibre"] == "wool" and b["dutyRate"] == "0.16"
 
 
@@ -558,5 +581,6 @@ def test_describe_of_the_knit_adds_its_rule_and_leaves_the_shops():
     assert knits["category"]["coefficients"] == {str(n): "1.10" for n in (5, 4, 3, 2, 1)}
     assert knits["category"]["dutyByFibre"] == {"wool": "0.16", "cotton": "0.165", "cashmere": "0.04",
                                                 "man-made": "0.32", "other": "0.32", "unknown": "0.32"}
-    assert knits["category"]["decided"] == {"coefficients": "2026-11-19", "duty": "2026-11-19"}
+    assert knits["category"]["dutyFlat"] == "0.125"
+    assert knits["category"]["decided"] == {"coefficients": "2026-11-19", "duty": "2026-11-19 flat 12.5 %"}
     assert json.loads(json.dumps(knits)) == knits

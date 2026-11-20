@@ -47,7 +47,10 @@ the answer needs the sources compared and the clubs added up ("Which model" belo
   ("may differ", "not Japan", "and others"), or the row names a country the table does not know: `Origin: do not
   state`, the reason in the report. Of the first 105: stated for 66, silent for 28, no source for 11. After the
   answer any other country in the text, in any wording ("Japanese-made", "a product of China"), cuts that
-  sentence; "Japan-market model" is not an origin.
+  sentence; "Japan-market model" is not an origin. "국산" / "국내산" / "국내생산" / "국내제조" (domestic) is Korea, only at a word's
+  start (중국산, 외국산 are not) and never of a material ("국산원단 수입완제품": Korean fabric, an imported
+  garment): the owner, 2026-11-19. 106 products had a 국산 origin row; the 52 of them published whose description
+  changed (46 live, 6 drafts) were described again.
 - **The answer**: JSON fields, not HTML: `conflicts` (points the sources disagree on: asked first, kept out of the
   text, shown in the report), `intro`, and the lists of the product's profile.
 - **After** (`settle`): each intro sentence and each list item is checked alone (a sentence does not end after

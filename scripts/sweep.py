@@ -62,6 +62,7 @@ import sys
 import time
 from typing import Any, Iterable, Mapping
 
+import apparel_sizes
 import describe
 import publish as P
 import shop_stores
@@ -259,9 +260,18 @@ def first_sentence(texts: list[str]) -> str:
     return describe._SENTENCE_RE.split(texts[0])[0] if texts else ""
 
 
+def _imported(prepared: Mapping[str, Any], origin: str | None = None) -> bool:
+    """The product's describe profile writes "Imported." (a garment, describe.PROFILES) and no country is decided
+    (`origin`: the description row's; describe.settle's own test): a decided country makes it a finding again."""
+    return not origin and bool(
+        describe.profile_of((prepared.get("source") or {}).get("category_id"))[1].get("imported"))
+
+
 def text_of(description_html: str) -> list[str]:
-    """The description's texts, one a paragraph, heading or list item, unescaped."""
-    return [t for t in (html.unescape(x).strip() for x in _TAG_RE.split(description_html or "")) if t]
+    """The description's texts, one a paragraph, heading or list item, unescaped; the size chart block the payload
+    appends (apparel_sizes.chart_html: built by rule, no model text) left out (2026-11-19 review)."""
+    body = (description_html or "").split(apparel_sizes.CHART_MARK)[0]
+    return [t for t in (html.unescape(x).strip() for x in _TAG_RE.split(body)) if t]
 
 
 def hangul(english: dict[str, str]) -> list[str]:
@@ -269,11 +279,16 @@ def hangul(english: dict[str, str]) -> list[str]:
     return [f"{where}: {text}" for where, text in english.items() if HANGUL_RE.search(text or "")]
 
 
-def description_patterns(texts: list[str]) -> list[str]:
+def description_patterns(texts: list[str], imported: bool = False) -> list[str]:
     """describe.packet_free_problems (problems() but the numbers and the origin, which need what the model was given)
-    on each text of the stored description (`texts`: text_of(the html)). Hangul alone is text.hangul's, not here."""
+    on each text of the stored description (`texts`: text_of(the html)). Hangul alone is text.hangul's, not here.
+    `imported`: the product's describe profile writes "Imported." for a garment whose country is not decided (US
+    textile labelling; describe.settle lets it through): that line is no finding (2026-11-19, the knit pilot: 9 false
+    "shop talk: Imported" findings)."""
     out = []
     for text in texts:
+        if imported and text.strip().rstrip(".").lower() == "imported":
+            continue
         why = [w for w in describe.packet_free_problems(text) if w != "not English" or describe._CJK_RE.search(text)]
         if why:
             out.append(f"{', '.join(why)}: {text}")
@@ -494,7 +509,7 @@ def run(shop: str, shops_root: str = P.SHOPS_ROOT, keys: Iterable[str] | None = 
             if other:
                 hit("description.old_brand", key, f"{', '.join(other)} (vendor {vendor or 'none'}): {lead}")
             # 5. describe.py's packet-free checks
-            bad = description_patterns(parts)
+            bad = description_patterns(parts, _imported(p, row.get("origin")))
             if bad:
                 hit("description.patterns", key, "; ".join(bad))
             # 6. the packet changed since (what describe.py --offline --published counts as stale)
@@ -709,7 +724,8 @@ def changes(old: Mapping[str, Any], new: Mapping[str, Any]) -> list[str]:
     return list(dict.fromkeys(out)) or ["other"]
 
 
-def text_findings(product_input: Mapping[str, Any], vendor: str, prepared: dict[str, Any], brands: Brands) -> set[str]:
+def text_findings(product_input: Mapping[str, Any], vendor: str, prepared: dict[str, Any], brands: Brands,
+                  origin: str | None = None) -> set[str]:
     """The TEXT_CHECKS that fire on a payload's texts (its title, option names and values, description), judged
     with today's vendor and Korean as stage 1 judges the cached answers."""
     out = set()
@@ -729,7 +745,7 @@ def text_findings(product_input: Mapping[str, Any], vendor: str, prepared: dict[
         out.add("text.hangul")
     if parts and other_brand(first_sentence(parts), vendor, prepared, brands):
         out.add("description.old_brand")
-    if parts and description_patterns(parts):
+    if parts and description_patterns(parts, _imported(prepared, origin)):
         out.add("description.patterns")
     return out
 
@@ -872,7 +888,8 @@ def store_run(shop: str, shops_root: str = P.SHOPS_ROOT, keys: Iterable[str] | N
             worse.append({**row, "guards": tripped})
             continue
         vendor = translate._brand_en(p, dicts, tenant)
-        before, after = text_findings(old, vendor, p, brands), text_findings(new, vendor, p, brands)
+        origin = (descriptions.get(key) or {}).get("origin")
+        before, after = text_findings(old, vendor, p, brands, origin), text_findings(new, vendor, p, brands, origin)
         row["improved"] = sorted(before - after)
         row["now_trips"] = sorted(after - before)
         row["flags"] += [f"now trips {c}" for c in row["now_trips"]]

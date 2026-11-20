@@ -343,7 +343,7 @@ def test_publish_creates_then_skips_then_updates_keeping_photos(tmp_path):
     assert [f.get("id") for f in payload["files"]] == ["gid://shopify/MediaImage/1", "gid://shopify/MediaImage/2"]
     assert products.staged == ["a.webp", "b.webp"]                       # no second upload
     assert files.created.count("av.webp") == 1                           # review files once (files.jsonl)
-    assert products.deleted == ("gid://shopify/Product/1", [("custom", "required_selections")])  # what is gone
+    assert products.deleted == ("gid://shopify/Product/1", [("custom", "required_selections"), ("fairwardgolf", "sizes")])  # what is gone
 
 
 def test_publish_updates_a_product_already_in_the_shop(tmp_path):

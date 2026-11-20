@@ -82,6 +82,7 @@ Every `scripts/*.py` runs as `.venv/bin/python scripts/<name>.py` (none is execu
 | A crash, `LedgerError`, `shop is busy`, a job died, restore a backup | `recover-state` | `scripts/job.py status` |
 | A new Mac, nothing starts, the extension disconnected, a listing tab hangs | `setup-machine`, `extension` | `curl -s localhost:8000/health`; `scripts/check_setup.py` |
 | A new category or shop | `new-category-or-shop` | [scripts/ONBOARDING.md](scripts/ONBOARDING.md) |
+| Apparel sizes (US size, size chart, which Naver size to order) | `apparel-sizes` | [scripts/SIZES.md](scripts/SIZES.md) |
 
 ## Changing code
 

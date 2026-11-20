@@ -39,6 +39,7 @@ The scripts' topics, each in its own doc, each with a skill to read first:
 | [TRANSLATION.md](TRANSLATION.md) | `translation` | `translate.py`, the dictionaries, the prompts, review cleaning, the quality check |
 | [PLACEMENT.md](PLACEMENT.md) | `placement` | The shop's sections, the last stage before Shopify (`placement.py`) |
 | [DESCRIBE.md](DESCRIBE.md) | `describe` | The English description (`describe.py`) and its model |
+| [SIZES.md](SIZES.md) | `apparel-sizes` | Apparel: Korean sizes -> US sizes per product (`apparel_sizes.py`, `size_profiles/`), the size chart, what the owner sees to order the right Naver size; reading sellers' size charts: [SIZE_CHARTS.md](SIZE_CHARTS.md); a profile: `size_profiles/<profile>.md` |
 | [PRICE.md](PRICE.md) | `price` | Why a product is priced X, the price rule, the delivery tariff, repricing (`shop_pricing.py`, `reprice.py`) |
 | [PUBLISH.md](PUBLISH.md) | `publish` | Publication to Shopify (`publish.py`), the payload, withdraw / hold / restore / activate, the Shopify roadmap |
 | [SWEEP.md](SWEEP.md) | `sweep` | What an improvement changes for products already in the store: old model answers a new rule, dictionary or prompt judges wrong, the groups a resend would send, the owner's yes or no per group (`--decline`, `--confirm`) and the resend: `sweep.py`, what to do on each line |

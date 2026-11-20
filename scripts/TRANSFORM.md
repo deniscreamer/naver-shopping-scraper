@@ -61,6 +61,7 @@ writes `status: held`, no codes of its own), not placed, not published. Where to
 | `no_variants` | transform | the listing has option groups and no variant was chosen; the detail says whether paid variants were allowed (`paid=`) | paid variants off for the category: the owner decides (`transform_shops.py` `paid_variants`); else leave it |
 | `options_unaligned` | transform | variant rows that do not fit the option groups (a row's values not one per group); one of them alone is never published | leave it held; read the line's `specs.options` and report (a server parser change follows server/docs/DEVELOPMENT_RULES.md) |
 | `specs_folded` | transform | the 상품정보 list stayed folded at collection (`specs.is_complete` false) | collect again |
+| `size_unmapped` | transform | apparel (`CategoryRules.sizes`): a size value with no US size, or two Korean sizes on one US size (apparel_sizes.py, [SIZES.md](SIZES.md)) | a brand row in the profile (`size_profiles/<profile>.json`), or the label read; never a guessed size |
 | `axes_over_3` | transform | more than 3 option axes: Shopify has 3 options per product (`MAX_AXES`) | leave it held |
 | `no_images` | transform | no gallery photo saved | collect again; still none: leave it |
 | `images_over_50` | transform | more than 50 gallery photos (`MAX_IMAGES`) | leave it held; tell the owner |
@@ -93,10 +94,12 @@ Since 2026-11-16, `run_transform.py` and `job.py` keep each product's `prepare()
 images' text read (`image_read`: off / not_read / the blocks) in `prepare_cache/<product id>.json` (line 1 the
 signature, then the record) and use it while the signature holds; `run(..., cache=False)`, the default of the
 function (tests, example_15), and `--full` do not touch it. The signature: the bytes of every non-test
-`scripts/*.py` (taken when `run_transform` is imported: a process keeps the code it loaded), the Python version, the
+`scripts/*.py` and of every `scripts/size_profiles/*.json` (taken when `run_transform` is imported: a process keeps
+the code it loaded), the Python version, the
 base rules and the measures table as loaded (per call), and per product the shop, run id and line number, the bytes
 of the collected line and of the images' sidecar (read once for the hash and the record), and the rules variant of
-its paid choice. `prepare()` reads no other file (`test_prepared_golden.py` pins it). Never from the cache: the
+its paid choice. `prepare()` reads no other file than the measures table and, for an apparel category
+(`CategoryRules.sizes`), the size profiles (`test_prepared_golden.py` pins it). Never from the cache: the
 choice of the newest line, the paid choices, the store-wide banners, the `.ko` files and the images' text flag
 (shared blocks, `en.json`), the brand fallback, the agency hold and the report: the same bytes as a full build. A
 cut-off or broken record is prepared afresh and written again. Any edit of `scripts/*.py` prepares the whole shop
@@ -444,7 +447,15 @@ link. The report says how many were dropped. The step is pure: same products in,
   "Shenzhen … Technology Co., Ltd."),
   the importer in
   원산지's brackets (`origin`), the shop's brand most read in the images (`images_text`), a Latin brand phrase the
-  images repeat 5+ times (`images_text_latin`: BEN SAYERS on 13425122164), the notice's 동일 모델의 출시연월 row when it
+  images repeat 5+ times (`images_text_latin`: BEN SAYERS on 13425122164) unless, just before it and only in a
+  category with `CategoryRules.own_brand_wordmark` (knit cardigans; off for the clubs: 56 club resellers' banners,
+  URLs and mails repeat their slugs while they sell Mizuno or Yamaha), the shop shows its own brand: its Latin address (slug) read 3 times in its texts as a word (not in www.x.com, x@mail, x16), or its name right
+  before 상표권 / 공식 스토어 or next to 브랜드 ("브랜드 티앤드"; never "<name>는 X 공식 판매처"), makes the
+  shop's name the brand (`shop_wordmark`, `brand_fallback.own_brand_shown`; 2026-11-19, the knit pilot: "EVER YDAY",
+  a slogan embroidered on a 티앤드 골프 cardigan, was the vendor of 11519647149; the step sits after every stronger
+  one: placed first, it took 8 clubs' TaylorMade / Kirkland / 인파로); a brand row the reseller rule below dropped
+  ("<shop> 협력업체" as the maker) is kept, source `shop_wordmark`, when the shop shows it the same way (Grehip:
+  "GREHIP OFFICIAL SHOP", "그레힙의 상표권", 13759750310, 9992270463), the notice's 동일 모델의 출시연월 row when it
   is a firm and the title's first word, no date or page pointer (`release_row`: agency 100217952 writes "USPA" there;
   2026-11-17, C03), or 노브랜드 (`none`: 13464713764, an
   unbranded putter; its vendor is the shop's name, Fairward Golf, and since 2026-11-15 a purchase agency's import
@@ -490,7 +501,10 @@ gift's option axis is left out ("Options" above); off elsewhere. 50002797 (women
 `gift_axis_out`, `no_choice_out`, and `composition`: the fibre rows (spec rows, then the notice's rows 소재 / 혼용률 /
 재질 / 섬유의 조성; one marked "see the description" left out) kept as `product.composition_ko` [{label_ko, value_ko,
 source}], read by the price's duty by fibre (PRICE.md "A category's own rule") and the description's materials;
-the key exists only where the category asks for it. `sets_only` (wedges, 2026-11-15): a variant whose own words
+the key exists only where the category asks for it; and `sizes` ("womens_tops"): `apparel_sizes.resolve` on the
+options, the description text and the images' OCR rows gives `product.sizes` (the US size of each Korean value, the
+seller's chart in cm), merges one size written twice ("M (66)" / "M(66)": note `size_values_merged`), puts the size
+values in size order, and holds `size_unmapped` when a value has no US size ([SIZES.md](SIZES.md)). `sets_only` (wedges, 2026-11-15): a variant whose own words
 sell one club (1PC, 단품, 개별, 싱글, or one loft 44-72 with no set word or count; "i60R" is a shaft) is left out, and a
 product of such variants only is held `single_only` (17 one-wedge listings of the pilot filed as "웨지 세트 또는
 개별"). A loft written again on a second axis that describes the same club ("Size: 56 Degree" + "Style Name: Black

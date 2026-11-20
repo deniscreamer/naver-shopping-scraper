@@ -1347,3 +1347,27 @@ def test_sweep_md_names_every_flag_and_the_skill_points_there():
     sections = {m.split(" (")[0].replace('"', "").strip() for m in re.findall(r"^## (.+)$", text, re.M)}
     named = re.findall(r'^\| [^|]+ \| "([^"]+)"', body, re.M)
     assert len(named) >= 6 and not [n for n in named if n not in sections], (named, sections)
+
+
+def test_imported_is_no_finding_for_a_garment():
+    """2026-11-19, the knit pilot: describe writes "Imported." for a garment whose country is not decided (US textile
+    labelling); sweep flagged it as shop talk on 9 of 30 drafts. A club's "Imported." stays a finding."""
+    body = "<p>A soft knit cardigan.</p><ul><li>Imported.</li></ul>"
+    assert S.description_patterns(S.text_of(body), imported=True) == []
+    assert S.description_patterns(S.text_of(body)) == ["shop talk: Imported: Imported."]
+    assert S._imported({"source": {"category_id": "50002797"}}) and not S._imported({"source": {"category_id": "50002788"}})
+    noisy = "<ul><li>Imported from Japan, official.</li></ul>"
+    assert S.description_patterns(S.text_of(noisy), imported=True)      # only the bare origin line is let through
+
+
+def test_a_decided_country_makes_imported_a_finding_again():
+    """describe.settle lets "Imported." through only when no country is decided: sweep judges it the same way."""
+    knit = {"source": {"category_id": "50002797"}}
+    assert S._imported(knit) and not S._imported(knit, "Korea")
+
+
+def test_the_size_chart_block_is_not_read_as_model_text():
+    import apparel_sizes
+    body = "<p>A soft knit.</p>" + apparel_sizes.CHART_MARK + "<table><tr><td>S (US 4-6)</td></tr></table>" \
+        "<p>Measurements may vary.</p>"
+    assert S.text_of(body) == ["A soft knit."]

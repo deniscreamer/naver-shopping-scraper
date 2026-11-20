@@ -1,0 +1,331 @@
+"""Korean apparel sizes -> US sizes, per product (the owner, 2026-11-19; the doc: scripts/SIZES.md).
+
+Pure and offline. `resolve()` takes what one prepared product says about its sizes and returns the size option's US
+values, the Korean value each came from, and the seller's garment measurements; transform.prepare stores it as
+product.sizes (CategoryRules.sizes names the profile), shopify_payload shows it (the option values, the size chart
+block, the variants' and the product's fairwardgolf metafields). The Korean values never reach the storefront.
+
+Inputs (each optional except the options):
+  options        the prepared options [{name_ko, values_ko}]: the size option is found by its values, not its name
+                 (13665521998 "PIL[핑크]" holds XS-L);
+  texts          the description's text lines and the OCR rows of its images: the seller's own size chart;
+  brand, title   for a brand row (the profile's "brands");
+  profile        the garment kind (size_profiles/<name>.json: its fallback grid, its brands, its measures).
+
+One value's Korean chest (cm of body chest, the number Korean labels carry) is taken, in order, from:
+  1. the seller's chart, a "US" row (an explicit US size per column): the US letter as written; then a brand row
+     with system "us" (PXG): its letter is the US letter;
+  2. the value itself: "90", "M(90)", "0(85)", "S(55)" (women's 55 -> 90 by the profile's kr_women), "L(55-66)";
+  3. the seller's chart pairing a letter with a number ("85 (S)", "Size / XS / S" over "Korea Size / 85 / 90");
+  4. the brand row's letters (WAAC S = 90); a letter range "S/M" takes both letters' chests;
+  5. the profile's letters (S = 90): the fallback, said in `basis`.
+FREE / F / 프리 is One Size. A value none of these reads, or two Korean sizes landing on one US size, holds the product
+(size_unmapped): an invented size is worse than none.
+"""
+import json
+import re
+from pathlib import Path
+from typing import Any, Callable
+
+from size_chart import ONE, Chart, measure_names, read_chart  # noqa: F401  (re-exported: the callers' one module)
+from size_labels import Label, is_size_name, parse_label  # noqa: F401
+
+_COLOUR_NAME_RE = re.compile(r"색상|컬러|칼라|색깔|color|colour", re.I)    # not a type's section (size_chart sections)
+# a colour value under any option name ("선택: 블랙 / 네이비"): never a type's section
+_COLOUR_VALUE_RE = re.compile(r"블랙|화이트|아이보리|네이비|그레이|회색|베이지|브라운|카키|그린|민트|블루|스카이|레드|와인|버건디|핑크|"
+                              r"퍼플|옐로우|오렌지|차콜|크림|카멜|실버|골드|색$|black|white|navy|gr[ae]y|beige|pink|blue|red",
+                              re.I)
+PROFILES_DIR = Path(__file__).with_name("size_profiles")    # one <name>.json a garment profile, its <name>.md
+VERSION = "sizes/2"                          # bump on a change of what resolve() returns
+
+# --- resolving -----------------------------------------------------------------------------------------------------
+
+def grids(folder: Path = PROFILES_DIR) -> dict[str, Any]:
+    """{"profiles": {name: profile}}: every size_profiles/<name>.json (format size-profile/1)."""
+    out: dict[str, Any] = {}
+    for f in sorted(folder.glob("*.json")):
+        data = json.loads(f.read_text(encoding="utf-8"))
+        if data.get("format") != "size-profile/1" or data.get("name") != f.stem:
+            raise ValueError(f"{f}: not a size profile named {f.stem}")
+        out[f.stem] = data
+    return {"profiles": out}
+
+
+def _norm(text: str | None) -> str:
+    return re.sub(r"[\s\[\]()]+", "", str(text or "")).upper()
+
+
+def brand_row(profile: dict[str, Any], brand: str | None, title: str | None) -> tuple[str, dict[str, Any]] | None:
+    """The brand's row: brand_ko equal to an alias; else (no brand_ko row matched) the title starting with an alias
+    as a word of its own ("[왁] 여성 ...", "PXG 여성 ..."; never "왁스 코팅 ...")."""
+    rows = [(name, row) for name, row in profile.get("brands", {}).items() if not name.startswith("_")]
+    b = _norm(brand)
+    for name, row in rows:
+        if b and any(_norm(a) == b for a in row.get("aliases", [])):
+            return name, row
+    lead = re.sub(r"^[\s\[(]+", "", str(title or "")).upper()
+    for name, row in rows:
+        for alias in row.get("aliases", []):
+            a = alias.upper()
+            if len(a) >= 1 and lead.startswith(a) and (len(lead) == len(a) or not re.match(r"[가-힣A-Z0-9]", lead[len(a)])):
+                return name, row
+    return None
+
+
+def size_option(options: list[dict[str, Any]]) -> int | None:
+    """The option whose every value is a size label (the last such, a colour comes first); else one named a size
+    (사이즈 / size) or with most of its values sizes: resolve() holds it on the value it cannot read, rather than send
+    "L(77~)" as it is (2026-11-19 review)."""
+    whole = [i for i, o in enumerate(options) if o.get("values_ko") and all(parse_label(v) for v in o["values_ko"])]
+    if whole:
+        return whole[-1]
+    for i in range(len(options) - 1, -1, -1):
+        values = options[i].get("values_ko") or []
+        read = sum(1 for v in values if parse_label(v))
+        if values and read and (is_size_name(options[i].get("name_ko")) or read * 2 > len(values)):
+            return i
+    return None
+
+
+def _same(a: Label, b: Label) -> bool:
+    """Two labels of one size: the same chest or women's numbers; else, the same letter where one has no number."""
+    if a.free and b.free:
+        return True
+    if a.chest and b.chest:
+        return a.chest == b.chest
+    if a.women and b.women:
+        return a.women == b.women
+    if a.jp is not None and b.jp is not None:
+        return a.jp == b.jp
+    return bool(a.letter) and a.letter == b.letter
+
+
+def _grid_row(profile: dict[str, Any], chest: float) -> dict[str, Any] | None:
+    best = min(profile["grid"], key=lambda r: abs(r["chest_cm"] - chest))
+    return best if abs(best["chest_cm"] - chest) <= 2.5 else None
+
+
+def _us_text(rows: list[dict[str, Any]]) -> str:
+    if len(rows) == 1:
+        return f"{rows[0]['us']} (US {rows[0]['us_num']})"
+    lo, hi = rows[0], rows[-1]
+    return f"{lo['us']}-{hi['us']} (US {lo['us_num'].split('-')[0]}-{hi['us_num'].split('-')[-1]})"
+
+
+def _chest_of(label: Label, profile: dict[str, Any]) -> list[float]:
+    """The Korean chest of the label's numbers; [] when a women's size is not in kr_women (a half size, "66반", sits
+    between two US sizes: held unless the profile names it)."""
+    if label.chest:
+        return list(label.chest)
+    out = []
+    for w in label.women:
+        key = f"{w:g}"
+        if key not in profile["kr_women"]:
+            return []
+        out.append(profile["kr_women"][key])
+    return out
+
+
+def _typed_rows(chart: Chart, sections: list[str]) -> list[dict[str, Any]]:
+    """The one-size rows per type when the chart tied blocks to types; the block read before any type's heading
+    keeps its place: named by the one type left untied, else unnamed (never dropped)."""
+    tied = [n for n in chart.rows if n in chart.sections]
+    if not tied:
+        return []
+    out = []
+    if ONE in chart.rows:
+        left = [v for v in dict.fromkeys(sections) if v not in chart.sections.values()]
+        row: dict[str, Any] = {"us": "One Size", "cm": dict(chart.rows[ONE])}
+        if len(left) == 1:
+            row["section_ko"] = left[0]
+        out.append(row)
+    out += [{"us": "One Size", "section_ko": chart.sections[n], "cm": dict(chart.rows[n])} for n in tied]
+    return out
+
+
+def _letter_chest(letter: str, pairs: dict[str, float], hit: tuple[str, dict[str, Any]] | None,
+                  profile: dict[str, Any]) -> float | None:
+    if letter in pairs:
+        return pairs[letter]
+    if hit and letter in (hit[1].get("letters") or {}):
+        return float(hit[1]["letters"][letter])
+    return float(profile["letters"][letter]) if letter in profile["letters"] else None
+
+
+def resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None, title: str | None,
+            profile_name: str, table: dict[str, Any] | None = None) -> dict[str, Any]:
+    """-> {"version", "profile", "option": index or None, "values": [{ko, us, letter, chest_cm, basis}] in size
+    order, "merged": {ko: ko kept}, "chart": {kinds, rows: [{us, cm: {...}}]} or None, "held": detail or None}."""
+    table = table or grids()
+    profile = table["profiles"][profile_name]
+    index = size_option(options)
+    sections = [v for i, o in enumerate(options) if i != index and not _COLOUR_NAME_RE.search(str(o.get("name_ko") or ""))
+                and not any(_COLOUR_VALUE_RE.search(str(x)) for x in o.get("values_ko") or [])
+                and not all(parse_label(x) for x in o.get("values_ko") or [])
+                for v in o.get("values_ko") or []]
+    chart = read_chart(texts, profile.get("measures", "tops"), sections)
+    hit = brand_row(profile, brand, title)
+    out: dict[str, Any] = {"version": VERSION, "profile": profile_name, "option": None, "values": [], "merged": {},
+                           "brand_row": hit[0] if hit else None, "chart": None, "held": None}
+    rows_by_label = [(n, chart.labels.get(n) or parse_label(n), m) for n, m in chart.rows.items()]
+    if chart.conflicts:
+        out["chart_conflicts"] = list(chart.conflicts)
+    typed = _typed_rows(chart, sections)
+    if index is None:                                # no size option: one size, its measurements if the chart has
+        if typed:                                    # one block per type ("앞면로고" / "뒷면로고": 10885610305)
+            out["chart"] = {"kinds": dict(chart.kinds), "rows": typed}
+            return out
+        one = [r for r in rows_by_label if r[1] and r[1].free] or (rows_by_label if len(rows_by_label) == 1 else [])
+        if one:
+            out["chart"] = {"kinds": dict(chart.kinds), "rows": [{"us": "One Size", "cm": dict(one[0][2])}]}
+        return out
+    out["option"] = index
+    pairs: dict[str, float] = {}                     # the chart's letter -> chest pairings (85 (S), Korea Size row)
+    for n, lab in chart.labels.items():
+        chest = chart.korea.get(n) or (lab.chest[0] if lab and lab.chest else None)
+        if lab and lab.letter and chest:
+            pairs[lab.letter] = chest
+    seen: dict[str, str] = {}                        # the label's key -> the first Korean value with it
+    resolved = []
+    for ko in options[index]["values_ko"]:
+        label = parse_label(ko)
+        if label is None:
+            out["held"] = f"{ko!r}: not read as a size"
+            return out
+        if label.key in seen:                        # "M (66)" and "M(66)": one size written twice
+            out["merged"][ko] = seen[label.key]
+            continue
+        seen[label.key] = ko
+        matches = [n for n, lab in chart.labels.items() if lab and _same(lab, label)]
+        # the chart's label with measurements, then the one written as the value is, then one with its letter: a
+        # bare header label ("SIZE / S / M") or a model line never takes the size's row (2026-11-19 review)
+        matches.sort(key=lambda n: (n not in chart.rows, chart.labels[n].key != label.key,
+                                    chart.labels[n].letter != label.letter))
+        own = matches[0] if matches else None
+        item: dict[str, Any] = {"ko": ko}
+        if label.free:
+            item.update(us="One Size", letter=None, chest_cm=None, basis="free")
+        elif own and own in chart.us:
+            letter = chart.us[own]
+            row = next((r for r in profile["grid"] if r["us"] == letter), None)
+            item.update(us=_us_text([row]) if row else letter, letter=letter,
+                        chest_cm=row["chest_cm"] if row else None, basis="chart_us")
+        elif hit and hit[1].get("system") == "us" and label.letter:
+            row = next((r for r in profile["grid"] if r["us"] == label.letter), None)
+            item.update(us=_us_text([row]) if row else label.letter, letter=label.letter,
+                        chest_cm=None, basis=f"brand_us:{hit[0]}")
+        else:
+            chests, basis = _chest_of(label, profile), "label"
+            if not chests and label.jp is not None and own and chart.korea.get(own):
+                chests, basis = [chart.korea[own]], "chart_korea"
+            if not chests and label.upto and label.letter:     # "S/M": both letters' chests, a range
+                ends = [_letter_chest(x, pairs, hit, profile) for x in (label.letter, label.upto)]
+                if all(ends):
+                    chests, basis = [e for e in ends if e], "letter_range"
+            mate = chart.labels.get(own) if own else None
+            if not chests and mate and mate.chest:
+                chests, basis = list(mate.chest), "chart_pair"
+            if not chests and label.letter and label.letter in pairs:
+                chests, basis = [pairs[label.letter]], "chart_pair"
+            if not chests and label.letter and hit and label.letter in (hit[1].get("letters") or {}):
+                chests, basis = [hit[1]["letters"][label.letter]], f"brand:{hit[0]}"
+            if not chests and label.letter and label.letter in profile["letters"]:
+                chests, basis = [profile["letters"][label.letter]], "fallback_letters"
+            grid_rows = [r for c in sorted(set(chests)) if (r := _grid_row(profile, c))]
+            if not chests or len(grid_rows) != len(set(chests)):
+                out["held"] = f"{ko!r}: no US size ({'chest ' + str(chests) if chests else 'not read'})"
+                return out
+            grid_rows = sorted({r["chest_cm"]: r for r in grid_rows}.values(), key=lambda r: r["chest_cm"])
+            item.update(us=_us_text(grid_rows), letter=grid_rows[0]["us"] if len(grid_rows) == 1 else None,
+                        chest_cm=grid_rows[0]["chest_cm"], basis=basis)
+        item["chart_label"] = own
+        resolved.append(item)
+    us = [r["us"] for r in resolved]
+    if len(set(us)) != len(us):
+        dup = sorted({u for u in us if us.count(u) > 1})
+        out["held"] = f"two Korean sizes on one US size: {', '.join(dup)}"
+        return out
+    order = {r["us"]: i for i, r in enumerate(profile["grid"])}
+    resolved.sort(key=lambda r: (r["chest_cm"] is None, r["chest_cm"] or 0, order.get(r["letter"] or "", 99)))
+    out["values"] = resolved
+    if typed and all(r["us"] == "One Size" for r in resolved):      # FREE sold in types: a row per type
+        out["chart"] = {"kinds": dict(chart.kinds), "rows": typed}
+        return out
+    rows = [{"us": r["us"], "cm": dict(chart.rows[r["chart_label"]])} for r in resolved
+            if r["chart_label"] and chart.rows.get(r["chart_label"])]
+    if rows:
+        out["chart"] = {"kinds": dict(chart.kinds), "rows": rows}
+    return out
+
+
+# --- the storefront's size chart -----------------------------------------------------------------------------------
+
+def inches(cm: float) -> float:
+    return round(cm / 2.54 * 2) / 2
+
+
+def _in(x: float) -> str:
+    return f"{x:g}"
+
+
+CHART_MARK = "<h3>Size chart (US)</h3>"       # the block's start: sweep reads the description without it
+
+
+def chart_html(sizes: dict[str, Any], table: dict[str, Any] | None = None,
+               section_en: Callable[[str], str] | None = None) -> str:
+    """The size chart block at the end of the description (US sizes, inches); "" when there is nothing to show.
+    Garment chest laid flat (단면) is doubled; the body bust is the profile's band for the size. `section_en`: the
+    English of a type's Korean value, for a one-size chart per type ("One Size (Front Logo)")."""
+    table = table or grids()
+    profile = table["profiles"][sizes["profile"]]
+    bands = {r["us"]: r["bust_in"] for r in profile["grid"]}
+    values = sizes.get("values") or []
+    chart = sizes.get("chart") or {}
+    measured = {r["us"]: r["cm"] for r in chart.get("rows") or []}
+    kinds = chart.get("kinds") or {}
+    rows_in = chart.get("rows") or []
+    fields = [f for f in measure_names(profile.get("measures", "tops")) if any(f in r["cm"] for r in rows_in)]
+    names = {"chest": "Garment chest", "length": "Length", "shoulder": "Shoulder", "sleeve": "Sleeve"}
+
+    def garment(field_: str, cm: float) -> float:
+        flat = kinds.get("chest") == "flat" or (kinds.get("chest") in (None, "mixed") and cm < 75)
+        return inches(cm * 2 if field_ == "chest" and flat else cm)
+
+    rows = []
+    if values:
+        head = ["Size", "Fits bust"] + [names.get(f, f.title()) for f in fields]
+        for v in values:
+            band = bands.get(v["letter"] or "") if v.get("letter") else None
+            if v["us"] != "One Size" and band is None and v.get("chest_cm"):
+                lo = _grid_row(profile, v["chest_cm"])
+                band = lo["bust_in"] if lo else None
+            cells = [v["us"], f"{_in(band[0])}–{_in(band[1])} in" if band else "—"]
+            m = measured.get(v["us"]) or {}
+            cells += [f"{_in(garment(f, m[f]))} in" if f in m else "—" for f in fields]
+            rows.append(cells)
+    elif rows_in:
+        head = ["Size"] + [names.get(f, f.title()) for f in fields]
+        for row in rows_in:
+            us, m = row["us"], row["cm"]
+            if row.get("section_ko"):
+                us = f"{us} ({section_en(row['section_ko']) if section_en else row['section_ko']})"
+            rows.append([us] + [f"{_in(garment(f, m[f]))} in" if f in m else "—" for f in fields])
+    else:
+        return ""
+    fit_note = "Fits bust is the body measurement each size is made for; " if values else ""
+    note = (f"{fit_note}the garment measurements are the maker's, the chest all the way round, to within about 1 in."
+            if fields else f"{fit_note}the maker gave no garment measurements.")
+    note = note[0].upper() + note[1:]
+    block = _el("table", [_el("thead", [_el("tr", [_el("th", h) for h in head])]),
+                          _el("tbody", [_el("tr", [_el("td", c) for c in r]) for r in rows])], ' class="size-chart"')
+    return f"{CHART_MARK}{block}<p>{note}</p>"
+
+
+def _el(tag: str, inner: str | list[str], attrs: str = "") -> str:
+    """An element as Shopify stores it (2026-11-19: it rewrote the table with line breaks, so every draft read as
+    changed): text inline; one child inline ("<thead><tr>"); several children each on a line of its own."""
+    if isinstance(inner, str):
+        return f"<{tag}{attrs}>{inner}</{tag}>"
+    if len(inner) == 1:
+        return f"<{tag}{attrs}>{inner[0]}</{tag}>"
+    return f"<{tag}{attrs}>\n" + "\n".join(inner) + f"\n</{tag}>"

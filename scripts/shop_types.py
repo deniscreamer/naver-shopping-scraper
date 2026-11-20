@@ -157,6 +157,8 @@ class PreparedProduct(TypedDict, total=False):
     description_images_text: PreparedImageText   # run_transform.image_texts, not prepare
     composition_ko: list[dict[str, str]]         # CategoryRules.composition only: the fibre rows {label_ko, value_ko,
                                                  # source: spec | notice} (transform.composition_rows, 2026-11-19)
+    sizes: dict[str, Any]                        # CategoryRules.sizes only: apparel_sizes.resolve's answer (the US
+                                                 # values, the Korean value of each, the seller's chart), 2026-11-19
 
 
 class PreparedSource(TypedDict):

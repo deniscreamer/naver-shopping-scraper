@@ -2,7 +2,7 @@
 
 Where to add what, so that a new Naver leaf category in a shop, or a new shop, runs through the whole pipeline
 (collect, transform, OCR, translate, describe, place, price, publish) without silent gaps. Agents: the
-`new-category-or-shop` skill (`.claude/skills/`) walks through this file. The rows' ids (A1-A14, B1-B10, C1-C11,
+`new-category-or-shop` skill (`.claude/skills/`) walks through this file. The rows' ids (A1-A15, B1-B10, C1-C11,
 L1-L10) are cited from code and other docs: keep them. When was what written: [History](#history).
 
 ## How to use
@@ -10,7 +10,7 @@ L1-L10) are cited from code and other docs: keep them. When was what written: [H
 | Task | Section |
 |---|---|
 | A category in an existing shop: what stops without it | [A. Required](#required) (A1-A6) |
-| What works without, but worse | [A. Quality](#quality-works-without-these-but-worse) (A7-A14) |
+| What works without, but worse | [A. Quality](#quality-works-without-these-but-worse) (A7-A15) |
 | A new shop (tenant) | [B](#b-a-new-shop-tenant) (B1-B10), then A for each of its categories |
 | Golf or `fairwardgolf` in shared code: decide before the first run | [C](#c-golf-or-fairwardgolf-in-shared-code-decide-before-the-first-run) (C1-C11) |
 | The first run, in order | [D](#d-the-order-of-a-first-run) |
@@ -73,6 +73,7 @@ are the owner's decisions. They are never made up. Ask, then write each one down
 | A12 | `scripts/description_measures.py` `CATEGORY_PROFILES` | Only a set of like items in a container (its tables of parts); otherwise the core is enough. [PACKAGE.md](PACKAGE.md) "More of the page" | **weaker**: no counts, no container, no composition. Unstated fields fall to the flat default (A1) |
 | A13 | Tests | Fixtures from the first checked products: `make_measures_fixture.py` (package), `fixtures/collected` with `test_placement.EXPECTED` (placement), the golden prepared files | regressions go unnoticed |
 | A14 | `scripts/listing_title_rules.json` | The category's title words for what its section does not sell (toys, gloves, loose heads, another sport), studied on 300-500 listing titles of the category: every rule checked on all of them, none may drop a product that fits (2026-11-11: 46 of 56 misfits of 50002787 with no false hit). A rule may instead `require` words (groups, one word of each; 2026-11-19, 50002797: a women's word and a cardigan word) | **weaker**: misfits are collected, translated and published; a person has to find them |
+| A15 | `transform_shops.py` `CategoryRules.sizes`, `scripts/size_profiles/<profile>.json` (+ `.md`) | Apparel only: the size profile (Korean labels -> US sizes, the size chart). A brand that sizes its own way gets a row with its evidence. [SIZES.md](SIZES.md), skill `apparel-sizes` | **silent**: Korean sizes ("M(90)", "L(55-66)") on the storefront, no size chart |
 
 ## B. A new shop (tenant)
 
@@ -145,7 +146,7 @@ wedge sets (2026-11-15), draft first (2026-11-16), 50002784 chippers (2026-11-18
 without paid add-ons; one section `chippers`; the shop's general price rule; title rules from 1,260 listing titles,
 the listing full of garden wood chippers, air chisels and poker chips; a `chipper` describe profile; A12 not
 needed for one club, A13 left until the first products are checked: nothing collected yet; the same day's review on
-2,558 titles: the escapes widened, an agency's hand-치퍼 titles and used clubs left out; reviewed=True on the owner's word 2026-11-19, after pilots of 5, 50 and 100 and the lens review: the 90 drafts activated), 50002797 women's golf knit cardigans (2026-11-19, the first apparel, parent `apparel`: a folded knit's mailer (28 x 22 x 4 cm, the parcel never under 300 g); paid variants for plus sizes, no paid add-ons, the images read for the size charts; one section `womens-knit-cardigans` split by gender as 50002670; its own price rule (x1.10 at every level, the duty by the chief fibre: wool 16 %, cotton 16.5 %, cashmere 4 %, man-made or unread 32 %); the title screen requires a women's word and a cardigan word (30 of the 96 sample titles kept; 레이디스 / 레이디 / 우먼 are not among the owner's women's words, to ask him); "no choice" option values dropped; a `knit_cardigan` describe profile that never states a size; no pilot run yet).
+2,558 titles: the escapes widened, an agency's hand-치퍼 titles and used clubs left out; reviewed=True on the owner's word 2026-11-19, after pilots of 5, 50 and 100 and the lens review: the 90 drafts activated), 50002797 women's golf knit cardigans (2026-11-19, the first apparel, parent `apparel`: a folded knit's mailer (28 x 22 x 4 cm, the parcel never under 300 g); paid variants for plus sizes, no paid add-ons, the images read for the size charts; one section `womens-knit-cardigans` split by gender as 50002670; its own price rule (x1.10 at every level; the duty a flat 12.5 % for now, the owner's second word 2026-11-19, the rule by the chief fibre kept behind a TODO); US sizes and a size chart (`CategoryRules.sizes`, [SIZES.md](SIZES.md): an apparel category needs a size profile, else the Korean sizes reach the storefront); the title screen requires a women's word and a cardigan word (30 of the 96 sample titles kept; 레이디스 / 레이디 / 우먼 are not among the owner's women's words, to ask him); "no choice" option values dropped; a `knit_cardigan` describe profile that never states a size; the pilot of 30 drafts ran 2026-11-19).
 
 ### Learned on the first new category (50002787, 2026-11-11)
 

@@ -479,3 +479,46 @@ def test_a_reselling_shops_partner_phrase_on_the_real_line():
     B.fill([p, other], lambda key: ["벤세이어스M5치퍼", "BEN SAYERS"], {p["key"]: "중국산(수수협력사 co.)"}, _texts,
            stores={p["key"]: {"글로벌수수", "수수"}})
     assert (p["product"]["brand_ko"], p["product"]["brand_source"]) == ("벤세이어스", "images_text")
+
+
+# 2026-11-19, the knit cardigan pilot: the shop's own brand, from its own texts (OCR rows as read)
+GREHIP = {"name": "그레힙", "slug": "grehip", "business": {"legal_name": "주식회사 단아한뷰"}}
+TEE_AND = {"name": "티앤드 골프", "slug": "tee_and", "business": {"legal_name": "티앤드"}}
+
+
+def test_a_shop_whose_slug_its_images_repeat_sells_its_own_brand():
+    rows = ["grehip / 본판매처는그레힘에서직접운영하는공식정품판매처입니다.", "grehip", "GREHIP OFFICIAL SHOP",
+            "grehip / grehip / grehip / grehip"]
+    assert B.own_brand_shown(GREHIP, rows) == "그레힙"
+
+
+def test_a_shop_that_calls_itself_a_brand():
+    rows = ["골프웨어 브랜드 티앤드입니다.", "EVER YDAY", "EVER YDAY", "EVER YDAY", "EVER YDAY", "EVER YDAY"]
+    assert B.own_brand_shown(TEE_AND, rows) == "티앤드 골프"
+    # before the slogan the images repeat (images_text_latin): 11519647149 went out as the vendor "EVER YDAY"
+    assert B.decide("여성골프니트집업 가디건 간절기 점퍼", None, [], rows, [], None, None, set(), TEE_AND)[:2] == (
+        "티앤드 골프", "shop_wordmark")
+
+
+def test_a_shop_that_does_not_show_its_name_is_no_brand():
+    assert B.own_brand_shown(GREHIP, ["여성 니트 가디건", "grehip"]) is None            # once is not a wordmark
+    assert B.own_brand_shown({"name": "골프아울렛", "slug": "golf_outlet"}, ["golf outlet"] * 5) is None  # filler slug
+    assert B.own_brand_shown(None, ["브랜드 그레힙"]) is None
+
+
+def test_a_stronger_step_wins_over_the_shops_wordmark():
+    """Placed first, the step took 8 clubs' brands (TaylorMade read in the images, a Kirkland description row): it
+    comes after them."""
+    rows = ["TaylorMade", "TaylorMade", "bluenotion", "bluenotion", "bluenotion"]
+    shop = {"name": "블노션", "slug": "bluenotion"}
+    assert B.decide("드라이버 헤드커버", None, ["TaylorMade"], rows, [], None, None, set(), shop)[:2] == (
+        "TaylorMade", "images_text")
+
+
+def test_a_resellers_address_and_notice_are_no_wordmark():
+    """The 2026-11-19 review: 56 club resellers' banners repeat their slugs in URLs, mails and Kakao ids."""
+    shop = {"name": "렉스골프", "slug": "rexgolf"}
+    assert B.own_brand_shown(shop, ["www.rexgolf.co.kr", "rexgolf@naver.com", "카톡 rexgolf16", "rexgolf.com"]) is None
+    tokyo = {"name": "도쿄피아", "slug": "tokyopia"}
+    assert B.own_brand_shown(tokyo, ["도쿄피아는 미즈노 공식 판매처입니다", "도쿄피아 100% 정품만 취급"]) is None
+    assert B.own_brand_shown(GREHIP, ["그레힙 공식 스토어"]) == "그레힙"

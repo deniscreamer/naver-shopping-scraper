@@ -807,3 +807,25 @@ def test_the_clubs_profiles_keep_their_sizes():
     pkt = packet("13627933340")
     done = D.settle({**GOOD, "highlights": ["Driver, 11.5°"]}, GOLF, pkt)
     assert done["fields"]["highlights"] == ["Driver, 11.5°"]
+
+
+@pytest.mark.parametrize("row, country", [
+    ("국산", "Korea"), ("국내산", "Korea"), ("국내생산", "Korea"), ("중국산", "China"), ("대한민국", "Korea"),
+])
+def test_domestic_is_korea(row, country):
+    """The owner, 2026-11-19: "국산" (domestic) is Made in Korea; 7 knits and 99 clubs lost the origin line to it."""
+    assert D.origin(row, []) == (country, None)
+
+
+@pytest.mark.parametrize("text", ["외국산", "수입국산 원단"])
+def test_foreign_words_are_no_country(text):
+    assert D._countries(text) == set()
+
+
+@pytest.mark.parametrize("row, answer", [
+    ("국산원단 수입완제품", (None, "origin not stated (hedged)")), ("국산원단 사용", (None, "origin not stated (hedged)")),
+    ("원산지 / 국산", ("Korea", None)), ("(국산)", ("Korea", None)), ("국내제조", ("Korea", None)),
+])
+def test_domestic_fabric_is_no_origin(row, answer):
+    """The 2026-11-19 review: Korean fabric of an imported garment is no "Made in Korea"."""
+    assert D.origin(row, []) == answer

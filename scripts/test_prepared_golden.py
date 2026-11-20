@@ -22,6 +22,7 @@ import os
 
 import pytest
 
+import apparel_sizes
 from transform import prepare
 from transform_shops import rules_for
 
@@ -91,5 +92,6 @@ def test_prepare_is_json_native_and_reads_only_the_measures_table(monkeypatch):
         got = image_read(line, RULES, images_text)
         assert json.loads(json.dumps(got, ensure_ascii=False)) == got, name
     monkeypatch.undo()
-    assert "category_measures.json" in opened and set(opened) <= {"category_measures.json"}, (
+    profiles = {f.name for f in apparel_sizes.PROFILES_DIR.glob("*.json")}    # an apparel category's (hashed too)
+    assert "category_measures.json" in opened and set(opened) <= {"category_measures.json"} | profiles, (
         f"prepare opened {sorted(set(opened))}: add it to run_transform's cache signature")

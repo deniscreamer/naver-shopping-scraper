@@ -1,0 +1,117 @@
+{
+  "format": "size-profile/1",
+  "name": "womens_tops",
+  "_doc": "Women's tops (knit cardigans 50002797 first): Korean labels -> US sizes. The doc: size_profiles/womens_tops.md; the mechanism: scripts/SIZES.md. The grid is the FALLBACK, used only when the product's own label and chart say nothing (the owner, 2026-11-19).",
+  "approved": "the owner 2026-11-19 (no fixed A/B: the fallback for products without their own chart)",
+  "labels": "kr_tops",
+  "measures": "tops",
+  "fit": "bust",
+  "kr_women": {
+    "44": 85,
+    "55": 90,
+    "66": 95,
+    "77": 100,
+    "88": 105,
+    "99": 110
+  },
+  "letters": {
+    "XS": 85,
+    "S": 90,
+    "M": 95,
+    "L": 100,
+    "XL": 105,
+    "LL": 105,
+    "XXL": 110,
+    "3L": 110,
+    "XXXL": 115
+  },
+  "grid": [
+    {
+      "chest_cm": 85,
+      "us": "XS",
+      "us_num": "0-2",
+      "bust_in": [
+        32,
+        33.5
+      ]
+    },
+    {
+      "chest_cm": 90,
+      "us": "S",
+      "us_num": "4-6",
+      "bust_in": [
+        34,
+        35.5
+      ]
+    },
+    {
+      "chest_cm": 95,
+      "us": "M",
+      "us_num": "8-10",
+      "bust_in": [
+        36,
+        37.5
+      ]
+    },
+    {
+      "chest_cm": 100,
+      "us": "L",
+      "us_num": "12-14",
+      "bust_in": [
+        38.5,
+        40
+      ]
+    },
+    {
+      "chest_cm": 105,
+      "us": "XL",
+      "us_num": "16",
+      "bust_in": [
+        41.5,
+        43
+      ]
+    },
+    {
+      "chest_cm": 110,
+      "us": "XXL",
+      "us_num": "18",
+      "bust_in": [
+        44.5,
+        46
+      ]
+    },
+    {
+      "chest_cm": 115,
+      "us": "XXXL",
+      "us_num": "20",
+      "bust_in": [
+        47,
+        49
+      ]
+    }
+  ],
+  "brands": {
+    "WAAC": {
+      "aliases": [
+        "왁",
+        "WAAC"
+      ],
+      "letters": {
+        "XS": 85,
+        "S": 90,
+        "M": 95,
+        "L": 100,
+        "XL": 105
+      },
+      "evidence": "care label S = 90 (12558165017, 2026-11-19 pilot)"
+    },
+    "PXG": {
+      "aliases": [
+        "PXG",
+        "피엑스지"
+      ],
+      "system": "us",
+      "evidence": "the seller: 'US women's sizing' (7562982095, 2026-11-19 pilot)"
+    }
+  }
+}

@@ -74,6 +74,11 @@ def _code_signature() -> str:
         if name.endswith(".py") and not name.startswith("test_") and name != "conftest.py":
             with open(os.path.join(here, name), "rb") as f:
                 h.update(name.encode() + b"\0" + f.read() + b"\0")
+    profiles = os.path.join(here, "size_profiles")             # the size profiles prepare reads (apparel_sizes.py)
+    for name in sorted(os.listdir(profiles)) if os.path.isdir(profiles) else []:
+        if name.endswith(".json"):
+            with open(os.path.join(profiles, name), "rb") as f:
+                h.update(b"size_profiles/" + name.encode() + b"\0" + f.read() + b"\0")
     return h.hexdigest()
 
 
@@ -498,7 +503,9 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
         _known_brands(shops_root) if brands is None else brands,
         brand_by_owner(shop, shops_root),
         {k: _release_row(line[2]) for k, line in latest.items()},
-        {k: _store_names(line[2]) for k, line in latest.items()})
+        {k: _store_names(line[2]) for k, line in latest.items()},
+        {p["key"]: (latest[p["key"]][2].get("details") or {}).get("store") or {} for p in prepared    # step 5b: only
+         if (c := rules.categories.get(str(p["source"].get("category_id")))) and c.own_brand_wordmark})   # where asked
     owner_specs = apply_specs_by_owner(                                 # run-level: the owner's word, never cached
         prepared, specs_by_owner(shop, shops_root), {k: line[2] for k, line in latest.items()})
     for p in prepared:                                                 # after the brand: needs the fallback's answer
