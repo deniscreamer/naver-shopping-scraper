@@ -400,6 +400,12 @@ def test_junior_toys_adult_sets_and_not_golf_seen_on_the_sheets_are_left_out(tit
     ("여성 골프 니트 조끼 베스트", "title:not_cardigan"),
     ("LADIES golf knit pullover", "title:not_cardigan"),
     ("Women's Golf Cable Cardigan", None),
+    # 2026-11-20: a windbreaker that calls itself a cardigan (12228093693); knit zip-ups named 자켓 / 바람막이 stay
+    ("여성 골프 바람막이 테일러메이드 방풍 자켓 간절기 가디건 스윙 골프웨어 CO-72PP44", "title:jacket_no_knit"),
+    ("Women's golf windbreaker cardigan", "title:jacket_no_knit"),
+    ("여성골프방풍니트 가디건 집업 점퍼 자켓 골프복 골프웨어", None),
+    ("여자 골프 방풍 니트 가디건 자켓 바람막이 겨울 티셔츠 여성골프웨어", None),
+    ("볼빅골프웨어 여성 골프 패딩 하이브리드 방풍 가디건", None),             # no jacket word: left to the review
 ])
 def test_knit_cardigans_need_a_womens_word_and_a_cardigan_word(title, code):
     screen = Screen("50002797", namespace="fairwardgolf")

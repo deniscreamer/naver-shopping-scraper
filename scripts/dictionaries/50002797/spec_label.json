@@ -1,7 +1,7 @@
 {
  "format": "dictionary/1",
  "kind": "spec_label",
- "backed_up": "2026-11-20T07:20:54Z",
+ "backed_up": "2026-11-20T14:30:16Z",
  "entries": {
   "네크라인": "Neckline",
   "모델명": "Model Name",
@@ -11,6 +11,7 @@
   "소매기장": "Sleeve Length",
   "소재": "Material",
   "원산지": "Country of Origin",
+  "유효일자": "Valid Until",
   "제조사": "Manufacturer",
   "총기장": "Length",
   "출시": "Release",
