@@ -627,6 +627,11 @@ published from them; `prepared/5` is on the new scale. The transform puts a coll
 today's scale from their own evidence (`package_measures.on_scale`: the old 3 is 5, the old 2 is 4), so one prepared
 record never mixes the two.
 
+**Table version 13 (2026-11-20).** The row of 50002798 점퍼 (women's golf windbreakers): the knit's values on the
+owner's delegation (a shell packs as small as a knit): product 150 / 350 / 800 g, package 300 / 400 / 900 g (plausible
+300-1500 g), box 25 x 20 x 3 / 28 x 22 x 4 / 35 x 25 x 8 cm; kind `insulated` (기모 / 방한 / 퀼팅 / 하이브리드 / 보온 /
+후리스 ...: the knit's 0.7 kg, 30 x 24 x 6 cm). Its `defaults_version` 13; the other rows keep theirs.
+
 **Table version 12 (2026-11-20, the owner's word on the pilot report).** Row 50002797 gets the kind `insulated`
 (`match` 방풍 / 다운 / 구스 / 덕다운 / 패딩 / 충전재 / 솜털 / 웰론 / 하이브리드 in the title or the variant): a
 windproof-lined, down or padded knit, product 450 / 600 / 1000 g, package 500 / 700 / 1200 g, box central 30 x 24 x 6

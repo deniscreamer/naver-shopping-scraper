@@ -75,6 +75,14 @@ ASPECTS["50002797"] = (
     r"보풀|신축|늘어나|늘어남|부드럽|부드러|까슬|까끌|촉감|착용감|세탁|빨래|물빠짐",
     r"니트|가디건|카디건|스웨터|집업|단추|지퍼",
 )
+# 50002798 women's golf windbreakers (2026-11-20, the second apparel): fit and size, length, warmth and wind, the
+# rustle and the feel, washing; the garment's parts
+ASPECTS["50002798"] = (
+    ASPECTS["50002797"][0],
+    r"두께|두껍|두툼|얇|따뜻|따듯|포근|보온|바람(?:막|이\s?안|을\s?(?:잘\s?)?막|\s?(?:잘\s?)?(?:안|막))|방풍|방수|비\s?올|시원|통기",
+    r"바스락|부스럭|가볍|가벼|신축|부드럽|부드러|촉감|착용감|세탁|빨래|물빠짐|구김",
+    r"바람막이|점퍼|자켓|재킷|아노락|후드|집업|지퍼|밴딩|소매",
+)
 # product words a cut never crosses (the guard of a clause's body)
 PRODUCT_WORDS_ALL = ("디자인", "색상", "무게", "품질", "실물", "예쁘", "이쁘", "예뻐", "이뻐", "제품", "상품",
                      # a defect report is about the product even inside a shipping clause ("박스 열어보니 스크래치")
@@ -89,6 +97,8 @@ PRODUCT_WORDS["50002783"] = PRODUCT_WORDS["50002788"]         # wedge sets: the 
 PRODUCT_WORDS["50002784"] = PRODUCT_WORDS["50002788"] + ("치퍼", "칩퍼")    # chippers: the clubs, and the chipper (2026-11-18)
 PRODUCT_WORDS["50002797"] = ("니트", "가디건", "카디건", "스웨터", "사이즈", "핏", "기장", "정사이즈", "보풀", "두께",  # knit
                               "따뜻", "신축", "세탁", "소재", "촉감")                               # cardigans (2026-11-19)
+PRODUCT_WORDS["50002798"] = ("바람막이", "점퍼", "자켓", "재킷", "아노락", "사이즈", "핏", "기장", "정사이즈", "두께",  # wind-
+                              "따뜻", "신축", "세탁", "소재", "촉감", "방풍", "바스락", "후드")       # breakers (2026-11-20)
 OPINION_RE = re.compile(
     r"좋아|좋습|좋네|좋음|좋다|좋고|좋은|괜찮|만족|(?:마음|맘)에\s?(?:들|드|쏙)|최고|굿|짱|강추|추천|아쉽|아쉬|별로|실망|불편"
     r"|편해|편하|딱\s?(?:이|입|맞)|훌륭|멋지|멋져|대박|감동|기대")

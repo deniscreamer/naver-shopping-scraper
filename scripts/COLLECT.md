@@ -223,7 +223,7 @@ ad cards are kept by default, the owner 2026-11-06, though the harvester file sa
 word of `listing_exclusions.json`, copied as it is from the naver-harvester: NFKC + lower case, words with
 not-preceded-by / not-followed-by exceptions, latin words whole), `title:<code>` (a word of `listing_title_rules.json` the run's category does not sell, the owner
 2026-11-11; or no word of a group the category `requires`, 2026-11-19: 50002797 needs a women's word and a cardigan
-word), `category_mismatch` (only the exact leaf
+word; 2026-11-20: 50002798 a women's word and a jacket word), `category_mismatch` (only the exact leaf
 category), `key_unavailable` (no store number: no shop check possible), `already_published`, `deferred`. Catalog and
 external-mall cards never reach it (the server keeps store products only).
 

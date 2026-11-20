@@ -772,6 +772,15 @@ def test_the_knit_profile_has_materials_and_highlights_and_its_brief():
     assert "Never state a size" in brief and "Imported." in brief and "혼용률" in brief
 
 
+def test_the_windbreaker_profile_is_the_knits_lists_with_its_own_brief():
+    """50002798 (2026-11-20): materials and highlights, never a size, "Imported."; its brief says jacket, never jumper."""
+    name, prof = D.profile_of("50002798")
+    assert name == "windbreaker" and {k: v for k, v in prof.items() if k != "categories"} == {
+        k: v for k, v in KNIT.items() if k != "categories"}
+    brief = D.system_prompt("windbreaker")
+    assert "Never state a size" in brief and "Imported." in brief and "never \"jumper\"" in brief
+
+
 def test_the_notices_fibre_rows_reach_the_packet_and_their_numbers_are_allowed():
     pkt = knit_packet()
     assert "# Fiber content (Korean, the product notice's rows)\n섬유의 조성 또는 혼용률: 아크릴 50%, 울 30%, 나일론 20%" \

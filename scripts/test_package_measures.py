@@ -212,7 +212,7 @@ def test_baselines_block_is_optional_and_the_operators():
     table = load_table()
     block = table["rows"][0]["baselines"]
     assert {k: block[k] for k in BASE if k != "basis"} == {k: v for k, v in BASE.items() if k != "basis"}
-    assert table["version"] == 12 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
+    assert table["version"] == 13 and set(block["basis"]) >= {*BASELINES, *BASELINE_SIDES}
     check_row(ROW)                                                    # a row without the block: no composition
     check_row({**ROW, "baselines": BASE})
 
@@ -313,10 +313,10 @@ def test_a_restamped_default_carries_its_rows_version_not_the_tables():
     its row's defaults_version (7), so a new row moves no other product; a row without one takes the table's. The same
     day the chipper row was measured (version 9): only its own defaults_version rose; its bands of version 10 kept
     defaults_version 9 (a band moves no default). 2026-11-19: the row of 50002797 (knit cardigans) raised it to 11, its
-    own defaults_version 11; no other row moved."""
+    own defaults_version 11; no other row moved. 2026-11-20: the row of 50002798 (windbreakers) raised it to 13."""
     table = load_table()
-    assert table["version"] == 12 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
-        "50002788": 7, "50002787": 7, "50002670": 7, "50002783": 7, "50002784": 9, "50002797": 12}
+    assert table["version"] == 13 and {r["category_id"]: r["defaults_version"] for r in table["rows"]} == {
+        "50002788": 7, "50002787": 7, "50002670": 7, "50002783": 7, "50002784": 9, "50002797": 12, "50002798": 13}
     assert row_version(table, JUNIOR) == 7 and row_version({"version": 9}, {k: v for k, v in JUNIOR.items()
                                                                             if k != "defaults_version"}) == 9
     for bad in (0, "7", 7.0, True):
@@ -620,7 +620,23 @@ def test_the_knit_cardigan_row_is_the_owners():
     assert row["plausible"] == {"package_weight_g": {"min": 300, "max": 1500}}
     assert (row["approved_by"], row["approved_at"], row["defaults_version"]) == ("owner", "2026-11-19", 12)
     assert "baselines" not in row and [k["kind"] for k in row["kinds"]] == ["insulated"]
-    assert load_table()["rows"][-1]["category_id"] == "50002797"         # appended last (ONBOARDING A1)
+
+
+def test_the_windbreaker_row_is_the_knits_values():
+    """50002798 (2026-11-20, the owner gave the section and delegated the rest): a folded windbreaker in the knit's
+    mailer, 28 x 22 x 4 cm (the 0.5 kg step), the parcel never under 300 g; a lined, quilted or fleece jumper the
+    knit's insulated box. Appended last (ONBOARDING A1)."""
+    row = next(r for r in load_table()["rows"] if r["category_id"] == "50002798")
+    check_row(row)
+    got = {f: (v["low"], v["central"], v["high"]) for f, v in row["fields"].items()}
+    assert got == {"product_weight_g": (150, 350, 800), "package_weight_g": (300, 400, 900),
+                   "package_length_mm": (250, 280, 350), "package_width_mm": (200, 220, 250),
+                   "package_height_mm": (30, 40, 80)}
+    assert row["plausible"] == {"package_weight_g": {"min": 300, "max": 1500}}
+    assert (row["approved_by"], row["approved_at"], row["defaults_version"]) == ("owner", "2026-11-20", 13)
+    assert load_table()["rows"][-1]["category_id"] == "50002798"
+    assert (default_kind(row, "여성 골프 기모 방한 바람막이 점퍼", "블랙 / M") or {}).get("kind") == "insulated"
+    assert default_kind(row, "여성 골프 바람막이 경량 아노락", "블랙 / M") is None
 
 
 

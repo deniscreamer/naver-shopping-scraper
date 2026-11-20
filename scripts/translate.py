@@ -105,6 +105,7 @@ ASK_SHORTER = {"title": 100}
 # a garment title's size run ("55 66 77", "90 95 100"): the category brief keeps sizes out of the English title, so
 # its numbers need not survive (knit cardigans 50002797, the owner 2026-11-19); a fibre's share ("100%") is no size
 TITLE_SIZES = {"50002797": re.compile(r"(?<![\d.A-Za-z])(?:44|55|66|77|88|99|85|90|95|100|105|110)(?![\d.%])")}
+TITLE_SIZES["50002798"] = TITLE_SIZES["50002797"]           # women's windbreakers: the same garment sizes (2026-11-20)
 SCHEMA = {"type": "object", "additionalProperties": False, "required": ["items"],
           "properties": {"items": {"type": "array", "items": {
               "type": "object", "additionalProperties": False, "required": ["id", "en"],

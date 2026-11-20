@@ -1,6 +1,6 @@
 {
- "about": "Package weight and size averages per leaf category, given by the operator (never made up). A row: category_id, category_name, fields (low / central / high of product_weight_g, package_weight_g, package_length_mm, package_width_mm, package_height_mm), approved_by, approved_at (YYYY-MM-DD), reliability (estimated_average: the weakest level), basis. Optional per row: plausible ({field: {min, max}}: a value outside is not taken); baselines, the operator's amounts for the parts of a set of like items in a container, all of them or no block: item_g (one item), container_g (the container), carton_g (the box and its packing), longest_item_mm (the longest item), length_margin_mm (the box's length over the longest item), sides_mm and sides_with_container_mm (the box's [width, height] without the container and with it), approved_by, approved_at, basis (where each amount comes from). With the block a field the seller does not state is composed from the set's parts, each part from the product's own data when it is there and from the baseline when it is not (product weight = items + container; package weight = product weight + carton_g; package length = longest item + length_margin_mm; width and height = the sides), and the fields' flat averages are the last resort, used when the number of items or the container's state cannot be told; without the block a field is the seller's statement or the flat average. A new or changed row raises version. Optional too: kinds ([{kind, match, alone, always, unless, strong, lofts, fields, basis}]: a kind of product with its own low / central / high, package_measures.default_kind; lofts [min, max]: the variant's own value names that many distinct lofts); compose_by_count (50002783, 2026-11-17: a set's product weight = the clubs' labelled weights summed, or one labelled club weight x the set's count; item_g, writes, confidence, count_from, skip, approved_by, approved_at, basis; description_measures.compose_by_count). Version 7 (2026-11-17): plausible bands of 50002783 and 50002787, kinds two_wedges and four_plus and compose_by_count of 50002783. Version 8 (2026-11-18): the row of 50002784 (chippers, one club in a box), and defaults_version on every row: the version a default of the row carries (table_version, package_measures.row_version), raised only with the row's own fields or kinds; the four rows before carry 7, the version their restamped defaults had, so a new row moves no other product. Version 9 (2026-11-18, the chipper review): row 50002784 measured (product weight 380 / 470 / 560, length low 920, plausible product weight 300-650) and its defaults_version 9; the other rows keep 7. Version 10 (2026-11-18, the review of the 100-chipper scroll): bands only for 50002784 (product weight 350-600, package weight 350-5000, length 850-1500); its defaults_version stays 9, so no default is restamped. Version 11 (2026-11-19): the row of 50002797 (women's golf knit cardigans, a folded garment in a mailer; the owner's values), its defaults_version 11; the other rows keep theirs. Version 12 (2026-11-20): kind insulated of 50002797 (a windproof-lined, down or padded knit: 0.7 kg, 30 x 24 x 6 cm), its defaults_version 12; the other rows keep theirs.",
- "version": 12,
+ "about": "Package weight and size averages per leaf category, given by the operator (never made up). A row: category_id, category_name, fields (low / central / high of product_weight_g, package_weight_g, package_length_mm, package_width_mm, package_height_mm), approved_by, approved_at (YYYY-MM-DD), reliability (estimated_average: the weakest level), basis. Optional per row: plausible ({field: {min, max}}: a value outside is not taken); baselines, the operator's amounts for the parts of a set of like items in a container, all of them or no block: item_g (one item), container_g (the container), carton_g (the box and its packing), longest_item_mm (the longest item), length_margin_mm (the box's length over the longest item), sides_mm and sides_with_container_mm (the box's [width, height] without the container and with it), approved_by, approved_at, basis (where each amount comes from). With the block a field the seller does not state is composed from the set's parts, each part from the product's own data when it is there and from the baseline when it is not (product weight = items + container; package weight = product weight + carton_g; package length = longest item + length_margin_mm; width and height = the sides), and the fields' flat averages are the last resort, used when the number of items or the container's state cannot be told; without the block a field is the seller's statement or the flat average. A new or changed row raises version. Optional too: kinds ([{kind, match, alone, always, unless, strong, lofts, fields, basis}]: a kind of product with its own low / central / high, package_measures.default_kind; lofts [min, max]: the variant's own value names that many distinct lofts); compose_by_count (50002783, 2026-11-17: a set's product weight = the clubs' labelled weights summed, or one labelled club weight x the set's count; item_g, writes, confidence, count_from, skip, approved_by, approved_at, basis; description_measures.compose_by_count). Version 7 (2026-11-17): plausible bands of 50002783 and 50002787, kinds two_wedges and four_plus and compose_by_count of 50002783. Version 8 (2026-11-18): the row of 50002784 (chippers, one club in a box), and defaults_version on every row: the version a default of the row carries (table_version, package_measures.row_version), raised only with the row's own fields or kinds; the four rows before carry 7, the version their restamped defaults had, so a new row moves no other product. Version 9 (2026-11-18, the chipper review): row 50002784 measured (product weight 380 / 470 / 560, length low 920, plausible product weight 300-650) and its defaults_version 9; the other rows keep 7. Version 10 (2026-11-18, the review of the 100-chipper scroll): bands only for 50002784 (product weight 350-600, package weight 350-5000, length 850-1500); its defaults_version stays 9, so no default is restamped. Version 11 (2026-11-19): the row of 50002797 (women's golf knit cardigans, a folded garment in a mailer; the owner's values), its defaults_version 11; the other rows keep theirs. Version 12 (2026-11-20): kind insulated of 50002797 (a windproof-lined, down or padded knit: 0.7 kg, 30 x 24 x 6 cm), its defaults_version 12; the other rows keep theirs. Version 13 (2026-11-20): the row of 50002798 (women's golf windbreakers, a folded jumper in a mailer; the knit's values on the owner's delegation) with its kind insulated, its defaults_version 13; the other rows keep theirs.",
+ "version": 13,
  "rows": [
   {
    "category_id": "50002788",
@@ -565,6 +565,82 @@
       }
      },
      "basis": "A windproof-lined, down or padded knit cardigan (방풍 / 다운 / 구스 / 패딩 / 충전재 / 솜털 / 웰론 / 하이브리드 in the title or the variant): bulkier and heavier than a plain knit. Central 30 x 24 x 6 cm, 0.7 kg (0.864 kg volumetric: the tariff's 1 kg step, about +10 USD): the agent's proposal in the pilot report (10 of 30 pilot products, 9717223659 states 673 g), the owner's word 2026-11-20 (\"зафикси мелкие моменты\")."
+    }
+   ]
+  },
+  {
+   "category_id": "50002798",
+   "category_name": "스포츠/레저 > 골프 > 골프의류 > 점퍼",
+   "fields": {
+    "product_weight_g": {
+     "low": 150,
+     "central": 350,
+     "high": 800
+    },
+    "package_weight_g": {
+     "low": 300,
+     "central": 400,
+     "high": 900
+    },
+    "package_length_mm": {
+     "low": 250,
+     "central": 280,
+     "high": 350
+    },
+    "package_width_mm": {
+     "low": 200,
+     "central": 220,
+     "high": 250
+    },
+    "package_height_mm": {
+     "low": 30,
+     "central": 40,
+     "high": 80
+    }
+   },
+   "reliability": "estimated_average",
+   "defaults_version": 13,
+   "basis": "One folded windbreaker or light jumper in a poly mailer. The owner gave the section (2026-11-20, womens-windbreakers) and delegated the rest (\"фикси на лету\"); the agent took the knit cardigans' apparel values of 2026-11-19 (the owner's): a shell packs as small as a knit, so the same box, low 25 x 20 x 3 cm, central 28 x 22 x 4 cm (0.49 kg volumetric at the divisor 5000: the tariff's 0.5 kg step), high 35 x 25 x 8 cm; the garment 150 / 350 / 800 g (a mesh or nylon shell to a lined winter jumper), the parcel 300 / 400 / 900 g, never under 300 g. Kind insulated: a fleece-lined, quilted or hybrid jumper (padded and down jumpers are left out by the title screen), as the knit's insulated kind.",
+   "approved_by": "owner",
+   "approved_at": "2026-11-20",
+   "plausible": {
+    "package_weight_g": {
+     "min": 300,
+     "max": 1500
+    }
+   },
+   "kinds": [
+    {
+     "kind": "insulated",
+     "match": "기모|방한|패딩|다운|구스|덕다운|충전재|솜털|웰론|퀼팅|하이브리드|보온|후리스|플리스",
+     "fields": {
+      "product_weight_g": {
+       "low": 450,
+       "central": 600,
+       "high": 1000
+      },
+      "package_weight_g": {
+       "low": 500,
+       "central": 700,
+       "high": 1200
+      },
+      "package_length_mm": {
+       "low": 280,
+       "central": 300,
+       "high": 380
+      },
+      "package_width_mm": {
+       "low": 220,
+       "central": 240,
+       "high": 300
+      },
+      "package_height_mm": {
+       "low": 40,
+       "central": 60,
+       "high": 100
+      }
+     },
+     "basis": "A lined, quilted, fleece or hybrid jumper (기모 / 방한 / 퀼팅 / 하이브리드 / 보온 / 후리스 ... in the title or the variant): bulkier than a shell. Central 30 x 24 x 6 cm, 0.7 kg: the knit cardigans' insulated kind (the owner, 2026-11-20), taken for the windbreakers on the owner's delegation 2026-11-20."
     }
    ]
   }

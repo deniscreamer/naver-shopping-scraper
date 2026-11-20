@@ -158,6 +158,20 @@ RULES = {
                                       own_brand_wordmark=True,   # the shop's own brand (Grehip, Tee And Golf)
                                       reviewed=True),       # the owner 2026-11-20: 52 drafts activated after the
                                                             # lens review of wave 1
+            "50002798": CategoryRules(
+                                      # 2026-11-20: women's golf windbreakers (점퍼), the second apparel. The owner
+                                      # gave the section (womens-windbreakers under apparel) and delegated the rest
+                                      # ("фикси на лету"): the knit cardigans' choices, the same kind of seller and
+                                      # garment: paid variants sold (a plus size costs more), paid add-ons not, the
+                                      # images read (the size charts)
+                                      paid_variants=True, paid_addons=False, description_images=True,
+                                      gift_axis_out=True,   # a free gift's sizes are not versions of the jumper
+                                      no_choice_out=True,   # "선택안함" / "없음" values are not versions
+                                      composition=True,     # the fibre rows: the description's materials
+                                      sizes="womens_tops",  # US sizes and the size chart: a women's top
+                                      own_brand_wordmark=True,   # the shop's own brand, as the knits
+                                      reviewed=False),      # a new category: DRAFT until the lens review and the
+                                                            # owner's activation
         }),
 }
 

@@ -517,6 +517,23 @@ def test_a_partial_composition_is_none_and_pays_the_unknown_rate(text):
     assert b is not None and b["dutyRate"] == "0.32" and b["dutyBasis"]["fibre"] == "unknown"
 
 
+@pytest.mark.parametrize("krw, rows, fibre, by_fibre", [
+    (46_900, [("소재", "나일론 100%", "spec")], "man-made", "0.277"),
+    (139_000, [("소재", "면 100%", "spec")], "cotton", "0.089"),
+    (139_000, [("섬유의 조성 또는 혼용률", "상세페이지 참조", "notice")], "unknown", "0.277"),
+])
+def test_windbreakers_take_the_knits_price_and_read_their_fibre_under_hts_6202(krw, rows, fibre, by_fibre):
+    """50002798 (2026-11-20, the owner delegated): the knits' coefficients and flat 12.5 % duty, so the same box and
+    Naver price give the knit's price; the rate by fibre kept under US HTS 6202 (women's windbreakers, woven)."""
+    product = {**FREE, "specs": [], "composition_ko": [{"label_ko": label, "value_ko": value, "source": source}
+                                                      for label, value, source in rows]}
+    wind = SHOP.quote({**knit_box(), "price_krw": krw}, product, "50002798")
+    assert wind.price == knit(krw, *rows, shop=SHOP).price
+    b = wind.breakdown
+    assert b is not None and b["dutyRate"] == "0.125" and b["dutyBasis"]["flat"] is True
+    assert (b["dutyBasis"]["hts"], b["dutyBasis"]["fibre"], b["dutyBasis"]["byFibre"]) == ("6202", fibre, by_fibre)
+
+
 def test_a_partial_spec_row_gives_way_to_the_full_notice_row():
     found = shop_pricing.chief_fibre([{"label_ko": "소재", "value_ko": "캐시미어 10% 함유"},
                                       {"label_ko": "섬유의 조성 또는 혼용률", "value_ko": "울 60% 아크릴 30% 캐시미어 10%",

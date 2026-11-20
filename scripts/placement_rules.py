@@ -27,6 +27,11 @@ apparel, split by gender as 50002670: unisex goes there, a mixed product too, a 
 nothing states are held (`unresolved`). Pullovers, vests and sets without a cardigan word, and titles without a
 women's word, are left out by the title screen, not here.
 
+50002798 점퍼 (2026-11-20, the owner): women's golf windbreakers, one section womens-windbreakers under the parent
+apparel, split by gender as the knits: unisex goes there, a men's jumper and one whose gender nothing states are held
+(`unresolved`). Padded and down jumpers, rainwear, vests and cardigans, and titles without a women's word, are left
+out by the title screen, not here.
+
     from placement_rules import profile_for
     profile = profile_for("fairwardgolf")
 """
@@ -81,6 +86,11 @@ CHIPPERS = Leaf("chippers", "Chippers")                            # owner 2026-
 WOMENS_KNIT_CARDIGANS = Leaf("womens-knit-cardigans", "Women’s Golf Cardigans")   # owner 2026-11-19: women's knit
                                                                    # cardigans, parent apparel; the store's collection
                                                                    # fairwardgolf-womens-knit-cardigans: to check (A6)
+WOMENS_WINDBREAKERS = Leaf("womens-windbreakers", "Women’s Windbreakers")   # owner 2026-11-20: women's golf
+                                                                   # windbreakers, parent apparel; the store's
+                                                                   # collection fairwardgolf-womens-windbreakers
+                                                                   # (tag rule fairwardgolf:leaf:womens-windbreakers)
+                                                                   # existed, empty (checked 2026-11-20)
 
 PROFILES = {
     StoreId.FAIRWARDGOLF: PlacementProfile(
@@ -95,6 +105,8 @@ PROFILES = {
             "50002784": CategoryPlacement(parent="clubs", leaves={None: CHIPPERS}),   # 치퍼
             "50002797": CategoryPlacement(parent="apparel", split_by="gender",         # 니트 (2026-11-19)
                                           leaves={"womens": WOMENS_KNIT_CARDIGANS}),
+            "50002798": CategoryPlacement(parent="apparel", split_by="gender",         # 점퍼 (2026-11-20)
+                                          leaves={"womens": WOMENS_WINDBREAKERS}),
         }),
 }
 

@@ -11,7 +11,7 @@ This file is the shared mechanism. The parts:
 |---|---|---|
 | Reading a seller's size chart (text and OCR), the layouts, what is never read | [SIZE_CHARTS.md](SIZE_CHARTS.md) | `size_chart.py` (`MEASURE_SETS`) |
 | A garment profile: its grid, its brand rows, its sellers' habits | `size_profiles/<profile>.md` | `size_profiles/<profile>.json` |
-| Profiles today | [womens_tops](size_profiles/womens_tops.md) (knit cardigans 50002797) | |
+| Profiles today | [womens_tops](size_profiles/womens_tops.md) (knit cardigans 50002797, windbreakers 50002798) | |
 
 Code: `size_labels.py` (the labels, every garment), `size_chart.py` (the chart), `apparel_sizes.py` (`resolve`,
 `chart_html`: the one module the callers import), called by `transform.prepare` (a category with

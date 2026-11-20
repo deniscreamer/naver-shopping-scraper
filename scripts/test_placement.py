@@ -285,3 +285,15 @@ def test_knit_cardigans_go_to_the_womens_section_under_apparel_and_a_mens_or_unk
     assert mixed["status"] == "placed" and mixed["leaves"][0]["fit_skus"] == ["s2"]
     for value in ("mens", "unknown", "conflict"):
         assert PL.place(product(value, category="50002797"), PROFILE)["status"] == "unresolved"
+
+
+def test_windbreakers_go_to_the_womens_section_under_apparel_and_a_mens_or_unknown_one_is_held():
+    """50002798 (the owner, 2026-11-20): women's golf windbreakers, the store's collection
+    fairwardgolf-womens-windbreakers (tag rule fairwardgolf:leaf:womens-windbreakers), parent apparel; as the knits."""
+    for value in ("womens", "unisex"):
+        got = PL.place(product(value, category="50002798"), PROFILE)
+        assert got["status"] == "placed" and got["product_type"] == "Women’s Windbreakers"
+        assert got["tags"] == ["fairwardgolf:leaf:womens-windbreakers", "fairwardgolf:parent:apparel",
+                               "fairwardgolf:showcase"]
+    for value in ("mens", "unknown", "conflict"):
+        assert PL.place(product(value, category="50002798"), PROFILE)["status"] == "unresolved"

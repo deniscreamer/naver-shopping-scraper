@@ -294,7 +294,8 @@ files or the live dictionaries. The rounds run so far: History, below.
   rule, aspects, product words and glossary) and 50002783 (wedge sets, 2026-11-15: its own brief, the sets' rule,
   aspects, product words and glossary) and 50002784 (chippers, 2026-11-18: its own brief with the listing's makers
   and lines, the clubs' rule and glossary, the clubs' aspects plus the short game's, product words plus 치퍼 / 칩퍼;
-  its brief keeps a title's loft in degrees, 2026-11-18: History) and 50002797 (women's knit cardigans, 2026-11-19:
+  its brief keeps a title's loft in degrees, 2026-11-18: History), 50002798 (women's golf windbreakers, 2026-11-20:
+  the knits' shape with jacket, function and shell terms, 점퍼 never "jumper", the knits' `TITLE_SIZES`) and 50002797 (women's knit cardigans, 2026-11-19:
   its own brief with knit, fibre and fit terms, department-store prefixes dropped, a title of brand + Women's +
   garment + key feature with no size run, sizes never converted; `translate.TITLE_SIZES` lets a title's size run
   (55 66 77, 90 95 100) be left out without "numbers changed" (a free-standing number only: a code's tail, K90,

@@ -413,6 +413,40 @@ def test_knit_cardigans_need_a_womens_word_and_a_cardigan_word(title, code):
                          "store": {"channel_no": "2"}}) == code
 
 
+@pytest.mark.parametrize("title, code", [
+    # 50002798, women's golf windbreakers (2026-11-20): real titles of the listing 여성 골프 바람막이 점퍼 (767 titles in
+    # 8 price bands, the agent's sample of 2026-11-20)
+    ("스윙서플라이 파스텔 여성 골프 바람막이 스윙 점퍼", None),
+    ("레크레아 여성 골프 바스락 경량 허리셔링 크롭 바람막이 후드 자켓", None),
+    ("다운블로우 여성 경량 스판 블루종 점퍼", None),                         # 다운블로우 is a brand
+    ("클라터뮤젠 여성 베스트라 후드 자켓 집업 바람막이 블랙 507784", None),    # Vestra, a jacket
+    ("여성 골프점퍼 바람막이 니트 방풍 자켓 여성골프웨어", None),              # a windproof knit jacket
+    ("티앤드 여성골프점퍼 골프가디건 바람막이 자켓 방풍 여자골프웨어", None),   # a cardigan word with a jacket word
+    ("까스텔바작 여성골프 간절기 방풍 기모안감 후드 점퍼 BDFFJP502BK", None),
+    ("밀라 라이트 쉴드 점퍼 MD262F0101JP", "title:not_womens"),
+    ("남자골프잠바 바람막이", "title:not_womens"),
+    ("스트링조절 여성 골프 조끼", "title:not_jacket"),
+    ("고엑스오 웨얼이즈마이볼 여성 골프 카라 우븐 반팔집업", "title:not_jacket"),
+    ("그리너리 여성 덕다운 경량 골프패딩 바람막이자켓 GWWOT1168 BK", "title:padded"),
+    ("[ WAAC ] 여성 니블릭 다운 점퍼(WWUAW26800BKX)", "title:padded"),
+    ("여성 골프 에센셜 마름모 튜브 구스 다운 경량 점퍼 WO992", "title:padded"),
+    ("여성 골프 비옷 롱 레인코트 방수 방풍 우비 골프웨어 아우터 점퍼", "title:rainwear"),
+    ("테일러메이드 어패럴 여성 골프웨어 3L 경량 스트레치 레인 점퍼 UO-Z1YY05", "title:rainwear"),
+    ("여성 트레이닝 점퍼", None),                                          # 트레이닝 is no 레인
+    ("왁 골프 여성 반팔 바람막이 베스트 VAM2201BKX", "title:vest"),
+    ("프아린 여성골프 니트 집업 가디건 여자간절기가디건 여성골프점퍼 니트점퍼", "title:knit"),
+    ("데상트골프 여성 밑단 니트 하이브리드 점퍼", "title:knit"),
+    ("여성 골프 가디건 점퍼", None),
+    ("여성 골프 가디건 아우터 블루종", None),                                # 블루종 is a jacket word, 가디건 unless it
+    ("여성 골프 집업 가디건", "title:not_jacket"),
+    ("여성 골프 바람막이 상하세트", "title:two_piece_set"),
+])
+def test_windbreakers_need_a_womens_word_and_a_jacket_word_and_no_padding(title, code):
+    screen = Screen("50002798", namespace="fairwardgolf")
+    assert screen.check({"name": title, "category_id": "50002798", "product_id": "1",
+                         "store": {"channel_no": "2"}}) == code
+
+
 def test_requires_is_all_of_the_groups_any_word_of_each_and_unless_still_wins():
     rules = [{"code": "x", "requires": [["a", "b"], ["c"]], "unless": ["zz"]}]
     assert title_rule("a c", rules) is None and title_rule("B C", rules) is None

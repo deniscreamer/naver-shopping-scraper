@@ -227,3 +227,11 @@ def test_knit_cardigan_reviews_name_the_garment(text):
     clubs' aspects do not."""
     assert R.clean(text, category_id="50002797").grade == "full"
     assert R.clean("타구감이 너무 좋아요", category_id="50002797").grade == "short"
+
+
+@pytest.mark.parametrize("text", ["정사이즈로 잘 맞아요", "바람을 잘 막아줘요", "가볍고 바스락거리지 않아요",
+                                  "기장이 딱 좋아요", "후드가 있어서 좋아요", "세탁해도 구김이 없어요"])
+def test_windbreaker_reviews_name_the_garment(text):
+    """50002798 (2026-11-20): a windbreaker buyer's aspects (fit, size, wind, weight, rustle, washing) grade full."""
+    assert R.clean(text, category_id="50002798").grade == "full"
+    assert R.clean("타구감이 너무 좋아요", category_id="50002798").grade == "short"

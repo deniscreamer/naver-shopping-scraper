@@ -1356,6 +1356,7 @@ def test_imported_is_no_finding_for_a_garment():
     assert S.description_patterns(S.text_of(body), imported=True) == []
     assert S.description_patterns(S.text_of(body)) == ["shop talk: Imported: Imported."]
     assert S._imported({"source": {"category_id": "50002797"}}) and not S._imported({"source": {"category_id": "50002788"}})
+    assert S._imported({"source": {"category_id": "50002798"}})          # windbreakers, 2026-11-20
     noisy = "<ul><li>Imported from Japan, official.</li></ul>"
     assert S.description_patterns(S.text_of(noisy), imported=True)      # only the bare origin line is let through
 

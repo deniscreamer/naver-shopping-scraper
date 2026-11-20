@@ -352,4 +352,5 @@ def test_a_model_codes_tail_is_no_size():
     """A code ending in a size number (K90, C100) keeps its number: only free-standing sizes are freed (review
     2026-11-19)."""
     sizes = T.TITLE_SIZES["50002797"]
+    assert T.TITLE_SIZES["50002798"] is sizes                             # windbreakers: the same sizes (2026-11-20)
     assert sizes.findall("WWW24K90 여성 가디건 C100 55 66 77 90 울 100%") == ["55", "66", "77", "90"]
