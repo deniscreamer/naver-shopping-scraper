@@ -61,7 +61,7 @@ writes `status: held`, no codes of its own), not placed, not published. Where to
 | `no_variants` | transform | the listing has option groups and no variant was chosen; the detail says whether paid variants were allowed (`paid=`) | paid variants off for the category: the owner decides (`transform_shops.py` `paid_variants`); else leave it |
 | `options_unaligned` | transform | variant rows that do not fit the option groups (a row's values not one per group); one of them alone is never published | leave it held; read the line's `specs.options` and report (a server parser change follows server/docs/DEVELOPMENT_RULES.md) |
 | `specs_folded` | transform | the 상품정보 list stayed folded at collection (`specs.is_complete` false) | collect again |
-| `size_unmapped` | transform | apparel (`CategoryRules.sizes`): a size value with no US size, or two Korean sizes on one US size (apparel_sizes.py, [SIZES.md](SIZES.md)) | a brand row in the profile (`size_profiles/<profile>.json`), or the label read; never a guessed size |
+| `size_unmapped` | transform | apparel (`CategoryRules.sizes`): a size value with no US size, or two Korean sizes on one US size; no size option while the chart lists several sizes, or a colour and a size in one option (2026-11-20) (apparel_sizes.py, [SIZES.md](SIZES.md)) | a brand row in the profile (`size_profiles/<profile>.json`), or the label read; never a guessed size |
 | `axes_over_3` | transform | more than 3 option axes: Shopify has 3 options per product (`MAX_AXES`) | leave it held |
 | `no_images` | transform | no gallery photo saved | collect again; still none: leave it |
 | `images_over_50` | transform | more than 50 gallery photos (`MAX_IMAGES`) | leave it held; tell the owner |
@@ -170,9 +170,12 @@ published, SKUs and prices equal on 201 of 201 variants):
   and variant id do not move when one gift size sells out), available when any row of the tuple is, note
   `gift_axis_dropped`; a gift priced apart stays a choice (Missile 10421264752: 7 variants that were the free
   glove's sizes, now one). Where the category says so (`no_choice_out`: knit cardigans 50002797, the owner
-  2026-11-19) a value that says "no choice" (선택안함, 선택 안함, 없음, 필요없음, 선택없음, the whole value) is no
+  2026-11-19) a value that says "no choice" (선택안함, 선택 안함, 없음, 필요없음, 선택없음, 미선택, the whole value) is no
   version: the rows that carry it go, and an axis whose every value says so goes whole (one row per remaining tuple),
-  note `no_choice_dropped`; off for the clubs (their golden products unchanged). Over 3 axes: held; over the shop's variant cap:
+  note `no_choice_dropped`; off for the clubs (their golden products unchanged). An axis whose "no choice" value is
+  the cheapest row of every remaining tuple, its other values all at extra cost, is a paid add-on (2026-11-20, DGB
+  10972881555: trousers at +31,900 KRW beside the cardigan): with the category's `paid_addons` off its "no choice"
+  rows stay and the axis goes (the product at its base price, the same note), on: the axis stays whole. Over 3 axes: held; over the shop's variant cap:
   the first ones are offered (`variants_capped`, below).
 - **SKU**: the shop's prefix + 24 hex of sha256({schemaVersion, sourceId, tenantOfferKey}) (the harvester's recipe).
 - **The owner's spec row** (run-level, `run_transform.apply_specs_by_owner`, after the brand fallback; never in the
@@ -446,14 +449,18 @@ link. The report says how many were dropped. The step is pure: same products in,
   firm, "Brand | Generic", the Manufacturer row as written, "Alpha Golf" on 13382512411, not a factory or a trader
   "Shenzhen … Technology Co., Ltd."),
   the importer in
-  원산지's brackets (`origin`), the shop's brand most read in the images (`images_text`), a Latin brand phrase the
+  원산지's brackets (`origin`; never an address or a bare country there: "국산(서울특별시 동대문구)" made 8212382236's
+  vendor "Dongdaemun-gu, Seoul", 2026-11-20), the shop's brand most read in the images (`images_text`), a Latin brand phrase the
   images repeat 5+ times (`images_text_latin`: BEN SAYERS on 13425122164) unless, just before it and only in a
   category with `CategoryRules.own_brand_wordmark` (knit cardigans; off for the clubs: 56 club resellers' banners,
   URLs and mails repeat their slugs while they sell Mizuno or Yamaha), the shop shows its own brand: its Latin address (slug) read 3 times in its texts as a word (not in www.x.com, x@mail, x16), or its name right
   before 상표권 / 공식 스토어 or next to 브랜드 ("브랜드 티앤드"; never "<name>는 X 공식 판매처"), makes the
   shop's name the brand (`shop_wordmark`, `brand_fallback.own_brand_shown`; 2026-11-19, the knit pilot: "EVER YDAY",
   a slogan embroidered on a 티앤드 골프 cardigan, was the vendor of 11519647149; the step sits after every stronger
-  one: placed first, it took 8 clubs' TaylorMade / Kirkland / 인파로); a brand row the reseller rule below dropped
+  one: placed first, it took 8 clubs' TaylorMade / Kirkland / 인파로); when the 브랜드 row named the shop's own label
+  and the reseller rule dropped it but the texts do not show it so, no Latin phrase is the brand either: 노브랜드
+  (`decide`'s own_row, `run_transform._own_row`; "EVER YDAY" on 카멜브리즈's 11573884405, "WHITE TEE" on 내추럴모드's
+  11442719270, 2026-11-20; the owner may name the label); a brand row the reseller rule below dropped
   ("<shop> 협력업체" as the maker) is kept, source `shop_wordmark`, when the shop shows it the same way (Grehip:
   "GREHIP OFFICIAL SHOP", "그레힙의 상표권", 13759750310, 9992270463), the notice's 동일 모델의 출시연월 row when it
   is a firm and the title's first word, no date or page pointer (`release_row`: agency 100217952 writes "USPA" there;

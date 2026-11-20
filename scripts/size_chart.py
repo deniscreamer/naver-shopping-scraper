@@ -9,8 +9,9 @@ The layouts read (SIZE_CHARTS.md "The layouts", P1-P5):
   P3  by column, the sizes across: "사이즈 / M(90) / L(95)" / "가슴너비 / 46 / 48.5"; one size column too ("호칭 / FREE")
   P4  a label then name+number pairs: "L 총장 61 어깨 35 가슴 44", "S(90)-총장56/어깨37/가슴48"
   P5  a FREE product's lines with no label: "총장59/어깨54/가슴56", "어깨(cm): 40", "가슴 / 46"
-Never read: the model, the buyer, the shop, size lists, recommendation tables, measuring-method text (_NOT_CHART_RE,
-the ranges); an exact cell count or no row: a dropped cell skips the row, never shifts it.
+Never read: the model, the buyer, the shop, size lists, recommendation tables, measuring-method text (NOT_CHART_RE,
+the ranges), a model block's Bust line, a number before 사이즈; an exact cell count or no row: a dropped cell skips
+the row, never shifts it; a value that breaks its table's run is dropped from its row (_breaks, 2026-11-20).
 """
 import re
 from dataclasses import dataclass, field
@@ -41,19 +42,29 @@ MEASURE_SETS: dict[str, tuple[Measure, ...]] = {
 }
 _FLAT_RE = re.compile(r"단면|너비|넓이|폭|width", re.I)        # ("가슴/2" never reaches here: "/" splits cells)
 _CIRC_RE = re.compile(r"둘레|들레|circ", re.I)          # 들레: OCR's 둘레 (11206784343)
-_SIZE_HEAD_RE = re.compile(r"^(?:사이즈|size|치수|호\s*칭|구\s*분|단\s*위)(?:\s*\(?\s*cm\s*\)?)?(?:\s*[:：]?\s*cm)?$", re.I)
+# the corner cell: a word for the size, or the unit alone ("CM / 90 / 95 / 100 / 105", 13021502381, 2026-11-20)
+_SIZE_HEAD_RE = re.compile(r"^(?:(?:사이즈|size|치수|호\s*칭|구\s*분|단\s*위)(?:\s*\(?\s*cm\s*\)?)?(?:\s*[:：]?\s*cm)?|"
+                           r"\(?\s*cm\s*\)?)$", re.I)
 _KOREA_HEAD_RE = re.compile(r"^(?:korea(?:n)?\s*size|kr|kor|한국|국내)", re.I)
 _US_HEAD_RE = re.compile(r"^(?:us|usa|미국)(?:\s*size)?$", re.I)
 _CELL_SPLIT_RE = re.compile(r"\s*[|/\t]\s*")
 _UNIT_RE = re.compile(r"\(\s*(?:단위\s*[:：]?\s*)?cm\s*\)", re.I)                    # "어깨(cm): 40" -> "어깨: 40"
-_PAIR_RE = re.compile(r"([가-힣A-Za-z]+)\s*[:\-]?\s*(\d{1,3}(?:\.\d{1,2})?)")
+# a number before 사이즈 / size is a women's size, never a measure ("어깨가넓은 마른66사이즈": 11573884405, 2026-11-20)
+_PAIR_RE = re.compile(r"([가-힣A-Za-z]+)\s*[:\-]?\s*(\d{1,3}(?:\.\d{1,2})?)(?![\d.]*(?:사이즈|[sS][iI][zZ][eE]))")
 _CELL_VALUE_RE = re.compile(r"^(\d{1,3}(?:\.\d{1,2})?)\s*(?:cm|㎝)?\s*(?:\(\s*\d{1,3}(?:\.\d{1,2})?\s*(?:in|inch|inches|\")"
                             r"\s*\))?$", re.I)          # "55cm (21.7in)" -> 55 (13722416544); "21.7in" alone: none
+# one cell written twice, "53/53" with no space ("85 (S) | 36 | 92 | 58 | 53/53", 11377634969): one value; an OCR row
+# joins its cells with " / ", spaces both sides, so it never matches
+_TWIN_RE = re.compile(r"(?<![\d.])(\d{1,3}(?:\.\d{1,2})?)/\1(?![\d./])")
+# the body measures of a model block ("Height : 173cm" / "Bust : 83cm" / "Waist : 62cm" / "Hip : 90cm", 10940191023):
+# a Bust line with another of these within _BODY_NEAR lines is the model's, never a chart (2026-11-20)
+_BODY_RE = re.compile(r"^\s*(height|bust|waist|hips?)\s*[:：]", re.I)
+_BODY_NEAR = 4
 _ITEM_RE = re.compile(r"^[a-h]$")             # an OCR'd figure letter before a row ("b / 가슴둘레 / 86 / 91")
 ONE = "__one_size__"                          # the measurements written with no size label (a FREE product)
 # a line about the model, the buyer or the shop, never a garment's measurements ("모델 신장 165 / 가슴둘레 82",
 # "66 착용 / 키 165", "구매상품금액 7만원", "체형 가슴 90", 2026-11-19 review and study)
-_NOT_CHART_RE = re.compile(r"모델|착용|(?<![가-힣])키\s*:?\s*\d|신장|체중|몸무게|체형|신체|\d\s*kg|\d\s*만?\s*원|배송|반품|교환|"
+NOT_CHART_RE = re.compile(r"모델|착용|(?<![가-힣])키\s*:?\s*\d|신장|체중|몸무게|체형|신체|\d\s*kg|\d\s*만?\s*원|배송|반품|교환|"
                            r"상품\s*번호|model|wear", re.I)
 _FLAT_NOTE_RE = re.compile(r"단면\s*(?:을\s*)?기준|cm\s*/\s*단면|단면\s*\)")         # "*상세치수는 단면기준 cm"
 _CIRC_NOTE_RE = re.compile(r"(?:둘레|들레)는|[x×]\s*2")                              # "둘레는 ... ×2사이즈입니다"
@@ -61,6 +72,7 @@ _SECTION_MAX = 24                             # a line naming a type's section (
 # what a type's heading may carry beside the type's value: brackets, 형 / 타입, the garment's noun
 _HEADING_REST_RE = re.compile(r"[\s()\[\]\-_:·.,/]|형|타입|버전|ver|가디건|카디건|니트|집업|자켓|재킷|점퍼|베스트|조끼|스웨터|"
                               r"상세|사이즈|size", re.I)
+_BREAK_MIN = 3.0                              # cm: the least span a run's neighbours allow (_breaks)
 _SPACED_HANGUL_RE = re.compile(r"(?<=[가-힣])\s+(?=[가-힣])")          # "소매 기장 58" -> "소매기장 58"
 
 
@@ -95,6 +107,8 @@ class _Reader:
                          if s and len(re.sub(r"\s+", "", s)) >= 2 and parse_label(s) is None}
         self.chart = Chart()
         self.hints: dict[str, str] = {}
+        self.table = 0                                   # the table being read: a new header or columns line opens one
+        self.origin: dict[tuple[str, str], int] = {}     # (label, field) -> the table its kept value came from
 
     def measure(self, cell: str) -> tuple[str, str | None] | None:
         for m in self.measures:
@@ -129,6 +143,7 @@ class _Reader:
         for k, (_, kind) in values.items():
             if k not in have:                    # the value kept is the first: its word is the kind (a second
                 self.kind((k, kind))             # table's 둘레 never relabels a first table's 단면 values)
+                self.origin[(label, k)] = self.table
         self.chart.add(label, {k: v for k, (v, _) in values.items()})
         return True
 
@@ -162,8 +177,12 @@ def read_chart(lines: list[str], measures: str = "tops", sections: list[str] | N
     last_was_header = False
     header_rows = 0                                               # rows read under the current header
     section: str | None = None
-    for raw in lines:
-        text = _UNIT_RE.sub("", raw)
+    body = {i: b.group(1).lower() for i, line in enumerate(lines) if (b := _BODY_RE.match(line))}
+    for i, raw in enumerate(lines):
+        if i in body and any(body.get(j) not in (None, body[i]) for j in range(i - _BODY_NEAR, i + _BODY_NEAR + 1)):
+            last_was_header = False
+            continue
+        text = _TWIN_RE.sub(r"\1", _UNIT_RE.sub("", raw))
         cells = _row_cells(text)
         if len(cells) > 2 and _ITEM_RE.match(cells[0]) and r.measure(cells[1]):
             cells = cells[1:]
@@ -171,7 +190,7 @@ def read_chart(lines: list[str], measures: str = "tops", sections: list[str] | N
         if hit:
             section = hit
             continue
-        if not cells or _NOT_CHART_RE.search(raw):
+        if not cells or NOT_CHART_RE.search(raw):
             last_was_header = False
             continue
         if _FLAT_NOTE_RE.search(raw) and not _CIRC_RE.search(raw):        # kind hints outside the table (F8)
@@ -190,6 +209,7 @@ def read_chart(lines: list[str], measures: str = "tops", sections: list[str] | N
             len(cells) - 1 == len(header or []) - (1 if header_has_size else 0)
         if len(cells) >= 3 and all(labels) and not any(measures_of[1:]) and not under_header:   # "S | 92 | 88" is a row
             columns = cells[1:] if sized else cells
+            r.table += 1
             for n, lab in zip(columns, labels):
                 chart.labels[n] = lab              # type: ignore[assignment]
             header, one_column, last_was_header = None, False, False
@@ -197,6 +217,7 @@ def read_chart(lines: list[str], measures: str = "tops", sections: list[str] | N
         if sized and len(cells) == 2 and "," not in cells[1] and (lab := parse_label(cells[1])) \
                 and (lab.free or len(lab.chest) <= 1) and len(lab.women) <= 2:   # one size column (13823433220)
             columns, one_column, header, last_was_header = [cells[1]], True, None, False
+            r.table += 1
             chart.labels[cells[1]] = lab
             continue
         if columns and len(cells) == len(columns) + 1:
@@ -227,6 +248,7 @@ def read_chart(lines: list[str], measures: str = "tops", sections: list[str] | N
                 header = merged
             else:
                 header, header_has_size, header_rows = measures_of, new_has_size, 0
+                r.table += 1
             columns, one_column, last_was_header = None, False, True
             continue
         last_was_header = False
@@ -269,6 +291,7 @@ def read_chart(lines: list[str], measures: str = "tops", sections: list[str] | N
                     pairs[m[0]] = (float(number), m[1])
         if r.put(name, pairs):
             chart.labels[name] = label
+    _drop_breaks(r)
     for k, v in r.hints.items():                    # a note's kind only where the table said none, and only when
         seen_cm = [row[k] for row in chart.rows.values() if k in row]         # every value fits it (spec F8:
         spec = r.by_name.get(k)                                                 # a "flat" note over a 92 cm chest
@@ -276,6 +299,39 @@ def read_chart(lines: list[str], measures: str = "tops", sections: list[str] | N
         if chart.kinds.get(k) is None and seen_cm and all(lo <= x <= hi for x in seen_cm):
             chart.kinds[k] = v
     return chart
+
+
+def _breaks(values: list[float]) -> set[int]:
+    """The place in one table's run of a measure (its sizes in the table's order) whose value breaks the run: the
+    others rise (or fall) all the way, and this one, a middle value of a run of 4 or more, lies outside its two
+    neighbours by more than their span, 3 cm at least. An end value is never dropped: a bigger last step is real
+    grading as often as a misread (88, XL, 2XL; the review of 2026-11-20).
+    "어깨너비 / 35.5 / 57 / 38.5 / 40.5" (13338110183, OCR): 57 breaks it. Two places breaking: none is told."""
+    out: set[int] = set()
+    n = len(values)
+    for i, v in enumerate(values):
+        rest = values[:i] + values[i + 1:]
+        steps = [b - a for a, b in zip(rest, rest[1:])]
+        if n < 4 or not (all(d >= 0 for d in steps) or all(d <= 0 for d in steps)):
+            continue
+        if not 0 < i < n - 1:
+            continue
+        lo, hi = sorted((values[i - 1], values[i + 1]))
+        span = max(hi - lo, _BREAK_MIN)
+        if v < lo - span or v > hi + span:
+            out.add(i)
+    return out if len(out) == 1 else set()
+
+
+def _drop_breaks(r: _Reader) -> None:
+    """A value that breaks its table's run (_breaks) leaves that row: never shown (2026-11-20 lens review)."""
+    runs: dict[tuple[int, str], list[str]] = {}
+    for (label, k), table in r.origin.items():
+        if not label.startswith(ONE) and k in r.chart.rows.get(label, {}):
+            runs.setdefault((table, k), []).append(label)
+    for (_, k), labels in runs.items():
+        for i in _breaks([r.chart.rows[n][k] for n in labels]):
+            del r.chart.rows[labels[i]][k]
 
 
 def _one(r: _Reader, loose: dict[str, tuple[float, str | None]], section: str | None) -> None:

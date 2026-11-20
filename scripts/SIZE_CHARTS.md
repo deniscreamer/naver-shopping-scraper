@@ -13,7 +13,8 @@ sidecar format and reading the cached images again.
 |---|---|---|
 | a product's chart is missing or a field is empty | its lines: `shop_view.py show <shop> <ref> --raw prepared --path product.description_ko` and the sidecar `description_images/<pid>.json` (rows by image, `y`) | find its layout below; a new layout or word: a rule in `size_chart.py` with a test and a golden diff |
 | a garment chest shows half or double | `product.sizes.chart.kinds.chest` | the kind words below; a note line ("단면 기준") is a hint |
-| a number that is no measurement in the chart (a model's height, a price) | the line | a word in `_NOT_CHART_RE`, or the field's plausible range |
+| a number that is no measurement in the chart (a model's height, a price) | the line | a word in `NOT_CHART_RE`, or the field's plausible range |
+| a row whose measures are not read but whose label pairs a letter with a women's size ("L(55-66) / 48 / 20 / 58", 12220300865) | the row stays out of the chart | nothing: its pairing still sizes the bare letter ([SIZES.md](SIZES.md) "The order" 3, 2026-11-20) |
 
 ## The layouts (the 2026-11-19 study: 28 of 30 products carry a chart, 36 tables)
 
@@ -32,7 +33,15 @@ Rules that hold the layouts apart:
 - A dropped cell never shifts a row: a row is read only when its cells count as the header's (or the columns').
 - Two header lines straight after each other with as many cells are one header (Korean then English). A header of a
   different length replaces the last one.
-- The corner cell of a header: 사이즈, size, 치수, 호칭, 구분, 단위(cm).
+- The corner cell of a header: 사이즈, size, 치수, 호칭, 구분, 단위(cm), the unit alone (CM, cm, (cm): "CM / 90 / 95 /
+  100 / 105", 13021502381, 2026-11-20).
+- One cell written twice with no space ("53/53": "85 (S) | 36 | 92 | 58 | 53/53", 11377634969) is one value when both
+  halves are equal (2026-11-20); two different numbers stay two cells, and the row is skipped.
+- A value that breaks its table's run (2026-11-20, an OCR misread: "어깨너비 / 35.5 / 57 / 38.5 / 40.5",
+  13338110183) leaves that row, never shown: in a run of one measure over a table's sizes whose other values all rise
+  (or all fall), a middle value of a run of 4 or more outside its two neighbours by more than their span (3 cm at
+  least). An end value is never dropped (a bigger last step is real grading as often). Two such places: none. On
+  2026-11-20 it dropped one value of the 328 runs in the shop and the pilot (`size_chart._breaks`).
 - A one-size column header needs that corner, then one label with no comma ("사이즈 / 90, 95, 100" is a list, not a
   chart); its rows are measure rows or a pairs line ("사이즈 | FREE" then "총장59/어깨54/..."); it ends at the first
   two-cell row that is not its measure.
@@ -67,10 +76,13 @@ Never a field (the tops): 소매통, 소매부리, 소매단너비, 화장 (cent
 
 ## Never read
 
-`_NOT_CHART_RE`: the model and the buyer (모델, 착용, 키 165, 신장, 체중, 몸무게, 체형, 신체, kg, model, wear), the shop
+`NOT_CHART_RE`: the model and the buyer (모델, 착용, 키 165, 신장, 체중, 몸무게, 체형, 신체, kg, model, wear), the shop
 (배송, 반품, 교환, 7만원, 상품번호). Not charts either, and not read by the layouts: size lists ("사이즈 / 90, 95, 100,
 105"), recommendation tables ("평소 55사이즈 착용 시-XS 추천", 7562982095), the care label ("구 / 90 cm", 12558165017),
 measuring-method text ("가슴둘레 : 겨드랑이 1cm 밑"), tolerance notes ("1~3cm 오차"), RFID tag samples ("호칭:100").
+A model block (2026-11-20, 10940191023): a "Bust : 83cm" line with another Height / Waist / Hip line within 4 lines is
+the model's bust. A number written against 사이즈 / size (no space) is a women's size, never a measure ("어깨가넓은 마른66사이즈" made a
+conflict "shoulder 66", 11573884405).
 
 ## When a chart is not read
 

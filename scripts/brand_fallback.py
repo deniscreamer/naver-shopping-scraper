@@ -242,6 +242,19 @@ def _in_distributor(rest: str, brand: str) -> bool:
 # a part of the brackets that names the making, not a firm: "중국산(중국 oem / 인파로)" (5859220164, 2026-11-12) names
 # 인파로; the brackets are split on "/" and "," and such parts go
 _MAKING = re.compile(r"(?i)\b(?:oem|odm)\b|^(?:중국|한국|국산|일본|대만|베트남|태국|미국)(?:산|\s|$)|제조|생산|수입")
+# a Korean address in the brackets names a place, never a firm (2026-11-20, the knit cardigan review: 카멜브리즈 writes
+# "국산(서울특별시 동대문구)" and "국산(인천광역시 서구)", 8212382236 and 5932679597 went out as the brands
+# "Dongdaemun-gu, Seoul" and 인천광역시 서구): a province or metropolitan city (서울, 경기도, 인천광역시 ...), a country
+# word (국내, 대한민국), then a city, county, district, town or village (…시 …군 …구 …읍 …면 …동 …리). The whole part
+# is places, and one of them a province / city or a country word, or two places and more ("동대문구 장안동"); a
+# firm ending in one of those syllables alone (인파로, DGB, 지아이엘) stays
+_REGION = (r"(?:서울|부산|대구|인천|광주|대전|울산|세종|경기|강원|충북|충남|전북|전남|경북|경남|제주|충청[남북]|전라[남북]"
+           r"|경상[남북])(?:특별자치시|특별자치도|특별시|광역시|시|도)?|국내|대한민국|한국")
+_PLACE = r"[가-힣]{1,6}(?:특별자치시|특별자치도|특별시|광역시|시|군|구|읍|면|동|리|도)"
+# ... and a bare country, alone or with 등 ("홍콩", "日本", "China", "인도네시아 등" in the shop's brackets)
+_COUNTRY = r"(?i:홍콩|중국|일본|대만|미국|영국|베트남|태국|인도네시아|日本|中国|china|japan|usa?|uk|hong\s*kong)(?:\s*등)?"
+_ADDRESS_PART = re.compile(rf"^(?:(?:{_REGION})(?:\s+(?:{_REGION}|{_PLACE}))*|(?:{_PLACE})(?:\s+(?:{_PLACE}))+"
+                           rf"|{_COUNTRY})$")
 
 
 def distributors(origin: str | None) -> list[str]:
@@ -250,7 +263,7 @@ def distributors(origin: str | None) -> list[str]:
     parts = [p.strip() for x in _BRACKETS.findall(origin) for p in re.split(r"[/,]", x)]
     # a bare 협력사 or a word that names no firm is none either (2026-11-13: "(협력사)", "(해외몰)")
     return [c for p in parts if p and (c := clean(p)) and not trade_name(p) and not _POINTER.search(p)
-            and not _AGENCY.search(p) and not _MAKING.search(p)]
+            and not _AGENCY.search(p) and not _MAKING.search(p) and not _ADDRESS_PART.match(p)]
 
 
 # a Korean brand (핑, 핑골프, 혼마) is counted in the images' text only where a word starts: 13445783517, 2026-11-11,
@@ -454,9 +467,11 @@ def _own_shop(name: str, store: set[str]) -> bool:
 def decide(title: str | None, origin: str | None, brands: list[str], rows: list[str],
            known: list[str] | None = None, description: str | None = None,
            release: str | None = None, store: set[str] | None = None,
-           shop: dict[str, Any] | None = None) -> tuple[str, str, list[str]]:
+           shop: dict[str, Any] | None = None, own_row: bool = False) -> tuple[str, str, list[str]]:
     """-> (brand, source, other candidates) for a product with no brand of its own (steps 3-7; known: the brand
-    dictionary's Korean names, for a title that starts with one; release: the notice's 동일 모델의 출시연월 row)."""
+    dictionary's Korean names, for a title that starts with one; release: the notice's 동일 모델의 출시연월 row;
+    own_row: its 브랜드 row named the seller's own shop and the reseller rule dropped it, in a category with
+    own_brand_wordmark: no Latin phrase of the images then)."""
     titled = in_title(title, brands)
     if titled:
         return titled[0], "title", titled[1:]
@@ -488,7 +503,10 @@ def decide(title: str | None, origin: str | None, brands: list[str], rows: list[
     own = own_brand_shown(shop, rows + (description or "").splitlines())   # before a slogan the images repeat
     if own:                                                                  # ("EVER YDAY": 11519647149, 2026-11-19)
         return own, "shop_wordmark", []
-    latin = [(p, n) for p, n in latin_phrases(rows).most_common() if n >= MIN_LATIN]
+    # ... and when the 브랜드 row named the shop's own label (dropped: "<shop> 협력업체" the maker) and its texts do not
+    # show it as above, the slogan is still no brand: none, the house vendor (2026-11-20, the knit cardigan review:
+    # 카멜브리즈's "EVER YDAY", 11573884405; 내추럴모드's "WHITE TEE", 11442719270); the owner may name the label
+    latin = [] if own_row else [(p, n) for p, n in latin_phrases(rows).most_common() if n >= MIN_LATIN]
     if latin:
         return latin[0][0], "images_text_latin", [p for p, _ in latin[1:3]]
     released = release_brand(release, title)
@@ -527,12 +545,14 @@ def fill(prepared: list[Any], rows_of: Callable[[str], list[str]],
          origins: dict[str, str | None], texts: Callable[[Any], list[dict[str, str]]],
          known: list[str] | None = None, by_owner: dict[str, str] | None = None,
          releases: dict[str, str | None] | None = None, stores: dict[str, set[str]] | None = None,
-         shops: dict[str, dict[str, Any]] | None = None) -> int:
+         shops: dict[str, dict[str, Any]] | None = None, own_rows: set[str] | None = None) -> int:
     """Give every product without a brand one (steps 3-7), add the note and the brand to its texts. rows_of(key): the
     images' OCR rows of the product; origins: {key: 원산지 as the page states it}; by_owner: {key: brand} the owner
     read on the photos (source "owner", before every step; 2026-11-15: ALVO stamped on the heads, no text naming it);
     releases: {key: the notice's 동일 모델의 출시연월 value} (the last step before 노브랜드); stores: {key: the seller's
-    shop name and legal name, normalized} (a brand that is the shop's name: store_named). -> how many were filled."""
+    shop name and legal name, normalized} (a brand that is the shop's name: store_named); own_rows: the keys whose
+    브랜드 row the reseller rule dropped, in a category with own_brand_wordmark (decide's own_row). -> how many were
+    filled."""
     by_owner = by_owner or {}
     shop_named: dict[str, str] = {}
     for p in prepared:                                  # before the shop's brands: the shop's name is none of them
@@ -555,7 +575,7 @@ def fill(prepared: list[Any], rows_of: Callable[[str], list[str]],
             brand, source, others = decide(product.get("title_ko"), origins.get(p["key"]), brands, rows_of(p["key"]),
                                            known, _description(product.get("description_ko")),
                                            (releases or {}).get(p["key"]), (stores or {}).get(p["key"]),
-                                           (shops or {}).get(p["key"]))
+                                           (shops or {}).get(p["key"]), p["key"] in (own_rows or set()))
         p["product"]["brand_ko"], p["product"]["brand_source"] = brand, source
         p["notes"] = [x for x in p["notes"] if x["code"] != "brand_fallback"] + [
             {"code": "brand_fallback", "detail": f"{source}: {brand}" + (f"; also {', '.join(others)}" if others else "")

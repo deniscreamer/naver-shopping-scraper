@@ -419,3 +419,151 @@ def test_the_first_waves_labels():
                                                                 "M (US 8-10)"]
     label = A.parse_label("FREE[55~66]")
     assert label is not None and label.free and label.women == (55, 66)
+
+
+# ---- the 2026-11-20 lens review of the knit cardigan drafts (job fairwardgolf-50002797-20261120T084807Z) --------------
+
+@pytest.mark.parametrize("pid, values, texts, want", [
+    # the description's "★SIZE" line (10036686854)
+    ("10036686854", ["L", "XL"], ["★SIZE", "L[55~66]/XL[77]", "[모델착용사이즈 L]", "166cm/56kg/마른66size"],
+     ["S-M (US 4-10)", "L (US 12-14)"]),
+    # the description's "SIZE." line (11016233632)
+    ("11016233632", ["M", "L", "XL"], ["SIZE.", "M(55), L(66), XL(77)"],
+     ["S (US 4-6)", "M (US 8-10)", "L (US 12-14)"]),
+    # the OCR rows whose measures are not read (12220300865): the pairing taken, the chart kept out
+    ("12220300865", ["L", "XL"], ["Size(cm) / 어깨 / 가슴 / 소매 / 암홀 / 총기장", "L(55-66) / 48 / 20 / 58",
+                                  "XL(77) / 50.5 / 21 / 59", "모델: Height 171 Bast 35 Waist 26 Hip 36/L착용"],
+     ["S-M (US 4-10)", "L (US 12-14)"]),
+])
+def test_a_bare_letter_takes_the_women_size_the_seller_pairs_it_with(pid, values, texts, want):
+    r = _resolve(values, texts)
+    assert not r["held"] and [v["us"] for v in r["values"]] == want, pid
+    assert {v["basis"] for v in r["values"]} == {"text_pair"}
+    if pid == "12220300865":
+        assert r["chart"] is None
+
+
+def test_a_chart_label_pairing_a_letter_with_women_sizes_is_used():
+    """9353856438: the chart's rows "55~66(L)" / "77(XL)" matched the bare letters but fell back to S = 90."""
+    texts = ["55~66(L) : 총장 59 어깨 35 가슴 45 소매 58", "77(XL) : 총장 61 어깨 37 가슴 47 소매 60", "55~66(L)",
+             "77 (XL) 까지"]
+    r = _resolve(["L", "XL"], texts)
+    assert [(v["us"], v["basis"], v["chart_label"]) for v in r["values"]] == [
+        ("S-M (US 4-10)", "chart_pair", "55~66(L)"), ("L (US 12-14)", "chart_pair", "77(XL)")]
+    assert [row["us"] for row in r["chart"]["rows"]] == ["S-M (US 4-10)", "L (US 12-14)"]
+
+
+def test_a_letter_paired_with_two_numbers_keeps_todays_reading():
+    """L written with 55-66 and with 77: no pairing for L (never a guess), so XL's one pairing is not taken either:
+    today's letters for both."""
+    r = _resolve(["L", "XL"], ["L(55-66)/XL(88)", "L(77)"])
+    assert [(v["us"], v["basis"]) for v in r["values"]] == [("L (US 12-14)", "fallback_letters"),
+                                                            ("XL (US 16)", "fallback_letters")]
+
+
+@pytest.mark.parametrize("values, texts", [
+    (["M", "L", "XL"], ["★SIZE", "L[55~66]/XL[77]"]),                # 10036686854's line over an M it does not pair
+    (["M", "L", "XL"], ["55~66(L) : 총장 59 어깨 35 가슴 45 소매 58", "77(XL) : 총장 61 어깨 37 가슴 47 소매 60"]),
+])
+def test_women_pairs_for_only_some_letters_keep_todays_reading(values, texts):
+    """2026-11-20 review: M by the letters (M = US 8-10) beside L by "55~66" (S-M, US 4-10) would overlap and invert;
+    a pairing that misses a bare letter of the option is not used, today's letters stay for all."""
+    r = _resolve(values, texts)
+    assert not r["held"] and [(v["us"], v["basis"]) for v in r["values"]] == [
+        ("M (US 8-10)", "fallback_letters"), ("L (US 12-14)", "fallback_letters"), ("XL (US 16)", "fallback_letters")]
+
+
+def test_several_sizes_listed_without_a_size_option_hold():
+    """13004790971: no option, no size fact, the OCR's chart lists 95..110 (the title ends "블랙, 105"): which size
+    is sold is unknown."""
+    rows = ["Size Guide", "95,100,105,110", "(단위 : CM /단면)", "구 분 / 가슴너비 / 어깨너비 / 소매기장 / 총기장",
+            "95 / 50 / 41.5 / 61 / 62", "100 / 52 / 42.5 / 61.5 / 64", "105 / 54 / 43.5 / 62 / 66",
+            "110 / 56 / 44.5 / 62.5 / 68", "95 SIZE 착용"]
+    ov: dict[str, Any] = {"options": [], "variants": [], "facts": []}
+    held = T._sizes(ov, "womens_tops", "", [rows], None, "베러투데이 여성 가을 니트 코디 빅사이즈 골프웨어 사계절 포켓 가디건 블랙, 105")
+    assert held["held"] and "which size is sold is unknown" in held["held"] and "95, 100, 105, 110" in held["held"]
+    # narrow: one size in the chart, or a FREE fact, is no unknown size
+    ov = {"options": [], "variants": [], "facts": []}
+    assert not T._sizes(ov, "womens_tops", "", [rows[3:5]], None, "여성 가디건")["held"]
+    ov = {"options": [], "variants": [], "facts": [{"label_ko": "사이즈", "value_ko": "FREE"}]}
+    one = T._sizes(ov, "womens_tops", "", [rows], None, "여성 가디건")
+    assert not one["held"] and one["fact"]["us"] == "One Size"
+
+
+@pytest.mark.parametrize("values", [["Ivory/085", "Ivory/090"],                          # 12487887784 "선택하기"
+                                    ["오프화이트 85 XS", "오프화이트 90 S", "티블루 95 M", "블랙 100 L"]])   # 10940191023
+def test_colour_and_size_in_one_option_hold(values):
+    r = _resolve(values, name="선택하기")
+    assert r["option"] is None and r["held"] and "colour and size in one option" in r["held"]
+
+
+@pytest.mark.parametrize("values", [["블랙 FREE", "화이트 FREE"], ["앞면로고 1", "뒷면로고 2"], ["블랙", "화이트"],
+                                    ["Ivory/085"]])
+def test_a_colour_with_one_size_or_a_type_number_is_not_joined(values):
+    assert not _resolve(values, name="선택하기")["held"]
+
+
+# ---- the 2026-11-20 lens review: reading the seller's chart (scripts/SIZE_CHARTS.md) ----------------------------------
+
+_MODEL_BLOCK = ["Model", "Height : 173cm", "Top : Small(90호)", "Bottom : Smal(67호)", "Bust : 83cm", "Waist : 62cm",
+                "Hip : 90cm", "제품착장사이즈", "상의:90호(S)", "하의:67호(S)", "Height: 171cm", "Top : Smal(90호)",
+                "Bottom : Small(67호)", "Bust : 81cm", "Waist : 60cm", "Hip : 87cm", "제품착장사이즈"]   # 10940191023 OCR
+
+
+def test_a_model_blocks_bust_is_no_chart():
+    """10940191023: the models' "Bust : 83cm" / "Bust : 81cm" were read as One Size {chest 83}, chest 81 a conflict;
+    the chart under them is read as before."""
+    chart = C.read_chart(_MODEL_BLOCK + ["Size", "xS / s / M / L", "총기장 / 55 / 56 / 57 / 58.5",
+                                         "가슴둘레 / 85 / 90 / 95 / 100", "어깨넓이 / 35.5 / 37 / 38.5 / 40"])
+    assert C.ONE not in chart.rows and not chart.conflicts
+    assert chart.rows["M"] == {"length": 57.0, "chest": 95.0, "shoulder": 38.5}
+    # narrow: a Bust line with no other body line near it is still a one-size line
+    assert C.read_chart(["Bust : 83cm"]).rows == {C.ONE: {"chest": 83.0}}
+
+
+def test_a_womens_size_in_a_model_line_is_no_measure():
+    """11573884405 (and 11612270523, 11573921646): "어깨가넓은 마른66사이즈" made a conflict "shoulder 66"."""
+    chart = C.read_chart(["★상세사이즈", "어깨54cm가슴56cm", "팔길이54cm총장59cm", "어깨가넓은 마른66사이즈"])
+    assert chart.rows == {C.ONE: {"shoulder": 54.0, "chest": 56.0, "sleeve": 54.0, "length": 59.0}}
+    assert not chart.conflicts
+    # narrow: a number with a space before "size" is still a measure ("총장 66 Size free" keeps its length)
+    assert C._PAIR_RE.findall("마른66사이즈") == [] and C._PAIR_RE.findall("총장66size") == []
+    assert C._PAIR_RE.findall("총장 66 Size") == [("총장", "66")]
+
+
+def test_a_value_that_breaks_its_run_is_dropped():
+    """13338110183 OCR: shoulder 57 on the 90 row (35.5 / 37? / 38.5 / 40.5) is a misread: dropped, never shown."""
+    chart = C.read_chart(["SIZE / 85 / 90 / 95 / 100", "기장옆목 / 56.5 / 58 / 59.5 / 61",
+                          "어깨너비 / 35.5 / 57 / 38.5 / 40.5", "가슴들레 / 89 / 94 / 99 / 105", "소매길이 / 57 / 58 / 59 / 60"])
+    assert chart.rows["90"] == {"length": 58.0, "chest": 94.0, "sleeve": 58.0}
+    assert [chart.rows[n]["shoulder"] for n in ("85", "95", "100")] == [35.5, 38.5, 40.5]
+
+
+@pytest.mark.parametrize("run, broken", [
+    ([35.5, 57, 38.5, 40.5], {1}),                       # 13338110183
+    ([85, 90, 95, 100], set()), ([80, 87, 92, 97], set()), ([100, 95, 90, 85], set()),     # regular, uneven, falling
+    ([53, 53, 54.5, 56], set()), ([34.8, 36, 37.2, 39], set()),                              # 11377634969
+    ([50, 52, 54, 70], set()), ([92, 96, 100, 110], set()),   # an end value is never dropped: a big last step
+    ([48, 50, 52, 58.5], set()), ([36, 37, 38, 38, 45], set()),  # is real grading as often as a misread
+    ([50, 52, 70], set()), ([58, 62, 58], set()),        # a run of 3: not told
+    ([35, 57, 38, 60, 41], set()),                       # two places break: which is the misread is unknown
+])
+def test_the_run_check(run, broken):
+    assert C._breaks([float(x) for x in run]) == broken
+
+
+def test_a_doubled_cell_is_one_value():
+    """11377634969: "85 (S) | 36 | 92 | 58 | 53/53" had one cell too many, the 85 row was lost."""
+    chart = C.read_chart(["사이즈 | 어깨너비 | 가슴둘레 | 소매길이 | 총길이", "80 (XS) | 34.8 | 87 | 58 | 53",
+                          "85 (S) | 36 | 92 | 58 | 53/53", "90 (M) | 37.2 | 97 | 59 | 54.5"])
+    assert chart.rows["85 (S)"] == {"shoulder": 36.0, "chest": 92.0, "sleeve": 58.0, "length": 53.0}
+    # narrow: two different numbers are two cells, never one
+    assert "85 (S)" not in C.read_chart(["사이즈 | 어깨너비 | 가슴둘레 | 소매길이 | 총길이", "85 (S) | 36 | 92 | 58 | 53/54"]).rows
+
+
+def test_the_unit_alone_is_a_corner():
+    """13021502381 OCR: "CM / 90 / 95 / 100 / 105" heads the columns, like 단위(cm)."""
+    chart = C.read_chart(["SIZE GUIDE", "CM / 90 / 95 / 100 / 105", "총기장 / 56 / 57.5 / 59 / 60.5",
+                          "가슴둘레 / 97 / 102 / 107 / 113", "어깨넓이 / 36 / 37.5 / 39 / 41", "소매기장 / 58 / 59 / 60 / 61"])
+    assert chart.rows["95"] == {"length": 57.5, "chest": 102.0, "shoulder": 37.5, "sleeve": 59.0}
+    assert C.read_chart(["cm / 90 / 95", "가슴둘레 / 97 / 102"]).rows["90"] == {"chest": 97.0}

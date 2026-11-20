@@ -26,6 +26,8 @@ fixtures `fixtures/sizes/<pilot>.json`. Skill `apparel-sizes`.
 | `held ...: size_unmapped (two Korean sizes on one US size: M (US 8-10))` | two different Korean values land on one US size (95 and 96) | look at the page: a typo (merge by a rule) or two cuts (a brand row) |
 | note `size_values_merged: M(66) = M (66)` | one size written twice by the seller | nothing: one value, its rows merged (the buyable row kept) |
 | `held ...: size_unmapped (M (66) written twice at two prices ...)` | the two spellings cost differently | look at the page: which is the real price |
+| `held ...: size_unmapped (no size option, the chart lists 95, 100, 105, 110: which size is sold is unknown)` | no size option and no size fact, the chart has rows of two sizes or more: one unknown size is sold (13004790971, 2026-11-20) | look at the page: the size is in the title ("블랙, 105") or another listing; never a guessed size |
+| `held ...: size_unmapped ('선택하기': colour and size in one option ('Ivory/085' ...))` | one option joins a colour and a size ("Ivory/085", "블랙 100 L"): its values would reach the store in Korean sizes (2026-11-20) | leave it held; splitting the value is not built |
 | a size reads one up or down from what the photo or chart says | a wrong reading | the product's chart (`fixtures/sizes`), then the rule, with a test |
 | no size chart on a product whose page has one | the chart's layout is not read | [SIZE_CHARTS.md](SIZE_CHARTS.md) "When a chart is not read" |
 | `product.sizes.chart_conflicts` | a second one-size block nothing ties to a type | the first block is shown; look at the page |
@@ -51,7 +53,11 @@ fixtures `fixtures/sizes/<pilot>.json`. Skill `apparel-sizes`.
    (PXG) next: its letter is the US letter, a number in brackets beside it ignored;
 2. the **value's own number**: "90", "M(90)", "0(85)"; a women's size via the profile's `kr_women` (55 = 90); a range
    gives a range ("L(55-66)" = "S-M (US 4-10)");
-3. the **chart's pairing** of a letter with a number ("85 (S)", "Size / XS / S" over "Korea Size / 85 / 90");
+3. the **chart's pairing** of a letter with a number ("85 (S)", "Size / XS / S" over "Korea Size / 85 / 90"; a women's
+   size too, "55~66(L)"); then the **seller's text** pairing a letter with one women's size ("L[55~66]/XL[77]",
+   "M(55), L(66), XL(77)", an OCR row "L(55-66) / 48 / 20 / 58" whose measures are not read: `text_pair`,
+   2026-11-20); a letter written with two different numbers is not paired, and a women's pairing counts only when
+   every bare letter of the option has one (M/L/XL over "L[55~66]/XL[77]": today's letters for all);
 4. the **brand row**'s letters (WAAC S = 90); a letter range "S/M" takes both letters' chests;
 5. the **profile's letters** (S = 90): the fallback; `basis` says `fallback_letters`.
 

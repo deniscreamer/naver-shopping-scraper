@@ -39,7 +39,8 @@ naver-harvester published, and its 60 published products):
     paid_addons_left_out, paid_variants_left_out, title_names_one_variant, purchase_agency, price_name_mismatch,
     title_word_unproven (a seller's word on every title its page never backs: 단조 of 102454334; spec_variants),
     axes_repeated / slot_rows_merged (rows left out: an echoed axis, a picker's repeats and orders; 2026-11-17),
-    no_choice_dropped (a "선택안함" / "없음" value is no version: CategoryRules.no_choice_out, 2026-11-19),
+    no_choice_dropped (a "선택안함" / "없음" value is no version, an axis of it at +0 and the rest paid an add-on left
+    out: CategoryRules.no_choice_out, 2026-11-19 / 2026-11-20),
     hand_from_description (Amazon's "Hand Orientation: Left": spec row 사용방향 왼손용),
     specs_by_owner / specs_by_owner_unused (run-level, run_transform.apply_specs_by_owner: the owner's row of one
     product from <shop>/specs_by_owner.json, 2026-11-18),
@@ -288,19 +289,48 @@ def _drop_gift_axes(names: list[str], keep: list[int], rows: list[dict[str, Any]
 # a value that says "no choice" is not a version (the owner, 2026-11-19, knit cardigans: "선택안함" / "없음" next to
 # the colours or sizes, CategoryRules.no_choice_out): its rows go; an axis whose every value says so goes, one row per
 # remaining tuple. Off for the clubs (their published products and golden files stay as they are).
-_NO_CHOICE_RE = re.compile(r"^\W*(?:\d+\s*[.)]\s*)?(?:선택\s*안\s*함|선택\s*없음|필요\s*없음|없음)\W*$")
+# An axis whose "no choice" value is the cheapest on every remaining tuple and whose other values all cost extra is
+# a paid add-on sold through the options (2026-11-20, the knit lens review: DGB 10972881555 "면스판바지(2000추가할인)",
+# "선택없음" at +0, trousers "베이지M(55)".."블랙XL(77)" at +31,900: the 3 cardigans went, 18 cardigan + trousers
+# variants were published at 77,800 KRW, the cardigan alone 45,900). Paid add-ons off (knit cardigans): the
+# no-choice rows stay and the axis goes, the product at its base price; on: the axis stays whole, "none" a choice.
+_NO_CHOICE_RE = re.compile(r"^\W*(?:\d+\s*[.)]\s*)?(?:선택\s*안\s*함|선택\s*없음|미\s*선택|필요\s*없음|없음)\W*$")
 
 
-def _drop_no_choice(names: list[str], keep: list[int], rows: list[dict[str, Any]]) \
+def _paid_addon_axis(keep: list[int], i: int, rows: list[dict[str, Any]], empty: list[dict[str, Any]]) -> bool:
+    """Axis i offers something extra for money: every tuple of the other axes has one "no choice" row, and each of
+    its other rows costs more than that row."""
+    groups: dict[tuple[str, ...], list[dict[str, Any]]] = {}
+    for r in rows:
+        groups.setdefault(tuple(r["options"][k] for k in keep if k != i), []).append(r)
+    for g in groups.values():
+        none = [r for r in g if any(r is e for e in empty)]
+        rest = [r for r in g if not any(r is e for e in empty)]
+        if len(none) != 1 or not rest or none[0]["price"] is None \
+                or any(r["price"] is None or r["price"] <= none[0]["price"] for r in rest):
+            return False
+    return True
+
+
+def _drop_no_choice(names: list[str], keep: list[int], rows: list[dict[str, Any]], paid_addons: bool = False) \
         -> tuple[list[int], list[dict[str, Any]], str | None]:
     """Axis indexes to keep, the rows left once the "no choice" values are gone, and what went (note
     no_choice_dropped). An axis of such values only goes whole (per remaining tuple its first row, available when any
-    row of the tuple is); otherwise the rows that carry one go."""
+    row of the tuple is); a paid add-on's axis (_paid_addon_axis) goes keeping its "no choice" rows, or stays whole
+    where the category sells paid add-ons; otherwise the rows that carry one go."""
     said: list[str] = []
     before = len(rows)
     for i in list(keep):
         empty = [r for r in rows if _NO_CHOICE_RE.match(r["options"][i] or "")]
         if not empty:
+            continue
+        if len(empty) < len(rows) and _paid_addon_axis(keep, i, rows, empty):
+            if paid_addons:
+                continue
+            keep = [k for k in keep if k != i]
+            rows = empty
+            said.append(f"{_tidy(names[i])}: a paid add-on (\"{_tidy(empty[0]['options'][i])}\" at no extra cost), "
+                        f"left out with the axis")
             continue
         if len(empty) == len(rows):
             keep = [k for k in keep if k != i]
@@ -1062,7 +1092,8 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
                 "skipped_paid": skipped, "duplicate_values": [], "capped": None}
     keep, rows = _drop_promo_axes(names, rows)
     keep, rows, gifts = _drop_gift_axes(names, keep, rows) if cat.gift_axis_out else (keep, rows, None)
-    keep, rows, no_choice = _drop_no_choice(names, keep, rows) if cat.no_choice_out else (keep, rows, None)
+    keep, rows, no_choice = _drop_no_choice(names, keep, rows, cat.paid_addons) if cat.no_choice_out \
+        else (keep, rows, None)
     slots: str | None = None
     slot_axes: list[int] = []
     if cat.wedge_sets:                             # a picker's slots: no repeated loft, one row per set (C01)
@@ -1514,10 +1545,10 @@ def _sizes(ov: dict[str, Any], profile: str, text: str | None, ocr: list[list[st
     product), the values in size order. A size the transform kept as a fact (one value, "사이즈: FREE(44-66반)",
     5891366586) is resolved too: product.sizes.fact {ko, us} (2026-11-19 review: it reached the store in Korean)."""
     texts = (text or "").splitlines() + [r for rows in ocr for r in rows]
-    out = apparel_sizes.resolve(ov["options"], texts, brand, title, profile)
+    facts = [f for f in ov.get("facts") or [] if apparel_sizes.is_size_name(f.get("label_ko"))]
+    out = apparel_sizes.resolve(ov["options"], texts, brand, title, profile, has_fact=bool(facts))
     if out["held"]:
         return out
-    facts = [f for f in ov.get("facts") or [] if apparel_sizes.is_size_name(f.get("label_ko"))]
     if out["option"] is None and facts:
         one = apparel_sizes.resolve([{"name_ko": facts[0]["label_ko"], "values_ko": [facts[0]["value_ko"]]}], texts,
                                     brand, title, profile)

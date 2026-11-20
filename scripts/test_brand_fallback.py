@@ -522,3 +522,54 @@ def test_a_resellers_address_and_notice_are_no_wordmark():
     tokyo = {"name": "도쿄피아", "slug": "tokyopia"}
     assert B.own_brand_shown(tokyo, ["도쿄피아는 미즈노 공식 판매처입니다", "도쿄피아 100% 정품만 취급"]) is None
     assert B.own_brand_shown(GREHIP, ["그레힙 공식 스토어"]) == "그레힙"
+
+
+# 2026-11-20, the knit cardigan review: an address in 원산지's brackets is no importer
+@pytest.mark.parametrize("origin", ["국산(서울특별시 동대문구)", "국산(인천광역시 서구)",      # 8212382236, 5932679597
+                                    "국산(서울특별시 강남구)", "국산(대전광역시 서구)", "국산(부산광역시 사상구)",
+                                    "국산(경기도 안양시)", "중국(홍콩)", "중국산(인도네시아 등)"])
+def test_an_address_or_a_country_in_the_origin_is_no_distributor(origin):
+    assert B.distributors(origin) == []
+
+
+def test_a_firm_in_the_origin_stays_beside_the_address_rule():
+    assert B.distributors("중국산(DGB)") == ["DGB"]                                  # 10972881555
+    assert B.distributors("중국산(지아이엘)") == ["지아이엘"]                          # 7518807949
+    assert B.distributors("일본산(THE SIXTY NINERS JAPAN)") == ["THE SIXTY NINERS JAPAN"]   # 3807654657
+    assert B.distributors("중국산(비트리)") == ["비트리"]                             # one word ending in 리: a firm
+    assert B.distributors("일본산(이토보리)") == ["이토보리"]
+
+
+def test_the_camel_breeze_cardigan_with_an_address_origin_has_no_brand():
+    """8212382236 went out as the vendor "Dongdaemun-gu, Seoul": its 브랜드 row "카멜브리즈 협력업체" was dropped."""
+    assert B.decide("카멜브리즈 GQ 여성 배색 골프 가디건", "국산(서울특별시 동대문구)", [], [], [], None, None,
+                    {"카멜브리즈", "올라운드"}, {"name": "카멜브리즈", "slug": "camelbreeze"})[:2] == (B.NO_BRAND, "none")
+
+
+CAMEL = {"name": "카멜브리즈", "slug": "camelbreeze", "business": {"legal_name": "올라운드"}}
+NATURAL = {"name": "내추럴모드", "slug": "naturalmode", "business": {"legal_name": "내추럴드레스"}}
+
+
+def test_a_slogan_is_no_brand_when_the_shops_own_label_row_was_dropped():
+    """11573884405 (브랜드 카멜브리즈, 제조사 "카멜브리즈 협력업체") went out as "EVER YDAY", 11442719270 (내추럴모드,
+    "내추럴모드협력사") as "WHITE TEE": the OCR rows as read. Their own label row was dropped (resellers_own)."""
+    camel = ["EVERYDAY", "EVER YDAY", "EVER YDAY", "EVER YOAY", "EVER YOAY", "EVER YDAY", "EVER YDAY", "EVER YDAY"]
+    assert B.resellers_own("카멜브리즈", "카멜브리즈 협력업체", CAMEL)
+    assert B.decide("[카멜브리즈]썸씽 골프집업 여성골프 니트집업 가디건", "국산", [], camel, [], None, None,
+                    {"카멜브리즈", "올라운드"}, CAMEL, own_row=True)[:2] == (B.NO_BRAND, "none")
+    natural = ["White Tee"] * 6 + ["EVER YOAY", "EVER YDAY", "EVER YOAY", "EVERYDAY", "EVER YOAY"]
+    assert B.resellers_own("내추럴모드", "내추럴모드협력사", NATURAL)
+    assert B.decide("여성골프가디건 여자골프니트 빅사이즈골프웨어 집업", "중국산(중국산)", [], natural, [], None, None,
+                    {"내추럴모드", "내추럴드레스"}, NATURAL, own_row=True)[:2] == (B.NO_BRAND, "none")
+    # without the dropped row the Latin step is as before (BEN SAYERS on 13425122164)
+    assert B.decide("여성골프가디건", None, [], natural, [], None, None, set(), NATURAL)[:2] == (
+        "WHITE TEE", "images_text_latin")
+
+
+def test_fill_passes_the_dropped_own_row_to_decide():
+    rows = ["EVER YDAY"] * 6
+    prepared = [{"key": k, "product": {"brand_ko": None, "brand_source": None, "title_ko": "여성 니트 가디건"},
+                 "notes": [], "texts": []} for k in ("a", "b")]
+    B.fill(prepared, lambda key: rows, {}, lambda product: [], own_rows={"a"})
+    assert [(p["product"]["brand_ko"], p["product"]["brand_source"]) for p in prepared] == [
+        (B.NO_BRAND, "none"), ("EVER YDAY", "images_text_latin")]

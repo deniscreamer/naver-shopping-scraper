@@ -206,6 +206,13 @@ Code: `transform.options_and_variants`.
 - A SIMPLE option of one value can be the set's only option ("드라이버+우드+하이브리드/SR", 9168175809): a fact.
 - Configurators of 128-497 combinations at one price (an XXIO 14 set: 6 x 9 x 9): offered up to the shop's cap,
   covering every pair of values first, shared over the first axis (variants_capped).
+- Apparel sizes (2026-11-20, the knit cardigan review; [SIZES.md](SIZES.md)): bare letters paired with women's sizes
+  in the text or OCR ("L[55~66]/XL[77]", 10036686854) read from the pairing (`apparel_sizes.text_pairs`); a colour and
+  a size in one value ("Ivory/085", 12487887784) and no size option over a chart of several sizes (13004790971) hold
+  size_unmapped.
+- Sellers' size charts (2026-11-20, the same review; [SIZE_CHARTS.md](SIZE_CHARTS.md)): a model block's "Bust : 83cm"
+  (10940191023) and "마른66사이즈" (11573884405) are no chart; "53/53" is one cell (11377634969); "CM" is a corner
+  (13021502381); an OCR value that breaks its column's run is dropped (13338110183) (`size_chart.py`).
 - A "write a delivery message" row and a review-discount axis are not versions of the product.
 - Agency imports (2026-11-16, wedge sets): the title ends with the page's first option in Latin ("... 골프 클럽 58
   Degree Silver RH", 13468791008; "... 3Piece Set 525660 Right", 13566630297), often a variant not sold
@@ -389,6 +396,10 @@ Code: `transform.prepare`, `brand_fallback.py` (2026-11-08).
   leaves 노브랜드; "(주)" inside the origin's brackets is no firm ("중국산((주)감씨)" was the brand "주"). The general
   form (a maker row the images never name while they name another shop brand) was measured and not taken: 125
   products, among them real makers beside their lines and rivals (Honma / HOUMA, Callaway / Strata, PING / TaylorMade).
+- The knit cardigan review (2026-11-20): 카멜브리즈 writes an address in 원산지's brackets ("국산(서울특별시 동대문구)",
+  "국산(인천광역시 서구)", 8212382236, 5932679597: the origin step's brand): no firm (`brand_fallback._ADDRESS_PART`,
+  also a bare country "중국(홍콩)"); a slogan on the garment ("EVER YDAY" 11573884405, "WHITE TEE" 11442719270) is no
+  brand when the shop's own label row was dropped (브랜드 카멜브리즈 / 제조사 "카멜브리즈 협력업체"): 노브랜드.
 
 ### Origin, gifts, add-ons
 
@@ -398,6 +409,10 @@ Code: `transform.prepare`, `brand_fallback.py` (2026-11-08).
 - A free gift as an option axis (2026-11-18, the chipper review): Missile 10421264752 lists one club as 7 variants
   "휠라 양피장갑 왼손 19호 ... 25호 1장" under 사은품, one price -> dropped in chippers (`gift_axis_out`,
   `transform._drop_gift_axes`, note `gift_axis_dropped`).
+- A paid add-on as an option axis (2026-11-20, the knit cardigan review): DGB 10972881555 offers trousers beside the
+  cardigan, "면스판바지(2000추가할인)" = "선택없음" (+0) / "베이지M(55)".."블랙XL(77)" (+31,900): the cardigan alone in 3
+  colours at its price, the axis left out where paid add-ons are off (`transform._paid_addon_axis`, note
+  `no_choice_dropped`); before, the 3 "선택없음" rows went and 18 cardigan + trousers variants were published.
 - Add-on names carry the seller's codes and numbering ("[G192]01_미즈노 클럽 렌치", "1-1.남성 장갑") -> left out.
 - Miura (2026-11-17, C57; 11585678496, 11277694183, 11585620683, 6593061432, 11277707794): a group of paid shafts
   "웨지 샤프트" headed by free entries framed ▣ ("▣ KBS ▣", "▣ PROJECT X ▣") and "◈ 헤드만 구매 ◈": the headings are no

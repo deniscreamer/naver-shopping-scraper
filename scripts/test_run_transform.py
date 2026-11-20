@@ -492,3 +492,14 @@ def test_the_owners_gender_row_keeps_the_listing_evidence_of_a_conflict():
                                   {"source": "listing", "value": "womens", "text": "여성 골프채 풀세트"}]
     got = PL.place(p, profile)
     assert got["status"] == "placed" and [x["leaf"] for x in got["leaves"]] == ["womens-complete-sets"]
+
+
+def test_own_row_is_the_shops_own_label_the_reseller_rule_drops():
+    """2026-11-20, the knit cardigan review: 11573884405's rows (카멜브리즈 / "카멜브리즈 협력업체") are the shop's own
+    label; a brand row of another firm is not."""
+    def line(brand: str, maker: str) -> dict:
+        return {"specs": {"facts": {"brand": {"value": brand}, "manufacturer": {"value": maker}}},
+                "details": {"store": {"name": "카멜브리즈", "slug": "camelbreeze", "business": {"legal_name": "올라운드"}}}}
+    assert run_transform._own_row(line("카멜브리즈", "카멜브리즈 협력업체"))
+    assert not run_transform._own_row(line("DGB", "카멜브리즈 협력업체"))
+    assert not run_transform._own_row(line("카멜브리즈", "카멜브리즈"))

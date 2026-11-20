@@ -466,6 +466,15 @@ def _store_names(line: dict) -> set[str]:
             for x in (store.get("name"), (store.get("business") or {}).get("legal_name"))} - {""}
 
 
+def _own_row(line: dict) -> bool:
+    """The 브랜드 row names the seller's own shop and its 제조사 is "<shop> 협력업체": transform.prepare drops it
+    (brand_fallback.resellers_own), and brand_fallback.decide reads no slogan as the brand then (own_row)."""
+    facts = ((line.get("specs") or {}).get("facts") or {})
+    brand = str((facts.get("brand") or {}).get("value") or "")
+    return brand.strip() not in transform.NOT_A_BRAND and brand_fallback.resellers_own(
+        brand, str((facts.get("manufacturer") or {}).get("value") or ""), (line.get("details") or {}).get("store"))
+
+
 def _release_row(line: dict) -> str | None:
     """The notice's 동일 모델의 출시연월 value (a seller may write the brand there: brand_fallback.release_brand)."""
     return next((str(r.get("value") or "") for r in ((line.get("details") or {}).get("notice") or {}).get("items") or []
@@ -505,7 +514,9 @@ def run(shop: str, runs: list[str] | None = None, shops_root: str = SHOPS_ROOT,
         {k: _release_row(line[2]) for k, line in latest.items()},
         {k: _store_names(line[2]) for k, line in latest.items()},
         {p["key"]: (latest[p["key"]][2].get("details") or {}).get("store") or {} for p in prepared    # step 5b: only
-         if (c := rules.categories.get(str(p["source"].get("category_id")))) and c.own_brand_wordmark})   # where asked
+         if (c := rules.categories.get(str(p["source"].get("category_id")))) and c.own_brand_wordmark},   # where asked
+        {p["key"] for p in prepared if (c := rules.categories.get(str(p["source"].get("category_id"))))
+         and c.own_brand_wordmark and _own_row(latest[p["key"]][2])})   # the shop's own label dropped: no slogan
     owner_specs = apply_specs_by_owner(                                 # run-level: the owner's word, never cached
         prepared, specs_by_owner(shop, shops_root), {k: line[2] for k, line in latest.items()})
     for p in prepared:                                                 # after the brand: needs the fallback's answer

@@ -55,7 +55,9 @@ class CategoryRules:
     no_choice_out: bool = False          # an option value that says "no choice" (선택안함, 선택 안함, 없음, 필요없음,
                                          # 선택없음) is not a version: its rows go, an axis of nothing else goes
                                          # (transform._drop_no_choice; knit cardigans, the owner 2026-11-19). Off for
-                                         # the clubs: their golden products stay as published
+                                         # the clubs: their golden products stay as published. An axis of "no choice"
+                                         # at +0 and the rest at extra cost is a paid add-on: left out with its axis
+                                         # unless paid_addons (2026-11-20, DGB 10972881555's trousers)
     composition: bool = False            # the fibre composition rows (spec and notice rows 소재 / 혼용률 / 재질 /
                                          # 섬유의 조성) kept as product.composition_ko: the price's duty by the chief
                                          # fibre (shop_pricing) and the description's materials (knit cardigans,

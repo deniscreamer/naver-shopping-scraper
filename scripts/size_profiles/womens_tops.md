@@ -39,3 +39,10 @@ Seven systems: Korean chest 85-105 (9), letter + chest "M(90)" (2), letter + wom
 a Japanese brand's 0 / 1 / 2 with the chest "0(85)" (Pearly Gates, 1), bare letters (3), international letters
 (J.Lindeberg, PXG: 2), FREE (9). The same letter is a different size at different sellers: S = 85 at Munsingwear,
 90 at Benjefe; M(90) at Lux Golf, S(90) at another. The charts: [SIZE_CHARTS.md](../SIZE_CHARTS.md) "The layouts".
+
+2026-11-20 (the lens review of 60 drafts): bare letters in the option while the page pairs them with women's sizes
+("L[55~66]/XL[77]" 10036686854, "M(55), L(66), XL(77)" 11016233632, chart rows "55~66(L)" 9353856438, OCR
+"L(55-66)" 12220300865): read from the pairing, L = S-M, never the fallback's L; only when every bare letter of
+the option is paired (never two systems in one option). A product with no size option whose
+chart lists 95..110 (13004790971) and a colour joined with its size in one option ("Ivory/085" 12487887784,
+"오프화이트 85 XS" 10940191023) are held `size_unmapped`.

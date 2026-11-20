@@ -991,6 +991,50 @@ def test_which_no_choice_values_go(names, rows, kept, said):
     assert (keep, len(left)) == kept and (note is not None) == said
 
 
+_DGB_TROUSERS = ["베이지M(55)", "베이지L(66)", "베이지XL(77)", "블랙M(55)", "블랙L(66)", "블랙XL(77)"]
+
+
+def _dgb_rows():
+    """DGB 10972881555 (the knit lens review, 2026-11-20): a cardigan in 3 colours, trousers offered at +31,900."""
+    return [((colour, pants), 31900) for colour in ("아이보리", "그레이", "블랙") for pants in _DGB_TROUSERS] \
+        + [((colour, "선택없음"), 0) for colour in ("아이보리", "그레이", "블랙")]
+
+
+def test_a_paid_add_on_axis_leaves_the_cardigan_at_its_price():
+    """"선택없음" at +0 and every other value at extra cost: an add-on (trousers), not a version of the cardigan. Paid
+    add-ons off (50002797): the 3 cardigans stay at the base price, the trousers' axis goes."""
+    p = prepare(_knit(["로토토 블루종 가디건 색상", "면스판바지(2000추가할인)"], _dgb_rows()), RULES_ON, "50002797-test", 1)
+    assert [(o["name_ko"], o["values_ko"]) for o in p["product"]["options"]] == [
+        ("로토토 블루종 가디건 색상", ["아이보리", "그레이", "블랙"])]
+    assert [v["price_krw"] for v in p["product"]["variants"]] == [89000, 89000, 89000]
+    assert ["선택없음" in v["source_id"] for v in p["product"]["variants"]] == [True, True, True]
+    note = next(n for n in p["notes"] if n["code"] == "no_choice_dropped")
+    assert note["detail"] == ('면스판바지(2000추가할인): a paid add-on ("선택없음" at no extra cost), left out with the axis; '
+                              '21 -> 3 rows')
+
+
+def test_a_paid_add_on_axis_stays_whole_where_paid_add_ons_are_sold():
+    on = dataclasses.replace(RULES_ON, categories={**RULES_ON.categories, "50002797": dataclasses.replace(
+        RULES_ON.categories["50002797"], paid_addons=True)})
+    p = prepare(_knit(["로토토 블루종 가디건 색상", "면스판바지(2000추가할인)"], _dgb_rows()), on, "50002797-test", 1)
+    assert p["product"]["options"][1]["values_ko"] == _DGB_TROUSERS + ["선택없음"] and len(p["product"]["variants"]) == 21
+    assert "no_choice_dropped" not in {n["code"] for n in p["notes"]}
+
+
+@pytest.mark.parametrize("rows, left, said", [
+    ([("블랙", "선택없음", 100), ("블랙", "바지", 200), ("그레이", "선택없음", 100), ("그레이", "바지", 200)],
+     2, "바지: a paid add-on"),                                          # the add-on's axis goes, its rows stay
+    ([("블랙", "미선택", 100), ("블랙", "모자", 105)], 1, "바지: a paid add-on"),   # 미선택 says it too
+    ([("블랙", "선택없음", 100), ("블랙", "바지", 100)], 1, "바지: 선택없음"),    # at one price: the old rule
+    ([("블랙", "선택없음", 100), ("블랙", "바지", 200), ("그레이", "바지", 200)], 2, "바지: 선택없음"),  # not on every colour
+])
+def test_which_no_choice_axes_are_paid_add_ons(rows, left, said):
+    rows = [{"options": [c, v], "price": price, "is_available": True} for c, v, price in rows]
+    keep, kept, note = transform._drop_no_choice(["색상", "바지"], [0, 1], rows)
+    assert len(kept) == left and note.startswith(said)
+    assert keep == ([0] if "add-on" in said else [0, 1])
+
+
 def test_the_clubs_keep_a_no_choice_value():
     rows = [(("35인치", "선택안함"), 0), (("35인치", "헤드커버"), 0)]
     line = _knit(["길이", "추가"], rows)
