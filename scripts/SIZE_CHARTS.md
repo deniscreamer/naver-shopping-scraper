@@ -42,6 +42,9 @@ Rules that hold the layouts apart:
   (or all fall), a middle value of a run of 4 or more outside its two neighbours by more than their span (3 cm at
   least). An end value is never dropped (a bigger last step is real grading as often). Two such places: none. On
   2026-11-20 it dropped one value of the 328 runs in the shop and the pilot (`size_chart._breaks`).
+- A line whose corner is a size word ("사이즈 / 90 / 95 / 100 / 105") is a column header, never a row under a header of
+  measure names of as many cells (a diagram's labels "총길이 / 소매길이 / 총길이 / 총길이" right before it swallowed PING
+  12361710158's chart, 2026-11-20).
 - A one-size column header needs that corner, then one label with no comma ("사이즈 / 90, 95, 100" is a list, not a
   chart); its rows are measure rows or a pairs line ("사이즈 | FREE" then "총장59/어깨54/..."); it ends at the first
   two-cell row that is not its measure.

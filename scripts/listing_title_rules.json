@@ -2550,7 +2550,7 @@
    },
    {
     "code": "rainwear",
-    "why": "2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): rainwear (비옷, 우비, 우의, 레인코트, 레인웨어, 레인 점퍼 / 자켓, rain) is its own kind of garment.",
+    "why": "2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): rainwear (비옷, 우비, 우의, 레인코트, 레인웨어, 레인 점퍼 / 자켓, rain) is its own kind of garment. 레인지웨어 (range wear, 2026-11-20) is no rain.",
     "tokens": [
      {
       "text": "비옷",
@@ -2569,7 +2569,9 @@
      },
      {
       "text": "레인",
-      "notFollowedBy": [],
+      "notFollowedBy": [
+       "지"
+      ],
       "notPrecededBy": [
        "트",
        "브",
@@ -2652,7 +2654,7 @@
    },
    {
     "code": "knit",
-    "why": "2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a knit (니트, knit) that says no wind word (바람막이, 방풍, 윈드, windbreaker, windproof) is a knit jumper or cardigan, not a windbreaker; a windproof knit jacket stays.",
+    "why": "2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a knit (니트, knit) is a knit jacket or cardigan, never a windbreaker, even windproof (방풍 니트): the pilot's lens review (2026-11-20) found 4 wool, cashmere or down knits among 30 drafts sold as windbreakers (11037889576, 5303904972, 11038604889, 12742620642).",
     "tokens": [
      {
       "text": "니트",
@@ -2664,13 +2666,6 @@
       "notFollowedBy": [],
       "notPrecededBy": []
      }
-    ],
-    "unless": [
-     "바람막이",
-     "방풍",
-     "윈드",
-     "windbreaker",
-     "windproof"
     ]
    },
    {

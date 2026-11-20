@@ -1549,6 +1549,11 @@ def _sizes(ov: dict[str, Any], profile: str, text: str | None, ocr: list[list[st
     out = apparel_sizes.resolve(ov["options"], texts, brand, title, profile, has_fact=bool(facts))
     if out["held"]:
         return out
+    joined = [f for f in ov.get("facts") or [] if f not in facts and apparel_sizes.joined_value(f.get("value_ko"))]
+    if out["option"] is None and not facts and joined:  # one value "선택하기: Black/090" (Hazzys 13684467368, 2026-11-20):
+        out["held"] = (f"{joined[0].get('label_ko')!r}: colour and size in one value "    # the Korean size would reach
+                       f"({joined[0].get('value_ko')!r})")                               # the store as "Select"
+        return out
     if out["option"] is None and facts:
         one = apparel_sizes.resolve([{"name_ko": facts[0]["label_ko"], "values_ko": [facts[0]["value_ko"]]}], texts,
                                     brand, title, profile)

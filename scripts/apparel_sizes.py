@@ -179,6 +179,15 @@ def text_pairs(texts: list[str]) -> dict[str, Label]:
     return {k: v for k, v in got.items() if len(seen[k]) == 1}
 
 
+def joined_value(value: str | None) -> bool:
+    """One value that joins a colour and a size ("Black/090", "아이보리 M"): a head that is no size, a size tail (a
+    letter, a chest or a women's size, never FREE)."""
+    words = [w for w in _JOIN_SPLIT_RE.split(str(value or "").strip()) if w]
+    label = parse_label(words[-1]) if len(words) >= 2 else None
+    return bool(label and not label.free and (label.letter or label.chest or label.women)
+                and not parse_label(" ".join(words[:-1])))
+
+
 def _joined(options: list[dict[str, Any]]) -> str | None:
     """An option whose values join a colour and a size ("Ivory/085", "오프화이트 85 XS"): every value ends in a size
     (a letter, a chest or a women's size, never FREE or a bare 0..4) after a head that is no size, two sizes or more."""
@@ -196,6 +205,28 @@ def _joined(options: list[dict[str, Any]]) -> str | None:
         if len(set(tails)) >= 2:
             return f"{o.get('name_ko')!r}: colour and size in one option ({values[0]!r} ...)"
     return None
+
+
+def _by_position(resolved: list[dict[str, Any]], chart: Chart, profile: dict[str, Any]) -> None:
+    """Bare letters only on the profile's fallback, over a chart whose rows are numbers alone, as many: the seller's
+    sizes in order ("S / M / L" sold, "호칭 / 95 / 100 / 105" charted: S is 95). 2026-11-20, the windbreaker pilot
+    (Kim Young Joo DOFLJP01 11074837484: the fallback made S = 90, one size too small, and the chart was dropped).
+    Rewritten in place, basis `chart_position`; anything else (a count that differs, a lettered row) is left alone."""
+    if not resolved or any(r.get("basis") != "fallback_letters" for r in resolved):
+        return
+    numbered = sorted(((lab.chest[0], n) for n, lab in chart.labels.items()
+                       if n in chart.rows and lab and len(lab.chest) == 1 and not lab.letter and not lab.women),
+                      key=lambda x: x[0])
+    if len(numbered) != len(resolved) or len({c for c, _ in numbered}) != len(numbered):
+        return
+    ordered = sorted(resolved, key=lambda r: r["chest_cm"] or 0)
+    rows = [_grid_row(profile, c) for c, _ in numbered]
+    if not all(rows):
+        return
+    for item, (chest, name), row in zip(ordered, numbered, rows):
+        assert row is not None
+        item.update(us=_us_text([row]), letter=row["us"], chest_cm=row["chest_cm"], basis="chart_position",
+                    chart_label=name)
 
 
 def resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None, title: str | None,
@@ -316,6 +347,7 @@ def resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None, 
             resolved.append(item)
         if not (paired and unpaired):
             break
+    _by_position(resolved, chart, profile)
     us = [r["us"] for r in resolved]
     if len(set(us)) != len(us):
         dup = sorted({u for u in us if us.count(u) > 1})

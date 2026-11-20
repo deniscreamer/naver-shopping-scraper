@@ -420,7 +420,7 @@ def test_knit_cardigans_need_a_womens_word_and_a_cardigan_word(title, code):
     ("레크레아 여성 골프 바스락 경량 허리셔링 크롭 바람막이 후드 자켓", None),
     ("다운블로우 여성 경량 스판 블루종 점퍼", None),                         # 다운블로우 is a brand
     ("클라터뮤젠 여성 베스트라 후드 자켓 집업 바람막이 블랙 507784", None),    # Vestra, a jacket
-    ("여성 골프점퍼 바람막이 니트 방풍 자켓 여성골프웨어", None),              # a windproof knit jacket
+    ("여성 골프점퍼 바람막이 니트 방풍 자켓 여성골프웨어", "title:knit"),      # a knit is never a windbreaker
     ("티앤드 여성골프점퍼 골프가디건 바람막이 자켓 방풍 여자골프웨어", None),   # a cardigan word with a jacket word
     ("까스텔바작 여성골프 간절기 방풍 기모안감 후드 점퍼 BDFFJP502BK", None),
     ("밀라 라이트 쉴드 점퍼 MD262F0101JP", "title:not_womens"),
@@ -433,6 +433,7 @@ def test_knit_cardigans_need_a_womens_word_and_a_cardigan_word(title, code):
     ("여성 골프 비옷 롱 레인코트 방수 방풍 우비 골프웨어 아우터 점퍼", "title:rainwear"),
     ("테일러메이드 어패럴 여성 골프웨어 3L 경량 스트레치 레인 점퍼 UO-Z1YY05", "title:rainwear"),
     ("여성 트레이닝 점퍼", None),                                          # 트레이닝 is no 레인
+    ("여성 골프 레인지웨어 바람막이 점퍼", None),                            # range wear, 2026-11-20
     ("왁 골프 여성 반팔 바람막이 베스트 VAM2201BKX", "title:vest"),
     ("프아린 여성골프 니트 집업 가디건 여자간절기가디건 여성골프점퍼 니트점퍼", "title:knit"),
     ("데상트골프 여성 밑단 니트 하이브리드 점퍼", "title:knit"),

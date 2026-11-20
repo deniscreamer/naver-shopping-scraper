@@ -205,7 +205,10 @@ def read_chart(lines: list[str], measures: str = "tops", sections: list[str] | N
         # a column-layout header: "사이즈 / XS / S / M / L", "XS / S / M / L", "호칭 / FREE(66-88)"
         sized = bool(_SIZE_HEAD_RE.match(cells[0]))
         labels = [parse_label(c) for c in cells[1:]] if sized else [first] + [parse_label(c) for c in cells[1:]]
-        under_header = bool(header) and all(v is not None for v in values[1:]) and \
+        # a line whose corner is a size word ("사이즈 / 90 / 95 / 100 / 105") is a column header, never a row under a
+        # header of measure names: a diagram's labels ("총길이 / 소매길이 / 총길이 / 총길이") of as many cells came right
+        # before the chart of PING 12361710158 (2026-11-20, the windbreaker pilot) and swallowed it
+        under_header = not sized and bool(header) and all(v is not None for v in values[1:]) and \
             len(cells) - 1 == len(header or []) - (1 if header_has_size else 0)
         if len(cells) >= 3 and all(labels) and not any(measures_of[1:]) and not under_header:   # "S | 92 | 88" is a row
             columns = cells[1:] if sized else cells

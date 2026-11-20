@@ -27,6 +27,7 @@ fixtures `fixtures/sizes/<pilot>.json`. Skill `apparel-sizes`.
 | note `size_values_merged: M(66) = M (66)` | one size written twice by the seller | nothing: one value, its rows merged (the buyable row kept) |
 | `held ...: size_unmapped (M (66) written twice at two prices ...)` | the two spellings cost differently | look at the page: which is the real price |
 | `held ...: size_unmapped (no size option, the chart lists 95, 100, 105, 110: which size is sold is unknown)` | no size option and no size fact, the chart has rows of two sizes or more: one unknown size is sold (13004790971, 2026-11-20) | look at the page: the size is in the title ("블랙, 105") or another listing; never a guessed size |
+| `held ...: size_unmapped ('선택하기': colour and size in one value ('Black/090'))` | no size option and one fact joining a colour and a size (Hazzys 13684467368, 2026-11-20): it reached the store as option "Select" | leave it held |
 | `held ...: size_unmapped ('선택하기': colour and size in one option ('Ivory/085' ...))` | one option joins a colour and a size ("Ivory/085", "블랙 100 L"): its values would reach the store in Korean sizes (2026-11-20) | leave it held; splitting the value is not built |
 | a size reads one up or down from what the photo or chart says | a wrong reading | the product's chart (`fixtures/sizes`), then the rule, with a test |
 | no size chart on a product whose page has one | the chart's layout is not read | [SIZE_CHARTS.md](SIZE_CHARTS.md) "When a chart is not read" |
@@ -59,6 +60,9 @@ fixtures `fixtures/sizes/<pilot>.json`. Skill `apparel-sizes`.
    2026-11-20); a letter written with two different numbers is not paired, and a women's pairing counts only when
    every bare letter of the option has one (M/L/XL over "L[55~66]/XL[77]": today's letters for all);
 4. the **brand row**'s letters (WAAC S = 90); a letter range "S/M" takes both letters' chests;
+   bare letters that would all fall to step 5 over a chart whose rows are numbers alone, as many ("S / M / L" sold,
+   "호칭 / 95 / 100 / 105" charted): the seller's sizes in order, S = 95 (`chart_position`, Kim Young Joo
+   11074837484, 2026-11-20); another count leaves them to step 5;
 5. the **profile's letters** (S = 90): the fallback; `basis` says `fallback_letters`.
 
 The letter alone never decides: S is 85 at one seller and 90 at another. The number, matched to the profile's grid

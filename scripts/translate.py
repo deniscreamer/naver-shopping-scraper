@@ -106,6 +106,10 @@ ASK_SHORTER = {"title": 100}
 # its numbers need not survive (knit cardigans 50002797, the owner 2026-11-19); a fibre's share ("100%") is no size
 TITLE_SIZES = {"50002797": re.compile(r"(?<![\d.A-Za-z])(?:44|55|66|77|88|99|85|90|95|100|105|110)(?![\d.%])")}
 TITLE_SIZES["50002798"] = TITLE_SIZES["50002797"]           # women's windbreakers: the same garment sizes (2026-11-20)
+# a garment title's season code ("26FW", "2025 SS", "23F/W"): the briefs leave the season out of the English title, so
+# its digits need not survive either (2026-11-20, the windbreaker pilot: "TaylorMade 26FW Women's ..." kept it only
+# because a lost number fails the check); the same apparel categories as TITLE_SIZES
+TITLE_SEASON = re.compile(r"(?<![A-Za-z\d])(\d{2}|\d{4})\s?(?:FW|SS|F/W|S/S|AW)(?![A-Za-z])", re.I)
 SCHEMA = {"type": "object", "additionalProperties": False, "required": ["items"],
           "properties": {"items": {"type": "array", "items": {
               "type": "object", "additionalProperties": False, "required": ["id", "en"],
@@ -450,7 +454,7 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
             item["context"] = "; ".join(said)
             item["drop"] = (item.get("drop") or []) + [sanitize("title", w, tenant, category) for w in unproven]
         if kind == "title" and str(category) in TITLE_SIZES:
-            sizes = TITLE_SIZES[str(category)].findall(item["source"])
+            sizes = TITLE_SIZES[str(category)].findall(item["source"]) + TITLE_SEASON.findall(item["source"])
             if sizes:
                 item["free_numbers"] = [*(item.get("free_numbers") or []), *sizes]
         if kind == "title" and again and context:

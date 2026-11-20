@@ -353,4 +353,7 @@ def test_a_model_codes_tail_is_no_size():
     2026-11-19)."""
     sizes = T.TITLE_SIZES["50002797"]
     assert T.TITLE_SIZES["50002798"] is sizes                             # windbreakers: the same sizes (2026-11-20)
+    # a season code's digits are freed too (2026-11-20, the windbreaker pilot: "26FW" kept in a TaylorMade title)
+    assert T.TITLE_SEASON.findall("테일러메이드 26FW 여성 바람막이 TJ6-72HG01-199 2025 SS 23F/W") == ["26", "2025", "23"]
+    assert T.TITLE_SEASON.findall("BGBWSJ704 K90 FW 3레이어") == []
     assert sizes.findall("WWW24K90 여성 가디건 C100 55 66 77 90 울 100%") == ["55", "66", "77", "90"]

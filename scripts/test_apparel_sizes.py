@@ -567,3 +567,46 @@ def test_the_unit_alone_is_a_corner():
                           "가슴둘레 / 97 / 102 / 107 / 113", "어깨넓이 / 36 / 37.5 / 39 / 41", "소매기장 / 58 / 59 / 60 / 61"])
     assert chart.rows["95"] == {"length": 57.5, "chest": 102.0, "shoulder": 37.5, "sleeve": 59.0}
     assert C.read_chart(["cm / 90 / 95", "가슴둘레 / 97 / 102"]).rows["90"] == {"chest": 97.0}
+
+
+# ---- the 2026-11-20 lens review of the windbreaker pilot (job fairwardgolf-50002798-20261120T160545Z) -----------------
+
+def test_bare_letters_take_a_numbered_charts_sizes_in_order():
+    """Kim Young Joo DOFLJP01 (11074837484): "S / M / L" sold, "호칭 / 95 / 100 / 105" charted: S is 95 (M (US 8-10)),
+    never the fallback's S = 90; the chart's rows go with them."""
+    texts = ["사이즈:S,M,L", "SIZE INFO", "호 칭 / 95 / 100 / 105", "가슴둘레 / 128 / 132 / 137", "어깨너비 / 60 / 61 / 62",
+             "소매길이 / 52 / 53 / 54"]
+    r = _resolve(["S", "M", "L"], texts)
+    assert [(v["us"], v["basis"]) for v in r["values"]] == [
+        ("M (US 8-10)", "chart_position"), ("L (US 12-14)", "chart_position"), ("XL (US 16)", "chart_position")]
+    assert [row["cm"]["chest"] for row in r["chart"]["rows"]] == [128.0, 132.0, 137.0]
+
+
+def test_a_numbered_chart_of_another_count_leaves_the_letters_alone():
+    r = _resolve(["S", "M", "L"], ["호칭 / 95 / 100", "가슴둘레 / 128 / 132"])
+    assert {v["basis"] for v in r["values"]} == {"fallback_letters"}
+
+
+def test_a_size_corner_line_is_a_column_header_after_a_diagrams_labels():
+    """PING 121D3JP251 (12361710158): the SIZE GUIDE diagram's labels, 4 measure names, came right before the chart
+    "사이즈 / 90 / 95 / 100 / 105" and took it for a row; the chart was lost."""
+    lines = ["총길이 / 소매길이 / 총길이 / 총길이", "사이즈 / 90 / 95 / 100 / 105", "총장 / 68 / 69 / 70.5 / 71.5",
+             "어깨넓이 / 39 / 40.4 / 42.2 / 44.4", "가슴둘레 / 102 / 108 / 115 / 123", "소매기장 / 60.5 / 61.5 / 62.5 / 63.5"]
+    chart = C.read_chart(lines)
+    assert set(chart.rows) == {"90", "95", "100", "105"} and chart.rows["90"]["chest"] == 102.0
+
+
+@pytest.mark.parametrize("value, joined", [("Black/090", True), ("아이보리 M", True), ("네이비 55", True),
+                                           ("블랙", False), ("FREE", False), ("Black/Free", False), ("M(90)", False)])
+def test_one_value_joining_a_colour_and_a_size(value, joined):
+    """Hazzys 13684467368 (2026-11-20): one fact "선택하기: Black/090" reached the store as option "Select"."""
+    assert A.joined_value(value) is joined
+
+
+def test_a_one_value_colour_and_size_fact_holds_the_product():
+    out = T._sizes({"options": [], "facts": [{"label_ko": "선택하기", "value_ko": "Black/090"}], "variants": []},
+                   "womens_tops", "", [], "헤지스", "[헤지스골프]여성 블랙 바람막이 점퍼 HWJU4C612BK")
+    assert out["held"] == "'선택하기': colour and size in one value ('Black/090')"
+    ok = T._sizes({"options": [], "facts": [{"label_ko": "색상", "value_ko": "블랙"}], "variants": []},
+                  "womens_tops", "", [], "헤지스", "여성 바람막이")
+    assert not ok["held"]
