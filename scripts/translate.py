@@ -106,6 +106,7 @@ ASK_SHORTER = {"title": 100}
 # its numbers need not survive (knit cardigans 50002797, the owner 2026-11-19); a fibre's share ("100%") is no size
 TITLE_SIZES = {"50002797": re.compile(r"(?<![\d.A-Za-z])(?:44|55|66|77|88|99|85|90|95|100|105|110)(?![\d.%])")}
 TITLE_SIZES["50002798"] = TITLE_SIZES["50002797"]           # women's windbreakers: the same garment sizes (2026-11-20)
+TITLE_SIZES["50002796"] = TITLE_SIZES["50002797"]           # women's long-sleeve tops: the same sizes (2026-11-21)
 TITLE_SIZES["50002799"] = TITLE_SIZES["50002797"]           # 재킷, the same section (2026-11-21)
 # a garment title's season code ("26FW", "2025 SS", "23F/W"): the briefs leave the season out of the English title, so
 # its digits need not survive either (2026-11-20, the windbreaker pilot: "TaylorMade 26FW Women's ..." kept it only

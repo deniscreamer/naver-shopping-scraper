@@ -300,3 +300,12 @@ def test_windbreakers_go_to_the_womens_section_under_apparel_and_a_mens_or_unkno
     for value in ("womens", "unisex"):                                     # 재킷 (2026-11-21): the same section
         assert PL.place(product(value, category="50002799"), PROFILE)["product_type"] == "Women’s Windbreakers"
     assert PL.place(product("mens", category="50002799"), PROFILE)["status"] == "unresolved"
+
+
+def test_long_sleeve_tops_go_to_their_womens_section_under_apparel():
+    """50002796 (the owner, 2026-11-21): the store's collection fairwardgolf-womens-fall-long-sleeve-tops."""
+    for value in ("womens", "unisex"):
+        got = PL.place(product(value, category="50002796"), PROFILE)
+        assert got["status"] == "placed" and got["product_type"] == "Women’s Long-Sleeve Golf Tops"
+        assert got["tags"][:2] == ["fairwardgolf:leaf:womens-fall-long-sleeve-tops", "fairwardgolf:parent:apparel"]
+    assert PL.place(product("mens", category="50002796"), PROFILE)["status"] == "unresolved"

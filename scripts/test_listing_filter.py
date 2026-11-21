@@ -492,3 +492,27 @@ def test_the_jackets_title_rules_are_the_windbreakers():
     import listing_filter as LF
     strip = lambda rules: [{k: v for k, v in r.items() if k != "why"} for r in rules]   # noqa: E731
     assert strip(LF.title_rules("50002799")) == strip(LF.title_rules("50002798"))
+
+
+@pytest.mark.parametrize("title, code", [
+    # 50002796 women's fall long-sleeve golf tops (2026-11-21): real titles of the listing 여성 골프 가을 긴팔 티셔츠
+    ("루이까스텔 여성 FW베이직 모크넥 티셔츠 7LOTS907 6컬러", None),
+    ("PXG 골프긴팔티 KQF PKFPW4112-05 여성 하프 지퍼 하이넥 스웨터", None),           # a knit sweater is a top
+    ("PUMPING 여성 골프이너웨어 발열기모 기능성티셔츠 국내생산", None),                 # a base layer
+    ("말본 PXG골프긴팔티 GQT PJWCW4116-01 WOMEN WINTER WINDPROOF NEW HIGH NECK SWEATER", None),
+    ("김영주골프 겨울기모 골프이너웨어 남성 봄가을 소프트 이너티셔츠 KMSMTS21", "title:not_womens"),
+    ("와이드앵글 여성 골프 니트 가디건 스커트 세트", "title:cardigan"),
+    ("와이드앵글 여성 골프 카라넥 니트 스커트 상하의 세트", "title:bottoms_or_set"),
+    ("[골든베어] 여성 퀄팅 스웻 긴팔 티셔츠 + 와이드 롱팬츠 2종 택1", "title:bottoms_or_set"),
+    ("파사디골프 여성 가을 가오리핏 뒤판 우븐배색 패딩 티베스트 P25FTV146X", "title:vest"),
+    ("PXG 골프긴팔 KQF PKWPW4319-21 여성 사이드 오픈 우븐 하이브리드 다운 자켓", "title:outerwear"),
+    ("여성 골프웨어 아이스 이너웨어 냉감 긴팔 골프 티셔츠", "title:cooling"),
+    ("여성 볼레로토시 이너웨어", "title:arm_sleeves"),
+    ("여성 골프 반팔 티셔츠", "title:short_sleeve"),
+    ("여성 베스트셀러 긴팔 카라 티셔츠", None),                                   # best seller is no vest
+    ("WAAC 여성 트리코트 긴팔 티셔츠", None),                                     # tricot is no coat
+])
+def test_long_sleeve_tops_need_a_womens_word_and_no_other_garment(title, code):
+    screen = Screen("50002796", namespace="fairwardgolf")
+    assert screen.check({"name": title, "category_id": "50002796", "product_id": "1",
+                         "store": {"channel_no": "2"}}) == code

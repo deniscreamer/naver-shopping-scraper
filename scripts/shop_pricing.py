@@ -393,6 +393,17 @@ FAIRWARDGOLF = Delivered(
             duty_flat=Decimal("0.125"),       # the knits' flat rate (the owner 2026-11-19), same TODO(duty)
             decided={"coefficients": "2026-11-20 (the knits')", "duty": "2026-11-20 flat 12.5 % (the knits')"}),
         # 2026-11-21, the owner's decision: 재킷 50002799 feeds the same section as 점퍼 50002798 (Women's Windbreakers): the 50002798 values (the same garment, HTS 6202)
+        # 2026-11-21, the owner gave the section (womens-fall-long-sleeve-tops under apparel, the collection existed: "Women’s Long-Sleeve Golf Tops", 0 products) and asked for a pilot of 30, its review and fixes: the apparel rule, x1.10 at every level, the flat 12.5 % duty; the rate by fibre kept for the
+        # day it is switched on, US HTS 6109 (T-shirts and tops, knitted): cotton 6109.10 16.5 %, man-made 6109.90
+        # 32 %, another or an unread one 32 %; wool and cashmere (a knit top) as the knits' 16 %
+        "50002796": CategoryPrice(
+            coefficients={5: Decimal("1.10"), 4: Decimal("1.10"), 3: Decimal("1.10"), 2: Decimal("1.10"),
+                          1: Decimal("1.10")},
+            duty_by_fibre={"wool": Decimal("0.16"), "cotton": Decimal("0.165"), "cashmere": Decimal("0.16"),
+                           "man-made": Decimal("0.32"), "other": Decimal("0.32"), "unknown": Decimal("0.32")},
+            hts="6109",
+            duty_flat=Decimal("0.125"),
+            decided={"coefficients": "2026-11-21 (the apparel rule)", "duty": "2026-11-21 flat 12.5 % (the apparel rule)"}),
         "50002799": CategoryPrice(
             coefficients={5: Decimal("1.10"), 4: Decimal("1.10"), 3: Decimal("1.10"), 2: Decimal("1.10"),
                           1: Decimal("1.10")},

@@ -19,6 +19,10 @@ are held (`unresolved`), never placed by the listing's query.
 50002783 웨지 (2026-11-15): wedge sets, one section wedge-sets with no split (wedges are mostly unisex); single wedges
 are left out by the title screen, not here.
 
+50002796 티셔츠 (2026-11-21, the owner): women's fall long-sleeve golf tops, one section womens-fall-long-sleeve-tops
+under apparel ("Women’s Long-Sleeve Golf Tops"), split by gender as the knits. Short sleeves, sleeveless, cardigans,
+vests, outerwear, bottoms, sets, arm sleeves and summer cooling tops are left out by the title screen, not here.
+
 50002799 재킷 (2026-11-21, the owner's decision): the same section as 50002798, the same split; a job of either takes
 the other's listing rows (listing_title_rules.json `together`). Fleece, vests, light down and rainwear of both are
 Rainwear & Midlayers' (not built yet: left out by the title screen), knits the cardigans' (left out too).
@@ -90,6 +94,11 @@ CHIPPERS = Leaf("chippers", "Chippers")                            # owner 2026-
 WOMENS_KNIT_CARDIGANS = Leaf("womens-knit-cardigans", "Women’s Golf Cardigans")   # owner 2026-11-19: women's knit
                                                                    # cardigans, parent apparel; the store's collection
                                                                    # fairwardgolf-womens-knit-cardigans: to check (A6)
+WOMENS_LS_TOPS = Leaf("womens-fall-long-sleeve-tops", "Women’s Long-Sleeve Golf Tops")   # owner 2026-11-21:
+                                                                   # the store's collection
+                                                                   # fairwardgolf-womens-fall-long-sleeve-tops (tag
+                                                                   # rule fairwardgolf:leaf:womens-fall-long-sleeve-tops)
+                                                                   # existed, empty (checked 2026-11-21)
 WOMENS_WINDBREAKERS = Leaf("womens-windbreakers", "Women’s Windbreakers")   # owner 2026-11-20: women's golf
                                                                    # windbreakers, parent apparel; the store's
                                                                    # collection fairwardgolf-womens-windbreakers
@@ -111,6 +120,8 @@ PROFILES = {
                                           leaves={"womens": WOMENS_KNIT_CARDIGANS}),
             "50002798": CategoryPlacement(parent="apparel", split_by="gender",         # 점퍼 (2026-11-20)
                                           leaves={"womens": WOMENS_WINDBREAKERS}),
+            "50002796": CategoryPlacement(parent="apparel", split_by="gender",         # 티셔츠 (2026-11-21)
+                                          leaves={"womens": WOMENS_LS_TOPS}),
             "50002799": CategoryPlacement(parent="apparel", split_by="gender",         # 재킷 (2026-11-21)
                                           leaves={"womens": WOMENS_WINDBREAKERS}),
         }),

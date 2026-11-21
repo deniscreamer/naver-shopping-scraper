@@ -1,7 +1,7 @@
 # Profile `womens_tops` (women's tops)
 
 Part of [SIZES.md](../SIZES.md). Data: `womens_tops.json`. Categories: 50002797 women's golf knit cardigans
-(`CategoryRules.sizes = "womens_tops"`, the owner 2026-11-19), 50002798 women's golf windbreakers (2026-11-20), 50002799 재킷 in the same section (2026-11-21). Labels `kr_tops`, measures `tops`, fit `bust`.
+(`CategoryRules.sizes = "womens_tops"`, the owner 2026-11-19), 50002798 women's golf windbreakers (2026-11-20), 50002799 재킷 in the same section (2026-11-21), 50002796 women's long-sleeve golf tops (2026-11-21). Labels `kr_tops`, measures `tops`, fit `bust`.
 Golden fixture: `fixtures/sizes/pilot_50002797.json` (the 30 pilot drafts, job
 fairwardgolf-50002797-20261119T151233Z).
 

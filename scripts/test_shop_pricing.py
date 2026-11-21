@@ -603,3 +603,19 @@ def test_describe_of_the_knit_adds_its_rule_and_leaves_the_shops():
     assert knits["category"]["dutyFlat"] == "0.125"
     assert knits["category"]["decided"] == {"coefficients": "2026-11-19", "duty": "2026-11-19 flat 12.5 %"}
     assert json.loads(json.dumps(knits)) == knits
+
+
+@pytest.mark.parametrize("krw, rows, fibre, by_fibre", [
+    (59_000, [("소재", "폴리에스터 90% 스판덱스 10%", "spec")], "man-made", "0.32"),
+    (89_000, [("소재", "면 100%", "spec")], "cotton", "0.165"),
+])
+def test_long_sleeve_tops_take_the_apparel_price_under_hts_6109(krw, rows, fibre, by_fibre):
+    """50002796 (2026-11-21): the apparel rule (x1.10, the flat 12.5 %), the windbreakers' price for the same box;
+    the rate by fibre kept under US HTS 6109 (T-shirts and tops, knitted)."""
+    product = {**FREE, "specs": [], "composition_ko": [{"label_ko": label, "value_ko": value, "source": source}
+                                                      for label, value, source in rows]}
+    top = SHOP.quote({**knit_box(), "price_krw": krw}, product, "50002796")
+    assert top.price == SHOP.quote({**knit_box(), "price_krw": krw}, product, "50002798").price
+    b = top.breakdown
+    assert b is not None and b["dutyRate"] == "0.125"
+    assert (b["dutyBasis"]["hts"], b["dutyBasis"]["fibre"], b["dutyBasis"]["byFibre"]) == ("6109", fibre, by_fibre)

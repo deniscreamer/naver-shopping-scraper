@@ -174,6 +174,12 @@ RULES = {
                                                             # after its review (100 drafts, 15 held)
             # 2026-11-21, the owner's decision: 재킷 50002799 feeds the same section as 점퍼 50002798 (Women's Windbreakers): the 50002798 values: Naver files the same windbreakers under
             # either leaf (20 of the 47 cards of the 리뷰 많은순 listing's first batch, 2026-11-21)
+            # 2026-11-21, the owner gave the section (womens-fall-long-sleeve-tops under apparel, the collection existed: "Women’s Long-Sleeve Golf Tops", 0 products) and asked for a pilot of 30, its review and fixes: the windbreakers' choices, the same
+            # kind of seller and garment (a women's golf top in Korean sizes, its size charts in the images)
+            "50002796": CategoryRules(
+                paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
+                no_choice_out=True, composition=True, sizes="womens_tops", own_brand_wordmark=True,
+                reviewed=False),      # a new category: DRAFT until the lens review and the owner's activation
             "50002799": CategoryRules(
                 paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
                 no_choice_out=True, composition=True, sizes="womens_tops", own_brand_wordmark=True,

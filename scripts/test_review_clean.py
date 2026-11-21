@@ -236,3 +236,9 @@ def test_windbreaker_reviews_name_the_garment(text):
     assert R.clean(text, category_id="50002798").grade == "full"
     assert R.clean("타구감이 너무 좋아요", category_id="50002798").grade == "short"
     assert R.clean(text, category_id="50002799").grade == "full"             # 재킷, the same section (2026-11-21)
+
+
+def test_a_long_sleeve_top_buyers_aspects_grade_full():
+    """50002796 (2026-11-21): fit, thickness, the feel, pilling."""
+    text = "사이즈 정사이즈로 잘 맞고 두께도 적당해서 따뜻해요. 촉감이 부드럽고 세탁해도 보풀이 없어서 좋아요. 기장도 딱 좋아요"
+    assert R.clean(text, category_id="50002796").grade == "full"

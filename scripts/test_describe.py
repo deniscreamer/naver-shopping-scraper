@@ -842,3 +842,12 @@ def test_foreign_words_are_no_country(text):
 def test_domestic_fabric_is_no_origin(row, answer):
     """The 2026-11-19 review: Korean fabric of an imported garment is no "Made in Korea"."""
     assert D.origin(row, []) == answer
+
+
+def test_the_long_sleeve_top_profile_is_the_knits_lists_with_its_own_brief():
+    """50002796 (2026-11-21): materials and highlights, never a size, "Imported."."""
+    name, prof = D.profile_of("50002796")
+    assert name == "long_sleeve_top" and {k: v for k, v in prof.items() if k != "categories"} == {
+        k: v for k, v in KNIT.items() if k != "categories"}
+    brief = D.system_prompt("long_sleeve_top")
+    assert "Never state a size" in brief and "Imported." in brief and "base layer" in brief

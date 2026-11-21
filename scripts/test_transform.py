@@ -962,7 +962,7 @@ def test_the_knit_rules_are_the_owners():
     assert knit.no_choice_out and knit.composition and knit.reviewed   # the owner 2026-11-20: live after wave 1
     assert not knit.sets_only and not knit.wedge_sets and not knit.agency_needs_brand
     assert not any(c.no_choice_out or c.composition for k, c in rules_for("fairwardgolf").categories.items()
-                   if k not in ("50002797", "50002798", "50002799"))     # the clubs' products stay as published
+                   if k not in ("50002796", "50002797", "50002798", "50002799"))     # the clubs' products stay as published
 
 
 def test_the_windbreaker_rules_are_the_knits_and_it_is_reviewed():
@@ -1073,3 +1073,9 @@ def test_the_composition_rows_are_kept_for_the_duty_and_the_description():
     b = policy("fairwardgolf").quote(variant, p["product"], "50002797").breakdown
     assert b is not None and b["dutyRate"] == "0.125" and b["dutyBasis"]["byFibre"] == "0.32" and b["dutyBasis"]["fibre"] == "man-made" \
         and b["dutyBasis"]["source"] == "notice" and b["coefficient"] == "1.10"
+
+
+def test_the_long_sleeve_top_rules_are_the_windbreakers_and_not_reviewed():
+    """50002796 (2026-11-21, the owner's section): the windbreakers' apparel rules; DRAFT first."""
+    wind, tops = (rules_for("fairwardgolf").category(c) for c in ("50002798", "50002796"))
+    assert dataclasses.replace(tops, reviewed=True) == wind and not tops.reviewed

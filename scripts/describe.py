@@ -88,6 +88,10 @@ PROFILES: dict[str, dict[str, Any]] = {
                     "lists": (("materials", "Materials & care", 4), ("highlights", "Highlights", 4)),
                     "no_measures": True,
                     "imported": True},
+    "long_sleeve_top": {"categories": ("50002796",),     # women's fall long-sleeve golf tops (2026-11-21, as the knits)
+                        "lists": (("materials", "Materials & care", 4), ("highlights", "Highlights", 4)),
+                        "no_measures": True,
+                        "imported": True},
     "default": {"categories": (), "lists": (("highlights", "Highlights", 4),)},
 }
 
