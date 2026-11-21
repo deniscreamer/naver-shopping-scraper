@@ -168,7 +168,10 @@ def test_long_image_text_is_cut_at_a_block():
     ("미국산", ["*테일러메이드공장일정에따라베트남, 타이완, 중국에서생산됩니다."], None, "sources disagree"),   # 11635694901
     ("일본산", ["제조국: 생산 시기에 따라 변동될 수 있음"], None, "hedged"),       # a hedge that names no country
     (None, ["원산지는 상이할 수 있습니다"], None, "hedged"),
-    ("캄보디아산", ["헤드 커버(Made in CHINA ) 포함"], None, "hedged"),          # a country the table does not know
+    ("캄보디아산", ["헤드 커버(Made in CHINA ) 포함"], None, "sources disagree"),  # Cambodia known since 2026-11-21
+    ("일본산", ["원산지 / 미얀마"], None, "sources disagree"),                  # Callaway 11092759396 (2026-11-21)
+    ("일본산", ["인도어 연습장용"], "Japan", None),                             # 인도어 (indoor) is no India
+    ("한국산", ["터키블루 / 네이비"], "Korea", None),                           # 터키블루 (turquoise) is no Turkey
 ])
 def test_origin_is_stated_only_when_the_sources_name_one_country(row, texts, country, why):
     got, note = D.origin(row, texts)

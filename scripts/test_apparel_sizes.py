@@ -124,7 +124,11 @@ def _resolve(values, texts=(), brand=None, title="여성 가디건", name="사�
     return A.resolve([{"name_ko": name, "values_ko": list(values)}], list(texts), brand, title, "womens_tops")
 
 
-@pytest.mark.parametrize("values", [["S(55)", "M(66)", "L(77+)"], ["XS", "S", "XXS(3)"], ["M", "L", "가디건 XL"]])
+@pytest.mark.parametrize("values", [["S(55)", "M(66)", "L(77+)"], ["XS", "S", "XXS(3)"], ["M", "L", "가디건 XL"],
+                                    # 2026-11-21 (the second windbreaker pilot): an option named a size with no value
+                                    # read went out raw, no US size, no hold
+                                    ["WS", "WM", "WL"], ["A.0", "B.1", "C.2"], ["0호", "1호", "2호"],
+                                    ["S(상세사이즈 확인했습니다)"]])
 def test_an_unread_value_of_the_size_option_holds_never_reaches_the_store(values):
     r = _resolve(values)
     assert r["option"] == 0 and r["held"] and "not read" in r["held"] and not r["values"]
@@ -434,6 +438,8 @@ def test_the_first_waves_labels():
     ("12220300865", ["L", "XL"], ["Size(cm) / 어깨 / 가슴 / 소매 / 암홀 / 총기장", "L(55-66) / 48 / 20 / 58",
                                   "XL(77) / 50.5 / 21 / 59", "모델: Height 171 Bast 35 Waist 26 Hip 36/L착용"],
      ["S-M (US 4-10)", "L (US 12-14)"]),
+    # the OCR glued two pairs, the third after a stray bracket (Toosom 12566658191, 2026-11-21: M sold as US M)
+    ("12566658191", ["M", "L", "XL"], ["M(55)L(66) | ) XL(77)"], ["S (US 4-6)", "M (US 8-10)", "L (US 12-14)"]),
 ])
 def test_a_bare_letter_takes_the_women_size_the_seller_pairs_it_with(pid, values, texts, want):
     r = _resolve(values, texts)
@@ -597,7 +603,9 @@ def test_a_size_corner_line_is_a_column_header_after_a_diagrams_labels():
 
 
 @pytest.mark.parametrize("value, joined", [("Black/090", True), ("아이보리 M", True), ("네이비 55", True),
-                                           ("블랙", False), ("FREE", False), ("Black/Free", False), ("M(90)", False)])
+                                           ("블랙", False), ("FREE", False), ("Black/Free", False), ("M(90)", False),
+                                           # the size first (Mineflow 9969597394, 2026-11-21)
+                                           ("XL/그레이", True), ("FREE/그레이", False), ("S (55)", False)])
 def test_one_value_joining_a_colour_and_a_size(value, joined):
     """Hazzys 13684467368 (2026-11-20): one fact "선택하기: Black/090" reached the store as option "Select"."""
     assert A.joined_value(value) is joined
@@ -610,3 +618,13 @@ def test_a_one_value_colour_and_size_fact_holds_the_product():
     ok = T._sizes({"options": [], "facts": [{"label_ko": "색상", "value_ko": "블랙"}], "variants": []},
                   "womens_tops", "", [], "헤지스", "여성 바람막이")
     assert not ok["held"]
+
+
+def test_a_size_first_option_joining_size_and_colour_holds():
+    """Mineflow 9969597394 (2026-11-21): one option "FREE/그레이", "XL/크림": size and colour in one, the size first;
+    FREE counts beside another size. An option of FREE alone with colours is no size run."""
+    r = A.resolve([{"name_ko": "색상", "values_ko": ["FREE/그레이", "FREE/블랙", "XL/크림"]}], [], None, "여성 바람막이",
+                  "womens_tops")
+    assert r["held"] and "colour and size in one option" in r["held"]
+    r = A.resolve([{"name_ko": "색상", "values_ko": ["FREE/그레이", "FREE/블랙"]}], [], None, "여성 바람막이", "womens_tops")
+    assert not (r["held"] and "colour and size" in r["held"])

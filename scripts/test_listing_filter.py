@@ -441,6 +441,9 @@ def test_knit_cardigans_need_a_womens_word_and_a_cardigan_word(title, code):
     ("여성 골프 가디건 아우터 블루종", None),                                # 블루종 is a jacket word, 가디건 unless it
     ("여성 골프 집업 가디건", "title:not_jacket"),
     ("여성 골프 바람막이 상하세트", "title:two_piece_set"),
+    ("프리덴 여성 골프 아노락 반바지 투피스 세트", "title:two_piece_set"),      # 10674911182 (2026-11-21)
+    ("여성 골프 바람막이 셋업", "title:two_piece_set"),
+    ("볼빅 여성 골프 부클 방풍 풀집업 점퍼 SOA11", "title:knit"),              # 13783173372, a bouclé (2026-11-21)
     # 2026-11-21 (the owner's decision: fleece, vests, light down and rainwear go to Rainwear & Midlayers): left out
     ("여성 골프 아노락 후리스 바람막이 점퍼 자켓 겨울 골프 골프복 연습복 할로", "title:fleece"),   # a 50002799 card
     ("여성 골프 플리스 집업 자켓", "title:fleece"),

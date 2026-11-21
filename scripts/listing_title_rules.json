@@ -2654,7 +2654,7 @@
    },
    {
     "code": "knit",
-    "why": "2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a knit (니트, knit) is a knit jacket or cardigan, never a windbreaker, even windproof (방풍 니트): the pilot's lens review (2026-11-20) found 4 wool, cashmere or down knits among 30 drafts sold as windbreakers (11037889576, 5303904972, 11038604889, 12742620642).",
+    "why": "2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a knit (니트, knit) is a knit jacket or cardigan, never a windbreaker, even windproof (방풍 니트): the pilot's lens review (2026-11-20) found 4 wool, cashmere or down knits among 30 drafts sold as windbreakers (11037889576, 5303904972, 11038604889, 12742620642). 2026-11-21 (the second windbreaker pilot's review): a bouclé (부클, a wool / acrylic loop yarn) is a knit too (Volvik 13783173372).",
     "tokens": [
      {
       "text": "니트",
@@ -2663,6 +2663,21 @@
      },
      {
       "text": "knit",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "부클",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "boucle",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "bouclé",
       "notFollowedBy": [],
       "notPrecededBy": []
      }
@@ -2711,7 +2726,7 @@
    },
    {
     "code": "two_piece_set",
-    "why": "2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a top-and-bottom set (상하세트) is no single jacket.",
+    "why": "2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a top-and-bottom set (상하세트) is no single jacket. 2026-11-21 (the second windbreaker pilot's review): 투피스 / 셋업 / 골프복세트 too (Frieden 10674911182, an anorak and shorts, reached the drafts).",
     "tokens": [
      {
       "text": "상하세트",
@@ -2720,6 +2735,21 @@
      },
      {
       "text": "상하의",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "투피스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "셋업",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "골프복세트",
       "notFollowedBy": [],
       "notPrecededBy": []
      }
@@ -2922,7 +2952,7 @@
    },
    {
     "code": "knit",
-    "why": "2026-11-21 (재킷 50002799, the same section as 점퍼 50002798, the owner's decision): the 50002798 rule, the same words. 2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a knit (니트, knit) is a knit jacket or cardigan, never a windbreaker, even windproof (방풍 니트): the pilot's lens review (2026-11-20) found 4 wool, cashmere or down knits among 30 drafts sold as windbreakers (11037889576, 5303904972, 11038604889, 12742620642).",
+    "why": "2026-11-21 (재킷 50002799, the same section as 점퍼 50002798, the owner's decision): the 50002798 rule, the same words. 2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a knit (니트, knit) is a knit jacket or cardigan, never a windbreaker, even windproof (방풍 니트): the pilot's lens review (2026-11-20) found 4 wool, cashmere or down knits among 30 drafts sold as windbreakers (11037889576, 5303904972, 11038604889, 12742620642). 2026-11-21 (the second windbreaker pilot's review): a bouclé (부클, a wool / acrylic loop yarn) is a knit too (Volvik 13783173372).",
     "tokens": [
      {
       "text": "니트",
@@ -2931,6 +2961,21 @@
      },
      {
       "text": "knit",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "부클",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "boucle",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "bouclé",
       "notFollowedBy": [],
       "notPrecededBy": []
      }
@@ -2979,7 +3024,7 @@
    },
    {
     "code": "two_piece_set",
-    "why": "2026-11-21 (재킷 50002799, the same section as 점퍼 50002798, the owner's decision): the 50002798 rule, the same words. 2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a top-and-bottom set (상하세트) is no single jacket.",
+    "why": "2026-11-21 (재킷 50002799, the same section as 점퍼 50002798, the owner's decision): the 50002798 rule, the same words. 2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a top-and-bottom set (상하세트) is no single jacket. 2026-11-21 (the second windbreaker pilot's review): 투피스 / 셋업 / 골프복세트 too (Frieden 10674911182, an anorak and shorts, reached the drafts).",
     "tokens": [
      {
       "text": "상하세트",
@@ -2988,6 +3033,21 @@
      },
      {
       "text": "상하의",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "투피스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "셋업",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "골프복세트",
       "notFollowedBy": [],
       "notPrecededBy": []
      }

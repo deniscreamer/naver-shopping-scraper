@@ -141,7 +141,14 @@ COUNTRIES = {"일본": "Japan", "중국": "China", "미국": "USA", "베트남":
              "한국": "Korea", "대한민국": "Korea", "태국": "Thailand", "인도네시아": "Indonesia", "멕시코": "Mexico",
              "말레이시아": "Malaysia", "홍콩": "Hong Kong", "japan": "Japan", "china": "China", "usa": "USA",
              "u.s.a": "USA", "vietnam": "Vietnam", "taiwan": "Taiwan", "korea": "Korea", "thailand": "Thailand",
-             "indonesia": "Indonesia", "mexico": "Mexico", "malaysia": "Malaysia"}
+             "indonesia": "Indonesia", "mexico": "Mexico", "malaysia": "Malaysia",
+             # 2026-11-21 (the second windbreaker pilot: "미얀마" on a care table read as no country, the Origin row's
+             # Japan stood alone and the description said "Made in Japan", Callaway 11092759396): garment countries
+             "미얀마": "Myanmar", "방글라데시": "Bangladesh", "캄보디아": "Cambodia", "스리랑카": "Sri Lanka",
+             "파키스탄": "Pakistan", "필리핀": "Philippines", "튀르키예": "Turkey",
+             "myanmar": "Myanmar", "bangladesh": "Bangladesh", "cambodia": "Cambodia", "sri lanka": "Sri Lanka",
+             "pakistan": "Pakistan", "philippines": "Philippines"}
+# not 인도 (인도어, indoor) nor 터키 (터키블루, turquoise): words of golf texts
 # "국산" / "국내산" / "국내생산" / "국내제조" (made in this country: Korea) only as a word's start, and never of a material
 # ("국산원단 수입완제품": Korean fabric, an imported garment): 중국산, 외국산 and 수입국산 are not (the owner, 2026-11-19:
 # 106 products with a 국산 origin row, 52 of them published, had lost "Made in Korea")

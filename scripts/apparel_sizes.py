@@ -42,8 +42,10 @@ VERSION = "sizes/2"                          # bump on a change of what resolve(
 # 10036686854, 11016233632, 12220300865); the label's own parse decides what the token is
 _LETTER_ALT = r"XXXL|3XL|XXL|2XL|XXS|2XS|XS|XL|LL|S|M|L"      # deliberately narrow: these sellers' letters
 _WOMEN_TOKEN = r"\d{2}(?:\.5|반)?(?:\s*[-~]\s*\d{2}(?:\.5|반)?)?"
+# the closing bracket ends a pair: a letter right after it is the next pair ("M(55)L(66)", the OCR glued them:
+# Toosom 12566658191 sold M as US M, one size too big, 2026-11-21); a digit after it is no pair
 _TEXT_PAIR_RE = re.compile(rf"(?<![A-Za-z0-9])(?:(?:{_LETTER_ALT})\s*[(\[]\s*{_WOMEN_TOKEN}\s*[)\]]|"
-                           rf"{_WOMEN_TOKEN}\s*[(\[]\s*(?:{_LETTER_ALT})\s*[)\]])(?![A-Za-z0-9])", re.I)
+                           rf"{_WOMEN_TOKEN}\s*[(\[]\s*(?:{_LETTER_ALT})\s*[)\]])(?!\d)", re.I)
 # the same letters, for a value whose colour and size are joined ("Ivory/085", "블랙 100 L": 12487887784, 10940191023)
 _JOIN_SPLIT_RE = re.compile(r"[\s/]+")
 
@@ -91,7 +93,10 @@ def size_option(options: list[dict[str, Any]]) -> int | None:
     for i in range(len(options) - 1, -1, -1):
         values = options[i].get("values_ko") or []
         read = sum(1 for v in values if parse_label(v))
-        if values and read and (is_size_name(options[i].get("name_ko")) or read * 2 > len(values)):
+        # an option named a size is chosen even when none of its values reads (2026-11-21, the second windbreaker
+        # pilot: "WS / WM / WL" 13483086996, "A.0 / B.1 / C.2" 11966824855, "0호 / 1호 / 2호" 12300620164, "S(상세사이즈
+        # 확인했습니다)" 11734583917 went out raw with no US size and no hold): resolve() holds it on the first value
+        if values and (is_size_name(options[i].get("name_ko")) or (read and read * 2 > len(values))):
             return i
     return None
 
@@ -179,13 +184,24 @@ def text_pairs(texts: list[str]) -> dict[str, Label]:
     return {k: v for k, v in got.items() if len(seen[k]) == 1}
 
 
-def joined_value(value: str | None) -> bool:
-    """One value that joins a colour and a size ("Black/090", "아이보리 M"): a head that is no size, a size tail (a
-    letter, a chest or a women's size, never FREE)."""
+def _joined_size(value: str, free: bool = False) -> Label | None:
+    """The size of one value that joins a colour and a size, or None: a size tail after a head that is no size
+    ("Black/090", "아이보리 M"), or a size head before a tail that is no size ("FREE/그레이", "XL/크림": 2026-11-21,
+    Mineflow 9969597394); a letter, a chest or a women's size, FREE only when `free`."""
     words = [w for w in _JOIN_SPLIT_RE.split(str(value or "").strip()) if w]
-    label = parse_label(words[-1]) if len(words) >= 2 else None
-    return bool(label and not label.free and (label.letter or label.chest or label.women)
-                and not parse_label(" ".join(words[:-1])))
+    if len(words) < 2:
+        return None
+    for size, rest in ((words[-1], words[:-1]), (words[0], words[1:])):
+        label = parse_label(size)
+        if label and (label.letter or label.chest or label.women or (free and label.free)) \
+                and (free or not label.free) and not parse_label(" ".join(rest)):
+            return label
+    return None
+
+
+def joined_value(value: str | None) -> bool:
+    """One value that joins a colour and a size ("Black/090", "아이보리 M", "XL/크림"): never FREE alone."""
+    return _joined_size(str(value or "")) is not None
 
 
 def _joined(options: list[dict[str, Any]]) -> str | None:
@@ -195,13 +211,12 @@ def _joined(options: list[dict[str, Any]]) -> str | None:
         values = [str(v) for v in o.get("values_ko") or []]
         tails: list[str] = []
         for v in values:
-            words = [w for w in _JOIN_SPLIT_RE.split(v.strip()) if w]
-            label = parse_label(words[-1]) if len(words) >= 2 else None
-            if not label or label.free or not (label.letter or label.chest or label.women) \
-                    or parse_label(" ".join(words[:-1])):
+            label = _joined_size(v, free=True)
+            if not label:
                 tails = []
                 break
             tails.append(label.key)
+        # two sizes or more, FREE counted only beside another ("FREE/그레이", "XL/크림", 2026-11-21)
         if len(set(tails)) >= 2:
             return f"{o.get('name_ko')!r}: colour and size in one option ({values[0]!r} ...)"
     return None

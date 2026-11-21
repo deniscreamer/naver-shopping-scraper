@@ -50,7 +50,10 @@ the answer needs the sources compared and the clubs added up ("Which model" belo
   sentence; "Japan-market model" is not an origin. "국산" / "국내산" / "국내생산" / "국내제조" (domestic) is Korea, only at a word's
   start (중국산, 외국산 are not) and never of a material ("국산원단 수입완제품": Korean fabric, an imported
   garment): the owner, 2026-11-19. 106 products had a 국산 origin row; the 52 of them published whose description
-  changed (46 live, 6 drafts) were described again.
+  changed (46 live, 6 drafts) were described again. The garment countries (2026-11-21, the second windbreaker
+  pilot: a care table's "미얀마" was no country, so the row's Japan stood alone and Callaway 11092759396 said "Made in
+  Japan"): 미얀마, 방글라데시, 캄보디아, 스리랑카, 파키스탄, 필리핀, 튀르키예 and their English; never 인도 (인도어, indoor) nor
+  터키 (터키블루, turquoise).
 - **The answer**: JSON fields, not HTML: `conflicts` (points the sources disagree on: asked first, kept out of the
   text, shown in the report), `intro`, and the lists of the product's profile.
 - **After** (`settle`): each intro sentence and each list item is checked alone (a sentence does not end after

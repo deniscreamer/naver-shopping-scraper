@@ -28,7 +28,8 @@ fixtures `fixtures/sizes/<pilot>.json`. Skill `apparel-sizes`.
 | `held ...: size_unmapped (M (66) written twice at two prices ...)` | the two spellings cost differently | look at the page: which is the real price |
 | `held ...: size_unmapped (no size option, the chart lists 95, 100, 105, 110: which size is sold is unknown)` | no size option and no size fact, the chart has rows of two sizes or more: one unknown size is sold (13004790971, 2026-11-20) | look at the page: the size is in the title ("블랙, 105") or another listing; never a guessed size |
 | `held ...: size_unmapped ('선택하기': colour and size in one value ('Black/090'))` | no size option and one fact joining a colour and a size (Hazzys 13684467368, 2026-11-20): it reached the store as option "Select" | leave it held |
-| `held ...: size_unmapped ('선택하기': colour and size in one option ('Ivory/085' ...))` | one option joins a colour and a size ("Ivory/085", "블랙 100 L"): its values would reach the store in Korean sizes (2026-11-20) | leave it held; splitting the value is not built |
+| `held ...: size_unmapped ('선택하기': colour and size in one option ('Ivory/085' ...))` | one option joins a colour and a size ("Ivory/085", "블랙 100 L", and the size first "FREE/그레이", "XL/크림": FREE counts beside another size, 2026-11-21): its values would reach the store in Korean sizes (2026-11-20) | leave it held; splitting the value is not built |
+| `held ...: size_unmapped ('WS': not read as a size)` | an option named a size (사이즈 / size) whose values none reads ("WS / WM / WL", "A.0 / B.1 / C.2", "0호 / 1호 / 2호", "S(상세사이즈 확인했습니다)"): before 2026-11-21 it was taken for no size option and went out raw, no US size | a brand row or a label rule with its evidence; never a guessed size |
 | a size reads one up or down from what the photo or chart says | a wrong reading | the product's chart (`fixtures/sizes`), then the rule, with a test |
 | no size chart on a product whose page has one | the chart's layout is not read | [SIZE_CHARTS.md](SIZE_CHARTS.md) "When a chart is not read" |
 | `product.sizes.chart_conflicts` | a second one-size block nothing ties to a type | the first block is shown; look at the page |
@@ -56,7 +57,7 @@ fixtures `fixtures/sizes/<pilot>.json`. Skill `apparel-sizes`.
    gives a range ("L(55-66)" = "S-M (US 4-10)");
 3. the **chart's pairing** of a letter with a number ("85 (S)", "Size / XS / S" over "Korea Size / 85 / 90"; a women's
    size too, "55~66(L)"); then the **seller's text** pairing a letter with one women's size ("L[55~66]/XL[77]",
-   "M(55), L(66), XL(77)", an OCR row "L(55-66) / 48 / 20 / 58" whose measures are not read: `text_pair`,
+   "M(55), L(66), XL(77)", pairs the OCR glued ("M(55)L(66)", Toosom 12566658191, 2026-11-21), an OCR row "L(55-66) / 48 / 20 / 58" whose measures are not read: `text_pair`,
    2026-11-20); a letter written with two different numbers is not paired, and a women's pairing counts only when
    every bare letter of the option has one (M/L/XL over "L[55~66]/XL[77]": today's letters for all);
 4. the **brand row**'s letters (WAAC S = 90); a letter range "S/M" takes both letters' chests;
