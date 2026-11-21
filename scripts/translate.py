@@ -454,9 +454,14 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
             item["context"] = "; ".join(said)
             item["drop"] = (item.get("drop") or []) + [sanitize("title", w, tenant, category) for w in unproven]
         if kind == "title" and str(category) in TITLE_SIZES:
-            sizes = TITLE_SIZES[str(category)].findall(item["source"]) + TITLE_SEASON.findall(item["source"])
+            sizes = TITLE_SIZES[str(category)].findall(item["source"])
             if sizes:
                 item["free_numbers"] = [*(item.get("free_numbers") or []), *sizes]
+            # a season code may go whole, its letters too: "22ss", "23FW" failed "codes lost" (the second
+            # windbreaker pilot 2026-11-21, 7114115147, 11092759396) while only its digits were freed
+            seasons = [m.group(0) for m in TITLE_SEASON.finditer(item["source"])]
+            if seasons:
+                item["drop"] = [*(item.get("drop") or []), *seasons]
         if kind == "title" and again and context:
             item["context"] = "; ".join([*([item["context"]] if item.get("context") else []), context])
         if kind == "option_name" and ko in placeholders:

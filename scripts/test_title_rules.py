@@ -348,6 +348,30 @@ def test_a_knit_titles_size_run_may_be_left_out(tmp_path):
     assert "free_numbers" not in next(i for i in pending if i["kind"] == "title")
 
 
+def test_a_windbreaker_titles_season_code_may_be_left_out(tmp_path):
+    """50002798 (the second windbreaker pilot, 2026-11-21): "22ss" / "23FW" left out of the English title failed
+    "codes lost" while only the digits were freed; the whole season code is dropped from the check, the model code
+    still must survive."""
+    import translation_dicts as D
+    path = os.path.join(os.path.dirname(__file__), "fixtures", "prepared", "13468791008.json")
+    with open(path, encoding="utf-8") as f:
+        prepared = json.load(f)
+    title_ko = "제이린드버그 22ss 여성골프웨어 바람막이 자켓 텐리 Tenley 23FW GWJT07"
+    prepared["source"]["category_id"] = "50002798"
+    prepared["notes"] = []
+    prepared["product"]["title_ko"] = title_ko
+    prepared["texts"] = [{**t, "ko": title_ko} if t["kind"] == "title" else t for t in prepared["texts"]]
+    dicts = D.Dictionaries(str(tmp_path / "live"), str(tmp_path / "none"))
+    _, _, pending = T.plan(prepared, dicts, {}, TENANT)
+    title = next(i for i in pending if i["kind"] == "title")
+    assert title["drop"] == ["22ss", "23FW"]
+    ok, failed = T.verify([title], json.dumps({"items": [{"id": title["id"], "en":
+                                                          "J.Lindeberg Women's Tenley Golf Windbreaker GWJT07"}]}))
+    assert ok and not failed
+    _, failed = T.verify([title], json.dumps({"items": [{"id": title["id"], "en": "J.Lindeberg Women's Windbreaker"}]}))
+    assert failed and failed[0]["problems"] == ["numbers changed: missing 07", "codes lost: missing GWJT07"]
+
+
 def test_a_model_codes_tail_is_no_size():
     """A code ending in a size number (K90, C100) keeps its number: only free-standing sizes are freed (review
     2026-11-19)."""
