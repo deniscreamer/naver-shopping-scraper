@@ -3057,13 +3057,15 @@
   "50002796": [
    {
     "code": "not_womens",
-    "why": "2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): the section sells women's tops; a title with no women's word (a men's or unisex one) is left out, as the knits and the windbreakers.",
+    "why": "2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): the section sells women's tops; a title with no women's word (a men's or unisex one) is left out, as the knits and the windbreakers. 2026-11-21, the pilot's review: \"(WOMAN)\" and \"우먼스\" are women's words too (9 Malbon women's sweaters were left out).",
     "requires": [
      [
       "여성",
       "여자",
       "ladies",
-      "women"
+      "women",
+      "woman",
+      "우먼"
      ]
     ],
     "tokens": []
