@@ -60,6 +60,7 @@ _TWIN_RE = re.compile(r"(?<![\d.])(\d{1,3}(?:\.\d{1,2})?)/\1(?![\d./])")
 # a Bust line with another of these within _BODY_NEAR lines is the model's, never a chart (2026-11-20)
 _BODY_RE = re.compile(r"^\s*(height|bust|waist|hips?)\s*[:：]", re.I)
 _BODY_NEAR = 4
+_FIGURE_RE = re.compile(r"^(?:\d{1,2}\s*[.)]|[①-⑳])\s*")
 _ITEM_RE = re.compile(r"^[a-h]$")             # an OCR'd figure letter before a row ("b / 가슴둘레 / 86 / 91")
 ONE = "__one_size__"                          # the measurements written with no size label (a FREE product)
 # a line about the model, the buyer or the shop, never a garment's measurements ("모델 신장 165 / 가슴둘레 82",
@@ -186,6 +187,9 @@ def read_chart(lines: list[str], measures: str = "tops", sections: list[str] | N
         cells = _row_cells(text)
         if len(cells) > 2 and _ITEM_RE.match(cells[0]) and r.measure(cells[1]):
             cells = cells[1:]
+        # a diagram's number before a measure's name ("1.어깨 / 2.가슴 / 3.소매 / 7.총길이": 2026-11-21, the tops
+        # pilot, 5378291032's chart was lost): the name; a cell of a size or a number keeps it
+        cells = [c2 if (c2 := _FIGURE_RE.sub("", c)) != c and r.measure(c2) else c for c in cells]
         hit = r.heading(raw)
         if hit:
             section = hit

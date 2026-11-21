@@ -122,6 +122,7 @@ _NO_FIRM = re.compile(r"(?i)^(?:별도\s*표기|알\s*수\s*없음|미상|불명
 # the vendor "The Sallim OEM" of 수아무아's 10669638240)
 _OEM = re.compile(r"(?i)(?<![a-z])\s*(?:oem|odm)\s*$")        # never inside a Latin name ("901MOEM", "POEM")
 _COMPANY = re.compile(r"^(?:주식회사|\(주\)|㈜)")
+_COMPANY_FORM = re.compile(r"주식회사|\(주\)|㈜")
 _CODE = re.compile(r"\s*\((?:\d+|자체\s*제작[^()]*)\)\s*$")       # 코알라(200874), 지브이골프코리아(자체제작 상품)
 # a wholesaler or a store many sellers name in their 브랜드 / 제조사 rows, never a maker (2026-11-19, the seller-vendor
 # review: (주)감씨 is the "공급사정보 (주식회사 감씨)" of dozens of shops reselling Inparo, whose images say "인파로만의
@@ -149,7 +150,10 @@ def resellers_own(name: str | None, maker: str | None, store: dict[str, Any] | N
     "재팬도코도코협력사" as the maker; 홈앤컴, 굿세라, 구띵상점, 유무상회 the same. A shop selling its own brand (스컬독,
     버디온, 아화골프, US키즈골프) writes no 협력: it stays."""
     store = store or {}
-    own = {_norm(store.get("name")), _norm((store.get("business") or {}).get("legal_name"))} - {""}
+    # a company's form is no part of its name ("(주) 한앤코", the legal name of 김영주골프's store: its maker "한앤코
+    # 협력업체" became the vendor "Han & Co.", 6521205918, 2026-11-21)
+    own = {_norm(_COMPANY_FORM.sub("", str(x or ""))) for x in (store.get("name"),
+                                                               (store.get("business") or {}).get("legal_name"))} - {""}
     partner = _PARTNER.search(maker or "")
     # the brand row may be the partner phrase itself ("수수협력사 co." by the shop 수수, 2026-11-18): the shop's own
     return bool(partner and _norm(_PARTNER.sub("", maker or "")) in own and _norm(_PARTNER.sub("", name or "")) in own)
@@ -533,6 +537,10 @@ def decide(title: str | None, origin: str | None, brands: list[str], rows: list[
     dist = [d for d in distributors(origin) if not _own_shop(d, store or set())]
     if dist:
         return dist[0], "origin", dist[1:]
+    if own_row:                                   # the shop's own label before a brand its photos show (2026-11-21: a
+        label = shop_label(shop, title, own_row)  # "Volvik" prop in 봉선댁's photos became the vendor, 6465420393)
+        if label:
+            return label, "shop_label", []
     seen = in_images(rows, brands)
     if seen:
         top = [b for b, _ in seen.most_common()]

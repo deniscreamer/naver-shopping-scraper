@@ -77,7 +77,9 @@ def parse_label(text: str) -> Label | None:
     # the women's sizes it fits ("1사이즈(44-55사이즈)", "2번(66-77)": 5627070774, 5660255053) read as the size itself
     t = re.sub(r"(?:모델\s*착용(?:사이즈)?|모델사이즈|추천)$", "", t)
     t = re.sub(r"(?:사이즈|SIZE)(?=\))", "", t)
-    t = re.sub(r"^\d{1,2}(?:번|사이즈)(?=\()", "", t)
+    t = re.sub(r"^(?:\d{1,2}번|\d사이즈)(?=\()", "", t)    # "1사이즈(...)", "2번(...)"; never "55사이즈(S)"
+    t = re.sub(r"\(([A-Z0-9~\-]+)추천\)", r"(\1)", t)      # "55사이즈 (S 추천)": a recommended letter (5857396168)
+    t = re.sub(r"(?<=\d)사이즈(?=\(|$)", "", t)
     if _FREE_RE.match(t):                       # "ONE SIZE", "원사이즈": before the 사이즈 / SIZE suffix goes
         return Label(free=True)
     t = re.sub(r"사이즈$|SIZE$", "", t)

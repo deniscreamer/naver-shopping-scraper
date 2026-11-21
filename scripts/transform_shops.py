@@ -72,6 +72,9 @@ class CategoryRules:
                                          # (brand_fallback.own_brand_shown; knit cardigans, 2026-11-19: Grehip, Tee
                                          # And Golf). Off for the clubs: 56 club resellers' banners and URLs repeat
                                          # their slugs (도쿄피아, 렉스골프 ...), their brands are Mizuno, Yamaha
+    variant_screen: tuple[str, ...] = ()  # the codes of listing_title_rules.json whose words in a variant's option
+                                         # value hold the product (off_section_variant): a long-sleeve top sold with
+                                         # 반팔 variants (2026-11-21, the tops pilot: 5418772209, 5751294772)
     reviewed: bool = False               # publish.py creates its new products ACTIVE; False: DRAFT, until the agent's
                                          # lens review and the owner's activation (2026-11-16: 369 products, 15.7%,
                                          # of those published were withdrawn later; each new category showed buyers
@@ -179,6 +182,7 @@ RULES = {
             "50002796": CategoryRules(
                 paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
                 no_choice_out=True, composition=True, sizes="womens_tops", own_brand_wordmark=True,
+                variant_screen=("short_sleeve", "cardigan", "vest", "cooling"),
                 reviewed=False),      # a new category: DRAFT until the lens review and the owner's activation
             "50002799": CategoryRules(
                 paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,

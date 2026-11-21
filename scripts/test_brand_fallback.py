@@ -604,3 +604,16 @@ def test_the_title_starting_with_the_shops_name_is_its_label_only_in_apparel():
     assert B.decide("락골프 여성 프릴 후드 점퍼 바람막이", "국산", [], [], [], None, None, {"락골프"}, None)[:2] == (
         B.NO_BRAND, "none")
     assert B.decide("여성 프릴 후드 점퍼 락골프", "국산", [], [], [], None, None, {"락골프"}, rak)[:2] == (B.NO_BRAND, "none")
+
+
+def test_the_shops_own_label_comes_before_a_brand_its_photos_show():
+    """봉선댁 6465420393 (2026-11-21): its 브랜드 row (the shop) dropped, "Volvik" on a prop in 3 photos became the vendor."""
+    shop = {"name": "봉선댁", "slug": "bongseondaek"}
+    assert B.decide("여성 골프 맨투맨", "국산", ["볼빅"], ["Volvik 볼빅"], ["볼빅"], None, None, {"봉선댁"}, shop,
+                    own_row=True)[:2] == ("봉선댁", "shop_label")
+
+
+def test_a_company_form_is_no_part_of_the_shops_legal_name():
+    """김영주골프's store, legal name "(주) 한앤코" (6521205918, 2026-11-21): its maker "한앤코 협력업체" is its own."""
+    store = {"name": "김영주골프", "business": {"legal_name": "(주) 한앤코"}}
+    assert B.resellers_own("김영주골프", "한앤코 협력업체", store) and B.resellers_own("한앤코", "한앤코 협력업체", store)

@@ -47,7 +47,7 @@ _WOMEN_TOKEN = r"\d{2}(?:\.5|반)?(?:\s*[-~]\s*\d{2}(?:\.5|반)?)?"
 _TEXT_PAIR_RE = re.compile(rf"(?<![A-Za-z0-9])(?:(?:{_LETTER_ALT})\s*[(\[]\s*{_WOMEN_TOKEN}\s*[)\]]|"
                            rf"{_WOMEN_TOKEN}\s*[(\[]\s*(?:{_LETTER_ALT})\s*[)\]])(?!\d)", re.I)
 # the same letters, for a value whose colour and size are joined ("Ivory/085", "블랙 100 L": 12487887784, 10940191023)
-_JOIN_SPLIT_RE = re.compile(r"[\s/]+")
+_JOIN_SPLIT_RE = re.compile(r"[\s/_]+")             # "_" too: "티셔츠 55_아이보리" (6354978708, 2026-11-21)
 
 # --- resolving -----------------------------------------------------------------------------------------------------
 
@@ -211,7 +211,8 @@ def _joined_size(value: str, free: bool = False) -> Label | None:
     words = [w for w in _JOIN_SPLIT_RE.split(str(value or "").strip()) if w]
     if len(words) < 2:
         return None
-    for size, rest in ((words[-1], words[:-1]), (words[0], words[1:])):
+    middle = [(words[i], words[:i] + words[i + 1:]) for i in range(1, len(words) - 1)]   # "티셔츠 55_아이보리"
+    for size, rest in ((words[-1], words[:-1]), (words[0], words[1:]), *middle):
         label = parse_label(size)
         if label and (label.letter or label.chest or label.women or (free and label.free)) \
                 and (free or not label.free) and not parse_label(" ".join(rest)):

@@ -419,8 +419,8 @@ def _single(product: dict[str, Any], en: English) -> tuple[str, str]:
     facts = [f for f in product.get("facts") or [] if f.get("value_ko") and not _GIFT_RE.search(
         (f.get("label_ko") or "") + f["value_ko"])]
     fact = (product.get("sizes") or {}).get("fact")
-    if len(facts) == 1 and fact and facts[0].get("value_ko") == fact["ko"]:   # apparel: the US size, never Korean
-        return "Size", fact["us"]
+    if fact and any(f.get("value_ko") == fact["ko"] for f in facts):   # apparel: the US size, never Korean, even
+        return "Size", fact["us"]                   # beside other facts (원단, 컬러: 5365000791, 2026-11-21: "Standard")
     if len(facts) == 1:
         value = _value(en("fact_value", facts[0]["value_ko"]))
         name = en("fact_label", facts[0]["label_ko"]).strip() if facts[0].get("label_ko") else ""

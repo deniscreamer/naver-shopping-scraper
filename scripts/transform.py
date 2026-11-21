@@ -63,6 +63,7 @@ from typing import Any, Mapping, TypedDict
 import apparel_sizes
 import attributes
 import brand_fallback
+import listing_filter
 from description_clean import body_notes, clean, clean_images, decode_line, picked_switches
 from description_images import current, image_rows
 from description_measures import (COMPOSED, FIELDS, LONG_UNITS, NUMBER_CONF, SOURCE, bands, compose_by_count,
@@ -633,6 +634,13 @@ def _slot_row(same: list[dict[str, Any]], slots: list[int]) -> dict[str, Any]:
         return len(degrees) == len(slots) and degrees == sorted(degrees)
     return next((r for r in same if up(r) and r.get("is_available") is not False and r.get("price") ==
                  first.get("price")), first)
+
+
+def _sized_group(specs: dict[str, Any], group: str) -> bool:
+    """A SIMPLE group whose values are mostly size labels ("55(S)", "66(M)")."""
+    values = [_tidy(o.get("name") or "") for o in (specs.get("options") or {}).get("simple_options") or []
+              if _tidy(o.get("group") or "") == group]
+    return bool(values) and sum(1 for v in values if apparel_sizes.parse_label(v)) * 2 > len(values)
 
 
 def simple_choices(specs: dict[str, Any]) -> tuple[list[dict[str, str]], list[str]]:
@@ -1608,10 +1616,20 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
     cat = rules.category(category.get("id"), category.get("name"))
     ov = options_and_variants(line, rules, key, cat)
     held += ov["held"]
+    if cat.variant_screen:                          # a variant the section does not sell (2026-11-21, the tops pilot)
+        screen = [r for r in listing_filter.title_rules(str(category.get("id"))) if r.get("code") in cat.variant_screen]
+        off = next((v for v in (str(x) for var in ov["variants"] for x in var.get("options_ko") or [])
+                    if listing_filter.title_rule(v, [{k: r[k] for k in r if k != "requires"} for r in screen])), None)
+        if off:
+            held.append({"code": "off_section_variant", "detail": f"a variant the section does not sell: {off!r}"})
     simple_facts, simple_left = simple_choices(specs)
     ov["facts"] = ov["facts"] + simple_facts
     if simple_left:                                 # chosen at the order, not a variant: the operator decides
         notes.append({"code": "simple_options_left_out", "detail": ", ".join(simple_left)})
+        sized = [g for g in simple_left if apparel_sizes.is_size_name(g) or _sized_group(specs, g)]
+        if cat.sizes and sized:                     # apparel (2026-11-21, the long-sleeve tops pilot: PUMPING
+            # 7512705748 went out as one variant, its sizes SIMPLE choices); a colour chosen so stays a note
+            held.append({"code": "size_unmapped", "detail": f"sizes chosen at the order, not variants: {', '.join(sized)}"})
     # neutral attributes (the seller's gender, ...) with their evidence; the shop's sections are decided at the
     # last stage before Shopify from them (placement.py, the owner 2026-11-08), never here
     stated = attributes.extract([(v["sku"], list(v.get("options_ko") or [])) for v in ov["variants"]],

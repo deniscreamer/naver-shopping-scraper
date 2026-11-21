@@ -660,3 +660,51 @@ def test_a_sellers_note_or_a_numbered_size_reads_as_the_size(values, want):
 def test_a_half_size_a_bare_number_or_a_joined_type_stays_unread(value):
     r = _resolve([value, "M"])
     assert r["held"]
+
+
+def test_a_size_in_the_middle_or_after_an_underscore_is_joined():
+    """6354978708 (2026-11-21): "기능성 하트넥 티셔츠 55_아이보리" is a colour and a size in one value."""
+    assert A.joined_value("기능성 하트넥 티셔츠 55_아이보리") and A.joined_value("화이트_95")
+    assert not A.joined_value("긴팔 화이트") and not A.joined_value("기모 블랙")
+    r = A.resolve([{"name_ko": "색상", "values_ko": ["티셔츠 55_아이보리", "티셔츠 66_아이보리", "티셔츠 77_블랙"]}], [],
+                  None, "여성 티셔츠", "womens_tops")
+    assert r["held"] and "colour and size in one option" in r["held"]
+
+
+def test_a_diagrams_number_before_a_measure_is_its_name():
+    """5378291032 (2026-11-21): "1.어깨 / 2.가슴 / 3.소매 / 7.총길이" lost the chart."""
+    chart = C.read_chart(["사이즈 / 1.어깨 / 2.가슴 / 3.소매 / 7.총길이", "S / 38 / 46 / 58 / 60", "M / 40 / 48 / 59 / 62"])
+    assert chart.rows["S"] == {"shoulder": 38.0, "chest": 46.0, "sleeve": 58.0, "length": 60.0}
+    assert A.parse_label("55사이즈 (S 추천)").women == (55.0,) and A.parse_label("55사이즈 (S 추천)").letter == "S"
+
+
+def test_a_size_fact_beside_other_facts_is_the_us_size():
+    """5365000791 (2026-11-21): facts 원단 긴팔, 컬러 핑크, 사이즈 S: the one variant went out as "Option: Standard"."""
+    product = {"options": [], "facts": [{"label_ko": "원단", "value_ko": "긴팔"}, {"label_ko": "컬러", "value_ko": "핑크"},
+                                        {"label_ko": "사이즈", "value_ko": "S"}],
+               "sizes": {"profile": "womens_tops", "option": None, "values": [],
+                         "fact": {"label_ko": "사이즈", "ko": "S", "us": "S (US 4-6)"}}}
+    assert SP._single(product, _en([])) == ("Size", "S (US 4-6)")
+
+
+def test_simple_choices_of_several_values_hold_an_apparel_product():
+    """PUMPING 7512705748 (2026-11-21): its sizes, colours and necks are SIMPLE choices, not variants: one variant
+    with no size went out; in apparel it is held size_unmapped."""
+    facts, left = T.simple_choices({"options": {"simple_options": [
+        {"group": "사이즈", "name": "55(S)"}, {"group": "사이즈", "name": "66(M)"}, {"group": "컬러", "name": "블랙"}]}})
+    assert left == ["사이즈"] and facts and facts[0]["value_ko"] == "블랙"
+    import inspect
+    assert 'f"sizes chosen at the order, not variants' in inspect.getsource(T.prepare)
+    specs = {"options": {"simple_options": [{"group": "아쿠아 바람막이 색상", "name": "아쿠아"},
+                                            {"group": "아쿠아 바람막이 색상", "name": "블랙"}]}}
+    assert not T._sized_group(specs, "아쿠아 바람막이 색상")                   # a colour stays a note (10780424641)
+    assert T._sized_group({"options": {"simple_options": [{"group": "선택", "name": "55(S)"},
+                                                          {"group": "선택", "name": "66(M)"}]}}, "선택")
+
+
+def test_a_short_sleeve_variant_is_off_the_long_sleeve_section():
+    """5418772209 (2026-11-21): a 반팔 design among the variants of a long-sleeve top."""
+    import listing_filter as LF
+    rules = [r for r in LF.title_rules("50002796") if r["code"] in ("short_sleeve", "cardigan", "vest", "cooling")]
+    assert LF.title_rule("반팔 카라 티셔츠 / 화이트", rules) == "title:short_sleeve"
+    assert LF.title_rule("긴팔 카라 티셔츠 / 화이트", rules) is None
