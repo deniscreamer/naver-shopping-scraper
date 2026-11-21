@@ -383,3 +383,10 @@ def test_a_model_codes_tail_is_no_size():
     assert T.TITLE_SEASON.findall("테일러메이드 26FW 여성 바람막이 TJ6-72HG01-199 2025 SS 23F/W") == ["26", "2025", "23"]
     assert T.TITLE_SEASON.findall("BGBWSJ704 K90 FW 3레이어") == []
     assert sizes.findall("WWW24K90 여성 가디건 C100 55 66 77 90 울 100%") == ["55", "66", "77", "90"]
+
+
+def test_a_pack_and_a_choice_count_may_be_left_out():
+    """The tops pilot (2026-11-21): "1+1" is a 2-Pack, "3종 택1" / "6컬러" a choice of colours: their digits are free."""
+    assert [m.group(0) for m in T.TITLE_PICK.finditer("JN 여성 기모 이너 1+1 / 울시 셔츠 3종 택1 6컬러 PKWCW4218-51")] == [
+        "1+1", "3종 택1", "6컬러"]
+    assert not list(T.TITLE_PICK.finditer("PKWCW4218-51 2025 7LOTS907"))

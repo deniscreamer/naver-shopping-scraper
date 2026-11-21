@@ -111,6 +111,7 @@ TITLE_SIZES["50002799"] = TITLE_SIZES["50002797"]           # 재킷, the same s
 # a garment title's season code ("26FW", "2025 SS", "23F/W"): the briefs leave the season out of the English title, so
 # its digits need not survive either (2026-11-20, the windbreaker pilot: "TaylorMade 26FW Women's ..." kept it only
 # because a lost number fails the check); the same apparel categories as TITLE_SIZES
+TITLE_PICK = re.compile(r"(?<!\d)\d\s*\+\s*\d(?!\d)|\d{1,2}\s*(?:종|컬러|가지|color|colors)(?:\s*(?:중\s*)?택\s*\d)?", re.I)
 TITLE_SEASON = re.compile(r"(?<![A-Za-z\d])(\d{2}|\d{4})\s?(?:FW|SS|F/W|S/S|AW)(?![A-Za-z])", re.I)
 SCHEMA = {"type": "object", "additionalProperties": False, "required": ["items"],
           "properties": {"items": {"type": "array", "items": {
@@ -462,6 +463,9 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
             # a season code may go whole, its letters too: "22ss", "23FW" failed "codes lost" (the second
             # windbreaker pilot 2026-11-21, 7114115147, 11092759396) while only its digits were freed
             seasons = [m.group(0) for m in TITLE_SEASON.finditer(item["source"])]
+            # "1+1" (a 2-Pack) and a choice count ("3종 택1", "6컬러"): the brief says them otherwise or leaves them out
+            # (2026-11-21, the tops pilot: "... 1+1", "Choose 1 of 3 pcs" kept to keep their digits)
+            seasons += [m.group(0) for m in TITLE_PICK.finditer(item["source"])]
             if seasons:
                 item["drop"] = [*(item.get("drop") or []), *seasons]
         if kind == "title" and again and context:
