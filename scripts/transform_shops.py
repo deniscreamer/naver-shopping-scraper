@@ -170,8 +170,8 @@ RULES = {
                                       composition=True,     # the fibre rows: the description's materials
                                       sizes="womens_tops",  # US sizes and the size chart: a women's top
                                       own_brand_wordmark=True,   # the shop's own brand, as the knits
-                                      reviewed=False),      # a new category: DRAFT until the lens review and the
-                                                            # owner's activation
+                                      reviewed=True),       # the owner 2026-11-21: 85 drafts of pilot 2 activated
+                                                            # after its review (100 drafts, 15 held)
             # 2026-11-21, the owner's decision: 재킷 50002799 feeds the same section as 점퍼 50002798 (Women's Windbreakers): the 50002798 values: Naver files the same windbreakers under
             # either leaf (20 of the 47 cards of the 리뷰 많은순 listing's first batch, 2026-11-21)
             "50002799": CategoryRules(

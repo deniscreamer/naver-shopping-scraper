@@ -965,18 +965,18 @@ def test_the_knit_rules_are_the_owners():
                    if k not in ("50002797", "50002798", "50002799"))     # the clubs' products stay as published
 
 
-def test_the_windbreaker_rules_are_the_knits_and_it_is_not_reviewed():
+def test_the_windbreaker_rules_are_the_knits_and_it_is_reviewed():
     """50002798 (2026-11-20, the owner delegated the values): the knit cardigans' apparel choices; a new category goes
     DRAFT (reviewed False) until the lens review and the owner's activation."""
     knit, wind = (rules_for("fairwardgolf").category(c) for c in ("50002797", "50002798"))
-    assert dataclasses.replace(wind, reviewed=True) == knit and not wind.reviewed
+    assert wind == knit and wind.reviewed            # the owner 2026-11-21: live after pilot 2's review
     assert wind.sizes == "womens_tops"
 
 
 def test_the_jacket_rules_are_the_windbreakers():
     """50002799 재킷 (2026-11-21, the owner's decision: the same section as 50002798): the same rules, not reviewed."""
     wind, jacket = (rules_for("fairwardgolf").category(c) for c in ("50002798", "50002799"))
-    assert jacket == wind and not jacket.reviewed
+    assert dataclasses.replace(jacket, reviewed=True) == wind and not jacket.reviewed   # 재킷: drafts first
 
 
 def test_no_choice_values_are_not_versions_of_the_cardigan():

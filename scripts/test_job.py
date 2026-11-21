@@ -1347,7 +1347,7 @@ def test_the_review_block_covers_both_categories_of_a_windbreaker_job(tmp_path, 
     monkeypatch.setattr(J.Job, "final", property(lambda self: "published"))
     r = J.review_due(job)
     assert r is not None
-    assert r["unreviewed"] == ["50002798", "50002799"] and not r["category_reviewed"]
+    assert r["unreviewed"] == ["50002799"] and not r["category_reviewed"]      # 점퍼 reviewed 2026-11-21, 재킷 not
     assert any("price fairwardgolf --category 50002799" in c for c in r["commands"])
     assert any("brand fairwardgolf --source none --category 50002799" in c for c in r["commands"])
     assert J._unreviewed("fairwardgolf", "50002797") == []
