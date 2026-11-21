@@ -1192,7 +1192,8 @@ def spec_rows(specs: dict[str, Any]) -> list[dict[str, str]]:
             value = re.sub(r"\s+", " ", value).strip()
         if label in ("브랜드", "제조사") and value.strip() in NOT_A_BRAND or label == "브랜드" \
                 and brand_fallback.clean(value) is None \
-                or label == "제조사" and brand_fallback.clean(value) is None and not brand_fallback.trade_name(value):
+                or label == "제조사" and brand_fallback.clean(value) is None and not brand_fallback.trade_name(value) \
+                and not brand_fallback.contract_factory(value):     # "(주)위스트OEM" stays a fact (2026-11-21)
             # a shop's name in the brand row (세모물상점), an age (6~8세 퍼터); a 제조사 row naming an importer stays a
             # fact, one naming no firm goes ("협력업체", "중국": 13853234379, 2026-11-13)
             continue                                # "Brand: Other" says nothing (10697131625, 2026-11-11)

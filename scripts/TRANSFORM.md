@@ -457,10 +457,17 @@ link. The report says how many were dropped. The step is pure: same products in,
   before 상표권 / 공식 스토어 or next to 브랜드 ("브랜드 티앤드"; never "<name>는 X 공식 판매처"), makes the
   shop's name the brand (`shop_wordmark`, `brand_fallback.own_brand_shown`; 2026-11-19, the knit pilot: "EVER YDAY",
   a slogan embroidered on a 티앤드 골프 cardigan, was the vendor of 11519647149; the step sits after every stronger
-  one: placed first, it took 8 clubs' TaylorMade / Kirkland / 인파로); when the 브랜드 row named the shop's own label
-  and the reseller rule dropped it but the texts do not show it so, no Latin phrase is the brand either: 노브랜드
-  (`decide`'s own_row, `run_transform._own_row`; "EVER YDAY" on 카멜브리즈's 11573884405, "WHITE TEE" on 내추럴모드's
-  11442719270, 2026-11-20; the owner may name the label); a brand row the reseller rule below dropped
+  one: placed first, it took 8 clubs' TaylorMade / Kirkland / 인파로); then, in the same categories, the shop's name
+  as its own label (`shop_label`, `brand_fallback.shop_label`; 2026-11-21, the owner after the second windbreaker
+  pilot: "fix the brands"): when the 브랜드 row named the shop and the reseller rule dropped it ("<shop> 협력업체" as the
+  maker: in apparel a contract factory sewing the shop's label, 카멜브리즈 x6, 투솜, 프롬그레이, 봉선댁, 핑크골프), or when
+  the title's first word (a [tag] counts) is the shop's name (락골프, 수아무아); a slogan of the images is never the
+  brand there (`decide`'s own_row: "EVER YDAY" on 카멜브리즈's 11573884405, "WHITE TEE" on 내추럴모드's 11442719270,
+  2026-11-20, now their shops' labels). Before 2026-11-21 such a product was 노브랜드, the house vendor. Never for the
+  clubs (no own_brand_wordmark: 재팬도코도코 and the other club resellers stay none). `clean` reads no brand in
+  Naver's 자체제작 (상품) (made in-house: the vendor "In-House Product", 7309508576), cuts a trailing OEM / ODM from a
+  label ("필드가OEM": Fieldga) and gives none for a company's ("주식회사 더살림oem": a contract factory; its 제조사 row
+  stays a fact, `contract_factory`), and drops the factory in brackets after 협력업체 ("벤시아 협력업체(PG골프클럽)": 벤시아); a brand row the reseller rule below dropped
   ("<shop> 협력업체" as the maker) is kept, source `shop_wordmark`, when the shop shows it the same way (Grehip:
   "GREHIP OFFICIAL SHOP", "그레힙의 상표권", 13759750310, 9992270463), the notice's 동일 모델의 출시연월 row when it
   is a firm and the title's first word, no date or page pointer (`release_row`: agency 100217952 writes "USPA" there;

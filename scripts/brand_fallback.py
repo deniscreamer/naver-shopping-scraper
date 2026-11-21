@@ -62,10 +62,16 @@ _TRADE_NAME = re.compile(r"(?:상점|상사|상회|만물상|홀딩스?|무역|�
                          # 우리쇼핑하자 (a shop: "let's go shopping"), 상아네 / 건이네 ("Sang-a's place": a family shop)
                          r"|쇼핑|^[가-힣]{1,3}네(?:\s|$)"
                          # 2026-11-13, the junior pilot: 막팔아스토어, 보라잡화점 (the seller's shop in the 브랜드 row)
-                         r"|스토어\s*$|잡화점?\s*$|몰\s*$")             # 해외몰 (an overseas mall, origin brackets)
+                         r"|스토어\s*$|잡화점?\s*$|몰\s*$"             # 해외몰 (an overseas mall, origin brackets)
+                         # a department store or a mall is never a label (2026-11-21, the review of shop_label: a title
+                         # "[현대백화점] ..." or a shop 하프클럽mall would make it the brand)
+                         r"|백화점\s*$|(?i:mall)\s*$")
 # ... and a trailing "co." / ".co." after it ("수수협력사 co.", "수수랜드협력사.co.": 2026-11-18, the chipper review,
 # 13800679830 went out as the vendor "Susu Partner Co.", a Ben Sayers M5 by the shop 수수)
-_PARTNER = re.compile(r"\s*(?:협력\s*(?:사|업체)|제휴(?:\s*(?:사|업체))?)(?:\s*\.?\s*co\.?)?\s*$", re.I)   # 빅토르몰 제휴 (2026-11-13)
+_PARTNER = re.compile(r"\s*(?:협력\s*(?:사|업체)|제휴(?:\s*(?:사|업체))?)(?:\s*\.?\s*co\.?)?"   # 빅토르몰 제휴 (2026-11-13)
+                      # ... and the factory in brackets after it ("벤시아 협력업체(PG골프클럽)": 2026-11-21, the vendor
+                      # "Bensia Partner (PG Golf Club)", 11174080985)
+                      r"(?:\s*\([^()]*\))?\s*$", re.I)
 # a brand row that goes on into the product's words (5140543074, 2026-11-12: "진월드스타 어린이용 주니어 골프 클럽 아이언
 # 퍼터 드라이버") keeps the words before them; one that is only an age and a club ("6~8세 퍼터", 4194532081) is none
 # ... and the chipper itself (2026-11-18, the chipper review: 11158899277's 브랜드 / 제조사 rows say 치퍼, it became a shop
@@ -107,13 +113,28 @@ _NO_FIRM = re.compile(r"(?i)^(?:별도\s*표기|알\s*수\s*없음|미상|불명
                       # Naver's placeholder for a brand it could not name, "UnKnown_" and a katakana name (2026-11-17,
                       # the wedge-set review C23: 13104702775 went out with the vendor "UnKnown_ピン" and the title
                       # "UnKnown_ピン Yonex …"; "Artist Unknown" is a name and stays)
-                      r"|unknown_.*)$")
+                      r"|unknown_.*"
+                      # Naver's "made in-house" (2026-11-21, the second windbreaker pilot: "자체제작 상품" in the 브랜드
+                      # row went out as the vendor "In-House Product", 7309508576, 10674911182)
+                      r"|자체\s*제작(?:\s*(?:상품|제품))?)$")
+# a maker's "OEM" / "ODM" (2026-11-21): glued to a label it is that label's contract making ("필드가OEM": Fieldga,
+# 10780424641); after a company's form (주식회사, (주), ㈜) it is the contract factory, no brand ("주식회사 더살림oem" became
+# the vendor "The Sallim OEM" of 수아무아's 10669638240)
+_OEM = re.compile(r"(?i)(?<![a-z])\s*(?:oem|odm)\s*$")        # never inside a Latin name ("901MOEM", "POEM")
+_COMPANY = re.compile(r"^(?:주식회사|\(주\)|㈜)")
 _CODE = re.compile(r"\s*\((?:\d+|자체\s*제작[^()]*)\)\s*$")       # 코알라(200874), 지브이골프코리아(자체제작 상품)
 # a wholesaler or a store many sellers name in their 브랜드 / 제조사 rows, never a maker (2026-11-19, the seller-vendor
 # review: (주)감씨 is the "공급사정보 (주식회사 감씨)" of dozens of shops reselling Inparo, whose images say "인파로만의
 # 유니크한 컬러로 생산" and "인파로 제품은 … PL 보험"; 골드벙커 a store ("골드벙커 다른 상품 보기에서 구매 가능"); 40 live
 # junior products went out as the vendors Gamssi and Gold Bunker): no brand there, the fallback goes on (the images: 인파로)
 _SUPPLIERS = re.compile(r"^(?:감씨|gamssi|골[드프]\s*벙커|gold\s*bunker)$", re.I)          # 골프벙커: a seller's typo
+
+
+def contract_factory(name: str | None) -> bool:
+    """A company's contract making ("주식회사 더살림oem", "(주)위스트OEM"): a firm, so a 제조사 row of it stays a fact, but
+    never the brand (clean gives None)."""
+    value = re.sub(r"\s+", " ", name or "").strip()
+    return bool(_OEM.search(value) and _COMPANY.match(value))
 
 
 def trade_name(name: str | None) -> bool:
@@ -170,11 +191,27 @@ def own_brand_shown(store: dict[str, Any] | None, texts: list[str]) -> str | Non
     return None
 
 
+def shop_label(shop: dict[str, Any] | None, title: str | None, own_row: bool = False) -> str | None:
+    """The shop's name as its own label (apparel, see decide): `own_row`, or the title's first word (a [tag] counts)
+    is the shop's name; None for no shop or a name under 2 letters."""
+    name = clean(str((shop or {}).get("name") or "")) if shop else None
+    if not name or len(_norm(name)) < 2:
+        return None
+    if own_row:
+        return name
+    words = re.sub(r"[\[\]()]", " ", title or "").split()                # "[카멜브리즈]썸씽 ...": its first word
+    return name if words and _norm(words[0]) == _norm(name) else None
+
+
 def clean(name: str | None) -> str | None:
     """A seller's brand or maker as a brand: "X 협력사 / 협력 업체" names X, a trailing code or "(자체제작 상품)" goes,
     a word written twice once (던롭 던롭), the product's own words after it go; None: no brand there (empty, an age,
     a shop's or a trader's name)."""
     value = _PARTNER.sub("", re.sub(r"\s+", " ", name or "").strip())
+    if _OEM.search(value):
+        if _COMPANY.match(value):
+            return None
+        value = _OEM.sub("", value)
     value = re.sub(r"^(?:\(주\)|㈜)\s*", "", _CODE.sub("", value)).strip()
     cut = _PRODUCT_WORD.search(value)
     if cut:
@@ -503,6 +540,13 @@ def decide(title: str | None, origin: str | None, brands: list[str], rows: list[
     own = own_brand_shown(shop, rows + (description or "").splitlines())   # before a slogan the images repeat
     if own:                                                                  # ("EVER YDAY": 11519647149, 2026-11-19)
         return own, "shop_wordmark", []
+    # the shop's own label in apparel (`shop` is given only in a category with own_brand_wordmark; 2026-11-21, the
+    # second windbreaker pilot's review, the owner: fix the brands): its 브랜드 row named the shop and its maker is
+    # "<shop> 협력업체" (`own_row`: a contract factory sewing the shop's label, 카멜브리즈 x6, 투솜, 프롬그레이), or the title
+    # starts with the shop's name (락골프, 수아무아); a club reseller (재팬도코도코: no own_brand_wordmark there) stays none
+    label = shop_label(shop, title, own_row)
+    if label:
+        return label, "shop_label", []
     # ... and when the 브랜드 row named the shop's own label (dropped: "<shop> 협력업체" the maker) and its texts do not
     # show it as above, the slogan is still no brand: none, the house vendor (2026-11-20, the knit cardigan review:
     # 카멜브리즈's "EVER YDAY", 11573884405; 내추럴모드's "WHITE TEE", 11442719270); the owner may name the label

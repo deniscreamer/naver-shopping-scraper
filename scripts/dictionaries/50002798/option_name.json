@@ -1,13 +1,21 @@
 {
  "format": "dictionary/1",
  "kind": "option_name",
- "backed_up": "2026-11-20T17:59:01Z",
+ "backed_up": "2026-11-21T09:07:54Z",
  "entries": {
+  "네이비": "Navy",
   "바람막이 컬러": "Color",
   "사이즈": "Size",
+  "사이즈/색상": "Size / Color",
   "상의사이즈": "Top Size",
   "색상": "Color",
+  "스타일": "Style",
+  "에어건빵 아노락 바막 색상": "Color",
+  "제품선택": "Product",
+  "종류": "Type",
+  "칼라": "Color",
   "컬러": "Color",
+  "품목": "Style",
   "후드 바람막이 컬러": "Color"
  }
 }
