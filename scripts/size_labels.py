@@ -72,6 +72,12 @@ def parse_label(text: str) -> Label | None:
     """A size label, or None when the text is not one (a colour, a type)."""
     t = re.sub(r"\s+", "", str(text or "")).upper().replace("（", "(").replace("）", ")")
     t = t.replace("[", "(").replace("]", ")")       # "FREE[55~66]" (5932679597, 2026-11-20) is "FREE(55~66)"
+    # 2026-11-21, the long-sleeve tops pilot: a seller's note after the size ("S(44)모델착용사이즈": the model wears it,
+    # 7303524506, 6454520137), the word 사이즈 inside the brackets ("55(S사이즈)", 5857396168) and a size's number before
+    # the women's sizes it fits ("1사이즈(44-55사이즈)", "2번(66-77)": 5627070774, 5660255053) read as the size itself
+    t = re.sub(r"(?:모델\s*착용(?:사이즈)?|모델사이즈|추천)$", "", t)
+    t = re.sub(r"(?:사이즈|SIZE)(?=\))", "", t)
+    t = re.sub(r"^\d{1,2}(?:번|사이즈)(?=\()", "", t)
     if _FREE_RE.match(t):                       # "ONE SIZE", "원사이즈": before the 사이즈 / SIZE suffix goes
         return Label(free=True)
     t = re.sub(r"사이즈$|SIZE$", "", t)

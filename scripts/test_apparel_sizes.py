@@ -642,3 +642,21 @@ def test_superior_takes_its_own_us_numbers():
     assert "<td>S (US 6)</td>" in A.chart_html(r)
     other = A.resolve([{"name_ko": "사이즈", "values_ko": ["090"]}], [], "헤지스", "헤지스 여성 점퍼", "womens_tops")
     assert other["values"][0]["us"] == "S (US 4-6)"
+
+
+@pytest.mark.parametrize("values, want", [
+    # 2026-11-21, the long-sleeve tops pilot: a seller's note after the size, 사이즈 in the brackets, a size's number
+    # before the women's sizes it fits
+    (["S(44)모델착용사이즈", "M(55~66)", "L(77)"], ["XS (US 0-2)", "S-M (US 4-10)", "L (US 12-14)"]),
+    (["55(S사이즈)", "66(M사이즈)", "77(L사이즈)"], ["S (US 4-6)", "M (US 8-10)", "L (US 12-14)"]),
+    (["1사이즈(44-55사이즈)", "2사이즈(66-77사이즈)"], ["XS-S (US 0-6)", "M-L (US 8-14)"]),
+])
+def test_a_sellers_note_or_a_numbered_size_reads_as_the_size(values, want):
+    r = _resolve(values)
+    assert not r["held"] and [v["us"] for v in r["values"]] == want
+
+
+@pytest.mark.parametrize("value", ["1번(44-55반)", "0호", "화이트_95", "모찌/S"])
+def test_a_half_size_a_bare_number_or_a_joined_type_stays_unread(value):
+    r = _resolve([value, "M"])
+    assert r["held"]
