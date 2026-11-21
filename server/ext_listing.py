@@ -7,8 +7,8 @@ Chrome, and why not a direct fetch: server/docs/EXTENSION.md.
 
 Path, like a person (2026-11-01): www.naver.com -> mouse click on 쇼핑 (it
 opens a new tab) -> click the shopping search box, type the query key by key,
-Enter -> search.shopping.naver.com/ns/search. The first batch is read from
-that page's HTML; every next batch is loaded by the PAGE when the wheel
+Enter -> search.shopping.naver.com/ns/search -> a click on 리뷰 많은순 (SORT,
+the owner 2026-11-21): the first batch is the page's own sorted answer; every next batch is loaded by the PAGE when the wheel
 scrolls to the end of the list, and the adapter copies the page's own
 paged-composite-cards answer. Until hasMore=false or --max-batches.
 
@@ -68,6 +68,51 @@ LOGIN_RESETS = 2           # a login gate: the naver.com path again, this many t
 # "_searchInput_button_delete" one is 0 x 0); typing without clearing inserts at the caret
 SEARCH_BOX = 'input[class*="_searchInput_search_text"]'
 SEARCH_CLEAR = 'button[class*="_searchInput_button_clear"]'
+
+
+# The listing's order (the owner 2026-11-21: "리뷰 많은순 by default: the best cards come first"). Probed 2026-11-21
+# (query 여성 골프 바람막이 점퍼, the owner's Chrome): the search page's sort buttons carry
+# aria-labelledby="sort_<NAME>" (RECOMMEND the page's own default, REVIEW, PURCHASE, RECENT, LOW_PRICE, HIGH_PRICE);
+# a click on sort_REVIEW routes the same tab client-side to ns/search?...&sort=REVIEW (no reload, no new tab) and the
+# page fetches paged-composite-cards?cursor=1&...&sort=RECOMMEND_REVIEW: that answer is the sorted first batch (total
+# 3724 against 4878 unsorted: the sort leaves out cards with no reviews' ranking); the HTML's embedded first batch
+# stays the UNSORTED one, and every next scroll keeps sort=RECOMMEND_REVIEW. A query typed into the page's own box
+# (search_again) is not re-sorted here: only the listing reads (walk, ext_listing_tab) are.
+SORT = "REVIEW"
+SORT_BUTTON = 'button[aria-labelledby="sort_{}"]'
+SORT_PARAM = {"REVIEW": "sort=RECOMMEND_REVIEW"}   # the page's own batch requests under that sort
+SORT_WAIT_S = 20
+
+
+def sort_listing(bridge, tab, out_dir, sort=SORT):
+    """The search tab re-sorted as a person does (a click on the sort button) -> ([its first batch, ...], None) or
+    (None, why). The answers the page fetched while loading (the unsorted order) are dropped first; only answers of
+    the sorted requests are kept. No sorted answer in SORT_WAIT_S, a missing button or a refused answer: no listing
+    (never the unsorted one in its place)."""
+    bridge.call("captures", tabId=tab, pattern=LISTING)          # the unsorted batches of the page's load: dropped
+    button = SORT_BUTTON.format(sort)
+    if not (bridge.call("query", tabId=tab, selector=button) or {}).get("visible"):
+        log(f"STOP: no sort button {sort}; {screenshot(bridge, tab, out_dir, 'sort')}")
+        return None, f"no sort button {sort} on the search page (layout changed?)"
+    pause(1.2, 2.5)
+    bridge.call("click", tabId=tab, selector=button)
+    want, got = SORT_PARAM[sort], []
+    for _ in range(SORT_WAIT_S * 2):
+        time.sleep(0.5)
+        got = [c for c in bridge.call("captures", tabId=tab, pattern=LISTING) or [] if want in (c.get("url") or "")]
+        if got:
+            break
+    if not got:
+        log(f"STOP: no sorted batch after the {sort} click; {screenshot(bridge, tab, out_dir, 'sort')}")
+        return None, f"no batch sorted by {sort} within {SORT_WAIT_S} s of the click"
+    batches = []
+    for capture in got:
+        parsed = composite.batch_from_answer(capture.get("body"))
+        if capture.get("status") != 200 or parsed is None:
+            return None, f"sorted batch refused: HTTP {capture.get('status')}"
+        batches.append(parsed)
+    log(f"sorted by {sort}: total {batches[0].get('total')}")
+    return batches, None
 
 
 class LoginGate(Exception):
@@ -368,11 +413,17 @@ def walk(bridge, query, out_dir, max_batches, keep_tab, summary):
         summary["stop"] = why
         return finish(summary, out_dir, 1 if why.startswith("no search box") else 3)
     listing = Listing(out_dir, query)
-    batch = composite.first_batch((bridge.call("page", tabId=tab, headChars=FULL_HTML) or {}).get("html"))
-    if batch is None:
-        summary["stop"] = "no first batch in the search page HTML (layout changed?)"
-        return finish(summary, out_dir, 1)
-    pending, code = [batch], 0                    # answers the page fetched while loading are kept
+    summary["sort"] = SORT
+    try:
+        pending, why = sort_listing(bridge, tab, out_dir)
+    except ExtError:
+        _close(bridge, tab, keep_tab)
+        raise
+    if pending is None:
+        _close(bridge, tab, keep_tab)
+        summary["stop"] = why
+        return finish(summary, out_dir, 3 if "refused" in why else 1)
+    code = 0                                      # answers the page fetched after the sort click are kept
     try:
         while pending:
             batch = pending.pop(0)
@@ -419,12 +470,16 @@ def walk(bridge, query, out_dir, max_batches, keep_tab, summary):
             if code:
                 break
     finally:
-        if not keep_tab:
-            try:
-                bridge.call("tab_close", tabId=tab)
-            except ExtError:
-                pass                              # the adapter may be gone: keep the real stop reason
+        _close(bridge, tab, keep_tab)
     return finish(summary, out_dir, code)
+
+
+def _close(bridge, tab, keep_tab):
+    if not keep_tab:
+        try:
+            bridge.call("tab_close", tabId=tab)
+        except ExtError:
+            pass                                  # the adapter may be gone: keep the real stop reason
 
 
 def finish(summary, out_dir, code):

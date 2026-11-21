@@ -44,7 +44,7 @@ By hand (API server stopped):
 ```
 
 Output: `server/output/ext-listing/<run>/listing.jsonl` + `summary.json` (gitignored; the summary is written on
-every exit). Exit code 0 done or `--max-batches` reached; 1 stalled, layout changed (no search box / no first batch)
+every exit). Exit code 0 done or `--max-batches` reached; 1 stalled, layout changed (no search box / no sort button / no sorted first batch)
 or an adapter error; 2 the extension did not connect; 3 a wall (captcha not solved, login gate, ban page, refused
 batch). Install / reload the adapter: [extension/README.md](../../extension/README.md).
 
@@ -64,9 +64,14 @@ The page itself makes every listing call with its own bot-defence token; we neve
 1. **Way in, like a person.** `www.naver.com` -> mouse click on 쇼핑 (opens a new tab) -> click the shopping search
    box, type the query key by key, Enter -> the site routes to `search.shopping.naver.com/ns/search`. Clicks and
    keys go through `chrome.debugger` (trusted events; Chrome shows its "is debugging" bar).
-2. **First batch from the HTML, no request.** The page is Next.js App Router: its data is in
-   `self.__next_f.push([1, "..."])` chunks, and the object after `"initPagedCompositeCards":` is the first batch
-   (`{hasMore, cursor, total, data}`, ~50 cards). Parser: `naver_shopping/composite.py` `first_batch`.
+2. **Sorted by 리뷰 많은순, the first batch the page's own answer** (the owner 2026-11-21: the best cards come
+   first; `ext_listing.SORT`, `sort_listing`). The answers the page fetched while loading are dropped, then a mouse
+   click on `button[aria-labelledby="sort_REVIEW"]`: the same tab routes client-side to `...&sort=REVIEW` and the
+   page fetches `paged-composite-cards?cursor=1&...&sort=RECOMMEND_REVIEW` (copied as in step 3): that answer is the
+   first batch (`{hasMore, cursor, total, data}`, ~48 cards; total 3724 against 4878 unsorted for one query, probed
+   2026-11-21). No sorted answer in `SORT_WAIT_S` (20 s), no button or a refused answer: no listing (an `adapter
+   error:` / `wall:`), never the unsorted one. The HTML's embedded first batch (Next.js `self.__next_f.push` chunks,
+   the object after `"initPagedCompositeCards":`, `composite.first_batch`) is the unsorted one and is no longer read.
 3. **Next batches by the page.** Wheel scrolls (debugger input) bring the list end into view; the page mints its
    token and fetches the next batch; `extension/capture_main.js` copies the answer body (page world wrapper around
    `fetch` / XHR for `/ns/v1/`), the adapter hands it over with `captures`. ~2-4 s per batch of 50; `cursor` grows
@@ -135,7 +140,7 @@ listing answers 409 and a listing during a read 409. ~30-60 s a read; cached 24 
 ## Held listing tab (`/listing-tabs`)
 
 The way `scripts/job.py scroll` reads products (the owner, 2026-11-14; [ENDPOINTS.md](ENDPOINTS.md#held-listing-tabs-beta-listing-tabs)):
-one listing tab, opened as for a listing job (`open_search`, the first batch from the HTML), kept open between HTTP
+one listing tab, opened as for a listing job (`open_search`, then `sort_listing`: 리뷰 많은순), kept open between HTTP
 calls and walked one batch per `next` (`rest`, then wheel scrolls, as `walk`); a product of the current batch is read
 by a click on its card in that tab (`ext_product._read_card`, the same read as step 2-5 above without the search) and
 its tab closed, so Chrome is back on the listing. Probed 2026-11-14 (module docstring): every click opened a new tab,

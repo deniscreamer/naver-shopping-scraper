@@ -16,11 +16,12 @@ import ext_listing
 import ext_listing_tab
 import ext_product
 import listing_jobs
-from naver_shopping import api
+from naver_shopping import api, composite
 from test_listing_jobs import call
 
 FX = os.path.join(os.path.dirname(os.path.abspath(__file__)), "naver_shopping", "fixtures")
 SEARCH_URL = "https://search.shopping.naver.com/ns/search?query=q"
+SORTED_URL = SEARCH_URL + "&sort=REVIEW"                   # the listing tab after the 리뷰 많은순 click
 FIRST = ["8450665186", "8958060680", "13825089403"]           # composite_search_page.html: total 4385, hasMore
 SECOND = ["12975257923", "7506388758", "10649210920", "12679637072"]   # composite_answer.json
 
@@ -37,6 +38,14 @@ def answer(has_more=True, status=200):
             "body": json.dumps(body)}
 
 
+def sorted_first(status=200):
+    """The page's own answer after the 리뷰 많은순 click (probed 2026-11-21): the first batch, sort=RECOMMEND_REVIEW
+    (here the HTML fixture's own first batch, so the products are FIRST)."""
+    batch = composite.first_batch(read("composite_search_page.html"))
+    return {"url": "https://search.shopping.naver.com/ns/v1/search/paged-composite-cards?cursor=1&pageSize=50&query=q"
+                   "&sort=RECOMMEND_REVIEW", "status": status, "body": json.dumps({"data": batch})}
+
+
 class Chrome:
     """A fake adapter: tabs, a listing tab whose scroll hands out the queued batch answers, cards that open
     product tabs (opens[pid]: the URLs the next clicks land on), product pages with the Honma 상품정보 list."""
@@ -51,6 +60,8 @@ class Chrome:
         self.nothing = set()        # pids whose card opens nothing (no new tab, the listing tab stays)
         self.product_html = read("pdp_specs_honma.html")
         self.hold = None            # an Event a click waits on (a call left running)
+        self.sort_button = True     # the 리뷰 많은순 button is drawn
+        self.on_sort = [sorted_first()]   # what the page fetches after a click on it
 
     def wait_connected(self, timeout=None):
         return self.connected
@@ -85,6 +96,12 @@ class Chrome:
                 return []
             hit, self.waiting = self.waiting, []
             return hit
+        if op == "query" and "sort_" in a["selector"]:
+            return {"count": 1, "visible": self.sort_button}
+        if op == "click" and "sort_" in a["selector"]:            # the page routes and fetches its sorted first batch
+            self.tabs[tab] += "&sort=REVIEW"
+            self.waiting += self.on_sort
+            return {"x": 895, "y": 144, "newTabId": None}
         if op == "query":
             pid = re.search(r"/products/(\d+)", a["selector"])
             if pid is None:
@@ -106,7 +123,8 @@ class Chrome:
         raise AssertionError(op)
 
     def count(self, op):
-        return sum(o == op for o, _, _ in self.ops)
+        """Ops of the products (the one sort click of an open is not counted)."""
+        return sum(o == op and "sort_" not in str(sel) for o, _, sel in self.ops)
 
 
 def details(product):
@@ -172,6 +190,39 @@ def test_open_answers_the_first_batch_and_holds_the_adapter(chrome):
     assert call("DELETE", f"/naver-shopping/listing-tabs/{tab['id']}")[0] == 200       # idempotent
 
 
+def test_open_sorts_by_reviews_and_drops_the_unsorted_answers(chrome):
+    """The owner 2026-11-21: the listing is read sorted by 리뷰 많은순. The answers of the page's own load (unsorted)
+    are dropped, the first batch is the answer to the sort click, and the tab's URL carries sort=REVIEW."""
+    unsorted = answer()
+    chrome.waiting = [unsorted]                                     # fetched by the page while it loaded
+    tab = opened(chrome)
+    assert [r["product_id"] for r in tab["results"]] == FIRST and tab["total"] == 4385
+    assert [o for o in chrome.ops if o[0] == "click"] == [("click", 101, 'button[aria-labelledby="sort_REVIEW"]')]
+    assert chrome.tabs[101].endswith("&sort=REVIEW")
+    chrome.scrolls = [[answer(has_more=False)]]
+    status, b2 = call("POST", f"/listing-tabs/{tab['id']}/next")
+    assert status == 200 and [r["product_id"] for r in b2["results"]] == SECOND     # not the dropped unsorted one
+
+
+@pytest.mark.parametrize("change, status, words", [
+    ("no_button", 503, "no sort button REVIEW"),
+    ("no_answer", 503, "no batch sorted by REVIEW"),
+    ("refused", 503, "sorted batch refused: HTTP 418"),
+])
+def test_open_without_the_sorted_listing_fails_and_frees_the_adapter(chrome, monkeypatch, change, status, words):
+    """Never the unsorted listing in its place: no button (layout), no sorted answer, a refused one."""
+    monkeypatch.setattr(ext_listing, "SORT_WAIT_S", 1)
+    if change == "no_button":
+        chrome.sort_button = False
+    elif change == "no_answer":
+        chrome.on_sort = [answer()]                                 # an answer without the sort: not taken
+    else:
+        chrome.on_sort = [sorted_first(status=418)]
+    got, body = call("POST", "/listing-tabs", query="q")
+    assert got == status and words in body["error"], body
+    assert not chrome.tabs and listing_jobs.holder is None and not listing_jobs._adapter.locked()
+
+
 def test_open_is_busy_while_a_read_holds_the_adapter(chrome):
     assert listing_jobs._adapter.acquire(blocking=False)
     try:
@@ -187,7 +238,7 @@ def test_a_new_open_closes_the_old_session_and_orphan_tabs(chrome):
     ext_product._home["tab"] = orphan
     second = opened(chrome)
     assert second["id"] != first["id"] and orphan not in chrome.tabs and not ext_product._home
-    assert list(chrome.tabs.values()) == [SEARCH_URL]                                   # only the new listing tab
+    assert list(chrome.tabs.values()) == [SORTED_URL]                                   # only the new listing tab
     assert call("POST", f"/listing-tabs/{first['id']}/next")[0] == 410
 
 
@@ -275,7 +326,7 @@ def test_specs_keeps_the_listing_tab_and_closes_the_product_tab(chrome):
     assert status == 200, body
     assert body["id"] == FIRST[1] and body["query"] == "남성 골프채 풀세트"
     assert [r["label"] for r in body["specs"]] == ["상품번호", "제조사", "원산지"]
-    assert list(chrome.tabs.values()) == [SEARCH_URL]                                   # the product tab is closed
+    assert list(chrome.tabs.values()) == [SORTED_URL]                                   # the product tab is closed
     assert chrome.count("click") == 1 and chrome.count("tab_open") == 0               # no search, one click
     assert call("POST", f"/listing-tabs/{tab['id']}/next")[0] == 503                  # still alive (then stalls)
 
@@ -289,7 +340,7 @@ def test_a_card_that_opened_another_product_is_clicked_once_more(chrome):
     chrome.opens[FIRST[1]] = [other, other]                                           # the thegolf card: always
     status, body = call("GET", f"/listing-tabs/{tab['id']}/specs", product=link(FIRST[1]))
     assert status == 404 and "card_opened_other" in body["error"]
-    assert list(chrome.tabs.values()) == [SEARCH_URL]                                   # session alive, tabs closed
+    assert list(chrome.tabs.values()) == [SORTED_URL]                                   # session alive, tabs closed
     assert ext_listing_tab._session["id"] == tab["id"]
 
 
@@ -321,7 +372,7 @@ def test_a_captcha_not_answered_keeps_the_session_a_ban_ends_it(chrome):
     chrome.product_html = '<html><title="captcha"></html>'
     status, body = call("GET", f"/listing-tabs/{tab['id']}/specs", product=link(FIRST[0]))
     assert status == 503 and body["error"].startswith("wall: captcha")
-    assert list(chrome.tabs.values()) == [SEARCH_URL] and ext_listing_tab._session["id"] == tab["id"]
+    assert list(chrome.tabs.values()) == [SORTED_URL] and ext_listing_tab._session["id"] == tab["id"]
     chrome.product_html = "<html>접속이 일시적으로 제한</html>"
     status, body = call("GET", f"/listing-tabs/{tab['id']}/specs", product=link(FIRST[1]))
     assert status == 503 and body["error"].startswith("wall:") and not body["error"].startswith("wall: captcha")
@@ -349,7 +400,7 @@ def test_a_card_that_opened_nothing_is_not_clicked_again_session_alive(chrome):
     chrome.nothing.add(FIRST[0])
     status, body = call("GET", f"/listing-tabs/{tab['id']}/specs", product=link(FIRST[0]))
     assert status == 404 and "card_opened_nothing" in body["error"] and chrome.count("click") == 1
-    assert list(chrome.tabs.values()) == [SEARCH_URL] and ext_listing_tab._session["id"] == tab["id"]
+    assert list(chrome.tabs.values()) == [SORTED_URL] and ext_listing_tab._session["id"] == tab["id"]
     assert call("GET", f"/listing-tabs/{tab['id']}/specs", product=link(FIRST[1]))[0] == 200
 
 

@@ -84,7 +84,7 @@ def test_the_walk_rests_before_each_next_batch(tmp_path, monkeypatch):
 
     def batch(n, more=True):
         return {"total": 1000, "cursor": n, "hasMore": more, "products": []}
-    monkeypatch.setattr(ext_listing.composite, "first_batch", lambda html: batch(1))
+    monkeypatch.setattr(ext_listing, "sort_listing", lambda bridge, tab, out: ([batch(1)], None))
     monkeypatch.setattr(ext_listing.composite, "batch_from_answer", lambda body: body)
     n = iter(range(2, 100))
     monkeypatch.setattr(ext_listing, "next_batches",

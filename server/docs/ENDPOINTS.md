@@ -566,7 +566,9 @@ against the page (`scripts/product_page.py` saves it); collection uses `/product
 
 The whole search.shopping.naver.com listing for a query (~50 products per batch, all batches), read on the server
 through the owner's Chrome (extension transport, [EXTENSION.md](EXTENSION.md)); callers see only these routes.
-Both prefixes. One job at a time.
+Both prefixes. One job at a time. The order is Naver's 리뷰 많은순 (the owner 2026-11-21, both listing jobs and held
+listing tabs): `total` is that sorted listing's size, smaller than the default order's (3724 against 4878 for one
+query); no sort button or no sorted first batch ends the read (`stop` / `503 adapter error:`), never the default order.
 
 | Route | Params | Answer |
 |---|---|---|
@@ -610,7 +612,7 @@ meanwhile, naming it. Stateful, never cached.
 | `DELETE /listing-tabs/<id>` | - | `200 {id, closed: true}`; idempotent (an unknown id too); waits for a running call of the tab |
 
 `<id>` is `YYYYMMDD-HHMMSS-xxxx` (else `400`). ListingTab: `{id, query, batch, has_more, total, results: [row]}`;
-`total` is the first batch's (the listing's size, 2026-11-14: `/products/count` does not predict it), repeated in
+`total` is the first batch's (the 리뷰 많은순 listing's size, 2026-11-21; 2026-11-14: `/products/count` does not predict it), repeated in
 every answer; rows have the listing jobs' row shape (above), unique within a batch only: a repeat across batches is
 the caller's to drop. Read a batch's products right after `next` brought it: older cards leave the page (a virtualized
 list; how a card is clicked, steadied and checked: [EXTENSION.md](EXTENSION.md#held-listing-tab-listing-tabs)). A

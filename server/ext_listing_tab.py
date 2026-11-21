@@ -170,13 +170,14 @@ def open_tab(query):
             if tab is None:
                 raise ext_product.PageBlocked(f"wall: {why}")
             _session["tab"] = tab
-            first = composite.first_batch(
-                (bridge.call("page", tabId=tab, headChars=ext_listing.FULL_HTML) or {}).get("html"))
-            if first is None:
-                raise ext_product.AdapterError("adapter error: no first batch in the search page HTML "
-                                               "(layout changed?)")
-            _session.update(total=first.get("total"), pending=[first])
-            ext_listing.log(f"listing tab {sid} open for {query!r}: tab {tab}, total {first.get('total')}")
+            batches, why = ext_listing.sort_listing(bridge, tab, out_dir)    # 리뷰 많은순 (the owner 2026-11-21)
+            if batches is None:
+                if "refused" in why:
+                    raise ext_product.PageBlocked(f"wall: {why}")
+                raise ext_product.AdapterError(f"adapter error: {why}")
+            _session.update(total=batches[0].get("total"), pending=batches)
+            ext_listing.log(f"listing tab {sid} open for {query!r}: tab {tab}, sorted by {ext_listing.SORT}, "
+                            f"total {batches[0].get('total')}")
             return _take()
         except Exception as e:                   # the session never stays half-open: tabs, holder, adapter freed
             _end(f"open failed: {type(e).__name__}: {e}")

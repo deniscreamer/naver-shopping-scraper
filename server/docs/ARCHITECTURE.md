@@ -353,7 +353,7 @@ creates `output/` at import) and checks the mounted routes (`test_routes_mounted
 A third transport for what neither curl nor the box can read: the search.shopping listing, which needs a
 one-time bot-defence token per call that only the page mints. The owner's own Chrome runs a thin adapter
 (`extension/`), `ext_bridge.py` drives it over a local WebSocket, `ext_listing.py` walks naver.com -> 쇼핑 -> search
-like a person, takes the first batch from the HTML and lets the page load the rest on wheel scrolls. The API
+like a person, sorts it by 리뷰 많은순 with a click (the owner 2026-11-21) and lets the page load the batches. The API
 serves it as listing jobs (`listing_jobs.py`, `POST /listings`); `run.py` starts the bridge. A second use: a
 product page's 상품정보 rows (`ext_product.py`, `GET /products/specs`), reached by a click from the search and parsed
 in Python (`naver_shopping/pdp.py`); it shares one adapter lock with the listing jobs (`listing_jobs.with_adapter`).
@@ -509,6 +509,10 @@ surfaces.
   batch (probed 2026-11-14, two listings). -> `ext_listing_tab._take` docstring.
 - The first batch's `total` is the listing's size (53 and 122 seen, 2026-11-14); `/products/count` (ns-portal) does
   not predict it (289 and 1148 for the same queries). -> `ext_listing_tab` module docstring.
+- The sort buttons are `button[aria-labelledby="sort_<NAME>"]` (RECOMMEND the default, REVIEW, PURCHASE, RECENT,
+  LOW_PRICE, HIGH_PRICE); a click on sort_REVIEW routes the tab to `&sort=REVIEW` without a reload and the page's
+  batch requests carry `sort=RECOMMEND_REVIEW` from cursor 1; the HTML's embedded first batch stays unsorted (probed
+  2026-11-21). -> `ext_listing.SORT` comment.
 - A category page (`search.shopping.naver.com/ns/category/<display id>`: 10000123 스포츠/레저, 10000404 골프, 10002591 골프클럽;
   display ids, not the 500xxxxx leaves) sends the owner's Chrome without a Naver login to nid.naver.com, by the menu
   path with hovers too (probed 2026-11-14). -> scripts/JOB_AGENT.md "The query".

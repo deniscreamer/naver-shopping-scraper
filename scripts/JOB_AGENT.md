@@ -89,7 +89,8 @@ TRANSLATE_PROVIDERS=openai,anthropic .venv/bin/python -u scripts/job.py scroll -
 ```
 
 No snapshot and no search per product: the server holds one listing tab open (`/listing-tabs`,
-server/docs/EXTENSION.md) and the job takes it batch by batch. Each batch is screened like `new`'s rows (every row
+server/docs/EXTENSION.md) and the job takes it batch by batch, in Naver's 리뷰 많은순 order (the owner 2026-11-21:
+the best cards come first; a job begun before that date resumes in this order too, its done products skipped). Each batch is screened like `new`'s rows (every row
 left out is appended to the job's `screened.jsonl`: at, batch, product_id, name, reason; the audit of the
 leave-outs; an ad card is not clicked, reason `ad`: its link is Naver's ad redirect, the product is taken when it
 comes as an ordinary card, else `new` + `run` reach it by its name), every row taken goes into `listing.jsonl` and
@@ -360,7 +361,8 @@ copy of a live product and `on` would have closed all 20; the owner said yes, `o
   - `refresh`;
   - other adapter reads wanted meanwhile (a scroll job holds the adapter until it ends: `/products/specs` and
     `/listings` answer 409).
-- **Size**: the first batch's `total` (`/products/count` does not predict it: 289 vs 53, 1148 vs 122); to see it
+- **Size**: the first batch's `total`, of the 리뷰 많은순 listing (2026-11-21: 3724 for 여성 골프 바람막이 점퍼, 4878 in the
+  default order) (`/products/count` does not predict it: 289 vs 53, 1148 vs 122); to see it
   without a job, one search page load: `curl -X POST "localhost:8000/listing-tabs?query=<urlencoded>"`, read `total`,
   then `curl -X DELETE localhost:8000/listing-tabs/<id>`. A scroll job writes it into `job.json` (`total`). A listing
   whose top is already in the shop is scrolled past at ~10 s a batch (the pilot: 12 batches with 0-3 new products).
