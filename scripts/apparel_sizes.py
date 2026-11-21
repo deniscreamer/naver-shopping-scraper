@@ -374,7 +374,7 @@ def resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None, 
                 item.update(us=_us_text(grid_rows), letter=grid_rows[0]["us"] if len(grid_rows) == 1 else None,
                             chest_cm=grid_rows[0]["chest_cm"], basis=basis)
                 own_us = _brand_us(hit, grid_rows, profile)
-                if own_us:                                   # the maker's own US number for its Korean size
+                if own_us and hit:                           # the maker's own US number for its Korean size
                     item.update(us=own_us[0], letter=own_us[1], basis=f"brand_us_num:{hit[0]}")
                 if women:
                     paired += 1
