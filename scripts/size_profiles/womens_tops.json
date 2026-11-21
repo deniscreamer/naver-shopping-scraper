@@ -123,6 +123,21 @@
       ],
       "system": "us",
       "evidence": "the seller: 'US women's sizing' (7562982095, 2026-11-19 pilot)"
+    },
+    "Superior": {
+      "aliases": [
+        "슈페리어",
+        "SUPERIOR",
+        "Superior"
+      ],
+      "us_by_chest": {
+        "85": "2",
+        "90": "4",
+        "95": "6",
+        "100": "8",
+        "105": "10"
+      },
+      "evidence": "the maker's own size table in its images: KR 085 / 090 / 095 / 100 / 105 = US 2 / 4 / 6 / 8 / 10 (11829592844, 2026-11-21); its garments measure under the grid's US size, the owner 2026-11-21: re-size by the US so a US buyer gets the size she is used to"
     }
   }
 }

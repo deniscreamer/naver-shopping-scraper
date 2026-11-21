@@ -65,6 +65,9 @@ fixtures `fixtures/sizes/<pilot>.json`. Skill `apparel-sizes`.
    "호칭 / 95 / 100 / 105" charted): the seller's sizes in order, S = 95 (`chart_position`, Kim Young Joo
    11074837484, 2026-11-20); another count leaves them to step 5;
 5. the **profile's letters** (S = 90): the fallback; `basis` says `fallback_letters`.
+After the chest is known, a brand row's `us_by_chest` (the maker's own printed US numbers: Superior 085..105 = US
+2..10, 2026-11-21, the owner: "re-size by the US") replaces the grid's US numbers for the chests it lists: "S (US 6)",
+the grid's letter holding the number, `basis` `brand_us_num:<brand>`.
 
 The letter alone never decides: S is 85 at one seller and 90 at another. The number, matched to the profile's grid
 within 2.5 cm, gives the US letter and its US numeric range: "S (US 4-6)".

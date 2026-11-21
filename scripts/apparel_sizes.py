@@ -119,6 +119,26 @@ def _grid_row(profile: dict[str, Any], chest: float) -> dict[str, Any] | None:
     return best if abs(best["chest_cm"] - chest) <= 2.5 else None
 
 
+def _us_range(text: str) -> tuple[float, float]:
+    ends = [float(x) for x in str(text).split("-")]
+    return (-1.0, -1.0) if text == "00" else (ends[0], ends[-1])
+
+
+def _brand_us(hit: tuple[str, dict[str, Any]] | None, rows: list[dict[str, Any]],
+              profile: dict[str, Any]) -> tuple[str, str] | None:
+    """The maker's own US number for one Korean chest (a brand row's `us_by_chest`, its printed table: 2026-11-21,
+    Superior 085..105 = US 2..10, one to two sizes under the grid's) -> ("S (US 6)", "S"): the grid's letter whose US
+    numbers hold it; None without such a row or that chest (the grid's then)."""
+    if not hit or len(rows) != 1:
+        return None
+    num = (hit[1].get("us_by_chest") or {}).get(str(int(rows[0]["chest_cm"])))
+    if num is None:
+        return None
+    n = float(num)
+    row = next((r for r in profile["grid"] if _us_range(r["us_num"])[0] <= n <= _us_range(r["us_num"])[1]), None)
+    return (f"{row['us']} (US {num})", row["us"]) if row else None
+
+
 def _us_text(rows: list[dict[str, Any]]) -> str:
     if len(rows) == 1:
         return f"{rows[0]['us']} (US {rows[0]['us_num']})"
@@ -353,6 +373,9 @@ def resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None, 
                 grid_rows = sorted({r["chest_cm"]: r for r in grid_rows}.values(), key=lambda r: r["chest_cm"])
                 item.update(us=_us_text(grid_rows), letter=grid_rows[0]["us"] if len(grid_rows) == 1 else None,
                             chest_cm=grid_rows[0]["chest_cm"], basis=basis)
+                own_us = _brand_us(hit, grid_rows, profile)
+                if own_us:                                   # the maker's own US number for its Korean size
+                    item.update(us=own_us[0], letter=own_us[1], basis=f"brand_us_num:{hit[0]}")
                 if women:
                     paired += 1
                 elif label.letter and not (label.upto or label.chest or label.women) \

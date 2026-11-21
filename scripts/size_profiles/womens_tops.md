@@ -32,6 +32,7 @@ Letters with no number: XXS / 2XS 80 (added 2026-11-20: PXG 5429994082 sells "XS
 |---|---|---|
 | WAAC (왁) | letters XS 85, S 90, M 95, L 100, XL 105 | care label S = 90 (12558165017, 2026-11-19) |
 | PXG (피엑스지) | system `us`: its letters are US | the seller: "US women's sizing" (7562982095, 2026-11-19) |
+| Superior (슈페리어) | `us_by_chest`: 085 / 090 / 095 / 100 / 105 = US 2 / 4 / 6 / 8 / 10, shown "S (US 6)" (the grid's letter holding the number); a chest it lacks keeps the grid's | its own table in the images (11829592844); its garments measure under the grid's US size; the owner 2026-11-21: "re-size by the US, so a US buyer does not get a size too small" |
 
 ## The sellers' habits (the pilot, 30 products, 2026-11-19)
 

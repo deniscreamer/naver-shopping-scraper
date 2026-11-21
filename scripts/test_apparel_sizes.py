@@ -628,3 +628,17 @@ def test_a_size_first_option_joining_size_and_colour_holds():
     assert r["held"] and "colour and size in one option" in r["held"]
     r = A.resolve([{"name_ko": "색상", "values_ko": ["FREE/그레이", "FREE/블랙"]}], [], None, "여성 바람막이", "womens_tops")
     assert not (r["held"] and "colour and size" in r["held"])
+
+
+def test_superior_takes_its_own_us_numbers():
+    """The owner 2026-11-21: Superior's garments measure under the grid's US size; its own table (085..105 = US
+    2..10, 11829592844's images) sizes them, so a US buyer gets the size she is used to; a chest the table lacks keeps
+    the grid's."""
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": ["085", "090", "095", "100", "105", "110"]}], [], "슈페리어",
+                  "슈페리어 여성 점퍼", "womens_tops")
+    assert not r["held"] and [v["us"] for v in r["values"]] == ["XS (US 2)", "S (US 4)", "S (US 6)", "M (US 8)",
+                                                                "M (US 10)", "XXL (US 18)"]
+    assert {v["basis"] for v in r["values"][:5]} == {"brand_us_num:Superior"}
+    assert "<td>S (US 6)</td>" in A.chart_html(r)
+    other = A.resolve([{"name_ko": "사이즈", "values_ko": ["090"]}], [], "헤지스", "헤지스 여성 점퍼", "womens_tops")
+    assert other["values"][0]["us"] == "S (US 4-6)"
