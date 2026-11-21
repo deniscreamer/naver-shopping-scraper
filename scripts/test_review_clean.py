@@ -235,3 +235,4 @@ def test_windbreaker_reviews_name_the_garment(text):
     """50002798 (2026-11-20): a windbreaker buyer's aspects (fit, size, wind, weight, rustle, washing) grade full."""
     assert R.clean(text, category_id="50002798").grade == "full"
     assert R.clean("타구감이 너무 좋아요", category_id="50002798").grade == "short"
+    assert R.clean(text, category_id="50002799").grade == "full"             # 재킷, the same section (2026-11-21)

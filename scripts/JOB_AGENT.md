@@ -89,7 +89,8 @@ TRANSLATE_PROVIDERS=openai,anthropic .venv/bin/python -u scripts/job.py scroll -
 ```
 
 No snapshot and no search per product: the server holds one listing tab open (`/listing-tabs`,
-server/docs/EXTENSION.md) and the job takes it batch by batch, in Naver's 리뷰 많은순 order (the owner 2026-11-21:
+server/docs/EXTENSION.md) and the job takes it batch by batch, in Naver's 리뷰 많은순 order (2026-11-21: a job of 점퍼 50002798 takes 재킷 50002799 rows too and the other way
+round, `listing_title_rules.json` `together`, one shop section; the owner 2026-11-21:
 the best cards come first; a job begun before that date resumes in this order too, its done products skipped). Each batch is screened like `new`'s rows (every row
 left out is appended to the job's `screened.jsonl`: at, batch, product_id, name, reason; the audit of the
 leave-outs; an ad card is not clicked, reason `ad`: its link is Naver's ad redirect, the product is taken when it

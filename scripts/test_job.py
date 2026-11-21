@@ -1324,3 +1324,30 @@ def test_code_changed_at_asks_git_for_the_build_paths_only(monkeypatch):
         raise FileNotFoundError("git")
     monkeypatch.setattr(J.subprocess, "run", no_git)
     assert J.code_changed_at() is None
+
+
+def test_a_windbreaker_job_collects_a_jacket_row_as_its_own_category(tmp_path):
+    """2026-11-21, the owner: a job of 점퍼 50002798 takes 재킷 50002799 rows too (listing_title_rules `together`):
+    such a row is collected as 50002799 (its page must say 50002799), any other row as the job's category; both have
+    a category_measures row."""
+    job = make_job(tmp_path)
+    job.category, job.also = "50002798", ["50002799"]
+    assert job.category_of({"category_id": "50002799"}) == "50002799"
+    assert job.category_of({"category_id": "50002797"}) == "50002798" and job.category_of({}) == "50002798"
+    assert J.Job(job.folder).also == []                                        # 50002788 takes nothing with it
+    assert J._no_measures("50002798") == [] and J._no_measures("50002799") == []
+
+
+def test_the_review_block_covers_both_categories_of_a_windbreaker_job(tmp_path, monkeypatch):
+    """2026-11-21 (the review of the 재킷 change): a job of 점퍼 that takes 재킷 shows price and brand lenses for both,
+    and names every category not marked reviewed."""
+    job = make_job(tmp_path)
+    job.category, job.also = "50002798", ["50002799"]
+    monkeypatch.setattr(J, "drafts", lambda j: [KEYS[0]])
+    monkeypatch.setattr(J.Job, "final", property(lambda self: "published"))
+    r = J.review_due(job)
+    assert r is not None
+    assert r["unreviewed"] == ["50002798", "50002799"] and not r["category_reviewed"]
+    assert any("price fairwardgolf --category 50002799" in c for c in r["commands"])
+    assert any("brand fairwardgolf --source none --category 50002799" in c for c in r["commands"])
+    assert J._unreviewed("fairwardgolf", "50002797") == []

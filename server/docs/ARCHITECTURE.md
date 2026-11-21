@@ -608,6 +608,9 @@ surfaces.
   골프 치퍼 / 치퍼; the review of the same day, 2,558 titles of 18 queries: handbags and clothes on 남성 / 여성 치퍼, used
   clubs, and a purchase agency's '<hand> 치퍼 (잡이)' on its putters, hybrids, wedges and full sets).
   -> `scripts/listing_title_rules.json` 50002784.
+- 점퍼 (50002798) and 재킷 (50002799) hold the same women's golf windbreakers: sellers file one garment under either
+  leaf (2026-11-21: 20 of the 47 cards of the 리뷰 많은순 listing's first batch were 재킷). -> `scripts/listing_title_rules.json`
+  `together`.
 - Naver writes "UnKnown_<katakana>" ("UnKnown_ピン") as the brand of an import it could not name (seen 2026-11-17,
   13104702775): no firm. Naver cuts a purchase agency's long title at 50 characters, inside its loft list ("… 56°
   샌드 웨지S", 13370558777). -> `scripts/brand_fallback.py` `_NO_FIRM`, `scripts/spec_variants.py` `title_cut` comments.

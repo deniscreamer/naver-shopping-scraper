@@ -392,6 +392,15 @@ FAIRWARDGOLF = Delivered(
             hts="6202",
             duty_flat=Decimal("0.125"),       # the knits' flat rate (the owner 2026-11-19), same TODO(duty)
             decided={"coefficients": "2026-11-20 (the knits')", "duty": "2026-11-20 flat 12.5 % (the knits')"}),
+        # 2026-11-21, the owner's decision: 재킷 50002799 feeds the same section as 점퍼 50002798 (Women's Windbreakers): the 50002798 values (the same garment, HTS 6202)
+        "50002799": CategoryPrice(
+            coefficients={5: Decimal("1.10"), 4: Decimal("1.10"), 3: Decimal("1.10"), 2: Decimal("1.10"),
+                          1: Decimal("1.10")},
+            duty_by_fibre={"wool": Decimal("0.16"), "cotton": Decimal("0.089"), "cashmere": Decimal("0.16"),
+                           "man-made": Decimal("0.277"), "other": Decimal("0.277"), "unknown": Decimal("0.277")},
+            hts="6202",
+            duty_flat=Decimal("0.125"),
+            decided={"coefficients": "2026-11-21 (50002798's)", "duty": "2026-11-21 flat 12.5 % (50002798's)"}),
     })
 
 POLICIES = {"fairwardgolf": Policy(delivered=FAIRWARDGOLF)}   # which shops carry delivery in the price: this map

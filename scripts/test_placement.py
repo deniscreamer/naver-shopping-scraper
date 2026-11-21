@@ -297,3 +297,6 @@ def test_windbreakers_go_to_the_womens_section_under_apparel_and_a_mens_or_unkno
                                "fairwardgolf:showcase"]
     for value in ("mens", "unknown", "conflict"):
         assert PL.place(product(value, category="50002798"), PROFILE)["status"] == "unresolved"
+    for value in ("womens", "unisex"):                                     # 재킷 (2026-11-21): the same section
+        assert PL.place(product(value, category="50002799"), PROFILE)["product_type"] == "Women’s Windbreakers"
+    assert PL.place(product("mens", category="50002799"), PROFILE)["status"] == "unresolved"

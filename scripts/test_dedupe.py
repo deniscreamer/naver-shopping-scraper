@@ -1270,3 +1270,16 @@ def test_a_reopened_product_is_no_longer_closed():
     k = f"{SHOP}:naver:1:11"
     closed = {"key": k, "event": "not_taken", "reason": "card_not_found"}
     assert k in job.closed(FakeJob([closed])) and k not in job.closed(FakeJob([closed, {"key": k, "event": "reopened"}]))
+
+
+def test_a_copy_across_the_jackets_and_the_windbreakers_is_a_copy():
+    """2026-11-21, the owner: 점퍼 50002798 and 재킷 50002799 feed one section and Naver files the same windbreaker
+    under either leaf: dedupe compares them as one category (the lower id); any other pair of leaves stays apart."""
+    assert D.dedupe_category("50002799") == D.dedupe_category("50002798") == "50002798"
+    assert D.dedupe_category("50002797") == "50002797" and D.dedupe_category("") == ""
+    one = D.entry({"key": "fairwardgolf:naver:1:11", "listing": {"category_id": "50002798",
+                                                                       "name": "로로얼로이 여성 골프 바람막이 후드"}})
+    two = D.entry({"key": "fairwardgolf:naver:2:22", "listing": {"category_id": "50002799",
+                                                                       "name": "로로얼로이 여성 골프 바람막이 후드"}})
+    assert one["category"] == two["category"] and one["tkey"] == two["tkey"]
+    assert (one["leaf"], two["leaf"]) == ("50002798", "50002799")

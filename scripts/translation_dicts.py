@@ -14,7 +14,8 @@ delete an entry for good, delete it in both copies.
 Scopes (2026-11-11, after the first new category: an entry of 50002787 changed four products of 50002788, and
 `호수` -> "Club Number" or `선택하세요` -> "Club Type" would have read wrong anywhere else): a brand is the shop's,
 one spelling for every category (`<root>/brand.json`); every other kind is a category's own, `<root>/<Naver
-category id>/<kind>.json` (live and backup alike). A new category starts empty: the model translates its texts once,
+category id>/<kind>.json` (live and backup alike). A new category starts empty (or from a hand copy of another category's git backup
+when both feed one shop section: 50002799 from 50002798, 2026-11-21): the model translates its texts once,
 and nothing it learns reaches another category. `get` / `add` take the product's category; status and backup cover
 every scope (a row's kind reads "<category>/<kind>").
 

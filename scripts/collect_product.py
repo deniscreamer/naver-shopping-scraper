@@ -20,7 +20,7 @@ ENDPOINTS.md), a 502 "blocked the request", a refused CDN.
 
     outcome = guard.run(key, lambda: collect(api, store, table, row, media_dir, query=QUERY, category=CATEGORY))
 """
-from typing import Any, Callable, cast
+from typing import Any, Callable, Sequence, cast
 
 import naver_types as T
 from collect_guard import Outcome, SourceStopped
@@ -50,7 +50,7 @@ def stopped(e: ApiError) -> bool:
 
 
 def collect(api: NaverApiClient, store: Any, table: dict, row: T.ListingRow, media_dir: str, *,
-            query: str | None, category: str, paid: bool = False, reviews: int = 20,
+            query: str | None, category: str, paid: bool = False, reviews: int = 20, also: Sequence[str] = (),
             specs: Callable[[NaverApiClient, str, str | None], T.ProductSpecs | None] = specs_for) -> Outcome:
     """`specs`: how the page's specs are read, None when the card is not found (specs_for: a search)."""
     try:
@@ -68,8 +68,9 @@ def collect(api: NaverApiClient, store: Any, table: dict, row: T.ListingRow, med
     options = page["options"]
     variants = choose_variants(options, details["pricing"]["discounted_price"], paid=paid) if options else None
     page_category = (page["category"] or {}).get("id")
-    if page_category != category:                    # the page's category differs from the listing card's
-        return Outcome("not_taken", "category_mismatch", f"page category {page_category}")
+    if page_category != category and page_category not in also:   # the page's category is not the card's, nor one
+        return Outcome("not_taken", "category_mismatch", f"page category {page_category}")   # taken with it
+    category = str(page_category)                    # 2026-11-21 (`also`: 점퍼 + 재킷): the page's, as the transform
     package = variant_measures(page, table)           # the run's table row was checked before the run
     kept, summary = pick(picked["results"], category)  # many reviews: the best KEEP, their photos capped, before any
     if summary:                                        # photo is fetched (review_pick; the owner, 2026-11-11)

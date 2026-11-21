@@ -777,6 +777,7 @@ def test_the_windbreaker_profile_is_the_knits_lists_with_its_own_brief():
     name, prof = D.profile_of("50002798")
     assert name == "windbreaker" and {k: v for k, v in prof.items() if k != "categories"} == {
         k: v for k, v in KNIT.items() if k != "categories"}
+    assert D.profile_of("50002799")[0] == "windbreaker"                     # 재킷, the same section (2026-11-21)
     brief = D.system_prompt("windbreaker")
     assert "Never state a size" in brief and "Imported." in brief and "never \"jumper\"" in brief
 

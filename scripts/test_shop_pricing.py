@@ -532,6 +532,8 @@ def test_windbreakers_take_the_knits_price_and_read_their_fibre_under_hts_6202(k
     b = wind.breakdown
     assert b is not None and b["dutyRate"] == "0.125" and b["dutyBasis"]["flat"] is True
     assert (b["dutyBasis"]["hts"], b["dutyBasis"]["fibre"], b["dutyBasis"]["byFibre"]) == ("6202", fibre, by_fibre)
+    jacket = SHOP.quote({**knit_box(), "price_krw": krw}, product, "50002799")    # 재킷 (2026-11-21): the same price
+    assert jacket.price == wind.price and (jacket.breakdown or {})["dutyBasis"] == b["dutyBasis"]
 
 
 def test_a_partial_spec_row_gives_way_to_the_full_notice_row():

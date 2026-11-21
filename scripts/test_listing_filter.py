@@ -441,11 +441,39 @@ def test_knit_cardigans_need_a_womens_word_and_a_cardigan_word(title, code):
     ("여성 골프 가디건 아우터 블루종", None),                                # 블루종 is a jacket word, 가디건 unless it
     ("여성 골프 집업 가디건", "title:not_jacket"),
     ("여성 골프 바람막이 상하세트", "title:two_piece_set"),
+    # 2026-11-21 (the owner's decision: fleece, vests, light down and rainwear go to Rainwear & Midlayers): left out
+    ("여성 골프 아노락 후리스 바람막이 점퍼 자켓 겨울 골프 골프복 연습복 할로", "title:fleece"),   # a 50002799 card
+    ("여성 골프 플리스 집업 자켓", "title:fleece"),
+    ("여성 골프 경량패딩 바람막이 점퍼", "title:padded"),                    # light down: midlayers
+    ("여성 골프 하프 코트 자켓", "title:coat"),
+    ("여성 골프 방수 방풍 바람막이 점퍼", None),                             # 방수 is a windbreaker's function
+    ("여성 골프 기모 바람막이 점퍼", None),                                  # brushed lining: still a windbreaker
+    ("WAAC 여성 에어홀 트리코트 점퍼 바람막이", None),                       # tricot is no coat (2026-11-21)
+    ("여성 골프 레인코트 방수 점퍼", "title:rainwear"),                       # a rain coat is rainwear first
 ])
 def test_windbreakers_need_a_womens_word_and_a_jacket_word_and_no_padding(title, code):
     screen = Screen("50002798", namespace="fairwardgolf")
     assert screen.check({"name": title, "category_id": "50002798", "product_id": "1",
                          "store": {"channel_no": "2"}}) == code
+    jackets = Screen("50002799", namespace="fairwardgolf")                # 재킷: the same rules (2026-11-21)
+    assert jackets.check({"name": title, "category_id": "50002799", "product_id": "1",
+                          "store": {"channel_no": "2"}}) == code
+
+
+def test_a_windbreaker_job_takes_the_jackets_rows_too_by_their_own_rules(tmp_path):
+    """2026-11-21, the owner: 점퍼 50002798 and 재킷 50002799 feed one section: a job of either takes the other's rows
+    (`together`), each screened by its own category's rules; any other category is still a mismatch."""
+    import listing_filter as LF
+    assert LF.together("50002798") == ["50002799"] and LF.together("50002799") == ["50002798"]
+    assert LF.together("50002797") == []
+    row = {"name": "로로얼로이 여성골프점퍼 바람막이 아트레터링 후드", "product_id": "7045315598", "store": {"channel_no": "2"}}
+    screen = Screen("50002798", namespace="fairwardgolf")
+    assert screen.check({**row, "category_id": "50002799"}) is None and screen.takes("50002799")
+    assert screen.check({**row, "category_id": "50002797"}) == "category_mismatch" and not screen.takes("50002797")
+    path = tmp_path / "rules.json"
+    path.write_text(json.dumps({"categories": {"1": [], "2": [{"code": "only_two", "tokens": [{"text": "바람"}]}]},
+                                "together": {"1": ["2"]}}), encoding="utf-8")
+    assert LF.together("1", str(path)) == ["2"] and LF.title_rules("2", str(path))[0]["code"] == "only_two"
 
 
 def test_requires_is_all_of_the_groups_any_word_of_each_and_unless_still_wins():
@@ -453,3 +481,11 @@ def test_requires_is_all_of_the_groups_any_word_of_each_and_unless_still_wins():
     assert title_rule("a c", rules) is None and title_rule("B C", rules) is None
     assert title_rule("a", rules) == "title:x" and title_rule("c", rules) == "title:x"
     assert title_rule("zz", rules) is None                                  # an unless word: the rule is off
+
+
+def test_the_jackets_title_rules_are_the_windbreakers():
+    """2026-11-21, the owner: 점퍼 50002798 and 재킷 50002799 feed one section; their title rules stay the same (only
+    `why` differs)."""
+    import listing_filter as LF
+    strip = lambda rules: [{k: v for k, v in r.items() if k != "why"} for r in rules]   # noqa: E731
+    assert strip(LF.title_rules("50002799")) == strip(LF.title_rules("50002798"))

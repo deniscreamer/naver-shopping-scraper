@@ -209,6 +209,8 @@ class Job:
         with open(os.path.join(folder, "job.json"), encoding="utf-8") as f:
             self.meta: JobMeta = json.load(f)
         self.shop, self.category = self.meta["shop"], self.meta["category"]
+        from listing_filter import together
+        self.also = together(self.category)        # categories taken with the job's (2026-11-21: 점퍼 + 재킷)
         self.shops_root = self.meta["shops_root"]
 
     @property
@@ -222,6 +224,12 @@ class Job:
     @property
     def id(self) -> str:
         return os.path.basename(self.folder)
+
+    def category_of(self, row: dict[str, Any]) -> str:
+        """The category a row is collected as: its own when the job takes it with its category (`together`), else
+        the job's (the product page's category must match it, collect_product)."""
+        own = str(row.get("category_id") or "")
+        return own if own in self.also else self.category
 
     def rows(self) -> list[dict[str, Any]]:
         """The listing's rows; a cut-off last line (scroll killed while appending a row) is ignored, a bad middle
@@ -408,6 +416,14 @@ def known_ids() -> set[str]:
     return ids
 
 
+def _no_measures(category: str) -> list[str]:
+    """The job's category and those taken with it (`together`) that have no category_measures.json row."""
+    from listing_filter import together
+    from package_measures import load_table
+    have = {str(r["category_id"]) for r in load_table()["rows"]}
+    return [c for c in (str(category), *together(category)) if c not in have]
+
+
 def read_listings(api: Any, store: Any, queries: list[str], category: str, batches: int, skip: set[str],
                   known: set[str]) -> tuple[list[dict], list[dict], dict]:
     """Every query's listing (from the top: a listing has no cursor to resume, EXTENSION.md) up to `batches`,
@@ -480,8 +496,8 @@ def cmd_new(args: argparse.Namespace) -> int:
         print("stop: --all and --count: one or the other")
         return 2
     api, store = NaverApiClient(), get_store()
-    if not any(str(r["category_id"]) == args.category for r in load_table()["rows"]):
-        print(f"stop: no category_measures.json row for {args.category}: ask the operator")
+    if _no_measures(args.category):
+        print(f"stop: no category_measures.json row for {', '.join(_no_measures(args.category))}: ask the operator")
         return 2
     assert store.shopify
     shops_root = os.path.abspath(args.shops_root or SHOPS_ROOT)
@@ -607,7 +623,8 @@ def collect_with_waits(job: Job, api: Any, store: Any, table: dict, guard: Any, 
         try:
             return guard.run(row["key"], lambda: collect(
                 api, store, table, row, os.path.join(tmp, "images", str(row["product_id"])),  # type: ignore[arg-type]
-                query=row.get("query"), category=job.category, paid=job.meta["paid"], reviews=job.meta["reviews"],
+                query=row.get("query"), category=job.category_of(row), also=[job.category, *job.also],
+                paid=job.meta["paid"], reviews=job.meta["reviews"],
                 **how))
         except SourceStopped as e:
             error = str(e.error or "")
@@ -1524,8 +1541,9 @@ def cmd_scroll(args: argparse.Namespace) -> int:
         if args.describe and not args.publish:
             print("stop: --describe needs --publish (a job without publication: describe.py <shop> after it)")
             return 2
-        if not any(str(r["category_id"]) == args.category for r in load_table()["rows"]):
-            print(f"stop: no category_measures.json row for {args.category}: ask the operator")
+        if _no_measures(args.category):
+            print(f"stop: no category_measures.json row for {', '.join(_no_measures(args.category))}: ask the "
+                  "operator")
             return 2
         job, shop, shops_root = None, get_store().id.value, os.path.abspath(args.shops_root or SHOPS_ROOT)
         what = f"job.py scroll (a new job, {args.category} {args.query!r})"
@@ -1623,8 +1641,8 @@ def cmd_activate(args: argparse.Namespace) -> int:
               "ones are live):")
         for line in lines:
             print("  " + line)
-    if not transform_shops.reviewed(job.shop, job.category):
-        print(f"category {job.category} is not marked reviewed: set reviewed=True in transform_shops.py on the "
+    for c in _unreviewed(job.shop, job.category):
+        print(f"category {c} is not marked reviewed: set reviewed=True in transform_shops.py on the "
               "owner's word (a dated comment)")
     return 1 if failed else 0
 
@@ -1854,13 +1872,15 @@ def review_due(job: Job) -> dict[str, Any] | None:
         return None
     events = job.events()
     lens = ".venv/bin/python scripts/lens.py"
-    return {"drafts": n, "category_reviewed": transform_shops.reviewed(job.shop, job.category),
+    cats = [job.category, *job.also]              # 2026-11-21: a job of 점퍼 takes 재킷 too: both reviewed, both shown
+    unreviewed = _unreviewed(job.shop, job.category)
+    return {"drafts": n, "category_reviewed": not unreviewed, "unreviewed": unreviewed,
             "due": n >= REVIEW_AFTER or (bool(events) and events[-1]["event"] == "done"),
             "commands": [f"{lens} section {job.shop} --job {job.id}",
-                         f"{lens} price {job.shop} --category {job.category}",
+                         *(f"{lens} price {job.shop} --category {c}" for c in cats),
                          f"{lens} held {job.shop} --job {job.id}",
-                         f"{lens} brand {job.shop} --source none --category {job.category}",
-                         f"{lens} dupes {job.shop} --category {job.category}"],
+                         *(f"{lens} brand {job.shop} --source none --category {c}" for c in cats),
+                         f"{lens} dupes {job.shop} --category {job.category}"],   # dedupe: the section's (both)
             "withdraw": withdraw_lines(job)}
 
 
@@ -1901,20 +1921,27 @@ def _review_reminder(job: Job, due_only: bool = False) -> None:
     print("  report to the owner; then, on the owner's word only: withdraw the wrong ones (publish.py "
           f"{job.shop} --withdraw <key> --reason ...), .venv/bin/python scripts/job.py activate --job {job.id}"
           + ("" if r["category_reviewed"] else
-             f", and mark category {job.category} reviewed=True in transform_shops.py"), flush=True)
+             f", and mark category {' and '.join(r['unreviewed'])} reviewed=True in transform_shops.py"), flush=True)
     for line in r["withdraw"]:
         print("    once the new one is live: " + line, flush=True)
 
 
+def _unreviewed(shop: str, category: str) -> list[str]:
+    """The job's category and those taken with it (`together`) not marked reviewed: their products go DRAFT."""
+    import transform_shops
+    from listing_filter import together
+    return [c for c in dict.fromkeys([str(category), *together(category)]) if not transform_shops.reviewed(shop, c)]
+
+
 def _draft_first_line(publish: bool, shop: str, category: str, draft: bool = False) -> None:
     """One line at a job's creation: its products go DRAFT (a category not marked reviewed, or --draft)."""
-    import transform_shops
-    if publish and draft and transform_shops.reviewed(shop, category):
+    unreviewed = _unreviewed(shop, category)
+    if publish and draft and not unreviewed:
         print(f"draft: this job's new products go to the store as DRAFT (--draft); the lens review is due at "
               f"{REVIEW_AFTER} drafts or at the end (job.py status lists the commands), activation is the owner's "
               "word: job.py activate --job <id>", flush=True)
-    elif publish and not transform_shops.reviewed(shop, category):
-        print(f"draft first: category {category} is not marked reviewed: its products go to the store as DRAFT "
+    elif publish and unreviewed:
+        print(f"draft first: category {' and '.join(unreviewed)} is not marked reviewed: its products go to the store as DRAFT "
               f"(--count counts drafts); the lens review is due at {REVIEW_AFTER} drafts (job.py status lists the "
               "commands), activation is the owner's word", flush=True)
 

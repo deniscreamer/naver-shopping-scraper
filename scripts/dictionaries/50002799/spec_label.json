@@ -1,0 +1,20 @@
+{
+ "format": "dictionary/1",
+ "kind": "spec_label",
+ "backed_up": "2026-11-20T17:59:01Z",
+ "entries": {
+  "모델명": "Model Name",
+  "브랜드": "Brand",
+  "사용계절": "Season",
+  "성별": "Gender",
+  "소매기장": "Sleeve Length",
+  "소재": "Material",
+  "원산지": "Country of Origin",
+  "제조사": "Manufacturer",
+  "종류": "Type",
+  "출시": "Release",
+  "충전재": "Fill",
+  "특징": "Features",
+  "품번": "Item Number"
+ }
+}

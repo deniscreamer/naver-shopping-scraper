@@ -121,7 +121,8 @@ knit cardigans 50002797, the first apparel). The coefficients and the duty are t
 byte for byte as before (`test_shop_pricing.test_the_clubs_are_priced_byte_for_byte_as_before`), so no club product
 is sent again. 50002798 women's golf windbreakers (2026-11-20, the owner delegated the values): the knits' rule, x1.10
 at every level and the flat 12.5 % duty; its rate by fibre is kept under US HTS 6202 (woven women's windbreakers:
-wool 16 %, cotton 8.9 %, man-made or unknown 27.7 %) for the day the TODO switches it on.
+wool 16 %, cotton 8.9 %, man-made or unknown 27.7 %) for the day the TODO switches it on. 50002799 재킷 (2026-11-21,
+the same section): 50002798's rule.
 - Delivery x1.10 at every level: a garment's mailer is predictable, and the clubs' 2.50 for a default box (a bag or
   none) does not apply. The category's default box, 28 x 22 x 4 cm and 400 g (`category_measures.json`), is 0.49 kg
   volumetric: the 0.5 kg step, 42.49 x 1.10 = 46.74 USD.

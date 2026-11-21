@@ -106,6 +106,15 @@ def _norm(value: str) -> str:
     return "".join(unicodedata.normalize("NFKC", str(value)).lower().split())
 
 
+@functools.lru_cache(maxsize=None)
+def dedupe_category(category: str) -> str:
+    """The category dedupe compares: the lowest of a category and those listing_title_rules.json `together` takes
+    with it (2026-11-21, the owner: 점퍼 50002798 and 재킷 50002799 feed one section, and Naver files the same
+    windbreaker under either leaf: a copy across them is a copy). Any other category: itself."""
+    from listing_filter import together
+    return min((category, *together(category))) if category else category
+
+
 def entry(line: dict[str, Any], status: str = "job", catalogs: dict[str, str | None] | None = None) -> dict[str, Any]:
     """What the rule needs of a collected record (job.py's kept line): key, store, category, title key, price, grade,
     review count, photos' source hashes (the first one apart), variant values, variant count; the Naver catalog
@@ -114,7 +123,8 @@ def entry(line: dict[str, Any], status: str = "job", catalogs: dict[str, str | N
     details = line.get("details") or {}
     key = line.get("key") or listing.get("key") or ""
     parts = key.split(":")
-    category = str(listing.get("category_id") or ((line.get("specs") or {}).get("category") or {}).get("id") or "")
+    leaf = str(listing.get("category_id") or ((line.get("specs") or {}).get("category") or {}).get("id") or "")
+    category = dedupe_category(leaf)                 # the section's (2026-11-21); per-leaf shop rules read `leaf`
     pricing = listing.get("pricing") or details.get("pricing") or {}
     files = sorted((f for f in (line.get("photos") or {}).get("files") or [] if f.get("source_sha256")),
                    key=lambda f: f.get("position", 0))
@@ -127,7 +137,7 @@ def entry(line: dict[str, Any], status: str = "job", catalogs: dict[str, str | N
                                             ensure_ascii=False)))
     words = {_SAME.get(w, w) for w in TOKEN.findall(unicodedata.normalize("NFKC", name or "").lower())} - _FILLER
     return {"key": key, "channel": parts[2] if len(parts) > 3 else str((listing.get("store") or {}).get("channel_no")),
-            "category": category, "name": name, "tkey": title_key(name, category),
+            "category": category, "leaf": leaf, "name": name, "tkey": title_key(name, category),
             "price": pricing.get("discounted_price") or pricing.get("sale_price"),
             "grade": (listing.get("store") or {}).get("grade"), "reviews": (listing.get("reviews") or {}).get("count") or 0,
             "first": files[0]["source_sha256"] if files else None, "shas": {f["source_sha256"] for f in files},
@@ -140,7 +150,7 @@ def entry(line: dict[str, Any], status: str = "job", catalogs: dict[str, str | N
             "counts": {m.group(1) for m in _COUNT_NUM.finditer(unicodedata.normalize("NFKC", name or "").lower())},
             # same_listing (2026-11-16): the first photos in order, the variants the shop sells, the variants' numbers
             "lead": tuple(f["source_sha256"] for f in files[:LEAD_PHOTOS]),
-            "sold": _sold(variants, category, parts[0] if len(parts) > 3 else "", _axes(specs)),
+            "sold": _sold(variants, leaf, parts[0] if len(parts) > 3 else "", _axes(specs)),
             "vnums": set(re.findall(r"\d+", unicodedata.normalize("NFKC", " ".join(
                 str(o) for v in variants for o in v.get("options") or [v.get("name") or ""])))),
             "skey": spaced_key(name, category),
@@ -409,7 +419,7 @@ def sold_equal(a: dict[str, Any], b: dict[str, Any]) -> bool:
         return False
     if not (bool(a.get("tkey")) and a.get("tkey") == b.get("tkey")) and not alike(a, b):
         return False
-    return _sets_only(str(a.get("key") or "").split(":")[0], str(a.get("category") or ""))
+    return _sets_only(str(a.get("key") or "").split(":")[0], str(a.get("leaf") or a.get("category") or ""))
 
 
 def alike(a: dict[str, Any], b: dict[str, Any]) -> bool:
@@ -939,7 +949,7 @@ def brand_sold_pairs(entries: list[dict[str, Any]], brands: dict[str, str],
     for e in entries:
         brand = (brands.get(e["key"]) or "").strip().casefold()
         if e.get("agency") and brand and sum(1 for v in e.get("sold") or () if re.search(r"\d", v)) >= 2 \
-                and _sets_only(e["key"].split(":")[0], e["category"]):
+                and _sets_only(e["key"].split(":")[0], e.get("leaf") or e["category"]):
             buckets.setdefault((e["category"], brand, e["sold"]), []).append(e)
     out = []
     for es in buckets.values():
@@ -966,7 +976,7 @@ def _brands(shop: str, shops_root: str) -> dict[str, str]:
 
 def report(shop: str, shops_root: str = SHOPS_ROOT, category: str | None = None) -> dict[str, Any]:
     index = load(shop, shops_root, withdrawn=False)
-    entries = [e for e in index.by_key.values() if category is None or e["category"] == category]
+    entries = [e for e in index.by_key.values() if category is None or e["category"] == dedupe_category(category)]
     found = groups(entries)
     upc = same_upc_groups(entries, found)
     item = same_item_groups(entries, found, judged(shop, shops_root))

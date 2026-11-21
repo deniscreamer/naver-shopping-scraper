@@ -19,6 +19,10 @@ are held (`unresolved`), never placed by the listing's query.
 50002783 웨지 (2026-11-15): wedge sets, one section wedge-sets with no split (wedges are mostly unisex); single wedges
 are left out by the title screen, not here.
 
+50002799 재킷 (2026-11-21, the owner's decision): the same section as 50002798, the same split; a job of either takes
+the other's listing rows (listing_title_rules.json `together`). Fleece, vests, light down and rainwear of both are
+Rainwear & Midlayers' (not built yet: left out by the title screen), knits the cardigans' (left out too).
+
 50002784 치퍼 (2026-11-18): chippers, one section chippers with no split (like wedge sets); putters, wedges and other
 clubs filed under it are left out by the title screen, not here.
 
@@ -106,6 +110,8 @@ PROFILES = {
             "50002797": CategoryPlacement(parent="apparel", split_by="gender",         # 니트 (2026-11-19)
                                           leaves={"womens": WOMENS_KNIT_CARDIGANS}),
             "50002798": CategoryPlacement(parent="apparel", split_by="gender",         # 점퍼 (2026-11-20)
+                                          leaves={"womens": WOMENS_WINDBREAKERS}),
+            "50002799": CategoryPlacement(parent="apparel", split_by="gender",         # 재킷 (2026-11-21)
                                           leaves={"womens": WOMENS_WINDBREAKERS}),
         }),
 }

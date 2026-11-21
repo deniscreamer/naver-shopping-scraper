@@ -2669,6 +2669,47 @@
     ]
    },
    {
+    "code": "fleece",
+    "why": "2026-11-21 (the owner's decision on 점퍼 50002798 and 재킷 50002799: one section Women's Windbreakers; fleece, vests, light down and rainwear belong to Rainwear & Midlayers, not here): a fleece (플리스, 후리스, fleece), a fleece-lined one too, is a midlayer, never a windbreaker; 기모 (brushed lining) stays a windbreaker.",
+    "tokens": [
+     {
+      "text": "플리스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "후리스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "fleece",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "coat",
+    "why": "2026-11-21 (the owner's decision on 점퍼 50002798 and 재킷 50002799: one section Women's Windbreakers; fleece, vests, light down and rainwear belong to Rainwear & Midlayers, not here): a coat (코트, coat) is no windbreaker; a rain coat is rainwear first. 트리코트 (tricot, WAAC 11814351207), 마스코트 and 에코트... are no coat (the review 2026-11-21).",
+    "tokens": [
+     {
+      "text": "코트",
+      "notFollowedBy": [],
+      "notPrecededBy": [
+       "리",
+       "스",
+       "에"
+      ]
+     },
+     {
+      "text": "coat",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
     "code": "two_piece_set",
     "why": "2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a top-and-bottom set (상하세트) is no single jacket.",
     "tokens": [
@@ -2684,6 +2725,283 @@
      }
     ]
    }
+  ],
+  "50002799": [
+   {
+    "code": "not_womens",
+    "why": "2026-11-21 (재킷 50002799, the same section as 점퍼 50002798, the owner's decision): the 50002798 rule, the same words. 2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): the section sells women's windbreakers; a title with no women's word (a men's jumper, a unisex or unstated one) is left out before its page is read, as the knits.",
+    "requires": [
+     [
+      "여성",
+      "여자",
+      "ladies",
+      "women"
+     ]
+    ],
+    "tokens": []
+   },
+   {
+    "code": "not_jacket",
+    "why": "2026-11-21 (재킷 50002799, the same section as 점퍼 50002798, the owner's decision): the 50002798 rule, the same words. 2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a title with no jacket word (바람막이, 점퍼, 잠바, 자켓, 재킷, 쟈켓, 윈드, 아노락, 브레이커, 블루종, jacket, jumper, windbreaker, anorak) is no jacket filed under 점퍼.",
+    "requires": [
+     [
+      "바람막이",
+      "점퍼",
+      "잠바",
+      "자켓",
+      "재킷",
+      "쟈켓",
+      "윈드",
+      "아노락",
+      "브레이커",
+      "블루종",
+      "jacket",
+      "jumper",
+      "windbreaker",
+      "anorak"
+     ]
+    ],
+    "tokens": []
+   },
+   {
+    "code": "padded",
+    "why": "2026-11-21 (재킷 50002799, the same section as 점퍼 50002798, the owner's decision): the 50002798 rule, the same words. 2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a padded or down jumper (패딩, 다운, 구스, 덕다운, 오리털, 거위털, 웰론, 푸퍼, padding, down) is a winter coat, not a windbreaker: 83 of the 767 titles say 패딩. 다운블로우 is a brand.",
+    "tokens": [
+     {
+      "text": "패딩",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "다운",
+      "notFollowedBy": [
+       "블로우"
+      ],
+      "notPrecededBy": []
+     },
+     {
+      "text": "구스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "오리털",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "거위털",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "웰론",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "푸퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "padding",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "puffer",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "rainwear",
+    "why": "2026-11-21 (재킷 50002799, the same section as 점퍼 50002798, the owner's decision): the 50002798 rule, the same words. 2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): rainwear (비옷, 우비, 우의, 레인코트, 레인웨어, 레인 점퍼 / 자켓, rain) is its own kind of garment. 레인지웨어 (range wear, 2026-11-20) is no rain.",
+    "tokens": [
+     {
+      "text": "비옷",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "우비",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "우의",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "레인",
+      "notFollowedBy": [
+       "지"
+      ],
+      "notPrecededBy": [
+       "트",
+       "브",
+       "드",
+       "그",
+       "크"
+      ]
+     },
+     {
+      "text": "rain",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "vest",
+    "why": "2026-11-21 (재킷 50002799, the same section as 점퍼 50002798, the owner's decision): the 50002798 rule, the same words. 2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a vest (조끼, 베스트, vest, gilet) is not a jacket; 베스트라 is Klattermusen's Vestra jacket.",
+    "tokens": [
+     {
+      "text": "조끼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "베스트",
+      "notFollowedBy": [
+       "라"
+      ],
+      "notPrecededBy": []
+     },
+     {
+      "text": "vest",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "gilet",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "cardigan",
+    "why": "2026-11-21 (재킷 50002799, the same section as 점퍼 50002798, the owner's decision): the 50002798 rule, the same words. 2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a cardigan (가디건, 카디건) with no jacket word is the knit cardigans' kind (50002797); a title that also says 바람막이 / 점퍼 / 자켓 ... is a jacket (the knits' jacket_no_knit leaves those out of 50002797 too).",
+    "tokens": [
+     {
+      "text": "가디건",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "카디건",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "cardigan",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ],
+    "unless": [
+     "바람막이",
+     "점퍼",
+     "잠바",
+     "자켓",
+     "재킷",
+     "쟈켓",
+     "윈드",
+     "아노락",
+     "브레이커",
+     "블루종",
+     "jacket",
+     "jumper",
+     "windbreaker",
+     "anorak"
+    ]
+   },
+   {
+    "code": "knit",
+    "why": "2026-11-21 (재킷 50002799, the same section as 점퍼 50002798, the owner's decision): the 50002798 rule, the same words. 2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a knit (니트, knit) is a knit jacket or cardigan, never a windbreaker, even windproof (방풍 니트): the pilot's lens review (2026-11-20) found 4 wool, cashmere or down knits among 30 drafts sold as windbreakers (11037889576, 5303904972, 11038604889, 12742620642).",
+    "tokens": [
+     {
+      "text": "니트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "knit",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "fleece",
+    "why": "2026-11-21 (재킷 50002799, the same section as 점퍼 50002798, the owner's decision): the 50002798 rule, the same words. 2026-11-21 (the owner's decision on 점퍼 50002798 and 재킷 50002799: one section Women's Windbreakers; fleece, vests, light down and rainwear belong to Rainwear & Midlayers, not here): a fleece (플리스, 후리스, fleece), a fleece-lined one too, is a midlayer, never a windbreaker; 기모 (brushed lining) stays a windbreaker.",
+    "tokens": [
+     {
+      "text": "플리스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "후리스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "fleece",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "coat",
+    "why": "2026-11-21 (재킷 50002799, the same section as 점퍼 50002798, the owner's decision): the 50002798 rule, the same words. 2026-11-21 (the owner's decision on 점퍼 50002798 and 재킷 50002799: one section Women's Windbreakers; fleece, vests, light down and rainwear belong to Rainwear & Midlayers, not here): a coat (코트, coat) is no windbreaker; a rain coat is rainwear first. 트리코트 (tricot, WAAC 11814351207), 마스코트 and 에코트... are no coat (the review 2026-11-21).",
+    "tokens": [
+     {
+      "text": "코트",
+      "notFollowedBy": [],
+      "notPrecededBy": [
+       "리",
+       "스",
+       "에"
+      ]
+     },
+     {
+      "text": "coat",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "two_piece_set",
+    "why": "2026-11-21 (재킷 50002799, the same section as 점퍼 50002798, the owner's decision): the 50002798 rule, the same words. 2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a top-and-bottom set (상하세트) is no single jacket.",
+    "tokens": [
+     {
+      "text": "상하세트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "상하의",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   }
+  ]
+ },
+ "together": {
+  "about": "2026-11-21 (the owner's decision): a job of the key category also takes listing rows of these categories (one shop section, Women's Windbreakers): Naver files the same garment under either. Each row is screened by its own category's rules and goes through every stage as its own category.",
+  "50002798": [
+   "50002799"
+  ],
+  "50002799": [
+   "50002798"
   ]
  }
 }

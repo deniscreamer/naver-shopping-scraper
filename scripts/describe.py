@@ -84,7 +84,7 @@ PROFILES: dict[str, dict[str, Any]] = {
                       "lists": (("materials", "Materials & care", 4), ("highlights", "Highlights", 4)),
                       "no_measures": True,               # never a size or a measurement (the size chart is apart)
                       "imported": True},                 # "Imported." when no origin is decided (US textile rules)
-    "windbreaker": {"categories": ("50002798",),         # women's golf windbreakers (2026-11-20, as the knits)
+    "windbreaker": {"categories": ("50002798", "50002799"),   # 재킷 2026-11-21, the same section         # women's golf windbreakers (2026-11-20, as the knits)
                     "lists": (("materials", "Materials & care", 4), ("highlights", "Highlights", 4)),
                     "no_measures": True,
                     "imported": True},

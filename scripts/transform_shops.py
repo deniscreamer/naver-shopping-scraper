@@ -172,6 +172,12 @@ RULES = {
                                       own_brand_wordmark=True,   # the shop's own brand, as the knits
                                       reviewed=False),      # a new category: DRAFT until the lens review and the
                                                             # owner's activation
+            # 2026-11-21, the owner's decision: 재킷 50002799 feeds the same section as 점퍼 50002798 (Women's Windbreakers): the 50002798 values: Naver files the same windbreakers under
+            # either leaf (20 of the 47 cards of the 리뷰 많은순 listing's first batch, 2026-11-21)
+            "50002799": CategoryRules(
+                paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
+                no_choice_out=True, composition=True, sizes="womens_tops", own_brand_wordmark=True,
+                reviewed=False),      # a new category: DRAFT until the lens review and the owner's activation
         }),
 }
 

@@ -13,7 +13,9 @@ this order:
                      category; the owner, 2026-11-11: toys, gloves, loose heads in junior clubs, park golf in
                      full sets), or no word of a group the category requires (`requires`, 2026-11-19: a women's
                      word and a cardigan word for knit cardigans): matched on the name without spaces
-  category_mismatch  the row's category is not exactly the leaf category of the run (no parent matches)
+  category_mismatch  the row's category is not exactly the leaf category of the run (no parent matches), nor one
+                     the file's `together` takes with it (2026-11-21, the owner: 점퍼 50002798 and 재킷 50002799,
+                     one section): such a row is screened by its own category's title rules
   key_unavailable    no store number or product id: the shop check cannot be done, so the row is not taken
   already_published  the source key is in the shop's catalog snapshot (shopify_catalog), any product status
   deferred           the source key is deferred in the shop's journal (deferred_log) and no retry is allowed
@@ -55,6 +57,15 @@ def title_rules(category_id: str, path: str = TITLE_RULES) -> list[dict[str, Any
         return []
     with open(path, encoding="utf-8") as f:
         return json.load(f).get("categories", {}).get(str(category_id), [])
+
+
+def together(category_id: str, path: str = TITLE_RULES) -> list[str]:
+    """The categories a job of `category_id` also takes (listing_title_rules.json `together`, 2026-11-21: the same
+    shop section from two Naver leaves), [] for none."""
+    if not os.path.exists(path):
+        return []
+    with open(path, encoding="utf-8") as f:
+        return [str(c) for c in json.load(f).get("together", {}).get(str(category_id), [])]
 
 
 def _bare(word: str | None) -> str:
@@ -133,12 +144,18 @@ class Screen:
         rules = (exclusions or load_exclusions())["universal"]
         self.category_rules = title_rules(category_id) if category_rules is None else category_rules
         self.category_id = str(category_id)
+        self.also = together(category_id)              # rows of these categories are taken too (their own rules)
+        self.rules_of = {c: (title_rules(c) if category_rules is None else category_rules) for c in self.also}
         self.namespace = namespace
         self.exclude_sponsored = exclude_sponsored    # ads kept (the owner, 2026-11-06), whatever the file says
         self.rules = rules.get("rules", [])
         self.published = set(published)
         self.deferred = set(deferred)
         self.counts: Counter[str] = Counter()
+
+    def takes(self, category_id: Any) -> bool:
+        """The run's category or one taken with it."""
+        return str(category_id or "") in (self.category_id, *self.also)
 
     def set_published(self, keys: Iterable[str]) -> None:
         self.published = set(keys)
@@ -150,10 +167,11 @@ class Screen:
         name = (row.get("name") or "").strip()
         if not name:
             return "title_unavailable"
-        word = stop_word(name, self.rules) or title_rule(name, self.category_rules)
+        category = str(row.get("category_id") or "")
+        word = stop_word(name, self.rules) or title_rule(name, self.rules_of.get(category, self.category_rules))
         if word:
             return word
-        if str(row.get("category_id") or "") != self.category_id:
+        if category != self.category_id and category not in self.also:
             return "category_mismatch"
         key = source_key(row, self.namespace)
         if key is None:
