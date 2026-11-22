@@ -123,8 +123,9 @@ PROFILES = {
                                           leaves={"womens": WOMENS_IRONS}),
             "50002783": CategoryPlacement(parent="clubs", leaves={None: WEDGES}),     # 웨지
             "50002784": CategoryPlacement(parent="clubs", leaves={None: CHIPPERS}),   # 치퍼
-            "50002797": CategoryPlacement(parent="apparel", split_by="gender",         # 니트 (2026-11-19)
-                                          leaves={"womens": WOMENS_KNIT_CARDIGANS}),
+            "50002797": CategoryPlacement(parent="apparel", split_by="gender", stated_only=("mens",),   # 니트 (2026-11-19;
+                                          # its men's knits to the men's long-sleeve tops, 2026-11-22)
+                                          leaves={"womens": WOMENS_KNIT_CARDIGANS, "mens": MENS_LS_TOPS}),
             "50002798": CategoryPlacement(parent="apparel", split_by="gender",         # 점퍼 (2026-11-20)
                                           leaves={"womens": WOMENS_WINDBREAKERS}),
             "50002796": CategoryPlacement(parent="apparel", split_by="gender",         # 티셔츠 (2026-11-21)

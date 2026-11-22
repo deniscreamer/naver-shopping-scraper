@@ -548,3 +548,21 @@ def test_a_job_may_name_only_a_known_section():
     import listing_filter as LF
     assert LF.leaves_of("50002796") == {"womens-fall-long-sleeve-tops", "mens-fall-long-sleeve-tops"}
     assert LF.leaves_of("50002788") == set()
+
+
+def test_the_mens_tops_job_takes_the_mens_knits_and_the_womens_jobs_do_not():
+    """2026-11-22: together_leaf: a job of 50002796 for the men's section takes 50002797 rows, screened by its men's
+    rules; the women's tops job and the knit cardigans' job keep their own."""
+    import listing_filter as LF
+    assert LF.together("50002796", leaf="mens-fall-long-sleeve-tops") == ["50002797"]
+    assert LF.together("50002796") == [] and LF.together("50002797") == []
+    men = Screen("50002796", namespace="fairwardgolf", leaf="mens-fall-long-sleeve-tops")
+    row = {"name": "캘러웨이 남성 골프 니트 반집업 스웨터", "category_id": "50002797", "product_id": "1",
+           "store": {"channel_no": "2"}}
+    assert men.check(row) is None
+    assert men.check({**row, "name": "남성 골프 니트 가디건"}) == "title:cardigan"
+    assert men.check({**row, "name": "여성 골프 니트 가디건"}) == "title:not_mens"
+    assert Screen("50002796", namespace="fairwardgolf").check({**row, "name": "여성 골프 니트 스웨터"}) == "category_mismatch"
+    knits = Screen("50002797", namespace="fairwardgolf")                    # the cardigans' job: as before
+    assert knits.check({**row, "name": "여성 골프 니트 가디건"}) is None
+    assert knits.check(row) == "title:not_womens"

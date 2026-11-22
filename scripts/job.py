@@ -210,7 +210,8 @@ class Job:
             self.meta: JobMeta = json.load(f)
         self.shop, self.category = self.meta["shop"], self.meta["category"]
         from listing_filter import together
-        self.also = together(self.category)        # categories taken with the job's (2026-11-21: 점퍼 + 재킷)
+        self.also = together(self.category, leaf=self.meta.get("leaf"))   # categories taken with the job's (점퍼 + 재킷;
+                                                   # the men's tops' 50002797 knits, 2026-11-22)
         self.shops_root = self.meta["shops_root"]
 
     @property

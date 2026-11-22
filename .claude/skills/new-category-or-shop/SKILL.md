@@ -25,13 +25,16 @@ Rules: `scripts/OWNER_RULES.md`; values are the owner's, dated (ONBOARDING.md "R
 1. **Scope.** Say which case it is: a category in an existing shop (part A), a new shop (part B), or both. Find
    the Naver **leaf** id (`/categories/list`, or a product page's `specs.category.id`). Every file uses that one
    string.
-2. **Look before asking.** Read the store's collections (ONBOARDING.md A6: the section may exist already), probe
+2. **Analysis phase, before anything is added (the owner 2026-11-22).** Nothing goes into the rule files until it
+   is done. Read the store's collections (ONBOARDING.md A6: the section may exist already), probe
    the listing the jobs read (ONBOARDING.md "B0. Probe the listing": `scripts/listing_probe.py` with the owner's
    query and two or three candidates: the rows by category, the adjacent leaves, the screen's reasons with
    examples, `--alt-rules`, the page's attributes), and price the candidate default boxes on a cheap and a dear
    product (A1). Decide from the probe's flags yourself; ask the owner only where the probe cannot settle a choice
-   that changes what the shop sells. Probe again after every change of the title screen. Bring numbers to the
-   questions.
+   that changes what the shop sells. Look at every contact sheet of the probe and write `decision.md` in its folder
+   (the queries the jobs take, the adjacent leaves: together / own section / leave, the rules: keep / widen /
+   narrow). Probe again after every change of the title screen, and once more right before the pilot. Bring
+   numbers to the questions.
 3. **Ask the owner, never invent.** Use one AskUserQuestion round for the owner's values, each written down with
    its date:
    - A1: the package averages, and baselines only for a set in a container;

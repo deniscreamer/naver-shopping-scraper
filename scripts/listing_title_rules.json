@@ -2389,7 +2389,10 @@
       "women"
      ]
     ],
-    "tokens": []
+    "tokens": [],
+    "leaves": [
+     "womens-knit-cardigans"
+    ]
    },
    {
     "code": "not_knit",
@@ -2403,7 +2406,10 @@
       "cardigan"
      ]
     ],
-    "tokens": []
+    "tokens": [],
+    "leaves": [
+     "womens-knit-cardigans"
+    ]
    },
    {
     "code": "not_cardigan",
@@ -2415,7 +2421,10 @@
       "cardigan"
      ]
     ],
-    "tokens": []
+    "tokens": [],
+    "leaves": [
+     "womens-knit-cardigans"
+    ]
    },
    {
     "code": "jacket_no_knit",
@@ -2455,6 +2464,347 @@
     "unless": [
      "니트",
      "knit"
+    ],
+    "leaves": [
+     "womens-knit-cardigans"
+    ]
+   },
+   {
+    "code": "not_mens",
+    "leaves": [
+     "mens-fall-long-sleeve-tops"
+    ],
+    "why": "2026-11-22 (the owner: the men's golf knits of 50002797 feed the men's long-sleeve tops; a listing probe found 71 of 97 cards of 남성 골프 니트 men's knit sweaters and half-zips there): the 50002796 men's rule. 2026-11-21 (men's fall long-sleeve golf tops, the second section of 50002796; the owner's required words: 남성|남자|mens|men and 긴팔|long sleeve): a title with no men's word is left out of the men's job (women's tops are the women's section's own job); \"men\" inside \"women\" is no men's word. 2026-11-22, the review: 맨즈 / 멘즈 too; \"men\" in moment, garment, department is no men's word. \"(MAN)\" too (Malbon writes it: 10 men's sweaters and polos of the sample).",
+    "requires": [
+     [
+      "남성",
+      "남자",
+      "맨즈",
+      "멘즈",
+      {
+       "text": "men",
+       "notFollowedBy": [
+        "t"
+       ],
+       "notPrecededBy": [
+        "wo"
+       ]
+      },
+      {
+       "text": "(man)",
+       "notFollowedBy": [],
+       "notPrecededBy": []
+      }
+     ]
+    ],
+    "tokens": []
+   },
+   {
+    "code": "short_sleeve",
+    "why": "2026-11-22 (the owner: the men's golf knits of 50002797 feed the men's long-sleeve tops; a listing probe found 71 of 97 cards of 남성 골프 니트 men's knit sweaters and half-zips there): the 50002796 men's rule. 2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a short-sleeve or sleeveless top (반팔, 반소매, 숏슬리브, 민소매, 슬리브리스, 나시, sleeveless) is no fall long-sleeve top; none of the 768 said 반팔 (the query says 긴팔), the rule keeps it so.",
+    "tokens": [
+     {
+      "text": "반팔",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "반소매",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "숏슬리브",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "민소매",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "슬리브리스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "나시",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "sleeveless",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "shortsleeve",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ],
+    "leaves": [
+     "mens-fall-long-sleeve-tops"
+    ]
+   },
+   {
+    "code": "cardigan",
+    "why": "2026-11-22 (the owner: the men's golf knits of 50002797 feed the men's long-sleeve tops; a listing probe found 71 of 97 cards of 남성 골프 니트 men's knit sweaters and half-zips there): the 50002796 men's rule. 2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a cardigan (가디건, 카디건) is the knit cardigans' (50002797); 10 of the 768.",
+    "tokens": [
+     {
+      "text": "가디건",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "카디건",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "cardigan",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ],
+    "leaves": [
+     "mens-fall-long-sleeve-tops"
+    ]
+   },
+   {
+    "code": "vest",
+    "why": "2026-11-22 (the owner: the men's golf knits of 50002797 feed the men's long-sleeve tops; a listing probe found 71 of 97 cards of 남성 골프 니트 men's knit sweaters and half-zips there): the 50002796 men's rule. 2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a vest (조끼, 베스트, vest, gilet; a 티베스트 too) is a midlayer, never a long-sleeve top; 베스트라 (Vestra) and 베스트셀러 (best seller) are no vest.",
+    "tokens": [
+     {
+      "text": "조끼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "vest",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "gilet",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "베스트",
+      "notFollowedBy": [
+       "라",
+       "셀"
+      ],
+      "notPrecededBy": []
+     }
+    ],
+    "leaves": [
+     "mens-fall-long-sleeve-tops"
+    ]
+   },
+   {
+    "code": "outerwear",
+    "why": "2026-11-22 (the owner: the men's golf knits of 50002797 feed the men's long-sleeve tops; a listing probe found 71 of 97 cards of 남성 골프 니트 men's knit sweaters and half-zips there): the 50002796 men's rule. 2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a jacket, a windbreaker, padding or a coat (자켓, 재킷, 점퍼, 잠바, 바람막이, 패딩, 다운, 코트) is outerwear: the windbreakers' or the midlayers'; 다운블로우 is a brand, 트리코트 (tricot) no coat. 2026-11-21, the second pilot: a piste or an anorak (피스테, 아노락) too (Malbon 12375182812 sold a 컬러블록 피스테 among its tops).",
+    "tokens": [
+     {
+      "text": "자켓",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "재킷",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "쟈켓",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "점퍼",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "잠바",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "바람막이",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "패딩",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "jacket",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "jumper",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "windbreaker",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "padding",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "coat",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "다운",
+      "notFollowedBy": [
+       "블로우"
+      ],
+      "notPrecededBy": []
+     },
+     {
+      "text": "코트",
+      "notFollowedBy": [],
+      "notPrecededBy": [
+       "리",
+       "스",
+       "에"
+      ]
+     },
+     {
+      "text": "피스테",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "아노락",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "piste",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "anorak",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "윈드브레이커",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ],
+    "leaves": [
+     "mens-fall-long-sleeve-tops"
+    ]
+   },
+   {
+    "code": "bottoms_or_set",
+    "why": "2026-11-22 (the owner: the men's golf knits of 50002797 feed the men's long-sleeve tops; a listing probe found 71 of 97 cards of 남성 골프 니트 men's knit sweaters and half-zips there): the 50002796 men's rule. 2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): trousers, a skirt, leggings or a set (팬츠, 바지, 스커트, 치마, 큐롯, 레깅스, 세트, 상하, 투피스) is no single top: \"티셔츠 + 와이드 롱팬츠 2종 택1\", \"니트 스커트 상하의 세트\" (14 of the 768 say 세트).",
+    "tokens": [
+     {
+      "text": "팬츠",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "바지",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "스커트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "치마",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "큐롯",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "레깅스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "세트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "상하",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "투피스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "pants",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "skirt",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "leggings",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ],
+    "leaves": [
+     "mens-fall-long-sleeve-tops"
+    ]
+   },
+   {
+    "code": "kids",
+    "why": "2026-11-22 (the owner: the men's golf knits of 50002797 feed the men's long-sleeve tops; a listing probe found 71 of 97 cards of 남성 골프 니트 men's knit sweaters and half-zips there): the 50002796 men's rule. 2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a child's top (키즈, 주니어, 아동) is no women's top.",
+    "tokens": [
+     {
+      "text": "키즈",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "주니어",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "아동",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ],
+    "leaves": [
+     "mens-fall-long-sleeve-tops"
     ]
    }
   ],
@@ -3515,6 +3865,15 @@
  },
  "default_leaf": {
   "about": "2026-11-21: a job of a category that feeds several shop sections and names none (--leaf) is this section's (the jobs before the second section)",
-  "50002796": "womens-fall-long-sleeve-tops"
+  "50002796": "womens-fall-long-sleeve-tops",
+  "50002797": "womens-knit-cardigans"
+ },
+ "together_leaf": {
+  "about": "2026-11-22: a job of the key section takes these categories with its own (each row screened by its own category's rules for that section)",
+  "mens-fall-long-sleeve-tops": {
+   "50002796": [
+    "50002797"
+   ]
+  }
  }
 }

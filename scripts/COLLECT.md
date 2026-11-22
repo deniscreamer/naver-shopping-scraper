@@ -227,7 +227,7 @@ not-preceded-by / not-followed-by exceptions, latin words whole), `title:<code>`
 word; 2026-11-20: 50002798 a women's word and a jacket word; 2026-11-21: fleece, coats too; 50002796 a women's word (the women's section; the men's job, `--leaf mens-fall-long-sleeve-tops`: a men's word ("(MAN)" too) and a long-sleeve word, or a garment long-sleeved by itself: 기모, 히트텍, 맨투맨, 후드, 니트, 집업, 풀오버, 이너 ..., 227 of 274 store products of the query kept, 148 with 긴팔 alone; rules with `leaves`, 2026-11-22), no short sleeve, cardigan, vest, outerwear, bottoms or set, arm sleeves, cooling or kids' word), `category_mismatch` (only the exact leaf
 category, or one `listing_title_rules.json` `together` takes with it: 2026-11-21, the owner, 점퍼 50002798 and 재킷
 50002799 feed one section, a job of either takes both, each row screened by its own category's rules and collected
-as its own category), `key_unavailable` (no store number: no shop check possible), `already_published`, `deferred`. Catalog and
+as its own category; `together_leaf` the same for one section's job only: the men's long-sleeve tops of 50002796 take the men's knits of 50002797, 2026-11-22), `key_unavailable` (no store number: no shop check possible), `already_published`, `deferred`. Catalog and
 external-mall cards never reach it (the server keeps store products only).
 
 **Already in the shop** (`shopify_catalog.ShopCatalog`): every product of the store, any status (a draft or an

@@ -282,8 +282,11 @@ def test_knit_cardigans_go_to_the_womens_section_under_apparel_and_a_mens_or_unk
         assert got["tags"] == ["fairwardgolf:leaf:womens-knit-cardigans", "fairwardgolf:parent:apparel",
                                "fairwardgolf:showcase"]
     mixed = PL.place(product("mixed", {"s1": "mens", "s2": "womens"}, category="50002797"), PROFILE)
-    assert mixed["status"] == "placed" and mixed["leaves"][0]["fit_skus"] == ["s2"]
-    for value in ("mens", "unknown", "conflict"):
+    assert mixed["status"] == "placed" and {x["leaf"]: x["fit_skus"] for x in mixed["leaves"]} == {
+        "womens-knit-cardigans": ["s2"], "mens-fall-long-sleeve-tops": ["s1"]}
+    men = PL.place(product("mens", category="50002797"), PROFILE)    # the men's knits: men's tops (2026-11-22)
+    assert men["status"] == "placed" and men["product_type"] == "Men’s Long-Sleeve Golf Tops"
+    for value in ("unknown", "conflict"):
         assert PL.place(product(value, category="50002797"), PROFILE)["status"] == "unresolved"
 
 

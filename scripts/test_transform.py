@@ -969,7 +969,8 @@ def test_the_windbreaker_rules_are_the_knits_and_it_is_reviewed():
     """50002798 (2026-11-20, the owner delegated the values): the knit cardigans' apparel choices; a new category goes
     DRAFT (reviewed False) until the lens review and the owner's activation."""
     knit, wind = (rules_for("fairwardgolf").category(c) for c in ("50002797", "50002798"))
-    assert wind == knit and wind.reviewed            # the owner 2026-11-21: live after pilot 2's review
+    assert dataclasses.replace(knit, sizes_mens=None, draft_leaves=()) == wind and wind.reviewed
+    assert knit.sizes_mens == "mens_tops" and knit.draft_leaves == ("mens-fall-long-sleeve-tops",)  # men's knits
     assert wind.sizes == "womens_tops"
 
 

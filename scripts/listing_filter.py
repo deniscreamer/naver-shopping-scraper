@@ -65,13 +65,18 @@ def title_rules(category_id: str, path: str = TITLE_RULES, leaf: str | None = No
             if not r.get("leaves") or leaf in r["leaves"]]
 
 
-def together(category_id: str, path: str = TITLE_RULES) -> list[str]:
+def together(category_id: str, path: str = TITLE_RULES, leaf: str | None = None) -> list[str]:
     """The categories a job of `category_id` also takes (listing_title_rules.json `together`, 2026-11-21: the same
-    shop section from two Naver leaves), [] for none."""
+    shop section from two Naver leaves), and for a job of section `leaf` its `together_leaf` ones (2026-11-22: the men's
+    long-sleeve tops of 50002796 take the men's knits of 50002797, the women's tops job does not), [] for none."""
     if not os.path.exists(path):
         return []
     with open(path, encoding="utf-8") as f:
-        return [str(c) for c in json.load(f).get("together", {}).get(str(category_id), [])]
+        data = json.load(f)
+    out = [str(c) for c in data.get("together", {}).get(str(category_id), [])]
+    if leaf:
+        out += [str(c) for c in data.get("together_leaf", {}).get(leaf, {}).get(str(category_id), []) if c not in out]
+    return out
 
 
 def _bare(word: str | None) -> str:
@@ -169,7 +174,7 @@ class Screen:
         rules = (exclusions or load_exclusions())["universal"]
         self.category_rules = title_rules(category_id, leaf=leaf) if category_rules is None else category_rules
         self.category_id = str(category_id)
-        self.also = together(category_id)              # rows of these categories are taken too (their own rules)
+        self.also = together(category_id, leaf=leaf)   # rows of these categories are taken too (their own rules)
         self.rules_of = {c: (title_rules(c, leaf=leaf) if category_rules is None else category_rules) for c in self.also}
         self.namespace = namespace
         self.exclude_sponsored = exclude_sponsored    # ads kept (the owner, 2026-11-06), whatever the file says

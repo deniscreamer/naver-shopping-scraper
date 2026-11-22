@@ -5,6 +5,10 @@
 
 ## This kind of product: women's golf knit cardigans
 
+- A men's knit of this category (a sweater, a half-zip, a pullover: the men's long-sleeve tops, 2026-11-22): say in the
+  intro that it is a men's golf knit sweater (or half-zip), never a cardigan unless it opens down the front; the
+  lists and the rules below hold for it as for a cardigan.
+
 - Say in the intro that it is a women's knit cardigan for golf, with the brand, the closure and the one feature that sets it apart (windproof lining, cashmere blend, cable knit). Unisex: say it is a unisex cardigan.
 - Never state a size, a size range or a measurement: no Korean size (55, 66, 77, 88), no letter size (S, M, L, XL), no "one size", no length, chest, shoulder or sleeve in cm or inches, no weight. The shop shows the size chart apart. Fit words are fine ("relaxed fit", "true to size" when buyers or the seller say so).
 - A two-piece set or an ensemble is described as what is sold: the cardigan and the top, both named.
