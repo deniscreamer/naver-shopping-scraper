@@ -164,7 +164,8 @@ RULES = {
                                       sizes="womens_tops",  # US sizes and the size chart (the owner 2026-11-19)
                                       own_brand_wordmark=True,   # the shop's own brand (Grehip, Tee And Golf)
                                       sizes_mens="mens_tops",     # its men's knits: the men's long-sleeve tops (2026-11-22)
-                                      draft_leaves=("mens-fall-long-sleeve-tops",),
+                                      # draft_leaves: none since the owner's activation of the men's pilot
+                                      # (2026-11-22: 91 drafts activated after the review, 15 held)
                                       reviewed=True),       # the owner 2026-11-20: 52 drafts activated after the
                                                             # lens review of wave 1
             "50002798": CategoryRules(
@@ -190,7 +191,8 @@ RULES = {
                 no_choice_out=True, composition=True, sizes="womens_tops", own_brand_wordmark=True,
                 variant_screen=("short_sleeve", "cardigan", "vest", "cooling", "outerwear"),
                 sizes_mens="mens_tops",                     # the men's section (the owner 2026-11-21)
-                draft_leaves=("mens-fall-long-sleeve-tops",),   # DRAFT until its pilot's review
+                # draft_leaves ("mens-fall-long-sleeve-tops", DRAFT until its pilot's review): none since the owner
+                # activated the men's pilot 2026-11-22 (91 drafts after the lens review of 100, 15 held)
                 reviewed=True),       # the owner 2026-11-21: 24 drafts of the pilot activated after its review
             "50002799": CategoryRules(
                 paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
