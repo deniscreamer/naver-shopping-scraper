@@ -17,25 +17,31 @@ ROWS = [row("타이틀리스트 남성 골프 긴팔 티셔츠"), row("남성 �
 
 
 def test_the_probe_counts_the_rows_the_screen_and_the_adjacent_category():
-    got = P.analyze(ROWS, FILTERS, "50002796", "mens-fall-long-sleeve-tops")
+    got = P.analyze(ROWS, FILTERS, "50002796", None)                       # the women's default section
+    assert got["rows"] == 7 and got["in_category"] == 5
+    got = P.analyze(ROWS, FILTERS, "50002796", "mens-fall-long-sleeve-tops", rules=None)
+    assert got["in_category"] == 7                                          # the men's job takes 50002797 (11-22)
+    got = P.analyze([r for r in ROWS if r["category_id"] == "50002796"] + [
+        row("남성 골프 니트 반집업", "50002800"), row("남성 골프 니트 스웨터", "50002800")], FILTERS, "50002796",
+        "mens-fall-long-sleeve-tops")
     assert got["rows"] == 7 and got["in_category"] == 5
     assert got["screen"]["kept"] == 2 and got["screen"]["reasons"]["title:not_long_sleeve"] == 2
     assert got["screen"]["reasons"]["title:cooling"] == 1
-    assert got["others_screen"]["50002797"] == {"rows": 2, "kept": 2, "examples": {"kept": [
+    assert got["others_screen"]["50002800"] == {"rows": 2, "kept": 2, "examples": {"kept": [
         "남성 골프 니트 반집업", "남성 골프 니트 스웨터"]}}
     flags = {f["flag"] for f in got["attention"]}
     assert {"kept_low", "requires_drops", "adjacent_category", "attribute_filter"} <= flags
-    assert got["adjacent"] == [{"id": "50002797", "path": "스포츠/레저 > 골프 > 골프의류 > 니트"}]
+    assert got["adjacent"] == []                                            # 50002797 is taken now
 
 
 def test_the_alternative_rules_show_what_they_add():
     rules = P.LF.title_rules("50002796", leaf="mens-fall-long-sleeve-tops")
     wider = [dict(r, requires=[[*r["requires"][0], "카라"]]) if r["code"] == "not_long_sleeve" else r for r in rules]
     got = P.analyze(ROWS, FILTERS, "50002796", "mens-fall-long-sleeve-tops", alt_rules=wider)
-    assert got["alt"]["kept"] == 4 and got["alt"]["added"] == ["남성 골프 카라 티셔츠", "남성 골프 카라티 티셔츠"]
+    assert got["alt"]["kept"] == 6 and got["alt"]["added"] == ["남성 골프 카라 티셔츠", "남성 골프 카라티 티셔츠"]
     assert got["alt"]["dropped"] == []
     assert "## " not in P.report("50002796", None, {})                       # no query, no section
-    assert "kept by the screen: 2 of 5" in P.report("50002796", "mens", {"q": got})
+    assert "kept by the screen: 4 of 7" in P.report("50002796", "mens", {"q": got})
 
 
 def test_the_sheets_group_the_cards_and_draw_offline(tmp_path):
@@ -44,9 +50,10 @@ def test_the_sheets_group_the_cards_and_draw_offline(tmp_path):
     rules = P.LF.title_rules("50002796", leaf="mens-fall-long-sleeve-tops")
     rows = [dict(r, product_id=str(i), image=f"https://shopping-phinf.pstatic.net/main_1/{i}.jpg") for i, r in
             enumerate(ROWS)]
-    got = P.cards(rows, "50002796", rules)
+    got = P.cards(rows, "50002796", rules)                                  # no section: 50002797 is another leaf
     assert [c.group for c in got][:2] == ["kept", "kept"] and got[0].mark is None
     assert {c.group: c.mark for c in got}["other leaf 50002797"] == "info"
+    assert "other leaf 50002797" not in {c.group for c in P.cards(rows, "50002796", rules, "mens-fall-long-sleeve-tops")}
     assert {c.group: c.mark for c in got}["title:cooling"] == "flag"
     import io
     from PIL import Image

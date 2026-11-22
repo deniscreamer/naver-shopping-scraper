@@ -2574,7 +2574,7 @@
    },
    {
     "code": "vest",
-    "why": "2026-11-22 (the owner: the men's golf knits of 50002797 feed the men's long-sleeve tops; a listing probe found 71 of 97 cards of 남성 골프 니트 men's knit sweaters and half-zips there): the 50002796 men's rule. 2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a vest (조끼, 베스트, vest, gilet; a 티베스트 too) is a midlayer, never a long-sleeve top; 베스트라 (Vestra) and 베스트셀러 (best seller) are no vest.",
+    "why": "2026-11-22 (the owner: the men's golf knits of 50002797 feed the men's long-sleeve tops; a listing probe found 71 of 97 cards of 남성 골프 니트 men's knit sweaters and half-zips there): the 50002796 men's rule. 2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a vest (조끼, 베스트, vest, gilet; a 티베스트 too) is a midlayer, never a long-sleeve top; 베스트라 (Vestra) and 베스트셀러 (best seller) are no vest. 2026-11-22: 시즌베스트 / 베스트입고 (a season's best seller, 제이린드버그 남성 투어 메리노울 반집업 니트 in the probe of 남성 골프 니트) is no vest.",
     "tokens": [
      {
       "text": "조끼",
@@ -2595,9 +2595,12 @@
       "text": "베스트",
       "notFollowedBy": [
        "라",
-       "셀"
+       "셀",
+       "입고"
       ],
-      "notPrecededBy": []
+      "notPrecededBy": [
+       "시즌"
+      ]
      }
     ],
     "leaves": [
@@ -2706,6 +2709,60 @@
      },
      {
       "text": "윈드브레이커",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ],
+    "leaves": [
+     "mens-fall-long-sleeve-tops"
+    ]
+   },
+   {
+    "code": "cooling",
+    "why": "2026-11-22 (the men's golf knits of 50002797 feed the men's long-sleeve tops): the 50002796 rule. 2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a summer cooling top (냉감, 쿨링, 쿨티, 쿨긴팔: 17 of the 768) is no fall top. 2026-11-22: 쿨니트 (a summer cool knit, 애플라인드 26SS 남성 인견 썸머 쿨니트 in the probe of 남성 골프 니트).",
+    "tokens": [
+     {
+      "text": "냉감",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "쿨링",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "쿨티",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "쿨긴팔",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "쿨메쉬",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "아이스쿨",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "쿨터치",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "쿨이너",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "쿨니트",
       "notFollowedBy": [],
       "notPrecededBy": []
      }
@@ -2939,7 +2996,7 @@
    },
    {
     "code": "vest",
-    "why": "2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a vest (조끼, 베스트, vest, gilet) is not a jacket; 베스트라 is Klattermusen's Vestra jacket.",
+    "why": "2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a vest (조끼, 베스트, vest, gilet) is not a jacket; 베스트라 is Klattermusen's Vestra jacket. 2026-11-22: 시즌베스트 / 베스트입고 (a season's best seller, 제이린드버그 남성 투어 메리노울 반집업 니트 in the probe of 남성 골프 니트) is no vest.",
     "tokens": [
      {
       "text": "조끼",
@@ -2949,9 +3006,12 @@
      {
       "text": "베스트",
       "notFollowedBy": [
-       "라"
+       "라",
+       "입고"
       ],
-      "notPrecededBy": []
+      "notPrecededBy": [
+       "시즌"
+      ]
      },
      {
       "text": "vest",
@@ -3237,7 +3297,7 @@
    },
    {
     "code": "vest",
-    "why": "2026-11-21 (재킷 50002799, the same section as 점퍼 50002798, the owner's decision): the 50002798 rule, the same words. 2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a vest (조끼, 베스트, vest, gilet) is not a jacket; 베스트라 is Klattermusen's Vestra jacket.",
+    "why": "2026-11-21 (재킷 50002799, the same section as 점퍼 50002798, the owner's decision): the 50002798 rule, the same words. 2026-11-20 (women's golf windbreakers 50002798; the owner gave the section and delegated the rest, studied on 767 listing titles of the query 여성 골프 바람막이 점퍼 in 8 price bands): a vest (조끼, 베스트, vest, gilet) is not a jacket; 베스트라 is Klattermusen's Vestra jacket. 2026-11-22: 시즌베스트 / 베스트입고 (a season's best seller, 제이린드버그 남성 투어 메리노울 반집업 니트 in the probe of 남성 골프 니트) is no vest.",
     "tokens": [
      {
       "text": "조끼",
@@ -3247,9 +3307,12 @@
      {
       "text": "베스트",
       "notFollowedBy": [
-       "라"
+       "라",
+       "입고"
       ],
-      "notPrecededBy": []
+      "notPrecededBy": [
+       "시즌"
+      ]
      },
      {
       "text": "vest",
@@ -3569,7 +3632,7 @@
    },
    {
     "code": "vest",
-    "why": "2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a vest (조끼, 베스트, vest, gilet; a 티베스트 too) is a midlayer, never a long-sleeve top; 베스트라 (Vestra) and 베스트셀러 (best seller) are no vest.",
+    "why": "2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a vest (조끼, 베스트, vest, gilet; a 티베스트 too) is a midlayer, never a long-sleeve top; 베스트라 (Vestra) and 베스트셀러 (best seller) are no vest. 2026-11-22: 시즌베스트 / 베스트입고 (a season's best seller, 제이린드버그 남성 투어 메리노울 반집업 니트 in the probe of 남성 골프 니트) is no vest.",
     "tokens": [
      {
       "text": "조끼",
@@ -3590,9 +3653,12 @@
       "text": "베스트",
       "notFollowedBy": [
        "라",
-       "셀"
+       "셀",
+       "입고"
       ],
-      "notPrecededBy": []
+      "notPrecededBy": [
+       "시즌"
+      ]
      }
     ]
    },
@@ -3787,7 +3853,7 @@
    },
    {
     "code": "cooling",
-    "why": "2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a summer cooling top (냉감, 쿨링, 쿨티, 쿨긴팔: 17 of the 768) is no fall top.",
+    "why": "2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a summer cooling top (냉감, 쿨링, 쿨티, 쿨긴팔: 17 of the 768) is no fall top. 2026-11-22: 쿨니트 (a summer cool knit, 애플라인드 26SS 남성 인견 썸머 쿨니트 in the probe of 남성 골프 니트).",
     "tokens": [
      {
       "text": "냉감",
@@ -3826,6 +3892,11 @@
      },
      {
       "text": "쿨이너",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "쿨니트",
       "notFollowedBy": [],
       "notPrecededBy": []
      }

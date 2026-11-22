@@ -145,7 +145,8 @@ Read every sheet with the Read tool, then check a doubt by its `q<n>/index.tsv` 
 - "kept": every card the section's kind? A misfit there is a missing word of a screen rule;
 - each reason group: any card that fits? Then that rule drops what the section sells (`--alt-rules` the fix);
 - each other leaf, blue cards: the section's goods? The leaf is a `together` candidate; red cards there show what
-  else it holds;
+  else it holds; a leaf the section takes already (`together`, or `together_leaf` for the probe's `--leaf`) counts
+  as the category, screened by that leaf's own rules for the section (2026-11-22);
 - a probe is good enough when the kept group is the section's kind at a glance and its share and reviews match the
   report; else probe another query or more batches before deciding.
 Write the verdict in the probe's folder, `decision.md`: per query take / drop / add as a job's query; per adjacent leaf

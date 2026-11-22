@@ -562,6 +562,10 @@ def test_the_mens_tops_job_takes_the_mens_knits_and_the_womens_jobs_do_not():
     assert men.check(row) is None
     assert men.check({**row, "name": "남성 골프 니트 가디건"}) == "title:cardigan"
     assert men.check({**row, "name": "여성 골프 니트 가디건"}) == "title:not_mens"
+    # the probe of 남성 골프 니트 (2026-11-22): a season's best seller is no vest, a summer cool knit is no fall top
+    assert men.check({**row, "name": "(시즌베스트입고)제이린드버그골프 남성 투어 메리노울 반집업 니트"}) is None
+    assert men.check({**row, "name": "남성 골프 니트 베스트"}) == "title:vest"
+    assert men.check({**row, "name": "애플라인드 26SS 남성 인견 썸머 쿨니트 3종"}) == "title:cooling"
     assert Screen("50002796", namespace="fairwardgolf").check({**row, "name": "여성 골프 니트 스웨터"}) == "category_mismatch"
     knits = Screen("50002797", namespace="fairwardgolf")                    # the cardigans' job: as before
     assert knits.check({**row, "name": "여성 골프 니트 가디건"}) is None

@@ -58,18 +58,20 @@ def analyze(rows: list[dict[str, Any]], filters: dict[str, Any] | None, category
             totals: dict[str, Any] | None = None) -> dict[str, Any]:
     """One query's rows and filters -> the probe's findings (pure; the tests call it with fixture rows)."""
     rules = LF.title_rules(category, leaf=leaf) if rules is None else rules
-    taken = {category, *LF.together(category)}
+    taken = {category, *LF.together(category, leaf=leaf)}
+    own = {c: LF.title_rules(c, leaf=leaf) for c in taken if c != category}   # a taken leaf: its own rules (the job)
     paths = {c["id"]: " > ".join(c.get("path") or []) for c in (filters or {}).get("categories") or []}
     by_cat = Counter(_row_category(r) for r in rows)
     mine = [r for r in rows if _row_category(r) in taken]
     others = [r for r in rows if _row_category(r) not in taken]
 
-    def screen(sample: list[dict[str, Any]], with_rules: list[dict[str, Any]]) -> dict[str, Any]:
+    def screen(sample: list[dict[str, Any]], with_rules: list[dict[str, Any]],
+               by_leaf: dict[str, list[dict[str, Any]]] | None = None) -> dict[str, Any]:
         reasons: Counter[str] = Counter()
         examples: dict[str, list[str]] = {}
         kept = []
         for r in sample:
-            code = LF.title_rule(r.get("name"), with_rules) or "kept"
+            code = LF.title_rule(r.get("name"), (by_leaf or {}).get(_row_category(r), with_rules)) or "kept"
             reasons[code] += 1
             examples.setdefault(code, [])
             if len(examples[code]) < EXAMPLES:
@@ -79,7 +81,7 @@ def analyze(rows: list[dict[str, Any]], filters: dict[str, Any] | None, category
         return {"rows": len(sample), "kept": len(kept), "reasons": dict(reasons.most_common()),
                 "examples": examples, "_kept": kept}
 
-    today = screen(mine, rules)
+    today = screen(mine, rules, own)
     reviews = [int(((r.get("reviews") or {}).get("count")) or 0) for r in today["_kept"]]
     out: dict[str, Any] = {
         "rows": len(rows), "in_category": len(mine), "totals": totals or {},
@@ -94,7 +96,7 @@ def analyze(rows: list[dict[str, Any]], filters: dict[str, Any] | None, category
                               if k in ("rows", "kept", "examples")} for c in {_row_category(r) for r in others}},
     }
     if alt_rules is not None:
-        alt = screen(mine, alt_rules)
+        alt = screen(mine, alt_rules, own)
         now = {r.get("name") for r in today["_kept"]}
         then = {r.get("name") for r in alt["_kept"]}
         out["alt"] = {**{k: v for k, v in alt.items() if not k.startswith("_")},
@@ -135,12 +137,14 @@ def attention(found: dict[str, Any], rules: list[dict[str, Any]]) -> list[dict[s
 THUMB = "?type=f300"     # a 300 px rendition of the listing card's photo (shopping-phinf)
 
 
-def cards(rows: list[dict[str, Any]], category: str, rules: list[dict[str, Any]]) -> list[S.Card]:
+def cards(rows: list[dict[str, Any]], category: str, rules: list[dict[str, Any]],
+          leaf: str | None = None) -> list[S.Card]:
     """The query's rows as sheet cards, grouped: kept, each reason, each other leaf (blue: the screen keeps it)."""
-    taken = {category, *LF.together(category)}
+    taken = {category, *LF.together(category, leaf=leaf)}
+    own = {c: LF.title_rules(c, leaf=leaf) for c in taken if c != category}
     out = []
     for r in rows:
-        code = LF.title_rule(r.get("name"), rules)
+        code = LF.title_rule(r.get("name"), own.get(_row_category(r), rules))
         cat = _row_category(r)
         if cat in taken:
             group, mark = (code or "kept"), (None if code is None else "flag")
@@ -251,7 +255,8 @@ def main(argv: list[str] | None = None) -> int:
     if not a.no_sheets:
         rules = LF.title_rules(a.category, leaf=a.leaf)
         for i, (query, rows) in enumerate(rows_of.items(), 1):
-            probes[query]["sheets"] = draw(cards(rows, a.category, rules), os.path.join(folder, f"q{i}"), "sheet")
+            probes[query]["sheets"] = draw(cards(rows, a.category, rules, a.leaf), os.path.join(folder, f"q{i}"),
+                                           "sheet")
     with open(os.path.join(folder, "probe.json"), "w", encoding="utf-8") as f:
         json.dump({"category": a.category, "leaf": a.leaf, "queries": probes}, f, ensure_ascii=False, indent=1)
     text = report(a.category, a.leaf, probes)
