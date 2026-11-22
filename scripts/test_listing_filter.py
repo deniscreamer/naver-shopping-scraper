@@ -529,8 +529,16 @@ def test_long_sleeve_tops_need_a_womens_word_and_no_other_garment(title, code):
     ("남성 골프 반팔 티셔츠", "title:not_long_sleeve", "title:not_womens"),
     ("남성 골프 맨투맨", "title:not_long_sleeve", "title:not_womens"),
     ("남성 골프 긴팔 카라 티셔츠 가디건", "title:cardigan", "title:not_womens"),  # the shared rules bind both
+    ("레디스 긴팔 garment dyed 폴로", "title:not_mens", "title:not_womens"),     # garment is no men's word (11-22)
+    ("멘즈 골프 긴팔 티셔츠", None, "title:not_womens"),
 ])
 def test_each_section_of_the_long_sleeve_tops_has_its_own_required_words(title, mens, womens):
     row = {"name": title, "category_id": "50002796", "product_id": "1", "store": {"channel_no": "2"}}
     assert Screen("50002796", namespace="fairwardgolf", leaf="mens-fall-long-sleeve-tops").check(row) == mens
     assert Screen("50002796", namespace="fairwardgolf").check(row) == womens
+
+
+def test_a_job_may_name_only_a_known_section():
+    import listing_filter as LF
+    assert LF.leaves_of("50002796") == {"womens-fall-long-sleeve-tops", "mens-fall-long-sleeve-tops"}
+    assert LF.leaves_of("50002788") == set()

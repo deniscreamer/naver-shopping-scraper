@@ -93,6 +93,17 @@ def title_rule(name: str | None, rules: Iterable[dict[str, Any]]) -> str | None:
     return None
 
 
+def leaves_of(category_id: str, path: str = TITLE_RULES) -> set[str]:
+    """The sections a job of the category may name (--leaf): its rules' `leaves` and its `default_leaf`."""
+    if not os.path.exists(path):
+        return set()
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+    out = {x for r in data.get("categories", {}).get(str(category_id), []) for x in r.get("leaves") or []}
+    default = data.get("default_leaf", {}).get(str(category_id))
+    return out | ({default} if default else set())
+
+
 def _word_in(word: Any, text: str) -> bool:
     """A required word in the bare title: a plain word anywhere, or a token with its rules ("men" not after "wo")."""
     if isinstance(word, dict):

@@ -3078,14 +3078,18 @@
     "leaves": [
      "mens-fall-long-sleeve-tops"
     ],
-    "why": "2026-11-21 (men's fall long-sleeve golf tops, the second section of 50002796; the owner's required words: 남성|남자|mens|men and 긴팔|long sleeve): a title with no men's word is left out of the men's job (women's tops are the women's section's own job); \"men\" inside \"women\" is no men's word.",
+    "why": "2026-11-21 (men's fall long-sleeve golf tops, the second section of 50002796; the owner's required words: 남성|남자|mens|men and 긴팔|long sleeve): a title with no men's word is left out of the men's job (women's tops are the women's section's own job); \"men\" inside \"women\" is no men's word. 2026-11-22, the review: 맨즈 / 멘즈 too; \"men\" in moment, garment, department is no men's word.",
     "requires": [
      [
       "남성",
       "남자",
+      "맨즈",
+      "멘즈",
       {
        "text": "men",
-       "notFollowedBy": [],
+       "notFollowedBy": [
+        "t"
+       ],
        "notPrecededBy": [
         "wo"
        ]

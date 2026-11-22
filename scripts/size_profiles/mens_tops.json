@@ -2,39 +2,47 @@
  "format": "size-profile/1",
  "name": "mens_tops",
  "_doc": "Men's tops (long-sleeve golf tops 50002796, the men's section, 2026-11-21): Korean labels -> US sizes. The doc: size_profiles/mens_tops.md; the mechanism: scripts/SIZES.md. The grid is the FALLBACK, used only when the product's own label and chart say nothing.",
- "approved": "2026-11-21, on the owner's section and the women's principle (the Korean label is the body chest in cm; the US size whose chest band holds it); the owner may correct it",
+ "approved": "2026-11-21, on the owner's section and the women's principle (the Korean label is the body chest in cm; the US size whose chest band holds it); the owner may correct it; 2026-11-22 the review: the bare letters follow the Korean convention (M = 95, so a Korean M is a US S), each band holds its own chest",
  "labels": "kr_tops",
  "measures": "tops",
  "fit": "chest",
  "kr_women": {},
  "letters": {
-  "XS": 90,
-  "S": 95,
-  "M": 100,
-  "L": 105,
-  "XL": 110,
-  "LL": 110,
-  "XXL": 115,
-  "2XL": 115,
-  "3L": 115,
-  "XXXL": 120,
-  "3XL": 120
+  "XS": 85,
+  "S": 90,
+  "M": 95,
+  "L": 100,
+  "XL": 105,
+  "LL": 105,
+  "XXL": 110,
+  "2XL": 110,
+  "3L": 110,
+  "XXXL": 115,
+  "3XL": 115
  },
  "grid": [
+  {
+   "chest_cm": 85,
+   "us": "XXS",
+   "bust_in": [
+    32,
+    34
+   ]
+  },
   {
    "chest_cm": 90,
    "us": "XS",
    "bust_in": [
-    33,
-    35
+    34,
+    36
    ]
   },
   {
    "chest_cm": 95,
    "us": "S",
    "bust_in": [
-    35,
-    37
+    36,
+    38
    ]
   },
   {
@@ -49,32 +57,32 @@
    "chest_cm": 105,
    "us": "L",
    "bust_in": [
-    41,
-    43
+    40,
+    42
    ]
   },
   {
    "chest_cm": 110,
    "us": "XL",
    "bust_in": [
-    44,
-    46
+    42,
+    44
    ]
   },
   {
    "chest_cm": 115,
    "us": "XXL",
    "bust_in": [
-    47,
-    49
+    44,
+    46
    ]
   },
   {
    "chest_cm": 120,
    "us": "XXXL",
    "bust_in": [
-    50,
-    52
+    46,
+    48
    ]
   }
  ],

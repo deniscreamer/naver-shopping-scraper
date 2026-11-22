@@ -84,7 +84,8 @@ def place(prepared: dict[str, Any], profile: PlacementProfile) -> dict[str, Any]
                flags=stated.get("flags") or [])
 
     def sections(v: str | None) -> list[str]:
-        return [x for x in attr.implies.get(v or "", (v or "",)) if x and x in cat.leaves]
+        implied = attr.implies.get(v or "", (v or "",))
+        return [x for x in implied if x and x in cat.leaves and not (len(implied) > 1 and x in cat.stated_only)]
 
     if value in ("unknown", "conflict") or not (value == "mixed" or sections(value)):
         if cat.unresolved != "hold":

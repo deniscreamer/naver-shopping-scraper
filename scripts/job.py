@@ -416,6 +416,17 @@ def known_ids() -> set[str]:
     return ids
 
 
+def _leaf_ok(args: argparse.Namespace) -> bool:
+    """--leaf names a section the category's title rules know (a typo would drop the section's required words)."""
+    from listing_filter import leaves_of
+    leaf = getattr(args, "leaf", None)
+    if leaf and leaf not in leaves_of(args.category):
+        known = ", ".join(sorted(leaves_of(args.category))) or "none"
+        print(f"stop: --leaf {leaf}: no such section of {args.category} in listing_title_rules.json (known: {known})")
+        return False
+    return True
+
+
 def _no_measures(category: str) -> list[str]:
     """The job's category and those taken with it (`together`) that have no category_measures.json row."""
     from listing_filter import together
@@ -497,6 +508,8 @@ def cmd_new(args: argparse.Namespace) -> int:
         print("stop: --all and --count: one or the other")
         return 2
     api, store = NaverApiClient(), get_store()
+    if not _leaf_ok(args):
+        return 2
     if _no_measures(args.category):
         print(f"stop: no category_measures.json row for {', '.join(_no_measures(args.category))}: ask the operator")
         return 2
@@ -1551,6 +1564,8 @@ def cmd_scroll(args: argparse.Namespace) -> int:
         if _no_measures(args.category):
             print(f"stop: no category_measures.json row for {', '.join(_no_measures(args.category))}: ask the "
                   "operator")
+            return 2
+        if not _leaf_ok(args):
             return 2
         job, shop, shops_root = None, get_store().id.value, os.path.abspath(args.shops_root or SHOPS_ROOT)
         what = f"job.py scroll (a new job, {args.category} {args.query!r})"

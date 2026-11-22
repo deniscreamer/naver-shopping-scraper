@@ -65,6 +65,9 @@ class CategoryPlacement:
     split_by: str | None = None          # the attribute that splits the category (attributes.ATTRIBUTES)
     unresolved: str = "hold"             # "hold", or a section handle of `leaves` for products the attribute leaves
                                          # unknown / in conflict
+    stated_only: tuple[str, ...] = ()    # sections a value that implies several (unisex) does not reach: only a product
+                                         # stated so goes there (50002796 men's, 2026-11-22: a unisex top keeps the
+                                         # women's sizes; the men's section is the men's own, until the owner decides)
 
 
 @dataclass(frozen=True)
@@ -125,7 +128,8 @@ PROFILES = {
             "50002798": CategoryPlacement(parent="apparel", split_by="gender",         # 점퍼 (2026-11-20)
                                           leaves={"womens": WOMENS_WINDBREAKERS}),
             "50002796": CategoryPlacement(parent="apparel", split_by="gender",         # 티셔츠 (2026-11-21)
-                                          leaves={"womens": WOMENS_LS_TOPS, "mens": MENS_LS_TOPS}),   # men's 2026-11-21
+                                          leaves={"womens": WOMENS_LS_TOPS, "mens": MENS_LS_TOPS},   # men's 2026-11-22
+                                          stated_only=("mens",)),
             "50002799": CategoryPlacement(parent="apparel", split_by="gender",         # 재킷 (2026-11-21)
                                           leaves={"womens": WOMENS_WINDBREAKERS}),
         }),

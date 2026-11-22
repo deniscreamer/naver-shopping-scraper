@@ -135,7 +135,8 @@ def _brand_us(hit: tuple[str, dict[str, Any]] | None, rows: list[dict[str, Any]]
     if num is None:
         return None
     n = float(num)
-    row = next((r for r in profile["grid"] if _us_range(r["us_num"])[0] <= n <= _us_range(r["us_num"])[1]), None)
+    row = next((r for r in profile["grid"] if r.get("us_num")
+                and _us_range(r["us_num"])[0] <= n <= _us_range(r["us_num"])[1]), None)
     return (f"{row['us']} (US {num})", row["us"]) if row else None
 
 

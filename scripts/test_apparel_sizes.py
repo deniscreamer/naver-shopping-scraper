@@ -724,5 +724,7 @@ def test_mens_tops_size_by_the_mens_grid_with_the_us_letter():
     assert not r["held"] and [v["us"] for v in r["values"]] == ["S", "M", "L", "XL"]
     assert "<th>Fits chest</th>" in A.chart_html(r)
     assert [v["us"] for v in A.resolve([{"name_ko": "사이즈", "values_ko": ["M", "L"]}], [], None, "남성", "mens_tops")[
-        "values"]] == ["M", "L"]
+        "values"]] == ["S", "M"]                          # a Korean M is 95: a US S (the review, 2026-11-22)
+    assert [v["us"] for v in A.resolve([{"name_ko": "사이즈", "values_ko": ["M(95)", "L(100)"]}], [], None, "남성",
+                                       "mens_tops")["values"]] == ["S", "M"]
     assert A.resolve([{"name_ko": "사이즈", "values_ko": ["55", "66"]}], [], None, "남성", "mens_tops")["held"]
