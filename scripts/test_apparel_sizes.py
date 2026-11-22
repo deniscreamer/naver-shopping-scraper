@@ -708,3 +708,10 @@ def test_a_short_sleeve_variant_is_off_the_long_sleeve_section():
     rules = [r for r in LF.title_rules("50002796") if r["code"] in ("short_sleeve", "cardigan", "vest", "cooling")]
     assert LF.title_rule("반팔 카라 티셔츠 / 화이트", rules) == "title:short_sleeve"
     assert LF.title_rule("긴팔 카라 티셔츠 / 화이트", rules) is None
+
+
+def test_a_one_size_product_whose_chart_names_several_sizes_holds():
+    """Nike 13660201494 (2026-11-21, the second tops pilot): one variant, the size only in its title (", S"), the
+    chart's labels S, M, XL, 2XL with no measures: which size is sold is unknown."""
+    r = A.resolve([], ["사이즈 / S / M / XL / 2XL"], "나이키", "나이키 여성 빅토리 폴로, S", "womens_tops")
+    assert r["held"] and "the chart lists S, M, XL, 2XL" in r["held"]

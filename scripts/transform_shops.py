@@ -182,7 +182,7 @@ RULES = {
             "50002796": CategoryRules(
                 paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
                 no_choice_out=True, composition=True, sizes="womens_tops", own_brand_wordmark=True,
-                variant_screen=("short_sleeve", "cardigan", "vest", "cooling"),
+                variant_screen=("short_sleeve", "cardigan", "vest", "cooling", "outerwear"),
                 reviewed=True),       # the owner 2026-11-21: 24 drafts of the pilot activated after its review
             "50002799": CategoryRules(
                 paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,

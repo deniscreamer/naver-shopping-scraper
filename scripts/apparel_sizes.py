@@ -293,6 +293,12 @@ def resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None, 
             return out
         listed = list(dict.fromkeys(lab.key for _, lab, _ in rows_by_label
                                     if lab and not lab.free and (lab.chest or lab.women or lab.letter)))
+        # ... and the chart's size labels without measures (2026-11-21, the second tops pilot: Nike 13660201494
+        # sells only S, written in its title, while its chart names S, M, XL, 2XL: no size reached the store)
+        labelled = [n for n, lab in chart.labels.items() if lab and not lab.free and (lab.chest or lab.women or lab.letter)]
+        if len(listed) < 2 and len({chart.labels[n].key for n in labelled}) >= 2:
+            listed = list(dict.fromkeys(chart.labels[n].key for n in labelled))
+            rows_by_label = [(n, chart.labels[n], chart.rows.get(n) or {}) for n in labelled]
         if not has_fact and len(listed) >= 2:       # the chart has rows of several sizes, the product sells one
             names = [n for n, lab, _ in rows_by_label if lab and not lab.free]     # (13004790971: 95..110, 2026-11-20)
             out["held"] = f"no size option, the chart lists {', '.join(names[:6])}: which size is sold is unknown"

@@ -3168,7 +3168,7 @@
    },
    {
     "code": "outerwear",
-    "why": "2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a jacket, a windbreaker, padding or a coat (자켓, 재킷, 점퍼, 잠바, 바람막이, 패딩, 다운, 코트) is outerwear: the windbreakers' or the midlayers'; 다운블로우 is a brand, 트리코트 (tricot) no coat.",
+    "why": "2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a jacket, a windbreaker, padding or a coat (자켓, 재킷, 점퍼, 잠바, 바람막이, 패딩, 다운, 코트) is outerwear: the windbreakers' or the midlayers'; 다운블로우 is a brand, 트리코트 (tricot) no coat. 2026-11-21, the second pilot: a piste or an anorak (피스테, 아노락) too (Malbon 12375182812 sold a 컬러블록 피스테 among its tops).",
     "tokens": [
      {
       "text": "자켓",
@@ -3245,6 +3245,26 @@
        "스",
        "에"
       ]
+     },
+     {
+      "text": "피스테",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "아노락",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "piste",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "anorak",
+      "notFollowedBy": [],
+      "notPrecededBy": []
      }
     ]
    },
@@ -3351,6 +3371,21 @@
      },
      {
       "text": "쿨긴팔",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "쿨메쉬",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "아이스쿨",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "쿨터치",
       "notFollowedBy": [],
       "notPrecededBy": []
      }

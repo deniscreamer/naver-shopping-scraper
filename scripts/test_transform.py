@@ -1079,4 +1079,4 @@ def test_the_long_sleeve_top_rules_are_the_windbreakers_and_reviewed():
     """50002796 (2026-11-21, the owner's section): the windbreakers' apparel rules; DRAFT first."""
     wind, tops = (rules_for("fairwardgolf").category(c) for c in ("50002798", "50002796"))
     assert dataclasses.replace(tops, variant_screen=()) == wind and tops.reviewed      # live after the pilot
-    assert tops.variant_screen == ("short_sleeve", "cardigan", "vest", "cooling")   # no 반팔 variant (2026-11-21)
+    assert tops.variant_screen == ("short_sleeve", "cardigan", "vest", "cooling", "outerwear")   # no 반팔 variant (2026-11-21)

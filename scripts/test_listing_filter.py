@@ -513,6 +513,7 @@ def test_the_jackets_title_rules_are_the_windbreakers():
     ("WAAC 여성 트리코트 긴팔 티셔츠", None),                                     # tricot is no coat
     ("말본골프 긴팔티 PQS M6322PKO13 스타디움 테리 풀오버 (WOMAN)", None),          # WOMAN (2026-11-21)
     ("말본 우먼스 하이넥 스웨터", None),
+    ("말본 여성 컬러블록 피스테 긴팔 티셔츠", "title:outerwear"),                     # a piste (2026-11-21)
 ])
 def test_long_sleeve_tops_need_a_womens_word_and_no_other_garment(title, code):
     screen = Screen("50002796", namespace="fairwardgolf")
