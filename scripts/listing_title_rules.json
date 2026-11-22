@@ -4024,6 +4024,118 @@
      }
     ]
    }
+  ],
+  "50002802": [
+   {
+    "code": "not_skirt",
+    "why": "2026-11-22 (Golf Skirts & Culottes, womens-skirts-culottes; the probe of 5 queries, 488 cards of 50002802 read on their sheets, 463 women's golf skirts): a skirt word (스커트, 치마, 큐롯, skirt, culotte, skort): every fitting card has one. A women's word is not required: a skirt is women's, and 4-5 fitting cards per query name none (WAAC 플리츠 큐롯스커트, 젝시믹스, 보에르).",
+    "requires": [
+     [
+      "스커트",
+      "치마",
+      "큐롯",
+      "skirt",
+      "culotte",
+      "skort",
+      "스코트"
+     ]
+    ],
+    "tokens": []
+   },
+   {
+    "code": "rain",
+    "why": "2026-11-22 (Golf Skirts & Culottes, womens-skirts-culottes; the probe of 5 queries, 488 cards of 50002802 read on their sheets, 463 women's golf skirts): a rain skirt (비치마, 레인스커트, 우비치마: J2M, 2-3 cards a query) is Rainwear, not this section. Not 레인 alone: 플레인 (plain, DAYSILY GOLF 플레인 주름치마) holds it.",
+    "tokens": [
+     {
+      "text": "비치마",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "레인스커트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "레인치마",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "레인웨어",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "우비",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "trousers",
+    "why": "2026-11-22 (Golf Skirts & Culottes, womens-skirts-culottes; the probe of 5 queries, 488 cards of 50002802 read on their sheets, 463 women's golf skirts): a listing that sells trousers and shorts beside a skirt (화이트베어 ... 골프바지 9부 부츠컷 반바지 치마 스커트, 4 queries): 9부, 부츠컷; 반바지 alone is no word (a culotte skirt says 반바지 too).",
+    "tokens": [
+     {
+      "text": "9부",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "부츠컷",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "not_garment",
+    "why": "2026-11-22 (Golf Skirts & Culottes, womens-skirts-culottes; the probe of 5 queries, 488 cards of 50002802 read on their sheets, 463 women's golf skirts): a blanket worn over trousers (수이골프 만능 담요 치마).",
+    "tokens": [
+     {
+      "text": "담요",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   },
+   {
+    "code": "mens",
+    "why": "2026-11-22 (Golf Skirts & Culottes, womens-skirts-culottes; the probe of 5 queries, 488 cards of 50002802 read on their sheets, 463 women's golf skirts): a men's or kids' product (none in the probe; the women's tops' words).",
+    "tokens": [
+     {
+      "text": "남성",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "남자",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "주니어",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "키즈",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "아동",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ],
+    "unless": [
+     "남녀공용",
+     "여성",
+     "여자"
+    ]
+   }
   ]
  },
  "together": {

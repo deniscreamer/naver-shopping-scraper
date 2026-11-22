@@ -577,3 +577,22 @@ def test_the_mens_tops_job_takes_the_mens_knits_and_the_womens_jobs_do_not():
     knits = Screen("50002797", namespace="fairwardgolf")                    # the cardigans' job: as before
     assert knits.check({**row, "name": "여성 골프 니트 가디건"}) is None
     assert knits.check(row) == "title:not_womens"
+
+
+@pytest.mark.parametrize("title, code", [
+    # 50002802, Golf Skirts & Culottes (2026-11-22): the probe's cards, 480 of 490 kept
+    ("여성 골프스커트 앞뒤 언발란스 플리츠 골프치마 여자골프웨어", None),
+    ("왁 골프 플리츠 큐롯스커트 KCM22401BUX", None),                       # no women's word: a skirt is women's
+    ("클래식 테니스스커트 주름스커트 보에르", None),
+    ("DAYSILY GOLF 여성 골프웨어 플레인 주름치마 골프스커트 여자골프복 연습복 필드룩", None),   # 플레인 is no rain
+    ("[카파 공식몰] 골프 포켓 스커트팬츠 여성 3컬러", None),
+    ("J2M골프 비치마 주머니가 달려 편리한 레인스커트", "title:rain"),
+    ("골프 비치마 주머니있는 레인스커트 남녀공용 방수 우비치마", "title:rain"),
+    ("화이트베어 허리밴딩 스판 여성 골프바지 9부 부츠컷 반바지 치마 스커트 플리츠 큐롯", "title:trousers"),
+    ("수이골프 만능 담요 치마 바지위 치마위 착용 무릎 스포츠 여성 학생 사무실 겨울", "title:not_garment"),
+    ("여성 골프 반바지 숏팬츠", "title:not_skirt"),
+    ("남성 골프 스커트", "title:mens"),
+])
+def test_skirts_need_a_skirt_word_and_leave_out_rain_and_trousers(title, code):
+    assert Screen("50002802", namespace="fairwardgolf").check(
+        {"name": title, "category_id": "50002802", "product_id": "1", "store": {"channel_no": "2"}}) == code
