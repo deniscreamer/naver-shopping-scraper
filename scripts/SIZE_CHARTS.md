@@ -74,6 +74,10 @@ under 75 cm is taken as flat. ("가슴/2" is not read: "/" splits the cells.)
 
 Words with a space are one word in name+number lines ("소매 기장 58" is the sleeve, "총 기장 60" the length).
 
+`bottoms` (2026-11-22, the skirts): waist (허리, not 허리밴딩; waist), hip (엉덩이, 힙, hip), length (총장, 기장, 치마 /
+스커트 길이, length); waist and hip flat (단면) or round (둘레) as the chest; a flat / round note sets every field that has
+both kinds.
+
 Never a field (the tops): 소매통, 소매부리, 소매단너비, 화장 (centre back to cuff), A.H / 암홀, 목넓이, 목깊이,
 밑단둘레 / 밑단단면, 커프스, 팔둘레 (and a bare "Sleeve": it is 팔둘레 at 11160224814).
 

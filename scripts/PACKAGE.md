@@ -632,6 +632,9 @@ owner's delegation (a shell packs as small as a knit): product 150 / 350 / 800 g
 300-1500 g), box 25 x 20 x 3 / 28 x 22 x 4 / 35 x 25 x 8 cm; kind `insulated` (기모 / 방한 / 퀼팅 / 하이브리드 / 보온 /
 후리스 ...: the knit's 0.7 kg, 30 x 24 x 6 cm). Its `defaults_version` 13; the other rows keep theirs.
 
+**Table version 16 (2026-11-22).** The row of 50002802 스커트 (women's golf skirts and culottes): the tops' box and
+kind, a skirt 120 / 200 / 500 g. Its `defaults_version` 16; the other rows keep theirs.
+
 **Table version 15 (2026-11-21).** The row of 50002796 티셔츠 (women's long-sleeve golf tops): the windbreakers' box and
 kind, a lighter top (product 120 / 250 / 600 g, package 300 / 350 / 800 g). Its `defaults_version` 15; the other rows
 keep theirs.

@@ -412,6 +412,17 @@ FAIRWARDGOLF = Delivered(
             hts="6202",
             duty_flat=Decimal("0.125"),
             decided={"coefficients": "2026-11-21 (50002798's)", "duty": "2026-11-21 flat 12.5 % (50002798's)"}),
+        # 2026-11-22, Golf Skirts & Culottes (the owner: the agent decides): the apparel rule, x1.10 at every level, the
+        # flat 12.5 % duty; the rate by fibre kept for the day it is switched on, US HTS 6204.5 (women's skirts,
+        # woven): wool 6204.51 14 %, cotton 6204.52 8.3 %, synthetic 6204.53 16 %, another or unread 16 %
+        "50002802": CategoryPrice(
+            coefficients={5: Decimal("1.10"), 4: Decimal("1.10"), 3: Decimal("1.10"), 2: Decimal("1.10"),
+                          1: Decimal("1.10")},
+            duty_by_fibre={"wool": Decimal("0.14"), "cotton": Decimal("0.083"), "cashmere": Decimal("0.14"),
+                           "man-made": Decimal("0.16"), "other": Decimal("0.16"), "unknown": Decimal("0.16")},
+            hts="6204.5",
+            duty_flat=Decimal("0.125"),
+            decided={"coefficients": "2026-11-22 (the apparel rule)", "duty": "2026-11-22 flat 12.5 % (the apparel rule)"}),
     })
 
 POLICIES = {"fairwardgolf": Policy(delivered=FAIRWARDGOLF)}   # which shops carry delivery in the price: this map

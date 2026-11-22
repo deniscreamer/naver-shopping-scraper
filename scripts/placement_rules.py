@@ -97,6 +97,11 @@ CHIPPERS = Leaf("chippers", "Chippers")                            # owner 2026-
 WOMENS_KNIT_CARDIGANS = Leaf("womens-knit-cardigans", "Women’s Golf Cardigans")   # owner 2026-11-19: women's knit
                                                                    # cardigans, parent apparel; the store's collection
                                                                    # fairwardgolf-womens-knit-cardigans: to check (A6)
+WOMENS_SKIRTS = Leaf("womens-skirts-culottes", "Golf Skirts & Culottes")   # 2026-11-22, the category agent's values:
+                                                                   # the store's collection fairwardgolf-womens-skirts-
+                                                                   # culottes ("Golf Skirts & Culottes", 0 products,
+                                                                   # read 2026-11-22; tag fairwardgolf:leaf:womens-
+                                                                   # skirts-culottes)
 WOMENS_LS_TOPS = Leaf("womens-fall-long-sleeve-tops", "Women’s Long-Sleeve Golf Tops")   # owner 2026-11-21:
                                                                    # the store's collection
                                                                    # fairwardgolf-womens-fall-long-sleeve-tops (tag
@@ -133,6 +138,8 @@ PROFILES = {
                                           stated_only=("mens",)),
             "50002799": CategoryPlacement(parent="apparel", split_by="gender",         # 재킷 (2026-11-21)
                                           leaves={"womens": WOMENS_WINDBREAKERS}),
+            "50002802": CategoryPlacement(parent="apparel", leaves={None: WOMENS_SKIRTS}),   # 스커트 (2026-11-22):
+                                          # one section, no split: a skirt is women's (the screen leaves out men's)
         }),
 }
 

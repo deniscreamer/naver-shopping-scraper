@@ -1577,7 +1577,8 @@ def _sizes(ov: dict[str, Any], profile: str, text: str | None, ocr: list[list[st
     product), the values in size order. A size the transform kept as a fact (one value, "사이즈: FREE(44-66반)",
     5891366586) is resolved too: product.sizes.fact {ko, us} (2026-11-19 review: it reached the store in Korean)."""
     texts = (text or "").splitlines() + [r for rows in ocr for r in rows]
-    _split_joined(ov)
+    with apparel_sizes.waist_labels(apparel_sizes.grids()["profiles"][profile].get("key") == "waist"):
+        _split_joined(ov)
     facts = [f for f in ov.get("facts") or [] if apparel_sizes.is_size_name(f.get("label_ko"))]
     out = apparel_sizes.resolve(ov["options"], texts, brand, title, profile, has_fact=bool(facts))
     if out["held"]:

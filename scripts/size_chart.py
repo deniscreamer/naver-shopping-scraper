@@ -39,6 +39,13 @@ MEASURE_SETS: dict[str, tuple[Measure, ...]] = {
         Measure("length", re.compile(r"총\s*장|총\s*기장|총\s*길이|^기장|상의\s*길이|length", re.I), (30, 120), (30, 120)),
         Measure("shoulder", re.compile(r"어깨|shoulder", re.I), (25, 75), (25, 75)),
     ),
+    # skirts (2026-11-22, Golf Skirts & Culottes 50002802): the waist and the hip, laid flat or round, and the length
+    "bottoms": (
+        Measure("waist", re.compile(r"허리(?!\s*밴딩)|waist", re.I), (28, 52), (55, 110)),
+        Measure("hip", re.compile(r"엉덩이|힙(?!업)|hip", re.I), (38, 70), (76, 140)),
+        Measure("length", re.compile(r"총\s*장|총\s*기장|총\s*길이|^기장|치마\s*(?:길이|기장)|스커트\s*(?:길이|기장)|length",
+                                    re.I), (30, 110), (30, 110)),
+    ),
 }
 _FLAT_RE = re.compile(r"단면|너비|넓이|폭|width", re.I)        # ("가슴/2" never reaches here: "/" splits cells)
 _CIRC_RE = re.compile(r"둘레|들레|circ", re.I)          # 들레: OCR's 둘레 (11206784343)
@@ -198,9 +205,13 @@ def read_chart(lines: list[str], measures: str = "tops", sections: list[str] | N
             last_was_header = False
             continue
         if _FLAT_NOTE_RE.search(raw) and not _CIRC_RE.search(raw):        # kind hints outside the table (F8)
-            r.hints.setdefault("chest", "flat")
+            for spec in r.measures:                                       # the fields laid flat or round: the
+                if spec.flat != spec.round_:                              # chest; the waist and hip (skirts)
+                    r.hints.setdefault(spec.name, "flat")
         elif _CIRC_RE.search(raw) and _CIRC_NOTE_RE.search(raw):
-            r.hints.setdefault("chest", "circ")
+            for spec in r.measures:
+                if spec.flat != spec.round_:
+                    r.hints.setdefault(spec.name, "circ")
         if len(cells) == 1 and not re.search(r"\d", cells[0]) and (m := r.measure(cells[0])) and m[1]:
             r.hints.setdefault(m[0], m[1])                               # a diagram's "가슴단면"
         measures_of = [r.measure(c) for c in cells]
@@ -301,8 +312,8 @@ def read_chart(lines: list[str], measures: str = "tops", sections: list[str] | N
     _drop_breaks(r)
     for k, v in r.hints.items():                    # a note's kind only where the table said none, and only when
         seen_cm = [row[k] for row in chart.rows.values() if k in row]         # every value fits it (spec F8:
-        spec = r.by_name.get(k)                                                 # a "flat" note over a 92 cm chest
-        lo, hi = (spec.flat if v == "flat" else spec.round_) if spec else (0.0, 0.0)   # is no flat chest)
+        known = r.by_name.get(k)                                                # a "flat" note over a 92 cm chest
+        lo, hi = (known.flat if v == "flat" else known.round_) if known else (0.0, 0.0)   # is no flat chest)
         if chart.kinds.get(k) is None and seen_cm and all(lo <= x <= hi for x in seen_cm):
             chart.kinds[k] = v
     return chart

@@ -962,7 +962,7 @@ def test_the_knit_rules_are_the_owners():
     assert knit.no_choice_out and knit.composition and knit.reviewed   # the owner 2026-11-20: live after wave 1
     assert not knit.sets_only and not knit.wedge_sets and not knit.agency_needs_brand
     assert not any(c.no_choice_out or c.composition for k, c in rules_for("fairwardgolf").categories.items()
-                   if k not in ("50002796", "50002797", "50002798", "50002799"))     # the clubs' products stay as published
+                   if k not in ("50002796", "50002797", "50002798", "50002799", "50002802"))   # the clubs' stay as published
 
 
 def test_the_windbreaker_rules_are_the_knits_and_it_is_reviewed():

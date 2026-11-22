@@ -89,7 +89,7 @@ item, the choice of iron count, shaft or flex in a highlight, 정품 / 병행 on
 2026-11-15): the wedges by loft in one item, the choice of lofts, grind or shaft in a highlight, non-conforming
 grooves (비공인) said as a limitation. `chipper` (50002784, 2026-11-18): one club, "What's included" of at most
 3 items (the chipper with its loft and length, a cover the seller includes) and "Highlights"; double-sided said in
-the intro, a chipper-putter never a putter included. `long_sleeve_top` (50002796, 2026-11-21): the knit's lists with its own brief (a base layer is worn under a top,
+the intro, a chipper-putter never a putter included. `skirt` (50002802, 2026-11-22): the tops' lists with its own brief (inner shorts, never "underwear"; no waist size). `long_sleeve_top` (50002796, 2026-11-21): the knit's lists with its own brief (a base layer is worn under a top,
 never "underwear"). `windbreaker` (50002798, 2026-11-20; 재킷 50002799 too, 2026-11-21): the knit's lists and
 switches with its own brief (jacket, never "jumper"; no protection no source states). `knit_cardigan` (50002797, the owner 2026-11-19): "Materials
 & care" (the fiber content from the composition rows, the notice's ones sent as "# Fiber content", the care, the

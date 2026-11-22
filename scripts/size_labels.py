@@ -6,7 +6,10 @@ brand's 0..4. What a number means in US sizes is the profile's business (apparel
 A profile whose numbers mean something else (trousers' waist 24..36, shoes' mm 220..290) gets its own reading here
 beside these, chosen by the profile's "labels" kind, never by changing these.
 """
+import contextlib
+import contextvars
 import re
+from collections.abc import Iterator
 from dataclasses import dataclass
 
 _LETTERS = {"XS": "XS", "S": "S", "M": "M", "L": "L", "XL": "XL", "LL": "LL", "XXL": "XXL", "2XL": "XXL", "2XS": "XXS",
@@ -23,6 +26,21 @@ _PAREN_RE = re.compile(r"[(\[]([^)\]]*)[)\]]")
 _WOMEN = {33, 44, 55, 66, 77, 88, 99}            # 33: below 44 ("XS (33~44)", PXG 5429994082, 2026-11-20)
 
 
+# a waist is read only for a profile keyed by the waist (skirts, 2026-11-22): in a top's chart "73" is a length, never
+# a size; apparel_sizes.resolve and transform._sizes turn it on for such a profile
+_WAIST = contextvars.ContextVar("waist", default=False)
+
+
+@contextlib.contextmanager
+def waist_labels(on: bool = True) -> Iterator[None]:
+    """Read waists (22..38 inches, 58..79 cm) in the labels inside the block."""
+    token = _WAIST.set(on)
+    try:
+        yield
+    finally:
+        _WAIST.reset(token)
+
+
 def _num(text: str) -> float:
     return float(text.replace("반", "")) + (0.5 if text.endswith("반") else 0)
 
@@ -36,17 +54,20 @@ class Label:
     women: tuple[float, ...] = ()             # Korean women's numbers (44..99, 66.5 for "66반")
     jp: int | None = None                     # a Japanese brand's 0..4
     free: bool = False
+    waist: tuple[float, ...] = ()             # a waist in cm: 22..38 inches (x 2.54) or 58..79 cm (skirts, 2026-11-22)
 
     @property
     def key(self) -> str:
         return "|".join([self.letter or "", self.upto or "", ",".join(f"{c:g}" for c in self.chest),
                          ",".join(f"{w:g}" for w in self.women), "" if self.jp is None else str(self.jp),
-                         "F" if self.free else ""])
+                         "F" if self.free else ""] + ([",".join(f"{w:g}" for w in self.waist)] if self.waist else []))
 
 
-def _numbers(part: str, letter: str | None, jp: int | None) -> tuple[list[float], list[float], int | None] | None:
+def _numbers(part: str, letter: str | None,
+             jp: int | None) -> tuple[list[float], list[float], int | None, list[float]] | None:
     chest: list[float] = []
     women: list[float] = []
+    waist: list[float] = []
     for piece in re.split(r"[,/]", part):
         piece = piece.strip()
         if not piece:
@@ -63,9 +84,13 @@ def _numbers(part: str, letter: str | None, jp: int | None) -> tuple[list[float]
                 chest.append(n)
             elif n == int(n) and 0 <= n <= 4 and jp is None and letter is None:
                 jp = int(n)
+            elif _WAIST.get() and n == int(n) and 22 <= n <= 38:   # a waist in inches ("26", "M(27)", "25-26")
+                waist.append(round(n * 2.54, 1))
+            elif _WAIST.get() and 58 <= n <= 79:                   # a waist in cm ("64", "67(S)")
+                waist.append(n)
             else:
                 return None
-    return chest, women, jp
+    return chest, women, jp, waist
 
 
 def parse_label(text: str) -> Label | None:
@@ -101,7 +126,8 @@ def parse_label(text: str) -> Label | None:
     m = _FREE_RANGE_RE.match(t)                 # "FREE(44-66반)", "FREE SIZE(44-77)": one size, a fit range
     if m:
         got = _numbers(m.group(1), "F", None)
-        return Label(free=True, chest=tuple(got[0]), women=tuple(got[1])) if got else Label(free=True)
+        return Label(free=True, chest=tuple(got[0]), women=tuple(got[1]), waist=tuple(got[3])) if got \
+            else Label(free=True)
     m = _LETTER_RANGE_RE.match(t)
     if m:                                       # "S/M", "M-L": one garment for two sizes
         return Label(letter=_LETTERS[m.group(1)], upto=_LETTERS[m.group(2)])
@@ -121,6 +147,7 @@ def parse_label(text: str) -> Label | None:
             rest.append(part)
     chest: list[float] = []
     women: list[float] = []
+    waist: list[float] = []
     for part in rest:
         got = _numbers(part, letter, jp)
         if got is None:
@@ -128,9 +155,10 @@ def parse_label(text: str) -> Label | None:
         chest += got[0]
         women += got[1]
         jp = got[2]
-    if letter is None and not chest and not women and jp is None:
+        waist += got[3]
+    if letter is None and not chest and not women and jp is None and not waist:
         return None
-    return Label(letter=letter, chest=tuple(chest), women=tuple(women), jp=jp)
+    return Label(letter=letter, chest=tuple(chest), women=tuple(women), jp=jp, waist=tuple(waist))
 
 
 def is_size_name(name: str | None) -> bool:

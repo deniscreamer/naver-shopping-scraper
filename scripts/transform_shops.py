@@ -198,6 +198,14 @@ RULES = {
                 paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
                 no_choice_out=True, composition=True, sizes="womens_tops", own_brand_wordmark=True,
                 reviewed=False),      # a new category: DRAFT until the lens review and the owner's activation
+            # 2026-11-22, the owner: Golf Skirts & Culottes (womens-skirts-culottes under apparel), the category agent's
+            # values as a recommendation, the rest the agent's (the listing probe, decision.md): the tops' choices, the
+            # sizes by the waist (womens_bottoms), a variant of trousers or a rain skirt holds the product
+            "50002802": CategoryRules(
+                paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
+                no_choice_out=True, composition=True, sizes="womens_bottoms", own_brand_wordmark=True,
+                variant_screen=("rain", "trousers"),
+                reviewed=False),      # a new category: DRAFT until the pilot's review and the owner's activation
         }),
 }
 

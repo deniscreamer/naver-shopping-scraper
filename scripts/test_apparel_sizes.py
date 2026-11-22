@@ -320,7 +320,8 @@ def test_lines_that_are_never_measurements(line):
 
 
 def test_a_measure_set_is_data():
-    assert C.describe_sets() == {"tops": ["chest", "sleeve", "length", "shoulder"]}
+    assert C.describe_sets() == {"tops": ["chest", "sleeve", "length", "shoulder"],
+                                 "bottoms": ["waist", "hip", "length"]}                     # skirts (2026-11-22)
     assert A.grids()["profiles"]["womens_tops"]["measures"] in C.MEASURE_SETS
 
 
@@ -766,3 +767,36 @@ def test_an_option_joining_a_colour_and_a_size_is_split_in_two():
                                     ["블랙", "화이트"], ["블랙 FREE", "화이트 FREE"]])
 def test_a_joined_option_is_not_split_when_unsure(values):
     assert A.split_joined([{"name_ko": "선택", "values_ko": values}]) is None
+
+
+# ---- 2026-11-22: the skirts (womens_bottoms, keyed by the waist) ----------------------------------------------------
+@pytest.mark.parametrize("values, want", [
+    (["S", "M", "L", "XL"], ["S (US 4-6)", "M (US 8-10)", "L (US 12-14)", "XL (US 16)"]),
+    (["S(55)", "M(66)", "L(77)"], ["S (US 4-6)", "M (US 8-10)", "L (US 12-14)"]),
+    (["25", "26", "27", "28", "29", "30"], ["XS (US 2)", "S (US 4)", "S (US 6)", "M (US 8)", "M (US 10)", "L (US 12)"]),
+    (["64", "67", "70", "73", "76"], ["XS (US 2)", "S (US 4)", "M (US 8)", "M (US 10)", "L (US 12)"]),   # cm, size up
+    (["23", "24"], ["XXS (US 00)", "XS (US 0)"]),
+    (["S(25-26)", "M(27-28)"], ["XS-S (US 0-6)", "S-M (US 4-10)"]),
+    (["FREE"], ["One Size"]),
+])
+def test_a_skirts_size_goes_by_the_waist(values, want):
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": values}], [], None, "여성 골프 스커트", "womens_bottoms")
+    assert not r["held"] and [v["us"] for v in r["values"]] == want
+
+
+def test_a_waist_is_read_only_for_a_waist_profile():
+    """A top's "26" or a chart's "73" (a length) is never a size: the waist is read inside waist_labels only."""
+    assert A.parse_label("26") is None and A.parse_label("M(73)") is None
+    with A.waist_labels():
+        assert A.parse_label("26").waist == (66.0,) and A.parse_label("67(S)").waist == (67.0,)
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": ["26", "27"]}], [], None, "여성 티셔츠", "womens_tops")
+    assert r["held"]
+
+
+def test_a_skirts_chart_doubles_the_flat_waist_and_hip():
+    lines = ["사이즈 / 허리단면 / 엉덩이단면 / 총장", "S / 33 / 46 / 42", "M / 35 / 48 / 43"]
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": ["S", "M"]}], lines, None, "여성 골프 스커트", "womens_bottoms")
+    assert r["chart"]["kinds"] == {"waist": "flat", "hip": "flat", "length": None}
+    html = A.chart_html(r)
+    assert "<th>Fits waist</th>" in html and "<td>26 in</td>" in html and "<td>36 in</td>" in html
+    assert "the waist and hip all the way round" in html
