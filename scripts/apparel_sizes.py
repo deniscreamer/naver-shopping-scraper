@@ -223,6 +223,35 @@ def _joined_size(value: str, free: bool = False) -> Label | None:
     return None
 
 
+def split_joined(options: list[dict[str, Any]]) -> tuple[int, list[tuple[str, str]]] | None:
+    """The option that joins a colour and a size in every value, as _joined reads it, and each value's (rest, size
+    word): ("Ivory/085" -> ("Ivory", "085"), "남성 골프 이너웨어__블랙 95" -> ("남성 골프 이너웨어 블랙", "95"),
+    "티셔츠 55_아이보리" -> ("티셔츠 아이보리", "55")); None when no option does (2026-11-22, the men's tops pilot: 20
+    apparel products held for it, transform._sizes splits it in two options)."""
+    if _joined(options) is None:
+        return None
+    for i, o in enumerate(options):
+        values = [str(v) for v in o.get("values_ko") or []]
+        out: list[tuple[str, str]] = []
+        for v in values:
+            words = [w for w in _JOIN_SPLIT_RE.split(v.strip()) if w]
+            label = _joined_size(v, free=True)
+            if label is None:
+                break
+            for k in (len(words) - 1, 0, *range(1, len(words) - 1)):
+                rest = words[:k] + words[k + 1:]          # a second size word in the rest ("오프화이트 85 XS"): no split
+                if parse_label(words[k]) == label and not parse_label(" ".join(rest)) \
+                        and not any(parse_label(w) or (len(w) > 1 and w[0] in "AaWw" and parse_label(w[1:]))
+                                    for w in rest):    # adidas' Asian letters "AXL (110)", a women's "WS": no colour
+                    out.append((" ".join(rest), words[k]))
+                    break
+            else:
+                break
+        if len(out) == len(values) and len({sz for _, sz in out}) >= 2:
+            return i, out
+    return None
+
+
 def joined_value(value: str | None) -> bool:
     """One value that joins a colour and a size ("Black/090", "아이보리 M", "XL/크림"): never FREE alone."""
     return _joined_size(str(value or "")) is not None

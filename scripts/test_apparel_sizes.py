@@ -127,8 +127,8 @@ def _resolve(values, texts=(), brand=None, title="여성 가디건", name="사�
 @pytest.mark.parametrize("values", [["S(55)", "M(66)", "L(77+)"], ["XS", "S", "XXS(3)"], ["M", "L", "가디건 XL"],
                                     # 2026-11-21 (the second windbreaker pilot): an option named a size with no value
                                     # read went out raw, no US size, no hold
-                                    ["WS", "WM", "WL"], ["A.0", "B.1", "C.2"], ["0호", "1호", "2호"],
-                                    ["S(상세사이즈 확인했습니다)"]])
+                                    ["WS", "WM", "WL"], ["A.0", "B.1", "C.2"], ["0호", "1호", "2호"]])
+                                    # "S(상세사이즈 확인했습니다)" reads as S since 2026-11-22 (a note in brackets)
 def test_an_unread_value_of_the_size_option_holds_never_reaches_the_store(values):
     r = _resolve(values)
     assert r["option"] == 0 and r["held"] and "not read" in r["held"] and not r["values"]
@@ -656,7 +656,7 @@ def test_a_sellers_note_or_a_numbered_size_reads_as_the_size(values, want):
     assert not r["held"] and [v["us"] for v in r["values"]] == want
 
 
-@pytest.mark.parametrize("value", ["1번(44-55반)", "0호", "화이트_95", "모찌/S"])
+@pytest.mark.parametrize("value", ["1번(44-55반)", "0호", "화이트_95", "모찌/S"])  # resolve alone; transform._sizes splits the joined (2026-11-22)
 def test_a_half_size_a_bare_number_or_a_joined_type_stays_unread(value):
     r = _resolve([value, "M"])
     assert r["held"]
@@ -728,3 +728,41 @@ def test_mens_tops_size_by_the_mens_grid_with_the_us_letter():
     assert [v["us"] for v in A.resolve([{"name_ko": "사이즈", "values_ko": ["M(95)", "L(100)"]}], [], None, "남성",
                                        "mens_tops")["values"]] == ["S", "M"]
     assert A.resolve([{"name_ko": "사이즈", "values_ko": ["55", "66"]}], [], None, "남성", "mens_tops")["held"]
+
+
+# ---- 2026-11-22, the men's tops pilot: 63 apparel products held size_unmapped, the new shapes ---------------------------
+@pytest.mark.parametrize("label, letter, chest, women", [
+    ("S 95사이즈", "S", (95.0,), ()), ("S 95~100사이즈", "S", (95.0, 100.0), ()),     # Nike 7973150842, adidas 12659358151
+    ("XS (85 전후)", "XS", (85.0,), ()), ("S (95전후)", "S", (95.0,), ()),            # 11494901577, 5033870845
+    ("라지(77-88)", "L", (), (77.0, 88.0)), ("여성 55(M)", "M", (), (55.0,)),          # 7259291887, 6485458095
+    ("S(모델착용사이즈)", "S", (), ()), ("S(상세사이즈 확인했습니다)", "S", (), ())])    # 10514027260, 11734583917
+def test_new_label_shapes_read(label, letter, chest, women):
+    got = A.parse_label(label)
+    assert got and (got.letter, got.chest, got.women) == (letter, chest, women)
+
+
+@pytest.mark.parametrize("value", ["블랙", "남색", "남성", "여름", "XL(100-여성77이상/남성M)"])
+def test_new_label_shapes_leave_words_unread(value):
+    assert A.parse_label(value) is None
+
+
+def test_an_option_joining_a_colour_and_a_size_is_split_in_two():
+    """PXG 13291331780 "Navy/090", 4689775780 "남성 골프 이너웨어__블랙 95", 7500284930 "모찌/S": held as "splitting the
+    value is not built" until 2026-11-22; the colour stays in its option, the size moves to a new option 사이즈."""
+    ov = {"options": [{"name_ko": "선택하기", "values_ko": ["Navy/090", "Navy/095", "White/090"]}], "facts": [],
+          "variants": [{"options_ko": ["Navy/090"], "price_krw": 1}, {"options_ko": ["Navy/095"], "price_krw": 1},
+                       {"options_ko": ["White/090"], "price_krw": 1}]}
+    out = T._sizes(ov, "womens_tops", "", [], "PXG", "PXG 여성 니트")
+    assert not out["held"] and [v["us"] for v in out["values"]] == ["S (US 4-6)", "M (US 8-10)"]
+    assert ov["options"] == [{"name_ko": "선택하기", "values_ko": ["Navy", "White"]},
+                             {"name_ko": "사이즈", "values_ko": ["090", "095"]}]
+    assert [v["options_ko"] for v in ov["variants"]] == [["Navy", "090"], ["Navy", "095"], ["White", "090"]]
+    assert A.split_joined([{"name_ko": "x", "values_ko": ["남성 골프 이너웨어__블랙 95", "남성 골프 이너웨어__블랙 100"]}]) \
+        == (0, [("남성 골프 이너웨어 블랙", "95"), ("남성 골프 이너웨어 블랙", "100")])
+
+
+@pytest.mark.parametrize("values", [["오프화이트 85 XS", "오프화이트 90 S"],                  # two size words: no split
+                                    ["AXL (110)", "AL (105)", "AM (100)"],                  # adidas' Asian letters
+                                    ["블랙", "화이트"], ["블랙 FREE", "화이트 FREE"]])
+def test_a_joined_option_is_not_split_when_unsure(values):
+    assert A.split_joined([{"name_ko": "선택", "values_ko": values}]) is None

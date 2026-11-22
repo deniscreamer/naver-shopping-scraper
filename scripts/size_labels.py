@@ -80,9 +80,20 @@ def parse_label(text: str) -> Label | None:
     t = re.sub(r"^(?:\d{1,2}번|\d사이즈)(?=\()", "", t)    # "1사이즈(...)", "2번(...)"; never "55사이즈(S)"
     t = re.sub(r"\(([A-Z0-9~\-]+)추천\)", r"(\1)", t)      # "55사이즈 (S 추천)": a recommended letter (5857396168)
     t = re.sub(r"(?<=\d)사이즈(?=\(|$)", "", t)
+    # 2026-11-22, the men's tops pilot: a note in brackets after the size ("S(모델착용사이즈)", "S(상세사이즈 확인했습니다)"),
+    # "about" after a chest ("XS (85 전후)", "S (95전후)"), a gender before the size ("여성 55(M)"; 남_M(95) beside
+    # 여_S(55) stays two systems), a Korean letter word ("라지(77-88)") and the chest after a bare letter ("S 95사이즈",
+    # "S 95~100사이즈": Nike 7973150842, Callaway 7184031093, 5033870845) read as the size they name
+    t = re.sub(r"\((?:모델|상세|착용|확인|기준|정사이즈)[가-힣]*\)$", "", t)
+    t = re.sub(r"(?<=\d)전후(?=\))", "", t)
+    t = re.sub(r"^(?:여성|남성|여자|남자|여|남)[_\-:]?(?=[0-9SMLX(])", "", t)
+    for word, said in (("투엑스라지", "XXL"), ("엑스라지", "XL"), ("라지", "L"), ("미디움", "M"), ("미디엄", "M"),
+                         ("스몰", "S")):
+        t = re.sub(rf"^{word}(?=\(|$)", said, t)
     if _FREE_RE.match(t):                       # "ONE SIZE", "원사이즈": before the 사이즈 / SIZE suffix goes
         return Label(free=True)
     t = re.sub(r"사이즈$|SIZE$", "", t)
+    t = re.sub(rf"^(XXXL|3XL|XXL|2XL|XXS|2XS|XS|XL|LL|S|M|L)({_NUM}(?:[-~]{_NUM})?)$", r"\1(\2)", t)   # "S95~100"
     if not t:
         return None
     if _FREE_RE.match(t):

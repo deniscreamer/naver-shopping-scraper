@@ -1547,6 +1547,29 @@ def _image_measures(ov: dict[str, Any], sidecar: dict[str, Any] | None, title: s
         f"{n} {c}/{len(ov['variants'])}" for n, c in sorted(taken.items()))}]
 
 
+def _split_joined(ov: dict[str, Any]) -> None:
+    """An option joining a colour and a size in every value ("Ivory/085", "화이트_95", "모찌/S") split in two in place:
+    the option keeps the rest (the colour), a new option 사이즈 at the end holds the size; each variant's pick split
+    the same way (2026-11-22, the men's tops pilot: 20 apparel products were held size_unmapped for it, "splitting the
+    value is not built"). Not when another option holds sizes already (two size axes)."""
+    got = apparel_sizes.split_joined(ov["options"])
+    if got is None:
+        return
+    i, parts = got
+    if any(apparel_sizes.is_size_name(o.get("name_ko")) for k, o in enumerate(ov["options"]) if k != i):
+        return
+    option = ov["options"][i]
+    by_value = dict(zip([str(v) for v in option["values_ko"]], parts))
+    ov["options"][i] = {**option, "values_ko": list(dict.fromkeys(r for r, _ in parts))}
+    ov["options"].append({"name_ko": "사이즈", "values_ko": list(dict.fromkeys(sz for _, sz in parts))})
+    for v in ov["variants"]:
+        picked = list(v.get("options_ko") or [])
+        if len(picked) > i and picked[i] in by_value:
+            rest, size = by_value[picked[i]]
+            picked[i] = rest
+            v["options_ko"] = picked + [size]
+
+
 def _sizes(ov: dict[str, Any], profile: str, text: str | None, ocr: list[list[str]], brand: str | None,
            title: str) -> dict[str, Any]:
     """apparel_sizes.resolve on the product; the size option rewritten in place: one Korean size written twice
@@ -1554,6 +1577,7 @@ def _sizes(ov: dict[str, Any], profile: str, text: str | None, ocr: list[list[st
     product), the values in size order. A size the transform kept as a fact (one value, "사이즈: FREE(44-66반)",
     5891366586) is resolved too: product.sizes.fact {ko, us} (2026-11-19 review: it reached the store in Korean)."""
     texts = (text or "").splitlines() + [r for rows in ocr for r in rows]
+    _split_joined(ov)
     facts = [f for f in ov.get("facts") or [] if apparel_sizes.is_size_name(f.get("label_ko"))]
     out = apparel_sizes.resolve(ov["options"], texts, brand, title, profile, has_fact=bool(facts))
     if out["held"]:
