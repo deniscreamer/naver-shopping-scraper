@@ -521,12 +521,14 @@ def cmd_new(args: argparse.Namespace) -> int:
             "reviews": args.reviews, "shops_root": shops_root, "created_at": _now(), "count": args.count,
             "batches": batches, "listings": listings, "screen": counts, "excluded_known": len(known),
             "exclude_known": args.exclude_known, "translate": not args.no_translate or args.publish,
-            "publish": args.publish, "describe": args.describe, **({"leaf": args.leaf} if getattr(args, "leaf", None) else {}),
+            "publish": args.publish, "describe": args.describe,
             "until_end": args.all,                    # 2026-11-12, the owner: no count, to the listings' end
             "free_only": not args.paid}                   # 2026-11-09: no paid variant / add-on in the transform either
                                                           # (--paid-variants: this job's products take paid variants)
     if getattr(args, "draft", False):                     # 2026-11-16: only when set (job.json as before otherwise)
         meta["draft"] = True
+    if getattr(args, "leaf", None):                       # 2026-11-22: one section of a category with several
+        meta["leaf"] = args.leaf
     if args.dedupe != "off":                              # 2026-11-15: off writes no key (job.json as before)
         meta["dedupe"] = args.dedupe
     write_atomic(os.path.join(folder, "job.json"), json.dumps(meta, ensure_ascii=False, indent=1))
