@@ -211,7 +211,7 @@ def test_refresh_with_need_0_appends_every_new_row(tmp_path, monkeypatch):
     new = [{"key": f"{SHOP}:naver:100:{n}", "product_id": str(n), "query": "q", "link": "l"} for n in range(20, 70)]
     seen = {}
 
-    def fake_read(api, store, queries, category, batches, skip, known):
+    def fake_read(api, store, queries, category, batches, skip, known, leaf=None):
         seen.update(batches=batches, skip=set(skip))
         return new, [{"status": "done", "has_more": False, "batches": batches}], {}
     monkeypatch.setattr(J, "read_listings", fake_read)

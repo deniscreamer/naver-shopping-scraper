@@ -99,6 +99,10 @@ WOMENS_LS_TOPS = Leaf("womens-fall-long-sleeve-tops", "Women’s Long-Sleeve Gol
                                                                    # fairwardgolf-womens-fall-long-sleeve-tops (tag
                                                                    # rule fairwardgolf:leaf:womens-fall-long-sleeve-tops)
                                                                    # existed, empty (checked 2026-11-21)
+MENS_LS_TOPS = Leaf("mens-fall-long-sleeve-tops", "Men’s Long-Sleeve Golf Tops")   # owner 2026-11-21: the
+                                                                   # collection fairwardgolf-mens-fall-long-sleeve-tops
+                                                                   # (tag fairwardgolf:leaf:mens-fall-long-sleeve-tops)
+                                                                   # existed, empty (checked 2026-11-21)
 WOMENS_WINDBREAKERS = Leaf("womens-windbreakers", "Women’s Windbreakers")   # owner 2026-11-20: women's golf
                                                                    # windbreakers, parent apparel; the store's
                                                                    # collection fairwardgolf-womens-windbreakers
@@ -121,7 +125,7 @@ PROFILES = {
             "50002798": CategoryPlacement(parent="apparel", split_by="gender",         # 점퍼 (2026-11-20)
                                           leaves={"womens": WOMENS_WINDBREAKERS}),
             "50002796": CategoryPlacement(parent="apparel", split_by="gender",         # 티셔츠 (2026-11-21)
-                                          leaves={"womens": WOMENS_LS_TOPS}),
+                                          leaves={"womens": WOMENS_LS_TOPS, "mens": MENS_LS_TOPS}),   # men's 2026-11-21
             "50002799": CategoryPlacement(parent="apparel", split_by="gender",         # 재킷 (2026-11-21)
                                           leaves={"womens": WOMENS_WINDBREAKERS}),
         }),

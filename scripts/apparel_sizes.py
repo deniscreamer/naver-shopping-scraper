@@ -140,6 +140,8 @@ def _brand_us(hit: tuple[str, dict[str, Any]] | None, rows: list[dict[str, Any]]
 
 
 def _us_text(rows: list[dict[str, Any]]) -> str:
+    if not all(r.get("us_num") for r in rows):     # men's tops: the US letter alone (2026-11-21)
+        return rows[0]["us"] if len(rows) == 1 else f"{rows[0]['us']}-{rows[-1]['us']}"
     if len(rows) == 1:
         return f"{rows[0]['us']} (US {rows[0]['us_num']})"
     lo, hi = rows[0], rows[-1]
@@ -446,7 +448,8 @@ def chart_html(sizes: dict[str, Any], table: dict[str, Any] | None = None,
 
     rows = []
     if values:
-        head = ["Size", "Fits bust"] + [names.get(f, f.title()) for f in fields]
+        fits = f"Fits {profile.get('fit', 'bust')}"          # "Fits chest" for men's tops (2026-11-21)
+        head = ["Size", fits] + [names.get(f, f.title()) for f in fields]
         for v in values:
             band = bands.get(v["letter"] or "") if v.get("letter") else None
             if v["us"] != "One Size" and band is None and v.get("chest_cm"):
@@ -465,7 +468,8 @@ def chart_html(sizes: dict[str, Any], table: dict[str, Any] | None = None,
             rows.append([us] + [f"{_in(garment(f, m[f]))} in" if f in m else "—" for f in fields])
     else:
         return ""
-    fit_note = "Fits bust is the body measurement each size is made for; " if values else ""
+    fit_note = (f"Fits {profile.get('fit', 'bust')} is the body measurement each size is made for; " if values
+                else "")
     note = (f"{fit_note}the garment measurements are the maker's, the chest all the way round, to within about 1 in."
             if fields else f"{fit_note}the maker gave no garment measurements.")
     note = note[0].upper() + note[1:]

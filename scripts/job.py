@@ -425,14 +425,15 @@ def _no_measures(category: str) -> list[str]:
 
 
 def read_listings(api: Any, store: Any, queries: list[str], category: str, batches: int, skip: set[str],
-                  known: set[str]) -> tuple[list[dict], list[dict], dict]:
+                  known: set[str], leaf: str | None = None) -> tuple[list[dict], list[dict], dict]:
     """Every query's listing (from the top: a listing has no cursor to resume, EXTENSION.md) up to `batches`,
     screened (listing_filter.Screen: category, rental, stop words, in the shop, deferred), without `skip` (already in
     the job) and `known`; the queries alternated. -> (rows, listing jobs, screen counts)."""
     from deferred_log import DeferredLog
     from listing_filter import Screen, source_key
     from shopify_catalog import ShopCatalog
-    screen = Screen(category, store.shopify.namespace, ShopCatalog(store).keys(), DeferredLog(store.id.value).blocked())
+    screen = Screen(category, store.shopify.namespace, ShopCatalog(store).keys(), DeferredLog(store.id.value).blocked(),
+                    leaf=leaf)
     by_q: list[list[dict]] = []
     seen, listings = set(skip), []
     for query in queries:
@@ -504,7 +505,8 @@ def cmd_new(args: argparse.Namespace) -> int:
     known = known_ids() if args.exclude_known else set()
     batches = args.batches
     while True:
-        rows, listings, counts = read_listings(api, store, args.query, args.category, batches, set(), known)
+        rows, listings, counts = read_listings(api, store, args.query, args.category, batches, set(), known,
+                                               getattr(args, "leaf", None))
         nxt = more_batches(listings, batches) if args.count and len(rows) < args.count else None
         if nxt is None:
             break
@@ -519,7 +521,7 @@ def cmd_new(args: argparse.Namespace) -> int:
             "reviews": args.reviews, "shops_root": shops_root, "created_at": _now(), "count": args.count,
             "batches": batches, "listings": listings, "screen": counts, "excluded_known": len(known),
             "exclude_known": args.exclude_known, "translate": not args.no_translate or args.publish,
-            "publish": args.publish, "describe": args.describe,
+            "publish": args.publish, "describe": args.describe, **({"leaf": args.leaf} if getattr(args, "leaf", None) else {}),
             "until_end": args.all,                    # 2026-11-12, the owner: no count, to the listings' end
             "free_only": not args.paid}                   # 2026-11-09: no paid variant / add-on in the transform either
                                                           # (--paid-variants: this job's products take paid variants)
@@ -543,7 +545,8 @@ def refresh(job: Job, api: Any, store: Any, need: int) -> int:
         return 0
     have = {r["key"] for r in job.rows()}
     known = known_ids() if job.meta.get("exclude_known") else set()
-    rows, listings, counts = read_listings(api, store, job.meta["queries"], job.category, batches, have, known)
+    rows, listings, counts = read_listings(api, store, job.meta["queries"], job.category, batches, have, known,
+                                           job.meta.get("leaf"))
     rows = rows[:need] if need else rows                  # need 0: every new row (a `--all` job)
     if rows:
         append_line(os.path.join(job.folder, "listing.jsonl"),
@@ -1342,6 +1345,8 @@ def new_scroll_job(args: argparse.Namespace, shop: str, shops_root: str, root: s
             "free_only": not args.paid, "total": None, "tab": None, "batches": 0, "reopens": [], "screen": {}}
     if getattr(args, "draft", False):                     # 2026-11-16: only when set
         meta["draft"] = True
+    if getattr(args, "leaf", None):                       # 2026-11-21: one shop section of a category with several
+        meta["leaf"] = args.leaf
     if getattr(args, "dedupe", "off") != "off":
         meta["dedupe"] = args.dedupe
     write_atomic(os.path.join(folder, "job.json"), json.dumps(meta, ensure_ascii=False, indent=1))
@@ -1576,7 +1581,8 @@ def _scroll_run(job: Job) -> int:
         job.log(None, "stop", reason=f"shop check: {type(e).__name__}: {e}")   # no run ends without an event
         print(f"stop: shop check: {type(e).__name__}: {e}")
         return 3
-    screen = Screen(job.category, store.shopify.namespace, published, DeferredLog(store.id.value).blocked())
+    screen = Screen(job.category, store.shopify.namespace, published, DeferredLog(store.id.value).blocked(),
+                    leaf=job.meta.get("leaf"))
     known = known_ids() - {str(r["product_id"]) for r in job.rows()} if job.meta.get("exclude_known") else set()
     job.meta["excluded_known"] = len(known)                    # its own products are not "known before"
     tab = Tab(job, ctx["api"])
@@ -1960,6 +1966,9 @@ def _job_flags(p: argparse.ArgumentParser) -> None:
                    "DRAFT in a category not marked reviewed) after translation: placement, then publish.py")
     p.add_argument("--describe", action="store_true", help="with --publish: write each product's description "
                    "before it is sent (describe.py: one model request a product)")
+    p.add_argument("--leaf", help="the shop section the job collects for, when its Naver category feeds several "
+                   "(listing_title_rules.json rules with `leaves`: 50002796 womens-fall-long-sleeve-tops or "
+                   "mens-fall-long-sleeve-tops, 2026-11-21); none: the category's default_leaf")
     p.add_argument("--draft", action="store_true", help="with --publish: the job's new products go DRAFT even in a "
                    "reviewed category (a pilot the owner activates after the lens review: job.py activate --job)")
     p.add_argument("--dedupe", choices=("off", "log", "on"), default="on", help="duplicates of a product sold by "

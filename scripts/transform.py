@@ -1811,7 +1811,9 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
         notes.append({"code": "photos_incomplete", "detail": f"{len(imgs)} of {line['photos'].get('total')}"})
     sizes = None
     if cat.sizes:                                   # apparel: US sizes from the product's own labels and chart
-        sizes = _sizes(ov, cat.sizes, cleaned["text"], image_rows(images_text if current(images_text, line) else None),
+        gender = (stated.get("gender") or {}).get("value")
+        profile = cat.sizes_mens if cat.sizes_mens and gender == "mens" else cat.sizes   # men's tops (2026-11-21)
+        sizes = _sizes(ov, profile, cleaned["text"], image_rows(images_text if current(images_text, line) else None),
                        brand.get("value"), details["name"])
         if sizes["held"]:
             held.append({"code": "size_unmapped", "detail": sizes["held"][:200]})

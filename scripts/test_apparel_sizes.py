@@ -715,3 +715,14 @@ def test_a_one_size_product_whose_chart_names_several_sizes_holds():
     chart's labels S, M, XL, 2XL with no measures: which size is sold is unknown."""
     r = A.resolve([], ["사이즈 / S / M / XL / 2XL"], "나이키", "나이키 여성 빅토리 폴로, S", "womens_tops")
     assert r["held"] and "the chart lists S, M, XL, 2XL" in r["held"]
+
+
+def test_mens_tops_size_by_the_mens_grid_with_the_us_letter():
+    """mens_tops (2026-11-21): the Korean label is the body chest; 100 is US M; the storefront shows the letter; a
+    women's size means nothing for a men's top: held."""
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": ["95", "100", "105", "110"]}], [], None, "남성 긴팔", "mens_tops")
+    assert not r["held"] and [v["us"] for v in r["values"]] == ["S", "M", "L", "XL"]
+    assert "<th>Fits chest</th>" in A.chart_html(r)
+    assert [v["us"] for v in A.resolve([{"name_ko": "사이즈", "values_ko": ["M", "L"]}], [], None, "남성", "mens_tops")[
+        "values"]] == ["M", "L"]
+    assert A.resolve([{"name_ko": "사이즈", "values_ko": ["55", "66"]}], [], None, "남성", "mens_tops")["held"]

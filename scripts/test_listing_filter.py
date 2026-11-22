@@ -519,3 +519,18 @@ def test_long_sleeve_tops_need_a_womens_word_and_no_other_garment(title, code):
     screen = Screen("50002796", namespace="fairwardgolf")
     assert screen.check({"name": title, "category_id": "50002796", "product_id": "1",
                          "store": {"channel_no": "2"}}) == code
+
+
+@pytest.mark.parametrize("title, mens, womens", [
+    # 2026-11-21: 50002796 feeds two sections, each job its own required words (--leaf); the women's job names none
+    ("타이틀리스트 남성 골프 긴팔 티셔츠", None, "title:not_womens"),
+    ("PXG MEN'S 긴팔 폴로", None, "title:not_womens"),
+    ("PXG WOMEN 긴팔 티셔츠", "title:not_mens", None),                  # "men" inside "women" is no men's word
+    ("남성 골프 반팔 티셔츠", "title:not_long_sleeve", "title:not_womens"),
+    ("남성 골프 맨투맨", "title:not_long_sleeve", "title:not_womens"),
+    ("남성 골프 긴팔 카라 티셔츠 가디건", "title:cardigan", "title:not_womens"),  # the shared rules bind both
+])
+def test_each_section_of_the_long_sleeve_tops_has_its_own_required_words(title, mens, womens):
+    row = {"name": title, "category_id": "50002796", "product_id": "1", "store": {"channel_no": "2"}}
+    assert Screen("50002796", namespace="fairwardgolf", leaf="mens-fall-long-sleeve-tops").check(row) == mens
+    assert Screen("50002796", namespace="fairwardgolf").check(row) == womens

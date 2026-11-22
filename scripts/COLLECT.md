@@ -223,7 +223,7 @@ ad cards are kept by default, the owner 2026-11-06, though the harvester file sa
 word of `listing_exclusions.json`, copied as it is from the naver-harvester: NFKC + lower case, words with
 not-preceded-by / not-followed-by exceptions, latin words whole), `title:<code>` (a word of `listing_title_rules.json` the run's category does not sell, the owner
 2026-11-11; or no word of a group the category `requires`, 2026-11-19: 50002797 needs a women's word and a cardigan
-word; 2026-11-20: 50002798 a women's word and a jacket word; 2026-11-21: fleece, coats too; 50002796 a women's word, no short sleeve, cardigan, vest, outerwear, bottoms or set, arm sleeves, cooling or kids' word), `category_mismatch` (only the exact leaf
+word; 2026-11-20: 50002798 a women's word and a jacket word; 2026-11-21: fleece, coats too; 50002796 a women's word (the women's section; the men's job, `--leaf mens-fall-long-sleeve-tops`: a men's word and a long-sleeve word, rules with `leaves`, 2026-11-22), no short sleeve, cardigan, vest, outerwear, bottoms or set, arm sleeves, cooling or kids' word), `category_mismatch` (only the exact leaf
 category, or one `listing_title_rules.json` `together` takes with it: 2026-11-21, the owner, 점퍼 50002798 and 재킷
 50002799 feed one section, a job of either takes both, each row screened by its own category's rules and collected
 as its own category), `key_unavailable` (no store number: no shop check possible), `already_published`, `deferred`. Catalog and

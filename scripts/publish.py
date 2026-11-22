@@ -526,7 +526,9 @@ def publish_one(shop: Shop, key: str, products: Any, files: Any, ids: dict[str, 
         del payload["status"]
     # draft: a job's own products created DRAFT in any category (job.py --draft, the owner 2026-11-16: a pilot in a
     # reviewed category the owner activates after the lens review)
-    elif not before and (draft or not transform_shops.reviewed(shop.shop, prepared["source"].get("category_id"))):
+    elif not before and (draft or not transform_shops.reviewed(shop.shop, prepared["source"].get("category_id"))
+                         or transform_shops.draft_leaf(shop.shop, prepared["source"].get("category_id"),
+                                                       [x.get("leaf") for x in (placement or {}).get("leaves") or []])):
         payload["status"] = "DRAFT"
     if dry_run:
         out = shop.path(os.path.join("publish", "payloads", f"{pid}.json"))

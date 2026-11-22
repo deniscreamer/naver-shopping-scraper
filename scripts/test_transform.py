@@ -1078,5 +1078,9 @@ def test_the_composition_rows_are_kept_for_the_duty_and_the_description():
 def test_the_long_sleeve_top_rules_are_the_windbreakers_and_reviewed():
     """50002796 (2026-11-21, the owner's section): the windbreakers' apparel rules; DRAFT first."""
     wind, tops = (rules_for("fairwardgolf").category(c) for c in ("50002798", "50002796"))
-    assert dataclasses.replace(tops, variant_screen=()) == wind and tops.reviewed      # live after the pilot
+    assert dataclasses.replace(tops, variant_screen=(), sizes_mens=None, draft_leaves=()) == wind and tops.reviewed
+    assert tops.sizes_mens == "mens_tops" and tops.draft_leaves == ("mens-fall-long-sleeve-tops",)   # men's (11-21)
+    import transform_shops
+    assert transform_shops.draft_leaf("fairwardgolf", "50002796", ["mens-fall-long-sleeve-tops"])
+    assert not transform_shops.draft_leaf("fairwardgolf", "50002796", ["womens-fall-long-sleeve-tops"])
     assert tops.variant_screen == ("short_sleeve", "cardigan", "vest", "cooling", "outerwear")   # no 반팔 variant (2026-11-21)

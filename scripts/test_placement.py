@@ -304,8 +304,12 @@ def test_windbreakers_go_to_the_womens_section_under_apparel_and_a_mens_or_unkno
 
 def test_long_sleeve_tops_go_to_their_womens_section_under_apparel():
     """50002796 (the owner, 2026-11-21): the store's collection fairwardgolf-womens-fall-long-sleeve-tops."""
-    for value in ("womens", "unisex"):
+    for value in ("womens",):
         got = PL.place(product(value, category="50002796"), PROFILE)
         assert got["status"] == "placed" and got["product_type"] == "Women’s Long-Sleeve Golf Tops"
         assert got["tags"][:2] == ["fairwardgolf:leaf:womens-fall-long-sleeve-tops", "fairwardgolf:parent:apparel"]
-    assert PL.place(product("mens", category="50002796"), PROFILE)["status"] == "unresolved"
+    men = PL.place(product("mens", category="50002796"), PROFILE)            # the men's section (2026-11-21)
+    assert men["status"] == "placed" and men["product_type"] == "Men’s Long-Sleeve Golf Tops"
+    assert men["tags"][:2] == ["fairwardgolf:leaf:mens-fall-long-sleeve-tops", "fairwardgolf:parent:apparel"]
+    both = PL.place(product("unisex", category="50002796"), PROFILE)          # unisex: both collections, one product
+    assert {x["leaf"] for x in both["leaves"]} == {"womens-fall-long-sleeve-tops", "mens-fall-long-sleeve-tops"}

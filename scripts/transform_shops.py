@@ -72,6 +72,10 @@ class CategoryRules:
                                          # (brand_fallback.own_brand_shown; knit cardigans, 2026-11-19: Grehip, Tee
                                          # And Golf). Off for the clubs: 56 club resellers' banners and URLs repeat
                                          # their slugs (도쿄피아, 렉스골프 ...), their brands are Mizuno, Yamaha
+    sizes_mens: str | None = None        # the size profile of a product the seller states men's, in a category that
+                                         # feeds a men's and a women's section (50002796, 2026-11-21: mens_tops)
+    draft_leaves: tuple[str, ...] = ()    # a section not reviewed yet in a reviewed category: a product placed there is
+                                         # created DRAFT (50002796's men's section, 2026-11-21), until the owner's word
     variant_screen: tuple[str, ...] = ()  # the codes of listing_title_rules.json whose words in a variant's option
                                          # value hold the product (off_section_variant): a long-sleeve top sold with
                                          # 반팔 variants (2026-11-21, the tops pilot: 5418772209, 5751294772)
@@ -183,6 +187,8 @@ RULES = {
                 paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
                 no_choice_out=True, composition=True, sizes="womens_tops", own_brand_wordmark=True,
                 variant_screen=("short_sleeve", "cardigan", "vest", "cooling", "outerwear"),
+                sizes_mens="mens_tops",                     # the men's section (the owner 2026-11-21)
+                draft_leaves=("mens-fall-long-sleeve-tops",),   # DRAFT until its pilot's review
                 reviewed=True),       # the owner 2026-11-21: 24 drafts of the pilot activated after its review
             "50002799": CategoryRules(
                 paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
@@ -213,6 +219,15 @@ def rules_for(shop: str | StoreId) -> ShopRules:
     except (KeyError, ValueError):
         raise ShopRulesMissing(f"{shop}: no transform rules for this shop yet (configured: "
                                f"{', '.join(s.value for s in RULES)}); ask the operator") from None
+
+
+def draft_leaf(shop: str | StoreId, category_id: str | None, leaves: list[str]) -> bool:
+    """A product placed in a section of the category that is not reviewed yet (`draft_leaves`): created DRAFT."""
+    try:
+        rules = rules_for(shop).categories.get(str(category_id))
+    except ShopRulesMissing:
+        return False
+    return bool(rules and set(rules.draft_leaves) & set(leaves))
 
 
 def reviewed(shop: str | StoreId, category_id: str | None) -> bool:

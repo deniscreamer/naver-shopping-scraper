@@ -3068,6 +3068,47 @@
       "우먼"
      ]
     ],
+    "tokens": [],
+    "leaves": [
+     "womens-fall-long-sleeve-tops"
+    ]
+   },
+   {
+    "code": "not_mens",
+    "leaves": [
+     "mens-fall-long-sleeve-tops"
+    ],
+    "why": "2026-11-21 (men's fall long-sleeve golf tops, the second section of 50002796; the owner's required words: 남성|남자|mens|men and 긴팔|long sleeve): a title with no men's word is left out of the men's job (women's tops are the women's section's own job); \"men\" inside \"women\" is no men's word.",
+    "requires": [
+     [
+      "남성",
+      "남자",
+      {
+       "text": "men",
+       "notFollowedBy": [],
+       "notPrecededBy": [
+        "wo"
+       ]
+      }
+     ]
+    ],
+    "tokens": []
+   },
+   {
+    "code": "not_long_sleeve",
+    "leaves": [
+     "mens-fall-long-sleeve-tops"
+    ],
+    "why": "2026-11-21 (men's fall long-sleeve golf tops, the second section of 50002796; the owner's required words: 남성|남자|mens|men and 긴팔|long sleeve): a title with no long-sleeve word (긴팔, 긴소매, 롱슬리브, long sleeve) is left out of the men's job.",
+    "requires": [
+     [
+      "긴팔",
+      "긴소매",
+      "롱슬리브",
+      "longsleeve",
+      "long-sleeve"
+     ]
+    ],
     "tokens": []
    },
    {
@@ -3422,5 +3463,9 @@
   "50002799": [
    "50002798"
   ]
+ },
+ "default_leaf": {
+  "about": "2026-11-21: a job of a category that feeds several shop sections and names none (--leaf) is this section's (the jobs before the second section)",
+  "50002796": "womens-fall-long-sleeve-tops"
  }
 }

@@ -51,12 +51,18 @@ REASONS = ("sponsored", "title_unavailable", "rental", "category_mismatch", "key
 _ASCII_WORD = re.compile(r"[a-z0-9]")
 
 
-def title_rules(category_id: str, path: str = TITLE_RULES) -> list[dict[str, Any]]:
-    """The category's own title rules (listing_title_rules.json), [] for a category without any."""
+def title_rules(category_id: str, path: str = TITLE_RULES, leaf: str | None = None) -> list[dict[str, Any]]:
+    """The category's own title rules (listing_title_rules.json), [] for a category without any. A rule with
+    `leaves` binds only a job of one of those shop sections (2026-11-21: 50002796 feeds the women's and the men's
+    long-sleeve tops, each its own query and its own required words); a job that names no section is the
+    category's `default_leaf` one (the jobs before)."""
     if not os.path.exists(path):
         return []
     with open(path, encoding="utf-8") as f:
-        return json.load(f).get("categories", {}).get(str(category_id), [])
+        data = json.load(f)
+    leaf = leaf or data.get("default_leaf", {}).get(str(category_id))
+    return [r for r in data.get("categories", {}).get(str(category_id), [])
+            if not r.get("leaves") or leaf in r["leaves"]]
 
 
 def together(category_id: str, path: str = TITLE_RULES) -> list[str]:
@@ -80,11 +86,18 @@ def title_rule(name: str | None, rules: Iterable[dict[str, Any]]) -> str | None:
     for rule in rules:
         if any(_bare(u) in text for u in rule.get("unless", ())):
             continue                                # a word that says the row is what the section sells
-        if any(not any(_bare(w) in text for w in group) for group in rule.get("requires", ())):
+        if any(not any(_word_in(w, text) for w in group) for group in rule.get("requires", ())):
             return f"title:{rule['code']}"
         if any(term_matches(text, {**t, "text": re.sub(r"\s+", "", t["text"])}) for t in rule.get("tokens", ())):
             return f"title:{rule['code']}"
     return None
+
+
+def _word_in(word: Any, text: str) -> bool:
+    """A required word in the bare title: a plain word anywhere, or a token with its rules ("men" not after "wo")."""
+    if isinstance(word, dict):
+        return term_matches(text, {**word, "text": re.sub(r"\s+", "", word["text"])})
+    return _bare(word) in text
 
 
 def load_exclusions(path: str = EXCLUSIONS) -> dict[str, Any]:
@@ -140,12 +153,13 @@ class Screen:
 
     def __init__(self, category_id: str, namespace: str, published: Iterable[str] = (),
                  deferred: Iterable[str] = (), exclusions: dict[str, Any] | None = None,
-                 exclude_sponsored: bool = False, category_rules: list[dict[str, Any]] | None = None):
+                 exclude_sponsored: bool = False, category_rules: list[dict[str, Any]] | None = None,
+                 leaf: str | None = None):
         rules = (exclusions or load_exclusions())["universal"]
-        self.category_rules = title_rules(category_id) if category_rules is None else category_rules
+        self.category_rules = title_rules(category_id, leaf=leaf) if category_rules is None else category_rules
         self.category_id = str(category_id)
         self.also = together(category_id)              # rows of these categories are taken too (their own rules)
-        self.rules_of = {c: (title_rules(c) if category_rules is None else category_rules) for c in self.also}
+        self.rules_of = {c: (title_rules(c, leaf=leaf) if category_rules is None else category_rules) for c in self.also}
         self.namespace = namespace
         self.exclude_sponsored = exclude_sponsored    # ads kept (the owner, 2026-11-06), whatever the file says
         self.rules = rules.get("rules", [])
