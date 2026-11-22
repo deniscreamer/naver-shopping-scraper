@@ -566,6 +566,13 @@ def test_the_mens_tops_job_takes_the_mens_knits_and_the_womens_jobs_do_not():
     assert men.check({**row, "name": "(시즌베스트입고)제이린드버그골프 남성 투어 메리노울 반집업 니트"}) is None
     assert men.check({**row, "name": "남성 골프 니트 베스트"}) == "title:vest"
     assert men.check({**row, "name": "애플라인드 26SS 남성 인견 썸머 쿨니트 3종"}) == "title:cooling"
+    # the men's pilot review (2026-11-22): down-filled pullovers, a cooling stretch polo and summer tops
+    tee = {**row, "category_id": "50002796"}
+    assert men.check({**tee, "name": "마스터베어 오리털 티셔츠 W 0401 골프 긴팔티 골프웨어 남성용"}) == "title:outerwear"
+    assert men.check({**tee, "name": "테일러메이드 어패럴 남성 골프웨어 골프 티셔츠 카라 긴팔 기본 쿨 스판 26-P1741C"}) == "title:cooling"
+    assert men.check({**tee, "name": "남자 골프 티셔츠 여름 긴팔 카라티 기능성 셔츠 빅사이즈"}) == "title:summer"
+    assert men.check({**tee, "name": "김영주골프 남성 골프웨어 긴팔 카라 티셔츠 기능성 봄 여름 가을 골프복 상의(M7ST57)"}) is None
+    assert men.check({**row, "name": "남성 여름 골프 니트 스웨터"}) == "title:summer"
     assert Screen("50002796", namespace="fairwardgolf").check({**row, "name": "여성 골프 니트 스웨터"}) == "category_mismatch"
     knits = Screen("50002797", namespace="fairwardgolf")                    # the cardigans' job: as before
     assert knits.check({**row, "name": "여성 골프 니트 가디건"}) is None

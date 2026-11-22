@@ -229,6 +229,12 @@ def test_a_gendered_title_beats_a_unisex_row():
     assert out["value"] == "womens"
     both = A.decide(A.ATTRIBUTES["gender"], [("s1", ["9P"])], [{"label": "성별", "value": "남녀공용"}], "PGM 풀세트")
     assert both["value"] == "unisex"
+    # 2026-11-22: (MAN), 맨즈, 멘즈 are men's words ("(MAN) 비스코스 캐시 라운드니트", 2SOM, row 남녀공용)
+    man = A.decide(A.ATTRIBUTES["gender"], [("s1", ["M"])], [{"label": "성별", "value": "남녀공용"}],
+                   "(MAN) 비스코스 캐시 라운드니트")
+    assert man["value"] == "mens"
+    assert A.values_in(A.ATTRIBUTES["gender"], "골프 맨즈 니트") == ["mens"]
+    assert A.values_in(A.ATTRIBUTES["gender"], "MANSINGWEAR HUMAN 니트") == []
 
 
 def test_junior_clubs_go_to_their_one_section_whatever_the_gender():

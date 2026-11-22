@@ -111,7 +111,10 @@ TITLE_SIZES["50002799"] = TITLE_SIZES["50002797"]           # 재킷, the same s
 # a garment title's season code ("26FW", "2025 SS", "23F/W"): the briefs leave the season out of the English title, so
 # its digits need not survive either (2026-11-20, the windbreaker pilot: "TaylorMade 26FW Women's ..." kept it only
 # because a lost number fails the check); the same apparel categories as TITLE_SIZES
-TITLE_PICK = re.compile(r"(?<!\d)\d\s*\+\s*\d(?!\d)|\d{1,2}\s*(?:종|컬러|가지|color|colors)(?:\s*(?:중\s*)?택\s*\d)?", re.I)
+# ... and "N pcs 택1": the unit rule (sanitize) writes 종 as pcs before this reads the title (2026-11-22, the men's tops
+# pilot: "[울시] ... 2종 택1" reached the model as "2 pcs 택1", its digits not freed: "2 pcs, Choose 1")
+TITLE_PICK = re.compile(r"(?<!\d)\d\s*\+\s*\d(?!\d)|\d{1,2}\s*(?:종|컬러|가지|color|colors)(?:\s*(?:중\s*)?택\s*\d)?"
+                        r"|\d{1,2}\s*pcs\s*(?:중\s*)?택\s*\d", re.I)
 TITLE_SEASON = re.compile(r"(?<![A-Za-z\d])(\d{2}|\d{4})\s?(?:FW|SS|F/W|S/S|AW)(?![A-Za-z])", re.I)
 SCHEMA = {"type": "object", "additionalProperties": False, "required": ["items"],
           "properties": {"items": {"type": "array", "items": {
@@ -466,6 +469,8 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
             # "1+1" (a 2-Pack) and a choice count ("3종 택1", "6컬러"): the brief says them otherwise or leaves them out
             # (2026-11-21, the tops pilot: "... 1+1", "Choose 1 of 3 pcs" kept to keep their digits)
             seasons += [m.group(0) for m in TITLE_PICK.finditer(item["source"])]
+            if any(not re.search(r"\+", m.group(0)) for m in TITLE_PICK.finditer(item["source"])):
+                item["pick"] = True                 # a choice of styles: never "pcs" in English (verify)
             if seasons:
                 item["drop"] = [*(item.get("drop") or []), *seasons]
         if kind == "title" and again and context:
@@ -556,6 +561,9 @@ _BRACKETS_RE = re.compile(r"\[[^\]]*\]|[(（][^)）]*(?:" + _PROMO + r")[^)）]*
                           r"(?:\d+\s*%)?|\d+\s*%\s*(?:정품|할인|적립)|(?<![A-Za-z])(?:무상\s*A/?S|A/S(?:\s*(?:가능|보장))?|AS\s*(?:가능|보장))(?![A-Za-z])")   # after-sales claims
 
 
+_PICK_EN = re.compile(r"(?i)\b\d+\s*(?:pcs?|pieces?)\b|\bpcs\b|\bchoose\s+(?:1|one)\b")
+
+
 def _checked_source(item: dict[str, Any]) -> str:
     """The part of the source whose numbers and codes must survive: a title's [bracketed] shop tags ([1년AS],
     [오늘출고]) and its Korean distributor ("던롭스포츠코리아100%", "삼양인터내셔날") may be dropped, as the system prompt
@@ -607,6 +615,10 @@ def verify(items: list[dict[str, Any]], text: str) -> tuple[dict[str, str], list
         lost = [n for n in numbers(checked) if n not in out and n not in (item.get("free_numbers") or ())]
         if lost:
             problems.append("numbers changed: missing " + ", ".join(lost))
+        if item.get("pick") and _PICK_EN.search(out):
+            # 2026-11-22, the men's tops pilot: "[울시] ... 2종 택1" (one knit, a choice of 2) went out as "... 2 pcs,
+            # Choose 1" and "Choose 1 of 4 pcs" though the brief says leave the choice out: it reads as a bundle
+            problems.append("a choice of styles (N종 택1) is no pack: leave it out of the title, no pcs / Choose")
         lost_codes = sorted(c for c in codes(checked) if c not in out.upper())
         if lost_codes:
             problems.append("codes lost: missing " + ", ".join(lost_codes))

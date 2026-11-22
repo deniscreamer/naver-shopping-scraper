@@ -304,7 +304,9 @@ files or the live dictionaries. The rounds run so far: History, below.
   code ("26FW", "22ss", "2025 SS") be left out whole, digits and letters (2026-11-21: only its digits were freed, and
   "codes lost: missing 22SS" failed two titles); `translate.TITLE_SIZES` lets a title's size run
   (55 66 77, 90 95 100) be left out without "numbers changed" (a free-standing number only: a code's tail, K90,
-  must survive); aspects and product words of fit, length, thickness,
+  must survive); `translate.TITLE_PICK` (2026-11-21) frees a pack ("1+1") and a choice count ("3종 택1", "6컬러",
+  and "2 pcs 택1", the unit rule's form of 2종 택1, 2026-11-22), and a choice must not come back as "N pcs" or
+  "Choose 1" (`_PICK_EN`: "[울시] ... 2종 택1" went out as "2 pcs, Choose 1", read as a bundle); aspects and product words of fit, length, thickness,
   pilling and washing)
   have a category brief, aspects and rules. Another category gets the
   base prompt and the general aspects until it has its own.

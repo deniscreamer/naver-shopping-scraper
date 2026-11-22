@@ -45,7 +45,9 @@ GENDER = Attribute(
     words={
         "unisex": ("남녀공용", "남여공용", "남녀", "남여", "공용", "유니섹스", "UNISEX"),
         "womens": ("여성용", "여성", "여자", "레이디스", "레이디", "WOMEN'S", "WOMENS", "WOMEN", "LADIES", "LADY"),
-        "mens": ("남성용", "남성", "남자", "MEN'S", "MENS", "MEN"),
+        # (MAN), 맨즈, 멘즈: 2026-11-22, the men's pilot review: "(MAN) 비스코스 캐시 라운드니트" (2SOM 4866944169,
+        # row 남녀공용) went to the women's knit cardigans; the title screen counts them men's words since 2026-11-22
+        "mens": ("남성용", "남성", "남자", "맨즈", "멘즈", "MEN'S", "MENS", "MEN", "(MAN)"),
     },
     rows=("성별",),
     implies={"unisex": ("mens", "womens")},

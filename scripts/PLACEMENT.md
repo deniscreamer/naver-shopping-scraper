@@ -110,6 +110,8 @@ The values are `mens` / `womens`. `unisex` goes to both, because `GENDER.implies
 every section one of its variants fits. A title naming one gender beats a 남녀공용 (unisex) row: sellers fill the row
 from a template (the owner's pilot, 2026-11-09: a "PGM 여성골프채풀세트" went to the men's section too). A category whose 상품정보 row is not named 성별 needs that label added to
 `GENDER.rows`. A category whose sellers write other words needs those words added to `GENDER.words`. Both are data.
+Men's words since 2026-11-22 (the men's tops pilot: "(MAN) 비스코스 캐시 라운드니트", 2SOM, row 남녀공용, went to the
+women's knit cardigans): 맨즈, 멘즈 and "(MAN)" in brackets (a bare MAN is no word: HUMAN, MANSINGWEAR).
 
 How gender is read (50002788, fairwardgolf): each sold variant's option values first ("여성용-그라파이트": that
 variant is women's; a set with both is `mixed` and goes to both sections, each with its own start variant; when the

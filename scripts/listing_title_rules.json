@@ -2609,7 +2609,7 @@
    },
    {
     "code": "outerwear",
-    "why": "2026-11-22 (the owner: the men's golf knits of 50002797 feed the men's long-sleeve tops; a listing probe found 71 of 97 cards of 남성 골프 니트 men's knit sweaters and half-zips there): the 50002796 men's rule. 2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a jacket, a windbreaker, padding or a coat (자켓, 재킷, 점퍼, 잠바, 바람막이, 패딩, 다운, 코트) is outerwear: the windbreakers' or the midlayers'; 다운블로우 is a brand, 트리코트 (tricot) no coat. 2026-11-21, the second pilot: a piste or an anorak (피스테, 아노락) too (Malbon 12375182812 sold a 컬러블록 피스테 among its tops).",
+    "why": "2026-11-22 (the owner: the men's golf knits of 50002797 feed the men's long-sleeve tops; a listing probe found 71 of 97 cards of 남성 골프 니트 men's knit sweaters and half-zips there): the 50002796 men's rule. 2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a jacket, a windbreaker, padding or a coat (자켓, 재킷, 점퍼, 잠바, 바람막이, 패딩, 다운, 코트) is outerwear: the windbreakers' or the midlayers'; 다운블로우 is a brand, 트리코트 (tricot) no coat. 2026-11-21, the second pilot: a piste or an anorak (피스테, 아노락) too (Malbon 12375182812 sold a 컬러블록 피스테 among its tops). 2026-11-22 (the men's pilot review, 100 drafts): a down-filled pullover (마스터베어 오리털 티셔츠, 4759230721 / 5263599256) is outerwear: 오리털, 거위털, 구스.",
     "tokens": [
      {
       "text": "자켓",
@@ -2711,6 +2711,21 @@
       "text": "윈드브레이커",
       "notFollowedBy": [],
       "notPrecededBy": []
+     },
+     {
+      "text": "오리털",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "거위털",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "구스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
      }
     ],
     "leaves": [
@@ -2719,7 +2734,7 @@
    },
    {
     "code": "cooling",
-    "why": "2026-11-22 (the men's golf knits of 50002797 feed the men's long-sleeve tops): the 50002796 rule. 2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a summer cooling top (냉감, 쿨링, 쿨티, 쿨긴팔: 17 of the 768) is no fall top. 2026-11-22: 쿨니트 (a summer cool knit, 애플라인드 26SS 남성 인견 썸머 쿨니트 in the probe of 남성 골프 니트).",
+    "why": "2026-11-22 (the men's golf knits of 50002797 feed the men's long-sleeve tops): the 50002796 rule. 2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a summer cooling top (냉감, 쿨링, 쿨티, 쿨긴팔: 17 of the 768) is no fall top. 2026-11-22: 쿨니트 (a summer cool knit, 애플라인드 26SS 남성 인견 썸머 쿨니트 in the probe of 남성 골프 니트). 2026-11-22 (the men's pilot review, 100 drafts): 쿨스판 (테일러메이드 ... 기본 쿨 스판 26-P1741C, 9953718175).",
     "tokens": [
      {
       "text": "냉감",
@@ -2765,7 +2780,44 @@
       "text": "쿨니트",
       "notFollowedBy": [],
       "notPrecededBy": []
+     },
+     {
+      "text": "쿨스판",
+      "notFollowedBy": [],
+      "notPrecededBy": []
      }
+    ],
+    "leaves": [
+     "mens-fall-long-sleeve-tops"
+    ]
+   },
+   {
+    "code": "summer",
+    "why": "The 50002796 rule for the men's section. 2026-11-22 (the men's pilot review, 100 drafts): a top sold for summer (여름, 썸머, summer in the title) with no fall or winter word (가을, 겨울, 기모, 간절기, 사계절, FW) is no fall top: 남자 골프 티셔츠 여름 긴팔 카라티 (8179238119), [볼빅] 23S/S 봄 여름 패커블 스웻셔츠 (7971834445), 휠라골프 봄 여름 긴팔티; on the 376 collected listing titles of 50002796 and 50002797 it leaves out those 3 and keeps 렌스트래치 봄 여름 가을, 김영주골프 봄 여름 가을 (M7ST57); no women's title changed.",
+    "tokens": [
+     {
+      "text": "여름",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "썸머",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "summer",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ],
+    "unless": [
+     "가을",
+     "겨울",
+     "기모",
+     "간절기",
+     "사계절",
+     "fw"
     ],
     "leaves": [
      "mens-fall-long-sleeve-tops"
@@ -3664,7 +3716,7 @@
    },
    {
     "code": "outerwear",
-    "why": "2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a jacket, a windbreaker, padding or a coat (자켓, 재킷, 점퍼, 잠바, 바람막이, 패딩, 다운, 코트) is outerwear: the windbreakers' or the midlayers'; 다운블로우 is a brand, 트리코트 (tricot) no coat. 2026-11-21, the second pilot: a piste or an anorak (피스테, 아노락) too (Malbon 12375182812 sold a 컬러블록 피스테 among its tops).",
+    "why": "2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a jacket, a windbreaker, padding or a coat (자켓, 재킷, 점퍼, 잠바, 바람막이, 패딩, 다운, 코트) is outerwear: the windbreakers' or the midlayers'; 다운블로우 is a brand, 트리코트 (tricot) no coat. 2026-11-21, the second pilot: a piste or an anorak (피스테, 아노락) too (Malbon 12375182812 sold a 컬러블록 피스테 among its tops). 2026-11-22 (the men's pilot review, 100 drafts): a down-filled pullover (마스터베어 오리털 티셔츠, 4759230721 / 5263599256) is outerwear: 오리털, 거위털, 구스.",
     "tokens": [
      {
       "text": "자켓",
@@ -3766,6 +3818,21 @@
       "text": "윈드브레이커",
       "notFollowedBy": [],
       "notPrecededBy": []
+     },
+     {
+      "text": "오리털",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "거위털",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "구스",
+      "notFollowedBy": [],
+      "notPrecededBy": []
      }
     ]
    },
@@ -3853,7 +3920,7 @@
    },
    {
     "code": "cooling",
-    "why": "2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a summer cooling top (냉감, 쿨링, 쿨티, 쿨긴팔: 17 of the 768) is no fall top. 2026-11-22: 쿨니트 (a summer cool knit, 애플라인드 26SS 남성 인견 썸머 쿨니트 in the probe of 남성 골프 니트).",
+    "why": "2026-11-21 (women's fall long-sleeve golf tops 50002796, the owner's section; studied on 768 listing titles of the query 여성 골프 가을 긴팔 티셔츠 in 8 price bands, 272 of them store products): a summer cooling top (냉감, 쿨링, 쿨티, 쿨긴팔: 17 of the 768) is no fall top. 2026-11-22: 쿨니트 (a summer cool knit, 애플라인드 26SS 남성 인견 썸머 쿨니트 in the probe of 남성 골프 니트). 2026-11-22 (the men's pilot review, 100 drafts): 쿨스판 (테일러메이드 ... 기본 쿨 스판 26-P1741C, 9953718175).",
     "tokens": [
      {
       "text": "냉감",
@@ -3899,7 +3966,41 @@
       "text": "쿨니트",
       "notFollowedBy": [],
       "notPrecededBy": []
+     },
+     {
+      "text": "쿨스판",
+      "notFollowedBy": [],
+      "notPrecededBy": []
      }
+    ]
+   },
+   {
+    "code": "summer",
+    "why": "2026-11-22 (the men's pilot review, 100 drafts): a top sold for summer (여름, 썸머, summer in the title) with no fall or winter word (가을, 겨울, 기모, 간절기, 사계절, FW) is no fall top: 남자 골프 티셔츠 여름 긴팔 카라티 (8179238119), [볼빅] 23S/S 봄 여름 패커블 스웻셔츠 (7971834445), 휠라골프 봄 여름 긴팔티; on the 376 collected listing titles of 50002796 and 50002797 it leaves out those 3 and keeps 렌스트래치 봄 여름 가을, 김영주골프 봄 여름 가을 (M7ST57); no women's title changed.",
+    "tokens": [
+     {
+      "text": "여름",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "썸머",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "summer",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ],
+    "unless": [
+     "가을",
+     "겨울",
+     "기모",
+     "간절기",
+     "사계절",
+     "fw"
     ]
    },
    {

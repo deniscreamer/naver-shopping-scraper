@@ -557,6 +557,13 @@ def test_a_slogan_is_no_brand_when_the_shops_own_label_row_was_dropped():
     "내추럴모드협력사") as "WHITE TEE": the OCR rows as read. Their own label row was dropped (resellers_own)."""
     camel = ["EVERYDAY", "EVER YDAY", "EVER YDAY", "EVER YOAY", "EVER YOAY", "EVER YDAY", "EVER YDAY", "EVER YDAY"]
     assert B.resellers_own("카멜브리즈", "카멜브리즈 협력업체", CAMEL)
+    # 2026-11-22 (the men's tops pilot): 자체브랜드 (our own brand) is the shop's own label too: 케간지골프's sweatshirts
+    kgang = {"name": "케간지골프", "business": {"legal_name": "케간지골프"}}
+    assert B.resellers_own("자체브랜드", "", kgang) and B.resellers_own("자체 브랜드", None, None)
+    assert B.decide("남성 라운드넥 긴팔 골프 맨투맨 블랙 로고 패턴 케간지골프", "중국(광저우)", [], [], [], None, None,
+                    set(), kgang, own_row=True)[:2] == ("케간지골프", "shop_label")
+    assert B.distributors("중국(광저우)") == [] and B.distributors("중국(중국 광저우 / 청도시)") == []
+    assert B.distributors("중국산(인파로)") == ["인파로"]
     # 2026-11-21 (the second windbreaker pilot, the owner: fix the brands): the dropped row is the shop's own label in
     # apparel (a contract factory sews it), never the slogan
     assert B.decide("[카멜브리즈]썸씽 골프집업 여성골프 니트집업 가디건", "국산", [], camel, [], None, None,
@@ -581,6 +588,7 @@ def test_fill_passes_the_dropped_own_row_to_decide():
 
 @pytest.mark.parametrize("name, want", [
     ("자체제작 상품", None), ("자체 제작", None), ("자체제작", None),                     # 7309508576 (2026-11-21)
+    ("자체브랜드", None), ("자체 브랜드", None),                                         # 9723948321 (2026-11-22)
     ("필드가OEM", "필드가"), ("주식회사 더살림oem", None), ("(주)대한ODM", None),          # 10780424641, 10669638240
     ("벤시아 협력업체(PG골프클럽)", "벤시아"),                                               # 11174080985
     ("PXG", "PXG"), ("루이까스텔", "루이까스텔"),

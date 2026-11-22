@@ -116,7 +116,10 @@ _NO_FIRM = re.compile(r"(?i)^(?:별도\s*표기|알\s*수\s*없음|미상|불명
                       r"|unknown_.*"
                       # Naver's "made in-house" (2026-11-21, the second windbreaker pilot: "자체제작 상품" in the 브랜드
                       # row went out as the vendor "In-House Product", 7309508576, 10674911182)
-                      r"|자체\s*제작(?:\s*(?:상품|제품))?)$")
+                      r"|자체\s*제작(?:\s*(?:상품|제품))?"
+                      # ... and "our own brand" (2026-11-22, the men's tops pilot: 자체브랜드 in the 브랜드 row of 케간지골프's
+                      # three sweatshirts went out as the vendor "Unbranded", the title "Unbranded Men's ...", 9723948321)
+                      r"|자체\s*브랜드)$")
 # a maker's "OEM" / "ODM" (2026-11-21): glued to a label it is that label's contract making ("필드가OEM": Fieldga,
 # 10780424641); after a company's form (주식회사, (주), ㈜) it is the contract factory, no brand ("주식회사 더살림oem" became
 # the vendor "The Sallim OEM" of 수아무아's 10669638240)
@@ -144,11 +147,19 @@ def trade_name(name: str | None) -> bool:
     return bool(_TRADE_NAME.search(base))
 
 
+# "our own brand" in the 브랜드 row (2026-11-22, the men's tops pilot: 케간지골프's three sweatshirts went out as the vendor
+# "Unbranded"; as a no-firm word the run-level fallback then took the origin's city 광저우 or none): the seller's own
+# label, the shop's name (shop_label, own_row), as a reseller's own shop
+_OWN_LABEL = re.compile(r"자체\s*브랜드\s*$")
+
+
 def resellers_own(name: str | None, maker: str | None, store: dict[str, Any] | None) -> bool:
     """`name` is the seller's own shop, and the seller says it only resells: its 제조사 is "<its shop> 협력사 /
-    협력업체" (a contract maker of the shop's). 11674983361, 2026-11-12: 재팬 도코도코 wrote its shop as the brand and
+    협력업체" (a contract maker of the shop's); or `name` is 자체브랜드, the shop's own label (2026-11-22). 11674983361, 2026-11-12: 재팬 도코도코 wrote its shop as the brand and
     "재팬도코도코협력사" as the maker; 홈앤컴, 굿세라, 구띵상점, 유무상회 the same. A shop selling its own brand (스컬독,
     버디온, 아화골프, US키즈골프) writes no 협력: it stays."""
+    if _OWN_LABEL.match((name or "").strip()):
+        return True
     store = store or {}
     # a company's form is no part of its name ("(주) 한앤코", the legal name of 김영주골프's store: its maker "한앤코
     # 협력업체" became the vendor "Han & Co.", 6521205918, 2026-11-21)
@@ -294,8 +305,12 @@ _REGION = (r"(?:서울|부산|대구|인천|광주|대전|울산|세종|경기|�
 _PLACE = r"[가-힣]{1,6}(?:특별자치시|특별자치도|특별시|광역시|시|군|구|읍|면|동|리|도)"
 # ... and a bare country, alone or with 등 ("홍콩", "日本", "China", "인도네시아 등" in the shop's brackets)
 _COUNTRY = r"(?i:홍콩|중국|일본|대만|미국|영국|베트남|태국|인도네시아|日本|中国|china|japan|usa?|uk|hong\s*kong)(?:\s*등)?"
+# ... and a Chinese making city or province (2026-11-22, the men's tops pilot: "중국(광저우)" by 케간지골프 became the brand
+# 광저우, Guangzhou, 9723948321), with 시 / 성 or a country word before it ("중국 광저우")
+_CN_PLACE = (r"(?:(?:중국|china)\s*)?(?:광저우|광주우|심천|선전|상해|상하이|청도|칭다오|항주|항저우|이우|동관|둥관|소주|쑤저우|북경|베이징"
+             r"|하문|샤먼|복건|푸젠|절강|저장|강소|장쑤|산동|산둥|광동|광둥|천진|톈진|대련|다롄|연대|옌타이|위해|웨이하이)(?:시|성)?")
 _ADDRESS_PART = re.compile(rf"^(?:(?:{_REGION})(?:\s+(?:{_REGION}|{_PLACE}))*|(?:{_PLACE})(?:\s+(?:{_PLACE}))+"
-                           rf"|{_COUNTRY})$")
+                           rf"|{_COUNTRY}|(?i:{_CN_PLACE}))$")
 
 
 def distributors(origin: str | None) -> list[str]:

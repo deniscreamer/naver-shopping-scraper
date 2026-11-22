@@ -390,3 +390,20 @@ def test_a_pack_and_a_choice_count_may_be_left_out():
     assert [m.group(0) for m in T.TITLE_PICK.finditer("JN 여성 기모 이너 1+1 / 울시 셔츠 3종 택1 6컬러 PKWCW4218-51")] == [
         "1+1", "3종 택1", "6컬러"]
     assert not list(T.TITLE_PICK.finditer("PKWCW4218-51 2025 7LOTS907"))
+    # 2026-11-22: the unit rule writes 종 as pcs first ("2종 택1" reaches the check as "2 pcs 택1"); a bare "13 pcs" is no pick
+    assert [m.group(0) for m in T.TITLE_PICK.finditer("[울시] 남성 풀오버 니트 2 pcs 택1")] == ["2 pcs 택1"]
+    assert not list(T.TITLE_PICK.finditer("13 pcs 풀세트"))
+
+
+def test_a_choice_of_styles_is_never_a_pack_in_english():
+    """The men's tops pilot (2026-11-22): "[울시] 남성 소프트터치 카라 풀오버 니트 2종 택1" went out as "... 2 pcs, Choose 1"
+    and "4종 택1" as "Choose 1 of 4 pcs": a choice reads as a bundle; the check sends such a title back."""
+    item = {"id": "t", "kind": "title", "source": "[울시] 남성 소프트터치 카라 풀오버 니트 2종 택1", "drop": ["2종 택1"],
+            "pick": True}
+    for bad in ("Wolsey Men's Soft-Touch Collared Knit Pullover 2 pcs, Choose 1",
+                "Wolsey Men's Classic Fleece-Lined Top, Choose 1 of 4 pcs"):
+        assert "a choice of styles" in T.verify([item], json.dumps({"items": [{"id": "t", "en": bad}]}))[1][0]["problems"][0]
+    good = "Wolsey Men's Soft-Touch Collared Knit Pullover"
+    assert T.verify([item], json.dumps({"items": [{"id": "t", "en": good}]}))[0] == {"t": good}
+    pack = {**item, "source": "JN 남성 기모 이너 1+1", "drop": ["1+1"], "pick": False}
+    assert T.verify([pack], json.dumps({"items": [{"id": "t", "en": "JN Men's Fleece Base Layer 2-Pack"}]}))[1] == []
