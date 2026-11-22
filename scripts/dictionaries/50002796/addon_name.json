@@ -1,0 +1,11 @@
+{
+ "format": "dictionary/1",
+ "kind": "addon_name",
+ "backed_up": "2026-11-22T05:45:40Z",
+ "entries": {
+  "소형 (가로:23.0 세로:27.5 너비:12.5)": "Small (Width: 23.0 Height: 27.5 Depth: 12.5)",
+  "쇼핑백(소) + 박스(소)": "Shopping Bag (Small) + Box (Small)",
+  "쇼핑백(중) + 박스(중)": "Shopping Bag (Medium) + Box (Medium)",
+  "중형 (가로:36.0 세로:29.0 너비:13.5)": "Medium (Width: 36.0 Height: 29.0 Depth: 13.5)"
+ }
+}

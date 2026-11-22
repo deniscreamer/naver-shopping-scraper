@@ -1,11 +1,14 @@
 {
  "format": "dictionary/1",
  "kind": "fact_label",
- "backed_up": "2026-11-21T15:37:52Z",
+ "backed_up": "2026-11-22T05:45:40Z",
  "entries": {
   "사이즈": "Size",
+  "사이즈선택": "Size",
   "원단": "Fabric",
+  "제이린드버그 여성 골프웨어 선택": "Women's Golf Apparel Selection",
   "제품선택": "Product Selection",
-  "컬러": "Color"
+  "컬러": "Color",
+  "타입": "Type"
  }
 }
