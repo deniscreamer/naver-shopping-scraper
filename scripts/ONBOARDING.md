@@ -134,7 +134,20 @@ attribute; the colour, delivery and benefit facets say nothing about the kind of
 is another surface, in the default order, with catalog cards the jobs never read (its price bands still show the
 spread of the whole category).
 
-Decide (the agent), from the flags (`attention`):
+Look before deciding (the owner, 2026-11-22: the agent judges itself whether its probes are good and fit the
+category, the adjacent leaves first): every query has contact sheets of its listing cards (`q<n>/sheet*.jpg`, the
+cards' own photos, grouped: "kept" grey, each screen reason red, each other leaf blue where the screen would keep it).
+Read every sheet with the Read tool, then check a doubt by its `q<n>/index.tsv` line (title, category, reviews, link):
+- "kept": every card the section's kind? A misfit there is a missing word of a screen rule;
+- each reason group: any card that fits? Then that rule drops what the section sells (`--alt-rules` the fix);
+- each other leaf, blue cards: the section's goods? The leaf is a `together` candidate; red cards there show what
+  else it holds;
+- a probe is good enough when the kept group is the section's kind at a glance and its share and reviews match the
+  report; else probe another query or more batches before deciding.
+Write the verdict in the probe's folder, `decision.md`: per query take / drop / add as a job's query; per adjacent leaf
+together / own section / leave; per rule keep / widen / narrow; each with its numbers and the cards looked at.
+
+Decide (the agent), from the flags (`attention`) and the sheets:
 - `kept_low` (under half kept) or `requires_drops` (a required group drops a quarter): read the examples; widen the
   group with the garment words the titles use and measure it with `--alt-rules`; or add a query that brings more of
   the section (2026-11-22: 남성 골프 긴팔 카라티 kept 72 of 96, the owner's 가을 긴팔 티셔츠 46 of 97, its top summer

@@ -36,3 +36,25 @@ def test_the_alternative_rules_show_what_they_add():
     assert got["alt"]["dropped"] == []
     assert "## " not in P.report("50002796", None, {})                       # no query, no section
     assert "kept by the screen: 2 of 5" in P.report("50002796", "mens", {"q": got})
+
+
+def test_the_sheets_group_the_cards_and_draw_offline(tmp_path):
+    """The cards: kept first (grey), each reason (red), the other leaf (blue where the screen keeps it); the photos
+    from a fake fetch, the sheet drawn, index.tsv written."""
+    rules = P.LF.title_rules("50002796", leaf="mens-fall-long-sleeve-tops")
+    rows = [dict(r, product_id=str(i), image=f"https://shopping-phinf.pstatic.net/main_1/{i}.jpg") for i, r in
+            enumerate(ROWS)]
+    got = P.cards(rows, "50002796", rules)
+    assert [c.group for c in got][:2] == ["kept", "kept"] and got[0].mark is None
+    assert {c.group: c.mark for c in got}["other leaf 50002797"] == "info"
+    assert {c.group: c.mark for c in got}["title:cooling"] == "flag"
+    import io
+    from PIL import Image
+    buf = io.BytesIO()
+    Image.new("RGB", (20, 20), "white").save(buf, "JPEG")
+
+    def fetch(url, session=None):
+        assert url.endswith("?type=f300")
+        return "original", url, buf.getvalue(), None
+    sheets = P.draw(got, str(tmp_path / "q1"), "sheet", fetch=fetch)
+    assert sheets and (tmp_path / "q1" / "index.tsv").exists() and (tmp_path / "q1" / "images" / "0.jpg").exists()

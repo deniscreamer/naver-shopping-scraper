@@ -18,6 +18,12 @@ first --batches batches; one adapter user: never while a job runs, 409) with the
   * flags for the agent (`attention`): see FLAGS. A flag is a question for the agent first; it asks the operator
     only when the probe cannot settle it (ONBOARDING.md "B0. Probe the listing").
 
+Contact sheets (the owner, 2026-11-22: the agent judges by eye whether its probes fit the category, the adjacent
+leaves first): per query <folder>/q<n>/sheet*.jpg and index.tsv, the listing cards' own photos (Naver's image CDN, a 300 px
+rendition) in groups: "kept" (grey), each reason of the screen (red: did it drop what fits?), each other leaf
+(blue: its rows the screen would keep; red: the rest), with index.tsv; --no-sheets skips them. The agent looks at
+every sheet and writes its verdict in <folder>/decision.md (ONBOARDING.md "B0. Probe the listing").
+
 Read only for the shop: nothing is collected, prepared or published. Output: scripts/output/probes/<category>-<leaf or
 default>-<UTC>/probe.json and report.md, the path printed. Exit 0; 2 on bad arguments; 3 when the server refused.
 """
@@ -31,6 +37,7 @@ from datetime import datetime, timezone
 from typing import Any
 
 import listing_filter as LF
+import sheet as S
 from naver_api_client import ApiError, NaverApiClient
 
 OUT_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output", "probes")
@@ -125,6 +132,54 @@ def attention(found: dict[str, Any], rules: list[dict[str, Any]]) -> list[dict[s
     return flags
 
 
+THUMB = "?type=f300"     # a 300 px rendition of the listing card's photo (shopping-phinf)
+
+
+def cards(rows: list[dict[str, Any]], category: str, rules: list[dict[str, Any]]) -> list[S.Card]:
+    """The query's rows as sheet cards, grouped: kept, each reason, each other leaf (blue: the screen keeps it)."""
+    taken = {category, *LF.together(category)}
+    out = []
+    for r in rows:
+        code = LF.title_rule(r.get("name"), rules)
+        cat = _row_category(r)
+        if cat in taken:
+            group, mark = (code or "kept"), (None if code is None else "flag")
+        else:
+            group, mark = f"other leaf {cat}", ("info" if code is None else "flag")
+        reviews = int(((r.get("reviews") or {}).get("count")) or 0)
+        out.append(S.Card(n=0, key=str(r.get("product_id") or ""), photos=[], group=group, mark=mark,
+                          lines=[f"{cat} · {reviews} reviews", str(r.get("name") or "")[:60], code or ""],
+                          data={"name": r.get("name"), "category_id": cat, "reason": code or "kept",
+                                "reviews": reviews, "image": r.get("image"), "link": r.get("link")}))
+    order = {"kept": 0}
+    out.sort(key=lambda c: (order.get(c.group or "", 1 if not str(c.group).startswith("other") else 2), str(c.group)))
+    for i, c in enumerate(out, 1):
+        c.n = i
+    return out
+
+
+def draw(query_cards: list[S.Card], folder: str, prefix: str, fetch: Any = None) -> list[str]:
+    """The cards' photos fetched once into <folder>/images/, the sheets drawn -> their paths."""
+    import naver_images
+    fetch = fetch or naver_images.fetch
+    os.makedirs(os.path.join(folder, "images"), exist_ok=True)
+    session = naver_images.new_session()
+    for c in query_cards:
+        url = c.data.get("image")
+        path = os.path.join(folder, "images", f"{c.key}.jpg")
+        if url and not os.path.exists(path):
+            try:
+                _, _, data, _ = fetch(str(url).split("?")[0] + THUMB, session=session)
+                with open(path, "wb") as f:
+                    f.write(data)
+            except Exception as e:                  # noqa: BLE001: a missing photo draws "no photo"
+                print(f"listing_probe: photo of {c.key}: {e}")
+        c.photos = [path if os.path.exists(path) else None]
+    sheets = S.grid(query_cards, folder, prefix=prefix, label_lines=3)
+    S.write_index(query_cards, folder, ["name", "category_id", "reason", "reviews", "link"], {"prefix": prefix})
+    return sheets
+
+
 def report(category: str, leaf: str | None, probes: dict[str, dict[str, Any]]) -> str:
     """The findings as a short Markdown report for the agent and the operator."""
     lines = [f"# Listing probe: {category} {leaf or '(default section)'}", ""]
@@ -150,6 +205,9 @@ def report(category: str, leaf: str | None, probes: dict[str, dict[str, Any]]) -
             lines.append("- adjacent leaves: " + "; ".join(f"{a['id']} {a['path']}" for a in f["adjacent"][:20]))
         for flag in f["attention"]:
             lines.append(f"- **{flag['flag']}**: {flag['why']}")
+        if f.get("sheets"):
+            lines.append("- sheets: " + ", ".join(os.path.relpath(x, os.path.dirname(os.path.dirname(x)))
+                                                   for x in f["sheets"]))
         lines.append("")
     return "\n".join(lines)
 
@@ -162,6 +220,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--batches", type=int, default=3, help="sorted batches read per query (~48 rows each)")
     p.add_argument("--alt-rules", help="a JSON list of rules for the category, compared with today's")
     p.add_argument("--out", default=OUT_ROOT)
+    p.add_argument("--no-sheets", action="store_true", help="no contact sheets (no photo is fetched)")
     a = p.parse_args(argv)
     if a.leaf and a.leaf not in LF.leaves_of(a.category):
         print(f"stop: --leaf {a.leaf}: no such section of {a.category}")
@@ -172,6 +231,7 @@ def main(argv: list[str] | None = None) -> int:
             alt = json.load(f)
     api = NaverApiClient()
     probes = {}
+    rows_of: dict[str, list[dict[str, Any]]] = {}
     for query in a.query:
         try:
             got = api.listing(query, max_batches=a.batches)
@@ -179,7 +239,7 @@ def main(argv: list[str] | None = None) -> int:
             print(f"stop: the server refused the listing for {query!r}: {e.status} {e.error}")
             return 3
         job = got["job"]
-        rows = [dict(r) for r in got["results"]]
+        rows = rows_of[query] = [dict(r) for r in got["results"]]
         page = job.get("filters")
         filters = dict(page) if page is not None else None
         probes[query] = analyze(rows, filters, a.category, a.leaf, alt_rules=alt,
@@ -188,6 +248,10 @@ def main(argv: list[str] | None = None) -> int:
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     folder = os.path.join(a.out, f"{a.category}-{a.leaf or 'default'}-{stamp}")
     os.makedirs(folder, exist_ok=True)
+    if not a.no_sheets:
+        rules = LF.title_rules(a.category, leaf=a.leaf)
+        for i, (query, rows) in enumerate(rows_of.items(), 1):
+            probes[query]["sheets"] = draw(cards(rows, a.category, rules), os.path.join(folder, f"q{i}"), "sheet")
     with open(os.path.join(folder, "probe.json"), "w", encoding="utf-8") as f:
         json.dump({"category": a.category, "leaf": a.leaf, "queries": probes}, f, ensure_ascii=False, indent=1)
     text = report(a.category, a.leaf, probes)
