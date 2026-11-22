@@ -1,7 +1,7 @@
 {
  "format": "dictionary/1",
  "kind": "option_name",
- "backed_up": "2026-11-22T05:45:40Z",
+ "backed_up": "2026-11-22T16:01:48Z",
  "entries": {
   "네이비": "Navy",
   "바람막이 컬러": "Color",
@@ -9,6 +9,8 @@
   "사이즈/색상": "Size / Color",
   "상의사이즈": "Top Size",
   "색상": "Color",
+  "색상/사이즈": "Color / Size",
+  "선택하기": "Selection",
   "스타일": "Style",
   "에어건빵 아노락 바막 색상": "Color",
   "제품선택": "Product",
