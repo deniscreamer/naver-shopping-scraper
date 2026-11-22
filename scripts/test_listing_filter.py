@@ -527,7 +527,13 @@ def test_long_sleeve_tops_need_a_womens_word_and_no_other_garment(title, code):
     ("PXG MEN'S 긴팔 폴로", None, "title:not_womens"),
     ("PXG WOMEN 긴팔 티셔츠", "title:not_mens", None),                  # "men" inside "women" is no men's word
     ("남성 골프 반팔 티셔츠", "title:not_long_sleeve", "title:not_womens"),
-    ("남성 골프 맨투맨", "title:not_long_sleeve", "title:not_womens"),
+    ("남성 골프 반팔 카라 티셔츠", "title:not_long_sleeve", "title:not_womens"),
+    ("기모 남성 골프맨투맨 남자골프티셔츠", None, "title:not_womens"),          # a sweatshirt is long-sleeved (11-22)
+    ("[국내매장판] 나이키 골프 남성 쿼터 집업 탑 써마 핏 빅토리 DN1948", None, "title:not_womens"),
+    ("말본골프 긴팔 PQS M6321PKT07NVY M 캐시 혼방 크루넥 니트스웨터 NAVY (MAN)", None, "title:not_womens"),
+    ("푸마 남성 골프 카라티 티셔츠 골프웨어", "title:not_long_sleeve", "title:not_womens"),   # a polo: sleeve unsaid
+    ("람다골프 남성골프웨어 윈드브레이커 V넥 풀오버", "title:outerwear", "title:not_womens"),
+    ("남성 여름 골프 냉감 이너웨어 긴팔 쿨티셔츠", "title:cooling", "title:not_womens"),
     ("남성 골프 긴팔 카라 티셔츠 가디건", "title:cardigan", "title:not_womens"),  # the shared rules bind both
     ("레디스 긴팔 garment dyed 폴로", "title:not_mens", "title:not_womens"),     # garment is no men's word (11-22)
     ("멘즈 골프 긴팔 티셔츠", None, "title:not_womens"),

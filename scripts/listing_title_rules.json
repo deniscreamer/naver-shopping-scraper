@@ -3078,7 +3078,7 @@
     "leaves": [
      "mens-fall-long-sleeve-tops"
     ],
-    "why": "2026-11-21 (men's fall long-sleeve golf tops, the second section of 50002796; the owner's required words: 남성|남자|mens|men and 긴팔|long sleeve): a title with no men's word is left out of the men's job (women's tops are the women's section's own job); \"men\" inside \"women\" is no men's word. 2026-11-22, the review: 맨즈 / 멘즈 too; \"men\" in moment, garment, department is no men's word.",
+    "why": "2026-11-21 (men's fall long-sleeve golf tops, the second section of 50002796; the owner's required words: 남성|남자|mens|men and 긴팔|long sleeve): a title with no men's word is left out of the men's job (women's tops are the women's section's own job); \"men\" inside \"women\" is no men's word. 2026-11-22, the review: 맨즈 / 멘즈 too; \"men\" in moment, garment, department is no men's word. \"(MAN)\" too (Malbon writes it: 10 men's sweaters and polos of the sample).",
     "requires": [
      [
       "남성",
@@ -3093,6 +3093,11 @@
        "notPrecededBy": [
         "wo"
        ]
+      },
+      {
+       "text": "(man)",
+       "notFollowedBy": [],
+       "notPrecededBy": []
       }
      ]
     ],
@@ -3103,14 +3108,44 @@
     "leaves": [
      "mens-fall-long-sleeve-tops"
     ],
-    "why": "2026-11-21 (men's fall long-sleeve golf tops, the second section of 50002796; the owner's required words: 남성|남자|mens|men and 긴팔|long sleeve): a title with no long-sleeve word (긴팔, 긴소매, 롱슬리브, long sleeve) is left out of the men's job.",
+    "why": "2026-11-21 (men's fall long-sleeve golf tops, the second section of 50002796; the owner's required words: 남성|남자|mens|men and 긴팔|long sleeve): a title with no long-sleeve word (긴팔, 긴소매, 롱슬리브, long sleeve) is left out of the men's job. 2026-11-22, the owner asked to study the titles and improve the screen: on 274 store products of the query, a long-sleeve garment word that says long sleeves by itself counts too (기모, 히트텍, 맨투맨, 스웨트, 후드, 터틀넥, 반목, 니트, 스웨터, 집업, 하프집, 쿼터집, 풀오버, 미드레이어, 플리스, 이너 ...): 60 + 19 men's tops more (Nike Therma hoodies, Titleist and TaylorMade sweatshirts, Callaway half-zip knits, fleece base layers) while 반팔 and cooling stay left out.",
     "requires": [
      [
       "긴팔",
       "긴소매",
       "롱슬리브",
       "longsleeve",
-      "long-sleeve"
+      "long-sleeve",
+      "기모",
+      "히트텍",
+      "발열",
+      "맨투맨",
+      "스웨트",
+      "스웻",
+      "sweatshirt",
+      "후드",
+      "hoodie",
+      "터틀넥",
+      "폴라",
+      "반목",
+      "하이넥",
+      "모크넥",
+      "니트",
+      "스웨터",
+      "sweater",
+      "집업",
+      "쿼터집",
+      "하프집",
+      "크루탑",
+      "풀오버",
+      "pullover",
+      "미드레이어",
+      "midlayer",
+      "플리스",
+      "fleece",
+      "이너",
+      "언더레이어",
+      "베이스레이어"
      ]
     ],
     "tokens": []
@@ -3310,6 +3345,11 @@
       "text": "anorak",
       "notFollowedBy": [],
       "notPrecededBy": []
+     },
+     {
+      "text": "윈드브레이커",
+      "notFollowedBy": [],
+      "notPrecededBy": []
      }
     ]
    },
@@ -3431,6 +3471,11 @@
      },
      {
       "text": "쿨터치",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "쿨이너",
       "notFollowedBy": [],
       "notPrecededBy": []
      }
