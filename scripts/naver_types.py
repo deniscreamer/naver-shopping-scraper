@@ -930,6 +930,33 @@ class Health(TypedDict):
 
 # ---- /listings ------------------------------------------------------------------------
 
+class ListingCategory(TypedDict):
+    id: str
+    name: str | None
+    path: list[str]
+    depth: int | None
+
+
+class ListingAttribute(TypedDict):
+    id: str
+    group: str
+    name: str | None
+
+
+class ListingPrice(TypedDict):
+    start: int | None
+    end: int | None
+    weight: int | None
+
+
+class ListingFilters(TypedDict):
+    """The search page's own filters for the query (composite.page_filters, 2026-11-22)."""
+    categories: list[ListingCategory]
+    attributes: list[ListingAttribute]
+    price: list[ListingPrice]
+    facets: list[str | None]
+
+
 class ListingJob(TypedDict):
     """POST /listings and GET /listings/<id> (listing_jobs.view: every key present, any may be null)."""
     id: str
@@ -945,6 +972,9 @@ class ListingJob(TypedDict):
     stop: str | None
     started_at: str | None
     finished_at: str | None
+    sort: str | None                     # 2026-11-22: the order read (REVIEW), the default order's size, the filters
+    default_total: int | None
+    filters: ListingFilters | None
 
 
 class ListingStore(TypedDict):

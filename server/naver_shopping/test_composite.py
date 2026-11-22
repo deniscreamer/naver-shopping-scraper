@@ -65,3 +65,16 @@ def test_store_link_direct_and_reserved_paths():
     assert C.store_link({"mallUrl": {"pcUrl": "https://smartstore.naver.com/golfshop"}}) == \
         "https://smartstore.naver.com/golfshop"
     assert C.store_link({"mallUrl": {"pcUrl": "https://smartstore.naver.com/main/products/123"}}) is None
+
+
+def test_the_search_pages_filters_are_read():
+    """2026-11-22: the RSC object of MAIN:* filters (a trimmed real page of 여성 골프 바람막이 점퍼): the category tree
+    (one entry per id, its full path), the sellers' attributes, the price bands, the facets' titles."""
+    got = C.page_filters(fixture("search_page_filters.html"))
+    paths = {c["id"]: " > ".join(c["path"]) for c in got["categories"]}
+    assert paths["50002798"] == "스포츠/레저 > 골프 > 골프의류 > 점퍼" and paths["50000029"] == "스포츠/레저 > 골프"
+    assert [a["name"] for a in got["attributes"]] == ["긴팔", "반팔", "나일론"]
+    assert got["attributes"][0] == {"id": "10012485|M10574795", "group": "10012485", "name": "긴팔"}
+    assert got["price"][0] == {"start": 10000, "end": 20000, "weight": 7}
+    assert got["facets"] == ["공식브랜드", "특징", "가격", "카테고리"]
+    assert C.page_filters("<html></html>") is None

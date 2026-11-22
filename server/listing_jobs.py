@@ -30,7 +30,7 @@ OUTPUT_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output",
 PER_PAGE = 50
 JOB_ID = re.compile(r"^[0-9]{8}-[0-9]{6}-[0-9a-f]{4}$")
 PUBLIC = ("id", "query", "status", "max_batches", "batches", "kept", "ads", "total", "cursor", "has_more",
-          "stop", "started_at", "finished_at")
+          "stop", "started_at", "finished_at", "sort", "default_total", "filters")   # the last three: 2026-11-22
 
 _lock = threading.Lock()
 _adapter = threading.Lock()  # one user of the owner's Chrome at a time: a listing job or a product page read

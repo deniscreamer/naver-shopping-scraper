@@ -509,6 +509,11 @@ surfaces.
   batch (probed 2026-11-14, two listings). -> `ext_listing_tab._take` docstring.
 - The first batch's `total` is the listing's size (53 and 122 seen, 2026-11-14); `/products/count` (ns-portal) does
   not predict it (289 and 1148 for the same queries). -> `ext_listing_tab` module docstring.
+- The search page's RSC data holds one object of `MAIN:*` filters for the query (probed 2026-11-22): MAIN:CATEGORY a
+  tree of the categories its products fall in (ids "depth|id"; each level listed again at the top), MAIN:ATTRIBUTE
+  the sellers' attributes (특징: 10012485|M10574795 긴팔, fibres, model years; only for some queries: none for 남성 골프
+  가을 긴팔 티셔츠), MAIN:PRICE_RANGE bands with weights; a card carries its category (ssCatId) but no attribute.
+  -> `composite.page_filters`.
 - The sort buttons are `button[aria-labelledby="sort_<NAME>"]` (RECOMMEND the default, REVIEW, PURCHASE, RECENT,
   LOW_PRICE, HIGH_PRICE); a click on sort_REVIEW routes the tab to `&sort=REVIEW` without a reload and the page's
   batch requests carry `sort=RECOMMEND_REVIEW` from cursor 1; the HTML's embedded first batch stays unsorted (probed

@@ -112,8 +112,44 @@ before a different kind of product or a second shop is published.
 | C10 | `scripts/example_99_full_details.py`, `example_15_description_collect.py` | `QUERY` and `CATEGORY_ID` constants | use `job.py new --query --category` instead |
 | C11 | `placement.start_variants` | Computed but not written by `shopify_payload` (no `custom.category_start_variants`) | a split category opens every section on the same variant |
 
+## B0. Probe the listing (before the rules, before the pilot, after every screen change)
+
+The owner, 2026-11-22: the flow probes the listings (the queries, the words in the titles, the page's filters, the
+adjacent category ids); the agent decides; it asks the operator only where it is unsure. The tool:
+`.venv/bin/python scripts/listing_probe.py --category <leaf> [--leaf <section>] --query "<owner's query>" --query
+"<candidate>" ... [--batches 3] [--alt-rules FILE]` (no job may run: it reads the listing the jobs read, in the
+owner's Chrome, sorted 리뷰 많은순). Report: `scripts/output/probes/<category>-<section>-<UTC>/report.md`.
+
+| Read | Where | Use it for |
+|---|---|---|
+| The rows by category, the sorted and the default totals | "by category", "rows read" | the query stays in the leaf; the size of the sorted listing (the sort drops products with no reviews' ranking) |
+| The page's category tree (`filters.categories`) | "adjacent leaves" | the leaves the query reaches: the same goods under another id (50002798 점퍼 / 50002799 재킷; men's golf knits under 50002797 니트) |
+| The screen's reasons with example titles | "reasons" | a rule that drops what fits (read the examples), a kind the query brings that the section does not sell |
+| `--alt-rules` | "alt rules: adds / drops" | a wider or narrower rule measured on the same titles before it is written |
+| The page's attributes (`filters.attributes`) | "the page's attributes" | what sellers mark (긴팔 / 반팔, the neck, the fibre): words for the screen; a filter of the listing itself where offered (only some queries have it) |
+| The kept rows' reviews | "kept reviews" | the quality the query brings at its top |
+
+The page's other places, checked 2026-11-22 and not worth a probe: the cards carry their category and reviews but no
+attribute; the colour, delivery and benefit facets say nothing about the kind of product; `/products/search` (ns-portal)
+is another surface, in the default order, with catalog cards the jobs never read (its price bands still show the
+spread of the whole category).
+
+Decide (the agent), from the flags (`attention`):
+- `kept_low` (under half kept) or `requires_drops` (a required group drops a quarter): read the examples; widen the
+  group with the garment words the titles use and measure it with `--alt-rules`; or add a query that brings more of
+  the section (2026-11-22: 남성 골프 긴팔 카라티 kept 72 of 96, the owner's 가을 긴팔 티셔츠 46 of 97, its top summer
+  base layers);
+- `adjacent_category` (another leaf holds a fifth of the rows and its titles pass the screen): a `together` leaf when
+  the section is the same and the leaf's other goods are kept out by the screen; a section of its own otherwise;
+- `off_category`: the query belongs to another leaf: drop it, or probe that leaf;
+- `attribute_filter`: note the attribute's words in the screen; the listing filter itself is not built.
+Ask the operator only when a choice changes what the shop sells, beyond the probe's evidence: a new section or a
+leaf feeding a reviewed category's other section, a required word of the owner's that drops what fits, a query of
+his to replace.
+
 ## D. The order of a first run
 
+0. Probe the listing (B0) with the owner's query and two or three candidates; write the title screen (A14) from it.
 1. Ask the owner for the values of A1, A2, A3, A5 (and B1, B2, B6 for a shop). Write them down with the date.
 2. Add the required rows (A1-A4; B1-B6). Do the quality rows the category needs (A7-A12). Decide on C.
 3. `.venv/bin/python -m pytest scripts -q`, then update the registry tests (A1 `version`, B10).

@@ -573,7 +573,7 @@ query); no sort button or no sorted first batch ends the read (`stop` / `503 ada
 | Route | Params | Answer |
 |---|---|---|
 | `POST /listings` | `query` (1-100 chars, required), `max_batches` (0-200, 0 = all) as query params | `202` job; `409 {error, job_id}` another job runs (`job_id` null: a `/products/specs` read holds the adapter, retry shortly, or a held listing tab: the error names it); `503` the browser extension is not connected; `400` bad params |
-| `GET /listings/<job_id>` | - | job: `{id, query, status, max_batches, batches, kept, ads, total, cursor, has_more, stop, started_at, finished_at}`; `404` unknown |
+| `GET /listings/<job_id>` | - | job: `{id, query, status, max_batches, batches, kept, ads, total, cursor, has_more, stop, started_at, finished_at, sort, default_total, filters}` (2026-11-22: `sort` the order read, `default_total` the default order's size, `filters` the page's own `{categories: [{id, name, path, depth}], attributes: [{id, group, name}], price: [{start, end, weight}], facets}`: the query's adjacent categories and the sellers' attributes, for `scripts/listing_probe.py`); `404` unknown |
 | `GET /listings/<job_id>/products` | `page` (1-1000) | rows, 50 a page, the usual pagination shape (works while the job runs: rows so far) |
 
 `status`: `running`; `captcha` (the owner is asked to solve one in Chrome; waits `NAVER_CAPTCHA_WAIT_S`, 600 s); `done` (`hasMore=false` or

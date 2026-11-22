@@ -31,6 +31,7 @@ Start the server first (`.venv/bin/python server/run.py`). Examples 7-10, 14, 15
 | Which link of a search card to pass on | [Link semantics for harvesting](#link-semantics-for-harvesting) |
 | Every store link for a keyword, past the 96-card ceiling | [Listing harvest](#listing-harvest-harvest_listingpy) |
 | The whole search listing in the owner's Chrome | [Full search listing through the API](#full-search-listing-through-the-api-apilisting) |
+| Probe a category's listing before rules or a pilot: queries, title words, the page's filters, adjacent leaves | `scripts/listing_probe.py`; [ONBOARDING.md](ONBOARDING.md) "B0. Probe the listing" (a listing job's answer carries `sort`, `default_total` and the page's `filters` since 2026-11-22) |
 | An answer's shape changed (`naver_types.py`, fixtures) | [Response types](#response-types-naver_typespy) |
 | Check a run against product pages, replay one offline | [Checking a run against product pages](#checking-a-run-against-product-pages) |
 | What sellers write on their pages | [SELLER_DATA.md](SELLER_DATA.md) |

@@ -37,6 +37,64 @@ def first_batch(html):
     return obj if isinstance(obj, dict) else None
 
 
+_FILTERS_KEY = '"MAIN:CATEGORY"'
+
+
+def page_filters(html):
+    """ns/search HTML -> the page's own filters for the query, or None. Probed 2026-11-22 (the queries 여성 골프 바람막이
+    점퍼 and 남성 골프 가을 긴팔 티셔츠): the RSC data holds one object of MAIN:* filters beside the cards: MAIN:CATEGORY a
+    tree of the categories the query's products fall in (ids "depth|id": the adjacent leaves), MAIN:ATTRIBUTE the
+    sellers' attributes (특징: "10012485|M10574795" 긴팔, fibres, model years; present only for some queries),
+    MAIN:PRICE_RANGE price bands with weights, and the other facets (official brand, delivery, colour). ->
+    {categories: [{id, name, path, depth}], attributes: [{id, group, name}], price: [{start, end, weight}],
+    facets: [title]}."""
+    try:
+        rsc = "".join(json.loads('"' + c + '"') for c in _RSC_CHUNK.findall(html or ""))
+    except ValueError:
+        return None
+    i = rsc.find(_FILTERS_KEY)
+    if i < 0:
+        return None
+    depth, j = 0, i
+    while j > 0:                                   # back to the brace that opens the filters' object
+        if rsc[j] == "}":
+            depth += 1
+        elif rsc[j] == "{":
+            if depth == 0:
+                break
+            depth -= 1
+        j -= 1
+    try:
+        obj, _ = json.JSONDecoder().raw_decode(rsc, j)
+    except ValueError:
+        return None
+    if not isinstance(obj, dict):
+        return None
+    categories = []
+
+    def walk(items, path):
+        for x in items or []:
+            name, raw = x.get("name"), str(x.get("id") or "")
+            depth_s, _, cid = raw.partition("|")
+            categories.append({"id": cid, "name": name, "path": [*path, name],
+                               "depth": int(depth_s) if depth_s.isdigit() else None})
+            walk(x.get("children"), [*path, name])
+    walk((obj.get("MAIN:CATEGORY") or {}).get("items"), [])
+    # the list holds each level again at its top (스포츠/레저 ... 골프 ... 티셔츠): one entry per id, its full path
+    best = {}
+    for c in categories:
+        if c["id"] and len(c["path"]) > len(best.get(c["id"], {}).get("path", [])):
+            best[c["id"]] = c
+    categories = list(best.values())
+    attributes = [{"id": str(x.get("id")), "group": str(x.get("id") or "").partition("|")[0], "name": x.get("name")}
+                  for x in (obj.get("MAIN:ATTRIBUTE") or {}).get("items") or []]
+    price = [{"start": c.get("start"), "end": c.get("end"), "weight": c.get("weight")}
+             for x in (obj.get("MAIN:PRICE_RANGE") or {}).get("items") or [] for c in x.get("children") or [x]
+             if c.get("start") is not None or c.get("end") is not None]
+    facets = [v.get("title") for k, v in obj.items() if isinstance(v, dict) and k.startswith("MAIN:")]
+    return {"categories": categories, "attributes": attributes, "price": price, "facets": facets}
+
+
 def batch_from_answer(body):
     """paged-composite-cards answer text -> its batch dict, or None (not JSON)."""
     try:

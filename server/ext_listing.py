@@ -414,6 +414,13 @@ def walk(bridge, query, out_dir, max_batches, keep_tab, summary):
         return finish(summary, out_dir, 1 if why.startswith("no search box") else 3)
     listing = Listing(out_dir, query)
     summary["sort"] = SORT
+    try:                                          # the page's own filters and its default order's size (2026-11-22:
+        html = (bridge.call("page", tabId=tab, headChars=FULL_HTML) or {}).get("html")   # listing_probe.py reads them)
+        summary["filters"] = composite.page_filters(html)
+        summary["default_total"] = (composite.first_batch(html) or {}).get("total")
+    except ExtError:
+        _close(bridge, tab, keep_tab)
+        raise
     try:
         pending, why = sort_listing(bridge, tab, out_dir)
     except ExtError:
