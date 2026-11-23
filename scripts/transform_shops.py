@@ -205,7 +205,7 @@ RULES = {
                 paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
                 no_choice_out=True, composition=True, sizes="womens_bottoms", own_brand_wordmark=True,
                 variant_screen=("rain", "trousers"),
-                reviewed=False),      # a new category: DRAFT until the pilot's review and the owner's activation
+                reviewed=True),       # the owner 2026-11-22: 25 drafts of the pilot activated after its review (6 held)
         }),
 }
 
