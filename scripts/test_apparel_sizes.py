@@ -800,3 +800,39 @@ def test_a_skirts_chart_doubles_the_flat_waist_and_hip():
     html = A.chart_html(r)
     assert "<th>Fits waist</th>" in html and "<td>26 in</td>" in html and "<td>36 in</td>" in html
     assert "the waist and hip all the way round" in html
+
+
+def test_a_bare_colour_number_goes_only_when_the_colours_stay_apart():
+    """5479866225 (the skirts pilot, 2026-11-22): "002 Black", "002 Sky Blue"; "309 Dark Navy" / "312 Dark Navy" keep
+    their numbers: two colours of one English name."""
+    product = {"options": [{"name_ko": "컬러", "values_ko": ["002 블랙", "002 스카이블루"]}],
+               "sizes": {"profile": "womens_bottoms", "option": None, "values": []}}
+    en = _en([("option_name", "컬러", "Color"), ("option_value", "002 블랙", "002 Black"),
+              ("option_value", "002 스카이블루", "002 Sky Blue")])
+    assert SP._options(product, en)[1][0] == ["Black", "Sky Blue"]
+    two = {"options": [{"name_ko": "컬러", "values_ko": ["309 D네이비", "312 D네이비"]}],
+           "sizes": {"profile": "womens_tops", "option": None, "values": []}}
+    en = _en([("option_name", "컬러", "Color"), ("option_value", "309 D네이비", "309 Dark Navy"),
+              ("option_value", "312 D네이비", "312 Dark Navy")])
+    assert SP._options(two, en)[1][0] == ["309 Dark Navy", "312 Dark Navy"]
+
+
+def test_a_size_with_its_inch_note_is_one_size_and_a_colour_option_named_size_is_renamed():
+    """J.Lindeberg 7000338116 / 10515846043 (2026-11-22): "XS （25인치）", "XS (25인치 전후)" went out as a second option
+    "Size 2"; 6334381845's option 사이즈 "화이트/S" left its colours under the name 사이즈 ("Size 2")."""
+    assert A.split_joined([{"name_ko": "사이즈", "values_ko": ["XS （25인치）", "S （27인치）"]}]) is None
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": ["XS （25인치）", "S （27인치）", "M （29인치）"]}], [], None, "스커트",
+                  "womens_bottoms")
+    assert [v["us"] for v in r["values"]] == ["XS (US 2)", "S (US 6)", "M (US 10)"]
+    ov = {"options": [{"name_ko": "사이즈", "values_ko": ["화이트/S", "화이트/M", "블랙/S"]}], "facts": [],
+          "variants": [{"options_ko": [v], "price_krw": 1} for v in ("화이트/S", "화이트/M", "블랙/S")]}
+    T._sizes(ov, "womens_bottoms", "", [], None, "여성 골프스커트")
+    assert [o["name_ko"] for o in ov["options"]] == ["컬러", "사이즈"]
+
+
+def test_a_ranged_free_beside_another_size_is_its_range():
+    """5875520955 (2026-11-22): "Free(55-66)" next to "L" went out "One Size": it is S-M; alone it stays One Size."""
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": ["Free(55-66)", "L(77)"]}], [], None, "스커트", "womens_bottoms")
+    assert [v["us"] for v in r["values"]] == ["S-M (US 4-10)", "L (US 12-14)"]
+    assert A.resolve([{"name_ko": "사이즈", "values_ko": ["FREE(55-66)"]}], [], None, "니트", "womens_tops")["values"][0]["us"] \
+        == "One Size"

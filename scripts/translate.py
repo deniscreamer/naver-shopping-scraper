@@ -117,6 +117,7 @@ TITLE_SIZES["50002802"] = re.compile(r"(?<![\d.A-Za-z])(?:44|55|66|77|88|99|2[3-
 # pilot: "[울시] ... 2종 택1" reached the model as "2 pcs 택1", its digits not freed: "2 pcs, Choose 1")
 TITLE_PICK = re.compile(r"(?<!\d)\d\s*\+\s*\d(?!\d)|\d{1,2}\s*(?:종|컬러|가지|color|colors)(?:\s*(?:중\s*)?택\s*\d)?"
                         r"|\d{1,2}\s*pcs\s*(?:중\s*)?택\s*\d", re.I)
+TITLE_SIZE_LETTERS = re.compile(r"(?<![A-Za-z\d])(XXS|2XS|XS|XL|XXL|2XL|XXXL|3XL|4XL|FREE)(?![A-Za-z\d])", re.I)
 TITLE_SEASON = re.compile(r"(?<![A-Za-z\d])(\d{2}|\d{4})\s?(?:FW|SS|F/W|S/S|AW)(?![A-Za-z])", re.I)
 SCHEMA = {"type": "object", "additionalProperties": False, "required": ["items"],
           "properties": {"items": {"type": "array", "items": {
@@ -465,6 +466,11 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
             sizes = TITLE_SIZES[str(category)].findall(item["source"])
             if sizes:
                 item["free_numbers"] = [*(item.get("free_numbers") or []), *sizes]
+            # a size letter standing alone ("스판 주름 XL 골프치마", 5527933102, 2026-11-22: "codes lost: missing XL"): the
+            # briefs leave every size out of a title, so it need not survive either
+            letters = TITLE_SIZE_LETTERS.findall(item["source"])
+            if letters:
+                item["free_codes"] = [*(item.get("free_codes") or []), *(x.upper() for x in letters)]
             # a season code may go whole, its letters too: "22ss", "23FW" failed "codes lost" (the second
             # windbreaker pilot 2026-11-21, 7114115147, 11092759396) while only its digits were freed
             seasons = [m.group(0) for m in TITLE_SEASON.finditer(item["source"])]
@@ -621,7 +627,7 @@ def verify(items: list[dict[str, Any]], text: str) -> tuple[dict[str, str], list
             # 2026-11-22, the men's tops pilot: "[울시] ... 2종 택1" (one knit, a choice of 2) went out as "... 2 pcs,
             # Choose 1" and "Choose 1 of 4 pcs" though the brief says leave the choice out: it reads as a bundle
             problems.append("a choice of styles (N종 택1) is no pack: leave it out of the title, no pcs / Choose")
-        lost_codes = sorted(c for c in codes(checked) if c not in out.upper())
+        lost_codes = sorted(c for c in codes(checked) if c not in out.upper() and c not in (item.get("free_codes") or ()))
         if lost_codes:
             problems.append("codes lost: missing " + ", ".join(lost_codes))
         limit = LIMITS.get(item["kind"])

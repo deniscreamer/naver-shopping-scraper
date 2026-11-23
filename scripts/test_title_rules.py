@@ -407,3 +407,12 @@ def test_a_choice_of_styles_is_never_a_pack_in_english():
     assert T.verify([item], json.dumps({"items": [{"id": "t", "en": good}]}))[0] == {"t": good}
     pack = {**item, "source": "JN 남성 기모 이너 1+1", "drop": ["1+1"], "pick": False}
     assert T.verify([pack], json.dumps({"items": [{"id": "t", "en": "JN Men's Fleece Base Layer 2-Pack"}]}))[1] == []
+
+
+def test_a_size_letter_in_a_garment_title_may_be_left_out():
+    """5527933102 (the skirts pilot, 2026-11-22): "여성골프웨어 백 플리츠 골프스커트 스판 주름 XL 골프치마 빅사이즈" failed
+    "codes lost: missing XL"; a size letter standing alone is free, one inside a code (AXL22) is not."""
+    assert T.TITLE_SIZE_LETTERS.findall("스판 주름 XL 골프치마 FREE") == ["XL", "FREE"]
+    assert not T.TITLE_SIZE_LETTERS.findall("AXL22 XL2")
+    item = {"id": "t", "kind": "title", "source": "여성골프웨어 백 플리츠 골프스커트 스판 주름 XL 골프치마", "free_codes": ["XL"]}
+    assert T.verify([item], json.dumps({"items": [{"id": "t", "en": "Women's Back-Pleated Stretch Golf Skirt"}]}))[1] == []

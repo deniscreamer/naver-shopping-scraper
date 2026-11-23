@@ -1560,7 +1560,10 @@ def _split_joined(ov: dict[str, Any]) -> None:
         return
     option = ov["options"][i]
     by_value = dict(zip([str(v) for v in option["values_ko"]], parts))
-    ov["options"][i] = {**option, "values_ko": list(dict.fromkeys(r for r, _ in parts))}
+    # the rest keeps the option's name, or 컬러 when the seller named the joined option a size ("사이즈: 화이트/S",
+    # 6334381845, 2026-11-22: the colours went out as "Size 2")
+    name = "컬러" if apparel_sizes.is_size_name(option.get("name_ko")) else option.get("name_ko")
+    ov["options"][i] = {**option, "name_ko": name, "values_ko": list(dict.fromkeys(r for r, _ in parts))}
     ov["options"].append({"name_ko": "사이즈", "values_ko": list(dict.fromkeys(sz for _, sz in parts))})
     for v in ov["variants"]:
         picked = list(v.get("options_ko") or [])

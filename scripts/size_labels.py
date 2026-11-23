@@ -110,6 +110,7 @@ def parse_label(text: str) -> Label | None:
     # 여_S(55) stays two systems), a Korean letter word ("라지(77-88)") and the chest after a bare letter ("S 95사이즈",
     # "S 95~100사이즈": Nike 7973150842, Callaway 7184031093, 5033870845) read as the size they name
     t = re.sub(r"\((?:모델|상세|착용|확인|기준|정사이즈)[가-힣]*\)$", "", t)
+    t = re.sub(r"(?<=\d)인치", "", t)                     # "XS（25인치）", "XS (25인치 전후)" (J.Lindeberg, 2026-11-22)
     t = re.sub(r"(?<=\d)전후(?=\))", "", t)
     t = re.sub(r"^(?:여성|남성|여자|남자|여|남)[_\-:]?(?=[0-9SMLX(])", "", t)
     for word, said in (("투엑스라지", "XXL"), ("엑스라지", "XL"), ("라지", "L"), ("미디움", "M"), ("미디엄", "M"),

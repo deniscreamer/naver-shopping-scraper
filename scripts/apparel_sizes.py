@@ -225,6 +225,9 @@ def _joined_size(value: str, free: bool = False) -> Label | None:
     words = [w for w in _JOIN_SPLIT_RE.split(str(value or "").strip()) if w]
     if len(words) < 2:
         return None
+    with waist_labels():                                 # one size with its note ("XS (25인치 전후)"): no colour,
+        if parse_label(str(value)):                      # whatever the profile
+            return None
     middle = [(words[i], words[:i] + words[i + 1:]) for i in range(1, len(words) - 1)]   # "티셔츠 55_아이보리"
     for size, rest in ((words[-1], words[:-1]), (words[0], words[1:]), *middle):
         label = parse_label(size)
@@ -393,7 +396,10 @@ def _resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None,
                                         chart.labels[n].letter != label.letter))
             own = matches[0] if matches else None
             item: dict[str, Any] = {"ko": ko}
-            if label.free:
+            # FREE with its range beside another size ("Free(55-66)" and "L", 5875520955, 2026-11-22) is that range,
+            # never "One Size" (a US buyer reads it as fitting all); alone it stays One Size
+            ranged = label.free and (label.women or label.chest or label.waist) and len(options[index]["values_ko"]) > 1
+            if label.free and not ranged:
                 item.update(us="One Size", letter=None, chest_cm=None, basis="free")
             elif own and own in chart.us:
                 letter = chart.us[own]
