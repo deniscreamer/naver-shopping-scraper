@@ -407,7 +407,7 @@ _COLOUR_CODE_RE = re.compile(r"^[A-Z]{1,3}\d{1,3}\s*[:\-]\s*(?=[A-Za-z])")
 # a seller's bare number before a colour ("002 Black", 5479866225, 2026-11-22): it goes only when the colours stay
 # apart ("309 Dark Navy" / "312 Dark Navy" are two colours: kept)
 _COLOUR_NUMBER_RE = re.compile(r"^\d{2,4}\s+(?=[A-Za-z])")
-_APPAREL_NOTE_RE = re.compile(r"\s*\((?:worn by (?:the )?model|model(?:'s)? (?:wears|pick|color)|as worn|modeled)\)$", re.I)
+_APPAREL_NOTE_RE = re.compile(r"\s*\((?:worn by (?:the )?(?:main )?model|model(?:'s)? (?:wears|pick|color)|as worn|modeled)\)$", re.I)
 _COLOUR_NAME_EN_RE = re.compile(r"\b(?:colou?r)\b", re.I)
 
 

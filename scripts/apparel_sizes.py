@@ -160,9 +160,13 @@ def _chest_of(label: Label, profile: dict[str, Any]) -> list[float]:
     skirts, 2026-11-22) reads the label's waist (cm, inches made cm) and a number 80..95 as a waist in cm; a profile of
     tops never reads a waist."""
     if profile.get("key") == "waist":
-        if label.waist or label.chest:
-            got = list(label.waist) + [c for c in label.chest if c <= 95]
-            return got if len(got) == len(label.waist) + len(label.chest) else []
+        # a number 80..95 beside a letter is the maker's hip or top numbering, never the waist ("S(90)", Kappa
+        # 11871883753, 2026-11-22: S went out as XXL); alone it is a waist in cm
+        chest = [] if label.letter else [c for c in label.chest if c <= 95]
+        if label.waist or chest:
+            return list(label.waist) + chest
+        if label.chest and label.letter:
+            return []
     elif label.chest:
         return list(label.chest)
     out = []
@@ -369,7 +373,7 @@ def _resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None,
     pairs: dict[str, float] = {}                     # the chart's letter -> chest pairings (85 (S), Korea Size row)
     for n, lab in chart.labels.items():
         chest = chart.korea.get(n) or (lab.chest[0] if lab and lab.chest else None)
-        if lab and lab.letter and chest:
+        if lab and lab.letter and chest and profile.get("key") != "waist":   # "S(90)" over a skirt: no waist
             pairs[lab.letter] = chest
     written = text_pairs(texts)                      # "L[55~66]/XL[77]": the seller's text pairs a letter
     # a letter's women's size from the seller ("55~66(L)", "L[55~66]") counts only when every bare letter of the option
@@ -419,8 +423,10 @@ def _resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None,
                     if all(ends):
                         chests, basis = [e for e in ends if e], "letter_range"
                 mate = chart.labels.get(own) if own else None
-                if not chests and mate and mate.chest:
+                if not chests and mate and mate.chest and profile.get("key") != "waist":
                     chests, basis = list(mate.chest), "chart_pair"
+                if not chests and mate and profile.get("key") == "waist" and _chest_of(mate, profile):
+                    chests, basis = _chest_of(mate, profile), "chart_pair"     # a waist the chart pairs ("S(25)")
                 if use_women and not chests and mate and mate.women and mate.letter == label.letter:
                     chests, basis, women = _chest_of(mate, profile), "chart_pair", True   # "55~66(L)" (9353856438)
                 if not chests and label.letter and label.letter in pairs:
@@ -429,7 +435,9 @@ def _resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None,
                     chests, basis, women = _chest_of(written[label.letter], profile), "text_pair", True
                 if not chests and label.letter and hit and label.letter in (hit[1].get("letters") or {}):
                     chests, basis = [hit[1]["letters"][label.letter]], f"brand:{hit[0]}"
-                if not chests and label.letter and label.letter in profile["letters"]:
+                if not chests and label.letter and label.letter in profile["letters"] and not label.women:
+                    # a women's size the profile cannot map ("XL(66~66반)" in the tops) holds, never its bare
+                    # letter (2026-11-22, the skirts review: XL(66~66반) went out XL, two sizes over the 66)
                     chests, basis = [profile["letters"][label.letter]], "fallback_letters"
                 grid_rows = [r for c in sorted(set(chests)) if (r := _grid_row(profile, c))]
                 if not chests or len(grid_rows) != len(set(chests)):

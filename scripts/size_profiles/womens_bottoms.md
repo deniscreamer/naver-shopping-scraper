@@ -26,3 +26,9 @@ stay two sizes ("S (US 4)", "S (US 6)").
 A waist is read only for this profile (`size_labels.waist_labels`): in a top's chart "73" is a length, never a size.
 The chart: a waist or hip laid flat (단면) is doubled on the storefront; with no word, a waist under 53 cm or a hip
 under 72 cm is taken as flat.
+
+2026-11-22, the second review (47 drafts): a half size is sized up (`kr_women` 44.5 = S, 55.5 = M, 66.5 = L, 77.5 = XL:
+"M(66반-77)" is L, "XL(66~66반)" M-L); a women's size the profile cannot map holds, never its bare letter; a number
+80..95 beside a letter ("S(90)", Kappa) is the maker's hip or top numbering, never a waist, in the label and in the
+chart; a waist the chart pairs with a letter ("S(25)") sizes that letter; 날씬 / 통통 (slim / chubby) before a women's
+size are dropped.

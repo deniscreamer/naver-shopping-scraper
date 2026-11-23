@@ -96,6 +96,9 @@ _NO_FIRM = re.compile(r"(?i)^(?:별도\s*표기|알\s*수\s*없음|미상|불명
                       # rows became the brand of 32 titles that say 남성용 / 여성용, vendor "Yoshino" on a TaylorMade
                       # set; "ㅊ" on a Callaway set; "정식수입정품 또는 정식제조정품" as a maker)
                       r"|(?:남성|여성|남자|여자|남녀|공용|남녀\s*공용|유니섹스)(?:\s*용)?|[ㄱ-ㅎㅏ-ㅣ]+|.*정품.*"
+                      # a lone Latin letter: a tick in the notice ("제조자(사) | Y" in every row: VOER 5850493575 went
+                      # out as the vendor "Y", 2026-11-22)
+                      r"|[a-z]"
                       # Amazon's word for no brand (2026-11-15: two Bermuda wedge sets, 13370440703 and 13099713088,
                       # published under the vendor "Generic" from their 브랜드 rows)
                       r"|generic|제네릭"

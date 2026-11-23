@@ -411,6 +411,10 @@ def test_apparel_option_values_lose_colour_codes_and_model_notes():
               ("option_value", "바닐라 (모델착용)", "Vanilla (Worn by Model)")])
     options, values = SP._options(product, en)
     assert options[0]["name"] == "Color" and values[0] == ["Gray", "Vanilla"]
+    main = {"options": [{"name_ko": "컬러", "values_ko": ["그레이(메인모델착용)"]}],
+            "sizes": {"profile": "womens_bottoms", "option": None, "values": []}}
+    assert SP._options(main, _en([("option_name", "컬러", "Color"),          # 5896682316 (2026-11-22)
+                                  ("option_value", "그레이(메인모델착용)", "Gray (Worn by Main Model)")]))[1][0] == ["Gray"]
     club = {"options": [{"name_ko": "샤프트", "values_ko": ["R2:레귤러"]}]}
     options, values = SP._options(club, _en([("option_name", "샤프트", "Shaft Color"), ("option_value", "R2:레귤러", "R2: Regular")]))
     assert options[0]["name"] == "Shaft Color" and values[0] == ["R2: Regular"]
@@ -836,3 +840,27 @@ def test_a_ranged_free_beside_another_size_is_its_range():
     assert [v["us"] for v in r["values"]] == ["S-M (US 4-10)", "L (US 12-14)"]
     assert A.resolve([{"name_ko": "사이즈", "values_ko": ["FREE(55-66)"]}], [], None, "니트", "womens_tops")["values"][0]["us"] \
         == "One Size"
+
+
+# ---- the skirts' second review (47 drafts, 2026-11-22) ---------------------------------------------------------------
+@pytest.mark.parametrize("values, want", [
+    (["L(55)", "XL(66~66반)"], ["S (US 4-6)", "M-L (US 8-14)"]),        # 5711404722: XL(66~66반) went out XL (US 16)
+    (["S(55-66)", "M(66반-77)"], ["S-M (US 4-10)", "L (US 12-14)"]),    # 6474116807: a half size sized up
+    (["S(90)", "M(95)"], ["S (US 4-6)", "M (US 8-10)"]),                # Kappa 11871883753: 90 / 95 are no waist
+    (["S（55~날씬66）", "M（통통66~날씬77）"], ["S-M (US 4-10)", "M-L (US 8-14)"]),   # 8628740416: slim / chubby
+])
+def test_a_skirts_half_size_a_top_number_and_a_body_word(values, want):
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": values}], [], None, "여성 골프 스커트", "womens_bottoms")
+    assert not r["held"] and [v["us"] for v in r["values"]] == want
+
+
+def test_a_womens_size_the_profile_cannot_map_never_falls_back_to_its_letter():
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": ["L(55)", "XL(66~66반)"]}], [], None, "여성 니트", "womens_tops")
+    assert r["held"] == "'XL(66~66반)': no US size (not read)"
+
+
+def test_a_chart_s_top_number_is_no_skirt_waist():
+    """Kappa 11871883753: the chart's "S(90) / M(95)" header paired S with 90 and went out XXL (US 18)."""
+    lines = ["사이즈 / S(90) / M(95)", "허리둘레 / 70 / 73", "총장 / 42 / 43"]
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": ["S", "M"]}], lines, None, "카파 스커트", "womens_bottoms")
+    assert [v["us"] for v in r["values"]] == ["S (US 4-6)", "M (US 8-10)"]
