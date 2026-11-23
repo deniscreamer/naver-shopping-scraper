@@ -116,6 +116,9 @@ WOMENS_WINDBREAKERS = Leaf("womens-windbreakers", "Women’s Windbreakers")   # 
                                                                    # collection fairwardgolf-womens-windbreakers
                                                                    # (tag rule fairwardgolf:leaf:womens-windbreakers)
                                                                    # existed, empty (checked 2026-11-20)
+GOLF_PANTS = Leaf("golf-pants", "Golf Pants")                      # 2026-11-23, the owner: collection fairwardgolf-golf-
+                                                                   # pants, tag fairwardgolf:leaf:golf-pants, men's and
+                                                                   # women's trousers together
 
 PROFILES = {
     StoreId.FAIRWARDGOLF: PlacementProfile(
@@ -140,6 +143,8 @@ PROFILES = {
                                           leaves={"womens": WOMENS_WINDBREAKERS}),
             "50002802": CategoryPlacement(parent="apparel", leaves={None: WOMENS_SKIRTS}),   # 스커트 (2026-11-22):
                                           # one section, no split: a skirt is women's (the screen leaves out men's)
+            "50002801": CategoryPlacement(parent="apparel", leaves={None: GOLF_PANTS}),   # 바지 (2026-11-23, the
+                                          # owner): one section, no split; the sizes follow the gender (CategoryRules)
         }),
 }
 

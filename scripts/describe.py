@@ -92,6 +92,10 @@ PROFILES: dict[str, dict[str, Any]] = {
                         "lists": (("materials", "Materials & care", 4), ("highlights", "Highlights", 4)),
                         "no_measures": True,
                         "imported": True},
+    "pants": {"categories": ("50002801",),               # men's and women's golf pants (2026-11-23, as the skirts)
+              "lists": (("materials", "Materials & care", 4), ("highlights", "Highlights", 4)),
+              "no_measures": True,
+              "imported": True},
     "skirt": {"categories": ("50002802",),               # women's golf skirts and culottes (2026-11-22, as the tops)
               "lists": (("materials", "Materials & care", 4), ("highlights", "Highlights", 4)),
               "no_measures": True,

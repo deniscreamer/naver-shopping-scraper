@@ -124,7 +124,9 @@ at every level and the flat 12.5 % duty; its rate by fibre is kept under US HTS 
 wool 16 %, cotton 8.9 %, man-made or unknown 27.7 %) for the day the TODO switches it on. 50002799 재킷 (2026-11-21,
 the same section): 50002798's rule. 50002796 women's long-sleeve tops (2026-11-21): the same apparel rule; its rate by
 fibre under US HTS 6109 (cotton 16.5 %, man-made or unknown 32 %). 50002802 women's golf skirts (2026-11-22): the same
-apparel rule; its rate by fibre under US HTS 6204.5 (wool 14 %, cotton 8.3 %, man-made or unknown 16 %).
+apparel rule; its rate by fibre under US HTS 6204.5 (wool 14 %, cotton 8.3 %, man-made or unknown 16 %). 50002801
+golf pants (2026-11-23): the same apparel rule; its rate by fibre under US HTS 6203.4 / 6204.6 (men's / women's
+trousers, the higher of the two: wool 13.6 %, cotton 16.6 %, man-made or unknown 28.6 %).
 - Delivery x1.10 at every level: a garment's mailer is predictable, and the clubs' 2.50 for a default box (a bag or
   none) does not apply. The category's default box, 28 x 22 x 4 cm and 400 g (`category_measures.json`), is 0.49 kg
   volumetric: the 0.5 kg step, 42.49 x 1.10 = 46.74 USD.

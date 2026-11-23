@@ -1573,6 +1573,16 @@ def _split_joined(ov: dict[str, Any]) -> None:
             v["options_ko"] = picked + [size]
 
 
+def size_profile(cat: CategoryRules, gender: str | None) -> str:
+    """The size profile of a product by the gender it states: men's tops (2026-11-21), unisex or mixed trousers sized
+    as men's (Golf Pants, 2026-11-23), else the category's."""
+    if cat.sizes_mens and gender == "mens":
+        return cat.sizes_mens
+    if cat.sizes_unisex and gender in ("unisex", "mixed"):
+        return cat.sizes_unisex
+    return str(cat.sizes)
+
+
 def _sizes(ov: dict[str, Any], profile: str, text: str | None, ocr: list[list[str]], brand: str | None,
            title: str) -> dict[str, Any]:
     """apparel_sizes.resolve on the product; the size option rewritten in place: one Korean size written twice
@@ -1580,7 +1590,7 @@ def _sizes(ov: dict[str, Any], profile: str, text: str | None, ocr: list[list[st
     product), the values in size order. A size the transform kept as a fact (one value, "사이즈: FREE(44-66반)",
     5891366586) is resolved too: product.sizes.fact {ko, us} (2026-11-19 review: it reached the store in Korean)."""
     texts = (text or "").splitlines() + [r for rows in ocr for r in rows]
-    with apparel_sizes.waist_labels(apparel_sizes.grids()["profiles"][profile].get("key") == "waist"):
+    with apparel_sizes.waist_labels(apparel_sizes.waist_read(apparel_sizes.grids()["profiles"][profile])):
         _split_joined(ov)
     facts = [f for f in ov.get("facts") or [] if apparel_sizes.is_size_name(f.get("label_ko"))]
     out = apparel_sizes.resolve(ov["options"], texts, brand, title, profile, has_fact=bool(facts))
@@ -1840,9 +1850,12 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
     sizes = None
     if cat.sizes:                                   # apparel: US sizes from the product's own labels and chart
         gender = (stated.get("gender") or {}).get("value")
-        profile = cat.sizes_mens if cat.sizes_mens and gender == "mens" else cat.sizes   # men's tops (2026-11-21)
+        profile = size_profile(cat, gender)
         sizes = _sizes(ov, profile, cleaned["text"], image_rows(images_text if current(images_text, line) else None),
                        brand.get("value"), details["name"])
+        if cat.sizes_unisex and not gender and not sizes["held"] \
+                and any(v.get("us") != "One Size" for v in sizes["values"]):
+            sizes["held"] = "no gender stated: men's or women's sizes cannot be told"    # Golf Pants (2026-11-23)
         if sizes["held"]:
             held.append({"code": "size_unmapped", "detail": sizes["held"][:200]})
         elif sizes["merged"]:

@@ -110,6 +110,10 @@ TITLE_SIZES["50002796"] = TITLE_SIZES["50002797"]           # women's long-sleev
 TITLE_SIZES["50002799"] = TITLE_SIZES["50002797"]           # 재킷, the same section (2026-11-21)
 # skirts: the women's sizes and the waists in inches and cm a title may list ("25 26 27 28", "64 67 70"; 2026-11-22)
 TITLE_SIZES["50002802"] = re.compile(r"(?<![\d.A-Za-z])(?:44|55|66|77|88|99|2[3-9]|3[0-4]|6[1-9]|7[0-9])(?![\d.%])")
+# golf pants: the women's sizes, the waists in inches (23-44) and in cm (61-112) a title may list ("28 30 32", "76 79
+# 82"; 2026-11-23)
+TITLE_SIZES["50002801"] = re.compile(
+    r"(?<![\d.A-Za-z])(?:44|55|66|77|88|99|2[3-9]|3[0-9]|4[0-4]|6[1-9]|[7-9][0-9]|10[0-9]|11[0-2])(?![\d.%])")
 # a garment title's season code ("26FW", "2025 SS", "23F/W"): the briefs leave the season out of the English title, so
 # its digits need not survive either (2026-11-20, the windbreaker pilot: "TaylorMade 26FW Women's ..." kept it only
 # because a lost number fails the check); the same apparel categories as TITLE_SIZES

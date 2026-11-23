@@ -78,6 +78,10 @@ Words with a space are one word in name+number lines ("소매 기장 58" is the 
 스커트 길이, length); waist and hip flat (단면) or round (둘레) as the chest; a flat / round note sets every field that has
 both kinds.
 
+`trousers` (2026-11-23, Golf Pants): the skirts' waist and hip, thigh (허벅지, thigh), rise (밑위, rise), leg
+opening (밑단, 부리, hem), inseam (인심, 안기장, inseam: before the length), length (총장, 기장, 바지 길이, length); thigh and
+leg opening flat or round (a flat one under 42 / 32 cm with no word is doubled), rise and inseam along the garment.
+
 Never a field (the tops): 소매통, 소매부리, 소매단너비, 화장 (centre back to cuff), A.H / 암홀, 목넓이, 목깊이,
 밑단둘레 / 밑단단면, 커프스, 팔둘레 (and a bare "Sleeve": it is 팔둘레 at 11160224814).
 

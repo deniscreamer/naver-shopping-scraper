@@ -28,13 +28,20 @@ _WOMEN = {33, 44, 55, 66, 77, 88, 99}            # 33: below 44 ("XS (33~44)", P
 
 # a waist is read only for a profile keyed by the waist (skirts, 2026-11-22): in a top's chart "73" is a length, never
 # a size; apparel_sizes.resolve and transform._sizes turn it on for such a profile
-_WAIST = contextvars.ContextVar("waist", default=False)
+WOMENS_WAIST = (22.0, 38.0, 58.0, 79.0, False)
+# men's trousers (Golf Pants 50002801, 2026-11-23): waists 26..44 inches, 66..112 cm, read before the women's sizes
+# and the chest ("88", "85" are a men's waist in cm there, never a women's 88 or a chest)
+MENS_WAIST = (26.0, 44.0, 66.0, 112.0, True)
+# (inches low, high, cm low, high, read first) or None
+_WAIST: contextvars.ContextVar[tuple[float, float, float, float, bool] | None] = contextvars.ContextVar("waist",
+                                                                                                      default=None)
 
 
 @contextlib.contextmanager
-def waist_labels(on: bool = True) -> Iterator[None]:
-    """Read waists (22..38 inches, 58..79 cm) in the labels inside the block."""
-    token = _WAIST.set(on)
+def waist_labels(on: bool | tuple[float, float, float, float, bool] | None = True) -> Iterator[None]:
+    """Read waists in the labels inside the block: True the women's (22..38 inches, 58..79 cm), a tuple its own
+    ranges (MENS_WAIST), False / None none."""
+    token = _WAIST.set(WOMENS_WAIST if on is True else (on or None))
     try:
         yield
     finally:
@@ -77,16 +84,19 @@ def _numbers(part: str, letter: str | None,
         nums = [_num(r.group(1)), _num(r.group(2))] if r else ([_num(o.group(1))] if o else None)
         if nums is None:
             return None
+        w = _WAIST.get()
         for n in nums:
-            if int(n) in _WOMEN and n < 100:
+            if w and w[4] and ((n == int(n) and w[0] <= n <= w[1]) or w[2] <= n <= w[3]):
+                waist.append(round(n * 2.54, 1) if n <= w[1] and n == int(n) else n)   # men's: "32", "82"
+            elif int(n) in _WOMEN and n < 100:
                 women.append(n)
             elif 80 <= n <= 125:
                 chest.append(n)
             elif n == int(n) and 0 <= n <= 4 and jp is None and letter is None:
                 jp = int(n)
-            elif _WAIST.get() and n == int(n) and 22 <= n <= 38:   # a waist in inches ("26", "M(27)", "25-26")
+            elif w and n == int(n) and w[0] <= n <= w[1]:         # a waist in inches ("26", "M(27)", "25-26")
                 waist.append(round(n * 2.54, 1))
-            elif _WAIST.get() and 58 <= n <= 79:                   # a waist in cm ("64", "67(S)")
+            elif w and w[2] <= n <= w[3]:                         # a waist in cm ("64", "67(S)")
                 waist.append(n)
             else:
                 return None

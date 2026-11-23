@@ -46,6 +46,18 @@ MEASURE_SETS: dict[str, tuple[Measure, ...]] = {
         Measure("length", re.compile(r"총\s*장|총\s*기장|총\s*길이|^기장|치마\s*(?:길이|기장)|스커트\s*(?:길이|기장)|length",
                                     re.I), (30, 110), (30, 110)),
     ),
+    # trousers (2026-11-23, Golf Pants 50002801): the skirts' waist and hip, the thigh and the leg opening laid flat or
+    # round, the rise, the inseam before the length ("안기장": the inside leg), the length
+    "trousers": (
+        Measure("waist", re.compile(r"허리(?!\s*밴딩)|waist", re.I), (28, 56), (55, 115)),
+        Measure("hip", re.compile(r"엉덩이|힙(?!업)|hip", re.I), (38, 70), (76, 140)),
+        Measure("thigh", re.compile(r"허벅|thigh", re.I), (20, 42), (42, 84)),
+        Measure("rise", re.compile(r"밑위|rise", re.I), (15, 45), (15, 45)),
+        Measure("hem", re.compile(r"밑단|부리|hem|leg\s*opening", re.I), (12, 32), (24, 64)),
+        Measure("inseam", re.compile(r"인심|안\s*쪽?\s*(?:기장|길이)|inseam", re.I), (40, 95), (40, 95)),
+        Measure("length", re.compile(r"총\s*장|총\s*기장|총\s*길이|^기장|바지\s*(?:길이|기장)|length", re.I),
+                (60, 125), (60, 125)),
+    ),
 }
 _FLAT_RE = re.compile(r"단면|너비|넓이|폭|width", re.I)        # ("가슴/2" never reaches here: "/" splits cells)
 _CIRC_RE = re.compile(r"둘레|들레|circ", re.I)          # 들레: OCR's 둘레 (11206784343)

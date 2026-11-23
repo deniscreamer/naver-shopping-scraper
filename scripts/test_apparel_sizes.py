@@ -321,7 +321,8 @@ def test_lines_that_are_never_measurements(line):
 
 def test_a_measure_set_is_data():
     assert C.describe_sets() == {"tops": ["chest", "sleeve", "length", "shoulder"],
-                                 "bottoms": ["waist", "hip", "length"]}                     # skirts (2026-11-22)
+                                 "bottoms": ["waist", "hip", "length"],                     # skirts (2026-11-22)
+                                 "trousers": ["waist", "hip", "thigh", "rise", "hem", "inseam", "length"]}   # 2026-11-23
     assert A.grids()["profiles"]["womens_tops"]["measures"] in C.MEASURE_SETS
 
 
@@ -864,3 +865,60 @@ def test_a_chart_s_top_number_is_no_skirt_waist():
     lines = ["사이즈 / S(90) / M(95)", "허리둘레 / 70 / 73", "총장 / 42 / 43"]
     r = A.resolve([{"name_ko": "사이즈", "values_ko": ["S", "M"]}], lines, None, "카파 스커트", "womens_bottoms")
     assert [v["us"] for v in r["values"]] == ["S (US 4-6)", "M (US 8-10)"]
+
+
+# ---- 2026-11-23: golf pants (mens_bottoms by the US waist, womens_pants the skirts' grid) ---------------------------
+@pytest.mark.parametrize("values, want", [
+    (["28", "29", "30", "32", "34", "36", "38", "40"], ["W28", "W29", "W30", "W32", "W34", "W36", "W38", "W40"]),
+    (["76", "79", "82", "85", "88", "91"], ["W30", "W31", "W32", "W33", "W35", "W36"]),        # cm: the inch it rounds to
+    (["30(76)", "32(82)", "34(86)"], ["W30", "W32", "W34"]),                                   # one waist written twice
+    (["M(30)", "L(32)", "XL(34)"], ["W30", "W32", "W34"]),
+    (["S", "M", "L", "XL", "XXL", "3XL"], ["W28-29", "W30-31", "W32-33", "W34-35", "W36-37", "W38-40"]),   # Korean
+    (["FREE"], ["One Size"]),
+])
+def test_a_mens_pants_size_is_the_us_waist(values, want):
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": values}], [], None, "남성 골프 바지", "mens_bottoms")
+    assert not r["held"] and [v["us"] for v in r["values"]] == want
+
+
+def test_a_womens_size_holds_in_the_mens_pants():
+    """55 / 66 mean nothing for men's pants (and 88 there is a waist in cm, never a women's 88)."""
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": ["55", "66"]}], [], None, "골프 바지", "mens_bottoms")
+    assert r["held"]
+    with A.waist_labels(A.MENS_WAIST):
+        assert A.parse_label("88").waist == (88.0,) and A.parse_label("88").women == ()
+    assert A.parse_label("88").women == (88.0,)                       # outside: the women's size, as before
+
+
+def test_womens_pants_size_as_the_skirts():
+    """womens_pants is womens_bottoms with the trousers' measures: the sizing rows stay equal."""
+    p = A.grids()["profiles"]
+    keys = ("labels", "key", "pick", "fit", "kr_women", "letters", "grid", "brands", "us_by_waist_in")
+    assert {k: p["womens_pants"][k] for k in keys} == {k: p["womens_bottoms"][k] for k in keys}
+    assert (p["womens_pants"]["measures"], p["womens_bottoms"]["measures"]) == ("trousers", "bottoms")
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": ["25", "26", "27", "28"]}], [], None, "여성 골프 바지",
+                  "womens_pants")
+    assert [v["us"] for v in r["values"]] == ["XS (US 2)", "S (US 4)", "S (US 6)", "M (US 8)"]
+
+
+def test_a_pants_chart_reads_thigh_rise_hem_and_doubles_the_flat():
+    lines = ["사이즈 / 허리단면 / 엉덩이단면 / 허벅지단면 / 밑위 / 밑단단면 / 총장",
+             "30 / 39 / 50 / 30 / 27 / 19 / 102", "32 / 41 / 52 / 31 / 28 / 20 / 103"]
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": ["30", "32"]}], lines, None, "남성 골프 바지", "mens_bottoms")
+    assert r["chart"]["kinds"] == {"waist": "flat", "hip": "flat", "thigh": "flat", "rise": None, "hem": "flat",
+                                   "length": None}
+    html = A.chart_html(r)
+    assert "<td>W30</td>" in html and "<th>Leg opening</th>" in html and "<td>30.5 in</td>" in html
+    assert "the waist, hip, thigh and leg opening all the way round" in html
+
+
+def test_the_pants_profile_follows_the_stated_gender():
+    """Golf Pants (2026-11-23): men's and unisex pants by the US waist, women's by the skirts' grid; the tops keep the
+    women's profile for a unisex top (stated_only)."""
+    from transform_shops import rules_for
+    cats = rules_for("fairwardgolf").categories
+    pants, tops = cats["50002801"], cats["50002796"]
+    assert [T.size_profile(pants, g) for g in ("mens", "womens", "unisex", "mixed", None)] == \
+        ["mens_bottoms", "womens_pants", "mens_bottoms", "mens_bottoms", "womens_pants"]
+    assert [T.size_profile(tops, g) for g in ("mens", "unisex", None)] == ["mens_tops", "womens_tops", "womens_tops"]
+    assert pants.variant_screen == ("shorts",) and not pants.reviewed

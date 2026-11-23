@@ -4136,6 +4136,75 @@
      "여자"
     ]
    }
+  ],
+  "50002801": [
+   {
+    "code": "not_pants",
+    "why": "2026-11-23 (Golf Pants, golf-pants; the owner's words, the probe of 가을 스트레치 골프 바지: 147 cards of 50002801 read on their sheets): the owner's required words: a golf word (골프, golf) and a trousers word (바지, 팬츠, pants). They drop 7 of 147: shapewear briefs (팬티, right) and 5 golf brands' trousers that name no golf word (J.Lindeberg, Cutter & Buck, Woolsey 3-packs).",
+    "requires": [
+     [
+      "골프",
+      "golf"
+     ],
+     [
+      "바지",
+      "팬츠",
+      "pants"
+     ]
+    ],
+    "tokens": []
+   },
+   {
+    "code": "shorts",
+    "why": "2026-11-23 (Golf Pants, golf-pants; the owner's words, the probe of 가을 스트레치 골프 바지: 147 cards of 50002801 read on their sheets): shorts left out (the owner 2026-11-23): 반바지, 숏팬츠, 쇼츠, shorts, 하프팬츠, the 3- to 5-part lengths (3부, 4부, 5부) and inner shorts (속바지): 26 of 147. A listing selling long trousers with a shorts option (마스터베어 ... 조거바지 반바지, 3 cards) goes too; 숏 alone stays (\"슬림일자 숏\": a short inseam of long trousers), 9부 / 7부 stay (cropped trousers). Also the variant screen (CategoryRules.variant_screen): a shorts variant holds the product.",
+    "tokens": [
+     {
+      "text": "반바지",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "숏팬츠",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "쇼츠",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "shorts",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "하프팬츠",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "3부",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "4부",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "5부",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "속바지",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     }
+    ]
+   }
   ]
  },
  "together": {

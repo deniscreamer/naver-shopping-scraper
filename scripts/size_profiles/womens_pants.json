@@ -1,0 +1,128 @@
+{
+ "format": "size-profile/1",
+ "name": "womens_pants",
+ "_doc": "Women's trousers (Golf Pants 50002801, 2026-11-23): womens_bottoms (the skirts' waist grid, women's sizes and US numbers) with the trousers' measures (thigh, rise, leg opening, inseam). Keep its sizing rows equal to womens_bottoms.json (test_apparel_sizes). The doc: size_profiles/womens_pants.md.",
+ "approved": "2026-11-23, the agent on the owner's delegation: womens_bottoms' grid (2026-11-22); the owner may correct it",
+ "labels": "kr_bottoms",
+ "key": "waist",
+ "pick": "band",
+ "measures": "trousers",
+ "fit": "waist",
+ "kr_women": {
+  "44": 61,
+  "55": 66,
+  "66": 71.1,
+  "77": 76.2,
+  "88": 83.8,
+  "99": 88.9,
+  "44.5": 66,
+  "55.5": 71.1,
+  "66.5": 76.2,
+  "77.5": 83.8
+ },
+ "letters": {
+  "XXS": 58.4,
+  "XS": 61,
+  "S": 66,
+  "M": 71.1,
+  "L": 76.2,
+  "XL": 83.8,
+  "LL": 83.8,
+  "XXL": 88.9,
+  "3L": 88.9,
+  "XXXL": 94
+ },
+ "grid": [
+  {
+   "chest_cm": 58.4,
+   "us": "XXS",
+   "us_num": "00",
+   "bust_in": [
+    23,
+    24
+   ]
+  },
+  {
+   "chest_cm": 61,
+   "us": "XS",
+   "us_num": "0-2",
+   "bust_in": [
+    24,
+    26
+   ]
+  },
+  {
+   "chest_cm": 66,
+   "us": "S",
+   "us_num": "4-6",
+   "bust_in": [
+    26,
+    28
+   ]
+  },
+  {
+   "chest_cm": 71.1,
+   "us": "M",
+   "us_num": "8-10",
+   "bust_in": [
+    28,
+    30
+   ]
+  },
+  {
+   "chest_cm": 76.2,
+   "us": "L",
+   "us_num": "12-14",
+   "bust_in": [
+    30,
+    33
+   ]
+  },
+  {
+   "chest_cm": 83.8,
+   "us": "XL",
+   "us_num": "16",
+   "bust_in": [
+    33,
+    35
+   ]
+  },
+  {
+   "chest_cm": 88.9,
+   "us": "XXL",
+   "us_num": "18",
+   "bust_in": [
+    35,
+    37
+   ]
+  },
+  {
+   "chest_cm": 94,
+   "us": "XXXL",
+   "us_num": "20",
+   "bust_in": [
+    37,
+    39
+   ]
+  }
+ ],
+ "brands": {},
+ "us_by_waist_in": {
+  "23": "00",
+  "24": "0",
+  "25": "2",
+  "26": "4",
+  "27": "6",
+  "28": "8",
+  "29": "10",
+  "30": "12",
+  "31": "14",
+  "32": "14",
+  "33": "16",
+  "34": "16",
+  "35": "18",
+  "36": "18",
+  "37": "20",
+  "38": "20"
+ }
+}

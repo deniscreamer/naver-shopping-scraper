@@ -296,7 +296,9 @@ files or the live dictionaries. The rounds run so far: History, below.
   and lines, the clubs' rule and glossary, the clubs' aspects plus the short game's, product words plus 치퍼 / 칩퍼;
   its brief keeps a title's loft in degrees, 2026-11-18: History), 50002798 (women's golf windbreakers, 2026-11-20:
   the knits' shape with jacket, function and shell terms, 점퍼 never "jumper", the knits' `TITLE_SIZES`; 50002799 재킷,
-  2026-11-21: its copy, 재킷 never "blazer"; its dictionaries start from 50002798's backup), 50002802 (women's golf skirts and culottes, 2026-11-22: its own
+  2026-11-21: its copy, 재킷 never "blazer"; its dictionaries start from 50002798's backup), 50002801 (men's and women's golf pants, 2026-11-23: its own brief of
+  pants, joggers and slacks, "pants" never "trousers", a short / long length never shorts; `TITLE_SIZES` with the
+  women's sizes and the waists 23-44 in and 61-112 cm; its dictionaries start from 50002802's backup), 50002802 (women's golf skirts and culottes, 2026-11-22: its own
   brief of skirts, skorts and culottes, inner shorts, pleats and lengths; `TITLE_SIZES` with the waists 23-34 in and
   61-79 cm; its dictionaries start from 50002796's backup), 50002796 (women's
   long-sleeve golf tops, 2026-11-21: its own brief of tops, necks, closures, fibres and the makers; colour counts and

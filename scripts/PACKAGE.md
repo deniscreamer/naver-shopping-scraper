@@ -635,6 +635,10 @@ owner's delegation (a shell packs as small as a knit): product 150 / 350 / 800 g
 **Table version 16 (2026-11-22).** The row of 50002802 스커트 (women's golf skirts and culottes): the tops' box and
 kind, a skirt 120 / 200 / 500 g. Its `defaults_version` 16; the other rows keep theirs.
 
+**Table version 17 (2026-11-23).** The row of 50002801 바지 (men's and women's golf pants): a folded pair in the tops'
+mailer, 30 x 24 x 5 cm, product 250 / 380 / 700 g, package 350 / 480 / 900 g, the skirts' kind insulated. Its
+`defaults_version` 17; the other rows keep theirs.
+
 **Table version 15 (2026-11-21).** The row of 50002796 티셔츠 (women's long-sleeve golf tops): the windbreakers' box and
 kind, a lighter top (product 120 / 250 / 600 g, package 300 / 350 / 800 g). Its `defaults_version` 15; the other rows
 keep theirs.

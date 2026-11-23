@@ -1,0 +1,138 @@
+{
+ "format": "size-profile/1",
+ "name": "mens_bottoms",
+ "_doc": "Men's trousers (Golf Pants 50002801, 2026-11-23): Korean labels -> the US waist (W30, W32) by the body waist, the letter beside it. The doc: size_profiles/mens_bottoms.md; the mechanism: scripts/SIZES.md. Each grid row's number is the lower edge of its US waist band in cm (pick band): a waist on an edge takes the larger size (the owner 2026-11-21: never a size too small).",
+ "approved": "2026-11-23, the agent on the owner's delegation (the owner gave the section; the size profile is the agent's); the owner may correct it",
+ "labels": "kr_bottoms",
+ "key": "waist",
+ "waist_read": "mens",
+ "pick": "band",
+ "measures": "trousers",
+ "fit": "waist",
+ "kr_women": {},
+ "letters": {
+  "XS": 66.0,
+  "S": 71.1,
+  "M": 76.2,
+  "L": 81.3,
+  "XL": 86.4,
+  "LL": 86.4,
+  "XXL": 91.4,
+  "3L": 96.5,
+  "XXXL": 96.5
+ },
+ "grid": [
+  {
+   "chest_cm": 66.0,
+   "us": "XS",
+   "us_num": "26-27",
+   "us_num_prefix": "W",
+   "us_num_only": true,
+   "bust_in": [
+    26,
+    27
+   ]
+  },
+  {
+   "chest_cm": 71.1,
+   "us": "S",
+   "us_num": "28-29",
+   "us_num_prefix": "W",
+   "us_num_only": true,
+   "bust_in": [
+    28,
+    29
+   ]
+  },
+  {
+   "chest_cm": 76.2,
+   "us": "M",
+   "us_num": "30-31",
+   "us_num_prefix": "W",
+   "us_num_only": true,
+   "bust_in": [
+    30,
+    31
+   ]
+  },
+  {
+   "chest_cm": 81.3,
+   "us": "L",
+   "us_num": "32-33",
+   "us_num_prefix": "W",
+   "us_num_only": true,
+   "bust_in": [
+    32,
+    33
+   ]
+  },
+  {
+   "chest_cm": 86.4,
+   "us": "XL",
+   "us_num": "34-35",
+   "us_num_prefix": "W",
+   "us_num_only": true,
+   "bust_in": [
+    34,
+    35
+   ]
+  },
+  {
+   "chest_cm": 91.4,
+   "us": "XXL",
+   "us_num": "36-37",
+   "us_num_prefix": "W",
+   "us_num_only": true,
+   "bust_in": [
+    36,
+    37
+   ]
+  },
+  {
+   "chest_cm": 96.5,
+   "us": "XXXL",
+   "us_num": "38-40",
+   "us_num_prefix": "W",
+   "us_num_only": true,
+   "bust_in": [
+    38,
+    40
+   ]
+  },
+  {
+   "chest_cm": 104.1,
+   "us": "4XL",
+   "us_num": "41-44",
+   "us_num_prefix": "W",
+   "us_num_only": true,
+   "bust_in": [
+    41,
+    44
+   ]
+  }
+ ],
+ "brands": {},
+ "us_by_waist_in": {
+  "26": "26",
+  "27": "27",
+  "28": "28",
+  "29": "29",
+  "30": "30",
+  "31": "31",
+  "32": "32",
+  "33": "33",
+  "34": "34",
+  "35": "35",
+  "36": "36",
+  "37": "37",
+  "38": "38",
+  "39": "39",
+  "40": "40",
+  "41": "41",
+  "42": "42",
+  "43": "43",
+  "44": "44",
+  "45": "45",
+  "46": "46"
+ }
+}

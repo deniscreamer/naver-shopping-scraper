@@ -74,6 +74,9 @@ class CategoryRules:
                                          # their slugs (도쿄피아, 렉스골프 ...), their brands are Mizuno, Yamaha
     sizes_mens: str | None = None        # the size profile of a product the seller states men's, in a category that
                                          # feeds a men's and a women's section (50002796, 2026-11-21: mens_tops)
+    sizes_unisex: str | None = None      # the size profile of a unisex or mixed product (Golf Pants 50002801, 2026-11-23:
+                                         # unisex trousers are sized as men's); set, a product that states no gender
+                                         # holds size_unmapped (men's or women's sizes cannot be told)
     draft_leaves: tuple[str, ...] = ()    # a section not reviewed yet in a reviewed category: a product placed there is
                                          # created DRAFT (50002796's men's section, 2026-11-21), until the owner's word
     variant_screen: tuple[str, ...] = ()  # the codes of listing_title_rules.json whose words in a variant's option
@@ -206,6 +209,17 @@ RULES = {
                 no_choice_out=True, composition=True, sizes="womens_bottoms", own_brand_wordmark=True,
                 variant_screen=("rain", "trousers"),
                 reviewed=True),       # the owner 2026-11-22: 25 drafts of the pilot activated after its review (6 held)
+            # 2026-11-23, the owner: Golf Pants (golf-pants under apparel, one section, men's and women's together; the
+            # query 가을 스트레치 골프 바지, a golf word and a trousers word required, shorts left out); the rest the
+            # agent's (the probe, decision.md): the skirts' choices; the sizes by the stated gender: women's by the
+            # skirts' waist grid with the trousers' measures (womens_pants), men's and unisex by the US waist
+            # (mens_bottoms, W30); a product stating no gender holds; a variant of shorts holds the product
+            "50002801": CategoryRules(
+                paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
+                no_choice_out=True, composition=True, sizes="womens_pants", sizes_mens="mens_bottoms",
+                sizes_unisex="mens_bottoms", own_brand_wordmark=True,
+                variant_screen=("shorts",),
+                reviewed=False),      # a new category: DRAFT until the lens review and the owner's activation
         }),
 }
 

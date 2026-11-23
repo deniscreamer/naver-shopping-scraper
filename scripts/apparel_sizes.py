@@ -28,7 +28,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from size_chart import NOT_CHART_RE, ONE, Chart, measure_names, read_chart  # noqa: F401  (re-exported: the callers' one module)
-from size_labels import Label, is_size_name, parse_label, waist_labels  # noqa: F401
+from size_labels import MENS_WAIST, WOMENS_WAIST, Label, is_size_name, parse_label, waist_labels  # noqa: F401
 
 _COLOUR_NAME_RE = re.compile(r"색상|컬러|칼라|색깔|color|colour", re.I)    # not a type's section (size_chart sections)
 # a colour value under any option name ("선택: 블랙 / 네이비"): never a type's section
@@ -60,6 +60,14 @@ def grids(folder: Path = PROFILES_DIR) -> dict[str, Any]:
             raise ValueError(f"{f}: not a size profile named {f.stem}")
         out[f.stem] = data
     return {"profiles": out}
+
+
+def waist_read(profile: dict[str, Any]) -> tuple[float, float, float, float, bool] | None:
+    """The waists a profile reads in its labels (size_labels.waist_labels): none for the tops, the women's for the
+    skirts, the men's for the men's trousers ("waist_read": "mens", 2026-11-23)."""
+    if profile.get("key") != "waist":
+        return None
+    return MENS_WAIST if profile.get("waist_read") == "mens" else WOMENS_WAIST
 
 
 def _norm(text: str | None) -> str:
@@ -111,6 +119,8 @@ def _same(a: Label, b: Label) -> bool:
         return a.women == b.women
     if a.jp is not None and b.jp is not None:
         return a.jp == b.jp
+    if a.waist and b.waist:                      # "30" and "30(76)": the same waist in inches (2026-11-23, trousers)
+        return {int(w / 2.54 + 0.5) for w in a.waist} == {int(w / 2.54 + 0.5) for w in b.waist}
     return bool(a.letter) and a.letter == b.letter
 
 
@@ -148,10 +158,12 @@ def _brand_us(hit: tuple[str, dict[str, Any]] | None, rows: list[dict[str, Any]]
 def _us_text(rows: list[dict[str, Any]]) -> str:
     if not all(r.get("us_num") for r in rows):     # men's tops: the US letter alone (2026-11-21)
         return rows[0]["us"] if len(rows) == 1 else f"{rows[0]['us']}-{rows[-1]['us']}"
-    if len(rows) == 1:
-        return f"{rows[0]['us']} (US {rows[0]['us_num']})"
+    pre = rows[0].get("us_num_prefix", "US ")      # men's trousers: the waist alone, "W32-33" (2026-11-23)
     lo, hi = rows[0], rows[-1]
-    return f"{lo['us']}-{hi['us']} (US {lo['us_num'].split('-')[0]}-{hi['us_num'].split('-')[-1]})"
+    num = lo["us_num"] if len(rows) == 1 else f"{lo['us_num'].split('-')[0]}-{hi['us_num'].split('-')[-1]}"
+    if lo.get("us_num_only"):
+        return f"{pre}{num}"
+    return f"{lo['us']} ({pre}{num})" if len(rows) == 1 else f"{lo['us']}-{hi['us']} ({pre}{num})"
 
 
 def _chest_of(label: Label, profile: dict[str, Any]) -> list[float]:
@@ -163,6 +175,9 @@ def _chest_of(label: Label, profile: dict[str, Any]) -> list[float]:
         # a number 80..95 beside a letter is the maker's hip or top numbering, never the waist ("S(90)", Kappa
         # 11871883753, 2026-11-22: S went out as XXL); alone it is a waist in cm
         chest = [] if label.letter else [c for c in label.chest if c <= 95]
+        if len(label.waist) > 1 and not chest and len({int(w / 2.54 + 0.5) for w in label.waist}) == 1:
+            return [label.waist[0]] if label.waist[0] == round(int(label.waist[0] / 2.54 + 0.5) * 2.54, 1) \
+                else [round(int(label.waist[0] / 2.54 + 0.5) * 2.54, 1)]   # "34(86)": one waist, 34 in (2026-11-23)
         if label.waist or chest:
             return list(label.waist) + chest
         if label.chest and label.letter:
@@ -319,7 +334,7 @@ def resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None, 
             profile_name: str, table: dict[str, Any] | None = None, has_fact: bool = False) -> dict[str, Any]:
     """The sizes of a product (_resolve), waists read when the profile is keyed by the waist (size_labels)."""
     table = table or grids()
-    with waist_labels(table["profiles"][profile_name].get("key") == "waist"):
+    with waist_labels(waist_read(table["profiles"][profile_name])):
         return _resolve(options, texts, brand, title, profile_name, table, has_fact)
 
 
@@ -449,14 +464,19 @@ def _resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None,
                 own_us = _brand_us(hit, grid_rows, profile)
                 if own_us and hit:                           # the maker's own US number for its Korean size
                     item.update(us=own_us[0], letter=own_us[1], basis=f"brand_us_num:{hit[0]}")
-                elif basis == "label" and len(label.waist) == 1 and len(grid_rows) == 1 and not label.women:
+                elif basis == "label" and len({int(w / 2.54 + 0.5) for w in label.waist}) == 1 \
+                        and len(grid_rows) == 1 and not label.women:
                     # a waist size ("26", "27", "67"): the US number of that waist, so 26 and 27 stay two sizes
-                    # (S (US 4), S (US 6)); the skirts, 2026-11-22
+                    # (S (US 4), S (US 6)); the skirts, 2026-11-22; one waist in inches and cm ("30(76)", the men's
+                    # trousers 2026-11-23) is one
                     num = (profile.get("us_by_waist_in") or {}).get(str(int(label.waist[0] / 2.54 + 0.5)))
                     row = next((r for r in profile["grid"] if num and r.get("us_num")
                                 and _us_range(r["us_num"])[0] <= _us_range(num)[0] <= _us_range(r["us_num"])[1]), None)
                     if num and row:                          # the letter whose US numbers hold it (70 cm: US 8, M)
-                        item.update(us=f"{row['us']} (US {num})", letter=row["us"], chest_cm=row["chest_cm"],
+                        pre = row.get("us_num_prefix", "US ")
+                        item.update(us=f"{pre}{num}" if row.get("us_num_only") else f"{row['us']} ({pre}{num})",
+                                    letter=row["us"],
+                                    chest_cm=row["chest_cm"],
                                     basis="waist")
                 if women:
                     paired += 1
@@ -514,8 +534,10 @@ def chart_html(sizes: dict[str, Any], table: dict[str, Any] | None = None,
     rows_in = chart.get("rows") or []
     fields = [f for f in measure_names(profile.get("measures", "tops")) if any(f in r["cm"] for r in rows_in)]
     names = {"chest": "Garment chest", "length": "Length", "shoulder": "Shoulder", "sleeve": "Sleeve",
-             "waist": "Garment waist", "hip": "Hip"}
-    flat_under = {"chest": 75, "waist": 53, "hip": 72}     # a value laid flat (단면) is doubled; with no word, under this
+             "waist": "Garment waist", "hip": "Hip", "thigh": "Thigh", "rise": "Rise", "hem": "Leg opening",
+             "inseam": "Inseam"}                                                     # trousers (2026-11-23)
+    # a value laid flat (단면) is doubled; with no word, under this
+    flat_under = {"chest": 75, "waist": 53, "hip": 72, "thigh": 42, "hem": 32}
 
     def garment(field_: str, cm: float) -> float:
         if field_ not in flat_under:
@@ -547,7 +569,9 @@ def chart_html(sizes: dict[str, Any], table: dict[str, Any] | None = None,
         return ""
     fit_note = (f"Fits {profile.get('fit', 'bust')} is the body measurement each size is made for; " if values
                 else "")
-    round_ = " and ".join(f for f in ("chest", "waist", "hip") if f in fields) or "chest"
+    rounds = [{"hem": "leg opening"}.get(f, f) for f in ("chest", "waist", "hip", "thigh", "hem") if f in fields] \
+        or ["chest"]
+    round_ = rounds[0] if len(rounds) == 1 else ", ".join(rounds[:-1]) + " and " + rounds[-1]
     note = (f"{fit_note}the garment measurements are the maker's, the {round_} all the way round, to within about 1 in."
             if fields else f"{fit_note}the maker gave no garment measurements.")
     note = note[0].upper() + note[1:]
