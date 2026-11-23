@@ -83,14 +83,17 @@ def _bare(word: str | None) -> str:
     return re.sub(r"\s+", "", normalize(word))
 
 
-def title_rule(name: str | None, rules: Iterable[dict[str, Any]]) -> str | None:
+def title_rule(name: str | None, rules: Iterable[dict[str, Any]], store: str | None = None) -> str | None:
     """`title:<code>` of the first category rule whose term is in the name without spaces, or that `requires` a
     group of words none of which is in it (all of the groups, any word of each; 2026-11-19, knit cardigans: a women's
-    word and a cardigan word), or None."""
+    word and a cardigan word), or None. A rule's `unless_stores` (store slugs: a maker's own store whose titles name
+    neither the maker nor the sport, Callaway's callawaygolf_korea, 2026-11-23) leaves out the rule for its rows."""
     text = _bare(name)
     for rule in rules:
         if any(_bare(u) in text for u in rule.get("unless", ())):
             continue                                # a word that says the row is what the section sells
+        if store and store in rule.get("unless_stores", ()):
+            continue
         if any(not any(_word_in(w, text) for w in group) for group in rule.get("requires", ())):
             return f"title:{rule['code']}"
         if any(term_matches(text, {**t, "text": re.sub(r"\s+", "", t["text"])}) for t in rule.get("tokens", ())):
@@ -198,7 +201,8 @@ class Screen:
         if not name:
             return "title_unavailable"
         category = str(row.get("category_id") or "")
-        word = stop_word(name, self.rules) or title_rule(name, self.rules_of.get(category, self.category_rules))
+        word = stop_word(name, self.rules) or title_rule(name, self.rules_of.get(category, self.category_rules),
+                                                         ((row.get("store") or {}).get("slug")))
         if word:
             return word
         if category != self.category_id and category not in self.also:

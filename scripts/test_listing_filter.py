@@ -596,3 +596,42 @@ def test_the_mens_tops_job_takes_the_mens_knits_and_the_womens_jobs_do_not():
 def test_skirts_need_a_skirt_word_and_leave_out_rain_and_trousers(title, code):
     assert Screen("50002802", namespace="fairwardgolf").check(
         {"name": title, "category_id": "50002802", "product_id": "1", "store": {"channel_no": "2"}}) == code
+
+
+@pytest.mark.parametrize("title, code", [
+    # 50002801, Golf Pants (2026-11-23): the probe's cards, the owner's words; a golf maker needs no golf word
+    ("Alkans 가을 겨울 남성 골프바지 남자 골프웨어 조거 팬츠 SM F085", None),
+    ("여성 골프바지 밴딩 여성골프웨어 블랙 슬림일자 숏", None),                    # 숏: a short inseam, no shorts
+    ("티앤드 여성골프바지 골프웨어 간절기 부츠컷핏 9부 숏", None),
+    ("커터앤벅 남성 스탠다드 솔리드 바지 - CBM3MPT331", None),                     # a golf maker (the owner)
+    ("제이린드버그 경량 타이트핏 팬츠", None),
+    ("[울시] 남성 신축성 좋은 링클프리 팬츠 3종 택1", "title:not_golf"),           # casual slacks, no golf maker
+    ("텐셀 여성 골프 보정속옥 이너웨어 기능성 복부 보정 슬리밍 팬티", "title:not_pants"),
+    ("나이키 골프 남성반바지 드라이 핏 빅토리 10.5인치 골프쇼츠 CU9741 010", "title:shorts"),
+    ("여성 골프 반바지 4부 스판 골프웨어 빅사이즈 88까지", "title:shorts"),
+    ("면 3부 골프 속바지 여성 골프웨어 헬로버디 국산 골프이너", "title:shorts"),
+    ("골프 속바지 가벼운 착용감 골프치마", "title:shorts"),
+    ("남성 골프바지 + 긴팔 폴로티 세트", "title:other_item"),                       # a set (the pilot's review)
+    # the brand probe (14 queries, 2026-11-23)
+    ("[온라인단독] 남성 포켓스티치 사이드밴드 팬츠 2종 택1_BGFMPT401 (정상가 150,000원)", None),   # Castelbajac's code
+    ("다니골프 부츠컷 슬랙스", None),                                                # slacks are trousers
+    ("[현대백화점][와이드앵글] WWU23371 WG 카고 버뮤다 팬츠 WWU23371", "title:shorts"),
+    ("키즈 주니어 골프 슬랙스", "title:kids"),
+    ("남성 골프바지 바지 볼링 당구 유니폼 남자 작업복 겨울 기모 골프웨어GLBLU1M502", "title:not_golf_use"),
+    ("파리게이츠 잭 바니 여성 골프 레인웨어 바지 4컬러", "title:rain"),
+    ("남성 골프 바지 드라이빙레인지 웨어", None),                                    # 레인 alone is no rain
+])
+
+
+def test_golf_pants_need_a_trousers_word_and_leave_out_shorts(title, code):
+    assert Screen("50002801", namespace="fairwardgolf").check(
+        {"name": title, "category_id": "50002801", "product_id": "1", "store": {"channel_no": "2"}}) == code
+
+
+def test_a_makers_own_store_needs_no_golf_word():
+    """Callaway's store (callawaygolf_korea, 2026-11-23): its titles name neither the maker nor golf."""
+    row = {"name": "T/T 남성 기모 슬림핏 팬츠", "category_id": "50002801", "product_id": "1",
+           "store": {"channel_no": "2", "slug": "callawaygolf_korea"}}
+    screen = Screen("50002801", namespace="fairwardgolf")
+    assert screen.check(row) is None
+    assert screen.check({**row, "store": {"channel_no": "2", "slug": "other"}}) == "title:not_golf"

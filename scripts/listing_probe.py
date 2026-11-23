@@ -71,7 +71,8 @@ def analyze(rows: list[dict[str, Any]], filters: dict[str, Any] | None, category
         examples: dict[str, list[str]] = {}
         kept = []
         for r in sample:
-            code = LF.title_rule(r.get("name"), (by_leaf or {}).get(_row_category(r), with_rules)) or "kept"
+            code = LF.title_rule(r.get("name"), (by_leaf or {}).get(_row_category(r), with_rules),
+                                 (r.get("store") or {}).get("slug")) or "kept"
             reasons[code] += 1
             examples.setdefault(code, [])
             if len(examples[code]) < EXAMPLES:
@@ -144,7 +145,7 @@ def cards(rows: list[dict[str, Any]], category: str, rules: list[dict[str, Any]]
     own = {c: LF.title_rules(c, leaf=leaf) for c in taken if c != category}
     out = []
     for r in rows:
-        code = LF.title_rule(r.get("name"), own.get(_row_category(r), rules))
+        code = LF.title_rule(r.get("name"), own.get(_row_category(r), rules), (r.get("store") or {}).get("slug"))
         cat = _row_category(r)
         if cat in taken:
             group, mark = (code or "kept"), (None if code is None else "flag")

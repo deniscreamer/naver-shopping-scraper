@@ -86,7 +86,10 @@ def _numbers(part: str, letter: str | None,
             return None
         w = _WAIST.get()
         for n in nums:
-            if w and w[4] and ((n == int(n) and w[0] <= n <= w[1]) or w[2] <= n <= w[3]):
+            if w and w[4] and ((n == int(n) and w[0] <= n <= w[1]) or w[2] <= n <= w[3]) \
+                    and not (letter and n >= 90 and n % 5 == 0):   # "M(95)": a top's chest beside a letter (a polo
+                                                             # sold with the pants, 5534297375, 2026-11-23), never a
+                                                             # waist; "2XL(92)" is one (92 cm)
                 waist.append(round(n * 2.54, 1) if n <= w[1] and n == int(n) else n)   # men's: "32", "82"
             elif int(n) in _WOMEN and n < 100:
                 women.append(n)
@@ -113,6 +116,7 @@ def parse_label(text: str) -> Label | None:
     t = re.sub(r"(?:모델\s*착용(?:사이즈)?|모델사이즈|추천)$", "", t)
     t = re.sub(r"(?:사이즈|SIZE)(?=\))", "", t)
     t = re.sub(r"^(?:\d{1,2}번|\d사이즈)(?=\()", "", t)    # "1사이즈(...)", "2번(...)"; never "55사이즈(S)"
+    t = re.sub(r"\((?:UP|DOWN|업|다운)추천\)", "", t)   # "S(up추천)": size up advised, the size S (2026-11-23, 5117895030)
     t = re.sub(r"\(([A-Z0-9~\-]+)추천\)", r"(\1)", t)      # "55사이즈 (S 추천)": a recommended letter (5857396168)
     t = re.sub(r"(?<=\d)사이즈(?=\(|$)", "", t)
     # 2026-11-22, the men's tops pilot: a note in brackets after the size ("S(모델착용사이즈)", "S(상세사이즈 확인했습니다)"),

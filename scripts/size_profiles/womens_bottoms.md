@@ -32,3 +32,7 @@ under 72 cm is taken as flat.
 80..95 beside a letter ("S(90)", Kappa) is the maker's hip or top numbering, never a waist, in the label and in the
 chart; a waist the chart pairs with a letter ("S(25)") sizes that letter; 날씬 / 통통 (slim / chubby) before a women's
 size are dropped.
+
+2026-11-23, the pants pilot: a bare letter takes the body waist its seller writes beside it in the text ("S(24-26),
+M(27-28)", "M사이즈 (27-28)", "25-26 : S": `waist_text_pairs`, basis `text_waist`), when every bare letter of the option
+has one; it was sized by the letter alone, one or two sizes over (4 of 13 women's pants, 5 live skirts).

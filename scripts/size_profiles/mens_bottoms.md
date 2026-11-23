@@ -20,8 +20,10 @@ Labels `kr_bottoms`, measures `trousers` (waist, hip, thigh, rise, leg opening, 
 
 Why: US men's pants are sold by the waist in inches (W30, W32), not by a letter; Korean men's golf pants sell by the
 waist in inches (28-40), by the waist in cm (76, 79, 82, 85, 88) or by a letter whose waists the Korean charts give
-(S 28-29, M 30-31, L 32-33, XL 34-35, XXL 36-37). A waist label is its US waist: an inch as written, a cm the inch it
-rounds to (82 cm = W32, 88 cm = W35); "32(82)" is one waist. A letter is its band ("M" = W30-31), never a US letter:
+(S 28-29, M 30-31, L 32-33, XL 34-35, XXL 36-37). A waist label is its US waist: an inch as written, a cm as Korea
+writes it (`cm_round` 0.3: 82 = W32, 85 = W33, 88 = W34, 91 = W36; Adidas' "88(34)"); "32(82)" is one waist, and "M(32)"
+beside "M(82)" one size. A letter with 90..120 in fives ("M(95)") is a top's chest (a polo sold with the pants):
+held, never a waist; "2XL(92)" is a waist. A letter's waist in the seller's text sizes it, as the women's. A letter is its band ("M" = W30-31), never a US letter:
 a Korean M is a US S. Women's sizes (55, 66) mean nothing here: such a value holds the product. In this profile a
 number 26..44 is a waist in inches and 66..112 a waist in cm before anything else ("88" is 88 cm, never a women's 88).
 

@@ -870,7 +870,7 @@ def test_a_chart_s_top_number_is_no_skirt_waist():
 # ---- 2026-11-23: golf pants (mens_bottoms by the US waist, womens_pants the skirts' grid) ---------------------------
 @pytest.mark.parametrize("values, want", [
     (["28", "29", "30", "32", "34", "36", "38", "40"], ["W28", "W29", "W30", "W32", "W34", "W36", "W38", "W40"]),
-    (["76", "79", "82", "85", "88", "91"], ["W30", "W31", "W32", "W33", "W35", "W36"]),        # cm: the inch it rounds to
+    (["76", "79", "82", "85", "88", "91"], ["W30", "W31", "W32", "W33", "W34", "W36"]),        # cm as Korea writes it
     (["30(76)", "32(82)", "34(86)"], ["W30", "W32", "W34"]),                                   # one waist written twice
     (["M(30)", "L(32)", "XL(34)"], ["W30", "W32", "W34"]),
     (["S", "M", "L", "XL", "XXL", "3XL"], ["W28-29", "W30-31", "W32-33", "W34-35", "W36-37", "W38-40"]),   # Korean
@@ -921,4 +921,48 @@ def test_the_pants_profile_follows_the_stated_gender():
     assert [T.size_profile(pants, g) for g in ("mens", "womens", "unisex", "mixed", None)] == \
         ["mens_bottoms", "womens_pants", "mens_bottoms", "mens_bottoms", "womens_pants"]
     assert [T.size_profile(tops, g) for g in ("mens", "unisex", None)] == ["mens_tops", "womens_tops", "womens_tops"]
-    assert pants.variant_screen == ("shorts",) and not pants.reviewed
+    assert pants.variant_screen == ("shorts", "other_item") and not pants.reviewed
+
+
+def test_one_waist_in_inches_and_cm_is_one_size():
+    """Adidas 5979440160 (2026-11-23, the pants pilot): two pants' sizes "M(32)" and "M(82)" are one waist; the
+    fleece pair's "XL(88)" is 34 as its chart says (88(34)), not the summer pair's XL(35)."""
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": ["M(32)", "L(33)", "XL(35)", "M(82)", "L(85)", "XL(88)",
+                                                     "2XL(92)", "XXL(36)"]}],
+                  [], None, "아디다스 골프 바지 남자", "mens_bottoms")
+    assert [v["us"] for v in r["values"]] == ["W32", "W33", "W34", "W35", "W36"]
+    assert r["merged"] == {"M(82)": "M(32)", "L(85)": "L(33)", "XXL(36)": "2XL(92)"}
+
+
+def test_a_tops_size_holds_in_the_mens_pants():
+    """A polo sold with the pants (5534297375, 2026-11-23): "M(95)" is a top's chest, never a 95 cm waist."""
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": ["M(95)", "L(100)", "88(34)"]}], [], None, "골프 바지",
+                  "mens_bottoms")
+    assert r["held"] and "M(95)" in r["held"]
+
+
+@pytest.mark.parametrize("lines, want", [
+    (["Size / S(24-26), M(27-28), L(29-30), XL(30-31), XXL(32-33) * 허리 하이웨스트 밴딩처리"],      # 5530496945
+     ["XS-S (US 0-6)", "S-M (US 4-10)", "M-L (US 8-14)", "L (US 12-14)", "L-XL (US 12-16)"]),
+    (["S 사이즈 (25-27) 허리 32", "M사이즈 (27-28) 허리 34", "L사이즈 (28-29) 허리 36", "XL사이즈(29-30) 허리 38"],  # 5392170005
+     ["XS-S (US 0-6)", "S-M (US 4-10)", "M (US 8-10)", "M-L (US 8-14)"]),
+    (["25-26 : S / 27-29 : M / 29-30 : L / 30-31 : XL"],                                              # 5814395263
+     ["XS-S (US 0-6)", "S-M (US 4-10)", "M-L (US 8-14)", "L (US 12-14)"]),
+])
+def test_a_letters_body_waist_in_the_text_sizes_it(lines, want):
+    """The pants pilot (2026-11-23): a women's letter sized by the waist its seller writes beside it, never the bare
+    letter (4 drafts went out one or two US sizes over)."""
+    values = ["S", "M", "L", "XL", "XXL"][:len(want)]
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": values}], lines, None, "여성 골프 바지", "womens_pants")
+    assert [v["us"] for v in r["values"]] == want and {v["basis"] for v in r["values"]} == {"text_waist"}
+    part = A.resolve([{"name_ko": "사이즈", "values_ko": ["S", "M", "L"]}], ["S(25-26) 추천"], None, "여성 골프 바지",
+                     "womens_pants")
+    assert {v["basis"] for v in part["values"]} == {"fallback_letters"}        # one letter of three: no mix
+
+
+def test_a_size_up_advice_is_the_size():
+    """"S(up추천)" (size up advised, 5117895030, 2026-11-23) is S."""
+    assert A.parse_label("S(up추천)") == A.parse_label("S")
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": ["S", "M", "S(up추천)", "M(up추천)"]}], [], None,
+                  "여성 골프바지", "womens_pants")
+    assert not r["held"] and [v["us"] for v in r["values"]] == ["S (US 4-6)", "M (US 8-10)"]

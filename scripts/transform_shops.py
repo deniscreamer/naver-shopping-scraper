@@ -218,7 +218,7 @@ RULES = {
                 paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
                 no_choice_out=True, composition=True, sizes="womens_pants", sizes_mens="mens_bottoms",
                 sizes_unisex="mens_bottoms", own_brand_wordmark=True,
-                variant_screen=("shorts",),
+                variant_screen=("shorts", "other_item"),   # a belt or a polo sold as an option (2026-11-23, the pilot)
                 reviewed=False),      # a new category: DRAFT until the lens review and the owner's activation
         }),
 }
