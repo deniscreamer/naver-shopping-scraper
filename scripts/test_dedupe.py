@@ -1171,6 +1171,42 @@ def test_a_style_code_joins_two_catalogs_but_not_a_combo_or_another_brand():
     assert D.same_item(d, e) is None
 
 
+def _pants(pid, name, values, model, price):
+    """mastersgolf's Adidas golf pants (2026-11-24, the golf pants review): the variants as collected, trimmed."""
+    r = record(500000149, pid, name, price=price, photos=(f"p{pid}",), values=values, category="50002801")
+    r["specs"] = {"facts": {"model_name": {"value": model}, "brand": {"value": "아디다스"}}}
+    return r
+
+
+def test_an_apparel_article_code_in_both_option_lists_is_a_same_item_candidate_one_store_too():
+    """9987280360 (draft) sells IQ2919 black as the live 4577303476 does; the live one names no code but in its options."""
+    live = D.entry(_pants(4577303476, "아디다스골프 남성 가을 골프바지",
+                          [["HY0248 그레이5", "79"], ["IQ2919 블랙", "82"], ["IQ2919 블랙", "85"]], "F8_PT_M", 49_000))
+    draft = D.entry(_pants(9987280360, "아디다스 남성 코어 테이퍼드 봄 가을 골프바지 IQ2919",
+                           [["IQ2919 블랙", "82"], ["IS0600 그레이", "82"], ["IU2826 헴프", "82"]],
+                           "IQ2919 IS0600 IU2826", 55_000))
+    assert live["codes"] == set() and live["ocodes"] == {"HY0248", "IQ2919"}
+    assert not D.signals(live, draft)["confirmed"] and D.same_item(live, draft) == "option code IQ2919"
+    c = {**draft, "status": "job"}
+    assert D.Index([live]).decide(c)["same_item"] == [live["key"]]
+    # another article of the brand in one store is no candidate; nor another brand's listing of that code
+    other = D.entry(_pants(1, "아디다스 남성 골프바지", [["IS0600 그레이", "82"]], None, 50_000))
+    assert D.same_item(live, other) is None
+    r = _pants(2, "남성 골프바지", [["IQ2919 블랙", "82"]], None, 50_000)
+    r["specs"]["facts"]["brand"]["value"] = "푸마"
+    assert D.same_item(live, D.entry(r)) is None
+
+
+def test_a_clubs_option_code_is_no_article():
+    """젝시오14 sets of one store (100568453): 'MP1400K' in the options names the shaft of carbon and steel editions."""
+    a = record(100568453, 12975257923, "[정식대리점] 젝시오14 남성용 풀세트 (드라이버 10.5도 R 카본 아이언 MP1400K R)",
+               values=[["카본 MP1400K R"]], category="50002788")
+    b = record(100568453, 12979780461, "[정식대리점] 젝시오14 남성용 풀세트 (드라이버 10.5도 R 스틸 R)",
+               values=[["스틸 R", "MP1400K"]], category="50002788")
+    ea, eb = D.entry(a), D.entry(b)
+    assert ea["ocodes"] == eb["ocodes"] == set() and D.same_item(ea, eb) is None
+
+
 def test_the_index_holds_a_same_item_candidate_and_never_decides():
     live = item(101, 5917858699, "23년 오리엔트골프 야하마 페미나 여성골프채풀세트", catalog="35750553619")
     index = D.Index([live])

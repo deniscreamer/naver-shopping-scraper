@@ -41,7 +41,7 @@ wedge-set review's confirmations (C40, C41-1, C43) and the `held_same_upc` hold.
 |---|---|---|
 | `duplicate_seen`, decision `not_confirmed` | a title match, not confirmed by photos or variants: an ordinary product, taken | nothing |
 | `duplicate_seen`, decision `same_upc:<key>` (2026-11-17) | no confirmed match, but the UPC of `<key>` under `upc_suspect` (`same_upc`: every such key, `upc`: the codes): taken | `log`: nothing; `on`: see `held_same_upc` |
-| `duplicate_seen`, decision `same_item:<key>` (2026-11-20) | no confirmed match, but the same Naver catalog or style code as `<key>` (`same_item`: every such key, `why`: `catalog <id>` / `code <code>`): taken | `log`: this event only. `on`: the event is instead `not_taken` `parked_same_item:<key>` (2026-11-20, the owner: collect the raw data only, decide after the review): no images, translation, description or publication. `job.py status`, the done line and the progress line print the parked pairs (`parked same-item candidates: N ...`, the partner still published, the pair not judged versions) with `lens.py products` per pair and `--pairs` for the job. The agent checks each pair from the data (skill visual-review) and brings the owner copy / versions / doubtful; a version is let go on with `job.py release --job <id> <key> --note ...` (the next `scroll --job` / `run --job` takes it through the rest) and may be recorded (`lens.py dupes --versions`: the pair never comes back); a copy stays parked |
+| `duplicate_seen`, decision `same_item:<key>` (2026-11-20) | no confirmed match, but the same Naver catalog or style code as `<key>` (`same_item`: every such key, `why`: `catalog <id>` / `code <code>` / `option code <code>`): taken | `log`: this event only. `on`: the event is instead `not_taken` `parked_same_item:<key>` (2026-11-20, the owner: collect the raw data only, decide after the review): no images, translation, description or publication. `job.py status`, the done line and the progress line print the parked pairs (`parked same-item candidates: N ...`, the partner still published, the pair not judged versions) with `lens.py products` per pair and `--pairs` for the job. The agent checks each pair from the data (skill visual-review) and brings the owner copy / versions / doubtful; a version is let go on with `job.py release --job <id> <key> --note ...` (the next `scroll --job` / `run --job` takes it through the rest) and may be recorded (`lens.py dupes --versions`: the pair never comes back); a copy stays parked |
 | `held_same_upc` (`on`) | that product was published as a draft and withdrawn at once, reason `hold: copy of live <key>, same UPC ...` (`same UPC as <key>` when `<key>` is not live) | list it for the owner: copy or version ([OWNER_RULES.md](OWNER_RULES.md) rule 2); a failed withdraw (`why`): hold it by hand on his word |
 | `duplicate_seen`, a would-be decision (`log` only) | what `on` would have done | nothing; `--pairs` after the run |
 | `not_taken: duplicate_of_withdrawn:<key>` | a confirmed match the owner withdrew: never taken | nothing |
@@ -153,7 +153,11 @@ the run starts:
   (SNGR15702 under 대량가성비추천할인몰). Both: the same category, another store, the price guard, no clash of club
   kind, bag, hand, gender or length read inside the words ("남성골프채풀세트"), of junior ages ("3세 이하" / "3-5세") or
   of piece counts. The loose catalogs are counted once over the published products (`loose_catalogs`), never over a
-  job's growing index; a replaced match's live end must pass the price and store guards itself. Measured on the store the same day:
+  job's growing index; a replaced match's live end must pass the price and store guards itself. In apparel (a
+  category with `sizes`) also an article code in both products' option values (`option_codes`, `why` `option code
+  <code>`, 2026-11-24: mastersgolf lists the Adidas article IQ2919 in draft 9987280360 and in live 4577303476, whose
+  title has no code and whose model name is F8_PT_M), the same brand when both name one, one store or two: an
+  article code names one garment in one colour. Not in clubs (an option names the shaft: 젝시오14 `MP1400K`). Measured on the store the same day:
   the catalog joined 30 groups across stores; without the loose ones about 23 of the 31 live pairs were one item the
   title rule had missed (Yamaha Femina 6 times live, Mutsumi Honma 3, Yamaha CS 3, TaylorMade Glory, Honma Kiwami5,
   Kolon VWX), the rest versions Naver files together, most of them stopped by the clashes; the code: 4 club groups,
@@ -219,3 +223,14 @@ the run starts:
   50002787), none lost or larger, the owner's reviewed versions unchanged; `--report` of the published 3 -> 5 groups.
   Rejected: a fuzzy title or variant text match for the rest (no photo or variant signal tells their versions apart:
   33.5 / 34.5 in, men's / women's, steel / carbon).
+- **The golf pants review** (2026-11-24, 50002801): an apparel article code in both option lists is a same-item
+  candidate, one store too (Adidas IQ2919, 9987280360 / 4577303476). Measured on the store's ledger (3690 products):
+  4 new same-item pairs, each one article sold twice (IQ2919 and GR0759 5854632439 / 8217328963 of mastersgolf;
+  J.Lindeberg GWJT10709 11462139955 / 9217470322 of one store, GWJT06333 9199447855 / 11494901577 in another's
+  multi-model listing), no duplicate group new, larger or lost, the owner's reviewed versions unchanged; `--report`
+  same-item candidates 21 -> 23 groups. Not taken: the Puma 본딩 바지 of three stores (9254823482, 9525674056,
+  9250706389: titles, photos and variants apart, no code or catalog; the 품명 / model name row as a key joined 30
+  groups of the store, many of them versions such as Honma 2-star / 3-star or four Volvik polos) and one seller's two
+  Volvik listings with colours written apart (10933958968 / 10322266021: the colour words differ, and one store's
+  title or colour matches merged editions, C42): the known gap, hold and ask ([OWNER_RULES.md](OWNER_RULES.md)
+  rule 2).

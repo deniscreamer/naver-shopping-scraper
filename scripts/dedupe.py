@@ -34,7 +34,8 @@ The rule:
      (same_item, decide()'s `same_item` / `why`): the page answer's catalog (specs.catalog, else the shop's
      catalog_ids.json backfill; a catalog of more than CATALOG_LOOSE published products ignored) or a maker's style
      code with the same brand (a store-name brand counts as none); no combo set, no clash of kind, bag, hand, gender,
-     length, ages or piece counts; held like 4.
+     length, ages or piece counts; held like 4. In apparel also an article code in both products' option values
+     (option_codes, 2026-11-24: Adidas IQ2919 listed twice by one seller), one store or two.
 
 Index: built at a job's start from the publication ledger (published products, drafts awaiting review included
 (draft first, 2026-11-16), withdrawn ones, and those withdrawn as replaced_by:<key>, which stand for the live end of
@@ -160,7 +161,8 @@ def entry(line: dict[str, Any], status: str = "job", catalogs: dict[str, str | N
                                                                                        else ""),
             "codes": style_codes(((specs.get("facts") or details.get("facts") or {}).get("model_name") or {})
                                  .get("value") or details.get("model_name"), name),
-            "brand": _own_brand(((specs.get("facts") or details.get("facts") or {}).get("brand") or {}).get("value")
+            "ocodes": option_codes(variants, parts[0] if len(parts) > 3 else "", leaf),
+            "brand":_own_brand(((specs.get("facts") or details.get("facts") or {}).get("brand") or {}).get("value")
                                 or details.get("brand") or "", (listing.get("store") or details.get("store") or {})
                                 .get("name"))}
 
@@ -235,6 +237,31 @@ def style_codes(model_name: Any, title: str | None) -> set[str]:
     return out
 
 
+# an apparel article code in the option values (2026-11-24, 9987280360 / 4577303476, the golf pants review): one
+# seller (mastersgolf) lists the Adidas article IQ2919 twice, its draft 'IQ2919 블랙 / IS0600 그레이 / IU2826 헴프' and
+# its live 'HY0248 그레이5 / IQ2919 블랙' (model name F8_PT_M, no code in the live title). A brand's article code names
+# one garment in one colour, so two listings selling it share a variant, one store or two. Apparel only (a category
+# with `sizes`): a club's options name its shaft (젝시오14 'MP1400K' in one store's carbon / steel / left-hand sets).
+# Measured on the store's ledger the same day: 4 new pairs, each one article sold twice (IQ2919; Adidas GR0759 of one
+# seller; J.Lindeberg GWJT10709 of one store, GWJT06333 in a multi-model listing of another)
+def option_codes(variants: list[dict[str, Any]], shop: str, leaf: str) -> set[str]:
+    """The style codes (style_codes' test) in the option values of an apparel category's variants (else none)."""
+    if not variants or not _apparel(shop, leaf):
+        return set()
+    return style_codes(None, " ".join(str(o) for v in variants for o in v.get("options") or [v.get("name") or ""]))
+
+
+@functools.lru_cache(maxsize=None)
+def _apparel(shop: str, category: str) -> bool:
+    """The shop sizes this category's garments (transform_shops `sizes`: apparel)."""
+    from transform_shops import ShopRulesMissing, rules_for
+    try:
+        rules = rules_for(shop).categories.get(category)
+    except ShopRulesMissing:
+        return False
+    return bool(rules and rules.sizes)
+
+
 _AGE_RE = re.compile(r"(\d{1,2})\s*(?:[~\-]|\s)\s*(\d{1,2})\s*세|(\d{1,2})\s*세\s*(이하|이상)?")
 
 
@@ -250,20 +277,27 @@ def _ages(title: str) -> set[str]:
 
 
 def same_item(a: dict[str, Any], b: dict[str, Any], loose: set[str] | frozenset[str] = frozenset()) -> str | None:
-    """Why a and b look like one item ("catalog <id>", "code <code>"), None when they do not: the same category,
-    another store, the price guard, the same catalog (not a `loose` one) or a style code in common (the same brand when
-    both name one), and no clash of club kind, hand, gender, length or bag between the titles."""
-    if a.get("category") != b.get("category") or a.get("channel") == b.get("channel") or a.get("key") == b.get("key"):
+    """Why a and b look like one item ("catalog <id>", "code <code>", "option code <code>"), None when they do not:
+    the same category, another store, the price guard, the same catalog (not a `loose` one) or a style code in common
+    (the same brand when both name one), or an apparel article code in both products' option values (the same brand
+    when both name one; one store too), and no clash of club kind, hand, gender, length or bag between the titles."""
+    if a.get("category") != b.get("category") or a.get("key") == b.get("key"):
         return None
     if not price_ok(a, b):
         return None
     why = None
-    if a.get("catalog") and a.get("catalog") == b.get("catalog") and a["catalog"] not in loose:
-        why = f"catalog {a['catalog']}"
-    else:
-        common = (a.get("codes") or set()) & (b.get("codes") or set())
-        if common and (not a.get("brand") or not b.get("brand") or a["brand"] == b["brand"]):
-            why = f"code {sorted(common)[0]}"
+    same_brand = not a.get("brand") or not b.get("brand") or a["brand"] == b["brand"]
+    if a.get("channel") != b.get("channel"):
+        if a.get("catalog") and a.get("catalog") == b.get("catalog") and a["catalog"] not in loose:
+            why = f"catalog {a['catalog']}"
+        else:
+            common = (a.get("codes") or set()) & (b.get("codes") or set())
+            if common and same_brand:
+                why = f"code {sorted(common)[0]}"
+    if why is None:
+        common = (a.get("ocodes") or set()) & (b.get("ocodes") or set())
+        if common and same_brand:
+            why = f"option code {sorted(common)[0]}"
     if why is None:
         return None
     if why.startswith("code") and (_COMBO.search(a.get("name") or "") or _COMBO.search(b.get("name") or "")):
@@ -666,7 +700,7 @@ class Index:
     def same_items(self, c: dict[str, Any]) -> dict[str, Any]:
         """{same_item: [keys], why: [reasons]} of the products that look like c's item (same_item), published ones
         first (a replaced one stands for its live end), {} when none: a hold candidate, never a decision (2026-11-20)."""
-        if not c.get("catalog") and not c.get("codes"):
+        if not c.get("catalog") and not c.get("codes") and not c.get("ocodes"):
             return {}
         if self.loose is None:                      # once, from the published products: a job's own holds and
             self.loose = loose_catalogs(self.by_key.values())   # takes never turn a catalog loose mid-run
@@ -678,7 +712,8 @@ class Index:
             target: dict[str, Any] | None = e
             if e["status"] == "replaced":           # the live end must pass the guards itself (as decide(), 11-16)
                 target = self.live(e["key"])[1]
-                if target is not None and (not price_ok(c, target) or target.get("channel") == c.get("channel")):
+                if target is not None and (not price_ok(c, target) or target.get("channel") == c.get("channel")
+                                           and not why.startswith("option code")):
                     target = None
             if target is not None and target["key"] != c["key"]:
                 found.setdefault(target["key"], (target, why))
