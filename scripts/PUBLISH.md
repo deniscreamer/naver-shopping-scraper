@@ -15,6 +15,7 @@ procedure for store actions: skill `store-actions`. Commands from the repo root:
 .venv/bin/python scripts/publish.py fairwardgolf --withdraw <key> | --restore <key> --reason "..."   # also --activate <key>
 .venv/bin/python scripts/store_diff.py fairwardgolf [--only <key>] [--category <id>]                 # read only
 .venv/bin/python scripts/publish.py fairwardgolf --withdraw <ref> --reason "..." --dry-run          # the key, nothing sent
+.venv/bin/python scripts/publish.py fairwardgolf --channels [--dry-run]                             # live products onto the channels they miss
 ```
 
 Wherever a `<key>` is asked, a product id, a handle or a link works too, and `--keys-file F` / `--job ID [--event E]`
@@ -27,6 +28,7 @@ add more (2026-11-16): [OPERATIONS.md](OPERATIONS.md#naming-a-product-shop_viewr
 | The store and our files disagree | `store_diff.py <shop> [--only <key>]`; skill `product-trace` | [Store actions](#withdraw-hold-restore-activate-store-actions) |
 | What the store holds now (one product, counts, a collection, a dump) | `shopify_catalog.py <shop> show <ref>`, `counts`, `collection <handle>` (read only) | [After an action](#after-an-action-check-it) |
 | Withdraw, hold, restore, activate, rehandle, force | the flags above, on the owner's word | [Store actions](#withdraw-hold-restore-activate-store-actions) |
+| A sales channel was added (Shop, Google & YouTube): the live products onto it | `publish.py <shop> --channels --dry-run` (counts per channel id), then without it | [Publication](#publication-publishpy-mvp-the-owner-2026-11-08) |
 | A published product looks wrong (title, vendor, price, options, reviews, photos) | `--dry-run --only <key>`, read the payload | [The payload](#the-payload-shopify_payloadpy), [Metafields](#metafields) |
 | Credentials, tokens, uploads | never read the credential files | [Access and uploads](#access-and-uploads) |
 
@@ -50,7 +52,9 @@ then this one product; with `--describe` its description is written in between, 
 file, named by its hash, `publish/files.jsonl`), the review rows as a JSON feed file there, the gallery photos as
 staged uploads attached in `productSet` (create, or update the product with its source key; a send cut off after
 `productSet` but before its ledger row finds that product again by its source key or handle, so no second copy), ACTIVE, published
-to every sales channel of the store (the owner, 2026-11-09). Draft first (2026-11-16): a create in a Naver category
+to every sales channel of the store (the owner, 2026-11-09; the list is read at each run, so a channel added later
+reaches new sends; 2026-11-24: an activation publishes the product on every channel of that day too, and
+`--channels` puts the live products already in the store onto a channel they miss, data and ledger untouched). Draft first (2026-11-16): a create in a Naver category
 not marked reviewed (`transform_shops.reviewed`) is DRAFT, still published to the channels, so it shows once
 activated; the ledger row stays `published` with `store_status: DRAFT` (only when not ACTIVE), so dedupe, the lenses,
 store_diff and the job's stages see it as published; an update of a draft sends no `status` (one activated in the

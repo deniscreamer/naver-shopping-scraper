@@ -247,6 +247,37 @@ def activate(shop: Shop, key: str, products: Any) -> LedgerRow | None:
     return row
 
 
+def channels(shop: Shop, dry_run: bool = False, products: Any = None) -> int:
+    """Every live product of ours (the ledger's) on every sales channel of today (2026-11-24, the owner: channels
+    added later, Shop and Google & YouTube, reach the products already in the store; 20 chippers of 2026-11-19 were
+    not on Google & YouTube). Only a channel the product misses is sent (publishablePublish); its data, status and
+    ledger are untouched. Drafts are left: activation publishes them (ProductsAdmin.set_status). Exit 1 on a refusal."""
+    if products is None:
+        from shopify_admin import ProductsAdmin
+        products = ProductsAdmin(get_store(shop.shop))
+        products.check_shop()
+    ours = {r["product_id"] for r in shop.ledger().values() if r.get("product_id")}
+    missing = products.missing_publications(ours)
+    by_channel: dict[str, int] = {}
+    for gone in missing.values():
+        for p in gone:
+            by_channel[p] = by_channel.get(p, 0) + 1
+    counts = ", ".join(f"{p.rsplit('/', 1)[-1]}: {n}" for p, n in sorted(by_channel.items())) or "none"
+    print(f"channels {shop.shop}: {len(missing)} live products miss a channel ({counts})"
+          + (" (dry run: nothing sent)" if dry_run else ""))
+    if dry_run:
+        return 0
+    failed = 0
+    for product_id, gone in missing.items():
+        try:
+            products.publish(product_id, gone)
+        except Exception as e:                      # one refused product does not stop the others
+            failed += 1
+            print(f"{product_id}: failed: {e}"[:300])
+    print(f"channels {shop.shop}: {len(missing) - failed} published on their missing channels, {failed} failed")
+    return 1 if failed else 0
+
+
 def withdraw(shop: Shop, key: str, products: Any, reason: str) -> dict[str, Any]:
     """Take a published product off the store: DRAFT (off every sales channel, nothing deleted; the owner,
     2026-11-11: a bag alone and a toy in the junior clubs). The ledger row `withdrawn` keeps publish.py from sending
@@ -636,9 +667,14 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--reason", help="why a product is withdrawn or restored (kept in the ledger)")
     ap.add_argument("--rehandle", action="store_true", help="give a product already in the shop the handle its "
                     "title makes now (the old one redirects)")
+    ap.add_argument("--channels", action="store_true", help="publish every live product of the shop on the sales "
+                    "channels it is missing (a channel added after it was sent: Shop, Google & YouTube); "
+                    "--dry-run counts them")
     add_ref_flags(ap)
     args = ap.parse_args(argv)
     shop = Shop(args.shop, args.shops_root)
+    if args.channels:
+        return channels(shop, args.dry_run)
     action = next((a for a in ("activate", "restore", "withdraw") if getattr(args, a)), "only")
     given = getattr(args, action)
     named = [r for r in given if r.strip()]

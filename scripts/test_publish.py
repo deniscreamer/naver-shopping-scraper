@@ -1104,3 +1104,26 @@ def test_a_sent_file_not_written_is_a_warning_the_send_stands(tmp_path, monkeypa
     assert ids["vendors"]                                      # the run's spelling memory still updated
     assert f"publish: warning: {KEY}: publish/sent/ not written" in capsys.readouterr().out
     assert PB.load_sent(shop, KEY) is None                     # no baseline, never a wrong one
+
+
+def test_channels_publishes_our_live_products_on_the_channels_they_miss(tmp_path, capsys):
+    """2026-11-24, the owner: sales channels added later (Shop, Google & YouTube) reach the products in the store."""
+    shop = PB.Shop("fairwardgolf", str(tmp_path))
+    PB._append(shop.ledger_path, {"key": "a", "status": "published", "product_id": "gid://a"})
+    PB._append(shop.ledger_path, {"key": "b", "status": "published", "product_id": "gid://b"})
+
+    class Channels:
+        def __init__(self):
+            self.asked, self.sent = None, []
+
+        def missing_publications(self, ids):
+            self.asked = ids
+            return {"gid://a": ["gid://shopify/Publication/9"]}
+
+        def publish(self, pid, pubs):
+            self.sent.append((pid, pubs))
+    admin = Channels()
+    assert PB.channels(shop, dry_run=True, products=admin) == 0 and admin.sent == []
+    assert "1 live products miss a channel (9: 1) (dry run" in capsys.readouterr().out
+    assert PB.channels(shop, products=admin) == 0
+    assert admin.asked == {"gid://a", "gid://b"} and admin.sent == [("gid://a", ["gid://shopify/Publication/9"])]

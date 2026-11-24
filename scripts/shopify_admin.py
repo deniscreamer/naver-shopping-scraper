@@ -119,11 +119,14 @@ class ProductsAdmin(_Writer):
     SCOPE = "write_products"
 
     def publication_ids(self) -> list[str]:
-        """Every sales channel of the store (the owner, 2026-11-09: a product is on all of them)."""
-        nodes = self._post("query { publications(first: 50) { nodes { id name } } }")["publications"]["nodes"]
-        if not nodes:
-            raise AdminError("the store has no publication (sales channel)")
-        return [n["id"] for n in nodes]
+        """Every sales channel of the store (the owner, 2026-11-09: a product is on all of them), read once per
+        client (a run; 2026-11-24: the owner adds channels, Shop and Google & YouTube, and a new run sees them)."""
+        if getattr(self, "_publications", None) is None:
+            nodes = self._post("query { publications(first: 50) { nodes { id name } } }")["publications"]["nodes"]
+            if not nodes:
+                raise AdminError("the store has no publication (sales channel)")
+            self._publications = [n["id"] for n in nodes]
+        return list(self._publications)
 
     def location_id(self, name: str | None = None) -> str:
         nodes = self._post("query { locations(first: 20) { nodes { id name isActive } } }")["locations"]["nodes"]
@@ -172,11 +175,37 @@ class ProductsAdmin(_Writer):
         return result["product"]
 
     def set_status(self, product_id: str, status: str) -> str:
-        """The product's status (ACTIVE, DRAFT, ARCHIVED); a DRAFT is off every sales channel and keeps all its data."""
+        """The product's status (ACTIVE, DRAFT, ARCHIVED); a DRAFT is off every sales channel and keeps all its data.
+        ACTIVE also publishes it on every sales channel of today (2026-11-24, the owner: a draft made before a channel
+        was added, Shop / Google & YouTube, was activated without it: the channels a product is on are those of the
+        day it was sent)."""
         data = self._post("""mutation($p: ProductUpdateInput!) { productUpdate(product: $p) {
             product { id status } userErrors { field message } } }""", {"p": {"id": product_id, "status": status}})
         _errors(data["productUpdate"], "productUpdate")
-        return data["productUpdate"]["product"]["status"]
+        got = data["productUpdate"]["product"]["status"]
+        if got == "ACTIVE":
+            self.publish(product_id, self.publication_ids())
+        return got
+
+    def missing_publications(self, product_ids: set[str] | None = None) -> dict[str, list[str]]:
+        """Read only: ACTIVE product id -> the sales channels (publication ids) it is not published on, only those
+        missing one (`product_ids`: only these). A DRAFT is published on none whatever it was given, so it is not
+        read: activation publishes it (set_status)."""
+        pubs = self.publication_ids()
+        on = " ".join(f'p{i}: publishedOnPublication(publicationId: "{p}")' for i, p in enumerate(pubs))
+        query = ("query($c: String) { products(first: 250, after: $c, query: \"status:active\") { "
+                 "pageInfo { hasNextPage endCursor } nodes { id %s } } }" % on)
+        out: dict[str, list[str]] = {}
+        cursor = None
+        while True:
+            page = self._post(query, {"c": cursor})["products"]
+            for node in page["nodes"]:
+                gone = [p for i, p in enumerate(pubs) if not node.get(f"p{i}")]
+                if gone and (product_ids is None or node["id"] in product_ids):
+                    out[node["id"]] = gone
+            if not page["pageInfo"]["hasNextPage"]:
+                return out
+            cursor = page["pageInfo"]["endCursor"]
 
     def delete_metafields(self, product_id: str, keys: list[tuple[str, str]]) -> None:
         """Remove these metafields from the product (a key it does not have is no error)."""

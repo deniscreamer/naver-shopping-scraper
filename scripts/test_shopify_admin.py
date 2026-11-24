@@ -133,3 +133,32 @@ def test_vendor_spellings_keep_the_oldest_whatever_its_case():
     p._post = graphql
     assert p.vendor_spellings() == {"kirkland": "Kirkland", "ping": "PING", "stix": "stix"}
     assert all("sortKey: CREATED_AT" in q for q in seen)
+
+
+def test_activation_publishes_on_every_channel_and_a_draft_is_not_read_for_channels():
+    """2026-11-24, the owner: a draft made before a channel was added (Shop, Google & YouTube) gets it when activated."""
+    calls = []
+
+    def graphql(query, variables=None, token=None):
+        calls.append(query.split("(")[0].split("{")[0].strip() or query[:30])
+        if "publications(first" in query:
+            return {"publications": {"nodes": [{"id": "P1", "name": "Online Store"}, {"id": "P2", "name": "Shop"}]}}
+        if "productUpdate" in query:
+            return {"productUpdate": {"product": {"id": variables["p"]["id"], "status": variables["p"]["status"]},
+                                      "userErrors": []}}
+        if "publishablePublish" in query:
+            calls.append(("publish", variables["id"], [i["publicationId"] for i in variables["input"]]))
+            return {"publishablePublish": {"userErrors": []}}
+        if "products(first" in query:
+            assert "status:active" in query
+            return {"products": {"pageInfo": {"hasNextPage": False, "endCursor": None},
+                                 "nodes": [{"id": "A", "p0": True, "p1": False}, {"id": "B", "p0": True, "p1": True},
+                                           {"id": "C", "p0": False, "p1": False}]}}
+        raise AssertionError(query)
+    p = SA.ProductsAdmin.__new__(SA.ProductsAdmin)
+    p._post = graphql
+    assert p.set_status("X", "ACTIVE") == "ACTIVE" and ("publish", "X", ["P1", "P2"]) in calls
+    n = len(calls)
+    assert p.set_status("X", "DRAFT") == "DRAFT" and not any(isinstance(c, tuple) for c in calls[n:])
+    assert p.missing_publications() == {"A": ["P2"], "C": ["P1", "P2"]}
+    assert p.missing_publications({"A"}) == {"A": ["P2"]}
