@@ -66,7 +66,7 @@ Rules that hold the layouts apart:
     measure's row, 5667667561). A field's name before the first row of pairs ("크기 / M(32)-허리둘레 84cm, ...",
     "SIZE / L총장 58 가슴 46", 10160025240, 5927644761) is skipped.
   - A bare letter written in the row right before it again (a run of rows within 2 lines, one table): the last row
-    repeating the one before, the others rising, is the next size ("M, L, XL, XL": XXL, 9250706389); rows all one
+    repeating the one before, the others rising, is the next size ("M, L, XL, XL": XXL, 9250706389; never when two rows in a row read the same: a line read twice, the first row kept); rows all one
     letter ("S - 총장 91 ..." four times, 6484235370) pair with the option's letters in order when as many and all read
     (`Chart.ordered`), else none is shown; any other repeat keeps the first. A letter of the run again but not the row
     before's starts the next table ("S, M, L, XL" twice).

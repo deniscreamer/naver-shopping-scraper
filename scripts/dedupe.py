@@ -248,7 +248,12 @@ def option_codes(variants: list[dict[str, Any]], shop: str, leaf: str) -> set[st
     """The style codes (style_codes' test) in the option values of an apparel category's variants (else none)."""
     if not variants or not _apparel(shop, leaf):
         return set()
-    return style_codes(None, " ".join(str(o) for v in variants for o in v.get("options") or [v.get("name") or ""]))
+    codes = style_codes(None, " ".join(str(o) for v in variants for o in v.get("options") or [v.get("name") or ""]))
+    return {c for c in codes if not _SIZE_TOKEN_RE.match(c)}
+
+
+# a size written as one token reads like a code ("W32L30", "XXL105", "3XL110"; the fix review 2026-11-24): never one
+_SIZE_TOKEN_RE = re.compile(r"^(?:W\d{2}L\d{2}|\d?X*[SML]\d{2,3}|\d{2,3}[SML])$", re.I)
 
 
 @functools.lru_cache(maxsize=None)

@@ -220,6 +220,8 @@ class _Reader:
         letters = [a[2] for a in run]
         if len(run) < 2 or None in letters or len(set(letters)) == len(letters):
             return
+        if any(a[3] == b[3] for a, b in zip(run, run[1:])):   # a row read twice (OCR, a repeated line) is no next
+            return                                           # size and no table in order: the first row kept
         chart, table = self.chart, self.table
         self.table = self.run_table
         try:

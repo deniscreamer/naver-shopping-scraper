@@ -154,7 +154,7 @@ the run starts:
   kind, bag, hand, gender or length read inside the words ("남성골프채풀세트"), of junior ages ("3세 이하" / "3-5세") or
   of piece counts. The loose catalogs are counted once over the published products (`loose_catalogs`), never over a
   job's growing index; a replaced match's live end must pass the price and store guards itself. In apparel (a
-  category with `sizes`) also an article code in both products' option values (`option_codes`, `why` `option code
+  category with `sizes`) also an article code in both products' option values (`option_codes`, `why` `option code (a size written as one token, "W32L30", "XXL105", is no code)
   <code>`, 2026-11-24: mastersgolf lists the Adidas article IQ2919 in draft 9987280360 and in live 4577303476, whose
   title has no code and whose model name is F8_PT_M), the same brand when both name one, one store or two: an
   article code names one garment in one colour. Not in clubs (an option names the shaft: 젝시오14 `MP1400K`). Measured on the store the same day:

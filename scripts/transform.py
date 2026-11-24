@@ -593,7 +593,7 @@ def _spacing_merged(rows: list[dict[str, Any]], keep: list[int]) -> list[dict[st
     for r in rows:
         new = [spelling[i].get(_tidy(v), v) if i in spelling else v for i, v in enumerate(r["options"])]
         tied = tuple(_tidy(v) for v in new)
-        if new != r["options"] and tied in seen:
+        if tied in seen:                           # a merged spelling repeats a row before or after it
             continue
         seen.add(tied)
         out.append({**r, "options": new, "raw_options": r.get("raw_options") or r["options"]}

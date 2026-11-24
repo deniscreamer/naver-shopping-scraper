@@ -1100,3 +1100,10 @@ def test_values_one_once_spaces_are_ignored_are_one_value():
     assert out[2]["raw_options"] == ["C타입. 슬림일자블랙", "88（XL）"] and "raw_options" not in out[0]
     twice = rows[:1] + [{"options": ["C타입. 슬림일자블랙", "55（S）"], "price": 100}]   # the same row once merged
     assert [r["options"] for r in transform._spacing_merged(twice, [0, 1])] == [["C타입. 슬림일자 블랙", "55（S）"]]
+
+
+def test_spacing_merge_drops_a_repeat_in_either_order():
+    """The fix review 2026-11-24: the run-together spelling first, the spaced one after, became two equal rows."""
+    rows = [{"options": ["슬림일자블랙", "55"]}, {"options": ["슬림일자 블랙", "55"]}, {"options": ["슬림일자 블랙", "66"]}]
+    out = transform._spacing_merged(rows, [0, 1])
+    assert [r["options"] for r in out] == [["슬림일자 블랙", "55"], ["슬림일자 블랙", "66"]]

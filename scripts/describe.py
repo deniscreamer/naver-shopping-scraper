@@ -170,7 +170,7 @@ _COUNTRY_RE = re.compile("(?<![가-힣])(?:" + "|".join(map(re.escape, DOMESTIC)
                          + "|".join(
     sorted(map(re.escape, set(COUNTRIES) - set(DOMESTIC)), key=len, reverse=True)), re.I)
 _ORIGIN_RE = re.compile(r"제조국|원산지|원산국|생산국|made\s+in", re.I)
-_UNSURE_RE = re.compile(r"아닌|아님|아닙|변동|변경|상이|다를|기타|제3국|조립|등|외\s*\d*\s*(?:개\s*)?국")   # "not Japan",
+_UNSURE_RE = re.compile(r"아닌|아님|아닙|변동|변경|상이|다를|기타|제3국|조립|등|외\s*\d+\s*(?:개\s*)?국")   # "not Japan",
 # "may change", "and others"; "미국 외 3국" (the USA and 3 other countries: several, never "Made in USA";
 # 2026-11-24, 4931116119)
 _PRODUCED_RE = re.compile(r"에서\s*생산")                                   # "베트남, 타이완, 중국에서생산됩니다"

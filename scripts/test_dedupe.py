@@ -1319,3 +1319,8 @@ def test_a_copy_across_the_jackets_and_the_windbreakers_is_a_copy():
                                                                        "name": "로로얼로이 여성 골프 바람막이 후드"}})
     assert one["category"] == two["category"] and one["tkey"] == two["tkey"]
     assert (one["leaf"], two["leaf"]) == ("50002798", "50002799")
+
+
+def test_a_size_token_is_no_option_code():
+    """The fix review 2026-11-24: "W32L30", "XXL105", "3XL110" passed style_codes' test."""
+    assert not D._SIZE_TOKEN_RE.match("IQ2919") and all(D._SIZE_TOKEN_RE.match(x) for x in ("W32L30", "XXL105", "3XL110"))

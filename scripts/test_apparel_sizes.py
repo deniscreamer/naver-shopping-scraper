@@ -1242,3 +1242,12 @@ def test_the_sellers_body_waist_wins_over_the_womens_size():
     assert {v["basis"] for v in some["values"]} == {"label"}
     men = _pants(["85", "88"], ["88(34)"], "mens_bottoms")            # the men's "88(34)" is no women's 88
     assert [v["us"] for v in men["values"]] == ["W33", "W34"]
+
+
+def test_a_row_read_twice_is_no_next_size():
+    """The fix review 2026-11-24: "M, L, XL, XL" with the last two rows equal is a repeated line, not XXL."""
+    chart = C.read_chart(["사이즈 / 어깨 / 가슴 / 총장", "M / 44 / 52 / 70", "L / 46 / 55 / 72", "XL / 48 / 58 / 74",
+                           "XL / 48 / 58 / 74"], "tops")
+    assert "XXL" not in chart.rows and "XL" in chart.rows
+    twice = C.read_chart(["사이즈 / 허리 / 엉덩이", "S / 34 / 90", "S / 34 / 90"], "trousers")
+    assert not twice.ordered
