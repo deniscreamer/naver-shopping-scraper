@@ -7,7 +7,8 @@ The layouts read (SIZE_CHARTS.md "The layouts", P1-P5):
   P1  by row under a header of measure names: "사이즈 | 어깨너비 | 가슴둘레" / "85 (S) | 39 | 95"
   P2  the same with a header without the size cell, cm and inches in a cell: "총장 / 어깨너비" / "90 (S) / 55cm (21.7in)"
   P3  by column, the sizes across: "사이즈 / M(90) / L(95)" / "가슴너비 / 46 / 48.5"; one size column too ("호칭 / FREE")
-  P4  a label then name+number pairs: "L 총장 61 어깨 35 가슴 44", "S(90)-총장56/어깨37/가슴48"
+  P4  a label then name+number pairs: "L 총장 61 어깨 35 가슴 44", "S(90)-총장56/어깨37/가슴48"; every size on one
+      line joined with ";" ("크기 | M - 총장 103cm, ...; L - ...", _pieces, 2026-11-24)
   P5  a FREE product's lines with no label: "총장59/어깨54/가슴56", "어깨(cm): 40", "가슴 / 46"
 Never read: the model, the buyer, the shop, size lists, recommendation tables, measuring-method text (NOT_CHART_RE,
 the ranges), a model block's Bust line, a number before 사이즈; an exact cell count or no row: a dropped cell skips
@@ -72,6 +73,8 @@ _INCH_HEAD_RE = re.compile(r"^(?:인치|inch(?:es)?)$", re.I)
 # a field's name before the first row of P4 pairs ("크기 / M(32)-허리둘레 84cm, ...", 10160025240, 2026-11-24)
 _FIELD_HEAD_RE = re.compile(r"^(?:크기|사이즈|size|치수)\s*[:：]?$", re.I)
 _LEAD_RE = re.compile(r"^\s*([A-Za-z0-9()\[\].~\-반]+(?:\s*\([^)]*\))?)\s*[-:]?\s*(.*)$")   # a row's size label first
+# a letter with "about N inches" after it ("M(약33인치) - 총장 103cm, ...", 7221598523, 2026-11-24): the label M
+_ABOUT_INCH_RE = re.compile(r"^\s*([A-Za-z0-9]+)\s*\(\s*약\s*\d{2}(?:\.\d)?\s*인치\s*\)\s*[-:]?\s*(.*)$")
 # the letters in size order: a letter written twice in a run of rows (_Reader.close_run)
 _ORDER = ("XXS", "XS", "S", "M", "L", "XL", "XXL", "XXXL")
 # the fields a type option changes (9부 / 10부, a long and a short cut): two tables giving one size two of these
@@ -264,6 +267,33 @@ def _row_cells(line: str) -> list[str]:
     return [c.strip() for c in _CELL_SPLIT_RE.split(line.strip()) if c.strip()]
 
 
+def _lead(cell: str) -> re.Match[str] | None:
+    """A cell's size label (group 1) and what follows it (group 2): _LEAD_RE, or a letter with "about N inches"
+    after it ("M(약33인치) - 총장 103cm, ...": the label M)."""
+    return _ABOUT_INCH_RE.match(cell) or _LEAD_RE.match(cell)
+
+
+def _lead_name(cell: str) -> str:
+    """The size label's text at a cell's start ("M(약33인치)" -> "M"), or "" with none."""
+    lead = _lead(cell)
+    return lead.group(1) if lead else ""
+
+
+def _pieces(cells: list[str]) -> list[list[str]] | None:
+    """A cell holding every size on one line, the sizes joined with ";" ("크기 | M - 총장 103cm, 허리둘레 86cm; L - ...;
+    XL - ...", Volvik 7221598523, 13026234392, 12481527943; Adidas 7976951536 "82(M) - 허리둘레 82.0cm, ...; 85(L) -
+    ...", 2026-11-24: only the first size was read): each piece a row of its own, when two or more start with a size
+    label and every other piece has no number (the seller's closing note)."""
+    joined = " / ".join(cells)
+    if ";" not in joined:
+        return None
+    parts = [_row_cells(p) for p in joined.split(";")]
+    sized = [bool(p) and (parse_label(p[0]) is not None or parse_label(_lead_name(p[0])) is not None) for p in parts]
+    if sum(sized) < 2 or any(not s and re.search(r"\d", " ".join(p)) for p, s in zip(parts, sized)):
+        return None
+    return [p for p, s in zip(parts, sized) if s]
+
+
 def read_chart(lines: list[str], measures: str = "tops", sections: list[str] | None = None) -> Chart:
     """The seller's size chart from text lines (description text, OCR rows "a / b / c"); `measures`: the profile's
     set; `sections`: the Korean values of a type option (not a size, not a colour), whose one-size blocks are told
@@ -380,53 +410,62 @@ def read_chart(lines: list[str], measures: str = "tops", sections: list[str] | N
                 and (lab1 := parse_label(cells[1])) is not None and lab1.letter \
                 and len(cells) - 2 == len(header) - (1 if header_has_size else 0):
             cells = cells[1:]
-        # a field's name before a row of pairs ("크기 / M(32)-허리둘레 84cm, ...", 10160025240, 2026-11-24)
-        if len(cells) >= 2 and _FIELD_HEAD_RE.match(cells[0]) and (lm := _LEAD_RE.match(cells[1])) \
-                and parse_label(lm.group(1)) is not None and _PAIR_RE.search(lm.group(2)):
+        # a field's name before a row of pairs ("크기 / M(32)-허리둘레 84cm, ...", 10160025240, 2026-11-24): its row starts
+        # a table of its own, so a run's break is judged within it (10322266021: its W32 hip 104 came after the text
+        # rows' XXL 116 and was dropped as a break, 2026-11-24)
+        if len(cells) >= 2 and _FIELD_HEAD_RE.match(cells[0]) and (lm := _lead(cells[1])) \
+                and parse_label(_lead_name(cells[1])) is not None and _PAIR_RE.search(lm.group(2)):
             cells = cells[1:]
-        # a row: a size label first, then numbers (under the header) or name+number pairs
-        lead = _LEAD_RE.match(cells[0])
-        label = parse_label(cells[0]) if len(cells) > 1 else None
-        rest = cells[1:]
-        if label is None and lead:
-            label = parse_label(lead.group(1))
-            rest = ([lead.group(2)] if lead.group(2) else []) + cells[1:]
-        if label is None:
-            # "총장59 어깨53 가슴54 소매54", "어깨: 40", "가슴 / 46": a FREE product's measurements, no size written;
-            # read when no table is open (a header nothing was read under is a diagram's labels) or into the one
-            # size column ("사이즈 | FREE" then "총장59/어깨54/...")
-            if (columns is None or one_column) and (header is None or header_rows == 0):
-                loose: dict[str, tuple[float, str | None]] = {}
-                if len(cells) == 2 and (m := r.measure(cells[0])) and (one_value := _value(cells[1])) is not None:
-                    loose[m[0]] = (one_value, m[1])
-                for word, number in _PAIR_RE.findall(_SPACED_HANGUL_RE.sub("", text)):
-                    if (m := r.measure(word)) and m[0] not in loose:
-                        loose[m[0]] = (float(number), m[1])
-                if loose and one_column and columns:
-                    r.put(columns[0], loose)
-                elif loose:
-                    _one(r, loose, section)
-            continue
-        name = re.sub(r"[-:]+$", "", cells[0] if parse_label(cells[0]) else lead.group(1) if lead else cells[0])
-        nums = [_value(v) for v in rest]
-        cols = (header[1:] if header_has_size else header) if header else []
-        under = bool(header) and all(n is not None for n in nums) and len(rest) == len(cols)
-        pairs: dict[str, tuple[float, str | None]] = {}
-        if under:
-            pairs = {m[0]: (float(n or 0), m[1]) for m, n in zip(cols, nums) if m}
-        else:
-            for piece in rest:
-                for word, number in _PAIR_RE.findall(_SPACED_HANGUL_RE.sub("", piece)):
-                    if (m := r.measure(word)) and m[0] not in pairs:
-                        pairs[m[0]] = (float(number), m[1])
-        # a row is one that reads, or has its header's cells (an OCR misread "111am" in it: 9250706389); a size list
-        # ("S, M, L" before the rows, 7122971734) is none
-        if (pairs or (header and len(rest) == len(cols))) and r.repeated(i, name, label, pairs):
-            continue
-        if r.put(name, pairs):
-            chart.labels[name] = label
+            r.table += 1
+        # every size on one line, joined with ";" (_pieces, 2026-11-24, 7221598523, 13026234392, 12481527943,
+        # 7976951536): a row per size, the line a table of its own
+        pieces = _pieces(cells)
+        if pieces:
+            r.table += 1
+        for cells in pieces or [cells]:
+            # a row: a size label first, then numbers (under the header) or name+number pairs
+            lead = _lead(cells[0])
+            label = parse_label(cells[0]) if len(cells) > 1 else None
+            rest = cells[1:]
+            if label is None and lead:
+                label = parse_label(_lead_name(cells[0]))
+                rest = ([lead.group(2)] if lead.group(2) else []) + cells[1:]
+            if label is None:
+                # "총장59 어깨53 가슴54 소매54", "어깨: 40", "가슴 / 46": a FREE product's measurements, no size written;
+                # read when no table is open (a header nothing was read under is a diagram's labels) or into the one
+                # size column ("사이즈 | FREE" then "총장59/어깨54/...")
+                if (columns is None or one_column) and (header is None or header_rows == 0):
+                    loose: dict[str, tuple[float, str | None]] = {}
+                    if len(cells) == 2 and (m := r.measure(cells[0])) and (one_value := _value(cells[1])) is not None:
+                        loose[m[0]] = (one_value, m[1])
+                    for word, number in _PAIR_RE.findall(_SPACED_HANGUL_RE.sub("", text)):
+                        if (m := r.measure(word)) and m[0] not in loose:
+                            loose[m[0]] = (float(number), m[1])
+                    if loose and one_column and columns:
+                        r.put(columns[0], loose)
+                    elif loose:
+                        _one(r, loose, section)
+                continue
+            name = re.sub(r"[-:]+$", "", cells[0] if parse_label(cells[0]) else _lead_name(cells[0]) or cells[0])
+            nums = [_value(v) for v in rest]
+            cols = (header[1:] if header_has_size else header) if header else []
+            under = bool(header) and all(n is not None for n in nums) and len(rest) == len(cols)
+            pairs: dict[str, tuple[float, str | None]] = {}
             if under:
-                header_rows += 1
+                pairs = {m[0]: (float(n or 0), m[1]) for m, n in zip(cols, nums) if m}
+            else:
+                for piece in rest:
+                    for word, number in _PAIR_RE.findall(_SPACED_HANGUL_RE.sub("", piece)):
+                        if (m := r.measure(word)) and m[0] not in pairs:
+                            pairs[m[0]] = (float(number), m[1])
+            # a row is one that reads, or has its header's cells (an OCR misread "111am" in it: 9250706389); a size list
+            # ("S, M, L" before the rows, 7122971734) is none
+            if (pairs or (header and len(rest) == len(cols))) and r.repeated(i, name, label, pairs):
+                continue
+            if r.put(name, pairs):
+                chart.labels[name] = label
+                if under:
+                    header_rows += 1
     r.close_run()
     for k in r.split:                               # the length of a type option, not of the size: none shown
         for n, row in chart.rows.items():

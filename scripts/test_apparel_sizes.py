@@ -1208,6 +1208,58 @@ def test_a_field_name_before_the_first_pairs_row_is_skipped():
     assert [(row["us"], row["cm"]["waist"]) for row in r["chart"]["rows"]] == [("W32", 84.0), ("W34", 88.0)]
 
 
+def test_a_field_name_row_starts_its_own_table():
+    """10322266021 (2026-11-24): "크기 / M(32)-..." after the text rows M..XXL joined their table, so its hip 104 after
+    XXL's 116 was dropped as a break; its own block keeps it (L(34) and XL(36) read 힘둘레, OCR, and have no hip)."""
+    lines = ["M - 허리둘레 86cm, 앞밑위 27cm, 힙둘레 104cm, 총장 103cm", "L - 허리둘레 90cm, 앞밑위 27.8cm, 힙둘레 108cm, 총장 103cm",
+             "XL - 허리둘레 94cm, 앞밑위 28.6cm, 힙둘레 112cm, 총장 105cm",
+             "XXL - 허리둘레 98cm, 앞밑위 29.4cm, 힙둘레 116cm, 총장 105cm", "제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다.",
+             "크기 / M(32)-허리둘레 84cm, 앞밑위 27cm,힙둘레 104cm,총장103cm", "L(34)-허리둘레 88cm, 앞밑위 27.8cm,힘둘레 108cm, 총장103cm",
+             "XL(36)-허리둘레 92cm,앞밑위 28.6cm,힘둘레 112cm,총장105cm", "XXL(38)-허리둘레 96cm, 앞밑위 29.4cm,힙둘레 116cm,총장105cm"]
+    r = _pants(["M(32)", "L(34)", "XL(36)", "XXL(38)"], lines, "mens_bottoms")
+    assert [(row["us"], row["cm"].get("hip")) for row in r["chart"]["rows"]] == \
+        [("W32", 104.0), ("W34", None), ("W36", None), ("W38", 116.0)]
+
+
+_NOTE = "제품 실측 사이즈로 재는 방식에 따라 약간의 오차가 있을 수 있습니다."
+
+
+def test_every_size_on_one_line_joined_with_semicolons_is_a_row_each():
+    """Volvik 7221598523, 13026234392, 12481527943 and Adidas 7976951536 (2026-11-24): the spec row "크기 | M - ...; L -
+    ...; XL - ...; XXL - ..." was read as one row, the first size's; the others were lost."""
+    pants = ("크기 | M - 총장 103cm, 허리둘레 86cm, 엉덩이 둘레 104cm; L - 총장 103cm,허리둘레 90cm, 엉덩이 둘레 108cm; "
+             "XL - 총장 105cm,허리둘레 94cm, 엉덩이 둘레 112cm; XXL - 총장 105cm,허리둘레 98cm, 엉덩이 둘레 116cm; " + _NOTE)
+    chart = C.read_chart([pants], "trousers")
+    assert {n: row["waist"] for n, row in chart.rows.items()} == {"M": 86.0, "L": 90.0, "XL": 94.0, "XXL": 98.0}
+    assert chart.rows["XXL"] == {"length": 105.0, "waist": 98.0, "hip": 116.0}
+    tops = ("크기 | M - 총장 68cm, 가슴둘레 100cm, 밑단둘레 99cm, 어깨너비 43cm, 소매기장 60cm; L - 총장 70cm, 가슴둘레 105cm, "
+            "밑단둘레 104cm, 어깨너비 45cm, 소매기장 61cm; XL - 총장 72cm, 가슴둘레 110cm, 밑단둘레 109cm, 어깨너비 47cm, "
+            "소매기장 62cm; XXL - 총장 74cm, 가슴둘레 115cm, 밑단둘레 114cm, 어깨너비 49cm, 소매기장 63cm; " + _NOTE)
+    chart = C.read_chart([tops], "tops")
+    assert {n: row["chest"] for n, row in chart.rows.items()} == {"M": 100.0, "L": 105.0, "XL": 110.0, "XXL": 115.0}
+    assert chart.rows["L"] == {"length": 70.0, "chest": 105.0, "shoulder": 45.0, "sleeve": 61.0}
+    adidas = ("크기 | 82(M) - 허리둘레 82.0cm, 힙 95.8cm, 인심 85.0cm; 85(L) - 허리둘레 85.0cm, 힙 98.8cm, 인심 85.0cm; "
+              "88(XL) - 허리둘레 88.0cm, 힙 101.8cm, 인심 85.0cm; 92(XXL) - 허리둘레 92.0cm, 힙 105.8cm, 인심 85.0cm; " + _NOTE)
+    r = _pants(["82 (32인치)", "85 (33인치)", "88 (34인치)", "92 (36인치)"], [adidas], "mens_bottoms")
+    assert [(row["us"], row["cm"]["waist"]) for row in r["chart"]["rows"]] == \
+        [("W32", 82.0), ("W33", 85.0), ("W34", 88.0), ("W36", 92.0)]
+    # never a split: one sized piece, or a piece with a number and no size (a care or a fabric line)
+    assert set(C.read_chart(["크기 | M - 총장 103cm, 허리둘레 86cm; 허리 밴딩"], "trousers").rows) == {"M"}
+    mixed = C.read_chart(["크기 | M - 총장 103cm, 허리둘레 86cm; L - 총장 103cm, 허리둘레 90cm; 30도 이하 세탁"], "trousers")
+    assert set(mixed.rows) == {"M"}
+
+
+def test_a_letter_with_about_inches_is_the_letter():
+    """7221598523 (2026-11-24): "M(약33인치) - 총장 103cm, ..." was no label: its rows went to the one-size row and the
+    conflicts."""
+    lines = ["M(약33인치) - 총장 103cm, 허리둘레 86cm, 엉덩이 둘레 104cm", "L(약35인치) - 총장 103cm,허리둘레 90cm, 엉덩이 둘레 108cm",
+             "M (약33인치) - 허리둘레 86cm, 앞밑위 27cm, 힙둘레 104cm, 총장 103cm"]
+    chart = C.read_chart(lines, "trousers")
+    assert chart.rows == {"M": {"length": 103.0, "waist": 86.0, "hip": 104.0, "rise": 27.0},
+                          "L": {"length": 103.0, "waist": 90.0, "hip": 108.0}}
+    assert not chart.conflicts
+
+
 def test_a_womens_size_beside_each_letter_sizes_it():
     """10997837767: "S(44사이즈)" (the bare letters went out one US size over); 6033600342: "M / 보통55 / 91 ..." rows
     and the two-row recommendation "S / M / L / XL" over "~마른 55 / 보통55 / 보통66 / 통통77": S and M are both 55, so

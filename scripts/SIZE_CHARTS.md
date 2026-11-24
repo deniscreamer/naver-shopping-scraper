@@ -64,7 +64,14 @@ Rules that hold the layouts apart:
   - A stray cell before a lettered label under a header, after a row it read ("10 / L(34) / 96.5 / ...", "Rise /
     XL(36)", "폴리95%,스판5% / L(34)": 10188121271) is skipped; never before a bare number ("허리둘레 / 76 / 81" is a
     measure's row, 5667667561). A field's name before the first row of pairs ("크기 / M(32)-허리둘레 84cm, ...",
-    "SIZE / L총장 58 가슴 46", 10160025240, 5927644761) is skipped.
+    "SIZE / L총장 58 가슴 46", 10160025240, 5927644761) is skipped, and that row starts a table of its own (a break is
+    judged within it: 10322266021's W32 hip 104 after the text rows' XXL 116 was dropped, 2026-11-24).
+  - Every size on one line joined with ";" (a spec row "크기 | M - 총장 103cm, 허리둘레 86cm; L - ...; XL - ...",
+    "82(M) - 허리둘레 82.0cm, ...; 85(L) - ...": Volvik 7221598523, 13026234392, 12481527943, Adidas 7976951536,
+    2026-11-24; only the first size was read) is a row per piece, the line a table of its own: when two or more pieces
+    start with a size label and every other piece has no number (the closing note). A letter with "about N inches"
+    ("M(약33인치) - 총장 103cm", 7221598523) is the letter. On the shop's 769 apparel products 12 charts changed, 8
+    prepared records (rows added, never one lost).
   - A bare letter written in the row right before it again (a run of rows within 2 lines, one table): the last row
     repeating the one before, the others rising, is the next size ("M, L, XL, XL": XXL, 9250706389; never when two rows in a row read the same: a line read twice, the first row kept); rows all one
     letter ("S - 총장 91 ..." four times, 6484235370) pair with the option's letters in order when as many and all read
