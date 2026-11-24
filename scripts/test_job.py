@@ -886,6 +886,19 @@ def test_collect_reads_specs_its_way_and_a_410_stops_the_source():
     assert e.value.status == 410 and stopped(ApiError(410)) and not stopped(ApiError(404))
 
 
+def test_one_stores_login_gate_is_a_partial_product_not_a_stop():
+    from collect_product import collect, stopped
+    from naver_api_client import ApiError
+    gate = ApiError(502, "naver-shopping blocked the request, retry later: login gate on store sunderland")
+
+    class Gated:
+        def product_details(self, link):
+            raise gate
+    out = collect(Gated(), None, {}, {"link": "l"}, "/nowhere", query="q", category="50002801")  # type: ignore
+    assert out.status == "partial" and out.reason == "store_login" and not stopped(gate)
+    assert stopped(ApiError(502, "naver-shopping blocked the request, retry later: HTTP 429 (captcha / rate wall)"))
+
+
 def test_a_job_appends_whole_lines_after_a_tail_with_no_line_end(tmp_path):
     job = make_job(tmp_path)
     with open(os.path.join(job.folder, "listing.jsonl"), "rb+") as f:            # the last line end lost

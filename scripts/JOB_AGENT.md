@@ -208,6 +208,7 @@ macOS notification. Nothing for a refusal (2), Ctrl+C (130) or a run cut by `--i
 | Seen | What the job did | You |
 |---|---|---|
 | `STOP ... wall:` (ban page, login gate twice, a captcha not answered 6 times), or `STOP ... 502 ... blocked the request` (after the client's two retries, 10 s and 30 s) | stopped, nothing marked | tell the owner; resume only after they say so, with a small count ([4. Stop and resume](#4-stop-and-resume)) |
+| `partial store_login` / `deferred store_login` (a 502 `login gate on store <slug>`: that one store sends visitors to the login page, 2026-11-24) | the product tried once more, then deferred; two products in a row gated stop the run (a login wall on every store) | nothing; a STOP after it: as the row above |
 | a pending captcha: `captcha_watch: CAPTCHA #<n> at <step>: <question> ...` (`scripts/captcha_watch.py`, `GET /captcha`, or the server log's `ext-listing: CAPTCHA ...`); nothing in the job's log yet | waits `NAVER_CAPTCHA_WAIT_S` (600 s) for the owner to answer it in Chrome | relay the question to the owner at once; never answer it (server/docs/EXTENSION.md, Effects and limits, Captcha) |
 | `a captcha was not answered in time` | reads again: the owner is asked again (up to 6 times) | relay it to the owner |
 | `network down (...): try N in S s` (Shopify or every model provider unreachable) | tries the product again after ~30 s, doubled up to 15 min; after 2 h the run stops | nothing; a `STOP` after it: tell the owner, `run` once the network is back |

@@ -431,6 +431,9 @@ surfaces.
   HTTP and 419 to `validation-products` (13.3, 13.6); a product page opened directly goes to the login page, Naver's
   internal-error page (K-21) and the login gate reset (13.5); a category page needs a login (13.7). The
   search.shopping bot defence (token, 418, captcha, ban): [EXTENSION.md](EXTENSION.md#why-an-adapter-at-all).
+- One store can gate itself (2026-11-24, smartstore `sunderland`): its product and store pages both go to the login
+  page while every other store answers 200; the 502 `login gate on store <slug>` is that store's, and a job defers
+  the product (`store_login`, scripts/collect_product.py) instead of stopping.
 
 ### 13.5 Product page in the owner's Chrome (extension)
 
