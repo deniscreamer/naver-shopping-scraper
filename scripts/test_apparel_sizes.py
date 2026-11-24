@@ -921,7 +921,7 @@ def test_the_pants_profile_follows_the_stated_gender():
     assert [T.size_profile(pants, g) for g in ("mens", "womens", "unisex", "mixed", None)] == \
         ["mens_bottoms", "womens_pants", "mens_bottoms", "mens_bottoms", "womens_pants"]
     assert [T.size_profile(tops, g) for g in ("mens", "unisex", None)] == ["mens_tops", "womens_tops", "womens_tops"]
-    assert pants.variant_screen == ("shorts", "other_item", "not_golf_use") and not pants.reviewed
+    assert pants.variant_screen == ("shorts", "other_item", "not_golf_use") and pants.reviewed   # the owner 2026-11-24
 
 
 def test_one_waist_in_inches_and_cm_is_one_size():

@@ -221,7 +221,7 @@ RULES = {
                 variant_screen=("shorts", "other_item",    # a belt or a polo sold as an option (2026-11-23, the pilot),
                                 "not_golf_use"),           # a long-sleeve top (10933958968) or tactical work pants
                                                            # (8162342503) sold as an option (2026-11-24, the drafts' review)
-                reviewed=False),      # a new category: DRAFT until the lens review and the owner's activation
+                reviewed=True),       # the owner 2026-11-24: the pilots' 142 drafts reviewed, 130 activated, 12 held
         }),
 }
 
