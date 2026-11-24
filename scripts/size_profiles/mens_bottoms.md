@@ -31,6 +31,10 @@ held, never a waist; "2XL(92)" is a waist. A letter's waist in the seller's text
 a Korean M is a US S. Women's sizes (55, 66) mean nothing here: such a value holds the product. In this profile a
 number 26..44 is a waist in inches and 66..112 a waist in cm before anything else ("88" is 88 cm, never a women's 88).
 
+The seller's inch beats cm_round (2026-11-24): a cm size written with its inch ("77(29)") or under a chart's "77(29)"
+column or an 인치 row (JDX "호칭 / 92 / 100" over "인치 / 37 / 40") is that inch, "W29", basis `chart_inch`; two cm sizes
+the chart gives different inches (86 = 34, 88 = 35) are two sizes, never merged.
+
 A unisex or mixed pair is sized as men's; a pair whose seller states no gender holds size_unmapped ("no gender
 stated"): men's and women's waists cannot be told apart.
 

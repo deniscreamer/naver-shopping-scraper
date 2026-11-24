@@ -59,11 +59,18 @@ fixtures `fixtures/sizes/<pilot>.json`. Skill `apparel-sizes`.
 1. the seller's chart writes a **US** size for it (a `US` row): taken as written; a brand row with `system: "us"`
    (PXG) next: its letter is the US letter, a number in brackets beside it ignored;
 2. the **value's own number**: "90", "M(90)", "0(85)"; a women's size via the profile's `kr_women` (55 = 90); a range
-   gives a range ("L(55-66)" = "S-M (US 4-10)");
+   gives a range ("L(55-66)" = "S-M (US 4-10)"); in a waist profile a cm size takes the **seller's inch**: its own
+   "77(29)", its chart column's "77(29)" over the bare "77", or an 인치 row under the 호칭 row (`basis` `chart_inch`,
+   2026-11-24: Kim Young Joo 5912038354 sold 77 as W30, JDX 10694535049 92 as W36), never cm_round; two cm sizes the
+   chart gives different inches never merge (86 = 34, 88 = 35); the seller's body waist in inches beside a women's
+   size ("S (55)" under "S / M / L" over "25-26 / 27-28 / 29-30", 11318914118; "55(25-26),66(27-28)", Toosom
+   4716253463) wins over `kr_women` when every such value has one (`text_waist`);
 3. the **chart's pairing** of a letter with a number ("85 (S)", "Size / XS / S" over "Korea Size / 85 / 90"; a women's
    size too, "55~66(L)"); then the **seller's text** pairing a letter with one women's size ("L[55~66]/XL[77]",
    "M(55), L(66), XL(77)", pairs the OCR glued ("M(55)L(66)", Toosom 12566658191, 2026-11-21), an OCR row "L(55-66) / 48 / 20 / 58" whose measures are not read: `text_pair`,
-   2026-11-20); a letter written with two different numbers is not paired, and a women's pairing counts only when
+   2026-11-20; "S(44사이즈)", a chart row "M / 보통55 / 91", a line of letters over a line of women's sizes "~마른 55 /
+   보통55 / 보통66 / 통통77" with the body words dropped: `letter_cells`, 2026-11-24, 10997837767, 6033600342); a
+   letter written with two different numbers is not paired, and a women's pairing counts only when
    every bare letter of the option has one (M/L/XL over "L[55~66]/XL[77]": today's letters for all);
 4. the **brand row**'s letters (WAAC S = 90); a letter range "S/M" takes both letters' chests;
    bare letters that would all fall to step 5 over a chart whose rows are numbers alone, as many ("S / M / L" sold,
@@ -120,3 +127,7 @@ within 2.5 cm, gives the US letter and its US numeric range: "S (US 4-6)".
 
 - The buyers' reviews keep their own words ("I usually wear a 66"): not rewritten, the owner's word 2026-11-19.
 - The composition from the description and the OCR (the duty by fibre's input): the duty is a flat 12.5 % meanwhile.
+- (2026-11-24) A women's letter is not sized by the chart's garment waist laid flat (doubled): on banded golf pants it
+  is the band at rest, under the body it fits (4882015244: a 27-inch model wears the S of flat 32 cm, which would read
+  "XS (US 2)"; 7073230788 S flat 30). A seller's "runs small, size up" / "tight, order one up" note (5611833883,
+  10188121271) or "if you wear 30 pick 78" (JDX 10871474799) is the owner's to weigh: never a size change by itself.

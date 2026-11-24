@@ -66,6 +66,19 @@ _SIZE_HEAD_RE = re.compile(r"^(?:(?:사이즈|size|치수|호\s*칭|구\s*분|�
                            r"\(?\s*cm\s*\)?)$", re.I)
 _KOREA_HEAD_RE = re.compile(r"^(?:korea(?:n)?\s*size|kr|kor|한국|국내)", re.I)
 _US_HEAD_RE = re.compile(r"^(?:us|usa|미국)(?:\s*size)?$", re.I)
+# an inch row under a cm 호칭 row ("호칭 / 78 / 82 / 88" over "인치 / 31 / 32 / 35", JDX 10694535049, 2026-11-24): the
+# seller's own inch for each size, the US waist (apparel_sizes, the waist profiles)
+_INCH_HEAD_RE = re.compile(r"^(?:인치|inch(?:es)?)$", re.I)
+# a field's name before the first row of P4 pairs ("크기 / M(32)-허리둘레 84cm, ...", 10160025240, 2026-11-24)
+_FIELD_HEAD_RE = re.compile(r"^(?:크기|사이즈|size|치수)\s*[:：]?$", re.I)
+_LEAD_RE = re.compile(r"^\s*([A-Za-z0-9()\[\].~\-반]+(?:\s*\([^)]*\))?)\s*[-:]?\s*(.*)$")   # a row's size label first
+# the letters in size order: a letter written twice in a run of rows (_Reader.close_run)
+_ORDER = ("XXS", "XS", "S", "M", "L", "XL", "XXL", "XXXL")
+# the fields a type option changes (9부 / 10부, a long and a short cut): two tables giving one size two of these
+# (by more than _TYPE_GAP cm) show none (10188121271, 6384912528, 2026-11-24)
+_TYPE_FIELDS = ("length", "inseam")
+_TYPE_GAP = 2.0
+_RUN_GAP = 2                                  # lines: rows this close are one run (_Reader.repeated)
 _CELL_SPLIT_RE = re.compile(r"\s*[|/\t]\s*")
 _UNIT_RE = re.compile(r"\(\s*(?:단위\s*[:：]?\s*)?cm\s*\)", re.I)                    # "어깨(cm): 40" -> "어깨: 40"
 # a number before 사이즈 / size is a women's size, never a measure ("어깨가넓은 마른66사이즈": 11573884405, 2026-11-20)
@@ -111,6 +124,11 @@ class Chart:
     korea: dict[str, float] = field(default_factory=dict)                # label text -> Korean chest written
     sections: dict[str, str] = field(default_factory=dict)               # ONE#<value> -> the type's Korean value
     conflicts: list[str] = field(default_factory=list)                   # a second one-size block nothing ties
+    inch: dict[str, int] = field(default_factory=dict)                   # label text -> the seller's inch written
+    # rows the seller labelled with one letter all ("S - 총장 91 ..." four times, 6484235370): their measurements in
+    # the table's order, that letter; apparel_sizes pairs them with the option's sizes when the counts agree
+    ordered: list[dict[str, float]] = field(default_factory=list)
+    ordered_letter: str | None = None
 
     def add(self, label: str, values: dict[str, float]) -> None:
         if label not in self.rows:
@@ -129,6 +147,10 @@ class _Reader:
         self.hints: dict[str, str] = {}
         self.table = 0                                   # the table being read: a new header or columns line opens one
         self.origin: dict[tuple[str, str], int] = {}     # (label, field) -> the table its kept value came from
+        self.split: set[str] = set()                     # _TYPE_FIELDS two tables give one size differently
+        self.typed = False                               # trousers sold in types (9부 / 10부): read_chart sets it
+        self.run: list[tuple[int, str, str | None, dict[str, tuple[float, str | None]]]] = []   # repeated()
+        self.run_table = 0
 
     def measure(self, cell: str) -> tuple[str, str | None] | None:
         for m in self.measures:
@@ -160,12 +182,68 @@ class _Reader:
         if not values or not all(self.plausible(k, v, kind) for k, (v, kind) in values.items()):
             return False
         have = self.chart.rows.get(label) or {}
-        for k, (_, kind) in values.items():
+        for k, (v, kind) in values.items():
             if k not in have:                    # the value kept is the first: its word is the kind (a second
                 self.kind((k, kind))             # table's 둘레 never relabels a first table's 단면 values)
                 self.origin[(label, k)] = self.table
+            elif k in _TYPE_FIELDS and self.typed and self.origin.get((label, k)) != self.table \
+                    and abs(have[k] - v) > _TYPE_GAP:
+                self.split.add(k)                # a table per length option (9부 / 10부): no length is the size's
         self.chart.add(label, {k: v for k, (v, _) in values.items()})
         return True
+
+    def repeated(self, idx: int, name: str, label: Label | None,
+                 values: dict[str, tuple[float, str | None]]) -> bool:
+        """A labelled row joins the run of rows before it (within _RUN_GAP lines, one table); True when its bare
+        letter is the row before's: the row is not put now (close_run decides). 2026-11-24: an OCR'd "XL" written
+        for XXL replaced the XL row (9250706389); four rows all labelled "S" kept the third (6484235370)."""
+        if self.run and (idx - self.run[-1][0] > _RUN_GAP or self.run_table != self.table):
+            self.close_run()
+        if not self.run:
+            self.run_table = self.table
+        letter = label.letter if label and label.letter in _ORDER and not (
+            label.upto or label.chest or label.women or label.waist or label.jp is not None) else None
+        # a letter of the run again, not the row before's: the next table starts ("S, M, L, XL" twice, a short and a
+        # long cut: 5587004670)
+        if letter is not None and self.run and self.run[-1][2] != letter and any(a[2] == letter for a in self.run):
+            self.close_run()
+            self.run_table = self.table
+        dup = letter is not None and bool(self.run) and self.run[-1][2] == letter
+        self.run.append((idx, name, letter, values))
+        return dup
+
+    def close_run(self) -> None:
+        """A run of bare letters with a repeat: the last row repeating the one before, the others rising, is the next
+        size ("M, L, XL, XL": XXL); every row one letter is a table in order (Chart.ordered) when every row reads,
+        and that letter's own row is dropped (never one of them under it). Any other repeat: the first row kept."""
+        run, self.run = self.run, []
+        letters = [a[2] for a in run]
+        if len(run) < 2 or None in letters or len(set(letters)) == len(letters):
+            return
+        chart, table = self.chart, self.table
+        self.table = self.run_table
+        try:
+            if len(set(letters)) == 1:
+                name = run[0][1]
+                chart.rows.pop(name, None)
+                chart.labels.pop(name, None)
+                rows = [a[3] for a in run]
+                if not chart.ordered and all(row and all(self.plausible(k, v, kind) for k, (v, kind) in row.items())
+                                             for row in rows):
+                    for row in rows:
+                        for k, (_, kind) in row.items():
+                            self.kind((k, kind))
+                    chart.ordered = [{k: v for k, (v, _) in row.items()} for row in rows]
+                    chart.ordered_letter = letters[0]
+                return
+            at = [_ORDER.index(x) for x in letters if x is not None]
+            if len(set(letters)) == len(letters) - 1 and letters[-1] == letters[-2] \
+                    and all(a < b for a, b in zip(at[:-2], at[1:-1])) and at[-1] + 1 < len(_ORDER):
+                nxt = _ORDER[at[-1] + 1]
+                if nxt not in chart.rows and self.put(nxt, run[-1][3]):
+                    chart.labels[nxt] = Label(letter=nxt)
+        finally:
+            self.table = table
 
     def heading(self, raw: str) -> str | None:
         """The type a short line heads ("(앞면 로고형)", "니트집업가디건 (뒷면로고형)"): no digit, exactly one type's
@@ -189,11 +267,13 @@ def read_chart(lines: list[str], measures: str = "tops", sections: list[str] | N
     set; `sections`: the Korean values of a type option (not a size, not a colour), whose one-size blocks are told
     apart ("니트집업가디건 (뒷면로고형)": 10885610305)."""
     r = _Reader(MEASURE_SETS[measures], sections or [])
+    r.typed = measures == "trousers" and bool(r.sections)        # the tops' and skirts' readings stay as they were
     chart = r.chart
     header: list[tuple[str, str | None] | None] | None = None      # row layout: the measure of each column
     header_has_size = True                                         # its first cell is the size column's
     columns: list[str] | None = None                              # column layout: the size label of each column
     one_column = False                                            # a one-size column ("호칭 / FREE(66-88)")
+    columns_at = -1                                               # the line of the column header
     last_was_header = False
     header_rows = 0                                               # rows read under the current header
     section: str | None = None
@@ -239,6 +319,7 @@ def read_chart(lines: list[str], measures: str = "tops", sections: list[str] | N
             len(cells) - 1 == len(header or []) - (1 if header_has_size else 0)
         if len(cells) >= 3 and all(labels) and not any(measures_of[1:]) and not under_header:   # "S | 92 | 88" is a row
             columns = cells[1:] if sized else cells
+            columns_at = i
             r.table += 1
             for n, lab in zip(columns, labels):
                 chart.labels[n] = lab              # type: ignore[assignment]
@@ -258,6 +339,13 @@ def read_chart(lines: list[str], measures: str = "tops", sections: list[str] | N
             nums = [_value(v) for v in vals]
             if _KOREA_HEAD_RE.match(cells[0]) and all(n is not None for n in nums):
                 chart.korea.update({c: float(n) for c, n in zip(columns, nums) if n is not None})
+                continue
+            # right under its 호칭 row, the first one kept: a later generic "inch" row of another chart (the
+            # women's "cm / 64 / 67" under the men's, unread) never relabels the sizes (10694535049)
+            if _INCH_HEAD_RE.match(cells[0]) and all(n is not None and n == int(n) and 20 <= n <= 50 for n in nums):
+                if i - columns_at <= 2:
+                    for col, num in zip(columns, nums):
+                        chart.inch.setdefault(col, int(num or 0))
                 continue
             m = r.measure(cells[0])
             if m and all(n is not None for n in nums):
@@ -282,8 +370,20 @@ def read_chart(lines: list[str], measures: str = "tops", sections: list[str] | N
             columns, one_column, last_was_header = None, False, True
             continue
         last_was_header = False
+        # a stray cell before a row's size label under a header (an OCR'd figure label "10 / L(34) / 96.5 / ...",
+        # "Rise / XL(36)", a fabric line "폴리95%,스판5% / L(34)": 10188121271 lost its L and XL rows, 2026-11-24)
+        # only after a row the header read, before a lettered label: "허리둘레 / 76 / 81" is a column table's row
+        # under a diagram's labels, never a stray cell and a row "76" (5667667561)
+        if header and header_rows and len(cells) >= 3 and parse_label(cells[0]) is None \
+                and (lab1 := parse_label(cells[1])) is not None and lab1.letter \
+                and len(cells) - 2 == len(header) - (1 if header_has_size else 0):
+            cells = cells[1:]
+        # a field's name before a row of pairs ("크기 / M(32)-허리둘레 84cm, ...", 10160025240, 2026-11-24)
+        if len(cells) >= 2 and _FIELD_HEAD_RE.match(cells[0]) and (lm := _LEAD_RE.match(cells[1])) \
+                and parse_label(lm.group(1)) is not None and _PAIR_RE.search(lm.group(2)):
+            cells = cells[1:]
         # a row: a size label first, then numbers (under the header) or name+number pairs
-        lead = re.match(r"^\s*([A-Za-z0-9()\[\].~\-반]+(?:\s*\([^)]*\))?)\s*[-:]?\s*(.*)$", cells[0])
+        lead = _LEAD_RE.match(cells[0])
         label = parse_label(cells[0]) if len(cells) > 1 else None
         rest = cells[1:]
         if label is None and lead:
@@ -307,20 +407,29 @@ def read_chart(lines: list[str], measures: str = "tops", sections: list[str] | N
             continue
         name = re.sub(r"[-:]+$", "", cells[0] if parse_label(cells[0]) else lead.group(1) if lead else cells[0])
         nums = [_value(v) for v in rest]
-        if header and all(n is not None for n in nums):
-            cols = header[1:] if header_has_size else header
-            if len(rest) == len(cols):
-                if r.put(name, {m[0]: (float(n or 0), m[1]) for m, n in zip(cols, nums) if m}):
-                    chart.labels[name] = label
-                    header_rows += 1
-                continue
+        cols = (header[1:] if header_has_size else header) if header else []
+        under = bool(header) and all(n is not None for n in nums) and len(rest) == len(cols)
         pairs: dict[str, tuple[float, str | None]] = {}
-        for piece in rest:
-            for word, number in _PAIR_RE.findall(_SPACED_HANGUL_RE.sub("", piece)):
-                if (m := r.measure(word)) and m[0] not in pairs:
-                    pairs[m[0]] = (float(number), m[1])
+        if under:
+            pairs = {m[0]: (float(n or 0), m[1]) for m, n in zip(cols, nums) if m}
+        else:
+            for piece in rest:
+                for word, number in _PAIR_RE.findall(_SPACED_HANGUL_RE.sub("", piece)):
+                    if (m := r.measure(word)) and m[0] not in pairs:
+                        pairs[m[0]] = (float(number), m[1])
+        # a row is one that reads, or has its header's cells (an OCR misread "111am" in it: 9250706389); a size list
+        # ("S, M, L" before the rows, 7122971734) is none
+        if (pairs or (header and len(rest) == len(cols))) and r.repeated(i, name, label, pairs):
+            continue
         if r.put(name, pairs):
             chart.labels[name] = label
+            if under:
+                header_rows += 1
+    r.close_run()
+    for k in r.split:                               # the length of a type option, not of the size: none shown
+        for n, row in chart.rows.items():
+            if not n.startswith(ONE):
+                row.pop(k, None)
     _drop_breaks(r)
     for k, v in r.hints.items():                    # a note's kind only where the table said none, and only when
         seen_cm = [row[k] for row in chart.rows.values() if k in row]         # every value fits it (spec F8:

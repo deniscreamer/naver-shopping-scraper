@@ -222,6 +222,13 @@ Code: `transform.options_and_variants`.
 - Sellers' size charts (2026-11-20, the same review; [SIZE_CHARTS.md](SIZE_CHARTS.md)): a model block's "Bust : 83cm"
   (10940191023) and "마른66사이즈" (11573884405) are no chart; "53/53" is one cell (11377634969); "CM" is a corner
   (13021502381); an OCR value that breaks its column's run is dropped (13338110183) (`size_chart.py`).
+- Golf Pants (2026-11-24, the review of the first 50002801 drafts; [SIZES.md](SIZES.md), [SIZE_CHARTS.md](SIZE_CHARTS.md)):
+  a cm 호칭 with its inch ("77(29)", Kim Young Joo 5912038354) or an 인치 row under it (JDX 10694535049, 10871474799)
+  is the US waist; "S(44사이즈)" (10997837767), "M / 보통55 / 91" and a two-row "S / M / L / XL" over "~마른 55 /
+  보통55 / ..." (6033600342) pair a letter with a women's size; "25-26 / 27-28 / 29-30" under "S / M / L"
+  (11318914118) and "55(25-26),66(27-28)" (Toosom 4716253463) give the body waist; a stray cell before a row's label
+  ("10 / L(34)", "Rise / XL(36)") and "크기 /" before the first pairs row (10188121271, 10160025240); one table per
+  length option (9부 / 10부); a letter OCR'd twice ("XL, XL", 9250706389); rows all labelled "S" (6484235370).
 - A "write a delivery message" row and a review-discount axis are not versions of the product.
 - Agency imports (2026-11-16, wedge sets): the title ends with the page's first option in Latin ("... 골프 클럽 58
   Degree Silver RH", 13468791008; "... 3Piece Set 525660 Right", 13566630297), often a variant not sold

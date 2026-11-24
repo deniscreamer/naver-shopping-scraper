@@ -57,6 +57,22 @@ Rules that hold the layouts apart:
   unnamed. 10885610305 shows a block per type; without a type option the second block is a conflict, the first
   kept (`chart_conflicts`).
 - A figure letter before a row ("b / 가슴둘레 / 86") is dropped.
+- 2026-11-24, the Golf Pants review:
+  - An 인치 / inch row right under a column header ("호칭 / 78 / 82 / 88" over "인치 / 31 / 32 / 35", JDX 10694535049)
+    is the seller's inch per size (`Chart.inch`, the waist profiles' US waist); the first one only, within 2 lines of
+    its header (a women's "inch" row further down never relabels the men's sizes).
+  - A stray cell before a lettered label under a header, after a row it read ("10 / L(34) / 96.5 / ...", "Rise /
+    XL(36)", "폴리95%,스판5% / L(34)": 10188121271) is skipped; never before a bare number ("허리둘레 / 76 / 81" is a
+    measure's row, 5667667561). A field's name before the first row of pairs ("크기 / M(32)-허리둘레 84cm, ...",
+    "SIZE / L총장 58 가슴 46", 10160025240, 5927644761) is skipped.
+  - A bare letter written in the row right before it again (a run of rows within 2 lines, one table): the last row
+    repeating the one before, the others rising, is the next size ("M, L, XL, XL": XXL, 9250706389); rows all one
+    letter ("S - 총장 91 ..." four times, 6484235370) pair with the option's letters in order when as many and all read
+    (`Chart.ordered`), else none is shown; any other repeat keeps the first. A letter of the run again but not the row
+    before's starts the next table ("S, M, L, XL" twice).
+  - Trousers sold in types (an option that is no size and no colour: 기장 9부 / 10부, 숏 / 롱, cuts): two tables giving
+    one size lengths (총장, inseam) more than 2 cm apart show no length (10188121271's W36 took the 10부 length beside
+    the 9부 ones); the tops' and skirts' readings are unchanged.
 
 ## The measures (`MEASURE_SETS`, a profile's `measures`)
 

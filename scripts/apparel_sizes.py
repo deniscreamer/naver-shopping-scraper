@@ -45,8 +45,15 @@ _LETTER_ALT = r"XXXL|3XL|XXL|2XL|XXS|2XS|XS|XL|LL|S|M|L"      # deliberately nar
 _WOMEN_TOKEN = r"\d{2}(?:\.5|반)?(?:\s*[-~]\s*\d{2}(?:\.5|반)?)?"
 # the closing bracket ends a pair: a letter right after it is the next pair ("M(55)L(66)", the OCR glued them:
 # Toosom 12566658191 sold M as US M, one size too big, 2026-11-21); a digit after it is no pair
-_TEXT_PAIR_RE = re.compile(rf"(?<![A-Za-z0-9])(?:(?:{_LETTER_ALT})\s*[(\[]\s*{_WOMEN_TOKEN}\s*[)\]]|"
+# "S(44사이즈)" too (2026-11-24, 10997837767: S/M/L/XL went out one US size over by the bare letter)
+_TEXT_PAIR_RE = re.compile(rf"(?<![A-Za-z0-9])(?:(?:{_LETTER_ALT})\s*[(\[]\s*{_WOMEN_TOKEN}\s*(?:사이즈)?\s*[)\]]|"
                            rf"{_WOMEN_TOKEN}\s*[(\[]\s*(?:{_LETTER_ALT})\s*[)\]])(?!\d)", re.I)
+# a women's size beside a letter in a chart row or a two-row table, with the seller's body word ("M / 보통55 / 91",
+# "~마른 55 / 보통55 / 보통66 / 통통77" under "S / M / L / XL": 6033600342, 2026-11-24); the word and "~" are dropped
+_BODY_WORD_RE = re.compile(r"마른|보통|날씬|통통|~|\s")
+_WOMEN_CELL_RE = re.compile(r"^(?:44|55|66|77|88|99)$")
+_WAIST_CELL_RE = re.compile(r"^(\d{2})\s*[-~]\s*(\d{2})$")         # "25-26" under "S / M / L" (11318914118)
+_SIZE_WORDS_RE = re.compile(r"^(?:x*-?small|medium|x*-?large|\d?x-?large)$", re.I)   # "Small / Medium / Large"
 # the same letters, for a value whose colour and size are joined ("Ivory/085", "블랙 100 L": 12487887784, 10940191023)
 _JOIN_SPLIT_RE = re.compile(r"[\s/_]+")             # "_" too: "티셔츠 55_아이보리" (6354978708, 2026-11-21)
 # a waist or a letter glued to a Hangul colour or a closing bracket, no separator (2026-11-24, Golf Pants: promore
@@ -139,6 +146,19 @@ def inch_of(cm: float, profile: dict[str, Any] | None = None) -> int:
     """A waist in cm as the inch size it stands for: the nearest inch; in the men's pants (`cm_round` 0.3, 2026-11-23)
     a Korean cm size as Korea writes it (82 = 32, 85 = 33, 88 = 34, 91 = 36: the pants pilot, Adidas 88(34))."""
     return int(cm / 2.54 + float((profile or {}).get("cm_round", 0.5)))
+
+
+_CM_INCH_RE = re.compile(r"^\s*(\d{2,3})\s*\(\s*(\d{2})\s*\)\s*$")
+
+
+def cm_inch(text: str | None) -> tuple[int, int] | None:
+    """A cm waist written with the seller's inch, "77(29)" -> (77, 29) (Kim Young Joo's 호칭 row, 5912038354,
+    2026-11-24: the inch is the US waist, cm_round made 77 W30); None for anything else ("30(76)" is an inch first)."""
+    m = _CM_INCH_RE.match(str(text or ""))
+    if not m:
+        return None
+    cm, inch = int(m.group(1)), int(m.group(2))
+    return (cm, inch) if 60 <= cm <= 115 and 24 <= inch <= 46 and abs(cm / 2.54 - inch) <= 2 else None
 
 
 def _same(a: Label, b: Label, profile: dict[str, Any] | None = None) -> bool:
@@ -249,6 +269,16 @@ def _typed_rows(chart: Chart, sections: list[str]) -> list[dict[str, Any]]:
     return out
 
 
+def _waist_key(label: Label) -> str | None:
+    """The key waist_text_pairs gives a value's waist under: its letter ("S", "S (55)"), else its one women's size
+    ("55"); None for a value with a chest, a waist, a letter range or FREE."""
+    if label.upto or label.chest or label.waist or label.free:
+        return None
+    if label.letter:
+        return label.letter
+    return f"{label.women[0]:g}" if len(label.women) == 1 and label.jp is None else None
+
+
 def _letter_chest(letter: str, pairs: dict[str, float], hit: tuple[str, dict[str, Any]] | None,
                   profile: dict[str, Any]) -> float | None:
     if letter in pairs:
@@ -258,21 +288,63 @@ def _letter_chest(letter: str, pairs: dict[str, float], hit: tuple[str, dict[str
     return float(profile["letters"][letter]) if letter in profile["letters"] else None
 
 
-def text_pairs(texts: list[str]) -> dict[str, Label]:
-    """The letters the seller's text pairs with one Korean women's size ("L[55~66]", "M(55)", "77(XL)"); a letter
-    written with two different numbers is left out (never a guess: today's reading stays). Model and shop lines
-    (size_chart.NOT_CHART_RE) are skipped."""
-    seen: dict[str, set[str]] = {}
-    got: dict[str, Label] = {}
-    for line in texts:
+def _cells(line: str) -> list[str]:
+    return [c.strip() for c in re.split(r"\s*[|/]\s*", line.strip()) if c.strip()]
+
+
+def _bare_letter(cell: str) -> str | None:
+    lab = parse_label(cell) if re.fullmatch(_LETTER_ALT, cell.strip(), re.I) else None
+    return lab.letter if lab else None
+
+
+def letter_cells(texts: list[str]) -> list[tuple[str, str]]:
+    """(letter, what the seller writes for it) from a chart row whose second cell is a women's size with a body word
+    ("M / 보통55 / 91 / 34.5" -> ("M", "55")) and from a two-row table: a line of bare letters, then (past one line of
+    "Small / Medium / Large") a line of as many cells, each a women's size ("~마른 55 / 보통55 / 보통66 / 통통77") or
+    an inch waist range ("25-26 / 27-28 / 29-30") -> ("S", "55"), ("S", "25-26"). 2026-11-24: 6033600342,
+    11318914118. Model and shop lines are skipped."""
+    out: list[tuple[str, str]] = []
+    for i, line in enumerate(texts):
         if NOT_CHART_RE.search(line):
             continue
-        for token in _TEXT_PAIR_RE.findall(line):
-            label = parse_label(token)
-            if label is None or not label.letter or not label.women or label.chest or label.upto:
-                continue
-            seen.setdefault(label.letter, set()).add(label.key)
-            got[label.letter] = label
+        cells = _cells(line)
+        if len(cells) >= 2 and (letter := _bare_letter(cells[0])) and re.search(r"마른|보통|날씬|통통", cells[1]) \
+                and _WOMEN_CELL_RE.match(_BODY_WORD_RE.sub("", cells[1])):
+            out.append((letter, _BODY_WORD_RE.sub("", cells[1])))
+            continue
+        letters = [_bare_letter(c) for c in cells]
+        if len(cells) < 2 or not all(letters) or len(set(letters)) != len(letters):
+            continue
+        below = texts[i + 1:i + 3]
+        if below and len(_cells(below[0])) == len(cells) and all(_SIZE_WORDS_RE.match(c) for c in _cells(below[0])):
+            below = below[1:]
+        if not below or NOT_CHART_RE.search(below[0]):
+            continue
+        raw = _cells(below[0])
+        women = [_BODY_WORD_RE.sub("", c) for c in raw]
+        if len(raw) != len(cells):
+            continue
+        if all(_WOMEN_CELL_RE.match(c) for c in women):
+            out += [(str(x), c) for x, c in zip(letters, women)]
+        elif all(_WAIST_CELL_RE.match(c) for c in raw):
+            out += [(str(x), c) for x, c in zip(letters, raw)]
+    return out
+
+
+def text_pairs(texts: list[str]) -> dict[str, Label]:
+    """The letters the seller's text pairs with one Korean women's size ("L[55~66]", "M(55)", "77(XL)", "S(44사이즈)",
+    letter_cells' "M / 보통55"); a letter written with two different numbers is left out (never a guess: today's
+    reading stays). Model and shop lines (size_chart.NOT_CHART_RE) are skipped."""
+    seen: dict[str, set[str]] = {}
+    got: dict[str, Label] = {}
+    tokens = [t for line in texts if not NOT_CHART_RE.search(line) for t in _TEXT_PAIR_RE.findall(line)]
+    tokens += [f"{x}({c})" for x, c in letter_cells(texts) if _WOMEN_CELL_RE.match(c)]
+    for token in tokens:
+        label = parse_label(token)
+        if label is None or not label.letter or not label.women or label.chest or label.upto:
+            continue
+        seen.setdefault(label.letter, set()).add(label.key)
+        got[label.letter] = label
     return {k: v for k, v in got.items() if len(seen[k]) == 1}
 
 
@@ -283,26 +355,39 @@ _WAIST_PAIR_RE = re.compile(rf"(?<![A-Za-z0-9])({_LETTER_ALT})\s*(?:사이즈)?\
                             rf"\s*(?:인치|inch|in)?\s*[)\]]", re.I)
 _WAIST_PAIR_BACK_RE = re.compile(rf"(?<![\d.])(\d{{2}})\s*[-~]\s*(\d{{2}})\s*(?:인치|inch)?\s*[:=]\s*({_LETTER_ALT})(?![A-Za-z])",
                                  re.I)
+# a Korean women's size with the body waist in inches: "55(25-26),66(27-28),77(29-30),88(31-32)권장드립니다" (Toosom
+# 4716253463, 2026-11-24: 55..88 went out by kr_women, the seller's waist unread); the key is the size, "55"
+_WOMEN_WAIST_RE = re.compile(r"(?<![\d.])(44|55|66|77|88|99)\s*(?:사이즈)?\s*[(\[]\s*(\d{2})(?:\s*[-~]\s*(\d{2}))?"
+                             r"\s*(?:인치|inch|in)?\s*[)\]]", re.I)
 
 
 def waist_text_pairs(texts: list[str], profile: dict[str, Any]) -> dict[str, list[float]]:
     """The letters the seller's text gives a body waist in inches (the waist profiles): {letter: [cm, ...]}, a range
-    its two ends; a letter written with two different waists is left out, as are model and shop lines."""
+    its two ends; a women's size the same, keyed by its number ("55"); a two-row table of letters over waist ranges
+    (letter_cells); a key written with two different waists is left out, as are model and shop lines."""
     w = waist_read(profile)
     if not w:
         return {}
     seen: dict[str, set[tuple[float, ...]]] = {}
+    found: list[tuple[str, str, str | None]] = []
     for line in texts:
         if NOT_CHART_RE.search(line):
             continue
-        found = [(m.group(1), m.group(2), m.group(3)) for m in _WAIST_PAIR_RE.finditer(line)]
+        found += [(m.group(1), m.group(2), m.group(3)) for m in _WAIST_PAIR_RE.finditer(line)]
         found += [(m.group(3), m.group(1), m.group(2)) for m in _WAIST_PAIR_BACK_RE.finditer(line)]
-        for letter, lo, hi in found:
-            lab = parse_label(letter)
-            nums = [int(lo)] + ([int(hi)] if hi else [])
-            if not lab or not lab.letter or not all(w[0] <= n <= w[1] for n in nums):
-                continue
-            seen.setdefault(lab.letter, set()).add(tuple(round(n * 2.54, 1) for n in nums))
+        if not w[4]:                             # the men's "88(34)" is a cm waist with its inch, no women's size
+            found += [(m.group(1), m.group(2), m.group(3)) for m in _WOMEN_WAIST_RE.finditer(line)]
+    found += [(x, m.group(1), m.group(2)) for x, c in letter_cells(texts) if (m := _WAIST_CELL_RE.match(c))]
+    for key, lo, hi in found:
+        nums = [int(lo)] + ([int(hi)] if hi else [])
+        if key.isdigit():
+            name: str | None = key
+        else:
+            lab = parse_label(key)
+            name = lab.letter if lab else None
+        if not name or not all(w[0] <= n <= w[1] for n in nums):
+            continue
+        seen.setdefault(name, set()).add(tuple(round(n * 2.54, 1) for n in nums))
     return {k: list(next(iter(v))) for k, v in seen.items() if len(v) == 1}
 
 
@@ -426,6 +511,23 @@ def _by_position(resolved: list[dict[str, Any]], chart: Chart, profile: dict[str
                     chart_label=name)
 
 
+def _ordered_rows(resolved: list[dict[str, Any]], chart: Chart) -> None:
+    """The chart's rows all labelled one letter (Chart.ordered: "S - 총장 91 ..." four times, 6484235370, 2026-11-24)
+    go to the option's letters in size order, when as many and the smallest is that letter and no value has a row
+    of its own; otherwise none is shown."""
+    if not chart.ordered or len(chart.ordered) != len(resolved) or any(r.get("chart_label") in chart.rows
+                                                                       for r in resolved):
+        return
+    labs = [parse_label(r["ko"]) for r in resolved]
+    if any(not lb or not lb.letter or lb.upto for lb in labs) or labs[0] is None \
+            or labs[0].letter != chart.ordered_letter:
+        return
+    for i, (r, row) in enumerate(zip(resolved, chart.ordered)):
+        name = f"{chart.ordered_letter}#{i + 1}"
+        chart.rows[name] = row
+        r["chart_label"] = name
+
+
 def resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None, title: str | None,
             profile_name: str, table: dict[str, Any] | None = None, has_fact: bool = False) -> dict[str, Any]:
     """The sizes of a product (_resolve), waists read when the profile is keyed by the waist (size_labels)."""
@@ -488,10 +590,28 @@ def _resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None,
             pairs[lab.letter] = chest
     written = text_pairs(texts)                      # "L[55~66]/XL[77]": the seller's text pairs a letter
     waists = waist_text_pairs(texts, profile)        # "S(24-26), M(27-28)": a letter's body waist (2026-11-23)
-    bare = [lb.letter for v in options[index]["values_ko"] if (lb := parse_label(v)) and lb.letter
-            and not (lb.upto or lb.chest or lb.women or lb.waist)]
-    if not bare or not all(x in waists for x in bare):
-        waists = {}                                  # every bare letter has its waist, or none is taken (no mix)
+    # the letters (a women's size beside one too: "S (55)", 11318914118, 2026-11-24) and the women's sizes alone ("55",
+    # Toosom 4716253463) the seller's waist may size: every one has its waist, or none is taken (no mix)
+    keyed = [_waist_key(lb) for v in options[index]["values_ko"] if (lb := parse_label(v))]
+    keyed = [k for k in keyed if k]
+    if not keyed or not all(x in waists for x in keyed):
+        waists = {}
+    inch_by_label: dict[str, int] = {}               # the seller's inch per chart label: "77(29)", a 인치 row
+    if profile.get("key") == "waist":
+        inch_by_label = {n: ci[1] for n in chart.labels if (ci := cm_inch(n))} | dict(chart.inch)
+
+    def seller_inch(ko: str, label: Label) -> int | None:
+        """The inch the seller gives this value: its own "77(29)", else its chart label's (a "77(29)" column over
+        the bare "77", a 인치 row under its 호칭: 10694535049, 2026-11-24): it wins over cm_round."""
+        if profile.get("key") != "waist" or label.letter:
+            return None
+        if ci := cm_inch(ko):
+            return ci[1]
+        for n, inch in inch_by_label.items():
+            ci, lab = cm_inch(n), chart.labels.get(n)
+            if (ci and label.waist == (float(ci[0]),)) or (n in chart.inch and lab and lab.key == label.key):
+                return inch
+        return None
     # a letter's women's size from the seller ("55~66(L)", "L[55~66]") counts only when every bare letter of the option
     # has one: M/L/XL over "L[55~66]/XL[77]" would mix two systems (L=S-M before M=M); today's letters then stay
     # (2026-11-20 review)
@@ -505,12 +625,17 @@ def _resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None,
             if label is None:
                 out["held"] = f"{ko!r}: not read as a size"
                 return out
-            same = _merge_key(label, profile)
+            inch = seller_inch(ko, label)
+            # a cm size by the inch its chart gives it and its cm: 86 (34) and 88 (35) are two sizes, never one
+            # (10694535049); a value written "82(32)" merges as before (_merge_key)
+            cm = next((w for w in label.waist if w == int(w)), 0.0)
+            same = f"|W{inch}|{cm:g}" if inch and not cm_inch(ko) else _merge_key(label, profile)
             if same in seen:                             # "M (66)" and "M(66)": one size written twice
                 out["merged"][ko] = seen[same]
                 continue
             seen[same] = ko
-            matches = [n for n, lab in chart.labels.items() if lab and _same(lab, label, profile)]
+            matches = [n for n, lab in chart.labels.items() if lab and (_same(lab, label, profile) or (
+                inch and (ci := cm_inch(n)) and label.waist == (float(ci[0]),)))]     # "77" under "77(29)"
             # the chart's label with measurements, then the one written as the value is, then one with its letter: a
             # bare header label ("SIZE / S / M") or a model line never takes the size's row (2026-11-19 review)
             matches.sort(key=lambda n: (n not in chart.rows, chart.labels[n].key != label.key,
@@ -533,6 +658,11 @@ def _resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None,
                             chest_cm=None, basis=f"brand_us:{hit[0]}")
             else:
                 chests, basis, women = _chest_of(label, profile), "label", False
+                if inch:                                   # its own "77(29)": a waist label; a chart's inch
+                    chests, basis = [round(inch * 2.54, 1)], "waist" if cm_inch(ko) else "chart_inch"
+                elif label.women and (wk := _waist_key(label)) and wk in waists:   # the seller's waist over the
+                    # women's size: "S (55)", "55" (a bare letter takes it below, after the chart's pairing)
+                    chests, basis = list(waists[wk]), "text_waist"
                 if not chests and label.jp is not None and own and chart.korea.get(own):
                     chests, basis = [chart.korea[own]], "chart_korea"
                 if not chests and label.upto and label.letter:     # "S/M": both letters' chests, a range
@@ -569,12 +699,12 @@ def _resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None,
                 own_us = _brand_us(hit, grid_rows, profile)
                 if own_us and hit:                           # the maker's own US number for its Korean size
                     item.update(us=own_us[0], letter=own_us[1], basis=f"brand_us_num:{hit[0]}")
-                elif basis == "label" and len({inch_of(w, profile) for w in label.waist}) == 1 \
-                        and len(grid_rows) == 1 and not label.women:
+                elif (basis == "label" and len({inch_of(w, profile) for w in label.waist}) == 1
+                      and len(grid_rows) == 1 and not label.women) or (inch and len(grid_rows) == 1):
                     # a waist size ("26", "27", "67"): the US number of that waist, so 26 and 27 stay two sizes
                     # (S (US 4), S (US 6)); the skirts, 2026-11-22; one waist in inches and cm ("30(76)", the men's
-                    # trousers 2026-11-23) is one
-                    num = (profile.get("us_by_waist_in") or {}).get(str(inch_of(label.waist[0], profile)))
+                    # trousers 2026-11-23) is one; the seller's inch as written ("77(29)": W29, 2026-11-24)
+                    num = (profile.get("us_by_waist_in") or {}).get(str(inch or inch_of(label.waist[0], profile)))
                     row = next((r for r in profile["grid"] if num and r.get("us_num")
                                 and _us_range(r["us_num"])[0] <= _us_range(num)[0] <= _us_range(r["us_num"])[1]), None)
                     if num and row:                          # the letter whose US numbers hold it (70 cm: US 8, M)
@@ -582,7 +712,7 @@ def _resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None,
                         item.update(us=f"{pre}{num}" if row.get("us_num_only") else f"{row['us']} ({pre}{num})",
                                     letter=row["us"],
                                     chest_cm=row["chest_cm"],
-                                    basis="waist")
+                                    basis="waist" if basis in ("label", "waist") else basis)
                 elif basis == "label" and len(label.waist) == 2 \
                         and (span := [inch_of(w, profile) for w in label.waist])[1] == span[0] + 1 \
                         and not (label.letter or label.women or label.chest) \
@@ -613,6 +743,7 @@ def _resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None,
                                  int(m.group(1)) if (m := re.search(r"(?:W|US )(\d+)", str(r.get("us") or "")))
                                  else 0))                                      # W34 before W35 in one band (2026-11-23)
     out["values"] = resolved
+    _ordered_rows(resolved, chart)
     if typed and all(r["us"] == "One Size" for r in resolved):      # FREE sold in types: a row per type
         out["chart"] = {"kinds": dict(chart.kinds), "rows": typed}
         return out

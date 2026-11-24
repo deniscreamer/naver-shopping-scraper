@@ -1060,3 +1060,137 @@ def test_two_options_each_joining_a_colour_and_a_size_hold_as_a_set_of_two():
     ov = {"options": [{"name_ko": "컬러", "values_ko": colours}, {"name_ko": "사이즈", "values_ko": ["M(32)", "L(34)"]}],
           "facts": [], "variants": [{"options_ko": [c, s], "price_krw": 1} for c in colours for s in ("M(32)", "L(34)")]}
     assert not T._sizes(ov, "mens_bottoms", "", [], None, "볼빅 남성골프바지")["held"]
+
+
+# ---- 2026-11-24: the Golf Pants review (sizes from the seller's text and chart) -----------------------------------
+def _pants(values: list[str], lines: list[str], profile: str,
+           extra: list[dict[str, Any]] | None = None) -> dict[str, Any]:
+    return A.resolve((extra or []) + [{"name_ko": "사이즈", "values_ko": values}], lines, None, "골프 바지", profile)
+
+
+def test_a_cm_size_takes_the_inch_its_chart_header_writes():
+    """Kim Young Joo 5912038354: "호칭 / 77(29) / 81(31) ..." over the bare options 77..95: cm_round made 77 W30 and 81
+    W32 and dropped their chart rows; the seller's inch is the US waist."""
+    lines = ["호칭 / 77(29) / 81(31) / 85(33) / 89(35) / 95(37)", "허리둘레 / 77 / 82 / 87 / 92 / 97",
+             "엉덩이둘레 / 98 / 102 / 106 / 111 / 116"]
+    r = _pants(["77", "81", "85", "89", "95"], lines, "mens_bottoms")
+    assert [v["us"] for v in r["values"]] == ["W29", "W31", "W33", "W35", "W37"]
+    assert {v["basis"] for v in r["values"]} == {"chart_inch"}
+    assert [(row["us"], row["cm"]["waist"]) for row in r["chart"]["rows"]] == \
+        [("W29", 77.0), ("W31", 82.0), ("W33", 87.0), ("W35", 92.0), ("W37", 97.0)]
+    assert A.cm_inch("77(29)") == (77, 29) and A.cm_inch("30(76)") is None and A.cm_inch("M(32)") is None
+
+
+_JDX = ["30사이즈 입으시는 고객님께서는 78", "호칭 / 78 / 82 / 84 / 86 / 88 / 92 / 96 / 100",
+        "인치 / 31 / 32 / 33 / 34 / 35 / 37 / 38 / 40", "허리둘레 / 81 / 85 / 87 / 89 / 91 / 95 / 99 / 103",
+        "남자 / MEN", "cm / 78(79) / 82 / 84(85) / 86 / 88 / 92(91)96(97)100",
+        "inch / 31 / 32 / 33 / 34 / 35 / 37 / 38 / 40", "여자WOMEN", "cm / 64 / 67 / 70 / 73 / 76 / 79 / 82 / 85",
+        "inch / 26 / 27 / 28 / 29 / 30 / 32 / 33 / 34"]
+
+
+def test_an_inch_row_under_the_cm_row_sizes_each_and_keeps_86_and_88_apart():
+    """JDX 10694535049: the 인치 row under 호칭 is the seller's US waist (92 = 37, 100 = 40; cm_round said 36, 39), and
+    86 (34) and 88 (35) are two sizes (88 was merged into 86, its variants dropped). A later generic "inch" row of the
+    women's chart never relabels them; the text "30사이즈 ... 78" (a fit advice) changes nothing."""
+    r = _pants(["78", "82", "84", "86", "88", "92", "100"], _JDX, "mens_bottoms")
+    assert [v["us"] for v in r["values"]] == ["W31", "W32", "W33", "W34", "W35", "W37", "W40"]
+    assert r["merged"] == {} and not r["held"]
+    plain = _pants(["86", "88"], [], "mens_bottoms")                 # no chart: one size by cm_round, as before
+    assert plain["merged"] == {"88": "86"}
+
+
+def test_a_letter_written_twice_in_a_row_is_the_next_size():
+    """9250706389: the OCR read XXL's row as a second "XL" (and the real XL row has "111am"): its measures went under
+    W34 and XXL(36) had no row."""
+    lines = ["허리둘레 / 힙둘레 / 허벅지둘레 / 밑단둘레 / 총장", "M / 81cm / 101cm / 62cm / 37cm / 101cm",
+             "L / 85.5cm / 106cm / 64cm / 38cm / 102cm", "XL / 90cm / 111am / 66cm / 39cm / 103cm",
+             "XL / 94.5cm / 116cm / 68cm / 40cm / 104cm"]
+    r = _pants(["M(30)", "L(32)", "XL(34)", "XXL(36)"], lines, "mens_bottoms")
+    assert [v["us"] for v in r["values"]] == ["W30", "W32", "W34", "W36"]
+    assert {row["us"]: row["cm"]["waist"] for row in r["chart"]["rows"]} == {"W30": 81.0, "W32": 85.5, "W36": 94.5}
+    whole = C.read_chart(["사이즈 / 허리 / 총장", "M / 81 / 101", "L / 85 / 102", "XL / 90 / 103", "XL / 94 / 104"],
+                         "trousers")
+    assert whole.rows["XL"]["waist"] == 90 and whole.rows["XXL"]["waist"] == 94
+    twice = C.read_chart(["S 총장 41 허리 31", "M 총장 43 허리 34", "S 총장 91 허리 31", "M 총장 92 허리 34"],
+                         "trousers")                                   # a second table (5587004670): read as before
+    assert twice.rows["S"] == {"length": 91, "waist": 31} and twice.rows["M"]["length"] == 92
+
+
+def test_rows_all_labelled_one_letter_go_by_position_or_not_at_all():
+    """6484235370: four rows all "S", by order S/M/L/XL: the third (L's) was shown under S. A row the chart cannot read
+    (a 10 cm leg opening) drops the four; every row read pairs them with the letters in order."""
+    real = ["S - 총장 91 / 허리 32 / 힙 44 / 밑위 30 / 밑단 10", "S - 총장 92 / 허리 34 / 힙 46 / 밑위 31 / 밑단 11",
+            "S - 총장 93 / 허리 36 / 힙 48 / 밑위 32 / 밑단 12", "S - 총장 94 / 허리 38 / 힙 50 / 밑위 33 / 밑단 13"]
+    r = _pants(["S", "M", "L", "XL"], real, "womens_pants")
+    assert r["chart"] is None and r["values"][0]["us"] == "S (US 4-6)"
+    readable = [line.replace("밑단 1", "밑단 2") for line in real]
+    r = _pants(["S", "M", "L", "XL"], readable, "womens_pants")
+    assert [(row["us"], row["cm"]["waist"]) for row in r["chart"]["rows"]] == \
+        [("S (US 4-6)", 32.0), ("M (US 8-10)", 34.0), ("L (US 12-14)", 36.0), ("XL (US 16)", 38.0)]
+    other = _pants(["S", "M", "L"], readable, "womens_pants")         # 3 letters, 4 rows: none
+    assert other["chart"] is None
+
+
+def test_a_table_per_length_option_shows_no_length_and_a_stray_cell_is_skipped():
+    """10188121271: one table per 기장 (9부 / 10부); "10 / L(34)", "Rise / XL(36)", "폴리95%,스판5% / L(34)" lost L and
+    XL's rows, and W36 took the 10부 length beside the 9부 ones."""
+    lines = ["<9부 / >", "사이즈 / 총장 / 허리 / 허벅지 / 밑위 / 밑단", "S(30) / 92.5 / 68 / 33 / 33 / 17",
+             "M(32) / 94.5 / 72 / 34 / 34 / 18", "10 / L(34) / 96.5 / 76 / 35 / 35 / 19",
+             "Rise / XL(36) / 98.5 / 80 / 36 / 36 / 20", "Thigh→ / Length / <10부",
+             "사이즈 / 총장 / 허리 / 허벅지 / 밑위 / 밑단", "S(30) / 98.5 / 68 / 33 / 33 / 17",
+             "M(32) / 100.5 / 72 / 34 / 34 / 18", "폴리95%,스판5% / L(34) / 102.5 / 76 / 35 / 35 / 19",
+             "XL(36) / 104.5 / 80 / 36 / 36 / 20"]
+    r = _pants(["S(30)", "M(32)", "L(34)", "XL(36)"], lines, "mens_bottoms",
+               [{"name_ko": "기장", "values_ko": ["9부", "10부"]}])
+    assert [(row["us"], row["cm"]["waist"]) for row in r["chart"]["rows"]] == \
+        [("W30", 68.0), ("W32", 72.0), ("W34", 76.0), ("W36", 80.0)]
+    assert not any("length" in row["cm"] for row in r["chart"]["rows"])
+    single = _pants(["S(30)", "M(32)", "L(34)", "XL(36)"], lines, "mens_bottoms")     # no type option: the first
+    assert [row["cm"].get("length") for row in single["chart"]["rows"]] == [92.5, 94.5, 96.5, 98.5]
+    column = C.read_chart(["허리 / 힙 바로윗쪽의 허리라인 / 힙", "M / 40 / 50 / 1", "허리둘레 / 76 / 81 / 86 / 91"],
+                          "trousers")                                  # 5667667561: a measure's row, no stray cell
+    assert "76" not in column.rows
+
+
+def test_a_field_name_before_the_first_pairs_row_is_skipped():
+    """10160025240: "크기 / M(32)-허리둘레 84cm, ..." lost the M(32) row."""
+    lines = ["크기 / M(32)-허리둘레 84cm, 앞밑위 27cm,힙둘레 104cm,총장103cm",
+             "L(34)-허리둘레 88cm, 앞밑위 27.8cm,힙둘레 108cm, 총장103cm"]
+    r = _pants(["M(32)", "L(34)"], lines, "mens_bottoms")
+    assert [(row["us"], row["cm"]["waist"]) for row in r["chart"]["rows"]] == [("W32", 84.0), ("W34", 88.0)]
+
+
+def test_a_womens_size_beside_each_letter_sizes_it():
+    """10997837767: "S(44사이즈)" (the bare letters went out one US size over); 6033600342: "M / 보통55 / 91 ..." rows
+    and the two-row recommendation "S / M / L / XL" over "~마른 55 / 보통55 / 보통66 / 통통77": S and M are both 55, so
+    the product holds for the owner rather than guess."""
+    lines = ["S(44사이즈) :", "총기장 101cm / 허리단면 34-38cm /", "M(55사이즈) :", "L(66사이즈) :", "XL(77사이즈) :"]
+    r = _pants(["S", "M", "L", "XL"], lines, "womens_pants")
+    assert [v["us"] for v in r["values"]] == ["XS (US 0-2)", "S (US 4-6)", "M (US 8-10)", "L (US 12-14)"]
+    assert {v["basis"] for v in r["values"]} == {"text_pair"}
+    rows = ["S / 90 / 32 / 42 / 28", "마른55 / (왕밴딩)", "M / 보통55 / 91 / 34.5 / 44 / 29", "날씬66 / (왕밴딩)",
+            "L / 보통66 / 92 / 37 / 46 / 30", "XL / 통통77 / 93 / 39.5 / 48 / 31", "권장 사이즈 참고!", "S / M / L / XL",
+            "~마른 55 / 보통55 / 보통66 / 통통77", "날씬66 / 보통77 / 날씬88"]
+    assert A.letter_cells(rows) == [("M", "55"), ("L", "66"), ("XL", "77"), ("S", "55"), ("M", "55"), ("L", "66"),
+                                    ("XL", "77")]
+    held = _pants(["S", "M", "L", "XL"], rows, "womens_pants")
+    assert held["held"] == "two Korean sizes on one US size: S (US 4-6)"
+    part = _pants(["S", "M", "L", "XL"], rows[:6], "womens_pants")    # the rows alone: S has none, today's letters
+    assert {v["basis"] for v in part["values"]} == {"fallback_letters"}
+
+
+def test_the_sellers_body_waist_wins_over_the_womens_size():
+    """11318914118: "S / M / L" / "Small / Medium / Large" / "25-26 / 27-28 / 29-30" (inch) over the options "S (55)"
+    ...; Toosom 4716253463: "55(25-26),66(27-28),77(29-30),88(31-32)권장드립니다" over the options 55..88."""
+    two_rows = ["(단위 inch)", "S / M / L", "Small / Medium / Large", "25-26 / 27-28 / 29-30"]
+    r = _pants(["S (55)", "M (66)", "L (77)"], two_rows, "womens_pants")
+    assert [v["us"] for v in r["values"]] == ["XS-S (US 0-6)", "S-M (US 4-10)", "M-L (US 8-14)"]
+    assert {v["basis"] for v in r["values"]} == {"text_waist"}
+    toosom = ["55,66,77,88가지 사이즈로 제작되었습니다", "55(25-26),66(27-28),77(29-30),88(31-32)권장드립니다",
+              "55|66|77|88 / 26|27-28|29-30|31-32"]
+    r = _pants(["55", "66", "77", "88"], toosom, "womens_pants")
+    assert [v["us"] for v in r["values"]] == ["XS-S (US 0-6)", "S-M (US 4-10)", "M-L (US 8-14)", "L (US 12-14)"]
+    some = _pants(["55", "66", "77"], ["55(25-26)"], "womens_pants")  # one size of three: kr_women for all
+    assert {v["basis"] for v in some["values"]} == {"label"}
+    men = _pants(["85", "88"], ["88(34)"], "mens_bottoms")            # the men's "88(34)" is no women's 88
+    assert [v["us"] for v in men["values"]] == ["W33", "W34"]
