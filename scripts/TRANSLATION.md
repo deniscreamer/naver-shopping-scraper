@@ -298,7 +298,11 @@ files or the live dictionaries. The rounds run so far: History, below.
   the knits' shape with jacket, function and shell terms, 점퍼 never "jumper", the knits' `TITLE_SIZES`; 50002799 재킷,
   2026-11-21: its copy, 재킷 never "blazer"; its dictionaries start from 50002798's backup), 50002801 (men's and women's golf pants, 2026-11-23: its own brief of
   pants, joggers and slacks, "pants" never "trousers", a short / long length never shorts; `TITLE_SIZES` with the
-  women's sizes and the waists 23-44 in and 61-112 cm; its dictionaries start from 50002802's backup), 50002802 (women's golf skirts and culottes, 2026-11-22: its own
+  women's sizes and the waists 23-48 in and 61-112 cm; its dictionaries start from 50002802's backup; 2026-11-24, the
+  pilot review: `TITLE_SIZE_RUN` frees a size run as one word, "30-46size" / "42까지", and
+  `translate.garment_title` takes out of the answer the words a word of one variant gives (9부 where 롱 is sold, 숏, an
+  optional 기모 / 카고 axis such as 기모없음 / 기모추가, a fit word over a listing of styles), 와이드 밴딩 written as
+  "Wide-Leg" (it is a wide waistband) and "Cotton" the material row does not list), 50002802 (women's golf skirts and culottes, 2026-11-22: its own
   brief of skirts, skorts and culottes, inner shorts, pleats and lengths; `TITLE_SIZES` with the waists 23-34 in and
   61-79 cm; its dictionaries start from 50002796's backup), 50002796 (women's
   long-sleeve golf tops, 2026-11-21: its own brief of tops, necks, closures, fibres and the makers; colour counts and
@@ -310,7 +314,12 @@ files or the live dictionaries. The rounds run so far: History, below.
   (55 66 77, 90 95 100) be left out without "numbers changed" (a free-standing number only: a code's tail, K90,
   must survive); `translate.TITLE_PICK` (2026-11-21) frees a pack ("1+1") and a choice count ("3종 택1", "6컬러",
   and "2 pcs 택1", the unit rule's form of 2종 택1, 2026-11-22), and a choice must not come back as "N pcs" or
-  "Choose 1" (`_PICK_EN`: "[울시] ... 2종 택1" went out as "2 pcs, Choose 1", read as a bundle); aspects and product words of fit, length, thickness,
+  "Choose 1" (`_PICK_EN`: "[울시] ... 2종 택1" went out as "2 pcs, Choose 1", read as a bundle); 2026-11-24 (the pants
+  pilot review), every `TITLE_SIZES` category: the count of "3XL" / "2XS" is free, "2026년 SS시즌" is a season code,
+  "2스타일" a choice count, and `garment_title` takes out of an accepted answer (`strip`, verify) what the model kept
+  though the briefs leave it out: a season code's letters ("... Golf Pants FW"), 인기 / BEST, "2 Styles", a model code
+  no option value carries when the values carry its siblings ("HG1712" of HG1712 HG1713 HG1715 with HG1713 / HG1715
+  sold); a title's `drop` words apply longest first (the note's "25" broke "25 FW"); aspects and product words of fit, length, thickness,
   pilling and washing)
   have a category brief, aspects and rules. Another category gets the
   base prompt and the general aspects until it has its own.

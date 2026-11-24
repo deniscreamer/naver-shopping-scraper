@@ -309,6 +309,12 @@ Code: `transform.options_and_variants`.
   its colour, hand, count and club editions (Olimar ATS Iron / Putter 810022120200, Hireko 4-piece / 3-piece
   810022123058, BombTech Silver / Black 850064238204), so it is a duplicate signal only with the title guards
   (`dedupe.upcs`, `upc_suspect`, `same_upc_listing`; [DEDUPE.md](DEDUPE.md), C39 / C40).
+- Golf pants titles (2026-11-24, the pilot review): the title names one variant's length, fit or fabric while the
+  options sell others ("9부 일자핏" over 9부 / 롱 and 일자 / 부츠컷 6384912528, "VT까슬이 숏" 5746242591, 기모 over
+  "기모 추가: 기모없음 / 기모추가" 10997837767, "기본 카고 기모" as 원단 choices 5990911618, 레귤러핏 over two styles the
+  fleece one slim 5979440160); "와이드 밴딩" a wide waistband on a straight leg (6689446962); "면" with a 소재 row of
+  폴리에스테르, 나일론 (8269563762); "HG1712 HG1713 HG1715" with HG1713 / HG1715 sold (8772595840); "25 FW",
+  "2026년 SS시즌", "인기 BEST", "2스타일", "3XL", "30-46size". `translate.garment_title` (strip), `TITLE_SIZE_RUN`.
 
 ### Spec rows vs variants
 

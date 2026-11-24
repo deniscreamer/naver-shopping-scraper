@@ -110,19 +110,63 @@ TITLE_SIZES["50002796"] = TITLE_SIZES["50002797"]           # women's long-sleev
 TITLE_SIZES["50002799"] = TITLE_SIZES["50002797"]           # 재킷, the same section (2026-11-21)
 # skirts: the women's sizes and the waists in inches and cm a title may list ("25 26 27 28", "64 67 70"; 2026-11-22)
 TITLE_SIZES["50002802"] = re.compile(r"(?<![\d.A-Za-z])(?:44|55|66|77|88|99|2[3-9]|3[0-4]|6[1-9]|7[0-9])(?![\d.%])")
-# golf pants: the women's sizes, the waists in inches (23-44) and in cm (61-112) a title may list ("28 30 32", "76 79
-# 82"; 2026-11-23)
+# golf pants: the women's sizes, the waists in inches (23-48) and in cm (61-112) a title may list ("28 30 32", "76 79
+# 82"; 2026-11-23); a big-size run reaches 46 (2026-11-24, 5093872434: "30-46size" failed "missing 46")
 TITLE_SIZES["50002801"] = re.compile(
-    r"(?<![\d.A-Za-z])(?:44|55|66|77|88|99|2[3-9]|3[0-9]|4[0-4]|6[1-9]|[7-9][0-9]|10[0-9]|11[0-2])(?![\d.%])")
+    r"(?<![\d.A-Za-z])(?:44|55|66|77|88|99|2[3-9]|3[0-9]|4[0-8]|6[1-9]|[7-9][0-9]|10[0-9]|11[0-2])(?![\d.%])")
+# a pants title's size run as one word, "30-46size", "34사이즈", "42까지" (2026-11-24, 5093872434: "codes lost: missing
+# 46SIZE"): left out whole, its numbers and the glued SIZE
+TITLE_SIZE_RUN = {"50002801": re.compile(
+    r"(?<![\d.A-Za-z])\d{2,3}(?:\s*[-~]\s*\d{2,3})?\s*(?:size|사이즈|까지)(?![A-Za-z])", re.I)}
 # a garment title's season code ("26FW", "2025 SS", "23F/W"): the briefs leave the season out of the English title, so
 # its digits need not survive either (2026-11-20, the windbreaker pilot: "TaylorMade 26FW Women's ..." kept it only
 # because a lost number fails the check); the same apparel categories as TITLE_SIZES
 # ... and "N pcs 택1": the unit rule (sanitize) writes 종 as pcs before this reads the title (2026-11-22, the men's tops
 # pilot: "[울시] ... 2종 택1" reached the model as "2 pcs 택1", its digits not freed: "2 pcs, Choose 1")
-TITLE_PICK = re.compile(r"(?<!\d)\d\s*\+\s*\d(?!\d)|\d{1,2}\s*(?:종|컬러|가지|color|colors)(?:\s*(?:중\s*)?택\s*\d)?"
+# ... and "2스타일" (2026-11-24, 12534121142: "[김영주골프] ... 2스타일 ... KPFMSL17" went out as "... KPFMSL17 2 Styles")
+TITLE_PICK = re.compile(r"(?<!\d)\d\s*\+\s*\d(?!\d)|\d{1,2}\s*(?:종|컬러|가지|스타일|color|colors|styles?)(?:\s*(?:중\s*)?택\s*\d)?"
                         r"|\d{1,2}\s*pcs\s*(?:중\s*)?택\s*\d", re.I)
 TITLE_SIZE_LETTERS = re.compile(r"(?<![A-Za-z\d])(XXS|2XS|XS|XL|XXL|2XL|XXXL|3XL|4XL|FREE)(?![A-Za-z\d])", re.I)
-TITLE_SEASON = re.compile(r"(?<![A-Za-z\d])(\d{2}|\d{4})\s?(?:FW|SS|F/W|S/S|AW)(?![A-Za-z])", re.I)
+# ... and "2026년 SS시즌" (2026-11-24, 10160025240: went out as "Volvik Golfwear 2026 SS Men's ...")
+TITLE_SEASON = re.compile(r"(?<![A-Za-z\d])(\d{2}|\d{4})\s?(?:년\s?)?(?:FW|SS|F/W|S/S|AW)(?:\s?시즌)?(?![A-Za-z])", re.I)
+# a seller's promotion word in a garment title (2026-11-24, 5489884876: "마스터베어 인기 BEST 골프팬츠" went out as
+# "MASTER BEAR BEST Golf Pants"): left out, and its English taken out of the answer
+TITLE_PROMO = re.compile(r"(?<![A-Za-z가-힣])(?:인기|BEST|베스트)(?![A-Za-z가-힣])", re.I)
+TITLE_PROMO_EN = r"Best[- ]?Sellers?|Best|Popular"
+# The English words a garment title's answer loses whatever the model wrote (strip, verify): the briefs leave them
+# out and the model kept them (the golf pants pilot review, 2026-11-24). A Korean word -> its English.
+# - a word of one variant (pants, 50002801): 9부 where 롱 is sold too (6384912528: "9-Length Cropped" over 8 cuts),
+#   숏 (5746242591: "VT Short Inseam" over 숏 and 롱), an optional fleece or cargo (10997837767 기모 추가: 기모없음 /
+#   기모추가; 5990911618 원단: 기본 / 기모 / 카고 went out as "Fleece-Lined Cargo"): an option axis with a value that
+#   has it and one that has not ("기모없음" has not)
+# - a fit word on a listing of styles none of which says it (5979440160: "레귤러핏" over 26 S/S 골프바지 / 기모골프바지,
+#   the fleece style slim): an option axis whose every value names a garment (바지, 팬츠)
+PANTS_VARIANT_WORDS = (
+    ("기모", r"Fleece[- ]Lined|Brushed[- ]Fleece|Brushed|Fleece"),
+    ("카고", r"Cargo"),
+    ("9부", r"9[- ]?(?:/\s?10[- ]?)?Length|9/10|Ankle[- ]Length|Cropped"),
+    ("7부", r"7[- ]?(?:/\s?10[- ]?)?Length|7/10|Capri|Cropped"),
+    ("롱", r"Long(?:[- ](?:Inseam|Length))?|Full[- ]Length"),
+    ("숏", r"Short(?:[- ](?:Inseam|Length))?"),
+    ("레귤러핏", r"Regular[- ]Fit"),
+    ("슬림핏", r"Slim[- ]Fit|Slim"),
+    ("일자", r"Straight[- ](?:Leg|Fit)|Straight"),
+    ("부츠컷", r"Boot[- ]?Cut"),
+)
+PANTS_FIT_WORDS = ("레귤러핏", "슬림핏", "일자", "부츠컷")
+_GARMENT = re.compile(r"바지|팬츠|슬랙스|조거")
+_NO_WORD = r"\s*(?:없음|없는|X(?![A-Za-z])|미포함|안함|제외)"
+# 와이드 밴딩 is a wide waistband, a wide leg only beside the garment or a fit (2026-11-24, 6689446962: "와이드 밴딩 ...
+# 일자" went out as "Wide-Leg", the 하의핏 row 슬림핏)
+_WIDE_BAND = re.compile(r"와이드\s*밴딩")
+_WIDE_LEG = re.compile(r"와이드\s*(?:팬츠|바지|슬랙스|핏|레그|부츠컷)|세미\s*와이드")
+# cotton in a title the material row does not list (2026-11-24, 8269563762: "나이키 골프 바지 면 배기", 소재 폴리에스테르,
+# 나일론, 기타, went out as "Nike Men's Cotton ...")
+_COTTON = re.compile(r"(?<![가-힣])(?:면|코튼)(?=\s|$|바지|팬츠|소재|\d)")
+_COTTON_ROW = re.compile(r"면|코튼|cotton", re.I)
+# a model code like the ones the options carry, which no option value carries (2026-11-24, 8772595840: "HG1712 HG1713
+# HG1715" in the title, the colours HG1713 / HG1715 only)
+_MODEL_CODE = re.compile(r"(?<![A-Za-z0-9])([A-Za-z]{1,4})\d{3,}[A-Za-z0-9]*(?![A-Za-z0-9])")
 SCHEMA = {"type": "object", "additionalProperties": False, "required": ["items"],
           "properties": {"items": {"type": "array", "items": {
               "type": "object", "additionalProperties": False, "required": ["id", "en"],
@@ -365,6 +409,94 @@ def same_brand_line(brand: str, vendor: str) -> bool:
     return bool(b) and bool(v) and (v.startswith(b) or b.startswith(v))
 
 
+def _say(item: dict[str, Any], text: str) -> None:
+    item["context"] = "; ".join([*([item["context"]] if item.get("context") else []), text])
+
+
+def _has_word(value: str, word: str) -> bool:
+    """`value` says `word`, not its absence ("기모없음", "기모 X", "노기모")."""
+    w = re.escape(word)
+    return word in value and not re.search(w + _NO_WORD, value) and not re.search(r"(?:노|무)" + w, value)
+
+
+def one_variant_word(word: str, options: list[dict[str, Any]], fit: bool = False) -> bool:
+    """`word` of a pants title is one variant's: an option axis has a value that says it and one that does not; a fit
+    word (`fit`) also when an axis lists styles (every value a garment: "26 S/S 골프바지 / 기모골프바지") not all of
+    which say it."""
+    for o in options:
+        values = o.get("values_ko") or []
+        said = [_has_word(v, word) for v in values]
+        if any(said) and not all(said):
+            return True
+        if fit and len(values) >= 2 and all(_GARMENT.search(v) for v in values) and not all(said):
+            return True
+    return False
+
+
+def garment_title(item: dict[str, Any], category: str, product: dict[str, Any], seasons: list[str]) -> None:
+    """A garment title's words the English must not keep (the golf pants pilot review, 2026-11-24): each is told to
+    the model (context), freed from the number / code check (drop) and taken out of the answer (strip, verify), as
+    the model kept them though the briefs leave them out. Every TITLE_SIZES category: the season code's letters
+    ("... Golf Pants FW", 7221598523), a promotion word (인기 / BEST), a choice count's English ("2 Styles"), a model
+    code no option value carries where the values carry its siblings. Pants (50002801): a word of one variant
+    (PANTS_VARIANT_WORDS), 와이드 밴딩 as a wide leg, cotton the material row does not list."""
+    source = item["source"]
+    options = product.get("options") or []
+    strip: list[str] = []
+    drop: list[str] = []
+    letters = {re.sub(r"[^A-Z]", "", s.upper()) for s in seasons}            # "2026년 SS시즌" -> SS, "23F/W" -> FW
+    kinds = [p for k, p in (("FW", "F/?W"), ("SS", "S/?S"), ("AW", "A/?W")) if k in letters]
+    if kinds:                                       # "... Golf Pants FW", "2026 SS Men's ...": the code, its year
+        strip.append(r"(?:(?:\d{2}|\d{4})\s?)?(?:" + "|".join(kinds) + r")(?:\s?Season)?")
+    promo = TITLE_PROMO.findall(source)
+    if promo:
+        drop += promo
+        strip.append(TITLE_PROMO_EN)
+        _say(item, " / ".join(promo) + " is the seller's promotion: leave it out of the title")
+    if item.get("pick"):
+        strip.append(r"\d{1,2}[- ]?(?:Styles?|Types?|Colou?rs?|Kinds?)")
+    value_codes = codes(" ".join(v for o in options for v in o.get("values_ko") or []))
+    found = [(m.group(0), m.group(1).upper()) for m in _MODEL_CODE.finditer(source)]
+    carried = {p for c, p in found if c.upper() in value_codes}
+    gone = [c for c, p in found if p in carried and c.upper() not in value_codes]
+    if gone:
+        drop += gone
+        strip += [re.escape(c) for c in gone]
+        _say(item, "model codes no option sells: " + ", ".join(gone) + ": leave them out of the title")
+    if category == "50002801":
+        words = [(ko, en) for ko, en in PANTS_VARIANT_WORDS
+                 if ko in source and one_variant_word(ko, options, ko in PANTS_FIT_WORDS)]
+        if words:
+            strip += [en for _, en in words]
+            drop += [ko for ko, _ in words if re.search(r"\d", ko)]
+            _say(item, "only some variants are " + ", ".join(ko for ko, _ in words) + " (the options sell the others): "
+                 "leave them out of the title")
+        if _WIDE_BAND.search(source) and not _WIDE_LEG.search(source):
+            strip.append(r"Wide[- ]Leg(?:ged)?")
+            _say(item, "와이드 밴딩 is a wide waistband, not a wide leg")
+        rows = product.get("composition_ko") or []
+        if _COTTON.search(source) and rows and not any(_COTTON_ROW.search(str(r.get("value_ko") or "")) for r in rows):
+            strip.append(r"Cotton")
+            _say(item, "the material row lists no cotton (면): leave cotton out of the title")
+    if drop:
+        item["drop"] = [*(item.get("drop") or []), *drop]
+    if strip:
+        item["strip"] = [*(item.get("strip") or []), *strip]
+
+
+def strip_words(text: str, patterns: list[str]) -> str:
+    """`text` without the whole words `patterns` match (case aside), its spaces and commas tidied; a joining word
+    beside one goes with it ("Straight-Leg and Bootcut", both one variant's, 5367746327: not "Elastic-Waist and Golf
+    Pants"), one of two kept ("A and B and C" -> "A and C")."""
+    join = r"(?:and|or|&|/)"
+    for p in patterns:
+        text = re.sub(r"(?P<pre>\s+" + join + r")?(?:^|\s+)(?<![\w/'-])(?:" + p + r")(?![\w/-])(?P<post>\s+" + join
+                      + r"(?=\s))?", lambda m: (m.group("pre") or "") + " " if m.group("pre") and m.group("post")
+                      else " ", " " + text, flags=re.I)
+    text = re.sub(r",\s*,", ",", re.sub(r"\s+", " ", text))
+    return re.sub(r"\s+([,)])", r"\1", text).replace("()", "").strip(" ,-/")
+
+
 def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, str], str],
          tenant: str, brands: dict[tuple[str, str], str] | None = None, reask: bool = False,
          fixed: Collection[tuple[str, str]] = (), context: str | None = None
@@ -475,16 +607,25 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
             letters = TITLE_SIZE_LETTERS.findall(item["source"])
             if letters:
                 item["free_codes"] = [*(item.get("free_codes") or []), *(x.upper() for x in letters)]
+                # ... and the count of "3XL" / "2XS" (2026-11-24, 9232590815: "... 연습복 3XL" failed "numbers changed:
+                # missing 3" while the English rightly left the size out)
+                counts = [x[0] for x in letters if x[0].isdigit()]
+                if counts:
+                    item["free_numbers"] = [*(item.get("free_numbers") or []), *counts]
             # a season code may go whole, its letters too: "22ss", "23FW" failed "codes lost" (the second
             # windbreaker pilot 2026-11-21, 7114115147, 11092759396) while only its digits were freed
-            seasons = [m.group(0) for m in TITLE_SEASON.finditer(item["source"])]
+            season_codes = [m.group(0) for m in TITLE_SEASON.finditer(item["source"])]
+            seasons = list(season_codes)
             # "1+1" (a 2-Pack) and a choice count ("3종 택1", "6컬러"): the brief says them otherwise or leaves them out
             # (2026-11-21, the tops pilot: "... 1+1", "Choose 1 of 3 pcs" kept to keep their digits)
             seasons += [m.group(0) for m in TITLE_PICK.finditer(item["source"])]
+            run = TITLE_SIZE_RUN.get(str(category))
+            seasons += run.findall(item["source"]) if run else []
             if any(not re.search(r"\+", m.group(0)) for m in TITLE_PICK.finditer(item["source"])):
                 item["pick"] = True                 # a choice of styles: never "pcs" in English (verify)
             if seasons:
                 item["drop"] = [*(item.get("drop") or []), *seasons]
+            garment_title(item, str(category), product, season_codes)
         if kind == "title" and again and context:
             item["context"] = "; ".join([*([item["context"]] if item.get("context") else []), context])
         if kind == "option_name" and ko in placeholders:
@@ -587,7 +728,10 @@ def _checked_source(item: dict[str, Any]) -> str:
     text = _BRACKETS_RE.sub(" ", item["source"])
     if item.get("cut"):                             # Naver's cut word, at the end only (C48)
         text = re.sub(r"\s*" + re.escape(item["cut"]) + r"\s*$", " ", text)
-    for word in item.get("drop") or []:             # spacing aside: the note joins "13 PCS" as "13PCS" (C47)
+    # spacing aside: the note joins "13 PCS" as "13PCS" (C47); the longest first, so a word inside another does not
+    # break it (2026-11-24, 7221598523: the note's "25" went before "25 FW" and left "codes lost: missing FW";
+    # 5093872434: "30" before "30-46size" left 46SIZE)
+    for word in sorted(item.get("drop") or [], key=lambda w: -len("".join(w.split()))):
         bare = "".join(word.split())
         if bare:
             text = re.sub(r"\s*".join(map(re.escape, bare)), " ", text)
@@ -619,6 +763,8 @@ def verify(items: list[dict[str, Any]], text: str) -> tuple[dict[str, str], list
             problems.append("duplicate id")
         seen.add(rid)
         out = out.strip() if isinstance(out, str) else ""
+        if out and item.get("strip"):                   # a garment title's words the briefs leave out (garment_title)
+            out = strip_words(out, item["strip"])
         if not out:
             problems.append("empty")
         if has_hangul(out):

@@ -416,3 +416,120 @@ def test_a_size_letter_in_a_garment_title_may_be_left_out():
     assert not T.TITLE_SIZE_LETTERS.findall("AXL22 XL2")
     item = {"id": "t", "kind": "title", "source": "여성골프웨어 백 플리츠 골프스커트 스판 주름 XL 골프치마", "free_codes": ["XL"]}
     assert T.verify([item], json.dumps({"items": [{"id": "t", "en": "Women's Back-Pleated Stretch Golf Skirt"}]}))[1] == []
+
+
+# ---- golf pants titles (50002801, the pilot review 2026-11-24): real titles and option rows of fairwardgolf --------
+
+PANTS = "50002801"
+
+
+def _pants_title(tmp_path, title_ko, options=(), notes=(), composition=()):
+    """The title item plan() asks the model for: a pants product with these title, options, notes and fibre rows."""
+    import translation_dicts as D
+    prepared = {"key": "fairwardgolf:naver:1:1", "source": {"category_id": PANTS},
+                "notes": [{"code": c, "detail": d} for c, d in notes],
+                "product": {"title_ko": title_ko, "options": [{"name_ko": n, "values_ko": list(v)} for n, v in options],
+                            "composition_ko": [{"label_ko": "소재", "value_ko": v} for v in composition]},
+                "texts": [{"id": "title:t", "kind": "title", "ko": title_ko}]}
+    dicts = D.Dictionaries(str(tmp_path / "live"), str(tmp_path / "none"))
+    return next(i for i in T.plan(prepared, dicts, {}, TENANT)[2] if i["kind"] == "title")
+
+
+def _answer(item, en):
+    ok, failed = T.verify([item], json.dumps({"items": [{"id": item["id"], "en": en}]}))
+    return ok.get(item["id"]), [p for f in failed for p in f["problems"]]
+
+
+def test_a_pants_titles_size_count_and_size_run_may_be_left_out(tmp_path):
+    """9232590815: "... 연습복 3XL" failed "numbers changed: missing 3" (the letters were free, not their count);
+    5093872434: "... 빅사이즈 30-46size" failed "missing 46, codes lost: missing 46SIZE" (46 over the waists, the
+    run glued to SIZE; the note's "30" went before the run and broke it)."""
+    item = _pants_title(tmp_path, "여성골프바지 골프 조거팬츠 카고바지 빅사이즈 연습복 3XL",
+                        [("사이즈", ["S", "XL", "2XL", "3XL"])], [("title_names_one_variant", "XL")])
+    assert _answer(item, "Hallo Golf Women's Cargo Jogger Golf Pants") == ("Hallo Golf Women's Cargo Jogger Golf Pants", [])
+    item = _pants_title(tmp_path, "쟌피엘 가을 남자 스판 골프바지 골프웨어 허리밴딩 빅사이즈 30-46size",
+                        [("사이즈", ["30", "32", "34", "36", "38", "40"])], [("title_names_one_variant", "30")])
+    assert _answer(item, "Jean Pierre Men's Stretch Elastic-Waist Golf Pants")[1] == []
+    assert T.TITLE_SIZE_RUN[PANTS].findall("허리 42까지 34사이즈 30~46 size BG1234") == ["42까지", "34사이즈", "30~46 size"]
+    assert T.TITLE_SIZES[PANTS].findall("46 48 49") == ["46", "48"]
+
+
+def test_a_pants_titles_season_promotion_and_style_count_are_taken_out(tmp_path):
+    """7221598523 "25 FW 볼빅 ..." went out as "... Golf Pants FW"; 10160025240 "2026년 SS시즌 볼빅 ..." as "Volvik Golfwear
+    2026 SS Men's ..."; 5489884876 "마스터베어 인기 BEST 골프팬츠" as "MASTER BEAR BEST Golf Pants"; 12534121142 "...
+    2스타일 ... KPFMSL17" as "... KPFMSL17 2 Styles"."""
+    item = _pants_title(tmp_path, "25 FW 볼빅 남성 기모 골프 바지 남자 베이직 팬츠 데일리 가을 겨울",
+                        [("옵션", ["25FW", "26FW"])], [("title_names_one_variant", "25")])
+    assert _answer(item, "VOLVIK Men's Fleece-Lined Golf Pants FW") == ("VOLVIK Men's Fleece-Lined Golf Pants", [])
+    item = _pants_title(tmp_path, "2026년 SS시즌 볼빅 골프 남성 스트레치 여름 바지 배색 쿨 팬츠")
+    assert _answer(item, "Volvik Golfwear 2026 SS Men's Stretch Color-Block Golf Pants") == (
+        "Volvik Golfwear Men's Stretch Color-Block Golf Pants", [])
+    item = _pants_title(tmp_path, "제로다몰 봄여름가을겨울 마스터베어 인기 BEST 골프팬츠")
+    assert _answer(item, "MASTER BEAR BEST Golf Pants") == ("MASTER BEAR Golf Pants", [])
+    assert "promotion" in item["context"]
+    item = _pants_title(tmp_path, "[김영주골프] 봄가을 겨울기모 2스타일 프리미엄 스판 반밴딩 필드룩 남성 골프바지 KPFMSL17",
+                        [("색상", ["봄가을-블랙", "겨울기모-블랙"])])
+    assert _answer(item, "Kim Young Joo Golf Men's Stretch Elastic-Waist Golf Pants KPFMSL17 2 Styles") == (
+        "Kim Young Joo Golf Men's Stretch Elastic-Waist Golf Pants KPFMSL17", [])
+    # no season code in the title: a code with the season's letters in it stays
+    assert _answer(_pants_title(tmp_path, "볼빅 남성 골프 바지 VBSS123"), "Volvik Men's Golf Pants VBSS123")[0] == (
+        "Volvik Men's Golf Pants VBSS123")
+
+
+def test_a_word_of_one_pants_variant_is_taken_out(tmp_path):
+    """6384912528: "... 9부 일자핏 블랙 S" over 9부 and 롱, 일자핏 and 부츠컷 went out as "9-Length Cropped"; 5746242591
+    "VT까슬이 숏" over 숏(9부) and 롱(10부) as "VT Short Inseam"; 10997837767 기모 a +2,000 KRW option (기모없음 /
+    기모추가) as "Fleece-Lined"; 5990911618 원단 기본 / 기모 / 카고 as "Fleece-Lined Cargo"; 5979440160 레귤러핏 over two
+    styles (the fleece one slim) as "Regular-Fit"."""
+    cuts = ["(간절기)9부 일자핏", "(기모)9부일자핏", "(간절기)롱일자핏", "(기모)롱부츠컷"]
+    item = _pants_title(tmp_path, "여성골프바지 빅사이즈 여자골프웨어 골프복 간절기 골프연습복 9부 일자핏 블랙 S",
+                        [("계절", cuts), ("컬러", ["블랙", "네이비"])])
+    assert _answer(item, "L.TO.L Golf Women's 9-Length Cropped Golf Pants") == ("L.TO.L Golf Women's Golf Pants", [])
+    assert "9부, 일자" in item["context"]
+    item = _pants_title(tmp_path, "여성 가을 겨울 골프바지 골프복 연습장복장 빅사이즈 골프웨어 VT까슬이 숏",
+                        [("팬츠 종류", ["VT까슬이 숏(9부)", "VT까슬이 롱(10부)", "VT기모 숏(9부)"])])
+    assert _answer(item, "Women's Golf Pants VT Short Inseam")[0] == "Women's Golf Pants VT"
+    item = _pants_title(tmp_path, "여자 골프 와이드 팬츠 바지 기모 빅사이즈 여자골프웨어", [("기모 추가", ["기모없음", "기모추가"])])
+    assert _answer(item, "JN Women's Fleece-Lined Wide-Leg Golf Pants")[0] == "JN Women's Wide-Leg Golf Pants"
+    item = _pants_title(tmp_path, "여성골프바지 골프조거팬츠 골프웨어 기본 카고 기모 민그린", [("원단", ["기본", "기모", "카고"])])
+    assert _answer(item, "Min Green Women's Fleece-Lined Cargo Jogger Golf Pants")[0] == "Min Green Women's Jogger Golf Pants"
+    item = _pants_title(tmp_path, "26 S/S 아디다스 골프 바지 봄 가을 남자 골프웨어 레귤러핏 신축성 좋은",
+                        [("상품", ["26 S/S 아디다스 골프바지", "아디다스 기모골프바지 (가을/겨울)"])])
+    assert _answer(item, "Adidas Men's Regular-Fit Stretch Golf Pants")[0] == "Adidas Men's Stretch Golf Pants"
+    # 5367746327: "... 일자 부츠컷 ..." over 매끈일자 / 매끈부츠컷 went out as "... Straight-Leg and Bootcut Golf Pants"
+    item = _pants_title(tmp_path, "여성 골프바지 밴딩 뱃살보정 매끈 일자 부츠컷 빅사이즈 여성골프웨어",
+                        [("디자인", ["매끈일자 봄가을", "매끈일자 기모", "매끈부츠컷 봄가을"])])
+    assert _answer(item, "Baily White Women's Elastic-Waist Straight-Leg and Bootcut Golf Pants")[0] == (
+        "Baily White Women's Elastic-Waist Golf Pants")
+    assert T.strip_words("Cargo or Fleece-Lined and Stretch Golf Pants", ["Fleece[- ]Lined"]) == (
+        "Cargo or Stretch Golf Pants")
+    # every variant fleece-lined (7221598523: the season is the option), a fit word over colours: they stay
+    item = _pants_title(tmp_path, "25 FW 볼빅 남성 기모 골프 바지", [("옵션", ["25FW", "26FW"])])
+    assert _answer(item, "Volvik Men's Fleece-Lined Golf Pants")[0] == "Volvik Men's Fleece-Lined Golf Pants"
+    assert "strip" not in _pants_title(tmp_path, "남성 레귤러핏 9부 골프바지", [("컬러", ["블랙", "네이비"])])
+    assert not T.one_variant_word("기모", [{"values_ko": ["무기모", "노기모"]}, {"values_ko": ["기모추가", "기모 추가"]}])
+    assert T.one_variant_word("기모", [{"values_ko": ["기모 X", "기모 O"]}])
+
+
+def test_a_pants_title_wide_band_cotton_and_unsold_codes(tmp_path):
+    """6689446962 "와이드 밴딩 ... 일자" (a wide waistband, a slim straight leg) went out as "Wide-Leg"; 8269563762
+    "나이키 골프 바지 면 배기" (소재 폴리에스테르, 나일론, 기타) as "Cotton"; 8772595840 "HG1712 HG1713 HG1715" with the
+    colours HG1713 / HG1715 only kept HG1712."""
+    item = _pants_title(tmp_path, "여성 골프바지 ﻿와이드 밴딩 뱃살보정 ﻿일자 벨트 빅사이즈 ﻿여성골프웨어")
+    assert _answer(item, "Baily White Women's Wide-Leg Elastic-Waist Golf Pants")[0] == (
+        "Baily White Women's Elastic-Waist Golf Pants")
+    assert "strip" not in _pants_title(tmp_path, "여자 골프 와이드 팬츠 와이드밴딩")          # a wide leg said too
+    item = _pants_title(tmp_path, "나이키 골프 바지 면 배기 남성 팬츠 발목 기장 봄 옷 웨어 남자 드라이핏 밴딩 골프복",
+                        composition=["폴리에스테르, 나일론, 기타"])
+    assert _answer(item, "Nike Men's Cotton Elastic-Waist Cropped Golf Pants")[0] == (
+        "Nike Men's Elastic-Waist Cropped Golf Pants")
+    assert "strip" not in _pants_title(tmp_path, "남성 골프 면바지", composition=["면 97%, 스판 3%"])
+    assert "strip" not in _pants_title(tmp_path, "남성 골프 면바지")                       # no material row: kept
+    item = _pants_title(tmp_path, "아디다스 윈드레디 4웨이 스트레치 여성 골프바지 HG1712 HG1713 HG1715",
+                        [("색상", ["HG1713 그레이3", "HG1715 블랙"]), ("사이즈", ["XS", "S"])])
+    assert _answer(item, "Adidas Women's Wind.RDY 4-Way Stretch Golf Pants HG1712 HG1713 HG1715") == (
+        "Adidas Women's Wind.RDY 4-Way Stretch Golf Pants HG1713 HG1715", [])
+    # the values carry no code of the title's (colours only): every code stays and must survive
+    item = _pants_title(tmp_path, "아디다스 여성 골프바지 HG1712 HG1713", [("색상", ["그레이", "블랙"])])
+    assert _answer(item, "Adidas Women's Golf Pants HG1713")[1] == ["numbers changed: missing 1712",
+                                                                     "codes lost: missing HG1712"]
