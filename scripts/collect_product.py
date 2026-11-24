@@ -16,7 +16,7 @@ per-product step, moved here so a job can call it one product at a time; example
 -> collect_guard.Outcome: complete / partial (with the data) / not_taken. Raises SourceStopped(status, error) when
 the whole source must stop or wait: a busy adapter (409), a held listing tab gone (410: job.py scroll opens a new
 one), any 503 from the adapter (its error starts with the kind: "wall:", "naver error page:", "adapter error:";
-ENDPOINTS.md), a 502 "blocked the request" (not one store's own login gate: a partial `store_login`), a refused CDN.
+ENDPOINTS.md), a 502 "blocked the request", a refused CDN.
 
     outcome = guard.run(key, lambda: collect(api, store, table, row, media_dir, query=QUERY, category=CATEGORY))
 """
@@ -42,21 +42,10 @@ def specs_for(api: NaverApiClient, link: str, query: str | None) -> T.ProductSpe
     return None
 
 
-def store_login(e: ApiError) -> bool:
-    """A 502 "login gate on store <slug>": that one store sends every visitor to the login page (2026-11-24,
-    sunderland, a Cutter & Buck seller: its product and its store page both, while every other store answered 200).
-    The product is partial (`store_login`): the guard tries it once more and defers it; two products in a row
-    gated stop the run as before, so a login wall on every store still stops."""
-    return e.status == 502 and "login gate on store " in (e.error or "")
-
-
 def stopped(e: ApiError) -> bool:
     """A wall (503 from the adapter, 502 "blocked the request" from the box: captcha, login, 403/418/429), a busy
     adapter (409) or a held listing tab gone (410, only from /listing-tabs: the product was not read, the caller
-    opens a new tab): the whole source stops (or the caller waits), no product is marked. One store's own login
-    gate is not a stop (store_login)."""
-    if store_login(e):
-        return False
+    opens a new tab): the whole source stops (or the caller waits), no product is marked."""
     return e.status in (409, 410, 503) or e.status == 502 and "blocked the request" in (e.error or "")
 
 
@@ -73,8 +62,6 @@ def collect(api: NaverApiClient, store: Any, table: dict, row: T.ListingRow, med
             raise SourceStopped(f"{e.status} {e.error}", status=e.status, error=e.error)
         if e.status == 404:
             return Outcome("not_taken", "not_found", e.error)
-        if store_login(e):
-            return Outcome.partial("store_login", e.error)
         return Outcome.partial(f"api_{e.status}", e.error)
     if page is None:
         return Outcome("not_taken", "card_not_found")
