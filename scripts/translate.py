@@ -538,6 +538,9 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
     for t in prepared.get("texts") or []:
         tid, kind, ko = t["id"], t["kind"], t["ko"]
         own = kind in PRODUCT_KINDS or (kind == "option_name" and ko in placeholders)
+        # a value this product had to tell apart from another (a collision's answer, below) is the product's own
+        local = None if own else store.get((key, tid))
+        own = own or local is not None
         hit = store.get((key, tid)) if own else dicts.get(kind, ko, category)
         if hit is None and kind in ("spec_value", "fact_value"):
             hit = dicts.get("brand", ko)                 # a 브랜드 / 제조사 row: the shop's vendor spelling
@@ -644,7 +647,8 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
             if by.get(tid) in ("dictionary", "rule"):
                 t = by_text[tid]
                 pending.append({"id": tid, "kind": t["kind"], "source": sanitize(t["kind"], t["ko"], tenant, category),
-                                "context": "must differ from: " + ", ".join(english[x] for x in same if x != tid)})
+                                "context": "must differ from: " + ", ".join(english[x] for x in same if x != tid),
+                                "differ": True})
                 en.pop(tid)
                 by.pop(tid)
     return en, by, pending
@@ -936,10 +940,14 @@ def translate_product(prepared: dict[str, Any], dicts: Dictionaries, store: dict
     asked = bool(calls)
     new_texts = []
     placeholders = _placeholders(prepared)
+    # a collision's answer stays with the product (2026-11-24: 엔조이핏 10107163054 sells 차콜 and 먹색, both
+    # "Charcoal"; the re-ask's "Charcoal Gray" went into the category dictionary and renamed 차콜 in 6+ live products)
+    differ = {i["id"] for i in pending if i.get("differ")}
     for t in prepared.get("texts") or []:
         if by.get(t["id"]) != "model":
             continue
-        if t["kind"] in PRODUCT_KINDS or (t["kind"] == "option_name" and t["ko"] in placeholders):
+        if t["kind"] in PRODUCT_KINDS or (t["kind"] == "option_name" and t["ko"] in placeholders) \
+                or t["id"] in differ:
             store[(key, t["id"])] = en[t["id"]]
             row = {"key": key, "id": t["id"], "kind": t["kind"], "ko": t["ko"], "en": en[t["id"]],
                    "by": model_of.get(t["id"]), "at": now}

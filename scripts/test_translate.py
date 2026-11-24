@@ -837,6 +837,14 @@ def test_dictionary_values_that_collide_are_asked_again(tmp_path):
     assert len(asked) == 2 and all(i["context"] == "must differ from: Black" for i in asked)
     out = T.translate_product(p, d, {}, TENANT, FakeModel(), "t")
     assert out.record["status"] == "translated"
+    # 2026-11-24 (엔조이핏 10107163054, 차콜 / 먹색 both "Charcoal"): the answers stay with the product, the category
+    # dictionary keeps "Black" for every other product; the next plan reads them from the store
+    assert d.get("option_value", "블랙", "50002788") == "Black" and d.get("option_value", "검정", "50002788") == "Black"
+    rows = [r for r in out.new_texts if r["kind"] == "option_value"]
+    assert len(rows) == 2
+    store = {(r["key"], r["id"]): r["en"] for r in out.new_texts}
+    en, by, pending = T.plan(p, d, store, TENANT)
+    assert not [i for i in pending if i["kind"] == "option_value"] and len({en[r["id"]] for r in rows}) == 2
 
 
 def test_a_torn_store_line_is_skipped(tmp_path):

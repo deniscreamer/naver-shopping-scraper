@@ -184,7 +184,9 @@ One request per product, with the system prompt in `prompts/translate_system.md`
 - no Hangul is left;
 - the source's numbers and Latin codes are kept;
 - the text is within its length limit;
-- the option values stay distinct.
+- the option values stay distinct. Two values of one axis that the dictionaries make the same English are asked
+  again ("must differ from"); the answers are the product's own (`texts.jsonl`), never the category dictionary's
+  (2026-11-24: 엔조이핏 10107163054's 차콜 / 먹색 re-ask renamed 차콜 "Charcoal Gray" in 6+ live products).
 
 What fails goes back in the same conversation (`prompts/translate_fix.md`), at most twice. What still fails
 leaves the product `untranslated`; what passed is kept.
