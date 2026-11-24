@@ -146,6 +146,7 @@ def test_a_latin_brand_is_read_as_whole_words_only():
 def test_the_origin_names_the_firm_not_the_making():
     assert B.distributors("중국산(중국 oem / 인파로)") == ["인파로"]       # 5859220164
     assert B.distributors("중국(OEM)") == []
+    assert B.distributors("중국산(사입)") == []                             # bought wholesale, 4954391160
 
 
 def test_a_brand_inside_a_korean_branch_name_comes_last():

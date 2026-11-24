@@ -390,7 +390,8 @@ Code: `transform.prepare`, `brand_fallback.py` (2026-11-08).
   ("부 주니어 골프 세트 클럽 Ages 4-8 (44-49 )") at 631-689,000 KRW, and 11674983361 (UTIMATE / GYMAX), 2026-11-12.
 - A school or group pack of one club ("학교/단체 세트(10개)", 10348222504): left out by the title (`group_pack`,
   `listing_title_rules.json`).
-- 원산지 brackets may name the making with the maker ("중국 oem / 인파로"): the parts.
+- 원산지 brackets may name the making with the maker ("중국 oem / 인파로"): the parts. "사입" (bought wholesale) in
+  them names no firm ("중국산(사입)", 4954391160, 2026-11-24: it was the brand).
 - A title may start with a Korean branch that imports another brand ("던롭스포츠코리아 젝시오 12": XXIO): a brand
   inside such a name comes last.
 - A number after 클럽 is mostly not a count: an age ("골프클럽 6~8세 드라이버"), a loft ("클럽 56도웨지"), a height:

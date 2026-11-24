@@ -299,7 +299,10 @@ def _in_distributor(rest: str, brand: str) -> bool:
 
 # a part of the brackets that names the making, not a firm: "중국산(중국 oem / 인파로)" (5859220164, 2026-11-12) names
 # 인파로; the brackets are split on "/" and "," and such parts go
-_MAKING = re.compile(r"(?i)\b(?:oem|odm)\b|^(?:중국|한국|국산|일본|대만|베트남|태국|미국)(?:산|\s|$)|제조|생산|수입")
+_MAKING = re.compile(r"(?i)\b(?:oem|odm)\b|^(?:중국|한국|국산|일본|대만|베트남|태국|미국)(?:산|\s|$)|제조|생산|수입"
+                     # "사입" (bought wholesale): how the seller sourced it, never a firm ("중국산(사입)" became the
+                     # brand 사입; 2026-11-24, 4954391160, a Promore pants listing)
+                     r"|^사\s*입$")
 # a Korean address in the brackets names a place, never a firm (2026-11-20, the knit cardigan review: 카멜브리즈 writes
 # "국산(서울특별시 동대문구)" and "국산(인천광역시 서구)", 8212382236 and 5932679597 went out as the brands
 # "Dongdaemun-gu, Seoul" and 인천광역시 서구): a province or metropolitan city (서울, 경기도, 인천광역시 ...), a country
