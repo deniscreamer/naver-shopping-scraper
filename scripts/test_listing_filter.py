@@ -620,6 +620,9 @@ def test_skirts_need_a_skirt_word_and_leave_out_rain_and_trousers(title, code):
     ("남성 골프바지 바지 볼링 당구 유니폼 남자 작업복 겨울 기모 골프웨어GLBLU1M502", "title:not_golf_use"),
     ("파리게이츠 잭 바니 여성 골프 레인웨어 바지 4컬러", "title:rain"),
     ("남성 골프 바지 드라이빙레인지 웨어", None),                                    # 레인 alone is no rain
+    # the drafts' review (2026-11-24): a top or tactical work pants in a title too
+    ("남성 골프바지 + 기모 긴소매 세트", "title:other_item"),
+    ("언더아머 골프 택티컬 팬츠", "title:not_golf_use"),
 ])
 
 

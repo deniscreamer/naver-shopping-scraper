@@ -4276,7 +4276,7 @@
    },
    {
     "code": "other_item",
-    "why": "2026-11-23 (Golf Pants, the pilot's review): another product sold as an option of the pants: golf belts (Alkans 4410392617: \"91_SM 골프벨트01\", its Free(허리28~36인치) went out as a One Size pants row) and polo shirts or T-shirts (Adidas 5534297375: \"아디다스 긴팔 폴로티\", its M(95) went out as W37). A variant naming one holds the product (variant_screen); a title naming one is a set or a mixed listing.",
+    "why": "2026-11-23 (Golf Pants, the pilot's review): another product sold as an option of the pants: golf belts (Alkans 4410392617: \"91_SM 골프벨트01\", its Free(허리28~36인치) went out as a One Size pants row) and polo shirts or T-shirts (Adidas 5534297375: \"아디다스 긴팔 폴로티\", its M(95) went out as W37). A variant naming one holds the product (variant_screen); a title naming one is a set or a mixed listing. 2026-11-24 (Golf Pants, the drafts' review): a top sold as a colour of the pants (Volvik 10933958968: \"기모긴소매블랙(어깨배색)\", fleece long-sleeve tops sized as pants waists): 긴소매, 반소매, 긴팔, 반팔, 맨투맨 and 상의 (not after 이 or 세: 이상의, 세상의); measured on the 164 collected products of 50002801 (option values: only 10933958968 newly held, the Adidas T-shirt options were already) and 1,717 titles (the two probes' 1,495, the jobs' listings' 222): no title hit.",
     "tokens": [
      {
       "text": "골프벨트",
@@ -4307,6 +4307,39 @@
       "text": "카라티",
       "notFollowedBy": [],
       "notPrecededBy": []
+     },
+     {
+      "text": "긴소매",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "반소매",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "긴팔",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "반팔",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "맨투맨",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "상의",
+      "notFollowedBy": [],
+      "notPrecededBy": [
+       "이",
+       "세"
+      ]
      }
     ]
    },
@@ -4328,7 +4361,7 @@
    },
    {
     "code": "not_golf_use",
-    "why": "2026-11-23 (Golf Pants, the brand probe: 14 queries, 1,347 cards of 50002801 read on their sheets): pants that are not golf pants though their titles say golf (the owner 2026-11-23: only what is clearly for golf): fishing and biking padded pants (낚시), work pants for golf, bowling and billiards (작업복), dress and office slacks (정장바지, 업무용), a training suit set (트레이닝복세트). Not 등산 (LOLOALLOY's golf padded pants say it), 셋업 (set-up golf pants), 레깅스 (padded pants say it), 세트 / 트레이닝복 (golf pants say them).",
+    "why": "2026-11-23 (Golf Pants, the brand probe: 14 queries, 1,347 cards of 50002801 read on their sheets): pants that are not golf pants though their titles say golf (the owner 2026-11-23: only what is clearly for golf): fishing and biking padded pants (낚시), work pants for golf, bowling and billiards (작업복), dress and office slacks (정장바지, 업무용), a training suit set (트레이닝복세트). Not 등산 (LOLOALLOY's golf padded pants say it), 셋업 (set-up golf pants), 레깅스 (padded pants say it), 세트 / 트레이닝복 (golf pants say them). 2026-11-24 (Golf Pants, the drafts' review): tactical work or duty trousers (텍티컬, 택티컬, tactical: Under Armour 8162342503 sells \"3번 텍티컬 팬츠\", a badge clip and a knife pocket, beside its Drive and Matchplay golf pants); also the variant screen (CategoryRules.variant_screen): such a variant holds the product. Measured on the 164 collected products (option values: 8162342503 and 5003313978, both Under Armour's store 100339050) and 1,717 titles: no title hit.",
     "tokens": [
      {
       "text": "낚시",
@@ -4352,6 +4385,21 @@
      },
      {
       "text": "트레이닝복세트",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "텍티컬",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "택티컬",
+      "notFollowedBy": [],
+      "notPrecededBy": []
+     },
+     {
+      "text": "tactical",
       "notFollowedBy": [],
       "notPrecededBy": []
      }

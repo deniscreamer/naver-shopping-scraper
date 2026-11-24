@@ -1576,6 +1576,35 @@ def _split_joined(ov: dict[str, Any]) -> None:
             v["options_ko"] = picked + [size]
 
 
+_MODEL_NO_RE = re.compile(r"MODEL\s*NO\.?\s*[:：]?\s*([A-Z0-9][A-Z0-9-]{3,})", re.IGNORECASE)
+_WOMENS_WORD_RE = re.compile(r"여성|여자|우먼|레이디|women|ladies", re.IGNORECASE)
+_NOT_ONLY_WOMENS_RE = re.compile(r"남성|남자|남녀|공용|unisex|\bmen", re.IGNORECASE)
+_MODEL_BLOCK_END_RE = re.compile(r"MODEL\s*NO|SIZE|\d\s*/?\s*원", re.IGNORECASE)
+
+
+def womens_model_sold(variants: list[dict[str, Any]], ocr: list[list[str]]) -> str | None:
+    """A model code the description images label women's ("화이트베어 여성용" / name / "MODEL NO : M2-0B053") that a
+    variant's option value names ("M2-0B053_아이보리"), or None: a women's model sold inside a men's product (Master
+    Bear 5489884876, 2026-11-24: its S went out as the men's waist W28-29). The label is one of the up to 3 rows
+    before the MODEL NO row, back to the previous model's price, SIZE or MODEL NO row; a row naming men or unisex too
+    is no women's label."""
+    values = {re.sub(r"\s+", "", str(x)).upper() for v in variants for x in v.get("options_ko") or []}
+    for rows in ocr:
+        for i, row in enumerate(rows):
+            m = _MODEL_NO_RE.search(row)
+            if not m or not any(m.group(1).upper() in v for v in values):
+                continue
+            label = []
+            for prev in reversed(rows[max(0, i - 3):i]):
+                if _MODEL_BLOCK_END_RE.search(prev):
+                    break
+                label.append(prev)
+            text = " ".join(label)
+            if _WOMENS_WORD_RE.search(text) and not _NOT_ONLY_WOMENS_RE.search(text):
+                return m.group(1).upper()
+    return None
+
+
 def size_profile(cat: CategoryRules, gender: str | None) -> str:
     """The size profile of a product by the gender it states: men's tops (2026-11-21), unisex or mixed trousers sized
     as men's (Golf Pants, 2026-11-23), else the category's."""
@@ -1865,11 +1894,14 @@ def prepare(collected: CollectedLine, rules: ShopRules, run: str, line_no: int,
     if cat.sizes:                                   # apparel: US sizes from the product's own labels and chart
         gender = (stated.get("gender") or {}).get("value")
         profile = size_profile(cat, gender)
-        sizes = _sizes(ov, profile, cleaned["text"], image_rows(images_text if current(images_text, line) else None),
-                       brand.get("value"), details["name"])
+        ocr = image_rows(images_text if current(images_text, line) else None)
+        sizes = _sizes(ov, profile, cleaned["text"], ocr, brand.get("value"), details["name"])
         if cat.sizes_unisex and not gender and not sizes["held"] \
                 and any(v.get("us") != "One Size" for v in sizes["values"]):
             sizes["held"] = "no gender stated: men's or women's sizes cannot be told"    # Golf Pants (2026-11-23)
+        womens = womens_model_sold(ov["variants"], ocr) if gender == "mens" and cat.sizes_mens else None
+        if womens and not sizes["held"]:            # mixed gender (2026-11-24, 5489884876): sized as men's waists
+            sizes["held"] = f"a women's model sold in a men's product: {womens} (여성 in the description images)"
         if sizes["held"]:
             held.append({"code": "size_unmapped", "detail": sizes["held"][:200]})
         elif sizes["merged"]:

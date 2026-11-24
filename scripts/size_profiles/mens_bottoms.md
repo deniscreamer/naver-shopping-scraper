@@ -36,7 +36,11 @@ column or an 인치 row (JDX "호칭 / 92 / 100" over "인치 / 37 / 40") is tha
 the chart gives different inches (86 = 34, 88 = 35) are two sizes, never merged.
 
 A unisex or mixed pair is sized as men's; a pair whose seller states no gender holds size_unmapped ("no gender
-stated"): men's and women's waists cannot be told apart.
+stated"): men's and women's waists cannot be told apart. A men's product that sells a women's model holds
+size_unmapped ("a women's model sold in a men's product: <code>"): a variant's value names a model code whose card
+in the description images says 여성 / 여자 / women / ladies (and not men or unisex) in the rows before its
+`MODEL NO` (`transform.womens_model_sold`; Master Bear 5489884876, 2026-11-24: White Bear's women's M2-0B053, its S
+went out as W28-29).
 
 ## Brand rows (`brands`)
 

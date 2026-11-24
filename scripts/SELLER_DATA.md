@@ -344,6 +344,10 @@ Code: `attributes.py` (read by `placement.py`; 2026-11-08 on the 143 trial sets)
   in `<shop>/specs_by_owner.json` (`run_transform.apply_specs_by_owner`, [TRANSFORM.md](TRANSFORM.md) "The owner's
   spec row"; 2026-11-18). 12748958200 and 12748958492 (same template, live descriptions say men's) wait for the
   owner's look at their photos.
+- A men's listing of many models labels one model card women's only in its description images ("화이트베어 여성용"
+  / name / "MODEL NO : M2-0B053"), the option value only the code ("M2-0B053_아이보리"), 성별 남성용 (Master Bear
+  5489884876, 2026-11-24): `transform.womens_model_sold` holds the product size_unmapped (its S went out as W28-29);
+  [mens_bottoms](size_profiles/mens_bottoms.md).
 
 ### Brand
 

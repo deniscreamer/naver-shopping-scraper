@@ -921,7 +921,7 @@ def test_the_pants_profile_follows_the_stated_gender():
     assert [T.size_profile(pants, g) for g in ("mens", "womens", "unisex", "mixed", None)] == \
         ["mens_bottoms", "womens_pants", "mens_bottoms", "mens_bottoms", "womens_pants"]
     assert [T.size_profile(tops, g) for g in ("mens", "unisex", None)] == ["mens_tops", "womens_tops", "womens_tops"]
-    assert pants.variant_screen == ("shorts", "other_item") and not pants.reviewed
+    assert pants.variant_screen == ("shorts", "other_item", "not_golf_use") and not pants.reviewed
 
 
 def test_one_waist_in_inches_and_cm_is_one_size():
@@ -932,6 +932,54 @@ def test_one_waist_in_inches_and_cm_is_one_size():
                   [], None, "아디다스 골프 바지 남자", "mens_bottoms")
     assert [v["us"] for v in r["values"]] == ["W32", "W33", "W34", "W35", "W36"]
     assert r["merged"] == {"M(82)": "M(32)", "L(85)": "L(33)", "XXL(36)": "2XL(92)"}
+
+
+def _pants_variant_screen(value: str) -> str | None:
+    """The pants' variant screen as transform.prepare applies it: the codes of variant_screen, `requires` left out."""
+    import listing_filter as LF
+    from transform_shops import rules_for
+    codes = rules_for("fairwardgolf").categories["50002801"].variant_screen
+    screen = [{k: r[k] for k in r if k != "requires"} for r in LF.title_rules("50002801") if r["code"] in codes]
+    return LF.title_rule(value, screen)
+
+
+@pytest.mark.parametrize("value, code", [
+    # the drafts' review (2026-11-24): option values of the real products
+    ("기모긴소매블랙(어깨배색)", "title:other_item"),           # Volvik 10933958968: fleece long-sleeve tops
+    ("기모긴소매네이비(가슴배색)", "title:other_item"),
+    ("반팔 네이비", "title:other_item"), ("긴팔 화이트", "title:other_item"), ("맨투맨 그레이", "title:other_item"),
+    ("상의 블랙", "title:other_item"),
+    ("3번 텍티컬 팬츠", "title:not_golf_use"),                  # Under Armour 8162342503: tactical work pants
+    ("택티컬 카고 팬츠", "title:not_golf_use"), ("UA Tactical Pants", "title:not_golf_use"),
+    # what stays: the pants' own values
+    ("1번 드라이브 팬츠", None), ("2번 매치플레이 팬츠", None), ("기모바지 블랙", None), ("S/S 네이비", None),
+    ("M2-0B053_아이보리", None), ("30인치 이상의 허리", None),     # 이상의 is no 상의
+])
+def test_a_top_or_tactical_variant_holds_the_pants(value, code):
+    assert _pants_variant_screen(value) == code
+
+
+# 5489884876 (2026-11-24, the drafts' review): the description images' text, trimmed to the model cards around it
+_MASTER_BEAR_OCR = [[
+    "마스터베어", "힙포인트 히든밴딩 기모팬츠", "MODEL NO : M2-0B025", "SIZE: 30(M),32(L),34(XL),36(2XL),38(3XL)",
+    "아잉볼로", "전상품 무료배송", "허리스컴밴드 / 39,900 / 원",
+    "화이트베어 여성용", "슬림밋무지기모골프바지", "MODEL NO : M2-0B053", "SIZE : S,M,L", "IVORY / BLACK",
+    "전상품 무료배송", "허리양옆숨김백든 / 39,900 / 원",
+    "1-2INCH조철가능", "마스터베어포켓", "힙포인트숨김밴딩기모바지", "MODEL NO : M2-0B047",
+    "SIZE : 30(M),32(L),34(XL),36(2XL),38(3XL)"]]
+
+
+def test_a_womens_model_in_a_mens_product_is_found():
+    """Master Bear 5489884876: the White Bear women's model M2-0B053 sold in the men's pants; its S went out as the
+    men's waist W28-29."""
+    import transform as T
+    variants = [{"options_ko": ["M2-0B025_블랙", "30(M)"]}, {"options_ko": ["M2-0B053_아이보리", "S"]},
+                {"options_ko": ["M2-0B047_블랙", "32(L)"]}]
+    assert T.womens_model_sold(variants, _MASTER_BEAR_OCR) == "M2-0B053"
+    assert T.womens_model_sold([v for v in variants if "M2-0B053" not in v["options_ko"][0]], _MASTER_BEAR_OCR) is None
+    unisex = [["남녀공용 여성 남성", "MODEL NO : M2-0B053"]]          # a label naming men too is no women's model
+    assert T.womens_model_sold(variants, unisex) is None
+    assert T.womens_model_sold(variants, []) is None
 
 
 def test_a_tops_size_holds_in_the_mens_pants():
