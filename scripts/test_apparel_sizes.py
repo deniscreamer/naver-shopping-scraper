@@ -1081,6 +1081,23 @@ def test_a_trousers_length_before_the_size_is_an_option_of_its_own():
     assert A.split_length([{"name_ko": "사이즈", "values_ko": ["S", "M"]}]) is None
 
 
+def test_a_length_past_shopifys_three_options_joins_the_option_before_it():
+    """엔조이핏 10107163054 (2026-11-24): 스타일 / 사이즈 "9부 S" / 색상 split into four options; productSet refused
+    ("Can only specify a maximum of 3 options"): the length goes onto the style, a bare size's 기본 adds nothing."""
+    sizes = ["9부 S", "10부 S", "S", "M"]
+    ov = {"options": [{"name_ko": "스타일", "values_ko": ["01_일자핏", "07_데일리조거"]},
+                      {"name_ko": "사이즈", "values_ko": sizes}, {"name_ko": "색상", "values_ko": ["블랙"]}], "facts": [],
+          "variants": [{"options_ko": ["01_일자핏", "9부 S", "블랙"], "price_krw": 36800},
+                       {"options_ko": ["01_일자핏", "10부 S", "블랙"], "price_krw": 36800},
+                       {"options_ko": ["07_데일리조거", "S", "블랙"], "price_krw": 36800},
+                       {"options_ko": ["07_데일리조거", "M", "블랙"], "price_krw": 36800}]}
+    out = T._sizes(ov, "womens_pants", "", [], None, "여성 골프바지")
+    assert not out["held"] and [o["name_ko"] for o in ov["options"]] == ["스타일", "색상", "사이즈"]
+    assert ov["options"][0]["values_ko"] == ["01_일자핏 9부", "01_일자핏 10부", "07_데일리조거"]
+    assert [v["options_ko"] for v in ov["variants"]] == [["01_일자핏 9부", "블랙", "S"], ["01_일자핏 10부", "블랙", "S"],
+                                                         ["07_데일리조거", "블랙", "S"], ["07_데일리조거", "블랙", "M"]]
+
+
 def test_a_waist_glued_to_a_colour_or_a_bracket_is_split_in_the_waist_profiles():
     """promore 4954391160 / 5536196761 (2026-11-24): 선택2 "블랙34", "151(블랙)30", "SW.422/01(그레이)30" held "no
     size option, the chart lists 30, 32, ..."; the waist splits off in a waist profile, never in the tops."""

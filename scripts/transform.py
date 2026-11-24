@@ -1602,6 +1602,29 @@ def _split_joined(ov: dict[str, Any]) -> None:
             rest, size = by_value[picked[i]]
             picked[i] = rest
             v["options_ko"] = picked + [size]
+    if name == apparel_sizes.LENGTH_NAME and len(ov["options"]) > MAX_OPTIONS:
+        _fold_length(ov, i)
+
+
+MAX_OPTIONS = 3   # Shopify's limit of options per product (productSet refused 4: 10107163054, 2026-11-24)
+
+
+def _fold_length(ov: dict[str, Any], i: int) -> None:
+    """The length option `i` joined to the option before it (or after it, when first): Shopify takes three options at
+    most (2026-11-24, 엔조이핏 10107163054: 스타일 / 기장 / 색상 / 사이즈 refused); "01_일자핏 봄가을" + "9부" ->
+    "01_일자핏 봄가을 9부", a bare size's NO_LENGTH adds nothing."""
+    j = i - 1 if i > 0 else 1
+    for v in ov["variants"]:
+        picked = list(v.get("options_ko") or [])
+        if len(picked) > max(i, j):
+            if picked[i] != apparel_sizes.NO_LENGTH:
+                picked[j] = f"{picked[j]} {picked[i]}"
+            del picked[i]
+            v["options_ko"] = picked
+    values = list(dict.fromkeys(v["options_ko"][j if j < i else j - 1] for v in ov["variants"]
+                                if len(v.get("options_ko") or []) > (j if j < i else j - 1)))
+    ov["options"][j] = {**ov["options"][j], "values_ko": values}
+    del ov["options"][i]
 
 
 _MODEL_NO_RE = re.compile(r"MODEL\s*NO\.?\s*[:：]?\s*([A-Z0-9][A-Z0-9-]{3,})", re.IGNORECASE)
