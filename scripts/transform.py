@@ -1563,6 +1563,9 @@ def _split_joined(ov: dict[str, Any]) -> None:
     # the rest keeps the option's name, or 컬러 when the seller named the joined option a size ("사이즈: 화이트/S",
     # 6334381845, 2026-11-22: the colours went out as "Size 2")
     name = "컬러" if apparel_sizes.is_size_name(option.get("name_ko")) else option.get("name_ko")
+    # ... and 기장 (length) when the rest is a trousers' length ("9부 S": 9부 went out under "컬러", 10107163054, 2026-11-24)
+    if all(apparel_sizes.length_word(r) for r, _ in parts):
+        name = apparel_sizes.LENGTH_NAME
     ov["options"][i] = {**option, "name_ko": name, "values_ko": list(dict.fromkeys(r for r, _ in parts))}
     ov["options"].append({"name_ko": "사이즈", "values_ko": list(dict.fromkeys(sz for _, sz in parts))})
     for v in ov["variants"]:
@@ -1595,6 +1598,17 @@ def _sizes(ov: dict[str, Any], profile: str, text: str | None, ocr: list[list[st
     facts = [f for f in ov.get("facts") or [] if apparel_sizes.is_size_name(f.get("label_ko"))]
     out = apparel_sizes.resolve(ov["options"], texts, brand, title, profile, has_fact=bool(facts))
     if out["held"]:
+        return out
+    with apparel_sizes.waist_labels(apparel_sizes.waist_read(apparel_sizes.grids()["profiles"][profile])):
+        second = apparel_sizes.split_joined(ov["options"])
+        sized = second is not None and all((lab := apparel_sizes.parse_label(sz)) and not lab.free
+                                           for _, sz in second[1])
+    if out["option"] is not None and second is not None and second[0] != out["option"] and sized:
+        # a second option joining a colour and a size after the split: two garments a variant, a set of two ("1+1":
+        # 선택1 "크림M", 선택2 "베이지M", 내추럴모드 10821435743, 2026-11-24, went out as one pair, sizes unmapped);
+        # a season code is no size ("S/S베이지", "F/W블랙(기모)": Volvik 10322266021 stays)
+        out["held"] = (f"{ov['options'][second[0]].get('name_ko')!r}: a second colour and size "
+                       f"({ov['options'][second[0]]['values_ko'][0]!r} ...): a set of two (1+1)")
         return out
     joined = [f for f in ov.get("facts") or [] if f not in facts and apparel_sizes.joined_value(f.get("value_ko"))]
     if out["option"] is None and not facts and joined:  # one value "선택하기: Black/090" (Hazzys 13684467368, 2026-11-20):

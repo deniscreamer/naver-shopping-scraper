@@ -467,7 +467,8 @@ link. The report says how many were dropped. The step is pure: same products in,
   brand there (`decide`'s own_row: "EVER YDAY" on 카멜브리즈's 11573884405, "WHITE TEE" on 내추럴모드's 11442719270,
   2026-11-20, now their shops' labels). Before 2026-11-21 such a product was 노브랜드, the house vendor. Never for the
   clubs (no own_brand_wordmark: 재팬도코도코 and the other club resellers stay none). `clean` reads no brand in
-  Naver's 자체제작 (상품) (made in-house: the vendor "In-House Product", 7309508576) and 자체브랜드, cuts a trailing OEM / ODM from a
+  Naver's 자체제작 (상품) (made in-house: the vendor "In-House Product", 7309508576) and 자체브랜드, nor in how the goods
+  were sourced (사입 / 수입 / 국내제작: "중국산(사입)" was the brand 사입 of 4954391160, 2026-11-24), cuts a trailing OEM / ODM from a
   label ("필드가OEM": Fieldga) and gives none for a company's ("주식회사 더살림oem": a contract factory; its 제조사 row
   stays a fact, `contract_factory`), reads no importer in a Chinese making city of the origin's brackets ("중국(광저우)":
   Guangzhou, 2026-11-22, `_CN_PLACE`), and drops the factory in brackets after 협력업체 ("벤시아 협력업체(PG골프클럽)": 벤시아); a brand row the reseller rule below dropped

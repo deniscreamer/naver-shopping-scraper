@@ -626,3 +626,11 @@ def test_a_company_form_is_no_part_of_the_shops_legal_name():
     """김영주골프's store, legal name "(주) 한앤코" (6521205918, 2026-11-21): its maker "한앤코 협력업체" is its own."""
     store = {"name": "김영주골프", "business": {"legal_name": "(주) 한앤코"}}
     assert B.resellers_own("김영주골프", "한앤코 협력업체", store) and B.resellers_own("한앤코", "한앤코 협력업체", store)
+
+
+@pytest.mark.parametrize("origin", ["중국산(사입)", "중국산(수입)", "국산(국내제작)", "국산(국내 제작)", "중국(OEM)"])
+def test_how_the_goods_were_sourced_is_no_brand(origin):
+    """promore 4954391160 (2026-11-24, Golf Pants): 원산지 "중국산(사입)" (wholesale-bought) became the brand 사입."""
+    assert B.distributors(origin) == []
+    assert B.distributors("중국산(사입/프로모어)") == ["프로모어"]
+    assert B.clean("사입") is None and B.clean("국내제작") is None

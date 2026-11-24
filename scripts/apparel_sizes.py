@@ -28,7 +28,8 @@ from pathlib import Path
 from typing import Any, Callable
 
 from size_chart import NOT_CHART_RE, ONE, Chart, measure_names, read_chart  # noqa: F401  (re-exported: the callers' one module)
-from size_labels import MENS_WAIST, WOMENS_WAIST, Label, is_size_name, parse_label, waist_labels  # noqa: F401
+from size_labels import (MENS_WAIST, WOMENS_WAIST, Label, is_size_name, parse_label, waist_labels,  # noqa: F401
+                         waist_reading)
 
 _COLOUR_NAME_RE = re.compile(r"색상|컬러|칼라|색깔|color|colour", re.I)    # not a type's section (size_chart sections)
 # a colour value under any option name ("선택: 블랙 / 네이비"): never a type's section
@@ -48,6 +49,31 @@ _TEXT_PAIR_RE = re.compile(rf"(?<![A-Za-z0-9])(?:(?:{_LETTER_ALT})\s*[(\[]\s*{_W
                            rf"{_WOMEN_TOKEN}\s*[(\[]\s*(?:{_LETTER_ALT})\s*[)\]])(?!\d)", re.I)
 # the same letters, for a value whose colour and size are joined ("Ivory/085", "블랙 100 L": 12487887784, 10940191023)
 _JOIN_SPLIT_RE = re.compile(r"[\s/_]+")             # "_" too: "티셔츠 55_아이보리" (6354978708, 2026-11-21)
+# a waist or a letter glued to a Hangul colour or a closing bracket, no separator (2026-11-24, Golf Pants: promore
+# "블랙34", "151(블랙)30", "SW.422/01(그레이)30" 4954391160 / 5536196761 held "no size option"; 내추럴모드 "크림M",
+# "카키3XL" 10821435743 went out unsized): split there in the waist profiles only (a waist read is on)
+_GLUED_RE = re.compile(rf"^(.*[가-힣)])(\d{{2}}|{_LETTER_ALT})$")
+# a trousers' length before the size ("9부 S", "10부 M": 9/10 of full length, cropped / full; 2026-11-24, 엔조이핏
+# 10107163054 held "'9부 S': not read as a size"); a bare size beside them states no length: NO_LENGTH
+_LENGTH_RE = re.compile(r"^\d{1,2}부(?:\([^)]*\))?$")
+NO_LENGTH = "기본"
+LENGTH_NAME = "기장"
+
+
+def length_word(text: str) -> bool:
+    """A trousers' length ("9부", "10부(롱)") or NO_LENGTH."""
+    return text == NO_LENGTH or bool(_LENGTH_RE.match(text))
+
+
+def _words(value: str) -> list[str]:
+    """A value's words for a colour / size split: by space, "/", "_"; in a waist profile a size glued to the end of a
+    Hangul word or a closing bracket is a word of its own ("블랙34" -> 블랙, 34)."""
+    words = [w for w in _JOIN_SPLIT_RE.split(str(value or "").strip()) if w]
+    w = waist_reading()
+    m = _GLUED_RE.match(words[-1]) if words and w else None
+    if m and (not m.group(2).isdigit() or w and w[0] <= int(m.group(2)) <= w[1]):
+        words[-1:] = [m.group(1), m.group(2)]
+    return words
 
 # --- resolving -----------------------------------------------------------------------------------------------------
 
@@ -284,7 +310,7 @@ def _joined_size(value: str, free: bool = False) -> Label | None:
     """The size of one value that joins a colour and a size, or None: a size tail after a head that is no size
     ("Black/090", "아이보리 M"), or a size head before a tail that is no size ("FREE/그레이", "XL/크림": 2026-11-21,
     Mineflow 9969597394); a letter, a chest or a women's size, FREE only when `free`."""
-    words = [w for w in _JOIN_SPLIT_RE.split(str(value or "").strip()) if w]
+    words = _words(value)
     if len(words) < 2:
         return None
     with waist_labels():                                 # one size with its note ("XS (25인치 전후)"): no colour,
@@ -303,14 +329,18 @@ def split_joined(options: list[dict[str, Any]]) -> tuple[int, list[tuple[str, st
     """The option that joins a colour and a size in every value, as _joined reads it, and each value's (rest, size
     word): ("Ivory/085" -> ("Ivory", "085"), "남성 골프 이너웨어__블랙 95" -> ("남성 골프 이너웨어 블랙", "95"),
     "티셔츠 55_아이보리" -> ("티셔츠 아이보리", "55")); None when no option does (2026-11-22, the men's tops pilot: 20
-    apparel products held for it, transform._sizes splits it in two options)."""
+    apparel products held for it, transform._sizes splits it in two options). A trousers' length before the size
+    ("9부 S" -> ("9부", "S")), a bare size beside them (NO_LENGTH, "S"): split_length."""
+    length = split_length(options)
+    if length:
+        return length
     if _joined(options) is None:
         return None
     for i, o in enumerate(options):
         values = [str(v) for v in o.get("values_ko") or []]
         out: list[tuple[str, str]] = []
         for v in values:
-            words = [w for w in _JOIN_SPLIT_RE.split(v.strip()) if w]
+            words = _words(v)
             label = _joined_size(v, free=True)
             if label is None:
                 break
@@ -324,6 +354,29 @@ def split_joined(options: list[dict[str, Any]]) -> tuple[int, list[tuple[str, st
             else:
                 break
         if len(out) == len(values) and len({sz for _, sz in out}) >= 2:
+            return i, out
+    return None
+
+
+def split_length(options: list[dict[str, Any]]) -> tuple[int, list[tuple[str, str]]] | None:
+    """The option whose values put a trousers' length before the size ("9부 S", "10부 2XL", "9부(숏) S"), a bare
+    size ("S") beside them standing for NO_LENGTH, and each value's (length, size); two sizes or more and one length
+    written at least (2026-11-24, 엔조이핏 10107163054: "9부 S" .. "10부 2XL" beside its joggers' "S / M / L / XL")."""
+    for i, o in enumerate(options):
+        values = [str(v) for v in o.get("values_ko") or []]
+        out: list[tuple[str, str]] = []
+        for v in values:
+            words = v.split()
+            lab = parse_label(words[1]) if len(words) == 2 and _LENGTH_RE.match(words[0]) else None
+            if lab and (lab.letter or lab.chest or lab.women or lab.waist):
+                out.append((words[0], words[1]))
+                continue
+            lab = parse_label(v)
+            if not (lab and (lab.letter or lab.chest or lab.women or lab.waist)):
+                break
+            out.append((NO_LENGTH, v.strip()))
+        if values and len(out) == len(values) and any(r != NO_LENGTH for r, _ in out) \
+                and len({sz for _, sz in out}) >= 2:
             return i, out
     return None
 
@@ -530,6 +583,16 @@ def _resolve(options: list[dict[str, Any]], texts: list[str], brand: str | None,
                                     letter=row["us"],
                                     chest_cm=row["chest_cm"],
                                     basis="waist")
+                elif basis == "label" and len(label.waist) == 2 \
+                        and (span := [inch_of(w, profile) for w in label.waist])[1] == span[0] + 1 \
+                        and not (label.letter or label.women or label.chest) \
+                        and all(r.get("us_num_only") for r in grid_rows) \
+                        and item["us"] != f"{grid_rows[0].get('us_num_prefix', 'US ')}{span[0]}-{span[1]}":
+                    # a seller's inch range is the US waist as written, never the bands it touches joined: "33~34인치"
+                    # W33-34, not W32-35 beside "32~33인치" W32-33 and "34~35인치" W34-35; "38~39인치" W38-39 (Nike
+                    # 8000226696, 2026-11-24); one inch apart, low to high: "33-30", "32-34" are a waist and a
+                    # length (9918112671), never a waist range
+                    item.update(us=f"{grid_rows[0].get('us_num_prefix', 'US ')}{span[0]}-{span[1]}", basis="waist")
                 if women:
                     paired += 1
                 elif label.letter and not (label.upto or label.chest or label.women or label.waist) \

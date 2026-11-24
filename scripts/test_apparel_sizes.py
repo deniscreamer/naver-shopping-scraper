@@ -966,3 +966,97 @@ def test_a_size_up_advice_is_the_size():
     r = A.resolve([{"name_ko": "사이즈", "values_ko": ["S", "M", "S(up추천)", "M(up추천)"]}], [], None,
                   "여성 골프바지", "womens_pants")
     assert not r["held"] and [v["us"] for v in r["values"]] == ["S (US 4-6)", "M (US 8-10)"]
+
+
+# ---- 2026-11-24: the Golf Pants drafts' review (label shapes) -------------------------------------------------------
+def test_a_sellers_inch_range_is_the_us_waist_as_written():
+    """Nike 8000226696: "33~34인치" went out W32-35 (two bands joined) beside "32~33인치" W32-33 and "34~35인치"
+    W34-35; "38~39인치" W38-40."""
+    values = ["30~31인치", "30인치", "32~33인치", "32인치", "33인치", "33~34인치", "34~35인치", "34인치", "35인치",
+              "36~37인치", "38~39인치"]
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": values}], [], None, "나이키 남성 골프 바지", "mens_bottoms")
+    us = {v["ko"]: v["us"] for v in r["values"]}
+    assert not r["held"]
+    assert (us["33~34인치"], us["38~39인치"], us["32~33인치"], us["34~35인치"], us["30~31인치"]) == \
+        ("W33-34", "W38-39", "W32-33", "W34-35", "W30-31")
+    skirt = A.resolve([{"name_ko": "사이즈", "values_ko": ["25-26", "27-28"]}], [], None, "스커트", "womens_bottoms")
+    assert [v["us"] for v in skirt["values"]] == ["XS-S (US 0-6)", "S-M (US 4-10)"]     # the women's: unchanged
+    # a waist and a length ("33-30", "32-34": 9918112671) is no waist range: held as before
+    pairs = A.resolve([{"name_ko": "사이즈", "values_ko": ["30-30", "33-30", "34-30", "35-30", "32-34"]}], [], None,
+                      "남성 골프 바지", "mens_bottoms")
+    assert pairs["held"] and "two Korean sizes on one US size" in pairs["held"]
+
+
+@pytest.mark.parametrize("values", [
+    ["29(30인치)", "30(31인치)", "31(32인치)", "32(33인치)", "33(34인치)", "34(35인치)", "36(37인치)", "38(39인치)"],  # 6780190931
+    ["29(30)", "30(31)", "31(32)", "32(33)", "33(34)", "34(35)", "36(37)", "38(39)"],                          # 4720043508
+    ["29인치(30인치전후)", "30인치(31인치전후)", "31인치(32인치전후)", "32인치(33인치전후)", "33인치(34인치전후)",          # 7006521057
+     "34인치(35인치전후)", "36인치(37인치전후)", "38인치(39인치전후)"],
+    ["29(국내30)", "30(국내31)", "31(국내32)", "32(국내33)", "33(국내34)", "34(국내35)", "36(국내37)", "38(한국39)"],    # 4530831170
+])
+def test_j_lindebergs_waist_with_the_korean_one_is_one_waist(values):
+    """J.Lindeberg (2026-11-24): the maker's waist with the Korean one an inch up in brackets went out as overlapping
+    bands (29(30) W28-31, 31(32) W30-33) or held ("30(국내31)"); one waist, the maker's: "한국사이즈 33 이시면 32로
+    주문하시면되세요" (4530831170)."""
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": values}], [], None, "제이린드버그 남성 골프 바지", "mens_bottoms")
+    assert not r["held"]
+    assert [v["us"] for v in r["values"]] == ["W29", "W30", "W31", "W32", "W33", "W34", "W36", "W38"]
+    with A.waist_labels(False):
+        assert A.parse_label("29(30)") is None                     # outside the men's trousers: as before
+
+
+def test_a_shipping_note_after_a_size_is_the_size():
+    """Callaway 6486608544 (2026-11-24): "30(당일발송)" and "30당일발송)" (same-day dispatch) held "not read as a
+    size"; beside a bare "30" they are one size."""
+    values = ["30(당일발송)", "32(당일발송)", "34(당일발송)", "38", "30당일발송)", "36", "30", "32"]
+    r = A.resolve([{"name_ko": "사이즈", "values_ko": values}], [], None, "캘러웨이 남성 바지", "mens_bottoms")
+    assert not r["held"] and [v["us"] for v in r["values"]] == ["W30", "W32", "W34", "W36", "W38"]
+    assert r["merged"] == {"30당일발송)": "30(당일발송)", "30": "30(당일발송)", "32": "32(당일발송)"}
+    assert A.parse_label("M(오늘출발)") == A.parse_label("M")
+
+
+def test_a_trousers_length_before_the_size_is_an_option_of_its_own():
+    """엔조이핏 10107163054 (2026-11-24): "9부 S" .. "10부 2XL" (9/10 length) beside its joggers' bare "S" held
+    "'9부 S': not read as a size"; the length goes to an option 기장, a bare size to 기본 (no length stated)."""
+    sizes = ["9부 S", "9부 M", "10부 S", "10부 M", "9부 2XL", "S", "M"]
+    ov = {"options": [{"name_ko": "스타일", "values_ko": ["01_일자핏", "07_데일리조거"]},
+                      {"name_ko": "사이즈", "values_ko": sizes}], "facts": [],
+          "variants": [{"options_ko": ["01_일자핏", s], "price_krw": 36800} for s in sizes[:5]]
+          + [{"options_ko": ["07_데일리조거", s], "price_krw": 36800} for s in sizes[5:]]}
+    out = T._sizes(ov, "womens_pants", "", [], None, "여성 골프바지")
+    assert not out["held"]
+    assert [(o["name_ko"], o["values_ko"]) for o in ov["options"]] == [
+        ("스타일", ["01_일자핏", "07_데일리조거"]), ("기장", ["9부", "10부", "기본"]), ("사이즈", ["S", "M", "2XL"])]
+    assert [v["options_ko"] for v in ov["variants"]][:3] == [["01_일자핏", "9부", "S"], ["01_일자핏", "9부", "M"],
+                                                            ["01_일자핏", "10부", "S"]]
+    assert ov["variants"][-1]["options_ko"] == ["07_데일리조거", "기본", "M"]
+    assert A.split_length([{"name_ko": "사이즈", "values_ko": ["S", "M"]}]) is None
+
+
+def test_a_waist_glued_to_a_colour_or_a_bracket_is_split_in_the_waist_profiles():
+    """promore 4954391160 / 5536196761 (2026-11-24): 선택2 "블랙34", "151(블랙)30", "SW.422/01(그레이)30" held "no
+    size option, the chart lists 30, 32, ..."; the waist splits off in a waist profile, never in the tops."""
+    values = ["블랙34", "네이비30", "151(블랙)30", "151(블랙)32", "SW.422/01(그레이)30", "SW.422/01(그레이)40"]
+    ov = {"options": [{"name_ko": "선택1", "values_ko": ["PR-PT(봄/여름)", "JP_기모스판"]},
+                      {"name_ko": "선택2", "values_ko": values}], "facts": [],
+          "variants": [{"options_ko": ["JP_기모스판", v], "price_krw": 24800} for v in values]}
+    out = T._sizes(ov, "mens_bottoms", "", [], None, "프로모어 남성 겨울 골프바지")
+    assert not out["held"] and [v["us"] for v in out["values"]] == ["W30", "W32", "W34", "W40"]
+    assert ov["options"][1]["values_ko"] == ["블랙", "네이비", "151(블랙)", "SW.422 01(그레이)"]
+    assert ov["variants"][2]["options_ko"] == ["JP_기모스판", "151(블랙)", "30"]
+    assert A.split_joined([{"name_ko": "선택", "values_ko": ["블랙95", "네이비100"]}]) is None    # no waist read on
+
+
+def test_two_options_each_joining_a_colour_and_a_size_hold_as_a_set_of_two():
+    """내추럴모드 10821435743 (2026-11-24): 선택1 "크림M" .. and 선택2 "베이지M" .. (1+1, two pairs a variant at
+    49,800 KRW) went out as one pair, unsized; the first option splits, the second holds the product."""
+    one, two = ["크림M", "크림L", "카키3XL"], ["베이지M", "베이지2XL"]
+    ov = {"options": [{"name_ko": "선택1", "values_ko": one}, {"name_ko": "선택2", "values_ko": two}], "facts": [],
+          "variants": [{"options_ko": [a, b], "price_krw": 49800} for a in one for b in two]}
+    out = T._sizes(ov, "mens_bottoms", "", [], None, "내추럴모드 남성 조거 골프바지")
+    assert out["held"] and "1+1" in out["held"] and "선택2" in out["held"]
+    # a season code before the colour is no second size (Volvik 10322266021: "S/S베이지", "F/W블랙(기모)")
+    colours = ["S/S베이지", "S/S네이비", "F/W블랙(기모)"]
+    ov = {"options": [{"name_ko": "컬러", "values_ko": colours}, {"name_ko": "사이즈", "values_ko": ["M(32)", "L(34)"]}],
+          "facts": [], "variants": [{"options_ko": [c, s], "price_krw": 1} for c in colours for s in ("M(32)", "L(34)")]}
+    assert not T._sizes(ov, "mens_bottoms", "", [], None, "볼빅 남성골프바지")["held"]

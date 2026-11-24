@@ -210,6 +210,15 @@ Code: `transform.options_and_variants`.
   in the text or OCR ("L[55~66]/XL[77]", 10036686854) read from the pairing (`apparel_sizes.text_pairs`); a colour and
   a size in one value ("Ivory/085", 12487887784) and no size option over a chart of several sizes (13004790971) hold
   size_unmapped.
+- Golf Pants sizes (2026-11-24, the drafts' review; [mens_bottoms](size_profiles/mens_bottoms.md)): an inch range
+  "33~34인치" is the waist as written, W33-34 (Nike 8000226696; it went out W32-35); J.Lindeberg's maker waist with the
+  Korean one an inch up, "29(30인치)", "29(30)", "29인치(30인치전후)", "30(국내31)" (6780190931, 4720043508, 7006521057,
+  4530831170), is one waist, the first number (`size_labels.parse_label`, men's waist read only); a shipping note
+  "30(당일발송)", "30당일발송)" is the size (Callaway 6486608544); a length before the size "9부 S" / "10부 S" beside a
+  bare "S" goes to an option 기장, the bare size's length 기본 (엔조이핏 10107163054, `apparel_sizes.split_length`); a
+  waist or a letter glued to a Hangul colour or a ")" splits in a waist profile ("블랙34", "151(블랙)30": promore
+  4954391160, 5536196761; `apparel_sizes._words`); two options each joining a colour and a size ("크림M" / "베이지M",
+  1+1, 내추럴모드 10821435743) hold size_unmapped as a set of two (`transform._sizes`).
 - Sellers' size charts (2026-11-20, the same review; [SIZE_CHARTS.md](SIZE_CHARTS.md)): a model block's "Bust : 83cm"
   (10940191023) and "마른66사이즈" (11573884405) are no chart; "53/53" is one cell (11377634969); "CM" is a corner
   (13021502381); an OCR value that breaks its column's run is dropped (13338110183) (`size_chart.py`).
@@ -404,7 +413,9 @@ Code: `transform.prepare`, `brand_fallback.py` (2026-11-08).
 ### Origin, gifts, add-ons
 
 - 원산지 brackets name an importer ("일본(IRUGI SHOJI)", "중국산((주)위스트OEM)") -> cut; or the parts' countries
-  ("미국산(핑(미국) 미즈노(일본) 웨지퍼터(중국))") -> kept.
+  ("미국산(핑(미국) 미즈노(일본) 웨지퍼터(중국))") -> kept. How the goods were sourced is no importer and no brand:
+  "중국산(사입)" (wholesale-bought; promore 4954391160 went out as the brand 사입, 2026-11-24), 수입, 국내제작
+  (`brand_fallback._NO_FIRM`).
 - A hidden 사은품 row can name a thing in the box ("오리지널커버 증정") -> gift_hidden.
 - A free gift as an option axis (2026-11-18, the chipper review): Missile 10421264752 lists one club as 7 variants
   "휠라 양피장갑 왼손 19호 ... 25호 1장" under 사은품, one price -> dropped in chippers (`gift_axis_out`,

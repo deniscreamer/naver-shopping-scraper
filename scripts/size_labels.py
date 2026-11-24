@@ -48,6 +48,11 @@ def waist_labels(on: bool | tuple[float, float, float, float, bool] | None = Tru
         _WAIST.reset(token)
 
 
+def waist_reading() -> tuple[float, float, float, float, bool] | None:
+    """The waist ranges read inside the current waist_labels block, or None."""
+    return _WAIST.get()
+
+
 def _num(text: str) -> float:
     return float(text.replace("반", "")) + (0.5 if text.endswith("반") else 0)
 
@@ -110,6 +115,9 @@ def parse_label(text: str) -> Label | None:
     """A size label, or None when the text is not one (a colour, a type)."""
     t = re.sub(r"\s+", "", str(text or "")).upper().replace("（", "(").replace("）", ")")
     t = t.replace("[", "(").replace("]", ")")       # "FREE[55~66]" (5932679597, 2026-11-20) is "FREE(55~66)"
+    # a shipping note after the size, its bracket sometimes lost: "30(당일발송)", "30당일발송)" (2026-11-24, Callaway
+    # 6486608544: held "not read as a size"); the size itself, one with the bare "30" beside it (merged)
+    t = re.sub(r"\(?(?:당일|오늘|즉시)(?:발송|출고|출발)\)?$|\(빠른배송\)$", "", t)
     # 2026-11-21, the long-sleeve tops pilot: a seller's note after the size ("S(44)모델착용사이즈": the model wears it,
     # 7303524506, 6454520137), the word 사이즈 inside the brackets ("55(S사이즈)", 5857396168) and a size's number before
     # the women's sizes it fits ("1사이즈(44-55사이즈)", "2번(66-77)": 5627070774, 5660255053) read as the size itself
@@ -127,6 +135,16 @@ def parse_label(text: str) -> Label | None:
     t = re.sub(r"날씬|통통", "", t)                       # "S（55~날씬66）": slim / chubby (8628740416, 2026-11-22)
     t = re.sub(r"(?<=\d)인치", "", t)                     # "XS（25인치）", "XS (25인치 전후)" (J.Lindeberg, 2026-11-22)
     t = re.sub(r"(?<=\d)전후(?=\))", "", t)
+    w = _WAIST.get()
+    if w and w[4]:
+        # the men's trousers (Golf Pants 50002801, 2026-11-24): J.Lindeberg writes the maker's waist with the Korean
+        # one, an inch up, in brackets: "29(30인치)" (6780190931), "29(30)" (4720043508), "29인치(30인치전후)"
+        # (7006521057), "30(국내31)" (4530831170: "한국사이즈 33 이시면 32로 주문"; the reviews "31(국내32)"): one
+        # waist, the maker's (the first number), never a band from one to the other
+        t = re.sub(r"^(\d{2})\((?:국내|한국)\d{2,3}\)$", r"\1", t)
+        m = re.match(r"^(\d{2})\((\d{2})\)$", t)
+        if m and int(m.group(2)) == int(m.group(1)) + 1 and w[0] <= int(m.group(1)) < w[1]:
+            t = m.group(1)
     t = re.sub(r"^(?:여성|남성|여자|남자|여|남)[_\-:]?(?=[0-9SMLX(])", "", t)
     for word, said in (("투엑스라지", "XXL"), ("엑스라지", "XL"), ("라지", "L"), ("미디움", "M"), ("미디엄", "M"),
                          ("스몰", "S")):

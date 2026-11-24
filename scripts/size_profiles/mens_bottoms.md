@@ -22,7 +22,11 @@ Why: US men's pants are sold by the waist in inches (W30, W32), not by a letter;
 waist in inches (28-40), by the waist in cm (76, 79, 82, 85, 88) or by a letter whose waists the Korean charts give
 (S 28-29, M 30-31, L 32-33, XL 34-35, XXL 36-37). A waist label is its US waist: an inch as written, a cm as Korea
 writes it (`cm_round` 0.3: 82 = W32, 85 = W33, 88 = W34, 91 = W36; Adidas' "88(34)"); "32(82)" is one waist, and "M(32)"
-beside "M(82)" one size. A letter with 90..120 in fives ("M(95)") is a top's chest (a polo sold with the pants):
+beside "M(82)" one size. An inch range is the waist as written: "33~34인치" W33-34, never the bands it touches joined
+(W32-35; Nike 8000226696, 2026-11-24). The maker's waist with the Korean one an inch up in brackets is one waist, the
+maker's: J.Lindeberg "29(30인치)", "29(30)", "29인치(30인치전후)" W29, "30(국내31)" W30 (2026-11-24: 6780190931,
+4720043508, 7006521057 went out as overlapping bands W28-31 / W30-33, 4530831170 held; the seller: "한국사이즈 33
+이시면 32로 주문", a review "린드버그 바지 31 입는데 ... 32샀는데 살짝 넉넉"). A letter with 90..120 in fives ("M(95)") is a top's chest (a polo sold with the pants):
 held, never a waist; "2XL(92)" is a waist. A letter's waist in the seller's text sizes it, as the women's. A letter is its band ("M" = W30-31), never a US letter:
 a Korean M is a US S. Women's sizes (55, 66) mean nothing here: such a value holds the product. In this profile a
 number 26..44 is a waist in inches and 66..112 a waist in cm before anything else ("88" is 88 cm, never a women's 88).

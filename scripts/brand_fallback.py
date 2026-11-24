@@ -122,7 +122,10 @@ _NO_FIRM = re.compile(r"(?i)^(?:별도\s*표기|알\s*수\s*없음|미상|불명
                       r"|자체\s*제작(?:\s*(?:상품|제품))?"
                       # ... and "our own brand" (2026-11-22, the men's tops pilot: 자체브랜드 in the 브랜드 row of 케간지골프's
                       # three sweatshirts went out as the vendor "Unbranded", the title "Unbranded Men's ...", 9723948321)
-                      r"|자체\s*브랜드)$")
+                      r"|자체\s*브랜드"
+                      # how the goods were sourced, never a firm (2026-11-24, Golf Pants: promore's 원산지 "중국산(사입)",
+                      # wholesale-bought, became the brand 사입 of 4954391160; 수입 imported, 국내제작 made in Korea)
+                      r"|사입|수입|국내\s*제작)$")
 # a maker's "OEM" / "ODM" (2026-11-21): glued to a label it is that label's contract making ("필드가OEM": Fieldga,
 # 10780424641); after a company's form (주식회사, (주), ㈜) it is the contract factory, no brand ("주식회사 더살림oem" became
 # the vendor "The Sallim OEM" of 수아무아's 10669638240)
