@@ -1,7 +1,7 @@
 {
  "format": "dictionary/1",
  "kind": "spec_label",
- "backed_up": "2026-11-23T09:18:03Z",
+ "backed_up": "2026-11-24T14:40:23Z",
  "entries": {
   "네크라인": "Neckline",
   "모델명": "Model Name",
@@ -20,6 +20,8 @@
   "충전재": "Fill",
   "특징": "Features",
   "패턴": "Pattern",
-  "품번": "Style Number"
+  "품번": "Style Number",
+  "하의기장": "Pants Length",
+  "하의핏": "Pants Fit"
  }
 }

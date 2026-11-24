@@ -1,7 +1,7 @@
 {
  "format": "dictionary/1",
  "kind": "spec_value",
- "backed_up": "2026-11-23T09:18:03Z",
+ "backed_up": "2026-11-24T14:40:23Z",
  "entries": {
   "(주)에코컴퍼니": "Eco Company Co., Ltd.",
   "(주)에프씨지코리아": "FCG Korea Co., Ltd.",
@@ -190,6 +190,7 @@
   "신축성, 흡습, Dri-Fit": "Stretch, Moisture-Wicking, Quick-Dry",
   "신축성, 흡습, Dri-Fit, 자외선차단": "Stretch, Moisture Absorption, Quick-Dry, UV Protection",
   "신축성, 흡습, Dri-Fit, 자외선차단, 기모안감, 항균": "Stretch, moisture-wicking, Quick-Dry, UV protection, fleece-lined, antibacterial",
+  "신축성, 흡습, 기모안감, Dri-Fit, 항균, 자외선차단": "Stretch, Moisture-Wicking, Fleece-Lined, Quick-Dry, Antibacterial, UV Protection",
   "신축성, 흡습, 자외선차단": "Stretch, Moisture-Wicking, UV Protection",
   "신축성, 흡습, 자외선차단, 기모안감": "Stretch, Moisture-Wicking, UV Protection, Fleece-Lined",
   "양기모자수맨투맨": "Double-Brushed Embroidered Sweatshirt",
