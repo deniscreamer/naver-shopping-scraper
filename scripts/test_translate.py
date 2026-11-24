@@ -1177,6 +1177,18 @@ def test_one_brand_spelling_whatever_its_dots_and_spaces(tmp_path):
     assert d.brand_spelling("Inparo") == "Inparo"
 
 
+def test_a_latin_brand_takes_the_dictionarys_spelling(tmp_path):
+    """5489884876 (2026-11-24): specs:브랜드 "MASTER BEAR" is the dictionary's 마스터베어 Master Bear, not a second
+    vendor in capitals; a Latin brand the dictionary does not know stays as written."""
+    d = dicts(tmp_path, brand={"마스터베어": "Master Bear"})
+    for written, english in (("MASTER BEAR", "Master Bear"), ("masterbear", "Master Bear"), ("ACME", "ACME")):
+        p = small(brand=written)
+        brand = next(t["id"] for t in p["texts"] if t["kind"] == "brand")
+        en, by, _ = T.plan(p, d, {}, TENANT)
+        assert (en[brand], by[brand]) == (english, "rule")
+        assert T._brand_en(p, d, TENANT) == english
+
+
 def test_a_title_translated_under_another_brand_is_asked_again(tmp_path):
     """2026-11-15: three published wedge sets kept the old brand at the head of their titles after the brand was fixed
     (Generic -> 버뮤다, 이디스 -> Majek, PRECISE -> XINGGM): the title is asked again, the old English kept meanwhile; a

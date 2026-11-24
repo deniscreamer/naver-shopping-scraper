@@ -574,6 +574,33 @@ def _uncut(rows: list[dict[str, Any]], entries: list[str]) -> list[dict[str, Any
     return out
 
 
+def _spacing_merged(rows: list[dict[str, Any]], keep: list[int]) -> list[dict[str, Any]]:
+    """The rows with an axis's values that are one value once whitespace is ignored spelled one way, the spaced
+    spelling (2026-11-24, 6348591839: "C타입. 슬림일자블랙" on the XL row only, "C타입. 슬림일자 블랙" on the
+    others; the store showed "Slim Straight-LegBlack" next to "Slim Straight-Leg Black"). The raw tuple is kept as
+    `raw_options` for the SKU; a row that then repeats an earlier row is left out."""
+    def bare(v: str) -> str:
+        return re.sub(r"\s+", "", v)
+    spelling: dict[int, dict[str, str]] = {}
+    for i in keep:
+        best: dict[str, str] = {}
+        for r in rows:
+            v = _tidy(r["options"][i])
+            if bare(v) not in best or v.count(" ") > best[bare(v)].count(" "):
+                best[bare(v)] = v
+        spelling[i] = {v: best[bare(v)] for v in (_tidy(r["options"][i]) for r in rows) if best[bare(v)] != v}
+    out, seen = [], set()
+    for r in rows:
+        new = [spelling[i].get(_tidy(v), v) if i in spelling else v for i, v in enumerate(r["options"])]
+        tied = tuple(_tidy(v) for v in new)
+        if new != r["options"] and tied in seen:
+            continue
+        seen.add(tied)
+        out.append({**r, "options": new, "raw_options": r.get("raw_options") or r["options"]}
+                   if new != r["options"] else r)
+    return out
+
+
 # Amazon's index in front of every value of an axis ("1 52 56 60 Degree Set Tarnish", "2 56 60 Degree Tarnish", "15
 # Black Titanium Layer-50/56 Degrees"; the wedge-set review C52, 2026-11-17): shown without it in a wedge-sets category,
 # once the cut values are whole, when every value of the axis has one and they stay different. Not a count or a club
@@ -1102,6 +1129,7 @@ def options_and_variants(line: dict[str, Any], rules: ShopRules, key: str, cat: 
     keep, rows, gifts = _drop_gift_axes(names, keep, rows) if cat.gift_axis_out else (keep, rows, None)
     keep, rows, no_choice = _drop_no_choice(names, keep, rows, cat.paid_addons) if cat.no_choice_out \
         else (keep, rows, None)
+    rows = _spacing_merged(rows, keep)
     slots: str | None = None
     slot_axes: list[int] = []
     if cat.wedge_sets:                             # a picker's slots: no repeated loft, one row per set (C01)

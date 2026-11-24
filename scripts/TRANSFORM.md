@@ -221,7 +221,8 @@ published, SKUs and prices equal on 201 of 201 variants):
   Description; what was cut in `description_dropped`) are carried for the later stages (not in `texts` yet).
 - **Pilot 20 (2026-11-06)**: a variant carries `today_dispatch` (the seller's todayDispatch per variant: one of two
   may ship today); a tag every value starts with ("[당일출고]") and a "(선택)" in front of an option name are left out
-  (the SKU keeps the raw tuple); past the cap the rows are taken in turn from each value of the first axis; notes
+  (the SKU keeps the raw tuple; values one once whitespace is ignored are one value, spelled spaced:
+  "슬림일자블랙" / "슬림일자 블랙", 6348591839, 2026-11-24); past the cap the rows are taken in turn from each value of the first axis; notes
   `few_pieces` also from 총클럽개수 of 5 or fewer, `gift_hidden` (a hidden 사은품 row naming a thing in the box, not
   points or a coupon: "오리지널커버 증정"). `delivery.lead_time` passes through: check `today_off` before
   `today_cutoff`.

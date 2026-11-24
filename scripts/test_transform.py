@@ -1085,3 +1085,18 @@ def test_the_long_sleeve_top_rules_are_the_windbreakers_and_reviewed():
     assert not transform_shops.draft_leaf("fairwardgolf", "50002796", ["mens-fall-long-sleeve-tops"])
     assert not transform_shops.draft_leaf("fairwardgolf", "50002796", ["womens-fall-long-sleeve-tops"])
     assert tops.variant_screen == ("short_sleeve", "cardigan", "vest", "cooling", "outerwear")   # no 반팔 variant (2026-11-21)
+
+
+def test_values_one_once_spaces_are_ignored_are_one_value():
+    """6348591839 (2026-11-24): the seller wrote "C타입. 슬림일자블랙" on the XL row only and "C타입. 슬림일자 블랙"
+    on the others; the store had "Slim Straight-LegBlack" next to "Slim Straight-Leg Black". One value, spaced; the
+    raw tuple stays the SKU's."""
+    rows = [{"options": [c, s], "price": 100} for c, s in (
+        ("C타입. 슬림일자 블랙", "55（S）"), ("C타입. 슬림일자 블랙", "77（L）"), ("C타입. 슬림일자블랙", "88（XL）"),
+        ("C타입. 슬림일자베이지", "55（S）"), ("C타입. 슬림일자 베이지", "66（M）"), ("A타입. 일자 블랙", "55（S）"))]
+    out = transform._spacing_merged(rows, [0, 1])
+    assert [r["options"][0] for r in out] == ["C타입. 슬림일자 블랙"] * 3 + ["C타입. 슬림일자 베이지"] * 2 \
+        + ["A타입. 일자 블랙"]
+    assert out[2]["raw_options"] == ["C타입. 슬림일자블랙", "88（XL）"] and "raw_options" not in out[0]
+    twice = rows[:1] + [{"options": ["C타입. 슬림일자블랙", "55（S）"], "price": 100}]   # the same row once merged
+    assert [r["options"] for r in transform._spacing_merged(twice, [0, 1])] == [["C타입. 슬림일자 블랙", "55（S）"]]

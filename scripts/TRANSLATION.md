@@ -70,6 +70,7 @@ Per text, the first that answers: (1) the product's own store, (2) the dictionar
 | One dictionary per kind of text, in JSON, growing during runs out of git; backups in git, updated by hand; `status` says when a backup is due | `translation_dicts.py`, `scripts/dictionaries/` |
 | Brands are the shop's (`dictionaries/brand.json`); every other kind is a Naver category's own (`dictionaries/<category id>/<kind>.json`): a new category starts empty and its entries never reach another (2026-11-11: 50002787's entries had changed four products of 50002788) | `translation_dicts.SHARED`, `Dictionaries.scope` |
 | The brand is looked up first; one spelling per brand in the whole shop | brand dictionary, `vendors` in the request |
+| A brand written in Latin letters (a 브랜드 row "MASTER BEAR") takes the brand dictionary's spelling of it, compared without case, spaces or dots (Master Bear, 2026-11-24, 5489884876); one the dictionary does not know stays as written | `translate.plan`, `Dictionaries.brand_spelling` |
 | No brand (노브랜드): the tenant's name; inside a text the word is removed. A brand of 기타 ("other", the owner 2026-11-11): the tenant's name too (transform already leaves it out: the fallback decides) | `translation_rules.sanitize`, `transform.NOT_A_BRAND` |
 | Units and sizes by templates (10.5도, 33인치, 22호, 3번, 7개, 2026년형); the model only for the rest | `translation_rules.py` |
 | Titles are the store's names (the owner, 2026-11-08, as the harvester's): brand first, then model, year, who it is for, the kind of set, pieces, what is included; no shop, dispatch, distributor or after-sales ("AS가능") words, no loft / flex / shaft codes or club list, no usage or gift words (the 100-product pilot, 2026-11-09). The model, not templates: nobody can foresee every title | `prompts/translate_system.md` |
@@ -137,6 +138,11 @@ Pinemeadow Golf, 2 active ones' titles reach the store on the owner's word); no 
 Club, 치퍼랩 CHIPPER Lab, 무츠미혼마 Mutsumi Honma (beside 무쯔미혼마) added; 캘러웨이 오디세이 -> Odyssey (the brief:
 Odyssey is the maker of the Odyssey chippers, Callaway's putter line); 브랜드. -> Brand. and the shop 수수's partner
 phrases 수수협력사 co. / 수수랜드협력사.co. deleted (no brand: `brand_fallback.clean` / `resellers_own`).
+
+**The golf pants review** (50002801, 2026-11-24): 루센 -> LUSEN, the maker's own Latin name in its description images
+("바지를 잘 아는 루센 입니다. / SINCE 1970 / LUSEN", 5836988986), not the guessed "Lucen". The backup has the entry;
+the live brand.json and 50002801/spec_value.json still say Lucen until changed there (a backup never overwrites a
+live entry), and the published drafts change on the owner's word only.
 
 `status` shows when the live copies were last written and the last backup (every backup file carries
 `backed_up`), the new and changed entries since, the ones only in git, and the advice (`action` none / wait /

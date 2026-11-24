@@ -199,6 +199,9 @@ Code: `transform.options_and_variants`.
 - Sellers number values ("선택1 9도SR", "선택3)", "택1 ..."), tag them ("[당일출고] ..."), decorate axis names
   ("(선택)샤프트/드라이버/아이언"): shown without, the SKU keeps the raw tuple; values equal once unnumbered stay
   numbered (option_values_duplicate, 9496523995).
+- Values of one axis that are one value once whitespace is ignored ("C타입. 슬림일자블랙" on one size row,
+  "C타입. 슬림일자 블랙" on the others; 6348591839, 2026-11-24) are one value, spelled spaced; the SKU keeps the raw
+  tuple (`transform._spacing_merged`).
 - Axes named 선택 / 옵션 / 색상 whose values are not colours ("세트 R / 세트 S", 13462927626): option_name_placeholder.
 - An Amazon axis label of one kind over values of another ("Shaft Material" over "TALL LENGTH (PLUS 1 INCH)", AGXGOLF
   13390487313, 2026-11-18): option_name_placeholder, named from its values (`transform._axis_misnamed`); look-alikes

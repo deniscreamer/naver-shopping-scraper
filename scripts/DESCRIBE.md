@@ -44,7 +44,7 @@ the answer needs the sources compared and the clubs added up ("Which model" belo
   configurations sold, paid extras, gifts, several products in one description) are passed as one line each.
 - **Origin** (the owner: keep the country): decided by the script, not the model. The 원산지 row and every
   "제조국 / made in" line of the texts name one country: `Origin: made in <country>`. They disagree or hedge
-  ("may differ", "not Japan", "and others"), or the row names a country the table does not know: `Origin: do not
+  ("may differ", "not Japan", "and others", "미국 외 3국": the USA and 3 other countries, 2026-11-24), or the row names a country the table does not know: `Origin: do not
   state`, the reason in the report. Of the first 105: stated for 66, silent for 28, no source for 11. After the
   answer any other country in the text, in any wording ("Japanese-made", "a product of China"), cuts that
   sentence; "Japan-market model" is not an origin. "국산" / "국내산" / "국내생산" / "국내제조" (domestic) is Korea, only at a word's

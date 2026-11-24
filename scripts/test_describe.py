@@ -163,6 +163,7 @@ def test_long_image_text_is_cut_at_a_block():
     ("미국산", ["제조국 / 베트남(변동될수 있음)"], None, "sources disagree"),
     ("일본산", ["제조국은 일본이 아닌 다른 국가일 수 있습니다"], None, "hedged"),
     ("일본 외 제3국", [], None, "hedged"),
+    ("미국 외 3국", ["제조국 : 미국 외 3국"], None, "hedged"),                 # several countries (4931116119)
     ("중국산(중국, 홍콩) 등", [], None, "sources disagree"),
     ("일본산", ["헤드커버 ( Made in CHINA ) 포함"], None, "sources disagree"),  # a part's origin: silence is safe
     ("미국산", ["*테일러메이드공장일정에따라베트남, 타이완, 중국에서생산됩니다."], None, "sources disagree"),   # 11635694901

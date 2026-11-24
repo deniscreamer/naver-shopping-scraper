@@ -561,7 +561,9 @@ def plan(prepared: dict[str, Any], dicts: Dictionaries, store: dict[tuple[str, s
         source = sanitize(kind, ko, tenant, category)
         if not has_hangul(source):
             if hit is None:                                # a re-asked name keeps its English until an answer
-                en[tid], by[tid] = source, "rule"
+                # a Latin brand takes the brand dictionary's spelling, compared without case or spaces (2026-11-24,
+                # 5489884876: specs:브랜드 "MASTER BEAR" for 마스터베어 -> Master Bear, as _brand_en spells it)
+                en[tid], by[tid] = (dicts.brand_spelling(source) if kind == "brand" else source), "rule"
             if kind == "option_name" and ko in placeholders:
                 # a Latin placeholder name ("Color" over "52 56 Degree Tarnish", Amazon imports; 2026-11-17, the
                 # wedge-set review C50: 21 axes, 18 of them not colours): the model names it from its values, the
