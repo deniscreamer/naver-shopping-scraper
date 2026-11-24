@@ -886,6 +886,23 @@ def test_collect_reads_specs_its_way_and_a_410_stops_the_source():
     assert e.value.status == 410 and stopped(ApiError(410)) and not stopped(ApiError(404))
 
 
+def test_the_page_is_read_before_the_details():
+    """2026-11-24: the page read leaves the store record the server needs when its curl store page is gated."""
+    from collect_product import collect
+    order = []
+
+    class Box:
+        def product_details(self, link):
+            order.append("details")
+            return {"id": "11"}
+
+        def selected_reviews(self, link, count):
+            return {"results": []}
+    out = collect(Box(), None, {}, {"link": "l"}, "/nowhere", query="q", category="50002801",  # type: ignore
+                  specs=lambda api, link, query: order.append("page"))
+    assert out.reason == "card_not_found" and order == ["page"]                # no card: no details call
+
+
 def test_a_job_appends_whole_lines_after_a_tail_with_no_line_end(tmp_path):
     job = make_job(tmp_path)
     with open(os.path.join(job.folder, "listing.jsonl"), "rb+") as f:            # the last line end lost

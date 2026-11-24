@@ -44,6 +44,7 @@ import ext_product
 import listing_jobs
 from ext_bridge import ExtError
 from naver_shopping import api, composite
+from naver_shopping.refs import split_product_link
 from notify import notify
 
 OUTPUT_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output", "listing-tabs")
@@ -259,8 +260,13 @@ def specs(sid, product):
     try:
         bridge, tab = _live(sid)
         query = _session["query"]
-        details = api.product_details(product)       # before the click: a box failure costs no page load
-        product_id = details["id"]
+        try:
+            details = api.product_details(product)   # before the click: a box failure costs no page load
+        except Exception as e:                       # 2026-11-24: the curl store page login-gated: the page read
+            if not api.login_gated(e):               # below carries the store record (api.remember_store_from_page)
+                raise
+            gate, details = e, None
+        product_id = details["id"] if details else split_product_link(product)["id"]
         out_dir = os.path.join(ext_product.OUTPUT_ROOT, datetime.now().strftime("%Y%m%d-%H%M%S") + f"-{product_id}")
         os.makedirs(out_dir, exist_ok=True)
         started = time.monotonic()
@@ -296,6 +302,12 @@ def specs(sid, product):
                 else:
                     print(f"ext-product: tabs left: {left} (listing tab {'kept' if left else 'none'})", flush=True)
         ext_product._read_log(product_id, started, selector, page)
+        api.remember_store_from_page(page.get("html"))
+        if details is None:
+            try:
+                details = api.product_details(product)
+            except Exception as e:
+                raise gate if api.login_gated(e) else e
         return ext_product._specs_tail(details, page, query, out_dir)
     finally:
         _lock.release()

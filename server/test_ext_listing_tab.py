@@ -331,6 +331,43 @@ def test_specs_keeps_the_listing_tab_and_closes_the_product_tab(chrome):
     assert call("POST", f"/listing-tabs/{tab['id']}/next")[0] == 503                  # still alive (then stalls)
 
 
+def test_a_login_gated_store_page_is_read_after_the_click(chrome, monkeypatch):
+    from naver_shopping.fetch import NaverBlocked
+    tab = opened(chrome)
+    real, asked, seen = api.product_details, [], []
+
+    def gated_once(product):
+        asked.append(product)
+        if len(asked) == 1:
+            raise NaverBlocked("login gate on store shop")
+        return real(product)
+    monkeypatch.setattr(api, "product_details", gated_once)
+    monkeypatch.setattr(api, "remember_store_from_page", lambda html: seen.append(bool(html)))
+    status, body = call("GET", f"/listing-tabs/{tab['id']}/specs", product=link(FIRST[1]))
+    assert status == 200 and body["id"] == FIRST[1], body
+    assert len(asked) == 2 and seen == [True] and chrome.count("click") == 1   # details again after the page
+
+
+def test_a_login_gate_the_page_does_not_lift_stays_a_502(chrome, monkeypatch):
+    from naver_shopping.fetch import NaverBlocked
+
+    def gated(product):
+        raise NaverBlocked("login gate on store shop")
+    tab = opened(chrome)
+    monkeypatch.setattr(api, "product_details", gated)
+    monkeypatch.setattr(api, "remember_store_from_page", lambda html: None)
+    status, body = call("GET", f"/listing-tabs/{tab['id']}/specs", product=link(FIRST[1]))
+    assert status == 502 and "login gate on store shop" in body["error"], body
+    assert ext_listing_tab._session["id"] == tab["id"]                          # the listing tab is kept
+
+    def walled(product):
+        raise NaverBlocked("HTTP 429 (captcha / rate wall) on store shop")
+    monkeypatch.setattr(api, "product_details", walled)
+    clicks = chrome.count("click")
+    status, body = call("GET", f"/listing-tabs/{tab['id']}/specs", product=link(FIRST[1]))
+    assert status == 502 and chrome.count("click") == clicks                     # a wall: no click
+
+
 def test_a_card_that_opened_another_product_is_clicked_once_more(chrome):
     tab = opened(chrome)
     other = "https://smartstore.naver.com/shop/products/5543745139"

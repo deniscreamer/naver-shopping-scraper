@@ -21,6 +21,9 @@ PRODUCT_SPECS_CACHE = timedelta(hours=24)
 REVIEWS_CACHE = timedelta(hours=6)
 # Store record (grade, sale count, categories) moves weekly.
 STORE_CACHE = timedelta(hours=24)
+# A store record read off a product page in the owner's Chrome (no categories), the fallback while the curl
+# store page is login-gated: the same record, kept as long as the store page's.
+STORE_SEEN_CACHE = STORE_CACHE
 # Popular / best rails are recomputed by Naver daily.
 STORE_PRODUCTS_CACHE = timedelta(hours=12)
 # Catalog review samples move with new reviews.

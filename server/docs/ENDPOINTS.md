@@ -240,6 +240,12 @@ Use both together: way 1 for prices / reviews / description, way 2 for the attri
 Transport: curl for the store page (smartstore) or the product page (brand), then box for the product JSON. A
 slug-less link or bare number costs extra calls (see "Search card links"). Cache: 6 h (`PRODUCT_CACHE`, the product
 record shared with `/products/reviews`; store record 24 h).
+A login-gated store page (`502 ... login gate on store <slug>`, the curl store page since 2026-11-24): the store
+record a product page of that store left when it was read in the owner's Chrome (`/products/specs` after a details
+answer, `/listing-tabs/<id>/specs` also on the gate itself: it clicks first; 24 h, `STORE_SEEN_CACHE`) is used
+instead, and no gated request is sent for a store already seen; none read yet: the 502 stands. A captcha or rate wall
+is never covered. `/products/specs` itself reads the details first (the name to search): a gated store with no page
+read yet answers it 502.
 Output: the product record (`id`, `origin_product_id`, `name`, `link`, `catalog_id`, `catalog_link`, `status`,
 `pricing`, `stock_quantity`, `images`, `category`, `brand`, `delivery`, flags, ...) plus `option_groups`, `variants`,
 `supplements`, `description` (`{html, text, editor_type, images}`), `notice` (`{type, items, terms}`), `facts`,
@@ -608,7 +614,7 @@ meanwhile, naming it. Stateful, never cached.
 |---|---|---|
 | `POST /listing-tabs` | `query` (1-100 chars, required) as a query param | `200` ListingTab, batch 1 (a previous session is closed first); `409` the adapter is busy (a listing job or a read); `503` not connected / `wall:` / `adapter error:`; `400` bad params |
 | `POST /listing-tabs/<id>/next` | - | `200` ListingTab, the next batch (one already loaded, else a scroll for it); after the last batch `has_more` false and `results` `[]`, no scroll; `409` another call of the tab runs; `410`; `503` `wall:` (a stall, a refused batch, a ban: the session is closed) |
-| `GET /listing-tabs/<id>/specs` | `product` (product ref, required: a row of a batch) | `200` the `/products/specs` answer, `query` the tab's; `404` no card in the tab (`... has no card in the listing tab ...`) or its card opened another product (`card_opened_other`) or nothing (`card_opened_nothing`) or Naver's error page: the session lives (a card that opened another product in the listing tab itself ends it: the next call is `410`); `409`; `410`; `503` `wall: captcha ...` (the tab kept), `wall: ...` (a ban: the tab closed), `naver error page:`, `adapter error:` |
+| `GET /listing-tabs/<id>/specs` | `product` (product ref, required: a row of a batch) | `200` the `/products/specs` answer, `query` the tab's; `404` no card in the tab (`... has no card in the listing tab ...`) or its card opened another product (`card_opened_other`) or nothing (`card_opened_nothing`) or Naver's error page: the session lives (a card that opened another product in the listing tab itself ends it: the next call is `410`); `409`; `410`; `502` the product's store page login-gated and its page carried no store record (2026-11-24: on such a gate the card is clicked first and the product's details read after the page, from the store record it carries; the tab kept); `503` `wall: captcha ...` (the tab kept), `wall: ...` (a ban: the tab closed), `naver error page:`, `adapter error:` |
 | `DELETE /listing-tabs/<id>` | - | `200 {id, closed: true}`; idempotent (an unknown id too); waits for a running call of the tab |
 
 `<id>` is `YYYYMMDD-HHMMSS-xxxx` (else `400`). ListingTab: `{id, query, batch, has_more, total, results: [row]}`;

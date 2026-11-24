@@ -22,6 +22,8 @@ served elsewhere:
                (channelUid, payReferenceKey = checkoutMerchantNo, grade,
                categories) while the store home / category / search pages
                redirect to login. 6/6 from a laptop and from KR exits.
+               2026-11-24: /best redirected to login too, for every store
+               (api._product_store falls back to a product page's record).
   * BRAND PDP  GET brand.naver.com/<slug>/products/<id> — server-rendered
                (window.__PRELOADED_STATE__.simpleProductForDetailPage).
   * DATALAB    POST datalab.naver.com/shoppingInsight/*.naver — open JSON.

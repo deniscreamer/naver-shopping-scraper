@@ -14,10 +14,10 @@ Two cached bundles are shared across endpoints:
 """
 from urllib.parse import quote
 
-from cache import cached_call
+from cache import cached_call, peek
 from naver_shopping import cache_config as ttl
 from naver_shopping import parsers, review_select
-from naver_shopping.fetch import (NaverBadRequest, NaverNotFound, box_get, box_get_many, box_post, fetch_brand_product_page,
+from naver_shopping.fetch import (NaverBadRequest, NaverBlocked, NaverNotFound, box_get, box_get_many, box_post, fetch_brand_product_page,
                                   fetch_datalab, fetch_search, fetch_search_count, fetch_store_page)
 from naver_shopping.refs import catalog_link, split_product_link, split_store_link, store_link
 from naver_shopping.schemas import DATALAB_DEVICES, DATALAB_GENDERS, DATALAB_PERIODS, REVIEW_MEDIA, REVIEW_SORTS
@@ -126,6 +126,49 @@ def _store(store):
     return cached_call("naver_shopping.store", {"store": store}, _store_record, ttl.STORE_CACHE)
 
 
+# Probed 2026-11-24: the curl store page smartstore.naver.com/<slug>/best (and shopping.naver.com itself, a
+# naver.com warm-up first or not) redirected this machine to nid.naver.com for every store not in the cache, while
+# the owner's Chrome read the same stores' product pages. A product page carries the store record in its
+# __PRELOADED_STATE__ "channel" (uid, merchant id, grade, sale count; no category menu): remember_store_from_page
+# keeps it, and a product's store falls back to it on a login gate. ARCHITECTURE.md 13.2.
+
+def login_gated(error):
+    """A NaverBlocked from a login redirect (fetch._classify: "login gate on ...")."""
+    return isinstance(error, NaverBlocked) and "login gate on " in str(error)
+
+
+def remember_store_from_page(page_html):
+    """Keep the store record a product page read in the owner's Chrome carries (parse_store_page on the page's
+    state), under its slug and its link's slug (a brand store's brandUrl differs from its url: drbrian / ibs);
+    returns the slug, or None when the page has none."""
+    record = parsers.parse_store_page(page_html or "")
+    slug = record and record["store"].get("slug")
+    if not slug:
+        return None
+    link = record["store"].get("link")
+    for key in {slug, split_store_link(link)["slug"] if link else slug}:
+        cached_call("naver_shopping.store_seen", {"slug": key}, lambda slug: record, ttl.STORE_SEEN_CACHE,
+                    refresh=True)
+    return slug
+
+
+def _product_store(slug, brand=False):
+    """The store record of a product: the store page's (cached), else the one a product page left (no gated
+    request: each costs the retry policy's 3 tries and ~6 s), else the store page, and on a login gate the record a
+    product page left meanwhile."""
+    link = store_link(slug, brand=brand)
+    known = peek("naver_shopping.store", {"store": link}) or peek("naver_shopping.store_seen", {"slug": slug})
+    if known:
+        return known["store"]
+    try:
+        return _store(link)["store"]
+    except NaverBlocked as e:
+        seen = peek("naver_shopping.store_seen", {"slug": slug}) if login_gated(e) else None
+        if seen is None:
+            raise
+        return seen["store"]
+
+
 def store_details(store):
     record = _store(store)
     return {**record["store"], "categories": record["categories"]}
@@ -185,9 +228,9 @@ def _product_record(product):
                 raise NaverNotFound(f"product {product_id}: its store could not be resolved from the search index; "
                                     "pass the store product link (https://smartstore.naver.com/<store>/products/<id>)")
             slug = found["slug"]
-            store = _store(store_link(slug, brand=found["is_brand"]))["store"]
+            store = _product_store(slug, brand=found["is_brand"])
         else:
-            store = _store(store_link(slug))["store"]
+            store = _product_store(slug)
         summary = box_get(f"/n/v2/channels/{store['uid']}/simple-products?ids[]={product_id}",
                           f"product {product_id} summary")
         if not summary:

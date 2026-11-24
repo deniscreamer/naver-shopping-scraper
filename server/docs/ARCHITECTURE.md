@@ -399,7 +399,9 @@ surfaces.
 ### 13.2 Store pages and brand product pages (curl)
 
 - `/<slug>/best` is the server-rendered store page that carries the store
-  record without a login redirect. -> `naver_shopping.fetch` module docstring
+  record without a login redirect (until 2026-11-24: then login-gated to curl for every store, a naver.com /
+  shopping warm-up first or not; a product page read in the owner's Chrome carries the same record:
+  `api.remember_store_from_page`, the fallback of `api._product_store`). -> `naver_shopping.fetch` module docstring
   (STORE).
 - The brand host answers a non-brand slug with a "not operating" page.
   -> `fetch.fetch_store_page` docstring, `fetch.NOT_OPERATING_TITLE`.

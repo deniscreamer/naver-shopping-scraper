@@ -89,7 +89,7 @@ Every surface that is not the store backend uses this path (R-NAVER-2).
   | Data | Surface | Transport | Symbol |
   |---|---|---|---|
   | Search cards, total count | `ns-portal.shopping.naver.com/api/v3/shopping-paged-slot` (+ `/count`) | curl | `fetch.fetch_search`, `fetch.fetch_search_count` |
-  | Store record | `smartstore.naver.com/<slug>/best` or `brand.naver.com/<slug>/best` | curl | `fetch.fetch_store_page` |
+  | Store record | `smartstore.naver.com/<slug>/best` or `brand.naver.com/<slug>/best`; on a login gate (2026-11-24, decision log) the product page's `__PRELOADED_STATE__.channel` as the adapter read it | curl; the owner's Chrome | `fetch.fetch_store_page`; `api.remember_store_from_page`, `api._product_store` |
   | Brand product page | `brand.naver.com/<slug>/products/<id>` | curl | `fetch.fetch_brand_product_page` |
   | DataLab | `POST datalab.naver.com/shoppingInsight/<action>.naver` | curl | `fetch.fetch_datalab` |
   | Store backend (products, contents, notice, reviews, best/popular, catalog reviews) | `brand.naver.com/n/v1|v2/*`, for ANY store including smartstore | box only | `fetch.box_get`, `fetch.box_get_many`, `fetch.box_post` |
@@ -299,6 +299,17 @@ product tab is closed after each read. 503 errors start with their kind (`wall:`
 job of one product per iteration must go on by itself and leave the browser on its search tab. Evidence: probe
 2026-11-07 (two searches typed into one kept tab, product tabs closed, the search tab active again); offline tests
 in server/test_ext_product.py. Claude.
+
+### 2026-11-24: R-NAVER-2: the store record from the product page on a login-gated store page
+`/products/details` (and `/products/reviews`, the same record) takes the store's uid and merchant id from a product
+page of that store read in the owner's Chrome when the curl store page `/<slug>/best` redirects to nid.naver.com.
+Why: on 2026-11-24 it did for every store not cached (35tnfjg, scarabee, loloalloy, swingfire, greengreengolf,
+stellric, sunderland, lounggolfshop), a naver.com -> shopping.naver.com warm-up first or not (shopping.naver.com
+itself redirected); the pants pilot (job fairwardgolf-50002801-20261124T051112Z) stopped. The product page the scroll
+already reads carries the record (parse_store_page on 6/6 saved pages: uid, merchant id, grade, sale count; no
+category menu, so `/stores/details` keeps the curl page). Nothing new is requested: the page is the one read for its
+specs (R-EXT-*); a captcha or rate wall is never covered. Tests: naver_shopping/test_store_from_page.py,
+test_ext_listing_tab.py (the gate). Owner: Denis.
 
 ### 2026-11-05: R-STYLE-4: a log line per failed answer and per product page read
 `routes.call` prints `api: <status> <path> (<label>): <error>` for every failed answer (404, 409, 502, 503, 500, and

@@ -356,7 +356,8 @@ skipped):
    `listing_filter.Screen(category, namespace, ShopCatalog(store).keys(), deferred)`; duplicates and products of
    earlier runs left out; the list saved, so a rerun takes the same products.
 2. Collect each product as example_99 does: `product_details`, `selected_reviews(count=20)`, `product_specs` (the
-   name first, the listing query on a 404), `choose_variants(options, discounted_price, paid=...)`,
+   name first, the listing query on a 404; `job.py scroll` reads its listing tab's page first, 2026-11-24: the page
+   leaves the store record a login-gated store page no longer gives), `choose_variants(options, discounted_price, paid=...)`,
    `variant_measures(specs, load_table())`, `download_gallery`, `download_review_media`, `posters_as_photos`; all
    under `CollectGuard(DeferredLog(...)).run(key, ...)`; one line `{key, listing, details, specs, variants, package,
    reviews, photos, review_media}` appended, 2 s apart.

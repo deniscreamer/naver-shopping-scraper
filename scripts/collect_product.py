@@ -54,17 +54,25 @@ def collect(api: NaverApiClient, store: Any, table: dict, row: T.ListingRow, med
             specs: Callable[[NaverApiClient, str, str | None], T.ProductSpecs | None] = specs_for) -> Outcome:
     """`specs`: how the page's specs are read, None when the card is not found (specs_for: a search)."""
     try:
+        # A held listing tab's read first (2026-11-24): its page leaves the store record the server falls back to
+        # when the curl store page is login-gated (ENDPOINTS.md /listing-tabs). A search read (specs_for) needs the
+        # details itself first (the name to search; a 404 there is not_found), so it keeps the old order.
+        page = specs(api, row["link"], query) if specs is not specs_for else None
+        if page is None and specs is not specs_for:
+            return Outcome("not_taken", "card_not_found")
         details = api.product_details(row["link"])     # -> naver_types.ProductDetails
         picked = api.selected_reviews(row["link"], count=reviews)
-        page = specs(api, row["link"], query)
+        if specs is specs_for:
+            page = specs(api, row["link"], query)
+            if page is None:
+                return Outcome("not_taken", "card_not_found")
+        assert page is not None
     except ApiError as e:
         if stopped(e):
             raise SourceStopped(f"{e.status} {e.error}", status=e.status, error=e.error)
         if e.status == 404:
             return Outcome("not_taken", "not_found", e.error)
         return Outcome.partial(f"api_{e.status}", e.error)
-    if page is None:
-        return Outcome("not_taken", "card_not_found")
     options = page["options"]
     variants = choose_variants(options, details["pricing"]["discounted_price"], paid=paid) if options else None
     page_category = (page["category"] or {}).get("id")

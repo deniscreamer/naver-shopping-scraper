@@ -386,6 +386,7 @@ def _specs(product, query):
     product_id = details["id"]
     out_dir = os.path.join(OUTPUT_ROOT, datetime.now().strftime("%Y%m%d-%H%M%S") + f"-{product_id}")
     page = _with_adapter(product_id, search_queries(details["name"], query), out_dir)
+    api.remember_store_from_page(page.get("html"))   # 2026-11-24: the store record for a login-gated store page
     return _specs_tail(details, page, page["query"], out_dir)
 
 

@@ -28,6 +28,13 @@ def forget(namespace, data):
         _store.pop(_key(namespace, data), None)
 
 
+def peek(namespace, data):
+    """The live cached result for (namespace, data) as a copy, or None; never runs anything."""
+    with _lock:
+        hit = _store.get(_key(namespace, data))
+    return copy.deepcopy(hit[1]) if hit and hit[0] > time.time() else None
+
+
 def cached_call(namespace, data, fn, ttl, cache=True, refresh=False):
     """Serve fn(**data) from memory for `ttl`, else run it and keep the result.
     Exceptions from fn propagate uncached."""
