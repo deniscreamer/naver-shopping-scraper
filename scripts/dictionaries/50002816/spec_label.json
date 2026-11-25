@@ -1,7 +1,7 @@
 {
  "format": "dictionary/1",
  "kind": "spec_label",
- "backed_up": "2026-11-24T14:40:23Z",
+ "backed_up": "2026-11-25T15:32:48Z",
  "entries": {
   "네크라인": "Neckline",
   "모델명": "Model Name",
@@ -15,13 +15,16 @@
   "유효일자": "Expiration Date",
   "제조사": "Manufacturer",
   "종류": "Type",
+  "주요소재": "Main Material",
   "총기장": "Length",
   "출시": "Release",
+  "출시일자": "Release Date",
   "충전재": "Fill",
   "특징": "Features",
   "패턴": "Pattern",
   "품번": "Item Number",
   "하의기장": "Pants Length",
-  "하의핏": "Pants Fit"
+  "하의핏": "Pants Fit",
+  "형태": "Style"
  }
 }

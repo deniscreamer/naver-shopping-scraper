@@ -244,7 +244,8 @@ RULES = {
                 paid_variants=True, paid_addons=False, description_images=True, gift_axis_out=True,
                 no_choice_out=True, composition=True, sizes="womens_tops", sizes_mens="mens_tops",
                 sizes_unisex="mens_tops", own_brand_wordmark=True,
-                reviewed=False),      # a new category: DRAFT until the lens review and the owner's activation
+                reviewed=True),       # reviewed 2026-11-25: two pilots (30 + 100) reviewed by lens, 22 drafts held,
+                                      # 117 activated on the owner's delegation ("сам реши по всем пунктам")
         }),
 }
 

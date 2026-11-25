@@ -1,11 +1,12 @@
 {
  "format": "dictionary/1",
  "kind": "fact_label",
- "backed_up": "2026-11-24T14:40:23Z",
+ "backed_up": "2026-11-25T15:32:48Z",
  "entries": {
   "사이즈": "Size",
   "색상": "Color",
   "선택하기": "Select",
-  "컬러": "Color"
+  "컬러": "Color",
+  "컬러/사이즈": "Color / Size"
  }
 }

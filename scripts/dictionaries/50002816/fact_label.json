@@ -1,9 +1,10 @@
 {
  "format": "dictionary/1",
  "kind": "fact_label",
- "backed_up": "2026-11-24T14:40:23Z",
+ "backed_up": "2026-11-25T15:32:48Z",
  "entries": {
   "개인정보제공 동의": "Personal Information Consent",
+  "레인코트": "Rain Coat",
   "모델": "Model",
   "모델 및 색상": "Model and Color",
   "모델명": "Model Name",
@@ -21,6 +22,7 @@
   "제품선택": "Product Selection",
   "참고사항": "Note",
   "컬러": "Color",
+  "컬러（뉴레인）": "Color",
   "타입": "Type"
  }
 }
